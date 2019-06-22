@@ -1,5 +1,5 @@
 {
-    "name": "open-classify/open-classify",
+    "name": "openclassify/openclassify",
     "description": "OpenClassify is the extensible and most advanced open source classified app build with Laravel.",
     "type": "project",
     "keywords": [
