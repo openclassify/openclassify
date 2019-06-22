@@ -1,0 +1,370 @@
+
+
+<section id="main" class="clearfix home-default">
+    <div class="container">
+        <!-- banner -->
+        <div class="banner-section text-center">
+            {% include "theme::partials/messages" %}
+            {{ content|raw }}
+            <!-- banner-form -->
+            <div class="banner-form">
+                <form action="{{ url('advs/list') }}" id="home-page-search-form" method="get">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="col-md-2 home-search-field">
+                                <div class="form-group ">
+                                    {% set cities = entries('location','cities').orderBy('slug').get() %}
+                                    <select id="cities" name="city[]" class="form-control">
+                                        <option selected disabled>{{ trans('theme::fields.city') }}</option>
+                                        {% for city in cities %}
+                                            <option value="{{ city.id }}">{{ city.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="col-md-2 home-search-field">
+                                <div class="form-group ">
+                                    <ul>
+                                        <li class="dropdown home-search-category-field">
+                                            {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}
+                                            <a href="#" class="btn btn-default" data-toggle="dropdown" role="button"
+                                               aria-haspopup="true" aria-expanded="false">
+                                            <span class="selected-category-item"
+                                                  style="display: inline-block;">{{ trans('theme::fields.categories') }}</span>
+                                            </a>
+                                            <ul class="dropdown-menu cat-dropdown-menu">
+                                                {% for cat in cats %}
+                                                    <li><a href="#" data-id="{{ cat.id }}"
+                                                           class="navigation-category-select-item">{{ cat.name }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <input type="hidden" value="" name="cat" id="searchable_category_input"
+                                   class="select-category-home-id">
+                            <div class="col-md-4 home-search-field">
+                                <div class="form-group ">
+                                    {% set SearchPlaceHolder = entries('cats','placeholderforsearch').get() %}
+                                    <input type="text" name="keyword" data-period="2000" id="search_ac_navigator"
+                                           data-type='[{% for placeholder in SearchPlaceHolder %}"{{ placeholder.name }}","...",{% endfor %}"..."]'
+                                           class="form-control search-input">
+                                </div>
+                            </div>
+                            <div class="col-md-1 home-search-field">
+                                <button type="submit" class="btn btn-default pl-5 pr-5 search-button"><i
+                                            class="fa fa-search"></i> {{ trans('theme::fields.search') }}
+                                </button>
+                            </div>
+
+                            <div class="col-md-3 home-search-field">
+                                <button type="button" class="btn btn-default map-search-button pl-5 pr-5 "><i
+                                            class="fa fa-map-marker"></i> {{ trans('theme::fields.search_map') }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                {% if(app.request.cookies.has('last_search')) %}
+                    <div class="last-search">
+                        <a href="{{ app.request.cookies.get('last_search') }}" class="btn btn-default center-block">
+                            <i class="fa fa-history"></i>
+                            {{ trans('theme::fields.last_search') }}</a>
+                    </div>
+                {% endif %}
+            </div>
+            ,
+            <!-- banner-form -->
+        </div><!-- banner -->
+        <!-- main-content -->
+        <div class="main-content">
+            <!-- row -->
+            <div class="row">
+                <div class="hidden-xs hidden-sm col-md-2 text-center">
+                    {#{% if homepageAdvs['homepage_left_advertisement_place'] %}#}
+                    {#<div class="advertisement">#}
+                    {#<a href="#"><img src="{{ img('theme::images/ads/2.jpg').url }}" alt="Images" class="img-responsive"></a>#}
+                    {#</div>#}
+
+                    {{ blocks('left-home-banner-area') }}
+
+                    {#{% endif %}#}
+                </div>
+
+                <!-- product-list -->
+                <div class="col-md-8">
+                    <!-- categorys -->
+                    {% if entries('advs').isEnabled('dopings') %}
+                        {% set doping_advs = entries('dopings').get().getFeaturedAds(1) %}
+                        {% if(doping_advs|length>0) %}
+                            <div class="section featureds">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="section-title featured-top">
+                                            <h4>{{ trans('visiosoft.theme.default::fields.featured_ads') }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- featured-slider -->
+                                <div class="featured-slider">
+                                    <div id="featured-slider">
+                                        <!-- featured -->
+                                        {% for adv in doping_advs %}
+                                            <div class="featured">
+                                                <div class="featured-image">
+                                                        <a href="{{ adv.detail_url }}"><img
+                                                                    src="{{ adv.cover_photo }}" alt=""
+                                                                    class="img-respocive"></a>
+                                                </div>
+
+                                                <!-- ad-info -->
+                                                <div class="ad-info">
+                                                    <h3 class="item-price">{{ adv.priceFormat(adv) }} {{ adv.currency }}</h3>
+                                                    <h4 class="item-title"><a
+                                                                href="{{ adv.detail_url }}">
+                                                            {{ substr(adv.name,0,25) }}
+                                                            {% if adv.name|length > 25 %}...{% endif %}</a></h4>
+                                                    <div class="item-cat">
+                                                                <span><a href="#">
+                                                                        {% for cat in cats %}
+                                                                            {% if cat.id == adv.cat1[0].value %}
+                                                                                {{ cat.title }}
+                                                                            {% endif %}
+                                                                        {% endfor %}
+                                                                    </a></span>
+                                                    </div>
+                                                </div><!-- ad-info -->
+
+                                                <!-- ad-meta -->
+                                                <div class="ad-meta">
+                                                    <div class="meta-content">
+                                                    <span class="dated"><a
+                                                                href="#">{{ adv.created_at|date('Y.m.d') }} </a></span>
+                                                    </div>
+                                                    <!-- item-info-right -->
+                                                    <div class="user-option pull-right">
+                                                        {% if adv.is_get_adv == "1" %}
+                                                            <a href="#" data-toggle="tooltip" data-placement="top"
+                                                               title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
+                                                                        class="fa fa-shopping-cart"></i> </a>
+                                                        {% endif %}
+                                                        <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
+                                                           data-toggle="tooltip" data-placement="top"
+                                                           title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                    class="fa fa-map-marker"></i> </a>
+                                                    </div><!-- item-info-right -->
+                                                </div><!-- ad-meta -->
+                                            </div><!-- featured -->
+                                        {% endfor %}
+                                    </div><!-- featured-slider -->
+
+                                </div><!-- #featured-slider -->
+                            </div><!-- featureds -->
+                        {% endif %}
+                    {% endif %}
+
+                    {#{% if homepageAdvs['homepage_left_advertisement_place'] %}#}
+                    <!-- ad-section -->
+                    {#<div class="ad-section text-center">#}
+                    {#<a href="#"><img src="{{ img('theme::images/ads/3.jpg').url }}" alt="Image" class="img-responsive"></a>#}
+                    {#</div>#}
+                    {{ blocks('middle-home-banner-area') }}
+
+                    <!-- ad-section -->
+                    {#{% endif %}#}
+
+                    <!-- trending-ads -->
+                    <div class="section trending-ads">
+                        <div class="section-title tab-manu">
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" class="active"><a href="#recent-ads"
+                                                                          data-toggle="tab">{{ trans('theme::fields.recent_ads') }}</a>
+                                </li>
+                                <li role="presentation"><a href="#popular"
+                                                           data-toggle="tab">{{ trans('theme::fields.trending_ads') }}</a>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab panes -->
+                        <div class="tab-content">
+                            <!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane fade in active" id="recent-ads">
+
+                                <!-- ad-item -->
+                                {% set latest_advs = entries('advs').latestAdvs() %}
+
+                                {% for adv in latest_advs %}
+
+                                    <div class="ad-item row main-page-ad-item">
+                                        <div class="item-image-box col-sm-4">
+                                            <!-- item-image -->
+                                            <div class="item-image">
+                                                    <a href="{{ adv.detail_url }}"><img
+                                                                src="{{ adv.cover_photo }}" alt=""
+                                                                class="img-respocive"></a>
+                                            </div><!-- item-image -->
+                                        </div><!-- item-image-box -->
+
+                                        <!-- rending-text -->
+                                        <div class="item-info col-sm-8">
+                                            <!-- ad-info -->
+                                            <div class="ad-info">
+                                                <h3 class="item-price">{{ adv.priceFormat(adv) }} {{ adv.currency }}</h3>
+                                                <h4 class="item-title"><a
+                                                            href="{{ adv.detail_url }}">{{ adv.name }}</a>
+                                                </h4>
+                                                <div class="item-cat">
+                                                    {% for cat in cats %}
+                                                        {% if cat.id == adv.cat1[0].value %}
+                                                            <span><a href="#">{{ cat.title }}</a></span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div><!-- ad-info -->
+
+                                            <!-- ad-meta -->
+                                            <div class="ad-meta">
+                                                <div class="meta-content">
+                                                    <span class="dated"><a
+                                                                href="#">{{ adv.created_at|date('Y.m.d') }} </a></span>
+                                                </div>
+                                                <!-- item-info-right -->
+                                                <div class="user-option pull-right">
+                                                    {% if adv.is_get_adv == "1" %}
+                                                        <a href="#" data-toggle="tooltip" data-placement="top"
+                                                           title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                    class="fa fa-shopping-cart"></i> </a>
+                                                    {% endif %}
+                                                    <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
+                                                       data-toggle="tooltip" data-placement="top"
+                                                       title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                class="fa fa-map-marker"></i> </a>
+                                                </div><!-- item-info-right -->
+                                            </div><!-- ad-meta -->
+                                        </div><!-- item-info -->
+                                    </div><!-- ad-item -->
+                                {% endfor %}
+                            </div><!-- tab-pane -->
+
+                            <!-- tab-pane -->
+                            <div role="tabpanel" class="tab-pane fade" id="popular">
+                                {% set popular_advs = entries('advs').popularAdvs() %}
+
+                                {% for adv in popular_advs %}
+                                    <div class="main-page-ad-item row">
+                                        <div class="item-image-box col-sm-4">
+                                            <!-- item-image -->
+                                            <div class="item-image">
+                                                    <a href="{{ adv.detail_url }}"><img
+                                                                src="{{ adv.cover_photo }}" alt=""
+                                                                class="img-respocive"></a>
+
+                                                {% if adv.is_get_adv == "1" %}
+                                                    <a href="#" class="verified" data-toggle="tooltip"
+                                                       data-placement="top" title="Get ilanı"><i
+                                                                class="fa fa-check-square-o"></i></a>
+                                                {% endif %}
+                                            </div><!-- item-image -->
+                                        </div><!-- item-image-box -->
+
+                                        <!-- rending-text -->
+                                        <div class="item-info col-sm-8">
+                                            <!-- ad-info -->
+                                            <div class="ad-info">
+                                                <h3 class="item-price">{{ adv.priceFormat(adv) }}{{ adv.currency }}</h3>
+                                                <h4 class="item-title"><a
+                                                            href="{{ adv.detail_url }}">{{ adv.name }}</a>
+                                                </h4>
+                                                <div class="item-cat">
+                                                    {% for cat in cats %}
+                                                        {% if cat.id == adv.cat1[0].value %}
+                                                            <span><a href="#">{{ cat.title }}</a></span>
+                                                        {% endif %}
+                                                    {% endfor %}
+                                                </div>
+                                            </div><!-- ad-info -->
+
+                                            <!-- ad-meta -->
+                                            <div class="ad-meta">
+                                                <div class="meta-content">
+                                                    <span class="dated"><a
+                                                                href="#">{{ adv.created_at|date('Y.m.d') }} </a></span>
+                                                </div>
+                                                <!-- item-info-right -->
+                                                <div class="user-option pull-right">
+                                                    {% if adv.is_get_adv == "1" %}
+                                                        <a href="#" data-toggle="tooltip" data-placement="top"
+                                                           title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
+                                                                    class="fa fa-shopping-cart"></i> </a>
+                                                    {% endif %}
+                                                    <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
+                                                       data-toggle="tooltip" data-placement="top"
+                                                       title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                class="fa fa-map-marker"></i> </a>
+                                                </div><!-- item-info-right -->
+                                            </div><!-- ad-meta -->
+                                        </div><!-- item-info -->
+                                    </div><!-- ad-item -->
+                                {% endfor %}
+                            </div><!-- tab-pane -->
+                        </div>
+                    </div><!-- trending-ads -->
+                    {{ blocks('advs-default-theme-home-bottom') }}
+                    <!-- cta -->
+                </div><!-- product-list -->
+
+                <!-- advertisement -->
+                <div class="hidden-xs hidden-sm col-md-2">
+                    {#{% if homepageAdvs['homepage_right_advertisement_place'] %}#}
+                    {#<div class="advertisement text-center">#}
+                    {#<a href="#"><img src="{{ img('theme::images/ads/1.jpg').url }}" alt="Images" class="img-responsive"></a>#}
+                    {#</div>#}
+                    {{ blocks('right-home-banner-area') }}
+
+                    {#{% endif %}#}
+                </div><!-- advertisement -->
+            </div><!-- row -->
+        </div><!-- main-content -->
+        <div class="col-md-12">
+            <div class="section text-center" style="display: inline-block !important" id="category-list-items">
+                <ul class="category-list">
+                    {% for cat in cats|slice(0, 5) %}
+                        <li class="category-item">
+                            <div class="category-icon home_footer_categories_field_icon">
+                                {% if cat.files[0].path != "" %}
+                                    <img src="{{ url('files/' ~ cat.files[0].path) }}" alt="images"
+                                         class="img-responsive">
+                                {% endif %}
+                            </div>
+                            <span class="category-title home_footer_categories_field_title"><a
+                                        href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ cat.id }}">{{ cat.name }}</a></span>
+                            <ul class="home_footer_sub_categories_field">
+                                {% set catRow = 0 %}
+                                {% set cats_ids = cats.pluck('id') %}
+                                {% set sub_cats = entries('cats','category').whereIn('parent_category_id', cats_ids).get() %}
+                                {% for subcat in sub_cats if subcat.parent_category_id == cat.id %}
+                                    {% set catRow =  catRow+1 %}
+                                    {% if catRow < 10 %}
+                                        <li>
+                                            <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ subcat.id }}">{{ subcat.name }}</a>
+                                        </li>
+                                    {% endif %}
+                                {% endfor %}
+                            </ul>
+                            <span class="category-quantity"></span>
+                        </li><!-- category-item -->
+                    {% endfor %}
+                </ul>
+            </div><!-- category-ad -->
+
+            {% if entries('advs').isEnabled('recentlyviewedads') %}
+                {% include "visiosoft.module.recentlyviewedads::home" %}
+            {% endif %}
+        </div>
+    </div><!-- container -->
+</section>

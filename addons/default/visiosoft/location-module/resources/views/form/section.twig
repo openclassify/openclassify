@@ -1,0 +1,3 @@
+a
+
+{% include "visiosoft.module.advs::form/partials/fields" with {"fields": form.fields.base().where('field_name', '!=', 'price').where('field_name', '!=', 'currency').pluck('field_name').all()} %}

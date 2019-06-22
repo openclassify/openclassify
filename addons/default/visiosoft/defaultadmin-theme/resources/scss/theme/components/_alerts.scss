@@ -1,0 +1,12 @@
+.alert {
+    @include shadow();
+
+    p {
+        margin-bottom: 0;
+    }
+
+    a {
+        color: #ffffff;
+        font-weight: bold;
+    }
+}

@@ -1,0 +1,80 @@
+{% set isDopings = entries('dopings').get() %}
+                    {% if isDopings is not null %}
+                        {% set doping_advs = entries('dopings').get().getFeaturedAds(1) %}
+                        {% if(doping_advs|length>0) %}
+                            <div class="section featureds">
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="section-title featured-top">
+                                            <h4>{{ trans('visiosoft.theme.default::fields.featured_ads') }}</h4>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- featured-slider -->
+                                <div class="featured-slider">
+                                    <div id="featured-slider">
+                                        <!-- featured -->
+                                        {% for adv in doping_advs %}
+
+                                            <div class="featured">
+                                                <div class="featured-image">
+                                                    {% if adv.cover_photo != null %}
+                                                        <a href="{{ adv.detail_url }}"><img
+                                                                    src="{{ adv.cover_photo }}" alt=""
+                                                                    class="img-respocive"></a>
+                                                    {% endif %}
+                                                </div>
+
+                                                <!-- ad-info -->
+                                                <div class="ad-info">
+                                                    <h3 class="item-price">{{ adv.priceFormat(adv) }} {{ adv.currency }}</h3>
+                                                    <h4 class="item-title"><a
+                                                                href="{{ adv.detail_url }}">{{ adv.name }}</a>
+                                                    </h4>
+                                                    <div class="item-cat">
+                                                                <span><a href="#">
+{% set cats = entries('advs','categories').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}                                                                        {% for cat in cats %}
+                                                                            {% if cat.id == adv.cat1[0].value %}
+                                                                                {{ cat.title }}
+                                                                            {% endif %}
+                                                                        {% endfor %}
+                                                                    </a></span>
+                                                    </div>
+                                                </div><!-- ad-info -->
+
+                                                <!-- ad-meta -->
+                                                <div class="ad-meta">
+                                                    <div class="meta-content">
+                                                        <span class="dated"><a
+                                                                    href="#">{{ adv.created_at|date('Y.m.d') }} </a></span>
+                                                    </div>
+                                                    <!-- item-info-right -->
+                                                    <div class="user-option pull-right">
+                                                        {% if adv.is_get_adv == "1" %}
+                                                            <a href="#" data-toggle="tooltip" data-placement="top"
+                                                               title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
+                                                                        class="fa fa-shopping-cart"></i> </a>
+                                                        {% endif %}
+                                                        <a href="#" data-toggle="tooltip" data-placement="top"
+                                                           title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                    class="fa fa-map-marker"></i>
+                                                        </a>
+                                                    </div><!-- item-info-right -->
+                                                </div><!-- ad-meta -->
+                                            </div><!-- featured -->
+                                        {% endfor %}
+                                    </div><!-- featured-slider -->
+
+                                </div><!-- #featured-slider -->
+                            </div><!-- featureds -->
+                        {% endif %}
+
+                        {% if homepageAdvs['homepage_left_advertisement_place'] %}
+                            <!-- ad-section -->
+                            <div class="ad-section text-center">
+                                <a href="#"><img src="{{ img('theme::images/ads/3.jpg').url }}" alt="Image"
+                                                 class="img-responsive"></a>
+                            </div><!-- ad-section -->
+                        {% endif %}
+                    {% endif %}

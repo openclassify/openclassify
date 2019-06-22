@@ -1,0 +1,205 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    <section id="main" class="clearfix home-default">
+        <div class="container">
+            <div class="breadcrumb-section">
+                <!-- breadcrumb -->
+                <ol class="breadcrumb">
+                    <li><a href="/profile">{{ trans("visiosoft.module.profile::field.menu_profile.name") }}</a></li>
+                    <li>{{ trans("visiosoft.module.profile::field.menu_orders.name") }}</li>
+                    <li>{{ trans("visiosoft.module.profile::field.detail.name") }}</li>
+                </ol><!-- breadcrumb -->
+                <h2 class="title">{{ trans("visiosoft.module.profile::field.detail.name") }} {{ trans("visiosoft.module.profile::field.menu_orders.name") }}</h2>
+            </div>
+            <div class="order-detail">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% include "theme::partials/messages" %}
+                    </div>
+                    <div class="col-md-8">
+
+                        <fieldset>
+                            <div class="section orderdetails">
+                                <a href="{{ url_route("visiosoft.module.profile::profile") }}"
+                                   class="btn btn-danger fa fa-chevron-left"
+                                   style="margin-bottom: 20px" role="button"
+                                   aria-pressed="true">{{ trans("visiosoft.module.profile::field.back.name") }}</a>
+                                <div class="card order-item">
+                                    <div class="row order-row">
+                                        <div class="col-md-2 text-center">
+                                            <img src="
+                                            {% if(details.getPhoto == null) %}
+                                                 {{ img('theme::images/no-image.png').url }}
+                                            {% else %}
+                                                 {{ details.getPhoto }}
+                                            {% endif %}
+                                            " class="image-order" alt="Image">
+                                        </div>
+                                        <div class="col-md-3 text-center">
+                                            <a href="{{ details.detail_url }}"><h5>{{ details.getSubject }}</h5>
+                                            </a>
+                                        </div>
+                                        <div class="col-md-2 px-3 text-center">
+                                            <h5>{{ details.price }}
+                                                {{ details.currency }}</h5>
+                                        </div>
+                                        <div class="col-md-1 px-3 text-center item-total">
+                                            <h5>{{ details.piece }}X</h5>
+                                        </div>
+                                        <div class="col-md-2 px-3 text-center">
+                                            <h5>{{ details.commission }}</h5>
+                                        </div>
+                                        <div class="col-md-2 px-3 text-center item-total">
+                                            <h5>{{ details.total }}
+                                                {{ details.currency }}</h5>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="card order-item">
+                                    <div class="row ">
+
+                                        <div class="col-md-6 text-center">
+                                            <div class="card-block px-3">
+                                                <h4>
+                                                    <i class="fa fa-file-text-o"></i> {{ trans("visiosoft.module.profile::field.bill_address.name") }}
+                                                    :</h4>
+                                                <h3>{{ details.get_bill_address('adress_first_name') }}
+                                                    {{ details.get_bill_address('adress_last_name') }}</h3>
+                                                <h4>{{ details.get_bill_address('adress_gsm_phone') }}</h4>
+                                                <h5>{{ details.get_bill_address('adress_content') }}</h5>
+                                                <h5>{{ details.getLocationAddress('bill') }}</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-6 px-3 text-center">
+                                            <div class="card-block px-3">
+                                                <h4>
+                                                    <i class="fa fa-truck"></i> {{ trans("visiosoft.module.profile::field.delivery_address.name") }}
+                                                    :</h4>
+                                                <h3>{{ details.get_delivery_address('adress_first_name') }}
+                                                    {{ details.get_delivery_address('adress_last_name') }}</h3>
+                                                <h4>{{ details.get_bill_address('adress_gsm_phone') }}</h4>
+                                                <h5>{{ details.get_delivery_address('adress_content') }}</h5>
+                                                <h5>{{ details.getLocationAddress('delivery') }}</h5>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12 text-center">
+                                            <div class="col-md-2 col-sm-3">
+                                                <h5 {% if details.status == 'awaiting_payment' %}
+                                                    class="warning-color"{% endif %}>
+                                                    <i class="fa fa-clock-o"></i> {{ trans('visiosoft.module.profile::field.awaiting_payment.name') }}
+                                                </h5>
+                                            </div>
+                                            <div class="col-md-1 col-sm-1"><h5><i class="fa fa-chevron-right"></i></h5>
+                                            </div>
+
+                                            <div class="col-md-2 col-sm-4">
+                                                <h5 {% if details.status == 'awaiting_tracking_number' %}
+                                                    class="warning-color"
+                                                        {% endif %}><i
+                                                            class="fa fa-truck"></i> {{ trans('visiosoft.module.profile::field.awaiting_tracking_number.name') }}
+                                                </h5>
+                                            </div>
+                                            <div class="col-md-1 col-sm-1"><h5><i class="fa fa-chevron-right"></i></h5>
+                                            </div>
+
+                                            <div class="col-md-2 col-sm-4">
+                                                <h5 {% if details.status == 'awaiting_payment_approval' or details.status == 'paid_buyer' %}
+                                                    class="warning-color"
+                                                        {% endif %}><i
+                                                            class="fa fa-cogs"></i> {{ trans('visiosoft.module.profile::field.awaiting_payment_approval.name') }}
+                                                </h5>
+                                            </div>
+                                            <div class="col-md-1 col-sm-1"><h5><i class="fa fa-chevron-right"></i></h5>
+                                            </div>
+                                            <div class="col-md-2 col-sm-4">
+                                                {% if details.status != 'cancelled' and details.status != 'error_buyer' %}
+                                                    <h5 {% if details.status == 'paid' %}
+                                                        class="warning-color"
+                                                            {% endif %}><i
+                                                                class="fa fa-check"></i> {{ trans('visiosoft.module.profile::field.paid.name') }}
+                                                    </h5>
+                                                {% else %}
+                                                    <h5 class="warning-color"><i
+                                                                class="fa fa-times"></i> {{ trans('visiosoft.module.profile::field.cancelled.name') }}
+                                                    </h5>
+                                                {% endif %}
+                                            </div>
+                                        </div>
+                                        {% if details.tracking_number is empty and details.status == 'awaiting_tracking_number' %}
+                                            <form method="post" action="/profile/orders/add-transport-number">
+                                                <div class="col-sm-12 text-center transport_field">
+                                                    <div class="col-sm-12">
+                                                        <h4 class="danger-color"><i
+                                                                    class="fa fa-warning"></i> {{ trans('visiosoft.module.profile::field.please_entered_tracking_number.name') }}
+                                                        </h4>
+                                                    </div>
+                                                    <div class="col-sm-6 transportNumber-name">{{ trans('visiosoft.module.profile::field.tracking_number.name') }}
+                                                        :
+                                                    </div>
+                                                    <input type="hidden" name="id" value="{{ details.id }}">
+                                                    <div class="col-sm-6"><input type="text" name="transportNumber"
+                                                                                 class="form-control" required></div>
+                                                </div>
+                                                <div class="col-sm-12 text-center transport_field">
+                                                    <div class="col-sm-6 transportNumber-name">{{ trans('visiosoft.module.profile::field.transport_days.name') }}
+                                                        :
+                                                    </div>
+                                                    <div class="col-sm-4"><input type="number" max="30" min="3"
+                                                                                 name="transportDays"
+                                                                                 class="form-control" required></div>
+                                                    <div class="col-sm-2 transportNumber-button"><input type="submit"
+                                                                                                        class="btn btn-success">
+                                                    </div>
+                                                </div>
+                                            </form>
+                                        {% endif %}
+                                        {% if details.status == 'error_buyer' %}
+                                            <form method="post" action="/profile/orders/report-sales">
+                                                <div class="col-sm-12 text-center">
+                                                    <h4 class="danger-color">{{ trans('visiosoft.module.profile::field.product_not_delivered.name') }}</h4>
+                                                </div>
+                                                <input type="hidden" name="id" value="{{ details.id }}">
+                                                <div class="col-sm-12 padding-bottom-20">
+                                                    <div class="col-sm-4">{{ trans('visiosoft.module.profile::field.status.name') }}
+                                                        :
+                                                    </div>
+                                                    <div class="col-md-8 text-center">
+                                                        <select name="status" class="form-control">
+                                                            <option value="cancel">{{ trans('visiosoft.module.profile::field.cancel_sale.name') }}</option>
+                                                            <option value="sendAgain">{{ trans('visiosoft.module.profile::field.send_again.name') }}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 padding-bottom-20">
+                                                    <div class="col-sm-4">{{ trans('visiosoft.module.profile::field.content.name') }}
+                                                        :
+                                                    </div>
+                                                    <div class="col-md-8 text-center">
+                                                        <textarea name="reportContent" class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-12 text-center padding-bottom-20">
+                                                    <input type="submit" class="btn btn-success">
+                                                </div>
+                                            </form>
+                                        {% endif %}
+                                    </div>
+                                </div>
+                            </div><!-- section -->
+
+
+                        </fieldset>
+                    </div>
+                    {% include "visiosoft.module.profile::profile/dock-right" %}
+                </div>
+                {{ form.close|raw }}
+            </div>
+        </div>
+    </section>
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
+{% endblock %}
+
+

@@ -1,0 +1,207 @@
+@mixin compact_display($fontsize)
+{
+    // Variable to set the height of the top bar.
+    $compact-top-bar-height: 50px;
+
+    @media (min-width: 992px)
+    {
+        *
+        {
+            font-size: $fontsize;
+        }
+
+        h1,
+        h2
+        {
+            font-size: 24px;
+        }
+
+        h3
+        {
+            font-size: 20px;
+        }
+
+        h4,
+        h5,
+        h6
+        {
+            font-size: 16px;
+        }
+
+        .card-block
+        {
+            padding: .5rem 1.25rem;
+        }
+
+        .form .field-group
+        {
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        hr
+        {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+
+        .control-label + .text-muted,
+        .control-label + .text-muted + .help-block
+        {
+            font-size: 13px;
+            font-style: italic;
+
+            position: relative;
+            top: -.5rem;
+
+            margin-bottom: .3rem;
+        }
+
+        .control-label + .text-muted + .help-block .text-warning
+        {
+            font-size: 13px;
+            font-style: normal;
+        }
+
+        .form-control {
+            font-size: 0.9rem;
+        }
+
+        #main #buttons,
+        .card
+        {
+            margin-bottom: 1rem;
+        }
+
+        #menu,
+        #sidebar
+        {
+            ul li:first-child
+            {
+                margin-top: 7px;
+            }
+
+            ul li a
+            {
+                font-size: 15px;
+                line-height: 1.5;
+
+                margin-top: 0;
+                margin-bottom: 0;
+                padding-top: 5px;
+                padding-bottom: 5px;
+            }
+        }
+
+        // Haven't been able to verify this, but it looks specific enough
+        // to trust
+        .custom-select, select.form-control:not([size]):not([multiple]) {
+            height: calc(2.3rem - 2px);
+        }
+
+
+
+
+        label.switch__label
+        {
+            margin-bottom: 0;
+        }
+
+        table td 
+        {
+            padding:.4rem .75rem;
+        }
+
+        /*
+            --------------------------------------------------------------------
+            Compacting the top bar
+            --------------------------------------------------------------------
+        */
+        #topbar
+        {
+            .logo svg
+            {
+                height: 35px;
+            }
+            .topbar-left,
+            .logo,
+            .nav > li > a,
+            #search .search-bar
+            {
+                height: $compact-top-bar-height;
+            }
+
+            .logo,
+            .nav > li > a,
+            .button-menu .button-menu-mobile
+            {
+                line-height: $compact-top-bar-height;
+            }
+
+            .nav > li > a
+            {
+                display: block;
+            }
+        }
+        #sidebar,
+        #menu
+        {
+            top: $compact-top-bar-height;
+        }
+
+        #main
+        {
+            padding-top: $compact-top-bar-height;
+        }
+    }
+}
+
+body.display--compact
+{
+    @include compact_display(14px);
+}
+
+body.sidebars--static
+{
+    @media (min-width: 992px)
+    {
+        // Always hide the hamburger when we have static sidebars set
+        // since we have no use for it then.
+        .button-menu
+        {
+            display: none;
+        }
+
+        #sidebar
+        {
+            width: 240px !important;
+
+            ul li a
+            {
+                display: flex;
+
+                padding-left: 10px;
+            }
+
+            ul li a .title
+            {
+                display: block;
+            }
+        }
+
+        #menu
+        {
+            left: 240px;
+        }
+
+        #main
+        {
+            margin-left: 410px;
+        }
+
+        #footer
+        {
+            margin-left: 410px;
+        }
+    }
+}

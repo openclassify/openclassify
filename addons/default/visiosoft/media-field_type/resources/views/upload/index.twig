@@ -1,0 +1,16 @@
+{{ asset_add('styles.css', 'visiosoft.field_type.media::less/upload.less') }}
+{{ asset_add('scripts.js', 'visiosoft.field_type.media::js/dropzone.min.js') }}
+{{ asset_add('scripts.js', 'visiosoft.field_type.media::js/upload.js') }}
+
+
+<div id="upload">
+
+    {% include "visiosoft.field_type.media::upload/partials/header" %}
+    {% include "visiosoft.field_type.media::upload/partials/body" %}
+    {% include "visiosoft.field_type.media::upload/partials/template" %}
+
+    <div class="uploaded">
+        {{ table.content|raw }}
+    </div>
+
+</div>

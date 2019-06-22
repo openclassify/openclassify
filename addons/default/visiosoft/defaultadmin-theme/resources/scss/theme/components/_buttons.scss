@@ -1,0 +1,137 @@
+.btn {
+    transition: all 100ms;
+
+    /**
+     * Additional Sizes
+     */
+    &.btn-xs {
+        font-size: $font-size-xs;
+        padding: $spacer-x/4 $spacer-y/3;
+    }
+
+    /**
+     * Rounded Buttons
+     */
+    &.btn-rounded {
+        border-radius: $font-size-base*2;
+        //padding-left: $spacer-x*1.5;
+        //padding-right: $spacer-y*1.5;
+
+        //&.btn-sm {
+        //    border-radius: $font-size-sm*2;
+        //    padding-left: $spacer-*1.5;
+        //    padding-right: $padding-small-horizontal*1.5;
+        //}
+        //
+        //&.btn-lg {
+        //    border-radius: $font-size-large*2;
+        //    padding-left: $padding-large-horizontal*1.5;
+        //    padding-right: $padding-large-horizontal*1.5;
+        //}
+        //
+        //&.btn-xl {
+        //    border-radius: $font-size-large*2*2;
+        //    padding-left: $padding-large-horizontal*1.5*1.5;
+        //    padding-right: $padding-large-horizontal*1.5*1.5;
+        //}
+    }
+}
+
+/**
+ * Additional Variations
+ */
+.btn-default {
+    @include button-variant(#252525 !important, $brand-inverse, $brand-inverse);
+}
+
+.btn-inverse {
+
+    &.btn-outline {
+        @include button-outline($brand-inverse);
+    }
+
+    @include button-variant(#ffffff, $brand-inverse, $brand-inverse);
+}
+
+.btn-white {
+
+    &.btn-outline {
+        @include button-outline(#ffffff);
+
+        &:focus,
+        &:active,
+        &:hover {
+            color: #ffffff !important;
+            border-color: #ffffff !important;
+            background-color: transparent !important;
+        }
+    }
+
+    @include button-variant(#333333, #ffffff, #ffffff);
+}
+
+/**
+ * Redo all the regular button
+ * styles in order to add outline
+ * and retain the default hover effect.
+ */
+.btn-primary {
+
+    &.btn-outline {
+        @include button-outline($btn-primary-bg);
+    }
+
+    &.btn-gradient {
+        background-image: linear-gradient(141deg, #c61db4 0%, #b21cc3 51%, #a21acf 75%);
+    }
+
+    @include button-variant($btn-primary-color, $btn-primary-bg, $btn-primary-border);
+}
+
+.btn-success {
+
+    &.btn-outline {
+        @include button-outline($btn-success-bg);
+    }
+
+    &.btn-gradient {
+        background-image: linear-gradient(141deg, #bbee61 0%, #47d165 95%);
+    }
+
+    @include button-variant($btn-success-color, $btn-success-bg, $btn-success-border);
+}
+
+.btn-info {
+
+    &.btn-outline {
+        @include button-outline($btn-info-bg);
+    }
+
+    &.btn-gradient {
+        background-image: linear-gradient(141deg, #0fdafd 0%, #01a5fb 51%, #8474ec 100%);
+    }
+
+    @include button-variant($btn-info-color, $btn-info-bg, $btn-info-border);
+}
+
+.btn-warning {
+
+    &.btn-outline {
+        @include button-outline($btn-warning-bg);
+    }
+
+    @include button-variant($btn-warning-color, $btn-warning-bg, $btn-warning-border);
+}
+
+.btn-danger {
+
+    &.btn-outline {
+        @include button-outline($btn-danger-bg);
+    }
+
+    &.btn-gradient {
+        background-image: linear-gradient(141deg, #ff754b 0%, #ff3160 75%);
+    }
+
+    @include button-variant($btn-danger-color, $btn-danger-bg, $btn-danger-border);
+}

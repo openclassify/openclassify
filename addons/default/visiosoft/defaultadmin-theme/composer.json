@@ -1,0 +1,29 @@
+{
+    "name": "visiosoft/defaultadmin-theme",
+    "type": "streams-addon",
+    "description": "The official admin theme for Visiosoft.",
+    "keywords": [
+        "cms",
+        "addon",
+        "theme",
+        "visiosoft",
+        "laravel"
+    ],
+    "homepage": "https://visiosoft.com.tr/",
+    "authors": [
+        {
+            "name": "Visiosoft, Inc.",
+            "email": "support@visiosoft.com.tr",
+            "homepage": "https://visiosoft.com.tr/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@visiosoft.com.tr"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\DefaultadminTheme\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,152 @@
+//
+// Tree UI
+// --------------------------------------------------
+
+ul.tree {
+    padding-left: 0;
+    list-style: none;
+
+    ul, ol {
+        list-style: none;
+    }
+
+    li {
+        .card {
+            padding-right: 4px;
+            margin-bottom: 7px;
+            background-color: #ffffff;
+            border: 2px solid transparent;
+            @include border-radius($border-radius);
+            @include shadow();
+
+            .handle {
+                cursor: move;
+                padding: 6px 9px;
+                box-shadow: none;
+                background: $gray-lighter;
+                color: rgba(0, 0, 0, 0.2);
+                @include border-radius($border-radius-sm);
+            }
+
+            .buttons {
+                float: right;
+                display: none;
+            }
+
+            > span {
+                margin-left: 6px;
+            }
+
+            &:hover {
+                > .buttons {
+                    display: block;
+                }
+            }
+        }
+
+        &.dragged {
+            opacity: 0.5;
+            position: absolute;
+            margin-bottom: $line-height-base;
+        }
+
+        &.placeholder {
+            height: 30px;
+            margin-bottom: 9px;
+            border: 2px dashed $gray-light;
+            @include border-radius($border-radius);
+        }
+
+        &.collapsed {
+            > .card {
+                position: relative;
+
+                > .handle {
+                    color: #ffffff;
+                    background: $brand-info;
+                }
+
+                > .count {
+                    top: -7px;
+                    left: -7px;
+                    width: 14px;
+                    height: 14px;
+                    color: #ffffff;
+                    font-size: 9px;
+                    cursor: default;
+                    font-weight: bold;
+                    line-height: 14px;
+                    text-align: center;
+                    border-radius: 50%;
+                    position: absolute;
+                    background: $brand-danger;
+                    @include shadow();
+                }
+            }
+
+            > ul {
+                display: none;
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    ul.tree {
+        li {
+            .card {
+                .buttons {
+                    display: block;
+                    a {
+                        font-size: 0;
+                        .fa {
+                            font-size: 18px !important;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}
+
+@media (max-width: 375px) {
+    ul.tree {
+        li {
+            .card {
+                .buttons {
+                    display: block;
+                    border-left: 1em solid transparent;
+                    border-right: 1em solid transparent;
+                    border-top: 1em solid #38b5e6;
+                    margin-top: .275em;
+
+                    a {
+                        display: none;
+                        .fa {
+                            font-size: 18px !important;
+                        }
+                    }
+
+                    &:hover, &:focus {
+                        position: fixed;
+                        bottom: 0;
+                        background-color: #3e3e3e !important;
+                        border: none;
+                        display: block;
+                        width: 100%;
+                        z-index: 500;
+                        padding-top: .75em;
+                        padding-left: 0.75em;
+                        padding-right: 0.75em;
+                        padding-bottom: 0.75em;
+                        margin-left: -1.1em;
+                        a {
+                            display: inline-block;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

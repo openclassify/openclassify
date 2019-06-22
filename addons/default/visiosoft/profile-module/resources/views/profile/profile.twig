@@ -1,0 +1,117 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    <section id="main" class="clearfix home-default">
+        <div class="container">
+            <div class="breadcrumb-section">
+                <!-- breadcrumb -->
+                <ol class="breadcrumb">
+                    <li><a href="/profile">{{ trans("visiosoft.module.profile::field.menu_profile.name") }}</a></li>
+                    <li>{{ trans("visiosoft.module.profile::field.edit.name") }}</li>
+                </ol><!-- breadcrumb -->
+                <h2 class="title">{{ trans("visiosoft.module.profile::field.menu_profile.name") }}</h2>
+            </div>
+
+
+            <!--menu -->
+            {% include "visiosoft.module.profile::profile/profile-dock" %}
+            <!--son menu-->
+
+            <div class="profile">
+                <div class="row tab-content">
+                    <div class="col-md-12">
+                        {% include "theme::partials/messages" %}
+                    </div>
+                    {% include "visiosoft.module.profile::profile/dashboard-dock" %}
+                    <div class="col-xs-12 col-md-8">
+                        <div class="panel-group" id="accordion">
+
+
+                            <!--Profile Start-->
+                            <div class="panel panel-default">
+                                {% include "visiosoft.module.profile::panel-content/profile" %}
+                            </div>
+                            <!--Profile End-->
+
+                            <!--Adv Start-->
+                            <div class="panel panel-default">
+                                {% include "visiosoft.module.profile::panel-content/adv" %}
+                            </div>
+                            <!--Adv End-->
+
+                            {% if entries('advs').isEnabled('orders') %}
+                                <!--ordersPanel Start-->
+                                <div class="panel panel-default">
+                                    {% include "visiosoft.module.profile::panel-content/orders" %}
+                                </div>
+                                <!--ordersPanel End-->
+                            {% endif %}
+
+                            <!--addressPanel Start-->
+                            <div class="panel panel-default">
+                                {% include "visiosoft.module.profile::panel-content/address" %}
+                            </div>
+                            <!--addressPanel End-->
+
+                            {% if entries('advs').isEnabled('balances') %}
+                                <!--balancePanel Start-->
+                                <div class="panel panel-default">
+                                    {% include "visiosoft.module.profile::panel-content/balance" %}
+                                </div>
+                                <!--balancePanel End-->
+                            {% endif %}
+
+                            {% if entries('advs').isEnabled('messages') %}
+                                <!--messagesPanel Start-->
+                                <div class="panel panel-default">
+                                    {% include "visiosoft.module.profile::panel-content/messages" %}
+                                </div>
+                                <!--messagesPanel End-->
+                            {% endif %}
+
+                            {% if entries('advs').isEnabled('packages') %}
+                                <!--packagesPanel Start-->
+                                <div class="panel panel-default">
+                                    {% include "visiosoft.module.profile::panel-content/packages" %}
+                                </div>
+                                <!--packagesPanel End-->
+                            {% endif %}
+
+                            {% if entries('advs').isEnabled('favs') %}
+                                <!--favoritesPanel Start-->
+                                <div class="panel panel-default">
+                                    {% include "visiosoft.module.profile::panel-content/favorites" %}
+                                </div>
+                                <!--favoritesPanel End-->
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    {% include "visiosoft.module.profile::profile/profile-dock-right" %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        var resimNone = "{{ img('theme::images/no-image-ads.jpg').url }}";
+    </script>
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/intlTelInput.js") }}
+    {{ asset_add("theme.css", "theme::css.default.intlTelInput.min.css") }}
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
+    <style>
+        .input-wrapper a {
+            margin-bottom: 0px !important;
+        }
+
+        .file-rows-table {
+            display: none;
+        }
+
+        .flag {
+            background: url("{{ img('theme::css/default/img/flags16.png').path }}") no-repeat;
+        }
+    </style>
+
+{% endblock %}
+
+

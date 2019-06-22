@@ -1,0 +1,102 @@
+<?php
+
+return [
+    'auto_approve' => [
+        'name' => 'Auto Approve',
+    ],
+    'default_published_time' => [
+        'name' => 'Default Publish Time',
+    ],
+    'default_adv_limit' => [
+        'name' => 'Default Ads Limit',
+    ],
+    'address' => [
+        'name' => 'Contact Adress',
+    ],
+    'phone' => [
+        'name' => 'Contact Phone',
+    ],
+    'contact_mail' => [
+        'name' => 'Contact Mail',
+        'warning'      => 'Auto added sitename <strong>info</strong>@sitename ',
+    ],'map_coordinates_long' => [
+        'name' => 'Map Long Coordinate',
+    ],
+    'map_coordinates_lat' => [
+        'name' => 'Map Lat Coordinate',
+    ],
+    'logo' => [
+        'name' => 'Logo',
+    ],
+    'ogImage' => [
+        'name' => 'Social Share Logo',
+        'warning'      => 'It should be at a resolution of 1200 x 630. ',
+
+    ],
+    'currencies' => [
+        'name' => 'Active Currencies',
+    ],
+    'site_address' => [
+        'name' => 'Site address',
+        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
+    ],
+    'google_map_key' => [
+        'name' => 'Google Map Api Key',
+    ],
+
+    'default_country' => [
+        'name' => 'Default Ad Country',
+    ],
+    'default_city' => [
+        'name' => 'Default Ad City',
+    ],
+    'default_district' => [
+        'name' => 'Default Ad District',
+    ],
+    'default_neighborhood' => [
+        'name' => 'Default Ad Neighborhood',
+    ],
+    'default_currency' => [
+        'name' => 'Default Ad Currency',
+    ],
+    'default_GET' => [
+        'name' => 'Default Ad GET',
+    ],
+    'twitter' => [
+        'name' => 'Twitter',
+    ],
+    'facebook' => [
+        'name' => 'Facebook',
+    ],
+    'youtube' => [
+        'name' => 'Youtube',
+    ],
+    'google' => [
+        'name' => 'Google',
+    ],
+    'watermark_type' => [
+        'name' => 'Watermark Type',
+    ],
+    'watermark_text' => [
+        'name' => 'Watermark Text',
+    ],
+    'watermark_image' => [
+        'name' => 'Watermark Image',
+    ],
+    'watermark_position' => [
+        'name' => 'Watermark Position',
+    ],
+    'watermark_opacity' => [
+        'name' => 'Watermark Opacity',
+    ],
+    'listing_page_image' => [
+        'name' => 'Listing Page Image',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Enabled Currencies',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google Statistic Code',
+    ],
+
+];

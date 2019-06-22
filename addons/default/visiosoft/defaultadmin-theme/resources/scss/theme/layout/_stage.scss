@@ -1,0 +1,20 @@
+.stage {
+    top: 2rem;
+    left: 2rem;
+    right: 2rem;
+    width: auto;
+    bottom: 2rem;
+    z-index: 1000;
+    position: fixed;
+    overflow: scroll;
+    background: #f1f1f1;
+    outline: 2rem solid rgba(0, 0, 0, 0.8);
+
+    display: none;
+    visibility: hidden;
+
+    &.stage--open {
+        display: initial;
+        visibility: visible;
+    }
+}

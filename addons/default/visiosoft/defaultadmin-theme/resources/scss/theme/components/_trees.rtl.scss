@@ -1,0 +1,14 @@
+ul.tree {
+    padding-right: 0;
+
+    li {
+        .card {
+            padding-right: 0;
+            padding-left: 4px;
+
+            .buttons {
+                float: left;
+            }
+        }
+    }
+}

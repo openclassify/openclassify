@@ -1,0 +1,48 @@
+<!-- Important Messages -->
+{% if message_exists('important') %}
+    <div class="alert alert-danger notification-alert-danger" style="display: none">
+        {% for message in message_get('important') %}
+            {{ trans(message)|markdown }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Success Messages -->
+{% if message_exists('success') %}
+    <div class="alert alert-success notification-alert-success" data-dismiss="alert" style="display: none">
+        {% for message in message_get('success') %}
+            {{ trans(message)|markdown }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Informational Messages -->
+{% if message_exists('info') %}
+    <div class="alert alert-info notification-alert-info" data-dismiss="alert" style="display: none">
+        {% for message in message_get('info') %}
+            {{ trans(message)|markdown }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Warning Messages -->
+{% if message_exists('warning') %}
+    <div class="alert alert-warning notification-alert-warning" data-dismiss="alert" style="display: none">
+        {% for message in message_get('warning') %}
+            {{ trans(message)|markdown }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+<!-- Error Messages -->
+{% if message_exists('error') %}
+    <div class="alert alert-danger notification-alert-danger" data-dismiss="alert" style="display: none">
+        {% for message in message_get('error') %}
+            {% if message == 'The "Username" field is required.' %}
+            The "Phone Number" field is required.
+            {% else %}
+            {{ trans(message)|markdown }}
+            {% endif %}
+        {% endfor %}
+    </div>
+{% endif %}

@@ -1,0 +1,85 @@
+<div class="ad-profile section">
+    <div class="user-profile">
+        <div class="user-images">
+            <img src="
+                        {% if profiles.file == "" %}
+                        {{ img('theme::images/user.jpg').url }}
+                        {% else %}
+                            {{ profiles.file.url }}
+                            {% endif %}
+                            " width="72" height="73" alt="User Images" class="img-responsive">
+        </div>
+        <div class="user">
+            <h2><font>{{ trans("visiosoft.module.profile::field.menu_hello_msg.name") }}, </font><a
+                        href="#">{{ auth_user().first_name }} {{ auth_user().last_name }}</a></h2>
+            <h5>{{ trans("visiosoft.module.profile::field.menu_last_msg.name") }}: {{ auth_user().last_login_at|date("d/m/Y") }}</h5>
+        </div>
+
+        <div class="favorites-user">
+            <div class="my-ocs">
+                <a href="#advPanel">{{ advs_count }}
+                    <small>{{ trans("visiosoft.module.profile::field.menu_my_ads.name") }}</small>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!--Web Menu Field Start-->
+    <ul class="user-menu-no-border" role="tablist">
+        <li role="presentation" class="active">
+            <a class="tab-btn" href="#profilePanel" data-toggle="collapse"
+               data-parent="#accordion">{{ trans("visiosoft.module.profile::field.menu_profile.name") }}</a>
+        </li>
+
+        <li role="presentation" data-panel="my_adv">
+            <a class="tab-btn" href="#advPanel" data-toggle="collapse"
+               data-parent="#accordion">{{ trans("visiosoft.module.profile::field.menu_my_ads.name") }}</a>
+        </li>
+
+        {% if entries('advs').isEnabled('orders') %}
+            <li role="presentation">
+                <a class="tab-btn" href="#ordersPanel" data-toggle="collapse"
+                   data-parent="#accordion">{{ trans("visiosoft.module.profile::field.menu_orders.name") }}</a>
+            </li>
+        {% endif %}
+
+        <li role="presentation">
+            <a class="tab-btn" href="#addressPanel" data-toggle="collapse"
+               data-parent="#accordion">{{ trans("visiosoft.module.profile::field.menu_address.name") }}</a>
+        </li>
+
+        {% if entries('advs').isEnabled('balances') %}
+            <li role="presentation">
+                <a class="tab-btn" href="#balancePanel" data-toggle="collapse"
+                   data-parent="#accordion">{{ trans('visiosoft.module.balances::field.menu_balance.name') }}</a>
+            </li>
+        {% endif %}
+
+        {% if entries('advs').isEnabled('messages') %}
+            <li role="presentation">
+                <a class="tab-btn" href="#messagesPanel" data-toggle="collapse"
+                   data-parent="#accordion">{{ trans("visiosoft.module.profile::field.messages.name") }}</a>
+            </li>
+        {% endif %}
+
+        {% if entries('advs').isEnabled('packages') %}
+            <li role="presentation">
+                <a class="tab-btn" href="#packagesPanel" data-toggle="collapse"
+                   data-parent="#accordion">{{ trans('visiosoft.module.profile::field.menu_packages.name') }}</a>
+            </li>
+        {% endif %}
+
+        {% if entries('advs').isEnabled('favs') %}
+            <li role="presentation">
+                <a class="tab-btn" href="#favoritesPanel" data-toggle="collapse"
+                   data-parent="#accordion">{{ trans('visiosoft.module.profile::field.favorites') }}</a>
+            </li>
+        {% endif %}
+
+        {% if entries('advs').isEnabled('subscriptions') %}
+            <li role="presentation">
+                <a href="profile/subscription">{{ trans('visiosoft.module.profile::field.subscriptions.name') }}</a>
+            </li>
+        {% endif %}
+    </ul>
+    <!--Web Menu Field End-->
+</div>

@@ -1,0 +1,118 @@
+{{ blocks('advs-default-theme-home-mobile') }}
+
+<!-- footer -->
+<footer id="footer" class="clearfix">
+    <!-- footer-top -->
+    <section class="footer-top clearfix">
+        <div class="container">
+            <div class="row">
+                <!-- footer-widget -->
+                <div class="col-sm-3">
+                    <div class="footer-widget">
+                        <h3>{{ trans("visiosoft.theme.default::addon.privacy_and_use") }}</h3>
+                        <ul>
+                            <li>
+                                {% set footer_nav = entries('pages').get() %}
+                                {% for item in footer_nav %}
+                                    <a href="/{{ item.slug }}">{{ item.title }}</a>
+                                {% endfor %}
+                            </li>
+                        </ul>
+                    </div>
+                </div><!-- footer-widget -->
+
+                <!-- footer-widget -->
+                <div class="col-sm-3">
+                    <div class="footer-widget">
+                        <h3>{{ trans("visiosoft.theme.default::addon.sell_fast") }}</h3>
+                        <ul>
+                            {% for link in links('footer').cache({'namespace': 'user'}).user().get() %}
+                                <p>
+                                <li><a href="{{ link.url }}">{{ link.title }}</a></li>
+                                </p>
+                            {% endfor %}
+                        </ul>
+                        <p>{{ trans("visiosoft.theme.default::addon.subscribe") }}</p>
+                        <!-- form -->
+                        <form action="#">
+                            <input type="email" class="form-control"
+                                   placeholder="{{ trans("visiosoft.theme.default::addon.your_email") }}">
+                            <button type="submit"
+                                    class="btn btn-primary">{{ trans("visiosoft.theme.default::addon.sign_up") }}</button>
+                        </form><!-- form -->
+                    </div>
+                </div><!-- footer-widget -->
+
+                <!-- footer-widget -->
+                <div class="col-sm-3">
+                    <div class="footer-widget social-widget">
+                        <h3>{{ trans("visiosoft.theme.default::addon.follow_us_on") }}</h3>
+                        <ul>
+                            <li><a href="https://{{ setting_value('visiosoft.module.advs::facebook') }}"><i
+                                            class="fa fa-facebook-square"></i>Facebook</a></li>
+                            <li><a href="https://{{ setting_value('visiosoft.module.advs::twitter') }}"><i
+                                            class="fa fa-twitter-square"></i>Twitter</a></li>
+                            <li><a href="https://{{ setting_value('visiosoft.module.advs::youtube') }}"><i
+                                            class="fa fa-youtube-play"></i>youtube</a></li>
+                        </ul>
+                    </div>
+                </div><!-- footer-widget -->
+
+                <!-- footer-widget -->
+                <div class="col-sm-3">
+                    <div class="footer-widget news-letter">
+                        <h3>{{ trans("visiosoft.theme.default::addon.newsletter") }}</h3>
+                        <div class="sub-newsletter">
+                            <div class="newsletter-item">
+                                <div class="newsletter-icon">
+                                    <i class="fa fa-phone-square"></i>
+                                </div>
+                                <div class="newsletter-text">
+                                    <span>{{ trans("visiosoft.theme.default::addon.contact_us") }}</span><br>
+                                    <span>{{ setting_value('visiosoft.module.advs::phone') }}</span>
+                                </div>
+                            </div>
+                            <div class="newsletter-item">
+                                <div class="newsletter-icon">
+                                    <i class="fa fa-question-circle"></i>
+                                </div>
+                                <div class="newsletter-text">
+                                    <span>{{ trans("visiosoft.theme.default::addon.help_center") }}</span><br>
+                                    <span>{{ setting_value('visiosoft.module.advs::contact_mail') }}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- footer-widget -->
+            </div><!-- row -->
+        </div><!-- container -->
+    </section><!-- footer-top -->
+    {% if entries('advs').isEnabled('carts') and cart_items.quantity != 0 and app.request.requestUri != "/cart" and app.request.requestUri != "/cart/review" %}
+        <a href="{{ url_route('visiosoft.module.carts::cart') }}">
+            <div class="mobile-cart-field">
+                <div class="mobile-cart-active-box">{{ count(cart_items.items) }}</div>
+            </div>
+        </a>
+    {% endif %}
+    <div class="footer-bottom clearfix text-center">
+        <div class="container">
+            <p>{{ trans("visiosoft.theme.default::addon.copyright") }} <a href="http://visiosoft.com.tr/">Visiosoft
+                    Inc.</a></p>
+        </div>
+    </div><!-- footer-bottom -->
+</footer>
+{% if setting('visiosoft.module.advs::google_statistic_code') != "" %}
+    <script async
+            src="https://www.googletagmanager.com/gtag/js?id={{ setting('visiosoft.module.advs::google_statistic_code') }}"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+
+        gtag('js', new Date());
+
+        gtag('config', '{{ setting('visiosoft.module.advs::google_statistic_code') }}');
+    </script>
+{% endif %}

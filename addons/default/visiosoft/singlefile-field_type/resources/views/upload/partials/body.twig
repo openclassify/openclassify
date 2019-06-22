@@ -1,0 +1,16 @@
+<div class="modal-body">
+
+    <div class="dropzone"
+         data-folder="{{ folder.id }}"
+         data-icon="{{ icon('upload')|escape }}"
+         data-max-size="{{ max_upload_size() }}"
+         data-message="{{ trans('visiosoft.field_type.singlefile::message.upload') }}"
+         data-loading="{{ trans('visiosoft.field_type.singlefile::message.loading') }}"
+         data-uploading="{{ trans('visiosoft.field_type.singlefile::message.uploading') }}"
+         data-overwrite="{{ trans('visiosoft.field_type.singlefile::message.overwrite') }}"
+         data-max-parallel="{{ setting_value('anomaly.module.files::max_parallel_uploads', 3) }}"
+         data-allowed="{{ folder.allowed_types.value ? '.' ~ folder.allowed_types.value|join(',.') }}"></div>
+
+    <div class="uploads"></div>
+
+</div>

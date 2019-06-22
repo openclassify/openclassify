@@ -1,0 +1,55 @@
+<!doctype html>
+
+<!--[if lt IE 7]>
+<html class="nojs ms lt_ie7" lang="en"><![endif]-->
+<!--[if IE 7]>
+<html class="nojs ms ie7" lang="en"><![endif]-->
+<!--[if IE 8]>
+<html class="nojs ms ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]>
+<html class="nojs ms" lang="en"><![endif]-->
+
+<html>
+
+<head>
+    {% include "theme::partials/metadata" %}
+</head>
+
+<body id="installer" class="variant-{{ random(8) }}" data-variants="8">
+
+<div class="logo">
+    <a href="/admin" class="variant-logo">
+        {{ img('theme::img/icon.svg').data|raw }}
+    </a>
+</div>
+
+<main id="main">
+    <div class="container">
+
+        <div class="container-fluid">
+            {% include "theme::partials/messages" %}
+        </div>
+
+        {% block content %}{% endblock %}
+
+    </div>
+</main>
+
+{% include "theme::partials/assets" %}
+
+<script type="text/javascript">
+
+    function generateRandom() {
+        var num = Math.floor(Math.random() * Number($('body').data('variants'))) + 1;
+        return $('body').hasClass('variant-' + num) ? generateRandom() : num;
+    }
+
+    $(function() {
+        $('.progress').on('DOMSubtreeModified', function() {
+            $('body').attr('class', 'variant-' + generateRandom());
+        });
+    });
+</script>
+
+</body>
+</html>

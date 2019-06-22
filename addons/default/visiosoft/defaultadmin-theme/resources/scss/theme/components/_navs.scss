@@ -1,0 +1,76 @@
+
+.nav {
+
+    &.nav-sections {
+        margin-bottom: 1em;
+        background-color: #e1e2e3;
+
+        li {
+            text-align: center;
+            display: inline-block;
+
+            a {
+                color: #858b8f;
+                display: block;
+                padding: 0.5em 2em;
+            }
+
+            &.active {
+                a {
+                    color: $gray;
+                    background: #ffffff;
+                }
+            }
+        }
+
+        &.nav-stacked {
+            float: left;
+            width: 200px;
+            margin-bottom: 0;
+
+            .nav-item {
+                display: block;
+                text-align: left;
+
+                .nav-link {
+                    padding: 0.5em 1em;
+                }
+            }
+        }
+
+        &.nav-alt {
+            li {
+                &.active {
+                    a {
+                        color: $gray;
+                        background: #f7f7f7;
+                    }
+                }
+            }
+        }
+    }
+
+    &.nav-pills {
+        .nav-item {
+            .nav-link {
+                color: $body-color;
+
+                &:hover {
+                    background: $gray-lighter;
+                }
+
+                small {
+                    color: $gray-light;
+                }
+            }
+        }
+    }
+}
+
+.tab-pane:not(.active) {
+    display: none;
+}
+
+.tab-pane.tab-alt {
+    background: #f7f7f7;
+}

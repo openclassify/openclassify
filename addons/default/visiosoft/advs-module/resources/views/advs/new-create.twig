@@ -1,0 +1,188 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    <section id="main" class="clearfix home-default">
+        <div class="container">
+            {% include "theme::partials/messages" %}
+            <div class="breadcrumb-section">
+                <!-- breadcrumb -->
+                <ol class="breadcrumb">
+                    <li><a>{{ trans('visiosoft.module.advs::field.home') }}</a></li>
+                    <li>{{ trans('visiosoft.module.advs::field.ad_post') }}</li>
+                </ol><!-- breadcrumb -->
+                <h2 class="title">
+                    {% if entry(id) == null %}
+                        {{ trans('visiosoft.module.advs::field.create_adv') }}
+                    {% else %}
+                        {{ trans('visiosoft.module.advs::field.edit_adv') }}
+                    {% endif %}
+                </h2>
+            </div>
+            <div class="adpost-details">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% set form = form('advs', 'advs').entry(id).actions(['update']).get() %}
+                        {{ form_open({
+                            'class': 'form ' ~ form.options.class ,
+                            'enctype': 'multipart/form-data',
+                            'url': 'advs/save_adv',
+                        })|raw }}
+                        <input type="hidden" value="pending_user" name="status">
+                        <input type="hidden" name="cat1" value="{{ request.cat1 }}">
+                        <input type="hidden" name="cat2" value="{{ request.cat2 }}">
+                        <input type="hidden" name="cat3" value="{{ request.cat3 }}">
+                        <input type="hidden" name="cat4" value="{{ request.cat4 }}">
+                        <input type="hidden" name="cat5" value="{{ request.cat5 }}">
+                        <input type="hidden" name="cat6" value="{{ request.cat6 }}">
+                        <input type="hidden" name="cat7" value="{{ request.cat7 }}">
+                        <input type="hidden" id="currencies" name="currencies" value="">
+                        <input type="hidden" name="update_id" value="{{ id }}">
+                        <fieldset>
+                            <div class="section postdetails">
+                                <h4>
+                                    {{ trans('visiosoft.module.advs::field.sell_item') }}
+                                    <span class="pull-right">* {{ trans('visiosoft.module.advs::field.mandatory_fields') }}</span>
+                                </h4>
+                                <div class="form-group selected-product">
+                                    <ul class="select-category list-inline">
+                                        {% for cat in cats_d %}
+                                            <li>
+                                                <a>
+                                                    {{ cat }}
+                                                </a>
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                                <div class="row form-group add-title">
+                                    <div class="col-md-9">
+                                        {{ nameField|raw }}
+                                    </div>
+                                    {% if entries('advs').isEnabled('store') %}
+                                        {% include "visiosoft.module.store::field" %}
+                                    {% endif %}
+                                    <div style="display: none">
+                                        {{ form.fields.slug|raw }}
+                                    </div>
+                                </div>
+                                <div class="row form-group select-price">
+                                    <label class="col-sm-2 label-title col-xs-12">{{ form.fields.price.label|raw }}<span
+                                                class="required">*</span></label>
+                                    <div class="col-sm-4 col-xs-6">
+                                        {{ form.fields.price.input|raw }}
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6">
+                                        {{ form.fields.currency.setAttributes({
+                                            'required' :true,
+                                        }).input|raw }}
+                                    </div>
+                                </div>
+
+                                <div class="row form-group select-stock">
+                                    <label class="col-sm-2 label-title col-xs-12">{{ form.fields.is_get_adv.label|raw }}
+                                        / {{ form.fields.stock.label|raw }}<span
+                                                class="required">*</span></label>
+
+                                    <div class="col-sm-1 col-xs-4">
+                                        {% if entries('advs').isEnabled('carts') %}
+                                            <div class="col-sm-1">
+                                                <div class="switch">
+
+                                                    <input type="checkbox" id="is_get_adv" name="is_get_adv" class="switch__checkbox
+                                                switch__checkbox--on-success
+                                                switch__checkbox--off-danger" data-field="is_get_adv" value="1"
+                                                           data-field_name="is_get_adv"
+                                                           data-provides="anomaly.field_type.boolean" {% if adv.is_get_adv == 1 %} checked {% endif %}>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div id="priceLi">
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-sm-3 col-xs-6">
+                                        {{ form.fields.stock.input|raw }}
+                                    </div>
+                                </div>
+                                <div class="row form-group brand-name">
+                                    {{ form.fields.advs_desc.input|raw }}
+                                </div>
+                                <div class="row form-group images">
+                                    {{ form.fields.files.input |raw }}
+                                </div>
+                                {% for custom_field in custom_fields %}
+                                    <div class="row form-group custom-fields">
+                                        <label class="col-sm-3 label-title">{{ custom_field.custom_field_label|raw }}</label>
+                                        <div class="col-sm-9">
+                                            {{ custom_field.custom_field_input|raw }}
+                                        </div>
+                                    </div>
+                                {% endfor %}
+                                <div class="row form-group location-map">
+                                    <div class="col-sm-4">
+                                        <ul style="padding: 0">
+                                            <li class="country-data" data-content="{{ adv['country_id'] }}"
+                                                data-default="{{ setting_value('visiosoft.module.advs::default_country') }}"
+                                                class="location-field country-data">{{ form.fields.country|raw }}</li>
+                                            <li class="city-data" data-content="{{ adv['city'] }}"
+                                                data-default="{{ setting_value('visiosoft.module.advs::default_city') }}"
+                                                class="location-field city-data">{{ form.fields.city|raw }}</li>
+                                            <li class="district-data" data-content="{{ adv['district'] }}"
+                                                class="location-field district-data">{{ form.fields.district|raw }}</li>
+                                            <li class="neighborhood-data" data-content="{{ adv['neighborhood'] }}"
+                                                class="location-field neighborhood-data">{{ form.fields.neighborhood|raw }}</li>
+                                            <li class="village-data" data-content="{{ adv['village'] }}"
+                                                class="location-field">{{ form.fields.village|raw }}</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-sm-8">
+                                        <div id="map-canvas" style="
+                                position: relative; overflow: hidden;
+                                transform: translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px);
+                                width: 100%;
+                                height:550px;
+                                background-color: rgb(229, 227, 223);
+                            "></div>
+                                    </div>
+                                </div>
+                                <input value="{{adv.map_Val}}" name="map_Val" data-max="255" data-mask="" data-alias="" data-regex=""
+                                       type="text" placeholder="" class="hidden d-none mapVal" data-field="map_Val"
+                                       data-field_name="map_Val" data-provides="anomaly.field_type.text">
+                            </div><!-- section -->
+                            {% if entries('advs').isEnabled('cloudinary') %}
+                                {% include "visiosoft.module.cloudinary::cloudinary-video" %}
+                            {% endif %}
+
+                            <div class="checkbox section agreement">
+
+                                <label for="send">
+                                    <input type="checkbox" name="send" id="send" required>
+
+                                    {{ blocks('advs-default-theme-post-adv-bottom') }}
+                                </label><br>
+                                {{ form.actions|raw }}
+                            </div><!-- section -->
+
+                        </fieldset>
+                    </div>
+                </div><!-- photos-ad -->
+
+            </div>
+            {{ form.close|raw }}
+        </div>
+        </div>
+    </section>
+    <script>
+        var default_country = "{{ setting_value('visiosoft.module.advs::default_country') }}";
+        var default_city = "{{ setting_value('visiosoft.module.advs::default_city') }}";
+        var default_district = "{{ setting_value('visiosoft.module.advs::default_district') }}";
+        var default_neighborhood = "{{ setting_value('visiosoft.module.advs::default_neighborhood') }}";
+        var default_currency = "{{ setting_value('visiosoft.module.advs::default_currency') }}";
+        var default_GET = "{{ setting_value('visiosoft.module.advs::default_GET') }}";
+        var adv_id = "{{ id }}";
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.advs::google_map_key') }}&callback="
+            type="text/javascript"></script>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
+{% endblock %}

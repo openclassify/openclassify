@@ -1,0 +1,93 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/keyboard.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+
+    <div class="container-fluid">
+        {% set form = form('profile', 'profile').redirect('/profile').entry(profiles.id).get() %}
+        {{  form_open({
+        'class': 'form ' ~ form.options.class ,
+        'enctype': 'multipart/form-data',
+            'data-name': 'profile',
+        'url': 'admin/profile/update/'~ users.id
+    })|raw }}
+        <div class="card">
+            <div class="card-block">
+                <div class="field-group row">
+                    {{ form.fields.file|raw }}
+                    </div>
+
+                <div class="field-group row">
+                <div class="col-sm-12 {{ users.first_name.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.first_name.name") }}</label>
+                    {{ users.first_name.input|raw }}
+                </div>
+                <div class=" col-sm-12 {{ users.last_name.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.last_name.name") }}</label>
+                    {{ users.last_name.input|raw }}
+                </div></div>
+                <div class="field-group row">
+                <div class="col-sm-12 {{ users.display_name.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.display_name.name") }}</label>
+                    {{ users.display_name.input|raw }}
+                </div>
+                <div class="col-sm-12 {{ users.username.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.username.name") }}</label>
+                    {{ users.username.input|raw }}
+                </div></div>
+                <div class="field-group row">
+                <div class="col-sm-12 {{ users.email.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.email.name") }}</label>
+                    {{ users.email.input|raw }}
+                </div>
+                <div class="col-sm-6 {{ users.activated.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.activated.name") }}</label>
+                    {{ users.activated.input|raw }}
+                </div>
+                <div class="col-sm-6 {{ users.enabled.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.enabled.name") }}</label>
+                    {{ users.enabled.input|raw }}
+                </div>
+                </div>
+
+
+
+                <div class="field-group row">
+                <div class="col-sm-8 {{ profiles.gsm_phone.input_name|raw}}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.gsm_phone.name") }}</label>
+                    {{ profiles.gsm_phone.input|raw}}
+                </div>
+
+                <div class="col-sm-8 {{ profiles.land_phone.input_name|raw}}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.land_phone.name") }}</label>
+                    {{ profiles.land_phone.input|raw}}
+                </div>
+                 <div class="col-sm-8 {{ profiles.office_phone.input_name|raw}}">
+                     <label class="control-label">{{ trans("visiosoft.module.profile::field.office_phone.name") }}</label>
+                     {{ profiles.office_phone.input|raw}}
+                 </div>
+                </div>
+                <div class="field-group row">
+                <div class="col-sm-12 {{ profiles.identification_number.input_name|raw}}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.identification_number.name") }}</label>
+                    {{ profiles.identification_number.input|raw}}
+                </div>
+                <div class="col-sm-12 {{ profiles.register_type.input_name|raw}}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.register_type.name") }}</label>
+                    {{ profiles.register_type.input|raw}}
+                </div>
+                </div>
+                <div class="col-sm-12">
+                    {{ form.actions|raw }}
+                </div>
+            </div>
+        </div>
+        {{ form.close|raw }}
+    </div>
+
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
+
+{% endblock %}

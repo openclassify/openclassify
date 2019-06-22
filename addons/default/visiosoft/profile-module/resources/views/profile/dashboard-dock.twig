@@ -1,0 +1,69 @@
+{{ asset_add('styles.css', 'visiosoft.module.profile::assets/css/dashboard-widget.css') }}
+<div class="col-sm-12 dashboard-panel">
+    <div class="col-xs-6 col-md-3 text-center widget-field">
+        <div class="widget-dashboard">
+            <div class="widget-heading clearfix">
+                <div class="pull-left"><i
+                            class="fa fa-tags"></i> {{ trans("visiosoft.module.profile::field.active_ads.name") }}</div>
+            </div>
+            <div class="widget-body clearfix ads-widget">
+                <div class="pull-left">
+                    <i class="fa fa-tags"></i>
+                </div>
+                <div class="pull-right number">{{ advs_count }}</div>
+            </div>
+        </div>
+    </div>
+    {% if entries('advs').isEnabled('messages') %}
+        <div class="col-xs-6 col-md-3 text-center widget-field">
+            <div class="widget-dashboard">
+                <div class="widget-heading clearfix">
+                    <div class="pull-left"><i
+                                class="fa fa-envelope"></i> {{ trans("visiosoft.module.profile::field.messages.name") }}
+                    </div>
+                </div>
+                <div class="widget-body clearfix message-widget">
+                    <div class="pull-left">
+                        <i class="fa fa-envelope"></i>
+                    </div>
+                    <div class="pull-right number">{{ message_count }}</div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if entries('advs').isEnabled('favs') %}
+        <div class="col-xs-6 col-md-3 text-center widget-field">
+            <div class="widget-dashboard">
+                <div class="widget-heading clearfix">
+                    <div class="pull-left"><i
+                                class="fa fa-star"></i> {{ trans("visiosoft.module.profile::field.favorites") }}</div>
+                </div>
+                <div class="widget-body clearfix favs-widget">
+                    <div class="pull-left">
+                        <i class="fa fa-star"></i>
+                    </div>
+                    <div class="pull-right number">{{ fav_count }}</div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if entries('advs').isEnabled('balances') %}
+        <div class="col-xs-6 col-md-3 text-center widget-field">
+            <div class="widget-dashboard">
+                <div class="widget-heading clearfix">
+                    <div class="pull-left"><i
+                                class="fa fa-money"></i> {{ trans("visiosoft.module.balances::field.menu_balance.name") }}
+                    </div>
+                </div>
+                <div class="widget-body clearfix balance-widget">
+                    <div class="pull-left">
+                        <i class="fa fa-money"></i>
+                    </div>
+                    <div class="pull-right number">{{ userbalance }}</div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</div>
+
+

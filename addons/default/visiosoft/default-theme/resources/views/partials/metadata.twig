@@ -1,0 +1,55 @@
+<!-- Locale -->
+<meta http-equiv="Content-Language" content="{{ config('app.locale') }}">
+
+<!-- To the Future! -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!-- font -->
+
+<link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Signika+Negative:400,300,600,700' rel='stylesheet' type='text/css'>
+
+
+<!-- Meta Tags -->
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width"/>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="{{ config_get('streams::distribution.name') }}"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<meta name="description" content="{{ trans(template.meta_description) }}"/>
+
+
+<title>
+    {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
+    &#8250;
+    {{ trans(template.meta_title) }}
+</title>
+
+<!-- Favicon -->
+{#{{ favicons("theme::img/favicon.png") }}#}
+
+{# Base Theme Components #}
+{{ asset_add("theme.css", "theme::scss/bootstrap/bootstrap.scss") }}
+{{ asset_add("theme.css", "theme::font-awesome/css/all.css") }}
+{{ asset_add("theme.css", "theme::font-awesome/css/v4-shims.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.defaultadmin::css/select2.css") }}
+
+{{ asset_style("theme.css") }}
+{# Specific Build Files #}
+{{ asset_add("build.css", "theme::scss/theme/theme.scss", ["live"]) }}
+
+{# Specific Build Files #}
+{{ asset_add("build.css", "theme::scss/theme/theme.scss", ["live"]) }}
+
+{# Include Asset Collections #}
+<style type="text/css">
+    {#{{ asset_inline("theme.css", ["min"]) }}#}
+    {{ asset_inline("build.css", ["parse", "min", "watch@theme::scss/theme"]) }}
+</style>
+
+{{ asset_add("visiosoft_default.css", "theme::css/default/*") }}
+{{ asset_style("visiosoft_default.css") }}
+{{ template.includes.render('head')|raw }}
+
+{# Important!! #}
+{{ constants() }}

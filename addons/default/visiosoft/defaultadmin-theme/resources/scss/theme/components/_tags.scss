@@ -1,0 +1,4 @@
+.tag {
+    vertical-align: text-bottom;
+    @include border-radius($border-radius-sm);
+}

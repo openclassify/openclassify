@@ -1,0 +1,12 @@
+{
+    "name": "visiosoft/advs-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\AdvsModule\\": "src/"
+        }
+    },
+    "require": {
+        "wirelab/language_switcher-plugin": "^1.3"
+    }
+}

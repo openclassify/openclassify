@@ -1,0 +1,9 @@
+{
+    "name": "visiosoft/profile-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\ProfileModule\\": "src/"
+        }
+    }
+}

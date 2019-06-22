@@ -1,0 +1,39 @@
+<div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" data-panel="my_adv" href="#advPanel">
+            {{ trans("visiosoft.module.profile::field.menu_my_ads.name") }}<span class="pull-right"><i
+                        class="fa fa-plus"></i></span>
+        </a>
+    </h4>
+</div>
+<div id="advPanel" class="panel-collapse collapse">
+    <!-- panel-body -->
+    <div id="favs-outer">
+        <div class="ad-profile section">
+            <ul class="nav nav-tabs ads-menu" role="tablist">
+                <li role="presentation" class="active"><a class="tab-btn" href="#my_ads" aria-controls="my_ads"
+                                                          role="tab"
+                                                          data-toggle="tab">{{ trans("visiosoft.module.profile::field.menu_my_ads.name") }}</a>
+                </li>
+                <li role="presentation"><a class="tab-btn" href="#pending_ads" aria-controls="pending_ads" role="tab"
+                                           data-toggle="tab">{{ trans("visiosoft.module.profile::field.menu_pending_ads.name") }}</a>
+                </li>
+                <li role="presentation"><a class="tab-btn" href="#archived_ads" aria-controls="archived_ads" role="tab"
+                                           data-toggle="tab">{{ trans("visiosoft.module.profile::field.menu_archived_ads.name") }}</a>
+                </li>
+            </ul>
+        </div>
+        <div id="fav_tabs">
+            <div class="tab-content">
+                <div class="col-md-12 tab-pane active myAdvsList" role="tabpanel" id="my_ads">
+                </div>
+                <div class="col-md-12 tab-pane pendingAdvsList" role="tabpanel" id="pending_ads">
+                </div>
+                <div class="col-md-12 tab-pane archivedAdvsList" role="tabpanel" id="archived_ads">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--panel-body-end-->
+</div>

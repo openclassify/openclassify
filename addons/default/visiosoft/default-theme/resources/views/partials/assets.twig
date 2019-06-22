@@ -1,0 +1,38 @@
+{#
+    Main CSS can be found in metadata.twig
+#}
+
+{# Core Theme Components #}
+{{ asset_add("theme.js", "theme::js/vendor/jquery.min.js") }}
+{{ asset_add("theme.js", "theme::js/vendor/bootstrap.min.js") }}
+{{ asset_add("theme.js", "theme::js/vendor/vue.min.js") }}
+{{ asset_add("theme.js", "theme::js/bootstrap-notify.js") }}
+{{ asset_add("theme.js", "theme::js/nav.js") }}
+{{ asset_add("theme.js", "theme::js/params.js") }}
+{{ asset_add("theme.js", "theme::js/notification.js") }}
+{{ asset_add("theme.js", "theme::js/ajaxLoader.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.defaultadmin::js/theme/select2.js") }}
+
+
+{# Theme Scripts #}
+{#{{ asset_add("theme.js", "theme::js/plugins/*") }}#}
+{{ asset_add("theme.js", "theme::js/theme/initialize.js") }}
+
+{{ asset_script("theme.js", ["min"]) }}
+
+{# Include Scripts Loaded From Outside #}
+{% for script in asset_scripts("scripts.js") %}
+    {{ script|raw }}
+{% endfor %}
+
+{{ template.includes.render('scripts')|raw }}
+
+{# Include Styles Loaded From Outside #}
+{% for style in asset_styles("styles.css") %}
+    {{ style|raw }}
+{% endfor %}
+{{ asset_style("theme::css/default/animate") }}
+{{ asset_add("visiosoft_default.js", "theme::js/default/*") }}
+{{ asset_script("visiosoft_default.js") }}
+{{ asset_add("visiosoft_default_custom.js", "theme::js/zcustom.js") }}
+{{ asset_script("visiosoft_default_custom.js") }}

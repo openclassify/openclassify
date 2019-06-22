@@ -1,0 +1,32 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    {% include "theme::partials/messages" %}
+
+    {% set form = form('advs', app.request.query|keys|first).entry(id).get() %}
+
+    {{ form_open()|raw }}
+        <div class="container-fluid">
+            <div class="card">
+                <div class="card-block">
+                    {{ form.fields.name|raw }}
+                    {{ form.fields.slug|raw }}
+                    {% if app.request.get('cities') is not empty %}
+                        <input type="hidden" name="parent_country_id" value="{{ app.request.get('cities') }}">
+                    {% elseif app.request.get('districts') is not empty %}
+                        <input type="hidden" name="parent_city_id" value="{{ app.request.get('districts') }}">
+                    {% elseif app.request.get('neighborhoods') is not empty %}
+                        <input type="hidden" name="parent_district_id" value="{{ app.request.get('neighborhoods') }}">
+                    {% elseif app.request.get('village') is not empty %}
+                        <input type="hidden" name="parent_neighborhood_id" value="{{ app.request.get('village') }}">
+                    {% endif %}
+                    {{ form.fields.order|raw }}
+                </div>
+            </div>
+            <div class="controls card">
+                <div class="card-block">
+                    {{ form.actions|raw }}
+                </div>
+            </div>
+        </div>
+    {{ form.close|raw}}
+{% endblock %}

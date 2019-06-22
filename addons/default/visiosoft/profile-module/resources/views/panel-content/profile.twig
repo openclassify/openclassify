@@ -1,0 +1,110 @@
+<div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#profilePanel">
+            {{ trans("visiosoft.module.profile::field.menu_profile.name") }}<span class="pull-right"><i
+                        class="fa fa-plus"></i></span>
+        </a>
+    </h4>
+</div>
+<div id="profilePanel" class="panel-collapse collapse in">
+    <!-- panel-body -->
+    {% set form = form('profile', 'profile').redirect('/profile/home').entry(profiles.id).actions(['update']).get() %}
+    {{ form_open({
+        'class': 'form ' ~ form.options.class ,
+        'enctype': 'multipart/form-data',
+        'data-name': 'profile',
+        'url': 'profile/update'
+    })|raw }}
+    <div class="user-pro-section">
+        <!-- profile-photo -->
+        <div class="profile-details section">
+            <h2>{{ trans("visiosoft.module.profile::field.profile_photo.name") }}</h2>
+            {{ form.fields.file|raw }}
+            {{ form.actions|raw }}
+        </div><!-- profile-photo -->
+
+        <!-- profile-details -->
+        <div class="profile-details section required-field-profile">
+            <h2>{{ trans("visiosoft.module.profile::field.profile_details.name") }}</h2>
+            <div class="form-group">
+                <label class="control-label">{{ trans("visiosoft.module.profile::field.first_name.name") }}</label>
+                {{ users.first_name.input|raw }}
+            </div>
+            <div class="form-group">
+                <label class="control-label">{{ trans("visiosoft.module.profile::field.last_name.name") }}</label>
+                {{ users.last_name.input|raw }}
+            </div>
+            <div class="form-group required-profile-phone-field">
+                <label class="control-label">Phone</label>
+                <input type="text" class="form-control" id="phone" value="+{{ profiles.gsm_phone.value }}" name="gsm_phone">
+            </div>
+            <div class="form-group">
+                <label class="control-label">{{ trans("visiosoft.module.profile::field.email.name") }}</label>
+                <input type="email" value="{{ users.email }}" name="email" placeholder="" class="form-control"
+                       data-field="email" data-field_name="email" data-provides="anomaly.field_type.email" disabled>
+            </div>
+            {{ form.actions|raw }}
+
+        </div><!-- profile-details -->
+
+        <!-- listing-photo -->
+        <div class="profile-details section">
+            <h2>{{ trans("visiosoft.module.profile::field.adv_listing_banner.name") }}</h2>
+            {{ form.fields.adv_listing_banner|raw }}
+            {{ form.actions|raw }}
+        </div><!-- listing-photo -->
+
+        <!-- Corporate-settings -->
+        <div class="profile-details section">
+            <h2>{{ trans("visiosoft.module.profile::field.corporate_settings.name") }}</h2>
+            <div class=" form-group">
+                <label class="control-label">{{ trans("visiosoft.module.profile::field.identification_number.name") }}</label>
+                {{ profiles.identification_number.input|raw }}
+            </div>
+            <div class="form-group">
+                <label class="control-label">{{ trans("visiosoft.module.profile::field.register_type.name") }}</label>
+                {{ profiles.register_type.input|raw }}
+            </div>
+            <div class=" form-group">
+                <label class="control-label">{{ trans("visiosoft.module.profile::field.office_phone.name") }}</label>
+                {{ profiles.office_phone.input|raw }}
+            </div>
+            <div class=" form-group">
+                <label class="control-label">{{ trans("visiosoft.module.profile::field.land_phone.name") }}</label>
+                {{ profiles.land_phone.input|raw }}
+            </div>
+            {{ form.actions|raw }}
+        </div><!-- Corporate-settings -->
+
+
+        <!-- change-password -->
+        <div class="change-password section">
+            <h2>{{ trans("visiosoft.module.profile::field.change_password.name") }}</h2>
+            <!-- form -->
+            <div class="form-group">
+                <label>{{ trans("visiosoft.module.profile::field.new_password.name") }}</label>
+                <input type="password" name="new_password" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label>{{ trans("visiosoft.module.profile::field.re_new_password.name") }}</label>
+                <input type="password" name="re_new_password" class="form-control">
+            </div>
+            <div class="form-group confirm-password-field">
+                <i class="fa fa-warning"></i>
+                <input type="checkbox" name="confirm_password_input">
+                <label>{{ trans("visiosoft.module.profile::field.confirm_password_input.name") }}.</label>
+            </div>
+            {{ form.actions|raw }}
+        </div><!-- change-password -->
+        {{ form.close|raw }}
+        <!-- disable-account -->
+        <div class="section">
+            <h2><i class="fa fa-exclamation-triangle"
+                   aria-hidden="true"></i> {{ trans("visiosoft.module.profile::field.disable_account.name") }}</h2>
+            <div class="panel-body"> {{ trans("visiosoft.module.profile::field.disable_account_msg.name") }}.</div>
+            <button type="button" class="btn btn-danger"
+                    onclick="window.location.href='/profile/closeAccount'">{{ trans("visiosoft.module.profile::field.disable_account.name") }}</button>
+        </div><!-- disable-account -->
+    </div>
+</div>

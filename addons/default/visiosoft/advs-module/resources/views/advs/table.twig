@@ -1,0 +1,163 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    <!-- main -->
+    <section id="main" class="clearfix category-page">
+        <div class="container">
+            {% include "theme::partials/messages" %}
+            <div class="breadcrumb-section">
+                <!-- breadcrumb -->
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="/">{{ trans("visiosoft.module.advs::field.home") }}</a>
+                    </li>
+                    {% if app.request.get('cat') %}
+                        {% for category_breadcrumbs in mainCats.first.getMains(app.request.get('cat')) %}
+                            <li>
+                                <a href="{{ url_route('visiosoft.module.advs::list_cat', [category_breadcrumbs.id]) }}">{{ category_breadcrumbs.val }}</a>
+                            </li>
+                        {% endfor %}
+                    {% endif %}
+                </ol><!-- breadcrumb -->
+                {% if app.request.get('cat') %}
+                    <h2 class="title">{{ mainCats.first.getCategoryName(app.request.get('cat')) }}</h2>
+                {% else %}
+                    <h2 class="title">{{ trans("visiosoft.module.advs::field.recommended") }}</h2>
+                {% endif %}
+            </div>
+            <div class="category-info">
+                <div class="row">
+                    {% if app.request.get('user') != null or app.request.get('user') != "" %}
+                        <div class="col-md-12 upper-list-banner">
+                            <div class="upper-list-user">
+                                <div class="upper-list-img">
+                                    <a href=""><img src="{{ userProfile.file.url }}" alt=""></a>
+                                </div>
+                                <div class="upper-list-info">
+                                    {{ user.first_name }} {{ user.last_name }}
+                                </div>
+                            </div>
+                            <img src="https://s0.shbdn.com/assets/images/6075:5c5f1367b540e2e1c931a2c45e936b37.jpg">
+                        </div>
+                    {% endif %}
+                    <!-- accordion-->
+                    <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+                        {% include "visiosoft.module.advs::partials/list-filter" %}
+
+                        <!-- recommended-ads -->
+                        <div class="col-sm-8 col-md-9">
+                            <div class="section recommended-ads">
+                                <!-- featured-top -->
+                                {% include "visiosoft.module.advs::advs/partials/display_mode" %}
+                                <div class="featured-top">
+                                    {% if app.request.get('cat') %}
+                                        <h4>{{ trans("visiosoft.module.advs::field.search_ads_result_message.name",{'name':mainCats.first.getCategoryName(app.request.get('cat')),'count':count(advs)+count(featured_advs) }) }}</h4>
+                                    {% else %}
+                                        <h4>{{ trans("visiosoft.module.advs::field.recommended") }}</h4>
+                                    {% endif %}
+                                    <div class="dropdown pull-right">
+
+                                        <!-- category-change -->
+                                        <div class="dropdown">
+                                            <h5>{{ trans("visiosoft.module.advs::field.sort_by") }}:</h5>
+                                            <a data-toggle="dropdown" class="sort-by-open-dropdown" href="#"
+                                               aria-expanded="false">
+                                                <span class="sort-by-selected-text">{{ trans("visiosoft.module.advs::field.pick_option") }}</span><i
+                                                        class="fa fa-caret-square-o-down"></i></a>
+                                            <ul class="dropdown-menu sort-by-dropdown" x-placement="bottom-start">
+                                                <li><a href="#" data-value="all"
+                                                       class="sort-by-item">{{ trans("visiosoft.module.advs::field.pick_option") }}</a>
+                                                </li>
+                                                <li><a href="#" data-value="sort_price_up"
+                                                       class="sort-by-item">{{ trans("visiosoft.module.advs::field.price_high") }}</a>
+                                                </li>
+                                                <li><a href="#" data-value="sort_price_down"
+                                                       class="sort-by-item">{{ trans("visiosoft.module.advs::field.price-low") }}</a>
+                                                </li>
+                                                <li><a href="#" data-value="sort_time"
+                                                       class="sort-by-item">{{ trans("visiosoft.module.advs::field.newest") }}</a>
+                                                </li>
+                                            </ul>
+                                        </div><!-- category-change -->
+                                    </div>
+                                </div>
+                                <div class="category-tabs">
+
+                                </div>
+
+                                <table class="table ads-list-table">
+                                    <thead>
+                                    <tr>
+                                        <th scope="col" colspan="2" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
+                                        <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
+                                        <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                                        <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }} / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                                        {% if entries('advs').isEnabled('customfields') %}
+                                            {% include "visiosoft.module.customfields::cftable" %}
+                                        {% endif %}
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    {% include "visiosoft.module.advs::advs/partials/table-row" %}
+                                    </tbody>
+                                </table>
+                                <!-- pagination  -->
+                                <div class="text-center">
+                                    <div class="tool-pagination">
+                                        {{ advs.links()|raw }}
+                                    </div>
+                                </div><!-- pagination  -->
+                                {% if entries('advs').isEnabled('favs') %}
+                                    <div class="favorite-searches">
+                                        <div class="search-fav-icon col-md-1">
+                                            <i class="fa fa-search"></i>
+                                        </div>
+                                        <div class="search-fav-tex col-md-8">
+                                            <h4>{{ trans("visiosoft.module.advs::field.my_favorite_searches") }}</h4>
+                                            <br>
+                                            <p>{{ trans("visiosoft.module.advs::field.search_desc") }}</p>
+                                        </div>
+                                        <div class="search-fav-button col-md-3">
+                                            <button class="btn btn-success" type="button"
+                                                    id="save-search">{{ trans("visiosoft.module.advs::field.add_to_favorites") }}</button>
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+                        </div><!-- recommended-ads -->
+                    </form>
+                </div>
+            </div>
+            </form>
+
+        </div><!-- container -->
+    </section>
+
+
+
+    </section><!-- main -->
+
+    <div id="search-fav-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header message-header">
+                    <h4 class="modal-title">{{ trans("visiosoft.module.advs::field.add_to_favorites") }}</h4>
+                </div>
+                <form action="{{ url_route("visiosoft.module.favs::add_search") }}" method="POST">
+                    <div class="modal-body search-fav-body">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input name="url" type="hidden" value="{{ app.request.getRequestUri }}">
+                        <input placeholder="{{ trans("visiosoft.module.advs::field.search_name") }}"
+                               class="form-control" type="text" name="item_name" required>
+                    </div>
+                    <div class="modal-footer message-footer">
+                        <button id="send-fav-search" class="btn btn-success"
+                                type="submit">{{ trans("visiosoft.module.advs::field.send") }}</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/admin-list.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
+{% endblock %}

@@ -1,0 +1,37 @@
+<div class="panel-heading">
+    <h4 class="panel-title">
+        <a data-toggle="collapse" data-parent="#accordion" href="#addressPanel">
+            {{ trans("visiosoft.module.profile::field.menu_address.name") }}<span class="pull-right"><i
+                        class="fa fa-plus"></i></span>
+        </a>
+    </h4>
+</div>
+<div id="addressPanel" class="panel-collapse collapse">
+    <div class="my-adress section">
+        <a href="{{ url_route('visiosoft.module.profile::adress_create') }}" class="btn btn-primary btn-sm active"
+           role="button" aria-pressed="true">{{ trans("visiosoft.module.profile::field.create_address.name") }}</a>
+        <table class="table">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">{{ trans("visiosoft.module.profile::field.adress_name.name") }}</th>
+                <th scope="col">{{ trans("visiosoft.module.profile::field.adress_first_name.name") }}</th>
+                <th scope="col">{{ trans("visiosoft.module.profile::field.adress_last_name.name") }}</th>
+                <th scope="col">{{ trans("visiosoft.module.profile::field.actions.name") }}</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for key,adress in My_adress %}
+                <tr>
+                    <th scope="row">{{ key+1 }}</th>
+                    <td>{{ adress.adress_name }}</td>
+                    <td>{{ adress.adress_first_name }}</td>
+                    <td>{{ adress.adress_last_name }}</td>
+                    <td><a class="btn btn-sm btn-success" href="{{ url_route('visiosoft.module.profile::address_edit', [adress.id]) }}" role="button"><i
+                                    class="fa fa-pencil-square-o" aria-hidden="true"></i> {{ trans("visiosoft.module.profile::field.edit.name") }}</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>

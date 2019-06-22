@@ -1,0 +1,22 @@
+{% extends template.layout ?: "theme::layouts/default" %}
+
+{% block content %}
+
+<div class="row">
+    <div class="col-sm-24">
+        {% if message %}
+            <ul>
+                {% for message_detail in message_details %}
+                    <li style="margin-bottom:10px;">
+                        {{message_detail.sender.display_name}}
+                        <br>
+                        {{ message_detail.detail }}
+                        <br>
+                        {{ message_detail.sent_at.format(config_get('streams::datetime.date_format')) }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

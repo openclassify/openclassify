@@ -1,0 +1,81 @@
+SetEnvIf Authorization "(.*)" HTTP_AUTHORIZATION=$1
+
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    
+    RewriteBase /
+
+    # Redirect trailing slashes
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+    
+    # Redirect old/alternate domains
+    #RewriteCond %{HTTP_HOST} ^example.com [NC,OR]
+    #RewriteCond %{HTTP_HOST} ^www.example.com [NC]
+    #RewriteRule ^(.*)$ http://newdomain.com/$1 [L,R=301,NC]
+    
+    # Redirect to non-www
+    #RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+    #RewriteRule ^(.*)$ http://domain.com/$1 [R=301,L]
+    
+    # Redirect to www
+    #RewriteCond %{HTTP_HOST} !^www\.(.*)$ [NC]
+    #RewriteRule ^(.*)$ http://www.domain.com/$1 [R=301,L]
+    
+    # Force non-ssl
+    #RewriteCond %{HTTPS} on
+    #RewriteRule ^ http://domain.com/$1 [L,R=301]
+    
+    # Force ssl
+    #RewriteCond %{HTTPS} off
+    #RewriteRule ^ https://domain.com/$1 [L,R=301]
+    
+    # Handle front controller
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+    
+</IfModule>
+
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE application/javascript
+    AddOutputFilterByType DEFLATE application/rss+xml
+    AddOutputFilterByType DEFLATE application/vnd.ms-fontobject
+    AddOutputFilterByType DEFLATE application/x-font
+    AddOutputFilterByType DEFLATE application/x-font-opentype
+    AddOutputFilterByType DEFLATE application/x-font-otf
+    AddOutputFilterByType DEFLATE application/x-font-truetype
+    AddOutputFilterByType DEFLATE application/x-font-ttf
+    AddOutputFilterByType DEFLATE application/x-font-woff
+    AddOutputFilterByType DEFLATE application/x-font-woff2
+    AddOutputFilterByType DEFLATE application/x-javascript
+    AddOutputFilterByType DEFLATE application/xhtml+xml
+    AddOutputFilterByType DEFLATE application/xml
+    AddOutputFilterByType DEFLATE font/opentype
+    AddOutputFilterByType DEFLATE font/otf
+    AddOutputFilterByType DEFLATE font/ttf
+    AddOutputFilterByType DEFLATE font/woff
+    AddOutputFilterByType DEFLATE font/woff2
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE image/x-icon
+    AddOutputFilterByType DEFLATE text/css
+    AddOutputFilterByType DEFLATE text/html
+    AddOutputFilterByType DEFLATE text/javascript
+    AddOutputFilterByType DEFLATE text/plain
+</IfModule>
+
+<IfModule mod_expires.c>
+ ExpiresActive On
+ ExpiresDefault "access plus 1 seconds"
+ ExpiresByType text/html "access plus 1 seconds"
+ ExpiresByType image/x-icon "access plus 2592000 seconds"
+ ExpiresByType image/gif "access plus 2592000 seconds"
+ ExpiresByType image/jpeg "access plus 2592000 seconds"
+ ExpiresByType image/png "access plus 2592000 seconds"
+ ExpiresByType text/css "access plus 604800 seconds"
+ ExpiresByType text/javascript "access plus 86400 seconds"
+ ExpiresByType application/x-javascript "access plus 86400 seconds"
+</IfModule>

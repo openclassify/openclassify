@@ -1,0 +1,13 @@
+#main {
+    direction: rtl;
+    margin-left: 0px;
+    margin-right: 240px;
+    
+}
+
+@include media-breakpoint-down(md) {
+    #main {
+        margin-left: auto;
+        margin-right: 0;
+    }
+}

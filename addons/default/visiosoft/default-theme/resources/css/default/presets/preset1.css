@@ -1,0 +1,173 @@
+a, .nav li a:hover,
+.navbar-default .navbar-nav>li>a:focus,
+.navbar-default .navbar-nav>li>a:hover,
+.navbar-default .navbar-nav>.active>a:focus,
+.navbar-default .navbar-nav>.active>a:hover,
+.navbar-default .navbar-nav>.active>a, 
+.navbar-default .navbar-nav>.open>a, 
+.navbar-default .navbar-nav>.open>a:focus, 
+.navbar-default .navbar-nav>.open>a:hover, 
+.dropdown-menu>.active>a, 
+.dropdown-menu>.active>a:focus, 
+.dropdown-menu>.active>a:hover, 
+.language-dropdown a:hover, 
+.language-dropdown i.fa-globe,
+.sign-in li i, 
+.nav-right .dropdown-menu li a:hover, 
+.sign-in li a:hover, 
+.category-item:hover .category-quantity,
+.category-item:hover .category-title, 
+.ad-info .item-cat a:hover, 
+.ad-info .item-price, 
+.ad-meta .meta-content a:hover, 
+.ad-meta .user-option a:hover, 
+.owl-carousel .owl-next:hover,
+.owl-carousel .owl-prev:hover, 
+#view-ad h1, 
+#services-ad .single-service li a:hover, 
+.recommended-cta .single-cta a:hover, 
+#accordion .panel-body label.checked:before, 
+.slider-text h2, 
+.slider-text span.icon a strong, 
+.slider-text span a:hover,
+.slider-text a:hover, 
+.add-image .fa-upload, 
+.add-image label.upload-image:hover:before, 
+.adpost-details .agreement label a:hover, 
+.quick-rules .lead a:hover, 
+.quick-rules li:before, 
+.congratulations i, 
+.congratulations h2, 
+.user-account h2, 
+.user-account .checkbox label:hover, 
+.forgot-password a:hover, 
+.next-stap h2 span, 
+.next-stap .btn:hover, 
+.next-stap .btn-info:hover, 
+.ad-profile .user h2 a, 
+.ad-profile .favorites-user a, 
+.ad-profile .favorites-user small:hover, 
+.ad-profile .user-menu li.active a,
+.ad-profile .user-menu li a:hover, 
+.profile a.btn:hover, 
+.profile a.btn:hover, 
+.faq-page .panel-heading i:hover, 
+.faq-page .panel-heading .panel-title:hover, 
+.faq-page .active-faq.panel-heading .panel-title, 
+.feedback .btn:hover, 
+.footer-bottom a:hover, 
+.tab-manu .nav-tabs li a:hover,
+.tab-manu .nav-tabs li.active a, 
+#accordion .panel-body a:hover, 
+#accordion .panel-body a:hover i, 
+.contact-info address a:hover, 
+.select-category li:before, 
+.post-option li:hover a,
+.post-option li a:hover, 
+.post-option li.active a, 
+.post-option li.link-active a, 
+#accordion .panel-body h5 i, 
+#accordion a.see-more:hover, 
+.postdetails  li a:hover, 
+.postdetails  li.active a, 
+.postdetails  .edit:hover, 
+.short-info li a:hover, 
+.short-info li a span, 
+.checkbox label.checked:before, 
+.user-account .checkbox .checked, 
+#home-section h1, .category-menu li a:hover, 
+.home-banner .dropdown.category-dropdown a:hover, 
+.home-banner .contact-form .form-control:hover, 
+#countdown li span, .pricing-section .pric li i.fa-check, 
+.found-section h1, .cta.cta-two h3, .workshop-traning .workshop h3 a:hover,
+.job-oc-item .ad-info span a:hover, .job-oc-item a:hover,
+.category-dropdown a:hover, .dropdown-menu>li>a:hover,
+.single-service li a:hover, .explore-nearby .ad-info h4 a:hover,
+.company-info li a:hover, .job-short-info li a:hover, 
+.workshop-traning .btn.btn-primary:hover,
+.see-more button:hover, .buttons a.btn:hover, .user-account .nav-tabs>li.active>a,
+.resume-content .icons, .profile-info address a:hover   {
+	color:#00a651;
+}
+
+
+.btn.btn-primary, 
+.navbar-default .navbar-toggle .icon-bar, 
+#header a.btn:hover, 
+.banner-form button.form-control, 
+a.verified i, 
+.pagination>li>a:hover,
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+.user-account .btn, 
+.user-page .btn-primary:hover, 
+.profile a.btn, 
+.feedback .btn, .pricing-section .pric .popular h2, .badge, 
+.home-banner .contact-form .form-control,
+.download-button a.btn:hover, .post-resume .upload-image:hover,
+.post-resume form .buttons a.btn:hover  {
+	background-color:#00a651;
+}
+
+
+.form-control:focus, 
+.navbar-default .navbar-toggle, 
+.banner-form button.form-control, 
+.home-banner .contact-form .form-control, 
+.col-to-action .form-control,
+ .buttons a.btn, .post-resume form .buttons a.btn:hover {
+	border-color: #00a651;
+}
+
+
+.featured-image a i:after {
+	border-right: 40px solid #00a651;
+}
+ 
+#something-sell .btn.btn-primary, 
+.next-stap .btn:hover, 
+.profile a.btn, 
+.feedback .btn, 
+.feedback .btn:hover, 
+.profile a.btn:hover, 
+.pagination>li>a:hover,
+.pagination>.active>a, 
+.pagination>.active>a:focus, 
+.pagination>.active>a:hover, 
+#something-sell a.btn:hover,
+ .buttons a.btn:hover  {
+	border: 1px solid #00a651;
+}
+
+.adpost-details input[type="radio"] + label:before {
+	border: 2px solid #00a651;
+}
+
+.adpost-details input[type="radio"]:checked + label:after {
+	border: 5px solid #00a651;
+}
+
+.rating input[type="radio"] + label:before,
+.rating input[type="radio"]:checked + label:after {
+	border: 0 !important;
+}
+
+.team-social, .col-to-action.parallax-section:before {
+	background-color: rgba(0,166,81,0.74);
+}
+
+.upcoming-overlay {
+	background-color: rgba(0,0,0,0.50);
+}
+
+#main {
+ 	background-image: url(../../images/bg/main.png);
+}
+
+#download.parallax-section:before {
+	background: -moz-linear-gradient(left,  rgba(55,180,78,0.9) 0%, rgba(49,178,91,0.9) 24%, rgba(27,171,137,0.96) 77%, rgba(21,169,151,0.94) 100%); 
+	background: -webkit-linear-gradient(left,  rgba(55,180,78,0.9) 0%,rgba(49,178,91,0.9) 24%,rgba(27,171,137,0.96) 77%,rgba(21,169,151,0.94) 100%);
+	background: linear-gradient(to right,  rgba(55,180,78,0.9) 0%,rgba(49,178,91,0.9) 24%,rgba(27,171,137,0.96) 77%,rgba(21,169,151,0.94) 100%); 
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37b44e', endColorstr='#f015a997',GradientType=1 ); 
+}

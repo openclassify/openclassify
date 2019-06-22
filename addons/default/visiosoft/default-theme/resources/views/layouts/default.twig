@@ -1,0 +1,48 @@
+<!doctype html>
+
+<!--[if lt IE 7]>
+<html class="nojs ms lt_ie7" lang="en"><![endif]-->
+<!--[if IE 7]>
+<html class="nojs ms ie7" lang="en"><![endif]-->
+<!--[if IE 8]>
+<html class="nojs ms ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]>
+<html class="nojs ms" lang="en"><![endif]-->
+
+<html>
+
+<head>
+    {% include "theme::partials/metadata" %}
+    {% block ogdata %}
+        {% if app.request.pathInfo == "/" %}
+        <meta property="og:site_name" content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
+        <meta property="og:description" content="{{ template.get('og_description', trans(template.meta_description)) }}"/>
+        <meta property="og:title" content="{{ template.get('og_title', trans(template.meta_title)) }}"/>
+        <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
+        <meta property="og:image" content="{{ entries('advs').isOgImage(img('theme::images/logo-horizontal.png').url) }}">
+        <meta property="og:type" content="website"/>
+        {% endif %}
+    {% endblock %}
+
+</head>
+
+<body>
+
+{% include "theme::partials/header" %}
+
+{% block content %}{% endblock %}
+
+{% if entries('advs').isEnabled('pushnotifications') %}
+{% include "visiosoft.module.pushnotifications::pushbar" %}
+{% endif %}
+{% include "theme::partials/footer" %}
+{% include "theme::partials/assets" %}
+
+{% block customjs %}{% endblock %}
+
+{% if entries('advs').isEnabled('cookiepolicy') %}
+    {% include "visiosoft.module.cookiepolicy::cookiepolicy" %}
+{% endif %}
+
+</body>
+</html>

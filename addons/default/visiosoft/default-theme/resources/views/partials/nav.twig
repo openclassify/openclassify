@@ -1,0 +1,135 @@
+<header id="header" class="clearfix">
+    <div class="container">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid navigation-menu">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="/">
+                    {% if setting_value('visiosoft.module.advs::logo') == NULL %}
+                        <img class="img-responsive" src="{{ img('theme::images/logo-horizontal.png').url }}" alt="Logo">
+                    {% else %}
+                        <img class="img-responsive" src="{{ url('files/' ~ file(setting_value('visiosoft.module.advs::logo')).path) }}" alt="Logo">
+                    {% endif %}
+                </a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <!--left-->
+                {% if app.request.pathInfo == "/" %}
+                <!--Sayfa Linkleri-->
+                {{ structure()
+                .listClass('nav navbar-nav')
+                .render()|raw }}
+                <!--Sayfa linkleri End-->
+                {% else %}
+                    <form action="{{ url('advs/list') }}" method="get">
+                    <ul class="nav navbar-nav center-navigation">
+                        <li class="dropdown navigation-select-category-field">
+                            {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}                            <a href="#" class="dropdown-toggle selected-category-item-field" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                <span class="selected-category-item" style="">{{ cats[0].name }}</span> <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu cat-dropdown-menu">
+                                {% for cat in cats %}
+                                <li><a href="#" data-id="{{ cat.id }}" class="navigation-category-select-item">{{ cat.name }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
+                        <li class="navigation-input-category-field">
+                            {% set SearchPlaceHolder = entries('cats','placeholderforsearch').get() %}
+                            <input type="text" name="keyword" data-period="2000"
+                                   data-type='[{% for placeholder in SearchPlaceHolder %}"{{ placeholder.name }}","...",{% endfor %}"..."]'
+                                   class="form-control search-ac" placeholder=" Type your key word" id="search_ac_navigator">
+                            <input type="hidden" value="{{ cats[0].id }}" name="cat" id="searchable_category_input" class="select-category-navigation-id">
+                        </li>
+                        <li class="navigation-button-category-field">
+                            <button type="submit" class="form-control" value="{{ trans('visiosoft.module.advs::field.search') }}">{{ trans('visiosoft.module.advs::field.search') }}</button>
+                        </li>
+                    </ul>
+                    </form>
+                    <!--Sayfa Linkleri-->
+                    {{ structure()
+                    .listClass('nav navbar-nav mobile-navigation-page')
+                    .render()|raw }}
+                    <!--Sayfa linkleri End-->
+                {% endif %}
+                <!--right-->
+            </div><!-- /.navbar-collapse -->
+
+            <div style="position: absolute; right: 0;">
+
+            <ul class="nav navbar-nav controls-menu-right" style="float: right;">
+                {% set current_locale = entries('advs').getCurrentLocale() %}
+                {{ languageSwitcher('openclassify-lang', {'toggle_title': '<img src="'~img('theme::images/flags/'~config('app.locale')~'.png').url~'" class="lang-flag" >' ~current_locale~'','toggle_class':'navigation-lang-field-none'}) }}
+                <li class="dropdown profile-navigation-field">
+                    <a href="{{ url_route('anomaly.module.users::login') }}" class="login-button-field"
+                       data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <span class="login-username"><i class="fa fa-user"></i> {{ trans("visiosoft.theme.default::addon.login") }}</span>
+                    </a>
+                    <a href="#" class="dropdown-toggle login-username-field" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="fa fa-user"></i> <span class="login-username"></span><span class="caret"></span>
+                    </a>
+                    <ul class="dropdown-menu login-user-dropdown-menu">
+                        {% include "theme::partials/links" %}
+                    </ul>
+                </li>
+                {% if entries('advs').isEnabled('carts') %}
+                    {% set cart_items = entries('carts').get()[0].getCart() %}
+                    <li class="dropdown profile-navigation-field">
+                        <a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="fa fa-shopping-cart"></i> {{ cart_items.quantity }}<span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu dropdown-cart" role="menu">
+                            <!--items cart-->
+                            {% for item_cart in cart_items.items(1) %}
+                                <li>
+                                <span class="cart-item">
+                                    <span class="cart-item-left">
+                                        <img src="{{ item_cart.cover_photo }}" alt="" height="50" width="70" class="item-cart-img">
+                                        <span class="item-name">{{ item_cart.name }}</span>
+                                        <span class="item-price">{{ item_cart.priceFormat(item_cart) }}</span>
+                                        <span class="item-quantity">{{ trans('visiosoft.module.advs::field.quantity') }}: {{ item_cart.quantity }}</span>
+                                    </span>
+                                 </span>
+                                </li>
+                            {% endfor %}
+                            <li class="cart-footer">
+                                <span class="lighter-text">{{ trans('visiosoft.module.advs::field.total') }}:</span>
+                                <span class="total-color-text">{{ cart_items.subtotal }}</span>
+                            </li>
+                            <!--items cart-->
+                            <li><span><a class="text-center cart-view-button" href="/cart">{{ trans('visiosoft.module.advs::field.view_cart') }}</a></span></li>
+                        </ul>
+                    </li>
+                {% endif %}
+
+                <li class="new-ads-navigation-field"><a href="/advs/create_adv" class="btn btn-success navigation-new-ad-btn">{{ trans("visiosoft.theme.default::addon.post_ad") }}</a></li>
+            </ul>
+            </div>
+
+
+
+
+        </div><!-- /.container-fluid -->
+        <ul class="nav mobile-navbar-bottom-navigation" style="float: left;">
+            {% set current_locale = entries('advs').getCurrentLocale() %}
+            {{ languageSwitcher('openclassify-lang', {'toggle_title':'<i class="fa fa-globe"></i> '~current_locale~' ','toggle_class':''}) }}
+            <li class="dropdown profile-navigation-mobile-field">
+                <a href="{{ url_route('anomaly.module.users::login') }}" class="login-button-field"
+                   data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <span class="login-username"><i class="fa fa-user"></i> {{ trans("visiosoft.theme.default::addon.login") }}</span>
+                </a>
+                <a href="#" class="dropdown-toggle login-username-field" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                    <i class="fa fa-user"></i> <span class="login-username"></span><span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu login-user-dropdown-menu">
+                    {% include "theme::partials/links" %}
+                </ul>
+            </li>
+            <li class="new-ads-navigation-mobile-field pull-right"><a href="/advs/create_adv" class="btn btn-success navigation-new-ad-btn">{{ trans("visiosoft.theme.default::addon.post_ad") }}</a></li>
+        </ul>
+    </nav>
+    </div>
+</header>

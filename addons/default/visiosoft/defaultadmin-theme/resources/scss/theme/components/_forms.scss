@@ -1,0 +1,150 @@
+.form {
+
+    .field-group {
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid $gray-lighter;
+
+        &:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+    }
+
+    .form-group {
+        margin-bottom: 0;
+
+        &.has-info {
+            .c-checkbox,
+            .c-radio {
+                color: $brand-info;
+            }
+        }
+
+        &.has-danger {
+            .c-checkbox,
+            .c-radio {
+                color: $brand-danger;
+            }
+        }
+
+        &.has-success {
+            .c-checkbox,
+            .c-radio {
+                color: $brand-success;
+            }
+        }
+
+        &.has-warning {
+            .c-checkbox,
+            .c-radio {
+                color: $brand-warning;
+            }
+        }
+    }
+
+    .controls {
+
+        .actions {
+            display: inline-block;
+        }
+
+        .buttons {
+            float: right;
+        }
+
+        &.affix {
+            bottom: 0;
+            position: fixed;
+            margin-bottom: 0;
+            z-index: $zindex-modal - 100;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+
+            &:before {
+                top: 0;
+                left: 0;
+                right: 0;
+                height: 1px;
+                content: '';
+                position: absolute;
+                box-shadow: 0 -1px 3px rgba(0, 0, 0, 0.25);
+            }
+
+            &:after {
+                top: 1px;
+                left: 0;
+                right: 0;
+                height: 1px;
+                content: '';
+                position: absolute;
+                background: #ffffff;
+            }
+        }
+    }
+
+    label {
+
+        &.control-label {
+            font-weight: bold;
+        }
+
+        .required {
+            color: $brand-danger;
+        }
+    }
+}
+
+.form-control {
+    @include border-radius($border-radius);
+}
+
+//@include media-breakpoint-down(sm) {
+//    .form {
+//        .controls {
+//            &:first-of-type {
+//                display: none;
+//            }
+//        }
+//    }
+//}
+//
+//@include media-breakpoint-down(md) {
+//    .form {
+//        .controls {
+//            &.affix {
+//                top: unset;
+//                left: unset;
+//                right: unset;
+//                position: relative;
+//                border-radius: unset;
+//                z-index: unset;
+//
+//                + div {
+//                    margin-top: unset;
+//                }
+//            }
+//        }
+//    }
+//}
+
+@include media-breakpoint-down(sm) {
+    .form {
+        .controls {
+
+            .actions,
+            .buttons {
+                float: none;
+                display: block;
+            }
+
+            .btn,
+            .btn-group {
+                width: 100%;
+                display: block;
+                margin-top: $spacer-y/2;
+            }
+        }
+    }
+}

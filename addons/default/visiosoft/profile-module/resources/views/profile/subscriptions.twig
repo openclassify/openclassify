@@ -1,0 +1,149 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    <section id="main" class="clearfix home-default">
+        <div class="container">
+            <div class="breadcrumb-section">
+                <!-- breadcrumb -->
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="{{ url_route("visiosoft.module.profile::profile") }}">{{ trans("visiosoft.module.profile::field.menu_profile.name") }}</a>
+                    </li>
+                    <li>{{ trans('visiosoft.module.profile::field.subscriptions.name') }}</li>
+                </ol><!-- breadcrumb -->
+                <h2 class="title">{{ trans('visiosoft.module.profile::field.subscriptions.name') }}</h2>
+            </div>
+            <div class="adress-create">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% include "theme::partials/messages" %}
+                    </div>
+                    <div class="col-md-8">
+                        <fieldset>
+                            <style>
+                                .delete-site-btn {
+                                    padding: 6px !important;
+                                    margin: 0px !important;
+                                    background-color: #d9534f !important;
+                                    border-color: #d43f3a !important;
+                                }
+                            </style>
+
+                            <div class="panel-collapse">
+                                <!-- panel-body -->
+                                <div id="favs-outer">
+                                    <div class="ad-profile section">
+                                        <ul class="nav nav-tabs" role="tablist">
+                                            <li role="presentation" class="active">
+                                                <a class="tab-btn" href="#my_sites" aria-controls="my_sites" role="tab"
+                                                   data-toggle="tab">{{ trans('visiosoft.module.subscriptions::field.sites.name') }}</a>
+                                            </li>
+                                            <li role="presentation">
+                                                <a class="tab-btn" href="#active_subscriptions"
+                                                   aria-controls="active_subscriptions"
+                                                   role="tab"
+                                                   data-toggle="tab">{{ trans('visiosoft.module.profile::field.subscriptions.name') }}</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    <div id="subscriptions_tabs">
+
+                                        <div class="tab-content">
+                                            <div class="col-md-12 tab-pane active" role="tabpanel" id="my_sites">
+                                                {% if count(entries('advs').userSubscriptions()) != 0 %}
+                                                    <p class="help-block">
+                        <span class="text-info">
+                            <i class="fa fa-warning "></i>
+                            {{ trans('visiosoft.module.subscriptions::message.input_info_subdomain.message') }}www.******.com ( www.<strong>{{ trans('visiosoft.module.profile::field.sitename.name') }}</strong>.com )
+                        </span>
+                                                    </p>
+                                                    {% set sites_form = form('sites').get() %}
+                                                    {{ form_open({
+                                                        'class': 'form ' ~ sites_form.options.class ,
+                                                        'enctype': 'multipart/form-data',
+                                                        'url': 'cloudsite/sites/create'
+                                                    })|raw }}
+                                                    {{ sites_form.fields.subdomain|raw }}
+                                                    {{ sites_form.actions|raw }}
+                                                    {{ sites_form.close|raw }}
+
+                                                    <table class="table">
+                                                        <thead class="thead-dark">
+                                                        <tr>
+                                                            <th scope="col">#</th>
+                                                            <th scope="col">{{ trans('visiosoft.module.subscriptions::field.subdomain.name') }}</th>
+                                                            <th scope="col">{{ trans('visiosoft.module.subscriptions::field.plan.basic') }}</th>
+                                                            <th scope="col">{{ trans('visiosoft.module.subscriptions::field.actions.name') }}</th>
+                                                        </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                        {% for key,site in mysites %}
+                                                            <tr>
+                                                                <th scope="row">{{ key+1 }}</th>
+                                                                <td>
+                                                                    <a href="http://{{ site.subdomain }}.openclassify.com">
+                                                                        <p>{{ site.subdomain }}<font color="#a9a9a9">.openclassify.com</font>
+                                                                        </p></a>
+                                                                </td>
+                                                                <td>
+                                                                    {{ site.getPlan(plan_id).name }}
+                                                                </td>
+                                                                <td>
+                                                                    <a href="{{ url_route('visiosoft.module.cloudsite::delete', [site.id]) }}"
+                                                                       class="btn btn-info delete-site-btn">{{ trans('visiosoft.module.subscriptions::field.delete.name') }}</a>
+                                                                </td>
+                                                            </tr>
+                                                        {% endfor %}
+                                                        </tbody>
+                                                    </table>
+                                                {% else %}
+                                                    <div class="alert alert-danger">
+                                                        <i class="fa fa-warning "></i>
+                                                        {{ trans('visiosoft.module.cloudsite::message.buy_subscription_warning.message') }}
+                                                        <b><a href="/subscriptions"> {{ trans('visiosoft.module.profile::field.go_subscriptions_page.name') }}</a></b>
+                                                    </div>
+
+                                                {% endif %}
+                                            </div>
+
+                                            <div class="col-md-12 tab-pane" role="tabpanel" id="active_subscriptions">
+                                                <table class="table">
+                                                    <thead class="thead-dark">
+                                                    <tr>
+                                                        <th scope="col">#</th>
+                                                        <th scope="col">{{ trans('visiosoft.module.subscriptions::field.plan.subject') }}</th>
+                                                        <th scope="col">{{ trans('visiosoft.module.subscriptions::field.remaining_time.name') }}</th>
+                                                        <th scope="col">{{ trans('visiosoft.module.subscriptions::field.trial_time.name') }}</th>
+                                                    </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                    {% for key,plan in plans %}
+                                                        <tr>
+                                                            <th scope="row">{{ key+1 }}</th>
+                                                            <td>{{ plan.name }}</td>
+                                                            {% set time = date(plan.ends_at).diff(date(plan.starts_at|date)) %}
+                                                            <td>{{ time.days }} {{ trans('visiosoft.module.subscriptions::field.days.name') }}</td>
+                                                            {% set trial = date(plan.trial_ends_at).diff(date(plan.starts_at|date)) %}
+                                                            <td>{{ trial.days }} {{ trans('visiosoft.module.subscriptions::field.days.name') }}</td>
+                                                        </tr>
+                                                    {% endfor %}
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!--panel-body-end-->
+                            </div>
+
+                        </fieldset>
+                    </div>
+                    {% include "visiosoft.module.profile::profile/dock-right" %}
+                </div>
+                {{ form.close|raw }}
+            </div>
+        </div>
+    </section>
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
+{% endblock %}
+
+

@@ -1,0 +1,87 @@
+{{ asset_add('styles.css', 'visiosoft.module.profile::assets/css/dashboard-widget.css') }}
+<div class="col-md-4 profile-right-sidebar">
+    {% if entries('advs').isEnabled('store') %}
+        {% include "visiosoft.module.store::profile-dock" %}
+    {% endif %}
+
+    <div class="col-sm-12 text-center">
+        <div class="recommended-cta">
+            <div class="cta">
+                <!-- single-cta -->
+                <div class="single-cta">
+                    <!-- cta-icon -->
+                    <div class="cta-icon icon-secure">
+                        <img src="{{ img('theme::images/icon/13.png').url }}" alt="Icon" class="img-responsive">
+                    </div><!-- cta-icon -->
+
+                    <h4>{{ trans("visiosoft.module.profile::field.right_secure_trading_subject.name") }}</h4>
+                    <p>{{ trans("visiosoft.module.profile::field.right_secure_trading_msg.name") }}</p>
+                </div><!-- single-cta -->
+
+                <!-- single-cta -->
+                <div class="single-cta">
+                    <!-- cta-icon -->
+                    <div class="cta-icon icon-support">
+                        <img src="{{ img('theme::images/icon/14.png').url }}" alt="Icon" class="img-responsive">
+                    </div><!-- cta-icon -->
+
+                    <h4>{{ trans("visiosoft.module.profile::field.right_support_subject.name") }}</h4>
+                    <p>{{ trans("visiosoft.module.profile::field.right_support_msg.name") }}</p>
+                </div><!-- single-cta -->
+
+
+                <!-- single-cta -->
+                <div class="single-cta">
+                    <!-- cta-icon -->
+                    <div class="cta-icon icon-trading">
+                        <img src="{{ img('theme::images/icon/15.png').url }}" alt="Icon" class="img-responsive">
+                    </div><!-- cta-icon -->
+
+                    <h4>{{ trans("visiosoft.module.profile::field.right_easy_trading_subject.name") }}</h4>
+                    <p>{{ trans("visiosoft.module.profile::field.right_easy_trading_msg.name") }}</p>
+                </div><!-- single-cta -->
+
+                <!-- single-cta -->
+                <div class="single-cta">
+                    <h5>{{ trans("visiosoft.module.profile::field.right_need_help_subject.name") }}</h5>
+                    <p><span>{{ trans("visiosoft.module.profile::field.right_need_help_msg.name") }}</span><a
+                                href="tellto:{{ setting_value('visiosoft.module.advs::phone') }}"> {{ setting_value('visiosoft.module.advs::phone') }}</a>
+                    </p>
+                </div><!-- single-cta -->
+            </div>
+        </div><!-- cta -->
+    </div>
+
+
+    <div class="col-sm-12 text-center">
+        <div class="recommended-cta">
+            <div class="cta preferences-settings">
+                <!-- preferences-settings -->
+                <h2>{{ trans('visiosoft.module.profile::field.preferences_settings.name') }}</h2>
+                <!-- checkbox -->
+                <div class="checkbox">
+                    <label class="{{ profiles.getNotification('notified_new_updates') }}">
+                        <input type="checkbox" class="notification" data-name="notified_new_updates"
+                                {{ profiles.getNotification('notified_new_updates') }}>{{ trans("visiosoft.module.profile::message.notified_new_updates") }}
+                        .</label>
+                    <label class="{{ profiles.getNotification('notified_about_ads') }}">
+                        <input type="checkbox" class="notification" data-name="notified_about_ads"
+                                {{ profiles.getNotification('notified_about_ads') }}>{{ trans("visiosoft.module.profile::message.notified_about_ads") }}
+                        .</label>
+                    <label class="{{ profiles.getNotification('receive_messages_email') }}">
+                        <input type="checkbox" class="notification" data-name="receive_messages_email"
+                                {{ profiles.getNotification('receive_messages_email') }}>{{ trans("visiosoft.module.profile::message.receive_messages_email") }}
+                        .</label>
+                </div><!-- checkbox -->
+            </div>
+        </div><!-- cta -->
+    </div>
+</div>
+<script>
+    var saved = "{{ trans('visiosoft.module.profile::message.saved') }}";
+</script>
+{{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/notification.js") }}
+
+
+
+

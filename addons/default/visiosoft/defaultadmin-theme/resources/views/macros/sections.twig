@@ -1,0 +1,26 @@
+{% macro sections(sections, section) %}
+
+    {% import _self as self %}
+
+    <li class="{{ section.highlighted ? 'highlighted' }} {{ section.active ? 'active' }} {{ section.class }}">
+
+        <a {{ html_attributes(section.attributes) }}>
+            {{ section.icon ? icon(section.icon)|raw }}
+            {{ trans(section.title)|raw }}
+
+            {% if section.label %}
+                <span class="tag tag-{{ section.context }}">
+                    {{ trans(section.label)|raw }}
+                </span>
+            {% endif %}
+        </a>
+
+        {% if section.highlighted %}
+            <ul>
+                {% for child in sections.children(section.slug).visible() %}
+                    {{ self.sections(sections, child) }}
+                {% endfor %}
+            </ul>
+        {% endif %}
+    </li>
+{% endmacro %}

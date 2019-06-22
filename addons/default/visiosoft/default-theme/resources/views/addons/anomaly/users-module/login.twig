@@ -1,0 +1,11 @@
+{% extends layout('users') %}
+
+{% block content %}
+    {{ form('login').redirect(request_get('redirect', '/'))|raw }}
+    <br>
+    <a href="{{ url_route('anomaly.module.users::password.forgot', {
+        'redirect': request_get('redirect', '/')
+    }) }}">
+        {{ trans('anomaly.module.users::message.forgot_password') }}
+    </a>
+{% endblock %}

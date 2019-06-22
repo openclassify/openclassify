@@ -1,0 +1,57 @@
+{{ asset_add("scripts.js", "streams::js/table/table.js") }}
+
+{% if not actions.empty() %}
+    {{ asset_add("scripts.js", "streams::js/table/actions.js") }}
+{% endif %}
+
+{% if table.options.sortable %}
+    {{ asset_add("scripts.js", "streams::js/table/sortable.js") }}
+{% endif %}
+
+<div class="container-fluid">
+
+    {{ view("streams::table/partials/filters", {'table': table}) }}
+    {{ view("streams::table/partials/views", {'table': table}) }}
+
+    {{ view(table.options.heading ?: "streams::table/partials/heading", {'table': table}) }}
+    {% if not table.rows.empty() %}
+        {% block card %}
+            <div class="card">
+
+                {{ form_open({ 'url': url_full() }) }}
+                <div class="table-stack">
+                    <table
+                            class="
+                                {{ table.options.class ?: 'table' }}
+                                {{ table.options.sortable ? 'table--sortable' }}
+                                "
+                            {{ table.options.sortable ? 'data-sortable' }}
+                            {{ html_attributes(table.options.attributes) }}>
+
+                        {{ view("streams::table/partials/header", {'table': table}) }}
+
+                        {% block body %}
+                            {{ view("visiosoft.module.cats::table.body", {'table': table}) }}
+                        {% endblock %}
+
+                        {{ view("streams::table/partials/footer", {'table': table}) }}
+
+                    </table>
+                </div>
+                {{ form_close() }}
+
+            </div>
+        {% endblock %}
+    {% else %}
+
+        {% block no_results %}
+            <div class="card">
+                <div class="card-block">
+                    {{ trans(table.options.get('no_results_message', 'streams::message.no_results')) }}
+                </div>
+            </div>
+        {% endblock %}
+
+    {% endif %}
+
+</div>

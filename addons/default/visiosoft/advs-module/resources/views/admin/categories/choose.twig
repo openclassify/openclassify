@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('module::message.choose_type') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    {% include "streams::modals/filter" %}
+    
+    {% if not categories.isEmpty() %}
+        <ul class="nav nav-pills nav-stacked">
+            {% for category in categories %}
+                <li class="nav-item">
+                    <a href="{{ url_to('admin/advs/advs/create?cat=' ~ category.id) }}" class="nav-link">
+                        <strong>{{ category.name }}</strong>
+                        <br>
+                        <small>{{ category.description }}</small>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ trans('streams::message.no_results') }}
+    {% endif %}
+</div>
