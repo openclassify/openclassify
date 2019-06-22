@@ -1,298 +1,124 @@
 # OpenClassify
 
-OpenClassify is the extensible and most advanced open source classified app build with Laravel.
-
-# Core Modules
-
-advs-module
-cats-module
-default-theme
-defaultadmin-theme
-json-field_type
-location-module
-media-field_type
-profile-module
-single-file_type
+OpenClassify is the extensible and most advanced open source classified app build with Laravel and Pyrocms.
 
 
-### Extensions used by OpenClassify to install to ubuntu php 7.2
-```
-sudo apt-get install php7.2-sqlite
-```
-
-```
-sudo apt-get install php7.2-bcmath
-```
-## Docker Enviroment
+# Installation
 
 
-Requirements 
+## Server Requirements
 
-* [Git](https://git-scm.com/downloads)
-* [Docker](https://docs.docker.com/engine/installation/)
-* [Docker Compose](https://docs.docker.com/compose/install/)
+- PHP >= 7.2
+- XML PHP Extension
+- PDO PHP Extension
+- cURL PHP Extension
+- JSON PHP Extension
+- Ctype PHP Extension
+- BCMath PHP Extension
+- SQLite PHP Extension
+- OpenSSL PHP Extension
+- Mbstring PHP Extension
+- Fileinfo PHP Extension
+- Tokenizer PHP Extension
+- GD Library (>=2.0) **OR** Imagick PHP extension (>=6.5.7)
 
-Check if `docker-compose` is already installed by entering the following command : 
+ 
+### Via Composer
 
-```sh
-which docker-compose
+> Do not create an `.env` file just yet - Installer will generate one for you.{.important}
+
+
+```bash
+composer create-project openclassify/openclassify
 ```
 
-Check Docker Compose compatibility :
 
-* [Compose file version 3 reference](https://docs.docker.com/compose/compose-file/)
+### Host Configuration
 
-The following is optional but makes life more enjoyable :
+When you setup your web host be sure to point the web root to `public` directory. Just as you would a normal Laravel installation.
 
-```sh
-which make
+#### Alternate Directories for cPanel or Virtualmin
+
+In some environments like cPanel or Virtualmin it may be difficult to use the `public` directory as the web root. In these cases we suggest symlinking the `public` directory to `public_html`:
+
+```bash
+ln -s public public_html
 ```
 
-On Ubuntu and Debian these are available in the meta-package build-essential. On other distributions, you may need to install the GNU C++ compiler separately.
+You may also simply rename the `public` directory to `public_html`. Path hints will automatically use the correct path. 
 
-```sh
-sudo apt install build-essential
+### Directory Permissions
+
+After installing, you may need to configure some permissions in order to proceed. Directories within the `storage`, `public/app`, and the `bootstrap/cache` directories should be writable by your web server. If you are using the [Homestead](http://laravel.com/docs/homestead) virtual machine, these permissions should already be set.
+
+
+## Installing 
+
+### Running the Installation Wizard
+
+After downloading and it's dependencies with:
+
+```bash
+composer install
 ```
-## Running The application
+you will need to install the software in order to get started. 
+By this time you should be able to visit your site's URL which will
+ redirect you to the installer: `http://yoursite.com/installer`
 
-1. Start the application :
-
-    ```sh
-    sudo docker-compose up -d
-    ```
-
-    **Please wait this might take a several minutes...**
-
-    ```sh
-    sudo docker-compose logs -f # Follow log output
-    ``` 
-    **Add these line in your .env file ...**
-
-     ```sh
-   # Nginx
-   NGINX_HOST=localhost
-   
-   # PHP
-   
-   # See https://hub.docker.com/r/nanoninja/php-fpm/tags/
-   PHP_VERSION=latest
-   
-   # MySQL 
-   MYSQL_VERSION=5.7.22  //Keep this up as your requirements
-   MYSQL_HOST=mysql
-   MYSQL_DATABASE=your_db_name
-   MYSQL_ROOT_USER=root
-   MYSQL_ROOT_PASSWORD=root
-   MYSQL_USER=dev
-   MYSQL_PASSWORD=dev
-    ```
-    
-   **Replace these line in your .env file ...**
-
-   ```sh
-    DB_HOST=mysql
-    DB_PORT=3306
-    DB_DATABASE=your_db_name
-    DB_USERNAME=root
-    DB_PASSWORD=root
-    ```
-
-3. Open your favorite browser :
-
-    * [http://localhost:8000](http://localhost:8000/)
-    * [http://localhost:8080](http://localhost:8080/) PHPMyAdmin (username: dev, password: dev)
-
-4. Stop and clear services
-
-    ```sh
-    sudo docker-compose down -v
-    ```
-___
+### Using the CLI Installer
 
 
+```bash
+php artisan install
 
-## Module ekleme
+```
 
-Visiosoft -> bulunduğu klasör adı. Herhangi bir şey olabilir
-Advs -> modülün adı
+You will be prompted for details in order to proceed with the installation process.
 
-— php artisan make:addon visiosoft.module.advs
+> You may need to run `ulimit -n 1024` before installing via CLI to temporarily increase your max open files limit.{.notice}
 
-Bundan sonra 
+#### Automating the CLI Installer
 
-Addons/default/visiosoft/advs-module klasörü oluşacaktır.
+You can automate the installer by creating your own .env file with something like this:
 
-yukarıdaki dosya yolunda migration klasörünün içerisinde otomatik oluşan bir migration dosyası olacak.
+```bash
+APP_ENV=local
+APP_DEBUG=true
+APP_KEY=zfesbnTkXvooWVcsKMw2r4SmPVNGbFoS
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_DATABASE=workbench
+DB_USERNAME=root
+DB_PASSWORD=root
+APPLICATION_NAME=Default
+APPLICATION_REFERENCE=default
+APPLICATION_DOMAIN=localhost
+ADMIN_EMAIL=info@openclassify.com
+ADMIN_USERNAME=admin
+ADMIN_PASSWORD=password
+LOCALE=en
+TIMEZONE=Turkey/Istanbul
+```
+> The APP_KEY must be exactly 32 characters in length.{.important}
 
-Bu örnek için
-tarih__visiosoft.module.advs__create_advs_fields.php
+Then run the installer and indicate that the system is ready to install:
 
-Bunun içine tüm modülde kullanacak fieldları girilmeli
+```bash
+php artisan install --ready
+```                             
 
-Örnek olarak
+## Development Team
 
-        
-    protected $fields = [
-		'name' => 'anomaly.field_type.text',
-        'category' => [
-            'type' => 'anomaly.field_type.relationship',
-            'config' => [
-                'related' => CategoryModel::class
-            ]
-        ]
-	]
+Vedat Akdoğan  @vedatakd
 
-Daha sonra önce ana tablo ve sonrasında diğer tablolar eklenmeli. Sıra önemli yanlış sırada route sapıtıyor.
+Onur Üre @onurure
 
-php artisan make:stream advs advs
+Fatih Alp @fatihalp
 
-İle ana kategori dosyaları ve migration ı yaratılıyor daha sonra 
+Emek Sancar 
 
-php artisan make:stream categories advs
+Ozcan Durak @ozcandurak
 
-İle bağlı olan diğer kısım
+## Thanks to
 
-Oluşan migrationlar içerisine field özellikleri giriliyor.
-
-Örn:
-
-    protected $stream = [
-        'slug' => 'advs',
-         'title_column' => 'name',
-         'translatable' => true,
-         'trashable' => false,
-         'searchable' => false,
-         'sortable' => false,
-    ];
-
-    /**
-     * The stream assignments.
-     *
-     * @var array
-     */
-    protected $assignments = [
-        'name' => [
-            'translatable' => true,
-            'required' => true,
-        ],
-        'slug' => [
-            'unique' => true,
-            'required' => true,
-        ],
-        'advs_desc',
-        'category',
-        'price',
-        'currency',
-        'online_payment',
-        'stock',
-        'files'
-    ];
-
-Bu bölümler hazır olduktan sonra 
-
-Php artisan addon:install advs 
-
-İle module sisteme yükleniyor.
-
-Modülde değişiklik yapılacaksa eğer
-
-Öncelikle php artisan addonn:uninstall advs 
-
-Yazılarak modül silinip değişiklikten sonra tekrar yüklenmeli
-
-Multilanguage için öncelikle  sitenin settings->system bölümünden istenilen diller aktif edilmeli.
-
-static bölümlerin translate (laravel gibi) her modülün içinde olan resources/lang/ içinden yapılıyor.
-
-Dinamik alanlar ise ayarlardan multilanguage aktifleştirilince her inputun labelinde bulunan dropdown ile yapılıyor
-
-## Proje kurulurken dikkat edilmesi gereken husus
-
-Gelistirme sureci icin proje kurulurken, application name in default olarak ayarlanmasi gerekiyor, bu sekilde ayarlanmadigi takdirde addonlar gozukmeyecektir.
-
-## Custom view lar ile ilgili...
-Custom view tanimlayip modulun icinden ulasilmak istenildiginde yapilmasi gerekenler:
-1) addons/default/visiosoft/modulename/resources/views altina custom bir view dosyasi aciyoruz
-2) controllerdan bu view a ulasmak icin $this->view->make('visiosoft.module.modulename::modulename/list'); komutunu kullanabiliriz, hata vermemesi icin
-kullanilan controller'in PublicController class ina extends edilmesi gerekebilir.
-3) kodun visiosoft.module.modulename kismi, alinda addons/default/visiosoft/modulename/resources/views kismini isaret etmektedir.
-
-## manuel addon ekleme
-
-klasör addon altına kopyalanır ve mutlaka composer dump-autoload yapılmalıdır.
-
-## modül seed yüklemek için
-
-php artisan db:seed --addon=modül_adi
-
-## modül ve seed yüklemek için
-
-php artisan addon:install modül_adi --seed
-
-OR
-
-php artisan addon:reinstall modül_adi --seed
-
-## Ajax Loader Eklemek
-
-İşlem süresinde kullancıyı loader eklentisi göstererek hem şık bir görüntü hemde boş veri göstermemiş oluruz.
-Loader Ajax Global Fonksiyonu Aşağıdaki örnekte verilmiştir.
-
-Örn:
-
-    $.ajax({
-            type: 'get',
-            url: '/class/getcats/'+ divId,
-            success: function (response) {
-                hideLoader() // işlem bşarılı olursa loader gizle
-            },
-            beforeSend: function () {
-                showLoader() // işlem süresince loader göster
-            }
-        })
-        
-         protected $options = [
-                'redirect' => '/admin/cloudsite',
-                'success_message'   => 'visiosoft.module.cloudsite::message.created_site.message',
-            ];
-            
-            
-            
-## Önyüzde Uyarılar
-
-İşlem sonucunda uyarı göstermek istenebilir.Uyarılar builder'da veya Redirect olarak 2 farklı şekilde gönderilebilir.
-
-FormBuilder Örn:
-        
-         protected $options = [
-                'redirect' => '/admin/cloudsite',
-                'success_message'   => 'visiosoft.module.cloudsite::message.created_site.message',
-            ];
-Controller/Redirect Veya Controller/Return  Örn:
-        
-         return redirect('admin/cats')->with('success', ['Message1.','Message2',...]);
-         
-         //OR
-                                      ->with('error', ['Message1.','Message2',...]);
-         //OR
-                                      ->with('warning', ['Message1.','Message2',...]);
-         //OR
-                                      ->with('info', ['Message1.','Message2',...]);          
-                                      
-## Önyüzde Form Builder ileOluşturulan bir form elemanına required özelliği atama
-
-
-currency Örn:
-        
-         <div class="col-sm-3 col-xs-6">
-             {{ form.fields.currency.setAttributes({'required' :true,}).input|raw }}
-         </div>
-             
-             
-## Table Builder query kullanımı
-   
-    //AdvsTableBuilder.php     
-        public function onQuerying(Builder $query)
-            {
-                $query->where('slug', "!=", NULL);
-            }                                                                   
+Ryan and it's  stream platform and pyrocms it makes openclassfiy more powerfull. 
