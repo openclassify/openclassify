@@ -99,7 +99,7 @@ ADMIN_PASSWORD=password
 LOCALE=en
 TIMEZONE=Turkey/Istanbul
 ```
-> The APP_KEY must be exactly 32 characters in length.{.important}
+> The APP_KEY must be exactly 32 characters in length.
 
 Then run the installer and indicate that the system is ready to install:
 
