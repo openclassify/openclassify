@@ -251,7 +251,7 @@ class AdvsController extends PublicController
         return back();
     }
 
-    public function getCats($id, SettingRepositoryInterface $settings, CategoryRepositoryInterface $category, AdvModel $advModel, CategoryModel $categoryModel, PackageModel $packageModel)
+    public function getCats($id, SettingRepositoryInterface $settings, CategoryRepositoryInterface $category, AdvModel $advModel, CategoryModel $categoryModel)
     {
         $adv = $category->getSubCatById($id);
 
@@ -264,6 +264,7 @@ class AdvsController extends PublicController
             $adv['link'] = "";
 
             if ($advModel->is_enabled('packages')) {
+                $packageModel = new PackageModel();
                 $parent_cat = $categoryModel->getParentCats($id, 'parent_id');
                 $package = $packageModel->reduceLimit($parent_cat);
                 if ($package != null) {
