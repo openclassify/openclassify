@@ -75,7 +75,7 @@ php artisan install
 
 You will be prompted for details in order to proceed with the installation process.
 
-> You may need to run `ulimit -n 1024` before installing via CLI to temporarily increase your max open files limit.{.notice}
+> You may need to run `ulimit -n 1024` before installing via CLI to temporarily increase your max open files limit.
 
 #### Automating the CLI Installer
 
