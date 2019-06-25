@@ -16,10 +16,11 @@ class CatsModuleSeeder extends Seeder
         $this->call(CategorySeeder::class);
 
         //Download demo SQL
-        file_put_contents(__DIR__."/categories.sql", fopen("http://ilandemo.vebze.com/categories.sql", 'r'));
-        file_put_contents(__DIR__."/categoryTransEn.sql", fopen("http://ilandemo.vebze.com/categoryTransEn.sql", 'r'));
+        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
+        file_put_contents(__DIR__."/categories.sql", fopen($repository."categories.sql", 'r'));
+        file_put_contents(__DIR__."/categoryTransEn.sql", fopen($repository."categoryTransEn.sql", 'r'));
         //Download demo Files and Extract to Files
-        file_put_contents("category-files.zip", fopen("http://ilandemo.vebze.com/category-files.zip", 'r'));
+        file_put_contents("category-files.zip", fopen($repository."category-files.zip", 'r'));
         $zipper = new Zipper();
         $zipper->make('category-files.zip')->folder('category-files')->extractTo(base_path().'/public/app/default/files-module/local/images/');
         $zipper->close();
