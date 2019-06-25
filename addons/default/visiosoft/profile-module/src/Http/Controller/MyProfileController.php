@@ -62,7 +62,7 @@ class MyProfileController extends PublicController
 
     protected $user;
 
-    public function home(ProfileFormBuilder $form, AdvRepositoryInterface $advRepository, PackageModel $packageModel)
+    public function home(ProfileFormBuilder $form, AdvRepositoryInterface $advRepository)
     {
         //clear empty ads
         $advRepository->delete_empty_advs();
@@ -124,6 +124,7 @@ class MyProfileController extends PublicController
 
 
         if ($isActivePackages) {
+            $packageModel = new PackageModel();
             $my_packages = $packageModel->getPackageByLoggedInUser();
             $menu_packages = array();
             $menu_packages['href'] = "packages";
