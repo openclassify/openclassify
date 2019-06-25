@@ -14,10 +14,12 @@ class AdvsModuleSeeder extends Seeder
      */
     public function run()
     {
+
         //Download demo SQL
-        file_put_contents(__DIR__."/demo.sql", fopen("http://ilandemo.vebze.com/demo.sql", 'r'));
+        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
+        file_put_contents(__DIR__."/demo.sql", fopen($repository."demo.sql", 'r'));
         //Download demo Files and Extract to Files
-        file_put_contents("advs-files.zip", fopen("http://ilandemo.vebze.com/advs-files.zip", 'r'));
+        file_put_contents("advs-files.zip", fopen($repository."advs-files.zip", 'r'));
         $zipper = new Zipper();
         $zipper->make('advs-files.zip')->folder('advs-files')->extractTo(base_path().'/public/app/default/files-module/local/images/');
         $zipper->close();
