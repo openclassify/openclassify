@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Illuminate\Http\Request;
+use Sunra\PhpSimple\HtmlDomParser;
 use Visiosoft\CatsModule\Category\CategoryCollection;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
@@ -65,9 +66,21 @@ class CategoryController extends AdminController
                 return $this->redirect->to('/admin/cats/create');
             }
             return $this->redirect->to('/admin/cats');
+        } else {
+            $form->setFields(['name']);
+            $form->setActions(['save']);
+            $formBuilder = $form;
+            $nameField = HTMLDomParser::str_get_html($form->render()->getContent());
+            $nameField = $nameField->find('.name', 0);
+            if ($nameField !== null) {
+                $nameField = $nameField->innertext();
+            } else {
+                $nameField = "";
+            }
         }
 
-        return $this->view->make('visiosoft.module.cats::cats/admin-cat');
+
+        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField','formBuilder'));
     }
 
     /**
@@ -84,8 +97,18 @@ class CategoryController extends AdminController
             if ($form->hasFormErrors()) {
                 return $this->redirect->back();
             }
+        } else {
+            $form->setFields(['name']);
+            $nameField = HTMLDomParser::str_get_html($form->render($id)->getContent());
+            $nameField = $nameField->find('.name', 0);
+            if ($nameField !== null) {
+                $nameField = $nameField->innertext();
+            } else {
+                $nameField = "";
+            }
         }
-        return $this->view->make('visiosoft.module.cats::cats/admin-cat')->with('id', $id);
+
+        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField'))->with('id', $id);
     }
 
     public function delete($id)
