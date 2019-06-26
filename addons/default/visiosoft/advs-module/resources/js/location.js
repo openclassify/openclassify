@@ -80,11 +80,8 @@ function Locations(cat, level, name){
             showLoader()
         }
     }).promise().done(function() {
-        setLocation(level)
-        if(level==3){
-
-            haritaIslem(0);
-        }
+        setLocation(level);
+        haritaIslem(0);
     });
 }
 
