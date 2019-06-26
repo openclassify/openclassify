@@ -82,7 +82,7 @@ function Locations(cat, level, name){
     }).promise().done(function() {
         setLocation(level)
         if(level==3){
-            console.log(level);
+
             haritaIslem(0);
         }
     });
@@ -106,7 +106,7 @@ if(locationedit){
 }else{
     var coordcenter = new google.maps.LatLng(38.9573415, 35.2415759);
 }
-console.log(locationedit);
+
 var mapOptions = {
     
     center: coordcenter,
@@ -178,9 +178,8 @@ function placeMarker(location) {
 
 editMarket();
 function editMarket() {
-    console.log($('input[name="map_Val"]'));
     var locationedit = $('input[name="map_Val"]').val();
-    if($('input[name="map_Val"]')){
+    if(locationedit){
         var lat = locationedit.split(",")[0];
         var lng = locationedit.split(",")[1];
         var location = new google.maps.LatLng(lat, lng);
@@ -192,7 +191,6 @@ function editMarket() {
             marker = new google.maps.Marker({
                 position: location,
                 map: map
-
             });
         }
     }

@@ -177,6 +177,7 @@
    "share"   =>"Bu reklamı paylaş",
    "report"   =>"Bu reklamı bildir",
    "features"   =>"Özellikler",
+   "streetview"   =>"Sokak Görünümü",
    "recommended_ads"   =>"Sizin için Önerilen Reklamlar",
    "new"   =>"Yeni",
    "short_info"   =>"Kısa Bilgi",

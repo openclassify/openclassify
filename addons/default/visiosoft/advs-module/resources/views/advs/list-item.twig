@@ -240,7 +240,7 @@
 
                                 {% if entries('advs').isEnabled('streetview') and adv.map_Val != "" %}
                                     <li class=""><a data-toggle="tab" href="#streetviewtab"
-                                                    id="streetviewlink">{{ trans('visiosoft.module.advs::field.features') }}</a>
+                                                    id="streetviewlink">{{ trans('visiosoft.module.advs::field.streetview') }}</a>
                                     </li>
                                 {% endif %}
 
@@ -270,13 +270,18 @@
                                                 {% for feature in  features %}
                                                     <li>
                                                         <h5>{{ feature.name ? feature.name : '' }} </h5>
-
-                                                        {% set array = feature.custom_field_value|split(',') %}
-                                                        <ul>
-                                                            {% for value in array %}
-                                                                <li><i class="fa fa-check-circle"></i>{{ value }}</li>
-                                                            {% endfor %}
-                                                        </ul>
+                                                        {% if feature.custom_field_value is iterable %}
+                                                            {% set array = feature.custom_field_value %}
+                                                            <ul>
+                                                                {% for value in array %}
+                                                                    <li><i class="fa fa-check-circle"></i>{{ value }}</li>
+                                                                {% endfor %}
+                                                            </ul>
+                                                        {% else %}
+                                                            <ul>
+                                                            <li><i class="fa fa-check-circle"></i>{{ feature.custom_field_value }}</li>
+                                                            </ul>
+                                                        {% endif %}
                                                     </li>
                                                 {% endfor %}
                                             </ul>
