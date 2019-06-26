@@ -140,6 +140,7 @@ return [
     'share' => 'Share this ad',
     'report' => 'Report this ad',
     'features' => 'Features',
+    "streetview"   =>"Street View",
     'recommended_ads' => 'Recommended Ads for You',
     'new' => 'New',
     'short_info' => 'Short Info',
