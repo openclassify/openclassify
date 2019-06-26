@@ -495,6 +495,8 @@
 
 {% block customjs %}
 
-
-
+    {% if entries('advs').isEnabled('streetview') and adv.map_Val != "" %}
+        {% include "visiosoft.module.streetview::list-item" %}
+    {% endif %}
+    
 {% endblock %}
