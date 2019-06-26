@@ -263,30 +263,9 @@
                                     </div>
                                 </div>
                                 {% if features != null %}
-                                    <div id="features" class="tab-pane fade in">
-                                        <div class="advs-custom-fields">
-                                            <h4>{{ trans('visiosoft.module.advs::field.features') }}</h4>
-                                            <ul>
-                                                {% for feature in  features %}
-                                                    <li>
-                                                        <h5>{{ feature.name ? feature.name : '' }} </h5>
-                                                        {% if feature.custom_field_value is iterable %}
-                                                            {% set array = feature.custom_field_value %}
-                                                            <ul>
-                                                                {% for value in array %}
-                                                                    <li><i class="fa fa-check-circle"></i>{{ value }}</li>
-                                                                {% endfor %}
-                                                            </ul>
-                                                        {% else %}
-                                                            <ul>
-                                                            <li><i class="fa fa-check-circle"></i>{{ feature.custom_field_value }}</li>
-                                                            </ul>
-                                                        {% endif %}
-                                                    </li>
-                                                {% endfor %}
-                                            </ul>
-                                        </div>
-                                    </div>
+                                    {% if entries('advs').isEnabled('streetview') %}
+                                        {% include "visiosoft.module.customfields::list-item" %}
+                                    {% endif %}
                                 {% endif %}
                                 {% if adv.map_Val != "" %}
                                     <div id="streetviewtab" class="tab-pane fade in">
