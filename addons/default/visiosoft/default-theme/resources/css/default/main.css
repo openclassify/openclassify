@@ -1509,8 +1509,12 @@ a.verified i {
 
 .breadcrumb > li + li:before {
     content: "\f101";
-    font-family: FontAwesome;
+    font-family: "Font Awesome 5 Free";
+    visibility: visible;
+    font-weight: 900;
     color: #fff;
+    visibility: visible;
+    font-weight: 900;
 }
 
 #something-sell h2.title {
@@ -2522,7 +2526,9 @@ a.verified i {
 .add-image label.upload-image:before {
     position: absolute;
     content: "\f055";
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 5 Free";
+    visibility: visible;
+    font-weight: 900;
     top: 50%;
     left: 50%;
     font-size: 30px;
@@ -2642,7 +2648,9 @@ a.verified i {
     color: #00a651;
     font-size: 16px;
     content: "\f105";
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 5 Free";
+    visibility: visible;
+    font-weight: 900;
     left: 0;
     top: 0;
 }
@@ -2780,7 +2788,9 @@ a.verified i {
     right: 0;
     font-size: 30px;
     content: "\f105";
-    font-family: 'FontAwesome';
+    font-family: "Font Awesome 5 Free";
+    visibility: visible;
+    font-weight: 900;
     color: #00a651;
     opacity: 0;
 }
