@@ -9,5 +9,8 @@ return [
     'search' => 'Search',
     'categories' => 'Categories',
     'city' => 'City',
-    'last_search' => 'To Continue Last Search'
+    'last_search' => 'To Continue Last Search',
+    'join-us' => 'Join Us',
+    'sign-in' => 'Sign In',
+    'new-here' => 'New here ?',
 ];

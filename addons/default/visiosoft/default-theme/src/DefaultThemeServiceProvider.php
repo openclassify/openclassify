@@ -40,8 +40,14 @@ class DefaultThemeServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'login' => 'Visiosoft\AdvsModule\Http\Controller\advsController@login',
-        'register' => 'Visiosoft\AdvsModule\Http\Controller\advsController@register',
+        'login' => [
+            'as' => 'stream::login-route',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@login',
+        ],
+        'register' => [
+            'as' => 'stream::register-route',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@register',
+        ],
         'users/password/forgot' => 'Visiosoft\AdvsModule\Http\Controller\advsController@passwordForgot',
         'users/password/reset' => 'Visiosoft\AdvsModule\Http\Controller\advsController@passwordReset',
         'authcheck' => 'Visiosoft\AdvsModule\Http\Controller\advsController@authCheck',
