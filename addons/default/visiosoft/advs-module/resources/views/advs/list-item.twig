@@ -1,7 +1,8 @@
 {% extends "theme::layouts/default" %}
 
 {% block ogdata %}
-    <meta property="og:site_name" content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
+    <meta property="og:site_name"
+          content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
     <meta property="og:description" content="{{ template.get('og_description', trans(template.meta_description)) }}"/>
     <meta property="og:title" content="{{ adv.title }}"/>
     <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
@@ -84,7 +85,7 @@
                     <div class="col-md-5">
                         <div class="slider-text">
                             {% if entries('advs').isEnabled('favs') %}
-                                <a class="favorites" href="#"><i id="heart-icon-adv" class="fa fa-heart-o"></i></a>
+                                <a class="favorites" href="#"><i id="heart-icon-adv" class="far fa-heart"></i></a>
                             {% endif %}
                             <h3 class="title">{{ adv.title }}</h3>
                             <h2 class="ad-price">
@@ -126,7 +127,8 @@
                                             </div>
                                             <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 add-cart-upgrade">
                                                 <button type="button" class="btn btn-default btn-number"
-                                                        data-type="plus" data-field="quant[1]" {% if adv.stock < "2" %} disabled="true" {% endif %}>
+                                                        data-type="plus"
+                                                        data-field="quant[1]" {% if adv.stock < "2" %} disabled="true" {% endif %}>
                                                 </button>
                                             </div>
                                         </div>
@@ -166,11 +168,11 @@
                                 </div>
 
                                 {% if(profile.getObject().gsm_phone is not null or profile.office_phone is not null or entries('advs').isEnabled('messages')) %}
-                                <!-- contact-with -->
-                                <div class="contact-with">
-                                    <h4> {{ trans('visiosoft.module.advs::field.contact_with') }}</h4>
-                                    {% if(profile.getObject().gsm_phone != null) %}
-                                        <span class="btn btn-red show-number" data-id="{{ adv.id }}">
+                                    <!-- contact-with -->
+                                    <div class="contact-with">
+                                        <h4> {{ trans('visiosoft.module.advs::field.contact_with') }}</h4>
+                                        {% if(profile.getObject().gsm_phone != null) %}
+                                            <span class="btn btn-red show-number" data-id="{{ adv.id }}">
 									<i class="fa fa-phone-square"></i>
 									<span class="hide-text">{{ trans('visiosoft.module.advs::field.click_phone') }} </span>
 									<span class="hide-number">{{ trans("visiosoft.module.advs::field.phone_gsm") }}
@@ -181,16 +183,16 @@
                                         {% endif %}
                                     </span>
 								</span>
-                                    {% endif %}
-                                    {% if entries('advs').isEnabled('messages') %}
-                                    <a data-content="{{ app.auth.id }}" id="message" class="btn"><i
-                                                class="fa fa-envelope-square"></i>{{ trans("visiosoft.module.advs::field.send_message") }}
-                                    </a>
-                                    {% endif %}
-                                    {% if entries('advs').isEnabled('comparisons') %}
-                                        {% include "visiosoft.module.comparisons::comparebtn" %}
-                                    {% endif %}
-                                </div><!-- contact-with -->
+                                        {% endif %}
+                                        {% if entries('advs').isEnabled('messages') %}
+                                            <a data-content="{{ app.auth.id }}" id="message" class="btn"><i
+                                                        class="fa fa-envelope-square"></i>{{ trans("visiosoft.module.advs::field.send_message") }}
+                                            </a>
+                                        {% endif %}
+                                        {% if entries('advs').isEnabled('comparisons') %}
+                                            {% include "visiosoft.module.comparisons::comparebtn" %}
+                                        {% endif %}
+                                    </div><!-- contact-with -->
                                 {% endif %}
                                 {% if adv_detail_place_code %}
                                     <div>
@@ -218,8 +220,12 @@
                         </div><!-- slider-text -->
                     </div>
                 </div>
-                <a class="complaints pull-right" id="complaints"
-                   title="{{ trans('visiosoft.module.advs::field.report') }}"><i class="fa fa-exclamation-triangle"></i></a>
+                {% if entries('advs').isEnabled('complaints') %}
+                    <a class="complaints pull-right" id="complaints"
+                       title="{{ trans('visiosoft.module.advs::field.report') }}"><i
+                                class="fa fa-exclamation-triangle"></i></a>
+                {% endif %}
+
 
             </div><!-- slider -->
 
@@ -408,40 +414,14 @@
             </div><!-- recommended-info -->
         </div><!-- container -->
     </section>
-    <div id="complaints_modal" class="modal fade" role="dialog">
-        <div class="modal-dialog">
-            <!-- Modal content-->
-            <div class="modal-content">
-                <form action="{{ url_route('save_complaint') }}" method="get">
-                    <div class="modal-header">
-                        <h4 class="modal-title">{{ trans('visiosoft.module.advs::field.report') }}</h4>
-                    </div>
-                    <div class="modal-body">
-                        <input type="hidden" data-content="{{ adv.created_by_id }}" value="{{ adv.id }}" name="adv_id"
-                               id="adv_id">
-                        {% for complaint in complaints %}
-                            <li class="radio-element" style="list-style: none"><label><input type="radio"
-                                                                                             name="reasonList"
-                                                                                             value="{{ complaint.id }}"> {{ complaint.name }}
-                                </label></li>
-                        {% endfor %}
-                        <li class="radio-element" style="list-style: none"><label><textarea id="txtDisputeDescription1"
-                                                                                            name="complaint_description"
-                                                                                            rows="6" cols="50"
-                                                                                            maxlength="256"
-                                                                                            class="disputeDescription"
-                                                                                            placeholder="{{ trans('visiosoft.module.advs::field.complaint_placeholder') }}"> </textarea></label>
-                        </li>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="submit"
-                                class="btn btn-primary">{{ trans("visiosoft.module.advs::field.send_message") }}</button>
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
+
+
+
+    {% if entries('advs').isEnabled('complaints') %}
+        {% include "visiosoft.module.complaints::modal" %}
+    {% endif %}
+
+
     <div id="messages_modal" class="modal fade" role="dialog">
         <div class="modal-dialog">
             <form action="{{ url_route('visiosoft.module.messages::save_message', [adv.id]) }}" method="post">
@@ -478,7 +458,9 @@
             </div>
         </div>
     </div>
-
+    {% if entries('advs').isEnabled('favs') %}
+        {{ asset_add("scripts.js", "visiosoft.module.advs::js/favs.js") }}
+    {% endif %}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-item.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/quantity.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/phoneCounter.js") }}
@@ -498,5 +480,5 @@
     {% if entries('advs').isEnabled('streetview') and adv.map_Val != "" %}
         {% include "visiosoft.module.streetview::list-item" %}
     {% endif %}
-    
+
 {% endblock %}

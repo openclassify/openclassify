@@ -7,10 +7,10 @@ fav.checkFav = (id, type, divId, iconId) => {
         success: function (response) {
             if(response.length == 0) {
                 $(divId).attr("href", "/favs/add_fav/" + id+ "/"+type);
-                $(iconId).attr("class", "fa fa-heart-o");
+                $(iconId).attr("class", "far fa-heart");
             } else {
                 $(divId).attr("href", "/favs/delete_fav/" + id + "/" + "adv");
-                $(iconId).attr("class", "fa fa-heart");
+                $(iconId).attr("class", "fas fa-heart");
             }
         },
         error:function (err) {

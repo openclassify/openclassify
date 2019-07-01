@@ -161,11 +161,12 @@
                         <div class="panel-body">
                             <div class="price-range"><!--price-range-->
                                 <div class="price">
+                                    {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
                                     <input type="number" class="price-input" value="{{ request.min_price }}" name="min_price" min="0" placeholder="Min"> - <input class="price-input" type="number" value="{{ request.max_price }}" name="max_price" placeholder="Max">
                                     <select name="currency" id="currency">
-                                        <option value="USD">USD</option>
-                                        <option value="TRY">TRY</option>
-                                        <option value="EUR">EUR</option>
+                                        {% for currency in active_currencies %}
+                                        <option value="{{ currency }}">{{ currency }}</option>
+                                        {% endfor %}
                                     </select>
                                 </div>
                             </div><!--/price-range-->
