@@ -84,7 +84,7 @@
                     <div class="col-md-5">
                         <div class="slider-text">
                             {% if entries('advs').isEnabled('favs') %}
-                                <a class="favorites" href="#"><i id="heart-icon-adv" class="fa fa-heart-o"></i></a>
+                                <a class="favorites" href="#"><i id="heart-icon-adv" class="far fa-heart"></i></a>
                             {% endif %}
                             <h3 class="title">{{ adv.title }}</h3>
                             <h2 class="ad-price">
@@ -478,7 +478,9 @@
             </div>
         </div>
     </div>
-
+    {% if entries('advs').isEnabled('favs') %}
+        {{ asset_add("scripts.js", "visiosoft.module.advs::js/favs.js") }}
+    {% endif %}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-item.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/quantity.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/phoneCounter.js") }}
