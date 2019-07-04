@@ -77,7 +77,7 @@
 
         {% if entries('advs').isEnabled('subscriptions') %}
             <li role="presentation">
-                <a href="profile/subscription">{{ trans('visiosoft.module.profile::field.subscriptions.name') }}</a>
+                <a href="{{ url_route('visiosoft.module.subscriptions::profile-subscriptions') }}">{{ trans('visiosoft.module.profile::field.subscriptions.name') }}</a>
             </li>
         {% endif %}
     </ul>

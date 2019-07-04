@@ -70,7 +70,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressEdit'
         ],
         'profile/adress/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressUpdate',
-        'profile/subscription' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@subscription',
         'profile/class/status/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusAds',
         'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
         'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',

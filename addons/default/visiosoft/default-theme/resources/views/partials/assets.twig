@@ -31,7 +31,7 @@
 {% for style in asset_styles("styles.css") %}
     {{ style|raw }}
 {% endfor %}
-{{ asset_style("theme::css/default/animate") }}
+{{ asset_style("theme::css/default/animate.css") }}
 {{ asset_add("visiosoft_default.js", "theme::js/default/*") }}
 {{ asset_script("visiosoft_default.js") }}
 {{ asset_add("visiosoft_default_custom.js", "theme::js/zcustom.js") }}
