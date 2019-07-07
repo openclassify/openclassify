@@ -54,31 +54,6 @@
 
                             {% endif %}
                         </div>
-                        {% if(adv.video_url != null) %}
-                            <div class="col-md-2">
-                                <a class="btn btn-success" onclick="openVideo()"><i class="fa fa-file-video-o"
-                                                                                    aria-hidden="true"></i> {{ trans('visiosoft.module.cloudinary::field.video') }}
-                                </a>
-                                <div class="modal fade" id="adv-video" tabindex="-1" role="dialog"
-                                     aria-labelledby="myModalLabel">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                            <div class="close-modal text-right">
-                                                <button type="button" class="btn btn-danger" data-dismiss="modal">X
-                                                </button>
-                                            </div>
-                                            <div class="modal-body">
-                                                <video controls loop class="img-responsive"
-                                                       style="text-align: center; width: 100%">
-                                                    <source src="{{ adv.video_url }}" class="video-src"
-                                                            type="video/mp4"/>
-                                                </video>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        {% endif %}
                     </div><!-- Controls -->
 
                     <!-- slider-text -->
@@ -144,20 +119,20 @@
 
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
                                     {% if entries('advs').isEnabled('favs') %}
-                                        <a id="owner-fav" href="#"><i id="heart-icon-seller" class="fa fa-heart-o"></i></a>
+                                        <a id="owner-fav" href="#"><i id="heart-icon-seller" class="far fa-heart"></i></a>
                                     {% endif %}
-                                    <span>{{ trans('visiosoft.module.advs::field.offered_by') }}:
+                                    <span class="icon">{{ trans('visiosoft.module.advs::field.offered_by') }}:
                                             <a id="owner"
                                                href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}"
                                                data-content="{{ adv.owner_id }}">{{ adv.owner }}</a>
                                         </span>
-                                    <span> {{ trans('visiosoft.module.advs::field.ad_id') }}:
+                                    <span class="icon"> {{ trans('visiosoft.module.advs::field.ad_id') }}:
                                             <a href="#" class="time"> {{ adv.id }}</a>
                                         </span>
                                 </div>
 
-                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-row">
-                                    <span class="icon"><i class="fa fa-clock-o"></i><a
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+                                    <span class="icon"><i class="far fa-clock"></i><a
                                                 href="#">{{ adv.created_at|date('d/m/Y') }}</a></span>
                                     <span class="icon"><i class="fa fa-map-marker"></i><a href="#">{{ adv.city_name }}
                                             , {{ adv.country_name }}</a></span>
@@ -167,6 +142,39 @@
                                     {% endif %}
                                 </div>
 
+                                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+                                    {% if entries('advs').isEnabled('comparisons') %}
+                                        {% include "visiosoft.module.comparisons::comparebtn" %}
+                                        <span class="icon">{{ trans('visiosoft.module.comparisons::field.comparisonpagetitle') }}</span>
+                                    {% endif %}
+                                </div>
+
+                                {% if(adv.video_url != null) %}
+                                    <div class="contact-with">
+                                        <h4>{{ trans('visiosoft.module.cloudinary::field.video') }}</h4>
+                                            <a class="btn btn-success" onclick="openVideo()"><i class="fa fa-file-video-o"
+                                                                                    aria-hidden="true"></i> {{ trans('visiosoft.module.cloudinary::field.video') }}
+                                            </a>
+                                            <div class="modal fade" id="adv-video" tabindex="-1" role="dialog"
+                                     aria-labelledby="myModalLabel">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="close-modal text-right">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">X
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <video controls loop class="img-responsive"
+                                                            style="text-align: center; width: 100%">
+                                                            <source src="{{ adv.video_url }}" class="video-src"
+                                                                    type="video/mp4"/>
+                                                        </video>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
                                 {% if(profile.getObject().gsm_phone is not null or profile.office_phone is not null or entries('advs').isEnabled('messages')) %}
                                     <!-- contact-with -->
                                     <div class="contact-with">
@@ -188,9 +196,6 @@
                                             <a data-content="{{ app.auth.id }}" id="message" class="btn"><i
                                                         class="fa fa-envelope-square"></i>{{ trans("visiosoft.module.advs::field.send_message") }}
                                             </a>
-                                        {% endif %}
-                                        {% if entries('advs').isEnabled('comparisons') %}
-                                            {% include "visiosoft.module.comparisons::comparebtn" %}
                                         {% endif %}
                                     </div><!-- contact-with -->
                                 {% endif %}
