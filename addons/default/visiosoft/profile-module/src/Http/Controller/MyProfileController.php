@@ -462,23 +462,4 @@ class MyProfileController extends PublicController
 
     }
 
-    public function subscription()
-    {
-        $isActive = new AdvModel();
-        $isActiveSubscriptions = $isActive->is_enabled('subscriptions');
-        if ($isActiveSubscriptions) {
-            $siteModel = new SiteModel();
-            $mysites = $siteModel->getMySites();
-
-
-            $plans = PlanSubscription::query()
-                ->where('user_id', Auth::id())
-                ->leftJoin('plans as p1', 'plan_subscriptions.user_id', '=', 'p1.id')
-                ->select('p1.name as pname', 'plan_subscriptions.*')
-                ->orderByDesc('plan_subscriptions.id')
-                ->get();
-        }
-        return $this->view->make('visiosoft.module.profile::profile.subscriptions',compact('mysites', 'plans'));
-    }
-
 }
