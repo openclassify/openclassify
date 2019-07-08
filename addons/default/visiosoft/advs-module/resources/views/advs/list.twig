@@ -124,10 +124,8 @@
                                                 <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i class="fa fa-user"></i> </a>
 
                                                 {% if entries('advs').isEnabled('comparisons') %}
-                                                
-                                                <a href="javascript:;" class="comparison" data-adv="{{adv.id}}" data-title="{{ adv.name | slice(0, 20) }}" data-price="{{ adv.price }} {{adv.currency}}" data-img="{{advPhoto}}">
-                                                    <i class="fa fa-arrows-alt"></i>
-                                                </a>
+                                            
+                                                    {% include "visiosoft.module.comparisons::comparebtn" %}
 
                                                 {% endif %}
                                             </div><!-- item-info-right -->
