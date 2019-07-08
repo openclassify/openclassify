@@ -156,9 +156,13 @@ class UserAuthenticator
         $all['display_name'] = $all['first_name'] . " " . $all['last_name'];
         $all['username'] = array_first($email);
         $all['activated'] = 1;                                                      //Activated User
-        $all['str_id'] = str_random(24);                                     //User random key
-        $planParams['plan'] = $all['plan_id'];
-        unset($all['plan_id']);//Demo Plan id
+        $all['str_id'] = str_random(24);                                    //User random key
+        $planParams['plan'] = 24;
+        if(isset($all['plan_id']))
+        {
+            $planParams['plan'] = $all['plan_id'];
+            unset($all['plan_id']);//Demo Plan id
+        }
 
 
         if ($users->findByEmail($all['email']) or $users->findByUsername($all['username'])) {
@@ -182,7 +186,6 @@ class UserAuthenticator
             $userPlan->addPlanUser($planParams);
             $siteModel = new SiteModel();
             $siteModel->createSite($all['subdomain'], $user->id, $opassword, $planParams['plan']);       //Create Site
-
             $this->events->dispatch(new CreateSite($all, $this->settings));
         }
 
