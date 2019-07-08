@@ -123,14 +123,13 @@ class AdvsController extends PublicController
 
         Cookie::queue(Cookie::make('last_search', $request->getRequestUri(), 84000));
 
-            $viewType = $request->cookie('viewType');
-            if (isset($viewType) and $viewType == 'table') {
-                return $this->view->make('visiosoft.module.advs::advs/table', $compact);
-            } elseif (isset($viewType) and $viewType == 'map')
-            {
-                return $this->view->make('visiosoft.module.advs::advs/map', $compact);
-            }
-            return $this->view->make('visiosoft.module.advs::advs/list', $compact);
+        $viewType = $request->cookie('viewType');
+        if (isset($viewType) and $viewType == 'table') {
+            return $this->view->make('visiosoft.module.advs::advs/table', $compact);
+        } elseif (isset($viewType) and $viewType == 'map') {
+            return $this->view->make('visiosoft.module.advs::advs/map', $compact);
+        }
+        return $this->view->make('visiosoft.module.advs::advs/list', $compact);
     }
 
     public function viewType($type)
@@ -316,7 +315,6 @@ class AdvsController extends PublicController
         Dispatcher $events,
         AdvModel $advModel,
         CategoryModel $categoryModel,
-        PackageModel $packageModel,
         AdModel $StoreAdModel
     )
     {
@@ -335,6 +333,7 @@ class AdvsController extends PublicController
 
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
                 $parent_cat = $categoryModel->getParentCats($request->cat1, 'parent_id');
+                $packageModel = new PackageModel();
                 $package = $packageModel->reduceLimit($parent_cat, 'reduce');
                 if ($package != null) {
                     return redirect('/')->with('error', trans('visiosoft.module.advs::message.please_buy_package'));
@@ -342,7 +341,7 @@ class AdvsController extends PublicController
             }
 
             if ($advModel->is_enabled('store') and $adv->slug == "") {
-                if ($request->store != "0" and $request->store != null ) {
+                if ($request->store != "0" and $request->store != null) {
                     $StoreAdModel->createStoreAdLoggedInUser($request->store, $request->update_id);
                 }
             }
@@ -568,7 +567,7 @@ class AdvsController extends PublicController
 
     }
 
-    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, AdvModel $advModel, PackageModel $packageModel)
+    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, AdvModel $advModel)
     {
         $ad = $advModel->getAdv($id);
         $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
@@ -582,6 +581,7 @@ class AdvsController extends PublicController
             $advModel->publish_at_Ads($id);
             if ($ad->finish_at == NULL AND $type == "approved") {
                 if ($advModel->is_enabled('packages')) {
+                    $packageModel = new PackageModel();
                     $published_time = $packageModel->reduceTimeLimit($ad->cat1);
                     if ($published_time != null) {
                         $default_published_time = $published_time;
