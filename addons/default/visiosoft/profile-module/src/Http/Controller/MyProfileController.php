@@ -238,7 +238,7 @@ class MyProfileController extends PublicController
         }
     }
 
-    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, AdvModel $advModel, PackageModel $packageModel)
+    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, AdvModel $advModel)
     {
         $ad = $advModel->getAdv($id);
         $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
@@ -252,6 +252,7 @@ class MyProfileController extends PublicController
             $advModel->publish_at_Ads($id);
             if ($ad->finish_at == NULL AND $type == "approved") {
                 if ($advModel->is_enabled('packages')) {
+                    $packageModel = new PackageModel();
                     $published_time = $packageModel->reduceTimeLimit($ad->cat1);
                     if($published_time != null)
                     {

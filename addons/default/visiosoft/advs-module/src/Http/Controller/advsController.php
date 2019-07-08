@@ -314,8 +314,7 @@ class AdvsController extends PublicController
         CategoryRepositoryInterface $categoryRepository,
         Dispatcher $events,
         AdvModel $advModel,
-        CategoryModel $categoryModel,
-        AdModel $StoreAdModel
+        CategoryModel $categoryModel
     )
     {
         if (!Auth::user()) {
@@ -341,6 +340,7 @@ class AdvsController extends PublicController
             }
 
             if ($advModel->is_enabled('store') and $adv->slug == "") {
+                $StoreAdModel = new AdModel();
                 if ($request->store != "0" and $request->store != null) {
                     $StoreAdModel->createStoreAdLoggedInUser($request->store, $request->update_id);
                 }
@@ -499,8 +499,7 @@ class AdvsController extends PublicController
         AdvFormBuilder $advFormBuilder,
         AdvRepositoryInterface $advRepository,
         CategoryRepositoryInterface $categoryRepository,
-        AdvModel $advModel,
-        UserModel $StoreUserModel
+        AdvModel $advModel
     )
     {
         $nameField = HTMLDomParser::str_get_html($advFormBuilder->render($id)->getContent());
