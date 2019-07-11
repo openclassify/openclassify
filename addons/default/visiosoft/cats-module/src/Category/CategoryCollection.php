@@ -18,8 +18,8 @@ class CategoryCollection extends EntryCollection
 
         for ($i = 0; $i <= $counter; $i++) {
             $data = CategoryModel::query()
-                ->where('parent_category_id', $id)
-                ->where('deleted_at', null)
+                ->where('cats_category.parent_category_id', $id)
+                ->where('cats_category.deleted_at', null)
                 ->select('cats_category.id', 'cats_category.parent_category_id')
                 ->first();
             if ($data != "") {
