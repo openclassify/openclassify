@@ -20,28 +20,20 @@ class CategoryController extends AdminController
                 $CategoriesModel->deleteSubCategories($item);
             }
         }
-        $categories = 1;
         if (!isset($request->cat) || $request->cat == "") {
             $categories = CategoryModel::query()->where('parent_category_id', '')->orWhereNull('parent_category_id')->get();
             $categories = $categories->where('deleted_at', null);
         } else {
             $categories = CategoryModel::query()->where('parent_category_id', $request->cat)->whereNull('deleted_at')->get();
         }
-        if (count($categories) == 0) {
+        if (count($categories) == 0 and isset($request->cat) || $request->cat != "") {
             $this->messages->error('Selected category has no sub-categories.');
             return back();
         }
         $table->setTableEntries($categories);
-        // dd($table);
         return $table->render();
     }
 
-    /**
-     * Create a new entry.
-     *
-     * @param CategoryFormBuilder $form
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function create(CategoryFormBuilder $form, Request $request)
     {
         if ($this->request->action == "save") {
@@ -83,13 +75,7 @@ class CategoryController extends AdminController
         return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField', 'formBuilder'));
     }
 
-    /**
-     * Edit an existing entry.
-     *
-     * @param CategoryFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
+
     public function edit(CategoryFormBuilder $form, Request $request, $id)
     {
         if ($request->action == "update") {
@@ -111,7 +97,7 @@ class CategoryController extends AdminController
         return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField'))->with('id', $id);
     }
 
-    public function delete($id)
+    public function delete(CategoryCollection $categoryCollection, CategoryModel $categoryModel, $id)
     {
         echo "<div style='background-image:url(" . $this->dispatch(new MakeImageInstance('visiosoft.theme.default::images/loading_anim.gif', 'img'))->url() . ");
         background-repeat:no-repeat;
@@ -121,14 +107,14 @@ class CategoryController extends AdminController
         width:98%;
         height:100%;    
         padding-left: 20px;'><h3>" . trans('visiosoft.module.cats::field.please_wait') . "</h3></div>";
-        $Find_Categories = CategoryModel::query()
+        $Find_Categories = $categoryModel
             ->where('deleted_at', null)
             ->find($id);
         if ($Find_Categories != "") {
-            $delete = new CategoryCollection();
-            $delete = $delete->subCatDelete($id);
+            $categoryCollection->subCatDelete($id);
             header("Refresh:0");
         } else {
+            $categoryModel->find($id)->delete();
             return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
         }
 
