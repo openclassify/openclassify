@@ -2,9 +2,10 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'Title',
     ],
     'order' => [
-        'name' => 'Order'
+        'name' => 'Order',
     ],
+    'please_wait' => 'Please wait.Deleting Sub Categories',
 ];

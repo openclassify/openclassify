@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\CatsModule\Http\Controller\Admin;
 
+use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Illuminate\Http\Request;
 use Sunra\PhpSimple\HtmlDomParser;
@@ -13,18 +14,17 @@ class CategoryController extends AdminController
 {
     public function index(CategoryTableBuilder $table, Request $request)
     {
-        if($this->request->action == "delete") {
+        if ($this->request->action == "delete") {
             $CategoriesModel = new CategoryModel();
-            foreach ($this->request->id as $item)
-            {
+            foreach ($this->request->id as $item) {
                 $CategoriesModel->deleteSubCategories($item);
             }
         }
         $categories = 1;
-        if(!isset($request->cat) || $request->cat==""){
+        if (!isset($request->cat) || $request->cat == "") {
             $categories = CategoryModel::query()->where('parent_category_id', '')->orWhereNull('parent_category_id')->get();
             $categories = $categories->where('deleted_at', null);
-        }else{
+        } else {
             $categories = CategoryModel::query()->where('parent_category_id', $request->cat)->whereNull('deleted_at')->get();
         }
         if (count($categories) == 0) {
@@ -42,14 +42,14 @@ class CategoryController extends AdminController
      * @param CategoryFormBuilder $form
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function create(CategoryFormBuilder $form,Request $request)
+    public function create(CategoryFormBuilder $form, Request $request)
     {
-        if($this->request->action == "save") {
+        if ($this->request->action == "save") {
             $all = $this->request->all();
             $id = $all['parent_category'];
             $k = 1;
-            for($i=0; $i<$k; $i++) {
-                $cat1  = CategoryModel::query()->where('cats_category.id', $id)->first();
+            for ($i = 0; $i < $k; $i++) {
+                $cat1 = CategoryModel::query()->where('cats_category.id', $id)->first();
                 if ($cat1 != null) {
                     $id = $cat1->parent_category_id;
                     $k++;
@@ -80,7 +80,7 @@ class CategoryController extends AdminController
         }
 
 
-        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField','formBuilder'));
+        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField', 'formBuilder'));
     }
 
     /**
@@ -90,7 +90,7 @@ class CategoryController extends AdminController
      * @param        $id
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit(CategoryFormBuilder $form,Request $request, $id)
+    public function edit(CategoryFormBuilder $form, Request $request, $id)
     {
         if ($request->action == "update") {
             $form->make($id);
@@ -113,11 +113,18 @@ class CategoryController extends AdminController
 
     public function delete($id)
     {
+        echo "<div style='background-image:url(" . $this->dispatch(new MakeImageInstance('visiosoft.theme.default::images/loading_anim.gif', 'img'))->url() . ");
+        background-repeat:no-repeat;
+        background-size: 300px;
+        background-position:center;
+        text-align:center;
+        width:98%;
+        height:100%;    
+        padding-left: 20px;'><h3>" . trans('visiosoft.module.cats::field.please_wait') . "</h3></div>";
         $Find_Categories = CategoryModel::query()
             ->where('deleted_at', null)
             ->find($id);
-        if($Find_Categories != "")
-        {
+        if ($Find_Categories != "") {
             $delete = new CategoryCollection();
             $delete = $delete->subCatDelete($id);
             header("Refresh:0");

@@ -9,5 +9,6 @@
       "name"      =>"Sipariş",
 
    ],
+     'please_wait' => 'Lütfen Bekleyiniz.Alt Kategoriler Siliniyor.',
 
-];
+ ];
