@@ -28,10 +28,7 @@ class AdvsModule extends Module
         'advs' => [
             'buttons' => [
                 'new_adv' => [
-                    // 'href' => "/advs/create_adv",
-                    // 'data-toggle' => 'modal',
-                    // 'data-target' => '#modal',
-                    // 'href'        => 'admin/advs/categories/choose',
+                     'href' => "/advs/create_adv",
                 ],
             ],
         ],

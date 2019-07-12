@@ -58,7 +58,9 @@ class AdvsController extends AdminController
                     }
                 },
             ],
-            'edit'
+            'edit' => [
+                'href' => '/advs/edit_advs/{entry.id}',
+            ]
         ]);
 
         $table->setColumns([
