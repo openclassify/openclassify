@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Advs',
-    'name'        => 'Advs Module',
+    'title'       => 'Ads',
+    'name'        => 'Ads Module',
     'description' => 'Ads Module',
 ];

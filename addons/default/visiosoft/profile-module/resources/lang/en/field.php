@@ -170,7 +170,7 @@ return [
         'name' => 'Profile Photo'
     ],
     'adv_listing_banner' => [
-        'name' => 'Advs Listing Page Banner'
+        'name' => 'Ads Listing Page Banner'
     ],
     'approve' => [
         'name' => 'Approve'
@@ -235,12 +235,12 @@ return [
     'owner_name' => 'Message',
 
     'favorites' => "Favorites",
-    'fav_advs' => 'Favorite Advs',
+    'fav_advs' => 'Favorite Ads',
     'fav_sellers' => "Fav Sellers",
     'fav_searches' => "Fav Searches",
     'posted_on' => "Posted On",
     'message_details' => "Message Details",
-    'adv_no' => 'Adv No',
+    'adv_no' => 'Ad No',
     'bill_address' => [
         'name' => 'Bill Address',
     ],

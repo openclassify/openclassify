@@ -21,6 +21,10 @@
       "name"      =>"Wijk",
 
    ],
+   "order"   =>   [
+      "name"      =>"sorteervolgorde",
+
+   ],
    "neighborhood"   =>   [
       "name"      =>"Buurt",
 

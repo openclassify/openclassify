@@ -60,6 +60,10 @@
       "name"      =>"Страна объявления по умолчанию",
 
    ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"Конвертер валют API Key",
+
+   ],
    "default_city"   =>   [
       "name"      =>"Город объявлений по умолчанию",
 

@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "title"      =>"ADVS",
+      "title"      =>"advertenties",
 
    ],
    "categories"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"Aangepast veld advs",
+      "title"      =>"Aangepaste veldadvertenties",
 
    ],
    "cf_values"   =>   [

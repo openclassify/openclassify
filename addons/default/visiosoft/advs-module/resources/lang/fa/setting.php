@@ -60,6 +60,10 @@
       "name"      =>"پیشفرض کشور تبلیغی",
 
    ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"کلید API مبدل ارز",
+
+   ],
    "default_city"   =>   [
       "name"      =>"پیشفرض شهر تبلیغاتی",
 

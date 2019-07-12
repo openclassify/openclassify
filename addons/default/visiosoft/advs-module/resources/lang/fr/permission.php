@@ -2,11 +2,11 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"Advs",
+      "name"      =>"Les publicités",
       "option"      =>      [
-         "read"         =>"Peut lire les advs?        ",
-         "write"         =>"Peut créer / éditer des advs?        ",
-         "delete"         =>"Peut supprimer les advs?"
+         "read"         =>"Peut lire les annonces?        ",
+         "write"         =>"Peut créer / modifier des annonces?        ",
+         "delete"         =>"Peut supprimer des annonces?"
       ],
 
    ],
@@ -38,11 +38,11 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Advs personnalisé",
+      "name"      =>"Annonces personnalisées",
       "option"      =>      [
-         "read"         =>"Peut-on lire les advs personnalisés?        ",
-         "write"         =>"Peut-on créer / éditer des advs de terrain personnalisés?        ",
-         "delete"         =>"Peut-on supprimer des advs de champ personnalisés?"
+         "read"         =>"Peut lire des annonces de terrain personnalisées?        ",
+         "write"         =>"Peut créer / modifier des annonces de terrain personnalisées?        ",
+         "delete"         =>"Peut-on supprimer des annonces de terrain personnalisées?"
       ],
 
    ],

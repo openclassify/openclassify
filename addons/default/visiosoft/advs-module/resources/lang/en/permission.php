@@ -2,11 +2,11 @@
 
 return [
     'advs' => [
-        'name'   => 'Advs',
+        'name'   => 'Ads',
         'option' => [
-            'read'   => 'Can read advs?',
-            'write'  => 'Can create/edit advs?',
-            'delete' => 'Can delete advs?',
+            'read'   => 'Can read ads?',
+            'write'  => 'Can create/edit ads?',
+            'delete' => 'Can delete ads?',
         ],
     ],
     'categories' => [
@@ -34,11 +34,11 @@ return [
         ],
     ],
     'custom_field_advs' => [
-        'name'   => 'Custom field advs',
+        'name'   => 'Custom field ads',
         'option' => [
-            'read'   => 'Can read custom field advs?',
-            'write'  => 'Can create/edit custom field advs?',
-            'delete' => 'Can delete custom field advs?',
+            'read'   => 'Can read custom field ads?',
+            'write'  => 'Can create/edit custom field ads?',
+            'delete' => 'Can delete custom field ads?',
         ],
     ],
     'cf_values' => [

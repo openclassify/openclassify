@@ -133,6 +133,10 @@
       "name"      =>"Mensajes",
 
    ],
+   "user_no"   =>   [
+      "name"      =>"Usuario",
+
+   ],
    "menu_profile"   =>   [
       "name"      =>"Perfil",
 
@@ -214,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"Banner de página de listado de anuncios",
+      "name"      =>"Banner de la página de listado de anuncios",
 
    ],
    "approve"   =>   [
@@ -295,12 +299,12 @@
    "message_title"   =>"Título del mensaje",
    "owner_name"   =>"Mensaje",
    "favorites"   =>"Favoritos",
-   "fav_advs"   =>"Avances favoritos",
+   "fav_advs"   =>"Anuncios favoritos",
    "fav_sellers"   =>"Fav vendedores",
    "fav_searches"   =>"Fav búsquedas",
    "posted_on"   =>"Publicado en",
    "message_details"   =>"Detalles del mensaje",
-   "adv_no"   =>"Adv No",
+   "adv_no"   =>"Anuncio No",
    "bill_address"   =>   [
       "name"      =>"Dirección de Bill",
 

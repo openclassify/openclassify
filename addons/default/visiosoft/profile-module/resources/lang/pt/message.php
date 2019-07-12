@@ -20,6 +20,6 @@
    "no_packages_module"   =>"Nenhum módulo de pacotes!",
    "required_add"   =>"Por favor,
    preencha todas as linhas necessárias.",
-   "no_extend_package"   =>"Não estenda pacotes Adv",
+   "no_extend_package"   =>"Não estenda pacotes de anúncios",
    "saved"   =>"Salvou!"
 ];

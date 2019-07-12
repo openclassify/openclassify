@@ -115,15 +115,15 @@
 
    ],
    "pending_adv"   =>   [
-      "name"      =>"Advs en attente",
+      "name"      =>"Annonces en attente",
 
    ],
    "archived_adv"   =>   [
-      "name"      =>"Archivées Advs",
+      "name"      =>"Annonces archivées",
 
    ],
    "favs_adv"   =>   [
-      "name"      =>"Fav Advs",
+      "name"      =>"Fav Fav",
 
    ],
    "my_adv"   =>   [

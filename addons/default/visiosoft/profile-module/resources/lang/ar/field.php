@@ -133,6 +133,10 @@
       "name"      =>"رسائل",
 
    ],
+   "user_no"   =>   [
+      "name"      =>"المستعمل",
+
+   ],
    "menu_profile"   =>   [
       "name"      =>"الملف الشخصي",
 
@@ -214,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"Advs صفحة قائمة راية",
+      "name"      =>"إعلان صفحة قائمة الإعلانات",
 
    ],
    "approve"   =>   [
@@ -292,12 +296,12 @@
    "message_title"   =>"عنوان الرسالة",
    "owner_name"   =>"رسالة",
    "favorites"   =>"المفضلة",
-   "fav_advs"   =>"Advs المفضلة",
+   "fav_advs"   =>"الإعلانات المفضلة",
    "fav_sellers"   =>"الصوت العربي الحر البائعين",
    "fav_searches"   =>"عمليات البحث المفضلة",
    "posted_on"   =>"نشر على",
    "message_details"   =>"تفاصيل الرسالة",
-   "adv_no"   =>"Adv No",
+   "adv_no"   =>"رقم الإعلان",
    "bill_address"   =>   [
       "name"      =>"عنوان الفاتورة",
 

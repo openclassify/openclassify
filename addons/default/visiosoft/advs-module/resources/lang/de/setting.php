@@ -60,6 +60,10 @@
       "name"      =>"Land der Standardanzeige",
 
    ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"Währungsumrechner-API-Schlüssel",
+
+   ],
    "default_city"   =>   [
       "name"      =>"Standard-Anzeigenstadt",
 

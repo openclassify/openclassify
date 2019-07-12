@@ -2,11 +2,11 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"Advs",
+      "name"      =>"Anzeigen",
       "option"      =>      [
-         "read"         =>"Kann advs lesen?        ",
-         "write"         =>"Kann advs erstellen / bearbeiten?        ",
-         "delete"         =>"Kann advs löschen?"
+         "read"         =>"Kann Anzeigen lesen?        ",
+         "write"         =>"Kann Anzeigen erstellen / bearbeiten?        ",
+         "delete"         =>"Kann Anzeigen löschen?"
       ],
 
    ],
@@ -38,11 +38,11 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Benutzerdefiniertes Feld",
+      "name"      =>"Benutzerdefinierte Feldanzeigen",
       "option"      =>      [
-         "read"         =>"Kann benutzerdefinierte Field Advs lesen?        ",
-         "write"         =>"Kann benutzerdefinierte Field Advs erstellen / bearbeiten?        ",
-         "delete"         =>"Kann benutzerdefinierte Feld-Advs löschen?"
+         "read"         =>"Kann benutzerdefinierte Feldanzeigen lesen?        ",
+         "write"         =>"Kann benutzerdefinierte Feldanzeigen erstellen / bearbeiten?        ",
+         "delete"         =>"Kann benutzerdefinierte Feldanzeigen löschen?"
       ],
 
    ],

@@ -60,6 +60,10 @@
       "name"      =>"Varsayılan Reklam Ülkesi",
 
    ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"Para Birimi Dönüştürücü API Anahtarı",
+
+   ],
    "default_city"   =>   [
       "name"      =>"Varsayılan Reklam Şehri",
 

@@ -2,7 +2,7 @@
 
 return [
     'advs' => [
-        'title' => 'Advs',
+        'title' => 'Ads',
     ],
     'categories' => [
         'title' => 'Categories',
@@ -26,7 +26,7 @@ return [
         'title' => 'Custom fields',
     ],
     'custom_field_advs' => [
-        'title' => 'Custom field advs',
+        'title' => 'Custom field ads',
     ],
     'cf_values' => [
         'title' => 'Cf values',

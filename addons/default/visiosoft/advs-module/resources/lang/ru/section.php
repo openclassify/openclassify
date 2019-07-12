@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "title"      =>"Advs",
+      "title"      =>"Объявления",
 
    ],
    "categories"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"Настраиваемые поля",
+      "title"      =>"Пользовательские полевые объявления",
 
    ],
    "cf_values"   =>   [

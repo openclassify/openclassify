@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "title"      =>"مشاوره",
+      "title"      =>"تبلیغات",
 
    ],
    "categories"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"پیشنهادات زمینه سفارشی",
+      "title"      =>"تبلیغات سفارشی",
 
    ],
    "cf_values"   =>   [

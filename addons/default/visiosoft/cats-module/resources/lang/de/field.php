@@ -9,5 +9,13 @@
       "name"      =>"Auftrag",
 
    ],
+   "slug"   =>   [
+      "name"      =>"Schnecke",
 
+   ],
+   "files"   =>   [
+      "name"      =>"Bild",
+
+   ],
+   "please_wait"   =>"Bitte warten. Löschen von Unterkategorien"
 ];

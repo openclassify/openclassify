@@ -2,11 +2,11 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"ADVS",
+      "name"      =>"advertenties",
       "option"      =>      [
-         "read"         =>"Kan advs lezen?        ",
-         "write"         =>"Kan advs creëren / bewerken?        ",
-         "delete"         =>"Kan advs verwijderen?"
+         "read"         =>"Kan ik advertenties lezen?        ",
+         "write"         =>"Kan advertenties maken / bewerken?        ",
+         "delete"         =>"Kunnen advertenties worden verwijderd?"
       ],
 
    ],
@@ -38,11 +38,11 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Aangepast veld advs",
+      "name"      =>"Aangepaste veldadvertenties",
       "option"      =>      [
-         "read"         =>"Kan ik custom field advs lezen?        ",
-         "write"         =>"Kan aangepaste veld advs maken / bewerken?        ",
-         "delete"         =>"Kan aangepast veld advs verwijderen?"
+         "read"         =>"Kan aangepaste veldadvertenties lezen?        ",
+         "write"         =>"Kan aangepaste veldadvertenties maken / bewerken?        ",
+         "delete"         =>"Kunnen aangepaste veldadvertenties worden verwijderd?"
       ],
 
    ],

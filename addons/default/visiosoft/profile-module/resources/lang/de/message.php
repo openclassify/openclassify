@@ -18,6 +18,6 @@
    "receive_messages_email"   =>"Ich möchte Nachrichten als E-Mail erhalten",
    "no_packages_module"   =>"Kein Paketmodul!",
    "required_add"   =>"Bitte füllen Sie alle erforderlichen Zeilen aus.",
-   "no_extend_package"   =>"Nein Adv-Pakete verlängern",
+   "no_extend_package"   =>"Nein Anzeigenpakete erweitern",
    "saved"   =>"Gerettet!"
 ];

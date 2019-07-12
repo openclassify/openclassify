@@ -21,6 +21,10 @@
       "name"      =>"Kreis",
 
    ],
+   "order"   =>   [
+      "name"      =>"Sortierreihenfolge",
+
+   ],
    "neighborhood"   =>   [
       "name"      =>"Nachbarschaft",
 

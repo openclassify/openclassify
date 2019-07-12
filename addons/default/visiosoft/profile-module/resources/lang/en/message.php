@@ -17,6 +17,6 @@ return [
     'receive_messages_email' => 'I want to receive messages as email',
     'no_packages_module' => 'No Packages Module!',
     'required_add'=> 'Please fill in all required lines.',
-    'no_extend_package' => 'No Extend Adv Packages',
+    'no_extend_package' => 'No Extend Ad Packages',
     'saved' => 'Saved!',
 ];
