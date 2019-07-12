@@ -3,5 +3,5 @@
 return [
     'title'       => 'Advs',
     'name'        => 'Advs Module',
-    'description' => 'Description',
+    'description' => 'Ads Module',
 ];
