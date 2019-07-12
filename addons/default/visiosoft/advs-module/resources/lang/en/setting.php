@@ -47,6 +47,9 @@ return [
     'default_country' => [
         'name' => 'Default Ad Country',
     ],
+    'free_currencyconverterapi_key' => [
+        'name' => 'Currency Converter API Key'
+    ],
     'default_city' => [
         'name' => 'Default Ad City',
     ],

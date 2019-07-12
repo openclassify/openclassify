@@ -16,6 +16,9 @@ return [
     'district' => [
         'name' => 'District'
     ],
+    'order' => [
+        'name' => 'Sort Order'
+    ],
     'neighborhood' => [
         'name' => 'Neighborhood'
     ],
