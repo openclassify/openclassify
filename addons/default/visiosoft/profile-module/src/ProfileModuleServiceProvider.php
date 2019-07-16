@@ -5,6 +5,7 @@ use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
+use Visiosoft\ProfileModule\Http\Middleware\Cors;
 use Visiosoft\ProfileModule\Profile\Contract\ProfileRepositoryInterface;
 use Visiosoft\ProfileModule\Profile\ProfileRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileProfileEntryModel;
@@ -42,7 +43,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $api = [];
+    protected $api = [
+    ];
 
     /**
      * The addon routes.
@@ -95,7 +97,16 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile/notification'             => [
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
         ],
-        'register/ajax' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@registerAjax',
+
+
+        'register/ajax' =>[
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@registerAjax',
+            'middleware' => [
+                \Barryvdh\Cors\HandleCors::class,
+            ],
+        ],
+
+
 
     ];
 
@@ -124,7 +135,9 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $routeMiddleware = [];
+    protected $routeMiddleware = [
+        'cors' => Cors::class,
+    ];
 
     /**
      * The addon event listeners.
