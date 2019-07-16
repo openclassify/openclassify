@@ -165,7 +165,7 @@ class UserAuthenticator
         }
 
 
-        if ($users->findByEmail($all['email']) or $users->findByUsername($all['username'])) {
+        if (User::withTrashed()->where('email',$all['email'])->first() or User::withTrashed()->where('username',$all['username'])->first()) {
             return response()->json(['status' => 'error', 'message' => 'This Username or Email Registered!']);
         }
         $opassword = str_random(8);
