@@ -1,7 +1,7 @@
 <?php
 
  return[
-   "title"   =>"Kategoriler",
-   "name"   =>"Kategoriler modülü",
+   "title"   =>"Kategori",
+   "name"   =>"Kategori Modülü",
    "description"   =>""
 ];

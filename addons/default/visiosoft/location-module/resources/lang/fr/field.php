@@ -21,6 +21,10 @@
       "name"      =>"District",
 
    ],
+   "order"   =>   [
+      "name"      =>"Ordre de tri",
+
+   ],
    "neighborhood"   =>   [
       "name"      =>"quartier",
 

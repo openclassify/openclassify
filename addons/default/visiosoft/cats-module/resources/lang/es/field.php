@@ -9,5 +9,13 @@
       "name"      =>"Orden",
 
    ],
+   "slug"   =>   [
+      "name"      =>"Babosa",
 
+   ],
+   "files"   =>   [
+      "name"      =>"Imagen",
+
+   ],
+   "please_wait"   =>"Por favor espere. Eliminando subcategorías"
 ];

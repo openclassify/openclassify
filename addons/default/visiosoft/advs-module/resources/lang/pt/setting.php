@@ -60,6 +60,10 @@
       "name"      =>"País de anúncios padrão",
 
    ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"Chave da API do conversor de moeda",
+
+   ],
    "default_city"   =>   [
       "name"      =>"Cidade de anúncios padrão",
 

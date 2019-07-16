@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "title"      =>"Advs",
+      "title"      =>"Anuncios",
 
    ],
    "categories"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"Campo personalizado advs",
+      "title"      =>"Anuncios de campo personalizados",
 
    ],
    "cf_values"   =>   [

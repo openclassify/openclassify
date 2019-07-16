@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "title"      =>"Advs",
+      "title"      =>"Anzeigen",
 
    ],
    "categories"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"Benutzerdefiniertes Feld",
+      "title"      =>"Benutzerdefinierte Feldanzeigen",
 
    ],
    "cf_values"   =>   [

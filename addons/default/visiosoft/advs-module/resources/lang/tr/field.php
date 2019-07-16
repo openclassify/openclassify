@@ -115,7 +115,7 @@
 
    ],
    "pending_adv"   =>   [
-      "name"      =>"Bekleyen İlanlar",
+      "name"      =>"Bekleyen Reklamlar",
 
    ],
    "archived_adv"   =>   [
@@ -123,7 +123,7 @@
 
    ],
    "favs_adv"   =>   [
-      "name"      =>"Fav Advs",
+      "name"      =>"Fav Reklamları",
 
    ],
    "my_adv"   =>   [
@@ -177,7 +177,7 @@
    "share"   =>"Bu reklamı paylaş",
    "report"   =>"Bu reklamı bildir",
    "features"   =>"Özellikler",
-   "streetview"   =>"Sokak Görünümü",
+   "streetview"   =>"sokak Görünümü",
    "recommended_ads"   =>"Sizin için Önerilen Reklamlar",
    "new"   =>"Yeni",
    "short_info"   =>"Kısa Bilgi",
@@ -191,8 +191,8 @@
    satıcı en kısa sürede sizinle irtibata geçecektir.",
    "ad_id"   =>"İlan No",
    "contact_with"   =>"İletişime geç",
-   "create_adv"   =>"İlan Yarat",
-   "edit_adv"   =>"İlan Düzenle",
+   "create_adv"   =>"Reklam oluştur",
+   "edit_adv"   =>"Reklamı Düzenle",
    "mandatory_fields"   =>"Zorunlu alanlar",
    "ad_post"   =>"İlan Yayını",
    "sell_item"   =>"Bir ürün veya hizmet satmak",
@@ -229,7 +229,6 @@
       "list"      =>"Liste",
 
    ],
-   "streetview"   =>"sokak Görünümü",
    "advs_list_table_thead"   =>   [
       "name"      =>"İlan Adı",
       "price"      =>"Fiyat",

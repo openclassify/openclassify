@@ -2,10 +2,10 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"ADVS",
+      "name"      =>"Reklamlar",
       "option"      =>      [
-         "read"         =>"Tavsiye okuyabilir mi?        ",
-         "write"         =>"Reklamvs oluşturabilir / düzenleyebilir mi?        ",
+         "read"         =>"Reklam okuyabilir mi?        ",
+         "write"         =>"Reklam oluşturabilir / düzenleyebilir mi?        ",
          "delete"         =>"Reklamları silebilir mi?"
       ],
 
@@ -38,7 +38,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Özel alan önerileri",
+      "name"      =>"Özel alan reklamları",
       "option"      =>      [
          "read"         =>"Özel alan reklamlarını okuyabilir mi?        ",
          "write"         =>"Özel alan reklamları oluşturabilir / düzenleyebilir mi?        ",

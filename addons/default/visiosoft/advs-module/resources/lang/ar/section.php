@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "title"      =>"Advs",
+      "title"      =>"إعلانات",
 
    ],
    "categories"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"advs حقل مخصص",
+      "title"      =>"الإعلانات الميدانية المخصصة",
 
    ],
    "cf_values"   =>   [

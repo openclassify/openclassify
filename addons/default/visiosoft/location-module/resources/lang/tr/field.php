@@ -21,6 +21,10 @@
       "name"      =>"İlçe",
 
    ],
+   "order"   =>   [
+      "name"      =>"Sıralama düzeni",
+
+   ],
    "neighborhood"   =>   [
       "name"      =>"Komşuluk",
 

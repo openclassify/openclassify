@@ -253,6 +253,12 @@ class DatabaseSeeder extends Seeder
                 'type'   => 'anomaly.extension.url_link_type',
             ]
         );
+        /* Settings Start */
+        Model::unguard();
+        DB::unprepared(file_get_contents(__DIR__.'/settings.sql'));
+        Model::reguard();
+        /* Settings Stop*/
+
         $this->call(widgetSeeder::class);
     }
 }

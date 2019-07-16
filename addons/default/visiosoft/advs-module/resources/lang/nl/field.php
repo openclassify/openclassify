@@ -115,15 +115,15 @@
 
    ],
    "pending_adv"   =>   [
-      "name"      =>"In afwachting van Advs",
+      "name"      =>"In afwachting van advertenties",
 
    ],
    "archived_adv"   =>   [
-      "name"      =>"Gearchiveerde Advs",
+      "name"      =>"Gearchiveerde advertenties",
 
    ],
    "favs_adv"   =>   [
-      "name"      =>"Fav Advs",
+      "name"      =>"Favoriete advertenties",
 
    ],
    "my_adv"   =>   [
@@ -177,6 +177,7 @@
    "share"   =>"Deel deze advertentie",
    "report"   =>"Rapporteer deze advertentie",
    "features"   =>"Kenmerken",
+   "streetview"   =>"Street View",
    "recommended_ads"   =>"Aanbevolen advertenties voor jou",
    "new"   =>"nieuwe",
    "short_info"   =>"Korte info",
@@ -190,8 +191,8 @@
    de verkoper neemt zo spoedig mogelijk contact met u op.",
    "ad_id"   =>"Advertentie-ID",
    "contact_with"   =>"Contact met",
-   "create_adv"   =>"Maak Adv",
-   "edit_adv"   =>"Bewerk Adv",
+   "create_adv"   =>"Maak advertentie",
+   "edit_adv"   =>"Bewerk advertentie",
    "mandatory_fields"   =>"Verplichte velden",
    "ad_post"   =>"Ad bericht",
    "sell_item"   =>"Verkoop een artikel of dienst",
@@ -228,9 +229,8 @@
       "list"      =>"Lijst",
 
    ],
-   "streetview"   =>"Street View",
    "advs_list_table_thead"   =>   [
-      "name"      =>"Adv Name",
+      "name"      =>"Advertentienaam",
       "price"      =>"Prijs",
       "publish_at"      =>"Advertentiedatum",
       "location_city"      =>"stad",

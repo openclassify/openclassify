@@ -133,6 +133,10 @@
       "name"      =>"Mensagens",
 
    ],
+   "user_no"   =>   [
+      "name"      =>"Do utilizador",
+
+   ],
    "menu_profile"   =>   [
       "name"      =>"Perfil",
 
@@ -295,12 +299,12 @@
    "message_title"   =>"Título da mensagem",
    "owner_name"   =>"mensagem",
    "favorites"   =>"Favoritos",
-   "fav_advs"   =>"Favoritos favoritos",
+   "fav_advs"   =>"Anúncios Favoritos",
    "fav_sellers"   =>"Vendedores de Fav",
    "fav_searches"   =>"Pesquisas Fav",
    "posted_on"   =>"Postado em",
    "message_details"   =>"detalhes da mensagem",
-   "adv_no"   =>"Adv Não",
+   "adv_no"   =>"Anúncio Não",
    "bill_address"   =>   [
       "name"      =>"Endereço de cobrança",
 

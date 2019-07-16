@@ -21,6 +21,10 @@
       "name"      =>"Distrito",
 
    ],
+   "order"   =>   [
+      "name"      =>"Orden de clasificación",
+
+   ],
    "neighborhood"   =>   [
       "name"      =>"Barrio",
 

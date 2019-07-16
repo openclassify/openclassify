@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "title"      =>"ADVS",
+      "title"      =>"Reklamlar",
 
    ],
    "categories"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"Özel alan önerileri",
+      "title"      =>"Özel alan reklamları",
 
    ],
    "cf_values"   =>   [

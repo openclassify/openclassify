@@ -21,6 +21,10 @@
       "name"      =>"Quartiere",
 
    ],
+   "order"   =>   [
+      "name"      =>"Ordinamento",
+
+   ],
    "neighborhood"   =>   [
       "name"      =>"Quartiere",
 

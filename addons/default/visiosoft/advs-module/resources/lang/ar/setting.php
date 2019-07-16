@@ -60,6 +60,10 @@
       "name"      =>"بلد الإعلان الافتراضي",
 
    ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"تحويل العملات الرئيسية API",
+
+   ],
    "default_city"   =>   [
       "name"      =>"المدينة الإعلانية الافتراضية",
 

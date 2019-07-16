@@ -116,15 +116,15 @@
 
    ],
    "pending_adv"   =>   [
-      "name"      =>"Avanços pendentes",
+      "name"      =>"Anúncios pendentes",
 
    ],
    "archived_adv"   =>   [
-      "name"      =>"Avisos Arquivados",
+      "name"      =>"Anúncios arquivados",
 
    ],
    "favs_adv"   =>   [
-      "name"      =>"Fav Advs",
+      "name"      =>"Anúncios Fav",
 
    ],
    "my_adv"   =>   [
@@ -178,6 +178,7 @@
    "share"   =>"Compartilhe este anúncio",
    "report"   =>"Denunciar este anúncio",
    "features"   =>"Características",
+   "streetview"   =>"vista da rua",
    "recommended_ads"   =>"Anúncios recomendados para você",
    "new"   =>"Novo",
    "short_info"   =>"Informação Curta",
@@ -191,8 +192,8 @@
    vendedor entrará em contato com você assim que possível.",
    "ad_id"   =>"ID do anúncio",
    "contact_with"   =>"Contato com",
-   "create_adv"   =>"Criar Adv",
-   "edit_adv"   =>"Editar Adv",
+   "create_adv"   =>"Criar um anúncio",
+   "edit_adv"   =>"Editar anúncio",
    "mandatory_fields"   =>"Campos obrigatórios",
    "ad_post"   =>"Anúncio de postagem",
    "sell_item"   =>"Vender um item ou serviço",
@@ -229,9 +230,8 @@
       "list"      =>"Lista",
 
    ],
-   "streetview"   =>"vista da rua",
    "advs_list_table_thead"   =>   [
-      "name"      =>"Nome Adv",
+      "name"      =>"Nome do anúncio",
       "price"      =>"Preço",
       "publish_at"      =>"Data do anúncio",
       "location_city"      =>"Cidade",

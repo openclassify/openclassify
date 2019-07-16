@@ -86,13 +86,13 @@ return [
         'name' => 'or Cancel'
     ],
     'pending_adv' => [
-        'name' => 'Pending Advs'
+        'name' => 'Pending Ads'
     ],
     'archived_adv' => [
-        'name' => 'Archived Advs'
+        'name' => 'Archived Ads'
     ],
     'favs_adv' => [
-        'name' => 'Fav Advs'
+        'name' => 'Fav Ads'
     ],
     'my_adv' => [
         'name' => 'ADVS'
@@ -153,8 +153,8 @@ return [
     'asap' => 'Message sent, seller will contact you asap.',
     'ad_id' => 'Ad Id',
     'contact_with' => 'Contact With',
-    'create_adv' => 'Create Adv',
-    'edit_adv' => 'Edit Adv',
+    'create_adv' => 'Create Ad',
+    'edit_adv' => 'Edit Ad',
     'mandatory_fields' => 'Mandatory Fields',
     'ad_post' => 'Ad Post',
     'sell_item' => 'Sell an item or service',
@@ -190,7 +190,7 @@ return [
     ],
     'streetview' => 'Street View',
     'advs_list_table_thead' => [
-        'name' => 'Adv Name',
+        'name' => 'Ad Name',
         'price' => 'Price',
         'publish_at' => 'Ad Date',
         'location_city' => 'City',

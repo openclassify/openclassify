@@ -60,6 +60,10 @@
       "name"      =>"País predeterminado del anuncio",
 
    ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"Clave API Convertidor de moneda",
+
+   ],
    "default_city"   =>   [
       "name"      =>"Ciudad de anuncios predeterminada",
 

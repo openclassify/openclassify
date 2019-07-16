@@ -133,6 +133,10 @@
       "name"      =>"پیام ها",
 
    ],
+   "user_no"   =>   [
+      "name"      =>"کاربر",
+
+   ],
    "menu_profile"   =>   [
       "name"      =>"مشخصات",
 
@@ -214,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"تبلیغ صفحه بنر صفحه",
+      "name"      =>"آگهی تبلیغات بنر صفحه",
 
    ],
    "approve"   =>   [
@@ -292,12 +296,12 @@
    "message_title"   =>"عنوان پیام",
    "owner_name"   =>"پیام",
    "favorites"   =>"مورد علاقه های شما",
-   "fav_advs"   =>"توصیه های مورد علاقه",
+   "fav_advs"   =>"آگهی های مورد علاقه",
    "fav_sellers"   =>"فروشندگان فاو",
    "fav_searches"   =>"جستجوی Fav",
    "posted_on"   =>"نوشته شده در",
    "message_details"   =>"جزئیات پیام",
-   "adv_no"   =>"مشاوره شماره",
+   "adv_no"   =>"آگهی شماره",
    "bill_address"   =>   [
       "name"      =>"آدرس بیل",
 

@@ -9,6 +9,13 @@
       "name"      =>"Sipariş",
 
    ],
-     'please_wait' => 'Lütfen Bekleyiniz.Alt Kategoriler Siliniyor.',
+   "slug"   =>   [
+      "name"      =>"sümüklüböcek",
 
- ];
+   ],
+   "files"   =>   [
+      "name"      =>"görüntü",
+
+   ],
+   "please_wait"   =>"Lütfen bekleyin. Alt Kategoriler Siliniyor"
+];

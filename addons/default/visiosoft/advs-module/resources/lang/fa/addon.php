@@ -1,7 +1,7 @@
 <?php
 
  return[
-   "title"   =>"مشاوره",
-   "name"   =>"ماژول Advs",
-   "description"   =>"شرح"
+   "title"   =>"تبلیغات",
+   "name"   =>"ماژول آگهی",
+   "description"   =>"ماژول آگهی"
 ];

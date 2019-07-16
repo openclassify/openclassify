@@ -133,6 +133,10 @@
       "name"      =>"Mitteilungen",
 
    ],
+   "user_no"   =>   [
+      "name"      =>"Nutzer",
+
+   ],
    "menu_profile"   =>   [
       "name"      =>"Profil",
 
@@ -214,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"Advs Listing Page Banner",
+      "name"      =>"Banner für Anzeigenlistingseite",
 
    ],
    "approve"   =>   [
@@ -295,12 +299,12 @@
    "message_title"   =>"Nachrichtentitel",
    "owner_name"   =>"Botschaft",
    "favorites"   =>"Favoriten",
-   "fav_advs"   =>"Lieblings Advs",
+   "fav_advs"   =>"Lieblingsanzeigen",
    "fav_sellers"   =>"Fav Sellers",
    "fav_searches"   =>"Lieblingssuchen",
    "posted_on"   =>"Veröffentlicht am",
    "message_details"   =>"Nachrichtendetails",
-   "adv_no"   =>"Adv No",
+   "adv_no"   =>"Anzeige Nr",
    "bill_address"   =>   [
       "name"      =>"Rechnungsadresse",
 

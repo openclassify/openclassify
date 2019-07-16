@@ -2,11 +2,11 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"Advs",
+      "name"      =>"Anuncios",
       "option"      =>      [
-         "read"         =>"¿Se pueden leer advs?        ",
-         "write"         =>"¿Se pueden crear / editar advs?        ",
-         "delete"         =>"¿Se pueden eliminar advs?"
+         "read"         =>"¿Se pueden leer los anuncios?        ",
+         "write"         =>"¿Se pueden crear / editar anuncios?        ",
+         "delete"         =>"¿Se pueden eliminar los anuncios?"
       ],
 
    ],
@@ -38,11 +38,11 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Campo personalizado advs",
+      "name"      =>"Anuncios de campo personalizados",
       "option"      =>      [
-         "read"         =>"¿Se pueden leer advs de campos personalizados?        ",
-         "write"         =>"¿Se pueden crear / editar advs de campos personalizados?        ",
-         "delete"         =>"¿Se pueden eliminar advs de campos personalizados?"
+         "read"         =>"¿Se pueden leer anuncios de campo personalizados?        ",
+         "write"         =>"¿Se pueden crear / editar anuncios de campos personalizados?        ",
+         "delete"         =>"¿Se pueden eliminar los anuncios de campo personalizados?"
       ],
 
    ],

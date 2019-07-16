@@ -2,11 +2,11 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"Advs",
+      "name"      =>"Publicidades",
       "option"      =>      [
-         "read"         =>"Pode ler advs?        ",
-         "write"         =>"Pode criar / editar advs?        ",
-         "delete"         =>"Pode deletar advs?"
+         "read"         =>"Pode ler anúncios?        ",
+         "write"         =>"Pode criar / editar anúncios?        ",
+         "delete"         =>"Pode excluir anúncios?"
       ],
 
    ],
@@ -38,11 +38,11 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Adames de campo personalizado",
+      "name"      =>"Anúncios de campo personalizado",
       "option"      =>      [
-         "read"         =>"Pode ler advs de campo personalizado?        ",
-         "write"         =>"Pode criar / editar anúncios de campos personalizados?        ",
-         "delete"         =>"Pode excluir advs de campo personalizado?"
+         "read"         =>"Pode ler anúncios de campo personalizados?        ",
+         "write"         =>"Pode criar / editar anúncios de campo personalizados?        ",
+         "delete"         =>"Pode excluir anúncios de campo personalizado?"
       ],
 
    ],
