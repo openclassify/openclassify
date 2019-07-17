@@ -101,4 +101,36 @@
 
    ],
    "watermark_type"   =>   [
-      "name"      =>"Tipo de marca d
+      "name"      =>"Tipo de marca d\'água",
+
+   ],
+   "watermark_text"   =>   [
+      "name"      =>"Texto de marca d\'água",
+
+   ],
+   "watermark_image"   =>   [
+      "name"      =>"Imagem de marca d\'água",
+
+   ],
+   "watermark_position"   =>   [
+      "name"      =>"Posição da marca d\'água",
+
+   ],
+   "watermark_opacity"   =>   [
+      "name"      =>"Opacidade da marca d\'água",
+
+   ],
+   "listing_page_image"   =>   [
+      "name"      =>"Listar imagem da página",
+
+   ],
+   "enabled_currencies"   =>   [
+      "name"      =>"Moedas ativadas",
+
+   ],
+   "google_statistic_code"   =>   [
+      "name"      =>"Código estatístico do Google",
+
+   ],
+
+];

@@ -44,4 +44,93 @@
 
    ],
    "currencies"   =>   [
-      "name"      =>"Actieve valuta
+      "name"      =>"Actieve valuta\'s",
+
+   ],
+   "site_address"   =>   [
+      "name"      =>"Website adres",
+      "warning"      =>"Automatisch toegevoegd www. www. <strong>sitename.com</strong>",
+
+   ],
+   "google_map_key"   =>   [
+      "name"      =>"Google Map Api Key",
+
+   ],
+   "default_country"   =>   [
+      "name"      =>"Standaard advertentieland",
+
+   ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"Valutaconversie API-sleutel",
+
+   ],
+   "default_city"   =>   [
+      "name"      =>"Standaard Ad City",
+
+   ],
+   "default_district"   =>   [
+      "name"      =>"Standaard advertentiedistrict",
+
+   ],
+   "default_neighborhood"   =>   [
+      "name"      =>"Standaard Ad-omgeving",
+
+   ],
+   "default_currency"   =>   [
+      "name"      =>"Standaard advertentievaluta",
+
+   ],
+   "default_GET"   =>   [
+      "name"      =>"Standaardadvertentie GET",
+
+   ],
+   "twitter"   =>   [
+      "name"      =>"tjilpen",
+
+   ],
+   "facebook"   =>   [
+      "name"      =>"Facebook",
+
+   ],
+   "youtube"   =>   [
+      "name"      =>"Youtube",
+
+   ],
+   "google"   =>   [
+      "name"      =>"Google",
+
+   ],
+   "watermark_type"   =>   [
+      "name"      =>"Watermerk Type",
+
+   ],
+   "watermark_text"   =>   [
+      "name"      =>"Watermerk Tekst",
+
+   ],
+   "watermark_image"   =>   [
+      "name"      =>"Watermerk afbeelding",
+
+   ],
+   "watermark_position"   =>   [
+      "name"      =>"Watermerk positie",
+
+   ],
+   "watermark_opacity"   =>   [
+      "name"      =>"Watermark Dekking",
+
+   ],
+   "listing_page_image"   =>   [
+      "name"      =>"Pagina-paginabeeld",
+
+   ],
+   "enabled_currencies"   =>   [
+      "name"      =>"Valuta\'s ingeschakeld",
+
+   ],
+   "google_statistic_code"   =>   [
+      "name"      =>"Google Statistiekcode",
+
+   ],
+
+];
