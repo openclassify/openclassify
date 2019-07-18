@@ -156,6 +156,7 @@ class AdvsController extends PublicController
         }
 
         $adv = $advRepository->getListItemAdv($id);
+        $adv->meta_tags = explode(' ',$adv->name);
 
         $recommended_advs = $advRepository->getRecommendedAds($adv->id);
         foreach ($recommended_advs as $index => $ad) {

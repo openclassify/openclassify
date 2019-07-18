@@ -9,7 +9,6 @@
 <link href='https://fonts.googleapis.com/css?family=Ubuntu:400,500,700,300' rel='stylesheet' type='text/css'>
 <link href='https://fonts.googleapis.com/css?family=Signika+Negative:400,300,600,700' rel='stylesheet' type='text/css'>
 
-
 <!-- Meta Tags -->
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width"/>
@@ -18,12 +17,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <meta name="description" content="{{ trans(template.meta_description) }}"/>
 
+{% if app.request.pathInfo == "/" %}
+    <meta name="keywords" content="{% for tag in setting_value('visiosoft.theme.default::meta_tags') %}{{ tag }},{% endfor %}">
+{% else %}
+    <meta name="keywords" content="{% for tag in adv.meta_tags %}{{ tag }},{% endfor %}">
+{% endif %}
 
-<title>
-    {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
-    &#8250;
-    {{ trans(template.meta_title) }}
-</title>
+<title>{{ setting_value('streams::name', config_get('streams::distribution.name')) }}|{{ trans(template.meta_title) }}</title>
 
 <!-- Favicon -->
 {#{{ favicons("theme::img/favicon.png") }}#}

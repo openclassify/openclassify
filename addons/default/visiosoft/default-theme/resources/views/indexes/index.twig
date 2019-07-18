@@ -116,7 +116,7 @@
                                             <div class="featured">
                                                 <div class="featured-image">
                                                         <a href="{{ adv.detail_url }}"><img
-                                                                    src="{{ adv.cover_photo }}" alt=""
+                                                                    src="{{ adv.cover_photo }}" alt="{{ substr(adv.name,0,25) }}"
                                                                     class="img-respocive"></a>
                                                 </div>
 
@@ -205,7 +205,7 @@
                                             <!-- item-image -->
                                             <div class="item-image">
                                                     <a href="{{ adv.detail_url }}"><img
-                                                                src="{{ adv.cover_photo }}" alt=""
+                                                                src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
                                                                 class="img-respocive"></a>
                                             </div><!-- item-image -->
                                         </div><!-- item-image-box -->
@@ -261,7 +261,7 @@
                                             <!-- item-image -->
                                             <div class="item-image">
                                                     <a href="{{ adv.detail_url }}"><img
-                                                                src="{{ adv.cover_photo }}" alt=""
+                                                                src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
                                                                 class="img-respocive"></a>
 
                                                 {% if adv.is_get_adv == "1" %}
@@ -337,7 +337,7 @@
                         <li class="category-item">
                             <div class="category-icon home_footer_categories_field_icon">
                                 {% if cat.files[0].path != "" %}
-                                    <img src="{{ url('files/' ~ cat.files[0].path) }}" alt="images"
+                                    <img src="{{ url('files/' ~ cat.files[0].path) }}" alt="{{ cat.name }}"
                                          class="img-responsive">
                                 {% endif %}
                             </div>

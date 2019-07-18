@@ -10,12 +10,11 @@
                     </button>
                     <a class="navbar-brand" href="/">
                         {% if setting_value('visiosoft.module.advs::logo') == NULL %}
-                            <img class="img-responsive" src="{{ img('theme::images/logo-horizontal.png').url }}"
-                                 alt="Logo">
+                            <img class="img-responsive" alt="{{ trans(template.meta_title) }}-Logo" src="{{ img('theme::images/logo-horizontal.png').url }}">
                         {% else %}
                             <img class="img-responsive"
                                  src="{{ url('files/' ~ file(setting_value('visiosoft.module.advs::logo')).path) }}"
-                                 alt="Logo">
+                                 alt="{{ trans(template.meta_title) }}-Logo">
                         {% endif %}
                     </a>
                 </div>
@@ -73,7 +72,7 @@
 
                     <ul class="nav navbar-nav controls-menu-right" style="float: right;">
                         {% set current_locale = entries('advs').getCurrentLocale() %}
-                        {{ languageSwitcher('openclassify-lang', {'toggle_title': '<img src="'~img('theme::images/flags/'~config('app.locale')~'.png').url~'" class="lang-flag" >' ~current_locale~'','toggle_class':'navigation-lang-field-none'}) }}
+                        {{ languageSwitcher('openclassify-lang', {'toggle_title': '<img alt="'~config('app.locale')~'" src="'~img('theme::images/flags/'~config('app.locale')~'.png').url~'" class="lang-flag" >' ~current_locale~'','toggle_class':'navigation-lang-field-none'}) }}
 
                         {% if auth_check() %}
                             <li class="dropdown profile-navigation-field">
@@ -130,7 +129,7 @@
                                         <li>
                                 <span class="cart-item">
                                     <span class="cart-item-left">
-                                        <img src="{{ item_cart.cover_photo }}" alt="" height="50" width="70"
+                                        <img src="{{ item_cart.cover_photo }}" alt="{{ item_cart.name }}" height="50" width="70"
                                              class="item-cart-img">
                                         <span class="item-name">{{ item_cart.name }}</span>
                                         <span class="item-price">{{ item_cart.priceFormat(item_cart) }}</span>
