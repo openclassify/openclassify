@@ -4547,10 +4547,14 @@ input, select, a, .transition,
     width: 100%;
 }
 
-.advs-custom-fields ul > li > ul > li > i {
+.advs-custom-fields i {
     margin-right: 5px;
     color: #62ca62;
     font-size: 15px;
+}
+  
+.advs-custom-fields i.fstatus {
+    color: gray;
 }
 
 .custom-checkbox {
