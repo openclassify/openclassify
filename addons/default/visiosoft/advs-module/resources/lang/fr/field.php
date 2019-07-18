@@ -172,4 +172,78 @@
    "approve"   =>"Approuver",
    "passive"   =>"Passif",
    "offered_by"   =>"Offert par",
-   "more_ads_by"   =>"Plus d
+   "more_ads_by"   =>"Plus d\'annonces par",
+   "click_phone"   =>"Afficher le numéro de téléphone",
+   "share"   =>"Partager cette annonce",
+   "report"   =>"Signaler cette annonce",
+   "features"   =>"Caractéristiques",
+   "streetview"   =>"Street View",
+   "recommended_ads"   =>"Annonces recommandées pour vous",
+   "new"   =>"Nouveau",
+   "short_info"   =>"Info courte",
+   "secure_trading"   =>"Trading sécurisé",
+   "24/7"   =>"Assistance 24/7",
+   "easy_trading"   =>"Trading facile",
+   "need_help"   =>"Besoin d\'aide pour?",
+   "give_a_call"   =>"Donner un appel sur",
+   "message_sent"   =>"Message envoyé!",
+   "asap"   =>"Message envoyé,
+   le vendeur vous contactera dès que possible.",
+   "ad_id"   =>"ID d\'annonce",
+   "contact_with"   =>"Contacter avec",
+   "create_adv"   =>"Créer une publicité",
+   "edit_adv"   =>"Modifier une annonce",
+   "mandatory_fields"   =>"Champs obligatoires",
+   "ad_post"   =>"Publier une annonce",
+   "sell_item"   =>"Vendre un article ou un service",
+   "search_save"   =>"Recherche de favoris enregistrée avec succès",
+   "address"   =>"Adresse",
+   "email"   =>"Email",
+   "phone"   =>"Téléphone",
+   "send_us_your_feedback"   =>"Envoyez-nous vos commentaires",
+   "online_shopping"   =>"OBTENIR",
+   "approved"   =>"Approuvé avec succès",
+   "declined"   =>"Refusé avec succès",
+   "search_on_map"   =>"Rechercher sur la carte",
+   "post_free_ad"   =>"Publier une annonce gratuite",
+   "select_a_category"   =>"Choisissez une catégorie",
+   "select_a_sub_category"   =>"Sélectionnez une sous-catégorie",
+   "all_dopings_added"   =>"Tous les types de dopage sont ajoutés pour cette annonce.",
+   "is_get_adv"   =>   [
+      "name"      =>"OBTENIR",
+
+   ],
+   "corporate_info"   =>"Informations sur l\'entreprise",
+   "featured_ads"   =>"Annonces en vedette",
+   "trending_ads"   =>"Annonces Trendind",
+   "search_ads_result_message"   =>   [
+      "name"      =>":      compte annonces trouvées pour:recherche par nom",
+
+   ],
+   "total"   =>"Total",
+   "quantity"   =>"Quantité",
+   "view_cart"   =>"Voir le panier",
+   "no_ads"   =>"Pas de pubs!",
+   "show_display_mode"   =>   [
+      "map"      =>"Carte",
+      "list"      =>"liste",
+
+   ],
+   "advs_list_table_thead"   =>   [
+      "name"      =>"Nom de l\'annonce",
+      "price"      =>"Prix",
+      "publish_at"      =>"Date de l\'annonce",
+      "location_city"      =>"Ville",
+      "location_country"      =>"Pays",
+
+   ],
+   "show_list_view"   =>   [
+      "name"      =>"liste",
+
+   ],
+   "show_table_view"   =>   [
+      "name"      =>"Table",
+
+   ],
+
+];

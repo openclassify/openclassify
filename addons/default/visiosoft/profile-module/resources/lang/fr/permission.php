@@ -13,4 +13,12 @@
    "adress"   =>   [
       "name"      =>"Une robe",
       "option"      =>      [
-         "read"         =>"Peut lire l
+         "read"         =>"Peut lire l\'adresse?        ",
+         "write"         =>"Peut créer / modifier l\'adresse?        ",
+         "delete"         =>"Peut effacer l\'adresse?",
+
+      ],
+
+   ],
+
+];

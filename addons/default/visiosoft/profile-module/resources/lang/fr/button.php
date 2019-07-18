@@ -3,4 +3,5 @@
  return[
    "new_profile"   =>"Nouveau profile",
    "new_adress"   =>"Nouvelle adresse",
-   "show"   =>"Afficher l
+   "show"   =>"Afficher l\'adresse"
+];

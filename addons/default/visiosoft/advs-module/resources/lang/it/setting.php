@@ -57,4 +57,80 @@
 
    ],
    "default_country"   =>   [
-      "name"      =>"Paese dell
+      "name"      =>"Paese dell\'annuncio predefinito",
+
+   ],
+   "free_currencyconverterapi_key"   =>   [
+      "name"      =>"Chiave API Convertitore di valuta",
+
+   ],
+   "default_city"   =>   [
+      "name"      =>"Città pubblicitaria predefinita",
+
+   ],
+   "default_district"   =>   [
+      "name"      =>"Distretto annunci predefinito",
+
+   ],
+   "default_neighborhood"   =>   [
+      "name"      =>"Quartiere annunci predefinito",
+
+   ],
+   "default_currency"   =>   [
+      "name"      =>"Valuta annuncio predefinita",
+
+   ],
+   "default_GET"   =>   [
+      "name"      =>"Annuncio GET predefinito",
+
+   ],
+   "twitter"   =>   [
+      "name"      =>"cinguettio",
+
+   ],
+   "facebook"   =>   [
+      "name"      =>"Facebook",
+
+   ],
+   "youtube"   =>   [
+      "name"      =>"Youtube",
+
+   ],
+   "google"   =>   [
+      "name"      =>"Google",
+
+   ],
+   "watermark_type"   =>   [
+      "name"      =>"Tipo di filigrana",
+
+   ],
+   "watermark_text"   =>   [
+      "name"      =>"Testo filigrana",
+
+   ],
+   "watermark_image"   =>   [
+      "name"      =>"Immagine della filigrana",
+
+   ],
+   "watermark_position"   =>   [
+      "name"      =>"Posizione della filigrana",
+
+   ],
+   "watermark_opacity"   =>   [
+      "name"      =>"Opacità della filigrana",
+
+   ],
+   "listing_page_image"   =>   [
+      "name"      =>"Immagine della pagina di elenco",
+
+   ],
+   "enabled_currencies"   =>   [
+      "name"      =>"Valute abilitate",
+
+   ],
+   "google_statistic_code"   =>   [
+      "name"      =>"Codice Statistico di Google",
+
+   ],
+
+];
