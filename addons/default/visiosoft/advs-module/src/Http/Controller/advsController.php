@@ -156,7 +156,6 @@ class AdvsController extends PublicController
         }
 
         $adv = $advRepository->getListItemAdv($id);
-        $adv->meta_tags = explode(' ',$adv->name);
 
         $recommended_advs = $advRepository->getRecommendedAds($adv->id);
         foreach ($recommended_advs as $index => $ad) {
@@ -299,7 +298,6 @@ class AdvsController extends PublicController
         if ($isActive->is_enabled('customfields')) {
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->create($categories);
         }
-
         //Cloudinary Module
         return $this->view->make('visiosoft.module.advs::advs/new-create', compact(
             'request', 'formBuilder', 'cats_d', 'custom_fields'));
@@ -404,8 +402,28 @@ class AdvsController extends PublicController
                         }
                     }
 
+                    $findcustomfields = CustomfieldsCustomFieldsEntryModel::query()->whereNull('parent_category')->get();
+                    foreach ($findcustomfields as $findcustomfield) {
+                        $cs_name = 'cf__' . $findcustomfield->slug;
+                        $cf_id = "cf" . $findcustomfield->id;
+                        if ($request->$cs_name) {
+                            $new_cs = new CustomfieldsCustomFieldAdvsEntryModel();
+                            $new_cs->parent_adv_id = $adv_id;
+                            $new_cs->custom_field_category_id = $findcustomfield->id;
+                            $new_cs->custom_field_type = $findcustomfield->type;
+                            if (is_array($request->$cs_name)) {
+                                $new_cs->custom_field_value = implode(',', $request->$cs_name);
+                            } else {
+                                $new_cs->custom_field_value = $request->$cs_name;
+                            }
+                            $jsonVal[$cf_id] = $request->$cs_name;
+                            $new_cs->save();
+                        }
+                    }
+
                     $adv->cf_json = json_encode($jsonVal);
                     $adv->save();
+
                 } else {
                     //update ads
                     $jsonVal = [];
@@ -434,6 +452,28 @@ class AdvsController extends PublicController
                                     $new_cs->save();
                                 }
                             }
+                        }
+                    }
+                    $findcustomfields = CustomfieldsCustomFieldsEntryModel::query()->whereNull('parent_category')->get();
+                    foreach ($findcustomfields as $findcustomfield) {
+
+                        $cs_name = 'cf__' . $findcustomfield->slug;
+                        $cf_id = "cf" . $findcustomfield->id;
+                        if ($request->$cs_name) {
+                            $new_cs = CustomfieldsCustomFieldAdvsEntryModel::query()->where('parent_adv_id', $request->update_id)->where('custom_field_category_id', $findcustomfield->id)->first();
+                            if (!$new_cs) {
+                                $new_cs = new CustomfieldsCustomFieldAdvsEntryModel();
+                            }
+                            $new_cs->parent_adv_id = $adv->id;
+                            $new_cs->custom_field_category_id = $findcustomfield->id;
+                            $new_cs->custom_field_type = $findcustomfield->type;
+                            if (is_array($request->$cs_name)) {
+                                $new_cs->custom_field_value = implode(',', $request->$cs_name);
+                            } else {
+                                $new_cs->custom_field_value = $request->$cs_name;
+                            }
+                            $jsonVal[$cf_id] = $request->$cs_name;
+                            $new_cs->save();
                         }
                     }
                     $adv->cf_json = json_encode($jsonVal);
@@ -552,6 +592,7 @@ class AdvsController extends PublicController
         if ($isActive->is_enabled('customfields')) {
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->edit($adv, $categories, $cats);
         }
+
         return $this->view->make('visiosoft.module.advs::advs/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'nameField'));
     }
 
