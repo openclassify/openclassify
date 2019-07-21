@@ -265,7 +265,10 @@ jQuery(function ($) {
             autoplay:true,
             autoplayHoverPause:true
         });
-
+        $('body').on('hidden.bs.modal', '.modal', function () {
+            $(".adv_listing_banner-field .btn-warning").remove();
+        });
+        $(".adv_listing_banner-field .btn-warning").remove();
     }());
 
 
