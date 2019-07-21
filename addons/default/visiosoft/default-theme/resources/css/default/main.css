@@ -5920,3 +5920,9 @@ input[name="username"] {
         border-top: 0 none;
     }
 }
+
+#adv_listing_banner-modal .text-muted,
+#adv_listing_banner-modal .tag-info, #adv_listing_banner-modal td:nth-child(5), #adv_listing_banner-modal td:nth-child(3), #adv_listing_banner-modal td:nth-child(4), #adv_listing_banner-modal th:nth-child(5), #adv_listing_banner-modal th:nth-child(3), #adv_listing_banner-modal th:nth-child(4),
+.adv_listing_banner-field .text-muted,
+.adv_listing_banner-field .tag-info, .adv_listing_banner-field td:nth-child(5), .adv_listing_banner-field td:nth-child(3), .adv_listing_banner-field td:nth-child(4), .adv_listing_banner-field th:nth-child(5), .adv_listing_banner-field th:nth-child(3), .adv_listing_banner-field th:nth-child(4){
+    display: none;}
