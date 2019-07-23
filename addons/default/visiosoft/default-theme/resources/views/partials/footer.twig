@@ -1,9 +1,10 @@
+
 {{ blocks('advs-default-theme-home-mobile') }}
 
 <!-- footer -->
 <footer id="footer" class="clearfix">
     <!-- footer-top -->
-    <section class="footer-top clearfix">
+    <section class="footer-top clearfix  {% if setting_value('visiosoft.theme.default::template') == "s" %} hidden-xs {% endif %}">
         <div class="container">
             <div class="row">
                 <!-- footer-widget -->
@@ -94,12 +95,39 @@
             </div>
         </a>
     {% endif %}
-    <div class="footer-bottom clearfix text-center">
+    <div class="footer-bottom clearfix text-center  {% if setting_value('visiosoft.theme.default::template') == "s" %} hidden-xs {% endif %}">
         <div class="container">
             <p>{{ trans("visiosoft.theme.default::addon.copyright") }} <a href="http://visiosoft.com.tr/">Visiosoft
                     Inc.</a></p>
         </div>
     </div><!-- footer-bottom -->
+        <div class="row s-bottom-bar navbar-fixed-bottom visible-xs text-center">
+            <div class="col-xs-2 center-block d-flex showcase-btn">
+                <a style="color: #999;">
+                    <span class="menu-icon fa fa-th-large"></span>{{ trans('visiosoft.module.advs::field.showcase.name') }}
+                </a>
+            </div>
+            <div class="col-xs-2 center-block d-flex">
+                <a style="color: #333;">
+                    <span class="menu-icon fa fa-search"></span>{{ trans('visiosoft.module.advs::field.search') }}
+                </a>
+            </div>
+            <div class="col-xs-3 center-block d-flex">
+                <a href="/advs/create_adv" style="color: #1966b9;" class="add-adv">
+                    <span class="menu-icon fa fa-plus-circle" style="color: #32628d; "></span>{{ trans('visiosoft.module.advs::field.new_ad.name') }}
+                </a>
+            </div>
+            <div class="col-xs-2 center-block d-flex">
+                <a href="/profile" style="color: #999;" class="for-me">
+                    <span class="menu-icon fa fa-user"></span>{{ trans('visiosoft.module.advs::field.profile.name') }}
+                </a>
+            </div>
+            <div class="col-xs-2 center-block d-flex">
+                <a href="/advs/list?user={{ app.auth.id }}" style="color: #999;" class="company-bar">
+                    <span class="menu-icon fas fa-ellipsis-h"></span>{{ trans('visiosoft.module.advs::field.my_ads.name') }}
+                </a>
+            </div>
+        </div>
 </footer>
 {% if setting('visiosoft.module.advs::google_statistic_code') != "" %}
     <script async
@@ -115,5 +143,5 @@
 
         gtag('config', '{{ setting('visiosoft.module.advs::google_statistic_code') }}');
     </script>
-    
+
 {% endif %}

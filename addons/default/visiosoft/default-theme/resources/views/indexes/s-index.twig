@@ -1,0 +1,26 @@
+<div class="col-xs-12 col-sm-12 col-md-12 text-center s-home-banner visible-xs">
+    <div class="col-md-12 visible-xs">
+        {{ setting_value('visiosoft.default.theme::s-type-banner-mobile-code','<img src="http://placehold.it/900x600">')|raw }}
+    </div>
+</div>
+{% include "theme::partials/s-mobile-categories" %}
+
+<div class="container s-container">
+
+    {% include "theme::partials/categories-s" %}
+
+    <div class="col-sm-9 s-home-show">
+        <div class="row s-home-showcase">
+            <div class="col-xs-12 col-sm-12 col-md-12 text-center s-home-banner hidden-xs">
+                <div class="col-md-12 hidden-xs">
+                    {{ setting_value('visiosoft.default.theme::s-type-banner-code','<img src="http://placehold.it/900x350">')|raw }}
+                </div>
+            </div>
+            {% include "theme::partials/home-showcase-s" %}
+            <div class="col-md-12 s-container">
+                {% include "theme::partials/home-latest-s" %}
+            </div>
+
+        </div>
+    </div>
+</div>

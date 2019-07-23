@@ -1,5 +1,3 @@
-
-
 <section id="main" class="clearfix home-default">
     <div class="container">
         <!-- banner -->
@@ -115,9 +113,10 @@
                                         {% for adv in doping_advs %}
                                             <div class="featured">
                                                 <div class="featured-image">
-                                                        <a href="{{ adv.detail_url }}"><img
-                                                                    src="{{ adv.cover_photo }}" alt="{{ substr(adv.name,0,25) }}"
-                                                                    class="img-respocive"></a>
+                                                    <a href="{{ adv.detail_url }}"><img
+                                                                src="{{ adv.cover_photo }}"
+                                                                alt="{{ substr(adv.name,0,25) }}"
+                                                                class="img-respocive"></a>
                                                 </div>
 
                                                 <!-- ad-info -->
@@ -204,9 +203,9 @@
                                         <div class="item-image-box col-sm-4">
                                             <!-- item-image -->
                                             <div class="item-image">
-                                                    <a href="{{ adv.detail_url }}"><img
-                                                                src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
-                                                                class="img-respocive"></a>
+                                                <a href="{{ adv.detail_url }}"><img
+                                                            src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
+                                                            class="img-respocive"></a>
                                             </div><!-- item-image -->
                                         </div><!-- item-image-box -->
 
@@ -260,9 +259,9 @@
                                         <div class="item-image-box col-sm-4">
                                             <!-- item-image -->
                                             <div class="item-image">
-                                                    <a href="{{ adv.detail_url }}"><img
-                                                                src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
-                                                                class="img-respocive"></a>
+                                                <a href="{{ adv.detail_url }}"><img
+                                                            src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
+                                                            class="img-respocive"></a>
 
                                                 {% if adv.is_get_adv == "1" %}
                                                     <a href="#" class="verified" data-toggle="tooltip"

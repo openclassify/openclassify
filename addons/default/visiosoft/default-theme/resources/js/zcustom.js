@@ -273,3 +273,15 @@ jQuery(function ($) {
         $('#home-page-search-form').attr('action','/advs/map');
         $('#home-page-search-form').submit();
     })
+
+$('.showcase-btn').click(function() {
+    if(window.location.pathname == "/")
+    {
+        $('html, body').animate({
+            scrollTop: $(".s-home-showcase").offset().top
+        }, 2000);
+    } else {
+        window.location.href = "/";
+    }
+
+});

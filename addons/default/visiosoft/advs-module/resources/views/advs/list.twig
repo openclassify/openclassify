@@ -16,8 +16,6 @@
                 </ol><!-- breadcrumb -->
                 {% if app.request.get('cat') %}
                     <h2 class="title">{{ mainCats.first.getCategoryName(app.request.get('cat')) }}</h2>
-                {% else %}
-                    <h2 class="title">{{ trans("visiosoft.module.advs::field.recommended") }}</h2>
                 {% endif %}
             </div>
             <div class="category-info">

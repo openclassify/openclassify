@@ -18,12 +18,14 @@
 <meta name="description" content="{{ trans(template.meta_description) }}"/>
 
 {% if app.request.pathInfo == "/" %}
-    <meta name="keywords" content="{% for tag in setting_value('visiosoft.theme.default::meta_tags') %}{{ tag }},{% endfor %}">
+    <meta name="keywords"
+          content="{% for tag in setting_value('visiosoft.theme.default::meta_tags') %}{{ tag }},{% endfor %}">
 {% else %}
     <meta name="keywords" content="{% for tag in adv.meta_tags %}{{ tag }},{% endfor %}">
 {% endif %}
 
-<title>{{ setting_value('streams::name', config_get('streams::distribution.name')) }}|{{ trans(template.meta_title) }}</title>
+<title>{{ setting_value('streams::name', config_get('streams::distribution.name')) }}
+    |{{ trans(template.meta_title) }}</title>
 
 <!-- Favicon -->
 {#{{ favicons("theme::img/favicon.png") }}#}
@@ -48,6 +50,11 @@
 </style>
 
 {{ asset_add("visiosoft_default.css", "theme::css/default/*") }}
+{% if setting_value('visiosoft.theme.default::template') == "s" %}
+    {{ asset_add("visiosoft_default.css", "theme::css/sahb.css") }}
+{% endif %}
+
+
 {{ asset_style("visiosoft_default.css") }}
 {{ template.includes.render('head')|raw }}
 
