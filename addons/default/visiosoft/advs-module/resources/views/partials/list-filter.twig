@@ -145,6 +145,29 @@
                     </div><!-- panel -->
                 {% endfor %}
 
+
+                {% for key,value in ranges %}
+                
+                    <!-- panel -->
+                    <div class="panel-default panel-faq">
+                        <!-- panel-heading -->
+                        <div class="panel-heading">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#accordion-range{{ value.id }}">
+                                <h4 class="panel-title">{{ value.name }}<span class="pull-right"><i class="fa fa-minus"></i></span></h4>
+                            </a>
+                        </div><!-- panel-heading -->
+
+                        <div id="accordion-range{{ value.id }}" class="panel-collapse collapse in">
+                            <!-- panel-body -->
+                            <div class="panel-body">
+
+                                <input type="number" class="price-input" value="{{ app.request.get('min_cf_'~ value.id) }}" name="min_cf_{{ value.id }}" min="0" placeholder="Min"> - <input class="price-input" type="number" value="{{ app.request.get('max_cf_'~ value.id) }}" name="max_cf_{{ value.id }}" placeholder="Max">
+
+                            </div><!-- panel-body -->
+                        </div>
+                    </div><!-- panel -->
+                {% endfor %}
+
                 <!-- panel -->
                 <div class="panel-default panel-faq">
                     <!-- panel-heading -->

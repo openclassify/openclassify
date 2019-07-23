@@ -112,6 +112,7 @@ class AdvsController extends PublicController
             $checkboxes = $returnvalues['checkboxes'];
             $textfields = $returnvalues['textfields'];
             $topfields = $returnvalues['topfields'];
+            $ranges = $returnvalues['ranges'];
         }
 
         if (!empty($param['user'])) {
@@ -119,7 +120,7 @@ class AdvsController extends PublicController
             $userProfile = $profileRepository->getProfile($user->id);
         }
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'textfields', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields');
+            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges');
 
         Cookie::queue(Cookie::make('last_search', $request->getRequestUri(), 84000));
 
