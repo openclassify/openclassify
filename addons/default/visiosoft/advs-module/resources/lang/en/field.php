@@ -188,7 +188,6 @@ return [
         'map' => 'Map',
         'list' => 'List',
     ],
-    'streetview' => 'Street View',
     'advs_list_table_thead' => [
         'name' => 'Ad Name',
         'price' => 'Price',
@@ -201,5 +200,17 @@ return [
     ],
     'show_table_view' => [
         'name' => 'Table',
-    ]
+    ],
+    'showcase' => [
+        'name' => 'Showcase',
+    ],
+    'new_ad' => [
+        'name' => 'New Ad',
+    ],
+    'profile' => [
+        'name' => 'Profile',
+    ],
+    'my_ads' => [
+        'name' => 'My Ads',
+    ],
 ];

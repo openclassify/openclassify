@@ -3,7 +3,11 @@
 {% block content %}
     {% block page %}
         {% if (request_path() == '/') %}
+        {% if setting_value('visiosoft.theme.default::template') == "s" %}
+            {% include "theme::indexes/s-index" %}
+        {% else %}
             {% include "theme::indexes/index" %}
+        {% endif %}
         {% elseif (request_path() == 'contact') %}
             {% include "theme::page/contact" %}
         {% else %}
