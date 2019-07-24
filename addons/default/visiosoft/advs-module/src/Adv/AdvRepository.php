@@ -56,6 +56,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $query = $query->where('advs_advs.slug', '!=', "");
         $query = $query->where('advs_advs.status', 'approved');
         $query = $query->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+        
         if (!empty($param['keyword'])) {
             $delimiter = '_';
             $keyword = str_slug($param['keyword'], $delimiter);
@@ -103,10 +104,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         foreach ($param as $para => $value) {
             if (substr($para, 0, 3) === "cf_") {
-                $id = substr($para, 3, 3);
+                $id = substr($para, 3);
                 $customParameters[] = ['id' => "$.cf" . $id, 'value' => $param[$para]];
             }
         }
+
         foreach ($customParameters as $key => $customParameter) {
             if ($key == 0) {
                 $jsonQuery = "(";
@@ -140,6 +142,43 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $query = $query->whereRaw($jsonQuery);
         }
 
+        if (!empty($param['max_price'])) {
+            $num = $param['max_price'];
+            $int = (int)$num;
+            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
+            $query = $query->whereRaw($column);
+        }
+
+        if (!empty($param['max_price'])) {
+            $num = $param['max_price'];
+            $int = (int)$num;
+            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
+            $query = $query->whereRaw($column);
+        }
+
+        foreach ($param as $para => $value) {
+            if (substr($para, 4, 3) === "cf_") {
+                $id = substr($para, 7);
+                $minmax = substr($para, 0, 3);
+                if($minmax == 'min'){
+
+                    $num = $param[$minmax.'_cf_'.$id];
+                    $int = (int)$num;
+                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') >= '" . $int ."'";
+                    $query = $query->whereRaw($column);
+
+                }
+                if($minmax == 'max'){
+
+                    $num = $param[$minmax.'_cf_'.$id];
+                    $int = (int)$num;
+                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') <= '" . $int ."'";
+                    $query = $query->whereRaw($column);
+
+                }
+            }
+        }
+
         if (!empty($param['dlong']) && !empty($param['dlat']) && !empty($param['distance'])) {
             $query = $query->whereNotNull('coor');
             $query = $query->whereRaw("ST_DISTANCE(ST_GeomFromText('POINT(" . $param['dlong'] . " " . $param['dlat'] . ")'), coor) < " . $param['distance']);
@@ -155,6 +194,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 $join->on('advs_advs.id', '=', 'dopings_dopings.adv_name_id');
                 $join->where('dopings_dopings.doping_type_id', '=', 4);
             });
+            
             $query = $query->select('advs_advs.*', 'dopings_dopings.id as doping');
         }
         if (!empty($param['sort_by'])) {
@@ -173,12 +213,12 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $query = $query->orderBy('created_at', 'desc');
         }
 
+
         if ($type == "list") {
             return $query->paginate($this->settings->value('streams::per_page'));
         } else {
             return $query->get();
         }
-
     }
 
     public function softDeleteAdv($id)
