@@ -16,9 +16,15 @@
                 </div>
 
                 <div class=" col-sm-4 col-md-offset-1 col-md-5 s-nav-search hidden-xs">
-                    <form class="navbar-form" role="search">
+                    <form action="{{ url('advs/list') }}" method="get">
                         <div class="input-group">
-                            <input type="text" class="form-control s-search-input" placeholder="Search" name="q">
+                            {% set SearchPlaceHolder = entries('cats','placeholderforsearch').get() %}
+                            <input type="text" name="keyword" data-period="2000"
+                                   data-type='[{% for placeholder in SearchPlaceHolder %}"{{ placeholder.name }}","...",{% endfor %}"..."]'
+                                   class="form-control s-search-input search-ac" placeholder=" Type your key word"
+                                   id="search_ac_navigator">
+                            <input type="hidden" value="{{ cats[0].id }}" name="cat"
+                                   id="searchable_category_input" class="select-category-navigation-id">
                             <div class="input-group-btn">
                                 <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
                             </div>
@@ -45,40 +51,40 @@
                                     {% include "theme::partials/links" %}
                                 </ul>
                             </li>
-                        {% if entries('advs').isEnabled('messages') %}
-                            <li class="dropdown s-nav-links">
-                                <a class="dropdown-toggle s-nav-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fas fa-envelope"></i>
-                                </a>
-                                    <ul class="dropdown-menu s-nav-dropdown">
-                                        <li><a href="#">Page 1-1</a></li>
-                                        <li><a href="#">Page 1-2</a></li>
-                                        <li><a href="#">Page 1-3</a></li>
-                                    </ul>
-                            </li>
-                         {% endif %}
-                        {% if entries('advs').isEnabled('favs') %}
-                            <li class="dropdown s-nav-links">
-                                <a class="dropdown-toggle s-nav-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fas fa-star"></i>
-                                </a>
-                                <ul class="dropdown-menu s-nav-dropdown">
-                                    <li><a href="#">Page 1-1</a></li>
-                                    <li><a href="#">Page 1-2</a></li>
-                                    <li><a href="#">Page 1-3</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown s-nav-links">
-                                <a class="dropdown-toggle s-nav-toggle" data-toggle="dropdown" href="#">
-                                    <i class="fab fa-searchengin"></i>
-                                </a>
-                                <ul class="dropdown-menu s-nav-dropdown">
-                                    <li><a href="#">Page 1-1</a></li>
-                                    <li><a href="#">Page 1-2</a></li>
-                                    <li><a href="#">Page 1-3</a></li>
-                                </ul>
-                            </li>
-                        {% endif %}
+{#                        {% if entries('advs').isEnabled('messages') %}#}
+{#                            <li class="dropdown s-nav-links">#}
+{#                                <a class="dropdown-toggle s-nav-toggle" data-toggle="dropdown" href="#">#}
+{#                                    <i class="fas fa-envelope"></i>#}
+{#                                </a>#}
+{#                                    <ul class="dropdown-menu s-nav-dropdown">#}
+{#                                        <li><a href="#">Page 1-1</a></li>#}
+{#                                        <li><a href="#">Page 1-2</a></li>#}
+{#                                        <li><a href="#">Page 1-3</a></li>#}
+{#                                    </ul>#}
+{#                            </li>#}
+{#                         {% endif %}#}
+{#                        {% if entries('advs').isEnabled('favs') %}#}
+{#                            <li class="dropdown s-nav-links">#}
+{#                                <a class="dropdown-toggle s-nav-toggle" data-toggle="dropdown" href="#">#}
+{#                                    <i class="fas fa-star"></i>#}
+{#                                </a>#}
+{#                                <ul class="dropdown-menu s-nav-dropdown">#}
+{#                                    <li><a href="#">Page 1-1</a></li>#}
+{#                                    <li><a href="#">Page 1-2</a></li>#}
+{#                                    <li><a href="#">Page 1-3</a></li>#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                            <li class="dropdown s-nav-links">#}
+{#                                <a class="dropdown-toggle s-nav-toggle" data-toggle="dropdown" href="#">#}
+{#                                    <i class="fab fa-searchengin"></i>#}
+{#                                </a>#}
+{#                                <ul class="dropdown-menu s-nav-dropdown">#}
+{#                                    <li><a href="#">Page 1-1</a></li>#}
+{#                                    <li><a href="#">Page 1-2</a></li>#}
+{#                                    <li><a href="#">Page 1-3</a></li>#}
+{#                                </ul>#}
+{#                            </li>#}
+{#                        {% endif %}#}
                         {% else %}
                             <li class="s-nav-links">
                                 <a href="{{ url_route('stream::login-route') }}">{{ trans('visiosoft.theme.default::fields.sign-in') }}</a>

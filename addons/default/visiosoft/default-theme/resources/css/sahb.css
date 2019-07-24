@@ -140,13 +140,27 @@
     text-decoration: underline;
 }
 
-.s-nav-search .navbar-form .input-group .s-search-input {
+.s-search-input {
     max-height: 34px;
 }
 
 .s-nav-search .navbar-form .input-group {
     display: flex;
 }
+
+.s-nav-search .navbar-form .input-group input {
+    max-height: 34px;
+}
+
+.s-nav-search .easy-autocomplete input {
+    max-height: 34px;
+}
+
+.easy-autocomplete-container {
+    width: 100% !important;
+    margin-top: 34px;
+}
+
 
 @media (max-width: 768px) {
     .s-container {

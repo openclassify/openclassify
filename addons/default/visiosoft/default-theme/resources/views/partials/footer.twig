@@ -108,7 +108,7 @@
                 </a>
             </div>
             <div class="col-xs-2 center-block d-flex">
-                <a style="color: #333;">
+                <a href="#s-search-mobile-modal" class="trigger-btn" data-toggle="modal" style="color: #333;">
                     <span class="menu-icon fa fa-search"></span>{{ trans('visiosoft.module.advs::field.search') }}
                 </a>
             </div>
@@ -129,6 +129,11 @@
             </div>
         </div>
 </footer>
+
+{% include "theme::partials/s-search-modal" %}
+
+
+
 {% if setting('visiosoft.module.advs::google_statistic_code') != "" %}
     <script async
             src="https://www.googletagmanager.com/gtag/js?id={{ setting('visiosoft.module.advs::google_statistic_code') }}"></script>
