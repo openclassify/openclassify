@@ -5926,3 +5926,8 @@ input[name="username"] {
 .adv_listing_banner-field .text-muted,
 .adv_listing_banner-field .tag-info, .adv_listing_banner-field td:nth-child(5), .adv_listing_banner-field td:nth-child(3), .adv_listing_banner-field td:nth-child(4), .adv_listing_banner-field th:nth-child(5), .adv_listing_banner-field th:nth-child(3), .adv_listing_banner-field th:nth-child(4){
     display: none;}
+
+#accordion .panel-body label.checked:before, .checkbox label.checked:before {
+    content:"";
+    color: transparent;
+}
