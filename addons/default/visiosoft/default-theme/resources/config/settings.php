@@ -1,7 +1,5 @@
 <?php
 
-use Visiosoft\CatsModule\Category\CategoryModel;
-
 return [
     'meta_tags' => [
         'type' => 'anomaly.field_type.tags',
@@ -12,7 +10,7 @@ return [
     'template'    => [
         'type'     => 'anomaly.field_type.select',
         'config'   => [
-            'default_value' => 's',
+            'default_value' => 'default',
             'options'       => [
                 'default'   => 'Default',
                 's'   => 'S-Type',
