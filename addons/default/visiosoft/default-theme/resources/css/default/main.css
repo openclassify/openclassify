@@ -4936,7 +4936,7 @@ input, select, a, .transition,
 
 .upper-list-banner {
     margin-bottom: 20px;
-    height: 250px;
+    height: 334px;
     position: relative;
 }
 
@@ -4949,7 +4949,7 @@ input, select, a, .transition,
     width: 217px;
     min-height: 205px;
     position: absolute;
-    top: 25px;
+    top: 96px;
     border: 1px solid #CCC;
     background-color: #FFFFFF;
     -webkit-box-shadow: 0px 0px 15px -4px rgba(0, 0, 0, 0.75);
