@@ -102,7 +102,7 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
                 "options" => [],
             ]
         ],
-        'adress_content' => 'anomaly.field_type.text',
+        'adress_content' => 'anomaly.field_type.textarea',
         'adress_post_code' => 'anomaly.field_type.text',
         'adress_gsm_phone' => 'anomaly.field_type.text',
         'adress_land_phone' => 'anomaly.field_type.text',

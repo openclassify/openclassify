@@ -5,7 +5,9 @@
             <div class="breadcrumb-section">
                 <!-- breadcrumb -->
                 <ol class="breadcrumb">
-                    <li><a href="{{ url_route("visiosoft.module.profile::profile") }}">{{ trans("visiosoft.module.profile::field.menu_profile.name") }}</a></li>
+                    <li>
+                        <a href="{{ url_route("visiosoft.module.profile::profile") }}">{{ trans("visiosoft.module.profile::field.menu_profile.name") }}</a>
+                    </li>
                     <li>{{ trans("visiosoft.module.profile::field.menu_address.name") }}</li>
                     <li>{{ trans("visiosoft.module.profile::field.create.name") }}</li>
                 </ol><!-- breadcrumb -->
@@ -28,64 +30,50 @@
                                 <a href="/profile#adress" class="btn btn-danger fa fa-chevron-left"
                                    style="margin-bottom: 20px" role="button" aria-pressed="true">Back</a>
 
-                                <div class="add-title">
-                                    {{ form.fields.adress_name|raw }}
-                                </div>
-                                <div class="add-title">
-                                    {{ form.fields.adress_first_name|raw }}
-                                </div>
-                                <div class="add-title">
-                                    {{ form.fields.adress_last_name|raw }}
-                                </div>
-                                <div class="row form-group location-map">
+                                <div class="row">
                                     <div class="col-sm-6">
-                                        <ul style="padding: 0">
+                                        {{ form.fields.adress_name|raw }}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{ form.fields.adress_gsm_phone|raw }}
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        {{ form.fields.adress_first_name|raw }}
+                                    </div>
+                                    <div class="col-sm-6">
+                                        {{ form.fields.adress_last_name|raw }}
+                                    </div>
+                                </div>
 
+                                <div class="row form-group location-map">
+                                    <div class="col-sm-4">
+                                        <label class="control-label">{{ trans("visiosoft.module.profile::field.country.name") }}</label>
+                                        <div class="input-wrapper">
+                                            <select name="country" class="custom-select form-control"
+                                                    data-content="{{ adress.country.id }}"
+                                                    data-field_name="adress_country_id"
+                                                    data-provides="anomaly.field_type.select">
+                                                {% for countryField in country %}
+                                                    <option value="{{ countryField.id }}">{{ countryField.name }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        {{ form.fields.city|raw }}
+                                    </div>
+                                    <div class="col-sm-4">
+                                        {{ form.fields.district|raw }}
 
-                                            <li class="location-field"><label
-                                                        class="control-label">{{ trans("visiosoft.module.profile::field.country.name") }}</label>
-                                                <div class="input-wrapper">
-                                                    <select name="country" class="custom-select form-control"
-                                                            data-content="{{ adress.country.id }}"
-                                                            data-field_name="adress_country_id"
-                                                            data-provides="anomaly.field_type.select">
-                                                        {% for countryField in country %}
-                                                            <option value="{{ countryField.id }}">{{ countryField.name }}</option>
-                                                        {% endfor %}
-                                                    </select>
-                                                </div>
-                                            </li>
-
-
-                                            <li class="location-field">{{ form.fields.city|raw }}</li>
-                                            <li class="location-field">{{ form.fields.district|raw }}</li>
-                                            <li class="location-field">{{ form.fields.neighborhood|raw }}
-                                            <li>
-                                            <li class="location-field">{{ form.fields.village|raw }}</li>
-                                        </ul>
                                     </div>
 
                                 </div>
-
-
                                 <div class="row form-group location-map">
                                     <div class="col-sm-12">
                                         <div class="add-title">
                                             {{ form.fields.adress_content|raw }}
-
-                                        </div>
-
-                                        <div class="add-title">
-                                            {{ form.fields.adress_post_code|raw }}
-
-                                        </div>
-
-                                        <div class="add-title">
-                                            {{ form.fields.adress_gsm_phone|raw }}
-
-                                        </div>
-                                        <div class="add-title">
-                                            {{ form.fields.adress_land_phone|raw }}
 
                                         </div>
                                     </div>
