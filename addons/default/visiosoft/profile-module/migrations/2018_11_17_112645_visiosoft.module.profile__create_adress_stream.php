@@ -35,21 +35,21 @@ class VisiosoftModuleProfileCreateAdressStream extends Migration
         'adress_last_name' => [
             'required' => true,
         ],
-        'country',
-        'city',
-        'district',
-        'neighborhood',
-        'village',
-        'adress_content' => [
+        'country' => [
             'required' => true,
         ],
-        'adress_post_code' => [
+        'city' => [
+            'required' => true,
+        ],
+        'district' => [
+            'required' => true,
+        ],
+        'adress_content' => [
             'required' => true,
         ],
         'adress_gsm_phone' => [
             'required' => true,
         ],
-        'adress_land_phone',
     ];
 
 }
