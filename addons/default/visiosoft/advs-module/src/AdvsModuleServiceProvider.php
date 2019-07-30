@@ -117,7 +117,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'adv_detail_seo',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
         ],
-        'advs/map?country={country}&city={city}&district={districts}' => [
+        'advs/map?country={country}&city[]={city}&district={districts}' => [
             'as' => 'visiosoft.module.advs::show_ad_map_location',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map'
         ],
