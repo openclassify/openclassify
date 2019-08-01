@@ -245,5 +245,21 @@
       "name"      =>"tablo",
 
    ],
+   "showcase"   =>   [
+      "name"      =>"Vitrin",
+
+   ],
+   "new_ad"   =>   [
+      "name"      =>"Yeni İlan",
+
+   ],
+   "profile"   =>   [
+      "name"      =>"Profil",
+
+   ],
+   "my_ads"   =>   [
+      "name"      =>"Reklamlarım",
+
+   ],
 
 ];

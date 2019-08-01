@@ -4,54 +4,54 @@
    "advs"   =>   [
       "name"      =>"Annunci",
       "option"      =>      [
-         "read"         =>"Può leggere gli annunci?        ",
+         "read"         =>"Puoi leggere le pubblicità?        ",
          "write"         =>"Puoi creare / modificare annunci?        ",
-         "delete"         =>"Può cancellare gli annunci?"
+         "delete"         =>"Puoi eliminare le pubblicità?"
       ],
 
    ],
    "categories"   =>   [
       "name"      =>"categorie",
       "option"      =>      [
-         "read"         =>"Può leggere le categorie?        ",
+         "read"         =>"Sai leggere le categorie?        ",
          "write"         =>"Puoi creare / modificare categorie?        ",
-         "delete"         =>"Posso cancellare le categorie?"
+         "delete"         =>"Puoi eliminare le categorie?"
       ],
 
    ],
    "village"   =>   [
       "name"      =>"Villaggio",
       "option"      =>      [
-         "read"         =>"Puoi leggere il villaggio?        ",
-         "write"         =>"Puoi creare / modificare un villaggio?        ",
-         "delete"         =>"Posso cancellare il villaggio?"
+         "read"         =>"Sai leggere il villaggio?        ",
+         "write"         =>"Può creare / modificare villaggio?        ",
+         "delete"         =>"Puoi cancellare il villaggio?"
       ],
 
    ],
    "custom_fields"   =>   [
       "name"      =>"Campi personalizzati",
       "option"      =>      [
-         "read"         =>"Posso leggere i campi personalizzati?        ",
+         "read"         =>"Sai leggere campi personalizzati?        ",
          "write"         =>"Puoi creare / modificare campi personalizzati?        ",
-         "delete"         =>"Può cancellare campi personalizzati?"
+         "delete"         =>"È possibile eliminare campi personalizzati?"
       ],
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Annunci pubblicitari personalizzati",
+      "name"      =>"Annunci di campo personalizzati",
       "option"      =>      [
-         "read"         =>"Può leggere annunci di campo personalizzati?        ",
-         "write"         =>"Puoi creare / modificare annunci di campi personalizzati?        ",
-         "delete"         =>"È possibile eliminare annunci di campi personalizzati?"
+         "read"         =>"Sai leggere annunci sul campo personalizzati?        ",
+         "write"         =>"Puoi creare / modificare annunci personalizzati?        ",
+         "delete"         =>"È possibile eliminare annunci pubblicitari personalizzati?"
       ],
 
    ],
    "cf_values"   =>   [
       "name"      =>"Valori Cf",
       "option"      =>      [
-         "read"         =>"Puoi leggere i valori cf?        ",
-         "write"         =>"Puoi creare / modificare valori cf?        ",
-         "delete"         =>"Può cancellare i valori cf?",
+         "read"         =>"Sai leggere i valori cf?        ",
+         "write"         =>"È possibile creare / modificare valori cf?        ",
+         "delete"         =>"È possibile eliminare i valori cf?",
 
       ],
 

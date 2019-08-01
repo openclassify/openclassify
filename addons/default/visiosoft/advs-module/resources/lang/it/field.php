@@ -102,7 +102,7 @@
 
    ],
    "next_add_advs_msg"   =>   [
-      "name"      =>"Si prega di NON pubblicare più annunci per gli stessi articoli o servizi. Tutti gli annunci duplicati,
+      "name"      =>"NON pubblicare più annunci per gli stessi articoli o servizi. Tutti gli annunci duplicati,
       spam e classificati in modo errato verranno eliminati.",
 
    ],
@@ -115,7 +115,7 @@
 
    ],
    "pending_adv"   =>   [
-      "name"      =>"Annunci in attesa",
+      "name"      =>"Annunci in sospeso",
 
    ],
    "archived_adv"   =>   [
@@ -123,7 +123,7 @@
 
    ],
    "favs_adv"   =>   [
-      "name"      =>"Annunci fav",
+      "name"      =>"Pubblicità preferita",
 
    ],
    "my_adv"   =>   [
@@ -152,21 +152,21 @@
    "recommended"   =>"Annunci consigliati per te",
    "sort_by"   =>"Ordina per",
    "pick_option"   =>"Scegli un\'opzione",
-   "price_high"   =>"Prezzo dal più alto al più basso",
-   "price-low"   =>"Prezzo dal basso all\'alto",
+   "price_high"   =>"Prezzo da alto a basso",
+   "price-low"   =>"Prezzo da basso ad alto",
    "newest"   =>"i più nuovi",
    "categories"   =>"categorie",
    "all_categories"   =>"tutte le categorie",
    "location"   =>"Posizione",
    "send_message"   =>"Invia messaggio",
-   "phone_gsm"   =>"Telefono Gsm",
+   "phone_gsm"   =>"Telefono GSM",
    "phone_office"   =>"Telefono dell\'ufficio",
    "add_to_favorites"   =>"Aggiungi ai preferiti",
    "send"   =>"Inviare",
-   "search_name"   =>"Cerca il nome",
+   "search_name"   =>"Cerca nome",
    "my_favorite_searches"   =>"Ricerche preferite",
    "search_desc"   =>"Puoi aggiungere e gestire le tue selezioni di ricerca preferite qui.",
-   "complaint_placeholder"   =>"Scrivi qui i dettagli del tuo reclamo.",
+   "complaint_placeholder"   =>"Digita qui i dettagli del reclamo.",
    "show_details"   =>"Mostra dettagli",
    "edit"   =>"modificare",
    "approve"   =>"Approvare",
@@ -180,35 +180,35 @@
    "streetview"   =>"vista stradale",
    "recommended_ads"   =>"Annunci consigliati per te",
    "new"   =>"Nuovo",
-   "short_info"   =>"Brevi informazioni",
+   "short_info"   =>"Informazioni brevi",
    "secure_trading"   =>"Trading sicuro",
-   "24/7"   =>"Supporto 24/7",
+   "24/7"   =>"Assistenza 24/7",
    "easy_trading"   =>"Trading facile",
    "need_help"   =>"Ho bisogno di aiuto?",
-   "give_a_call"   =>"Dai una chiamata",
+   "give_a_call"   =>"Chiama",
    "message_sent"   =>"Messaggio inviato!",
    "asap"   =>"Messaggio inviato,
    il venditore ti contatterà al più presto.",
    "ad_id"   =>"ID annuncio",
-   "contact_with"   =>"Contatto con",
+   "contact_with"   =>"Contatta con",
    "create_adv"   =>"Crea annuncio",
    "edit_adv"   =>"Modifica annuncio",
    "mandatory_fields"   =>"Campi obbligatori",
    "ad_post"   =>"Annuncio",
-   "sell_item"   =>"Vendi un oggetto o un servizio",
+   "sell_item"   =>"Vendi un articolo o un servizio",
    "search_save"   =>"Ricerca preferita salvata correttamente",
    "address"   =>"Indirizzo",
    "email"   =>"E-mail",
    "phone"   =>"Telefono",
-   "send_us_your_feedback"   =>"Mandaci il tuo feedback",
+   "send_us_your_feedback"   =>"Inviaci il tuo feedback",
    "online_shopping"   =>"OTTENERE",
    "approved"   =>"Approvato con successo",
-   "declined"   =>"Declinato con successo",
+   "declined"   =>"Rifiutato con successo",
    "search_on_map"   =>"Cerca sulla mappa",
    "post_free_ad"   =>"Pubblica annuncio gratuito",
    "select_a_category"   =>"Seleziona una categoria",
    "select_a_sub_category"   =>"Seleziona una sotto-categoria",
-   "all_dopings_added"   =>"Tutti i tipi di doping sono aggiunti per questo annuncio.",
+   "all_dopings_added"   =>"Tutti i tipi di doping vengono aggiunti per questo annuncio.",
    "is_get_adv"   =>   [
       "name"      =>"OTTENERE",
 
@@ -217,12 +217,12 @@
    "featured_ads"   =>"Annunci in primo piano",
    "trending_ads"   =>"Annunci Trendind",
    "search_ads_result_message"   =>   [
-      "name"      =>":      numero di annunci trovati per:ricerca nome",
+      "name"      =>":      conta gli annunci trovati per:ricerca nome",
 
    ],
    "total"   =>"Totale",
    "quantity"   =>"Quantità",
-   "view_cart"   =>"Visualizza il carrello",
+   "view_cart"   =>"Vedi il carrello",
    "no_ads"   =>"Nessuna pubblicità!",
    "show_display_mode"   =>   [
       "map"      =>"Carta geografica",
@@ -232,7 +232,7 @@
    "advs_list_table_thead"   =>   [
       "name"      =>"Nome dell\'annuncio",
       "price"      =>"Prezzo",
-      "publish_at"      =>"Data di annuncio",
+      "publish_at"      =>"Data dell\'annuncio",
       "location_city"      =>"Città",
       "location_country"      =>"Nazione",
 
@@ -243,6 +243,22 @@
    ],
    "show_table_view"   =>   [
       "name"      =>"tavolo",
+
+   ],
+   "showcase"   =>   [
+      "name"      =>"vetrina",
+
+   ],
+   "new_ad"   =>   [
+      "name"      =>"Nuovo annuncio",
+
+   ],
+   "profile"   =>   [
+      "name"      =>"Profilo",
+
+   ],
+   "my_ads"   =>   [
+      "name"      =>"I miei annunci",
 
    ],
 

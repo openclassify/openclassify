@@ -2,7 +2,7 @@
 
  return[
    "auto_approve"   =>   [
-      "name"      =>"Aprobación automática",
+      "name"      =>"Aprobar automáticamente",
 
    ],
    "default_published_time"   =>   [
@@ -14,7 +14,7 @@
 
    ],
    "address"   =>   [
-      "name"      =>"Contacto direccion",
+      "name"      =>"Dirección de contacto",
 
    ],
    "phone"   =>   [
@@ -23,7 +23,7 @@
    ],
    "contact_mail"   =>   [
       "name"      =>"Correo de contacto",
-      "warning"      =>"Auto añadido <strong>info nombre de sitio</strong> @sitename",
+      "warning"      =>"Auto añadido sitename <strong>info</strong> @sitename",
 
    ],
    "map_coordinates_long"   =>   [
@@ -31,7 +31,7 @@
 
    ],
    "map_coordinates_lat"   =>   [
-      "name"      =>"Mapa de coordenadas latinas",
+      "name"      =>"Map Lat Coordinate",
 
    ],
    "logo"   =>   [
@@ -40,7 +40,7 @@
    ],
    "ogImage"   =>   [
       "name"      =>"Logotipo de Social Share",
-      "warning"      =>"Debe estar en una resolución de 1200 x 630.",
+      "warning"      =>"Debe tener una resolución de 1200 x 630.",
 
    ],
    "currencies"   =>   [
@@ -57,15 +57,15 @@
 
    ],
    "default_country"   =>   [
-      "name"      =>"País predeterminado del anuncio",
+      "name"      =>"País de anuncio predeterminado",
 
    ],
    "free_currencyconverterapi_key"   =>   [
-      "name"      =>"Clave API Convertidor de moneda",
+      "name"      =>"Clave API de convertidor de divisas",
 
    ],
    "default_city"   =>   [
-      "name"      =>"Ciudad de anuncios predeterminada",
+      "name"      =>"Ciudad de anuncio predeterminada",
 
    ],
    "default_district"   =>   [
@@ -73,7 +73,7 @@
 
    ],
    "default_neighborhood"   =>   [
-      "name"      =>"Barrio de anuncios predeterminado",
+      "name"      =>"Barrio de anuncio predeterminado",
 
    ],
    "default_currency"   =>   [
@@ -117,7 +117,7 @@
 
    ],
    "watermark_opacity"   =>   [
-      "name"      =>"Opacidad de la marca de agua",
+      "name"      =>"Opacidad de marca de agua",
 
    ],
    "listing_page_image"   =>   [

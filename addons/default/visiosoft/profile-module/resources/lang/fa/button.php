@@ -1,7 +1,7 @@
 <?php
 
  return[
-   "new_profile"   =>"مشخصات جدید",
+   "new_profile"   =>"پروفایل جدید",
    "new_adress"   =>"آدرس جدید",
    "show"   =>"نمایش آدرس"
 ];

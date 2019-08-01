@@ -107,7 +107,7 @@
 
    ],
    "next_add_advs_btn"   =>   [
-      "name"      =>"Suivant",
+      "name"      =>"Prochain",
 
    ],
    "cancel_add_advs_btn"   =>   [
@@ -243,6 +243,22 @@
    ],
    "show_table_view"   =>   [
       "name"      =>"Table",
+
+   ],
+   "showcase"   =>   [
+      "name"      =>"Vitrine",
+
+   ],
+   "new_ad"   =>   [
+      "name"      =>"Nouvelle annonce",
+
+   ],
+   "profile"   =>   [
+      "name"      =>"Profil",
+
+   ],
+   "my_ads"   =>   [
+      "name"      =>"Mes annonces",
 
    ],
 

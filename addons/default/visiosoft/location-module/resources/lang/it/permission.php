@@ -4,9 +4,9 @@
    "village"   =>   [
       "name"      =>"Villaggio",
       "option"      =>      [
-         "read"         =>"Puoi leggere il villaggio?        ",
-         "write"         =>"Puoi creare / modificare un villaggio?        ",
-         "delete"         =>"Posso cancellare il villaggio?",
+         "read"         =>"Sai leggere il villaggio?        ",
+         "write"         =>"Può creare / modificare villaggio?        ",
+         "delete"         =>"Puoi cancellare il villaggio?",
 
       ],
 

@@ -18,7 +18,7 @@
 
    ],
    "category"   =>   [
-      "name"      =>"Título de la categoría",
+      "name"      =>"Título de categoría",
 
    ],
    "price"   =>   [
@@ -98,16 +98,16 @@
 
    ],
    "next_add_advs_title"   =>   [
-      "name"      =>"Publica un anuncio en solo 30 segundos.",
+      "name"      =>"Publique un anuncio en solo 30 segundos",
 
    ],
    "next_add_advs_msg"   =>   [
-      "name"      =>"Por favor NO publique varios anuncios para los mismos artículos o servicios. Todos los anuncios duplicados,
-      spam y categorizados erróneamente serán eliminados.",
+      "name"      =>"NO publique varios anuncios para los mismos artículos o servicios. Se eliminarán todos los anuncios duplicados,
+      spam y categorizados incorrectamente.",
 
    ],
    "next_add_advs_btn"   =>   [
-      "name"      =>"Siguiente",
+      "name"      =>"próximo",
 
    ],
    "cancel_add_advs_btn"   =>   [
@@ -123,7 +123,7 @@
 
    ],
    "favs_adv"   =>   [
-      "name"      =>"Fav anuncios",
+      "name"      =>"Anuncios Fav",
 
    ],
    "my_adv"   =>   [
@@ -152,10 +152,10 @@
    "recommended"   =>"Anuncios recomendados para usted",
    "sort_by"   =>"Ordenar por",
    "pick_option"   =>"Elige una opción",
-   "price_high"   =>"Precio alto a bajo",
+   "price_high"   =>"Precio mayor a menor",
    "price-low"   =>"Precios de barato a caro",
    "newest"   =>"El más nuevo",
-   "categories"   =>"Las categorías",
+   "categories"   =>"Categorias",
    "all_categories"   =>"todas las categorias",
    "location"   =>"Ubicación",
    "send_message"   =>"Enviar mensaje",
@@ -163,7 +163,7 @@
    "phone_office"   =>"Telefono de oficina",
    "add_to_favorites"   =>"Agregar a los favoritos",
    "send"   =>"Enviar",
-   "search_name"   =>"Nombre de búsqueda",
+   "search_name"   =>"Buscar nombre",
    "my_favorite_searches"   =>"Búsquedas favoritas",
    "search_desc"   =>"Puede agregar y administrar sus selecciones de búsqueda favoritas aquí.",
    "complaint_placeholder"   =>"Escriba los detalles de su queja aquí.",
@@ -172,15 +172,15 @@
    "approve"   =>"Aprobar",
    "passive"   =>"Pasivo",
    "offered_by"   =>"Ofrecido por",
-   "more_ads_by"   =>"Más anuncios por",
+   "more_ads_by"   =>"Más anuncios de",
    "click_phone"   =>"Mostrar número de teléfono",
    "share"   =>"Comparte este anuncio",
-   "report"   =>"Reportar este anuncio",
+   "report"   =>"Denunciar este anuncio",
    "features"   =>"Caracteristicas",
    "streetview"   =>"vista de calle",
    "recommended_ads"   =>"Anuncios recomendados para usted",
    "new"   =>"Nuevo",
-   "short_info"   =>"Información Corta",
+   "short_info"   =>"Información corta",
    "secure_trading"   =>"Comercio seguro",
    "24/7"   =>"Soporte 24/7",
    "easy_trading"   =>"Comercio fácil",
@@ -188,36 +188,36 @@
    "give_a_call"   =>"Dar una llamada en",
    "message_sent"   =>"¡Mensaje enviado!",
    "asap"   =>"Mensaje enviado,
-   el vendedor lo contactará lo antes posible.",
-   "ad_id"   =>"ID de anuncio",
+   el vendedor se comunicará con usted lo antes posible.",
+   "ad_id"   =>"ID del anuncio",
    "contact_with"   =>"Contactar con",
    "create_adv"   =>"Crear anuncio",
-   "edit_adv"   =>"Editar Anuncio",
+   "edit_adv"   =>"Editar anuncio",
    "mandatory_fields"   =>"Campos obligatorios",
-   "ad_post"   =>"Anuncio publicitario",
+   "ad_post"   =>"Publicación de anuncios",
    "sell_item"   =>"Vender un artículo o servicio",
-   "search_save"   =>"Búsqueda favorita guardada exitosamente",
+   "search_save"   =>"Búsqueda favorita guardada con éxito",
    "address"   =>"Dirección",
    "email"   =>"Correo electrónico",
    "phone"   =>"Teléfono",
    "send_us_your_feedback"   =>"Envíenos sus comentarios",
    "online_shopping"   =>"OBTENER",
-   "approved"   =>"Aprobado con éxito",
-   "declined"   =>"Declinado exitosamente",
+   "approved"   =>"Aprobado exitosamente",
+   "declined"   =>"Rechazado con éxito",
    "search_on_map"   =>"Buscar en el mapa",
    "post_free_ad"   =>"Publicar anuncio gratis",
    "select_a_category"   =>"Seleccione una categoría",
    "select_a_sub_category"   =>"Selecciona una sub-categoría",
-   "all_dopings_added"   =>"Todos los tipos de dopaje se añaden para este anuncio.",
+   "all_dopings_added"   =>"Todos los tipos de dopaje se agregan para este anuncio.",
    "is_get_adv"   =>   [
       "name"      =>"OBTENER",
 
    ],
-   "corporate_info"   =>"Información Corporativa",
+   "corporate_info"   =>"Información corporativa",
    "featured_ads"   =>"Anuncios destacados",
-   "trending_ads"   =>"Trendind Ads",
+   "trending_ads"   =>"Anuncios de tendencias",
    "search_ads_result_message"   =>   [
-      "name"      =>":      se han encontrado anuncios de:búsqueda de nombres",
+      "name"      =>":      cuenta de anuncios encontrados para:búsqueda de nombre",
 
    ],
    "total"   =>"Total",
@@ -243,6 +243,22 @@
    ],
    "show_table_view"   =>   [
       "name"      =>"Mesa",
+
+   ],
+   "showcase"   =>   [
+      "name"      =>"Escaparate",
+
+   ],
+   "new_ad"   =>   [
+      "name"      =>"Anuncio nuevo",
+
+   ],
+   "profile"   =>   [
+      "name"      =>"Perfil",
+
+   ],
+   "my_ads"   =>   [
+      "name"      =>"Mis anuncios",
 
    ],
 

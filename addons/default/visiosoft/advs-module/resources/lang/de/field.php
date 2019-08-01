@@ -217,7 +217,7 @@
    "featured_ads"   =>"Empfohlene Anzeigen",
    "trending_ads"   =>"Trendind Ads",
    "search_ads_result_message"   =>   [
-      "name"      =>":      Anzahl der gefundenen Anzeigen für:Namenssuche",
+      "name"      =>":      Anzahl gefundener Anzeigen für:Namenssuche",
 
    ],
    "total"   =>"Gesamt",
@@ -243,6 +243,22 @@
    ],
    "show_table_view"   =>   [
       "name"      =>"Tabelle",
+
+   ],
+   "showcase"   =>   [
+      "name"      =>"Vitrine",
+
+   ],
+   "new_ad"   =>   [
+      "name"      =>"Neue Anzeige",
+
+   ],
+   "profile"   =>   [
+      "name"      =>"Profil",
+
+   ],
+   "my_ads"   =>   [
+      "name"      =>"Meine Anzeigen",
 
    ],
 

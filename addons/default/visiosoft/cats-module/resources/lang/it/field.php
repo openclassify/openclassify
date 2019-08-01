@@ -17,5 +17,5 @@
       "name"      =>"Immagine",
 
    ],
-   "please_wait"   =>"Si prega di attendere. Eliminare le sottocategorie"
+   "please_wait"   =>"Attendere. Eliminazione delle sottocategorie"
 ];

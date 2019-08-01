@@ -6,7 +6,7 @@
 
    ],
    "default_published_time"   =>   [
-      "name"      =>"Ora di pubblicazione predefinita",
+      "name"      =>"Tempo di pubblicazione predefinito",
 
    ],
    "default_adv_limit"   =>   [
@@ -22,16 +22,16 @@
 
    ],
    "contact_mail"   =>   [
-      "name"      =>"Contatta Mail",
-      "warning"      =>"<strong>Nome del</strong> sitename aggiunto automaticamente @sitename",
+      "name"      =>"Mail di contatto",
+      "warning"      =>"Aggiunta automatica delle <strong>informazioni sul nome sito</strong> @ nome sito",
 
    ],
    "map_coordinates_long"   =>   [
-      "name"      =>"Mappa lungo Coordinate",
+      "name"      =>"Mappa lunga coordinata",
 
    ],
    "map_coordinates_lat"   =>   [
-      "name"      =>"Mappa Coordinata Lat",
+      "name"      =>"Map Lat Coordinate",
 
    ],
    "logo"   =>   [
@@ -39,8 +39,8 @@
 
    ],
    "ogImage"   =>   [
-      "name"      =>"Social Share Logo",
-      "warning"      =>"Dovrebbe essere a una risoluzione di 1200 x 630.",
+      "name"      =>"Logo di condivisione sociale",
+      "warning"      =>"Dovrebbe avere una risoluzione di 1200 x 630.",
 
    ],
    "currencies"   =>   [
@@ -49,23 +49,23 @@
    ],
    "site_address"   =>   [
       "name"      =>"Indirizzo del sito",
-      "warning"      =>"Aggiunto automaticamente www. www. <strong>sitename.com</strong>",
+      "warning"      =>"Aggiunta automatica www. www. <strong>sitename.com</strong>",
 
    ],
    "google_map_key"   =>   [
-      "name"      =>"Chiave di Google Map Api",
+      "name"      =>"Google Map Api Key",
 
    ],
    "default_country"   =>   [
-      "name"      =>"Paese dell\'annuncio predefinito",
+      "name"      =>"Paese annuncio predefinito",
 
    ],
    "free_currencyconverterapi_key"   =>   [
-      "name"      =>"Chiave API Convertitore di valuta",
+      "name"      =>"Chiave API del convertitore di valuta",
 
    ],
    "default_city"   =>   [
-      "name"      =>"Città pubblicitaria predefinita",
+      "name"      =>"Città annuncio predefinita",
 
    ],
    "default_district"   =>   [
@@ -81,7 +81,7 @@
 
    ],
    "default_GET"   =>   [
-      "name"      =>"Annuncio GET predefinito",
+      "name"      =>"Annuncio predefinito GET",
 
    ],
    "twitter"   =>   [
@@ -109,7 +109,7 @@
 
    ],
    "watermark_image"   =>   [
-      "name"      =>"Immagine della filigrana",
+      "name"      =>"Immagine filigrana",
 
    ],
    "watermark_position"   =>   [
@@ -117,7 +117,7 @@
 
    ],
    "watermark_opacity"   =>   [
-      "name"      =>"Opacità della filigrana",
+      "name"      =>"Opacità filigrana",
 
    ],
    "listing_page_image"   =>   [
@@ -129,7 +129,7 @@
 
    ],
    "google_statistic_code"   =>   [
-      "name"      =>"Codice Statistico di Google",
+      "name"      =>"Codice statistico di Google",
 
    ],
 

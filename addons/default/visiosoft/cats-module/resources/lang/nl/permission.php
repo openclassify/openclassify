@@ -14,8 +14,8 @@
       "name"      =>"Placeholderforsearch",
       "option"      =>      [
          "read"         =>"Kan placeholderforsearch lezen?        ",
-         "write"         =>"Kan placeholderforsearch maken / bewerken?        ",
-         "delete"         =>"Kan placeholderforsearch verwijderen?",
+         "write"         =>"Kan plaatsaanduiding voor zoeken maken / bewerken?        ",
+         "delete"         =>"Kan placeholderforsearch worden verwijderd?",
 
       ],
 

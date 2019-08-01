@@ -11,7 +11,7 @@
    "login_noMail_old_user2"   =>"Por favor,
    verifique o endereço de e-mail e tente novamente.",
    "login_noMail_old_user3"   =>"Se o problema persistir,
-   entre em contato com “info@celep.com”.",
+   entre em contato pelo e-mail \'info@celep.com\'.",
    "login_info_old_user"   =>"Uma nova senha foi enviada para o seu endereço de e-mail.",
    "success"   =>"Sucesso",
    "notified_new_updates"   =>"Quero ser notificado de novas atualizações",

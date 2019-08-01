@@ -4,18 +4,18 @@
    "category"   =>   [
       "name"      =>"Categoria",
       "option"      =>      [
-         "read"         =>"Può leggere la categoria?        ",
-         "write"         =>"Posso creare / modificare una categoria?        ",
-         "delete"         =>"Può cancellare la categoria?"
+         "read"         =>"Sai leggere la categoria?        ",
+         "write"         =>"Puoi creare / modificare la categoria?        ",
+         "delete"         =>"Puoi cancellare la categoria?"
       ],
 
    ],
    "placeholderforsearch"   =>   [
       "name"      =>"Placeholderforsearch",
       "option"      =>      [
-         "read"         =>"Posso leggere placeholderforsearch?        ",
-         "write"         =>"Puoi creare / modificare segnaposto?        ",
-         "delete"         =>"Posso cancellare placeholderforsearch?",
+         "read"         =>"Sai leggere placeholderforsearch?        ",
+         "write"         =>"Puoi creare / modificare la ricerca segnaposto?        ",
+         "delete"         =>"È possibile eliminare placeholderforsearch?",
 
       ],
 

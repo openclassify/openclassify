@@ -22,7 +22,7 @@
 
    ],
    "cf_values"   =>   [
-      "name"      =>"Cf-waarden",
+      "name"      =>"Zie waarden",
 
    ],
 

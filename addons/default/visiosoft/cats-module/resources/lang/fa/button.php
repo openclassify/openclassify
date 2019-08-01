@@ -2,7 +2,7 @@
 
  return[
    "new_category"   =>"دسته بندی جدید",
-   "add_sub_category"   =>"اضافه کردن زیر شاخه",
-   "sub_category"   =>"نمایش زیر شاخه",
-   "new_placeholderforsearch"   =>"جستجوی مکان جدید"
+   "add_sub_category"   =>"زیر مجموعه را اضافه کنید",
+   "sub_category"   =>"نمایش زیر گروه",
+   "new_placeholderforsearch"   =>"New Placeholderforsearch"
 ];

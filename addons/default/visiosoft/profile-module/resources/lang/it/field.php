@@ -34,7 +34,7 @@
 
    ],
    "enabled"   =>   [
-      "name"      =>"Abilita utente",
+      "name"      =>"Abilitazione utente",
 
    ],
    "country"   =>   [
@@ -78,7 +78,7 @@
 
    ],
    "adress_name"   =>   [
-      "name"      =>"Nome dell\'indirizzo",
+      "name"      =>"Nome indirizzo",
 
    ],
    "adress_first_name"   =>   [
@@ -94,15 +94,15 @@
 
    ],
    "adress_content"   =>   [
-      "name"      =>"Contenuto dell\'indirizzo",
+      "name"      =>"Indirizzo contenuto",
 
    ],
    "adress_post_code"   =>   [
-      "name"      =>"Codice postale",
+      "name"      =>"CAP",
 
    ],
    "adress_gsm_phone"   =>   [
-      "name"      =>"Telefono Gsm",
+      "name"      =>"Telefono GSM",
 
    ],
    "adress_land_phone"   =>   [
@@ -194,7 +194,7 @@
 
    ],
    "menu_last_msg"   =>   [
-      "name"      =>"L\'ultimo accesso a",
+      "name"      =>"Hai effettuato l\'ultimo accesso alle",
 
    ],
    "menu_packages"   =>   [
@@ -202,15 +202,15 @@
 
    ],
    "menu_adv_packages"   =>   [
-      "name"      =>"Pacchetti annunci",
+      "name"      =>"Pacchetti di annunci",
 
    ],
    "menu_time_packages"   =>   [
-      "name"      =>"Pacchetti di tempo",
+      "name"      =>"Pacchetti temporali",
 
    ],
    "profile_details"   =>   [
-      "name"      =>"Dettagli del profilo",
+      "name"      =>"Dettagli profilo",
 
    ],
    "profile_photo"   =>   [
@@ -218,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"Banner della pagina di elenco annunci",
+      "name"      =>"Banner della pagina di elenco degli annunci",
 
    ],
    "approve"   =>   [
@@ -259,16 +259,16 @@
    ],
    "right_secure_trading_msg"   =>   [
       "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit",
+      contectetur elip adicing",
 
    ],
    "right_support_subject"   =>   [
-      "name"      =>"Supporto 24/7",
+      "name"      =>"Assistenza 24/7",
 
    ],
    "right_support_msg"   =>   [
       "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit",
+      contectetur elip adicing",
 
    ],
    "right_easy_trading_subject"   =>   [
@@ -277,7 +277,7 @@
    ],
    "right_easy_trading_msg"   =>   [
       "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit",
+      contectetur elip adicing",
 
    ],
    "right_need_help_subject"   =>   [
@@ -285,7 +285,7 @@
 
    ],
    "right_need_help_msg"   =>   [
-      "name"      =>"Dai una chiamata",
+      "name"      =>"Chiama",
 
    ],
    "disable_account"   =>   [
@@ -374,7 +374,7 @@
 
    ],
    "awaiting_payment_approval"   =>   [
-      "name"      =>"In attesa di approvazione di pagamento",
+      "name"      =>"In attesa di approvazione del pagamento",
 
    ],
    "paid"   =>   [
@@ -414,11 +414,11 @@
 
    ],
    "show_order_msg1"   =>   [
-      "name"      =>"Il risultato della transazione verrà notificato per posta.",
+      "name"      =>"Il risultato della transazione verrà comunicato per posta.",
 
    ],
    "show_order_msg2"   =>   [
-      "name"      =>"Il rimborso sarà effettuato se il prodotto non viene consegnato entro una settimana.",
+      "name"      =>"Il rimborso verrà effettuato se il prodotto non viene consegnato entro una settimana.",
 
    ],
    "show_order_msg3"   =>   [
@@ -430,7 +430,7 @@
 
    ],
    "please_entered_tracking_number"   =>   [
-      "name"      =>"Si prega di inserire il numero di tracking",
+      "name"      =>"Inserisci il numero di tracciamento",
 
    ],
    "transport_days"   =>   [
@@ -446,11 +446,11 @@
 
    ],
    "cancel_sale"   =>   [
-      "name"      =>"Annulla la vendita",
+      "name"      =>"Annulla vendita",
 
    ],
    "send_again"   =>   [
-      "name"      =>"Manderò di nuovo",
+      "name"      =>"Spedirò di nuovo",
 
    ],
    "content"   =>   [
@@ -478,7 +478,7 @@
 
    ],
    "confirm_password_input"   =>   [
-      "name"      =>"Confermo la mia modifica della password",
+      "name"      =>"Confermo la modifica della mia password",
 
    ],
    "create_address"   =>   [
@@ -498,7 +498,7 @@
 
    ],
    "go_subscriptions_page"   =>   [
-      "name"      =>"Vai alla pagina Iscrizioni",
+      "name"      =>"Vai alla pagina delle iscrizioni",
 
    ],
    "buy_package"   =>   [
@@ -514,11 +514,11 @@
 
    ],
    "ad_limit"   =>   [
-      "name"      =>"Limite dell\'annuncio",
+      "name"      =>"Limite annuncio",
 
    ],
    "publish_time"   =>   [
-      "name"      =>"Pubblica tempo",
+      "name"      =>"Tempo di pubblicazione",
 
    ],
    "all_categories"   =>   [

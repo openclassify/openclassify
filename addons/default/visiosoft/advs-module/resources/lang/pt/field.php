@@ -246,5 +246,21 @@
       "name"      =>"Mesa",
 
    ],
+   "showcase"   =>   [
+      "name"      =>"Mostruário",
+
+   ],
+   "new_ad"   =>   [
+      "name"      =>"Novo anúncio",
+
+   ],
+   "profile"   =>   [
+      "name"      =>"Perfil",
+
+   ],
+   "my_ads"   =>   [
+      "name"      =>"Meus anúncios",
+
+   ],
 
 ];

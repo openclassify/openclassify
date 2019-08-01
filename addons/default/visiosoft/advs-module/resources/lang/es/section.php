@@ -6,7 +6,7 @@
 
    ],
    "categories"   =>   [
-      "title"      =>"Las categorías",
+      "title"      =>"Categorias",
 
    ],
    "countries"   =>   [
@@ -38,7 +38,7 @@
 
    ],
    "cf_values"   =>   [
-      "title"      =>"Valores cf",
+      "title"      =>"Valores de Cf",
 
    ],
    "fields"   =>   [
