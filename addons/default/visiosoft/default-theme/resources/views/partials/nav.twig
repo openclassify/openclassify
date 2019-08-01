@@ -10,7 +10,8 @@
                     </button>
                     <a class="navbar-brand" href="/">
                         {% if setting_value('visiosoft.module.advs::logo') == NULL %}
-                            <img class="img-responsive" alt="{{ trans(template.meta_title) }}-Logo" src="{{ img('theme::images/logo-horizontal.png').url }}">
+                            <img class="img-responsive" alt="{{ trans(template.meta_title) }}-Logo"
+                                 src="{{ img('theme::images/logo-horizontal.png').url }}">
                         {% else %}
                             <img class="img-responsive"
                                  src="{{ url('files/' ~ file(setting_value('visiosoft.module.advs::logo')).path) }}"
@@ -93,7 +94,8 @@
                         {% else %}
 
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user"></i> Login</b> <span
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b><i class="fa fa-user"></i>
+                                        Login</b> <span
                                             class="caret"></span></a>
                                 <ul id="login-dp" class="dropdown-menu">
                                     <li>
@@ -118,7 +120,7 @@
 
                         {% if entries('advs').isEnabled('carts') %}
                             {% set cart_items = entries('carts').get()[0].getCart() %}
-                            <li class="dropdown profile-navigation-field">
+                            <li class="dropdown">
                                 <a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-shopping-cart"></i> {{ cart_items.quantity }}<span
                                             class="caret"></span>
@@ -128,19 +130,24 @@
                                     {% for item_cart in cart_items.items(1) %}
                                         <li>
                                 <span class="cart-item">
-                                    <span class="cart-item-left">
-                                        <img src="{{ item_cart.cover_photo }}" alt="{{ item_cart.name }}" height="50" width="70"
-                                             class="item-cart-img">
-                                        <span class="item-name">{{ item_cart.name }}</span>
-                                        <span class="item-price">{{ item_cart.priceFormat(item_cart) }}</span>
-                                        <span class="item-quantity">{{ trans('visiosoft.module.advs::field.quantity') }}: {{ item_cart.quantity }}</span>
-                                    </span>
+                                    <a href="{{ item_cart.detail_url }}">
+                                        <span class="cart-item-left">
+                                            <img src="{{ item_cart.cover_photo }}" alt="{{ item_cart.name }}"
+                                                 height="50"
+                                                 width="70"
+                                                 class="item-cart-img">
+                                            <span class="item-name">{{ item_cart.name }}</span>
+                                            <span class="item-price">{{ item_cart.priceFormat(item_cart) }}</span>
+                                            <span class="item-quantity">{{ trans('visiosoft.module.advs::field.quantity') }}: {{ item_cart.quantity }}</span>
+                                        </span>
+                                    </a>
+
                                  </span>
                                         </li>
                                     {% endfor %}
                                     <li class="cart-footer">
                                         <span class="lighter-text">{{ trans('visiosoft.module.advs::field.total') }}:</span>
-                                        <span class="total-color-text">{{ cart_items.subtotal }}</span>
+                                        <span class="total-color-text">{% if cart_items is null %}0{% else %}{{ cart().subtotal.currency }}{% endif %}</span>
                                     </li>
                                     <!--items cart-->
                                     <li><span><a class="text-center cart-view-button"
