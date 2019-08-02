@@ -9,7 +9,7 @@
    "login_error"   =>"Verkeerde gebruikersnaam of wachtwoord.",
    "login_noMail_old_user"   =>"Het e-mailadres dat u heeft ingevoerd kon niet worden gevonden.",
    "login_noMail_old_user2"   =>"Controleer het e-mailadres en probeer het opnieuw.",
-   "login_noMail_old_user3"   =>"Neem contact op met \'info@celep.com\' als het probleem zich blijft voordoen.",
+   "login_noMail_old_user3"   =>"Neem contact op met \'info@openclassify.com\' als het probleem zich blijft voordoen.",
    "login_info_old_user"   =>"Er is een nieuw wachtwoord naar uw e-mailadres verzonden.",
    "success"   =>"Succes",
    "notified_new_updates"   =>"Ik wil op de hoogte worden gehouden van nieuwe updates",

@@ -9,7 +9,7 @@
    "login_error"   =>"ورود نام کاربری یا رمز عبور نادرست است.",
    "login_noMail_old_user"   =>"آدرس ایمیلی که وارد کردید یافت نشد.",
    "login_noMail_old_user2"   =>"لطفا آدرس ایمیل را بررسی کنید و دوباره امتحان کنید.",
-   "login_noMail_old_user3"   =>"در صورت ادامه مشکل ، لطفاً با \'info@celep.com\' تماس بگیرید.",
+   "login_noMail_old_user3"   =>"در صورت ادامه مشکل ، لطفاً با \'info@openclassify.com\' تماس بگیرید.",
    "login_info_old_user"   =>"رمز جدیدی به آدرس ایمیل شما ارسال شده است.",
    "success"   =>"موفقیت",
    "notified_new_updates"   =>"می خواهم از به روزرسانی های جدید مطلع شوم",

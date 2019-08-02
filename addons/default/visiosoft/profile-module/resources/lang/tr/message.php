@@ -10,7 +10,7 @@
    "login_noMail_old_user"   =>"Girdiğiniz e-posta adresi bulunamadı.",
    "login_noMail_old_user2"   =>"Lütfen e-posta adresini kontrol edip tekrar deneyin.",
    "login_noMail_old_user3"   =>"Sorun devam ederse,
-   lütfen \'info@celep.com\' adresinden iletişim kurun.",
+   lütfen \'info@openclassify.com\' adresinden iletişim kurun.",
    "login_info_old_user"   =>"E-posta adresinize yeni bir şifre gönderildi.",
    "success"   =>"başarı",
    "notified_new_updates"   =>"Yeni güncellemelerden haberdar olmak istiyorum",

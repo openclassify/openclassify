@@ -10,7 +10,7 @@
    "login_noMail_old_user"   =>"Die eingegebene E-Mail-Adresse wurde nicht gefunden.",
    "login_noMail_old_user2"   =>"Bitte überprüfen Sie die E-Mail-Adresse und versuchen Sie es erneut.",
    "login_noMail_old_user3"   =>"Wenn das Problem weiterhin besteht,
-   wenden Sie sich bitte an \'info@celep.com\'.",
+   wenden Sie sich bitte an \'info@openclassify.com\'.",
    "login_info_old_user"   =>"Ein neues Passwort wurde an Ihre E-Mail-Adresse gesendet.",
    "success"   =>"Erfolg",
    "notified_new_updates"   =>"Ich möchte über neue Updates informiert werden",
