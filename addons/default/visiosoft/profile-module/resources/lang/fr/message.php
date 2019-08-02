@@ -10,7 +10,7 @@
    "login_noMail_old_user"   =>"L\'adresse e-mail que vous avez entrée est introuvable.",
    "login_noMail_old_user2"   =>"Veuillez vérifier l\'adresse e-mail et réessayer.",
    "login_noMail_old_user3"   =>"Si le problème persiste,
-   contactez-nous à l\'adresse info@celep.com.",
+   contactez-nous à l\'adresse info@openclassify.com.",
    "login_info_old_user"   =>"Un nouveau mot de passe a été envoyé à votre adresse e-mail.",
    "success"   =>"Succès",
    "notified_new_updates"   =>"Je veux être informé des nouvelles mises à jour",

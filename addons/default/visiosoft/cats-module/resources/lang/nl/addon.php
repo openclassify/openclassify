@@ -2,6 +2,6 @@
 
  return[
    "title"   =>"Categorie",
-   "name"   =>"Categoriemodule",
+   "name"   =>"Categorie Module",
    "description"   =>""
 ];

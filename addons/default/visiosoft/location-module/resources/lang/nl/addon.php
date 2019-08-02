@@ -2,6 +2,6 @@
 
  return[
    "title"   =>"Plaats",
-   "name"   =>"Locatie module",
+   "name"   =>"Locatiemodule",
    "description"   =>"Omschrijving"
 ];

@@ -34,7 +34,7 @@
 
    ],
    "enabled"   =>   [
-      "name"      =>"User Enable",
+      "name"      =>"Gebruiker inschakelen",
 
    ],
    "country"   =>   [
@@ -58,7 +58,7 @@
 
    ],
    "gsm_phone"   =>   [
-      "name"      =>"GSM-telefoonnummer",
+      "name"      =>"GSM telefoonnummer",
 
    ],
    "land_phone"   =>   [
@@ -66,11 +66,11 @@
 
    ],
    "office_phone"   =>   [
-      "name"      =>"Telefoonnummer kantoor",
+      "name"      =>"Telefoonnummer van kantoor",
 
    ],
    "register_type"   =>   [
-      "name"      =>"Registreer Type",
+      "name"      =>"Type register",
 
    ],
    "identification_number"   =>   [
@@ -94,7 +94,7 @@
 
    ],
    "adress_content"   =>   [
-      "name"      =>"Adress Content",
+      "name"      =>"Adres Inhoud",
 
    ],
    "adress_post_code"   =>   [
@@ -102,7 +102,7 @@
 
    ],
    "adress_gsm_phone"   =>   [
-      "name"      =>"Gsm Telefoon",
+      "name"      =>"GSM-telefoon",
 
    ],
    "adress_land_phone"   =>   [
@@ -194,7 +194,7 @@
 
    ],
    "menu_last_msg"   =>   [
-      "name"      =>"Je hebt voor het laatst ingelogd op",
+      "name"      =>"U bent voor het laatst ingelogd om",
 
    ],
    "menu_packages"   =>   [
@@ -218,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"Advertentiepagina Advertentie Banner",
+      "name"      =>"Advertentiepagina-banner",
 
    ],
    "approve"   =>   [
@@ -250,7 +250,7 @@
 
    ],
    "menu_my_sales"   =>   [
-      "name"      =>"Mijn verkopen",
+      "name"      =>"Mijn verkoop",
 
    ],
    "right_secure_trading_subject"   =>   [
@@ -259,7 +259,7 @@
    ],
    "right_secure_trading_msg"   =>   [
       "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipiserende elit",
+      consectetur verleidelijke elit",
 
    ],
    "right_support_subject"   =>   [
@@ -268,16 +268,16 @@
    ],
    "right_support_msg"   =>   [
       "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipiserende elit",
+      consectetur verleidelijke elit",
 
    ],
    "right_easy_trading_subject"   =>   [
-      "name"      =>"Eenvoudig handelen",
+      "name"      =>"Makkelijk handelen",
 
    ],
    "right_easy_trading_msg"   =>   [
       "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipiserende elit",
+      consectetur verleidelijke elit",
 
    ],
    "right_need_help_subject"   =>   [
@@ -285,26 +285,26 @@
 
    ],
    "right_need_help_msg"   =>   [
-      "name"      =>"Bel een oproep",
+      "name"      =>"Bellen",
 
    ],
    "disable_account"   =>   [
-      "name"      =>"Schakel account uit",
+      "name"      =>"Account uitschakelen",
 
    ],
    "disable_account_msg"   =>   [
-      "name"      =>"Uw account zal worden uitgeschakeld. Deze bewerking kan niet ongedaan worden gemaakt",
+      "name"      =>"Uw account wordt uitgeschakeld. Deze bewerking kan niet ongedaan worden gemaakt",
 
    ],
-   "message_title"   =>"Berichttitel",
+   "message_title"   =>"Titel van het bericht",
    "owner_name"   =>"Bericht",
    "favorites"   =>"favorieten",
    "fav_advs"   =>"Favoriete advertenties",
-   "fav_sellers"   =>"Favoriete verkopers",
-   "fav_searches"   =>"Fav-zoekopdrachten",
+   "fav_sellers"   =>"Fav verkopers",
+   "fav_searches"   =>"Fav zoekopdrachten",
    "posted_on"   =>"Geplaatst op",
    "message_details"   =>"berichtdetails",
-   "adv_no"   =>"Ad nr",
+   "adv_no"   =>"Advertentie nr",
    "bill_address"   =>   [
       "name"      =>"Factuuradres",
 
@@ -374,7 +374,7 @@
 
    ],
    "awaiting_payment_approval"   =>   [
-      "name"      =>"In afwachting van goedkeuring van betaling",
+      "name"      =>"In afwachting van betalingsgoedkeuring",
 
    ],
    "paid"   =>   [
@@ -414,11 +414,11 @@
 
    ],
    "show_order_msg1"   =>   [
-      "name"      =>"Het resultaat van de transactie wordt per e-mail gemeld.",
+      "name"      =>"Het transactieresultaat zal per e-mail worden gemeld.",
 
    ],
    "show_order_msg2"   =>   [
-      "name"      =>"Restitutie wordt gegeven als het product niet binnen een week wordt afgeleverd.",
+      "name"      =>"Restitutie vindt plaats als het product niet binnen een week wordt geleverd.",
 
    ],
    "show_order_msg3"   =>   [
@@ -430,7 +430,7 @@
 
    ],
    "please_entered_tracking_number"   =>   [
-      "name"      =>"Voer alstublieft volgnummer in",
+      "name"      =>"Voer het trackingnummer in",
 
    ],
    "transport_days"   =>   [
@@ -446,7 +446,7 @@
 
    ],
    "cancel_sale"   =>   [
-      "name"      =>"Annuleer verkoop",
+      "name"      =>"Verkoop annuleren",
 
    ],
    "send_again"   =>   [
@@ -458,7 +458,7 @@
 
    ],
    "preferences_settings"   =>   [
-      "name"      =>"Voorkeuren Instellingen",
+      "name"      =>"Voorkeuren instellingen",
 
    ],
    "corporate_settings"   =>   [
@@ -482,11 +482,11 @@
 
    ],
    "create_address"   =>   [
-      "name"      =>"Maak een adres aan",
+      "name"      =>"Adres maken",
 
    ],
    "balance_limit"   =>   [
-      "name"      =>"Balance Limit",
+      "name"      =>"Balanslimiet",
 
    ],
    "active_ads"   =>   [

@@ -2,6 +2,6 @@
 
  return[
    "title"   =>"advertenties",
-   "name"   =>"Advertentiemodule",
-   "description"   =>"Advertentiemodule"
+   "name"   =>"Advertenties module",
+   "description"   =>"Advertenties module"
 ];

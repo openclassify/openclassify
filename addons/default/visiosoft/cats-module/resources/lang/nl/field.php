@@ -17,5 +17,5 @@
       "name"      =>"Beeld",
 
    ],
-   "please_wait"   =>"Even geduld alstublieft. Subcategorieën verwijderen"
+   "please_wait"   =>"Een ogenblik geduld. Subcategorieën verwijderen"
 ];

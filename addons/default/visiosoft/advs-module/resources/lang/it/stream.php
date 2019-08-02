@@ -18,7 +18,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Adv in campo personalizzato",
+      "name"      =>"Consigli sul campo personalizzati",
 
    ],
    "cf_values"   =>   [

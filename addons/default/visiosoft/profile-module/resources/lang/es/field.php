@@ -2,11 +2,11 @@
 
  return[
    "file"   =>   [
-      "name"      =>"Las fotos",
+      "name"      =>"Fotos",
 
    ],
    "first_name"   =>   [
-      "name"      =>"Nombre de pila",
+      "name"      =>"Primer nombre",
 
    ],
    "last_name"   =>   [
@@ -62,7 +62,7 @@
 
    ],
    "land_phone"   =>   [
-      "name"      =>"Número de teléfono de la tierra",
+      "name"      =>"Número de teléfono de tierra",
 
    ],
    "office_phone"   =>   [
@@ -78,11 +78,11 @@
 
    ],
    "adress_name"   =>   [
-      "name"      =>"Nombre de la dirección",
+      "name"      =>"Nombre de direccion",
 
    ],
    "adress_first_name"   =>   [
-      "name"      =>"Nombre de pila",
+      "name"      =>"Primer nombre",
 
    ],
    "adress_last_name"   =>   [
@@ -94,7 +94,7 @@
 
    ],
    "adress_content"   =>   [
-      "name"      =>"Contenido de la dirección",
+      "name"      =>"Contenido de direccion",
 
    ],
    "adress_post_code"   =>   [
@@ -218,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"Banner de la página de listado de anuncios",
+      "name"      =>"Banner de página de listado de anuncios",
 
    ],
    "approve"   =>   [
@@ -300,13 +300,13 @@
    "owner_name"   =>"Mensaje",
    "favorites"   =>"Favoritos",
    "fav_advs"   =>"Anuncios favoritos",
-   "fav_sellers"   =>"Fav vendedores",
-   "fav_searches"   =>"Fav búsquedas",
+   "fav_sellers"   =>"Vendedores favoritos",
+   "fav_searches"   =>"Búsquedas favoritas",
    "posted_on"   =>"Publicado en",
    "message_details"   =>"Detalles del mensaje",
-   "adv_no"   =>"Anuncio No",
+   "adv_no"   =>"Anuncio no",
    "bill_address"   =>   [
-      "name"      =>"Dirección de Bill",
+      "name"      =>"Dirección de factura",
 
    ],
    "delivery_address"   =>   [
@@ -334,7 +334,7 @@
 
    ],
    "back"   =>   [
-      "name"      =>"Espalda",
+      "name"      =>"atrás",
 
    ],
    "image"   =>   [
@@ -350,7 +350,7 @@
 
    ],
    "piece"   =>   [
-      "name"      =>"Trozo",
+      "name"      =>"Pieza",
 
    ],
    "commission"   =>   [
@@ -362,7 +362,7 @@
 
    ],
    "sub_total"   =>   [
-      "name"      =>"Sub Total",
+      "name"      =>"Subtotal",
 
    ],
    "sale"   =>   [
@@ -374,7 +374,7 @@
 
    ],
    "awaiting_payment_approval"   =>   [
-      "name"      =>"En espera de la aprobación del pago",
+      "name"      =>"En espera de aprobación de pago",
 
    ],
    "paid"   =>   [
@@ -422,7 +422,7 @@
 
    ],
    "show_order_msg3"   =>   [
-      "name"      =>"El resultado de la transacción se ha enviado a su dirección de correo electrónico registrada.",
+      "name"      =>"El resultado de la transacción ha sido enviado a su dirección de correo electrónico registrada.",
 
    ],
    "awaiting_payment"   =>   [
@@ -430,8 +430,7 @@
 
    ],
    "please_entered_tracking_number"   =>   [
-      "name"      =>"Por favor,
-      introduzca el número de seguimiento",
+      "name"      =>"Ingrese el número de seguimiento",
 
    ],
    "transport_days"   =>   [
@@ -459,11 +458,11 @@
 
    ],
    "preferences_settings"   =>   [
-      "name"      =>"Preferencias de configuración",
+      "name"      =>"Configuraciones de preferencias",
 
    ],
    "corporate_settings"   =>   [
-      "name"      =>"Ajustes corporativos",
+      "name"      =>"Configuraciones corporativas",
 
    ],
    "change_password"   =>   [
@@ -483,11 +482,11 @@
 
    ],
    "create_address"   =>   [
-      "name"      =>"Crear direccion",
+      "name"      =>"Crear dirección",
 
    ],
    "balance_limit"   =>   [
-      "name"      =>"Límite de saldo",
+      "name"      =>"Límite de equilibrio",
 
    ],
    "active_ads"   =>   [
@@ -515,11 +514,11 @@
 
    ],
    "ad_limit"   =>   [
-      "name"      =>"Límite de anuncios",
+      "name"      =>"Límite de anuncio",
 
    ],
    "publish_time"   =>   [
-      "name"      =>"Tiempo de publicacion",
+      "name"      =>"Tiempo de publicación",
 
    ],
    "all_categories"   =>   [

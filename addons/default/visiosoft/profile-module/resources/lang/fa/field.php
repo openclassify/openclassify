@@ -2,7 +2,7 @@
 
  return[
    "file"   =>   [
-      "name"      =>"عکس ها",
+      "name"      =>"عکس",
 
    ],
    "first_name"   =>   [
@@ -34,7 +34,7 @@
 
    ],
    "enabled"   =>   [
-      "name"      =>"کاربر فعال",
+      "name"      =>"کاربر را فعال کنید",
 
    ],
    "country"   =>   [
@@ -66,7 +66,7 @@
 
    ],
    "office_phone"   =>   [
-      "name"      =>"شماره دفتر دفتر",
+      "name"      =>"شماره تلفن دفتر",
 
    ],
    "register_type"   =>   [
@@ -102,7 +102,7 @@
 
    ],
    "adress_gsm_phone"   =>   [
-      "name"      =>"گوشی Gsm",
+      "name"      =>"تلفن جی اس ام",
 
    ],
    "adress_land_phone"   =>   [
@@ -154,7 +154,7 @@
 
    ],
    "list"   =>   [
-      "name"      =>"فهرست",
+      "name"      =>"لیست",
 
    ],
    "menu_address"   =>   [
@@ -166,15 +166,15 @@
 
    ],
    "menu_favorites"   =>   [
-      "name"      =>"مورد علاقه های شما",
+      "name"      =>"موارد دلخواه",
 
    ],
    "menu_archived_ads"   =>   [
-      "name"      =>"تبلیغات آرشیو شده",
+      "name"      =>"تبلیغات بایگانی شده",
 
    ],
    "menu_pending_ads"   =>   [
-      "name"      =>"انتظار تایید",
+      "name"      =>"در انتظار تأیید",
 
    ],
    "menu_delete_account"   =>   [
@@ -186,7 +186,7 @@
 
    ],
    "menu_fav_ads"   =>   [
-      "name"      =>"آگهی های مورد علاقه",
+      "name"      =>"تبلیغات مورد علاقه",
 
    ],
    "menu_hello_msg"   =>   [
@@ -194,7 +194,7 @@
 
    ],
    "menu_last_msg"   =>   [
-      "name"      =>"شما اخیرا وارد سیستم شده اید",
+      "name"      =>"آخرین بار وارد سیستم شده اید",
 
    ],
    "menu_packages"   =>   [
@@ -202,15 +202,15 @@
 
    ],
    "menu_adv_packages"   =>   [
-      "name"      =>"بسته های آگهی",
+      "name"      =>"بسته های تبلیغاتی",
 
    ],
    "menu_time_packages"   =>   [
-      "name"      =>"بسته های زمان",
+      "name"      =>"بسته های زمانی",
 
    ],
    "profile_details"   =>   [
-      "name"      =>"جزئیات مشخصات",
+      "name"      =>"جزئیات پروفایل",
 
    ],
    "profile_photo"   =>   [
@@ -218,7 +218,7 @@
 
    ],
    "adv_listing_banner"   =>   [
-      "name"      =>"آگهی تبلیغات بنر صفحه",
+      "name"      =>"بنر صفحه نمایش لیست تبلیغات",
 
    ],
    "approve"   =>   [
@@ -254,11 +254,11 @@
 
    ],
    "right_secure_trading_subject"   =>   [
-      "name"      =>"بازرگانی امن",
+      "name"      =>"تجارت امن",
 
    ],
    "right_secure_trading_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet، consectetur adipisicing نخبگان",
+      "name"      =>"Lorem ipsum dolor sit amet، consectetur elit adipisicing",
 
    ],
    "right_support_subject"   =>   [
@@ -266,7 +266,7 @@
 
    ],
    "right_support_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet، consectetur adipisicing نخبگان",
+      "name"      =>"Lorem ipsum dolor sit amet، consectetur elit adipisicing",
 
    ],
    "right_easy_trading_subject"   =>   [
@@ -274,7 +274,7 @@
 
    ],
    "right_easy_trading_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet، consectetur adipisicing نخبگان",
+      "name"      =>"Lorem ipsum dolor sit amet، consectetur elit adipisicing",
 
    ],
    "right_need_help_subject"   =>   [
@@ -286,22 +286,22 @@
 
    ],
    "disable_account"   =>   [
-      "name"      =>"غیر فعال کردن حساب",
+      "name"      =>"غیرفعال کردن حساب",
 
    ],
    "disable_account_msg"   =>   [
-      "name"      =>"حساب کاربری شما غیرفعال خواهد شد. این عملیات نمیتواند لغو شود",
+      "name"      =>"حساب شما غیرفعال خواهد شد این عملیات قابل بازگشت نیست",
 
    ],
    "message_title"   =>"عنوان پیام",
    "owner_name"   =>"پیام",
-   "favorites"   =>"مورد علاقه های شما",
-   "fav_advs"   =>"آگهی های مورد علاقه",
-   "fav_sellers"   =>"فروشندگان فاو",
-   "fav_searches"   =>"جستجوی Fav",
+   "favorites"   =>"موارد دلخواه",
+   "fav_advs"   =>"تبلیغات مورد علاقه",
+   "fav_sellers"   =>"فروشندگان مورد علاقه",
+   "fav_searches"   =>"جستجوهای مورد علاقه",
    "posted_on"   =>"نوشته شده در",
    "message_details"   =>"جزئیات پیام",
-   "adv_no"   =>"آگهی شماره",
+   "adv_no"   =>"شماره آگهی",
    "bill_address"   =>   [
       "name"      =>"آدرس بیل",
 
@@ -367,11 +367,11 @@
 
    ],
    "awaiting_tracking_number"   =>   [
-      "name"      =>"انتظار ردیابی شماره",
+      "name"      =>"در انتظار شماره پیگیری",
 
    ],
    "awaiting_payment_approval"   =>   [
-      "name"      =>"در انتظار تأیید پرداخت",
+      "name"      =>"منتظر تأیید پرداخت هستید",
 
    ],
    "paid"   =>   [
@@ -391,7 +391,7 @@
 
    ],
    "shipped"   =>   [
-      "name"      =>"ارسال شده",
+      "name"      =>"حمل شد",
 
    ],
    "delivered"   =>   [
@@ -407,19 +407,19 @@
 
    ],
    "not_delivered"   =>   [
-      "name"      =>"تحویل نمی شود",
+      "name"      =>"تحویل داده نشده",
 
    ],
    "show_order_msg1"   =>   [
-      "name"      =>"نتیجه معامله از طریق ایمیل مطلع خواهد شد.",
+      "name"      =>"نتیجه معاملات از طریق پست به شما اطلاع داده می شود.",
 
    ],
    "show_order_msg2"   =>   [
-      "name"      =>"اگر محصول ظرف یک هفته تحویل داده نشود، بازپرداخت خواهد شد.",
+      "name"      =>"اگر محصول در مدت یک هفته تحویل داده نشود بازپرداخت انجام می شود.",
 
    ],
    "show_order_msg3"   =>   [
-      "name"      =>"نتیجه معامله به آدرس ایمیل ثبت شده شما ارسال شده است.",
+      "name"      =>"نتیجه معامله به آدرس پست الکترونیکی ثبت شده شما ارسال شده است.",
 
    ],
    "awaiting_payment"   =>   [
@@ -427,7 +427,7 @@
 
    ],
    "please_entered_tracking_number"   =>   [
-      "name"      =>"لطفا شماره پیگیری وارد شوید",
+      "name"      =>"لطفا شماره پیگیری را وارد کنید",
 
    ],
    "transport_days"   =>   [
@@ -443,11 +443,11 @@
 
    ],
    "cancel_sale"   =>   [
-      "name"      =>"لغو فروش",
+      "name"      =>"فروش را لغو کنید",
 
    ],
    "send_again"   =>   [
-      "name"      =>"من دوباره خواهم فرستاد",
+      "name"      =>"دوباره خواهم فرستاد",
 
    ],
    "content"   =>   [
@@ -455,7 +455,7 @@
 
    ],
    "preferences_settings"   =>   [
-      "name"      =>"تنظیمات تنظیمات",
+      "name"      =>"تنظیمات برگزیده",
 
    ],
    "corporate_settings"   =>   [
@@ -463,7 +463,7 @@
 
    ],
    "change_password"   =>   [
-      "name"      =>"تغییر رمز عبور",
+      "name"      =>"رمز عبور را تغییر دهید",
 
    ],
    "new_password"   =>   [
@@ -475,7 +475,7 @@
 
    ],
    "confirm_password_input"   =>   [
-      "name"      =>"تغییر رمز عبور من را تایید می کنم",
+      "name"      =>"من تغییر رمز عبور خود را تأیید می کنم",
 
    ],
    "create_address"   =>   [
@@ -495,11 +495,11 @@
 
    ],
    "go_subscriptions_page"   =>   [
-      "name"      =>"به صفحه اشتراک بروید",
+      "name"      =>"به صفحه اشتراک ها بروید",
 
    ],
    "buy_package"   =>   [
-      "name"      =>"بسته بندی",
+      "name"      =>"خرید بسته بندی",
 
    ],
    "expired_date"   =>   [
@@ -511,7 +511,7 @@
 
    ],
    "ad_limit"   =>   [
-      "name"      =>"حد آگهی",
+      "name"      =>"محدودیت آگهی",
 
    ],
    "publish_time"   =>   [

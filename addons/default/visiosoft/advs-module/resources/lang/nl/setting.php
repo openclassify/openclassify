@@ -2,7 +2,7 @@
 
  return[
    "auto_approve"   =>   [
-      "name"      =>"Auto goedkeuren",
+      "name"      =>"Automatisch goedkeuren",
 
    ],
    "default_published_time"   =>   [
@@ -14,24 +14,24 @@
 
    ],
    "address"   =>   [
-      "name"      =>"Contactadres",
+      "name"      =>"Contact adres",
 
    ],
    "phone"   =>   [
-      "name"      =>"Contact opnemen met telefoon",
+      "name"      =>"Contact telefoon",
 
    ],
    "contact_mail"   =>   [
-      "name"      =>"Neem contact op met Mail",
-      "warning"      =>"Auto added Sitename <strong>info</strong> @sitename",
+      "name"      =>"Contact Mail",
+      "warning"      =>"Automatisch toegevoegde sitename <strong>info</strong> @sitename",
 
    ],
    "map_coordinates_long"   =>   [
-      "name"      =>"Kaart lange coördinaat",
+      "name"      =>"Lange coördinaten in kaart brengen",
 
    ],
    "map_coordinates_lat"   =>   [
-      "name"      =>"Map Lat Coordinate",
+      "name"      =>"Kaart Lat Coordinate",
 
    ],
    "logo"   =>   [
@@ -40,7 +40,7 @@
    ],
    "ogImage"   =>   [
       "name"      =>"Social Share-logo",
-      "warning"      =>"Het moet een resolutie van 1200 x 630 hebben.",
+      "warning"      =>"Het moet een resolutie hebben van 1200 x 630.",
 
    ],
    "currencies"   =>   [
@@ -48,8 +48,8 @@
 
    ],
    "site_address"   =>   [
-      "name"      =>"Website adres",
-      "warning"      =>"Automatisch toegevoegd www. www. <strong>sitename.com</strong>",
+      "name"      =>"Siteadres",
+      "warning"      =>"Auto toegevoegd www. www. <strong>sitename.com</strong>",
 
    ],
    "google_map_key"   =>   [
@@ -57,15 +57,15 @@
 
    ],
    "default_country"   =>   [
-      "name"      =>"Standaard advertentieland",
+      "name"      =>"Standaardadvertentieland",
 
    ],
    "free_currencyconverterapi_key"   =>   [
-      "name"      =>"Valutaconversie API-sleutel",
+      "name"      =>"Valutacalculator API-sleutel",
 
    ],
    "default_city"   =>   [
-      "name"      =>"Standaard Ad City",
+      "name"      =>"Standaard advertentiestad",
 
    ],
    "default_district"   =>   [
@@ -73,7 +73,7 @@
 
    ],
    "default_neighborhood"   =>   [
-      "name"      =>"Standaard Ad-omgeving",
+      "name"      =>"Standaard advertentieomgeving",
 
    ],
    "default_currency"   =>   [
@@ -105,7 +105,7 @@
 
    ],
    "watermark_text"   =>   [
-      "name"      =>"Watermerk Tekst",
+      "name"      =>"Watermerktekst",
 
    ],
    "watermark_image"   =>   [
@@ -113,23 +113,23 @@
 
    ],
    "watermark_position"   =>   [
-      "name"      =>"Watermerk positie",
+      "name"      =>"Watermerkpositie",
 
    ],
    "watermark_opacity"   =>   [
-      "name"      =>"Watermark Dekking",
+      "name"      =>"Watermerk Dekking",
 
    ],
    "listing_page_image"   =>   [
-      "name"      =>"Pagina-paginabeeld",
+      "name"      =>"Lijstpagina-afbeelding",
 
    ],
    "enabled_currencies"   =>   [
-      "name"      =>"Valuta\'s ingeschakeld",
+      "name"      =>"Ingeschakelde valuta\'s",
 
    ],
    "google_statistic_code"   =>   [
-      "name"      =>"Google Statistiekcode",
+      "name"      =>"Google-statistiekcode",
 
    ],
 

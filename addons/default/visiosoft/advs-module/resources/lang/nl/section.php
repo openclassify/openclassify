@@ -38,7 +38,7 @@
 
    ],
    "cf_values"   =>   [
-      "title"      =>"Cf-waarden",
+      "title"      =>"Zie waarden",
 
    ],
    "fields"   =>   [

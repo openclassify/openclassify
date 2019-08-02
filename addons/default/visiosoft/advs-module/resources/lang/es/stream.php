@@ -6,7 +6,7 @@
 
    ],
    "categories"   =>   [
-      "name"      =>"Las categorías",
+      "name"      =>"Categorias",
 
    ],
    "village"   =>   [
@@ -18,11 +18,11 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Campo personalizado advs",
+      "name"      =>"Anuncios de campo personalizados",
 
    ],
    "cf_values"   =>   [
-      "name"      =>"Valores cf",
+      "name"      =>"Valores de Cf",
 
    ],
 

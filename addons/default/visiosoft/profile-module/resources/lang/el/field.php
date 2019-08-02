@@ -190,7 +190,7 @@
 
    ],
    "menu_hello_msg"   =>   [
-      "name"      =>"γεια σας",
+      "name"      =>"Γειά σου",
 
    ],
    "menu_last_msg"   =>   [

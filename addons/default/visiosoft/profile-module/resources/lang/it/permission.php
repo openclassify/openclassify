@@ -4,18 +4,18 @@
    "profile"   =>   [
       "name"      =>"Profilo",
       "option"      =>      [
-         "read"         =>"Può leggere il profilo?        ",
+         "read"         =>"Sai leggere il profilo?        ",
          "write"         =>"Puoi creare / modificare il profilo?        ",
-         "delete"         =>"Può cancellare il profilo?"
+         "delete"         =>"È possibile eliminare il profilo?"
       ],
 
    ],
    "adress"   =>   [
       "name"      =>"Un vestito",
       "option"      =>      [
-         "read"         =>"Può leggere l\'indirizzo?        ",
-         "write"         =>"Può creare / modificare l\'indirizzo?        ",
-         "delete"         =>"Può cancellare l\'indirizzo?",
+         "read"         =>"Sai leggere l\'indirizzo?        ",
+         "write"         =>"È possibile creare / modificare l\'indirizzo?        ",
+         "delete"         =>"È possibile eliminare l\'indirizzo?",
 
       ],
 

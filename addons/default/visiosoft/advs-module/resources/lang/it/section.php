@@ -34,7 +34,7 @@
 
    ],
    "custom_field_advs"   =>   [
-      "title"      =>"Annunci pubblicitari personalizzati",
+      "title"      =>"Annunci di campo personalizzati",
 
    ],
    "cf_values"   =>   [

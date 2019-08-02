@@ -4,17 +4,17 @@
    "profile"   =>   [
       "name"      =>"Perfil",
       "option"      =>      [
-         "read"         =>"¿Se puede leer el perfil?        ",
+         "read"         =>"¿Puede leer el perfil?        ",
          "write"         =>"¿Se puede crear / editar perfil?        ",
-         "delete"         =>"¿Se puede borrar el perfil?"
+         "delete"         =>"¿Se puede eliminar el perfil?"
       ],
 
    ],
    "adress"   =>   [
       "name"      =>"Dirección",
       "option"      =>      [
-         "read"         =>"¿Se puede leer la dirección?        ",
-         "write"         =>"¿Se puede crear / editar dirección?        ",
+         "read"         =>"¿Puede leer la dirección?        ",
+         "write"         =>"¿Puede crear / editar direcciones?        ",
          "delete"         =>"¿Se puede eliminar la dirección?",
 
       ],

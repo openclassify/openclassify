@@ -19,7 +19,7 @@ fav.checkFav = (id, type, divId, iconId) => {
     });
 };
 
-var id = $('#adv_id').val();
+var id = $('#adv_id').html();
 var owner = $('#owner').data('content');
 
 fav.checkFav(id,'adv', '.favorites', '#heart-icon-adv');

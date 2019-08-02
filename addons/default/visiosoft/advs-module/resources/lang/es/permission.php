@@ -4,17 +4,17 @@
    "advs"   =>   [
       "name"      =>"Anuncios",
       "option"      =>      [
-         "read"         =>"¿Se pueden leer los anuncios?        ",
-         "write"         =>"¿Se pueden crear / editar anuncios?        ",
-         "delete"         =>"¿Se pueden eliminar los anuncios?"
+         "read"         =>"Puede leer anuncios?        ",
+         "write"         =>"¿Puede crear / editar anuncios?        ",
+         "delete"         =>"Puede eliminar anuncios?"
       ],
 
    ],
    "categories"   =>   [
-      "name"      =>"Las categorías",
+      "name"      =>"Categorias",
       "option"      =>      [
-         "read"         =>"¿Se pueden leer categorías?        ",
-         "write"         =>"¿Se pueden crear / editar categorías?        ",
+         "read"         =>"¿Puede leer categorías?        ",
+         "write"         =>"¿Puede crear / editar categorías?        ",
          "delete"         =>"¿Se pueden eliminar categorías?"
       ],
 
@@ -22,17 +22,17 @@
    "village"   =>   [
       "name"      =>"Pueblo",
       "option"      =>      [
-         "read"         =>"¿Se puede leer el pueblo?        ",
-         "write"         =>"¿Se puede crear / editar aldea?        ",
-         "delete"         =>"¿Se puede borrar el pueblo?"
+         "read"         =>"Puede leer el pueblo?        ",
+         "write"         =>"Puede crear / editar pueblo?        ",
+         "delete"         =>"¿Se puede eliminar el pueblo?"
       ],
 
    ],
    "custom_fields"   =>   [
       "name"      =>"Campos Personalizados",
       "option"      =>      [
-         "read"         =>"¿Se pueden leer campos personalizados?        ",
-         "write"         =>"¿Se pueden crear / editar campos personalizados?        ",
+         "read"         =>"¿Puede leer campos personalizados?        ",
+         "write"         =>"¿Puede crear / editar campos personalizados?        ",
          "delete"         =>"¿Se pueden eliminar campos personalizados?"
       ],
 
@@ -40,18 +40,18 @@
    "custom_field_advs"   =>   [
       "name"      =>"Anuncios de campo personalizados",
       "option"      =>      [
-         "read"         =>"¿Se pueden leer anuncios de campo personalizados?        ",
-         "write"         =>"¿Se pueden crear / editar anuncios de campos personalizados?        ",
-         "delete"         =>"¿Se pueden eliminar los anuncios de campo personalizados?"
+         "read"         =>"¿Puede leer anuncios de campo personalizados?        ",
+         "write"         =>"¿Puede crear / editar anuncios de campo personalizados?        ",
+         "delete"         =>"¿Se pueden eliminar anuncios de campo personalizados?"
       ],
 
    ],
    "cf_values"   =>   [
-      "name"      =>"Valores cf",
+      "name"      =>"Valores de Cf",
       "option"      =>      [
-         "read"         =>"¿Se pueden leer valores de cf?        ",
-         "write"         =>"¿Se puede crear / editar valores cf?        ",
-         "delete"         =>"¿Se pueden borrar los valores de cf?",
+         "read"         =>"¿Puede leer los valores cf?        ",
+         "write"         =>"¿Puede crear / editar valores cf?        ",
+         "delete"         =>"¿Se pueden eliminar los valores cf?",
 
       ],
 

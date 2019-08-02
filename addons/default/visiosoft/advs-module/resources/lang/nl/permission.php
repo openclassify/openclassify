@@ -4,8 +4,8 @@
    "advs"   =>   [
       "name"      =>"advertenties",
       "option"      =>      [
-         "read"         =>"Kan ik advertenties lezen?        ",
-         "write"         =>"Kan advertenties maken / bewerken?        ",
+         "read"         =>"Kunnen advertenties lezen?        ",
+         "write"         =>"Kan ik advertenties maken / bewerken?        ",
          "delete"         =>"Kunnen advertenties worden verwijderd?"
       ],
 
@@ -31,9 +31,9 @@
    "custom_fields"   =>   [
       "name"      =>"Aangepaste velden",
       "option"      =>      [
-         "read"         =>"Kan aangepaste velden lezen?        ",
+         "read"         =>"Kunnen aangepaste velden worden gelezen?        ",
          "write"         =>"Kan aangepaste velden maken / bewerken?        ",
-         "delete"         =>"Kunnen aangepaste velden worden verwijderd?"
+         "delete"         =>"Kan aangepaste velden verwijderen?"
       ],
 
    ],
@@ -42,16 +42,16 @@
       "option"      =>      [
          "read"         =>"Kan aangepaste veldadvertenties lezen?        ",
          "write"         =>"Kan aangepaste veldadvertenties maken / bewerken?        ",
-         "delete"         =>"Kunnen aangepaste veldadvertenties worden verwijderd?"
+         "delete"         =>"Kan aangepaste veldadvertenties verwijderen?"
       ],
 
    ],
    "cf_values"   =>   [
-      "name"      =>"Cf-waarden",
+      "name"      =>"Zie waarden",
       "option"      =>      [
          "read"         =>"Kan cf-waarden lezen?        ",
          "write"         =>"Kan cf-waarden maken / bewerken?        ",
-         "delete"         =>"Kunnen cf-waarden worden verwijderd?",
+         "delete"         =>"Kan cf-waarden worden verwijderd?",
 
       ],
 

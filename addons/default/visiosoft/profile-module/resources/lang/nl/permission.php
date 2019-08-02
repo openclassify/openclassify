@@ -4,7 +4,7 @@
    "profile"   =>   [
       "name"      =>"Profiel",
       "option"      =>      [
-         "read"         =>"Kan het profiel lezen?        ",
+         "read"         =>"Kan profiel lezen?        ",
          "write"         =>"Kan profiel maken / bewerken?        ",
          "delete"         =>"Kan profiel verwijderen?"
       ],
@@ -13,9 +13,9 @@
    "adress"   =>   [
       "name"      =>"Een jurk",
       "option"      =>      [
-         "read"         =>"Kan het adres lezen?        ",
-         "write"         =>"Kan adres aanmaken / bewerken?        ",
-         "delete"         =>"Kan adres verwijderen?",
+         "read"         =>"Kan adres lezen?        ",
+         "write"         =>"Kan adres worden gemaakt / bewerkt?        ",
+         "delete"         =>"Kan adres worden verwijderd?",
 
       ],
 

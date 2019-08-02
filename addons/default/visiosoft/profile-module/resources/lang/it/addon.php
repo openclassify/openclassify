@@ -2,6 +2,6 @@
 
  return[
    "title"   =>"Profilo",
-   "name"   =>"Modulo Profilo",
+   "name"   =>"Modulo profilo",
    "description"   =>""
 ];

@@ -2,7 +2,7 @@
 
  return[
    "auto_approve"   =>   [
-      "name"      =>"تصدیق خودکار",
+      "name"      =>"تأیید خودکار",
 
    ],
    "default_published_time"   =>   [
@@ -10,11 +10,11 @@
 
    ],
    "default_adv_limit"   =>   [
-      "name"      =>"محدودیت پیش فرض آگهی",
+      "name"      =>"محدودیت تبلیغات پیش فرض",
 
    ],
    "address"   =>   [
-      "name"      =>"تماس با آدرس",
+      "name"      =>"با آدرس تماس بگیرید",
 
    ],
    "phone"   =>   [
@@ -22,8 +22,8 @@
 
    ],
    "contact_mail"   =>   [
-      "name"      =>"با ایمیل تماس بگیرید",
-      "warning"      =>"خودکار <strong>اطلاعات</strong> sitenamesitename اضافه شد",
+      "name"      =>"تماس با ایمیل",
+      "warning"      =>"خودکار <strong>اطلاعات نام</strong> مکانsitename را اضافه کرد",
 
    ],
    "map_coordinates_long"   =>   [
@@ -31,16 +31,16 @@
 
    ],
    "map_coordinates_lat"   =>   [
-      "name"      =>"نقشه مختصات لات",
+      "name"      =>"نقشه مختصات Lat",
 
    ],
    "logo"   =>   [
-      "name"      =>"لوگو",
+      "name"      =>"آرم",
 
    ],
    "ogImage"   =>   [
-      "name"      =>"لوگو اشتراک اجتماعی",
-      "warning"      =>"این باید با وضوح 1200 × 630 باشد.",
+      "name"      =>"آرم اشتراک گذاری اجتماعی",
+      "warning"      =>"باید در رزولوشن 1200 x 630 باشد.",
 
    ],
    "currencies"   =>   [
@@ -49,7 +49,7 @@
    ],
    "site_address"   =>   [
       "name"      =>"آدرس سایت",
-      "warning"      =>"خودکار اضافه شده www. www <strong>sitename.com</strong>",
+      "warning"      =>"خودکار اضافه شد www. www <strong>sitename.com</strong>",
 
    ],
    "google_map_key"   =>   [
@@ -57,7 +57,7 @@
 
    ],
    "default_country"   =>   [
-      "name"      =>"پیشفرض کشور تبلیغی",
+      "name"      =>"کشور پیش فرض آگهی",
 
    ],
    "free_currencyconverterapi_key"   =>   [
@@ -65,7 +65,7 @@
 
    ],
    "default_city"   =>   [
-      "name"      =>"پیشفرض شهر تبلیغاتی",
+      "name"      =>"پیش فرض آگهی شهر",
 
    ],
    "default_district"   =>   [
@@ -73,15 +73,15 @@
 
    ],
    "default_neighborhood"   =>   [
-      "name"      =>"محدوده تبلیغ پیش فرض",
+      "name"      =>"محله پیش فرض آگهی",
 
    ],
    "default_currency"   =>   [
-      "name"      =>"مقدار پیش فرض آگهی",
+      "name"      =>"پیش فرض آگهی ارز",
 
    ],
    "default_GET"   =>   [
-      "name"      =>"پیش فرض تبلیغ GET",
+      "name"      =>"تبلیغات پیش فرض GET",
 
    ],
    "twitter"   =>   [
@@ -101,27 +101,27 @@
 
    ],
    "watermark_type"   =>   [
-      "name"      =>"نوع آبرسانی",
+      "name"      =>"نوع علامت",
 
    ],
    "watermark_text"   =>   [
-      "name"      =>"متنی متنی",
+      "name"      =>"متن علامت",
 
    ],
    "watermark_image"   =>   [
-      "name"      =>"تصویر هدر",
+      "name"      =>"تصویر علامت",
 
    ],
    "watermark_position"   =>   [
-      "name"      =>"موقعیت آبرسانی",
+      "name"      =>"موقعیت علامت سفید",
 
    ],
    "watermark_opacity"   =>   [
-      "name"      =>"Opacity ابعاد",
+      "name"      =>"کدورت علامت سفید",
 
    ],
    "listing_page_image"   =>   [
-      "name"      =>"فهرست صفحه تصویر",
+      "name"      =>"لیست صفحه تصویر",
 
    ],
    "enabled_currencies"   =>   [
@@ -129,7 +129,7 @@
 
    ],
    "google_statistic_code"   =>   [
-      "name"      =>"گوگل آمار کد",
+      "name"      =>"کد آماری Google",
 
    ],
 

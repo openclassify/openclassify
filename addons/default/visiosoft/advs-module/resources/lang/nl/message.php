@@ -1,6 +1,6 @@
 <?php
 
  return[
-   "error_added_cart"   =>"Het aangevraagde product ontbreekt momenteel of is inactief",
-   "please_buy_package"   =>"Gelieve pakket te kopen"
+   "error_added_cart"   =>"Gevraagde product ontbreekt momenteel of is inactief",
+   "please_buy_package"   =>"Koop pakket"
 ];

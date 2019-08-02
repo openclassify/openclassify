@@ -6,7 +6,7 @@
 
    ],
    "placeholderforsearch"   =>   [
-      "name"      =>"جستجوگرجستجو",
+      "name"      =>"مکان نگهدارنده",
 
    ],
 
