@@ -5931,3 +5931,8 @@ input[name="username"] {
     content:"";
     color: transparent;
 }
+
+.panel-faq .panel-collapse .panel-body {
+    max-height: 200px;
+    overflow: scroll;
+}
