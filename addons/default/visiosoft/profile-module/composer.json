@@ -1,9 +1,12 @@
 {
-    "name": "visiosoft/profile-module",
-    "type": "streams-addon",
-    "autoload": {
-        "psr-4": {
-            "Visiosoft\\ProfileModule\\": "src/"
-        }
+  "name": "visiosoft/profile-module",
+  "type": "streams-addon",
+  "autoload": {
+    "psr-4": {
+      "Visiosoft\\ProfileModule\\": "src/"
     }
+  },
+  "require": {
+    "barryvdh/laravel-cors": "^0.11.3"
+  }
 }
