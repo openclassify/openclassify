@@ -161,6 +161,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'advs/delete/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@softDeleteAdv',
         'check_user' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkUser',
         'keySearch' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@keySearch',
+        'adv/addCart/{id}' => [
+            'as' => 'adv_AddCart',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@advAddCart',
+        ],
         'ajax/StockControl' => [
             'as' => 'adv_stock_control_ajax',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@stockControl',
