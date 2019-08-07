@@ -181,6 +181,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.advs::view_type',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@viewType',
         ],
+        'admin/assets/clear' => [
+            'as' => 'assets_clear',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@assetsClear',
+        ],
     ];
 
     /**
@@ -313,7 +317,13 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'title'   => 'visiosoft.module.advs::button.general_settings',
             'href'    => '/admin/settings/modules/visiosoft.module.advs',
         ];
+        $slug2 = 'assets_clear';
+        $section2 = [
+            'title' => 'visiosoft.module.advs::section.assets_clear.name',
+            'href' => '/admin/assets/clear',
+        ];
         $addonCollection->get('anomaly.module.settings')->addSection($slug, $section);
+        $addonCollection->get('anomaly.module.settings')->addSection($slug2, $section2);
     }
 
     /**
