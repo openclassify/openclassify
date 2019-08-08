@@ -2,10 +2,12 @@
 
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
+use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
+use Illuminate\Filesystem\Filesystem;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
@@ -168,5 +170,13 @@ class AdvsController extends AdminController
         $adv->update();
         $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
         return back();
+    }
+
+    public function assetsClear(Filesystem $files, Application $application)
+    {
+        $directory = 'assets';
+        $files->deleteDirectory($directory = $application->getAssetsPath($directory), true);
+        echo "<h1>Success</h1>" . "<br>";
+        echo "<a href='/admin'><b>Return Admin Panel</b></a>";
     }
 }

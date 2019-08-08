@@ -33,5 +33,8 @@ return [
     ],
     'fields' => [
         'title' => 'Custom Fields'
+    ],
+    'assets_clear' => [
+        'name' => 'Assets Clear'
     ]
 ];

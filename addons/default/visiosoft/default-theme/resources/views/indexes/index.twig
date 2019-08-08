@@ -146,7 +146,7 @@
                                                     <!-- item-info-right -->
                                                     <div class="user-option pull-right">
                                                         {% if adv.is_get_adv == "1" %}
-                                                            <a href="#" data-toggle="tooltip" data-placement="top"
+                                                            <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                                title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                         class="fa fa-shopping-cart"></i> </a>
                                                         {% endif %}
@@ -235,7 +235,7 @@
                                                 <!-- item-info-right -->
                                                 <div class="user-option pull-right">
                                                     {% if adv.is_get_adv == "1" %}
-                                                        <a href="#" data-toggle="tooltip" data-placement="top"
+                                                        <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                            title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
                                                     {% endif %}
@@ -297,7 +297,7 @@
                                                 <!-- item-info-right -->
                                                 <div class="user-option pull-right">
                                                     {% if adv.is_get_adv == "1" %}
-                                                        <a href="#" data-toggle="tooltip" data-placement="top"
+                                                        <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                            title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
                                                     {% endif %}
