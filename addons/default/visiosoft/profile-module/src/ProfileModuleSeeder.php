@@ -3,6 +3,9 @@
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
+use Illuminate\Database\Eloquent\Model;
+use Chumper\Zipper\Zipper;
+
 
 use Illuminate\Support\Facades\DB;
 
@@ -57,6 +60,19 @@ class ProfileModuleSeeder extends Seeder
                 ],
             ]
         );
+
+
+
+        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
+        file_put_contents(__DIR__ . "/advListingPage.sql", fopen($repository . "advListingPage.sql", 'r'));
+        file_put_contents("adv_listing_page.zip", fopen($repository . "adv_listing_page.zip", 'r'));
+        $zipper = new Zipper();
+        $zipper->make('adv_listing_page.zip')->folder('adv_listing_page')->extractTo(base_path() . '/public/app/default/files-module/local/adv_listing_page/');
+        $zipper->close();
+
+        Model::unguard();
+        DB::unprepared(file_get_contents(__DIR__ . '/advListingPage.sql'));
+        Model::reguard();
     }
 
 }
