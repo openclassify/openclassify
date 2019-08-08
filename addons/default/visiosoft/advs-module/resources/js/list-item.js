@@ -1,9 +1,5 @@
 
 
-$('#complaints').on('click', function () {
-    $('#complaints_modal').modal('toggle');
-});
-
 $('#message').on('click', function () {
     if ($('#adv_id').data('content') == $('#message').data('content')) {
         alert("You can't send messages to your own ad.")
@@ -32,9 +28,6 @@ $('#message-button').on('click', function () {
         });
 });
 
-$('#complaint-radio').on('click', function () {
-    $(this).closest("textarea").toggle();
-});
 
 
 function openVideo(){
