@@ -147,7 +147,7 @@
                                     {% endfor %}
                                     <li class="cart-footer">
                                         <span class="lighter-text">{{ trans('visiosoft.module.advs::field.total') }}:</span>
-                                        <span class="total-color-text">{% if cart_items is null %}0{% else %}{{ cart().subtotal.currency }}{% endif %}</span>
+                                        <span class="total-color-text">{% if cart_items is null %}0{% else %}{{ cart_items.subtotal }}{% endif %}</span>
                                     </li>
                                     <!--items cart-->
                                     <li><span><a class="text-center cart-view-button"
