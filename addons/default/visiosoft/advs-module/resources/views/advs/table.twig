@@ -80,6 +80,9 @@
                                         </div><!-- category-change -->
                                     </div>
                                 </div>
+                                {% if entries('advs').isEnabled('customfields') %}
+                                    {% include "visiosoft.module.customfields::selecttop" %}
+                                {% endif %}
                                 <div class="category-tabs">
 
                                 </div>

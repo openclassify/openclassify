@@ -120,7 +120,7 @@ class AdvsController extends PublicController
             $userProfile = $profileRepository->getProfile($user->id);
         }
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'textfields', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges');
+            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList');
 
         Cookie::queue(Cookie::make('last_search', $request->getRequestUri(), 84000));
 
