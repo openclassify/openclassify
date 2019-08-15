@@ -101,6 +101,7 @@
                     Inc.</a></p>
         </div>
     </div><!-- footer-bottom -->
+    {% if setting_value('visiosoft.theme.default::template') == "s" %}
         <div class="row s-bottom-bar navbar-fixed-bottom visible-xs text-center">
             <div class="col-xs-2 center-block d-flex showcase-btn">
                 <a style="color: #999;">
@@ -128,6 +129,9 @@
                 </a>
             </div>
         </div>
+    {% endif %}
+
+
 </footer>
 
 {% include "theme::partials/s-search-modal" %}

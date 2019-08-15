@@ -1740,6 +1740,11 @@
 
 /* XS Portrait */
 @media (max-width: 479px) {
+    .favorite-searches {
+        margin-bottom: 10px;
+        padding-bottom: 15px;
+        height:auto;
+    }
     .user-images .img-responsive {
         margin: auto;
         border-radius: 35px;
