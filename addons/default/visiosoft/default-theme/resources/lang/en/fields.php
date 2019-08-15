@@ -13,4 +13,6 @@ return [
     'join-us' => 'Join Us',
     'sign-in' => 'Sign In',
     'new-here' => 'New here ?',
+    'scroll-screen-for-details' => 'Scroll Screen for Table View',
+    'close' => 'Close'
 ];

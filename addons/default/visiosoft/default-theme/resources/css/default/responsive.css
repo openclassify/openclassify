@@ -1740,6 +1740,12 @@
 
 /* XS Portrait */
 @media (max-width: 479px) {
+    .table-recommended-section {
+        padding: 10px;
+    }
+    .table-image {
+        min-width: 80px;
+    }
     .favorite-searches {
         margin-bottom: 10px;
         padding-bottom: 15px;
