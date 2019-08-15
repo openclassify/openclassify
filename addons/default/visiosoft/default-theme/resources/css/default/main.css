@@ -5936,3 +5936,53 @@ input[name="username"] {
     max-height: 200px;
     overflow: scroll;
 }
+::-webkit-scrollbar {
+    -webkit-appearance: none;
+}
+::-webkit-scrollbar:vertical {
+    width: 12px;
+}
+::-webkit-scrollbar:horizontal {
+    height: 12px;
+}
+::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, .5);
+    border-radius: 10px;
+    border: 2px solid #ffffff;
+}
+::-webkit-scrollbar-track {
+    border-radius: 10px;
+    background-color: #ffffff;
+}
+
+.recommended-ads h4 {
+    display: inline-block !important;
+}
+
+#swipeTableModal {
+    position: fixed;
+    background: rgb(0,0,0,0.60);
+    height: 100vh;
+    padding-top: 58%;
+    text-align: center;
+}
+
+#swipeTableModal img{
+    max-width: 80px
+}
+
+#swipeTableModal button{
+    border: 1px solid #fff;
+    background-color: transparent;
+    font-size: 20px;
+    cursor: pointer;
+    border-radius: 3px;
+    color: white;
+    width: 90px;
+}
+
+#swipeTableModal p{
+    color: white;
+    font-weight: 700;
+    font-size: 18px;
+}
