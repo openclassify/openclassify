@@ -8,6 +8,7 @@ use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Illuminate\Filesystem\Filesystem;
+use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
@@ -172,11 +173,44 @@ class AdvsController extends AdminController
         return back();
     }
 
-    public function assetsClear(Filesystem $files, Application $application)
+    public function assetsClear(Filesystem $files, Application $application, Request $request)
     {
         $directory = 'assets';
         $files->deleteDirectory($directory = $application->getAssetsPath($directory), true);
-        echo "<h1>Success</h1>" . "<br>";
-        echo "<a href='/admin'><b>Return Admin Panel</b></a>";
+        echo "<div class=\"bar\"></div>" . "<br>";
+        echo "<style>
+.bar {
+  width: 30%;
+  height: 20px;
+  border: 1px solid #2980b9;
+  border-radius: 3px;
+  background-image: 
+    repeating-linear-gradient(
+      -45deg,
+      #2980b9,
+      #2980b9 11px,
+      #eee 10px,
+      #eee 20px /* determines size */
+    );
+  background-size: 28px 28px;
+  animation: move .5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 28px 0;
+  }
+}
+
+</style>
+        <script>
+        location.href = '" . $request->server('HTTP_REFERER') . "';
+        </script>
+        
+        <a href='" . $request->server('HTTP_REFERER') . "'><b>Return Back</b></a>";
+        echo "<br><a href='/admin'><b>Return Admin Panel</b></a>";
     }
 }
