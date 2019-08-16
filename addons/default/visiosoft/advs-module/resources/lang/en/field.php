@@ -213,4 +213,7 @@ return [
     'my_ads' => [
         'name' => 'My Ads',
     ],
+    'sold_out' => [
+        'name' => 'Sold out',
+    ],
 ];

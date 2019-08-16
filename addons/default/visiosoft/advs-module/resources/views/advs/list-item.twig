@@ -308,7 +308,11 @@
                                     <!-- item-image -->
                                     <div class="item-image-box col-sm-4">
                                         <div class="item-image">
-                                            <a href="{{ advs.detail_url }}"><img
+                                            <a href="{{ advs.detail_url }}">
+                                                {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                {% endif %}
+                                                <img
                                                         src="{{ advs.cover_photo }}" alt="Image"
                                                         class="img-responsive"></a>
                                         </div><!-- item-image -->

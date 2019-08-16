@@ -119,7 +119,8 @@
 
 
                         {% if entries('advs').isEnabled('carts') %}
-                            {% set cart_items = entries('carts').get()[0].getCart() %}
+                            {% set cart_items = entries('carts').getCart() %}
+                            {% set cart = entries('carts').get()[0] %}
                             <li class="dropdown">
                                 <a data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                     <i class="fa fa-shopping-cart"></i> {{ cart_items.quantity }}<span
@@ -147,7 +148,7 @@
                                     {% endfor %}
                                     <li class="cart-footer">
                                         <span class="lighter-text">{{ trans('visiosoft.module.advs::field.total') }}:</span>
-                                        <span class="total-color-text">{% if cart_items is null %}0{% else %}{{ cart_items.subtotal }}{% endif %}</span>
+                                        <span class="total-color-text">{% if cart_items is null %}0{% else %}{{ cart.subtotal.currency }}{% endif %}</span>
                                     </li>
                                     <!--items cart-->
                                     <li><span><a class="text-center cart-view-button"

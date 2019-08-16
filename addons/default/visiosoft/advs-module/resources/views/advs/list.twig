@@ -86,6 +86,9 @@
                                         <div class="item-image">
                                             <a href="{{ adv.detail_url }}">
                                                 {% set advPhoto = adv.cover_photo %}
+                                                {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                    <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                {% endif %}
                                                  <img src="{{ adv.cover_photo }}" alt="Image" class="img-responsive"></a>
                                         </div><!-- item-image -->
                                     </div>
@@ -144,6 +147,9 @@
                                         <div class="item-image">
                                             <a href="{{ adv.detail_url }}">
                                                 {% set advPhoto = adv.cover_photo %}
+                                                {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                    <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                {% endif %}
                                                 <img src="{{ adv.cover_photo }}" alt="Image" class="img-responsive"></a>
                                         </div><!-- item-image -->
                                     </div>

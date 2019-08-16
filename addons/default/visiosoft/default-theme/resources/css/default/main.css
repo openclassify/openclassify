@@ -5986,3 +5986,31 @@ input[name="username"] {
     font-weight: 700;
     font-size: 18px;
 }
+
+
+.corner-ribbon {
+    width: 78px;
+    background: #e43;
+    position: absolute;
+    top: 2px;
+    left: -50px;
+    z-index: 99;
+    text-align: center;
+    line-height: 26px;
+    letter-spacing: 1px;
+    color: #f0f0f0;
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    overflow: hidden;
+}
+.corner-ribbon.shadow {
+    box-shadow: 0 0 3px rgba(0, 0, 0, .3);
+}
+
+.corner-ribbon.top-right {
+    right: -4px;
+    left: auto;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(0deg);
+    overflow: hidden;
+}
