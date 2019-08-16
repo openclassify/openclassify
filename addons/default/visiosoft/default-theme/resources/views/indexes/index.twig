@@ -113,7 +113,11 @@
                                         {% for adv in doping_advs %}
                                             <div class="featured">
                                                 <div class="featured-image">
-                                                    <a href="{{ adv.detail_url }}"><img
+                                                    <a href="{{ adv.detail_url }}">
+                                                        {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                        <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                        {% endif %}
+                                                        <img
                                                                 src="{{ adv.cover_photo }}"
                                                                 alt="{{ substr(adv.name,0,25) }}"
                                                                 class="img-respocive"></a>
@@ -145,7 +149,7 @@
                                                     </div>
                                                     <!-- item-info-right -->
                                                     <div class="user-option pull-right">
-                                                        {% if adv.is_get_adv == "1" %}
+                                                        {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
                                                             <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                                title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                         class="fa fa-shopping-cart"></i> </a>
@@ -203,7 +207,11 @@
                                         <div class="item-image-box col-sm-4">
                                             <!-- item-image -->
                                             <div class="item-image">
-                                                <a href="{{ adv.detail_url }}"><img
+                                                <a href="{{ adv.detail_url }}">
+                                                    {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                        <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                    {% endif %}
+                                                    <img
                                                             src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
                                                             class="img-respocive"></a>
                                             </div><!-- item-image -->
@@ -234,7 +242,7 @@
                                                 </div>
                                                 <!-- item-info-right -->
                                                 <div class="user-option pull-right">
-                                                    {% if adv.is_get_adv == "1" %}
+                                                    {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
                                                         <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                            title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
@@ -259,13 +267,17 @@
                                         <div class="item-image-box col-sm-4">
                                             <!-- item-image -->
                                             <div class="item-image">
-                                                <a href="{{ adv.detail_url }}"><img
+                                                <a href="{{ adv.detail_url }}">
+                                                    {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                        <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                    {% endif %}
+                                                    <img
                                                             src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
                                                             class="img-respocive"></a>
 
-                                                {% if adv.is_get_adv == "1" %}
-                                                    <a href="#" class="verified" data-toggle="tooltip"
-                                                       data-placement="top" title="Get ilanı"><i
+                                                {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
+                                                    <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
+                                                       title="Get ilanı"><i
                                                                 class="fa fa-check-square-o"></i></a>
                                                 {% endif %}
                                             </div><!-- item-image -->
@@ -296,7 +308,7 @@
                                                 </div>
                                                 <!-- item-info-right -->
                                                 <div class="user-option pull-right">
-                                                    {% if adv.is_get_adv == "1" %}
+                                                    {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
                                                         <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                            title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
