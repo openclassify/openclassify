@@ -323,7 +323,7 @@ class AdvsController extends PublicController
         $messages->pull('error');
         $isActiveDopings = $advModel->is_enabled('dopings');
         if ($request->action == "update") {
-            $error = $form->build()->validate()->getFormErrors()->getMessages();
+            $error = $form->build($request->update_id)->validate()->getFormErrors()->getMessages();
             if (!empty($error)) {
                 return $this->redirect->back();
             }
