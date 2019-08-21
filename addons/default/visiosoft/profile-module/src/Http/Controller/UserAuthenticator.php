@@ -9,6 +9,9 @@ use Anomaly\UsersModule\User\Event\UserWasLoggedIn;
 use Anomaly\UsersModule\User\User;
 use Anomaly\UsersModule\User\UserPassword;
 use Visiosoft\AdvsModule\Adv\AdvModel;
+use Visiosoft\AdvsModule\Http\Controller\AdvsController;
+use Visiosoft\CartsModule\Saleitem\Command\ProcessSaleitem;
+use Visiosoft\CartsModule\Saleitem\SaleitemModel;
 use Visiosoft\CloudsiteModule\Site\Event\CreateSite;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Container\Container;
@@ -99,6 +102,15 @@ class UserAuthenticator
             if ($response = $this->authenticate($credentials)) {
                 if ($response instanceof UserInterface) {
                     $this->login($response, $remember);
+                    if(isset($_COOKIE['cart']))
+                    {
+                        foreach ($_COOKIE['cart'] as $adv =>  $quantity)
+                        {
+                            $advs = new AdvsController();
+                            $advs->advAddCart($adv,$quantity);
+                            setcookie("cart[" . $adv . "]", null, -1, '/');
+                        }
+                    }
                     return Redirect::back();
                 }
             }

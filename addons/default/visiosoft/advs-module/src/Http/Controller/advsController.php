@@ -812,9 +812,8 @@ class AdvsController extends PublicController
         }
     }
 
-    public function advAddCart($id)
+    public function advAddCart($id, $quantity = 1)
     {
-        $quantity = 1;
         $thisModel = new AdvModel();
         $adv = $thisModel->isAdv($id);
         $response = array();
@@ -825,7 +824,7 @@ class AdvsController extends PublicController
             $response['status'] = "error";
             $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
         }
-        return redirect('/cart/');
+        return back();
     }
 
     public function addCart(Request $request)
