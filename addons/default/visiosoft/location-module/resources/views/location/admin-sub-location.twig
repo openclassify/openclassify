@@ -2,7 +2,7 @@
 {% block content %}
     {% include "theme::partials/messages" %}
 
-    {% set form = form('advs', app.request.query|keys|first).entry(id).get() %}
+    {% set form = form('location', app.request.query|keys|first).entry(id).get() %}
 
     {{ form_open()|raw }}
         <div class="container-fluid">
