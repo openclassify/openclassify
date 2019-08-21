@@ -155,6 +155,7 @@ class UserAuthenticator
         $email = explode('@', $all['email']);
         $all['display_name'] = $all['first_name'] . " " . $all['last_name'];
         $all['username'] = array_first($email);
+        $all['username'] = preg_replace("/[^a-zA-Z0-9]/", "", $all['username']);
         $all['activated'] = 1;                                                      //Activated User
         $all['str_id'] = str_random(24);                                    //User random key
         $planParams['plan'] = 24;
