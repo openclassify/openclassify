@@ -40,6 +40,7 @@ class AdvCriteria extends EntryCriteria
         $latest_advs = AdvModel::query()
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', '=', 'approved')
+            ->where('slug','!=','')
             ->orderBy('publish_at', 'desc')
             ->paginate($this->settings->value('visiosoft.theme.default::s-type-latest-limit'));
 
