@@ -341,41 +341,6 @@
                 </div><!-- advertisement -->
             </div><!-- row -->
         </div><!-- main-content -->
-        <div class="col-md-12">
-            <div class="section text-center" style="display: inline-block !important" id="category-list-items">
-                <ul class="category-list">
-                    {% for cat in cats|slice(0, 5) %}
-                        <li class="category-item">
-                            <div class="category-icon home_footer_categories_field_icon">
-                                {% if cat.files[0].path != "" %}
-                                    <img src="{{ url('files/' ~ cat.files[0].path) }}" alt="{{ cat.name }}"
-                                         class="img-responsive">
-                                {% endif %}
-                            </div>
-                            <span class="category-title home_footer_categories_field_title"><a
-                                        href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ cat.id }}">{{ cat.name }}</a></span>
-                            <ul class="home_footer_sub_categories_field">
-                                {% set catRow = 0 %}
-                                {% set cats_ids = cats.pluck('id') %}
-                                {% set sub_cats = entries('cats','category').whereIn('parent_category_id', cats_ids).get() %}
-                                {% for subcat in sub_cats if subcat.parent_category_id == cat.id %}
-                                    {% set catRow =  catRow+1 %}
-                                    {% if catRow < 10 %}
-                                        <li>
-                                            <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ subcat.id }}">{{ subcat.name }}</a>
-                                        </li>
-                                    {% endif %}
-                                {% endfor %}
-                            </ul>
-                            <span class="category-quantity"></span>
-                        </li><!-- category-item -->
-                    {% endfor %}
-                </ul>
-            </div><!-- category-ad -->
-
-            {% if entries('advs').isEnabled('recentlyviewedads') %}
-                {% include "visiosoft.module.recentlyviewedads::home" %}
-            {% endif %}
-        </div>
+        {{ blocks('advs-default-theme-addoncategories-bottom') }}
     </div><!-- container -->
 </section>
