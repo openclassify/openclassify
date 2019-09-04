@@ -25,6 +25,9 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Map Lat Coordinate',
     ],
+    'iban_numbers' => [
+        'name' => 'IBAN',
+    ],
     'logo' => [
         'name' => 'Logo',
     ],
