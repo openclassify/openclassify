@@ -109,6 +109,21 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 
     public function getMainCategory()
     {
-       return $this->where('parent_category_id',NULL)->get();
+        return $this->where('parent_category_id', NULL)->get();
+    }
+
+    public function getMeta_keywords($cat_id)
+    {
+        return $this->find($cat_id)->seo_keyword;
+    }
+
+    public function getMeta_description($cat_id)
+    {
+        return $this->find($cat_id)->seo_description;
+    }
+
+    public function getMeta_title($cat_id)
+    {
+        return $this->find($cat_id)->name;
     }
 }

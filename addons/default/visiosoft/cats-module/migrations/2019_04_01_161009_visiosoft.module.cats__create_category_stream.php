@@ -37,7 +37,9 @@ class VisiosoftModuleCatsCreateCategoryStream extends Migration
         'parent_category',
         'order',
         'deleted_at',
-        'files'
+        'files',
+        'seo_keyword',
+        'seo_description',
     ];
 
 }
