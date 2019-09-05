@@ -58,6 +58,15 @@ return [
         ],
     ],
 
+    'iban_numbers' => [
+        'type'   => 'anomaly.field_type.wysiwyg',
+        'bind'   => 'adv.iban',
+        'env'      => 'ADV_IBAN',
+        'config' => [
+            'default_value' => '<h3>TR00 0000 0000 0000 0000 0000 00</h3>',
+        ],
+    ],
+
     'default_country' => [
         'type' => 'anomaly.field_type.relationship',
         'bind'   => 'adv.default_country',

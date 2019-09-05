@@ -102,7 +102,9 @@
                                             {% if detail.item_type == 'adv' %}
                                                 <div class="col-md-12 text-center">
                                                     <div class="col-md-3 col-sm-3">
-                                                        <h5 {% if detail.status == 'awaiting_payment' or detail.status == 'awaiting_tracking_number' %}
+                                                        <h5 {% if detail.status == 'awaiting_payment'
+                                                            or detail.status == 'awaiting_tracking_number'
+                                                            and details[0].getStatus() == "approved" %}
                                                             class="warning-color"
                                                                 {% endif %}><i
                                                                     class="fa fa-clock-o"></i> {{ trans("visiosoft.module.profile::field.awaiting_dispatch.name") }}
@@ -194,6 +196,20 @@
                                         </div>
                                     </div>
                                 </div>
+                            {% if  details[0].getOrderType() == "order" and details[0].getStatus() == "pending" %}
+                                <div class="card order-item">
+                                    <div class="row order-item-footer">
+                                        <div class="col-md-12 text-center">
+                                            <h3 class="danger-color">{{ trans('visiosoft.module.advs::message.please_payment') }}</h3>
+                                            <h4> {{ trans('visiosoft.module.advs::message.bank_account_info') }}:</h4>
+                                            {{ setting_value('visiosoft.module.advs::iban_numbers')|raw }}
+                                        </div>
+                                    </div>
+                                </div>
+                                {% endif %}
+
+
+
                             </div><!-- section -->
 
 
