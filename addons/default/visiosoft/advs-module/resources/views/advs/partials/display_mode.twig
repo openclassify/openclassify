@@ -1,5 +1,7 @@
 <div class="featured-top-display-settings">
+    {% if setting_value('visiosoft.module.location::list_page_location') %}
     <a href="{{ url_route('visiosoft.module.advs::view_type',['map']) }}"><h4 class="viewType"> <i class="fa fa-map-marker" ></i> {{ trans("visiosoft.module.advs::field.show_display_mode.map") }}</h4></a>
+    {% endif %}
     <a href="{{ url_route('visiosoft.module.advs::view_type',['list']) }}"><h4 class="viewType"> <i class="fa fa-list-ul" ></i> {{ trans('visiosoft.module.advs::field.show_list_view.name') }} </h4></a>
     <a href="{{ url_route('visiosoft.module.advs::view_type',['table']) }}"><h4 class="viewType"> <i class="fa fa-table" ></i> {{ trans('visiosoft.module.advs::field.show_table_view.name') }} </h4></a>
 </div>

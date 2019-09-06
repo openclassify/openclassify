@@ -32,9 +32,11 @@
         <td class="vertical-center">
             {{ adv.created_at|date("d/m/Y") }}
         </td>
+        {% if setting_value('visiosoft.module.location::list_page_location') %}
         <td class="vertical-center">
             {{ adv.city_name }} / {{ adv.country_name }}
         </td>
+        {% endif %}
         {% if entries('advs').isEnabled('customfields') %}
             {% include "visiosoft.module.customfields::cftablerow" %}
         {% endif %}
@@ -57,9 +59,11 @@
             </a>
         </div>
         <div class="table-row-name-bar">
+            {% if setting_value('visiosoft.module.location::list_page_location') %}
             <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
                data-toggle="tooltip" data-placement="top" title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                         class="fa fa-map-marker"></i> </a>
+            {% endif %}
             <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i
                         class="fa fa-user"></i> </a>
             {% if entries('advs').isEnabled('comparisons') %}
@@ -78,9 +82,11 @@
     <td class="vertical-center">
         {{ adv.created_at|date("d/m/Y") }}
     </td>
+    {% if setting_value('visiosoft.module.location::list_page_location') %}
     <td class="vertical-center">
         {{ adv.city_name }} / {{ adv.country_name }}
     </td>
+    {% endif %}
     {% if entries('advs').isEnabled('customfields') %}
         {% include "visiosoft.module.customfields::cftablerow" %}
     {% endif %}

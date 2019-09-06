@@ -134,8 +134,10 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
                                     <span class="icon"><i class="far fa-clock"></i><a
                                                 href="#">{{ adv.created_at|date('d/m/Y') }}</a></span>
+                                    {% if setting_value('visiosoft.module.location::detail_page_location') %}
                                     <span class="icon"><i class="fa fa-map-marker"></i><a href="#">{{ adv.city_name }}
-                                            , {{ adv.country_name }}</a></span>
+                                            , {{ adv.country_name }}qqq</a></span>
+                                    {% endif %}
                                     {% if adv.isCorporate == 2 %}
                                         <span class="icon"><i class="fa fa-suitcase"></i><a
                                                     href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}">{{ adv.owner }}</a></span>
@@ -278,7 +280,7 @@
                                         {% include "visiosoft.module.customfields::list-item" %}
                                     {% endif %}
                                 {% endif %}
-                                {% if adv.map_Val != "" %}
+                                {% if adv.map_Val != "" and setting_value('visiosoft.module.location::detail_page_location') %}
                                     <div id="streetviewtab" class="tab-pane fade in">
                                         <div id="map" data-map-val="{{ adv.map_Val }}"></div>
                                         {% if entries('advs').isEnabled('streetview') %}
@@ -334,9 +336,11 @@
                                             </div>
                                             <!-- item-info-right -->
                                             <div class="user-option pull-right">
+                                                {% if setting_value('visiosoft.module.location::detail_page_location') %}
                                                 <a href="#" data-toggle="tooltip" data-placement="top" title=""
                                                    data-original-title="{{ advs.city_name }}, {{ advs.country_name }}"><i
                                                             class="fa fa-map-marker"></i> </a>
+                                                {% endif %}
                                             </div><!-- item-info-right -->
                                         </div><!-- ad-meta -->
                                     </div><!-- item-info -->

@@ -121,7 +121,9 @@
                                                     </video>">
                                                         <i class="fa fa-film"></i> </a>
                                                 {% endif %}
+                                                {% if setting_value('visiosoft.module.location::list_page_location') %}
                                                 <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
+                                                {% endif %}
                                                 <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i class="fa fa-user"></i> </a>
 
                                                 {% if entries('advs').isEnabled('comparisons') %}
@@ -181,7 +183,9 @@
                                                     <source src='{{ adv.isAdVideo }}' class='video-src' type='video/mp4' />
                                                     </video>"></a>
                                                 {% endif %}
+                                                {% if setting_value('visiosoft.module.location::list_page_location') %}
                                                 <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
+                                               {% endif %}
                                                 <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i class="fa fa-user"></i> </a>
 
                                                 {% if entries('advs').isEnabled('comparisons') %}

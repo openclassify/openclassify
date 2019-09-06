@@ -36,7 +36,7 @@
                     </div><!-- panel-body -->
                 </div>
             </div><!-- panel -->
-
+            {% if setting_value('visiosoft.module.location::list_page_location') %}
             <div class="panel-default panel-faq">
                 <!-- panel-heading -->
                 <div class="panel-heading active-faq">
@@ -94,7 +94,7 @@
                     </div><!-- panel-body -->
                 </div>
             </div><!-- panel -->
-
+            {% endif %}
             {% for key,value in checkboxes %}
                 <!-- panel -->
                 <div class="panel-default panel-faq">
