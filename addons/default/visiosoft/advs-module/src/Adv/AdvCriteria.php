@@ -19,9 +19,8 @@ class AdvCriteria extends EntryCriteria
         $advModel = new AdvModel();
         $popular_advs = $advModel->popularAdvs();
         $ads = $advModel->getLocationNames($popular_advs);
-        foreach ($ads as $index => $ad)
-        {
-            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad,'list');
+        foreach ($ads as $index => $ad) {
+            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
             $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
         }
         return $ads;
@@ -40,14 +39,13 @@ class AdvCriteria extends EntryCriteria
         $latest_advs = AdvModel::query()
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', '=', 'approved')
-            ->where('slug','!=','')
+            ->where('slug', '!=', '')
             ->orderBy('publish_at', 'desc')
             ->paginate($this->settings->value('visiosoft.theme.default::s-type-latest-limit'));
 
         $ads = $advModel->getLocationNames($latest_advs);
-        foreach ($ads as $index => $ad)
-        {
-            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad,'list');
+        foreach ($ads as $index => $ad) {
+            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
             $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
         }
         return $ads;
@@ -70,12 +68,11 @@ class AdvCriteria extends EntryCriteria
         $advModel = new AdvModel();
         $recentlyModel = new RecentlyModel();
         $recently_viewed_ads = $recentlyModel->getRecently();
-        $ads =  $advModel
+        $ads = $advModel
             ->whereIn('advs_advs.id', $recently_viewed_ads)
             ->get();
-        foreach ($ads as $index => $ad)
-        {
-            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad,'list');
+        foreach ($ads as $index => $ad) {
+            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
             $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
         }
         return $ads;

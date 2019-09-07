@@ -21,11 +21,22 @@
     <meta name="keywords"
           content="{% for tag in setting_value('visiosoft.theme.default::meta_tags') %}{{ tag }},{% endfor %}">
 {% else %}
-    <meta name="keywords" content="{% for tag in adv.meta_tags %}{{ tag }},{% endfor %}">
+    <meta name="keywords" content="{{ trans(template.meta_keywords) }},{% for tag in adv.meta_tags %}{{ tag }},{% endfor %}">
 {% endif %}
 
-<title>{{ setting_value('streams::name', config_get('streams::distribution.name')) }}
-    |{{ trans(template.meta_title) }}</title>
+<title>{{ setting_value('streams::name', config_get('streams::distribution.name')) }}|{{ trans(template.meta_title) }}</title>
+{% if app.request.pathInfo == "advs/adv/" %}
+{% block opengraph %}
+    <meta property="og:site_name"
+          content="{{ setting_value('streams::name', config_get('streams::distribution.name')) }}|{{ trans(template.meta_title) }}"/>
+    {#<meta property="og:image" content="{{ image_url('qcr.theme.qcr::img/og.png') }}"/>#}
+    <meta property="og:description" content="{{ trans(template.meta_description) }}"/>
+    <meta property="og:title" content="{{ setting_value('streams::name', config_get('streams::distribution.name')) }}|{{ trans(template.meta_title) }}"/>
+    <meta property="og:url" content="{{ url_current() }}"/>
+    <meta property="og:type" content="website"/>
+{% endblock %}
+{% endif %}
+
 
 <!-- Favicon -->
 {#{{ favicons("theme::img/favicon.png") }}#}

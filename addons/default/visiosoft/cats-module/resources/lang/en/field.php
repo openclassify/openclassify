@@ -13,5 +13,11 @@ return [
     'files' => [
         'name' => 'Image'
     ],
+    'seo_keyword' => [
+        'name' => 'Seo Keyword'
+    ],
+    'seo_description' => [
+        'name' => 'Seo Description'
+    ],
     'please_wait' => 'Please wait.Deleting Sub Categories',
 ];

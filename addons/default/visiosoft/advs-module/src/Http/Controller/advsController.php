@@ -66,7 +66,6 @@ class AdvsController extends PublicController
     {
         $customParameters = array();
         $param = $request->toArray();
-
         $advmodel = new AdvModel();
         $isActiveDopings = $advmodel->is_enabled('dopings');
         $isActiveCustomFields = $advmodel->is_enabled('customfields');
@@ -100,6 +99,15 @@ class AdvsController extends PublicController
         if (isset($param['cat']) and $param['cat'] != "") {
             $cat = $param['cat'];
             $mainCats = new CategoryModel();
+
+            $seo_keywords = $mainCats->getMeta_keywords($param['cat']);
+            $seo_description = $mainCats->getMeta_description($param['cat']);
+            $seo_title = $mainCats->getMeta_title($param['cat']);
+
+            $this->template->set('meta_keywords', implode(',', $seo_keywords));
+            $this->template->set('meta_description', $seo_description);
+            $this->template->set('meta_title', $seo_title);
+
             $mainCats = $mainCats->getParentCats($cat, 'category_ids');
             $subCats = $categories->getSubCatById($cat);
         } else {
@@ -212,6 +220,9 @@ class AdvsController extends PublicController
             $qrModel = new QrModel();
             $qrSRC = $qrModel->source($adv);
         }
+        $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
+        $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
+        $this->template->set('meta_title', $adv->name . "|" . end($categories)['name']);
 
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {

@@ -17,5 +17,11 @@
       "name"      =>"görüntü",
 
    ],
+     'seo_keyword' => [
+         'name' => 'Seo Anahtar Kelimeler'
+     ],
+     'seo_description' => [
+         'name' => 'Seo Açıklaması'
+     ],
    "please_wait"   =>"Lütfen bekleyin. Alt Kategoriler Siliniyor"
 ];

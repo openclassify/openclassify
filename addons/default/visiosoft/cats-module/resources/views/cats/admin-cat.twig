@@ -25,6 +25,8 @@
                                value="{% if form.fields.parent_category.value.id is defined %}{{ form.fields.parent_category.value.id }}{% elseif app.request.get('parent')  is defined %}{{ app.request.get('parent') }}{% endif %}">
                         {{ form.fields.order|raw }}
                         {{ form.fields.files|raw }}
+                        {{ form.fields.seo_keyword|raw }}
+                        {{ form.fields.seo_description|raw }}
                     </div><!-- section -->
                 </fieldset>
             </div>

@@ -94,7 +94,9 @@
                                         <th scope="col" colspan="2" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
                                         <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
                                         <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                                        {% if setting_value('visiosoft.module.location::list_page_location') %}
                                         <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }} / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                                        {% endif %}
                                         {% if entries('advs').isEnabled('customfields') %}
                                             {% include "visiosoft.module.customfields::cftable" %}
                                         {% endif %}

@@ -1,3 +1,5 @@
 $(window).on('load',function(){
-    $('#swipeTableModal').modal('show');
+    if (window.innerWidth < 800) {
+        $('#swipeTableModal').modal('show');
+    }
 });
