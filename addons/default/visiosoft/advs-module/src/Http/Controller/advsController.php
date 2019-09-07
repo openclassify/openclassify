@@ -6,6 +6,7 @@ use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Advs\PurchasePurchaseEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
 use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
+use Illuminate\Support\Facades\App;
 use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -220,9 +221,9 @@ class AdvsController extends PublicController
             $qrModel = new QrModel();
             $qrSRC = $qrModel->source($adv);
         }
-        $this->template->set('meta_keywords', implode(',',explode(' ',$adv->name)));
-        $this->template->set('meta_description', strip_tags($adv->advs_desc,''));
-        $this->template->set('meta_title', $adv->name."|".end($categories)['name']);
+        $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
+        $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
+        $this->template->set('meta_title', $adv->name . "|" . end($categories)['name']);
 
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {

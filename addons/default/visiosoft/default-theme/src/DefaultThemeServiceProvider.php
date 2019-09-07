@@ -161,8 +161,16 @@ class DefaultThemeServiceProvider extends AddonServiceProvider
      */
     public function boot()
     {
-        // Run extra post-boot registration logic here.
-        // Use method injection or commands to bring in services.
+        view()->composer('*', function ($view) {
+
+            if (Request()->session()->get('_locale') === null) {
+                $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
+                $acceptLang = ['ar', 'de', 'el', 'en', 'es', 'fa', 'fr', 'it', 'nl', 'pt', 'ru', 'tr'];
+                $lang = in_array($lang, $acceptLang) ? $lang : 'en';
+                App()->setLocale($lang);
+                Request()->session()->put('_locale', $lang);
+            }
+        });
     }
 
     /**
