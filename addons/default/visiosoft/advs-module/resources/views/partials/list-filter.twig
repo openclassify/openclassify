@@ -7,13 +7,13 @@
             <!-- panel -->
             <div class="panel-default panel-faq">
                 <!-- panel-heading -->
-                <div class="panel-heading">
+                <div class="panel-heading active-faq">
                     <a data-toggle="collapse" data-parent="#accordion" href="#accordion-one">
                         <h4 class="panel-title">{{ trans("visiosoft.module.advs::field.categories") }}<span
-                                    class="pull-right"><i class="fa fa-plus"></i></span></h4>
+                                    class="pull-right"><i class="fa fa-minus"></i></span></h4>
                     </a>
                 </div><!-- panel-heading -->
-                <div id="accordion-one" class="panel-collapse collapse">
+                <div id="accordion-one" class="panel-collapse collapse in">
                     <!-- panel-body -->
                     <div class="panel-body">
                         {% for maincat in mainCats %}
@@ -42,11 +42,11 @@
                 <div class="panel-heading active-faq">
                     <a data-toggle="collapse" data-parent="#accordion" href="#accordion-location">
                         <h4 class="panel-title">{{ trans("visiosoft.module.advs::field.location") }}<span
-                                    class="pull-right"><i class="fa fa-plus"></i></span></h4>
+                                    class="pull-right"><i class="fa fa-minus"></i></span></h4>
                     </a>
                 </div><!-- panel-heading -->
 
-                <div id="accordion-location" class="panel-collapse collapse">
+                <div id="accordion-location" class="panel-collapse collapse in">
                     <!-- panel-body -->
                     <div class="panel-body">
                         <ul id="list-items" class="filter-list-items">
@@ -101,12 +101,12 @@
                     <!-- panel-heading -->
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#accordion-{{ loop.index }}">
-                            <h4 class="panel-title">{{ value.name }}<span class="pull-right"><i class="fa fa-plus"></i></span>
+                            <h4 class="panel-title">{{ value.name }}<span class="pull-right"><i class="fa fa-minus"></i></span>
                             </h4>
                         </a>
                     </div><!-- panel-heading -->
 
-                    <div id="accordion-{{ loop.index }}" class="panel-collapse">
+                    <div id="accordion-{{ loop.index }}" class="panel-collapse in">
                         <!-- panel-body -->
                         <div class="panel-body">
                             {% for key, val in value %}
@@ -136,12 +136,12 @@
                     <!-- panel-heading -->
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#accordion-{{ loop.index }}">
-                            <h4 class="panel-title">{{ key }}<span class="pull-right"><i class="fa fa-plus"></i></span>
+                            <h4 class="panel-title">{{ key }}<span class="pull-right"><i class="fa fa-minus"></i></span>
                             </h4>
                         </a>
                     </div><!-- panel-heading -->
 
-                    <div id="accordion-{{ loop.index }}" class="panel-collapse collapse">
+                    <div id="accordion-{{ loop.index }}" class="panel-collapse collapse in">
                         <!-- panel-body -->
                         <div class="panel-body">
                             <input name="{{ key }}" type="text" class="form-control" value="">
@@ -158,12 +158,12 @@
                     <!-- panel-heading -->
                     <div class="panel-heading">
                         <a data-toggle="collapse" data-parent="#accordion" href="#accordion-range{{ value.id }}">
-                            <h4 class="panel-title">{{ value.name }}<span class="pull-right"><i class="fa fa-plus"></i></span>
+                            <h4 class="panel-title">{{ value.name }}<span class="pull-right"><i class="fa fa-minus"></i></span>
                             </h4>
                         </a>
                     </div><!-- panel-heading -->
 
-                    <div id="accordion-range{{ value.id }}" class="panel-collapse collapse">
+                    <div id="accordion-range{{ value.id }}" class="panel-collapse collapse in">
                         <!-- panel-body -->
                         <div class="panel-body">
 
@@ -186,11 +186,11 @@
                     <a data-toggle="collapse" data-parent="#accordion" href="#accordion-three">
                         <h4 class="panel-title">
                             Price
-                            <span class="pull-right"><i class="fa fa-plus"></i></span>
+                            <span class="pull-right"><i class="fa fa-minus"></i></span>
                         </h4>
                     </a>
                 </div><!-- panel-heading -->
-                <div id="accordion-three" class="panel-collapse collapse" aria-expanded="true" style="">
+                <div id="accordion-three" class="panel-collapse collapse in" aria-expanded="true" style="">
                     <!-- panel-body -->
                     <div class="panel-body">
                         <div class="price-range"><!--price-range-->
@@ -218,11 +218,11 @@
                         <a data-toggle="collapse" data-parent="#accordion" href="#accordion-four">
                             <h4 class="panel-title">
                                 {{ trans("visiosoft.module.searchbydistance::field.searchbydistance") }}
-                                <span class="pull-right"><i class="fa fa-plus"></i></span>
+                                <span class="pull-right"><i class="fa fa-minus"></i></span>
                             </h4>
                         </a>
                     </div><!-- panel-heading -->
-                    <div id="accordion-four" class="panel-collapse collapse" aria-expanded="true" style="">
+                    <div id="accordion-four" class="panel-collapse collapse in" aria-expanded="true" style="">
                         <!-- panel-body -->
                         <div class="panel-body">
                             <div class="price-range"><!--price-range-->
