@@ -32,7 +32,9 @@ class VisiosoftModuleAdvsCreateAdvsStream extends Migration
         'slug' => [
             'required' => true,
         ],
-        'advs_desc',
+        'advs_desc' => [
+            'translatable' => true,
+        ],
         'cat1',
         'cat2',
         'cat3',

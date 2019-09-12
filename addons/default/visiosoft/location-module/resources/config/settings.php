@@ -1,10 +1,5 @@
 <?php
 
-
-use Anomaly\Streams\Platform\Model\Location\LocationCitiesEntryModel;
-use Anomaly\Streams\Platform\Model\Location\LocationDistrictsEntryModel;
-use Visiosoft\LocationModule\Country\CountryModel;
-
 return [
     'home_page_location' => [
         'type'   => 'anomaly.field_type.boolean',
