@@ -9,8 +9,6 @@
                 <form action="{{ url('advs/list') }}" id="home-page-search-form" method="get">
                     <div class="row">
                         <div class="col-md-12">
-
-                            {% if setting_value('visiosoft.module.location::home_page_location') %}
                             <div class="col-md-2 home-search-field">
                                 <div class="form-group ">
                                     {% set cities = entries('location','cities').orderBy('slug').get() %}
@@ -23,63 +21,64 @@
                                 </div>
                             </div>
                             <div class="col-md-2 home-search-field">
-                                {% else %}
-                                <div class="col-md-4 home-search-field">
-                                    {% endif %}
-
-                                    <div class="form-group ">
-                                        <ul>
-                                            <li class="dropdown home-search-category-field">
-                                                {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}
-                                                <a href="#" class="btn btn-default" data-toggle="dropdown" role="button"
-                                                   aria-haspopup="true" aria-expanded="false">
+                                <div class="form-group ">
+                                    <ul>
+                                        <li class="dropdown home-search-category-field">
+                                            {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}
+                                            <a href="#" class="btn btn-default" data-toggle="dropdown" role="button"
+                                               aria-haspopup="true" aria-expanded="false">
                                             <span class="selected-category-item"
                                                   style="display: inline-block;">{{ trans('theme::fields.categories') }}</span>
-                                                </a>
-                                                <ul class="dropdown-menu cat-dropdown-menu">
-                                                    {% for cat in cats %}
-                                                        <li><a href="#" data-id="{{ cat.id }}"
-                                                               class="navigation-category-select-item">{{ cat.name }}</a>
-                                                        </li>
-                                                    {% endfor %}
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
+                                            </a>
+                                            <ul class="dropdown-menu cat-dropdown-menu">
+                                                {% for cat in cats %}
+                                                    <li><a href="#" data-id="{{ cat.id }}"
+                                                           class="navigation-category-select-item">{{ cat.name }}</a>
+                                                    </li>
+                                                {% endfor %}
+                                            </ul>
+                                        </li>
+                                    </ul>
                                 </div>
-                                <input type="hidden" value="" name="cat" id="searchable_category_input"
-                                       class="select-category-home-id">
-                                <div class="col-md-4 home-search-field">
-                                    <div class="form-group ">
-                                        {% set SearchPlaceHolder = entries('cats','placeholderforsearch').get() %}
-                                        <input type="text" name="keyword" data-period="2000" id="search_ac_navigator"
-                                               data-type='[{% for placeholder in SearchPlaceHolder %}"{{ placeholder.name }}","...",{% endfor %}"..."]'
-                                               class="form-control search-input">
-                                    </div>
+                            </div>
+                            <input type="hidden" value="" name="cat" id="searchable_category_input"
+                                   class="select-category-home-id">
+                            <div class="col-md-4 home-search-field">
+                                <div class="form-group ">
+                                    {% set SearchPlaceHolder = entries('cats','placeholderforsearch').get() %}
+                                    <input type="text" name="keyword" data-period="2000" id="search_ac_navigator"
+                                           data-type='[{% for placeholder in SearchPlaceHolder %}"{{ placeholder.name }}","...",{% endfor %}"..."]'
+                                           class="form-control search-input">
                                 </div>
-                                <div class="col-md-1 home-search-field">
-                                    <button type="submit" class="btn btn-default pl-5 pr-5 search-button"><i
-                                                class="fa fa-search"></i> {{ trans('theme::fields.search') }}
-                                    </button>
-                                </div>
-
+                            </div>
+                            {% set search_on_map_btn = setting_value('visiosoft.theme.default::show_home_search_on_map_btn') %}
+                            <div class="{% if search_on_map_btn != 1 %} col-md-4 {% else %}col-md-1 {% endif %} home-search-field">
+                                <button type="submit" class="btn btn-default pl-5 pr-5 search-button"><i
+                                            class="fa fa-search"></i> {{ trans('theme::fields.search') }}
+                                </button>
+                            </div>
+                            {% if search_on_map_btn %}
                                 <div class="col-md-3 home-search-field">
                                     <button type="button" class="btn btn-default map-search-button pl-5 pr-5 "><i
                                                 class="fa fa-map-marker"></i> {{ trans('theme::fields.search_map') }}
                                     </button>
                                 </div>
-                            </div>
+                            {% endif %}
                         </div>
-                </form>
-                {% if(app.request.cookies.has('last_search')) %}
-                    <div class="last-search">
-                        <a href="{{ app.request.cookies.get('last_search') }}" class="btn btn-default center-block">
-                            <i class="fa fa-history"></i>
-                            {{ trans('theme::fields.last_search') }}</a>
                     </div>
+                </form>
+                {% if setting_value('visiosoft.theme.default::show_last_search_btn') %}
+                    {% if(app.request.cookies.has('last_search')) %}
+                        <div class="last-search">
+                            <a href="{{ app.request.cookies.get('last_search') }}" class="btn btn-default center-block">
+                                <i class="fa fa-history"></i>
+                                {{ trans('theme::fields.last_search') }}</a>
+                        </div>
+                    {% endif %}
                 {% endif %}
+
             </div>
-            ,
+
             <!-- banner-form -->
         </div><!-- banner -->
         <!-- main-content -->
@@ -156,17 +155,14 @@
                                                     <!-- item-info-right -->
                                                     <div class="user-option pull-right">
                                                         {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
-                                                            <a href="{{ url_route('adv_AddCart',[adv.id]) }}"
-                                                               data-toggle="tooltip" data-placement="top"
+                                                            <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                                title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                         class="fa fa-shopping-cart"></i> </a>
                                                         {% endif %}
-                                                        {% if setting_value('visiosoft.module.location::home_page_location') %}
                                                         <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
                                                            data-toggle="tooltip" data-placement="top"
                                                            title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                                                                     class="fa fa-map-marker"></i> </a>
-                                                        {% endif %}
                                                     </div><!-- item-info-right -->
                                                 </div><!-- ad-meta -->
                                             </div><!-- featured -->
@@ -212,7 +208,7 @@
 
                                 {% for adv in latest_advs %}
 
-                                    <div class="ad-item row main-page-ad-item">
+                                    <div class="oc-item1 ad-item row main-page-ad-item">
                                         <div class="item-image-box col-sm-4">
                                             <!-- item-image -->
                                             <div class="item-image">
@@ -252,17 +248,14 @@
                                                 <!-- item-info-right -->
                                                 <div class="user-option pull-right">
                                                     {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
-                                                        <a href="{{ url_route('adv_AddCart',[adv.id]) }}"
-                                                           data-toggle="tooltip" data-placement="top"
+                                                        <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                            title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
                                                     {% endif %}
-                                                    {% if setting_value('visiosoft.module.location::home_page_location') %}
                                                     <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
                                                        data-toggle="tooltip" data-placement="top"
                                                        title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                                                                 class="fa fa-map-marker"></i> </a>
-                                                    {% endif %}
                                                 </div><!-- item-info-right -->
                                             </div><!-- ad-meta -->
                                         </div><!-- item-info -->
@@ -275,7 +268,7 @@
                                 {% set popular_advs = entries('advs').popularAdvs() %}
 
                                 {% for adv in popular_advs %}
-                                    <div class="main-page-ad-item row">
+                                    <div class="oc-item1 main-page-ad-item row">
                                         <div class="item-image-box col-sm-4">
                                             <!-- item-image -->
                                             <div class="item-image">
@@ -288,8 +281,7 @@
                                                             class="img-respocive"></a>
 
                                                 {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
-                                                    <a href="{{ url_route('adv_AddCart',[adv.id]) }}"
-                                                       data-toggle="tooltip" data-placement="top"
+                                                    <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                        title="Get ilanı"><i
                                                                 class="fa fa-check-square-o"></i></a>
                                                 {% endif %}
@@ -322,17 +314,14 @@
                                                 <!-- item-info-right -->
                                                 <div class="user-option pull-right">
                                                     {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
-                                                        <a href="{{ url_route('adv_AddCart',[adv.id]) }}"
-                                                           data-toggle="tooltip" data-placement="top"
+                                                        <a href="{{ url_route('adv_AddCart',[adv.id]) }}" data-toggle="tooltip" data-placement="top"
                                                            title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
                                                     {% endif %}
-                                                    {% if setting_value('visiosoft.module.location::home_page_location') %}
                                                     <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
                                                        data-toggle="tooltip" data-placement="top"
                                                        title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                                                                 class="fa fa-map-marker"></i> </a>
-                                                    {% endif %}
                                                 </div><!-- item-info-right -->
                                             </div><!-- ad-meta -->
                                         </div><!-- item-info -->
