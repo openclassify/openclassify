@@ -38,4 +38,29 @@ return [
     's-type-banner-mobile-code' => [
         'type' => 'anomaly.field_type.editor',
     ],
+
+    'show_post_your_add_btn' => [
+        'type'   => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+    'show_home_search_on_map_btn' => [
+        'type'   => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+    'show_last_search_btn' => [
+        'type'   => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+    'header_openclassify_btn' => [
+        'type'   => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
 ];

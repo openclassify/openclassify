@@ -162,10 +162,13 @@
                             {% endif %}
 
                         {% endif %}
+                        {% if setting_value('visiosoft.theme.default::show_post_your_add_btn') %}
 
-                        <li class="new-ads-navigation-field"><a href="/advs/create_adv"
-                                                                class="btn btn-success navigation-new-ad-btn">{{ trans("visiosoft.theme.default::addon.post_ad") }}</a>
-                        </li>
+
+                            <li class="new-ads-navigation-field"><a href="/advs/create_adv"
+                                                                    class="btn btn-success navigation-new-ad-btn">{{ trans("visiosoft.theme.default::addon.post_ad") }}</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
 

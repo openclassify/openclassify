@@ -3,7 +3,7 @@
 {% block ogdata %}
     <meta property="og:site_name"
           content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
-    <meta property="og:description" content="{{ adv.advs_desc|striptags|raw }}"/>
+    <meta property="og:description" content="{{ template.get('og_description', trans(template.meta_description)) }}"/>
     <meta property="og:title" content="{{ adv.title }}"/>
     <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
     <meta property="og:image" content="{{ adv.getViewPhotoUrl|first }}">
@@ -134,10 +134,8 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
                                     <span class="icon"><i class="far fa-clock"></i><a
                                                 href="#">{{ adv.created_at|date('d/m/Y') }}</a></span>
-                                    {% if setting_value('visiosoft.module.location::detail_page_location') %}
                                     <span class="icon"><i class="fa fa-map-marker"></i><a href="#">{{ adv.city_name }}
-                                            , {{ adv.country_name }}qqq</a></span>
-                                    {% endif %}
+                                            , {{ adv.country_name }}</a></span>
                                     {% if adv.isCorporate == 2 %}
                                         <span class="icon"><i class="fa fa-suitcase"></i><a
                                                     href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}">{{ adv.owner }}</a></span>
@@ -154,11 +152,11 @@
                                 {% if(adv.video_url != null) %}
                                     <div class="contact-with">
                                         <h4>{{ trans('visiosoft.module.cloudinary::field.video') }}</h4>
-                                            <a class="btn btn-success" onclick="openVideo()"><i class="fa fa-file-video-o"
-                                                                                    aria-hidden="true"></i> {{ trans('visiosoft.module.cloudinary::field.video') }}
-                                            </a>
-                                            <div class="modal fade" id="adv-video" tabindex="-1" role="dialog"
-                                     aria-labelledby="myModalLabel">
+                                        <a class="btn btn-success" onclick="openVideo()"><i class="fa fa-file-video-o"
+                                                                                            aria-hidden="true"></i> {{ trans('visiosoft.module.cloudinary::field.video') }}
+                                        </a>
+                                        <div class="modal fade" id="adv-video" tabindex="-1" role="dialog"
+                                             aria-labelledby="myModalLabel">
                                             <div class="modal-dialog" role="document">
                                                 <div class="modal-content">
                                                     <div class="close-modal text-right">
@@ -167,7 +165,7 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <video controls loop class="img-responsive"
-                                                            style="text-align: center; width: 100%">
+                                                               style="text-align: center; width: 100%">
                                                             <source src="{{ adv.video_url }}" class="video-src"
                                                                     type="video/mp4"/>
                                                         </video>
@@ -280,7 +278,7 @@
                                         {% include "visiosoft.module.customfields::list-item" %}
                                     {% endif %}
                                 {% endif %}
-                                {% if adv.map_Val != "" and setting_value('visiosoft.module.location::detail_page_location') %}
+                                {% if adv.map_Val != "" %}
                                     <div id="streetviewtab" class="tab-pane fade in">
                                         <div id="map" data-map-val="{{ adv.map_Val }}"></div>
                                         {% if entries('advs').isEnabled('streetview') %}
@@ -312,7 +310,7 @@
                                         <div class="item-image">
                                             <a href="{{ advs.detail_url }}">
                                                 {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
-                                                <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                    <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
                                                 {% endif %}
                                                 <img
                                                         src="{{ advs.cover_photo }}" alt="Image"
@@ -336,11 +334,9 @@
                                             </div>
                                             <!-- item-info-right -->
                                             <div class="user-option pull-right">
-                                                {% if setting_value('visiosoft.module.location::detail_page_location') %}
                                                 <a href="#" data-toggle="tooltip" data-placement="top" title=""
                                                    data-original-title="{{ advs.city_name }}, {{ advs.country_name }}"><i
                                                             class="fa fa-map-marker"></i> </a>
-                                                {% endif %}
                                             </div><!-- item-info-right -->
                                         </div><!-- ad-meta -->
                                     </div><!-- item-info -->
