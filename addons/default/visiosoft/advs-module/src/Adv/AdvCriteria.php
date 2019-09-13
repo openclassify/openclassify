@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Adv;
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
+use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Entry\EntryCriteria;
 use Illuminate\Support\Facades\Auth;
 use Visiosoft\RecentlyviewedadsModule\Recently\RecentlyModel;
@@ -95,6 +96,19 @@ class AdvCriteria extends EntryCriteria
             }
         }
         return $logo;
+    }
+
+    public function Flags()
+    {
+        $addonCollection = app(AddonCollection::class);
+        $dir = $addonCollection->themes->active('standard')->getPath('resources')."/images/flags";
+        $dh  = opendir($dir);
+        while (false !== ($filename = readdir($dh))) {
+            $files[] = $filename;
+        }
+        $images=preg_grep ('/\.png$/i', $files);
+        $images=preg_replace('/\\.[^.\\s]{3,4}$/', '', $images);
+        return $images;
     }
 
 }
