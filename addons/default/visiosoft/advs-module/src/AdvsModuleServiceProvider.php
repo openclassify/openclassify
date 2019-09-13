@@ -65,37 +65,40 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         // 'admin/advs/custom_fields'           => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldsController@index',
         // 'admin/advs/custom_fields/create'    => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldsController@create',
         // 'admin/advs/custom_fields/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldsController@edit',
-        'admin/advs/advs'           => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
-        'admin/advs/advs/create'    => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
+        'admin/advs/advs' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
+        'admin/advs/advs/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
         'admin/advs/advs/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit',
-        'admin/advs/village'           => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@index',
-        'admin/advs/village/create'    => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@create',
+        'admin/advs/village' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@index',
+        'admin/advs/village/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@create',
         'admin/advs/village/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@edit',
         'categories/checkparent/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkParentCat',
-        'admin/advs/ajax'             => [
-            'as'   => 'visiosoft.module.advs::ajax',
+        'admin/advs/ajax' => [
+            'as' => 'visiosoft.module.advs::ajax',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@locations',
         ],
-
-        'class/ajax'             => [
+        'ajax/viewed/{id}' => [
+            'as' => 'advs::viewed',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@viewed',
+        ],
+        'class/ajax' => [
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@locations',
         ],
-        'class/ajaxCategory'             => [
+        'class/ajaxCategory' => [
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@categories',
         ],
-        'admin/advs'           => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
-        'admin/advs/create'    => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
+        'admin/advs' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
+        'admin/advs/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
         'admin/advs/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit',
         'admin/advs/list' => [
             'as' => 'visiosoft.module.advs::admin-list',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@manage'
         ],
         'admin/class/actions/{id}/{type}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@actions',
-        'admin/advs/fields'                 => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@index',
-        'admin/advs/fields/choose'          => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@choose',
-        'admin/advs/fields/create'          => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@create',
-        'admin/advs/fields/edit/{id}'       => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@edit',
-        'advs/list'   => [
+        'admin/advs/fields' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@index',
+        'admin/advs/fields/choose' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@choose',
+        'admin/advs/fields/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@create',
+        'admin/advs/fields/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@edit',
+        'advs/list' => [
             'as' => 'visiosoft.module.advs::list',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index'
         ],
@@ -133,16 +136,16 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@create',
         ],
         'class/getcats/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
-        'advs/save_adv'   => [
+        'advs/save_adv' => [
             'as' => 'visiosoft.module.advs::post_cat',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@store'
         ],
         'advs/my_advs' => 'Visiosoft\AdvsModule\Http\Controller\advsController@myAdvs',
-        'advs/my_advs/{params}'   => 'Visiosoft\AdvsModule\Http\Controller\advsController@myAdvs',
+        'advs/my_advs/{params}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@myAdvs',
         'advs/edit_advs/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@edit',
         'advs/delete_adv/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@destroy',
 
-        'advs/status/{id},{type}'   => [
+        'advs/status/{id},{type}' => [
             'as' => 'visiosoft.module.advs::status',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@statusAds'
         ],
@@ -314,8 +317,8 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         // Use method injection or commands to bring in services.
         $slug = 'general_settings';
         $section = [
-            'title'   => 'visiosoft.module.advs::button.general_settings',
-            'href'    => '/admin/settings/modules/visiosoft.module.advs',
+            'title' => 'visiosoft.module.advs::button.general_settings',
+            'href' => '/admin/settings/modules/visiosoft.module.advs',
         ];
         $slug2 = 'assets_clear';
         $section2 = [

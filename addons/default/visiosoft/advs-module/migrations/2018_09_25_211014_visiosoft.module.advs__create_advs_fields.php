@@ -219,5 +219,11 @@ class VisiosoftModuleAdvsCreateAdvsFields extends Migration
                 'default_value' => 0,
             ]
         ],
+        'count_show_ad' => [
+            'type' => 'anomaly.field_type.integer',
+            'config' => [
+                'default_value' => 0,
+            ]
+        ],
     ];
 }

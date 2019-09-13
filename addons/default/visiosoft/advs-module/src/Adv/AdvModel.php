@@ -25,61 +25,66 @@ use Visiosoft\CartsModule\Cart\Command\GetCart;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
-    public function is_enabled($slug) {
+    public function is_enabled($slug)
+    {
         $isActive = DB::table('addons_modules')
-            ->where('namespace', 'visiosoft.module.'. $slug)
+            ->where('namespace', 'visiosoft.module.' . $slug)
             ->where('installed', 1)
             ->where('enabled', 1)
             ->first();
         if ($isActive == null) {
             return false;
         } else
-        return true;
+            return true;
     }
 
-    public function is_enabled_extension($slug) {
-        $isActive = DB::table('addons_extensions')->where('namespace', 'visiosoft.extension.'. $slug.'_provider')->first();
+    public function is_enabled_extension($slug)
+    {
+        $isActive = DB::table('addons_extensions')->where('namespace', 'visiosoft.extension.' . $slug . '_provider')->first();
         if ($isActive == null) {
             return 0;
         } else
             return $isActive->enabled;
     }
 
-    public function is_active() {
+    public function is_active()
+    {
         $isActive = $this->query()
             ->where('advs_advs.id', $this->id)
-            ->where('advs_advs.slug','!=',"")
+            ->where('advs_advs.slug', '!=', "")
             ->first();
         if ($isActive->status != 'approved') {
             return 0;
         } else
-        return true;
+            return true;
     }
 
     public function getAdv($id = null)
     {
-        if($id != null)
-        {
+        if ($id != null) {
             return AdvModel::query()
-                ->where('advs_advs.slug','!=',"")
+                ->where('advs_advs.slug', '!=', "")
                 ->find($id);
         }
-            return AdvModel::query()
-                ->where('advs_advs.slug','!=',"");
+        return AdvModel::query()
+            ->where('advs_advs.slug', '!=', "");
     }
 
-    public function userAdv() {
+    public function userAdv()
+    {
 
         return $this->getAdv()
-            ->where('advs_advs.created_by_id',Auth::id());
+            ->where('advs_advs.created_by_id', Auth::id());
     }
 
-    public function getAdvByCat($cat_id) {
+    public function getAdvByCat($cat_id)
+    {
         return $this->userAdv()
-        ->where('cat1',$cat_id);
+            ->where('cat1', $cat_id);
     }
 
-    public function pendingAdvsByUser() {
+    public function pendingAdvsByUser()
+    {
         return $this->userAdv()
             ->where('advs_advs.status', '<>', 'approved')
             ->where('advs_advs.status', '<>', 'declined')
@@ -87,39 +92,43 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             ->orWhereNull('advs_advs.finish_at');
     }
 
-    public function archivedAdvsByUser() {
+    public function archivedAdvsByUser()
+    {
         return $this->userAdv()
             ->where('advs_advs.finish_at', '<', date('Y-m-d H:i:s'))
             ->WhereNotNull('advs_advs.finish_at');
     }
 
-    public function favsAdvsByUser($fav_ids) {
+    public function favsAdvsByUser($fav_ids)
+    {
         return $this->userAdv()
-        ->whereIn('advs_advs.id', $fav_ids)//Array favs id
-        ->where('advs_advs.status', 'approved');
+            ->whereIn('advs_advs.id', $fav_ids)//Array favs id
+            ->where('advs_advs.status', 'approved');
     }
 
-    public function myAdvsByUser() {
+    public function myAdvsByUser()
+    {
         return $this->userAdv()
             ->where('advs_advs.status', 'approved')
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
     }
 
-    public function foreignCurrency($currency, $price, $curencies, $isUpdate, $settings) {
+    public function foreignCurrency($currency, $price, $curencies, $isUpdate, $settings)
+    {
         $currencies = explode(',', $curencies);
         $foreign_currency = array();
 
         $client = new Client();
 
-        foreach($currencies as $currencyIn) {
+        foreach ($currencies as $currencyIn) {
             if ($currencyIn == $currency) {
                 $foreign_currency[$currency] = (int)$price;
             } else {
                 try {
 
-                    $url = $currency."_".$currencyIn;
+                    $url = $currency . "_" . $currencyIn;
                     $freecurrencykey = $settings->value('visiosoft.module.advs::free_currencyconverterapi_key');
-                    $response = $client->get('http://free.currencyconverterapi.com/api/v6/convert?q='.$url.'&compact=y&apiKey='.$freecurrencykey);
+                    $response = $client->get('http://free.currencyconverterapi.com/api/v6/convert?q=' . $url . '&compact=y&apiKey=' . $freecurrencykey);
 
                 } catch (RequestException $e) {
 
@@ -143,22 +152,22 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function popularAdvs()
     {
-        return $this->getAdv()->where('popular_adv',1)->paginate(9);
-    }
-    
-    public function advsofDay()
-    {
-        return $this->getAdv()->where('adv_day',1)->paginate(9);
+        return $this->getAdv()->where('popular_adv', 1)->paginate(9);
     }
 
-    public function statusAds($id,$status)
+    public function advsofDay()
+    {
+        return $this->getAdv()->where('adv_day', 1)->paginate(9);
+    }
+
+    public function statusAds($id, $status)
     {
         $this->getAdv($id)->update(['status' => $status]);
         return $status;
 
     }
 
-    public function finish_at_Ads($id,$endDate)
+    public function finish_at_Ads($id, $endDate)
     {
         $date = date('Y-m-d H:i:s');
         $this->getAdv($id)->update(['finish_at' => date('Y-m-d H:i:s',
@@ -178,12 +187,13 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             ->first();
     }
 
-    public function getLocationNames($advs) {
+    public function getLocationNames($advs)
+    {
         foreach ($advs as $adv) {
             $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
             $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
 
-            $adv->setAttribute('country_name' , $country->name);
+            $adv->setAttribute('country_name', $country->name);
             $adv->setAttribute('city_name', $city->name);
         }
 
@@ -193,13 +203,12 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function isAdv($id)
     {
-       return $this->getAdv()->where('advs_advs.id',$id)->first();
+        return $this->getAdv()->where('advs_advs.id', $id)->first();
     }
 
     public function addCart($item, $quantity = 1)
     {
-        if(Auth::user())
-        {
+        if (Auth::user()) {
             $cart = $this->dispatch(new GetCart());
             $cart->add($item, $quantity);
             return $this->dispatch(new GetCart());
@@ -210,62 +219,65 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     }
 
 
-    public function getAdvDetailLinkByModel($object,$type = null) {
-        if($type != null)
-        {
+    public function getAdvDetailLinkByModel($object, $type = null)
+    {
+        if ($type != null) {
             $id = $object->id;
             $seo = str_slug($object->name);
-            $seo = str_replace('_','-',$seo);
-            return \route('adv_detail_seo', [$id,$seo]);
+            $seo = str_replace('_', '-', $seo);
+            return \route('adv_detail_seo', [$id, $seo]);
         }
         $id = $object->getObject()->id;
         $seo = str_slug($object->getObject()->name);
-        $seo = str_replace('_','-',$seo);
-        return \route('adv_detail_seo', [$id,$seo]);
+        $seo = str_replace('_', '-', $seo);
+        return \route('adv_detail_seo', [$id, $seo]);
     }
 
-    public function getAdvDetailLinkByAdId($id) {
+    public function getAdvDetailLinkByAdId($id)
+    {
         $adv = $this->find($id);
-        if($adv != null)
-        {
+        if ($adv != null) {
             $id = $adv->id;
             $seo = str_slug($adv->name);
-            $seo = str_replace('_','-',$seo);
-            return \route('adv_detail_seo', [$id,$seo]);
+            $seo = str_replace('_', '-', $seo);
+            return \route('adv_detail_seo', [$id, $seo]);
         }
     }
 
-    public function getAdvimage($id) {
+    public function getAdvimage($id)
+    {
         return $this->getAdv($id)->files;
     }
 
-    public function getLatestField($slug) {
+    public function getLatestField($slug)
+    {
         return DB::table('streams_fields')->where('slug', $slug)->first();
     }
 
-    public function updateStock($id,$quantity) {
+    public function updateStock($id, $quantity)
+    {
         $adv = $this->getAdv($id);
         $oldStock = $adv->stock;
         $newStock = $oldStock - $quantity;
         $adv->update(['stock' => $newStock]);
     }
 
-    public function stockControl($id,$quantity) {
+    public function stockControl($id, $quantity)
+    {
         $adv = $this->getAdv($id);
         $stock = $adv->stock;
-        if($stock == NULL or $stock == 0 or $stock == "0")
-        {
+        if ($stock == NULL or $stock == 0 or $stock == "0") {
             return "false";//Ürün yok ise ve 0 ise
-        }elseif ($stock < $quantity)
-        {
+        } elseif ($stock < $quantity) {
             return "false";//Adet yetmiyorsa
-        }else {
+        } else {
             return "true";
         }
 
     }
 
-    public function saveCustomField($category_id, $field_id, $name) {
+    public function saveCustomField($category_id, $field_id, $name)
+    {
         $all = array();
         $all['category_id'] = $category_id;
         $all['field_id'] = $field_id;
@@ -297,8 +309,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function AddAdsDefaultCoverImage($ad)
     {
-        if($ad->cover_photo == null)
-        {
+        if ($ad->cover_photo == null) {
             $ad->cover_photo = $this->dispatch(new MakeImageInstance('theme::images/no-image-ads.jpg', 'img'))->url();
         } else {
             $ad->cover_photo = url($ad->cover_photo);
@@ -309,12 +320,17 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function GetAdsDefaultCoverImageByAdId($id)
     {
         $adv = $this->find($id);
-        if($adv == null or $adv->cover_photo == null)
-        {
+        if ($adv == null or $adv->cover_photo == null) {
             $cover_photo = $this->dispatch(new MakeImageInstance('theme::images/no-image-ads.jpg', 'img'))->url();
         } else {
             $cover_photo = url($adv->cover_photo);
         }
         return $cover_photo;
+    }
+
+    public function viewed_Ad($id)
+    {
+        $ad = $this->find($id);
+        $ad->update(['count_show_ad' => intval($ad->count_show_ad) + 1]);
     }
 }

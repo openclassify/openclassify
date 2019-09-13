@@ -70,7 +70,8 @@ class VisiosoftModuleAdvsCreateAdvsStream extends Migration
         'adv_day',
         'cf_json',
         'cover_photo',
-        'count_show_phone'
+        'count_show_phone',
+        'count_show_ad'
     ];
 
 }

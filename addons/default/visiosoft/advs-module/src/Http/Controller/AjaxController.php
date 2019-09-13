@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
+use Visiosoft\AdvsModule\Adv\AdvModel;
 use Illuminate\Http\Request;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\District\DistrictModel;
@@ -40,5 +41,10 @@ class AjaxController extends PublicController
         $catModel = new CategoryModel();
         $datas['category'] = $catModel->searchKeyword($request->q);
         return response()->json($datas);
+    }
+
+    public function viewed(AdvModel $advModel, $id)
+    {
+        $advModel->viewed_Ad($id);
     }
 }
