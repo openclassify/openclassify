@@ -9,6 +9,7 @@
                 <form action="{{ url('advs/list') }}" id="home-page-search-form" method="get">
                     <div class="row">
                         <div class="col-md-12">
+                            {% if setting_value('visiosoft.module.location::home_page_location') %}
                             <div class="col-md-2 home-search-field">
                                 <div class="form-group ">
                                     {% set cities = entries('location','cities').orderBy('slug').get() %}
@@ -21,6 +22,9 @@
                                 </div>
                             </div>
                             <div class="col-md-2 home-search-field">
+                                {% else %}
+                                <div class="col-md-4 home-search-field">
+                                    {% endif %}
                                 <div class="form-group ">
                                     <ul>
                                         <li class="dropdown home-search-category-field">
@@ -159,10 +163,12 @@
                                                                title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                         class="fa fa-shopping-cart"></i> </a>
                                                         {% endif %}
-                                                        <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
-                                                           data-toggle="tooltip" data-placement="top"
-                                                           title="{{ adv.city_name }}, {{ adv.country_name }}"><i
-                                                                    class="fa fa-map-marker"></i> </a>
+                                                        {% if setting_value('visiosoft.module.location::home_page_location') %}
+                                                            <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
+                                                               data-toggle="tooltip" data-placement="top"
+                                                               title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                        class="fa fa-map-marker"></i> </a>
+                                                        {% endif %}
                                                     </div><!-- item-info-right -->
                                                 </div><!-- ad-meta -->
                                             </div><!-- featured -->
@@ -252,10 +258,12 @@
                                                            title="{{ adv.city_name }}, {{ adv.country_name }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
                                                     {% endif %}
-                                                    <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
-                                                       data-toggle="tooltip" data-placement="top"
-                                                       title="{{ adv.city_name }}, {{ adv.country_name }}"><i
-                                                                class="fa fa-map-marker"></i> </a>
+                                                    {% if setting_value('visiosoft.module.location::home_page_location') %}
+                                                        <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
+                                                           data-toggle="tooltip" data-placement="top"
+                                                           title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                    class="fa fa-map-marker"></i> </a>
+                                                    {% endif %}
                                                 </div><!-- item-info-right -->
                                             </div><!-- ad-meta -->
                                         </div><!-- item-info -->
@@ -318,10 +326,12 @@
                                                            title="{{ trans('visiosoft.module.advs::field.online_shopping') }}"><i
                                                                     class="fa fa-shopping-cart"></i> </a>
                                                     {% endif %}
-                                                    <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
-                                                       data-toggle="tooltip" data-placement="top"
-                                                       title="{{ adv.city_name }}, {{ adv.country_name }}"><i
-                                                                class="fa fa-map-marker"></i> </a>
+                                                    {% if setting_value('visiosoft.module.location::home_page_location') %}
+                                                        <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}"
+                                                           data-toggle="tooltip" data-placement="top"
+                                                           title="{{ adv.city_name }}, {{ adv.country_name }}"><i
+                                                                    class="fa fa-map-marker"></i> </a>
+                                                    {% endif %}
                                                 </div><!-- item-info-right -->
                                             </div><!-- ad-meta -->
                                         </div><!-- item-info -->
