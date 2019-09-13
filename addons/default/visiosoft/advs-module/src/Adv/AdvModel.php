@@ -266,8 +266,8 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         $adv = $this->getAdv($id);
         $stock = $adv->stock;
-        if ($stock == NULL or $stock == 0 or $stock == "0") {
-            return "false";//Ürün yok ise ve 0 ise
+        if ($stock == NULL or $stock == 0) {
+            return "false";
         } elseif ($stock < $quantity) {
             return "false";//Adet yetmiyorsa
         } else {
