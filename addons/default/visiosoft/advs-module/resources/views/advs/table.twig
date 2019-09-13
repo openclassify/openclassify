@@ -88,24 +88,22 @@
                                 </div>
                                 <div class="table-responsive">
 
-                                <table class="table ads-list-table">
-                                    <thead>
-                                    <tr>
-                                        <th scope="col" colspan="2" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
-                                        <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
-                                        <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
-                                        {% if setting_value('visiosoft.module.location::list_page_location') %}
-                                        <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }} / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
-                                        {% endif %}
-                                        {% if entries('advs').isEnabled('customfields') %}
-                                            {% include "visiosoft.module.customfields::cftable" %}
-                                        {% endif %}
-                                    </tr>
-                                    </thead>
-                                    <tbody>
-                                    {% include "visiosoft.module.advs::advs/partials/table-row" %}
-                                    </tbody>
-                                </table>
+                                    <table class="table ads-list-table">
+                                        <thead>
+                                        <tr>
+                                            <th scope="col" colspan="2" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
+                                            <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
+                                            <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                                            <th scope="col" class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }} / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                                            {% if entries('advs').isEnabled('customfields') %}
+                                                {% include "visiosoft.module.customfields::cftable" %}
+                                            {% endif %}
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% include "visiosoft.module.advs::advs/partials/table-row" %}
+                                        </tbody>
+                                    </table>
                                 </div>
                                 <!-- pagination  -->
                                 <div class="text-center">
