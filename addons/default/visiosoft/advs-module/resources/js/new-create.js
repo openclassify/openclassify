@@ -91,7 +91,7 @@ $(document).on('ajaxComplete ready shown.bs.tab', function () {
 
                     let icons = {};
 
-                    $.each(buttons, function (k, v) {
+                    $.each([buttons, plugins], function (k, v) {
                         if (v.icon) {
                             icons[v.button ? v.button : k] = '<i class="' + v.icon + '"></i>';
                         }
