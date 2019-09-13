@@ -32,7 +32,9 @@ class VisiosoftModuleAdvsCreateAdvsStream extends Migration
         'slug' => [
             'required' => true,
         ],
-        'advs_desc',
+        'advs_desc' => [
+            'translatable' => true,
+        ],
         'cat1',
         'cat2',
         'cat3',
@@ -68,7 +70,8 @@ class VisiosoftModuleAdvsCreateAdvsStream extends Migration
         'adv_day',
         'cf_json',
         'cover_photo',
-        'count_show_phone'
+        'count_show_phone',
+        'count_show_ad'
     ];
 
 }

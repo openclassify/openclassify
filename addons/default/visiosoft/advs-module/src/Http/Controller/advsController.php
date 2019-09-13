@@ -156,9 +156,8 @@ class AdvsController extends PublicController
         AdvModel $advModel
     )
     {
-        $isActive = new AdvModel();
-        $isActiveComplaints = $isActive->is_enabled('complaints');
-        $isCommentActive = $isActive->is_enabled('comments');
+        $isActiveComplaints = $advModel->is_enabled('complaints');
+        $isCommentActive = $advModel->is_enabled('comments');
 
         if ($isActiveComplaints) {
             $complaints = ComplaintsComplainTypesEntryModel::all();
@@ -187,14 +186,13 @@ class AdvsController extends PublicController
             }
         }
 
-        if ($isActive->is_enabled('customfields')) {
+        if ($advModel->is_enabled('customfields')) {
             $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
         }
 
         //Cloudinary Module
         $adv->video_url = null;
-        $isActiveCloudinary = new AdvModel();
-        $isActiveCloudinary = $isActiveCloudinary->is_enabled('cloudinary');
+        $isActiveCloudinary = $advModel->is_enabled('cloudinary');
         if ($isActiveCloudinary) {
 
             $CloudinaryModel = new VideoModel();
@@ -215,7 +213,7 @@ class AdvsController extends PublicController
         }
         $events->dispatch(new viewAd($adv));//view ad
 
-        $isActiveqrContact = $isActive->is_enabled('qrcontact');
+        $isActiveqrContact = $advModel->is_enabled('qrcontact');
         if ($isActiveqrContact) {
             $qrModel = new QrModel();
             $qrSRC = $qrModel->source($adv);
@@ -557,10 +555,17 @@ class AdvsController extends PublicController
         AdvModel $advModel
     )
     {
-        $nameField = HTMLDomParser::str_get_html($advFormBuilder->render($id)->getContent());
-        $nameField = $nameField->find('.name', 0);
+        $Field = HTMLDomParser::str_get_html($advFormBuilder->render($id)->getContent());
+        $nameField = $Field->find('.name', 0);
         if ($nameField !== null) {
             $nameField = $nameField->innertext();
+        } else {
+            $nameField = "";
+        }
+
+        $descField = $Field->find('.advs_desc', 0);
+        if ($descField !== null) {
+            $descField = $descField->innertext();
         } else {
             $nameField = "";
         }
@@ -607,7 +612,7 @@ class AdvsController extends PublicController
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->edit($adv, $categories, $cats);
         }
 
-        return $this->view->make('visiosoft.module.advs::advs/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'nameField'));
+        return $this->view->make('visiosoft.module.advs::advs/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'nameField', 'descField'));
     }
 
     public function destroy($id)

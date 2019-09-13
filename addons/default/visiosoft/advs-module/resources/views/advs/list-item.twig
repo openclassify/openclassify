@@ -3,7 +3,7 @@
 {% block ogdata %}
     <meta property="og:site_name"
           content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
-    <meta property="og:description" content="{{ template.get('og_description', trans(template.meta_description)) }}"/>
+    <meta property="og:description" content="{{ adv.advs_desc|striptags|raw }}"/>
     <meta property="og:title" content="{{ adv.title }}"/>
     <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
     <meta property="og:image" content="{{ adv.getViewPhotoUrl|first }}">
@@ -134,8 +134,11 @@
                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
                                     <span class="icon"><i class="far fa-clock"></i><a
                                                 href="#">{{ adv.created_at|date('d/m/Y') }}</a></span>
-                                    <span class="icon"><i class="fa fa-map-marker"></i><a href="#">{{ adv.city_name }}
+
+                                    {% if setting_value('visiosoft.module.location::detail_page_location') %}
+                                        <span class="icon"><i class="fa fa-map-marker"></i><a href="#">{{ adv.city_name }}
                                             , {{ adv.country_name }}</a></span>
+                                    {% endif %}
                                     {% if adv.isCorporate == 2 %}
                                         <span class="icon"><i class="fa fa-suitcase"></i><a
                                                     href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}">{{ adv.owner }}</a></span>
@@ -278,7 +281,7 @@
                                         {% include "visiosoft.module.customfields::list-item" %}
                                     {% endif %}
                                 {% endif %}
-                                {% if adv.map_Val != "" %}
+                                {% if adv.map_Val != "" and setting_value('visiosoft.module.location::detail_page_location') %}
                                     <div id="streetviewtab" class="tab-pane fade in">
                                         <div id="map" data-map-val="{{ adv.map_Val }}"></div>
                                         {% if entries('advs').isEnabled('streetview') %}
@@ -334,9 +337,11 @@
                                             </div>
                                             <!-- item-info-right -->
                                             <div class="user-option pull-right">
-                                                <a href="#" data-toggle="tooltip" data-placement="top" title=""
-                                                   data-original-title="{{ advs.city_name }}, {{ advs.country_name }}"><i
-                                                            class="fa fa-map-marker"></i> </a>
+                                                {% if setting_value('visiosoft.module.location::detail_page_location') %}
+                                                    <a href="#" data-toggle="tooltip" data-placement="top" title=""
+                                                       data-original-title="{{ advs.city_name }}, {{ advs.country_name }}"><i
+                                                                class="fa fa-map-marker"></i> </a>
+                                                {% endif %}
                                             </div><!-- item-info-right -->
                                         </div><!-- ad-meta -->
                                     </div><!-- item-info -->
@@ -473,6 +478,7 @@
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-item.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/quantity.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/phoneCounter.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
 
     {% if entries('advs').isEnabled('comments') %}
         {{ asset_add("scripts.js", "visiosoft.module.comments::js/ajaxcomment.js") }}
