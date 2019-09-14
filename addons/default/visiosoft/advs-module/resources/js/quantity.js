@@ -76,10 +76,9 @@ function addCart(id, quantity) {
         url: '/ajax/addCart',
         data: 'id=' + id + '&quantity=' + quantity,
         success: function (data) {
-            hideLoader()
             if (data.status == "success") {
                 var url = window.location.origin;
-                window.location.replace(url + "/cart");
+                window.location.reload();
             } else {
                 alert(data.msg);
             }
