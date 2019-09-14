@@ -43,3 +43,12 @@
 .balance-widget {
     background: #2f89fc;
 }
+
+.profile-ad-viewed {
+    position: absolute;
+    background-color: rgba(207,0,15,0.9);
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    z-index: 999999;
+}

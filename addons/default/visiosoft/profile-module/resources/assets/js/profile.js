@@ -79,7 +79,8 @@ function advs(type) {
                 priceFormat(advs.price.toString())
                 top += "<div class='oc-item row adv" + advs.id + "'>" +
                     "<div class='item-image-box col-sm-4'>" +
-                    "<div class='item-image'><a href='/advs/adv/" + advs.id + "'>" +
+                    "<div class='item-image'><div class='profile-ad-viewed'><i class='fas fa-eye'></i> "+advs.count_show_ad+"</div>" +
+                    "<a href='/advs/adv/" + advs.id + "'>" +
                     "<img src='" + resim + "' alt='Image' class='img-respon sive'></a>" +
                     "</div></div><div class='item-info col-sm-8'><div class='ad-info'>" +
                     "<h3 class='item-price'>" + priceFormat(advs.price.toString()) + " " + advs.currency + "</h3>" +
