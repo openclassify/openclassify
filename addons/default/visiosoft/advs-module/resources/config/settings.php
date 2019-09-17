@@ -97,12 +97,9 @@ return [
 
 
     'contact_mail' => [
-        'type'   => 'anomaly.field_type.text',
+        'type'   => 'anomaly.field_type.email',
         'bind'   => 'adv.contact_mail',
         'env'      => 'ADV_MAIL',
-        'config' => [
-            'default_value' => 'support',
-        ],
     ],
     'google_map_key' => [
         'type'   => 'anomaly.field_type.text',

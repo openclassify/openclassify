@@ -24,7 +24,7 @@ return [
     'subscribe' => 'Subscribe!',
     'your_email' => 'Your email',
     'sign_up' => 'Sign Up',
-    'copyright' => 'Copyright 2019. Developed by',
+    'copyright' => 'Copyright 2019.| Developed by',
     'cart' => 'My Cart',
     'search' => 'Search',
     'type_your_keyword' => 'Type Your Keyword',

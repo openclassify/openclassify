@@ -35,25 +35,25 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
             ]
         ],
         'city' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
         'district' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
         'neighborhood' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
         'village' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
@@ -63,8 +63,9 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
         'office_phone' => 'anomaly.field_type.text',
         'register_type' => [
             "type" => "anomaly.field_type.select",
-            "config" =>[
-                    "options" => ['1' => 'individual','2' => 'Corporate'],
+            "config" => [
+                "handler" => \Visiosoft\ProfileModule\Profile\Handler\registerType::class,
+                'default_value' => 1,
             ]
         ],
         'identification_number' => 'anomaly.field_type.text',
@@ -79,25 +80,25 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
             ]
         ],
         'adress_city' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
         'adress_district' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
         'adress_neighborhood' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
         'adress_village' => [
-            "type"   => "anomaly.field_type.select",
+            "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
@@ -107,27 +108,27 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
         'adress_gsm_phone' => 'anomaly.field_type.text',
         'adress_land_phone' => 'anomaly.field_type.text',
         'notified_new_updates' => [
-            'type'   => 'anomaly.field_type.select',
+            'type' => 'anomaly.field_type.select',
             'config' => [
                 'default_value' => 1,
-                'options'       => [0 => 'Active', 1 => 'Passive'],
-                'separator'     => ':',
+                'options' => [0 => 'Active', 1 => 'Passive'],
+                'separator' => ':',
             ]
         ],
         'notified_about_ads' => [
-            'type'   => 'anomaly.field_type.select',
+            'type' => 'anomaly.field_type.select',
             'config' => [
                 'default_value' => 1,
-                'options'       => [0 => 'Active', 1 => 'Passive'],
-                'separator'     => ':',
+                'options' => [0 => 'Active', 1 => 'Passive'],
+                'separator' => ':',
             ]
         ],
         'receive_messages_email' => [
-            'type'   => 'anomaly.field_type.select',
+            'type' => 'anomaly.field_type.select',
             'config' => [
                 'default_value' => 1,
-                'options'       => [0 => 'Active', 1 => 'Passive'],
-                'separator'     => ':',
+                'options' => [0 => 'Active', 1 => 'Passive'],
+                'separator' => ':',
             ]
         ],
         'adv_listing_banner' => [

@@ -39,7 +39,13 @@
                 <div class="col-sm-8">
                     <div class="feedback">
                         <h2>{{ trans('visiosoft.module.advs::field.send_us_your_feedback') }}</h2>
-                        <p>{{ form('contact').to('example@domain.com')|raw }}</p>
+                        <p>{{ form('contact').to('info@openclassify.com').from(setting_value('streams::email')).
+                            handler('\\Anomaly\\ContactPlugin\\Form\\ContactFormHandler@handle').
+                            fields({'email': {'label': trans('theme::fields.email.name'),'type': 'email','required': true,},
+                                'name': {'label': trans('theme::fields.name.name'),'type': 'text','required': true,},
+                                'subject': {'label': trans('theme::fields.subject.name'),'type': 'text','required': true,},
+                                'content': {'label': trans('theme::fields.content.name'),'type': 'textarea','required': true,}})
+                            .actions({'submit': {'text': trans('theme::button.send.name')}})|raw }}</p>
                     </div>
                 </div><!-- feedback -->
             </div><!-- row -->

@@ -89,12 +89,12 @@ function advs(type) {
                     "<span><a href='#'>" + advs.cat1_name + "</a></span> / " +
                     "<span><a href='#'>" + advs.cat2_name + "</a></span>" +
                     "</div>" +
-                    "<div class=\"item-cat\">Status:" +
+                    "<div class=\"item-cat\">"+status_name+":" +
                     "<span class='status" + advs.id + "' style='color:#f7941d'>";
 
                 if (advs.status == "pending_user" || advs.status == "passive") {
                     var date = advs.created_at.split(' ');
-                    top += "Passive</span></div>" +
+                    top += status_passive+"</span></div>" +
                         "</div>" +
                         "<div class='ad-meta'><div class='meta-content'>" +
                         "<span class='dated'>Posted On: <a href='#'>" + date[0] + "</a></span>" +
@@ -104,7 +104,7 @@ function advs(type) {
                         "title='' data-original-title='Approve this ad'>Approved</a>";
                 }
                 else if (advs.status == "pending_admin") {
-                    top += "Pending</span></div>" +
+                    top += status_pending+"</span></div>" +
                         "</div>" +
                         "<div class='ad-meta'><div class='meta-content'>" +
                         "<span class='dated'>Posted On: <a href='#'>" + advs.created_at + "</a></span>" +
@@ -113,10 +113,10 @@ function advs(type) {
                         "data-id='" + advs.id + "' data-content='passive'  data-toggle='tooltip' data-placement='top'" +
                         "title='' data-original-title='Approve this ad'>Passive</a>";
                 } else {
-                    top += "Approved</span></div>" +
+                    top += status_approved+"</span></div>" +
                         "</div>" +
                         "<div class='ad-meta'><div class='meta-content'>" +
-                        "<span class='dated'>Posted On: <a href='#'>" + advs.created_at + "</a></span>";
+                        "<span class='dated'>"+posted_on+": <a href='#'>" + advs.created_at + "</a></span>";
                 }
 
                 top += "</div><div class='user-option pull-right'>";

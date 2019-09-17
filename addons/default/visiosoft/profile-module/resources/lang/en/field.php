@@ -414,6 +414,13 @@ return [
         'name' => 'Day',
     ],
 
+    'individual' => [
+        'name' => 'individual',
+    ],
+    'corporate' => [
+        'name' => 'corporate',
+    ],
+
 
 
 ];
