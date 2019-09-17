@@ -29,8 +29,8 @@ class VisiosoftModuleCatsCreateCatsFields extends Migration
         ],
         'order' => 'anomaly.field_type.integer',
         'deleted_at' => "anomaly.field_type.datetime",
-        'files' => [
-            'type' => 'visiosoft.field_type.media',
+        'icon' => [
+            'type' => 'anomaly.field_type.file',
             'config' => [
                 'folders' => ["images"],
                 'mode' => 'upload',

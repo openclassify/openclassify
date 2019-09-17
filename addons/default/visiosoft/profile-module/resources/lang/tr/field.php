@@ -302,7 +302,7 @@
    "fav_advs"   =>"Favori İlanlar",
    "fav_sellers"   =>"Fav Satıcıları",
    "fav_searches"   =>"Fav Aramalar",
-   "posted_on"   =>"Yayınlanan",
+   "posted_on"   =>"Yayınlama",
    "message_details"   =>"Mesaj Detayları",
    "adv_no"   =>"İlan No",
    "bill_address"   =>   [
@@ -442,7 +442,7 @@
 
    ],
    "status"   =>   [
-      "name"      =>"durum",
+      "name"      =>"Durum",
 
    ],
    "cancel_sale"   =>   [
@@ -529,5 +529,12 @@
       "name"      =>"Gün",
 
    ],
+
+     'individual' => [
+         'name' => 'Bireysel',
+     ],
+     'corporate' => [
+         'name' => 'Kurumsal',
+     ],
 
 ];

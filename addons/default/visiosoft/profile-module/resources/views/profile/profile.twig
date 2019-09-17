@@ -93,6 +93,11 @@
     </section>
     <script>
         var resimNone = "{{ img('theme::images/no-image-ads.jpg').url }}";
+        var status_name = "{{ trans('visiosoft.module.profile::field.status.name' )}}";
+        var status_passive = "{{ trans('visiosoft.module.profile::field.passive.name' )}}";
+        var status_pending = "{{ trans('visiosoft.module.profile::field.pending.name' )}}";
+        var status_approved = "{{ trans('visiosoft.module.profile::field.approved.name' )}}";
+        var posted_on = "{{ trans('visiosoft.module.profile::field.posted_on' )}}";
     </script>
     {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/intlTelInput.js") }}
     {{ asset_add("theme.css", "theme::css.default.intlTelInput.min.css") }}

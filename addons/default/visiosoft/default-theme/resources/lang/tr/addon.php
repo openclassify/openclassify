@@ -21,7 +21,7 @@ return [
     'subscribe' => 'Abone Olun!',
     'your_email' => 'Email Adresiniz',
     'sign_up' => 'Kayıt Olun',
-    'copyright' => 'Bütün Hakları Saklıdır &copy; 2019 ',
+    'copyright' => 'Bütün Hakları Saklıdır | 2019 ',
     'cart' => 'Sepetim',
     'search' => 'Ara',
     'type_your_keyword' => 'Aramak istediginiz kelime...',

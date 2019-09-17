@@ -82,27 +82,13 @@
                 {% endif %}
 
             </div>
-
-            <!-- banner-form -->
-        </div><!-- banner -->
-        <!-- main-content -->
+        </div>
         <div class="main-content">
-            <!-- row -->
             <div class="row">
                 <div class="hidden-xs hidden-sm col-md-2 text-center">
-                    {#{% if homepageAdvs['homepage_left_advertisement_place'] %}#}
-                    {#<div class="advertisement">#}
-                    {#<a href="#"><img src="{{ img('theme::images/ads/2.jpg').url }}" alt="Images" class="img-responsive"></a>#}
-                    {#</div>#}
-
                     {{ blocks('left-home-banner-area') }}
-
-                    {#{% endif %}#}
                 </div>
-
-                <!-- product-list -->
                 <div class="col-md-8">
-                    <!-- categorys -->
                     {% if entries('advs').isEnabled('dopings') %}
                         {% set doping_advs = entries('dopings').get().getFeaturedAds(1) %}
                         {% if(doping_advs|length>0) %}
@@ -110,15 +96,13 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="section-title featured-top">
-                                            <h4>{{ trans('visiosoft.theme.default::fields.featured_ads') }}</h4>
+                                            <h4>{{ trans('theme::fields.featured_ads') }}</h4>
                                         </div>
                                     </div>
                                 </div>
 
-                                <!-- featured-slider -->
                                 <div class="featured-slider">
                                     <div id="featured-slider">
-                                        <!-- featured -->
                                         {% for adv in doping_advs %}
                                             <div class="featured">
                                                 <div class="featured-image">
@@ -180,17 +164,10 @@
                         {% endif %}
                     {% endif %}
 
-                    {#{% if homepageAdvs['homepage_left_advertisement_place'] %}#}
-                    <!-- ad-section -->
-                    {#<div class="ad-section text-center">#}
-                    {#<a href="#"><img src="{{ img('theme::images/ads/3.jpg').url }}" alt="Image" class="img-responsive"></a>#}
-                    {#</div>#}
+
                     {{ blocks('middle-home-banner-area') }}
 
-                    <!-- ad-section -->
-                    {#{% endif %}#}
 
-                    <!-- trending-ads -->
                     <div class="section trending-ads">
                         <div class="section-title tab-manu">
                             <!-- Nav tabs -->

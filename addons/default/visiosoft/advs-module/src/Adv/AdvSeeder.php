@@ -211,7 +211,7 @@ class AdvSeeder extends Seeder
                             <a href="#" class="download-app">
                                 <img src="{{ img(\'theme::images/icon/17.png\').url }}" alt="Image" class="img-responsive">
                                 <span class="pull-left">
-                                    <span>available on</span>
+                                    <span>{{ trans(\'visiosoft.theme.default::addon.advs_default_theme_homepage_mobile_app_available_on\') }}</span>
                                     <strong>App Store</strong>
                                 </span>
                             </a>
@@ -245,7 +245,7 @@ class AdvSeeder extends Seeder
                             <a href="#" class="download-app">
                                 <img src="{{ img(\'theme::images/icon/17.png\').url }}" alt="Image" class="img-responsive">
                                 <span class="pull-left">
-                                    <span>available on</span>
+                                    <span>{{ trans(\'visiosoft.theme.default::addon.advs_default_theme_homepage_mobile_app_available_on\') }}</span>
                                     <strong>App Store</strong>
                                 </span>
                             </a>
@@ -362,6 +362,257 @@ class AdvSeeder extends Seeder
                 'html' => ' <div class="advertisement text-center">
                             <a href="#"><img src="{{ img(\'theme::images/ads/1.jpg\').url }}" alt="Images" class="img-responsive"></a>
                         </div>',
+            ],
+        ]);
+        $block_block = BlocksBlocksEntryModel::create([
+            'area_id' => $block_area->id,
+            'area_type' => 'Anomaly\BlocksModule\Area\AreaModel',
+            'field_id' => 52,
+            'extension' => 'anomaly.extension.html_block',
+            'display_title' => 0,
+            'entry_type' => 'Anomaly\HtmlBlockExtension\Block\BlockModel',
+            'entry_id' => $blockhtml->id,
+        ]);
+
+
+
+
+        // List item Right Sidebar
+
+        $block_area = BlocksAreasEntryModel::create([
+            'en' => [
+                'name' => 'List item Right Sidebar',
+            ],
+            'tr' => [
+                'name' => 'ilan Detay Sağ Alan',
+            ],
+            'slug' => 'list-item-right-sidebar',
+        ]);
+
+        $blockhtml = HtmlBlockBlocksEntryModel::create([
+            'en' => [
+                'html' => '  <div class="cta">
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-secure">
+                                        <img src="{{ img(\'theme::images/icon/13.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Secure Trading</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-support">
+                                        <img src="{{ img(\'theme::images/icon/14.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>24/7 Support</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                </div><!-- single-cta -->
+
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-trading">
+                                        <img src="{{ img(\'theme::images/icon/15.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Easy Trading</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <h5>Need help?</h5>
+                                    <p><span>Give a call on</span><a
+                                                href="tellto:08048100000"> 08048100000</a></p>
+                                </div><!-- single-cta -->
+                            </div>',
+            ],
+            'tr' => [
+                'html' => '  <div class="cta">
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-secure">
+                                        <img src="{{ img(\'theme::images/icon/13.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Güvenli Ticaret</h4>
+                                    <p>Kolay, Güvenli ve Avantajlı Alışveriş için</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-support">
+                                        <img src="{{ img(\'theme::images/icon/14.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>7/24 Saat Destek</h4>
+                                    <p>Hızlı ve Kolay çözüm imkanı</p>
+                                </div><!-- single-cta -->
+
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-trading">
+                                        <img src="{{ img(\'theme::images/icon/15.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Kolay Alışveriş</h4>
+                                    <p>Çoklu dil desteği ve Çoklu Para Birimi</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                <!-- cta-icon -->
+                                    <div class="cta-icon icon-trading">
+                                        <img src="{{ img(\'theme::images/icon/14.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+                                    <h5>Yardıma mı ihtiyacınız var?</h5>
+                                    <p><span>Hemen Arayın</span><a
+                                                href="tellto:08048100000"> 08048100000</a></p>
+                                </div><!-- single-cta -->
+                            </div>',
+            ],
+        ]);
+        $block_block = BlocksBlocksEntryModel::create([
+            'area_id' => $block_area->id,
+            'area_type' => 'Anomaly\BlocksModule\Area\AreaModel',
+            'field_id' => 52,
+            'extension' => 'anomaly.extension.html_block',
+            'display_title' => 0,
+            'entry_type' => 'Anomaly\HtmlBlockExtension\Block\BlockModel',
+            'entry_id' => $blockhtml->id,
+        ]);
+
+
+
+        // Profile Right Sidebar
+
+        $block_area = BlocksAreasEntryModel::create([
+            'en' => [
+                'name' => 'Profile Right Sidebar',
+            ],
+            'tr' => [
+                'name' => 'Profil Sağ Alan',
+            ],
+            'slug' => 'profile-right-sidebar',
+        ]);
+
+        $blockhtml = HtmlBlockBlocksEntryModel::create([
+            'en' => [
+                'html' => '  <div class="cta">
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-secure">
+                                        <img src="{{ img(\'theme::images/icon/13.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Secure Trading</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-support">
+                                        <img src="{{ img(\'theme::images/icon/14.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>24/7 Support</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                </div><!-- single-cta -->
+
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-trading">
+                                        <img src="{{ img(\'theme::images/icon/15.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Easy Trading</h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <h5>Need help?</h5>
+                                    <p><span>Give a call on</span><a
+                                                href="tellto:08048100000"> 08048100000</a></p>
+                                </div><!-- single-cta -->
+                            </div>',
+            ],
+            'tr' => [
+                'html' => '  <div class="cta">
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-secure">
+                                        <img src="{{ img(\'theme::images/icon/13.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Güvenli Ticaret</h4>
+                                    <p>Kolay, Güvenli ve Avantajlı Alışveriş için</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-support">
+                                        <img src="{{ img(\'theme::images/icon/14.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>7/24 Saat Destek</h4>
+                                    <p>Hızlı ve Kolay çözüm imkanı</p>
+                                </div><!-- single-cta -->
+
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                    <!-- cta-icon -->
+                                    <div class="cta-icon icon-trading">
+                                        <img src="{{ img(\'theme::images/icon/15.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+
+                                    <h4>Kolay Alışveriş</h4>
+                                    <p>Çoklu dil desteği ve Çoklu Para Birimi</p>
+                                </div><!-- single-cta -->
+
+                                <!-- single-cta -->
+                                <div class="single-cta">
+                                <!-- cta-icon -->
+                                    <div class="cta-icon icon-trading">
+                                        <img src="{{ img(\'theme::images/icon/14.png\').url }}" alt="Icon"
+                                             class="img-responsive">
+                                    </div><!-- cta-icon -->
+                                    <h5>Yardıma mı ihtiyacınız var?</h5>
+                                    <p><span>Hemen Arayın</span><a
+                                                href="tellto:08048100000"> 08048100000</a></p>
+                                </div><!-- single-cta -->
+                            </div>',
             ],
         ]);
         $block_block = BlocksBlocksEntryModel::create([
