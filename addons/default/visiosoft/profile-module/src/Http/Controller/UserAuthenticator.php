@@ -196,9 +196,9 @@ class UserAuthenticator
         if($this->advModel->is_enabled('cloudsite'))
         {
             $userPlan = new UserModel();
-            $userPlan->addPlanAjaxUser($planParams);
+            $plan = $userPlan->addPlanAjaxUser($planParams);
             $siteModel = new SiteModel();
-            $siteModel->createSite($all['subdomain'], $user->id, $opassword, $planParams['plan']);       //Create Site
+            $siteModel->createSite($all['subdomain'], $user->id, $opassword, $plan->id);       //Create Site
             $this->events->dispatch(new CreateSite($all, $this->settings));
         }
 
