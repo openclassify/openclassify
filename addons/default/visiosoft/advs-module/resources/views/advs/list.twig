@@ -60,7 +60,6 @@
                                             <a data-toggle="dropdown" class="sort-by-open-dropdown" href="#" aria-expanded="false">
                                                 <span class="sort-by-selected-text">{{ trans("visiosoft.module.advs::field.pick_option") }}</span><i class="fa fa-caret-square-o-down"></i></a>
                                             <ul class="dropdown-menu sort-by-dropdown" x-placement="bottom-start" >
-                                                <li><a href="#" data-value="all" class="sort-by-item">{{ trans("visiosoft.module.advs::field.pick_option") }}</a></li>
                                                 <li><a href="#" data-value="sort_price_up" class="sort-by-item">{{ trans("visiosoft.module.advs::field.price_high") }}</a></li>
                                                 <li><a href="#" data-value="sort_price_down" class="sort-by-item">{{ trans("visiosoft.module.advs::field.price-low") }}</a></li>
                                                 <li><a href="#" data-value="sort_time" class="sort-by-item">{{ trans("visiosoft.module.advs::field.newest") }}</a></li>
@@ -121,9 +120,7 @@
                                                     </video>">
                                                             <i class="fa fa-film"></i> </a>
                                                     {% endif %}
-                                                    {% if setting_value('visiosoft.module.location::list_page_location') %}
-                                                        <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
-                                                    {% endif %}
+                                                    <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
                                                     <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i class="fa fa-user"></i> </a>
 
                                                     {% if entries('advs').isEnabled('comparisons') %}
@@ -183,9 +180,7 @@
                                                     <source src='{{ adv.isAdVideo }}' class='video-src' type='video/mp4' />
                                                     </video>"></a>
                                                         {% endif %}
-                                                        {% if setting_value('visiosoft.module.location::list_page_location') %}
-                                                            <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
-                                                        {% endif %}
+                                                        <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
                                                         <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i class="fa fa-user"></i> </a>
 
                                                         {% if entries('advs').isEnabled('comparisons') %}

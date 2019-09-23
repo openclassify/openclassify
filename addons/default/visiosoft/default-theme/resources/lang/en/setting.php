@@ -32,5 +32,12 @@ return [
     'show_last_search_btn' => [
         'name' => 'Show last search btn',
     ],
-   
+
+    'meta_tags' => [
+        'name' => 'Meta Keywords',
+    ],
+    'meta_tags' => [
+        'name' => 'Meta Keywords',
+    ],
+
 ];

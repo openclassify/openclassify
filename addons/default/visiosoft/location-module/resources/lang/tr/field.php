@@ -1,41 +1,41 @@
 <?php
 
- return[
-   "name"   =>   [
-      "name"      =>"Başlık",
+return[
+    "name"   =>   [
+        "name"      =>"Başlık",
 
-   ],
-   "slug"   =>   [
-      "name"      =>"sümüklüböcek",
+    ],
+    "slug"   =>   [
+        "name"      =>"Özel İsim",
 
-   ],
-   "city"   =>   [
-      "name"      =>"Kent",
+    ],
+    "city"   =>   [
+        "name"      =>"Kent",
 
-   ],
-   "country"   =>   [
-      "name"      =>"ülke",
+    ],
+    "country"   =>   [
+        "name"      =>"ülke",
 
-   ],
-   "district"   =>   [
-      "name"      =>"İlçe",
+    ],
+    "district"   =>   [
+        "name"      =>"İlçe",
 
-   ],
-   "order"   =>   [
-      "name"      =>"Sıralama düzeni",
+    ],
+    "order"   =>   [
+        "name"      =>"Sıralama düzeni",
 
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"Komşuluk",
+    ],
+    "neighborhood"   =>   [
+        "name"      =>"Komşuluk",
 
-   ],
-   "village"   =>   [
-      "name"      =>"köy",
+    ],
+    "village"   =>   [
+        "name"      =>"köy",
 
-   ],
-   "description"   =>   [
-      "name"      =>"Açıklama",
+    ],
+    "description"   =>   [
+        "name"      =>"Açıklama",
 
-   ],
+    ],
 
 ];

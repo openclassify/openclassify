@@ -10,11 +10,11 @@
 
    ],
    "slug"   =>   [
-      "name"      =>"sümüklüböcek",
+      "name"      =>"Özel isim",
 
    ],
    "files"   =>   [
-      "name"      =>"görüntü",
+      "name"      =>"görünüm",
 
    ],
      'seo_keyword' => [
