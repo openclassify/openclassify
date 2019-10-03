@@ -217,7 +217,7 @@ return [
     "featured_ads" => "Öne Çıkan Reklamlar",
     "trending_ads" => "Trendind Ads",
     "search_ads_result_message" => [
-        "name" => ":      araması için bulunan reklamları sayısı:ad araması",
+        "name" => "Arama sonucunda bulunan ilanlar",
 
     ],
     "total" => "Genel Toplam",
