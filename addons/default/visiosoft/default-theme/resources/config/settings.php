@@ -38,7 +38,6 @@ return [
     's-type-banner-mobile-code' => [
         'type' => 'anomaly.field_type.editor',
     ],
-
     'show_post_your_add_btn' => [
         'type'   => 'anomaly.field_type.boolean',
         'config' => [

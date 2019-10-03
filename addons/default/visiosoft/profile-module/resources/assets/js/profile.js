@@ -140,7 +140,7 @@ function advs(type) {
                     "<a class='edit-item' href='/doping/" + advs.id + "' data-toggle='tooltip' data-placement='top'" +
                     "title='' data-original-title='Add Doping'><i class='fa fa-star'></i></a>" +
                     "<a class='edit-item' href='/advs/edit_advs/" + advs.id + "' data-toggle='tooltip' data-placement='top'" +
-                    "title='' data-original-title='Edit this ad'><i class='fa fa-pencil'></i></a>" +
+                    "title='' data-original-title='Edit this ad'><i class='fas fa-pen'></i></a>" +
                     "<a class='delete-item' href='advs/delete/" + advs.id + "' data-toggle='tooltip' data-placement='top'" +
                     "title='' data-original-title='Delete this ad'><i class='fa fa-times'></i></a>" +
                     "</div></div></div></div>";

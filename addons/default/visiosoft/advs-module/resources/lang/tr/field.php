@@ -10,7 +10,7 @@ return [
 
     ],
     "slug" => [
-        "name" => "sümüklüböcek",
+        "name" => "özel İsim",
 
     ],
     "parent_category" => [
@@ -102,8 +102,8 @@ return [
 
     ],
     "next_add_advs_msg" => [
-        "name" => "Lütfen aynı ürün veya hizmet için birden fazla reklam yayınlamayın. Tüm yinelenen,
-      spam ve yanlış sınıflandırılmış reklamlar silinecek.",
+        "name" => "Lütfen aynı ürün veya hizmet için birden fazla İlan yayınlamayın. Tüm yinelenen,
+      spam ve yanlış sınıflandırılmış İlanlar silinecek.",
 
     ],
     "next_add_advs_btn" => [
@@ -115,15 +115,15 @@ return [
 
     ],
     "pending_adv" => [
-        "name" => "Bekleyen Reklamlar",
+        "name" => "Bekleyen İlanlar",
 
     ],
     "archived_adv" => [
-        "name" => "Arşivlenmiş Reklamlar",
+        "name" => "Arşivlenmiş İlanlar",
 
     ],
     "favs_adv" => [
-        "name" => "Fav Reklamları",
+        "name" => "Fav İlanları",
 
     ],
     "my_adv" => [
@@ -149,7 +149,7 @@ return [
     "home" => "Ev",
     "list-page" => "Liste Sayfası",
     "search" => "Arama",
-    "recommended" => "Sizin için Önerilen Reklamlar",
+    "recommended" => "Sizin için Önerilen İlanlar",
     "sort_by" => "Göre sırala",
     "pick_option" => "Bir seçenek seçin",
     "price_high" => "Fiyat pahalıdan ucuza",
@@ -169,16 +169,16 @@ return [
     "complaint_placeholder" => "Şikayet ayrıntılarınızı buraya yazın.",
     "show_details" => "Detayları göster",
     "edit" => "Düzenle",
-    "approve" => "onaylamak",
+    "approve" => "Onayla",
     "passive" => "Pasif",
     "offered_by" => "Tarafından sunulan",
     "more_ads_by" => "Diğer İlanlar",
     "click_phone" => "Telefon numarasını göster",
-    "share" => "Bu reklamı paylaş",
-    "report" => "Bu reklamı bildir",
+    "share" => "Bu İlanı paylaş",
+    "report" => "Bu İlanı bildir",
     "features" => "Özellikler",
     "streetview" => "sokak Görünümü",
-    "recommended_ads" => "Sizin için Önerilen Reklamlar",
+    "recommended_ads" => "Sizin için Önerilen İlanlar",
     "new" => "Yeni",
     "short_info" => "Kısa Bilgi",
     "secure_trading" => "Güvenli Ticaret",
@@ -191,8 +191,8 @@ return [
    satıcı en kısa sürede sizinle irtibata geçecektir.",
     "ad_id" => "İlan No",
     "contact_with" => "İletişime geç",
-    "create_adv" => "Reklam oluştur",
-    "edit_adv" => "Reklamı Düzenle",
+    "create_adv" => "İlan oluştur",
+    "edit_adv" => "İlanı Düzenle",
     "mandatory_fields" => "Zorunlu alanlar",
     "ad_post" => "İlan Yayını",
     "sell_item" => "Bir ürün veya hizmet satmak",
@@ -208,22 +208,22 @@ return [
     "post_free_ad" => "Ücretsiz İlan Ver",
     "select_a_category" => "Bir kategori seç",
     "select_a_sub_category" => "Bir alt kategori seçiniz",
-    "all_dopings_added" => "Bu reklam için tüm doping türleri eklenmiştir.",
+    "all_dopings_added" => "Bu İlan için tüm doping türleri eklenmiştir.",
     "is_get_adv" => [
         "name" => "ALMAK",
 
     ],
     "corporate_info" => "Kurumsal Bilgiler",
-    "featured_ads" => "Öne Çıkan Reklamlar",
+    "featured_ads" => "Öne Çıkan İlanlar",
     "trending_ads" => "Trendind Ads",
     "search_ads_result_message" => [
-        "name" => "Arama sonucunda bulunan ilanlar",
+        "name" => ":      araması için bulunan İlanları sayısı:ad araması",
 
     ],
     "total" => "Genel Toplam",
     "quantity" => "miktar",
     "view_cart" => "Sepeti Görüntüle",
-    "no_ads" => "Reklamsız!",
+    "no_ads" => "İlansız!",
     "show_display_mode" => [
         "map" => "harita",
         "list" => "Liste",
@@ -258,7 +258,7 @@ return [
 
     ],
     "my_ads" => [
-        "name" => "Reklamlarım",
+        "name" => "İlanlarım",
 
     ],
     'sold_out' => [

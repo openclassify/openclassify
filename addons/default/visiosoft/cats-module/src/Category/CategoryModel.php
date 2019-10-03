@@ -85,7 +85,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             ->where('name', 'like', $keyword . '%')
             ->join('cats_category', 'cats_category_translations.entry_id', '=', 'cats_category.id')
             ->orderBy('cats_category_translations.id', 'DESC')
-            ->limit(4)->get();
+            ->get();
 
         foreach ($cats as $cat) {
             $link = '';
