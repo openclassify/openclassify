@@ -217,7 +217,8 @@ return [
     "featured_ads" => "Öne Çıkan İlanlar",
     "trending_ads" => "Trendind Ads",
     "search_ads_result_message" => [
-        "name" => "Arama sonucunda bulunan ilanlar",
+        "name" => ":name aramanızda :count adet ilan bulunmuştur.
+",
 
     ],
     "total" => "Genel Toplam",
