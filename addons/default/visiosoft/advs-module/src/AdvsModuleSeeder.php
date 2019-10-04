@@ -5,7 +5,7 @@ use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Chumper\Zipper\Zipper;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Visiosoft\AdvsModule\Adv\AdvSeeder;
+use Visiosoft\AdvsModule\Seed\BlockSeeder;
 
 class AdvsModuleSeeder extends Seeder
 {
@@ -24,7 +24,7 @@ class AdvsModuleSeeder extends Seeder
         $zipper->make('advs-files.zip')->folder('advs-files')->extractTo(base_path().'/public/app/default/files-module/local/images/');
         $zipper->close();
 
-        $this->call(AdvSeeder::class);
+        $this->call(BlockSeeder::class);
 
         /* Demo Start */
         DB::table('files_files')->truncate();
