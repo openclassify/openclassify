@@ -27,7 +27,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $plugins = [];
+    protected $plugins = [
+        AdvsModulePlugin::class,
+    ];
 
     /**
      * The addon Artisan commands.
