@@ -187,7 +187,10 @@ class UserAuthenticator
         $users->save($user);
         $all['password'] = $opassword;                                              //Register Password Original
 
-        $all['subdomain'] = $all['username'];
+        if(!isset($all['subdomain']))
+        {
+            $all['subdomain'] = $all['username'];
+        }
         $all['user'] = $user;
 
         $planParams['user'] = $user->id;                                            //Register User id
