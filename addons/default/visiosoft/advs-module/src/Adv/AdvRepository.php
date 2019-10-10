@@ -52,17 +52,24 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
 
-        $query = $this->model->newQuery();
+        $query = $this->model;
         $query = $query->where('advs_advs.slug', '!=', "");
         $query = $query->where('advs_advs.status', 'approved');
         $query = $query->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+
+
+        $query = $query->leftJoin('advs_advs_translations', function ($join) {
+            $join->on('advs_advs.id', '=', 'advs_advs_translations.entry_id');
+            $join->where('advs_advs_translations.locale', '=', Request()->session()->get('_locale'));
+        });
         
         if (!empty($param['keyword'])) {
             $delimiter = '_';
             $keyword = str_slug($param['keyword'], $delimiter);
             $query = $query->where(function ($query) use ($keyword) {
-                $query->where('advs_desc', 'like', '%' . $keyword . '%')
-                    ->orWhere('slug', 'like', '%' . $keyword . '%');
+                $query->where('advs_advs_translations.advs_desc', 'like', '%' . $keyword . '%')
+                    ->orWhere('slug', 'like', '%' . $keyword . '%')
+                    ->orWhere('advs_advs_translations.name', 'like', '%' . $keyword . '%');
             });
         }
         if (!empty($param['country'])) {
