@@ -19,7 +19,9 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $plugins = [];
+    protected $plugins = [
+        CatsModulePlugin::class,
+    ];
 
     /**
      * The addon Artisan commands.
@@ -48,11 +50,11 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'admin/cats/placeholderforsearch'           => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@index',
-        'admin/cats/placeholderforsearch/create'    => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@create',
+        'admin/cats/placeholderforsearch' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@index',
+        'admin/cats/placeholderforsearch/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@create',
         'admin/cats/placeholderforsearch/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@edit',
-        'admin/cats'           => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index',
-        'admin/cats/create'    => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',
+        'admin/cats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index',
+        'admin/cats/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',
         'admin/cats/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@edit',
         'admin/cats/category/delete/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@delete',
     ];
