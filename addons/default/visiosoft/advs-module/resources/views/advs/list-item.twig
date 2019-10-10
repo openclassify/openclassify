@@ -76,23 +76,13 @@
             {% if blocks('ad-item-content-block-area') is null %}
                 {% include "visiosoft.module.advs::advs/partials/blocks/ads-item-content-block" %}
             {% else %}
-                {{ blocks('ad-item-content-block-area','adasdasda') }}
+                {{ blocks('ad-item-content-block-area') }}
             {% endif %}
 
+            {% if entries('advs').isEnabled('recommendedads') %}
+                {% include "visiosoft.module.recommendedads::recommended-ads" %}
+            {% endif %}
 
-
-
-            <div class="recommended-info">
-                <div class="row">
-                    <div class="col-sm-8">
-
-                    </div><!-- recommended-ads -->
-
-                    <div class="col-sm-4 text-center">
-
-                    </div><!-- recommended-cta-->
-                </div><!-- row -->
-            </div><!-- recommended-info -->
         </div><!-- container -->
     </section>
 
