@@ -119,7 +119,7 @@
                                                 <!-- ad-info -->
                                                 <div class="ad-info">
                                                     <h3 class="item-price">{{ adv.priceFormat(adv) }} {{ adv.currency }}</h3>
-                                                    <h4 class="item-title"><a
+                                                    <h4 class="item-title bengali"><a
                                                                 href="{{ adv.detail_url }}">
                                                             {{ substr(adv.name,0,25) }}
                                                             {% if adv.name|length > 25 %}...{% endif %}</a></h4>
@@ -210,7 +210,7 @@
                                             <!-- ad-info -->
                                             <div class="ad-info">
                                                 <h3 class="item-price">{{ adv.priceFormat(adv) }} {{ adv.currency }}</h3>
-                                                <h4 class="item-title"><a
+                                                <h4 class="item-title bengali"><a
                                                             href="{{ adv.detail_url }}">{{ adv.name }}</a>
                                                 </h4>
                                                 <div class="item-cat">
@@ -278,8 +278,8 @@
                                             <!-- ad-info -->
                                             <div class="ad-info">
                                                 <h3 class="item-price">{{ adv.priceFormat(adv) }}{{ adv.currency }}</h3>
-                                                <h4 class="item-title"><a
-                                                            href="{{ adv.detail_url }}">{{ adv.name }}</a>
+                                                <h4 class="item-title bengali" style="word-wrap: break-word"><a
+                                                         href="{{ adv.detail_url }}">{{ adv.name }}</a>
                                                 </h4>
                                                 <div class="item-cat">
                                                     {% for cat in cats %}

@@ -26,7 +26,7 @@
                         <!-- ad-info -->
                         <div class="ad-info">
                             <h3 class="item-price">{{ adv.priceFormat(adv) }} {{ adv.currency }}</h3>
-                            <h4 class="item-title"><a href="{{ adv.detail_url }}">{{ adv.name }}</a></h4>
+                            <h4 class="item-title bengali"><a href="{{ adv.detail_url }}">{{ adv.name }}</a></h4>
                             <div class="item-cat">
                                 {% set cats = entries('advs','categories').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}                                {% for cat in cats %}
                                     {% if cat.id == adv.cat1[0].value %}
@@ -77,7 +77,7 @@
                         <!-- ad-info -->
                         <div class="ad-info">
                             <h3 class="item-price">{{ adv.priceFormat(adv) }}{{ adv.currency }}</h3>
-                            <h4 class="item-title"><a href="{{ adv.detail_url }}">{{ adv.name }}</a></h4>
+                            <h4 class="item-title bengali"><a href="{{ adv.detail_url }}">{{ adv.name }}</a></h4>
                             <div class="item-cat">
                                 {% for cat in cats %}
                                     {% if cat.id == adv.cat1[0].value %}

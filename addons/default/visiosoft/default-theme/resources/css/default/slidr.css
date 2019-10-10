@@ -212,6 +212,12 @@
   width: 47%;
 }
 
+.bengali{
+  overflow: hidden;
+  display: -webkit-box!important;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+}
 
 
 
