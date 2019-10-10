@@ -23,7 +23,6 @@ class BlockSeeder extends Seeder
             ->orWhere('slug', 'profile-right-sidebar')
             ->delete();
 
-        /**************************************************************************************************************/
         // left Home Banner Area
         $left_home_banner_area = BlocksAreasEntryModel::create([
             'en' => [
@@ -54,7 +53,6 @@ class BlockSeeder extends Seeder
             'entry_id' => $left_home_banner_html->id,
         ]);
 
-        /**************************************************************************************************************/
         // middle Home Banner Area
         $middle_home_banner_area = BlocksAreasEntryModel::create([
             'en' => [
@@ -84,7 +82,6 @@ class BlockSeeder extends Seeder
             'entry_id' => $middle_home_banner_html->id,
         ]);
 
-        /**************************************************************************************************************/
         // right Home Banner Area
         $right_home_banner_area = BlocksAreasEntryModel::create([
             'en' => [
@@ -117,7 +114,6 @@ class BlockSeeder extends Seeder
             'entry_id' => $right_home_banner_html->id,
         ]);
 
-        /**************************************************************************************************************/
         // List item Right Sidebar
         $list_item_right_sidebar_area = BlocksAreasEntryModel::create([
             'en' => [
@@ -147,7 +143,6 @@ class BlockSeeder extends Seeder
             'entry_id' => $list_item_right_sidebar_html->id,
         ]);
 
-        /**************************************************************************************************************/
         // Profile Right Sidebar
 
         $profile_right_sidebar_area = BlocksAreasEntryModel::create([
@@ -177,9 +172,6 @@ class BlockSeeder extends Seeder
             'entry_type' => 'Anomaly\HtmlBlockExtension\Block\BlockModel',
             'entry_id' => $profile_right_sidebar_html->id,
         ]);
-
-        /**************************************************************************************************************/
-
 
     }
 }

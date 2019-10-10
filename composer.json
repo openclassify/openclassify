@@ -67,8 +67,7 @@
         "anomaly/html_block-extension": "~1.0.0",
         "anomaly/wysiwyg_block-extension": "~1.0.0",
         "ammadeuss/laravel-html-dom-parser": "^1.1",
-        "guzzlehttp/guzzle": "~6.3.3",
-        "paquettg/php-html-parser": "^2.1"
+        "guzzlehttp/guzzle": "~6.3.3"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
