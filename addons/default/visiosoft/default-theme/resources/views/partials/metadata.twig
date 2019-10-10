@@ -39,7 +39,7 @@
 
 
 <!-- Favicon -->
-{#{{ favicons("theme::img/favicon.png") }}#}
+{{ favicons(url('files/' ~ file(setting_value('visiosoft.module.advs::favicon')).path)) }}
 
 {# Base Theme Components #}
 {{ asset_add("theme.css", "theme::scss/bootstrap/bootstrap.scss") }}
