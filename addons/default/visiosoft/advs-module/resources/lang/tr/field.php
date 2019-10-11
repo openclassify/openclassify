@@ -6,15 +6,15 @@ return [
 
     ],
     "order" => [
-        "name" => "Sipariş",
+        "name" => "Sıralama",
 
     ],
     "slug" => [
-        "name" => "özel İsim",
+        "name" => "Özel İsim",
 
     ],
     "parent_category" => [
-        "name" => "ebeveyn",
+        "name" => "Kategori",
 
     ],
     "category" => [
@@ -154,7 +154,7 @@ return [
     "pick_option" => "Bir seçenek seçin",
     "price_high" => "Fiyat pahalıdan ucuza",
     "price-low" => "Fiyat Düşük Yüksek",
-    "newest" => "en yeni",
+    "newest" => "En yeni",
     "categories" => "Kategoriler",
     "all_categories" => "Tüm Kategoriler",
     "location" => "yer",
@@ -177,7 +177,7 @@ return [
     "share" => "Bu İlanı paylaş",
     "report" => "Bu İlanı bildir",
     "features" => "Özellikler",
-    "streetview" => "sokak Görünümü",
+    "streetview" => "Sokak Görünümü",
     "recommended_ads" => "Sizin için Önerilen İlanlar",
     "new" => "Yeni",
     "short_info" => "Kısa Bilgi",

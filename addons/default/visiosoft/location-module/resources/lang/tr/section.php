@@ -18,7 +18,7 @@
 
    ],
    "village"   =>   [
-      "title"      =>"köy",
+      "title"      =>"Köy",
 
    ],
 

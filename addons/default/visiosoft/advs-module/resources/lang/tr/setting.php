@@ -10,7 +10,7 @@
 
    ],
    "default_adv_limit"   =>   [
-      "name"      =>"Varsayılan Reklam Sınırı",
+      "name"      =>"Varsayılan İlan Sınırı",
 
    ],
    "address"   =>   [
@@ -57,7 +57,7 @@
 
    ],
    "default_country"   =>   [
-      "name"      =>"Varsayılan Reklam Ülkesi",
+      "name"      =>"Varsayılan İlan Ülkesi",
 
    ],
    "free_currencyconverterapi_key"   =>   [
@@ -65,23 +65,23 @@
 
    ],
    "default_city"   =>   [
-      "name"      =>"Varsayılan Reklam Şehri",
+      "name"      =>"Varsayılan İlan Şehri",
 
    ],
    "default_district"   =>   [
-      "name"      =>"Varsayılan Reklam Bölgesi",
-
+      "name"      =>"Varsayılan İlan Bölgesi",
+F
    ],
    "default_neighborhood"   =>   [
-      "name"      =>"Varsayılan Reklam Mahalle",
+      "name"      =>"Varsayılan İlan Mahalle",
 
    ],
    "default_currency"   =>   [
-      "name"      =>"Varsayılan Reklam Para Birimi",
+      "name"      =>"Varsayılan İlan Para Birimi",
 
    ],
    "default_GET"   =>   [
-      "name"      =>"Varsayılan Reklam GET",
+      "name"      =>"Varsayılan İlan GET",
 
    ],
    "twitter"   =>   [

@@ -14,10 +14,10 @@
    "login_info_old_user"   =>"E-posta adresinize yeni bir şifre gönderildi.",
    "success"   =>"başarı",
    "notified_new_updates"   =>"Yeni güncellemelerden haberdar olmak istiyorum",
-   "notified_about_ads"   =>"Reklamlarım hakkında bildirimlere izin ver",
+   "notified_about_ads"   =>"İlanlarım hakkında bildirimlere izin ver",
    "receive_messages_email"   =>"Mesajları e-posta olarak almak istiyorum.",
    "no_packages_module"   =>"Paket Modülü Yok!",
    "required_add"   =>"Lütfen gerekli tüm satırları doldurunuz.",
-   "no_extend_package"   =>"Reklam Paketlerini Genişletme",
+   "no_extend_package"   =>"İlan Paketlerini Genişletme",
    "saved"   =>"Kaydedilen!"
 ];
