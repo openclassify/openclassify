@@ -42,23 +42,6 @@ class AdvsModuleSeeder extends Seeder
      */
     public function run()
     {
-        $disk = $this->disks->findBySlug('local');
-
-        $this->folders->create(
-            [
-                'en'            => [
-                    'name'        => 'Favicon',
-                    'description' => 'A folder for Favicon.',
-                ],
-                'slug'          => 'favicon',
-                'disk'          => $disk,
-                'allowed_types' => [
-                    'ico'
-                ],
-            ]
-        );
-
-
         //Download demo SQL
         $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
         file_put_contents(__DIR__."/demo.sql", fopen($repository."demo.sql", 'r'));
