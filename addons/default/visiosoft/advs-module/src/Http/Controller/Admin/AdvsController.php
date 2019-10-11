@@ -25,6 +25,12 @@ use Illuminate\Contracts\Events\Dispatcher;
 
 class AdvsController extends AdminController
 {
+    private $model;
+    public function __construct(AdvModel $model)
+    {
+        $this->model = $model;
+        parent::__construct();
+    }
 
     /**
      * Display an index of existing entries.
@@ -65,6 +71,16 @@ class AdvsController extends AdminController
                 'href' => '/advs/edit_advs/{entry.id}',
             ]
         ]);
+
+        if($this->model->is_enabled('recommendedads'))
+        {
+            $table->addButton('add_recommended',[
+                'type' => 'default',
+                'icon' => 'fa fa-gg',
+                'text' => 'Add Recommended',
+                'href' => '/admin/recommendedads/create/{entry.id}',
+            ]);
+        }
 
         $table->setColumns([
             'name' => [

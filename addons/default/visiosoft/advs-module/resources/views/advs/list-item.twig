@@ -36,10 +36,6 @@
                     <!-- carousel -->
                     <div class="col-md-7 slider-box">
 
-                        {% if entries('advs').isEnabled('getamazon') %}
-                            {% set product_amazon = entries('getamazon','products').where('slug',adv.slug).first() %}
-                        {% endif %}
-
                         {% if blocks('ad-item-picture-block-area') is null %}
                             {% include "visiosoft.module.advs::advs/partials/blocks/ads-item-picture-block" %}
                         {% else %}
