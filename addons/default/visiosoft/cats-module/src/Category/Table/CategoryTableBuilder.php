@@ -28,7 +28,6 @@ class CategoryTableBuilder extends TableBuilder
      */
     protected $columns = [
         'name',
-        'order'
     ];
 
     /**

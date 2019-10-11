@@ -16,6 +16,9 @@ return [
     'phone' => [
         'name' => 'Contact Phone',
     ],
+    'favicon' => [
+        'name' => 'Favicon',
+    ],
     'contact_mail' => [
         'name' => 'Contact Mail',
         'warning'      => 'Auto added sitename <strong>info</strong>@sitename ',
