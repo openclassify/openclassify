@@ -61,6 +61,22 @@ class ProfileModuleSeeder extends Seeder
             ]
         );
 
+        $disk = $this->disks->findBySlug('local');
+
+        $this->folders->create(
+            [
+                'en'            => [
+                    'name'        => 'Favicon',
+                    'description' => 'A folder for Favicon.',
+                ],
+                'slug'          => 'favicon',
+                'disk'          => $disk,
+                'allowed_types' => [
+                    'ico'
+                ],
+            ]
+        );
+
 
 
         $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
