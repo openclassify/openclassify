@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Visiosoft\CatsModule\Category\Command\GetCategoryName;
+use Visiosoft\CatsModule\Category\Command\GetCategoryDetail;
 
 class CatsModulePlugin extends Plugin
 {
@@ -17,6 +18,16 @@ class CatsModulePlugin extends Plugin
                 function ($id) {
 
                     if (!$ad = $this->dispatch(new GetCategoryName($id))) {
+                        return null;
+                    }
+
+                    return $ad;
+                }
+            ),new \Twig_SimpleFunction(
+                'category_detail',
+                function ($id) {
+
+                    if (!$ad = $this->dispatch(new GetCategoryDetail($id))) {
                         return null;
                     }
 
