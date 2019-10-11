@@ -182,11 +182,11 @@ return[
 
     ],
     "menu_my_ads"   =>   [
-        "name"      =>"Reklamlarım",
+        "name"      =>"İlanlarım",
 
     ],
     "menu_fav_ads"   =>   [
-        "name"      =>"Favori reklamlar",
+        "name"      =>"Favori İlanlar",
 
     ],
     "menu_hello_msg"   =>   [
@@ -202,7 +202,7 @@ return[
 
     ],
     "menu_adv_packages"   =>   [
-        "name"      =>"Reklam Paketleri",
+        "name"      =>"İlan Paketleri",
 
     ],
     "menu_time_packages"   =>   [
@@ -218,7 +218,7 @@ return[
 
     ],
     "adv_listing_banner"   =>   [
-        "name"      =>"Reklam Listeleme Sayfa Afişi",
+        "name"      =>"İlan Listeleme Sayfa Afişi",
 
     ],
     "approve"   =>   [
@@ -490,7 +490,7 @@ return[
 
     ],
     "active_ads"   =>   [
-        "name"      =>"Aktif Reklamlar",
+        "name"      =>"Aktif İlanlar",
 
     ],
     "subscriptions"   =>   [

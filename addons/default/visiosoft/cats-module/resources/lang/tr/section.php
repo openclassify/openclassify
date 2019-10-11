@@ -6,7 +6,7 @@
 
    ],
    "placeholderforsearch"   =>   [
-      "title"      =>"Placeholderforsearch",
+      "title"      =>"Kategori Türleri",
 
    ],
 

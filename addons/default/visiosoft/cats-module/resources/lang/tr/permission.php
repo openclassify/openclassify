@@ -4,18 +4,18 @@
    "category"   =>   [
       "name"      =>"Kategori",
       "option"      =>      [
-         "read"         =>"Kategori okuyabilir mi?        ",
+         "read"         =>"Kategori oluşturabilir mi?        ",
          "write"         =>"Kategori oluşturabilir / düzenleyebilir mi?        ",
          "delete"         =>"Kategori silebilir miyim?"
       ],
 
    ],
    "placeholderforsearch"   =>   [
-      "name"      =>"Placeholderforsearch",
+      "name"      =>"Kategori Türleri",
       "option"      =>      [
-         "read"         =>"Arama için yer tutucu okuyabilir mi?        ",
-         "write"         =>"Arama için yer tutucu oluşturabilir / düzenleyebilir mi?        ",
-         "delete"         =>"Yer tutucu için arama işlemini silebilir miyim?",
+         "read"         =>"Arama için kategori oluşturabilir mi?        ",
+         "write"         =>"Arama içinkategori oluşturabilir / düzenlenebilir mi?        ",
+         "delete"         =>"Kategori türleri için arama işlemini silebilir miyim?",
 
       ],
 

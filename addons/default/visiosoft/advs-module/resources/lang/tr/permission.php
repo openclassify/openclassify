@@ -2,11 +2,11 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"Reklamlar",
+      "name"      =>"İlanlar",
       "option"      =>      [
-         "read"         =>"Reklam okuyabilir mi?        ",
-         "write"         =>"Reklam oluşturabilir / düzenleyebilir mi?        ",
-         "delete"         =>"Reklamları silebilir mi?"
+         "read"         =>"İlan okuyabilir mi?        ",
+         "write"         =>"İlan oluşturabilir / düzenleyebilir mi?        ",
+         "delete"         =>"İlanları silebilir mi?"
       ],
 
    ],
@@ -38,11 +38,11 @@
 
    ],
    "custom_field_advs"   =>   [
-      "name"      =>"Özel alan reklamları",
+      "name"      =>"Özel alan İlanları",
       "option"      =>      [
-         "read"         =>"Özel alan reklamlarını okuyabilir mi?        ",
-         "write"         =>"Özel alan reklamları oluşturabilir / düzenleyebilir mi?        ",
-         "delete"         =>"Özel alan reklamlarını silebilir mi?"
+         "read"         =>"Özel alan İlanlarını okuyabilir mi?        ",
+         "write"         =>"Özel alan İlanları oluşturabilir / düzenleyebilir mi?        ",
+         "delete"         =>"Özel alan İlanlarını silebilir mi?"
       ],
 
    ],
