@@ -126,4 +126,4 @@ Ozcan Durak @ozcandurak
 
 ## Thanks to
 
-Ryan and it's  stream platform and pyrocms it makes openclassfiy more powerfull. 
+Ryan and it's  stream platform and pyrocms it makes OpenClassify more powerfull. 
