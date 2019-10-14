@@ -1,14 +1,3 @@
-/*
-	Template Name: Trade
-    Template URL: http://demo.themeregion.com/trade
-	Author: Theme Region
-	Author URI : http://www.themeregion.com/
-    Version: 1.0
-    Description: HTML5 Responsive Classifieds Template.
-	Tag: HTML5, CSS3, jQuery, Responsive Template.
-*/
-
-
 /* Table of Contents
 ==================================================
 # Global 
@@ -4347,7 +4336,7 @@ input, select, a, .transition,
 @font-face {
     font-family: 'MyriadPro-Regular', sans-serif;
     src: url('fonts/MyriadPro-Regular.eot');
-    src: url('fonts/MyriadPro-Regular.eot?#iefix') format('embedded-opentype'),
+    src: url('fonts/MyriadPro-Regular.eot?') format('embedded-opentype'),
     url('fonts/MyriadPro-Regular.woff2') format('woff2'),
     url('fonts/MyriadPro-Regular.woff') format('woff'),
     url('fonts/MyriadPro-Regular.ttf') format('truetype'),
@@ -4360,7 +4349,7 @@ input, select, a, .transition,
 @font-face {
     font-family: 'Devanagari-Regular', sans-serif;
     src: url('fonts/devanagari-normal-webfont.eot');
-    src: url('fonts/devanagari-normal-webfont.eot?#iefix') format('embedded-opentype'),
+    src: url('fonts/devanagari-normal-webfont.eot') format('embedded-opentype'),
     url('fonts/devanagari-normal-webfont.woff2') format('woff2'),
     url('fonts/devanagari-normal-webfont.woff') format('woff'),
     url('fonts/devanagari-normal-webfont.ttf') format('truetype'),
