@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\AdvsModule;
 
+use Anomaly\SettingsModule\Setting\SettingsWereSaved;
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 use Anomaly\Streams\Platform\Model\Location\LocationVillageEntryModel;
@@ -8,6 +9,7 @@ use Visiosoft\AdvsModule\Adv\AdvRepository;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
+use Visiosoft\AdvsModule\Adv\Listener\DefaultLocaleAddEnv;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -225,9 +227,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $listeners = [
-        //Visiosoft\AdvsModule\Event\ExampleEvent::class => [
-        //    Visiosoft\AdvsModule\Listener\ExampleListener::class,
-        //],
+        SettingsWereSaved::class => [
+            DefaultLocaleAddEnv::class,
+        ],
     ];
 
     /**
