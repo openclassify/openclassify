@@ -12,7 +12,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         return CategoryModel::query()->where('cats_category.id', $id)->first();
     }
 
-    public function getParentCats($id, $type = null, $subCatDeepCount = 5)
+    public function getParentCats($id, $type = null, $subCatDeepCount = 7)
     {
         $cat = $this->getCat($id);
         $catNames = array();
@@ -21,9 +21,9 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         $cat_ids[] = $cat->id;
         $subCat = $cat->parent_category_id;
         if ($subCat != null) {
-            for ($i = 0; $i < $subCatDeepCount; $i++) {
+            for ($i = 0; $i < 7; $i++) {
                 $parCat = $this->getCat($subCat);
-                if ($parCat == null) {
+                if ($parCat->parent_category_id == "") {
                     break;
                 }
                 $catNames[] = $parCat->name;
@@ -77,16 +77,26 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         return true;
     }
 
-    public function searchKeyword($keyword)
+    public function searchKeyword($keyword, $selected = null)
     {
         $data = [];
-        $cats = DB::table('cats_category_translations')
-            ->select('cats_category.id', 'cats_category_translations.name', 'cats_category.parent_category_id')
-            ->where('name', 'like', $keyword . '%')
-            ->join('cats_category', 'cats_category_translations.entry_id', '=', 'cats_category.id')
-            ->orderBy('cats_category_translations.id', 'DESC')
-            ->get();
+        $cats = DB::table('cats_category');
+        if ($selected != null) {
+            if (strpos($selected, "-") !== false) {
+                $selected = explode('-', $selected);
+                $cats = $cats->whereNotIn('cats_category.id', $selected);
+            } else {
+                $cats = $cats->where('cats_category.id', '!=', $selected);
+            }
+        }
+        $cats = $cats->where('name', 'like', $keyword . '%');
 
+        $cats = $cats->leftJoin('cats_category_translations', function ($join) {
+            $join->on('cats_category.id', '=', 'cats_category_translations.entry_id');
+            $join->where('cats_category_translations.locale', '=', Request()->session()->get('_locale'));
+        });
+        $cats = $cats->orderBy('cats_category_translations.id', 'DESC')
+            ->get();
         foreach ($cats as $cat) {
             $link = '';
             $parents = $this->getParentCats($cat->id, null, 2);
@@ -101,6 +111,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             $data[] = array(
                 'id' => $cat->id,
                 'name' => $cat->name,
+                'locale' => $cat->locale,
                 'parents' => $link
             );
         }
