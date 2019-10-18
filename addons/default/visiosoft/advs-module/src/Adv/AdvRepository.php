@@ -218,6 +218,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         } else {
             $query = $query->orderBy('advs_advs.created_at', 'desc');
+            $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name', 'advs_advs_translations.advs_desc as advs_desc');
         }
 
 
