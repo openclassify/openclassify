@@ -43,7 +43,8 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 
     public function getCatLevel($id)
     {
-        return count($this->getParentCats($id));
+        //count parent and itself
+        return count($this->getParentCats($id))+1;
     }
 
     public function getSubCategories($id, $get = null)
