@@ -39,6 +39,7 @@ class CategoryController extends AdminController
         if ($this->request->action == "save") {
             $all = $this->request->all();
             $id = $all['parent_category'];
+            $parent_id = $all['parent_category'];
             $k = 1;
             for ($i = 0; $i < $k; $i++) {
                 $cat1 = CategoryModel::query()->where('cats_category.id', $id)->first();
@@ -57,6 +58,11 @@ class CategoryController extends AdminController
             if ($form->hasFormErrors()) {
                 return $this->redirect->to('/admin/cats/create');
             }
+            if($parent_id != "")
+            {
+                return $this->redirect->to('/admin/cats?cat='.$parent_id);
+            }
+
             return $this->redirect->to('/admin/cats');
         } else {
             $form->setFields(['name']);
