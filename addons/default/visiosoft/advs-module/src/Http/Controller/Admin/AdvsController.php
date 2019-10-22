@@ -6,7 +6,7 @@ use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
-use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
+use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
@@ -72,9 +72,8 @@ class AdvsController extends AdminController
             ]
         ]);
 
-        if($this->model->is_enabled('recommendedads'))
-        {
-            $table->addButton('add_recommended',[
+        if ($this->model->is_enabled('recommendedads')) {
+            $table->addButton('add_recommended', [
                 'type' => 'default',
                 'icon' => 'fa fa-gg',
                 'text' => 'Add Recommended',
@@ -96,15 +95,17 @@ class AdvsController extends AdminController
                 'class' => 'advs-country',
             ],
             'created_by' => [
-                'value' => function (EntryInterface $entry) {
-                    $user = UsersUsersEntryModel::query()->where('users_users.id', $entry->created_by_id)->first();
-                    return $user->first_name . " " . $user->last_name;
+                'value' => function (EntryInterface $entry, UserModel $userModel) {
+                    $user = $userModel->find($entry->created_by_id);
+                    if (!is_null($user))
+                        return $user->first_name . " " . $user->last_name;
                 }
             ],
             'category' => [
-                'value' => function (EntryInterface $entry) {
-                    $category = CategoryModel::query()->where('cats_category.id', $entry->cat1)->first();
-                    return $category->name;
+                'value' => function (EntryInterface $entry, CategoryModel $categoryModel) {
+                    $category = $categoryModel->getCat($entry->cat1);
+                    if (!is_null($category))
+                        return $category->name;
                 }
             ],
         ]);

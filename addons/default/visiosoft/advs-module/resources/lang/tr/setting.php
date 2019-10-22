@@ -70,7 +70,7 @@
    ],
    "default_district"   =>   [
       "name"      =>"Varsayılan İlan Bölgesi",
-F
+
    ],
    "default_neighborhood"   =>   [
       "name"      =>"Varsayılan İlan Mahalle",
