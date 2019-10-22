@@ -96,7 +96,8 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             $join->on('cats_category.id', '=', 'cats_category_translations.entry_id');
             $join->where('cats_category_translations.locale', '=', Request()->session()->get('_locale'));
         });
-        $cats = $cats->orderBy('cats_category_translations.id', 'DESC')
+        $cats = $cats->select('cats_category.*','cats_category_translations.name as name');
+        $cats = $cats->orderBy('id', 'DESC')
             ->get();
         foreach ($cats as $cat) {
             $link = '';
@@ -112,7 +113,6 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             $data[] = array(
                 'id' => $cat->id,
                 'name' => $cat->name,
-                'locale' => $cat->locale,
                 'parents' => $link
             );
         }
