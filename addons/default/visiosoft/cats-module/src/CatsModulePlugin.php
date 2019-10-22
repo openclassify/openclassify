@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\CatsModule;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
+use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Command\GetCategoryName;
 use Visiosoft\CatsModule\Category\Command\GetCategoryDetail;
 
@@ -23,7 +24,7 @@ class CatsModulePlugin extends Plugin
 
                     return $ad;
                 }
-            ),new \Twig_SimpleFunction(
+            ), new \Twig_SimpleFunction(
                 'category_detail',
                 function ($id) {
 
@@ -32,6 +33,12 @@ class CatsModulePlugin extends Plugin
                     }
 
                     return $ad;
+                }
+            ), new \Twig_SimpleFunction(
+                'category_parents_name',
+                function ($id) {
+                    $category_model = new CategoryModel();
+                    return $category_model->getParentCats($id,'add_main');
                 }
             )
         ];

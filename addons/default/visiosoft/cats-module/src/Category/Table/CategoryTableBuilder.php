@@ -36,7 +36,9 @@ class CategoryTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit',
+        'edit' => [
+            'href' => '/admin/cats/edit/{entry.id}?parent={entry.parent_category_id}'
+        ],
         'add_sub_category' => [
             'icon' => 'fa fa-caret-square-o-down',
             'type' => 'success',
@@ -50,7 +52,7 @@ class CategoryTableBuilder extends TableBuilder
         'delete' => [
             'icon' => 'fa fa-trash',
             'type' => 'danger',
-            'href' => '/admin/cats/category/delete/{entry.id}'
+            'href' => '/admin/cats/category/delete/{entry.id}?parent={entry.parent_category_id}'
         ]
     ];
 

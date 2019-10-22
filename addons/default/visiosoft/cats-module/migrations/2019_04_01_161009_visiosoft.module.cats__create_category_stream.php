@@ -15,7 +15,7 @@ class VisiosoftModuleCatsCreateCategoryStream extends Migration
         'title_column' => 'name',
         'translatable' => true,
         'versionable' => false,
-        'trashable' => false,
+        'trashable' => true,
         'searchable' => false,
         'sortable' => true,
     ];
