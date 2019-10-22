@@ -6,7 +6,7 @@
 
    ],
    "placeholderforsearch"   =>   [
-      "title"      =>"Kategori Türleri",
+      "title"      =>"Arama alanı",
 
    ],
 

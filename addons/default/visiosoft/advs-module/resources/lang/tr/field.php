@@ -127,7 +127,7 @@ return [
 
     ],
     "my_adv" => [
-        "name" => "ADVS",
+        "name" => "İlan",
 
     ],
     "description" => [
@@ -157,12 +157,12 @@ return [
     "newest" => "En yeni",
     "categories" => "Kategoriler",
     "all_categories" => "Tüm Kategoriler",
-    "location" => "yer",
+    "location" => "Bölge",
     "send_message" => "Mesaj gönder",
     "phone_gsm" => "GSM Telefonu",
     "phone_office" => "Ofis telefonu",
     "add_to_favorites" => "Favorilere ekle",
-    "send" => "göndermek",
+    "send" => "gönder",
     "search_name" => "Arama Adı",
     "my_favorite_searches" => "Favori Aramalar",
     "search_desc" => "Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.",

@@ -85,7 +85,7 @@ F
 
    ],
    "twitter"   =>   [
-      "name"      =>"heyecan",
+      "name"      =>"Twitter",
 
    ],
    "facebook"   =>   [

@@ -19,5 +19,9 @@ return [
     'seo_description' => [
         'name' => 'Seo Description'
     ],
+    'icon' => [
+'       name' => 'ICON'
+],
+
     'please_wait' => 'Please wait.Deleting Sub Categories',
 ];

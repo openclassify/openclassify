@@ -12,7 +12,7 @@
    "login_noMail_old_user3"   =>"Sorun devam ederse,
    lütfen \'info@openclassify.com\' adresinden iletişim kurun.",
    "login_info_old_user"   =>"E-posta adresinize yeni bir şifre gönderildi.",
-   "success"   =>"başarı",
+   "success"   =>"Başarılı",
    "notified_new_updates"   =>"Yeni güncellemelerden haberdar olmak istiyorum",
    "notified_about_ads"   =>"İlanlarım hakkında bildirimlere izin ver",
    "receive_messages_email"   =>"Mesajları e-posta olarak almak istiyorum.",

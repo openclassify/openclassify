@@ -2,7 +2,7 @@
 
  return[
    "advs"   =>   [
-      "name"      =>"ADVS",
+      "name"      =>"İlanlar",
 
    ],
    "categories"   =>   [
