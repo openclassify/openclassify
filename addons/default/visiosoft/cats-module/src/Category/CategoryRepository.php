@@ -23,12 +23,14 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
     {
         $this->model = $model;
     }
+
     public function findById($id)
     {
         return $this->model->orderBy('created_at', 'DESC')->where('cats_category.id', $id)->first();
     }
 
-    public function mainCats(){
+    public function mainCats()
+    {
         return $this->model->where('parent_category_id', null)->where('deleted_at', null)->get();
     }
 
@@ -51,8 +53,14 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
     {
         return CatsCategoryEntryModel::query()->where('cats_category.id', $id)->first();
     }
+
     public function findBySlug($slug)
     {
         return $this->model->orderBy('created_at', 'DESC')->where('slug', $slug)->first();
+    }
+
+    public function getCategories()
+    {
+        return $this->model->get();
     }
 }

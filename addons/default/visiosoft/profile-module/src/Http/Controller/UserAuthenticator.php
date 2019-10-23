@@ -8,6 +8,7 @@ use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Event\UserWasLoggedIn;
 use Anomaly\UsersModule\User\User;
 use Anomaly\UsersModule\User\UserPassword;
+use http\Env\Response;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Http\Controller\AdvsController;
 use Visiosoft\CartsModule\Saleitem\Command\ProcessSaleitem;
@@ -102,12 +103,10 @@ class UserAuthenticator
             if ($response = $this->authenticate($credentials)) {
                 if ($response instanceof UserInterface) {
                     $this->login($response, $remember);
-                    if(isset($_COOKIE['cart']))
-                    {
-                        foreach ($_COOKIE['cart'] as $adv =>  $quantity)
-                        {
+                    if (isset($_COOKIE['cart'])) {
+                        foreach ($_COOKIE['cart'] as $adv => $quantity) {
                             $advs = new AdvsController();
-                            $advs->advAddCart($adv,$quantity);
+                            $advs->advAddCart($adv, $quantity);
                             setcookie("cart[" . $adv . "]", null, -1, '/');
                         }
                     }
@@ -162,6 +161,17 @@ class UserAuthenticator
 
     public function registerAjax(UserRepositoryInterface $users, Request $request)
     {
+        $required_field = ['first_name', 'last_name', 'email', 'subdomain'];
+
+        foreach ($required_field as $field) {
+            if (!isset($request->$field) or $request->$field == "") {
+                return $this->responseJSON('error', $field . ' field is required!');
+                die;
+            }
+        }
+
+        $siteModel = new SiteModel();
+        $userPlan = new UserModel();
         $all = $request->all();
 
         $email = explode('@', $all['email']);
@@ -171,41 +181,54 @@ class UserAuthenticator
         $all['activated'] = 1;                                                      //Activated User
         $all['str_id'] = str_random(24);                                    //User random key
         $planParams['plan'] = 24;
-        if(isset($all['plan_id']))
-        {
+
+        //find plan id for request
+        if (isset($all['plan_id'])) {
             $planParams['plan'] = $all['plan_id'];
             unset($all['plan_id']);//Demo Plan id
         }
 
-
-        if (User::withTrashed()->where('email',$all['email'])->first() or User::withTrashed()->where('username',$all['username'])->first()) {
-            return response()->json(['status' => 'error', 'message' => 'This Username or Email Registered!']);
+        //find subdomain in allready exit
+        $isSubdomain = $siteModel->getSitesBySubdomain($all['subdomain']);
+        if ($this->advModel->is_enabled('cloudsite') and !is_null($isSubdomain)) {
+            return $this->responseJSON('error', 'This subdomain is already exists!');
         }
+
+
+        if (User::withTrashed()->where('email', $all['email'])->first() or User::withTrashed()->where('username', $all['username'])->first()) {
+            return $this->responseJSON('error', 'This Username or Email Registered!');
+
+        }
+
+        //create random password
         $opassword = str_random(8);
-        $user = User::query()->create($all);
+
+        $user_params = $all;
+        unset($user_params['subdomain']);
+
+        //create user
+        $user = User::query()->create($user_params);
         $user->setAttribute('password', $opassword);
         $users->save($user);
         $all['password'] = $opassword;                                              //Register Password Original
 
-        if(!isset($all['subdomain']))
-        {
-            $all['subdomain'] = $all['username'];
-        }
         $all['user'] = $user;
 
         $planParams['user'] = $user->id;                                            //Register User id
         $planParams['name'] = $all['subdomain'];                                    //Subscription Saved Name
 
-        if($this->advModel->is_enabled('cloudsite'))
-        {
-            $userPlan = new UserModel();
+        if ($this->advModel->is_enabled('cloudsite')) {
             $plan = $userPlan->addPlanAjaxUser($planParams);
-            $siteModel = new SiteModel();
             $siteModel->createSite($all['subdomain'], $user->id, $opassword, $plan->id);       //Create Site
-            $this->events->dispatch(new CreateSite($all, $this->settings));
+            //$this->events->dispatch(new CreateSite($all, $this->settings));
         }
 
-        return response()->json(['status' => 'success', 'message' => 'Thank you for Registering!']);
+        return $this->responseJSON('success', 'Thank you for Registering!');
 
+    }
+
+    public function responseJSON($type, $message)
+    {
+        return response()->json(['status' => $type, 'message' => $message]);
     }
 }
