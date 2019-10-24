@@ -23,5 +23,8 @@
      'seo_description' => [
          'name' => 'Seo Açıklaması'
      ],
+     'icon' => [
+         '       name' => 'İkon'
+     ],
    "please_wait"   =>"Lütfen bekleyin. Alt Kategoriler Siliniyor"
 ];
