@@ -10,19 +10,8 @@
 <link href='https://fonts.googleapis.com/css?family=Signika+Negative:400,300,600,700' rel='stylesheet' type='text/css'>
 
 <!-- Meta Tags -->
-<meta property="fb:app_id"      content="111" />
-<meta property="og:type"        content="openclassify:recipie" />
-<meta property="og:url"         content="" />
-<meta property="og:title"       content="Cookie Recipie!" />
-<meta property="og:description" content="Tastiest recipe ever" />
-<meta property="og:image"       content="" />
 <meta charset="utf-8">
-<meta name="robots" content="index, follow" />
-<meta name="copyright" content="&copy; Visiosoft.ltd" />
-<meta name="abstract" content="Advs Script" />
-<meta name="keywords" content="script,classifed" />
 <meta name="viewport" content="width=device-width"/>
-<meta name="description" content="openclassify" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="{{ config_get('streams::distribution.name') }}"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
@@ -50,7 +39,7 @@
 
 
 <!-- Favicon -->
-{{ favicons(url('files/' ~ file(setting_value('visiosoft.module.advs::favicon')).path)) }}
+{#{{ favicons("theme::img/favicon.png") }}#}
 
 {# Base Theme Components #}
 {{ asset_add("theme.css", "theme::scss/bootstrap/bootstrap.scss") }}
