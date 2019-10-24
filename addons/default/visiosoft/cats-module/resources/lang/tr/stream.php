@@ -6,7 +6,7 @@
 
    ],
    "placeholderforsearch"   =>   [
-      "name"      =>"Placeholderforsearch",
+      "name"      =>"Arama alanı",
 
    ],
 
