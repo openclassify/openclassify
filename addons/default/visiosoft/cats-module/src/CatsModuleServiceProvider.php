@@ -184,4 +184,31 @@ class CatsModuleServiceProvider extends AddonServiceProvider
         // Use method injection or commands to bring in services.
     }
 
+    public function getOverrides()
+    {
+        $request = app('Illuminate\Http\Request');
+        $view = $request->get('view');
+
+        if ($request->segment(2) === $this->addon->getSlug() && $view !== 'table' and $request->path() == "admin/cats") {
+            $sections = [
+                'category' => [
+                    'buttons' => [
+                        'new_category' => [
+                            'href' => '/admin/cats/create?parent='.$request->cat
+                        ],
+                    ],
+                ],
+                'placeholderforsearch' => [
+                    'buttons' => [
+                        'new_placeholderforsearch',
+                    ],
+                ],
+            ];
+            $this->addon->setSections($sections);
+        }
+
+        return parent::getOverrides();
+    }
+
+
 }

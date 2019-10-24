@@ -14,10 +14,15 @@
     {% else %}
         {% set parent_url = url('admin/cats?cat='~parent.parent_category_id) %}
     {% endif %}
+    <ol class="breadcrumb">
+        {% for parnt in category_parents_name(app.request.get('cat'))|reverse %}
+        <li class="breadcrumb-item"><a><b>{{ parnt }}</b></a></li>
+        {% endfor %}
+    </ol>
     <div class="container-fluid">
         <div id="buttons">
             <a class="btn btn-md btn-warning " href="{{ parent_url }}">
-                <i class="fa fa-arrow-left"></i> Go To Parent ../<b><u>{{ parent.name }}</u></b>
+                <i class="fa fa-arrow-left"></i> Go To Parent
             </a>
         </div>
     </div>

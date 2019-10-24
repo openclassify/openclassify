@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Sunra\PhpSimple\HtmlDomParser;
 use Visiosoft\CatsModule\Category\CategoryCollection;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
 use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
@@ -58,9 +59,8 @@ class CategoryController extends AdminController
             if ($form->hasFormErrors()) {
                 return $this->redirect->to('/admin/cats/create');
             }
-            if($parent_id != "")
-            {
-                return $this->redirect->to('/admin/cats?cat='.$parent_id);
+            if ($parent_id != "") {
+                return $this->redirect->to('/admin/cats?cat=' . $parent_id);
             }
 
             return $this->redirect->to('/admin/cats');
@@ -89,6 +89,12 @@ class CategoryController extends AdminController
             if ($form->hasFormErrors()) {
                 return $this->redirect->back();
             }
+            $parent = $request->parent_category;
+            if ($parent != "") {
+                return $this->redirect->to('/admin/cats?cat=' . $parent);
+                die;
+            }
+            return $this->redirect->to('/admin/cats');
         } else {
             $form->setFields(['name']);
             $nameField = HTMLDomParser::str_get_html($form->render($id)->getContent());
@@ -103,26 +109,25 @@ class CategoryController extends AdminController
         return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField'))->with('id', $id);
     }
 
-    public function delete(CategoryCollection $categoryCollection, CategoryModel $categoryModel, $id)
+    public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
     {
+        ini_set('max_execution_time', 0);
         echo "<div style='background-image:url(" . $this->dispatch(new MakeImageInstance('visiosoft.theme.default::images/loading_anim.gif', 'img'))->url() . ");
         background-repeat:no-repeat;
         background-size: 300px;
         background-position:center;
         text-align:center;
         width:98%;
-        height:100%;    
+        height:100%;
         padding-left: 20px;'><h3>" . trans('visiosoft.module.cats::field.please_wait') . "</h3></div>";
-        $Find_Categories = $categoryModel
-            ->where('deleted_at', null)
-            ->find($id);
-        if ($Find_Categories != "") {
-            $categoryCollection->subCatDelete($id);
-            header("Refresh:0");
-        } else {
-            $categoryModel->find($id)->delete();
-            return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
-        }
 
+        $categoryRepository->DeleteCategories($id);
+
+        if ($request->parent == "")
+            return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
+        else
+            return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
     }
+
+
 }
