@@ -19,4 +19,6 @@ interface CategoryRepositoryInterface extends EntryRepositoryInterface
     public function findBySlug($slug);
 
     public function getCategories();
+
+    public function DeleteCategories($id);
 }

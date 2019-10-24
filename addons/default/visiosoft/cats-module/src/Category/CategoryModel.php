@@ -12,7 +12,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         return CategoryModel::query()->where('cats_category.id', $id)->first();
     }
 
-    public function getParentCats($id, $type = null, $subCatDeepCount = 7)
+    public function getParentCats($id, $type = null)
     {
         $cat = $this->getCat($id);
         $catNames = array();
@@ -24,6 +24,8 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             for ($i = 0; $i < 7; $i++) {
                 $parCat = $this->getCat($subCat);
                 if ($parCat->parent_category_id == "") {
+                    if ($type == "add_main")
+                        $catNames[] = $parCat->name;
                     break;
                 }
                 $catNames[] = $parCat->name;
@@ -44,7 +46,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
     public function getCatLevel($id)
     {
         //count parent and itself
-        return count($this->getParentCats($id))+1;
+        return count($this->getParentCats($id)) + 1;
     }
 
     public function getSubCategories($id, $get = null)
@@ -96,12 +98,12 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             $join->on('cats_category.id', '=', 'cats_category_translations.entry_id');
             $join->where('cats_category_translations.locale', '=', Request()->session()->get('_locale'));
         });
-        $cats = $cats->select('cats_category.*','cats_category_translations.name as name');
+        $cats = $cats->select('cats_category.*', 'cats_category_translations.name as name');
         $cats = $cats->orderBy('id', 'DESC')
             ->get();
         foreach ($cats as $cat) {
             $link = '';
-            $parents = $this->getParentCats($cat->id, null, 2);
+            $parents = $this->getParentCats($cat->id, null);
             krsort($parents);
             foreach ($parents as $key => $parent) {
                 if ($key == 0) {
