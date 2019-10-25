@@ -137,7 +137,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'post_adv',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@create',
         ],
-        'class/getcats/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
+        'class/getcats/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCatsForNewAd',
         'advs/save_adv' => [
             'as' => 'visiosoft.module.advs::post_cat',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@store'
@@ -189,6 +189,14 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'admin/assets/clear' => [
             'as' => 'assets_clear',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@assetsClear',
+        ],
+        'adv/edit/category/{id}' => [
+            'as' => 'adv::edit_category',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@editCategoryForAd',
+        ],
+        'ajax/getcats/{id}' => [
+            'as' => 'ajax::getCats',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
         ],
     ];
 

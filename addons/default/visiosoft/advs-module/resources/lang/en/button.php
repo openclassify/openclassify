@@ -21,4 +21,7 @@ return [
     'sub_neighborhoods' => 'Sub Neighborhoods',
     'sub_village' => 'Sub Village',
     'general_settings' => 'General Settings',
+    'update_category' => [
+        'name' => 'Update Category'
+    ],
 ];

@@ -140,7 +140,7 @@ return [
     'share' => 'Share this ad',
     'report' => 'Report this ad',
     'features' => 'Features',
-    "streetview"   =>"Street View",
+    "streetview" => "Street View",
     'recommended_ads' => 'Recommended Ads for You',
     'new' => 'New',
     'short_info' => 'Short Info',
@@ -216,4 +216,5 @@ return [
     'sold_out' => [
         'name' => 'Sold out',
     ],
+    'edit_category' => 'Edit Category',
 ];
