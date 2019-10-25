@@ -3,16 +3,17 @@
     <section id="main" class="clearfix ad-post-page">
         <div class="container">
             <div class="breadcrumb-section">
-                <!-- breadcrumb -->
                 <ol class="breadcrumb">
                     <li><a href="/">{{ trans('visiosoft.module.advs::field.home') }}</a></li>
-                    <li>{{ trans('visiosoft.module.advs::field.ad_post') }}</li>
-                </ol><!-- breadcrumb -->
-                <h2 class="title">{{ trans('visiosoft.module.advs::field.post_free_ad') }}</h2>
-            </div><!-- banner -->
+                    <li>{{ adDetail(id).name }}</li>
+                    <li>{{ trans('visiosoft.module.advs::field.edit_category') }}</li>
+                </ol>
+                <h2 class="title">{{ trans('visiosoft.module.advs::field.home') }}</h2>
+            </div>
 
             <div id="ad-cat-section">
-                <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
+                <form action="{{ url_route('adv::edit_category',[id]) }}" method="post">
+                    <input type="hidden" name="id" value="{{ id }}">
                     <div class="row category-tab">
                         <div class="col-md-3 col-sm-6 cat-item">
                             <div class="section cat-option select-category post-option">
@@ -88,9 +89,14 @@
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-6 cat-item cat-item-3">
-
-                        </div><!-- next-stap -->
+                        <div class="col-md-3 col-sm-6 cat-item cat-item-3">
+                            <div class="section">
+                                <h3>{{ trans('visiosoft.module.advs::message.update_category_msg') }}</h3>
+                                <button type="submit" name="action" value="update" class="btn btn-success"><i
+                                            class="fa fa-save"></i> {{ trans('visiosoft.module.advs::button.update_category.name') }}
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text-center">
@@ -99,45 +105,9 @@
                     </div>
                 </form>
             </div>
-        </div><!-- container -->
-    </section><!-- post-page -->
-    <style>
-        .cat-select {
-            width: 100%;
-            border: none;
-            overflow-y: auto
-        }
+        </div>
+    </section>
 
-        .cat-select option {
-            border-top: 1px solid #f2f2f2;
-            padding: 15px 0 20px;
-            position: relative;
-            padding-left: 10px;
-            font-size: 16px;
-            color: #505050;
-        }
-
-        .cat-item-2 {
-            display: none;
-        }
-
-        .cat-item-3 {
-            display: none;
-        }
-
-        #main {
-            background-image: {{ img('theme::images/bg/main.png').url }} !important;
-        }
-
-        .btn-1 {
-            background-color: #00a651;
-            padding: 5px 50px 7px;
-            color: #fff;
-            border: 1px solid #dadada;
-            margin-right: 5px;
-        }
-    </style>
-    {{ asset_add("scripts.js", "visiosoft.module.advs::js/cats.js") }}
-
-
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/edit_cats.js") }}
+    {{ asset_style("visiosoft.module.advs::css/edit_category.css") }}
 {% endblock %}

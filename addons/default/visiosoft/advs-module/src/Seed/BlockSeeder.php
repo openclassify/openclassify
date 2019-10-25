@@ -20,8 +20,39 @@ class BlockSeeder extends Seeder
             ->orWhere('slug', 'middle-home-banner-area')
             ->orWhere('slug', 'right-home-banner-area')
             ->orWhere('slug', 'list-item-right-sidebar')
+            ->orWhere('slug', 'center-add-ad-banner-area')
             ->orWhere('slug', 'profile-right-sidebar')
             ->delete();
+
+        // Add Ad Center Banner Area
+        $center_add_ad_banner_area = BlocksAreasEntryModel::create([
+            'en' => [
+                'name' => 'Center Add Ad Banner Area',
+            ],
+            'tr' => [
+                'name' => 'İlan Ver Orta Reklam Alanı',
+            ],
+            'slug' => 'center-add-ad-banner-area',
+        ]);
+
+        $center_add_ad_banner_html = HtmlBlockBlocksEntryModel::create([
+            'en' => [
+                'html' => file_get_contents(__DIR__ . '/Blocks/middle-home-banner-area.twig'),
+            ],
+            'tr' => [
+                'html' => file_get_contents(__DIR__ . '/Blocks/middle-home-banner-area.twig'),
+            ],
+        ]);
+
+        BlocksBlocksEntryModel::create([
+            'area_id' => $center_add_ad_banner_area->id,
+            'area_type' => 'Anomaly\BlocksModule\Area\AreaModel',
+            'field_id' => 52,
+            'extension' => 'anomaly.extension.html_block',
+            'display_title' => 0,
+            'entry_type' => 'Anomaly\HtmlBlockExtension\Block\BlockModel',
+            'entry_id' => $center_add_ad_banner_html->id,
+        ]);
 
         // left Home Banner Area
         $left_home_banner_area = BlocksAreasEntryModel::create([

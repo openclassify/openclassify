@@ -265,5 +265,6 @@ return [
     'sold_out' => [
         'name' => 'Tükendi',
     ],
+    'edit_category' => 'Kategori Düzenle',
 
 ];

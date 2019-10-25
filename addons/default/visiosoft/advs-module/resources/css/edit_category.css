@@ -1,0 +1,34 @@
+.cat-select {
+    width: 100%;
+    border: none;
+    overflow-y: auto
+}
+
+.cat-select option {
+    border-top: 1px solid #f2f2f2;
+    padding: 15px 0 20px;
+    position: relative;
+    padding-left: 10px;
+    font-size: 16px;
+    color: #505050;
+}
+
+.cat-item-2 {
+    display: none;
+}
+
+.cat-item-3 {
+    display: none;
+}
+
+.cat-item-3 .section {
+    min-height: 320px;
+}
+
+.btn-1 {
+    background-color: #00a651;
+    padding: 5px 50px 7px;
+    color: #fff;
+    border: 1px solid #dadada;
+    margin-right: 5px;
+}

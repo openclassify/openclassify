@@ -20,5 +20,8 @@ return[
     "sub_districts"   =>"Alt Bölgeler",
     "sub_neighborhoods"   =>"Alt Mahalleler",
     "sub_village"   =>"Alt Köy",
-    "general_settings"   =>"Genel Ayarlar"
+    "general_settings"   =>"Genel Ayarlar",
+    'update_category' => [
+        'name' => 'Kategori Güncelle'
+    ],
 ];
