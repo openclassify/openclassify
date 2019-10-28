@@ -467,6 +467,7 @@ class AdvsController extends PublicController
             }
             if ($advModel->is_enabled('customfields')) {
 
+                $customField_model = new CustomFieldModel();
                 if ($adv->slug == "") {
                     //new ads
                     $jsonVal = [];
@@ -476,7 +477,7 @@ class AdvsController extends PublicController
                     for ($i = 1; $i < 7; $i++) {
                         $cat = 'cat' . $i;
                         if ($request->$cat != 0) {
-                            $findcustomfields = CustomfieldsCustomFieldsEntryModel::query()->where('parent_category', $request->$cat)->get();
+                            $findcustomfields = $customField_model->getCustomfieldsJoinCategoryWithCategoryID($cat);
                             foreach ($findcustomfields as $findcustomfield) {
                                 $cs_name = 'cf__' . $findcustomfield->slug;
                                 $cf_id = "cf" . $findcustomfield->id;
@@ -497,7 +498,7 @@ class AdvsController extends PublicController
                         }
                     }
 
-                    $findcustomfields = CustomfieldsCustomFieldsEntryModel::query()->whereNull('parent_category')->get();
+                    $findcustomfields = $customField_model->getCustomfieldsJoinCategoryWithCategoryID();
                     foreach ($findcustomfields as $findcustomfield) {
                         $cs_name = 'cf__' . $findcustomfield->slug;
                         $cf_id = "cf" . $findcustomfield->id;
@@ -525,7 +526,7 @@ class AdvsController extends PublicController
                     for ($i = 1; $i < 7; $i++) {
                         $cat = 'cat' . $i;
                         if ($request->$cat != 0) {
-                            $findcustomfields = CustomfieldsCustomFieldsEntryModel::query()->where('parent_category', $request->$cat)->get();
+                            $findcustomfields = $customField_model->getCustomfieldsJoinCategoryWithCategoryID($cat);
                             foreach ($findcustomfields as $findcustomfield) {
 
                                 $cs_name = 'cf__' . $findcustomfield->slug;
@@ -549,7 +550,7 @@ class AdvsController extends PublicController
                             }
                         }
                     }
-                    $findcustomfields = CustomfieldsCustomFieldsEntryModel::query()->whereNull('parent_category')->get();
+                    $findcustomfields = $customField_model->getCustomfieldsJoinCategoryWithCategoryID();
                     foreach ($findcustomfields as $findcustomfield) {
 
                         $cs_name = 'cf__' . $findcustomfield->slug;
