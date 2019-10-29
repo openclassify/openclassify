@@ -345,26 +345,30 @@ class AdvsController extends PublicController
 
     public function getCatsForNewAd($id)
     {
-        $adv = $this->getCats($id);
+        $cats = $this->getCats($id);
+        $count_user_ads = count($this->adv_model->userAdv()->get());
 
-        if (empty($adv->toArray())) {
+        if (empty($cats->toArray())) {
 
-            $adv['title'] = trans('visiosoft.module.advs::field.next_add_advs_title.name');
-            $adv['msg'] = trans('visiosoft.module.advs::field.next_add_advs_msg.name');
-            $adv['nextBtn'] = trans('visiosoft.module.advs::field.next_add_advs_btn.name');
-            $adv['cancelBtn'] = trans('visiosoft.module.advs::field.cancel_add_advs_btn.name');
-            $adv['link'] = "";
+            $cats = trans('visiosoft.module.advs::message.create_ad_with_post_cat');
 
-            if ($this->adv_model->is_enabled('packages')) {
-                $packageModel = new PackageModel();
-                $parent_cat = $this->category_model->getParentCats($id, 'parent_id');
-                $package = $packageModel->reduceLimit($parent_cat);
-                if ($package != null) {
-                    return $package;
+            if (setting_value('visiosoft.module.advs::default_adv_limit') <= $count_user_ads) {
+                if ($this->adv_model->is_enabled('packages')) {
+                    $packageModel = new PackageModel();
+                    $parent_cat = $this->category_model->getParentCats($id, 'parent_id');
+                    $package = $packageModel->reduceLimit($parent_cat);
+                    if ($package != null) {
+                        return $package;
+                    }
+                } else {
+                    $msg = trans('visiosoft.module.advs::message.max_ad_limit');
+                    return $msg;
                 }
             }
+
+
         }
-        return $adv;
+        return $cats;
     }
 
     public function create(Request $request, AdvFormBuilder $formBuilder, CategoryRepositoryInterface $repository)
@@ -422,13 +426,20 @@ class AdvsController extends PublicController
             /*  Update Adv  */
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
-            if ($advModel->is_enabled('packages') and $adv->slug == "") {
-                $parent_cat = $categoryModel->getParentCats($request->cat1, 'parent_id');
-                $packageModel = new PackageModel();
-                $package = $packageModel->reduceLimit($parent_cat, 'reduce');
-                if ($package != null) {
-                    return redirect('/')->with('error', trans('visiosoft.module.advs::message.please_buy_package'));
-                }
+            $count_user_ads = count($this->adv_model->userAdv()->get());
+
+            if (setting_value('visiosoft.module.advs::default_adv_limit') < $count_user_ads) {
+                if ($advModel->is_enabled('packages') and $adv->slug == "") {
+                    $parent_cat = $categoryModel->getParentCats($request->cat1, 'parent_id');
+                    $packageModel = new PackageModel();
+                    $package = $packageModel->reduceLimit($parent_cat, 'reduce');
+                    if ($package != null)
+                        $this->messages->error(trans('visiosoft.module.advs::message.please_buy_package'));
+
+                } else
+                    $this->messages->error(trans('visiosoft.module.advs::message.max_ad_limit.title'));
+
+                return redirect('/');
             }
 
             if ($advModel->is_enabled('store')) {
