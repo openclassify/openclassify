@@ -1,9 +1,0 @@
-{
-    "name": "visiosoft/default-theme",
-    "type": "streams-addon",
-    "autoload": {
-        "psr-4": {
-            "Visiosoft\\DefaultTheme\\": "src/"
-        }
-    }
-}

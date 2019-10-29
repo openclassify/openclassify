@@ -112,7 +112,7 @@ class CategoryController extends AdminController
     public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
     {
         ini_set('max_execution_time', 0);
-        echo "<div style='background-image:url(" . $this->dispatch(new MakeImageInstance('visiosoft.theme.default::images/loading_anim.gif', 'img'))->url() . ");
+        echo "<div style='background-image:url(" . $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/loading_anim.gif', 'img'))->url() . ");
         background-repeat:no-repeat;
         background-size: 300px;
         background-position:center;

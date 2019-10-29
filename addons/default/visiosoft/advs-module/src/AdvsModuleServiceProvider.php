@@ -96,10 +96,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@manage'
         ],
         'admin/class/actions/{id}/{type}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@actions',
-        'admin/advs/fields' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@index',
-        'admin/advs/fields/choose' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@choose',
-        'admin/advs/fields/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@create',
-        'admin/advs/fields/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\FieldsController@edit',
         'advs/list' => [
             'as' => 'visiosoft.module.advs::list',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index'

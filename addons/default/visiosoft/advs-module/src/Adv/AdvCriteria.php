@@ -42,7 +42,7 @@ class AdvCriteria extends EntryCriteria
             ->where('status', '=', 'approved')
             ->where('slug', '!=', '')
             ->orderBy('publish_at', 'desc')
-            ->paginate($this->settings->value('visiosoft.theme.default::s-type-latest-limit'));
+            ->paginate($this->settings->value('visiosoft.theme.base::s-type-latest-limit'));
 
         $ads = $advModel->getLocationNames($latest_advs);
         foreach ($ads as $index => $ad) {
