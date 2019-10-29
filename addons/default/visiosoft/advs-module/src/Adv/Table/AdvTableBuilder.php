@@ -69,6 +69,10 @@ class AdvTableBuilder extends TableBuilder
             'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\Decline::class,
             'class' => 'btn btn-danger'
         ],
+        'extend' => [
+            'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\Extend::class,
+            'class' => 'btn btn-info'
+        ],
     ];
 
     /**
