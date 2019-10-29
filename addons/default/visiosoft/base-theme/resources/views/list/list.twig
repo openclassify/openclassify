@@ -1,0 +1,261 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    <!-- main -->
+    <section id="main" class="clearfix category-page">
+        <div class="container">
+            {% include "theme::partials/messages" %}
+            <div class="breadcrumb-section">
+                <!-- breadcrumb -->
+                <ol class="breadcrumb">
+                    <li><a href="/">{{ trans("visiosoft.module.advs::field.home") }}</a></li>
+                    {% if app.request.get('cat')%}
+                        {% for category_breadcrumbs in mainCats.first.getMains(app.request.get('cat')) %}
+                            <li><a href="{{ url_route('visiosoft.module.advs::list_cat', [category_breadcrumbs.id]) }}">{{ category_breadcrumbs.val }}</a></li>
+                        {% endfor %}
+                    {% endif %}
+                </ol><!-- breadcrumb -->
+                {% if app.request.get('cat') %}
+                    <h2 class="title">{{ mainCats.first.getCategoryName(app.request.get('cat')) }}</h2>
+                {% endif %}
+            </div>
+            <div class="category-info">
+                <div class="row">
+                    {% if app.request.get('user') != null or app.request.get('user') != "" %}
+                        <div class="col-md-12 upper-list-banner">
+                            <div class="upper-list-user">
+                                <div class="upper-list-img">
+                                    <a href=""><img src="{{ userProfile.file.url}}" alt=""></a>
+                                </div>
+                                <div class="upper-list-info">
+                                    {{ user.first_name }} {{ user.last_name }}
+                                </div>
+                            </div>
+                            {% if userProfile.adv_listing_banner.url == ''  %}
+                                <img src="{{ img('theme::images/bg/1.png').url }}">
+                            {% else %}
+                                <img src="{{ userProfile.adv_listing_banner.url }}">
+                            {% endif %}
+                        </div>
+                    {% endif %}
+                    <!-- accordion-->
+                    <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+                        {% include "visiosoft.theme.base::list/partials/list-filter" %}
+
+                        <!-- recommended-ads -->
+                        <div class="col-sm-8 col-md-9">
+                            <div class="section recommended-ads">
+                                <!-- featured-top -->
+                                {% include "visiosoft.theme.base::list/partials/display-mode" %}
+                                <div class="featured-top">
+                                    {% if app.request.get('cat') %}
+                                        <h4>{{ trans("visiosoft.module.advs::field.search_ads_result_message.name",{'name':mainCats.first.getCategoryName(app.request.get('cat')),'count':count(advs)+count(featured_advs) }) }}</h4>
+                                    {% else %}
+                                        <h4>{{ trans("visiosoft.module.advs::field.recommended") }}</h4>
+                                    {% endif %}
+                                    <div class="dropdown pull-right">
+
+                                        <!-- category-change -->
+                                        <div class="dropdown">
+                                            <h5>{{ trans("visiosoft.module.advs::field.sort_by") }}:</h5>
+                                            <a data-toggle="dropdown" class="sort-by-open-dropdown" href="#" aria-expanded="false">
+                                                <span class="sort-by-selected-text">{{ trans("visiosoft.module.advs::field.pick_option") }}</span><i class="fa fa-caret-square-o-down"></i></a>
+                                            <ul class="dropdown-menu sort-by-dropdown" x-placement="bottom-start" >
+                                                <li><a href="#" data-value="sort_price_up" class="sort-by-item">{{ trans("visiosoft.module.advs::field.price_high") }}</a></li>
+                                                <li><a href="#" data-value="sort_price_down" class="sort-by-item">{{ trans("visiosoft.module.advs::field.price-low") }}</a></li>
+                                                <li><a href="#" data-value="sort_time" class="sort-by-item">{{ trans("visiosoft.module.advs::field.newest") }}</a></li>
+                                            </ul>
+                                        </div><!-- category-change -->
+                                    </div>
+                                </div>
+                                {% if entries('advs').isEnabled('customfields') %}
+                                    {% include "visiosoft.module.customfields::selecttop" %}
+                                {% endif %}
+                                <div class="category-tabs">
+
+                                </div>
+
+                                {% for adv in featured_advs %}
+                                {% if adv.doping != null %}
+                                <div class="oc-item1 featured_adv_item row">
+                                    {% else %}
+                                    <div class="oc-item1 row">
+                                        {% endif %}
+                                        <!-- item-image -->
+                                        <div class="item-image-box col-sm-4">
+                                            <div class="item-image">
+                                                <a href="{{ adv.detail_url }}">
+                                                    {% set advPhoto = adv.cover_photo %}
+                                                    {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                        <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                    {% endif %}
+                                                    <img src="{{ adv.cover_photo }}" alt="Image" class="img-responsive"></a>
+                                            </div><!-- item-image -->
+                                        </div>
+
+                                        <!-- rending-text -->
+                                        <div class="item-info col-sm-8">
+                                            <!-- ad-info -->
+                                            <div class="ad-info">
+                                                <h3 class="item-price">{{ adv.price }} {{ adv.currency }}</h3>
+                                                <h4 class="item-title bengali"><a href="{{ adv.detail_url }}">{{ adv.name }}</a></h4>
+                                                <div class="item-cat">
+                                                    <span><a href="#">{{ adv.cat1_name }}</a></span>
+                                                    {% if adv.cat2_name != "" %}
+                                                        / <span><a href="#">{{ adv.cat2_name }}</a></span>
+                                                    {% endif %}
+                                                </div>
+                                            </div><!-- ad-info -->
+
+                                            <!-- ad-meta -->
+                                            <div class="ad-meta">
+                                                <div class="meta-content">
+                                                    <span class="dated"><a href="#">{{ adv.created_at|date("d/m/Y") }} </a></span>
+                                                </div>
+                                                <!-- item-info-right -->
+                                                <div class="user-option pull-right">
+                                                    {% if adv.isAdVideo is defined and adv.isAdVideo != null %}
+                                                        <a data-toggle="tooltip" data-id="{{ adv.id }}" class="ad-info-right-bar-video" data-placement="top"
+                                                           title="<video controls loop class='img-responsive video-ad-tooltip-{{ adv.id }}' style='text-align: center; width: 100%'>
+                                                    <source src='{{ adv.isAdVideo }}' class='video-src' type='video/mp4' />
+                                                    </video>">
+                                                            <i class="fa fa-film"></i> </a>
+                                                    {% endif %}
+                                                    <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
+                                                    <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i class="fa fa-user"></i> </a>
+
+                                                    {% if entries('advs').isEnabled('comparisons') %}
+
+                                                        {% include "visiosoft.module.comparisons::comparebtn" %}
+
+                                                    {% endif %}
+                                                </div><!-- item-info-right -->
+                                            </div><!-- ad-meta -->
+                                        </div><!-- item-info -->
+                                    </div><!-- oc-item -->
+                                    {% endfor %}
+
+                                    {% for adv in advs %}
+                                    <!-- oc-item -->
+                                    {% if adv.doping != null %}
+                                    <div class="oc-item1 featured_adv_item row">
+                                        {% else %}
+                                        <div class="oc-item1 row">
+                                            {% endif %}
+                                            <!-- item-image -->
+                                            <div class="item-image-box col-sm-4">
+                                                <div class="item-image">
+                                                    <a href="{{ adv.detail_url }}">
+                                                        {% set advPhoto = adv.cover_photo %}
+                                                        {% if adv.is_get_adv == "1" and adv.stock == "0" and entries('advs').isEnabled('carts') %}
+                                                            <div class="corner-ribbon top-right sticky blue">{{ trans('visiosoft.module.advs::field.sold_out.name') }}</div>
+                                                        {% endif %}
+                                                        <img src="{{ adv.cover_photo }}" alt="Image" class="img-responsive"></a>
+                                                </div><!-- item-image -->
+                                            </div>
+
+                                            <!-- rending-text -->
+                                            <div class="item-info col-sm-8">
+                                                <!-- ad-info -->
+                                                <div class="ad-info">
+                                                    <h3 class="item-price">{{ adv.price }} {{ adv.currency }}</h3>
+                                                    <h4 class="item-title bengali"><a href="{{ adv.detail_url }}">{{ adv.name }}</a></h4>
+                                                    <div class="item-cat">
+                                                        <span><a href="#">{{ adv.cat1_name }}</a></span>
+                                                        {% if adv.cat2_name != "" %}
+                                                            / <span><a href="#">{{ adv.cat2_name }}</a></span>
+                                                        {% endif %}
+                                                    </div>
+                                                </div><!-- ad-info -->
+
+                                                <!-- ad-meta -->
+                                                <div class="ad-meta">
+                                                    <div class="meta-content">
+                                                        <span class="dated"><a href="#">{{ adv.created_at|date("d/m/Y") }} </a></span>
+                                                    </div>
+                                                    <!-- item-info-right -->
+                                                    <div class="user-option pull-right">
+                                                        {% if adv.isAdVideo is defined and adv.isAdVideo != null %}
+                                                            <a data-toggle="tooltip" data-id="{{ adv.id }}" class="ad-info-right-bar-video" data-placement="top"
+                                                               title="<video controls loop class='img-responsive video-ad-tooltip-{{ adv.id }}' style='text-align: center; width: 100%'>
+                                                    <source src='{{ adv.isAdVideo }}' class='video-src' type='video/mp4' />
+                                                    </video>"></a>
+                                                        {% endif %}
+                                                        <a href="{{ url_route('visiosoft.module.advs::show_ad_map_location',[adv.country_id,adv.city,adv.district]) }}" data-toggle="tooltip" data-placement="top"  title="{{ adv.city_name }}, {{ adv.country_name }}"><i class="fa fa-map-marker"></i> </a>
+                                                        <a class="online" href="" data-toggle="tooltip" data-placement="top" title="{{ adv.owner }}"><i class="fa fa-user"></i> </a>
+
+                                                        {% if entries('advs').isEnabled('comparisons') %}
+                                                            {% include "visiosoft.module.comparisons::comparebtn" %}
+                                                        {% endif %}
+
+                                                    </div><!-- item-info-right -->
+                                                </div><!-- ad-meta -->
+                                            </div><!-- item-info -->
+                                        </div><!-- oc-item -->
+                                        <!-- ad-section -->
+                                        {% endfor %}
+                                        <!-- pagination  -->
+                                        <div class="text-center">
+                                            <div class="tool-pagination">
+                                                {{ advs.links()|raw }}
+                                            </div>
+                                        </div><!-- pagination  -->
+                                        {% if entries('advs').isEnabled('favs') %}
+                                            <div class="favorite-searches">
+                                                <div class="search-fav-icon col-md-1">
+                                                    <i class="fa fa-search"></i>
+                                                </div>
+                                                <div class="search-fav-tex col-md-8">
+                                                    <h4>{{ trans("visiosoft.module.advs::field.my_favorite_searches") }}</h4><br>
+                                                    <p>{{ trans("visiosoft.module.advs::field.search_desc") }}</p>
+                                                </div>
+                                                <div class="search-fav-button col-md-3">
+                                                    <button class="btn btn-success" type="button" id="save-search">{{ trans("visiosoft.module.advs::field.add_to_favorites") }}</button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                </div><!-- recommended-ads -->
+
+                            </div>
+                        </div>
+                        <div class="col-md-2"></div>
+                    </form>
+
+                </div><!-- container -->
+            </div>
+        </div>
+    </section>
+
+
+
+    </section><!-- main -->
+
+    <div id="search-fav-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header message-header">
+                    <h4 class="modal-title">{{ trans("visiosoft.module.advs::field.add_to_favorites") }}</h4>
+                </div>
+                <form action="{{ url_route("visiosoft.module.favs::add_search") }}" method="POST">
+                    <div class="modal-body search-fav-body">
+                        <input type="hidden" name="_token" value="{{ csrf_token() }}">
+                        <input name="url" type="hidden" value="{{ app.request.getRequestUri }}">
+                        <input placeholder="{{ trans("visiosoft.module.advs::field.search_name") }}" class="form-control" type="text" name="item_name" required>
+                    </div>
+                    <div class="modal-footer message-footer">
+                        <button id="send-fav-search" class="btn btn-success"  type="submit">{{ trans("visiosoft.module.advs::field.send") }}</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
+    </script>
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/admin-list.js") }}
+
+    {% if entries('advs').isEnabled('comparisons') %}
+        {% include "visiosoft.module.comparisons::comparison" %}
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,23 @@
+<li><a href="{{ url_route('visiosoft.module.profile::profile') }}">{{ trans("visiosoft.theme.base::addon.profile") }}</a></li>
+{% if entries('advs').isEnabled('carts') %}
+<li><a id="carts" href="{{ url_route('visiosoft.module.carts::cart') }}">{{ trans("visiosoft.theme.base::addon.cart") }}(<font color="red">{{ cart_items.quantity }}</font>)</a></li>
+{% endif %}
+
+
+{% if entries('advs').isEnabled('subscriptions') %}
+    <li><a id="carts" href="{{ url_route('visiosoft.module.subscriptions::subscriptions-page') }}">{{ trans('visiosoft.module.subscriptions::field.subscriptions.name') }}</a></li>
+{% endif %}
+
+{% if entries('advs').isEnabled('store') %}
+    {% set stores = entries('store','store').getStore() %}
+    {% for store in stores %}
+    <li><a id="store" href="{{ url_route('store::view',[store.slug]) }}">{{ store.name }} {{ trans('visiosoft.module.store::field.store.simple') }}</a></li>
+    {% endfor %}
+{% endif %}
+
+
+<li><a href="{{ url_route('visiosoft.module.profile::profile') }}#myads">{{ trans("visiosoft.theme.base::addon.my_ads") }}</a></li>
+{% if entries('advs').isEnabled('messages') %}
+<li><a id="messages" href="{{ url_route('visiosoft.module.profile::profile') }}#msg">{{ trans("visiosoft.theme.base::addon.my_messages") }}</a></li>
+{% endif %}
+<li><a href="{{ url_route('anomaly.module.users::logout') }}">{{ trans("visiosoft.theme.base::addon.logout") }}</a></li>

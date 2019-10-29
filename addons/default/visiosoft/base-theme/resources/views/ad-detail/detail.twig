@@ -1,0 +1,154 @@
+{% extends "theme::layouts/default" %}
+
+{% block ogdata %}
+    <meta property="og:site_name"
+          content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
+    <meta property="og:description" content="{{ adv.advs_desc|striptags|raw }}"/>
+    <meta property="og:title" content="{{ adv.title }}"/>
+    <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
+    <meta property="og:image" content="{{ adv.getViewPhotoUrl|first }}">
+    <meta property="og:type" content="website"/>
+{% endblock %}
+{% block content %}
+    {{ asset_add("scripts.js", "theme::js.default.fotorama.min.js") }}
+    {{ asset_add("theme.css", "theme::css.default.fotorama.min.css") }}
+    {% if entries('advs').isEnabled('comments') %}
+        {{ asset_add("styles.css", "visiosoft.module.comments::css/style.css") }}
+    {% endif %}
+    <section id="main" class="clearfix details-page">
+        <div class="container">
+            {% include "theme::partials/messages" %}
+            <div class="breadcrumb-section">
+                <!-- breadcrumb -->
+                <ol class="breadcrumb">
+                    {% for cat in categories %}
+                        <li><a href="{{ url_route('visiosoft.module.advs::list_cat', [cat.id]) }}">{{ cat['name'] }}</a>
+                        </li>
+                    {% endfor %}
+                </ol><!-- breadcrumb -->
+                <h2 class="title">{{ categories|last['name'] }}</h2>
+            </div>
+
+            <div class="section banner">
+            </div><!-- banner -->
+            <div class="section slider">
+                <div class="row">
+                    <!-- carousel -->
+                    <div class="col-md-7 slider-box">
+
+                        {% if blocks('ad-item-picture-block-area') is null %}
+                            {% include "visiosoft.theme.base::ad-detail/partials/blocks/ads-item-picture-block" %}
+                        {% else %}
+                            {{ blocks('ad-item-picture-block-area')  }}
+                        {% endif %}
+                    </div><!-- Controls -->
+
+                    <!-- slider-text -->
+                    <div class="col-md-5">
+                        <div class="slider-text">
+                            {% if entries('advs').isEnabled('favs') %}
+                                <a class="favorites" href="#"><i id="heart-icon-adv" class="far fa-heart"></i></a>
+                            {% endif %}
+
+                            {% if blocks('ad-item-details-block-area') is null %}
+                                {% include "visiosoft.theme.base::ad-detail/partials/blocks/ads-item-details-block" %}
+                            {% else %}
+                                {{ blocks('ad-item-details-block-area') }}
+                            {% endif %}
+                        </div><!-- slider-text -->
+                    </div>
+                </div>
+                {% if entries('advs').isEnabled('complaints') %}
+                    <a class="complaints pull-right" id="complaints"
+                       title="{{ trans('visiosoft.module.advs::field.report') }}"><i
+                                class="fa fa-exclamation-triangle"></i></a>
+                {% endif %}
+
+
+            </div><!-- slider -->
+
+
+
+            {% if blocks('ad-item-content-block-area') is null %}
+                {% include "visiosoft.theme.base::ad-detail/partials/blocks/ads-item-content-block" %}
+            {% else %}
+                {{ blocks('ad-item-content-block-area') }}
+            {% endif %}
+
+            {% if entries('advs').isEnabled('recommendedads') %}
+                {% include "visiosoft.module.recommendedads::recommended-ads" %}
+            {% endif %}
+
+        </div><!-- container -->
+    </section>
+
+
+
+    {% if entries('advs').isEnabled('complaints') %}
+        {% include "visiosoft.module.complaints::modal" %}
+    {% endif %}
+
+
+    <div id="messages_modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <form action="{{ url_route('visiosoft.module.messages::save_message', [adv.id]) }}" method="post">
+                <input id="message-token" type="hidden" name="_token" value="{{ csrf_token() }}">
+                <!-- Modal content-->
+                <div class="modal-content">
+                    <div class="modal-header message-header">
+                        <h4 class="modal-title">{{ trans('visiosoft.module.advs::field.send_message') }}</h4>
+                    </div>
+                    <div class="modal-body message-body">
+                        <input id="adv-id" type="hidden" value="{{ adv.id }}">
+                        <textarea name="detail" id="message-detail" rows="7"></textarea>
+                    </div>
+                    <div class="modal-footer message-footer">
+                        <button id="message-button" type="button"
+                                class="btn btn-primary">{{ trans('visiosoft.module.advs::field.send') }}</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="message-sent-modal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header message-header">
+                    <h4 class="modal-title">{{ trans('visiosoft.module.advs::field.message_sent') }}</h4>
+                </div>
+                <div class="modal-body message-body">
+                    <span>{{ trans('visiosoft.module.advs::field.asap') }}</span>
+                </div>
+                <div class="modal-footer message-footer">
+                    <button type="button" class="btn btn-success" data-dismiss="modal">Ok</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% if entries('advs').isEnabled('favs') %}
+        {{ asset_add("scripts.js", "visiosoft.module.favs::js/favs.js") }}
+    {% endif %}
+
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/list-item.js") }}
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/quantity.js") }}
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/phoneCounter.js") }}
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/viewed.js") }}
+
+    {% if entries('advs').isEnabled('comments') %}
+        {{ asset_add("scripts.js", "visiosoft.module.comments::js/ajaxcomment.js") }}
+    {% endif %}
+
+    {% if entries('advs').isEnabled('comparisons') %}
+        {% include "visiosoft.module.comparisons::comparison" %}
+    {% endif %}
+
+{% endblock %}
+
+{% block customjs %}
+
+    {% if entries('advs').isEnabled('streetview') and adv.map_Val != "" %}
+        {% include "visiosoft.module.streetview::list-item" %}
+    {% endif %}
+
+{% endblock %}

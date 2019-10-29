@@ -14,6 +14,6 @@ class CategoriesController extends PublicController {
             ->select('advs_advs.*','u1.username as owner', 't1.name as name')
             ->get();
 
-        return $this->view->make('visiosoft.module.advs::advs/list', compact('advs'));
+        return $this->view->make('visiosoft.theme.base::list/list', compact('advs'));
     }
 }
