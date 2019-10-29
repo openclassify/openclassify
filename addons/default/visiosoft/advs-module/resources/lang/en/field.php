@@ -73,18 +73,6 @@ return [
     'status' => [
         'name' => 'Status'
     ],
-    'next_add_advs_title' => [
-        'name' => 'Post an Ad in just 30 seconds'
-    ],
-    'next_add_advs_msg' => [
-        'name' => 'Please DO NOT post multiple ads for the same items or service. All duplicate, spam and wrongly categorized ads will be deleted.'
-    ],
-    'next_add_advs_btn' => [
-        'name' => 'Next'
-    ],
-    'cancel_add_advs_btn' => [
-        'name' => 'or Cancel'
-    ],
     'pending_adv' => [
         'name' => 'Pending Ads'
     ],

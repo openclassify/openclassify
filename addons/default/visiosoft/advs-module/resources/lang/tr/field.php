@@ -97,23 +97,6 @@ return [
         "name" => "durum",
 
     ],
-    "next_add_advs_title" => [
-        "name" => "Sadece 30 saniyede bir İlan ver",
-
-    ],
-    "next_add_advs_msg" => [
-        "name" => "Lütfen aynı ürün veya hizmet için birden fazla İlan yayınlamayın. Tüm yinelenen,
-      spam ve yanlış sınıflandırılmış İlanlar silinecek.",
-
-    ],
-    "next_add_advs_btn" => [
-        "name" => "Sonraki",
-
-    ],
-    "cancel_add_advs_btn" => [
-        "name" => "ya da iptal",
-
-    ],
     "pending_adv" => [
         "name" => "Bekleyen İlanlar",
 
