@@ -1,0 +1,30 @@
+{% set profile = findUserProfile(adv.created_by_id) %}
+
+{% if profile.gsm_phone is not null %}
+    <span class="btn btn-red show-number" data-id="{{ adv.id }}">
+        <i class="fa fa-phone-square hide-text"></i>
+        <span class="hide-text">{{ trans('visiosoft.module.advs::field.click_phone') }}</span>
+
+        {% if profile.gsm_phone is not null %}
+            <p>
+                <i class="fas fa-mobile hide-number"></i>
+                <span class="hide-number">{{ trans("visiosoft.module.profile::field.gsm_phone.name") }}: {{ profile.gsm_phone }}</span>
+            </p>
+        {% endif %}
+
+        {% if profile.office_phone is not empty %}
+            <p>
+                <i class="fas fa-headset hide-number"></i>
+                <span class="hide-number">{{ trans("visiosoft.module.profile::field.office_phone.name") }}:  {{ profile.office_phone }}</span>
+            </p>
+        {% endif %}
+
+        {% if profile.land_phone is not empty %}
+            <p>
+                <i class="fa fa-phone-square hide-number"></i>
+                <span class="hide-number">{{ trans("visiosoft.module.profile::field.office_phone.name") }}:  {{ profile.office_phone }}</span>
+            </p>
+        {% endif %}
+
+    </span>
+{% endif %}

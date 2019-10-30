@@ -62,7 +62,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $join->on('advs_advs.id', '=', 'advs_advs_translations.entry_id');
             $join->where('advs_advs_translations.locale', '=', Request()->session()->get('_locale'));
         });
-        
+
         if (!empty($param['keyword'])) {
             $delimiter = '_';
             $keyword = str_slug($param['keyword'], $delimiter);
@@ -167,19 +167,19 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             if (substr($para, 4, 3) === "cf_") {
                 $id = substr($para, 7);
                 $minmax = substr($para, 0, 3);
-                if($minmax == 'min'){
+                if ($minmax == 'min') {
 
-                    $num = $param[$minmax.'_cf_'.$id];
+                    $num = $param[$minmax . '_cf_' . $id];
                     $int = (int)$num;
-                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') >= '" . $int ."'";
+                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') >= '" . $int . "'";
                     $query = $query->whereRaw($column);
 
                 }
-                if($minmax == 'max'){
+                if ($minmax == 'max') {
 
-                    $num = $param[$minmax.'_cf_'.$id];
+                    $num = $param[$minmax . '_cf_' . $id];
                     $int = (int)$num;
-                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') <= '" . $int ."'";
+                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') <= '" . $int . "'";
                     $query = $query->whereRaw($column);
 
                 }
@@ -201,7 +201,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 $join->on('advs_advs.id', '=', 'dopings_dopings.adv_name_id');
                 $join->where('dopings_dopings.doping_type_id', '=', 4);
             });
-            
+
             $query = $query->select('advs_advs.*', 'dopings_dopings.id as doping');
         }
         if (!empty($param['sort_by'])) {
@@ -250,12 +250,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $cat1 = CategoryModel::query()->where('cats_category.id', $adv->cat1)->first();
         $cat2 = CategoryModel::query()->where('cats_category.id', $adv->cat2)->first();
 
-        $adv->setAttribute('cat1_name', $cat1->name);
-        if ($cat2 == null) {
-            $adv->setAttribute('cat2_name', "");
-        } else {
+        if (!is_null($cat1))
+            $adv->setAttribute('cat1_name', $cat1->name);
+        else
+            $adv->setAttribute('cat1_name', "");
+
+        if (!is_null($cat2))
             $adv->setAttribute('cat2_name', $cat2->name);
-        }
+
+        else
+            $adv->setAttribute('cat2_name', "");
+
 
         return $adv;
     }

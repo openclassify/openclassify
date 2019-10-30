@@ -9,8 +9,12 @@ interface ProfileRepositoryInterface extends EntryRepositoryInterface
     public function getProfile($id);
 
     public function validPasswordByEmail($email);
+
     public function validPasswordByUsername($username);
 
     public function updateUserField($fields);
-    public function changePassword($fields,$password);
+
+    public function changePassword($fields, $password);
+
+    public function findByUserID($id);
 }

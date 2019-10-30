@@ -103,25 +103,30 @@ class ProfileRepository extends EntryRepository implements ProfileRepositoryInte
 
     public function changePassword($fields, $userPassword)
     {
-            if ($fields['new_password'] != $fields['re_new_password']) {
-                $errorList[] = trans('anomaly.module.users::field.confirm_password.name');
-                $fields['error'] = $errorList;
-                return $fields;
-            }
+        if ($fields['new_password'] != $fields['re_new_password']) {
+            $errorList[] = trans('anomaly.module.users::field.confirm_password.name');
+            $fields['error'] = $errorList;
+            return $fields;
+        }
 
-            $validator = $userPassword->validate($fields['new_password']);
-            $errorList = array();
-            foreach ($validator->errors()->all() as $error) {
-                $errorList[] = $error;
-            }
-            if (count($errorList) != 0) {
-                $fields['error'] = $errorList;
-                return $fields;
-            }
+        $validator = $userPassword->validate($fields['new_password']);
+        $errorList = array();
+        foreach ($validator->errors()->all() as $error) {
+            $errorList[] = $error;
+        }
+        if (count($errorList) != 0) {
+            $fields['error'] = $errorList;
+            return $fields;
+        }
 
-            UsersUsersEntryModel::query()->find(Auth::id())->update(['password' => Hash::make($fields['new_password'])]);
-            unset($fields['new_password'], $fields['re_new_password'], $fields['confirm_password_input']);
+        UsersUsersEntryModel::query()->find(Auth::id())->update(['password' => Hash::make($fields['new_password'])]);
+        unset($fields['new_password'], $fields['re_new_password'], $fields['confirm_password_input']);
         return $fields;
+    }
+
+    public function findByUserID($id)
+    {
+        return $this->model->where('user_no_id', $id)->first();
     }
 
 
