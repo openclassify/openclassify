@@ -153,6 +153,7 @@ return [
     'send_us_your_feedback' => 'Send Us Your Feedback',
     'online_shopping' => 'GET',
     'approved' => 'Approved Successfully',
+    'extended' => 'Extended Successfully',
     'declined' => 'Declined Successfully',
     'search_on_map' => 'Search on Map',
     'post_free_ad' => 'Post Free Ad',

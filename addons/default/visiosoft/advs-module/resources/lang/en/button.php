@@ -10,6 +10,7 @@ return [
     'new_village' => 'New Village',
     'approve' => "Approve",
     'decline' => 'Decline',
+    'extend' => 'Extend',
     'sub_category' => 'Sub Categories',
     'add_sub_category' => 'Add Sub Category',
     'sub_cities' => 'Sub Cities',
