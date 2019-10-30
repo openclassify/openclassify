@@ -22,4 +22,5 @@ return [
         'cancelBtn' => "ve ya İptal",
         'link' => "",
     ],
+    'update_category_info' => 'Lütfen kategoriyi güncelleyiniz.',
 ];

@@ -257,11 +257,14 @@ class AdvsController extends PublicController
             $cat = "cat" . $i;
             if ($adv->$cat != null) {
                 $item = $this->category_repository->getItem($adv->$cat);
-                $categories['cat' . $i] = [
-                    'name' => $item->name,
-                    'id' => $item->id
-                ];
-                $categories_id[] = $item->id;
+                if (!is_null($item)) {
+                    $categories['cat' . $i] = [
+                        'name' => $item->name,
+                        'id' => $item->id
+                    ];
+                    $categories_id[] = $item->id;
+                }
+
             }
         }
 
@@ -681,8 +684,13 @@ class AdvsController extends PublicController
         for ($i = 1; $i < 7; $i++) {
             if ($adv[$cat . $i] != null) {
                 $name = $categoryRepository->getSingleCat($adv[$cat . $i]);
-                $cats_d['cat' . $i] = $name->name;
-                $cats['cat' . $i] = $name->id;
+                if (!is_null($name)) {
+                    $cats_d['cat' . $i] = $name->name;
+                    $cats['cat' . $i] = $name->id;
+                } else {
+                    $this->messages->info(trans('visiosoft.module.advs::message.update_category_info'));
+                }
+
             }
         }
 

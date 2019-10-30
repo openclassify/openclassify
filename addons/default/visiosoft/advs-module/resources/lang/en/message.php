@@ -22,4 +22,5 @@ return [
         'cancelBtn' => "or Cancel",
         'link' => "",
     ],
+    'update_category_info' => 'Please update category.',
 ];
