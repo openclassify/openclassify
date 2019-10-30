@@ -478,7 +478,6 @@ textarea {
 
 .offered-field {
     border-top: 1px solid #d5d5d5;
-    border-bottom: 1px solid #d5d5d5;
 }
 
 .banner-section h1.title {
@@ -1608,10 +1607,6 @@ a.verified i {
 .add-cart-reduce {
     padding: 0px;
     width: 25px;
-}
-
-.offered-field {
-    margin-top: 15px;
 }
 
 .offered-row {

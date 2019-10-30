@@ -44,13 +44,13 @@ return [
         'name' => 'Village'
     ],
     'gsm_phone' => [
-        'name' => 'GSM Phone Number'
+        'name' => 'GSM Phone'
     ],
     'land_phone' => [
-        'name' => 'Land Phone Number'
+        'name' => 'Land Phone'
     ],
     'office_phone' => [
-        'name' => 'Office Phone Number'
+        'name' => 'Office Phone'
     ],
     'register_type' => [
         'name' => 'Register Type'

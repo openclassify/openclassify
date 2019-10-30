@@ -22,7 +22,9 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $plugins = [];
+    protected $plugins = [
+        ProfileModulePlugin::class
+    ];
 
     /**
      * The addon Artisan commands.

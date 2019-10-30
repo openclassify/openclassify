@@ -1,0 +1,112 @@
+<div class="slider-text">
+    {% if entries('advs').isEnabled('favs') %}
+        <!-- favorites ad -->
+        <a class="favorites" href="#">
+            <i id="heart-icon-adv" class="far fa-heart"></i>
+        </a>
+        <!-- favorites ad -->
+    {% endif %}
+
+    {% if blocks('ad-item-details-block-area') is null %}
+
+        <h3 class="title">{{ adv.title }}</h3>
+
+        <h2 class="ad-price">
+            <b>{{ adv.price.format() }}</b> {{ adv.currency }}
+
+            {% include "theme::ad-detail/partials/author-button" %}
+
+        </h2>
+
+        <div class="user-interactions">
+
+            {% if adv.is_get_adv == "1" and adv.stock != "0" and entries('advs').isEnabled('carts') %}
+                {% include "visiosoft.module.carts::ad-detail/quantity" %}
+            {% endif %}
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+
+                {% if entries('advs').isEnabled('favs') %}
+                    <!-- favorites owner -->
+                    <a id="owner-fav" href="#"><i id="heart-icon-seller" class="far fa-heart"></i></a>
+                    <!-- favorites owner -->
+                {% endif %}
+
+                <span class="icon">{{ trans('visiosoft.module.advs::field.offered_by') }}:
+                    <a id="owner" href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}"
+                       data-content="{{ adv.owner_id }}">{{ adv.owner }}</a>
+                </span>
+
+                <span class="icon"> {{ trans('visiosoft.module.advs::field.ad_id') }}:
+                    <a href="#" id="adv_id" class="time">{{ adv.id }}</a>
+                </span>
+
+            </div>
+
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+
+                <span class="icon"><i class="far fa-clock"></i>
+                    <a href="#">{{ adv.created_at|date('d/m/Y') }}</a>
+                </span>
+
+                {% if setting_value('visiosoft.module.location::detail_page_location') %}
+                    <span class="icon">
+                        <i class="fa fa-map-marker"></i>
+                        <a href="#">{{ adv.city_name }}, {{ adv.country_name }}</a>
+                    </span>
+                {% endif %}
+
+                {% if adv.isCorporate == 2 %}
+                    <span class="icon">
+                        <i class="fa fa-suitcase"></i>
+                        <a href="{{ url_route('visiosoft.module.advs::list_user_ad',
+                            [adv.created_by_id]) }}">{{ adv.owner }}</a>
+                    </span>
+                {% endif %}
+
+            </div>
+
+            {% if entries('advs').isEnabled('comparisons') %}
+
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+                    {% include "visiosoft.module.comparisons::comparebtn" %}
+
+                    <span class="icon">{{ trans('visiosoft.module.comparisons::field.comparisonpagetitle') }}</span>
+
+                </div>
+
+            {% endif %}
+
+            {% if(adv.video_url != null) %}
+                <!-- cloudinary -->
+                {% include "visiosoft.module.cloudinary::ad-detail/player-modal" %}
+                <!-- cloudinary -->
+            {% endif %}
+
+
+            <div class="contact-with">
+                <h4> {{ trans('visiosoft.module.advs::field.contact_with') }}</h4>
+
+                {% include "visiosoft.module.profile::ad-detail/contact-with" %}
+
+                {% if entries('advs').isEnabled('messages') %}
+                    <!-- messages -->
+                    {% include "visiosoft.module.messages::ad-detail/contact-with" %}
+                    <!-- messages -->
+                {% endif %}
+
+            </div>
+
+            <!-- social-links -->
+            <div class="social-links">
+                {% include "theme::ad-detail/partials/social" %}
+            </div>
+            <!-- social-links -->
+
+        </div>
+
+    {% else %}
+        {{ blocks('ad-item-details-block-area') }}
+    {% endif %}
+
+</div>

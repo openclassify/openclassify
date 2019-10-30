@@ -1,0 +1,14 @@
+<h4>{{ trans('visiosoft.module.advs::field.share') }}</h4>
+<ul class="list-inline">
+    <li><a target="_blank"
+           href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}"><i
+                    class="fab fa-facebook-square"></i></a></li>
+    <li><a target="_blank"
+           href="https://twitter.com/intent/tweet?text={{ app.request.uri }}"><i
+                    class="fab fa-twitter-square"></i></a></li>
+    <li><a target="_blank" href="https://wa.me/?text={{ app.request.uri }}"><i
+                    class="fab fa-whatsapp"></i></a></li>
+    <li><a target="_blank"
+           href="https://www.linkedin.com/shareArticle?mini=true&url={{ app.request.uri }}"><i
+                    class="fab fa-linkedin"></i></a></li>
+</ul>
