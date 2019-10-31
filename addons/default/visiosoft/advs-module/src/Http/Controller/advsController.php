@@ -674,7 +674,7 @@ class AdvsController extends PublicController
         $adv = $advRepository->getAdvArray($id);
 
 
-        if ($adv['created_by_id'] != Auth::id()) {
+        if ($adv['created_by_id'] != Auth::id() && !Auth::user()->hasRole('admin')) {
             abort(403);
         }
         $cats_d = array();
