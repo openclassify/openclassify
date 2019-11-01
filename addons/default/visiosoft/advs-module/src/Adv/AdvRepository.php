@@ -238,10 +238,12 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     {
         $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
         $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
-
-        $adv->setAttribute('country_name', $country->name);
-        $adv->setAttribute('city_name', $city->name);
-
+        if($country != null) {
+            $adv->setAttribute('country_name', $country->name);
+        }
+        if($city != null) {
+            $adv->setAttribute('city_name', $city->name);
+        }
         return $adv;
     }
 
