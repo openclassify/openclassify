@@ -2,15 +2,7 @@
 {% block content %}
     <section id="main" class="clearfix ad-post-page">
         <div class="container">
-            <div class="breadcrumb-section">
-                <!-- breadcrumb -->
-                <ol class="breadcrumb">
-                    <li><a href="/">{{ trans('visiosoft.module.advs::field.home') }}</a></li>
-                    <li>{{ trans('visiosoft.module.advs::field.ad_post') }}</li>
-                </ol><!-- breadcrumb -->
-                <h2 class="title">{{ trans('visiosoft.module.advs::field.post_free_ad') }}</h2>
-            </div><!-- banner -->
-
+            {% include "theme::new-ad/partials/breadcrumb" %}
             <div id="ad-cat-section">
                 <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
                     <div class="row category-tab">

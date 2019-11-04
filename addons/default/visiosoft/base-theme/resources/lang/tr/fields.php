@@ -1,8 +1,8 @@
 <?php
 
 return [
-   'post_ad' => 'İlanınızı Gönderin',
-   'featured_ads' => "Öne Çıkan İlanlar",
+    'post_ad' => 'İlanınızı Gönderin',
+    'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
     'join-us' => 'Üye Ol',
     'sign-in' => 'Üye Girişi',
@@ -19,7 +19,6 @@ return [
     'recent_ads' => 'Son ilanlar',
 
 
-
     'email' => [
         'name' => 'Email Adresi',
     ],
@@ -31,5 +30,8 @@ return [
     ],
     'content' => [
         'name' => 'Açıklama',
+    ],
+    'price' => [
+        'name' => 'Fiyat'
     ],
 ];

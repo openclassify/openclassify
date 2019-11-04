@@ -1,0 +1,17 @@
+{% if app.request.get('user') != null or app.request.get('user') != "" %}
+    <div class="col-md-12 upper-list-banner">
+        <div class="upper-list-user">
+            <div class="upper-list-img">
+                <a href=""><img src="{{ userProfile.file.url }}" alt=""></a>
+            </div>
+            <div class="upper-list-info">
+                {{ user.first_name }} {{ user.last_name }}
+            </div>
+        </div>
+        {% if userProfile.adv_listing_banner.url == '' %}
+            <img src="{{ img('theme::images/bg/1.png').url }}">
+        {% else %}
+            <img src="{{ userProfile.adv_listing_banner.url }}">
+        {% endif %}
+    </div>
+{% endif %}

@@ -3,20 +3,9 @@
     <section id="main" class="clearfix home-default">
         <div class="container">
             {% include "theme::partials/messages" %}
-            <div class="breadcrumb-section">
-                <!-- breadcrumb -->
-                <ol class="breadcrumb">
-                    <li><a>{{ trans('visiosoft.module.advs::field.home') }}</a></li>
-                    <li>{{ trans('visiosoft.module.advs::field.ad_post') }}</li>
-                </ol><!-- breadcrumb -->
-                <h2 class="title">
-                    {% if entry(id) == null %}
-                        {{ trans('visiosoft.module.advs::field.create_adv') }}
-                    {% else %}
-                        {{ trans('visiosoft.module.advs::field.edit_adv') }}
-                    {% endif %}
-                </h2>
-            </div>
+
+            {% include "theme::new-ad/partials/breadcrumb" %}
+
             <div class="adpost-details">
                 <div class="row">
                     <div class="col-md-12">
@@ -51,7 +40,9 @@
                                                 </a>
                                             </li>
                                         {% endfor %}
-                                        <a href="{{ url_route('adv::edit_category',[id]) }}"><i class="fas fa-pencil-alt"></i> {{ trans('visiosoft.module.advs::field.edit_category') }}</a>
+                                        <a href="{{ url_route('adv::edit_category',[id]) }}"><i
+                                                    class="fas fa-pencil-alt"></i> {{ trans('visiosoft.module.advs::field.edit_category') }}
+                                        </a>
                                     </ul>
                                 </div>
                                 <div class="row form-group add-title">
@@ -111,42 +102,12 @@
                                 <div class="row form-group images">
                                     {{ form.fields.files.input |raw }}
                                 </div>
-                                {% for custom_field in custom_fields %}
-                                    <div class="row form-group custom-fields">
-                                        <label class="col-sm-3 label-title">{{ custom_field.custom_field_label|raw }}</label>
-                                        <div class="col-sm-9">
-                                            {{ custom_field.custom_field_input|raw }}
-                                        </div>
-                                    </div>
-                                {% endfor %}
-                                <div class="row form-group location-map">
-                                    <div class="col-sm-4">
-                                        <ul style="padding: 0">
-                                            <li class="country-data" data-content="{{ adv['country_id'] }}"
-                                                data-default="{{ setting_value('visiosoft.module.advs::default_country') }}"
-                                                class="location-field country-data">{{ form.fields.country|raw }}</li>
-                                            <li class="city-data" data-content="{{ adv['city'] }}"
-                                                data-default="{{ setting_value('visiosoft.module.advs::default_city') }}"
-                                                class="location-field city-data">{{ form.fields.city|raw }}</li>
-                                            <li class="district-data" data-content="{{ adv['district'] }}"
-                                                class="location-field district-data">{{ form.fields.district|raw }}</li>
-                                            <li class="neighborhood-data" data-content="{{ adv['neighborhood'] }}"
-                                                class="location-field neighborhood-data">{{ form.fields.neighborhood|raw }}</li>
-                                            <li class="village-data" data-content="{{ adv['village'] }}"
-                                                class="location-field">{{ form.fields.village|raw }}</li>
-                                        </ul>
-                                    </div>
-                                    <div class="col-sm-8">
-                                        <div id="map-canvas" style="
-                                position: relative; overflow: hidden;
-                                transform: translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px);
-                                width: 100%;
-                                height:550px;
-                                background-color: rgb(229, 227, 223);
-                            "></div>
-                                    </div>
-                                </div>
-                                <input value="{{adv.map_Val}}" name="map_Val" data-max="255" data-mask="" data-alias="" data-regex=""
+
+
+                                {% include "visiosoft.module.location::new-ad/map" %}
+
+                                <input value="{{ adv.map_Val }}" name="map_Val" data-max="255" data-mask=""
+                                       data-alias="" data-regex=""
                                        type="text" placeholder="" class="hidden d-none mapVal" data-field="map_Val"
                                        data-field_name="map_Val" data-provides="anomaly.field_type.text">
                             </div><!-- section -->

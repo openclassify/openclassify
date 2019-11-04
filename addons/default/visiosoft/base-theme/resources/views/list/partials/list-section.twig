@@ -1,0 +1,40 @@
+<div class="section recommended-ads">
+
+    <div class="row list-header">
+
+        <div class="col-md-6">
+            {% include "theme::list/partials/list-sort-by" %}
+        </div>
+        <div class="col-md-6">
+            {% include "visiosoft.theme.base::list/partials/display-mode" %}
+
+        </div>
+    </div>
+
+
+    {% if entries('advs').isEnabled('customfields') %}
+        {% include "visiosoft.module.customfields::selecttop" %}
+    {% endif %}
+
+    <div class="category-tabs"></div>
+
+    {% include "theme::list/partials/featured-ads" %}
+
+
+    {% include "theme::list/partials/ads" %}
+
+
+    <!-- pagination  -->
+    <div class="text-center">
+        <div class="tool-pagination">
+            {{ advs.links()|raw }}
+        </div>
+    </div>
+    <!-- pagination  -->
+
+
+    {% if entries('advs').isEnabled('favs') %}
+        {% include "visiosoft.module.favs::list/favorites-section" %}
+    {% endif %}
+
+</div>

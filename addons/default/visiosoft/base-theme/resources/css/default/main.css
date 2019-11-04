@@ -1018,7 +1018,7 @@ a.verified i {
 }
 
 .oc-item1 {
-    border: 1px solid #f3f3f3;
+    border: 1px solid #e4e1e1;
     margin: 18px 0;
     min-height: 152px;
     border-radius: 2px;
@@ -1512,7 +1512,6 @@ a.verified i {
 }
 
 .recommended-ads {
-    margin-bottom: 0;
     display: inline-block;
 }
 
@@ -4856,7 +4855,6 @@ input, select, a, .transition,
 
 .favorite-searches {
     width: 100%;
-    height: 80px;
     display: inline-block;
     margin-top: 40px;
     border: 1px solid #dedede;
@@ -5776,7 +5774,7 @@ input[name="username"] {
 }
 
 .viewType {
-    color: #5b8dbd !important;
+    color: #6f6f6f !important;
 }
 
 .table-image {
@@ -5996,4 +5994,18 @@ input[name="username"] {
     transform: rotate(45deg);
     -webkit-transform: rotate(0deg);
     overflow: hidden;
+}
+.search-filter-button {
+    width: 100%;
+}
+.list-header {
+    border-bottom: 1px solid #f6f6f6;
+}
+.list-header .sort-by-list {
+    margin: 25px;
+    font-size: 18px;
+}
+
+.list-header .sort-by-list h5{
+    font-size: 18px;
 }

@@ -30,4 +30,7 @@ return [
     'content' => [
         'name' => 'Content',
     ],
+    'price' => [
+        'name' => 'Price'
+    ],
 ];

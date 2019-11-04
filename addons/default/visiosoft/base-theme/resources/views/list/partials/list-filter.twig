@@ -2,19 +2,20 @@
     <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
     <input type="hidden" name="user" value="{{ app.request.get('user') }}">
     <div class="accordion">
-        <!-- panel-group -->
         <div class="panel-group" id="accordion">
-            <!-- panel -->
             <div class="panel-default panel-faq">
-                <!-- panel-heading -->
+
                 <div class="panel-heading active-faq">
                     <a data-toggle="collapse" data-parent="#accordion" href="#accordion-one">
-                        <h4 class="panel-title">{{ trans("visiosoft.module.advs::field.categories") }}<span
-                                    class="pull-right"><i class="fa fa-minus"></i></span></h4>
+                        <h4 class="panel-title">{{ trans("visiosoft.module.advs::field.categories") }}
+                            <span class="pull-right">
+                                <i class="fa fa-minus"></i>
+                            </span>
+                        </h4>
                     </a>
-                </div><!-- panel-heading -->
+                </div>
+
                 <div id="accordion-one" class="panel-collapse collapse in">
-                    <!-- panel-body -->
                     <div class="panel-body">
                         {% for maincat in mainCats %}
                             <a class="main-cat-item"
@@ -33,220 +34,71 @@
                                 </ul>
                             {% endfor %}
                         {% endfor %}
-                    </div><!-- panel-body -->
+                    </div>
                 </div>
-            </div><!-- panel -->
-            {% if setting_value('visiosoft.module.location::list_page_location') %}
-                <div class="panel-default panel-faq">
-                    <!-- panel-heading -->
-                    <div class="panel-heading active-faq">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion-location">
-                            <h4 class="panel-title">{{ trans("visiosoft.module.advs::field.location") }}<span
-                                        class="pull-right"><i class="fa fa-minus"></i></span></h4>
-                        </a>
-                    </div><!-- panel-heading -->
+            </div>
 
-                    <div id="accordion-location" class="panel-collapse collapse in">
-                        <!-- panel-body -->
-                        <div class="panel-body">
-                            <ul id="list-items" class="filter-list-items">
-                                <li>
-                                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.country.name") }}</label>
-                                    <select class="form-control" name="country" id="countries">
-                                        {% for country in countries %}
-                                            <option value="{{ country.id }}">{{ country.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </li>
-                                <li>
-                                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.city.name") }}</label>
-                                    <select class="form-control" name="city[]" id="cities" multiple>
-                                        {% for city in cities %}
-                                            <option value="{{ city.id }}">{{ city.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </li>
-                                <li>
-                                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.district.name") }}</label>
-                                    <select class="form-control" name="district" id="districts">
-                                        {% for district in districts %}
-                                            <option value="{{ district.id }}">{{ district.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </li>
-                                <li>
-                                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.neighborhood.name") }}</label>
-                                    <select class="form-control" name="neighborhood" id="neighborhoods">
-                                        {% for neighborhood in neighborhoods %}
-                                            <option value="{{ neighborhood.id }}">{{ neighborhood.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </li>
-                                <li>
-                                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.village.name") }}</label>
-                                    <select class="form-control" name="village" id="village">
-                                        {% for village in villages %}
-                                            <option value="{{ village.id }}">{{ village.name }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </li>
-                            </ul>
-                        </div><!-- panel-body -->
-                    </div>
-                </div><!-- panel -->
+            {% include "visiosoft.module.location::list/filter" %}
+
+            {% if entries('advs').isEnabled('customfields') %}
+                {% include "visiosoft.module.customfields::list/filter" %}
             {% endif %}
-            {% for key,value in checkboxes %}
-                <!-- panel -->
-                <div class="panel-default panel-faq">
-                    <!-- panel-heading -->
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion-{{ loop.index }}">
-                            <h4 class="panel-title">{{ value.name }}<span class="pull-right"><i class="fa fa-minus"></i></span>
-                            </h4>
-                        </a>
-                    </div><!-- panel-heading -->
 
-                    <div id="accordion-{{ loop.index }}" class="panel-collapse in">
-                        <!-- panel-body -->
-                        <div class="panel-body">
-                            {% for key, val in value %}
-                                <div class="input-outer">
-                                    <ul>
-                                        {% for key1, value1 in val %}
-                                            <li class="cf-li-item">
-                                                <input value="{{ key1 }}" type="checkbox" name="cf_{{ value.id }}[]"
-                                                       id=""
-                                                        {% if key1 in app.request.get('cf_'~ value.id) %}
-                                                            checked
-                                                        {% endif %}
-                                                > <span class="span{{ key1 }}">{{ value1 }}</span>
-                                            </li>
-                                        {% endfor %}
-                                    </ul>
-                                </div>
-                            {% endfor %}
-                        </div><!-- panel-body -->
-                    </div>
-                </div><!-- panel -->
-            {% endfor %}
-
-            {% for key,value in textfields %}
-                <!-- panel -->
-                <div class="panel-default panel-faq">
-                    <!-- panel-heading -->
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion-{{ loop.index }}">
-                            <h4 class="panel-title">{{ key }}<span class="pull-right"><i class="fa fa-minus"></i></span>
-                            </h4>
-                        </a>
-                    </div><!-- panel-heading -->
-
-                    <div id="accordion-{{ loop.index }}" class="panel-collapse collapse in">
-                        <!-- panel-body -->
-                        <div class="panel-body">
-                            <input name="{{ key }}" type="text" class="form-control" value="">
-                        </div><!-- panel-body -->
-                    </div>
-                </div><!-- panel -->
-            {% endfor %}
-
-
-            {% for key,value in ranges %}
-
-                <!-- panel -->
-                <div class="panel-default panel-faq">
-                    <!-- panel-heading -->
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion-range{{ value.id }}">
-                            <h4 class="panel-title">{{ value.name }}<span class="pull-right"><i class="fa fa-minus"></i></span>
-                            </h4>
-                        </a>
-                    </div><!-- panel-heading -->
-
-                    <div id="accordion-range{{ value.id }}" class="panel-collapse collapse in">
-                        <!-- panel-body -->
-                        <div class="panel-body">
-
-                            <input type="number" class="price-input" value="{{ app.request.get('min_cf_'~ value.id) }}"
-                                   name="min_cf_{{ value.id }}" min="0" placeholder="Min"> - <input class="price-input"
-                                                                                                    type="number"
-                                                                                                    value="{{ app.request.get('max_cf_'~ value.id) }}"
-                                                                                                    name="max_cf_{{ value.id }}"
-                                                                                                    placeholder="Max">
-
-                        </div><!-- panel-body -->
-                    </div>
-                </div><!-- panel -->
-            {% endfor %}
-
-            <!-- panel -->
+            <!-- Price -->
             <div class="panel-default panel-faq">
-                <!-- panel-heading -->
                 <div class="panel-heading">
                     <a data-toggle="collapse" data-parent="#accordion" href="#accordion-three">
                         <h4 class="panel-title">
-                            Price
+                            {{ trans('theme::fields.price.name') }}
                             <span class="pull-right"><i class="fa fa-minus"></i></span>
                         </h4>
                     </a>
-                </div><!-- panel-heading -->
+                </div>
+
                 <div id="accordion-three" class="panel-collapse collapse in" aria-expanded="true" style="">
-                    <!-- panel-body -->
                     <div class="panel-body">
-                        <div class="price-range"><!--price-range-->
+                        <div class="price-range">
                             <div class="price">
+
                                 {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
+
                                 <input type="number" class="price-input" value="{{ request.min_price }}"
-                                       name="min_price" min="0" placeholder="Min"> - <input class="price-input"
-                                                                                            type="number"
-                                                                                            value="{{ request.max_price }}"
-                                                                                            name="max_price"
-                                                                                            placeholder="Max">
+                                       name="min_price" min="0" placeholder="Min"> -
+
+                                <input class="price-input" type="number" value="{{ request.max_price }}"
+                                       name="max_price" placeholder="Max">
+
                                 <select name="currency" id="currency">
                                     {% for currency in active_currencies %}
                                         <option value="{{ currency }}">{{ currency }}</option>
                                     {% endfor %}
                                 </select>
+
                             </div>
-                        </div><!--/price-range-->
-                    </div><!-- panel-body -->
+                        </div>
+                    </div>
                 </div>
             </div>
+            <!-- Price -->
+
+
+            {% if entries('advs').isEnabled('searchbydistance') %}
+                <!--Search By Distance-->
+                {% include "visiosoft.module.searchbydistance::list/filter" %}
+                <!--Search By Distance-->
+            {% endif %}
+
             <div class="panel-default panel-faq">
-                {% if entries('advs').isEnabled('searchbydistance') %}
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" data-parent="#accordion" href="#accordion-four">
-                            <h4 class="panel-title">
-                                {{ trans("visiosoft.module.searchbydistance::field.searchbydistance") }}
-                                <span class="pull-right"><i class="fa fa-minus"></i></span>
-                            </h4>
-                        </a>
-                    </div><!-- panel-heading -->
-                    <div id="accordion-four" class="panel-collapse collapse in" aria-expanded="true" style="">
-                        <!-- panel-body -->
-                        <div class="panel-body">
-                            <div class="price-range"><!--price-range-->
-
-                                <select name="distance" id="distance" class="form-control">
-                                    <option value="10" {{ request.distance==10 ? 'selected' : '' }}>10</option>
-                                    <option value="20" {{ request.distance==20 ? 'selected' : '' }}>20</option>
-                                    <option value="50" {{ request.distance==50 ? 'selected' : '' }}>50</option>
-                                </select>
-
-                                <input type="hidden" name="dlong" id="distlong">
-                                <input type="hidden" name="dlat" id="distlat">
-                            </div><!--/price-range-->
-                        </div><!-- panel-body -->
+                <div class="panel-heading text-center">
+                    <div id="search-button">
+                        <button type="submit" class="btn btn-primary search-filter-button">
+                            {{ trans("visiosoft.module.advs::field.search") }}
+                        </button>
+                        <h5><font color="#333">{{ trans('theme::message.filter_by_search_msg') }}</font></h5>
                     </div>
-                    {{ asset_add("scripts.js", "visiosoft.module.searchbydistance::js/script.js") }}
-                {% endif %}
-                <div id="search-button">
-                    <button type="submit"
-                            class="btn btn-default">{{ trans("visiosoft.module.advs::field.search") }}</button>
                 </div>
-            </div><!-- panel -->
+            </div>
 
-        </div><!-- panel-group -->
+        </div>
     </div>
-</div><!-- accordion-->
-{{ asset_add("scripts.js", "visiosoft.theme.base::js/filterLocation.js") }}
+</div>
