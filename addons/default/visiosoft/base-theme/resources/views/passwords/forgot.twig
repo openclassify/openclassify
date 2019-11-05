@@ -1,4 +1,4 @@
-{% extends "theme::layouts/default" %}
+{% extends "visiosoft.theme.base::layouts/default" %}
 {% block content %}
     <section id="main" class="clearfix user-page">
         <div class="container">
@@ -6,7 +6,7 @@
                 <!-- user-login -->
                 <div class="col-lg-6 col-lg-offset-3">
                     <div class="user-account">
-                        {% include "theme::partials/messages" %}
+                        {% include "visiosoft.theme.base::partials/messages" %}
                         <h2>Password Forgot</h2>
                         <!-- form -->
                         {% set form = form('forgot_password').redirect(request_get('redirect', '/')).get()  %}

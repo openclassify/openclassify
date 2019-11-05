@@ -1,14 +1,14 @@
-{% extends "theme::layouts/default" %}
+{% extends layout('list') %}
 
 {% block content %}
     <section id="main" class="clearfix category-page">
 
         <div class="container">
 
-            {% include "theme::partials/messages" %}
+            {% include "visiosoft.theme.base::partials/messages" %}
 
             <!-- breadcrumb -->
-            {% include "theme::list/partials/breadcrumb" %}
+            {% include "visiosoft.theme.base::list/partials/breadcrumb" %}
             <!-- breadcrumb -->
 
             {% block listContent %}
@@ -16,15 +16,15 @@
 
                     <div class="row">
 
-                        {% include "theme::list/partials/user-section" %}
+                        {% include "visiosoft.theme.base::list/partials/user-section" %}
 
                         <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
 
-                            {% include "theme::list/partials/list-filter" %}
+                            {% include "visiosoft.theme.base::list/partials/list-filter" %}
 
                             <div class="col-sm-8 col-md-9">
 
-                                {% include "theme::list/partials/list-section" %}
+                                {% include "visiosoft.theme.base::list/partials/list-section" %}
 
 
                             </div>

@@ -7,8 +7,8 @@
              data-thumbheight="48">
             {% set advPhoto = '' %}
             {% if count(adv.files) == 0 %}
-                {% set advPhoto = img('theme::images/no-image.png').url %}
-                <a href="{{ image }}"><img src="{{ img('theme::images/no-image.png').url }}"></a>
+                {% set advPhoto = img('visiosoft.theme.base::images/no-image.png').url %}
+                <a href="{{ image }}"><img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}"></a>
             {% else %}
                 {% for image in adv.getViewPhotoUrl %}
                     <a href="{{ image }}"><img src="{{ image }}"></a>

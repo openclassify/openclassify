@@ -1,4 +1,4 @@
-{% extends "theme::layouts/default" %}
+{% extends "visiosoft.theme.base::layouts/default" %}
 {% block content %}
     <section id="main" class="clearfix user-page">
         <div class="container">
@@ -6,7 +6,7 @@
                 <!-- user-login -->
                 <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
                     <div class="user-account">
-                        {% include "theme::partials/messages" %}
+                        {% include "visiosoft.theme.base::partials/messages" %}
                         <h2>Create an Account</h2>
                         {% set form = form('register2').redirect(request_get('redirect', '/')).get()  %}
                             {{ form.open()|raw }}

@@ -41,16 +41,16 @@
                         <h2>{{ trans('visiosoft.module.advs::field.send_us_your_feedback') }}</h2>
                         <p>{{ form('contact').to('info@openclassify.com').from(setting_value('streams::email')).
                             handler('\\Anomaly\\ContactPlugin\\Form\\ContactFormHandler@handle').
-                            fields({'email': {'label': trans('theme::fields.email.name'),'type': 'email','required': true,},
-                                'name': {'label': trans('theme::fields.name.name'),'type': 'text','required': true,},
-                                'subject': {'label': trans('theme::fields.subject.name'),'type': 'text','required': true,},
-                                'content': {'label': trans('theme::fields.content.name'),'type': 'textarea','required': true,}})
-                            .actions({'submit': {'text': trans('theme::button.send.name')}})|raw }}</p>
+                            fields({'email': {'label': trans('visiosoft.theme.base::fields.email.name'),'type': 'email','required': true,},
+                                'name': {'label': trans('visiosoft.theme.base::fields.name.name'),'type': 'text','required': true,},
+                                'subject': {'label': trans('visiosoft.theme.base::fields.subject.name'),'type': 'text','required': true,},
+                                'content': {'label': trans('visiosoft.theme.base::fields.content.name'),'type': 'textarea','required': true,}})
+                            .actions({'submit': {'text': trans('visiosoft.theme.base::button.send.name')}})|raw }}</p>
                     </div>
                 </div><!-- feedback -->
             </div><!-- row -->
         </div>
     </div><!-- container -->
 </section><!-- main -->
-{% include "theme::partials/messages" %}
+{% include "visiosoft.theme.base::partials/messages" %}
 {{ asset_add("scripts.js", "visiosoft.theme.base::js/map.js") }}

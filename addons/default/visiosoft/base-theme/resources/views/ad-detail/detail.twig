@@ -1,4 +1,4 @@
-{% extends "theme::layouts/default" %}
+{% extends layout('ad-detail') %}
 
 {% block ogdata %}
     <meta property="og:site_name"
@@ -19,7 +19,7 @@
     <section id="main" class="clearfix details-page">
         <div class="container">
 
-            {% include "theme::partials/messages" %}
+            {% include "visiosoft.theme.base::partials/messages" %}
 
             <!-- breadcrumb -->
             <div class="breadcrumb-section">
@@ -38,10 +38,10 @@
             <div class="section slider">
                 <div class="row">
 
-                    {% include "theme::ad-detail/partials/slider" %}
+                    {% include "visiosoft.theme.base::ad-detail/partials/slider" %}
 
                     <div class="col-md-5">
-                        {% include "theme::ad-detail/partials/detail" %}
+                        {% include "visiosoft.theme.base::ad-detail/partials/detail" %}
                     </div>
                 </div>
 

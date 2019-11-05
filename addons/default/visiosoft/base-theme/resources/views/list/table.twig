@@ -1,10 +1,10 @@
-{% extends "theme::list/list" %}
+{% extends "visiosoft.theme.base::list/list" %}
 {% block listContent %}
 
     <div class="category-info">
         <div class="row">
 
-            {% include "theme::list/partials/user-section" %}
+            {% include "visiosoft.theme.base::list/partials/user-section" %}
 
             <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
 
@@ -16,7 +16,7 @@
                         <div class="row">
 
                             <div class="col-md-6">
-                                    {% include "theme::list/partials/list-sort-by" %}
+                                    {% include "visiosoft.theme.base::list/partials/list-sort-by" %}
                             </div>
                             <div class="col-md-6">
                                 {% include "visiosoft.theme.base::list/partials/display-mode" %}
@@ -88,5 +88,5 @@
 {% endblock %}
 {% block customjs %}
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/list-table.js") }}
-    {% include "theme::scroll-modal" %}
+    {% include "visiosoft.theme.base::scroll-modal" %}
 {% endblock %}

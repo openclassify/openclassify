@@ -1,10 +1,11 @@
-{% extends "theme::layouts/default" %}
+{% extends layout('new-ad') %}
+
 {% block content %}
     <section id="main" class="clearfix home-default">
         <div class="container">
-            {% include "theme::partials/messages" %}
+            {% include "visiosoft.theme.base::partials/messages" %}
 
-            {% include "theme::new-ad/partials/breadcrumb" %}
+            {% include "visiosoft.theme.base::new-ad/partials/breadcrumb" %}
 
             <div class="adpost-details">
                 <div class="row">
