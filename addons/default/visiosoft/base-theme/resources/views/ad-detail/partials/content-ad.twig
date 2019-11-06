@@ -7,9 +7,11 @@
                                           href="#description">{{ trans('visiosoft.module.advs::field.description.name') }}</a>
                     </li>
                     {% if features != null %}
-                        <li class=""><a data-toggle="tab"
-                                        href="#features">{{ trans('visiosoft.module.advs::field.features') }}</a>
-                        </li>
+                        {% if entries('advs').isEnabled('customfields') %}
+                            <li class=""><a data-toggle="tab"
+                                            href="#features">{{ trans('visiosoft.module.advs::field.features') }}</a>
+                            </li>
+                        {% endif %}
                     {% endif %}
 
                     {% if entries('advs').isEnabled('streetview') and adv.map_Val != "" %}
