@@ -103,7 +103,9 @@
                                 <div class="row form-group images">
                                     {{ form.fields.files.input |raw }}
                                 </div>
-
+                                {% if entries('advs').isEnabled('customfields') %}
+                                    {% include "visiosoft.module.customfields::new-ad/fields" %}
+                                {% endif %}
 
                                 {% include "visiosoft.module.location::new-ad/map" %}
 
