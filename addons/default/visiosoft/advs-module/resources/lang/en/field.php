@@ -206,4 +206,10 @@ return [
         'name' => 'Sold out',
     ],
     'edit_category' => 'Edit Category',
+    'max' => [
+        'name' => 'Max',
+    ],
+    'min' => [
+        'name' => 'Min',
+    ],
 ];
