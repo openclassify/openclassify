@@ -133,7 +133,7 @@ return [
     "list-page" => "Liste Sayfası",
     "search" => "Arama",
     "recommended" => "Sizin için Önerilen İlanlar",
-    "sort_by" => "Göre sırala",
+    "sort_by" => "Sırala",
     "pick_option" => "Bir seçenek seçin",
     "price_high" => "Fiyat pahalıdan ucuza",
     "price-low" => "Fiyat Düşük Yüksek",

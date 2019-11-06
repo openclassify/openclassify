@@ -12,14 +12,14 @@
 <html>
 
 <head>
-    {% include "theme::partials/metadata" %}
+    {% include "visiosoft.theme.base::partials/metadata" %}
     {% block ogdata %}
         {% if app.request.pathInfo == "/" %}
         <meta property="og:site_name" content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
         <meta property="og:description" content="{{ template.get('og_description', trans(template.meta_description)) }}"/>
         <meta property="og:title" content="{{ template.get('og_title', trans(template.meta_title)) }}"/>
         <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
-        <meta property="og:image" content="{{ entries('advs').isOgImage(img('theme::images/logo-horizontal.png').url) }}">
+        <meta property="og:image" content="{{ entries('advs').isOgImage(img('visiosoft.theme.base::images/logo-horizontal.png').url) }}">
         <meta property="og:type" content="website"/>
         {% endif %}
     {% endblock %}
@@ -28,15 +28,15 @@
 
 <body>
 
-{% include "theme::partials/header" %}
+{% include "visiosoft.theme.base::partials/header" %}
 
 {% block content %}{% endblock %}
 
 {% if entries('advs').isEnabled('pushnotifications') %}
 {% include "visiosoft.module.pushnotifications::pushbar" %}
 {% endif %}
-{% include "theme::partials/footer" %}
-{% include "theme::partials/assets" %}
+{% include "visiosoft.theme.base::partials/footer" %}
+{% include "visiosoft.theme.base::partials/assets" %}
 
 {% block customjs %}{% endblock %}
 

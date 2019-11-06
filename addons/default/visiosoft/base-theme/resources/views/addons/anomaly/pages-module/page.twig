@@ -4,12 +4,12 @@
     {% block page %}
         {% if (request_path() == '/') %}
         {% if setting_value('visiosoft.theme.base::template') == "s" %}
-            {% include "theme::indexes/s-index" %}
+            {% include "visiosoft.theme.base::indexes/s-index" %}
         {% else %}
-            {% include "theme::indexes/index" %}
+            {% include "visiosoft.theme.base::indexes/index" %}
         {% endif %}
         {% elseif (request_path() == 'contact') %}
-            {% include "theme::page/contact" %}
+            {% include "visiosoft.theme.base::page/contact" %}
         {% else %}
 <section id="main">
     <div class="container">

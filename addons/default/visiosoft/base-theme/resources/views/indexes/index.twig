@@ -2,7 +2,7 @@
     <div class="container">
         <!-- banner -->
         <div class="banner-section text-center">
-            {% include "theme::partials/messages" %}
+            {% include "visiosoft.theme.base::partials/messages" %}
             {{ content|raw }}
             <!-- banner-form -->
             <div class="banner-form">
@@ -14,7 +14,7 @@
                                 <div class="form-group ">
                                     {% set cities = entries('location','cities').orderBy('slug').get() %}
                                     <select id="cities" name="city[]" class="form-control">
-                                        <option selected disabled>{{ trans('theme::fields.city') }}</option>
+                                        <option selected disabled>{{ trans('visiosoft.theme.base::fields.city') }}</option>
                                         {% for city in cities %}
                                             <option value="{{ city.id }}">{{ city.name }}</option>
                                         {% endfor %}
@@ -32,7 +32,7 @@
                                             <a href="#" class="btn btn-default" data-toggle="dropdown" role="button"
                                                aria-haspopup="true" aria-expanded="false">
                                             <span class="selected-category-item"
-                                                  style="display: inline-block;">{{ trans('theme::fields.categories') }}</span>
+                                                  style="display: inline-block;">{{ trans('visiosoft.theme.base::fields.categories') }}</span>
                                             </a>
                                             <ul class="dropdown-menu cat-dropdown-menu">
                                                 {% for cat in cats %}
@@ -58,13 +58,13 @@
                             {% set search_on_map_btn = setting_value('visiosoft.theme.base::show_home_search_on_map_btn') %}
                             <div class="{% if search_on_map_btn != 1 %} col-md-4 {% else %}col-md-1 {% endif %} home-search-field">
                                 <button type="submit" class="btn btn-default pl-5 pr-5 search-button"><i
-                                            class="fa fa-search"></i> {{ trans('theme::fields.search') }}
+                                            class="fa fa-search"></i> {{ trans('visiosoft.theme.base::fields.search') }}
                                 </button>
                             </div>
                             {% if search_on_map_btn %}
                                 <div class="col-md-3 home-search-field">
                                     <button type="button" class="btn btn-default map-search-button pl-5 pr-5 "><i
-                                                class="fa fa-map-marker"></i> {{ trans('theme::fields.search_map') }}
+                                                class="fa fa-map-marker"></i> {{ trans('visiosoft.theme.base::fields.search_map') }}
                                     </button>
                                 </div>
                             {% endif %}
@@ -76,7 +76,7 @@
                         <div class="last-search">
                             <a href="{{ app.request.cookies.get('last_search') }}" class="btn btn-default center-block">
                                 <i class="fa fa-history"></i>
-                                {{ trans('theme::fields.last_search') }}</a>
+                                {{ trans('visiosoft.theme.base::fields.last_search') }}</a>
                         </div>
                     {% endif %}
                 {% endif %}
@@ -96,7 +96,7 @@
                                 <div class="row">
                                     <div class="col-sm-12">
                                         <div class="section-title featured-top">
-                                            <h4>{{ trans('theme::fields.featured_ads') }}</h4>
+                                            <h4>{{ trans('visiosoft.theme.base::fields.featured_ads') }}</h4>
                                         </div>
                                     </div>
                                 </div>
@@ -173,10 +173,10 @@
                             <!-- Nav tabs -->
                             <ul class="nav nav-tabs" role="tablist">
                                 <li role="presentation" class="active"><a href="#recent-ads"
-                                                                          data-toggle="tab">{{ trans('theme::fields.recent_ads') }}</a>
+                                                                          data-toggle="tab">{{ trans('visiosoft.theme.base::fields.recent_ads') }}</a>
                                 </li>
                                 <li role="presentation"><a href="#popular"
-                                                           data-toggle="tab">{{ trans('theme::fields.trending_ads') }}</a>
+                                                           data-toggle="tab">{{ trans('visiosoft.theme.base::fields.trending_ads') }}</a>
                                 </li>
                             </ul>
                         </div>
@@ -325,7 +325,7 @@
                 <div class="hidden-xs hidden-sm col-md-2">
                     {#{% if homepageAdvs['homepage_right_advertisement_place'] %}#}
                     {#<div class="advertisement text-center">#}
-                    {#<a href="#"><img src="{{ img('theme::images/ads/1.jpg').url }}" alt="Images" class="img-responsive"></a>#}
+                    {#<a href="#"><img src="{{ img('visiosoft.theme.base::images/ads/1.jpg').url }}" alt="Images" class="img-responsive"></a>#}
                     {#</div>#}
                     {{ blocks('right-home-banner-area') }}
 

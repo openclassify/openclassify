@@ -313,7 +313,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function AddAdsDefaultCoverImage($ad)
     {
         if ($ad->cover_photo == null) {
-            $ad->cover_photo = $this->dispatch(new MakeImageInstance('theme::images/no-image-ads.jpg', 'img'))->url();
+            $ad->cover_photo = $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/no-image-ads.jpg', 'img'))->url();
         } else {
             $ad->cover_photo = url($ad->cover_photo);
         }
@@ -324,7 +324,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         $adv = $this->find($id);
         if ($adv == null or $adv->cover_photo == null) {
-            $cover_photo = $this->dispatch(new MakeImageInstance('theme::images/no-image-ads.jpg', 'img'))->url();
+            $cover_photo = $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/no-image-ads.jpg', 'img'))->url();
         } else {
             $cover_photo = url($adv->cover_photo);
         }

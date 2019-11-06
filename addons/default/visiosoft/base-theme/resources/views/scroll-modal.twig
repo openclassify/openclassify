@@ -1,10 +1,10 @@
 <div id="swipeTableModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
         <div class="modal-body" onclick="$('#swipeTableModal').modal('hide');">
-            <img src="{{ img('theme::images/scroll-screen.gif').url }}">
-            <p>{{ trans('theme::fields.scroll-screen-for-details') }}</p>
-            <button>{{ trans('theme::fields.close') }}</button>
+            <img src="{{ img('visiosoft.theme.base::images/scroll-screen.gif').url }}">
+            <p>{{ trans('visiosoft.theme.base::fields.scroll-screen-for-details') }}</p>
+            <button>{{ trans('visiosoft.theme.base::fields.close') }}</button>
         </div>
     </div>
 </div>
-{{ asset_add("scripts.js", "theme::js/scroll-screen.js") }}
+{{ asset_add("scripts.js", "visiosoft.theme.base::js/scroll-screen.js") }}

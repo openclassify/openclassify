@@ -465,7 +465,7 @@ textarea {
  ========================================================================== */
 #main {
     background-image: linear-gradient(to bottom, #0c3483 0%, #a2b6df 100%, #6b8cce 100%, #a2b6df 100%);
-    /*background-image: url("{{ img('theme::images/bg/main.png').url }}");*/
+    /*background-image: url("{{ img('visiosoft.theme.base::images/bg/main.png').url }}");*/
     background-repeat: no-repeat;
     background-position: top center;
     background-color: #f7f7f7;
@@ -1018,7 +1018,7 @@ a.verified i {
 }
 
 .oc-item1 {
-    border: 1px solid #f3f3f3;
+    border: 1px solid #e4e1e1;
     margin: 18px 0;
     min-height: 152px;
     border-radius: 2px;
@@ -1127,7 +1127,7 @@ a.verified i {
 
 /* Download */
 #download {
-    background-image: url("{{ img('theme::images/bg/1.png').url }}");
+    background-image: url("{{ img('visiosoft.theme.base::images/bg/1.png').url }}");
     padding: 55px 0 90px;
 }
 
@@ -1512,7 +1512,6 @@ a.verified i {
 }
 
 .recommended-ads {
-    margin-bottom: 0;
     display: inline-block;
 }
 
@@ -4294,7 +4293,7 @@ a.verified i {
  ========================================================================== */
 
 #scrollUp {
-    background-image: url("{{ img('theme::images/top.png').url }}");
+    background-image: url("{{ img('visiosoft.theme.base::images/top.png').url }}");
     bottom: 60px;
     right: 20px;
     width: 38px; /* Width of image */
@@ -4856,7 +4855,6 @@ input, select, a, .transition,
 
 .favorite-searches {
     width: 100%;
-    height: 80px;
     display: inline-block;
     margin-top: 40px;
     border: 1px solid #dedede;
@@ -5497,7 +5495,7 @@ input[name="username"] {
     background-repeat: no-repeat;
     background-size: 50% 45%;
     background-position: center;
-    background-image: url("{{ img('theme::images/cart-add-icon.png').url }}");
+    background-image: url("{{ img('visiosoft.theme.base::images/cart-add-icon.png').url }}");
 }
 
 .lds-ripple {
@@ -5776,7 +5774,7 @@ input[name="username"] {
 }
 
 .viewType {
-    color: #5b8dbd !important;
+    color: #6f6f6f !important;
 }
 
 .table-image {
@@ -5996,4 +5994,18 @@ input[name="username"] {
     transform: rotate(45deg);
     -webkit-transform: rotate(0deg);
     overflow: hidden;
+}
+.search-filter-button {
+    width: 100%;
+}
+.list-header {
+    border-bottom: 1px solid #f6f6f6;
+}
+.list-header .sort-by-list {
+    margin: 25px;
+    font-size: 18px;
+}
+
+.list-header .sort-by-list h5{
+    font-size: 18px;
 }

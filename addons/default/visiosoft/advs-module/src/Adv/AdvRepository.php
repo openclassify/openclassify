@@ -213,7 +213,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                     $query = $query->orderBy('price', 'asc');
                     break;
                 case "sort_time":
-                    $query = $query->orderBy('created_at', 'desc');
+                    $query = $query->orderBy('advs_advs.created_at', 'desc');
                     break;
             }
         } else {
@@ -238,10 +238,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     {
         $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
         $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
-        if($country != null) {
+        if ($country != null) {
             $adv->setAttribute('country_name', $country->name);
         }
-        if($city != null) {
+        if ($city != null) {
             $adv->setAttribute('city_name', $city->name);
         }
         return $adv;

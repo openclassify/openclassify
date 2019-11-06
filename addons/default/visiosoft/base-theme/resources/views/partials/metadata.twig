@@ -42,27 +42,27 @@
 {{ favicons(url('files/' ~ file(setting_value('visiosoft.module.advs::favicon')).path)) }}
 
 {# Base Theme Components #}
-{{ asset_add("theme.css", "theme::scss/bootstrap/bootstrap.scss") }}
-{{ asset_add("theme.css", "theme::font-awesome/css/all.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::scss/bootstrap/bootstrap.scss") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::font-awesome/css/all.css") }}
 
 {{ asset_add("theme.css", "visiosoft.theme.defaultadmin::css/select2.css") }}
 
 {{ asset_style("theme.css") }}
 {# Specific Build Files #}
-{{ asset_add("build.css", "theme::scss/theme/theme.scss", ["live"]) }}
+{{ asset_add("build.css", "visiosoft.theme.base::scss/theme/theme.scss", ["live"]) }}
 
 {# Specific Build Files #}
-{{ asset_add("build.css", "theme::scss/theme/theme.scss", ["live"]) }}
+{{ asset_add("build.css", "visiosoft.theme.base::scss/theme/theme.scss", ["live"]) }}
 
 {# Include Asset Collections #}
 <style type="text/css">
     {#{{ asset_inline("theme.css", ["min"]) }}#}
-    {{ asset_inline("build.css", ["parse", "min", "watch@theme::scss/theme"]) }}
+    {{ asset_inline("build.css", ["parse", "min", "watch@visiosoft.theme.base::scss/theme"]) }}
 </style>
 
-{{ asset_add("visiosoft_default.css", "theme::css/default/*") }}
+{{ asset_add("visiosoft_default.css", "visiosoft.theme.base::css/default/*") }}
 {% if setting_value('visiosoft.theme.base::template') == "s" %}
-    {{ asset_add("visiosoft_default.css", "theme::css/sahb.css") }}
+    {{ asset_add("visiosoft_default.css", "visiosoft.theme.base::css/sahb.css") }}
 {% endif %}
 
 

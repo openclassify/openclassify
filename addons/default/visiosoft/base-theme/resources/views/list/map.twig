@@ -1,32 +1,22 @@
-{% extends "theme::layouts/default" %}
-{% block content %}
-    <!-- main -->
-    <section id="main" class="clearfix category-page">
-        <div class="container">
-            <div class="breadcrumb-section">
-                <!-- breadcrumb -->
-                <ol class="breadcrumb">
-                    <li><a href="/">{{ trans('visiosoft.module.advs::field.home') }}</a></li>
-                </ol><!-- breadcrumb -->
-            </div>
-
-            <div class="category-info">
-                <div class="row">
-                    <!-- accordion-->
-                    {% include "visiosoft.theme.base::list/partials/list-filter" %}
-                    <div class="col-sm-8 col-md-9">
-                        <div class="section recommended-ads listMap">
-                            <!-- featured-top -->
-                            {% include "visiosoft.theme.base::list/partials/display-mode" %}
-                            <div id="map"></div>
-                        </div>
+{% extends "visiosoft.theme.base::list/list" %}
+{% block listContent %}
+    <div class="category-info">
+        <div class="row">
+            {% include "visiosoft.theme.base::list/partials/list-filter" %}
+            <div class="col-sm-8 col-md-9">
+                <div class="section recommended-ads ">
+                    {% include "visiosoft.theme.base::list/partials/display-mode" %}
+                    <div class="listMap">
+                        <div id="map"></div>
                     </div>
-
+                    {% if entries('advs').isEnabled('favs') %}
+                        {% include "visiosoft.module.favs::list/favorites-section" %}
+                    {% endif %}
                 </div>
             </div>
-        </div><!-- container -->
-    </section><!-- main -->
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/admin-list.js") }}
+
+        </div>
+    </div>
 {% endblock %}
 
 {% block customjs %}
