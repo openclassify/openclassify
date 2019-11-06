@@ -1,20 +1,6 @@
 $(document).ready(function () {
     const is = {};
 
-    is.Active = (slug) => {
-        $.ajax({
-            type: 'get',
-            url: '/isactive/' + slug,
-            success: function (response) {
-                if (response.isActive === 1) {
-                    $(".profile-dropdown-list #" + slug + "").show();
-                }
-            },
-            error: function (err) {
-                reject(Error("It broke"));
-            }
-        });
-    };
 
     $.ajax({
         type: 'get',
@@ -35,7 +21,7 @@ $(document).ready(function () {
                     }
                 }
                 // add extra parameters here by using is.Active method. div name must be same as slug
-                is.Active('messages');
+                // is.Active('messages');
             } else {
                 $('.login-user-dropdown-menu').hide();
                 $('.profile-navigation-mobile-field , .profile-navigation-field').on('click', function () {
@@ -44,9 +30,6 @@ $(document).ready(function () {
                 $('.login-username-field').hide();
                 $('.login-button-field').attr("style", "display: block !important");
             }
-        },
-        error: function (err) {
-            reject(Error("It broke"));
         }
     });
 
