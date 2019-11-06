@@ -90,15 +90,13 @@
         {% include "visiosoft.module.comparisons::comparison" %}
     {% endif %}
 
-    {% if entries('advs').isEnabled('phoneclickcounter') %}
-        {{ asset_add("scripts.js", "visiosoft.module.phoneclickcounter::js/phoneCounter.js") }}
-    {% endif %}
 
     {% if entries('advs').isEnabled('carts') %}
         {{ asset_add("scripts.js", "visiosoft.module.carts::js/quantity.js") }}
     {% endif %}
 
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/list-item.js") }}
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/phoneCounter.js") }}
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/viewed.js") }}
 
 {% endblock %}
