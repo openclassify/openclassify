@@ -220,11 +220,11 @@ class AdvsController extends PublicController
         $viewType = $this->requestHttp->cookie('viewType');
 
         if (isset($viewType) and $viewType == 'table')
-            return $this->view->make('visiosoft.theme.base::list/table', $compact);
+            return $this->view->make('visiosoft.module.advs::list/table', $compact);
         elseif (isset($viewType) and $viewType == 'map')
-            return $this->view->make('visiosoft.theme.base::list/map', $compact);
+            return $this->view->make('visiosoft.module.advs::list/map', $compact);
 
-        return $this->view->make('visiosoft.theme.base::list/list', $compact);
+        return $this->view->make('visiosoft.module.advs::list/list', $compact);
     }
 
     public function viewType($type)
@@ -305,7 +305,7 @@ class AdvsController extends PublicController
 
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.theme.base::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'tags', 'profile', 'comments', 'qrSRC'));
+            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'tags', 'profile', 'comments', 'qrSRC'));
         } else {
             return back();
         }
@@ -399,7 +399,7 @@ class AdvsController extends PublicController
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->create($categories);
         }
         //Cloudinary Module
-        return $this->view->make('visiosoft.theme.base::new-ad/new-create', compact(
+        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact(
             'request', 'formBuilder', 'cats_d', 'custom_fields'));
     }
 
@@ -715,7 +715,7 @@ class AdvsController extends PublicController
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->edit($adv, $categories, $cats);
         }
 
-        return $this->view->make('visiosoft.theme.base::new-ad/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'nameField', 'descField'));
+        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'nameField', 'descField'));
     }
 
     public function destroy($id)
@@ -772,7 +772,7 @@ class AdvsController extends PublicController
         }
         $main_cats = $this->category_repository->mainCats();
 
-        return $this->view->make('visiosoft.theme.base::new-ad/post-cat', compact('main_cats'));
+        return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('main_cats'));
 
     }
 
@@ -809,7 +809,7 @@ class AdvsController extends PublicController
 
         $main_cats = $this->category_repository->mainCats();
 
-        return $this->view->make('visiosoft.theme.base::new-ad/edit-cat', compact('main_cats', 'id'));
+        return $this->view->make('visiosoft.module.advs::new-ad/edit-cat', compact('main_cats', 'id'));
 
     }
 
@@ -821,7 +821,7 @@ class AdvsController extends PublicController
 
         $urlPrev = str_replace(url('/'), '', url()->previous());
 
-        return $this->view->make('visiosoft.theme.base::login', compact('urlPrev'));
+        return $this->view->make('theme::login', compact('urlPrev'));
     }
 
     public function register()
@@ -831,7 +831,7 @@ class AdvsController extends PublicController
             return redirect('/');
         }
 
-        return $this->view->make('visiosoft.theme.base::register');
+        return $this->view->make('theme::register');
     }
 
     public function passwordForgot()
@@ -840,7 +840,7 @@ class AdvsController extends PublicController
             return redirect('/');
         }
 
-        return $this->view->make('visiosoft.theme.base::passwords/forgot');
+        return $this->view->make('theme::passwords/forgot');
     }
 
     public function passwordReset(Request $request)
@@ -849,14 +849,14 @@ class AdvsController extends PublicController
             return redirect('/');
         }
         $code = $request->email;
-        return $this->view->make('visiosoft.theme.base::passwords/reset', compact('code'));
+        return $this->view->make('theme::passwords/reset', compact('code'));
     }
 
     public function homePage(CategoryRepositoryInterface $repository)
     {
         $cats = $repository->mainCats();
 
-        return $this->view->make('visiosoft.theme.base::addons/anomaly/pages-module/page', compact('cats'));
+        return $this->view->make('theme::addons/anomaly/pages-module/page', compact('cats'));
     }
 
     public function map(AdvRepositoryInterface $advRepository,

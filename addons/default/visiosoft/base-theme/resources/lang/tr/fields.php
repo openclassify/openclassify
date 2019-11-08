@@ -31,7 +31,4 @@ return [
     'content' => [
         'name' => 'Açıklama',
     ],
-    'price' => [
-        'name' => 'Fiyat'
-    ],
 ];

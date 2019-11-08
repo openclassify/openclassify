@@ -40,8 +40,8 @@ class AdvsController extends AdminController
      */
     public function index(AdvTableBuilder $table, \Anomaly\UsersModule\User\UserModel $userModel, CityModel $cityModel, CatsCategoryEntryModel $categoryModel)
     {
-        $table->addAsset("theme.css", "visiosoft.theme.base::css/custom.css");
-        $table->addAsset('script.js', 'visiosoft.theme.base::js/admin-list.js');
+        $table->addAsset("theme.css", "visiosoft.module.advs::css/custom.css");
+        $table->addAsset('script.js', 'visiosoft.module.advs::js/list.js');
 
         $table->addButtons([
             'status' => [

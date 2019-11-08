@@ -1,11 +1,11 @@
-{% extends layout('new-ad') %}
+{% extends layout('new-create') %}
 
 {% block content %}
     <section id="main" class="clearfix home-default">
         <div class="container">
-            {% include "visiosoft.theme.base::partials/messages" %}
+            {% include "theme::partials/messages" %}
 
-            {% include "visiosoft.theme.base::new-ad/partials/breadcrumb" %}
+            {% include "visiosoft.module.advs::new-ad/partials/breadcrumb" %}
 
             <div class="adpost-details">
                 <div class="row">
@@ -148,6 +148,6 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.advs::google_map_key') }}&callback="
             type="text/javascript"></script>
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/new-create.js") }}
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/location.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
 {% endblock %}

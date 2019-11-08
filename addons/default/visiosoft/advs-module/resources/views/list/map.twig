@@ -1,11 +1,12 @@
-{% extends "visiosoft.theme.base::list/list" %}
+{% extends layout('map') %}
+{% extends "visiosoft.module.advs::list/list" %}
 {% block listContent %}
     <div class="category-info">
         <div class="row">
-            {% include "visiosoft.theme.base::list/partials/list-filter" %}
+            {% include "visiosoft.module.advs::list/partials/list-filter" %}
             <div class="col-sm-8 col-md-9">
                 <div class="section recommended-ads ">
-                    {% include "visiosoft.theme.base::list/partials/display-mode" %}
+                    {% include "visiosoft.module.advs::list/partials/display-mode" %}
                     <div class="listMap">
                         <div id="map"></div>
                     </div>

@@ -3,7 +3,7 @@
 {% block content %}
     <section id="main" class="clearfix ad-post-page">
         <div class="container">
-            {% include "visiosoft.theme.base::new-ad/partials/breadcrumb" %}
+            {% include "visiosoft.module.advs::new-ad/partials/breadcrumb" %}
             <div id="ad-cat-section">
                 <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
                     <div class="row category-tab">
@@ -119,7 +119,7 @@
         }
 
         #main {
-            background-image: {{ img('visiosoft.theme.base::images/bg/main.png').url }} !important;
+            background-image: {{ img('theme::images/bg/main.png').url }} !important;
         }
 
         .btn-1 {
@@ -130,7 +130,7 @@
             margin-right: 5px;
         }
     </style>
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/cats.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/cats.js") }}
 
 
 {% endblock %}
