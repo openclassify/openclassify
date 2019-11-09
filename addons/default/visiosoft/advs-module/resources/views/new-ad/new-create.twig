@@ -5,8 +5,18 @@
         <div class="container">
             {% include "theme::partials/messages" %}
 
-            {% include "visiosoft.module.advs::new-ad/partials/breadcrumb" %}
-
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% for cat in cats_d %}
+                        <li class="breadcrumb-item"><a href="#">{{ cat }}</a></li>
+                    {% endfor %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ url_route('adv::edit_category',[id]) }}">
+                            <i class="fas fa-pencil-alt"></i> {{ trans('visiosoft.module.advs::field.edit_category') }}
+                        </a>
+                    </li>
+                </ol>
+            </nav>
             <div class="adpost-details">
                 <div class="row">
                     <div class="col-md-12">
@@ -32,22 +42,8 @@
                                     {{ trans('visiosoft.module.advs::field.sell_item') }}
                                     <span class="pull-right">* {{ trans('visiosoft.module.advs::field.mandatory_fields') }}</span>
                                 </h4>
-                                <div class="form-group selected-product">
-                                    <ul class="select-category list-inline">
-                                        {% for cat in cats_d %}
-                                            <li>
-                                                <a>
-                                                    {{ cat }}
-                                                </a>
-                                            </li>
-                                        {% endfor %}
-                                        <a href="{{ url_route('adv::edit_category',[id]) }}"><i
-                                                    class="fas fa-pencil-alt"></i> {{ trans('visiosoft.module.advs::field.edit_category') }}
-                                        </a>
-                                    </ul>
-                                </div>
                                 <div class="row form-group add-title">
-                                    <div class="col-md-9">
+                                    <div class="col-md-12">
                                         {{ nameField|raw }}
                                     </div>
                                     {% if entries('advs').isEnabled('store') %}
@@ -98,10 +94,14 @@
                                     </div>
                                 </div>
                                 <div class="row form-group brand-name">
-                                    {{ descField|raw }}
+                                    <div class="col-md-12">
+                                        {{ descField|raw }}
+                                    </div>
                                 </div>
                                 <div class="row form-group images">
-                                    {{ form.fields.files.input |raw }}
+                                    <div class="col-md-12">
+                                        {{ form.fields.files.input |raw }}
+                                    </div>
                                 </div>
                                 {% if entries('advs').isEnabled('customfields') %}
                                     {% include "visiosoft.module.customfields::new-ad/fields" %}
