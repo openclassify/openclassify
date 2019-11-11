@@ -79,6 +79,9 @@ return [
     'archived_adv' => [
         'name' => 'Archived Ads'
     ],
+    'finish_at' => [
+        'name' => 'Finish At'
+    ],
     'favs_adv' => [
         'name' => 'Fav Ads'
     ],

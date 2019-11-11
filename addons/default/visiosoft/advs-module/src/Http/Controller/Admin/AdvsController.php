@@ -82,6 +82,11 @@ class AdvsController extends AdminController
         }
 
         $table->setColumns([
+            'id' => [
+                'value' => function (EntryInterface $entry) {
+                   return $entry->id;
+                }
+            ],
             'name' => [
                 'class' => 'advs-name',
             ],
@@ -108,6 +113,7 @@ class AdvsController extends AdminController
                         return $category->name;
                 }
             ],
+            'finish_at',
         ]);
 
 
