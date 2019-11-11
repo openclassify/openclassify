@@ -1,5 +1,5 @@
 <div class="col-sm-3 hidden-xs">
-    {% set main_categories = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}
+    {% set main_categories = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}
     {% for main_category in main_categories %}
         <div class="list-group s-list-group">
             {% if main_category.files[0].path != "" %}
@@ -10,7 +10,7 @@
                class="list-group-item">
                 <b>{{ main_category.name }}</b>
             </a>
-            {% set sub_categories = entries('cats','category').where('parent_category_id', main_category.id).where('deleted_at', null).orderBy('order').get() %}
+            {% set sub_categories = entries('cats','category').where('parent_category_id', main_category.id).where('deleted_at', null).orderBy('sort_order').get() %}
             {% for sub_category in sub_categories|slice(0,8) %}
                 <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ sub_category.id }}"
                    class="list-group-item">{{ sub_category.name }}</a>

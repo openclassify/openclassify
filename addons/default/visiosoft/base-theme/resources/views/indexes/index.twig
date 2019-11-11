@@ -28,7 +28,7 @@
                                 <div class="form-group ">
                                     <ul>
                                         <li class="dropdown home-search-category-field">
-                                            {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}
+                                            {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}
                                             <a href="#" class="btn btn-default" data-toggle="dropdown" role="button"
                                                aria-haspopup="true" aria-expanded="false">
                                             <span class="selected-category-item"

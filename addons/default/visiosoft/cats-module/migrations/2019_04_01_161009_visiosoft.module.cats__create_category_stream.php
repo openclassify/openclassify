@@ -35,7 +35,6 @@ class VisiosoftModuleCatsCreateCategoryStream extends Migration
             'required' => true,
         ],
         'parent_category',
-        'order',
         'deleted_at',
         'icon',
         'seo_keyword',
