@@ -1,6 +1,6 @@
 <div class="col-xs-12 visible-xs s-mobile-categories">
     <ul class="list-group">
-        {% set main_categories = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}
+        {% set main_categories = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}
         {% for main_category in main_categories %}
             <li class="list-group-item">
                 <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ main_category.id }}">

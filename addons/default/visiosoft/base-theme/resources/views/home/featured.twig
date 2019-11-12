@@ -34,7 +34,7 @@
                                                     </h4>
                                                     <div class="item-cat">
                                                                 <span><a href="#">
-{% set cats = entries('advs','categories').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}                                                                        {% for cat in cats %}
+{% set cats = entries('advs','categories').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}                                                                        {% for cat in cats %}
                                                                             {% if cat.id == adv.cat1[0].value %}
                                                                                 {{ cat.title }}
                                                                             {% endif %}

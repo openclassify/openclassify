@@ -24,7 +24,7 @@
                             <div class="dropdown category-dropdown">
                                 <a data-toggle="dropdown" href="#" aria-expanded="false"><span class="change-text">{{ trans('visiosoft.theme.base::addon.all') }}</span> <i class="fa fa-angle-down"></i></a>
                                 <ul class="dropdown-menu category-change">
-                                    {% set cats = entries('advs','categories').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}                                    {% for cat in cats %}
+                                    {% set cats = entries('advs','categories').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}                                    {% for cat in cats %}
                                         <li><a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ cat.id }}">{{ cat.name }}</a></li>
                                     {% endfor %}
 
