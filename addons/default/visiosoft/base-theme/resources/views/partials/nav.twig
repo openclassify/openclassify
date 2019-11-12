@@ -32,7 +32,7 @@
                         <form action="{{ url('advs/list') }}" method="get">
                             <ul class="nav navbar-nav center-navigation">
                                 <li class="dropdown navigation-select-category-field">
-                                    {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('order').get() %}
+                                    {% set cats = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}
                                     <a href="#" class="dropdown-toggle selected-category-item-field"
                                        data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
                                         <span class="selected-category-item" style="">{{ cats[0].name }}</span> <span

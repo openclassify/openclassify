@@ -27,7 +27,6 @@ class VisiosoftModuleCatsCreateCatsFields extends Migration
                 "default_value" => 0,
             ]
         ],
-        'order' => 'anomaly.field_type.integer',
         'deleted_at' => "anomaly.field_type.datetime",
         'icon' => [
             'type' => 'anomaly.field_type.file',

@@ -60,8 +60,10 @@
 </style>
 
 {% if locale().isRtl() %}
+<style type="text/css">
     {{ asset_inline("visiosoft.theme.defaultadmin::css/bootstrap.rtl.css") }}
     {{ asset_inline("visiosoft.theme.defaultadmin::css/rtl.css") }}
+</style>
 {% endif %}
 
 {{ constants() }}

@@ -31,7 +31,7 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function mainCats()
     {
-        return $this->model->where('parent_category_id', null)->where('deleted_at', null)->get();
+        return $this->model->where('parent_category_id', null)->where('deleted_at', null)->orderBy('sort_order')->get();
     }
 
     public function getItem($cat)
@@ -41,12 +41,12 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function getCatById($id)
     {
-        return $this->model->where('cats_category.id', $id)->where('deleted_at', null)->get();
+        return $this->model->where('cats_category.id', $id)->where('deleted_at', null)->orderBy('sort_order')->get();
     }
 
     public function getSubCatById($id)
     {
-        return $this->model->where('parent_category_id', $id)->where('deleted_at', null)->get();
+        return $this->model->where('parent_category_id', $id)->where('deleted_at', null)->orderBy('sort_order')->get();
     }
 
     public function getSingleCat($id)
@@ -61,7 +61,7 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function getCategories()
     {
-        return $this->model->get();
+        return $this->model->orderBy('sort_order')->get();
     }
 
     public function DeleteCategories($id)
