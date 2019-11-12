@@ -1,0 +1,131 @@
+{% extends layout('post-cat') %}
+
+{% block content %}
+    <section id="main" class="clearfix ad-post-page">
+        <div class="container">
+            {% include "visiosoft.module.advs::new-ad/partials/breadcrumb" %}
+            <div id="ad-cat-section">
+                <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
+                    <div class="row category-tab">
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 cat-item mb-2">
+                            <div class="section cat-option select-category post-option card p-2">
+                                <h5>{{ trans('visiosoft.module.advs::field.select_a_category') }}</h5>
+                                    <select class="cat-select" name="cat1" id="cat1" multiple >
+                                        {% for cat in main_cats %}
+                                            <option value="{{ cat.id }}">
+                                                {{ cat.name }}
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card p-2">
+                                <h5>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h5>
+                                    <select class="cat-select" name="cat2" id="cat2" multiple>
+
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card p-2">
+                                <h5>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h5>
+                                    <select class="cat-select" name="cat3" id="cat3" multiple>
+
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card p-2">
+                                <h5>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h5>
+                                    <select class="cat-select" name="cat4" id="cat4" multiple>
+
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card p-2">
+                                <h5>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h5>
+                                    <select class="cat-select" name="cat5" id="cat5" multiple>
+
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card p-2">
+                                <h5>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h5>
+                                    <select class="cat-select" name="cat6" id="cat6" multiple >
+
+                                    </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-3 col-md-4 col-sm-6 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card p-2">
+                                <h5>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h5>
+                                    <select class="cat-select" name="cat7" id="cat7" multiple >
+
+                                    </select>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-4 col-md-12 cat-item mb-2">
+                            <div class="card cat-item-3 p-2">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-sm-8 col-sm-offset-2 text-center">
+                            {{ blocks('center-add-ad-banner-area') }}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div><!-- container -->
+    </section><!-- post-page -->
+    <style>
+        .cat-select {
+            width: 100%;
+            border: none;
+            overflow-y: auto
+        }
+
+        .cat-select:focus {
+            outline: none;
+        }
+
+        .cat-select option {
+            border-top: 1px solid #f2f2f2;
+            padding: 15px 0 20px;
+            position: relative;
+            padding-left: 10px;
+            font-size: 16px;
+            color: #505050;
+        }
+
+        .cat-item-2 {
+            display: none;
+        }
+
+        .cat-item-3 {
+            display: none;
+        }
+
+        #main {
+            background-image: {{ img('visiosoft.module.advs::images/main.png').url }} !important;
+        }
+
+        .btn-1 {
+            background-color: #00a651;
+            padding: 5px 50px 7px;
+            color: #fff;
+            border: 1px solid #dadada;
+            margin-right: 5px;
+        }
+    </style>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/cats.js") }}
+
+
+{% endblock %}

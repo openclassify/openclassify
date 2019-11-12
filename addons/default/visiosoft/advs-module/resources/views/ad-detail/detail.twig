@@ -19,7 +19,7 @@
     <section id="main" class="clearfix details-page">
         <div class="container">
 
-            {% include "visiosoft.theme.base::partials/messages" %}
+            {% include "theme::partials/messages" %}
 
             <!-- breadcrumb -->
             <div class="breadcrumb-section">
@@ -38,10 +38,10 @@
             <div class="section slider">
                 <div class="row">
 
-                    {% include "visiosoft.theme.base::ad-detail/partials/slider" %}
+                    {% include "visiosoft.module.advs::ad-detail/partials/slider" %}
 
                     <div class="col-md-5">
-                        {% include "visiosoft.theme.base::ad-detail/partials/detail" %}
+                        {% include "visiosoft.module.advs::ad-detail/partials/detail" %}
                     </div>
                 </div>
 
@@ -56,7 +56,7 @@
 
 
             {% if blocks('ad-item-content-block-area') is null %}
-                {% include "visiosoft.theme.base::ad-detail/partials/content-ad" %}
+                {% include "visiosoft.module.advs::ad-detail/partials/content-ad" %}
             {% else %}
                 {{ blocks('ad-item-content-block-area') }}
             {% endif %}
@@ -90,16 +90,14 @@
         {% include "visiosoft.module.comparisons::comparison" %}
     {% endif %}
 
-    {% if entries('advs').isEnabled('phoneclickcounter') %}
-        {{ asset_add("scripts.js", "visiosoft.module.phoneclickcounter::js/phoneCounter.js") }}
-    {% endif %}
 
     {% if entries('advs').isEnabled('carts') %}
         {{ asset_add("scripts.js", "visiosoft.module.carts::js/quantity.js") }}
     {% endif %}
 
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/list-item.js") }}
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/viewed.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-item.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/phoneCounter.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
 
 {% endblock %}
 

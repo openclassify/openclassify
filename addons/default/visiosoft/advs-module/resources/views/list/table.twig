@@ -1,14 +1,15 @@
-{% extends "visiosoft.theme.base::list/list" %}
+{% extends layout('table') %}
+{% extends "visiosoft.module.advs::list/list" %}
 {% block listContent %}
 
     <div class="category-info">
         <div class="row">
 
-            {% include "visiosoft.theme.base::list/partials/user-section" %}
+            {% include "visiosoft.module.advs::list/partials/user-section" %}
 
             <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
 
-                {% include "visiosoft.theme.base::list/partials/list-filter" %}
+                {% include "visiosoft.module.advs::list/partials/list-filter" %}
 
                 <div class="col-sm-8 col-md-9">
                     <div class="section recommended-ads">
@@ -16,10 +17,10 @@
                         <div class="row">
 
                             <div class="col-md-6">
-                                    {% include "visiosoft.theme.base::list/partials/list-sort-by" %}
+                                    {% include "visiosoft.module.advs::list/partials/list-sort-by" %}
                             </div>
                             <div class="col-md-6">
-                                {% include "visiosoft.theme.base::list/partials/display-mode" %}
+                                {% include "visiosoft.module.advs::list/partials/display-mode" %}
 
                             </div>
                         </div>
@@ -52,7 +53,7 @@
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% include "visiosoft.theme.base::list/partials/table-row" %}
+                                {% include "visiosoft.module.advs::list/partials/table-row" %}
                                 </tbody>
                             </table>
                         </div>
@@ -87,6 +88,6 @@
 
 {% endblock %}
 {% block customjs %}
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/list-table.js") }}
-    {% include "visiosoft.theme.base::scroll-modal" %}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
+    {% include "theme::scroll-modal" %}
 {% endblock %}

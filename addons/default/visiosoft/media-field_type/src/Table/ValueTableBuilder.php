@@ -64,7 +64,7 @@ class ValueTableBuilder extends TableBuilder
         ],
         'rotate'   => [
             'target'     => '_blank',
-            'icon' => 'fa fa-repeat',
+            'icon' => 'fas fa-redo',
             'type' => 'info',
             'text' => '',
             'attributes' => [

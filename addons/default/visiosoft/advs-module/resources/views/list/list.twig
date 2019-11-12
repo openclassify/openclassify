@@ -5,10 +5,10 @@
 
         <div class="container">
 
-            {% include "visiosoft.theme.base::partials/messages" %}
+            {% include "theme::partials/messages" %}
 
             <!-- breadcrumb -->
-            {% include "visiosoft.theme.base::list/partials/breadcrumb" %}
+            {% include "visiosoft.module.advs::list/partials/breadcrumb" %}
             <!-- breadcrumb -->
 
             {% block listContent %}
@@ -16,15 +16,15 @@
 
                     <div class="row">
 
-                        {% include "visiosoft.theme.base::list/partials/user-section" %}
+                        {% include "visiosoft.module.advs::list/partials/user-section" %}
 
                         <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
 
-                            {% include "visiosoft.theme.base::list/partials/list-filter" %}
+                            {% include "visiosoft.module.advs::list/partials/list-filter" %}
 
                             <div class="col-sm-8 col-md-9">
 
-                                {% include "visiosoft.theme.base::list/partials/list-section" %}
+                                {% include "visiosoft.module.advs::list/partials/list-section" %}
 
 
                             </div>
@@ -48,7 +48,7 @@
         {% include "visiosoft.module.favs::list/favorites-modal" %}
     {% endif %}
 
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/list.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list.js") }}
 
     {% if entries('advs').isEnabled('comparisons') %}
         {% include "visiosoft.module.comparisons::comparison" %}

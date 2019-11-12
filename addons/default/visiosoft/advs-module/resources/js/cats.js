@@ -1,3 +1,11 @@
+function showLoader() {
+    $('body').append('<div class="loading-cart"><div class="lds-ripple"><div></div><div></div></div></div>');
+}
+
+function hideLoader() {
+    $('.loading-cart').remove();
+}
+
 $(document).ready(function () {
     $('select[name="cat1"], select[name="cat2"], select[name="cat3"], ' +
         'select[name="cat4"], select[name="cat5"], select[name="cat6"], select[name="cat7"]').on('change', function () {
@@ -7,7 +15,6 @@ $(document).ready(function () {
 
     const filter = {};
     filter.getCats = (catId, divId) => {
-        console.log(catId,divId)
         $.ajax({
             type: 'get',
             url: '/class/getcats/'+ divId,
@@ -20,12 +27,12 @@ $(document).ready(function () {
                         btn = "<a class='btn btn-primary' href='"+response['link']+"' role='button'>"+response['nextBtn']+"</a>";
                     }
                     $('.cat-item-3').html(
-                        '<div class="section next-stap post-option">' +
-                        '<h2>'+response['title']+'</h2>' +
-                        '<p>'+response['msg']+'</p>' +
+                        '<div class="section next-stap post-option p-2">' +
+                        '<h5>'+response['title']+'</h5>' +
+                        '<p class="p-2">'+response['msg']+'</p>' +
                         '<div class="btn-section btn-next">' +
                         btn +
-                        '<a href="/" class="btn-info">'+response['cancelBtn']+'</a></div></div>'
+                        '<a href="/">'+response['cancelBtn']+'</a></div></div>'
                     );
                     $('.cat-item-3').show();
                     stop();

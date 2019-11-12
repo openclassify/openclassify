@@ -1,17 +1,27 @@
-{% extends layout('post-cat') %}
+{% extends layout('edit-cat') %}
 
 {% block content %}
+    {% set ad_Detail = adDetail(id) %}
     <section id="main" class="clearfix ad-post-page">
         <div class="container">
-            {% include "visiosoft.theme.base::new-ad/partials/breadcrumb" %}
+            <div class="breadcrumb-section">
+                <ol class="breadcrumb">
+                    <li><a href="/">{{ trans('visiosoft.module.advs::field.home') }}</a></li>
+                    <li>{{ ad_Detail.name }}</li>
+                    <li>{{ trans('visiosoft.module.advs::field.edit_category') }}</li>
+                </ol>
+                <h2 class="title">{{ trans('visiosoft.module.advs::field.home') }}</h2>
+            </div>
+
             <div id="ad-cat-section">
-                <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
+                <form action="{{ url_route('adv::edit_category',[id]) }}" method="post">
+                    <input type="hidden" name="id" value="{{ id }}">
                     <div class="row category-tab">
                         <div class="col-md-3 col-sm-6 cat-item">
                             <div class="section cat-option select-category post-option">
                                 <h4>{{ trans('visiosoft.module.advs::field.select_a_category') }}</h4>
                                 <ul role="tablist">
-                                    <select class="cat-select" name="cat1" id="cat1" multiple id="">
+                                    <select class="cat-select" name="cat1" id="cat1" data-level="1" data-value="{{ ad_Detail.cat1 }}" multiple id="">
                                         {% for cat in main_cats %}
                                             <option value="{{ cat.id }}"><span
                                                         style="font-size: 20px">{{ cat.name }}</span></option>
@@ -24,7 +34,7 @@
                             <div class="section cat-option select-category post-option">
                                 <h4>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h4>
                                 <ul role="tablist">
-                                    <select class="cat-select" name="cat2" id="cat2" multiple id="">
+                                    <select class="cat-select" name="cat2" id="cat2" data-level="3"  data-value="{{ ad_Detail.cat2 }}" multiple id="">
 
                                     </select>
                                 </ul>
@@ -34,7 +44,7 @@
                             <div class="section cat-option select-category post-option">
                                 <h4>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h4>
                                 <ul role="tablist">
-                                    <select class="cat-select" name="cat3" id="cat3" multiple id="">
+                                    <select class="cat-select" name="cat3" id="cat3" data-level="3"  data-value="{{ ad_Detail.cat3 }}" multiple id="">
 
                                     </select>
                                 </ul>
@@ -44,7 +54,7 @@
                             <div class="section cat-option select-category post-option">
                                 <h4>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h4>
                                 <ul role="tablist">
-                                    <select class="cat-select" name="cat4" id="cat4" multiple id="">
+                                    <select class="cat-select" name="cat4" id="cat4"  data-level="4"  data-value="{{ ad_Detail.cat4 }}" multiple id="">
 
                                     </select>
                                 </ul>
@@ -54,7 +64,7 @@
                             <div class="section cat-option select-category post-option">
                                 <h4>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h4>
                                 <ul role="tablist">
-                                    <select class="cat-select" name="cat5" id="cat5" multiple id="">
+                                    <select class="cat-select" name="cat5" id="cat5"  data-level="5"  data-value="{{ ad_Detail.cat5 }}" multiple id="">
 
                                     </select>
                                 </ul>
@@ -64,7 +74,7 @@
                             <div class="section cat-option select-category post-option">
                                 <h4>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h4>
                                 <ul role="tablist">
-                                    <select class="cat-select" name="cat6" id="cat6" multiple id="">
+                                    <select class="cat-select" name="cat6" id="cat6"  data-level="6" data-value="{{ ad_Detail.cat6 }}" multiple id="">
 
                                     </select>
                                 </ul>
@@ -74,16 +84,21 @@
                             <div class="section cat-option select-category post-option">
                                 <h4>{{ trans('visiosoft.module.advs::field.select_a_sub_category') }}</h4>
                                 <ul role="tablist">
-                                    <select class="cat-select" name="cat7" id="cat7" multiple id="">
+                                    <select class="cat-select" name="cat7" id="cat7" data-level="7"  data-value="{{ ad_Detail.cat7 }}" multiple id="">
 
                                     </select>
                                 </ul>
                             </div>
                         </div>
 
-                        <div class="col-md-4 col-sm-6 cat-item cat-item-3">
-
-                        </div><!-- next-stap -->
+                        <div class="col-md-3 col-sm-6 cat-item cat-item-3">
+                            <div class="section">
+                                <h3>{{ trans('visiosoft.module.advs::message.update_category_msg') }}</h3>
+                                <button type="submit" name="action" value="update" class="btn btn-success"><i
+                                            class="fa fa-save"></i> {{ trans('visiosoft.module.advs::button.update_category.name') }}
+                                </button>
+                            </div>
+                        </div>
                     </div>
                     <div class="row">
                         <div class="col-sm-8 col-sm-offset-2 text-center">
@@ -92,45 +107,8 @@
                     </div>
                 </form>
             </div>
-        </div><!-- container -->
-    </section><!-- post-page -->
-    <style>
-        .cat-select {
-            width: 100%;
-            border: none;
-            overflow-y: auto
-        }
-
-        .cat-select option {
-            border-top: 1px solid #f2f2f2;
-            padding: 15px 0 20px;
-            position: relative;
-            padding-left: 10px;
-            font-size: 16px;
-            color: #505050;
-        }
-
-        .cat-item-2 {
-            display: none;
-        }
-
-        .cat-item-3 {
-            display: none;
-        }
-
-        #main {
-            background-image: {{ img('visiosoft.theme.base::images/bg/main.png').url }} !important;
-        }
-
-        .btn-1 {
-            background-color: #00a651;
-            padding: 5px 50px 7px;
-            color: #fff;
-            border: 1px solid #dadada;
-            margin-right: 5px;
-        }
-    </style>
-    {{ asset_add("scripts.js", "visiosoft.theme.base::js/cats.js") }}
-
-
+        </div>
+    </section>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/edit_cats.js") }}
+    {{ asset_style("visiosoft.module.advs::css/edit_category.css") }}
 {% endblock %}
