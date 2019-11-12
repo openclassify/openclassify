@@ -82,11 +82,11 @@ class AdvsController extends AdminController
         }
 
         $table->setColumns([
-            'id' => [
-                'value' => function (EntryInterface $entry) {
-                   return $entry->id;
-                }
+            'cover_photo' => [
+                'wrapper' => '<img width="64" src="{value.cover_photo}">',
+                'value' => ['cover_photo' => 'entry.cover_photo']
             ],
+            'entry.id',
             'name' => [
                 'class' => 'advs-name',
             ],

@@ -82,6 +82,9 @@ return [
     'finish_at' => [
         'name' => 'Finish At'
     ],
+    'cover_photo' => [
+        'name' => 'Cover Photo'
+    ],
     'favs_adv' => [
         'name' => 'Fav Ads'
     ],
