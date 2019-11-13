@@ -83,8 +83,14 @@ class AdvsController extends AdminController
 
         $table->setColumns([
             'cover_photo' => [
-                'wrapper' => '<img width="64" src="{value.cover_photo}">',
-                'value' => ['cover_photo' => 'entry.cover_photo']
+                'wrapper' => function (EntryInterface $entry, Request $request) {
+                    if (strpos($entry->cover_photo, 'http') === 0) {
+                        $wrapper = '<img width="64" src="'.$entry->cover_photo.'">';
+                    } else {
+                        $wrapper = '<img width="64" src="'.$request->root().$entry->cover_photo.'">';
+                    }
+                    return $wrapper;
+                },
             ],
             'entry.id',
             'name' => [
