@@ -23,4 +23,5 @@ return [
         'link' => "",
     ],
     'update_category_info' => 'Lütfen kategoriyi güncelleyiniz.',
+    'filter_by_search_msg' => 'Aramanızı Daraltın.',
 ];

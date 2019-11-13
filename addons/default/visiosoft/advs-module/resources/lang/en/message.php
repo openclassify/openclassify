@@ -23,4 +23,5 @@ return [
         'link' => "",
     ],
     'update_category_info' => 'Please update category.',
+    'filter_by_search_msg' => 'Filter By Search.',
 ];

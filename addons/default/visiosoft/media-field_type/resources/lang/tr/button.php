@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'showOn' => 'Ana',
+    'showOn' => 'Vitrin',
 ];

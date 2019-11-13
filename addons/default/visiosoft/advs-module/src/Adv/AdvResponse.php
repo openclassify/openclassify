@@ -21,7 +21,7 @@ class AdvResponse {
         if (!$adv->getResponse()) {
 
             $response = $this->response->view(
-                'visiosoft.theme.base::ad-detail/detail',
+                'visiosoft.module.advs::ad-detail/detail',
                 [
                     'adv'    => $adv,
                 ]
