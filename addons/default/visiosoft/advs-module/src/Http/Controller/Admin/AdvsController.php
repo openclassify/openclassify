@@ -87,7 +87,7 @@ class AdvsController extends AdminController
                     if (strpos($entry->cover_photo, 'http') === 0) {
                         $wrapper = '<img width="64" src="'.$entry->cover_photo.'">';
                     } else {
-                        $wrapper = '<img width="64" src="'.$request->root().$entry->cover_photo.'">';
+                        $wrapper = '<img width="64" src="'.$request->root().'/'.$entry->cover_photo.'">';
                     }
                     return $wrapper;
                 },
