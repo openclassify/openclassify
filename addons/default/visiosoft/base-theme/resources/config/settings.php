@@ -21,8 +21,8 @@ return [
     's-type-latest-limit' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
-            'default_value' => 36,
-            'min' => 12,
+            'default_value' => 5,
+            'min' => 5,
         ],
     ],
     's-type-showcase-limit' => [
