@@ -26,7 +26,7 @@ FindLocations = (id, table, typeDb, divId, paramName = null) => {
 };
 
 // Set selected country in the select menu
-if (useDefault) {
+if (searchParams.get('country') == null) {
     $('#cities').empty();
     var table = "cities";
     var typeDb = 'parent_country_id';
