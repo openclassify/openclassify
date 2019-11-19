@@ -146,6 +146,18 @@ class AdvsController extends PublicController
         $subCats = array();
 
         $param = $this->requestHttp->toArray();
+        if (!isset($param['country'])) {
+            if (is_null(Cookie::get('country'))) {
+                $param['country'] = setting_value('visiosoft.module.advs::default_country');
+            } else {
+                $param['country'] = Cookie::get('country');
+            }
+        } else {
+            if ($param['country'] != setting_value('visiosoft.module.advs::default_country')) {
+                Cookie::queue(Cookie::make('country', $param['country'], 84000));
+            }
+        }
+        $searchedCountry = $param['country'];
 
         $countries = $this->country_repository->viewAll();
 
@@ -213,7 +225,7 @@ class AdvsController extends PublicController
         }
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'textfields', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList');
+            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry');
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
