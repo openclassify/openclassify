@@ -35,13 +35,14 @@
                 </div>
             {% endblock %}
 
-
         </div>
 
     </section>
 
     <script>
         var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
+        var searchedCountry = {{ searchedCountry }};
+        var useDefault = {{ useDefault }};
     </script>
 
     {% if entries('advs').isEnabled('favs') %}

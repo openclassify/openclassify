@@ -25,6 +25,15 @@ FindLocations = (id, table, typeDb, divId, paramName = null) => {
     });
 };
 
+// Set selected country in the select menu
+if (useDefault) {
+    $('#cities').empty();
+    var table = "cities";
+    var typeDb = 'parent_country_id';
+    var id = searchedCountry;
+    var divId = "#cities";
+    FindLocations(id, table, typeDb, divId);
+}
 
 setLocations = (response, id, table, typeDb, divId, paramName) => {
 
@@ -40,7 +49,7 @@ setLocations = (response, id, table, typeDb, divId, paramName) => {
     //Set Selected Option
     if (paramName != null) {
         if (divId == "#cities") {
-            $('#countries').val(searchParams.get('country'));
+            $('#countries').val(searchedCountry);
             $('#countries').select2();
             $('#cities').val(findParam("city[]"));
         } else {
