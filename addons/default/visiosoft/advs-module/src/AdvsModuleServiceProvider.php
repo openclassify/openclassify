@@ -110,14 +110,14 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'getlocations' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getLocations',
         'advs/main' => 'Visiosoft\AdvsModule\Http\Controller\advsController@advsMainPage',
-//        'advs/adv/{id}' => [
-//            'as' => 'adv_detail',
-//            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
-//        ],
-//        'advs/adv/{id}/{seo}' => [
-//            'as' => 'adv_detail_seo',
-//            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
-//        ],
+        'advs/adv/{id}' => [
+            'as' => 'adv_detail',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+        ],
+        'advs/adv/{id}/{seo}' => [
+            'as' => 'adv_detail_seo',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+        ],
         'ad/{id}' => [
             'as' => 'adv_detail',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
