@@ -228,12 +228,12 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             $id = $object->id;
             $seo = str_slug($object->name);
             $seo = str_replace('_', '-', $seo);
-            return \route('adv_detail_seo', [$id, $seo]);
+            return \route('adv_detail_seo', [$seo, $id]);
         }
         $id = $object->getObject()->id;
         $seo = str_slug($object->getObject()->name);
         $seo = str_replace('_', '-', $seo);
-        return \route('adv_detail_seo', [$id, $seo]);
+        return \route('adv_detail_seo', [$seo, $id]);
     }
 
     public function getAdvDetailLinkByAdId($id)
@@ -243,7 +243,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             $id = $adv->id;
             $seo = str_slug($adv->name);
             $seo = str_replace('_', '-', $seo);
-            return \route('adv_detail_seo', [$id, $seo]);
+            return \route('adv_detail_seo', [$seo, $id]);
         }
     }
 
