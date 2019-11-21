@@ -245,8 +245,10 @@ class AdvsController extends PublicController
         return redirect($this->request->headers->get('referer'));
     }
 
-    public function view($id)
+    public function view($seo, $id = null)
     {
+        $id = is_null($id) ? $seo : $id;
+
         $categories = array();
         $categories_id = array();
         $isActiveComplaints = $this->adv_model->is_enabled('complaints');
