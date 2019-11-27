@@ -189,6 +189,7 @@ class AdvsController extends AdminController
 
         $default_adv_publish = $settings->value('visiosoft.module.advs::default_published_time');
         $adv->finish_at = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $default_adv_publish . ' day'));
+        $adv->publish_at = date('Y-m-d H:i:s');
 
         //algolia Search Module
         $isActiveAlgolia = new AdvModel();
