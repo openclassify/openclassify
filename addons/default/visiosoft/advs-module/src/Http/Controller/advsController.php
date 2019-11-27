@@ -765,6 +765,7 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
+        $this->messages->success(trans('streams::message.edit_success', ['name' => 'Status']));
         return back();
     }
 
