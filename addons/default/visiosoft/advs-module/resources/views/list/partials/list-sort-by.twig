@@ -1,25 +1,25 @@
 <div class="dropdown pull-left sort-by-list">
     <div class="dropdown">
-        <h5><i class="fa fa-filter"></i> {{ trans("visiosoft.module.advs::field.sort_by") }}:</h5>
-
-        <a data-toggle="dropdown" class="sort-by-open-dropdown" href="#"
+        <i class="fas fa-sort-alpha-down"></i>
+        <a data-toggle="dropdown" class="sort-by-open-dropdown text-dark" href="#"
            aria-expanded="false">
-            <span class="sort-by-selected-text">{{ trans("visiosoft.module.advs::field.pick_option") }}</span>
+            <span class="sort-by-selected-text">{{ trans("visiosoft.module.advs::field.pick_ordering") }}</span>
             <i class="fa fa-caret-square-o-down"></i>
         </a>
+
 
         <ul class="dropdown-menu" x-placement="bottom-start">
             <li>
                 <a href="#" data-value="sort_price_up"
-                   class="sort-by-item">{{ trans("visiosoft.module.advs::field.price_high") }}</a>
+                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.price_high") }}</a>
             </li>
             <li>
                 <a href="#" data-value="sort_price_down"
-                   class="sort-by-item">{{ trans("visiosoft.module.advs::field.price-low") }}</a>
+                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.price-low") }}</a>
             </li>
             <li>
                 <a href="#" data-value="sort_time"
-                   class="sort-by-item">{{ trans("visiosoft.module.advs::field.newest") }}</a>
+                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.newest") }}</a>
             </li>
         </ul>
     </div>

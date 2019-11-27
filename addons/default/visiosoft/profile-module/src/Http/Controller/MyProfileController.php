@@ -109,10 +109,8 @@ class MyProfileController extends PublicController
             $OrderDetailModel = new OrderdetailModel();
             $myPurchase = $OrderModel->listMyOrders();
             $mySales = $OrderDetailModel->listMySales();
-            foreach ($mySales as $index => $mySale)
-            {
-                if($mySale->item_type == 'adv')
-                {
+            foreach ($mySales as $index => $mySale) {
+                if ($mySale->item_type == 'adv') {
                     $mySales[$index]->detail_url = $advModel->getAdvDetailLinkByAdId($mySale->item_id);
                 }
                 $mySales[$index]->detail_url = "#";
@@ -152,7 +150,6 @@ class MyProfileController extends PublicController
         $profileModel = new ProfileModel();
         $adressModel = new AdressModel();
 
-        $My_adress = $adressModel->getUserAdress();
         $users = UsersUsersEntryModel::find(Auth::id());
         $profiles = $profileModel->getProfile(Auth::id())->orderBy("id")->first();
 
@@ -166,8 +163,8 @@ class MyProfileController extends PublicController
         }
 
         $country = CountryModel::all();
-        return $this->view->make('visiosoft.module.profile::profile.profile', compact('users', 'profiles',
-            'country', 'form', 'My_adress', 'my_packages', 'menu_fields', 'myMessages', 'message_count', 'myPurchase',
+        return $this->view->make('visiosoft.module.profile::profile.detail', compact('users', 'profiles',
+            'country', 'form', 'my_packages', 'menu_fields', 'myMessages', 'message_count', 'myPurchase',
             'mySales', 'advs_count', 'fav_count', 'userbalance', 'fav_advs', 'fav_sellers', 'fav_searches',
             'balancespackage'));
     }
@@ -186,11 +183,10 @@ class MyProfileController extends PublicController
         if (isset($all['error'])) {
             return redirect('/profile')->with('error', $all['error']);
         }
-        
+
         unset($all['_token'], $all['action']);
         $all['file_id'] = $all['file'];
-        if(isset($all['adv_listing_banner']))
-        {
+        if (isset($all['adv_listing_banner'])) {
             $all['adv_listing_banner_id'] = $all['adv_listing_banner'];
             unset($all['adv_listing_banner']);
         }
@@ -254,8 +250,7 @@ class MyProfileController extends PublicController
                 if ($advModel->is_enabled('packages')) {
                     $packageModel = new PackageModel();
                     $published_time = $packageModel->reduceTimeLimit($ad->cat1);
-                    if($published_time != null)
-                    {
+                    if ($published_time != null) {
                         $default_published_time = $published_time;
                     }
                 }
@@ -281,7 +276,7 @@ class MyProfileController extends PublicController
         $adress = $adressModel->getAdressFirst($id);
         if ($adress->getAttribute('user_no_id') == Auth::id()) {
             $country = CountryModel::all();
-            return $this->view->make('visiosoft.module.profile::profile.adress_edit', compact('adress', 'country'));
+            return $this->view->make('visiosoft.module.profile::address/edit', compact('adress', 'country'));
         }
     }
 
@@ -324,10 +319,10 @@ class MyProfileController extends PublicController
 
             $message = [];
             $message[] = trans('visiosoft.module.profile::message.adress_success_create');
-            return redirect('/profile#adress')->with('success', $message);
+            return redirect('/profile/adress')->with('success', $message);
         }
         $country = CountryModel::all();
-        return $this->view->make('visiosoft.module.profile::profile.adress_create', compact('country'));
+        return $this->view->make('visiosoft.module.profile::address/create', compact('country'));
     }
 
     public function adressAjaxCreate(AdressFormBuilder $form, Request $request)
@@ -366,6 +361,13 @@ class MyProfileController extends PublicController
         }
     }
 
+    public function Address()
+    {
+        $address = new AdressModel();
+        $address = $address->getUserAdress();
+        return $this->view->make('visiosoft.module.profile::address/list', compact('address'));
+    }
+
     public function disableAccount()
     {
 
@@ -378,10 +380,8 @@ class MyProfileController extends PublicController
         $advModel = new AdvModel();
         $orderDetailModel = new OrderdetailModel();
         $details = $orderDetailModel->getDetail($id);
-        foreach ($details as $index => $detail)
-        {
-            if($detail->item_type == "adv")
-            {
+        foreach ($details as $index => $detail) {
+            if ($detail->item_type == "adv") {
                 $details[$index]->detail_url = $advModel->getAdvDetailLinkByAdId($detail->item_id);
             } else {
                 $details[$index]->detail_url = "#";
@@ -395,8 +395,7 @@ class MyProfileController extends PublicController
         $advModel = new AdvModel();
         $orderDetailModel = new OrderdetailModel();
         $details = $orderDetailModel->getOrder($id);
-        if($details->item_type == "adv")
-        {
+        if ($details->item_type == "adv") {
             $details->detail_url = $advModel->getAdvDetailLinkByAdId($details->item_id);
         } else {
             $details->detail_url = "#";
@@ -460,6 +459,11 @@ class MyProfileController extends PublicController
         $status = $profileModel->getProfile(Auth::id())->update($all);
         return response()->json($status);
 
+    }
+
+    public function myAds()
+    {
+        return $this->view->make('visiosoft.module.profile::profile/ads');
     }
 
 }

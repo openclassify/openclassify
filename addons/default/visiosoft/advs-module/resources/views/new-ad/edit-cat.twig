@@ -23,8 +23,9 @@
                                 <ul role="tablist">
                                     <select class="cat-select" name="cat1" id="cat1" data-level="1" data-value="{{ ad_Detail.cat1 }}" multiple id="">
                                         {% for cat in main_cats %}
-                                            <option value="{{ cat.id }}"><span
-                                                        style="font-size: 20px">{{ cat.name }}</span></option>
+                                            <option value="{{ cat.id }}">
+                                                <span>{{ cat.name }}</span>
+                                            </option>
                                         {% endfor %}
                                     </select>
                                 </ul>

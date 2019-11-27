@@ -28,8 +28,10 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function getAdvArray($id);
 
-    public function getQuantity($quantity,$type,$item);
+    public function getQuantity($quantity, $type, $item);
 
     public function findByIds($ids);
+
+    public function latestAds();
 
 }

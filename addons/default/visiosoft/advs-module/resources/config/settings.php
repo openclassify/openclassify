@@ -6,6 +6,15 @@ use Anomaly\Streams\Platform\Model\Location\LocationDistrictsEntryModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 
 return [
+    'latest-limit' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'min' => 1,
+            'default_value' => 5,
+        ],
+    ],
+
+
     'site_address' => [
         'type' => 'anomaly.field_type.text',
         'bind' => 'adv.site_address',

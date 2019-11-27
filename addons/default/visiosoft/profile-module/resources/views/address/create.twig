@@ -1,0 +1,82 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    <div class="row">
+        {% include "visiosoft.module.profile::profile/partials/navigation" %}
+        <div class="col-md-12">
+            <div class="row px-3">
+                <div class="col-md-12 bg-dark text-white p-5">
+                    <h3>{{ trans('visiosoft.module.profile::field.create_address.name') }}</h3>
+                </div>
+                <div class="col-md-12 bg-light profile-section">
+                    {% set form = form('profile', 'adress').entry(adress.id).actions({'save':'save'}).get() %}
+                    {{ form_open({
+                        'class': 'form ' ~ form.options.class ,
+                        'enctype': 'multipart/form-data',
+                        'url': 'profile/adress/create'
+                    })|raw }}
+                    <div class="py-3 px-3 px-sm-0">
+
+                        <div class="form-group">
+                            <label class="control-label font-weight-bold">{{ form.fields.adress_name.label|raw }}</label>
+                            {{ form.fields.adress_name.input|raw }}
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label font-weight-bold">{{ form.fields.adress_gsm_phone.label|raw }}</label>
+                            {{ form.fields.adress_gsm_phone.input|raw }}
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label font-weight-bold">{{ form.fields.adress_first_name.label|raw }}</label>
+                            {{ form.fields.adress_first_name.input|raw }}
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label font-weight-bold">{{ form.fields.adress_last_name.label|raw }}</label>
+                            {{ form.fields.adress_last_name.input|raw }}
+                        </div>
+                        <div class="row form-group location-map">
+                            <div class="col-sm-4">
+                                <label class="control-label font-weight-bold">{{ form.fields.country.label|raw }}</label>
+                                <div class="input-wrapper">
+                                    <select name="country" class="custom-select form-control"
+                                            data-content="{{ adress.country.id }}"
+                                            data-field_name="adress_country_id"
+                                            data-provides="anomaly.field_type.select">
+                                        {% for countryField in country %}
+                                            <option value="{{ countryField.id }}">{{ countryField.name }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-4 location-field city-data"
+                                 data-content="{{ adress.city }}">
+                                <label class="control-label font-weight-bold">{{ form.fields.city.label|raw }}</label>
+                                {{ form.fields.city.input|raw }}
+                            </div>
+                            <div class="col-sm-4 location-field district-data"
+                                 data-content="{{ adress.district }}">
+                                <label class="control-label font-weight-bold">{{ form.fields.district.label|raw }}</label>
+                                {{ form.fields.district.input|raw }}
+                            </div>
+                        </div>
+                        <div class="form-group location-map">
+                            <div class="col-sm-12">
+                                <div class="row form-group add-title">
+                                    <label class="control-label font-weight-bold">{{ form.fields.adress_content.label|raw }}</label>
+                                    {{ form.fields.adress_content.input|raw }}
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            {{ form.actions|raw }}
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
+{% endblock %}

@@ -71,15 +71,11 @@ function Locations(cat, level, name){
         data: "cat=" + cat	+ "&level=" + level,
         url: "/class/ajax",
         success: function(msg){
-            hideLoader()
             $('select[name="'+name+'"]').find('option').remove();
             $('select[name="'+name+'"]').append('<option value="">Choose an option...</option>');
             $.each(msg, function(key, value){
                 $('select[name="'+name+'"]').append('<option value="'+value.id+'">'+value.name+'</option>');
             });
-        },
-        beforeSend: function () {
-            showLoader()
         }
     }).promise().done(function() {
         setLocation(level)

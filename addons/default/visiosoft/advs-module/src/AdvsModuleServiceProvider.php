@@ -157,7 +157,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map',
         ],
         'mapJson' => 'Visiosoft\AdvsModule\Http\Controller\advsController@mapJson',
-        'profile/getAdv' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getAdvsByProfile',
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
         'advs/delete/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@softDeleteAdv',
         'check_user' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkUser',
@@ -193,6 +192,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'ajax/getcats/{id}' => [
             'as' => 'ajax::getCats',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
+        ],
+
+
+        'ajax/getAds' => [
+            'as' => 'ajax::getAds',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@getMyAds'
         ],
     ];
 

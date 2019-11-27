@@ -39,20 +39,7 @@ class BaseThemeServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $routes = [
-        'login' => [
-            'as' => 'stream::login-route',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@login',
-        ],
-        'register' => [
-            'as' => 'stream::register-route',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@register',
-        ],
-        'users/password/forgot' => 'Visiosoft\AdvsModule\Http\Controller\advsController@passwordForgot',
-        'users/password/reset' => 'Visiosoft\AdvsModule\Http\Controller\advsController@passwordReset',
-        'authcheck' => 'Visiosoft\AdvsModule\Http\Controller\advsController@authCheck',
-        'isactive/{slug}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@isActiveJson',
-    ];
+    protected $routes = [];
 
     /**
      * The addon middleware.
@@ -60,7 +47,7 @@ class BaseThemeServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $middleware = [
-        //Visiosoft\DefaultTheme\Http\Middleware\ExampleMiddleware::class
+        //Visiosoft\TestbootTheme\Http\Middleware\ExampleMiddleware::class
     ];
 
     /**
@@ -70,7 +57,7 @@ class BaseThemeServiceProvider extends AddonServiceProvider
      */
     protected $groupMiddleware = [
         //'web' => [
-        //    Visiosoft\DefaultTheme\Http\Middleware\ExampleMiddleware::class,
+        //    Visiosoft\TestbootTheme\Http\Middleware\ExampleMiddleware::class,
         //],
     ];
 
@@ -87,8 +74,8 @@ class BaseThemeServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $listeners = [
-        //Visiosoft\DefaultTheme\Event\ExampleEvent::class => [
-        //    Visiosoft\DefaultTheme\Listener\ExampleListener::class,
+        //Visiosoft\TestbootTheme\Event\ExampleEvent::class => [
+        //    Visiosoft\TestbootTheme\Listener\ExampleListener::class,
         //],
     ];
 
@@ -98,7 +85,7 @@ class BaseThemeServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $aliases = [
-        //'Example' => Visiosoft\DefaultTheme\Example::class
+        //'Example' => Visiosoft\TestbootTheme\Example::class
     ];
 
     /**
@@ -130,9 +117,6 @@ class BaseThemeServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $overrides = [
-        'streams::errors/404' => 'theme::errors/404',
-        'streams::errors/500' => 'theme::errors/500',
-        'streams::errors/403' => 'theme::errors/403',
         //'streams::errors/404' => 'module::errors/404',
         //'streams::errors/500' => 'module::errors/500',
     ];
@@ -161,16 +145,8 @@ class BaseThemeServiceProvider extends AddonServiceProvider
      */
     public function boot()
     {
-        view()->composer('*', function ($view) {
-
-            if (Request()->session()->get('_locale') === null) {
-                $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
-                $acceptLang = ['ar', 'de', 'el', 'en', 'es', 'fa', 'fr', 'it', 'nl', 'pt', 'ru', 'tr'];
-                $lang = in_array($lang, $acceptLang) ? $lang : 'en';
-                App()->setLocale($lang);
-                Request()->session()->put('_locale', $lang);
-            }
-        });
+        // Run extra post-boot registration logic here.
+        // Use method injection or commands to bring in services.
     }
 
     /**

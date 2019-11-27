@@ -1,90 +1,58 @@
-{% extends layout('table') %}
 {% extends "visiosoft.module.advs::list/list" %}
 {% block listContent %}
+    <div class="table-responsive table-ads">
 
-    <div class="category-info">
-        <div class="row">
+        <table class="table ads-list-table">
+            <thead>
+            <tr>
+                <th scope="col" colspan="2"
+                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
+                <th scope="col"
+                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
+                <th scope="col"
+                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                <th scope="col"
+                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
+                    / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+            </tr>
+            </thead>
+            <tbody>
 
-            {% include "visiosoft.module.advs::list/partials/user-section" %}
-
-            <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
-
-                {% include "visiosoft.module.advs::list/partials/list-filter" %}
-
-                <div class="col-sm-8 col-md-9">
-                    <div class="section recommended-ads">
-
-                        <div class="row">
-
-                            <div class="col-md-6">
-                                    {% include "visiosoft.module.advs::list/partials/list-sort-by" %}
-                            </div>
-                            <div class="col-md-6">
-                                {% include "visiosoft.module.advs::list/partials/display-mode" %}
-
-                            </div>
+            {% for adv in advs %}
+                <tr class="text-center clickable-row" data-href='{{ adv.detail_url }}'>
+                    <td class="justify-content-center align-middle text-center td-image">
+                        <a href="">
+                            <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+                        </a>
+                    </td>
+                    <td class="text-left justify-content-center align-middle">
+                        <div class="table-row-name">
+                            <a href="{{ adv.detail_url }}" class="text-dark">
+                                {{ adv.name }}
+                            </a>
                         </div>
+                    </td>
+                    <td class="justify-content-center align-middle">
+                        <b>{{ adv.price.currency }}</b>
+                    </td>
+                    <td class="justify-content-center align-middle">
+                        <small>{{ adv.created_at|date("d/m/Y") }}</small>
+                    </td>
+                    {% if setting_value('visiosoft.module.location::list_page_location') %}
+                        <td class="justify-content-center align-middle">
+                            <small>{{ adv.city_name }} / {{ adv.country_name }}</small>
+                        </td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
 
 
+            <!--Table Rows-->
 
-                        {% if entries('advs').isEnabled('customfields') %}
-                            {% include "visiosoft.module.customfields::selecttop" %}
-                        {% endif %}
-                        <div class="category-tabs">
 
-                        </div>
-                        <div class="table-responsive">
-
-                            <table class="table ads-list-table">
-                                <thead>
-                                <tr>
-                                    <th scope="col" colspan="2"
-                                        class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
-                                    <th scope="col"
-                                        class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
-                                    <th scope="col"
-                                        class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
-                                    <th scope="col"
-                                        class="text-center">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
-                                        / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
-                                    {% if entries('advs').isEnabled('customfields') %}
-                                        {% include "visiosoft.module.customfields::cftable" %}
-                                    {% endif %}
-                                </tr>
-                                </thead>
-                                <tbody>
-                                {% include "visiosoft.module.advs::list/partials/table-row" %}
-                                </tbody>
-                            </table>
-                        </div>
-                        <!-- pagination  -->
-                        <div class="text-center">
-                            <div class="tool-pagination">
-                                {{ advs.links()|raw }}
-                            </div>
-                        </div><!-- pagination  -->
-                        {% if entries('advs').isEnabled('favs') %}
-                            <div class="favorite-searches">
-                                <div class="search-fav-icon col-md-1">
-                                    <i class="fa fa-search"></i>
-                                </div>
-                                <div class="search-fav-tex col-md-8">
-                                    <h4>{{ trans("visiosoft.module.advs::field.my_favorite_searches") }}</h4>
-                                    <br>
-                                    <p>{{ trans("visiosoft.module.advs::field.search_desc") }}</p>
-                                </div>
-                                <div class="search-fav-button col-md-3">
-                                    <button class="btn btn-success" type="button"
-                                            id="save-search">{{ trans("visiosoft.module.advs::field.add_to_favorites") }}</button>
-                                </div>
-                            </div>
-                        {% endif %}
-                    </div>
-                </div><!-- recommended-ads -->
-            </form>
-        </div>
+            </tbody>
+        </table>
     </div>
-
 
 {% endblock %}
 {% block customjs %}

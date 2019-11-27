@@ -341,4 +341,30 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     {
         return $this->model->orderBy('created_at', 'DESC')->whereIn('advs_advs.id', $ids)->get();
     }
+
+
+    /**
+     * Get Latest Ads
+     * @return mixed
+     */
+    public function latestAds()
+    {
+        $latest_advs = $this->model
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', '=', 'approved')
+            ->where('slug', '!=', '')
+            ->orderBy('publish_at', 'desc')
+            ->limit(setting_value('visiosoft.module.advs::latest-limit'))->get();
+
+        $ads = $this->model->getLocationNames($latest_advs);
+
+        foreach ($ads as $index => $ad) {
+            $ads[$index]->detail_url = $this->model->getAdvDetailLinkByModel($ad, 'list');
+            $ads[$index] = $this->model->AddAdsDefaultCoverImage($ad);
+        }
+
+        return $ads;
+    }
+
+
 }

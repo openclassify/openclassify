@@ -305,7 +305,7 @@ class AdvsController extends PublicController
 
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'tags', 'profile', 'comments', 'qrSRC'));
+            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'profile', 'comments', 'qrSRC'));
         } else {
             return back();
         }
@@ -738,6 +738,9 @@ class AdvsController extends PublicController
 
         if ($auto_approved == true AND $type == 'pending_admin') {
             $type = "approved";
+        }
+        if ($type == "approved" and $auto_approved != true) {
+            $type = "pending_admin";
         }
 
         if ($type == "approved") {

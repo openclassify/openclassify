@@ -1,16 +1,21 @@
 {% if app.auth.id == adv.created_by_id %}
-    <a class="btn btn-info edit-adv-btn" href="/advs/edit_advs/{{ adv.id }}"><i
-                class="fa fa-pencil-square-o"></i>
-        <font>{{ trans('visiosoft.module.advs::field.edit') }}</font></a>
-    {% if adv.status != "pending_admin" and adv.status != "approved" %}
-        <a class="btn btn-success approve-adv-btn"
-           href="{{ url_route('visiosoft.module.advs::status',[adv.id,"pending_admin"]) }}"><i
-                    class="fa fa-eye"></i>
-            <font>{{ trans('visiosoft.module.advs::field.approve') }}</font></a>
-    {% else %}
-        <a class="btn btn-danger passive-adv-btn"
-           href="{{ url_route('visiosoft.module.advs::status',[adv.id,"passive"]) }}"><i
-                    class="fa fa-ban"></i>
-            <font>{{ trans('visiosoft.module.advs::field.passive') }}</font></a>
-    {% endif %}
+    <div class="breadcrumb bg-dark justify-content-end">
+        <a class="btn btn-info edit-adv-btn mr-2" href="/advs/edit_advs/{{ adv.id }}">
+            <i class="fas fa-pencil-alt"></i>
+            <font>{{ trans('visiosoft.module.advs::field.edit') }}</font>
+        </a>
+        {% if adv.status != "pending_admin" and adv.status != "approved" %}
+            <a class="btn btn-success approve-adv-btn mr-2"
+               href="{{ url_route('visiosoft.module.advs::status',[adv.id,"pending_admin"]) }}">
+                <i class="fa fa-eye"></i>
+                <font>{{ trans('visiosoft.module.advs::field.approve') }}</font>
+            </a>
+        {% else %}
+            <a class="btn btn-danger passive-adv-btn mr-2"
+               href="{{ url_route('visiosoft.module.advs::status',[adv.id,"passive"]) }}">
+                <i class="fa fa-ban"></i>
+                <font>{{ trans('visiosoft.module.advs::field.passive') }}</font>
+            </a>
+        {% endif %}
+    </div>
 {% endif %}

@@ -2,6 +2,8 @@
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
+use Visiosoft\AdvsModule\Adv\Command\isActive;
+use Visiosoft\AdvsModule\Adv\Command\LatestAds;
 
 class AdvsModulePlugin extends Plugin
 {
@@ -21,6 +23,26 @@ class AdvsModulePlugin extends Plugin
                     }
 
                     return $ad;
+                }
+            ), new \Twig_SimpleFunction(
+                'isActive',
+                function ($name, $type = 'module', $project = 'visiosoft') {
+
+                    if (!$isActive = $this->dispatch(new isActive($name, $type, $project))) {
+                        return 0;
+                    }
+
+                    return $isActive;
+                }
+            ), new \Twig_SimpleFunction(
+                'latestAds',
+                function () {
+
+                    if (!$latestAds = $this->dispatch(new LatestAds())) {
+                        return 0;
+                    }
+
+                    return $latestAds;
                 }
             )
         ];

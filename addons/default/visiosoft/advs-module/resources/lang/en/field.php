@@ -103,12 +103,14 @@ return [
     'value' => [
         'name' => 'Value'
     ],
+    'list' => 'List',
     'home' => 'Home',
     'list-page' => 'List Page',
     'search' => 'Search',
     'recommended' => 'Recommended Ads for You',
     'sort_by' => 'Sort By',
     'pick_option' => 'Pick an option',
+    'pick_ordering' => 'Ordering',
     'price_high' => 'Price High to Low',
     'price-low' => 'Price Low to High',
     'newest' => 'Newest',

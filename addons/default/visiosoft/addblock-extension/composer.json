@@ -1,0 +1,22 @@
+{
+  "name": "visiosoft/addblock-extension",
+  "type": "streams-addon",
+  "authors": [
+    {
+      "name": "Visiosoft, LTD.",
+      "email": "support@visiosoft.com.tr",
+      "homepage": "https://visiosoft.com.tr/",
+      "role": "Owner"
+    },
+    {
+      "name": "Vedat Akdoğan",
+      "email": "vedat@visiosoft.com.tr",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Visiosoft\\AddblockExtension\\": "src/"
+    }
+  }
+}

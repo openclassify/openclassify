@@ -1,46 +1,42 @@
-<!-- Navigation -->
-<nav class="navbar navbar-inverse navbar-fixed-top">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
+        <a class="navbar-brand" href="{{ url("/") }}">{{ setting_value('streams::name', config_get('streams::distribution.name')) }}</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
+                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
 
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header page-scroll">
-            <button type="button" class="navbar-toggle" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-1">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="{{ url("/") }}">
-                {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
-            </a>
-        </div>
-
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-
-            <ul class="nav navbar-nav navbar-right">
-                <li>
-                    <a href="{{ url_route('anomaly.module.posts::posts.index') }}">Posts</a>
-                </li>
-                <li>
-                    {% if auth_check() %}
-                        <a href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
-                    {% else %}
-                        <a href="{{ url_route('anomaly.module.users::login') }}">Login</a>
-                    {% endif %}
-                </li>
-            </ul>
-
+        <div class="collapse navbar-collapse">
             {{ structure()
             .linkAttributesDropdown({'data-toggle': 'dropdown'})
+            .item_class('nav-item')
+            .selected_class('active')
+            .child_item_class('dropdown-item')
+            .dropdown_class('dropdown')
+            .child_link_class('dropdown-item')
+            .link_class('nav-link')
+            .depth(5)
             .listClass('nav navbar-nav navbar-right')
             .childListClass('dropdown-menu')
             .cache({'namespace': 'user'})
             .render()|raw }}
         </div>
-        <!-- /.navbar-collapse -->
-
+        <div>
+            <ul class="nav navbar-nav navbar-right">
+                <li class="nav-item">
+                    {% if auth_check() %}
+                        <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
+                    {% else %}
+                        <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}">Login</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_route('visiosoft.module.profile::profile') }}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/advs/create_adv" class="btn btn-primary">{{ trans("theme::button.post_ad.name") }}</a>
+                </li>
+            </ul>
+        </div>
     </div>
-    <!-- /.container-fluid -->
 </nav>

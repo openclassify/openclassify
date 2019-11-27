@@ -32,3 +32,7 @@
     border: 1px solid #dadada;
     margin-right: 5px;
 }
+
+#cat1 span {
+    font-size: 20px
+}
