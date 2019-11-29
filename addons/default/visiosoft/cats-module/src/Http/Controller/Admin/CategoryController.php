@@ -2,9 +2,11 @@
 
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
+use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Sunra\PhpSimple\HtmlDomParser;
-use Visiosoft\CatsModule\Category\CategoryCollection;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
@@ -13,6 +15,22 @@ use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
 class CategoryController extends AdminController
 {
+    private $categoryRepository;
+    private $categoryEntryTranslationsModel;
+    private $str;
+
+    public function __construct(
+        CategoryRepositoryInterface $categoryRepository,
+        CatsCategoryEntryTranslationsModel $categoryEntryTranslationsModel,
+        Str $str
+    )
+    {
+        parent::__construct();
+        $this->categoryRepository = $categoryRepository;
+        $this->categoryEntryTranslationsModel = $categoryEntryTranslationsModel;
+        $this->str = $str;
+    }
+
     public function index(CategoryTableBuilder $table, Request $request)
     {
         if ($this->request->action == "delete") {
@@ -55,10 +73,66 @@ class CategoryController extends AdminController
                 return $this->redirect->back();
             }
 
-            $form->make();
-            if ($form->hasFormErrors()) {
-                return $this->redirect->to('/admin/cats/create');
+            $locale = DB::table('cats_category_translations')->select('locale')->distinct()->get()->toArray();
+            $translatable = array();
+            foreach ($all as $key => $value) {
+                foreach ($locale as $lang) {
+                    if ($this->endsWith($key, "_$lang->locale") && !in_array(substr($key, 0, -3), $translatable)) {
+                        $translatable[] = substr($key, 0, -3);
+                    }
+                }
             }
+            $translatableEntries = array();
+            foreach ($locale as $lang) {
+                $translatableEntries[$lang->locale] = array();
+                foreach ($translatable as $translatableEntry) {
+                    $translatableEntries[$lang->locale][$translatableEntry] = $all[$translatableEntry . '_' . $lang->locale];
+                }
+            }
+
+            // Check if there is multiple categories in the name filed
+            $isMultiCat = array();
+            foreach ($translatableEntries as $key => $translatableEntry) {
+                $multiCat = explode(",", $translatableEntry['name']);
+                if (count($multiCat) > 1) {
+                    $firstArray = array();
+                    foreach ($multiCat as $cat) {
+                        $secondArray = array();
+                        foreach ($locale as $lang) {
+                            if ($key === $lang->locale) {
+                                $secondArray[$key]['name'] = trim($cat);
+                            }
+                        }
+                        array_push($firstArray, $secondArray);
+                    }
+                    array_push($isMultiCat, $firstArray);
+                }
+            }
+            for ($i = 0; $i < count($isMultiCat[0]); $i++) {
+                foreach ($isMultiCat as $cat) {
+                    $translatableEntries = array_merge($translatableEntries, $cat[$i]);
+                }
+                $this->categoryRepository->create(array_merge($translatableEntries, [
+                    'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
+                    'parent_category' => $all['parent_category'],
+                    'icon' => $all['icon'],
+                    'seo_keyword' => $all['seo_keyword'],
+                    'seo_description' => $all['seo_description'],
+                ]));
+            }
+
+//            $this->categoryRepository->create(array_merge($translatableEntries, [
+//                'slug' => $all['slug'],
+//                'parent_category' => $all['parent_category'],
+//                'icon' => $all['icon'],
+//                'seo_keyword' => $all['seo_keyword'],
+//                'seo_description' => $all['seo_description'],
+//            ]));
+
+//            $form->make();
+//            if ($form->hasFormErrors()) {
+//                return $this->redirect->to('/admin/cats/create');
+//            }
             if ($parent_id != "") {
                 return $this->redirect->to('/admin/cats?cat=' . $parent_id);
             }
@@ -79,6 +153,13 @@ class CategoryController extends AdminController
 
 
         return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField', 'formBuilder'));
+    }
+
+    public function endsWith($string, $test) {
+        $strlen = strlen($string);
+        $testlen = strlen($test);
+        if ($testlen > $strlen) return false;
+        return substr_compare($string, $test, $strlen - $testlen, $testlen) === 0;
     }
 
 
