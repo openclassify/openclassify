@@ -108,18 +108,28 @@ class CategoryController extends AdminController
                     array_push($isMultiCat, $firstArray);
                 }
             }
-            for ($i = 0; $i < count($isMultiCat[0]); $i++) {
-                foreach ($isMultiCat as $cat) {
-                    $translatableEntries = array_merge($translatableEntries, $cat[$i]);
-                }
-                $this->categoryRepository->create(array_merge($translatableEntries, [
-                    'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
+            if (empty($isMultiCat)) {
+                    $this->categoryRepository->create(array_merge($translatableEntries, [
+                    'slug' => $all['slug'],
                     'parent_category' => $all['parent_category'],
                     'icon' => $all['icon'],
                     'seo_keyword' => $all['seo_keyword'],
                     'seo_description' => $all['seo_description'],
                 ]));
-            }
+            } else {
+                for ($i = 0; $i < count($isMultiCat[0]); $i++) {
+                    foreach ($isMultiCat as $cat) {
+                        $translatableEntries = array_merge($translatableEntries, $cat[$i]);
+                    }
+                    $this->categoryRepository->create(array_merge($translatableEntries, [
+                        'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
+                        'parent_category' => $all['parent_category'],
+                        'icon' => $all['icon'],
+                        'seo_keyword' => $all['seo_keyword'],
+                        'seo_description' => $all['seo_description'],
+                    ]));
+                }
+            };
 
 //            $this->categoryRepository->create(array_merge($translatableEntries, [
 //                'slug' => $all['slug'],
