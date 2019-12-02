@@ -5,6 +5,6 @@ return [
         'title' => 'Category',
     ],
     'placeholderforsearch' => [
-        'title' => 'Placeholderforsearch',
+        'title' => 'Placeholder',
     ],
 ];
