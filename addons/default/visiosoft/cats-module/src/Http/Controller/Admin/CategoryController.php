@@ -111,7 +111,7 @@ class CategoryController extends AdminController
             if (empty($isMultiCat)) {
                     $this->categoryRepository->create(array_merge($translatableEntries, [
                     'slug' => $all['slug'],
-                    'parent_category' => $all['parent_category'],
+                    'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
                     'icon' => $all['icon'],
                     'seo_keyword' => $all['seo_keyword'],
                     'seo_description' => $all['seo_description'],
@@ -123,7 +123,7 @@ class CategoryController extends AdminController
                     }
                     $this->categoryRepository->create(array_merge($translatableEntries, [
                         'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
-                        'parent_category' => $all['parent_category'],
+                        'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
                         'icon' => $all['icon'],
                         'seo_keyword' => $all['seo_keyword'],
                         'seo_description' => $all['seo_description'],
