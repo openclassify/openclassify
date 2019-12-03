@@ -24,10 +24,11 @@
 
             <h2 class="title">
                 {{ adv.title }}
+                {{ addBlock('ad-detail/title/action',{'adv_id':adv.id})|raw }}
             </h2>
 
             <!--detail-ad -->
-            <div class="section slider">
+            <div class="section slider mb-4">
                 <div class="row">
 
                     {% include "visiosoft.module.advs::ad-detail/partials/slider" %}
