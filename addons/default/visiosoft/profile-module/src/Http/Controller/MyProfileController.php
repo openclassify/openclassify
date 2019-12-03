@@ -24,9 +24,6 @@ use Visiosoft\AdvsModule\AdvsModule;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AdvsModule\Http\Controller\AdvsController;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
-use Visiosoft\FavsModule\Favorite\Contract\FavoriteRepositoryInterface;
-use Visiosoft\FavsModule\Favorite\FavoriteModel;
-use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\CloudsiteModule\CloudsiteModule;
 use Visiosoft\CloudsiteModule\Site\SiteModel;
 use Visiosoft\OrdersModule\Order\OrderModel;
@@ -73,7 +70,6 @@ class MyProfileController extends PublicController
         $isActiveMessages = $isActive->is_enabled('messages');
         $isActiveOrders = $isActive->is_enabled('orders');
         $isBalanceActive = $isActive->is_enabled('balances');
-        $isActiveFavs = $isActive->is_enabled('favs');
         $isActivePackages = $isActive->is_enabled('packages');
 
 
@@ -131,22 +127,6 @@ class MyProfileController extends PublicController
             $menu_fields[] = $menu_packages;
         }
 
-        if ($isActiveFavs) {
-            $fav = new FavoriteModel();
-            $favs = $fav->getFavsByProfile();
-            $fav_count = count($favs);
-            $menuFavorites = array();
-            $menuFavorites['href'] = "favs";
-            $menuFavorites['aria-controls'] = "favs";
-            $menuFavorites['title'] = trans('visiosoft.module.profile::field.favorites');
-            $menu_fields[] = $menuFavorites;
-
-            $id = Auth::id();
-            $fav_advs = $fav->getItems($id, 'adv');
-            $fav_sellers = $fav->getItems($id, 'seller');
-            $fav_searches = $fav->getItems($id, 'search');
-        }
-
         $profileModel = new ProfileModel();
         $adressModel = new AdressModel();
 
@@ -165,8 +145,7 @@ class MyProfileController extends PublicController
         $country = CountryModel::all();
         return $this->view->make('visiosoft.module.profile::profile.detail', compact('users', 'profiles',
             'country', 'form', 'my_packages', 'menu_fields', 'myMessages', 'message_count', 'myPurchase',
-            'mySales', 'advs_count', 'fav_count', 'userbalance', 'fav_advs', 'fav_sellers', 'fav_searches',
-            'balancespackage'));
+            'mySales', 'advs_count', 'fav_count', 'userbalance', 'balancespackage'));
     }
 
     public function update(ProfileFormBuilder $form, Request $request, UserPassword $userPassword, ProfileRepositoryInterface $profileRepository)
