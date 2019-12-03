@@ -118,12 +118,20 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'adv_detail_seo',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
         ],
+        'ad/{id}' => [
+            'as' => 'adv_detail',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+        ],
+        'ad/{seo}/{id}' => [
+            'as' => 'adv_detail_seo',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+        ],
         'advs/map?country={country}&city[]={city}&district={districts}' => [
             'as' => 'visiosoft.module.advs::show_ad_map_location',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map'
         ],
         'advs/categories' => 'Visiosoft\AdvsModule\Http\Controller\CategoriesController@index',
-        'advs/categories/{cat}' => 'Visiosoft\AdvsModule\Http\Controller\CategoriesController@listByCat',
+        'advs/c/{cat}' => 'Visiosoft\AdvsModule\Http\Controller\CategoriesController@listByCat',
         'advs/module_active' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
         'advs/create_adv' => [
             'as' => "create_adv",
