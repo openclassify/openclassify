@@ -134,7 +134,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'advs/c/{cat}' => 'Visiosoft\AdvsModule\Http\Controller\CategoriesController@listByCat',
         'advs/module_active' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
         'advs/create_adv' => [
-            'as' => "create_adv",
+            'as' => "advs::create_adv",
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@cats',
         ],
         'advs/create_adv/post_cat' => [
