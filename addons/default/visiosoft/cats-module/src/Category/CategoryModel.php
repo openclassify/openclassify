@@ -9,7 +9,10 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 
     public function getCat($id)
     {
-        return CategoryModel::query()->where('cats_category.id', $id)->first();
+        return CategoryModel::query()
+            ->where('cats_category.id', $id)
+            ->whereRaw('deleted_at IS NULL')
+            ->first();
     }
 
     public function getParentCats($id, $type = null)
@@ -34,7 +37,11 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             }
         }
         if ($type == 'category_ids') {
-            return CategoryModel::query()->whereIn('cats_category.id', $cat_ids)->orderBy('cats_category.id', 'asc')->get();
+            return CategoryModel::query()
+                ->whereIn('cats_category.id', $cat_ids)
+                ->whereRaw('deleted_at IS NULL')
+                ->orderBy('cats_category.id', 'asc')
+                ->get();
         }
         if ($type == "parent_id") {
             $cat_ids = array_reverse($cat_ids);
@@ -92,7 +99,8 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
                 $cats = $cats->where('cats_category.id', '!=', $selected);
             }
         }
-        $cats = $cats->where('name', 'like', $keyword . '%');
+        $cats = $cats->where('name', 'like', $keyword . '%')
+            ->whereRaw('deleted_at IS NULL');
 
         $cats = $cats->leftJoin('cats_category_translations', function ($join) {
             $join->on('cats_category.id', '=', 'cats_category_translations.entry_id');
