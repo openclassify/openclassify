@@ -14,6 +14,7 @@
                 <th scope="col"
                     class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
                     / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                {{ addBlock('ads-list/table-column',{'seenList':seenList})|raw }}
             </tr>
             </thead>
             <tbody>
@@ -43,6 +44,7 @@
                             <small>{{ adv.city_name }} / {{ adv.country_name }}</small>
                         </td>
                     {% endif %}
+                    {{ addBlock('ads-list/table-row',{'seenList':seenList,'adv':adv})|raw }}
                 </tr>
             {% endfor %}
 
