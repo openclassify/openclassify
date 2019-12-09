@@ -73,19 +73,6 @@ class MyProfileController extends PublicController
         $isActivePackages = $isActive->is_enabled('packages');
 
 
-        if ($isBalanceActive) {
-            $balanceController = app(\Visiosoft\BalancesModule\Http\Controller\BalancesFrontController::class);
-            $balanceModel = new \Visiosoft\BalancesModule\Package\PackageModel();
-            $balancespackage = $balanceModel->listPackage();
-            $userbalance = $balanceController->index(auth()->user()->id);
-            $menu_balance = array();
-            $menu_balance['href'] = "balance";
-            $menu_balance['aria-controls'] = "balance";
-            $menu_balance['title'] = trans('visiosoft.module.balances::field.menu_balance.name');
-            $menu_fields[] = $menu_balance;
-        } else {
-            $userbalance = '';
-        }
         if ($isActiveMessages) {
 
             $myMessages = new MessageModel();
