@@ -17,7 +17,9 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $plugins = [];
+    protected $plugins = [
+        LocationModulePlugin::class
+    ];
 
     /**
      * The addon Artisan commands.
@@ -46,20 +48,20 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'admin/location/village'           => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@index',
-        'admin/location/village/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@create',
+        'admin/location/village' => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@index',
+        'admin/location/village/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@create',
         'admin/location/village/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@edit',
-        'admin/location/'           => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@index',
-        'admin/location/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@create',
+        'admin/location/' => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@index',
+        'admin/location/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@create',
         'admin/location/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@edit',
-        'admin/location/cities'           => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@index',
-        'admin/location/cities/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@create',
+        'admin/location/cities' => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@index',
+        'admin/location/cities/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@create',
         'admin/location/cities/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@edit',
-        'admin/location/districts'           => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@index',
-        'admin/location/districts/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@create',
+        'admin/location/districts' => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@index',
+        'admin/location/districts/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@create',
         'admin/location/districts/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@edit',
-        'admin/location/neighborhoods'           => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@index',
-        'admin/location/neighborhoods/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@create',
+        'admin/location/neighborhoods' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@index',
+        'admin/location/neighborhoods/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@create',
         'admin/location/neighborhoods/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@edit',
     ];
 
