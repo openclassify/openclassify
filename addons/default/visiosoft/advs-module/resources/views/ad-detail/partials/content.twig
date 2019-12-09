@@ -1,7 +1,6 @@
 <div class="description-info">
     <div class="row">
 
-
         <div class="col-md-12">
             <nav>
                 <div class="nav nav-tabs nav-fill ad-detail-tabs" id="nav-tab" role="tablist">
@@ -12,7 +11,7 @@
                        aria-selected="true">{{ trans('visiosoft.module.advs::field.description.name') }}</a>
 
                     <!-- Content Tab With Block -->
-                    {{ addBlock('ad-detail/content-tab')|raw }}
+                    {{ addBlock('ad-detail/content-tab',{'features':features})|raw }}
                     <!-- Content Tab With Block -->
                 </div>
 

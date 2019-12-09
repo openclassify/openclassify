@@ -50,6 +50,7 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
+        'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubcats',
         'admin/cats/placeholderforsearch' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@index',
         'admin/cats/placeholderforsearch/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@create',
         'admin/cats/placeholderforsearch/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@edit',

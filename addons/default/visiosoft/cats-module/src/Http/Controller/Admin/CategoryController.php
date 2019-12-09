@@ -1,10 +1,8 @@
 <?php namespace Visiosoft\CatsModule\Http\Controller\Admin;
 
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
-use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Sunra\PhpSimple\HtmlDomParser;
 use Visiosoft\CatsModule\Category\CategoryModel;
@@ -25,10 +23,10 @@ class CategoryController extends AdminController
         Str $str
     )
     {
-        parent::__construct();
         $this->categoryRepository = $categoryRepository;
         $this->categoryEntryTranslationsModel = $categoryEntryTranslationsModel;
         $this->str = $str;
+        parent::__construct();
     }
 
     public function index(CategoryTableBuilder $table, Request $request)
@@ -73,20 +71,21 @@ class CategoryController extends AdminController
                 return $this->redirect->back();
             }
 
-            $locale = DB::table('cats_category_translations')->select('locale')->distinct()->get()->toArray();
+            $locale = $this->getRequestLang($all);
+
             $translatable = array();
             foreach ($all as $key => $value) {
                 foreach ($locale as $lang) {
-                    if ($this->endsWith($key, "_$lang->locale") && !in_array(substr($key, 0, -3), $translatable)) {
+                    if ($this->endsWith($key, "_$lang") && !in_array(substr($key, 0, -3), $translatable)) {
                         $translatable[] = substr($key, 0, -3);
                     }
                 }
             }
             $translatableEntries = array();
             foreach ($locale as $lang) {
-                $translatableEntries[$lang->locale] = array();
+                $translatableEntries[$lang] = array();
                 foreach ($translatable as $translatableEntry) {
-                    $translatableEntries[$lang->locale][$translatableEntry] = $all[$translatableEntry . '_' . $lang->locale];
+                    $translatableEntries[$lang][$translatableEntry] = $all[$translatableEntry . '_' . $lang];
                 }
             }
 
@@ -99,7 +98,7 @@ class CategoryController extends AdminController
                     foreach ($multiCat as $cat) {
                         $secondArray = array();
                         foreach ($locale as $lang) {
-                            if ($key === $lang->locale) {
+                            if ($key === $lang) {
                                 $secondArray[$key]['name'] = trim($cat);
                             }
                         }
@@ -109,7 +108,7 @@ class CategoryController extends AdminController
                 }
             }
             if (empty($isMultiCat)) {
-                    $this->categoryRepository->create(array_merge($translatableEntries, [
+                $this->categoryRepository->create(array_merge($translatableEntries, [
                     'slug' => $all['slug'],
                     'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
                     'icon' => $all['icon'],
@@ -172,6 +171,30 @@ class CategoryController extends AdminController
         return substr_compare($string, $test, $strlen - $testlen, $testlen) === 0;
     }
 
+    public function getRequestLang($request) {
+        $locale = array();
+        foreach ($request as $key => $field) {
+            $locale[] = substr($key, 0, -2);
+        }
+        $notTrans = array();
+        $trans = array();
+        foreach ($locale as $translatable) {
+            if (!in_array($translatable, $notTrans)) {
+                $notTrans[] = $translatable;
+            } else {
+                $trans[] = $translatable;
+            }
+        }
+        $locale = array();
+        foreach ($request as $key => $field) {
+            foreach (array_unique($trans) as $entry) {
+                if (strpos($key, $entry) === 0) {
+                    $locale[] = substr($key, -2);
+                }
+            }
+        }
+        return $locale;
+    }
 
     public function edit(CategoryFormBuilder $form, Request $request, $id)
     {
@@ -218,6 +241,22 @@ class CategoryController extends AdminController
             return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
         else
             return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
+    }
+
+    public function cleanSubcats()
+    {
+        $cats = $this->categoryRepository->all();
+        $deletedCatsCount = 0;
+        foreach ($cats as $cat) {
+            $parentCatId = $cat->parent_category_id;
+            $parentCat = $this->categoryRepository->find($parentCatId);
+            if (is_null($parentCat) && !is_null($parentCatId)) {
+                $this->categoryEntryTranslationsModel->where('entry_id', $cat->id)->delete();
+                $this->categoryRepository->DeleteCategories($cat->id);
+                $deletedCatsCount++;
+            }
+        }
+        return redirect('admin/cats')->with('success', [$deletedCatsCount . ' categories has been deleted.']);
     }
 
 

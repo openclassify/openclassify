@@ -5,8 +5,9 @@ use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 
 class CategoryPresenter extends EntryPresenter
 {
-    public function getAdvsListUrl($attributes) {
-        return \route('visiosoft.module.advs::list', "cat=".$attributes);
+    public function getAdvsListUrl($attributes)
+    {
+        return \route('visiosoft.module.advs::list', "cat=" . $attributes);
     }
 
     public function getCategoryName($id)
@@ -23,23 +24,7 @@ class CategoryPresenter extends EntryPresenter
 
     public function getMains($id)
     {
-        $categories = array();
-        $z = 1;
-        for($i = 1; $i <= $z; $i++)
-        {
-            $main = $this->find($id);
-            $new = array();
-            $new['id'] = $main->id;
-            $new['val'] = $this->getname($main->id);
-            $categories[] = $new;
-            if($main->parent_category_id != null)
-            {
-                $id = $main->parent_category_id;
-                $z++;
-            }
-        }
-        $categories = array_reverse($categories);
-        unset($categories[count($categories)-1]);
-        return $categories;
+        $category_model = new CategoryModel();
+        return $category_model->getMains($id);
     }
 }
