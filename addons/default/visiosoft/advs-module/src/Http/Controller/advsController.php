@@ -195,7 +195,6 @@ class AdvsController extends PublicController
         }
 
 
-
         if (isset($param['cat']) and $param['cat'] != "") {
             $cat = $param['cat'];
             $seo_keywords = $this->category_model->getMeta_keywords($param['cat']);
@@ -218,6 +217,7 @@ class AdvsController extends PublicController
             $checkboxes = $returnvalues['checkboxes'];
             $topfields = $returnvalues['topfields'];
             $ranges = $returnvalues['ranges'];
+            $radio = $returnvalues['radio'];
         }
 
         if (!empty($param['user'])) {
@@ -226,7 +226,7 @@ class AdvsController extends PublicController
         }
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry');
+            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
