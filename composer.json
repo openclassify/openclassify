@@ -87,10 +87,6 @@
         {
             "type": "composer",
             "url": "https://community.pyrocms.com"
-        },
-        {
-            "type": "composer",
-            "url": "https://repo.openclassify.com/satis"
         }
     ],
     "autoload": {
