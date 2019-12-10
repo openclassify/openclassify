@@ -13,14 +13,14 @@
          style="max-height: 300px;">
         <div class="list-group">
             {% for maincat in params.mainCats %}
-                <a href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ maincat.id }}"
+                <a href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ maincat['id'] }}"
                    class="list-group-item list-group-item-action text-truncate">
                     <i class="fas fa-dot-circle"></i>
-                    {{ maincat.name }}
+                    {{ maincat['val'] }}
                 </a>
                 {% for subcat in params.subCats %}
                     <div class="list-group pl-3 bg-light">
-                        {% if subcat.parent_category_id == maincat.id %}
+                        {% if subcat.parent_category_id == maincat['id'] %}
                             <a href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ subcat.id }}"
                                class="list-group-item list-group-item-action
                                                     text-truncate">{{ subcat.name }}</a>

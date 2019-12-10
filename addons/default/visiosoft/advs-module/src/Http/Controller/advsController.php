@@ -205,7 +205,12 @@ class AdvsController extends PublicController
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_title', $seo_title);
 
-            $mainCats = $this->category_model->getParentCats($cat, 'category_ids');
+            $mainCats = $this->category_model->getMains($cat);
+            $current_cat = $this->category_model->getCat($cat);
+            $mainCats[] = [
+                'id' => $current_cat->id,
+                'val' => $current_cat->name,
+            ];
             $subCats = $this->category_repository->getSubCatById($cat);
         } else {
             $cat = null;
