@@ -1,0 +1,31 @@
+.gm-style .gm-style-iw-d {
+    max-width: 150px !important;
+}
+
+#map {
+    height: 500px;
+}
+
+.table-ads .img-thumbnail {
+    max-height: 70px;
+}
+
+.table-ads .td-image {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+.list-ads .bg-light {
+    height: 100px;
+}
+
+.upper-list-banner {
+    min-height: 300px;
+}
+
+.upper-list-banner img {
+    max-width: 125px;
+    max-height: 200px;
+    margin: auto;
+    margin-top: 10px;
+}

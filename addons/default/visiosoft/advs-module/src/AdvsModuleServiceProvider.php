@@ -134,7 +134,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'advs/c/{cat}' => 'Visiosoft\AdvsModule\Http\Controller\CategoriesController@listByCat',
         'advs/module_active' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
         'advs/create_adv' => [
-            'as' => "create_adv",
+            'as' => "advs::create_adv",
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@cats',
         ],
         'advs/create_adv/post_cat' => [
@@ -165,7 +165,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map',
         ],
         'mapJson' => 'Visiosoft\AdvsModule\Http\Controller\advsController@mapJson',
-        'profile/getAdv' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getAdvsByProfile',
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
         'advs/delete/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@softDeleteAdv',
         'check_user' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkUser',
@@ -201,6 +200,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'ajax/getcats/{id}' => [
             'as' => 'ajax::getCats',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
+        ],
+
+
+        'ajax/getAds' => [
+            'as' => 'ajax::getAds',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@getMyAds'
         ],
     ];
 

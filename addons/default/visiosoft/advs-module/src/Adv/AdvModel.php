@@ -88,6 +88,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return $this->userAdv()
             ->where('advs_advs.status', '<>', 'approved')
             ->where('advs_advs.status', '<>', 'declined')
+            ->where('advs_advs.status', '<>', 'passive')
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'))
             ->orWhereNull('advs_advs.finish_at');
     }
@@ -96,6 +97,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         return $this->userAdv()
             ->where('advs_advs.finish_at', '<', date('Y-m-d H:i:s'))
+            ->orWhere('advs_advs.status', 'passive')
             ->WhereNotNull('advs_advs.finish_at');
     }
 

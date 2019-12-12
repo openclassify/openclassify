@@ -1,7 +1,22 @@
-<div class="featured-top-display-settings">
-    {% if setting_value('visiosoft.module.location::list_page_location') %}
-    <a href="{{ url_route('visiosoft.module.advs::view_type',['map']) }}"><h4 class="viewType"> <i class="fa fa-map-marker" ></i> {{ trans("visiosoft.module.advs::field.show_display_mode.map") }}</h4></a>
-    {% endif %}
-    <a href="{{ url_route('visiosoft.module.advs::view_type',['list']) }}"><h4 class="viewType"> <i class="fa fa-list-ul" ></i> {{ trans('visiosoft.module.advs::field.show_list_view.name') }} </h4></a>
-    <a href="{{ url_route('visiosoft.module.advs::view_type',['table']) }}"><h4 class="viewType"> <i class="fa fa-table" ></i> {{ trans('visiosoft.module.advs::field.show_table_view.name') }} </h4></a>
+<div class="row text-center">
+    <div class="col-4">
+        {% if setting_value('visiosoft.module.location::list_page_location') %}
+            <a href="{{ url_route('visiosoft.module.advs::view_type',['map']) }}" class="text-dark">
+                <i class="fas fa-location-arrow text-primary"></i>
+                {{ trans("visiosoft.module.advs::field.show_display_mode.map") }}
+            </a>
+        {% endif %}
+    </div>
+    <div class="col-4">
+        <a href="{{ url_route('visiosoft.module.advs::view_type',['list']) }}" class="text-dark">
+            <i class="fa fa-list-ul"></i>
+            {{ trans('visiosoft.module.advs::field.show_list_view.name') }}
+        </a>
+    </div>
+    <div class="col-4">
+        <a href="{{ url_route('visiosoft.module.advs::view_type',['table']) }}" class="text-dark">
+            <i class="fa fa-table"></i>
+            {{ trans('visiosoft.module.advs::field.show_table_view.name') }}
+        </a>
+    </div>
 </div>

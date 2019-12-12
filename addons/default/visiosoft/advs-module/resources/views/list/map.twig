@@ -1,26 +1,8 @@
 {% extends "visiosoft.module.advs::list/list" %}
 {% block listContent %}
-    <div class="category-info">
-        <div class="row">
-            {% include "visiosoft.module.advs::list/partials/list-filter" %}
-            <div class="col-sm-8 col-md-9">
-                <div class="section recommended-ads ">
-                    {% include "visiosoft.module.advs::list/partials/display-mode" %}
-                    <div class="listMap">
-                        <div id="map"></div>
-                    </div>
-                    {% if entries('advs').isEnabled('favs') %}
-                        {% include "visiosoft.module.favs::list/favorites-section" %}
-                    {% endif %}
-                </div>
-            </div>
-
-        </div>
-    </div>
-{% endblock %}
-
-{% block customjs %}
-
+<div class="col-md-12 mb-2 bg-dark">
+    <div id="map"></div>
+</div>
     <script>
         function QueryString(URL) {
             // This function is anonymous, is executed immediately and
@@ -60,32 +42,30 @@
                 url: '{{ url('mapJson') }}',
                 data: QueryString(window.location.href),
                 success: function (data) {
-                    hideLoader()
+                    console.log(data)
                     var ilans = data;
                     var locations = [];
                     ilans.forEach(function (i, key) {
+                        console.log(2)
                         if (i.map_Val) {
-                            if (i.map_Val != '0,NaN') {
-                                countMap++;
-                                var loc_array = i.map_Val.split(',');
-                                var lat = loc_array[0];
-                                var lng = loc_array[1];
-                                if (i.cover_photo.split('/')[0] == "files") {
-                                    i.cover_photo = window.location.origin + "/" + i.cover_photo;
-                                }
-
-                                if (!isNaN(lat)) {
-                                    locations.push({
-                                        lat: parseFloat(lat),
-                                        lng: parseFloat(lng),
-                                        id: i.id,
-                                        seoLink: i.seo_link,
-                                        title: i.name,
-                                        price: i.price,
-                                        currency: i.currency,
-                                        cover_photo: i.cover_photo
-                                    })
-                                }
+                            countMap++;
+                            var loc_array = i.map_Val.split(',');
+                            var lat = loc_array[0];
+                            var lng = loc_array[1];
+                            if (i.cover_photo.split('/')[0] == "files") {
+                                i.cover_photo = window.location.origin + "/" + i.cover_photo;
+                            }
+                            if (!isNaN(lat)) {
+                                locations.push({
+                                    lat: parseFloat(lat),
+                                    lng: parseFloat(lng),
+                                    id: i.id,
+                                    seoLink: i.seo_link,
+                                    title: i.name,
+                                    price: i.price,
+                                    currency: i.currency,
+                                    cover_photo: i.cover_photo
+                                })
                             }
                         }
                     });
@@ -104,14 +84,14 @@
                         });
 
                         google.maps.event.addListener(mark, 'click', function (evt) {
-                            infoWin.setContent('<div id="content">' +
+                            infoWin.setContent('<div id="content" class="col-md-12 p-0 m-0">' +
                                 '<div class="map_info_top">' +
                                 '</div>' +
                                 '<div id="bodyContent">' +
-                                '<p> <img class="map_image" src="' + location.cover_photo + '" width="150" height="100"/> </p>' +
-                                '<p class="map_subject">' + location.title + '</p>' +
+                                '<p> <img class="map_image w-100" src="' + location.cover_photo + '" height="auto"/> </p>' +
+                                '<h6 class="map_subject text-truncate text-primary">' + location.title + '</h6>' +
                                 '<p class="map_price">' + location.price + ' ' + location.currency + '</p>' +
-                                '<p><a href="' + location.seoLink + '" style="width:100%;" class="btn btn-info" target="_blank">{{ trans('visiosoft.module.advs::field.show_details') }}</a> </p>' +
+                                '<p><a href="' + location.seoLink + '" class="btn btn-info w-100" target="_blank"><small>{{ trans('visiosoft.module.advs::field.show_details') }}</small></a> </p>' +
                                 '</div>' +
                                 '</div>');
                             infoWin.open(map, mark);
@@ -133,15 +113,13 @@
                         bounds.extend(myLatLng);
                     }
                     map.fitBounds(bounds);
-                },
-                beforeSend: function () {
-                    showLoader()
                 }
             });
+
             if (countMap == 0) {
                 $('.listMap').html("<h3>{{ trans('visiosoft.module.advs::field.no_ads') }}</h3>");
             } else {
-                $('#map').css('display', 'block')
+                $('#map').attr('display', 'block')
                 $('#listAdvs').css('display', 'block')
             }
             $('.showListBtn').attr('href', window.location.origin + "/advs/list" + window.location.search);
@@ -153,3 +131,4 @@
             src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.advs::google_map_key') }}&callback=initMap">
     </script>
 {% endblock %}
+

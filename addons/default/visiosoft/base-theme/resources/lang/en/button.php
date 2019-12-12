@@ -1,8 +1,7 @@
 <?php
 
 return [
-    'send' => [
-        'name' => 'Send',
+    'post_ad' => [
+        'name' => 'Post Ad',
     ],
 ];
-

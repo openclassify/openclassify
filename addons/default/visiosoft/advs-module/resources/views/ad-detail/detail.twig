@@ -11,31 +11,24 @@
 {% endblock %}
 
 {% block content %}
-
-    {% if entries('advs').isEnabled('comments') %}
-        {{ asset_add("styles.css", "visiosoft.module.comments::css/style.css") }}
-    {% endif %}
-
     <section id="main" class="clearfix details-page">
         <div class="container">
 
-            {% include "theme::partials/messages" %}
+            <!-- admin -->
+            {% include "visiosoft.module.advs::ad-detail/partials/author-button" %}
+            <!-- admin -->
 
             <!-- breadcrumb -->
-            <div class="breadcrumb-section">
-                <ol class="breadcrumb">
-                    {% for cat in categories %}
-                        <li>
-                            <a href="{{ url_route('visiosoft.module.advs::list_cat', [cat.id]) }}">{{ cat['name'] }}</a>
-                        </li>
-                    {% endfor %}
-                </ol>
-                <h2 class="title">{{ categories|last['name'] }}</h2>
-            </div>
+            {% include "visiosoft.module.advs::ad-detail/partials/breadcrumb" %}
             <!-- breadcrumb -->
+
+            <h2 class="title">
+                {{ adv.title }}
+                {{ addBlock('ad-detail/title/action',{'adv_id':adv.id})|raw }}
+            </h2>
 
             <!--detail-ad -->
-            <div class="section slider">
+            <div class="section slider mb-4">
                 <div class="row">
 
                     {% include "visiosoft.module.advs::ad-detail/partials/slider" %}
@@ -44,67 +37,20 @@
                         {% include "visiosoft.module.advs::ad-detail/partials/detail" %}
                     </div>
                 </div>
-
-                {% if entries('advs').isEnabled('complaints') %}
-                    <a class="complaints pull-right" id="complaints"
-                       title="{{ trans('visiosoft.module.advs::field.report') }}"><i
-                                class="fa fa-exclamation-triangle"></i></a>
-                {% endif %}
-
             </div>
             <!--detail-ad -->
 
 
             {% if blocks('ad-item-content-block-area') is null %}
-                {% include "visiosoft.module.advs::ad-detail/partials/content-ad" %}
+                {% include "visiosoft.module.advs::ad-detail/partials/content" %}
             {% else %}
                 {{ blocks('ad-item-content-block-area') }}
-            {% endif %}
-
-            {% if entries('advs').isEnabled('recommendedads') %}
-                {% include "visiosoft.module.recommendedads::recommended-ads" %}
             {% endif %}
 
         </div>
     </section>
 
-
-
-    {% if entries('advs').isEnabled('complaints') %}
-        {% include "visiosoft.module.complaints::modal" %}
-    {% endif %}
-
-    {% if entries('advs').isEnabled('messages') %}
-        {% include "visiosoft.module.messages::ad-detail/modal" %}
-    {% endif %}
-
-    {% if entries('advs').isEnabled('favs') %}
-        {{ asset_add("scripts.js", "visiosoft.module.favs::js/favs.js") }}
-    {% endif %}
-
-    {% if entries('advs').isEnabled('comments') %}
-        {{ asset_add("scripts.js", "visiosoft.module.comments::js/ajaxcomment.js") }}
-    {% endif %}
-
-    {% if entries('advs').isEnabled('comparisons') %}
-        {% include "visiosoft.module.comparisons::comparison" %}
-    {% endif %}
-
-
-    {% if entries('advs').isEnabled('carts') %}
-        {{ asset_add("scripts.js", "visiosoft.module.carts::js/quantity.js") }}
-    {% endif %}
-
-    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-item.js") }}
-    {{ asset_add("scripts.js", "visiosoft.module.advs::js/phoneCounter.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
-
-{% endblock %}
-
-{% block customjs %}
-
-    {% if entries('advs').isEnabled('streetview') and adv.map_Val != "" %}
-        {% include "visiosoft.module.streetview::list-item" %}
-    {% endif %}
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/detail.css") }}
 
 {% endblock %}

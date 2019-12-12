@@ -1,104 +1,66 @@
-<div class="col-md-3 col-sm-4">
-    <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
-    <input type="hidden" name="user" value="{{ app.request.get('user') }}">
-    <div class="accordion">
-        <div class="panel-group" id="accordion">
-            <div class="panel-default panel-faq">
+<form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+    <div class="row">
+        <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
+        <input type="hidden" name="user" value="{{ app.request.get('user') }}">
+        <div class="col-md-12 px-4">
+            <div class="row">
+                <div id="filter" class="w-100 mb-3">
 
-                <div class="panel-heading active-faq">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#accordion-one">
-                        <h4 class="panel-title">{{ trans("visiosoft.module.advs::field.categories") }}
-                            <span class="pull-right">
-                                <i class="fa fa-minus"></i>
-                            </span>
-                        </h4>
-                    </a>
-                </div>
+                    {{ addBlock('ads-list/partials/list-filter',{'mainCats':mainCats,'subCats':subCats,'ranges':ranges,'checkboxes':checkboxes,'radio':radio})|raw }}
 
-                <div id="accordion-one" class="panel-collapse collapse in">
-                    <div class="panel-body">
-                        {% for maincat in mainCats %}
-                            <a class="main-cat-item"
-                               href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ maincat.id }}"> {% if maincat.files[0].path != "" %}
-                                    <img class="catIcon" src="{{ url('files/' ~ maincat.files[0].path) }}"
-                                         alt="">{% else %}<img class="catIcon"
-                                                               src="{{ img('visiosoft.module.advs::images/plus-categories.png').url }}"
-                                                               alt="">{% endif %}{{ maincat.name }}</a>
-                            {% for subcat in subCats %}
-                                <ul>
-                                    {% if subcat.parent_category_id == maincat.id %}
-                                        <li><a class="sub-cat-item"
-                                               href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ subcat.id }}">{{ subcat.name }}</a>
-                                        </li>
-                                    {% endif %}
-                                </ul>
-                            {% endfor %}
-                        {% endfor %}
-                    </div>
-                </div>
-            </div>
-
-            {% include "visiosoft.module.location::list/filter" %}
-
-            {% if entries('advs').isEnabled('customfields') %}
-                {% include "visiosoft.module.customfields::list/filter" %}
-            {% endif %}
-
-            <!-- Price -->
-            <div class="panel-default panel-faq">
-                <div class="panel-heading">
-                    <a data-toggle="collapse" data-parent="#accordion" href="#accordion-three">
-                        <h4 class="panel-title">
-                            {{ trans('visiosoft.module.advs::field.price.name') }}
-                            <span class="pull-right"><i class="fa fa-minus"></i></span>
-                        </h4>
-                    </a>
-                </div>
-
-                <div id="accordion-three" class="panel-collapse collapse in" aria-expanded="true" style="">
-                    <div class="panel-body">
-                        <div class="price-range">
-                            <div class="price">
-
+                    <div class="card mb-3">
+                        <div class="card-header breadcrumb mb-0" id="priceHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#price"
+                                        aria-expanded="true" aria-controls="price">
+                                    <i class="fas fa-money-bill"></i>
+                                    {{ trans("visiosoft.module.advs::field.price.name") }}
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="price" class="collapse show overflow-auto" aria-labelledby="priceHeading"
+                             data-parent="#filter"
+                             style="max-height: 300px;">
+                            <div class="row p-0 m-0">
                                 {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
+                                <div class="col-md-4 p-1 m-0">
+                                    <input type="number" class="price-input form-control w-100"
+                                           value="{{ request.min_price }}"
+                                           name="min_price" min="0"
+                                           placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}">
+                                </div>
+                                <div class="col-md-4 p-1 pr-0 m-0">
+                                    <input class="price-input form-control w-100" type="number"
+                                           value="{{ request.max_price }}"
+                                           name="max_price"
+                                           placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
 
-                                <input type="number" class="price-input" value="{{ request.min_price }}"
-                                       name="min_price" min="0" placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}"> -
-
-                                <input class="price-input" type="number" value="{{ request.max_price }}"
-                                       name="max_price" placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
-
-                                <select name="currency" id="currency">
-                                    {% for currency in active_currencies %}
-                                        <option value="{{ currency }}">{{ currency }}</option>
-                                    {% endfor %}
-                                </select>
+                                </div>
+                                <div class="col-md-4 py-1 px-0">
+                                    <select name="currency" id="currency" class="form-control">
+                                        {% for currency in active_currencies %}
+                                            <option value="{{ currency }}">{{ currency }}</option>
+                                        {% endfor %}
+                                    </select>
+                                </div>
 
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <!-- Price -->
 
 
-            {% if entries('advs').isEnabled('searchbydistance') %}
-                <!--Search By Distance-->
-                {% include "visiosoft.module.searchbydistance::list/filter" %}
-                <!--Search By Distance-->
-            {% endif %}
-
-            <div class="panel-default panel-faq">
-                <div class="panel-heading text-center">
-                    <div id="search-button">
-                        <button type="submit" class="btn btn-primary search-filter-button">
-                            {{ trans("visiosoft.module.advs::field.search") }}
-                        </button>
-                        <h5><font color="#333">{{ trans('visiosoft.module.advs::message.filter_by_search_msg') }}</font></h5>
+                    <div class="card">
+                        <div class="card-header bg-primary text-center" id="submitHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-white w-100">
+                                    <i class="fas fa-search"></i>
+                                    {{ trans("visiosoft.module.advs::field.search") }}
+                                </button>
+                            </h5>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-</div>
+</form>

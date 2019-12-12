@@ -1,0 +1,9 @@
+{% if app.request.get('cat') %}
+    {% for category_breadcrumbs in params.mainCats %}
+        <li class="breadcrumb-item">
+            <a href="{{ url_route('visiosoft.module.advs::list_cat', [category_breadcrumbs['id']]) }}"
+               class="text-dark font-weight-bold">{{ category_breadcrumbs['val'] }}
+            </a>
+        </li>
+    {% endfor %}
+{% endif %}

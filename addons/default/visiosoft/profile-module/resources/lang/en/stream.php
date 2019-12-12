@@ -5,6 +5,6 @@ return [
         'name' => 'Profile',
     ],
     'adress' => [
-        'name' => 'Adress',
+        'name' => 'Address',
     ],
 ];

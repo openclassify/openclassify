@@ -20,6 +20,9 @@
             {% endif %}
         </div>
     {% else %}
-        {{ blocks('ad-item-picture-block-area')  }}
+        {{ blocks('ad-item-picture-block-area') }}
     {% endif %}
 </div>
+
+{{ asset_add("scripts.js", "visiosoft.module.advs::js/fotorama.js") }}
+{{ asset_add("styles.css", "visiosoft.module.advs::css/fotorama.css") }}

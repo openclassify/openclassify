@@ -132,7 +132,7 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
             ]
         ],
         'adv_listing_banner' => [
-            'type' => 'anomaly.field_type.file',
+            'type' => 'visiosoft.field_type.singlefile',
             'config' => [
                 'folders' => ['adv_listing_page'],
                 'mode' => 'select',

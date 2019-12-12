@@ -194,6 +194,7 @@ class AdvsController extends PublicController
             }
         }
 
+
         if (isset($param['cat']) and $param['cat'] != "") {
             $cat = $param['cat'];
             $seo_keywords = $this->category_model->getMeta_keywords($param['cat']);
@@ -204,7 +205,12 @@ class AdvsController extends PublicController
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_title', $seo_title);
 
-            $mainCats = $this->category_model->getParentCats($cat, 'category_ids');
+            $mainCats = $this->category_model->getMains($cat);
+            $current_cat = $this->category_model->getCat($cat);
+            $mainCats[] = [
+                'id' => $current_cat->id,
+                'val' => $current_cat->name,
+            ];
             $subCats = $this->category_repository->getSubCatById($cat);
         } else {
             $cat = null;
@@ -214,9 +220,9 @@ class AdvsController extends PublicController
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats);
             $checkboxes = $returnvalues['checkboxes'];
-            $textfields = $returnvalues['textfields'];
             $topfields = $returnvalues['topfields'];
             $ranges = $returnvalues['ranges'];
+            $radio = $returnvalues['radio'];
         }
 
         if (!empty($param['user'])) {
@@ -224,8 +230,8 @@ class AdvsController extends PublicController
             $userProfile = $this->profile_repository->getProfile($user->id);
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'textfields', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry');
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
+            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
@@ -319,7 +325,7 @@ class AdvsController extends PublicController
 
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'tags', 'profile', 'comments', 'qrSRC'));
+            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'profile', 'comments', 'qrSRC'));
         } else {
             return back();
         }
@@ -753,6 +759,9 @@ class AdvsController extends PublicController
         if ($auto_approved == true AND $type == 'pending_admin') {
             $type = "approved";
         }
+        if ($type == "approved" and $auto_approved != true) {
+            $type = "pending_admin";
+        }
 
         if ($type == "approved") {
             $this->adv_model->publish_at_Ads($id);
@@ -776,6 +785,7 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
+        $this->messages->success(trans('streams::message.edit_success', ['name' => 'Status']));
         return back();
     }
 

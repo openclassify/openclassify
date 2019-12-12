@@ -1,0 +1,14 @@
+<div class="col-md-12">
+    <nav class="profile-navigation">
+        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active"
+               href="{{ url_route('profile::profile') }}">{{ trans('visiosoft.module.profile::addon.title') }}</a>
+            <a class="nav-item nav-link active"
+               href="{{ url_route('profile::ads') }}">{{ trans('visiosoft.module.advs::addon.title') }}</a>
+            <a class="nav-item nav-link active"
+               href="{{ url_route('profile::address') }}">{{ trans('visiosoft.module.profile::stream.adress.name') }}</a>
+
+            {{ addBlock('profile/navigation')|raw }}
+        </div>
+    </nav>
+</div>

@@ -1,39 +1,28 @@
-
 {#
     Main CSS can be found in metadata.twig
 #}
 
 {# Core Theme Components #}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/vendor/jquery.min.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/vendor/bootstrap.min.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/vendor/vue.min.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/bootstrap-notify.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/nav.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/params.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/notification.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/ajaxLoader.js") }}
-{{ asset_add("theme.js", "visiosoft.theme.defaultadmin::js/theme/select2.js") }}
-
+{{ asset_add("theme.js", "theme::js/popper.min.js") }}
+{{ asset_add("theme.js", "theme::js/bootstrap.min.js") }}
+{{ asset_add("theme.js", "theme::js/modal_include.js") }}
 
 {# Theme Scripts #}
-{#{{ asset_add("theme.js", "visiosoft.theme.base::js/plugins/*") }}#}
-{{ asset_add("theme.js", "visiosoft.theme.base::js/theme/initialize.js") }}
+{#{{ asset_add("theme.js", "theme::js/plugins/*") }}#}
+{{ asset_add("theme.js", "theme::js/theme/initialize.js") }}
 
-{{ asset_script("theme.js", ["min"]) }}
+{{ asset_script("theme.js") }}
 
 {# Include Scripts Loaded From Outside #}
-{% for script in asset_scripts("scripts.js") %}
+<script type="text/javascript">
+    {% for script in asset_inlines("scripts.js", ["min"]) %}
     {{ script|raw }}
-{% endfor %}
-
-{{ template.includes.render('scripts')|raw }}
+    {% endfor %}
+</script>
 
 {# Include Styles Loaded From Outside #}
-{% for style in asset_styles("styles.css") %}
+<style type="text/css">
+    {% for style in asset_inlines("styles.css", ["min"]) %}
     {{ style|raw }}
-{% endfor %}
-{{ asset_style("visiosoft.theme.base::css/default/animate.css") }}
-{{ asset_add("visiosoft_default.js", "visiosoft.theme.base::js/default/*") }}
-{{ asset_script("visiosoft_default.js") }}
-{{ asset_add("visiosoft_default_custom.js", "visiosoft.theme.base::js/zcustom.js") }}
-{{ asset_script("visiosoft_default_custom.js") }}
+    {% endfor %}
+</style>

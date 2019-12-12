@@ -225,18 +225,7 @@ class CategoryController extends AdminController
 
     public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
     {
-        ini_set('max_execution_time', 0);
-        echo "<div style='background-image:url(" . $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/loading_anim.gif', 'img'))->url() . ");
-        background-repeat:no-repeat;
-        background-size: 300px;
-        background-position:center;
-        text-align:center;
-        width:98%;
-        height:100%;
-        padding-left: 20px;'><h3>" . trans('visiosoft.module.cats::field.please_wait') . "</h3></div>";
-
         $categoryRepository->DeleteCategories($id);
-
         if ($request->parent == "")
             return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
         else

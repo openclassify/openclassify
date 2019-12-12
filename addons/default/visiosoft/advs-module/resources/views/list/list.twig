@@ -1,57 +1,54 @@
 {% extends layout('list') %}
 
 {% block content %}
-    <section id="main" class="clearfix category-page">
+    <section>
 
         <div class="container">
-
-            {% include "theme::partials/messages" %}
 
             <!-- breadcrumb -->
             {% include "visiosoft.module.advs::list/partials/breadcrumb" %}
             <!-- breadcrumb -->
 
-            {% block listContent %}
-                <div class="category-info">
+            {% include "visiosoft.module.advs::list/partials/user-section" %}
 
-                    <div class="row">
+            <div class="row my-5">
+                <div class="col-md-3">
+                    {% include "visiosoft.module.advs::list/partials/list-filter" %}
+                </div>
+                <div class="col-md-9">
+                    <div class="section recommended-ads">
 
-                        {% include "visiosoft.module.advs::list/partials/user-section" %}
+                        <div class="row breadcrumb list-header">
 
-                        <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
-
-                            {% include "visiosoft.module.advs::list/partials/list-filter" %}
-
-                            <div class="col-sm-8 col-md-9">
-
-                                {% include "visiosoft.module.advs::list/partials/list-section" %}
-
+                            <div class="col-md-6 my-2">
+                                {% include "visiosoft.module.advs::list/partials/list-sort-by" %}
+                            </div>
+                            <div class="col-md-6 my-2">
+                                {% include "visiosoft.module.advs::list/partials/display-mode" %}
 
                             </div>
+                        </div>
+                        {{ addBlock('ads-list/row',{'topfields':topfields})|raw }}
+                        <div class="row">
+                            {% block listContent %}
+                                {% include "visiosoft.module.advs::list/partials/ads" %}
+                            {% endblock %}
 
-                        </form>
-
+                        </div>
+                        {#                        <div class="category-tabs"></div>#}
                     </div>
                 </div>
-            {% endblock %}
-
+            </div>
         </div>
-
     </section>
-
     <script>
         var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
-        var searchedCountry = {{ searchedCountry }};
     </script>
 
-    {% if entries('advs').isEnabled('favs') %}
-        {% include "visiosoft.module.favs::list/favorites-modal" %}
-    {% endif %}
-
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/list.js") }}
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/list.css") }}
 
-    {% if entries('advs').isEnabled('comparisons') %}
-        {% include "visiosoft.module.comparisons::comparison" %}
-    {% endif %}
-
+{% endblock %}
+{% block customjs %}
+    {{ addBlock('ads-list/list',{'adv':adv})|raw }}
 {% endblock %}

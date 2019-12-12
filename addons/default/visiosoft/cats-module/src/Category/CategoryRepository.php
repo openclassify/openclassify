@@ -66,12 +66,6 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function DeleteCategories($id)
     {
-        $sub_categories = $this->model->getAllSubCategories($id);
-        if (count($sub_categories)) {
-            $this->model
-                ->whereIn('id', array_merge($sub_categories, [$id]))
-                ->delete();
-        } else
-            $this->model->find($id)->delete();
+        $this->model->find($id)->delete();
     }
 }

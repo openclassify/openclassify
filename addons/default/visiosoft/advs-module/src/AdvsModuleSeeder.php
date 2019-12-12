@@ -1,8 +1,6 @@
 <?php namespace Visiosoft\AdvsModule;
 
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
-use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
-use Visiosoft\AdvsModule\Seed\BlockSeeder;
 
 class AdvsModuleSeeder extends Seeder
 {
@@ -11,6 +9,5 @@ class AdvsModuleSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(BlockSeeder::class);
     }
 }

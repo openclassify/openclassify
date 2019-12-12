@@ -1,15 +1,18 @@
-<div class="breadcrumb-section">
+<nav aria-label="breadcrumb" class="d-none d-sm-block">
     <ol class="breadcrumb">
-        <li><a href="/">{{ trans("visiosoft.module.advs::field.home") }}</a></li>
-        {% if app.request.get('cat') %}
-            {% for category_breadcrumbs in mainCats.first.getMains(app.request.get('cat')) %}
-                <li>
-                    <a href="{{ url_route('visiosoft.module.advs::list_cat', [category_breadcrumbs.id]) }}">{{ category_breadcrumbs.val }}</a>
-                </li>
-            {% endfor %}
-        {% endif %}
+        <li class="breadcrumb-item">
+            <a href="{{ url('') }}" class="text-dark">
+                <i class="fas fa-home"></i>
+                {{ trans("visiosoft.module.advs::field.home") }}
+            </a>
+        </li>
+        <li class="breadcrumb-item">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}" class="text-dark">
+                {{ trans("visiosoft.module.advs::field.list") }}
+            </a>
+        </li>
+
+        {{ addBlock('ads-list/partials/breadcrumb',{'mainCats':mainCats})|raw }}
+
     </ol>
-    {% if app.request.get('cat') %}
-        <h2 class="title">{{ mainCats.first.getCategoryName(app.request.get('cat')) }}</h2>
-    {% endif %}
-</div>
+</nav>

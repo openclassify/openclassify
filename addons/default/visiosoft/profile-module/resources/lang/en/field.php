@@ -378,7 +378,10 @@ return [
         'name' => 'I confirm my password change',
     ],
     'create_address' => [
-        'name' => 'Create Adress',
+        'name' => 'Create Address',
+    ],
+    'edit_address' => [
+        'name' => 'Edit Address',
     ],
     'balance_limit' => [
         'name' => 'Balance Limit',
