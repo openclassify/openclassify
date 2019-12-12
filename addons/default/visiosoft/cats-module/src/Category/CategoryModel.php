@@ -26,14 +26,16 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         if ($subCat != null) {
             for ($i = 0; $i < 7; $i++) {
                 $parCat = $this->getCat($subCat);
-                if ($parCat->parent_category_id == "") {
-                    if ($type == "add_main")
-                        $catNames[] = $parCat->name;
-                    break;
+                if (isset($parCat)) {
+                    if ($parCat->parent_category_id == "") {
+                        if ($type == "add_main")
+                            $catNames[] = $parCat->name;
+                        break;
+                    }
+                    $catNames[] = $parCat->name;
+                    $cat_ids[] = $parCat->id;
+                    $subCat = $parCat->parent_category_id;
                 }
-                $catNames[] = $parCat->name;
-                $cat_ids[] = $parCat->id;
-                $subCat = $parCat->parent_category_id;
             }
         }
         if ($type == 'category_ids') {
