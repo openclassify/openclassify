@@ -4,8 +4,3 @@
 .hidden{
     display: none;
 }
-
-.select2-selection__rendered {
-    display: inline-block;
-    padding-left: 4px;
-}

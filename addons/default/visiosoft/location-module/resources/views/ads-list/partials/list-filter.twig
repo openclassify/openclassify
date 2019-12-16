@@ -1,14 +1,14 @@
 <div class="card mb-3">
-    <div class="card-header breadcrumb mb-0" id="categoryHeading">
+    <div class="card-header breadcrumb mb-0" id="locationHeading">
         <h5 class="mb-0">
-            <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#category"
-                    aria-expanded="true" aria-controls="category">
+            <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#location"
+                    aria-expanded="true" aria-controls="location">
                 <i class="fas fa-location-arrow"></i>
                 {{ trans("visiosoft.module.location::addon.title") }}
             </button>
         </h5>
     </div>
-    <div id="category" class="collapse show overflow-auto" aria-labelledby="categoryHeading"
+    <div id="location" class="collapse show overflow-auto" aria-labelledby="locationHeading"
          data-parent="#filter">
         <div class="row w-100 px-2 m-0">
                 <div class="col-12 px-0 py-1">
@@ -58,3 +58,4 @@
     var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
 </script>
 {{ asset_add("scripts.js", "visiosoft.module.location::js/filterLocation.js") }}
+{{ asset_add("styles.css", "visiosoft.module.location::css/filterLocation.css") }}
