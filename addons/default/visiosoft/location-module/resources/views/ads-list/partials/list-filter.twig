@@ -1,0 +1,60 @@
+<div class="card mb-3">
+    <div class="card-header breadcrumb mb-0" id="categoryHeading">
+        <h5 class="mb-0">
+            <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#category"
+                    aria-expanded="true" aria-controls="category">
+                <i class="fas fa-location-arrow"></i>
+                {{ trans("visiosoft.module.location::addon.title") }}
+            </button>
+        </h5>
+    </div>
+    <div id="category" class="collapse show overflow-auto" aria-labelledby="categoryHeading"
+         data-parent="#filter">
+        <div class="row w-100 px-2 m-0">
+                <div class="col-12 px-0 py-1">
+                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.country.name") }}</label>
+                    <select class="form-control" name="country" id="countries">
+                        {% for country in params.countries %}
+                            <option value="{{ country.id }}">{{ country.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12 px-0 py-1">
+                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.city.name") }}</label>
+                    <select class="form-control" name="city[]" id="cities" multiple>
+                        {% for city in params.cities %}
+                            <option value="{{ city.id }}">{{ city.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12 px-0 py-1">
+                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.district.name") }}</label>
+                    <select class="form-control" name="district" id="districts">
+                        {% for district in params.districts %}
+                            <option value="{{ district.id }}">{{ district.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12 px-0 py-1">
+                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.neighborhood.name") }}</label>
+                    <select class="form-control" name="neighborhood" id="neighborhoods">
+                        {% for neighborhood in params.neighborhoods %}
+                            <option value="{{ neighborhood.id }}">{{ neighborhood.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <div class="col-12 px-0 py-1">
+                    <label class="label-filter-location">{{ trans("visiosoft.module.location::field.village.name") }}</label>
+                    <select class="form-control" name="village" id="village">
+                        {% for village in params.villages %}
+                            <option value="{{ village.id }}">{{ village.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+        </div>
+    </div>
+</div>
+<script>
+    var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
+</script>
+{{ asset_add("scripts.js", "visiosoft.module.location::js/filterLocation.js") }}

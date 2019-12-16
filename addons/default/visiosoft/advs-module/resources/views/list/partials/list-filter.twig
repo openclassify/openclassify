@@ -6,7 +6,18 @@
             <div class="row">
                 <div id="filter" class="w-100 mb-3">
 
-                    {{ addBlock('ads-list/partials/list-filter',{'mainCats':mainCats,'subCats':subCats,'ranges':ranges,'checkboxes':checkboxes,'radio':radio})|raw }}
+                    {{ addBlock('ads-list/partials/list-filter',{
+                        'mainCats':mainCats,
+                        'subCats':subCats,
+                        'ranges':ranges,
+                        'checkboxes':checkboxes,
+                        'radio':radio,
+                        'countries':countries,
+                        'cities':cities,
+                        'districts':districts,
+                        'neighborhoods':neighborhoods,
+                        'villages':villages
+                    })|raw }}
 
                     <div class="card mb-3">
                         <div class="card-header breadcrumb mb-0" id="priceHeading">
