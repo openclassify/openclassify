@@ -15,6 +15,17 @@ OpenClassify is the extensible and most advanced open source classified app buil
 
             {{ addBlock('ad-list/partials/ads',{'featured_advs':featured_advs})|raw }}
 
+- profile-module/profile/partials/navigation
+
+            {{ addBlock('profile/navigation')|raw }}
+            
+- advs-module/ad-detail/partials/detail
+
+            {{ addBlock('ad-detail/seller/action',{'adv':adv})|raw }}
+            
+- advs-module/ad-detail/detail
+
+            {{ addBlock('ad-detail/title/action',{'adv':adv})|raw }}
 
 
 ## Server Requirements
