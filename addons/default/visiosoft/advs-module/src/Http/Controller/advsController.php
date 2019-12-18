@@ -146,6 +146,18 @@ class AdvsController extends PublicController
         $subCats = array();
 
         $param = $this->requestHttp->toArray();
+        if (!isset($param['country'])) {
+            if (is_null(Cookie::get('country'))) {
+                $param['country'] = setting_value('visiosoft.module.advs::default_country');
+            } else {
+                $param['country'] = Cookie::get('country');
+            }
+        } else {
+            if ($param['country'] != setting_value('visiosoft.module.advs::default_country')) {
+                Cookie::queue(Cookie::make('country', $param['country'], 84000));
+            }
+        }
+        $searchedCountry = $param['country'];
 
         $countries = $this->country_repository->viewAll();
 
@@ -182,6 +194,7 @@ class AdvsController extends PublicController
             }
         }
 
+
         if (isset($param['cat']) and $param['cat'] != "") {
             $cat = $param['cat'];
             $seo_keywords = $this->category_model->getMeta_keywords($param['cat']);
@@ -192,7 +205,12 @@ class AdvsController extends PublicController
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_title', $seo_title);
 
-            $mainCats = $this->category_model->getParentCats($cat, 'category_ids');
+            $mainCats = $this->category_model->getMains($cat);
+            $current_cat = $this->category_model->getCat($cat);
+            $mainCats[] = [
+                'id' => $current_cat->id,
+                'val' => $current_cat->name,
+            ];
             $subCats = $this->category_repository->getSubCatById($cat);
         } else {
             $cat = null;
@@ -202,9 +220,9 @@ class AdvsController extends PublicController
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats);
             $checkboxes = $returnvalues['checkboxes'];
-            $textfields = $returnvalues['textfields'];
             $topfields = $returnvalues['topfields'];
             $ranges = $returnvalues['ranges'];
+            $radio = $returnvalues['radio'];
         }
 
         if (!empty($param['user'])) {
@@ -212,8 +230,8 @@ class AdvsController extends PublicController
             $userProfile = $this->profile_repository->getProfile($user->id);
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'textfields', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList');
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
+            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
@@ -233,8 +251,10 @@ class AdvsController extends PublicController
         return redirect($this->request->headers->get('referer'));
     }
 
-    public function view($id)
+    public function view($seo, $id = null)
     {
+        $id = is_null($id) ? $seo : $id;
+
         $categories = array();
         $categories_id = array();
         $isActiveComplaints = $this->adv_model->is_enabled('complaints');

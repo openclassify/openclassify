@@ -80,7 +80,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
         if (!empty($param['cat'])) {
             $cat = new CategoryModel();
-            $catLevel = $cat->getCatLevel($param['cat']);
+            $cat_d = $cat->find($param['cat']);
+            if ($cat_d->parent_category_id == null)
+                $catLevel = 1;
+            else
+                $catLevel = $cat->getCatLevel($param['cat']);
             $catLevel = "cat" . $catLevel;
             $query = $query->where($catLevel, $param['cat']);
         }

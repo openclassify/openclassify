@@ -90,7 +90,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile/edit' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@edit',
         'profile/update' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@update',
         'profile' => [
-            'as' => 'visiosoft.module.profile::profile',
+            'as' => 'profile::profile',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@home'
         ],
 
