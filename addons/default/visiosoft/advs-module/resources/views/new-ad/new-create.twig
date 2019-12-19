@@ -46,9 +46,7 @@
                                     <div class="col-md-12">
                                         {{ nameField|raw }}
                                     </div>
-                                    {% if entries('advs').isEnabled('store') %}
-                                        {% include "visiosoft.module.store::field" %}
-                                    {% endif %}
+                                    {{ addBlock('new-ad/fields')|raw }}
                                     <div style="display: none">
                                         {{ form.fields.slug|raw }}
                                     </div>
