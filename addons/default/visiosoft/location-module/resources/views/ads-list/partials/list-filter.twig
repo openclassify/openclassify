@@ -1,3 +1,4 @@
+{% if setting_value('visiosoft.module.location::list_page_location') %}
 <div class="card mb-3">
     <div class="card-header breadcrumb mb-0" id="locationHeading">
         <h5 class="mb-0">
@@ -59,3 +60,4 @@
 </script>
 {{ asset_add("scripts.js", "visiosoft.module.location::js/filterLocation.js") }}
 {{ asset_add("styles.css", "visiosoft.module.location::css/filterLocation.css") }}
+{% endif %}
