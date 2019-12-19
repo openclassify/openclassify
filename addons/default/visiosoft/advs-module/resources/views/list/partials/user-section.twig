@@ -1,7 +1,7 @@
 {% if app.request.get('user') != null or app.request.get('user') != "" %}
 
     {% if userProfile.adv_listing_banner.url == '' %}
-        {% set background_user = img('visiosoft.module.advs::images/1.png').url %}
+        {% set background_user = img('visiosoft.module.advs::images/user_section_back.png').url %}
     {% else %}
         {% set background_user =  userProfile.adv_listing_banner.url %}
 
