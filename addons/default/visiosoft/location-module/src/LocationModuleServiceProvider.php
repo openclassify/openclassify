@@ -1,7 +1,19 @@
 <?php namespace Visiosoft\LocationModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Anomaly\Streams\Platform\Model\Location\LocationCitiesEntryModel;
+use Anomaly\Streams\Platform\Model\Location\LocationDistrictsEntryModel;
+use Anomaly\Streams\Platform\Model\Location\LocationNeighborhoodsEntryModel;
 use Anomaly\Streams\Platform\Model\Location\LocationVillageEntryModel;
+use Visiosoft\LocationModule\City\CityModel;
+use Visiosoft\LocationModule\City\CityRepository;
+use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
+use Visiosoft\LocationModule\District\Contract\DistrictRepositoryInterface;
+use Visiosoft\LocationModule\District\DistrictModel;
+use Visiosoft\LocationModule\District\DistrictRepository;
+use Visiosoft\LocationModule\Neighborhood\Contract\NeighborhoodRepositoryInterface;
+use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
+use Visiosoft\LocationModule\Neighborhood\NeighborhoodRepository;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -118,6 +130,9 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $bindings = [
+        LocationCitiesEntryModel::class => CityModel::class,
+        LocationDistrictsEntryModel::class => DistrictModel::class,
+        LocationNeighborhoodsEntryModel::class => NeighborhoodModel::class,
         // AdvsCfValuesEntryModel::class => CfValueModel::class,
         // AdvsCustomFieldAdvsEntryModel::class => CustomFieldAdvModel::class,
         // AdvsCustomFieldsEntryModel::class => CustomFieldModel::class,
@@ -130,6 +145,9 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $singletons = [
+        CityRepositoryInterface::class => CityRepository::class,
+        DistrictRepositoryInterface::class => DistrictRepository::class,
+        NeighborhoodRepositoryInterface::class => NeighborhoodRepository::class,
         // CfValueRepositoryInterface::class => CfValueRepository::class,
         // CustomFieldAdvRepositoryInterface::class => CustomFieldAdvRepository::class,
         // CustomFieldRepositoryInterface::class => CustomFieldRepository::class,
