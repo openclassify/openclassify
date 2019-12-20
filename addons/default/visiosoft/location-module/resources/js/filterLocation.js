@@ -1,7 +1,7 @@
 let searchParams = new URLSearchParams(window.location.search);
 
 //Set Select2 Type for Location Fields
-$('#cities, #countries, #districts, #neighborhoods, #village').select2({
+$('.cities, .countries, .districts, .neighborhoods, .village').select2({
     placeholder: select_trans
 });
 
@@ -29,7 +29,7 @@ FindLocations = (id, table, typeDb, divId, paramName = null) => {
 setLocations = (response, id, table, typeDb, divId, paramName) => {
 
     //Add Options
-    if(divId != "#cities")
+    if(divId != ".cities")
     {
         $(divId).append("<option value></option>")
     }
@@ -39,10 +39,10 @@ setLocations = (response, id, table, typeDb, divId, paramName) => {
 
     //Set Selected Option
     if (paramName != null) {
-        if (divId == "#cities") {
-            $('#countries').val(searchParams.get('country'));
-            $('#countries').select2();
-            $('#cities').val(findParam("city[]"));
+        if (divId == ".cities") {
+            $('.countries').val(searchParams.get('country'));
+            $('.countries').select2();
+            $('.cities').val(findParam("city[]"));
         } else {
             $(divId).val(searchParams.get(paramName));
         }
@@ -52,43 +52,43 @@ setLocations = (response, id, table, typeDb, divId, paramName) => {
 };
 
 //Category Change
-$('#countries').on('change', function () {
-    $('#cities').empty();
+$('.countries').on('change', function () {
+    $('.cities').empty();
     var table = "cities";
     var typeDb = 'parent_country_id';
-    var id = $('#countries').val();
-    var divId = "#cities";
+    var id = $(this).val();
+    var divId = ".cities";
 
     FindLocations(id, table, typeDb, divId);
 });
 
 //City Change
-$('#cities, .select2-selection__choice__remove').on('change', function () {
-    $('#districts').empty();
+$('.cities, .select2-selection__choice__remove').on('change', function () {
+    $('.districts').empty();
     var table = "districts";
     var typeDb = 'parent_city_id';
-    var id = $('#cities').val();
-    var divId = "#districts";
+    var id = $(this).val();
+    var divId = ".districts";
 
     FindLocations(id, table, typeDb, divId);
 });
 
 //Districts Change
-$('#districts').on('change', function () {
+$('.districts').on('change', function () {
     var table = "neighborhoods";
     var typeDb = 'parent_district_id';
-    var id = $('#districts').val();
-    var divId = "#neighborhoods";
+    var id = $(this).val();
+    var divId = ".neighborhoods";
 
     FindLocations(id, table, typeDb, divId);
 });
 
 //Neighborhoods Change
-$('#neighborhoods').on('change', function () {
+$('.neighborhoods').on('change', function () {
     var table = "village";
     var typeDb = 'parent_neighborhood_id';
-    var id = $('#neighborhoods').val();
-    var divId = "#village";
+    var id = $(this).val();
+    var divId = ".village";
 
     FindLocations(id, table, typeDb, divId);
 });
@@ -100,11 +100,11 @@ jQuery(document).ready(function ($) {
 
     //Get City && Set Country
     if (searchParams.get('country') != '') {
-        $('#cities').empty();
+        $('.cities').empty();
         var table = "cities";
         var typeDb = 'parent_country_id';
         var id = searchParams.get('country');
-        var divId = "#cities";
+        var divId = ".cities";
         var paramName = 'city';
 
         FindLocations(id, table, typeDb, divId, paramName);
@@ -114,11 +114,11 @@ jQuery(document).ready(function ($) {
 
     //get District  && set city
     if (findParam('city[]').length) {
-        $('#districts').empty();
+        $('.districts').empty();
         var table = "districts";
         var typeDb = 'parent_city_id';
         var id = findParam('city[]');
-        var divId = "#districts";
+        var divId = ".districts";
         var paramName = 'district';
 
         FindLocations(id, table, typeDb, divId, paramName);
@@ -128,11 +128,11 @@ jQuery(document).ready(function ($) {
 
     //get neighborhood  && set districts
     if (searchParams.get('district') != '') {
-        $('#neighborhoods').empty();
+        $('.neighborhoods').empty();
         var table = "neighborhoods";
         var typeDb = 'parent_district_id';
         var id = searchParams.get('district');
-        var divId = "#neighborhoods";
+        var divId = ".neighborhoods";
         var paramName = 'neighborhood';
 
         FindLocations(id, table, typeDb, divId, paramName);
@@ -142,11 +142,11 @@ jQuery(document).ready(function ($) {
 
     //get village  && set neighborhoods
     if (searchParams.get('neighborhood') != '') {
-        $('#village').empty();
+        $('.village').empty();
         var table = "village";
         var typeDb = 'parent_neighborhood_id';
         var id = searchParams.get('neighborhood');
-        var divId = "#village";
+        var divId = ".village";
         var paramName = 'village';
 
         FindLocations(id, table, typeDb, divId, paramName);
