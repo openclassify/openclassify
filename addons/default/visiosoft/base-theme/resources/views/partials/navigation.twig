@@ -1,12 +1,12 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="{{ url("/") }}">{{ setting_value('streams::name', config_get('streams::distribution.name')) }}</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample07"
-                aria-controls="navbarsExample07" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse">
+        <div class="collapse navbar-collapse" id="navbarContent">
             {{ structure()
             .linkAttributesDropdown({'data-toggle': 'dropdown'})
             .item_class('nav-item')
@@ -20,8 +20,23 @@
             .childListClass('dropdown-menu')
             .cache({'namespace': 'user'})
             .render()|raw }}
+            <ul class="nav navbar-nav navbar-right d-block d-sm-none">
+                <li class="nav-item">
+                    {% if auth_check() %}
+                        <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
+                    {% else %}
+                        <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}">Login</a>
+                    {% endif %}
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_route('profile::profile') }}">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/advs/create_adv" class="btn btn-primary">{{ trans("theme::button.post_ad.name") }}</a>
+                </li>
+            </ul>
         </div>
-        <div>
+        <div class="d-none d-sm-block">
             <ul class="nav navbar-nav navbar-right">
                 <li class="nav-item">
                     {% if auth_check() %}
@@ -31,7 +46,7 @@
                     {% endif %}
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ url_route('visiosoft.module.profile::profile') }}">Profile</a>
+                    <a class="nav-link" href="{{ url_route('profile::profile') }}">Profile</a>
                 </li>
                 <li class="nav-item">
                     <a href="/advs/create_adv" class="btn btn-primary">{{ trans("theme::button.post_ad.name") }}</a>

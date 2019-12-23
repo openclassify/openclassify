@@ -46,11 +46,11 @@
                                     <div class="col-md-12">
                                         {{ nameField|raw }}
                                     </div>
-                                    {{ addBlock('new-ad/fields')|raw }}
                                     <div style="display: none">
                                         {{ form.fields.slug|raw }}
                                     </div>
                                 </div>
+                                {{ addBlock('new-ad/fields')|raw }}
                                 <div class="row form-group select-price">
                                     <label class="col-sm-2 label-title col-xs-12">
                                         {{ form.fields.price.label|raw }}
