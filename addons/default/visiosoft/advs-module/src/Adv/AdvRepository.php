@@ -2,6 +2,7 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
@@ -111,6 +112,26 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $int = (int)$num;
             $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
             $query = $query->whereRaw($column);
+        }
+        if (!empty($param['date'])) {
+            if ($param['date'] === 'day') {
+                $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subDay());
+            } elseif ($param['date'] === 'week') {
+                $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subWeek());
+            } elseif ($param['date'] === 'month') {
+                $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subMonth());
+            }
+        }
+        if (!empty($param['photo'])) {
+            $query = $query->whereNotNull('cover_photo');
+        }
+//        if (!empty($param['video'])) {
+//            $int = (int)$num;
+//            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
+//            $query = $query->whereRaw($column);
+//        }
+        if (!empty($param['map']) && $param['map'] == true) {
+            $query = $query->whereNotNull('map_Val');
         }
 
         foreach ($param as $para => $value) {
