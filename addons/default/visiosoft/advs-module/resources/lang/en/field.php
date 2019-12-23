@@ -19,6 +19,18 @@ return [
     'price' => [
         'name' => 'Price'
     ],
+    'date' => [
+        'name' => 'Date'
+    ],
+    'photo' => [
+        'name' => 'Photo'
+    ],
+    'video' => [
+        'name' => 'Video'
+    ],
+    'map' => [
+        'name' => 'Map'
+    ],
     'stock' => [
         'name' => 'Stock'
     ],
@@ -220,4 +232,22 @@ return [
     'min' => [
         'name' => 'Min',
     ],
+    'in_the_last_24_hours' => [
+        'name' => 'In The Last 24 Hours'
+    ],
+    'in_the_last_week' => [
+        'name' => 'In The Last Week'
+    ],
+    'in_the_last_month' => [
+        'name' => 'In The Last Month'
+    ],
+    'ads_with_photo' => [
+        'name' => 'Ads With Photo'
+    ],
+    'ads_with_video' => [
+        'name' => 'Ads With Video'
+    ],
+    'yes' => [
+        'name' => 'Yes'
+    ]
 ];
