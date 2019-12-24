@@ -76,9 +76,7 @@
                                         {{ form.fields.files.input |raw }}
                                     </div>
                                 </div>
-                                {% if entries('advs').isEnabled('customfields') %}
-                                    {% include "visiosoft.module.customfields::new-ad/fields" %}
-                                {% endif %}
+                                {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
 
                                 {% include "visiosoft.module.location::new-ad/map" %}
 
