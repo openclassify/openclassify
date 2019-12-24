@@ -1,6 +1,11 @@
 #main {
     margin: 3rem 0;
 }
-.hidden{
+
+.hidden {
     display: none;
+}
+
+.table-img-100 {
+    max-width: 100px;
 }
