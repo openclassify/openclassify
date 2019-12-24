@@ -47,6 +47,8 @@
                 {{ blocks('ad-item-content-block-area') }}
             {% endif %}
 
+            {{ addBlock('ad-detail/widget', {'price': adv.price, 'id': adv.id})|raw }}
+
         </div>
     </section>
 

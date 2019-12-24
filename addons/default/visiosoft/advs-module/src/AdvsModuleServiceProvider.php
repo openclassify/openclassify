@@ -207,6 +207,11 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'ajax::getAds',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@getMyAds'
         ],
+
+        'ajax/loanApplication' => [
+            'as' => 'ajax::loanApplication',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@sendLoanApplication'
+        ],
     ];
 
     /**
