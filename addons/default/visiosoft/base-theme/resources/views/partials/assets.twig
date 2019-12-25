@@ -22,6 +22,12 @@
     {% endfor %}
 </script>
 
+<script type="text/javascript">
+    {% for script in asset_inlines("customjs.js") %}
+    {{ script|raw }}
+    {% endfor %}
+</script>
+
 {# Include Styles Loaded From Outside #}
 <style type="text/css">
     {% for style in asset_inlines("styles.css", ["min"]) %}
