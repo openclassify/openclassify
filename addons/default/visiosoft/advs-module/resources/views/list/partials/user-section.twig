@@ -9,9 +9,12 @@
         <div class="row">
             <div class="col-md-3 col-xs-3">
                 <div class="card m-4">
-                    <img src="{{ img('visiosoft.module.advs::images/sample-logo.jpg').url }}"
-                         class="card-img-top">
-                    {#                    <img src="{{ user.file.url }}" class="card-img-top">#}
+                    {% if user.file is null %}
+                        <img src="{{ img('visiosoft.module.advs::images/sample-logo.jpg').url }}"
+                             class="card-img-top">
+                    {% else %}
+                        <img src="{{ user.file.url }}" class="card-img-top">
+                    {% endif %}
                     <div class="card-body">
                         <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
                     </div>
