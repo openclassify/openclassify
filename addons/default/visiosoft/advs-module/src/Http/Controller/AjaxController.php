@@ -92,10 +92,4 @@ class AjaxController extends PublicController
         return response()->json(['success' => true, 'content' => $my_advs, 'title' => $page_title]);
     }
 
-    public function sendLoanApplication(Request $request)
-    {
-        $this->userModel->find(1)->notify(new SendLoanApplicationMail($request));
-        return response()->json(['success' => true, 'content' => $request['firstName']]);
-    }
-
 }
