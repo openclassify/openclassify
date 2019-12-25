@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
+use Anomaly\UsersModule\User\UserModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
@@ -9,14 +10,17 @@ use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\NotificationsModule\Notify\Notification\SendLoanApplicationMail;
 
 class AjaxController extends PublicController
 {
     private $adv_model;
+    private $userModel;
 
-    public function __construct(AdvModel $advModel)
+    public function __construct(AdvModel $advModel, UserModel $userModel)
     {
         $this->adv_model = $advModel;
+        $this->userModel = $userModel;
         parent::__construct();
     }
 
