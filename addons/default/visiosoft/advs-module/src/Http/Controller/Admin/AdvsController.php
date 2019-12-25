@@ -86,6 +86,8 @@ class AdvsController extends AdminController
                 'wrapper' => function (EntryInterface $entry, Request $request) {
                     if (strpos($entry->cover_photo, 'http') === 0) {
                         $wrapper = '<img width="64" src="'.$entry->cover_photo.'">';
+                    } else if (is_null($entry->cover_photo)) {
+                        $wrapper = '<img width="64" src="{{ img(\'visiosoft.theme.base::images/no-image.png\').url }}">';
                     } else {
                         $wrapper = '<img width="64" src="'.$request->root().'/'.$entry->cover_photo.'">';
                     }

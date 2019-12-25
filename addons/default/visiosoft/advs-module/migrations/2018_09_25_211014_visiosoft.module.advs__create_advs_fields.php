@@ -79,6 +79,24 @@ class VisiosoftModuleAdvsCreateAdvsFields extends Migration
                 "default_value" => NULL,
             ]
         ],
+        'cat8' => [
+            'type' => 'anomaly.field_type.select',
+            'config' => [
+                "default_value" => NULL,
+            ]
+        ],
+        'cat9' => [
+            'type' => 'anomaly.field_type.select',
+            'config' => [
+                "default_value" => NULL,
+            ]
+        ],
+        'cat10' => [
+            'type' => 'anomaly.field_type.select',
+            'config' => [
+                "default_value" => NULL,
+            ]
+        ],
         'parent_category' => [
             'type' => 'anomaly.field_type.relationship',
             'config' => [
