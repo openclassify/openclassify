@@ -110,16 +110,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
         'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
         'profile/closeAccount' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount',
-
-        'profile/order/{id}' => [
-            'as' => 'visiosoft.module.profile::profile_order',
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@orderDetail'
-        ],
-        'profile/my-sale/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@saleDetail',
-        'profile/orders/add-transport-number' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@addTrackingNumber',
-        'profile/orders/delivered-purchase/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@orderDelivered',
-        'profile/orders/not-delivered-purchase/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@orderNotDelivered',
-        'profile/orders/report-sales' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@reportSales',
         'profile/notification' => [
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
         ],

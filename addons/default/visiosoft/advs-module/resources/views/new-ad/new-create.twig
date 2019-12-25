@@ -36,23 +36,17 @@
                         <input type="hidden" name="update_id" value="{{ id }}">
                         <fieldset>
                             <div class="section postdetails">
-                                <h4>
-                                    {{ trans('visiosoft.module.advs::field.sell_item') }}
-                                    <span class="pull-right">
-                                        * {{ trans('visiosoft.module.advs::field.mandatory_fields') }}
-                                    </span>
-                                </h4>
                                 <div class="row form-group add-title">
                                     <div class="col-md-12">
                                         {{ nameField|raw }}
                                     </div>
-                                    {{ addBlock('new-ad/fields')|raw }}
                                     <div style="display: none">
                                         {{ form.fields.slug|raw }}
                                     </div>
                                 </div>
+                                {{ addBlock('new-ad/fields')|raw }}
                                 <div class="row form-group select-price">
-                                    <label class="col-sm-2 label-title col-xs-12">
+                                    <label class="col-sm-2 col-xs-12">
                                         {{ form.fields.price.label|raw }}
                                         <span class="required">*</span>
                                     </label>
@@ -76,9 +70,7 @@
                                         {{ form.fields.files.input |raw }}
                                     </div>
                                 </div>
-                                {% if entries('advs').isEnabled('customfields') %}
-                                    {% include "visiosoft.module.customfields::new-ad/fields" %}
-                                {% endif %}
+                                {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
 
                                 {% include "visiosoft.module.location::new-ad/map" %}
 
@@ -119,6 +111,7 @@
         var default_GET = "{{ setting_value('visiosoft.module.advs::default_GET') }}";
         var adv_id = "{{ id }}";
     </script>
+
     <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.advs::google_map_key') }}&callback="
             type="text/javascript"></script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}

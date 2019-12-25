@@ -68,8 +68,6 @@ class MyProfileController extends PublicController
 
         $isActive = new AdvModel();
         $isActiveMessages = $isActive->is_enabled('messages');
-        $isActiveOrders = $isActive->is_enabled('orders');
-        $isBalanceActive = $isActive->is_enabled('balances');
         $isActivePackages = $isActive->is_enabled('packages');
 
 
@@ -86,19 +84,6 @@ class MyProfileController extends PublicController
             $menu_fields[] = $menu_messages;
         }
 
-        if ($isActiveOrders) {
-            $advModel = new AdvModel();
-            $OrderModel = new OrderModel();
-            $OrderDetailModel = new OrderdetailModel();
-            $myPurchase = $OrderModel->listMyOrders();
-            $mySales = $OrderDetailModel->listMySales();
-            foreach ($mySales as $index => $mySale) {
-                if ($mySale->item_type == 'adv') {
-                    $mySales[$index]->detail_url = $advModel->getAdvDetailLinkByAdId($mySale->item_id);
-                }
-                $mySales[$index]->detail_url = "#";
-            }
-        }
 
         $advs_count = new AdvModel();
         $advs_count = count($advs_count->myAdvsByUser()->get());
@@ -339,82 +324,6 @@ class MyProfileController extends PublicController
 
         UsersUsersEntryModel::query()->find(Auth::id())->update(['enabled' => 0]);
         return redirect('/');
-    }
-
-    public function orderDetail($id)
-    {
-        $advModel = new AdvModel();
-        $orderDetailModel = new OrderdetailModel();
-        $details = $orderDetailModel->getDetail($id);
-        foreach ($details as $index => $detail) {
-            if ($detail->item_type == "adv") {
-                $details[$index]->detail_url = $advModel->getAdvDetailLinkByAdId($detail->item_id);
-            } else {
-                $details[$index]->detail_url = "#";
-            }
-        }
-        return $this->view->make('visiosoft.module.profile::profile.show-order', compact('details'));
-    }
-
-    public function saleDetail($id)
-    {
-        $advModel = new AdvModel();
-        $orderDetailModel = new OrderdetailModel();
-        $details = $orderDetailModel->getOrder($id);
-        if ($details->item_type == "adv") {
-            $details->detail_url = $advModel->getAdvDetailLinkByAdId($details->item_id);
-        } else {
-            $details->detail_url = "#";
-        }
-        return $this->view->make('visiosoft.module.profile::profile.show-my-sale', compact('details'));
-    }
-
-    public function addTrackingNumber(Request $request, OrderdetailRepository $orderdetailRepository)
-    {
-        $orderdetailRepository->addTransportnumber($request->id, $request->transportNumber, $request->transportDays);
-        return back()->with('success', ['Success']);
-    }
-
-    public function orderDelivered($id)
-    {
-        $orderDetailModel = new OrderdetailModel();
-        $details = $orderDetailModel->status($id, 'paid_buyer');
-        $orderPaymentModel = new OrderpaymentModel();
-        $orderPaymentModel->addSalesPayment($id);
-        return back()->with('success', [trans('visiosoft.module.profile::message.success')]);
-    }
-
-    public function orderNotDelivered($id)
-    {
-        $orderDetailModel = new OrderdetailModel();
-        $details = $orderDetailModel->status($id, 'error_buyer');
-        return back()->with('success', [trans('visiosoft.module.profile::message.success')]);
-    }
-
-    public function reportSales(Request $request, OrderdetailRepository $orderdetailRepository, Dispatcher $events)
-    {
-        if ($request->status == 'sendAgain') {
-            $seller = Auth::user();
-            $buyer = $orderdetailRepository->getOrderUser($request->id);
-            $orderdetailRepository->report($request->id, $request->reportContent, 'awaiting_tracking_number');
-
-            $events->dispatch(new AgainPurchaseOrder($request->reportContent, $buyer));
-            $events->dispatch(new AgainSaleOrder($request->reportContent, $seller));
-
-//                $buyer->notify(new AgainPuchaseOrder($request->reportContent, $buyer['display_name']));/*notify*/
-//                $seller->notify(new AgainSaleOrder($request->reportContent, $seller['display_name']));/*notify*/
-
-        } else {
-            $orderdetailRepository->report($request->id, $request->reportContent);
-            $user = $orderdetailRepository->getOrderUser($request->id);
-            $orderPaymentModel = new OrderpaymentModel();
-            $orderPaymentModel->addCancelPayment($request->id, $request->reportContent);
-
-            $events->dispatch(new ReportOrder($request->reportContent, $user));
-//                $user->notify(new ReportOrder($request->reportContent, $user['display_name']));/*notify*/
-
-        }
-        return back()->with('success', [trans('visiosoft.module.profile::message.success')]);
     }
 
     public function notification(Request $request)

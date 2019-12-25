@@ -179,7 +179,7 @@ return [
     "edit_adv" => "İlanı Düzenle",
     "mandatory_fields" => "Zorunlu alanlar",
     "ad_post" => "İlan Yayını",
-    "sell_item" => "Bir ürün veya hizmet satmak",
+    "sell_item" => "Detaylı bilgileri giriniz",
     "search_save" => "Favori arama başarıyla kaydedildi",
     "address" => "Adres",
     "email" => "E-Posta",
