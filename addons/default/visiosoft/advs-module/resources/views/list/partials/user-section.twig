@@ -1,22 +1,22 @@
 {% if app.request.get('user') != null or app.request.get('user') != "" %}
-
-    {% if userProfile.adv_listing_banner.url == '' %}
-        {% set background_user = img('visiosoft.module.advs::images/user_section_back.png').url %}
-    {% else %}
-        {% set background_user =  userProfile.adv_listing_banner.url %}
-    {% endif %}
-    <div class="col-md-12 upper-list-banner" style="background-image: url('{{ background_user }}');">
-        <div class="row">
-            <div class="col-md-3 col-xs-3">
-                <div class="card m-4">
-                    <img src="{{ img('visiosoft.module.advs::images/sample-logo.jpg').url }}"
-                         class="card-img-top">
-                    {#                    <img src="{{ user.file.url }}" class="card-img-top">#}
-                    <div class="card-body">
-                        <h5 class="card-title">{{ user.first_name }} {{ user.last_name }}</h5>
+    {% set store = entries('store','store').where('user_id', user.id).first() %}
+    {% if store is not null %}
+        {% if userProfile.adv_listing_banner.url == '' %}
+            {% set background_user = img('visiosoft.module.advs::images/user_section_back.png').url %}
+        {% else %}
+            {% set background_user =  userProfile.adv_listing_banner.url %}
+        {% endif %}
+        <div class="col-md-12 upper-list-banner" style="background-image: url('{{ background_user }}');">
+            <div class="row">
+                <div class="col-md-3 col-xs-3">
+                    <div class="card m-4">
+                        <img src="{{ store.file.url }}" class="card-img-top">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">{{ store.name }}</h5>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    {% endif %}
 {% endif %}
