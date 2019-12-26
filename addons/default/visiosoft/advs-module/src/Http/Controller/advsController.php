@@ -1041,8 +1041,18 @@ class AdvsController extends PublicController
         } else {
             $response['newQuantity'] = $adv->stock;
         }
-        $response['status'] = $status;
+
         $response['newPrice'] = $adv->price * $response['newQuantity'];
+
+        $separator = ",";
+        $decimals = 2;
+        $point = ".";
+
+        $response['newPrice'] = number_format($response['newPrice'], $decimals, $point, str_replace('&#160;', ' ', $separator));
+        $symbol = config('streams::currencies.supported.' . strtoupper(setting_value('streams::currency')) . '.symbol');
+
+        $response['newPrice'] = $symbol . $response['newPrice'];
+        $response['status'] = $status;
         $response['maxQuantity'] = $adv->stock;
         return $response;
     }
