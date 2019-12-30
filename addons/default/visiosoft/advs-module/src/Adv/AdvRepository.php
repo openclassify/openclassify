@@ -123,11 +123,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['photo'])) {
             $query = $query->whereNotNull('cover_photo');
         }
-//        if (!empty($param['video'])) {
-//            $int = (int)$num;
-//            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-//            $query = $query->whereRaw($column);
-//        }
+        if (!empty($param['video'])) {
+            $query = $query->where('cover_photo', 'like', '%video/upload/w_400,e_loop%');
+        }
         if (!empty($param['map']) && $param['map'] == true) {
             $query = $query->whereNotNull('map_Val');
         }
