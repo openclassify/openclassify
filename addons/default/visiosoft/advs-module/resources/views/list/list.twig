@@ -35,7 +35,7 @@
                             {% endblock %}
                         </div>
                         <div class="d-flex justify-content-center">
-                            {{ advs.links()|raw }}
+                            {{ advs.appends(request_query()).links()|raw }}
                         </div>
                         {#                        <div class="category-tabs"></div>#}
                     </div>
