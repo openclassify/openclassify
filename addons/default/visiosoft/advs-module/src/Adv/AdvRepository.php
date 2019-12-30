@@ -48,8 +48,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function searchAdvs($type, $param = null, $customParameters = null, $limit = null)
     {
-        //dd($param);
-
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
 
@@ -245,7 +243,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $query = $query->orderBy('advs_advs.created_at', 'desc');
             $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name', 'advs_advs_translations.advs_desc as advs_desc');
         }
-
 
         if ($type == "list") {
             return $query->paginate($this->settings->value('streams::per_page'));

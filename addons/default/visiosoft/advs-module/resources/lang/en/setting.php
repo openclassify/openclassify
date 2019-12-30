@@ -42,6 +42,9 @@ return [
     'currencies' => [
         'name' => 'Active Currencies',
     ],
+    'latest-limit' => [
+        'name' => 'Latest Limit',
+    ],
     'site_address' => [
         'name' => 'Site address',
         'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',

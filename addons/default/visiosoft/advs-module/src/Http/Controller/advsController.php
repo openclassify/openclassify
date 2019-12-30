@@ -465,14 +465,6 @@ class AdvsController extends PublicController
                 return redirect('/');
             }
 
-            if ($advModel->is_enabled('store')) {
-                $StoreAdModel = new AdModel();
-                if ($request->store != "0" and $request->store != null) {
-                    $StoreAdModel->createStoreAdLoggedInUser($request->store, $request->update_id);
-                } else {
-                    $StoreAdModel->removeAdStore($request->update_id);
-                }
-            }
             $adv->is_get_adv = $request->is_get_adv;
             $adv->save();
 
