@@ -1,5 +1,9 @@
 {% if app.request.get('user') != null or app.request.get('user') != "" %}
     {% set store = entries('store','store').where('user_id', user.id).first() %}
+    {% if store is null %}
+        {% set user = entries('store','user').where('user_id', user.id).first() %}
+        {% set store = user.store %}
+    {% endif %}
     {% if store is not null %}
         {% if store.store_banner is null %}
             {% set background_image = img('visiosoft.module.advs::images/user_section_back.png').url %}
