@@ -14,7 +14,11 @@
             <div class="row">
                 <div class="col-md-3 col-xs-3">
                     <div class="card m-4">
-                        <img src="{{ store.file.url }}" class="card-img-top">
+                        {% if store.file is null %}
+                            <img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}" class="card-img-top">
+                        {% else %}
+                            <img src="{{ store.file.url }}" class="card-img-top">
+                        {% endif %}
                         <div class="card-body">
                             <h5 class="card-title text-center mb-0">{{ store.name }}</h5>
                         </div>
