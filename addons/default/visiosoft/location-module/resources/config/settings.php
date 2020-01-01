@@ -19,10 +19,4 @@ return [
             'default_value' => true,
         ],
     ],
-    'show_search_location_btn' => [
-        'type'   => 'anomaly.field_type.boolean',
-        'config' => [
-            'default_value' => true,
-        ],
-    ],
 ];

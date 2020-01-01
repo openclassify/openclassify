@@ -33,12 +33,14 @@
                                     <p class="card-title d-inline-block">{{ latestAd.name }}</p>
                                 </a>
                             </div>
+                            {% if setting_value('visiosoft.module.location::home_page_location') %}
                             <div class="d-flex justify-content-between align-items-center">
                                 <small>
                                     <i class="fas fa-location-arrow text-primary"></i>
                                     {{ latestAd.city_name }}, {{ latestAd.country_name }}
                                 </small>
                             </div>
+                            {% endif %}
                             <div class="d-flex justify-content-between align-items-center">
                                 <small>
                                     <i class="far fa-clock text-dark"></i>
