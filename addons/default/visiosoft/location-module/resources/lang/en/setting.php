@@ -10,4 +10,7 @@ return [
     'detail_page_location' => [
         'name' => 'Detail Page Location Field',
     ],
+    'show_search_location_btn' => [
+        'name' => 'Show Search Location Button',
+    ],
 ];

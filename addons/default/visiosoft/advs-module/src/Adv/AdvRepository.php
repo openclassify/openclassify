@@ -48,8 +48,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function searchAdvs($type, $param = null, $customParameters = null, $limit = null)
     {
-        //dd($param);
-
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
 
@@ -125,11 +123,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['photo'])) {
             $query = $query->whereNotNull('cover_photo');
         }
-//        if (!empty($param['video'])) {
-//            $int = (int)$num;
-//            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-//            $query = $query->whereRaw($column);
-//        }
+        if (!empty($param['video'])) {
+            $query = $query->where('cover_photo', 'like', '%video/upload/w_400,e_loop%');
+        }
         if (!empty($param['map']) && $param['map'] == true) {
             $query = $query->whereNotNull('map_Val');
         }
@@ -245,7 +241,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $query = $query->orderBy('advs_advs.created_at', 'desc');
             $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name', 'advs_advs_translations.advs_desc as advs_desc');
         }
-
 
         if ($type == "list") {
             return $query->paginate($this->settings->value('streams::per_page'));

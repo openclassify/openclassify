@@ -71,7 +71,7 @@ class CategoryController extends AdminController
                 return $this->redirect->back();
             }
 
-            $locale = $this->getRequestLang($all);
+            $locale = config('streams::locales.enabled');
 
             $translatable = array();
             foreach ($all as $key => $value) {
@@ -169,31 +169,6 @@ class CategoryController extends AdminController
         $testlen = strlen($test);
         if ($testlen > $strlen) return false;
         return substr_compare($string, $test, $strlen - $testlen, $testlen) === 0;
-    }
-
-    public function getRequestLang($request) {
-        $locale = array();
-        foreach ($request as $key => $field) {
-            $locale[] = substr($key, 0, -2);
-        }
-        $notTrans = array();
-        $trans = array();
-        foreach ($locale as $translatable) {
-            if (!in_array($translatable, $notTrans)) {
-                $notTrans[] = $translatable;
-            } else {
-                $trans[] = $translatable;
-            }
-        }
-        $locale = array();
-        foreach ($request as $key => $field) {
-            foreach (array_unique($trans) as $entry) {
-                if (strpos($key, $entry) === 0) {
-                    $locale[] = substr($key, -2);
-                }
-            }
-        }
-        return $locale;
     }
 
     public function edit(CategoryFormBuilder $form, Request $request, $id)
