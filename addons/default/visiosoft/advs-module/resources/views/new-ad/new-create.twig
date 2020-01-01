@@ -6,7 +6,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     {% for cat in cats_d %}
-                        <li class="breadcrumb-item"><a href="#">{{ cat }}</a></li>
+                        <li class="breadcrumb-item text-primary">{{ cat }}</li>
                     {% endfor %}
                     <li class="breadcrumb-item">
                         <a href="{{ url_route('adv::edit_category',[id]) }}">
