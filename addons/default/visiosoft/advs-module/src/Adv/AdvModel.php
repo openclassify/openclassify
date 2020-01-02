@@ -72,9 +72,13 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function userAdv()
     {
+        if (Auth::user()->hasRole('admin')) {
+            return $this->getAdv();
+        } else {
+            return $this->getAdv()
+                ->where('advs_advs.created_by_id', Auth::id());
+        }
 
-        return $this->getAdv()
-            ->where('advs_advs.created_by_id', Auth::id());
     }
 
     public function getAdvByCat($cat_id)
@@ -195,10 +199,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
             $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
 
-            if($country != null) {
+            if ($country != null) {
                 $adv->setAttribute('country_name', $country->name);
             }
-            if($city != null) {
+            if ($city != null) {
                 $adv->setAttribute('city_name', $city->name);
             }
         }
