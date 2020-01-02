@@ -14,7 +14,7 @@
             {{ form_open({
                 'class': 'row form ' ~ form.options.class ,
                 'enctype': 'multipart/form-data',
-                'url': 'advs/save_adv',
+                'url':form.options.url
             })|raw }}
             <div class="col-12">
                 {{ form.fields.display_name|raw }}
