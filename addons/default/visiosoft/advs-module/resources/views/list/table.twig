@@ -11,9 +11,11 @@
                     class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
                 <th scope="col"
                     class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
-                <th scope="col"
-                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
-                    / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                {% if setting_value('visiosoft.module.location::list_page_location') %}
+                    <th scope="col"
+                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
+                        / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                {% endif %}
                 {{ addBlock('ads-list/table-column',{'seenList':seenList})|raw }}
             </tr>
             </thead>

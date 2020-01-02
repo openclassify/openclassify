@@ -21,9 +21,11 @@
                         <div class="col-md-12">
                             <b>{{ adv.price.currency }}</b>
                         </div>
-                        <div class="col-md-12 justify-content-center align-self-center text-truncate">
-                            <small>{{ adv.city_name }} {{ adv.country_name }}</small>
-                        </div>
+                        {% if setting_value('visiosoft.module.location::list_page_location') %}
+                            <div class="col-md-12 justify-content-center align-self-center text-truncate">
+                                <small>{{ adv.city_name }} {{ adv.country_name }}</small>
+                            </div>
+                        {% endif %}
                     </div>
                 </div>
             </div>
