@@ -1,4 +1,19 @@
-#location .select2-selection__rendered {
-    display: inline-block;
-    padding-left: 4px;
+.filter-location-back {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    background-color: #000;
+    opacity: .3;
+    -ms-filter: "alpha(opacity=30)";
+    filter: alpha(opacity=30);
+    -ms-filter: "alpha(opacity=50)";
+
+}
+
+.filter-location-body ul li:hover {
+    background: #227af3;
+    color: #fff;
 }

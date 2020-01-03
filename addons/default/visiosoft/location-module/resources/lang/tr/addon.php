@@ -1,7 +1,7 @@
 <?php
 
  return[
-   "title"   =>"Yer",
-   "name"   =>"Yer Modülü",
-   "description"   =>"Açıklama"
+   "title"   =>"Bölge",
+   "name"   =>"Bölge Modülü",
+   "description"   =>"Bölge Modülü"
 ];
