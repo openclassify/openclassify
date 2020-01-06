@@ -9,3 +9,12 @@
 .table-img-100 {
     max-width: 100px;
 }
+
+.loading {
+    background-image: url("{{ img('visiosoft.theme.base::images/loading.gif').url }}");
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100%;
+}

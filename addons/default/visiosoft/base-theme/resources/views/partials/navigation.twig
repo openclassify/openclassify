@@ -1,6 +1,9 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
-        <a class="navbar-brand" href="{{ url("/") }}">{{ setting_value('streams::name', config_get('streams::distribution.name')) }}</a>
+        {% if setting_value('visiosoft.theme.base::navigation_title') %}
+            <a class="navbar-brand"
+               href="{{ url("/") }}">{{ setting_value('streams::name', config_get('streams::distribution.name')) }}</a>
+        {% endif %}
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
                 aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -20,38 +23,44 @@
             .childListClass('dropdown-menu')
             .cache({'namespace': 'user'})
             .render()|raw }}
-            <ul class="nav navbar-nav navbar-right d-block d-sm-none">
-                <li class="nav-item">
-                    {% if auth_check() %}
-                        <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
-                    {% else %}
-                        <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}">Login</a>
-                    {% endif %}
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_route('profile::profile') }}">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/advs/create_adv" class="btn btn-primary">{{ trans("theme::button.post_ad.name") }}</a>
-                </li>
-            </ul>
+
+            {% if setting_value('visiosoft.theme.base::navigation_action') %}
+                <ul class="nav navbar-nav navbar-right d-block d-sm-none">
+                    <li class="nav-item">
+                        {% if auth_check() %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">{{ trans('visiosoft.theme.base::field.logout.name') }}</a>
+                        {% else %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}">{{ trans('visiosoft.theme.base::field.login.name') }}</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_route('profile::profile') }}">{{ trans('visiosoft.theme.base::field.profile.name') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/advs/create_adv" class="btn btn-primary">{{ trans("theme::button.post_ad.name") }}</a>
+                    </li>
+                </ul>
+            {% endif %}
         </div>
         <div class="d-none d-sm-block">
-            <ul class="nav navbar-nav navbar-right">
-                <li class="nav-item">
-                    {% if auth_check() %}
-                        <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">Logout</a>
-                    {% else %}
-                        <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}">Login</a>
-                    {% endif %}
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ url_route('profile::profile') }}">Profile</a>
-                </li>
-                <li class="nav-item">
-                    <a href="/advs/create_adv" class="btn btn-primary">{{ trans("theme::button.post_ad.name") }}</a>
-                </li>
-            </ul>
+            {% if setting_value('visiosoft.theme.base::navigation_action') %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        {% if auth_check() %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">{{ trans('visiosoft.theme.base::field.logout.name') }}</a>
+                        {% else %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}">{{ trans('visiosoft.theme.base::field.login.name') }}</a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_route('profile::profile') }}">{{ trans('visiosoft.theme.base::field.profile.name') }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/advs/create_adv" class="btn btn-primary">{{ trans("theme::button.post_ad.name") }}</a>
+                    </li>
+                </ul>
+            {% endif %}
         </div>
+
     </div>
 </nav>

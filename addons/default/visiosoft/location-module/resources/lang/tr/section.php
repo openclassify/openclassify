@@ -2,19 +2,19 @@
 
  return[
    "countries"   =>   [
-      "title"      =>"Ülkeler",
+      "title"      =>"Ülke",
 
    ],
    "cities"   =>   [
-      "title"      =>"Şehirler",
+      "title"      =>"İl",
 
    ],
    "districts"   =>   [
-      "title"      =>"İlçeler",
+      "title"      =>"İlçer",
 
    ],
    "neighborhoods"   =>   [
-      "title"      =>"Çevredekiler",
+      "title"      =>"Mahalle",
 
    ],
    "village"   =>   [

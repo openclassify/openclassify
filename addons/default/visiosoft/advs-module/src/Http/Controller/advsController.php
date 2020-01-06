@@ -146,27 +146,14 @@ class AdvsController extends PublicController
         $subCats = array();
 
         $param = $this->requestHttp->toArray();
-        if (!isset($param['country'])) {
-            if (is_null(Cookie::get('country'))) {
-                $param['country'] = setting_value('visiosoft.module.advs::default_country');
-            } else {
-                $param['country'] = Cookie::get('country');
-            }
-        } else {
-            if ($param['country'] != setting_value('visiosoft.module.advs::default_country')) {
-                Cookie::queue(Cookie::make('country', $param['country'], 84000));
-            }
-        }
-        $searchedCountry = $param['country'];
+
 
         $countries = $this->country_repository->viewAll();
 
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
-
         $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters);
-
         $advs = $this->adv_repository->addAttributes($advs);
 
 

@@ -13,4 +13,7 @@ return [
     'show_search_location_btn' => [
         'name' => 'Show Search Location Button',
     ],
+    'default_country' => [
+        'name' => 'Default Country',
+    ],
 ];

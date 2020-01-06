@@ -5,6 +5,7 @@ use Visiosoft\LocationModule\City\Command\GetCity;
 use Visiosoft\LocationModule\Country\Command\GetCountry;
 use Visiosoft\LocationModule\District\Command\GetDistrict;
 use Visiosoft\LocationModule\Neighborhood\Command\GetNeighborhood;
+use Visiosoft\LocationModule\Village\Command\GetVillage;
 
 class LocationModulePlugin extends Plugin
 {
@@ -53,6 +54,17 @@ class LocationModulePlugin extends Plugin
                 function ($id) {
 
                     if (!$ad = $this->dispatch(new GetCountry($id))) {
+                        return null;
+                    }
+
+                    return $ad;
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'getVillage',
+                function ($id) {
+
+                    if (!$ad = $this->dispatch(new GetVillage($id))) {
                         return null;
                     }
 

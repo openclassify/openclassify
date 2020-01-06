@@ -31,4 +31,7 @@ return [
     'pick_option' => [
         'name' => 'Pick an option',
     ],
+    'address' => [
+        'name' => 'Address',
+    ],
 ];

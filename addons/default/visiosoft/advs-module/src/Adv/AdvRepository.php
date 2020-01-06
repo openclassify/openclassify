@@ -74,7 +74,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['country'])) {
             $query = $query->where('country_id', $param['country']);
         }
-        if (!empty($param['city'])) {
+        if (isset($param['city']) and !empty(array_filter($param['city']))) {
             $query = $query->whereIn('city', $param['city']);
         }
         if (!empty($param['cat'])) {
@@ -90,14 +90,14 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
         }
-        if (!empty($param['district'])) {
-            $query = $query->where('district', $param['district']);
+        if (isset($param['district']) and !empty(array_filter($param['district']))) {
+            $query = $query->whereIn('district', $param['district']);
         }
-        if (!empty($param['neighborhood'])) {
-            $query = $query->where('neighborhood', $param['neighborhood']);
+        if (isset($param['neighborhood']) and !empty(array_filter($param['neighborhood']))) {
+            $query = $query->whereIn('neighborhood', $param['neighborhood']);
         }
-        if (!empty($param['village'])) {
-            $query = $query->where('village', $param['village']);
+        if (isset($param['village']) and !empty(array_filter($param['village']))) {
+            $query = $query->whereIn('village', $param['village']);
         }
         if (!empty($param['min_price'])) {
             $num = $param['min_price'];
