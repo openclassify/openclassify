@@ -17,3 +17,13 @@
     background: #227af3;
     color: #fff;
 }
+
+.filter-location-body .countries,
+.filter-location-body .cities,
+.filter-location-body .districts,
+.filter-location-body .neighborhoods,
+.filter-location-body .village {
+    height: 200px;
+    overflow: auto;
+    display: none
+}

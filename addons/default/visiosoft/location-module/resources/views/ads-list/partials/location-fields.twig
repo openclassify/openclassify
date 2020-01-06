@@ -1,57 +1,16 @@
-{#<div class="row w-100 px-2 m-0">#}
-{#    <div class="col-12 px-0 py-1">#}
-{#        <label class="label-filter-location">{{ trans("visiosoft.module.location::field.country.name") }}</label>#}
-{#        <select class="form-control countries" name="country" id="countries">#}
-{#            {% for country in params.countries %}#}
-{#                <option value="{{ country.id }}">{{ country.name }}</option>#}
-{#            {% endfor %}#}
-{#        </select>#}
-{#    </div>#}
-{#    <div class="col-12 px-0 py-1">#}
-{#        <label class="label-filter-location">{{ trans("visiosoft.module.location::field.city.name") }}</label>#}
-{#        <select class="form-control cities" name="city[]" id="cities" multiple>#}
-{#            {% for city in params.cities %}#}
-{#                <option value="{{ city.id }}">{{ city.name }}</option>#}
-{#            {% endfor %}#}
-{#        </select>#}
-{#    </div>#}
-{#    <div class="col-12 px-0 py-1">#}
-{#        <label class="label-filter-location">{{ trans("visiosoft.module.location::field.district.name") }}</label>#}
-{#        <select class="form-control districts" name="district" id="districts">#}
-{#            {% for district in params.districts %}#}
-{#                <option value="{{ district.id }}">{{ district.name }}</option>#}
-{#            {% endfor %}#}
-{#        </select>#}
-{#    </div>#}
-{#    <div class="col-12 px-0 py-1">#}
-{#        <label class="label-filter-location">{{ trans("visiosoft.module.location::field.neighborhood.name") }}</label>#}
-{#        <select class="form-control neighborhoods" name="neighborhood" id="neighborhoods">#}
-{#            {% for neighborhood in params.neighborhoods %}#}
-{#                <option value="{{ neighborhood.id }}">{{ neighborhood.name }}</option>#}
-{#            {% endfor %}#}
-{#        </select>#}
-{#    </div>#}
-{#    <div class="col-12 px-0 py-1">#}
-{#        <label class="label-filter-location">{{ trans("visiosoft.module.location::field.village.name") }}</label>#}
-{#        <select class="form-control village" name="village" id="village">#}
-{#            {% for village in params.villages %}#}
-{#                <option value="{{ village.id }}">{{ village.name }}</option>#}
-{#            {% endfor %}#}
-{#        </select>#}
-{#    </div>#}
-{#</div>#}
-
-
 <div class="row w-100 px-2 m-0">
-    <div class="col-12 px-0 py-1">
-        <button type="button" class="btn btn-default border border-1 w-100 filter-country-btn" data-toggle="modal">
-            <span class="float-left">{{ trans("visiosoft.module.location::field.country.name") }}</span>
-            <i class="fas fa-sort-down float-right"></i>
-        </button>
-        <div class="text-muted selected-country">
-            <small></small>
-        </div>
-        <input name="country" type="hidden">
+    <div class="col-12 px-0 py-1 px-2">
+        <b>
+            <span class="float-left">{{ trans('visiosoft.module.location::field.address.name') }}</span>
+        </b>
+        <a href="#" class="a-sahibinden-type selected-country filter-country-btn float-right">
+            <small>{{ getCountry(setting_value('visiosoft.module.location::default_country')).name }}</small>
+        </a>
+        {% set country = setting_value('visiosoft.module.location::default_country') %}
+        {% if app.request.get('country') %}
+            {% set country =  app.request.get('country') %}
+        {% endif %}
+        <input name="country" value="{{ country }}" type="hidden">
     </div>
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 filter-city-btn" data-toggle="modal"
@@ -59,10 +18,15 @@
             <span class="float-left">{{ trans("visiosoft.module.location::field.city.name") }}</span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
+        {% set selected_cities = app.request.get('city') %}
+        {% set selected_cities_name = [] %}
+        {% for selected_city in selected_cities[0]|split(',') %}
+            {% set selected_cities_name = selected_cities_name|merge([getCity(selected_city|trim(',')).name]) %}
+        {% endfor %}
         <div class="text-muted selected-city">
-            <small></small>
+            <small>{{ selected_cities_name|join(',') }}</small>
         </div>
-        <input name="city" type="hidden">
+        <input name="city[]" value="{{ app.request.get('city')|join(',') }}" type="hidden">
     </div>
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 filter-district-btn" data-toggle="modal"
@@ -70,10 +34,15 @@
             <span class="float-left">{{ trans("visiosoft.module.location::field.district.name") }}</span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
+        {% set selected_districts = app.request.get('district') %}
+        {% set selected_districts_name = [] %}
+        {% for selected_district in selected_districts[0]|split(',') %}
+            {% set selected_districts_name = selected_districts_name|merge([getDistrict(selected_district|trim(',')).name]) %}
+        {% endfor %}
         <div class="text-muted selected-district">
-            <small></small>
+            <small>{{ selected_districts_name|join(',') }}</small>
         </div>
-        <input name="district" type="hidden">
+        <input name="district[]" value="{{ app.request.get('district')|join(',') }}" type="hidden">
     </div>
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 filter-neighborhood-btn" data-toggle="modal"
@@ -81,10 +50,15 @@
             <span class="float-left">{{ trans("visiosoft.module.location::field.neighborhood.name") }}</span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
+        {% set selected_neighborhoods = app.request.get('neighborhood') %}
+        {% set selected_neighborhoods_name = [] %}
+        {% for selected_neighborhood in selected_neighborhoods[0]|split(',') %}
+            {% set selected_neighborhoods_name = selected_neighborhoods_name|merge([getNeighborhood(selected_neighborhood|trim(',')).name]) %}
+        {% endfor %}
         <div class="text-muted selected-neighborhood">
-            <small></small>
+            <small>{{ selected_neighborhoods_name|join(',') }}</small>
         </div>
-        <input name="neighborhood" type="hidden">
+        <input name="neighborhood[]" value="{{ app.request.get('neighborhood')|join(',') }}" type="hidden">
     </div>
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 filter-village-btn" data-toggle="modal"
@@ -92,10 +66,15 @@
             <span class="float-left">{{ trans("visiosoft.module.location::field.village.name") }}</span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
+        {% set selected_villages = app.request.get('village') %}
+        {% set selected_villages_name = [] %}
+        {% for selected_village in selected_villages[0]|split(',') %}
+            {% set selected_villages_name = selected_villages_name|merge([getVillage(selected_village|trim(',')).name]) %}
+        {% endfor %}
         <div class="text-muted selected-village">
-            <small></small>
+            <small>{{ selected_villages_name|join(',') }}</small>
         </div>
-        <input name="village" type="hidden">
+        <input name="village[]" value="{{ app.request.get('village')|join(',') }}" type="hidden">
     </div>
 </div>
 
@@ -109,11 +88,11 @@
     </div>
     <div class="modal-body filter-location-body">
         <div class="loading"></div>
-        <ul class="list-unstyled countries" style="height: 200px; overflow: auto;display: none"></ul>
-        <ul class="list-unstyled cities" style="height: 200px; overflow: auto;display: none"></ul>
-        <ul class="list-unstyled districts" style="height: 200px; overflow: auto;display: none"></ul>
-        <ul class="list-unstyled neighborhoods" style="height: 200px; overflow: auto;display: none"></ul>
-        <ul class="list-unstyled village" style="height: 200px; overflow: auto;display: none"></ul>
+        <ul class="list-unstyled countries"></ul>
+        <ul class="list-unstyled cities"></ul>
+        <ul class="list-unstyled districts"></ul>
+        <ul class="list-unstyled neighborhoods"></ul>
+        <ul class="list-unstyled village"></ul>
     </div>
 </div>
 <div class="filter-location-back" style="display: none"></div>

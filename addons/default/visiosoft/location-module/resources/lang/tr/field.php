@@ -37,5 +37,8 @@ return[
         "name"      =>"Açıklama",
 
     ],
+    'address' => [
+        'name' => 'Adres',
+    ],
 
 ];

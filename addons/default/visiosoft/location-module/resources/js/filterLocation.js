@@ -1,160 +1,3 @@
-// let searchParams = new URLSearchParams(window.location.search);
-//
-// //Set Select2 Type for Location Fields
-// $('.cities, .countries, .districts, .neighborhoods, .village').select2({
-//     placeholder: select_trans
-// });
-//
-//
-// FindLocations = (id, table, typeDb, divId, paramName = null) => {
-//     $.ajax({
-//         type: 'get',
-//         url: '/getlocations',
-//         data: {
-//             id: id,
-//             table: table,
-//             typeDb: typeDb,
-//         },
-//         success: function (response) {
-//             setLocations(response, id, table, typeDb, divId, paramName);
-//             return response;
-//         },
-//         error: function (err) {
-//             reject(Error("It broke"));
-//         }
-//     });
-// };
-//
-//
-// setLocations = (response, id, table, typeDb, divId, paramName) => {
-//
-//     //Add Options
-//     if(divId != ".cities")
-//     {
-//         $(divId).append("<option value></option>")
-//     }
-//     response.forEach(function (options) {
-//         $(divId).append("<option value=" + options.id + ">" + options.name + "</option>")
-//     });
-//
-//     //Set Selected Option
-//     if (paramName != null) {
-//         if (divId == ".cities") {
-//             $('.countries').val(searchParams.get('country'));
-//             $('.countries').select2();
-//             $('.cities').val(findParam("city[]"));
-//         } else {
-//             $(divId).val(searchParams.get(paramName));
-//         }
-//         $(divId).select2();
-//     }
-//
-// };
-//
-// //Category Change
-// $('.countries').on('change', function () {
-//     $('.cities').empty();
-//     var table = "cities";
-//     var typeDb = 'parent_country_id';
-//     var id = $(this).val();
-//     var divId = ".cities";
-//
-//     FindLocations(id, table, typeDb, divId);
-// });
-//
-// //City Change
-// $('.cities, .select2-selection__choice__remove').on('change', function () {
-//     $('.districts').empty();
-//     var table = "districts";
-//     var typeDb = 'parent_city_id';
-//     var id = $(this).val();
-//     var divId = ".districts";
-//
-//     FindLocations(id, table, typeDb, divId);
-// });
-//
-// //Districts Change
-// $('.districts').on('change', function () {
-//     var table = "neighborhoods";
-//     var typeDb = 'parent_district_id';
-//     var id = $(this).val();
-//     var divId = ".neighborhoods";
-//
-//     FindLocations(id, table, typeDb, divId);
-// });
-//
-// //Neighborhoods Change
-// $('.neighborhoods').on('change', function () {
-//     var table = "village";
-//     var typeDb = 'parent_neighborhood_id';
-//     var id = $(this).val();
-//     var divId = ".village";
-//
-//     FindLocations(id, table, typeDb, divId);
-// });
-//
-//
-// jQuery(document).ready(function ($) {
-//
-// }).promise().done(function () {
-//
-//     //Get City && Set Country
-//     if (searchParams.get('country') != '') {
-//         $('.cities').empty();
-//         var table = "cities";
-//         var typeDb = 'parent_country_id';
-//         var id = searchParams.get('country');
-//         var divId = ".cities";
-//         var paramName = 'city';
-//
-//         FindLocations(id, table, typeDb, divId, paramName);
-//     }
-//
-// }).promise().done(function () {
-//
-//     //get District  && set city
-//     if (findParam('city[]').length) {
-//         $('.districts').empty();
-//         var table = "districts";
-//         var typeDb = 'parent_city_id';
-//         var id = findParam('city[]');
-//         var divId = ".districts";
-//         var paramName = 'district';
-//
-//         FindLocations(id, table, typeDb, divId, paramName);
-//     }
-//
-// }).promise().done(function () {
-//
-//     //get neighborhood  && set districts
-//     if (searchParams.get('district') != '') {
-//         $('.neighborhoods').empty();
-//         var table = "neighborhoods";
-//         var typeDb = 'parent_district_id';
-//         var id = searchParams.get('district');
-//         var divId = ".neighborhoods";
-//         var paramName = 'neighborhood';
-//
-//         FindLocations(id, table, typeDb, divId, paramName);
-//     }
-//
-// }).promise().done(function () {
-//
-//     //get village  && set neighborhoods
-//     if (searchParams.get('neighborhood') != '') {
-//         $('.village').empty();
-//         var table = "village";
-//         var typeDb = 'parent_neighborhood_id';
-//         var id = searchParams.get('neighborhood');
-//         var divId = ".village";
-//         var paramName = 'village';
-//
-//         FindLocations(id, table, typeDb, divId, paramName);
-//     }
-//
-// });
-
-
 var countries;
 var cities;
 var districts;
@@ -173,6 +16,8 @@ $('.filter-country-btn').on('click', function () {
                 });
                 if (countries == "")
                     $('.filter-location-modal .countries').html(null_msg);
+                else if ($('input[name="country"]').val() != "")
+                    $(".filter-location-body .countries li[data-id='" + $('input[name="country"]').val() + "'] input[type='checkbox']").prop('checked', true);
                 resolve();
             })
         });
@@ -190,6 +35,7 @@ $('.filter-country-btn').on('click', function () {
 //City
 $('.filter-city-btn').on('click', function () {
     var countries_value = $('input[name="country"]').val();
+    var selected__city_request = $('input[name="city[]"]').val();
     if (cities == undefined || $(this).attr('data-parent') != countries_value) {
         $(this).attr('data-parent', countries_value)
         var promiseForCities = new Promise(function (resolve, reject) {
@@ -201,6 +47,11 @@ $('.filter-city-btn').on('click', function () {
                 });
                 if (cities == "")
                     $('.filter-location-modal .cities').html(null_msg);
+                else if (selected__city_request != "") {
+                    $.each(selected__city_request.split(','), function (index, value) {
+                        $(".filter-location-body .cities li[data-id='" + value + "'] input[type='checkbox']").prop('checked', true);
+                    });
+                }
                 resolve();
             })
         });
@@ -217,7 +68,8 @@ $('.filter-city-btn').on('click', function () {
 
 //District
 $('.filter-district-btn').on('click', function () {
-    var city_value = $('input[name="city"]').val();
+    var city_value = $('input[name="city[]"]').val();
+    var selected_district_request = $('input[name="district[]"]').val();
     if (districts == undefined || $(this).attr('data-parent') != city_value) {
         $(this).attr('data-parent', city_value)
         var promiseForDistricts = new Promise(function (resolve, reject) {
@@ -229,6 +81,11 @@ $('.filter-district-btn').on('click', function () {
                 });
                 if (districts == "")
                     $('.filter-location-modal .districts').html(null_msg);
+                else if (selected_district_request != "") {
+                    $.each(selected_district_request.split(','), function (index, value) {
+                        $(".filter-location-body .districts li[data-id='" + value + "'] input[type='checkbox']").prop('checked', true);
+                    });
+                }
                 resolve();
             })
         });
@@ -245,7 +102,8 @@ $('.filter-district-btn').on('click', function () {
 
 //Neighborhood
 $('.filter-neighborhood-btn').on('click', function () {
-    var district_value = $('input[name="district"]').val();
+    var district_value = $('input[name="district[]"]').val();
+    var selected_neighborhood_request = $('input[name="neighborhood[]"]').val();
     if (neighborhoods == undefined || $(this).attr('data-parent') != district_value) {
         $(this).attr('data-parent', district_value)
         var promiseForNeighborhoods = new Promise(function (resolve, reject) {
@@ -257,6 +115,11 @@ $('.filter-neighborhood-btn').on('click', function () {
                 });
                 if (neighborhoods == "")
                     $('.filter-location-modal .neighborhoods').html(null_msg);
+                else if (selected_neighborhood_request != "") {
+                    $.each(selected_neighborhood_request.split(','), function (index, value) {
+                        $(".filter-location-body .neighborhoods li[data-id='" + value + "'] input[type='checkbox']").prop('checked', true);
+                    });
+                }
                 resolve();
             })
         });
@@ -273,7 +136,8 @@ $('.filter-neighborhood-btn').on('click', function () {
 
 //Village
 $('.filter-village-btn').on('click', function () {
-    var neighborhood_value = $('input[name="neighborhood"]').val();
+    var neighborhood_value = $('input[name="neighborhood[]"]').val();
+    var selected_village_request = $('input[name="village[]"]').val();
     if (village == undefined || $(this).attr('data-parent') != neighborhood_value) {
         $(this).attr('data-parent', neighborhood_value)
         var promiseForVillage = new Promise(function (resolve, reject) {
@@ -285,6 +149,11 @@ $('.filter-village-btn').on('click', function () {
                 });
                 if (village == "")
                     $('.filter-location-modal .village').html(null_msg);
+                else if (selected_village_request != "") {
+                    $.each(selected_village_request.split(','), function (index, value) {
+                        $(".filter-location-body .village li[data-id='" + value + "'] input[type='checkbox']").prop('checked', true);
+                    });
+                }
                 resolve();
             })
         });
@@ -318,24 +187,40 @@ function SelectOnClick() {
     $('.loading').hide();
 
     return $(".filter-location-body input[type='checkbox']").change(function () {
+
         resetValue($(this).attr('data-field'), false, true)
-        var input = $('input[name="' + $(this).attr('data-field') + '"]');
-        var input_val = input.val()
-        var input_name = $('.selected-'+$(this).attr('data-field')+' small').html("")
+
+        var input = $('input[name="' + $(this).attr('data-field') + '[]"]');
+        var input_text = $(this).parent().find('small').html();
+        var text_html = $('.selected-' + $(this).attr('data-field') + ' small');
+        var text = "";
+        var input_val = input.val();
         var id = $(this).attr('data-id');
-        var name = $(this).attr('data-id');
-        if (input_val != "") {
-            input_val = input_val.split(',');
+
+        if ($(this).attr('data-field') == "country") {
+            input.val(id)
+            text_html.html(input_text)
+            $(".filter-location-body input[type='checkbox']").prop('checked', false);
+            $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
+
         } else {
-            input_val = [];
+            if (input_val != "") {
+                input_val = input_val.split(',');
+                text = text_html.html().split(',');
+            } else {
+                input_val = [];
+                text = [];
+            }
+            if (this.checked) {
+                input_val.push(id);
+                text.push(input_text)
+            } else {
+                input_val.splice($.inArray(id, input_val), 1);
+                text.splice($.inArray(input_text, text), 1);
+            }
+            input.val(input_val.join(','))
+            text_html.html(text.join(','))
         }
-        if (this.checked) {
-            input_val.push(id);
-        } else {
-            input_val.splice($.inArray(id, input_val), 1);
-        }
-        input.val(input_val.join(','))
-        $('.selected-'+$(this).attr('data-field')+' small').html("")
     });
 }
 
@@ -430,8 +315,9 @@ function scroolToModal() {
 }
 
 function searchLocationName() {
-    $("#searchLocation").unbind();
-    $("#searchLocation").on("keyup", function () {
+    var searchField = $("#searchLocation");
+    searchField.unbind();
+    searchField.on("keyup", function () {
         var value = this.value.toLowerCase().trim();
         $('.filter-location-modal li').show().filter(function () {
             return $(this).text().toLowerCase().trim().indexOf(value) == -1;
