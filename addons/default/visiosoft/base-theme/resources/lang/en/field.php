@@ -13,7 +13,10 @@ return [
     'logout' => [
         'name' => 'Logout',
     ],
-    'profile' => [
-        'name' => 'Profile',
-    ],
+    'profile' => 'Profile',
+    'email' => 'Email Address',
+    'password' => 'Password',
+    'display_name' => 'Display Name',
+    'username' => 'Username',
+    'remember_me' => 'Remember Me',
 ];
