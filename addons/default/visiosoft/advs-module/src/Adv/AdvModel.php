@@ -59,26 +59,28 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             return true;
     }
 
-    public function getAdv($id = null)
+    public function getAdv($id = null, $nullable_ad = false)
     {
         if ($id != null) {
-            return AdvModel::query()
-                ->where('advs_advs.slug', '!=', "")
-                ->find($id);
+            if ($nullable_ad)
+                return $this->find($id);
+            else
+                $this->where('advs_advs.slug', '!=', "")
+                    ->find($id);
         }
-        return AdvModel::query()
-            ->where('advs_advs.slug', '!=', "");
+        if ($nullable_ad)
+            return $this->newQuery();
+        return $this->where('advs_advs.slug', '!=', "");
     }
 
-    public function userAdv()
+    public function userAdv($nullable_ad = false)
     {
         if (Auth::user()->hasRole('admin')) {
-            return $this->getAdv();
+            return $this->getAdv(null, $nullable_ad);
         } else {
-            return $this->getAdv()
+            return $this->getAdv(null, $nullable_ad)
                 ->where('advs_advs.created_by_id', Auth::id());
         }
-
     }
 
     public function getAdvByCat($cat_id)
