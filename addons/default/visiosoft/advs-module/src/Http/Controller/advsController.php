@@ -789,7 +789,7 @@ class AdvsController extends PublicController
             redirect('/login?redirect=' . url()->current())->send();
         }
 
-        $is_ad = $this->adv_model->userAdv($id)->find($id);
+        $is_ad = $this->adv_model->userAdv(true)->find($id);
 
         if (is_null($is_ad)) {
             abort(403);
