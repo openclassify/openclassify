@@ -1,28 +1,114 @@
 <?php
 
 return [
-    'new_adv' => 'New Adv',
-    'new_category' => 'New Category',
-    'new_country' => 'New Country',
-    'new_city' => 'New City',
-    'new_district' => 'New District',
-    'new_neighborhood' => 'New Neighborhood',
-    'new_village' => 'New Village',
-    'approve' => "Approve",
-    'decline' => 'Decline',
-    'extend' => 'Extend',
-    'sub_category' => 'Sub Categories',
-    'add_sub_category' => 'Add Sub Category',
-    'sub_cities' => 'Sub Cities',
-    'add_sub_cities' => 'Add Sub City',
-    'add_sub_districts' => 'Add Sub District',
-    'add_sub_neighborhoods' => 'Add Sub Neighborhood',
-    'add_sub_village' => 'Add Sub Village',
-    'sub_districts' => 'Sub Districts',
-    'sub_neighborhoods' => 'Sub Neighborhoods',
-    'sub_village' => 'Sub Village',
-    'general_settings' => 'General Settings',
-    'update_category' => [
-        'name' => 'Update Category'
+    'auto_approve' => [
+        'name' => 'Auto Approve',
     ],
+    'default_published_time' => [
+        'name' => 'Default Publish Time',
+    ],
+    'default_adv_limit' => [
+        'name' => 'Default Ads Limit',
+    ],
+    'address' => [
+        'name' => 'Contact Adress',
+    ],
+    'phone' => [
+        'name' => 'Contact Phone',
+    ],
+    'favicon' => [
+        'name' => 'Favicon',
+    ],
+    'contact_mail' => [
+        'name' => 'Contact Mail',
+        'warning'      => 'Auto added sitename <strong>info</strong>@sitename ',
+    ],'map_coordinates_long' => [
+        'name' => 'Map Long Coordinate',
+    ],
+    'map_coordinates_lat' => [
+        'name' => 'Map Lat Coordinate',
+    ],
+    'iban_numbers' => [
+        'name' => 'IBAN',
+    ],
+    'logo' => [
+        'name' => 'Logo',
+    ],
+    'ogImage' => [
+        'name' => 'Social Share Logo',
+        'warning'      => 'It should be at a resolution of 1200 x 630. ',
+
+    ],
+    'currencies' => [
+        'name' => 'Active Currencies',
+    ],
+    'latest-limit' => [
+        'name' => 'Latest Limit',
+    ],
+    'site_address' => [
+        'name' => 'Site address',
+        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
+    ],
+    'google_map_key' => [
+        'name' => 'Google Map Api Key',
+    ],
+
+    'default_country' => [
+        'name' => 'Default Ad Country',
+    ],
+    'free_currencyconverterapi_key' => [
+        'name' => 'Currency Converter API Key'
+    ],
+    'default_city' => [
+        'name' => 'Default Ad City',
+    ],
+    'default_district' => [
+        'name' => 'Default Ad District',
+    ],
+    'default_neighborhood' => [
+        'name' => 'Default Ad Neighborhood',
+    ],
+    'default_currency' => [
+        'name' => 'Default Ad Currency',
+    ],
+    'default_GET' => [
+        'name' => 'Default Ad GET',
+    ],
+    'twitter' => [
+        'name' => 'Twitter',
+    ],
+    'facebook' => [
+        'name' => 'Facebook',
+    ],
+    'youtube' => [
+        'name' => 'Youtube',
+    ],
+    'google' => [
+        'name' => 'Google',
+    ],
+    'watermark_type' => [
+        'name' => 'Watermark Type',
+    ],
+    'watermark_text' => [
+        'name' => 'Watermark Text',
+    ],
+    'watermark_image' => [
+        'name' => 'Watermark Image',
+    ],
+    'watermark_position' => [
+        'name' => 'Watermark Position',
+    ],
+    'watermark_opacity' => [
+        'name' => 'Watermark Opacity',
+    ],
+    'listing_page_image' => [
+        'name' => 'Listing Page Image',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Enabled Currencies',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google Statistic Code',
+    ],
+
 ];
