@@ -147,14 +147,13 @@ class AdvsController extends PublicController
 
         $param = $this->requestHttp->toArray();
 
+
         $countries = $this->country_repository->viewAll();
 
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
-
         $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters);
-
         $advs = $this->adv_repository->addAttributes($advs);
 
 
@@ -182,6 +181,7 @@ class AdvsController extends PublicController
             }
         }
 
+
         if (isset($param['cat']) and $param['cat'] != "") {
             $cat = $param['cat'];
             $seo_keywords = $this->category_model->getMeta_keywords($param['cat']);
@@ -192,7 +192,12 @@ class AdvsController extends PublicController
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_title', $seo_title);
 
-            $mainCats = $this->category_model->getParentCats($cat, 'category_ids');
+            $mainCats = $this->category_model->getMains($cat);
+            $current_cat = $this->category_model->getCat($cat);
+            $mainCats[] = [
+                'id' => $current_cat->id,
+                'val' => $current_cat->name,
+            ];
             $subCats = $this->category_repository->getSubCatById($cat);
         } else {
             $cat = null;
@@ -202,9 +207,9 @@ class AdvsController extends PublicController
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats);
             $checkboxes = $returnvalues['checkboxes'];
-            $textfields = $returnvalues['textfields'];
             $topfields = $returnvalues['topfields'];
             $ranges = $returnvalues['ranges'];
+            $radio = $returnvalues['radio'];
         }
 
         if (!empty($param['user'])) {
@@ -212,8 +217,8 @@ class AdvsController extends PublicController
             $userProfile = $this->profile_repository->getProfile($user->id);
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'textfields', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList');
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
+            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
@@ -233,8 +238,10 @@ class AdvsController extends PublicController
         return redirect($this->request->headers->get('referer'));
     }
 
-    public function view($id)
+    public function view($seo, $id = null)
     {
+        $id = is_null($id) ? $seo : $id;
+
         $categories = array();
         $categories_id = array();
         $isActiveComplaints = $this->adv_model->is_enabled('complaints');
@@ -445,14 +452,6 @@ class AdvsController extends PublicController
                 return redirect('/');
             }
 
-            if ($advModel->is_enabled('store')) {
-                $StoreAdModel = new AdModel();
-                if ($request->store != "0" and $request->store != null) {
-                    $StoreAdModel->createStoreAdLoggedInUser($request->store, $request->update_id);
-                } else {
-                    $StoreAdModel->removeAdStore($request->update_id);
-                }
-            }
             $adv->is_get_adv = $request->is_get_adv;
             $adv->save();
 
@@ -790,7 +789,7 @@ class AdvsController extends PublicController
             redirect('/login?redirect=' . url()->current())->send();
         }
 
-        $is_ad = $this->adv_model->userAdv($id)->find($id);
+        $is_ad = $this->adv_model->userAdv(true)->find($id);
 
         if (is_null($is_ad)) {
             abort(403);
@@ -1021,8 +1020,18 @@ class AdvsController extends PublicController
         } else {
             $response['newQuantity'] = $adv->stock;
         }
-        $response['status'] = $status;
+
         $response['newPrice'] = $adv->price * $response['newQuantity'];
+
+        $separator = ",";
+        $decimals = 2;
+        $point = ".";
+
+        $response['newPrice'] = number_format($response['newPrice'], $decimals, $point, str_replace('&#160;', ' ', $separator));
+        $symbol = config('streams::currencies.supported.' . strtoupper(setting_value('streams::currency')) . '.symbol');
+
+        $response['newPrice'] = $symbol . $response['newPrice'];
+        $response['status'] = $status;
         $response['maxQuantity'] = $adv->stock;
         return $response;
     }

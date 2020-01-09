@@ -6,8 +6,116 @@
             <div class="row">
                 <div id="filter" class="w-100 mb-3">
 
-                    {{ addBlock('ads-list/partials/list-filter',{'mainCats':mainCats,'subCats':subCats})|raw }}
+                    {{ addBlock('ads-list/partials/list-filter',{
+                        'mainCats':mainCats,
+                        'subCats':subCats,
+                        'ranges':ranges,
+                        'checkboxes':checkboxes,
+                        'radio':radio,
+                        'countries':countries,
+                        'cities':cities,
+                        'districts':districts,
+                        'neighborhoods':neighborhoods,
+                        'villages':villages
+                    })|raw }}
 
+                    <!-- Date Filter Start -->
+                    <div class="card mb-3">
+                        <div class="card-header breadcrumb mb-0" id="dateHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#date"
+                                        aria-expanded="true" aria-controls="date">
+                                    <i class="fa fa-calendar"></i>
+                                    {{ trans("visiosoft.module.advs::field.date.name") }}
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="dateContainer" class="collapse show overflow-auto" aria-labelledby="dateHeading"
+                             data-parent="#filter"
+                             style="max-height: 300px;">
+                            <div class="row p-3 m-0">
+                                <div class="form-check py-1">
+                                    <input class="form-check-input" type="radio" name="date" id="dateDay" value="day">
+                                    <label class="form-check-label" for="dateDay">
+                                        {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
+                                    </label>
+                                </div>
+                                <div class="form-check py-1">
+                                    <input class="form-check-input" type="radio" name="date" id="dateWeek" value="week">
+                                    <label class="form-check-label" for="dateWeek">
+                                        {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
+                                    </label>
+                                </div>
+                                <div class="form-check py-1">
+                                    <input class="form-check-input" type="radio" name="date" id="dateMonth" value="month">
+                                    <label class="form-check-label" for="dateMonth">
+                                        {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Date Filter End -->
+
+                    <!-- Media Filter Start -->
+                    <div class="card mb-3">
+                        <div class="card-header breadcrumb mb-0" id="mediaHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#media"
+                                        aria-expanded="true" aria-controls="media">
+                                    <i class="fa fa-camera"></i>
+                                    {{ trans("visiosoft.module.advs::field.photo.name") }}, {{ trans("visiosoft.module.advs::field.video.name") }}
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="mediaContainer" class="collapse show overflow-auto" aria-labelledby="mediaHeading"
+                             data-parent="#filter"
+                             style="max-height: 300px;">
+                            <div class="row p-3 m-0">
+                                <div class="form-check py-1">
+                                    <input class="form-check-input" type="checkbox" value="true" name="photo" id="photo">
+                                    <label class="form-check-label" for="photo">
+                                        {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
+                                    </label>
+                                </div>
+                                <div class="form-check py-1">
+                                    <input class="form-check-input" type="checkbox" value="true" name="video" id="video">
+                                    <label class="form-check-label" for="video">
+                                        {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Media Filter End -->
+
+                    <!-- Map Filter Start -->
+                    <div class="card mb-3">
+                        <div class="card-header breadcrumb mb-0" id="mapHeading">
+                            <h5 class="mb-0">
+                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#mapFilter"
+                                        aria-expanded="true" aria-controls="mapFilter">
+                                    <i class="fa fa-map"></i>
+                                    {{ trans("visiosoft.module.advs::field.map.name") }}
+                                </button>
+                            </h5>
+                        </div>
+                        <div id="mapContainer" class="collapse show overflow-auto" aria-labelledby="mapHeading"
+                             data-parent="#filter"
+                             style="max-height: 300px;">
+                            <div class="row p-3 m-0">
+                                <div class="form-check py-1">
+                                    <input class="form-check-input" type="checkbox" value="true" name="map" id="mapFilter">
+                                    <label class="form-check-label" for="mapFilter">
+                                        {{ trans("visiosoft.module.advs::field.yes.name") }}
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Map Filter End -->
+
+                    <!-- Price Filter Start -->
                     <div class="card mb-3">
                         <div class="card-header breadcrumb mb-0" id="priceHeading">
                             <h5 class="mb-0">
@@ -47,7 +155,7 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- Price Filter End -->
 
                     <div class="card">
                         <div class="card-header bg-primary text-center" id="submitHeading">

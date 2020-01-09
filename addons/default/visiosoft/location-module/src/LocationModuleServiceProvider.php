@@ -1,7 +1,19 @@
 <?php namespace Visiosoft\LocationModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Anomaly\Streams\Platform\Model\Location\LocationCitiesEntryModel;
+use Anomaly\Streams\Platform\Model\Location\LocationDistrictsEntryModel;
+use Anomaly\Streams\Platform\Model\Location\LocationNeighborhoodsEntryModel;
 use Anomaly\Streams\Platform\Model\Location\LocationVillageEntryModel;
+use Visiosoft\LocationModule\City\CityModel;
+use Visiosoft\LocationModule\City\CityRepository;
+use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
+use Visiosoft\LocationModule\District\Contract\DistrictRepositoryInterface;
+use Visiosoft\LocationModule\District\DistrictModel;
+use Visiosoft\LocationModule\District\DistrictRepository;
+use Visiosoft\LocationModule\Neighborhood\Contract\NeighborhoodRepositoryInterface;
+use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
+use Visiosoft\LocationModule\Neighborhood\NeighborhoodRepository;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -17,7 +29,9 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $plugins = [];
+    protected $plugins = [
+        LocationModulePlugin::class
+    ];
 
     /**
      * The addon Artisan commands.
@@ -46,21 +60,42 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'admin/location/village'           => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@index',
-        'admin/location/village/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@create',
+        'admin/location/village' => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@index',
+        'admin/location/village/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@create',
         'admin/location/village/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\VillageController@edit',
-        'admin/location/'           => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@index',
-        'admin/location/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@create',
+        'admin/location/' => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@index',
+        'admin/location/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@create',
         'admin/location/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\CountriesController@edit',
-        'admin/location/cities'           => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@index',
-        'admin/location/cities/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@create',
+        'admin/location/cities' => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@index',
+        'admin/location/cities/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@create',
         'admin/location/cities/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\CitiesController@edit',
-        'admin/location/districts'           => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@index',
-        'admin/location/districts/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@create',
+        'admin/location/districts' => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@index',
+        'admin/location/districts/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@create',
         'admin/location/districts/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\DistrictsController@edit',
-        'admin/location/neighborhoods'           => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@index',
-        'admin/location/neighborhoods/create'    => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@create',
+        'admin/location/neighborhoods' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@index',
+        'admin/location/neighborhoods/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@create',
         'admin/location/neighborhoods/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@edit',
+
+        'ajax/getCountry' => [
+            'as' => 'location::getCountry',
+            'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getCountries'
+        ],
+        'ajax/getCities' => [
+            'as' => 'location::getCities',
+            'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getCities'
+        ],
+        'ajax/getDistricts' => [
+            'as' => 'location::getDistricts',
+            'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getDistricts'
+        ],
+        'ajax/getNeighborhoods' => [
+            'as' => 'location::getNeighborhoods',
+            'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getNeighborhoods'
+        ],
+        'ajax/getVillage' => [
+            'as' => 'location::getVillage',
+            'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getVillage'
+        ],
     ];
 
     /**
@@ -116,6 +151,9 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $bindings = [
+        LocationCitiesEntryModel::class => CityModel::class,
+        LocationDistrictsEntryModel::class => DistrictModel::class,
+        LocationNeighborhoodsEntryModel::class => NeighborhoodModel::class,
         // AdvsCfValuesEntryModel::class => CfValueModel::class,
         // AdvsCustomFieldAdvsEntryModel::class => CustomFieldAdvModel::class,
         // AdvsCustomFieldsEntryModel::class => CustomFieldModel::class,
@@ -128,6 +166,9 @@ class LocationModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $singletons = [
+        CityRepositoryInterface::class => CityRepository::class,
+        DistrictRepositoryInterface::class => DistrictRepository::class,
+        NeighborhoodRepositoryInterface::class => NeighborhoodRepository::class,
         // CfValueRepositoryInterface::class => CfValueRepository::class,
         // CustomFieldAdvRepositoryInterface::class => CustomFieldAdvRepository::class,
         // CustomFieldRepositoryInterface::class => CustomFieldRepository::class,

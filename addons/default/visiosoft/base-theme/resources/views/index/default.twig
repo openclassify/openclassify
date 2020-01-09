@@ -1,13 +1,14 @@
 <div class="album  bg-light">
     <div class="row p-2">
-        <div class="col-md-6">
-            <h4 class="p-2">{{ trans('theme::field.latest_ads.name') }}</h4>
-        </div>
-        <div class="col-md-6 text-right">
-            <a class="btn btn-outline-secondary"
-               href="{{ url_route('visiosoft.module.advs::list') }}">{{ trans('theme::field.show_all.name') }}</a>
-        </div>
-
+        {% if setting_value('visiosoft.theme.base::latest_and_view_all_btn') %}
+            <div class="col-md-6">
+                <h4 class="p-2">{{ trans('theme::field.latest_ads.name') }}</h4>
+            </div>
+            <div class="col-md-6 text-right">
+                <a class="btn btn-outline-secondary"
+                   href="{{ url_route('visiosoft.module.advs::list') }}">{{ trans('theme::field.show_all.name') }}</a>
+            </div>
+        {% endif %}
     </div>
 
     <div class="container">
@@ -19,32 +20,38 @@
                             <a href="{{ latestAd.detail_url }}">
                                 <div class="col-md-12 justify-content-center align-self-center">
                                     <img class="card-img-top img-fluid img-thumbnail" src="{{ latestAd.cover_photo }}"
-                                         style="max-height: 150px">
+                                         style="height: 150px">
                                 </div>
                             </a>
                         </div>
 
                         <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
-                                <b>{{ latestAd.price }} {{ latestAd.currency }}</b>
-                            </div>
+                            {% if setting_value('visiosoft.theme.base::price_fields') %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <b>{{ latestAd.price }} {{ latestAd.currency }}</b>
+                                </div>
+                            {% endif %}
                             <div class="d-flex justify-content-between align-items-center text-truncate">
                                 <a href="{{ latestAd.detail_url }}">
                                     <p class="card-title d-inline-block">{{ latestAd.name }}</p>
                                 </a>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small>
-                                    <i class="fas fa-location-arrow text-primary"></i>
-                                    {{ latestAd.city_name }}, {{ latestAd.country_name }}
-                                </small>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <small>
-                                    <i class="far fa-clock text-dark"></i>
-                                    {{ latestAd.created_at|date('d/m/Y') }}
-                                </small>
-                            </div>
+                            {% if setting_value('visiosoft.module.location::home_page_location') %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small>
+                                        <i class="fas fa-location-arrow text-primary"></i>
+                                        {{ latestAd.city_name }}, {{ latestAd.country_name }}
+                                    </small>
+                                </div>
+                            {% endif %}
+                            {% if setting_value('visiosoft.theme.base::date_fields') %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small>
+                                        <i class="far fa-clock text-dark"></i>
+                                        {{ latestAd.created_at|date('d/m/Y') }}
+                                    </small>
+                                </div>
+                            {% endif %}
                         </div>
                     </div>
                 </div>

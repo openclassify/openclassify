@@ -1,6 +1,6 @@
 // Disabling autoDiscover, otherwise Dropzone will try to attach twice.
 Dropzone.autoDiscover = false;
-$("div#myDrop").dropzone({ url: "/file/post" });
+$("div#myDrop").dropzone({url: "/file/post"});
 
 
 $(function () {
@@ -31,7 +31,7 @@ $(function () {
                 formData.append('folder', element.data('folder'));
             },
             renameFile: function (file) {
-                let newName = new Date().getTime() + '_' + adv_id;
+                let newName = new Date().getTime() + '_' + adv_id + "_" + file.name;
                 return newName;
             },
             accept: function (file, done) {
@@ -70,7 +70,7 @@ $(function () {
         uploaded.push(response.id);
         $('.panel-table').load(
             REQUEST_ROOT_PATH + '/streams/media-field_type/selected?uploaded=' + uploaded.join(','),
-            function() {
+            function () {
                 $('input[name="files"]').val(uploaded.join(','))
             }
         );
@@ -92,35 +92,34 @@ $(function () {
 });
 
 function addAppendByData(data_id) {
-    return $('a[data-id='+data_id+']').parent().parent().append('<div class="main-image image-eye-'+data_id+'"><i class="fa fa-eye "></i></div>');
+    return $('a[data-id=' + data_id + ']').parent().parent().append('<div class="main-image image-eye-' + data_id + '"><i class="fa fa-eye "></i></div>');
 }
 
-$('.panel-table').on('click', '[data-dismiss="file"]', function(e) {
+$('.panel-table').on('click', '[data-dismiss="file"]', function (e) {
     var arr = $('input[name="files"]').val().split(',');
     arr.splice(arr.indexOf(String($(this).data('file'))), 1);
     $('.panel-table').load(
         REQUEST_ROOT_PATH + '/streams/media-field_type/selected?uploaded=' + arr.join(','),
-        function() {
+        function () {
             $('input[name="files"]').val(arr.join(','))
         }
     );
 });
 
 
-$('a[data-action="rotate-image"]').click(function(){
+$('a[data-action="rotate-image"]').click(function () {
     var event = $(this).parent('div').parent('div').find('img');
     var img = event.attr('src');
     $.ajax({
         type: 'get',
-        dataType : "json",
-        data: {img_url:img},
+        dataType: "json",
+        data: {img_url: img},
         url: '/image/rotate',
         success: function (response) {
-            if(response.status == "success")
-            {
+            if (response.status == "success") {
                 hideLoader()
-                var newURL = updateQueryStringParameter(img,'t',Math.floor(Math.random() * 100000000));
-                event.attr('src',newURL);
+                var newURL = updateQueryStringParameter(img, 't', Math.floor(Math.random() * 100000000));
+                event.attr('src', newURL);
             }
         },
         beforeSend: function () {
@@ -133,10 +132,10 @@ $('a[data-action="rotate-image"]').click(function(){
 //Set Main İmage
 function setMain(id) {
     var imageList = $('[name="files"]').val().split(',');
-    $('.image-eye-'+imageList[0]).remove();
+    $('.image-eye-' + imageList[0]).remove();
     if (imageList.length != 1) {
-        imageList.splice($.inArray(id, imageList),1);
-        $('[name="files"]').val(id+','+imageList.join(','));
+        imageList.splice($.inArray(id, imageList), 1);
+        $('[name="files"]').val(id + ',' + imageList.join(','));
     }
     addAppendByData(id);
 }
@@ -146,8 +145,7 @@ function updateQueryStringParameter(uri, key, value) {
     var separator = uri.indexOf('?') !== -1 ? "&" : "?";
     if (uri.match(re)) {
         return uri.replace(re, '$1' + key + "=" + value + '$2');
-    }
-    else {
+    } else {
         return uri + separator + key + "=" + value;
     }
 }

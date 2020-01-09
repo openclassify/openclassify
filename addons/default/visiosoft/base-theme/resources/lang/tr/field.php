@@ -1,0 +1,15 @@
+<?php
+
+return [
+    'latest_ads' => [
+        'name' => 'Son Eklenenler',
+    ],
+    'show_all' => [
+        'name' => 'Tümünü Göster',
+    ],
+    'email' => 'Email Adresiniz',
+    'password' => 'Şifreniz',
+    'display_name' => 'İsim Soyisim',
+    'username' => 'Kullanıcı Adı',
+    'remember_me' => 'Beni Hatırla',
+];

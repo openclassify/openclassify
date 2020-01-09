@@ -1,0 +1,5 @@
+{% for locale in locales %}
+    <a href="#"
+       onclick="window.location = '?_locale={{ locale.name }}'" class="{{ a.class|raw }}"> {{ trans('streams::locale.' ~ locale.name ~ '.name') }}
+        ({{ locale.name }})</a>
+{% endfor %}

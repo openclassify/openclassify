@@ -1,5 +1,6 @@
 {% if app.auth.id == adv.created_by_id %}
     <div class="breadcrumb bg-dark justify-content-end">
+        {{ addBlock('ad-detail/partials/author-button', {'adv_id': adv.id})|raw }}
         <a class="btn btn-info edit-adv-btn mr-2" href="/advs/edit_advs/{{ adv.id }}">
             <i class="fas fa-pencil-alt"></i>
             <font>{{ trans('visiosoft.module.advs::field.edit') }}</font>

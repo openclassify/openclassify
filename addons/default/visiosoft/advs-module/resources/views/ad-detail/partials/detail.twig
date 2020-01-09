@@ -24,6 +24,7 @@
                            href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}"
                            data-content="{{ adv.owner_id }}">{{ adv.owner }}
                         </a>
+                        {{ addBlock('ad-detail/seller/action',{'seller_id':adv.owner_id})|raw }}
                     </div>
                     <div class="col-md-12 m-2">
                         <i class="fas fa-hashtag"></i>

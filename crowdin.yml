@@ -1,0 +1,4 @@
+files:
+  - source: /addons/default/visiosoft/advs-module/resources/lang/en/*.php
+    translation: >-
+      /addons/default/visiosoft/advs-module/resources/lang/%two_letters_code%/%original_file_name%

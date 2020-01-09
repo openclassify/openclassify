@@ -10,7 +10,13 @@ class CategoryTableBuilder extends TableBuilder
      *
      * @var array|string
      */
-    protected $views = [];
+    protected $views = [
+        'all',
+        'trash',
+        'clean_subcategories' => [
+            'href' => '/admin/cats/clean_subcats',
+        ],
+    ];
 
     /**
      * The table filters.

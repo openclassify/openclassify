@@ -2,8 +2,8 @@
 
  return[
    "new_country"   =>"Yeni ülke",
-   "new_city"   =>"Yeni şehir",
-   "new_district"   =>"Yeni bölge",
+   "new_city"   =>"Yeni İl",
+   "new_district"   =>"Yeni İlçe",
    "new_neighborhood"   =>"Yeni mahalle",
    "new_village"   =>"Yeni köy",
    "sub_cities"   =>"Alt Şehirler",

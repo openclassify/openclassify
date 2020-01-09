@@ -83,8 +83,16 @@ class AdvsController extends AdminController
 
         $table->setColumns([
             'cover_photo' => [
-                'wrapper' => '<img width="64" src="{value.cover_photo}">',
-                'value' => ['cover_photo' => 'entry.cover_photo']
+                'wrapper' => function (EntryInterface $entry, Request $request) {
+                    if (strpos($entry->cover_photo, 'http') === 0) {
+                        $wrapper = '<img width="64" src="'.$entry->cover_photo.'">';
+                    } else if (is_null($entry->cover_photo)) {
+                        $wrapper = '<img width="64" src="{{ img(\'visiosoft.theme.base::images/no-image.png\').url }}">';
+                    } else {
+                        $wrapper = '<img width="64" src="'.$request->root().'/'.$entry->cover_photo.'">';
+                    }
+                    return $wrapper;
+                },
             ],
             'entry.id',
             'name' => [
@@ -183,6 +191,7 @@ class AdvsController extends AdminController
 
         $default_adv_publish = $settings->value('visiosoft.module.advs::default_published_time');
         $adv->finish_at = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $default_adv_publish . ' day'));
+        $adv->publish_at = date('Y-m-d H:i:s');
 
         //algolia Search Module
         $isActiveAlgolia = new AdvModel();

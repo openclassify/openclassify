@@ -1,8 +1,8 @@
 {% extends "visiosoft.module.advs::list/list" %}
 {% block listContent %}
-    <div class="table-responsive table-ads">
+    <div class="table-responsive table-classified">
 
-        <table class="table ads-list-table">
+        <table class="table classified-list-table">
             <thead>
             <tr>
                 <th scope="col" colspan="2"
@@ -11,9 +11,12 @@
                     class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
                 <th scope="col"
                     class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
-                <th scope="col"
-                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
-                    / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                {% if setting_value('visiosoft.module.location::list_page_location') %}
+                    <th scope="col"
+                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
+                        / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                {% endif %}
+                {{ addBlock('ads-list/table-column',{'seenList':seenList})|raw }}
             </tr>
             </thead>
             <tbody>
@@ -43,6 +46,7 @@
                             <small>{{ adv.city_name }} / {{ adv.country_name }}</small>
                         </td>
                     {% endif %}
+                    {{ addBlock('ads-list/table-row',{'seenList':seenList,'adv':adv})|raw }}
                 </tr>
             {% endfor %}
 

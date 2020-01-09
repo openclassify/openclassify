@@ -10,11 +10,11 @@ return[
 
     ],
     "city"   =>   [
-        "name"      =>"Kent",
+        "name"      =>"İl",
 
     ],
     "country"   =>   [
-        "name"      =>"ülke",
+        "name"      =>"Ülke",
 
     ],
     "district"   =>   [
@@ -22,20 +22,23 @@ return[
 
     ],
     "order"   =>   [
-        "name"      =>"Sıralama düzeni",
+        "name"      =>"Sıralama",
 
     ],
     "neighborhood"   =>   [
-        "name"      =>"Komşuluk",
+        "name"      =>"Mahalle",
 
     ],
     "village"   =>   [
-        "name"      =>"köy",
+        "name"      =>"Köy",
 
     ],
     "description"   =>   [
         "name"      =>"Açıklama",
 
+    ],
+    'address' => [
+        'name' => 'Adres',
     ],
 
 ];

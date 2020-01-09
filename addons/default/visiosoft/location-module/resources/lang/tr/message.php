@@ -1,5 +1,6 @@
 <?php
 
- return[
-
+return [
+    'placeholder' => 'Ara',
+    'null_msg' => 'Bulunamadı',
 ];

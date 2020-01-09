@@ -19,10 +19,11 @@ return [
             'default_value' => true,
         ],
     ],
-    'show_search_location_btn' => [
-        'type'   => 'anomaly.field_type.boolean',
-        'config' => [
-            'default_value' => true,
-        ],
+    'default_country' => [
+        'type' => 'anomaly.field_type.relationship',
+        "config" => [
+            "related" => \Visiosoft\LocationModule\Country\CountryModel::class,
+            'default_value' => 212,
+        ]
     ],
 ];

@@ -59,22 +59,28 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             return true;
     }
 
-    public function getAdv($id = null)
+    public function getAdv($id = null, $nullable_ad = false)
     {
         if ($id != null) {
-            return AdvModel::query()
-                ->where('advs_advs.slug', '!=', "")
-                ->find($id);
+            if ($nullable_ad)
+                return $this->find($id);
+            else
+                $this->where('advs_advs.slug', '!=', "")
+                    ->find($id);
         }
-        return AdvModel::query()
-            ->where('advs_advs.slug', '!=', "");
+        if ($nullable_ad)
+            return $this->newQuery();
+        return $this->where('advs_advs.slug', '!=', "");
     }
 
-    public function userAdv()
+    public function userAdv($nullable_ad = false)
     {
-
-        return $this->getAdv()
-            ->where('advs_advs.created_by_id', Auth::id());
+        if (Auth::user()->hasRole('admin')) {
+            return $this->getAdv(null, $nullable_ad);
+        } else {
+            return $this->getAdv(null, $nullable_ad)
+                ->where('advs_advs.created_by_id', Auth::id());
+        }
     }
 
     public function getAdvByCat($cat_id)
@@ -154,7 +160,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function popularAdvs()
     {
-        return $this->getAdv()->where('popular_adv', 1)->paginate(9);
+        return $this->getAdv()->orderBy('count_show_ad', 'desc')->limit(10)->get();
     }
 
     public function advsofDay()
@@ -195,10 +201,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
             $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
 
-            if($country != null) {
+            if ($country != null) {
                 $adv->setAttribute('country_name', $country->name);
             }
-            if($city != null) {
+            if ($city != null) {
                 $adv->setAttribute('city_name', $city->name);
             }
         }
@@ -230,12 +236,12 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             $id = $object->id;
             $seo = str_slug($object->name);
             $seo = str_replace('_', '-', $seo);
-            return \route('adv_detail_seo', [$id, $seo]);
+            return \route('adv_detail_seo', [$seo, $id]);
         }
         $id = $object->getObject()->id;
         $seo = str_slug($object->getObject()->name);
         $seo = str_replace('_', '-', $seo);
-        return \route('adv_detail_seo', [$id, $seo]);
+        return \route('adv_detail_seo', [$seo, $id]);
     }
 
     public function getAdvDetailLinkByAdId($id)
@@ -245,7 +251,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             $id = $adv->id;
             $seo = str_slug($adv->name);
             $seo = str_replace('_', '-', $seo);
-            return \route('adv_detail_seo', [$id, $seo]);
+            return \route('adv_detail_seo', [$seo, $id]);
         }
     }
 
@@ -315,7 +321,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function AddAdsDefaultCoverImage($ad)
     {
         if ($ad->cover_photo == null) {
-            $ad->cover_photo = $this->dispatch(new MakeImageInstance('visiosoft.module.advs::images/no-image.png', 'img'))->url();
+            $ad->cover_photo = $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/no-image.png', 'img'))->url();
         } else {
             $ad->cover_photo = url($ad->cover_photo);
         }
@@ -326,7 +332,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         $adv = $this->find($id);
         if ($adv == null or $adv->cover_photo == null) {
-            $cover_photo = $this->dispatch(new MakeImageInstance('visiosoft.module.advs::images/no-image.png', 'img'))->url();
+            $cover_photo = $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/no-image.png', 'img'))->url();
         } else {
             $cover_photo = url($adv->cover_photo);
         }

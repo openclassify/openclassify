@@ -2,6 +2,7 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
@@ -47,8 +48,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function searchAdvs($type, $param = null, $customParameters = null, $limit = null)
     {
-        //dd($param);
-
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
 
@@ -75,26 +74,30 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['country'])) {
             $query = $query->where('country_id', $param['country']);
         }
-        if (!empty($param['city'])) {
+        if (isset($param['city']) and !empty(array_filter($param['city']))) {
             $query = $query->whereIn('city', $param['city']);
         }
         if (!empty($param['cat'])) {
             $cat = new CategoryModel();
-            $catLevel = $cat->getCatLevel($param['cat']);
+            $cat_d = $cat->find($param['cat']);
+            if ($cat_d->parent_category_id == null)
+                $catLevel = 1;
+            else
+                $catLevel = $cat->getCatLevel($param['cat']);
             $catLevel = "cat" . $catLevel;
             $query = $query->where($catLevel, $param['cat']);
         }
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
         }
-        if (!empty($param['district'])) {
-            $query = $query->where('district', $param['district']);
+        if (isset($param['district']) and !empty(array_filter($param['district']))) {
+            $query = $query->whereIn('district', $param['district']);
         }
-        if (!empty($param['neighborhood'])) {
-            $query = $query->where('neighborhood', $param['neighborhood']);
+        if (isset($param['neighborhood']) and !empty(array_filter($param['neighborhood']))) {
+            $query = $query->whereIn('neighborhood', $param['neighborhood']);
         }
-        if (!empty($param['village'])) {
-            $query = $query->where('village', $param['village']);
+        if (isset($param['village']) and !empty(array_filter($param['village']))) {
+            $query = $query->whereIn('village', $param['village']);
         }
         if (!empty($param['min_price'])) {
             $num = $param['min_price'];
@@ -107,6 +110,24 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $int = (int)$num;
             $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
             $query = $query->whereRaw($column);
+        }
+        if (!empty($param['date'])) {
+            if ($param['date'] === 'day') {
+                $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subDay());
+            } elseif ($param['date'] === 'week') {
+                $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subWeek());
+            } elseif ($param['date'] === 'month') {
+                $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subMonth());
+            }
+        }
+        if (!empty($param['photo'])) {
+            $query = $query->whereNotNull('cover_photo');
+        }
+        if (!empty($param['video'])) {
+            $query = $query->where('cover_photo', 'like', '%video/upload/w_400,e_loop%');
+        }
+        if (!empty($param['map']) && $param['map'] == true) {
+            $query = $query->whereNotNull('map_Val');
         }
 
         foreach ($param as $para => $value) {
@@ -220,7 +241,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $query = $query->orderBy('advs_advs.created_at', 'desc');
             $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name', 'advs_advs_translations.advs_desc as advs_desc');
         }
-
 
         if ($type == "list") {
             return $query->paginate($this->settings->value('streams::per_page'));

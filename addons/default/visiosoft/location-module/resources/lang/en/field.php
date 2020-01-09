@@ -28,4 +28,10 @@ return [
     'description' => [
         'name' => 'Description'
     ],
+    'pick_option' => [
+        'name' => 'Pick an option',
+    ],
+    'address' => [
+        'name' => 'Address',
+    ],
 ];

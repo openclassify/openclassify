@@ -42,6 +42,9 @@ class VisiosoftModuleAdvsCreateAdvsStream extends Migration
         'cat5',
         'cat6',
         'cat7',
+        'cat8',
+        'cat9',
+        'cat10',
         'price' => [
             'required' => true
         ],

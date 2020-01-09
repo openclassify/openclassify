@@ -16,7 +16,7 @@
                     {% include "visiosoft.module.advs::list/partials/list-filter" %}
                 </div>
                 <div class="col-md-9">
-                    <div class="section recommended-ads">
+                    <div class="section recommended-classified">
 
                         <div class="row breadcrumb list-header">
 
@@ -28,11 +28,14 @@
 
                             </div>
                         </div>
+                        {{ addBlock('ads-list/row',{'topfields':topfields})|raw }}
                         <div class="row">
                             {% block listContent %}
                                 {% include "visiosoft.module.advs::list/partials/ads" %}
                             {% endblock %}
-
+                        </div>
+                        <div class="d-flex justify-content-center">
+                            {{ advs.appends(request_query()).links()|raw }}
                         </div>
                         {#                        <div class="category-tabs"></div>#}
                     </div>

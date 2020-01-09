@@ -7,6 +7,33 @@ OpenClassify is the extensible and most advanced open source classified app buil
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/openclassify/openclassify/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
 # Installation
 
+## Blocks
+- advs-module/ad-detail/partials/author-button
+            
+            {{ addBlock('ad-detail/partials/author-button', {'adv_id': adv.id})|raw }}
+- advs-module/list/partials/ads
+
+            {{ addBlock('ad-list/partials/ads',{'featured_advs':featured_advs})|raw }}
+
+- profile-module/profile/partials/navigation
+
+            {{ addBlock('profile/navigation')|raw }}
+            
+- advs-module/ad-detail/partials/detail
+
+            {{ addBlock('ad-detail/seller/action',{'adv':adv})|raw }}
+            
+- advs-module/ad-detail/detail
+
+            {{ addBlock('ad-detail/title/action',{'adv':adv})|raw }}
+
+- profile-module/profile/partials/navigation
+
+            {{ addBlock('profile/navigation')|raw }}
+            
+- advs-module/new-ad/new-create
+
+            {{ addBlock('new-ad/fields')|raw }}
 
 ## Server Requirements
 
