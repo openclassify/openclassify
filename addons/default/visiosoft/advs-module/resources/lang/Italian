@@ -1,52 +1,27 @@
 <?php
 
 return [
-    'advs' => [
-        'name'   => 'Ads',
-        'option' => [
-            'read'   => 'Can read ads?',
-            'write'  => 'Can create/edit ads?',
-            'delete' => 'Can delete ads?',
-        ],
+    'error_added_cart' => 'Requested product is currently missing or inactive',
+    'please_buy_package' => 'Please buy package',
+    'please_payment' => 'Please Pay',
+    'bank_account_info' => 'Bank account information',
+    'agreement' => 'By clicking Post, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'update_category_msg' => 'The classified category will be updated.',
+    'updated_category_msg' => 'Category successfully edited.',
+    'max_ad_limit' => [
+        'title' => "Your Free Ad Limit is Out.",
+        'msg' => "You have reached your free ad limit.",
+        'nextBtn' => "Show Ads",
+        'cancelBtn' => "or Cancel",
+        'link' => "/profile",
     ],
-    'categories' => [
-        'name'   => 'Categories',
-        'option' => [
-            'read'   => 'Can read categories?',
-            'write'  => 'Can create/edit categories?',
-            'delete' => 'Can delete categories?',
-        ],
+    'create_ad_with_post_cat' => [
+        'title' => "Post an Ad in just 30 seconds",
+        'msg' => "Please DO NOT post multiple ads for the same items or service. All duplicate, spam and wrongly categorized ads will be deleted.",
+        'nextBtn' => "Next",
+        'cancelBtn' => "or Cancel",
+        'link' => "",
     ],
-    'village' => [
-        'name'   => 'Village',
-        'option' => [
-            'read'   => 'Can read village?',
-            'write'  => 'Can create/edit village?',
-            'delete' => 'Can delete village?',
-        ],
-    ],
-    'custom_fields' => [
-        'name'   => 'Custom fields',
-        'option' => [
-            'read'   => 'Can read custom fields?',
-            'write'  => 'Can create/edit custom fields?',
-            'delete' => 'Can delete custom fields?',
-        ],
-    ],
-    'custom_field_advs' => [
-        'name'   => 'Custom field ads',
-        'option' => [
-            'read'   => 'Can read custom field ads?',
-            'write'  => 'Can create/edit custom field ads?',
-            'delete' => 'Can delete custom field ads?',
-        ],
-    ],
-    'cf_values' => [
-        'name'   => 'Cf values',
-        'option' => [
-            'read'   => 'Can read cf values?',
-            'write'  => 'Can create/edit cf values?',
-            'delete' => 'Can delete cf values?',
-        ],
-    ],
+    'update_category_info' => 'Please update category.',
+    'filter_by_search_msg' => 'Filter By Search.',
 ];
