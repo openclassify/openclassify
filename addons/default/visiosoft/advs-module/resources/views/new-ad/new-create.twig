@@ -37,9 +37,15 @@
                         <fieldset>
                             <div class="section postdetails">
                                 <div class="row form-group add-title">
+                                    {% set fields = form.fields.base().pluck('field_name').all() %}
                                     <div class="col-md-12">
-                                        {{ nameField|raw }}
+                                        <div class="field-group name">
+                                            {% for field in form.fields.translations('name') %}
+                                                {{ field.render({'form': form})|raw }}
+                                            {% endfor %}
+                                        </div>
                                     </div>
+
                                     <div style="display: none">
                                         {{ form.fields.slug|raw }}
                                     </div>
@@ -62,7 +68,11 @@
 
                                 <div class="row form-group brand-name">
                                     <div class="col-md-12">
-                                        {{ descField|raw }}
+                                        <div class="field-group advs_desc">
+                                            {% for field in form.fields.translations('advs_desc') %}
+                                                {{ field.render({'form': form})|raw }}
+                                            {% endfor %}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row form-group images">
@@ -113,4 +123,69 @@
             type="text/javascript"></script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
 {% endblock %}
+
+
+{#{% extends layout('new-create') %}#}
+
+{#{% block content %}#}
+{#    <section id="main" class="clearfix home-default">#}
+{#        <div class="container">#}
+{#            <nav aria-label="breadcrumb">#}
+{#                <ol class="breadcrumb">#}
+{#                    {% for cat in cats_d %}#}
+{#                        <li class="breadcrumb-item text-primary">{{ cat }}</li>#}
+{#                    {% endfor %}#}
+{#                    <li class="breadcrumb-item">#}
+{#                        <a href="{{ url_route('adv::edit_category',[id]) }}">#}
+{#                            <i class="fas fa-pencil-alt"></i> {{ trans('visiosoft.module.advs::field.edit_category') }}#}
+{#                        </a>#}
+{#                    </li>#}
+{#                </ol>#}
+{#            </nav>#}
+{#            <div class="adpost-details">#}
+{#                <div class="row">#}
+{#                    <div class="col-md-12">#}
+{#                        {% set form = form('advs', 'advs').entry(id).get() %}#}
+{#                        {{ asset_add("scripts.js", "streams::js/form/form.js") }}#}
+{#                        {{ asset_add("scripts.js", "streams::js/form/translations.js") }}#}
+
+{#                        {{ form.open({#}
+{#                            'class': 'form ' ~ form.options.class,#}
+{#                        })|raw }}#}
+
+{#                        {% set fields = form.fields.base().pluck('field_name').all() %}#}
+
+{#                        <div class="field-group name">#}
+{#                            {% for field in form.fields.translations('name') %}#}
+{#                                {{ field.render({'form': form})|raw }}#}
+{#                            {% endfor %}#}
+{#                        </div>#}
+
+
+{#                        {{ form.close()|raw }}#}
+{#                    </div>#}
+{#                </div><!-- photos-ad -->#}
+
+{#            </div>#}
+{#        </div>#}
+{#        </div>#}
+{#    </section>#}
+{#    <script>#}
+{#        var default_country = "{{ setting_value('visiosoft.module.advs::default_country') }}";#}
+{#        var default_city = "{{ setting_value('visiosoft.module.advs::default_city') }}";#}
+{#        var default_district = "{{ setting_value('visiosoft.module.advs::default_district') }}";#}
+{#        var default_neighborhood = "{{ setting_value('visiosoft.module.advs::default_neighborhood') }}";#}
+{#        var default_currency = "{{ setting_value('visiosoft.module.advs::default_currency') }}";#}
+{#        var default_GET = "{{ setting_value('visiosoft.module.advs::default_GET') }}";#}
+{#        var adv_id = "{{ id }}";#}
+{#    </script>#}
+
+{#    <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.advs::google_map_key') }}&callback="#}
+{#            type="text/javascript"></script>#}
+{#    {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}#}
+{#    {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}#}
+{#{% endblock %}#}

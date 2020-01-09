@@ -652,20 +652,6 @@ class AdvsController extends PublicController
         AdvModel $advModel
     )
     {
-        $Field = HTMLDomParser::str_get_html($advFormBuilder->render($id)->getContent());
-        $nameField = $Field->find('.name', 0);
-        if ($nameField !== null) {
-            $nameField = $nameField->innertext();
-        } else {
-            $nameField = "";
-        }
-
-        $descField = $Field->find('.advs_desc', 0);
-        if ($descField !== null) {
-            $descField = $descField->innertext();
-        } else {
-            $nameField = "";
-        }
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
@@ -714,7 +700,7 @@ class AdvsController extends PublicController
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->edit($adv, $categories, $cats);
         }
 
-        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'nameField', 'descField'));
+        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields'));
     }
 
     public function destroy($id)
