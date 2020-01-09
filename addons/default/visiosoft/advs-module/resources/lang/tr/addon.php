@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"İlanlar",
-   "name"   =>"İlan Modülü",
-   "description"   =>"İlan Modülü"
+return [
+    'title'       => 'İlanlar',
+    'name'        => 'İlanlar Modülü',
+    'description' => 'İlan Modülü',
 ];
