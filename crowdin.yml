@@ -1,3 +1,4 @@
 files:
-  - source: /addons/default/visiosoft/advs-module/resources/lang/en
-    translation: /addons/default/visiosoft/advs-module/resources/lang/%language%
+  - source: /addons/default/visiosoft/advs-module/resources/lang/en/*.php
+    translation: >-
+      /addons/default/visiosoft/advs-module/resources/lang/%locale_with_underscore%/%original_file_name%.%file_extension%
