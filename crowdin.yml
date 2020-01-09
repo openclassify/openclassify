@@ -1,0 +1,3 @@
+files:
+  - source: /addons/default/visiosoft/advs-module/resources/lang/en
+    translation: /addons/default/visiosoft/advs-module/resources/lang/%language%
