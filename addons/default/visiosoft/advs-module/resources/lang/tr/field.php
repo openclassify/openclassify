@@ -1,254 +1,255 @@
 <?php
 
 return [
-    "name" => [
-        "name" => "Başlık",
-
+    'name' => [
+        'name' => 'Başlık'
     ],
-    "order" => [
-        "name" => "Sıralama",
-
+    'order' => [
+        'name' => 'Sıralama'
     ],
-    "slug" => [
-        "name" => "Özel İsim",
-
+    'slug' => [
+        'name' => 'Özel İsim'
     ],
-    "parent_category" => [
-        "name" => "Kategori",
-
+    'parent_category' => [
+        'name' => 'Kategori'
     ],
-    "category" => [
-        "name" => "Kategori Başlığı",
-
+    'category' => [
+        'name' => 'Kategori Başlığı'
     ],
-    "price" => [
-        "name" => "Fiyat",
-
+    'price' => [
+        'name' => 'Fiyat'
     ],
-    "stock" => [
-        "name" => "Stok",
-
+    'date' => [
+        'name' => 'Date'
     ],
-    "advs_desc" => [
-        "name" => "Açıklama",
-
+    'photo' => [
+        'name' => 'Photo'
     ],
-    "online_payment" => [
-        "name" => "Online ödeme",
-
+    'video' => [
+        'name' => 'Video'
     ],
-    "city" => [
-        "name" => "Kent",
-
+    'map' => [
+        'name' => 'Map'
     ],
-    "country" => [
-        "name" => "ülke",
-
+    'stock' => [
+        'name' => 'Stok'
     ],
-    "district" => [
-        "name" => "İlçe",
-
+    'advs_desc' => [
+        'name' => 'Açıklama'
     ],
-    "neighborhood" => [
-        "name" => "Komşuluk",
-
+    'online_payment' => [
+        'name' => 'Online ödeme'
     ],
-    "village" => [
-        "name" => "köy",
-
+    'city' => [
+        'name' => 'Kent'
     ],
-    "files" => [
-        "name" => "Görüntüler",
-
+    'country' => [
+        'name' => 'ülke'
     ],
-    "cat1" => [
-        "name" => "Ana Kategori",
-
+    'district' => [
+        'name' => 'İlçe'
     ],
-    "cat2" => [
-        "name" => "Alt Kategori 1",
-
+    'neighborhood' => [
+        'name' => 'Komşuluk'
     ],
-    "cat3" => [
-        "name" => "Alt Kategori 2",
-
+    'village' => [
+        'name' => 'köy'
     ],
-    "cat4" => [
-        "name" => "Alt Kategori 3",
-
+    'files' => [
+        'name' => 'Görüntüler'
     ],
-    "cat5" => [
-        "name" => "Alt Kategori 4",
-
+    'cat1' => [
+        'name' => 'Ana Kategori'
     ],
-    "cat6" => [
-        "name" => "Alt Kategori 5",
-
+    'cat2' => [
+        'name' => 'Alt Kategori 1'
     ],
-    "cat7" => [
-        "name" => "Alt Kategori 6",
-
+    'cat3' => [
+        'name' => 'Alt Kategori 2'
     ],
-    "currency" => [
-        "name" => "Para birimi",
-
+    'cat4' => [
+        'name' => 'Alt Kategori 3'
     ],
-    "status" => [
-        "name" => "durum",
-
+    'cat5' => [
+        'name' => 'Alt Kategori 4'
     ],
-    "pending_adv" => [
-        "name" => "Bekleyen İlanlar",
-
+    'cat6' => [
+        'name' => 'Alt Kategori 5'
     ],
-    "archived_adv" => [
-        "name" => "Arşivlenmiş İlanlar",
-
+    'cat7' => [
+        'name' => 'Alt Kategori 6'
     ],
-    "favs_adv" => [
-        "name" => "Fav İlanları",
-
+    'currency' => [
+        'name' => 'Para birimi'
     ],
-    "my_adv" => [
-        "name" => "İlan",
-
+    'status' => [
+        'name' => 'durum'
     ],
-    "description" => [
-        "name" => "Açıklama",
-
+    'pending_adv' => [
+        'name' => 'Bekleyen İlanlar'
     ],
-    "type" => [
-        "name" => "tip",
-
+    'archived_adv' => [
+        'name' => 'Arşivlenmiş İlanlar'
     ],
-    "parent_adv" => [
-        "name" => "İlgili İlan",
-
+    'finish_at' => [
+        'name' => 'Finish At'
     ],
-    "value" => [
-        "name" => "değer",
-
+    'cover_photo' => [
+        'name' => 'Cover Photo'
     ],
-    "home" => "Ev",
-    "list-page" => "Liste Sayfası",
-    "search" => "Arama",
-    "recommended" => "Sizin için Önerilen İlanlar",
-    "sort_by" => "Sırala",
-    "pick_option" => "Bir seçenek seçin",
-    "pick_ordering" => "Sıralama Seç",
-    "price_high" => "Fiyat pahalıdan ucuza",
-    "price-low" => "Fiyat Düşük Yüksek",
-    "newest" => "En yeni",
-    "categories" => "Kategoriler",
-    "all_categories" => "Tüm Kategoriler",
-    "location" => "Bölge",
-    "send_message" => "Mesaj gönder",
-    "phone_gsm" => "GSM Telefonu",
-    "phone_office" => "Ofis telefonu",
-    "add_to_favorites" => "Favorilere ekle",
-    "send" => "gönder",
-    "search_name" => "Arama Adı",
-    "my_favorite_searches" => "Favori Aramalar",
-    "search_desc" => "Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.",
-    "complaint_placeholder" => "Şikayet ayrıntılarınızı buraya yazın.",
-    "show_details" => "Detayları göster",
-    "edit" => "Düzenle",
-    "approve" => "Onayla",
-    "passive" => "Pasif",
-    "offered_by" => "İlan Sahibi",
-    "more_ads_by" => "Diğer İlanlar",
-    "click_phone" => "Telefon numarasını göster",
-    "share" => "Bu İlanı paylaş",
-    "report" => "Bu İlanı bildir",
-    "features" => "Özellikler",
+    'favs_adv' => [
+        'name' => 'Fav İlanları'
+    ],
+    'my_adv' => [
+        'name' => 'İlan'
+    ],
+    'description' => [
+        'name' => 'Açıklama'
+    ],
+    'type' => [
+        'name' => 'tip'
+    ],
+    'parent_adv' => [
+        'name' => 'İlgili İlan'
+    ],
+    'value' => [
+        'name' => 'değer'
+    ],
+    'list' => 'List',
+    'home' => 'Ev',
+    'list-page' => 'Liste Sayfası',
+    'search' => 'Arama',
+    'recommended' => 'Sizin için Önerilen İlanlar',
+    'sort_by' => 'Sırala',
+    'pick_option' => 'Bir seçenek seçin',
+    'pick_ordering' => 'Sıralama Seç',
+    'price_high' => 'Fiyat pahalıdan ucuza',
+    'price-low' => 'Fiyat Düşük Yüksek',
+    'newest' => 'En yeni',
+    'categories' => 'Kategoriler',
+    'all_categories' => 'Tüm Kategoriler',
+    'location' => 'Bölge',
+    'send_message' => 'Mesaj gönder',
+    'phone_gsm' => 'GSM Telefonu',
+    'phone_office' => 'Ofis telefonu',
+    'add_to_favorites' => "Favorilere ekle",
+    'send' => 'gönder',
+    'search_name' => 'Arama Adı',
+    'my_favorite_searches' => 'Favori Aramalar',
+    'search_desc' => 'Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.',
+    'complaint_placeholder' => 'Şikayet ayrıntılarınızı buraya yazın.',
+    'show_details' => 'Detayları göster',
+    'edit' => 'Düzenle',
+    'approve' => 'Onayla',
+    'passive' => "Pasif",
+    'offered_by' => 'İlan Sahibi',
+    'more_ads_by' => 'Diğer İlanlar',
+    'click_phone' => 'Telefon numarasını göster',
+    'share' => 'Bu İlanı paylaş',
+    'report' => 'Bu İlanı bildir',
+    'features' => 'Özellikler',
     "streetview" => "Sokak Görünümü",
-    "recommended_ads" => "Sizin için Önerilen İlanlar",
-    "new" => "Yeni",
-    "short_info" => "Kısa Bilgi",
-    "secure_trading" => "Güvenli Ticaret",
-    "24/7" => "24/7 Destek",
-    "easy_trading" => "Kolay Ticaret",
-    "need_help" => "Yardıma mı ihtiyacınız var?",
-    "give_a_call" => "Bir çağrı yap",
-    "message_sent" => "Mesajı gönderildi!",
-    "asap" => "Mesaj gönderildi,
-   satıcı en kısa sürede sizinle irtibata geçecektir.",
-    "ad_id" => "İlan No",
-    "contact_with" => "İletişime geç",
-    "create_adv" => "İlan oluştur",
-    "edit_adv" => "İlanı Düzenle",
-    "mandatory_fields" => "Zorunlu alanlar",
-    "ad_post" => "İlan Yayını",
-    "sell_item" => "Detaylı bilgileri giriniz",
-    "search_save" => "Favori arama başarıyla kaydedildi",
-    "address" => "Adres",
-    "email" => "E-Posta",
-    "phone" => "Telefon",
-    "send_us_your_feedback" => "Bize Görüşlerinizi Gönderin",
-    "online_shopping" => "ALMAK",
-    "approved" => "Başarıyla Onaylandı",
-    "declined" => "Başarıyla Reddedildi",
-    "search_on_map" => "Haritada Ara",
-    "post_free_ad" => "Ücretsiz İlan Ver",
-    "select_a_category" => "Bir kategori seç",
-    "select_a_sub_category" => "Bir alt kategori seçiniz",
-    "all_dopings_added" => "Bu İlan için tüm doping türleri eklenmiştir.",
-    "is_get_adv" => [
-        "name" => "ALMAK",
-
+    'recommended_ads' => 'Sizin için Önerilen İlanlar',
+    'new' => 'Yeni',
+    'short_info' => 'Kısa Bilgi',
+    'secure_trading' => 'Güvenli Ticaret',
+    '24/7' => '24/7 Destek',
+    'easy_trading' => 'Kolay Ticaret',
+    'need_help' => 'Yardıma mı ihtiyacınız var?',
+    'give_a_call' => 'Bir çağrı yap',
+    'message_sent' => 'Mesajı gönderildi!',
+    'asap' => 'Mesaj gönderildi,
+   satıcı en kısa sürede sizinle irtibata geçecektir.',
+    'ad_id' => 'İlan No',
+    'contact_with' => 'İletişime geç',
+    'create_adv' => 'İlan oluştur',
+    'edit_adv' => 'İlanı Düzenle',
+    'mandatory_fields' => 'Zorunlu alanlar',
+    'ad_post' => 'İlan Yayını',
+    'sell_item' => 'Detaylı bilgileri giriniz',
+    'search_save' => 'Favori arama başarıyla kaydedildi',
+    'address' => 'Adres',
+    'email' => 'E-Posta',
+    'phone' => 'Telefon',
+    'send_us_your_feedback' => 'Bize Görüşlerinizi Gönderin',
+    'online_shopping' => 'ALMAK',
+    'approved' => 'Başarıyla Onaylandı',
+    'extended' => 'Extended Successfully',
+    'declined' => 'Başarıyla Reddedildi',
+    'search_on_map' => 'Haritada Ara',
+    'post_free_ad' => 'Ücretsiz İlan Ver',
+    'select_a_category' => 'Bir kategori seç',
+    'select_a_sub_category' => 'Bir alt kategori seçiniz',
+    'all_dopings_added' => 'Bu İlan için tüm doping türleri eklenmiştir.',
+    'is_get_adv' => [
+        'name' => 'ALMAK'
     ],
-    "corporate_info" => "Kurumsal Bilgiler",
-    "featured_ads" => "Öne Çıkan İlanlar",
-    "trending_ads" => "Trendind Ads",
-    "search_ads_result_message" => [
-        "name" => ":name aramanızda :count adet ilan bulunmuştur.
-",
-
+    'corporate_info' => 'Kurumsal Bilgiler',
+    'featured_ads' => "Öne Çıkan İlanlar",
+    'trending_ads' => 'Trendind Ads',
+    'search_ads_result_message' => [
+        'name' => ':name aramanızda :count adet ilan bulunmuştur.
+',
     ],
-    "total" => "Genel Toplam",
-    "quantity" => "miktar",
-    "view_cart" => "Sepeti Görüntüle",
-    "no_ads" => "İlansız!",
-    "show_display_mode" => [
-        "map" => "harita",
-        "list" => "Liste",
-
+    'total' => 'Genel Toplam',
+    'quantity' => 'miktar',
+    'view_cart' => 'Sepeti Görüntüle',
+    'no_ads' => 'İlansız!',
+    'show_display_mode' => [
+        'map' => 'harita',
+        'list' => 'Liste',
     ],
-    "advs_list_table_thead" => [
-        "name" => "İlan Adı",
-        "price" => "Fiyat",
-        "publish_at" => "İlan Tarihi",
-        "location_city" => "Kent",
-        "location_country" => "ülke",
-
+    'advs_list_table_thead' => [
+        'name' => 'İlan Adı',
+        'price' => 'Fiyat',
+        'publish_at' => 'İlan Tarihi',
+        'location_city' => 'Kent',
+        'location_country' => 'ülke',
     ],
-    "show_list_view" => [
-        "name" => "Liste",
-
+    'show_list_view' => [
+        'name' => 'Liste',
     ],
-    "show_table_view" => [
-        "name" => "tablo",
-
+    'show_table_view' => [
+        'name' => 'tablo',
     ],
-    "showcase" => [
-        "name" => "Vitrin",
-
+    'showcase' => [
+        'name' => 'Vitrin',
     ],
-    "new_ad" => [
-        "name" => "Yeni İlan",
-
+    'new_ad' => [
+        'name' => 'Yeni İlan',
     ],
-    "profile" => [
-        "name" => "Profil",
-
+    'profile' => [
+        'name' => 'Profil',
     ],
-    "my_ads" => [
-        "name" => "İlanlarım",
-
+    'my_ads' => [
+        'name' => 'İlanlarım',
     ],
     'sold_out' => [
         'name' => 'Tükendi',
     ],
     'edit_category' => 'Kategori Düzenle',
-
+    'max' => [
+        'name' => 'Max',
+    ],
+    'min' => [
+        'name' => 'Min',
+    ],
+    'in_the_last_24_hours' => [
+        'name' => 'In The Last 24 Hours'
+    ],
+    'in_the_last_week' => [
+        'name' => 'In The Last Week'
+    ],
+    'in_the_last_month' => [
+        'name' => 'In The Last Month'
+    ],
+    'ads_with_photo' => [
+        'name' => 'Ads With Photo'
+    ],
+    'ads_with_video' => [
+        'name' => 'Ads With Video'
+    ],
+    'yes' => [
+        'name' => 'Yes'
+    ]
 ];
