@@ -2,21 +2,39 @@
 
 return [
     'advs' => [
-        'name' => 'Advs',
+        'title' => 'Ads',
     ],
     'categories' => [
-        'name' => 'Categories',
+        'title' => 'Categories',
+    ],
+    'countries' => [
+        'title' => 'Countries',
+    ],
+    'cities' => [
+        'title' => 'Cities',
+    ],
+    'districts' => [
+        'title' => 'Districts',
+    ],
+    'neighborhoods' => [
+        'title' => 'Neighborhoods',
     ],
     'village' => [
-        'name' => 'Village',
+        'title' => 'Village',
     ],
     'custom_fields' => [
-        'name' => 'Custom fields',
+        'title' => 'Custom fields',
     ],
     'custom_field_advs' => [
-        'name' => 'Custom field advs',
+        'title' => 'Custom field ads',
     ],
     'cf_values' => [
-        'name' => 'Cf values',
+        'title' => 'Cf values',
     ],
+    'fields' => [
+        'title' => 'Custom Fields'
+    ],
+    'assets_clear' => [
+        'name' => 'Assets Clear'
+    ]
 ];
