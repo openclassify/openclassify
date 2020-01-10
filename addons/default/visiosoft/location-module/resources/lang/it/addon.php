@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"Posizione",
-   "name"   =>"Modulo di localizzazione",
-   "description"   =>"Descrizione"
+return [
+    'title'       => 'Posizione',
+    'name'        => 'Modulo di localizzazione',
+    'description' => 'Descrizione',
 ];
