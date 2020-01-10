@@ -6,6 +6,7 @@ use Anomaly\UsersModule\User\Password\Command\StartPasswordReset;
 use Anomaly\UsersModule\User\Password\ForgotPasswordFormHandler;
 use Anomaly\UsersModule\User\UserModel;
 use Anomaly\UsersModule\User\UserPassword;
+use function CoffeeScript\t;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Redirect;
@@ -127,6 +128,14 @@ class ProfileRepository extends EntryRepository implements ProfileRepositoryInte
     public function findByUserID($id)
     {
         return $this->model->where('user_no_id', $id)->first();
+    }
+
+    public function CheckPhoneNumber($phoneNumber)
+    {
+        return $this->model
+            ->where('gsm_phone', $phoneNumber)
+            ->where('user_no_id','!=', Auth::id())
+            ->first();
     }
 
 

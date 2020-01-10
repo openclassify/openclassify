@@ -120,36 +120,6 @@ class MyProfileController extends PublicController
             'mySales', 'advs_count', 'fav_count', 'userbalance', 'balancespackage'));
     }
 
-    public function update(ProfileFormBuilder $form, Request $request, UserPassword $userPassword, ProfileRepositoryInterface $profileRepository)
-    {
-        $id = Auth::id();
-        $all = $request->all();
-        //updateUserFields && remove added fields
-        $all = $profileRepository->updateUserField($all);
-        if (isset($all['confirm_password_input']) and $all['confirm_password_input'] == "on") {
-            $all = $profileRepository->changePassword($all, $userPassword);
-        } else {
-            unset($all['new_password'], $all['re_new_password'], $all['confirm_password_input']);
-        }
-        if (isset($all['error'])) {
-            return redirect('/profile')->with('error', $all['error']);
-        }
-
-        unset($all['_token'], $all['action']);
-        $all['file_id'] = $all['file'];
-        if (isset($all['adv_listing_banner'])) {
-            $all['adv_listing_banner_id'] = $all['adv_listing_banner'];
-            unset($all['adv_listing_banner']);
-        }
-        unset($all['file']);
-
-        $profileModel = new ProfileModel();
-        $profileModel->getProfile($id)->update($all);
-
-        $message = [];
-        $message[] = trans('visiosoft.module.profile::message.success_update');
-        return redirect('/profile')->with('success', $message);
-    }
 
     public function extendAds($id, $type, SettingRepositoryInterface $settings)
     {
