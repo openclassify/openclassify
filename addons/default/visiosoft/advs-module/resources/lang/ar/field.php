@@ -145,7 +145,7 @@ return [
     'offered_by' => 'مقدم بواسطة',
     'more_ads_by' => 'المزيد من الإعلانات بواسطة',
     'click_phone' => 'عرض رقم الهاتف',
-    'share' => 'شارك هذا الإعلان',
+    'share' => 'Share',
     'report' => 'الإبلاغ عن هذا الإعلان',
     'features' => 'المميزات',
     "streetview" => "منظر الشارع",
@@ -249,5 +249,6 @@ return [
     ],
     'yes' => [
         'name' => 'نعم'
-    ]
+    ],
+    "no_location" => "No location is selected."
 ];
