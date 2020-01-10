@@ -1,35 +1,31 @@
 <?php
 
 return [
-    'meta_tags' => [
-        'name' => 'كلمات ميتا المفتاحية',
+    'navigation_title' => [
+        'name' => 'Navigation Title',
     ],
-    'template' => [
-        'name' => 'القالب',
+    'navigation_action' => [
+        'name' => 'Navigation Action',
     ],
-    's-type-latest-limit' => [
-        'name' => 'الحد الأقصى من نوع-اس',
+    'country_fields' => [
+        'name' => 'Country Fields',
     ],
-    's-type-showcase' => [
-        'name' => 'اسم حد عرض S-type',
+    'date_fields' => [
+        'name' => 'Date Fields',
     ],
-    's-type-banner-code' => [
-        'name' => 'رمز شعار نوع-اس',
+    'price_fields' => [
+        'name' => 'Price Fields',
     ],
-
-    's-type-banner-mobile-code' => [
-        'name' => 'رمز الجوال لراية نوع-اس',
+    'breadcrumbs' => [
+        'name' => 'Breadcrumb',
     ],
-
-    'show_post_your_add_btn' => [
-        'name' => 'أظهر زر "انشر اعلانك"',
+    'ad_details' => [
+        'name' => 'Ad Details',
     ],
-
-    'show_home_search_on_map_btn' => [
-        'name' => 'أظهر زر "على الخريطة" في البحث في الصفحة الرئيسية',
+    'ad_details_tab' => [
+        'name' => 'Ad Details Tab',
     ],
-
-    'show_last_search_btn' => [
-        'name' => 'أظهر زر "آخر عملية بحث"',
+    'latest_and_view_all_btn' => [
+        'name' => 'Latest and View All Btn',
     ],
 ];
