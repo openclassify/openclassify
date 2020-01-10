@@ -1,4 +1,4 @@
 files:
-  - source: /addons/default/visiosoft/*/resources/lang/en/*.php
+  - source: /addons/default/visiosoft/**/resources/lang/en/*.php
     translation: >-
-      /addons/default/visiosoft/*/resources/lang/%two_letters_code%/%original_file_name%
+      /addons/default/visiosoft/**/resources/lang/%two_letters_code%/%original_file_name%
