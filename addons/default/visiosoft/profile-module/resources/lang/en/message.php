@@ -19,4 +19,7 @@ return [
     "required_add"=> "Please fill in all required lines.",
     "no_extend_package" => "No Extend Ad Packages",
     "saved" => "Saved!",
+    'please_confirm_transaction' => 'Please Confirm Transaction',
+    'password_do_not_match' => 'Passwords do not match',
+    'your_password_changed' => 'Your password was successfully updated',
 ];

@@ -109,12 +109,10 @@ return [
 
 
     /*Menu Button*/
-    'menu_profile' => [
+    'profile' => [
         'name' => 'Profile'
     ],
-    'menu_balance' => [
-        'name' => 'Balance'
-    ],
+
     'create' => [
         'name' => 'Create'
     ],
@@ -365,8 +363,8 @@ return [
     'corporate_settings' => [
         'name' => 'Corporate Settings',
     ],
-    'change_password' => [
-        'name' => 'Change password',
+    'password' => [
+        'name' => 'Password',
     ],
     'new_password' => [
         'name' => 'New password',
@@ -424,6 +422,8 @@ return [
         'name' => 'corporate',
     ],
 
-
+    'details' => [
+        'name' => 'Details'
+    ],
 
 ];

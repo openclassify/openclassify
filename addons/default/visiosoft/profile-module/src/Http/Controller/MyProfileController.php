@@ -65,42 +65,10 @@ class MyProfileController extends PublicController
         $advRepository->delete_empty_advs();
 
         $menu_fields = array();
-
-        $isActive = new AdvModel();
-        $isActiveMessages = $isActive->is_enabled('messages');
-        $isActivePackages = $isActive->is_enabled('packages');
-
-
-        if ($isActiveMessages) {
-
-            $myMessages = new MessageModel();
-            $myMessages = $myMessages->listMessages();
-            $message_count = count($myMessages);
-
-            $menu_messages = array();
-            $menu_messages['href'] = "msg";
-            $menu_messages['aria-controls'] = "msg";
-            $menu_messages['title'] = trans('visiosoft.module.profile::field.menu_messages.name');
-            $menu_fields[] = $menu_messages;
-        }
-
-
         $advs_count = new AdvModel();
         $advs_count = count($advs_count->myAdvsByUser()->get());
 
-
-        if ($isActivePackages) {
-            $packageModel = new PackageModel();
-            $my_packages = $packageModel->getPackageByLoggedInUser();
-            $menu_packages = array();
-            $menu_packages['href'] = "packages";
-            $menu_packages['aria-controls'] = "packages";
-            $menu_packages['title'] = trans('visiosoft.module.profile::field.menu_packages.name');
-            $menu_fields[] = $menu_packages;
-        }
-
         $profileModel = new ProfileModel();
-        $adressModel = new AdressModel();
 
         $users = UsersUsersEntryModel::find(Auth::id());
         $profiles = $profileModel->getProfile(Auth::id())->orderBy("id")->first();
