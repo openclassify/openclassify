@@ -63,13 +63,13 @@ return [
         'name' => 'Varsayılan İlan Şehri',
     ],
     'default_district' => [
-        'name' => 'Varsayılan İlan Bölgesi',
+        'name' => 'Varsayılan İlçe',
     ],
     'default_neighborhood' => [
-        'name' => 'Varsayılan İlan Mahalle',
+        'name' => 'Varsayılan Mahalle',
     ],
     'default_currency' => [
-        'name' => 'Varsayılan İlan Para Birimi',
+        'name' => 'Varsayılan Para Birimi',
     ],
     'default_GET' => [
         'name' => 'Varsayılan İlan GET',
