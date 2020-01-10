@@ -145,7 +145,7 @@ return [
     'offered_by' => 'Offered By',
     'more_ads_by' => 'More Ads By',
     'click_phone' => 'Show phone number',
-    'share' => 'Share this ad',
+    'share' => 'Share',
     'report' => 'Report this ad',
     'features' => 'Features',
     "streetview" => "Street View",
