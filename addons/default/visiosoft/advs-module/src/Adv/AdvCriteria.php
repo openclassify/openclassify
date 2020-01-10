@@ -52,6 +52,22 @@ class AdvCriteria extends EntryCriteria
         return $ads;
     }
 
+    public function allAdvs()
+    {
+        $advModel = new AdvModel();
+        $latest_advs = AdvModel::query()
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', '=', 'approved')
+            ->where('slug', '!=', '')
+            ->paginate($this->settings->value('visiosoft.theme.base::s-type-latest-limit'));
+
+        $ads = $advModel->getLocationNames($latest_advs);
+        foreach ($ads as $index => $ad) {
+            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
+            $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
+        }
+        return $ads;
+    }
 
     public function getCurrentLocale()
     {
