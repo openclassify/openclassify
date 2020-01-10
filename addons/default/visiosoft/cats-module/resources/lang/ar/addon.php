@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"الفئة",
-   "name"   =>"وحدة الفئة",
-   "description"   =>""
+return [
+    'title'       => 'الفئة',
+    'name'        => 'وحدة الفئة',
+    'description' => ''
 ];
