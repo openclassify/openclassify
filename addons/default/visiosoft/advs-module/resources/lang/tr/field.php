@@ -128,7 +128,7 @@ return [
     'newest' => 'En yeni',
     'categories' => 'Kategoriler',
     'all_categories' => 'Tüm Kategoriler',
-    'location' => 'Bölge',
+    'location' => 'Lokasyon',
     'send_message' => 'Mesaj gönder',
     'phone_gsm' => 'GSM Telefonu',
     'phone_office' => 'Ofis telefonu',
