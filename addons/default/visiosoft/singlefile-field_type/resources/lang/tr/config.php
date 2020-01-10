@@ -11,4 +11,13 @@ return [
         'instructions' => 'Maks yükleme boyutunu <strong>megabyte</strong> cinsinden belirtin.',
         'warning'      => 'Eğer belirtilmezse klasör maks ve sunucu maks değerleri kullanılır.',
     ],
+    'mode'    => [
+        'name'         => 'Input Mode',
+        'instructions' => 'How should users provide file input?',
+        'option'       => [
+            'default' => 'Upload and/or select files.',
+            'select'  => 'Select files only.',
+            'upload'  => 'Upload files only.',
+        ],
+    ],
 ];
