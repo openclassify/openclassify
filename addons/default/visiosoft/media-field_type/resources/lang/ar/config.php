@@ -3,8 +3,8 @@
 return [
     'folders' => [
         'name'         => 'المجلدات',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'instructions' => 'حدد المجلدات المتاحة لهذا الحقل. اتركه فارغًا لعرض كل المجلدات.',
+        'warning'      => 'أذونات المجلد الموجودة لها الأسبقية على المجلدات المحددة.',
     ],
     'min'     => [
         'label'        => 'الحد الأدنى للاختيارت',
@@ -13,5 +13,14 @@ return [
     'max'     => [
         'label'        => 'الحد الأعلى للاختيارات',
         'instructions' => 'ادخل رقم الحد الأعلى للاخيارات المسموح بها.',
+    ],
+    'mode'    => [
+        'name'         => 'وضع الإدخال',
+        'instructions' => 'كيف يجب على المستخدمين تقديم ملف الإدخال؟',
+        'option'       => [
+            'default' => 'تحميل و / أو تحديد الملفات.',
+            'select'  => 'حدد الملفات فقط.',
+            'upload'  => 'تحميل الملفات فقط.',
+        ],
     ],
 ];

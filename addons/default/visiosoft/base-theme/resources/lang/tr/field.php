@@ -7,6 +7,13 @@ return [
     'show_all' => [
         'name' => 'Tümünü Göster',
     ],
+    'login' => [
+        'name' => 'Login',
+    ],
+    'logout' => [
+        'name' => 'Logout',
+    ],
+    'profile' => 'Profile',
     'email' => 'Email Adresiniz',
     'password' => 'Şifreniz',
     'display_name' => 'İsim Soyisim',

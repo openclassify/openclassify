@@ -1,13 +1,10 @@
 <?php
 
- return[
-   "category"   =>   [
-      "name"      =>"Kategori",
-
-   ],
-   "placeholderforsearch"   =>   [
-      "name"      =>"Arama alanı",
-
-   ],
-
+return [
+    'category' => [
+        'name' => 'Kategori',
+    ],
+    'placeholderforsearch' => [
+        'name' => 'Arama alanı',
+    ],
 ];
