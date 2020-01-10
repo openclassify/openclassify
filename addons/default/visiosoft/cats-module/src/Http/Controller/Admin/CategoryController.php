@@ -147,21 +147,10 @@ class CategoryController extends AdminController
             }
 
             return $this->redirect->to('/admin/cats');
-        } else {
-            $form->setFields(['name']);
-            $form->setActions(['save']);
-            $formBuilder = $form;
-            $nameField = HTMLDomParser::str_get_html($form->render()->getContent());
-            $nameField = $nameField->find('.name', 0);
-            if ($nameField !== null) {
-                $nameField = $nameField->innertext();
-            } else {
-                $nameField = "";
-            }
         }
 
 
-        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField', 'formBuilder'));
+        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('formBuilder'));
     }
 
     public function endsWith($string, $test) {
@@ -184,18 +173,9 @@ class CategoryController extends AdminController
                 die;
             }
             return $this->redirect->to('/admin/cats');
-        } else {
-            $form->setFields(['name']);
-            $nameField = HTMLDomParser::str_get_html($form->render($id)->getContent());
-            $nameField = $nameField->find('.name', 0);
-            if ($nameField !== null) {
-                $nameField = $nameField->innertext();
-            } else {
-                $nameField = "";
-            }
         }
 
-        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('nameField'))->with('id', $id);
+        return $this->view->make('visiosoft.module.cats::cats/admin-cat')->with('id', $id);
     }
 
     public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)

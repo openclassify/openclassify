@@ -65,7 +65,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             if ($nullable_ad)
                 return $this->find($id);
             else
-                $this->where('advs_advs.slug', '!=', "")
+                return $this->where('advs_advs.slug', '!=', "")
                     ->find($id);
         }
         if ($nullable_ad)

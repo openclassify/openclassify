@@ -1,533 +1,402 @@
 <?php
 
-return[
-    "file"   =>   [
-        "name"      =>"Fotoğraflar",
-
+return [
+    'file' => [
+        'name' => 'Fotoğraflar'
     ],
-    "first_name"   =>   [
-        "name"      =>"İsim",
-
+    'first_name' => [
+        'name' => 'İsim'
     ],
-    "last_name"   =>   [
-        "name"      =>"Soyadı",
-
+    'last_name' => [
+        'name' => 'Soyisim'
     ],
-    "username"   =>   [
-        "name"      =>"Kullanıcı adı",
-
+    'username' => [
+        'name' => 'Kullanıcı Adı'
     ],
-    "display_name"   =>   [
-        "name"      =>"Ekran adı",
-
+    'display_name' => [
+        'name' => 'Görüntüleme İsmi'
     ],
-    "email"   =>   [
-        "name"      =>"E-posta adresi",
-
+    'email' => [
+        'name' => 'Email Adresi'
     ],
-    "sitename"   =>   [
-        "name"      =>"site adı",
-
+    'sitename' => [
+        'name' => 'siteadı'
     ],
-    "activated"   =>   [
-        "name"      =>"Kullanıcı aktif",
-
+    'activated' => [
+        'name' => 'Aktif Kullanıcı'
     ],
-    "enabled"   =>   [
-        "name"      =>"Kullanıcı Etkinleştir",
-
+    'enabled' => [
+        'name' => 'Kullanıcı Etkinleştir'
     ],
-    "country"   =>   [
-        "name"      =>"ülke",
-
+    'country' => [
+        'name' => 'Ülke'
     ],
-    "city"   =>   [
-        "name"      =>"Kent",
-
+    'city' => [
+        'name' => 'İl'
     ],
-    "district"   =>   [
-        "name"      =>"İlçe",
-
+    'district' => [
+        'name' => 'İlçe'
     ],
-    "neighborhood"   =>   [
-        "name"      =>"Komşuluk",
-
+    'neighborhood' => [
+        'name' => 'Mahalle'
     ],
-    "village"   =>   [
-        "name"      =>"köy",
-
+    'village' => [
+        'name' => 'Köy'
     ],
-    "gsm_phone"   =>   [
-        "name"      =>"GSM Telefon Numarası",
-
+    'gsm_phone' => [
+        'name' => 'GSM Numarası'
     ],
-    "land_phone"   =>   [
-        "name"      =>"Arsa Telefon Numarası",
-
+    'land_phone' => [
+        'name' => 'Sabit Telefon'
     ],
-    "office_phone"   =>   [
-        "name"      =>"Ofis Telefon Numarası",
-
+    'office_phone' => [
+        'name' => 'Ofis Telefonu'
     ],
-    "register_type"   =>   [
-        "name"      =>"Kayıt türü",
-
+    'register_type' => [
+        'name' => 'Üyelik Tipi'
     ],
-    "identification_number"   =>   [
-        "name"      =>"Kimlik Numarası",
-
+    'identification_number' => [
+        'name' => 'Kimlik Numarası'
     ],
-    "adress_name"   =>   [
-        "name"      =>"Adres İsmi",
-
+    'adress_name' => [
+        'name' => 'Adres Ado'
     ],
-    "adress_first_name"   =>   [
-        "name"      =>"İsim",
-
+    'adress_first_name' => [
+        'name' => 'İsim'
     ],
-    "adress_last_name"   =>   [
-        "name"      =>"Soyadı",
-
+    'adress_last_name' => [
+        'name' => 'Soyisim'
     ],
-    "actions"   =>   [
-        "name"      =>"Eylemler",
-
+    'actions' => [
+        'name' => 'İşlemler'
     ],
-    "adress_content"   =>   [
-        "name"      =>"Adres İçeriği",
-
+    'adress_content' => [
+        'name' => 'Adres Detay'
     ],
-    "adress_post_code"   =>   [
-        "name"      =>"Posta Kodu",
-
+    'adress_post_code' => [
+        'name' => 'Posta Kodu'
     ],
-    "adress_gsm_phone"   =>   [
-        "name"      =>"GSM Telefonu",
-
+    'adress_gsm_phone' => [
+        'name' => 'Gsm Numarası'
     ],
-    "adress_land_phone"   =>   [
-        "name"      =>"Sabit telefon",
-
+    'adress_land_phone' => [
+        'name' => 'Sabit Telefon'
     ],
-    "adress_country"   =>   [
-        "name"      =>"ülke",
-
+    'adress_country' => [
+        'name' => 'Ülke'
     ],
-    "adress_city"   =>   [
-        "name"      =>"Kent",
-
+    'adress_city' => [
+        'name' => 'İl'
     ],
-    "adress_district"   =>   [
-        "name"      =>"İlçe",
-
+    'adress_district' => [
+        'name' => 'İlçe'
     ],
-    "adress_neighborhood"   =>   [
-        "name"      =>"Komşuluk",
-
+    'adress_neighborhood' => [
+        'name' => 'Mahalle'
     ],
-    "adress_village"   =>   [
-        "name"      =>"köy",
-
+    'adress_village' => [
+        'name' => 'Köy'
     ],
-    "messages"   =>   [
-        "name"      =>"Mesajlar",
-
+    'messages' => [
+        'name' => 'Mesajlar'
     ],
-    "user_no"   =>   [
-        "name"      =>"kullanıcı",
-
+    'user_no' => [
+        'name' => 'Kullanıcı'
     ],
-    "menu_profile"   =>   [
-        "name"      =>"Profil",
 
-    ],
-    "menu_balance"   =>   [
-        "name"      =>"Denge",
 
-    ],
-    "create"   =>   [
-        "name"      =>"yaratmak",
 
-    ],
-    "edit"   =>   [
-        "name"      =>"Düzenle",
 
-    ],
-    "list"   =>   [
-        "name"      =>"Liste",
 
+    /*Menu Button*/
+    'profile' => [
+        'name' => 'Profil'
     ],
-    "menu_address"   =>   [
-        "name"      =>"Adres",
-
+    'menu_balance' => [
+        'name' => 'Bakiye'
     ],
-    "menu_orders"   =>   [
-        "name"      =>"Emirler",
-
+    'create' => [
+        'name' => 'Oluştur'
     ],
-    "menu_favorites"   =>   [
-        "name"      =>"Favoriler",
-
+    'edit' => [
+        'name' => 'Düzenle'
     ],
-    "menu_archived_ads"   =>   [
-        "name"      =>"Arşivlenmiş ilanlar",
-
+    'list' => [
+        'name' => 'Listele'
     ],
-    "menu_pending_ads"   =>   [
-        "name"      =>"Onay bekleyen",
-
+    'menu_address' => [
+        'name' => 'Adres'
     ],
-    "menu_delete_account"   =>   [
-        "name"      =>"Hesabı kapat",
-
+    'menu_orders' => [
+        'name' => 'Siparişler'
     ],
-    "menu_my_ads"   =>   [
-        "name"      =>"İlanlarım",
-
+    'menu_favorites' => [
+        'name' => 'Favoriler'
     ],
-    "menu_fav_ads"   =>   [
-        "name"      =>"Favori İlanlar",
-
+    'menu_archived_ads' => [
+        'name' => 'Arşivlenen İlanlar'
     ],
-    "menu_hello_msg"   =>   [
-        "name"      =>"Merhaba",
-
+    'menu_pending_ads' => [
+        'name' => 'Onay Bekleyenler'
     ],
-    "menu_last_msg"   =>   [
-        "name"      =>"En son giriş yaptınız",
-
+    'menu_delete_account' => [
+        'name' => 'Hesabı Kapat'
     ],
-    "menu_packages"   =>   [
-        "name"      =>"Benim paketleri",
-
+    'menu_my_ads' => [
+        'name' => 'İlanlarım'
     ],
-    "menu_adv_packages"   =>   [
-        "name"      =>"İlan Paketleri",
-
+    'menu_fav_ads' => [
+        'name' => 'Favori İlanlarım'
     ],
-    "menu_time_packages"   =>   [
-        "name"      =>"Zaman Paketleri",
-
+    'menu_hello_msg' => [
+        'name' => 'Merhaba'
     ],
-    "profile_details"   =>   [
-        "name"      =>"profil detayları",
-
+    'menu_last_msg' => [
+        'name' => 'Son giriş zamanı'
     ],
-    "profile_photo"   =>   [
-        "name"      =>"Profil resmi",
-
+    'menu_packages' => [
+        'name' => 'Paketlerim'
     ],
-    "adv_listing_banner"   =>   [
-        "name"      =>"İlan Listeleme Sayfa Afişi",
-
+    'menu_adv_packages' => [
+        'name' => 'İlan Paketleri'
     ],
-    "approve"   =>   [
-        "name"      =>"Onayla",
-
+    'menu_time_packages' => [
+        'name' => 'İlan Süre Paketleri'
     ],
-    "approved"   =>   [
-        "name"      =>"onaylı",
-
+    'profile_details' => [
+        'name' => 'Profil Detayları'
     ],
-    "pending"   =>   [
-        "name"      =>"kadar",
-
+    'profile_photo' => [
+        'name' => 'Profil Fotoğrafı'
     ],
-    "passive"   =>   [
-        "name"      =>"Pasif",
-
+    'adv_listing_banner' => [
+        'name' => 'Listeleme Arkaplanı'
     ],
-    "pending_admin"   =>   [
-        "name"      =>"kadar",
-
+    'approve' => [
+        'name' => 'Onayla'
     ],
-    "menu_messages"   =>   [
-        "name"      =>"Mesajlar",
-
+    'approved' => [
+        'name' => 'Onaylandı'
     ],
-    "menu_my_purchase"   =>   [
-        "name"      =>"Satın Alma İşlemim",
-
+    'pending' => [
+        'name' => 'Onay Sürecinde'
     ],
-    "menu_my_sales"   =>   [
-        "name"      =>"Satışlarım",
-
+    'passive' => [
+        'name' => 'Devre Dışı'
     ],
-    "right_secure_trading_subject"   =>   [
-        "name"      =>"Güvenli Ticaret",
-
+    'pending_admin' => [
+        'name' => 'Admin Onay Sürecinde'
     ],
-    "right_secure_trading_msg"   =>   [
-        "name"      =>"Lorem ipsum dolor amet sitet,
-      başkası adipisicing elit",
-
+    'menu_messages' => [
+        'name' => 'Mesajlar'
     ],
-    "right_support_subject"   =>   [
-        "name"      =>"24/7 Destek",
-
+    'menu_my_purchase' => [
+        'name' => 'Aldıklarım'
     ],
-    "right_support_msg"   =>   [
-        "name"      =>"Lorem ipsum dolor amet sitet,
-      başkası adipisicing elit",
-
+    'menu_my_sales' => [
+        'name' => 'Satışlarım'
     ],
-    "right_easy_trading_subject"   =>   [
-        "name"      =>"Kolay Ticaret",
 
+    'disable_account' => [
+        'name' => 'Hesabı Dondur'
     ],
-    "right_easy_trading_msg"   =>   [
-        "name"      =>"Lorem ipsum dolor amet sitet,
-      başkası adipisicing elit",
-
+    'disable_account_msg' => [
+        'name' => 'Hesabınız devre dışı bırakılacak.Bu işlem geri alınamaz'
     ],
-    "right_need_help_subject"   =>   [
-        "name"      =>"Yardıma mı ihtiyacınız var?",
 
-    ],
-    "right_need_help_msg"   =>   [
-        "name"      =>"Bir çağrı yap",
+    'message_title' => 'Mesaj Başlığı',
+    'owner_name' => 'Mesaj',
 
+    'favorites' => "Favoriler",
+    'fav_advs' => 'Favori İlanlar',
+    'fav_sellers' => "Favori Satıcılar",
+    'fav_searches' => "Favori Aramalar",
+    'posted_on' => "Yayınlayan",
+    'message_details' => "Mesaj Detayı",
+    'adv_no' => 'İlan Numarası',
+    'bill_address' => [
+        'name' => 'Fatura Adresi',
     ],
-    "disable_account"   =>   [
-        "name"      =>"Hesabı devre dışı bırak",
-
+    'delivery_address' => [
+        'name' => 'Teslimat Adresi',
     ],
-    "disable_account_msg"   =>   [
-        "name"      =>"Hesabınız devre dışı bırakılacak. Bu işlem geri alınamaz",
-
+    'order_total' => [
+        'name' => 'Toplam',
     ],
-    "message_title"   =>"Mesaj Başlığı",
-    "owner_name"   =>"Mesaj",
-    "favorites"   =>"Favoriler",
-    "fav_advs"   =>"Favori İlanlar",
-    "fav_sellers"   =>"Fav Satıcıları",
-    "fav_searches"   =>"Fav Aramalar",
-    "posted_on"   =>"Yayınlanan",
-    "message_details"   =>"Mesaj Detayları",
-    "adv_no"   =>"İlan No",
-    "bill_address"   =>   [
-        "name"      =>"Fatura adresi",
-
+    'order_date' => [
+        'name' => 'Sipariş Tarihi',
     ],
-    "delivery_address"   =>   [
-        "name"      =>"Teslim adresi",
-
+    'order_no' => [
+        'name' => 'Sipariş Numarası',
     ],
-    "order_total"   =>   [
-        "name"      =>"Genel Toplam",
-
+    'order_detail' => [
+        'name' => 'Detaylar',
     ],
-    "order_date"   =>   [
-        "name"      =>"Sipariş tarihi",
-
+    /*Detail Page Order*/
+    'detail' => [
+        'name' => 'Detaylar',
     ],
-    "order_no"   =>   [
-        "name"      =>"Sipariş Kimliği",
-
+    'back' => [
+        'name' => 'Geri',
     ],
-    "order_detail"   =>   [
-        "name"      =>"Detayları göster",
-
+    'image' => [
+        'name' => 'Resim',
     ],
-    "detail"   =>   [
-        "name"      =>"detay",
-
+    'subject' => [
+        'name' => 'Başlık',
     ],
-    "back"   =>   [
-        "name"      =>"Geri",
-
+    'price' => [
+        'name' => 'Fiyat',
     ],
-    "image"   =>   [
-        "name"      =>"görüntü",
-
+    'piece' => [
+        'name' => 'Adet',
     ],
-    "subject"   =>   [
-        "name"      =>"konu",
-
+    'commission' => [
+        'name' => 'Komisyon',
     ],
-    "price"   =>   [
-        "name"      =>"Fiyat",
-
+    'total' => [
+        'name' => 'Toplam',
     ],
-    "piece"   =>   [
-        "name"      =>"Parça",
-
+    'sub_total' => [
+        'name' => 'Ara Toplam',
     ],
-    "commission"   =>   [
-        "name"      =>"komisyon",
-
+    'sale' => [
+        'name' => 'İndirim',
     ],
-    "total"   =>   [
-        "name"      =>"Genel Toplam",
-
+    'awaiting_tracking_number' => [
+        'name' => 'Takip Numarası Bekliyor',
     ],
-    "sub_total"   =>   [
-        "name"      =>"Ara toplam",
-
+    'awaiting_payment_approval' => [
+        'name' => 'Ödeme Onayını Bekliyor',
     ],
-    "sale"   =>   [
-        "name"      =>"Satış",
-
+    'paid' => [
+        'name' => 'Ödendi',
     ],
-    "awaiting_tracking_number"   =>   [
-        "name"      =>"Takip Numarası Bekleniyor",
-
+    'cancelled' => [
+        'name' => 'İptal Edildi',
     ],
-    "awaiting_payment_approval"   =>   [
-        "name"      =>"Ödeme Onayı Bekleniyor",
-
+    'waiting' => [
+        'name' => 'Bekleniyor',
     ],
-    "paid"   =>   [
-        "name"      =>"Ücretli",
-
+    'awaiting_dispatch' => [
+        'name' => 'Teslimat Bekliyor',
     ],
-    "cancelled"   =>   [
-        "name"      =>"İptal edildi",
-
+    'shipped' => [
+        'name' => 'Gönderen',
     ],
-    "waiting"   =>   [
-        "name"      =>"bekleme",
-
+    'delivered' => [
+        'name' => 'Teslim Alan',
     ],
-    "awaiting_dispatch"   =>   [
-        "name"      =>"Sevk Bekliyor",
-
+    'tracking_number' => [
+        'name' => 'Takip Numarası',
     ],
-    "shipped"   =>   [
-        "name"      =>"gönderilen",
-
+    'was_delivered' => [
+        'name' => 'teslim edildi',
     ],
-    "delivered"   =>   [
-        "name"      =>"teslim",
-
+    'not_delivered' => [
+        'name' => 'teslim edilemedi',
     ],
-    "tracking_number"   =>   [
-        "name"      =>"Takip numarası",
-
+    'show_order_msg1' => [
+        'name' => 'İşlem sonucu mail ile bildirilecektir.',
     ],
-    "was_delivered"   =>   [
-        "name"      =>"teslim edildi",
-
+    'show_order_msg2' => [
+        'name' => 'Ürün bir hafta içinde teslim edilmezse geri ödeme yapılacaktır.',
     ],
-    "not_delivered"   =>   [
-        "name"      =>"teslim edilmedi",
-
+    'show_order_msg3' => [
+        'name' => 'İşlemin sonucu kayıtlı e-posta adresinize gönderildi.',
     ],
-    "show_order_msg1"   =>   [
-        "name"      =>"İşlem sonucu posta ile bildirilecektir.",
 
+    'awaiting_payment' => [
+        'name' => 'Ödeme Bekliyor',
     ],
-    "show_order_msg2"   =>   [
-        "name"      =>"Ürün bir hafta içinde teslim edilmezse geri ödeme yapılır.",
-
+    'please_entered_tracking_number' => [
+        'name' => 'Lütfen Girilen Takip Numarasını Giriniz',
     ],
-    "show_order_msg3"   =>   [
-        "name"      =>"İşlem sonucu kayıtlı e-posta adresinize gönderildi.",
-
+    'transport_days' => [
+        'name' => 'Teslimat Süresi',
     ],
-    "awaiting_payment"   =>   [
-        "name"      =>"bekleyen ödeme",
-
+    'product_not_delivered' => [
+        'name' => 'Ürün teslim edilemedi.',
     ],
-    "please_entered_tracking_number"   =>   [
-        "name"      =>"Lütfen Takip Numarasını Giriniz",
-
+    'status' => [
+        'name' => 'Durum',
     ],
-    "transport_days"   =>   [
-        "name"      =>"Ulaşım Günleri",
-
+    'cancel_sale' => [
+        'name' => 'Satışı İptal Et',
     ],
-    "product_not_delivered"   =>   [
-        "name"      =>"Ürün teslim edilmedi",
-
+    'send_again' => [
+        'name' => 'Tekrar Gönderildi',
     ],
-    "status"   =>   [
-        "name"      =>"durum",
-
+    'content' => [
+        'name' => 'Detay',
     ],
-    "cancel_sale"   =>   [
-        "name"      =>"Satışı İptal Et",
-
+    'preferences_settings' => [
+        'name' => 'Tercihler',
     ],
-    "send_again"   =>   [
-        "name"      =>"Tekrar göndereceğim",
 
-    ],
-    "content"   =>   [
-        "name"      =>"içerik",
 
+    'corporate_settings' => [
+        'name' => 'Kurumsal Ayarlar',
     ],
-    "preferences_settings"   =>   [
-        "name"      =>"Tercihler Ayarları",
-
+    'password' => [
+        'name' => 'Şifre',
     ],
-    "corporate_settings"   =>   [
-        "name"      =>"Kurumsal Ayarlar",
-
+    'new_password' => [
+        'name' => 'Yeni Şifre',
     ],
-    "change_password"   =>   [
-        "name"      =>"Şifre değiştir",
-
+    're_new_password' => [
+        'name' => 'Şifre Onayı',
     ],
-    "new_password"   =>   [
-        "name"      =>"Yeni Şifre",
-
+    'confirm_password_input' => [
+        'name' => 'Şifremin değiştirilmesini onaylıyorum',
     ],
-    "re_new_password"   =>   [
-        "name"      =>"Şifreyi Onayla",
-
+    'create_address' => [
+        'name' => 'Adres Oluştur',
     ],
-    "confirm_password_input"   =>   [
-        "name"      =>"Şifre değişikliğimi onaylıyorum",
-
+    'edit_address' => [
+        'name' => 'Adres Düzenle',
     ],
-    "create_address"   =>   [
-        "name"      =>"Adres Oluştur",
-
+    'balance_limit' => [
+        'name' => 'Bakiye',
     ],
-    "balance_limit"   =>   [
-        "name"      =>"Bakiye Sınırı",
-
+    'active_ads' => [
+        'name' => 'Aktif İlanlar',
     ],
-    "active_ads"   =>   [
-        "name"      =>"Aktif İlanlar",
-
+    'subscriptions' => [
+        'name' => 'Abonelikler',
     ],
-    "subscriptions"   =>   [
-        "name"      =>"Abonelikler",
-
+    'go_subscriptions_page' => [
+        'name' => 'Aboneliklere git',
     ],
-    "go_subscriptions_page"   =>   [
-        "name"      =>"Abonelikler Sayfasına Git",
-
+    'buy_package' => [
+        'name' => 'Paket Satın Al',
     ],
-    "buy_package"   =>   [
-        "name"      =>"Paket satın al",
-
+    'expired_date' => [
+        'name' => 'Son Kullanım',
     ],
-    "expired_date"   =>   [
-        "name"      =>"Son kullanma tarihi geçmiş",
-
+    'category' => [
+        'name' => 'Kategori',
     ],
-    "category"   =>   [
-        "name"      =>"Kategori",
-
+    'ad_limit' => [
+        'name' => 'İlan Limiti',
     ],
-    "ad_limit"   =>   [
-        "name"      =>"İlan Sınırı",
-
+    'publish_time' => [
+        'name' => 'Yayın Süresi',
     ],
-    "publish_time"   =>   [
-        "name"      =>"Yayınlanma Zamanı",
-
+    'all_categories' => [
+        'name' => 'Tüm Kategoriler',
     ],
-    "all_categories"   =>   [
-        "name"      =>"Tüm Kategoriler",
-
+    'day' => [
+        'name' => 'Gün',
     ],
-    "day"   =>   [
-        "name"      =>"Gün",
 
+    'individual' => [
+        'name' => 'Bireysel',
     ],
-
+    'corporate' => [
+        'name' => 'Kurumsal',
+    ],
+    'details' => [
+        'name' => 'Detaylar'
+    ],
 ];

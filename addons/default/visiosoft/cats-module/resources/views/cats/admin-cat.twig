@@ -1,13 +1,15 @@
 {% extends "theme::layouts/default" %}
 {% block content %}
     {% include "theme::partials/messages" %}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
 
     <div class="container-fluid">
         <div class="card">
             <div class="card-block">
 
                 {% set actions = ['save'] %}
-                
+
                 {% if id is not null %}
                     {% set actions = ['update'] %}
                 {% endif %}
@@ -19,7 +21,12 @@
                 })|raw }}
                 <fieldset>
                     <div class="section">
-                        {{ nameField|raw }}
+                        {% set fields = form.fields.base().pluck('field_name').all() %}
+                        <div class="field-group name">
+                            {% for field in form.fields.translations('name') %}
+                                {{ field.render({'form': form})|raw }}
+                            {% endfor %}
+                        </div>
                         {{ form.fields.slug|raw }}
                         <input type="hidden" name="parent_category"
                                value="{% if form.fields.parent_category.value.id is defined %}{{ form.fields.parent_category.value.id }}{% elseif app.request.get('parent')  is defined %}{{ app.request.get('parent') }}{% endif %}">

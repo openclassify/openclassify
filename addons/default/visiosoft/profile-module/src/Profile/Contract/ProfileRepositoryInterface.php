@@ -17,4 +17,6 @@ interface ProfileRepositoryInterface extends EntryRepositoryInterface
     public function changePassword($fields, $password);
 
     public function findByUserID($id);
+
+    public function CheckPhoneNumber($phoneNumber);
 }

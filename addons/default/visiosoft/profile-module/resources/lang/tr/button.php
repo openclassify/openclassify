@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "new_profile"   =>"Yeni profil",
-   "new_adress"   =>"Yeni Adres",
-   "show"   =>"Adresi Göster"
+return [
+    'new_profile' => 'Yeni Profil',
+    'new_adress' => 'Yeni Adres',
+    'show' => 'Göster',
 ];

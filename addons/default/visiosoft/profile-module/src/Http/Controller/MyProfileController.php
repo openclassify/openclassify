@@ -65,42 +65,10 @@ class MyProfileController extends PublicController
         $advRepository->delete_empty_advs();
 
         $menu_fields = array();
-
-        $isActive = new AdvModel();
-        $isActiveMessages = $isActive->is_enabled('messages');
-        $isActivePackages = $isActive->is_enabled('packages');
-
-
-        if ($isActiveMessages) {
-
-            $myMessages = new MessageModel();
-            $myMessages = $myMessages->listMessages();
-            $message_count = count($myMessages);
-
-            $menu_messages = array();
-            $menu_messages['href'] = "msg";
-            $menu_messages['aria-controls'] = "msg";
-            $menu_messages['title'] = trans('visiosoft.module.profile::field.menu_messages.name');
-            $menu_fields[] = $menu_messages;
-        }
-
-
         $advs_count = new AdvModel();
         $advs_count = count($advs_count->myAdvsByUser()->get());
 
-
-        if ($isActivePackages) {
-            $packageModel = new PackageModel();
-            $my_packages = $packageModel->getPackageByLoggedInUser();
-            $menu_packages = array();
-            $menu_packages['href'] = "packages";
-            $menu_packages['aria-controls'] = "packages";
-            $menu_packages['title'] = trans('visiosoft.module.profile::field.menu_packages.name');
-            $menu_fields[] = $menu_packages;
-        }
-
         $profileModel = new ProfileModel();
-        $adressModel = new AdressModel();
 
         $users = UsersUsersEntryModel::find(Auth::id());
         $profiles = $profileModel->getProfile(Auth::id())->orderBy("id")->first();
@@ -120,36 +88,6 @@ class MyProfileController extends PublicController
             'mySales', 'advs_count', 'fav_count', 'userbalance', 'balancespackage'));
     }
 
-    public function update(ProfileFormBuilder $form, Request $request, UserPassword $userPassword, ProfileRepositoryInterface $profileRepository)
-    {
-        $id = Auth::id();
-        $all = $request->all();
-        //updateUserFields && remove added fields
-        $all = $profileRepository->updateUserField($all);
-        if (isset($all['confirm_password_input']) and $all['confirm_password_input'] == "on") {
-            $all = $profileRepository->changePassword($all, $userPassword);
-        } else {
-            unset($all['new_password'], $all['re_new_password'], $all['confirm_password_input']);
-        }
-        if (isset($all['error'])) {
-            return redirect('/profile')->with('error', $all['error']);
-        }
-
-        unset($all['_token'], $all['action']);
-        $all['file_id'] = $all['file'];
-        if (isset($all['adv_listing_banner'])) {
-            $all['adv_listing_banner_id'] = $all['adv_listing_banner'];
-            unset($all['adv_listing_banner']);
-        }
-        unset($all['file']);
-
-        $profileModel = new ProfileModel();
-        $profileModel->getProfile($id)->update($all);
-
-        $message = [];
-        $message[] = trans('visiosoft.module.profile::message.success_update');
-        return redirect('/profile')->with('success', $message);
-    }
 
     public function extendAds($id, $type, SettingRepositoryInterface $settings)
     {

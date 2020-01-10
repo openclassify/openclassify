@@ -7,12 +7,15 @@ use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
 use Visiosoft\ProfileModule\Profile\Contract\ProfileRepositoryInterface;
+use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
+use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
 use Visiosoft\ProfileModule\Profile\ProfileRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileProfileEntryModel;
 use Visiosoft\ProfileModule\Profile\ProfileModel;
 use Illuminate\Routing\Router;
 use Visiosoft\ProfileModule\Profile\Register2\Register2FormBuilder;
 use Visiosoft\ProfileModule\Profile\sites\SitesFormBuilder;
+use Visiosoft\ProfileModule\Profile\User\UserFormBuilder;
 
 class ProfileModuleServiceProvider extends AddonServiceProvider
 {
@@ -169,6 +172,9 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $bindings = [
+        'updatePassword' => PasswordFormBuilder::class,
+        'userProfile' => UserFormBuilder::class,
+        'profile' => ProfileFormBuilder::class,
         ProfileAdressEntryModel::class => AdressModel::class,
         ProfileProfileEntryModel::class => ProfileModel::class,
     ];
