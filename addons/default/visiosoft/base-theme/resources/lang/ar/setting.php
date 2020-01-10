@@ -1,35 +1,31 @@
 <?php
 
 return [
-    'meta_tags' => [
-        'name' => 'كلمات ميتا المفتاحية',
+    'navigation_title' => [
+        'name' => 'عنوان الملاحة',
     ],
-    'template' => [
-        'name' => 'القالب',
+    'navigation_action' => [
+        'name' => 'ملاحة العمل',
     ],
-    's-type-latest-limit' => [
-        'name' => 'الحد الأقصى من نوع-اس',
+    'country_fields' => [
+        'name' => 'حقول البلد',
     ],
-    's-type-showcase' => [
-        'name' => 'اسم حد عرض S-type',
+    'date_fields' => [
+        'name' => 'حقول التاريخ',
     ],
-    's-type-banner-code' => [
-        'name' => 'رمز شعار نوع-اس',
+    'price_fields' => [
+        'name' => 'حقول السعر',
     ],
-
-    's-type-banner-mobile-code' => [
-        'name' => 'رمز الجوال لراية نوع-اس',
+    'breadcrumbs' => [
+        'name' => 'التفصيلي',
     ],
-
-    'show_post_your_add_btn' => [
-        'name' => 'أظهر زر "انشر اعلانك"',
+    'ad_details' => [
+        'name' => 'تفاصيل الإعلان',
     ],
-
-    'show_home_search_on_map_btn' => [
-        'name' => 'أظهر زر "على الخريطة" في البحث في الصفحة الرئيسية',
+    'ad_details_tab' => [
+        'name' => 'علامة تبويب تفاصيل الإعلان',
     ],
-
-    'show_last_search_btn' => [
-        'name' => 'أظهر زر "آخر عملية بحث"',
+    'latest_and_view_all_btn' => [
+        'name' => 'أحدث وعرض جميع Btn',
     ],
 ];
