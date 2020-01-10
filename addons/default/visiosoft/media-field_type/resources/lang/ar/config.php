@@ -14,4 +14,13 @@ return [
         'label'        => 'الحد الأعلى للاختيارات',
         'instructions' => 'ادخل رقم الحد الأعلى للاخيارات المسموح بها.',
     ],
+    'mode'    => [
+        'name'         => 'Input Mode',
+        'instructions' => 'How should users provide file input?',
+        'option'       => [
+            'default' => 'Upload and/or select files.',
+            'select'  => 'Select files only.',
+            'upload'  => 'Upload files only.',
+        ],
+    ],
 ];
