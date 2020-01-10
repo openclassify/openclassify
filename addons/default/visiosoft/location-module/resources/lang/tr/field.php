@@ -1,44 +1,37 @@
 <?php
 
-return[
-    "name"   =>   [
-        "name"      =>"Başlık",
-
+return [
+    'name' => [
+        'name' => 'Başlık'
     ],
-    "slug"   =>   [
-        "name"      =>"Özel İsim",
-
+    'slug' => [
+        'name' => 'Özel İsim'
     ],
-    "city"   =>   [
-        "name"      =>"İl",
-
+    'city' => [
+        'name' => 'İl'
     ],
-    "country"   =>   [
-        "name"      =>"Ülke",
-
+    'country' => [
+        'name' => 'Ülke'
     ],
-    "district"   =>   [
-        "name"      =>"İlçe",
-
+    'district' => [
+        'name' => 'İlçe'
     ],
-    "order"   =>   [
-        "name"      =>"Sıralama",
-
+    'order' => [
+        'name' => 'Sıralama'
     ],
-    "neighborhood"   =>   [
-        "name"      =>"Mahalle",
-
+    'neighborhood' => [
+        'name' => 'Mahalle'
     ],
-    "village"   =>   [
-        "name"      =>"Köy",
-
+    'village' => [
+        'name' => 'Köy'
     ],
-    "description"   =>   [
-        "name"      =>"Açıklama",
-
+    'description' => [
+        'name' => 'Açıklama'
+    ],
+    'pick_option' => [
+        'name' => 'Pick an option',
     ],
     'address' => [
         'name' => 'Adres',
     ],
-
 ];
