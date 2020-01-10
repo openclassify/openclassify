@@ -37,9 +37,15 @@
                         <fieldset>
                             <div class="section postdetails">
                                 <div class="row form-group add-title">
+                                    {% set fields = form.fields.base().pluck('field_name').all() %}
                                     <div class="col-md-12">
-                                        {{ nameField|raw }}
+                                        <div class="field-group name">
+                                            {% for field in form.fields.translations('name') %}
+                                                {{ field.render({'form': form})|raw }}
+                                            {% endfor %}
+                                        </div>
                                     </div>
+
                                     <div style="display: none">
                                         {{ form.fields.slug|raw }}
                                     </div>
@@ -62,7 +68,11 @@
 
                                 <div class="row form-group brand-name">
                                     <div class="col-md-12">
-                                        {{ descField|raw }}
+                                        <div class="field-group advs_desc">
+                                            {% for field in form.fields.translations('advs_desc') %}
+                                                {{ field.render({'form': form})|raw }}
+                                            {% endfor %}
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="row form-group images">
@@ -113,4 +123,7 @@
             type="text/javascript"></script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
 {% endblock %}
