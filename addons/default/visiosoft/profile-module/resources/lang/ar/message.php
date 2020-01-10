@@ -9,7 +9,7 @@ return [
     "login_error" => "تسجيل الدخول أو كلمة سر خاطئة.",
     "login_noMail_old_user" => "لا يمكن العثور على عنوان البريد الإلكتروني الذي أدخلته.",
     "login_noMail_old_user2" => "يرجى التحقق من عنوان البريد الإلكتروني والمحاولة مرة أخرى.",
-    "login_noMail_old_user3" => "إذا استمرت المشكلة ، يرجى الاتصال على \\'info@openclassify.com\\'.",
+    "login_noMail_old_user3" => "إذا استمرت المشكلة ، يرجى الاتصال على info@openclassify.co.",
     "login_info_old_user" => "تم إرسال كلمة مرور جديدة إلى عنوان البريد الإلكتروني الخاص بك.",
     "success" => "نجاح",
     "notified_new_updates" => "أريد أن يتم إخباري بالتحديثات الجديدة",

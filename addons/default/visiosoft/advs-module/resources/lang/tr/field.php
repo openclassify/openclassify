@@ -107,7 +107,7 @@ return [
         'name' => 'Açıklama'
     ],
     'type' => [
-        'name' => 'tip'
+        'name' => 'Tip'
     ],
     'parent_adv' => [
         'name' => 'İlgili İlan'
@@ -116,7 +116,7 @@ return [
         'name' => 'değer'
     ],
     'list' => 'List',
-    'home' => 'Ev',
+    'home' => 'Anasayfa',
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
     'recommended' => 'Sizin için Önerilen İlanlar',
@@ -172,7 +172,7 @@ return [
     'email' => 'E-Posta',
     'phone' => 'Telefon',
     'send_us_your_feedback' => 'Bize Görüşlerinizi Gönderin',
-    'online_shopping' => 'ALMAK',
+    'online_shopping' => 'Mağaza',
     'approved' => 'Başarıyla Onaylandı',
     'extended' => 'Extended Successfully',
     'declined' => 'Başarıyla Reddedildi',
@@ -203,7 +203,7 @@ return [
         'name' => 'İlan Adı',
         'price' => 'Fiyat',
         'publish_at' => 'İlan Tarihi',
-        'location_city' => 'Kent',
+        'location_city' => 'Şehir',
         'location_country' => 'ülke',
     ],
     'show_list_view' => [
@@ -229,27 +229,28 @@ return [
     ],
     'edit_category' => 'Kategori Düzenle',
     'max' => [
-        'name' => 'Max',
+        'name' => 'Maks',
     ],
     'min' => [
         'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Son 24 saat'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'Son 1 hafta'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'Son 1 Ay'
     ],
     'ads_with_photo' => [
-        'name' => 'Ads With Photo'
+        'name' => 'Fotoğraflı İlanlar'
     ],
     'ads_with_video' => [
-        'name' => 'Ads With Video'
+        'name' => 'Videolu İlanlar'
     ],
     'yes' => [
-        'name' => 'Yes'
-    ]
+        'name' => 'Evet'
+    ],
+    "no_location" => "Lokasyon eklenmemiş."
 ];
