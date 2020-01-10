@@ -133,7 +133,9 @@ function haritaIslem() {
         return true;
     }
     str = str.replace(/\(.+\)/g, "").replace('  ', ' ');
-
+    google.maps.event.addListener(map, 'click', function (event) {
+        placeMarker(event.latLng);
+    });
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode({'address': str}, function (results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
@@ -149,9 +151,7 @@ function haritaIslem() {
         }
         if ($('select[name="'+neighborhoodSelectName+'"]').val() != "" && $('select[name="'+neighborhoodSelectName+'"]').val() != 0 && secildi == 0) {
             secildi = 1;
-            google.maps.event.addListener(map, 'click', function (event) {
-                placeMarker(event.latLng);
-            });
+
         }
     });
 }

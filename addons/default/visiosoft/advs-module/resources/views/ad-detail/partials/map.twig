@@ -1,0 +1,29 @@
+<p>
+    {% if(adv.map_Val == "") %}
+        {{ trans('visiosoft.module.advs::field.no_location') }}
+    {% else %}
+        {% set map_arr = adv.map_Val|split(',') %}
+        <div id="mapDiv" style="height: 500px; width: 100%; "></div>
+        <script>
+            var lat = parseFloat({{ map_arr[0] }});
+            var lng = parseFloat({{ map_arr[1] }});
+            var google_map_key = "{{ setting_value('visiosoft.module.advs::google_map_key') }}";
+
+            function initMap() {
+                var myLatLng = {lat: lat, lng: lng};
+
+                var map = new google.maps.Map(document.getElementById('mapDiv'), {
+                    zoom: 16,
+                    center: myLatLng
+                });
+                new google.maps.Marker({
+                    position: myLatLng,
+                    map: map
+                });
+            }
+        </script>
+        <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.advs::google_map_key') }}&callback=initMap"
+                type="text/javascript"></script>
+
+    {% endif %}
+</p>
