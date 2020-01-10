@@ -145,7 +145,7 @@ return [
     'offered_by' => 'İlan Sahibi',
     'more_ads_by' => 'Diğer İlanlar',
     'click_phone' => 'Telefon numarasını göster',
-    'share' => 'Bu İlanı paylaş',
+    'share' => 'Share',
     'report' => 'Bu İlanı bildir',
     'features' => 'Özellikler',
     "streetview" => "Sokak Görünümü",
@@ -251,5 +251,6 @@ return [
     ],
     'yes' => [
         'name' => 'Yes'
-    ]
+    ],
+    "no_location" => "No location is selected."
 ];
