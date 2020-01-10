@@ -112,9 +112,7 @@ return [
     'profile' => [
         'name' => 'Profil'
     ],
-    'menu_balance' => [
-        'name' => 'Bakiye'
-    ],
+
     'create' => [
         'name' => 'Oluştur'
     ],
@@ -197,6 +195,32 @@ return [
         'name' => 'Satışlarım'
     ],
 
+
+    /* Right Dock*/
+    'right_secure_trading_subject' => [
+        'name' => 'Secure Trading'
+    ],
+    'right_secure_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_support_subject' => [
+        'name' => '24/7 Support'
+    ],
+    'right_support_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_easy_trading_subject' => [
+        'name' => 'Easy Trading'
+    ],
+    'right_easy_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_need_help_subject' => [
+        'name' => 'Need Help?'
+    ],
+    'right_need_help_msg' => [
+        'name' => 'Give a call on'
+    ],
     'disable_account' => [
         'name' => 'Hesabı Dondur'
     ],
@@ -396,7 +420,9 @@ return [
     'corporate' => [
         'name' => 'Kurumsal',
     ],
+
     'details' => [
         'name' => 'Detaylar'
     ],
+
 ];
