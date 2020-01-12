@@ -106,6 +106,7 @@ return [
     'description' => [
         'name' => 'Açıklama'
     ],
+    'explanation' =>  'Explanation',
     'type' => [
         'name' => 'tip'
     ],
