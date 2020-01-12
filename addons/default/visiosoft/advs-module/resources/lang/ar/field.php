@@ -106,6 +106,7 @@ return [
     'description' => [
         'name' => 'وصف'
     ],
+    'explanation' =>  'Explanation',
     'type' => [
         'name' => 'نوع'
     ],
