@@ -1,9 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => [
-        'name' => 'أحدث الإعلانات',
-    ],
+    'latest_ads' => 'Latest Ads',
     'show_all' => [
         'name' => 'عرض الكل',
     ],
