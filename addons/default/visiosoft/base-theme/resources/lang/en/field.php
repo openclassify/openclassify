@@ -1,9 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => [
-        'name' => 'Latest Ads',
-    ],
+    'latest_ads' => 'Latest Ads',
     'show_all' => [
         'name' => 'Show All',
     ],

@@ -22,7 +22,7 @@
                         {{ trans('visiosoft.module.advs::field.offered_by') }}:
                         <a id="owner"
                            href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}"
-                           data-content="{{ adv.owner_id }}">{{ adv.owner }}
+                           data-content="{{ adv.owner_id }}"> {{ adv.first_name }} {{ adv.last_name }}
                         </a>
                         {{ addBlock('ad-detail/seller/action',{'seller_id':adv.owner_id})|raw }}
                     </div>
@@ -43,7 +43,7 @@
                         <div class="col-md-12 m-2">
                             <i class="fa fa-suitcase"></i>
                             <a href="{{ url_route('visiosoft.module.advs::list_user_ad',
-                                [adv.created_by_id]) }}">{{ adv.owner }}</a>
+                                [adv.created_by_id]) }}"> {{ adv.first_name }} {{ adv.last_name }}</a>
                         </div>
                     {% endif %}
                 </div>

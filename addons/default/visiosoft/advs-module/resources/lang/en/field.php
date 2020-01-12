@@ -106,6 +106,7 @@ return [
     'description' => [
         'name' => 'Description'
     ],
+    'explanation' =>  'Explanation',
     'type' => [
         'name' => 'Type'
     ],

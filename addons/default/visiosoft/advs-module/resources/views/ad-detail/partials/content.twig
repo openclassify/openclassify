@@ -8,7 +8,7 @@
                     <a class="nav-item nav-link active bg-secondary text-white" id="nav-description-tab"
                        data-toggle="tab" href="#nav-description" role="tab"
                        aria-controls="nav-description"
-                       aria-selected="true">{{ trans('visiosoft.module.advs::field.description.name') }}</a>
+                       aria-selected="true">{{ trans('visiosoft.module.advs::field.description') }}</a>
 
                     <!-- Content Tab With Block -->
                     {{ addBlock('ad-detail/content-tab',{'features':features})|raw }}
@@ -21,7 +21,7 @@
 
                 <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
                      aria-labelledby="nav-description-tab">
-                    <h4>{{ trans('visiosoft.module.advs::field.description.name') }}</h4>
+                    <h4>{{ trans('visiosoft.module.advs::field.description') }}</h4>
                     <p>{{ adv.advs_desc|raw }}</p>
                 </div>
 
