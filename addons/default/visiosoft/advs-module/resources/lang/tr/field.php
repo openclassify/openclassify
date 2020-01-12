@@ -103,9 +103,8 @@ return [
     'my_adv' => [
         'name' => 'İlan'
     ],
-    'description' => [
-        'name' => 'Açıklama'
-    ],
+    'description' =>  'Detaylar',
+    'explanation' =>  'Açıklama',
     'type' => [
         'name' => 'Tip'
     ],
