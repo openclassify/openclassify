@@ -625,7 +625,7 @@ class AdvsController extends PublicController
             if ($adv->slug == "") {
                 $events->dispatch(new CreateAd($request->update_id, $settings));//Create Notify
             } else {
-                $events->dispatch(new EditAd($request->update_id, $settings));//Update Notify
+                $events->dispatch(new EditAd($request->update_id, $settings, $adv));//Update Notify
             }
 
 

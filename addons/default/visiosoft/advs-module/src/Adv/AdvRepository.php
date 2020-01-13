@@ -207,10 +207,15 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         }
 
+
+//        //UPDATE `default_advs_advs` SET `coor` = (PointFromText('POINT(41.085022 28.804754)')) WHERE `default_advs_advs`.`id` = 8
+//        //SELECT * FROM `default_advs_advs` WHERE ST_DISTANCE(ST_GeomFromText('POINT(41.0709052 28.829627)'), coor) < 20
+
         if (!empty($param['dlong']) && !empty($param['dlat']) && !empty($param['distance'])) {
             $query = $query->whereNotNull('coor');
             $query = $query->whereRaw("ST_DISTANCE(ST_GeomFromText('POINT(" . $param['dlong'] . " " . $param['dlat'] . ")'), coor) < " . $param['distance']);
         }
+
 
         if ($isActiveDopings) {
             if ($param == null) {
@@ -292,7 +297,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $adv = $this->model
             ->where('advs_advs.id', $id)
             ->leftJoin('users_users as u1', 'advs_advs.created_by_id', '=', 'u1.id')
-            ->select('advs_advs.*','u1.first_name as first_name', 'u1.last_name as last_name', 'u1.id as owner_id')
+            ->select('advs_advs.*', 'u1.first_name as first_name', 'u1.last_name as last_name', 'u1.id as owner_id')
             ->inRandomOrder()
             ->first();
 

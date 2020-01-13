@@ -3,10 +3,11 @@
 
 class EditAd
 {
-    public function __construct($request,$settings)
+    public function __construct($request, $settings, $adv)
     {
         $this->request = $request;
         $this->settings = $settings;
+        $this->adv = $adv;
     }
 
     public function getRequest()
