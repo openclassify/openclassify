@@ -18,3 +18,21 @@
     height: 50px;
     width: 100%;
 }
+
+@media only screen and (min-width: 960px) {
+    .login-section,
+    .register-section {
+        padding: 100px 50px;
+    }
+}
+
+.login-section,
+.register-section {
+    border: 1px solid #dfdfdf;
+}
+
+.login-section button, .login-section a,
+.register-section button,
+.register-section a {
+    font-size: 16px;
+}
