@@ -1,0 +1,71 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-left bg-light p-3 m-0">
+            {% set form = form('reset_password').redirect(request_get('redirect', '/'))
+                .get() %}
+            {{ form_open({
+                'class': 'row form ' ~ form.options.class ,
+                'url':form.options.url
+            })|raw }}
+
+
+            <div class="col-12">
+                <h4>{{ trans('visiosoft.theme.base::button.reset_password') }}</h4>
+                <div class="form-group email-field email-field_type">
+                    <label class="control-label">
+                        {{ trans('visiosoft.theme.base::field.email') }}
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        {{ form.fields.email.input|raw }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group email-field code-field_type">
+                    <label class="control-label">
+                        {{ trans('visiosoft.theme.base::field.reset_code') }}
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        {{ form.fields.code.input|raw }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group email-field password-field_type">
+                    <label class="control-label">
+                        {{ trans('visiosoft.theme.base::field.password') }}
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        {{ form.fields.password.input|raw }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-12">
+                <div class="form-group email-field password_confirmation-field_type">
+                    <label class="control-label">
+                        {{ trans('visiosoft.theme.base::field.password_confirmation') }}
+                        <span class="required">*</span>
+                    </label>
+
+                    <div class="input-wrapper">
+                        {{ form.fields.password_confirmation.input|raw }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12 row m-0">
+                <button class="btn btn-sm btn-primary  w-100 py-2">
+                    {{ trans('visiosoft.theme.base::button.reset_password') }}
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

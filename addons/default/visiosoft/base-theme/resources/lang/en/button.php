@@ -6,4 +6,6 @@ return [
     ],
     'login' => 'Login',
     'register' => 'Register',
+    'continue' => 'Continue',
+    'reset_password' => 'Reset Password',
 ];
