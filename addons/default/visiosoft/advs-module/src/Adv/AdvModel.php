@@ -219,14 +219,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function addCart($item, $quantity = 1)
     {
-        if (Auth::user()) {
-            $cart = $this->dispatch(new GetCart());
-            $cart->add($item, $quantity);
-            return $this->dispatch(new GetCart());
-        } else {
-            setcookie("cart[" . $item->id . "]", $quantity, time() + 3600, '/', NULL, 0);
-        }
-
+        $cart = $this->dispatch(new GetCart());
+        $cart->add($item, $quantity);
+        return $this->dispatch(new GetCart());
     }
 
 

@@ -1014,7 +1014,7 @@ class AdvsController extends PublicController
         $point = ".";
 
         $response['newPrice'] = number_format($response['newPrice'], $decimals, $point, str_replace('&#160;', ' ', $separator));
-        $symbol = config('streams::currencies.supported.' . strtoupper(setting_value('streams::currency')) . '.symbol');
+        $symbol = config('streams::currencies.supported.' . strtoupper($adv->currency) . '.symbol');
 
         $response['newPrice'] = $symbol . $response['newPrice'];
         $response['status'] = $status;

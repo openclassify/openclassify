@@ -103,13 +103,6 @@ class UserAuthenticator
             if ($response = $this->authenticate($credentials)) {
                 if ($response instanceof UserInterface) {
                     $this->login($response, $remember);
-                    if (isset($_COOKIE['cart'])) {
-                        foreach ($_COOKIE['cart'] as $adv => $quantity) {
-                            $advs = new AdvsController();
-                            $advs->advAddCart($adv, $quantity);
-                            setcookie("cart[" . $adv . "]", null, -1, '/');
-                        }
-                    }
                     return Redirect::back();
                 }
             }
