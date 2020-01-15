@@ -339,12 +339,19 @@ class AdvsController extends PublicController
         return $location;
     }
 
-    public function softDeleteAdv(AdvRepositoryInterface $advs, $id)
+    public function deleteAd(AdvRepositoryInterface $advs, $id)
     {
+        $ad = $this->adv_model->find($id);
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
+
+        if ($ad->created_by_id != Auth::id()) {
+            $this->messages->error(trans('visiosoft.module.advs::message.delete_author_error'));
+        }
+
         $advs->softDeleteAdv($id);
+        $this->messages->error(trans('visiosoft.module.advs::message.success_delete'));
         return back();
     }
 
@@ -701,18 +708,6 @@ class AdvsController extends PublicController
         }
 
         return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields'));
-    }
-
-    public function destroy($id)
-    {
-
-        $advs = AdvsAdvsEntryModel::find($id);
-        if ($advs->id == auth()->user()->id) {
-            return redirect('/advs/my_advs')->with('success', 'Basariyla Silindi');
-        } else {
-            return "Kendinizin olmayan bir ilani silmeye calisiyorsunuz.";
-        }
-
     }
 
     public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events)

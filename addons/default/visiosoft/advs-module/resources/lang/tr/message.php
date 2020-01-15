@@ -24,4 +24,6 @@ return [
     ],
     'update_category_info' => 'Lütfen kategoriyi güncelleyiniz.',
     'filter_by_search_msg' => 'Aramanızı Daraltın.',
+    'delete_author_error' => 'Size ait olmayan bir ilanı silemezsiniz',
+    'success_delete' => 'İlan Silindi',
 ];

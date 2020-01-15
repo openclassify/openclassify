@@ -149,8 +149,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'advs/my_advs' => 'Visiosoft\AdvsModule\Http\Controller\advsController@myAdvs',
         'advs/my_advs/{params}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@myAdvs',
         'advs/edit_advs/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@edit',
-        'advs/delete_adv/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@destroy',
-
         'advs/status/{id},{type}' => [
             'as' => 'visiosoft.module.advs::status',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@statusAds'
@@ -166,7 +164,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'mapJson' => 'Visiosoft\AdvsModule\Http\Controller\advsController@mapJson',
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
-        'advs/delete/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@softDeleteAdv',
+        'advs/delete/{id}' => [
+            'as' => 'advs::delete',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@deleteAd',
+        ],
         'check_user' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkUser',
         'keySearch' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@keySearch',
         'adv/addCart/{id}' => [
