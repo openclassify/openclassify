@@ -137,38 +137,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         }
 
-        foreach ($customParameters as $key => $customParameter) {
-            if ($key == 0) {
-                $jsonQuery = "(";
-            }
-            $cfId = $customParameter['id'];
-            $cfValue = $customParameter['value'];
-            $cf = "'" . $cfId . "'";
-            $valueCount = count($cfValue);
+        if ($this->model->is_enabled('customfields')) {
+            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $query);
+        }
 
-            if ($cfValue) {
-                foreach ($cfValue as $key1 => $value) {
-                    if ($key1 == 0 and $cfValue > 1) {
-                        $jsonQuery = $jsonQuery . "(";
-                    }
-                    $jsonQuery = $jsonQuery . 'JSON_CONTAINS(cf_json, \'"' . $value . '"\', ' . $cf . ')';
-                    if ($key1 == $valueCount - 1 and $cfValue > 1) {
-                        $jsonQuery = $jsonQuery . ")";
-                    }
-                    if ($key1 < $valueCount - 1) {
-                        $jsonQuery = $jsonQuery . " or ";
-                    } elseif ($key1 == $valueCount - 1 and $key != count($customParameters) - 1) {
-                        $jsonQuery = $jsonQuery . " and ";
-                    }
-                }
-            }
-            if ($key == count($customParameters) - 1) {
-                $jsonQuery = $jsonQuery . ")";
-            }
-        }
-        if (isset($jsonQuery)) {
-            $query = $query->whereRaw($jsonQuery);
-        }
 
         if (!empty($param['max_price'])) {
             $num = $param['max_price'];
