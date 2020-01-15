@@ -74,6 +74,17 @@ function dropdownRow(id, type) {
             passive +
             "</a>\n";
     }
+
+    dropdown += "<a class='dropdown-item text-primary' href='/advs/edit_advs/" + id + "'>" +
+        "<i class='fas fa-pencil-alt'></i> " +
+        edit_ad +
+        "</a>\n";
+
+    dropdown += "<a class='dropdown-item text-danger' href='/advs/delete/" + id + "'>" +
+        "<i class='fas fa-trash'></i> " +
+        delete_ad +
+        "</a>\n";
+
     dropdown += "</div></div>";
     return dropdown;
 

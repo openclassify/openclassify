@@ -6,4 +6,6 @@ return [
     'show' => 'Göster',
     'update_password' => 'Update Password',
     'update_profile' => 'Update Profile',
+    'delete' => 'Sil',
+    'edit' => 'Düzenle',
 ];

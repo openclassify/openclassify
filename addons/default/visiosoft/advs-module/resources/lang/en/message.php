@@ -24,4 +24,6 @@ return [
     ],
     'update_category_info' => 'Please update category.',
     'filter_by_search_msg' => 'Filter By Search.',
+    'delete_author_error' => 'You cannot delete a post that does not belong to you',
+    'success_delete' => 'Ad Deleted',
 ];
