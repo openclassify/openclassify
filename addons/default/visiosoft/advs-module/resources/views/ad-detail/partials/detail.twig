@@ -2,7 +2,7 @@
     {% if blocks('ad-item-details-block-area') is null %}
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
             <h3 class="ad-price">
-                <b>{{ adv.price.format() }}</b> {{ adv.currency }}
+                <b>{{ currency_symbol(adv.currency) }}{{ adv.price.format() }}</b>
 
                 <!-- priceField with Block -->
                 {{ addBlock('ad-detail/priceField',{'adv':adv})|raw }}
