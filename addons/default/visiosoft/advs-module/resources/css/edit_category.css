@@ -1,5 +1,4 @@
 .cat-select {
-    width: 100%;
     border: none;
     overflow-y: auto
 }
@@ -11,28 +10,4 @@
     padding-left: 10px;
     font-size: 16px;
     color: #505050;
-}
-
-.cat-item-2 {
-    display: none;
-}
-
-.cat-item-3 {
-    display: none;
-}
-
-.cat-item-3 .section {
-    min-height: 320px;
-}
-
-.btn-1 {
-    background-color: #00a651;
-    padding: 5px 50px 7px;
-    color: #fff;
-    border: 1px solid #dadada;
-    margin-right: 5px;
-}
-
-#cat1 span {
-    font-size: 20px
 }

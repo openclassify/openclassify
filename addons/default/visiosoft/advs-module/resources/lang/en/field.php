@@ -249,5 +249,6 @@ return [
     'yes' => [
         'name' => 'Yes'
     ],
-    "no_location" => "No location is selected."
+    "no_location" => "No location is selected.",
+    "continue" => 'Continue'
 ];

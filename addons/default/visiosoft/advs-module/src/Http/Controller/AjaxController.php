@@ -92,4 +92,5 @@ class AjaxController extends PublicController
         return response()->json(['success' => true, 'content' => $my_advs, 'title' => $page_title]);
     }
 
+
 }
