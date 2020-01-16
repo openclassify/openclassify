@@ -2,9 +2,7 @@
 
 return [
     'latest_ads' =>  'Son Eklenenler',
-    'show_all' => [
-        'name' => 'Tümünü Göster',
-    ],
+    'show_all' =>  'Tümünü Göster',
     'login' => [
         'name' => 'Login',
     ],
