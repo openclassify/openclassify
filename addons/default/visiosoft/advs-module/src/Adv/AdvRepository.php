@@ -363,5 +363,21 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
+    public function getCategoriesWithAdID($id)
+    {
+        $adv = $this->model->find($id);
+
+        if (!is_null($adv)) {
+            $categories = array();
+            foreach ($adv->toArray() as $key => $field) {
+                if (preg_match('/cat\d/', $key) and !is_null($field)) {
+                    $categories[$key] = $field;
+                }
+            }
+            return $categories;
+        }
+        return null;
+    }
+
 
 }

@@ -34,4 +34,6 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function latestAds();
 
+    public function getCategoriesWithAdID($id);
+
 }

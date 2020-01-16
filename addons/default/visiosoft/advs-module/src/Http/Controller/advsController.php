@@ -661,9 +661,9 @@ class AdvsController extends PublicController
             redirect('/login?redirect=' . url()->current())->send();
         }
 
-        $is_ad = $this->adv_model->userAdv(true)->find($id);
+        $adv = $this->adv_model->userAdv(true)->find($id);
 
-        if (is_null($is_ad)) {
+        if (is_null($adv)) {
             abort(403);
         }
 
@@ -677,14 +677,14 @@ class AdvsController extends PublicController
                 }
             }
 
-            $is_ad->update($params);
+            $adv->update($params);
             $this->messages->success(trans('visiosoft.module.advs::message.updated_category_msg'));
             return redirect('/advs/edit_advs/' . $id);
         }
 
-        $main_cats = $this->category_repository->mainCats();
+        $categories = $this->adv_repository->getCategoriesWithAdID($id);
 
-        return $this->view->make('visiosoft.module.advs::new-ad/edit-cat', compact('main_cats', 'id'));
+        return $this->view->make('visiosoft.module.advs::new-ad/edit-cat', compact('id', 'adv','categories'));
 
     }
 
