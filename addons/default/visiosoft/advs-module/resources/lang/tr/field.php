@@ -114,7 +114,7 @@ return [
     'value' => [
         'name' => 'değer'
     ],
-    'list' => 'List',
+    'list' => 'Arama',
     'home' => 'Anasayfa',
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
