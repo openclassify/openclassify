@@ -3,7 +3,7 @@
 {% block content %}
     <div class="row justify-content-center">
         <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-left bg-light p-3 m-0">
-            {% set form = form('register').redirect(request_get('redirect', '/'))
+            {% set form = form('register2').redirect(request_get('redirect', '/'))
                 .get() %}
             {{ form_open({
                 'class': 'row form ' ~ form.options.class ,
@@ -13,24 +13,24 @@
             <div class="col-12">
                 <div class="form-group display_name-field display_name-field_type">
                     <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.display_name') }}
+                        {{ trans('visiosoft.theme.base::field.first_name') }}
                         <span class="required">*</span>
                     </label>
 
                     <div class="input-wrapper">
-                        {{ form.fields.display_name.input|raw }}
+                        {{ form.fields.first_name.input|raw }}
                     </div>
                 </div>
             </div>
             <div class="col-12">
                 <div class="form-group username-field username-field_type">
                     <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.username') }}
+                        {{ trans('visiosoft.theme.base::field.last_name') }}
                         <span class="required">*</span>
                     </label>
 
                     <div class="input-wrapper">
-                        {{ form.fields.username.input|raw }}
+                        {{ form.fields.last_name.input|raw }}
                     </div>
                 </div>
             </div>

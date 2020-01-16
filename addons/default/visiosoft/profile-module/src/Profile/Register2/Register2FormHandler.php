@@ -26,9 +26,9 @@ class Register2FormHandler
     /**
      * Handle the form.
      *
-     * @param  Repository          $config
-     * @param  RegisterFormBuilder $builder
-     * @param  UserActivator       $activator
+     * @param Repository $config
+     * @param RegisterFormBuilder $builder
+     * @param UserActivator $activator
      * @throws \Exception
      */
     public function handle(
@@ -36,7 +36,8 @@ class Register2FormHandler
         Dispatcher $events,
         Register2FormBuilder $builder,
         UserActivator $activator
-    ) {
+    )
+    {
 
         if (!$builder->canSave()) {
             return;
