@@ -38,16 +38,18 @@ class Register2FormBuilder extends FormBuilder
      * @var array
      */
     protected $fields = [
-        'display_name' => [
+        'first_name' => [
+            'instructions' => false,
+            'required' => true,
+        ],
+        'last_name' => [
+            'instructions' => false,
+            'required' => true,
+        ],
+        'email' => [
             'instructions' => false,
         ],
-        'username'     => [
-            'instructions' => false,
-        ],
-        'email'        => [
-            'instructions' => false,
-        ],
-        'password'     => [
+        'password' => [
             'instructions' => false,
         ],
     ];
@@ -69,10 +71,10 @@ class Register2FormBuilder extends FormBuilder
      * @var array
      */
     protected $options = [
-        'redirect'          => '/',
-        'success_message'   => 'anomaly.module.users::success.user_registered',
-        'pending_message'   => 'anomaly.module.users::message.pending_admin_activation',
-        'confirm_message'   => 'anomaly.module.users::message.pending_email_activation',
+        'redirect' => '/',
+        'success_message' => 'anomaly.module.users::success.user_registered',
+        'pending_message' => 'anomaly.module.users::message.pending_admin_activation',
+        'confirm_message' => 'anomaly.module.users::message.pending_email_activation',
         'activated_message' => 'anomaly.module.users::message.account_activated',
     ];
 
