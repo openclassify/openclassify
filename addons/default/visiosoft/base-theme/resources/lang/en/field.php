@@ -2,9 +2,7 @@
 
 return [
     'latest_ads' => 'Latest Ads',
-    'show_all' => [
-        'name' => 'Show All',
-    ],
+    'show_all' => 'Show All',
     'login' => [
         'name' => 'Login',
     ],

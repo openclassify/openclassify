@@ -103,9 +103,7 @@ return [
     'my_adv' => [
         'name' => 'ADVS'
     ],
-    'description' => [
-        'name' => 'Description'
-    ],
+    'description' =>  'Description',
     'explanation' =>  'Explanation',
     'type' => [
         'name' => 'Type'
