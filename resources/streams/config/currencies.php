@@ -49,7 +49,7 @@ return [
         ],
         'TRY' => [
             'name' => 'Türk Lirası',
-            'direction' => 'ltr',
+            'direction' => 'rtl',
             'symbol' => 'TL',
             'separator' => ',',
             'point' => '.',
@@ -105,7 +105,7 @@ return [
         ],
         'AUD' => [
             'name' => 'Australian Dollar',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -137,7 +137,7 @@ return [
         ],
         'BBD' => [
             'name' => 'Barbados Dollar',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -177,7 +177,7 @@ return [
         ],
         'BMD' => [
             'name' => 'Bermudian Dollar',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -185,7 +185,7 @@ return [
         ],
         'BND' => [
             'name' => 'Brunei Dollar',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -209,7 +209,7 @@ return [
         ],
         'BSD' => [
             'name' => 'Bahamian Dollar',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -241,7 +241,7 @@ return [
         ],
         'BZD' => [
             'name' => 'Belize Dollar',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -249,7 +249,7 @@ return [
         ],
         'CAD' => [
             'name' => 'Canadian Dollar',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -273,7 +273,7 @@ return [
         ],
         'CLP' => [
             'name' => 'Chilean Peso',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -289,7 +289,7 @@ return [
         ],
         'COP' => [
             'name' => 'Colombian Peso',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -305,7 +305,7 @@ return [
         ],
         'CUP' => [
             'name' => 'Cuban Peso',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -313,7 +313,7 @@ return [
         ],
         'CVE' => [
             'name' => 'Cape Verde Escudo',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -345,7 +345,7 @@ return [
         ],
         'DOP' => [
             'name' => 'Dominican Peso',
-            'direction' => 'rtr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
@@ -361,11 +361,11 @@ return [
         ],
         'EGP' => [
             'name' => 'Egyptian Pound',
-            'direction' => 'ltr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
-            'symbol' => '£',
+            'symbol' => 'EGP',
         ],
         'ERN' => [
             'name' => 'Nakfa',
@@ -401,11 +401,11 @@ return [
         ],
         'FKP' => [
             'name' => 'Falkland Islands Pound',
-            'direction' => 'ltr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
-            'symbol' => '£',
+            'symbol' => 'FKP',
         ],
         'GBP' => [
             'name' => 'Pound Sterling',
@@ -433,11 +433,11 @@ return [
         ],
         'GIP' => [
             'name' => 'Gibraltar Pound',
-            'direction' => 'ltr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
-            'symbol' => '£',
+            'symbol' => 'GIP',
         ],
         'GMD' => [
             'name' => 'Dalasi',
@@ -985,11 +985,11 @@ return [
         ],
         'SDG' => [
             'name' => 'Sudanese Pound',
-            'direction' => 'ltr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
-            'symbol' => '£',
+            'symbol' => 'SDG',
         ],
         'SEK' => [
             'name' => 'Swedish Krona',
@@ -1009,11 +1009,11 @@ return [
         ],
         'SHP' => [
             'name' => 'Saint Helena Pound',
-            'direction' => 'ltr',
+            'direction' => 'rtl',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
-            'symbol' => '£',
+            'symbol' => 'SHP',
         ],
         'SLL' => [
             'name' => 'Leone',
