@@ -15,15 +15,6 @@ return [
     ],
 
 
-    'site_address' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.site_address',
-        'env' => 'ADV_SITE_ADDRESS',
-        'config' => [
-            'default_value' => 'visiosoft.com.tr',
-            'disabled' => true,
-        ],
-    ],
     "favicon" => [
         "type" => "anomaly.field_type.file",
         "config" => [
@@ -110,13 +101,6 @@ return [
             "default_value" => 1091,
         ]
     ],
-
-
-    'contact_mail' => [
-        'type' => 'anomaly.field_type.email',
-        'bind' => 'adv.contact_mail',
-        'env' => 'ADV_MAIL',
-    ],
     'google_map_key' => [
         'type' => 'anomaly.field_type.text',
         'bind' => 'adv.google_map_key',
@@ -184,25 +168,12 @@ return [
             "default_value" => "1eea72940f3868c77420"
         ]
     ],
-    'default_currency' => [
-        'type' => 'anomaly.field_type.select',
-        'bind' => 'adv.default_currency',
-        'env' => 'ADV_CURRENCY',
-        'config' => [
-            'handler' => 'currencies',
-            "default_value" => 'USD',
-        ],
-    ],
     'default_GET' => [
-        'type' => 'anomaly.field_type.select',
+        'type' => 'anomaly.field_type.boolean',
         'bind' => 'adv.default_GET',
         'env' => 'ADV_GET',
         'config' => [
             'default_value' => 0,
-            'options' => [
-                0 => 'False',
-                1 => 'True',
-            ],
         ],
     ],
     'twitter' => [
@@ -299,21 +270,12 @@ return [
                 return [config('streams::currencies.default')];
             },
             'options' => function () {
-                $json = file_get_contents("https://openexchangerates.org/api/currencies.json");
+                $array = config('streams::currencies.supported');
                 $cur = array();
-                foreach (json_decode($json, true) as $key => $value) {
-                    $cur[$key] = $value;
+                foreach ($array as $key => $value) {
+                    $cur[$key] = $value['name'];
                 }
                 return $cur;
-                // return array_combine(
-                //     $keys = array_keys($config->get('streams::locales.supported')),
-                //     array_map(
-                //         function ($locale) {
-                //             return trans('streams::locale.' . $locale . '.name') . ' (' . $locale . ')';
-                //         },
-                //         $keys
-                //     )
-                // );
             },
         ],
     ],
