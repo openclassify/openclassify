@@ -110,7 +110,7 @@ return [
         ],
     ],
     'google_statistic_code' => [
-        'type' => 'anomaly.field_type.text',
+        'type' => 'anomaly.field_type.editor',
         'bind' => 'adv.google_statistic_code',
         'env' => 'ADV_GOOGLE_STATISTIC_CODE',
         'config' => [
