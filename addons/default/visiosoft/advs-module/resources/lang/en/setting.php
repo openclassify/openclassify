@@ -18,11 +18,8 @@ return [
     ],
     'favicon' => [
         'name' => 'Favicon',
-    ],
-    'contact_mail' => [
-        'name' => 'Contact Mail',
-        'warning'      => 'Auto added sitename <strong>info</strong>@sitename ',
-    ],'map_coordinates_long' => [
+    ]
+    ,'map_coordinates_long' => [
         'name' => 'Map Long Coordinate',
     ],
     'map_coordinates_lat' => [

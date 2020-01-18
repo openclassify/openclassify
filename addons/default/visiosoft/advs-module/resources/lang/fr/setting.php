@@ -54,22 +54,22 @@ return [
     ],
 
     'default_country' => [
-        'name' => 'Pays d\\'annonce par défaut',
+        'name' => 'Pays dannonce par défaut',
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Clé API de convertisseur de devises'
     ],
     'default_city' => [
-        'name' => 'Ville d\\'annonce par défaut',
+        'name' => 'Ville dannonce par défaut',
     ],
     'default_district' => [
-        'name' => 'District d\\'annonce par défaut',
+        'name' => 'District dannonce par défaut',
     ],
     'default_neighborhood' => [
-        'name' => 'Quartier de l\\'annonce par défaut',
+        'name' => 'Quartier de lannonce par défaut',
     ],
     'default_currency' => [
-        'name' => 'Monnaie d\\'annonce par défaut',
+        'name' => 'Monnaie dannonce par défaut',
     ],
     'default_GET' => [
         'name' => 'Annonce par défaut GET',
@@ -87,7 +87,7 @@ return [
         'name' => 'Google',
     ],
     'watermark_type' => [
-        'name' => 'Type de filigrane',
+        'name' => 'Type defiligrane',
     ],
     'watermark_text' => [
         'name' => 'Texte en filigrane',
