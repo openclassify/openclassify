@@ -34,9 +34,8 @@
                                 {% include "visiosoft.module.advs::list/partials/ads" %}
                             {% endblock %}
                         </div>
-                        <div class="d-flex justify-content-center">
-                            {{ advs.appends(request_query()).links()|raw }}
-                        </div>
+                        {% include "visiosoft.module.advs::list/partials/pagination" %}
+
                         {#                        <div class="category-tabs"></div>#}
                     </div>
                 </div>

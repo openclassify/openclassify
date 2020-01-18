@@ -4,23 +4,22 @@
 
         <table class="table classified-list-table">
             <thead>
-            <tr>
-                <th scope="col" colspan="2"
-                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
-                <th scope="col"
-                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
-                <th scope="col"
-                    class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
-                {% if setting_value('visiosoft.module.location::list_page_location') %}
+                <tr>
+                    <th scope="col" colspan="2"
+                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
                     <th scope="col"
-                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
-                        / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
-                {% endif %}
-                {{ addBlock('ads-list/table-column',{'seenList':seenList})|raw }}
-            </tr>
+                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
+                    <th scope="col"
+                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                    {% if setting_value('visiosoft.module.location::list_page_location') %}
+                        <th scope="col"
+                            class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
+                            / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                    {% endif %}
+                    {{ addBlock('ads-list/table-column',{'seenList':seenList})|raw }}
+                </tr>
             </thead>
             <tbody>
-
             {% for adv in advs %}
                 <tr class="text-center clickable-row" data-href='{{ adv.detail_url }}'>
                     <td class="justify-content-center align-middle text-center td-image">
@@ -49,15 +48,10 @@
                     {{ addBlock('ads-list/table-row',{'seenList':seenList,'adv':adv})|raw }}
                 </tr>
             {% endfor %}
-
-
             <!--Table Rows-->
-
-
             </tbody>
         </table>
     </div>
-    {{ advs.links()|raw }}
 
 {% endblock %}
 {% block customjs %}
