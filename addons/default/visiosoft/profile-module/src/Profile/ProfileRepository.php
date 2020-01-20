@@ -138,5 +138,11 @@ class ProfileRepository extends EntryRepository implements ProfileRepositoryInte
             ->first();
     }
 
+    public function findPhoneNumber($phone_number)
+    {
+        return $this->model->where('gsm_phone', $phone_number)
+            ->first();
+    }
+
 
 }

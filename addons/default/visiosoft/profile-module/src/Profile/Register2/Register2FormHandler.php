@@ -38,16 +38,24 @@ class Register2FormHandler
         UserActivator $activator
     )
     {
-
         if (!$builder->canSave()) {
             return;
         }
+
+        $profile_parameters = array();
+
+        /* Create Profile in Register */
+        if (!filter_var($builder->getPostValue('email'), FILTER_VALIDATE_EMAIL)) {
+            $profile_parameters['gsm_phone'] = $builder->getPostValue('email');
+            $builder->setFormValue('email', $builder->getPostValue('email') . "@" . setting_value('streams::domain'));
+        }
+
         $builder->saveForm(); // Save the new user.
 
         /* @var UserInterface $user */
         $user = $builder->getFormEntry();
-        /* Create Profile in Register */
-        ProfileModel::query()->create(['user_no_id' => $user->getId()]);
+        $profile_parameters['user_no_id'] = $user->getId();
+        ProfileModel::query()->create($profile_parameters);
 
         $activator->start($user);
 
