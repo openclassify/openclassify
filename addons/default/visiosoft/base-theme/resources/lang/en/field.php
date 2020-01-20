@@ -20,4 +20,5 @@ return [
     'not_a_member_yet' => 'Not a Member Yet',
     'not_a_member_yet_message' => 'Sign up for our members to benefit from our special service',
     'forgot_password' => 'I Forgot My Password',
+    'email_or_phone_number' => 'Email Address or Phone Number'
 ];

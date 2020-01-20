@@ -14,6 +14,7 @@ use Anomaly\Streams\Platform\Model\Profile\ProfileProfileEntryModel;
 use Visiosoft\ProfileModule\Profile\ProfileModel;
 use Illuminate\Routing\Router;
 use Visiosoft\ProfileModule\Profile\Register2\Register2FormBuilder;
+use Visiosoft\ProfileModule\Profile\SignIn\SignInFormBuilder;
 use Visiosoft\ProfileModule\Profile\sites\SitesFormBuilder;
 use Visiosoft\ProfileModule\Profile\User\UserFormBuilder;
 
@@ -175,6 +176,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'updatePassword' => PasswordFormBuilder::class,
         'userProfile' => UserFormBuilder::class,
         'profile' => ProfileFormBuilder::class,
+        'signIn' => SignInFormBuilder::class,
         ProfileAdressEntryModel::class => AdressModel::class,
         ProfileProfileEntryModel::class => ProfileModel::class,
     ];

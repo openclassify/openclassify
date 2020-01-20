@@ -5,7 +5,7 @@
         <div class="col-12 text-left p-3 m-0 row justify-content-center">
 
             <div class="col-12 col-lg-5 m-3 login-section">
-                {% set form = form('login')
+                {% set form = form('signIn')
                     .redirect(app.request.get('redirect'))
                     .get() %}
                 {{ form_open({
@@ -18,7 +18,7 @@
                     </h5>
                     <div class="form-group email-field email-field_type">
                         <label class="control-label">
-                            {{ trans('visiosoft.theme.base::field.email') }}
+                            {{ trans('visiosoft.theme.base::field.email_or_phone_number') }}
                             <span class="required">*</span>
                         </label>
 

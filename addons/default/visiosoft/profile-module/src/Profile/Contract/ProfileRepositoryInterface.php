@@ -19,4 +19,6 @@ interface ProfileRepositoryInterface extends EntryRepositoryInterface
     public function findByUserID($id);
 
     public function CheckPhoneNumber($phoneNumber);
+
+    public function findPhoneNumber($phone_number);
 }

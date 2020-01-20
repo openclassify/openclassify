@@ -3,8 +3,8 @@
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Visiosoft\ProfileModule\Profile\Register2\Command\AssociateActivationRoles;
 use Visiosoft\ProfileModule\Profile\Register2\Command\SetOptions;
-use Anomaly\UsersModule\User\Validation\ValidatePassword;
 use Anomaly\UsersModule\User\UserModel;
+use Visiosoft\ProfileModule\Profile\Validation\ValidateRegister;
 
 /**
  * Class RegisterFormBuilder
@@ -47,7 +47,17 @@ class Register2FormBuilder extends FormBuilder
             'required' => true,
         ],
         'email' => [
+            'type' => 'anomaly.field_type.text',
             'instructions' => false,
+            'rules'        => [
+                'valid_register',
+            ],
+            'validators'   => [
+                'valid_register' => [
+                    'message' => false,
+                    'handler' => ValidateRegister::class,
+                ],
+            ],
         ],
         'password' => [
             'instructions' => false,
