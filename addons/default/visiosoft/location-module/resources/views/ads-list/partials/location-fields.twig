@@ -3,13 +3,13 @@
         <b>
             <span class="float-left">{{ trans('visiosoft.module.location::field.address.name') }}</span>
         </b>
-        <a href="#" class="a-sahibinden-type selected-country filter-country-btn float-right">
-            <small>{{ getCountry(setting_value('visiosoft.module.location::default_country')).name }}</small>
-        </a>
         {% set country = setting_value('visiosoft.module.location::default_country') %}
         {% if app.request.get('country') %}
             {% set country =  app.request.get('country') %}
         {% endif %}
+        <a href="#" class="a-sahibinden-type selected-country filter-country-btn float-right">
+            <small>{{ getCountry(country).name }}</small>
+        </a>
         <input name="country" value="{{ country }}" type="hidden">
     </div>
     <div class="col-12 px-0 py-1">

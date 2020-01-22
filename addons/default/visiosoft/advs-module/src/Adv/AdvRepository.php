@@ -190,15 +190,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
 
         if ($isActiveDopings) {
-            if ($param == null) {
-                $DopingModel = new DopingModel();
-                $doping_advs_ids = $DopingModel->getFeaturedAds(3);
-                $query = $query->whereIn('advs_advs.id', $doping_advs_ids);
-            }
-            $query = $query->leftJoin('dopings_dopings', function ($join) {
-                $join->on('advs_advs.id', '=', 'dopings_dopings.adv_name_id');
-                $join->where('dopings_dopings.doping_type_id', '=', 4);
-            });
+            $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->search($query, $param);
         }
         if (!empty($param['sort_by'])) {
             switch ($param['sort_by']) {
@@ -215,8 +207,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         } else {
             $query = $query->orderBy('advs_advs.created_at', 'desc');
             if ($isActiveDopings) {
-                $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
-                    'advs_advs_translations.advs_desc as advs_desc', 'dopings_dopings.id as doping');
+                $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query);
             } else {
                 $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
                     'advs_advs_translations.advs_desc as advs_desc');

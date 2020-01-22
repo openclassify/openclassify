@@ -198,7 +198,7 @@ function SelectOnClick() {
         var id = $(this).attr('data-id');
 
         if ($(this).attr('data-field') == "country") {
-            input.val(id)
+            $('input[name="country"]').val(id)
             text_html.html(input_text)
             $(".filter-location-body input[type='checkbox']").prop('checked', false);
             $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
