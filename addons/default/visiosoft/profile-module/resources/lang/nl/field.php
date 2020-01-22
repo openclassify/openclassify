@@ -133,7 +133,7 @@
       "name"      =>"berichten",
 
    ],
-   "user_no"   =>   [
+   "user"   =>   [
       "name"      =>"Gebruiker",
 
    ],

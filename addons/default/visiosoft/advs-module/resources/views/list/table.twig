@@ -20,8 +20,9 @@
                 </tr>
             </thead>
             <tbody>
+            {{ addBlock('ad-list/partials/table',{'featured_advs':featured_advs})|raw }}
             {% for adv in advs %}
-                <tr class="text-center clickable-row" data-href='{{ adv.detail_url }}'>
+                <tr class="text-center clickable-row{% if adv.doping != null %} doping_type4 {% endif %}" data-href='{{ adv.detail_url }}'>
                     <td class="justify-content-center align-middle text-center td-image">
                         <a href="">
                             <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">

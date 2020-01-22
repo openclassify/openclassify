@@ -199,8 +199,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 $join->on('advs_advs.id', '=', 'dopings_dopings.adv_name_id');
                 $join->where('dopings_dopings.doping_type_id', '=', 4);
             });
-
-            $query = $query->select('advs_advs.*', 'dopings_dopings.id as doping');
         }
         if (!empty($param['sort_by'])) {
             switch ($param['sort_by']) {
@@ -216,7 +214,13 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         } else {
             $query = $query->orderBy('advs_advs.created_at', 'desc');
-            $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name', 'advs_advs_translations.advs_desc as advs_desc');
+            if ($isActiveDopings) {
+                $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
+                    'advs_advs_translations.advs_desc as advs_desc', 'dopings_dopings.id as doping');
+            } else {
+                $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
+                    'advs_advs_translations.advs_desc as advs_desc');
+            }
         }
 
         if ($type == "list") {

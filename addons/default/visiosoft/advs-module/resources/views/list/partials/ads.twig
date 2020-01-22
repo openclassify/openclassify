@@ -2,9 +2,10 @@
 {% for adv in advs %}
     <div class="col-md-12 mb-2 list-classified">
         <a href="{{ adv.detail_url }}" class="text-dark">
-            <div class="row bg-light">
-                <div class="col-md-2 justify-content-center align-self-center border-right border-white">
-                    <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+            <div class="row bg-light{% if adv.doping != null %} doping_type4 {% endif %}">
+                <div class="col-md-2 justify-content-center align-self-center text-center border-right border-white">
+                    <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
+                         style="max-height:80px;">
                 </div>
                 <div class="col-md-7 justify-content-center align-self-center border-right border-white">
                     <div class="row">

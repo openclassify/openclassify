@@ -133,7 +133,7 @@
       "name"      =>"Mensagens",
 
    ],
-   "user_no"   =>   [
+   "user"   =>   [
       "name"      =>"Do utilizador",
 
    ],

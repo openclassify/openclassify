@@ -75,7 +75,7 @@ class MyProfileController extends PublicController
 
         if ($profiles == null) {
             $newProfile = [];
-            $newProfile ['user_no_id'] = Auth::id();
+            $newProfile ['user_id'] = Auth::id();
 
             $profileModel->getProfile()->create($newProfile);
 
@@ -163,7 +163,7 @@ class MyProfileController extends PublicController
     {
         $adressModel = new AdressModel();
         $adress = $adressModel->getAdressFirst($id);
-        if ($adress->getAttribute('user_no_id') == Auth::id()) {
+        if ($adress->getAttribute('user_id') == Auth::id()) {
             $country = CountryModel::all();
             return $this->view->make('visiosoft.module.profile::address/edit', compact('adress', 'country'));
         }
@@ -179,7 +179,7 @@ class MyProfileController extends PublicController
         $adressModel = new AdressModel();
         $adress = $adressModel->getAdressFirst($id);
 
-        if ($adress->getAttribute('user_no_id') == Auth::id()) {
+        if ($adress->getAttribute('user_id') == Auth::id()) {
 
             $New_value = $request->all();
             $New_value['country_id'] = $New_value['country'];
@@ -201,7 +201,7 @@ class MyProfileController extends PublicController
             }
             $new_adress = $request->request->all();
             unset($new_adress['action'], $new_adress['_to*ken']);
-            $new_adress['user_no_id'] = Auth::id();
+            $new_adress['user_id'] = Auth::id();
 
             $adressModel = new AdressModel();
             $adressModel->getAdress()->create($new_adress);
@@ -226,7 +226,7 @@ class MyProfileController extends PublicController
         }
         $new_adress = $request->request->all();
         unset($new_adress['action'], $new_adress['_token']);
-        $new_adress['user_no_id'] = Auth::id();
+        $new_adress['user_id'] = Auth::id();
 
         $adressModel = new AdressModel();
         $address = $adressModel->getAdress()->create($new_adress);

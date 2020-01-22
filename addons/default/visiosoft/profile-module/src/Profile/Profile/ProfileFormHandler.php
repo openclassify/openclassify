@@ -29,7 +29,7 @@ class ProfileFormHandler
             $parameters['file_id'] = $builder->getPostValue('file');
 
 
-        $profileModel->where('user_no_id', Auth::id())
+        $profileModel->where('user_id', Auth::id())
             ->update($parameters);
 
         $messages->success(trans('visiosoft.module.profile::message.success_update'));

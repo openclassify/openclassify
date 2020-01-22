@@ -96,7 +96,7 @@ class UserAuthenticator
             if (isset($credentials['username'])) {
                 $profile = $profileRepository->findProfileForLogin('gsm_phone', $credentials['username']);
                 if ($profile != null) {
-                    $find_user = $profileRepository->findUserForLogin('id', $profile->user_no_id);
+                    $find_user = $profileRepository->findUserForLogin('id', $profile->user_id);
                     $credentials['username'] = $find_user->username;
                 }
             }

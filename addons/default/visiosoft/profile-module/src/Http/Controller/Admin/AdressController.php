@@ -52,7 +52,7 @@ class AdressController extends AdminController
 
     public function adresList(AdressTableBuilder $table, $id)
     {
-        $table->setColumns(['adress_name','user_no']);
+        $table->setColumns(['adress_name','user']);
         $table->setButtons(['edit' => [
             'href' => '/admin/profile/adress/editAdress/{entry.id}',
         ],]);

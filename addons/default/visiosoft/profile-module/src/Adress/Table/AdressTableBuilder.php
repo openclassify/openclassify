@@ -23,7 +23,7 @@ class AdressTableBuilder extends TableBuilder
         'search' => [
             'filter' => 'search',
             'fields' => [
-                'user_no',
+                'user',
             ],
         ],
     ];

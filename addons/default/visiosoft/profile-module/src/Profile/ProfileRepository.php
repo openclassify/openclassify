@@ -41,7 +41,7 @@ class ProfileRepository extends EntryRepository implements ProfileRepositoryInte
 
     public function getProfile($id)
     {
-        return ProfileModel::query()->where('user_no_id', $id)->first();
+        return ProfileModel::query()->where('user_id', $id)->first();
     }
 
     public function findUserForLogin($field, $val)
@@ -50,7 +50,7 @@ class ProfileRepository extends EntryRepository implements ProfileRepositoryInte
         if ($user == null) {
             $profile = $this->findProfileForLogin('gsm_phone', $val);
             if ($profile != null) {
-                $user = UserModel::query()->find($profile->user_no_id);
+                $user = UserModel::query()->find($profile->user_id);
             }
         }
         return $user;
@@ -127,14 +127,14 @@ class ProfileRepository extends EntryRepository implements ProfileRepositoryInte
 
     public function findByUserID($id)
     {
-        return $this->model->where('user_no_id', $id)->first();
+        return $this->model->where('user_id', $id)->first();
     }
 
     public function CheckPhoneNumber($phoneNumber)
     {
         return $this->model
             ->where('gsm_phone', $phoneNumber)
-            ->where('user_no_id','!=', Auth::id())
+            ->where('user_id','!=', Auth::id())
             ->first();
     }
 
