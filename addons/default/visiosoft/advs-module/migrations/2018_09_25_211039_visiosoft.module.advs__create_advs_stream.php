@@ -12,11 +12,11 @@ class VisiosoftModuleAdvsCreateAdvsStream extends Migration
      */
     protected $stream = [
         'slug' => 'advs',
-         'title_column' => 'name',
-         'translatable' => true,
-         'trashable' => true,
-         'searchable' => false,
-         'sortable' => false,
+        'title_column' => 'name',
+        'translatable' => true,
+        'trashable' => true,
+        'searchable' => false,
+        'sortable' => false,
     ];
 
     /**
@@ -55,12 +55,8 @@ class VisiosoftModuleAdvsCreateAdvsStream extends Migration
         'online_payment',
         'is_get_adv',
         'stock',
-        'country' => [
-            'required' => true
-        ],
-        'city' => [
-            'required' => true
-        ],
+        'country',
+        'city',
         'district',
         'neighborhood',
         'village',

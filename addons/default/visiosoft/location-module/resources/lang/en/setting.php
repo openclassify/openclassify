@@ -16,4 +16,7 @@ return [
     'default_country' => [
         'name' => 'Default Country',
     ],
+    'create_ad_page_location' => [
+        'name' => 'Create Ad Page Location',
+    ],
 ];
