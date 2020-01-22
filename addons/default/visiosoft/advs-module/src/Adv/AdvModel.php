@@ -339,4 +339,17 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $ad = $this->find($id);
         $ad->update(['count_show_ad' => intval($ad->count_show_ad) + 1]);
     }
+
+    public function getRecommended($id)
+    {
+        $adv = $this->find($id);
+        if (!is_null($adv)) {
+            return $this->where('advs_advs.slug', '!=', "")
+                ->where('advs_advs.status', 'approved')
+                ->where('advs_advs.id','!=', $id)
+                ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'))
+                ->where('advs_advs.cat1', $adv->cat1)->get();
+        }
+        return null;
+    }
 }
