@@ -107,7 +107,6 @@
             </div>
             {{ form.close|raw }}
         </div>
-        </div>
     </section>
     <script>
         var default_country = "{{ setting_value('visiosoft.module.advs::default_country') }}";
@@ -119,10 +118,7 @@
         var adv_id = "{{ id }}";
     </script>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.advs::google_map_key') }}&callback="
-            type="text/javascript"></script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
-    {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
     {{ asset_add("scripts.js", "streams::js/form/form.js") }}
     {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
 

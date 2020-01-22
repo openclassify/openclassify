@@ -59,7 +59,7 @@ return [
         'name' => 'Kimlik Numarası'
     ],
     'adress_name' => [
-        'name' => 'Adres Ado'
+        'name' => 'Adres Adı'
     ],
     'adress_first_name' => [
         'name' => 'İsim'

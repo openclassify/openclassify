@@ -19,7 +19,12 @@ return [
             'default_value' => true,
         ],
     ],
-    'default_country' => [
+    'create_ad_page_location' => [
+        'type'   => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],    'default_country' => [
         'type' => 'anomaly.field_type.relationship',
         "config" => [
             "related" => \Visiosoft\LocationModule\Country\CountryModel::class,
