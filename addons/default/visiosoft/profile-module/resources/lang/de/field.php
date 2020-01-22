@@ -133,7 +133,7 @@
       "name"      =>"Mitteilungen",
 
    ],
-   "user_no"   =>   [
+   "user"   =>   [
       "name"      =>"Nutzer",
 
    ],

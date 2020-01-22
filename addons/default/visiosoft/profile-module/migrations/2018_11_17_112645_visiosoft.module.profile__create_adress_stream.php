@@ -25,7 +25,7 @@ class VisiosoftModuleProfileCreateAdressStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'user_no',
+        'user',
         'adress_name' => [
             'required' => true,
         ],

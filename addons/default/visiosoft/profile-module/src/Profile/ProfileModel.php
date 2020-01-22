@@ -10,7 +10,7 @@ class ProfileModel extends ProfileProfileEntryModel implements ProfileInterface
     {
         if($id != null)
         {
-            return $this->query()->where('user_no_id',$id);
+            return $this->query()->where('user_id',$id);
         }
         return $this->query();
     }

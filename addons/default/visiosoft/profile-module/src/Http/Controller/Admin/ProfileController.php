@@ -35,14 +35,14 @@ class ProfileController extends AdminController
     public function edit(ProfileFormBuilder $form,$id)
     {
         $users = UsersUsersEntryModel::find($id);
-        $profiles = ProfileModel::query()->where('user_no_id',$id)->orderBy("id")->first();
+        $profiles = ProfileModel::query()->where('user_id',$id)->orderBy("id")->first();
         if($profiles == null)
         {
             $newProfile = [];
-            $newProfile ['user_no_id'] = $id;
+            $newProfile ['user_id'] = $id;
             $newProfile ['country_id'] = null;
             ProfileModel::query()->create($newProfile);
-            $profiles = ProfileModel::query()->where('user_no_id',$id)->orderBy("id")->first();
+            $profiles = ProfileModel::query()->where('user_id',$id)->orderBy("id")->first();
         }
         $country = CountryModel::all();
         return $this->view->make('visiosoft.module.profile::admin.profile.edit',compact('users','profiles','country','form'));
@@ -81,7 +81,7 @@ class ProfileController extends AdminController
         $all['file_id'] = $all['file'];
         unset($all['file']);
         unset($all['_token'],$all['action']);
-        ProfileModel::query()->where('user_no_id',$id)->update($all);
+        ProfileModel::query()->where('user_id',$id)->update($all);
         $message = [];
         $message[] = trans('visiosoft.module.profile::message.success_update');
         return redirect('admin/profile')->with('success', $message);

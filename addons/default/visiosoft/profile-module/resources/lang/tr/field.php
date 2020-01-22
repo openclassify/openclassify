@@ -100,7 +100,7 @@ return [
     'messages' => [
         'name' => 'Mesajlar'
     ],
-    'user_no' => [
+    'user' => [
         'name' => 'Kullanıcı'
     ],
 

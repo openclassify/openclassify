@@ -22,9 +22,9 @@ class AdressModel extends ProfileAdressEntryModel implements AdressInterface
     {
         if($id != null)
         {
-            return $this->query()->where('user_no_id',$id)->get();
+            return $this->query()->where('user_id',$id)->get();
         }
-        return $this->query()->where('user_no_id',Auth::id())->get();
+        return $this->query()->where('user_id',Auth::id())->get();
 
     }
 

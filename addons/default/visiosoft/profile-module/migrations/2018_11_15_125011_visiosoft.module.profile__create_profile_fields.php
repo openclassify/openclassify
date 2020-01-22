@@ -14,7 +14,7 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
      */
     protected $fields = [
         'name' => 'anomaly.field_type.text',
-        'user_no' => [
+        'user' => [
             'type' => 'anomaly.field_type.relationship',
             'config' => [
                 'related' => UserModel::class,

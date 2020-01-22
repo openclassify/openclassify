@@ -21,7 +21,8 @@ return [
     ],
     'icon' => [
         'name' => 'Icon'
-],
+    ],
 
     'please_wait' => 'Please wait.Deleting Sub Categories',
+    'category_selection' => 'Category Selection',
 ];

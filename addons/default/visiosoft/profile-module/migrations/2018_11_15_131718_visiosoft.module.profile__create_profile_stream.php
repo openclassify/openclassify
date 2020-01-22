@@ -25,7 +25,7 @@ class VisiosoftModuleProfileCreateProfileStream extends Migration
      * @var array
      */
     protected $assignments = [
-        'user_no',
+        'user',
         'file',
         'email' => [
             'required' => true

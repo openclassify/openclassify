@@ -54,7 +54,7 @@ class Register2FormHandler
 
         /* @var UserInterface $user */
         $user = $builder->getFormEntry();
-        $profile_parameters['user_no_id'] = $user->getId();
+        $profile_parameters['user_id'] = $user->getId();
         ProfileModel::query()->create($profile_parameters);
 
         $activator->start($user);
