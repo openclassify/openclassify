@@ -151,15 +151,6 @@ return [
             'mode' => 'upload',
         ]
     ],
-    'currencies' => [
-        "type" => "anomaly.field_type.checkboxes",
-        'bind' => 'adv.currencies',
-        'env' => 'ADV_CURRENCIES',
-        'config' => [
-            "default_value" => 'a:1:{i:0;s:1:"0";}',
-            'options' => Config::get('streams::currencies.enabled')
-        ]
-    ],
     'free_currencyconverterapi_key' => [
         "type" => "anomaly.field_type.text",
         'bind' => 'adv.free_currencyconverterapi_key',

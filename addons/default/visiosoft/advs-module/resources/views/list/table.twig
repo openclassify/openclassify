@@ -36,7 +36,7 @@
                         </div>
                     </td>
                     <td class="justify-content-center align-middle">
-                        <b>{{ adv.price.currency }}</b>
+                        <b>{{ adv.price.currency(null,'currency',false) }}</b>
                     </td>
                     <td class="justify-content-center align-middle">
                         <small>{{ adv.created_at|date("d/m/Y") }}</small>
