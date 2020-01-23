@@ -11,6 +11,7 @@ use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
+use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
@@ -151,6 +152,14 @@ class AdvsController extends AdminController
                         'filter' => 'select',
                         'query' => UserFilterQuery::class,
                         'options' => $users,
+                    ],
+                    'status' => [
+                        'filter'  => 'select',
+                        'query'   => StatusFilterQuery::class,
+                        'options' => [
+                            'expired'   => 'visiosoft.module.advs::field.status.option.expired',
+                            'unpublished' => 'visiosoft.module.advs::field.status.option.unpublished',
+                        ],
                     ]
                 ])
         );
