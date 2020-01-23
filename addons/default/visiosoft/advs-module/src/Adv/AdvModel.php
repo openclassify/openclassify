@@ -47,16 +47,16 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             return $isActive->enabled;
     }
 
-    public function is_active()
+    public function is_active($id)
     {
         $isActive = $this->query()
-            ->where('advs_advs.id', $this->id)
+            ->where('advs_advs.id', $id)
             ->where('advs_advs.slug', '!=', "")
             ->first();
         if ($isActive->status != 'approved') {
             return 0;
-        } else
-            return true;
+        }
+        return 1;
     }
 
     public function getAdv($id = null, $nullable_ad = false)
@@ -273,11 +273,11 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $adv = $this->getAdv($id);
         $stock = $adv->stock;
         if ($stock == NULL or $stock == 0) {
-            return "false";
+            return 0;
         } elseif ($stock < $quantity) {
-            return "false";//Adet yetmiyorsa
+            return 0;//Adet yetmiyorsa
         } else {
-            return "true";
+            return 1;
         }
 
     }
@@ -346,7 +346,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         if (!is_null($adv)) {
             return $this->where('advs_advs.slug', '!=', "")
                 ->where('advs_advs.status', 'approved')
-                ->where('advs_advs.id','!=', $id)
+                ->where('advs_advs.id', '!=', $id)
                 ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'))
                 ->where('advs_advs.cat1', $adv->cat1)->get();
         }

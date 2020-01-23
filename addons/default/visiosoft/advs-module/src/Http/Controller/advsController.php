@@ -887,7 +887,7 @@ class AdvsController extends PublicController
         $status = $advmodel->stockControl($id, $quantity);
 
         $response = array();
-        if ($status == "true") {
+        if ($status == 1) {
             $response['newQuantity'] = $advRepository->getQuantity($quantity, $type, $adv);
 
         } else {
