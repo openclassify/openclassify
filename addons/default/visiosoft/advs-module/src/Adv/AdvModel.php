@@ -352,4 +352,11 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         }
         return null;
     }
+
+    public function authControl()
+    {
+        if (!Auth::user()) {
+            redirect('/login?redirect=' . url()->current())->send();
+        }
+    }
 }

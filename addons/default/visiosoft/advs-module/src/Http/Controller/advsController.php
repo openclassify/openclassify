@@ -163,7 +163,6 @@ class AdvsController extends PublicController
 
             foreach ($featured_advs as $index => $ad) {
                 $featured_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
-                $featured_advs[$index]->price = number_format($ad->price);
                 $featured_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
             }
 
