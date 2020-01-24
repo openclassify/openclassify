@@ -83,7 +83,11 @@ return [
         'name' => 'Currency'
     ],
     'status' => [
-        'name' => 'Status'
+        'name' => 'Status',
+        'option' => [
+            'expired' => 'Expired',
+            'unpublished' => 'Unpublished'
+        ]
     ],
     'pending_adv' => [
         'name' => 'Pending Ads'
