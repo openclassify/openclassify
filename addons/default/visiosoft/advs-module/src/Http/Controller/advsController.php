@@ -301,11 +301,6 @@ class AdvsController extends PublicController
         }
         $this->event->dispatch(new viewAd($adv));//view ad
 
-        $isActiveqrContact = $this->adv_model->is_enabled('qrcontact');
-        if ($isActiveqrContact) {
-            $qrModel = new QrModel();
-            $qrSRC = $qrModel->source($adv);
-        }
         $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
         $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
         $this->template->set('meta_title', $adv->name . "|" . end($categories)['name']);
