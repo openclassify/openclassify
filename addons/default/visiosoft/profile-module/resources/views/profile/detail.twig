@@ -56,6 +56,7 @@
                                role="tab" aria-controls="nav-password" aria-selected="false">
                                 {{ trans('visiosoft.module.profile::field.password.name') }}
                             </a>
+                            {{ addBlock('profile/detail/content-tab')|raw }}
                         </div>
                     </nav>
 
@@ -168,6 +169,7 @@
                             </div>
                         </div>
                         {{ passwordForm.close|raw }}
+                        {{ addBlock('profile/detail/content')|raw }}
                     </div>
                     <!-- User Profile Form Section-->
 
