@@ -1,8 +1,8 @@
 {{ addBlock('ad-list/partials/ads',{'featured_advs':featured_advs})|raw }}
 {% for adv in advs %}
-    <div class="col-md-12 mb-2 list-classified">
+    <div class="col-md-12 mb-2 list-classified bg-light">
         <a href="{{ adv.detail_url }}" class="text-dark">
-            <div class="row bg-light{% if adv.doping != null %} doping_type4 {% endif %}">
+            <div class="row{% if adv.doping != null %} doping_type4 {% endif %}">
                 <div class="col-md-2 justify-content-center align-self-center text-center border-right border-white">
                     <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
                          style="max-height:80px;">
@@ -10,7 +10,7 @@
                 <div class="col-md-7 justify-content-center align-self-center border-right border-white">
                     <div class="row">
                         <div class="col-md-12">
-                            <p>{{ adv.name }}</p>
+                            <p class="mb-0">{{ adv.name }}</p>
                         </div>
                         <div class="col-md-12 text-truncate">
                             <small class="text-muted">{{ adv.cat1_name }}, {{ adv.cat2_name }}</small>
@@ -31,5 +31,11 @@
                 </div>
             </div>
         </a>
+        <div class="row mb-2">
+            <div class="col-md-2"></div>
+            <div class="col-md-7 justify-content-center align-self-center border-right border-white">
+                {{ addBlock('list/extra-actions', {'ad': adv})|raw }}
+            </div>
+        </div>
     </div>
 {% endfor %}
