@@ -46,8 +46,16 @@ class Register2FormHandler
 
         /* Create Profile in Register */
         if (!filter_var($builder->getPostValue('email'), FILTER_VALIDATE_EMAIL)) {
+
+            $domain = setting_value('streams::domain');
+
+            $domain = str_replace('https://', '', $domain);
+            $domain = str_replace('http://', '', $domain);
+            $domain = str_replace('/', '', $domain);
+            $domain = str_replace('www', '', $domain);
+
             $profile_parameters['gsm_phone'] = $builder->getPostValue('email');
-            $builder->setFormValue('email', $builder->getPostValue('email') . "@" . setting_value('streams::domain'));
+            $builder->setFormValue('email', $builder->getPostValue('email') . "@" . $domain);
         }
 
         $builder->saveForm(); // Save the new user.

@@ -207,7 +207,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         } else {
             $query = $query->orderBy('advs_advs.created_at', 'desc');
             if ($isActiveDopings) {
-                $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query);
+                $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query, $param);
             } else {
                 $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
                     'advs_advs_translations.advs_desc as advs_desc');
