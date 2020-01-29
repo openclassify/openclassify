@@ -2,9 +2,9 @@
 Dropzone.autoDiscover = false;
 $("div#myDrop").dropzone({url: "/file/post"});
 
+var uploaded = $('input[name="files"]').val().split(',').map(Number);
 
 $(function () {
-    var uploaded = [];
 
     var uploader = $('#upload');
     var element = $('.dropzone');
@@ -78,6 +78,8 @@ $(function () {
         file.previewElement.querySelector('[data-dz-uploadprogress]').setAttribute('class', 'progress progress-success');
 
         setTimeout(function () {
+
+            addAppendByData(uploaded[0])
             file.previewElement.remove();
         }, 500);
     });
@@ -95,48 +97,40 @@ function addAppendByData(data_id) {
     return $('a[data-id=' + data_id + ']').parent().parent().append('<div class="main-image image-eye-' + data_id + '"><i class="fa fa-eye "></i></div>');
 }
 
-$('.panel-table').on('click', '[data-dismiss="file"]', function (e) {
-    var arr = $('input[name="files"]').val().split(',');
-    arr.splice(arr.indexOf(String($(this).data('file'))), 1);
-    $('.panel-table').load(
-        REQUEST_ROOT_PATH + '/streams/media-field_type/selected?uploaded=' + arr.join(','),
-        function () {
-            $('input[name="files"]').val(arr.join(','))
-        }
-    );
-});
 
+function deleteImage(id) {
+    var key_item = $.inArray(id, uploaded);
+    uploaded.splice(key_item, 1);
+    $('input[name="files"]').val(uploaded.join(','))
+    $('.imageList').find('div[data-id="' + id + '"]').remove()
+}
 
-$('a[data-action="rotate-image"]').click(function () {
-    var event = $(this).parent('div').parent('div').find('img');
-    var img = event.attr('src');
+function rotateImage(id) {
+    var img = $('.ads-box-image[data-id="' + id + '"]').find('img')
+    var img_url = img.attr('src');
     $.ajax({
         type: 'get',
         dataType: "json",
-        data: {img_url: img},
+        data: {img_url: img_url},
         url: '/image/rotate',
         success: function (response) {
             if (response.status == "success") {
-                hideLoader()
-                var newURL = updateQueryStringParameter(img, 't', Math.floor(Math.random() * 100000000));
-                event.attr('src', newURL);
+                var newURL = updateQueryStringParameter(img_url, 't', Math.floor(Math.random() * 100000000));
+                img.attr('src', newURL);
             }
-        },
-        beforeSend: function () {
-            showLoader()
         }
     });
-});
+}
 
 
 //Set Main İmage
 function setMain(id) {
-    var imageList = $('[name="files"]').val().split(',');
-    $('.image-eye-' + imageList[0]).remove();
-    if (imageList.length != 1) {
-        imageList.splice($.inArray(id, imageList), 1);
-        $('[name="files"]').val(id + ',' + imageList.join(','));
-    }
+    $('.image-eye-' + uploaded[0]).remove();
+    var key_item = $.inArray(id, uploaded);
+    uploaded.splice(key_item, 1);
+    uploaded.unshift(id);
+    $('input[name="files"]').val(uploaded.join(','))
+
     addAppendByData(id);
 }
 

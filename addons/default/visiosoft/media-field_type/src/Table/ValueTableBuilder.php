@@ -52,31 +52,37 @@ class ValueTableBuilder extends TableBuilder
      * @var array
      */
     protected $buttons = [
-        'window'   => [
+        'window' => [
             'text' => 'visiosoft.field_type.media::button.showOn',
             'icon' => 'fa fa-eye',
             'type' => 'success',
             'data-id' => 'entry.id',
+            'class' => 'col-4',
             'attributes' => [
                 'id' => 'setimage',
                 'onclick' => 'setMain({entry.id})'
             ],
         ],
-        'rotate'   => [
-            'target'     => '_blank',
+        'rotate' => [
+            'target' => '_blank',
             'icon' => 'fas fa-redo',
             'type' => 'info',
             'text' => '',
+            'class' => 'col-4',
             'attributes' => [
                 'id' => 'setimage',
-                'data-action' => 'rotate-image',
+//                'data-action' => 'rotate-image',
+                'onclick' => 'rotateImage({entry.id})',
             ],
         ],
-        'remove' => [
-            'data-dismiss' => 'file',
-            'data-file'    => 'entry.id',
+        'deleteImage' => [
+            'target' => '_blank',
+            'icon' => 'fas fa-trash',
+            'type' => 'danger',
             'text' => '',
+            'class' => 'col-4 deleteImage',
             'attributes' => [
+                'onclick' => 'deleteImage({entry.id})',
                 'id' => 'setimage',
             ],
         ],
@@ -88,10 +94,10 @@ class ValueTableBuilder extends TableBuilder
      * @var array
      */
     protected $options = [
-        'limit'              => 9999,
-        'show_headers'       => false,
-        'sortable_headers'   => false,
-        'table_view'         => 'visiosoft.field_type.media::table/table',
+        'limit' => 9999,
+        'show_headers' => false,
+        'sortable_headers' => false,
+        'table_view' => 'visiosoft.field_type.media::table/table',
         'no_results_message' => 'visiosoft.field_type.media::message.no_files_selected',
     ];
 
@@ -156,7 +162,7 @@ class ValueTableBuilder extends TableBuilder
     /**
      * Set the field type.
      *
-     * @param  MediaFieldType $fieldType
+     * @param MediaFieldType $fieldType
      * @return $this
      */
     public function setFieldType(MediaFieldType $fieldType)
@@ -192,7 +198,7 @@ class ValueTableBuilder extends TableBuilder
     /**
      * Set the table entries.
      *
-     * @param  \Illuminate\Support\Collection $entries
+     * @param \Illuminate\Support\Collection $entries
      * @return $this
      */
     public function setTableEntries(\Illuminate\Support\Collection $entries)
