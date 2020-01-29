@@ -1,30 +1,29 @@
-{% if app.request.get('user') != null or app.request.get('user') != "" %}
-    {% set store = entries('store','store').where('user_id', user.id).first() %}
-    {% if store is null %}
-        {% set user = entries('store','user').where('user_id', user.id).first() %}
-        {% set store = user.store %}
+{% if store %}
+    {% if store.store_banner is null %}
+        {% set background_image = img('visiosoft.module.advs::images/user_section_back.png').url %}
+    {% else %}
+        {% set background_image = store.store_banner.url %}
     {% endif %}
-    {% if store is not null %}
-        {% if store.store_banner is null %}
-            {% set background_image = img('visiosoft.module.advs::images/user_section_back.png').url %}
-        {% else %}
-            {% set background_image =  store.store_banner.url %}
-        {% endif %}
-        <div class="col-md-12 upper-list-banner" style="background-image: url('{{ background_image }}');">
-            <div class="row">
-                <div class="col-md-3 col-xs-3">
-                    <div class="card m-4">
-                        {% if store.file is null %}
-                            <img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}" class="card-img-top">
-                        {% else %}
-                            <img src="{{ store.file.url }}" class="card-img-top">
-                        {% endif %}
-                        <div class="card-body">
-                            <h5 class="card-title text-center mb-0">{{ store.name }}</h5>
-                        </div>
+    <div class="upper-list-banner" style="background-image: url('{{ background_image }}');">
+        <div class="row">
+            <div class="col-md-3 col-xs-3">
+                <div class="card m-4">
+                    {% if store.file is null %}
+                        <img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}" class="card-img-top">
+                    {% else %}
+                        <img src="{{ store.file.url }}" class="card-img-top">
+                    {% endif %}
+                    <div class="card-body">
+                        <h5 class="card-title text-center mb-0">{{ store.name }}</h5>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+    {% if store.user_id == auth_user().id %}
+        <div class="p-2 bg-secondary rounded my-2">
+            <a href="{{ url_route('store::edit', [store.slug, store.id]) }}" class="btn btn-primary text-light">Edit</a>
+            <a href="{{ url_route('store::add-user', [store.slug]) }}" class="btn btn-success text-light">Add Users</a>
         </div>
     {% endif %}
 {% endif %}
