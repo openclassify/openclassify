@@ -19,6 +19,9 @@
 
                     <div class="input-wrapper">
                         {{ form.fields.first_name.input|raw }}
+                        {{ form.fields.username.setValue(random()).setAttributes({
+                            'class' :'hidden',
+                        }).input|raw }}
                     </div>
                 </div>
             </div>
