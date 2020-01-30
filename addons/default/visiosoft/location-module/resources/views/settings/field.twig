@@ -1,0 +1,8 @@
+<script>
+    var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}"
+    var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}"
+    var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}"
+    var default_neighborhood = "{{ setting_value('visiosoft.module.location::default_neighborhood') }}"
+    var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+</script>
+{{ asset_add("scripts.js","visiosoft.module.location::js/settings.js") }}

@@ -2,18 +2,38 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Anasayfa lokasyon gösterimi',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Listeleme sayfası lokasyon gösterimi',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Detay sayfası lokasyon gösterimi',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Arama Lokasyon buton gösterimi',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Varsayılan Ülke',
+    ],
+    'default_city' => [
+        'name' => 'Varsayılan İl',
+    ],
+    'default_district' => [
+        'name' => 'Varsayılan İlçe',
+    ],
+    'default_neighborhood' => [
+        'name' => 'Varsayılan Mahalle',
+    ],
+    'google_map_key' => [
+        'name' => 'Google Maps Api Key',
+    ],
+
+    'map_coordinates_long' => [
+        'name' => 'Varsayılan Long',
+    ],
+
+    'map_coordinates_lat' => [
+        'name' => 'Varsayılan Lang',
     ],
 ];
