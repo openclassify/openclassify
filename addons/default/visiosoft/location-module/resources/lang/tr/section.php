@@ -16,4 +16,7 @@ return [
     'village' => [
         'title' => 'Köy',
     ],
+    'general' => 'Genel',
+    'map' => 'Harita',
+    'setting' => 'Ayarlar',
 ];

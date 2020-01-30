@@ -16,4 +16,7 @@ return [
     'village' => [
         'title' => 'Village',
     ],
+    'general' => 'General',
+    'map' => 'Map',
+    'setting' => 'Setting',
 ];

@@ -74,63 +74,12 @@ return [
         ],
     ],
 
-    'default_country' => [
-        'type' => 'anomaly.field_type.relationship',
-        'bind' => 'adv.default_country',
-        'env' => 'ADV_COUNTRY',
-        'config' => [
-            'related' => CountryModel::class,
-            "default_value" => 212,
-        ]
-    ],
-    'default_city' => [
-        'type' => 'anomaly.field_type.relationship',
-        'bind' => 'adv.default_city',
-        'env' => 'ADV_CITY',
-        'config' => [
-            'related' => LocationCitiesEntryModel::class,
-            "default_value" => 34,
-        ]
-    ],
-    'default_district' => [
-        'type' => 'anomaly.field_type.relationship',
-        'bind' => 'adv.default_district',
-        'env' => 'ADV_DISTRICT',
-        'config' => [
-            'related' => LocationDistrictsEntryModel::class,
-            "default_value" => 1091,
-        ]
-    ],
-    'google_map_key' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.google_map_key',
-        'env' => 'ADV_MAP_KEY',
-        'config' => [
-            'default_value' => 'AIzaSyCAGc0z8kg9rKGVy2FizFKoz0FoWWWzoGQ',
-        ],
-    ],
     'google_statistic_code' => [
         'type' => 'anomaly.field_type.editor',
         'bind' => 'adv.google_statistic_code',
         'env' => 'ADV_GOOGLE_STATISTIC_CODE',
         'config' => [
             'default_value' => '',
-        ],
-    ],
-    'map_coordinates_long' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.map_coordinates_long',
-        'env' => 'ADV_MAP_LONG',
-        'config' => [
-            'default_value' => '28.74558607285155',
-        ],
-    ],
-    'map_coordinates_lat' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.map_coordinates_lat',
-        'env' => 'ADV_MAP_LAT',
-        'config' => [
-            'default_value' => '40.97817786299617',
         ],
     ],
     'logo' => [
