@@ -1,8 +1,10 @@
-.ads-responsive-image {
-    width: 152px;
-}
+
 .ads-box-image {
     padding: 5px;
+}
+
+.ads-responsive-image {
+    height: 100px!important;
 }
 .ads-box-image:hover {
     padding: 5px;
@@ -15,7 +17,7 @@
 .main-image {
     background-color: #5cb85c;
     height: 25px;
-    width: 25px;
+    width: 40px;
     color: #fff;
     position: absolute;
     z-index: 15;
@@ -23,16 +25,13 @@
     top: 0px;
 }
 #setimage {
-    margin: -3px;
-    padding: 0px 10px;
+    padding: 9px 10px;
+    color: white;
     border-radius: 0px;
+    font-weight: bold;
 }
 /*Mobil Modu*/
 @media only screen and (max-width: 600px) {
-    .ads-responsive-image {
-        width: 80%;
-        height: 20vh;
-    }
     .ads-box-image {
         padding: 5px;
         margin: 10px;
@@ -44,10 +43,6 @@
 
 /*Tablet Modu*/
 @media only screen and (max-width: 767px) and (min-width: 601px) {
-    .ads-responsive-image {
-        width: 50%;
-        height: 20vh;
-    }
     #setimage {
         width: 17%;
     }
