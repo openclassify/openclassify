@@ -11,7 +11,7 @@
 
             {% include "visiosoft.module.advs::list/partials/user-section" %}
 
-            <div class="row my-5">
+            <div class="row my-3">
                 <div class="col-md-3">
                     {% include "visiosoft.module.advs::list/partials/list-filter" %}
                 </div>
@@ -25,7 +25,6 @@
                             </div>
                             <div class="col-md-6 my-2">
                                 {% include "visiosoft.module.advs::list/partials/display-mode" %}
-
                             </div>
                         </div>
                         {{ addBlock('ads-list/row',{'topfields':topfields})|raw }}
@@ -35,6 +34,8 @@
                             {% endblock %}
                         </div>
                         {% include "visiosoft.module.advs::list/partials/pagination" %}
+
+                        {{ addBlock('ads-list/row-bottom')|raw }}
 
                         {#                        <div class="category-tabs"></div>#}
                     </div>

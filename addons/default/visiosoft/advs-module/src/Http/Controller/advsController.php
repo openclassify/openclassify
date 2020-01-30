@@ -51,7 +51,6 @@ use Anomaly\Streams\Platform\Model\Customfields\CustomfieldsCustomFieldAdvsEntry
 use Illuminate\Contracts\Events\Dispatcher;
 use Visiosoft\QrcontactModule\Qr\QrModel;
 use Visiosoft\StoreModule\Ad\AdModel;
-use Visiosoft\StoreModule\User\UserModel;
 
 
 class AdvsController extends PublicController

@@ -38,6 +38,7 @@ class Register2FormBuilder extends FormBuilder
      * @var array
      */
     protected $fields = [
+        'username',
         'first_name' => [
             'instructions' => false,
             'required' => true,
@@ -49,10 +50,10 @@ class Register2FormBuilder extends FormBuilder
         'email' => [
             'type' => 'anomaly.field_type.text',
             'instructions' => false,
-            'rules'        => [
+            'rules' => [
                 'valid_register',
             ],
-            'validators'   => [
+            'validators' => [
                 'valid_register' => [
                     'message' => false,
                     'handler' => ValidateRegister::class,
