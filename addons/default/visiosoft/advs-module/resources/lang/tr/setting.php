@@ -18,11 +18,8 @@ return [
     ],
     'favicon' => [
         'name' => 'Favicon',
-    ],
-    'contact_mail' => [
-        'name' => 'Mail ile iletişime geçin',
-        'warning'      => 'Otomatik eklenen sitename <strong>info</strong> @sitename',
-    ],'map_coordinates_long' => [
+    ]
+    ,'map_coordinates_long' => [
         'name' => 'Harita Uzun Koordinat',
     ],
     'map_coordinates_lat' => [
