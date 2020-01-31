@@ -21,5 +21,5 @@ return [
     'not_a_member_yet_message' => 'Üyelerimize özel hizmetlerimizden faydalanabilmek için üye olun',
     'forgot_password' => 'Şifremi Unuttum',
     'email_or_phone_number' => 'E-Posta Adresiniz veya Telefon Numaranız',
-    'phone_number' => 'Telefon Numarası',
+    'phone_number' => 'Phone Number',
 ];
