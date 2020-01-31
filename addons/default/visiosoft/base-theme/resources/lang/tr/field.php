@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'latest_ads' =>  'Son Eklenenler',
-    'show_all' =>  'Tümünü Göster',
+    'latest_ads' => 'Son Eklenenler',
+    'show_all' => 'Tümünü Göster',
     'login' => [
         'name' => 'Login',
     ],
