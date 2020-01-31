@@ -34,6 +34,6 @@ return [
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Varsayılan Lang',
+        'name' => 'Varsayılan Lat',
     ],
 ];
