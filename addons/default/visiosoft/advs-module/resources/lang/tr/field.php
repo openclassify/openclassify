@@ -83,7 +83,11 @@ return [
         'name' => 'Para birimi'
     ],
     'status' => [
-        'name' => 'durum'
+        'name' => 'durum',
+        'option' => [
+            'expired' => 'Expired',
+            'unpublished' => 'Unpublished'
+        ]
     ],
     'pending_adv' => [
         'name' => 'Bekleyen İlanlar'
