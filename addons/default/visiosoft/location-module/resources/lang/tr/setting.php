@@ -16,6 +16,9 @@ return [
     'default_country' => [
         'name' => 'Varsayılan Ülke',
     ],
+    'create_ad_page_location' => [
+        'name' => 'Create Ad Page Location',
+    ],
     'default_city' => [
         'name' => 'Varsayılan İl',
     ],
@@ -25,6 +28,7 @@ return [
     'default_neighborhood' => [
         'name' => 'Varsayılan Mahalle',
     ],
+
     'google_map_key' => [
         'name' => 'Google Maps Api Key',
     ],
