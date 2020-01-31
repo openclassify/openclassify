@@ -24,7 +24,7 @@ $(document).ready(function () {
                     var btn = '<button type="submit" class="btn-1">'+response['nextBtn']+'</button>'
                     if(response['link'] != "")
                     {
-                        btn = "<a class='btn btn-primary' href='"+response['link']+"' role='button'>"+response['nextBtn']+"</a>";
+                        btn = "<a class='btn btn-primary' href='/profile' role='button'>"+response['nextBtn']+"</a>";
                     }
                     $('.cat-item-3').html(
                         '<div class="section next-stap post-option p-2">' +
