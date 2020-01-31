@@ -65,7 +65,7 @@ return [
         'name' => 'İsim'
     ],
     'adress_last_name' => [
-        'name' => 'Soyisim'
+        'name' => 'Soyad'
     ],
     'actions' => [
         'name' => 'İşlemler'
@@ -77,7 +77,7 @@ return [
         'name' => 'Posta Kodu'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Gsm Numarası'
+        'name' => 'Cep Telefonu'
     ],
     'adress_land_phone' => [
         'name' => 'Sabit Telefon'
@@ -183,7 +183,7 @@ return [
         'name' => 'Devre Dışı'
     ],
     'pending_admin' => [
-        'name' => 'Admin Onay Sürecinde'
+        'name' => 'Onayda Bekliyor'
     ],
     'menu_messages' => [
         'name' => 'Mesajlar'
