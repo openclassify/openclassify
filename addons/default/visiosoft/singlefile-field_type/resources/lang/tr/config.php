@@ -4,7 +4,7 @@ return [
     'folders' => [
         'name'         => 'Klasörler',
         'instructions' => 'Bu alan için hangi klasörlerin mevcut olduğu belirtin. Bütün klasörleri göstermek için boş bırakın.',
-        'warning'      => 'Varolan klasör izinleri, seçili klasörler üzerinde üstünlük gösterir',
+        'warning'      => 'Varolan klasör izinleri, seçili klasörler üzerinde üstünlük gösterir.',
     ],
     'max'     => [
         'name'         => 'Maks Yükleme Boyutu',
