@@ -11,7 +11,7 @@ return [
         'name' => 'Özel isim'
     ],
     'files' => [
-        'name' => 'görünüm'
+        'name' => 'Resim'
     ],
     'seo_keyword' => [
         'name' => 'Seo Anahtar Kelimeler'
@@ -20,7 +20,7 @@ return [
         'name' => 'Seo Açıklaması'
     ],
     'icon' => [
-        'name' => 'Icon'
+        'name' => 'İkon'
     ],
 
     'please_wait' => 'Lütfen bekleyin. Alt Kategoriler Siliniyor',
