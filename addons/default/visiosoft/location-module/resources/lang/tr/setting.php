@@ -38,6 +38,6 @@ return [
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Varsayılan Lat',
+        'name' => 'Default Lat',
     ],
 ];
