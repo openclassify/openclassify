@@ -20,16 +20,16 @@ return [
         'name' => 'Fiyat'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'Tarih'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'Fotoğraf'
     ],
     'video' => [
         'name' => 'Video'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'Harita'
     ],
     'stock' => [
         'name' => 'Stok'
@@ -41,22 +41,22 @@ return [
         'name' => 'Online ödeme'
     ],
     'city' => [
-        'name' => 'Kent'
+        'name' => 'Şehir'
     ],
     'country' => [
-        'name' => 'ülke'
+        'name' => 'Ülke'
     ],
     'district' => [
         'name' => 'İlçe'
     ],
     'neighborhood' => [
-        'name' => 'Komşuluk'
+        'name' => 'Mahalle'
     ],
     'village' => [
         'name' => 'köy'
     ],
     'files' => [
-        'name' => 'Görüntüler'
+        'name' => 'Resimler'
     ],
     'cat1' => [
         'name' => 'Ana Kategori'
@@ -85,8 +85,8 @@ return [
     'status' => [
         'name' => 'durum',
         'option' => [
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished'
+            'expired' => 'Süresi doldu',
+            'unpublished' => 'Pasif'
         ]
     ],
     'pending_adv' => [
@@ -96,13 +96,13 @@ return [
         'name' => 'Arşivlenmiş İlanlar'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Bitiş Saati'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'Kapak fotoğrafı'
     ],
     'favs_adv' => [
-        'name' => 'Fav İlanları'
+        'name' => 'Favori İlanlar'
     ],
     'my_adv' => [
         'name' => 'İlan'
@@ -133,10 +133,10 @@ return [
     'all_categories' => 'Tüm Kategoriler',
     'location' => 'Lokasyon',
     'send_message' => 'Mesaj gönder',
-    'phone_gsm' => 'GSM Telefonu',
-    'phone_office' => 'Ofis telefonu',
+    'phone_gsm' => 'Cep Telefonu',
+    'phone_office' => 'Sabit telefon',
     'add_to_favorites' => "Favorilere ekle",
-    'send' => 'gönder',
+    'send' => 'Gönder',
     'search_name' => 'Arama Adı',
     'my_favorite_searches' => 'Favori Aramalar',
     'search_desc' => 'Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.',
@@ -177,7 +177,7 @@ return [
     'send_us_your_feedback' => 'Bize Görüşlerinizi Gönderin',
     'online_shopping' => 'Mağaza',
     'approved' => 'Başarıyla Onaylandı',
-    'extended' => 'Extended Successfully',
+    'extended' => 'Başarıyla Uzatıldı',
     'declined' => 'Başarıyla Reddedildi',
     'search_on_map' => 'Haritada Ara',
     'post_free_ad' => 'Ücretsiz İlan Ver',
@@ -185,17 +185,17 @@ return [
     'select_a_sub_category' => 'Bir alt kategori seçiniz',
     'all_dopings_added' => 'Bu İlan için tüm doping türleri eklenmiştir.',
     'is_get_adv' => [
-        'name' => 'ALMAK'
+        'name' => 'GET'
     ],
     'corporate_info' => 'Kurumsal Bilgiler',
     'featured_ads' => "Öne Çıkan İlanlar",
-    'trending_ads' => 'Trendind Ads',
+    'trending_ads' => 'Popüler İlanlar',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
     ],
     'total' => 'Genel Toplam',
-    'quantity' => 'miktar',
+    'quantity' => 'Adet',
     'view_cart' => 'Sepeti Görüntüle',
     'no_ads' => 'İlansız!',
     'show_display_mode' => [
@@ -207,13 +207,13 @@ return [
         'price' => 'Fiyat',
         'publish_at' => 'İlan Tarihi',
         'location_city' => 'Şehir',
-        'location_country' => 'ülke',
+        'location_country' => 'Ülke',
     ],
     'show_list_view' => [
         'name' => 'Liste',
     ],
     'show_table_view' => [
-        'name' => 'tablo',
+        'name' => 'Tablo',
     ],
     'showcase' => [
         'name' => 'Vitrin',
@@ -232,7 +232,7 @@ return [
     ],
     'edit_category' => 'Kategori Düzenle',
     'max' => [
-        'name' => 'Maks',
+        'name' => 'Maksimum',
     ],
     'min' => [
         'name' => 'Min',
