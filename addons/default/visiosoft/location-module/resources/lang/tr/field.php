@@ -29,7 +29,7 @@ return [
         'name' => 'Açıklama'
     ],
     'pick_option' => [
-        'name' => 'Pick an option',
+        'name' => 'Bir seçenek belirleyin',
     ],
     'address' => [
         'name' => 'Adres',

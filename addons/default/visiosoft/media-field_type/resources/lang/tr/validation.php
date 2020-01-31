@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'valid_disk' => 'İçin yapılandırılmış yükleme diski: özniteliği mevcut değil.',
+    'valid_disk' => 'Yükleme diski :attribute için mevcut değil.',
 ];

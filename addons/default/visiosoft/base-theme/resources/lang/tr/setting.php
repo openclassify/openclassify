@@ -2,30 +2,30 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Gezinme Başlığı',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Gezinme Eylemi',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Ülke Alanları',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Tarih Alanları',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Fiyat Alanları',
     ],
     'breadcrumbs' => [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Reklam Ayrıntıları',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Reklam Ayrıntıları Sekmesi',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Tümünü Görüntüle',
     ],
 ];

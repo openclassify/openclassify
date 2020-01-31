@@ -8,7 +8,7 @@ return [
         'title' => 'İl',
     ],
     'districts' => [
-        'title' => 'İlçer',
+        'title' => 'İlçeler',
     ],
     'neighborhoods' => [
         'title' => 'Mahalle',

@@ -5,7 +5,7 @@ return [
     'please_buy_package' => 'Lütfen paket satın al',
     'please_payment' => 'Lütfen Ödeme Yapınız',
     'bank_account_info' => 'Banka Hesap Bilgilerimiz',
-    'agreement' => 'Yayınla\'yı tıkladığınızda, Kullanım Koşulları ve Gizlilik Politikasını kabul etmiş olursunuz, bu öğenin hak sahibi olduğunuzu kabul edersiniz.',
+    'agreement' => 'Yayınlaya tıkladığınızda, Kullanım Koşulları ve Gizlilik Politikasını kabul etmiş olursunuz.',
     'update_category_msg' => 'İlan kategorisi güncellenecektir.',
     'updated_category_msg' => 'Kategori başarıyla güncellendi.',
     'max_ad_limit' => [
@@ -13,7 +13,7 @@ return [
         'msg' => "Size verilen ücretsiz ilan limitine ulaştınız.",
         'nextBtn' => "İlanlarım",
         'cancelBtn' => "ve ya İptal",
-        'link' => "/profile",
+        'link' => "/profil",
     ],
     'create_ad_with_post_cat' => [
         'title' => "Sadece 30 saniyede İlan ver",

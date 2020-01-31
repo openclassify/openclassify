@@ -1,9 +1,9 @@
 <?php
 
 return [
-    'help'      => 'Help',
-    'search'    => 'Search',
-    'logout'    => 'Logout',
-    'view_site' => 'View Site',
-    'title'     => 'Control Panel',
+    'help'      => 'Yardım',
+    'search'    => 'Arama',
+    'logout'    => 'Çıkış Yap',
+    'view_site' => 'Siteyi Görüntüle',
+    'title'     => 'Kontrol Paneli',
 ];

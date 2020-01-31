@@ -8,7 +8,7 @@ return [
         'name' => 'Kategoriler',
     ],
     'village' => [
-        'name' => 'köy',
+        'name' => 'Köy',
     ],
     'custom_fields' => [
         'name' => 'Özel Alanlar',
@@ -17,6 +17,6 @@ return [
         'name' => 'Özel alan önerileri',
     ],
     'cf_values' => [
-        'name' => 'Cf değerleri',
+        'name' => 'ÖA değerleri',
     ],
 ];

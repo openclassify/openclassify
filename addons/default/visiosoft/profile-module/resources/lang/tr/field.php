@@ -8,7 +8,7 @@ return [
         'name' => 'İsim'
     ],
     'last_name' => [
-        'name' => 'Soyisim'
+        'name' => 'Soyad'
     ],
     'username' => [
         'name' => 'Kullanıcı Adı'
@@ -20,7 +20,7 @@ return [
         'name' => 'Email Adresi'
     ],
     'sitename' => [
-        'name' => 'siteadı'
+        'name' => 'Siteadı'
     ],
     'activated' => [
         'name' => 'Aktif Kullanıcı'
@@ -65,7 +65,7 @@ return [
         'name' => 'İsim'
     ],
     'adress_last_name' => [
-        'name' => 'Soyisim'
+        'name' => 'Soyad'
     ],
     'actions' => [
         'name' => 'İşlemler'
@@ -77,7 +77,7 @@ return [
         'name' => 'Posta Kodu'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Gsm Numarası'
+        'name' => 'Cep Telefonu'
     ],
     'adress_land_phone' => [
         'name' => 'Sabit Telefon'
@@ -183,7 +183,7 @@ return [
         'name' => 'Devre Dışı'
     ],
     'pending_admin' => [
-        'name' => 'Admin Onay Sürecinde'
+        'name' => 'Onayda Bekliyor'
     ],
     'menu_messages' => [
         'name' => 'Mesajlar'
@@ -198,28 +198,28 @@ return [
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
-        'name' => 'Secure Trading'
+        'name' => 'Güvenli Ticaret'
     ],
     'right_secure_trading_msg' => [
-        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+        'name' => 'Lorem Ipsum Dolor Sit Amet, Consipter Adipisicing Elit'
     ],
     'right_support_subject' => [
-        'name' => '24/7 Support'
+        'name' => '7/24 Destek'
     ],
     'right_support_msg' => [
-        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+        'name' => 'Lorem Ipsum Dolor Sit Amet, Consipter Adipisicing Elit'
     ],
     'right_easy_trading_subject' => [
-        'name' => 'Easy Trading'
+        'name' => 'Kolay Ticaret'
     ],
     'right_easy_trading_msg' => [
-        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+        'name' => 'Lorem Ipsum Dolor Sit Amet, Consipter Adipisicing Elit'
     ],
     'right_need_help_subject' => [
-        'name' => 'Need Help?'
+        'name' => 'Yardıma mı ihtiyacınız var?'
     ],
     'right_need_help_msg' => [
-        'name' => 'Give a call on'
+        'name' => 'Telefon etmek'
     ],
     'disable_account' => [
         'name' => 'Hesabı Dondur'
