@@ -22,7 +22,7 @@ return [
     'icon' => [
         'name' => 'Icon'
     ],
+
     'please_wait' => 'Lütfen bekleyin. Alt Kategoriler Siliniyor',
     'category_selection' => 'Kategori Seçimi',
-
 ];
