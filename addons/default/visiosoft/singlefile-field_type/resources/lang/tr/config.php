@@ -12,12 +12,12 @@ return [
         'warning'      => 'Eğer belirtilmezse klasör maks ve sunucu maks değerleri kullanılır.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Giriş Modu',
+        'instructions' => 'Kullanıcılar dosya girdisini nasıl sağlamalıdır?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Dosyaları yükleyin ve / veya seçin.',
+            'select'  => 'Yalnızca dosyaları seçin.',
+            'upload'  => 'Yalnızca dosya yükleyin.',
         ],
     ],
 ];
