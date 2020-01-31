@@ -21,8 +21,8 @@ return [
     ],
     'contact_mail' => [
         'name' => 'Mail ile iletişime geçin',
-        'warning'      => 'Otomatik eklenen sitename <strong>info</strong> @sitename',
-    ],'map_coordinates_long' => [
+        'warning' => 'Otomatik eklenen sitename <strong>info</strong> @sitename',
+    ], 'map_coordinates_long' => [
         'name' => 'Harita Uzun Koordinat',
     ],
     'map_coordinates_lat' => [
@@ -36,7 +36,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Sosyal Paylaşma Logosu',
-        'warning'      => '1200 x 630 çözünürlükte olmalıdır.',
+        'warning' => '1200 x 630 çözünürlükte olmalıdır.',
 
     ],
     'currencies' => [
@@ -47,7 +47,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Site adresi',
-        'warning'      => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
+        'warning' => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Google Harita Api Anahtarı',
@@ -110,5 +110,7 @@ return [
     'google_statistic_code' => [
         'name' => 'Google İstatistik Kodu',
     ],
-
+    'register_email_field' => [
+        'name' => 'Üye Kayıt E-posta Zorunluluğu',
+    ],
 ];

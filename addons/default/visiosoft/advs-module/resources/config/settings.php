@@ -1,11 +1,15 @@
 <?php
 
-
-use Anomaly\Streams\Platform\Model\Location\LocationCitiesEntryModel;
-use Anomaly\Streams\Platform\Model\Location\LocationDistrictsEntryModel;
-use Visiosoft\LocationModule\Country\CountryModel;
-
 return [
+
+    'register_email_field' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+
+
     'latest-limit' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
@@ -13,8 +17,6 @@ return [
             'default_value' => 5,
         ],
     ],
-
-
     "favicon" => [
         "type" => "anomaly.field_type.file",
         "config" => [
