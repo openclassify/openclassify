@@ -1,15 +1,15 @@
 <?php
 
 return [
-    'latest_ads' =>  'Son Eklenenler',
-    'show_all' =>  'Tümünü Göster',
+    'latest_ads' => 'Son Eklenenler',
+    'show_all' => 'Tümünü Göster',
     'login' => [
-        'name' => 'Login',
+        'name' => 'Oturum aç',
     ],
     'logout' => [
-        'name' => 'Logout',
+        'name' => 'Çıkış Yap',
     ],
-    'profile' => 'Profile',
+    'profile' => 'Profil',
     'email' => 'Email Adresiniz',
     'reset_code' => 'Sıfırlama Kodu',
     'password_confirmation' => 'Şifrenizi Onaylayın',

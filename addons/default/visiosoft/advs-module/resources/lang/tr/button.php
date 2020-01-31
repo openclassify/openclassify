@@ -10,7 +10,7 @@ return [
     'new_village' => 'Yeni köy',
     'approve' => "Onayla",
     'decline' => 'Reddet',
-    'extend' => 'Extend',
+    'extend' => 'Uzat',
     'sub_category' => 'Alt Kategoriler',
     'add_sub_category' => 'Alt Kategori Ekle',
     'sub_cities' => 'Alt Şehirler',

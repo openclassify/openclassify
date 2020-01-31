@@ -16,6 +16,9 @@ return [
     'default_country' => [
         'name' => 'Varsayılan Ülke',
     ],
+    'create_ad_page_location' => [
+        'name' => 'Reklam Sayfası Konumu Oluşturun',
+    ],
     'default_city' => [
         'name' => 'Varsayılan İl',
     ],
@@ -25,8 +28,9 @@ return [
     'default_neighborhood' => [
         'name' => 'Varsayılan Mahalle',
     ],
+
     'google_map_key' => [
-        'name' => 'Google Maps Api Key',
+        'name' => 'Google Haritalar Api Anahtarı',
     ],
 
     'map_coordinates_long' => [

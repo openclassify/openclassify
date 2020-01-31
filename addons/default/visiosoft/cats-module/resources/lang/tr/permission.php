@@ -4,7 +4,7 @@ return [
     'category' => [
         'name'   => 'Kategori',
         'option' => [
-            'read'   => 'Kategori oluşturabilir mi?        ',
+            'read'   => 'Kategorileri görebilir mi?',
             'write'  => 'Kategori oluşturabilir / düzenleyebilir mi?        ',
             'delete' => 'Kategori silebilir miyim?',
         ],

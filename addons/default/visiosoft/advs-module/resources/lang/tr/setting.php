@@ -21,9 +21,9 @@ return [
     ],
     'contact_mail' => [
         'name' => 'Mail ile iletişime geçin',
-        'warning' => 'Otomatik eklenen sitename <strong>info</strong> @sitename',
-    ], 'map_coordinates_long' => [
-        'name' => 'Harita Uzun Koordinat',
+        'warning'      => 'Otomatik eklenen sitename <strong>info</strong> @sitename',
+    ],'map_coordinates_long' => [
+        'name' => 'Harita Koordinat',
     ],
     'map_coordinates_lat' => [
         'name' => 'Harita Koordinat',
@@ -36,18 +36,18 @@ return [
     ],
     'ogImage' => [
         'name' => 'Sosyal Paylaşma Logosu',
-        'warning' => '1200 x 630 çözünürlükte olmalıdır.',
+        'warning'      => '1200 x 630 çözünürlükte olmalıdır.',
 
     ],
     'currencies' => [
         'name' => 'Aktif Para Birimleri',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Son Eklenenler Limiti',
     ],
     'site_address' => [
         'name' => 'Site adresi',
-        'warning' => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
+        'warning'      => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Google Harita Api Anahtarı',

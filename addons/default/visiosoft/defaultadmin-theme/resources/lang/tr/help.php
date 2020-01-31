@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title'                     => 'Helpful Resources',
-    'description'               => 'Find help and discover features with these helpful resources.',
-    'documentation_link'        => 'OpenClassify Documentation',
-    'documentation_description' => 'Find documentation for OpenClassify, developing addons, and using addons too.',
-    'slack_link'                => 'Slack Team',
-    'slack_description'         => 'Find and communicate with other OpenClassify users and developers.',
-    'forum_link'                => 'Discussion Forum',
-    'forum_description'         => 'Find answers and post questions about using and developing with OpenClassify.',
-    'addons_link'               => 'Available Addons',
-    'addons_description'        => 'Discover addons available for OpenClassify.',
+    'title'                     => 'Yardımcı Kaynaklar',
+    'description'               => 'Bu yararlı kaynaklarla yardım bulun ve özellikleri keşfedin.',
+    'documentation_link'        => 'OpenClassify Dokumanları',
+    'documentation_description' => 'OpenClassify, eklentiler geliştirme ve eklentileri kullanma ile ilgili belgeleri bulun.',
+    'slack_link'                => 'Slack Takımı',
+    'slack_description'         => 'Diğer OpenClassify kullanıcılarını ve geliştiricilerini bulun ve iletişim kurun.',
+    'forum_link'                => 'Tartışma forumu',
+    'forum_description'         => 'OpenClassify\'ı kullanma ve geliştirme ile ilgili cevapları bulun ve sorular gönderin.',
+    'addons_link'               => 'Kullanılabilir Eklentiler',
+    'addons_description'        => 'OpenClassify için kullanılabilecek eklentileri keşfedin.',
 ];

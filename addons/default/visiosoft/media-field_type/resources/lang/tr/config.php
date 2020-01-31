@@ -8,7 +8,7 @@ return [
 ',
     ],
     'min'     => [
-        'label'        => 'Minimum Seçimler',
+        'label'        => 'Minimum Seçim',
         'instructions' => 'Minimum izin verilen seçim sayısını girin.',
     ],
     'max'     => [

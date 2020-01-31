@@ -17,7 +17,7 @@ return [
         'title' => 'İlçeler',
     ],
     'neighborhoods' => [
-        'title' => 'Çevredekiler',
+        'title' => 'Mahalle',
     ],
     'village' => [
         'title' => 'köy',
@@ -35,6 +35,6 @@ return [
         'title' => 'Özel Alanlar'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Önbellek sil'
     ]
 ];
