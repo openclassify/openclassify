@@ -1,11 +1,11 @@
 <?php
 
 return [
-    "email" => "Eposta alanı zorunludur!",
-    "username" => "Kullanıcı Adı alanı zorunludur!",
-    "success_update" => "Profil Başarıyla Güncellendi!",
-    "adress_success_update" => "Adres Başarıyla Güncellendi!",
-    "adress_success_create" => "Adres Başarıyla Oluşturuldu!",
+    "email"      => "Eposta alanı zorunludur!",
+    "username"      => "Kullanıcı Adı alanı zorunludur!",
+    "success_update"      => "Profil Başarıyla Güncellendi!",
+    "adress_success_update"      => "Adres Başarıyla Güncellendi!",
+    "adress_success_create"      => "Adres Başarıyla Oluşturuldu!",
     "login_error" => "Giriş Bilgileri Hatalıdır.",
     "login_noMail_old_user" => "Girdiğiniz e-posta adresi bulunamadı.",
     "login_noMail_old_user2" => "Lütfen e-posta adresini kontrol edip tekrar deneyin.",
@@ -16,7 +16,7 @@ return [
     "notified_about_ads" => "Allow notifications about my ads",
     "receive_messages_email" => "I want to receive messages as email",
     "no_packages_module" => "Paket Modülü Bulunamadı!",
-    "required_add" => "Lütfen gerekli tüm satırları doldurun.",
+    "required_add"=> "Lütfen gerekli tüm satırları doldurun.",
     "no_extend_package" => "İlan Yayınlama Süresi paketiniz bulunamadı.",
     "saved" => "Kayıt Edildi!",
     'please_confirm_transaction' => 'Lütfen işlemi onaylayın',
