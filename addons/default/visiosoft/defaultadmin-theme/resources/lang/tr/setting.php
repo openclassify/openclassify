@@ -2,13 +2,13 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Kenar Çubuğu Üzerine Gelme',
+        'instructions' => 'Fareyle üzerine gelindiğinde kenar çubuğu genişletilsin mi?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify the <em>default</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navigasyon',
+        'instructions' => '<em>varsayılan</em> gezinme sırasını belirtin.',
+        'warning'      => 'İlk erişilebilir gezinme öğesi <strong>ana</strong> alanı olarak kullanılır.',
+        'reorder'      => 'Birincil gezinme öğelerini yeniden sıralamak için <strong>kenar çubuğu</strong> sürükleyip bırakın.',
     ],
 ];
