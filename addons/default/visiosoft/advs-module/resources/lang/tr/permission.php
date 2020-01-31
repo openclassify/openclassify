@@ -18,9 +18,9 @@ return [
         ],
     ],
     'village' => [
-        'name'   => 'köy',
+        'name'   => 'Köy',
         'option' => [
-            'read'   => 'Köy okuyabilir mi        ',
+            'read'   => 'Köy okuyabilir mi?',
             'write'  => 'Köy oluşturabilir / düzenleyebilir mi?        ',
             'delete' => 'Köyü silebilir mi?',
         ],
@@ -36,8 +36,8 @@ return [
     'custom_field_advs' => [
         'name'   => 'Özel alan İlanları',
         'option' => [
-            'read'   => 'Özel alan İlanlarını okuyabilir mi?        ',
-            'write'  => 'Özel alan İlanları oluşturabilir / düzenleyebilir mi?        ',
+            'read'   => 'Özel alan İlanlarını okuyabilir mi?',
+            'write'  => 'Özel alan İlanları oluşturabilir / düzenleyebilir mi?',
             'delete' => 'Özel alan İlanlarını silebilir mi?',
         ],
     ],
