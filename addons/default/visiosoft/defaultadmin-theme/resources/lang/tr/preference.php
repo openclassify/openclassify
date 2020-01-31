@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Kenar Çubuğu Üzerine Gelme',
+        'instructions' => 'Fareyle üzerine gelindiğinde kenar çubuğu genişletilsin mi?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navigasyon',
+        'instructions' => '<em>kişisel</em> navigasyon sırasınızı belirtin.',
+        'warning'      => 'İlk erişilebilir gezinme öğesi <strong>ana</strong> alanınız olarak kullanılır.',
+        'reorder'      => 'Birincil gezinme öğelerini yeniden sıralamak için <strong>kenar çubuğu</strong> sürükleyip bırakın.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Ekran Yoğunluğu',
+        'instructions' => 'Kompakt ekran, aynı anda ekranda daha fazla içeriğin gösterilmesini sağlar.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'Varsayılan',
+            'compact' => 'Kompakt',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Kenar Çubuğu Modu',
+        'instructions' => 'Statik kenar çubukları her zaman görünür olacaktır.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'Varsayılan',
+            'static'  => 'Statik',
         ],
     ],
 ];
