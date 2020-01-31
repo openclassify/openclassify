@@ -20,7 +20,7 @@ return [
         'name' => 'Favicon',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Harita Uzun Koordinat',
+        'name' => 'Önbellek sil',
     ],
     'map_coordinates_lat' => [
         'name' => 'Harita Koordinat',
@@ -40,7 +40,7 @@ return [
         'name' => 'Aktif Para Birimleri',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Son Sınır',
     ],
     'site_address' => [
         'name' => 'Site adresi',
