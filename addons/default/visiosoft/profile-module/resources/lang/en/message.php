@@ -23,5 +23,6 @@ return [
     'password_do_not_match' => 'Passwords do not match',
     'your_password_changed' => 'Your password was successfully updated',
     'error_valid_email_or_phone' => 'Phone number or E-mail address format is not correct.',
+    'error_valid_phone' => 'Phone number format is not correct.',
     'registered_phone' => 'This phone number has already been registered.',
 ];

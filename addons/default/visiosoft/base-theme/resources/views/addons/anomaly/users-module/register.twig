@@ -37,19 +37,36 @@
                     </div>
                 </div>
             </div>
-
             <div class="col-12">
                 <div class="form-group email-field email-field_type">
                     <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.email_or_phone_number') }}
+                        {{ trans('visiosoft.theme.base::field.phone_number') }}
                         <span class="required">*</span>
                     </label>
 
                     <div class="input-wrapper">
-                        {{ form.fields.email.input|raw }}
+                        {{ form.fields.phone.input|raw }}
                     </div>
                 </div>
             </div>
+            {% if setting_value('visiosoft.module.advs::register_email_field') %}
+                <div class="col-12">
+                    <div class="form-group email-field email-field_type">
+                        <label class="control-label">
+                            {{ trans('visiosoft.theme.base::field.email') }}
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-wrapper">
+                            {{ form.fields.email.input|raw }}
+                        </div>
+                    </div>
+                </div>
+            {% else %}
+                {{ form.fields.email.setValue(random()~"@example.com").setAttributes({
+                    'class' :'hidden',
+                }).input|raw }}
+            {% endif %}
             <div class="col-12">
                 <div class="form-group password-field password-field_type">
                     <label class="control-label">

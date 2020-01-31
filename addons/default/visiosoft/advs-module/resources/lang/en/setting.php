@@ -107,5 +107,7 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Statistic Code',
     ],
-
+    'register_email_field' => [
+        'name' => 'Member Registration Email Requirement',
+    ],
 ];

@@ -18,9 +18,12 @@ return [
     ],
     'favicon' => [
         'name' => 'Favicon',
-    ]
-    ,'map_coordinates_long' => [
-        'name' => 'Önbellek sil',
+    ],
+    'contact_mail' => [
+        'name' => 'Mail ile iletişime geçin',
+        'warning'      => 'Otomatik eklenen sitename <strong>info</strong> @sitename',
+    ],'map_coordinates_long' => [
+        'name' => 'Harita Koordinat',
     ],
     'map_coordinates_lat' => [
         'name' => 'Harita Koordinat',
@@ -40,7 +43,7 @@ return [
         'name' => 'Aktif Para Birimleri',
     ],
     'latest-limit' => [
-        'name' => 'Son Sınır',
+        'name' => 'Son Eklenenler Limiti',
     ],
     'site_address' => [
         'name' => 'Site adresi',
@@ -107,5 +110,7 @@ return [
     'google_statistic_code' => [
         'name' => 'Google İstatistik Kodu',
     ],
-
+    'register_email_field' => [
+        'name' => 'Üye Kayıt E-posta Zorunluluğu',
+    ],
 ];
