@@ -18,7 +18,7 @@
                     </label>
 
                     <div class="input-wrapper">
-                        {{ form.fields.first_name.input|raw }}
+                        {{ form.fields.first_name.setPlaceholder(trans('visiosoft.theme.base::field.first_name')).input|raw }}
                         {{ form.fields.username.setValue(random()).setAttributes({
                             'class' :'hidden',
                         }).input|raw }}
@@ -33,19 +33,19 @@
                     </label>
 
                     <div class="input-wrapper">
-                        {{ form.fields.last_name.input|raw }}
+                        {{ form.fields.last_name.setPlaceholder(trans('visiosoft.theme.base::field.last_name')).input|raw }}
                     </div>
                 </div>
             </div>
             <div class="col-12">
-                <div class="form-group email-field email-field_type">
+                <div class="form-group email-field phone-field_type register-phone">
                     <label class="control-label">
                         {{ trans('visiosoft.theme.base::field.phone_number') }}
                         <span class="required">*</span>
                     </label>
 
                     <div class="input-wrapper">
-                        {{ form.fields.phone.input|raw }}
+                        {{ form.fields.phone.setValue(form.fields.full_phone.value).input|raw }}
                     </div>
                 </div>
             </div>
@@ -58,12 +58,16 @@
                         </label>
 
                         <div class="input-wrapper">
-                            {{ form.fields.email.input|raw }}
+                            {{ form.fields.email.setPlaceholder(trans('visiosoft.theme.base::field.email')).input|raw }}
                         </div>
                     </div>
                 </div>
             {% else %}
-                {{ form.fields.email.setValue(random()~"@example.com").setAttributes({
+                {% set domain = config('app.url')|replace({ ('https://'): '',('http://'): '',('/'): '/' }) %}
+                {% if domain == "localhost" %}
+                    {% set domain = "example.com" %}
+                {% endif %}
+                {{ form.fields.email.setValue(random()~"@"~domain).setAttributes({
                     'class' :'hidden',
                 }).input|raw }}
             {% endif %}
@@ -75,7 +79,7 @@
                     </label>
 
                     <div class="input-wrapper">
-                        {{ form.fields.password.input|raw }}
+                        {{ form.fields.password.setPlaceholder(trans('visiosoft.theme.base::field.password')).input|raw }}
                     </div>
                 </div>
             </div>

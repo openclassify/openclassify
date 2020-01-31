@@ -13,7 +13,6 @@ return [
         'msg' => "You have reached your free ad limit.",
         'nextBtn' => "Show Ads",
         'cancelBtn' => "or Cancel",
-        'link' => "/profile",
     ],
     'create_ad_with_post_cat' => [
         'title' => "Post an Ad in just 30 seconds",

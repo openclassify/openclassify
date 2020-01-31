@@ -13,7 +13,6 @@ return [
         'msg' => "Size verilen ücretsiz ilan limitine ulaştınız.",
         'nextBtn' => "İlanlarım",
         'cancelBtn' => "ve ya İptal",
-        'link' => "/profil",
     ],
     'create_ad_with_post_cat' => [
         'title' => "Sadece 30 saniyede İlan ver",

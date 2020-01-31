@@ -41,6 +41,7 @@ class Register2FormHandler
             return;
         }
 
+
         $profile_parameters = array();
 
         /* Create Profile in Register */
@@ -50,13 +51,15 @@ class Register2FormHandler
         $domain = str_replace('/', '', $domain);
         $domain = str_replace('www', '', $domain);
 
-        $profile_parameters['gsm_phone'] = $builder->getPostValue('phone');
+        $profile_parameters['gsm_phone'] = $builder->getPostValue('full_phone');
         if (!setting_value('visiosoft.module.advs::register_email_field')) {
             $builder->setFormValue('email', $builder->getPostValue('username') . "@" . $domain);
         }
 
         $fields = $builder->getPostData();
+        $fields['display_name'] = $fields['first_name'] . " " . $fields['last_name'];
         unset($fields['phone']);
+        unset($fields['full_phone']);
 
 
         $register = $users->create($fields);
