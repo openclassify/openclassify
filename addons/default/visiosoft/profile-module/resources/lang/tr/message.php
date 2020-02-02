@@ -23,6 +23,6 @@ return [
     'password_do_not_match' => 'Şifreler eşleşmiyor',
     'your_password_changed' => 'Şifreniz başarıyla güncellendi',
     'error_valid_email_or_phone' => 'E-Posta Adresi veya Telefon numarası formatı geçersiz.',
-    'error_valid_phone' => 'Phone number format is not correct.',
+    'error_valid_phone' => 'Telefon numarası biçimi doğru değil.',
     'registered_phone' => 'Bu telefon numarası ile daha önceden sisteme kayıt olunmuştur.',
 ];
