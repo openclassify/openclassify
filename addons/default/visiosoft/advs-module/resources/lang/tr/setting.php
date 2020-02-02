@@ -20,7 +20,7 @@ return [
         'name' => 'Favicon',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Önbellek sil',
+        'name' => 'Harita Long Koordinati',
     ],
     'map_coordinates_lat' => [
         'name' => 'Harita Koordinat',
