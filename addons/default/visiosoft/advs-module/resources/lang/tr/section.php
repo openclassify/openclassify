@@ -36,5 +36,8 @@ return [
     ],
     'assets_clear' => [
         'name' => 'Önbellek sil'
-    ]
+    ],
+    'general' => 'General',
+    'ads' => 'Ads',
+    'user' => 'User',
 ];
