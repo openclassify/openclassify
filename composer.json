@@ -46,7 +46,7 @@
         "anomaly/tags-field_type": "~2.3.0",
         "anomaly/slug-field_type": "~2.1.0",
         "anomaly/text-field_type": "~2.2.0",
-        "anomaly/file-field_type": "~2.2.32",
+        "anomaly/file-field_type": "2.2.32",
         "anomaly/url-field_type": "~2.2.0",
         "anomaly/configuration-module": "~2.1.0",
         "anomaly/preferences-module": "~2.1.0",
