@@ -29,3 +29,18 @@
     margin: auto;
     margin-top: 10px;
 }
+
+.table-classified .td-image,
+.table-classified .td-date {
+    min-width: 100px;
+}
+
+.table-classified .td-price {
+    min-width: 150px;
+}
+
+
+.table-classified .td-country,
+.table-classified .td-subject {
+    min-width: 200px;
+}
