@@ -63,13 +63,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         });
 
         if (!empty($param['keyword'])) {
-            $delimiter = '_';
-            $keyword = str_slug($param['keyword'], $delimiter);
-            $query = $query->where(function ($query) use ($keyword) {
-                $query->where('advs_advs_translations.advs_desc', 'like', '%' . $keyword . '%')
-                    ->orWhere('slug', 'like', '%' . $keyword . '%')
-                    ->orWhere('advs_advs_translations.name', 'like', '%' . $keyword . '%');
-            });
+            if (is_numeric($param['keyword'])) {
+                $query = $query->where('advs_advs.id', $param['keyword']);
+            } else {
+                $delimiter = '_';
+                $keyword = str_slug($param['keyword'], $delimiter);
+                $query = $query->where(function ($query) use ($keyword) {
+                    $query->where('advs_advs_translations.advs_desc', 'like', '%' . $keyword . '%')
+                        ->orWhere('slug', 'like', '%' . $keyword . '%')
+                        ->orWhere('advs_advs_translations.name', 'like', '%' . $keyword . '%');
+                });
+            }
         }
         if (!empty($param['country'])) {
             $query = $query->where('country_id', $param['country']);
