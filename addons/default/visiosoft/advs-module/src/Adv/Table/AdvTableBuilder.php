@@ -31,13 +31,17 @@ class AdvTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $filters = [
-      'search' => [
-          'fields' => [
+        'search' => [
+            'fields' => [
               'name',
-              'advs_desc'
-          ]
-      ],
+              'advs_desc',
+            ]
+        ],
         'country',
+        'id' => [
+            'heading' => 'ID',
+            'filter' => 'input'
+        ],
     ];
 
     /**
