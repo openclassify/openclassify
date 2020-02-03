@@ -157,8 +157,11 @@ class AdvsController extends AdminController
                         'filter'  => 'select',
                         'query'   => StatusFilterQuery::class,
                         'options' => [
+                            'approved'   => 'visiosoft.module.advs::field.status.option.approved',
                             'expired'   => 'visiosoft.module.advs::field.status.option.expired',
                             'unpublished' => 'visiosoft.module.advs::field.status.option.unpublished',
+                            'pending_admin' => 'visiosoft.module.advs::field.status.option.pending_admin',
+                            'pending_user' => 'visiosoft.module.advs::field.status.option.pending_user',
                         ],
                     ]
                 ])
