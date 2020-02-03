@@ -50,22 +50,6 @@ return [
             'default_value' => 15,
         ],
     ],
-    'address' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.address',
-        'env' => 'ADV_ADDRESS',
-        'config' => [
-            'default_value' => 'Basaksehir Istanbul',
-        ],
-    ],
-    'phone' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.phone',
-        'env' => 'ADV_PHONE',
-        'config' => [
-            'default_value' => '212 555 55 55',
-        ],
-    ],
 
     'iban_numbers' => [
         'type' => 'anomaly.field_type.wysiwyg',
@@ -117,38 +101,6 @@ return [
         'config' => [
             'default_value' => 0,
         ],
-    ],
-    'twitter' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.twitter',
-        'env' => 'ADV_TWITTER',
-        'config' => [
-            'default_value' => '/twitter.com/visiosoft'
-        ]
-    ],
-    'facebook' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.facebook',
-        'env' => 'ADV_FACEBOOK',
-        'config' => [
-            'default_value' => '/facebook.com/visiosoft'
-        ]
-    ],
-    'youtube' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.youtube',
-        'env' => 'ADV_YOUTUBE',
-        'config' => [
-            'default_value' => '/youtube.com/visiosoft'
-        ]
-    ],
-    'google' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.google',
-        'env' => 'ADV_GOOGLE',
-        'config' => [
-            'default_value' => '/plus.google.com/visiosoft'
-        ]
     ],
     'watermark_type' => [
         'type' => 'anomaly.field_type.select',
