@@ -65,8 +65,11 @@ class UploadController extends AdminController
                 $img = WaterMark::make($this->request->file('upload')->getRealPath());
                 $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');
                 $watermarkimage = $files->find($watermarkimage_id);
+                $w = $img->width();
                 if ($watermarkimage != null) {
-                    $watermark = WaterMark::make(public_path() . '/app/default/files-module/local/' . $watermarkimage->path())->opacity(50);
+                    $watermark = WaterMark::make(public_path() . '/app/default/files-module/local/' . $watermarkimage->path())
+                        ->opacity($settings->value('visiosoft.module.advs::watermark_opacity'))
+                        ->resize($w);
                     $img->insert($watermark, $position);
                 }
 
@@ -77,7 +80,7 @@ class UploadController extends AdminController
                 $h = "center";
                 $w = $img->width() / 2;
                 $h1 = $img->height() / 2;
-                $font_size = $w/20;
+                $font_size = $w / 20;
                 $img->text($watermarktext, $w, $h1, function ($font) use ($v, $h, $font_size) {
                     $font->file(public_path('Antonio-Bold.ttf'));
                     $font->size($font_size);
