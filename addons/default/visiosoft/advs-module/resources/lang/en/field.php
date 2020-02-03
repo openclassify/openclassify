@@ -85,8 +85,11 @@ return [
     'status' => [
         'name' => 'Status',
         'option' => [
+            'approved' => 'Approved',
             'expired' => 'Expired',
-            'unpublished' => 'Unpublished'
+            'unpublished' => 'Unpublished',
+            'pending_admin' => 'Pending Admin',
+            'pending_user' => 'Pending User'
         ]
     ],
     'pending_adv' => [
