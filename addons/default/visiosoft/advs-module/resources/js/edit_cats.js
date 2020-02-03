@@ -14,13 +14,20 @@ var level = 0;
 var selected;
 var all_categories = {};
 var promiseForCategory = new Promise(function (resolve) {
-    $.each(categories, function (index, value) {
-        crud({'level': level, "cat": categories['cat' + level]}, '/class/ajaxCategory', 'POST', function (callback) {
-            // console.log('cat' + (level + 1), categories['cat' + level], callback)
+    if (categories.length != 0) {
+        $.each(categories, function (index, value) {
+            crud({'level': level, "cat": categories['cat' + level]}, '/class/ajaxCategory', 'POST', function (callback) {
+                // console.log('cat' + (level + 1), categories['cat' + level], callback)
+                all_categories['cat' + (level + 1)] = callback;
+            })
+            level++;
+        });
+    } else {
+        crud({'level': level, "cat": ""}, '/class/ajaxCategory', 'POST', function (callback) {
             all_categories['cat' + (level + 1)] = callback;
         })
         level++;
-    });
+    }
     resolve(all_categories);
 });
 
