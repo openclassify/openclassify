@@ -1,0 +1,53 @@
+{% extends "visiosoft.module.advs::list/list" %}
+{% block listContent %}
+            {{ addBlock('ad-list/partials/gallery',{'featured_advs':featured_advs})|raw }}
+            {% for adv in advs %}
+                <div class="col-sm-6 col-md-4 col-lg-4 d-flex align-items-stretch">
+                    <div class="card mb-4 box-shadow {% if adv.doping != null %} doping_type4 {% endif %}">
+                        <div class="row p-2" style="min-height: 150px;">
+                            <a href="{{ adv.detail_url }}">
+                                <div class="col-md-12 justify-content-center align-self-center">
+                                    <img class="card-img-top img-fluid img-thumbnail"
+                                         src="{{ adv.cover_photo }}"
+                                         style="height: 150px">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card-body">
+                            {% if setting_value('visiosoft.theme.base::price_fields') %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <b>{{ adv.price }} {{ adv.currency }}</b>
+                                </div>
+                            {% endif %}
+                            <div class="d-flex justify-content-between align-items-center text-truncate">
+                                <a href="{{ adv.detail_url }}">
+                                    <p class="card-title d-inline-block">{{ adv.name }}</p>
+                                </a>
+                            </div>
+                            {% if setting_value('visiosoft.module.location::home_page_location') %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small>
+                                        <i class="fas fa-location-arrow text-primary"></i>
+                                        {{ adv.city_name }}, {{ adv.country_name }}
+                                    </small>
+                                </div>
+                            {% endif %}
+                            {% if setting_value('visiosoft.theme.base::date_fields') %}
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <small>
+                                        <i class="far fa-clock text-dark"></i>
+                                        {{ adv.created_at|date('d/m/Y') }}
+                                    </small>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+
+{% endblock %}
+{% block customjs %}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
+    {% include "theme::scroll-modal" %}
+{% endblock %}
