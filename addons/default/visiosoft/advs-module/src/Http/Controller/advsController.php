@@ -227,6 +227,8 @@ class AdvsController extends PublicController
             return $this->view->make('visiosoft.module.advs::list/table', $compact);
         elseif (isset($viewType) and $viewType == 'map')
             return $this->view->make('visiosoft.module.advs::list/map', $compact);
+        elseif (isset($viewType) and $viewType == 'gallery')
+            return $this->view->make('visiosoft.module.advs::list/gallery', $compact);
 
         return $this->view->make('visiosoft.module.advs::list/list', $compact);
     }
@@ -678,7 +680,7 @@ class AdvsController extends PublicController
 
         $categories = $this->adv_repository->getCategoriesWithAdID($id);
 
-        return $this->view->make('visiosoft.module.advs::new-ad/edit-cat', compact('id', 'adv','categories'));
+        return $this->view->make('visiosoft.module.advs::new-ad/edit-cat', compact('id', 'adv', 'categories'));
 
     }
 
