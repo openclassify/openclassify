@@ -259,5 +259,6 @@ return [
         'name' => 'Evet'
     ],
     "no_location" => "Lokasyon eklenmemiş.",
-    "continue" => 'Devam Et'
+    "continue" => 'Devam Et',
+    "gallery" => 'Gallery',
 ];
