@@ -257,5 +257,6 @@ return [
         'name' => 'Yes'
     ],
     "no_location" => "No location is selected.",
-    "continue" => 'Continue'
+    "continue" => 'Continue',
+    "gallery" => 'Gallery',
 ];
