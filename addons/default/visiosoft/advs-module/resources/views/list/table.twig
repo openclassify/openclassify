@@ -28,21 +28,21 @@
                             <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
                         </a>
                     </td>
-                    <td class="text-left justify-content-center align-middle">
+                    <td class="text-left justify-content-center align-middle td-subject">
                         <div class="table-row-name">
                             <a href="{{ adv.detail_url }}" class="text-dark">
                                 {{ adv.name }}
                             </a>
                         </div>
                     </td>
-                    <td class="justify-content-center align-middle">
+                    <td class="justify-content-center align-middle td-price">
                         <b>{{ adv.price.currency(null,'currency',false) }}</b>
                     </td>
-                    <td class="justify-content-center align-middle">
+                    <td class="justify-content-center align-middle td-date">
                         <small>{{ adv.created_at|date("d/m/Y") }}</small>
                     </td>
                     {% if setting_value('visiosoft.module.location::list_page_location') %}
-                        <td class="justify-content-center align-middle">
+                        <td class="justify-content-center align-middle td-country">
                             <small>{{ adv.city_name }} / {{ adv.country_name }}</small>
                         </td>
                     {% endif %}

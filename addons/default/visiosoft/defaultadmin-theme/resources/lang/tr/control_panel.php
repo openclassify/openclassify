@@ -6,4 +6,5 @@ return [
     'logout'    => 'Çıkış Yap',
     'view_site' => 'Siteyi Görüntüle',
     'title'     => 'Kontrol Paneli',
+    'search_placeholder'     => 'Ara',
 ];
