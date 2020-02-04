@@ -80,6 +80,9 @@
         "visiosoft/integer-field_type": "~2.1.0",
         "guzzlehttp/guzzle": "~6.3.3"
     },
+    "replace" : {
+        "anomaly/streams-platform": "*"
+    },
     "require-dev": {
         "filp/whoops": "~2.0",
         "phpunit/phpunit": "^7.0",
