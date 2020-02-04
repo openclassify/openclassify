@@ -72,7 +72,7 @@ class ProfileModuleSeeder extends Seeder
                 'slug'          => 'favicon',
                 'disk'          => $disk,
                 'allowed_types' => [
-                    'ico','png'
+                    'ico','png',
                 ],
             ]
         );

@@ -17,13 +17,6 @@ return [
             'default_value' => 5,
         ],
     ],
-    "favicon" => [
-        "type" => "anomaly.field_type.file",
-        "config" => [
-            "folders" => ['favicon'],
-            "mode" => "upload",
-        ]
-    ],
     'auto_approve' => [
         'type' => 'anomaly.field_type.boolean',
         'bind' => 'adv.auto_approve',
