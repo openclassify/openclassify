@@ -9,7 +9,7 @@ return [
             'general' => [
                 'title' => 'visiosoft.module.advs::section.general',
                 'fields' => [
-                    'favicon', 'iban_numbers', 'google_statistic_code', 'ogImage', 'free_currencyconverterapi_key',
+                    'iban_numbers', 'google_statistic_code', 'ogImage', 'free_currencyconverterapi_key',
                     'enabled_currencies'
 
                 ],
