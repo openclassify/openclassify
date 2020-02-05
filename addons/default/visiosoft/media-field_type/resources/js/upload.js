@@ -18,6 +18,8 @@ $(function () {
             paramName: 'upload',
             resizeWidth: 1920,
             resizeHeight: 1920,
+            autoProcessQueue: true,
+            parallelUploads: 1,
             resizeMethod: 'contain',
             resizeQuality: 0.8,
             url: REQUEST_ROOT_PATH + '/streams/media-field_type/handle',
@@ -49,7 +51,6 @@ $(function () {
             previewsContainer: '.uploads',
             maxFilesize: element.data('max-size'),
             acceptedFiles: element.data('allowed'),
-            parallelUploads: element.data('max-parallel'),
             dictDefaultMessage: element.data('icon') + ' ' + element.data('message'),
             uploadprogress: function (file, progress) {
                 file.previewElement.querySelector("[data-dz-uploadprogress]").setAttribute('value', progress);
