@@ -1,105 +1,137 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-left bg-light p-3 m-0">
-            {% set form = form('register2').redirect(request_get('redirect', '/'))
-                .get() %}
-            {{ form_open({
-                'class': 'row form ' ~ form.options.class ,
-                'enctype': 'multipart/form-data',
-                'url':form.options.url
-            })|raw }}
-            <div class="col-12">
-                <div class="form-group display_name-field display_name-field_type">
-                    <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.first_name') }}
-                        <span class="required">*</span>
-                    </label>
+    <h3 class="mt-4 mb-3">Register</h3>
+    <div class="row justify-content-center bg-light rounded border px-3">
+        <div class="col-12 col-md-6 text-left p-3 m-0">
 
-                    <div class="input-wrapper">
-                        {{ form.fields.first_name.setPlaceholder(trans('visiosoft.theme.base::field.first_name')).input|raw }}
-                        {{ form.fields.username.setValue(random()).setAttributes({
-                            'class' :'hidden',
-                        }).input|raw }}
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group username-field username-field_type">
-                    <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.last_name') }}
-                        <span class="required">*</span>
-                    </label>
+            {{ addBlock('register/register-type')|raw }}
 
-                    <div class="input-wrapper">
-                        {{ form.fields.last_name.setPlaceholder(trans('visiosoft.theme.base::field.last_name')).input|raw }}
-                    </div>
-                </div>
-            </div>
-            <div class="col-12">
-                <div class="form-group email-field phone-field_type register-phone">
-                    <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.phone_number') }}
-                        <span class="required">*</span>
-                    </label>
-
-                    <div class="input-wrapper">
-                        {{ form.fields.phone.setValue(form.fields.full_phone.value).input|raw }}
-                    </div>
-                </div>
-            </div>
-            {% if setting_value('visiosoft.module.advs::register_email_field') %}
-                <div class="col-12">
-                    <div class="form-group email-field email-field_type">
+            <div class="personal-register">
+                {% set form = form('register2').redirect(request_get('redirect', '/'))
+                    .get() %}
+                {{ form_open({
+                    'class': 'row form ' ~ form.options.class ,
+                    'enctype': 'multipart/form-data',
+                    'url':form.options.url
+                })|raw }}
+                <div class="col-6">
+                    <div class="form-group display_name-field display_name-field_type">
                         <label class="control-label">
-                            {{ trans('visiosoft.theme.base::field.email') }}
+                            {{ trans('visiosoft.theme.base::field.first_name') }}
                             <span class="required">*</span>
                         </label>
 
                         <div class="input-wrapper">
-                            {{ form.fields.email.setPlaceholder(trans('visiosoft.theme.base::field.email')).input|raw }}
+                            {{ form.fields.first_name.setPlaceholder(trans('visiosoft.theme.base::field.first_name')).input|raw }}
+                            {{ form.fields.username.setValue(random()).setAttributes({
+                                'class' :'hidden',
+                            }).input|raw }}
                         </div>
                     </div>
                 </div>
-            {% else %}
-                {% set domain = config('app.url')|replace({ ('https://'): '',('http://'): '',('/'): '/' }) %}
-                {% if domain == "localhost" %}
-                    {% set domain = "example.com" %}
-                {% endif %}
-                {{ form.fields.email.setValue(random()~"@"~domain).setAttributes({
-                    'class' :'hidden',
-                }).input|raw }}
-            {% endif %}
-            <div class="col-12">
-                <div class="form-group password-field password-field_type">
-                    <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.password') }}
-                        <span class="required">*</span>
-                    </label>
+                <div class="col-6">
+                    <div class="form-group username-field username-field_type">
+                        <label class="control-label">
+                            {{ trans('visiosoft.theme.base::field.last_name') }}
+                            <span class="required">*</span>
+                        </label>
 
-                    <div class="input-wrapper">
-                        {{ form.fields.password.setPlaceholder(trans('visiosoft.theme.base::field.password')).input|raw }}
+                        <div class="input-wrapper">
+                            {{ form.fields.last_name.setPlaceholder(trans('visiosoft.theme.base::field.last_name')).input|raw }}
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-12 row m-0">
-                <div class="col-6 pr-0 pl-1">
-                    <button class="btn btn-sm btn-success  w-100 py-2">
-                        <i class="fas fa-user-plus"></i>
-                        {{ trans('visiosoft.theme.base::button.register') }}
-                    </button>
+                {% if setting_value('visiosoft.module.advs::register_email_field') %}
+                    <div class="col-12">
+                        <div class="form-group email-field email-field_type">
+                            <label class="control-label">
+                                {{ trans('visiosoft.theme.base::field.email') }}
+                                <span class="required">*</span>
+                            </label>
 
+                            <div class="input-wrapper">
+                                {{ form.fields.email.setPlaceholder(trans('visiosoft.theme.base::field.email')).input|raw }}
+                            </div>
+                        </div>
+                    </div>
+                {% else %}
+                    {% set domain = config('app.url')|replace({ ('https://'): '',('http://'): '',('/'): '/' }) %}
+                    {% if domain == "localhost" %}
+                        {% set domain = "example.com" %}
+                    {% endif %}
+                    {{ form.fields.email.setValue(random()~"@"~domain).setAttributes({
+                        'class' :'hidden',
+                    }).input|raw }}
+                {% endif %}
+                <div class="col-12">
+                    <div class="form-group password-field password-field_type">
+                        <label class="control-label">
+                            {{ trans('visiosoft.theme.base::field.password') }}
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-wrapper">
+                            {{ form.fields.password.setPlaceholder(trans('visiosoft.theme.base::field.password')).input|raw }}
+                        </div>
+                    </div>
                 </div>
-                <div class="col-6 pr-0 pl-1">
-                    <a href="{{ url('login') }}" class="btn btn-sm btn-primary  w-100 py-2">
-                        <i class="fas fa-key"></i>
-                        {{ trans('visiosoft.theme.base::button.login') }}
-                    </a>
+                <div class="col-12">
+                    <div class="form-group email-field phone-field_type register-phone">
+                        <label class="control-label">
+                            {{ trans('visiosoft.theme.base::field.phone_number') }}
+                            <span class="required">*</span>
+                        </label>
+
+                        <div class="input-wrapper">
+                            {{ form.fields.phone.setValue(form.fields.full_phone.value).input|raw }}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 row m-0">
+                    <div class="col-6 pr-0 pl-1">
+                        <button class="btn btn-sm btn-success py-2">
+                            <i class="fas fa-user-plus"></i>
+                            {{ trans('visiosoft.theme.base::button.register') }}
+                        </button>
+
+                    </div>
+                </div>
+                <div class="social-login py-2 row col-12 m-0">
+                    {{ addBlock('login/oauth')|raw }}
                 </div>
             </div>
-            <div class="social-login py-2 row col-12 m-0">
-                {{ addBlock('login/oauth')|raw }}
+            <div class="corporate-register"></div>
+        </div>
+        <div class="col-12 col-md-6 py-3 pr-0">
+            <div class="border personal-advantages py-5 px-5">
+                <div class="d-flex align-items-center mb-4">
+                    <img src="{{ img('visiosoft.theme.base::images/register-instruction.png').url }}">
+                    <h4 class="ml-3">Bireysel Üyelik Avantajları Neler?</h4>
+                </div>
+                <div class="mb-4">
+                    Evinizi, arabanızı satıp kiralayın,
+                    kullanmadığınız eşyalarınızı satın,
+                    yenilerini alın.
+                </div>
+                <ul class="pl-4">
+                    <li>Ücretsiz ilan verin,</li>
+                    <li>İlgilendiğiniz ilanları favorilere ekleyin,
+                        favorilere ekledikten sonraki fiyat
+                        değişimlerini takip edin, kriterlerinize
+                        uygun favori aramalar oluşturun,
+                    </li>
+                    <li>İlan sahipleri ile site içi mesajlaşın.</li>
+                </ul>
+            </div>
+            <div class="border small-notice py-3 px-4 mt-3">
+                <div class="d-flex text-muted">
+                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                    <small class="ml-2 text-muted">
+                        Bu sayfadaki bilgiler sahibinden.com üyeliği için alınmaktadır.
+                        Kişisel verilerin korunması hakkında detaylı bilgiye buradan ulaşabilirsiniz.
+                    </small>
+                </div>
             </div>
         </div>
     </div>
@@ -108,6 +140,7 @@
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/utils.js") }}
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/phonefield.js") }}
     {{ asset_add("styles.css", "visiosoft.theme.base::css/intlTelInput.css") }}
+    {{ asset_add("styles.css", "visiosoft.theme.base::css/register.css") }}
 
 {% endblock %}
 
