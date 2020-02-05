@@ -11,7 +11,7 @@
 
     <testsuites>
         <testsuite name="Streams">
-            <directory suffix="Test.php">./vendor/anomaly/streams-platform/</directory>
+            <directory suffix="Test.php">./vendor/visiosoft/streams-platform/</directory>
         </testsuite>
         <testsuite name="Application">
             <directory suffix="Test.php">./addons/*/*/*/tests</directory>
@@ -23,7 +23,7 @@
 
     <filter>
         <whitelist>
-            <directory suffix=".php">./vendor/anomaly/streams-platform/src/</directory>
+            <directory suffix=".php">./vendor/visiosoft/streams-platform/src/</directory>
             <exclude>
                 <directory suffix=".php">./app/</directory>
             </exclude>
