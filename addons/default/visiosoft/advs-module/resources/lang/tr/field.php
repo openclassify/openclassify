@@ -85,8 +85,11 @@ return [
     'status' => [
         'name' => 'durum',
         'option' => [
+            'approved' => 'Approved',
             'expired' => 'Süresi doldu',
-            'unpublished' => 'Pasif'
+            'unpublished' => 'Pasif',
+            'pending_admin' => 'Pending Admin',
+            'pending_user' => 'Pending User'
         ]
     ],
     'pending_adv' => [
