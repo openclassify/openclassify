@@ -1,7 +1,7 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
-    <h3 class="mt-4 mb-3">Register</h3>
+    <h3 class="mt-md-4 mb-3">Register</h3>
     <div class="row justify-content-center bg-light rounded border px-3">
         <div class="col-12 col-md-6 text-left p-3 m-0">
 
@@ -100,36 +100,38 @@
                 <div class="social-login py-2 row col-12 m-0">
                     {{ addBlock('login/oauth')|raw }}
                 </div>
+                {{ form_close() }}
             </div>
-            <div class="corporate-register"></div>
+
+            {{ addBlock('register/corporate-register')|raw }}
+
         </div>
-        <div class="col-12 col-md-6 py-3 pr-0">
+
+        <div class="col-12 col-md-6 py-3 pr-0 instructions d-none d-md-block">
             <div class="border personal-advantages py-5 px-5">
                 <div class="d-flex align-items-center mb-4">
                     <img src="{{ img('visiosoft.theme.base::images/register-instruction.png').url }}">
-                    <h4 class="ml-3">Bireysel Üyelik Avantajları Neler?</h4>
+                    <h4 class="ml-3">
+                        {{ trans('visiosoft.theme.base::field.personal_registration_header') }}
+                    </h4>
                 </div>
                 <div class="mb-4">
-                    Evinizi, arabanızı satıp kiralayın,
-                    kullanmadığınız eşyalarınızı satın,
-                    yenilerini alın.
+                    {{ trans('visiosoft.theme.base::field.personal_registration_body') }}
                 </div>
                 <ul class="pl-4">
-                    <li>Ücretsiz ilan verin,</li>
-                    <li>İlgilendiğiniz ilanları favorilere ekleyin,
-                        favorilere ekledikten sonraki fiyat
-                        değişimlerini takip edin, kriterlerinize
-                        uygun favori aramalar oluşturun,
-                    </li>
-                    <li>İlan sahipleri ile site içi mesajlaşın.</li>
+                    <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_1') }}</li>
+                    <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_2') }}</li>
+                    <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_3') }}</li>
                 </ul>
             </div>
+
+            {{ addBlock('register/instructions')|raw }}
+
             <div class="border small-notice py-3 px-4 mt-3">
                 <div class="d-flex text-muted">
                     <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
                     <small class="ml-2 text-muted">
-                        Bu sayfadaki bilgiler sahibinden.com üyeliği için alınmaktadır.
-                        Kişisel verilerin korunması hakkında detaylı bilgiye buradan ulaşabilirsiniz.
+                        {{ trans('visiosoft.theme.base::field.register_information_note') }}
                     </small>
                 </div>
             </div>
