@@ -6,14 +6,6 @@
 
 {% include "visiosoft.theme.base::partials/metatags" %}
 
-{% include "visiosoft.theme.base::partials/ogdata" %}
-
-<title>
-    {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
-    &#8250;
-    {{ trans(template.meta_title) }}
-</title>
-
 <!-- Favicon -->
 {#{{ favicons("theme::img/favicon.png") }}#}
 
