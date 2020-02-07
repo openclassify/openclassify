@@ -85,8 +85,11 @@ return [
     'status' => [
         'name' => 'durum',
         'option' => [
+            'approved' => 'Onaylandı',
             'expired' => 'Süresi doldu',
-            'unpublished' => 'Pasif'
+            'unpublished' => 'Pasif',
+            'pending_admin' => 'Yönetici Onay Bekliyor',
+            'pending_user' => 'Kullanıcının Yayınlaması Bekleniyor'
         ]
     ],
     'pending_adv' => [
