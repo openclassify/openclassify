@@ -7,7 +7,7 @@
                 <span>&times;</span><span class="sr-only">Close</span>
             </button>
 
-            {% for message in message_get('success') %}
+            {% for message in message_pull('success') %}
                 {{ trans(message)|markdown }}
             {% endfor %}
         </div>
@@ -20,7 +20,7 @@
                 <span>&times;</span><span class="sr-only">Close</span>
             </button>
 
-            {% for message in message_get('info') %}
+            {% for message in message_pull('info') %}
                 {{ trans(message)|markdown }}
             {% endfor %}
         </div>
@@ -34,7 +34,7 @@
                 <span>&times;</span><span class="sr-only">Close</span>
             </button>
 
-            {% for message in message_get('warning') %}
+            {% for message in message_pull('warning') %}
                 {{ trans(message)|markdown }}
             {% endfor %}
         </div>
@@ -48,7 +48,7 @@
                 <span>&times;</span><span class="sr-only">Close</span>
             </button>
 
-            {% for message in message_get('error') %}
+            {% for message in message_pull('error') %}
                 {{ trans(message)|markdown }}
             {% endfor %}
         </div>
