@@ -15,79 +15,9 @@
                     'enctype': 'multipart/form-data',
                     'url':form.options.url
                 })|raw }}
-                <div class="col-6">
-                    <div class="form-group display_name-field display_name-field_type">
-                        <label class="control-label">
-                            {{ trans('visiosoft.theme.base::field.first_name') }}
-                            <span class="required">*</span>
-                        </label>
 
-                        <div class="input-wrapper">
-                            {{ form.fields.first_name.setPlaceholder(trans('visiosoft.theme.base::field.first_name')).input|raw }}
-                            {{ form.fields.username.setValue(random()).setAttributes({
-                                'class' :'hidden',
-                            }).input|raw }}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-6">
-                    <div class="form-group username-field username-field_type">
-                        <label class="control-label">
-                            {{ trans('visiosoft.theme.base::field.last_name') }}
-                            <span class="required">*</span>
-                        </label>
+                {% include 'visiosoft.theme.base::addons/anomaly/users-module/partials/register-form' %}
 
-                        <div class="input-wrapper">
-                            {{ form.fields.last_name.setPlaceholder(trans('visiosoft.theme.base::field.last_name')).input|raw }}
-                        </div>
-                    </div>
-                </div>
-                {% if setting_value('visiosoft.module.advs::register_email_field') %}
-                    <div class="col-12">
-                        <div class="form-group email-field email-field_type">
-                            <label class="control-label">
-                                {{ trans('visiosoft.theme.base::field.email') }}
-                                <span class="required">*</span>
-                            </label>
-
-                            <div class="input-wrapper">
-                                {{ form.fields.email.setPlaceholder(trans('visiosoft.theme.base::field.email')).input|raw }}
-                            </div>
-                        </div>
-                    </div>
-                {% else %}
-                    {% set domain = config('app.url')|replace({ ('https://'): '',('http://'): '',('/'): '/' }) %}
-                    {% if domain == "localhost" %}
-                        {% set domain = "example.com" %}
-                    {% endif %}
-                    {{ form.fields.email.setValue(random()~"@"~domain).setAttributes({
-                        'class' :'hidden',
-                    }).input|raw }}
-                {% endif %}
-                <div class="col-12">
-                    <div class="form-group password-field password-field_type">
-                        <label class="control-label">
-                            {{ trans('visiosoft.theme.base::field.password') }}
-                            <span class="required">*</span>
-                        </label>
-
-                        <div class="input-wrapper">
-                            {{ form.fields.password.setPlaceholder(trans('visiosoft.theme.base::field.password')).input|raw }}
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12">
-                    <div class="form-group email-field phone-field_type register-phone">
-                        <label class="control-label">
-                            {{ trans('visiosoft.theme.base::field.phone_number') }}
-                            <span class="required">*</span>
-                        </label>
-
-                        <div class="input-wrapper">
-                            {{ form.fields.phone.setValue(form.fields.full_phone.value).input|raw }}
-                        </div>
-                    </div>
-                </div>
                 <div class="col-12 row m-0">
                     <div class="col-6 pr-0 pl-1">
                         <button class="btn btn-sm btn-success py-2">
