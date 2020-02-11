@@ -12,7 +12,7 @@ class Extend extends ActionHandler
 
         foreach ($selected as $id) {
             $entry = $model->find($id);
-            $finishAt = $entry->finish_at ? $entry->finish_at->addDay(30) : date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + 30 day'));
+            $finishAt = $entry->finish_at ? $entry->finish_at->addDay(setting_value('visiosoft.module.advs::default_published_time')) : date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . setting_value('visiosoft.module.advs::default_published_time') . ' day'));
             $entry->finish_at = $finishAt;
             $entry->update();
         }
