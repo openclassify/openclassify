@@ -181,10 +181,12 @@ class CategoryController extends AdminController
     public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
     {
         $categoryRepository->DeleteCategories($id);
-        if ($request->parent == "")
-            return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
-        else
+        $subCats = $categoryRepository->getSubCatById($request->parent);
+        if (count($subCats)) {
             return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
+        } else {
+            return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
+        }
     }
 
     public function cleanSubcats()
