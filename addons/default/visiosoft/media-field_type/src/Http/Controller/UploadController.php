@@ -60,21 +60,20 @@ class UploadController extends AdminController
             $watermarktype = $settings->value('visiosoft.module.advs::watermark_type');
             $position = $settings->value('visiosoft.module.advs::watermark_position');
 
+            $img = WaterMark::make($this->request->file('upload')->getRealPath())
+                ->resizeCanvas(800, 600, 'center', false, '464646');
             if ($watermarktype == 'image') {
 
-                $img = WaterMark::make($this->request->file('upload')->getRealPath());
                 $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');
                 $watermarkimage = $files->find($watermarkimage_id);
                 $w = $img->width();
                 if ($watermarkimage != null) {
-                    $watermark = WaterMark::make(public_path() . '/app/default/files-module/local/' . $watermarkimage->path())
-                        ->opacity($settings->value('visiosoft.module.advs::watermark_opacity'))
-                        ->resize($w);
+                    $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path())
+                        ->opacity($settings->value('visiosoft.module.advs::watermark_opacity'));
                     $img->insert($watermark, $position);
                 }
 
             } else {
-                $img = WaterMark::make($this->request->file('upload')->getRealPath());
                 $watermarktext = $settings->value('visiosoft.module.advs::watermark_text');
                 $v = "top";
                 $h = "center";
@@ -90,7 +89,7 @@ class UploadController extends AdminController
 
             }
 
-            $img->save(public_path() . '/app/default/files-module/local/images/' . $file->getAttributes()['name']);
+            $img->save(app_storage_path() . '/files-module/local/images/' . $file->getAttributes()['name']);
             return $this->response->json($file->getAttributes());
 
         }
