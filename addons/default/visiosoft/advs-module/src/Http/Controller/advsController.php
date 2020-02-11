@@ -164,8 +164,6 @@ class AdvsController extends PublicController
                 $featured_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
                 $featured_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
             }
-
-            $advs = $dopingModel->reFilterAdvs(2, $advs);
         }
 
         foreach ($advs as $index => $ad) {
