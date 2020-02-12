@@ -214,12 +214,12 @@ class AdvsController extends PublicController
             $userProfile = $this->profile_repository->getProfile($user->id);
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
-
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
         $viewType = $this->requestHttp->cookie('viewType');
+
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
+            'user', 'userProfile', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         if (isset($viewType) and $viewType == 'table')
             return $this->view->make('visiosoft.module.advs::list/table', $compact);

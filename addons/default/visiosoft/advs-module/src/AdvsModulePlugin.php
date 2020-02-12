@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
+use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
@@ -43,6 +44,13 @@ class AdvsModulePlugin extends Plugin
                     }
 
                     return $latestAds;
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'appendRequestURL',
+                function ($request, $url, $new_parameters) {
+
+                    return $this->dispatch(new appendRequestURL($request, $url, $new_parameters));
                 }
             )
         ];
