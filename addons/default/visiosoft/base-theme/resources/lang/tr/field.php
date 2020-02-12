@@ -23,10 +23,10 @@ return [
     'email_or_phone_number' => 'E-Posta Adresiniz veya Telefon Numaranız',
     'phone_number' => 'Telefon Numarası',
 
+    // Registration instructions
     'personal_registration_header' => 'Bireysel Üyelik Avantajları Nelerdir?',
-    'personal_registration_body' => '',
-    'personal_registration_list_1' => 'Ücretsiz bir ilan gönderin,',
-
+    'personal_registration_body' => 'Evinizi, arabanızı satmak ve kiralamak, kullanılmayan eşyalarınızı satmak, yenilerini almak.',
+    'personal_registration_list_1' => 'Ücretsiz bir reklam gönderin,',
     'personal_registration_list_2' => 'İlgilendiğiniz reklamları ekleyin, favorilerinize ekledikten sonra fiyat değişikliklerini takip edin, kriterlerinize uygun favori aramalar oluşturun,',
     'personal_registration_list_3' => 'Sitedeki reklam sahiplerine mesaj gönderin.',
     'register_information_note' => 'Bu sayfadaki bilgiler ' . env('APPLICATION_DOMAIN') . ' üyelik. Kişisel verilerin korunması hakkında ayrıntılı bilgiyi burada bulabilirsiniz.',
