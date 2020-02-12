@@ -2,21 +2,21 @@
 
 return [
     'countries' => [
-        'title' => 'Countries',
+        'title' => 'vendet',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Qytetet',
     ],
     'districts' => [
-        'title' => 'Districts',
+        'title' => 'rrethet',
     ],
     'neighborhoods' => [
-        'title' => 'Neighborhoods',
+        'title' => 'lagjet',
     ],
     'village' => [
-        'title' => 'Village',
+        'title' => 'fshati',
     ],
-    'general' => 'General',
-    'map' => 'Map',
-    'setting' => 'Setting',
+    'general' => 'i përgjithshëm',
+    'map' => 'hartë',
+    'setting' => 'mjedis',
 ];
