@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'File',
-    'name'        => 'File Field Type',
-    'description' => 'A file upload field type.',
+    'title'       => 'skedar',
+    'name'        => 'Lloji i fushës së skedarit',
+    'description' => 'Një lloj fushë e ngarkimit të skedarëve.',
 ];
