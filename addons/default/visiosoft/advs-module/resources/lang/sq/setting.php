@@ -2,28 +2,28 @@
 
 return [
     'auto_approve' => [
-        'name' => 'Auto Approve',
+        'name' => 'Miratimi automatik',
     ],
     'default_published_time' => [
-        'name' => 'Default Publish Time',
+        'name' => 'Koha e publikimit të paracaktuar',
     ],
     'default_adv_limit' => [
-        'name' => 'Default Ads Limit',
+        'name' => 'Kufiri i paracaktuar i reklamave',
     ],
     'address' => [
-        'name' => 'Contact Adress',
+        'name' => 'Kontaktoni Adresën',
     ],
     'phone' => [
-        'name' => 'Contact Phone',
+        'name' => 'Telefon kontakti',
     ],
     'favicon' => [
         'name' => 'Favicon',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Map Long Coordinate',
+        'name' => 'Koordinata e gjatë e hartës',
     ],
     'map_coordinates_lat' => [
-        'name' => 'Map Lat Coordinate',
+        'name' => 'Koordinata Lat Harta',
     ],
     'iban_numbers' => [
         'name' => 'IBAN',
@@ -32,82 +32,82 @@ return [
         'name' => 'Logo',
     ],
     'ogImage' => [
-        'name' => 'Social Share Logo',
-        'warning'      => 'It should be at a resolution of 1200 x 630. ',
+        'name' => 'Logo e përbashkët sociale',
+        'warning'      => 'Ajo duhet të jetë në një rezolutë prej 1200 x 630. ',
 
     ],
     'currencies' => [
-        'name' => 'Active Currencies',
+        'name' => 'Monedha aktive',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Kufiri i fundit',
     ],
     'site_address' => [
-        'name' => 'Site address',
-        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
+        'name' => 'Adresa e sitit',
+        'warning'      => 'Auto shtuar www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Google Map Api Key',
+        'name' => 'Google Key Api Key',
     ],
 
     'default_country' => [
-        'name' => 'Default Ad Country',
+        'name' => 'Vendi i paracaktuar i reklamave',
     ],
     'free_currencyconverterapi_key' => [
-        'name' => 'Currency Converter API Key'
+        'name' => 'Keyelësi API i Konvertuesit të Valutave'
     ],
     'default_city' => [
-        'name' => 'Default Ad City',
+        'name' => 'Qyteti i paracaktuar Ad',
     ],
     'default_district' => [
-        'name' => 'Default Ad District',
+        'name' => 'Rrethi i paracaktuar i reklamave',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Ad Neighborhood',
+        'name' => 'Lagjia e paracaktuar e reklamave',
     ],
     'default_currency' => [
-        'name' => 'Default Ad Currency',
+        'name' => 'Valuta e paracaktuar e reklamës',
     ],
     'default_GET' => [
-        'name' => 'Default Ad GET',
+        'name' => 'Reklama e paracaktuar GET',
     ],
     'twitter' => [
-        'name' => 'Twitter',
+        'name' => 'Cicëroj',
     ],
     'facebook' => [
         'name' => 'Facebook',
     ],
     'youtube' => [
-        'name' => 'Youtube',
+        'name' => 'YouTube',
     ],
     'google' => [
         'name' => 'Google',
     ],
     'watermark_type' => [
-        'name' => 'Watermark Type',
+        'name' => 'Lloji ujëra',
     ],
     'watermark_text' => [
-        'name' => 'Watermark Text',
+        'name' => 'Teksti i Filigranit',
     ],
     'watermark_image' => [
-        'name' => 'Watermark Image',
+        'name' => 'Imazhi i Filigranit',
     ],
     'watermark_position' => [
-        'name' => 'Watermark Position',
+        'name' => 'Pozicioni i Filigranit',
     ],
     'watermark_opacity' => [
-        'name' => 'Watermark Opacity',
+        'name' => 'Hapësira e Filigranit',
     ],
     'listing_page_image' => [
-        'name' => 'Listing Page Image',
+        'name' => 'Lista e figurës së faqes',
     ],
     'enabled_currencies' => [
-        'name' => 'Enabled Currencies',
+        'name' => 'Monedhat e aktivizuara',
     ],
     'google_statistic_code' => [
-        'name' => 'Google Statistic Code',
+        'name' => 'Kodi i Statistikave të Google',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Kërkesa për regjistrim përmes postës elektronike',
     ],
 ];
