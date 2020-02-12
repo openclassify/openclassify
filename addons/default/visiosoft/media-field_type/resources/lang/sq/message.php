@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_folder'     => 'Which folder would you like to upload to?',
-    'upload'            => 'Add İmages | Upload İmages | Attach a photo',
-    'choose_files'      => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads'        => 'No files uploaded.',
-    'overwrite'         => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading'         => 'Uploading',
-    'loading'           => 'Loading',
+    'choose_folder'     => 'Në cilën dosje dëshironi të ngarkoni?',
+    'upload'            => 'Shtoni agesmages | Ngarko İmages | Bashkangjit një fotografi',
+    'choose_files'      => 'Cilat skedarë dëshironi të përdorni?',
+    'no_files_selected' => 'Asnjë skedar i zgjedhur.',
+    'no_uploads'        => 'Asnjë fotografi të ngarkuar.',
+    'overwrite'         => 'tashmë është ngarkuar. Dëshiron ta rishkruash?',
+    'uploading'         => 'ngarkimi',
+    'loading'           => 'ngarkim',
 ];
