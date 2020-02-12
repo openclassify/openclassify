@@ -1,10 +1,11 @@
 {% extends "theme::layouts/default" %}
 {% block content %}
 
-    {% if profile_photo == "" %}
-        {% set profile_photo = img('visiosoft.module.profile::images/profile-default.png').url %}
+    {% set profile_photo = profiles.file %}
+    {% if profile_photo %}
+        {% set profile_photo = file(profile_photo.id).url %}
     {% else %}
-        {% set profile_photo = profiles.file.url %}
+        {% set profile_photo = img('visiosoft.module.profile::images/profile-default.png').url %}
     {% endif %}
 
     <div class="row">
@@ -121,10 +122,6 @@
                                         {{ profileForm.fields.land_phone.label }}
                                     </label>
                                     {{ profileForm.fields.land_phone.input|raw }}
-                                </div>
-                                <div class=" form-group">
-                                    <label class="control-label font-weight-bold">{{ trans("visiosoft.module.profile::field.adv_listing_banner.name") }}</label>
-                                    {{ profileForm.fields.adv_listing_banner.input|raw }}
                                 </div>
                                 <div class=" form-group">
                                     <label class="control-label font-weight-bold">{{ trans("visiosoft.module.profile::field.identification_number.name") }}</label>
