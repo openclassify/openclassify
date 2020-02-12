@@ -5,7 +5,7 @@ return [
         'title' => 'Profile',
     ],
     'adress' => [
-        'title' => 'Adress',
+        'title' => 'Adresa',
     ],
-    'general_setting' => 'General Settings',
+    'general_setting' => 'Cilësimet e përgjithshme',
 ];
