@@ -2,27 +2,27 @@
 
 return [
     'name' => [
-        'name' => 'Title',
+        'name' => 'titull',
     ],
     'order' => [
-        'name' => 'Order',
+        'name' => 'urdhër',
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'goditje e fortë'
     ],
     'files' => [
-        'name' => 'Image'
+        'name' => 'imazh'
     ],
     'seo_keyword' => [
-        'name' => 'Seo Keyword'
+        'name' => 'Fjalë kyçe SEO'
     ],
     'seo_description' => [
-        'name' => 'Seo Description'
+        'name' => 'Përshkrimi i Seos'
     ],
     'icon' => [
-        'name' => 'Icon'
+        'name' => 'ikonë'
     ],
 
-    'please_wait' => 'Please wait.Deleting Sub Categories',
-    'category_selection' => 'Category Selection',
+    'please_wait' => 'Ju lutemi prisni. Zgjedhja e kategorive nën',
+    'category_selection' => 'Zgjedhja e kategorisë',
 ];
