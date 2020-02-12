@@ -2,9 +2,9 @@
 
 return [
     'category' => [
-        'title' => 'Category',
+        'title' => 'kategori',
     ],
     'placeholderforsearch' => [
-        'title' => 'Placeholder',
+        'title' => 'placeholder',
     ],
 ];
