@@ -2,30 +2,30 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Titulli i lundrimit',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Veprimi i lundrimit',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Fushat e vendit',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Fushat e datës',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Fushat e çmimeve',
     ],
     'breadcrumbs' => [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Detajet e reklamës',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Tab Detajet e Ad',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Më të fundit dhe Shiko të gjitha Btn',
     ],
 ];
