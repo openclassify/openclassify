@@ -1,0 +1,9 @@
+.small-notice {
+    background-color: #f7f7f7;
+}
+
+.small-notice i {
+    font-size: 18px;
+    position: relative;
+    top: 4px;
+}

@@ -21,7 +21,13 @@
                     {% set id = maincat.id %}
                     {% set parent_category = false %}
                 {% endif %}
-                <a href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ id }}"
+                <a href="
+{% if(viewType != "map") %}
+{{ appendRequestURL(request_query(),url_route('visiosoft.module.advs::list'),{'cat':id}) }}
+{% else %}
+{{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':id}) }}
+{% endif %}
+"
                    class="list-group-item list-group-item-action text-truncate">
                     <i class="fas fa-dot-circle"></i>
                     {{ name }}
@@ -29,7 +35,13 @@
                 {% for subcat in params.subCats %}
                     <div class="list-group pl-3 bg-light">
                         {% if subcat.parent_category_id == maincat['id'] %}
-                            <a href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ subcat.id }}"
+                            <a href="
+{% if(viewType != "map") %}
+{{ appendRequestURL(request_query(),url_route('visiosoft.module.advs::list'),{'cat':subcat.id}) }}
+{% else %}
+{{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':subcat.id}) }}
+{% endif %}
+"
                                class="list-group-item list-group-item-action
                                                     text-truncate">{{ subcat.name }}</a>
                         {% endif %}

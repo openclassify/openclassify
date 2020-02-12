@@ -164,8 +164,6 @@ class AdvsController extends PublicController
                 $featured_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
                 $featured_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
             }
-
-            $advs = $dopingModel->reFilterAdvs(2, $advs);
         }
 
         foreach ($advs as $index => $ad) {
@@ -216,12 +214,12 @@ class AdvsController extends PublicController
             $userProfile = $this->profile_repository->getProfile($user->id);
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
-
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
         $viewType = $this->requestHttp->cookie('viewType');
+
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
+            'user', 'userProfile', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         if (isset($viewType) and $viewType == 'table')
             return $this->view->make('visiosoft.module.advs::list/table', $compact);
