@@ -47,7 +47,8 @@
                                     </label>
                                 </div>
                                 <div class="form-check py-1">
-                                    <input class="form-check-input" type="radio" name="date" id="dateMonth" value="month">
+                                    <input class="form-check-input" type="radio" name="date" id="dateMonth"
+                                           value="month">
                                     <label class="form-check-label" for="dateMonth">
                                         {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
                                     </label>
@@ -64,7 +65,8 @@
                                 <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#media"
                                         aria-expanded="true" aria-controls="media">
                                     <i class="fa fa-camera"></i>
-                                    {{ trans("visiosoft.module.advs::field.photo.name") }}, {{ trans("visiosoft.module.advs::field.video.name") }}
+                                    {{ trans("visiosoft.module.advs::field.photo.name") }}
+                                    , {{ trans("visiosoft.module.advs::field.video.name") }}
                                 </button>
                             </h5>
                         </div>
@@ -73,13 +75,15 @@
                              style="max-height: 300px;">
                             <div class="row p-3 m-0">
                                 <div class="form-check py-1">
-                                    <input class="form-check-input" type="checkbox" value="true" name="photo" id="photo">
+                                    <input class="form-check-input" type="checkbox" value="true" name="photo"
+                                           id="photo">
                                     <label class="form-check-label" for="photo">
                                         {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
                                     </label>
                                 </div>
                                 <div class="form-check py-1">
-                                    <input class="form-check-input" type="checkbox" value="true" name="video" id="video">
+                                    <input class="form-check-input" type="checkbox" value="true" name="video"
+                                           id="video">
                                     <label class="form-check-label" for="video">
                                         {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
                                     </label>
@@ -105,7 +109,8 @@
                              style="max-height: 300px;">
                             <div class="row p-3 m-0">
                                 <div class="form-check py-1">
-                                    <input class="form-check-input" type="checkbox" value="true" name="map" id="mapFilter">
+                                    <input class="form-check-input" type="checkbox" value="true" name="map"
+                                           id="mapFilter">
                                     <label class="form-check-label" for="mapFilter">
                                         {{ trans("visiosoft.module.advs::field.yes.name") }}
                                     </label>
@@ -133,13 +138,13 @@
                                 {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
                                 <div class="col-md-4 p-1 m-0">
                                     <input type="number" class="price-input form-control w-100"
-                                           value="{{ request.min_price }}"
+                                           value="{{ app.request.get('min_price') }}"
                                            name="min_price" min="0"
                                            placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}">
                                 </div>
                                 <div class="col-md-4 p-1 pr-0 m-0">
                                     <input class="price-input form-control w-100" type="number"
-                                           value="{{ request.max_price }}"
+                                           value="{{ app.request.get('max_price') }}"
                                            name="max_price"
                                            placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
 
@@ -147,7 +152,9 @@
                                 <div class="col-md-4 py-1 px-0">
                                     <select name="currency" id="currency" class="form-control">
                                         {% for currency in active_currencies %}
-                                            <option value="{{ currency }}">{{ currency }}</option>
+                                            <option {% if app.request.get('currency') == currency %}
+                                                    selected
+                                                    {% endif %}value="{{ currency }}">{{ currency }}</option>
                                         {% endfor %}
                                     </select>
                                 </div>
