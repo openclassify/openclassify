@@ -1,4 +1,16 @@
-<form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+{% if 'cat' in param|keys %}
+    {% set catId = entries('cats', 'category').find(param['cat']) %}
+    {% set cityId = null %}
+    {% if 'city' in param|keys %}
+        {% set citiesArray = param['city'][0]|split(',') %}
+        {% if count(citiesArray) is same as(1) %}
+            {% set cityId = entries('location', 'cities').find(param['city'][0]) %}
+        {% endif %}
+    {% endif %}
+    <form action="{{ url_route('adv_list_seo', [catId.slug, cityId.slug]) }}" method="get">
+{% else %}
+    <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+{% endif %}
     <div class="row">
         <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
         <input type="hidden" name="user" value="{{ app.request.get('user') }}">
@@ -16,7 +28,8 @@
                         'cities':cities,
                         'districts':districts,
                         'neighborhoods':neighborhoods,
-                        'villages':villages
+                        'villages':villages,
+                        'param':param
                     })|raw }}
 
                     <!-- Date Filter Start -->

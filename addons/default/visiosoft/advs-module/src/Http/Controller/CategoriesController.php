@@ -6,7 +6,8 @@ use Illuminate\Support\Facades\DB;
 
 class CategoriesController extends PublicController {
 
-    public function listByCat($cat) {
+    public function listByCat($cat)
+    {
         $advs = DB::table('advs_advs')
             ->where('cat1', $cat)
             ->orwhere('cat2', $cat)
