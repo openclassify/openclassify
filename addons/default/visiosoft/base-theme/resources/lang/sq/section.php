@@ -2,6 +2,6 @@
 
 return [
     'catalog_mode' => [
-        'name' => 'Catalog Mode',
+        'name' => 'Mënyra e katalogut',
     ],
 ];
