@@ -2,36 +2,36 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'titull'
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'goditje e fortë'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'qytet'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'vend'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'rreth'
     ],
     'order' => [
-        'name' => 'Sort Order'
+        'name' => 'Renditja e renditjes'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'lagje'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'fshati'
     ],
     'description' => [
-        'name' => 'Description'
+        'name' => 'Përshkrim'
     ],
     'pick_option' => [
-        'name' => 'Pick an option',
+        'name' => 'Zgjidh një mundësi',
     ],
     'address' => [
-        'name' => 'Address',
+        'name' => 'Adresë',
     ],
 ];
