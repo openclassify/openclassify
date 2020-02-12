@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Rri pezull',
+        'instructions' => 'Zgjeroni shiritin anësor në rri pezull?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'lundrim',
+        'instructions' => 'Specifikoni tuaj <em>personal</em> rendin e lundrimit.',
+        'warning'      => 'Artikulli i parë i mundshëm i navigimit përdoret si zona <strong>shtëpisë tuaj</strong>.',
+        'reorder'      => 'Zvarritni dhe lëshoni artikujt kryesorë të lundrimit në <strong>sidebar</strong> për t\'i rivartuar ato.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Dendësia e ekranit',
+        'instructions' => 'Ekrani kompakt lejon që më shumë përmbajtje të shfaqen në ekran menjëherë.',
         'option'       => [
             'default' => 'Default',
-            'compact' => 'Compact',
+            'compact' => 'kompakt',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Mënyra e shiritit anësor',
+        'instructions' => 'Shiritat anësore statike do të jenë gjithmonë të dukshme.',
         'option'       => [
             'default' => 'Default',
-            'static'  => 'Static',
+            'static'  => 'i pandryshueshëm',
         ],
     ],
 ];
