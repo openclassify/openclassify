@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'dosjet',
+        'instructions' => 'Specifikoni cilat dosje janë të disponueshëm për këtë fushë. Lini bosh për të shfaqur të gjithë dosjet.',
+        'warning'      => 'Lejet ekzistuese të dosjeve kanë përparësi ndaj dosjeve të zgjedhura.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Madhësia e ngarkimit maksimal',
+        'instructions' => 'Specifikoni madhësinë maksimale të ngarkimit në <strong>megabajt</strong>.',
+        'warning'      => 'Nëse nuk specifikohet maksimumi i dosjes dhe më pas do të përdoret maksimumi i serverit.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Mënyra e hyrjes',
+        'instructions' => 'Si duhet të sigurojnë përdoruesit futjen e skedarit?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Ngarkoni dhe / ose zgjidhni skedarë.',
+            'select'  => 'Zgjidhni vetëm skedarët.',
+            'upload'  => 'Ngarko skedarët vetëm.',
         ],
     ],
 ];
