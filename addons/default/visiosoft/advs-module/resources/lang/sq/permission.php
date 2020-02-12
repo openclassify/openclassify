@@ -4,49 +4,49 @@ return [
     'advs' => [
         'name'   => 'Ads',
         'option' => [
-            'read'   => 'Can read ads?',
-            'write'  => 'Can create/edit ads?',
-            'delete' => 'Can delete ads?',
+            'read'   => 'Mund të lexoni reklama?',
+            'write'  => 'Mund të krijoni / modifikoni reklama?',
+            'delete' => 'Mund të fshini reklamat?',
         ],
     ],
     'categories' => [
-        'name'   => 'Categories',
+        'name'   => 'Kategoritë',
         'option' => [
-            'read'   => 'Can read categories?',
-            'write'  => 'Can create/edit categories?',
-            'delete' => 'Can delete categories?',
+            'read'   => 'Mund të lexoni kategori?',
+            'write'  => 'Mund të krijoni / modifikoni kategori?',
+            'delete' => 'Mund të fshini kategoritë?',
         ],
     ],
     'village' => [
-        'name'   => 'Village',
+        'name'   => 'fshati',
         'option' => [
-            'read'   => 'Can read village?',
-            'write'  => 'Can create/edit village?',
-            'delete' => 'Can delete village?',
+            'read'   => 'Mund të lexoni fshatin?',
+            'write'  => 'Mund të krijojë / modifikojë fshatin?',
+            'delete' => 'Mund të fshini fshatin?',
         ],
     ],
     'custom_fields' => [
-        'name'   => 'Custom fields',
+        'name'   => 'Fushat e personalizuara',
         'option' => [
-            'read'   => 'Can read custom fields?',
-            'write'  => 'Can create/edit custom fields?',
-            'delete' => 'Can delete custom fields?',
+            'read'   => 'Mund të lexoni fushat me porosi?',
+            'write'  => 'Mund të krijoni / modifikoni fushat me porosi?',
+            'delete' => 'Mund të fshini fushat me porosi?',
         ],
     ],
     'custom_field_advs' => [
-        'name'   => 'Custom field ads',
+        'name'   => 'Reklama me terren personal',
         'option' => [
-            'read'   => 'Can read custom field ads?',
-            'write'  => 'Can create/edit custom field ads?',
-            'delete' => 'Can delete custom field ads?',
+            'read'   => 'Mund të lexoni reklama në terren me porosi?',
+            'write'  => 'Mund të krijoni / modifikoni reklama me terren personal?',
+            'delete' => 'Mund të fshini reklamat e fushave me porosi?',
         ],
     ],
     'cf_values' => [
-        'name'   => 'Cf values',
+        'name'   => 'Vlerat Cf',
         'option' => [
-            'read'   => 'Can read cf values?',
-            'write'  => 'Can create/edit cf values?',
-            'delete' => 'Can delete cf values?',
+            'read'   => 'A mund të lexoni vlerat cf?',
+            'write'  => 'Mund të krijoni / modifikoni vlerat cf?',
+            'delete' => 'Mund të fshini vlerat cf?',
         ],
     ],
 ];
