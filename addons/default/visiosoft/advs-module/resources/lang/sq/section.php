@@ -5,39 +5,39 @@ return [
         'title' => 'Ads',
     ],
     'categories' => [
-        'title' => 'Categories',
+        'title' => 'Kategoritë',
     ],
     'countries' => [
-        'title' => 'Countries',
+        'title' => 'vendet',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Qytetet',
     ],
     'districts' => [
-        'title' => 'Districts',
+        'title' => 'rrethet',
     ],
     'neighborhoods' => [
-        'title' => 'Neighborhoods',
+        'title' => 'lagjet',
     ],
     'village' => [
-        'title' => 'Village',
+        'title' => 'fshati',
     ],
     'custom_fields' => [
-        'title' => 'Custom fields',
+        'title' => 'Fushat e personalizuara',
     ],
     'custom_field_advs' => [
-        'title' => 'Custom field ads',
+        'title' => 'Reklama me terren personal',
     ],
     'cf_values' => [
-        'title' => 'Cf values',
+        'title' => 'Vlerat Cf',
     ],
     'fields' => [
-        'title' => 'Custom Fields'
+        'title' => 'Fushat e personalizuara'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Pasuritë e Qarta'
     ],
-    'general' => 'General',
+    'general' => 'i përgjithshëm',
     'ads' => 'Ads',
-    'user' => 'User',
+    'user' => 'përdorues',
 ];
