@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Files',
-    'name'        => 'Files Field Type',
-    'description' => 'A multiple files upload field type.',
+    'name'        => 'Llojet e fushës së skedarëve',
+    'description' => 'Një skedar i shumëfishtë ngarkon një lloj fushë.',
 ];
