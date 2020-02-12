@@ -2,236 +2,236 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'titull'
     ],
     'order' => [
-        'name' => 'Order'
+        'name' => 'urdhër'
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'goditje e fortë'
     ],
     'parent_category' => [
-        'name' => 'Parent'
+        'name' => 'prind'
     ],
     'category' => [
-        'name' => 'Category Title'
+        'name' => 'Titulli i kategorisë'
     ],
     'price' => [
-        'name' => 'Price'
+        'name' => 'çmim'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'data'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'Foto'
     ],
     'video' => [
-        'name' => 'Video'
+        'name' => 'video'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'hartë'
     ],
     'stock' => [
         'name' => 'Stock'
     ],
     'advs_desc' => [
-        'name' => 'Description'
+        'name' => 'Përshkrim'
     ],
     'online_payment' => [
-        'name' => 'Online Payment'
+        'name' => 'Pagesa Online'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'qytet'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'vend'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'rreth'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'lagje'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'fshati'
     ],
     'files' => [
-        'name' => 'Images'
+        'name' => 'images'
     ],
     'cat1' => [
-        'name' => 'Main Category'
+        'name' => 'Kategoria kryesore'
     ],
     'cat2' => [
-        'name' => 'Sub Category 1'
+        'name' => 'Nën Kategoria 1'
     ],
     'cat3' => [
-        'name' => 'Sub Category 2'
+        'name' => 'Nën Kategoria 2'
     ],
     'cat4' => [
-        'name' => 'Sub Category 3'
+        'name' => 'Nën Kategoria 3'
     ],
     'cat5' => [
-        'name' => 'Sub Category 4'
+        'name' => 'Nën Kategoria 4'
     ],
     'cat6' => [
-        'name' => 'Sub Category 5'
+        'name' => 'Nën Kategoria 5'
     ],
     'cat7' => [
-        'name' => 'Sub Category 6'
+        'name' => 'Nën Kategoria 6'
     ],
     'currency' => [
-        'name' => 'Currency'
+        'name' => 'monedhë'
     ],
     'status' => [
-        'name' => 'Status',
+        'name' => 'status',
         'option' => [
-            'approved' => 'Approved',
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished',
-            'pending_admin' => 'Pending Admin',
-            'pending_user' => 'Pending User'
+            'approved' => 'i miratuar',
+            'expired' => 'i skaduar',
+            'unpublished' => 'i pabotuar',
+            'pending_admin' => 'Në pritje të administratorit',
+            'pending_user' => 'Përdorues në pritje'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Pending Ads'
+        'name' => 'Në pritje të reklamave'
     ],
     'archived_adv' => [
-        'name' => 'Archived Ads'
+        'name' => 'Reklama të arkivuara'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Mbaro At'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'Fotoja e kopertinës'
     ],
     'favs_adv' => [
-        'name' => 'Fav Ads'
+        'name' => 'Reklamat e preferuara'
     ],
     'my_adv' => [
-        'name' => 'ADVS'
+        'name' => 'advs'
     ],
-    'description' =>  'Description',
-    'explanation' =>  'Explanation',
+    'description' =>  'Përshkrim',
+    'explanation' =>  'Shpjegim',
     'type' => [
-        'name' => 'Type'
+        'name' => 'lloj'
     ],
     'parent_adv' => [
-        'name' => 'Related Ad'
+        'name' => 'Reklama e lidhur'
     ],
     'value' => [
-        'name' => 'Value'
+        'name' => 'vlerë'
     ],
-    'list' => 'List',
-    'home' => 'Home',
-    'list-page' => 'List Page',
-    'search' => 'Search',
-    'recommended' => 'Recommended Ads for You',
-    'sort_by' => 'Sort By',
-    'pick_option' => 'Pick an option',
-    'pick_ordering' => 'Ordering',
-    'price_high' => 'Price High to Low',
-    'price-low' => 'Price Low to High',
-    'newest' => 'Newest',
-    'categories' => 'Categories',
-    'all_categories' => 'All Categories',
-    'location' => 'Location',
-    'send_message' => 'Send Message',
-    'phone_gsm' => 'Gsm Phone',
-    'phone_office' => 'Office Phone',
-    'add_to_favorites' => "Add to Favorites",
+    'list' => 'Listë',
+    'home' => 'shtëpi',
+    'list-page' => 'Faqja e listës',
+    'search' => 'Kërko',
+    'recommended' => 'Reklama të rekomanduara për ju',
+    'sort_by' => 'Ndaj sipas',
+    'pick_option' => 'Zgjidh një mundësi',
+    'pick_ordering' => 'renditje',
+    'price_high' => 'Pricemimi i lartë deri në i ulët',
+    'price-low' => 'Pricemimi i ulët deri në i lartë',
+    'newest' => 'Më të Rejat',
+    'categories' => 'Kategoritë',
+    'all_categories' => 'Të gjitha kategoritë',
+    'location' => 'vend',
+    'send_message' => 'Dërgoni mesazh',
+    'phone_gsm' => 'Gsm Telefon',
+    'phone_office' => 'Telefoni i zyres',
+    'add_to_favorites' => "Shto te të preferuarat",
     'send' => 'Send',
-    'search_name' => 'Search Name',
-    'my_favorite_searches' => 'Favorite Searches',
-    'search_desc' => 'You can add and manage your favorite search selections here.',
-    'complaint_placeholder' => 'Type your complaint details here.',
-    'show_details' => 'Show Details',
-    'edit' => 'Edit',
-    'approve' => 'Approve',
-    'passive' => "Passive",
-    'offered_by' => 'Offered By',
-    'more_ads_by' => 'More Ads By',
-    'click_phone' => 'Show phone number',
-    'share' => 'Share',
-    'report' => 'Report this ad',
+    'search_name' => 'Emri i kërkimit',
+    'my_favorite_searches' => 'Kërkimet e preferuara',
+    'search_desc' => 'Ju mund të shtoni dhe menaxhoni zgjedhjet tuaja të preferuara të kërkimit këtu.',
+    'complaint_placeholder' => 'Shkruaj detajet e ankesave këtu.',
+    'show_details' => 'Trego detajet',
+    'edit' => 'redaktoj',
+    'approve' => 'miratoj',
+    'passive' => "pasiv",
+    'offered_by' => 'Ofrohet nga',
+    'more_ads_by' => 'Më shumë reklama nga',
+    'click_phone' => 'Trego numrin e telefonit',
+    'share' => 'pjesë',
+    'report' => 'Raporto këtë shpallje',
     'features' => 'Features',
-    "streetview" => "Street View",
-    'recommended_ads' => 'Recommended Ads for You',
-    'new' => 'New',
-    'short_info' => 'Short Info',
-    'secure_trading' => 'Secure Trading',
-    '24/7' => '24/7 Support',
-    'easy_trading' => 'Easy Trading',
-    'need_help' => 'Need help?',
-    'give_a_call' => 'Give a call on',
-    'message_sent' => 'Message Sent!',
-    'asap' => 'Message sent, seller will contact you asap.',
-    'ad_id' => 'Ad Id',
-    'contact_with' => 'Contact With',
-    'create_adv' => 'Create Ad',
-    'edit_adv' => 'Edit Ad',
-    'mandatory_fields' => 'Mandatory Fields',
-    'ad_post' => 'Ad Post',
-    'sell_item' => 'Sell an item or service',
-    'search_save' => 'Favorite search saved successfully',
-    'address' => 'Address',
+    "streetview" => "Pamja e rrugës",
+    'recommended_ads' => 'Reklama të rekomanduara për ju',
+    'new' => 'I ri',
+    'short_info' => 'Informacion i shkurtër',
+    'secure_trading' => 'Tregtim i Sigurt',
+    '24/7' => '24/7 Mbështetje',
+    'easy_trading' => 'Tregtim i lehtë',
+    'need_help' => 'Kam nevojë për ndihmë?',
+    'give_a_call' => 'Bëni një telefonatë',
+    'message_sent' => 'Mesazhi u Dergua!',
+    'asap' => 'Mesazhi i dërguar, shitësi do t\'ju kontaktojë po ashtu.',
+    'ad_id' => 'Id Id',
+    'contact_with' => 'Kontaktoni me',
+    'create_adv' => 'Krijoni shpalljen',
+    'edit_adv' => 'Ndrysho shpalljen',
+    'mandatory_fields' => 'Të dhëna të detyrueshme',
+    'ad_post' => 'Postimi i reklamave',
+    'sell_item' => 'Shitet nje artikull ose sherbim',
+    'search_save' => 'Kërkimi i preferuar u ruajt me sukses',
+    'address' => 'Adresë',
     'email' => 'E-Mail',
-    'phone' => 'Phone',
-    'send_us_your_feedback' => 'Send Us Your Feedback',
-    'online_shopping' => 'GET',
-    'approved' => 'Approved Successfully',
-    'extended' => 'Extended Successfully',
-    'declined' => 'Declined Successfully',
-    'search_on_map' => 'Search on Map',
-    'post_free_ad' => 'Post Free Ad',
-    'select_a_category' => 'Select a Category',
-    'select_a_sub_category' => 'Select a Sub Category',
-    'all_dopings_added' => 'All doping types are added for this ad.',
+    'phone' => 'telefon',
+    'send_us_your_feedback' => 'Na Dërgoni Reagimin tuaj',
+    'online_shopping' => 'MARR',
+    'approved' => 'Miratuar me sukses',
+    'extended' => 'Zgjatur me sukses',
+    'declined' => 'Ka rënë me sukses',
+    'search_on_map' => 'Kërkimi në hartë',
+    'post_free_ad' => 'Posto reklamën falas',
+    'select_a_category' => 'Zgjidh nje kategori',
+    'select_a_sub_category' => 'Zgjidhni një Nën Kategori',
+    'all_dopings_added' => 'Të gjitha llojet e dopingut janë shtuar për këtë shpallje.',
     'is_get_adv' => [
-        'name' => 'GET'
+        'name' => 'MARR'
     ],
-    'corporate_info' => 'Corporate Info',
-    'featured_ads' => "Featured Ads",
-    'trending_ads' => 'Trendind Ads',
+    'corporate_info' => 'Informacioni i korporatës',
+    'featured_ads' => "Shpalljet e preferuara",
+    'trending_ads' => 'Reklamat e modës',
     'search_ads_result_message' => [
-        'name' => ':count ads found for :name search',
+        'name' => ': numëroni reklama të gjetura për: kërkim të emrit',
     ],
     'total' => 'Total',
-    'quantity' => 'Quantity',
-    'view_cart' => 'View Cart',
-    'no_ads' => 'No Ads!',
+    'quantity' => 'sasi',
+    'view_cart' => 'Shikoni Shportën',
+    'no_ads' => 'Pa reklama!',
     'show_display_mode' => [
-        'map' => 'Map',
-        'list' => 'List',
+        'map' => 'hartë',
+        'list' => 'Listë',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Ad Name',
-        'price' => 'Price',
-        'publish_at' => 'Ad Date',
-        'location_city' => 'City',
-        'location_country' => 'Country',
+        'name' => 'Emri i reklamës',
+        'price' => 'çmim',
+        'publish_at' => 'Data e reklamës',
+        'location_city' => 'qytet',
+        'location_country' => 'vend',
     ],
     'show_list_view' => [
-        'name' => 'List',
+        'name' => 'Listë',
     ],
     'show_table_view' => [
-        'name' => 'Table',
+        'name' => 'tabelë',
     ],
     'showcase' => [
-        'name' => 'Showcase',
+        'name' => 'vitrinë',
     ],
     'new_ad' => [
-        'name' => 'New Ad',
+        'name' => 'Shpallja e re',
     ],
     'profile' => [
         'name' => 'Profile',
     ],
     'my_ads' => [
-        'name' => 'My Ads',
+        'name' => 'Reklamat e mia',
     ],
     'sold_out' => [
-        'name' => 'Sold out',
+        'name' => 'E shitur',
     ],
-    'edit_category' => 'Edit Category',
+    'edit_category' => 'Ndrysho kategorinë',
     'max' => [
         'name' => 'Max',
     ],
@@ -239,24 +239,24 @@ return [
         'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Në 24 orët e fundit'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'Në Javën e Fundit'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'Në muajin e fundit'
     ],
     'ads_with_photo' => [
-        'name' => 'Ads With Photo'
+        'name' => 'Reklama me foto'
     ],
     'ads_with_video' => [
-        'name' => 'Ads With Video'
+        'name' => 'Reklama me video'
     ],
     'yes' => [
-        'name' => 'Yes'
+        'name' => 'po'
     ],
-    "no_location" => "No location is selected.",
-    "continue" => 'Continue',
-    "gallery" => 'Gallery',
+    "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
+    "continue" => 'vazhdoj',
+    "gallery" => 'Galeri',
 ];
