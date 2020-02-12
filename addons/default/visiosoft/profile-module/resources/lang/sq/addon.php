@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Profile',
-    'name'        => 'Profile Module',
+    'name'        => 'Moduli i profileve',
     'description' => ''
 ];
