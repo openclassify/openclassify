@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'dosjet',
+        'instructions' => 'Specifikoni cilat dosje janë të disponueshëm për këtë fushë. Lini bosh për të shfaqur të gjithë dosjet.',
+        'warning'      => 'Lejet ekzistuese të dosjeve kanë përparësi ndaj dosjeve të zgjedhura.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'Zgjedhjet minimale',
+        'instructions' => 'Vendosni numrin minimal të zgjedhjeve të lejuara.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'Zgjedhjet maksimale',
+        'instructions' => 'Vendosni numrin maksimal të zgjedhjeve të lejuara.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Mënyra e hyrjes',
+        'instructions' => 'Si duhet të sigurojnë përdoruesit futjen e skedarit?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Ngarkoni dhe / ose zgjidhni skedarë.',
+            'select'  => 'Zgjidhni vetëm skedarët.',
+            'upload'  => 'Ngarko skedarët vetëm.',
         ],
     ],
 ];
