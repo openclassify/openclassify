@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title'                     => 'Helpful Resources',
-    'description'               => 'Find help and discover features with these helpful resources.',
-    'documentation_link'        => 'OpenClassify Documentation',
-    'documentation_description' => 'Find documentation for OpenClassify, developing addons, and using addons too.',
-    'slack_link'                => 'Slack Team',
-    'slack_description'         => 'Find and communicate with other OpenClassify users and developers.',
-    'forum_link'                => 'Discussion Forum',
-    'forum_description'         => 'Find answers and post questions about using and developing with OpenClassify.',
-    'addons_link'               => 'Available Addons',
-    'addons_description'        => 'Discover addons available for OpenClassify.',
+    'title'                     => 'Burime të dobishme',
+    'description'               => 'Gjeni ndihmë dhe zbuloni tipare me këto burime të dobishme.',
+    'documentation_link'        => 'Dokumentacioni i OpenClassify',
+    'documentation_description' => 'Gjeni dokumentacionin për OpenClassify, zhvillimin e shtesave dhe përdorimin e shtesave gjithashtu.',
+    'slack_link'                => 'Skuadër e ngathët',
+    'slack_description'         => 'Gjeni dhe komunikoni me përdoruesit dhe zhvilluesit e tjerë të OpenClassify.',
+    'forum_link'                => 'Forumi i Diskutimit',
+    'forum_description'         => 'Gjeni përgjigje dhe postoni pyetje në lidhje me përdorimin dhe zhvillimin me OpenClassify.',
+    'addons_link'               => 'Shtesa të disponueshme',
+    'addons_description'        => 'Zbuloni shtesat në dispozicion për OpenClassify.',
 ];
