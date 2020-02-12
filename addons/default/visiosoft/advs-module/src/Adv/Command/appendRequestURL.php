@@ -28,9 +28,21 @@ class appendRequestURL
      */
     public function handle()
     {
-        return $this->url
-            . (Str::contains($this->url, '?') ? '&' : '?')
-            . Arr::query($this->appends(array_merge($this->request, $this->new_parameters)));
+        if (count($this->new_parameters) === 0 && count($this->request) === 0) {
+            return $this->url;
+        } elseif (count($this->request) > 0) {
+            return $this->url
+                . (Str::contains($this->url, '?') ? '&' : '?')
+                . Arr::query($this->appends($this->request));
+        } elseif (count($this->new_parameters) > 0) {
+            return $this->url
+                . (Str::contains($this->url, '?') ? '&' : '?')
+                . Arr::query($this->appends($this->new_parameters));
+        } else {
+            return $this->url
+                . (Str::contains($this->url, '?') ? '&' : '?')
+                . Arr::query($this->appends(array_merge($this->request, $this->new_parameters)));
+        }
     }
 
     /**
