@@ -2,13 +2,13 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Rri pezull',
+        'instructions' => 'Zgjeroni shiritin anësor në rri pezull?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify the <em>default</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'lundrim',
+        'instructions' => 'Specifikoni <em>parazgjedhur</em> rendin e lundrimit.',
+        'warning'      => 'Artikulli i parë i arritshëm i navigimit përdoret si zona <strong>shtëpi</strong>.',
+        'reorder'      => 'Zvarritni dhe lëshoni artikujt kryesorë të lundrimit në <strong>sidebar</strong> për t\'i rivartuar ato.',
     ],
 ];
