@@ -1,10 +1,10 @@
 <?php
 
 return [
-    'help'      => 'Help',
-    'search'    => 'Search',
-    'logout'    => 'Logout',
-    'view_site' => 'View Site',
-    'title'     => 'Control Panel',
-    'search_placeholder'     => 'Type to search',
+    'help'      => 'Ndihmë',
+    'search'    => 'Kërko',
+    'logout'    => 'Shkyç',
+    'view_site' => 'Shiko sitin',
+    'title'     => 'Paneli i kontrollit',
+    'search_placeholder'     => 'Tipi për të kërkuar',
 ];
