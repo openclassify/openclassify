@@ -2,106 +2,106 @@
 
 return [
     'file' => [
-        'name' => 'Photos'
+        'name' => 'Fotografitë'
     ],
     'first_name' => [
-        'name' => 'First Name'
+        'name' => 'Emri'
     ],
     'last_name' => [
-        'name' => 'Last Name'
+        'name' => 'Mbiemri'
     ],
     'username' => [
-        'name' => 'Username'
+        'name' => 'Emri i përdoruesit'
     ],
     'display_name' => [
-        'name' => 'Display Name'
+        'name' => 'Emri i ekranit'
     ],
     'email' => [
-        'name' => 'Email Adress'
+        'name' => 'Adresa e emailit'
     ],
     'sitename' => [
-        'name' => 'sitename'
+        'name' => 'SITENAME'
     ],
     'activated' => [
-        'name' => 'User Active'
+        'name' => 'Përdoruesi aktiv'
     ],
     'enabled' => [
-        'name' => 'User Enable'
+        'name' => 'Aktivizo përdoruesin'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'vend'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'qytet'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'rreth'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'lagje'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'fshati'
     ],
     'gsm_phone' => [
-        'name' => 'GSM Phone'
+        'name' => 'Telefon GSM'
     ],
     'land_phone' => [
-        'name' => 'Land Phone'
+        'name' => 'Toka e telefonit'
     ],
     'office_phone' => [
-        'name' => 'Office Phone'
+        'name' => 'Telefoni i zyres'
     ],
     'register_type' => [
-        'name' => 'Register Type'
+        'name' => 'Lloji i regjistrimit'
     ],
     'identification_number' => [
-        'name' => 'Identification Number'
+        'name' => 'Numrin e identifikimit'
     ],
     'adress_name' => [
-        'name' => 'Adress Name'
+        'name' => 'Emri Adresë'
     ],
     'adress_first_name' => [
-        'name' => 'First Name'
+        'name' => 'Emri'
     ],
     'adress_last_name' => [
-        'name' => 'Last Name'
+        'name' => 'Mbiemri'
     ],
     'actions' => [
-        'name' => 'Actions'
+        'name' => 'veprimet'
     ],
     'adress_content' => [
-        'name' => 'Adress Content'
+        'name' => 'Përmbajtja e Adresës'
     ],
     'adress_post_code' => [
-        'name' => 'Post Code'
+        'name' => 'Kodi Postar'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Gsm Phone'
+        'name' => 'Gsm Telefon'
     ],
     'adress_land_phone' => [
-        'name' => 'Land Phone'
+        'name' => 'Toka e telefonit'
     ],
     'adress_country' => [
-        'name' => 'Country'
+        'name' => 'vend'
     ],
     'adress_city' => [
-        'name' => 'City'
+        'name' => 'qytet'
     ],
     'adress_district' => [
-        'name' => 'District'
+        'name' => 'rreth'
     ],
     'adress_neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'lagje'
     ],
     'adress_village' => [
-        'name' => 'Village'
+        'name' => 'fshati'
     ],
     'messages' => [
-        'name' => 'Messages'
+        'name' => 'mesazhet'
     ],
     'user' => [
-        'name' => 'User'
+        'name' => 'përdorues'
     ],
 
 
@@ -114,316 +114,316 @@ return [
     ],
 
     'create' => [
-        'name' => 'Create'
+        'name' => 'krijoj'
     ],
     'edit' => [
-        'name' => 'Edit'
+        'name' => 'redaktoj'
     ],
     'list' => [
-        'name' => 'List'
+        'name' => 'Listë'
     ],
     'menu_address' => [
-        'name' => 'Address'
+        'name' => 'Adresë'
     ],
     'menu_orders' => [
-        'name' => 'Orders'
+        'name' => 'urdhërat'
     ],
     'menu_favorites' => [
-        'name' => 'Favorites'
+        'name' => 'Favoritet'
     ],
     'menu_archived_ads' => [
-        'name' => 'Archived ads'
+        'name' => 'Reklama të arkivuara'
     ],
     'menu_pending_ads' => [
-        'name' => 'Pending approval'
+        'name' => 'Miratim në pritje'
     ],
     'menu_delete_account' => [
-        'name' => 'Close account'
+        'name' => 'Mbyll llogari'
     ],
     'menu_my_ads' => [
-        'name' => 'My ads'
+        'name' => 'Reklamat e mia'
     ],
     'menu_fav_ads' => [
-        'name' => 'Favourite ads'
+        'name' => 'Reklama e preferuar'
     ],
     'menu_hello_msg' => [
-        'name' => 'Hello'
+        'name' => 'Përshëndetje'
     ],
     'menu_last_msg' => [
-        'name' => 'You last logged in at'
+        'name' => 'Ju keni hyrë e fundit në'
     ],
     'menu_packages' => [
-        'name' => 'My packages'
+        'name' => 'Paketat e mia'
     ],
     'menu_adv_packages' => [
-        'name' => 'Ads Packages'
+        'name' => 'Paketat e reklamave'
     ],
     'menu_time_packages' => [
-        'name' => 'Time Packages'
+        'name' => 'Paketat e kohës'
     ],
     'profile_details' => [
-        'name' => 'Profile Details'
+        'name' => 'Detajet e profilit'
     ],
     'profile_photo' => [
-        'name' => 'Profile Photo'
+        'name' => 'Foto e profilit'
     ],
     'adv_listing_banner' => [
-        'name' => 'Ads Listing Page Banner'
+        'name' => 'Flamuri i faqes së listës së reklamave'
     ],
     'approve' => [
-        'name' => 'Approve'
+        'name' => 'miratoj'
     ],
     'approved' => [
-        'name' => 'Approved'
+        'name' => 'i miratuar'
     ],
     'pending' => [
-        'name' => 'Pending'
+        'name' => 'pritje'
     ],
     'passive' => [
-        'name' => 'Passive'
+        'name' => 'pasiv'
     ],
     'pending_admin' => [
-        'name' => 'Pending'
+        'name' => 'pritje'
     ],
     'menu_messages' => [
-        'name' => 'Messages'
+        'name' => 'mesazhet'
     ],
     'menu_my_purchase' => [
-        'name' => 'My Purchase'
+        'name' => 'Blerja ime'
     ],
     'menu_my_sales' => [
-        'name' => 'My Sales'
+        'name' => 'Shitjet e mia'
     ],
 
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
-        'name' => 'Secure Trading'
+        'name' => 'Tregtim i Sigurt'
     ],
     'right_secure_trading_msg' => [
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_support_subject' => [
-        'name' => '24/7 Support'
+        'name' => '24/7 Mbështetje'
     ],
     'right_support_msg' => [
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_easy_trading_subject' => [
-        'name' => 'Easy Trading'
+        'name' => 'Tregtim i lehtë'
     ],
     'right_easy_trading_msg' => [
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_need_help_subject' => [
-        'name' => 'Need Help?'
+        'name' => 'Kam nevojë për ndihmë?'
     ],
     'right_need_help_msg' => [
-        'name' => 'Give a call on'
+        'name' => 'Bëni një telefonatë'
     ],
     'disable_account' => [
-        'name' => 'Disable Account'
+        'name' => 'Disaktivizoni llogarinë'
     ],
     'disable_account_msg' => [
-        'name' => 'Your account will be disabled.
-                                    This operation cannot be undone'
+        'name' => 'Llogaria juaj do të çaktivizohet.
+                                    Ky operacion nuk mund të zhbëhet'
     ],
 
-    'message_title' => 'Message Title',
-    'owner_name' => 'Message',
+    'message_title' => 'Titulli i mesazhit',
+    'owner_name' => 'mesazh',
 
-    'favorites' => "Favorites",
-    'fav_advs' => 'Favorite Ads',
-    'fav_sellers' => "Fav Sellers",
-    'fav_searches' => "Fav Searches",
-    'posted_on' => "Posted On",
-    'message_details' => "Message Details",
-    'adv_no' => 'Ad No',
+    'favorites' => "Favoritet",
+    'fav_advs' => 'Shpalljet e preferuara',
+    'fav_sellers' => "Fav Shitësit",
+    'fav_searches' => "Kërkimet e Fav",
+    'posted_on' => "Postuar ne",
+    'message_details' => "Detajet e mesazhit",
+    'adv_no' => 'Nr',
     'bill_address' => [
-        'name' => 'Bill Address',
+        'name' => 'Adresa e Faturës',
     ],
     'delivery_address' => [
-        'name' => 'Delivery Address',
+        'name' => 'Adresa e Dorëzimit',
     ],
     'order_total' => [
         'name' => 'Total',
     ],
     'order_date' => [
-        'name' => 'Order Date',
+        'name' => 'Data e porosisë',
     ],
     'order_no' => [
-        'name' => 'Order ID',
+        'name' => 'ID e porosisë',
     ],
     'order_detail' => [
-        'name' => 'Show Detail',
+        'name' => 'Trego detaje',
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => 'Detail',
+        'name' => 'hollësi',
     ],
     'back' => [
-        'name' => 'Back',
+        'name' => 'prapa',
     ],
     'image' => [
-        'name' => 'Image',
+        'name' => 'imazh',
     ],
     'subject' => [
-        'name' => 'Subject',
+        'name' => 'subjekt',
     ],
     'price' => [
-        'name' => 'Price',
+        'name' => 'çmim',
     ],
     'piece' => [
-        'name' => 'Piece',
+        'name' => 'copë',
     ],
     'commission' => [
-        'name' => 'Commission',
+        'name' => 'komision',
     ],
     'total' => [
         'name' => 'Total',
     ],
     'sub_total' => [
-        'name' => 'Sub Total',
+        'name' => 'Nën Totali',
     ],
     'sale' => [
-        'name' => 'Sale',
+        'name' => 'shitje',
     ],
     'awaiting_tracking_number' => [
-        'name' => 'Awaiting Tracking Number',
+        'name' => 'Në pritje të numrit të ndjekjes',
     ],
     'awaiting_payment_approval' => [
-        'name' => 'Awaiting Payment Approval',
+        'name' => 'Në pritje të miratimit të pagesës',
     ],
     'paid' => [
-        'name' => 'Paid',
+        'name' => 'i paguar',
     ],
     'cancelled' => [
-        'name' => 'Cancelled',
+        'name' => 'anuluar',
     ],
     'waiting' => [
-        'name' => 'Waiting',
+        'name' => 'Ne pritje',
     ],
     'awaiting_dispatch' => [
-        'name' => 'Awaiting dispatch',
+        'name' => 'Në pritje të dërgimit',
     ],
     'shipped' => [
-        'name' => 'Shipped',
+        'name' => 'dërguar',
     ],
     'delivered' => [
-        'name' => 'Delivered',
+        'name' => 'dorëzuar',
     ],
     'tracking_number' => [
-        'name' => 'Tracking Number',
+        'name' => 'Numri i gjurmimit',
     ],
     'was_delivered' => [
-        'name' => 'was delivered',
+        'name' => 'u dorëzua',
     ],
     'not_delivered' => [
-        'name' => 'not delivered',
+        'name' => 'nuk dorëzohet',
     ],
     'show_order_msg1' => [
-        'name' => 'The transaction result will be notified by mail.',
+        'name' => 'Rezultati i transaksionit do të njoftohet me postë.',
     ],
     'show_order_msg2' => [
-        'name' => 'Refund will be made if the product is not delivered within one week.',
+        'name' => 'Rimbursimi do të bëhet nëse produkti nuk dorëzohet brenda një jave.',
     ],
     'show_order_msg3' => [
-        'name' => 'The result of the transaction has been sent to your registered e-mail address.',
+        'name' => 'Rezultati i transaksionit është dërguar në adresën tuaj të regjistruar të postës elektronike.',
     ],
 
     'awaiting_payment' => [
-        'name' => 'Awaiting Payment',
+        'name' => 'duke pritur pagesen',
     ],
     'please_entered_tracking_number' => [
-        'name' => 'Please Entered Tracking Number',
+        'name' => 'Ju lutemi shënoni numrin përcjellës',
     ],
     'transport_days' => [
-        'name' => 'Transport Days',
+        'name' => 'Ditët e transportit',
     ],
     'product_not_delivered' => [
-        'name' => 'Product not delivered',
+        'name' => 'Produkti nuk është dorëzuar',
     ],
     'status' => [
-        'name' => 'Status',
+        'name' => 'status',
     ],
     'cancel_sale' => [
-        'name' => 'Cancel Sale',
+        'name' => 'Anuloni Shitjen',
     ],
     'send_again' => [
-        'name' => 'I Will Send Again',
+        'name' => 'Unë do të dërgoj përsëri',
     ],
     'content' => [
-        'name' => 'Content',
+        'name' => 'përmbajtje',
     ],
     'preferences_settings' => [
-        'name' => 'Preferences Settings',
+        'name' => 'Parametrat e preferencave',
     ],
 
 
     'corporate_settings' => [
-        'name' => 'Corporate Settings',
+        'name' => 'Cilësimet e korporatave',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'fjalëkalim',
     ],
     'new_password' => [
-        'name' => 'New password',
+        'name' => 'Fjalëkalim i ri',
     ],
     're_new_password' => [
-        'name' => 'Confirm password',
+        'name' => 'Konfirmoni fjalëkalimin',
     ],
     'confirm_password_input' => [
-        'name' => 'I confirm my password change',
+        'name' => 'Unë konfirmoj ndryshimin e fjalëkalimit tim',
     ],
     'create_address' => [
-        'name' => 'Create Address',
+        'name' => 'Krijoni adresë',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'Ndrysho adresën',
     ],
     'balance_limit' => [
-        'name' => 'Balance Limit',
+        'name' => 'Kufiri i bilancit',
     ],
     'active_ads' => [
-        'name' => 'Active Ads',
+        'name' => 'Reklama aktive',
     ],
     'subscriptions' => [
-        'name' => 'Subscriptions',
+        'name' => 'Abonimet',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Go to Subscriptions Page',
+        'name' => 'Shko tek faqja e pajtimeve',
     ],
     'buy_package' => [
-        'name' => 'Buy Package',
+        'name' => 'Bleni Paketën',
     ],
     'expired_date' => [
-        'name' => 'Expired Date',
+        'name' => 'Data e skadimit',
     ],
     'category' => [
-        'name' => 'Category',
+        'name' => 'kategori',
     ],
     'ad_limit' => [
-        'name' => 'Ad Limit',
+        'name' => 'Kufiri i reklamave',
     ],
     'publish_time' => [
-        'name' => 'Publish Time',
+        'name' => 'Koha e publikimit',
     ],
     'all_categories' => [
-        'name' => 'All Categories',
+        'name' => 'Të gjitha kategoritë',
     ],
     'day' => [
-        'name' => 'Day',
+        'name' => 'ditë',
     ],
 
     'individual' => [
         'name' => 'individual',
     ],
     'corporate' => [
-        'name' => 'corporate',
+        'name' => 'i korporatës',
     ],
 
     'details' => [
-        'name' => 'Details'
+        'name' => 'detalet'
     ],
 
 ];
