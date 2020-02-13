@@ -161,6 +161,13 @@ class AdvsController extends PublicController
             if ($categoryId) {
                 $param['cat'] = $categoryId->id;
             }
+        } elseif (isset($param['cat']) && !empty($param['cat'])) {
+            $categoryId = $this->category_repository->find($param['cat']);
+            return redirect($this->fullLink(
+                $param,
+                route('adv_list_seo', [$categoryId->slug]),
+                array()
+            ));
         }
 
         // Search by city slug
@@ -174,7 +181,6 @@ class AdvsController extends PublicController
                 ));
             } elseif (isset($param['city']) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
                 $cityId = $this->cityRepository->find($param['city'][0]);
-                $param['city'] = [$cityId->id];
                 if ($city !== $cityId->slug) {
                     return redirect($this->fullLink(
                         $param,
