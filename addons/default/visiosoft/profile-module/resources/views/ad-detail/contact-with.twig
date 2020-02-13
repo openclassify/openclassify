@@ -1,25 +1,27 @@
-{% set profile = findUserProfile(params.adv.created_by_id) %}
-{% if profile.gsm_phone is not null %}
-    <div class="col-md-12 m-2 number-container">
-        <button class="btn btn-secondary w-100">
-            <i class="fas fa-mobile hide-number text-warning"></i>
-            <span class="hide-number">{{ profile.gsm_phone }}</span>
-        </button>
-    </div>
-{% endif %}
-{% if profile.office_phone is not empty %}
-    <div class="col-md-12 m-2 number-container">
-        <button class="btn btn-secondary w-100">
-            <i class="fas fa-headset hide-number text-warning"></i>
-            <span class="hide-number">{{ profile.office_phone }}</span>
-        </button>
-    </div>
-{% endif %}
-{% if profile.land_phone is not empty %}
-    <div class="col-md-12 m-2 number-container">
-        <button class="btn btn-secondary w-100">
-            <i class="fa fa-phone-square hide-number text-warning"></i>
-            <span class="hide-number">{{ profile.land_phone }}</span>
-        </button>
-    </div>
+{% if params.showTheme %}
+    {% set profile = findUserProfile(params.adv.created_by_id) %}
+    {% if profile.gsm_phone is not null %}
+        <div class="col-md-12 m-2 number-container">
+            <button class="btn btn-secondary w-100">
+                <i class="fas fa-mobile hide-number text-warning"></i>
+                <span class="hide-number">{{ profile.gsm_phone }}</span>
+            </button>
+        </div>
+    {% endif %}
+    {% if profile.office_phone is not empty %}
+        <div class="col-md-12 m-2 number-container">
+            <button class="btn btn-secondary w-100">
+                <i class="fas fa-headset hide-number text-warning"></i>
+                <span class="hide-number">{{ profile.office_phone }}</span>
+            </button>
+        </div>
+    {% endif %}
+    {% if profile.land_phone is not empty %}
+        <div class="col-md-12 m-2 number-container">
+            <button class="btn btn-secondary w-100">
+                <i class="fa fa-phone-square hide-number text-warning"></i>
+                <span class="hide-number">{{ profile.land_phone }}</span>
+            </button>
+        </div>
+    {% endif %}
 {% endif %}
