@@ -16,8 +16,8 @@ $(function () {
     var dropzone = new Dropzone('.dropzone:not(data-initialized)',
         {
             paramName: 'upload',
-            resizeWidth: 1920,
-            resizeHeight: 1920,
+            resizeWidth: 800,
+            resizeHeight: 600,
             autoProcessQueue: true,
             parallelUploads: 1,
             resizeMethod: 'contain',
