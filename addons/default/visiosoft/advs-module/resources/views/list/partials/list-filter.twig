@@ -1,16 +1,22 @@
-{% if 'cat' in param|keys %}
-    {% set catId = entries('cats', 'category').find(param['cat']) %}
-    {% set cityId = null %}
-    {% if 'city' in param|keys %}
-        {% set citiesArray = param['city'][0]|split(',') %}
-        {% if count(citiesArray) is same as(1) %}
-            {% set cityId = entries('location', 'cities').find(param['city'][0]) %}
-        {% endif %}
-    {% endif %}
-    <form action="{{ url_route('adv_list_seo', [catId.slug, cityId.slug]) }}" method="get">
-{% else %}
+{% set formHtml %}
     <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+{% endset %}
+{% if 'cat' in param|keys %}
+    {% if not param['cat'] is empty %}
+        {% set catId = entries('cats', 'category').find(param['cat']) %}
+        {% set cityId = null %}
+        {% if 'city' in param|keys %}
+            {% set citiesArray = param['city'][0]|split(',') %}
+            {% if count(citiesArray) is same as(1) %}
+                {% set cityId = entries('location', 'cities').find(param['city'][0]) %}
+            {% endif %}
+        {% endif %}
+        {% set formHtml %}
+            <form action="{{ url_route('adv_list_seo', [catId.slug, cityId.slug]) }}" method="get">
+        {% endset %}
+    {% endif %}
 {% endif %}
+{{ formHtml }}
     <div class="row">
         <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
         <input type="hidden" name="user" value="{{ app.request.get('user') }}">
