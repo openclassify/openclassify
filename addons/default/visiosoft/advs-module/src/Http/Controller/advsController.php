@@ -6,11 +6,13 @@ use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Advs\PurchasePurchaseEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
 use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
+use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
+use Visiosoft\LocationModule\City\CityRepository;
 use function PMA\Util\get;
 use Sunra\PhpSimple\HtmlDomParser;
 use Visiosoft\AdvsModule\Adv\AdvModel;
@@ -61,6 +63,7 @@ class AdvsController extends PublicController
     private $country_repository;
 
     private $city_model;
+    private $cityRepository;
 
     private $district_model;
 
@@ -85,6 +88,7 @@ class AdvsController extends PublicController
         CountryRepositoryInterface $country_repository,
 
         CityModel $city_model,
+        CityRepository $cityRepository,
 
         DistrictModel $district_model,
 
@@ -111,6 +115,7 @@ class AdvsController extends PublicController
         $this->country_repository = $country_repository;
 
         $this->city_model = $city_model;
+        $this->cityRepository = $cityRepository;
 
         $this->district_model = $district_model;
 
@@ -138,7 +143,7 @@ class AdvsController extends PublicController
     /**
      * @return \Illuminate\Contracts\View\View|mixed
      */
-    public function index()
+    public function index($category = null, $city = null)
     {
         $customParameters = array();
         $featured_advs = array();
@@ -146,10 +151,54 @@ class AdvsController extends PublicController
 
         $param = $this->requestHttp->toArray();
 
-
         $countries = $this->country_repository->viewAll();
 
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
+
+        // Search by category slug
+        if ($category) {
+            $categoryId = $this->category_repository->findBy('slug', $category);
+            if ($categoryId) {
+                $param['cat'] = $categoryId->id;
+            }
+        }
+
+        // Search by city slug
+        if (is_null($city) && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
+            $cityId = $this->cityRepository->find($param['city'][0]);
+            return redirect($this->fullLink(
+                $param,
+                route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
+                array()
+            ));
+        } elseif (isset($param['city']) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
+            $cityId = $this->cityRepository->find($param['city'][0]);
+            $param['city'] = [$cityId->id];
+            if ($city !== $cityId->slug) {
+                return redirect($this->fullLink(
+                    $param,
+                    route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
+                    array()
+                ));
+            }
+        } elseif ($city && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') !== false) {
+            return redirect($this->fullLink(
+                $param,
+                route('adv_list_seo', [$categoryId->slug]),
+                array()
+            ));
+        } elseif ($city) {
+            if (isset($param['city'][0]) && empty($param['city'][0])) {
+                return redirect($this->fullLink(
+                    $param,
+                    route('adv_list_seo', [$categoryId->slug]),
+                    array()
+                ));
+            } else {
+                $cityId = $this->cityRepository->findBy('slug', $city);
+                $param['city'] = [$cityId->id];
+            }
+        }
 
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
         $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters);
@@ -164,8 +213,6 @@ class AdvsController extends PublicController
                 $featured_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
                 $featured_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
             }
-
-            $advs = $dopingModel->reFilterAdvs(2, $advs);
         }
 
         foreach ($advs as $index => $ad) {
@@ -216,12 +263,12 @@ class AdvsController extends PublicController
             $userProfile = $this->profile_repository->getProfile($user->id);
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request',
-            'user', 'userProfile', 'featured_advs', 'type', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
-
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
         $viewType = $this->requestHttp->cookie('viewType');
+
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
+            'user', 'userProfile', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         if (isset($viewType) and $viewType == 'table')
             return $this->view->make('visiosoft.module.advs::list/table', $compact);
@@ -231,6 +278,10 @@ class AdvsController extends PublicController
             return $this->view->make('visiosoft.module.advs::list/gallery', $compact);
 
         return $this->view->make('visiosoft.module.advs::list/list', $compact);
+    }
+
+    public function fullLink($request, $url, $newParameters) {
+        return $this->dispatch(new appendRequestURL($request, $url, $newParameters));
     }
 
     public function viewType($type)

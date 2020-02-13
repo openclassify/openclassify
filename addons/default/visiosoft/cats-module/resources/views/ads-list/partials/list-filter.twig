@@ -17,21 +17,39 @@
                 {% set id = maincat['id'] %}
                 {% set parent_category = true %}
                 {% if app.request.get('cat') is null or app.request.get('cat') == "" %}
-                    {% set name = maincat.name %}
-                    {% set id = maincat.id %}
-                    {% set parent_category = false %}
+                    {% if params.param['cat'] is null or params.param['cat'] == "" %}
+                        {% set name = maincat.name %}
+                        {% set id = maincat.id %}
+                        {% set parent_category = false %}
+                    {% endif %}
                 {% endif %}
-                <a href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ id }}"
-                   class="list-group-item list-group-item-action text-truncate">
+                {% set catId = entries('cats', 'category').find(id) %}
+                {% set cityId = null %}
+                {% if 'city' in params.param|keys %}
+                    {% set citiesArray = params.param['city'][0]|split(',') %}
+                    {% if count(citiesArray) is same as(1) %}
+                        {% set cityId = entries('location', 'cities').find(params.param['city'][0]) %}
+                    {% endif %}
+                {% endif %}
+                <a href="{% if(viewType != "map") %}
+                    {{ appendRequestURL(request_query(),url_route('adv_list_seo', [catId.slug, cityId.slug]),{}) }}
+                {% else %}
+                    {{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':id}) }}
+                {% endif %}" class="list-group-item list-group-item-action text-truncate">
                     <i class="fas fa-dot-circle"></i>
                     {{ name }}
                 </a>
                 {% for subcat in params.subCats %}
                     <div class="list-group pl-3 bg-light">
                         {% if subcat.parent_category_id == maincat['id'] %}
-                            <a href="{% if(type == "list") %}{{ url_route('visiosoft.module.advs::list') }}{% else %}{{ url_route('advs_map_list') }}{% endif %}?cat={{ subcat.id }}"
-                               class="list-group-item list-group-item-action
-                                                    text-truncate">{{ subcat.name }}</a>
+                            {% set subCatId = entries('cats', 'category').find(subcat.id) %}
+                            <a href="{% if(viewType != "map") %}
+                                {{ appendRequestURL(request_query(),url_route('adv_list_seo', [subCatId.slug, cityId.slug]),{}) }}
+                            {% else %}
+                                {{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':subcat.id}) }}
+                            {% endif %}" class="list-group-item list-group-item-action text-truncate">
+                                {{ subcat.name }}
+                            </a>
                         {% endif %}
                     </div>
                 {% endfor %}
