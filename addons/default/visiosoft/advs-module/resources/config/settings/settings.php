@@ -1,15 +1,12 @@
 <?php
 
 return [
-
     'register_email_field' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
             'default_value' => true,
         ],
     ],
-
-
     'latest-limit' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
@@ -124,7 +121,8 @@ return [
         'env' => 'ADV_WATERMARK_POSITION',
         'required' => true,
         'config' => [
-            'options' => ['top-right' => 'Top Right', 'top-left' => 'Top Left', 'bottom-right' => 'Bottom Right', 'bottom-left' => 'Bottom Left', 'center' => 'Middle'],
+            'options' => ['top-right' => 'Top Right', 'top-left' => 'Top Left', 'bottom-right' => 'Bottom Right',
+                'bottom-left' => 'Bottom Left', 'center' => 'Middle'],
             'default_value' => 'top-right',
         ]
     ],
@@ -146,7 +144,6 @@ return [
             'mode' => 'upload',
         ]
     ],
-
     'enabled_currencies' => [
         'bind' => 'streams::currencies.enabled',
         'env' => 'ADV_ENABLED_CURRENCIES',
