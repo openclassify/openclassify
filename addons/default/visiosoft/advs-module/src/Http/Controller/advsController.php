@@ -161,44 +161,53 @@ class AdvsController extends PublicController
             if ($categoryId) {
                 $param['cat'] = $categoryId->id;
             }
-        }
-
-        // Search by city slug
-        if (is_null($city) && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
-            $cityId = $this->cityRepository->find($param['city'][0]);
-            return redirect($this->fullLink(
-                $param,
-                route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
-                array()
-            ));
-        } elseif (isset($param['city']) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
-            $cityId = $this->cityRepository->find($param['city'][0]);
-            $param['city'] = [$cityId->id];
-            if ($city !== $cityId->slug) {
-                return redirect($this->fullLink(
-                    $param,
-                    route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
-                    array()
-                ));
-            }
-        } elseif ($city && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') !== false) {
+        } elseif (isset($param['cat']) && !empty($param['cat'])) {
+            $categoryId = $this->category_repository->find($param['cat']);
             return redirect($this->fullLink(
                 $param,
                 route('adv_list_seo', [$categoryId->slug]),
                 array()
             ));
-        } elseif ($city) {
-            if (isset($param['city'][0]) && empty($param['city'][0])) {
+        }
+
+        // Search by city slug
+        if ($category) {
+            if (is_null($city) && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
+                $cityId = $this->cityRepository->find($param['city'][0]);
+                return redirect($this->fullLink(
+                    $param,
+                    route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
+                    array()
+                ));
+            } elseif (isset($param['city']) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
+                $cityId = $this->cityRepository->find($param['city'][0]);
+                if ($city !== $cityId->slug) {
+                    return redirect($this->fullLink(
+                        $param,
+                        route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
+                        array()
+                    ));
+                }
+            } elseif ($city && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') !== false) {
                 return redirect($this->fullLink(
                     $param,
                     route('adv_list_seo', [$categoryId->slug]),
                     array()
                 ));
-            } else {
-                $cityId = $this->cityRepository->findBy('slug', $city);
-                $param['city'] = [$cityId->id];
+            } elseif ($city) {
+                if (isset($param['city'][0]) && empty($param['city'][0])) {
+                    return redirect($this->fullLink(
+                        $param,
+                        route('adv_list_seo', [$categoryId->slug]),
+                        array()
+                    ));
+                } else {
+                    $cityId = $this->cityRepository->findBy('slug', $city);
+                    $param['city'] = [$cityId->id];
+                }
             }
         }
+
 
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
         $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters);
