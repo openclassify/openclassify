@@ -1,4 +1,9 @@
-{% if params.showTheme %}
+{% if params.showTheme is defined %}
+    {% set showTheme = params.showTheme %}
+{% else %}
+    {% set showTheme = true %}
+{% endif %}
+{% if showTheme %}
     {% set profile = findUserProfile(params.adv.created_by_id) %}
     {% if profile.gsm_phone is not null %}
         <div class="col-md-12 m-2 number-container">
