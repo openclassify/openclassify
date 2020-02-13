@@ -1,67 +1,69 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
-    <div class="row justify-content-center bg-light rounded border px-3">
-        <div class="col-12 col-md-6 text-left p-3 m-0">
+    <div class="py-4">
+        <div class="row justify-content-center bg-light rounded border px-3">
+            <div class="col-12 col-md-6 text-left p-3 m-0">
 
-            {{ addBlock('register/register-type')|raw }}
+                {{ addBlock('register/register-type')|raw }}
 
-            <div class="personal-register">
-                {% set form = form('register2').redirect(request_get('redirect', '/'))
-                    .get() %}
-                {{ form_open({
-                    'class': 'row form ' ~ form.options.class ,
-                    'enctype': 'multipart/form-data',
-                    'url':form.options.url
-                })|raw }}
+                <div class="personal-register">
+                    {% set form = form('register2').redirect(request_get('redirect', '/'))
+                        .get() %}
+                    {{ form_open({
+                        'class': 'row form ' ~ form.options.class ,
+                        'enctype': 'multipart/form-data',
+                        'url':form.options.url
+                    })|raw }}
 
-                {% include 'visiosoft.theme.base::addons/anomaly/users-module/partials/register-form' %}
+                    {% include 'visiosoft.theme.base::addons/anomaly/users-module/partials/register-form' %}
 
-                <div class="col-12 row m-0">
-                    <div class="col-6 pr-0 pl-1">
-                        <button class="btn btn-sm btn-success py-2">
-                            <i class="fas fa-user-plus"></i>
-                            {{ trans('visiosoft.theme.base::button.register') }}
-                        </button>
+                    <div class="col-12 row m-0">
+                        <div class="col-6 pr-0 pl-1">
+                            <button class="btn btn-sm btn-success py-2">
+                                <i class="fas fa-user-plus"></i>
+                                {{ trans('visiosoft.theme.base::button.register') }}
+                            </button>
 
+                        </div>
                     </div>
+                    <div class="social-login py-2 row col-12 m-0">
+                        {{ addBlock('login/oauth')|raw }}
+                    </div>
+                    {{ form_close() }}
                 </div>
-                <div class="social-login py-2 row col-12 m-0">
-                    {{ addBlock('login/oauth')|raw }}
-                </div>
-                {{ form_close() }}
+
+                {{ addBlock('register/corporate-register')|raw }}
+
             </div>
 
-            {{ addBlock('register/corporate-register')|raw }}
-
-        </div>
-
-        <div class="col-12 col-md-6 py-3 pr-0 instructions d-none d-md-block">
-            <div class="border personal-advantages py-5 px-5">
-                <div class="d-flex align-items-center mb-4">
-                    <img src="{{ img('visiosoft.theme.base::images/register-instruction.png').url }}">
-                    <h4 class="ml-3">
-                        {{ trans('visiosoft.theme.base::field.personal_registration_header') }}
-                    </h4>
+            <div class="col-12 col-md-6 py-3 pr-0 instructions d-none d-md-block">
+                <div class="border personal-advantages py-5 px-5">
+                    <div class="d-flex align-items-center mb-4">
+                        <img src="{{ img('visiosoft.theme.base::images/register-instruction.png').url }}">
+                        <h4 class="ml-3">
+                            {{ trans('visiosoft.theme.base::field.personal_registration_header') }}
+                        </h4>
+                    </div>
+                    <div class="mb-4">
+                        {{ trans('visiosoft.theme.base::field.personal_registration_body') }}
+                    </div>
+                    <ul class="pl-4">
+                        <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_1') }}</li>
+                        <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_2') }}</li>
+                        <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_3') }}</li>
+                    </ul>
                 </div>
-                <div class="mb-4">
-                    {{ trans('visiosoft.theme.base::field.personal_registration_body') }}
-                </div>
-                <ul class="pl-4">
-                    <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_1') }}</li>
-                    <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_2') }}</li>
-                    <li>{{ trans('visiosoft.theme.base::field.personal_registration_list_3') }}</li>
-                </ul>
-            </div>
 
-            {{ addBlock('register/instructions')|raw }}
+                {{ addBlock('register/instructions')|raw }}
 
-            <div class="border small-notice py-3 px-4 mt-3">
-                <div class="d-flex text-muted">
-                    <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                    <small class="ml-2 text-muted">
-                        {{ trans('visiosoft.theme.base::field.register_information_note') }}
-                    </small>
+                <div class="border small-notice py-3 px-4 mt-3">
+                    <div class="d-flex text-muted">
+                        <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
+                        <small class="ml-2 text-muted">
+                            {{ trans('visiosoft.theme.base::field.register_information_note') }}
+                        </small>
+                    </div>
                 </div>
             </div>
         </div>
