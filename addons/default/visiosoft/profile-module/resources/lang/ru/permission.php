@@ -1,24 +1,20 @@
 <?php
 
- return[
-   "profile"   =>   [
-      "name"      =>"Профиль",
-      "option"      =>      [
-         "read"         =>"Может читать профиль?        ",
-         "write"         =>"Можно создать / отредактировать профиль?        ",
-         "delete"         =>"Можете удалить профиль?"
-      ],
-
-   ],
-   "adress"   =>   [
-      "name"      =>"Адрес",
-      "option"      =>      [
-         "read"         =>"Можете прочитать адрес?        ",
-         "write"         =>"Можно создать / изменить адрес?        ",
-         "delete"         =>"Можете удалить адрес?",
-
-      ],
-
-   ],
-
+return [
+    'profile' => [
+        'name'   => 'Profile',
+        'option' => [
+            'read'   => 'Can read profile?',
+            'write'  => 'Can create/edit profile?',
+            'delete' => 'Can delete profile?',
+        ],
+    ],
+    'adress' => [
+        'name'   => 'Adress',
+        'option' => [
+            'read'   => 'Can read adress?',
+            'write'  => 'Can create/edit adress?',
+            'delete' => 'Can delete adress?',
+        ],
+    ],
 ];
