@@ -142,7 +142,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         if ($this->model->is_enabled('customfields')) {
-            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $query);
+            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $param, $query);
         }
 
 
@@ -158,29 +158,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $int = (int)$num;
             $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
             $query = $query->whereRaw($column);
-        }
-
-        foreach ($param as $para => $value) {
-            if (substr($para, 4, 3) === "cf_") {
-                $id = substr($para, 7);
-                $minmax = substr($para, 0, 3);
-                if ($minmax == 'min') {
-
-                    $num = $param[$minmax . '_cf_' . $id];
-                    $int = (int)$num;
-                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') >= '" . $int . "'";
-                    $query = $query->whereRaw($column);
-
-                }
-                if ($minmax == 'max') {
-
-                    $num = $param[$minmax . '_cf_' . $id];
-                    $int = (int)$num;
-                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') <= '" . $int . "'";
-                    $query = $query->whereRaw($column);
-
-                }
-            }
         }
 
 
