@@ -95,9 +95,6 @@ return [
     'watermark_position' => [
         'name' => 'Pozicioni i Filigranit',
     ],
-    'watermark_opacity' => [
-        'name' => 'Hapësira e Filigranit',
-    ],
     'listing_page_image' => [
         'name' => 'Lista e figurës së faqes',
     ],
