@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"Объявления",
-   "name"   =>"Рекламный модуль",
-   "description"   =>"Рекламный модуль"
+return [
+    'title'       => 'Ads',
+    'name'        => 'Ads Module',
+    'description' => 'Ads Module',
 ];
