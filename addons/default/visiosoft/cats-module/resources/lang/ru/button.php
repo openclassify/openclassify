@@ -1,8 +1,8 @@
 <?php
 
- return[
-   "new_category"   =>"Новая категория",
-   "add_sub_category"   =>"Добавить подкатегорию",
-   "sub_category"   =>"Показать подкатегорию",
-   "new_placeholderforsearch"   =>"Новый Placeholderforsearch"
+return [
+    'new_category' => 'New Category',
+    'add_sub_category' => 'Add Sub Category',
+    'sub_category' => 'Show Sub Category',
+    'new_placeholderforsearch' => 'New Placeholderforsearch',
 ];
