@@ -176,10 +176,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['sort_by'])) {
             switch ($param['sort_by']) {
                 case "sort_price_up":
-                    $query = $query->orderBy('price', 'desc');
+                    $query = $query->orderBy('advs_advs.price', 'desc');
                     break;
                 case "sort_price_down":
-                    $query = $query->orderBy('price', 'asc');
+                    $query = $query->orderBy('advs_advs.price', 'asc');
                     break;
                 case "sort_time":
                     $query = $query->orderBy('advs_advs.created_at', 'desc');
@@ -187,12 +187,12 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         } else {
             $query = $query->orderBy('advs_advs.created_at', 'desc');
-            if ($isActiveDopings) {
-                $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query, $param);
-            } else {
-                $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
-                    'advs_advs_translations.advs_desc as advs_desc');
-            }
+        }
+        if ($isActiveDopings) {
+            $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query, $param);
+        } else {
+            $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
+                'advs_advs_translations.advs_desc as advs_desc');
         }
 
         if ($type == "list") {
