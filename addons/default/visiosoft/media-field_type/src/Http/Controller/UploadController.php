@@ -69,8 +69,7 @@ class UploadController extends AdminController
                 $watermarkimage = $files->find($watermarkimage_id);
                 $w = $img->width();
                 if ($watermarkimage != null) {
-                    $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path())
-                        ->opacity($settings->value('visiosoft.module.advs::watermark_opacity'));
+                    $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
                     $img->insert($watermark, $position);
                 }
 

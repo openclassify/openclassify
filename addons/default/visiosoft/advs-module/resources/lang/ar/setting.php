@@ -98,9 +98,6 @@ return [
     'watermark_position' => [
         'name' => 'موقف العلامة المائية',
     ],
-    'watermark_opacity' => [
-        'name' => 'عتامة العلامة المائية',
-    ],
     'listing_page_image' => [
         'name' => 'سرد صورة الصفحة',
     ],

@@ -26,7 +26,6 @@ return [
                     'watermark_text',
                     'watermark_image',
                     'watermark_position',
-                    'watermark_opacity',
                     'listing_page_image',
                 ],
             ],

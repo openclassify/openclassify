@@ -116,10 +116,6 @@
       "name"      =>"Wasserzeichen Position",
 
    ],
-   "watermark_opacity"   =>   [
-      "name"      =>"Wasserzeichen Deckkraft",
-
-   ],
    "listing_page_image"   =>   [
       "name"      =>"Listing Page Image",
 
