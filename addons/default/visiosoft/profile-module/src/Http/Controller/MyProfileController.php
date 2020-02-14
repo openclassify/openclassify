@@ -188,7 +188,7 @@ class MyProfileController extends PublicController
 
             $message = [];
             $message[] = trans('visiosoft.module.profile::message.adress_success_update');
-            return redirect('/profile')->with('success', $message);
+            return redirect(route('profile::address'))->with('success', $message);
         }
     }
 
@@ -208,7 +208,7 @@ class MyProfileController extends PublicController
 
             $message = [];
             $message[] = trans('visiosoft.module.profile::message.adress_success_create');
-            return redirect('/profile/adress')->with('success', $message);
+            return redirect(route('profile::address'))->with('success', $message);
         }
         $country = CountryModel::all();
         return $this->view->make('visiosoft.module.profile::address/create', compact('country'));
