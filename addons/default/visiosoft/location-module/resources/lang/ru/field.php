@@ -1,41 +1,37 @@
 <?php
 
- return[
-   "name"   =>   [
-      "name"      =>"заглавие",
-
-   ],
-   "slug"   =>   [
-      "name"      =>"слизень",
-
-   ],
-   "city"   =>   [
-      "name"      =>"город",
-
-   ],
-   "country"   =>   [
-      "name"      =>"Страна",
-
-   ],
-   "district"   =>   [
-      "name"      =>"район",
-
-   ],
-   "order"   =>   [
-      "name"      =>"Порядок сортировки",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"окрестности",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Деревня",
-
-   ],
-   "description"   =>   [
-      "name"      =>"Описание",
-
-   ],
-
+return [
+    'name' => [
+        'name' => 'Title'
+    ],
+    'slug' => [
+        'name' => 'Slug'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'order' => [
+        'name' => 'Sort Order'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'description' => [
+        'name' => 'Description'
+    ],
+    'pick_option' => [
+        'name' => 'Pick an option',
+    ],
+    'address' => [
+        'name' => 'Address',
+    ],
 ];
