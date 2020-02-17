@@ -112,19 +112,6 @@
     color: #489ae8;
 }
 
-.qr-login-trigger {
-    display: block;
-    background: #fff url("{{ img('visiosoft.theme.base::images/qr_logo_for_login.png').url }}") center no-repeat;
-    background-size: 60px 60px;
-    width: 60px;
-    height: 60px;
-    padding: 10px;
-    right: 5px;
-    top: 5px;
-    position: absolute;
-    z-index: 10;
-}
-
 @media only screen and (min-width: 470px) {
     .login-section {
         padding: 70px 78px 148px 77px;
@@ -136,8 +123,7 @@
         padding-right: 85px;
         background-color: #fff;
     }
-}
-
-#header {
-    display: none;
+    #header {
+        display: none;
+    }
 }

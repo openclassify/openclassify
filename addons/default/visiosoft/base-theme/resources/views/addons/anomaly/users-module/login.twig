@@ -14,7 +14,6 @@
         <div class="col-12 text-left m-0 row justify-content-center">
 
             <div class="col-12 col-lg-5 m-3 login-section">
-                <a class="qr-login-trigger" href="javascript:;"></a>
                 {% set form = form('signIn')
                     .redirect(app.request.get('redirect'))
                     .get() %}
