@@ -1,10 +1,20 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
+    {% set logo_web = file(setting_value('visiosoft.theme.sahibinden::logo_web')).url %}
+    {% if logo_web is null %}
+        {% set logo_web = img('visiosoft.theme.sahibinden::images/logo_web.png').url %}
+    {% endif %}
+    <div class="col-12 px-5 mx-4">
+        <a href="{{ url("/") }}">
+            <img class="img-responsive d-none d-sm-block logo-web"
+                 src="{{ logo_web }}"></a>
+    </div>
     <div class="row justify-content-center">
-        <div class="col-12 text-left p-3 m-0 row justify-content-center">
+        <div class="col-12 text-left m-0 row justify-content-center">
 
             <div class="col-12 col-lg-5 m-3 login-section">
+                <a class="qr-login-trigger" href="javascript:;"></a>
                 {% set form = form('signIn')
                     .redirect(app.request.get('redirect'))
                     .get() %}
@@ -13,9 +23,9 @@
                     'url':form.options.url
                 })|raw }}
                 <div class="col-12 pt-4 pt-lg-0">
-                    <h5 class="text-center">
+                    <h3 class="text-center login_subject">
                         {{ trans('visiosoft.theme.base::button.login') }}
-                    </h5>
+                    </h3>
                     <div class="form-group email-field email-field_type">
                         <label class="control-label">
                             {{ trans('visiosoft.theme.base::field.email_or_phone_number') }}
@@ -38,7 +48,7 @@
                             </div>
                             <div class="col-6 p-0 text-right">
                                 <a href="{{ url_route('anomaly.module.users::password.forgot') }}">
-                                    <small class="text-muted">
+                                    <small class="forgot_password">
                                         {{ trans('visiosoft.theme.base::field.forgot_password') }}
                                     </small>
                                 </a>
@@ -51,13 +61,13 @@
                     </div>
                 </div>
                 <div class="col-12 row m-0 pb-4 pb-lg-0">
-                    <button class="btn btn-sm btn-primary font-weight-bolder w-100 py-3">
+                    <button class="btn btn-sm font-weight-bolder w-100 py-3">
                         <i class="fas fa-key"></i>
                         {{ trans('visiosoft.theme.base::button.login') }}
                     </button>
                 </div>
-                <div class="col-12 py-2">
-                    <label class="c-input c-checkbox">
+                <div class="col-12 py-0">
+                    <label class="c-input c-checkbox remember_me">
                         <input value="0" type="hidden" name="remember_me">
                         <input type="checkbox" name="remember_me">
                         <span class="c-indicator"></span>
@@ -72,10 +82,10 @@
 
             <div class="col-12 col-lg-5 m-3 py-4 row register-section align-items-center">
                 <div class="col-12 text-center">
-                    <h3 class="py-2">{{ trans('visiosoft.theme.base::field.not_a_member_yet') }}?</h3>
-                    <p class="py-2">{{ trans('visiosoft.theme.base::field.not_a_member_yet_message') }}.</p>
+                    <h3 class="py-0">{{ trans('visiosoft.theme.base::field.not_a_member_yet') }}?</h3>
+                    <p class="py-0">{{ trans('visiosoft.theme.base::field.not_a_member_yet_message') }}.</p>
                     <a href="{{ url('register') }}"
-                       class="btn btn-sm btn-white font-weight-bolder border text-primary w-100 py-3 mt-1">
+                       class="btn btn-sm">
                         <i class="fas fa-user-plus"></i>
                         {{ trans('visiosoft.theme.base::button.register') }}
                     </a>
