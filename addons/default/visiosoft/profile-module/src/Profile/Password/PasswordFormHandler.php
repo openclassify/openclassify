@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Password;
 
 use Anomaly\Streams\Platform\Message\MessageBag;
+use Anomaly\UsersModule\User\User;
 use Anomaly\UsersModule\User\UserModel;
 use Anomaly\UsersModule\User\UserPassword;
 use Illuminate\Support\Facades\Auth;
@@ -41,10 +42,9 @@ class PasswordFormHandler
             return redirect()->back();
         }
 
-        $userModel->find(Auth::id())
-            ->update([
-                'password' => Hash::make($builder->getPostValue('new_password'))
-            ]);
+        $user = User::query()->find(Auth::id());
+        $user->setAttribute('password', $builder->getPostValue('new_password'));
+        $user->save($user->toArray());
         $messages->success(trans('visiosoft.module.profile::message.your_password_changed'));
     }
 }
