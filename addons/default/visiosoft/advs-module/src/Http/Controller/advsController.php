@@ -214,14 +214,8 @@ class AdvsController extends PublicController
         $advs = $this->adv_repository->addAttributes($advs);
 
 
-        if ($isActiveDopings) {
-            $dopingModel = new DopingModel();
-            $featured_advs = $dopingModel->filterAdvs(2, $advs);
-
-            foreach ($featured_advs as $index => $ad) {
-                $featured_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
-                $featured_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
-            }
+        if ($isActiveDopings and $param != null) {
+            $featured_advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->listFeatures($advs);
         }
 
         foreach ($advs as $index => $ad) {
