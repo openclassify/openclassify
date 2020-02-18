@@ -11,6 +11,7 @@ return [
     'approve' => "Onayla",
     'decline' => 'Reddet',
     'extend' => 'Uzat',
+    'extend_all' => 'Extend All',
     'sub_category' => 'Alt Kategoriler',
     'add_sub_category' => 'Alt Kategori Ekle',
     'sub_cities' => 'Alt Şehirler',
