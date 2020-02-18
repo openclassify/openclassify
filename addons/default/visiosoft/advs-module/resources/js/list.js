@@ -1,25 +1,3 @@
-const filter = {};
-
-filter.checkUser = () => {
-    $.ajax({
-        type: 'get',
-        url: '/check_user',
-        success: function (response) {
-            if (response.success == true) {
-                $('#search-fav-modal').modal('toggle');
-            } else {
-                window.location.replace("/login");
-            }
-        },
-        error: function (err) {
-            reject(Error("It broke"));
-        }
-    });
-};
-
-
-
-
 $('.sort-by-item').on('click', function () {
     let searchParams = new URLSearchParams(window.location.search);
     var sort_by = searchParams.get('sort_by');
@@ -37,7 +15,8 @@ $('.sort-by-item').on('click', function () {
     } else {
         goURL = url + "&sort_by=" + value;
     }
-    window.location.replace(goURL);
+    console.log(goURL)
+    window.location.href = goURL;
 });
 
 
@@ -150,10 +129,6 @@ $(document).ready(function () {
         var value = $(this).val();
         $(value).prev('input').prop('checked', false);
         $(this).hide();
-    });
-
-    $('#save-search').on('click', function () {
-        filter.checkUser();
     });
 });
 

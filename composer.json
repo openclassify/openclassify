@@ -80,7 +80,7 @@
         "visiosoft/integer-field_type": "~2.1.0",
         "guzzlehttp/guzzle": "~6.3.3"
     },
-    "replace" : {
+    "replace": {
         "anomaly/streams-platform": "*"
     },
     "require-dev": {
@@ -92,16 +92,20 @@
         "symfony/dom-crawler": "3.1.*",
         "anomaly/installer-module": "~2.3.0"
     },
-    "repositories": [
-        {
+    "repositories": {
+        "0": {
             "type": "composer",
             "url": "https://packages.pyrocms.com"
         },
-        {
+        "1": {
             "type": "composer",
             "url": "https://community.pyrocms.com"
+        },
+        "repo-name": {
+            "type": "composer",
+            "url": "https://repo.openclassify.com/satis"
         }
-    ],
+    },
     "autoload": {
         "classmap": [
             "database"
