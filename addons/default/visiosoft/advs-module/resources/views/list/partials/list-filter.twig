@@ -1,200 +1,204 @@
 {% set formHtml %}
-    <form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
-{% endset %}
-{% if 'cat' in param|keys %}
+<form action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+    {% endset %}
+    {% if 'cat' in param|keys %}
     {% if not param['cat'] is empty %}
-        {% set catId = entries('cats', 'category').find(param['cat']) %}
-        {% set cityId = null %}
-        {% if 'city' in param|keys %}
-            {% set citiesArray = param['city'][0]|split(',') %}
-            {% if count(citiesArray) is same as(1) %}
-                {% set cityId = entries('location', 'cities').find(param['city'][0]) %}
-            {% endif %}
+    {% set catId = entries('cats', 'category').find(param['cat']) %}
+    {% set cityId = null %}
+    {% if 'city' in param|keys %}
+        {% set citiesArray = param['city'][0]|split(',') %}
+        {% if count(citiesArray) is same as(1) %}
+            {% set cityId = entries('location', 'cities').find(param['city'][0]) %}
         {% endif %}
-        {% set formHtml %}
-            <form action="{{ url_route('adv_list_seo', [catId.slug, cityId.slug]) }}" method="get">
-        {% endset %}
     {% endif %}
-{% endif %}
-{{ formHtml }}
-    <div class="row">
-        <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
-        <input type="hidden" name="user" value="{{ app.request.get('user') }}">
-        <div class="col-md-12 px-4">
-            <div class="row">
-                <div id="filter" class="w-100 mb-3">
+    {% set formHtml %}
+    <form action="{{ url_route('adv_list_seo', [catId.slug, cityId.slug]) }}" method="get">
+        {% endset %}
+        {% endif %}
+        {% endif %}
+        {{ formHtml }}
+        <div class="row">
+            <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
+            <input type="hidden" name="user" value="{{ app.request.get('user') }}">
+            <div class="col-md-12 px-4">
+                <div class="row">
+                    <div id="filter" class="w-100 mb-3">
 
-                    {{ addBlock('ads-list/partials/list-filter',{
-                        'mainCats':mainCats,
-                        'subCats':subCats,
-                        'ranges':ranges,
-                        'checkboxes':checkboxes,
-                        'radio':radio,
-                        'countries':countries,
-                        'cities':cities,
-                        'districts':districts,
-                        'neighborhoods':neighborhoods,
-                        'villages':villages,
-                        'param':param
-                    })|raw }}
+                        {{ addBlock('ads-list/partials/list-filter',{
+                            'mainCats':mainCats,
+                            'subCats':subCats,
+                            'ranges':ranges,
+                            'checkboxes':checkboxes,
+                            'topfields' : topfields,
+                            'radio':radio,
+                            'countries':countries,
+                            'cities':cities,
+                            'districts':districts,
+                            'neighborhoods':neighborhoods,
+                            'villages':villages,
+                            'param':param
+                        })|raw }}
 
-                    <!-- Date Filter Start -->
-                    <div class="card mb-3">
-                        <div class="card-header breadcrumb mb-0" id="dateHeading">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#date"
-                                        aria-expanded="true" aria-controls="date">
-                                    <i class="fa fa-calendar"></i>
-                                    {{ trans("visiosoft.module.advs::field.date.name") }}
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="dateContainer" class="collapse show overflow-auto" aria-labelledby="dateHeading"
-                             data-parent="#filter"
-                             style="max-height: 300px;">
-                            <div class="d-flex flex-column p-3 m-0">
-                                <div class="form-check py-1">
-                                    <input class="form-check-input" type="radio" name="date" id="dateDay" value="day">
-                                    <label class="form-check-label" for="dateDay">
-                                        {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
-                                    </label>
-                                </div>
-                                <div class="form-check py-1">
-                                    <input class="form-check-input" type="radio" name="date" id="dateWeek" value="week">
-                                    <label class="form-check-label" for="dateWeek">
-                                        {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
-                                    </label>
-                                </div>
-                                <div class="form-check py-1">
-                                    <input class="form-check-input" type="radio" name="date" id="dateMonth"
-                                           value="month">
-                                    <label class="form-check-label" for="dateMonth">
-                                        {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
-                                    </label>
+                        <!-- Date Filter Start -->
+                        <div class="card mb-3">
+                            <div class="card-header breadcrumb mb-0" id="dateHeading">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#date"
+                                            aria-expanded="true" aria-controls="date">
+                                        <i class="fa fa-calendar"></i>
+                                        {{ trans("visiosoft.module.advs::field.date.name") }}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="dateContainer" class="collapse show overflow-auto" aria-labelledby="dateHeading"
+                                 data-parent="#filter"
+                                 style="max-height: 300px;">
+                                <div class="d-flex flex-column p-3 m-0">
+                                    <div class="form-check py-1">
+                                        <input class="form-check-input" type="radio" name="date" id="dateDay"
+                                               value="day">
+                                        <label class="form-check-label" for="dateDay">
+                                            {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
+                                        </label>
+                                    </div>
+                                    <div class="form-check py-1">
+                                        <input class="form-check-input" type="radio" name="date" id="dateWeek"
+                                               value="week">
+                                        <label class="form-check-label" for="dateWeek">
+                                            {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
+                                        </label>
+                                    </div>
+                                    <div class="form-check py-1">
+                                        <input class="form-check-input" type="radio" name="date" id="dateMonth"
+                                               value="month">
+                                        <label class="form-check-label" for="dateMonth">
+                                            {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Date Filter End -->
+                        <!-- Date Filter End -->
 
-                    <!-- Media Filter Start -->
-                    <div class="card mb-3">
-                        <div class="card-header breadcrumb mb-0" id="mediaHeading">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#media"
-                                        aria-expanded="true" aria-controls="media">
-                                    <i class="fa fa-camera"></i>
-                                    {{ trans("visiosoft.module.advs::field.photo.name") }}
-                                    , {{ trans("visiosoft.module.advs::field.video.name") }}
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="mediaContainer" class="collapse show overflow-auto" aria-labelledby="mediaHeading"
-                             data-parent="#filter"
-                             style="max-height: 300px;">
-                            <div class="row p-3 m-0">
-                                <div class="form-check py-1">
-                                    <input class="form-check-input" type="checkbox" value="true" name="photo"
-                                           id="photo">
-                                    <label class="form-check-label" for="photo">
-                                        {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
-                                    </label>
-                                </div>
-                                <div class="form-check py-1">
-                                    <input class="form-check-input" type="checkbox" value="true" name="video"
-                                           id="video">
-                                    <label class="form-check-label" for="video">
-                                        {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
-                                    </label>
+                        <!-- Media Filter Start -->
+                        <div class="card mb-3">
+                            <div class="card-header breadcrumb mb-0" id="mediaHeading">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#media"
+                                            aria-expanded="true" aria-controls="media">
+                                        <i class="fa fa-camera"></i>
+                                        {{ trans("visiosoft.module.advs::field.photo.name") }}
+                                        , {{ trans("visiosoft.module.advs::field.video.name") }}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="mediaContainer" class="collapse show overflow-auto" aria-labelledby="mediaHeading"
+                                 data-parent="#filter"
+                                 style="max-height: 300px;">
+                                <div class="row p-3 m-0">
+                                    <div class="form-check py-1">
+                                        <input class="form-check-input" type="checkbox" value="true" name="photo"
+                                               id="photo">
+                                        <label class="form-check-label" for="photo">
+                                            {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
+                                        </label>
+                                    </div>
+                                    <div class="form-check py-1">
+                                        <input class="form-check-input" type="checkbox" value="true" name="video"
+                                               id="video">
+                                        <label class="form-check-label" for="video">
+                                            {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Media Filter End -->
+                        <!-- Media Filter End -->
 
-                    <!-- Map Filter Start -->
-                    <div class="card mb-3">
-                        <div class="card-header breadcrumb mb-0" id="mapHeading">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#mapFilter"
-                                        aria-expanded="true" aria-controls="mapFilter">
-                                    <i class="fa fa-map"></i>
-                                    {{ trans("visiosoft.module.advs::field.map.name") }}
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="mapContainer" class="collapse show overflow-auto" aria-labelledby="mapHeading"
-                             data-parent="#filter"
-                             style="max-height: 300px;">
-                            <div class="row p-3 m-0">
-                                <div class="form-check py-1">
-                                    <input class="form-check-input" type="checkbox" value="true" name="map"
-                                           id="mapFilter">
-                                    <label class="form-check-label" for="mapFilter">
-                                        {{ trans("visiosoft.module.advs::field.yes.name") }}
-                                    </label>
+                        <!-- Map Filter Start -->
+                        <div class="card mb-3">
+                            <div class="card-header breadcrumb mb-0" id="mapHeading">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link text-dark" data-toggle="collapse"
+                                            data-target="#mapFilter"
+                                            aria-expanded="true" aria-controls="mapFilter">
+                                        <i class="fa fa-map"></i>
+                                        {{ trans("visiosoft.module.advs::field.map.name") }}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="mapContainer" class="collapse show overflow-auto" aria-labelledby="mapHeading"
+                                 data-parent="#filter"
+                                 style="max-height: 300px;">
+                                <div class="row p-3 m-0">
+                                    <div class="form-check py-1">
+                                        <input class="form-check-input" type="checkbox" value="true" name="map"
+                                               id="mapFilter">
+                                        <label class="form-check-label" for="mapFilter">
+                                            {{ trans("visiosoft.module.advs::field.yes.name") }}
+                                        </label>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- Map Filter End -->
+                        <!-- Map Filter End -->
 
-                    <!-- Price Filter Start -->
-                    <div class="card mb-3">
-                        <div class="card-header breadcrumb mb-0" id="priceHeading">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#price"
-                                        aria-expanded="true" aria-controls="price">
-                                    <i class="fas fa-money-bill"></i>
-                                    {{ trans("visiosoft.module.advs::field.price.name") }}
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="price" class="collapse show overflow-auto" aria-labelledby="priceHeading"
-                             data-parent="#filter"
-                             style="max-height: 300px;">
-                            <div class="row p-0 m-0">
-                                {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
-                                <div class="col-md-4 p-1 m-0">
-                                    <input type="number" class="price-input form-control w-100"
-                                           value="{{ app.request.get('min_price') }}"
-                                           name="min_price" min="0"
-                                           placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}">
-                                </div>
-                                <div class="col-md-4 p-1 pr-0 m-0">
-                                    <input class="price-input form-control w-100" type="number"
-                                           value="{{ app.request.get('max_price') }}"
-                                           name="max_price"
-                                           placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
+                        <!-- Price Filter Start -->
+                        <div class="card mb-3">
+                            <div class="card-header breadcrumb mb-0" id="priceHeading">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#price"
+                                            aria-expanded="true" aria-controls="price">
+                                        <i class="fas fa-money-bill"></i>
+                                        {{ trans("visiosoft.module.advs::field.price.name") }}
+                                    </button>
+                                </h5>
+                            </div>
+                            <div id="price" class="collapse show overflow-auto" aria-labelledby="priceHeading"
+                                 data-parent="#filter"
+                                 style="max-height: 300px;">
+                                <div class="row p-0 m-0">
+                                    {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
+                                    <div class="col-md-4 p-1 m-0">
+                                        <input type="number" class="price-input form-control w-100"
+                                               value="{{ app.request.get('min_price') }}"
+                                               name="min_price" min="0"
+                                               placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}">
+                                    </div>
+                                    <div class="col-md-4 p-1 pr-0 m-0">
+                                        <input class="price-input form-control w-100" type="number"
+                                               value="{{ app.request.get('max_price') }}"
+                                               name="max_price"
+                                               placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
+
+                                    </div>
+                                    <div class="col-md-4 py-1 px-0">
+                                        <select name="currency" id="currency" class="form-control">
+                                            {% for currency in active_currencies %}
+                                                <option {% if app.request.get('currency') == currency %}
+                                                        selected
+                                                        {% endif %}value="{{ currency }}">{{ currency }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
 
                                 </div>
-                                <div class="col-md-4 py-1 px-0">
-                                    <select name="currency" id="currency" class="form-control">
-                                        {% for currency in active_currencies %}
-                                            <option {% if app.request.get('currency') == currency %}
-                                                    selected
-                                                    {% endif %}value="{{ currency }}">{{ currency }}</option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-
                             </div>
                         </div>
-                    </div>
-                    <!-- Price Filter End -->
+                        <!-- Price Filter End -->
 
-                    <div class="card">
-                        <div class="card-header bg-primary text-center" id="submitHeading">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link text-white w-100">
-                                    <i class="fas fa-search"></i>
-                                    {{ trans("visiosoft.module.advs::field.search") }}
-                                </button>
-                            </h5>
+                        <div class="card">
+                            <div class="card-header bg-primary text-center" id="submitHeading">
+                                <h5 class="mb-0">
+                                    <button class="btn btn-link text-white w-100">
+                                        <i class="fas fa-search"></i>
+                                        {{ trans("visiosoft.module.advs::field.search") }}
+                                    </button>
+                                </h5>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</form>
+    </form>
