@@ -39,6 +39,7 @@ use Visiosoft\MessagesModule\Message\MessageModel;
 use Visiosoft\PackagesModule\Package\PackageModel;
 use Visiosoft\PackagesModule\User\UserModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
+use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
 use Visiosoft\ProfileModule\Profile\Contract\ProfileRepositoryInterface;
 use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
@@ -49,12 +50,16 @@ use Illuminate\Contracts\Events\Dispatcher;
 class MyProfileController extends PublicController
 {
 
-    public function __construct()
+    private $adressRepository;
+
+    public function __construct(AdressRepositoryInterface $adressRepository)
     {
         parent::__construct();
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
+
+        $this->adressRepository = $adressRepository;
     }
 
     protected $user;
@@ -167,6 +172,17 @@ class MyProfileController extends PublicController
             $country = CountryModel::all();
             return $this->view->make('visiosoft.module.profile::address/edit', compact('adress', 'country'));
         }
+    }
+
+    public function adressSoftDelete($id)
+    {
+        $address = $this->adressRepository->find($id);
+        if ($address->user_id == Auth::id()) {
+            $address->update([
+                'deleted_at' => date('Y-m-d H:i:s')
+            ]);
+        }
+        return $this->redirect->back();
     }
 
     public function adressUpdate(AdressFormBuilder $form, Request $request, $id)

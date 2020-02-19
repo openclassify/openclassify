@@ -119,6 +119,9 @@ return [
     'edit' => [
         'name' => 'Edit'
     ],
+    'delete' => [
+        'name' => 'Delete'
+    ],
     'list' => [
         'name' => 'List'
     ],
