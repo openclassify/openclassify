@@ -142,7 +142,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         if ($this->model->is_enabled('customfields')) {
-            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $query);
+            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $param, $query);
         }
 
 
@@ -158,29 +158,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $int = (int)$num;
             $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
             $query = $query->whereRaw($column);
-        }
-
-        foreach ($param as $para => $value) {
-            if (substr($para, 4, 3) === "cf_") {
-                $id = substr($para, 7);
-                $minmax = substr($para, 0, 3);
-                if ($minmax == 'min') {
-
-                    $num = $param[$minmax . '_cf_' . $id];
-                    $int = (int)$num;
-                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') >= '" . $int . "'";
-                    $query = $query->whereRaw($column);
-
-                }
-                if ($minmax == 'max') {
-
-                    $num = $param[$minmax . '_cf_' . $id];
-                    $int = (int)$num;
-                    $column = "JSON_EXTRACT(cf_json, '$.cf" . $id . "') <= '" . $int . "'";
-                    $query = $query->whereRaw($column);
-
-                }
-            }
         }
 
 
@@ -199,10 +176,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['sort_by'])) {
             switch ($param['sort_by']) {
                 case "sort_price_up":
-                    $query = $query->orderBy('price', 'desc');
+                    $query = $query->orderBy('advs_advs.price', 'desc');
                     break;
                 case "sort_price_down":
-                    $query = $query->orderBy('price', 'asc');
+                    $query = $query->orderBy('advs_advs.price', 'asc');
                     break;
                 case "sort_time":
                     $query = $query->orderBy('advs_advs.created_at', 'desc');
@@ -210,12 +187,12 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         } else {
             $query = $query->orderBy('advs_advs.created_at', 'desc');
-            if ($isActiveDopings) {
-                $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query, $param);
-            } else {
-                $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
-                    'advs_advs_translations.advs_desc as advs_desc');
-            }
+        }
+        if ($isActiveDopings) {
+            $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query, $param);
+        } else {
+            $query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
+                'advs_advs_translations.advs_desc as advs_desc');
         }
 
         if ($type == "list") {

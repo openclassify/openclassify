@@ -61,16 +61,15 @@ class UploadController extends AdminController
             $position = $settings->value('visiosoft.module.advs::watermark_position');
 
             $img = WaterMark::make($this->request->file('upload')->getRealPath())
-                               ->resize( null,600)
-                                ->resizeCanvas(800, 600, 'center', false, 'fff');
+                ->resize(null, 600)
+                ->resizeCanvas(800, 600, 'center', false, 'fff');
             if ($watermarktype == 'image') {
 
                 $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');
                 $watermarkimage = $files->find($watermarkimage_id);
                 $w = $img->width();
                 if ($watermarkimage != null) {
-                    $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path())
-                        ->opacity($settings->value('visiosoft.module.advs::watermark_opacity'));
+                    $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
                     $img->insert($watermark, $position);
                 }
 
@@ -123,9 +122,8 @@ class UploadController extends AdminController
         $isImageUser = FilesFilesEntryModel::query()->where('created_by_id', Auth::id())
             ->where('name', $filename)->first();
         if ($isImageUser != null) {
-            $image->make(Storage::path('images/' . $filename))
-                ->rotate(90)
-                ->publish('app/default/files-module/local/images/' . $filename);
+            WaterMark::make(Storage::path('images/' . $filename))->rotate(90)
+                ->save(app_storage_path() . '/files-module/local/images/' . $filename);
             return response()->json(['status' => 'success']);
         }
         return response()->json(['status' => 'error']);

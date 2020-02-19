@@ -11,6 +11,7 @@ return [
     'approve' => "Approve",
     'decline' => 'Decline',
     'extend' => 'Extend',
+    'extend_all' => 'Extend All',
     'sub_category' => 'Sub Categories',
     'add_sub_category' => 'Add Sub Category',
     'sub_cities' => 'Sub Cities',
