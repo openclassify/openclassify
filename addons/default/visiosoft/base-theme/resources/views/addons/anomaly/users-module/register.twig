@@ -40,8 +40,11 @@
             <div class="col-12 col-md-6 py-3 pr-0 instructions d-none d-md-block">
                 <div class="border personal-advantages py-5 px-5">
                     <div class="d-flex align-items-center mb-4">
-                        <img src="{{ img('visiosoft.theme.base::images/register-instruction.png').url }}">
-                        <h4 class="ml-3">
+                        {% if setting_value('visiosoft.theme.base::register_page_instruction_logo') %}
+                            <img class="mr-3"
+                                 src="{{ file(setting_value('visiosoft.theme.base::register_page_instruction_logo')).url }}">
+                        {% endif %}
+                        <h4 class="mb-0">
                             {{ trans('visiosoft.theme.base::field.personal_registration_header') }}
                         </h4>
                     </div>

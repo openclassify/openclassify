@@ -118,9 +118,11 @@ Onur Üre @onurure
 
 Fatih Alp @fatihalp
 
-Emek Sancar 
+Emek Sancar @emeksancar
 
 Ozcan Durak @ozcandurak
+
+Dia @Diatrex
 
 ## Thanks to
 
