@@ -39,6 +39,10 @@
                             'param':param
                         })|raw }}
 
+                        <!-- Price Filter Start -->
+                        {% include 'visiosoft.module.advs::list/partials/price-filter' %}
+                        <!-- Price Filter End -->
+
                         <!-- Date Filter Start -->
                         <div class="card mb-3">
                             <div class="card-header breadcrumb mb-0" id="dateHeading">
@@ -55,21 +59,33 @@
                                  style="max-height: 300px;">
                                 <div class="d-flex flex-column p-3 m-0">
                                     <div class="form-check py-1">
-                                        <input class="form-check-input" type="radio" name="date" id="dateDay"
+                                        <input class="form-check-input"
+                                                {% if app.request.get('date') == 'day' %}
+                                                    checked
+                                                {% endif %}
+                                               type="radio" name="date" id="dateDay"
                                                value="day">
                                         <label class="form-check-label" for="dateDay">
                                             {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
                                         </label>
                                     </div>
                                     <div class="form-check py-1">
-                                        <input class="form-check-input" type="radio" name="date" id="dateWeek"
+                                        <input class="form-check-input"
+                                                {% if app.request.get('date') == 'week' %}
+                                                    checked
+                                                {% endif %}
+                                               type="radio" name="date" id="dateWeek"
                                                value="week">
                                         <label class="form-check-label" for="dateWeek">
                                             {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
                                         </label>
                                     </div>
                                     <div class="form-check py-1">
-                                        <input class="form-check-input" type="radio" name="date" id="dateMonth"
+                                        <input class="form-check-input"
+                                                {% if app.request.get('date') == 'month' %}
+                                                    checked
+                                                {% endif %}
+                                               type="radio" name="date" id="dateMonth"
                                                value="month">
                                         <label class="form-check-label" for="dateMonth">
                                             {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
@@ -140,7 +156,11 @@
                                  style="max-height: 300px;">
                                 <div class="row p-3 m-0">
                                     <div class="form-check py-1">
-                                        <input class="form-check-input" type="checkbox" value="true" name="map"
+                                        <input class="form-check-input" type="checkbox"
+                                                {% if app.request.get('map') == true %}
+                                                    checked
+                                                {% endif %}
+                                               value="true" name="map"
                                                id="mapFilter">
                                         <label class="form-check-label" for="mapFilter">
                                             {{ trans("visiosoft.module.advs::field.yes.name") }}
@@ -150,50 +170,6 @@
                             </div>
                         </div>
                         <!-- Map Filter End -->
-
-                        <!-- Price Filter Start -->
-                        <div class="card mb-3">
-                            <div class="card-header breadcrumb mb-0" id="priceHeading">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#price"
-                                            aria-expanded="true" aria-controls="price">
-                                        <i class="fas fa-money-bill"></i>
-                                        {{ trans("visiosoft.module.advs::field.price.name") }}
-                                    </button>
-                                </h5>
-                            </div>
-                            <div id="price" class="collapse show overflow-auto" aria-labelledby="priceHeading"
-                                 data-parent="#filter"
-                                 style="max-height: 300px;">
-                                <div class="row p-0 m-0">
-                                    {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
-                                    <div class="col-md-4 p-1 m-0">
-                                        <input type="number" class="price-input form-control w-100"
-                                               value="{{ app.request.get('min_price') }}"
-                                               name="min_price" min="0"
-                                               placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}">
-                                    </div>
-                                    <div class="col-md-4 p-1 pr-0 m-0">
-                                        <input class="price-input form-control w-100" type="number"
-                                               value="{{ app.request.get('max_price') }}"
-                                               name="max_price"
-                                               placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
-
-                                    </div>
-                                    <div class="col-md-4 py-1 px-0">
-                                        <select name="currency" id="currency" class="form-control">
-                                            {% for currency in active_currencies %}
-                                                <option {% if app.request.get('currency') == currency %}
-                                                        selected
-                                                        {% endif %}value="{{ currency }}">{{ currency_symbol(currency) }}</option>
-                                            {% endfor %}
-                                        </select>
-                                    </div>
-
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Price Filter End -->
 
                         <div class="card">
                             <div class="card-header bg-primary text-center" id="submitHeading">
