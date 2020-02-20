@@ -185,7 +185,7 @@
                                             {% for currency in active_currencies %}
                                                 <option {% if app.request.get('currency') == currency %}
                                                         selected
-                                                        {% endif %}value="{{ currency }}">{{ currency }}</option>
+                                                        {% endif %}value="{{ currency }}">{{ currency_symbol(currency) }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
