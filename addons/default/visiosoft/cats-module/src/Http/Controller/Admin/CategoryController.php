@@ -47,7 +47,11 @@ class CategoryController extends AdminController
             $this->messages->error('Selected category has no sub-categories.');
             return back();
         }
-        $table->setTableEntries($categories);
+        if($request->view != "trash")
+        {
+            $table->setTableEntries($categories);
+        }
+
         return $table->render();
     }
 
