@@ -137,7 +137,8 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
                 'folders' => ['adv_listing_page'],
                 'mode' => 'select',
             ]
-        ]
+        ],
+        'deleted_at' => 'anomaly.field_type.datetime'
     ];
 
 }

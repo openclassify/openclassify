@@ -27,7 +27,6 @@ class AdvCriteria extends EntryCriteria
         return $ads;
     }
 
-
     public function advsofDay()
     {
         $advModel = new AdvModel();
@@ -62,6 +61,24 @@ class AdvCriteria extends EntryCriteria
             ->paginate($this->settings->value('visiosoft.theme.base::s-type-latest-limit'));
 
         $ads = $advModel->getLocationNames($latest_advs);
+        foreach ($ads as $index => $ad) {
+            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
+            $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
+        }
+        return $ads;
+    }
+
+    public function findAdsByCategoryId($catId)
+    {
+        $advModel = new AdvModel();
+        $advs = AdvModel::query()
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', '=', 'approved')
+            ->where('slug', '!=', '')
+            ->where('cat1', $catId)
+            ->get();
+
+        $ads = $advModel->getLocationNames($advs);
         foreach ($ads as $index => $ad) {
             $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
             $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);

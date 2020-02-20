@@ -1,18 +1,8 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
-    {% set logo_web = file(setting_value('visiosoft.theme.sahibinden::logo_web')).url %}
-    {% if logo_web is null %}
-        {% set logo_web = img('visiosoft.theme.sahibinden::images/logo_web.png').url %}
-    {% endif %}
-    <div class="col-12 px-5 mx-4">
-        <a href="{{ url("/") }}">
-            <img class="img-responsive d-none d-sm-block logo-web"
-                 src="{{ logo_web }}"></a>
-    </div>
     <div class="row justify-content-center">
         <div class="col-12 text-left m-0 row justify-content-center">
-
             <div class="col-12 col-lg-5 m-3 login-section">
                 {% set form = form('signIn')
                     .redirect(app.request.get('redirect'))

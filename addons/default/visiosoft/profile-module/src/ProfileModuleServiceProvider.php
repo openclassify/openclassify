@@ -86,6 +86,10 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.profile::address_edit',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressEdit'
         ],
+        'profile/adress/soft-del/{id}' => [
+            'as' => 'visiosoft.module.profile::address_soft_delete',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressSoftDelete'
+        ],
 
         /* Profile */
         'admin/profile' => 'Visiosoft\ProfileModule\Http\Controller\Admin\ProfileController@index',
