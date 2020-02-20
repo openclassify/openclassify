@@ -33,6 +33,12 @@
                                 <i class="fas fa-pencil-alt" aria-hidden="true"></i>
                                 {{ trans("visiosoft.module.profile::field.edit.name") }}
                             </a>
+                            <a class="btn btn-sm btn-danger"
+                               href="{{ url_route('visiosoft.module.profile::address_soft_delete', [adress.id]) }}"
+                               role="button">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                {{ trans("visiosoft.module.profile::field.delete.name") }}
+                            </a>
                         </td>
                     </tr>
                 {% endfor %}

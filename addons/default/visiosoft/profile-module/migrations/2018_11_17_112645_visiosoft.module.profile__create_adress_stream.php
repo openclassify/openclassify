@@ -13,7 +13,7 @@ class VisiosoftModuleProfileCreateAdressStream extends Migration
     protected $stream = [
         'slug' => 'adress',
          'title_column' => 'id',
-         'translatable' => true,
+         'translatable' => false,
          'trashable' => false,
          'searchable' => false,
          'sortable' => false,
@@ -50,6 +50,7 @@ class VisiosoftModuleProfileCreateAdressStream extends Migration
         'adress_gsm_phone' => [
             'required' => true,
         ],
+        'deleted_at'
     ];
 
 }
