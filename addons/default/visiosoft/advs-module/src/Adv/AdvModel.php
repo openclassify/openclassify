@@ -160,7 +160,8 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function popularAdvs()
     {
-        return $this->getAdv()->orderBy('count_show_ad', 'desc')->limit(10)->get();
+        return $this->getAdv()->where('status', 'approved')
+            ->orderBy('count_show_ad', 'desc')->limit(10)->get();
     }
 
     public function advsofDay()
