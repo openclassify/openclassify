@@ -7,7 +7,7 @@ function hideLoader() {
 }
 
 
-const filter = {};
+var filter = {};
 
 // TODO will be unified
 

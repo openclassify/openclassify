@@ -97,14 +97,22 @@
                                  style="max-height: 300px;">
                                 <div class="row p-3 m-0">
                                     <div class="form-check py-1">
-                                        <input class="form-check-input" type="checkbox" value="true" name="photo"
+                                        <input class="form-check-input" type="checkbox"
+                                            {% if app.request.get('photo') == true %}
+                                                checked
+                                            {% endif %}
+                                               value="true" name="photo"
                                                id="photo">
                                         <label class="form-check-label" for="photo">
                                             {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
                                         </label>
                                     </div>
                                     <div class="form-check py-1">
-                                        <input class="form-check-input" type="checkbox" value="true" name="video"
+                                        <input class="form-check-input" type="checkbox"
+                                               {% if app.request.get('video') == true %}
+                                                   checked
+                                               {% endif %}
+                                               value="true" name="video"
                                                id="video">
                                         <label class="form-check-label" for="video">
                                             {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
@@ -177,7 +185,7 @@
                                             {% for currency in active_currencies %}
                                                 <option {% if app.request.get('currency') == currency %}
                                                         selected
-                                                        {% endif %}value="{{ currency }}">{{ currency }}</option>
+                                                        {% endif %}value="{{ currency }}">{{ currency_symbol(currency) }}</option>
                                             {% endfor %}
                                         </select>
                                     </div>
