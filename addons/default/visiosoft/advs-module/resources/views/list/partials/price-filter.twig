@@ -1,0 +1,41 @@
+<div class="card mb-3">
+    <div class="card-header breadcrumb mb-0" id="priceHeading">
+        <h5 class="mb-0">
+            <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#price"
+                    aria-expanded="true" aria-controls="price">
+                <i class="fas fa-money-bill"></i>
+                {{ trans("visiosoft.module.advs::field.price.name") }}
+            </button>
+        </h5>
+    </div>
+    <div id="price" class="collapse show overflow-auto" aria-labelledby="priceHeading"
+         data-parent="#filter"
+         style="max-height: 300px;">
+        <div class="row p-0 m-0">
+            {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
+            <div class="col-md-4 p-1 m-0">
+                <input type="number" class="price-input form-control w-100"
+                       value="{{ app.request.get('min_price') }}"
+                       name="min_price" min="0"
+                       placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}">
+            </div>
+            <div class="col-md-4 p-1 pr-0 m-0">
+                <input class="price-input form-control w-100" type="number"
+                       value="{{ app.request.get('max_price') }}"
+                       name="max_price"
+                       placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
+
+            </div>
+            <div class="col-md-4 py-1 px-0">
+                <select name="currency" id="currency" class="form-control">
+                    {% for currency in active_currencies %}
+                        <option {% if app.request.get('currency') == currency %}
+                                selected
+                                {% endif %}value="{{ currency }}">{{ currency_symbol(currency) }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+
+        </div>
+    </div>
+</div>
