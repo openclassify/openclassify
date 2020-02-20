@@ -95,9 +95,6 @@ return [
     'watermark_position' => [
         'name' => 'Watermark Position',
     ],
-    'watermark_opacity' => [
-        'name' => 'Watermark Opacity',
-    ],
     'listing_page_image' => [
         'name' => 'Listing Page Image',
     ],

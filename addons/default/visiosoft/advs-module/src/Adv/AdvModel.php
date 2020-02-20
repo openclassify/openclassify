@@ -59,18 +59,26 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return 1;
     }
 
-    public function getAdv($id = null, $nullable_ad = false)
+    public function getAdv($id = null, $nullable_ad = false, $trashed = false)
     {
-        if ($id != null) {
-            if ($nullable_ad)
-                return $this->find($id);
-            else
-                return $this->where('advs_advs.slug', '!=', "")
-                    ->find($id);
+        $query = $this::query();
+
+        if ($trashed) {
+            $query = $this::withTrashed();
         }
-        if ($nullable_ad)
-            return $this->newQuery();
-        return $this->where('advs_advs.slug', '!=', "");
+
+        if ($id != null) {
+            if ($nullable_ad) {
+                return $query->find($id);
+            } else {
+                return $query->where('advs_advs.slug', '!=', "")
+                    ->find($id);
+            }
+        }
+        if ($nullable_ad) {
+            return $query->newQuery();
+        }
+        return $query->where('advs_advs.slug', '!=', "");
     }
 
     public function userAdv($nullable_ad = false)

@@ -31,20 +31,20 @@ $('.sort-by-item').on('click', function () {
     } else if (searchParams.has('sort_by')) {
         var parameters = "";
         if (value != 'all') {
-            parameters = "&sort_by=" + value;
+            parameters = "sort_by=" + value;
         }
-        goURL = location.href.replace("&sort_by=" + sort_by, parameters);
+        goURL = location.href.replace("sort_by=" + sort_by, parameters);
     } else {
         goURL = url + "&sort_by=" + value;
     }
     window.location.replace(goURL);
-})
+});
 
 
 $('.ad-info-right-bar-video').on('click', function () {
     $(".video-ad-tooltip-" + $(this).attr('data-id'))[0].play();
     $(".video-ad-tooltip-" + $(this).attr('data-id'))[0].controls = false;
-})
+});
 
 
 $(document).ready(function () {

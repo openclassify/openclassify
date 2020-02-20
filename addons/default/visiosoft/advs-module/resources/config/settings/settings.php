@@ -126,14 +126,6 @@ return [
             'default_value' => 'top-right',
         ]
     ],
-    'watermark_opacity' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.watermark_opacity',
-        'env' => 'ADV_WATERMARK_OPACITY',
-        'config' => [
-            'default_value' => '80',
-        ],
-    ],
 
     'listing_page_image' => [
         'type' => 'anomaly.field_type.file',

@@ -1,7 +1,7 @@
 {% if setting_value('visiosoft.module.location::create_ad_page_location') %}
     <div class="row form-group location-map">
         <div class="col-sm-4">
-            <ul style="padding: 0">
+            <ul style="padding: 0" class="list-unstyled">
                 <li class="country-data" data-content="{{ adv['country_id'] }}"
                     data-default="{{ setting_value('visiosoft.module.location::default_country') }}"
                     class="location-field country-data">{{ form.fields.country|raw }}</li>

@@ -11,6 +11,9 @@
                 <div class="card-read-more text-center row">
                     {{ buttons(row.buttons)|raw }}
                 </div>
+                {% if loop.index == 1 %}
+                    <div class="main-image image-eye-{{ row.key }}"><i class="fa fa-eye "></i></div>
+                {% endif %}
             </div>
         </div>
     {% endfor %}

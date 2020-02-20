@@ -95,9 +95,6 @@ return [
     'watermark_position' => [
         'name' => 'Filigran Konumu',
     ],
-    'watermark_opacity' => [
-        'name' => 'Filigran Opaklığı',
-    ],
     'listing_page_image' => [
         'name' => 'Sayfa Resmi Listeleme',
     ],
