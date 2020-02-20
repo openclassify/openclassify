@@ -29,6 +29,6 @@ return [
         'name' => 'Tümünü Görüntüle',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Kayıt Sayfası Talimat Logosu',
     ],
 ];
