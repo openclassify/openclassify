@@ -9,7 +9,7 @@
             {% include "visiosoft.module.advs::list/partials/breadcrumb" %}
             <!-- breadcrumb -->
 
-            {% include "visiosoft.module.advs::list/partials/user-section" %}
+            {{ addBlock('ads-list/user-section', {'store': store})|raw }}
 
             <div class="row my-3">
                 <div class="col-md-3">
