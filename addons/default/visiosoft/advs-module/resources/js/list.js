@@ -1,4 +1,4 @@
-const filter = {};
+var filter = {};
 
 filter.checkUser = () => {
     $.ajax({

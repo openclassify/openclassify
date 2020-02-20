@@ -13,7 +13,7 @@ $(document).ready(function () {
         $(this).val(all[all.length-1])
     })
 
-    const filter = {};
+    var filter = {};
     filter.getCats = (catId, divId) => {
         $.ajax({
             type: 'get',
