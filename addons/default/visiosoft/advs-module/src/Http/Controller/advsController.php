@@ -273,18 +273,23 @@ class AdvsController extends PublicController
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
             'user', 'userProfile', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
-        if (isset($viewType) and $viewType == 'table')
-            return $this->view->make('visiosoft.module.advs::list/table', $compact);
-        elseif (isset($viewType) and $viewType == 'map')
-            return $this->view->make('visiosoft.module.advs::list/map', $compact);
-        elseif (isset($viewType) and $viewType == 'gallery')
-            return $this->view->make('visiosoft.module.advs::list/gallery', $compact);
-
-        return $this->view->make('visiosoft.module.advs::list/list', $compact);
+        return $this->viewTypeBasedRedirect($viewType, $compact);
     }
 
     public function fullLink($request, $url, $newParameters) {
         return $this->dispatch(new appendRequestURL($request, $url, $newParameters));
+    }
+
+    public function viewTypeBasedRedirect($viewType, $compact) {
+        if (isset($viewType) and $viewType == 'table') {
+            return $this->view->make('visiosoft.module.advs::list/table', $compact);
+        } elseif (isset($viewType) and $viewType == 'map') {
+            return $this->view->make('visiosoft.module.advs::list/map', $compact);
+        } elseif (isset($viewType) and $viewType == 'gallery') {
+            return $this->view->make('visiosoft.module.advs::list/gallery', $compact);
+        } else {
+            return $this->view->make('visiosoft.module.advs::list/list', $compact);
+        }
     }
 
     public function viewType($type)
