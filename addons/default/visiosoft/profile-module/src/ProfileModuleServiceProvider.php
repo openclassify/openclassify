@@ -82,6 +82,14 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.profile::adress_ajax_create',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxCreate'
         ],
+        'profile/adress/ajaxUpdate/{id}' => [
+            'as' => 'visiosoft.module.profile::adress_ajax_update',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxUpdate'
+        ],
+        'profile/adress/ajaxDetail' => [
+            'as' => 'visiosoft.module.profile::adress_ajax_detail',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxDetail'
+        ],
         'profile/adress/edit/{id}' => [
             'as' => 'visiosoft.module.profile::address_edit',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressEdit'

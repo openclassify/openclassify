@@ -25,4 +25,5 @@ return [
     'error_valid_email_or_phone' => 'Phone number or E-mail address format is not correct.',
     'error_valid_phone' => 'Phone number format is not correct.',
     'registered_phone' => 'This phone number has already been registered.',
+    'ajax_address_error' => 'No address or not authorized to view.',
 ];
