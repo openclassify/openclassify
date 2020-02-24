@@ -68,6 +68,7 @@ $(document).on('change', 'select[name="'+neighborhoodSelectName+'"]', function()
 function Locations(cat, level, name){
     $.ajax({
         type: "GET",
+        async: false,
         data: "cat=" + cat	+ "&level=" + level,
         url: "/class/ajax",
         success: function(msg){

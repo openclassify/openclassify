@@ -25,4 +25,5 @@ return [
     'error_valid_email_or_phone' => 'E-Posta Adresi veya Telefon numarası formatı geçersiz.',
     'error_valid_phone' => 'Telefon numarası biçimi doğru değil.',
     'registered_phone' => 'Bu telefon numarası ile daha önceden sisteme kayıt olunmuştur.',
+    'ajax_address_error' => 'Adres yok veya görüntüleme yetkiniz bulunmamaktadır.',
 ];

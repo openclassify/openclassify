@@ -252,6 +252,46 @@ class MyProfileController extends PublicController
         return $message;
     }
 
+    public function adressAjaxUpdate(AdressFormBuilder $form, $id)
+    {
+        $address = $this->adressRepository->find($id);
+        if (isset($id) and $address != null and $address->user_id == Auth::id()) {
+            $message = [];
+            $error = $form->build()->validate()->getFormErrors()->getMessages();
+            if (!empty($error)) {
+                $message['status'] = "error";
+                $message['msg'] = trans('visiosoft.module.profile::message.required_all');
+                return $message;
+            }
+            $new_adress = $this->request->all();
+            unset($new_adress['_token']);
+
+            $address->update($new_adress);
+
+            $message['status'] = "updated";
+            $message['data'] = $address;
+            return $message;
+
+        }
+        $message['status'] = "error";
+        $message['msg'] = trans('visiosoft.module.profile::message.ajax_address_error');
+        return $message;
+    }
+
+    public function adressAjaxDetail()
+    {
+        $address = $this->adressRepository->find($this->request->id);
+        if (isset($this->request->id) and $address != null and $address->user_id == Auth::id()) {
+            $message['status'] = "success";
+            $message['data'] = $address;
+            return $message;
+        }
+        $message['status'] = "error";
+        $message['msg'] = trans('visiosoft.module.profile::message.ajax_address_error');
+        return $message;
+    }
+
+
     public function showMessage($id)
     {
         $message = new MessageModel();
