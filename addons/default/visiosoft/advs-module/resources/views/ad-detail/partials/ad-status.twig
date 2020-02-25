@@ -1,0 +1,6 @@
+{% if adv.status == "pending_user" or adv.status == "pending_admin" %}
+<div class="alert bg-info text-white alert-dismissible">
+    <i class="fas fa-exclamation-triangle"></i>
+     {{ trans('visiosoft.module.advs::message.pending_ad_status') }}
+</div>
+{% endif %}

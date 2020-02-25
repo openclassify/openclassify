@@ -25,4 +25,5 @@ return [
     'filter_by_search_msg' => 'Filter By Search.',
     'delete_author_error' => 'You cannot delete a post that does not belong to you',
     'success_delete' => 'Ad Deleted',
+    'pending_ad_status' => 'Your ad is pending approval by the Editor.',
 ];

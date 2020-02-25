@@ -20,7 +20,7 @@ class AdvTableBuilder extends TableBuilder
 
     public function onQuerying(Builder $query)
     {
-        $query->where('slug', "!=", NULL);
+        $query->where('slug', "!=", "");
     }
 
     protected $views = [];

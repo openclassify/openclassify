@@ -17,6 +17,7 @@
                 {% include "visiosoft.module.advs::ad-detail/partials/breadcrumb" %}
                 <!-- breadcrumb -->
             {% endif %}
+            {% include "visiosoft.module.advs::ad-detail/partials/ad-status" %}
             <h2 class="title">
                 {{ adv.title }}
                 {{ addBlock('ad-detail/title/action',{'adv_id':adv.id})|raw }}
