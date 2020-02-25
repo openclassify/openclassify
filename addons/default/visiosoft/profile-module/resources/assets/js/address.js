@@ -1,8 +1,8 @@
 // Personal Registration
-var inputQueries = document.querySelectorAll("input[name='gsm_phone'],input[name='office_phone'],input[name='land_phone']");
+var inputQueries = document.querySelectorAll("input[name='adress_gsm_phone']");
 inputQueries.forEach(function (inputQuery, key) {
     var iti = intlTelInput(inputQuery, {
-        hiddenInput: "full_phone_" + inputQuery.getAttribute('name'),
+        hiddenInput: "full_phone_"+inputQuery.getAttribute('name'),
         class: "form-control",
         initialCountry: "auto",
         geoIpLookup: function (success, failure) {
@@ -15,16 +15,15 @@ inputQueries.forEach(function (inputQuery, key) {
     })
 });
 
-maskPhone('gsm_phone')
-maskPhone('land_phone')
-maskPhone('office_phone')
-$("input[name='gsm_phone'],input[name='office_phone'],input[name='land_phone']").on('countrychange', function (e) {
-    maskPhone($(this).attr('name'))
+maskPhone()
+
+$("input[name='adress_gsm_phone']").on('countrychange', function (e) {
+    maskPhone()
 });
 
 function maskPhone(name) {
-    var currentMask = $("input[name='" + name + "']").attr('placeholder');
-    $("input[name='" + name + "']").mask(currentMask.replace(/[0-9+]/ig, '9'), {
+    var currentMask = $("input[name='adress_gsm_phone']").attr('placeholder');
+    $("input[name='adress_gsm_phone']").mask(currentMask.replace(/[0-9+]/ig, '9'), {
         autoclear: true,
         clearIncomplete: true
     });
