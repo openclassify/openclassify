@@ -22,7 +22,7 @@ function getMyAds(type) {
 
 $('.profile-ads-tab a').on('click', function () {
     getMyAds($(this).attr('data-type'))
-})
+});
 
 getMyAds('approved');
 
@@ -83,6 +83,11 @@ function dropdownRow(id, type) {
     dropdown += "<a class='dropdown-item text-danger' href='/advs/delete/" + id + "'>" +
         "<i class='fas fa-trash'></i> " +
         delete_ad +
+        "</a>\n";
+
+    dropdown += "<a class='dropdown-item text-info' href='/advs/extend/" + id + "'>" +
+        "<i class='fas fa-calendar'></i> " +
+        extend_ad +
         "</a>\n";
 
     dropdown += "</div></div>";

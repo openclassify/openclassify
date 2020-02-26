@@ -212,9 +212,13 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'ajax::getAds',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@getMyAds'
         ],
-        'admin/advs/extendAll' => [
+        'advs/extendAll/{isAdmin?}' => [
             'as' => 'advs::extendAll',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@extendAll',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@extendAll',
+        ],
+        'advs/extend/{adId}' => [
+            'as' => 'advs::extendSingle',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@extendSingle',
         ],
     ];
 

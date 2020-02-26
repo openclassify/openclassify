@@ -7,5 +7,6 @@ return [
     'update_password' => 'Update Password',
     'update_profile' => 'Update Profile',
     'delete' => 'Delete',
+    'extend' => 'Extend',
     'edit' => 'Edit',
 ];

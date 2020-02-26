@@ -31,7 +31,7 @@ class AdvsModule extends Module
                      'href' => "/advs/create_adv",
                 ],
                 'extend_all' => [
-                    'href' => "/admin/advs/extendAll",
+                    'href' => "/advs/extendAll/admin",
                     'icon' => 'fa fa-calendar',
                     'type' => 'info'
                 ],

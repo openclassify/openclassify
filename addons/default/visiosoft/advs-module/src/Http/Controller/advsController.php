@@ -974,4 +974,25 @@ class AdvsController extends PublicController
         return "success";
     }
 
+    public function extendAll($isAdmin = null)
+    {
+        if ($isAdmin && auth()->user()->hasRole('admin')) {
+            $advs = $this->adv_model->newQuery();
+        } else {
+            $advs = $this->adv_model->newQuery()->where('created_by_id', auth()->id());
+        }
+        $newDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . setting_value('visiosoft.module.advs::default_published_time') . ' day'));
+        $advs->update(['finish_at' => $newDate]);
+        $this->messages->success(trans('visiosoft.module.advs::field.extended'));
+        return $this->redirect->back();
+    }
+
+    public function extendSingle($adId)
+    {
+        $advs = $this->adv_model->newQuery()->where('id', $adId);
+        $newDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . setting_value('visiosoft.module.advs::default_published_time') . ' day'));
+        $advs->update(['finish_at' => $newDate]);
+        $this->messages->success(trans('visiosoft.module.advs::field.extended'));
+        return $this->redirect->back();
+    }
 }
