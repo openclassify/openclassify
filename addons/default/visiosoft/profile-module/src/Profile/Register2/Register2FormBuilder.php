@@ -41,7 +41,7 @@ class Register2FormBuilder extends FormBuilder
         'username' => [
             'required' => true,
         ],
-        'full_phone' => [
+        'phone' => [
             'type' => 'anomaly.field_type.text',
         ],
         'first_name' => [
