@@ -199,8 +199,7 @@ class MyProfileController extends PublicController
 
             $New_value = $request->all();
             $New_value['country_id'] = $New_value['country'];
-            $New_value['adress_gsm_phone'] = $New_value['full_phone_adress_gsm_phone'];
-            unset($New_value['_token'], $New_value['action'], $New_value['country'], $New_value['full_phone_adress_gsm_phone']);
+            unset($New_value['_token'], $New_value['action'], $New_value['country']);
             $adressModel->getAdress($id)->update($New_value);
 
             $message = [];
@@ -242,8 +241,7 @@ class MyProfileController extends PublicController
             return $message;
         }
         $new_adress = $request->request->all();
-        $new_adress['adress_gsm_phone'] = $new_adress['full_phone_adress_gsm_phone'];
-        unset($new_adress['_token'], $new_adress['full_phone_adress_gsm_phone']);
+        unset($new_adress['_token']);
         $new_adress['user_id'] = Auth::id();
 
         $adressModel = new AdressModel();
@@ -266,8 +264,7 @@ class MyProfileController extends PublicController
                 return $message;
             }
             $new_adress = $this->request->all();
-            $new_adress['adress_gsm_phone'] = $new_adress['full_phone_adress_gsm_phone'];
-            unset($new_adress['_token'], $new_adress['full_phone_adress_gsm_phone']);
+            unset($new_adress['_token']);
 
             $address->update($new_adress);
 

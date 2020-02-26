@@ -17,9 +17,9 @@ class ProfileFormHandler
         }
 
         $parameters = [
-            'gsm_phone' => $builder->getPostValue('full_phone_gsm_phone'),
-            'office_phone' => $builder->getPostValue('full_phone_office_phone'),
-            'land_phone' => $builder->getPostValue('full_phone_land_phone'),
+            'gsm_phone' => $builder->getPostValue('gsm_phone'),
+            'office_phone' => $builder->getPostValue('office_phone'),
+            'land_phone' => $builder->getPostValue('land_phone'),
             'identification_number' => $builder->getPostValue('identification_number'),
             'register_type' => $builder->getPostValue('register_type'),
             'adv_listing_banner_id' => $builder->getPostValue('adv_listing_banner'),
