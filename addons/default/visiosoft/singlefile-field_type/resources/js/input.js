@@ -1,5 +1,4 @@
-$(document).on('ajaxComplete ready', function () {
-
+$( document ).ready(function() {
     // Initialize file pickers
     $('[data-provides="visiosoft.field_type.singlefile"]:not([data-initialized])').each(function () {
 
