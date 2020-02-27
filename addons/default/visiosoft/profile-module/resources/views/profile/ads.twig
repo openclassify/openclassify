@@ -10,7 +10,6 @@
 
                 <div class="col-md-12 bg-light ads-section">
                     <nav class="profile-ads-tab">
-
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active text-dark" data-type="approved" id="nav-approved-tab"
                                data-toggle="tab"
@@ -48,6 +47,19 @@
                         <div class="tab-pane fade show" id="nav-passive" role="tabpanel"
                              aria-labelledby="nav-passive-tab">
                         </div>
+
+                        <!-- Pagination links -->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a id="btn_prev" class="page-link" href="javascript:prevPage()">Previous</a>
+                                </li>
+                                <li class="page-item"><span id="page" class="page-link">1</span></li>
+                                <li class="page-item">
+                                    <a id="btn_next" class="page-link" href="javascript:nextPage()">Next</a>
+                                </li>
+                            </ul>
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -59,6 +71,7 @@
         var delete_ad = "{{ trans('visiosoft.module.profile::button.delete') }}";
         var extend_ad = "{{ trans('visiosoft.module.profile::button.extend') }}";
         var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
+        var ads_per_page = "{{ setting_value('streams::per_page') }}";
     </script>
     {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
 {% endblock %}
