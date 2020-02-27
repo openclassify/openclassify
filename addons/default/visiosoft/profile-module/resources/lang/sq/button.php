@@ -8,4 +8,6 @@ return [
     'update_profile' => 'Përditësoje profilin',
     'delete' => 'fshini',
     'edit' => 'redaktoj',
+    'go_profile' => 'Go to Profile Detail',
+    'go_user' => 'Go to User Detail',
 ];
