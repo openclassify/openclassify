@@ -118,6 +118,8 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['date'])) {
             if ($param['date'] === 'day') {
                 $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subDay());
+            } elseif ($param['date'] === 'two_days') {
+                $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subDays(2));
             } elseif ($param['date'] === 'week') {
                 $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subWeek());
             } elseif ($param['date'] === 'month') {
@@ -132,6 +134,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
         if (!empty($param['map']) && $param['map'] == true) {
             $query = $query->whereNotNull('map_Val');
+        }
+        if (!empty($param['get_ads']) && $param['get_ads'] == true) {
+            $query = $query->where('is_get_adv', 1);
         }
 
         foreach ($param as $para => $value) {
@@ -175,6 +180,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
         if (!empty($param['sort_by'])) {
             switch ($param['sort_by']) {
+                case "popular":
+                    $query = $query->orderBy('advs_advs.count_show_ad', 'desc');
+                    break;
                 case "sort_price_up":
                     $query = $query->orderBy('advs_advs.price', 'desc');
                     break;
