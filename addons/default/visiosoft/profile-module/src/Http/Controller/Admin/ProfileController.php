@@ -2,7 +2,6 @@
 
 use Anomaly\Streams\Platform\Entry\EntryModel;
 use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
-use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
 use Anomaly\UsersModule\User\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
@@ -11,7 +10,6 @@ use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
 use Visiosoft\ProfileModule\Profile\ProfileModel;
 use Visiosoft\ProfileModule\Profile\Table\ProfileTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
-use Visiosoft\StoreModule\User\Contract\UserRepositoryInterface;
 
 class ProfileController extends AdminController
 {
@@ -22,12 +20,14 @@ class ProfileController extends AdminController
      * @param ProfileTableBuilder $table
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(ProfileTableBuilder $table, Request $request)
+    public function index(ProfileTableBuilder $table)
     {
         $table->setColumns([
             'email' => [
-                'value' => function (UserRepositoryInterface $user, EntryModel $entry) {
-                    return User::query()->find($entry->id)->email;
+                'value' => function (EntryModel $entry) {
+                    $user = User::query()->find($entry->id);
+                    if (!is_null($user))
+                        return $user->email;
                 }
             ],
             'gsm_phone'
