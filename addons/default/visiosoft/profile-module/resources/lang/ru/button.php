@@ -8,4 +8,6 @@ return [
     'update_profile' => 'Update Profile',
     'delete' => 'Delete',
     'edit' => 'Edit',
+    'go_profile' => 'Go to Profile Detail',
+    'go_user' => 'Go to User Detail',
 ];
