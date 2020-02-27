@@ -1,7 +1,9 @@
 <?php namespace Visiosoft\ProfileModule\Http\Controller\Admin;
 
+use Anomaly\Streams\Platform\Entry\EntryModel;
 use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
+use Anomaly\UsersModule\User\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
 use Visiosoft\LocationModule\Country\CountryModel;
@@ -9,6 +11,7 @@ use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
 use Visiosoft\ProfileModule\Profile\ProfileModel;
 use Visiosoft\ProfileModule\Profile\Table\ProfileTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Visiosoft\StoreModule\User\Contract\UserRepositoryInterface;
 
 class ProfileController extends AdminController
 {
@@ -21,8 +24,14 @@ class ProfileController extends AdminController
      */
     public function index(ProfileTableBuilder $table, Request $request)
     {
-        $users = UsersUsersEntryModel::query()->get();
-        $table->setTableEntries($users);
+        $table->setColumns([
+            'email' => [
+                'value' => function (UserRepositoryInterface $user, EntryModel $entry) {
+                    return User::query()->find($entry->id)->email;
+                }
+            ],
+            'gsm_phone'
+        ]);
         return $table->render();
     }
 
@@ -32,34 +41,30 @@ class ProfileController extends AdminController
      * @param ProfileFormBuilder $form
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function edit(ProfileFormBuilder $form,$id)
+    public function edit(ProfileFormBuilder $form, $id)
     {
         $users = UsersUsersEntryModel::find($id);
-        $profiles = ProfileModel::query()->where('user_id',$id)->orderBy("id")->first();
-        if($profiles == null)
-        {
+        $profiles = ProfileModel::query()->where('user_id', $id)->orderBy("id")->first();
+        if ($profiles == null) {
             $newProfile = [];
             $newProfile ['user_id'] = $id;
             $newProfile ['country_id'] = null;
             ProfileModel::query()->create($newProfile);
-            $profiles = ProfileModel::query()->where('user_id',$id)->orderBy("id")->first();
+            $profiles = ProfileModel::query()->where('user_id', $id)->orderBy("id")->first();
         }
         $country = CountryModel::all();
-        return $this->view->make('visiosoft.module.profile::admin.profile.edit',compact('users','profiles','country','form'));
+        return $this->view->make('visiosoft.module.profile::admin.profile.edit', compact('users', 'profiles', 'country', 'form'));
     }
 
-    public function update(ProfileFormBuilder $form, Request $request,$id)
+    public function update(ProfileFormBuilder $form, Request $request, $id)
     {
         $all = $request->all();
-        if($all['email'] == "" OR $all['username'] == "")
-        {
+        if ($all['email'] == "" OR $all['username'] == "") {
             $error = [];
-            if($all['email'] == "")
-            {
+            if ($all['email'] == "") {
                 $error[] = trans('visiosoft.module.profile::message.email');
             }
-            if($all['username'] == "")
-            {
+            if ($all['username'] == "") {
                 $error[] = trans('visiosoft.module.profile::message.username');
             }
             return Redirect::back()->with('error', $error);
@@ -74,14 +79,13 @@ class ProfileController extends AdminController
         $userModule['activated'] = $all['activated'];
         $userModule['enabled'] = $all['enabled'];
         UsersUsersEntryModel::query()->find($id)->update($userModule);
-        foreach ($userModule as $key => $val)
-        {
+        foreach ($userModule as $key => $val) {
             unset($all[$key]);
         }
         $all['file_id'] = $all['file'];
         unset($all['file']);
-        unset($all['_token'],$all['action']);
-        ProfileModel::query()->where('user_id',$id)->update($all);
+        unset($all['_token'], $all['action']);
+        ProfileModel::query()->where('user_id', $id)->update($all);
         $message = [];
         $message[] = trans('visiosoft.module.profile::message.success_update');
         return redirect('admin/profile')->with('success', $message);

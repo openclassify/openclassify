@@ -17,7 +17,16 @@ class ProfileTableBuilder extends TableBuilder
      *
      * @var array|string
      */
-    protected $filters = [];
+    protected $filters = [
+        'search' => [
+            'filter' => 'search',
+            'fields' => [
+                'gsm_phone',
+                'land_phone','office_phone','register_type',
+                'identification_number',
+            ],
+        ],
+    ];
 
     /**
      * The table columns.
@@ -34,7 +43,13 @@ class ProfileTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $buttons = [
-        'edit'
+        'go_user'=> [
+            'type' => 'info',
+            'icon' => 'fa fa-user'
+        ],
+        'edit' => [
+            'text' => 'visiosoft.module.profile::button.go_profile'
+        ],
     ];
 
     /**

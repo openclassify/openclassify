@@ -8,4 +8,6 @@ return [
     'update_profile' => 'Profili Güncelle',
     'delete' => 'Sil',
     'edit' => 'Düzenle',
+    'go_profile' => 'Profil Detayları',
+    'go_user' => 'Kullanıcı Detayları',
 ];
