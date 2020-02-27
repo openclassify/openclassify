@@ -4,6 +4,13 @@
     <meta property="og:description" content="{{ template.get('og_description', trans(template.meta_description)) }}"/>
     <meta property="og:title" content="{{ template.get('og_title', trans(template.meta_title)) }}"/>
     <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
-    <meta property="og:image" content="{{ template.get('og_image') }}"/>
+    <meta property="og:image" content="{{ template.get('og_image', trans(template.meta_image)) }}"/>
     <meta property="og:type" content="website"/>
+
+    <!-- Meta for twitter sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}">
+    <meta name="twitter:title" content="{{ template.get('og_title', trans(template.meta_title)) }}">
+    <meta name="twitter:description" content="{{ template.get('og_description', trans(template.meta_description)) }}">
+    <meta name="twitter:image" content="{{ template.get('og_image', trans(template.meta_image)) }}">
 {% endblock %}
