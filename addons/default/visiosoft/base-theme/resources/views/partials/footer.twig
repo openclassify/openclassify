@@ -2,4 +2,5 @@
     <div class="container text-center text-muted">
         &copy;{{ 'now'|date('Y') }} {{ setting_value('streams::name', 'Your Site') }}, All rights reserved.
     </div>
+    {{ addBlock('footer')|raw }}
 </footer>
