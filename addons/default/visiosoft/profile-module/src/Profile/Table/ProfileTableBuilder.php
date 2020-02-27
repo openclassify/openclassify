@@ -45,7 +45,8 @@ class ProfileTableBuilder extends TableBuilder
     protected $buttons = [
         'go_user'=> [
             'type' => 'info',
-            'icon' => 'fa fa-user'
+            'icon' => 'fa fa-user',
+            'href' => '/admin/users/edit/{entry.user_id}'
         ],
         'edit' => [
             'text' => 'visiosoft.module.profile::button.go_profile'
