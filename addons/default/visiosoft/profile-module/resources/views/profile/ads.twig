@@ -34,7 +34,9 @@
                         </div>
                     </nav>
                     <div class="bg-dark p-2 mt-2 rounded">
-                        <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">Extend All</a>
+                        <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
+                            {{ trans('visiosoft.module.profile::button.extend_all') }}
+                        </a>
                     </div>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-approved" role="tabpanel"

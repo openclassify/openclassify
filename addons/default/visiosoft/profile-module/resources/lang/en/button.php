@@ -8,5 +8,6 @@ return [
     'update_profile' => 'Update Profile',
     'delete' => 'Delete',
     'extend' => 'Extend',
+    'extend_all' => 'Extend All',
     'edit' => 'Edit',
 ];
