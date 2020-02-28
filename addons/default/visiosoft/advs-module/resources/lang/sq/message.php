@@ -26,4 +26,5 @@ return [
     'delete_author_error' => 'Ju nuk mund të fshini një postim që nuk ju përket juve',
     'success_delete' => 'Shpallja është fshirë',
     'pending_ad_status' => 'Your ad is pending approval by the Editor.',
+    'extended' => ':number ad(s) has been extended successfully.',
 ];
