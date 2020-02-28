@@ -7,6 +7,8 @@ return [
     'update_password' => 'Përditëso fjalëkalimin',
     'update_profile' => 'Përditësoje profilin',
     'delete' => 'fshini',
+    'extend' => 'Extend',
+    'extend_all' => 'Extend All',
     'edit' => 'redaktoj',
     'go_profile' => 'Go to Profile Detail',
     'go_user' => 'Go to User Detail',
