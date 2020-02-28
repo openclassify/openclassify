@@ -7,6 +7,8 @@ return [
     'update_password' => 'Şifre güncelle',
     'update_profile' => 'Profili Güncelle',
     'delete' => 'Sil',
+    'extend' => 'Extend',
+    'extend_all' => 'Extend All',
     'edit' => 'Düzenle',
     'go_profile' => 'Go to Profile Detail',
     'go_user' => 'Go to User Detail',
