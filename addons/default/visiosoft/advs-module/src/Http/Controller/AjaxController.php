@@ -78,7 +78,6 @@ class AjaxController extends PublicController
         } else {
             $page_title = trans('visiosoft.module.advs::field.my_adv.name');
             $my_advs = $my_advs->myAdvsByUser();
-
         }
         $my_advs = $my_advs->orderByDesc('id');
         $my_advs = $advRepository->addAttributes($my_advs->get());
@@ -86,11 +85,8 @@ class AjaxController extends PublicController
         foreach ($my_advs as $index => $ad) {
             $my_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $my_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
-
         }
 
         return response()->json(['success' => true, 'content' => $my_advs, 'title' => $page_title]);
     }
-
-
 }

@@ -36,4 +36,5 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function getCategoriesWithAdID($id);
 
+    public function extendAds($allAds, $isAdmin = false);
 }

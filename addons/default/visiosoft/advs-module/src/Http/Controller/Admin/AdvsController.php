@@ -257,13 +257,4 @@ class AdvsController extends AdminController
         <a href='" . $request->server('HTTP_REFERER') . "'><b>Return Back</b></a>";
         echo "<br><a href='/admin'><b>Return Admin Panel</b></a>";
     }
-
-    public function extendAll()
-    {
-        $advs = $this->model->get();
-        $new_date = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . setting_value('visiosoft.module.advs::default_published_time') . ' day'));
-        $advs->update(['finish_at' => $new_date]);
-        $this->messages->success(trans('visiosoft.module.advs::field.extended'));
-        return $this->redirect->to('admin/advs/advs');
-    }
 }

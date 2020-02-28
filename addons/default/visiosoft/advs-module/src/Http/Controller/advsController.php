@@ -364,7 +364,7 @@ class AdvsController extends PublicController
         $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
         $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
         $this->template->set('meta_title', $adv->name . "|" . end($categories)['name']);
-
+        $this->template->set('meta_image', $adv->cover_photo);
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
             return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'profile', 'comments', 'qrSRC'));
@@ -974,4 +974,17 @@ class AdvsController extends PublicController
         return "success";
     }
 
+    public function extendAll($isAdmin = null)
+    {
+        $adsExtended = $this->adv_repository->extendAds(true, $isAdmin);
+        $this->messages->success(trans('visiosoft.module.advs::message.extended', ['number' => $adsExtended]));
+        return $this->redirect->back();
+    }
+
+    public function extendSingle($adId)
+    {
+        $adsExtended = $this->adv_repository->extendAds($adId);
+        $this->messages->success(trans('visiosoft.module.advs::message.extended', ['number' => $adsExtended]));
+        return $this->redirect->back();
+    }
 }
