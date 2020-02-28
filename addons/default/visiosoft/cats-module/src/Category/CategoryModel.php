@@ -106,13 +106,11 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 
         $cats = $cats->leftJoin('cats_category_translations', function ($join) {
             $join->on('cats_category.id', '=', 'cats_category_translations.entry_id');
-            $join->where('cats_category_translations.locale', config('app.locale'));//active lang
-            $join->orWhere('cats_category_translations.locale', setting_value('streams::default_locale'));//system lang
-            $join->orWhere('cats_category_translations.locale', 'en');//default lang
-            $join->orWhereNull('cats_category_translations.locale');
+            $join->whereIn('cats_category_translations.locale', [config('app.locale'), setting_value('streams::default_locale'),'en']);//active lang
         });
         $cats = $cats->select('cats_category.*', 'cats_category_translations.name as name');
-        $cats = $cats->orderBy('id', 'DESC')->groupBy(['cats_category.id'])
+        $cats = $cats->orderBy('id', 'DESC')
+            ->groupBy(['cats_category.id'])
             ->get();
         foreach ($cats as $cat) {
             $link = '';
