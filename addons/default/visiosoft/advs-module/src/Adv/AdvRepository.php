@@ -174,10 +174,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $query = $query->whereRaw("ST_DISTANCE(ST_GeomFromText('POINT(" . $param['dlong'] . " " . $param['dlat'] . ")'), coor) < " . $param['distance']);
         }
 
-
         if ($isActiveDopings) {
             $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->search($query, $param);
         }
+
         if (!empty($param['sort_by'])) {
             switch ($param['sort_by']) {
                 case "popular":
@@ -189,13 +189,25 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 case "sort_price_down":
                     $query = $query->orderBy('advs_advs.price', 'asc');
                     break;
-                case "sort_time":
+                case "sort_time_newest":
                     $query = $query->orderBy('advs_advs.created_at', 'desc');
+                    break;
+                case "sort_time_oldest":
+                    $query = $query->orderBy('advs_advs.created_at', 'asc');
+                    break;
+                case "address_a_z":
+                    $query = $query->join('location_cities_translations', 'advs_advs.city', '=', 'location_cities_translations.entry_id')
+                        ->orderBy('location_cities_translations.name', 'ASC');
+                    break;
+                case "address_z_a":
+                    $query = $query->join('location_cities_translations', 'advs_advs.city', '=', 'location_cities_translations.entry_id')
+                        ->orderBy('location_cities_translations.name', 'DESC');
                     break;
             }
         } else {
             $query = $query->orderBy('advs_advs.created_at', 'desc');
         }
+
         if ($isActiveDopings) {
             $query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query, $param);
         } else {

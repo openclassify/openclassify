@@ -1,25 +1,35 @@
 <div class="dropdown pull-left sort-by-list">
     <div class="dropdown">
         <i class="fas fa-sort-alpha-down"></i>
-        <a data-toggle="dropdown" class="sort-by-open-dropdown text-dark" href="#"
-           aria-expanded="false">
+        <a data-toggle="dropdown" class="sort-by-open-dropdown text-dark" href="#" aria-expanded="false">
             <span class="sort-by-selected-text">{{ trans("visiosoft.module.advs::field.pick_ordering") }}</span>
             <i class="fa fa-caret-square-o-down"></i>
         </a>
 
-
-        <ul class="dropdown-menu px-2 mt-0" x-placement="bottom-start">
+        <ul class="dropdown-menu px-2" x-placement="bottom-start">
             <li>
                 <a href="#" data-value="sort_price_up"
                    class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.price_high") }}</a>
             </li>
             <li>
                 <a href="#" data-value="sort_price_down"
-                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.price-low") }}</a>
+                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.price_low") }}</a>
             </li>
             <li>
-                <a href="#" data-value="sort_time"
+                <a href="#" data-value="sort_time_newest"
                    class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.newest") }}</a>
+            </li>
+            <li>
+                <a href="#" data-value="sort_time_oldest"
+                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.oldest") }}</a>
+            </li>
+            <li>
+                <a href="#" data-value="address_a_z"
+                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.address_a_z") }}</a>
+            </li>
+            <li>
+                <a href="#" data-value="address_z_a"
+                   class="sort-by-item text-dark">{{ trans("visiosoft.module.advs::field.address_z_a") }}</a>
             </li>
         </ul>
     </div>
