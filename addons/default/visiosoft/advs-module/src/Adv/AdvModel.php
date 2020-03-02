@@ -27,15 +27,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
     public function is_enabled($slug)
     {
-        $isActive = DB::table('addons_modules')
-            ->where('namespace', 'visiosoft.module.' . $slug)
-            ->where('installed', 1)
-            ->where('enabled', 1)
-            ->first();
-        if ($isActive == null) {
-            return false;
-        } else
-            return true;
+        if ($addon = app('module.collection')->get($slug)) {
+            return $addon->installed;
+        }
+        return false;
     }
 
     public function is_enabled_extension($slug)
