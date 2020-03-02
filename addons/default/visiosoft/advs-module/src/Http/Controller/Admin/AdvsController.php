@@ -27,6 +27,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 class AdvsController extends AdminController
 {
     private $model;
+
     public function __construct(AdvModel $model)
     {
         $this->model = $model;
@@ -84,20 +85,16 @@ class AdvsController extends AdminController
 
         $table->setColumns([
             'cover_photo' => [
-                'wrapper' => function (EntryInterface $entry, Request $request) {
-                    if (strpos($entry->cover_photo, 'http') === 0) {
-                        $wrapper = '<img width="64" src="'.$entry->cover_photo.'">';
-                    } else if (is_null($entry->cover_photo)) {
-                        $wrapper = '<img width="64" src="{{ img(\'visiosoft.theme.base::images/no-image.png\').url }}">';
-                    } else {
-                        $wrapper = '<img width="64" src="'.$request->root().'/'.$entry->cover_photo.'">';
-                    }
-                    return $wrapper;
+                'value' => function (EntryInterface $entry) {
+                    return "<img width='80px' src='" . $this->model->AddAdsDefaultCoverImage($entry)->cover_photo . "' >";
                 },
             ],
             'entry.id',
             'name' => [
                 'class' => 'advs-name',
+                'value' => function (EntryInterface $entry) {
+                    return "<a href='" . $this->model->getAdvDetailLinkByModel($entry, 'list') . "' > " . $entry->name . "</a > ";
+                },
             ],
             'price' => [
                 'class' => 'advs-price',
@@ -154,11 +151,11 @@ class AdvsController extends AdminController
                         'options' => $users,
                     ],
                     'status' => [
-                        'filter'  => 'select',
-                        'query'   => StatusFilterQuery::class,
+                        'filter' => 'select',
+                        'query' => StatusFilterQuery::class,
                         'options' => [
-                            'approved'   => 'visiosoft.module.advs::field.status.option.approved',
-                            'expired'   => 'visiosoft.module.advs::field.status.option.expired',
+                            'approved' => 'visiosoft.module.advs::field.status.option.approved',
+                            'expired' => 'visiosoft.module.advs::field.status.option.expired',
                             'unpublished' => 'visiosoft.module.advs::field.status.option.unpublished',
                             'pending_admin' => 'visiosoft.module.advs::field.status.option.pending_admin',
                             'pending_user' => 'visiosoft.module.advs::field.status.option.pending_user',
@@ -221,7 +218,7 @@ class AdvsController extends AdminController
     {
         $directory = 'assets';
         $files->deleteDirectory($directory = $application->getAssetsPath($directory), true);
-        echo "<div class=\"bar\"></div>" . "<br>";
+        echo " < div class=\"bar\"></div>" . "<br>";
         echo "<style>
 .bar {
   width: 30%;
