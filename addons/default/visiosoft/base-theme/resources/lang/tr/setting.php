@@ -28,4 +28,7 @@ return [
     'latest_and_view_all_btn' => [
         'name' => 'Tümünü Görüntüle',
     ],
+    'style' => [
+        'name' => 'Style(CSS)',
+    ],
 ];
