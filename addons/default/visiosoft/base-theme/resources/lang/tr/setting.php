@@ -28,6 +28,9 @@ return [
     'latest_and_view_all_btn' => [
         'name' => 'Tümünü Görüntüle',
     ],
+    'register_page_instruction_logo' => [
+        'name' => 'Kayıt Sayfası Talimat Logosu',
+    ],
     'style' => [
         'name' => 'Style(CSS)',
     ],
