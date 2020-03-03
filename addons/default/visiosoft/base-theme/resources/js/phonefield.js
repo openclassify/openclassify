@@ -33,3 +33,20 @@ function phoneMask(fields) {
         });
     }
 }
+
+function controlNumber(inputQuery) {
+    var iti = intlTelInput(inputQuery, {
+        hiddenInput: inputQuery.getAttribute('name'),
+        class: "form-control",
+        initialCountry: "auto",
+        geoIpLookup: function (success, failure) {
+            $.get("https://ipinfo.io", function () {
+            }, "jsonp").always(function (resp) {
+                var countryCode = (resp && resp.country) ? resp.country : "";
+                success(countryCode);
+            })
+        }
+    })
+
+    return iti.isValidNumber();
+}
