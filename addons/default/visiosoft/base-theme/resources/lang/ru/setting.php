@@ -31,4 +31,7 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'Register Page Instruction Logo',
     ],
+    'style' => [
+        'name' => 'Style(CSS)',
+    ],
 ];
