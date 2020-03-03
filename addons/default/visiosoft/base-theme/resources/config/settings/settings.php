@@ -56,4 +56,7 @@ return [
             "mode" => "upload",
         ]
     ],
+    'style' => [
+        'type' => 'anomaly.field_type.editor',
+    ],
 ];
