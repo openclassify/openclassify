@@ -352,9 +352,6 @@ class AdvsController extends PublicController
             }
         }
 
-        $profile = $this->profile_model->getProfile($adv->created_by_id)->first();
-
-
         if ($isCommentActive) {
             $CommentModel = new CommentModel();
             $comments = $CommentModel->getComments($adv->id)->get();
@@ -367,7 +364,7 @@ class AdvsController extends PublicController
         $this->template->set('meta_image', $adv->cover_photo);
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'profile', 'comments', 'qrSRC'));
+            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'comments', 'qrSRC'));
         } else {
             return back();
         }

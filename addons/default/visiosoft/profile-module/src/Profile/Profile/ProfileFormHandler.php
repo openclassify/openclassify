@@ -1,15 +1,15 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Profile;
 
 use Anomaly\Streams\Platform\Message\MessageBag;
+use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Support\Facades\Auth;
-use Visiosoft\ProfileModule\Profile\ProfileModel;
 
 class ProfileFormHandler
 {
     public function handle(
         ProfileFormBuilder $builder,
         MessageBag $messages,
-        ProfileModel $profileModel
+        UserModel $userModel
     )
     {
         if (!$builder->canSave()) {
@@ -22,15 +22,13 @@ class ProfileFormHandler
             'land_phone' => $builder->getPostValue('land_phone'),
             'identification_number' => $builder->getPostValue('identification_number'),
             'register_type' => $builder->getPostValue('register_type'),
-            'adv_listing_banner_id' => $builder->getPostValue('adv_listing_banner'),
         ];
 
-        if ($builder->getPostValue('file') != null)
+        if ($builder->getPostValue('file') != null) {
             $parameters['file_id'] = $builder->getPostValue('file');
+        }
 
-
-        $profileModel->where('user_id', Auth::id())
-            ->update($parameters);
+        $userModel->newQuery()->where('id', Auth::id())->update($parameters);
 
         $messages->success(trans('visiosoft.module.profile::message.success_update'));
     }

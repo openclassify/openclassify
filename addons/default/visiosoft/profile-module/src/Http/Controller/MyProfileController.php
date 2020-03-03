@@ -7,6 +7,7 @@ use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\UsersModule\User\Contract\UserInterface;
+use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Password\Command\StartPasswordReset;
 use Anomaly\UsersModule\User\UserPassword;
 use Illuminate\Http\Request;
@@ -49,10 +50,13 @@ use Illuminate\Contracts\Events\Dispatcher;
 
 class MyProfileController extends PublicController
 {
-
     private $adressRepository;
+    private $userRepository;
 
-    public function __construct(AdressRepositoryInterface $adressRepository)
+    public function __construct(
+        AdressRepositoryInterface $adressRepository,
+        UserRepositoryInterface $userRepository
+    )
     {
         parent::__construct();
         if (!Auth::user()) {
@@ -60,6 +64,7 @@ class MyProfileController extends PublicController
         }
 
         $this->adressRepository = $adressRepository;
+        $this->userRepository = $userRepository;
     }
 
     protected $user;
@@ -69,28 +74,15 @@ class MyProfileController extends PublicController
         //clear empty ads
         $advRepository->delete_empty_advs();
 
-        $menu_fields = array();
         $advs_count = new AdvModel();
         $advs_count = count($advs_count->myAdvsByUser()->get());
 
-        $profileModel = new ProfileModel();
-
-        $users = UsersUsersEntryModel::find(Auth::id());
-        $profiles = $profileModel->getProfile(Auth::id())->orderBy("id")->first();
-
-        if ($profiles == null) {
-            $newProfile = [];
-            $newProfile ['user_id'] = Auth::id();
-
-            $profileModel->getProfile()->create($newProfile);
-
-            $profiles = $profileModel->getProfile(Auth::id())->orderBy("id")->first();
-        }
+        $user = $this->userRepository->find(Auth::id());
 
         $country = CountryModel::all();
-        return $this->view->make('visiosoft.module.profile::profile.detail', compact('users', 'profiles',
-            'country', 'form', 'my_packages', 'menu_fields', 'myMessages', 'message_count', 'myPurchase',
-            'mySales', 'advs_count', 'fav_count', 'userbalance', 'balancespackage'));
+
+        return $this->view->make('visiosoft.module.profile::profile.detail',
+            compact('user','country', 'form', 'advs_count'));
     }
 
 

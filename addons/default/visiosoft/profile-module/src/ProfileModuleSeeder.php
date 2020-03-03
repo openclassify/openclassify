@@ -5,9 +5,8 @@ use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
 use Illuminate\Database\Eloquent\Model;
 use Chumper\Zipper\Zipper;
-
-
 use Illuminate\Support\Facades\DB;
+use Visiosoft\ProfileModule\Seed\UsersFieldsSeeder;
 
 class ProfileModuleSeeder extends Seeder
 {
@@ -34,6 +33,8 @@ class ProfileModuleSeeder extends Seeder
      */
     public function __construct(DiskRepositoryInterface $disks, FolderRepositoryInterface $folders)
     {
+        parent::__construct();
+
         $this->disks   = $disks;
         $this->folders = $folders;
     }
@@ -43,41 +44,38 @@ class ProfileModuleSeeder extends Seeder
      */
     public function run()
     {
-        $disk = $this->disks->findBySlug('local');
-
-        $this->folders->create(
-            [
-                'en'            => [
-                    'name'        => 'ADV LISTING PAGE IMAGE',
-                    'description' => 'A folder for adv listing page images.',
-                ],
-                'slug'          => 'adv_listing_page',
-                'disk'          => $disk,
-                'allowed_types' => [
-                    'png',
-                    'jpeg',
-                    'jpg',
-                ],
-            ]
-        );
+        // Users Fields Seeder
+        $this->call(UsersFieldsSeeder::class);
 
         $disk = $this->disks->findBySlug('local');
 
-        $this->folders->create(
-            [
-                'en'            => [
-                    'name'        => 'Favicon',
-                    'description' => 'A folder for Favicon.',
-                ],
-                'slug'          => 'favicon',
-                'disk'          => $disk,
-                'allowed_types' => [
-                    'ico','png',
-                ],
-            ]
-        );
+        $this->folders->create([
+            'en'            => [
+                'name'        => 'ADV LISTING PAGE IMAGE',
+                'description' => 'A folder for adv listing page images.',
+            ],
+            'slug'          => 'adv_listing_page',
+            'disk'          => $disk,
+            'allowed_types' => [
+                'png',
+                'jpeg',
+                'jpg',
+            ],
+        ]);
 
+        $disk = $this->disks->findBySlug('local');
 
+        $this->folders->create([
+            'en'            => [
+                'name'        => 'Favicon',
+                'description' => 'A folder for Favicon.',
+            ],
+            'slug'          => 'favicon',
+            'disk'          => $disk,
+            'allowed_types' => [
+                'ico','png',
+            ],
+        ]);
 
         $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
         file_put_contents(__DIR__ . "/advListingPage.sql", fopen($repository . "advListingPage.sql", 'r'));

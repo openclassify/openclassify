@@ -1,20 +1,17 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Profile;
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
-use Visiosoft\ProfileModule\Profile\ProfileModel;
-
+use Anomaly\UsersModule\User\UserModel;
 
 class ProfileFormBuilder extends FormBuilder
 {
-
-    protected $model = ProfileModel::class;
+    protected $model = UserModel::class;
 
     protected $fields = [
         'file',
         'gsm_phone',
         'office_phone',
         'land_phone',
-        'adv_listing_banner',
         'identification_number',
         'register_type'
     ];

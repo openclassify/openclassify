@@ -46,11 +46,9 @@ class AdvPresenter extends EntryPresenter
 
     public function isCorporate()
     {
-        $user_id = $this->getObject()->created_by_id;
-        $profile = new ProfileModel();
-        $profile = $profile->getProfile($user_id)->first();
-        if ($profile != null) {
-            return $profile->register_type;
+        $user_id = $this->getObject()->created_by;
+        if ($user_id->register_type != null) {
+            return $user_id->register_type;
         } else {
             return 1;
         }
