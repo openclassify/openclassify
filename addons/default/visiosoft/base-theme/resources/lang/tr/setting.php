@@ -31,4 +31,7 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'Kayıt Sayfası Talimat Logosu',
     ],
+    'style' => [
+        'name' => 'Style(CSS)',
+    ],
 ];
