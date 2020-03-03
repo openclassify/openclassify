@@ -218,7 +218,7 @@ class AdvsController extends AdminController
     {
         $directory = 'assets';
         $files->deleteDirectory($directory = $application->getAssetsPath($directory), true);
-        echo " < div class=\"bar\"></div>" . "<br>";
+        echo "<div class='bar'></div>" . "<br>";
         echo "<style>
 .bar {
   width: 30%;
