@@ -1,13 +1,10 @@
 <?php
 
- return[
-   "category"   =>   [
-      "title"      =>"категория",
-
-   ],
-   "placeholderforsearch"   =>   [
-      "title"      =>"Placeholderforsearch",
-
-   ],
-
+return [
+    'category' => [
+        'title' => 'категория',
+    ],
+    'placeholderforsearch' => [
+        'title' => 'Placeholderforsearch',
+    ],
 ];

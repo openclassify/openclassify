@@ -7,5 +7,9 @@ return [
     'update_password' => 'Përditëso fjalëkalimin',
     'update_profile' => 'Përditësoje profilin',
     'delete' => 'fshini',
+    'extend' => 'shpreh',
+    'extend_all' => 'Zgjeroni të gjitha',
     'edit' => 'redaktoj',
+    'go_profile' => 'Shkoni në Detajin e Profilit',
+    'go_user' => 'Shkoni te Detajet e përdoruesit',
 ];

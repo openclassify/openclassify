@@ -11,6 +11,7 @@ return [
     'approve' => "miratoj",
     'decline' => 'rënie',
     'extend' => 'shpreh',
+    'extend_all' => 'Zgjeroni të gjitha',
     'sub_category' => 'Nënkategoritë',
     'add_sub_category' => 'Shtoni Nën Kategorinë',
     'sub_cities' => 'Qytetet nën-qytet',

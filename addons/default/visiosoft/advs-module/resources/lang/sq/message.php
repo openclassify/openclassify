@@ -25,4 +25,6 @@ return [
     'filter_by_search_msg' => 'Filtro Nga kërkimi.',
     'delete_author_error' => 'Ju nuk mund të fshini një postim që nuk ju përket juve',
     'success_delete' => 'Shpallja është fshirë',
+    'pending_ad_status' => 'Reklama juaj është në pritje të aprovimit nga Redaktori.',
+    'extended' => ': reklamat e numrave janë zgjeruar me sukses.',
 ];

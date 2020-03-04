@@ -28,4 +28,10 @@ return [
     'latest_and_view_all_btn' => [
         'name' => 'أحدث وعرض جميع Btn',
     ],
+    'register_page_instruction_logo' => [
+        'name' => 'تسجيل صفحة تعليمات الشعار',
+    ],
+    'style' => [
+        'name' => 'النمط (CSS)',
+    ],
 ];

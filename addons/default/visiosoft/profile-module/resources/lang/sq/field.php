@@ -119,6 +119,9 @@ return [
     'edit' => [
         'name' => 'redaktoj'
     ],
+    'delete' => [
+        'name' => 'fshini'
+    ],
     'list' => [
         'name' => 'Listë'
     ],

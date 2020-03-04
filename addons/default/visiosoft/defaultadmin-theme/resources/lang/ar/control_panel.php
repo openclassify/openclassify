@@ -6,4 +6,5 @@ return [
     'logout'    => 'تسجيل خروج',
     'view_site' => 'عرض الموقع',
     'title'     => 'لوحة التحكم',
+    'search_placeholder'     => 'اكتب للبحث',
 ];

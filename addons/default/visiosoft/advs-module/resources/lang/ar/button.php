@@ -11,6 +11,7 @@ return [
     'approve' => "يوافق",
     'decline' => 'انخفاض',
     'extend' => 'تمديد',
+    'extend_all' => 'تمديد الكل',
     'sub_category' => 'الفئات الفرعية',
     'add_sub_category' => 'إضافة فئة فرعية',
     'sub_cities' => 'مدن فرعية',

@@ -26,4 +26,5 @@ return [
     'delete_author_error' => 'Size ait olmayan bir ilanı silemezsiniz',
     'success_delete' => 'İlan Silindi',
     'pending_ad_status' => 'İlanınız Editör tarafından onay beklemektedir.',
+    'extended' => ':number ilan süresi uzatıldı.',
 ];

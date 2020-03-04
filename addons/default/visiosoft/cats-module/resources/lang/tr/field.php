@@ -8,9 +8,11 @@ return [
     'order' => [
         'name' => 'Sipariş',
     ],
+
     'slug' => [
         'name' => 'Özel isim',
-        'instructions' => 'Tanımlanan başlığa özel oluşuturulan benzersiz isimdir.',
+        'instructions' => 'Başlığa özel oluşuturulan benzersiz isimdir.',
+
     ],
     'files' => [
         'name' => 'Resim',

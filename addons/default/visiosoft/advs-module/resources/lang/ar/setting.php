@@ -18,11 +18,8 @@ return [
     ],
     'favicon' => [
         'name' => 'فافيكون',
-    ],
-    'contact_mail' => [
-        'name' => 'بريد الاتصال',
-        'warning'      => 'تمت إضافة <strong>معلومات</strong> sitename تلقائيًاsitename',
-    ],'map_coordinates_long' => [
+    ]
+    ,'map_coordinates_long' => [
         'name' => 'خريطة تنسيق طويل',
     ],
     'map_coordinates_lat' => [
@@ -107,5 +104,7 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Statistic Code',
     ],
-
+    'register_email_field' => [
+        'name' => 'متطلبات تسجيل البريد الإلكتروني للعضو',
+    ],
 ];
