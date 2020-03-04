@@ -83,7 +83,14 @@ return [
         'name' => 'دقة'
     ],
     'status' => [
-        'name' => 'الحالة'
+        'name' => 'الحالة',
+        'option' => [
+            'approved' => 'وافق',
+            'expired' => 'منتهية الصلاحية',
+            'unpublished' => 'غير منشورة',
+            'pending_admin' => 'في انتظار الادارية',
+            'pending_user' => 'في انتظار المستخدم'
+        ]
     ],
     'pending_adv' => [
         'name' => 'اعلانات معلقة'
@@ -104,6 +111,7 @@ return [
         'name' => 'ADVS'
     ],
     'description' =>  'وصف',
+    'explanation' =>  'تفسير',
     'type' => [
         'name' => 'نوع'
     ],
@@ -122,8 +130,11 @@ return [
     'pick_option' => 'اختيار خيار',
     'pick_ordering' => 'تنظيم',
     'price_high' => 'السعر الاعلى الى الادنى',
-    'price-low' => 'السعر من الارخص للاعلى',
+    'price_low' => 'السعر من الارخص للاعلى',
     'newest' => 'الأحدث',
+    'oldest' => 'الأقدم',
+    'address_a_z' => 'العنوان (من الألف إلى الياء)',
+    'address_z_a' => 'العنوان (ي إلى أ)',
     'categories' => 'الاقسام',
     'all_categories' => 'جميع الفئات',
     'location' => 'موقعك',
@@ -137,13 +148,14 @@ return [
     'search_desc' => 'يمكنك إضافة وإدارة اختيارات البحث المفضلة لديك هنا.',
     'complaint_placeholder' => 'اكتب تفاصيل شكواك هنا.',
     'show_details' => 'اظهر التفاصيل',
+    'ad_actions' => 'إجراءات الإعلان',
     'edit' => 'تصحيح',
     'approve' => 'يوافق',
     'passive' => "مبني للمجهول",
     'offered_by' => 'مقدم بواسطة',
     'more_ads_by' => 'المزيد من الإعلانات بواسطة',
     'click_phone' => 'عرض رقم الهاتف',
-    'share' => 'شارك هذا الإعلان',
+    'share' => 'شارك',
     'report' => 'الإبلاغ عن هذا الإعلان',
     'features' => 'المميزات',
     "streetview" => "منظر الشارع",
@@ -248,5 +260,7 @@ return [
     'yes' => [
         'name' => 'نعم'
     ],
-    "no_location" => "لا يوجد موقع محدد"
+    "no_location" => "لا يوجد موقع محدد.",
+    "continue" => 'استمر',
+    "gallery" => 'صالة عرض',
 ];
