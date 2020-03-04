@@ -148,6 +148,7 @@ return [
     'search_desc' => 'You can add and manage your favorite search selections here.',
     'complaint_placeholder' => 'Type your complaint details here.',
     'show_details' => 'Show Details',
+    'ad_actions' => 'Ad Actions',
     'edit' => 'Edit',
     'approve' => 'Approve',
     'passive' => "Passive",
