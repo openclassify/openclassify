@@ -47,6 +47,8 @@
                 {{ addBlock('ad-detail/widget', {'price': adv.price, 'id': adv.id})|raw }}
             {% endif %}
         </div>
+
+        {% include "visiosoft.module.advs::ad-detail/partials/dropleft-edit" %}
     </section>
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
