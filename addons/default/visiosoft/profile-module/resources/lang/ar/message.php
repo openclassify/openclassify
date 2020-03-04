@@ -9,7 +9,7 @@ return [
     "login_error" => "تسجيل الدخول أو كلمة سر خاطئة.",
     "login_noMail_old_user" => "لا يمكن العثور على عنوان البريد الإلكتروني الذي أدخلته.",
     "login_noMail_old_user2" => "يرجى التحقق من عنوان البريد الإلكتروني والمحاولة مرة أخرى.",
-    "login_noMail_old_user3" => "إذا استمرت المشكلة ، يرجى الاتصال على info@openclassify.co.",
+    "login_noMail_old_user3" => "إذا استمرت المشكلة ، يرجى الاتصال على \\'info@openclassify.com\\'.",
     "login_info_old_user" => "تم إرسال كلمة مرور جديدة إلى عنوان البريد الإلكتروني الخاص بك.",
     "success" => "نجاح",
     "notified_new_updates" => "أريد أن يتم إخباري بالتحديثات الجديدة",
@@ -22,4 +22,8 @@ return [
     'please_confirm_transaction' => 'يرجى تأكيد المعاملة',
     'password_do_not_match' => 'كلمة المرور غير مطابقة',
     'your_password_changed' => 'تم تحديث كلمة مرورك بنجاح',
+    'error_valid_email_or_phone' => 'رقم الهاتف أو تنسيق عنوان البريد الإلكتروني غير صحيح.',
+    'error_valid_phone' => 'تنسيق رقم الهاتف غير صحيح.',
+    'registered_phone' => 'تم تسجيل رقم الهاتف هذا بالفعل.',
+    'ajax_address_error' => 'لا يوجد عنوان أو غير مصرح له بالمشاهدة.',
 ];
