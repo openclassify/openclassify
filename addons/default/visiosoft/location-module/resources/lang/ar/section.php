@@ -16,4 +16,7 @@ return [
     'village' => [
         'title' => 'قرية',
     ],
+    'general' => 'جنرال لواء',
+    'map' => 'خريطة',
+    'setting' => 'ضبط',
 ];
