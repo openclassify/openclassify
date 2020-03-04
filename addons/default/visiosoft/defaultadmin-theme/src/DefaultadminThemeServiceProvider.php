@@ -36,4 +36,8 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
         AbstractPaginator::$defaultView       = 'visiosoft.theme.defaultadmin::pagination/bootstrap-4';
         AbstractPaginator::$defaultSimpleView = 'streams::pagination/simple-bootstrap-4';
     }
+
+    protected $overrides = [
+        'streams::form/partials/tabs' => 'visiosoft.theme.defaultadmin::form/partials/tabs',
+    ];
 }

@@ -6,7 +6,6 @@ use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
-use Visiosoft\ProfileModule\Profile\Contract\ProfileRepositoryInterface;
 use Visiosoft\ProfileModule\Profile\SignIn\SignInFormBuilder;
 
 
@@ -14,13 +13,11 @@ class ValidateCredentials
 {
     public function __construct(
         ExtensionCollection $extensions,
-        UserRepositoryInterface $userRepository,
-        ProfileRepositoryInterface $profileRepository
+        UserRepositoryInterface $userRepository
     )
     {
         $this->extensions = $extensions;
         $this->repository = $userRepository;
-        $this->profile = $profileRepository;
     }
 
     public function authenticate(array $credentials)

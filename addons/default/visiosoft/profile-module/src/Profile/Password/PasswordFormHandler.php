@@ -2,17 +2,14 @@
 
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\UsersModule\User\User;
-use Anomaly\UsersModule\User\UserModel;
 use Anomaly\UsersModule\User\UserPassword;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Hash;
 
 class PasswordFormHandler
 {
     public function handle(
         PasswordFormBuilder $builder,
         MessageBag $messages,
-        UserModel $userModel,
         UserPassword $userPassword
 
     )

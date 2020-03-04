@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\DB;
 use Visiosoft\LocationModule\City\CityRepository;
+use Visiosoft\StoreModule\User\Contract\UserRepositoryInterface;
 use function PMA\Util\get;
 use Sunra\PhpSimple\HtmlDomParser;
 use Visiosoft\AdvsModule\Adv\AdvModel;
@@ -44,8 +45,6 @@ use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Visiosoft\PackagesModule\Package\PackageModel;
-use Visiosoft\ProfileModule\Profile\Contract\ProfileRepositoryInterface;
-use Visiosoft\ProfileModule\Profile\ProfileModel;
 
 use Anomaly\Streams\Platform\Model\Customfields\CustomfieldsCustomFieldsEntryModel;
 use Anomaly\Streams\Platform\Model\Customfields\CustomfieldsCustomFieldAdvsEntryModel;
@@ -57,6 +56,8 @@ use Visiosoft\StoreModule\Ad\AdModel;
 
 class AdvsController extends PublicController
 {
+    private $userRepository;
+
     private $adv_model;
     private $adv_repository;
 
@@ -71,9 +72,6 @@ class AdvsController extends PublicController
 
     private $village_model;
 
-    private $profile_model;
-    private $profile_repository;
-
     private $category_model;
     private $category_repository;
 
@@ -82,6 +80,8 @@ class AdvsController extends PublicController
     private $event;
 
     public function __construct(
+        UserRepositoryInterface $userRepository,
+
         AdvModel $advModel,
         AdvRepositoryInterface $advRepository,
 
@@ -96,9 +96,6 @@ class AdvsController extends PublicController
 
         VillageModel $village_model,
 
-        ProfileModel $profile_model,
-        ProfileRepositoryInterface $profile_repository,
-
         CategoryModel $categoryModel,
         CategoryRepositoryInterface $category_repository,
 
@@ -109,6 +106,8 @@ class AdvsController extends PublicController
         Request $request
     )
     {
+        $this->userRepository = $userRepository;
+
         $this->adv_model = $advModel;
         $this->adv_repository = $advRepository;
 
@@ -122,10 +121,6 @@ class AdvsController extends PublicController
         $this->neighborhood_model = $neighborhood_model;
 
         $this->village_model = $village_model;
-
-
-        $this->profile_model = $profile_model;
-        $this->profile_repository = $profile_repository;
 
         $this->category_model = $categoryModel;
         $this->category_repository = $category_repository;
@@ -262,8 +257,7 @@ class AdvsController extends PublicController
         }
 
         if (!empty($param['user'])) {
-            $user = $this->profile_repository->getUser($param['user']);
-            $userProfile = $this->profile_repository->getProfile($user->id);
+            $user = $this->userRepository->find($param['user']);
         }
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
@@ -271,7 +265,7 @@ class AdvsController extends PublicController
         $viewType = $this->requestHttp->cookie('viewType');
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
-            'user', 'userProfile', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
+            'user', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
@@ -352,9 +346,6 @@ class AdvsController extends PublicController
             }
         }
 
-        $profile = $this->profile_model->getProfile($adv->created_by_id)->first();
-
-
         if ($isCommentActive) {
             $CommentModel = new CommentModel();
             $comments = $CommentModel->getComments($adv->id)->get();
@@ -367,7 +358,7 @@ class AdvsController extends PublicController
         $this->template->set('meta_image', $adv->cover_photo);
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'profile', 'comments', 'qrSRC'));
+            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'comments', 'qrSRC'));
         } else {
             return back();
         }
@@ -789,14 +780,15 @@ class AdvsController extends PublicController
         return $this->view->make('theme::addons/anomaly/pages-module/page', compact('cats'));
     }
 
-    public function map(AdvRepositoryInterface $advRepository,
-                        CategoryRepositoryInterface $categories,
-                        CountryRepositoryInterface $countries,
-                        ProfileRepositoryInterface $profileRepository,
-                        Request $request)
+    public function map(
+        AdvRepositoryInterface $advRepository,
+        CategoryRepositoryInterface $categories,
+        CountryRepositoryInterface $countries,
+        Request $request
+    )
     {
 
-        return $this->index($advRepository, $categories, $countries, $profileRepository, $request, true);
+        return $this->index($advRepository, $categories, $countries, $request, true);
 
     }
 

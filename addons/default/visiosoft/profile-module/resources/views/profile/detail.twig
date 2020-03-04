@@ -1,7 +1,7 @@
 {% extends "theme::layouts/default" %}
 {% block content %}
 
-    {% set profile_photo = profiles.file %}
+    {% set profile_photo = user.file %}
     {% if profile_photo %}
         {% set profile_photo = file(profile_photo.id).url %}
     {% else %}
@@ -16,7 +16,6 @@
                 <!-- User Profile Detail Section-->
                 <div class="col-md-12 bg-dark">
                     <div class="row">
-
                         <div class="col-md-4 p-5">
                             <div class="row">
                                 {% if setting_value('visiosoft.module.profile::upload_avatar') %}
@@ -26,11 +25,10 @@
                                     </div>
                                 {% endif %}
                                 <div class="col-md-12 text-center align-middle text-white p-2 text-truncate">
-                                    <h3>{{ user().first_name }} {{ user().last_name }}</h3>
+                                    <h3>{{ user.first_name }} {{ user.last_name }}</h3>
                                     <small>{{ auth_user().last_login_at|date("d/m/Y H:i:s") }}</small>
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
@@ -39,7 +37,6 @@
 
                 <!-- User Profile Form Section-->
                 <div class="col-md-12 mt-5 bg-light profile-section">
-
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active text-dark" id="nav-profile-tab" data-toggle="tab"
@@ -65,7 +62,7 @@
                         <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
                              aria-labelledby="nav-profile-tab">
                             <div class="col-12">
-                                {% set userForm = form('userProfile').entry(auth_user().id).get() %}
+                                {% set userForm = form('userProfile').entry(user.id).get() %}
                                 {{ userForm.open()|raw }}
                                 <div class="form-group">
                                     <label class="control-label font-weight-bold">
@@ -83,7 +80,7 @@
                                     <label class="control-label font-weight-bold">
                                         {{ trans("visiosoft.module.profile::field.email.name") }}
                                     </label>
-                                    <input value="{{ auth_user().email }}" type="text" disabled class="form-control">
+                                    <input value="{{ user.email }}" type="text" disabled class="form-control">
                                 </div>
                                 <div class="form-group">
                                     {{ userForm.actions|raw }}
@@ -95,7 +92,7 @@
                         <div class="tab-pane fade" id="nav-details" role="tabpanel"
                              aria-labelledby="nav-details-tab">
                             <div class="col-12">
-                                {% set profileForm = form('profile').entry(profiles.id).get() %}
+                                {% set profileForm = form('profile').entry(user.id).get() %}
 
                                 {{ profileForm.open()|raw }}
 
