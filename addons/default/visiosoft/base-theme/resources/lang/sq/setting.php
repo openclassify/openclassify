@@ -28,4 +28,10 @@ return [
     'latest_and_view_all_btn' => [
         'name' => 'Më të fundit dhe Shiko të gjitha Btn',
     ],
+    'register_page_instruction_logo' => [
+        'name' => 'Regjistrohu Logo udhëzuese',
+    ],
+    'style' => [
+        'name' => 'Style (CSS)',
+    ],
 ];
