@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'skedar',
+    'title'       => 'Single File',
     'name'        => 'Lloji i fushës së skedarit',
     'description' => 'Një lloj fushë e ngarkimit të skedarëve.',
 ];
