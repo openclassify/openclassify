@@ -16,4 +16,28 @@ return [
     'default_country' => [
         'name' => 'البلد الافتراضي',
     ],
+    'create_ad_page_location' => [
+        'name' => 'إنشاء موقع صفحة الإعلان',
+    ],
+    'default_city' => [
+        'name' => 'المدينة الافتراضية',
+    ],
+    'default_district' => [
+        'name' => 'الحي الافتراضي',
+    ],
+    'default_neighborhood' => [
+        'name' => 'الحي الافتراضي',
+    ],
+
+    'google_map_key' => [
+        'name' => 'خرائط جوجل ابي كي',
+    ],
+
+    'map_coordinates_long' => [
+        'name' => 'الافتراضي الطويل',
+    ],
+
+    'map_coordinates_lat' => [
+        'name' => 'الافتراضي اللات',
+    ],
 ];
