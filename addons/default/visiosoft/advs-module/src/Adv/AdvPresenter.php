@@ -4,7 +4,6 @@ use Anomaly\Streams\Platform\Entry\EntryPresenter;
 use Anomaly\Streams\Platform\Model\Cloudinary\CloudinaryVideoEntryModel;
 use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Illuminate\Routing\Route;
-use Visiosoft\ProfileModule\Profile\ProfileModel;
 
 class AdvPresenter extends EntryPresenter
 {

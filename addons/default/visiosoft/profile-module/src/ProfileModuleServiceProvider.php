@@ -6,12 +6,8 @@ use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
-use Visiosoft\ProfileModule\Profile\Contract\ProfileRepositoryInterface;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
 use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
-use Visiosoft\ProfileModule\Profile\ProfileRepository;
-use Anomaly\Streams\Platform\Model\Profile\ProfileProfileEntryModel;
-use Visiosoft\ProfileModule\Profile\ProfileModel;
 use Illuminate\Routing\Router;
 use Visiosoft\ProfileModule\Profile\Register2\Register2FormBuilder;
 use Visiosoft\ProfileModule\Profile\SignIn\SignInFormBuilder;
@@ -64,11 +60,11 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         ],
 
         /*Address */
-        'admin/profile/adress' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@index',
-        'admin/profile/adress/create' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@create',
-        'admin/profile/adress/edit/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adresList',
-        'admin/profile/adress/editAdress/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@edit',
-        'admin/profile/adress/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adressupdate',
+        'admin/profile' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@index',
+        'admin/profile/create' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@create',
+        'admin/profile/edit/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adresList',
+        'admin/profile/editAdress/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@edit',
+        'admin/profile/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adressupdate',
         'profile/adress/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressUpdate',
         'profile/address' => [
             'as' => 'profile::address',
@@ -100,9 +96,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         ],
 
         /* Profile */
-        'admin/profile' => 'Visiosoft\ProfileModule\Http\Controller\Admin\ProfileController@index',
-        'admin/profile/edit/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\ProfileController@edit',
-        'admin/profile/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\ProfileController@update',
         'profile/edit' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@edit',
         'profile/update' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@update',
         'profile' => [
@@ -190,7 +183,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile' => ProfileFormBuilder::class,
         'signIn' => SignInFormBuilder::class,
         ProfileAdressEntryModel::class => AdressModel::class,
-        ProfileProfileEntryModel::class => ProfileModel::class,
     ];
 
     /**
@@ -200,7 +192,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      */
     protected $singletons = [
         AdressRepositoryInterface::class => AdressRepository::class,
-        ProfileRepositoryInterface::class => ProfileRepository::class,
         'register2' => Register2FormBuilder::class,
         'sites' => SitesFormBuilder::class,
     ];

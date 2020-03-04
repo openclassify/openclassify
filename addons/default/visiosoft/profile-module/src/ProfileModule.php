@@ -25,13 +25,6 @@ class ProfileModule extends Module
      * @var array
      */
     protected $sections = [
-        'profile' => [
-            'buttons' => [
-                'new_profile'=> [
-                    'href' => 'admin/users/create',
-                ],
-            ],
-        ],
         'adress' => [
             'buttons' => [
                 'new_adress',

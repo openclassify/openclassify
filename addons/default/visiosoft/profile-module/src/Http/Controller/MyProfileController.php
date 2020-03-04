@@ -42,11 +42,8 @@ use Visiosoft\PackagesModule\User\UserModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
-use Visiosoft\ProfileModule\Profile\Contract\ProfileRepositoryInterface;
 use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
-use Visiosoft\ProfileModule\Profile\ProfileModel;
 use Illuminate\Contracts\Events\Dispatcher;
-
 
 class MyProfileController extends PublicController
 {
@@ -316,8 +313,7 @@ class MyProfileController extends PublicController
     {
         $all = $request->all();
         unset($all['_']);
-        $profileModel = new ProfileModel();
-        $status = $profileModel->getProfile(Auth::id())->update($all);
+        $status = $this->userRepository->newQuery()->where('id', Auth::id())->update($all);
         return response()->json($status);
 
     }

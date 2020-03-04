@@ -1,7 +1,6 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Password;
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
-use Anomaly\UsersModule\User\UserModel;
 
 
 class PasswordFormBuilder extends FormBuilder

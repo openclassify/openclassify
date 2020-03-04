@@ -3,7 +3,6 @@
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Event\UserHasRegistered;
-use Visiosoft\ProfileModule\Profile\ProfileModel;
 use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
