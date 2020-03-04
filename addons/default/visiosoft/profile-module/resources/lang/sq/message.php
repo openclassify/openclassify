@@ -25,4 +25,5 @@ return [
     'error_valid_email_or_phone' => 'Numri i telefonit ose formati i adresës E-mail nuk është i saktë.',
     'error_valid_phone' => 'Formati i numrit të telefonit nuk është i saktë.',
     'registered_phone' => 'Ky numër i telefonit është regjistruar tashmë.',
+    'ajax_address_error' => 'Asnjë adresë ose jo e autorizuar për të parë.',
 ];
