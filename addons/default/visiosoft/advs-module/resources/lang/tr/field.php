@@ -148,6 +148,7 @@ return [
     'search_desc' => 'Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.',
     'complaint_placeholder' => 'Şikayet ayrıntılarınızı buraya yazın.',
     'show_details' => 'Detayları göster',
+    'ad_actions' => 'Ad Actions',
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
     'passive' => "Pasif",
