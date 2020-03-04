@@ -3,24 +3,29 @@
 return [
     'name' => [
         'name' => 'Başlık',
+        'instructions' => 'Tanımlayacağınız ana kategorinin adıdır.Kullanıcının aradığı ürünü kolayca bulmasını sağlar.',
     ],
     'order' => [
         'name' => 'Sipariş',
     ],
     'slug' => [
-        'name' => 'Özel isim'
+        'name' => 'Özel isim',
+        'instructions' => 'Tanımlanan başlığa özel oluşuturulan benzersiz isimdir.',
     ],
     'files' => [
-        'name' => 'Resim'
+        'name' => 'Resim',
     ],
     'seo_keyword' => [
-        'name' => 'Seo Anahtar Kelimeler'
+        'name' => 'Seo Anahtar Kelimeler',
+        'instructions' => 'Google taracıyıda sitenin arama sonuclarında üstlerde çıkması için eklenen kelimeler.',
     ],
     'seo_description' => [
-        'name' => 'Seo Açıklaması'
+        'name' => 'Seo Açıklaması',
+        'instructions' => 'Ziyaretçilerinizin içeriğini arama sonuçlarında tıklamak isteyip istemedikleri konusundaki kararını etkileyebilir.',
     ],
     'icon' => [
-        'name' => 'İkon'
+        'name' => 'İkon',
+        'instructions' => 'Kategori türünü belirten ikon eklemeye yarar.',
     ],
 
     'please_wait' => 'Lütfen bekleyin. Alt Kategoriler Siliniyor',
