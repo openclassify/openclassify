@@ -13,7 +13,6 @@ return [
         'msg' => "لقد وصلت إلى الحد الأقصى للإعلان المجاني.",
         'nextBtn' => "عرض الإعلانات",
         'cancelBtn' => "أو إلغاء",
-        'link' => "/الملف الشخصي",
     ],
     'create_ad_with_post_cat' => [
         'title' => "نشر إعلان في 30 ثانية فقط",
@@ -24,4 +23,8 @@ return [
     ],
     'update_category_info' => 'يرجى تحديث الفئة.',
     'filter_by_search_msg' => 'تصفية حسب البحث.',
+    'delete_author_error' => 'لا يمكنك حذف منشور لا يخصك',
+    'success_delete' => 'تم حذف الإعلان',
+    'pending_ad_status' => 'إعلانك في انتظار موافقة المحرر.',
+    'extended' => ': تم تمديد عدد الإعلانات بنجاح.',
 ];
