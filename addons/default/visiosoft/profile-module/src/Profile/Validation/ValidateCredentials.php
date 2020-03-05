@@ -35,10 +35,8 @@ class ValidateCredentials
 
                 //Is email or phone number
                 if (!filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
-                    if ($profile = $this->profile->findPhoneNumber($credentials['email'])) {
-                        if ($user = $this->repository->find($profile->user_id)) {
-                            $credentials['email'] = $user->email;
-                        }
+                    if ($user = $this->repository->findBy('gsm_phone', $credentials['email'])) {
+                        $credentials['email'] = $user->email;
                     }
                 }
                 $response = $this->repository->findByCredentials($credentials);
