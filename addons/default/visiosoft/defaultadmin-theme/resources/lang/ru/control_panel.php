@@ -9,5 +9,5 @@ return [
     'search_placeholder'     => 'Введите для поиска',
 
     // Users Module
-    'search_by_gsm_number'     => 'Search By GSM Number',
+    'search_by_gsm_number'     => 'Поиск по номеру GSM',
 ];
