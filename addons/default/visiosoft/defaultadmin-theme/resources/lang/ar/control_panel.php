@@ -9,5 +9,5 @@ return [
     'search_placeholder'     => 'اكتب للبحث',
 
     // Users Module
-    'search_by_gsm_number'     => 'Search By GSM Number',
+    'search_by_gsm_number'     => 'البحث عن طريق رقم GSM',
 ];
