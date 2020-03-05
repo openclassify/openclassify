@@ -9,5 +9,5 @@ return [
     'search_placeholder'     => 'Tipi për të kërkuar',
 
     // Users Module
-    'search_by_gsm_number'     => 'Search By GSM Number',
+    'search_by_gsm_number'     => 'Kërko sipas numrit GSM',
 ];
