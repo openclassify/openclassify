@@ -1,7 +1,6 @@
 <?php namespace Visiosoft\ProfileModule\Adress\Table;
 
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
-use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 
 class AdressTableBuilder extends TableBuilder
 {
@@ -23,7 +22,7 @@ class AdressTableBuilder extends TableBuilder
         'search' => [
             'filter' => 'search',
             'fields' => [
-                'user',
+                'adress_name',
             ],
         ],
     ];
@@ -34,7 +33,10 @@ class AdressTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $columns = [
-        'first_name','last_name','email'
+        'first_name' => 'entry.user.first_name',
+        'last_name' => 'entry.user.last_name',
+        'adress_name',
+        'adress_gsm_phone'
     ];
 
     /**

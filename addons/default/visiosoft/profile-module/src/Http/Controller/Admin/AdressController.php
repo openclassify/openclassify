@@ -1,10 +1,9 @@
 <?php namespace Visiosoft\ProfileModule\Http\Controller\Admin;
 
+use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
-use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Illuminate\Http\Request;
-use Visiosoft\LocationModule\Country\CountryModel;
-use Visiosoft\ProfileModule\Adress\AdressModel;
+use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
 use Visiosoft\ProfileModule\Adress\Table\AdressTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
@@ -20,8 +19,14 @@ class AdressController extends AdminController
      */
     public function index(AdressTableBuilder $table)
     {
-        $users = UsersUsersEntryModel::query()->get();
-        $table->setTableEntries($users);
+        $table->setColumns(array_merge($table->getColumns(), [
+            'city' => [
+                'value' => function (EntryInterface $entry, CityRepositoryInterface $cityRepository) {
+                    return $cityRepository->find($entry->city)->name;
+                },
+            ],
+        ]));
+
         return $table->render();
     }
 
@@ -33,7 +38,9 @@ class AdressController extends AdminController
      */
     public function create(AdressFormBuilder $form)
     {
-        return $this->view->make('visiosoft.module.profile::admin/adress/create');
+        $form->setOption('heading', "visiosoft.module.profile::field");
+
+        return $form->render();
     }
 
     /**
@@ -45,9 +52,9 @@ class AdressController extends AdminController
      */
     public function edit(AdressFormBuilder $form, $id)
     {
-        $adress = ProfileAdressEntryModel::query()->find($id);
-        $country = CountryModel::all();
-        return $this->view->make('visiosoft.module.profile::admin/adress/edit',compact('adress','country'));
+        $form->setOption('heading', "visiosoft.module.profile::field");
+
+        return $form->render($id);
     }
 
     public function adresList(AdressTableBuilder $table, $id)
