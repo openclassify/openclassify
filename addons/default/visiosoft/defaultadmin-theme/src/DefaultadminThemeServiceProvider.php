@@ -2,9 +2,11 @@
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 use Anomaly\Streams\Platform\Ui\ControlPanel\Component\Navigation\Event\SortNavigation;
+use Anomaly\Streams\Platform\Ui\Table\Event\TableIsQuerying;
 use Illuminate\Pagination\AbstractPaginator;
 use Visiosoft\DefaultadminTheme\Http\Controller\Admin\PreferencesController;
 use Visiosoft\DefaultadminTheme\Http\Controller\Admin\SettingsController;
+use Visiosoft\DefaultadminTheme\Listener\AddGsmFilter;
 use Visiosoft\DefaultadminTheme\Listener\ApplySorting;
 
 /**
@@ -26,6 +28,9 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
         SortNavigation::class => [
             ApplySorting::class,
         ],
+        TableIsQuerying::class => [
+            AddGsmFilter::class
+        ]
     ];
 
     /**
