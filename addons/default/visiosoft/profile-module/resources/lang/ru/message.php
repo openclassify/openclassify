@@ -29,4 +29,5 @@ return [
     'error_valid_phone' => 'Неверный формат номера телефона.',
     'registered_phone' => 'Этот номер телефона уже зарегистрирован.',
     'ajax_address_error' => 'Нет адреса или не авторизован для просмотра.',
+    'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
 ];
