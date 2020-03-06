@@ -26,4 +26,5 @@ return [
     'error_valid_phone' => 'تنسيق رقم الهاتف غير صحيح.',
     'registered_phone' => 'تم تسجيل رقم الهاتف هذا بالفعل.',
     'ajax_address_error' => 'لا يوجد عنوان أو غير مصرح له بالمشاهدة.',
+    'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
 ];
