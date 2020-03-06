@@ -26,4 +26,5 @@ return [
     'error_valid_phone' => 'Phone number format is not correct.',
     'registered_phone' => 'This phone number has already been registered.',
     'ajax_address_error' => 'No address or not authorized to view.',
+    'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
 ];
