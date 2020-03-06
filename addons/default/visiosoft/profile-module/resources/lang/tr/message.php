@@ -26,4 +26,5 @@ return [
     'error_valid_phone' => 'Telefon numarası biçimi doğru değil.',
     'registered_phone' => 'Bu telefon numarası ile daha önceden sisteme kayıt olunmuştur.',
     'ajax_address_error' => 'Adres yok veya görüntüleme yetkiniz bulunmamaktadır.',
+    'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
 ];
