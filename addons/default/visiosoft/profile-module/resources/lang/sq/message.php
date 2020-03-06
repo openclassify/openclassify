@@ -26,4 +26,5 @@ return [
     'error_valid_phone' => 'Formati i numrit të telefonit nuk është i saktë.',
     'registered_phone' => 'Ky numër i telefonit është regjistruar tashmë.',
     'ajax_address_error' => 'Asnjë adresë ose jo e autorizuar për të parë.',
+    'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
 ];
