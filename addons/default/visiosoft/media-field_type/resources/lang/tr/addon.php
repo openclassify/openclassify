@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Media Field Type',
+    'title'       => 'Ortam Alanı Türü',
     'name'        => 'Dosya Alanı Tipi',
     'description' => 'Birden fazla dosya yükleme alanı türü.',
 ];
