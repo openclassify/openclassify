@@ -3,7 +3,7 @@
 return [
     'name' => [
         'name' => 'Başlık',
-        'instructions' => 'Tanımlayacağınız ana kategorinin adıdır.Kullanıcının aradığı ürünü kolayca bulmasını sağlar.',
+        'instructions' => 'Tanımlayacağınız ana kategorinin adıdır. Kullanıcının aradığı ürünü kolayca bulmasını sağlar.',
     ],
     'order' => [
         'name' => 'Sipariş',
@@ -19,7 +19,7 @@ return [
     ],
     'seo_keyword' => [
         'name' => 'Seo Anahtar Kelimeler',
-        'instructions' => 'Google taracıyıda sitenin arama sonuclarında üstlerde çıkması için eklenen kelimeler.',
+        'instructions' => 'Google\'da sitenin arama sonuclarında üstlerde çıkması için eklenen kelimeler.',
     ],
     'seo_description' => [
         'name' => 'Seo Açıklaması',
