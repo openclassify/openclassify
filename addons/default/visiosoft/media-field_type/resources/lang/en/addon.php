@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Files',
+    'title'       => 'Media Field Type',
     'name'        => 'Files Field Type',
     'description' => 'A multiple files upload field type.',
 ];
