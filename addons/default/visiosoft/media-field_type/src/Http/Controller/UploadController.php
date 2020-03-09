@@ -59,10 +59,9 @@ class UploadController extends AdminController
 
             $watermarktype = $settings->value('visiosoft.module.advs::watermark_type');
             $position = $settings->value('visiosoft.module.advs::watermark_position');
-
             $img = WaterMark::make($this->request->file('upload')->getRealPath())
-                ->resize(setting_value('visiosoft.field_type.media::setting.imageResizeW', null), setting_value('visiosoft.field_type.media::setting.imageResizeH', 600))
-                ->resizeCanvas(setting_value('visiosoft.field_type.media::setting.imageCanvasW', 800), setting_value('visiosoft.field_type.media::setting.imageCanvasH', 600), 'center', false, 'fff');
+                ->resize(setting_value('visiosoft.field_type.media::imageResizeW', null), setting_value('visiosoft.field_type.media::imageResizeH', 600))
+                ->resizeCanvas(setting_value('visiosoft.field_type.media::imageCanvasW', 800), setting_value('visiosoft.field_type.media::imageCanvasH', 600), 'center', false, 'fff');
             if ($watermarktype == 'image') {
 
                 $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');
