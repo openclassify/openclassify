@@ -18,6 +18,7 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
             'type' => 'anomaly.field_type.relationship',
             'config' => [
                 'related' => UserModel::class,
+                "mode" => "lookup",
             ]
         ],
         'file' => [
