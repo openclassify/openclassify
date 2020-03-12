@@ -27,4 +27,5 @@ return [
     'success_delete' => 'İlan Silindi',
     'pending_ad_status' => 'İlanınız Editör tarafından onay beklemektedir.',
     'extended' => ':number ilan süresi uzatıldı.',
+    'category_not_exist' => 'This category does not exist anymore!',
 ];
