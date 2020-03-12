@@ -27,4 +27,5 @@ return [
     'success_delete' => 'Ad Deleted',
     'pending_ad_status' => 'Your ad is pending approval by the Editor.',
     'extended' => ':number ad(s) has been extended successfully.',
+    'category_not_exist' => 'This category does not exist anymore!',
 ];
