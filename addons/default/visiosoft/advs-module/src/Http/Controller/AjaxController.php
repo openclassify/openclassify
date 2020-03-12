@@ -79,7 +79,8 @@ class AjaxController extends PublicController
             $page_title = trans('visiosoft.module.advs::field.my_adv.name');
             $my_advs = $my_advs->myAdvsByUser();
         }
-        $my_advs = $my_advs->orderByDesc('id');
+        $my_advs = $my_advs->orderByDesc('id')->select(['id', 'cover_photo', 'slug', 'price',
+            'currency', 'city', 'country_id', 'cat1', 'cat2', 'status']);
         $my_advs = $advRepository->addAttributes($my_advs->get());
 
         foreach ($my_advs as $index => $ad) {
