@@ -158,11 +158,16 @@ class AdvsController extends PublicController
             }
         } elseif (isset($param['cat']) && !empty($param['cat'])) {
             $categoryId = $this->category_repository->find($param['cat']);
-            return redirect($this->fullLink(
-                $param,
-                route('adv_list_seo', [$categoryId->slug]),
-                array()
-            ));
+            if ($categoryId) {
+                return redirect($this->fullLink(
+                    $param,
+                    route('adv_list_seo', [$categoryId->slug]),
+                    array()
+                ));
+            } else {
+                $this->messages->error(trans('visiosoft.module.advs::message.category_not_exist'));
+                return redirect('/');
+            }
         }
 
         // Search by city slug
