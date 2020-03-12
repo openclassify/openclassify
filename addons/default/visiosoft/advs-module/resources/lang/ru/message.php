@@ -28,4 +28,5 @@ return [
     'success_delete' => 'Объявление удалено',
     'pending_ad_status' => 'Ваше объявление ожидает одобрения редактором.',
     'extended' => ': количество объявлений было успешно продлено.',
+    'category_not_exist' => 'This category does not exist anymore!',
 ];
