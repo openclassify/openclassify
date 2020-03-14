@@ -93,10 +93,7 @@ return [
         ]
     ],
     'pending_adv' => [
-        'name' => 'اعلانات معلقة'
-    ],
-    'archived_adv' => [
-        'name' => 'الإعلانات المؤرشفة'
+        'name' => 'Unpublished'
     ],
     'finish_at' => [
         'name' => 'ينتهي عند'
@@ -202,7 +199,7 @@ return [
     'total' => 'مجموع',
     'quantity' => 'كمية',
     'view_cart' => 'عرض العربة',
-    'no_ads' => 'لا اعلانات!',
+    'no_ads' => 'No Ads found.',
     'show_display_mode' => [
         'map' => 'خريطة',
         'list' => 'قائمة',
