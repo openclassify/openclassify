@@ -93,10 +93,7 @@ return [
         ]
     ],
     'pending_adv' => [
-        'name' => 'Ожидающие объявления'
-    ],
-    'archived_adv' => [
-        'name' => 'Архивные объявления'
+        'name' => 'Unpublished'
     ],
     'finish_at' => [
         'name' => 'Закончить в'
@@ -203,7 +200,7 @@ return [
     'total' => 'Всего',
     'quantity' => 'Количество',
     'view_cart' => 'Просмотр корзины',
-    'no_ads' => 'Без рекламы!',
+    'no_ads' => 'No Ads found.',
     'show_display_mode' => [
         'map' => 'карта',
         'list' => 'Список',
