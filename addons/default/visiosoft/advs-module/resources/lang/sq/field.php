@@ -93,10 +93,7 @@ return [
         ]
     ],
     'pending_adv' => [
-        'name' => 'Në pritje të reklamave'
-    ],
-    'archived_adv' => [
-        'name' => 'Reklama të arkivuara'
+        'name' => 'Unpublished'
     ],
     'finish_at' => [
         'name' => 'Mbaro At'
@@ -202,7 +199,7 @@ return [
     'total' => 'Total',
     'quantity' => 'sasi',
     'view_cart' => 'Shikoni Shportën',
-    'no_ads' => 'Pa reklama!',
+    'no_ads' => 'No Ads found.',
     'show_display_mode' => [
         'map' => 'hartë',
         'list' => 'Listë',
