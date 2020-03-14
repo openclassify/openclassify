@@ -8,7 +8,7 @@ return [
     'update_profile' => 'Profili Güncelle',
     'delete' => 'Sil',
     'extend' => 'Süre Uzat',
-    'extend_all' => 'Tümünü Genişlet',
+    'extend_all' => 'Tümünün Süresini Uzat',
     'edit' => 'Düzenle',
     'go_profile' => 'Profil Detayları',
     'go_user' => 'Kullanıcı Detayları',
