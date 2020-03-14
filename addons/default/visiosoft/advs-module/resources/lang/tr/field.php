@@ -93,10 +93,7 @@ return [
         ]
     ],
     'pending_adv' => [
-        'name' => 'Bekleyen İlanlar'
-    ],
-    'archived_adv' => [
-        'name' => 'Arşivlenmiş İlanlar'
+        'name' => 'Unpublished'
     ],
     'finish_at' => [
         'name' => 'Bitiş Saati'
@@ -204,7 +201,7 @@ return [
     'total' => 'Genel Toplam',
     'quantity' => 'Adet',
     'view_cart' => 'Sepeti Görüntüle',
-    'no_ads' => 'İlansız!',
+    'no_ads' => 'No Ads found.',
     'show_display_mode' => [
         'map' => 'harita',
         'list' => 'Liste',
