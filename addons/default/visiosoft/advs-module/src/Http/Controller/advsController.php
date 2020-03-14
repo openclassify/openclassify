@@ -818,11 +818,6 @@ class AdvsController extends PublicController
         if ($type == 'pending') {
             $page_title = trans('visiosoft.module.advs::field.pending_adv.name');
             $my_advs = $my_advs->pendingAdvsByUser();
-
-        } else if ($type == 'archived') {
-            $page_title = trans('visiosoft.module.advs::field.archived_adv.name');
-            $my_advs = $my_advs->archivedAdvsByUser();
-
         } else if ($type == 'favs') {
             //Get Favorites Advs
             $isActiveFavs = new AdvModel();
@@ -843,7 +838,6 @@ class AdvsController extends PublicController
         } else {
             $page_title = trans('visiosoft.module.advs::field.my_adv.name');
             $my_advs = $my_advs->myAdvsByUser();
-
         }
         $my_advs = $my_advs->orderByDesc('id');
         $my_advs = $advRepository->addAttributes($my_advs->get());
