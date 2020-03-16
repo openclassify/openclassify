@@ -1,4 +1,4 @@
-<div class="row text-center list-view-type">
+<div class="row text-center list-view-type justify-content-center">
     <div class="col-3">
         {% if setting_value('visiosoft.module.location::list_page_location') %}
             <a href="{{ url_route('visiosoft.module.advs::view_type',['map']) }}" class="text-dark">
@@ -13,7 +13,7 @@
             <small>{{ trans('visiosoft.module.advs::field.show_list_view.name') }}</small>
         </a>
     </div>
-    <div class="col-3 list-table-view">
+    <div class="col-3 list-table-view d-none d-md-block">
         <a href="{{ url_route('visiosoft.module.advs::view_type',['table']) }}" class="text-dark">
             <i class="fa fa-table"></i>
             <small>{{ trans('visiosoft.module.advs::field.show_table_view.name') }}</small>
