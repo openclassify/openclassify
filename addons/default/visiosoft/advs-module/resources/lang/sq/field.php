@@ -123,6 +123,8 @@ return [
     'list-page' => 'Faqja e listës',
     'search' => 'Kërko',
     'recommended' => 'Reklama të rekomanduara për ju',
+    'filter' => 'Filter',
+    'sort' => 'Sort',
     'sort_by' => 'Ndaj sipas',
     'pick_option' => 'Zgjidh një mundësi',
     'pick_ordering' => 'renditje',
@@ -233,6 +235,7 @@ return [
         'name' => 'E shitur',
     ],
     'edit_category' => 'Ndrysho kategorinë',
+    'set_category' => 'Set Category',
     'max' => [
         'name' => 'Max',
     ],
