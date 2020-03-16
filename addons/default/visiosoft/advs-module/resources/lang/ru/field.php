@@ -123,6 +123,8 @@ return [
     'list-page' => 'Страница списка',
     'search' => 'Поиск',
     'recommended' => 'Рекомендуемые объявления для вас',
+    'filter' => 'Filter',
+    'sort' => 'Sort',
     'sort_by' => 'Сортировать по',
     'pick_option' => 'Выберите опцию',
     'pick_ordering' => 'заказ',
@@ -234,6 +236,7 @@ return [
         'name' => 'Продано',
     ],
     'edit_category' => 'Изменить категорию',
+    'set_category' => 'Set Category',
     'max' => [
         'name' => 'Максимум',
     ],
