@@ -24,6 +24,9 @@ $('.sort-by-item').on('click', function () {
     let searchParams = new URLSearchParams(window.location.search);
     var sort_by = searchParams.get('sort_by');
     var url = window.location.href;
+    if (url.slice(-1) === "#") {
+        url = url.slice(0, -1);
+    }
     var goURL = "";
     var value = $(this).attr('data-value');
     if (window.location.search == "") {

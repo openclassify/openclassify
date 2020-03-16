@@ -10,7 +10,7 @@
             <!-- breadcrumb -->
 
             <div class="row my-3">
-                <div class="col-md-3">
+                <div class="col-md-3 d-none d-sm-block filter-section">
                     {% include "visiosoft.module.advs::list/partials/list-filter" %}
                 </div>
                 <div class="col-md-9">
@@ -18,12 +18,23 @@
 
                         <div class="row breadcrumb list-header">
 
-                            <div class="col-md-6 my-2">
+                            <div class="col-md-6 my-2 d-none d-sm-block">
                                 {% include "visiosoft.module.advs::list/partials/list-sort-by" %}
                             </div>
                             <div class="col-md-6 my-2">
                                 {% include "visiosoft.module.advs::list/partials/display-mode" %}
                             </div>
+                        </div>
+                        <div class="my-2 p-0 bg-light d-flex d-sm-none mobile-list-action row text-center align-items-center">
+                            <div class="col-4" id="filter_modal_btn">
+                                <i class="fas fa-filter w-100"></i>
+                                <a href="javascript:;">{{ trans('visiosoft.module.advs::field.filter') }}</a>
+                            </div>
+                            <div class="col-4" id="sort_modal_btn">
+                                <i class="fas fa-sort-amount-down w-100"></i>
+                                <a href="javascript:;">{{ trans('visiosoft.module.advs::field.sort') }}</a>
+                            </div>
+                            {{ addBlock('ads-list/row-bottom',{'show_favorite_search':true})|raw }}
                         </div>
                         {{ addBlock('ads-list/row',{'topfields':topfields,'advs':advs})|raw }}
                         <div class="row">
@@ -41,6 +52,10 @@
             </div>
         </div>
     </section>
+
+    {% include "visiosoft.module.advs::list/partials/filter-modal" %}
+    {% include "visiosoft.module.advs::list/partials/sort-modal" %}
+
     <script>
         var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
     </script>
