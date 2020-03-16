@@ -8,10 +8,12 @@ return [
     'new_district' => 'حي جديد',
     'new_neighborhood' => 'حي جديد',
     'new_village' => 'قرية جديدة',
+    'edit' => "Edit",
     'approve' => "يوافق",
     'decline' => 'انخفاض',
     'extend' => 'تمديد',
     'extend_all' => 'تمديد الكل',
+    'categories' => 'Categories',
     'sub_category' => 'الفئات الفرعية',
     'add_sub_category' => 'إضافة فئة فرعية',
     'sub_cities' => 'مدن فرعية',
@@ -23,6 +25,7 @@ return [
     'sub_neighborhoods' => 'الأحياء الفرعية',
     'sub_village' => 'قرية فرعية',
     'general_settings' => 'الاعدادات العامة',
+    'save_category' => 'Save Category',
     'update_category' => [
         'name' => 'تحديث الفئة'
     ],
