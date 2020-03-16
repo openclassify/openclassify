@@ -123,6 +123,8 @@ return [
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
     'recommended' => 'Sizin için Önerilen İlanlar',
+    'filter' => 'Filter',
+    'sort' => 'Sort',
     'sort_by' => 'Sırala',
     'pick_option' => 'Bir seçenek seçin',
     'pick_ordering' => 'Sıralama Seç',
@@ -235,6 +237,7 @@ return [
         'name' => 'Tükendi',
     ],
     'edit_category' => 'Kategori Düzenle',
+    'set_category' => 'Set Category',
     'max' => [
         'name' => 'Maksimum',
     ],
