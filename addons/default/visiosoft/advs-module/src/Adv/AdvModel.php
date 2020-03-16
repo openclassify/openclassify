@@ -95,20 +95,12 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function pendingAdvsByUser()
     {
         return $this->userAdv()
-            ->where('advs_advs.status', '<>', 'approved')
-            ->where('advs_advs.status', '<>', 'declined')
-            ->where('advs_advs.status', '<>', 'passive')
-            ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'))
-            ->orWhereNull('advs_advs.finish_at');
+                    ->where(function($query) {
+                        $query->where('advs_advs.status', '<>', 'approved');
+                        $query->orWhere('advs_advs.finish_at', '<', date('Y-m-d H:i:s'));
+                     });
     }
 
-    public function archivedAdvsByUser()
-    {
-        return $this->userAdv()
-            ->where('advs_advs.finish_at', '<', date('Y-m-d H:i:s'))
-            ->orWhere('advs_advs.status', 'passive')
-            ->WhereNotNull('advs_advs.finish_at');
-    }
 
     public function favsAdvsByUser($fav_ids)
     {

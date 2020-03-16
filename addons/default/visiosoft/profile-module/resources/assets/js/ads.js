@@ -33,6 +33,11 @@ function changePage(page)
 
     listing_table.html("");
 
+    if(objJson.length == 0) {
+        listing_table.html('<div class="alert alert-warning" role="alert">' +
+                            no_ads_message +
+                            '</div>');
+    }
     for (var i = (page-1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
         listing_table.append(addAdsRow(objJson[i].id, objJson[i].detail_url, objJson[i].cover_photo, objJson[i].name,
             objJson[i].price + " " + objJson[i].currency,
@@ -159,6 +164,3 @@ function dropdownRow(id, type) {
     return dropdown;
 
 }
-
-
-

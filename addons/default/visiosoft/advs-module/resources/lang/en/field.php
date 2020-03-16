@@ -93,10 +93,7 @@ return [
         ]
     ],
     'pending_adv' => [
-        'name' => 'Pending Ads'
-    ],
-    'archived_adv' => [
-        'name' => 'Archived Ads'
+        'name' => 'Unpublished'
     ],
     'finish_at' => [
         'name' => 'Finish At'
@@ -202,7 +199,7 @@ return [
     'total' => 'Total',
     'quantity' => 'Quantity',
     'view_cart' => 'View Cart',
-    'no_ads' => 'No Ads!',
+    'no_ads' => 'No Ads found.',
     'show_display_mode' => [
         'map' => 'Map',
         'list' => 'List',

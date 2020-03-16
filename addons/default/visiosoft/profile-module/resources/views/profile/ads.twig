@@ -23,13 +23,6 @@
                                role="tab" aria-controls="nav-pending" aria-selected="true">
                                 {{ trans('visiosoft.module.advs::field.pending_adv.name') }}
                             </a>
-                            <a class="nav-item nav-link text-dark" data-type="passive" id="nav-archived-tab"
-                               data-toggle="tab"
-                               href="#nav-passive"
-                               role="tab" aria-controls="nav-passive"
-                               aria-selected="true">
-                                {{ trans('visiosoft.module.advs::field.archived_adv.name') }}
-                            </a>
                         </div>
                     </nav>
                     <div class="bg-dark p-2 mt-2 rounded">
@@ -72,6 +65,7 @@
         var extend_ad = "{{ trans('visiosoft.module.profile::button.extend') }}";
         var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
         var ads_per_page = "{{ setting_value('streams::per_page') }}";
+        var no_ads_message = "{{ trans('visiosoft.module.advs::field.no_ads') }}";
     </script>
     {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
 {% endblock %}
