@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\DefaultadminTheme\Listener;
 
+use Anomaly\Streams\Platform\Support\Collection;
 use Anomaly\Streams\Platform\Ui\Table\Component\Filter\Type\SearchFilter;
 use Anomaly\Streams\Platform\Ui\Table\Event\TableIsQuerying;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
@@ -48,6 +49,19 @@ class AddGsmFilter
         $filter->setSlug('gsm_phone');
 
         $builder->getTable()->addFilter($filter);
+        $builder->setColumns([
+                'email',
+                'gsm_phone',
+                'status' => [
+                    'value' => 'entry.status_label',
+                ],]
+        );
+        $c = Collection::make([
+            ['heading' => 'anomaly.module.users::field.email.name'],
+            ['heading' => 'visiosoft.module.profile::field.gsm_phone.name'],
+            ['heading' => 'anomaly.module.users::field.status.name'],
+        ]);
+        $builder->getTable()->setHeaders($c);
     }
 
     /**
