@@ -30,4 +30,7 @@ return [
     'personal_registration_list_2' => 'Add the ads you are interested in, follow the price changes after adding them to your favorites, create favorite searches that meet your criteria,',
     'personal_registration_list_3' => 'Send messages to the ad owners on the site.',
     'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
+
+    // Forgot Password
+    'create_new_password' => 'Create New Password',
 ];
