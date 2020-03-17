@@ -44,3 +44,65 @@
 .table-classified .td-subject {
     min-width: 200px;
 }
+
+/* Mobile filter */
+.mobile-list-action {
+    margin-left: -30px;
+    margin-right: -30px;
+    border: 1px solid #dee2e68a;
+}
+
+.mobile-list-action a {
+    font-size: 11px;
+    line-height: 22px;
+    text-align: center;
+    margin-top: -5px;
+    display: block;
+    color: #022543;
+}
+
+.mobile-list-action a:hover,
+.mobile-list-action a:hover {
+    text-decoration: none;
+}
+
+.mobile-list-action a:after {
+    position: absolute;
+    width: 1px;
+    height: 33px;
+    top: 0;
+    right: 0;
+    content: '';
+    background: #c9c9c9;
+}
+
+.mobile-list-action i {
+    font-size: 19px;
+    color: #a1a1a1;
+}
+
+.mobile-list-action div {
+    margin-top: 6px;
+}
+
+.edit-category-filter-modal {
+    top: 7px;
+    right: 14px;
+}
+
+.edit-category-filter-modal a {
+    text-decoration: none;
+}
+
+#categoryModal {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.category-select-mobile span {
+    right: 10px;
+    top: 6px;
+}
+
+#filterModal {
+    overflow-y: auto;
+}

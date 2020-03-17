@@ -123,6 +123,8 @@ return [
     'list-page' => 'List Page',
     'search' => 'Search',
     'recommended' => 'Recommended Ads for You',
+    'filter' => 'Filter',
+    'sort' => 'Sort',
     'sort_by' => 'Sort By',
     'pick_option' => 'Pick an option',
     'pick_ordering' => 'Ordering',
@@ -233,6 +235,7 @@ return [
         'name' => 'Sold out',
     ],
     'edit_category' => 'Edit Category',
+    'set_category' => 'Set Category',
     'max' => [
         'name' => 'Max',
     ],

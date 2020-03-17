@@ -8,10 +8,12 @@ return [
     'new_district' => 'New District',
     'new_neighborhood' => 'New Neighborhood',
     'new_village' => 'New Village',
+    'edit' => "Edit",
     'approve' => "Approve",
     'decline' => 'Decline',
     'extend' => 'Extend',
     'extend_all' => 'Extend All',
+    'categories' => 'Categories',
     'sub_category' => 'Sub Categories',
     'add_sub_category' => 'Add Sub Category',
     'sub_cities' => 'Sub Cities',
@@ -23,6 +25,7 @@ return [
     'sub_neighborhoods' => 'Sub Neighborhoods',
     'sub_village' => 'Sub Village',
     'general_settings' => 'General Settings',
+    'save_category' => 'Save Category',
     'update_category' => [
         'name' => 'Update Category'
     ],
