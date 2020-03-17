@@ -30,4 +30,7 @@ return [
     'registered_phone' => 'Этот номер телефона уже зарегистрирован.',
     'ajax_address_error' => 'Нет адреса или не авторизован для просмотра.',
     'empty_password_sms_message' => 'Из-за проблем безопасности мы изменили ваш пароль! Ваш новый пароль:',
+
+    // Forgot Password
+    'email_phone_not_found' => 'The E-mail, Phone Number is not correct!'
 ];
