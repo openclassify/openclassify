@@ -27,4 +27,7 @@ return [
     'registered_phone' => 'تم تسجيل رقم الهاتف هذا بالفعل.',
     'ajax_address_error' => 'لا يوجد عنوان أو غير مصرح له بالمشاهدة.',
     'empty_password_sms_message' => 'نظرًا لمشاكل الأمان ، قمنا بتغيير كلمة المرور الخاصة بك! كلمة المرور الجديدة:',
+
+    // Forgot Password
+    'email_phone_not_found' => 'The E-mail, Phone Number is not correct!'
 ];
