@@ -43,7 +43,13 @@ class ValidateCredentials
 
                 //Is email or phone number
                 if (!filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
-                    if ($user = $this->repository->findBy('gsm_phone', $credentials['email'])) {
+                    $possiblePhone = $credentials['email'];
+                    if (substr($credentials['email'], 0, 1) == 0) {
+                        $possiblePhone = substr($credentials['email'], 1);
+                    }
+                    if ($user = $this->repository
+                        ->newQuery()
+                        ->where('gsm_phone', 'LIKE', "%$possiblePhone")->first()) {
                         $credentials['email'] = $user->email;
                     }
                 }
