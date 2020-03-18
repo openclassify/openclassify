@@ -69,8 +69,8 @@ class CategoryController extends AdminController
                     $k++;
                 }
             }
-            if ($i >= 7) {
-                $this->messages->error('You have reached your sub-category limit, you can only add 5 sub-categories.');
+            if ($i > 10) {
+                $this->messages->error('You have reached your sub-category limit, you can only add 9 sub-categories.');
 
                 return $this->redirect->back();
             }
