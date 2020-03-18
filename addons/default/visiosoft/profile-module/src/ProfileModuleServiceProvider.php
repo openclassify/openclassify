@@ -111,6 +111,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
                 \Barryvdh\Cors\HandleCors::class,
             ]
         ],
+        'ajax/phone-validation' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@phoneValidation',
 
         /* Login */
         'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',

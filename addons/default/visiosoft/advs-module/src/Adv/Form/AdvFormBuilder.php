@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Form;
 
-use Visiosoft\AdvsModule\Category\Contract\CategoryInterface;
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 class AdvFormBuilder extends FormBuilder
@@ -29,6 +28,9 @@ class AdvFormBuilder extends FormBuilder
         'cat5',
         'cat6',
         'cat7',
+        'cat8',
+        'cat9',
+        'cat10',
         'currency',
         'online_payment',
         'stock',

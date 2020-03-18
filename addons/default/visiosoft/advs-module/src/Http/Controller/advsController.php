@@ -319,7 +319,7 @@ class AdvsController extends PublicController
             $recommended_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
         }
 
-        for ($i = 1; $i < 7; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             $cat = "cat" . $i;
             if ($adv->$cat != null) {
                 $item = $this->category_repository->getItem($adv->$cat);
@@ -417,7 +417,6 @@ class AdvsController extends PublicController
         $count_user_ads = count($this->adv_model->userAdv()->get());
 
         if (empty($cats->toArray())) {
-
             $cats = trans('visiosoft.module.advs::message.create_ad_with_post_cat');
 
             if (setting_value('visiosoft.module.advs::default_adv_limit') <= $count_user_ads) {
@@ -433,8 +432,6 @@ class AdvsController extends PublicController
                     return $msg;
                 }
             }
-
-
         }
         return $cats;
     }
@@ -504,8 +501,9 @@ class AdvsController extends PublicController
                     if ($package != null)
                         $this->messages->error(trans('visiosoft.module.advs::message.please_buy_package'));
 
-                } else
+                } else {
                     $this->messages->error(trans('visiosoft.module.advs::message.max_ad_limit.title'));
+                }
 
                 return redirect('/');
             }
@@ -539,7 +537,6 @@ class AdvsController extends PublicController
             if ($this->adv_model->is_enabled('customfields')) {
                 app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $request);
             }
-
 
             $form->render($request->update_id);
             $post = $form->getPostData();
@@ -576,7 +573,6 @@ class AdvsController extends PublicController
             } else {
                 $events->dispatch(new EditAd($request->update_id, $settings, $adv));//Update Notify
             }
-
 
             if ($isActiveDopings) {
                 return redirect(route('add_doping', [$request->update_id]));
@@ -615,7 +611,7 @@ class AdvsController extends PublicController
         $cat = 'cat';
         $cats = array();
 
-        for ($i = 1; $i < 7; $i++) {
+        for ($i = 1; $i <= 10; $i++) {
             if ($adv[$cat . $i] != null) {
                 $name = $categoryRepository->getSingleCat($adv[$cat . $i]);
                 if (!is_null($name)) {
@@ -699,7 +695,6 @@ class AdvsController extends PublicController
         $main_cats = $this->category_repository->mainCats();
 
         return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('main_cats'));
-
     }
 
     /**
@@ -722,7 +717,7 @@ class AdvsController extends PublicController
             $params = $this->requestHttp->all();
             unset($params['action']);
 
-            for ($i = 2; $i <= 7; $i++) {
+            for ($i = 2; $i <= 10; $i++) {
                 if (!isset($params['cat' . $i])) {
                     $params['cat' . $i] = NULL;
                 }
