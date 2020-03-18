@@ -95,9 +95,6 @@ return [
     'pending_adv' => [
         'name' => 'Në pritje të reklamave'
     ],
-    'archived_adv' => [
-        'name' => 'Reklama të arkivuara'
-    ],
     'finish_at' => [
         'name' => 'Mbaro At'
     ],
@@ -126,6 +123,8 @@ return [
     'list-page' => 'Faqja e listës',
     'search' => 'Kërko',
     'recommended' => 'Reklama të rekomanduara për ju',
+    'filter' => 'filtër',
+    'sort' => 'lloj',
     'sort_by' => 'Ndaj sipas',
     'pick_option' => 'Zgjidh një mundësi',
     'pick_ordering' => 'renditje',
@@ -236,6 +235,7 @@ return [
         'name' => 'E shitur',
     ],
     'edit_category' => 'Ndrysho kategorinë',
+    'set_category' => 'Vendosni Kategorinë',
     'max' => [
         'name' => 'Max',
     ],
