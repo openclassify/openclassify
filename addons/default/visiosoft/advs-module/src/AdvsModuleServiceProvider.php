@@ -13,7 +13,6 @@ use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
-use Anomaly\Streams\Platform\Model\Advs\AdvsCategoriesEntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Illuminate\Routing\Router;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
@@ -111,11 +110,11 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'getlocations' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getLocations',
         'advs/main' => 'Visiosoft\AdvsModule\Http\Controller\advsController@advsMainPage',
         'advs/adv/{id}' => [
-            'as' => 'adv_detail',
+            'as' => 'adv_detail_backup',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
         ],
         'advs/adv/{id}/{seo}' => [
-            'as' => 'adv_detail_seo',
+            'as' => 'adv_detail_seo_backup',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
         ],
         'ad/{id}' => [
