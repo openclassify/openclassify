@@ -31,6 +31,9 @@ return [
     'personal_registration_list_3' => 'أرسل رسائل إلى مالكي الإعلانات على الموقع.',
     'register_information_note' => 'تؤخذ المعلومات على هذه الصفحة ل ' . env('APPLICATION_DOMAIN') . ' عضوية. يمكنك العثور على معلومات مفصلة حول حماية البيانات الشخصية هنا.',
 
+    // Register page
+    'phone_validation_error' => 'This email address is in use by another member.',
+
     // Forgot Password
     'create_new_password' => 'إنشاء كلمة مرور جديدة',
 ];
