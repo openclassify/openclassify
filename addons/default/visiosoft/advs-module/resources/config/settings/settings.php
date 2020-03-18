@@ -22,6 +22,12 @@ return [
             'default_value' => true,
         ],
     ],
+    'estimated_pending_time' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 6,
+        ],
+    ],
     'default_published_time' => [
         'type' => 'anomaly.field_type.integer',
         'bind' => 'adv.default_published_time',
