@@ -4,6 +4,10 @@ return [
     'auto_approve' => [
         'name' => 'Auto Approve',
     ],
+    'estimated_pending_time' => [
+        'name' => 'Estimated Pending Time',
+        'instructions' => 'In Hours',
+    ],
     'default_published_time' => [
         'name' => 'Default Publish Time',
     ],

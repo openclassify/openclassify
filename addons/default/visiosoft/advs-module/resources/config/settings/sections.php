@@ -19,6 +19,7 @@ return [
                 'fields' => [
                     'latest-limit',
                     'auto_approve',
+                    'estimated_pending_time',
                     'default_published_time',
                     'default_adv_limit',
                     'default_GET',
