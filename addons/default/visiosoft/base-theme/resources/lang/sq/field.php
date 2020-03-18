@@ -30,4 +30,7 @@ return [
     'personal_registration_list_2' => 'Shtoni reklamat që ju interesojnë, ndiqni ndryshimet e çmimeve pasi t\'i shtoni ato në të preferuarat tuaja, krijoni kërkime të preferuara që plotësojnë kriteret tuaja,',
     'personal_registration_list_3' => 'Dërgoni mesazhe pronarëve të reklamave në faqe.',
     'register_information_note' => 'Informacioni në këtë faqe merret për ' . env('APPLICATION_DOMAIN') . ' anëtarësimi. Mund të gjeni informacione të hollësishme në lidhje me mbrojtjen e të dhënave personale këtu.',
+
+    // Forgot Password
+    'create_new_password' => 'Krijoni fjalëkalimin e ri',
 ];
