@@ -27,4 +27,5 @@ return [
     'success_delete' => 'Shpallja është fshirë',
     'pending_ad_status' => 'Reklama juaj është në pritje të aprovimit nga Redaktori.',
     'extended' => ': reklamat e numrave janë zgjeruar me sukses.',
+    'category_not_exist' => 'Kjo kategori nuk ekziston më!',
 ];
