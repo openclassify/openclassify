@@ -264,4 +264,12 @@ return [
     "no_location" => "Местоположение не выбрано.",
     "continue" => 'Продолжить',
     "gallery" => 'Галерея',
+
+    // Pending screen
+    'pending_message_1' => 'The Ad is in the Approval Process',
+    'pending_message_2' => "Ad's Update Date",
+    'pending_message_3' => 'Estimated Waiting Time',
+    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
+    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
+    'hours' => 'hours'
 ];
