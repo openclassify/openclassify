@@ -31,6 +31,9 @@ return [
     'personal_registration_list_3' => 'Dërgoni mesazhe pronarëve të reklamave në faqe.',
     'register_information_note' => 'Informacioni në këtë faqe merret për ' . env('APPLICATION_DOMAIN') . ' anëtarësimi. Mund të gjeni informacione të hollësishme në lidhje me mbrojtjen e të dhënave personale këtu.',
 
+    // Register page
+    'phone_validation_error' => 'This email address is in use by another member.',
+
     // Forgot Password
     'create_new_password' => 'Krijoni fjalëkalimin e ri',
 ];
