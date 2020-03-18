@@ -4,6 +4,10 @@ return [
     'auto_approve' => [
         'name' => 'الموافقة التلقائية',
     ],
+    'estimated_pending_time' => [
+        'name' => 'Estimated Pending Time',
+        'instructions' => 'In Hours',
+    ],
     'default_published_time' => [
         'name' => 'وقت النشر الافتراضي',
     ],
