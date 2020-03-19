@@ -32,8 +32,11 @@ return [
     'register_information_note' => 'تؤخذ المعلومات على هذه الصفحة ل ' . env('APPLICATION_DOMAIN') . ' عضوية. يمكنك العثور على معلومات مفصلة حول حماية البيانات الشخصية هنا.',
 
     // Register page
-    'phone_validation_error' => 'This email address is in use by another member.',
+    'phone_validation_error' => 'This phone number is in use by another member.',
 
     // Forgot Password
     'create_new_password' => 'إنشاء كلمة مرور جديدة',
+
+    // Login page
+    'or' => 'or'
 ];
