@@ -32,8 +32,11 @@ return [
     'register_information_note' => 'Bu sayfadaki bilgiler ' . env('APPLICATION_DOMAIN') . ' üyelik. Kişisel verilerin korunması hakkında ayrıntılı bilgiyi burada bulabilirsiniz.',
 
     // Register page
-    'phone_validation_error' => 'This email address is in use by another member.',
+    'phone_validation_error' => 'This phone number is in use by another member.',
 
     // Forgot Password
     'create_new_password' => 'Yeni Şifre Oluştur',
+
+    // Login page
+    'or' => 'or'
 ];
