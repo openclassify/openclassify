@@ -8,10 +8,12 @@ return [
     'new_district' => 'Новый Район',
     'new_neighborhood' => 'Новый район',
     'new_village' => 'Новая Деревня',
+    'edit' => "редактировать",
     'approve' => "Утвердить",
     'decline' => 'снижение',
     'extend' => 'простираться',
     'extend_all' => 'Расширить все',
+    'categories' => 'категории',
     'sub_category' => 'Подкатегории',
     'add_sub_category' => 'Добавить подкатегорию',
     'sub_cities' => 'Подгорода',
@@ -23,6 +25,7 @@ return [
     'sub_neighborhoods' => 'Суб соседства',
     'sub_village' => 'Sub Village',
     'general_settings' => 'общие настройки',
+    'save_category' => 'Сохранить категорию',
     'update_category' => [
         'name' => 'Обновить категорию'
     ],
