@@ -36,4 +36,7 @@ return [
 
     // Forgot Password
     'create_new_password' => 'Create New Password',
+
+    // Login page
+    'or' => 'or'
 ];
