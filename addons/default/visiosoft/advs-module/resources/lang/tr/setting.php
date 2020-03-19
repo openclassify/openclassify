@@ -4,6 +4,10 @@ return [
     'auto_approve' => [
         'name' => 'Otomatik Onaylama',
     ],
+    'estimated_pending_time' => [
+        'name' => 'Tahmini Bekleme Süresi',
+        'instructions' => 'Saatlerde',
+    ],
     'default_published_time' => [
         'name' => 'Varsayılan Yayın Süresi',
     ],
