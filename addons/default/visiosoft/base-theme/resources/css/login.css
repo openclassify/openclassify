@@ -111,10 +111,9 @@
     background: #fafafa;
     color: #489ae8;
 }
-
 @media only screen and (min-width: 470px) {
     .login-section {
-        padding: 70px 78px 148px 77px;
+        padding: 70px 30px 148px;
     }
 
     .register-section {
@@ -122,5 +121,10 @@
         padding-left: 80px;
         padding-right: 85px;
         background-color: #fff;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .login-section {
+        padding: 70px 78px 148px 77px;
     }
 }

@@ -58,16 +58,18 @@
                 <div class="col-12 py-0">
                     <label class="c-input c-checkbox remember_me">
                         <input value="0" type="hidden" name="remember_me">
-                        <input type="checkbox" name="remember_me">
+                        <input type="checkbox" name="remember_me" class="align-middle">
                         <span class="c-indicator"></span>
                         {{ trans('visiosoft.theme.base::field.remember_me') }}
                     </label>
                 </div>
-                <div class="social-login py-2 row">
-                    {{ addBlock('login/oauth')|raw }}
-                </div>
+                {% if addBlock('login/oauth') %}
+                    <div class="text-center text-muted">- {{ trans('visiosoft.theme.base::field.or') }} -</div>
+                    <div class="social-login py-2 px-3">
+                        {{ addBlock('login/oauth')|raw }}
+                    </div>
+                {% endif %}
             </div>
-
 
             <div class="col-12 col-lg-5 m-3 py-4 row register-section align-items-center">
                 <div class="col-12 text-center">
