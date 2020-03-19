@@ -31,6 +31,12 @@ return [
     'personal_registration_list_3' => 'Отправляйте сообщения владельцам рекламы на сайте.',
     'register_information_note' => 'Информация на этой странице принимается за ' . env('APPLICATION_DOMAIN') . ' членство. Вы можете найти подробную информацию о защите персональных данных здесь.',
 
+    // Register page
+    'phone_validation_error' => 'Этот номер телефона используется другим участником.',
+
     // Forgot Password
     'create_new_password' => 'Создать новый пароль',
+
+    // Login page
+    'or' => 'или'
 ];
