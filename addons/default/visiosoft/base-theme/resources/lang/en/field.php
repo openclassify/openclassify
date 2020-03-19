@@ -32,7 +32,7 @@ return [
     'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
 
     // Register page
-    'phone_validation_error' => 'This email address is in use by another member.',
+    'phone_validation_error' => 'This phone number is in use by another member.',
 
     // Forgot Password
     'create_new_password' => 'Create New Password',
