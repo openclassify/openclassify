@@ -32,8 +32,11 @@ return [
     'register_information_note' => 'Информация на этой странице принимается за ' . env('APPLICATION_DOMAIN') . ' членство. Вы можете найти подробную информацию о защите персональных данных здесь.',
 
     // Register page
-    'phone_validation_error' => 'This email address is in use by another member.',
+    'phone_validation_error' => 'This phone number is in use by another member.',
 
     // Forgot Password
     'create_new_password' => 'Создать новый пароль',
+
+    // Login page
+    'or' => 'or'
 ];
