@@ -95,9 +95,6 @@ return [
     'pending_adv' => [
         'name' => 'Në pritje të reklamave'
     ],
-    'archived_adv' => [
-        'name' => 'Reklama të arkivuara'
-    ],
     'finish_at' => [
         'name' => 'Mbaro At'
     ],
@@ -126,6 +123,8 @@ return [
     'list-page' => 'Faqja e listës',
     'search' => 'Kërko',
     'recommended' => 'Reklama të rekomanduara për ju',
+    'filter' => 'filtër',
+    'sort' => 'lloj',
     'sort_by' => 'Ndaj sipas',
     'pick_option' => 'Zgjidh një mundësi',
     'pick_ordering' => 'renditje',
@@ -236,6 +235,7 @@ return [
         'name' => 'E shitur',
     ],
     'edit_category' => 'Ndrysho kategorinë',
+    'set_category' => 'Vendosni Kategorinë',
     'max' => [
         'name' => 'Max',
     ],
@@ -263,4 +263,12 @@ return [
     "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
     "continue" => 'vazhdoj',
     "gallery" => 'Galeri',
+
+    // Pending screen
+    'pending_message_1' => 'Shpallja është në Procesin e Miratimit',
+    'pending_message_2' => "Data e azhurnimit të reklamës",
+    'pending_message_3' => 'Koha e parashikuar e pritjes',
+    'pending_message_4' => 'Koha e kaluar në procesin e miratimit do t\'i shtohet kohës së dopingut.',
+    'pending_message_5' => 'Asnjë transaksion nuk mund të bëhet nga qendra e thirrjeve në lidhje me reklamën në procesin e miratimit.',
+    'hours' => 'orë'
 ];

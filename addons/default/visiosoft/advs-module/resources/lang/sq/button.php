@@ -8,10 +8,12 @@ return [
     'new_district' => 'Rrethi i Ri',
     'new_neighborhood' => 'Lagjja e re',
     'new_village' => 'Fshati i Ri',
+    'edit' => "redaktoj",
     'approve' => "miratoj",
     'decline' => 'rënie',
     'extend' => 'shpreh',
     'extend_all' => 'Zgjeroni të gjitha',
+    'categories' => 'Kategoritë',
     'sub_category' => 'Nënkategoritë',
     'add_sub_category' => 'Shtoni Nën Kategorinë',
     'sub_cities' => 'Qytetet nën-qytet',
@@ -23,6 +25,7 @@ return [
     'sub_neighborhoods' => 'Nën lagjet',
     'sub_village' => 'Nën fshat',
     'general_settings' => 'Cilësimet e përgjithshme',
+    'save_category' => 'Ruaj kategorinë',
     'update_category' => [
         'name' => 'Kategoria e azhurnuar'
     ],

@@ -1,21 +1,27 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
-    <div class="row justify-content-center">
-        <div class="col-12 col-sm-8 col-md-6 col-lg-4 text-left bg-light p-3 m-0">
-            {% set form = form('forgot_password').redirect(request_get('redirect', '/'))
+    <div class="d-flex mt-4 forgot-wrapper">
+        <div class="d-none d-md-block">
+            <img src="{{ img('visiosoft.theme.base::images/forgot-password.png').url }}" class="forgot-img"
+                 alt="forgot password icon">
+        </div>
+
+        <div class="m-0 ml-md-5 forgot-form-wrapper w-100">
+            {% set form = form('forgot_pass').redirect(request_get('redirect', '/'))
                 .get() %}
             {{ form_open({
-                'class': 'row form ' ~ form.options.class ,
+                'class': 'form ' ~ form.options.class ,
                 'url':form.options.url
             })|raw }}
 
-
-            <div class="col-12">
-                <h4>{{ trans('visiosoft.theme.base::field.forgot_password') }}</h4>
-                <div class="form-group email-field email-field_type">
-                    <label class="control-label">
-                        {{ trans('visiosoft.theme.base::field.email') }}
+            <div>
+                <h5 class="d-none d-md-block">{{ trans('visiosoft.theme.base::field.create_new_password') }}</h5>
+                <div class="form-group email-field email-field_type text-center text-md-left">
+                    <label class="control-label mb-3 mb-md-0">
+                        <span>
+                            {{ trans('visiosoft.theme.base::field.email_or_phone_number') }}
+                        </span>
                         <span class="required">*</span>
                     </label>
 
@@ -25,11 +31,12 @@
                 </div>
             </div>
 
-            <div class="col-12 row m-0">
-                <button class="btn btn-sm btn-primary  w-100 py-2">
+            <div class="m-0">
+                <button class="btn btn-sm btn-primary py-2 px-5 w-100">
                     {{ trans('visiosoft.theme.base::button.continue') }}
                 </button>
             </div>
         </div>
     </div>
+    {{ asset_add('styles.css', 'visiosoft.theme.base::css/forgot.css') }}
 {% endblock %}

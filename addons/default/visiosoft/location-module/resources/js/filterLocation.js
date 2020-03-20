@@ -8,7 +8,7 @@ var village;
 $('.filter-country-btn').on('click', function () {
     if (countries == undefined) {
         var promiseForCountries = new Promise(function (resolve, reject) {
-            crud('', '/ajax/getCountry', 'POST', beforeSend(), function (callback) {
+            locationCrud('', '/ajax/getCountry', 'POST', beforeSend(), function (callback) {
                 countries = callback;
                 resetValue('country', true, false)
                 $.each(countries, function (index, value) {
@@ -39,7 +39,7 @@ $('.filter-city-btn').on('click', function () {
     if (cities == undefined || $(this).attr('data-parent') != countries_value) {
         $(this).attr('data-parent', countries_value)
         var promiseForCities = new Promise(function (resolve, reject) {
-            crud('id=' + countries_value, '/ajax/getCities', 'POST', beforeSend(), function (callback) {
+            locationCrud('id=' + countries_value, '/ajax/getCities', 'POST', beforeSend(), function (callback) {
                 cities = callback;
                 resetValue('city', true, false)
                 $.each(cities, function (index, value) {
@@ -73,7 +73,7 @@ $('.filter-district-btn').on('click', function () {
     if (districts == undefined || $(this).attr('data-parent') != city_value) {
         $(this).attr('data-parent', city_value)
         var promiseForDistricts = new Promise(function (resolve, reject) {
-            crud('id=' + city_value, '/ajax/getDistricts', 'POST', beforeSend(), function (callback) {
+            locationCrud('id=' + city_value, '/ajax/getDistricts', 'POST', beforeSend(), function (callback) {
                 districts = callback;
                 resetValue('district', true, false)
                 $.each(districts, function (index, value) {
@@ -107,7 +107,7 @@ $('.filter-neighborhood-btn').on('click', function () {
     if (neighborhoods == undefined || $(this).attr('data-parent') != district_value) {
         $(this).attr('data-parent', district_value)
         var promiseForNeighborhoods = new Promise(function (resolve, reject) {
-            crud('id=' + district_value, '/ajax/getNeighborhoods', 'POST', beforeSend(), function (callback) {
+            locationCrud('id=' + district_value, '/ajax/getNeighborhoods', 'POST', beforeSend(), function (callback) {
                 neighborhoods = callback;
                 resetValue('neighborhood', true, false)
                 $.each(neighborhoods, function (index, value) {
@@ -141,7 +141,7 @@ $('.filter-village-btn').on('click', function () {
     if (village == undefined || $(this).attr('data-parent') != neighborhood_value) {
         $(this).attr('data-parent', neighborhood_value)
         var promiseForVillage = new Promise(function (resolve, reject) {
-            crud('id=' + neighborhood_value, '/ajax/getVillage', 'POST', beforeSend(), function (callback) {
+            locationCrud('id=' + neighborhood_value, '/ajax/getVillage', 'POST', beforeSend(), function (callback) {
                 village = callback;
                 $('.filter-location-modal .village').html("");
                 $.each(village, function (index, value) {
@@ -225,7 +225,7 @@ function SelectOnClick() {
 }
 
 
-function crud(params, url, type, beforeSend, callback) {
+function locationCrud(params, url, type, beforeSend, callback) {
     $.ajax({
         type: type,
         data: params,

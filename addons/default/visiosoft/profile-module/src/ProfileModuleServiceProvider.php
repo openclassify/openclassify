@@ -6,6 +6,7 @@ use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
+use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
 use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
 use Illuminate\Routing\Router;
@@ -110,6 +111,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
                 \Barryvdh\Cors\HandleCors::class,
             ]
         ],
+        'ajax/phone-validation' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@phoneValidation',
 
         /* Login */
         'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',
@@ -194,6 +196,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         AdressRepositoryInterface::class => AdressRepository::class,
         'register2' => Register2FormBuilder::class,
         'sites' => SitesFormBuilder::class,
+        'forgot_pass' => ForgotPassFormBuilder::class,
     ];
 
     /**

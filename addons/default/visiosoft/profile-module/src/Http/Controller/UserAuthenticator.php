@@ -224,4 +224,15 @@ class UserAuthenticator
     {
         return response()->json(['status' => $type, 'message' => $message]);
     }
+
+    public function phoneValidation(Request $request, UserRepositoryInterface $userRepository)
+    {
+        $phoneNum = str_replace(' ', '', $request->phoneNumber);
+        $userExists = $userRepository->findBy('gsm_phone', $phoneNum);
+        if ($userExists) {
+            return response()->json(['userExists' => true]);
+        } else {
+            return response()->json(['userExists' => false]);
+        }
+    }
 }

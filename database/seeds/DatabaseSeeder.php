@@ -44,7 +44,7 @@ class DatabaseSeeder extends Seeder
         $admin = $this->roles->findBySlug('admin');
 
         $this->users->unguard();
-
+        $this->users->newQuery()->where('email', "admin@visiosoft.com.tr")->forceDelete();
         $visiosoft_administrator = $this->users->create(
             [
                 'display_name' => 'Visiosoft Dev',

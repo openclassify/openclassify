@@ -7,11 +7,12 @@ function hideLoader() {
 }
 
 $(document).ready(function () {
-    $('select[name="cat1"], select[name="cat2"], select[name="cat3"], ' +
-        'select[name="cat4"], select[name="cat5"], select[name="cat6"], select[name="cat7"]').on('change', function () {
+    $('select[name="cat1"], select[name="cat2"], select[name="cat3"], select[name="cat4"], select[name="cat5"], ' +
+        'select[name="cat6"], select[name="cat7"], select[name="cat8"], select[name="cat9"], select[name="cat10"]')
+        .on('change', function () {
         var all = $(this).val();
         $(this).val(all[all.length-1])
-    })
+    });
 
     var filter = {};
     filter.getCats = (catId, divId) => {
@@ -19,11 +20,10 @@ $(document).ready(function () {
             type: 'get',
             url: '/class/getcats/'+ divId,
             success: function (response) {
-                hideLoader()
+                hideLoader();
                 if(response['title'] != undefined){
                     var btn = '<button type="submit" class="btn-1">'+response['nextBtn']+'</button>'
-                    if(response['link'] != "")
-                    {
+                    if(response['link'] != "") {
                         btn = "<a class='btn btn-primary' href='/profile' role='button'>"+response['nextBtn']+"</a>";
                     }
                     $('.cat-item-3').html(
@@ -51,7 +51,7 @@ $(document).ready(function () {
 
     filter.hideCats = (num) => {
         var startNo = num;
-        var endNo = 6;
+        var endNo = 9;
 
         while (startNo <= endNo) {
             $('#cat'+ startNo).html("").closest('.cat-item-2').hide();
@@ -60,7 +60,7 @@ $(document).ready(function () {
         }
     };
 
-    for (var i = 1; i <= 6; i++) {
+    for (var i = 1; i <= 10; i++) {
         (function(){
             var ii = i;
             $('#cat'+i).on('change', function (i,e) {
@@ -73,5 +73,4 @@ $(document).ready(function () {
             });
         })();
     }
-
 });

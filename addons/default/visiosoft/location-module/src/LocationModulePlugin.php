@@ -1,7 +1,9 @@
 <?php namespace Visiosoft\LocationModule;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
+use Visiosoft\LocationModule\City\Command\GetCities;
 use Visiosoft\LocationModule\City\Command\GetCity;
+use Visiosoft\LocationModule\Country\Command\GetCountries;
 use Visiosoft\LocationModule\Country\Command\GetCountry;
 use Visiosoft\LocationModule\District\Command\GetDistrict;
 use Visiosoft\LocationModule\Neighborhood\Command\GetNeighborhood;
@@ -50,6 +52,17 @@ class LocationModulePlugin extends Plugin
                 }
             ),
             new \Twig_SimpleFunction(
+                'getCities',
+                function ($country = null) {
+
+                    if (!$ad = $this->dispatch(new GetCities($country))) {
+                        return null;
+                    }
+
+                    return $ad;
+                }
+            ),
+            new \Twig_SimpleFunction(
                 'getCountry',
                 function ($id) {
 
@@ -57,6 +70,16 @@ class LocationModulePlugin extends Plugin
                         return null;
                     }
 
+                    return $ad;
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'getCountries',
+                function () {
+
+                    if (!$ad = $this->dispatch(new GetCountries())) {
+                        return null;
+                    }
                     return $ad;
                 }
             ),

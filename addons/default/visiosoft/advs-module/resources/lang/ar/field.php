@@ -95,9 +95,6 @@ return [
     'pending_adv' => [
         'name' => 'اعلانات معلقة'
     ],
-    'archived_adv' => [
-        'name' => 'الإعلانات المؤرشفة'
-    ],
     'finish_at' => [
         'name' => 'ينتهي عند'
     ],
@@ -126,6 +123,8 @@ return [
     'list-page' => 'قائمة الصفحة',
     'search' => 'بحث',
     'recommended' => 'الإعلانات الموصى بها لك',
+    'filter' => 'منقي',
+    'sort' => 'فرز',
     'sort_by' => 'ترتيب حسب',
     'pick_option' => 'اختيار خيار',
     'pick_ordering' => 'تنظيم',
@@ -236,6 +235,7 @@ return [
         'name' => 'بيعت كلها',
     ],
     'edit_category' => 'تحرير الفئة',
+    'set_category' => 'حدد الفئة',
     'max' => [
         'name' => 'ماكس',
     ],
@@ -263,4 +263,12 @@ return [
     "no_location" => "لا يوجد موقع محدد.",
     "continue" => 'استمر',
     "gallery" => 'صالة عرض',
+
+    // Pending screen
+    'pending_message_1' => 'الإعلان قيد عملية الموافقة',
+    'pending_message_2' => "تاريخ تحديث الإعلان",
+    'pending_message_3' => 'وقت الانتظار المقدر',
+    'pending_message_4' => 'سيتم إضافة الوقت المستغرق في عملية الموافقة إلى وقت تناول المنشطات.',
+    'pending_message_5' => 'لا يمكن إجراء معاملات من مركز الاتصال بخصوص الإعلان في عملية الموافقة.',
+    'hours' => 'ساعات'
 ];

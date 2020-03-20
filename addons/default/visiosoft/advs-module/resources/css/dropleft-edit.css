@@ -1,6 +1,6 @@
 .dropleft-edit {
     right: 0;
-    top: 50%;
+    top: 40%;
 }
 .dropleft-edit button {
     transform: rotate(-90deg) translate(0, -100%);

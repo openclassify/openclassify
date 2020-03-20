@@ -4,6 +4,10 @@ return [
     'auto_approve' => [
         'name' => 'Miratimi automatik',
     ],
+    'estimated_pending_time' => [
+        'name' => 'Koha e parashikuar e pritjes',
+        'instructions' => 'Në Orë',
+    ],
     'default_published_time' => [
         'name' => 'Koha e publikimit të paracaktuar',
     ],

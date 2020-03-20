@@ -27,4 +27,7 @@ return [
     'registered_phone' => 'Ky numër i telefonit është regjistruar tashmë.',
     'ajax_address_error' => 'Asnjë adresë ose jo e autorizuar për të parë.',
     'empty_password_sms_message' => 'Për shkak të çështjeve të sigurisë, ne ndryshuam fjalëkalimin tuaj! Fjalëkalimi juaj i ri është:',
+
+    // Forgot Password
+    'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!'
 ];

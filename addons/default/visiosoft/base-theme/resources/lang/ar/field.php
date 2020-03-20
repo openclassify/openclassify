@@ -30,4 +30,13 @@ return [
     'personal_registration_list_2' => 'أضف الإعلانات التي تهتم بها ، واتبع تغيرات الأسعار بعد إضافتها إلى مفضلاتك ، وإنشاء عمليات بحث مفضلة تلبي معاييرك ،',
     'personal_registration_list_3' => 'أرسل رسائل إلى مالكي الإعلانات على الموقع.',
     'register_information_note' => 'تؤخذ المعلومات على هذه الصفحة ل ' . env('APPLICATION_DOMAIN') . ' عضوية. يمكنك العثور على معلومات مفصلة حول حماية البيانات الشخصية هنا.',
+
+    // Register page
+    'phone_validation_error' => 'رقم الهاتف هذا قيد الاستخدام من قبل عضو آخر.',
+
+    // Forgot Password
+    'create_new_password' => 'إنشاء كلمة مرور جديدة',
+
+    // Login page
+    'or' => 'أو'
 ];

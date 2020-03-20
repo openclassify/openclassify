@@ -2,3 +2,15 @@
     background-color: #FFC106 !important;
     border-color: #ffc107 #ffc107 #ffc107;
 }
+
+/* Pending screen */
+.pending-screen {
+    background-color: #f2f2f2;
+    color: #b31901;
+}
+.pending-screen img {
+    height: 7em;
+}
+.pending-screen p {
+    font-weight: 500;
+}

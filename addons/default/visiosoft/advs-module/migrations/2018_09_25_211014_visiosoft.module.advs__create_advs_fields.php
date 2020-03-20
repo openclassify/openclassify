@@ -114,6 +114,11 @@ class VisiosoftModuleAdvsCreateAdvsFields extends Migration
         'order' => 'anomaly.field_type.integer',
         'price' => [
             'type' => 'visiosoft.field_type.decimal',
+            'config' => [
+                'decimal' => 2,
+                'separator' => '.',
+                'point' => ','
+            ],
         ],
         'currency' => [
             'type' => 'anomaly.field_type.select',

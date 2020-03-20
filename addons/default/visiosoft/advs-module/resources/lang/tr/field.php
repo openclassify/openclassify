@@ -123,6 +123,8 @@ return [
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
     'recommended' => 'Sizin için Önerilen İlanlar',
+    'filter' => 'filtre',
+    'sort' => 'Çeşit',
     'sort_by' => 'Sırala',
     'pick_option' => 'Bir seçenek seçin',
     'pick_ordering' => 'Sıralama Seç',
@@ -235,6 +237,7 @@ return [
         'name' => 'Tükendi',
     ],
     'edit_category' => 'Kategori Düzenle',
+    'set_category' => 'Kategoriyi Ayarla',
     'max' => [
         'name' => 'Maksimum',
     ],
@@ -262,4 +265,12 @@ return [
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
+
+    // Pending screen
+    'pending_message_1' => 'Reklam Onay Sürecinde',
+    'pending_message_2' => "Reklamın Güncelleme Tarihi",
+    'pending_message_3' => 'Tahmini Bekleme Süresi',
+    'pending_message_4' => 'Onay sürecinde geçirilen süre doping zamanına eklenecektir.',
+    'pending_message_5' => 'Onay sürecinde reklamla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
+    'hours' => 'saatler'
 ];
