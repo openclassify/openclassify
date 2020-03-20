@@ -151,29 +151,41 @@ class AdvsController extends PublicController
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         // Search by category slug
+        $categoryId = null;
         if ($category) {
             $categoryId = $this->category_repository->findBy('slug', $category);
-            if ($categoryId) {
-                $param['cat'] = $categoryId->id;
+            if (!$categoryId) {
+                $this->messages->error(trans('visiosoft.module.advs::message.category_not_exist'));
+                return redirect('/');
             }
-        } elseif (isset($param['cat']) && !empty($param['cat'])) {
-            $categoryId = $this->category_repository->find($param['cat']);
-            if ($categoryId) {
+            if (isset($param['cat'])) {
+                unset($param['cat']);
                 return redirect($this->fullLink(
                     $param,
                     route('adv_list_seo', [$categoryId->slug]),
                     array()
                 ));
-            } else {
+            }
+        } elseif (isset($param['cat']) && !empty($param['cat'])) {
+            $categoryId = $this->category_repository->find($param['cat']);
+            if (!$categoryId) {
                 $this->messages->error(trans('visiosoft.module.advs::message.category_not_exist'));
                 return redirect('/');
             }
+            unset($param['cat']);
+            return redirect($this->fullLink(
+                $param,
+                route('adv_list_seo', [$categoryId->slug]),
+                array()
+            ));
         }
 
         // Search by city slug
+        $cityId = null;
         if ($category) {
             if (is_null($city) && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
                 $cityId = $this->cityRepository->find($param['city'][0]);
+                unset($param['city']);
                 return redirect($this->fullLink(
                     $param,
                     route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
@@ -182,6 +194,7 @@ class AdvsController extends PublicController
             } elseif (isset($param['city']) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
                 $cityId = $this->cityRepository->find($param['city'][0]);
                 if ($city !== $cityId->slug) {
+                    unset($param['city']);
                     return redirect($this->fullLink(
                         $param,
                         route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
@@ -196,6 +209,7 @@ class AdvsController extends PublicController
                 ));
             } elseif ($city) {
                 if (isset($param['city'][0]) && empty($param['city'][0])) {
+                    unset($param['city']);
                     return redirect($this->fullLink(
                         $param,
                         route('adv_list_seo', [$categoryId->slug]),
@@ -203,14 +217,13 @@ class AdvsController extends PublicController
                     ));
                 } else {
                     $cityId = $this->cityRepository->findBy('slug', $city);
-                    $param['city'] = [$cityId->id];
                 }
             }
         }
 
 
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
-        $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters);
+        $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters, null, $categoryId, $cityId);
         $advs = $this->adv_repository->addAttributes($advs);
 
 
@@ -231,25 +244,23 @@ class AdvsController extends PublicController
         }
 
 
-        if (isset($param['cat']) and $param['cat'] != "") {
-            $cat = $param['cat'];
-            $seo_keywords = $this->category_model->getMeta_keywords($param['cat']);
-            $seo_description = $this->category_model->getMeta_description($param['cat']);
-            $seo_title = $this->category_model->getMeta_title($param['cat']);
+        if ($categoryId) {
+            $seo_keywords = $this->category_model->getMeta_keywords($categoryId->id);
+            $seo_description = $this->category_model->getMeta_description($categoryId->id);
+            $seo_title = $this->category_model->getMeta_title($categoryId->id);
 
             $this->template->set('meta_keywords', implode(',', $seo_keywords));
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_title', $seo_title);
 
-            $mainCats = $this->category_model->getMains($cat);
-            $current_cat = $this->category_model->getCat($cat);
+            $mainCats = $this->category_model->getMains($categoryId->id);
+            $current_cat = $this->category_model->getCat($categoryId->id);
             $mainCats[] = [
                 'id' => $current_cat->id,
                 'val' => $current_cat->name,
             ];
-            $subCats = $this->category_repository->getSubCatById($cat);
+            $subCats = $this->category_repository->getSubCatById($categoryId->id);
         } else {
-            $cat = null;
             $mainCats = $this->category_repository->mainCats();
         }
 
@@ -270,7 +281,8 @@ class AdvsController extends PublicController
         $viewType = $this->requestHttp->cookie('viewType');
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio');
+            'user', 'featured_advs', 'viewType', 'topfields', 'ranges', 'seenList', 'searchedCountry', 'radio',
+            'categoryId', 'cityId');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }

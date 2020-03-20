@@ -46,7 +46,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $this->model->orderBy('created_at', 'DESC')->where('advs_advs.id', $id)->first();
     }
 
-    public function searchAdvs($type, $param = null, $customParameters = null, $limit = null)
+    public function searchAdvs($type, $param = null, $customParameters = null, $limit = null, $category = null, $city = null)
     {
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
@@ -78,20 +78,21 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['country'])) {
             $query = $query->where('country_id', $param['country']);
         }
-        if (isset($param['city']) and !empty($param['city']) and !empty(array_filter($param['city']))) {
+        if ($city) {
+            $query = $query->where('city', $city->id);
+        } elseif (isset($param['city']) and !empty($param['city']) and !empty(array_filter($param['city']))) {
             $query = $query->whereIn('city', $param['city']);
         }
-        if (!empty($param['cat'])) {
+        if ($category) {
             $cat = new CategoryModel();
-            $cat_d = $cat->find($param['cat']);
-            if ($cat_d) {
-                if ($cat_d->parent_category_id == null) {
+            if ($category) {
+                if ($category->parent_category_id == null) {
                     $catLevel = 1;
                 } else {
-                    $catLevel = $cat->getCatLevel($param['cat']);
+                    $catLevel = $cat->getCatLevel($category->id);
                 }
                 $catLevel = "cat" . $catLevel;
-                $query = $query->where($catLevel, $param['cat']);
+                $query = $query->where($catLevel, $category->id);
             }
         }
         if (!empty($param['user'])) {
