@@ -152,7 +152,7 @@ class AdvsController extends PublicController
 
         // Search by category slug
         $categoryId = null;
-        if ($category) {
+        if ($category) { // Slug
             $categoryId = $this->category_repository->findBy('slug', $category);
             if (!$categoryId) {
                 $this->messages->error(trans('visiosoft.module.advs::message.category_not_exist'));
@@ -166,7 +166,7 @@ class AdvsController extends PublicController
                     array()
                 ));
             }
-        } elseif (isset($param['cat']) && !empty($param['cat'])) {
+        } elseif (isset($param['cat']) && !empty($param['cat'])) { // Only Param
             $categoryId = $this->category_repository->find($param['cat']);
             if (!$categoryId) {
                 $this->messages->error(trans('visiosoft.module.advs::message.category_not_exist'));
@@ -183,7 +183,14 @@ class AdvsController extends PublicController
         // Search by city slug
         $cityId = null;
         if ($category) {
-            if (is_null($city) && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
+            $isOneCity = isset($param['city'][0])
+                && !empty($param['city'][0])
+                && strpos($param['city'][0], ',') === false;
+            $isMultipleCity = isset($param['city'][0])
+                && !empty($param['city'][0])
+                && strpos($param['city'][0], ',') !== false;
+
+            if (is_null($city) && $isOneCity) { // Param and no slug
                 $cityId = $this->cityRepository->find($param['city'][0]);
                 unset($param['city']);
                 return redirect($this->fullLink(
@@ -191,7 +198,7 @@ class AdvsController extends PublicController
                     route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
                     array()
                 ));
-            } elseif (isset($param['city']) && !empty($param['city'][0]) && strpos($param['city'][0], ',') === false) {
+            } elseif ($isOneCity) { // Param and slug
                 $cityId = $this->cityRepository->find($param['city'][0]);
                 if ($city !== $cityId->slug) {
                     unset($param['city']);
@@ -201,31 +208,29 @@ class AdvsController extends PublicController
                         array()
                     ));
                 }
-            } elseif ($city && isset($param['city'][0]) && !empty($param['city'][0]) && strpos($param['city'][0], ',') !== false) {
+            } elseif ($city && $isMultipleCity) { // Slug and multiple param cities
                 return redirect($this->fullLink(
                     $param,
                     route('adv_list_seo', [$categoryId->slug]),
                     array()
                 ));
             } elseif ($city) {
-                if (isset($param['city'][0]) && empty($param['city'][0])) {
+                if (isset($param['city'][0]) && empty($param['city'][0])) { // Slug and empty param
                     unset($param['city']);
                     return redirect($this->fullLink(
                         $param,
                         route('adv_list_seo', [$categoryId->slug]),
                         array()
                     ));
-                } else {
+                } else { // Only slug
                     $cityId = $this->cityRepository->findBy('slug', $city);
                 }
             }
         }
 
-
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
         $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters, null, $categoryId, $cityId);
         $advs = $this->adv_repository->addAttributes($advs);
-
 
         if ($isActiveDopings and $param != null) {
             $featured_advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->listFeatures($advs);
