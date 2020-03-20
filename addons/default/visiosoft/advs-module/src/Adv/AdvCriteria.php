@@ -41,7 +41,7 @@ class AdvCriteria extends EntryCriteria
             ->where('status', '=', 'approved')
             ->where('slug', '!=', '')
             ->orderBy('publish_at', 'desc')
-            ->paginate($this->settings->value('visiosoft.theme.base::s-type-latest-limit'));
+            ->paginate($this->settings->value('streams::per_page'));
 
         $ads = $advModel->getLocationNames($latest_advs);
         foreach ($ads as $index => $ad) {
@@ -58,7 +58,7 @@ class AdvCriteria extends EntryCriteria
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', '=', 'approved')
             ->where('slug', '!=', '')
-            ->paginate($this->settings->value('visiosoft.theme.base::s-type-latest-limit'));
+            ->paginate($this->settings->value('streams::per_page'));
 
         $ads = $advModel->getLocationNames($latest_advs);
         foreach ($ads as $index => $ad) {
