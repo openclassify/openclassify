@@ -18,15 +18,23 @@
             <span class="float-left">{{ trans("visiosoft.module.location::field.city.name") }}</span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
-        {% set selected_cities = params.param['city'] %}
-        {% set selected_cities_name = [] %}
-        {% for selected_city in selected_cities[0]|split(',') %}
-            {% set selected_cities_name = selected_cities_name|merge([getCity(selected_city|trim(',')).name]) %}
-        {% endfor %}
+        {% set citySlug = null %}
+        {% set pathInfo = app.request.pathinfo|split('/') %}
+        {% if pathInfo|length is same as(4) %}
+            {% set citySlug = entries('location', 'cities').findBy('slug', pathInfo[3]) %}
+            {% set selected_cities_name = [getCity(citySlug.id).name] %}
+        {% else %}
+            {% set selected_cities = params.param['city'] %}
+            {% set selected_cities_name = [] %}
+            {% for selected_city in selected_cities[0]|split(',') %}
+                {% set selected_cities_name = selected_cities_name|merge([getCity(selected_city|trim(',')).name]) %}
+            {% endfor %}
+        {% endif %}
         <div class="text-muted selected-city">
             <small>{{ selected_cities_name|join(',') }}</small>
         </div>
-        <input name="city[]" value="{{ params.param['city']|join(',') }}" type="hidden">
+        <input name="city[]" type="hidden"
+               value="{% if citySlug %}{{ citySlug.id }}{% else %}{{ params.param['city']|join(',') }}{% endif %}">
     </div>
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 filter-district-btn" data-toggle="modal"

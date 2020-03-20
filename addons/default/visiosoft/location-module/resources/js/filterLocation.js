@@ -37,7 +37,7 @@ $('.filter-city-btn').on('click', function () {
     var countries_value = $('input[name="country"]').val();
     var selected__city_request = $('input[name="city[]"]').val();
     if (cities == undefined || $(this).attr('data-parent') != countries_value) {
-        $(this).attr('data-parent', countries_value)
+        $(this).attr('data-parent', countries_value);
         var promiseForCities = new Promise(function (resolve, reject) {
             locationCrud('id=' + countries_value, '/ajax/getCities', 'POST', beforeSend(), function (callback) {
                 cities = callback;
@@ -45,11 +45,11 @@ $('.filter-city-btn').on('click', function () {
                 $.each(cities, function (index, value) {
                     $('.filter-location-modal .cities').append(item('city', value.id, value.name));
                 });
-                if (cities == "")
+                if (cities == "") {
                     $('.filter-location-modal .cities').html(null_msg);
-                else if (selected__city_request != "") {
+                } else if (selected__city_request != "") {
                     $.each(selected__city_request.split(','), function (index, value) {
-                        $(".filter-location-body .cities li[data-id='" + value + "'] input[type='checkbox']").prop('checked', true);
+                        $(".filter-location-body .cities li[data-id='" + value.trim() + "'] input[type='checkbox']").prop('checked', true);
                     });
                 }
                 resolve();
