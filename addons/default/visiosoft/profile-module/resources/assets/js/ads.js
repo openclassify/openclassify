@@ -81,8 +81,8 @@ function crud(params, url, type, callback) {
     });
 }
 
-function getMyAds(type) {
-    crud({'type': type}, '/ajax/getAds', 'GET', function (callback) {
+function getMyAdvs(type) {
+    crud({'type': type}, '/ajax/getAdvs', 'GET', function (callback) {
         ads_type = type;
         current_page = 1;
         objJson = callback.content;
@@ -90,11 +90,11 @@ function getMyAds(type) {
     })
 }
 
-$('.profile-ads-tab a').on('click', function () {
-    getMyAds($(this).attr('data-type'))
+$('.profile-advs-tab a').on('click', function () {
+    getMyAdvs($(this).attr('data-type'))
 });
 
-getMyAds('approved');
+getMyAdvs('approved');
 
 
 function addAdsRow(id, href, image, name, price, city, country, cat1, cat2, status) {
