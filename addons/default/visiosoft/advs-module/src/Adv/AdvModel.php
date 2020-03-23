@@ -116,9 +116,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
     }
 
-    public function foreignCurrency($currency, $price, $curencies, $isUpdate, $settings)
+    public function foreignCurrency($currency, $price, $isUpdate, $settings)
     {
-        $currencies = explode(',', $curencies);
+        $currencies = setting_value('visiosoft.module.advs::enabled_currencies');
         $foreign_currency = array();
 
         $client = new Client();
@@ -128,18 +128,19 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                 $foreign_currency[$currency] = (int)$price;
             } else {
                 try {
-
                     $url = $currency . "_" . $currencyIn;
-                    $freecurrencykey = $settings->value('visiosoft.module.advs::free_currencyconverterapi_key');
-                    $response = $client->get('http://free.currencyconverterapi.com/api/v6/convert?q=' . $url . '&compact=y&apiKey=' . $freecurrencykey);
-
-                } catch (RequestException $e) {
-
-                    if ($e->getResponse()->getStatusCode() == '200') {
-                        $response = \GuzzleHttp\json_decode($e->getResponse()->getBody()->getContents());
-                        $rate = $response->$url->val;
-                        $foreign_currency[$currencyIn] = $price * $rate;
+                    $freeCurrencyKey = $settings->value('visiosoft.module.advs::free_currencyconverterapi_key');
+                    $response = $client->get('http://free.currencyconverterapi.com/api/v6/convert?q='
+                        . $url . '&compact=y&apiKey=' . $freeCurrencyKey);
+                    if ($response->getStatusCode() == '200') {
+                        $response = (array)\GuzzleHttp\json_decode($response->getBody()->getContents());
+                        if (!empty($response)) {
+                            $rate = $response[$url]->val;
+                            $foreign_currency[$currencyIn] = $price * $rate;
+                        }
                     }
+                } catch (RequestException $e) {
+                    $this->messages->error($e->getMessage());
                 }
             }
         }
@@ -150,7 +151,6 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         }
         $adv->foreign_currencies = json_encode($foreign_currency);
         $adv->save();
-
     }
 
     public function popularAdvs()

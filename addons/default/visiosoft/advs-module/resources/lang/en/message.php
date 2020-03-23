@@ -28,4 +28,5 @@ return [
     'pending_ad_status' => 'Your ad is pending approval by the Editor.',
     'extended' => ':number ad(s) has been extended successfully.',
     'category_not_exist' => 'This category does not exist anymore!',
+    'currency_converted' => 'Currency Converted Successfully.',
 ];

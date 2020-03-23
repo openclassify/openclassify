@@ -613,17 +613,21 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
 
-            $foreign_currencies = new AdvModel();
-            $isUpdate = $request->update_id;
-            $foreign_currencies->foreignCurrency($request->currency, $request->price, $request->currencies, $isUpdate, $settings);
-
             if ($adv->slug == "") {
                 $events->dispatch(new CreateAd($request->update_id, $settings));//Create Notify
             } else {
                 $events->dispatch(new EditAd($request->update_id, $settings, $adv));//Update Notify
             }
 
-            return redirect(route('advs_preview', [$request->update_id]));
+            if ($adv->slug == "") { // Only preview when new
+                return redirect(route('advs_preview', [$request->update_id]));
+            } else {
+                if ($isActiveDopings) {
+                    return redirect(route('add_doping', [$request->update_id]));
+                } else {
+                    return redirect('/advs/adv/' . $request->update_id);
+                }
+            }
         }
 
         /* New Create Adv */

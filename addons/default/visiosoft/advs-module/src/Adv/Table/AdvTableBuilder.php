@@ -77,6 +77,10 @@ class AdvTableBuilder extends TableBuilder
             'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\Extend::class,
             'class' => 'btn btn-info'
         ],
+        'convert_currency' => [
+            'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\ConvertCurrency::class,
+            'class' => 'btn btn-warning'
+        ],
     ];
 
     /**
