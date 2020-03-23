@@ -30,7 +30,6 @@ class ForgotPassFormBuilder extends FormBuilder
      */
     protected $options = [
         'redirect'        => '/',
-        'success_message' => 'anomaly.module.users::message.confirm_reset_password',
     ];
 
     public function getUser()
