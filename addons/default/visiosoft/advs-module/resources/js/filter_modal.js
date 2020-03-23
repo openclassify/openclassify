@@ -42,6 +42,7 @@ var promiseForCategory = new Promise(function (resolve) {
         })
         level++;
     }
+    console.log(all_categories)
     resolve(all_categories);
 });
 
@@ -59,6 +60,24 @@ promiseForCategory.then(function (categories_list) {
             $('.' + index).append("<option value='" + value2.id + "'" + selected + ">" + value2.name + "</option>");
         });
     });
+    level++;
+    crud({
+        'level': level,
+        "cat": id_list['cat' + Object.keys(id_list).length]
+    }, '/class/ajaxCategory', 'POST', function (callback) {
+
+        if(callback.length > 0)
+        {
+            $('.category-row').append(CategoryField('cat'+level, level));
+            $.each(callback, function (index2, value2) {
+                selected = "";
+
+                $('.' + 'cat'+level).append("<option value='" + value2.id + "'" + selected + ">" + value2.name + "</option>");
+            });
+        }
+
+    })
+
 })
 
 
