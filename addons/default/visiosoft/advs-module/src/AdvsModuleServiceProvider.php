@@ -125,6 +125,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'adv_detail_seo',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
         ],
+        'advs/preview/{id}' => [
+            'as' => 'advs_preview',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@preview'
+        ],
         'advs/map?country={country}&city[]={city}&district={districts}' => [
             'as' => 'visiosoft.module.advs::show_ad_map_location',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map'
@@ -151,7 +155,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'advs/my_advs' => 'Visiosoft\AdvsModule\Http\Controller\advsController@myAdvs',
         'advs/my_advs/{params}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@myAdvs',
-        'advs/edit_advs/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@edit',
+        'advs/edit_advs/{id}' => [
+            'as' => 'visiosoft.module.advs::edit_adv',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@edit',
+        ],
         'advs/status/{id},{type}' => [
             'as' => 'visiosoft.module.advs::status',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@statusAds'

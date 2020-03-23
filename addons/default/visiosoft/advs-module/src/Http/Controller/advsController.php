@@ -387,6 +387,38 @@ class AdvsController extends PublicController
 
     }
 
+    public function preview($id)
+    {
+        $categories = array();
+        $categories_id = array();
+
+        $adv = $this->adv_repository->getListItemAdv($id);
+
+        for ($i = 1; $i <= 10; $i++) {
+            $cat = "cat" . $i;
+            if ($adv->$cat != null) {
+                $item = $this->category_repository->getItem($adv->$cat);
+                if (!is_null($item)) {
+                    $categories['cat' . $i] = [
+                        'name' => $item->name,
+                        'id' => $item->id
+                    ];
+                    $categories_id[] = $item->id;
+                }
+
+            }
+        }
+
+        if ($this->adv_model->is_enabled('customfields')) {
+            $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
+        }
+
+        $isActiveDopings = $this->adv_model->is_enabled('dopings');
+
+        return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
+            compact('adv', 'categories', 'features', 'isActiveDopings'));
+    }
+
     public function getLocations()
     {
         $table = $this->requestHttp->table;
@@ -591,11 +623,7 @@ class AdvsController extends PublicController
                 $events->dispatch(new EditAd($request->update_id, $settings, $adv));//Update Notify
             }
 
-            if ($isActiveDopings) {
-                return redirect(route('add_doping', [$request->update_id]));
-            } else {
-                return redirect('/advs/adv/' . $request->update_id);
-            }
+            return redirect(route('advs_preview', [$request->update_id]));
         }
 
         /* New Create Adv */
