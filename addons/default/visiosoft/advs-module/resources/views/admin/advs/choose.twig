@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('module::message.choose_user') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    {% include "streams::modals/filter" %}
+    
+    {% if not users.isEmpty() %}
+        <ul class="nav nav-pills nav-stacked">
+            {% for user in users %}
+                <li class="nav-item">
+                    <a href="{{ url_to('admin/advs-users/choose/' ~ advId ~ '?user_id=' ~ user.id) }}" class="nav-link">
+                        <strong>{{ user.first_name }} {{ user.last_name }}</strong>
+                        <br>
+                        <small>{{ user.email }}</small>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ trans('streams::message.no_results') }}
+    {% endif %}
+</div>

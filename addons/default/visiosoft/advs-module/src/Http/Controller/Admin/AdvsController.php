@@ -6,6 +6,7 @@ use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
+use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
@@ -71,6 +72,11 @@ class AdvsController extends AdminController
             ],
             'edit' => [
                 'href' => '/advs/edit_advs/{entry.id}',
+            ],
+            'change_owner' => [
+                'data-toggle' => 'modal',
+                'data-target' => '#modal',
+                'href'        => 'admin/advs-users/choose/{entry.id}',
             ]
         ]);
 
@@ -165,6 +171,17 @@ class AdvsController extends AdminController
         );
 
         return $table->render();
+    }
+
+    public function choose($advId, Request $request, UserRepositoryInterface $users)
+    {
+        if (empty($request->all())) {
+            return $this->view->make('module::admin/advs/choose', ['users' => $users->all(), 'advId' => $advId]);
+        } else {
+            $this->model->newQuery()->find($advId)->update(['created_by_id' => $request->user_id]);
+            $this->messages->success(trans('module::message.owner_updated_successfully'));
+            return redirect()->back();
+        }
     }
 
     /**

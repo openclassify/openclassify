@@ -29,4 +29,6 @@ return [
     'extended' => ':number ad(s) has been extended successfully.',
     'category_not_exist' => 'This category does not exist anymore!',
     'currency_converted' => 'Currency Converted Successfully.',
+    'choose_user' => 'Choose a user',
+    'owner_updated_successfully' => 'The Owner Has Been Updated Successfully!',
 ];
