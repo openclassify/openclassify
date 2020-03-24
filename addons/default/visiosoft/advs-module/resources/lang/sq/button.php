@@ -13,6 +13,7 @@ return [
     'decline' => 'rënie',
     'extend' => 'shpreh',
     'extend_all' => 'Zgjeroni të gjitha',
+    'convert_currency' => 'Convert Currency',
     'categories' => 'Kategoritë',
     'sub_category' => 'Nënkategoritë',
     'add_sub_category' => 'Shtoni Nën Kategorinë',
