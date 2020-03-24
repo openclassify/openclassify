@@ -27,6 +27,7 @@ return [
     'sub_village' => 'Alt Köy',
     'general_settings' => 'Genel Ayarlar',
     'save_category' => 'Kategoriyi Kaydet',
+    'change_owner' => 'Change Owner',
     'update_category' => [
         'name' => 'Kategori Güncelle'
     ],
