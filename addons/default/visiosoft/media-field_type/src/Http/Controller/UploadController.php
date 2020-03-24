@@ -118,8 +118,11 @@ class UploadController extends AdminController
         $path = explode('/', $parsed['path']);
         $filename = end($path);
 
-        $isImageUser = FilesFilesEntryModel::query()->where('created_by_id', Auth::id())
-            ->where('name', $filename)->first();
+        $isImageUser = FilesFilesEntryModel::query();
+        if (!auth()->user()->hasRole('admin')) {
+            $isImageUser = $isImageUser->where('created_by_id', Auth::id());
+        }
+        $isImageUser = $isImageUser->where('name', $filename)->first();
         if ($isImageUser != null) {
             WaterMark::make(Storage::path('images/' . $filename))->rotate(90)
                 ->save(app_storage_path() . '/files-module/local/images/' . $filename);
