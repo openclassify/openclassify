@@ -29,4 +29,6 @@ return [
     'extended' => ': تم تمديد عدد الإعلانات بنجاح.',
     'category_not_exist' => 'هذه الفئة لم تعد موجودة!',
     'currency_converted' => 'Currency Converted Successfully.',
+    'choose_user' => 'Choose a user',
+    'owner_updated_successfully' => 'The Owner Has Been Updated Successfully!',
 ];
