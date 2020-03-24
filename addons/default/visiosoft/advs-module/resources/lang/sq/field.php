@@ -270,5 +270,11 @@ return [
     'pending_message_3' => 'Koha e parashikuar e pritjes',
     'pending_message_4' => 'Koha e kaluar në procesin e miratimit do t\'i shtohet kohës së dopingut.',
     'pending_message_5' => 'Asnjë transaksion nuk mund të bëhet nga qendra e thirrjeve në lidhje me reklamën në procesin e miratimit.',
-    'hours' => 'orë'
+    'hours' => 'orë',
+
+    // Preview page
+    'preview_text' => [
+        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
+        'part_2' => 'If not, click the "Edit" button.',
+    ]
 ];
