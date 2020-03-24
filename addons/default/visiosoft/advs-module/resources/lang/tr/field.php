@@ -272,5 +272,11 @@ return [
     'pending_message_3' => 'Tahmini Bekleme Süresi',
     'pending_message_4' => 'Onay sürecinde geçirilen süre doping zamanına eklenecektir.',
     'pending_message_5' => 'Onay sürecinde reklamla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
-    'hours' => 'saatler'
+    'hours' => 'saatler',
+
+    // Preview page
+    'preview_text' => [
+        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
+        'part_2' => 'If not, click the "Edit" button.',
+    ]
 ];
