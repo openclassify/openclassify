@@ -26,6 +26,8 @@ class ProfileFormHandler
 
         if ($builder->getPostValue('file') != null) {
             $parameters['file_id'] = $builder->getPostValue('file');
+        } elseif (empty($builder->getPostValue('file'))) {
+            $parameters['file_id'] = null;
         }
 
         $userModel->newQuery()->where('id', Auth::id())->update($parameters);

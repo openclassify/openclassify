@@ -3,8 +3,3 @@
     border-color: #343a40 #343a40 #343a40;
     color: white!important;
 }
-
-/* Hide profile upload table */
-.selected.file-rows-table table td:first-child ~ td {
-    display: none;
-}
