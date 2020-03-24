@@ -28,4 +28,5 @@ return [
     'pending_ad_status' => 'إعلانك في انتظار موافقة المحرر.',
     'extended' => ': تم تمديد عدد الإعلانات بنجاح.',
     'category_not_exist' => 'هذه الفئة لم تعد موجودة!',
+    'currency_converted' => 'Currency Converted Successfully.',
 ];
