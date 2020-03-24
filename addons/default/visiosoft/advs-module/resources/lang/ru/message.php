@@ -30,4 +30,6 @@ return [
     'extended' => ': количество объявлений было успешно продлено.',
     'category_not_exist' => 'Эта категория больше не существует!',
     'currency_converted' => 'Currency Converted Successfully.',
+    'choose_user' => 'Choose a user',
+    'owner_updated_successfully' => 'The Owner Has Been Updated Successfully!',
 ];
