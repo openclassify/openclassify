@@ -13,6 +13,7 @@ return [
     'decline' => 'انخفاض',
     'extend' => 'تمديد',
     'extend_all' => 'تمديد الكل',
+    'convert_currency' => 'Convert Currency',
     'categories' => 'التصنيفات',
     'sub_category' => 'الفئات الفرعية',
     'add_sub_category' => 'إضافة فئة فرعية',
