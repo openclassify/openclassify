@@ -27,6 +27,7 @@ return [
     'sub_village' => 'Sub Village',
     'general_settings' => 'общие настройки',
     'save_category' => 'Сохранить категорию',
+    'change_owner' => 'Change Owner',
     'update_category' => [
         'name' => 'Обновить категорию'
     ],
