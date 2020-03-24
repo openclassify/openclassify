@@ -13,6 +13,7 @@ return [
     'decline' => 'Reddet',
     'extend' => 'Uzat',
     'extend_all' => 'Tümünün Tarihini Güncelle',
+    'convert_currency' => 'Convert Currency',
     'categories' => 'Kategoriler',
     'sub_category' => 'Alt Kategoriler',
     'add_sub_category' => 'Alt Kategori Ekle',
