@@ -27,6 +27,7 @@ return [
     'sub_village' => 'قرية فرعية',
     'general_settings' => 'الاعدادات العامة',
     'save_category' => 'حفظ الفئة',
+    'change_owner' => 'Change Owner',
     'update_category' => [
         'name' => 'تحديث الفئة'
     ],
