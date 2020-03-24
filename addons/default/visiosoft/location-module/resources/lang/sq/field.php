@@ -8,7 +8,7 @@ return [
         'name' => 'goditje e fortë'
     ],
     'city' => [
-        'name' => 'qytet'
+        'name' => 'Qytet'
     ],
     'country' => [
         'name' => 'vend'
