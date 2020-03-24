@@ -88,6 +88,8 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@categories',
         ],
         'admin/advs' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
+        // User choose modal
+        'admin/advs-users/choose/{advId}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@choose',
         'admin/advs/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
         'admin/advs/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit',
         'admin/advs/list' => [
@@ -212,7 +214,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'ajax::getCats',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
         ],
-
 
         'ajax/getAdvs' => [
             'as' => 'ajax::getAds',

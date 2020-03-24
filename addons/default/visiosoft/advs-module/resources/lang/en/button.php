@@ -27,6 +27,7 @@ return [
     'sub_village' => 'Sub Village',
     'general_settings' => 'General Settings',
     'save_category' => 'Save Category',
+    'change_owner' => 'Change Owner',
     'update_category' => [
         'name' => 'Update Category'
     ],
