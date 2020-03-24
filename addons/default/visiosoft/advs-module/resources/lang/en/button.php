@@ -13,6 +13,7 @@ return [
     'decline' => 'Decline',
     'extend' => 'Extend',
     'extend_all' => 'Extend All',
+    'convert_currency' => 'Convert Currency',
     'categories' => 'Categories',
     'sub_category' => 'Sub Categories',
     'add_sub_category' => 'Add Sub Category',

@@ -1,9 +1,4 @@
-{% set catSlug = null %}
-{% set pathInfo = app.request.pathinfo|split('/') %}
-{% if pathInfo[1] == 'c' %}
-    {% set catSlug = pathInfo[2] %}
-{% endif %}
-{% if catSlug %}
+{% if params.category %}
     {% for category_breadcrumbs in params.mainCats %}
         <li class="breadcrumb-item">
             <a href="{{ url_route('visiosoft.module.advs::list_cat', [category_breadcrumbs['id']]) }}"

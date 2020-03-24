@@ -1,0 +1,33 @@
+{% if setting_value('visiosoft.theme.base::breadcrumbs') %}
+    <!-- breadcrumb -->
+    {% include "visiosoft.module.advs::ad-detail/partials/breadcrumb" %}
+    <!-- breadcrumb -->
+{% endif %}
+<h2 class="title">
+    {{ adv.title }}
+    {{ addBlock('ad-detail/title/action',{'adv_id':adv.id})|raw }}
+</h2>
+
+<!--detail-ad -->
+<div class="section slider mb-4">
+    <div class="row">
+        {% include "visiosoft.module.advs::ad-detail/partials/slider" %}
+        <div class="col-md-5">
+            {% if setting_value('visiosoft.theme.base::ad_details') %}
+                {% include "visiosoft.module.advs::ad-detail/partials/detail" %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+<!--detail-ad -->
+
+{% if setting_value('visiosoft.theme.base::ad_details_tab') %}
+
+    {% if blocks('ad-item-content-block-area') is null %}
+        {% include "visiosoft.module.advs::ad-detail/partials/content" %}
+    {% else %}
+        {{ blocks('ad-item-content-block-area') }}
+    {% endif %}
+
+    {{ addBlock('ad-detail/widget', {'price': adv.price, 'id': adv.id})|raw }}
+{% endif %}

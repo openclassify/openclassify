@@ -1,0 +1,41 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    <div class="pt-5">
+        <p class="preview-paragraph">
+            {{ trans('visiosoft.module.advs::field.preview_text.part_1') }}
+            <br>
+            {{ trans('visiosoft.module.advs::field.preview_text.part_2') }}
+        </p>
+    </div>
+    <div class="preview-actions text-center">
+        {% if isActiveDopings %}
+            {% set continueLink = url_route('add_doping', [adv.id]) %}
+        {% else %}
+            {% set continueLink = url_route('visiosoft.module.advs::edit_adv', [adv.id]) %}
+        {% endif %}
+        <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
+           class="btn preview-edit shadow-sm border">
+            {{ trans('visiosoft.module.advs::field.edit') }}
+        </a>
+        <a href="{{ continueLink }}" class="btn preview-continue shadow-sm ml-4">
+            {{ trans('visiosoft.module.advs::field.continue') }}
+        </a>
+    </div>
+    <div class="preview-wrapper position-relative">
+        {%  include "visiosoft.module.advs::new-ad/preview/partials/preview-window" %}
+        <div class="preview-overlay position-absolute"></div>
+    </div>
+    <div class="preview-actions text-center">
+        <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}" class="btn preview-edit shadow-sm border">
+            {{ trans('visiosoft.module.advs::field.edit') }}
+        </a>
+        <a href="{{ continueLink }}" class="btn preview-continue shadow-sm ml-4">
+            {{ trans('visiosoft.module.advs::field.continue') }}
+        </a>
+    </div>
+
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/detail.css") }}
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/preview.css") }}
+
+{% endblock %}

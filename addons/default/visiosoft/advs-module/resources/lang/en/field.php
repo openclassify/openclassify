@@ -270,5 +270,11 @@ return [
     'pending_message_3' => 'Estimated Waiting Time',
     'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
     'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
-    'hours' => 'hours'
+    'hours' => 'hours',
+
+    // Preview page
+    'preview_text' => [
+        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
+        'part_2' => 'If not, click the "Edit" button.',
+    ]
 ];

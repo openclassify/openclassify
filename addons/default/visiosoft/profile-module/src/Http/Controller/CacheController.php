@@ -1,15 +1,18 @@
 <?php namespace Visiosoft\ProfileModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
-use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
-use Illuminate\Http\Request;
+use Visiosoft\AddblockExtension\Command\addBlock;
 
 class CacheController extends PublicController
 {
-    public function getUserInfo(Request $request, UserRepositoryInterface $userRepository)
+    public function getUserInfo()
     {
-        $user = $userRepository->find($request->userId);
+        $user = auth()->user();
+        $user = $user ? $user->first_name . ' ' . $user->last_name : $user;
 
-        return ['userName' => $user->first_name . ' ' . $user->last_name];
+        $getAddBlockHtml = new addBlock('navigation/dropdown', []);
+        $addBlockHtml = $getAddBlockHtml->handle();
+
+        return ['userName' => $user, 'addBlockHtml' => $addBlockHtml];
     }
 }

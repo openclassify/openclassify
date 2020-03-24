@@ -387,6 +387,38 @@ class AdvsController extends PublicController
 
     }
 
+    public function preview($id)
+    {
+        $categories = array();
+        $categories_id = array();
+
+        $adv = $this->adv_repository->getListItemAdv($id);
+
+        for ($i = 1; $i <= 10; $i++) {
+            $cat = "cat" . $i;
+            if ($adv->$cat != null) {
+                $item = $this->category_repository->getItem($adv->$cat);
+                if (!is_null($item)) {
+                    $categories['cat' . $i] = [
+                        'name' => $item->name,
+                        'id' => $item->id
+                    ];
+                    $categories_id[] = $item->id;
+                }
+
+            }
+        }
+
+        if ($this->adv_model->is_enabled('customfields')) {
+            $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
+        }
+
+        $isActiveDopings = $this->adv_model->is_enabled('dopings');
+
+        return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
+            compact('adv', 'categories', 'features', 'isActiveDopings'));
+    }
+
     public function getLocations()
     {
         $table = $this->requestHttp->table;
@@ -581,20 +613,20 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
 
-            $foreign_currencies = new AdvModel();
-            $isUpdate = $request->update_id;
-            $foreign_currencies->foreignCurrency($request->currency, $request->price, $request->currencies, $isUpdate, $settings);
-
             if ($adv->slug == "") {
                 $events->dispatch(new CreateAd($request->update_id, $settings));//Create Notify
             } else {
                 $events->dispatch(new EditAd($request->update_id, $settings, $adv));//Update Notify
             }
 
-            if ($isActiveDopings) {
-                return redirect(route('add_doping', [$request->update_id]));
+            if ($adv->slug == "") { // Only preview when new
+                return redirect(route('advs_preview', [$request->update_id]));
             } else {
-                return redirect('/advs/adv/' . $request->update_id);
+                if ($isActiveDopings) {
+                    return redirect(route('add_doping', [$request->update_id]));
+                } else {
+                    return redirect('/advs/adv/' . $request->update_id);
+                }
             }
         }
 
