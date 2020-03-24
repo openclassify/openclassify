@@ -13,6 +13,7 @@ return [
     'decline' => 'снижение',
     'extend' => 'простираться',
     'extend_all' => 'Расширить все',
+    'convert_currency' => 'Convert Currency',
     'categories' => 'категории',
     'sub_category' => 'Подкатегории',
     'add_sub_category' => 'Добавить подкатегорию',
