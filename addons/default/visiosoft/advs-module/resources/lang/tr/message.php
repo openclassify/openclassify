@@ -28,4 +28,5 @@ return [
     'pending_ad_status' => 'İlanınız Editör tarafından onay beklemektedir.',
     'extended' => ':number ilan süresi uzatıldı.',
     'category_not_exist' => 'Bu kategori artık mevcut değil!',
+    'currency_converted' => 'Currency Converted Successfully.',
 ];
