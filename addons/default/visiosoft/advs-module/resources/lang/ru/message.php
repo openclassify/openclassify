@@ -29,4 +29,5 @@ return [
     'pending_ad_status' => 'Ваше объявление ожидает одобрения редактором.',
     'extended' => ': количество объявлений было успешно продлено.',
     'category_not_exist' => 'Эта категория больше не существует!',
+    'currency_converted' => 'Currency Converted Successfully.',
 ];
