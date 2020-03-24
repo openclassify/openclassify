@@ -29,4 +29,6 @@ return [
     'extended' => ':number ilan süresi uzatıldı.',
     'category_not_exist' => 'Bu kategori artık mevcut değil!',
     'currency_converted' => 'Currency Converted Successfully.',
+    'choose_user' => 'Choose a user',
+    'owner_updated_successfully' => 'The Owner Has Been Updated Successfully!',
 ];
