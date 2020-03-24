@@ -27,6 +27,7 @@ return [
     'sub_village' => 'Nën fshat',
     'general_settings' => 'Cilësimet e përgjithshme',
     'save_category' => 'Ruaj kategorinë',
+    'change_owner' => 'Change Owner',
     'update_category' => [
         'name' => 'Kategoria e azhurnuar'
     ],
