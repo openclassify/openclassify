@@ -103,14 +103,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'as' => 'profile::profile',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@home'
         ],
-
-        /* Register */
-        'register/ajax' => [
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@registerAjax',
-            'middleware' => [
-                \Barryvdh\Cors\HandleCors::class,
-            ]
-        ],
         'ajax/phone-validation' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@phoneValidation',
 
         /* Login */
