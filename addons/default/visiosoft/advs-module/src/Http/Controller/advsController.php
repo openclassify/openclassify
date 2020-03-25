@@ -12,10 +12,8 @@ use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Facades\DB;
 use Visiosoft\LocationModule\City\CityRepository;
 use function PMA\Util\get;
-use Sunra\PhpSimple\HtmlDomParser;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreateAd;
@@ -26,28 +24,20 @@ use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CommentsModule\Comment\CommentModel;
-use Visiosoft\DopingsModule\Doping\DopingModel;
 use Visiosoft\LocationModule\City\CityModel;
-use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\AlgoliatestModule\Http\Controller\Admin\IndexController;
 use Visiosoft\CloudinaryModule\Video\VideoModel;
-use Visiosoft\CustomfieldsModule\CustomField\CustomFieldModel;
-use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
 use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
 use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
-use Anomaly\SelectFieldType\SelectFieldType;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Visiosoft\PackagesModule\Package\PackageModel;
-
-use Anomaly\Streams\Platform\Model\Customfields\CustomfieldsCustomFieldsEntryModel;
-use Anomaly\Streams\Platform\Model\Customfields\CustomfieldsCustomFieldAdvsEntryModel;
 
 use Illuminate\Contracts\Events\Dispatcher;
 use Visiosoft\QrcontactModule\Qr\QrModel;
@@ -377,7 +367,16 @@ class AdvsController extends PublicController
         $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
         $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
         $this->template->set('meta_title', $adv->name . "|" . end($categories)['name']);
-        $this->template->set('meta_image', $adv->cover_photo);
+        if (substr($adv->cover_photo, 0, 4 ) === "http") {
+            $coverPhoto = $adv->cover_photo;
+        } else {
+            if (substr($adv->cover_photo, 0, 1 ) === "/") {
+                $coverPhoto = \Illuminate\Support\Facades\Request::root() . $adv->cover_photo;
+            } else {
+                $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
+            }
+        }
+        $this->template->set('meta_image', $coverPhoto);
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
             return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'comments', 'qrSRC'));
@@ -531,7 +530,6 @@ class AdvsController extends PublicController
             redirect('/login?redirect=' . url()->current())->send();
         }
         $messages->pull('error');
-        $isActiveDopings = $advModel->is_enabled('dopings');
         if ($request->action == "update") {
             $error = $form->build($request->update_id)->validate()->getFormErrors()->getMessages();
             if (!empty($error)) {
@@ -619,15 +617,7 @@ class AdvsController extends PublicController
                 $events->dispatch(new EditAd($request->update_id, $settings, $adv));//Update Notify
             }
 
-            if ($adv->slug == "") { // Only preview when new
-                return redirect(route('advs_preview', [$request->update_id]));
-            } else {
-                if ($isActiveDopings) {
-                    return redirect(route('add_doping', [$request->update_id]));
-                } else {
-                    return redirect('/advs/adv/' . $request->update_id);
-                }
-            }
+            return redirect(route('advs_preview', [$request->update_id]));
         }
 
         /* New Create Adv */
