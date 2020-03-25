@@ -12,5 +12,5 @@
     <meta name="twitter:site" content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}">
     <meta name="twitter:title" content="{{ template.get('og_title', trans(template.meta_title)) }}">
     <meta name="twitter:description" content="{{ template.get('og_description', trans(template.meta_description)) }}">
-    <meta name="twitter:image" content="{{ template.get('og_image', trans(template.meta_image)) }}">
+    <meta name="twitter:image" content="{{ template.get('og_image', trans(template.meta_image))|url_encode }}">
 {% endblock %}
