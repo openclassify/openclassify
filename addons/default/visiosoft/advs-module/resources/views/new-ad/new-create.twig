@@ -59,10 +59,13 @@
                                         {{ form.fields.price.label|raw }}
                                         <span class="required">*</span>
                                     </label>
-                                    <div class="col-sm-4 col-xs-6">
+                                    <div class="col-sm-4 col-xs-6 priceHidden d-none">
                                         {{ form.fields.price.setAttributes({
-                                            'required' :true,
+                                            'required' :true
                                         }).input|raw }}
+                                    </div>
+                                    <div class="col-sm-4 col-xs-6">
+                                        <input class="form-control priceField" value="{{ form.fields.price.value }}">
                                     </div>
                                     <div class="col-sm-3 col-xs-6">
                                         {{ form.fields.currency.setAttributes({

@@ -185,3 +185,23 @@ $(document).ready(function () {
         }
     });
 });
+
+$(document).ready(function () {
+    $(".priceField").inputmask('currency', {
+        rightAlign: true,
+        prefix: "",
+        'groupSeparator': '.',
+        'autoGroup': true,
+        'digits': 2,
+        'radixPoint': ",",
+        'digitsOptional': false,
+        'allowMinus': false,
+        'placeholder': '0,00'
+
+    });
+
+    $(".priceField").on('change',function () {
+        var price = parseFloat($(".priceField").val().replace('.','').replace(',','.'));
+        $('.priceHidden').find('input').val(price);
+    })
+});
