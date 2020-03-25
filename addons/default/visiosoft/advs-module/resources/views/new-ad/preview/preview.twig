@@ -12,7 +12,7 @@
         {% if isActiveDopings %}
             {% set continueLink = url_route('add_doping', [adv.id]) %}
         {% else %}
-            {% set continueLink = url_route('visiosoft.module.advs::edit_adv', [adv.id]) %}
+            {% set continueLink = url_route('adv_detail_seo', [adv.slug, adv.id]) %}
         {% endif %}
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
            class="btn preview-edit shadow-sm border">
