@@ -24,4 +24,6 @@
     var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
     var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
 </script>
+{{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/phone.js") }}
+
 {{ asset_add("scripts.js","visiosoft.module.profile::assets/js/location.js") }}
