@@ -147,3 +147,6 @@ $(document).on('ready', function () {
         }, 50);
     }
 });
+
+
+phoneMask("input[name='gsm_phone'],input[name='office_phone'],input[name='land_phone']")

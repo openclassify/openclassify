@@ -13,6 +13,8 @@
 {{ asset_add("theme.css", "visiosoft.theme.defaultadmin::css/fonts.css", ["parse"]) }}
 {{ asset_add("theme.css", "visiosoft.theme.defaultadmin::css/bootstrap.css") }}
 {{ asset_add("theme.css", "visiosoft.theme.defaultadmin::css/select2.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::css/intlTelInput.css") }}
+
 
 {{ asset_add(
     "build.css",
@@ -53,7 +55,10 @@
 {{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/push.js") }}
 {{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/search.js") }}
 {{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/theme/select2.js") }}
-
+{{ asset_add("theme.js", "visiosoft.theme.base::js/jquery.maskedinput.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/intlTelInput.min.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/utils.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/phonefield.js") }}
 <style type="text/css">
     {{ asset_inline("theme.css") }}
     {{ asset_inline("build.css") }}
