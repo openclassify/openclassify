@@ -642,8 +642,8 @@ class AdvsController extends PublicController
         $isActive = new AdvModel();
         $adv = $advRepository->getAdvArray($id);
 
-
-        if ($adv['created_by_id'] != Auth::id() && !Auth::user()->hasRole('admin')) {
+        if ($adv['created_by_id'] != auth()->id()
+            && !auth()->user()->hasPermission('visiosoft.module.advs::advs.write')) {
             abort(403);
         }
         $cats_d = array();

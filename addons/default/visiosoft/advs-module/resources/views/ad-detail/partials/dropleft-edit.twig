@@ -1,4 +1,4 @@
-{% if app.auth.id == adv.created_by_id %}
+{% if auth_user().id == adv.created_by_id or auth_user().hasPermission('visiosoft.module.advs::advs.write') %}
     <div class="btn-group dropleft dropleft-edit position-fixed">
         <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ trans('visiosoft.module.advs::field.ad_actions') }}
