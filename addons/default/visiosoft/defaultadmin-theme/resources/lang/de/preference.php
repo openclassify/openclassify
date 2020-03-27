@@ -3,12 +3,28 @@
 return [
     'sidebar_hover' => [
         'name'         => 'Sidebar Hover',
-        'instructions' => 'Die Sidebar bei Hover erweitern?',
+        'instructions' => 'Seitenleiste beim Hover erweitern?',
     ],
-    'navigation' => [
+    'navigation'    => [
         'name'         => 'Navigation',
-        'instructions' => 'Legen Sie Ihre <em>persönliche</em> Navigationsreihenfolge fest.',
-        'warning'      => 'Das erste verfügbare Navigationselement wird als Ihre <strong>Startseite</ strong> verwendet.',
-        'reorder'      => 'Sie können die primären Navigationelemente per Drag & Drop in der <strong>Sidebar</strong> sortieren.',
+        'instructions' => 'Geben Sie Ihre <em>persönliche</em> Navigationsreihenfolge an.',
+        'warning'      => 'Das erste zugängliche Navigationselement wird als <strong>Home</strong> Bereich verwendet.',
+        'reorder'      => 'Ziehen Sie die primären Navigationselemente in die <strong>Seitenleiste</strong> und legen Sie sie dort ab, um sie neu anzuordnen.',
+    ],
+    'display'       => [
+        'name'         => 'Dichte anzeigen',
+        'instructions' => 'Dank der kompakten Anzeige können mehr Inhalte gleichzeitig auf dem Bildschirm angezeigt werden.',
+        'option'       => [
+            'default' => 'Standard',
+            'compact' => 'Kompakt',
+        ],
+    ],
+    'sidebars'      => [
+        'name'         => 'Seitenleistenmodus',
+        'instructions' => 'Statische Seitenleisten sind immer sichtbar.',
+        'option'       => [
+            'default' => 'Standard',
+            'static'  => 'Statisch',
+        ],
     ],
 ];
