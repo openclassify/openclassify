@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'remove' => 'Entfernen',
+    'showOn' => 'Main',
 ];
