@@ -1,23 +1,23 @@
 <?php
 
 return [
-    'folders'      => [
+    'folders' => [
         'name'         => 'Ordner',
-        'instructions' => 'Geben Sie an welche Ordner für dieses Feld verfügbar sind. Leer lassen um alle Ordner anzuzeigen.',
-        'warning'      => 'Bestehende Ordnerberechtigungen haben Vorrang gegenüber den ausgewählten Ordnern.',
+        'instructions' => 'Geben Sie an, welche Ordner für dieses Feld verfügbar sind. Lassen Sie das Feld leer, um alle Ordner anzuzeigen.',
+        'warning'      => 'Bestehende Ordnerberechtigungen haben Vorrang vor ausgewählten Ordnern.',
     ],
     'max'     => [
-        'name'         => 'Maximale Upload Grösse',
-        'instructions' => 'Geben Sie die maximal zulässige Dateigrösse in <strong>Megabyte</strong> an.',
-        'warning'      => 'Wenn kein Wert angegeben wurde, wird der Maximalwert des Ordners und dann der des Servers verwendet.',
+        'name'         => 'Maximale Upload-Größe',
+        'instructions' => 'Geben Sie die maximale Upload-Größe in <strong>Megabyte</strong>.',
+        'warning'      => 'Wenn nicht angegeben, werden stattdessen der Ordner max und dann der Server max verwendet.',
     ],
     'mode'    => [
         'name'         => 'Eingabemodus',
-        'instructions' => 'Wie sollen Benutzer Dateien bereitstellen können?',
+        'instructions' => 'Wie sollten Benutzer Dateieingaben bereitstellen?',
         'option'       => [
-            'default' => 'Upload und/oder Dateiauswahl.',
-            'select'  => 'Nur Dateiauswahl.',
-            'upload'  => 'Nur Upload.',
+            'default' => 'Dateien hochladen und / oder auswählen.',
+            'select'  => 'Nur Dateien auswählen.',
+            'upload'  => 'Laden Sie nur Dateien hoch.',
         ],
     ],
 ];
