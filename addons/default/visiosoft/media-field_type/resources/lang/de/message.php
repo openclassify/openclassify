@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_folder'    => 'In welchen Ordner möchten Sie hochladen?',
-    'upload'           => 'Klicken Sie oder ziehen Sie Dateien hierher um Sie hochzuladen.',
-    'choose_files'      => 'Welche Dateien möchten Sie benutzen?',
+    'choose_folder'     => 'In welchen Ordner möchten Sie hochladen?',
+    'upload'            => 'Bilder hinzufügen | Bilder hochladen | Ein Foto anhängen',
+    'choose_files'      => 'Welche Dateien möchten Sie verwenden?',
     'no_files_selected' => 'Keine Dateien ausgewählt.',
     'no_uploads'        => 'Keine Dateien hochgeladen.',
-    'overwrite'         => 'wurde bereits hochgeladen. Wollen Sie die Datei überscheiben?',
-    'uploading'        => 'Lädt hoch',
-    'loading'          => 'Lädt',
+    'overwrite'         => 'wurde bereits hochgeladen. Möchten Sie es überschreiben?',
+    'uploading'         => 'Hochladen',
+    'loading'           => 'Wird geladen',
 ];
