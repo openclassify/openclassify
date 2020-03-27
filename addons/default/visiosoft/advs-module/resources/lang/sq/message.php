@@ -28,7 +28,7 @@ return [
     'pending_ad_status' => 'Reklama juaj është në pritje të aprovimit nga Redaktori.',
     'extended' => ': reklamat e numrave janë zgjeruar me sukses.',
     'category_not_exist' => 'Kjo kategori nuk ekziston më!',
-    'currency_converted' => 'Currency Converted Successfully.',
-    'choose_user' => 'Choose a user',
-    'owner_updated_successfully' => 'The Owner Has Been Updated Successfully!',
+    'currency_converted' => 'Konvertimi i monedhës me sukses.',
+    'choose_user' => 'Zgjidhni një përdorues',
+    'owner_updated_successfully' => 'Pronari është azhurnuar me sukses!',
 ];
