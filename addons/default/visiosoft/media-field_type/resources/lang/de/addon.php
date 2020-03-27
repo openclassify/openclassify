@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Dateien',
-    'name'        => 'Dateien Feldtyp',
-    'description' => 'Ein Feldtyp für mehrfache Datei-Uploads.',
+    'title'       => 'Medienfeldtyp',
+    'name'        => 'Feldtyp "Dateien"',
+    'description' => 'Ein Feldtyp für das Hochladen mehrerer Dateien.',
 ];
