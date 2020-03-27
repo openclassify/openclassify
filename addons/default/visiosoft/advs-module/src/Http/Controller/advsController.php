@@ -585,6 +585,13 @@ class AdvsController extends PublicController
                 app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $request);
             }
 
+            // Auto approve
+            if (setting_value('visiosoft.module.advs::auto_approve')) {
+                if ($adv->status == 'pending_admin' || $adv->status == 'pending_user') {
+                    $adv->status = 'approved';
+                }
+            }
+
             $form->render($request->update_id);
             $post = $form->getPostData();
             $post['id'] = $request->update_id;
