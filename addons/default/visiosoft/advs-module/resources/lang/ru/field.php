@@ -275,8 +275,8 @@ return [
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
-        'part_2' => 'If not, click the "Edit" button.',
+        'part_1' => 'Если следующая информация о вашем объявлении верна, нажмите кнопку «Продолжить» и перейдите к следующему шагу.',
+        'part_2' => 'Если нет, нажмите кнопку «Изменить».',
     ],
-    'views' => 'Views',
+    'views' => 'Взгляды',
 ];
