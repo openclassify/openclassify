@@ -13,7 +13,7 @@ return [
     'decline' => 'rënie',
     'extend' => 'shpreh',
     'extend_all' => 'Zgjeroni të gjitha',
-    'convert_currency' => 'Convert Currency',
+    'convert_currency' => 'Konvertoni monedhën',
     'categories' => 'Kategoritë',
     'sub_category' => 'Nënkategoritë',
     'add_sub_category' => 'Shtoni Nën Kategorinë',
@@ -27,7 +27,7 @@ return [
     'sub_village' => 'Nën fshat',
     'general_settings' => 'Cilësimet e përgjithshme',
     'save_category' => 'Ruaj kategorinë',
-    'change_owner' => 'Change Owner',
+    'change_owner' => 'Ndrysho pronarin',
     'update_category' => [
         'name' => 'Kategoria e azhurnuar'
     ],
