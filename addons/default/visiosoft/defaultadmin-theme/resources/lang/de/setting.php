@@ -3,12 +3,12 @@
 return [
     'sidebar_hover' => [
         'name'         => 'Sidebar Hover',
-        'instructions' => 'Die Sidebar bei Hover erweitern?',
+        'instructions' => 'Seitenleiste beim Hover erweitern?',
     ],
     'navigation'    => [
         'name'         => 'Navigation',
-        'instructions' => 'Legen Sie die <em>Standard</em> Navigationsreihenfolge fest.',
-        'warning'      => 'Das erste verfügbare Navigationselement wird als <strong>Startseite</strong> verwendet.',
-        'reorder'      => 'Sie können die primären Navigationelemente per Drag & Drop in der <strong>Sidebar</strong> sortieren.',
+        'instructions' => 'Geben Sie die <em>Standard</em> Navigationsreihenfolge an.',
+        'warning'      => 'Das erste zugängliche Navigationselement wird als Bereich <strong>home</strong> verwendet.',
+        'reorder'      => 'Ziehen Sie die primären Navigationselemente in die <strong>Seitenleiste</strong> und legen Sie sie dort ab, um sie neu anzuordnen.',
     ],
 ];
