@@ -27,10 +27,12 @@ function phoneMask(fields) {
 
     function maskPhone(name) {
         var currentMask = $("input[name='" + name + "']").attr('placeholder');
-        $("input[name='" + name + "']").mask(currentMask.replace(/[0-9+]/ig, '9'), {
-            autoclear: true,
-            clearIncomplete: true
-        });
+        if (currentMask) {
+            $("input[name='" + name + "']").mask(currentMask.replace(/[0-9+]/ig, '9'), {
+                autoclear: true,
+                clearIncomplete: true
+            });
+        }
     }
 }
 
