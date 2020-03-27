@@ -28,7 +28,7 @@ return [
     'pending_ad_status' => 'إعلانك في انتظار موافقة المحرر.',
     'extended' => ': تم تمديد عدد الإعلانات بنجاح.',
     'category_not_exist' => 'هذه الفئة لم تعد موجودة!',
-    'currency_converted' => 'Currency Converted Successfully.',
-    'choose_user' => 'Choose a user',
-    'owner_updated_successfully' => 'The Owner Has Been Updated Successfully!',
+    'currency_converted' => 'تم تحويل العملة بنجاح.',
+    'choose_user' => 'اختر مستخدمًا',
+    'owner_updated_successfully' => 'تم تحديث المالك بنجاح!',
 ];
