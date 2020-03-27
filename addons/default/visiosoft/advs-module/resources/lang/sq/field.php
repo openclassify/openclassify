@@ -274,8 +274,8 @@ return [
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
-        'part_2' => 'If not, click the "Edit" button.',
+        'part_1' => 'Nëse informacioni i mëposhtëm në lidhje me reklamën tuaj është i saktë, klikoni në butonin "Vazhdo" dhe shkoni në hapin tjetër.',
+        'part_2' => 'Nëse jo, klikoni në butonin "Ndrysho".',
     ],
     'views' => 'Views',
 ];
