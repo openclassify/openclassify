@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'valid_disk' => 'Die gewählte Upload-Disk für :attribute existiert nicht.',
+    'valid_disk' => 'Der konfigurierte Upload-Datenträger für: Attribut ist nicht vorhanden.',
 ];
