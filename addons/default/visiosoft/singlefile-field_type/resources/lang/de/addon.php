@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Datei',
-    'name'        => 'Datei Feldtyp',
-    'description' => 'Ein Feldtyp für Datei-Uploads.',
+    'title'       => 'Einzelne Datei',
+    'name'        => 'Dateifeldtyp',
+    'description' => 'Ein Feldtyp für das Hochladen von Dateien.',
 ];
