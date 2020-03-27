@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Accelerant',
-    'name'        => 'Accelerant Theme',
-    'description' => 'Das offizielle OpenClassify Admin Theme.',
+    'title'       => 'Visiosoft Admin',
+    'name'        => 'Visiosoft Admin Theme',
+    'description' => 'Das offizielle Admin-Thema für OpenClassify.',
 ];
