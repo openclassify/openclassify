@@ -1,26 +1,26 @@
 <?php
 
 return [
-    'folders'      => [
+    'folders' => [
         'name'         => 'Ordner',
-        'instructions' => 'Geben Sie an welche Ordner für dieses Feld verfügbar sind. Leer lassen um alle Ordner anzuzeigen.',
-        'warning'      => 'Bestehende Ordnerberechtigungen haben Vorrang gegenüber den ausgewählten Ordnern.',
+        'instructions' => 'Geben Sie an, welche Ordner für dieses Feld verfügbar sind. Lassen Sie das Feld leer, um alle Ordner anzuzeigen.',
+        'warning'      => 'Bestehende Ordnerberechtigungen haben Vorrang vor ausgewählten Ordnern.',
     ],
-    'min'           => [
-        'label'        => 'Mindestanzahl',
-        'instructions' => 'Geben Sie die erlaubte Mindestanzahl an ausgewählten Dateien ein.'
+    'min'     => [
+        'label'        => 'Minimale Auswahl',
+        'instructions' => 'Geben Sie die Mindestanzahl zulässiger Auswahlen ein.',
     ],
-    'max'           => [
-        'label'        => 'Maximalanzahl',
-        'instructions' => 'Geben Sie die erlaubte Maximalanzahl an ausgewählten Dateien an.'
+    'max'     => [
+        'label'        => 'Maximale Auswahl',
+        'instructions' => 'Geben Sie die maximal zulässige Auswahl ein.',
     ],
     'mode'    => [
         'name'         => 'Eingabemodus',
-        'instructions' => 'Wie sollen Benutzer Dateien bereitstellen können?',
+        'instructions' => 'Wie sollten Benutzer Dateieingaben bereitstellen?',
         'option'       => [
-            'default' => 'Upload und/oder Dateiauswahl.',
-            'select'  => 'Nur Dateiauswahl.',
-            'upload'  => 'Nur Upload.',
+            'default' => 'Dateien hochladen und / oder auswählen.',
+            'select'  => 'Nur Dateien auswählen.',
+            'upload'  => 'Laden Sie nur Dateien hoch.',
         ],
     ],
 ];
