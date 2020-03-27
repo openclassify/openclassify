@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'select_file' => 'Datei auswählen',
-    'upload'      => 'Upload',
+    'select_file' => 'Datei aussuchen',
+    'upload'      => 'Hochladen',
     'remove'      => 'Entfernen',
-    'change'      => 'Ändern',
+    'change'      => 'Veränderung',
 ];
