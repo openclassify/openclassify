@@ -24,7 +24,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         $cat_ids[] = $cat->id;
         $subCat = $cat->parent_category_id;
         if ($subCat != null) {
-            for ($i = 0; $i < 7; $i++) {
+            for ($i = 0; $i < 10; $i++) {
                 $parCat = $this->getCat($subCat);
                 if (isset($parCat)) {
                     if ($parCat->parent_category_id == "") {
@@ -83,9 +83,10 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
     public function deleteSubCategories($id)
     {
         $subCategories = $this->getAllSubCategories($id);
-        foreach ($subCategories as $subCategory) {
-            $this->find($subCategory)->delete();
+        if (count($subCategories)) {
+            $this->newQuery()->whereIn('id', $subCategories)->delete();
         }
+
         return true;
     }
 
