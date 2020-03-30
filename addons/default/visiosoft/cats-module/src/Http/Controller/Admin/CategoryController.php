@@ -209,5 +209,4 @@ class CategoryController extends AdminController
         return redirect('admin/cats')->with('success', [$deletedCatsCount . ' categories has been deleted.']);
     }
 
-
 }

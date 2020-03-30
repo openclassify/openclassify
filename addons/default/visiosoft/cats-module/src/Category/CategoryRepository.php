@@ -67,5 +67,38 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
     public function DeleteCategories($id)
     {
         $this->model->find($id)->delete();
+
+        $this->deleteSubcategories($id);
+    }
+
+    public function deleteSubcategories($id)
+    {
+        // Get all subcategories
+        $allSubcategories = array();
+        $subcategories = $this->getSubCatById($id);
+        if (count($subcategories)) {
+            foreach ($subcategories as $subcategory) {
+                $allSubcategories[$subcategory->id] = ['id' => $subcategory->id, 'processed' => false];
+            }
+            do {
+                $unprocessedCategories = array_filter($allSubcategories, function ($unprocessedCategory) {
+                    return $unprocessedCategory['processed'] === false;
+                });
+                foreach ($unprocessedCategories as $unprocessedCategory) {
+                    $subcategories = $this->getSubCatById($unprocessedCategory['id']);
+                    foreach ($subcategories as $subcategory) {
+                        $allSubcategories[$subcategory->id] = ['id' => $subcategory->id, 'processed' => false];
+                    }
+                    $allSubcategories[$unprocessedCategory['id']]['processed'] = true;
+                }
+            } while (count($unprocessedCategories));
+
+            // Delete all subcategories
+            $whereIn = array();
+            foreach ($allSubcategories as $category) {
+                $whereIn[] = $category['id'];
+            }
+            $this->newQuery()->whereIn('id', $whereIn)->delete();
+        }
     }
 }
