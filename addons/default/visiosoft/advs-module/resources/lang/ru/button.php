@@ -13,6 +13,7 @@ return [
     'decline' => 'снижение',
     'extend' => 'простираться',
     'extend_all' => 'Расширить все',
+    'convert_currency' => 'Конвертировать валюту',
     'categories' => 'категории',
     'sub_category' => 'Подкатегории',
     'add_sub_category' => 'Добавить подкатегорию',
@@ -26,6 +27,7 @@ return [
     'sub_village' => 'Sub Village',
     'general_settings' => 'общие настройки',
     'save_category' => 'Сохранить категорию',
+    'change_owner' => 'Сменить владельца',
     'update_category' => [
         'name' => 'Обновить категорию'
     ],
