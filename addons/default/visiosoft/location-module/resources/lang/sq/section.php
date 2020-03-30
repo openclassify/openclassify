@@ -17,6 +17,6 @@ return [
         'title' => 'fshati',
     ],
     'general' => 'i përgjithshëm',
-    'map' => 'hartë',
+    'map' => 'Hartë',
     'setting' => 'mjedis',
 ];

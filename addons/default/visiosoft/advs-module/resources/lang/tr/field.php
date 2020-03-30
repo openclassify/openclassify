@@ -107,8 +107,8 @@ return [
     'my_adv' => [
         'name' => 'İlan'
     ],
-    'description' => 'Detaylar',
-    'explanation' => 'Açıklama',
+    'description' =>  'Detaylar',
+    'explanation' =>  'Açıklama',
     'type' => [
         'name' => 'Tip'
     ],
@@ -273,9 +273,11 @@ return [
     'pending_message_4' => 'Onay sürecinde geçirilen süre doping zamanına eklenecektir.',
     'pending_message_5' => 'Onay sürecinde reklamla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
     'hours' => 'saatler',
-    'views' => 'Görüntülenme',
+
+    // Preview page
     'preview_text' => [
         'part_1' => 'İlanınızla ilgili aşağıdaki bilgiler doğruysa "Devam" butonuna tıklayın ve sonraki adıma geçin.',
         'part_2' => 'Değilse, "Düzenle" düğmesini tıklayın.',
     ],
+    'views' => 'Görüntülenme',
 ];

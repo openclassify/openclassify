@@ -13,6 +13,7 @@ return [
     'decline' => 'انخفاض',
     'extend' => 'تمديد',
     'extend_all' => 'تمديد الكل',
+    'convert_currency' => 'تحويل العملة',
     'categories' => 'التصنيفات',
     'sub_category' => 'الفئات الفرعية',
     'add_sub_category' => 'إضافة فئة فرعية',
@@ -26,6 +27,7 @@ return [
     'sub_village' => 'قرية فرعية',
     'general_settings' => 'الاعدادات العامة',
     'save_category' => 'حفظ الفئة',
+    'change_owner' => 'تغير المالك',
     'update_category' => [
         'name' => 'تحديث الفئة'
     ],

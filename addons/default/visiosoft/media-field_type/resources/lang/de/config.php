@@ -1,18 +1,18 @@
 <?php
 
 return [
-    'folders'      => [
+    'folders' => [
         'name'         => 'Ordner',
         'instructions' => 'Geben Sie an welche Ordner für dieses Feld verfügbar sind. Leer lassen um alle Ordner anzuzeigen.',
         'warning'      => 'Bestehende Ordnerberechtigungen haben Vorrang gegenüber den ausgewählten Ordnern.',
     ],
-    'min'           => [
+    'min'     => [
         'label'        => 'Mindestanzahl',
-        'instructions' => 'Geben Sie die erlaubte Mindestanzahl an ausgewählten Dateien ein.'
+        'instructions' => 'Geben Sie die erlaubte Mindestanzahl an ausgewählten Dateien ein.',
     ],
-    'max'           => [
+    'max'     => [
         'label'        => 'Maximalanzahl',
-        'instructions' => 'Geben Sie die erlaubte Maximalanzahl an ausgewählten Dateien an.'
+        'instructions' => 'Geben Sie die erlaubte Maximalanzahl an ausgewählten Dateien an.',
     ],
     'mode'    => [
         'name'         => 'Eingabemodus',
