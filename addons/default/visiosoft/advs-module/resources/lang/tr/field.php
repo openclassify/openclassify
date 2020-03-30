@@ -274,5 +274,8 @@ return [
     'pending_message_5' => 'Onay sürecinde reklamla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
     'hours' => 'saatler',
     'views' => 'Görüntülenme',
-
+    'preview_text' => [
+        'part_1' => 'İlanınızla ilgili aşağıdaki bilgiler doğruysa "Devam" butonuna tıklayın ve sonraki adıma geçin.',
+        'part_2' => 'Değilse, "Düzenle" düğmesini tıklayın.',
+    ],
 ];
