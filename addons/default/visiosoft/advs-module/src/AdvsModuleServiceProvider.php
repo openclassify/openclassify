@@ -3,11 +3,13 @@
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 use Anomaly\Streams\Platform\Model\Location\LocationVillageEntryModel;
+use Anomaly\Streams\Platform\Ui\Table\Event\TableIsQuerying;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\AdvRepository;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
+use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -262,9 +264,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $listeners = [
-        //Visiosoft\AdvsModule\Event\ExampleEvent::class => [
-        //    Visiosoft\AdvsModule\Listener\ExampleListener::class,
-        //],
+        TableIsQuerying::class => [
+            AddAdvsSettingsScript::class,
+        ],
     ];
 
     /**
