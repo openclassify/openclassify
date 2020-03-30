@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'folders'      => [
+    'folders' => [
         'name'         => 'Ordner',
         'instructions' => 'Geben Sie an welche Ordner für dieses Feld verfügbar sind. Leer lassen um alle Ordner anzuzeigen.',
         'warning'      => 'Bestehende Ordnerberechtigungen haben Vorrang gegenüber den ausgewählten Ordnern.',
