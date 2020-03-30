@@ -57,7 +57,7 @@ class AjaxController extends PublicController
         if ($this->request->id)
             return $this->country_model->find($this->request->id);
         else
-            return $this->country_model->get();
+            return $this->country_model->orderBy('order', 'ASC')->get();
     }
 
     /**
@@ -67,7 +67,7 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->city_model->whereIn('parent_country_id', $id)->get();
+            return $this->city_model->whereIn('parent_country_id', $id)->orderBy('order', 'ASC')->get();
         }
     }
 
@@ -78,7 +78,7 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->district_model->whereIn('parent_city_id', $id)->get();
+            return $this->district_model->whereIn('parent_city_id', $id)->orderBy('order', 'ASC')->get();
         }
     }
 
@@ -89,7 +89,7 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->neighborhood_model->whereIn('parent_district_id', $id)->get();
+            return $this->neighborhood_model->whereIn('parent_district_id', $id)->orderBy('order', 'ASC')->get();
         }
     }
 
@@ -100,7 +100,7 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->village_model->whereIn('parent_neighborhood_id', $id)->get();
+            return $this->village_model->whereIn('parent_neighborhood_id', $id)->orderBy('order', 'ASC')->get();
         }
     }
 }

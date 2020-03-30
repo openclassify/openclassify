@@ -28,8 +28,8 @@ class LocationModuleSeeder extends Seeder
         Model::unguard();
         DB::unprepared(file_get_contents(__DIR__.'/countries.sql'));
         DB::unprepared(file_get_contents(__DIR__.'/cities.sql'));
-        DB::unprepared(file_get_contents(__DIR__.'/districts.sql'));
-         DB::unprepared(file_get_contents(__DIR__.'/neighborhoods.sql'));
+//        DB::unprepared(file_get_contents(__DIR__.'/districts.sql'));
+//         DB::unprepared(file_get_contents(__DIR__.'/neighborhoods.sql'));
         Model::reguard();
         /* Demo Stop*/
     }

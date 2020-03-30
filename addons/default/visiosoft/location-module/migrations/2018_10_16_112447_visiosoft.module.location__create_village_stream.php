@@ -33,7 +33,7 @@ class VisiosoftModuleLocationCreateVillageStream extends Migration
             'unique' => true,
             'required' => true,
         ],
-        'parent_neighborhood_id' => [
+        'parent_neighborhood' => [
             'required' => true,
         ],
         'order'

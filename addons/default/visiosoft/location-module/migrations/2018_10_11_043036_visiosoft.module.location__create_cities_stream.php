@@ -33,7 +33,7 @@ class VisiosoftModuleLocationCreateCitiesStream extends Migration
             'unique' => true,
             'required' => true,
         ],
-        'parent_country_id' => [
+        'parent_country' => [
             'required' => true,
         ],
         'order'

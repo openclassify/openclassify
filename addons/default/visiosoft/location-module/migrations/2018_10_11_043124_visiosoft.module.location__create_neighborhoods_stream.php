@@ -33,7 +33,7 @@ class VisiosoftModuleLocationCreateNeighborhoodsStream extends Migration
             'unique' => true,
             'required' => true,
         ],
-        'parent_district_id' => [
+        'parent_district' => [
             'required' => true,
         ],
         'order'
