@@ -8,13 +8,13 @@ return [
         'name' => 'goditje e fortë'
     ],
     'city' => [
-        'name' => 'qytet'
+        'name' => 'Qytet'
     ],
     'country' => [
-        'name' => 'vend'
+        'name' => 'Vendodhja'
     ],
     'district' => [
-        'name' => 'rreth'
+        'name' => 'Rreth'
     ],
     'order' => [
         'name' => 'Renditja e renditjes'
