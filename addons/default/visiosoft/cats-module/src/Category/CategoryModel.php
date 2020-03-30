@@ -83,7 +83,9 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
     public function deleteSubCategories($id)
     {
         $subCategories = $this->getAllSubCategories($id);
-        $this->newQuery()->whereIn('id', $subCategories)->delete();
+        if (count($subCategories)) {
+            $this->newQuery()->whereIn('id', $subCategories)->delete();
+        }
 
         return true;
     }

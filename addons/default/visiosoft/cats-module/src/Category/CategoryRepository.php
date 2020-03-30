@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\CatsModule\Category;
 
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 
@@ -13,15 +14,18 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
      * @var CategoryModel
      */
     protected $model;
+    protected $advRepository;
 
     /**
      * Create a new CategoryRepository instance.
      *
      * @param CategoryModel $model
+     * @param AdvRepositoryInterface $advRepository
      */
-    public function __construct(CategoryModel $model)
+    public function __construct(CategoryModel $model, AdvRepositoryInterface $advRepository)
     {
         $this->model = $model;
+        $this->advRepository = $advRepository;
     }
 
     public function findById($id)
@@ -64,10 +68,31 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
         return $this->model->orderBy('sort_order')->get();
     }
 
+    public function removeCatFromAds($id)
+    {
+        $category = $this->find($id);
+        $catLevelNum = is_null($category->parent_category_id) ? 1 : $this->model->getCatLevel($category->id);
+        $catLevelText = "cat" . $catLevelNum;
+
+        $advs = $this->advRepository->newQuery()->where($catLevelText, $category->id)->get();
+        foreach ($advs as $adv) {
+            $nullableCats = array();
+            for ($i = $catLevelNum; $i <= 10; $i++) {
+                $nullableCats['cat' . $i] = null;
+            }
+            $adv->update($nullableCats);
+        }
+    }
+
     public function DeleteCategories($id)
     {
+        // Remove deleted category from ads
+        $this->removeCatFromAds($id);
+
+        // Delete the category
         $this->model->find($id)->delete();
 
+        // Delete the subcategories
         $this->model->deleteSubCategories($id);
     }
 }
