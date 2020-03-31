@@ -201,7 +201,7 @@ $(document).ready(function () {
     });
 
     $(".priceField").on('change',function () {
-        var price = parseFloat($(".priceField").val().replace('.','').replace(',','.'));
+        var price = parseFloat($(".priceField").val().replace(/\./g, '').replace(',','.'));
         $('.priceHidden').find('input').val(price);
     })
 });
