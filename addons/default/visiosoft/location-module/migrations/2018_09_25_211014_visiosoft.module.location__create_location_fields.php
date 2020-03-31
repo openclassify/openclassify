@@ -27,7 +27,6 @@ class VisiosoftModuleLocationCreateLocationFields extends Migration
                 'type' => '_'
             ],
         ],
-        'description' => 'anomaly.field_type.textarea',
         'parent_country' => [
             'type' => 'anomaly.field_type.relationship',
             'config' => [
