@@ -14,7 +14,7 @@ class VisiosoftModuleLocationCreateCitiesStream extends Migration
         'slug' => 'cities',
          'title_column' => 'name',
          'translatable' => true,
-         'trashable' => false,
+         'trashable' => true,
          'searchable' => false,
          'sortable' => false,
     ];
@@ -33,7 +33,7 @@ class VisiosoftModuleLocationCreateCitiesStream extends Migration
             'unique' => true,
             'required' => true,
         ],
-        'parent_country' => [
+        'parent_country_id' => [
             'required' => true,
         ],
         'order'

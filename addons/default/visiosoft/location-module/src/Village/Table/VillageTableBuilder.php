@@ -52,7 +52,7 @@ class VillageTableBuilder extends TableBuilder
      */
     protected $options = [
         'order_by' => [
-            'sort_order' => 'ASC',
+            'order' => 'ASC',
         ],
     ];
     /**

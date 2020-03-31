@@ -35,19 +35,20 @@ class VisiosoftModuleLocationCreateLocationFields extends Migration
                 "default_value" => 0,
             ]
         ],
-        'parent_city' => [
+        'parent_country_id' => 'anomaly.field_type.integer',
+        'parent_city_id' => [
             "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
-        'parent_district' => [
+        'parent_district_id' => [
             "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],
             ]
         ],
-        'parent_neighborhood' => [
+        'parent_neighborhood_id' => [
             "type" => "anomaly.field_type.select",
             "config" => [
                 "options" => [],

@@ -14,7 +14,7 @@ class VisiosoftModuleLocationCreateCountriesStream extends Migration
         'slug' => 'countries',
          'title_column' => 'name',
          'translatable' => true,
-         'trashable' => false,
+         'trashable' => true,
          'searchable' => false,
          'sortable' => false,
     ];

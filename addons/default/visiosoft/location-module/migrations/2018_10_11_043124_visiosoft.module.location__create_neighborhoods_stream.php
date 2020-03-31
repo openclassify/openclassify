@@ -14,7 +14,7 @@ class VisiosoftModuleLocationCreateNeighborhoodsStream extends Migration
         'slug' => 'neighborhoods',
          'title_column' => 'name',
          'translatable' => true,
-         'trashable' => false,
+         'trashable' => true,
          'searchable' => false,
          'sortable' => false,
     ];
@@ -33,7 +33,7 @@ class VisiosoftModuleLocationCreateNeighborhoodsStream extends Migration
             'unique' => true,
             'required' => true,
         ],
-        'parent_district' => [
+        'parent_district_id' => [
             'required' => true,
         ],
         'order'

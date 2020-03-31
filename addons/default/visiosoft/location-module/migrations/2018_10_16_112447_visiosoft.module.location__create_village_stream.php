@@ -14,7 +14,7 @@ class VisiosoftModuleLocationCreateVillageStream extends Migration
         'slug' => 'village',
          'title_column' => 'name',
          'translatable' => true,
-         'trashable' => false,
+         'trashable' => true,
          'searchable' => false,
          'sortable' => false,
     ];
@@ -33,7 +33,7 @@ class VisiosoftModuleLocationCreateVillageStream extends Migration
             'unique' => true,
             'required' => true,
         ],
-        'parent_neighborhood' => [
+        'parent_neighborhood_id' => [
             'required' => true,
         ],
         'order'

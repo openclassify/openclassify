@@ -11,13 +11,13 @@ class NeighborhoodModel extends LocationNeighborhoodsEntryModel implements Neigh
     }
 
     public function getSubNeighborhoods($district) {
-        return $this->query()->where('parent_district_id', $district)->get();
+        return $this->query()->where('parent_district_id', $district)->orderBy('order','ASC')->get();
     }
 
     public function deleteNeighborhoodByDistrict($id) {
         $village = new VillageModel();
         $neighborhood = $this->where('parent_district_id',$id);
-        $neighborhoods_id = $neighborhood->get();
+        $neighborhoods_id = $neighborhood->orderBy('id','DESC')->get();
         foreach ($neighborhoods_id as $item)
         {
             $village->deleteVillageByNeighborhood($item->id);
