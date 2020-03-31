@@ -17,7 +17,16 @@ class CityTableBuilder extends TableBuilder
      *
      * @var array|string
      */
-    protected $filters = [];
+    protected $filters = [
+        'search' => [
+            'filter' => 'search',
+            'fields' => [
+                'name',
+                'slug',
+                'order',
+            ],
+        ],
+    ];
 
     /**
      * The table columns.
