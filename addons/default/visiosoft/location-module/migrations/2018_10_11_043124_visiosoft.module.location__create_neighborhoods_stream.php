@@ -14,7 +14,7 @@ class VisiosoftModuleLocationCreateNeighborhoodsStream extends Migration
         'slug' => 'neighborhoods',
          'title_column' => 'name',
          'translatable' => true,
-         'trashable' => false,
+         'trashable' => true,
          'searchable' => false,
          'sortable' => false,
     ];

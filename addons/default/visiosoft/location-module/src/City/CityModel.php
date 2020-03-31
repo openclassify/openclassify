@@ -15,13 +15,13 @@ class CityModel extends LocationCitiesEntryModel implements CityInterface
     }
 
     public function getSubCities($country) {
-       return $this->query()->where('parent_country_id', $country)->get();
+       return $this->query()->where('parent_country_id', $country)->orderBy('order','ASC')->get();
     }
 
     public function deleteCitiesByCountry($id) {
         $districts = new DistrictModel();
         $city = $this->where('parent_country_id',$id);
-        $city_id = $city->get();
+        $city_id = $city->orderBy('id','DESC')->get();
         foreach ($city_id as $item)
         {
             $districts->deleteDistrictByCity($item->id);

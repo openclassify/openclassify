@@ -14,7 +14,7 @@ class VisiosoftModuleLocationCreateVillageStream extends Migration
         'slug' => 'village',
          'title_column' => 'name',
          'translatable' => true,
-         'trashable' => false,
+         'trashable' => true,
          'searchable' => false,
          'sortable' => false,
     ];

@@ -11,13 +11,13 @@ class DistrictModel extends LocationDistrictsEntryModel implements DistrictInter
     }
 
     public function getSubDistricts($city) {
-        return $this->query()->where('parent_city_id', $city)->get();
+        return $this->query()->where('parent_city_id', $city)->orderBy('order','ASC')->get();
     }
 
     public function deleteDistrictByCity($id) {
         $neighborhood = new NeighborhoodModel();
         $districts = $this->where('parent_city_id',$id);
-        $districts_id = $districts->get();
+        $districts_id = $districts->orderBy('id','DESC')->get();
         foreach ($districts_id as $item)
         {
             $neighborhood->deleteNeighborhoodByDistrict($item->id);

@@ -10,10 +10,10 @@ class VillageModel extends LocationVillageEntryModel implements VillageInterface
     }
 
     public function getSubVillages($neighborhood) {
-        return $this->query()->where('parent_neighborhood_id', $neighborhood)->get();
+        return $this->query()->where('parent_neighborhood_id', $neighborhood)->orderBy('order','ASC')->get();
     }
 
     public function deleteVillageByNeighborhood($id) {
-        $this->where('parent_neighborhood_id',$id)->delete();
+        $this->where('parent_neighborhood_id',$id)->orderBy('id','DESC')->delete();
     }
 }
