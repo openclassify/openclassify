@@ -192,16 +192,27 @@ $(document).ready(function () {
         prefix: "",
         'groupSeparator': '.',
         'autoGroup': true,
-        'digits': 2,
+        'digits': 0,
         'radixPoint': ",",
         'digitsOptional': false,
         'allowMinus': false,
-        'placeholder': '0,00'
+        'placeholder': '0'
 
     });
 
-    $(".priceField").on('change',function () {
-        var price = parseFloat($(".priceField").val().replace(/\./g, '').replace(',','.'));
-        $('.priceHidden').find('input').val(price);
+    $(".priceDecimalField").inputmask('99', {
+        rightAlign: true,
+        prefix: "",
+        autoUnmask: true,
+        allowPlus: false,
+        allowMinus: false,
+        placeholder: "00"
+
+    });
+
+    $(".priceField, .priceDecimalField").on('change', function () {
+        var price = parseInt($(".priceField").val().replace(/\./g, ''));
+        var decimal = parseInt($(".priceDecimalField").val());
+        $('.priceHidden').find('input').val(parseFloat(price + "." + decimal));
     })
 });

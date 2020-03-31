@@ -59,13 +59,17 @@
                                         {{ form.fields.price.label|raw }}
                                         <span class="required">*</span>
                                     </label>
-                                    <div class="col-sm-4 col-xs-6 priceHidden d-none">
+                                    <div class="col-12 priceHidden d-none">
                                         {{ form.fields.price.setAttributes({
                                             'required' :true
                                         }).input|raw }}
                                     </div>
-                                    <div class="col-sm-4 col-xs-6">
-                                        <input class="form-control priceField" value="{{ form.fields.price.value }}">
+                                    {% set PriceValue = form.fields.price.value|split('.') %}
+                                    <div class="col-8 pr-0 col-md-3">
+                                        <input class="form-control priceField" value="{{ PriceValue|first }}">
+                                    </div>
+                                    <div class="col-4 col-md-1">
+                                        <input class="form-control priceDecimalField" placeholder="00" maxlength="2" value="{{ PriceValue[1] }}">
                                     </div>
                                     <div class="col-sm-3 col-xs-6">
                                         {{ form.fields.currency.setAttributes({
