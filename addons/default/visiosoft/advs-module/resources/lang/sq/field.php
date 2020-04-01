@@ -5,7 +5,7 @@ return [
         'name' => 'Titull'
     ],
     'order' => [
-        'name' => 'urdhër'
+        'name' => 'Porosi'
     ],
     'slug' => [
         'name' => 'Goditje e Fortë'
@@ -14,7 +14,7 @@ return [
         'name' => 'Prind'
     ],
     'category' => [
-        'name' => 'Titulli i kategorisë'
+        'name' => 'Titulli i Kategorisë'
     ],
     'price' => [
         'name' => 'Çmim'
@@ -56,7 +56,7 @@ return [
         'name' => 'Fshati'
     ],
     'files' => [
-        'name' => 'Images'
+        'name' => 'Imazhe'
     ],
     'cat1' => [
         'name' => 'Kategoria Kryesore'
