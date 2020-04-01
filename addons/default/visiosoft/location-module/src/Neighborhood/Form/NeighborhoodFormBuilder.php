@@ -12,6 +12,7 @@ class NeighborhoodFormBuilder extends FormBuilder
      */
     protected $fields = [
         'name','slug','order','parent_district_id'=>[
+            'type' => 'anomaly.field_type.text',
             'class' => 'hidden',
             'label' => '',
         ],
