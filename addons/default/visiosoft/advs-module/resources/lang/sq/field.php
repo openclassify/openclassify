@@ -113,10 +113,10 @@ return [
         'name' => 'Lloj'
     ],
     'parent_adv' => [
-        'name' => 'Reklama e lidhur'
+        'name' => 'Njoftimi e Lidhur'
     ],
     'value' => [
-        'name' => 'vlerë'
+        'name' => 'Vlerë'
     ],
     'list' => 'Listë',
     'home' => 'shtëpi',
