@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'new_adv' => 'Adv i ri',
+    'new_adv' => 'Njoftime i Ri',
     'new_category' => 'Kategoria e Re',
     'new_country' => 'Vendi i Ri',
     'new_city' => 'Qyteti i Ri',
