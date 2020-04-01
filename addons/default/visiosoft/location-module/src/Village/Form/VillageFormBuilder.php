@@ -12,6 +12,7 @@ class VillageFormBuilder extends FormBuilder
      */
     protected $fields = [
         'name','slug','order','parent_neighborhood_id'=>[
+            'type' => 'anomaly.field_type.text',
             'class' => 'hidden',
             'label' => '',
         ],
