@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Ads',
-    'name'        => 'Moduli i reklamave',
-    'description' => 'Moduli i reklamave',
+    'title'       => 'Njoftime',
+    'name'        => 'Moduli i Njoftime',
+    'description' => 'Moduli i Njoftime',
 ];

@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Vendodhja',
-    'name'        => 'Moduli i vendodhjes',
+    'name'        => 'Moduli i Vendodhjes',
     'description' => 'Përshkrim',
 ];

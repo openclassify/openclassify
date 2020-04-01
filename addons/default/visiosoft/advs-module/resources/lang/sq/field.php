@@ -2,34 +2,34 @@
 
 return [
     'name' => [
-        'name' => 'titull'
+        'name' => 'Titull'
     ],
     'order' => [
-        'name' => 'urdhër'
+        'name' => 'Porosi'
     ],
     'slug' => [
-        'name' => 'goditje e fortë'
+        'name' => 'Goditje e Fortë'
     ],
     'parent_category' => [
-        'name' => 'prind'
+        'name' => 'Prind'
     ],
     'category' => [
-        'name' => 'Titulli i kategorisë'
+        'name' => 'Titulli i Kategorisë'
     ],
     'price' => [
-        'name' => 'çmim'
+        'name' => 'Çmim'
     ],
     'date' => [
-        'name' => 'data'
+        'name' => 'Data'
     ],
     'photo' => [
         'name' => 'Foto'
     ],
     'video' => [
-        'name' => 'video'
+        'name' => 'Video'
     ],
     'map' => [
-        'name' => 'hartë'
+        'name' => 'Hartë'
     ],
     'stock' => [
         'name' => 'Stock'
@@ -41,25 +41,25 @@ return [
         'name' => 'Pagesa Online'
     ],
     'city' => [
-        'name' => 'qytet'
+        'name' => 'Qytet'
     ],
     'country' => [
-        'name' => 'vend'
+        'name' => 'Shtetit'
     ],
     'district' => [
-        'name' => 'rreth'
+        'name' => 'Rreth'
     ],
     'neighborhood' => [
-        'name' => 'lagje'
+        'name' => 'Lagje'
     ],
     'village' => [
-        'name' => 'fshati'
+        'name' => 'Fshati'
     ],
     'files' => [
-        'name' => 'images'
+        'name' => 'Imazhe'
     ],
     'cat1' => [
-        'name' => 'Kategoria kryesore'
+        'name' => 'Kategoria Kryesore'
     ],
     'cat2' => [
         'name' => 'Nën Kategoria 1'
@@ -80,29 +80,29 @@ return [
         'name' => 'Nën Kategoria 6'
     ],
     'currency' => [
-        'name' => 'monedhë'
+        'name' => 'Monedhë'
     ],
     'status' => [
-        'name' => 'status',
+        'name' => 'Status',
         'option' => [
-            'approved' => 'i miratuar',
-            'expired' => 'i skaduar',
-            'unpublished' => 'i pabotuar',
-            'pending_admin' => 'Në pritje të administratorit',
-            'pending_user' => 'Përdorues në pritje'
+            'approved' => 'I miratuar',
+            'expired' => 'I skaduar',
+            'unpublished' => 'I pabotuar',
+            'pending_admin' => 'Në pritje të Administratorit',
+            'pending_user' => 'Përdorues në Pritje'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Në pritje të reklamave'
+        'name' => 'Ne pritje te njoftimeve'
     ],
     'finish_at' => [
         'name' => 'Mbaro At'
     ],
     'cover_photo' => [
-        'name' => 'Fotoja e kopertinës'
+        'name' => 'Fotoja e Kopertinës'
     ],
     'favs_adv' => [
-        'name' => 'Reklamat e preferuara'
+        'name' => 'Njoftimet e Preferuarar'
     ],
     'my_adv' => [
         'name' => 'advs'
@@ -110,40 +110,40 @@ return [
     'description' =>  'Përshkrim',
     'explanation' =>  'Shpjegim',
     'type' => [
-        'name' => 'lloj'
+        'name' => 'Lloj'
     ],
     'parent_adv' => [
-        'name' => 'Reklama e lidhur'
+        'name' => 'Njoftime te Ngjitura'
     ],
     'value' => [
-        'name' => 'vlerë'
+        'name' => 'Vlerë'
     ],
     'list' => 'Listë',
-    'home' => 'shtëpi',
-    'list-page' => 'Faqja e listës',
+    'home' => 'Faqja Kryesore',
+    'list-page' => 'Faqja e Listës',
     'search' => 'Kërko',
-    'recommended' => 'Reklama të rekomanduara për ju',
-    'filter' => 'filtër',
-    'sort' => 'lloj',
-    'sort_by' => 'Ndaj sipas',
+    'recommended' => 'Njoftime të Rekomanduara për ju',
+    'filter' => 'Filtër',
+    'sort' => 'Lloj',
+    'sort_by' => 'Rendit Sipas',
     'pick_option' => 'Zgjidh një mundësi',
-    'pick_ordering' => 'renditje',
-    'price_high' => 'Pricemimi i lartë deri në i ulët',
-    'price_low' => 'Pricemimi i ulët deri në i lartë',
+    'pick_ordering' => 'Renditje',
+    'price_high' => 'Cmimi i larte deri tek i uleti',
+    'price_low' => 'Cmimi i ulet deri tek i larte',
     'newest' => 'Më të Rejat',
-    'oldest' => 'Oldest',
+    'oldest' => 'Më të Vjetrat',
     'address_a_z' => 'Adresa (A deri Z)',
     'address_z_a' => 'Adresa (Z në A)',
     'categories' => 'Kategoritë',
-    'all_categories' => 'Të gjitha kategoritë',
-    'location' => 'vend',
+    'all_categories' => 'Të gjitha Kategoritë',
+    'location' => 'Vendndodhja',
     'send_message' => 'Dërgoni mesazh',
-    'phone_gsm' => 'Gsm Telefon',
+    'phone_gsm' => 'Nr. Celular ',
     'phone_office' => 'Telefoni i zyres',
-    'add_to_favorites' => "Shto te të preferuarat",
-    'send' => 'Send',
-    'search_name' => 'Emri i kërkimit',
-    'my_favorite_searches' => 'Kërkimet e preferuara',
+    'add_to_favorites' => "Shto te të Preferuarat",
+    'send' => 'Dërgo',
+    'search_name' => 'Emri i Kërkimit',
+    'my_favorite_searches' => 'Kërkimet e Preferuara',
     'search_desc' => 'Ju mund të shtoni dhe menaxhoni zgjedhjet tuaja të preferuara të kërkimit këtu.',
     'complaint_placeholder' => 'Shkruaj detajet e ankesave këtu.',
     'show_details' => 'Trego detajet',
