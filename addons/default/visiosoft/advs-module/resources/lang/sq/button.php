@@ -29,6 +29,6 @@ return [
     'save_category' => 'Ruaj Kategorinë',
     'change_owner' => 'Ndrysho Pronarin',
     'update_category' => [
-        'name' => 'Kategoria e azhurnuar'
+        'name' => 'Kategoria Azhornimeve'
     ],
 ];
