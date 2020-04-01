@@ -2,34 +2,34 @@
 
 return [
     'name' => [
-        'name' => 'titull'
+        'name' => 'Titull'
     ],
     'order' => [
         'name' => 'urdhër'
     ],
     'slug' => [
-        'name' => 'goditje e fortë'
+        'name' => 'Goditje e Fortë'
     ],
     'parent_category' => [
-        'name' => 'prind'
+        'name' => 'Prind'
     ],
     'category' => [
         'name' => 'Titulli i kategorisë'
     ],
     'price' => [
-        'name' => 'çmim'
+        'name' => 'Çmim'
     ],
     'date' => [
-        'name' => 'data'
+        'name' => 'Data'
     ],
     'photo' => [
         'name' => 'Foto'
     ],
     'video' => [
-        'name' => 'video'
+        'name' => 'Video'
     ],
     'map' => [
-        'name' => 'hartë'
+        'name' => 'Hartë'
     ],
     'stock' => [
         'name' => 'Stock'
@@ -41,25 +41,25 @@ return [
         'name' => 'Pagesa Online'
     ],
     'city' => [
-        'name' => 'qytet'
+        'name' => 'Qytet'
     ],
     'country' => [
-        'name' => 'vend'
+        'name' => 'Shtetit'
     ],
     'district' => [
-        'name' => 'rreth'
+        'name' => 'Rreth'
     ],
     'neighborhood' => [
-        'name' => 'lagje'
+        'name' => 'Lagje'
     ],
     'village' => [
-        'name' => 'fshati'
+        'name' => 'Fshati'
     ],
     'files' => [
-        'name' => 'images'
+        'name' => 'Images'
     ],
     'cat1' => [
-        'name' => 'Kategoria kryesore'
+        'name' => 'Kategoria Kryesore'
     ],
     'cat2' => [
         'name' => 'Nën Kategoria 1'
@@ -80,16 +80,16 @@ return [
         'name' => 'Nën Kategoria 6'
     ],
     'currency' => [
-        'name' => 'monedhë'
+        'name' => 'Monedhë'
     ],
     'status' => [
-        'name' => 'status',
+        'name' => 'Status',
         'option' => [
-            'approved' => 'i miratuar',
-            'expired' => 'i skaduar',
-            'unpublished' => 'i pabotuar',
-            'pending_admin' => 'Në pritje të administratorit',
-            'pending_user' => 'Përdorues në pritje'
+            'approved' => 'I miratuar',
+            'expired' => 'I skaduar',
+            'unpublished' => 'I pabotuar',
+            'pending_admin' => 'Në pritje të Administratorit',
+            'pending_user' => 'Përdorues në Pritje'
         ]
     ],
     'pending_adv' => [
