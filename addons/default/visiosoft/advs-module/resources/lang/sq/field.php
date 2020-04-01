@@ -102,7 +102,7 @@ return [
         'name' => 'Fotoja e Kopertinës'
     ],
     'favs_adv' => [
-        'name' => 'Reklamat e preferuara'
+        'name' => 'Njoftimet e Preferuarar'
     ],
     'my_adv' => [
         'name' => 'advs'
@@ -110,7 +110,7 @@ return [
     'description' =>  'Përshkrim',
     'explanation' =>  'Shpjegim',
     'type' => [
-        'name' => 'lloj'
+        'name' => 'Lloj'
     ],
     'parent_adv' => [
         'name' => 'Reklama e lidhur'
