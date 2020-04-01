@@ -93,13 +93,13 @@ return [
         ]
     ],
     'pending_adv' => [
-        'name' => 'Në pritje të reklamave'
+        'name' => 'Ne pritje te njoftimeve'
     ],
     'finish_at' => [
         'name' => 'Mbaro At'
     ],
     'cover_photo' => [
-        'name' => 'Fotoja e kopertinës'
+        'name' => 'Fotoja e Kopertinës'
     ],
     'favs_adv' => [
         'name' => 'Reklamat e preferuara'
