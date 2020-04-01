@@ -17,7 +17,7 @@ return [
         'name' => 'Vend i paracaktuar',
     ],
     'create_ad_page_location' => [
-        'name' => 'Krijoni vendndodhjen e faqes së reklamave',
+        'name' => 'Krijoni vendndodhjen e faqes së Njoftimet',
     ],
     'default_city' => [
         'name' => 'Qyteti i paracaktuar',
