@@ -23,10 +23,10 @@ return [
         'name' => 'Detajet e Njoftimet',
     ],
     'ad_details_tab' => [
-        'name' => 'Tab Detajet e Ad',
+        'name' => 'Tab Detajet e Njoftime',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Më të fundit dhe Shiko të gjitha Btn',
+        'name' => 'Butoni i fundit dhe Shikoni të gjithë',
     ],
     'register_page_instruction_logo' => [
         'name' => 'Regjistrohu Logo udhëzuese',
