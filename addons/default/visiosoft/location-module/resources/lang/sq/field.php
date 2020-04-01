@@ -2,7 +2,7 @@
 
 return [
     'name' => [
-        'name' => 'titull'
+        'name' => 'Titull'
     ],
     'slug' => [
         'name' => 'Goditje e Fortë'
