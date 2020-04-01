@@ -2,13 +2,13 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Titulli i lundrimit',
+        'name' => 'Titulli i Lundrimit',
     ],
     'navigation_action' => [
-        'name' => 'Veprimi i lundrimit',
+        'name' => 'Veprimi i Lundrimit',
     ],
     'country_fields' => [
-        'name' => 'Fushat e vendit',
+        'name' => 'Fushat e Vendit',
     ],
     'date_fields' => [
         'name' => 'Fushat e datës',
@@ -20,7 +20,7 @@ return [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Detajet e reklamës',
+        'name' => 'Detajet e Njoftimet',
     ],
     'ad_details_tab' => [
         'name' => 'Tab Detajet e Ad',
