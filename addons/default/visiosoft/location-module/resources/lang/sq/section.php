@@ -11,12 +11,12 @@ return [
         'title' => 'rrethet',
     ],
     'neighborhoods' => [
-        'title' => 'lagjet',
+        'title' => 'Lagjet',
     ],
     'village' => [
-        'title' => 'fshati',
+        'title' => 'Fshati',
     ],
     'general' => 'i përgjithshëm',
     'map' => 'Hartë',
-    'setting' => 'mjedis',
+    'setting' => 'Mjedis',
 ];

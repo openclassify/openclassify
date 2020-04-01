@@ -5,7 +5,7 @@ return [
         'name' => 'titull'
     ],
     'slug' => [
-        'name' => 'goditje e fortë'
+        'name' => 'Goditje e Fortë'
     ],
     'city' => [
         'name' => 'Qytet'
@@ -20,10 +20,10 @@ return [
         'name' => 'Renditja e renditjes'
     ],
     'neighborhood' => [
-        'name' => 'lagje'
+        'name' => 'Lagjja e Re'
     ],
     'village' => [
-        'name' => 'fshati'
+        'name' => 'Fshati'
     ],
     'description' => [
         'name' => 'Përshkrim'
