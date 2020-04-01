@@ -28,14 +28,14 @@ return [
     'personal_registration_body' => 'Shit dhe merr me qera Shtëpinë, Makinën tënde, shit sendet e tua të përdorura, merr të reja.',
     'personal_registration_list_1' => 'Posto një reklamë falas,',
     'personal_registration_list_2' => 'Shtoni njoftimet që ju interesojnë, ndiqni ndryshimet e çmimeve pasi t\'i shtoni ato në të preferuarat tuaja, krijoni kërkime të preferuara që plotësojnë kriteret tuaja,',
-    'personal_registration_list_3' => 'Dërgoni mesazhe pronarëve të reklamave në faqe.',
-    'register_information_note' => 'Informacioni në këtë faqe merret për ' . env('APPLICATION_DOMAIN') . ' anëtarësimi. Mund të gjeni informacione të hollësishme në lidhje me mbrojtjen e të dhënave personale këtu.',
+    'personal_registration_list_3' => 'Dërgoni mesazhe pronarëve të njoftimet në faqe.',
+    'register_information_note' => 'Informacioni në këtë faqe merret për ' . env('APPLICATION_DOMAIN') . ' Anëtarësimi. Mund të gjeni informacione të hollësishme në lidhje me mbrojtjen e të dhënave personale këtu.',
 
     // Register page
     'phone_validation_error' => 'Ky numër telefoni është në përdorim nga një anëtar tjetër.',
 
     // Forgot Password
-    'create_new_password' => 'Krijoni fjalëkalimin e ri',
+    'create_new_password' => 'Krijoni Fjalëkalimin e ri',
 
     // Login page
     'or' => 'ose'
