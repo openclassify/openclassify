@@ -3,7 +3,7 @@
 return [
 
     'village' => [
-        'name'   => 'fshati',
+        'name'   => 'Fshati',
         'option' => [
             'read'   => 'Mund të lexoni fshatin?',
             'write'  => 'Mund të krijojë / modifikojë fshatin?',
