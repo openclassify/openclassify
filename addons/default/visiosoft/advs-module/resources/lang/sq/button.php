@@ -3,7 +3,7 @@
 return [
     'new_adv' => 'Njoftime i Ri',
     'new_category' => 'Kategoria e Re',
-    'new_country' => 'Vendi i Ri',
+    'new_country' => 'Shteti i Ri',
     'new_city' => 'Qyteti i Ri',
     'new_district' => 'Rrethi i Ri',
     'new_neighborhood' => 'Lagjja e re',
