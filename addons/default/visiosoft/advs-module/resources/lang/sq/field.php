@@ -44,7 +44,7 @@ return [
         'name' => 'Qytet'
     ],
     'country' => [
-        'name' => 'Shtetit'
+        'name' => 'Shteti'
     ],
     'district' => [
         'name' => 'Rreth'
@@ -207,11 +207,11 @@ return [
         'list' => 'Listë',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Emri i reklamës',
+        'name' => 'Emri Njoftimit',
         'price' => 'Çmim',
-        'publish_at' => 'Data e reklamës',
-        'location_city' => 'qytet',
-        'location_country' => 'vend',
+        'publish_at' => 'Data Njoftime',
+        'location_city' => 'Qytet',
+        'location_country' => 'Shteti',
     ],
     'show_list_view' => [
         'name' => 'Listë',
@@ -266,7 +266,7 @@ return [
 
     // Pending screen
     'pending_message_1' => 'Shpallja është në Procesin e Miratimit',
-    'pending_message_2' => "Data e azhurnimit të reklamës",
+    'pending_message_2' => "Data e azhurnimit të njoftime",
     'pending_message_3' => 'Koha e parashikuar e pritjes',
     'pending_message_4' => 'Koha e kaluar në procesin e miratimit do t\'i shtohet kohës së dopingut.',
     'pending_message_5' => 'Asnjë transaksion nuk mund të bëhet nga qendra e thirrjeve në lidhje me reklamën në procesin e miratimit.',
