@@ -196,7 +196,7 @@ return [
     'featured_ads' => "Shpalljet e preferuara",
     'trending_ads' => 'Reklamat e modës',
     'search_ads_result_message' => [
-        'name' => ': numëroni reklama të gjetura për: kërkim të emrit',
+        'name' => ': numëroni njoftime të gjetura për: kërkim të emrit',
     ],
     'total' => 'Total',
     'quantity' => 'sasi',
@@ -208,7 +208,7 @@ return [
     ],
     'advs_list_table_thead' => [
         'name' => 'Emri i reklamës',
-        'price' => 'çmim',
+        'price' => 'Çmim',
         'publish_at' => 'Data e reklamës',
         'location_city' => 'qytet',
         'location_country' => 'vend',
