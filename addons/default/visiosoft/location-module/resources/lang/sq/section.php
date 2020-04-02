@@ -11,7 +11,7 @@ return [
         'title' => 'Rreth',
     ],
     'neighborhoods' => [
-        'title' => 'Lagjet',
+        'title' => 'Lagje',
     ],
     'village' => [
         'title' => 'Fshati',
