@@ -8,7 +8,7 @@ return [
         'name' => 'Veprimi i Lundrimit',
     ],
     'country_fields' => [
-        'name' => 'Fushat e Vendit',
+        'name' => 'Fushat e Shteti',
     ],
     'date_fields' => [
         'name' => 'Fushat e datës',
