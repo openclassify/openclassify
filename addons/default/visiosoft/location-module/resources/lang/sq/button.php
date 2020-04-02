@@ -4,7 +4,7 @@ return [
     'new_country' => 'Vendi i Ri',
     'new_city' => 'Qyteti i Ri',
     'new_district' => 'Rrethi i Ri',
-    'new_neighborhood' => 'Lagjja e Re',
+    'new_neighborhood' => 'Lagje e Re',
     'new_village' => 'Fshati i Ri',
     'sub_cities' => 'Qytetet nën-qytet',
     'add_sub_cities' => 'Shtoni Nën Qytetin',
