@@ -274,7 +274,7 @@ return [
         'name' => 'subjekt',
     ],
     'price' => [
-        'name' => 'çmim',
+        'name' => 'Çmim',
     ],
     'piece' => [
         'name' => 'copë',
