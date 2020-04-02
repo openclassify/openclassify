@@ -29,7 +29,7 @@ return [
         'name' => 'Aktivizo përdoruesin'
     ],
     'country' => [
-        'name' => 'Shtetit'
+        'name' => 'Shteti'
     ],
     'city' => [
         'name' => 'Qytet'
@@ -83,7 +83,7 @@ return [
         'name' => 'Telefoni Fikse'
     ],
     'adress_country' => [
-        'name' => 'Shtetit'
+        'name' => 'Shteti'
     ],
     'adress_city' => [
         'name' => 'Qytet'
