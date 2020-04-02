@@ -11,7 +11,7 @@ return [
         'name' => 'Qytet'
     ],
     'country' => [
-        'name' => 'Vendodhja'
+        'name' => 'Vendndodhja'
     ],
     'district' => [
         'name' => 'Rreth'
@@ -20,7 +20,7 @@ return [
         'name' => 'Renditja e renditjes'
     ],
     'neighborhood' => [
-        'name' => 'Lagjja e Re'
+        'name' => 'Lagje'
     ],
     'village' => [
         'name' => 'Fshati'
