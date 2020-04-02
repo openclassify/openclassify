@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Vendodhja',
-    'name'        => 'Moduli i Vendodhjes',
+    'title'       => 'Vendndodhja',
+    'name'        => 'Moduli i vendndodhjes',
     'description' => 'Përshkrim',
 ];

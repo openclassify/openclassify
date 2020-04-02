@@ -2,7 +2,7 @@
 
 return [
     'file' => [
-        'name' => 'Fotografitë'
+        'name' => 'Fotografi'
     ],
     'first_name' => [
         'name' => 'Emri'
@@ -17,7 +17,7 @@ return [
         'name' => 'Emri i ekranit'
     ],
     'email' => [
-        'name' => 'Adresa e emailit'
+        'name' => 'Adresa e e-mail'
     ],
     'sitename' => [
         'name' => 'SITENAME'
@@ -29,25 +29,25 @@ return [
         'name' => 'Aktivizo përdoruesin'
     ],
     'country' => [
-        'name' => 'vend'
+        'name' => 'Shteti'
     ],
     'city' => [
-        'name' => 'qytet'
+        'name' => 'Qytet'
     ],
     'district' => [
-        'name' => 'rreth'
+        'name' => 'Rreth'
     ],
     'neighborhood' => [
-        'name' => 'lagje'
+        'name' => 'Lagje'
     ],
     'village' => [
-        'name' => 'fshati'
+        'name' => 'Fshati'
     ],
     'gsm_phone' => [
-        'name' => 'Telefon GSM'
+        'name' => 'Nr. Celular'
     ],
     'land_phone' => [
-        'name' => 'Toka e telefonit'
+        'name' => 'Telefoni Fikse'
     ],
     'office_phone' => [
         'name' => 'Telefoni i zyres'
@@ -68,7 +68,7 @@ return [
         'name' => 'Mbiemri'
     ],
     'actions' => [
-        'name' => 'veprimet'
+        'name' => 'Veprimet'
     ],
     'adress_content' => [
         'name' => 'Përmbajtja e Adresës'
@@ -77,31 +77,31 @@ return [
         'name' => 'Kodi Postar'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Gsm Telefon'
+        'name' => 'Nr. Celular'
     ],
     'adress_land_phone' => [
-        'name' => 'Toka e telefonit'
+        'name' => 'Telefoni Fikse'
     ],
     'adress_country' => [
-        'name' => 'vend'
+        'name' => 'Shteti'
     ],
     'adress_city' => [
-        'name' => 'qytet'
+        'name' => 'Qytet'
     ],
     'adress_district' => [
-        'name' => 'rreth'
+        'name' => 'Rreth'
     ],
     'adress_neighborhood' => [
-        'name' => 'lagje'
+        'name' => 'Lagje'
     ],
     'adress_village' => [
-        'name' => 'fshati'
+        'name' => 'Fshati'
     ],
     'messages' => [
-        'name' => 'mesazhet'
+        'name' => 'Mesazhet'
     ],
     'user' => [
-        'name' => 'përdorues'
+        'name' => 'Perdoruesit'
     ],
 
 
@@ -114,13 +114,13 @@ return [
     ],
 
     'create' => [
-        'name' => 'krijoj'
+        'name' => 'Krijoj'
     ],
     'edit' => [
-        'name' => 'redaktoj'
+        'name' => 'Ndrysho'
     ],
     'delete' => [
-        'name' => 'fshini'
+        'name' => 'Fshini'
     ],
     'list' => [
         'name' => 'Listë'
@@ -129,7 +129,7 @@ return [
         'name' => 'Adresë'
     ],
     'menu_orders' => [
-        'name' => 'urdhërat'
+        'name' => 'Porosi'
     ],
     'menu_favorites' => [
         'name' => 'Favoritet'
@@ -141,7 +141,7 @@ return [
         'name' => 'Miratim në pritje'
     ],
     'menu_delete_account' => [
-        'name' => 'Mbyll llogari'
+        'name' => 'Mbyll Llogari'
     ],
     'menu_my_ads' => [
         'name' => 'Reklamat e mia'
@@ -159,7 +159,7 @@ return [
         'name' => 'Paketat e mia'
     ],
     'menu_adv_packages' => [
-        'name' => 'Paketat e reklamave'
+        'name' => 'Paketat e Njoftime'
     ],
     'menu_time_packages' => [
         'name' => 'Paketat e kohës'
@@ -171,25 +171,25 @@ return [
         'name' => 'Foto e profilit'
     ],
     'adv_listing_banner' => [
-        'name' => 'Flamuri i faqes së listës së reklamave'
+        'name' => 'Flamuri i faqes së listës së Njoftimet'
     ],
     'approve' => [
-        'name' => 'miratoj'
+        'name' => 'Miratoj'
     ],
     'approved' => [
-        'name' => 'i miratuar'
+        'name' => 'I miratuar'
     ],
     'pending' => [
         'name' => 'pritje'
     ],
     'passive' => [
-        'name' => 'pasiv'
+        'name' => 'Pasive'
     ],
     'pending_admin' => [
         'name' => 'pritje'
     ],
     'menu_messages' => [
-        'name' => 'mesazhet'
+        'name' => 'Mesazhet'
     ],
     'menu_my_purchase' => [
         'name' => 'Blerja ime'
@@ -274,7 +274,7 @@ return [
         'name' => 'subjekt',
     ],
     'price' => [
-        'name' => 'çmim',
+        'name' => 'Çmim',
     ],
     'piece' => [
         'name' => 'copë',
