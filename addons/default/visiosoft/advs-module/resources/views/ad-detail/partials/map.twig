@@ -8,7 +8,7 @@
     $(document).ready(function () {
         var no_image_text = "{{ trans('visiosoft.module.streetview::field.no_location') }}";
 
-
+        if (typeof coord !== 'undefined') {
             var ifAnyImg = "https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=" + coord[0] + "," + coord[1] +
                 "&fov=90&heading=235&pitch=10&key=" + google_map_key;
             $.getJSON(ifAnyImg, function (data) {
@@ -22,6 +22,7 @@
                     }
                 }
             )
+        }
     });
 </script>
 <script>
