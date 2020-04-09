@@ -188,7 +188,7 @@ return [
     'post_free_ad' => 'Posto reklamën falas',
     'select_a_category' => 'Zgjidh nje kategori',
     'select_a_sub_category' => 'Zgjidhni një Nën Kategori',
-    'all_dopings_added' => 'Të gjitha llojet e dopingut janë shtuar për këtë shpallje.',
+    'all_dopings_added' => 'Të gjitha llojet e vitamina janë shtuar për këtë shpallje.',
     'is_get_adv' => [
         'name' => 'MARR'
     ],
@@ -268,7 +268,7 @@ return [
     'pending_message_1' => 'Shpallja është në Procesin e Miratimit',
     'pending_message_2' => "Data e azhurnimit të njoftime",
     'pending_message_3' => 'Koha e parashikuar e pritjes',
-    'pending_message_4' => 'Koha e kaluar në procesin e miratimit do t\'i shtohet kohës së dopingut.',
+    'pending_message_4' => 'Koha e kaluar në procesin e miratimit do t\'i shtohet kohës së Vitaminat.',
     'pending_message_5' => 'Asnjë transaksion nuk mund të bëhet nga qendra e thirrjeve në lidhje me reklamën në procesin e miratimit.',
     'hours' => 'orë',
 
