@@ -15,7 +15,7 @@ use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
+use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
@@ -76,7 +76,7 @@ class AdvsController extends AdminController
             'change_owner' => [
                 'data-toggle' => 'modal',
                 'data-target' => '#modal',
-                'href'        => 'admin/advs-users/choose/{entry.id}',
+                'href' => 'admin/advs-users/choose/{entry.id}',
             ]
         ]);
 
@@ -209,25 +209,24 @@ class AdvsController extends AdminController
         return $form->render($id);
     }
 
-    public function actions($id, $type, SettingRepositoryInterface $settings, Dispatcher $events)
+    public function actions($id, $type, SettingRepositoryInterface $settings, AdvModel $advModel)
     {
 
-        $adv = AdvsAdvsEntryModel::query()->where('advs_advs.id', '=', $id)->first();
-        $adv->status = $type;
+        $ad = $advModel->where('advs_advs.id', '=', $id)->first();
+        $ad->status = $type;
 
         $default_adv_publish = $settings->value('visiosoft.module.advs::default_published_time');
-        $adv->finish_at = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $default_adv_publish . ' day'));
-        $adv->publish_at = date('Y-m-d H:i:s');
+        $ad->finish_at = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $default_adv_publish . ' day'));
+        $ad->publish_at = date('Y-m-d H:i:s');
 
         //algolia Search Module
-        $isActiveAlgolia = new AdvModel();
-        $isActiveAlgolia = $isActiveAlgolia->is_enabled('algolia');
+        $isActiveAlgolia = $advModel->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
             $algolia->updateStatus($id, $type, $settings);
         }
-        $adv->update();
-        $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
+        $ad->update();
+        event(new ChangedStatusAd($ad));//Create Notify
         return back();
     }
 

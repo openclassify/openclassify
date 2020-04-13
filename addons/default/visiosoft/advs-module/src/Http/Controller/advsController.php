@@ -8,6 +8,8 @@ use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
 use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
+use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
+use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
 use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -15,9 +17,6 @@ use Illuminate\Support\Facades\Cookie;
 use Visiosoft\LocationModule\City\CityRepository;
 use function PMA\Util\get;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
-use Visiosoft\AdvsModule\Adv\Event\CreateAd;
-use Visiosoft\AdvsModule\Adv\Event\EditAd;
 use Visiosoft\AdvsModule\Adv\Event\priceChange;
 use Visiosoft\AdvsModule\Adv\Event\UpdateAd;
 use Visiosoft\AdvsModule\Adv\Event\viewAd;
@@ -282,11 +281,13 @@ class AdvsController extends PublicController
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
 
-    public function fullLink($request, $url, $newParameters) {
+    public function fullLink($request, $url, $newParameters)
+    {
         return $this->dispatch(new appendRequestURL($request, $url, $newParameters));
     }
 
-    public function viewTypeBasedRedirect($viewType, $compact) {
+    public function viewTypeBasedRedirect($viewType, $compact)
+    {
         if (isset($viewType) and $viewType == 'table') {
             return $this->view->make('visiosoft.module.advs::list/table', $compact);
         } elseif (isset($viewType) and $viewType == 'map') {
@@ -367,10 +368,10 @@ class AdvsController extends PublicController
         $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
         $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
         $this->template->set('meta_title', $adv->name . "|" . end($categories)['name']);
-        if (substr($adv->cover_photo, 0, 4 ) === "http") {
+        if (substr($adv->cover_photo, 0, 4) === "http") {
             $coverPhoto = $adv->cover_photo;
         } else {
-            if (substr($adv->cover_photo, 0, 1 ) === "/") {
+            if (substr($adv->cover_photo, 0, 1) === "/") {
                 $coverPhoto = \Illuminate\Support\Facades\Request::root() . $adv->cover_photo;
             } else {
                 $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
@@ -588,7 +589,6 @@ class AdvsController extends PublicController
             // Auto approve
             if (setting_value('visiosoft.module.advs::auto_approve')) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
-
                 $adv->update([
                     'status' => 'approved',
                     'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
@@ -621,13 +621,7 @@ class AdvsController extends PublicController
                 }
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
-
-            if ($adv->slug == "") {
-                $events->dispatch(new CreateAd($request->update_id, $settings));//Create Notify
-            } else {
-                $events->dispatch(new EditAd($request->update_id, $settings, $adv));//Update Notify
-            }
-
+            event(new CreatedAd($adv));
             return redirect(route('advs_preview', [$request->update_id]));
         }
 
@@ -732,7 +726,7 @@ class AdvsController extends PublicController
         }
 
         $this->adv_model->statusAds($id, $type);
-        $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
+        event(new ChangedStatusAd($ad));//Create Notify
         $this->messages->success(trans('streams::message.edit_success', ['name' => 'Status']));
         return back();
     }
