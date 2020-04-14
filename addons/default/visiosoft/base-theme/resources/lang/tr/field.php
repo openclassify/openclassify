@@ -1,42 +1,190 @@
 <?php
 
 return [
-    'latest_ads' => 'Son Eklenenler',
-    'show_all' => 'Tümünü Göster',
-    'login' => [
-        'name' => 'Oturum aç',
+    // Navigation
+    'products' => 'Ürünler',
+    'suppliers' => 'Mağazalar',
+
+    'latest_ads' =>  'Son Eklenenler',
+    'latest_stores' => [
+        'name' => 'Son Eklenen Mağazalar',
     ],
-    'logout' => [
-        'name' => 'Çıkış Yap',
+    'show_all' => 'Hepsini göster',
+
+    // Footer Links
+    'corporate' => [
+        'name' => 'Kurumsal',
     ],
-    'profile' => 'Profil',
-    'email' => 'Email Adresiniz',
-    'reset_code' => 'Sıfırlama Kodu',
-    'password_confirmation' => 'Şifrenizi Onaylayın',
-    'password' => 'Şifreniz',
-    'first_name' => 'Adınız',
-    'last_name' => 'Soyadınız',
-    'remember_me' => 'Beni Hatırla',
-    'not_a_member_yet' => 'Henüz Üye Değil Misiniz',
-    'not_a_member_yet_message' => 'Üyelerimize özel hizmetlerimizden faydalanabilmek için üye olun',
-    'forgot_password' => 'Şifremi Unuttum',
-    'email_or_phone_number' => 'E-Posta Adresiniz veya Telefon Numaranız',
-    'phone_number' => 'Telefon Numarası',
+    'about_us' => [
+        'name' => 'Hakkımızda',
+    ],
+    'media_contact_info_and_visuals' => [
+        'name' => 'Medya Görselleri',
+    ],
+    'human_resources' => [
+        'name' => 'İnsan Kaynakları',
+    ],
+    'contact_us' => [
+        'name' => 'İletişim',
+    ],
+    'our_services' => [
+        'name' => 'Servislerimiz',
+    ],
+    'doping' => [
+        'name' => 'Doping',
+    ],
+    'get' => [
+        'name' => 'Güvenli E-Ticaret',
+    ],
+    'bulk_product_upload' => [
+        'name' => 'Toplu Ürün Girişi',
+    ],
+    'advertising' => [
+        'name' => 'Reklam',
+    ],
+    'native_ad' => [
+        'name' => 'Reklam',
+    ],
+    'mobile' => [
+        'name' => 'Mobil',
+    ],
+    'stores' => [
+        'name' => 'Mağazalar',
+    ],
+    'my_store' => [
+        'name' => 'Mağazam',
+    ],
+    'open_store' => [
+        'name' => 'Mağaza aç',
+    ],
+    'why_should_i_open_a_store' => [
+        'name' => 'Mağaza açmalı mıyım?',
+    ],
+    'the_cost_of_store' => [
+        'name' => 'Mağaza Ücretleri',
+    ],
+    'my_real_estate_agency' => [
+        'name' => 'Emlak Ofisim',
+    ],
+    'my_automobile_agency' => [
+        'name' => 'Otomobil Acentem',
+    ],
+    'privacy_and_use' => [
+        'name' => 'Gizlilik ve Kullanım',
+    ],
+    'secure_e-trade_tips' => [
+        'name' => 'Güvenli e-Ticaret İpuçları',
+    ],
+    'agreements_and_rules' => [
+        'name' => 'Kurallarımız',
+    ],
+    'membership_agreement' => [
+        'name' => 'Üyelik Sözleşmesi',
+    ],
+    'terms_of_use' => [
+        'name' => 'Kullanım Sözleşmesi',
+    ],
+    'site_map' => [
+        'name' => 'Site Haritası',
+    ],
+    'personal_data_protection' => [
+        'name' => 'Kişisel Verilerin Korunması',
+    ],
+    'help_and_operation_guide' => [
+        'name' => 'Yardım',
+    ],
+    'follow_us' => [
+        'name' => 'Takip et',
+    ],
+    'facebook' => [
+        'name' => 'Facebook',
+    ],
+    'twitter' => [
+        'name' => 'heyecan',
+    ],
+    'linkedin' => [
+        'name' => 'Linkedin',
+    ],
+    'instagram' => [
+        'name' => 'Instagram',
+    ],
+    'whatsapp' => 'WhatsApp',
+    'youtube' => [
+        'name' => 'Youtube',
+    ],
 
-    // Registration instructions
-    'personal_registration_header' => 'Bireysel Üyelik Avantajları Nelerdir?',
-    'personal_registration_body' => 'Evinizi, arabanızı satmak ve kiralamak, kullanılmayan eşyalarınızı satmak, yenilerini almak.',
-    'personal_registration_list_1' => 'Ücretsiz bir reklam gönderin,',
-    'personal_registration_list_2' => 'İlgilendiğiniz reklamları ekleyin, favorilerinize ekledikten sonra fiyat değişikliklerini takip edin, kriterlerinize uygun favori aramalar oluşturun,',
-    'personal_registration_list_3' => 'Sitedeki reklam sahiplerine mesaj gönderin.',
-    'register_information_note' => 'Bu sayfadaki bilgiler ' . env('APPLICATION_DOMAIN') . ' üyelik. Kişisel verilerin korunması hakkında ayrıntılı bilgiyi burada bulabilirsiniz.',
+    //footer help
 
-    // Register page
-    'phone_validation_error' => 'Bu telefon numarası başka bir üye tarafından kullanılıyor.',
+    'costumer_services' => [
+        'name' => 'Müşteri Hizmetleri',
+    ],
+    'help_center' => [
+        'name' => 'Destek Merkezi',
+    ],
 
-    // Forgot Password
-    'create_new_password' => 'Yeni Şifre Oluştur',
+    //footer
 
-    // Login page
-    'or' => 'veya'
+    'copyright' => [
+        'name' => 'telif hakkı',
+    ],
+    'all_rights_reserved' => [
+        'name' => 'Her hakkı saklıdır.',
+    ],
+
+
+    //
+    'ad' => [
+        'name' => 'İlan'
+    ],
+    'price' => [
+        'name' => 'Fiyat'
+    ],
+    'ad_info' => [
+        'name' => 'İlan Bilgileri'
+    ],
+    'ad_date' => [
+        'name' => 'İlan Tarihi'
+    ],
+    'member_since' => [
+        'name' => 'Üyelik Tarihi ',
+    ],
+    'other_ads' => [
+        'name' => 'Diğer ilanlar',
+    ],
+    'security_tips' => [
+        'name' => 'Güvenli Ticaret',
+    ],
+    'office_phone' => [
+        'name' => 'Ofis',
+    ],
+    'land_phone' => [
+        'name' => 'Sabit Telefon',
+    ],
+    'find' => [
+        'name' => 'Bul',
+    ],
+    'filter' => [
+        'name' => 'Filtre',
+    ],
+    'mega_photo' => [
+        'name' => 'Büyük Fotoğraf',
+    ],
+    'video' => [
+        'name' => 'Video',
+    ],
+    'no_location' => 'Konum seçilmedi.',
+    'sort' => [
+        'name' => 'Sırala'
+    ],
+    'login.name' => [
+        'name' => 'giris',
+    ],  'profile' => [
+        'name' => 'profil',
+    ],
+    'set_category' => 'Kategoriyi Düzenle',
+
+    'company_directory' => 'Şirket yöneticisi',
+    'popular_ads' => 'Popüler İlanlar',
+    'last_48_hours' => 'Son 48 Saat',
+    'secure_e-commerce_ads' => 'Güvenli e-Ticaret İlanları',
 ];
