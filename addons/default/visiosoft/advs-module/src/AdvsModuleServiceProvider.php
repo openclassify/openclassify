@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\AdvsModule;
 
+use Anomaly\FilesModule\File\FileModel;
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 use Anomaly\Streams\Platform\Model\Location\LocationVillageEntryModel;
@@ -351,8 +352,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
     /**
      * Boot the addon.
+     * @param AddonCollection $addonCollection
+     * @param FileModel $fileModel
      */
-    public function boot(AddonCollection $addonCollection)
+    public function boot(AddonCollection $addonCollection, FileModel $fileModel)
     {
         // Run extra post-boot registration logic here.
         // Use method injection or commands to bring in services.
@@ -368,6 +371,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ];
         $addonCollection->get('anomaly.module.settings')->addSection($slug, $section);
         $addonCollection->get('anomaly.module.settings')->addSection($slug2, $section2);
+
+        // Disable file versioning
+        $fileModel->disableVersioning();
     }
 
     /**
