@@ -117,7 +117,7 @@ return [
         'name' => 'Krijoj'
     ],
     'edit' => [
-        'name' => 'Ndrysho'
+        'name' => 'Redakto'
     ],
     'delete' => [
         'name' => 'Fshini'
