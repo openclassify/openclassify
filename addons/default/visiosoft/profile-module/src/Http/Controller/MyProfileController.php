@@ -79,7 +79,7 @@ class MyProfileController extends PublicController
         $country = CountryModel::all();
 
         return $this->view->make('visiosoft.module.profile::profile.detail',
-            compact('user','country', 'form', 'advs_count'));
+            compact('user', 'country', 'form', 'advs_count'));
     }
 
 
@@ -306,6 +306,7 @@ class MyProfileController extends PublicController
     {
 
         UsersUsersEntryModel::query()->find(Auth::id())->update(['enabled' => 0]);
+        Auth::logout();
         return redirect('/');
     }
 
