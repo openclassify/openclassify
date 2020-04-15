@@ -148,7 +148,7 @@ return [
     'complaint_placeholder' => 'Shkruaj detajet e ankesave këtu.',
     'show_details' => 'Trego detajet',
     'ad_actions' => 'Veprimet e reklamave',
-    'edit' => 'redaktoj',
+    'edit' => 'Redakto',
     'approve' => 'miratoj',
     'passive' => "pasiv",
     'offered_by' => 'Ofrohet nga',
