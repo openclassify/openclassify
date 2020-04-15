@@ -117,7 +117,7 @@ return [
         'name' => 'Krijoj'
     ],
     'edit' => [
-        'name' => 'Ndrysho'
+        'name' => 'Redakto'
     ],
     'delete' => [
         'name' => 'Fshini'
@@ -235,7 +235,7 @@ return [
     'message_title' => 'Titulli i mesazhit',
     'owner_name' => 'mesazh',
 
-    'favorites' => "Favoritet",
+    'favorites' => "Të preferuarat",
     'fav_advs' => 'Shpalljet e preferuara',
     'fav_sellers' => "Fav Shitësit",
     'fav_searches' => "Kërkimet e Fav",
@@ -298,7 +298,7 @@ return [
         'name' => 'Në pritje të miratimit të pagesës',
     ],
     'paid' => [
-        'name' => 'i paguar',
+        'name' => 'I paguar',
     ],
     'cancelled' => [
         'name' => 'anuluar',
