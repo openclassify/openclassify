@@ -9,7 +9,7 @@ return [
     "login_error" => "Identifikim ose fjalëkalim i pasaktë.",
     "login_noMail_old_user" => "Adresa e postës elektronike që keni futur nuk u gjet.",
     "login_noMail_old_user2" => "Ju lutemi kontrolloni adresën e postës elektronike dhe provoni përsëri.",
-    "login_noMail_old_user3" => "Nëse problemi vazhdon, ju lutemi kontaktoni në 'info@openclassify.com'.",
+    "login_noMail_old_user3" => "Nëse problemi vazhdon, ju lutemi kontaktoni në 'info@tregtaret.com'.",
     "login_info_old_user" => "Një fjalëkalim i ri është dërguar në adresën tuaj të postës elektronike.",
     "success" => "Sukses",
     "notified_new_updates" => "Dua të njoftohem për azhurnimet e reja",
