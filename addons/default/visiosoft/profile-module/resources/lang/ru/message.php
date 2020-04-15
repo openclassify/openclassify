@@ -32,5 +32,7 @@ return [
     'empty_password_sms_message' => 'Из-за проблем безопасности мы изменили ваш пароль! Ваш новый пароль:',
 
     // Forgot Password
-    'email_phone_not_found' => 'E-mail, номер телефона неверен!'
+    'email_phone_not_found' => 'E-mail, номер телефона неверен!',
+
+    'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
 ];
