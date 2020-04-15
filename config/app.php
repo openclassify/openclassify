@@ -197,11 +197,6 @@ return [
         //Laravel\Tinker\TinkerServiceProvider::class,
 
         /*
-         * Streams Service Provider
-         */
-        Anomaly\Streams\Platform\StreamsServiceProvider::class,
-
-        /*
          * Application Service Providers...
          */
         App\Providers\AppServiceProvider::class,
@@ -209,6 +204,11 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
+
+        /*
+         * Streams Service Provider
+         */
+        Anomaly\Streams\Platform\StreamsServiceProvider::class,
     ],
 
     /*
