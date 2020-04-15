@@ -261,7 +261,7 @@ return [
         'name' => 'po'
     ],
     "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
-    "continue" => 'vazhdoj',
+    "continue" => 'Vazhdoj',
     "gallery" => 'Galeri',
 
     // Pending screen
