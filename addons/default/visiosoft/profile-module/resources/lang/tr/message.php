@@ -29,5 +29,7 @@ return [
     'empty_password_sms_message' => 'Güvenlik sorunları nedeniyle şifrenizi değiştirdik! Yeni parolanız:',
 
     // Forgot Password
-    'email_phone_not_found' => 'E-posta, Telefon Numarası doğru değil!'
+    'email_phone_not_found' => 'E-posta, Telefon Numarası doğru değil!',
+
+    'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
 ];
