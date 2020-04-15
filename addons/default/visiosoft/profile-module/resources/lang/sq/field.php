@@ -235,7 +235,7 @@ return [
     'message_title' => 'Titulli i mesazhit',
     'owner_name' => 'mesazh',
 
-    'favorites' => "Favoritet",
+    'favorites' => "Të preferuarat",
     'fav_advs' => 'Shpalljet e preferuara',
     'fav_sellers' => "Fav Shitësit",
     'fav_searches' => "Kërkimet e Fav",
