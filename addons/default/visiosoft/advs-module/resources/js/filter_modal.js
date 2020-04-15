@@ -42,7 +42,6 @@ var promiseForCategory = new Promise(function (resolve) {
         })
         level++;
     }
-    console.log(all_categories)
     resolve(all_categories);
 });
 
