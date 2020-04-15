@@ -156,7 +156,7 @@ return [
     'click_phone' => 'Trego numrin e telefonit',
     'share' => 'pjesë',
     'report' => 'Raporto këtë shpallje',
-    'features' => 'Features',
+    'features' => 'Veçori',
     "streetview" => "Pamja e rrugës",
     'recommended_ads' => 'Reklama të rekomanduara për ju',
     'new' => 'I ri',
@@ -255,7 +255,7 @@ return [
         'name' => 'Reklama me foto'
     ],
     'ads_with_video' => [
-        'name' => 'Reklama me video'
+        'name' => 'Njoftime me video'
     ],
     'yes' => [
         'name' => 'po'
