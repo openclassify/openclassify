@@ -29,5 +29,7 @@ return [
     'empty_password_sms_message' => 'Për shkak të çështjeve të sigurisë, ne ndryshuam fjalëkalimin tuaj! Fjalëkalimi juaj i ri është:',
 
     // Forgot Password
-    'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!'
+    'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!',
+
+    'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
 ];
