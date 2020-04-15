@@ -298,7 +298,7 @@ return [
         'name' => 'Në pritje të miratimit të pagesës',
     ],
     'paid' => [
-        'name' => 'i paguar',
+        'name' => 'I paguar',
     ],
     'cancelled' => [
         'name' => 'anuluar',
