@@ -8,7 +8,7 @@ return [
     'new_district' => 'Rrethi i Ri',
     'new_neighborhood' => 'Lagjja e re',
     'new_village' => 'Fshati i Ri',
-    'edit' => "Ndrysho",
+    'edit' => "Redakto",
     'approve' => "Miratoj",
     'decline' => 'Anulo',
     'extend' => 'Shpreh',
