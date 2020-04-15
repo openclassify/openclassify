@@ -5,7 +5,7 @@ return [
         'name'   => 'Ads',
         'option' => [
             'read'   => 'Mund të lexoni reklama?',
-            'write'  => 'Mund të krijoni / modifikoni reklama?',
+            'write'  => 'Mund të krijoni / modifikoni njoftime?',
             'delete' => 'Mund të fshini reklamat?',
         ],
     ],
@@ -37,7 +37,7 @@ return [
         'name'   => 'Reklama me terren personal',
         'option' => [
             'read'   => 'Mund të lexoni reklama në terren me porosi?',
-            'write'  => 'Mund të krijoni / modifikoni reklama me terren personal?',
+            'write'  => 'Mund të krijoni / modifikoni njoftime me terren personal?',
             'delete' => 'Mund të fshini reklamat e fushave me porosi?',
         ],
     ],
