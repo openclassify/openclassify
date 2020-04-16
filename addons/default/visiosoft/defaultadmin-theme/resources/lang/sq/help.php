@@ -2,7 +2,7 @@
 
 return [
     'title'                     => 'Burime të dobishme',
-    'description'               => 'Gjeni ndihmë dhe zbuloni tipare me këto burime të dobishme.',
+    'description'               => 'Gjeni ndihmë dhe zbuloni veçorit me këto burime të dobishme.',
     'documentation_link'        => 'Dokumentacioni i OpenClassify',
     'documentation_description' => 'Gjeni dokumentacionin për OpenClassify, zhvillimin e shtesave dhe përdorimin e shtesave gjithashtu.',
     'slack_link'                => 'Skuadër e ngathët',

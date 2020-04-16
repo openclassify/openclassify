@@ -29,5 +29,7 @@ return [
     'empty_password_sms_message' => 'نظرًا لمشاكل الأمان ، قمنا بتغيير كلمة المرور الخاصة بك! كلمة المرور الجديدة:',
 
     // Forgot Password
-    'email_phone_not_found' => 'البريد الإلكتروني ، رقم الهاتف غير صحيح!'
+    'email_phone_not_found' => 'البريد الإلكتروني ، رقم الهاتف غير صحيح!',
+
+    'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
 ];

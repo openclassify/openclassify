@@ -29,5 +29,7 @@ return [
     'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
 
     // Forgot Password
-    'email_phone_not_found' => 'The E-mail, Phone Number is not correct!'
+    'email_phone_not_found' => 'The E-mail, Phone Number is not correct!',
+
+    'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
 ];

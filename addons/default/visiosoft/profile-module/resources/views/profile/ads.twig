@@ -26,6 +26,10 @@
                         </div>
                     </nav>
                     <div class="bg-dark p-2 mt-2 rounded">
+                        <a href="/advs/create_adv" class="btn btn-success">
+                            <i class="fas fa-plus-circle"></i>
+                            {{ trans("theme::button.post_ad.name") }}
+                        </a>
                         <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
                             {{ trans('visiosoft.module.profile::button.extend_all') }}
                         </a>

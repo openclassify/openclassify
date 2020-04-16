@@ -140,15 +140,15 @@ return [
     'send_message' => 'Dërgoni mesazh',
     'phone_gsm' => 'Nr. Celular ',
     'phone_office' => 'Telefoni i zyres',
-    'add_to_favorites' => "Shto te të Preferuarat",
+    'add_to_favorites' => "Shto te të preferuarat",
     'send' => 'Dërgo',
     'search_name' => 'Emri i Kërkimit',
-    'my_favorite_searches' => 'Kërkimet e Preferuara',
+    'my_favorite_searches' => 'Kërkimet e preferuara',
     'search_desc' => 'Ju mund të shtoni dhe menaxhoni zgjedhjet tuaja të preferuara të kërkimit këtu.',
     'complaint_placeholder' => 'Shkruaj detajet e ankesave këtu.',
     'show_details' => 'Trego detajet',
     'ad_actions' => 'Veprimet e reklamave',
-    'edit' => 'redaktoj',
+    'edit' => 'Redakto',
     'approve' => 'miratoj',
     'passive' => "pasiv",
     'offered_by' => 'Ofrohet nga',
@@ -156,7 +156,7 @@ return [
     'click_phone' => 'Trego numrin e telefonit',
     'share' => 'pjesë',
     'report' => 'Raporto këtë shpallje',
-    'features' => 'Features',
+    'features' => 'Veçori',
     "streetview" => "Pamja e rrugës",
     'recommended_ads' => 'Reklama të rekomanduara për ju',
     'new' => 'I ri',
@@ -168,7 +168,7 @@ return [
     'give_a_call' => 'Bëni një telefonatë',
     'message_sent' => 'Mesazhi u Dergua!',
     'asap' => 'Mesazhi i dërguar, shitësi do t\'ju kontaktojë po ashtu.',
-    'ad_id' => 'Id Id',
+    'ad_id' => 'Nr. Njoftime',
     'contact_with' => 'Kontaktoni me',
     'create_adv' => 'Krijoni shpalljen',
     'edit_adv' => 'Ndrysho shpalljen',
@@ -255,13 +255,13 @@ return [
         'name' => 'Reklama me foto'
     ],
     'ads_with_video' => [
-        'name' => 'Reklama me video'
+        'name' => 'Njoftime me video'
     ],
     'yes' => [
         'name' => 'po'
     ],
     "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
-    "continue" => 'vazhdoj',
+    "continue" => 'Vazhdoj',
     "gallery" => 'Galeri',
 
     // Pending screen
