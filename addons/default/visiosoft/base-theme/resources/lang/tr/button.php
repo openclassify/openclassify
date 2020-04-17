@@ -2,42 +2,41 @@
 
 return [
     'post_ad' => [
-        'name' => 'İlan ver*',
-        'footer' => 'İlan ver',
+        'name' => 'Post Free Ad*',
+        'footer' => 'Post Ad',
     ],
     'register' => [
-        'name' => 'Üye kayıt',
+        'name' => 'Sign Up',
     ],
     'login' => [
-        'name' => 'Üye Girişi',
+        'name' => 'Sign In',
     ],
     'my_ads' => [
-        'name' => 'İlanlarım',
+        'name' => 'My Ads',
     ],
     'my_account' => [
-        'name' => 'Hesabım',
+        'name' => 'My Account',
     ],
     'logout' => [
-        'name' => 'Çıkış',
+        'name' => 'Logout',
     ],
-    'show_all' => 'Hepsini göster',
+    'show_all' => 'Show All',
 
-    'close' => 'Kapat',
+    'close' => 'Close',
 
     'hidden' => [
-        'name' => 'Gizle',
+        'name' => 'Hide',
     ],
     'search' => [
-        'name' => 'Arama',
+        'name' => 'Search',
     ],
     'showcase' => [
-        'name' => 'Vitrin',
+        'name' => 'Showcase',
     ],
     'categories' => [
-        'name' => 'Kategoriler',
+        'name' => 'Categories',
     ],
-    'save_category' => 'Kategoriyi Uygula',
-    'edit' => 'Düzenle',
-    'update_profile' => 'Bilgilerimi Güncelle',
-
+    'save_category' => 'Save Category',
+    'edit' => 'Edit',
+    'update_profile' => 'Update Profile',
 ];
