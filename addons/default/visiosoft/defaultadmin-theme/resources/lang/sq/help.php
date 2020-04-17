@@ -8,7 +8,7 @@ return [
     'slack_link'                => 'Skuadër e ngathët',
     'slack_description'         => 'Gjeni dhe komunikoni me përdoruesit dhe zhvilluesit e tjerë të OpenClassify.',
     'forum_link'                => 'Forumi i Diskutimit',
-    'forum_description'         => 'Gjeni përgjigje dhe postoni pyetje në lidhje me përdorimin dhe zhvillimin me OpenClassify.',
+    'forum_description'         => 'Gjeni përgjigje dhe postoni pyetje në lidhje me përdorimin dhe zhvillimin me tregtaret.com',
     'addons_link'               => 'Shtesa të disponueshme',
     'addons_description'        => 'Zbuloni shtesat në dispozicion për OpenClassify.',
 ];

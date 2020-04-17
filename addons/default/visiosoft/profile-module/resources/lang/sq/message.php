@@ -3,7 +3,7 @@
 return [
     "email"      => "Kërkohet fusha me postë elektronike!",
     "username"      => "Kërkohet fusha e përdoruesit!",
-    "success_update"      => "Përditësimi i Profilit Me sukses!",
+    "success_update"      => "Përditësimi i Profilit me sukses!",
     "adress_success_update"      => "Përditësoni me sukses Adresën!",
     "adress_success_create"      => "Adresa Krijoni me sukses!",
     "login_error" => "Identifikim ose fjalëkalim i pasaktë.",

@@ -16,7 +16,7 @@ return [
     ],
     'create_ad_with_post_cat' => [
         'title' => "Posto një shpallje në vetëm 30 sekonda",
-        'msg' => "Ju lutemi NUK postoni reklama të shumta për të njëjtat artikuj ose shërbim. Të gjitha reklamat e kopjuara, spam dhe të kategorizuara gabimisht do të fshihen.",
+        'msg' => "Ju lutemi NUK postoni reklama të shumta për të njëjtat artikuj ose shërbim. Të gjitha njoftime e kopjuara, spam dhe të kategorizuara gabimisht do të fshihen.",
         'nextBtn' => "tjetër",
         'cancelBtn' => "ose Anuloni",
         'link' => "",
