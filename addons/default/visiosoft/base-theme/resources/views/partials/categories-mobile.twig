@@ -1,0 +1,23 @@
+{% set sub_categories_limit = setting_value('visiosoft.theme.base::home_page_sub_categories_limit') %}
+
+<ul class="categories-list px-0 mr-2 d-block d-sm-none">
+    <li class="categories-list-li category-icon text-truncate category-{{ main_category.slug }}">
+        <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ main_category.id }}"
+           class="main-category">
+            {% if main_category.icon.path != "" %}
+                <img src="{{ url('files/' ~ main_category.icon.path) }}" alt="{{ main_category.name }}"
+                     class="img-responsive">
+            {% else %}
+                <img src="{{ img('visiosoft.theme.base::images/default-categories-icon.png').url }}" alt="{{ main_category.name }}"
+                     class="img-responsive">
+            {% endif %}
+            <font>{{ main_category.name }}</font>
+            <p class="p-0 sub-categories">
+                {% set sub_categories = entries('cats','category').where('parent_category_id', main_category.id).where('deleted_at', null).orderBy('sort_order').get() %}
+                {% for sub_category in sub_categories|slice(0,sub_categories_limit) %}
+                    {{ sub_category.name }},
+                {% endfor %}
+            </p>
+        </a>
+    </li>
+</ul>
