@@ -40,8 +40,9 @@ return [
     // Login page
     'or' => 'veya',
 
-    'company_directory' => 'Şirket yöneticisi',
-    'popular_ads' => 'Popüler İlanlar',
-    'last_48_hours' => 'Son 48 Saat',
-    'secure_e-commerce_ads' => 'Güvenli e-Ticaret İlanları',
+    // Side menu links
+    'company_directory' => 'Company directory',
+    'popular_ads' => 'Popular Ads',
+    'last_48_hours' => 'Last 48 Hours',
+    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
 ];
