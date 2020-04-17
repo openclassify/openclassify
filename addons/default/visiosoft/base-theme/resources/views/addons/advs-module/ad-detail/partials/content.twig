@@ -1,0 +1,76 @@
+<div class="description-info classified-description">
+    <div class="row">
+        <div class="col-md-12 description-tabs">
+            <nav>
+                <div class="nav nav-tabs nav-fill ad-detail-tabs" id="nav-tab" role="tablist">
+                    <a class="nav-item nav-link bg-secondary d-block d-sm-none" id="nav-info-tab"
+                       data-toggle="tab" href="#nav-info" role="tab"
+                       aria-controls="nav-info"
+                       aria-selected="true">{{ trans('visiosoft.theme.sahibinden::field.ad_info.name') }}</a>
+
+                    <a class="nav-item nav-link active bg-secondary" id="nav-description-tab"
+                       data-toggle="tab" href="#nav-description" role="tab"
+                       aria-controls="nav-description"
+                       aria-selected="true">{{ trans('visiosoft.module.advs::field.description') }}</a>
+
+                    <a class="nav-item nav-link bg-secondary" id="nav-location-tab"
+                       data-toggle="tab" href="#nav-location" role="tab"
+                       aria-controls="nav-location"
+                       aria-selected="true">{{ trans('visiosoft.module.advs::field.location') }}</a>
+
+                    <!-- Content Tab With Block -->
+                    {{ addBlock('ad-detail/content-tab',{'features':features,'adv':adv})|raw }}
+                    <!-- Content Tab With Block -->
+                </div>
+            </nav>
+            <div class="tab-content pb-3 px-3 px-sm-0 border-0" id="nav-tabContent">
+                <div class="tab-pane fade" id="nav-info" role="tabpanel"
+                     aria-labelledby="nav-info-tab">
+                    <ul class="list-unstyled classified-detail">
+                        <li class="row m-0">
+                            <div class="col-6 p-0 m-0 font-weight-bold detail-title">{{ trans('visiosoft.theme.sahibinden::field.price.name') }}</div>
+                            <div class="col-6 p-0 m-0 text-primary detail-value">{{ adv.price.currency }}</div>
+                        </li>
+                        <li class="row m-0">
+                            <div class="col-6 p-0 m-0 font-weight-bold detail-title">{{ trans('visiosoft.theme.sahibinden::field.ad.name') }}</div>
+                            <div class="col-6 p-0 m-0 text-danger detail-value">{{ adv.id }}</div>
+                        </li>
+                        <li class="row m-0">
+                            <div class="col-6 p-0 m-0 font-weight-bold detail-title">{{ trans('visiosoft.theme.sahibinden::field.ad_date.name') }}</div>
+                            <div class="col-6 p-0 m-0 detail-value">{{ adv.created_at|date('d/m/Y') }}</div>
+                        </li>
+                        {{ addBlock('ad-detail/content',{'features_detail':features})|raw }}
+                    </ul>
+                </div>
+
+                <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
+                     aria-labelledby="nav-description-tab">
+                    <h4 class="subject-tab d-none d-sm-block mb-0 border">{{ trans('visiosoft.module.advs::field.explanation') }}</h4>
+                    <div class="row mx-0 mt-0">
+                        <div class="col-12 classified-description-row border mt-0 pt-2">
+                            <p>{{ adv.advs_desc|raw }}</p>
+                        </div>
+                    </div>
+                    {{ addBlock('ad-detail/checkboxes',{'features':features})|raw }}
+                </div>
+
+                <div class="tab-pane fade show" id="nav-location" role="tabpanel"
+                     aria-labelledby="nav-location-tab">
+                    <div class="classified-description-row px-3 border">
+                        {% include "visiosoft.module.advs::ad-detail/partials/map" %}
+                    </div>
+                </div>
+                <!-- Content With Block -->
+                {{ addBlock('ad-detail/content',{'features':features,'adv':adv, 'profile': profile, 'show':true})|raw }}
+                <!-- Content With Block -->
+            </div>
+        </div>
+    </div>
+</div>
+{{ addBlock('ad-detail/section',{'adv':adv})|raw }}
+<div class="d-none d-sm-block">
+    {{ setting_value('visiosoft.theme.sahibinden::detail_bottom')|raw }}
+</div>
+<div class="d-block d-sm-none">
+    {{ setting_value('visiosoft.theme.sahibinden::detail_bottom_mobile')|raw }}
+</div>

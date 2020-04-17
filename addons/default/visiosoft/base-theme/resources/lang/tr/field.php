@@ -41,8 +41,9 @@ return [
     'or' => 'veya',
 
     // Side menu links
-    'company_directory' => 'Company directory',
-    'popular_ads' => 'Popular Ads',
-    'last_48_hours' => 'Last 48 Hours',
-    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
+    'company_directory' => 'şirket bilgisi',
+    'popular_ads' => 'popüler reklamlar',
+    'last_48_hours' => 'son 48 saat',
+    'secure_e-commerce_ads' => 'güvenli e-ticaret',
+
 ];
