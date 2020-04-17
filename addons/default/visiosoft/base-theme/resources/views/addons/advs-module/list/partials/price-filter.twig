@@ -1,0 +1,55 @@
+<div class="mb-3 p-2 price-section">
+    <div id="price" class="collapse show overflow-auto" aria-labelledby="priceHeading"
+         data-parent="#filter">
+        <div class="row p-0 m-0">
+            <div class="col-md-12 p-0 pl-3 row">
+                <div class="input-group-btn col-md-12 filtering-currencies-btn position-relative w-100 px-0"
+                     data-toggle="buttons">
+                    {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
+                    {% set active_currencies2 = setting_value('visiosoft.module.advs::enabled_currencies') %}
+                    {% set selected_currency = setting_value('streams::currency') %}
+                    {% if app.request.get('currency') %}
+                        {% set selected_currency = app.request.get('currency') %}
+                    {% endif %}
+
+                    {% for currency in active_currencies %}
+                        <label class="btn currency-filtering-label col
+                                                {% if selected_currency == currency %}
+                                                active
+                                                {% endif %}
+                                                " data-value="{{ currency }}">
+                            <input type="radio" class="currency-filtering-btn">
+                            {{ currency_symbol(currency) }}
+                        </label>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+
+            <div class="col-md-12 p-0 pl-3 row ">
+                <div class="col-4 p-0">
+                    <input type="hidden" name="currency"
+                           value="{{ setting_value('streams::currency') }}">
+                    <input type="text" id="min-filter" class="price-input form-control w-100"
+                           value="{{ app.request.get('min_price') }}" name="min_price"
+                           data-placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}"
+                           placeholder="{{ trans('visiosoft.module.advs::field.min.name')~" "~setting_value('streams::currency') }}">
+                </div>
+                <div class="col-1 p-0 text-center">-</div>
+                <div class="col-4 p-0">
+                    <input id="max-filter" class="price-input form-control w-100" type="text"
+                           value="{{ app.request.get('max_price') }}"
+                           name="max_price"
+                           data-placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}"
+                           placeholder="{{ trans('visiosoft.module.advs::field.max.name')~" "~setting_value('streams::currency') }}">
+                </div>
+                <div class="col-2 p-0 pl-2">
+                    <button class="btn btn-primary price-filter-btn hidden">
+                        {{ trans('visiosoft.theme.sahibinden::field.find.name') }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<nav aria-label="breadcrumb" class=" d-none d-sm-block">
+    <ol class="breadcrumb classified-breadcrumb">
+        <div class="container">
+            {% for cat in categories %}
+                <li class="breadcrumb-item float-left">
+                    <a href="{{ url_route('visiosoft.module.advs::list_cat', [cat.id]) }}">{{ cat['name'] }}</a>
+                </li>
+            {% endfor %}
+        </div>
+        <input class="hidden" id="adv-id" value="{{ adv.id }}">
+    </ol>
+</nav>

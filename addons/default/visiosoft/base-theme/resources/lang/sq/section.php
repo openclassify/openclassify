@@ -2,7 +2,7 @@
 
 return [
     'catalog_mode' => [
-        'name' => 'Mënyra e Katalogut',
+        'name' => 'Mënyra e katalogut',
     ],
-    'template' => 'Shabllon',
+    'template' => 'shabllon',
 ];
