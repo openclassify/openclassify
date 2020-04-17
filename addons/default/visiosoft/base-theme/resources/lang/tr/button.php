@@ -2,10 +2,10 @@
 
 return [
     'post_ad' => [
-        'name' => 'Ücretsiz İlan Ver',
+        'name' => 'Post Ad',
     ],
-    'login' => 'Giriş Yap',
-    'register' => 'Üye Ol',
-    'continue' => 'Devam',
-    'reset_password' => 'Şifremi Güncelle',
+    'login' => 'Login',
+    'register' => 'Register',
+    'continue' => 'Continue',
+    'reset_password' => 'Reset Password',
 ];
