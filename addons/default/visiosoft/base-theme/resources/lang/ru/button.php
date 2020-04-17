@@ -2,10 +2,10 @@
 
 return [
     'post_ad' => [
-        'name' => 'Разместить объявление',
+        'name' => 'Post Ad',
     ],
-    'login' => 'Авторизоваться',
-    'register' => 'регистр',
-    'continue' => 'Продолжить',
-    'reset_password' => 'Сброс пароля',
+    'login' => 'Login',
+    'register' => 'Register',
+    'continue' => 'Continue',
+    'reset_password' => 'Reset Password',
 ];
