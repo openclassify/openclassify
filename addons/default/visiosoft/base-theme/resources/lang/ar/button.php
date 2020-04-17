@@ -2,10 +2,10 @@
 
 return [
     'post_ad' => [
-        'name' => 'نشر الإعلان',
+        'name' => 'Post Ad',
     ],
-    'login' => 'تسجيل الدخول',
-    'register' => 'تسجيل',
-    'continue' => 'استمر',
-    'reset_password' => 'إعادة تعيين كلمة المرور',
+    'login' => 'Login',
+    'register' => 'Register',
+    'continue' => 'Continue',
+    'reset_password' => 'Reset Password',
 ];
