@@ -3,6 +3,7 @@
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Entry\EntryCriteria;
+use Anomaly\Streams\Platform\Image\Image;
 use Illuminate\Support\Facades\Auth;
 use Visiosoft\RecentlyviewedadsModule\Recently\RecentlyModel;
 use Visiosoft\SubscriptionsModule\User\UserModel;
@@ -10,9 +11,12 @@ use Visiosoft\SubscriptionsModule\User\UserModel;
 class AdvCriteria extends EntryCriteria
 {
 
-    public function __construct(SettingRepositoryInterface $repository)
+    private $image;
+
+    public function __construct(SettingRepositoryInterface $repository, Image $image)
     {
         $this->settings = $repository;
+        $this->image = $image;
     }
 
     public function popularAdvs()
@@ -95,6 +99,21 @@ class AdvCriteria extends EntryCriteria
     {
         $advModel = new AdvModel();
         return $advModel->is_enabled($slug);
+    }
+
+    public function getAdvById($id)
+    {
+        $advModel = new AdvModel();
+        $adv = $advModel->newQuery()->find($id);
+        if (!$adv->cover_photo) {
+            $adv->cover_photo = $this->image->make('visiosoft.theme.base::images/no-image.png', 'path')->url();
+        } else if (
+            !empty($adv->cover_photo) &&
+            substr($adv->cover_photo, 0, strlen('/')) !== '/'
+        ) {
+            $adv->cover_photo = '/' . $adv->cover_photo;
+        }
+        return $adv;
     }
 
     public function recentlyViewedAds()
