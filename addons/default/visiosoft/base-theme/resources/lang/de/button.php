@@ -2,10 +2,10 @@
 
 return [
     'post_ad' => [
-        'name' => 'Postanzeige',
+        'name' => 'Post Ad',
     ],
-    'login' => 'Einloggen',
-    'register' => 'Registrieren',
-    'continue' => 'Fortsetzen',
-    'reset_password' => 'Passwort zurücksetzen',
+    'login' => 'Login',
+    'register' => 'Register',
+    'continue' => 'Continue',
+    'reset_password' => 'Reset Password',
 ];
