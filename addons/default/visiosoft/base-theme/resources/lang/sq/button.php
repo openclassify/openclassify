@@ -2,10 +2,10 @@
 
 return [
     'post_ad' => [
-        'name' => 'Posto reklamën',
+        'name' => 'Post Ad',
     ],
-    'login' => 'hyrje',
-    'register' => 'Regjistrohu',
-    'continue' => 'vazhdoj',
-    'reset_password' => 'Rivendosni fjalëkalimin',
+    'login' => 'Login',
+    'register' => 'Register',
+    'continue' => 'Continue',
+    'reset_password' => 'Reset Password',
 ];
