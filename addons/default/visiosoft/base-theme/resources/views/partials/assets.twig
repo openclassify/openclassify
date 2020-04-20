@@ -15,15 +15,20 @@
 {{ asset_add("theme.js", "visiosoft.theme.base::js/intlTelInput.min.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/utils.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/phoneField.js") }}
-
+{{ asset_add("theme.js", "visiosoft.theme.base::js/jquery.inputmask.bundle.min.js") }}
 
 {# Theme Scripts #}
 {#{{ asset_add("theme.js", "visiosoft.theme.base::js/plugins/*") }}#}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/theme/initialize.js") }}
 
-{{ asset_add("theme.js", "visiosoft.theme.base::js/jquery.inputmask.bundle.min.js") }}
-
 {{ asset_script("theme.js") }}
+
+{# Include Styles Loaded From Outside #}
+<style type="text/css">
+    {% for style in asset_inlines("styles.css", ["min"]) %}
+    {{ style|raw }}
+    {% endfor %}
+</style>
 
 {# Include Scripts Loaded From Outside #}
 <script type="text/javascript">
@@ -37,10 +42,3 @@
     {{ script|raw }}
     {% endfor %}
 </script>
-
-{# Include Styles Loaded From Outside #}
-<style type="text/css">
-    {% for style in asset_inlines("styles.css", ["min"]) %}
-    {{ style|raw }}
-    {% endfor %}
-</style>
