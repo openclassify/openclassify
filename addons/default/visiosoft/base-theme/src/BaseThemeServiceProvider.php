@@ -129,6 +129,10 @@ class BaseThemeServiceProvider extends AddonServiceProvider
     protected $mobile = [
         //'streams::errors/404' => 'module::mobile/errors/404',
         //'streams::errors/500' => 'module::mobile/errors/500',
+        'anomaly.module.users::login' => 'visiosoft.theme.base::addons/anomaly/users-module/login',
+        'anomaly.module.users::register' => 'visiosoft.theme.base::addons/anomaly/users-module/register',
+        'anomaly.module.users::password/forgot' => 'visiosoft.theme.base::addons/anomaly/users-module/password/forgot',
+        'anomaly.module.users::password/reset' => 'visiosoft.theme.base::addons/anomaly/users-module/password/reset'
     ];
 
     /**

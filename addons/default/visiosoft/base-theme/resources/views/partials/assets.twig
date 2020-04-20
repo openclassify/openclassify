@@ -2,21 +2,24 @@
     Main CSS can be found in metadata.twig
 #}
 
+<!-- VueJS Requirements -->
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
+
 {# Core Theme Components #}
-{{ asset_add("theme.js", "theme::js/popper.min.js") }}
-{{ asset_add("theme.js", "theme::js/bootstrap.min.js") }}
-{{ asset_add("theme.js", "theme::js/modal_include.js") }}
-{{ asset_add("theme.js", "theme::js/select2.js") }}
-{{ asset_add("theme.js", "theme::js/params.js") }}
-{{ asset_add("theme.js", "theme::js/jquery.maskedinput.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/popper.min.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/bootstrap.min.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/modal_include.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/select2.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/params.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/jquery.maskedinput.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/intlTelInput.min.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/utils.js") }}
-{{ asset_add("theme.js", "theme::js/phoneField.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/phoneField.js") }}
 
 
 {# Theme Scripts #}
-{#{{ asset_add("theme.js", "theme::js/plugins/*") }}#}
-{{ asset_add("theme.js", "theme::js/theme/initialize.js") }}
+{#{{ asset_add("theme.js", "visiosoft.theme.base::js/plugins/*") }}#}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/theme/initialize.js") }}
 
 {{ asset_script("theme.js") }}
 
