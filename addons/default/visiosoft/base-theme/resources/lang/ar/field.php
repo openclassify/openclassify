@@ -31,8 +31,18 @@ return [
     'personal_registration_list_3' => 'أرسل رسائل إلى مالكي الإعلانات على الموقع.',
     'register_information_note' => 'تؤخذ المعلومات على هذه الصفحة ل ' . env('APPLICATION_DOMAIN') . ' عضوية. يمكنك العثور على معلومات مفصلة حول حماية البيانات الشخصية هنا.',
 
-    'company_directory' => 'company directory',
-    'popular_ads' => 'popular ads',
-    'last_48_hours' => 'last 48 hours',
-    'secure_e-commerce_ads' => 'secure e-commerce ads',
+    // Register page
+    'phone_validation_error' => 'This phone number is in use by another member.',
+
+    // Forgot Password
+    'create_new_password' => 'Create New Password',
+
+    // Login page
+    'or' => 'or',
+
+    // Side menu links
+    'company_directory' => 'Company directory',
+    'popular_ads' => 'Popular Ads',
+    'last_48_hours' => 'Last 48 Hours',
+    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
 ];
