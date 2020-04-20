@@ -28,4 +28,10 @@ return [
     'latest_and_view_all_btn' => [
         'name' => 'أحدث وعرض جميع Btn',
     ],
+    'register_page_instruction_logo' => [
+        'name' => 'Register Page Instruction Logo',
+    ],
+    'style' => [
+        'name' => 'Style(CSS)',
+    ],
 ];
