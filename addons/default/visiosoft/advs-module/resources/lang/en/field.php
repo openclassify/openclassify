@@ -278,4 +278,7 @@ return [
         'part_2' => 'If not, click the "Edit" button.',
     ],
     'views' => 'Views',
+
+    // Detail page
+    "no_street_view" => "No street view image in this location"
 ];
