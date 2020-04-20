@@ -8,4 +8,5 @@ return [
     'register' => 'تسجيل',
     'continue' => 'استمر',
     'reset_password' => 'إعادة تعيين كلمة المرور',
+     'show_all' => 'show all'
 ];
