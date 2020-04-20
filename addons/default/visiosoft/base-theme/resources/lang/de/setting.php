@@ -28,10 +28,4 @@ return [
     'latest_and_view_all_btn' => [
         'name' => 'Neueste und Alle anzeigen Btn',
     ],
-    'register_page_instruction_logo' => [
-        'name' => 'Registrieren Sie das Anweisungslogo für die Seite',
-    ],
-    'style' => [
-        'name' => 'Stil (CSS)',
-    ],
 ];
