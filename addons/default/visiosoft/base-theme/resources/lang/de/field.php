@@ -31,18 +31,8 @@ return [
     'personal_registration_list_3' => 'Senden Sie Nachrichten an die Anzeigeninhaber auf der Website.',
     'register_information_note' => 'Die Informationen auf dieser Seite sind übernommen ' . env('APPLICATION_DOMAIN') . ' Mitgliedschaft. Detaillierte Informationen zum Schutz personenbezogener Daten finden Sie hier.',
 
-    // Register page
-    'phone_validation_error' => 'Diese Telefonnummer wird von einem anderen Mitglied verwendet.',
-
-    // Forgot Password
-    'create_new_password' => 'Neues Passwort erstellen',
-
-    // Login page
-    'or' => 'oder',
-
-    // Side menu links
-    'company_directory' => 'Firmenverzeichnis',
-    'popular_ads' => 'Beliebte Anzeigen',
-    'last_48_hours' => 'Letzte 48 Stunden',
-    'secure_e-commerce_ads' => 'Sichere E-Commerce-Anzeigen',
+    'company_directory' => 'company directory',
+    'popular_ads' => 'popular ads',
+    'last_48_hours' => 'last 48 hours',
+    'secure_e-commerce_ads' => 'secure e-commerce ads',
 ];
