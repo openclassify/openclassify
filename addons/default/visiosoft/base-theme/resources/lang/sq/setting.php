@@ -2,13 +2,13 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Titulli i lundrimit',
+        'name' => 'Titulli i Lundrimit',
     ],
     'navigation_action' => [
-        'name' => 'Veprimi i lundrimit',
+        'name' => 'Veprimi i Lundrimit',
     ],
     'country_fields' => [
-        'name' => 'Fushat e vendit',
+        'name' => 'Fushat e Shteti',
     ],
     'date_fields' => [
         'name' => 'Fushat e datës',
@@ -20,13 +20,13 @@ return [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Detajet e reklamës',
+        'name' => 'Detajet e Njoftimet',
     ],
     'ad_details_tab' => [
-        'name' => 'Tab Detajet e Ad',
+        'name' => 'Tab Detajet e Njoftime',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Më të fundit dhe Shiko të gjitha Btn',
+        'name' => 'Butoni i fundit dhe Shikoni të gjithë',
     ],
     'register_page_instruction_logo' => [
         'name' => 'Regjistrohu Logo udhëzuese',
