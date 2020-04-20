@@ -3,27 +3,33 @@
     {{ trans('visiosoft.module.advs::field.no_location') }}
     {% else %}
     {% set map_arr = adv.map_Val|split(',') %}
-<div id="mapDiv" style="height: 500px; width: 100%; "></div>
+<div id="mapDiv" style="height: 500px; width: 100%;"></div>
 <script>
     $(document).ready(function () {
-        var no_image_text = "{{ trans('visiosoft.module.streetview::field.no_location') }}";
+        var no_image_text = "{{ trans('visiosoft.module.advs::field.no_street_view') }}";
 
-        if (typeof coord !== 'undefined') {
-            var ifAnyImg = "https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=" + coord[0] + "," + coord[1] +
-                "&fov=90&heading=235&pitch=10&key=" + google_map_key;
-            $.getJSON(ifAnyImg, function (data) {
-                    if (data.status === "OK") {
-                        loadScript('https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback=initMap');
-                    }
-                    if (data.status === "ZERO_RESULTS") {
-                        $("#mapDiv").html(no_image_text);
-                    } else {
-                        $("#mapDiv").html("Google Error : " + data.error_message);
-                    }
+        var ifAnyImg = "https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=" + lat + "," + lng +
+            "&fov=90&heading=235&pitch=10&key=" + google_map_key;
+        $.getJSON(ifAnyImg, function (data) {
+                if (data.status === "OK") {
+                    loadScript('https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback=initMap');
                 }
-            )
-        }
+                if (data.status === "ZERO_RESULTS") {
+                    $("#mapDiv").html(no_image_text);
+                } else {
+                    $("#mapDiv").html("Google Error : " + data.error_message);
+                }
+            }
+        )
     });
+
+    function loadScript(src, callback) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        if (callback) script.onload = callback;
+        document.getElementsByTagName("head")[0].appendChild(script);
+        script.src = src;
+    }
 </script>
 <script>
     var lat = parseFloat({{ map_arr[0] }});
