@@ -31,18 +31,8 @@ return [
     'personal_registration_list_3' => 'Send messages to the ad owners on the site.',
     'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
 
-    // Register page
-    'phone_validation_error' => 'This phone number is in use by another member.',
-
-    // Forgot Password
-    'create_new_password' => 'Create New Password',
-
-    // Login page
-    'or' => 'or',
-
-    // Side menu links
-    'company_directory' => 'Company directory',
-    'popular_ads' => 'Popular Ads',
-    'last_48_hours' => 'Last 48 Hours',
-    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
+    'company_directory' => 'company directory',
+    'popular_ads' => 'popular ads',
+    'last_48_hours' => 'last 48 hours',
+    'secure_e-commerce_ads' => 'secure e-commerce ads',
 ];

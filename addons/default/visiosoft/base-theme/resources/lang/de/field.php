@@ -38,11 +38,5 @@ return [
     'create_new_password' => 'Neues Passwort erstellen',
 
     // Login page
-    'or' => 'oder',
-
-    // Side menu links
-    'company_directory' => 'Firmenverzeichnis',
-    'popular_ads' => 'Beliebte Anzeigen',
-    'last_48_hours' => 'Letzte 48 Stunden',
-    'secure_e-commerce_ads' => 'Sichere E-Commerce-Anzeigen',
+    'or' => 'oder'
 ];

@@ -49,14 +49,5 @@ return [
             "default_value" => 1,
         ]
     ],
-    'register_page_instruction_logo' => [
-        'type' => 'anomaly.field_type.file',
-        "config" => [
-            "folders" => ['images'],
-            "mode" => "upload",
-        ]
-    ],
-    'style' => [
-        'type' => 'anomaly.field_type.editor',
-    ],
+
 ];

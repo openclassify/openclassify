@@ -8,4 +8,5 @@ return [
     'register' => 'Register',
     'continue' => 'Continue',
     'reset_password' => 'Reset Password',
+     'show_all' => 'show all'
 ];
