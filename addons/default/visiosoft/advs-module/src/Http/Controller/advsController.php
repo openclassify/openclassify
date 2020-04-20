@@ -288,6 +288,9 @@ class AdvsController extends PublicController
 
     public function viewTypeBasedRedirect($viewType, $compact)
     {
+        if (!$viewType) {
+            $viewType = setting_value('visiosoft.module.advs::default_view_type');
+        }
         if (isset($viewType) and $viewType == 'table') {
             return $this->view->make('visiosoft.module.advs::list/table', $compact);
         } elseif (isset($viewType) and $viewType == 'map') {
