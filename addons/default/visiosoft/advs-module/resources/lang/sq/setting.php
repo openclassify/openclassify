@@ -76,7 +76,7 @@ return [
         'name' => 'Reklama e paracaktuar GET',
     ],
     'twitter' => [
-        'name' => 'Cicëroj',
+        'name' => 'Twitter',
     ],
     'facebook' => [
         'name' => 'Facebook',
