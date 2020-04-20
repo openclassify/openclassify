@@ -31,18 +31,8 @@ return [
     'personal_registration_list_3' => 'Sitedeki reklam sahiplerine mesaj gönderin.',
     'register_information_note' => 'Bu sayfadaki bilgiler ' . env('APPLICATION_DOMAIN') . ' üyelik. Kişisel verilerin korunması hakkında ayrıntılı bilgiyi burada bulabilirsiniz.',
 
-    // Register page
-    'phone_validation_error' => 'Bu telefon numarası başka bir üye tarafından kullanılıyor.',
-
-    // Forgot Password
-    'create_new_password' => 'Yeni Şifre Oluştur',
-
-    // Login page
-    'or' => 'veya',
-
-    // Side menu links
-    'company_directory' => 'şirket bilgisi',
-    'popular_ads' => 'popüler reklamlar',
-    'last_48_hours' => 'son 48 saat',
-    'secure_e-commerce_ads' => 'güvenli e-ticaret',
+    'company_directory' => 'company directory',
+    'popular_ads' => 'popular ads',
+    'last_48_hours' => 'last 48 hours',
+    'secure_e-commerce_ads' => 'secure e-commerce ads',
 ];
