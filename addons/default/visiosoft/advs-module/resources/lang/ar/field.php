@@ -278,4 +278,7 @@ return [
         'part_2' => 'إذا لم يكن كذلك ، انقر فوق الزر "تحرير".',
     ],
     'views' => 'الآراء',
+
+    // Detail page
+    "no_street_view" => "No street view image in this location"
 ];
