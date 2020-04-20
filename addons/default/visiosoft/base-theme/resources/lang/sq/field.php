@@ -31,18 +31,8 @@ return [
     'personal_registration_list_3' => 'Dërgoni mesazhe pronarëve të njoftimet në faqe.',
     'register_information_note' => 'Informacioni në këtë faqe merret për ' . env('APPLICATION_DOMAIN') . ' Anëtarësimi. Mund të gjeni informacione të hollësishme në lidhje me mbrojtjen e të dhënave personale këtu.',
 
-    // Register page
-    'phone_validation_error' => 'Ky numër telefoni është në përdorim nga një anëtar tjetër.',
-
-    // Forgot Password
-    'create_new_password' => 'Krijoni Fjalëkalimin e ri',
-
-    // Login page
-    'or' => 'ose',
-
-    // Side menu links
-    'company_directory' => 'Drejtoria e ndërmarrjes',
-    'popular_ads' => 'Reklama popullore',
-    'last_48_hours' => '48 orët e fundit',
-    'secure_e-commerce_ads' => 'Reklama të sigurta për tregtinë elektronike',
+    'company_directory' => 'company directory',
+    'popular_ads' => 'popular ads',
+    'last_48_hours' => 'last 48 hours',
+    'secure_e-commerce_ads' => 'secure e-commerce ads',
 ];
