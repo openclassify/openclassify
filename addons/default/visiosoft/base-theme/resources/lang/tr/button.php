@@ -8,5 +8,4 @@ return [
     'register' => 'Üye Ol',
     'continue' => 'Devam',
     'reset_password' => 'Şifremi Güncelle',
-     'show_all' => 'show all'
 ];
