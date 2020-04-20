@@ -8,4 +8,5 @@ return [
     'register' => 'Regjistrohu',
     'continue' => 'vazhdoj',
     'reset_password' => 'Rivendosni fjalëkalimin',
+     'show_all' => 'show all'
 ];
