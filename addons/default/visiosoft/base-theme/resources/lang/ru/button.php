@@ -8,5 +8,4 @@ return [
     'register' => 'регистр',
     'continue' => 'Продолжить',
     'reset_password' => 'Сброс пароля',
-     'show_all' => 'show all'
 ];
