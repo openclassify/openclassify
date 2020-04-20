@@ -31,8 +31,18 @@ return [
     'personal_registration_list_3' => 'Отправляйте сообщения владельцам рекламы на сайте.',
     'register_information_note' => 'Информация на этой странице принимается за ' . env('APPLICATION_DOMAIN') . ' членство. Вы можете найти подробную информацию о защите персональных данных здесь.',
 
-    'company_directory' => 'company directory',
-    'popular_ads' => 'popular ads',
-    'last_48_hours' => 'last 48 hours',
-    'secure_e-commerce_ads' => 'secure e-commerce ads',
+    // Register page
+    'phone_validation_error' => 'This phone number is in use by another member.',
+
+    // Forgot Password
+    'create_new_password' => 'Create New Password',
+
+    // Login page
+    'or' => 'or',
+
+    // Side menu links
+    'company_directory' => 'Company directory',
+    'popular_ads' => 'Popular Ads',
+    'last_48_hours' => 'Last 48 Hours',
+    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
 ];
