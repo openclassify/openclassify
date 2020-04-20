@@ -1,6 +1,9 @@
 <!-- Locale -->
 <meta http-equiv="Content-Language" content="{{ config('app.locale') }}">
 
+<!-- VueJS Requirements -->
+<meta name="csrf-token" content="{{ csrf_token() }}" />
+
 <!-- To the Future! -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 
@@ -10,19 +13,25 @@
 {#{{ favicons("theme::img/favicon.png") }}#}
 
 {# Base Theme Components #}
-{{ asset_add("theme.css", "theme::css/bootstrap.min.css") }}
-{{ asset_add("theme.css", "theme::css/theme.css") }}
-{{ asset_add("theme.css", "theme::css/select2.css") }}
-{{ asset_add("theme.css", "theme::css/font-awesome.min.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::css/base.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::css/bootstrap.min.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::css/theme.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::css/select2.css") }}
+{{ asset_add("theme.css", "visiosoft.theme.base::css/font-awesome.min.css") }}
 {{ asset_add("theme.css", "visiosoft.theme.base::css/intlTelInput.css") }}
 
-<script src="{{ asset_path('theme::js/vendor/jquery.min.js') }}"></script>
+<script src="{{ asset_path('visiosoft.theme.base::js/vendor/jquery.min.js') }}"></script>
 
 {{ asset_style("theme.css") }}
 
 {% include "visiosoft.theme.base::partials/styles" %}
 
-
+{# Custom Theme Components #}
+<style type="text/css">
+    {% for style in asset_inlines("custom-theme.css", ["min"]) %}
+    {{ style|raw }}
+    {% endfor %}
+</style>
 
 {# Important!! #}
 {{ constants() }}
