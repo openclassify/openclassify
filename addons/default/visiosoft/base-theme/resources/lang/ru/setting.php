@@ -28,10 +28,4 @@ return [
     'latest_and_view_all_btn' => [
         'name' => 'Последние и Просмотреть все Btn',
     ],
-    'register_page_instruction_logo' => [
-        'name' => 'Логотип Инструкции на странице регистрации',
-    ],
-    'style' => [
-        'name' => 'Style (CSS)',
-    ],
 ];
