@@ -34,5 +34,5 @@ return [
     // Forgot Password
     'email_phone_not_found' => 'E-mail, номер телефона неверен!',
 
-    'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
+    'disable_account' => 'Вы хотите закрыть свой аккаунт? Эта операция не может быть отменена.',
 ];

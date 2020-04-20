@@ -38,5 +38,11 @@ return [
     'create_new_password' => 'Создать новый пароль',
 
     // Login page
-    'or' => 'или'
+    'or' => 'или',
+
+    // Side menu links
+    'company_directory' => 'Каталог компаний',
+    'popular_ads' => 'Популярные объявления',
+    'last_48_hours' => 'Последние 48 часов',
+    'secure_e-commerce_ads' => 'Безопасные объявления электронной коммерции',
 ];
