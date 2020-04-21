@@ -280,4 +280,7 @@ return [
         'part_2' => 'Değilse, "Düzenle" düğmesini tıklayın.',
     ],
     'views' => 'Görüntülenme',
+
+    // Detail page
+    "no_street_view" => "No street view image in this location"
 ];
