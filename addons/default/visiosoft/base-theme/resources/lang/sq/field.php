@@ -38,5 +38,11 @@ return [
     'create_new_password' => 'Krijoni Fjalëkalimin e ri',
 
     // Login page
-    'or' => 'ose'
+    'or' => 'ose',
+
+    // Side menu links
+    'company_directory' => 'Drejtoria e ndërmarrjes',
+    'popular_ads' => 'Reklama popullore',
+    'last_48_hours' => '48 orët e fundit',
+    'secure_e-commerce_ads' => 'Reklama të sigurta për tregtinë elektronike',
 ];

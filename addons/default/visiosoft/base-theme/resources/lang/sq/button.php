@@ -4,8 +4,8 @@ return [
     'post_ad' => [
         'name' => 'Posto reklamën',
     ],
-    'login' => 'Hyrje',
+    'login' => 'hyrje',
     'register' => 'Regjistrohu',
-    'continue' => 'Vazhdoj',
-    'reset_password' => 'Rivendosni Fjalëkalimin',
+    'continue' => 'vazhdoj',
+    'reset_password' => 'Rivendosni fjalëkalimin',
 ];

@@ -14,6 +14,19 @@ return [
             'default_value' => 5,
         ],
     ],
+    'default_view_type' => [
+        'type' => 'anomaly.field_type.select',
+        'config' => [
+            'options' => ['list' => 'List', 'table' => 'Table', 'map' => 'Map', 'gallery' => 'Gallery'],
+            'default_value' => 'list',
+        ]
+    ],
+    'hide_zero_price' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ],
+    ],
     'auto_approve' => [
         'type' => 'anomaly.field_type.boolean',
         'bind' => 'adv.auto_approve',

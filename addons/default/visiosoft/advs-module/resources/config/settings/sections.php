@@ -18,6 +18,8 @@ return [
                 'title' => 'visiosoft.module.advs::section.ads',
                 'fields' => [
                     'latest-limit',
+                    'default_view_type',
+                    'hide_zero_price',
                     'auto_approve',
                     'estimated_pending_time',
                     'default_published_time',

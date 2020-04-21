@@ -1,0 +1,7 @@
+{% if addBlock('store/link') is null %}
+    <a href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}">
+        {{ trans('visiosoft.theme.sahibinden::field.other_ads.name') }}
+    </a>
+{% else %}
+    {{ addBlock('store/link', {'userId': adv.created_by_id})|raw }}
+{% endif %}

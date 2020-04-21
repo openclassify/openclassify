@@ -211,8 +211,9 @@ $(document).ready(function () {
     });
 
     $(".priceField, .priceDecimalField").on('change', function () {
-        var price = parseInt($(".priceField").val().replace(/\./g, ''));
-        var decimal = parseInt($(".priceDecimalField").val());
+        let price = $(".priceField").val() === "" ? '0' : $(".priceField").val();
+        price = parseInt(price.replace(/\./g, ''));
+        let decimal = parseInt($(".priceDecimalField").val());
         $('.priceHidden').find('input').val(parseFloat(price + "." + decimal));
     })
 });

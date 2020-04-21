@@ -38,5 +38,11 @@ return [
     'create_new_password' => 'Yeni Şifre Oluştur',
 
     // Login page
-    'or' => 'veya'
+    'or' => 'veya',
+
+    // Side menu links
+    'company_directory' => 'şirket bilgisi',
+    'popular_ads' => 'popüler reklamlar',
+    'last_48_hours' => 'son 48 saat',
+    'secure_e-commerce_ads' => 'güvenli e-ticaret',
 ];

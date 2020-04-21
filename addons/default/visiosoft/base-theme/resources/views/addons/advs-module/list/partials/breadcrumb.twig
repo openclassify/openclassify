@@ -1,0 +1,18 @@
+<nav aria-label="breadcrumb" class=" d-none d-sm-block">
+    <ol class="breadcrumb classified-breadcrumb">
+        <div class="container">
+            <li class="breadcrumb-item float-left">
+                <a href="{{ url('') }}">
+                    {{ trans("visiosoft.module.advs::field.home") }}
+                </a>
+            </li>
+            <li class="breadcrumb-item float-left">
+                <a href="{{ url_route('visiosoft.module.advs::list') }}">
+                    {{ trans("visiosoft.module.advs::field.list") }}
+                </a>
+            </li>
+            {{ addBlock('ads-list/partials/breadcrumb',{'mainCats': mainCats, 'category': categoryId})|raw }}
+        </div>
+        <input class="hidden" id="adv-id" value="{{ adv.id }}">
+    </ol>
+</nav>

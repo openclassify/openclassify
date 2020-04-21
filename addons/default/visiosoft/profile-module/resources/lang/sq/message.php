@@ -3,7 +3,7 @@
 return [
     "email"      => "Kërkohet fusha me postë elektronike!",
     "username"      => "Kërkohet fusha e përdoruesit!",
-    "success_update"      => "Përditësimi i Profilit Me sukses!",
+    "success_update"      => "Përditësimi i Profilit me sukses!",
     "adress_success_update"      => "Përditësoni me sukses Adresën!",
     "adress_success_create"      => "Adresa Krijoni me sukses!",
     "login_error" => "Identifikim ose fjalëkalim i pasaktë.",
@@ -31,5 +31,5 @@ return [
     // Forgot Password
     'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!',
 
-    'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
+    'disable_account' => 'Dëshiron të mbyllësh llogarinë tënde? Ky operacion nuk mund të zhbëhet.',
 ];

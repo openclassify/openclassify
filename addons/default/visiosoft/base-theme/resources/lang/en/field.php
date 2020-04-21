@@ -38,5 +38,11 @@ return [
     'create_new_password' => 'Create New Password',
 
     // Login page
-    'or' => 'or'
+    'or' => 'or',
+
+    // Side menu links
+    'company_directory' => 'Company directory',
+    'popular_ads' => 'Popular Ads',
+    'last_48_hours' => 'Last 48 Hours',
+    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
 ];

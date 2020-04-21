@@ -38,5 +38,11 @@ return [
     'create_new_password' => 'إنشاء كلمة مرور جديدة',
 
     // Login page
-    'or' => 'أو'
+    'or' => 'أو',
+
+    // Side menu links
+    'company_directory' => 'دليل شركة',
+    'popular_ads' => 'إعلانات شعبية',
+    'last_48_hours' => 'آخر 48 ساعة',
+    'secure_e-commerce_ads' => 'إعلانات التجارة الإلكترونية الآمنة',
 ];
