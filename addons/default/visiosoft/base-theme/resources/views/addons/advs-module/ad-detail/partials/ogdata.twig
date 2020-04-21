@@ -1,7 +1,0 @@
-<meta property="og:site_name"
-      content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
-<meta property="og:description" content="{{ adv.advs_desc|striptags|raw }}"/>
-<meta property="og:title" content="{{ adv.title }}"/>
-<meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
-<meta property="og:image" content="{{ adv.getViewPhotoUrl|first }}">
-<meta property="og:type" content="website"/>
