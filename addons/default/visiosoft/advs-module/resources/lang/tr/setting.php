@@ -4,6 +4,13 @@ return [
     'auto_approve' => [
         'name' => 'Otomatik Onaylama',
     ],
+    'default_view_type' => [
+        'name' => 'Default View Type',
+    ],
+    'hide_zero_price' => [
+        'name' => 'Hide Price if Zero',
+        'instructions' => 'Hide the price if the ad price is 0',
+    ],
     'estimated_pending_time' => [
         'name' => 'Tahmini Bekleme Süresi',
         'instructions' => 'Saatlerde',
