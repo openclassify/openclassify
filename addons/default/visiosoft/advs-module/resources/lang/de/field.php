@@ -279,4 +279,7 @@ return [
         'part_2' => 'Wenn nicht, klicken Sie auf die Schaltfläche "Bearbeiten".',
     ],
     'views' => 'Ansichten',
+
+    // Detail page
+    "no_street_view" => "No street view image in this location"
 ];

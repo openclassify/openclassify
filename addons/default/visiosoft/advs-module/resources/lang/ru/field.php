@@ -279,4 +279,7 @@ return [
         'part_2' => 'Если нет, нажмите кнопку «Изменить».',
     ],
     'views' => 'Взгляды',
+
+    // Detail page
+    "no_street_view" => "No street view image in this location"
 ];
