@@ -36,7 +36,7 @@
                             </div>
                             {{ addBlock('ads-list/row-bottom',{'show_favorite_search':true})|raw }}
                         </div>
-                        {{ addBlock('ads-list/row',{'topfields':topfields,'advs':advs})|raw }}
+                        {{ addBlock('ads-list/row',{'topfields':topfields,'selectRange':selectRange,'advs':advs})|raw }}
                         <div class="row">
                             {% block listContent %}
                                 {% include "visiosoft.module.advs::list/partials/ads" %}
