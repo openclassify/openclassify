@@ -39,6 +39,8 @@ return [
 
     // Login page
     'or' => 'ose',
+    'login_with_phone_number' => 'Hyni me numrin e telefonit',
+    'login_with_email_address' => 'Identifikohu me Adresë Email',
 
     // Side menu links
     'company_directory' => 'Drejtoria e ndërmarrjes',
