@@ -39,9 +39,11 @@ return [
 
     // Login page
     'or' => 'veya',
+    'login_with_phone_number' => 'Telefon Numarası ile Giriş',
+    'login_with_email_address' => 'E-posta Adresi ile Giriş',
 
     // Side menu links
-    'company_directory' => 'şirket bilgisi',
+    'company_directory' => 'Firma Rehberi',
     'popular_ads' => 'popüler reklamlar',
     'last_48_hours' => 'son 48 saat',
     'secure_e-commerce_ads' => 'güvenli e-ticaret',
