@@ -105,13 +105,15 @@ class AdvCriteria extends EntryCriteria
     {
         $advModel = new AdvModel();
         $adv = $advModel->newQuery()->find($id);
-        if (!$adv->cover_photo) {
-            $adv->cover_photo = $this->image->make('visiosoft.theme.base::images/no-image.png', 'path')->url();
-        } else if (
-            !empty($adv->cover_photo) &&
-            substr($adv->cover_photo, 0, strlen('/')) !== '/'
-        ) {
-            $adv->cover_photo = '/' . $adv->cover_photo;
+        if ($adv) {
+            if (!$adv->cover_photo) {
+                $adv->cover_photo = $this->image->make('visiosoft.theme.base::images/no-image.png', 'path')->url();
+            } else if (
+                !empty($adv->cover_photo) &&
+                substr($adv->cover_photo, 0, strlen('/')) !== '/'
+            ) {
+                $adv->cover_photo = '/' . $adv->cover_photo;
+            }
         }
         return $adv;
     }
