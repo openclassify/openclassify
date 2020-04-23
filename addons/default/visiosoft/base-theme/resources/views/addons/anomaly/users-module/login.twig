@@ -1,6 +1,7 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
+    {% set phoneLogin = not setting_value('visiosoft.module.advs::register_email_field') or app.request.get('type') == 'phone' %}
     <div class="row justify-content-center">
         <div class="col-12 text-left m-0 row justify-content-center">
             <div class="col-12 col-lg-5 m-3 login-section">
@@ -8,8 +9,8 @@
                     .redirect(app.request.get('redirect'))
                     .get() %}
                 {{ form_open({
-                    'class':'aaa',
-                    'url':form.options.url
+                    'class': 'aaa',
+                    'url': form.options.url
                 })|raw }}
                 <div class="col-12 pt-4 pt-lg-0">
                     <h3 class="text-center login_subject">
@@ -17,12 +18,14 @@
                     </h3>
                     <div class="form-group email-field email-field_type">
                         <label class="control-label">
-                            {{ trans('visiosoft.theme.base::field.email_or_phone_number') }}
+                            {{ phoneLogin ? trans('visiosoft.theme.base::field.phone_number') : trans('visiosoft.theme.base::field.email') }}
                             <span class="required">*</span>
                         </label>
 
                         <div class="input-wrapper">
-                            {{ form.fields.email.input|raw }}
+                            {{ form.fields.email.setAttributes({
+                                'class': phoneLogin ? 'form-control phone' : 'form-control'
+                            }).input|raw }}
                         </div>
                     </div>
                 </div>
@@ -63,9 +66,18 @@
                         {{ trans('visiosoft.theme.base::field.remember_me') }}
                     </label>
                 </div>
-                {% if addBlock('login/oauth') %}
+
+                {% if addBlock('login/oauth') or setting_value('visiosoft.module.advs::register_email_field') %}
                     <div class="text-center text-muted">- {{ trans('visiosoft.theme.base::field.or') }} -</div>
                     <div class="social-login py-2 px-3">
+                        {% if setting_value('visiosoft.module.advs::register_email_field') %}
+                            <a class="btn btn-info text-white w-100 d-flex align-items-center justify-content-center position-relative mb-3"
+                               href="{{ url_route('anomaly.module.users::login') }}{{ phoneLogin ? '' : '?type=phone' }}">
+                                <span class="position-relative py-1">
+                                    {{ phoneLogin ? trans('visiosoft.theme.base::field.login_with_email_address') : trans('visiosoft.theme.base::field.login_with_phone_number') }}
+                                </span>
+                            </a>
+                        {% endif %}
                         {{ addBlock('login/oauth')|raw }}
                     </div>
                 {% endif %}
@@ -84,5 +96,6 @@
             </div>
         </div>
     </div>
+    {{ asset_add('scripts.js','visiosoft.theme.base::js/login.js') }}
     {{ asset_add('styles.css','visiosoft.theme.base::css/login.css') }}
 {% endblock %}
