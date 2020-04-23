@@ -280,5 +280,5 @@ return [
     'views' => 'الآراء',
 
     // Detail page
-    "no_street_view" => "No street view image in this location"
+    "no_street_view" => "لا توجد صورة التجوّل الافتراضي في هذا الموقع"
 ];
