@@ -39,6 +39,8 @@ return [
 
     // Login page
     'or' => 'veya',
+    'login_with_phone_number' => 'Login with Phone Number',
+    'login_with_email_address' => 'Login with Email Address',
 
     // Side menu links
     'company_directory' => 'şirket bilgisi',
