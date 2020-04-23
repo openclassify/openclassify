@@ -39,6 +39,8 @@ return [
 
     // Login page
     'or' => 'oder',
+    'login_with_phone_number' => 'Login mit Telefonnummer',
+    'login_with_email_address' => 'Melden Sie sich mit der E-Mail-Adresse an',
 
     // Side menu links
     'company_directory' => 'Firmenverzeichnis',
