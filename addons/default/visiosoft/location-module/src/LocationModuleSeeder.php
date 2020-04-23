@@ -22,15 +22,11 @@ class LocationModuleSeeder extends Seeder
         $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
         file_put_contents(__DIR__ . "/countries.sql", fopen($repository . "countries.sql", 'r'));
         file_put_contents(__DIR__ . "/cities.sql", fopen($repository . "cities.sql", 'r'));
-        file_put_contents(__DIR__ . "/districts.sql", fopen($repository . "districts.sql", 'r'));
-        file_put_contents(__DIR__ . "/neighborhoods.sql", fopen($repository . "neighborhoods.sql", 'r'));
 
         /* Demo Start */
         Model::unguard();
         DB::unprepared(file_get_contents(__DIR__ . '/countries.sql'));
         DB::unprepared(file_get_contents(__DIR__ . '/cities.sql'));
-        DB::unprepared(file_get_contents(__DIR__ . '/districts.sql'));
-        DB::unprepared(file_get_contents(__DIR__ . '/neighborhoods.sql'));
         Model::reguard();
         /* Demo Stop*/
     }
