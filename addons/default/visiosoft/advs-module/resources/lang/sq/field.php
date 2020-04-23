@@ -277,7 +277,7 @@ return [
         'part_1' => 'Nëse informacioni i mëposhtëm në lidhje me reklamën tuaj është i saktë, klikoni në butonin "Vazhdo" dhe shkoni në hapin tjetër.',
         'part_2' => 'Nëse jo, klikoni në butonin "Ndrysho".',
     ],
-    'views' => 'Views',
+    'views' => 'Shikime',
 
     // Detail page
     "no_street_view" => "No street view image in this location"
