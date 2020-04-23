@@ -131,6 +131,7 @@ class AdvsController extends AdminController
 
         $cities = $cityModel->all()->pluck('name', 'id')->all();
         $users = $userModel->all()->pluck('email', 'id')->all();
+        $phone = $userModel->all()->pluck('gsm_phone', 'id')->all();
         $categories = $categoryModel::query()->where('parent_category_id', null)
             ->leftJoin('cats_category_translations', 'cats_category.id', '=', 'cats_category_translations.entry_id')
             ->where('locale', config('app.locale'))
@@ -155,6 +156,12 @@ class AdvsController extends AdminController
                         'filter' => 'select',
                         'query' => UserFilterQuery::class,
                         'options' => $users,
+                    ],
+                    'phone' => [
+                        'exact' => true,
+                        'filter' => 'select',
+                        'query' => UserFilterQuery::class,
+                        'options' => $phone,
                     ],
                     'status' => [
                         'filter' => 'select',
