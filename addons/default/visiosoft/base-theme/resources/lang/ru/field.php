@@ -39,6 +39,8 @@ return [
 
     // Login page
     'or' => 'или',
+    'login_with_phone_number' => 'Войти с помощью номера телефона',
+    'login_with_email_address' => 'Войти с адресом электронной почты',
 
     // Side menu links
     'company_directory' => 'Каталог компаний',
