@@ -39,6 +39,8 @@ return [
 
     // Login page
     'or' => 'أو',
+    'login_with_phone_number' => 'تسجيل الدخول برقم الهاتف',
+    'login_with_email_address' => 'تسجيل الدخول باستخدام عنوان البريد الإلكتروني',
 
     // Side menu links
     'company_directory' => 'دليل شركة',

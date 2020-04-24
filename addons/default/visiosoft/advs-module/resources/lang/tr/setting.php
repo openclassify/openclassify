@@ -5,11 +5,11 @@ return [
         'name' => 'Otomatik Onaylama',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Varsayılan Görünüm Türü',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Sıfır ise Fiyatı Gizle',
+        'instructions' => 'Reklam fiyatı 0 ise fiyatı gizle',
     ],
     'estimated_pending_time' => [
         'name' => 'Tahmini Bekleme Süresi',

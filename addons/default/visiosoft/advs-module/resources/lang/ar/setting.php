@@ -5,11 +5,11 @@ return [
         'name' => 'الموافقة التلقائية',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'نوع العرض الافتراضي',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'إخفاء السعر إذا كان صفر',
+        'instructions' => 'إخفاء السعر إذا كان سعر الإعلان 0',
     ],
     'estimated_pending_time' => [
         'name' => 'الوقت المعلق المقدر',

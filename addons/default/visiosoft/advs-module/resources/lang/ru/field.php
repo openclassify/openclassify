@@ -281,5 +281,5 @@ return [
     'views' => 'Взгляды',
 
     // Detail page
-    "no_street_view" => "No street view image in this location"
+    "no_street_view" => "Нет изображения улицы в этом месте"
 ];
