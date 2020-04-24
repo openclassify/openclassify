@@ -280,5 +280,9 @@ return [
     'views' => 'Baxışlar',
 
     // Detail page
-    "no_street_view" => "Bu yerdə küçə görünüşü görüntüsü yoxdur"
+    "no_street_view" => "Bu yerdə küçə görünüşü görüntüsü yoxdur",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'Ad Information',
 ];
