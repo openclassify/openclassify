@@ -280,5 +280,9 @@ return [
     'views' => 'الآراء',
 
     // Detail page
-    "no_street_view" => "لا توجد صورة التجوّل الافتراضي في هذا الموقع"
+    "no_street_view" => "لا توجد صورة التجوّل الافتراضي في هذا الموقع",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'Ad Information',
 ];
