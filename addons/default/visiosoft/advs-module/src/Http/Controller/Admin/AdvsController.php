@@ -50,9 +50,16 @@ class AdvsController extends AdminController
             'status' => [
                 'text' => function (EntryInterface $entry) {
                     if ($entry->status == 'approved') {
-                        return "visiosoft.module.advs::button.decline";
+                        return "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.decline') . "</font>";
                     } else {
-                        return "visiosoft.module.advs::button.approve";
+                        return "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.approve') . "</font>";
+                    }
+                },
+                'icon' => function (EntryInterface $entry) {
+                    if ($entry->status == 'approved') {
+                        return "fa fa-eye-slash";
+                    } else {
+                        return "fa fa-eye";
                     }
                 },
                 'href' => function (EntryInterface $entry) {
@@ -72,10 +79,13 @@ class AdvsController extends AdminController
             ],
             'edit' => [
                 'href' => '/advs/edit_advs/{entry.id}',
+                'text' => "<font class='hidden-xs-down'>" . trans('streams::button.edit') . "</font>",
             ],
             'change_owner' => [
                 'data-toggle' => 'modal',
                 'data-target' => '#modal',
+                'text' => "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.change_owner') . "</font>",
+                'icon' => 'fa fa-users',
                 'href' => 'admin/advs-users/choose/{entry.id}',
             ]
         ]);
