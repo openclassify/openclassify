@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'Email Adresiniz',
+    'phone' => 'Phone Number',
     'reset_code' => 'Sıfırlama Kodu',
     'password_confirmation' => 'Şifrenizi Onaylayın',
     'password' => 'Şifreniz',
