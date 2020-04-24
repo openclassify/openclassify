@@ -8,4 +8,6 @@ return [
     'register' => 'Regjistrohu',
     'continue' => 'vazhdoj',
     'reset_password' => 'Rivendosni fjalëkalimin',
+    'email' => 'Email',
+    'phone' => 'Phone',
 ];
