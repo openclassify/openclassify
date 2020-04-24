@@ -427,5 +427,8 @@ return [
     'details' => [
         'name' => 'تفاصيل'
     ],
-
+    'choose' => [
+        'name' => 'Choose'
+    ],
+    'my_address' => 'My Address'
 ];
