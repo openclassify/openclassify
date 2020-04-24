@@ -8,4 +8,6 @@ return [
     'register' => 'Register',
     'continue' => 'Continue',
     'reset_password' => 'Reset Password',
+    'email' => 'Email',
+    'phone' => 'Phone',
 ];

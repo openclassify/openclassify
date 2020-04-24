@@ -280,5 +280,9 @@ return [
     'views' => 'Views',
 
     // Detail page
-    "no_street_view" => "No street view image in this location"
+    "no_street_view" => "No street view image in this location",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'İlan Bilgileri',
 ];

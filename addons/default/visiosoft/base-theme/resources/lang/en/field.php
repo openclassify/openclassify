@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'Profile',
     'email' => 'Email Address',
+    'phone' => 'Phone Number',
     'reset_code' => 'Reset Code',
     'password_confirmation' => 'Password Confirmation',
     'password' => 'Password',
