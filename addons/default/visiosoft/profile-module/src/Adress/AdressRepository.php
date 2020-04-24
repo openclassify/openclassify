@@ -22,4 +22,9 @@ class AdressRepository extends EntryRepository implements AdressRepositoryInterf
     {
         $this->model = $model;
     }
+
+    public function findByUser($user_id)
+    {
+        return $this->newQuery()->where('user_id', $user_id)->get();
+    }
 }
