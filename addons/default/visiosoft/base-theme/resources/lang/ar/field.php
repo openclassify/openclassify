@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'الملف الشخصي',
     'email' => 'عنوان البريد الإلكتروني',
+    'phone' => 'Phone Number',
     'reset_code' => 'إعادة تعيين الرمز',
     'password_confirmation' => 'تأكيد كلمة المرور',
     'password' => 'كلمه السر',

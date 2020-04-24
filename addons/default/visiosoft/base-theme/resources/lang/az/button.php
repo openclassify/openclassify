@@ -8,4 +8,6 @@ return [
     'register' => 'Qeydiyyatdan keçin',
     'continue' => 'Davam edin',
     'reset_password' => 'Parolu sıfırlamak',
+    'email' => 'Email',
+    'phone' => 'Phone',
 ];

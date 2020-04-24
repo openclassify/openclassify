@@ -428,5 +428,8 @@ return [
     'details' => [
         'name' => 'Ətraflı məlumat'
     ],
-
+    'choose' => [
+        'name' => 'Choose'
+    ],
+    'my_address' => 'My Address'
 ];

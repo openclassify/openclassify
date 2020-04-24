@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'Профиль',
     'email' => 'Адрес электронной почты',
+    'phone' => 'Phone Number',
     'reset_code' => 'Сброс кода',
     'password_confirmation' => 'Подтверждение пароля',
     'password' => 'пароль',

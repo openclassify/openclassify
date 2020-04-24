@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'Adresa e-mail',
+    'phone' => 'Phone Number',
     'reset_code' => 'Rivendosni Kodin',
     'password_confirmation' => 'Konfirmimi i Fjalëkalimit',
     'password' => 'Fjalëkalimi',

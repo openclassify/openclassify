@@ -280,5 +280,9 @@ return [
     'views' => 'Shikime',
 
     // Detail page
-    "no_street_view" => "Asnjë imazh me pamje nga rruga në këtë vendndodhje"
+    "no_street_view" => "Asnjë imazh me pamje nga rruga në këtë vendndodhje",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'Ad Information',
 ];

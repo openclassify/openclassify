@@ -282,5 +282,9 @@ return [
     'views' => 'Görüntülenme',
 
     // Detail page
-    "no_street_view" => "Bu konumda sokak görünümü resmi yok"
+    "no_street_view" => "Bu konumda sokak görünümü resmi yok",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'Ad Information',
 ];
