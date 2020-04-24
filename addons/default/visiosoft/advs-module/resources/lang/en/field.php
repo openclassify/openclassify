@@ -284,5 +284,5 @@ return [
     'edit_my_contact_info' => 'Edit My Contact Information',
     'update_my_contact_info' => 'update my contact info',
     'contact_info' => 'Contact information',
-    'ad_info' => 'İlan Bilgileri',
+    'ad_info' => 'Ad Information',
 ];
