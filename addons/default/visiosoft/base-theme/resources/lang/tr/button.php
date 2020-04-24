@@ -8,4 +8,6 @@ return [
     'register' => 'Üye Ol',
     'continue' => 'Devam',
     'reset_password' => 'Şifremi Güncelle',
+    'email' => 'Email',
+    'phone' => 'Phone',
 ];
