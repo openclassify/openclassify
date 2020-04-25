@@ -48,4 +48,6 @@ return [
     'popular_ads' => 'Популярные объявления',
     'last_48_hours' => 'Последние 48 часов',
     'secure_e-commerce_ads' => 'Безопасные объявления электронной коммерции',
+    'sms' => 'Send Text Message (SMS)',
+    'mail' => 'Send Mail',
 ];
