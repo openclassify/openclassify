@@ -48,4 +48,6 @@ return [
     'popular_ads' => 'Popular Ads',
     'last_48_hours' => 'Last 48 Hours',
     'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
+    'sms' => 'Send Text Message (SMS)',
+    'mail' => 'Send Mail',
 ];
