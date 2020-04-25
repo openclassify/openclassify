@@ -13,10 +13,10 @@ class ForgotPassFormFields
         $builder->setFields(
             [
                 'email' => [
-                    'type'       => 'anomaly.field_type.text',
-                    'label'      => 'anomaly.module.users::field.email.name',
-                    'required'   => true,
-                    'rules'      => [
+                    'type' => 'anomaly.field_type.text',
+                    'label' => 'anomaly.module.users::field.email.name',
+                    'required' => true,
+                    'rules' => [
                         'valid_email',
                     ],
                     'validators' => [
@@ -26,6 +26,18 @@ class ForgotPassFormFields
                         ],
                     ],
                 ],
+                "resetType" => [
+                    "type" => "anomaly.field_type.select",
+                    "config" => [
+                        "options" => [
+                            'sms' => 'visiosoft.theme.base::field.sms',
+                            'mail' => 'visiosoft.theme.base::field.mail',
+                        ],
+                        "separator" => ":",
+                        "default_value" => 'mail',
+                        "mode" => "radio",
+                    ]
+                ]
             ]
         );
     }

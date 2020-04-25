@@ -22,7 +22,6 @@ class ValidateEmail
         if (!$response = $users->findByEmail($value)) {
             return false;
         }
-
         $builder->setUser($response);
 
         return true;
