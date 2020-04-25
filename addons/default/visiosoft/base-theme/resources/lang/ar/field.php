@@ -48,4 +48,6 @@ return [
     'popular_ads' => 'إعلانات شعبية',
     'last_48_hours' => 'آخر 48 ساعة',
     'secure_e-commerce_ads' => 'إعلانات التجارة الإلكترونية الآمنة',
+    'sms' => 'Send Text Message (SMS)',
+    'mail' => 'Send Mail',
 ];
