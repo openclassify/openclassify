@@ -11,7 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'E-Mail-Addresse',
-    'phone' => 'Phone Number',
+    'phone' => 'Telefonnummer',
     'reset_code' => 'Code zurücksetzen',
     'password_confirmation' => 'Passwort Bestätigung',
     'password' => 'Passwort',
@@ -48,6 +48,6 @@ return [
     'popular_ads' => 'Beliebte Anzeigen',
     'last_48_hours' => 'Letzte 48 Stunden',
     'secure_e-commerce_ads' => 'Sichere E-Commerce-Anzeigen',
-    'sms' => 'Send Text Message (SMS)',
-    'mail' => 'Send Mail',
+    'sms' => 'SMS senden (SMS)',
+    'mail' => 'Mail senden',
 ];
