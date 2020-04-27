@@ -282,8 +282,8 @@ return [
 
     // Detail page
     "no_street_view" => "Kein Street View-Bild an dieser Stelle",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    'edit_my_contact_info' => 'Bearbeiten Sie meine Kontaktinformationen',
+    'update_my_contact_info' => 'Aktualisiere meine Kontaktinformationen',
+    'contact_info' => 'Kontakt Informationen',
+    'ad_info' => 'Anzeigeninformationen',
 ];

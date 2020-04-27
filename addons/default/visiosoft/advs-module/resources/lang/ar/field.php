@@ -281,8 +281,8 @@ return [
 
     // Detail page
     "no_street_view" => "لا توجد صورة التجوّل الافتراضي في هذا الموقع",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    'edit_my_contact_info' => 'تحرير معلومات الاتصال الخاصة بي',
+    'update_my_contact_info' => 'تحديث معلومات الاتصال الخاصة بي',
+    'contact_info' => 'معلومات للتواصل',
+    'ad_info' => 'معلومات الإعلان',
 ];

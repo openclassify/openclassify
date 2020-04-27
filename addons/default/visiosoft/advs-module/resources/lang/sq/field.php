@@ -281,8 +281,8 @@ return [
 
     // Detail page
     "no_street_view" => "Asnjë imazh me pamje nga rruga në këtë vendndodhje",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    'edit_my_contact_info' => 'Ndryshoni informacionin e kontaktit tim',
+    'update_my_contact_info' => 'azhurnoni informacionin e kontaktit tim',
+    'contact_info' => 'Informacioni i kontaktit',
+    'ad_info' => 'Informacione për reklamat',
 ];

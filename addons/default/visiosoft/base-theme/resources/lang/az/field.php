@@ -11,7 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'Elektron poçt ünvanı',
-    'phone' => 'Phone Number',
+    'phone' => 'Telefon nömrəsi',
     'reset_code' => 'Kodu sıfırlayın',
     'password_confirmation' => 'Şifrə Təsdiqləmə',
     'password' => 'Şifrə',
@@ -48,4 +48,6 @@ return [
     'popular_ads' => 'Populyar elanlar',
     'last_48_hours' => 'Son 48 saat',
     'secure_e-commerce_ads' => 'Təhlükəsiz e-ticarət reklamları',
+    'sms' => 'Mətn mesajı göndərin (SMS)',
+    'mail' => 'Məktub göndərin',
 ];

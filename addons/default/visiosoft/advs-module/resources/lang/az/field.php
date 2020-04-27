@@ -281,8 +281,8 @@ return [
 
     // Detail page
     "no_street_view" => "Bu yerdə küçə görünüşü görüntüsü yoxdur",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    'edit_my_contact_info' => 'Əlaqə məlumatlarımı düzəldin',
+    'update_my_contact_info' => 'əlaqə məlumatımı yeniləyin',
+    'contact_info' => 'Əlaqə məlumatı',
+    'ad_info' => 'Elan haqqında məlumat',
 ];

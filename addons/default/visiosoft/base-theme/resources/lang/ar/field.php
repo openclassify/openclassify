@@ -11,7 +11,7 @@ return [
     ],
     'profile' => 'الملف الشخصي',
     'email' => 'عنوان البريد الإلكتروني',
-    'phone' => 'Phone Number',
+    'phone' => 'رقم الهاتف',
     'reset_code' => 'إعادة تعيين الرمز',
     'password_confirmation' => 'تأكيد كلمة المرور',
     'password' => 'كلمه السر',
@@ -48,4 +48,6 @@ return [
     'popular_ads' => 'إعلانات شعبية',
     'last_48_hours' => 'آخر 48 ساعة',
     'secure_e-commerce_ads' => 'إعلانات التجارة الإلكترونية الآمنة',
+    'sms' => 'إرسال رسالة نصية (SMS)',
+    'mail' => 'ارسل بريد',
 ];

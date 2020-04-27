@@ -9,5 +9,5 @@ return [
     'continue' => 'vazhdoj',
     'reset_password' => 'Rivendosni fjalëkalimin',
     'email' => 'Email',
-    'phone' => 'Phone',
+    'phone' => 'telefon',
 ];

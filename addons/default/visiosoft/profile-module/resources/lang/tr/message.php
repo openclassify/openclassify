@@ -27,7 +27,7 @@ return [
     'registered_phone' => 'Bu telefon numarası ile daha önceden sisteme kayıt olunmuştur.',
     'ajax_address_error' => 'Adres yok veya görüntüleme yetkiniz bulunmamaktadır.',
     'empty_password_sms_message' => 'Güvenlik sorunları nedeniyle şifrenizi değiştirdik! Yeni parolanız:',
-    'required_all' => "All Field is Required!",
+    'required_all' => "Tüm Alanlar Zorunludur!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-posta, Telefon Numarası doğru değil!',

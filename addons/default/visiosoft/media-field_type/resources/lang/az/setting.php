@@ -2,15 +2,15 @@
 
 return [
     'imageCanvasW' => [
-        'name' => 'Bild Leinwandbreite'
+        'name' => 'Şəkil Kətan eni'
     ],
     'imageCanvasH' => [
-        'name' => 'Bild Leinwand Höhe'
+        'name' => 'Şəkil Kətan Boyu'
     ],
     'imageResizeW' => [
-        'name' => 'Bildgröße ändern'
+        'name' => 'Şəkil ölçüsünü genişləndirin'
     ],
     'imageResizeH' => [
-        'name' => 'Bildgröße ändern'
+        'name' => 'Şəklin ölçüsünü artırın'
     ],
 ];

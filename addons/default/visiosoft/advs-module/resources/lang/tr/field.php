@@ -283,8 +283,8 @@ return [
 
     // Detail page
     "no_street_view" => "Bu konumda sokak görünümü resmi yok",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    'edit_my_contact_info' => 'İletişim Bilgilerimi Düzenle',
+    'update_my_contact_info' => 'iletişim bilgilerimi güncelle',
+    'contact_info' => 'İletişim bilgileri',
+    'ad_info' => 'İlan Bilgileri',
 ];

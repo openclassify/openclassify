@@ -429,7 +429,7 @@ return [
         'name' => 'Ətraflı məlumat'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'Seçin'
     ],
-    'my_address' => 'My Address'
+    'my_address' => 'Ünvanım'
 ];

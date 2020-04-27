@@ -282,8 +282,8 @@ return [
 
     // Detail page
     "no_street_view" => "Нет изображения улицы в этом месте",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    'edit_my_contact_info' => 'Изменить мою контактную информацию',
+    'update_my_contact_info' => 'обновить мою контактную информацию',
+    'contact_info' => 'Контакты',
+    'ad_info' => 'Информация об объявлении',
 ];
