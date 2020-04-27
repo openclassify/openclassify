@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'الملف الشخصي',
     'email' => 'عنوان البريد الإلكتروني',
+    'phone' => 'رقم الهاتف',
     'reset_code' => 'إعادة تعيين الرمز',
     'password_confirmation' => 'تأكيد كلمة المرور',
     'password' => 'كلمه السر',
@@ -39,10 +40,14 @@ return [
 
     // Login page
     'or' => 'أو',
+    'login_with_phone_number' => 'تسجيل الدخول برقم الهاتف',
+    'login_with_email_address' => 'تسجيل الدخول باستخدام عنوان البريد الإلكتروني',
 
     // Side menu links
     'company_directory' => 'دليل شركة',
     'popular_ads' => 'إعلانات شعبية',
     'last_48_hours' => 'آخر 48 ساعة',
     'secure_e-commerce_ads' => 'إعلانات التجارة الإلكترونية الآمنة',
+    'sms' => 'إرسال رسالة نصية (SMS)',
+    'mail' => 'ارسل بريد',
 ];

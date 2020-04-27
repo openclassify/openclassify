@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'Adresa e-mail',
+    'phone' => 'Numri i telefonit',
     'reset_code' => 'Rivendosni Kodin',
     'password_confirmation' => 'Konfirmimi i Fjalëkalimit',
     'password' => 'Fjalëkalimi',
@@ -39,10 +40,14 @@ return [
 
     // Login page
     'or' => 'ose',
+    'login_with_phone_number' => 'Hyni me numrin e telefonit',
+    'login_with_email_address' => 'Identifikohu me Adresë Email',
 
     // Side menu links
     'company_directory' => 'Drejtoria e ndërmarrjes',
     'popular_ads' => 'Reklama popullore',
     'last_48_hours' => '48 orët e fundit',
     'secure_e-commerce_ads' => 'Reklama të sigurta për tregtinë elektronike',
+    'sms' => 'Dërgoni mesazhe me tekst (SMS)',
+    'mail' => 'Dërgo postë',
 ];

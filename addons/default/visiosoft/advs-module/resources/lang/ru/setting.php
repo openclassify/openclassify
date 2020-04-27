@@ -5,11 +5,11 @@ return [
         'name' => 'Авто Одобрить',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Тип просмотра по умолчанию',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Скрыть цену, если ноль',
+        'instructions' => 'Скрыть цену, если цена объявления равна 0',
     ],
     'estimated_pending_time' => [
         'name' => 'Расчетное время ожидания',

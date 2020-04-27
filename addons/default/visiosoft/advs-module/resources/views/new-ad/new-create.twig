@@ -38,6 +38,59 @@
                         <input type="hidden" id="currencies" name="currencies" value="">
                         <input type="hidden" name="update_id" value="{{ id }}">
                         <fieldset>
+
+
+                            <h5 class="pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.contact_info') }}</h5>
+                            <div class="col-12 bg-light row m-0">
+                                <div class="col-12 col-md-6 border my-4 bg-white py-3 row m-0 px-0 editContact rounded">
+                                    <div class="col-12 row m-0 border-bottom py-2">
+                                        <div class="col-12 col-md-4 pl-0">
+                                            <label class="mb-0 font-weight-bold">
+                                                {{ trans('visiosoft.module.profile::field.first_name.name') }}
+                                                {{ trans('visiosoft.module.profile::field.last_name.name') }}:
+                                            </label>
+                                        </div>
+                                        <div class="col-12 col-md-8 infoName">
+                                            {{ getProfileDetail(auth_user().id).first_name }}
+                                            {{ getProfileDetail(auth_user().id).last_name }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row m-0 border-bottom py-1">
+                                        <div class="col-12 col-md-4 pl-0">
+                                            <label class="mb-0 font-weight-bold">{{ trans('visiosoft.module.profile::field.gsm_phone.name') }}</label>
+                                        </div>
+                                        <div class="col-12 col-md-8 infoGsmPhone">
+                                            {{ getProfileDetail(auth_user().id).gsm_phone }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row m-0 border-bottom py-1">
+                                        <div class="col-12 col-md-4 pl-0">
+                                            <label class="mb-0 font-weight-bold">{{ trans('visiosoft.module.profile::field.office_phone.name') }}</label>
+                                        </div>
+                                        <div class="col-12 col-md-8 infoOfficePhone">
+                                            {{ getProfileDetail(auth_user().id).office_phone }}
+                                        </div>
+                                    </div>
+                                    <div class="col-12 row m-0 py-1">
+                                        <div class="col-12 col-md-4 pl-0">
+                                            <label class="mb-0 font-weight-bold">{{ trans('visiosoft.module.profile::field.land_phone.name') }}</label>
+                                        </div>
+                                        <div class="col-12 col-md-8 infoLandPhone">
+                                            {{ getProfileDetail(auth_user().id).land_phone }}
+                                        </div>
+                                    </div>
+                                    <p class="px-3 py-2">
+                                        <a href="#" class="editInformationUser">
+                                            <i class="fas fa-pen"></i>
+                                            {{ trans('visiosoft.module.advs::field.update_my_contact_info') }}
+                                        </a>
+                                    </p>
+                                </div>
+
+                            </div>
+
+
+                            <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.ad_info') }}</h5>
                             <div class="section postdetails">
                                 <div class="row form-group add-title">
                                     {% set fields = form.fields.base().pluck('field_name').all() %}
@@ -69,7 +122,8 @@
                                         <input class="form-control priceField" value="{{ PriceValue|first }}">
                                     </div>
                                     <div class="col-4 col-md-1">
-                                        <input class="form-control priceDecimalField" placeholder="00" maxlength="2" value="{{ PriceValue[1] }}">
+                                        <input class="form-control priceDecimalField" placeholder="00" maxlength="2"
+                                               value="{{ PriceValue[1] }}">
                                     </div>
                                     <div class="col-sm-3 col-xs-6">
                                         {{ form.fields.currency.setAttributes({
@@ -120,6 +174,8 @@
             {{ form.close|raw }}
         </div>
     </section>
+    {% include "visiosoft.module.advs::new-ad/partials/modals" %}
+    {{ addBlock('new-ad/modals')|raw }}
     <script>
         var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
         var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
@@ -133,5 +189,6 @@
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
     {{ asset_add("scripts.js", "streams::js/form/form.js") }}
     {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/new-create.js") }}
 
 {% endblock %}

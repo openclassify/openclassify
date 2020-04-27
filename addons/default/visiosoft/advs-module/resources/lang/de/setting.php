@@ -5,11 +5,11 @@ return [
         'name' => 'Automatisch genehmigen',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Standardansichtstyp',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Preis ausblenden, wenn Null',
+        'instructions' => 'Verstecken Sie den Preis, wenn der Anzeigenpreis 0 ist',
     ],
     'estimated_pending_time' => [
         'name' => 'Geschätzte ausstehende Zeit',

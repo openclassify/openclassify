@@ -28,6 +28,7 @@ return [
     'registered_phone' => 'Diese Telefonnummer wurde bereits registriert.',
     'ajax_address_error' => 'Keine Adresse oder nicht zum Anzeigen berechtigt.',
     'empty_password_sms_message' => 'Aus Sicherheitsgründen haben wir Ihr Passwort geändert! Dein neues Passwort ist:',
+    'required_all' => "Alle Felder sind erforderlich!",
 
     // Forgot Password
     'email_phone_not_found' => 'Die E-Mail, Telefonnummer ist nicht korrekt!',

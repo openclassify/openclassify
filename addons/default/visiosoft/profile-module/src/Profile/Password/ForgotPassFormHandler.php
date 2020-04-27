@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserPassword;
 use Illuminate\Contracts\Config\Repository;
+use Visiosoft\ProfileModule\Profile\Events\SendForgotPasswordSms;
 
 class ForgotPassFormHandler
 {
@@ -12,10 +13,10 @@ class ForgotPassFormHandler
      * Handle the form.
      *
      * @param ForgotPassFormBuilder $builder
-     * @param UserRepositoryInterface   $users
-     * @param UserPassword              $password
-     * @param MessageBag                $messages
-     * @param Repository                $config
+     * @param UserRepositoryInterface $users
+     * @param UserPassword $password
+     * @param MessageBag $messages
+     * @param Repository $config
      */
     public function handle(
         ForgotPassFormBuilder $builder,
@@ -23,7 +24,8 @@ class ForgotPassFormHandler
         UserPassword $password,
         MessageBag $messages,
         Repository $config
-    ) {
+    )
+    {
         if ($builder->hasFormErrors()) {
             return;
         }
@@ -35,13 +37,25 @@ class ForgotPassFormHandler
         if ($path = $builder->getFormOption('reset_path')) {
             $config->set('anomaly.module.users::paths.reset', $path);
         }
-
-        $password->forgot($user);
-        try {
-            $password->send($user, $builder->getFormOption('reset_redirect'));
-            $messages->success(trans('anomaly.module.users::message.confirm_reset_password'));
-        } catch (\Exception $err) {
-            $messages->error($err->getMessage());
+        if ($builder->getPostData()['resetType'] == "sms") {
+            $user = $users->find($user->id);
+            $password = rand(000000,999999);
+            $user->setAttribute('password', $password);
+            $users->save($user);
+            if (!is_null($user->gsm_phone)) {
+                event(new SendForgotPasswordSms($user, $password));
+                $messages->success(trans('visiosoft.theme.base::message.send_forgot_sms'));
+            } else {
+                $messages->error(trans('visiosoft.theme.base::message.found_phone'));
+            }
+        } else {
+            $password->forgot($user);
+            try {
+                $password->send($user, $builder->getFormOption('reset_redirect'));
+                $messages->success(trans('anomaly.module.users::message.confirm_reset_password'));
+            } catch (\Exception $err) {
+                $messages->error($err->getMessage());
+            }
         }
     }
 }

@@ -11,6 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'E-Mail-Addresse',
+    'phone' => 'Telefonnummer',
     'reset_code' => 'Code zurücksetzen',
     'password_confirmation' => 'Passwort Bestätigung',
     'password' => 'Passwort',
@@ -39,10 +40,14 @@ return [
 
     // Login page
     'or' => 'oder',
+    'login_with_phone_number' => 'Login mit Telefonnummer',
+    'login_with_email_address' => 'Melden Sie sich mit der E-Mail-Adresse an',
 
     // Side menu links
     'company_directory' => 'Firmenverzeichnis',
     'popular_ads' => 'Beliebte Anzeigen',
     'last_48_hours' => 'Letzte 48 Stunden',
     'secure_e-commerce_ads' => 'Sichere E-Commerce-Anzeigen',
+    'sms' => 'SMS senden (SMS)',
+    'mail' => 'Mail senden',
 ];

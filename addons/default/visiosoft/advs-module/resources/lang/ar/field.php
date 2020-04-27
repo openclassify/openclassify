@@ -280,5 +280,9 @@ return [
     'views' => 'الآراء',
 
     // Detail page
-    "no_street_view" => "No street view image in this location"
+    "no_street_view" => "لا توجد صورة التجوّل الافتراضي في هذا الموقع",
+    'edit_my_contact_info' => 'تحرير معلومات الاتصال الخاصة بي',
+    'update_my_contact_info' => 'تحديث معلومات الاتصال الخاصة بي',
+    'contact_info' => 'معلومات للتواصل',
+    'ad_info' => 'معلومات الإعلان',
 ];

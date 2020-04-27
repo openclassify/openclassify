@@ -306,4 +306,19 @@ class MyProfileController extends PublicController
         return $this->view->make('visiosoft.module.profile::profile/ads');
     }
 
+    public function updateAjaxProfile(UserRepositoryInterface $user)
+    {
+        $profile = $user->find(Auth::id());
+        if (isset($this->request->action) and $this->request->action == "update") {
+            $profile->update([
+                'first_name' => $this->request->first_name,
+                'last_name' => $this->request->last_name,
+                'gsm_phone' => $this->request->gsm_phone,
+                'office_phone' => $this->request->office_phone,
+                'land_phone' => $this->request->land_phone,
+            ]);
+        }
+        return response()->json(['status' => 'success', 'data' => $profile]);
+    }
+
 }

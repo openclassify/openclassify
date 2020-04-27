@@ -5,11 +5,11 @@ return [
         'name' => 'Miratimi automatik',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Lloji i pamjes së paracaktuar',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Fshih çmimin nëse Zero',
+        'instructions' => 'Fsheh çmimin nëse çmimi i reklamës është 0',
     ],
     'estimated_pending_time' => [
         'name' => 'Koha e parashikuar e pritjes',

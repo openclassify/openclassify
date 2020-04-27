@@ -7,6 +7,7 @@ use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Foundation\Bus\DispatchesJobs;
+use Illuminate\Support\Facades\Auth;
 
 /**
  * Class RegisterFormHandler
@@ -70,5 +71,6 @@ class Register2FormHandler
         $activator->force($user);
 
         $events->dispatch(new UserHasRegistered($user));
+        Auth::login($user);
     }
 }

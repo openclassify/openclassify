@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\DefaultadminTheme\Listener;
 
-use Anomaly\Streams\Platform\Support\Collection;
+use Anomaly\Streams\Platform\Ui\Table\Component\Header\Header;
+use Illuminate\Support\Collection;
 use Anomaly\Streams\Platform\Ui\Table\Component\Filter\Type\SearchFilter;
 use Anomaly\Streams\Platform\Ui\Table\Event\TableIsQuerying;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
@@ -52,16 +53,36 @@ class AddGsmFilter
         $builder->setColumns([
                 'email',
                 'gsm_phone',
+                'created_at' => [
+                    'value' => 'entry.created_at'
+                ],
                 'status' => [
                     'value' => 'entry.status_label',
                 ],]
         );
-        $c = Collection::make([
-            ['heading' => 'anomaly.module.users::field.email.name'],
-            ['heading' => 'visiosoft.module.profile::field.gsm_phone.name'],
-            ['heading' => 'anomaly.module.users::field.status.name'],
+        $builder->setOptions([
+            'order_by' =>
+                [
+                    'email' => 'DESC'
+                ],
         ]);
-        $builder->getTable()->setHeaders($c);
+
+        $collection = new Collection();
+        $header_email = new Header();
+        $header_email = $header_email->setBuilder($builder)->setHeading('anomaly.module.users::field.email.name')->setSortable(true)->setSortColumn('email');
+        $header_phone = new Header();
+        $header_gsm_phone = $header_phone->setBuilder($builder)->setHeading('visiosoft.module.profile::field.gsm_phone.name');
+        $header_created_at = new Header();
+        $header_created_at = $header_created_at->setBuilder($builder)->setHeading('streams::entry.created_at')->setSortColumn('created_at')->setSortable(true);
+        $header_status = new Header();
+        $header_status = $header_status->setBuilder($builder)->setHeading('anomaly.module.users::field.status.name');
+
+        $collection = $collection->add($header_email);
+        $collection = $collection->add($header_gsm_phone);
+        $collection = $collection->add($header_created_at);
+        $collection = $collection->add($header_status);
+
+        $builder->getTable()->setHeaders($collection);
     }
 
     /**

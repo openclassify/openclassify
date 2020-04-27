@@ -8,4 +8,6 @@ return [
     'register' => 'تسجيل',
     'continue' => 'استمر',
     'reset_password' => 'إعادة تعيين كلمة المرور',
+    'email' => 'البريد الإلكتروني',
+    'phone' => 'هاتف',
 ];

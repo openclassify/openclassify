@@ -10,7 +10,7 @@ class ValidateEmail
         //Is email or phone number
         if (!filter_var($value, FILTER_VALIDATE_EMAIL)) {
             $possiblePhone = $value;
-            if (substr($value, 0, 1) == 0) {
+            if (substr($value, 0, 1) == "+") {
                 $possiblePhone = substr($value, 1);
             }
             if ($user = $users->newQuery()
@@ -22,7 +22,6 @@ class ValidateEmail
         if (!$response = $users->findByEmail($value)) {
             return false;
         }
-
         $builder->setUser($response);
 
         return true;

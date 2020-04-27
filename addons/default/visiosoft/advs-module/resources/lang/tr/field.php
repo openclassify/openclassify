@@ -282,5 +282,9 @@ return [
     'views' => 'Görüntülenme',
 
     // Detail page
-    "no_street_view" => "No street view image in this location"
+    "no_street_view" => "Bu konumda sokak görünümü resmi yok",
+    'edit_my_contact_info' => 'İletişim Bilgilerimi Düzenle',
+    'update_my_contact_info' => 'iletişim bilgilerimi güncelle',
+    'contact_info' => 'İletişim bilgileri',
+    'ad_info' => 'İlan Bilgileri',
 ];

@@ -433,5 +433,8 @@ return [
     'details' => [
         'name' => 'Einzelheiten'
     ],
-
+    'choose' => [
+        'name' => 'Wählen'
+    ],
+    'my_address' => 'Meine Adresse'
 ];

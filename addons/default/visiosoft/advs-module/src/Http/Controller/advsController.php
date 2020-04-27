@@ -15,6 +15,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Visiosoft\LocationModule\City\CityRepository;
+use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use function PMA\Util\get;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\priceChange;
@@ -528,6 +529,7 @@ class AdvsController extends PublicController
         CategoryRepositoryInterface $categoryRepository,
         Dispatcher $events,
         AdvModel $advModel,
+        AdressRepositoryInterface $address,
         CategoryModel $categoryModel
     )
     {
@@ -601,6 +603,16 @@ class AdvsController extends PublicController
             }
 
             $form->render($request->update_id);
+            if ($this->request->address_id != "") {
+                $adv = $form->getFormEntry();
+                $address = $address->find($this->request->address_id);
+                $adv->country_id = $address->country_id;
+                $adv->city = $address->city;
+                $adv->district = $address->district;
+                $adv->neighborhood = null;
+                $adv->village = null;
+                $adv->save();
+            }
             $post = $form->getPostData();
             $post['id'] = $request->update_id;
             $events->dispatch(new priceChange($post));//price history
@@ -682,7 +694,6 @@ class AdvsController extends PublicController
             if (count($Cloudinary) > 0) {
                 $Cloudinary = $Cloudinary->first()->toArray();
             }
-
         }
 
         $request = $cats;
