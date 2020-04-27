@@ -34,5 +34,5 @@ return [
     'address' => [
         'name' => 'عنوان',
     ],
-    'selected' => 'Selected'
+    'selected' => 'المحدد'
 ];
