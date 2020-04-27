@@ -8,6 +8,6 @@ return [
     'register' => 'регистр',
     'continue' => 'Продолжить',
     'reset_password' => 'Сброс пароля',
-    'email' => 'Email',
-    'phone' => 'Phone',
+    'email' => 'Электронное письмо',
+    'phone' => 'Телефон',
 ];
