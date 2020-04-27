@@ -9,5 +9,5 @@ return [
     'continue' => 'Fortsetzen',
     'reset_password' => 'Passwort zurücksetzen',
     'email' => 'Email',
-    'phone' => 'Phone',
+    'phone' => 'Telefon',
 ];
