@@ -126,9 +126,20 @@
                                                value="{{ PriceValue[1] }}">
                                     </div>
                                     <div class="col-sm-3 col-xs-6">
-                                        {{ form.fields.currency.setAttributes({
-                                            'required' :true,
-                                        }).input|raw }}
+                                        <select name="currency" class="custom-select form-control" data-field="currency"
+                                                data-field_name="currency" data-provides="anomaly.field_type.select"
+                                                id="currency" required="">
+                                            {% for currency in config_get('streams::currencies.enabled') %}
+                                                <option value="{{ currency }}">
+                                                    {% if currency == "TRY" %}
+                                                        {{ currency_symbol(currency) }}
+                                                    {% else %}
+                                                        {{ currency }}
+                                                    {% endif %}
+                                                </option>
+                                            {% endfor %}
+
+                                        </select>
                                     </div>
                                 </div>
 
