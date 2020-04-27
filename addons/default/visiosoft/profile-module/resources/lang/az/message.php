@@ -27,7 +27,7 @@ return [
     'registered_phone' => 'Bu telefon nömrəsi artıq qeydiyyata alınıb.',
     'ajax_address_error' => 'Heç bir ünvan və ya görmək icazəsi yoxdur.',
     'empty_password_sms_message' => 'Təhlükəsizlik problemləri ilə əlaqədar olaraq şifrənizi dəyişdirdik! Yeni parolunuz:',
-    'required_all' => "All Field is Required!",
+    'required_all' => "Bütün sahə tələb olunur!",
 
     // Forgot Password
     'email_phone_not_found' => 'Elektron poçt, telefon nömrəsi düzgün deyil!',
