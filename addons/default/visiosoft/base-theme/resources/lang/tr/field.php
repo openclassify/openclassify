@@ -11,7 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'Email Adresiniz',
-    'phone' => 'Phone Number',
+    'phone' => 'Telefon numarası',
     'reset_code' => 'Sıfırlama Kodu',
     'password_confirmation' => 'Şifrenizi Onaylayın',
     'password' => 'Şifreniz',
@@ -48,6 +48,6 @@ return [
     'popular_ads' => 'popüler reklamlar',
     'last_48_hours' => 'son 48 saat',
     'secure_e-commerce_ads' => 'güvenli e-ticaret',
-    'sms' => 'Send Text Message (SMS)',
-    'mail' => 'Send Mail',
+    'sms' => 'Kısa Mesaj Gönder (SMS)',
+    'mail' => 'Posta göndermek',
 ];
