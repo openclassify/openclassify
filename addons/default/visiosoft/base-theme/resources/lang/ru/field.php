@@ -11,7 +11,7 @@ return [
     ],
     'profile' => 'Профиль',
     'email' => 'Адрес электронной почты',
-    'phone' => 'Phone Number',
+    'phone' => 'Номер телефона',
     'reset_code' => 'Сброс кода',
     'password_confirmation' => 'Подтверждение пароля',
     'password' => 'пароль',
@@ -48,6 +48,6 @@ return [
     'popular_ads' => 'Популярные объявления',
     'last_48_hours' => 'Последние 48 часов',
     'secure_e-commerce_ads' => 'Безопасные объявления электронной коммерции',
-    'sms' => 'Send Text Message (SMS)',
-    'mail' => 'Send Mail',
+    'sms' => 'Отправить текстовое сообщение (SMS)',
+    'mail' => 'Отправить почту',
 ];
