@@ -34,5 +34,5 @@ return [
     'address' => [
         'name' => 'Ünvan',
     ],
-    'selected' => 'Selected'
+    'selected' => 'Seçilib'
 ];
