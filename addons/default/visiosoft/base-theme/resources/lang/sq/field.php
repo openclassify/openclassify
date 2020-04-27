@@ -11,7 +11,7 @@ return [
     ],
     'profile' => 'Profil',
     'email' => 'Adresa e-mail',
-    'phone' => 'Phone Number',
+    'phone' => 'Numri i telefonit',
     'reset_code' => 'Rivendosni Kodin',
     'password_confirmation' => 'Konfirmimi i Fjalëkalimit',
     'password' => 'Fjalëkalimi',
@@ -48,6 +48,6 @@ return [
     'popular_ads' => 'Reklama popullore',
     'last_48_hours' => '48 orët e fundit',
     'secure_e-commerce_ads' => 'Reklama të sigurta për tregtinë elektronike',
-    'sms' => 'Send Text Message (SMS)',
-    'mail' => 'Send Mail',
+    'sms' => 'Dërgoni mesazhe me tekst (SMS)',
+    'mail' => 'Dërgo postë',
 ];
