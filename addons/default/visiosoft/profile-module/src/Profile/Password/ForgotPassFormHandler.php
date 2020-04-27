@@ -39,7 +39,7 @@ class ForgotPassFormHandler
         }
         if ($builder->getPostData()['resetType'] == "sms") {
             $user = $users->find($user->id);
-            $password = str_random(8);
+            $password = rand(000000,999999);
             $user->setAttribute('password', $password);
             $users->save($user);
             if (!is_null($user->gsm_phone)) {
