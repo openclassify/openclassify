@@ -7,7 +7,6 @@ $('.edit-category-filter-modal').on('click', function () {
     $('#categoryModal').modal('toggle');
 })
 
-
 function crud(params, url, type, callback) {
     $.ajax({
         type: type,
@@ -143,7 +142,3 @@ $('.set_category').on('click', function () {
     $('#filterModal').find('form').attr("action", '/advs/list');
     $('#filterModal').modal('toggle');
 })
-
-
-
-

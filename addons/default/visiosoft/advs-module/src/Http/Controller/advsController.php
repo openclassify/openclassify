@@ -257,6 +257,7 @@ class AdvsController extends PublicController
             $subCats = $this->category_repository->getSubCatById($categoryId->id);
         } else {
             $mainCats = $this->category_repository->mainCats();
+            $allCats = true;
         }
 
         if ($isActiveCustomFields) {
@@ -279,7 +280,7 @@ class AdvsController extends PublicController
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectRange', 'selectImage', 'ranges', 'seenList',
-            'searchedCountry', 'radio', 'categoryId', 'cityId');
+            'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
