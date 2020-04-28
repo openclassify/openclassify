@@ -63,11 +63,13 @@
         </div>
     </div>
 </div>
-<script>
-    var key = 1;
+{% if not allCats %}
+    <script>
+        var key = 1;
 
-    $.each({{ mainCats|json_encode|raw }}, function (index, value) {
-        categories['cat' + key] = value.id;
-        key++;
-    });
-</script>
+        $.each({{ mainCats|json_encode|raw }}, function (index, value) {
+            categories['cat' + key] = value.id;
+            key++;
+        });
+    </script>
+{% endif %}

@@ -60,15 +60,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        // 'admin/advs/cf_values'           => 'Visiosoft\AdvsModule\Http\Controller\Admin\CfValuesController@index',
-        // 'admin/advs/cf_values/create'    => 'Visiosoft\AdvsModule\Http\Controller\Admin\CfValuesController@create',
-        // 'admin/advs/cf_values/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\CfValuesController@edit',
-        // 'admin/advs/custom_field_advs'           => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldAdvsController@index',
-        // 'admin/advs/custom_field_advs/create'    => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldAdvsController@create',
-        // 'admin/advs/custom_field_advs/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldAdvsController@edit',
-        // 'admin/advs/custom_fields'           => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldsController@index',
-        // 'admin/advs/custom_fields/create'    => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldsController@create',
-        // 'admin/advs/custom_fields/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\CustomFieldsController@edit',
         'admin/advs/advs' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
         'admin/advs/advs/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
         'admin/advs/advs/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit',

@@ -1,6 +1,6 @@
-
 .ads-box-image {
     padding: 5px;
+    transition: transform 0.2s;
 }
 
 .ads-responsive-image {
