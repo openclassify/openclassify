@@ -58,6 +58,21 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         return count($this->getParentCats($id)) + 1;
     }
 
+    public function getParentsCount($id)
+    {
+        $parentCats = array();
+        $currentId = $id;
+        do {
+            $cat = $this->getCat($currentId);
+            $catParent = $cat->parent_category_id;
+            if ($catParent) {
+                $currentId = $catParent;
+                $parentCats[] = $catParent;
+            }
+        } while ($catParent);
+        return count($parentCats);
+    }
+
     public function getSubCategories($id, $get = null)
     {
         $sub_categories = $this->where('parent_category_id', $id)->get();

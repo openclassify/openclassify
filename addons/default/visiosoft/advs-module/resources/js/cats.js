@@ -22,26 +22,25 @@ $(document).ready(function () {
             success: function (response) {
                 hideLoader();
                 if(response['title'] != undefined){
-                    var btn = '<button type="submit" class="btn-1">'+response['nextBtn']+'</button>'
-                    if(response['link'] != "") {
-                        btn = "<a class='btn btn-primary' href='/profile' role='button'>"+response['nextBtn']+"</a>";
-                    }
-                    $('.cat-item-3').html(
-                        '<div class="section next-stap post-option p-2">' +
-                        '<h5>'+response['title']+'</h5>' +
-                        '<p class="p-2">'+response['msg']+'</p>' +
-                        '<div class="btn-section btn-next">' +
-                        btn +
-                        '<a href="/">'+response['cancelBtn']+'</a></div></div>'
+                    var btn = '<button type="submit" class="btn-1">'+response['continueBtn']+'</button>';
+                    $('.cat-item-3 .next-content').html(
+                        '<p class="mb-3 mt-2">'+response['title']+'</p>' +
+                        '<div class="btn-section btn-next">' + btn + '</div>'
                     );
-                    $('.cat-item-3').show();
+                    $('.cat-item-3').parent().css('display', 'flex');
                     stop();
-                }
-                else {
+                } else {
                     response.forEach(function(options){
-                        $(catId).append("<option value="+options.id+">"+options.name+"</option>").closest('.cat-item-2').show();
+                        $(catId).append("<option class='text-truncate pl-1 my-1' value="+options.id+">"+options.name+"</option>");
                     });
+                    $('.focus-select').removeClass('focus-select');
+                    $(catId).animate({height: '14rem'}, 200);
+                    $(catId).closest('.cat-item-2').show().addClass('focus-select')
                 }
+                // Auto scroll right
+                let categoryTab = $('.category-tab');
+                let pos = categoryTab.scrollLeft() + categoryTab.width();
+                categoryTab.animate( {scrollLeft: pos}, 1000);
             },
             beforeSend: function () {
                 showLoader()
@@ -54,8 +53,10 @@ $(document).ready(function () {
         var endNo = 9;
 
         while (startNo <= endNo) {
-            $('#cat'+ startNo).html("").closest('.cat-item-2').hide();
-            $('.cat-item-3').hide();
+            $('#cat'+ startNo).animate({height: 0}, 200, 'linear', function () {
+                $(this).html("").closest('.cat-item-2').hide();
+            });
+            $('.cat-item-3').parent().hide();
             startNo++;
         }
     };
@@ -63,13 +64,16 @@ $(document).ready(function () {
     for (var i = 1; i <= 10; i++) {
         (function(){
             var ii = i;
-            $('#cat'+i).on('change', function (i,e) {
-                divId = $(this).find('option:selected').val();
+            $('#cat' + i).on('change', function (i, e) {
+                $(this).find('option.selected').removeClass('selected');
+                let selectedOption = $(this).find('option:selected');
+                selectedOption.addClass('selected');
+                let divId = selectedOption.val();
                 if (divId == 0) {
-                        filter.hideCats(ii+1);
+                    filter.hideCats(ii + 1);
                 }
-                filter.hideCats(ii+1);
-                filter.getCats("#cat"+(ii+1), divId);
+                filter.hideCats(ii + 1);
+                filter.getCats("#cat" + (ii + 1), divId);
             });
         })();
     }

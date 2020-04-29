@@ -1,4 +1,22 @@
+#ad-cat-section .step-icon {
+    height: 1rem;
+    vertical-align: baseline;
+}
+
+.category-tab {
+    overflow-x: auto;
+}
+
+.cat-item:not(.focus-select) div, .cat-item:not(.focus-select) select {
+    background-color: #f8f9fa;
+}
+
+.focus-select .cat-option {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
 .cat-select {
+    height: 0;
     width: 100%;
     border: none;
     overflow-y: auto
@@ -8,12 +26,16 @@
     outline: none;
 }
 
+.cat-item {
+    flex: none;
+    width: 13rem;
+}
+
 .cat-select option {
-    border-top: 1px solid #f2f2f2;
-    padding: 15px 0 20px;
+    cursor: pointer;
+    border-radius: 2px;
     position: relative;
-    padding-left: 10px;
-    font-size: 16px;
+    font-size: 13px;
     color: #505050;
 }
 
@@ -21,14 +43,32 @@
     display: none;
 }
 
-.cat-item-3 {
+.cat-item:last-child {
     display: none;
+}
+
+.next-stap img {
+    width: 60px;
+}
+
+.next-stap p {
+    font-size: 13px;
+    font-weight: 500;
 }
 
 .btn-1 {
     background-color: #00a651;
-    padding: 5px 50px 7px;
+    padding: 5px 30px 7px;
     color: #fff;
     border: 1px solid #dadada;
     margin-right: 5px;
+}
+
+.cat-select::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cat-select::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.5);
 }
