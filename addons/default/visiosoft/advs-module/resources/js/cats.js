@@ -65,9 +65,7 @@ $(document).ready(function () {
         (function(){
             var ii = i;
             $('#cat' + i).on('change', function (i, e) {
-                $(this).find('option.selected').removeClass('selected');
                 let selectedOption = $(this).find('option:selected');
-                selectedOption.addClass('selected');
                 let divId = selectedOption.val();
                 if (divId == 0) {
                     filter.hideCats(ii + 1);
