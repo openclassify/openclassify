@@ -111,6 +111,30 @@ return [
             'default_value' => 0,
         ],
     ],
+    'thumbnail_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 270,
+        ],
+    ],
+    'thumbnail_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 180,
+        ],
+    ],
+    'picture_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 900,
+        ],
+    ],
+    'picture_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 600,
+        ],
+    ],
     'watermark_type' => [
         'type' => 'anomaly.field_type.select',
         'bind' => 'adv.watermark_type',

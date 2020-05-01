@@ -11,7 +11,7 @@
                 <a href="{{ image }}"><img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}"></a>
             {% else %}
                 {% for image in adv.getViewPhotoUrl %}
-                    <a href="{{ image }}"><img src="{{ image }}"></a>
+                    <a href="{{ adv.getMediumPhotoUrl(image) }}"></a>
                     {% if loop.index == 1 %}
                         {% set advPhoto = image %}
                     {% endif %}

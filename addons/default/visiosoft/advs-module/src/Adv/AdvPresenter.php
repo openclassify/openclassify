@@ -19,6 +19,11 @@ class AdvPresenter extends EntryPresenter
 
     }
 
+    public function getMediumPhotoUrl($fullPhotoUrl)
+    {
+        $mediumPhotoUrl = pathinfo($fullPhotoUrl);
+        return $mediumPhotoUrl['dirname'] . '/md-' . $mediumPhotoUrl['basename'];
+    }
 
     public function isAdVideo()
     {
