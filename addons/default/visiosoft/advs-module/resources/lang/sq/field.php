@@ -285,4 +285,7 @@ return [
     'update_my_contact_info' => 'azhurnoni informacionin e kontaktit tim',
     'contact_info' => 'Informacioni i kontaktit',
     'ad_info' => 'Informacione për reklamat',
+
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];
