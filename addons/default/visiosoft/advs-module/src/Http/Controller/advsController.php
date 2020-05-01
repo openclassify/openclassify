@@ -558,7 +558,7 @@ class AdvsController extends PublicController
                         $this->messages->error(trans('visiosoft.module.advs::message.please_buy_package'));
                         return redirect('/');
                     }
-                } else {
+                } elseif ($adv->slug == '') {
                     $this->messages->error(trans('visiosoft.module.advs::message.max_ad_limit.title'));
                     return redirect('/');
                 }
