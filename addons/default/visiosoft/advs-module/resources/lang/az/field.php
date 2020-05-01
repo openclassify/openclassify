@@ -285,4 +285,7 @@ return [
     'update_my_contact_info' => 'əlaqə məlumatımı yeniləyin',
     'contact_info' => 'Əlaqə məlumatı',
     'ad_info' => 'Elan haqqında məlumat',
+
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];

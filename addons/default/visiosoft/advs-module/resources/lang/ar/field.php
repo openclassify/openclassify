@@ -285,4 +285,7 @@ return [
     'update_my_contact_info' => 'تحديث معلومات الاتصال الخاصة بي',
     'contact_info' => 'معلومات للتواصل',
     'ad_info' => 'معلومات الإعلان',
+
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];

@@ -287,4 +287,7 @@ return [
     'update_my_contact_info' => 'iletişim bilgilerimi güncelle',
     'contact_info' => 'İletişim bilgileri',
     'ad_info' => 'İlan Bilgileri',
+
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];
