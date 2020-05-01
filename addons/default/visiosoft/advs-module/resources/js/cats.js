@@ -22,11 +22,26 @@ $(document).ready(function () {
             success: function (response) {
                 hideLoader();
                 if(response['title'] != undefined){
-                    var btn = '<button type="submit" class="btn-1">'+response['continueBtn']+'</button>';
-                    $('.cat-item-3 .next-content').html(
-                        '<p class="mb-3 mt-2">'+response['title']+'</p>' +
-                        '<div class="btn-section btn-next">' + btn + '</div>'
-                    );
+                    response['success'] ? $('.cross-icon').hide() : $('.check-icon').hide();
+
+                    let btn = '<button type="submit" class="btn-1">'+response['continueBtn']+'</button>';
+                    if (response['link']) {
+                        btn = "<a class='link-unstyled btn-1 text-white' href='"+response['link']+"' role='button'>"+response['continueBtn']+"</a>";
+                    }
+                    let content;
+                    if (response['msg']) {
+                        content = `
+                            <p class="mb-1 mt-2">${response['title']}</p>
+                            <small class="text-muted">${response['msg']}</small>
+                            <div class="mt-3 btn-section btn-next">${btn}</div>
+                        `
+                    } else {
+                        content = `
+                            <p class="mb-3 mt-2">${response['title']}</p>
+                            <div class="btn-section btn-next">${btn}</div>
+                        `
+                    }
+                    $('.cat-item-3 .next-content').html(content);
                     $('.cat-item-3').parent().css('display', 'flex');
                     stop();
                 } else {

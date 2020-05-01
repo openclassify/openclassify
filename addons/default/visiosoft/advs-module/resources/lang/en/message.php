@@ -11,9 +11,11 @@ return [
     'max_ad_limit' => [
         'title' => "Your Free Ad Limit is Out.",
         'continueBtn' => "Show Ads",
+        'link' => "/profile",
     ],
     'create_ad_with_post_cat' => [
         'title' => "Category selection has been completed.",
+        'success' => true,
         'continueBtn' => "Continue",
     ],
     'update_category_info' => 'Please update category.',

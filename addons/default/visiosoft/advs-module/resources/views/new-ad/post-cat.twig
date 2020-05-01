@@ -10,7 +10,7 @@
         <div id="ad-cat-section" class="border rounded shadow-sm bg-light py-4 px-3">
             <h5 class="mb-3">
                 <img src="{{ img('visiosoft.module.advs::images/ascend.svg').url }}" class="step-icon mr-1">
-                Select Category Step by Step
+                {{ trans('visiosoft.module.advs::field.select_category_step_by_step') }}
             </h5>
             <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
                 <div class="d-flex category-tab pb-3">
@@ -77,7 +77,8 @@
                     <div class="cat-item mb-2 shadow-sm border rounded align-items-center">
                         <div class="cat-item-3">
                             <div class="section next-stap post-option px-4 text-center">
-                                <img src="{{ img('visiosoft.module.advs::images/check.svg').url }}" alt="check icon">
+                                <img src="{{ img('visiosoft.module.advs::images/check.svg').url }}" class="check-icon">
+                                <img src="{{ img('visiosoft.module.advs::images/cross.svg').url }}" class="cross-icon">
                                 <div class="next-content"></div>
                             </div>
                         </div>
