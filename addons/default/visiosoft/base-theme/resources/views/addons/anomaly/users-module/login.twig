@@ -1,5 +1,9 @@
 {% extends "theme::layouts/default" %}
 
+{% block styles %}
+    {{ asset_style('visiosoft.theme.base::css/login.css') }}
+{% endblock %}
+
 {% block content %}
     {% set phoneLogin = not setting_value('visiosoft.module.advs::register_email_field') or app.request.get('type') == 'phone' %}
     <div class="row justify-content-center">
@@ -97,5 +101,4 @@
         </div>
     </div>
     {{ asset_add('scripts.js','visiosoft.theme.base::js/login.js') }}
-    {{ asset_add('styles.css','visiosoft.theme.base::css/login.css') }}
 {% endblock %}

@@ -1,5 +1,9 @@
 {% extends "theme::layouts/default" %}
 
+{% block styles %}
+    {{ asset_style('visiosoft.theme.base::css/register.css') }}
+{% endblock %}
+
 {% block content %}
     <div class="py-4">
         <div class="row justify-content-center bg-light rounded border px-3">
@@ -24,11 +28,7 @@
                                 <i class="fas fa-user-plus"></i>
                                 {{ trans('visiosoft.theme.base::button.register') }}
                             </button>
-
                         </div>
-                    </div>
-                    <div class="social-login py-2 row col-12 m-0">
-                        {{ addBlock('login/oauth')|raw }}
                     </div>
                     {{ form_close() }}
                 </div>
@@ -72,9 +72,6 @@
         </div>
     </div>
 
-    {{ asset_add("styles.css", "visiosoft.theme.base::css/register.css") }}
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/register.js") }}
-
-
 {% endblock %}
 
