@@ -50,7 +50,15 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function getSubCatById($id)
     {
-        return $this->model->where('parent_category_id', $id)->where('deleted_at', null)->orderBy('sort_order')->get();
+        $orderBy = $this->model->getParentsCount($id) >= 1 ? 'name' : 'sort_order';
+        return $this->model->newQuery()
+            ->join('cats_category_translations', 'cats_category.id', '=', 'cats_category_translations.entry_id')
+            ->where('cats_category_translations.locale', config('app.locale'))
+            ->where('parent_category_id', $id)
+            ->where('deleted_at', null)
+            ->select('cats_category.*')
+            ->orderBy($orderBy)
+            ->get();
     }
 
     public function getSingleCat($id)
