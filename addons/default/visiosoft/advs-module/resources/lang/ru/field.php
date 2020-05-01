@@ -286,4 +286,7 @@ return [
     'update_my_contact_info' => 'обновить мою контактную информацию',
     'contact_info' => 'Контакты',
     'ad_info' => 'Информация об объявлении',
+
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];
