@@ -10,13 +10,13 @@ return [
     'updated_category_msg' => 'Kategorie erfolgreich bearbeitet.',
     'max_ad_limit' => [
         'title' => "Ihr kostenloses Anzeigenlimit ist abgelaufen.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
+        'continueBtn' => "Anzeigen anzeigen",
+        'link' => "/Profil",
     ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "Die Kategorieauswahl wurde abgeschlossen.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "Fortsetzen",
     ],
     'update_category_info' => 'Bitte aktualisieren Sie die Kategorie.',
     'filter_by_search_msg' => 'Nach Suche filtern.',
