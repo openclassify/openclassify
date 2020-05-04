@@ -1,14 +1,16 @@
 <?php namespace Visiosoft\AdvsModule\Adv;
 
+use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
+use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Intervention\Image\Facades\Image;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\AdvsModule\Category\Contract\CategoryRepositoryInterface;
-use Visiosoft\DopingsModule\Doping\DopingModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 
@@ -23,17 +25,31 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     protected $model;
 
     /**
+     * @var FileRepositoryInterface
+     */
+    private $fileRepository;
+
+    /**
+     * @var FolderRepositoryInterface
+     */
+    private $folderRepository;
+
+    /**
      * Create a new AdvRepository instance.
      *
      * @param AdvModel $model
      */
     public function __construct(
         AdvModel $model,
-        SettingRepositoryInterface $settings
+        SettingRepositoryInterface $settings,
+        FileRepositoryInterface $fileRepository,
+        FolderRepositoryInterface $folderRepository
     )
     {
         $this->model = $model;
         $this->settings = $settings;
+        $this->fileRepository = $fileRepository;
+        $this->folderRepository = $folderRepository;
     }
 
     /**
@@ -291,8 +307,32 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     public function cover_image_update($adv)
     {
         if (count($adv->files) != 0) {
-            $file_url = 'files/images/' . $adv->files[0]->name;
-            $adv->update(['cover_photo' => $file_url]);
+            $fileName = 'tn-' . $adv->files[0]->name;
+            $folder = $this->folderRepository->findBySlug('images');
+            $thumbnail = $this->fileRepository->findByNameAndFolder($fileName, $folder);
+            if (!$thumbnail) {
+                // Create thumbnail image
+                $image = Image::make($adv->files[0]->url());
+                $image->resize(
+                    setting_value('visiosoft.module.advs::thumbnail_width'),
+                    setting_value('visiosoft.module.advs::thumbnail_height')
+                );
+                $fileName = 'tn-' . $adv->files[0]->name;
+                $image->save(app_storage_path() . '/files-module/local/images/' . $fileName);
+
+                // Create file entry for the image
+                $this->fileRepository->create([
+                    'folder_id' => $folder->getId(),
+                    'name' => $fileName,
+                    'disk_id' => 1,
+                    'size' => $image->filesize(),
+                    'mime_type' => $image->mime,
+                    'extension' => $image->extension,
+                ]);
+
+                $file_url = 'files/images/' . $fileName;
+                $adv->update(['cover_photo' => $file_url]);
+            }
         }
     }
 

@@ -554,14 +554,14 @@ class AdvsController extends PublicController
                     $parent_cat = $categoryModel->getParentCats($request->cat1, 'parent_id');
                     $packageModel = new PackageModel();
                     $package = $packageModel->reduceLimit($parent_cat, 'reduce');
-                    if ($package != null)
+                    if ($package != null) {
                         $this->messages->error(trans('visiosoft.module.advs::message.please_buy_package'));
-
-                } else {
+                        return redirect('/');
+                    }
+                } elseif ($adv->slug == '') {
                     $this->messages->error(trans('visiosoft.module.advs::message.max_ad_limit.title'));
+                    return redirect('/');
                 }
-
-                return redirect('/');
             }
 
             $adv->is_get_adv = $request->is_get_adv;

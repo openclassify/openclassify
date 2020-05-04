@@ -59,38 +59,63 @@ class UploadController extends AdminController
 
             $watermarktype = $settings->value('visiosoft.module.advs::watermark_type');
             $position = $settings->value('visiosoft.module.advs::watermark_position');
-            $img = WaterMark::make($this->request->file('upload')->getRealPath())
-                ->resize(setting_value('visiosoft.field_type.media::imageResizeW', null), setting_value('visiosoft.field_type.media::imageResizeH', 600))
-                ->resizeCanvas(setting_value('visiosoft.field_type.media::imageCanvasW', 800), setting_value('visiosoft.field_type.media::imageCanvasH', 600), 'center', false, 'fff');
-            if ($watermarktype == 'image') {
-
-                $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');
-                $watermarkimage = $files->find($watermarkimage_id);
-                $w = $img->width();
-                if ($watermarkimage != null) {
-                    $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
-                    $img->insert($watermark, $position);
+            $fullImg = WaterMark::make($this->request->file('upload')->getRealPath())
+                ->resize(
+                    setting_value('visiosoft.field_type.media::imageResizeW', null),
+                    setting_value('visiosoft.field_type.media::imageResizeH', 600)
+                )
+                ->resizeCanvas(
+                    setting_value('visiosoft.field_type.media::imageCanvasW', 800),
+                    setting_value('visiosoft.field_type.media::imageCanvasH', 600),
+                    'center',
+                    false,
+                    'fff'
+                );
+            $mdImg = WaterMark::make($this->request->file('upload')->getRealPath())
+                ->resize(
+                    setting_value('visiosoft.module.advs::picture_width'),
+                    setting_value('visiosoft.module.advs::picture_height')
+                );
+            foreach ([$fullImg, $mdImg] as $index => $image) {
+                if ($watermarktype == 'image') {
+                    $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');
+                    $watermarkimage = $files->find($watermarkimage_id);
+                    if ($watermarkimage != null) {
+                        $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
+                        $image->insert($watermark, $position);
+                    }
+                } else {
+                    $watermarktext = $settings->value('visiosoft.module.advs::watermark_text');
+                    $v = "top";
+                    $h = "center";
+                    $w = $image->width() / 2;
+                    $h1 = $image->height() / 2;
+                    $font_size = $w / 20;
+                    $image->text($watermarktext, $w, $h1, function ($font) use ($v, $h, $font_size) {
+                        $font->file(public_path('Antonio-Bold.ttf'));
+                        $font->size($font_size);
+                        $font->align($h);
+                        $font->valign($v);
+                    });
                 }
+                if ($index === 0) {
+                    $fileName = $file->getAttributes()['name'];
+                } else {
+                    $fileName = 'md-' . $file->getAttributes()['name'];
 
-            } else {
-                $watermarktext = $settings->value('visiosoft.module.advs::watermark_text');
-                $v = "top";
-                $h = "center";
-                $w = $img->width() / 2;
-                $h1 = $img->height() / 2;
-                $font_size = $w / 20;
-                $img->text($watermarktext, $w, $h1, function ($font) use ($v, $h, $font_size) {
-                    $font->file(public_path('Antonio-Bold.ttf'));
-                    $font->size($font_size);
-                    $font->align($h);
-                    $font->valign($v);
-                });
-
+                    $files->create([
+                        'folder_id' => $this->request->get('folder'),
+                        'name' => $fileName,
+                        'disk_id' => 1,
+                        'size' => $image->filesize(),
+                        'mime_type' => $image->mime,
+                        'extension' => $image->extension,
+                    ]);
+                }
+                $image->save(app_storage_path() . '/files-module/local/images/' . $fileName);
             }
 
-            $img->save(app_storage_path() . '/files-module/local/images/' . $file->getAttributes()['name']);
             return $this->response->json($file->getAttributes());
-
         }
 
         return $this->response->json(['error' => 'There was a problem uploading the file.'], 500);

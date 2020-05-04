@@ -84,6 +84,7 @@ class LocationModuleServiceProvider extends AddonServiceProvider
             'as' => 'location::getCities',
             'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getCities'
         ],
+        'ajax/get-city' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getCity',
         'ajax/getDistricts' => [
             'as' => 'location::getDistricts',
             'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getDistricts'
