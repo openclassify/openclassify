@@ -10,13 +10,13 @@ return [
     'updated_category_msg' => 'تم تعديل الفئة بنجاح.',
     'max_ad_limit' => [
         'title' => "حد إعلانك المجاني خارج.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
+        'continueBtn' => "إظهار الإعلانات",
+        'link' => "/الملف الشخصي",
     ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "تم الانتهاء من اختيار الفئة.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "استمر",
     ],
     'update_category_info' => 'يرجى تحديث الفئة.',
     'filter_by_search_msg' => 'تصفية حسب البحث.',
