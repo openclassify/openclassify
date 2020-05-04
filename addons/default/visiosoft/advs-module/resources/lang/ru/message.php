@@ -11,13 +11,13 @@ return [
     'updated_category_msg' => 'Категория успешно отредактирована.',
     'max_ad_limit' => [
         'title' => "Ваш предел бесплатных объявлений истек.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
+        'continueBtn' => "Показать рекламу",
+        'link' => "/профиль",
     ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "Выбор категории завершен.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "Продолжить",
     ],
     'update_category_info' => 'Пожалуйста, обновите категорию.',
     'filter_by_search_msg' => 'Фильтр по поиску.',
