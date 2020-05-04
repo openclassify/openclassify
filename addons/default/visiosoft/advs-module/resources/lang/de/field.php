@@ -288,5 +288,5 @@ return [
     'ad_info' => 'Anzeigeninformationen',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Wählen Sie Kategorie Schritt für Schritt',
 ];
