@@ -10,13 +10,13 @@ return [
     'updated_category_msg' => 'Kateqoriya uğurla düzəldildi.',
     'max_ad_limit' => [
         'title' => "Pulsuz elanınızın həddi bitib.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
+        'continueBtn' => "Reklamları göstər",
+        'link' => "/ profil",
     ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "Kateqoriya seçimi başa çatdı.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "Davam edin",
     ],
     'update_category_info' => 'Zəhmət olmasa kateqoriya yeniləyin.',
     'filter_by_search_msg' => 'Axtarışa görə süzün.',
