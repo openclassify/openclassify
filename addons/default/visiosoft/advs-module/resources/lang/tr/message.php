@@ -10,13 +10,13 @@ return [
     'updated_category_msg' => 'Kategori başarıyla güncellendi.',
     'max_ad_limit' => [
         'title' => "Ücretsiz İlan Limitiniz Bitmiştir.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
+        'continueBtn' => "Reklamları Göster",
+        'link' => "/profil",
     ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "Kategori seçimi tamamlandı.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "Devam et",
     ],
     'update_category_info' => 'Lütfen kategoriyi güncelleyiniz.',
     'filter_by_search_msg' => 'Aramanızı Daraltın.',
