@@ -82,6 +82,18 @@ return [
     'default_GET' => [
         'name' => 'Defolt Elan GET',
     ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail Width',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Thumbnail Height',
+    ],
+    'picture_width' => [
+        'name' => 'Picture Width',
+    ],
+    'picture_height' => [
+        'name' => 'Picture Height',
+    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
