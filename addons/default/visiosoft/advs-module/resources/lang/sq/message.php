@@ -10,13 +10,13 @@ return [
     'updated_category_msg' => 'Kategoria u redaktua me sukses.',
     'max_ad_limit' => [
         'title' => "Kufiri juaj falas për reklama është jashtë.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
+        'continueBtn' => "Shfaq reklamat",
+        'link' => "/ profili",
     ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "Zgjedhja e kategorisë ka përfunduar.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "vazhdoj",
     ],
     'update_category_info' => 'Ju lutemi azhurnoni kategorinë.',
     'filter_by_search_msg' => 'Filtro Nga kërkimi.',
