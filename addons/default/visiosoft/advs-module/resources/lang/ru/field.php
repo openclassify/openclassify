@@ -288,5 +288,5 @@ return [
     'ad_info' => 'Информация об объявлении',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Выберите категорию шаг за шагом',
 ];
