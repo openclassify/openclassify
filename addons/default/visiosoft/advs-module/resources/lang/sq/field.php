@@ -287,5 +287,5 @@ return [
     'ad_info' => 'Informacione për reklamat',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Zgjidhni kategorinë hap pas hapi',
 ];
