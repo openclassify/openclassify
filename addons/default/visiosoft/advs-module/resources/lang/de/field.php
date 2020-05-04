@@ -286,4 +286,7 @@ return [
     'update_my_contact_info' => 'Aktualisiere meine Kontaktinformationen',
     'contact_info' => 'Kontakt Informationen',
     'ad_info' => 'Anzeigeninformationen',
+
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];
