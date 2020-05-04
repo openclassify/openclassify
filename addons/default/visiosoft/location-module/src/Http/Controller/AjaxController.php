@@ -6,6 +6,7 @@ use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
+use Illuminate\Support\Str;
 
 class AjaxController extends PublicController
 {
@@ -101,6 +102,21 @@ class AjaxController extends PublicController
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
             return $this->village_model->whereIn('parent_neighborhood_id', $id)->orderBy('order', 'ASC')->get();
+        }
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getCity()
+    {
+        if ($this->request->name) {
+            $slug = Str::slug($this->request->name, '_');
+            if ($city = $this->city_model->newQuery()->where('slug', 'LIKE', $slug . '%')->first()) {
+                return ['success' => true, 'link' => route('visiosoft.module.advs::list') . '?city[]=' . $city->id];
+            } else {
+                return ['success' => false];
+            }
         }
     }
 }
