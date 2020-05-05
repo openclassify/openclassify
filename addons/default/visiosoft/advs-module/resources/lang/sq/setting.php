@@ -83,16 +83,16 @@ return [
         'name' => 'Reklama e paracaktuar GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Gjerësia e Thumbnail',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Lartësia e Thumbnail',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Gjerësia e figurës',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Lartësia e figurës',
     ],
     'twitter' => [
         'name' => 'Twitter',
