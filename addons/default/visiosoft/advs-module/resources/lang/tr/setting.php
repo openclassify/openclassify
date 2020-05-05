@@ -83,16 +83,16 @@ return [
         'name' => 'Varsayılan İlan GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Küçük Resim Genişliği',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Küçük Resim Yüksekliği',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Resim Genişliği',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Resim Yüksekliği',
     ],
     'twitter' => [
         'name' => 'Twitter',
