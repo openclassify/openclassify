@@ -1,8 +1,15 @@
 {% extends "theme::layouts/default" %}
+
+{% block styles %}
+    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
+{% endblock %}
+
 {% block content %}
     <div class="row">
+
         {% include "visiosoft.module.profile::profile/partials/navigation" %}
-        <div class="col-md-12">
+
+        <div class="col-12 col-md-8">
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
