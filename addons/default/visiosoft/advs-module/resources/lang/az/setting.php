@@ -83,16 +83,16 @@ return [
         'name' => 'Defolt Elan GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Eskiz eni',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Eskiz hündürlüyü',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Şəkil genişliyi',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Şəkil Boyu',
     ],
     'twitter' => [
         'name' => 'Twitter',
