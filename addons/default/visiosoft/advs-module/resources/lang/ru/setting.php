@@ -83,16 +83,16 @@ return [
         'name' => 'Реклама по умолчанию GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Ширина миниатюры',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Высота миниатюры',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Ширина картинки',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Высота картинки',
     ],
     'twitter' => [
         'name' => 'щебет',
