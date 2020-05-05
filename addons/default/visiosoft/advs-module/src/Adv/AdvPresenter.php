@@ -1,13 +1,19 @@
 <?php namespace Visiosoft\AdvsModule\Adv;
 
+use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryPresenter;
 use Anomaly\Streams\Platform\Model\Cloudinary\CloudinaryVideoEntryModel;
-use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
-use Illuminate\Routing\Route;
 
 class AdvPresenter extends EntryPresenter
 {
 
+    private $fileRepository;
+
+    public function __construct($object, FileRepositoryInterface $fileRepository)
+    {
+        parent::__construct($object);
+        $this->fileRepository = $fileRepository;
+    }
 
     public function getViewPhotoUrl()
     {
@@ -22,7 +28,12 @@ class AdvPresenter extends EntryPresenter
     public function getMediumPhotoUrl($fullPhotoUrl)
     {
         $mediumPhotoUrl = pathinfo($fullPhotoUrl);
-        return $mediumPhotoUrl['dirname'] . '/md-' . $mediumPhotoUrl['basename'];
+        $mediumPhotoName = 'md-' . $mediumPhotoUrl['basename'];
+        if ($this->fileRepository->findBy('name', $mediumPhotoName)) {
+            return $mediumPhotoUrl['dirname'] . '/' . $mediumPhotoName;
+        } else {
+            return $fullPhotoUrl;
+        }
     }
 
     public function isAdVideo()
