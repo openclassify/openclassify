@@ -83,16 +83,16 @@ return [
         'name' => 'Standardanzeige GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Miniaturbildbreite',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Miniaturbildhöhe',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Bildbreite',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Bildhöhe',
     ],
     'twitter' => [
         'name' => 'Twitter',
