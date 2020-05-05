@@ -83,16 +83,16 @@ return [
         'name' => 'الإعلان الافتراضي',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'عرض الصورة المصغرة',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'ارتفاع الصورة المصغرة',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'عرض الصورة',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'ارتفاع الصورة',
     ],
     'twitter' => [
         'name' => 'تغريد',
