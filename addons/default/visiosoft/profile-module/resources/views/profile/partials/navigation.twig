@@ -1,4 +1,4 @@
-<div class="col-12 mb-3 navbar-light py-2 d-md-none">
+<div class="col-12 navbar-light py-2 d-md-none">
     <button class="profile-nav-toggler" id="navbarSideButton" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -6,7 +6,7 @@
 <div class="col-10 col-sm-6 col-md-4 profile-navigation border rounded navbar-side bg-white" id="navbarSide">
     <a href="{{ url_route('profile::profile') }}" class="px-3 mb-2 link-unstyled">
         <img src="{{ img('visiosoft.module.profile::images/interface.svg').url }}">
-        <p>Vedat Akd</p>
+        <p>{{ auth_user().name }}</p>
     </a>
     <hr class="mt-2">
     <a href="{{ url_route('profile::profile') }}"
