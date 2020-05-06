@@ -1,14 +1,33 @@
-<div class="col-md-12">
-    <nav class="profile-navigation">
-        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-            <a class="nav-item nav-link active"
-               href="{{ url_route('profile::profile') }}">{{ trans('visiosoft.module.profile::addon.title') }}</a>
-            <a class="nav-item nav-link active"
-               href="{{ url_route('profile::ads') }}">{{ trans('visiosoft.module.advs::addon.title') }}</a>
-            <a class="nav-item nav-link active"
-               href="{{ url_route('profile::address') }}">{{ trans('visiosoft.module.profile::stream.adress.name') }}</a>
-
-            {{ addBlock('profile/navigation')|raw }}
-        </div>
-    </nav>
+<div class="col-12 mb-3 navbar-light py-2 d-md-none">
+    <button class="profile-nav-toggler" id="navbarSideButton" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
 </div>
+<div class="col-10 col-sm-6 col-md-4 profile-navigation border rounded navbar-side bg-white" id="navbarSide">
+    <a href="{{ url_route('profile::profile') }}" class="px-3 mb-2 link-unstyled">
+        <img src="{{ img('visiosoft.module.profile::images/interface.svg').url }}">
+        <p>Vedat Akd</p>
+    </a>
+    <hr class="mt-2">
+    <a href="{{ url_route('profile::profile') }}"
+       class="px-3 link-unstyled{{ app.request.pathinfo == '/profile' ? ' active' : '' }}">
+        <img src="{{ img('visiosoft.module.profile::images/social-media.svg').url }}">
+        <p>{{ trans('visiosoft.module.profile::addon.title') }}</p>
+    </a>
+    <a href="{{ url_route('profile::ads') }}"
+       class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/ads' ? ' active' : '' }}">
+        <img src="{{ img('visiosoft.module.profile::images/website.svg').url }}">
+        <p>{{ trans('visiosoft.module.advs::addon.title') }}</p>
+    </a>
+    <a href="{{ url_route('profile::address') }}"
+       class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/address' ? ' active' : '' }}">
+        <img src="{{ img('visiosoft.module.profile::images/location.svg').url }}">
+        <p>{{ trans('visiosoft.module.profile::stream.adress.name') }}</p>
+    </a>
+
+    {{ addBlock('profile/navigation')|raw }}
+</div>
+
+<div class="overlay"></div>
+
+{{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile-nav.js") }}

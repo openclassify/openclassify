@@ -1,4 +1,9 @@
 {% extends "theme::layouts/default" %}
+
+{% block styles %}
+    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
+{% endblock %}
+
 {% block content %}
 
     {% set profile_photo = user.file %}
@@ -8,9 +13,11 @@
         {% set profile_photo = img('visiosoft.module.profile::images/profile-default.png').url %}
     {% endif %}
 
-    <div class="row">
+    <div class="row mt-5">
+
         {% include "visiosoft.module.profile::profile/partials/navigation" %}
-        <div class="col-md-12">
+
+        <div class="col-12 col-md-8">
             <div class="row px-3">
 
                 <!-- User Profile Detail Section-->
@@ -175,13 +182,10 @@
                         {{ addBlock('profile/detail/content')|raw }}
                     </div>
                     <!-- User Profile Form Section-->
-
                 </div>
             </div>
-
-
         </div>
+
     </div>
     {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
-    {{ asset_add("styles.css", "visiosoft.module.profile::assets/css/profile.css") }}
 {% endblock %}
