@@ -2,21 +2,21 @@
 
 return [
     'advs' => [
-        'name' => 'advs',
+        'name' => 'Njoftimi',
     ],
     'categories' => [
         'name' => 'Kategoritë',
     ],
     'village' => [
-        'name' => 'fshati',
+        'name' => 'Fshati',
     ],
     'custom_fields' => [
-        'name' => 'Fushat e personalizuara',
+        'name' => 'Specifikime',
     ],
     'custom_field_advs' => [
-        'name' => 'Këshillat e fushës me porosi',
+        'name' => 'Specifikimet e njoftimeve',
     ],
     'cf_values' => [
-        'name' => 'Vlerat Cf',
+        'name' => 'Cf vlerat',
     ],
 ];

@@ -5,11 +5,11 @@ return [
         'name' => 'Miratimi automatik',
     ],
     'default_view_type' => [
-        'name' => 'Lloji i pamjes së paracaktuar',
+        'name' => 'Tipi i pamjes së paracaktuar',
     ],
     'hide_zero_price' => [
         'name' => 'Fshih çmimin nëse Zero',
-        'instructions' => 'Fsheh çmimin nëse çmimi i reklamës është 0',
+        'instructions' => 'Fsheh çmimin nëse çmimi i Njoftimit është 0',
     ],
     'estimated_pending_time' => [
         'name' => 'Koha e parashikuar e pritjes',
@@ -19,7 +19,7 @@ return [
         'name' => 'Koha e publikimit të paracaktuar',
     ],
     'default_adv_limit' => [
-        'name' => 'Kufiri i paracaktuar i reklamave',
+        'name' => 'Kufiri i paracaktuar i njoftimeve',
     ],
     'address' => [
         'name' => 'Kontaktoni Adresën',
@@ -54,33 +54,33 @@ return [
         'name' => 'Kufiri i fundit',
     ],
     'site_address' => [
-        'name' => 'Adresa e sitit',
-        'warning'      => 'Auto shtuar www. www.<strong>sitename.com</strong> ',
+        'name' => 'Adresa e Faqja internet',
+        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Google Key Api Key',
+        'name' => 'Google Map Api Key',
     ],
 
     'default_country' => [
-        'name' => 'Vendi i paracaktuar i reklamave',
+        'name' => 'Shtetet i përcaktuar i Njoftimeve',
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Keyelësi API i Konvertuesit të Valutave'
     ],
     'default_city' => [
-        'name' => 'Qyteti i paracaktuar Ad',
+        'name' => 'Qarku i përcaktuar njoftimeve',
     ],
     'default_district' => [
-        'name' => 'Rrethi i paracaktuar i reklamave',
+        'name' => 'Bashkia i përcaktuar i njoftimeve',
     ],
     'default_neighborhood' => [
-        'name' => 'Lagjia e paracaktuar e reklamave',
+        'name' => 'Njësitë Adm. e përcaktuar e njoftimeve',
     ],
     'default_currency' => [
-        'name' => 'Valuta e paracaktuar e reklamës',
+        'name' => 'Valuta e përcaktuar',
     ],
     'default_GET' => [
-        'name' => 'Reklama e paracaktuar GET',
+        'name' => 'Përcaktuar SET',
     ],
     'twitter' => [
         'name' => 'Twitter',
@@ -89,13 +89,13 @@ return [
         'name' => 'Facebook',
     ],
     'youtube' => [
-        'name' => 'YouTube',
+        'name' => 'Youtube',
     ],
     'google' => [
         'name' => 'Google',
     ],
     'watermark_type' => [
-        'name' => 'Lloji ujëra',
+        'name' => 'Tipi Filigranit',
     ],
     'watermark_text' => [
         'name' => 'Teksti i Filigranit',
@@ -113,9 +113,9 @@ return [
         'name' => 'Monedhat e aktivizuara',
     ],
     'google_statistic_code' => [
-        'name' => 'Kodi i Statistikave të Google',
+        'name' => 'Google Statistic Code',
     ],
     'register_email_field' => [
-        'name' => 'Kërkesa për regjistrim përmes postës elektronike',
+        'name' => 'Kërkesa për regjistrim përmes e-mail',
     ],
 ];
