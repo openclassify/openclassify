@@ -14,23 +14,23 @@ return [
         'name' => 'Shfaq butonin e vendndodhjes së kërkimit',
     ],
     'default_country' => [
-        'name' => 'Vend i paracaktuar',
+        'name' => 'Shtet i paracaktuar',
     ],
     'create_ad_page_location' => [
         'name' => 'Krijoni vendndodhjen e faqes së Njoftimet',
     ],
     'default_city' => [
-        'name' => 'Qyteti i paracaktuar',
+        'name' => 'Qarku i paracaktuar',
     ],
     'default_district' => [
-        'name' => 'Rrethi i paracaktuar',
+        'name' => 'Bashkia e paracaktuar',
     ],
     'default_neighborhood' => [
-        'name' => 'Lagjia e paracaktuar',
+        'name' => 'Njësia administrative e paracaktuar',
     ],
 
     'google_map_key' => [
-        'name' => 'Google Key Api Key',
+        'name' => 'Google Maps Api Key',
     ],
 
     'map_coordinates_long' => [

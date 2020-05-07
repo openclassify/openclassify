@@ -2,49 +2,49 @@
 
 return [
     'advs' => [
-        'name'   => 'Ads',
+        'name'   => 'Njoftime',
         'option' => [
-            'read'   => 'Mund të lexoni reklama?',
-            'write'  => 'Mund të krijoni / modifikoni njoftime?',
-            'delete' => 'Mund të fshini reklamat?',
+            'read'   => 'Mund të lexoni Njoftime?',
+            'write'  => 'Mund të krijoni / modifikoni njoftimet?',
+            'delete' => 'Mund të fshini Njoftimet?',
         ],
     ],
     'categories' => [
         'name'   => 'Kategoritë',
         'option' => [
-            'read'   => 'Mund të lexoni kategori?',
-            'write'  => 'Mund të krijoni / modifikoni kategori?',
-            'delete' => 'Mund të fshini kategoritë?',
+            'read'   => 'Mund të lexoni Kategorinë?',
+            'write'  => 'Mund të krijoni / modifikoni Kategorinë?',
+            'delete' => 'Mund të fshini Kategoritë?',
         ],
     ],
     'village' => [
-        'name'   => 'fshati',
+        'name'   => 'Fshati',
         'option' => [
-            'read'   => 'Mund të lexoni fshatin?',
-            'write'  => 'Mund të krijojë / modifikojë fshatin?',
-            'delete' => 'Mund të fshini fshatin?',
+            'read'   => 'Mund të lexoni Fshatin?',
+            'write'  => 'Mund të krijoni / modifikoni Fshatin?',
+            'delete' => 'Mund të fshini Fshatin?',
         ],
     ],
     'custom_fields' => [
-        'name'   => 'Fushat e personalizuara',
+        'name'   => 'Specifikime',
         'option' => [
-            'read'   => 'Mund të lexoni fushat me porosi?',
-            'write'  => 'Mund të krijoni / modifikoni fushat me porosi?',
-            'delete' => 'Mund të fshini fushat me porosi?',
+            'read'   => 'Mund të lexoni specifikimet?',
+            'write'  => 'Mund të krijoni / modifikoni specifikimet?',
+            'delete' => 'Mund të fshini Specifikimet?',
         ],
     ],
     'custom_field_advs' => [
-        'name'   => 'Reklama me terren personal',
+        'name'   => 'Specifikimet e njoftimeve',
         'option' => [
-            'read'   => 'Mund të lexoni reklama në terren me porosi?',
-            'write'  => 'Mund të krijoni / modifikoni njoftime me terren personal?',
-            'delete' => 'Mund të fshini reklamat e fushave me porosi?',
+            'read'   => 'Mund të lexoni specifikimet e njoftimeve?',
+            'write'  => 'Mund të krijoni / modifikoni specifikimet e njoftimeve?',
+            'delete' => 'Mund të fshini Specifikimet e njoftimeve?',
         ],
     ],
     'cf_values' => [
         'name'   => 'Vlerat Cf',
         'option' => [
-            'read'   => 'A mund të lexoni vlerat cf?',
+            'read'   => 'Mund të lexoni vlerat cf',
             'write'  => 'Mund të krijoni / modifikoni vlerat cf?',
             'delete' => 'Mund të fshini vlerat cf?',
         ],

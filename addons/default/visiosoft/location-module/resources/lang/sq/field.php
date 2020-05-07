@@ -8,19 +8,19 @@ return [
         'name' => 'Goditje e Fortë'
     ],
     'city' => [
-        'name' => 'Qytet'
+        'name' => 'Qarku'
     ],
     'country' => [
-        'name' => 'Vendndodhja'
+        'name' => 'Shtete'
     ],
     'district' => [
-        'name' => 'Rreth'
+        'name' => 'Bashkia'
     ],
     'order' => [
-        'name' => 'Renditja e renditjes'
+        'name' => 'Sort Order'
     ],
     'neighborhood' => [
-        'name' => 'Lagje'
+        'name' => 'Njësitë Administrative'
     ],
     'village' => [
         'name' => 'Fshati'
@@ -34,5 +34,5 @@ return [
     'address' => [
         'name' => 'Adresë',
     ],
-    'selected' => 'i zgjedhur'
+    'selected' => 'I zgjedhur'
 ];
