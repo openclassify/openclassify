@@ -1,0 +1,15 @@
+{% block styles %}
+    {{ asset_style("visiosoft.module.profile::assets/css/profile-nav.scss") }}
+{% endblock %}
+
+<div class="row mt-5">
+
+    {% include "visiosoft.module.profile::profile/partials/navigation" %}
+
+    <div class="col-12 col-md-9">
+
+        {% block detail %}{% endblock %}
+
+    </div>
+
+</div>

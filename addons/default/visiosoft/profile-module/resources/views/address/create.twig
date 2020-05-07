@@ -1,15 +1,8 @@
 {% extends "theme::layouts/default" %}
 
-{% block styles %}
-    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
-{% endblock %}
-
 {% block content %}
-    <div class="row">
-
-        {% include "visiosoft.module.profile::profile/partials/navigation" %}
-
-        <div class="col-12 col-md-8">
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
             <div class="row px-3">
                 <div class="col-md-12 bg-dark text-white p-5">
                     <h3>{{ trans('visiosoft.module.profile::field.create_address.name') }}</h3>
@@ -82,10 +75,8 @@
                 </div>
             </div>
 
-
-        </div>
-    </div>
-    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
-    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/address.js") }}
-
+            {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
+            {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/address.js") }}
+        {% endblock %}
+    {% endembed %}
 {% endblock %}

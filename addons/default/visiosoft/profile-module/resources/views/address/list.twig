@@ -1,15 +1,8 @@
 {% extends "theme::layouts/default" %}
 
-{% block styles %}
-    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
-{% endblock %}
-
 {% block content %}
-    <div class="row">
-
-        {% include "visiosoft.module.profile::profile/partials/navigation" %}
-
-        <div class="col-12 col-md-8">
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
             <table class="table">
                 <thead class="thead-dark">
                 <tr>
@@ -51,6 +44,6 @@
                 {% endfor %}
                 </tbody>
             </table>
-        </div>
-    </div>
+        {% endblock %}
+    {% endembed %}
 {% endblock %}
