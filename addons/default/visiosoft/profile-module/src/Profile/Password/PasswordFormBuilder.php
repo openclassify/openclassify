@@ -20,9 +20,6 @@ class PasswordFormBuilder extends FormBuilder
                 'type' => 'password'
             ],
         ],
-        'confirm_password' => [
-            'type' => 'anomaly.field_type.boolean',
-        ],
     ];
 
     protected $actions = [
