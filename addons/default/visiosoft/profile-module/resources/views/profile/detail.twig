@@ -1,23 +1,15 @@
 {% extends "theme::layouts/default" %}
 
-{% block styles %}
-    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
-{% endblock %}
-
 {% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            {% set profile_photo = user.file %}
+            {% if profile_photo %}
+                {% set profile_photo = file(profile_photo.id).url %}
+            {% else %}
+                {% set profile_photo = img('visiosoft.module.profile::images/profile-default.png').url %}
+            {% endif %}
 
-    {% set profile_photo = user.file %}
-    {% if profile_photo %}
-        {% set profile_photo = file(profile_photo.id).url %}
-    {% else %}
-        {% set profile_photo = img('visiosoft.module.profile::images/profile-default.png').url %}
-    {% endif %}
-
-    <div class="row mt-5">
-
-        {% include "visiosoft.module.profile::profile/partials/navigation" %}
-
-        <div class="col-12 col-md-8">
             <div class="row px-3">
 
                 <!-- User Profile Detail Section-->
@@ -175,8 +167,8 @@
                     <!-- User Profile Form Section-->
                 </div>
             </div>
-        </div>
+        {% endblock %}
+    {% endembed %}
 
-    </div>
     {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
 {% endblock %}

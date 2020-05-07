@@ -1,15 +1,8 @@
 {% extends "theme::layouts/default" %}
 
-{% block styles %}
-    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
-{% endblock %}
-
 {% block content %}
-    <div class="row">
-
-        {% include "visiosoft.module.profile::profile/partials/navigation" %}
-
-        <div class="col-12 col-md-8">
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
             <div class="row px-3">
                 <div class="col-md-12 bg-dark text-white p-5">
                     <h3>{{ trans('visiosoft.module.advs::field.my_ads.name') }}</h3>
@@ -67,16 +60,16 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <script>
-        var approve = "{{ trans('visiosoft.module.advs::field.approve') }}";
-        var passive = "{{ trans('visiosoft.module.advs::field.passive') }}";
-        var delete_ad = "{{ trans('visiosoft.module.profile::button.delete') }}";
-        var extend_ad = "{{ trans('visiosoft.module.profile::button.extend') }}";
-        var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
-        var ads_per_page = "{{ setting_value('streams::per_page') }}";
-        var no_ads_message = "{{ trans('visiosoft.module.advs::field.no_ads') }}";
-    </script>
-    {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
+            <script>
+                var approve = "{{ trans('visiosoft.module.advs::field.approve') }}";
+                var passive = "{{ trans('visiosoft.module.advs::field.passive') }}";
+                var delete_ad = "{{ trans('visiosoft.module.profile::button.delete') }}";
+                var extend_ad = "{{ trans('visiosoft.module.profile::button.extend') }}";
+                var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
+                var ads_per_page = "{{ setting_value('streams::per_page') }}";
+                var no_ads_message = "{{ trans('visiosoft.module.advs::field.no_ads') }}";
+            </script>
+            {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
+        {% endblock %}
+    {% endembed %}
 {% endblock %}
