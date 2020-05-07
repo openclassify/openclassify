@@ -20,11 +20,6 @@ class PasswordFormHandler
             return;
         }
 
-        if (!$builder->getPostValue('confirm_password')) {
-            $messages->error(trans('visiosoft.module.profile::message.please_confirm_transaction'));
-            return redirect()->back();
-        }
-
         if ($builder->getPostValue('new_password') != $builder->getPostValue('re_new_password')) {
             $messages->error(trans('visiosoft.module.profile::message.password_do_not_match'));
             return redirect()->back();
