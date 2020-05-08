@@ -1,29 +1,22 @@
 <?php
 
- return[
-   "advs"   =>   [
-      "name"      =>"Advs",
-
-   ],
-   "categories"   =>   [
-      "name"      =>"Categorias",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Aldeia",
-
-   ],
-   "custom_fields"   =>   [
-      "name"      =>"Os campos personalizados",
-
-   ],
-   "custom_field_advs"   =>   [
-      "name"      =>"Adames de campo personalizado",
-
-   ],
-   "cf_values"   =>   [
-      "name"      =>"Valores Cf",
-
-   ],
-
+return [
+    'advs' => [
+        'name' => 'Advs',
+    ],
+    'categories' => [
+        'name' => 'Categories',
+    ],
+    'village' => [
+        'name' => 'Village',
+    ],
+    'custom_fields' => [
+        'name' => 'Custom fields',
+    ],
+    'custom_field_advs' => [
+        'name' => 'Custom field advs',
+    ],
+    'cf_values' => [
+        'name' => 'Cf values',
+    ],
 ];
