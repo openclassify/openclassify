@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"Anuncios",
-   "name"   =>"Módulo de anuncios",
-   "description"   =>"Módulo de anuncios"
+return [
+    'title'       => 'Ads',
+    'name'        => 'Ads Module',
+    'description' => 'Ads Module',
 ];
