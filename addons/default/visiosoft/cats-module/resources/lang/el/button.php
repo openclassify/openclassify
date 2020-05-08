@@ -1,8 +1,8 @@
 <?php
 
- return[
-   "new_category"   =>"Νέα κατηγορία",
-   "add_sub_category"   =>"Προσθήκη υπο-κατηγορίας",
-   "sub_category"   =>"Εμφάνιση υπο-κατηγορίας",
-   "new_placeholderforsearch"   =>"Νέος χώρος κράτησης για αναζήτηση"
+return [
+    'new_category' => 'New Category',
+    'add_sub_category' => 'Add Sub Category',
+    'sub_category' => 'Show Sub Category',
+    'new_placeholderforsearch' => 'New Placeholderforsearch',
 ];
