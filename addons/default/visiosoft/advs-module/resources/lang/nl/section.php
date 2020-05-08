@@ -1,49 +1,43 @@
 <?php
 
- return[
-   "advs"   =>   [
-      "title"      =>"advertenties",
-
-   ],
-   "categories"   =>   [
-      "title"      =>"Categorieën",
-
-   ],
-   "countries"   =>   [
-      "title"      =>"landen",
-
-   ],
-   "cities"   =>   [
-      "title"      =>"Cities",
-
-   ],
-   "districts"   =>   [
-      "title"      =>"districten",
-
-   ],
-   "neighborhoods"   =>   [
-      "title"      =>"buurten",
-
-   ],
-   "village"   =>   [
-      "title"      =>"Dorp",
-
-   ],
-   "custom_fields"   =>   [
-      "title"      =>"Aangepaste velden",
-
-   ],
-   "custom_field_advs"   =>   [
-      "title"      =>"Aangepaste veldadvertenties",
-
-   ],
-   "cf_values"   =>   [
-      "title"      =>"Zie waarden",
-
-   ],
-   "fields"   =>   [
-      "title"      =>"Aangepaste velden",
-
-   ],
-
+return [
+    'advs' => [
+        'title' => 'Ads',
+    ],
+    'categories' => [
+        'title' => 'Categories',
+    ],
+    'countries' => [
+        'title' => 'Countries',
+    ],
+    'cities' => [
+        'title' => 'Cities',
+    ],
+    'districts' => [
+        'title' => 'Districts',
+    ],
+    'neighborhoods' => [
+        'title' => 'Neighborhoods',
+    ],
+    'village' => [
+        'title' => 'Village',
+    ],
+    'custom_fields' => [
+        'title' => 'Custom fields',
+    ],
+    'custom_field_advs' => [
+        'title' => 'Custom field ads',
+    ],
+    'cf_values' => [
+        'title' => 'Cf values',
+    ],
+    'fields' => [
+        'title' => 'Custom Fields'
+    ],
+    'assets_clear' => [
+        'name' => 'Assets Clear'
+    ],
+    'general' => 'General',
+    'ads' => 'Ads',
+    'user' => 'User',
 ];
