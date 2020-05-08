@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Les publicités',
-    'name'        => 'Module dannonces',
-    'description' => 'Module dannonces',
+    'name'        => 'Module d\\'annonces',
+    'description' => 'Module d\\'annonces',
 ];
