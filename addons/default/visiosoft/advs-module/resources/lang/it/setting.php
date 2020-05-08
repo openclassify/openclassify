@@ -4,6 +4,17 @@ return [
     'auto_approve' => [
         'name' => 'Approvazione automatica',
     ],
+    'default_view_type' => [
+        'name' => 'Default View Type',
+    ],
+    'hide_zero_price' => [
+        'name' => 'Hide Price if Zero',
+        'instructions' => 'Hide the price if the ad price is 0',
+    ],
+    'estimated_pending_time' => [
+        'name' => 'Estimated Pending Time',
+        'instructions' => 'In Hours',
+    ],
     'default_published_time' => [
         'name' => 'Tempo di pubblicazione predefinito',
     ],
@@ -18,11 +29,8 @@ return [
     ],
     'favicon' => [
         'name' => 'Favicon',
-    ],
-    'contact_mail' => [
-        'name' => 'Mail di contatto',
-        'warning'      => 'Aggiunta automatica delle <strong>informazioni sul nome sito</strong> @ nome sito',
-    ],'map_coordinates_long' => [
+    ]
+    ,'map_coordinates_long' => [
         'name' => 'Mappa lunga coordinata',
     ],
     'map_coordinates_lat' => [
@@ -74,6 +82,18 @@ return [
     'default_GET' => [
         'name' => 'Annuncio predefinito GET',
     ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail Width',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Thumbnail Height',
+    ],
+    'picture_width' => [
+        'name' => 'Picture Width',
+    ],
+    'picture_height' => [
+        'name' => 'Picture Height',
+    ],
     'twitter' => [
         'name' => 'cinguettio',
     ],
@@ -98,9 +118,6 @@ return [
     'watermark_position' => [
         'name' => 'Posizione della filigrana',
     ],
-    'watermark_opacity' => [
-        'name' => 'Opacità filigrana',
-    ],
     'listing_page_image' => [
         'name' => 'Immagine della pagina di elenco',
     ],
@@ -110,5 +127,7 @@ return [
     'google_statistic_code' => [
         'name' => 'Codice statistico di Google',
     ],
-
+    'register_email_field' => [
+        'name' => 'Member Registration Email Requirement',
+    ],
 ];
