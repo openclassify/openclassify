@@ -1,13 +1,10 @@
 <?php
 
- return[
-   "category"   =>   [
-      "name"      =>"Κατηγορία",
-
-   ],
-   "placeholderforsearch"   =>   [
-      "name"      =>"Θέση θέσης για αναζήτηση",
-
-   ],
-
+return [
+    'category' => [
+        'name' => 'Category',
+    ],
+    'placeholderforsearch' => [
+        'name' => 'Placeholderforsearch',
+    ],
 ];
