@@ -1,17 +1,17 @@
 <?php
 
- return[
-   "new_country"   =>"Νέα χώρα",
-   "new_city"   =>"Νέα πόλη",
-   "new_district"   =>"Νέα Επαρχία",
-   "new_neighborhood"   =>"Νέα γειτονιά",
-   "new_village"   =>"Νέο χωριό",
-   "sub_cities"   =>"Υπο-πόλεις",
-   "add_sub_cities"   =>"Προσθέστε Sub City",
-   "add_sub_districts"   =>"Προσθέστε την υποδιαίρεση",
-   "add_sub_neighborhoods"   =>"Προσθήκη δευτερεύουσας γειτονιάς",
-   "add_sub_village"   =>"Προσθήκη δευτερεύοντος χωριού",
-   "sub_districts"   =>"Υποτομείς",
-   "sub_neighborhoods"   =>"Υπο-γειτονικές περιοχές",
-   "sub_village"   =>"Κάτω χωριό"
+return [
+    'new_country' => 'New Country',
+    'new_city' => 'New City',
+    'new_district' => 'New District',
+    'new_neighborhood' => 'New Neighborhood',
+    'new_village' => 'New Village',
+    'sub_cities' => 'Sub Cities',
+    'add_sub_cities' => 'Add Sub City',
+    'add_sub_districts' => 'Add Sub District',
+    'add_sub_neighborhoods' => 'Add Sub Neighborhood',
+    'add_sub_village' => 'Add Sub Village',
+    'sub_districts' => 'Sub Districts',
+    'sub_neighborhoods' => 'Sub Neighborhoods',
+    'sub_village' => 'Sub Village',
 ];
