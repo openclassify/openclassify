@@ -1,13 +1,11 @@
 <?php
 
- return[
-   "profile"   =>   [
-      "title"      =>"Perfil",
-
-   ],
-   "adress"   =>   [
-      "title"      =>"Endereço",
-
-   ],
-
+return [
+    'profile' => [
+        'title' => 'Profile',
+    ],
+    'adress' => [
+        'title' => 'Adress',
+    ],
+    'general_setting' => 'General Settings',
 ];
