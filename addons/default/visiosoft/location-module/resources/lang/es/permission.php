@@ -1,15 +1,13 @@
 <?php
 
- return[
-   "village"   =>   [
-      "name"      =>"Pueblo",
-      "option"      =>      [
-         "read"         =>"Puede leer el pueblo?        ",
-         "write"         =>"Puede crear / editar pueblo?        ",
-         "delete"         =>"¿Se puede eliminar el pueblo?",
+return [
 
-      ],
-
-   ],
-
+    'village' => [
+        'name'   => 'Village',
+        'option' => [
+            'read'   => 'Can read village?',
+            'write'  => 'Can create/edit village?',
+            'delete' => 'Can delete village?',
+        ],
+    ],
 ];
