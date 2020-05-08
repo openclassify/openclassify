@@ -34,6 +34,11 @@ class isActive
 
     public function handle()
     {
-        return app('module.collection')->get($this->project . '.' . $this->type . '.' . $this->name)->isInstalled();
+        $module = app('module.collection')->get($this->project . '.' . $this->type . '.' . $this->name);
+        if ($module) {
+            return $module->isInstalled();
+        } else {
+            return false;
+        }
     }
 }
