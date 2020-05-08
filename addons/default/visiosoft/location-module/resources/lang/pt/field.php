@@ -1,41 +1,38 @@
 <?php
 
- return[
-   "name"   =>   [
-      "name"      =>"Título",
-
-   ],
-   "slug"   =>   [
-      "name"      =>"Lesma",
-
-   ],
-   "city"   =>   [
-      "name"      =>"Cidade",
-
-   ],
-   "country"   =>   [
-      "name"      =>"País",
-
-   ],
-   "district"   =>   [
-      "name"      =>"Distrito",
-
-   ],
-   "order"   =>   [
-      "name"      =>"Ordem de classificação",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"Vizinhança",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Aldeia",
-
-   ],
-   "description"   =>   [
-      "name"      =>"Descrição",
-
-   ],
-
+return [
+    'name' => [
+        'name' => 'Title'
+    ],
+    'slug' => [
+        'name' => 'Slug'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'order' => [
+        'name' => 'Sort Order'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'description' => [
+        'name' => 'Description'
+    ],
+    'pick_option' => [
+        'name' => 'Pick an option',
+    ],
+    'address' => [
+        'name' => 'Address',
+    ],
+    'selected' => 'Selected'
 ];
