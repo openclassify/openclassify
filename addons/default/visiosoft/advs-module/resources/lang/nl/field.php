@@ -1,265 +1,291 @@
 <?php
 
- return[
-   "name"   =>   [
-      "name"      =>"Titel",
+return [
+    'name' => [
+        'name' => 'Title'
+    ],
+    'order' => [
+        'name' => 'Order'
+    ],
+    'slug' => [
+        'name' => 'Slug'
+    ],
+    'parent_category' => [
+        'name' => 'Parent'
+    ],
+    'category' => [
+        'name' => 'Category Title'
+    ],
+    'price' => [
+        'name' => 'Price'
+    ],
+    'date' => [
+        'name' => 'Date'
+    ],
+    'photo' => [
+        'name' => 'Photo'
+    ],
+    'video' => [
+        'name' => 'Video'
+    ],
+    'map' => [
+        'name' => 'Map'
+    ],
+    'stock' => [
+        'name' => 'Stock'
+    ],
+    'advs_desc' => [
+        'name' => 'Description'
+    ],
+    'online_payment' => [
+        'name' => 'Online Payment'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'files' => [
+        'name' => 'Images'
+    ],
+    'cat1' => [
+        'name' => 'Main Category'
+    ],
+    'cat2' => [
+        'name' => 'Sub Category 1'
+    ],
+    'cat3' => [
+        'name' => 'Sub Category 2'
+    ],
+    'cat4' => [
+        'name' => 'Sub Category 3'
+    ],
+    'cat5' => [
+        'name' => 'Sub Category 4'
+    ],
+    'cat6' => [
+        'name' => 'Sub Category 5'
+    ],
+    'cat7' => [
+        'name' => 'Sub Category 6'
+    ],
+    'currency' => [
+        'name' => 'Currency'
+    ],
+    'status' => [
+        'name' => 'Status',
+        'option' => [
+            'approved' => 'Approved',
+            'expired' => 'Expired',
+            'unpublished' => 'Unpublished',
+            'pending_admin' => 'Pending Admin',
+            'pending_user' => 'Pending User'
+        ]
+    ],
+    'pending_adv' => [
+        'name' => 'Unpublished'
+    ],
+    'finish_at' => [
+        'name' => 'Finish At'
+    ],
+    'cover_photo' => [
+        'name' => 'Cover Photo'
+    ],
+    'favs_adv' => [
+        'name' => 'Fav Ads'
+    ],
+    'my_adv' => [
+        'name' => 'ADVS'
+    ],
+    'description' =>  'Description',
+    'explanation' =>  'Explanation',
+    'type' => [
+        'name' => 'Type'
+    ],
+    'parent_adv' => [
+        'name' => 'Related Ad'
+    ],
+    'value' => [
+        'name' => 'Value'
+    ],
+    'list' => 'List',
+    'home' => 'Home',
+    'list-page' => 'List Page',
+    'search' => 'Search',
+    'recommended' => 'Recommended Ads for You',
+    'filter' => 'Filter',
+    'sort' => 'Sort',
+    'sort_by' => 'Sort By',
+    'pick_option' => 'Pick an option',
+    'pick_ordering' => 'Ordering',
+    'price_high' => 'Price High to Low',
+    'price_low' => 'Price Low to High',
+    'newest' => 'Newest',
+    'oldest' => 'Oldest',
+    'address_a_z' => 'Address (A to Z)',
+    'address_z_a' => 'Address (Z to A)',
+    'categories' => 'Categories',
+    'all_categories' => 'All Categories',
+    'location' => 'Location',
+    'send_message' => 'Send Message',
+    'phone_gsm' => 'Gsm Phone',
+    'phone_office' => 'Office Phone',
+    'add_to_favorites' => "Add to Favorites",
+    'send' => 'Send',
+    'search_name' => 'Search Name',
+    'my_favorite_searches' => 'Favorite Searches',
+    'search_desc' => 'You can add and manage your favorite search selections here.',
+    'complaint_placeholder' => 'Type your complaint details here.',
+    'show_details' => 'Show Details',
+    'ad_actions' => 'Ad Actions',
+    'edit' => 'Edit',
+    'approve' => 'Approve',
+    'passive' => "Passive",
+    'offered_by' => 'Offered By',
+    'more_ads_by' => 'More Ads By',
+    'click_phone' => 'Show phone number',
+    'share' => 'Share',
+    'report' => 'Report this ad',
+    'features' => 'Features',
+    "streetview" => "Street View",
+    'recommended_ads' => 'Recommended Ads for You',
+    'new' => 'New',
+    'short_info' => 'Short Info',
+    'secure_trading' => 'Secure Trading',
+    '24/7' => '24/7 Support',
+    'easy_trading' => 'Easy Trading',
+    'need_help' => 'Need help?',
+    'give_a_call' => 'Give a call on',
+    'message_sent' => 'Message Sent!',
+    'asap' => 'Message sent, seller will contact you asap.',
+    'ad_id' => 'Ad Id',
+    'contact_with' => 'Contact With',
+    'create_adv' => 'Create Ad',
+    'edit_adv' => 'Edit Ad',
+    'mandatory_fields' => 'Mandatory Fields',
+    'ad_post' => 'Ad Post',
+    'sell_item' => 'Sell an item or service',
+    'search_save' => 'Favorite search saved successfully',
+    'address' => 'Address',
+    'email' => 'E-Mail',
+    'phone' => 'Phone',
+    'send_us_your_feedback' => 'Send Us Your Feedback',
+    'online_shopping' => 'GET',
+    'approved' => 'Approved Successfully',
+    'extended' => 'Extended Successfully',
+    'declined' => 'Declined Successfully',
+    'search_on_map' => 'Search on Map',
+    'post_free_ad' => 'Post Free Ad',
+    'select_a_category' => 'Select a Category',
+    'select_a_sub_category' => 'Select a Sub Category',
+    'all_dopings_added' => 'All doping types are added for this ad.',
+    'is_get_adv' => [
+        'name' => 'GET'
+    ],
+    'corporate_info' => 'Corporate Info',
+    'featured_ads' => "Featured Ads",
+    'trending_ads' => 'Trendind Ads',
+    'search_ads_result_message' => [
+        'name' => ':count ads found for :name search',
+    ],
+    'total' => 'Total',
+    'quantity' => 'Quantity',
+    'view_cart' => 'View Cart',
+    'no_ads' => 'No Ads found.',
+    'show_display_mode' => [
+        'map' => 'Map',
+        'list' => 'List',
+    ],
+    'advs_list_table_thead' => [
+        'name' => 'Ad Name',
+        'price' => 'Price',
+        'publish_at' => 'Ad Date',
+        'location_city' => 'City',
+        'location_country' => 'Country',
+    ],
+    'show_list_view' => [
+        'name' => 'List',
+    ],
+    'show_table_view' => [
+        'name' => 'Table',
+    ],
+    'showcase' => [
+        'name' => 'Showcase',
+    ],
+    'new_ad' => [
+        'name' => 'New Ad',
+    ],
+    'profile' => [
+        'name' => 'Profile',
+    ],
+    'my_ads' => [
+        'name' => 'My Ads',
+    ],
+    'sold_out' => [
+        'name' => 'Sold out',
+    ],
+    'edit_category' => 'Edit Category',
+    'set_category' => 'Set Category',
+    'max' => [
+        'name' => 'Max',
+    ],
+    'min' => [
+        'name' => 'Min',
+    ],
+    'in_the_last_24_hours' => [
+        'name' => 'In The Last 24 Hours'
+    ],
+    'in_the_last_week' => [
+        'name' => 'In The Last Week'
+    ],
+    'in_the_last_month' => [
+        'name' => 'In The Last Month'
+    ],
+    'ads_with_photo' => [
+        'name' => 'Ads With Photo'
+    ],
+    'ads_with_video' => [
+        'name' => 'Ads With Video'
+    ],
+    'yes' => [
+        'name' => 'Yes'
+    ],
+    "no_location" => "No location is selected.",
+    "continue" => 'Continue',
+    "gallery" => 'Gallery',
 
-   ],
-   "order"   =>   [
-      "name"      =>"Bestellen",
+    // Pending screen
+    'pending_message_1' => 'The Ad is in the Approval Process',
+    'pending_message_2' => "Ad's Update Date",
+    'pending_message_3' => 'Estimated Waiting Time',
+    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
+    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
+    'hours' => 'hours',
 
-   ],
-   "slug"   =>   [
-      "name"      =>"Naaktslak",
+    // Preview page
+    'preview_text' => [
+        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
+        'part_2' => 'If not, click the "Edit" button.',
+    ],
+    'views' => 'Views',
 
-   ],
-   "parent_category"   =>   [
-      "name"      =>"Ouder",
+    // Detail page
+    "no_street_view" => "No street view image in this location",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'Ad Information',
 
-   ],
-   "category"   =>   [
-      "name"      =>"Categorie Titel",
-
-   ],
-   "price"   =>   [
-      "name"      =>"Prijs",
-
-   ],
-   "stock"   =>   [
-      "name"      =>"Voorraad",
-
-   ],
-   "advs_desc"   =>   [
-      "name"      =>"Omschrijving",
-
-   ],
-   "online_payment"   =>   [
-      "name"      =>"Online betaling",
-
-   ],
-   "city"   =>   [
-      "name"      =>"stad",
-
-   ],
-   "country"   =>   [
-      "name"      =>"land",
-
-   ],
-   "district"   =>   [
-      "name"      =>"Wijk",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"Buurt",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Dorp",
-
-   ],
-   "files"   =>   [
-      "name"      =>"Afbeeldingen",
-
-   ],
-   "cat1"   =>   [
-      "name"      =>"Hoofdcategorie",
-
-   ],
-   "cat2"   =>   [
-      "name"      =>"Subcategorie 1",
-
-   ],
-   "cat3"   =>   [
-      "name"      =>"Subcategorie 2",
-
-   ],
-   "cat4"   =>   [
-      "name"      =>"Subcategorie 3",
-
-   ],
-   "cat5"   =>   [
-      "name"      =>"Subcategorie 4",
-
-   ],
-   "cat6"   =>   [
-      "name"      =>"Subcategorie 5",
-
-   ],
-   "cat7"   =>   [
-      "name"      =>"Subcategorie 6",
-
-   ],
-   "currency"   =>   [
-      "name"      =>"Valuta",
-
-   ],
-   "status"   =>   [
-      "name"      =>"staat",
-
-   ],
-   "next_add_advs_title"   =>   [
-      "name"      =>"Plaats een advertentie in slechts 30 seconden",
-
-   ],
-   "next_add_advs_msg"   =>   [
-      "name"      =>"Plaats GEEN meerdere advertenties voor dezelfde items of service. Alle dubbele,
-      spam en verkeerd gecategoriseerde advertenties worden verwijderd.",
-
-   ],
-   "next_add_advs_btn"   =>   [
-      "name"      =>"volgende",
-
-   ],
-   "cancel_add_advs_btn"   =>   [
-      "name"      =>"of Annuleren",
-
-   ],
-   "pending_adv"   =>   [
-      "name"      =>"In afwachting van advertenties",
-
-   ],
-   "archived_adv"   =>   [
-      "name"      =>"Gearchiveerde advertenties",
-
-   ],
-   "favs_adv"   =>   [
-      "name"      =>"Favoriete advertenties",
-
-   ],
-   "my_adv"   =>   [
-      "name"      =>"ADVS",
-
-   ],
-   "description"   =>   [
-      "name"      =>"Omschrijving",
-
-   ],
-   "type"   =>   [
-      "name"      =>"Type",
-
-   ],
-   "parent_adv"   =>   [
-      "name"      =>"Gerelateerde advertentie",
-
-   ],
-   "value"   =>   [
-      "name"      =>"Waarde",
-
-   ],
-   "home"   =>"Huis",
-   "list-page"   =>"Lijstpagina",
-   "search"   =>"Zoeken",
-   "recommended"   =>"Aanbevolen advertenties voor u",
-   "sort_by"   =>"Sorteer op",
-   "pick_option"   =>"Kies een optie",
-   "price_high"   =>"Prijs hoog naar laag",
-   "price-low"   =>"Prijs laag naar hoog",
-   "newest"   =>"Nieuwste",
-   "categories"   =>"Categorieën",
-   "all_categories"   =>"Alle categorieën",
-   "location"   =>"Plaats",
-   "send_message"   =>"Bericht versturen",
-   "phone_gsm"   =>"GSM-telefoon",
-   "phone_office"   =>"Kantoor telefoon",
-   "add_to_favorites"   =>"Toevoegen aan favorieten",
-   "send"   =>"Sturen",
-   "search_name"   =>"Naam zoeken",
-   "my_favorite_searches"   =>"Favoriete zoekopdrachten",
-   "search_desc"   =>"U kunt hier uw favoriete zoekselecties toevoegen en beheren.",
-   "complaint_placeholder"   =>"Typ hier uw klachtdetails.",
-   "show_details"   =>"Toon details",
-   "edit"   =>"Bewerk",
-   "approve"   =>"Goedkeuren",
-   "passive"   =>"Passief",
-   "offered_by"   =>"Aangeboden door",
-   "more_ads_by"   =>"Meer advertenties door",
-   "click_phone"   =>"Toon telefoonnummer",
-   "share"   =>"Deel deze advertentie",
-   "report"   =>"Rapporteer deze advertentie",
-   "features"   =>"Kenmerken",
-   "streetview"   =>"Street View",
-   "recommended_ads"   =>"Aanbevolen advertenties voor u",
-   "new"   =>"nieuwe",
-   "short_info"   =>"Korte info",
-   "secure_trading"   =>"Veilige handel",
-   "24/7"   =>"24/7 ondersteuning",
-   "easy_trading"   =>"Makkelijk handelen",
-   "need_help"   =>"Hulp nodig?",
-   "give_a_call"   =>"Bellen",
-   "message_sent"   =>"Bericht verzonden!",
-   "asap"   =>"Bericht verzonden,
-   verkoper zal zsm contact met u opnemen.",
-   "ad_id"   =>"Advertentie-ID",
-   "contact_with"   =>"Contact met",
-   "create_adv"   =>"Maak advertentie",
-   "edit_adv"   =>"Advertentie bewerken",
-   "mandatory_fields"   =>"Verplichte velden",
-   "ad_post"   =>"Advertentie bericht",
-   "sell_item"   =>"Verkoop een item of service",
-   "search_save"   =>"Favoriete zoekopdracht succesvol opgeslagen",
-   "address"   =>"Adres",
-   "email"   =>"E-mail",
-   "phone"   =>"Telefoon",
-   "send_us_your_feedback"   =>"Stuur ons uw feedback",
-   "online_shopping"   =>"KRIJGEN",
-   "approved"   =>"Succesvol goedgekeurd",
-   "declined"   =>"Succesvol afgewezen",
-   "search_on_map"   =>"Zoeken op kaart",
-   "post_free_ad"   =>"Plaats gratis advertentie",
-   "select_a_category"   =>"Kies een categorie",
-   "select_a_sub_category"   =>"Selecteer een sub-categorie",
-   "all_dopings_added"   =>"Alle soorten doping zijn toegevoegd voor deze advertentie.",
-   "is_get_adv"   =>   [
-      "name"      =>"KRIJGEN",
-
-   ],
-   "corporate_info"   =>"Bedrijfsinfo",
-   "featured_ads"   =>"Aanbevolen advertenties",
-   "trending_ads"   =>"Trendind-advertenties",
-   "search_ads_result_message"   =>   [
-      "name"      =>":      tel advertenties gevonden voor:zoeken op naam",
-
-   ],
-   "total"   =>"Totaal",
-   "quantity"   =>"Aantal stuks",
-   "view_cart"   =>"Bekijk winkelwagen",
-   "no_ads"   =>"Geen advertenties!",
-   "show_display_mode"   =>   [
-      "map"      =>"Kaart",
-      "list"      =>"Lijst",
-
-   ],
-   "advs_list_table_thead"   =>   [
-      "name"      =>"Advertentienaam",
-      "price"      =>"Prijs",
-      "publish_at"      =>"Advertentiedatum",
-      "location_city"      =>"stad",
-      "location_country"      =>"land",
-
-   ],
-   "show_list_view"   =>   [
-      "name"      =>"Lijst",
-
-   ],
-   "show_table_view"   =>   [
-      "name"      =>"Tafel",
-
-   ],
-   "showcase"   =>   [
-      "name"      =>"vitrine",
-
-   ],
-   "new_ad"   =>   [
-      "name"      =>"Nieuwe advertentie",
-
-   ],
-   "profile"   =>   [
-      "name"      =>"Profiel",
-
-   ],
-   "my_ads"   =>   [
-      "name"      =>"Mijn advertenties",
-
-   ],
-
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];
