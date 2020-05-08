@@ -49,7 +49,8 @@ $(document).ready(function () {
                         $(catId).append("<option class='text-truncate pl-1 my-1' value="+options.id+">"+options.name+"</option>");
                     });
                     $('.focus-select').removeClass('focus-select');
-                    $(catId).animate({height: '14rem'}, 200);
+                    // $(catId).animate({height: '14rem'}, 200);
+                    $(catId).css({height: '14rem'});
                     $(catId).closest('.cat-item-2').show().addClass('focus-select')
                 }
                 // Auto scroll right
@@ -68,9 +69,10 @@ $(document).ready(function () {
         var endNo = 9;
 
         while (startNo <= endNo) {
-            $('#cat'+ startNo).animate({height: 0}, 200, 'linear', function () {
-                $(this).html("").closest('.cat-item-2').hide();
-            });
+            // $('#cat'+ startNo).animate({height: 0}, 200, 'linear', function () {
+            //     $(this).html("").closest('.cat-item-2').hide();
+            // });
+            $('#cat'+ startNo).html("").closest('.cat-item-2').hide();
             $('.cat-item-3').parent().hide();
             startNo++;
         }
