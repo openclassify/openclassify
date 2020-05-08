@@ -1,60 +1,52 @@
 <?php
 
- return[
-   "advs"   =>   [
-      "name"      =>"Anuncios",
-      "option"      =>      [
-         "read"         =>"Puede leer anuncios?        ",
-         "write"         =>"¿Puede crear / editar anuncios?        ",
-         "delete"         =>"Puede eliminar anuncios?"
-      ],
-
-   ],
-   "categories"   =>   [
-      "name"      =>"Categorias",
-      "option"      =>      [
-         "read"         =>"¿Puede leer categorías?        ",
-         "write"         =>"¿Puede crear / editar categorías?        ",
-         "delete"         =>"¿Se pueden eliminar categorías?"
-      ],
-
-   ],
-   "village"   =>   [
-      "name"      =>"Pueblo",
-      "option"      =>      [
-         "read"         =>"Puede leer el pueblo?        ",
-         "write"         =>"Puede crear / editar pueblo?        ",
-         "delete"         =>"¿Se puede eliminar el pueblo?"
-      ],
-
-   ],
-   "custom_fields"   =>   [
-      "name"      =>"Campos Personalizados",
-      "option"      =>      [
-         "read"         =>"¿Puede leer campos personalizados?        ",
-         "write"         =>"¿Puede crear / editar campos personalizados?        ",
-         "delete"         =>"¿Se pueden eliminar campos personalizados?"
-      ],
-
-   ],
-   "custom_field_advs"   =>   [
-      "name"      =>"Anuncios de campo personalizados",
-      "option"      =>      [
-         "read"         =>"¿Puede leer anuncios de campo personalizados?        ",
-         "write"         =>"¿Puede crear / editar anuncios de campo personalizados?        ",
-         "delete"         =>"¿Se pueden eliminar anuncios de campo personalizados?"
-      ],
-
-   ],
-   "cf_values"   =>   [
-      "name"      =>"Valores de Cf",
-      "option"      =>      [
-         "read"         =>"¿Puede leer los valores cf?        ",
-         "write"         =>"¿Puede crear / editar valores cf?        ",
-         "delete"         =>"¿Se pueden eliminar los valores cf?",
-
-      ],
-
-   ],
-
+return [
+    'advs' => [
+        'name'   => 'Ads',
+        'option' => [
+            'read'   => 'Can read ads?',
+            'write'  => 'Can create/edit ads?',
+            'delete' => 'Can delete ads?',
+        ],
+    ],
+    'categories' => [
+        'name'   => 'Categories',
+        'option' => [
+            'read'   => 'Can read categories?',
+            'write'  => 'Can create/edit categories?',
+            'delete' => 'Can delete categories?',
+        ],
+    ],
+    'village' => [
+        'name'   => 'Village',
+        'option' => [
+            'read'   => 'Can read village?',
+            'write'  => 'Can create/edit village?',
+            'delete' => 'Can delete village?',
+        ],
+    ],
+    'custom_fields' => [
+        'name'   => 'Custom fields',
+        'option' => [
+            'read'   => 'Can read custom fields?',
+            'write'  => 'Can create/edit custom fields?',
+            'delete' => 'Can delete custom fields?',
+        ],
+    ],
+    'custom_field_advs' => [
+        'name'   => 'Custom field ads',
+        'option' => [
+            'read'   => 'Can read custom field ads?',
+            'write'  => 'Can create/edit custom field ads?',
+            'delete' => 'Can delete custom field ads?',
+        ],
+    ],
+    'cf_values' => [
+        'name'   => 'Cf values',
+        'option' => [
+            'read'   => 'Can read cf values?',
+            'write'  => 'Can create/edit cf values?',
+            'delete' => 'Can delete cf values?',
+        ],
+    ],
 ];
