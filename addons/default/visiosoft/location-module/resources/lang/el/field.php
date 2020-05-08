@@ -1,41 +1,38 @@
 <?php
 
- return[
-   "name"   =>   [
-      "name"      =>"Τίτλος",
-
-   ],
-   "slug"   =>   [
-      "name"      =>"Γυμνοσάλιαγκας",
-
-   ],
-   "city"   =>   [
-      "name"      =>"Πόλη",
-
-   ],
-   "country"   =>   [
-      "name"      =>"Χώρα",
-
-   ],
-   "district"   =>   [
-      "name"      =>"Περιοχή",
-
-   ],
-   "order"   =>   [
-      "name"      =>"Σειρά ταξινόμησης",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"Γειτονιά",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Χωριό",
-
-   ],
-   "description"   =>   [
-      "name"      =>"Περιγραφή",
-
-   ],
-
+return [
+    'name' => [
+        'name' => 'Title'
+    ],
+    'slug' => [
+        'name' => 'Slug'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'order' => [
+        'name' => 'Sort Order'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'description' => [
+        'name' => 'Description'
+    ],
+    'pick_option' => [
+        'name' => 'Pick an option',
+    ],
+    'address' => [
+        'name' => 'Address',
+    ],
+    'selected' => 'Selected'
 ];
