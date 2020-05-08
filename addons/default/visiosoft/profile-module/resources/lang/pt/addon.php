@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"Perfil",
-   "name"   =>"Módulo de perfil",
-   "description"   =>""
+return [
+    'title'       => 'Profile',
+    'name'        => 'Profile Module',
+    'description' => ''
 ];
