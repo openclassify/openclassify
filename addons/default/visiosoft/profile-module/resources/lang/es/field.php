@@ -1,533 +1,435 @@
 <?php
 
- return[
-   "file"   =>   [
-      "name"      =>"Fotos",
-
-   ],
-   "first_name"   =>   [
-      "name"      =>"Primer nombre",
-
-   ],
-   "last_name"   =>   [
-      "name"      =>"Apellido",
-
-   ],
-   "username"   =>   [
-      "name"      =>"Nombre de usuario",
-
-   ],
-   "display_name"   =>   [
-      "name"      =>"Nombre para mostrar",
-
-   ],
-   "email"   =>   [
-      "name"      =>"Dirección de correo electrónico",
-
-   ],
-   "sitename"   =>   [
-      "name"      =>"nombre del sitio",
-
-   ],
-   "activated"   =>   [
-      "name"      =>"Usuario activo",
-
-   ],
-   "enabled"   =>   [
-      "name"      =>"Habilitar usuario",
-
-   ],
-   "country"   =>   [
-      "name"      =>"País",
-
-   ],
-   "city"   =>   [
-      "name"      =>"Ciudad",
-
-   ],
-   "district"   =>   [
-      "name"      =>"Distrito",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"Barrio",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Pueblo",
-
-   ],
-   "gsm_phone"   =>   [
-      "name"      =>"Número de teléfono GSM",
-
-   ],
-   "land_phone"   =>   [
-      "name"      =>"Número de teléfono de tierra",
-
-   ],
-   "office_phone"   =>   [
-      "name"      =>"Número de teléfono de la oficina",
-
-   ],
-   "register_type"   =>   [
-      "name"      =>"Tipo de registro",
-
-   ],
-   "identification_number"   =>   [
-      "name"      =>"Número de identificación",
-
-   ],
-   "adress_name"   =>   [
-      "name"      =>"Nombre de direccion",
-
-   ],
-   "adress_first_name"   =>   [
-      "name"      =>"Primer nombre",
-
-   ],
-   "adress_last_name"   =>   [
-      "name"      =>"Apellido",
-
-   ],
-   "actions"   =>   [
-      "name"      =>"Comportamiento",
-
-   ],
-   "adress_content"   =>   [
-      "name"      =>"Contenido de direccion",
-
-   ],
-   "adress_post_code"   =>   [
-      "name"      =>"Código postal",
-
-   ],
-   "adress_gsm_phone"   =>   [
-      "name"      =>"Teléfono gsm",
-
-   ],
-   "adress_land_phone"   =>   [
-      "name"      =>"Teléfono fijo",
-
-   ],
-   "adress_country"   =>   [
-      "name"      =>"País",
-
-   ],
-   "adress_city"   =>   [
-      "name"      =>"Ciudad",
-
-   ],
-   "adress_district"   =>   [
-      "name"      =>"Distrito",
-
-   ],
-   "adress_neighborhood"   =>   [
-      "name"      =>"Barrio",
-
-   ],
-   "adress_village"   =>   [
-      "name"      =>"Pueblo",
-
-   ],
-   "messages"   =>   [
-      "name"      =>"Mensajes",
-
-   ],
-   "user"   =>   [
-      "name"      =>"Usuario",
-
-   ],
-   "menu_profile"   =>   [
-      "name"      =>"Perfil",
-
-   ],
-   "menu_balance"   =>   [
-      "name"      =>"Equilibrar",
-
-   ],
-   "create"   =>   [
-      "name"      =>"Crear",
-
-   ],
-   "edit"   =>   [
-      "name"      =>"Editar",
-
-   ],
-   "list"   =>   [
-      "name"      =>"Lista",
-
-   ],
-   "menu_address"   =>   [
-      "name"      =>"Dirección",
-
-   ],
-   "menu_orders"   =>   [
-      "name"      =>"Pedidos",
-
-   ],
-   "menu_favorites"   =>   [
-      "name"      =>"Favoritos",
-
-   ],
-   "menu_archived_ads"   =>   [
-      "name"      =>"Anuncios archivados",
-
-   ],
-   "menu_pending_ads"   =>   [
-      "name"      =>"Aprobación pendiente",
-
-   ],
-   "menu_delete_account"   =>   [
-      "name"      =>"Cerrar cuenta",
-
-   ],
-   "menu_my_ads"   =>   [
-      "name"      =>"Mis anuncios",
-
-   ],
-   "menu_fav_ads"   =>   [
-      "name"      =>"Anuncios favoritos",
-
-   ],
-   "menu_hello_msg"   =>   [
-      "name"      =>"Hola",
-
-   ],
-   "menu_last_msg"   =>   [
-      "name"      =>"La última vez que inició sesión en",
-
-   ],
-   "menu_packages"   =>   [
-      "name"      =>"Mis paquetes",
-
-   ],
-   "menu_adv_packages"   =>   [
-      "name"      =>"Paquetes de anuncios",
-
-   ],
-   "menu_time_packages"   =>   [
-      "name"      =>"Paquetes de tiempo",
-
-   ],
-   "profile_details"   =>   [
-      "name"      =>"detalles del perfil",
-
-   ],
-   "profile_photo"   =>   [
-      "name"      =>"Foto de perfil",
-
-   ],
-   "adv_listing_banner"   =>   [
-      "name"      =>"Banner de página de listado de anuncios",
-
-   ],
-   "approve"   =>   [
-      "name"      =>"Aprobar",
-
-   ],
-   "approved"   =>   [
-      "name"      =>"Aprobado",
-
-   ],
-   "pending"   =>   [
-      "name"      =>"Pendiente",
-
-   ],
-   "passive"   =>   [
-      "name"      =>"Pasivo",
-
-   ],
-   "pending_admin"   =>   [
-      "name"      =>"Pendiente",
-
-   ],
-   "menu_messages"   =>   [
-      "name"      =>"Mensajes",
-
-   ],
-   "menu_my_purchase"   =>   [
-      "name"      =>"Mi compra",
-
-   ],
-   "menu_my_sales"   =>   [
-      "name"      =>"Mis ventas",
-
-   ],
-   "right_secure_trading_subject"   =>   [
-      "name"      =>"Comercio seguro",
-
-   ],
-   "right_secure_trading_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit",
-
-   ],
-   "right_support_subject"   =>   [
-      "name"      =>"Soporte 24/7",
-
-   ],
-   "right_support_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit",
-
-   ],
-   "right_easy_trading_subject"   =>   [
-      "name"      =>"Comercio fácil",
-
-   ],
-   "right_easy_trading_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet,
-      consectetur adipisicing elit",
-
-   ],
-   "right_need_help_subject"   =>   [
-      "name"      =>"¿Necesitas ayuda?",
-
-   ],
-   "right_need_help_msg"   =>   [
-      "name"      =>"Dar una llamada en",
-
-   ],
-   "disable_account"   =>   [
-      "name"      =>"Deshabilitar cuenta",
-
-   ],
-   "disable_account_msg"   =>   [
-      "name"      =>"Su cuenta será deshabilitada. Esta operación no se puede deshacer.",
-
-   ],
-   "message_title"   =>"Título del mensaje",
-   "owner_name"   =>"Mensaje",
-   "favorites"   =>"Favoritos",
-   "fav_advs"   =>"Anuncios favoritos",
-   "fav_sellers"   =>"Vendedores favoritos",
-   "fav_searches"   =>"Búsquedas favoritas",
-   "posted_on"   =>"Publicado en",
-   "message_details"   =>"Detalles del mensaje",
-   "adv_no"   =>"Anuncio no",
-   "bill_address"   =>   [
-      "name"      =>"Dirección de factura",
-
-   ],
-   "delivery_address"   =>   [
-      "name"      =>"Dirección de entrega",
-
-   ],
-   "order_total"   =>   [
-      "name"      =>"Total",
-
-   ],
-   "order_date"   =>   [
-      "name"      =>"Fecha de orden",
-
-   ],
-   "order_no"   =>   [
-      "name"      =>"Solicitar ID",
-
-   ],
-   "order_detail"   =>   [
-      "name"      =>"Mostrar detalle",
-
-   ],
-   "detail"   =>   [
-      "name"      =>"Detalle",
-
-   ],
-   "back"   =>   [
-      "name"      =>"atrás",
-
-   ],
-   "image"   =>   [
-      "name"      =>"Imagen",
-
-   ],
-   "subject"   =>   [
-      "name"      =>"Tema",
-
-   ],
-   "price"   =>   [
-      "name"      =>"Precio",
-
-   ],
-   "piece"   =>   [
-      "name"      =>"Pieza",
-
-   ],
-   "commission"   =>   [
-      "name"      =>"Comisión",
-
-   ],
-   "total"   =>   [
-      "name"      =>"Total",
-
-   ],
-   "sub_total"   =>   [
-      "name"      =>"Subtotal",
-
-   ],
-   "sale"   =>   [
-      "name"      =>"Venta",
-
-   ],
-   "awaiting_tracking_number"   =>   [
-      "name"      =>"En espera de número de seguimiento",
-
-   ],
-   "awaiting_payment_approval"   =>   [
-      "name"      =>"En espera de aprobación de pago",
-
-   ],
-   "paid"   =>   [
-      "name"      =>"Pagado",
-
-   ],
-   "cancelled"   =>   [
-      "name"      =>"Cancelado",
-
-   ],
-   "waiting"   =>   [
-      "name"      =>"Esperando",
-
-   ],
-   "awaiting_dispatch"   =>   [
-      "name"      =>"En espera de despacho",
-
-   ],
-   "shipped"   =>   [
-      "name"      =>"Enviado",
-
-   ],
-   "delivered"   =>   [
-      "name"      =>"Entregado",
-
-   ],
-   "tracking_number"   =>   [
-      "name"      =>"El número de rastreo",
-
-   ],
-   "was_delivered"   =>   [
-      "name"      =>"fue entregado",
-
-   ],
-   "not_delivered"   =>   [
-      "name"      =>"no entregado",
-
-   ],
-   "show_order_msg1"   =>   [
-      "name"      =>"El resultado de la transacción será notificado por correo.",
-
-   ],
-   "show_order_msg2"   =>   [
-      "name"      =>"El reembolso se realizará si el producto no se entrega dentro de una semana.",
-
-   ],
-   "show_order_msg3"   =>   [
-      "name"      =>"El resultado de la transacción ha sido enviado a su dirección de correo electrónico registrada.",
-
-   ],
-   "awaiting_payment"   =>   [
-      "name"      =>"En espera de pago",
-
-   ],
-   "please_entered_tracking_number"   =>   [
-      "name"      =>"Ingrese el número de seguimiento",
-
-   ],
-   "transport_days"   =>   [
-      "name"      =>"Días de transporte",
-
-   ],
-   "product_not_delivered"   =>   [
-      "name"      =>"Producto no entregado",
-
-   ],
-   "status"   =>   [
-      "name"      =>"Estado",
-
-   ],
-   "cancel_sale"   =>   [
-      "name"      =>"Cancelar venta",
-
-   ],
-   "send_again"   =>   [
-      "name"      =>"Enviaré de nuevo",
-
-   ],
-   "content"   =>   [
-      "name"      =>"Contenido",
-
-   ],
-   "preferences_settings"   =>   [
-      "name"      =>"Configuraciones de preferencias",
-
-   ],
-   "corporate_settings"   =>   [
-      "name"      =>"Configuraciones corporativas",
-
-   ],
-   "change_password"   =>   [
-      "name"      =>"Cambia la contraseña",
-
-   ],
-   "new_password"   =>   [
-      "name"      =>"Nueva contraseña",
-
-   ],
-   "re_new_password"   =>   [
-      "name"      =>"Confirmar contraseña",
-
-   ],
-   "confirm_password_input"   =>   [
-      "name"      =>"Confirmo mi cambio de contraseña",
-
-   ],
-   "create_address"   =>   [
-      "name"      =>"Crear dirección",
-
-   ],
-   "balance_limit"   =>   [
-      "name"      =>"Límite de equilibrio",
-
-   ],
-   "active_ads"   =>   [
-      "name"      =>"Anuncios activos",
-
-   ],
-   "subscriptions"   =>   [
-      "name"      =>"Suscripciones",
-
-   ],
-   "go_subscriptions_page"   =>   [
-      "name"      =>"Ir a la página de suscripciones",
-
-   ],
-   "buy_package"   =>   [
-      "name"      =>"Comprar paquete",
-
-   ],
-   "expired_date"   =>   [
-      "name"      =>"Fecha de vencimiento",
-
-   ],
-   "category"   =>   [
-      "name"      =>"Categoría",
-
-   ],
-   "ad_limit"   =>   [
-      "name"      =>"Límite de anuncio",
-
-   ],
-   "publish_time"   =>   [
-      "name"      =>"Tiempo de publicación",
-
-   ],
-   "all_categories"   =>   [
-      "name"      =>"todas las categorias",
-
-   ],
-   "day"   =>   [
-      "name"      =>"Día",
-
-   ],
-
+return [
+    'file' => [
+        'name' => 'Photos'
+    ],
+    'first_name' => [
+        'name' => 'First Name'
+    ],
+    'last_name' => [
+        'name' => 'Last Name'
+    ],
+    'username' => [
+        'name' => 'Username'
+    ],
+    'display_name' => [
+        'name' => 'Display Name'
+    ],
+    'email' => [
+        'name' => 'Email Adress'
+    ],
+    'sitename' => [
+        'name' => 'sitename'
+    ],
+    'activated' => [
+        'name' => 'User Active'
+    ],
+    'enabled' => [
+        'name' => 'User Enable'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'gsm_phone' => [
+        'name' => 'GSM Phone'
+    ],
+    'land_phone' => [
+        'name' => 'Land Phone'
+    ],
+    'office_phone' => [
+        'name' => 'Office Phone'
+    ],
+    'register_type' => [
+        'name' => 'Register Type'
+    ],
+    'identification_number' => [
+        'name' => 'Identification Number'
+    ],
+    'adress_name' => [
+        'name' => 'Adress Name'
+    ],
+    'adress_first_name' => [
+        'name' => 'First Name'
+    ],
+    'adress_last_name' => [
+        'name' => 'Last Name'
+    ],
+    'actions' => [
+        'name' => 'Actions'
+    ],
+    'adress_content' => [
+        'name' => 'Adress Content'
+    ],
+    'adress_post_code' => [
+        'name' => 'Post Code'
+    ],
+    'adress_gsm_phone' => [
+        'name' => 'Gsm Phone'
+    ],
+    'adress_land_phone' => [
+        'name' => 'Land Phone'
+    ],
+    'adress_country' => [
+        'name' => 'Country'
+    ],
+    'adress_city' => [
+        'name' => 'City'
+    ],
+    'adress_district' => [
+        'name' => 'District'
+    ],
+    'adress_neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'adress_village' => [
+        'name' => 'Village'
+    ],
+    'messages' => [
+        'name' => 'Messages'
+    ],
+    'user' => [
+        'name' => 'User'
+    ],
+
+
+
+
+
+    /*Menu Button*/
+    'profile' => [
+        'name' => 'Profile'
+    ],
+
+    'create' => [
+        'name' => 'Create'
+    ],
+    'edit' => [
+        'name' => 'Edit'
+    ],
+    'delete' => [
+        'name' => 'Delete'
+    ],
+    'list' => [
+        'name' => 'List'
+    ],
+    'menu_address' => [
+        'name' => 'Address'
+    ],
+    'menu_orders' => [
+        'name' => 'Orders'
+    ],
+    'menu_favorites' => [
+        'name' => 'Favorites'
+    ],
+    'menu_archived_ads' => [
+        'name' => 'Archived ads'
+    ],
+    'menu_pending_ads' => [
+        'name' => 'Pending approval'
+    ],
+    'menu_delete_account' => [
+        'name' => 'Close account'
+    ],
+    'menu_my_ads' => [
+        'name' => 'My ads'
+    ],
+    'menu_fav_ads' => [
+        'name' => 'Favourite ads'
+    ],
+    'menu_hello_msg' => [
+        'name' => 'Hello'
+    ],
+    'menu_last_msg' => [
+        'name' => 'You last logged in at'
+    ],
+    'menu_packages' => [
+        'name' => 'My packages'
+    ],
+    'menu_adv_packages' => [
+        'name' => 'Ads Packages'
+    ],
+    'menu_time_packages' => [
+        'name' => 'Time Packages'
+    ],
+    'profile_details' => [
+        'name' => 'Profile Details'
+    ],
+    'profile_photo' => [
+        'name' => 'Profile Photo'
+    ],
+    'adv_listing_banner' => [
+        'name' => 'Ads Listing Page Banner'
+    ],
+    'approve' => [
+        'name' => 'Approve'
+    ],
+    'approved' => [
+        'name' => 'Approved'
+    ],
+    'pending' => [
+        'name' => 'Pending'
+    ],
+    'passive' => [
+        'name' => 'Passive'
+    ],
+    'pending_admin' => [
+        'name' => 'Pending'
+    ],
+    'menu_messages' => [
+        'name' => 'Messages'
+    ],
+    'menu_my_purchase' => [
+        'name' => 'My Purchase'
+    ],
+    'menu_my_sales' => [
+        'name' => 'My Sales'
+    ],
+
+
+    /* Right Dock*/
+    'right_secure_trading_subject' => [
+        'name' => 'Secure Trading'
+    ],
+    'right_secure_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_support_subject' => [
+        'name' => '24/7 Support'
+    ],
+    'right_support_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_easy_trading_subject' => [
+        'name' => 'Easy Trading'
+    ],
+    'right_easy_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_need_help_subject' => [
+        'name' => 'Need Help?'
+    ],
+    'right_need_help_msg' => [
+        'name' => 'Give a call on'
+    ],
+    'disable_account' => [
+        'name' => 'Disable Account'
+    ],
+    'disable_account_msg' => [
+        'name' => 'Your account will be disabled.
+                                    This operation cannot be undone'
+    ],
+
+    'message_title' => 'Message Title',
+    'owner_name' => 'Message',
+
+    'favorites' => "Favorites",
+    'fav_advs' => 'Favorite Ads',
+    'fav_sellers' => "Fav Sellers",
+    'fav_searches' => "Fav Searches",
+    'posted_on' => "Posted On",
+    'message_details' => "Message Details",
+    'adv_no' => 'Ad No',
+    'bill_address' => [
+        'name' => 'Bill Address',
+    ],
+    'delivery_address' => [
+        'name' => 'Delivery Address',
+    ],
+    'order_total' => [
+        'name' => 'Total',
+    ],
+    'order_date' => [
+        'name' => 'Order Date',
+    ],
+    'order_no' => [
+        'name' => 'Order ID',
+    ],
+    'order_detail' => [
+        'name' => 'Show Detail',
+    ],
+    /*Detail Page Order*/
+    'detail' => [
+        'name' => 'Detail',
+    ],
+    'back' => [
+        'name' => 'Back',
+    ],
+    'image' => [
+        'name' => 'Image',
+    ],
+    'subject' => [
+        'name' => 'Subject',
+    ],
+    'price' => [
+        'name' => 'Price',
+    ],
+    'piece' => [
+        'name' => 'Piece',
+    ],
+    'commission' => [
+        'name' => 'Commission',
+    ],
+    'total' => [
+        'name' => 'Total',
+    ],
+    'sub_total' => [
+        'name' => 'Sub Total',
+    ],
+    'sale' => [
+        'name' => 'Sale',
+    ],
+    'awaiting_tracking_number' => [
+        'name' => 'Awaiting Tracking Number',
+    ],
+    'awaiting_payment_approval' => [
+        'name' => 'Awaiting Payment Approval',
+    ],
+    'paid' => [
+        'name' => 'Paid',
+    ],
+    'cancelled' => [
+        'name' => 'Cancelled',
+    ],
+    'waiting' => [
+        'name' => 'Waiting',
+    ],
+    'awaiting_dispatch' => [
+        'name' => 'Awaiting dispatch',
+    ],
+    'shipped' => [
+        'name' => 'Shipped',
+    ],
+    'delivered' => [
+        'name' => 'Delivered',
+    ],
+    'tracking_number' => [
+        'name' => 'Tracking Number',
+    ],
+    'was_delivered' => [
+        'name' => 'was delivered',
+    ],
+    'not_delivered' => [
+        'name' => 'not delivered',
+    ],
+    'show_order_msg1' => [
+        'name' => 'The transaction result will be notified by mail.',
+    ],
+    'show_order_msg2' => [
+        'name' => 'Refund will be made if the product is not delivered within one week.',
+    ],
+    'show_order_msg3' => [
+        'name' => 'The result of the transaction has been sent to your registered e-mail address.',
+    ],
+
+    'awaiting_payment' => [
+        'name' => 'Awaiting Payment',
+    ],
+    'please_entered_tracking_number' => [
+        'name' => 'Please Entered Tracking Number',
+    ],
+    'transport_days' => [
+        'name' => 'Transport Days',
+    ],
+    'product_not_delivered' => [
+        'name' => 'Product not delivered',
+    ],
+    'status' => [
+        'name' => 'Status',
+    ],
+    'cancel_sale' => [
+        'name' => 'Cancel Sale',
+    ],
+    'send_again' => [
+        'name' => 'I Will Send Again',
+    ],
+    'content' => [
+        'name' => 'Content',
+    ],
+    'preferences_settings' => [
+        'name' => 'Preferences Settings',
+    ],
+
+
+    'corporate_settings' => [
+        'name' => 'Corporate Settings',
+    ],
+    'password' => [
+        'name' => 'Password',
+    ],
+    'new_password' => [
+        'name' => 'New password',
+    ],
+    're_new_password' => [
+        'name' => 'Confirm password',
+    ],
+    'confirm_password_input' => [
+        'name' => 'I confirm my password change',
+    ],
+    'create_address' => [
+        'name' => 'Create Address',
+    ],
+    'edit_address' => [
+        'name' => 'Edit Address',
+    ],
+    'balance_limit' => [
+        'name' => 'Balance Limit',
+    ],
+    'active_ads' => [
+        'name' => 'Active Ads',
+    ],
+    'subscriptions' => [
+        'name' => 'Subscriptions',
+    ],
+    'go_subscriptions_page' => [
+        'name' => 'Go to Subscriptions Page',
+    ],
+    'buy_package' => [
+        'name' => 'Buy Package',
+    ],
+    'expired_date' => [
+        'name' => 'Expired Date',
+    ],
+    'category' => [
+        'name' => 'Category',
+    ],
+    'ad_limit' => [
+        'name' => 'Ad Limit',
+    ],
+    'publish_time' => [
+        'name' => 'Publish Time',
+    ],
+    'all_categories' => [
+        'name' => 'All Categories',
+    ],
+    'day' => [
+        'name' => 'Day',
+    ],
+
+    'individual' => [
+        'name' => 'individual',
+    ],
+    'corporate' => [
+        'name' => 'corporate',
+    ],
+
+    'details' => [
+        'name' => 'Details'
+    ],
+    'choose' => [
+        'name' => 'Choose'
+    ],
+    'my_address' => 'My Address'
 ];
