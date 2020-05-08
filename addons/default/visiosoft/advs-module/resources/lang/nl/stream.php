@@ -1,29 +1,22 @@
 <?php
 
- return[
-   "advs"   =>   [
-      "name"      =>"ADVS",
-
-   ],
-   "categories"   =>   [
-      "name"      =>"Categorieën",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Dorp",
-
-   ],
-   "custom_fields"   =>   [
-      "name"      =>"Aangepaste velden",
-
-   ],
-   "custom_field_advs"   =>   [
-      "name"      =>"Aangepast veld advs",
-
-   ],
-   "cf_values"   =>   [
-      "name"      =>"Zie waarden",
-
-   ],
-
+return [
+    'advs' => [
+        'name' => 'Advs',
+    ],
+    'categories' => [
+        'name' => 'Categories',
+    ],
+    'village' => [
+        'name' => 'Village',
+    ],
+    'custom_fields' => [
+        'name' => 'Custom fields',
+    ],
+    'custom_field_advs' => [
+        'name' => 'Custom field advs',
+    ],
+    'cf_values' => [
+        'name' => 'Cf values',
+    ],
 ];
