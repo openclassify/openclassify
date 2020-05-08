@@ -1,24 +1,20 @@
 <?php
 
- return[
-   "category"   =>   [
-      "name"      =>"Categoría",
-      "option"      =>      [
-         "read"         =>"¿Puede leer la categoría?        ",
-         "write"         =>"¿Se puede crear / editar categoría?        ",
-         "delete"         =>"¿Se puede eliminar la categoría?"
-      ],
-
-   ],
-   "placeholderforsearch"   =>   [
-      "name"      =>"Marcador de posición para búsqueda",
-      "option"      =>      [
-         "read"         =>"¿Puede leer placeholderforsearch?        ",
-         "write"         =>"¿Se puede crear / editar marcador de posición para la búsqueda?        ",
-         "delete"         =>"¿Se puede eliminar placeholderforsearch?",
-
-      ],
-
-   ],
-
+return [
+    'category' => [
+        'name'   => 'Category',
+        'option' => [
+            'read'   => 'Can read category?',
+            'write'  => 'Can create/edit category?',
+            'delete' => 'Can delete category?',
+        ],
+    ],
+    'placeholderforsearch' => [
+        'name'   => 'Placeholderforsearch',
+        'option' => [
+            'read'   => 'Can read placeholderforsearch?',
+            'write'  => 'Can create/edit placeholderforsearch?',
+            'delete' => 'Can delete placeholderforsearch?',
+        ],
+    ],
 ];
