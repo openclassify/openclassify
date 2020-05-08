@@ -1,132 +1,133 @@
 <?php
 
- return[
-   "auto_approve"   =>   [
-      "name"      =>"Αυτόματη έγκριση",
+return [
+    'auto_approve' => [
+        'name' => 'Auto Approve',
+    ],
+    'default_view_type' => [
+        'name' => 'Default View Type',
+    ],
+    'hide_zero_price' => [
+        'name' => 'Hide Price if Zero',
+        'instructions' => 'Hide the price if the ad price is 0',
+    ],
+    'estimated_pending_time' => [
+        'name' => 'Estimated Pending Time',
+        'instructions' => 'In Hours',
+    ],
+    'default_published_time' => [
+        'name' => 'Default Publish Time',
+    ],
+    'default_adv_limit' => [
+        'name' => 'Default Ads Limit',
+    ],
+    'address' => [
+        'name' => 'Contact Adress',
+    ],
+    'phone' => [
+        'name' => 'Contact Phone',
+    ],
+    'favicon' => [
+        'name' => 'Favicon',
+    ]
+    ,'map_coordinates_long' => [
+        'name' => 'Map Long Coordinate',
+    ],
+    'map_coordinates_lat' => [
+        'name' => 'Map Lat Coordinate',
+    ],
+    'iban_numbers' => [
+        'name' => 'IBAN',
+    ],
+    'logo' => [
+        'name' => 'Logo',
+    ],
+    'ogImage' => [
+        'name' => 'Social Share Logo',
+        'warning'      => 'It should be at a resolution of 1200 x 630. ',
 
-   ],
-   "default_published_time"   =>   [
-      "name"      =>"Προεπιλεγμένος χρόνος δημοσίευσης",
+    ],
+    'currencies' => [
+        'name' => 'Active Currencies',
+    ],
+    'latest-limit' => [
+        'name' => 'Latest Limit',
+    ],
+    'site_address' => [
+        'name' => 'Site address',
+        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
+    ],
+    'google_map_key' => [
+        'name' => 'Google Map Api Key',
+    ],
 
-   ],
-   "default_adv_limit"   =>   [
-      "name"      =>"Προεπιλεγμένο όριο διαφημίσεων",
-
-   ],
-   "address"   =>   [
-      "name"      =>"Επικοινωνία με τη διεύθυνση",
-
-   ],
-   "phone"   =>   [
-      "name"      =>"τηλέφωνο επικοινωνίας",
-
-   ],
-   "contact_mail"   =>   [
-      "name"      =>"Επικοινωνήστε με το ταχυδρομείο",
-      "warning"      =>"Αυτόματη προσθήκη ονόματος ιστότοπου <strong>info</strong> @sitename",
-
-   ],
-   "map_coordinates_long"   =>   [
-      "name"      =>"Χάρτης Μεγάλος Συντονισμός",
-
-   ],
-   "map_coordinates_lat"   =>   [
-      "name"      =>"Χάρτης συντεταγμένων",
-
-   ],
-   "logo"   =>   [
-      "name"      =>"Λογότυπο",
-
-   ],
-   "ogImage"   =>   [
-      "name"      =>"Κοινωνικό Λογότυπο Share",
-      "warning"      =>"Θα πρέπει να έχει ανάλυση 1200 x 630.",
-
-   ],
-   "currencies"   =>   [
-      "name"      =>"Ενεργά νομίσματα",
-
-   ],
-   "site_address"   =>   [
-      "name"      =>"Διεύθυνση ιστοτόπου",
-      "warning"      =>"Αυτόματη προσθήκη www. www. <strong>sitename.com</strong>",
-
-   ],
-   "google_map_key"   =>   [
-      "name"      =>"Το Google Map Api Key",
-
-   ],
-   "default_country"   =>   [
-      "name"      =>"Προεπιλεγμένη χώρα διαφήμισης",
-
-   ],
-   "free_currencyconverterapi_key"   =>   [
-      "name"      =>"Κλειδί API μετατροπέα νομισμάτων",
-
-   ],
-   "default_city"   =>   [
-      "name"      =>"Προεπιλεγμένη πόλη διαφήμισης",
-
-   ],
-   "default_district"   =>   [
-      "name"      =>"Προεπιλεγμένη περιοχή διαφήμισης",
-
-   ],
-   "default_neighborhood"   =>   [
-      "name"      =>"Προεπιλεγμένη γειτονιά διαφήμισης",
-
-   ],
-   "default_currency"   =>   [
-      "name"      =>"Βασικό νόμισμα διαφήμισης",
-
-   ],
-   "default_GET"   =>   [
-      "name"      =>"Προεπιλεγμένη διαφήμιση GET",
-
-   ],
-   "twitter"   =>   [
-      "name"      =>"Κελάδημα",
-
-   ],
-   "facebook"   =>   [
-      "name"      =>"Facebook",
-
-   ],
-   "youtube"   =>   [
-      "name"      =>"Youtube",
-
-   ],
-   "google"   =>   [
-      "name"      =>"Google",
-
-   ],
-   "watermark_type"   =>   [
-      "name"      =>"Τύπος υδατογραφήματος",
-
-   ],
-   "watermark_text"   =>   [
-      "name"      =>"Κείμενο υδατογράφημα",
-
-   ],
-   "watermark_image"   =>   [
-      "name"      =>"Εικόνα υδατογράφημα",
-
-   ],
-   "watermark_position"   =>   [
-      "name"      =>"Θέση υδατοσήματος",
-
-   ],
-   "listing_page_image"   =>   [
-      "name"      =>"Λίστα εικόνων σελίδας",
-
-   ],
-   "enabled_currencies"   =>   [
-      "name"      =>"Ενεργοποιημένα νομίσματα",
-
-   ],
-   "google_statistic_code"   =>   [
-      "name"      =>"Στατιστικό κώδικα Google",
-
-   ],
-
+    'default_country' => [
+        'name' => 'Default Ad Country',
+    ],
+    'free_currencyconverterapi_key' => [
+        'name' => 'Currency Converter API Key'
+    ],
+    'default_city' => [
+        'name' => 'Default Ad City',
+    ],
+    'default_district' => [
+        'name' => 'Default Ad District',
+    ],
+    'default_neighborhood' => [
+        'name' => 'Default Ad Neighborhood',
+    ],
+    'default_currency' => [
+        'name' => 'Default Ad Currency',
+    ],
+    'default_GET' => [
+        'name' => 'Default Ad GET',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail Width',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Thumbnail Height',
+    ],
+    'picture_width' => [
+        'name' => 'Picture Width',
+    ],
+    'picture_height' => [
+        'name' => 'Picture Height',
+    ],
+    'twitter' => [
+        'name' => 'Twitter',
+    ],
+    'facebook' => [
+        'name' => 'Facebook',
+    ],
+    'youtube' => [
+        'name' => 'Youtube',
+    ],
+    'google' => [
+        'name' => 'Google',
+    ],
+    'watermark_type' => [
+        'name' => 'Watermark Type',
+    ],
+    'watermark_text' => [
+        'name' => 'Watermark Text',
+    ],
+    'watermark_image' => [
+        'name' => 'Watermark Image',
+    ],
+    'watermark_position' => [
+        'name' => 'Watermark Position',
+    ],
+    'listing_page_image' => [
+        'name' => 'Listing Page Image',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Enabled Currencies',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google Statistic Code',
+    ],
+    'register_email_field' => [
+        'name' => 'Member Registration Email Requirement',
+    ],
 ];
