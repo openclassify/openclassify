@@ -1,60 +1,52 @@
 <?php
 
- return[
-   "advs"   =>   [
-      "name"      =>"Διαφημίσεις",
-      "option"      =>      [
-         "read"         =>"Μπορούν να διαβάσουν τις διαφημίσεις;        ",
-         "write"         =>"Μπορεί να δημιουργήσει / να επεξεργαστεί διαφημίσεις;        ",
-         "delete"         =>"Μπορούν να διαγραφούν οι διαφημίσεις;"
-      ],
-
-   ],
-   "categories"   =>   [
-      "name"      =>"Κατηγορίες",
-      "option"      =>      [
-         "read"         =>"Μπορεί να διαβάσει κατηγορίες;        ",
-         "write"         =>"Μπορεί να δημιουργήσει / να επεξεργαστεί κατηγορίες;        ",
-         "delete"         =>"Μπορούν να διαγραφούν κατηγορίες;"
-      ],
-
-   ],
-   "village"   =>   [
-      "name"      =>"Χωριό",
-      "option"      =>      [
-         "read"         =>"Μπορεί να διαβάσει χωριό;        ",
-         "write"         =>"Μπορεί να δημιουργήσει / επεξεργαστεί το χωριό;        ",
-         "delete"         =>"Μπορεί να διαγράψει χωριό;"
-      ],
-
-   ],
-   "custom_fields"   =>   [
-      "name"      =>"Προσαρμοσμένα πεδία",
-      "option"      =>      [
-         "read"         =>"Μπορεί να διαβάσει προσαρμοσμένα πεδία;        ",
-         "write"         =>"Μπορεί να δημιουργήσει / να επεξεργαστεί προσαρμοσμένα πεδία;        ",
-         "delete"         =>"Μπορούν να διαγραφούν προσαρμοσμένα πεδία;"
-      ],
-
-   ],
-   "custom_field_advs"   =>   [
-      "name"      =>"Διαφημίσεις προσαρμοσμένου πεδίου",
-      "option"      =>      [
-         "read"         =>"Μπορούν να διαβάσουν προσαρμοσμένες διαφημίσεις πεδίου;        ",
-         "write"         =>"Μπορεί να δημιουργήσει / να επεξεργαστεί διαφημίσεις προσαρμοσμένου πεδίου;        ",
-         "delete"         =>"Μπορούν να διαγραφούν προσαρμοσμένες διαφημίσεις πεδίου;"
-      ],
-
-   ],
-   "cf_values"   =>   [
-      "name"      =>"Cf τιμές",
-      "option"      =>      [
-         "read"         =>"Μπορεί να διαβάσει τιμές cf;        ",
-         "write"         =>"Μπορεί να δημιουργήσει / να επεξεργαστεί τιμές cf;        ",
-         "delete"         =>"Μπορεί να διαγράψει τιμές cf;",
-
-      ],
-
-   ],
-
+return [
+    'advs' => [
+        'name'   => 'Ads',
+        'option' => [
+            'read'   => 'Can read ads?',
+            'write'  => 'Can create/edit ads?',
+            'delete' => 'Can delete ads?',
+        ],
+    ],
+    'categories' => [
+        'name'   => 'Categories',
+        'option' => [
+            'read'   => 'Can read categories?',
+            'write'  => 'Can create/edit categories?',
+            'delete' => 'Can delete categories?',
+        ],
+    ],
+    'village' => [
+        'name'   => 'Village',
+        'option' => [
+            'read'   => 'Can read village?',
+            'write'  => 'Can create/edit village?',
+            'delete' => 'Can delete village?',
+        ],
+    ],
+    'custom_fields' => [
+        'name'   => 'Custom fields',
+        'option' => [
+            'read'   => 'Can read custom fields?',
+            'write'  => 'Can create/edit custom fields?',
+            'delete' => 'Can delete custom fields?',
+        ],
+    ],
+    'custom_field_advs' => [
+        'name'   => 'Custom field ads',
+        'option' => [
+            'read'   => 'Can read custom field ads?',
+            'write'  => 'Can create/edit custom field ads?',
+            'delete' => 'Can delete custom field ads?',
+        ],
+    ],
+    'cf_values' => [
+        'name'   => 'Cf values',
+        'option' => [
+            'read'   => 'Can read cf values?',
+            'write'  => 'Can create/edit cf values?',
+            'delete' => 'Can delete cf values?',
+        ],
+    ],
 ];
