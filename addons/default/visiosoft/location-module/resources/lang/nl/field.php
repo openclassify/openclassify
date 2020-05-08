@@ -1,41 +1,38 @@
 <?php
 
- return[
-   "name"   =>   [
-      "name"      =>"Titel",
-
-   ],
-   "slug"   =>   [
-      "name"      =>"Naaktslak",
-
-   ],
-   "city"   =>   [
-      "name"      =>"stad",
-
-   ],
-   "country"   =>   [
-      "name"      =>"land",
-
-   ],
-   "district"   =>   [
-      "name"      =>"Wijk",
-
-   ],
-   "order"   =>   [
-      "name"      =>"sorteervolgorde",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"Buurt",
-
-   ],
-   "village"   =>   [
-      "name"      =>"Dorp",
-
-   ],
-   "description"   =>   [
-      "name"      =>"Omschrijving",
-
-   ],
-
+return [
+    'name' => [
+        'name' => 'Title'
+    ],
+    'slug' => [
+        'name' => 'Slug'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'order' => [
+        'name' => 'Sort Order'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'description' => [
+        'name' => 'Description'
+    ],
+    'pick_option' => [
+        'name' => 'Pick an option',
+    ],
+    'address' => [
+        'name' => 'Address',
+    ],
+    'selected' => 'Selected'
 ];
