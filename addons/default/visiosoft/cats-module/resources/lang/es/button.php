@@ -1,8 +1,8 @@
 <?php
 
- return[
-   "new_category"   =>"Nueva categoría",
-   "add_sub_category"   =>"Añadir subcategoría",
-   "sub_category"   =>"Mostrar subcategoría",
-   "new_placeholderforsearch"   =>"Nuevo marcador de posición para búsqueda"
+return [
+    'new_category' => 'New Category',
+    'add_sub_category' => 'Add Sub Category',
+    'sub_category' => 'Show Sub Category',
+    'new_placeholderforsearch' => 'New Placeholderforsearch',
 ];
