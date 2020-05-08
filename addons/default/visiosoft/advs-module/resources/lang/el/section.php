@@ -1,49 +1,43 @@
 <?php
 
- return[
-   "advs"   =>   [
-      "title"      =>"Διαφημίσεις",
-
-   ],
-   "categories"   =>   [
-      "title"      =>"Κατηγορίες",
-
-   ],
-   "countries"   =>   [
-      "title"      =>"Χώρες",
-
-   ],
-   "cities"   =>   [
-      "title"      =>"Πόλεις",
-
-   ],
-   "districts"   =>   [
-      "title"      =>"Περιοχές",
-
-   ],
-   "neighborhoods"   =>   [
-      "title"      =>"Γειτονιές",
-
-   ],
-   "village"   =>   [
-      "title"      =>"Χωριό",
-
-   ],
-   "custom_fields"   =>   [
-      "title"      =>"Προσαρμοσμένα πεδία",
-
-   ],
-   "custom_field_advs"   =>   [
-      "title"      =>"Διαφημίσεις προσαρμοσμένου πεδίου",
-
-   ],
-   "cf_values"   =>   [
-      "title"      =>"Cf τιμές",
-
-   ],
-   "fields"   =>   [
-      "title"      =>"Προσαρμοσμένα πεδία",
-
-   ],
-
+return [
+    'advs' => [
+        'title' => 'Ads',
+    ],
+    'categories' => [
+        'title' => 'Categories',
+    ],
+    'countries' => [
+        'title' => 'Countries',
+    ],
+    'cities' => [
+        'title' => 'Cities',
+    ],
+    'districts' => [
+        'title' => 'Districts',
+    ],
+    'neighborhoods' => [
+        'title' => 'Neighborhoods',
+    ],
+    'village' => [
+        'title' => 'Village',
+    ],
+    'custom_fields' => [
+        'title' => 'Custom fields',
+    ],
+    'custom_field_advs' => [
+        'title' => 'Custom field ads',
+    ],
+    'cf_values' => [
+        'title' => 'Cf values',
+    ],
+    'fields' => [
+        'title' => 'Custom Fields'
+    ],
+    'assets_clear' => [
+        'name' => 'Assets Clear'
+    ],
+    'general' => 'General',
+    'ads' => 'Ads',
+    'user' => 'User',
 ];
