@@ -36,5 +36,8 @@ return [
     ],
     'assets_clear' => [
         'name' => 'Assets Clear'
-    ]
+    ],
+    'general' => 'General',
+    'ads' => 'Ads',
+    'user' => 'User',
 ];
