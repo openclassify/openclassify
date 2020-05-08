@@ -1,25 +1,22 @@
 <?php
 
- return[
-   "countries"   =>   [
-      "title"      =>"Χώρες",
-
-   ],
-   "cities"   =>   [
-      "title"      =>"Πόλεις",
-
-   ],
-   "districts"   =>   [
-      "title"      =>"Περιοχές",
-
-   ],
-   "neighborhoods"   =>   [
-      "title"      =>"Γειτονιές",
-
-   ],
-   "village"   =>   [
-      "title"      =>"Χωριό",
-
-   ],
-
+return [
+    'countries' => [
+        'title' => 'Countries',
+    ],
+    'cities' => [
+        'title' => 'Cities',
+    ],
+    'districts' => [
+        'title' => 'Districts',
+    ],
+    'neighborhoods' => [
+        'title' => 'Neighborhoods',
+    ],
+    'village' => [
+        'title' => 'Village',
+    ],
+    'general' => 'General',
+    'map' => 'Map',
+    'setting' => 'Setting',
 ];
