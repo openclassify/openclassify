@@ -1,25 +1,22 @@
 <?php
 
- return[
-   "countries"   =>   [
-      "title"      =>"landen",
-
-   ],
-   "cities"   =>   [
-      "title"      =>"Cities",
-
-   ],
-   "districts"   =>   [
-      "title"      =>"districten",
-
-   ],
-   "neighborhoods"   =>   [
-      "title"      =>"buurten",
-
-   ],
-   "village"   =>   [
-      "title"      =>"Dorp",
-
-   ],
-
+return [
+    'countries' => [
+        'title' => 'Countries',
+    ],
+    'cities' => [
+        'title' => 'Cities',
+    ],
+    'districts' => [
+        'title' => 'Districts',
+    ],
+    'neighborhoods' => [
+        'title' => 'Neighborhoods',
+    ],
+    'village' => [
+        'title' => 'Village',
+    ],
+    'general' => 'General',
+    'map' => 'Map',
+    'setting' => 'Setting',
 ];
