@@ -83,13 +83,17 @@ return [
         'name' => 'Devise'
     ],
     'status' => [
-        'name' => 'Statut'
+        'name' => 'Statut',
+        'option' => [
+            'approved' => 'Approved',
+            'expired' => 'Expired',
+            'unpublished' => 'Unpublished',
+            'pending_admin' => 'Pending Admin',
+            'pending_user' => 'Pending User'
+        ]
     ],
     'pending_adv' => [
-        'name' => 'Annonces en attente'
-    ],
-    'archived_adv' => [
-        'name' => 'Annonces archivées'
+        'name' => 'Unpublished'
     ],
     'finish_at' => [
         'name' => 'Finish At'
@@ -103,9 +107,8 @@ return [
     'my_adv' => [
         'name' => 'ADVS'
     ],
-    'description' => [
-        'name' => 'La description'
-    ],
+    'description' =>  'Description',
+    'explanation' =>  'Explanation',
     'type' => [
         'name' => 'Type'
     ],
@@ -120,12 +123,17 @@ return [
     'list-page' => 'Page de liste',
     'search' => 'Chercher',
     'recommended' => 'Annonces recommandées pour vous',
+    'filter' => 'Filter',
+    'sort' => 'Sort',
     'sort_by' => 'Trier par',
     'pick_option' => 'Choisissez une option',
     'pick_ordering' => 'Ordering',
     'price_high' => 'Prix décroissant',
-    'price-low' => 'Prix croissant',
+    'price_low' => 'Price Low to High',
     'newest' => 'Plus récent',
+    'oldest' => 'Oldest',
+    'address_a_z' => 'Address (A to Z)',
+    'address_z_a' => 'Address (Z to A)',
     'categories' => 'Les catégories',
     'all_categories' => 'toutes catégories',
     'location' => 'Emplacement',
@@ -139,13 +147,14 @@ return [
     'search_desc' => 'Vous pouvez ajouter et gérer vos sélections de recherche favorites ici.',
     'complaint_placeholder' => 'Tapez les détails de votre plainte ici.',
     'show_details' => 'Afficher les détails',
+    'ad_actions' => 'Ad Actions',
     'edit' => 'modifier',
     'approve' => 'Approuver',
     'passive' => "Passif",
     'offered_by' => 'Offert par',
-    'more_ads_by' => 'Plus dannonces par',
+    'more_ads_by' => 'Plus d\\'annonces par',
     'click_phone' => 'Afficher le numéro de téléphone',
-    'share' => 'Partager cette annonce',
+    'share' => 'Share',
     'report' => 'Signaler cette annonce',
     'features' => 'Caractéristiques',
     "streetview" => "Street View",
@@ -155,12 +164,12 @@ return [
     'secure_trading' => 'Trading sécurisé',
     '24/7' => 'Assistance 24/7',
     'easy_trading' => 'Trading facile',
-    'need_help' => 'Besoin daide pour?',
+    'need_help' => 'Besoin d\\'aide pour?',
     'give_a_call' => 'Donner un appel sur',
     'message_sent' => 'Message envoyé!',
     'asap' => 'Message envoyé,
    le vendeur vous contactera dès que possible.',
-    'ad_id' => 'ID dannonce',
+    'ad_id' => 'ID d\\'annonce',
     'contact_with' => 'Contacter avec',
     'create_adv' => 'Créer une publicité',
     'edit_adv' => 'Modifier une annonce',
@@ -184,7 +193,7 @@ return [
     'is_get_adv' => [
         'name' => 'OBTENIR'
     ],
-    'corporate_info' => 'Informations sur lentreprise',
+    'corporate_info' => 'Informations sur l\\'entreprise',
     'featured_ads' => "Annonces en vedette",
     'trending_ads' => 'Annonces Trendind',
     'search_ads_result_message' => [
@@ -193,15 +202,15 @@ return [
     'total' => 'Total',
     'quantity' => 'Quantité',
     'view_cart' => 'Voir le panier',
-    'no_ads' => 'Pas de pubs!',
+    'no_ads' => 'No Ads found.',
     'show_display_mode' => [
         'map' => 'Carte',
         'list' => 'liste',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Nom de lannonce',
+        'name' => 'Nom de l\\'annonce',
         'price' => 'Prix',
-        'publish_at' => 'Date de lannonce',
+        'publish_at' => 'Date de l\\'annonce',
         'location_city' => 'Ville',
         'location_country' => 'Pays',
     ],
@@ -227,6 +236,7 @@ return [
         'name' => 'Sold out',
     ],
     'edit_category' => 'Edit Category',
+    'set_category' => 'Set Category',
     'max' => [
         'name' => 'Max',
     ],
@@ -250,5 +260,33 @@ return [
     ],
     'yes' => [
         'name' => 'Yes'
-    ]
+    ],
+    "no_location" => "No location is selected.",
+    "continue" => 'Continue',
+    "gallery" => 'Gallery',
+
+    // Pending screen
+    'pending_message_1' => 'The Ad is in the Approval Process',
+    'pending_message_2' => "Ad's Update Date",
+    'pending_message_3' => 'Estimated Waiting Time',
+    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
+    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
+    'hours' => 'hours',
+
+    // Preview page
+    'preview_text' => [
+        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
+        'part_2' => 'If not, click the "Edit" button.',
+    ],
+    'views' => 'Views',
+
+    // Detail page
+    "no_street_view" => "No street view image in this location",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'Ad Information',
+
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];
