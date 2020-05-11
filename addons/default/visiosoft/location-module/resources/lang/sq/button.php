@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'new_country' => 'Shteti i Ri',
+    'new_country' => 'Shteti i ri',
     'new_city' => 'Qyteti i Ri',
     'new_district' => 'Rrethi i Ri',
     'new_neighborhood' => 'Lagje e Re',
