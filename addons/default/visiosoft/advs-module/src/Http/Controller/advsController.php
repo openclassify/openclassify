@@ -469,24 +469,14 @@ class AdvsController extends PublicController
 
     public function getCatsForNewAd($id)
     {
-        $cats = $this->getCats($id);
-        $count_user_ads = count($this->adv_model->userAdv()->get());
 
-        if (empty($cats->toArray())) {
-            $cats = trans('visiosoft.module.advs::message.create_ad_with_post_cat');
+        if ($this->adv_model->is_enabled('packages')) {
+            $cats = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForCategorySelection($id);
+        } else {
+            $cats = $this->getCats($id);
 
-            if (setting_value('visiosoft.module.advs::default_adv_limit') <= $count_user_ads) {
-                if ($this->adv_model->is_enabled('packages')) {
-                    $packageModel = new PackageModel();
-                    $parent_cat = $this->category_model->getParentCats($id, 'parent_id');
-                    $package = $packageModel->reduceLimit($parent_cat);
-                    if ($package != null) {
-                        return $package;
-                    }
-                } else {
-                    $msg = trans('visiosoft.module.advs::message.max_ad_limit');
-                    return $msg;
-                }
+            if (empty($cats->toArray())) {
+                $cats = trans('visiosoft.module.advs::message.create_ad_with_post_cat');
             }
         }
         return $cats;
@@ -547,21 +537,12 @@ class AdvsController extends PublicController
             /*  Update Adv  */
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
-            $count_user_ads = count($this->adv_model->userAdv()->get());
-
-            if (setting_value('visiosoft.module.advs::default_adv_limit') < $count_user_ads) {
-                if ($advModel->is_enabled('packages') and $adv->slug == "") {
-                    $parent_cat = $categoryModel->getParentCats($request->cat1, 'parent_id');
-                    $packageModel = new PackageModel();
-                    $package = $packageModel->reduceLimit($parent_cat, 'reduce');
-                    if ($package != null) {
-                        $this->messages->error(trans('visiosoft.module.advs::message.please_buy_package'));
-                        return redirect('/');
-                    }
-                } elseif ($adv->slug == '') {
-                    $this->messages->error(trans('visiosoft.module.advs::message.max_ad_limit.title'));
-                    return redirect('/');
-                }
+            if ($advModel->is_enabled('packages') and $adv->slug == "") {
+               $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
+               if(!is_null($cat))
+               {
+                   return redirect('/');
+               }
             }
 
             $adv->is_get_adv = $request->is_get_adv;

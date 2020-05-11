@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Varsayılan Yayın Süresi',
     ],
-    'default_adv_limit' => [
-        'name' => 'Varsayılan İlan Sınırı',
-    ],
     'address' => [
         'name' => 'İletişim Adresiniz',
     ],
