@@ -1,13 +1,10 @@
 <?php
 
- return[
-   "category"   =>   [
-      "name"      =>"دسته بندی",
-
-   ],
-   "placeholderforsearch"   =>   [
-      "name"      =>"مکان نگهدارنده",
-
-   ],
-
+return [
+    'category' => [
+        'name' => 'Category',
+    ],
+    'placeholderforsearch' => [
+        'name' => 'Placeholderforsearch',
+    ],
 ];
