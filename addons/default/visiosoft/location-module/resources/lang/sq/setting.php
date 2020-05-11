@@ -20,13 +20,13 @@ return [
         'name' => 'Krijoni vendndodhjen e faqes së Njoftimet',
     ],
     'default_city' => [
-        'name' => 'Qyteti i paracaktuar',
+        'name' => 'Qarku i paracaktuar',
     ],
     'default_district' => [
-        'name' => 'Rrethi i paracaktuar',
+        'name' => 'Bashkia i paracaktuar',
     ],
     'default_neighborhood' => [
-        'name' => 'Lagjia e paracaktuar',
+        'name' => 'Njesite administrative e paracaktuar',
     ],
 
     'google_map_key' => [
