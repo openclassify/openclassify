@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Visiosoft Admin',
-    'name'        => 'Tema e administratorit Visiosoft',
-    'description' => 'Tema zyrtare e administratorit për OpenClassify.',
+    'name'        => 'Tema e administratorit ',
+    'description' => 'Tema zyrtare e administratorit për tregtaret',
 ];
