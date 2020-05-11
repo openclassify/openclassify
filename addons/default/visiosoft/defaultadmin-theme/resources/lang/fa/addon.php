@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'پر شتاب',
-    'name'        => 'قالب پر شتاب',
-    'description' => 'قالب رسمی سیستم مدیریت محتوای پایرو',
+    'title'       => 'Visiosoft Admin',
+    'name'        => 'Visiosoft Admin Theme',
+    'description' => 'The official admin theme for OpenClassify.',
 ];
