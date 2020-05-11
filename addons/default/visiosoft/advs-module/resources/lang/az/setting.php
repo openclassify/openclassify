@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Defolt Vaxtı',
     ],
-    'default_adv_limit' => [
-        'name' => 'Defolt Məhdudiyyətlər',
-    ],
     'address' => [
         'name' => 'Əlaqə ünvanı',
     ],
