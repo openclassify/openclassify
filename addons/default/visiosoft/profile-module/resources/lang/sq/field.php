@@ -20,7 +20,7 @@ return [
         'name' => 'Adresa e e-mail'
     ],
     'sitename' => [
-        'name' => 'SITENAME'
+        'name' => 'FAGJANAME'
     ],
     'activated' => [
         'name' => 'Përdoruesi aktiv'
@@ -32,13 +32,13 @@ return [
         'name' => 'Shteti'
     ],
     'city' => [
-        'name' => 'Qytet'
+        'name' => 'Qarku'
     ],
     'district' => [
-        'name' => 'Rreth'
+        'name' => 'Bashkia'
     ],
     'neighborhood' => [
-        'name' => 'Lagje'
+        'name' => 'Njesi administrative'
     ],
     'village' => [
         'name' => 'Fshati'
@@ -86,13 +86,13 @@ return [
         'name' => 'Shteti'
     ],
     'adress_city' => [
-        'name' => 'Qytet'
+        'name' => 'Qarku'
     ],
     'adress_district' => [
-        'name' => 'Rreth'
+        'name' => 'Bashkia'
     ],
     'adress_neighborhood' => [
-        'name' => 'Lagje'
+        'name' => 'Njesi administrative'
     ],
     'adress_village' => [
         'name' => 'Fshati'
@@ -135,7 +135,7 @@ return [
         'name' => 'Favoritet'
     ],
     'menu_archived_ads' => [
-        'name' => 'Reklama të arkivuara'
+        'name' => 'Njoftimet të arkivuara'
     ],
     'menu_pending_ads' => [
         'name' => 'Miratim në pritje'
@@ -144,10 +144,10 @@ return [
         'name' => 'Mbyll Llogari'
     ],
     'menu_my_ads' => [
-        'name' => 'Reklamat e mia'
+        'name' => 'Njoftimet e mia'
     ],
     'menu_fav_ads' => [
-        'name' => 'Reklama e preferuar'
+        'name' => 'Njoftimet e preferuar'
     ],
     'menu_hello_msg' => [
         'name' => 'Përshëndetje'
