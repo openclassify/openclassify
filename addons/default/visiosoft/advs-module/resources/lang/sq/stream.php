@@ -2,13 +2,13 @@
 
 return [
     'advs' => [
-        'name' => 'advs',
+        'name' => ' Njoftimet',
     ],
     'categories' => [
         'name' => 'Kategoritë',
     ],
     'village' => [
-        'name' => 'fshati',
+        'name' => 'Fshati',
     ],
     'custom_fields' => [
         'name' => 'Fushat e personalizuara',
