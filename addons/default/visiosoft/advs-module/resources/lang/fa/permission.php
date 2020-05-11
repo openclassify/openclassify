@@ -1,60 +1,52 @@
 <?php
 
- return[
-   "advs"   =>   [
-      "name"      =>"تبلیغات",
-      "option"      =>      [
-         "read"         =>"آیا می توانید تبلیغات بخوانید؟        ",
-         "write"         =>"آیا می توانید تبلیغات ایجاد یا ویرایش کنید؟        ",
-         "delete"         =>"آیا می توانید تبلیغات را حذف کنید؟"
-      ],
-
-   ],
-   "categories"   =>   [
-      "name"      =>"دسته بندی ها",
-      "option"      =>      [
-         "read"         =>"آیا می توانید مقوله ها را بخوانید؟        ",
-         "write"         =>"آیا می توان دسته ها را ایجاد و ویرایش کرد؟        ",
-         "delete"         =>"آیا می توان دسته ها را حذف کرد؟"
-      ],
-
-   ],
-   "village"   =>   [
-      "name"      =>"روستا",
-      "option"      =>      [
-         "read"         =>"می توانید دهکده بخوانید؟        ",
-         "write"         =>"آیا می توانید دهکده ایجاد یا ویرایش کنید؟        ",
-         "delete"         =>"می توانید روستا را حذف کنید؟"
-      ],
-
-   ],
-   "custom_fields"   =>   [
-      "name"      =>"موضوعات سفارشی",
-      "option"      =>      [
-         "read"         =>"می توانید زمینه های دلخواه را بخوانید؟        ",
-         "write"         =>"آیا می توانید زمینه های سفارشی ایجاد یا ویرایش کنید؟        ",
-         "delete"         =>"می توانید فیلدهای سفارشی را حذف کنید؟"
-      ],
-
-   ],
-   "custom_field_advs"   =>   [
-      "name"      =>"تبلیغات زمینه سفارشی",
-      "option"      =>      [
-         "read"         =>"آیا می توانید تبلیغات زمینه دلخواه را بخوانید؟        ",
-         "write"         =>"آیا می توانید تبلیغات درست زمینه سفارشی ایجاد یا ویرایش کنید؟        ",
-         "delete"         =>"آیا می توانید تبلیغات زمینه دلخواه را حذف کنید؟"
-      ],
-
-   ],
-   "cf_values"   =>   [
-      "name"      =>"مقادیر Cf",
-      "option"      =>      [
-         "read"         =>"آیا می توانید مقادیر cf را بخوانید؟        ",
-         "write"         =>"آیا می توانید مقادیر cf ایجاد یا ویرایش کنید؟        ",
-         "delete"         =>"آیا می توانید مقادیر cf را حذف کنید؟",
-
-      ],
-
-   ],
-
+return [
+    'advs' => [
+        'name'   => 'Ads',
+        'option' => [
+            'read'   => 'Can read ads?',
+            'write'  => 'Can create/edit ads?',
+            'delete' => 'Can delete ads?',
+        ],
+    ],
+    'categories' => [
+        'name'   => 'Categories',
+        'option' => [
+            'read'   => 'Can read categories?',
+            'write'  => 'Can create/edit categories?',
+            'delete' => 'Can delete categories?',
+        ],
+    ],
+    'village' => [
+        'name'   => 'Village',
+        'option' => [
+            'read'   => 'Can read village?',
+            'write'  => 'Can create/edit village?',
+            'delete' => 'Can delete village?',
+        ],
+    ],
+    'custom_fields' => [
+        'name'   => 'Custom fields',
+        'option' => [
+            'read'   => 'Can read custom fields?',
+            'write'  => 'Can create/edit custom fields?',
+            'delete' => 'Can delete custom fields?',
+        ],
+    ],
+    'custom_field_advs' => [
+        'name'   => 'Custom field ads',
+        'option' => [
+            'read'   => 'Can read custom field ads?',
+            'write'  => 'Can create/edit custom field ads?',
+            'delete' => 'Can delete custom field ads?',
+        ],
+    ],
+    'cf_values' => [
+        'name'   => 'Cf values',
+        'option' => [
+            'read'   => 'Can read cf values?',
+            'write'  => 'Can create/edit cf values?',
+            'delete' => 'Can delete cf values?',
+        ],
+    ],
 ];
