@@ -1,263 +1,291 @@
 <?php
 
- return[
-   "name"   =>   [
-      "name"      =>"عنوان",
+return [
+    'name' => [
+        'name' => 'Title'
+    ],
+    'order' => [
+        'name' => 'Order'
+    ],
+    'slug' => [
+        'name' => 'Slug'
+    ],
+    'parent_category' => [
+        'name' => 'Parent'
+    ],
+    'category' => [
+        'name' => 'Category Title'
+    ],
+    'price' => [
+        'name' => 'Price'
+    ],
+    'date' => [
+        'name' => 'Date'
+    ],
+    'photo' => [
+        'name' => 'Photo'
+    ],
+    'video' => [
+        'name' => 'Video'
+    ],
+    'map' => [
+        'name' => 'Map'
+    ],
+    'stock' => [
+        'name' => 'Stock'
+    ],
+    'advs_desc' => [
+        'name' => 'Description'
+    ],
+    'online_payment' => [
+        'name' => 'Online Payment'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'files' => [
+        'name' => 'Images'
+    ],
+    'cat1' => [
+        'name' => 'Main Category'
+    ],
+    'cat2' => [
+        'name' => 'Sub Category 1'
+    ],
+    'cat3' => [
+        'name' => 'Sub Category 2'
+    ],
+    'cat4' => [
+        'name' => 'Sub Category 3'
+    ],
+    'cat5' => [
+        'name' => 'Sub Category 4'
+    ],
+    'cat6' => [
+        'name' => 'Sub Category 5'
+    ],
+    'cat7' => [
+        'name' => 'Sub Category 6'
+    ],
+    'currency' => [
+        'name' => 'Currency'
+    ],
+    'status' => [
+        'name' => 'Status',
+        'option' => [
+            'approved' => 'Approved',
+            'expired' => 'Expired',
+            'unpublished' => 'Unpublished',
+            'pending_admin' => 'Pending Admin',
+            'pending_user' => 'Pending User'
+        ]
+    ],
+    'pending_adv' => [
+        'name' => 'Unpublished'
+    ],
+    'finish_at' => [
+        'name' => 'Finish At'
+    ],
+    'cover_photo' => [
+        'name' => 'Cover Photo'
+    ],
+    'favs_adv' => [
+        'name' => 'Fav Ads'
+    ],
+    'my_adv' => [
+        'name' => 'ADVS'
+    ],
+    'description' =>  'Description',
+    'explanation' =>  'Explanation',
+    'type' => [
+        'name' => 'Type'
+    ],
+    'parent_adv' => [
+        'name' => 'Related Ad'
+    ],
+    'value' => [
+        'name' => 'Value'
+    ],
+    'list' => 'List',
+    'home' => 'Home',
+    'list-page' => 'List Page',
+    'search' => 'Search',
+    'recommended' => 'Recommended Ads for You',
+    'filter' => 'Filter',
+    'sort' => 'Sort',
+    'sort_by' => 'Sort By',
+    'pick_option' => 'Pick an option',
+    'pick_ordering' => 'Ordering',
+    'price_high' => 'Price High to Low',
+    'price_low' => 'Price Low to High',
+    'newest' => 'Newest',
+    'oldest' => 'Oldest',
+    'address_a_z' => 'Address (A to Z)',
+    'address_z_a' => 'Address (Z to A)',
+    'categories' => 'Categories',
+    'all_categories' => 'All Categories',
+    'location' => 'Location',
+    'send_message' => 'Send Message',
+    'phone_gsm' => 'Gsm Phone',
+    'phone_office' => 'Office Phone',
+    'add_to_favorites' => "Add to Favorites",
+    'send' => 'Send',
+    'search_name' => 'Search Name',
+    'my_favorite_searches' => 'Favorite Searches',
+    'search_desc' => 'You can add and manage your favorite search selections here.',
+    'complaint_placeholder' => 'Type your complaint details here.',
+    'show_details' => 'Show Details',
+    'ad_actions' => 'Ad Actions',
+    'edit' => 'Edit',
+    'approve' => 'Approve',
+    'passive' => "Passive",
+    'offered_by' => 'Offered By',
+    'more_ads_by' => 'More Ads By',
+    'click_phone' => 'Show phone number',
+    'share' => 'Share',
+    'report' => 'Report this ad',
+    'features' => 'Features',
+    "streetview" => "Street View",
+    'recommended_ads' => 'Recommended Ads for You',
+    'new' => 'New',
+    'short_info' => 'Short Info',
+    'secure_trading' => 'Secure Trading',
+    '24/7' => '24/7 Support',
+    'easy_trading' => 'Easy Trading',
+    'need_help' => 'Need help?',
+    'give_a_call' => 'Give a call on',
+    'message_sent' => 'Message Sent!',
+    'asap' => 'Message sent, seller will contact you asap.',
+    'ad_id' => 'Ad Id',
+    'contact_with' => 'Contact With',
+    'create_adv' => 'Create Ad',
+    'edit_adv' => 'Edit Ad',
+    'mandatory_fields' => 'Mandatory Fields',
+    'ad_post' => 'Ad Post',
+    'sell_item' => 'Sell an item or service',
+    'search_save' => 'Favorite search saved successfully',
+    'address' => 'Address',
+    'email' => 'E-Mail',
+    'phone' => 'Phone',
+    'send_us_your_feedback' => 'Send Us Your Feedback',
+    'online_shopping' => 'GET',
+    'approved' => 'Approved Successfully',
+    'extended' => 'Extended Successfully',
+    'declined' => 'Declined Successfully',
+    'search_on_map' => 'Search on Map',
+    'post_free_ad' => 'Post Free Ad',
+    'select_a_category' => 'Select a Category',
+    'select_a_sub_category' => 'Select a Sub Category',
+    'all_dopings_added' => 'All doping types are added for this ad.',
+    'is_get_adv' => [
+        'name' => 'GET'
+    ],
+    'corporate_info' => 'Corporate Info',
+    'featured_ads' => "Featured Ads",
+    'trending_ads' => 'Trendind Ads',
+    'search_ads_result_message' => [
+        'name' => ':count ads found for :name search',
+    ],
+    'total' => 'Total',
+    'quantity' => 'Quantity',
+    'view_cart' => 'View Cart',
+    'no_ads' => 'No Ads found.',
+    'show_display_mode' => [
+        'map' => 'Map',
+        'list' => 'List',
+    ],
+    'advs_list_table_thead' => [
+        'name' => 'Ad Name',
+        'price' => 'Price',
+        'publish_at' => 'Ad Date',
+        'location_city' => 'City',
+        'location_country' => 'Country',
+    ],
+    'show_list_view' => [
+        'name' => 'List',
+    ],
+    'show_table_view' => [
+        'name' => 'Table',
+    ],
+    'showcase' => [
+        'name' => 'Showcase',
+    ],
+    'new_ad' => [
+        'name' => 'New Ad',
+    ],
+    'profile' => [
+        'name' => 'Profile',
+    ],
+    'my_ads' => [
+        'name' => 'My Ads',
+    ],
+    'sold_out' => [
+        'name' => 'Sold out',
+    ],
+    'edit_category' => 'Edit Category',
+    'set_category' => 'Set Category',
+    'max' => [
+        'name' => 'Max',
+    ],
+    'min' => [
+        'name' => 'Min',
+    ],
+    'in_the_last_24_hours' => [
+        'name' => 'In The Last 24 Hours'
+    ],
+    'in_the_last_week' => [
+        'name' => 'In The Last Week'
+    ],
+    'in_the_last_month' => [
+        'name' => 'In The Last Month'
+    ],
+    'ads_with_photo' => [
+        'name' => 'Ads With Photo'
+    ],
+    'ads_with_video' => [
+        'name' => 'Ads With Video'
+    ],
+    'yes' => [
+        'name' => 'Yes'
+    ],
+    "no_location" => "No location is selected.",
+    "continue" => 'Continue',
+    "gallery" => 'Gallery',
 
-   ],
-   "order"   =>   [
-      "name"      =>"سفارش",
+    // Pending screen
+    'pending_message_1' => 'The Ad is in the Approval Process',
+    'pending_message_2' => "Ad's Update Date",
+    'pending_message_3' => 'Estimated Waiting Time',
+    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
+    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
+    'hours' => 'hours',
 
-   ],
-   "slug"   =>   [
-      "name"      =>"مثل حلزون حرکت کردن",
+    // Preview page
+    'preview_text' => [
+        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
+        'part_2' => 'If not, click the "Edit" button.',
+    ],
+    'views' => 'Views',
 
-   ],
-   "parent_category"   =>   [
-      "name"      =>"والدین",
+    // Detail page
+    "no_street_view" => "No street view image in this location",
+    'edit_my_contact_info' => 'Edit My Contact Information',
+    'update_my_contact_info' => 'update my contact info',
+    'contact_info' => 'Contact information',
+    'ad_info' => 'Ad Information',
 
-   ],
-   "category"   =>   [
-      "name"      =>"عنوان دسته",
-
-   ],
-   "price"   =>   [
-      "name"      =>"قیمت",
-
-   ],
-   "stock"   =>   [
-      "name"      =>"موجودی",
-
-   ],
-   "advs_desc"   =>   [
-      "name"      =>"شرح",
-
-   ],
-   "online_payment"   =>   [
-      "name"      =>"پرداخت آنلاین",
-
-   ],
-   "city"   =>   [
-      "name"      =>"شهر",
-
-   ],
-   "country"   =>   [
-      "name"      =>"کشور",
-
-   ],
-   "district"   =>   [
-      "name"      =>"ناحیه",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"محله",
-
-   ],
-   "village"   =>   [
-      "name"      =>"روستا",
-
-   ],
-   "files"   =>   [
-      "name"      =>"تصاویر",
-
-   ],
-   "cat1"   =>   [
-      "name"      =>"دسته اصلی",
-
-   ],
-   "cat2"   =>   [
-      "name"      =>"زیر گروه 1",
-
-   ],
-   "cat3"   =>   [
-      "name"      =>"زیر دسته 2",
-
-   ],
-   "cat4"   =>   [
-      "name"      =>"زیر دسته 3",
-
-   ],
-   "cat5"   =>   [
-      "name"      =>"زیر گروه 4",
-
-   ],
-   "cat6"   =>   [
-      "name"      =>"زیر مجموعه 5",
-
-   ],
-   "cat7"   =>   [
-      "name"      =>"زیر گروه 6",
-
-   ],
-   "currency"   =>   [
-      "name"      =>"واحد پول",
-
-   ],
-   "status"   =>   [
-      "name"      =>"وضعیت",
-
-   ],
-   "next_add_advs_title"   =>   [
-      "name"      =>"فقط 30 ثانیه تبلیغ ارسال کنید",
-
-   ],
-   "next_add_advs_msg"   =>   [
-      "name"      =>"لطفاً برای چندین مورد یا خدمات ، چندین تبلیغات ارسال نکنید. همه تبلیغات تکراری ، اسپم و دسته بندی اشتباه حذف می شوند.",
-
-   ],
-   "next_add_advs_btn"   =>   [
-      "name"      =>"بعد",
-
-   ],
-   "cancel_add_advs_btn"   =>   [
-      "name"      =>"یا لغو کنید",
-
-   ],
-   "pending_adv"   =>   [
-      "name"      =>"در انتظار تبلیغات",
-
-   ],
-   "archived_adv"   =>   [
-      "name"      =>"تبلیغات بایگانی شده",
-
-   ],
-   "favs_adv"   =>   [
-      "name"      =>"تبلیغات مورد علاقه",
-
-   ],
-   "my_adv"   =>   [
-      "name"      =>"ADVS",
-
-   ],
-   "description"   =>   [
-      "name"      =>"شرح",
-
-   ],
-   "type"   =>   [
-      "name"      =>"تایپ کنید",
-
-   ],
-   "parent_adv"   =>   [
-      "name"      =>"تبلیغات مرتبط",
-
-   ],
-   "value"   =>   [
-      "name"      =>"ارزش",
-
-   ],
-   "home"   =>"خانه",
-   "list-page"   =>"صفحه لیست",
-   "search"   =>"جستجو کردن",
-   "recommended"   =>"تبلیغات پیشنهادی برای شما",
-   "sort_by"   =>"مرتب سازی بر اساس",
-   "pick_option"   =>"گزینه ای را انتخاب کنید",
-   "price_high"   =>"قیمت بالا تا پایین",
-   "price-low"   =>"قیمت پایین تا بالا",
-   "newest"   =>"جدیدترین",
-   "categories"   =>"دسته بندی ها",
-   "all_categories"   =>"همه دسته بندی ها",
-   "location"   =>"محل",
-   "send_message"   =>"پیام فرستادن",
-   "phone_gsm"   =>"تلفن جی اس ام",
-   "phone_office"   =>"تلفن دفتر",
-   "add_to_favorites"   =>"اضافه کردن به علاقه مندی ها",
-   "send"   =>"ارسال",
-   "search_name"   =>"نام جستجو",
-   "my_favorite_searches"   =>"جستجوهای مورد علاقه",
-   "search_desc"   =>"شما می توانید انتخابهای جستجوی دلخواه خود را از اینجا اضافه و مدیریت کنید.",
-   "complaint_placeholder"   =>"جزئیات شکایت خود را اینجا بنویسید.",
-   "show_details"   =>"نمایش جزئیات",
-   "edit"   =>"ویرایش کنید",
-   "approve"   =>"تایید",
-   "passive"   =>"منفعل",
-   "offered_by"   =>"پیشنهاد شده توسط",
-   "more_ads_by"   =>"تبلیغات بیشتر توسط",
-   "click_phone"   =>"نمایش شماره تلفن",
-   "share"   =>"این تبلیغ را به اشتراک بگذارید",
-   "report"   =>"گزارش این آگهی",
-   "features"   =>"امکانات",
-   "streetview"   =>"نمای خیابان",
-   "recommended_ads"   =>"تبلیغات پیشنهادی برای شما",
-   "new"   =>"جدید",
-   "short_info"   =>"اطلاعات کوتاه",
-   "secure_trading"   =>"تجارت امن",
-   "24/7"   =>"پشتیبانی 24/7",
-   "easy_trading"   =>"تجارت آسان",
-   "need_help"   =>"کمک خواستن؟",
-   "give_a_call"   =>"تماس بگیرید",
-   "message_sent"   =>"پیغام فرستاده شد!",
-   "asap"   =>"پیام ارسال شده ، فروشنده با شما تماس خواهد گرفت.",
-   "ad_id"   =>"شناسه تبلیغ",
-   "contact_with"   =>"ارتباط با",
-   "create_adv"   =>"ایجاد آگهی",
-   "edit_adv"   =>"ویرایش تبلیغ",
-   "mandatory_fields"   =>"فیلد های اجباری",
-   "ad_post"   =>"آگهی ارسال",
-   "sell_item"   =>"کالا یا خدمات را بفروشید",
-   "search_save"   =>"جستجوی مورد علاقه با موفقیت ذخیره شد",
-   "address"   =>"نشانی",
-   "email"   =>"پست الکترونیک",
-   "phone"   =>"تلفن",
-   "send_us_your_feedback"   =>"بازخورد خود را برای ما ارسال کنید",
-   "online_shopping"   =>"گرفتن",
-   "approved"   =>"با موفقیت تأیید شد",
-   "declined"   =>"با موفقیت کاهش یافت",
-   "search_on_map"   =>"جستجو در نقشه",
-   "post_free_ad"   =>"ارسال آگهی رایگان",
-   "select_a_category"   =>"یک دسته بندی را انتخاب کنید",
-   "select_a_sub_category"   =>"یک زیر شاخه را انتخاب کنید",
-   "all_dopings_added"   =>"کلیه انواع دوپینگ برای این تبلیغ اضافه می شود.",
-   "is_get_adv"   =>   [
-      "name"      =>"گرفتن",
-
-   ],
-   "corporate_info"   =>"اطلاعات شرکت",
-   "featured_ads"   =>"تبلیغات برجسته",
-   "trending_ads"   =>"تبلیغات مرسوم ، مد روز",
-   "search_ads_result_message"   =>   [
-      "name"      =>":      تعداد آگهی های یافت شده برای:جستجوی نام",
-
-   ],
-   "total"   =>"جمع",
-   "quantity"   =>"مقدار",
-   "view_cart"   =>"مشاهده سبد خرید",
-   "no_ads"   =>"بدون تبلیغات!",
-   "show_display_mode"   =>   [
-      "map"      =>"نقشه",
-      "list"      =>"لیست",
-
-   ],
-   "advs_list_table_thead"   =>   [
-      "name"      =>"نام تبلیغ",
-      "price"      =>"قیمت",
-      "publish_at"      =>"تاریخ تبلیغ",
-      "location_city"      =>"شهر",
-      "location_country"      =>"کشور",
-
-   ],
-   "show_list_view"   =>   [
-      "name"      =>"لیست",
-
-   ],
-   "show_table_view"   =>   [
-      "name"      =>"جدول",
-
-   ],
-   "showcase"   =>   [
-      "name"      =>"ویترین",
-
-   ],
-   "new_ad"   =>   [
-      "name"      =>"آگهی جدید",
-
-   ],
-   "profile"   =>   [
-      "name"      =>"مشخصات",
-
-   ],
-   "my_ads"   =>   [
-      "name"      =>"تبلیغات من",
-
-   ],
-
+    // Select cat
+    'select_category_step_by_step' => 'Select Category Step by Step',
 ];
