@@ -201,35 +201,35 @@ return [
     'total' => 'Total',
     'quantity' => 'Sasia',
     'view_cart' => 'Shikoni Shportën',
-    'no_ads' => 'Pa reklama!',
+    'no_ads' => 'Asnjë njoftime nuk u gjet.',
     'show_display_mode' => [
-        'map' => 'hartë',
+        'map' => 'Hartë',
         'list' => 'Listë',
     ],
     'advs_list_table_thead' => [
         'name' => 'Emri Njoftimit',
         'price' => 'Çmim',
         'publish_at' => 'Data Njoftime',
-        'location_city' => 'Qytet',
+        'location_city' => 'Qarku',
         'location_country' => 'Shteti',
     ],
     'show_list_view' => [
         'name' => 'Listë',
     ],
     'show_table_view' => [
-        'name' => 'tabelë',
+        'name' => 'Tabelë',
     ],
     'showcase' => [
-        'name' => 'vitrinë',
+        'name' => 'Vitrinë',
     ],
     'new_ad' => [
-        'name' => 'Shpallja e re',
+        'name' => 'Njoftime i ri',
     ],
     'profile' => [
         'name' => 'Profile',
     ],
     'my_ads' => [
-        'name' => 'Reklamat e mia',
+        'name' => 'Njoftimet e mia',
     ],
     'sold_out' => [
         'name' => 'E shitur',
@@ -252,29 +252,29 @@ return [
         'name' => 'Në muajin e fundit'
     ],
     'ads_with_photo' => [
-        'name' => 'Reklama me foto'
+        'name' => 'Njoftime me foto'
     ],
     'ads_with_video' => [
         'name' => 'Njoftime me video'
     ],
     'yes' => [
-        'name' => 'po'
+        'name' => 'Po'
     ],
     "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
     "continue" => 'Vazhdoj',
     "gallery" => 'Galeri',
 
     // Pending screen
-    'pending_message_1' => 'Shpallja është në Procesin e Miratimit',
+    'pending_message_1' => 'Njoftimi është në Procesin e Miratimit',
     'pending_message_2' => "Data e azhurnimit të njoftime",
     'pending_message_3' => 'Koha e parashikuar e pritjes',
     'pending_message_4' => 'Koha e kaluar në procesin e miratimit do t\'i shtohet kohës së Vitaminat.',
-    'pending_message_5' => 'Asnjë transaksion nuk mund të bëhet nga qendra e thirrjeve në lidhje me reklamën në procesin e miratimit.',
-    'hours' => 'orë',
+    'pending_message_5' => 'Asnjë transaksion nuk mund të bëhet nga qendra e thirrjeve në lidhje me njoftimin në procesin e miratimit.',
+    'hours' => 'Oraret',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'Nëse informacioni i mëposhtëm në lidhje me reklamën tuaj është i saktë, klikoni në butonin "Vazhdo" dhe shkoni në hapin tjetër.',
+        'part_1' => 'Nëse informacioni i mëposhtëm në lidhje me njoftimin tuaj është i saktë, klikoni në butonin "Vazhdo" dhe shkoni në hapin tjetër.',
         'part_2' => 'Nëse jo, klikoni në butonin "Ndrysho".',
     ],
     'views' => 'Shikime',
@@ -282,9 +282,9 @@ return [
     // Detail page
     "no_street_view" => "Asnjë imazh me pamje nga rruga në këtë vendndodhje",
     'edit_my_contact_info' => 'Ndryshoni informacionin e kontaktit tim',
-    'update_my_contact_info' => 'azhurnoni informacionin e kontaktit tim',
+    'update_my_contact_info' => 'Azhurnoni informacionin e kontaktit tim',
     'contact_info' => 'Informacioni i kontaktit',
-    'ad_info' => 'Informacione për reklamat',
+    'ad_info' => 'Informacione për njoftimin',
 
     // Select cat
     'select_category_step_by_step' => 'Zgjidhni kategorinë hap pas hapi',
