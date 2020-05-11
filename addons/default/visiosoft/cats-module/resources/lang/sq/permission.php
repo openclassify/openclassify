@@ -10,12 +10,12 @@ return [
         ],
     ],
     'placeholderforsearch' => [
-        'name'   => 'Llojet e kategorisë',
+        'name'   => 'Mbajtësi i vendit për kërkim',
         'option' => [
-            'read'   => 'A mund të lexoni Llojet e kategorisë?',
-            'write'  => 'Mund të krijojë / modifikojë  kategoria për kërkim?
+            'read'   => 'A mund të lexoni mbajtësin e vendit për kërkim?',
+            'write'  => 'Mund të krijojë / modifikojë  vendin për kërkim?
 ',
-            'delete' => 'Mund ta fshij kërkimin për llojet e kategorive?',
+            'delete' => 'Mund të fshijë mbajtësin e vendit për kërkim?',
         ],
     ],
 ];
