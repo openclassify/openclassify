@@ -2,31 +2,31 @@
 
 return [
     'advs' => [
-        'title' => 'Ads',
+        'title' => 'Njoftime',
     ],
     'categories' => [
         'title' => 'Kategoritë',
     ],
     'countries' => [
-        'title' => 'vendet',
+        'title' => 'Shtetet',
     ],
     'cities' => [
-        'title' => 'Qytetet',
+        'title' => 'Qarku',
     ],
     'districts' => [
-        'title' => 'rrethet',
+        'title' => 'Bashkia',
     ],
     'neighborhoods' => [
-        'title' => 'lagjet',
+        'title' => 'Njesit administrative',
     ],
     'village' => [
-        'title' => 'fshati',
+        'title' => 'Fshati',
     ],
     'custom_fields' => [
         'title' => 'Fushat e personalizuara',
     ],
     'custom_field_advs' => [
-        'title' => 'Reklama me terren personal',
+        'title' => 'Njoftimet me terren personal',
     ],
     'cf_values' => [
         'title' => 'Vlerat Cf',
@@ -37,7 +37,7 @@ return [
     'assets_clear' => [
         'name' => 'Pasuritë e Qarta'
     ],
-    'general' => 'i përgjithshëm',
-    'ads' => 'Ads',
-    'user' => 'përdorues',
+    'general' => 'I përgjithshëm',
+    'ads' => 'Njoftime',
+    'user' => 'Perdorues',
 ];
