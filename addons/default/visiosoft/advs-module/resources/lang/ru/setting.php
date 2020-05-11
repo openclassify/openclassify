@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Время публикации по умолчанию',
     ],
-    'default_adv_limit' => [
-        'name' => 'Предел рекламы по умолчанию',
-    ],
     'address' => [
         'name' => 'Контактный адрес',
     ],
