@@ -2,7 +2,6 @@
 
 return [
     'error_added_cart' => 'Tələb olunan məhsul hazırda itkin və ya hərəkətsizdir',
-    'please_buy_package' => 'Zəhmət olmasa paket alın',
     'please_payment' => 'Zəhmət olmasa ödəyin',
     'bank_account_info' => 'Bank hesabı məlumatları',
     'agreement' => 'Post\'u tıklayarak, İstifadə şərtlərimizlə razılaşırsınız və Məxfilik Siyasəti bu maddənin qanuni sahibi olduğunuzu qəbul edirsiniz.',
