@@ -50,15 +50,6 @@ return [
             'default_value' => 10,
         ],
     ],
-    'default_adv_limit' => [
-        'type' => 'anomaly.field_type.integer',
-        'bind' => 'adv.default_adv_limit',
-        'env' => 'ADV_LIMIT',
-        'required' => true,
-        'config' => [
-            'default_value' => 15,
-        ],
-    ],
 
     'iban_numbers' => [
         'type' => 'anomaly.field_type.wysiwyg',

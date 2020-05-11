@@ -23,7 +23,6 @@ return [
                     'auto_approve',
                     'estimated_pending_time',
                     'default_published_time',
-                    'default_adv_limit',
                     'default_GET',
                     'thumbnail_width',
                     'thumbnail_height',
