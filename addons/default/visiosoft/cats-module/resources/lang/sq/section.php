@@ -5,6 +5,6 @@ return [
         'title' => 'Kategori',
     ],
     'placeholderforsearch' => [
-        'title' => 'Placeholder',
+        'title' => 'Vendmbajtësi',
     ],
 ];
