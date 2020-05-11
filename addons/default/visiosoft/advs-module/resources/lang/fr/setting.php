@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Heure de publication par défaut',
     ],
-    'default_adv_limit' => [
-        'name' => 'Limite des annonces par défaut',
-    ],
     'address' => [
         'name' => 'Adresse de contact',
     ],
