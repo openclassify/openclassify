@@ -5,13 +5,13 @@ return [
         'title' => 'Shtetet',
     ],
     'cities' => [
-        'title' => 'Qytetet',
+        'title' => 'Qarku',
     ],
     'districts' => [
-        'title' => 'Rreth',
+        'title' => 'Bashkia',
     ],
     'neighborhoods' => [
-        'title' => 'Lagje',
+        'title' => 'Njesit administrative',
     ],
     'village' => [
         'title' => 'Fshati',
