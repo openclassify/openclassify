@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Koha e publikimit të paracaktuar',
     ],
-    'default_adv_limit' => [
-        'name' => 'Kufiri i paracaktuar i reklamave',
-    ],
     'address' => [
         'name' => 'Kontaktoni Adresën',
     ],
