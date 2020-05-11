@@ -2,11 +2,11 @@
 
 return [
     'advs' => [
-        'name'   => 'Ads',
+        'name'   => 'Njoftime',
         'option' => [
-            'read'   => 'Mund të lexoni reklama?',
+            'read'   => 'Mund të lexoni Njoftimet?',
             'write'  => 'Mund të krijoni / modifikoni njoftime?',
-            'delete' => 'Mund të fshini reklamat?',
+            'delete' => 'Mund të fshini Njoftimet?',
         ],
     ],
     'categories' => [
@@ -18,7 +18,7 @@ return [
         ],
     ],
     'village' => [
-        'name'   => 'fshati',
+        'name'   => 'Fshati',
         'option' => [
             'read'   => 'Mund të lexoni fshatin?',
             'write'  => 'Mund të krijojë / modifikojë fshatin?',
@@ -34,11 +34,11 @@ return [
         ],
     ],
     'custom_field_advs' => [
-        'name'   => 'Reklama me terren personal',
+        'name'   => 'Njoftimet me terren personal',
         'option' => [
-            'read'   => 'Mund të lexoni reklama në terren me porosi?',
+            'read'   => 'Mund të lexoni njoftimet në terren me porosi?',
             'write'  => 'Mund të krijoni / modifikoni njoftime me terren personal?',
-            'delete' => 'Mund të fshini reklamat e fushave me porosi?',
+            'delete' => 'Mund të fshini njoftimet e fushave me porosi?',
         ],
     ],
     'cf_values' => [
