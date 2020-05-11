@@ -9,7 +9,7 @@ return [
     ],
     'hide_zero_price' => [
         'name' => 'Fshih çmimin nëse Zero',
-        'instructions' => 'Fsheh çmimin nëse çmimi i reklamës është 0',
+        'instructions' => 'Fsheh çmimin nëse çmimi i njoftimeve është 0',
     ],
     'estimated_pending_time' => [
         'name' => 'Koha e parashikuar e pritjes',
@@ -51,7 +51,7 @@ return [
         'name' => 'Kufiri i fundit',
     ],
     'site_address' => [
-        'name' => 'Adresa e sitit',
+        'name' => 'Adresa e faqes',
         'warning'      => 'Auto shtuar www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
@@ -59,25 +59,25 @@ return [
     ],
 
     'default_country' => [
-        'name' => 'Vendi i paracaktuar i reklamave',
+        'name' => 'Shteti i paracaktuar i njoftimeve',
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Keyelësi API i Konvertuesit të Valutave'
     ],
     'default_city' => [
-        'name' => 'Qyteti i paracaktuar Ad',
+        'name' => 'Qarku i paracaktuar njoftimeve',
     ],
     'default_district' => [
-        'name' => 'Rrethi i paracaktuar i reklamave',
+        'name' => 'Bashkia i paracaktuar i njoftimeve',
     ],
     'default_neighborhood' => [
-        'name' => 'Lagjia e paracaktuar e reklamave',
+        'name' => 'Njesite administrative e paracaktuar e njoftimeve',
     ],
     'default_currency' => [
-        'name' => 'Valuta e paracaktuar e reklamës',
+        'name' => 'Valuta e paracaktuar e  njoftimeve',
     ],
     'default_GET' => [
-        'name' => 'Reklama e paracaktuar GET',
+        'name' => ' Njoftimet e paracaktuar SET',
     ],
     'thumbnail_width' => [
         'name' => 'Gjerësia e Thumbnail',
