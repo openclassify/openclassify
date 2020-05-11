@@ -41,16 +41,16 @@ return [
         'name' => 'Pagesa Online'
     ],
     'city' => [
-        'name' => 'Qytet'
+        'name' => 'Qarku'
     ],
     'country' => [
         'name' => 'Shteti'
     ],
     'district' => [
-        'name' => 'Rreth'
+        'name' => 'Bashkia'
     ],
     'neighborhood' => [
-        'name' => 'Lagje'
+        'name' => 'Njesi administrative'
     ],
     'village' => [
         'name' => 'Fshati'
@@ -105,12 +105,12 @@ return [
         'name' => 'Njoftimet e Preferuarar'
     ],
     'my_adv' => [
-        'name' => 'advs'
+        'name' => 'Njoftimet'
     ],
     'description' =>  'Përshkrim',
     'explanation' =>  'Shpjegim',
     'type' => [
-        'name' => 'Lloj'
+        'name' => 'Tipi'
     ],
     'parent_adv' => [
         'name' => 'Njoftime te Ngjitura'
@@ -122,7 +122,7 @@ return [
     'home' => 'Faqja Kryesore',
     'list-page' => 'Faqja e Listës',
     'search' => 'Kërko',
-    'recommended' => 'Njoftime të Rekomanduara për ju',
+    'recommended' => 'Njoftime të rekomanduara për ju',
     'filter' => 'Filtër',
     'sort' => 'Lloj',
     'sort_by' => 'Rendit Sipas',
@@ -130,8 +130,8 @@ return [
     'pick_ordering' => 'Renditje',
     'price_high' => 'Cmimi i larte deri tek i uleti',
     'price_low' => 'Cmimi i ulet deri tek i larte',
-    'newest' => 'Më të Rejat',
-    'oldest' => 'Më të Vjetrat',
+    'newest' => 'Më të rejat',
+    'oldest' => 'Më të vjetrat',
     'address_a_z' => 'Adresa (A deri Z)',
     'address_z_a' => 'Adresa (Z në A)',
     'categories' => 'Kategoritë',
@@ -147,18 +147,18 @@ return [
     'search_desc' => 'Ju mund të shtoni dhe menaxhoni zgjedhjet tuaja të preferuara të kërkimit këtu.',
     'complaint_placeholder' => 'Shkruaj detajet e ankesave këtu.',
     'show_details' => 'Trego detajet',
-    'ad_actions' => 'Veprimet e reklamave',
+    'ad_actions' => 'Veprimet e njoftimeve',
     'edit' => 'Redakto',
-    'approve' => 'miratoj',
-    'passive' => "pasiv",
+    'approve' => 'Miratoj',
+    'passive' => "Pasiv",
     'offered_by' => 'Ofrohet nga',
-    'more_ads_by' => 'Më shumë reklama nga',
+    'more_ads_by' => 'Më shumë Njoftime nga',
     'click_phone' => 'Trego numrin e telefonit',
-    'share' => 'pjesë',
-    'report' => 'Raporto këtë shpallje',
+    'share' => 'Pjesë',
+    'report' => 'Raporto këtë Njoftime',
     'features' => 'Veçori',
     "streetview" => "Pamja e rrugës",
-    'recommended_ads' => 'Reklama të rekomanduara për ju',
+    'recommended_ads' => 'Njoftime të rekomanduara për ju',
     'new' => 'I ri',
     'short_info' => 'Informacion i shkurtër',
     'secure_trading' => 'Tregtim i Sigurt',
@@ -166,40 +166,40 @@ return [
     'easy_trading' => 'Tregtim i lehtë',
     'need_help' => 'Kam nevojë për ndihmë?',
     'give_a_call' => 'Bëni një telefonatë',
-    'message_sent' => 'Mesazhi u Dergua!',
+    'message_sent' => 'Mesazhi u dergua!',
     'asap' => 'Mesazhi i dërguar, shitësi do t\'ju kontaktojë po ashtu.',
     'ad_id' => 'Nr. Njoftime',
     'contact_with' => 'Kontaktoni me',
-    'create_adv' => 'Krijoni shpalljen',
-    'edit_adv' => 'Ndrysho shpalljen',
+    'create_adv' => 'Krijoni Njoftimin',
+    'edit_adv' => 'Ndrysho Njoftimin',
     'mandatory_fields' => 'Të dhëna të detyrueshme',
     'ad_post' => 'Postimi i Njoftime',
     'sell_item' => 'Shitet nje artikull ose sherbim',
     'search_save' => 'Kërkimi i preferuar u ruajt me sukses',
     'address' => 'Adresë',
     'email' => 'E-Mail',
-    'phone' => 'telefon',
+    'phone' => 'Telefon',
     'send_us_your_feedback' => 'Na Dërgoni Reagimin tuaj',
     'online_shopping' => 'MARR',
     'approved' => 'Miratuar me sukses',
     'extended' => 'Zgjatur me sukses',
     'declined' => 'Ka rënë me sukses',
     'search_on_map' => 'Kërkimi në hartë',
-    'post_free_ad' => 'Posto Njoftime Falas',
+    'post_free_ad' => 'Posto NJOFTIME',
     'select_a_category' => 'Zgjidh nje Kategori',
     'select_a_sub_category' => 'Zgjidhni një Nën Kategori',
-    'all_dopings_added' => 'Të gjitha llojet e vitamina janë shtuar për këtë shpallje.',
+    'all_dopings_added' => 'Të gjitha llojet e vitamina janë shtuar për këtë njoftim',
     'is_get_adv' => [
         'name' => 'MARR'
     ],
     'corporate_info' => 'Informacioni i korporatës',
-    'featured_ads' => "Shpalljet e preferuara",
-    'trending_ads' => 'Reklamat e modës',
+    'featured_ads' => "Njoftimet e preferuara",
+    'trending_ads' => 'Njoftimet e modës',
     'search_ads_result_message' => [
         'name' => ': numëroni njoftime të gjetura për: kërkim të emrit',
     ],
     'total' => 'Total',
-    'quantity' => 'sasi',
+    'quantity' => 'Sasia',
     'view_cart' => 'Shikoni Shportën',
     'no_ads' => 'Pa reklama!',
     'show_display_mode' => [
