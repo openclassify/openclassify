@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Default Publish Time',
     ],
-    'default_adv_limit' => [
-        'name' => 'Default Ads Limit',
-    ],
     'address' => [
         'name' => 'Contact Adress',
     ],
