@@ -5,6 +5,8 @@ use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
+use Visiosoft\AdvsModule\Currency\Currency;
+use Visiosoft\AdvsModule\Currency\CurrencyFormat;
 
 class AdvsModulePlugin extends Plugin
 {
@@ -24,6 +26,11 @@ class AdvsModulePlugin extends Plugin
                     }
 
                     return $ad;
+                }
+            ), new \Twig_SimpleFunction(
+                'currencyFormat',
+                function ($number, $currency = null, array $options = []) {
+                    return app(CurrencyFormat::class)->format($number, $currency, $options);
                 }
             ), new \Twig_SimpleFunction(
                 'isActive',
