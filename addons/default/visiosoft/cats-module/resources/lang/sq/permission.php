@@ -2,7 +2,7 @@
 
 return [
     'category' => [
-        'name'   => 'kategori',
+        'name'   => 'Kategori',
         'option' => [
             'read'   => 'Mund të lexoni kategori?',
             'write'  => 'Mund të krijoni / modifikoni kategori?',
@@ -10,11 +10,12 @@ return [
         ],
     ],
     'placeholderforsearch' => [
-        'name'   => 'Placeholderforsearch',
+        'name'   => 'Llojet e kategorisë',
         'option' => [
-            'read'   => 'A mund të lexoni pronarin e faqes?',
-            'write'  => 'Mund të krijojë / modifikojë vendin e fshehtë?',
-            'delete' => 'Mund ta fshini vendin e mbajtjes së faqes?',
+            'read'   => 'A mund të lexoni Llojet e kategorisë?',
+            'write'  => 'Mund të krijojë / modifikojë  kategoria për kërkim?
+',
+            'delete' => 'Mund ta fshij kërkimin për llojet e kategorive?',
         ],
     ],
 ];
