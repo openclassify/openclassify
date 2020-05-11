@@ -5,6 +5,6 @@ return [
         'name' => 'Kategori',
     ],
     'placeholderforsearch' => [
-        'name' => 'Fusha e kërkimit',
+        'name' => 'Mbajtësi i vendit për kërkim',
     ],
 ];
