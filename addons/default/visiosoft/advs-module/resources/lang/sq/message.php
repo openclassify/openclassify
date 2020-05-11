@@ -2,7 +2,6 @@
 
 return [
     'error_added_cart' => 'Produkti i kërkuar aktualisht mungon ose joaktiv',
-    'please_buy_package' => 'Ju lutemi blini paketën',
     'please_payment' => 'Ju lutemi paguani',
     'bank_account_info' => 'Informacione për llogarinë bankare',
     'agreement' => 'Duke klikuar Postën, ju pranoni që Kushtet tona të Përdorimit dhe Politika e Privatësisë pranojnë se jeni pronari i ligjshëm i këtij artikulli.',
