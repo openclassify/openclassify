@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'وقت النشر الافتراضي',
     ],
-    'default_adv_limit' => [
-        'name' => 'الحد الافتراضي للإعلانات',
-    ],
     'address' => [
         'name' => 'الاتصال العنوان',
     ],
