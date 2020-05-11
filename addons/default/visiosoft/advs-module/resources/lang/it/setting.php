@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Tempo di pubblicazione predefinito',
     ],
-    'default_adv_limit' => [
-        'name' => 'Limite annunci predefiniti',
-    ],
     'address' => [
         'name' => 'Indirizzo di contatto',
     ],
