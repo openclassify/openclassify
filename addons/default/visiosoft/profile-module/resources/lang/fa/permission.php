@@ -1,24 +1,20 @@
 <?php
 
- return[
-   "profile"   =>   [
-      "name"      =>"مشخصات",
-      "option"      =>      [
-         "read"         =>"می توانید نمایه را بخوانید؟        ",
-         "write"         =>"آیا می توانید نمایه ایجاد یا ویرایش کنید؟        ",
-         "delete"         =>"می توانید نمایه را حذف کنید؟"
-      ],
-
-   ],
-   "adress"   =>   [
-      "name"      =>"آدرس",
-      "option"      =>      [
-         "read"         =>"می توانید آدرس بخوانید؟        ",
-         "write"         =>"آیا می توانید آدرس ایجاد یا ویرایش کنید؟        ",
-         "delete"         =>"می توانید آدرس را حذف کنید؟",
-
-      ],
-
-   ],
-
+return [
+    'profile' => [
+        'name'   => 'Profile',
+        'option' => [
+            'read'   => 'Can read profile?',
+            'write'  => 'Can create/edit profile?',
+            'delete' => 'Can delete profile?',
+        ],
+    ],
+    'adress' => [
+        'name'   => 'Adress',
+        'option' => [
+            'read'   => 'Can read adress?',
+            'write'  => 'Can create/edit adress?',
+            'delete' => 'Can delete adress?',
+        ],
+    ],
 ];
