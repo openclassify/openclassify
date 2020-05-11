@@ -549,7 +549,8 @@ class AdvsController extends PublicController
 
             $count_user_ads = count($this->adv_model->userAdv()->get());
 
-            if (setting_value('visiosoft.module.advs::default_adv_limit') < $count_user_ads) {
+            if (setting_value('visiosoft.module.advs::default_adv_limit') < $count_user_ads ||
+                (setting_value('visiosoft.module.advs::default_adv_limit') == 0 && $count_user_ads == 0)) {
                 if ($advModel->is_enabled('packages') and $adv->slug == "") {
                     $parent_cat = $categoryModel->getParentCats($request->cat1, 'parent_id');
                     $packageModel = new PackageModel();
