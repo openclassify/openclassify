@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"دسته بندی",
-   "name"   =>"ماژول دسته",
-   "description"   =>""
+return [
+    'title'       => 'Category',
+    'name'        => 'Category Module',
+    'description' => ''
 ];
