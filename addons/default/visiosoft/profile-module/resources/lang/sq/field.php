@@ -53,7 +53,7 @@ return [
         'name' => 'Telefoni i zyres'
     ],
     'register_type' => [
-        'name' => 'Lloji i regjistrimit'
+        'name' => 'Tipi i regjistrimit'
     ],
     'identification_number' => [
         'name' => 'Numrin e identifikimit'
