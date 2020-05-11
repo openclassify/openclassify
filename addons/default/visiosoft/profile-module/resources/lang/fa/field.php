@@ -1,530 +1,435 @@
 <?php
 
- return[
-   "file"   =>   [
-      "name"      =>"عکس",
-
-   ],
-   "first_name"   =>   [
-      "name"      =>"نام کوچک",
-
-   ],
-   "last_name"   =>   [
-      "name"      =>"نام خانوادگی",
-
-   ],
-   "username"   =>   [
-      "name"      =>"نام کاربری",
-
-   ],
-   "display_name"   =>   [
-      "name"      =>"نام نمایش",
-
-   ],
-   "email"   =>   [
-      "name"      =>"آدرس پست الکترونیکی",
-
-   ],
-   "sitename"   =>   [
-      "name"      =>"نام سایت",
-
-   ],
-   "activated"   =>   [
-      "name"      =>"کاربر فعال",
-
-   ],
-   "enabled"   =>   [
-      "name"      =>"کاربر را فعال کنید",
-
-   ],
-   "country"   =>   [
-      "name"      =>"کشور",
-
-   ],
-   "city"   =>   [
-      "name"      =>"شهر",
-
-   ],
-   "district"   =>   [
-      "name"      =>"ناحیه",
-
-   ],
-   "neighborhood"   =>   [
-      "name"      =>"محله",
-
-   ],
-   "village"   =>   [
-      "name"      =>"روستا",
-
-   ],
-   "gsm_phone"   =>   [
-      "name"      =>"شماره تلفن GSM",
-
-   ],
-   "land_phone"   =>   [
-      "name"      =>"شماره تلفن زمین",
-
-   ],
-   "office_phone"   =>   [
-      "name"      =>"شماره تلفن دفتر",
-
-   ],
-   "register_type"   =>   [
-      "name"      =>"نوع ثبت نام",
-
-   ],
-   "identification_number"   =>   [
-      "name"      =>"شماره شناسایی",
-
-   ],
-   "adress_name"   =>   [
-      "name"      =>"نام آدرس",
-
-   ],
-   "adress_first_name"   =>   [
-      "name"      =>"نام کوچک",
-
-   ],
-   "adress_last_name"   =>   [
-      "name"      =>"نام خانوادگی",
-
-   ],
-   "actions"   =>   [
-      "name"      =>"اقدامات",
-
-   ],
-   "adress_content"   =>   [
-      "name"      =>"محتوای آدرس",
-
-   ],
-   "adress_post_code"   =>   [
-      "name"      =>"کد پستی",
-
-   ],
-   "adress_gsm_phone"   =>   [
-      "name"      =>"تلفن جی اس ام",
-
-   ],
-   "adress_land_phone"   =>   [
-      "name"      =>"خط تلفن ثابت",
-
-   ],
-   "adress_country"   =>   [
-      "name"      =>"کشور",
-
-   ],
-   "adress_city"   =>   [
-      "name"      =>"شهر",
-
-   ],
-   "adress_district"   =>   [
-      "name"      =>"ناحیه",
-
-   ],
-   "adress_neighborhood"   =>   [
-      "name"      =>"محله",
-
-   ],
-   "adress_village"   =>   [
-      "name"      =>"روستا",
-
-   ],
-   "messages"   =>   [
-      "name"      =>"پیام ها",
-
-   ],
-   "user"   =>   [
-      "name"      =>"کاربر",
-
-   ],
-   "menu_profile"   =>   [
-      "name"      =>"مشخصات",
-
-   ],
-   "menu_balance"   =>   [
-      "name"      =>"تعادل",
-
-   ],
-   "create"   =>   [
-      "name"      =>"ايجاد كردن",
-
-   ],
-   "edit"   =>   [
-      "name"      =>"ویرایش کنید",
-
-   ],
-   "list"   =>   [
-      "name"      =>"لیست",
-
-   ],
-   "menu_address"   =>   [
-      "name"      =>"نشانی",
-
-   ],
-   "menu_orders"   =>   [
-      "name"      =>"سفارشات",
-
-   ],
-   "menu_favorites"   =>   [
-      "name"      =>"موارد دلخواه",
-
-   ],
-   "menu_archived_ads"   =>   [
-      "name"      =>"تبلیغات بایگانی شده",
-
-   ],
-   "menu_pending_ads"   =>   [
-      "name"      =>"در انتظار تأیید",
-
-   ],
-   "menu_delete_account"   =>   [
-      "name"      =>"بستن حساب",
-
-   ],
-   "menu_my_ads"   =>   [
-      "name"      =>"تبلیغات من",
-
-   ],
-   "menu_fav_ads"   =>   [
-      "name"      =>"تبلیغات مورد علاقه",
-
-   ],
-   "menu_hello_msg"   =>   [
-      "name"      =>"سلام",
-
-   ],
-   "menu_last_msg"   =>   [
-      "name"      =>"آخرین بار وارد سیستم شده اید",
-
-   ],
-   "menu_packages"   =>   [
-      "name"      =>"بسته های من",
-
-   ],
-   "menu_adv_packages"   =>   [
-      "name"      =>"بسته های تبلیغاتی",
-
-   ],
-   "menu_time_packages"   =>   [
-      "name"      =>"بسته های زمانی",
-
-   ],
-   "profile_details"   =>   [
-      "name"      =>"جزئیات پروفایل",
-
-   ],
-   "profile_photo"   =>   [
-      "name"      =>"عکس پروفایل",
-
-   ],
-   "adv_listing_banner"   =>   [
-      "name"      =>"بنر صفحه نمایش لیست تبلیغات",
-
-   ],
-   "approve"   =>   [
-      "name"      =>"تایید",
-
-   ],
-   "approved"   =>   [
-      "name"      =>"تایید شده",
-
-   ],
-   "pending"   =>   [
-      "name"      =>"در انتظار",
-
-   ],
-   "passive"   =>   [
-      "name"      =>"منفعل",
-
-   ],
-   "pending_admin"   =>   [
-      "name"      =>"در انتظار",
-
-   ],
-   "menu_messages"   =>   [
-      "name"      =>"پیام ها",
-
-   ],
-   "menu_my_purchase"   =>   [
-      "name"      =>"خرید من",
-
-   ],
-   "menu_my_sales"   =>   [
-      "name"      =>"فروش من",
-
-   ],
-   "right_secure_trading_subject"   =>   [
-      "name"      =>"تجارت امن",
-
-   ],
-   "right_secure_trading_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet، consectetur elit adipisicing",
-
-   ],
-   "right_support_subject"   =>   [
-      "name"      =>"پشتیبانی 24/7",
-
-   ],
-   "right_support_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet، consectetur elit adipisicing",
-
-   ],
-   "right_easy_trading_subject"   =>   [
-      "name"      =>"تجارت آسان",
-
-   ],
-   "right_easy_trading_msg"   =>   [
-      "name"      =>"Lorem ipsum dolor sit amet، consectetur elit adipisicing",
-
-   ],
-   "right_need_help_subject"   =>   [
-      "name"      =>"کمک خواستن؟",
-
-   ],
-   "right_need_help_msg"   =>   [
-      "name"      =>"تماس بگیرید",
-
-   ],
-   "disable_account"   =>   [
-      "name"      =>"غیرفعال کردن حساب",
-
-   ],
-   "disable_account_msg"   =>   [
-      "name"      =>"حساب شما غیرفعال خواهد شد این عملیات قابل بازگشت نیست",
-
-   ],
-   "message_title"   =>"عنوان پیام",
-   "owner_name"   =>"پیام",
-   "favorites"   =>"موارد دلخواه",
-   "fav_advs"   =>"تبلیغات مورد علاقه",
-   "fav_sellers"   =>"فروشندگان مورد علاقه",
-   "fav_searches"   =>"جستجوهای مورد علاقه",
-   "posted_on"   =>"نوشته شده در",
-   "message_details"   =>"جزئیات پیام",
-   "adv_no"   =>"شماره آگهی",
-   "bill_address"   =>   [
-      "name"      =>"آدرس بیل",
-
-   ],
-   "delivery_address"   =>   [
-      "name"      =>"نشانی تحویل",
-
-   ],
-   "order_total"   =>   [
-      "name"      =>"جمع",
-
-   ],
-   "order_date"   =>   [
-      "name"      =>"تاریخ سفارش",
-
-   ],
-   "order_no"   =>   [
-      "name"      =>"شماره سفارش",
-
-   ],
-   "order_detail"   =>   [
-      "name"      =>"نمایش جزئیات",
-
-   ],
-   "detail"   =>   [
-      "name"      =>"جزئیات",
-
-   ],
-   "back"   =>   [
-      "name"      =>"بازگشت",
-
-   ],
-   "image"   =>   [
-      "name"      =>"تصویر",
-
-   ],
-   "subject"   =>   [
-      "name"      =>"موضوع",
-
-   ],
-   "price"   =>   [
-      "name"      =>"قیمت",
-
-   ],
-   "piece"   =>   [
-      "name"      =>"قطعه",
-
-   ],
-   "commission"   =>   [
-      "name"      =>"کمیسیون",
-
-   ],
-   "total"   =>   [
-      "name"      =>"جمع",
-
-   ],
-   "sub_total"   =>   [
-      "name"      =>"زیر مجموع",
-
-   ],
-   "sale"   =>   [
-      "name"      =>"فروش",
-
-   ],
-   "awaiting_tracking_number"   =>   [
-      "name"      =>"در انتظار شماره پیگیری",
-
-   ],
-   "awaiting_payment_approval"   =>   [
-      "name"      =>"منتظر تأیید پرداخت هستید",
-
-   ],
-   "paid"   =>   [
-      "name"      =>"پرداخت شده",
-
-   ],
-   "cancelled"   =>   [
-      "name"      =>"لغو شد",
-
-   ],
-   "waiting"   =>   [
-      "name"      =>"در انتظار",
-
-   ],
-   "awaiting_dispatch"   =>   [
-      "name"      =>"در انتظار اعزام",
-
-   ],
-   "shipped"   =>   [
-      "name"      =>"حمل شد",
-
-   ],
-   "delivered"   =>   [
-      "name"      =>"تحویل داده شده",
-
-   ],
-   "tracking_number"   =>   [
-      "name"      =>"شماره پیگیری",
-
-   ],
-   "was_delivered"   =>   [
-      "name"      =>"تحویل داده شد",
-
-   ],
-   "not_delivered"   =>   [
-      "name"      =>"تحویل داده نشده",
-
-   ],
-   "show_order_msg1"   =>   [
-      "name"      =>"نتیجه معاملات از طریق پست به شما اطلاع داده می شود.",
-
-   ],
-   "show_order_msg2"   =>   [
-      "name"      =>"اگر محصول در مدت یک هفته تحویل داده نشود بازپرداخت انجام می شود.",
-
-   ],
-   "show_order_msg3"   =>   [
-      "name"      =>"نتیجه معامله به آدرس پست الکترونیکی ثبت شده شما ارسال شده است.",
-
-   ],
-   "awaiting_payment"   =>   [
-      "name"      =>"در انتظار پرداخت",
-
-   ],
-   "please_entered_tracking_number"   =>   [
-      "name"      =>"لطفا شماره پیگیری را وارد کنید",
-
-   ],
-   "transport_days"   =>   [
-      "name"      =>"روزهای حمل و نقل",
-
-   ],
-   "product_not_delivered"   =>   [
-      "name"      =>"محصول تحویل داده نشده است",
-
-   ],
-   "status"   =>   [
-      "name"      =>"وضعیت",
-
-   ],
-   "cancel_sale"   =>   [
-      "name"      =>"فروش را لغو کنید",
-
-   ],
-   "send_again"   =>   [
-      "name"      =>"دوباره خواهم فرستاد",
-
-   ],
-   "content"   =>   [
-      "name"      =>"محتوا",
-
-   ],
-   "preferences_settings"   =>   [
-      "name"      =>"تنظیمات برگزیده",
-
-   ],
-   "corporate_settings"   =>   [
-      "name"      =>"تنظیمات شرکت",
-
-   ],
-   "change_password"   =>   [
-      "name"      =>"رمز عبور را تغییر دهید",
-
-   ],
-   "new_password"   =>   [
-      "name"      =>"رمز عبور جدید",
-
-   ],
-   "re_new_password"   =>   [
-      "name"      =>"رمز عبور را تأیید کنید",
-
-   ],
-   "confirm_password_input"   =>   [
-      "name"      =>"من تغییر رمز عبور خود را تأیید می کنم",
-
-   ],
-   "create_address"   =>   [
-      "name"      =>"ایجاد آدرس",
-
-   ],
-   "balance_limit"   =>   [
-      "name"      =>"حد تعادل",
-
-   ],
-   "active_ads"   =>   [
-      "name"      =>"تبلیغات فعال",
-
-   ],
-   "subscriptions"   =>   [
-      "name"      =>"اشتراک ها",
-
-   ],
-   "go_subscriptions_page"   =>   [
-      "name"      =>"به صفحه اشتراک ها بروید",
-
-   ],
-   "buy_package"   =>   [
-      "name"      =>"خرید بسته بندی",
-
-   ],
-   "expired_date"   =>   [
-      "name"      =>"تاریخ منقضی شده",
-
-   ],
-   "category"   =>   [
-      "name"      =>"دسته بندی",
-
-   ],
-   "ad_limit"   =>   [
-      "name"      =>"محدودیت آگهی",
-
-   ],
-   "publish_time"   =>   [
-      "name"      =>"زمان انتشار",
-
-   ],
-   "all_categories"   =>   [
-      "name"      =>"همه دسته بندی ها",
-
-   ],
-   "day"   =>   [
-      "name"      =>"روز",
-
-   ],
-
+return [
+    'file' => [
+        'name' => 'Photos'
+    ],
+    'first_name' => [
+        'name' => 'First Name'
+    ],
+    'last_name' => [
+        'name' => 'Last Name'
+    ],
+    'username' => [
+        'name' => 'Username'
+    ],
+    'display_name' => [
+        'name' => 'Display Name'
+    ],
+    'email' => [
+        'name' => 'Email Adress'
+    ],
+    'sitename' => [
+        'name' => 'sitename'
+    ],
+    'activated' => [
+        'name' => 'User Active'
+    ],
+    'enabled' => [
+        'name' => 'User Enable'
+    ],
+    'country' => [
+        'name' => 'Country'
+    ],
+    'city' => [
+        'name' => 'City'
+    ],
+    'district' => [
+        'name' => 'District'
+    ],
+    'neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'village' => [
+        'name' => 'Village'
+    ],
+    'gsm_phone' => [
+        'name' => 'GSM Phone'
+    ],
+    'land_phone' => [
+        'name' => 'Land Phone'
+    ],
+    'office_phone' => [
+        'name' => 'Office Phone'
+    ],
+    'register_type' => [
+        'name' => 'Register Type'
+    ],
+    'identification_number' => [
+        'name' => 'Identification Number'
+    ],
+    'adress_name' => [
+        'name' => 'Adress Name'
+    ],
+    'adress_first_name' => [
+        'name' => 'First Name'
+    ],
+    'adress_last_name' => [
+        'name' => 'Last Name'
+    ],
+    'actions' => [
+        'name' => 'Actions'
+    ],
+    'adress_content' => [
+        'name' => 'Adress Content'
+    ],
+    'adress_post_code' => [
+        'name' => 'Post Code'
+    ],
+    'adress_gsm_phone' => [
+        'name' => 'Gsm Phone'
+    ],
+    'adress_land_phone' => [
+        'name' => 'Land Phone'
+    ],
+    'adress_country' => [
+        'name' => 'Country'
+    ],
+    'adress_city' => [
+        'name' => 'City'
+    ],
+    'adress_district' => [
+        'name' => 'District'
+    ],
+    'adress_neighborhood' => [
+        'name' => 'Neighborhood'
+    ],
+    'adress_village' => [
+        'name' => 'Village'
+    ],
+    'messages' => [
+        'name' => 'Messages'
+    ],
+    'user' => [
+        'name' => 'User'
+    ],
+
+
+
+
+
+    /*Menu Button*/
+    'profile' => [
+        'name' => 'Profile'
+    ],
+
+    'create' => [
+        'name' => 'Create'
+    ],
+    'edit' => [
+        'name' => 'Edit'
+    ],
+    'delete' => [
+        'name' => 'Delete'
+    ],
+    'list' => [
+        'name' => 'List'
+    ],
+    'menu_address' => [
+        'name' => 'Address'
+    ],
+    'menu_orders' => [
+        'name' => 'Orders'
+    ],
+    'menu_favorites' => [
+        'name' => 'Favorites'
+    ],
+    'menu_archived_ads' => [
+        'name' => 'Archived ads'
+    ],
+    'menu_pending_ads' => [
+        'name' => 'Pending approval'
+    ],
+    'menu_delete_account' => [
+        'name' => 'Close account'
+    ],
+    'menu_my_ads' => [
+        'name' => 'My ads'
+    ],
+    'menu_fav_ads' => [
+        'name' => 'Favourite ads'
+    ],
+    'menu_hello_msg' => [
+        'name' => 'Hello'
+    ],
+    'menu_last_msg' => [
+        'name' => 'You last logged in at'
+    ],
+    'menu_packages' => [
+        'name' => 'My packages'
+    ],
+    'menu_adv_packages' => [
+        'name' => 'Ads Packages'
+    ],
+    'menu_time_packages' => [
+        'name' => 'Time Packages'
+    ],
+    'profile_details' => [
+        'name' => 'Profile Details'
+    ],
+    'profile_photo' => [
+        'name' => 'Profile Photo'
+    ],
+    'adv_listing_banner' => [
+        'name' => 'Ads Listing Page Banner'
+    ],
+    'approve' => [
+        'name' => 'Approve'
+    ],
+    'approved' => [
+        'name' => 'Approved'
+    ],
+    'pending' => [
+        'name' => 'Pending'
+    ],
+    'passive' => [
+        'name' => 'Passive'
+    ],
+    'pending_admin' => [
+        'name' => 'Pending'
+    ],
+    'menu_messages' => [
+        'name' => 'Messages'
+    ],
+    'menu_my_purchase' => [
+        'name' => 'My Purchase'
+    ],
+    'menu_my_sales' => [
+        'name' => 'My Sales'
+    ],
+
+
+    /* Right Dock*/
+    'right_secure_trading_subject' => [
+        'name' => 'Secure Trading'
+    ],
+    'right_secure_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_support_subject' => [
+        'name' => '24/7 Support'
+    ],
+    'right_support_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_easy_trading_subject' => [
+        'name' => 'Easy Trading'
+    ],
+    'right_easy_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+    ],
+    'right_need_help_subject' => [
+        'name' => 'Need Help?'
+    ],
+    'right_need_help_msg' => [
+        'name' => 'Give a call on'
+    ],
+    'disable_account' => [
+        'name' => 'Disable Account'
+    ],
+    'disable_account_msg' => [
+        'name' => 'Your account will be disabled.
+                                    This operation cannot be undone'
+    ],
+
+    'message_title' => 'Message Title',
+    'owner_name' => 'Message',
+
+    'favorites' => "Favorites",
+    'fav_advs' => 'Favorite Ads',
+    'fav_sellers' => "Fav Sellers",
+    'fav_searches' => "Fav Searches",
+    'posted_on' => "Posted On",
+    'message_details' => "Message Details",
+    'adv_no' => 'Ad No',
+    'bill_address' => [
+        'name' => 'Bill Address',
+    ],
+    'delivery_address' => [
+        'name' => 'Delivery Address',
+    ],
+    'order_total' => [
+        'name' => 'Total',
+    ],
+    'order_date' => [
+        'name' => 'Order Date',
+    ],
+    'order_no' => [
+        'name' => 'Order ID',
+    ],
+    'order_detail' => [
+        'name' => 'Show Detail',
+    ],
+    /*Detail Page Order*/
+    'detail' => [
+        'name' => 'Detail',
+    ],
+    'back' => [
+        'name' => 'Back',
+    ],
+    'image' => [
+        'name' => 'Image',
+    ],
+    'subject' => [
+        'name' => 'Subject',
+    ],
+    'price' => [
+        'name' => 'Price',
+    ],
+    'piece' => [
+        'name' => 'Piece',
+    ],
+    'commission' => [
+        'name' => 'Commission',
+    ],
+    'total' => [
+        'name' => 'Total',
+    ],
+    'sub_total' => [
+        'name' => 'Sub Total',
+    ],
+    'sale' => [
+        'name' => 'Sale',
+    ],
+    'awaiting_tracking_number' => [
+        'name' => 'Awaiting Tracking Number',
+    ],
+    'awaiting_payment_approval' => [
+        'name' => 'Awaiting Payment Approval',
+    ],
+    'paid' => [
+        'name' => 'Paid',
+    ],
+    'cancelled' => [
+        'name' => 'Cancelled',
+    ],
+    'waiting' => [
+        'name' => 'Waiting',
+    ],
+    'awaiting_dispatch' => [
+        'name' => 'Awaiting dispatch',
+    ],
+    'shipped' => [
+        'name' => 'Shipped',
+    ],
+    'delivered' => [
+        'name' => 'Delivered',
+    ],
+    'tracking_number' => [
+        'name' => 'Tracking Number',
+    ],
+    'was_delivered' => [
+        'name' => 'was delivered',
+    ],
+    'not_delivered' => [
+        'name' => 'not delivered',
+    ],
+    'show_order_msg1' => [
+        'name' => 'The transaction result will be notified by mail.',
+    ],
+    'show_order_msg2' => [
+        'name' => 'Refund will be made if the product is not delivered within one week.',
+    ],
+    'show_order_msg3' => [
+        'name' => 'The result of the transaction has been sent to your registered e-mail address.',
+    ],
+
+    'awaiting_payment' => [
+        'name' => 'Awaiting Payment',
+    ],
+    'please_entered_tracking_number' => [
+        'name' => 'Please Entered Tracking Number',
+    ],
+    'transport_days' => [
+        'name' => 'Transport Days',
+    ],
+    'product_not_delivered' => [
+        'name' => 'Product not delivered',
+    ],
+    'status' => [
+        'name' => 'Status',
+    ],
+    'cancel_sale' => [
+        'name' => 'Cancel Sale',
+    ],
+    'send_again' => [
+        'name' => 'I Will Send Again',
+    ],
+    'content' => [
+        'name' => 'Content',
+    ],
+    'preferences_settings' => [
+        'name' => 'Preferences Settings',
+    ],
+
+
+    'corporate_settings' => [
+        'name' => 'Corporate Settings',
+    ],
+    'password' => [
+        'name' => 'Password',
+    ],
+    'new_password' => [
+        'name' => 'New password',
+    ],
+    're_new_password' => [
+        'name' => 'Confirm password',
+    ],
+    'confirm_password_input' => [
+        'name' => 'I confirm my password change',
+    ],
+    'create_address' => [
+        'name' => 'Create Address',
+    ],
+    'edit_address' => [
+        'name' => 'Edit Address',
+    ],
+    'balance_limit' => [
+        'name' => 'Balance Limit',
+    ],
+    'active_ads' => [
+        'name' => 'Active Ads',
+    ],
+    'subscriptions' => [
+        'name' => 'Subscriptions',
+    ],
+    'go_subscriptions_page' => [
+        'name' => 'Go to Subscriptions Page',
+    ],
+    'buy_package' => [
+        'name' => 'Buy Package',
+    ],
+    'expired_date' => [
+        'name' => 'Expired Date',
+    ],
+    'category' => [
+        'name' => 'Category',
+    ],
+    'ad_limit' => [
+        'name' => 'Ad Limit',
+    ],
+    'publish_time' => [
+        'name' => 'Publish Time',
+    ],
+    'all_categories' => [
+        'name' => 'All Categories',
+    ],
+    'day' => [
+        'name' => 'Day',
+    ],
+
+    'individual' => [
+        'name' => 'individual',
+    ],
+    'corporate' => [
+        'name' => 'corporate',
+    ],
+
+    'details' => [
+        'name' => 'Details'
+    ],
+    'choose' => [
+        'name' => 'Choose'
+    ],
+    'my_address' => 'My Address'
 ];
