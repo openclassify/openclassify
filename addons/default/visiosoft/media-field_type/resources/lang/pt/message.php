@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_folder'     => 'Which folder would you like to upload to?',
-    'upload'            => 'Add İmages | Upload İmages | Attach a photo',
-    'choose_files'      => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads'        => 'No files uploaded.',
-    'overwrite'         => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading'         => 'Uploading',
-    'loading'           => 'Loading',
+    'choose_folder'     => 'Para qual pasta você deseja enviar?',
+    'upload'            => 'Adicionar imagens | Carregar imagens | Anexe uma foto',
+    'choose_files'      => 'Quais arquivos você gostaria de usar?',
+    'no_files_selected' => 'Nenhum arquivo selecionado.',
+    'no_uploads'        => 'Nenhum arquivo enviado.',
+    'overwrite'         => 'já foi enviado. Deseja substituí-lo?',
+    'uploading'         => 'Enviando',
+    'loading'           => 'Carregando',
 ];
