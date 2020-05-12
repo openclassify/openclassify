@@ -2,36 +2,36 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Titolo di navigazione',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Azione di navigazione',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Campi Paese',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Campi data',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Campi prezzi',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'Percorso di navigazione',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Dettagli dell\'annuncio',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Scheda Dettagli annuncio',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Più recenti e visualizza tutto Btn',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Logo delle istruzioni per la registrazione della pagina',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'Stile (CSS)',
     ],
 ];
