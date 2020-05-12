@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Json',
-    'name'        => 'Json Field Type',
+    'title'       => 'jSON',
+    'name'        => 'Tipo di campo Json',
     'description' => ''
 ];
