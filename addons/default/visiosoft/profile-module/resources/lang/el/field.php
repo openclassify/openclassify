@@ -110,7 +110,7 @@ return [
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Profile'
+        'name' => 'Προφίλ'
     ],
 
     'create' => [
@@ -120,7 +120,7 @@ return [
         'name' => 'Επεξεργασία'
     ],
     'delete' => [
-        'name' => 'Delete'
+        'name' => 'Διαγράφω'
     ],
     'list' => [
         'name' => 'Λίστα'
@@ -369,7 +369,7 @@ return [
         'name' => 'Εταιρικές ρυθμίσεις',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'Κωδικός πρόσβασης',
     ],
     'new_password' => [
         'name' => 'Νέος κωδικός πρόσβασης',
@@ -384,7 +384,7 @@ return [
         'name' => 'Δημιουργία διεύθυνσης',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'Επεξεργασία διεύθυνσης',
     ],
     'balance_limit' => [
         'name' => 'Όριο ισορροπίας',
@@ -421,17 +421,17 @@ return [
     ],
 
     'individual' => [
-        'name' => 'individual',
+        'name' => 'άτομο',
     ],
     'corporate' => [
-        'name' => 'corporate',
+        'name' => 'εταιρικός',
     ],
 
     'details' => [
-        'name' => 'Details'
+        'name' => 'Λεπτομέριες'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'Επιλέγω'
     ],
-    'my_address' => 'My Address'
+    'my_address' => 'Η διεύθυνσή μου'
 ];
