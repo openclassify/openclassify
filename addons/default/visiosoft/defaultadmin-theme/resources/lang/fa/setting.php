@@ -2,8 +2,8 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'شناور کناری',
+        'instructions' => 'نوار کناری را روی شناور ببندید؟',
     ],
     'navigation'    => [
         'name'         => 'منو ها',
