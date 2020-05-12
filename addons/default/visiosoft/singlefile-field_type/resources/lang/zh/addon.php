@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => '單文件',
-    'name'        => '文件字段類型',
-    'description' => '文件上傳字段類型。',
+    'title'       => '单文件',
+    'name'        => '文件字段类型',
+    'description' => '文件上传字段类型。',
 ];
