@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Mappen',
+        'instructions' => 'Specificeer welke mappen beschikbaar zijn voor dit veld. Laat leeg om alle mappen weer te geven.',
+        'warning'      => 'Bestaande mapmachtigingen hebben voorrang op geselecteerde mappen.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'Minimale selecties',
+        'instructions' => 'Voer het minimum aantal toegestane selecties in.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'Maximale selecties',
+        'instructions' => 'Voer het maximale aantal toegestane selecties in.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Invoer modus',
+        'instructions' => 'Hoe moeten gebruikers bestandsinvoer verstrekken?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Upload en / of selecteer bestanden.',
+            'select'  => 'Selecteer alleen bestanden.',
+            'upload'  => 'Upload alleen bestanden.',
         ],
     ],
 ];
