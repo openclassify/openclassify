@@ -1,24 +1,26 @@
 <?php
 
 return [
-    'disk'  => [
-        'label'        => 'Disque de stockage',
-        'instructions' => 'Choisissez un disque où stocker les fichiers envoyés.',
+    'folders' => [
+        'name'         => 'Folders',
+        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
+        'warning'      => 'Existing folder permissions take precedence over selected folders.',
     ],
-    'path'  => [
-        'label'        => 'Chemin d\'envoi',
-        'instructions' => 'Entrez le chemin d\'envoi des fichiers ou laissez vide pour envoyer à la racine du disque.<br>Si le chemin n\'existe pas il sera créé à lors de l\'envoi.',
+    'min'     => [
+        'label'        => 'Minimum Selections',
+        'instructions' => 'Enter the minimum number of allowed selections.',
     ],
-    'image' => [
-        'label'        => 'Images uniquement',
-        'instructions' => 'Restreindre les fichiers aux images seulement.',
-    ],
-    'mimes' => [
-        'label'        => 'Types de fichier autorisés',
-        'instructions' => 'Choisissez les extensions de fichier autorisées. Si aucune extension n\'est renseigné tout les types de fichier pourront être envoyé.',
-    ],
-    'max'   => [
+    'max'     => [
         'label'        => 'Taille maximale',
         'instructions' => 'Entrez la taille maximale par fichier en <strong>méga-octets</strong>.<br>La taille par défaut et la taille maximale sont la taille maximale autorisée par le serveur.',
+    ],
+    'mode'    => [
+        'name'         => 'Input Mode',
+        'instructions' => 'How should users provide file input?',
+        'option'       => [
+            'default' => 'Upload and/or select files.',
+            'select'  => 'Select files only.',
+            'upload'  => 'Upload files only.',
+        ],
     ],
 ];

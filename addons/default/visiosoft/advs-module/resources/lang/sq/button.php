@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'new_adv' => 'Njoftime i Ri',
-    'new_category' => 'Kategoria e Re',
-    'new_country' => 'Shteti i Ri',
+    'new_adv' => 'Njoftime i ri',
+    'new_category' => 'Kategoria e re',
+    'new_country' => 'Shteti i ri',
     'new_city' => 'Qark i Ri',
     'new_district' => 'Bashkia i Ri',
     'new_neighborhood' => 'Njësitë Administrative i Ri',
-    'new_village' => 'Fshati i Ri',
+    'new_village' => 'Fshati i ri',
     'edit' => "Redakto",
     'approve' => "Miratoj",
     'decline' => 'Anulo',
@@ -21,7 +21,7 @@ return [
     'add_sub_cities' => 'Shtoni nën Qarku',
     'add_sub_districts' => 'Shtoni nën Bashki ',
     'add_sub_neighborhoods' => 'Shtoni nën Njësitë Administrative',
-    'add_sub_village' => 'Shtoni Nën Fshatin',
+    'add_sub_village' => 'Shtoni nën Fshatin',
     'sub_districts' => 'Nën Bashki',
     'sub_neighborhoods' => 'Nën Njësitë Administrative',
     'sub_village' => 'Nën Fshatin',

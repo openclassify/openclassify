@@ -5,6 +5,6 @@ return [
         'name' => 'Trego Reklamat e mia Tab',
     ],
     'upload_avatar' => [
-        'name' => 'Ngarkoni avatar',
+        'name' => 'Foto e Profilit',
     ],
 ];

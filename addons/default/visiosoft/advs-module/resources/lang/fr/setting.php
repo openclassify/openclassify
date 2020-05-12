@@ -4,11 +4,19 @@ return [
     'auto_approve' => [
         'name' => 'Approuver automatiquement',
     ],
+    'default_view_type' => [
+        'name' => 'Default View Type',
+    ],
+    'hide_zero_price' => [
+        'name' => 'Hide Price if Zero',
+        'instructions' => 'Hide the price if the ad price is 0',
+    ],
+    'estimated_pending_time' => [
+        'name' => 'Estimated Pending Time',
+        'instructions' => 'In Hours',
+    ],
     'default_published_time' => [
         'name' => 'Heure de publication par défaut',
-    ],
-    'default_adv_limit' => [
-        'name' => 'Limite des annonces par défaut',
     ],
     'address' => [
         'name' => 'Adresse de contact',
@@ -18,11 +26,8 @@ return [
     ],
     'favicon' => [
         'name' => 'Favicon',
-    ],
-    'contact_mail' => [
-        'name' => 'Contact mail',
-        'warning'      => 'Ajout automatique du nom de site <strong>info</strong> @sitename',
-    ],'map_coordinates_long' => [
+    ]
+    ,'map_coordinates_long' => [
         'name' => 'Carte Longue Coordonnée',
     ],
     'map_coordinates_lat' => [
@@ -74,6 +79,18 @@ return [
     'default_GET' => [
         'name' => 'Annonce par défaut GET',
     ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail Width',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Thumbnail Height',
+    ],
+    'picture_width' => [
+        'name' => 'Picture Width',
+    ],
+    'picture_height' => [
+        'name' => 'Picture Height',
+    ],
     'twitter' => [
         'name' => 'Gazouillement',
     ],
@@ -98,9 +115,6 @@ return [
     'watermark_position' => [
         'name' => 'Position du filigrane',
     ],
-    'watermark_opacity' => [
-        'name' => 'Opacité du filigrane',
-    ],
     'listing_page_image' => [
         'name' => 'Image de page de liste',
     ],
@@ -110,5 +124,7 @@ return [
     'google_statistic_code' => [
         'name' => 'Code statistique Google',
     ],
-
+    'register_email_field' => [
+        'name' => 'Member Registration Email Requirement',
+    ],
 ];

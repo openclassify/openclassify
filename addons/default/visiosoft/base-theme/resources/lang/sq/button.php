@@ -2,12 +2,12 @@
 
 return [
     'post_ad' => [
-        'name' => 'Posto reklamën',
+        'name' => 'Posto Njoftimet',
     ],
-    'login' => 'hyrje',
+    'login' => 'Hyrje',
     'register' => 'Regjistrohu',
-    'continue' => 'vazhdoj',
+    'continue' => 'Vazhdoj',
     'reset_password' => 'Rivendosni fjalëkalimin',
     'email' => 'Email',
-    'phone' => 'telefon',
+    'phone' => 'Telefon',
 ];

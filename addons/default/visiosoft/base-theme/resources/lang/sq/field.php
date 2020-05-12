@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Drejtoria e ndërmarrjes',
-    'popular_ads' => 'Reklama popullore',
+    'popular_ads' => 'Njoftimet popullore',
     'last_48_hours' => '48 orët e fundit',
-    'secure_e-commerce_ads' => 'Reklama të sigurta për tregtinë elektronike',
+    'secure_e-commerce_ads' => 'Njoftimet të sigurta për tregtinë elektronike',
     'sms' => 'Dërgoni mesazhe me tekst (SMS)',
-    'mail' => 'Dërgo postë',
+    'mail' => 'Dërgo email',
 ];

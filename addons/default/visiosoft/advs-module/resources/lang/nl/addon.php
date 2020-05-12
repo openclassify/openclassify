@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"advertenties",
-   "name"   =>"Advertenties module",
-   "description"   =>"Advertenties module"
+return [
+    'title'       => 'advertenties',
+    'name'        => 'Advertenties module',
+    'description' => 'Advertenties module',
 ];
