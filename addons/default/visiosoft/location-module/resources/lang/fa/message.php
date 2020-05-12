@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Type here to search',
-    'null_msg' => 'Not Found',
+    'placeholder' => 'برای جستجو اینجا را تایپ کنید',
+    'null_msg' => 'پیدا نشد',
 ];
