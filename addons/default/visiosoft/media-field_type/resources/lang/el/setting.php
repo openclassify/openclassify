@@ -2,15 +2,15 @@
 
 return [
     'imageCanvasW' => [
-        'name' => 'Image Canvas Width'
+        'name' => 'Πλάτος καμβά εικόνας'
     ],
     'imageCanvasH' => [
-        'name' => 'Image Canvas Height'
+        'name' => 'Ύψος καμβά εικόνας'
     ],
     'imageResizeW' => [
-        'name' => 'Image Resize Width'
+        'name' => 'Πλάτος αλλαγής μεγέθους εικόνας'
     ],
     'imageResizeH' => [
-        'name' => 'Image Resize Height'
+        'name' => 'Ύψος αλλαγής μεγέθους εικόνας'
     ],
 ];
