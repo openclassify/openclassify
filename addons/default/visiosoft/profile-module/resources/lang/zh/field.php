@@ -11,55 +11,55 @@ return [
         'name' => '姓'
     ],
     'username' => [
-        'name' => '用戶名'
+        'name' => '用户名'
     ],
     'display_name' => [
-        'name' => '顯示名稱'
+        'name' => '显示名称'
     ],
     'email' => [
-        'name' => '郵箱地址'
+        'name' => '邮箱地址'
     ],
     'sitename' => [
-        'name' => '網站名稱'
+        'name' => '网站名称'
     ],
     'activated' => [
-        'name' => '用戶活躍'
+        'name' => '用户活跃'
     ],
     'enabled' => [
-        'name' => '用戶啟用'
+        'name' => '用户启用'
     ],
     'country' => [
-        'name' => '國家'
+        'name' => '国家'
     ],
     'city' => [
         'name' => '市'
     ],
     'district' => [
-        'name' => '區'
+        'name' => '区'
     ],
     'neighborhood' => [
-        'name' => '鄰里'
+        'name' => '邻里'
     ],
     'village' => [
         'name' => '村'
     ],
     'gsm_phone' => [
-        'name' => 'GSM電話'
+        'name' => 'GSM电话'
     ],
     'land_phone' => [
-        'name' => '電話'
+        'name' => '电话'
     ],
     'office_phone' => [
-        'name' => '辦公室電話'
+        'name' => '办公室电话'
     ],
     'register_type' => [
-        'name' => '寄存器類型'
+        'name' => '寄存器类型'
     ],
     'identification_number' => [
-        'name' => '身份證號碼'
+        'name' => '身份证号码'
     ],
     'adress_name' => [
-        'name' => '地址名稱'
+        'name' => '地址名称'
     ],
     'adress_first_name' => [
         'name' => '名字'
@@ -68,40 +68,40 @@ return [
         'name' => '姓'
     ],
     'actions' => [
-        'name' => '動作'
+        'name' => '动作'
     ],
     'adress_content' => [
-        'name' => '地址內容'
+        'name' => '地址内容'
     ],
     'adress_post_code' => [
-        'name' => '郵編'
+        'name' => '邮编'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Gsm電話'
+        'name' => 'Gsm电话'
     ],
     'adress_land_phone' => [
-        'name' => '電話'
+        'name' => '电话'
     ],
     'adress_country' => [
-        'name' => '國家'
+        'name' => '国家'
     ],
     'adress_city' => [
         'name' => '市'
     ],
     'adress_district' => [
-        'name' => '區'
+        'name' => '区'
     ],
     'adress_neighborhood' => [
-        'name' => '鄰里'
+        'name' => '邻里'
     ],
     'adress_village' => [
         'name' => '村'
     ],
     'messages' => [
-        'name' => '留言內容'
+        'name' => '留言内容'
     ],
     'user' => [
-        'name' => '用戶'
+        'name' => '用户'
     ],
 
 
@@ -110,20 +110,20 @@ return [
 
     /*Menu Button*/
     'profile' => [
-        'name' => '輪廓'
+        'name' => '轮廓'
     ],
 
     'create' => [
-        'name' => '創建'
+        'name' => '创建'
     ],
     'edit' => [
-        'name' => '編輯'
+        'name' => '编辑'
     ],
     'delete' => [
-        'name' => '刪除'
+        'name' => '删除'
     ],
     'list' => [
-        'name' => '清單'
+        'name' => '清单'
     ],
     'menu_address' => [
         'name' => '地址'
@@ -132,46 +132,46 @@ return [
         'name' => '命令'
     ],
     'menu_favorites' => [
-        'name' => '收藏夾'
+        'name' => '收藏夹'
     ],
     'menu_archived_ads' => [
-        'name' => '封存的廣告'
+        'name' => '封存的广告'
     ],
     'menu_pending_ads' => [
         'name' => '待批准'
     ],
     'menu_delete_account' => [
-        'name' => '關閉賬戶'
+        'name' => '关闭账户'
     ],
     'menu_my_ads' => [
-        'name' => '我的廣告'
+        'name' => '我的广告'
     ],
     'menu_fav_ads' => [
-        'name' => '最喜歡的廣告'
+        'name' => '最喜欢的广告'
     ],
     'menu_hello_msg' => [
         'name' => '你好'
     ],
     'menu_last_msg' => [
-        'name' => '您最後一次登錄是在'
+        'name' => '您最后一次登录是在'
     ],
     'menu_packages' => [
         'name' => '我的包裹'
     ],
     'menu_adv_packages' => [
-        'name' => '廣告套餐'
+        'name' => '广告套餐'
     ],
     'menu_time_packages' => [
-        'name' => '時間套餐'
+        'name' => '时间套餐'
     ],
     'profile_details' => [
-        'name' => '個人資料詳細信息'
+        'name' => '个人资料详细信息'
     ],
     'profile_photo' => [
-        'name' => '頭像照片'
+        'name' => '头像照片'
     ],
     'adv_listing_banner' => [
-        'name' => '廣告列表頁橫幅'
+        'name' => '广告列表页横幅'
     ],
     'approve' => [
         'name' => '批准'
@@ -183,19 +183,19 @@ return [
         'name' => '待定'
     ],
     'passive' => [
-        'name' => '被動'
+        'name' => '被动'
     ],
     'pending_admin' => [
         'name' => '待定'
     ],
     'menu_messages' => [
-        'name' => '留言內容'
+        'name' => '留言内容'
     ],
     'menu_my_purchase' => [
-        'name' => '我的購買'
+        'name' => '我的购买'
     ],
     'menu_my_sales' => [
-        'name' => '我的銷售'
+        'name' => '我的销售'
     ],
 
 
@@ -213,68 +213,68 @@ return [
         'name' => 'Lorem ipsum dolor坐在amet，私立教育精英'
     ],
     'right_easy_trading_subject' => [
-        'name' => '輕鬆交易'
+        'name' => '轻松交易'
     ],
     'right_easy_trading_msg' => [
         'name' => 'Lorem ipsum dolor坐在amet，私立教育精英'
     ],
     'right_need_help_subject' => [
-        'name' => '需要幫忙？'
+        'name' => '需要帮忙？'
     ],
     'right_need_help_msg' => [
-        'name' => '打個電話'
+        'name' => '打个电话'
     ],
     'disable_account' => [
-        'name' => '禁用賬戶'
+        'name' => '禁用账户'
     ],
     'disable_account_msg' => [
-        'name' => '您的帳戶將被禁用。
-                                    此操作無法撤消'
+        'name' => '您的帐户将被禁用。
+                                    此操作无法撤消'
     ],
 
-    'message_title' => '訊息標題',
+    'message_title' => '讯息标题',
     'owner_name' => '信息',
 
-    'favorites' => "收藏夾",
-    'fav_advs' => '最喜歡的廣告',
-    'fav_sellers' => "最愛賣家",
-    'fav_searches' => "最愛搜尋",
-    'posted_on' => "發表於",
-    'message_details' => "訊息詳情",
-    'adv_no' => '廣告號',
+    'favorites' => "收藏夹",
+    'fav_advs' => '最喜欢的广告',
+    'fav_sellers' => "最爱卖家",
+    'fav_searches' => "最爱搜寻",
+    'posted_on' => "发表于",
+    'message_details' => "讯息详情",
+    'adv_no' => '广告号',
     'bill_address' => [
-        'name' => '帳單地址',
+        'name' => '帐单地址',
     ],
     'delivery_address' => [
-        'name' => '郵寄地址',
+        'name' => '邮寄地址',
     ],
     'order_total' => [
-        'name' => '總',
+        'name' => '总',
     ],
     'order_date' => [
-        'name' => '訂購日期',
+        'name' => '订购日期',
     ],
     'order_no' => [
-        'name' => '訂單編號',
+        'name' => '订单编号',
     ],
     'order_detail' => [
-        'name' => '查看詳細',
+        'name' => '查看详细',
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => '詳情',
+        'name' => '详情',
     ],
     'back' => [
         'name' => '背部',
     ],
     'image' => [
-        'name' => '圖片',
+        'name' => '图片',
     ],
     'subject' => [
-        'name' => '學科',
+        'name' => '学科',
     ],
     'price' => [
-        'name' => '價錢',
+        'name' => '价钱',
     ],
     'piece' => [
         'name' => '片',
@@ -283,22 +283,22 @@ return [
         'name' => '佣金',
     ],
     'total' => [
-        'name' => '總',
+        'name' => '总',
     ],
     'sub_total' => [
-        'name' => '小計',
+        'name' => '小计',
     ],
     'sale' => [
-        'name' => '特賣',
+        'name' => '特卖',
     ],
     'awaiting_tracking_number' => [
-        'name' => '等待追踪號碼',
+        'name' => '等待追踪号码',
     ],
     'awaiting_payment_approval' => [
         'name' => '等待付款批准',
     ],
     'paid' => [
-        'name' => '已付費',
+        'name' => '已付费',
     ],
     'cancelled' => [
         'name' => '取消',
@@ -310,126 +310,126 @@ return [
         'name' => '等待派遣',
     ],
     'shipped' => [
-        'name' => '已出貨',
+        'name' => '已出货',
     ],
     'delivered' => [
         'name' => '已交付',
     ],
     'tracking_number' => [
-        'name' => '追踪號碼',
+        'name' => '追踪号码',
     ],
     'was_delivered' => [
         'name' => '已交付',
     ],
     'not_delivered' => [
-        'name' => '沒送到',
+        'name' => '没送到',
     ],
     'show_order_msg1' => [
-        'name' => '交易結果將通過郵件通知。',
+        'name' => '交易结果将通过邮件通知。',
     ],
     'show_order_msg2' => [
-        'name' => '如果產品在一周內未交付，將退款。',
+        'name' => '如果产品在一周内未交付，将退款。',
     ],
     'show_order_msg3' => [
-        'name' => '交易結果已發送到您的註冊電子郵件地址。',
+        'name' => '交易结果已发送到您的注册电子邮件地址。',
     ],
 
     'awaiting_payment' => [
         'name' => '等待付款',
     ],
     'please_entered_tracking_number' => [
-        'name' => '請輸入跟踪號碼',
+        'name' => '请输入跟踪号码',
     ],
     'transport_days' => [
-        'name' => '運輸天數',
+        'name' => '运输天数',
     ],
     'product_not_delivered' => [
-        'name' => '產品未交付',
+        'name' => '产品未交付',
     ],
     'status' => [
-        'name' => '狀態',
+        'name' => '状态',
     ],
     'cancel_sale' => [
-        'name' => '取消銷售',
+        'name' => '取消销售',
     ],
     'send_again' => [
-        'name' => '我會再次發送',
+        'name' => '我会再次发送',
     ],
     'content' => [
-        'name' => '內容',
+        'name' => '内容',
     ],
     'preferences_settings' => [
-        'name' => '首選項設置',
+        'name' => '首选项设置',
     ],
 
 
     'corporate_settings' => [
-        'name' => '公司設置',
+        'name' => '公司设置',
     ],
     'password' => [
-        'name' => '密碼',
+        'name' => '密码',
     ],
     'new_password' => [
-        'name' => '新密碼',
+        'name' => '新密码',
     ],
     're_new_password' => [
-        'name' => '確認密碼',
+        'name' => '确认密码',
     ],
     'confirm_password_input' => [
-        'name' => '我確認我的密碼更改',
+        'name' => '我确认我的密码更改',
     ],
     'create_address' => [
         'name' => '建立地址',
     ],
     'edit_address' => [
-        'name' => '編輯地址',
+        'name' => '编辑地址',
     ],
     'balance_limit' => [
-        'name' => '餘額限制',
+        'name' => '余额限制',
     ],
     'active_ads' => [
-        'name' => '有效廣告',
+        'name' => '有效广告',
     ],
     'subscriptions' => [
-        'name' => '訂閱內容',
+        'name' => '订阅内容',
     ],
     'go_subscriptions_page' => [
-        'name' => '轉到訂閱頁面',
+        'name' => '转到订阅页面',
     ],
     'buy_package' => [
-        'name' => '購買套餐',
+        'name' => '购买套餐',
     ],
     'expired_date' => [
-        'name' => '過期日期',
+        'name' => '过期日期',
     ],
     'category' => [
-        'name' => '類別',
+        'name' => '类别',
     ],
     'ad_limit' => [
-        'name' => '廣告限制',
+        'name' => '广告限制',
     ],
     'publish_time' => [
-        'name' => '發佈時間',
+        'name' => '发布时间',
     ],
     'all_categories' => [
-        'name' => '所有類別',
+        'name' => '所有类别',
     ],
     'day' => [
         'name' => '天',
     ],
 
     'individual' => [
-        'name' => '個人',
+        'name' => '个人',
     ],
     'corporate' => [
-        'name' => '企業的',
+        'name' => '企业的',
     ],
 
     'details' => [
-        'name' => '細節'
+        'name' => '细节'
     ],
     'choose' => [
-        'name' => '選擇'
+        'name' => '选择'
     ],
     'my_address' => '我的地址'
 ];
