@@ -7,11 +7,6 @@ return [
     'agreement' => 'By clicking Post, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'The classified category will be updated.',
     'updated_category_msg' => 'Category successfully edited.',
-    'max_ad_limit' => [
-        'title' => "Your Free Ad Limit is Out.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
-    ],
     'create_ad_with_post_cat' => [
         'title' => "Category selection has been completed.",
         'success' => true,
