@@ -20,7 +20,7 @@ return [
         'name' => 'Adresa e e-mail'
     ],
     'sitename' => [
-        'name' => 'SITENAME'
+        'name' => 'FAGJANAME'
     ],
     'activated' => [
         'name' => 'Përdoruesi aktiv'
@@ -32,13 +32,13 @@ return [
         'name' => 'Shteti'
     ],
     'city' => [
-        'name' => 'Qytet'
+        'name' => 'Qarku'
     ],
     'district' => [
-        'name' => 'Rreth'
+        'name' => 'Bashkia'
     ],
     'neighborhood' => [
-        'name' => 'Lagje'
+        'name' => 'Njesi administrative'
     ],
     'village' => [
         'name' => 'Fshati'
@@ -53,7 +53,7 @@ return [
         'name' => 'Telefoni i zyres'
     ],
     'register_type' => [
-        'name' => 'Lloji i regjistrimit'
+        'name' => 'Tipi i regjistrimit'
     ],
     'identification_number' => [
         'name' => 'Numrin e identifikimit'
@@ -86,13 +86,13 @@ return [
         'name' => 'Shteti'
     ],
     'adress_city' => [
-        'name' => 'Qytet'
+        'name' => 'Qarku'
     ],
     'adress_district' => [
-        'name' => 'Rreth'
+        'name' => 'Bashkia'
     ],
     'adress_neighborhood' => [
-        'name' => 'Lagje'
+        'name' => 'Njesi administrative'
     ],
     'adress_village' => [
         'name' => 'Fshati'
@@ -135,7 +135,7 @@ return [
         'name' => 'Favoritet'
     ],
     'menu_archived_ads' => [
-        'name' => 'Reklama të arkivuara'
+        'name' => 'Njoftimet të arkivuara'
     ],
     'menu_pending_ads' => [
         'name' => 'Miratim në pritje'
@@ -144,10 +144,10 @@ return [
         'name' => 'Mbyll Llogari'
     ],
     'menu_my_ads' => [
-        'name' => 'Reklamat e mia'
+        'name' => 'Njoftimet e mia'
     ],
     'menu_fav_ads' => [
-        'name' => 'Reklama e preferuar'
+        'name' => 'Njoftimet e preferuar'
     ],
     'menu_hello_msg' => [
         'name' => 'Përshëndetje'
@@ -171,7 +171,7 @@ return [
         'name' => 'Foto e profilit'
     ],
     'adv_listing_banner' => [
-        'name' => 'Flamuri i faqes së listës së Njoftimet'
+        'name' => 'Banner i faqes së listës së Njoftimet'
     ],
     'approve' => [
         'name' => 'Miratoj'
@@ -180,13 +180,13 @@ return [
         'name' => 'I miratuar'
     ],
     'pending' => [
-        'name' => 'pritje'
+        'name' => 'Pritje'
     ],
     'passive' => [
         'name' => 'Pasive'
     ],
     'pending_admin' => [
-        'name' => 'pritje'
+        'name' => 'Pritje'
     ],
     'menu_messages' => [
         'name' => 'Mesazhet'
@@ -233,12 +233,12 @@ return [
     ],
 
     'message_title' => 'Titulli i mesazhit',
-    'owner_name' => 'mesazh',
+    'owner_name' => 'Mesazhi',
 
     'favorites' => "Të preferuarat",
-    'fav_advs' => 'Shpalljet e preferuara',
-    'fav_sellers' => "Fav Shitësit",
-    'fav_searches' => "Kërkimet e Fav",
+    'fav_advs' => 'Njoftimet e preferuara',
+    'fav_sellers' => "Shitësit e preferuar",
+    'fav_searches' => "Kërkimet e preferuara",
     'posted_on' => "Postuar ne",
     'message_details' => "Detajet e mesazhit",
     'adv_no' => 'Nr',
@@ -262,25 +262,25 @@ return [
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => 'hollësi',
+        'name' => 'Detaje',
     ],
     'back' => [
-        'name' => 'prapa',
+        'name' => 'Mbrapa',
     ],
     'image' => [
-        'name' => 'imazh',
+        'name' => 'Imazhi',
     ],
     'subject' => [
-        'name' => 'subjekt',
+        'name' => 'Subjekt',
     ],
     'price' => [
         'name' => 'Çmim',
     ],
     'piece' => [
-        'name' => 'copë',
+        'name' => 'Copë',
     ],
     'commission' => [
-        'name' => 'komision',
+        'name' => 'Komisioni',
     ],
     'total' => [
         'name' => 'Total',
@@ -289,7 +289,7 @@ return [
         'name' => 'Nën Totali',
     ],
     'sale' => [
-        'name' => 'shitje',
+        'name' => 'Shitje',
     ],
     'awaiting_tracking_number' => [
         'name' => 'Në pritje të numrit të ndjekjes',
@@ -301,7 +301,7 @@ return [
         'name' => 'I paguar',
     ],
     'cancelled' => [
-        'name' => 'anuluar',
+        'name' => 'Anuluar',
     ],
     'waiting' => [
         'name' => 'Ne pritje',
@@ -310,19 +310,19 @@ return [
         'name' => 'Në pritje të dërgimit',
     ],
     'shipped' => [
-        'name' => 'dërguar',
+        'name' => 'Dërguar',
     ],
     'delivered' => [
-        'name' => 'dorëzuar',
+        'name' => 'Dorëzuar',
     ],
     'tracking_number' => [
         'name' => 'Numri i gjurmimit',
     ],
     'was_delivered' => [
-        'name' => 'u dorëzua',
+        'name' => 'U dorëzua',
     ],
     'not_delivered' => [
-        'name' => 'nuk dorëzohet',
+        'name' => 'Nuk dorëzohet',
     ],
     'show_order_msg1' => [
         'name' => 'Rezultati i transaksionit do të njoftohet me postë.',
@@ -335,7 +335,7 @@ return [
     ],
 
     'awaiting_payment' => [
-        'name' => 'duke pritur pagesen',
+        'name' => 'Duke pritur pagesen',
     ],
     'please_entered_tracking_number' => [
         'name' => 'Ju lutemi shënoni numrin përcjellës',
@@ -347,7 +347,7 @@ return [
         'name' => 'Produkti nuk është dorëzuar',
     ],
     'status' => [
-        'name' => 'status',
+        'name' => 'Status',
     ],
     'cancel_sale' => [
         'name' => 'Anuloni Shitjen',
@@ -356,7 +356,7 @@ return [
         'name' => 'Unë do të dërgoj përsëri',
     ],
     'content' => [
-        'name' => 'përmbajtje',
+        'name' => 'Përmbajtja',
     ],
     'preferences_settings' => [
         'name' => 'Parametrat e preferencave',
@@ -367,7 +367,7 @@ return [
         'name' => 'Cilësimet e korporatave',
     ],
     'password' => [
-        'name' => 'fjalëkalim',
+        'name' => 'Fjalëkalimi',
     ],
     'new_password' => [
         'name' => 'Fjalëkalim i ri',
