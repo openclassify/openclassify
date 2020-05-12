@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => '在此處輸入內容進行搜索',
+    'placeholder' => '在此处输入内容进行搜索',
     'null_msg' => '未找到',
 ];
