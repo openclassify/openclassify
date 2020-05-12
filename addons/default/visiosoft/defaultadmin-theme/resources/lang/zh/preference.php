@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => '邊欄懸停',
-        'instructions' => '展開懸停邊欄？',
+        'name'         => '边栏悬停',
+        'instructions' => '展开悬停边栏？',
     ],
     'navigation'    => [
-        'name'         => '導航',
-        'instructions' => '指定您的 <em>個人</em> 導航順序。',
-        'warning'      => '第一個可訪問的導航項目用作您的 <strong>home</strong> 區域。',
-        'reorder'      => '將主要導航項目拖放到 <strong>側欄</strong> 以對其重新排序。',
+        'name'         => '导航',
+        'instructions' => '指定您的 <em>个人</em> 导航顺序。',
+        'warning'      => '第一个可访问的导航项目用作您的 <strong>home</strong> 区域。',
+        'reorder'      => '将主要导航项目拖放到 <strong>侧栏</strong> 以对其重新排序。',
     ],
     'display'       => [
-        'name'         => '顯示密度',
-        'instructions' => '緊湊的顯示屏可讓更多內容立即顯示在屏幕上。',
+        'name'         => '显示密度',
+        'instructions' => '紧凑的显示屏可让更多内容立即显示在屏幕上。',
         'option'       => [
-            'default' => '默認',
-            'compact' => '緊湊',
+            'default' => '默认',
+            'compact' => '紧凑',
         ],
     ],
     'sidebars'      => [
-        'name'         => '側邊欄模式',
-        'instructions' => '靜態邊欄將始終可見。',
+        'name'         => '侧边栏模式',
+        'instructions' => '静态边栏将始终可见。',
         'option'       => [
-            'default' => '默認',
-            'static'  => '靜態的',
+            'default' => '默认',
+            'static'  => '静态的',
         ],
     ],
 ];
