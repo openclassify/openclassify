@@ -237,8 +237,8 @@ return [
 
     'favorites' => "Të preferuarat",
     'fav_advs' => 'Njoftimet e preferuara',
-    'fav_sellers' => "Fav Shitësit",
-    'fav_searches' => "Kërkimet e Fav",
+    'fav_sellers' => "Shitësit e preferuar",
+    'fav_searches' => "Kërkimet e preferuara",
     'posted_on' => "Postuar ne",
     'message_details' => "Detajet e mesazhit",
     'adv_no' => 'Nr',
