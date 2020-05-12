@@ -35,9 +35,9 @@ return [
         'title' => 'Os campos personalizados'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Limpar ativos'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
+    'general' => 'Geral',
+    'ads' => 'Publicidades',
+    'user' => 'Do utilizador',
 ];
