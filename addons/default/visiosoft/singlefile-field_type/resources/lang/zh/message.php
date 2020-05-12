@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_file'      => '您要使用哪個文件？',
-    'choose_folder'    => '您想上傳到哪個文件夾？',
-    'upload'           => '單擊或將文件拖放到此處進行上傳。',
-    'no_file_selected' => '未選擇文件。',
-    'no_uploads'       => '沒有文件上傳。',
-    'overwrite'        => '已經上傳。您要覆蓋它嗎？',
-    'uploading'        => '上載中',
-    'loading'          => '載入中',
+    'choose_file'      => '您要使用哪个文件？',
+    'choose_folder'    => '您想上传到哪个文件夹？',
+    'upload'           => '单击或将文件拖放到此处进行上传。',
+    'no_file_selected' => '未选择文件。',
+    'no_uploads'       => '没有文件上传。',
+    'overwrite'        => '已经上传。您要覆盖它吗？',
+    'uploading'        => '上载中',
+    'loading'          => '载入中',
 ];
