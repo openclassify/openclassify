@@ -2,36 +2,36 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Título da Navegação',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Ação de Navegação',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Campos do país',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Campos de Data',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Campos de preço',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'Migalhas de pão',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Detalhes do anúncio',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Guia Detalhes do anúncio',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Mais recentes e Ver todos Btn',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Logotipo da instrução da página de registro',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'Estilo (CSS)',
     ],
 ];
