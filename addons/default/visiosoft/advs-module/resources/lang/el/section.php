@@ -35,9 +35,9 @@ return [
         'title' => 'Προσαρμοσμένα πεδία'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Διαγραφή στοιχείων'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
+    'general' => 'Γενικός',
+    'ads' => 'Διαφημίσεις',
+    'user' => 'Χρήστης',
 ];
