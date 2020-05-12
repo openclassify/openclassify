@@ -2,7 +2,7 @@
 
 return [
     'catalog_mode' => [
-        'name' => '目錄模式',
+        'name' => '目录模式',
     ],
     'template' => '模板',
 ];
