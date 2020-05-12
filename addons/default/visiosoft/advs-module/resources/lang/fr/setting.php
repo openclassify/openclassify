@@ -5,15 +5,15 @@ return [
         'name' => 'Approuver automatiquement',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Type de vue par défaut',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Masquer le prix si zéro',
+        'instructions' => 'Masquer le prix si le prix de l\'annonce est 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Temps d\'attente estimé',
+        'instructions' => 'En heures',
     ],
     'default_published_time' => [
         'name' => 'Heure de publication par défaut',
@@ -48,7 +48,7 @@ return [
         'name' => 'Devises Actives',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Dernière limite',
     ],
     'site_address' => [
         'name' => 'Adresse du site',
@@ -80,16 +80,16 @@ return [
         'name' => 'Annonce par défaut GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Largeur de vignette',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Hauteur de la vignette',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Largeur de l\'image',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Hauteur de l\'image',
     ],
     'twitter' => [
         'name' => 'Gazouillement',
@@ -125,6 +125,6 @@ return [
         'name' => 'Code statistique Google',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Inscription par e-mail',
     ],
 ];
