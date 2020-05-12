@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Φάκελοι',
+        'instructions' => 'Καθορίστε ποιοι φάκελοι είναι διαθέσιμοι για αυτό το πεδίο. Αφήστε κενό για εμφάνιση όλων των φακέλων.',
+        'warning'      => 'Τα υπάρχοντα δικαιώματα φακέλου υπερισχύουν των επιλεγμένων φακέλων.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Μέγιστο μέγεθος μεταφόρτωσης',
+        'instructions' => 'Καθορίστε το μέγιστο μέγεθος μεταφόρτωσης σε <strong>megabyte</strong>.',
+        'warning'      => 'Αν δεν καθοριστεί ο φάκελος max και, στη συνέχεια, θα χρησιμοποιηθεί το διακομιστή max.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Λειτουργία εισαγωγής',
+        'instructions' => 'Πώς πρέπει να παρέχουν οι χρήστες είσοδο αρχείων;',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Ανεβάστε και / ή επιλέξτε αρχεία.',
+            'select'  => 'Επιλέξτε μόνο αρχεία.',
+            'upload'  => 'Ανεβάστε μόνο αρχεία.',
         ],
     ],
 ];
