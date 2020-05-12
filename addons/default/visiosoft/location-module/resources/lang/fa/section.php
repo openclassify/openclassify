@@ -16,7 +16,7 @@ return [
     'village' => [
         'title' => 'روستا',
     ],
-    'general' => 'General',
-    'map' => 'Map',
-    'setting' => 'Setting',
+    'general' => 'عمومی',
+    'map' => 'نقشه',
+    'setting' => 'تنظیمات',
 ];
