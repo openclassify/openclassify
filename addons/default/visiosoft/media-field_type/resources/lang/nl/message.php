@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_folder'     => 'Which folder would you like to upload to?',
-    'upload'            => 'Add İmages | Upload İmages | Attach a photo',
-    'choose_files'      => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads'        => 'No files uploaded.',
-    'overwrite'         => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading'         => 'Uploading',
-    'loading'           => 'Loading',
+    'choose_folder'     => 'Naar welke map wil je uploaden?',
+    'upload'            => 'İmages | İmages uploaden | Voeg een foto toe',
+    'choose_files'      => 'Welke bestanden wil je gebruiken?',
+    'no_files_selected' => 'Geen bestanden geselecteerd.',
+    'no_uploads'        => 'Geen bestanden geüpload.',
+    'overwrite'         => 'is al geüpload. Wil je het overschrijven?',
+    'uploading'         => 'Uploaden',
+    'loading'           => 'Bezig met laden',
 ];
