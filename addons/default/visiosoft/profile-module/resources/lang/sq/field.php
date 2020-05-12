@@ -233,10 +233,10 @@ return [
     ],
 
     'message_title' => 'Titulli i mesazhit',
-    'owner_name' => 'mesazh',
+    'owner_name' => 'Mesazhi',
 
     'favorites' => "Të preferuarat",
-    'fav_advs' => 'Shpalljet e preferuara',
+    'fav_advs' => 'Njoftimet e preferuara',
     'fav_sellers' => "Fav Shitësit",
     'fav_searches' => "Kërkimet e Fav",
     'posted_on' => "Postuar ne",
