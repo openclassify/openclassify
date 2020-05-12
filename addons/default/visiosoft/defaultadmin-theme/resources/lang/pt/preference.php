@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Passe o cursor sobre a barra lateral',
+        'instructions' => 'Expandir a barra lateral ao passar o mouse?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navegação',
+        'instructions' => 'Especifique sua ordem de navegação <em>pessoal</em>.',
+        'warning'      => 'O primeiro item de navegação acessível é usado como sua área <strong>residencial</strong>.',
+        'reorder'      => 'Arraste e solte os itens de navegação principais na barra lateral <strong></strong> para reordená-los.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Densidade de exibição',
+        'instructions' => 'A tela compacta permite que mais conteúdo seja exibido na tela de uma só vez.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'Padrão',
+            'compact' => 'Compactar',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Modo da barra lateral',
+        'instructions' => 'As barras laterais estáticas sempre estarão visíveis.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'Padrão',
+            'static'  => 'Estático',
         ],
     ],
 ];
