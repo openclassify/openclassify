@@ -16,7 +16,7 @@ return [
     'village' => [
         'title' => 'Aldeia',
     ],
-    'general' => 'General',
-    'map' => 'Map',
-    'setting' => 'Setting',
+    'general' => 'Geral',
+    'map' => 'Mapa',
+    'setting' => 'Configuração',
 ];
