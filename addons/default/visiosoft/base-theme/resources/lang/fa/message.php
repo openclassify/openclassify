@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'send_forgot_sms' => 'SMS sent to your registered phone. Please check.',
-    'found_phone' => 'The phone number registered in the system was not found.',
+    'send_forgot_sms' => 'پیامک ارسال شده به تلفن ثبت شده خود. لطفا بررسی کنید.',
+    'found_phone' => 'شماره تلفن ثبت شده در سیستم یافت نشد.',
 ];
