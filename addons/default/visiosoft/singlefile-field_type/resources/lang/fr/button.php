@@ -2,7 +2,7 @@
 
 return [
     'select_file' => 'Choisir un fichier',
-    'upload'      => 'Upload',
+    'upload'      => 'Télécharger',
     'remove'      => 'Supprimer',
     'change'      => 'Modifier',
 ];
