@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Standardveröffentlichungszeit',
     ],
-    'default_adv_limit' => [
-        'name' => 'Standard-Anzeigenlimit',
-    ],
     'address' => [
         'name' => 'Kontaktadresse',
     ],
@@ -81,6 +78,18 @@ return [
     ],
     'default_GET' => [
         'name' => 'Standardanzeige GET',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Miniaturbildbreite',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Miniaturbildhöhe',
+    ],
+    'picture_width' => [
+        'name' => 'Bildbreite',
+    ],
+    'picture_height' => [
+        'name' => 'Bildhöhe',
     ],
     'twitter' => [
         'name' => 'Twitter',
