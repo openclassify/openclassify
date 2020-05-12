@@ -2,7 +2,7 @@
 
 return [
     'folders' => [
-        'name'         => 'dosjet',
+        'name'         => 'Dosjet',
         'instructions' => 'Specifikoni cilat dosje janë të disponueshëm për këtë fushë. Lini bosh për të shfaqur të gjithë dosjet.',
         'warning'      => 'Lejet ekzistuese të dosjeve kanë përparësi ndaj dosjeve të zgjedhura.',
     ],
