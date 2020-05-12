@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'send_forgot_sms' => 'SMS sent to your registered phone. Please check.',
-    'found_phone' => 'The phone number registered in the system was not found.',
+    'send_forgot_sms' => 'Αποστολή SMS στο εγγεγραμμένο τηλέφωνό σας. Παρακαλώ ελέγξτε.',
+    'found_phone' => 'Ο αριθμός τηλεφώνου που είναι εγγεγραμμένος στο σύστημα δεν βρέθηκε.',
 ];
