@@ -289,5 +289,5 @@ return [
     'ad_info' => 'İlan Bilgileri',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Adım Adım Kategori Seçin',
 ];
