@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => '广告',
-    'name'        => '广告模块',
-    'description' => '广告模块',
+    'title'       => '廣告',
+    'name'        => '廣告模塊',
+    'description' => '廣告模塊',
 ];
