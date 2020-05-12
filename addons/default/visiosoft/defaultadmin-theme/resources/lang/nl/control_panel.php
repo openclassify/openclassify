@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'help'      => 'Help',
-    'search'    => 'Search',
-    'logout'    => 'Logout',
-    'view_site' => 'View Site',
-    'title'     => 'Control Panel',
-    'search_placeholder'     => 'Type to search',
+    'help'      => 'Helpen',
+    'search'    => 'Zoeken',
+    'logout'    => 'Uitloggen',
+    'view_site' => 'Site bekijken',
+    'title'     => 'Controlepaneel',
+    'search_placeholder'     => 'Type om te zoeken',
 
     // Users Module
-    'search_by_gsm_number'     => 'Search By GSM Number',
+    'search_by_gsm_number'     => 'Zoeken op GSM-nummer',
 ];
