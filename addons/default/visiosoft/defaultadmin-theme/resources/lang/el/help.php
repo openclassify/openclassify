@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title'                     => 'Helpful Resources',
-    'description'               => 'Find help and discover features with these helpful resources.',
-    'documentation_link'        => 'OpenClassify Documentation',
-    'documentation_description' => 'Find documentation for OpenClassify, developing addons, and using addons too.',
+    'title'                     => 'Χρήσιμοι πόροι',
+    'description'               => 'Βρείτε βοήθεια και ανακαλύψτε λειτουργίες με αυτούς τους χρήσιμους πόρους.',
+    'documentation_link'        => 'Τεκμηρίωση OpenClassify',
+    'documentation_description' => 'Βρείτε τεκμηρίωση για το OpenClassify, την ανάπτυξη πρόσθετων και τη χρήση πρόσθετων.',
     'slack_link'                => 'Slack Team',
-    'slack_description'         => 'Find and communicate with other OpenClassify users and developers.',
-    'forum_link'                => 'Discussion Forum',
-    'forum_description'         => 'Find answers and post questions about using and developing with OpenClassify.',
-    'addons_link'               => 'Available Addons',
-    'addons_description'        => 'Discover addons available for OpenClassify.',
+    'slack_description'         => 'Βρείτε και επικοινωνήστε με άλλους χρήστες και προγραμματιστές του OpenClassify.',
+    'forum_link'                => 'Φόρουμ συζήτησης',
+    'forum_description'         => 'Βρείτε απαντήσεις και δημοσιεύστε ερωτήσεις σχετικά με τη χρήση και την ανάπτυξη με το OpenClassify.',
+    'addons_link'               => 'Διαθέσιμα πρόσθετα',
+    'addons_description'        => 'Ανακαλύψτε πρόσθετα διαθέσιμα για το OpenClassify.',
 ];
