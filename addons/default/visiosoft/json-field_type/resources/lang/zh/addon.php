@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => '傑森',
-    'name'        => 'Json字段類型',
+    'title'       => '杰森',
+    'name'        => 'Json字段类型',
     'description' => ''
 ];
