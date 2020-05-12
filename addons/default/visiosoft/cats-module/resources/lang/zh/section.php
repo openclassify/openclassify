@@ -2,9 +2,9 @@
 
 return [
     'category' => [
-        'title' => '類別',
+        'title' => '类别',
     ],
     'placeholderforsearch' => [
-        'title' => '佔位符',
+        'title' => '占位符',
     ],
 ];
