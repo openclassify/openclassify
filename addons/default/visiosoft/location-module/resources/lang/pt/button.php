@@ -6,7 +6,7 @@ return [
     'new_district' => 'Novo Distrito',
     'new_neighborhood' => 'Bairro Novo',
     'new_village' => 'Nova aldeia',
-    'sub_cities' => 'Sub Cities',
+    'sub_cities' => 'Sub-cidades',
     'add_sub_cities' => 'Adicionar Sub Cidade',
     'add_sub_districts' => 'Adicionar Sub Distrito',
     'add_sub_neighborhoods' => 'Adicionar Sub Bairro',
