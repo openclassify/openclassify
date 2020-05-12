@@ -2,12 +2,12 @@
 
 return [
     'post_ad' => [
-        'name' => 'Post Ad',
+        'name' => 'Δημοσίευση διαφήμισης',
     ],
-    'login' => 'Login',
-    'register' => 'Register',
-    'continue' => 'Continue',
-    'reset_password' => 'Reset Password',
-    'email' => 'Email',
-    'phone' => 'Phone',
+    'login' => 'Σύνδεση',
+    'register' => 'Κανω ΕΓΓΡΑΦΗ',
+    'continue' => 'Να συνεχίσει',
+    'reset_password' => 'Επαναφέρετε τον κωδικό πρόσβασης',
+    'email' => 'ΗΛΕΚΤΡΟΝΙΚΗ ΔΙΕΥΘΥΝΣΗ',
+    'phone' => 'Τηλέφωνο',
 ];
