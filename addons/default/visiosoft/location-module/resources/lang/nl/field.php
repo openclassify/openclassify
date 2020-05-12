@@ -29,10 +29,10 @@ return [
         'name' => 'Omschrijving'
     ],
     'pick_option' => [
-        'name' => 'Pick an option',
+        'name' => 'Kies een optie',
     ],
     'address' => [
-        'name' => 'Address',
+        'name' => 'Adres',
     ],
-    'selected' => 'Selected'
+    'selected' => 'Geselecteerd'
 ];
