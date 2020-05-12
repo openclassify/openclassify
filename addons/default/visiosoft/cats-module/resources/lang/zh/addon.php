@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => '類別',
-    'name'        => '分類模塊',
+    'title'       => '类别',
+    'name'        => '分类模块',
     'description' => ''
 ];
