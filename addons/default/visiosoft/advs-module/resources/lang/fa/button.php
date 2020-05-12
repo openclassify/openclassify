@@ -8,13 +8,13 @@ return [
     'new_district' => 'منطقه جدید',
     'new_neighborhood' => 'محله جدید',
     'new_village' => 'دهکده جدید',
-    'edit' => "Edit",
+    'edit' => "ویرایش کنید",
     'approve' => "تایید",
     'decline' => 'کاهش می یابد',
-    'extend' => 'Extend',
-    'extend_all' => 'Extend All',
-    'convert_currency' => 'Convert Currency',
-    'categories' => 'Categories',
+    'extend' => 'توسعه دادن، گسترش',
+    'extend_all' => 'گسترش همه',
+    'convert_currency' => 'تبدیل ارز',
+    'categories' => 'دسته بندی ها',
     'sub_category' => 'زیر مجموعه ها',
     'add_sub_category' => 'زیر مجموعه را اضافه کنید',
     'sub_cities' => 'شهرهای زیر شهر',
@@ -26,9 +26,9 @@ return [
     'sub_neighborhoods' => 'محله های فرعی',
     'sub_village' => 'دهکده زیر',
     'general_settings' => 'تنظیمات عمومی',
-    'save_category' => 'Save Category',
-    'change_owner' => 'Change Owner',
+    'save_category' => 'ذخیره گروه',
+    'change_owner' => 'تغییر مالکیت',
     'update_category' => [
-        'name' => 'Update Category'
+        'name' => 'رده به روزرسانی'
     ],
 ];
