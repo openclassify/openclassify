@@ -2,36 +2,36 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'عنوان ناوبری',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'اقدام پیمایش',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'مزارع کشور',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'زمینه های تاریخ',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'زمینه های قیمت',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'خرده نان',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'جزئیات آگهی',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'برگه جزئیات آگهی',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'آخرین و مشاهده همه Btn',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'آرم صفحه آموزش را ثبت کنید',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'سبک (CSS)',
     ],
 ];
