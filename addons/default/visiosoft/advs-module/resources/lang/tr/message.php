@@ -2,21 +2,15 @@
 
 return [
     'error_added_cart' => 'İstenen ürün şu anda eksik veya etkin değil',
-    'please_buy_package' => 'Lütfen paket satın al',
     'please_payment' => 'Lütfen Ödeme Yapınız',
     'bank_account_info' => 'Banka Hesap Bilgilerimiz',
     'agreement' => 'Yayınlaya tıkladığınızda, Kullanım Koşulları ve Gizlilik Politikasını kabul etmiş olursunuz.',
     'update_category_msg' => 'İlan kategorisi güncellenecektir.',
     'updated_category_msg' => 'Kategori başarıyla güncellendi.',
-    'max_ad_limit' => [
-        'title' => "Ücretsiz İlan Limitiniz Bitmiştir.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
-    ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "Kategori seçimi tamamlandı.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "Devam et",
     ],
     'update_category_info' => 'Lütfen kategoriyi güncelleyiniz.',
     'filter_by_search_msg' => 'Aramanızı Daraltın.',
