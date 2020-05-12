@@ -287,5 +287,5 @@ return [
     'ad_info' => 'معلومات الإعلان',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'حدد الفئة خطوة بخطوة',
 ];
