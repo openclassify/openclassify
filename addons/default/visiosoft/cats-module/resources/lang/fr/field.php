@@ -3,7 +3,7 @@
 return [
     'name' => [
         'name' => 'Titre',
-        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
+        'instructions' => 'C\'est le nom de la catégorie principale que vous définirez. Il permet à l\'utilisateur de trouver facilement le produit qu\'il recherche.',
     ],
     'order' => [
         'name' => 'Ordre',
@@ -11,7 +11,7 @@ return [
 
     'slug' => [
         'name' => 'Limace',
-        'instructions' => 'Specify any organizational tags to help group your post with others.',
+        'instructions' => 'Spécifiez les balises organisationnelles pour aider à regrouper votre publication avec d\'autres.',
 
     ],
     'files' => [
@@ -19,17 +19,17 @@ return [
     ],
     'seo_keyword' => [
         'name' => 'Seo Keyword',
-        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
+        'instructions' => 'Mots ajoutés au site dans le navigateur Google pour apparaître au-dessus des résultats de recherche.',
     ],
     'seo_description' => [
-        'name' => 'Seo Description',
-        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
+        'name' => 'Description du référencement',
+        'instructions' => 'Cela peut affecter la décision de vos visiteurs de cliquer sur le contenu des résultats de recherche.',
     ],
     'icon' => [
-        'name' => 'Icon',
-        'instructions' => 'It is used to add icons indicating the category type.',
+        'name' => 'Icône',
+        'instructions' => 'Il est utilisé pour ajouter des icônes indiquant le type de catégorie.',
     ],
 
     'please_wait' => 'Veuillez patienter. Suppression des sous-catégories',
-    'category_selection' => 'Category Selection',
+    'category_selection' => 'Sélection de catégorie',
 ];
