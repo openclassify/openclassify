@@ -7,11 +7,6 @@ return [
     'agreement' => 'Post\'u tıklayarak, İstifadə şərtlərimizlə razılaşırsınız və Məxfilik Siyasəti bu maddənin qanuni sahibi olduğunuzu qəbul edirsiniz.',
     'update_category_msg' => 'Təsnif edilmiş kateqoriya yenilənəcəkdir.',
     'updated_category_msg' => 'Kateqoriya uğurla düzəldildi.',
-    'max_ad_limit' => [
-        'title' => "Pulsuz elanınızın həddi bitib.",
-        'continueBtn' => "Reklamları göstər",
-        'link' => "/ profil",
-    ],
     'create_ad_with_post_cat' => [
         'title' => "Kateqoriya seçimi başa çatdı.",
         'success' => true,
