@@ -7,11 +7,6 @@ return [
     'agreement' => 'Duke klikuar Postën, ju pranoni që Kushtet tona të Përdorimit dhe Politika e Privatësisë pranojnë se jeni pronari i ligjshëm i këtij artikulli.',
     'update_category_msg' => 'Kategoria e klasifikuar do të azhurnohet.',
     'updated_category_msg' => 'Kategoria u redaktua me sukses.',
-    'max_ad_limit' => [
-        'title' => "Kufiri juaj falas për njoftimin është jashtë.",
-        'continueBtn' => "Shfaq njoftimet",
-        'link' => "/ profili",
-    ],
     'create_ad_with_post_cat' => [
         'title' => "Zgjedhja e kategorisë ka përfunduar.",
         'success' => true,
