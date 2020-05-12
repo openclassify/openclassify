@@ -2,15 +2,15 @@
 
 return [
     'imageCanvasW' => [
-        'name' => 'Image Canvas Width'
+        'name' => 'Largeur de la toile d\'image'
     ],
     'imageCanvasH' => [
-        'name' => 'Image Canvas Height'
+        'name' => 'Hauteur de la toile d\'image'
     ],
     'imageResizeW' => [
-        'name' => 'Image Resize Width'
+        'name' => 'Largeur de redimensionnement de l\'image'
     ],
     'imageResizeH' => [
-        'name' => 'Image Resize Height'
+        'name' => 'Hauteur de redimensionnement de l\'image'
     ],
 ];
