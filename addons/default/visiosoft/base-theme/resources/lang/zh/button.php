@@ -2,12 +2,12 @@
 
 return [
     'post_ad' => [
-        'name' => '發布廣告',
+        'name' => '发布广告',
     ],
-    'login' => '登錄',
+    'login' => '登录',
     'register' => '寄存器',
-    'continue' => '繼續',
-    'reset_password' => '重設密碼',
-    'email' => '電子郵件',
-    'phone' => '電話',
+    'continue' => '继续',
+    'reset_password' => '重设密码',
+    'email' => '电子邮件',
+    'phone' => '电话',
 ];
