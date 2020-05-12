@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'dropzone' => 'Click or drop files here to upload.',
-    'help'     => 'Click and drag to reorder attached files.',
+    'dropzone' => 'Κάντε κλικ ή αποθέστε αρχεία εδώ για μεταφόρτωση.',
+    'help'     => 'Κάντε κλικ και σύρετε για αναδιάταξη συνημμένων αρχείων.',
 ];
