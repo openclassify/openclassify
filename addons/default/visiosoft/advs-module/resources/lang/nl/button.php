@@ -8,13 +8,13 @@ return [
     'new_district' => 'Nieuw district',
     'new_neighborhood' => 'Nieuwe buurt',
     'new_village' => 'Nieuw dorp',
-    'edit' => "Edit",
+    'edit' => "Bewerk",
     'approve' => "Goedkeuren",
     'decline' => 'Afwijzen',
-    'extend' => 'Extend',
-    'extend_all' => 'Extend All',
-    'convert_currency' => 'Convert Currency',
-    'categories' => 'Categories',
+    'extend' => 'Uitbreiden',
+    'extend_all' => 'Alles uitbreiden',
+    'convert_currency' => 'Valuta omrekenen',
+    'categories' => 'Categorieën',
     'sub_category' => 'Subcategorieën',
     'add_sub_category' => 'Subcategorie toevoegen',
     'sub_cities' => 'Substeden',
@@ -26,9 +26,9 @@ return [
     'sub_neighborhoods' => 'Sub Buurten',
     'sub_village' => 'Sub Village',
     'general_settings' => 'Algemene instellingen',
-    'save_category' => 'Save Category',
-    'change_owner' => 'Change Owner',
+    'save_category' => 'Categorie opslaan',
+    'change_owner' => 'Wijzig eigenaar',
     'update_category' => [
-        'name' => 'Update Category'
+        'name' => 'Categorie bijwerken'
     ],
 ];
