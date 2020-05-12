@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => '輪廓',
-    'name'        => '配置文件模塊',
+    'title'       => '轮廓',
+    'name'        => '配置文件模块',
     'description' => ''
 ];
