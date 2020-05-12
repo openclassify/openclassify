@@ -2,7 +2,7 @@
 
 return [
     'name' => [
-        'name' => '標題'
+        'name' => '标题'
     ],
     'slug' => [
         'name' => 'ug'
@@ -11,16 +11,16 @@ return [
         'name' => '市'
     ],
     'country' => [
-        'name' => '國家'
+        'name' => '国家'
     ],
     'district' => [
-        'name' => '區'
+        'name' => '区'
     ],
     'order' => [
         'name' => '排序'
     ],
     'neighborhood' => [
-        'name' => '鄰里'
+        'name' => '邻里'
     ],
     'village' => [
         'name' => '村'
@@ -29,10 +29,10 @@ return [
         'name' => '描述'
     ],
     'pick_option' => [
-        'name' => '選擇一個選項',
+        'name' => '选择一个选项',
     ],
     'address' => [
         'name' => '地址',
     ],
-    'selected' => '已選'
+    'selected' => '已选'
 ];
