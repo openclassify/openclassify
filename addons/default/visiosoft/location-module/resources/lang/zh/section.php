@@ -2,21 +2,21 @@
 
 return [
     'countries' => [
-        'title' => '國別',
+        'title' => '国别',
     ],
     'cities' => [
         'title' => '城市',
     ],
     'districts' => [
-        'title' => '地區',
+        'title' => '地区',
     ],
     'neighborhoods' => [
-        'title' => '鄰里',
+        'title' => '邻里',
     ],
     'village' => [
         'title' => '村',
     ],
     'general' => '一般',
-    'map' => '地圖',
-    'setting' => '設置',
+    'map' => '地图',
+    'setting' => '设置',
 ];
