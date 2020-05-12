@@ -171,7 +171,7 @@ return [
         'name' => 'Foto e profilit'
     ],
     'adv_listing_banner' => [
-        'name' => 'Flamuri i faqes së listës së Njoftimet'
+        'name' => 'Banner i faqes së listës së Njoftimet'
     ],
     'approve' => [
         'name' => 'Miratoj'
@@ -180,13 +180,13 @@ return [
         'name' => 'I miratuar'
     ],
     'pending' => [
-        'name' => 'pritje'
+        'name' => 'Pritje'
     ],
     'passive' => [
         'name' => 'Pasive'
     ],
     'pending_admin' => [
-        'name' => 'pritje'
+        'name' => 'Pritje'
     ],
     'menu_messages' => [
         'name' => 'Mesazhet'
