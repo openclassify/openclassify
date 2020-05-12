@@ -3,7 +3,7 @@
 return [
     'name' => [
         'name' => 'Título',
-        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
+        'instructions' => 'Es el nombre de la categoría principal que definirá. Permite al usuario encontrar fácilmente el producto que está buscando.',
     ],
     'order' => [
         'name' => 'Orden',
@@ -11,7 +11,7 @@ return [
 
     'slug' => [
         'name' => 'Babosa',
-        'instructions' => 'Specify any organizational tags to help group your post with others.',
+        'instructions' => 'Especifique las etiquetas de organización para ayudar a agrupar su publicación con otras personas.',
 
     ],
     'files' => [
@@ -19,18 +19,18 @@ return [
     ],
     'seo_keyword' => [
         'name' => 'Seo Keyword',
-        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
+        'instructions' => 'Las palabras agregadas al sitio en el navegador de Google aparecen sobre los resultados de búsqueda.',
     ],
     'seo_description' => [
-        'name' => 'Seo Description',
-        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
+        'name' => 'Seo Descripción',
+        'instructions' => 'Puede afectar la decisión de sus visitantes sobre si desean hacer clic en el contenido de los resultados de búsqueda.',
     ],
     'icon' => [
-        'name' => 'Icon',
-        'instructions' => 'It is used to add icons indicating the category type.',
+        'name' => 'Icono',
+        'instructions' => 'Se utiliza para agregar iconos que indican el tipo de categoría.',
     ],
 
     'please_wait' => 'Por favor,
    espere. Eliminar subcategorías',
-    'category_selection' => 'Category Selection',
+    'category_selection' => 'Selección de categoría',
 ];
