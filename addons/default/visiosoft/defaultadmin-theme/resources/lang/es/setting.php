@@ -2,13 +2,13 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Desplazamiento de la barra lateral',
+        'instructions' => '¿Expandir la barra lateral al pasar el mouse?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify the <em>default</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navegación',
+        'instructions' => 'Especificar el <em>por defecto</em> orden de navegación.',
+        'warning'      => 'El primer elemento de navegación accesible se utiliza como el área <strong>inicio</strong>.',
+        'reorder'      => 'Arrastre y suelte los elementos de navegación principales en la barra lateral <strong></strong> para reordenarlos.',
     ],
 ];
