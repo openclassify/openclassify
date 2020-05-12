@@ -2,42 +2,42 @@
 
 return [
     'advs' => [
-        'title' => '廣告',
+        'title' => '广告',
     ],
     'categories' => [
-        'title' => '分類目錄',
+        'title' => '分类目录',
     ],
     'countries' => [
-        'title' => '國別',
+        'title' => '国别',
     ],
     'cities' => [
         'title' => '城市',
     ],
     'districts' => [
-        'title' => '地區',
+        'title' => '地区',
     ],
     'neighborhoods' => [
-        'title' => '鄰里',
+        'title' => '邻里',
     ],
     'village' => [
         'title' => '村',
     ],
     'custom_fields' => [
-        'title' => '自訂欄位',
+        'title' => '自订栏位',
     ],
     'custom_field_advs' => [
-        'title' => '自定義字段廣告',
+        'title' => '自定义字段广告',
     ],
     'cf_values' => [
         'title' => 'CF值',
     ],
     'fields' => [
-        'title' => '自定義字段'
+        'title' => '自定义字段'
     ],
     'assets_clear' => [
-        'name' => '資產清除'
+        'name' => '资产清除'
     ],
     'general' => '一般',
-    'ads' => '廣告',
-    'user' => '用戶',
+    'ads' => '广告',
+    'user' => '用户',
 ];
