@@ -1,9 +1,7 @@
 <?php
 
- return[
-   "village"   =>   [
-      "name"      =>"Village",
-
-   ],
-
+return [
+    'village' => [
+        'name' => 'Village',
+    ],
 ];
