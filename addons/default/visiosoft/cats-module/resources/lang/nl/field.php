@@ -3,7 +3,7 @@
 return [
     'name' => [
         'name' => 'Titel',
-        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
+        'instructions' => 'Het is de naam van de hoofdcategorie die u gaat definiëren. Hiermee kan de gebruiker gemakkelijk het product vinden waarnaar hij op zoek is.',
     ],
     'order' => [
         'name' => 'Bestellen',
@@ -11,25 +11,25 @@ return [
 
     'slug' => [
         'name' => 'Naaktslak',
-        'instructions' => 'Specify any organizational tags to help group your post with others.',
+        'instructions' => 'Specificeer eventuele organisatietags om uw bericht met anderen te groeperen.',
 
     ],
     'files' => [
         'name' => 'Beeld',
     ],
     'seo_keyword' => [
-        'name' => 'Seo Keyword',
-        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
+        'name' => 'Seo trefwoord',
+        'instructions' => 'Woorden die aan de site in de Google-browser zijn toegevoegd om boven de zoekresultaten te verschijnen.',
     ],
     'seo_description' => [
-        'name' => 'Seo Description',
-        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
+        'name' => 'Seo Beschrijving',
+        'instructions' => 'Het kan van invloed zijn op de beslissing van uw bezoekers of ze op de inhoud in de zoekresultaten willen klikken.',
     ],
     'icon' => [
-        'name' => 'Icon',
-        'instructions' => 'It is used to add icons indicating the category type.',
+        'name' => 'Icoon',
+        'instructions' => 'Het wordt gebruikt om pictogrammen toe te voegen die het categorietype aangeven.',
     ],
 
     'please_wait' => 'Een ogenblik geduld. Subcategorieën verwijderen',
-    'category_selection' => 'Category Selection',
+    'category_selection' => 'Categorie selectie',
 ];
