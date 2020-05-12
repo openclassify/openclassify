@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Defolt Vaxtı',
     ],
-    'default_adv_limit' => [
-        'name' => 'Defolt Məhdudiyyətlər',
-    ],
     'address' => [
         'name' => 'Əlaqə ünvanı',
     ],
@@ -81,6 +78,18 @@ return [
     ],
     'default_GET' => [
         'name' => 'Defolt Elan GET',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Eskiz eni',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Eskiz hündürlüyü',
+    ],
+    'picture_width' => [
+        'name' => 'Şəkil genişliyi',
+    ],
+    'picture_height' => [
+        'name' => 'Şəkil Boyu',
     ],
     'twitter' => [
         'name' => 'Twitter',
