@@ -20,16 +20,16 @@ return [
         'name' => 'Τιμή'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'Ημερομηνία'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'φωτογραφία'
     ],
     'video' => [
-        'name' => 'Video'
+        'name' => 'βίντεο'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'Χάρτης'
     ],
     'stock' => [
         'name' => 'Στοκ'
@@ -85,30 +85,30 @@ return [
     'status' => [
         'name' => 'Κατάσταση',
         'option' => [
-            'approved' => 'Approved',
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished',
-            'pending_admin' => 'Pending Admin',
-            'pending_user' => 'Pending User'
+            'approved' => 'Εγκρίθηκε',
+            'expired' => 'έχει λήξει',
+            'unpublished' => 'Αδημοσίευτος',
+            'pending_admin' => 'Εκκρεμεί διαχειριστής',
+            'pending_user' => 'Εκκρεμεί χρήστης'
         ]
     ],
     'pending_adv' => [
         'name' => 'Εν αναμονή διαφημίσεων'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Τελειώστε στο'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'Φωτογραφία εξωφύλλου'
     ],
     'favs_adv' => [
-        'name' => 'Fav Ads'
+        'name' => 'Fav Διαφημίσεις'
     ],
     'my_adv' => [
         'name' => 'ADVS'
     ],
-    'description' =>  'Description',
-    'explanation' =>  'Explanation',
+    'description' =>  'Περιγραφή',
+    'explanation' =>  'Εξήγηση',
     'type' => [
         'name' => 'Τύπος'
     ],
@@ -118,22 +118,22 @@ return [
     'value' => [
         'name' => 'αξία'
     ],
-    'list' => 'List',
+    'list' => 'Λίστα',
     'home' => 'Σπίτι',
     'list-page' => 'Λίστα σελίδας',
     'search' => 'Ψάξιμο',
     'recommended' => 'Προτεινόμενες διαφημίσεις για εσάς',
-    'filter' => 'Filter',
-    'sort' => 'Sort',
+    'filter' => 'Φίλτρο',
+    'sort' => 'Είδος',
     'sort_by' => 'Ταξινόμηση κατά',
     'pick_option' => 'Επιλέξτε μια επιλογή',
-    'pick_ordering' => 'Ordering',
+    'pick_ordering' => 'Παραγγελία',
     'price_high' => 'Τιμή υψηλή προς χαμηλή',
-    'price_low' => 'Price Low to High',
+    'price_low' => 'Χαμηλή έως Υψηλή τιμή',
     'newest' => 'Νεότερο',
-    'oldest' => 'Oldest',
-    'address_a_z' => 'Address (A to Z)',
-    'address_z_a' => 'Address (Z to A)',
+    'oldest' => 'Παλαιότερα',
+    'address_a_z' => 'Διεύθυνση (A έως Z)',
+    'address_z_a' => 'Διεύθυνση (Ω έως Α)',
     'categories' => 'Κατηγορίες',
     'all_categories' => 'Όλες οι κατηγορίες',
     'location' => 'Τοποθεσία',
@@ -147,7 +147,7 @@ return [
     'search_desc' => 'Μπορείτε να προσθέσετε και να διαχειριστείτε τις αγαπημένες σας επιλογές αναζήτησης εδώ.',
     'complaint_placeholder' => 'Πληκτρολογήστε τα στοιχεία της καταγγελίας σας εδώ.',
     'show_details' => 'Δείξε λεπτομέρειες',
-    'ad_actions' => 'Ad Actions',
+    'ad_actions' => 'Ενέργειες διαφημίσεων',
     'edit' => 'Επεξεργασία',
     'approve' => 'Εγκρίνω',
     'passive' => "Παθητικός",
@@ -183,7 +183,7 @@ return [
     'send_us_your_feedback' => 'Στείλτε μας τα σχόλιά σας',
     'online_shopping' => 'ΠΑΙΡΝΩ',
     'approved' => 'Εγκρίθηκε με επιτυχία',
-    'extended' => 'Extended Successfully',
+    'extended' => 'Επέκταση με επιτυχία',
     'declined' => 'Απορρίφθηκε με επιτυχία',
     'search_on_map' => 'Αναζήτηση στο χάρτη',
     'post_free_ad' => 'Δημοσίευση δωρεάν διαφήμισης',
@@ -233,60 +233,60 @@ return [
         'name' => 'Οι διαφημίσεις μου',
     ],
     'sold_out' => [
-        'name' => 'Sold out',
+        'name' => 'Εξαντλημένα',
     ],
-    'edit_category' => 'Edit Category',
-    'set_category' => 'Set Category',
+    'edit_category' => 'Επεξεργασία κατηγορίας',
+    'set_category' => 'Ορισμός κατηγορίας',
     'max' => [
-        'name' => 'Max',
+        'name' => 'Μέγιστη',
     ],
     'min' => [
-        'name' => 'Min',
+        'name' => 'Ελάχ',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Τις τελευταίες 24 ώρες'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'Την τελευταία εβδομάδα'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'Τον τελευταίο μήνα'
     ],
     'ads_with_photo' => [
-        'name' => 'Ads With Photo'
+        'name' => 'Διαφημίσεις με φωτογραφία'
     ],
     'ads_with_video' => [
-        'name' => 'Ads With Video'
+        'name' => 'Διαφημίσεις με βίντεο'
     ],
     'yes' => [
-        'name' => 'Yes'
+        'name' => 'Ναί'
     ],
-    "no_location" => "No location is selected.",
-    "continue" => 'Continue',
-    "gallery" => 'Gallery',
+    "no_location" => "Δεν έχει επιλεγεί τοποθεσία.",
+    "continue" => 'Να συνεχίσει',
+    "gallery" => 'Εκθεσιακός χώρος',
 
     // Pending screen
-    'pending_message_1' => 'The Ad is in the Approval Process',
-    'pending_message_2' => "Ad's Update Date",
-    'pending_message_3' => 'Estimated Waiting Time',
-    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
-    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
-    'hours' => 'hours',
+    'pending_message_1' => 'Η διαφήμιση βρίσκεται στη διαδικασία έγκρισης',
+    'pending_message_2' => "Ημερομηνία ενημέρωσης διαφήμισης",
+    'pending_message_3' => 'Εκτιμώμενος χρόνος αναμονής',
+    'pending_message_4' => 'Ο χρόνος που αφιερώνεται στη διαδικασία έγκρισης θα προστεθεί στον χρόνο ντόπινγκ.',
+    'pending_message_5' => 'Δεν είναι δυνατή η πραγματοποίηση συναλλαγών από το τηλεφωνικό κέντρο σχετικά με τη διαφήμιση στη διαδικασία έγκρισης.',
+    'hours' => 'ώρες',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
-        'part_2' => 'If not, click the "Edit" button.',
+        'part_1' => 'Εάν οι ακόλουθες πληροφορίες σχετικά με τη διαφήμισή σας είναι σωστές, κάντε κλικ στο κουμπί "Συνέχεια" και προχωρήστε στο επόμενο βήμα.',
+        'part_2' => 'Εάν όχι, κάντε κλικ στο κουμπί "Επεξεργασία".',
     ],
-    'views' => 'Views',
+    'views' => 'Προβολές',
 
     // Detail page
-    "no_street_view" => "No street view image in this location",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    "no_street_view" => "Δεν υπάρχει εικόνα προβολής δρόμου σε αυτήν την τοποθεσία",
+    'edit_my_contact_info' => 'Επεξεργασία των στοιχείων επικοινωνίας μου',
+    'update_my_contact_info' => 'ενημερώστε τα στοιχεία επικοινωνίας μου',
+    'contact_info' => 'Στοιχεία επικοινωνίας',
+    'ad_info' => 'Πληροφορίες διαφήμισης',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Επιλέξτε Κατηγορία Βήμα προς Βήμα',
 ];
