@@ -8,13 +8,13 @@ return [
     'new_district' => 'Nouveau district',
     'new_neighborhood' => 'Nouveau quartier',
     'new_village' => 'Nouveau village',
-    'edit' => "Edit",
+    'edit' => "Éditer",
     'approve' => "Approuver",
     'decline' => 'Déclin',
-    'extend' => 'Extend',
-    'extend_all' => 'Extend All',
-    'convert_currency' => 'Convert Currency',
-    'categories' => 'Categories',
+    'extend' => 'Étendre',
+    'extend_all' => 'Tout étendre',
+    'convert_currency' => 'Convertir la devise',
+    'categories' => 'Les catégories',
     'sub_category' => 'Sous catégories',
     'add_sub_category' => 'Ajouter une sous catégorie',
     'sub_cities' => 'Sous-villes',
@@ -26,9 +26,9 @@ return [
     'sub_neighborhoods' => 'Sous-quartiers',
     'sub_village' => 'Sous-village',
     'general_settings' => 'réglages généraux',
-    'save_category' => 'Save Category',
-    'change_owner' => 'Change Owner',
+    'save_category' => 'Enregistrer la catégorie',
+    'change_owner' => 'Changer de propriétaire',
     'update_category' => [
-        'name' => 'Update Category'
+        'name' => 'Mettre à jour la catégorie'
     ],
 ];
