@@ -7,11 +7,6 @@ return [
     'agreement' => 'Yayınlaya tıkladığınızda, Kullanım Koşulları ve Gizlilik Politikasını kabul etmiş olursunuz.',
     'update_category_msg' => 'İlan kategorisi güncellenecektir.',
     'updated_category_msg' => 'Kategori başarıyla güncellendi.',
-    'max_ad_limit' => [
-        'title' => "Ücretsiz İlan Limitiniz Bitmiştir.",
-        'continueBtn' => "Reklamları Göster",
-        'link' => "/profil",
-    ],
     'create_ad_with_post_cat' => [
         'title' => "Kategori seçimi tamamlandı.",
         'success' => true,
