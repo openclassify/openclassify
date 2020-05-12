@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_folder'     => 'Which folder would you like to upload to?',
-    'upload'            => 'Add İmages | Upload İmages | Attach a photo',
-    'choose_files'      => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads'        => 'No files uploaded.',
-    'overwrite'         => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading'         => 'Uploading',
-    'loading'           => 'Loading',
+    'choose_folder'     => 'کدام پوشه را می خواهید بارگذاری کنید؟',
+    'upload'            => 'agesmages اضافه کنید | بارگیری agesmages | پیوست یک عکس',
+    'choose_files'      => 'از کدام پرونده ها می خواهید استفاده کنید؟',
+    'no_files_selected' => 'هیچ پرونده ای انتخاب نشده است.',
+    'no_uploads'        => 'هیچ پرونده بارگذاری نشده است.',
+    'overwrite'         => 'قبلاً بارگذاری شده است آیا می خواهید آن را بازنویسی کنید؟',
+    'uploading'         => 'بارگذاری',
+    'loading'           => 'بارگذاری',
 ];
