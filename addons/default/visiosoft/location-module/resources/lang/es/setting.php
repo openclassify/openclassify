@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Campo de ubicación de la página de inicio',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Campo de ubicación de la página de lista',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Campo de ubicación de la página de detalles',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Mostrar el botón de ubicación de búsqueda',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'País predeterminado',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Crear ubicación de la página de anuncios',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'Ciudad predeterminada',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'Distrito predeterminado',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Barrio predeterminado',
     ],
 
     'google_map_key' => [
@@ -34,10 +34,10 @@ return [
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'Predeterminado Long',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'Lat predeterminado',
     ],
 ];
