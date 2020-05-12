@@ -7,5 +7,5 @@ return [
     'adress' => [
         'title' => 'Une robe',
     ],
-    'general_setting' => 'General Settings',
+    'general_setting' => 'réglages généraux',
 ];
