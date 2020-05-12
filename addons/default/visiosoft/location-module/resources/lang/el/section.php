@@ -16,7 +16,7 @@ return [
     'village' => [
         'title' => 'Χωριό',
     ],
-    'general' => 'General',
-    'map' => 'Map',
-    'setting' => 'Setting',
+    'general' => 'Γενικός',
+    'map' => 'Χάρτης',
+    'setting' => 'Σύνθεση',
 ];
