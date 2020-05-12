@@ -7,6 +7,6 @@ return [
     'no_files_selected' => 'Asnjë skedar i zgjedhur.',
     'no_uploads'        => 'Asnjë fotografi të ngarkuar.',
     'overwrite'         => 'tashmë është ngarkuar. Dëshiron ta rishkruash?',
-    'uploading'         => 'Ngarkimi',
-    'loading'           => 'Ngarkimi',
+    'uploading'         => 'Ngarkimi...',
+    'loading'           => 'Ngarkim...',
 ];
