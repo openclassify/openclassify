@@ -2,19 +2,19 @@
 
 return [
     'advs' => [
-        'name' => '進階',
+        'name' => '进阶',
     ],
     'categories' => [
-        'name' => '分類目錄',
+        'name' => '分类目录',
     ],
     'village' => [
         'name' => '村',
     ],
     'custom_fields' => [
-        'name' => '自訂欄位',
+        'name' => '自订栏位',
     ],
     'custom_field_advs' => [
-        'name' => '自定義字段廣告',
+        'name' => '自定义字段广告',
     ],
     'cf_values' => [
         'name' => 'CF值',
