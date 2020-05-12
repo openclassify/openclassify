@@ -2,42 +2,42 @@
 
 return [
     'home_page_location' => [
-        'name' => '主頁位置字段',
+        'name' => '主页位置字段',
     ],
     'list_page_location' => [
-        'name' => '列表頁面位置字段',
+        'name' => '列表页面位置字段',
     ],
     'detail_page_location' => [
-        'name' => '詳細頁面位置字段',
+        'name' => '详细页面位置字段',
     ],
     'show_search_location_btn' => [
-        'name' => '顯示搜索位置按鈕',
+        'name' => '显示搜索位置按钮',
     ],
     'default_country' => [
-        'name' => '默認國家',
+        'name' => '默认国家',
     ],
     'create_ad_page_location' => [
-        'name' => '創建廣告頁面位置',
+        'name' => '创建广告页面位置',
     ],
     'default_city' => [
-        'name' => '默認城市',
+        'name' => '默认城市',
     ],
     'default_district' => [
-        'name' => '默認區',
+        'name' => '默认区',
     ],
     'default_neighborhood' => [
-        'name' => '默認鄰居',
+        'name' => '默认邻居',
     ],
 
     'google_map_key' => [
-        'name' => 'Google Maps Api密鑰',
+        'name' => 'Google Maps Api密钥',
     ],
 
     'map_coordinates_long' => [
-        'name' => '默認長',
+        'name' => '默认长',
     ],
 
     'map_coordinates_lat' => [
-        'name' => '默認緯度',
+        'name' => '默认纬度',
     ],
 ];
