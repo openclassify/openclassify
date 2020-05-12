@@ -2,15 +2,15 @@
 
 return [
     'imageCanvasW' => [
-        'name' => 'Image Canvas Width'
+        'name' => 'عرض بوم تصویر'
     ],
     'imageCanvasH' => [
-        'name' => 'Image Canvas Height'
+        'name' => 'ارتفاع بوم تصویر'
     ],
     'imageResizeW' => [
-        'name' => 'Image Resize Width'
+        'name' => 'عرض تغییر اندازه تصویر'
     ],
     'imageResizeH' => [
-        'name' => 'Image Resize Height'
+        'name' => 'اندازه اندازه تصویر'
     ],
 ];
