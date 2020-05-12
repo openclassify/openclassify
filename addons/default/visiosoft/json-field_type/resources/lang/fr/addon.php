@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Json',
-    'name'        => 'Json Field Type',
+    'name'        => 'Type de champ Json',
     'description' => ''
 ];
