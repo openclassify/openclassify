@@ -74,7 +74,7 @@ return [
         'name' => 'Endereço de Conteúdo'
     ],
     'adress_post_code' => [
-        'name' => 'Post Code'
+        'name' => 'Código postal'
     ],
     'adress_gsm_phone' => [
         'name' => 'Telefone Gsm'
@@ -110,7 +110,7 @@ return [
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Profile'
+        'name' => 'Perfil'
     ],
 
     'create' => [
@@ -120,7 +120,7 @@ return [
         'name' => 'Editar'
     ],
     'delete' => [
-        'name' => 'Delete'
+        'name' => 'Excluir'
     ],
     'list' => [
         'name' => 'Lista'
@@ -369,7 +369,7 @@ return [
         'name' => 'Configurações corporativas',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'Senha',
     ],
     'new_password' => [
         'name' => 'Nova senha',
@@ -384,7 +384,7 @@ return [
         'name' => 'Criar endereço',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'Editar Endereço',
     ],
     'balance_limit' => [
         'name' => 'Limite de Saldo',
@@ -421,17 +421,17 @@ return [
     ],
 
     'individual' => [
-        'name' => 'individual',
+        'name' => 'Individual',
     ],
     'corporate' => [
-        'name' => 'corporate',
+        'name' => 'corporativo',
     ],
 
     'details' => [
-        'name' => 'Details'
+        'name' => 'Detalhes'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'Escolher'
     ],
-    'my_address' => 'My Address'
+    'my_address' => 'Meu endereço'
 ];
