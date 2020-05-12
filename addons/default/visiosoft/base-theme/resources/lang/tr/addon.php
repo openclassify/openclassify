@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'إعلانات',
-    'name'        => 'وحدة الإعلانات',
-    'description' => 'وحدة الإعلانات',
+    'title'       => 'BaseTheme',
+    'name'        => 'BaseTheme',
+    'description' => 'BaseTheme'
 ];
