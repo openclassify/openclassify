@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'clean_subcategories' => '乾淨的子類別',
+    'clean_subcategories' => '干净的子类别',
 ];
