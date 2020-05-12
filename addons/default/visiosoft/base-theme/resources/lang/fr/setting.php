@@ -2,36 +2,36 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Titre de navigation',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Action de navigation',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Champs de pays',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Champs de date',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Champs de prix',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'Miette de pain',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Détails de l\'annonce',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Onglet Détails de l\'annonce',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Dernières et tout afficher Btn',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Logo d\'instructions de la page d\'inscription',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'Style (CSS)',
     ],
 ];
