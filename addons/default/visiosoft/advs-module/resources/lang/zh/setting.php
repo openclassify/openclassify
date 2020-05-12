@@ -2,129 +2,129 @@
 
 return [
     'auto_approve' => [
-        'name' => '自動批准',
+        'name' => '自动批准',
     ],
     'default_view_type' => [
-        'name' => '默認視圖類型',
+        'name' => '默认视图类型',
     ],
     'hide_zero_price' => [
-        'name' => '如果價格為零，則隱藏價格',
-        'instructions' => '如果廣告價格為0，則隱藏價格',
+        'name' => '如果价格为零，则隐藏价格',
+        'instructions' => '如果广告价格为0，则隐藏价格',
     ],
     'estimated_pending_time' => [
-        'name' => '預計待處理時間',
-        'instructions' => '在幾小時內',
+        'name' => '预计待处理时间',
+        'instructions' => '在几小时内',
     ],
     'default_published_time' => [
-        'name' => '默認發佈時間',
+        'name' => '默认发布时间',
     ],
     'address' => [
-        'name' => '聯繫地址',
+        'name' => '联系地址',
     ],
     'phone' => [
-        'name' => '聯繫電話',
+        'name' => '联系电话',
     ],
     'favicon' => [
-        'name' => '網站圖標',
+        'name' => '网站图标',
     ]
     ,'map_coordinates_long' => [
-        'name' => '地圖長坐標',
+        'name' => '地图长坐标',
     ],
     'map_coordinates_lat' => [
-        'name' => '地圖緯度坐標',
+        'name' => '地图纬度坐标',
     ],
     'iban_numbers' => [
         'name' => '伊班',
     ],
     'logo' => [
-        'name' => '商標',
+        'name' => '商标',
     ],
     'ogImage' => [
-        'name' => '社交分享徽標',
-        'warning'      => '分辨率應為1200 x 630。 ',
+        'name' => '社交分享徽标',
+        'warning'      => '分辨率应为1200 x 630。 ',
 
     ],
     'currencies' => [
-        'name' => '有效貨幣',
+        'name' => '有效货币',
     ],
     'latest-limit' => [
         'name' => '最新限制',
     ],
     'site_address' => [
-        'name' => '網站地址',
-        'warning'      => '自動添加www。萬維網。<strong>sitename.com</strong> ',
+        'name' => '网站地址',
+        'warning'      => '自动添加www。万维网。<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Google Map Api密鑰',
+        'name' => 'Google Map Api密钥',
     ],
 
     'default_country' => [
-        'name' => '默認廣告國家',
+        'name' => '默认广告国家',
     ],
     'free_currencyconverterapi_key' => [
-        'name' => '貨幣轉換器API密鑰'
+        'name' => '货币转换器API密钥'
     ],
     'default_city' => [
-        'name' => '默認廣告城市',
+        'name' => '默认广告城市',
     ],
     'default_district' => [
-        'name' => '默認廣告區',
+        'name' => '默认广告区',
     ],
     'default_neighborhood' => [
-        'name' => '默認廣告鄰居',
+        'name' => '默认广告邻居',
     ],
     'default_currency' => [
-        'name' => '默認廣告幣種',
+        'name' => '默认广告币种',
     ],
     'default_GET' => [
-        'name' => '默認廣告GET',
+        'name' => '默认广告GET',
     ],
     'thumbnail_width' => [
-        'name' => '縮略圖寬度',
+        'name' => '缩略图宽度',
     ],
     'thumbnail_height' => [
-        'name' => '縮略圖高度',
+        'name' => '缩略图高度',
     ],
     'picture_width' => [
-        'name' => '圖片寬度',
+        'name' => '图片宽度',
     ],
     'picture_height' => [
-        'name' => '圖片高度',
+        'name' => '图片高度',
     ],
     'twitter' => [
         'name' => '推特',
     ],
     'facebook' => [
-        'name' => '臉書',
+        'name' => '脸书',
     ],
     'youtube' => [
-        'name' => '優酷',
+        'name' => '优酷',
     ],
     'google' => [
         'name' => '谷歌',
     ],
     'watermark_type' => [
-        'name' => '水印類型',
+        'name' => '水印类型',
     ],
     'watermark_text' => [
         'name' => '水印文字',
     ],
     'watermark_image' => [
-        'name' => '水印圖像',
+        'name' => '水印图像',
     ],
     'watermark_position' => [
         'name' => '水印位置',
     ],
     'listing_page_image' => [
-        'name' => '列表頁面圖片',
+        'name' => '列表页面图片',
     ],
     'enabled_currencies' => [
-        'name' => '啟用貨幣',
+        'name' => '启用货币',
     ],
     'google_statistic_code' => [
-        'name' => 'Google統計代碼',
+        'name' => 'Google统计代码',
     ],
     'register_email_field' => [
-        'name' => '會員註冊電子郵件要求',
+        'name' => '会员注册电子邮件要求',
     ],
 ];
