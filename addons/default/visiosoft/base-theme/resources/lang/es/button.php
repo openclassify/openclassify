@@ -2,12 +2,12 @@
 
 return [
     'post_ad' => [
-        'name' => 'Post Ad',
+        'name' => 'Publicar anuncio',
     ],
-    'login' => 'Login',
-    'register' => 'Register',
-    'continue' => 'Continue',
-    'reset_password' => 'Reset Password',
-    'email' => 'Email',
-    'phone' => 'Phone',
+    'login' => 'Iniciar sesión',
+    'register' => 'Registrarse',
+    'continue' => 'Seguir',
+    'reset_password' => 'Restablecer la contraseña',
+    'email' => 'Correo electrónico',
+    'phone' => 'Teléfono',
 ];
