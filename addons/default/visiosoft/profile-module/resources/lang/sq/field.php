@@ -385,10 +385,10 @@ return [
         'name' => 'Ndrysho adresën',
     ],
     'balance_limit' => [
-        'name' => 'Kufiri i bilancit',
+        'name' => 'Limit i bilancit',
     ],
     'active_ads' => [
-        'name' => 'Reklama aktive',
+        'name' => 'Njoftimet aktive',
     ],
     'subscriptions' => [
         'name' => 'Abonimet',
@@ -403,10 +403,10 @@ return [
         'name' => 'Data e skadimit',
     ],
     'category' => [
-        'name' => 'kategori',
+        'name' => 'Kategori',
     ],
     'ad_limit' => [
-        'name' => 'Kufiri i reklamave',
+        'name' => 'Limit i njoftimi',
     ],
     'publish_time' => [
         'name' => 'Koha e publikimit',
@@ -415,21 +415,21 @@ return [
         'name' => 'Të gjitha kategoritë',
     ],
     'day' => [
-        'name' => 'ditë',
+        'name' => 'Ditë',
     ],
 
     'individual' => [
-        'name' => 'individual',
+        'name' => 'Individual',
     ],
     'corporate' => [
-        'name' => 'i korporatës',
+        'name' => 'Korporatë',
     ],
 
     'details' => [
-        'name' => 'detalet'
+        'name' => 'Detaje'
     ],
     'choose' => [
-        'name' => 'zgjedh'
+        'name' => 'Zgjedh'
     ],
     'my_address' => 'Adresa ime'
 ];
