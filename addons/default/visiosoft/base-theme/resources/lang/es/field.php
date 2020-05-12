@@ -1,53 +1,53 @@
 <?php
 
 return [
-    'latest_ads' => 'Latest Ads',
-    'show_all' => 'Show All',
+    'latest_ads' => 'Últimos anuncios',
+    'show_all' => 'Mostrar todo',
     'login' => [
-        'name' => 'Login',
+        'name' => 'Iniciar sesión',
     ],
     'logout' => [
-        'name' => 'Logout',
+        'name' => 'Cerrar sesión',
     ],
-    'profile' => 'Profile',
-    'email' => 'Email Address',
-    'phone' => 'Phone Number',
-    'reset_code' => 'Reset Code',
-    'password_confirmation' => 'Password Confirmation',
-    'password' => 'Password',
-    'first_name' => 'First Name',
-    'last_name' => 'Last Name',
-    'remember_me' => 'Remember Me',
-    'not_a_member_yet' => 'Not a Member Yet',
-    'not_a_member_yet_message' => 'Sign up for our members to benefit from our special service',
-    'forgot_password' => 'I Forgot My Password',
-    'email_or_phone_number' => 'Email Address or Phone Number',
-    'phone_number' => 'Phone Number',
+    'profile' => 'Perfil',
+    'email' => 'Dirección de correo electrónico',
+    'phone' => 'Número de teléfono',
+    'reset_code' => 'Restablecer Código',
+    'password_confirmation' => 'Confirmación de contraseña',
+    'password' => 'Contraseña',
+    'first_name' => 'Nombre de pila',
+    'last_name' => 'Apellido',
+    'remember_me' => 'Recuérdame',
+    'not_a_member_yet' => 'No eres miembro todavía',
+    'not_a_member_yet_message' => 'Regístrese para que nuestros miembros se beneficien de nuestro servicio especial',
+    'forgot_password' => 'Olvidé mi contraseña',
+    'email_or_phone_number' => 'Dirección de correo electrónico o número de teléfono',
+    'phone_number' => 'Número de teléfono',
 
     // Registration instructions
-    'personal_registration_header' => 'What Are Individual Membership Advantages?',
-    'personal_registration_body' => 'Sell and rent your home, car, sell your unused items, get new ones.',
-    'personal_registration_list_1' => 'Post a free ad,',
-    'personal_registration_list_2' => 'Add the ads you are interested in, follow the price changes after adding them to your favorites, create favorite searches that meet your criteria,',
-    'personal_registration_list_3' => 'Send messages to the ad owners on the site.',
-    'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
+    'personal_registration_header' => '¿Cuáles son las ventajas de la membresía individual?',
+    'personal_registration_body' => 'Venda y alquile su casa, automóvil, venda sus artículos no utilizados, obtenga otros nuevos.',
+    'personal_registration_list_1' => 'Publicar un anuncio gratis,',
+    'personal_registration_list_2' => 'Agregue los anuncios que le interesen, siga los cambios de precio después de agregarlos a sus favoritos, cree búsquedas favoritas que cumplan con sus criterios,',
+    'personal_registration_list_3' => 'Enviar mensajes a los propietarios de anuncios en el sitio.',
+    'register_information_note' => 'La información de esta página se toma para ' . env('APPLICATION_DOMAIN') . ' afiliación. Puede encontrar información detallada sobre la protección de datos personales aquí.',
 
     // Register page
-    'phone_validation_error' => 'This phone number is in use by another member.',
+    'phone_validation_error' => 'Este número de teléfono está en uso por otro miembro.',
 
     // Forgot Password
-    'create_new_password' => 'Create New Password',
+    'create_new_password' => 'Crear nueva contraseña',
 
     // Login page
-    'or' => 'or',
-    'login_with_phone_number' => 'Login with Phone Number',
-    'login_with_email_address' => 'Login with Email Address',
+    'or' => 'o',
+    'login_with_phone_number' => 'Iniciar sesión con número de teléfono',
+    'login_with_email_address' => 'Iniciar sesión con dirección de correo electrónico',
 
     // Side menu links
-    'company_directory' => 'Company directory',
-    'popular_ads' => 'Popular Ads',
-    'last_48_hours' => 'Last 48 Hours',
-    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
-    'sms' => 'Send Text Message (SMS)',
-    'mail' => 'Send Mail',
+    'company_directory' => 'Directorio de la empresa',
+    'popular_ads' => 'Anuncios populares',
+    'last_48_hours' => 'Últimas 48 horas',
+    'secure_e-commerce_ads' => 'Anuncios seguros de comercio electrónico',
+    'sms' => 'Enviar mensaje de texto (SMS)',
+    'mail' => 'Enviar correo',
 ];
