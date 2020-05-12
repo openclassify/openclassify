@@ -35,9 +35,9 @@ return [
         'title' => 'Campi personalizzati'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Risorse Clear'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
+    'general' => 'Generale',
+    'ads' => 'Annunci',
+    'user' => 'Utente',
 ];
