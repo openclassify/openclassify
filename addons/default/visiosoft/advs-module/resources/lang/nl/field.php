@@ -20,16 +20,16 @@ return [
         'name' => 'Prijs'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'Datum'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'Foto'
     ],
     'video' => [
         'name' => 'Video'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'Kaart'
     ],
     'stock' => [
         'name' => 'Voorraad'
@@ -85,21 +85,21 @@ return [
     'status' => [
         'name' => 'staat',
         'option' => [
-            'approved' => 'Approved',
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished',
-            'pending_admin' => 'Pending Admin',
-            'pending_user' => 'Pending User'
+            'approved' => 'Goedgekeurd',
+            'expired' => 'Niet meer geldig',
+            'unpublished' => 'Niet gepubliceerd',
+            'pending_admin' => 'In afwachting van beheerder',
+            'pending_user' => 'In afwachting van gebruiker'
         ]
     ],
     'pending_adv' => [
         'name' => 'In afwachting van advertenties'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Eindig bij'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'Omslagfoto'
     ],
     'favs_adv' => [
         'name' => 'Favoriete advertenties'
@@ -107,8 +107,8 @@ return [
     'my_adv' => [
         'name' => 'ADVS'
     ],
-    'description' =>  'Description',
-    'explanation' =>  'Explanation',
+    'description' =>  'Omschrijving',
+    'explanation' =>  'Uitleg',
     'type' => [
         'name' => 'Type'
     ],
@@ -118,22 +118,22 @@ return [
     'value' => [
         'name' => 'Waarde'
     ],
-    'list' => 'List',
+    'list' => 'Lijst',
     'home' => 'Huis',
     'list-page' => 'Lijstpagina',
     'search' => 'Zoeken',
     'recommended' => 'Aanbevolen advertenties voor u',
     'filter' => 'Filter',
-    'sort' => 'Sort',
+    'sort' => 'Soort',
     'sort_by' => 'Sorteer op',
     'pick_option' => 'Kies een optie',
-    'pick_ordering' => 'Ordering',
+    'pick_ordering' => 'Bestellen',
     'price_high' => 'Prijs hoog naar laag',
-    'price_low' => 'Price Low to High',
+    'price_low' => 'Prijs laag naar hoog',
     'newest' => 'Nieuwste',
-    'oldest' => 'Oldest',
-    'address_a_z' => 'Address (A to Z)',
-    'address_z_a' => 'Address (Z to A)',
+    'oldest' => 'Oudste',
+    'address_a_z' => 'Adres (A tot Z)',
+    'address_z_a' => 'Adres (Z tot A)',
     'categories' => 'Categorieën',
     'all_categories' => 'Alle categorieën',
     'location' => 'Plaats',
@@ -147,7 +147,7 @@ return [
     'search_desc' => 'U kunt hier uw favoriete zoekselecties toevoegen en beheren.',
     'complaint_placeholder' => 'Typ hier uw klachtdetails.',
     'show_details' => 'Toon details',
-    'ad_actions' => 'Ad Actions',
+    'ad_actions' => 'Advertentie-acties',
     'edit' => 'Bewerk',
     'approve' => 'Goedkeuren',
     'passive' => "Passief",
@@ -183,7 +183,7 @@ return [
     'send_us_your_feedback' => 'Stuur ons uw feedback',
     'online_shopping' => 'KRIJGEN',
     'approved' => 'Succesvol goedgekeurd',
-    'extended' => 'Extended Successfully',
+    'extended' => 'Succesvol uitgebreid',
     'declined' => 'Succesvol afgewezen',
     'search_on_map' => 'Zoeken op kaart',
     'post_free_ad' => 'Plaats gratis advertentie',
@@ -233,10 +233,10 @@ return [
         'name' => 'Mijn advertenties',
     ],
     'sold_out' => [
-        'name' => 'Sold out',
+        'name' => 'Uitverkocht',
     ],
-    'edit_category' => 'Edit Category',
-    'set_category' => 'Set Category',
+    'edit_category' => 'Categorie bewerken',
+    'set_category' => 'Categorie instellen',
     'max' => [
         'name' => 'Max',
     ],
@@ -244,49 +244,49 @@ return [
         'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'In de afgelopen 24 uur'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'In de laatste week'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'In de afgelopen maand'
     ],
     'ads_with_photo' => [
-        'name' => 'Ads With Photo'
+        'name' => 'Advertenties met foto'
     ],
     'ads_with_video' => [
-        'name' => 'Ads With Video'
+        'name' => 'Advertenties met video'
     ],
     'yes' => [
-        'name' => 'Yes'
+        'name' => 'Ja'
     ],
-    "no_location" => "No location is selected.",
-    "continue" => 'Continue',
-    "gallery" => 'Gallery',
+    "no_location" => "Er is geen locatie geselecteerd.",
+    "continue" => 'Doorgaan met',
+    "gallery" => 'Galerij',
 
     // Pending screen
-    'pending_message_1' => 'The Ad is in the Approval Process',
-    'pending_message_2' => "Ad's Update Date",
-    'pending_message_3' => 'Estimated Waiting Time',
-    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
-    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
-    'hours' => 'hours',
+    'pending_message_1' => 'De advertentie bevindt zich in het goedkeuringsproces',
+    'pending_message_2' => "Update-datum van advertentie",
+    'pending_message_3' => 'Geschatte wachttijd',
+    'pending_message_4' => 'De tijd die in het goedkeuringsproces is doorgebracht, wordt opgeteld bij de dopingtijd.',
+    'pending_message_5' => 'Er kunnen vanuit het callcenter geen transacties worden gedaan met betrekking tot de advertentie in het goedkeuringsproces.',
+    'hours' => 'uren',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
-        'part_2' => 'If not, click the "Edit" button.',
+        'part_1' => 'Als de volgende informatie over uw advertentie correct is, klikt u op de knop "Doorgaan" en gaat u naar de volgende stap.',
+        'part_2' => 'Zo niet, klik dan op de knop "Bewerken".',
     ],
-    'views' => 'Views',
+    'views' => 'Keer bekeken',
 
     // Detail page
-    "no_street_view" => "No street view image in this location",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    "no_street_view" => "Geen straatbeeld op deze locatie",
+    'edit_my_contact_info' => 'Bewerk mijn contactgegevens',
+    'update_my_contact_info' => 'update mijn contactgegevens',
+    'contact_info' => 'Contactgegevens',
+    'ad_info' => 'Advertentie-informatie',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Selecteer stap voor stap categorie',
 ];
