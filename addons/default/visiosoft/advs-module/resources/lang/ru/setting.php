@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'Время публикации по умолчанию',
     ],
-    'default_adv_limit' => [
-        'name' => 'Предел рекламы по умолчанию',
-    ],
     'address' => [
         'name' => 'Контактный адрес',
     ],
@@ -81,6 +78,18 @@ return [
     ],
     'default_GET' => [
         'name' => 'Реклама по умолчанию GET',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Ширина миниатюры',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Высота миниатюры',
+    ],
+    'picture_width' => [
+        'name' => 'Ширина картинки',
+    ],
+    'picture_height' => [
+        'name' => 'Высота картинки',
     ],
     'twitter' => [
         'name' => 'щебет',
