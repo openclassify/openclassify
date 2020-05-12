@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Type here to search',
-    'null_msg' => 'Not Found',
+    'placeholder' => 'Escriba aquí para buscar',
+    'null_msg' => 'Extraviado',
 ];
