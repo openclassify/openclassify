@@ -2,9 +2,9 @@
 
 return [
     'show_my_ads' => [
-        'name' => 'Show My Ads Tab',
+        'name' => 'Mostrar la pestaña Mis anuncios',
     ],
     'upload_avatar' => [
-        'name' => 'Avatar Upload',
+        'name' => 'Carga de avatar',
     ],
 ];
