@@ -2,15 +2,15 @@
 
 return [
     'imageCanvasW' => [
-        'name' => '圖像畫布寬度'
+        'name' => '图像画布宽度'
     ],
     'imageCanvasH' => [
-        'name' => '圖像畫布高度'
+        'name' => '图像画布高度'
     ],
     'imageResizeW' => [
-        'name' => '影像調整寬度'
+        'name' => '影像调整宽度'
     ],
     'imageResizeH' => [
-        'name' => '圖像調整高度'
+        'name' => '图像调整高度'
     ],
 ];
