@@ -2,10 +2,10 @@
 
 return [
     'profile' => [
-        'title' => '輪廓',
+        'title' => '轮廓',
     ],
     'adress' => [
         'title' => '地址',
     ],
-    'general_setting' => '常規設置',
+    'general_setting' => '常规设置',
 ];
