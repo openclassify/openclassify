@@ -2,7 +2,7 @@
 
 return [
     'category' => [
-        'name'   => 'kategori',
+        'name'   => 'Kategori',
         'option' => [
             'read'   => 'Mund të lexoni kategori?',
             'write'  => 'Mund të krijoni / modifikoni kategori?',
@@ -10,11 +10,12 @@ return [
         ],
     ],
     'placeholderforsearch' => [
-        'name'   => 'Placeholderforsearch',
+        'name'   => 'Mbajtësi i vendit për kërkim',
         'option' => [
-            'read'   => 'A mund të lexoni pronarin e faqes?',
-            'write'  => 'Mund të krijojë / modifikojë vendin e fshehtë?',
-            'delete' => 'Mund ta fshini vendin e mbajtjes së faqes?',
+            'read'   => 'A mund të lexoni mbajtësin e vendit për kërkim?',
+            'write'  => 'Mund të krijojë / modifikojë  vendin për kërkim?
+',
+            'delete' => 'Mund të fshijë mbajtësin e vendit për kërkim?',
         ],
     ],
 ];
