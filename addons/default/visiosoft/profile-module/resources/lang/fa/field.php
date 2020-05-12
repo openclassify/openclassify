@@ -110,7 +110,7 @@ return [
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Profile'
+        'name' => 'مشخصات'
     ],
 
     'create' => [
@@ -120,7 +120,7 @@ return [
         'name' => 'ویرایش کنید'
     ],
     'delete' => [
-        'name' => 'Delete'
+        'name' => 'حذف'
     ],
     'list' => [
         'name' => 'لیست'
@@ -366,7 +366,7 @@ return [
         'name' => 'تنظیمات شرکت',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'کلمه عبور',
     ],
     'new_password' => [
         'name' => 'رمز عبور جدید',
@@ -381,7 +381,7 @@ return [
         'name' => 'ایجاد آدرس',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'ویرایش آدرس',
     ],
     'balance_limit' => [
         'name' => 'حد تعادل',
@@ -418,17 +418,17 @@ return [
     ],
 
     'individual' => [
-        'name' => 'individual',
+        'name' => 'شخصی',
     ],
     'corporate' => [
-        'name' => 'corporate',
+        'name' => 'شرکت های بزرگ، دارای شخصیت حقوقی',
     ],
 
     'details' => [
-        'name' => 'Details'
+        'name' => 'جزئیات'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'انتخاب کنید'
     ],
-    'my_address' => 'My Address'
+    'my_address' => 'نشانی من'
 ];
