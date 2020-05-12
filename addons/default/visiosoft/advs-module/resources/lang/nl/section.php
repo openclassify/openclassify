@@ -11,7 +11,7 @@ return [
         'title' => 'landen',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Steden',
     ],
     'districts' => [
         'title' => 'districten',
@@ -35,9 +35,9 @@ return [
         'title' => 'Aangepaste velden'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Activa duidelijk'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
+    'general' => 'Algemeen',
+    'ads' => 'Advertenties',
+    'user' => 'Gebruiker',
 ];
