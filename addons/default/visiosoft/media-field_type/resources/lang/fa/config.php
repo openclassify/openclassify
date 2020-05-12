@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'پوشه ها',
+        'instructions' => 'مشخص کنید که کدام پوشه برای این قسمت موجود است. خالی بگذارید تا همه پوشه ها نمایش داده شوند.',
+        'warning'      => 'مجوزهای پوشه موجود نسبت به پوشه های منتخب اولویت دارند.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'حداقل انتخاب ها',
+        'instructions' => 'حداقل تعداد انتخاب های مجاز را وارد کنید.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'حداکثر انتخاب ها',
+        'instructions' => 'حداکثر تعداد مجاز انتخاب را وارد کنید.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'حالت ورودی',
+        'instructions' => 'چگونه کاربران باید ورودی فایل را ارائه دهند؟',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'پرونده ها را بارگذاری و / یا انتخاب کنید.',
+            'select'  => 'فقط پرونده ها را انتخاب کنید.',
+            'upload'  => 'فقط پرونده ها را بارگذاری کنید.',
         ],
     ],
 ];
