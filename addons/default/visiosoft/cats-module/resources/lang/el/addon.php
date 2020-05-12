@@ -1,7 +1,7 @@
 <?php
 
- return[
-   "title"   =>"Κατηγορία",
-   "name"   =>"Μονάδα κατηγορίας",
-   "description"   =>""
+return [
+    'title'       => 'Κατηγορία',
+    'name'        => 'Μονάδα κατηγορίας',
+    'description' => ''
 ];
