@@ -17,6 +17,6 @@ return [
         'title' => 'Pueblo',
     ],
     'general' => 'General',
-    'map' => 'Map',
-    'setting' => 'Setting',
+    'map' => 'Mapa',
+    'setting' => 'Ajuste',
 ];
