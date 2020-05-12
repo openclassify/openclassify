@@ -110,7 +110,7 @@ return [
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Profile'
+        'name' => 'Profiel'
     ],
 
     'create' => [
@@ -120,7 +120,7 @@ return [
         'name' => 'Bewerk'
     ],
     'delete' => [
-        'name' => 'Delete'
+        'name' => 'Verwijderen'
     ],
     'list' => [
         'name' => 'Lijst'
@@ -369,7 +369,7 @@ return [
         'name' => 'Bedrijfsinstellingen',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'Wachtwoord',
     ],
     'new_password' => [
         'name' => 'Nieuw paswoord',
@@ -384,7 +384,7 @@ return [
         'name' => 'Adres maken',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'verander adres',
     ],
     'balance_limit' => [
         'name' => 'Balanslimiet',
@@ -421,17 +421,17 @@ return [
     ],
 
     'individual' => [
-        'name' => 'individual',
+        'name' => 'individueel',
     ],
     'corporate' => [
-        'name' => 'corporate',
+        'name' => 'zakelijk',
     ],
 
     'details' => [
         'name' => 'Details'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'Kiezen'
     ],
-    'my_address' => 'My Address'
+    'my_address' => 'Mijn adres'
 ];
