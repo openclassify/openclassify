@@ -2,9 +2,9 @@
 
 return [
     'show_my_ads' => [
-        'name' => '顯示我的廣告標籤',
+        'name' => '显示我的广告标签',
     ],
     'upload_avatar' => [
-        'name' => '頭像上傳',
+        'name' => '头像上传',
     ],
 ];
