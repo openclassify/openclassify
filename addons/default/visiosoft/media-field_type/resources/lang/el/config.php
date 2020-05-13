@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Φάκελοι',
+        'instructions' => 'Καθορίστε ποιοι φάκελοι είναι διαθέσιμοι για αυτό το πεδίο. Αφήστε κενό για εμφάνιση όλων των φακέλων.',
+        'warning'      => 'Τα υπάρχοντα δικαιώματα φακέλου υπερισχύουν των επιλεγμένων φακέλων.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'Ελάχιστες επιλογές',
+        'instructions' => 'Εισαγάγετε τον ελάχιστο αριθμό επιτρεπόμενων επιλογών.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'Μέγιστες επιλογές',
+        'instructions' => 'Εισαγάγετε τον μέγιστο αριθμό επιτρεπόμενων επιλογών.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Λειτουργία εισαγωγής',
+        'instructions' => 'Πώς πρέπει να παρέχουν οι χρήστες είσοδο αρχείων;',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Ανεβάστε και / ή επιλέξτε αρχεία.',
+            'select'  => 'Επιλέξτε μόνο αρχεία.',
+            'upload'  => 'Ανεβάστε μόνο αρχεία.',
         ],
     ],
 ];

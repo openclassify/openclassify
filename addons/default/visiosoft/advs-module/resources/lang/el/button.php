@@ -8,13 +8,13 @@ return [
     'new_district' => 'Νέα Επαρχία',
     'new_neighborhood' => 'Νέα γειτονιά',
     'new_village' => 'Νέο χωριό',
-    'edit' => "Edit",
+    'edit' => "Επεξεργασία",
     'approve' => "Εγκρίνω",
     'decline' => 'Πτώση',
-    'extend' => 'Extend',
-    'extend_all' => 'Extend All',
-    'convert_currency' => 'Convert Currency',
-    'categories' => 'Categories',
+    'extend' => 'Επεκτείνω',
+    'extend_all' => 'Επέκταση όλων',
+    'convert_currency' => 'Μετατροπή νομίσματος',
+    'categories' => 'Κατηγορίες',
     'sub_category' => 'Υποκατηγορίες',
     'add_sub_category' => 'Προσθήκη υπο-κατηγορίας',
     'sub_cities' => 'Υπο-πόλεις',
@@ -26,9 +26,9 @@ return [
     'sub_neighborhoods' => 'Υπο-γειτονικές περιοχές',
     'sub_village' => 'Κάτω χωριό',
     'general_settings' => 'Γενικές Ρυθμίσεις',
-    'save_category' => 'Save Category',
-    'change_owner' => 'Change Owner',
+    'save_category' => 'Αποθήκευση κατηγορίας',
+    'change_owner' => 'Αλλαγή κατόχου',
     'update_category' => [
-        'name' => 'Update Category'
+        'name' => 'Ενημέρωση κατηγορίας'
     ],
 ];

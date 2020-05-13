@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'help'      => 'Help',
-    'search'    => 'Search',
-    'logout'    => 'Logout',
-    'view_site' => 'View Site',
-    'title'     => 'Control Panel',
-    'search_placeholder'     => 'Type to search',
+    'help'      => 'Βοήθεια',
+    'search'    => 'Αναζήτηση',
+    'logout'    => 'Αποσύνδεση',
+    'view_site' => 'Προβολή ιστότοπου',
+    'title'     => 'Πίνακας Ελέγχου',
+    'search_placeholder'     => 'Πληκτρολογήστε για αναζήτηση',
 
     // Users Module
-    'search_by_gsm_number'     => 'Search By GSM Number',
+    'search_by_gsm_number'     => 'Αναζήτηση με αριθμό GSM',
 ];

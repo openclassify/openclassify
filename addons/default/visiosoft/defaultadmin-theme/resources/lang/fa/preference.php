@@ -2,8 +2,8 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'شناور کناری',
+        'instructions' => 'نوار کناری را روی شناور ببندید؟',
     ],
     'navigation'    => [
         'name'         => 'منو ها',
@@ -12,19 +12,19 @@ return [
         'reorder'      => 'برای مرتب کردن آیتم ها را در سایدبار با موس جابجا کنید',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'تراکم نمایش',
+        'instructions' => 'صفحه نمایش جمع و جور اجازه می دهد تا محتوای بیشتری به طور همزمان روی صفحه نمایش داده شود.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'پیش فرض',
+            'compact' => 'فشرده - جمع و جور',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'حالت نوار کناری',
+        'instructions' => 'ستون های فرعی استاتیک همیشه قابل مشاهده خواهند بود.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'پیش فرض',
+            'static'  => 'استاتیک',
         ],
     ],
 ];

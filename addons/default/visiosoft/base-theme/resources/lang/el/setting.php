@@ -2,36 +2,36 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Τίτλος πλοήγησης',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Δράση πλοήγησης',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Πεδία χώρας',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Πεδία ημερομηνίας',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Πεδία τιμών',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'Ψωμί',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Λεπτομέρειες διαφήμισης',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Καρτέλα Λεπτομέρειες διαφήμισης',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Τελευταία και προβολή όλων Btn',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Εγγραφή λογότυπου οδηγιών σελίδας',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'Στυλ (CSS)',
     ],
 ];

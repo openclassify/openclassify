@@ -2,12 +2,12 @@
 
 return [
     'post_ad' => [
-        'name' => 'Post Ad',
+        'name' => 'ارسال آگهی',
     ],
-    'login' => 'Login',
-    'register' => 'Register',
-    'continue' => 'Continue',
-    'reset_password' => 'Reset Password',
-    'email' => 'Email',
-    'phone' => 'Phone',
+    'login' => 'وارد شدن',
+    'register' => 'ثبت نام',
+    'continue' => 'ادامه هید',
+    'reset_password' => 'بازنشانی گذرواژه',
+    'email' => 'پست الکترونیک',
+    'phone' => 'تلفن',
 ];

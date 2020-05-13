@@ -2,7 +2,7 @@
 
 return [
     'catalog_mode' => [
-        'name' => 'Catalog Mode',
+        'name' => 'Modalità catalogo',
     ],
-    'template' => 'Template',
+    'template' => 'Modello',
 ];

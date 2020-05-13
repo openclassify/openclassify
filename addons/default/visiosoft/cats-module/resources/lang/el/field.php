@@ -3,7 +3,7 @@
 return [
     'name' => [
         'name' => 'Τίτλος',
-        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
+        'instructions' => 'Είναι το όνομα της κύριας κατηγορίας που θα ορίσετε. Επιτρέπει στον χρήστη να βρει εύκολα το προϊόν που ψάχνει.',
     ],
     'order' => [
         'name' => 'Σειρά',
@@ -11,25 +11,25 @@ return [
 
     'slug' => [
         'name' => 'Γυμνοσάλιαγκας',
-        'instructions' => 'Specify any organizational tags to help group your post with others.',
+        'instructions' => 'Καθορίστε τυχόν οργανωτικές ετικέτες για να ομαδοποιήσετε την ανάρτησή σας με άλλους.',
 
     ],
     'files' => [
         'name' => 'Εικόνα',
     ],
     'seo_keyword' => [
-        'name' => 'Seo Keyword',
-        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
+        'name' => 'Λέξη-κλειδί Seo',
+        'instructions' => 'Λέξεις που προστέθηκαν στον ιστότοπο στο πρόγραμμα περιήγησης Google για εμφάνιση πάνω από τα αποτελέσματα αναζήτησης.',
     ],
     'seo_description' => [
-        'name' => 'Seo Description',
-        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
+        'name' => 'Seo Περιγραφή',
+        'instructions' => 'Μπορεί να επηρεάσει την απόφαση των επισκεπτών σας σχετικά με το αν θέλουν να κάνουν κλικ στο περιεχόμενο στα αποτελέσματα αναζήτησης.',
     ],
     'icon' => [
-        'name' => 'Icon',
-        'instructions' => 'It is used to add icons indicating the category type.',
+        'name' => 'Εικόνισμα',
+        'instructions' => 'Χρησιμοποιείται για την προσθήκη εικονιδίων που υποδεικνύουν τον τύπο κατηγορίας.',
     ],
 
     'please_wait' => 'Παρακαλώ περιμένετε. Διαγραφή υπο-κατηγοριών',
-    'category_selection' => 'Category Selection',
+    'category_selection' => 'Επιλογή κατηγορίας',
 ];

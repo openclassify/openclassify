@@ -5,15 +5,15 @@ return [
         'name' => 'Αυτόματη έγκριση',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Προεπιλεγμένος τύπος προβολής',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Απόκρυψη τιμής εάν μηδέν',
+        'instructions' => 'Απόκρυψη της τιμής εάν η τιμή της διαφήμισης είναι 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Εκτιμώμενος χρόνος σε εκκρεμότητα',
+        'instructions' => 'Σε ώρες',
     ],
     'default_published_time' => [
         'name' => 'Προεπιλεγμένος χρόνος δημοσίευσης',
@@ -34,7 +34,7 @@ return [
         'name' => 'Χάρτης συντεταγμένων',
     ],
     'iban_numbers' => [
-        'name' => 'IBAN',
+        'name' => 'ΙΒΑΝ',
     ],
     'logo' => [
         'name' => 'Λογότυπο',
@@ -48,7 +48,7 @@ return [
         'name' => 'Ενεργά νομίσματα',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Τελευταίο όριο',
     ],
     'site_address' => [
         'name' => 'Διεύθυνση ιστοτόπου',
@@ -80,16 +80,16 @@ return [
         'name' => 'Προεπιλεγμένη διαφήμιση GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Πλάτος μικρογραφιών',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Ύψος μικρογραφιών',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Πλάτος εικόνας',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Ύψος εικόνας',
     ],
     'twitter' => [
         'name' => 'Κελάδημα',
@@ -125,6 +125,6 @@ return [
         'name' => 'Στατιστικό κώδικα Google',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Απαίτηση ηλεκτρονικού ταχυδρομείου εγγραφής μέλους',
     ],
 ];

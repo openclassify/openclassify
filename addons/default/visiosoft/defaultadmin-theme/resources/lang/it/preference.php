@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Hover barra laterale',
+        'instructions' => 'Espandere la barra laterale al passaggio del mouse?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navigazione',
+        'instructions' => 'Specifica il tuo <em>personale</em> ordine di navigazione.',
+        'warning'      => 'Il primo elemento di navigazione accessibile viene utilizzato come area <strong>home</strong>.',
+        'reorder'      => 'Trascina e rilascia gli elementi di navigazione principali nella barra laterale <strong></strong> per riordinarli.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Densità display',
+        'instructions' => 'Il display compatto consente di visualizzare più contenuti contemporaneamente sullo schermo.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'Predefinito',
+            'compact' => 'Compatto',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Modalità barra laterale',
+        'instructions' => 'Le barre laterali statiche saranno sempre visibili.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'Predefinito',
+            'static'  => 'Statico',
         ],
     ],
 ];

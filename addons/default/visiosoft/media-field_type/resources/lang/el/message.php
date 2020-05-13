@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_folder'     => 'Which folder would you like to upload to?',
-    'upload'            => 'Add İmages | Upload İmages | Attach a photo',
-    'choose_files'      => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads'        => 'No files uploaded.',
-    'overwrite'         => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading'         => 'Uploading',
-    'loading'           => 'Loading',
+    'choose_folder'     => 'Σε ποιον φάκελο θέλετε να ανεβάσετε;',
+    'upload'            => 'Προσθήκη agesmages | Μεταφόρτωση İmages | Επισυνάψτε μια φωτογραφία',
+    'choose_files'      => 'Ποια αρχεία θέλετε να χρησιμοποιήσετε;',
+    'no_files_selected' => 'Δεν έχουν επιλεγεί αρχεία.',
+    'no_uploads'        => 'Δεν μεταφορτώθηκαν αρχεία.',
+    'overwrite'         => 'έχει ήδη μεταφορτωθεί. Θέλετε να το αντικαταστήσετε;',
+    'uploading'         => 'Μεταφόρτωση',
+    'loading'           => 'Φόρτωση',
 ];

@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Mappen',
+        'instructions' => 'Specificeer welke mappen beschikbaar zijn voor dit veld. Laat leeg om alle mappen weer te geven.',
+        'warning'      => 'Bestaande mapmachtigingen hebben voorrang op geselecteerde mappen.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Maximale uploadgrootte',
+        'instructions' => 'Geef de maximale uploadgrootte op in <strong>megabytes</strong>.',
+        'warning'      => 'Indien niet gespecificeerd, wordt in plaats daarvan de map max en vervolgens de server max gebruikt.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Invoer modus',
+        'instructions' => 'Hoe moeten gebruikers bestandsinvoer verstrekken?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Upload en / of selecteer bestanden.',
+            'select'  => 'Selecteer alleen bestanden.',
+            'upload'  => 'Upload alleen bestanden.',
         ],
     ],
 ];

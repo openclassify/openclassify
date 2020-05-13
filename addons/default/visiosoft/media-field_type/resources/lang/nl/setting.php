@@ -2,15 +2,15 @@
 
 return [
     'imageCanvasW' => [
-        'name' => 'Image Canvas Width'
+        'name' => 'Breedte van afbeeldingsdoek'
     ],
     'imageCanvasH' => [
-        'name' => 'Image Canvas Height'
+        'name' => 'Afbeelding Canvashoogte'
     ],
     'imageResizeW' => [
-        'name' => 'Image Resize Width'
+        'name' => 'Afbeelding Formaat wijzigen'
     ],
     'imageResizeH' => [
-        'name' => 'Image Resize Height'
+        'name' => 'Afbeelding Formaat wijzigen'
     ],
 ];

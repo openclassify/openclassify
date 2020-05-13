@@ -35,9 +35,9 @@ return [
         'title' => 'موضوعات سفارشی'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'دارایی ها پاک'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
+    'general' => 'عمومی',
+    'ads' => 'تبلیغات',
+    'user' => 'کاربر',
 ];

@@ -2,7 +2,7 @@
 
 return [
     'catalog_mode' => [
-        'name' => 'Catalog Mode',
+        'name' => 'Λειτουργία καταλόγου',
     ],
-    'template' => 'Template',
+    'template' => 'Πρότυπο',
 ];

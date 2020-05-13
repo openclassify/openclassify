@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Zijbalk Hover',
+        'instructions' => 'De zijbalk uitvouwen bij zweven?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navigatie',
+        'instructions' => 'Specificeer uw <em>persoonlijke</em> volgorde van navigatie.',
+        'warning'      => 'Het eerste toegankelijke navigatie-item wordt gebruikt als uw <strong>thuis</strong> gebied.',
+        'reorder'      => 'Sleep de primaire navigatie-items in de <strong>zijbalk</strong> om ze opnieuw te ordenen.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Weergavedichtheid',
+        'instructions' => 'Compacte weergave maakt het mogelijk om meer inhoud tegelijk op het scherm weer te geven.',
         'option'       => [
-            'default' => 'Default',
+            'default' => 'Standaard',
             'compact' => 'Compact',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Zijbalkmodus',
+        'instructions' => 'Statische zijbalken zijn altijd zichtbaar.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'Standaard',
+            'static'  => 'Statisch',
         ],
     ],
 ];

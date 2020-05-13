@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Cartelle',
+        'instructions' => 'Specifica quali cartelle sono disponibili per questo campo. Lascia vuoto per visualizzare tutte le cartelle.',
+        'warning'      => 'Le autorizzazioni per le cartelle esistenti hanno la precedenza sulle cartelle selezionate.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'Selezioni minime',
+        'instructions' => 'Immettere il numero minimo di selezioni consentite.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'Selezioni massime',
+        'instructions' => 'Immettere il numero massimo di selezioni consentite.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Modalità di immissione',
+        'instructions' => 'In che modo gli utenti devono fornire input di file?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Carica e / o seleziona file.',
+            'select'  => 'Seleziona solo i file.',
+            'upload'  => 'Carica solo file.',
         ],
     ],
 ];

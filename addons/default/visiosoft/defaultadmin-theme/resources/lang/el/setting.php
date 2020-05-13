@@ -2,13 +2,13 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Αιωρηθείτε στο Sidebar',
+        'instructions' => 'Επέκταση της πλαϊνής γραμμής στο ποντίκι;',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify the <em>default</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Πλοήγηση',
+        'instructions' => 'Καθορίστε το <em>προεπιλεγμένο</em> σειρά της πλοήγησης.',
+        'warning'      => 'Το πρώτο προσβάσιμο στοιχείο πλοήγησης χρησιμοποιείται ως περιοχή <strong>home</strong>.',
+        'reorder'      => 'Μεταφέρετε και αποθέστε τα κύρια στοιχεία πλοήγησης στην <strong>πλευρική γραμμή</strong> για να τα αναδιατάξετε.',
     ],
 ];

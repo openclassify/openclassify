@@ -110,7 +110,7 @@ return [
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Profile'
+        'name' => 'Perfil'
     ],
 
     'create' => [
@@ -120,7 +120,7 @@ return [
         'name' => 'Editar'
     ],
     'delete' => [
-        'name' => 'Delete'
+        'name' => 'Eliminar'
     ],
     'list' => [
         'name' => 'Lista'
@@ -369,7 +369,7 @@ return [
         'name' => 'Configuraciones corporativas',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'Contraseña',
     ],
     'new_password' => [
         'name' => 'Nueva contraseña',
@@ -384,7 +384,7 @@ return [
         'name' => 'Crear dirección',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'Editar dirección',
     ],
     'balance_limit' => [
         'name' => 'Límite de equilibrio',
@@ -424,14 +424,14 @@ return [
         'name' => 'individual',
     ],
     'corporate' => [
-        'name' => 'corporate',
+        'name' => 'corporativo',
     ],
 
     'details' => [
-        'name' => 'Details'
+        'name' => 'Detalles'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'Escoger'
     ],
-    'my_address' => 'My Address'
+    'my_address' => 'Mi dirección'
 ];

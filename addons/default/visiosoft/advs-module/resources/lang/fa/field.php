@@ -20,16 +20,16 @@ return [
         'name' => 'قیمت'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'تاریخ'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'عکس'
     ],
     'video' => [
-        'name' => 'Video'
+        'name' => 'فیلم'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'نقشه'
     ],
     'stock' => [
         'name' => 'موجودی'
@@ -85,21 +85,21 @@ return [
     'status' => [
         'name' => 'وضعیت',
         'option' => [
-            'approved' => 'Approved',
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished',
-            'pending_admin' => 'Pending Admin',
-            'pending_user' => 'Pending User'
+            'approved' => 'تایید شده',
+            'expired' => 'منقضی شده',
+            'unpublished' => 'منتشر نشده',
+            'pending_admin' => 'در انتظار مدیر',
+            'pending_user' => 'در انتظار کاربر'
         ]
     ],
     'pending_adv' => [
         'name' => 'در انتظار تبلیغات'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'پایان در'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'عکس جلد'
     ],
     'favs_adv' => [
         'name' => 'تبلیغات مورد علاقه'
@@ -107,8 +107,8 @@ return [
     'my_adv' => [
         'name' => 'ADVS'
     ],
-    'description' =>  'Description',
-    'explanation' =>  'Explanation',
+    'description' =>  'شرح',
+    'explanation' =>  'توضیح',
     'type' => [
         'name' => 'تایپ کنید'
     ],
@@ -118,22 +118,22 @@ return [
     'value' => [
         'name' => 'ارزش'
     ],
-    'list' => 'List',
+    'list' => 'لیست',
     'home' => 'خانه',
     'list-page' => 'صفحه لیست',
     'search' => 'جستجو کردن',
     'recommended' => 'تبلیغات پیشنهادی برای شما',
-    'filter' => 'Filter',
-    'sort' => 'Sort',
+    'filter' => 'فیلتر',
+    'sort' => 'مرتب سازی',
     'sort_by' => 'مرتب سازی بر اساس',
     'pick_option' => 'گزینه ای را انتخاب کنید',
-    'pick_ordering' => 'Ordering',
+    'pick_ordering' => 'مرتب سازی',
     'price_high' => 'قیمت بالا تا پایین',
-    'price_low' => 'Price Low to High',
+    'price_low' => 'قیمت پایین تا بالا',
     'newest' => 'جدیدترین',
-    'oldest' => 'Oldest',
-    'address_a_z' => 'Address (A to Z)',
-    'address_z_a' => 'Address (Z to A)',
+    'oldest' => 'قدیمی ترین',
+    'address_a_z' => 'آدرس (A تا Z)',
+    'address_z_a' => 'آدرس (Z تا A)',
     'categories' => 'دسته بندی ها',
     'all_categories' => 'همه دسته بندی ها',
     'location' => 'محل',
@@ -147,7 +147,7 @@ return [
     'search_desc' => 'شما می توانید انتخابهای جستجوی دلخواه خود را از اینجا اضافه و مدیریت کنید.',
     'complaint_placeholder' => 'جزئیات شکایت خود را اینجا بنویسید.',
     'show_details' => 'نمایش جزئیات',
-    'ad_actions' => 'Ad Actions',
+    'ad_actions' => 'اقدامات تبلیغاتی',
     'edit' => 'ویرایش کنید',
     'approve' => 'تایید',
     'passive' => "منفعل",
@@ -182,7 +182,7 @@ return [
     'send_us_your_feedback' => 'بازخورد خود را برای ما ارسال کنید',
     'online_shopping' => 'گرفتن',
     'approved' => 'با موفقیت تأیید شد',
-    'extended' => 'Extended Successfully',
+    'extended' => 'با موفقیت تمدید شد',
     'declined' => 'با موفقیت کاهش یافت',
     'search_on_map' => 'جستجو در نقشه',
     'post_free_ad' => 'ارسال آگهی رایگان',
@@ -232,60 +232,60 @@ return [
         'name' => 'تبلیغات من',
     ],
     'sold_out' => [
-        'name' => 'Sold out',
+        'name' => 'فروخته شده',
     ],
-    'edit_category' => 'Edit Category',
-    'set_category' => 'Set Category',
+    'edit_category' => 'ویرایش رده',
+    'set_category' => 'مجموعه را تنظیم کنید',
     'max' => [
-        'name' => 'Max',
+        'name' => 'حداکثر',
     ],
     'min' => [
-        'name' => 'Min',
+        'name' => 'حداقل',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'در 24 ساعت گذشته'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'در هفته گذشته'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'در آخرین ماه'
     ],
     'ads_with_photo' => [
-        'name' => 'Ads With Photo'
+        'name' => 'تبلیغات با عکس'
     ],
     'ads_with_video' => [
-        'name' => 'Ads With Video'
+        'name' => 'تبلیغات با فیلم'
     ],
     'yes' => [
-        'name' => 'Yes'
+        'name' => 'آره'
     ],
-    "no_location" => "No location is selected.",
-    "continue" => 'Continue',
-    "gallery" => 'Gallery',
+    "no_location" => "هیچ مکانی انتخاب نشده است.",
+    "continue" => 'ادامه هید',
+    "gallery" => 'آلبوم عکس',
 
     // Pending screen
-    'pending_message_1' => 'The Ad is in the Approval Process',
-    'pending_message_2' => "Ad's Update Date",
-    'pending_message_3' => 'Estimated Waiting Time',
-    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
-    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
-    'hours' => 'hours',
+    'pending_message_1' => 'آگهی در مراحل تأیید است',
+    'pending_message_2' => "تاریخ بروزرسانی تبلیغات",
+    'pending_message_3' => 'زمان تخمین انتظار',
+    'pending_message_4' => 'زمان صرف شده در فرآیند تأیید به زمان دوپینگ اضافه می شود.',
+    'pending_message_5' => 'در رابطه با آگهی در فرآیند تأیید ، هیچ کاری از مرکز تماس نمی تواند انجام شود.',
+    'hours' => 'ساعت ها',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
-        'part_2' => 'If not, click the "Edit" button.',
+        'part_1' => 'اگر اطلاعات زیر درباره آگهی شما صحیح است ، روی دکمه "ادامه" کلیک کرده و به مرحله بعدی بروید.',
+        'part_2' => 'اگر اینطور نیست ، روی دکمه "ویرایش" کلیک کنید.',
     ],
-    'views' => 'Views',
+    'views' => 'بازدیدها',
 
     // Detail page
-    "no_street_view" => "No street view image in this location",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    "no_street_view" => "هیچ تصویر نمای خیابان در این مکان وجود ندارد",
+    'edit_my_contact_info' => 'اطلاعات مخاطب من را ویرایش کنید',
+    'update_my_contact_info' => 'اطلاعات تماس من را به روز کنید',
+    'contact_info' => 'اطلاعات تماس',
+    'ad_info' => 'اطلاعات آگهی',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'طبقه بندی را مرحله به مرحله انتخاب کنید',
 ];

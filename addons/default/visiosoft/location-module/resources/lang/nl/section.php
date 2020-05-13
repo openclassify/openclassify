@@ -5,7 +5,7 @@ return [
         'title' => 'landen',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Steden',
     ],
     'districts' => [
         'title' => 'districten',
@@ -16,7 +16,7 @@ return [
     'village' => [
         'title' => 'Dorp',
     ],
-    'general' => 'General',
-    'map' => 'Map',
-    'setting' => 'Setting',
+    'general' => 'Algemeen',
+    'map' => 'Kaart',
+    'setting' => 'Omgeving',
 ];

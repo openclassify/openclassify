@@ -5,15 +5,15 @@ return [
         'name' => 'Approvazione automatica',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Tipo di visualizzazione predefinito',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Nascondi prezzo se zero',
+        'instructions' => 'Nascondi il prezzo se il prezzo dell\'annuncio è 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Tempo di attesa stimato',
+        'instructions' => 'In ore',
     ],
     'default_published_time' => [
         'name' => 'Tempo di pubblicazione predefinito',
@@ -25,7 +25,7 @@ return [
         'name' => 'Contatto telefonico',
     ],
     'favicon' => [
-        'name' => 'Favicon',
+        'name' => 'favicon',
     ]
     ,'map_coordinates_long' => [
         'name' => 'Mappa lunga coordinata',
@@ -48,7 +48,7 @@ return [
         'name' => 'Valute attive',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Ultimo limite',
     ],
     'site_address' => [
         'name' => 'Indirizzo del sito',
@@ -80,16 +80,16 @@ return [
         'name' => 'Annuncio predefinito GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Larghezza Miniatura',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Altezza Miniatura',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Larghezza immagine',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Altezza dell\'immagine',
     ],
     'twitter' => [
         'name' => 'cinguettio',
@@ -125,6 +125,6 @@ return [
         'name' => 'Codice statistico di Google',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Requisito e-mail di registrazione membro',
     ],
 ];

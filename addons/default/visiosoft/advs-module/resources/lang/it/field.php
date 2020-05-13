@@ -20,16 +20,16 @@ return [
         'name' => 'Prezzo'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'Data'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'Foto'
     ],
     'video' => [
-        'name' => 'Video'
+        'name' => 'video'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'Carta geografica'
     ],
     'stock' => [
         'name' => 'Azione'
@@ -85,21 +85,21 @@ return [
     'status' => [
         'name' => 'Stato',
         'option' => [
-            'approved' => 'Approved',
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished',
-            'pending_admin' => 'Pending Admin',
-            'pending_user' => 'Pending User'
+            'approved' => 'Approvato',
+            'expired' => 'Scaduto',
+            'unpublished' => 'inedito',
+            'pending_admin' => 'Amministratore in sospeso',
+            'pending_user' => 'Utente in attesa'
         ]
     ],
     'pending_adv' => [
         'name' => 'Annunci in sospeso'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Termina alle'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'Foto di copertina'
     ],
     'favs_adv' => [
         'name' => 'Pubblicità preferita'
@@ -107,8 +107,8 @@ return [
     'my_adv' => [
         'name' => 'ADVS'
     ],
-    'description' =>  'Description',
-    'explanation' =>  'Explanation',
+    'description' =>  'Descrizione',
+    'explanation' =>  'Spiegazione',
     'type' => [
         'name' => 'genere'
     ],
@@ -118,22 +118,22 @@ return [
     'value' => [
         'name' => 'Valore'
     ],
-    'list' => 'List',
+    'list' => 'Elenco',
     'home' => 'Casa',
     'list-page' => 'Pagina elenco',
     'search' => 'Ricerca',
     'recommended' => 'Annunci consigliati per te',
-    'filter' => 'Filter',
-    'sort' => 'Sort',
+    'filter' => 'Filtro',
+    'sort' => 'Ordinare',
     'sort_by' => 'Ordina per',
     'pick_option' => 'Scegli unopzione',
-    'pick_ordering' => 'Ordering',
+    'pick_ordering' => 'ordinazione',
     'price_high' => 'Prezzo da alto a basso',
-    'price_low' => 'Price Low to High',
+    'price_low' => 'Prezzo da basso ad alto',
     'newest' => 'i più nuovi',
-    'oldest' => 'Oldest',
-    'address_a_z' => 'Address (A to Z)',
-    'address_z_a' => 'Address (Z to A)',
+    'oldest' => 'il più vecchio',
+    'address_a_z' => 'Indirizzo (dalla A alla Z)',
+    'address_z_a' => 'Indirizzo (dalla Z alla A)',
     'categories' => 'categorie',
     'all_categories' => 'tutte le categorie',
     'location' => 'Posizione',
@@ -147,7 +147,7 @@ return [
     'search_desc' => 'Puoi aggiungere e gestire le tue selezioni di ricerca preferite qui.',
     'complaint_placeholder' => 'Digita qui i dettagli del reclamo.',
     'show_details' => 'Mostra dettagli',
-    'ad_actions' => 'Ad Actions',
+    'ad_actions' => 'Azioni pubblicitarie',
     'edit' => 'modificare',
     'approve' => 'Approvare',
     'passive' => "Passivo",
@@ -183,7 +183,7 @@ return [
     'send_us_your_feedback' => 'Inviaci il tuo feedback',
     'online_shopping' => 'OTTENERE',
     'approved' => 'Approvato con successo',
-    'extended' => 'Extended Successfully',
+    'extended' => 'Esteso con successo',
     'declined' => 'Rifiutato con successo',
     'search_on_map' => 'Cerca sulla mappa',
     'post_free_ad' => 'Pubblica annuncio gratuito',
@@ -233,60 +233,60 @@ return [
         'name' => 'I miei annunci',
     ],
     'sold_out' => [
-        'name' => 'Sold out',
+        'name' => 'Esaurito',
     ],
-    'edit_category' => 'Edit Category',
-    'set_category' => 'Set Category',
+    'edit_category' => 'Modifica categoria',
+    'set_category' => 'Imposta categoria',
     'max' => [
         'name' => 'Max',
     ],
     'min' => [
-        'name' => 'Min',
+        'name' => 'min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Nelle ultime 24 ore'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'Nell\'ultima settimana'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'Nell\'ultimo mese'
     ],
     'ads_with_photo' => [
-        'name' => 'Ads With Photo'
+        'name' => 'Annunci con foto'
     ],
     'ads_with_video' => [
-        'name' => 'Ads With Video'
+        'name' => 'Annunci con video'
     ],
     'yes' => [
-        'name' => 'Yes'
+        'name' => 'sì'
     ],
-    "no_location" => "No location is selected.",
-    "continue" => 'Continue',
-    "gallery" => 'Gallery',
+    "no_location" => "Nessuna posizione selezionata.",
+    "continue" => 'Continua',
+    "gallery" => 'Galleria',
 
     // Pending screen
-    'pending_message_1' => 'The Ad is in the Approval Process',
-    'pending_message_2' => "Ad's Update Date",
-    'pending_message_3' => 'Estimated Waiting Time',
-    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
-    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
-    'hours' => 'hours',
+    'pending_message_1' => 'L\'annuncio è in fase di approvazione',
+    'pending_message_2' => "Data di aggiornamento dell'annuncio",
+    'pending_message_3' => 'Tempo di attesa stimato',
+    'pending_message_4' => 'Il tempo trascorso nel processo di approvazione verrà aggiunto al tempo di doping.',
+    'pending_message_5' => 'Non è possibile effettuare transazioni dal call center per quanto riguarda l\'annuncio nel processo di approvazione.',
+    'hours' => 'ore',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
-        'part_2' => 'If not, click the "Edit" button.',
+        'part_1' => 'Se le seguenti informazioni sul tuo annuncio sono corrette, fai clic sul pulsante "Continua" e vai al passaggio successivo.',
+        'part_2' => 'In caso contrario, fai clic sul pulsante "Modifica".',
     ],
-    'views' => 'Views',
+    'views' => 'Visualizzazioni',
 
     // Detail page
-    "no_street_view" => "No street view image in this location",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    "no_street_view" => "Nessuna immagine di street view in questa posizione",
+    'edit_my_contact_info' => 'Modifica le mie informazioni di contatto',
+    'update_my_contact_info' => 'aggiorna le mie informazioni di contatto',
+    'contact_info' => 'Informazioni sui contatti',
+    'ad_info' => 'Informazioni sull\'annuncio',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Seleziona la categoria Step by Step',
 ];

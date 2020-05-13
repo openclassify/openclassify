@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Media Field Type',
-    'name'        => 'Files Field Type',
-    'description' => 'A multiple files upload field type.',
+    'title'       => 'Tipo de campo de mídia',
+    'name'        => 'Tipo de campo Arquivos',
+    'description' => 'Um tipo de campo de upload de vários arquivos.',
 ];

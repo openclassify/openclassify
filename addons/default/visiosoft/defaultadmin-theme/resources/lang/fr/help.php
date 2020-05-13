@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title'                     => 'Helpful Resources',
-    'description'               => 'Find help and discover features with these helpful resources.',
-    'documentation_link'        => 'OpenClassify Documentation',
-    'documentation_description' => 'Find documentation for OpenClassify, developing addons, and using addons too.',
+    'title'                     => 'Ressources utiles',
+    'description'               => 'Trouvez de l\'aide et découvrez des fonctionnalités grâce à ces ressources utiles.',
+    'documentation_link'        => 'Documentation OpenClassify',
+    'documentation_description' => 'Trouvez de la documentation pour OpenClassify, développez des modules complémentaires et utilisez également des modules complémentaires.',
     'slack_link'                => 'Slack Team',
-    'slack_description'         => 'Find and communicate with other OpenClassify users and developers.',
-    'forum_link'                => 'Discussion Forum',
-    'forum_description'         => 'Find answers and post questions about using and developing with OpenClassify.',
-    'addons_link'               => 'Available Addons',
-    'addons_description'        => 'Discover addons available for OpenClassify.',
+    'slack_description'         => 'Trouvez et communiquez avec d\'autres utilisateurs et développeurs d\'OpenClassify.',
+    'forum_link'                => 'Forum de discussion',
+    'forum_description'         => 'Trouvez des réponses et posez des questions sur l\'utilisation et le développement avec OpenClassify.',
+    'addons_link'               => 'Extensions disponibles',
+    'addons_description'        => 'Découvrez les modules complémentaires disponibles pour OpenClassify.',
 ];

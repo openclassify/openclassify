@@ -2,36 +2,36 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Navigatietitel',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Navigatie-actie',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Land velden',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Datumvelden',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Prijsvelden',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'Broodkruimel',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Advertentiedetails',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Tabblad Advertentiedetails',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Nieuwste en bekijk alle Btn',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Registreer Page Instructie Logo',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'Stijl (CSS)',
     ],
 ];

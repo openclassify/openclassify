@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Locatie veld startpagina',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Lijstpagina Locatie veld',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Detailpagina Locatie veld',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Knop Zoeklocatie weergeven',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Standaard land',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Locatie van advertentiepagina maken',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'Standaard stad',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'Standaarddistrict',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Standaardbuurt',
     ],
 
     'google_map_key' => [
@@ -34,10 +34,10 @@ return [
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'Standaard lang',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'Standaard Lat',
     ],
 ];

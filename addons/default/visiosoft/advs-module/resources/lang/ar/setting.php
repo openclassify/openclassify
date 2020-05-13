@@ -18,9 +18,6 @@ return [
     'default_published_time' => [
         'name' => 'وقت النشر الافتراضي',
     ],
-    'default_adv_limit' => [
-        'name' => 'الحد الافتراضي للإعلانات',
-    ],
     'address' => [
         'name' => 'الاتصال العنوان',
     ],
@@ -81,6 +78,18 @@ return [
     ],
     'default_GET' => [
         'name' => 'الإعلان الافتراضي',
+    ],
+    'thumbnail_width' => [
+        'name' => 'عرض الصورة المصغرة',
+    ],
+    'thumbnail_height' => [
+        'name' => 'ارتفاع الصورة المصغرة',
+    ],
+    'picture_width' => [
+        'name' => 'عرض الصورة',
+    ],
+    'picture_height' => [
+        'name' => 'ارتفاع الصورة',
     ],
     'twitter' => [
         'name' => 'تغريد',

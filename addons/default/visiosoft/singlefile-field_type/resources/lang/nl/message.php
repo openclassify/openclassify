@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_file'      => 'Which file would you like to use?',
-    'choose_folder'    => 'Which folder would you like to upload to?',
-    'upload'           => 'Click or drop files here to upload.',
-    'no_file_selected' => 'No file selected.',
-    'no_uploads'       => 'No files uploaded.',
-    'overwrite'        => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading'        => 'Uploading',
-    'loading'          => 'Loading',
+    'choose_file'      => 'Welk bestand wil je gebruiken?',
+    'choose_folder'    => 'Naar welke map wil je uploaden?',
+    'upload'           => 'Klik of zet bestanden hier neer om te uploaden.',
+    'no_file_selected' => 'Geen bestand geselecteerd.',
+    'no_uploads'       => 'Geen bestanden geüpload.',
+    'overwrite'        => 'is al geüpload. Wil je het overschrijven?',
+    'uploading'        => 'Uploaden',
+    'loading'          => 'Bezig met laden',
 ];

@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'قسمت موقعیت مکانی صفحه اصلی',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'قسمت مکان مکان فهرست',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'قسمت موقعیت مکانی صفحه',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'نمایش دکمه موقعیت مکانی جستجو',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'کشور پیش فرض',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'موقعیت مکانی صفحه را ایجاد کنید',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'شهر پیش فرض',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'منطقه پیش فرض',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'محله پیش فرض',
     ],
 
     'google_map_key' => [
@@ -34,10 +34,10 @@ return [
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'بلند پیش فرض',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'پیش فرض Lat',
     ],
 ];

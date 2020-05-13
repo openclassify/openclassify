@@ -287,5 +287,5 @@ return [
     'ad_info' => 'Elan haqqında məlumat',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Addım-addım Kateqoriya seçin',
 ];

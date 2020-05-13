@@ -5,15 +5,15 @@ return [
         'name' => 'Aprobar automáticamente',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Tipo de vista predeterminado',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Ocultar precio si cero',
+        'instructions' => 'Ocultar el precio si el precio del anuncio es 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Tiempo pendiente estimado',
+        'instructions' => 'En horas',
     ],
     'default_published_time' => [
         'name' => 'Tiempo de publicación predeterminado',
@@ -48,7 +48,7 @@ return [
         'name' => 'Monedas activas',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Límite más reciente',
     ],
     'site_address' => [
         'name' => 'Dirección del sitio',
@@ -80,16 +80,16 @@ return [
         'name' => 'Anuncio predeterminado GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Ancho de miniaturas',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Altura de miniatura',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Ancho de imagen',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Altura de imagen',
     ],
     'twitter' => [
         'name' => 'Gorjeo',
@@ -125,6 +125,6 @@ return [
         'name' => 'Código estadístico de Google',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Requisito de registro de miembro por correo electrónico',
     ],
 ];

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Single File',
-    'name'        => 'File Field Type',
-    'description' => 'A file upload field type.',
+    'title'       => 'Enkel bestand',
+    'name'        => 'Bestand veldtype',
+    'description' => 'Een veldtype voor het uploaden van bestanden.',
 ];

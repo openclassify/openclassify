@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Champ Emplacement de la page d\'accueil',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Champ Emplacement de la page de liste',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Champ Emplacement de la page de détails',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Afficher le bouton Emplacement de recherche',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Pays par défaut',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Créer l\'emplacement de la page d\'annonces',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'Ville par défaut',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'District par défaut',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Quartier par défaut',
     ],
 
     'google_map_key' => [
@@ -34,10 +34,10 @@ return [
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'Long par défaut',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'Lat par défaut',
     ],
 ];

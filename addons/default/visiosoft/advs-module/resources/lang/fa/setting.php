@@ -5,15 +5,15 @@ return [
         'name' => 'تأیید خودکار',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'نوع نمایش پیش فرض',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'اگر صفر قیمت را مخفی کنید',
+        'instructions' => 'اگر قیمت آگهی 0 است ، قیمت را مخفی کنید',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'زمان انتظار تخمینی',
+        'instructions' => 'ساعتها',
     ],
     'default_published_time' => [
         'name' => 'زمان انتشار پیش فرض',
@@ -25,7 +25,7 @@ return [
         'name' => 'تماس با تلفن',
     ],
     'favicon' => [
-        'name' => 'Favicon',
+        'name' => 'فاویکون',
     ]
     ,'map_coordinates_long' => [
         'name' => 'نقشه مختصات طولانی',
@@ -48,7 +48,7 @@ return [
         'name' => 'ارزهای فعال',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'آخرین محدودیت',
     ],
     'site_address' => [
         'name' => 'آدرس سایت',
@@ -80,16 +80,16 @@ return [
         'name' => 'تبلیغات پیش فرض GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'عرض تصویر',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'ارتفاع تصویر بند انگشتی',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'عرض تصویر',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'ارتفاع تصویر',
     ],
     'twitter' => [
         'name' => 'توییتر',
@@ -125,6 +125,6 @@ return [
         'name' => 'کد آماری Google',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'ثبت نام از طریق پست الکترونیکی',
     ],
 ];

@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Πεδίο τοποθεσίας αρχικής σελίδας',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Πεδίο θέσης σελίδας λίστας',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Πεδίο θέσης σελίδας λεπτομερειών',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Εμφάνιση κουμπιού τοποθεσίας αναζήτησης',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Προεπιλεγμένη χώρα',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Δημιουργία τοποθεσίας σελίδας διαφήμισης',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'Προεπιλεγμένη πόλη',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'Προεπιλεγμένη περιοχή',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Προεπιλεγμένη γειτονιά',
     ],
 
     'google_map_key' => [
@@ -34,10 +34,10 @@ return [
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'Προεπιλογή Long',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'Προεπιλεγμένο Lat',
     ],
 ];

@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Dossiers',
+        'instructions' => 'Spécifiez les dossiers disponibles pour ce champ. Laissez vide pour afficher tous les dossiers.',
+        'warning'      => 'Les autorisations de dossier existantes ont priorité sur les dossiers sélectionnés.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
+        'name'         => 'Taille de téléchargement maximale',
         'instructions' => 'Entrez la taille maximale du fichier en <strong>méga-octets</strong>.<br>La taille par défaut et la taille maximale sont la taille maximale autorisée par le serveur.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'warning'      => 'S\'il n\'est pas spécifié, le dossier max puis le serveur max seront utilisés à la place.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Mode d\'entrée',
+        'instructions' => 'Comment les utilisateurs doivent-ils fournir une entrée de fichier?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Téléchargez et / ou sélectionnez des fichiers.',
+            'select'  => 'Sélectionnez uniquement les fichiers.',
+            'upload'  => 'Téléchargez uniquement des fichiers.',
         ],
     ],
 ];

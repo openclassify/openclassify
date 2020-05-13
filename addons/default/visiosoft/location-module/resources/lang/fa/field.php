@@ -29,10 +29,10 @@ return [
         'name' => 'شرح'
     ],
     'pick_option' => [
-        'name' => 'Pick an option',
+        'name' => 'گزینه ای را انتخاب کنید',
     ],
     'address' => [
-        'name' => 'Address',
+        'name' => 'نشانی',
     ],
-    'selected' => 'Selected'
+    'selected' => 'انتخاب شد'
 ];

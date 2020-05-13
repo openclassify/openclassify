@@ -2,13 +2,13 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Zijbalk Hover',
+        'instructions' => 'De zijbalk uitvouwen bij zweven?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify the <em>default</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navigatie',
+        'instructions' => 'Geef de <em>standaard</em> navigatievolgorde op.',
+        'warning'      => 'Het eerste toegankelijke navigatie-item wordt gebruikt als het <strong>home</strong> gebied.',
+        'reorder'      => 'Sleep de primaire navigatie-items in de <strong>zijbalk</strong> om ze opnieuw te ordenen.',
     ],
 ];

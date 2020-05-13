@@ -1,10 +1,7 @@
 <?php
 
 return [
-    'profile' => [
-        'name' => 'Profil',
-    ],
-    'adress' => [
-        'name' => 'Anschrift',
+    'village' => [
+        'name' => 'Dorf',
     ],
 ];

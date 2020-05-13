@@ -5,15 +5,15 @@ return [
         'name' => 'Auto aprovar',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Tipo de exibição padrão',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Ocultar preço se zero',
+        'instructions' => 'Ocultar o preço se o preço do anúncio for 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Tempo estimado estimado',
+        'instructions' => 'Em horas',
     ],
     'default_published_time' => [
         'name' => 'Tempo de Publicação Padrão',
@@ -48,14 +48,14 @@ return [
         'name' => 'Moedas Ativas',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Limite mais recente',
     ],
     'site_address' => [
         'name' => 'Endereço do site',
         'warning'      => 'Auto adicionado www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
-        'name' => 'Google Map Api Key',
+        'name' => 'Chave da API do Google Map',
     ],
 
     'default_country' => [
@@ -80,16 +80,16 @@ return [
         'name' => 'Ad GET padrão',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Largura da miniatura',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Altura da miniatura',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Largura da imagem',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Altura da imagem',
     ],
     'twitter' => [
         'name' => 'Twitter',
@@ -125,6 +125,6 @@ return [
         'name' => 'Código estatístico do Google',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Requisito de e-mail de registro de membro',
     ],
 ];

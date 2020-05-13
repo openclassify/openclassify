@@ -1,12 +1,12 @@
 <?php
 
 return [
-    'choose_file'      => 'Which file would you like to use?',
-    'choose_folder'    => 'Which folder would you like to upload to?',
-    'upload'           => 'Click or drop files here to upload.',
-    'no_file_selected' => 'No file selected.',
-    'no_uploads'       => 'No files uploaded.',
-    'overwrite'        => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading'        => 'Uploading',
-    'loading'          => 'Loading',
+    'choose_file'      => 'Quel fichier aimeriez-vous utiliser?',
+    'choose_folder'    => 'Dans quel dossier souhaitez-vous télécharger?',
+    'upload'           => 'Cliquez ou déposez les fichiers ici pour les télécharger.',
+    'no_file_selected' => 'Aucun fichier sélectionné.',
+    'no_uploads'       => 'Aucun fichier téléchargé.',
+    'overwrite'        => 'a déjà été téléchargé. Voulez-vous l\'écraser?',
+    'uploading'        => 'Téléchargement',
+    'loading'          => 'Chargement',
 ];

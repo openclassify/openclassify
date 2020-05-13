@@ -2,21 +2,15 @@
 
 return [
     'error_added_cart' => 'Tələb olunan məhsul hazırda itkin və ya hərəkətsizdir',
-    'please_buy_package' => 'Zəhmət olmasa paket alın',
     'please_payment' => 'Zəhmət olmasa ödəyin',
     'bank_account_info' => 'Bank hesabı məlumatları',
     'agreement' => 'Post\'u tıklayarak, İstifadə şərtlərimizlə razılaşırsınız və Məxfilik Siyasəti bu maddənin qanuni sahibi olduğunuzu qəbul edirsiniz.',
     'update_category_msg' => 'Təsnif edilmiş kateqoriya yenilənəcəkdir.',
     'updated_category_msg' => 'Kateqoriya uğurla düzəldildi.',
-    'max_ad_limit' => [
-        'title' => "Pulsuz elanınızın həddi bitib.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
-    ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "Kateqoriya seçimi başa çatdı.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "Davam edin",
     ],
     'update_category_info' => 'Zəhmət olmasa kateqoriya yeniləyin.',
     'filter_by_search_msg' => 'Axtarışa görə süzün.',

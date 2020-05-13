@@ -1,0 +1,435 @@
+<?php
+
+return [
+    'file' => [
+        'name' => 'Фотографії'
+    ],
+    'first_name' => [
+        'name' => 'Ім\'я'
+    ],
+    'last_name' => [
+        'name' => 'Прізвище'
+    ],
+    'username' => [
+        'name' => 'Ім\'я користувача'
+    ],
+    'display_name' => [
+        'name' => 'Відображуване ім\'я'
+    ],
+    'email' => [
+        'name' => 'Електронна пошта'
+    ],
+    'sitename' => [
+        'name' => 'назва сайту'
+    ],
+    'activated' => [
+        'name' => 'Користувач активний'
+    ],
+    'enabled' => [
+        'name' => 'Увімкнути користувача'
+    ],
+    'country' => [
+        'name' => 'Країна'
+    ],
+    'city' => [
+        'name' => 'Місто'
+    ],
+    'district' => [
+        'name' => 'Район'
+    ],
+    'neighborhood' => [
+        'name' => 'Сусідство'
+    ],
+    'village' => [
+        'name' => 'Село'
+    ],
+    'gsm_phone' => [
+        'name' => 'GSM-телефон'
+    ],
+    'land_phone' => [
+        'name' => 'Наземний телефон'
+    ],
+    'office_phone' => [
+        'name' => 'Офісний телефон'
+    ],
+    'register_type' => [
+        'name' => 'Тип реєстру'
+    ],
+    'identification_number' => [
+        'name' => 'Ідентифікаційний номер'
+    ],
+    'adress_name' => [
+        'name' => 'Назва адреси'
+    ],
+    'adress_first_name' => [
+        'name' => 'Ім\'я'
+    ],
+    'adress_last_name' => [
+        'name' => 'Прізвище'
+    ],
+    'actions' => [
+        'name' => 'Дії'
+    ],
+    'adress_content' => [
+        'name' => 'Зміст адреси'
+    ],
+    'adress_post_code' => [
+        'name' => 'Поштовий індекс'
+    ],
+    'adress_gsm_phone' => [
+        'name' => 'Телефон Gsm'
+    ],
+    'adress_land_phone' => [
+        'name' => 'Наземний телефон'
+    ],
+    'adress_country' => [
+        'name' => 'Країна'
+    ],
+    'adress_city' => [
+        'name' => 'Місто'
+    ],
+    'adress_district' => [
+        'name' => 'Район'
+    ],
+    'adress_neighborhood' => [
+        'name' => 'Сусідство'
+    ],
+    'adress_village' => [
+        'name' => 'Село'
+    ],
+    'messages' => [
+        'name' => 'Повідомлення'
+    ],
+    'user' => [
+        'name' => 'Користувач'
+    ],
+
+
+
+
+
+    /*Menu Button*/
+    'profile' => [
+        'name' => 'Профіль'
+    ],
+
+    'create' => [
+        'name' => 'Створіть'
+    ],
+    'edit' => [
+        'name' => 'Редагувати'
+    ],
+    'delete' => [
+        'name' => 'Видалити'
+    ],
+    'list' => [
+        'name' => 'Список'
+    ],
+    'menu_address' => [
+        'name' => 'Адреса'
+    ],
+    'menu_orders' => [
+        'name' => 'Замовлення'
+    ],
+    'menu_favorites' => [
+        'name' => 'Вибране'
+    ],
+    'menu_archived_ads' => [
+        'name' => 'Архівні оголошення'
+    ],
+    'menu_pending_ads' => [
+        'name' => 'Очікує підтвердження'
+    ],
+    'menu_delete_account' => [
+        'name' => 'Закрити рахунок'
+    ],
+    'menu_my_ads' => [
+        'name' => 'Мої оголошення'
+    ],
+    'menu_fav_ads' => [
+        'name' => 'Улюблена реклама'
+    ],
+    'menu_hello_msg' => [
+        'name' => 'Здравствуйте'
+    ],
+    'menu_last_msg' => [
+        'name' => 'Ви востаннє ввійшли в'
+    ],
+    'menu_packages' => [
+        'name' => 'Мої пакети'
+    ],
+    'menu_adv_packages' => [
+        'name' => 'Рекламні пакети'
+    ],
+    'menu_time_packages' => [
+        'name' => 'Часові пакети'
+    ],
+    'profile_details' => [
+        'name' => 'Деталі профілю'
+    ],
+    'profile_photo' => [
+        'name' => 'Фотографія профілю'
+    ],
+    'adv_listing_banner' => [
+        'name' => 'Банер сторінки переліку оголошень'
+    ],
+    'approve' => [
+        'name' => 'Затвердити'
+    ],
+    'approved' => [
+        'name' => 'Затверджено'
+    ],
+    'pending' => [
+        'name' => 'Очікує на розгляд'
+    ],
+    'passive' => [
+        'name' => 'Пасивний'
+    ],
+    'pending_admin' => [
+        'name' => 'Очікує на розгляд'
+    ],
+    'menu_messages' => [
+        'name' => 'Повідомлення'
+    ],
+    'menu_my_purchase' => [
+        'name' => 'Моя покупка'
+    ],
+    'menu_my_sales' => [
+        'name' => 'Мої продажу'
+    ],
+
+
+    /* Right Dock*/
+    'right_secure_trading_subject' => [
+        'name' => 'Безпечна торгівля'
+    ],
+    'right_secure_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicer elit'
+    ],
+    'right_support_subject' => [
+        'name' => '24/7 Підтримка'
+    ],
+    'right_support_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicer elit'
+    ],
+    'right_easy_trading_subject' => [
+        'name' => 'Легка торгівля'
+    ],
+    'right_easy_trading_msg' => [
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicer elit'
+    ],
+    'right_need_help_subject' => [
+        'name' => 'Потрібна допомога?'
+    ],
+    'right_need_help_msg' => [
+        'name' => 'Зателефонуйте'
+    ],
+    'disable_account' => [
+        'name' => 'Вимкнути рахунок'
+    ],
+    'disable_account_msg' => [
+        'name' => 'Ваш обліковий запис буде вимкнено.
+                                    Цю операцію не можна скасувати'
+    ],
+
+    'message_title' => 'Заголовок повідомлення',
+    'owner_name' => 'повідомлення',
+
+    'favorites' => "Вибране",
+    'fav_advs' => 'Улюблена реклама',
+    'fav_sellers' => "Fav Продавці",
+    'fav_searches' => "Fav Пошук",
+    'posted_on' => "Опубліковано",
+    'message_details' => "Деталі повідомлення",
+    'adv_no' => 'Оголошення №',
+    'bill_address' => [
+        'name' => 'Адреса Білла',
+    ],
+    'delivery_address' => [
+        'name' => 'Адреса доставки',
+    ],
+    'order_total' => [
+        'name' => 'Всього',
+    ],
+    'order_date' => [
+        'name' => 'Дата замовлення',
+    ],
+    'order_no' => [
+        'name' => 'Ідентифікатор замовлення',
+    ],
+    'order_detail' => [
+        'name' => 'Показати деталі',
+    ],
+    /*Detail Page Order*/
+    'detail' => [
+        'name' => 'Деталь',
+    ],
+    'back' => [
+        'name' => 'Назад',
+    ],
+    'image' => [
+        'name' => 'Зображення',
+    ],
+    'subject' => [
+        'name' => 'Тема',
+    ],
+    'price' => [
+        'name' => 'Ціна',
+    ],
+    'piece' => [
+        'name' => 'Шматок',
+    ],
+    'commission' => [
+        'name' => 'Комісії',
+    ],
+    'total' => [
+        'name' => 'Всього',
+    ],
+    'sub_total' => [
+        'name' => 'Підсумковий',
+    ],
+    'sale' => [
+        'name' => 'Продаж',
+    ],
+    'awaiting_tracking_number' => [
+        'name' => 'Очікує номер відстеження',
+    ],
+    'awaiting_payment_approval' => [
+        'name' => 'Очікує затвердження платежу',
+    ],
+    'paid' => [
+        'name' => 'Оплачено',
+    ],
+    'cancelled' => [
+        'name' => 'Скасовано',
+    ],
+    'waiting' => [
+        'name' => 'Очікування',
+    ],
+    'awaiting_dispatch' => [
+        'name' => 'Чекає відправлення',
+    ],
+    'shipped' => [
+        'name' => 'Поставляється',
+    ],
+    'delivered' => [
+        'name' => 'Доставлено',
+    ],
+    'tracking_number' => [
+        'name' => 'Номер відстеження',
+    ],
+    'was_delivered' => [
+        'name' => 'було доставлено',
+    ],
+    'not_delivered' => [
+        'name' => 'не доставлено',
+    ],
+    'show_order_msg1' => [
+        'name' => 'Про результат транзакції буде повідомлено поштою.',
+    ],
+    'show_order_msg2' => [
+        'name' => 'Відшкодування буде здійснено, якщо товар не буде доставлений протягом одного тижня.',
+    ],
+    'show_order_msg3' => [
+        'name' => 'Результат транзакції надіслано на вашу зареєстровану електронну адресу.',
+    ],
+
+    'awaiting_payment' => [
+        'name' => 'В очікуванні оплати',
+    ],
+    'please_entered_tracking_number' => [
+        'name' => 'Будь ласка, ввели номер відстеження',
+    ],
+    'transport_days' => [
+        'name' => 'Дні транспорту',
+    ],
+    'product_not_delivered' => [
+        'name' => 'Товар не поставляється',
+    ],
+    'status' => [
+        'name' => 'Статус',
+    ],
+    'cancel_sale' => [
+        'name' => 'Скасувати продаж',
+    ],
+    'send_again' => [
+        'name' => 'Я відправлю ще раз',
+    ],
+    'content' => [
+        'name' => 'Зміст',
+    ],
+    'preferences_settings' => [
+        'name' => 'Налаштування параметрів',
+    ],
+
+
+    'corporate_settings' => [
+        'name' => 'Корпоративні налаштування',
+    ],
+    'password' => [
+        'name' => 'Пароль',
+    ],
+    'new_password' => [
+        'name' => 'Новий пароль',
+    ],
+    're_new_password' => [
+        'name' => 'Підтвердьте пароль',
+    ],
+    'confirm_password_input' => [
+        'name' => 'Я підтверджую зміну пароля',
+    ],
+    'create_address' => [
+        'name' => 'Створити адресу',
+    ],
+    'edit_address' => [
+        'name' => 'Редагувати адресу',
+    ],
+    'balance_limit' => [
+        'name' => 'Ліміт балансу',
+    ],
+    'active_ads' => [
+        'name' => 'Активні оголошення',
+    ],
+    'subscriptions' => [
+        'name' => 'Підписки',
+    ],
+    'go_subscriptions_page' => [
+        'name' => 'Перейдіть на сторінку підписок',
+    ],
+    'buy_package' => [
+        'name' => 'Купуйте пакет',
+    ],
+    'expired_date' => [
+        'name' => 'Термін дії',
+    ],
+    'category' => [
+        'name' => 'Категорія',
+    ],
+    'ad_limit' => [
+        'name' => 'Обмеження оголошення',
+    ],
+    'publish_time' => [
+        'name' => 'Час публікації',
+    ],
+    'all_categories' => [
+        'name' => 'всі категорії',
+    ],
+    'day' => [
+        'name' => 'День',
+    ],
+
+    'individual' => [
+        'name' => 'індивідуальний',
+    ],
+    'corporate' => [
+        'name' => 'корпоративний',
+    ],
+
+    'details' => [
+        'name' => 'Деталі'
+    ],
+    'choose' => [
+        'name' => 'Виберіть'
+    ],
+    'my_address' => 'Моя адреса'
+];

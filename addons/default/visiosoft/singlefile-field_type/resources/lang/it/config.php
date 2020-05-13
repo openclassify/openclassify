@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Cartelle',
+        'instructions' => 'Specifica quali cartelle sono disponibili per questo campo. Lascia vuoto per visualizzare tutte le cartelle.',
+        'warning'      => 'Le autorizzazioni per le cartelle esistenti hanno la precedenza sulle cartelle selezionate.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Dimensione massima di caricamento',
+        'instructions' => 'Specifica la dimensione massima del caricamento in <strong>megabyte</strong>.',
+        'warning'      => 'Se non specificato, verrà invece utilizzata la cartella max e quindi max server.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Modalità di immissione',
+        'instructions' => 'In che modo gli utenti devono fornire input di file?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Carica e / o seleziona file.',
+            'select'  => 'Seleziona solo i file.',
+            'upload'  => 'Carica solo file.',
         ],
     ],
 ];

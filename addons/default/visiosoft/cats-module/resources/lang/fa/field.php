@@ -3,7 +3,7 @@
 return [
     'name' => [
         'name' => 'عنوان',
-        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
+        'instructions' => 'این نام دسته اصلی است که شما تعریف خواهید کرد. این امکان را به کاربر می دهد تا محصولی را که به دنبالش می گردید به راحتی پیدا کند.',
     ],
     'order' => [
         'name' => 'سفارش',
@@ -11,25 +11,25 @@ return [
 
     'slug' => [
         'name' => 'مثل حلزون حرکت کردن',
-        'instructions' => 'Specify any organizational tags to help group your post with others.',
+        'instructions' => 'برای کمک به گروه بندی پست خود با دیگران ، برچسب های سازمانی را مشخص کنید.',
 
     ],
     'files' => [
         'name' => 'تصویر',
     ],
     'seo_keyword' => [
-        'name' => 'Seo Keyword',
-        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
+        'name' => 'کلید واژه جستجوگر',
+        'instructions' => 'کلمات اضافه شده به سایت در مرورگر Google برای نمایش در بالای نتایج جستجو.',
     ],
     'seo_description' => [
-        'name' => 'Seo Description',
-        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
+        'name' => 'توضیحات جستجوگر',
+        'instructions' => 'این می تواند بر تصمیم بازدید کنندگان شما در مورد اینکه آیا آنها می خواهند روی محتوا در نتایج جستجو کلیک کنند تأثیر بگذارد.',
     ],
     'icon' => [
-        'name' => 'Icon',
-        'instructions' => 'It is used to add icons indicating the category type.',
+        'name' => 'آیکون',
+        'instructions' => 'برای اضافه کردن نمادهایی که نوع طبقه را نشان می دهد ، استفاده می شود.',
     ],
 
     'please_wait' => 'لطفاً صبر کنید. حذف دسته بندی های فرعی',
-    'category_selection' => 'Category Selection',
+    'category_selection' => 'انتخاب دسته',
 ];

@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Αιωρηθείτε στο Sidebar',
+        'instructions' => 'Επέκταση της πλαϊνής γραμμής στο ποντίκι;',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Πλοήγηση',
+        'instructions' => 'Καθορίστε το <em>προσωπική</em> σειρά της πλοήγησης.',
+        'warning'      => 'Το πρώτο προσβάσιμο στοιχείο πλοήγησης χρησιμοποιείται ως περιοχή <strong>οικίας</strong>.',
+        'reorder'      => 'Μεταφέρετε και αποθέστε τα κύρια στοιχεία πλοήγησης στην <strong>πλευρική γραμμή</strong> για να τα αναδιατάξετε.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Πυκνότητα οθόνης',
+        'instructions' => 'Η συμπαγής οθόνη επιτρέπει την εμφάνιση περισσότερου περιεχομένου στην οθόνη ταυτόχρονα.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'Προκαθορισμένο',
+            'compact' => 'Συμπαγής',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Λειτουργία πλευρικής γραμμής',
+        'instructions' => 'Οι στατικές πλευρικές γραμμές θα είναι πάντα ορατές.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'Προκαθορισμένο',
+            'static'  => 'Στατικός',
         ],
     ],
 ];

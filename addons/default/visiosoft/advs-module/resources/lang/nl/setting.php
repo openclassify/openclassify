@@ -5,15 +5,15 @@ return [
         'name' => 'Automatisch goedkeuren',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Standaard weergavetype',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Prijs verbergen als nul',
+        'instructions' => 'Verberg de prijs als de advertentieprijs 0 is',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Geschatte wachttijd',
+        'instructions' => 'In uren',
     ],
     'default_published_time' => [
         'name' => 'Standaard publicatietijd',
@@ -48,7 +48,7 @@ return [
         'name' => 'Actieve valuta\\'s',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Laatste limiet',
     ],
     'site_address' => [
         'name' => 'Siteadres',
@@ -80,16 +80,16 @@ return [
         'name' => 'Standaardadvertentie GET',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Thumbnail breedte',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Hoogte miniatuur',
     ],
     'picture_width' => [
-        'name' => 'Picture Width',
+        'name' => 'Beeldbreedte',
     ],
     'picture_height' => [
-        'name' => 'Picture Height',
+        'name' => 'Beeldhoogte',
     ],
     'twitter' => [
         'name' => 'tjilpen',
@@ -125,6 +125,6 @@ return [
         'name' => 'Google-statistiekcode',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Lidregistratie E-mailvereiste',
     ],
 ];

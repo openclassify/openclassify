@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Visiosoft Admin',
-    'name'        => 'Visiosoft Admin Theme',
-    'description' => 'The official admin theme for OpenClassify.',
+    'title'       => 'Administrador de Visiosoft',
+    'name'        => 'Tema de administrador de Visiosoft',
+    'description' => 'El tema de administrador oficial para OpenClassify.',
 ];

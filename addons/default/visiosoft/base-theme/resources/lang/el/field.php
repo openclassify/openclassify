@@ -1,53 +1,53 @@
 <?php
 
 return [
-    'latest_ads' => 'Latest Ads',
-    'show_all' => 'Show All',
+    'latest_ads' => 'Τελευταίες αγγελίες',
+    'show_all' => 'Προβολή όλων',
     'login' => [
-        'name' => 'Login',
+        'name' => 'Σύνδεση',
     ],
     'logout' => [
-        'name' => 'Logout',
+        'name' => 'Αποσύνδεση',
     ],
-    'profile' => 'Profile',
-    'email' => 'Email Address',
-    'phone' => 'Phone Number',
-    'reset_code' => 'Reset Code',
-    'password_confirmation' => 'Password Confirmation',
-    'password' => 'Password',
-    'first_name' => 'First Name',
-    'last_name' => 'Last Name',
-    'remember_me' => 'Remember Me',
-    'not_a_member_yet' => 'Not a Member Yet',
-    'not_a_member_yet_message' => 'Sign up for our members to benefit from our special service',
-    'forgot_password' => 'I Forgot My Password',
-    'email_or_phone_number' => 'Email Address or Phone Number',
-    'phone_number' => 'Phone Number',
+    'profile' => 'Προφίλ',
+    'email' => 'Διεύθυνση ηλεκτρονικού ταχυδρομείου',
+    'phone' => 'Τηλεφωνικό νούμερο',
+    'reset_code' => 'Επαναφορά κωδικού',
+    'password_confirmation' => 'Επιβεβαίωση κωδικού πρόσβασης',
+    'password' => 'Κωδικός πρόσβασης',
+    'first_name' => 'Ονομα',
+    'last_name' => 'Επίθετο',
+    'remember_me' => 'Θυμήσου με',
+    'not_a_member_yet' => 'Δεν είστε μέλος ακόμα',
+    'not_a_member_yet_message' => 'Εγγραφείτε για να επωφεληθούν τα μέλη μας από την ειδική υπηρεσία μας',
+    'forgot_password' => 'Ξέχασα τον κωδικό μου',
+    'email_or_phone_number' => 'Διεύθυνση email ή αριθμός τηλεφώνου',
+    'phone_number' => 'Τηλεφωνικό νούμερο',
 
     // Registration instructions
-    'personal_registration_header' => 'What Are Individual Membership Advantages?',
-    'personal_registration_body' => 'Sell and rent your home, car, sell your unused items, get new ones.',
-    'personal_registration_list_1' => 'Post a free ad,',
-    'personal_registration_list_2' => 'Add the ads you are interested in, follow the price changes after adding them to your favorites, create favorite searches that meet your criteria,',
-    'personal_registration_list_3' => 'Send messages to the ad owners on the site.',
-    'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
+    'personal_registration_header' => 'Ποια είναι τα μεμονωμένα πλεονεκτήματα ιδιότητας μέλους;',
+    'personal_registration_body' => 'Πουλήστε και νοικιάστε το σπίτι, το αυτοκίνητό σας, πουλήστε τα αχρησιμοποίητα αντικείμενα σας, αποκτήστε καινούργια.',
+    'personal_registration_list_1' => 'Δημοσιεύστε μια δωρεάν διαφήμιση,',
+    'personal_registration_list_2' => 'Προσθέστε τις διαφημίσεις που σας ενδιαφέρουν, ακολουθήστε τις αλλαγές τιμών αφού τις προσθέσετε στα αγαπημένα σας, δημιουργήστε αγαπημένες αναζητήσεις που πληρούν τα κριτήριά σας,',
+    'personal_registration_list_3' => 'Στείλτε μηνύματα στους κατόχους διαφημίσεων στον ιστότοπο.',
+    'register_information_note' => 'Οι πληροφορίες σε αυτήν τη σελίδα λαμβάνονται για ' . env('APPLICATION_DOMAIN') . ' ιδιότητα μέλους. Μπορείτε να βρείτε αναλυτικές πληροφορίες σχετικά με την προστασία των προσωπικών δεδομένων εδώ.',
 
     // Register page
-    'phone_validation_error' => 'This phone number is in use by another member.',
+    'phone_validation_error' => 'Αυτός ο αριθμός τηλεφώνου χρησιμοποιείται από άλλο μέλος.',
 
     // Forgot Password
-    'create_new_password' => 'Create New Password',
+    'create_new_password' => 'Δημιουργία νέου κωδικού πρόσβασης',
 
     // Login page
-    'or' => 'or',
-    'login_with_phone_number' => 'Login with Phone Number',
-    'login_with_email_address' => 'Login with Email Address',
+    'or' => 'ή',
+    'login_with_phone_number' => 'Συνδεθείτε με τον αριθμό τηλεφώνου',
+    'login_with_email_address' => 'Συνδεθείτε με διεύθυνση email',
 
     // Side menu links
-    'company_directory' => 'Company directory',
-    'popular_ads' => 'Popular Ads',
-    'last_48_hours' => 'Last 48 Hours',
-    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
-    'sms' => 'Send Text Message (SMS)',
-    'mail' => 'Send Mail',
+    'company_directory' => 'Κατάλογος εταιρείας',
+    'popular_ads' => 'Δημοφιλείς διαφημίσεις',
+    'last_48_hours' => 'Τελευταίες 48 ώρες',
+    'secure_e-commerce_ads' => 'Ασφαλείς διαφημίσεις ηλεκτρονικού εμπορίου',
+    'sms' => 'Αποστολή μηνύματος κειμένου (SMS)',
+    'mail' => 'Αποστολή αλληλογραφίας',
 ];

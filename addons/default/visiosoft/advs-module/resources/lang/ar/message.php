@@ -2,21 +2,15 @@
 
 return [
     'error_added_cart' => 'المنتج المطلوب مفقود أو غير نشط حاليًا',
-    'please_buy_package' => 'يرجى شراء الحزمة',
     'please_payment' => 'يرجى الدفع',
     'bank_account_info' => 'معلومات الحساب المصرفي',
     'agreement' => 'بالنقر فوق نشر ، فأنت توافق على شروط الاستخدام وسياسة الخصوصية الخاصة بنا وتقر بأنك المالك الشرعي لهذا العنصر.',
     'update_category_msg' => 'سيتم تحديث الفئة المبوبة.',
     'updated_category_msg' => 'تم تعديل الفئة بنجاح.',
-    'max_ad_limit' => [
-        'title' => "حد إعلانك المجاني خارج.",
-        'continueBtn' => "Show Ads",
-        'link' => "/profile",
-    ],
     'create_ad_with_post_cat' => [
-        'title' => "Category selection has been completed.",
+        'title' => "تم الانتهاء من اختيار الفئة.",
         'success' => true,
-        'continueBtn' => "Continue",
+        'continueBtn' => "استمر",
     ],
     'update_category_info' => 'يرجى تحديث الفئة.',
     'filter_by_search_msg' => 'تصفية حسب البحث.',

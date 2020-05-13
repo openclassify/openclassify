@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Survol de la barre latérale',
+        'instructions' => 'Développer la barre latérale en survol?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'La navigation',
+        'instructions' => 'Précisez votre <em>personnel</em> ordre de navigation.',
+        'warning'      => 'Le premier élément de navigation accessible est utilisé comme zone <strong>domicile</strong>.',
+        'reorder'      => 'Faites glisser et déposez les éléments de navigation principaux dans la barre latérale <strong></strong> pour les réorganiser.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Afficher la densité',
+        'instructions' => 'L\'affichage compact permet d\'afficher plus de contenu à l\'écran à la fois.',
         'option'       => [
-            'default' => 'Default',
+            'default' => 'Défaut',
             'compact' => 'Compact',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Mode barre latérale',
+        'instructions' => 'Les barres latérales statiques seront toujours visibles.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'Défaut',
+            'static'  => 'Statique',
         ],
     ],
 ];
