@@ -111,6 +111,7 @@ php artisan install --ready
     
     
 ## Development Team
+Samed Durak @profstyle1
 
 Vedat Akdoğan  @vedatakd
 
