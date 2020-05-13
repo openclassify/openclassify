@@ -17,7 +17,7 @@ return [
         'name' => 'Bashkia'
     ],
     'order' => [
-        'name' => 'Renditja e renditjes'
+        'name' => 'Sort Order'
     ],
     'neighborhood' => [
         'name' => 'Njësitë Administrative'

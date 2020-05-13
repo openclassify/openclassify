@@ -30,7 +30,7 @@ return [
     ],
 
     'google_map_key' => [
-        'name' => 'Google Key Api Key',
+        'name' => 'Google Maps Api Key',
     ],
 
     'map_coordinates_long' => [
