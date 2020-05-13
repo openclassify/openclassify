@@ -122,23 +122,23 @@ return [
     'home' => 'Faqja Kryesore',
     'list-page' => 'Faqja e Listës',
     'search' => 'Kërko',
-    'recommended' => 'Njoftime të rekomanduara për ju',
-    'filter' => 'Filtër',
+    'recommended' => 'Njoftime të Rekomanduara për ju',
+    'filter' => 'Filter',
     'sort' => 'Tipi',
     'sort_by' => 'Rendit Sipas',
     'pick_option' => 'Zgjidh një mundësi',
     'pick_ordering' => 'Merr Porosin',
     'price_high' => 'Cmimi i larte deri tek i uleti',
     'price_low' => 'Cmimi i ulet deri tek i larte',
-    'newest' => 'Më të rejat',
-    'oldest' => 'Më të vjetrat',
+    'newest' => 'Më të Rejat',
+    'oldest' => 'Më të Vjetrat',
     'address_a_z' => 'Adresa (A deri Z)',
     'address_z_a' => 'Adresa (Z në A)',
     'categories' => 'Kategoritë',
     'all_categories' => 'Të gjitha Kategoritë',
     'location' => 'Vendndodhja',
     'send_message' => 'Dërgoni mesazh',
-    'phone_gsm' => 'Nr. Celular ',
+    'phone_gsm' => 'Nr. Celular',
     'phone_office' => 'Telefoni i zyres',
     'add_to_favorites' => "Shto te të preferuarat",
     'send' => 'Dërgo',
@@ -166,7 +166,7 @@ return [
     'easy_trading' => 'Tregtim i lehtë',
     'need_help' => 'Kam nevojë për ndihmë?',
     'give_a_call' => 'Bëni një telefonatë',
-    'message_sent' => 'Mesazhi u dergua!',
+    'message_sent' => 'Mesazhi u Dergua!',
     'asap' => 'Mesazhi i dërguar, shitësi do tju kontaktojë po ashtu.',
     'ad_id' => 'Nr. Njoftime',
     'contact_with' => 'Kontaktoni me',
@@ -188,9 +188,9 @@ return [
     'post_free_ad' => 'Posto NJOFTIME',
     'select_a_category' => 'Zgjidh nje Kategori',
     'select_a_sub_category' => 'Zgjidhni një Nën Kategori',
-    'all_dopings_added' => 'Të gjitha llojet e vitamina janë shtuar për këtë njoftim',
+    'all_dopings_added' => 'Të gjitha llojet e vitamina janë shtuar për këtë shpallje.',
     'is_get_adv' => [
-        'name' => 'MARR'
+        'name' => 'SET'
     ],
     'corporate_info' => 'Informacioni i korporatës',
     'featured_ads' => "Njoftimet e preferuara",
@@ -246,10 +246,10 @@ return [
         'name' => 'Në 24 orët e fundit'
     ],
     'in_the_last_week' => [
-        'name' => 'Në Javën e Fundit'
+        'name' => 'In The Last Week'
     ],
     'in_the_last_month' => [
-        'name' => 'Në muajin e fundit'
+        'name' => 'In The Last Month'
     ],
     'ads_with_photo' => [
         'name' => 'Njoftime me Foto'
@@ -265,13 +265,13 @@ return [
     "gallery" => 'Galeria',
 
     // Pending screen
-    'pending_message_1' => 'Njoftimi është në Procesin e Miratimit',
+    'pending_message_1' => 'Shpallja është në Procesin e Miratimit',
     'pending_message_2' => "Data e azhornimit të njoftimeve",
-    'pending_message_3' => 'Koha e parashikuar e pritjes',
+    'pending_message_3' => 'Estimated Waiting Time',
     'pending_message_4' => 'Koha e kaluar në procesin e miratimit do ti shtohet kohës së Vitaminës.',
     'pending_message_5' => '\'Asnjë transaksion nuk mund të bëhet nga qendra e thirrjeve në lidhje me njoftimet në procesin e miratimit.\',
     \'hours.',
-    'hours' => 'Oraret',
+    'hours' => 'hours',
 
     // Preview page
     'preview_text' => [
@@ -286,7 +286,4 @@ return [
     'update_my_contact_info' => 'Azhornimi i informacionit të kontaktit tim',
     'contact_info' => 'Informacioni i kontaktit',
     'ad_info' => 'Informacione për njoftimet',
-
-    // Select cat
-    'select_category_step_by_step' => 'Zgjidhni kategorinë hap pas hapi',
 ];

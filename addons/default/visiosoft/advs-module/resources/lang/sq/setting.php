@@ -18,6 +18,9 @@ return [
     'default_published_time' => [
         'name' => 'Koha e publikimit të paracaktuar',
     ],
+    'default_adv_limit' => [
+        'name' => 'Kufiri i paracaktuar i njoftimeve',
+    ],
     'address' => [
         'name' => 'Kontaktoni Adresën',
     ],
@@ -52,10 +55,10 @@ return [
     ],
     'site_address' => [
         'name' => 'Adresa e Faqja internet',
-        'warning'      => 'Auto shtuar www. www.<strong>sitename.com</strong> ',
+        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Google Key Api Key',
+        'name' => 'Google Map Api Key',
     ],
 
     'default_country' => [
@@ -79,18 +82,6 @@ return [
     'default_GET' => [
         'name' => 'Përcaktuar SET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Gjerësia e Thumbnail',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Lartësia e Thumbnail',
-    ],
-    'picture_width' => [
-        'name' => 'Gjerësia e figurës',
-    ],
-    'picture_height' => [
-        'name' => 'Lartësia e figurës',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -98,7 +89,7 @@ return [
         'name' => 'Facebook',
     ],
     'youtube' => [
-        'name' => 'YouTube',
+        'name' => 'Youtube',
     ],
     'google' => [
         'name' => 'Google',
@@ -122,7 +113,7 @@ return [
         'name' => 'Monedhat e aktivizuara',
     ],
     'google_statistic_code' => [
-        'name' => 'Kodi i Statistikave të Google',
+        'name' => 'Google Statistic Code',
     ],
     'register_email_field' => [
         'name' => 'Kërkesa për regjistrim përmes e-mail',
