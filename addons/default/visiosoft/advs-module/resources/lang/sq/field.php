@@ -190,7 +190,7 @@ return [
     'select_a_sub_category' => 'Zgjidhni një Nën Kategori',
     'all_dopings_added' => 'Të gjitha llojet e vitamina janë shtuar për këtë shpallje.',
     'is_get_adv' => [
-        'name' => 'GET'
+        'name' => 'SET'
     ],
     'corporate_info' => 'Informacioni i korporatës',
     'featured_ads' => "Njoftimet e preferuara",
