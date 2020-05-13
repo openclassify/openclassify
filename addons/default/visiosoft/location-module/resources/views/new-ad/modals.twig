@@ -82,7 +82,7 @@
                                                 <i class="fa fa-save "></i>
                                                 {{ trans('streams::button.save') }}
                                             </button>
-                                            <button type="button" class="btn btn-secondary"
+                                            <button type="button" class="btn btn-sm btn-secondary"
                                                     data-dismiss="modal">{{ trans("visiosoft.module.carts::button.close") }}</button>
 
                                         </div>
@@ -102,5 +102,4 @@
 <script>
     var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}"
 </script>
-{{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
 {{ asset_add("scripts.js", "visiosoft.theme.base::js/phoneField.js") }}
