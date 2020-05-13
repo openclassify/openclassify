@@ -44,18 +44,16 @@ $('.edit-this-address').on('click', function () {
         $("#newAdd-address").find('select[name="country"]').val(address_detail.country_id)
 
         //Get City Options
-        var cat = default_country;
-        var level = 1;
-        var name = 'city';
-        Locations(cat, level, name);
+        crud('id=' + address_detail.country_id, '/ajax/getCities', 'POST',function (callback){
+            setSelectOptions($("#newAdd-address").find('select[name="city"]'),callback,'id','name');
+        })
 
         //Get District Options
         var selectedCity = new Promise(function (resolve) {
+            crud('id=' + address_detail.city, '/ajax/getDistricts', 'POST',function (callback){
+                setSelectOptions($("#newAdd-address").find('select[name="district"]'),callback,'id','name');
+            });
             $("#newAdd-address").find('select[name="city"]').val(address_detail.city)
-            var cat = address_detail.city;
-            var level = 2;
-            var name = 'district';
-            Locations(cat, level, name);
             resolve();
         });
         //Selected District
@@ -89,3 +87,10 @@ $("#newAdd-address").submit(function (e) {
         }
     });
 });
+
+function setSelectOptions(input, options, valueParams, TitleParams) {
+    input.html("<option value=''>...</option>");
+    $.each(options, function (index, value) {
+        input.append("<option value='" + value[valueParams] + "'>" + value[TitleParams] + "</option>");
+    });
+}
