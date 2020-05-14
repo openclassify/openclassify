@@ -30,6 +30,12 @@ class SignInFormHandler
 
             return;
         }
+        if (isset(session('url')['intended'])) {
+            $url = parse_url(session('url')['intended']);
+            if (substr($url['path'], 0, 7) === "/admin/") {
+                request()->session()->flush();
+            }
+        }
 
         $authenticator->login($user, $builder->getFormValue('remember_me'));
 
