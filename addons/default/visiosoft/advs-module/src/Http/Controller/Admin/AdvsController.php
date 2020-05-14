@@ -10,6 +10,7 @@ use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
@@ -43,8 +44,8 @@ class AdvsController extends AdminController
      */
     public function index(AdvTableBuilder $table, \Anomaly\UsersModule\User\UserModel $userModel, CityModel $cityModel, CatsCategoryEntryModel $categoryModel)
     {
-        $table->addAsset("theme.css", "visiosoft.module.advs::css/custom.css");
-        $table->addAsset('script.js', 'visiosoft.module.advs::js/list.js');
+        $table->addAsset("styles.css", "visiosoft.module.advs::css/custom.css");
+        $table->addAsset('scripts.js', 'visiosoft.module.advs::js/list.js');
 
         $table->addButtons([
             'status' => [
@@ -140,8 +141,10 @@ class AdvsController extends AdminController
 
 
         $cities = $cityModel->all()->pluck('name', 'id')->all();
-        $users = $userModel->all()->pluck('email', 'id')->all();
-        $phone = $userModel->all()->pluck('gsm_phone', 'id')->all();
+        $users = $userModel->newQuery()
+            ->select(DB::raw("CONCAT_WS('', first_name, ' ', last_name, ' (', gsm_phone, ' || ', email, ')') AS display_name"), 'id')
+            ->pluck('display_name','id')
+            ->toArray();
         $categories = $categoryModel::query()->where('parent_category_id', null)
             ->leftJoin('cats_category_translations', 'cats_category.id', '=', 'cats_category_translations.entry_id')
             ->where('locale', config('app.locale'))
@@ -166,12 +169,6 @@ class AdvsController extends AdminController
                         'filter' => 'select',
                         'query' => UserFilterQuery::class,
                         'options' => $users,
-                    ],
-                    'phone' => [
-                        'exact' => true,
-                        'filter' => 'select',
-                        'query' => UserFilterQuery::class,
-                        'options' => $phone,
                     ],
                     'status' => [
                         'filter' => 'select',

@@ -17,9 +17,6 @@ filter.checkUser = () => {
     });
 };
 
-
-
-
 $('.sort-by-item').on('click', function () {
     let searchParams = new URLSearchParams(window.location.search);
     var sort_by = searchParams.get('sort_by');
@@ -157,6 +154,16 @@ $(document).ready(function () {
 
     $('#save-search').on('click', function () {
         filter.checkUser();
+    });
+
+    // User filter
+    $("select[name=filter_User]").select2({
+        placeholder: $('select[name=filter_User] option:first-child').text()
+    });
+
+    // Country filter
+    $("select[name=filter_country]").select2({
+        placeholder: $('select[name=filter_country] option:first-child').text()
     });
 });
 

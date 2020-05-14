@@ -28,3 +28,16 @@
 
     }
 }
+
+/* Admin filter */
+.select2-container--default .select2-selection--single {
+    height: calc(2.5rem - 2px);
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.17rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: unset;
+}
