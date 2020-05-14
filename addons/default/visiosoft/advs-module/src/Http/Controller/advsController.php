@@ -264,6 +264,7 @@ class AdvsController extends PublicController
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats);
             $checkboxes = $returnvalues['checkboxes'];
             $topfields = $returnvalues['topfields'];
+            $selectDropdown = $returnvalues['selectDropdown'];
             $selectRange = $returnvalues['selectRange'];
             $selectImage = $returnvalues['selectImage'];
             $ranges = $returnvalues['ranges'];
@@ -279,7 +280,7 @@ class AdvsController extends PublicController
         $viewType = $this->requestHttp->cookie('viewType');
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'selectRange', 'selectImage', 'ranges', 'seenList',
+            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges', 'seenList',
             'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
