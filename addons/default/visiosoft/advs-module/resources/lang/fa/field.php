@@ -88,12 +88,12 @@ return [
             'approved' => 'تایید شده',
             'expired' => 'به پایان رسیده',
             'unpublished' => 'لغو انتشار',
-            'pending_admin' => 'در انتظار مدیر',
-            'pending_user' => 'در انتظار کاربر'
+            'pending_admin' => 'در انتظار برسی مدیر صفحه',
+            'pending_user' => 'یوزر تحت برسی'
         ]
     ],
     'pending_adv' => [
-        'name' => 'در انتظار تبلیغات'
+        'name' => 'لغو انتشار'
     ],
     'finish_at' => [
         'name' => 'پایان در'
