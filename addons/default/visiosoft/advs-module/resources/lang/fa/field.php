@@ -96,18 +96,18 @@ return [
         'name' => 'لغو انتشار'
     ],
     'finish_at' => [
-        'name' => 'پایان در'
+        'name' => 'تکمیل کردن به'
     ],
     'cover_photo' => [
-        'name' => 'عکس جلد'
+        'name' => 'عکس پوششی'
     ],
     'favs_adv' => [
-        'name' => 'تبلیغات مورد علاقه'
+        'name' => 'اعلانات مورد علاقه'
     ],
     'my_adv' => [
-        'name' => 'ADVS'
+        'name' => 'اعلانات'
     ],
-    'description' =>  'شرح',
+    'description' =>  'توضیحات',
     'explanation' =>  'توضیح',
     'type' => [
         'name' => 'تایپ کنید'
