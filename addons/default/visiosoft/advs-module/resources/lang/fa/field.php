@@ -193,14 +193,14 @@ return [
         'name' => 'گرفتن'
     ],
     'corporate_info' => 'اطلاعات شرکت',
-    'featured_ads' => "تبلیغات برجسته",
-    'trending_ads' => 'تبلیغات مرسوم ، مد روز',
+    'featured_ads' => "اعلانات برجسته",
+    'trending_ads' => 'اعلانات مدروز',
     'search_ads_result_message' => [
-        'name' => ':      تعداد آگهی های یافت شده برای:جستجوی نام',
+        'name' => ':تعداد اعلانات یافت شده برای:جستجوی نام',
     ],
-    'total' => 'جمع',
-    'quantity' => 'مقدار',
-    'view_cart' => 'مشاهده سبد خرید',
+    'total' => 'مجموع',
+    'quantity' => 'تعداد',
+    'view_cart' => 'مشاهده صندوق خرید',
     'no_ads' => 'بدون تبلیغات!',
     'show_display_mode' => [
         'map' => 'نقشه',
