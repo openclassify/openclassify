@@ -21,5 +21,5 @@ return [
     'category_not_exist' => 'این گتگوری دیگر وجود ندارد!',
     'currency_converted' => 'ارز با موفقیت تبدیل شد.',
     'choose_user' => 'یوزر را انتخاب کنید',
-    'owner_updated_successfully' => 'صاحب با موفقیت به روز شد!',
+    'owner_updated_successfully' => 'فروشنده با موفقیت آپدیت شد!',
 ];
