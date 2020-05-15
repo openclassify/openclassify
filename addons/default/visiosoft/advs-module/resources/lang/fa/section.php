@@ -2,10 +2,10 @@
 
 return [
     'advs' => [
-        'title' => 'تبلیغات',
+        'title' => 'اعلانات ',
     ],
     'categories' => [
-        'title' => 'دسته بندی ها',
+        'title' => 'گتگوری ها',
     ],
     'countries' => [
         'title' => 'کشورها',
@@ -14,30 +14,30 @@ return [
         'title' => 'شهرها',
     ],
     'districts' => [
-        'title' => 'ولسوالی ها',
+        'title' => 'ولسوالی ها یا ناحیه',
     ],
     'neighborhoods' => [
-        'title' => 'محله ها',
+        'title' => 'محل',
     ],
     'village' => [
-        'title' => 'روستا',
+        'title' => 'قریه',
     ],
     'custom_fields' => [
-        'title' => 'موضوعات سفارشی',
+        'title' => 'بخش های مشخص شده',
     ],
     'custom_field_advs' => [
-        'title' => 'تبلیغات زمینه سفارشی',
+        'title' => 'اعلانات بخش های مشخص شده',
     ],
     'cf_values' => [
-        'title' => 'مقادیر Cf',
+        'title' => 'ارزش Cf',
     ],
     'fields' => [
-        'title' => 'موضوعات سفارشی'
+        'title' => 'بخش های مشخص شده'
     ],
     'assets_clear' => [
-        'name' => 'دارایی ها پاک'
+        'name' => 'دارایی های پاک'
     ],
     'general' => 'عمومی',
-    'ads' => 'تبلیغات',
-    'user' => 'کاربر',
+    'ads' => 'اعلانات',
+    'user' => 'یوزر',
 ];
