@@ -284,7 +284,7 @@ return [
     'edit_my_contact_info' => 'اطلاعات تماس من را تصحیح کنید',
     'update_my_contact_info' => 'معلومات تماس من را اپدیت کنید',
     'contact_info' => 'اطلاعات تماس',
-    'ad_info' => 'اطلاعات آگهی',
+    'ad_info' => 'معلومات درمورد اعلان',
 
     // Select cat
     'select_category_step_by_step' => 'طبقه بندی را مرحله به مرحله انتخاب کنید',
