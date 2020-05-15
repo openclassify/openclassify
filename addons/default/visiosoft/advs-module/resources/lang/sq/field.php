@@ -246,10 +246,10 @@ return [
         'name' => 'Në 24 orët e fundit'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'Në javën e fundit'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'Në muajin e fundit'
     ],
     'ads_with_photo' => [
         'name' => 'Njoftime me Foto'
