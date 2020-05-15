@@ -77,7 +77,7 @@ return [
         'name' => 'کتگوری فرعی 5'
     ],
     'cat7' => [
-        'name' => 'زیر گروه 6'
+        'name' => 'کتگوری فرعی 6'
     ],
     'currency' => [
         'name' => 'واحد پول'
@@ -86,8 +86,8 @@ return [
         'name' => 'وضعیت',
         'option' => [
             'approved' => 'تایید شده',
-            'expired' => 'منقضی شده',
-            'unpublished' => 'منتشر نشده',
+            'expired' => 'به پایان رسیده',
+            'unpublished' => 'لغو انتشار',
             'pending_admin' => 'در انتظار مدیر',
             'pending_user' => 'در انتظار کاربر'
         ]
