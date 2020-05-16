@@ -19,7 +19,7 @@ return [
     'last_name' => 'Nachname',
     'remember_me' => 'Behalte mich in Erinnerung',
     'not_a_member_yet' => 'Noch kein Mitglied',
-    'not_a_member_yet_message' => 'Melden Sie sich für unsere Mitglieder an, um von unserem besonderen Service zu profitieren',
+    'not_a_member_yet_message' => 'Werden Sie bei uns Mitglied, um von unserem besonderen Service zu profitieren',
     'forgot_password' => 'Ich habe mein Passwort vergessen',
     'email_or_phone_number' => 'E-Mail-Adresse oder Telefonnummer',
     'phone_number' => 'Telefonnummer',
