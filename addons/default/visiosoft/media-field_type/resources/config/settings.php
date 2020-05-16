@@ -14,13 +14,6 @@ return [
             'default_value' => 600,
         ],
     ],
-
-    'imageResizeW' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => null,
-        ],
-    ],
     'imageResizeH' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
