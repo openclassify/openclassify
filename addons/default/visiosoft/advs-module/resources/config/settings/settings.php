@@ -117,13 +117,13 @@ return [
     'picture_width' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
-            'default_value' => 900,
+            'default_value' => 600,
         ],
     ],
     'picture_height' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
-            'default_value' => 600,
+            'default_value' => 400,
         ],
     ],
     'watermark_type' => [
