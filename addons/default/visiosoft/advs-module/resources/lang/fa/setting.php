@@ -8,40 +8,41 @@ return [
         'name' => 'نوع نمایش پیش فرض',
     ],
     'hide_zero_price' => [
-        'name' => 'اگر صفر قیمت را مخفی کنید',
-        'instructions' => 'اگر قیمت آگهی 0 است ، قیمت را مخفی کنید',
+        'name' => 'اگر قیمت صفر است مخفی کنید',
+        'instructions' => 'قیمت را مخفی کنید اگر قیمت اعلان 0 است',
     ],
     'estimated_pending_time' => [
-        'name' => 'زمان انتظار تخمینی',
-        'instructions' => 'ساعتها',
+        'name' => 'مدت زمان تخمینی انتظار ',
+        'instructions' => 'به ساعت',
     ],
     'default_published_time' => [
         'name' => 'زمان انتشار پیش فرض',
     ],
     'address' => [
-        'name' => 'با آدرس تماس بگیرید',
+        'name' => 'آدرس تماس',
     ],
     'phone' => [
-        'name' => 'تماس با تلفن',
+        'name' => 'تلفن مخاطب',
     ],
     'favicon' => [
-        'name' => 'فاویکون',
+        'name' => 'آیکن مورد علاقه',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'نقشه مختصات طولانی',
+        'name' => 'نقشه طولانی مربوط',
     ],
     'map_coordinates_lat' => [
-        'name' => 'نقشه مختصات Lat',
+        'name' => 'مختصات نقشه',
     ],
     'iban_numbers' => [
         'name' => 'IBAN',
     ],
     'logo' => [
-        'name' => 'آرم',
+        'name' => 'لوگو',
     ],
     'ogImage' => [
-        'name' => 'آرم اشتراک گذاری اجتماعی',
-        'warning'      => 'باید در رزولوشن 1200 x 630 باشد.',
+        'name' => 'لوگوی اشتراک گذاری شبکه های اجتماعی
+',
+        'warning'      => 'باید دارای کیفیت 1200X 630 باشد.',
 
     ],
     'currencies' => [
@@ -59,13 +60,13 @@ return [
     ],
 
     'default_country' => [
-        'name' => 'کشور پیش فرض آگهی',
+        'name' => 'کشور پیش فرض اعلان',
     ],
     'free_currencyconverterapi_key' => [
-        'name' => 'کلید API مبدل ارز'
+        'name' => 'کلید API تبادل ارز'
     ],
     'default_city' => [
-        'name' => 'پیش فرض آگهی شهر',
+        'name' => 'Default Ad City',
     ],
     'default_district' => [
         'name' => 'منطقه پیش فرض آگهی',
