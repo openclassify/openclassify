@@ -312,7 +312,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $thumbnail = $this->fileRepository->findByNameAndFolder($fileName, $folder);
             if (!$thumbnail) {
                 // Create thumbnail image
-                $image = Image::make($adv->files[0]->url());
+                $image = Image::make(file_get_contents($adv->files[0]->url()));
                 $image->resize(
                     setting_value('visiosoft.module.advs::thumbnail_width'),
                     setting_value('visiosoft.module.advs::thumbnail_height')
