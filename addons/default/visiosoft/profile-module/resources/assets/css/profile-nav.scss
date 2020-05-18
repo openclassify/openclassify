@@ -1,11 +1,17 @@
 .profile-nav-toggler {
-  color: rgba(0,0,0,.5);
-  border: 1px solid rgba(0,0,0,.1);
-  padding: .25rem .75rem;
-  font-size: 1.25rem;
-  line-height: 1;
-  background-color: transparent;
-  border-radius: .25rem;
+  position: fixed;
+  bottom: 10%;
+  z-index: 1;
+
+  button {
+    color: rgba(0,0,0,.5);
+    border: 0;
+    padding: .25rem .75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #E91E63;
+    border-radius: .25rem;
+  }
 }
 
 .profile-navigation {
