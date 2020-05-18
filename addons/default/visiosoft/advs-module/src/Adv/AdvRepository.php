@@ -330,10 +330,14 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                     'extension' => $image->extension,
                 ]);
 
-                $file_url = 'files/images/' . $fileName;
-                $adv->update(['cover_photo' => $file_url]);
+                $coverPhoto = 'files/images/' . $fileName;
+            } else {
+                $coverPhoto = $thumbnail->url();
             }
+        } else {
+            $coverPhoto = null;
         }
+        $adv->update(['cover_photo' => $coverPhoto]);
     }
 
     public function delete_empty_advs()
