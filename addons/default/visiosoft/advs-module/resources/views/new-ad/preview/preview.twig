@@ -1,5 +1,11 @@
 {% extends "theme::layouts/default" %}
 
+{% block styles %}
+    {{ asset_style('visiosoft.module.advs::css/fotorama.css') }}
+    {{ asset_style("visiosoft.module.advs::css/detail.css") }}
+    {{ asset_style("visiosoft.module.advs::css/preview.css") }}
+{% endblock %}
+
 {% block content %}
     <div class="pt-5">
         <p class="preview-paragraph">
@@ -34,8 +40,4 @@
             {{ trans('visiosoft.module.advs::field.continue') }}
         </a>
     </div>
-
-    {{ asset_add("styles.css", "visiosoft.module.advs::css/detail.css") }}
-    {{ asset_add("styles.css", "visiosoft.module.advs::css/preview.css") }}
-
 {% endblock %}
