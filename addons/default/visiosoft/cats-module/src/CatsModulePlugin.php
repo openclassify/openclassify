@@ -40,6 +40,12 @@ class CatsModulePlugin extends Plugin
                     $category_model = new CategoryModel();
                     return $category_model->getParentCats($id,'add_main');
                 }
+            ), new \Twig_SimpleFunction(
+                'getParentsCount',
+                function ($id) {
+                    $category_model = new CategoryModel();
+                    return $category_model->getParentsCount($id);
+                }
             )
         ];
     }
