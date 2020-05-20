@@ -1,4 +1,10 @@
 # Cats Modülü
+
+It allows us to define categories.
+
+Up to 6 Subcategories are supported.
+
+
 İlanlara Kategori tanımlamıza olanak sağlar.
 
 Maksimum 6 Alt Kategori'ye kadar desteklenir.
