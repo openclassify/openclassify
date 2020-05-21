@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => 'güvenli e-ticaret',
     'sms' => 'Kısa Mesaj Gönder (SMS)',
     'mail' => 'Posta göndermek',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];
