@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => 'Säkra e-handelsannonser',
     'sms' => 'Skicka textmeddelande (SMS)',
     'mail' => 'Skicka brev',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];
