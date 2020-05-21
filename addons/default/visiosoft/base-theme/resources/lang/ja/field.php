@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => '安全なeコマース広告',
     'sms' => 'テキストメッセージを送信（SMS）',
     'mail' => 'メールを送る',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];
