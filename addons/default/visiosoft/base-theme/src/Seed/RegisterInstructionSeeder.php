@@ -129,7 +129,7 @@ class RegisterInstructionSeeder extends Seeder
                 'translatable' => 1,
             ]);
         }
-        
+
         // Add default instructions
         $blockFieldId = $this->fieldRepository->findBySlugAndNamespace('blocks', 'blocks')->getId();
         $block = $this->blockRepository->create([
