@@ -15,27 +15,27 @@ function phoneMask(fields) {
         })
     });
 
-    var fields_arr = fields.split(',');
-    $.each(fields_arr, function (index, value) {
-        maskPhone($(value).attr('name'))
-    });
+    // var fields_arr = fields.split(',');
+    // $.each(fields_arr, function (index, value) {
+    //     maskPhone($(value).attr('name'))
+    // });
 
 
-    $(fields).on('countrychange', function (e) {
-        maskPhone($(this).attr('name'))
-    });
+    // $(fields).on('countrychange', function (e) {
+    //     maskPhone($(this).attr('name'))
+    // });
 
-    function maskPhone(name) {
-        if ( $("input[name='" + name + "']").length ) {
-            var currentMask = $("input[name='" + name + "']").attr('placeholder');
-            if(currentMask) {
-                $("input[name='" + name + "']").mask(currentMask.replace(/[0-9+]/ig, '9'), {
-                    autoclear: true,
-                    clearIncomplete: true
-                });
-            }
-        }
-    }
+    // function maskPhone(name) {
+    //     if ( $("input[name='" + name + "']").length ) {
+    //         var currentMask = $("input[name='" + name + "']").attr('placeholder');
+    //         if(currentMask) {
+    //             $("input[name='" + name + "']").mask(currentMask.replace(/[0-9+]/ig, '9'), {
+    //                 autoclear: true,
+    //                 clearIncomplete: true
+    //             });
+    //         }
+    //     }
+    // }
     
  
 }
