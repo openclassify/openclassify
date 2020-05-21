@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => 'Ασφαλείς διαφημίσεις ηλεκτρονικού εμπορίου',
     'sms' => 'Αποστολή μηνύματος κειμένου (SMS)',
     'mail' => 'Αποστολή αλληλογραφίας',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];
