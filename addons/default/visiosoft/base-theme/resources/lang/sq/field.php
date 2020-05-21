@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => 'Njoftimet të sigurta për tregtinë elektronike',
     'sms' => 'Dërgoni mesazhe me tekst (SMS)',
     'mail' => 'Dërgo email',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];
