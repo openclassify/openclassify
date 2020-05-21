@@ -19,6 +19,11 @@ class AdvCriteria extends EntryCriteria
         $this->image = $image;
     }
 
+    public function getAdvsModel()
+    {
+        return new AdvModel();
+    }
+
     public function popularAdvs()
     {
         $advModel = new AdvModel();
@@ -72,14 +77,14 @@ class AdvCriteria extends EntryCriteria
         return $ads;
     }
 
-    public function findAdsByCategoryId($catId)
+    public function findAdsByCategoryId($catId, $level = 1)
     {
         $advModel = new AdvModel();
         $advs = AdvModel::query()
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', '=', 'approved')
             ->where('slug', '!=', '')
-            ->where('cat1', $catId)
+            ->where('cat' . $level, $catId)
             ->get();
 
         $ads = $advModel->getLocationNames($advs);
