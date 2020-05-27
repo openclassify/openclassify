@@ -8,8 +8,10 @@
 <!-- Meta Tags -->
 
 <title>
-    {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
-    &#8250;
+    {% if not template.notShowTitle %}
+        {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
+        &#8250;
+    {% endif %}
     {{ trans(template.meta_title) }}
 </title>
 

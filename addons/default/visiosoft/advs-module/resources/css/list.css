@@ -106,3 +106,17 @@
 #filterModal {
     overflow-y: auto;
 }
+
+.result-text {
+    font-size: 13px;
+    margin: 0 -15px;
+}
+
+.result-text span:first-child {
+    font-weight: 500;
+}
+
+.result-text span:last-child {
+    color: #8f0100;
+    font-weight: 500;
+}

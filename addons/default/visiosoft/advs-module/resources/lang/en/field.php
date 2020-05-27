@@ -263,6 +263,8 @@ return [
     "no_location" => "No location is selected.",
     "continue" => 'Continue',
     "gallery" => 'Gallery',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'The Ad is in the Approval Process',
