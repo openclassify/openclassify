@@ -263,6 +263,8 @@ return [
     "no_location" => "कोई स्थान चयनित नहीं है।",
     "continue" => 'जारी रखें',
     "gallery" => 'गेलरी',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'विज्ञापन अनुमोदन प्रक्रिया में है',
