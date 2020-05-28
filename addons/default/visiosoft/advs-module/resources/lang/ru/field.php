@@ -264,6 +264,8 @@ return [
     "no_location" => "Местоположение не выбрано.",
     "continue" => 'Продолжить',
     "gallery" => 'Галерея',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'Объявление находится в процессе одобрения',
