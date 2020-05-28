@@ -279,9 +279,26 @@ class AdvsController extends PublicController
 
         $viewType = $this->requestHttp->cookie('viewType');
 
+        if (!isset($allCats)) {
+            if (count($mainCats) == 1 || count($mainCats) == 2) {
+                $catText = end($mainCats)['val'];
+            } elseif (count($mainCats) > 2) {
+                $catArray = array_slice($mainCats, 2);
+                $catText = '';
+                $loop = 0;
+                foreach ($catArray as $cat) {
+                    $catText = !$loop ? $catText . $cat['val'] : $catText . ' ' . $cat['val'];
+                    $loop++;
+                }
+            }
+            $this->template->set('showTitle', false);
+            $this->template->set('meta_title', $catText);
+            $this->template->set('meta_description', $catText);
+        }
+
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges', 'seenList',
-            'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats');
+            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
+            'seenList', 'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }

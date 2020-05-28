@@ -1,5 +1,9 @@
 {% extends layout('list') %}
 
+{% block styles %}
+    {{ asset_style("visiosoft.module.advs::css/list.css") }}
+{% endblock %}
+
 {% block content %}
     <section>
 
@@ -15,7 +19,15 @@
                 </div>
                 <div class="col-md-9">
                     <div class="section recommended-classified">
-
+                        {% if catText %}
+                            <div class="result-text border py-2 px-3 mb-3 d-none d-sm-block">
+                                <p class="mb-0">
+                                    <span>"{{ catText }}"</span>
+                                    <span>{{ advs.total }} {{ trans('visiosoft.module.advs::field.ads')|lower }}</span>
+                                    {{ trans('visiosoft.module.advs::field.were_found') }}
+                                </p>
+                            </div>
+                        {% endif %}
                         <div class="row breadcrumb list-header">
 
                             <div class="col-md-6 my-2 d-none d-sm-block">
@@ -61,7 +73,6 @@
     </script>
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/list.js") }}
-    {{ asset_add("styles.css", "visiosoft.module.advs::css/list.css") }}
 
 {% endblock %}
 {% block customjs %}
