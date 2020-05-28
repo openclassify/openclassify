@@ -263,6 +263,8 @@ return [
     "no_location" => "Місце не вибрано.",
     "continue" => 'Продовжуйте',
     "gallery" => 'Галерея',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'Оголошення знаходиться в процесі затвердження',
