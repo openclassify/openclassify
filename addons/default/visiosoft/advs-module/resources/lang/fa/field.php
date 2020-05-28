@@ -263,6 +263,8 @@ return [
     "no_location" => "هیچ موقعیتی انتخاب نشده است.",
     "continue" => 'ادامه',
     "gallery" => 'عکس ها',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'اعلان در مراحل تأیید است',
