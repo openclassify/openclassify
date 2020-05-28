@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
     'sms' => 'Send Text Message (SMS)',
     'mail' => 'Send Mail',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];
