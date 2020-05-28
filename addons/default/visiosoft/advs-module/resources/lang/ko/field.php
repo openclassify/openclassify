@@ -263,6 +263,8 @@ return [
     "no_location" => "선택된 위치가 없습니다.",
     "continue" => '계속하다',
     "gallery" => '갤러리',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => '광고가 승인 과정에 있습니다',
