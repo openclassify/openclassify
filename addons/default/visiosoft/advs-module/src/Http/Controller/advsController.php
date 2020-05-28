@@ -291,14 +291,14 @@ class AdvsController extends PublicController
                     $loop++;
                 }
             }
-            $this->template->set('notShowTitle', true);
+            $this->template->set('showTitle', false);
             $this->template->set('meta_title', $catText);
             $this->template->set('meta_description', $catText);
         }
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges', 'seenList',
-            'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
+            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
+            'seenList', 'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
