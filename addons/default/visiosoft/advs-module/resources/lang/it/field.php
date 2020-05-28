@@ -264,6 +264,8 @@ return [
     "no_location" => "Nessuna posizione selezionata.",
     "continue" => 'Continua',
     "gallery" => 'Galleria',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'L\'annuncio è in fase di approvazione',
