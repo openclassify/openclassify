@@ -263,6 +263,8 @@ return [
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
     "gallery" => 'Galerie',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'Anunțul se află în procesul de aprobare',
