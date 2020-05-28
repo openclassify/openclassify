@@ -263,6 +263,8 @@ return [
     "no_location" => "Heç bir yer seçilməyib.",
     "continue" => 'Davam edin',
     "gallery" => 'Qalereya',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'Elan təsdiqləmə prosesindədir',
