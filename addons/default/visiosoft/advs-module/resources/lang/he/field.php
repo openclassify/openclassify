@@ -263,6 +263,8 @@ return [
     "no_location" => "לא נבחר מיקום.",
     "continue" => 'המשך',
     "gallery" => 'גלריה',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'המודעה נמצאת בתהליך האישור',
