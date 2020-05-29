@@ -12,22 +12,22 @@
 <html>
 
 <head>
-    {% include "theme::partials/metadata" %}
+    {% include "visiosoft.theme.base::partials/metadata" %}
     {% block styles %}{% endblock %}
 </head>
 
 <body>
 
-{% include "theme::partials/header" %}
+{% include "visiosoft.theme.base::partials/header" %}
 
 {{ addBlock('layouts/default/section')|raw }}
 <main id="main">
     <div class="container">
 
-        {% include "theme::partials/messages" %}
+        {% include "visiosoft.theme.base::partials/messages" %}
 
         {% if (request_path() == '/') %}
-            {% include "theme::index/default" %}
+            {% include "visiosoft.theme.base::index/default" %}
         {% else %}
             {% block content %}{% endblock %}
         {% endif %}
@@ -35,9 +35,9 @@
     </div>
 </main>
 
-{% include "theme::partials/footer" %}
-{% include "theme::partials/assets" %}
-{% include "theme::partials/settings" %}
+{% include "visiosoft.theme.base::partials/footer" %}
+{% include "visiosoft.theme.base::partials/assets" %}
+{% include "visiosoft.theme.base::partials/settings" %}
 
 </body>
 </html>
