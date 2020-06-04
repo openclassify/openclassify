@@ -141,4 +141,13 @@ $('.set_category').on('click', function () {
 
     $('#filterModal').find('form').attr("action", '/advs/list');
     $('#filterModal').modal('toggle');
-})
+});
+
+// Move filter on small screen
+$(window).resize(function() {
+    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
+    if (width <= 575) {
+        const detach = $('#listFilterForm').detach();
+        $('#modalListFilterForm').append(detach);
+    }
+});
