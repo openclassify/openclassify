@@ -47,8 +47,6 @@
 
 /* Mobile filter */
 .mobile-list-action {
-    margin-left: -30px;
-    margin-right: -30px;
     border: 1px solid #dee2e68a;
 }
 
@@ -74,6 +72,10 @@
     right: 0;
     content: '';
     background: #c9c9c9;
+}
+
+.mobile-list-action div:last-child a:after {
+    content: none;
 }
 
 .mobile-list-action i {
