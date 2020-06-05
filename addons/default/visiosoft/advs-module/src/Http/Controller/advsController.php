@@ -14,6 +14,7 @@ use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\LocationModule\City\CityRepository;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use function PMA\Util\get;
@@ -69,6 +70,8 @@ class AdvsController extends PublicController
     private $settings_repository;
     private $event;
 
+    private $optionRepository;
+
     public function __construct(
         UserRepositoryInterface $userRepository,
 
@@ -88,6 +91,8 @@ class AdvsController extends PublicController
 
         CategoryModel $categoryModel,
         CategoryRepositoryInterface $category_repository,
+
+        OptionRepositoryInterface $optionRepository,
 
         SettingRepositoryInterface $settings_repository,
 
@@ -122,6 +127,7 @@ class AdvsController extends PublicController
         $this->requestHttp = $request;
 
         parent::__construct();
+        $this->optionRepository = $optionRepository;
     }
 
 
@@ -384,6 +390,8 @@ class AdvsController extends PublicController
             }
         }
 
+        $options = $this->optionRepository->findAllBy('adv_id', $id);
+
         if ($isCommentActive) {
             $CommentModel = new CommentModel();
             $comments = $CommentModel->getComments($adv->id)->get();
@@ -405,7 +413,8 @@ class AdvsController extends PublicController
         $this->template->set('meta_image', $coverPhoto);
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'comments', 'qrSRC'));
+            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
+                'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options'));
         } else {
             return back();
         }
@@ -434,6 +443,8 @@ class AdvsController extends PublicController
             }
         }
 
+        $options = $this->optionRepository->findAllBy('adv_id', $id);
+
         if ($this->adv_model->is_enabled('customfields')) {
             $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
         }
@@ -441,7 +452,7 @@ class AdvsController extends PublicController
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
-            compact('adv', 'categories', 'features', 'isActiveDopings'));
+            compact('adv', 'categories', 'features', 'isActiveDopings', 'options'));
     }
 
     public function getLocations()
@@ -562,6 +573,27 @@ class AdvsController extends PublicController
                    return redirect('/');
                }
             }
+
+            // Create options
+            $optionsIds = array();
+            foreach ($request->options as $optionValue) {
+                $option = $this->optionRepository->newQuery()
+                    ->where('name', $optionValue)
+                    ->where('adv_id', $request->update_id)
+                    ->first();
+                if (!$option) {
+                    $option = $this->optionRepository->create([
+                        'name' => $optionValue,
+                        'adv_id' => $request->update_id,
+                    ]);
+                }
+                $optionsIds[] = $option->id;
+            }
+            $this->optionRepository->newQuery()
+                ->whereNotIn('id', $optionsIds)
+                ->where('adv_id', $request->update_id)
+                ->delete();
+
 
             $adv->is_get_adv = $request->is_get_adv;
             $adv->save();
@@ -685,6 +717,8 @@ class AdvsController extends PublicController
             }
         }
 
+        $options = $this->optionRepository->findAllBy('adv_id', $id);
+
         //Cloudinary Module
         $isActiveCloudinary = new AdvModel();
         $isActiveCloudinary = $isActiveCloudinary->is_enabled('cloudinary');
@@ -705,7 +739,8 @@ class AdvsController extends PublicController
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->edit($adv, $categories, $cats);
         }
 
-        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields'));
+        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d',
+            'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'options'));
     }
 
     public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events)
@@ -963,11 +998,12 @@ class AdvsController extends PublicController
     {
         $id = $request->id;
         $quantity = $request->quantity;
+        $name = $request->name;
         $thisModel = new AdvModel();
         $adv = $thisModel->isAdv($id);
         $response = array();
         if ($adv) {
-            $cart = $thisModel->addCart($adv, $quantity);
+            $cart = $thisModel->addCart($adv, $quantity, $name);
             $response['status'] = "success";
         } else {
             $response['status'] = "error";

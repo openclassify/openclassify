@@ -20,6 +20,7 @@
                     <div class="col-md-12">
                         {% set form = form('advs', 'advs').entry(id).actions(['update']).get() %}
                         {{ form_open({
+                            'id': 'createEditAdvForm',
                             'class': 'form ' ~ form.options.class ,
                             'enctype': 'multipart/form-data',
                             'url': 'advs/save_adv',
@@ -90,6 +91,22 @@
                                                 </option>
                                             {% endfor %}
 
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="row form-group select-options">
+                                    <label for="selectOptions" class="col-sm-2">
+                                        Options
+                                    </label>
+                                    <div class="col-sm-10">
+                                        <select id="selectOptions" class="form-control options-tags" multiple="multiple"
+                                                name="options[]">
+                                            {% if count(options) %}
+                                                {% for option in options %}
+                                                    <option selected="selected">{{ option.name }}</option>
+                                                {% endfor %}
+                                            {% endif %}
                                         </select>
                                     </div>
                                 </div>

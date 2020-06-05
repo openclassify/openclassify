@@ -215,5 +215,10 @@ $(document).ready(function () {
         price = parseInt(price.replace(/\./g, ''));
         let decimal = parseInt($(".priceDecimalField").val());
         $('.priceHidden').find('input').val(parseFloat(price + "." + decimal));
-    })
+    });
+
+    // Add dynamic option creation
+    $(".options-tags").select2({
+        tags: true
+    });
 });

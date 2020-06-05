@@ -11,6 +11,8 @@ use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
+use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
+use Visiosoft\AdvsModule\Option\OptionRepository;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -299,7 +301,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         VillageRepositoryInterface::class => VillageRepository::class,
         CategoryRepositoryInterface::class => CategoryRepository::class,
         CountryRepositoryInterface::class => CountryRepository::class,
-        AdvRepositoryInterface::class => AdvRepository::class,
+        OptionRepositoryInterface::class => OptionRepository::class,
     ];
 
     /**
