@@ -41,13 +41,15 @@ class AddViewAdsButton
     protected function addViewAdsButton(UserTableBuilder $builder)
     {
         $buttons = $builder->getButtons();
-        $dropdown = array_merge($buttons['settings']['dropdown'], [
-            "ads" => [
-                "text" => trans('visiosoft.theme.defaultadmin::button.view_ads'),
-                "href" => "admin/advs?filter_User={entry.id}"
-            ]
-        ]);
-        $buttons['settings']['dropdown'] = $dropdown;
-        $builder->setButtons($buttons);
+        if (isset($buttons['settings'])) {
+            $dropdown = array_merge($buttons['settings']['dropdown'], [
+                "ads" => [
+                    "text" => trans('visiosoft.theme.defaultadmin::button.view_ads'),
+                    "href" => "admin/advs?filter_User={entry.id}"
+                ]
+            ]);
+            $buttons['settings']['dropdown'] = $dropdown;
+            $builder->setButtons($buttons);
+        }
     }
 }

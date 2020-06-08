@@ -173,5 +173,17 @@ $('.ad-info-right-bar-video').tooltip({
     html: true
 });
 
-
-
+$("#listFilterForm").submit(function(e) {
+    const inputs = $('#listFilterForm :input');
+    [...inputs].forEach((input) => {
+        if (input.type === 'checkbox' || input.type === 'radio') {
+            if ($(input).prop("checked") == false) {
+                $(input).prop('disabled', true);
+            }
+        } else {
+            if ($(input).val() == "" || $(input).find(':selected').val() == "") {
+                $(input).prop('disabled', true);
+            }
+        }
+    });
+});
