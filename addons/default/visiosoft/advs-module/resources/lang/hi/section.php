@@ -40,4 +40,7 @@ return [
     'general' => 'सामान्य',
     'ads' => 'विज्ञापन',
     'user' => 'उपयोगकर्ता',
+    'options' => [
+        'title' => 'Options',
+    ],
 ];
