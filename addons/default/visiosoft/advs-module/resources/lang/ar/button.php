@@ -31,4 +31,5 @@ return [
     'update_category' => [
         'name' => 'تحديث الفئة'
     ],
+    'new_option' => 'New Option',
 ];
