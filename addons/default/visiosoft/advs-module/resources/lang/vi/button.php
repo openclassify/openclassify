@@ -31,4 +31,5 @@ return [
     'update_category' => [
         'name' => 'Cập nhật danh mục'
     ],
+    'new_option' => 'New Option',
 ];
