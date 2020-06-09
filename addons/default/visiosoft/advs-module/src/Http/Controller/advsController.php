@@ -575,25 +575,24 @@ class AdvsController extends PublicController
             }
 
             // Create options
-            $optionsIds = array();
-            foreach ($request->options as $optionValue) {
-                $option = $this->optionRepository->newQuery()
-                    ->where('name', $optionValue)
+            $deletedOptions = $request->deleted_options;
+            $newOptions = $request->new_options;
+            if (!empty($deletedOptions)) {
+                $deletedOptions = explode(',', $request->deleted_options);
+                $this->optionRepository->newQuery()
+                    ->whereIn('id', $deletedOptions)
                     ->where('adv_id', $request->update_id)
-                    ->first();
-                if (!$option) {
-                    $option = $this->optionRepository->create([
-                        'name' => $optionValue,
+                    ->delete();
+            }
+            if (!empty($newOptions)) {
+                $newOptions = explode(',', $request->new_options);
+                foreach ($newOptions as $option) {
+                    $this->optionRepository->create([
+                        'name' => $option,
                         'adv_id' => $request->update_id,
                     ]);
                 }
-                $optionsIds[] = $option->id;
             }
-            $this->optionRepository->newQuery()
-                ->whereNotIn('id', $optionsIds)
-                ->where('adv_id', $request->update_id)
-                ->delete();
-
 
             $adv->is_get_adv = $request->is_get_adv;
             $adv->save();

@@ -104,7 +104,7 @@
                                                 name="options[]">
                                             {% if count(options) %}
                                                 {% for option in options %}
-                                                    <option selected="selected">{{ option.name }}</option>
+                                                    <option id="advOption{{ option.id }}" selected="selected">{{ option.name }}</option>
                                                 {% endfor %}
                                             {% endif %}
                                         </select>
