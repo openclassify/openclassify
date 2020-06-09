@@ -215,5 +215,44 @@ $(document).ready(function () {
         price = parseInt(price.replace(/\./g, ''));
         let decimal = parseInt($(".priceDecimalField").val());
         $('.priceHidden').find('input').val(parseFloat(price + "." + decimal));
+    });
+
+    // Add dynamic option creation
+    $(".options-tags").select2({
+        tags: true,
+        tokenSeparators: [',']
+    });
+
+    let deletedOptions = [];
+    $('#selectOptions').on('select2:unselect', function (e) {
+        if (e.params.data.element.id) {
+            const id = e.params.data.element.id.substr(9);
+            deletedOptions.push(id);
+        } else {
+            let index = newOptions.indexOf(e.params.data.text);
+            if (index > -1) {
+                newOptions.splice(index, 1);
+            }
+        }
+    });
+
+    let newOptions = [];
+    $('#selectOptions').on('select2:select', function (e) {
+        if (e.params.data.element) {
+            let index = deletedOptions.indexOf(e.params.data.element.id.substr(9));
+            if (index > -1) {
+                deletedOptions.splice(index, 1);
+            }
+        } else {
+            newOptions.push(e.params.data.text)
+        }
+    });
+
+    $('#createEditAdvForm').submit(function () {
+        $(this).append(`<input type="hidden" name="deleted_options" value="${deletedOptions}" />`);
+
+        $(this).append(`<input type="hidden" name="new_options" value="${newOptions}" />`);
+
+        return true;
     })
 });

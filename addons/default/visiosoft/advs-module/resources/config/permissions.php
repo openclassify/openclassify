@@ -16,4 +16,9 @@ return [
         'write',
         'delete',
     ],
+    'options' => [
+        'read',
+        'write',
+        'delete',
+    ],
 ];

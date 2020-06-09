@@ -77,7 +77,7 @@ return [
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
-            'symbol' => 'L',
+            'symbol' => 'Leke',
         ],
         'AMD' => [
             'name' => 'Armenian Dram',
