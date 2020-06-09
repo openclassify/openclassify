@@ -127,7 +127,7 @@ return [
     'sort' => 'Tipi',
     'sort_by' => 'Rendit Sipas',
     'pick_option' => 'Zgjidh një mundësi',
-    'pick_ordering' => 'Merr Porosin',
+    'pick_ordering' => 'Renditje',
     'price_high' => 'Cmimi i larte deri tek i uleti',
     'price_low' => 'Cmimi i ulet deri tek i larte',
     'newest' => 'Më të Rejat',
