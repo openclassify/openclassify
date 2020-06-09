@@ -19,4 +19,7 @@ return [
     'cf_values' => [
         'name' => 'Wartości Cf',
     ],
+    'options' => [
+        'name' => 'Options',
+    ],
 ];
