@@ -250,5 +250,13 @@ class VisiosoftModuleAdvsCreateAdvsFields extends Migration
                 'default_value' => 0,
             ]
         ],
+
+        // Options Fields
+        "adv" => [
+            "type"   => "anomaly.field_type.relationship",
+            "config" => [
+                "related" => AdvModel::class,
+            ]
+        ]
     ];
 }

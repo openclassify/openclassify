@@ -213,10 +213,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return $this->getAdv()->where('advs_advs.id', $id)->first();
     }
 
-    public function addCart($item, $quantity = 1)
+    public function addCart($item, $quantity = 1, $name = null)
     {
         $cart = $this->dispatch(new GetCart());
-        $cart->add($item, $quantity);
+        $cart->add($item, $quantity, $name);
         return $this->dispatch(new GetCart());
     }
 
