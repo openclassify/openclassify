@@ -49,4 +49,12 @@ return [
             'delete' => 'CF 값을 삭제할 수 있습니까?',
         ],
     ],
+    'options' => [
+        'name'   => 'Options',
+        'option' => [
+            'read'   => 'Can read options?',
+            'write'  => 'Can create/edit options?',
+            'delete' => 'Can delete options?',
+        ],
+    ],
 ];
