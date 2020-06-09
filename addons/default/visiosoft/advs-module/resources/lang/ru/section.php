@@ -40,4 +40,7 @@ return [
     'general' => 'Общая',
     'ads' => 'Объявления',
     'user' => 'пользователь',
+    'options' => [
+        'title' => 'Options',
+    ],
 ];
