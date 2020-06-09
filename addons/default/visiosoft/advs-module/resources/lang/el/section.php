@@ -40,4 +40,7 @@ return [
     'general' => 'Γενικός',
     'ads' => 'Διαφημίσεις',
     'user' => 'Χρήστης',
+    'options' => [
+        'title' => 'Options',
+    ],
 ];
