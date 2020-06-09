@@ -604,8 +604,9 @@ class AdvsController extends PublicController
             }
 
             $form->render($request->update_id);
+            $adv = $this->adv_repository->find($request->update_id);
+
             if ($this->request->address_id != "") {
-                $adv = $form->getFormEntry();
                 $address = $address->find($this->request->address_id);
                 $adv->country_id = $address->country_id;
                 $adv->city = $address->city;
@@ -618,8 +619,7 @@ class AdvsController extends PublicController
             $post['id'] = $request->update_id;
             $events->dispatch(new priceChange($post));//price history
             if ($request->url == "") {
-                $LastAdv = $advModel->getLastUserAdv();
-                $advRepository->cover_image_update($LastAdv);
+                $advRepository->cover_image_update($adv);
             }
 
             if ($form->hasFormErrors()) {
