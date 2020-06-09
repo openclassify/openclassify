@@ -154,7 +154,7 @@ class CategoryController extends AdminController
         }
 
 
-        return $this->view->make('visiosoft.module.cats::cats/admin-cat', compact('formBuilder'));
+        return $this->view->make('visiosoft.module.cats::cats/admin-cat');
     }
 
     public function endsWith($string, $test) {
