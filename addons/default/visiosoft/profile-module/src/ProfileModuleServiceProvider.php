@@ -6,6 +6,7 @@ use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
+use Visiosoft\ProfileModule\Http\Middleware\authCheck;
 use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
 use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
@@ -104,6 +105,15 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@home'
         ],
         'ajax/phone-validation' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@phoneValidation',
+
+        'register' => [
+            'middleware' => [
+                authCheck::class
+            ],
+            'ttl' => 0,
+            'as' => 'anomaly.module.users::register',
+            'uses' => 'Anomaly\UsersModule\Http\Controller\RegisterController@register',
+        ],
 
         /* Login */
         'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',
