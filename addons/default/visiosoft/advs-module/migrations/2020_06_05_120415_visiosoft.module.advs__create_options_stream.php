@@ -29,6 +29,18 @@ class VisiosoftModuleAdvsCreateOptionsStream extends Migration
     ];
 
     /**
+     * This field will be added.
+     */
+    protected $fields = [
+        "adv" => [
+            "type"   => "anomaly.field_type.relationship",
+            "config" => [
+                "related" => \Visiosoft\AdvsModule\Adv\AdvModel::class,
+            ]
+        ]
+    ];
+
+    /**
      * The stream assignments.
      *
      * @var array
