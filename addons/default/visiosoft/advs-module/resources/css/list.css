@@ -15,8 +15,10 @@
     max-height: 100px;
 }
 
-.list-classified .bg-light {
-    height: 100px;
+@media only screen and (min-width: 768px) {
+    .list-classified .bg-light {
+        height: 100px;
+    }
 }
 
 .upper-list-banner {
