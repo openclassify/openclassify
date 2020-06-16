@@ -2,6 +2,7 @@
 
 namespace Visiosoft\ProfileModule\Http\Middleware;
 
+use Closure;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Http\Request;
 
@@ -21,10 +22,11 @@ class authCheck
      * @param Guard $auth
      * @return \Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector
      */
-    public function handle()
+    public function handle(Request $request, Closure $next)
     {
         if ($this->auth->check()) {
             return redirect($this->request->get('redirect', '/'));
         }
-    }
+        return $next($request);
+                            }
 }
