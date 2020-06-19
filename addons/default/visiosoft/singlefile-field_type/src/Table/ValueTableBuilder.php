@@ -47,7 +47,7 @@ class ValueTableBuilder extends TableBuilder
     protected $buttons = [
         'view'   => [
             'target' => '_blank',
-            'href'   => 'admin/files/view/{entry.id}',
+            'href'   => '/files/{entry.path}',
         ],
         'remove' => [
             'data-dismiss' => 'file',

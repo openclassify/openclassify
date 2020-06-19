@@ -14,6 +14,7 @@ use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\LocationModule\City\CityRepository;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use function PMA\Util\get;
@@ -69,6 +70,8 @@ class AdvsController extends PublicController
     private $settings_repository;
     private $event;
 
+    private $optionRepository;
+
     public function __construct(
         UserRepositoryInterface $userRepository,
 
@@ -88,6 +91,8 @@ class AdvsController extends PublicController
 
         CategoryModel $categoryModel,
         CategoryRepositoryInterface $category_repository,
+
+        OptionRepositoryInterface $optionRepository,
 
         SettingRepositoryInterface $settings_repository,
 
@@ -122,6 +127,7 @@ class AdvsController extends PublicController
         $this->requestHttp = $request;
 
         parent::__construct();
+        $this->optionRepository = $optionRepository;
     }
 
 
@@ -279,9 +285,26 @@ class AdvsController extends PublicController
 
         $viewType = $this->requestHttp->cookie('viewType');
 
+        if (!isset($allCats)) {
+            if (count($mainCats) == 1 || count($mainCats) == 2) {
+                $catText = end($mainCats)['val'];
+            } elseif (count($mainCats) > 2) {
+                $catArray = array_slice($mainCats, 2);
+                $catText = '';
+                $loop = 0;
+                foreach ($catArray as $cat) {
+                    $catText = !$loop ? $catText . $cat['val'] : $catText . ' ' . $cat['val'];
+                    $loop++;
+                }
+            }
+            $this->template->set('showTitle', false);
+            $this->template->set('meta_title', $catText);
+            $this->template->set('meta_description', $catText);
+        }
+
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges', 'seenList',
-            'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats');
+            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
+            'seenList', 'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
@@ -367,6 +390,8 @@ class AdvsController extends PublicController
             }
         }
 
+        $options = $this->optionRepository->findAllBy('adv_id', $id);
+
         if ($isCommentActive) {
             $CommentModel = new CommentModel();
             $comments = $CommentModel->getComments($adv->id)->get();
@@ -388,7 +413,8 @@ class AdvsController extends PublicController
         $this->template->set('meta_image', $coverPhoto);
 
         if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints', 'recommended_advs', 'categories', 'features', 'comments', 'qrSRC'));
+            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
+                'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options'));
         } else {
             return back();
         }
@@ -417,6 +443,8 @@ class AdvsController extends PublicController
             }
         }
 
+        $options = $this->optionRepository->findAllBy('adv_id', $id);
+
         if ($this->adv_model->is_enabled('customfields')) {
             $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
         }
@@ -424,7 +452,7 @@ class AdvsController extends PublicController
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
-            compact('adv', 'categories', 'features', 'isActiveDopings'));
+            compact('adv', 'categories', 'features', 'isActiveDopings', 'options'));
     }
 
     public function getLocations()
@@ -546,6 +574,26 @@ class AdvsController extends PublicController
                }
             }
 
+            // Create options
+            $deletedOptions = $request->deleted_options;
+            $newOptions = $request->new_options;
+            if (!empty($deletedOptions)) {
+                $deletedOptions = explode(',', $request->deleted_options);
+                $this->optionRepository->newQuery()
+                    ->whereIn('id', $deletedOptions)
+                    ->where('adv_id', $request->update_id)
+                    ->delete();
+            }
+            if (!empty($newOptions)) {
+                $newOptions = explode(',', $request->new_options);
+                foreach ($newOptions as $option) {
+                    $this->optionRepository->create([
+                        'name' => $option,
+                        'adv_id' => $request->update_id,
+                    ]);
+                }
+            }
+
             $adv->is_get_adv = $request->is_get_adv;
             $adv->save();
 
@@ -587,8 +635,9 @@ class AdvsController extends PublicController
             }
 
             $form->render($request->update_id);
+            $adv = $this->adv_repository->find($request->update_id);
+
             if ($this->request->address_id != "") {
-                $adv = $form->getFormEntry();
                 $address = $address->find($this->request->address_id);
                 $adv->country_id = $address->country_id;
                 $adv->city = $address->city;
@@ -601,8 +650,7 @@ class AdvsController extends PublicController
             $post['id'] = $request->update_id;
             $events->dispatch(new priceChange($post));//price history
             if ($request->url == "") {
-                $LastAdv = $advModel->getLastUserAdv();
-                $advRepository->cover_image_update($LastAdv);
+                $advRepository->cover_image_update($adv);
             }
 
             if ($form->hasFormErrors()) {
@@ -668,6 +716,8 @@ class AdvsController extends PublicController
             }
         }
 
+        $options = $this->optionRepository->findAllBy('adv_id', $id);
+
         //Cloudinary Module
         $isActiveCloudinary = new AdvModel();
         $isActiveCloudinary = $isActiveCloudinary->is_enabled('cloudinary');
@@ -688,7 +738,8 @@ class AdvsController extends PublicController
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->edit($adv, $categories, $cats);
         }
 
-        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d', 'request', 'Cloudinary', 'cities', 'adv', 'custom_fields'));
+        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d',
+            'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'options'));
     }
 
     public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events)
@@ -946,11 +997,12 @@ class AdvsController extends PublicController
     {
         $id = $request->id;
         $quantity = $request->quantity;
+        $name = $request->name;
         $thisModel = new AdvModel();
         $adv = $thisModel->isAdv($id);
         $response = array();
         if ($adv) {
-            $cart = $thisModel->addCart($adv, $quantity);
+            $cart = $thisModel->addCart($adv, $quantity, $name);
             $response['status'] = "success";
         } else {
             $response['status'] = "error";

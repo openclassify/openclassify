@@ -40,4 +40,7 @@ return [
     'general' => 'General',
     'ads' => 'Ads',
     'user' => 'User',
+    'options' => [
+        'title' => 'Options',
+    ],
 ];

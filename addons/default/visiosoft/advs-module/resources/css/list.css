@@ -15,8 +15,10 @@
     max-height: 100px;
 }
 
-.list-classified .bg-light {
-    height: 100px;
+@media only screen and (min-width: 768px) {
+    .list-classified .bg-light {
+        height: 100px;
+    }
 }
 
 .upper-list-banner {
@@ -47,8 +49,6 @@
 
 /* Mobile filter */
 .mobile-list-action {
-    margin-left: -30px;
-    margin-right: -30px;
     border: 1px solid #dee2e68a;
 }
 
@@ -74,6 +74,10 @@
     right: 0;
     content: '';
     background: #c9c9c9;
+}
+
+.mobile-list-action div:last-child a:after {
+    content: none;
 }
 
 .mobile-list-action i {
@@ -105,4 +109,18 @@
 
 #filterModal {
     overflow-y: auto;
+}
+
+.result-text {
+    font-size: 13px;
+    margin: 0 -15px;
+}
+
+.result-text span:first-child {
+    font-weight: 500;
+}
+
+.result-text span:last-child {
+    color: #8f0100;
+    font-weight: 500;
 }
