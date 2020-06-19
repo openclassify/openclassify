@@ -1,7 +1,6 @@
 <?php namespace Visiosoft\ProfileModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
-use Barryvdh\Cors\ServiceProvider;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
@@ -210,9 +209,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $providers = [
-        ServiceProvider::class,
-    ];
+    protected $providers = [];
 
     /**
      * The addon view overrides.
