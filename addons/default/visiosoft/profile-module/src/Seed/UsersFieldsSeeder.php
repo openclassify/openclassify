@@ -30,8 +30,7 @@ class UsersFieldsSeeder extends Seeder
     {
         $namespace = 'users';
         $locked = 0;
-        $stream = $streamRepository->findBy('slug', 'users');
-        $assignmentConfig = 'a:0:{}';
+        $stream = $streamRepository->findBySlugAndNamespace('users', 'users');
 
         $customFields = [
             0 => [
