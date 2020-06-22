@@ -4,16 +4,16 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="generator" content="{{ config_get('streams::distribution.name') }}"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<meta name="description" content="{{ setting_value('streams::description') }}"/>
+<meta name="description" content="{{ setting_value('streams::description')|slice(0,160) }}"/>
 <!-- Meta Tags -->
 
 <title>
+    {% set title = trans(template.meta_title) %}
     {% set showTitle = template.showTitle is same as(false) ? false : true %}
     {% if showTitle %}
-        {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
-        &#8250;
+        {% set title = setting_value('streams::name', config_get('streams::distribution.name'))~"|"~trans(template.meta_title) %}
     {% endif %}
-    {{ trans(template.meta_title) }}
+    {{ title|slice(0,60) }}
 </title>
 
 {% include "visiosoft.theme.base::partials/ogdata" %}

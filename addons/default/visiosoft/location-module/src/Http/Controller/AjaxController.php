@@ -112,8 +112,8 @@ class AjaxController extends PublicController
     {
         if ($this->request->name) {
             $slug = Str::slug($this->request->name, '_');
-            if ($city = $this->city_model->newQuery()->where('slug', 'LIKE', $slug . '%')->first()) {
-                return ['success' => true, 'link' => route('visiosoft.module.advs::list') . '?city[]=' . $city->id];
+            if ($city = $this->  city_model->newQuery()->where('slug', 'LIKE', $slug . '%')->first()) {
+                return ['success' => true, 'city' => $city];
             } else {
                 return ['success' => false];
             }
