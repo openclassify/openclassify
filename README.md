@@ -104,13 +104,10 @@ Then run the installer and indicate that the system is ready to install:
 ```bash
 php artisan install --ready
 ```                             
-
-## Install Cors
-
-    php artisan vendor:publish --provider="Barryvdh\Cors\ServiceProvider"
-    
+ 
     
 ## Development Team
+
 Samed Durak @profstyle1
 
 Vedat Akdoğan  @vedatakd
