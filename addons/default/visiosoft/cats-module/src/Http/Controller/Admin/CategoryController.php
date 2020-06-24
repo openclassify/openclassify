@@ -47,8 +47,7 @@ class CategoryController extends AdminController
             $this->messages->error('Selected category has no sub-categories.');
             return back();
         }
-        if($request->view != "trash")
-        {
+        if ($request->view != "trash") {
             $table->setTableEntries($categories);
         }
 
@@ -157,7 +156,8 @@ class CategoryController extends AdminController
         return $this->view->make('visiosoft.module.cats::cats/admin-cat');
     }
 
-    public function endsWith($string, $test) {
+    public function endsWith($string, $test)
+    {
         $strlen = strlen($string);
         $testlen = strlen($test);
         if ($testlen > $strlen) return false;
@@ -185,12 +185,13 @@ class CategoryController extends AdminController
     public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
     {
         $categoryRepository->DeleteCategories($id);
-        $subCats = $categoryRepository->getSubCatById($request->parent);
-        if (count($subCats)) {
-            return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
-        } else {
-            return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
+        if ($request->parent != "") {
+            $subCats = $categoryRepository->getSubCatById($request->parent);
+            if (count($subCats)) {
+                return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
+            }
         }
+        return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
     }
 
     public function cleanSubcats()

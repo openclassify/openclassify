@@ -101,7 +101,6 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         if (count($subCategories)) {
             $this->newQuery()->whereIn('id', $subCategories)->delete();
         }
-
         return true;
     }
 
