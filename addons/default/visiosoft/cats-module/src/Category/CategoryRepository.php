@@ -76,10 +76,12 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
         return $this->model->orderBy('sort_order')->get();
     }
 
-    public function removeCatFromAds($id)
+    public function removeCatFromAds($category)
     {
-        $category = $this->find($id);
-        $catLevelNum = is_null($category->parent_category_id) ? 1 : $this->model->getCatLevel($category->id);
+        $catLevelNum = 1;
+        if (!is_null($category->parent_category_id)) {
+            $catLevelNum = $this->model->getCatLevel($category->id);
+        }
         $catLevelText = "cat" . $catLevelNum;
 
         $advs = $this->advRepository->newQuery()->where($catLevelText, $category->id)->get();
@@ -94,13 +96,15 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function DeleteCategories($id)
     {
-        // Remove deleted category from ads
-        $this->removeCatFromAds($id);
+        if (!is_null($category = $this->find($id))) {
+            // Remove deleted category from ads
+            $this->removeCatFromAds($category);
 
-        // Delete the category
-        $this->model->find($id)->delete();
+            // Delete the category
+            $this->model->find($id)->delete();
 
-        // Delete the subcategories
-        $this->model->deleteSubCategories($id);
+            // Delete the subcategories
+            $this->model->deleteSubCategories($id);
+        }
     }
 }
