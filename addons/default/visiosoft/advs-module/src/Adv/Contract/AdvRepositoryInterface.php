@@ -20,8 +20,6 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function cover_image_update($adv);
 
-    public function delete_empty_advs();
-
     public function getRecommendedAds($id);
 
     public function getLastAd($id);

@@ -567,11 +567,10 @@ class AdvsController extends PublicController
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
-               $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
-               if(!is_null($cat))
-               {
-                   return redirect('/');
-               }
+                $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
+                if (!is_null($cat)) {
+                    return redirect('/');
+                }
             }
 
             // Create options
@@ -694,6 +693,11 @@ class AdvsController extends PublicController
         }
         $isActive = new AdvModel();
         $adv = $advRepository->getAdvArray($id);
+
+        if (is_null($adv)) {
+            $this->messages->error(trans('visiosoft.module.advs::message.no_add_found'));
+            return $this->redirect->to(route('advs::create_adv'));
+        }
 
         if ($adv['created_by_id'] != auth()->id()
             && !auth()->user()->hasPermission('visiosoft.module.advs::advs.write')) {

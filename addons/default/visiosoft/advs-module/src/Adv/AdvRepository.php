@@ -340,12 +340,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $adv->update(['cover_photo' => $coverPhoto]);
     }
 
-    public function delete_empty_advs()
-    {
-        AdvsAdvsEntryModel::query()->where('slug', "")->forceDelete();
-        DB::table('advs_advs_translations')->where('name', NULL)->delete();
-    }
-
     public function getRecommendedAds($id)
     {
         return AdvModel::query()
@@ -364,7 +358,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function getAdvArray($id)
     {
-        return AdvsAdvsEntryModel::query()->where('advs_advs.id', $id)->first()->toArray();
+        $ad = AdvsAdvsEntryModel::query()->where('advs_advs.id', $id)->first();
+
+        return ($ad !== null) ? $ad->toArray() : null;
     }
 
     public function getQuantity($quantity, $type, $item)

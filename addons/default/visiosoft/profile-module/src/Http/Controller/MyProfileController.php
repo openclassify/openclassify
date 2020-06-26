@@ -50,9 +50,6 @@ class MyProfileController extends PublicController
 
     public function home(ProfileFormBuilder $form, AdvRepositoryInterface $advRepository)
     {
-        //clear empty ads
-        $advRepository->delete_empty_advs();
-
         $advs_count = new AdvModel();
         $advs_count = count($advs_count->myAdvsByUser()->get());
 
