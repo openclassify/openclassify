@@ -41,7 +41,7 @@ class ValidateCredentials
                     $response = null;
                 }
 
-                //Is email/username or phone number
+                //Is email or phone number
                 if (!filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
                     $possiblePhone = $credentials['email'];
                     if (substr($credentials['email'], 0, 1) == 0) {
