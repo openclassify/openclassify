@@ -4,31 +4,28 @@ use Anomaly\Streams\Platform\Addon\Extension\ExtensionCollection;
 use Anomaly\UsersModule\User\Authenticator\Contract\AuthenticatorExtensionInterface;
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\RedirectResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Visiosoft\ProfileModule\Profile\Events\SendEmptyPassword;
 use Visiosoft\ProfileModule\Profile\SignIn\SignInFormBuilder;
 
+
 class ValidateCredentials
 {
     private $extensions;
     private $repository;
     private $dispatcher;
-    private $config;
 
     public function __construct(
         ExtensionCollection $extensions,
         UserRepositoryInterface $userRepository,
-        Dispatcher $dispatcher,
-        Repository $config
+        Dispatcher $dispatcher
     )
     {
         $this->extensions = $extensions;
         $this->repository = $userRepository;
         $this->dispatcher = $dispatcher;
-        $this->config = $config;
     }
 
     public function authenticate(array $credentials)
@@ -40,22 +37,20 @@ class ValidateCredentials
         /* @var AuthenticatorExtensionInterface $authenticator */
         foreach ($authenticators as $authenticator) {
             if ($authenticator->slug == "default_authenticator") {
-                $method = $this->config->get('anomaly.module.users::config.login');
-
-                if (!isset($credentials['password']) && !isset($credentials[$method])) {
+                if (!isset($credentials['password']) && !isset($credentials['email'])) {
                     $response = null;
                 }
 
                 //Is email/username or phone number
-                if (!filter_var($credentials[$method], FILTER_VALIDATE_EMAIL)) {
-                    $possiblePhone = $credentials[$method];
-                    if (substr($credentials[$method], 0, 1) == 0) {
-                        $possiblePhone = substr($credentials[$method], 1);
+                if (!filter_var($credentials['email'], FILTER_VALIDATE_EMAIL)) {
+                    $possiblePhone = $credentials['email'];
+                    if (substr($credentials['email'], 0, 1) == 0) {
+                        $possiblePhone = substr($credentials['email'], 1);
                     }
                     if ($user = $this->repository
                         ->newQuery()
                         ->where('gsm_phone', 'LIKE', "%$possiblePhone")->first()) {
-                        $credentials[$method] = $user->email;
+                        $credentials['email'] = $user->email;
                     }
                 }
                 $response = $this->repository->findByCredentials($credentials);
