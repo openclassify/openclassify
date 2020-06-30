@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'המרת מטבע בהצלחה.',
     'choose_user' => 'בחר משתמש',
     'owner_updated_successfully' => 'הבעלים עודכן בהצלחה!',
+    'no_add_found' => 'No Ad Found!',
 ];
