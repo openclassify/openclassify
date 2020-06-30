@@ -431,5 +431,15 @@ return [
     'choose' => [
         'name' => 'পছন্দ করা'
     ],
-    'my_address' => 'আমার ঠিকানা'
+    'my_address' => 'আমার ঠিকানা',
+
+    'company' => [
+        'name' => 'Company Name'
+    ],
+    'tax_office' => [
+        'name' => 'Tax Office'
+    ],
+    'tax_number' => [
+        'name' => 'Tax Number'
+    ],
 ];
