@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Valuta succesvol omgezet.',
     'choose_user' => 'Kies een gebruiker',
     'owner_updated_successfully' => 'De eigenaar is met succes bijgewerkt!',
+    'no_add_found' => 'No Ad Found!',
 ];
