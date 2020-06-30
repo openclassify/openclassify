@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Valyuta uğurla çevrildi.',
     'choose_user' => 'İstifadəçi seçin',
     'owner_updated_successfully' => 'Sahib uğurla yeniləndi!',
+    'no_add_found' => 'No Ad Found!',
 ];
