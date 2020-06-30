@@ -1,8 +1,9 @@
-<?php namespace Visiosoft\ProfileModule\Adress\Form;
+<?php namespace Visiosoft\ProfileModule\Adress\FormCompany;
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
+use Visiosoft\ProfileModule\Adress\AdressModel;
 
-class AdressFormBuilder extends FormBuilder
+class AddressCompanyFormBuilder extends FormBuilder
 {
 
     /**
@@ -10,6 +11,8 @@ class AdressFormBuilder extends FormBuilder
      *
      * @var array|string
      */
+    protected $model = AdressModel::class;
+
     protected $rules = [];
 
     /**

@@ -12,11 +12,11 @@ class VisiosoftModuleProfileCreateAdressStream extends Migration
      */
     protected $stream = [
         'slug' => 'adress',
-         'title_column' => 'id',
-         'translatable' => false,
-         'trashable' => false,
-         'searchable' => false,
-         'sortable' => false,
+        'title_column' => 'id',
+        'translatable' => false,
+        'trashable' => true,
+        'searchable' => false,
+        'sortable' => false,
     ];
 
     /**
@@ -41,16 +41,17 @@ class VisiosoftModuleProfileCreateAdressStream extends Migration
         'city' => [
             'required' => true,
         ],
-        'district' => [
-            'required' => true,
-        ],
+        'district',
         'adress_content' => [
             'required' => true,
         ],
         'adress_gsm_phone' => [
             'required' => true,
         ],
-        'deleted_at'
+        'company',
+        'tax_number',
+        'tax_office',
+        'is_company',
     ];
 
 }

@@ -50,9 +50,6 @@ class MyProfileController extends PublicController
 
     public function home(ProfileFormBuilder $form, AdvRepositoryInterface $advRepository)
     {
-        //clear empty ads
-        $advRepository->delete_empty_advs();
-
         $advs_count = new AdvModel();
         $advs_count = count($advs_count->myAdvsByUser()->get());
 
@@ -135,71 +132,6 @@ class MyProfileController extends PublicController
 
     }
 
-    public function adressEdit($id)
-    {
-        $adressModel = new AdressModel();
-        $adress = $adressModel->getAdressFirst($id);
-        if ($adress->getAttribute('user_id') == Auth::id()) {
-            $country = CountryModel::all();
-            return $this->view->make('visiosoft.module.profile::address/edit', compact('adress', 'country'));
-        }
-    }
-
-    public function adressSoftDelete($id)
-    {
-        $address = $this->adressRepository->find($id);
-        if ($address->user_id == Auth::id()) {
-            $address->update([
-                'deleted_at' => date('Y-m-d H:i:s')
-            ]);
-        }
-        return $this->redirect->back();
-    }
-
-    public function adressUpdate(AdressFormBuilder $form, Request $request, $id)
-    {
-        $error = $form->build()->validate()->getFormErrors()->getMessages();
-        if (!empty($error)) {
-            return $this->redirect->back();
-        }
-
-        $adressModel = new AdressModel();
-        $adress = $adressModel->getAdressFirst($id);
-
-        if ($adress->getAttribute('user_id') == Auth::id()) {
-
-            $New_value = $request->all();
-            $New_value['country_id'] = $New_value['country'];
-            unset($New_value['_token'], $New_value['action'], $New_value['country']);
-            $adressModel->getAdress($id)->update($New_value);
-
-            $message = [];
-            $message[] = trans('visiosoft.module.profile::message.adress_success_update');
-            return redirect(route('profile::address'))->with('success', $message);
-        }
-    }
-
-    public function adressCreate(AdressFormBuilder $form, Request $request)
-    {
-        if (isset($request->request->all()['action']) == "save") {
-            $error = $form->build()->validate()->getFormErrors()->getMessages();
-            if (!empty($error)) {
-                return $this->redirect->back();
-            }
-            $new_adress = $request->request->all();
-            unset($new_adress['action'], $new_adress['_to*ken']);
-            $new_adress['user_id'] = Auth::id();
-
-            $adressModel = new AdressModel();
-            $adressModel->getAdress()->create($new_adress);
-
-            $message = [];
-            $message[] = trans('visiosoft.module.profile::message.adress_success_create');
-            return redirect(route('profile::address'))->with('success', $message);
-        }
-        $country = CountryModel::all();
-        return $this->view->make('visiosoft.module.profile::address/create', compact('country'));
-    }
 
     public function adressAjaxCreate(AdressFormBuilder $form, Request $request)
     {
@@ -275,13 +207,6 @@ class MyProfileController extends PublicController
         } else {
             abort(403);
         }
-    }
-
-    public function Address()
-    {
-        $address = new AdressModel();
-        $address = $address->getUserAdress();
-        return $this->view->make('visiosoft.module.profile::address/list', compact('address'));
     }
 
     public function disableAccount()

@@ -139,7 +139,15 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
                 'mode' => 'select',
             ]
         ],
-        'deleted_at' => 'anomaly.field_type.datetime'
+        'company' => 'anomaly.field_type.text',
+        'tax_number' => 'anomaly.field_type.text',
+        'tax_office' => 'anomaly.field_type.text',
+        'is_company' => [
+            'type' => 'anomaly.field_type.boolean',
+            'config' => [
+                'default_value' => false,
+            ],
+        ],
     ];
 
 }

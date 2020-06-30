@@ -5,6 +5,8 @@ use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
+use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
+use Visiosoft\ProfileModule\Adress\FormCompany\AddressCompanyFormBuilder;
 use Visiosoft\ProfileModule\Http\Middleware\authCheck;
 use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
@@ -67,14 +69,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'admin/profile/editAdress/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@edit',
         'admin/profile/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adressupdate',
         'profile/adress/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressUpdate',
-        'profile/address' => [
-            'as' => 'profile::address',
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@Address',
-        ],
-        'profile/adress/create' => [
-            'as' => 'visiosoft.module.profile::adress_create',
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressCreate'
-        ],
+
         'profile/adress/ajaxCreate' => [
             'as' => 'visiosoft.module.profile::adress_ajax_create',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxCreate'
@@ -86,14 +81,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile/adress/ajaxDetail' => [
             'as' => 'visiosoft.module.profile::adress_ajax_detail',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxDetail'
-        ],
-        'profile/adress/edit/{id}' => [
-            'as' => 'visiosoft.module.profile::address_edit',
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressEdit'
-        ],
-        'profile/adress/soft-del/{id}' => [
-            'as' => 'visiosoft.module.profile::address_soft_delete',
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressSoftDelete'
         ],
 
         /* Profile */
@@ -127,6 +114,26 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         ],
 
         'ajax/update-user-info' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
+
+
+        //Address
+        'profile/address' => [
+            'as' => 'profile::address',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\AddressController@index',
+        ],
+        'profile/adress/create' => [
+            'as' => 'visiosoft.module.profile::adress_create',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\AddressController@create'
+        ],
+        'profile/adress/edit/{id}' => [
+            'as' => 'visiosoft.module.profile::address_edit',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\AddressController@edit'
+        ],
+        'profile/adress/delete/{id}' => [
+            'as' => 'visiosoft.module.profile::address_soft_delete',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\AddressController@delete'
+        ],
+
 
         // Cache links
         'ajax/get-user-info' => 'Visiosoft\ProfileModule\Http\Controller\CacheController@getUserInfo',
@@ -189,6 +196,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'userProfile' => UserFormBuilder::class,
         'profile' => ProfileFormBuilder::class,
         'signIn' => SignInFormBuilder::class,
+        'address' => AdressFormBuilder::class,
+        'addressCompany' => AddressCompanyFormBuilder::class,
         ProfileAdressEntryModel::class => AdressModel::class,
     ];
 

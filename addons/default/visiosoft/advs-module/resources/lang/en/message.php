@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Currency Converted Successfully.',
     'choose_user' => 'Choose a user',
     'owner_updated_successfully' => 'The Owner Has Been Updated Successfully!',
+    'no_add_found' => 'No Ad Found!',
 ];
