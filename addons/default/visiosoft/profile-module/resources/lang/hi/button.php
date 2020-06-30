@@ -12,4 +12,6 @@ return [
     'edit' => 'संपादित करें',
     'go_profile' => 'प्रोफाइल डिटेल पर जाएं',
     'go_user' => 'यूजर डिटेल पर जाएं',
+    'personal' => 'Personal',
+    'corporate' => 'Corporate',
 ];
