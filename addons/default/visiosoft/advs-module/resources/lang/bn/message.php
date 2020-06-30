@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'মুদ্রা সফলভাবে রূপান্তরিত হয়েছে।',
     'choose_user' => 'একটি ব্যবহারকারী চয়ন করুন',
     'owner_updated_successfully' => 'মালিক সফলভাবে আপডেট হয়েছে!',
+    'no_add_found' => 'No Ad Found!',
 ];
