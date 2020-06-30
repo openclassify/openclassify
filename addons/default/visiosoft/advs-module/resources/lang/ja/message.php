@@ -22,4 +22,5 @@ return [
     'currency_converted' => '通貨は正常に変換されました。',
     'choose_user' => 'ユーザーを選択してください',
     'owner_updated_successfully' => 'オーナーが更新されました！',
+    'no_add_found' => 'No Ad Found!',
 ];
