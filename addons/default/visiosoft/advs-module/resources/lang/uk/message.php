@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Конвертована валюта успішно.',
     'choose_user' => 'Виберіть користувача',
     'owner_updated_successfully' => 'Власник успішно оновлений!',
+    'no_add_found' => 'No Ad Found!',
 ];
