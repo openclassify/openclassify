@@ -7,4 +7,8 @@ return [
     'upload_avatar' => [
         'name' => 'Téléchargement d\'avatar',
     ],
+
+    'show_tax_office' => [
+        'name' => 'Show Tax Office Field',
+    ],
 ];
