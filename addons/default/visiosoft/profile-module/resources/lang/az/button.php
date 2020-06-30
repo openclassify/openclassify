@@ -12,4 +12,6 @@ return [
     'edit' => 'Redaktə edin',
     'go_profile' => 'Profil təfərrüatlarına keçin',
     'go_user' => 'İstifadəçi təfərrüatlarına keçin',
+    'personal' => 'Personal',
+    'corporate' => 'Corporate',
 ];
