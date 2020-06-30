@@ -8,7 +8,7 @@ return [
             'general_setting' => [
                 'title' => 'visiosoft.module.profile::section.general_setting',
                 'fields' => [
-                    'show_my_ads', 'upload_avatar'
+                    'show_my_ads', 'upload_avatar', 'show_tax_office'
                 ],
             ],
         ],

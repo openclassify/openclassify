@@ -5,78 +5,99 @@
         {% block detail %}
             <div class="row px-3">
                 <div class="col-md-12 bg-dark text-white p-5">
-                    <h3>{{ trans('visiosoft.module.profile::field.create_address.name') }}</h3>
+                    <h3>
+                        {% if request().segment(3) == "edit" %}
+                            {{ trans('visiosoft.module.profile::field.edit_address.name') }}
+                        {% else %}
+                            {{ trans('visiosoft.module.profile::field.create_address.name') }}
+                        {% endif %}
+                    </h3>
                 </div>
                 <div class="col-md-12 bg-light profile-section">
-                    {% set form = form('profile', 'adress').entry(adress.id).actions({'save':'save'}).get() %}
-                    {{ form_open({
-                        'class': 'form ' ~ form.options.class ,
-                        'enctype': 'multipart/form-data',
-                        'url': 'profile/adress/create'
-                    })|raw }}
-                    <div class="py-3 px-3 px-sm-0">
+                    {% set form = form('address').entry(id).actions({'save':'save'}).get() %}
 
-                        <div class="form-group">
-                            <label class="control-label font-weight-bold">{{ form.fields.adress_name.label|raw }}</label>
-                            {{ form.fields.adress_name.input|raw }}
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label font-weight-bold">{{ form.fields.adress_gsm_phone.label|raw }}</label>
-                            {{ form.fields.adress_gsm_phone.input|raw }}
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label font-weight-bold">{{ form.fields.adress_first_name.label|raw }}</label>
-                            {{ form.fields.adress_first_name.input|raw }}
-                        </div>
-                        <div class="form-group">
-                            <label class="control-label font-weight-bold">{{ form.fields.adress_last_name.label|raw }}</label>
-                            {{ form.fields.adress_last_name.input|raw }}
-                        </div>
-                        <div class="row form-group location-map">
-                            <div class="col-sm-4">
-                                <label class="control-label font-weight-bold">{{ form.fields.country.label|raw }}</label>
-                                <div class="input-wrapper">
-                                    <select name="country" class="custom-select form-control"
-                                            data-content="{{ adress.country.id }}"
-                                            data-field_name="adress_country_id"
-                                            data-provides="anomaly.field_type.select">
-                                        {% for countryField in country %}
-                                            <option value="{{ countryField.id }}">{{ countryField.name }}</option>
-                                        {% endfor %}
-                                    </select>
+                    {% set isCompany = form.entry.is_company %}
+
+                    <div class="card-header tab-card-header">
+                        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                            <li class="nav-item {% if isCompany %}d-none{% endif %}">
+                                <a class="nav-link active show" id="personal-tab" data-toggle="tab" href="#personal"
+                                   role="tab"
+                                   aria-controls="Personal" aria-selected="true">{{ trans('visiosoft.module.profile::button.personal') }}</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if isCompany %}active show{% endif %}" id="corporate-tab" data-toggle="tab" href="#corporate" role="tab"
+                                   aria-controls="Corporate" aria-selected="false">{{ trans('visiosoft.module.profile::button.corporate') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active p-3 {% if isCompany %}d-none{% endif %}" id="personal" role="tabpanel"
+                             aria-labelledby="personal-tab">
+                            {{ form_open({
+                                'class': 'form ' ~ form.options.class ,
+                                'enctype': 'multipart/form-data',
+                                'url':form.options.url
+                            })|raw }}
+                            <div class="py-3 px-3 px-sm-0">
+
+                                {% include "visiosoft.module.profile::address/partials/fields" %}
+
+                                <div class="form-group">
+                                    {{ form.actions|raw }}
                                 </div>
                             </div>
+                            {{ form_close() }}
 
-                            <div class="col-sm-4 location-field city-data"
-                                 data-content="{{ adress.city }}">
-                                <label class="control-label font-weight-bold">{{ form.fields.city.label|raw }}</label>
-                                {{ form.fields.city.input|raw }}
-                            </div>
-                            <div class="col-sm-4 location-field district-data"
-                                 data-content="{{ adress.district }}">
-                                <label class="control-label font-weight-bold">{{ form.fields.district.label|raw }}</label>
-                                {{ form.fields.district.input|raw }}
-                            </div>
                         </div>
-                        <div class="form-group location-map">
-                            <div class="col-sm-12">
-                                <div class="row form-group add-title">
-                                    <label class="control-label font-weight-bold">{{ form.fields.adress_content.label|raw }}</label>
-                                    {{ form.fields.adress_content.input|raw }}
+                        <div class="tab-pane fade p-3 {% if isCompany %}active show{% endif  %}" id="corporate" role="tabpanel" aria-labelledby="corporate-tab">
+                            {% set form = form('addressCompany').entry(id).actions({'save':'save'}).get() %}
+                            {{ form_open({
+                                'class': 'form ' ~ form.options.class ,
+                                'enctype': 'multipart/form-data',
+                                'url':form.options.url
+                            })|raw }}
+                            <div class="py-3 px-3 px-sm-0">
+
+                                <div class="form-group font-weight-bolder">
+                                    {{ form.fields.company|raw }}
                                 </div>
+                                {% if setting_value('visiosoft.module.profile::show_tax_office') %}
+                                    <div class="form-group font-weight-bolder">
+                                        {{ form.fields.tax_office|raw }}
+                                    </div>
+                                {% endif %}
+                                <div class="form-group font-weight-bolder">
+                                    {{ form.fields.tax_number|raw }}
+                                </div>
+                                {% include "visiosoft.module.profile::address/partials/fields" %}
 
+                                <div class="form-group">
+                                    {{ form.actions|raw }}
+                                </div>
                             </div>
+                            {{ form_close() }}
+
                         </div>
-                        <div class="form-group">
-                            {{ form.actions|raw }}
-                        </div>
+
                     </div>
 
                 </div>
             </div>
+            <script>
+                //For Request
+                var country = "{% if request().segment(3) == "edit" %}{{ form.fields.country.value.id }}{% else %}{{ form.fields.country.value|raw }}{% endif %}";
+                var city = "{% if request().segment(3) == "edit" %}{{ form.fields.city.value }}{% else %}{{ form.fields.city.value|raw }}{% endif %}";
+                var district = "{% if request().segment(3) == "edit" %}{{ form.fields.district.value }}{% else %}{{ form.fields.district.value|raw }}{% endif %}";
+                //Default
+                var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+                var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
+                var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
 
-            {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
-            {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/address.js") }}
+            </script>
+
+            {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/create.js") }}
         {% endblock %}
     {% endembed %}
 {% endblock %}
