@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Το νόμισμα μετατράπηκε με επιτυχία.',
     'choose_user' => 'Επιλέξτε έναν χρήστη',
     'owner_updated_successfully' => 'Ο κάτοχος ενημερώθηκε με επιτυχία!',
+    'no_add_found' => 'No Ad Found!',
 ];
