@@ -431,5 +431,15 @@ return [
     'choose' => [
         'name' => '選ぶ'
     ],
-    'my_address' => '私のアドレス'
+    'my_address' => '私のアドレス',
+
+    'company' => [
+        'name' => 'Company Name'
+    ],
+    'tax_office' => [
+        'name' => 'Tax Office'
+    ],
+    'tax_number' => [
+        'name' => 'Tax Number'
+    ],
 ];
