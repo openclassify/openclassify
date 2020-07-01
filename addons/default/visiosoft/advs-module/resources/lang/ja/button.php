@@ -31,4 +31,5 @@ return [
     'update_category' => [
         'name' => 'カテゴリを更新'
     ],
+    'new_option' => 'New Option',
 ];

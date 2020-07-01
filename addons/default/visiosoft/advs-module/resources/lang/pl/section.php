@@ -40,4 +40,7 @@ return [
     'general' => 'Generał',
     'ads' => 'Reklamy',
     'user' => 'Użytkownik',
+    'options' => [
+        'title' => 'Options',
+    ],
 ];

@@ -31,4 +31,5 @@ return [
     'update_category' => [
         'name' => 'رده به روزرسانی'
     ],
+    'new_option' => 'New Option',
 ];

@@ -431,5 +431,15 @@ return [
     'choose' => [
         'name' => '고르다'
     ],
-    'my_address' => '내 주소'
+    'my_address' => '내 주소',
+
+    'company' => [
+        'name' => 'Company Name'
+    ],
+    'tax_office' => [
+        'name' => 'Tax Office'
+    ],
+    'tax_number' => [
+        'name' => 'Tax Number'
+    ],
 ];

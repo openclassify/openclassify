@@ -31,4 +31,5 @@ return [
     'update_category' => [
         'name' => 'Оновити категорію'
     ],
+    'new_option' => 'New Option',
 ];

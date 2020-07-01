@@ -264,6 +264,8 @@ return [
     "no_location" => "Δεν έχει επιλεγεί τοποθεσία.",
     "continue" => 'Να συνεχίσει',
     "gallery" => 'Εκθεσιακός χώρος',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'Η διαφήμιση βρίσκεται στη διαδικασία έγκρισης',

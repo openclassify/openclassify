@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Pomyślnie przeliczono walutę.',
     'choose_user' => 'Wybierz użytkownika',
     'owner_updated_successfully' => 'Właściciel został zaktualizowany pomyślnie!',
+    'no_add_found' => 'No Ad Found!',
 ];

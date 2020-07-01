@@ -264,6 +264,8 @@ return [
     "no_location" => "Nenhum local está selecionado.",
     "continue" => 'Continuar',
     "gallery" => 'Galeria',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'O anúncio está no processo de aprovação',

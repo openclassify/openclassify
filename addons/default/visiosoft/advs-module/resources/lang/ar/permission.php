@@ -49,4 +49,12 @@ return [
             'delete' => 'يمكن حذف القيم CF؟',
         ],
     ],
+    'options' => [
+        'name'   => 'Options',
+        'option' => [
+            'read'   => 'Can read options?',
+            'write'  => 'Can create/edit options?',
+            'delete' => 'Can delete options?',
+        ],
+    ],
 ];

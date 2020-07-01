@@ -31,4 +31,5 @@ return [
     'update_category' => [
         'name' => 'Kategoria Azhornimeve'
     ],
+    'new_option' => 'New Option',
 ];

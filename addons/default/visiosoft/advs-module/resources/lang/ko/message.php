@@ -22,4 +22,5 @@ return [
     'currency_converted' => '통화가 성공적으로 변환되었습니다.',
     'choose_user' => '사용자를 선택하십시오',
     'owner_updated_successfully' => '소유자가 성공적으로 업데이트되었습니다!',
+    'no_add_found' => 'No Ad Found!',
 ];

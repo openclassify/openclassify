@@ -263,6 +263,8 @@ return [
     "no_location" => "কোনও অবস্থান নির্বাচন করা হয়নি।",
     "continue" => 'চালিয়ে',
     "gallery" => 'দরদালান',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'বিজ্ঞাপনটি অনুমোদনের প্রক্রিয়াধীন',

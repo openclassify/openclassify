@@ -263,6 +263,8 @@ return [
     "no_location" => "Không có địa điểm được chọn.",
     "continue" => 'Tiếp tục',
     "gallery" => 'Bộ sưu tập',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'Quảng cáo đang trong quá trình phê duyệt',

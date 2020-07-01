@@ -431,5 +431,15 @@ return [
     'choose' => [
         'name' => 'בחר'
     ],
-    'my_address' => 'הכתובת שלי'
+    'my_address' => 'הכתובת שלי',
+
+    'company' => [
+        'name' => 'Company Name'
+    ],
+    'tax_office' => [
+        'name' => 'Tax Office'
+    ],
+    'tax_number' => [
+        'name' => 'Tax Number'
+    ],
 ];

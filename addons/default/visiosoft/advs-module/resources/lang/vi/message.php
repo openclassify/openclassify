@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Chuyển đổi tiền tệ thành công.',
     'choose_user' => 'Chọn người dùng',
     'owner_updated_successfully' => 'Chủ sở hữu đã được cập nhật thành công!',
+    'no_add_found' => 'No Ad Found!',
 ];

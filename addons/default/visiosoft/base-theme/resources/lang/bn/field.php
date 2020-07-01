@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => 'নিরাপদ ই-বাণিজ্য বিজ্ঞাপন',
     'sms' => 'পাঠ্য বার্তা (এসএমএস) প্রেরণ করুন',
     'mail' => 'মেইল পাঠাও',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];

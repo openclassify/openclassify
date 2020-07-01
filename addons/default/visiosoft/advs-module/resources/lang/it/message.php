@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Valuta convertita correttamente.',
     'choose_user' => 'Scegli un utente',
     'owner_updated_successfully' => 'Il proprietario è stato aggiornato con successo!',
+    'no_add_found' => 'No Ad Found!',
 ];

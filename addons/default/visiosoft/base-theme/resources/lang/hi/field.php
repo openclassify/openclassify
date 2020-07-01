@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => 'सुरक्षित ई-कॉमर्स विज्ञापन',
     'sms' => 'पाठ संदेश भेजें (एसएमएस)',
     'mail' => 'मेल भेजे',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];

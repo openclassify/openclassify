@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => '안전한 전자 상거래 광고',
     'sms' => '문자 메시지 보내기 (SMS)',
     'mail' => '메일을 보내다',
+
+    // Register instruction seed
+    'register_instructions' => 'Register Instructions',
+    'list' => 'List',
+    'instruction_description' => 'Instruction Description',
+    'instruction_list' => 'Instruction List',
 ];

@@ -12,4 +12,6 @@ return [
     'edit' => 'Redakto',
     'go_profile' => 'Shkoni në Detajin e Profilit',
     'go_user' => 'Shkoni te Detajet e përdoruesit',
+    'personal' => 'Personal',
+    'corporate' => 'Corporate',
 ];

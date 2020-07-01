@@ -40,4 +40,7 @@ return [
     'general' => 'সাধারণ',
     'ads' => 'বিজ্ঞাপন',
     'user' => 'ব্যবহারকারী',
+    'options' => [
+        'title' => 'Options',
+    ],
 ];

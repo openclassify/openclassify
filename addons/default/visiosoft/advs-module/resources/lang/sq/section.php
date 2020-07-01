@@ -40,4 +40,7 @@ return [
     'general' => 'I përgjithshëm',
     'ads' => 'Njoftimi',
     'user' => 'Përdorues',
+    'options' => [
+        'title' => 'Options',
+    ],
 ];

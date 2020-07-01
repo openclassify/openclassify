@@ -19,4 +19,7 @@ return [
     'cf_values' => [
         'name' => 'সিএফ মান',
     ],
+    'options' => [
+        'name' => 'Options',
+    ],
 ];

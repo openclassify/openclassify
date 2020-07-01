@@ -12,4 +12,6 @@ return [
     'edit' => 'Editați | ×',
     'go_profile' => 'Accesați Detaliile profilului',
     'go_user' => 'Accesați Detaliile utilizatorului',
+    'personal' => 'Personal',
+    'corporate' => 'Corporate',
 ];

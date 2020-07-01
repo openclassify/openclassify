@@ -31,4 +31,5 @@ return [
     'update_category' => [
         'name' => 'আপডেট বিভাগ'
     ],
+    'new_option' => 'New Option',
 ];

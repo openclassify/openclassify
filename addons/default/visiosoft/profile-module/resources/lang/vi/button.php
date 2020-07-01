@@ -12,4 +12,6 @@ return [
     'edit' => 'Biên tập',
     'go_profile' => 'Đi đến chi tiết hồ sơ',
     'go_user' => 'Đi đến chi tiết người dùng',
+    'personal' => 'Personal',
+    'corporate' => 'Corporate',
 ];

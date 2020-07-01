@@ -264,6 +264,8 @@ return [
     "no_location" => "Es ist kein Ort ausgewählt.",
     "continue" => 'Fortsetzen',
     "gallery" => 'Galerie',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'Die Anzeige befindet sich im Genehmigungsprozess',

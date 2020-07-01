@@ -22,4 +22,5 @@ return [
     'currency_converted' => 'Moneda convertită cu succes.',
     'choose_user' => 'Alegeți un utilizator',
     'owner_updated_successfully' => 'Proprietarul a fost actualizat cu succes!',
+    'no_add_found' => 'No Ad Found!',
 ];

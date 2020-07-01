@@ -264,6 +264,8 @@ return [
     "no_location" => "Er is geen locatie geselecteerd.",
     "continue" => 'Doorgaan met',
     "gallery" => 'Galerij',
+    "ads" => 'Ads',
+    "were_found" => 'were found.',
 
     // Pending screen
     'pending_message_1' => 'De advertentie bevindt zich in het goedkeuringsproces',
