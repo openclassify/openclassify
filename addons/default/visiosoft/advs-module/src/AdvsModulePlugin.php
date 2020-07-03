@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
+use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
@@ -58,6 +59,33 @@ class AdvsModulePlugin extends Plugin
                 function ($request, $url, $new_parameters) {
 
                     return $this->dispatch(new appendRequestURL($request, $url, $new_parameters));
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'getUserAllAdvs',
+                function ($user = null) {
+                    if (!$user) {
+                        $user = auth()->user();
+                    }
+
+                    $advModel = new AdvModel();
+                    return $advModel->newQuery()
+                        ->where('advs_advs.created_by_id', $user->id)
+                        ->get();
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'getUserPassiveAdvs',
+                function ($user = null) {
+                    if (!$user) {
+                        $user = auth()->user();
+                    }
+
+                    $advModel = new AdvModel();
+                    return $advModel->newQuery()
+                        ->where('advs_advs.created_by_id', $user->id)
+                        ->where('status', 'passive')
+                        ->get();
                 }
             )
         ];
