@@ -104,10 +104,6 @@ return [
         'name' => 'ユーザー'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'プロフィール'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => '私の販売'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => '設定',
     ],
 
-
     'corporate_settings' => [
         'name' => '会社の設定',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
