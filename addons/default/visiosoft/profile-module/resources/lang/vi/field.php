@@ -104,10 +104,6 @@ return [
         'name' => 'Người dùng'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'Hồ sơ'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'Bán hàng của tôi'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => 'Cài đặt tùy chọn',
     ],
 
-
     'corporate_settings' => [
         'name' => 'Cài đặt công ty',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
