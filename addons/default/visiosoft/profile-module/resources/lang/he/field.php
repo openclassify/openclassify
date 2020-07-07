@@ -104,10 +104,6 @@ return [
         'name' => 'משתמש'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'פרופיל'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'המכירות שלי'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => 'הגדרות העדפות',
     ],
 
-
     'corporate_settings' => [
         'name' => 'הגדרות ארגוניות',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
