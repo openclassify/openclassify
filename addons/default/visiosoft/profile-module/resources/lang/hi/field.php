@@ -104,10 +104,6 @@ return [
         'name' => 'उपयोगकर्ता'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'प्रोफ़ाइल'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'मेरी बिक्री'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => 'वरीयताएँ सेटिंग्स',
     ],
 
-
     'corporate_settings' => [
         'name' => 'कॉर्पोरेट सेटिंग्स',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
