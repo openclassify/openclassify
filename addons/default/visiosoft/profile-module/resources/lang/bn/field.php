@@ -104,10 +104,6 @@ return [
         'name' => 'ব্যবহারকারী'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'প্রোফাইল'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'আমার বিক্রয়'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => 'পছন্দসমূহ সেটিংস',
     ],
 
-
     'corporate_settings' => [
         'name' => 'কর্পোরেট সেটিংস',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
