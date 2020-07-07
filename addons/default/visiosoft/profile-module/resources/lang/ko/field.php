@@ -104,10 +104,6 @@ return [
         'name' => '사용자'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => '프로필'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => '내 판매'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => '환경 설정',
     ],
 
-
     'corporate_settings' => [
         'name' => '회사 설정',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
