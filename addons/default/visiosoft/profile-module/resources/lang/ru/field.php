@@ -104,10 +104,6 @@ return [
         'name' => 'пользователь'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'Профиль'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'Мои продажи'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -363,7 +358,6 @@ return [
         'name' => 'Настройки предпочтений',
     ],
 
-
     'corporate_settings' => [
         'name' => 'Корпоративные настройки',
     ],
@@ -443,4 +437,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
