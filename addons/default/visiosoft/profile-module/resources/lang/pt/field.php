@@ -104,10 +104,6 @@ return [
         'name' => 'Do utilizador'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'Perfil'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'Minhas vendas'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -364,7 +359,6 @@ return [
         'name' => 'Configurações de Preferências',
     ],
 
-
     'corporate_settings' => [
         'name' => 'Configurações corporativas',
     ],
@@ -444,4 +438,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];
