@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'E-mail, số điện thoại không chính xác!',
 
     'disable_account' => 'Bạn có muốn đóng tài khoản của bạn? Hoạt động này không thể được hoàn tác.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
