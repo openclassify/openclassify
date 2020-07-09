@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'メール、電話番号が違います！',
 
     'disable_account' => 'アカウントを閉鎖しますか？この操作は元に戻せません。',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
