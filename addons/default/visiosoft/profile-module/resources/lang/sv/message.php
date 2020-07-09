@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'E-post, telefonnummer är inte korrekt!',
 
     'disable_account' => 'Vill du stänga ditt konto? Denna åtgärd kan inte ångras.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
