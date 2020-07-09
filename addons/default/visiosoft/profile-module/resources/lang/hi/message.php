@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'ई-मेल, फोन नंबर सही नहीं है!',
 
     'disable_account' => 'क्या आप अपना खाता बंद करना चाहते हैं? यह ऑपरेशन पूर्ववत नहीं किया जा सकता है।',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
