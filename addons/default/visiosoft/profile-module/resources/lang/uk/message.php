@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'Неправильний електронний лист, номер телефону!',
 
     'disable_account' => 'Ви хочете закрити свій рахунок? Цю операцію не можна скасувати.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
