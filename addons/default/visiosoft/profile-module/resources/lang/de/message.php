@@ -34,4 +34,8 @@ return [
     'email_phone_not_found' => 'Die E-Mail, Telefonnummer ist nicht korrekt!',
 
     'disable_account' => 'Möchten Sie Ihr Konto schließen? Dieser Vorgang kann nicht rückgängig gemacht werden.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
