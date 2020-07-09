@@ -16,6 +16,9 @@ class UserFormBuilder extends FormBuilder
         'last_name' => [
             'required' => true,
         ],
+        'email' => [
+            'required' => true,
+        ],
     ];
 
     protected $actions = [

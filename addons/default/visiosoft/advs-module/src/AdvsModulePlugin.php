@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
+use Twig_Environment;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
@@ -87,6 +88,18 @@ class AdvsModulePlugin extends Plugin
                         ->where('status', 'passive')
                         ->get();
                 }
+            ),
+            new \Twig_SimpleFunction(
+                'fn',
+                function (Twig_Environment $twig, $name, ...$args) {
+                    $fn = $twig->getFunction($name);
+
+                    if ($fn === false) {
+                        return null;
+                    }
+
+                    return $fn->getCallable()(...$args);
+                }, ['needs_environment' => true]
             )
         ];
     }
