@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'ই-মেইল, ফোন নম্বর ঠিক নয়!',
 
     'disable_account' => 'আপনি কি আপনার অ্যাকাউন্ট বন্ধ করতে চান? এই অপারেশনটি পূর্বাবস্থায় ফেরা যায় না।',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
