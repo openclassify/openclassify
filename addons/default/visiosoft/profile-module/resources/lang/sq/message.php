@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!',
 
     'disable_account' => 'Dëshiron të mbyllësh llogarinë tënde? Ky operacion nuk mund të zhbëhet.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
