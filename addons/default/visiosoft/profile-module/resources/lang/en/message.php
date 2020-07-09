@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'The E-mail, Phone Number is not correct!',
 
     'disable_account' => 'Do you want to close your account? This operation cannot be undone.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];

@@ -3,6 +3,7 @@
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Support\Facades\Auth;
+use Visiosoft\NotificationsModule\Notify\Notification\UserUpdateEmailMail;
 
 class UserFormHandler
 {
@@ -16,8 +17,14 @@ class UserFormHandler
             return;
         }
 
-        $userModel->find(Auth::id())
-            ->update($builder->getPostData());
+        $data = $builder->getPostData();
+
+        $user = $userModel->find(\auth()->id());
+        if ($user->email != $data['email']) {
+            $user->notify(new UserUpdateEmailMail());
+        }
+
+        $user->update($builder->getPostData());
         $messages->success(trans('visiosoft.module.profile::message.success_update'));
     }
 }
