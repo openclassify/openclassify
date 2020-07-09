@@ -36,4 +36,8 @@ return [
     'email_phone_not_found' => 'E-mail, номер телефона неверен!',
 
     'disable_account' => 'Вы хотите закрыть свой аккаунт? Эта операция не может быть отменена.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
