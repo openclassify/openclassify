@@ -34,4 +34,8 @@ return [
     'email_phone_not_found' => 'Το E-mail, ο αριθμός τηλεφώνου δεν είναι σωστός!',
 
     'disable_account' => 'Θέλετε να κλείσετε τον λογαριασμό σας; Δεν είναι δυνατή η αναίρεση αυτής της λειτουργίας.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
