@@ -83,10 +83,8 @@ class AdvsModulePlugin extends Plugin
                     }
 
                     $advModel = new AdvModel();
-                    return $advModel->newQuery()
-                        ->where('advs_advs.created_by_id', $user->id)
-                        ->where('status', 'passive')
-                        ->get();
+
+                    return $advModel->pendingAdvsByUser()->get();
                 }
             ),
             new \Twig_SimpleFunction(
