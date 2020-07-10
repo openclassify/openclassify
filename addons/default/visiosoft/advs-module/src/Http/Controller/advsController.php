@@ -247,10 +247,11 @@ class AdvsController extends PublicController
 
         if ($categoryId) {
             $seo_keywords = $this->category_model->getMeta_keywords($categoryId->id);
-            $seo_description = $this->category_model->getMeta_description($categoryId->id);
+            $seo_description = $this->category_model->getMeta_description($categoryId->id) . ' ' .
+                implode(',', $seo_keywords);
             $seo_title = $this->category_model->getMeta_title($categoryId->id);
 
-            $this->template->set('meta_keywords', implode(',', $seo_keywords));
+            $this->template->set('og_description', $seo_description);
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_title', $seo_title);
 
@@ -299,7 +300,6 @@ class AdvsController extends PublicController
             }
             $this->template->set('showTitle', false);
             $this->template->set('meta_title', $catText);
-            $this->template->set('meta_description', $catText);
         }
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
