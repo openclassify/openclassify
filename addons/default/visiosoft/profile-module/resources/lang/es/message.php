@@ -34,4 +34,8 @@ return [
     'email_phone_not_found' => 'El correo electrónico, número de teléfono no es correcto!',
 
     'disable_account' => '¿Quieres cerrar tu cuenta? Esta operación no se puede deshacer.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];

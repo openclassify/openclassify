@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'Elektron poçt, telefon nömrəsi düzgün deyil!',
 
     'disable_account' => 'Hesabınızı bağlamaq istəyirsiniz? Bu əməliyyatı geri qaytarmaq olmaz.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];

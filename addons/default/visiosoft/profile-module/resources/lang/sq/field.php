@@ -104,10 +104,6 @@ return [
         'name' => 'Perdoruesit'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'Profile'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'Shitjet e mia'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => 'Parametrat e preferencave',
     ],
 
-
     'corporate_settings' => [
         'name' => 'Cilësimet e korporatave',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];

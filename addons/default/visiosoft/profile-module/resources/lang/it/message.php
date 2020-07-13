@@ -34,4 +34,8 @@ return [
     'email_phone_not_found' => 'L\'e-mail, il numero di telefono non è corretto!',
 
     'disable_account' => 'Vuoi chiudere il tuo account? Questa operazione non può essere annullata.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];

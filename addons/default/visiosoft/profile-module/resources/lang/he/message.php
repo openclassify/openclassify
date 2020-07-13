@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'הדואר האלקטרוני, מספר הטלפון אינו תקין!',
 
     'disable_account' => 'האם אתה רוצה לסגור את חשבונך? לא ניתן לבטל פעולה זו.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];

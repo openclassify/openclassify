@@ -104,10 +104,6 @@ return [
         'name' => 'کاربر'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'مشخصات'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'فروش من'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -361,7 +356,6 @@ return [
         'name' => 'تنظیمات برگزیده',
     ],
 
-
     'corporate_settings' => [
         'name' => 'تنظیمات شرکت',
     ],
@@ -441,4 +435,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];

@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => 'E-mailul, numărul de telefon nu este corect!',
 
     'disable_account' => 'Doriți să vă închideți contul? Această operație nu poate fi anulată.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];

@@ -104,10 +104,6 @@ return [
         'name' => 'Utilizator'
     ],
 
-
-
-
-
     /*Menu Button*/
     'profile' => [
         'name' => 'Profil'
@@ -197,7 +193,6 @@ return [
     'menu_my_sales' => [
         'name' => 'Vânzările mele'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,7 +357,6 @@ return [
         'name' => 'Setări preferințe',
     ],
 
-
     'corporate_settings' => [
         'name' => 'Setări corporative',
     ],
@@ -442,4 +436,11 @@ return [
     'tax_number' => [
         'name' => 'Tax Number'
     ],
+
+    // Profile page
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
 ];

@@ -33,4 +33,8 @@ return [
     'email_phone_not_found' => '이메일, 전화 번호가 올바르지 않습니다!',
 
     'disable_account' => '계정을 폐쇄 하시겠습니까? 이 작업은 취소 할 수 없습니다.',
+
+    // Mail
+    'update_email_mail_subject' => 'Email Updated!',
+    'update_email_mail_message' => 'Your Email Has Been Updated!',
 ];
