@@ -94,7 +94,11 @@ $('.profile-advs-tab a').on('click', function () {
     getMyAdvs($(this).attr('data-type'))
 });
 
-getMyAdvs('approved');
+const urlString = window.location.href;
+const url = new URL(urlString);
+let type = url.searchParams.get("type");
+type = type ? type : 'approved';
+getMyAdvs(type);
 
 
 function addAdsRow(id, href, image, name, price, city, country, cat1, cat2, status) {
