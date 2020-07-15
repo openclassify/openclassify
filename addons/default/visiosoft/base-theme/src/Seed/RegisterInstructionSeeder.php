@@ -56,7 +56,7 @@ class RegisterInstructionSeeder extends Seeder
             'name' => trans('visiosoft.theme.base::field.list'),
             'slug' => 'list',
             'category' => 'other',
-            'content_layout' => '<div class="border {{ block.area.slug == \'register-instructions\' ? \'personal-advantages\' : \'corporate-advantages\' }} py-5 px-5">
+            'content_layout' => '<div class="border {{ block.area.slug == \'store-register-instructions\' ? \'corporate-advantages\' : \'personal-advantages\' }} py-5 px-5">
                                     <div class="d-flex align-items-center mb-4">
                                         {% if setting_value(\'visiosoft.theme.base::register_page_instruction_logo\') %}
                                             <img class="mr-3" src="{{ file(setting_value(\'visiosoft.theme.base::register_page_instruction_logo\')).url }}">

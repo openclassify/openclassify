@@ -37,7 +37,12 @@
             </div>
 
             <div class="col-12 col-md-6 py-3 pr-0 instructions d-none d-md-block">
-                {{ blocks('register-instructions') }}
+                {% set type = app.request.get('type') %}
+                {% if type %}
+                    {{ blocks(type) }}
+                {% else %}
+                    {{ blocks('register-instructions') }}
+                {% endif %}
 
                 {{ addBlock('register/instructions')|raw }}
 
