@@ -58,6 +58,10 @@ class CatsModuleServiceProvider extends AddonServiceProvider
         'admin/cats/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',
         'admin/cats/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@edit',
         'admin/cats/category/delete/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@delete',
+
+        // Sitemap
+        'sitemap.xml' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@index',
+        'sitemap.xml/categories' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@categories',
     ];
 
     /**
