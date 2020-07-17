@@ -433,4 +433,14 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $newDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . setting_value('visiosoft.module.advs::default_published_time') . ' day'));
         return $advs->update(['finish_at' => $newDate]);
     }
+
+    public function getByUsersIDs($usersIDs)
+    {
+        return $this
+            ->newQuery()
+            ->whereIn('advs_advs.created_by_id', $usersIDs)
+            ->where('advs_advs.slug', '!=', "")
+            ->where('advs_advs.status', 'approved')
+            ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+    }
 }
