@@ -52,10 +52,11 @@
                     <div class="card mb-3">
                         <div class="card-header breadcrumb mb-0" id="dateHeading">
                             <h5 class="mb-0">
-                                <button class="btn btn-link text-dark" data-toggle="collapse" data-target="#date"
+                                <button class="btn btn-link text-dark d-flex align-items-center" data-toggle="collapse" data-target="#date"
                                         aria-expanded="true" aria-controls="date">
-                                    <i class="fa fa-calendar"></i>
-                                    {{ trans("visiosoft.module.advs::field.date.name") }}
+                                    <img src="{{ img('visiosoft.module.advs::images/date-icon.svg').url }}" class="mr-2"
+                                         alt="date icon">
+                                    <span>{{ trans("visiosoft.module.advs::field.date.name") }}</span>
                                 </button>
                             </h5>
                         </div>
