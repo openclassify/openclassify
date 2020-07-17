@@ -124,3 +124,22 @@
     color: #8f0100;
     font-weight: 500;
 }
+
+a.sort-by-open-dropdown:hover {
+    color: #8598AA !important;
+}
+
+.sort-by-selected-text {
+    font-size: 15px;
+    font-weight: 500;
+    color: #8598AA;
+}
+
+.list-view-type a:hover {
+    color: #8598AA !important;
+}
+
+.list-view-type a small {
+    font-weight: 500;
+    color: #8598AA;
+}

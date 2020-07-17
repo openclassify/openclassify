@@ -247,13 +247,13 @@ class AdvsController extends PublicController
 
         if ($categoryId) {
             $seo_keywords = $this->category_model->getMeta_keywords($categoryId->id);
-            $seo_description = $this->category_model->getMeta_description($categoryId->id) . ' ' .
-                implode(',', $seo_keywords);
+            $seo_description = $this->category_model->getMeta_description($categoryId->id);
             $seo_title = $this->category_model->getMeta_title($categoryId->id);
 
             $this->template->set('og_description', $seo_description);
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_title', $seo_title);
+            $this->template->set('meta_keywords', implode(', ', $seo_keywords));
 
             $mainCats = $this->category_model->getMains($categoryId->id);
             $current_cat = $this->category_model->getCat($categoryId->id);

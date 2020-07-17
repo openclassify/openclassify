@@ -1,27 +1,31 @@
 <div class="row text-center list-view-type justify-content-center">
     <div class="col-3">
         {% if setting_value('visiosoft.module.location::list_page_location') %}
-            <a href="{{ url_route('visiosoft.module.advs::view_type',['map']) }}" class="text-dark">
-                <i class="fas fa-location-arrow text-primary"></i>
+            <a href="{{ url_route('visiosoft.module.advs::view_type',['map']) }}"
+               class="text-dark d-flex align-items-center justify-content-center">
+                <img src="{{ img('visiosoft.module.advs::images/map-icon.svg').url }}" alt="map icon" class="mr-1">
                 <small>{{ trans("visiosoft.module.advs::field.show_display_mode.map") }}</small>
             </a>
         {% endif %}
     </div>
     <div class="col-3">
-        <a href="{{ url_route('visiosoft.module.advs::view_type',['list']) }}" class="text-dark">
-            <i class="fa fa-list-ul"></i>
+        <a href="{{ url_route('visiosoft.module.advs::view_type',['list']) }}"
+           class="text-dark d-flex align-items-center justify-content-center">
+            <img src="{{ img('visiosoft.module.advs::images/list-icon.svg').url }}" alt="list icon" class="mr-1">
             <small>{{ trans('visiosoft.module.advs::field.show_list_view.name') }}</small>
         </a>
     </div>
     <div class="col-3 list-table-view d-none d-md-block">
-        <a href="{{ url_route('visiosoft.module.advs::view_type',['table']) }}" class="text-dark">
-            <i class="fa fa-table"></i>
+        <a href="{{ url_route('visiosoft.module.advs::view_type',['table']) }}"
+           class="text-dark d-flex align-items-center justify-content-center">
+            <img src="{{ img('visiosoft.module.advs::images/table-icon.svg').url }}" alt="table icon" class="mr-1">
             <small>{{ trans('visiosoft.module.advs::field.show_table_view.name') }}</small>
         </a>
     </div>
     <div class="col-3 pr-0">
-        <a href="{{ url_route('visiosoft.module.advs::view_type',['gallery']) }}" class="text-dark">
-            <i class="fas fa-boxes"></i>
+        <a href="{{ url_route('visiosoft.module.advs::view_type',['gallery']) }}"
+           class="text-dark d-flex align-items-center justify-content-center">
+            <img src="{{ img('visiosoft.module.advs::images/gallery-icon.svg').url }}" alt="gallery icon" class="mr-1">
             <small> {{ trans('visiosoft.module.advs::field.gallery') }}</small>
         </a>
     </div>
