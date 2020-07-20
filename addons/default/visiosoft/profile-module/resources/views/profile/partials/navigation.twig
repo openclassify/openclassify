@@ -13,18 +13,21 @@
         <img src="{{ img('visiosoft.module.profile::images/social-media.svg').url }}">
         <p>{{ trans('visiosoft.module.profile::addon.title') }}</p>
     </a>
-    <a href="{{ url_route('profile::ads') }}"
-       class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/ads' ? ' active' : '' }}">
-        <img src="{{ img('visiosoft.module.profile::images/website.svg').url }}">
-        <p>{{ trans('visiosoft.module.advs::addon.title') }}</p>
-    </a>
+    {% set marketPlace = setting_value('visiosoft.module.advs::market_place') %}
+    {% if marketPlace %}
+        <a href="{{ url_route('profile::ads') }}"
+           class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/ads' ? ' active' : '' }}">
+            <img src="{{ img('visiosoft.module.profile::images/website.svg').url }}">
+            <p>{{ trans('visiosoft.module.advs::addon.title') }}</p>
+        </a>
+    {% endif %}
     <a href="{{ url_route('profile::address') }}"
        class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/address' ? ' active' : '' }}">
         <img src="{{ img('visiosoft.module.profile::images/location.svg').url }}">
         <p>{{ trans('visiosoft.module.profile::stream.adress.name') }}</p>
     </a>
 
-    {{ addBlock('profile/navigation')|raw }}
+    {{ addBlock('profile/navigation',{'marketPlace':marketPlace})|raw }}
 </div>
 
 <div class="overlay"></div>

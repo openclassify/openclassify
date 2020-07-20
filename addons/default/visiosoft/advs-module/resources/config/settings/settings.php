@@ -189,4 +189,10 @@ return [
             },
         ],
     ],
+    'market_place' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
 ];
