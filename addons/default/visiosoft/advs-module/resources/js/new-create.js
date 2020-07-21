@@ -187,7 +187,7 @@ $(document).ready(function () {
 });
 
 $(document).ready(function () {
-    $(".priceField").inputmask('currency', {
+    $(".priceField, .standard-price-field").inputmask('currency', {
         rightAlign: true,
         prefix: "",
         'groupSeparator': '.',
@@ -200,7 +200,7 @@ $(document).ready(function () {
 
     });
 
-    $(".priceDecimalField").inputmask('99', {
+    $(".priceDecimalField, .standard-price-decimal-field").inputmask('99', {
         rightAlign: true,
         prefix: "",
         autoUnmask: true,
@@ -210,11 +210,15 @@ $(document).ready(function () {
 
     });
 
-    $(".priceField, .priceDecimalField").on('change', function () {
+    $(".priceField, .priceDecimalField, .standard-price-field, .standard-price-decimal-field").on('change', function () {
         let price = $(".priceField").val() === "" ? '0' : $(".priceField").val();
+        let standardPrice = $(".standard-price-field").val() === "" ? '0' : $(".standard-price-field").val();
         price = parseInt(price.replace(/\./g, ''));
+        standardPrice = parseInt(standardPrice.replace(/\./g, ''));
         let decimal = parseInt($(".priceDecimalField").val());
+        let standardDecimal = parseInt($(".standard-price-decimal-field").val());
         $('.priceHidden').find('input').val(parseFloat(price + "." + decimal));
+        $('.standard-price-hidden').find('input').val(parseFloat(standardPrice + "." + standardDecimal));
     });
 
     // Add dynamic option creation
