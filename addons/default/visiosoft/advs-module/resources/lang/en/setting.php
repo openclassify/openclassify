@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'Member Registration Email Requirement',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];
