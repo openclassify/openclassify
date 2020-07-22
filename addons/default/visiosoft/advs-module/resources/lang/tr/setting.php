@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'Üye Kayıt E-posta Zorunluluğu',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];
