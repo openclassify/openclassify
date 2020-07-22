@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'সদস্য নিবন্ধকরণ ইমেল প্রয়োজনীয়তা',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];
