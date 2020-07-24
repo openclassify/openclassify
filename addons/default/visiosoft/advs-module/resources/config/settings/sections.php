@@ -7,11 +7,12 @@ return [
             'general' => [
                 'title' => 'visiosoft.module.advs::section.general',
                 'fields' => [
+                    'market_place',
                     'iban_numbers',
                     'google_statistic_code',
                     'ogImage',
                     'free_currencyconverterapi_key',
-                    'enabled_currencies'
+                    'enabled_currencies',
                 ],
             ],
             'ads' => [
