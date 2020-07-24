@@ -29,9 +29,9 @@
             <div class="col-md-4 py-1 px-0">
                 <select name="currency" id="currency" class="form-control">
                     {% for currency in active_currencies %}
-                        <option {% if app.request.get('currency') == currency %}
-                                selected
-                                {% endif %}value="{{ currency }}">{{ currency_symbol(currency) }}</option>
+                        <option {{ app.request.get('currency') == currency ? 'selected' }} value="{{ currency }}">
+                            {{ currency_symbol(currency) }}
+                        </option>
                     {% endfor %}
                 </select>
             </div>

@@ -91,8 +91,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 });
             }
         }
-        if (!empty($param['country'])) {
-            $query = $query->where('country_id', $param['country']);
+        $country = isset($param['country']) ?
+            $param['country'] : setting_value('visiosoft.module.location::default_country');
+        if ($country) {
+            $query = $query->where('country_id', $country);
         }
         if ($city) {
             $query = $query->where('city', $city->id);
