@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'Lidregistratie E-mailvereiste',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];

@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'Cerință de e-mail de înregistrare a membrilor',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];
