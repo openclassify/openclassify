@@ -19,6 +19,9 @@ return [
     'price' => [
         'name' => '価格'
     ],
+    'standard_price' => [
+        'name' => 'Standard Price'
+    ],
     'date' => [
         'name' => '日付'
     ],
