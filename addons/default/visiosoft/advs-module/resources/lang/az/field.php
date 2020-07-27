@@ -19,6 +19,9 @@ return [
     'price' => [
         'name' => 'Qiyməti'
     ],
+    'standard_price' => [
+        'name' => 'Standard Price'
+    ],
     'date' => [
         'name' => 'Tarix'
     ],
