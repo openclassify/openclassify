@@ -90,22 +90,19 @@
     "fzaninotto/faker": "~1.4",
     "mockery/mockery": "0.9.*",
     "symfony/css-selector": "3.1.*",
-    "symfony/dom-crawler": "3.1.*"
+    "symfony/dom-crawler": "3.1.*",
+    "anomaly/installer-module": "~2.3.0"
   },
-  "repositories": {
-    "0": {
+  "repositories": [
+    {
       "type": "composer",
       "url": "https://packages.pyrocms.com"
     },
-    "1": {
+    {
       "type": "composer",
       "url": "https://community.pyrocms.com"
-    },
-    "2": {
-      "type": "composer",
-      "url": "https://repo.openclassify.com"
     }
-  },
+  ],
   "autoload": {
     "classmap": [
       "database"
