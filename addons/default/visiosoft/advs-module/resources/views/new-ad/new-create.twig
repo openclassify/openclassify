@@ -72,10 +72,10 @@
                                     </div>
                                     {% set standardPriceValue = form.fields.standard_price.value|split('.') %}
                                     <div class="col-8 pr-0 col-md-3">
-                                        <input class="form-control standard-price-field" value="{{ standardPriceValue|first }}">
+                                        <input class="form-control standard-price-field whole-price" value="{{ standardPriceValue|first }}">
                                     </div>
                                     <div class="col-4 col-md-1">
-                                        <input class="form-control standard-price-decimal-field" placeholder="00" maxlength="2"
+                                        <input class="form-control standard-price-decimal-field decimal-price" placeholder="00" maxlength="2"
                                                value="{{ standardPriceValue[1] }}">
                                     </div>
                                 </div>
@@ -92,10 +92,10 @@
                                     </div>
                                     {% set PriceValue = form.fields.price.value|split('.') %}
                                     <div class="col-8 pr-0 col-md-3">
-                                        <input class="form-control priceField" value="{{ PriceValue|first }}">
+                                        <input class="form-control priceField whole-price" value="{{ PriceValue|first }}">
                                     </div>
                                     <div class="col-4 col-md-1">
-                                        <input class="form-control priceDecimalField" placeholder="00" maxlength="2"
+                                        <input class="form-control priceDecimalField decimal-price" placeholder="00" maxlength="2"
                                                value="{{ PriceValue[1] }}">
                                     </div>
                                     <div class="col-sm-3 col-xs-6">

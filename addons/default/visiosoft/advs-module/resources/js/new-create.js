@@ -210,15 +210,13 @@ $(document).ready(function () {
 
     });
 
-    $(".priceField, .priceDecimalField, .standard-price-field, .standard-price-decimal-field").on('change', function () {
-        let price = $(".priceField").val() === "" ? '0' : $(".priceField").val();
-        let standardPrice = $(".standard-price-field").val() === "" ? '0' : $(".standard-price-field").val();
+    $(".decimal-price, .whole-price").on('change', function (e) {
+        const parent = e.target.closest('.select-price')
+        let price = $(parent).find('.whole-price').val() === "" ? '0' : $(parent).find('.whole-price').val();
         price = parseInt(price.replace(/\./g, ''));
-        standardPrice = parseInt(standardPrice.replace(/\./g, ''));
-        let decimal = parseInt($(".priceDecimalField").val());
-        let standardDecimal = parseInt($(".standard-price-decimal-field").val());
-        $('.priceHidden').find('input').val(parseFloat(price + "." + decimal));
-        $('.standard-price-hidden').find('input').val(parseFloat(standardPrice + "." + standardDecimal));
+        let decimal = parseInt($(parent).find('.decimal-price').val());
+
+        $(parent).find('input[type=number]').val(parseFloat(price + "." + decimal));
     });
 
     // Add dynamic option creation
