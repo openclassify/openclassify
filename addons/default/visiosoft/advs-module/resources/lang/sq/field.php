@@ -19,6 +19,9 @@ return [
     'price' => [
         'name' => 'Çmim'
     ],
+    'standard_price' => [
+        'name' => 'Standard Price'
+    ],
     'date' => [
         'name' => 'Data'
     ],
@@ -127,7 +130,7 @@ return [
     'sort' => 'Tipi',
     'sort_by' => 'Rendit Sipas',
     'pick_option' => 'Zgjidh një mundësi',
-    'pick_ordering' => 'Renditje',
+    'pick_ordering' => 'Merr Porosin',
     'price_high' => 'Cmimi i larte deri tek i uleti',
     'price_low' => 'Cmimi i ulet deri tek i larte',
     'newest' => 'Më të rejat',
