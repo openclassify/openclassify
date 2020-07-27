@@ -4,6 +4,10 @@
     {% include "visiosoft.module.advs::ad-detail/partials/ogdata" %}
 {% endblock %}
 
+{% block styles %}
+    {{ asset_style("visiosoft.module.advs::css/detail.css") }}
+{% endblock %}
+
 {% block content %}
     <section id="main" class="clearfix details-page">
         <div class="container">
@@ -52,6 +56,5 @@
     </section>
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
-    {{ asset_add("styles.css", "visiosoft.module.advs::css/detail.css") }}
 
 {% endblock %}

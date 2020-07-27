@@ -3,14 +3,21 @@
         <b>
             <span class="float-left">{{ trans('visiosoft.module.location::field.address.name') }}</span>
         </b>
-        {% set country = setting_value('visiosoft.module.location::default_country') %}
-        {% if app.request.get('country') %}
-            {% set country =  app.request.get('country') %}
-        {% endif %}
+        {% set defaultCountry = setting_value('visiosoft.module.location::default_country') %}
+        {% set selectedCountry =  app.request.get('country') %}
         <a href="#" class="a-sahibinden-type selected-country filter-country-btn float-right">
-            <small>{{ getCountry(country).name }}</small>
+            {% set countryValue = '' %}
+            {% if selectedCountry %}
+                {% set countryName = getCountry(selectedCountry).name %}
+                {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
+            {% elseif defaultCountry %}
+                {% set countryName = getCountry(defaultCountry).name %}
+            {% else %}
+                {% set countryName = trans("visiosoft.module.location::field.country.name") %}
+            {% endif %}
+            <small>{{ countryName }}</small>
         </a>
-        <input name="country" value="{{ country }}" type="hidden">
+        <input name="country" value="{{ countryValue }}" type="hidden">
     </div>
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 filter-city-btn" data-toggle="modal"

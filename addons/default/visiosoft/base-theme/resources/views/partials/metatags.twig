@@ -12,7 +12,7 @@
     {% set title = trans(template.meta_title) %}
     {% set showTitle = template.showTitle is same as(false) ? false : true %}
     {% if showTitle %}
-        {% set title = setting_value('streams::name', config_get('streams::distribution.name'))~"|"~trans(template.meta_title) %}
+        {% set title = setting_value('streams::name', config_get('streams::distribution.name'))~" | "~trans(template.meta_title) %}
     {% endif %}
     {{ title|slice(0,60) }}
 </title>

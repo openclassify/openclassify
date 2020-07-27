@@ -22,6 +22,9 @@ class AdvFormBuilder extends FormBuilder
         'price' => [
             'type' => 'anomaly.field_type.text'
         ],
+        'standard_price' => [
+            'type' => 'anomaly.field_type.text'
+        ],
         'advs_desc',
         'cat1',
         'cat2',

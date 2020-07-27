@@ -3,6 +3,16 @@
     border-color: #ffc107 #ffc107 #ffc107;
 }
 
+.ad-price-standard {
+    color: #f00;
+    text-decoration: line-through;
+}
+
+.ad-price-standard-percentage {
+    background-color: #f00;
+    font-size: 16px;
+}
+
 /* Pending screen */
 .pending-screen {
     background-color: #f2f2f2;
