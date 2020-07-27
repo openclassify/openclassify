@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => '会員登録メールの要件',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];

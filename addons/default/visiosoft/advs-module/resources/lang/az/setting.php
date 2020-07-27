@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'İstifadəçi Qeyd E-poçtu tələbi',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];

@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'Yêu cầu email đăng ký thành viên',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];

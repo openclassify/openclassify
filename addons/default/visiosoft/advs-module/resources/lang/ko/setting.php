@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => '회원 등록 이메일 요구 사항',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];

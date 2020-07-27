@@ -127,4 +127,7 @@ return [
     'register_email_field' => [
         'name' => 'דרישת דוא"ל לרישום חבר',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];

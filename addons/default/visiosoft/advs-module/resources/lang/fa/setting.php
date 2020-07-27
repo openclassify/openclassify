@@ -128,4 +128,7 @@ return [
     'register_email_field' => [
         'name' => 'ثبت نام از طریق پست الکترونیکی',
     ],
+    'market_place' => [
+        'name' => 'Market Place',
+    ],
 ];
