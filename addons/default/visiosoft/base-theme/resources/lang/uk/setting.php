@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'Логотип інструкції на сторінку реєстрації',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => 'Стиль (CSS)',
     ],
