@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'Đăng ký Trang hướng dẫn Logo',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => 'Phong cách (CSS)',
     ],
