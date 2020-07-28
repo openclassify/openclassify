@@ -19,6 +19,9 @@ return [
     'price' => [
         'name' => 'Precio'
     ],
+    'standard_price' => [
+        'name' => 'Standard Price'
+    ],
     'date' => [
         'name' => 'Fecha'
     ],

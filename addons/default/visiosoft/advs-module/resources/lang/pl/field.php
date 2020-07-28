@@ -19,6 +19,9 @@ return [
     'price' => [
         'name' => 'Cena £'
     ],
+    'standard_price' => [
+        'name' => 'Standard Price'
+    ],
     'date' => [
         'name' => 'Data'
     ],

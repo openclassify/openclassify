@@ -19,6 +19,9 @@ return [
     'price' => [
         'name' => 'Τιμή'
     ],
+    'standard_price' => [
+        'name' => 'Standard Price'
+    ],
     'date' => [
         'name' => 'Ημερομηνία'
     ],

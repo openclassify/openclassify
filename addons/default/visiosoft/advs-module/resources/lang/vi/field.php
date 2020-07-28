@@ -19,6 +19,9 @@ return [
     'price' => [
         'name' => 'Giá bán'
     ],
+    'standard_price' => [
+        'name' => 'Standard Price'
+    ],
     'date' => [
         'name' => 'Ngày'
     ],
