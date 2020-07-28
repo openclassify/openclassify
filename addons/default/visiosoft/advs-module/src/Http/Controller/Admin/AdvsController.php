@@ -109,6 +109,7 @@ class AdvsController extends AdminController
             'entry.id',
             'name' => [
                 'class' => 'advs-name',
+                'sort_column' => 'slug',
                 'value' => function (EntryInterface $entry) {
                     return "<a href='" . $this->model->getAdvDetailLinkByModel($entry, 'list') . "' > " . $entry->name . "</a > ";
                 },
