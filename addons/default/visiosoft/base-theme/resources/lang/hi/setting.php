@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'रजिस्टर पेज इंस्ट्रक्शन लोगो',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => 'शैली (सीएसएस)',
     ],
