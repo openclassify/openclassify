@@ -56,6 +56,12 @@ return [
             "mode" => "upload",
         ]
     ],
+    'register_page_alert_link' => [
+        'type' => 'anomaly.field_type.url',
+        "config" => [
+            "default_value" => "/",
+        ]
+    ],
     'style' => [
         'type' => 'anomaly.field_type.editor',
     ],
