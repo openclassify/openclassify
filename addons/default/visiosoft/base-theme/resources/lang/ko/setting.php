@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => '페이지 지시 로고 등록',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => '스타일 (CSS)',
     ],

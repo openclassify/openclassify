@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => '登録ページの指示ロゴ',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => 'スタイル（CSS）',
     ],

@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'পৃষ্ঠা নির্দেশিকা লোগো নিবন্ধন করুন',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => 'স্টাইল (css)',
     ],

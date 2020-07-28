@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'Registrera sidinstruktionslogotyp',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => 'Stil (CSS)',
     ],

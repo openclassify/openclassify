@@ -31,6 +31,9 @@ return [
     'register_page_instruction_logo' => [
         'name' => 'Registrieren Sie das Anweisungslogo für die Seite',
     ],
+    'register_page_alert_link' => [
+        'name' => 'Register Page Alert Link',
+    ],
     'style' => [
         'name' => 'Stil (CSS)',
     ],
