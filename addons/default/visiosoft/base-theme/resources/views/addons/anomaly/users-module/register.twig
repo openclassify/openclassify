@@ -49,9 +49,11 @@
                 <div class="border small-notice py-3 px-4 mt-3">
                     <div class="d-flex text-muted">
                         <i class="fa fa-exclamation-circle" aria-hidden="true"></i>
-                        <small class="ml-2 text-muted">
-                            {{ trans('visiosoft.theme.base::field.register_information_note') }}
-                        </small>
+                        <a href="{{ setting_value('visiosoft.theme.base::register_page_alert_link') }}" class="ml-2">
+                            <small class="text-muted">
+                                {{ trans('visiosoft.theme.base::field.register_information_note') }}
+                            </small>
+                        </a>
                     </div>
                 </div>
             </div>
