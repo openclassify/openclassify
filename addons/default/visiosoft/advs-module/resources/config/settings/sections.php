@@ -34,6 +34,7 @@ return [
                     'watermark_image',
                     'watermark_position',
                     'listing_page_image',
+                    'hide_standard_price_field',
                 ],
             ],
             'user' => [

@@ -60,7 +60,7 @@
                                 </div>
                                 {{ addBlock('new-ad/fields',{'adv':adv})|raw }}
 
-                                <div class="row form-group select-price">
+                                <div class="row form-group select-price{{ setting_value('visiosoft.module.advs::hide_standard_price_field') ? ' d-none' }}">
                                     <label class="col-sm-2 col-xs-12">
                                         {{ form.fields.standard_price.label|raw }}
                                         <span class="required">*</span>
