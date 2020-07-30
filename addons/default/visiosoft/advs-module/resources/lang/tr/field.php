@@ -295,4 +295,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'Adım Adım Kategori Seçin',
+
+    // New create page
+    'options' => 'Options',
 ];
