@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'পৃষ্ঠার চিত্র তালিকাভুক্ত',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => 'সক্ষম মুদ্রা',
     ],
