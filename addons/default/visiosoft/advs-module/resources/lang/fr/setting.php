@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'Image de page de liste',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Devises activées',
     ],
