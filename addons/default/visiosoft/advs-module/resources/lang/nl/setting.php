@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'Lijstpagina-afbeelding',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Ingeschakelde valuta\\'s',
     ],
