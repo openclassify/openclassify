@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'Изображение страницы со списком',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Включенные валюты',
     ],
