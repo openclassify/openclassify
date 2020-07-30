@@ -294,4 +294,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'Seleccione categoría paso a paso',
+
+    // New create page
+    'options' => 'Options',
 ];
