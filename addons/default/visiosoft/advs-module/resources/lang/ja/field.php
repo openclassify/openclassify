@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'ステップバイステップでカテゴリを選択',
+
+    // New create page
+    'options' => 'Options',
 ];
