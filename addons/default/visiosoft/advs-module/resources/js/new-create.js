@@ -216,7 +216,18 @@ $(document).ready(function () {
         price = parseInt(price.replace(/\./g, ''));
         let decimal = parseInt($(parent).find('.decimal-price').val());
 
-        $(parent).find('input[type=number]').val(parseFloat(price + "." + decimal));
+        const newPrice = parseFloat(price + "." + decimal)
+        let priceInput = $(parent).find('input[type=number]')
+        priceInput.val(newPrice);
+
+        if (priceInput[0].name === 'price') {
+            const event = new CustomEvent('priceChangedEvent', {
+                detail: {
+                    newPrice
+                }
+            })
+            document.querySelector('#price').dispatchEvent(event)
+        }
     });
 
     // Add dynamic option creation
