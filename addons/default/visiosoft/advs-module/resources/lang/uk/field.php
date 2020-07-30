@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'Виберіть категорію крок за кроком',
+
+    // New create page
+    'options' => 'Options',
 ];
