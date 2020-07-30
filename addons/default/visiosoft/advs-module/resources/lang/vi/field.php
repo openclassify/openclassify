@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'Chọn danh mục từng bước',
+
+    // New create page
+    'options' => 'Options',
 ];
