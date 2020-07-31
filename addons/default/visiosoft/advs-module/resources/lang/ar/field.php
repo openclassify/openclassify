@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'حدد الفئة خطوة بخطوة',
+
+    // New create page
+    'options' => 'Options',
 ];

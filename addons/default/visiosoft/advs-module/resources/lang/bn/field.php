@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'ধাপে ধাপে বিভাগ নির্বাচন করুন',
+
+    // New create page
+    'options' => 'Options',
 ];

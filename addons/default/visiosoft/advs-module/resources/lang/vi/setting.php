@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'Danh sách trang hình ảnh',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Tiền tệ được kích hoạt',
     ],

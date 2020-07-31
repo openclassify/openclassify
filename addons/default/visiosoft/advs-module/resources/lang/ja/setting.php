@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'リストページの画像',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => '有効な通貨',
     ],

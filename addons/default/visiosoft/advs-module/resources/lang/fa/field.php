@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'طبقه بندی را مرحله به مرحله انتخاب کنید',
+
+    // New create page
+    'options' => 'Options',
 ];

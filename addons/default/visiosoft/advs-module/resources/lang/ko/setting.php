@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => '리스팅 페이지 이미지',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => '활성화 된 통화',
     ],

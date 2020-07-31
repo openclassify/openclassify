@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => '단계별로 카테고리 선택',
+
+    // New create page
+    'options' => 'Options',
 ];

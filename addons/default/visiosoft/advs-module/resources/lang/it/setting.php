@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'Immagine della pagina di elenco',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Valute abilitate',
     ],

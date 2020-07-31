@@ -293,4 +293,7 @@ return [
 
     // Select cat
     'select_category_step_by_step' => 'श्रेणी चरण दर चरण चुनें',
+
+    // New create page
+    'options' => 'Options',
 ];

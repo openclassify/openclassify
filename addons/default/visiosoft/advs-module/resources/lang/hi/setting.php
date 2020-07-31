@@ -118,6 +118,9 @@ return [
     'listing_page_image' => [
         'name' => 'लिस्टिंग पृष्ठ छवि',
     ],
+    'hide_standard_price_field' => [
+        'name' => 'Hide Standard Price Field',
+    ],
     'enabled_currencies' => [
         'name' => 'सक्षम मुद्राएँ',
     ],
