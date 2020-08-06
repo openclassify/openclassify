@@ -6,6 +6,8 @@ use Anomaly\UsersModule\UsersModule;
 use Illuminate\Database\Eloquent\Builder;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Handler\AdvHandler;
+use Visiosoft\AdvsModule\Adv\Table\Views\All;
+use Visiosoft\AdvsModule\Adv\Table\Views\unfinished;
 use Visiosoft\AdvsModule\Category\CategoryModel;
 use Visiosoft\PackagesModule\User\UserModel;
 
@@ -18,12 +20,18 @@ class AdvTableBuilder extends TableBuilder
      * @var array|string
      */
 
-    public function onQuerying(Builder $query)
-    {
-        $query->where('slug', "!=", "");
-    }
+    protected $views = [
+        'all' => [
+            'view' => All::class,
+            'slug' => 'all',
+            'text' => 'streams::view.all',
+        ],
+        'trash',
+        'unfinished' => [
+            'view' => unfinished::class
+        ],
 
-    protected $views = [];
+    ];
 
     /**
      * The table filters.

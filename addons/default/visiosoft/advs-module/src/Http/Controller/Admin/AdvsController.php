@@ -111,7 +111,7 @@ class AdvsController extends AdminController
                 'class' => 'advs-name',
                 'sort_column' => 'slug',
                 'value' => function (EntryInterface $entry) {
-                    return "<a href='" . $this->model->getAdvDetailLinkByModel($entry, 'list') . "' > " . $entry->name . "</a > ";
+                    return (!is_null($entry->name)) ? "<a href='" . $this->model->getAdvDetailLinkByModel($entry, 'list') . "' > " . $entry->name . "</a > " : "<font color='red'>" . trans("visiosoft.module.advs::view.unfinished") . "</font>";
                 },
             ],
             'price' => [
@@ -144,7 +144,7 @@ class AdvsController extends AdminController
         $cities = $cityModel->all()->pluck('name', 'id')->all();
         $users = $userModel->newQuery()
             ->select(DB::raw("CONCAT_WS('', first_name, ' ', last_name, ' (', gsm_phone, ' || ', email, ')') AS display_name"), 'id')
-            ->pluck('display_name','id')
+            ->pluck('display_name', 'id')
             ->toArray();
         $categories = $categoryModel::query()->where('parent_category_id', null)
             ->leftJoin('cats_category_translations', 'cats_category.id', '=', 'cats_category_translations.entry_id')
