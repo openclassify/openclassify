@@ -10,6 +10,7 @@ use Visiosoft\AdvsModule\Adv\AdvRepository;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
+use Visiosoft\AdvsModule\Http\Middleware\SetLang;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\Option\OptionRepository;
@@ -231,7 +232,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $middleware = [
-        //Visiosoft\AdvsModule\Http\Middleware\ExampleMiddleware::class
+        SetLang::class,
     ];
 
     /**
