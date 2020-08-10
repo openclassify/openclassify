@@ -20,7 +20,7 @@ return [
         'name' => 'Fiyat'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standart Fiyat'
     ],
     'date' => [
         'name' => 'Tarih'
@@ -297,5 +297,5 @@ return [
     'select_category_step_by_step' => 'Adım Adım Kategori Seçin',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opsiyonlar',
 ];
