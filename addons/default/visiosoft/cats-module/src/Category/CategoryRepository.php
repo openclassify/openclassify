@@ -50,9 +50,16 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function getSubCatById($id)
     {
-        return $this->model->newQuery()
+        $cats = $this->model->newQuery()
             ->where('parent_category_id', $id)
             ->get();
+
+        foreach ($cats as $cat) {
+            $subCount = $this->model->newQuery()->where('parent_category_id', $cat->id)->count();
+            $cat->hasChild = !!$subCount;
+        }
+
+        return $cats;
     }
 
     public function getSingleCat($id)
