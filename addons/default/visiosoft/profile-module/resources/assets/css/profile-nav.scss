@@ -16,7 +16,6 @@
   top: 0;
   left: 0;
   overflow-y: auto;
-  z-index: 1040;
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -39,6 +38,7 @@
     transform: translateX(0%);
     -webkit-transition: 300ms ease;
     transition: 300ms ease;
+    z-index: 1040;
   }
 
   a {
@@ -85,5 +85,5 @@
   cursor: pointer;
   background: #000;
   opacity: .2;
-  z-index: 1;
+  z-index: 999;
 }
