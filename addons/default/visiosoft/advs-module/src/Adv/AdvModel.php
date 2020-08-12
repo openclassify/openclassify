@@ -95,10 +95,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function pendingAdvsByUser()
     {
         return $this->userAdv()
-                    ->where(function($query) {
-                        $query->where('advs_advs.status', '<>', 'approved');
-                        $query->orWhere('advs_advs.finish_at', '<', date('Y-m-d H:i:s'));
-                     });
+            ->where(function ($query) {
+                $query->where('advs_advs.status', '<>', 'approved');
+                $query->orWhere('advs_advs.finish_at', '<', date('Y-m-d H:i:s'));
+            });
     }
 
 
@@ -140,7 +140,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                         }
                     }
                 } catch (RequestException $e) {
-                    $this->messages->error($e->getMessage());
+                    $this->messages->error((!is_null($e->getMessage())) ? $e->getMessage() : trans('streams::error.500.message'));
                 }
             }
         }
