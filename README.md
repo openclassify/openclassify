@@ -1,4 +1,4 @@
-# OpenClassify
+# OpenClassify -  Laravel Classified Script Platform
 
 OpenClassify is the extensible and most advanced open source classified app build with Laravel and Pyrocms.
 
