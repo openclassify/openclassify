@@ -5,6 +5,7 @@ use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Entry\EntryCriteria;
 use Anomaly\Streams\Platform\Image\Image;
 use Illuminate\Support\Facades\Auth;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\RecentlyviewedadsModule\Recently\RecentlyModel;
 use Visiosoft\SubscriptionsModule\User\UserModel;
 
@@ -12,11 +13,17 @@ class AdvCriteria extends EntryCriteria
 {
 
     private $image;
+    private $advRepository;
 
-    public function __construct(SettingRepositoryInterface $repository, Image $image)
+    public function __construct(
+        SettingRepositoryInterface $repository,
+        Image $image,
+        AdvRepositoryInterface $advRepository
+    )
     {
         $this->settings = $repository;
         $this->image = $image;
+        $this->advRepository = $advRepository;
     }
 
     public function getAdvsModel()
@@ -79,20 +86,7 @@ class AdvCriteria extends EntryCriteria
 
     public function findAdsByCategoryId($catId, $level = 1)
     {
-        $advModel = new AdvModel();
-        $advs = AdvModel::query()
-            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
-            ->where('status', '=', 'approved')
-            ->where('slug', '!=', '')
-            ->where('cat' . $level, $catId)
-            ->get();
-
-        $ads = $advModel->getLocationNames($advs);
-        foreach ($ads as $index => $ad) {
-            $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
-            $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
-        }
-        return $ads;
+        return $this->advRepository->getByCat($catId, $level);
     }
 
     public function getCurrentLocale()
