@@ -32,6 +32,8 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function latestAds();
 
+    public function getByCat($catID, $level = 1);
+
     public function getCategoriesWithAdID($id);
 
     public function extendAds($allAds, $isAdmin = false);

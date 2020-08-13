@@ -405,6 +405,26 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
+    public function getByCat($catID, $level = 1)
+    {
+        $advs = $this->model
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', 'approved')
+            ->where('slug', '!=', '')
+            ->where('cat' . $level, $catID)
+            ->limit(20)
+            ->get();
+
+        $ads = $this->model->getLocationNames($advs);
+
+        foreach ($ads as $index => $ad) {
+            $ads[$index]->detail_url = $this->model->getAdvDetailLinkByModel($ad, 'list');
+            $ads[$index] = $this->model->AddAdsDefaultCoverImage($ad);
+        }
+
+        return $ads;
+    }
+
     public function getCategoriesWithAdID($id)
     {
         $adv = $this->model->find($id);
