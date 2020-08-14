@@ -4,13 +4,14 @@
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
-use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
+use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryTranslationsModel;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
@@ -20,20 +21,30 @@ use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
-use Illuminate\Contracts\Events\Dispatcher;
-
 
 class AdvsController extends AdminController
 {
     private $model;
+    private $advRepository;
+    private $advsEntryTranslationsModel;
+    private $optionRepository;
 
-    public function __construct(AdvModel $model)
+    public function __construct(
+        AdvModel $model,
+        AdvRepositoryInterface $advRepository,
+        AdvsAdvsEntryTranslationsModel $advsEntryTranslationsModel,
+        OptionRepositoryInterface $optionRepository
+    )
     {
-        $this->model = $model;
         parent::__construct();
+        $this->model = $model;
+        $this->advRepository = $advRepository;
+        $this->advsEntryTranslationsModel = $advsEntryTranslationsModel;
+        $this->optionRepository = $optionRepository;
     }
 
     /**
@@ -82,13 +93,21 @@ class AdvsController extends AdminController
                 'href' => '/advs/edit_advs/{entry.id}',
                 'text' => "<font class='hidden-xs-down'>" . trans('streams::button.edit') . "</font>",
             ],
-            'change_owner' => [
-                'data-toggle' => 'modal',
-                'data-target' => '#modal',
-                'text' => "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.change_owner') . "</font>",
-                'icon' => 'fa fa-users',
-                'href' => 'admin/advs-users/choose/{entry.id}',
-            ]
+            'settings' => [
+                'text'     => false,
+                'href'     => false,
+                'dropdown' => [
+                    'change_owner'    => [
+                        'data-toggle' => 'modal',
+                        'data-target' => '#modal',
+                        'text'        => trans('visiosoft.module.advs::button.change_owner'),
+                        'href'        => 'admin/advs-users/choose/{entry.id}',
+                    ],
+                    'replicate' => [
+                        'text' => 'Replicate',
+                    ],
+                ],
+            ],
         ]);
 
         if ($this->model->is_enabled('recommendedads')) {
@@ -243,6 +262,68 @@ class AdvsController extends AdminController
         $ad->update();
         event(new ChangedStatusAd($ad));//Create Notify
         return back();
+    }
+
+    public function replicate($advID)
+    {
+        try {
+            $adv = $this->advRepository->find($advID);
+            if (!$adv) {
+                throw new \Exception(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
+            } else {
+                // Replicate ad
+                $adv = $adv->toArray();
+                unset(
+                    $adv['id'],
+                    $adv['sort_order'],
+                    $adv['cover_photo'],
+                    $adv['locale'],
+                    $adv['name'],
+                    $adv['advs_desc']
+                );
+                $newAdv = $this->advRepository->create(array_merge($adv, [
+                    'slug' => $adv['slug'] . '_' . time(),
+                ]));
+
+                // Replicate ad translations
+                $advTranslations = $this->advsEntryTranslationsModel->newQuery()->where('entry_id', $advID)->get();
+                $translations = array();
+                foreach ($advTranslations as $advTranslation) {
+                    $translations[$advTranslation->locale] = [
+                        'name' => $advTranslation->name,
+                        'advs_desc' => $advTranslation->advs_desc,
+                    ];
+                }
+                $newAdv->update($translations);
+
+                // Replicate ad options
+                $advOptions = $this->optionRepository->newQuery()->where('adv_id', $advID)->get();
+                foreach ($advOptions as $advOption) {
+                    $newAdvOption = $advOption->replicate();
+                    $newAdvOption->adv_id = $newAdv->id;
+                    $newAdvOption->save();
+                }
+
+                // Replicate ad custom fields
+                $advCustomFields = $this->model->is_enabled('customfields');
+                if ($advCustomFields) {
+                    $advCustomFields = app('Visiosoft\CustomfieldsModule\CustomFieldAdv\Contract\CustomFieldAdvRepositoryInterface')
+                        ->newQuery()->where('parent_adv_id', $advID)->get();
+                    foreach ($advCustomFields as $advCustomField) {
+                        $newaAdvCustomField = $advCustomField->replicate();
+                        $newaAdvCustomField->parent_adv_id = $newAdv->id;
+                        $newaAdvCustomField->save();
+                    }
+                }
+
+                $this->messages->success(trans('visiosoft.module.advs::message.replicated_success'));
+            }
+
+            return redirect('admin/advs');
+        } catch (\Exception $e) {
+            $this->messages->error($e->getMessage());
+            return redirect('admin/advs');
+        }
     }
 
     public function assetsClear(Filesystem $files, Application $application, Request $request)
