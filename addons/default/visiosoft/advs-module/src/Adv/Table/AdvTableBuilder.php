@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
 use Anomaly\UsersModule\UsersModule;
 use Illuminate\Database\Eloquent\Builder;
+use Visiosoft\AdvsModule\Adv\Table\Filter\NameDescFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Handler\AdvHandler;
 use Visiosoft\AdvsModule\Adv\Table\Views\All;
@@ -40,10 +41,9 @@ class AdvTableBuilder extends TableBuilder
      */
     protected $filters = [
         'search' => [
-            'fields' => [
-              'name',
-              'advs_desc',
-            ]
+            'filter' => 'input',
+            'placeholder' => 'visiosoft.module.advs::field.search',
+            'query' => NameDescFilterQuery::class,
         ],
         'country',
         'id' => [
