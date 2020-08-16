@@ -23,4 +23,6 @@ return [
     'choose_user' => 'ユーザーを選択してください',
     'owner_updated_successfully' => 'オーナーが更新されました！',
     'no_add_found' => 'No Ad Found!',
+    'replicated_success' => 'The ad has been replicated successfully!',
+    'ad_doesnt_exist' => "This ad doesn't exist!",
 ];
