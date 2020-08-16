@@ -60,7 +60,7 @@
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
                              aria-labelledby="nav-profile-tab">
-                            <div class="col-12">
+                            <div>
                                 {% set userForm = form('userProfile').entry(user.id).get() %}
                                 {{ userForm.open()|raw }}
                                 <div class="form-group">
@@ -85,12 +85,14 @@
                                     {{ userForm.actions|raw }}
                                 </div>
                                 {{ userForm.close()|raw }}
-                                <div class="col-12">
+                                <div class="d-flex align-items-center justify-content-between flex-wrap">
                                     <label class="text-muted">
                                         {{ trans('visiosoft.module.profile::message.disable_account') }}
                                     </label>
-                                    <button type="button" class="btn btn-danger float-right"
-                                            onclick="window.location.href='/profile/closeAccount'">{{ trans("visiosoft.module.profile::field.disable_account.name") }}</button>
+                                    <button type="button" class="btn btn-danger"
+                                            onclick="window.location.href='/profile/closeAccount'">
+                                        {{ trans("visiosoft.module.profile::field.disable_account.name") }}
+                                    </button>
 
                                 </div>
 
