@@ -23,4 +23,6 @@ return [
     'choose_user' => '사용자를 선택하십시오',
     'owner_updated_successfully' => '소유자가 성공적으로 업데이트되었습니다!',
     'no_add_found' => 'No Ad Found!',
+    'replicated_success' => 'The ad has been replicated successfully!',
+    'ad_doesnt_exist' => "This ad doesn't exist!",
 ];
