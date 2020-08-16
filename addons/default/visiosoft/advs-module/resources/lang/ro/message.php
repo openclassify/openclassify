@@ -23,4 +23,6 @@ return [
     'choose_user' => 'Alegeți un utilizator',
     'owner_updated_successfully' => 'Proprietarul a fost actualizat cu succes!',
     'no_add_found' => 'No Ad Found!',
+    'replicated_success' => 'The ad has been replicated successfully!',
+    'ad_doesnt_exist' => "This ad doesn't exist!",
 ];
