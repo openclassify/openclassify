@@ -23,4 +23,6 @@ return [
     'choose_user' => 'Choisissez un utilisateur',
     'owner_updated_successfully' => 'Le propriétaire a été mis à jour avec succès!',
     'no_add_found' => 'No Ad Found!',
+    'replicated_success' => 'The ad has been replicated successfully!',
+    'ad_doesnt_exist' => "This ad doesn't exist!",
 ];
