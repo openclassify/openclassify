@@ -23,4 +23,6 @@ return [
     'choose_user' => 'یوزر را انتخاب کنید',
     'owner_updated_successfully' => 'فروشنده با موفقیت آپدیت شد!',
     'no_add_found' => 'No Ad Found!',
+    'replicated_success' => 'The ad has been replicated successfully!',
+    'ad_doesnt_exist' => "This ad doesn't exist!",
 ];
