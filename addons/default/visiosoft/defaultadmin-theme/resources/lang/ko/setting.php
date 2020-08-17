@@ -11,4 +11,19 @@ return [
         'warning'      => '액세스 가능한 첫 번째 탐색 항목은 <strong>홈</strong> 영역으로 사용됩니다.',
         'reorder'      => '<strong>사이드 바</strong> 에서 기본 탐색 항목을 끌어다 놓아 순서를 바꿉니다.',
     ],
+    "icon" => [
+        'name' => 'Icon',
+    ],
+    "title" => [
+        'name' => 'Title',
+    ],
+    "sidebar_main_color" => [
+        'name' => 'Sidebar Main Color',
+    ],
+    "sidebar_secondary_color" => [
+        'name' => 'Sidebar Secondary Color',
+    ],
+    "active_sidebar_border_color" => [
+        'name' => 'Active Sidebar Border Color',
+    ]
 ];
