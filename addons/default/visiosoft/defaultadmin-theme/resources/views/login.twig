@@ -4,8 +4,12 @@
 
     <div class="logo-container">
         <div class="logo">
-            {{ img('theme::img/icon.svg').data|raw }}
-            OpenClassify
+            {% if setting_value('visiosoft.theme.defaultadmin::icon') %}
+                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::icon')).url }}" alt="site icon">
+            {% else %}
+                {{ img('theme::img/icon.svg').data|raw }}
+            {% endif %}
+            {{ setting_value('visiosoft.theme.defaultadmin::title') }}
         </div>
         <div class="overlay"></div>
     </div>
@@ -14,7 +18,11 @@
         <div class="login-wrapper container-fluid">
 
             <div class="logo">
-                {{ img('theme::img/icon.svg').data|raw }}
+                {% if setting_value('visiosoft.theme.defaultadmin::icon') %}
+                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::icon')).url }}" alt="site icon">
+                {% else %}
+                    {{ img('theme::img/icon.svg').data|raw }}
+                {% endif %}
             </div>
 
             <div class="col-sm-12 offset-sm-6">

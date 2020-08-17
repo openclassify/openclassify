@@ -26,7 +26,7 @@
   margin-top: 0;
   position: fixed;
   overflow-x: scroll;
-  background: #333333;
+  background: {{ setting_value('visiosoft.theme.defaultadmin::sidebar_secondary_color') }};
   padding-bottom: 70px;
   box-shadow: 2px 0 0 rgba(66, 66, 66, 0.1);
 }
@@ -218,8 +218,8 @@
 #topbar .logo span {
   display: none;
 }
-#topbar .logo svg {
-  width: 22px;
+#topbar .logo svg, #topbar .logo img {
+  max-width: 40px;
   height: 40px;
   margin-top: -9px;
   vertical-align: middle;
@@ -398,7 +398,7 @@ body.expand #topbar .topbar-left .logo span {
   position: fixed;
   overflow-x: scroll;
   overflow-y: hidden;
-  background: #252525;
+  background: {{ setting_value('visiosoft.theme.defaultadmin::sidebar_main_color') }};
   padding-bottom: 70px;
   transition: width 200ms cubic-bezier(0.075, 0.82, 0.165, 1);
 }
@@ -456,9 +456,9 @@ body.expand #topbar .topbar-left .logo span {
   display: none;
 }
 #sidebar > ul > li.active {
-  background: #333333;
+  background: {{ setting_value('visiosoft.theme.defaultadmin::sidebar_secondary_color') }};
   box-sizing: border-box;
-  border-left: 3px solid #ffffff;
+  border-left: 3px solid {{ setting_value('visiosoft.theme.defaultadmin::active_sidebar_border_color') }} !important;
 }
 #sidebar > ul > li.active a {
   color: #eeeeee;
@@ -2625,9 +2625,9 @@ body {
 #login .login-container .logo {
   display: none;
 }
-#login .login-container .logo svg {
+#login .login-container .logo svg, #login .login-container .logo img {
   width: 45px;
-  height: 82px;
+  max-height: 82px;
   fill: #ffffff;
   margin-top: -30px;
   vertical-align: middle;
@@ -2665,9 +2665,9 @@ body {
   text-align: center;
   font-family: "Montserrat", sans-serif;
 }
-#login .logo svg {
+#login .logo svg, #login .logo img {
   width: 45px;
-  height: 82px;
+  max-height: 82px;
   margin-top: -30px;
   vertical-align: middle;
 }
@@ -2719,9 +2719,9 @@ body {
     display: inherit;
     margin-bottom: 2rem;
   }
-  #login .login-container .logo svg {
+  #login .login-container .logo svg, #login .login-container .logo img {
     width: 55px;
-    height: 100px;
+    max-height: 100px;
   }
 }
 @media (max-width: 767px) {
