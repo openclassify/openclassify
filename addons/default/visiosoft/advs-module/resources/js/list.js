@@ -40,13 +40,6 @@ $('.sort-by-item').on('click', function () {
     window.location.replace(goURL);
 });
 
-
-$('.ad-info-right-bar-video').on('click', function () {
-    $(".video-ad-tooltip-" + $(this).attr('data-id'))[0].play();
-    $(".video-ad-tooltip-" + $(this).attr('data-id'))[0].controls = false;
-});
-
-
 $(document).ready(function () {
     let searchParams = new URLSearchParams(window.location.search);
 
@@ -165,12 +158,6 @@ $(document).ready(function () {
     $("select[name=filter_country]").select2({
         placeholder: $('select[name=filter_country] option:first-child').text()
     });
-});
-
-$('.ad-info-right-bar-video').tooltip({
-    animated: 'fade',
-    placement: 'bottom',
-    html: true
 });
 
 $("#listFilterForm").submit(function(e) {
