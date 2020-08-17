@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\CatsModule\Category\Table;
 
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
+use Visiosoft\CatsModule\Category\Table\Handler\Delete;
 
 class CategoryTableBuilder extends TableBuilder
 {
@@ -68,6 +69,9 @@ class CategoryTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
+        'delete' => [
+            'handler' => Delete::class
+        ]
     ];
 
     /**
