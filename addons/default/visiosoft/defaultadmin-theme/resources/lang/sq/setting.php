@@ -11,4 +11,19 @@ return [
         'warning'      => 'Artikulli i parë i arritshëm i navigimit përdoret si zona <strong>shtëpi</strong>.',
         'reorder'      => 'Zvarritni dhe lëshoni artikujt kryesorë të lundrimit në <strong>sidebar</strong> për t\'i rivartuar ato.',
     ],
+    "icon" => [
+        'name' => 'Icon',
+    ],
+    "title" => [
+        'name' => 'Title',
+    ],
+    "sidebar_main_color" => [
+        'name' => 'Sidebar Main Color',
+    ],
+    "sidebar_secondary_color" => [
+        'name' => 'Sidebar Secondary Color',
+    ],
+    "active_sidebar_border_color" => [
+        'name' => 'Active Sidebar Border Color',
+    ]
 ];
