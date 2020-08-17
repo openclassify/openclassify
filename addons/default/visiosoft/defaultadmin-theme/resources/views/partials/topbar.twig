@@ -2,8 +2,12 @@
 
     <div class="topbar-left">
         <a href="/admin" class="logo variant-logo">
-            {{ img('theme::img/icon.svg').data|raw }}
-            <span>OpenClassify</span>
+            {% if setting_value('visiosoft.theme.defaultadmin::icon') %}
+                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::icon')).url }}" alt="site icon">
+            {% else %}
+                {{ img('theme::img/icon.svg').data|raw }}
+            {% endif %}
+            <span>{{ setting_value('visiosoft.theme.defaultadmin::title') }}</span>
         </a>
     </div>
 
