@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Lat по умолчанию',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Hide Location Filter',
+    ],
 ];
