@@ -40,6 +40,7 @@ return [
     'general' => 'Γενικός',
     'ads' => 'Διαφημίσεις',
     'user' => 'Χρήστης',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
