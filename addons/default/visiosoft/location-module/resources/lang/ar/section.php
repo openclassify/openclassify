@@ -19,4 +19,5 @@ return [
     'general' => 'جنرال لواء',
     'map' => 'خريطة',
     'setting' => 'ضبط',
+    'filter' => 'Filter',
 ];
