@@ -32,22 +32,19 @@ class appendRequestURL
     {
 
         $request = $this->removeParameters($this->request);
+        $count_newParameters = count($this->new_parameters);
+        $count_request = count($this->request);
 
-        if (count($this->new_parameters) === 0 && count($request) === 0) {
-            return $this->url;
-        } elseif (count($this->new_parameters) > 0 && count($request) > 0) {
-            return $this->url
-                . (Str::contains($this->url, '?') ? '&' : '?')
-                . Arr::query($this->appends(array_merge($request, $this->new_parameters)));
-        } elseif (count($this->new_parameters) > 0 && count($request) === 0) {
-            return $this->url
-                . (Str::contains($this->url, '?') ? '&' : '?')
-                . Arr::query($this->appends($this->new_parameters));
-        } elseif (count($this->new_parameters) === 0 && count($request) > 0) {
-            return $this->url
-                . (Str::contains($this->url, '?') ? '&' : '?')
-                . Arr::query($this->appends($request));
+        if ($count_newParameters > 0) {
+            return ($count_request > 0) ? $this->createURL(array_merge($request, $this->new_parameters)) : $this->createURL($this->new_parameters);
+        } else {
+            return ($count_request > 0) ? $this->createURL($request) : $this->url;
         }
+    }
+
+    public function createURL($append)
+    {
+        return $this->url . (Str::contains($this->url, '?') ? '&' : '?') . Arr::query($this->appends($append));
     }
 
     /**
