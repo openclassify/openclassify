@@ -40,6 +40,7 @@ return [
     'general' => 'جنرال لواء',
     'ads' => 'إعلانات',
     'user' => 'المستعمل',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
