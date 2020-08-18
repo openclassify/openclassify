@@ -11,16 +11,18 @@ class appendRequestURL
     protected $request;
     protected $url;
     protected $new_parameters;
+    protected $remove_parameters;
 
     /**
      * appendRequestURL constructor.
      * @param $request
      */
-    public function __construct($request, $url, $new_parameters = [])
+    public function __construct($request, $url, $new_parameters = [], $remove_parameters = [])
     {
         $this->url = $url;
         $this->request = $request;
         $this->new_parameters = $new_parameters;
+        $this->remove_parameters = $remove_parameters;
     }
 
     /**
@@ -28,20 +30,23 @@ class appendRequestURL
      */
     public function handle()
     {
-        if (count($this->new_parameters) === 0 && count($this->request) === 0) {
+
+        $request = $this->removeParameters($this->request);
+
+        if (count($this->new_parameters) === 0 && count($request) === 0) {
             return $this->url;
-        } elseif (count($this->new_parameters) > 0 && count($this->request) > 0) {
+        } elseif (count($this->new_parameters) > 0 && count($request) > 0) {
             return $this->url
                 . (Str::contains($this->url, '?') ? '&' : '?')
-                . Arr::query($this->appends(array_merge($this->request, $this->new_parameters)));
-        } elseif (count($this->new_parameters) > 0 && count($this->request) === 0) {
+                . Arr::query($this->appends(array_merge($request, $this->new_parameters)));
+        } elseif (count($this->new_parameters) > 0 && count($request) === 0) {
             return $this->url
                 . (Str::contains($this->url, '?') ? '&' : '?')
                 . Arr::query($this->appends($this->new_parameters));
-        } elseif (count($this->new_parameters) === 0 && count($this->request) > 0) {
+        } elseif (count($this->new_parameters) === 0 && count($request) > 0) {
             return $this->url
                 . (Str::contains($this->url, '?') ? '&' : '?')
-                . Arr::query($this->appends($this->request));
+                . Arr::query($this->appends($request));
         }
     }
 
@@ -86,5 +91,14 @@ class appendRequestURL
         $this->query[$key] = $value;
 
         return $this;
+    }
+
+    public function removeParameters(array $array)
+    {
+        foreach ($this->remove_parameters as $parameter) {
+            unset($array[$parameter]);
+        }
+
+        return $array;
     }
 }
