@@ -40,6 +40,7 @@ return [
     'general' => 'Chung',
     'ads' => 'Quảng cáo',
     'user' => 'Người dùng',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
