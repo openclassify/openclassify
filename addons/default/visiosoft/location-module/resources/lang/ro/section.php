@@ -19,4 +19,5 @@ return [
     'general' => 'General',
     'map' => 'Hartă',
     'setting' => 'reglaj',
+    'filter' => 'Filter',
 ];
