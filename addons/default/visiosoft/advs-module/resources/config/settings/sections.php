@@ -43,6 +43,12 @@ return [
                     'register_email_field',
                 ],
             ],
+            'filter' => [
+                'title' => 'visiosoft.module.advs::section.filter',
+                'fields' => [
+                    'hide_price_filter','hide_date_filter','hide_photo_filter','hide_map_filter'
+                ],
+            ],
         ],
     ],
 ];
