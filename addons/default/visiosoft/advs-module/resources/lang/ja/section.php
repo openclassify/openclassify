@@ -40,6 +40,7 @@ return [
     'general' => '一般的な',
     'ads' => '広告',
     'user' => 'ユーザー',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
