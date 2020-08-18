@@ -40,6 +40,7 @@ return [
     'general' => 'Allmän',
     'ads' => 'annonser',
     'user' => 'Användare',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
