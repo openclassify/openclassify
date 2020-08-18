@@ -19,4 +19,5 @@ return [
     'general' => '일반',
     'map' => '지도',
     'setting' => '환경',
+    'filter' => 'Filter',
 ];
