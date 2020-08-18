@@ -19,4 +19,5 @@ return [
     'general' => 'כללי',
     'map' => 'מפה',
     'setting' => 'הגדרה',
+    'filter' => 'Filter',
 ];
