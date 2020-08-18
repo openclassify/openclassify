@@ -40,6 +40,7 @@ return [
     'general' => 'Общая',
     'ads' => 'Объявления',
     'user' => 'пользователь',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
