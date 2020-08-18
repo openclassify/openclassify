@@ -40,6 +40,7 @@ return [
     'general' => 'सामान्य',
     'ads' => 'विज्ञापन',
     'user' => 'उपयोगकर्ता',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
