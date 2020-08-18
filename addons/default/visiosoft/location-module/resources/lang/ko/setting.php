@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => '기본 위도',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Hide Location Filter',
+    ],
 ];
