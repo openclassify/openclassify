@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'デフォルトの緯度',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Hide Location Filter',
+    ],
 ];
