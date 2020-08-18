@@ -40,6 +40,7 @@ return [
     'general' => 'Ümumi',
     'ads' => 'Elanlar',
     'user' => 'İstifadəçi',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
