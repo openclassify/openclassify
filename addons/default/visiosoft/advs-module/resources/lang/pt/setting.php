@@ -133,4 +133,17 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
+
+    'hide_price_filter' => [
+        'name' => 'Hide Price Filter',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Hide Date Filter',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Hide Photo Filter',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Hide Map Filter',
+    ],
 ];
