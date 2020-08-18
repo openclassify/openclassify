@@ -40,6 +40,7 @@ return [
     'general' => '일반',
     'ads' => '광고',
     'user' => '사용자',
+    'filter' => 'Filter',
     'options' => [
         'title' => 'Options',
     ],
