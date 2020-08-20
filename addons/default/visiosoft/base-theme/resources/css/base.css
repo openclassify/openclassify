@@ -1,3 +1,8 @@
+.link-unstyled, .link-unstyled:link, .link-unstyled:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
 .left-categories-section .categories-list,
 .left-categories-section .categories-list li ul {
     list-style: none;
