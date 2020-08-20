@@ -68,4 +68,11 @@ return [
             'default_value' => '40.97817786299617',
         ],
     ],
+
+    'hide_location_filter' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ],
+    ],
 ];
