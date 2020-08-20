@@ -35,13 +35,19 @@ class redirectDiffrentLang
         $setting_language = setting_value('streams::default_locale');
         $current_language = $request->session()->get('_locale', $setting_language);
         $request_url = ltrim($request->getRequestUri(), '/');
+
+        // If the segment(1) is admin and language parameters is not null, no forwarding will be made.
+        if ($request->segment(1) == "admin" and in_array($current_language, explode('/', $original_url))) {
+            return $this->redirect->to($request->fullUrl());
+        }
+
         if ($current_language != $setting_language) {
-            if ($request_url != "" and $original_url != '/' . $current_language . '/' . $request_url) {
+
+            // If the method is get, no forwarding will be made.
+            // If the segment(1) is admin, no forwarding will be made.
+
+            if ($request->method() == "GET" and $request->segment(1) != "admin" and $request_url != "" and $original_url != '/' . $current_language . '/' . $request_url) {
                 return $this->redirect->to('/' . $current_language . '/' . $request_url);
-            }
-        } else {
-            if ($request_url == "" and '/' . $current_language != $original_url) {
-                $this->redirect->to($current_language);
             }
         }
 

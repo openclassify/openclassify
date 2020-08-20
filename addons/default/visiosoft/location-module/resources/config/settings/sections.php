@@ -22,6 +22,12 @@ return [
                     'google_map_key', 'map_coordinates_long', 'map_coordinates_lat'
                 ],
             ],
+            'filter' => [
+                'title' => 'visiosoft.module.location::section.filter',
+                'fields' => [
+                    'hide_location_filter'
+                ],
+            ],
             'html' => [
                 'html' => '{% include "visiosoft.module.location::settings/field" %}',
             ],
