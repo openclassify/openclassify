@@ -187,3 +187,8 @@ $("#listFilterForm").submit(function(e) {
         }
     });
 });
+
+// Change view type
+function changeViewType(viewLink) {
+    window.location.href = viewLink
+}

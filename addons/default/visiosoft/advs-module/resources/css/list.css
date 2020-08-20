@@ -135,11 +135,11 @@ a.sort-by-open-dropdown:hover {
     color: #8598AA;
 }
 
-.list-view-type a:hover {
-    color: #8598AA !important;
+.list-view-type button:focus {
+    outline: none;
 }
 
-.list-view-type a small {
+.list-view-type button small {
     font-weight: 500;
     color: #8598AA;
 }
