@@ -32,7 +32,7 @@ return [
         'name' => 'Regjistrohu Logo udhëzuese',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Regjistrohu Lidhja e njoftimit të faqes',
     ],
     'style' => [
         'name' => 'Style (CSS)',
