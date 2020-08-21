@@ -12,18 +12,18 @@ return [
         'reorder'      => 'برای مرتب کردن آیتم ها را در سایدبار با موس جابجا کنید',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'آیکون',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'عنوان',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'رنگ اصلی نوار کناری',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'رنگ ثانویه نوار کناری',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'رنگ حاشیه فعال نوار کناری',
     ]
 ];
