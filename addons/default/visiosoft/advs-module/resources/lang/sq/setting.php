@@ -119,7 +119,7 @@ return [
         'name' => 'Lista e figurës së faqes',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Fshih Fushën Standarde të mimeve',
     ],
     'enabled_currencies' => [
         'name' => 'Monedhat e aktivizuara',
@@ -131,19 +131,19 @@ return [
         'name' => 'Kërkesa për regjistrim përmes e-mail',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Vendi i tregut',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Fsheh Filterin e Pricemimeve',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Fsheh Filterin e datës',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Fsheh Filterin e Fotove',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Fsheh Filterin e Hartës',
     ],
 ];
