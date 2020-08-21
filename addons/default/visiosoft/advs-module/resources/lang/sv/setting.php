@@ -119,7 +119,7 @@ return [
         'name' => 'Lista sidbild',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Dölj standardprisfältet',
     ],
     'enabled_currencies' => [
         'name' => 'Aktiverade valutor',
@@ -135,15 +135,15 @@ return [
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Dölj prisfilter',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Dölj datumfilter',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Dölj fotofilter',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Dölj kartfilter',
     ],
 ];
