@@ -12,6 +12,6 @@ return [
     'edit' => '編集する',
     'go_profile' => 'プロファイルの詳細に移動',
     'go_user' => 'ユーザーの詳細に移動',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => '個人的な',
+    'corporate' => 'コーポレート',
 ];
