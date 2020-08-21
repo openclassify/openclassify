@@ -2,6 +2,6 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => '사이트 맵 분할 번호',
     ],
 ];
