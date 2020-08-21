@@ -35,6 +35,6 @@ return [
     'disable_account' => 'আপনি কি আপনার অ্যাকাউন্ট বন্ধ করতে চান? এই অপারেশনটি পূর্বাবস্থায় ফেরা যায় না।',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'ইমেল আপডেট!',
+    'update_email_mail_message' => 'আপনার ইমেল আপডেট হয়েছে!',
 ];
