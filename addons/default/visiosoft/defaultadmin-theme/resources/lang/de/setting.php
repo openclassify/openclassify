@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Sie können die primären Navigationelemente per Drag & Drop in der <strong>Sidebar</strong> sortieren.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Symbol',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Titel',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Hauptfarbe der Seitenleiste',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Sekundärfarbe der Seitenleiste',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Aktive Seitenleistenrandfarbe',
     ]
 ];
