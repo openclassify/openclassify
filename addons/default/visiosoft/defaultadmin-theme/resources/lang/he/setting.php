@@ -12,18 +12,18 @@ return [
         'reorder'      => 'גרור ושחרר את הפריטים ניווט העיקרי <strong>הצדדי</strong> כדי לסדר אותן מחדש.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'אייקון',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'כותרת',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'צבע עיקרי בסרגל הצד',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'צבע משני בסרגל הצד',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'צבע גבול פעיל בסרגל הצד',
     ]
 ];
