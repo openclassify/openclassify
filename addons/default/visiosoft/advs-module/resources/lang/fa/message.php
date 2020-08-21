@@ -22,7 +22,7 @@ return [
     'currency_converted' => 'ارز با موفقیت تبدیل شد.',
     'choose_user' => 'یوزر را انتخاب کنید',
     'owner_updated_successfully' => 'فروشنده با موفقیت آپدیت شد!',
-    'no_add_found' => 'No Ad Found!',
-    'replicated_success' => 'The ad has been replicated successfully!',
-    'ad_doesnt_exist' => "This ad doesn't exist!",
+    'no_add_found' => 'هیچ تبلیغی یافت نشد!',
+    'replicated_success' => 'آگهی با موفقیت تکثیر شد!',
+    'ad_doesnt_exist' => "این آگهی وجود ندارد!",
 ];
