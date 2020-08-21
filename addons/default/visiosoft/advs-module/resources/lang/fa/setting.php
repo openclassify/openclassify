@@ -120,7 +120,7 @@ return [
         'name' => 'لیست صفحه تصویر',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'زمینه قیمت استاندارد را مخفی کنید',
     ],
     'enabled_currencies' => [
         'name' => 'ارزهای فعال شده',
@@ -132,19 +132,19 @@ return [
         'name' => 'ثبت نام از طریق پست الکترونیکی',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'محل بازار',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'فیلتر قیمت مخفی کنید',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'پنهان کردن فیلتر تاریخ',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'فیلتر عکس مخفی کنید',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'فیلتر نقشه مخفی شود',
     ],
 ];
