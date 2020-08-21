@@ -22,7 +22,7 @@ return [
     'currency_converted' => 'मुद्रा परिवर्तित सफलतापूर्वक।',
     'choose_user' => 'एक उपयोगकर्ता चुनें',
     'owner_updated_successfully' => 'मालिक सफलतापूर्वक अद्यतन किया गया है!',
-    'no_add_found' => 'No Ad Found!',
-    'replicated_success' => 'The ad has been replicated successfully!',
-    'ad_doesnt_exist' => "This ad doesn't exist!",
+    'no_add_found' => 'कोई विज्ञापन नहीं मिला!',
+    'replicated_success' => 'विज्ञापन को सफलतापूर्वक दोहराया गया है!',
+    'ad_doesnt_exist' => "यह विज्ञापन मौजूद नहीं है!",
 ];
