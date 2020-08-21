@@ -22,7 +22,7 @@ return [
     'currency_converted' => 'Conversion de devise réussie.',
     'choose_user' => 'Choisissez un utilisateur',
     'owner_updated_successfully' => 'Le propriétaire a été mis à jour avec succès!',
-    'no_add_found' => 'No Ad Found!',
-    'replicated_success' => 'The ad has been replicated successfully!',
-    'ad_doesnt_exist' => "This ad doesn't exist!",
+    'no_add_found' => 'Aucune annonce trouvée!',
+    'replicated_success' => 'L\'annonce a été répliquée avec succès!',
+    'ad_doesnt_exist' => "Cette annonce n'existe pas!",
 ];
