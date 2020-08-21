@@ -19,5 +19,5 @@ return [
     'general' => '一般的な',
     'map' => '地図',
     'setting' => '設定',
-    'filter' => 'Filter',
+    'filter' => 'フィルタ',
 ];
