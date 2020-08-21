@@ -19,5 +19,5 @@ return [
     'general' => 'सामान्य',
     'map' => 'नक्शा',
     'setting' => 'स्थापना',
-    'filter' => 'Filter',
+    'filter' => 'फ़िल्टर',
 ];
