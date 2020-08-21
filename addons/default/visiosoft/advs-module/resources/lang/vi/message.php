@@ -22,7 +22,7 @@ return [
     'currency_converted' => 'Chuyển đổi tiền tệ thành công.',
     'choose_user' => 'Chọn người dùng',
     'owner_updated_successfully' => 'Chủ sở hữu đã được cập nhật thành công!',
-    'no_add_found' => 'No Ad Found!',
-    'replicated_success' => 'The ad has been replicated successfully!',
-    'ad_doesnt_exist' => "This ad doesn't exist!",
+    'no_add_found' => 'Không tìm thấy quảng cáo!',
+    'replicated_success' => 'Quảng cáo đã được nhân rộng thành công!',
+    'ad_doesnt_exist' => "Quảng cáo này không tồn tại!",
 ];
