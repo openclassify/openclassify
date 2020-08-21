@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Trageți și fixați elementele principale de navigație în bara laterală <strong></strong> pentru a le reordona.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'icoană',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Titlu',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Bara principală a culorii principale',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Bara laterală secundară',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Culoare activă a marginii laterale',
     ]
 ];
