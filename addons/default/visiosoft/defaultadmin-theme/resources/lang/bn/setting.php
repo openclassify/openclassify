@@ -12,18 +12,18 @@ return [
         'reorder'      => 'পুনরায় ক্রম করতে প্রাথমিক নেভিগেশন আইটেমগুলিকে <strong>সাইডবার</strong> টেনে আনুন।',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'আইকন',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'শিরোনাম',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'সাইডবার প্রধান রঙ Color',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'সাইডবার সেকেন্ডারি রঙ',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'সক্রিয় সাইডবার বর্ডার রঙ',
     ]
 ];
