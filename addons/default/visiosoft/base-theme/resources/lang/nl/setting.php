@@ -32,7 +32,7 @@ return [
         'name' => 'Registreer Page Instructie Logo',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Meldingslink voor pagina registreren',
     ],
     'style' => [
         'name' => 'Stijl (CSS)',
