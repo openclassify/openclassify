@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Faites glisser et déposez les éléments de navigation principaux dans la barre latérale <strong></strong> pour les réorganiser.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Icône',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Titre',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Couleur principale de la barre latérale',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Couleur secondaire de la barre latérale',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Couleur de bordure de la barre latérale active',
     ]
 ];
