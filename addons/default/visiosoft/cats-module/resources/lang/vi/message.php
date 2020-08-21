@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'categories_mass_delete_success' => 'Categories and related sub-categories has been deleted successfully!',
+    'categories_mass_delete_success' => 'Danh mục và các tiểu mục liên quan đã được xóa thành công!',
 ];
