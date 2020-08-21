@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Sıralamaq üçün <strong>yan çubuğun</strong> də ilkin naviqasiya elementlərini sürükləyin və buraxın.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Nişan',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Başlıq',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Yan panel əsas rəng',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Yan panel orta rəng',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Aktiv Sıra Sərhəd Rəngi',
     ]
 ];
