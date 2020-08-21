@@ -12,6 +12,6 @@ return [
     'edit' => 'Redigera',
     'go_profile' => 'Gå till profildetalj',
     'go_user' => 'Gå till användarinformation',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'Personlig',
+    'corporate' => 'Företags',
 ];
