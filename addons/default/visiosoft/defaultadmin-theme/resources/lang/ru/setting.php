@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Перетащите основные элементы навигации на боковой панели <strong></strong> чтобы изменить их порядок.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Значок',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'заглавие',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Основной цвет боковой панели',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Дополнительный цвет боковой панели',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Цвет границы активной боковой панели',
     ]
 ];
