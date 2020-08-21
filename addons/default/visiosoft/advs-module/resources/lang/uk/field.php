@@ -20,7 +20,7 @@ return [
         'name' => 'Ціна'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Стандартна ціна'
     ],
     'date' => [
         'name' => 'Дата'
@@ -266,8 +266,8 @@ return [
     "no_location" => "Місце не вибрано.",
     "continue" => 'Продовжуйте',
     "gallery" => 'Галерея',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Оголошення',
+    "were_found" => 'були знайдені.',
 
     // Pending screen
     'pending_message_1' => 'Оголошення знаходиться в процесі затвердження',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'Виберіть категорію крок за кроком',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Параметри',
 ];
