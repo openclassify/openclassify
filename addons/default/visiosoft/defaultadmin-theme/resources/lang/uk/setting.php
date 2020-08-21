@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Перетягніть основні елементи навігації в <strong>бічній панелі</strong> , щоб змінити їх порядок.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Значок',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Назва',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Основний колір бічної панелі',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Колір бічної панелі вторинного кольору',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Активний колір бордюру',
     ]
 ];
