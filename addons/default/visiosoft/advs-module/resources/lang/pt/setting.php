@@ -119,7 +119,7 @@ return [
         'name' => 'Listar imagem da página',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Ocultar campo de preço padrão',
     ],
     'enabled_currencies' => [
         'name' => 'Moedas ativadas',
@@ -131,19 +131,19 @@ return [
         'name' => 'Requisito de e-mail de registro de membro',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Mercado',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Ocultar filtro de preço',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Ocultar filtro de data',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Ocultar filtro de fotos',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Ocultar filtro de mapa',
     ],
 ];
