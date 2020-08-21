@@ -19,5 +19,5 @@ return [
     'general' => 'Ümumi',
     'map' => 'Xəritə',
     'setting' => 'Quraşdırma',
-    'filter' => 'Filter',
+    'filter' => 'Süzgəc',
 ];
