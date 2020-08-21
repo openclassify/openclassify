@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Przeciągnij i upuść podstawowe elementy nawigacji na pasku bocznym <strong></strong> aby zmienić ich kolejność.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Ikona',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Tytuł',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Główny kolor paska bocznego',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Kolor dodatkowy paska bocznego',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Kolor obramowania aktywnego paska bocznego',
     ]
 ];
