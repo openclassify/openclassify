@@ -119,7 +119,7 @@ return [
         'name' => 'लिस्टिंग पृष्ठ छवि',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'मानक मूल्य फ़ील्ड छिपाएँ',
     ],
     'enabled_currencies' => [
         'name' => 'सक्षम मुद्राएँ',
@@ -131,19 +131,19 @@ return [
         'name' => 'सदस्य पंजीकरण ईमेल आवश्यकता',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'मार्केट प्लेस',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'मूल्य फ़िल्टर छिपाएँ',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'दिनांक फ़िल्टर छिपाएँ',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'फोटो फ़िल्टर छिपाएँ',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'मानचित्र फ़िल्टर छिपाएँ',
     ],
 ];
