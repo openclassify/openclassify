@@ -20,7 +20,7 @@ return [
         'name' => 'Cena £'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standardowa cena'
     ],
     'date' => [
         'name' => 'Data'
@@ -266,8 +266,8 @@ return [
     "no_location" => "Nie wybrano lokalizacji.",
     "continue" => 'Kontyntynuj',
     "gallery" => 'Galeria',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Reklamy',
+    "were_found" => 'zostały znalezione.',
 
     // Pending screen
     'pending_message_1' => 'Reklama jest w trakcie procesu zatwierdzania',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'Wybierz kategorię krok po kroku',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opcje',
 ];
