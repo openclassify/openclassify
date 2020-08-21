@@ -20,7 +20,7 @@ return [
         'name' => 'Preț'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Preț standard'
     ],
     'date' => [
         'name' => 'Data'
@@ -266,8 +266,8 @@ return [
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
     "gallery" => 'Galerie',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Reclame',
+    "were_found" => 'au fost găsite.',
 
     // Pending screen
     'pending_message_1' => 'Anunțul se află în procesul de aprobare',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'Selectați Categorie pas cu pas',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opțiuni',
 ];
