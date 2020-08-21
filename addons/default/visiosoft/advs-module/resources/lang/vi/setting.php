@@ -119,7 +119,7 @@ return [
         'name' => 'Danh sách trang hình ảnh',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Ẩn trường giá chuẩn',
     ],
     'enabled_currencies' => [
         'name' => 'Tiền tệ được kích hoạt',
@@ -131,19 +131,19 @@ return [
         'name' => 'Yêu cầu email đăng ký thành viên',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Thương trường',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Ẩn bộ lọc giá',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Ẩn Bộ lọc Ngày',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Ẩn bộ lọc ảnh',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Ẩn bộ lọc bản đồ',
     ],
 ];
