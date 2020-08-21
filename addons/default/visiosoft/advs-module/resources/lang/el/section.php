@@ -40,8 +40,8 @@ return [
     'general' => 'Γενικός',
     'ads' => 'Διαφημίσεις',
     'user' => 'Χρήστης',
-    'filter' => 'Filter',
+    'filter' => 'Φίλτρο',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Επιλογές',
     ],
 ];
