@@ -119,7 +119,7 @@ return [
         'name' => '리스팅 페이지 이미지',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => '표준 가격 필드 숨기기',
     ],
     'enabled_currencies' => [
         'name' => '활성화 된 통화',
@@ -131,19 +131,19 @@ return [
         'name' => '회원 등록 이메일 요구 사항',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => '마켓 플레이스',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => '가격 필터 숨기기',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => '날짜 필터 숨기기',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => '사진 필터 숨기기',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => '지도 필터 숨기기',
     ],
 ];
