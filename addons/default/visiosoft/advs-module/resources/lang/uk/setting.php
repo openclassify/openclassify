@@ -119,7 +119,7 @@ return [
         'name' => 'Зображення сторінки лістингу',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Сховати поле стандартної ціни',
     ],
     'enabled_currencies' => [
         'name' => 'Увімкнено валюти',
@@ -131,19 +131,19 @@ return [
         'name' => 'Вимога електронної пошти щодо реєстрації учасника',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Ринок',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Сховати фільтр цін',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Сховати фільтр дати',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Сховати фільтр фотографій',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Сховати фільтр карти',
     ],
 ];
