@@ -12,18 +12,18 @@ return [
         'reorder'      => 'उन्हें पुन: व्यवस्थित करने के लिए <strong>साइडबार</strong> में प्राथमिक नेविगेशन आइटम खींचें और छोड़ें।',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'चिह्न',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'शीर्षक',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'साइडबार मेन कलर',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'साइडबार माध्यमिक रंग',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'सक्रिय साइडबार बॉर्डर रंग',
     ]
 ];
