@@ -20,7 +20,7 @@ return [
         'name' => 'Preis'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standartpreis'
     ],
     'date' => [
         'name' => 'Datum'
@@ -267,8 +267,8 @@ return [
     "no_location" => "Es ist kein Ort ausgewählt.",
     "continue" => 'Fortsetzen',
     "gallery" => 'Galerie',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Anzeigen',
+    "were_found" => 'wurden gefunden.',
 
     // Pending screen
     'pending_message_1' => 'Die Anzeige befindet sich im Genehmigungsprozess',
@@ -296,5 +296,5 @@ return [
     'select_category_step_by_step' => 'Wählen Sie Kategorie Schritt für Schritt',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Optionen',
 ];
