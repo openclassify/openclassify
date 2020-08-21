@@ -20,7 +20,7 @@ return [
         'name' => 'Τιμή'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Τυπική τιμή'
     ],
     'date' => [
         'name' => 'Ημερομηνία'
@@ -267,8 +267,8 @@ return [
     "no_location" => "Δεν έχει επιλεγεί τοποθεσία.",
     "continue" => 'Να συνεχίσει',
     "gallery" => 'Εκθεσιακός χώρος',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Διαφημίσεις',
+    "were_found" => 'βρέθηκαν.',
 
     // Pending screen
     'pending_message_1' => 'Η διαφήμιση βρίσκεται στη διαδικασία έγκρισης',
@@ -296,5 +296,5 @@ return [
     'select_category_step_by_step' => 'Επιλέξτε Κατηγορία Βήμα προς Βήμα',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Επιλογές',
 ];
