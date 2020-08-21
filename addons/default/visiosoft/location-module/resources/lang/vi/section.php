@@ -19,5 +19,5 @@ return [
     'general' => 'Chung',
     'map' => 'Bản đồ',
     'setting' => 'Cài đặt',
-    'filter' => 'Filter',
+    'filter' => 'Bộ lọc',
 ];
