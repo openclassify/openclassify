@@ -119,7 +119,7 @@ return [
         'name' => 'Imagen de la página de listado',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Ocultar campo de precio estándar',
     ],
     'enabled_currencies' => [
         'name' => 'Monedas habilitadas',
@@ -135,15 +135,15 @@ return [
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Ocultar filtro de precio',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Ocultar filtro de fecha',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Ocultar filtro de fotos',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Ocultar filtro de mapa',
     ],
 ];
