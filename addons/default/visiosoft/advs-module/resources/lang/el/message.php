@@ -22,7 +22,7 @@ return [
     'currency_converted' => 'Το νόμισμα μετατράπηκε με επιτυχία.',
     'choose_user' => 'Επιλέξτε έναν χρήστη',
     'owner_updated_successfully' => 'Ο κάτοχος ενημερώθηκε με επιτυχία!',
-    'no_add_found' => 'No Ad Found!',
-    'replicated_success' => 'The ad has been replicated successfully!',
-    'ad_doesnt_exist' => "This ad doesn't exist!",
+    'no_add_found' => 'Δεν βρέθηκε διαφήμιση!',
+    'replicated_success' => 'Η διαφήμιση έχει αναπαραχθεί με επιτυχία!',
+    'ad_doesnt_exist' => "Αυτή η διαφήμιση δεν υπάρχει!",
 ];
