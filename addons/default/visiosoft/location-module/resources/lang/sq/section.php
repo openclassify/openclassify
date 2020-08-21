@@ -19,5 +19,5 @@ return [
     'general' => 'I përgjithshëm',
     'map' => 'Hartë',
     'setting' => 'Cilësimet',
-    'filter' => 'Filter',
+    'filter' => 'filtër',
 ];
