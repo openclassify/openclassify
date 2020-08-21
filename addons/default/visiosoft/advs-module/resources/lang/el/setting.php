@@ -119,7 +119,7 @@ return [
         'name' => 'Λίστα εικόνων σελίδας',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Απόκρυψη πεδίου τυπικής τιμής',
     ],
     'enabled_currencies' => [
         'name' => 'Ενεργοποιημένα νομίσματα',
@@ -131,19 +131,19 @@ return [
         'name' => 'Απαίτηση ηλεκτρονικού ταχυδρομείου εγγραφής μέλους',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Αγορά',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Απόκρυψη φίλτρου τιμών',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Απόκρυψη φίλτρου ημερομηνίας',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Απόκρυψη φίλτρου φωτογραφιών',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Απόκρυψη φίλτρου χάρτη',
     ],
 ];
