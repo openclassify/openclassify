@@ -40,8 +40,8 @@ return [
     'general' => 'General',
     'ads' => 'Reclame',
     'user' => 'Utilizator',
-    'filter' => 'Filter',
+    'filter' => 'Filtru',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Opțiuni',
     ],
 ];
