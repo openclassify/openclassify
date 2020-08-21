@@ -19,5 +19,5 @@ return [
     'general' => 'Γενικός',
     'map' => 'Χάρτης',
     'setting' => 'Σύνθεση',
-    'filter' => 'Filter',
+    'filter' => 'Φίλτρο',
 ];
