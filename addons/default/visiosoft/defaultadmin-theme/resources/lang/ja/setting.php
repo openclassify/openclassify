@@ -12,18 +12,18 @@ return [
         'reorder'      => 'プライマリナビゲーションアイテムを <strong>サイドバー</strong> にドラッグアンドドロップして並べ替えます。',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'アイコン',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => '題名',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'サイドバーのメインカラー',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'サイドバーのセカンダリカラー',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'アクティブなサイドバーのボーダー色',
     ]
 ];
