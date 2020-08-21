@@ -9,6 +9,6 @@ return [
     ],
 
     'show_tax_office' => [
-        'name' => 'Show Tax Office Field',
+        'name' => 'কর অফিস ক্ষেত্র প্রদর্শন করুন',
     ],
 ];
