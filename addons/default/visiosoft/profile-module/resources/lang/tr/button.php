@@ -12,6 +12,6 @@ return [
     'edit' => 'Düzenle',
     'go_profile' => 'Profil Detayları',
     'go_user' => 'Kullanıcı Detayları',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'Kişisel',
+    'corporate' => 'Kurumsal',
 ];
