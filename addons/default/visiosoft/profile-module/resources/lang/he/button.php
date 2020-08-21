@@ -12,6 +12,6 @@ return [
     'edit' => 'ערוך',
     'go_profile' => 'עבור לפרטי הפרופיל',
     'go_user' => 'עבור לפרטי המשתמש',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'אישי',
+    'corporate' => 'תאגידי',
 ];
