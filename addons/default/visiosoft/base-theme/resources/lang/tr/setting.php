@@ -32,7 +32,7 @@ return [
         'name' => 'Kayıt Sayfası Talimat Logosu',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Sayfa Uyarısı Bağlantısını Kaydet',
     ],
     'style' => [
         'name' => 'Stil (CSS)',
