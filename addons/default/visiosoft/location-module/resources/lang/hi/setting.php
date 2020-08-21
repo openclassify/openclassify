@@ -42,6 +42,6 @@ return [
     ],
 
     'hide_location_filter' => [
-        'name' => 'Hide Location Filter',
+        'name' => 'स्थान फ़िल्टर छिपाएँ',
     ],
 ];
