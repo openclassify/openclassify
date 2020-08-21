@@ -66,7 +66,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     {
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
-        $defaultLocale = setting_value('streams::default_locale');
 
         $query = $this->model;
         $query = $query->where('advs_advs.slug', '!=', "");
@@ -76,7 +75,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         $query = $query->leftJoin('advs_advs_translations', function ($join) {
             $join->on('advs_advs.id', '=', 'advs_advs_translations.entry_id');
-            $join->where('advs_advs_translations.locale', '=', Request()->session()->get('_locale',$defaultLocale));
+            $join->where('advs_advs_translations.locale', '=', Request()->session()->get('_locale',setting_value('streams::default_locale')));
         });
 
         if (!empty($param['keyword'])) {
