@@ -32,7 +32,7 @@ return [
         'name' => '登録ページの指示ロゴ',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => '登録ページのアラートリンク',
     ],
     'style' => [
         'name' => 'スタイル（CSS）',
