@@ -12,6 +12,7 @@
                 {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
             {% elseif defaultCountry %}
                 {% set countryName = getCountry(defaultCountry).name %}
+                {% set countryValue = defaultCountry %}
             {% else %}
                 {% set countryName = trans("visiosoft.module.location::field.country.name") %}
             {% endif %}
