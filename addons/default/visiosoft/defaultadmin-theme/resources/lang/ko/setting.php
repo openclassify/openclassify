@@ -12,18 +12,18 @@ return [
         'reorder'      => '<strong>사이드 바</strong> 에서 기본 탐색 항목을 끌어다 놓아 순서를 바꿉니다.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => '상',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => '표제',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => '사이드 바 기본 색상',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => '사이드 바 보조 색상',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => '활성 사이드 바 테두리 색상',
     ]
 ];
