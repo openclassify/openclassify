@@ -119,7 +119,7 @@ return [
         'name' => 'Sayfa Resmi Listeleme',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Standart Fiyat Alanını Gizle',
     ],
     'enabled_currencies' => [
         'name' => 'Etkin Para Birimleri',
@@ -131,19 +131,19 @@ return [
         'name' => 'Üye Kayıt E-posta Zorunluluğu',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Pazar Yeri',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Fiyat Filtresini Gizle',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Tarih Filtresini Gizle',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Fotoğraf Filtresini Gizle',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Harita Filtresini Gizle',
     ],
 ];
