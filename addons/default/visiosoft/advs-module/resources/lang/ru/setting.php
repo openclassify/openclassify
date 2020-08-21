@@ -119,7 +119,7 @@ return [
         'name' => 'Изображение страницы со списком',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Скрыть поле стандартной цены',
     ],
     'enabled_currencies' => [
         'name' => 'Включенные валюты',
@@ -131,19 +131,19 @@ return [
         'name' => 'Требуется регистрация по электронной почте',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Рыночная площадь',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Скрыть фильтр цен',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Скрыть фильтр даты',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Скрыть фотофильтр',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Скрыть фильтр карты',
     ],
 ];
