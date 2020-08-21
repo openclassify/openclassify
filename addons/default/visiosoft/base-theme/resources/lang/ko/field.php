@@ -52,8 +52,8 @@ return [
     'mail' => '메일을 보내다',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => '등록 지침',
+    'list' => '명부',
+    'instruction_description' => '지시 설명',
+    'instruction_list' => '지시 목록',
 ];
