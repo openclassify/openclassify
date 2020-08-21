@@ -22,7 +22,7 @@ return [
     'currency_converted' => 'Konvertimi i monedhës me sukses..',
     'choose_user' => 'Zgjidhni një përdorues',
     'owner_updated_successfully' => 'Pronari është azhurnuar me sukses!',
-    'no_add_found' => 'No Ad Found!',
-    'replicated_success' => 'The ad has been replicated successfully!',
-    'ad_doesnt_exist' => "This ad doesn't exist!",
+    'no_add_found' => 'Asnjë shpallje nuk u gjet!',
+    'replicated_success' => 'Shpallja është përsëritur me sukses!',
+    'ad_doesnt_exist' => "Kjo shpallje nuk ekziston!",
 ];
