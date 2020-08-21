@@ -20,7 +20,7 @@ return [
         'name' => 'מחיר'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'מחיר סטנדרטי'
     ],
     'date' => [
         'name' => 'תאריך'
@@ -266,8 +266,8 @@ return [
     "no_location" => "לא נבחר מיקום.",
     "continue" => 'המשך',
     "gallery" => 'גלריה',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'מודעות',
+    "were_found" => 'נמצאו.',
 
     // Pending screen
     'pending_message_1' => 'המודעה נמצאת בתהליך האישור',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'בחר קטגוריה שלב אחר שלב',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'אפשרויות',
 ];
