@@ -428,19 +428,19 @@ return [
     'my_address' => 'Địa chỉ của tôi',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Tên công ty'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Phòng thuế'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Số thuế'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Thông tin của tôi',
+    'edit_profile' => 'Chỉnh sửa hồ sơ',
+    'edit_details' => 'Chỉnh sửa chi tiết',
+    'update' => 'Cập nhật',
+    'change_password' => 'Đổi mật khẩu',
 ];
