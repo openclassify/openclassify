@@ -20,7 +20,7 @@ return [
         'name' => 'Preço'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Preço padrão'
     ],
     'date' => [
         'name' => 'Encontro'
@@ -267,8 +267,8 @@ return [
     "no_location" => "Nenhum local está selecionado.",
     "continue" => 'Continuar',
     "gallery" => 'Galeria',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Publicidades',
+    "were_found" => 'foram achados.',
 
     // Pending screen
     'pending_message_1' => 'O anúncio está no processo de aprovação',
@@ -296,5 +296,5 @@ return [
     'select_category_step_by_step' => 'Selecione a categoria passo a passo',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opções',
 ];
