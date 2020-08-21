@@ -35,6 +35,6 @@ return [
     'disable_account' => 'Hesabınızı bağlamaq istəyirsiniz? Bu əməliyyatı geri qaytarmaq olmaz.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-poçt Yenilənib!',
+    'update_email_mail_message' => 'E-poçtunuz Yeniləndi!',
 ];
