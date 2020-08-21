@@ -119,7 +119,7 @@ return [
         'name' => 'リストページの画像',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => '標準価格フィールドを非表示',
     ],
     'enabled_currencies' => [
         'name' => '有効な通貨',
@@ -131,19 +131,19 @@ return [
         'name' => '会員登録メールの要件',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'マーケットプレイス',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => '価格フィルターを非表示',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => '日付フィルターを非表示',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => '写真フィルターを非表示',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'マップフィルターを非表示',
     ],
 ];
