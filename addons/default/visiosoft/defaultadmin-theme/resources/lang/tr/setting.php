@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Birincil gezinme öğelerini yeniden sıralamak için <strong>kenar çubuğu</strong> sürükleyip bırakın.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'ikon',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Başlık',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Kenar Çubuğu Ana Rengi',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Kenar Çubuğu İkincil Rengi',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Etkin Kenar Çubuğu Kenarlık Rengi',
     ]
 ];
