@@ -333,7 +333,7 @@ class AdvsController extends PublicController
     public function viewType($type)
     {
         Cookie::queue(Cookie::make('viewType', $type, 84000));
-        return redirect($this->request->headers->get('referer'));
+        return redirect($this->request->headers->get('referer') ?: route('visiosoft.module.advs::list'));
     }
 
     public function view($seo, $id = null)
