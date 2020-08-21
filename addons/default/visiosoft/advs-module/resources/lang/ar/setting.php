@@ -119,7 +119,7 @@ return [
         'name' => 'سرد صورة الصفحة',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'إخفاء حقل السعر القياسي',
     ],
     'enabled_currencies' => [
         'name' => 'العملات الممكّنة',
@@ -131,19 +131,19 @@ return [
         'name' => 'متطلبات تسجيل البريد الإلكتروني للعضو',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'المتجر',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'إخفاء عامل تصفية السعر',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'إخفاء مرشح التاريخ',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'إخفاء مرشح الصورة',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'إخفاء عامل تصفية الخريطة',
     ],
 ];
