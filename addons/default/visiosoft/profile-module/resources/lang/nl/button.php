@@ -12,6 +12,6 @@ return [
     'edit' => 'Bewerk',
     'go_profile' => 'Ga naar Profieldetail',
     'go_user' => 'Ga naar Gebruikersdetails',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'Persoonlijk',
+    'corporate' => 'Zakelijk',
 ];
