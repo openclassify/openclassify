@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Zvarritni dhe lëshoni artikujt kryesorë të lundrimit në <strong>sidebar</strong> për t\'i rivartuar ato.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'ikonë',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'titull',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Ngjyra kryesore e shiritit anësor',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Ngjyra sekondare e shiritit anësor',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Ngjyra kufitare aktive e kufirit',
     ]
 ];
