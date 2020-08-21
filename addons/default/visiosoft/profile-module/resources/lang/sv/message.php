@@ -35,6 +35,6 @@ return [
     'disable_account' => 'Vill du stänga ditt konto? Denna åtgärd kan inte ångras.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-post uppdaterad!',
+    'update_email_mail_message' => 'Din e-postadress har uppdaterats!',
 ];
