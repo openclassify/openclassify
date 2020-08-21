@@ -52,8 +52,8 @@ return [
     'mail' => 'Inviare una mail',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'Istruzioni per la registrazione',
+    'list' => 'Elenco',
+    'instruction_description' => 'Descrizione delle istruzioni',
+    'instruction_list' => 'Elenco delle istruzioni',
 ];
