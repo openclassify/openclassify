@@ -119,7 +119,7 @@ return [
         'name' => 'Səhifənin görüntüləməsi',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Standart qiymət sahəsini gizlət',
     ],
     'enabled_currencies' => [
         'name' => 'Aktiv valyutalar',
@@ -131,19 +131,19 @@ return [
         'name' => 'İstifadəçi Qeyd E-poçtu tələbi',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Bazar yeri',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Qiymət filtrini gizlət',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Tarix Filtrini Gizlət',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Şəkil Filtrini Gizlət',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Xəritə filtrini gizlət',
     ],
 ];
