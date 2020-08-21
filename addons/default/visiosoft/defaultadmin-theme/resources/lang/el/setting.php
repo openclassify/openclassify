@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Μεταφέρετε και αποθέστε τα κύρια στοιχεία πλοήγησης στην <strong>πλευρική γραμμή</strong> για να τα αναδιατάξετε.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Εικόνισμα',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Τίτλος',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Κύριο χρώμα πλευρικής γραμμής',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Δευτερεύον χρώμα πλευρικής γραμμής',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Ενεργό χρώμα περιγράμματος πλευρικής γραμμής',
     ]
 ];
