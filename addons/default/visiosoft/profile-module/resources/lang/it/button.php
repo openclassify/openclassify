@@ -12,6 +12,6 @@ return [
     'edit' => 'modificare',
     'go_profile' => 'Vai a Dettagli profilo',
     'go_user' => 'Vai a Dettagli utente',
-    'personal' => 'Personal',
+    'personal' => 'Personale',
     'corporate' => 'Corporate',
 ];
