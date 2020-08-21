@@ -35,6 +35,6 @@ return [
     'disable_account' => 'האם אתה רוצה לסגור את חשבונך? לא ניתן לבטל פעולה זו.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'אימייל עודכן!',
+    'update_email_mail_message' => 'הדוא"ל שלך עודכן!',
 ];
