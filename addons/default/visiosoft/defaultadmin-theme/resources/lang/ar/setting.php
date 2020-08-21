@@ -12,18 +12,18 @@ return [
         'reorder'      => 'سحب وإسقاط البنود الملاحة الابتدائية في <strong>الشريط الجانبي</strong> إلى إعادة ترتيب لهم.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'أيقونة',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'عنوان',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'اللون الرئيسي للشريط الجانبي',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'اللون الثانوي للشريط الجانبي',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'لون حدود الشريط الجانبي النشط',
     ]
 ];
