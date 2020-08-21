@@ -40,8 +40,8 @@ return [
     'general' => '일반',
     'ads' => '광고',
     'user' => '사용자',
-    'filter' => 'Filter',
+    'filter' => '필터',
     'options' => [
-        'title' => 'Options',
+        'title' => '옵션',
     ],
 ];
