@@ -12,6 +12,6 @@ return [
     'edit' => 'редактировать',
     'go_profile' => 'Перейти к профилю',
     'go_user' => 'Перейти к информации о пользователе',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'личный',
+    'corporate' => 'Корпоративный',
 ];
