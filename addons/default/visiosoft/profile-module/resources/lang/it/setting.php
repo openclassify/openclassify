@@ -9,6 +9,6 @@ return [
     ],
 
     'show_tax_office' => [
-        'name' => 'Show Tax Office Field',
+        'name' => 'Mostra campo Ufficio delle imposte',
     ],
 ];
