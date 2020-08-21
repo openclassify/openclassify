@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Sleep de primaire navigatie-items in de <strong>zijbalk</strong> om ze opnieuw te ordenen.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Icoon',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Titel',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Hoofdkleur zijbalk',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Secundaire kleur zijbalk',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Actieve randkleur zijbalk',
     ]
 ];
