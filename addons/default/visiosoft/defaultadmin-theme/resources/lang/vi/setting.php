@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Kéo và thả các mục điều hướng chính trong thanh bên <strong></strong> để sắp xếp lại chúng.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Biểu tượng',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Tiêu đề',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Màu chính của thanh bên',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Màu phụ của thanh bên',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Màu đường viền thanh bên hoạt động',
     ]
 ];
