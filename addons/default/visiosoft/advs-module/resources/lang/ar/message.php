@@ -22,7 +22,7 @@ return [
     'currency_converted' => 'تم تحويل العملة بنجاح.',
     'choose_user' => 'اختر مستخدمًا',
     'owner_updated_successfully' => 'تم تحديث المالك بنجاح!',
-    'no_add_found' => 'No Ad Found!',
-    'replicated_success' => 'The ad has been replicated successfully!',
-    'ad_doesnt_exist' => "This ad doesn't exist!",
+    'no_add_found' => 'لا يوجد إعلان!',
+    'replicated_success' => 'تم نسخ الإعلان بنجاح!',
+    'ad_doesnt_exist' => "هذا الإعلان غير موجود!",
 ];
