@@ -12,18 +12,18 @@ return [
         'reorder'      => 'Dra och släpp de primära navigeringsobjekten i <strong>sidfältet</strong> att ordna dem.',
     ],
     "icon" => [
-        'name' => 'Icon',
+        'name' => 'Ikon',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Titel',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Sidofältets huvudfärg',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Sidofält Sekundärfärg',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Aktiv sidofält kantfärg',
     ]
 ];
