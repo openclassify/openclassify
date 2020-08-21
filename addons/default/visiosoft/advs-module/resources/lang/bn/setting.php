@@ -119,7 +119,7 @@ return [
         'name' => 'পৃষ্ঠার চিত্র তালিকাভুক্ত',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'স্ট্যান্ডার্ড দাম ক্ষেত্র লুকান ide',
     ],
     'enabled_currencies' => [
         'name' => 'সক্ষম মুদ্রা',
@@ -131,19 +131,19 @@ return [
         'name' => 'সদস্য নিবন্ধকরণ ইমেল প্রয়োজনীয়তা',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'মার্কেট প্লেস',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'দাম ফিল্টার লুকান',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'তারিখ ফিল্টার লুকান',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'ফটো ফিল্টার লুকান',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'মানচিত্র ফিল্টার লুকান',
     ],
 ];
