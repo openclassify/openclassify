@@ -119,7 +119,7 @@ return [
         'name' => 'Lijstpagina-afbeelding',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Verberg standaardprijsveld',
     ],
     'enabled_currencies' => [
         'name' => 'Ingeschakelde valuta\\'s',
@@ -131,19 +131,19 @@ return [
         'name' => 'Lidregistratie E-mailvereiste',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Marktplaats',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Prijsfilter verbergen',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Datumfilter verbergen',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Verberg fotofilter',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Verberg kaartfilter',
     ],
 ];
