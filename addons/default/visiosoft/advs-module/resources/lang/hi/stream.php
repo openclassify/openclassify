@@ -20,6 +20,6 @@ return [
         'name' => 'Cf मान',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'विकल्प',
     ],
 ];
