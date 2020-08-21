@@ -40,8 +40,8 @@ return [
     'general' => 'Chung',
     'ads' => 'Quảng cáo',
     'user' => 'Người dùng',
-    'filter' => 'Filter',
+    'filter' => 'Bộ lọc',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Tùy chọn',
     ],
 ];
