@@ -119,7 +119,7 @@ return [
         'name' => 'תמונת עמוד רישום',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'הסתר שדה מחיר רגיל',
     ],
     'enabled_currencies' => [
         'name' => 'מטבעות מופעלים',
@@ -131,19 +131,19 @@ return [
         'name' => 'דרישת דוא"ל לרישום חבר',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'זירת מסחר',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'הסתר מסנן מחירים',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'הסתר מסנן תאריכים',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'הסתר מסנן תמונות',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'הסתר את מסנן המפות',
     ],
 ];
