@@ -35,6 +35,6 @@ return [
     'disable_account' => 'آیا می خواهید حساب خود را ببندید؟ این عملیات قابل بازگشت نیست.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'ایمیل به روز شد!',
+    'update_email_mail_message' => 'ایمیل شما به روز شده است!',
 ];
