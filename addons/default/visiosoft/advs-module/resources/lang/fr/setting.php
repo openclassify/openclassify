@@ -119,7 +119,7 @@ return [
         'name' => 'Image de page de liste',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Masquer le champ de prix standard',
     ],
     'enabled_currencies' => [
         'name' => 'Devises activées',
@@ -131,19 +131,19 @@ return [
         'name' => 'Inscription par e-mail',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Place du marché',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Masquer le filtre de prix',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Masquer le filtre de date',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Masquer le filtre photo',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Masquer le filtre de la carte',
     ],
 ];
