@@ -40,8 +40,8 @@ return [
     'general' => 'সাধারণ',
     'ads' => 'বিজ্ঞাপন',
     'user' => 'ব্যবহারকারী',
-    'filter' => 'Filter',
+    'filter' => 'ছাঁকনি',
     'options' => [
-        'title' => 'Options',
+        'title' => 'বিকল্পগুলি',
     ],
 ];
