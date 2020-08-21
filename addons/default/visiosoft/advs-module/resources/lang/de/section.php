@@ -42,6 +42,6 @@ return [
     'user' => 'Benutzer',
     'filter' => 'Filter',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Optionen',
     ],
 ];
