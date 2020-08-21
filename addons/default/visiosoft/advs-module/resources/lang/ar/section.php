@@ -40,8 +40,8 @@ return [
     'general' => 'جنرال لواء',
     'ads' => 'إعلانات',
     'user' => 'المستعمل',
-    'filter' => 'Filter',
+    'filter' => 'منقي',
     'options' => [
-        'title' => 'Options',
+        'title' => 'خيارات',
     ],
 ];
