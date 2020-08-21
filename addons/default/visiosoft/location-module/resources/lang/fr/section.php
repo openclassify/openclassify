@@ -19,5 +19,5 @@ return [
     'general' => 'Général',
     'map' => 'Carte',
     'setting' => 'Réglage',
-    'filter' => 'Filter',
+    'filter' => 'Filtre',
 ];
