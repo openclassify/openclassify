@@ -40,8 +40,8 @@ return [
     'general' => 'כללי',
     'ads' => 'מודעות',
     'user' => 'משתמש',
-    'filter' => 'Filter',
+    'filter' => 'לְסַנֵן',
     'options' => [
-        'title' => 'Options',
+        'title' => 'אפשרויות',
     ],
 ];
