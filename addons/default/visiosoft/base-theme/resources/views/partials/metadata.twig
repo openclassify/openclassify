@@ -1,6 +1,3 @@
-<!-- Locale -->
-<meta http-equiv="Content-Language" content="{{ config('app.locale') }}">
-
 <!-- VueJS Requirements -->
 <meta name="csrf-token" content="{{ csrf_token() }}" />
 
@@ -27,7 +24,7 @@
 {% include "visiosoft.theme.base::partials/styles" %}
 
 {# Custom Theme Components #}
-<style type="text/css">
+<style>
     {% for style in asset_inlines("custom-theme.css", ["min"]) %}
     {{ style|raw }}
     {% endfor %}
