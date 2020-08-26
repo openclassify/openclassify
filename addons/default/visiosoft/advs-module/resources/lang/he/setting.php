@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'ברירת מחדל של מודעות GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'רוחב תמונה ממוזערת',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'הסתר את מסנן המפות',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
