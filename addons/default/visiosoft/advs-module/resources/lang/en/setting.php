@@ -146,4 +146,7 @@ return [
     'hide_map_filter' => [
         'name' => 'Hide Map Filter',
     ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
+    ],
 ];

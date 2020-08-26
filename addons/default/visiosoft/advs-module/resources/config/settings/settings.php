@@ -228,4 +228,11 @@ return [
             'default_value' => false,
         ]
     ],
+
+    'show_lang_url' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
 ];

@@ -75,7 +75,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         $query = $query->leftJoin('advs_advs_translations', function ($join) {
             $join->on('advs_advs.id', '=', 'advs_advs_translations.entry_id');
-            $join->where('advs_advs_translations.locale', '=', Request()->session()->get('_locale',setting_value('streams::default_locale')));
+            $join->where('advs_advs_translations.locale', '=', Request()->session()->get('_locale', setting_value('streams::default_locale')));
         });
 
         if (!empty($param['keyword'])) {
@@ -91,15 +91,25 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 });
             }
         }
-        $country = isset($param['country']) ?
-            $param['country'] : setting_value('visiosoft.module.location::default_country');
-        if ($country) {
-            $query = $query->where('country_id', $country);
-        }
-        if ($city) {
-            $query = $query->where('city', $city->id);
-        } elseif (isset($param['city']) and !empty($param['city']) and !empty(array_filter($param['city']))) {
-            $query = $query->whereIn('city', $param['city']);
+        if (!setting_value('visiosoft.module.location::hide_location_filter')) {
+            $country = isset($param['country']) ? $param['country'] : setting_value('visiosoft.module.location::default_country');
+            if ($country) {
+                $query = $query->where('country_id', $country);
+            }
+            if ($city) {
+                $query = $query->where('city', $city->id);
+            } elseif (isset($param['city']) and !empty(array_filter($param['city']))) {
+                $query = $query->whereIn('city', $param['city']);
+            }
+            if (isset($param['district']) and !empty(array_filter($param['district']))) {
+                $query = $query->whereIn('district', $param['district']);
+            }
+            if (isset($param['neighborhood']) and !empty(array_filter($param['neighborhood']))) {
+                $query = $query->whereIn('neighborhood', $param['neighborhood']);
+            }
+            if (isset($param['village']) and !empty(array_filter($param['village']))) {
+                $query = $query->whereIn('village', $param['village']);
+            }
         }
         if ($category) {
             $cat = new CategoryModel();
@@ -115,15 +125,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
-        }
-        if (isset($param['district']) and !empty(array_filter($param['district']))) {
-            $query = $query->whereIn('district', $param['district']);
-        }
-        if (isset($param['neighborhood']) and !empty(array_filter($param['neighborhood']))) {
-            $query = $query->whereIn('neighborhood', $param['neighborhood']);
-        }
-        if (isset($param['village']) and !empty(array_filter($param['village']))) {
-            $query = $query->whereIn('village', $param['village']);
         }
         if (!empty($param['min_price'])) {
             $num = $param['min_price'];

@@ -139,7 +139,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                             $foreign_currency[$currencyIn] = $price * $rate;
                         }
                     }
-                } catch (RequestException $e) {
+                } catch (\Exception $e) {
                     $this->messages->error((!is_null($e->getMessage())) ? $e->getMessage() : trans('streams::error.500.message'));
                 }
             }
