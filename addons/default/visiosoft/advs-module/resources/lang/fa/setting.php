@@ -80,6 +80,9 @@ return [
     'default_GET' => [
         'name' => 'تبلیغات پیش فرض GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'عرض تصویر',
     ],
@@ -146,5 +149,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'فیلتر نقشه مخفی شود',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
