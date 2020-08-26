@@ -98,7 +98,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
             if ($city) {
                 $query = $query->where('city', $city->id);
-            } elseif (isset($param['city']) and !empty($param['city']) and !empty(array_filter($param['city']))) {
+            } elseif (isset($param['city']) and !empty(array_filter($param['city']))) {
                 $query = $query->whereIn('city', $param['city']);
             }
             if (isset($param['district']) and !empty(array_filter($param['district']))) {
