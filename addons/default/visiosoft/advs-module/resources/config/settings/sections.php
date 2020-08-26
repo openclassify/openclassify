@@ -8,6 +8,7 @@ return [
                 'title' => 'visiosoft.module.advs::section.general',
                 'fields' => [
                     'market_place',
+                    'show_lang_url',
                     'iban_numbers',
                     'google_statistic_code',
                     'ogImage',
