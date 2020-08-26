@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Përcaktuar SET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Gjerësia e Thumbnail',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'Fsheh Filterin e Hartës',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
