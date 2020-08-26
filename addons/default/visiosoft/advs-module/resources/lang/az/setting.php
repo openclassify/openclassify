@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Defolt Elan GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Eskiz eni',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'Xəritə filtrini gizlət',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
