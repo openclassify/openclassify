@@ -2,9 +2,6 @@
     Main CSS can be found in metadata.twig
 #}
 
-<!-- VueJS Requirements -->
-<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
-
 {# Core Theme Components #}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/popper.min.js") }}
 {{ asset_add("theme.js", "visiosoft.theme.base::js/bootstrap.min.js") }}
@@ -24,20 +21,20 @@
 {{ asset_script("theme.js") }}
 
 {# Include Styles Loaded From Outside #}
-<style type="text/css">
+<style>
     {% for style in asset_inlines("styles.css", ["min"]) %}
     {{ style|raw }}
     {% endfor %}
 </style>
 
 {# Include Scripts Loaded From Outside #}
-<script type="text/javascript">
+<script>
     {% for script in asset_inlines("scripts.js", ["min"]) %}
     {{ script|raw }}
     {% endfor %}
 </script>
 
-<script type="text/javascript">
+<script>
     {% for script in asset_inlines("customjs.js") %}
     {{ script|raw }}
     {% endfor %}
