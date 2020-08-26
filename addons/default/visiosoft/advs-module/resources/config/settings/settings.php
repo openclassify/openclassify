@@ -108,6 +108,13 @@ return [
             'default_value' => 270,
         ],
     ],
+    'add_canvas' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox',
+        ],
+    ],
     'thumbnail_height' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [

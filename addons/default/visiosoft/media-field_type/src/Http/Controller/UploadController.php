@@ -62,21 +62,23 @@ class UploadController extends AdminController
             $fullImg = WaterMark::make($this->request->file('upload')->getRealPath())
                     ->resize(null, setting_value('visiosoft.field_type.media::imageResizeH', 600),function ($constraint) {
                             $constraint->aspectRatio();
-                    })
-                    ->resizeCanvas(
-                        setting_value('visiosoft.field_type.media::imageCanvasW', 800),
-                        setting_value('visiosoft.field_type.media::imageCanvasH', 600),
-                        'center', false, 'fff'
-                    );
+                    });
             $mdImg = WaterMark::make($this->request->file('upload')->getRealPath())
                     ->resize(null, setting_value('visiosoft.module.advs::picture_height'),function ($constraint) {
                         $constraint->aspectRatio();
-                    })
-                    ->resizeCanvas(
-                        setting_value('visiosoft.module.advs::picture_width', 400),
-                        setting_value('visiosoft.module.advs::picture_height', 300),
-                        'center', false, 'fff'
-                    );
+                    });
+            if (setting_value('visiosoft.module.advs::add_canvas')) {
+                $fullImg->resizeCanvas(
+                    setting_value('visiosoft.field_type.media::imageCanvasW', 800),
+                    setting_value('visiosoft.field_type.media::imageCanvasH', 600),
+                    'center', false, 'fff'
+                );
+                $mdImg->resizeCanvas(
+                    setting_value('visiosoft.module.advs::picture_width', 400),
+                    setting_value('visiosoft.module.advs::picture_height', 300),
+                    'center', false, 'fff'
+                );
+            }
             foreach ([$fullImg, $mdImg] as $index => $image) {
                 if ($watermarktype == 'image') {
                     $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');

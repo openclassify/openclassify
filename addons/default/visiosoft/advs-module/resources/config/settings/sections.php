@@ -25,6 +25,7 @@ return [
                     'estimated_pending_time',
                     'default_published_time',
                     'default_GET',
+                    'add_canvas',
                     'thumbnail_width',
                     'thumbnail_height',
                     'picture_width',

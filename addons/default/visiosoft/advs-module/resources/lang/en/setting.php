@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Default Ad GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Thumbnail Width',
     ],

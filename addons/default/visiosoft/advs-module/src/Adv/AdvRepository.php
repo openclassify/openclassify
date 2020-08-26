@@ -316,9 +316,18 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 // Create thumbnail image
                 $image = Image::make(file_get_contents($adv->files[0]->url()));
                 $image->resize(
-                    setting_value('visiosoft.module.advs::thumbnail_width'),
-                    setting_value('visiosoft.module.advs::thumbnail_height')
-                );
+                    null,
+                    setting_value('visiosoft.module.advs::thumbnail_height'),
+                    function ($constraint) {
+                        $constraint->aspectRatio();
+                    });
+                if (setting_value('visiosoft.module.advs::add_canvas')) {
+                    $image->resizeCanvas(
+                        setting_value('visiosoft.module.advs::thumbnail_width'),
+                        setting_value('visiosoft.module.advs::thumbnail_height'),
+                        'center', false, 'fff'
+                    );
+                }
                 $fileName = 'tn-' . $adv->files[0]->name;
                 $image->save(app_storage_path() . '/files-module/local/images/' . $fileName);
 
