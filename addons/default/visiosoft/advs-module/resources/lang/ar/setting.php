@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'الإعلان الافتراضي',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'عرض الصورة المصغرة',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'إخفاء عامل تصفية الخريطة',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
