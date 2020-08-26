@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Annuncio predefinito GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Larghezza Miniatura',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'Nascondi filtro mappa',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
