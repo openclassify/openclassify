@@ -278,10 +278,6 @@ class AdvsController extends PublicController
             $radio = $returnvalues['radio'];
         }
 
-        if (!empty($param['user'])) {
-            $user = $this->userRepository->find($param['user']);
-        }
-
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
         $viewType = $this->requestHttp->cookie('viewType');
@@ -300,6 +296,12 @@ class AdvsController extends PublicController
             }
             $this->template->set('showTitle', false);
             $this->template->set('meta_title', $catText);
+        }
+
+        if (!empty($param['user'])) {
+            $user = $this->userRepository->find($param['user']);
+            $this->template->set('showTitle', false);
+            $this->template->set('meta_title', $user->name() . ' ' . trans('visiosoft.module.advs::field.ads'));
         }
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
@@ -400,7 +402,11 @@ class AdvsController extends PublicController
 
         $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
         $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
-        $this->template->set('meta_title', $adv->name . "|" . end($categories)['name']);
+        $this->template->set('showTitle', false);
+        $this->template->set(
+            'meta_title',
+            $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain')
+        );
         if (substr($adv->cover_photo, 0, 4) === "http") {
             $coverPhoto = $adv->cover_photo;
         } else {
