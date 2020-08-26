@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'डिफ़ॉल्ट विज्ञापन GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'थंबनेल की चौड़ाई',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'मानचित्र फ़िल्टर छिपाएँ',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
