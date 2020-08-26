@@ -66,7 +66,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     protected $routes = [
         'admin/advs/advs' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
         'admin/advs/advs/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
-        'admin/advs/advs/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit',
+        'admin/advs/advs/edit/{id}' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit'
+        ],
         'admin/advs/village' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@index',
         'admin/advs/village/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@create',
         'admin/advs/village/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@edit',

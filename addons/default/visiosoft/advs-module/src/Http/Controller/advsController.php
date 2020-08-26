@@ -685,25 +685,16 @@ class AdvsController extends PublicController
         return redirect('/advs/edit_advs/' . $new->id);
     }
 
-    public function edit
-    (
-        $id,
-        AdvFormBuilder $advFormBuilder,
-        AdvRepositoryInterface $advRepository,
-        CategoryRepositoryInterface $categoryRepository,
-        AdvModel $advModel
-    )
+    public function edit($id)
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-        $isActive = new AdvModel();
-        $adv = $advRepository->getAdvArray($id);
+        $adv = $this->adv_repository->find($id);
 
         if (is_null($adv)) {
             $this->messages->error(trans('visiosoft.module.advs::message.no_add_found'));
             return $this->redirect->to(route('advs::create_adv'));
         }
+
+        $adv = $adv->toArray();
 
         if ($adv['created_by_id'] != auth()->id()
             && !auth()->user()->hasPermission('visiosoft.module.advs::advs.write')) {
@@ -714,9 +705,9 @@ class AdvsController extends PublicController
         $cats = array();
 
         for ($i = 1; $i <= 10; $i++) {
-            if ($adv[$cat . $i] != null) {
-                $name = $categoryRepository->getSingleCat($adv[$cat . $i]);
-                if (!is_null($name)) {
+            if ($adv[$cat . $i]) {
+                $name = $this->category_repository->getSingleCat($adv[$cat . $i]);
+                if ($name) {
                     $cats_d['cat' . $i] = $name->name;
                     $cats['cat' . $i] = $name->id;
                 } else {
@@ -729,8 +720,7 @@ class AdvsController extends PublicController
         $options = $this->optionRepository->findAllBy('adv_id', $id);
 
         //Cloudinary Module
-        $isActiveCloudinary = new AdvModel();
-        $isActiveCloudinary = $isActiveCloudinary->is_enabled('cloudinary');
+        $isActiveCloudinary = $this->adv_model->is_enabled('cloudinary');
         if ($isActiveCloudinary) {
             $CloudinaryModel = new VideoModel();
             $Cloudinary = $CloudinaryModel->getVideo($id)->get();
@@ -740,16 +730,17 @@ class AdvsController extends PublicController
             }
         }
 
-        $request = $cats;
-
         $categories = array_keys($cats);
 
-        if ($isActive->is_enabled('customfields')) {
-            $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->edit($adv, $categories, $cats);
+        if ($this->adv_model->is_enabled('customfields')) {
+            $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')
+                ->edit($adv, $categories, $cats);
         }
 
-        return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact('id', 'cats_d',
-            'request', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'options'));
+        return $this->view->make(
+            'visiosoft.module.advs::new-ad/new-create',
+            compact('id', 'cats_d', 'cats', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'options')
+        );
     }
 
     public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events)
