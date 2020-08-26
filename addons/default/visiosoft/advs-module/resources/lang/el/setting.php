@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Προεπιλεγμένη διαφήμιση GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Πλάτος μικρογραφιών',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'Απόκρυψη φίλτρου χάρτη',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
