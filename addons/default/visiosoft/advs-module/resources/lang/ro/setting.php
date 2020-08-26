@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Anunț implicit GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Lățimea miniaturii',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'Ascundeți filtrul de hartă',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
