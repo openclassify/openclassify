@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Quảng cáo mặc định NHẬN',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Chiều rộng hình thu nhỏ',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'Ẩn bộ lọc bản đồ',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
