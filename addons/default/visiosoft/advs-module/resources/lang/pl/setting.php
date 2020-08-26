@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Domyślna reklama GET',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Szerokość miniatury',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'Ukryj filtr mapy',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
