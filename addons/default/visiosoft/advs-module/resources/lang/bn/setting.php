@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'ডিফল্ট বিজ্ঞাপন জিইটি',
     ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'থাম্বনেইল প্রস্থ',
     ],
@@ -145,5 +148,8 @@ return [
     ],
     'hide_map_filter' => [
         'name' => 'মানচিত্র ফিল্টার লুকান',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang Parameter For URL',
     ],
 ];
