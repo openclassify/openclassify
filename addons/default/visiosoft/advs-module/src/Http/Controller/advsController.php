@@ -260,6 +260,7 @@ class AdvsController extends PublicController
             $mainCats[] = [
                 'id' => $current_cat->id,
                 'val' => $current_cat->name,
+                'slug' => $current_cat->slug,
             ];
             $subCats = $this->category_repository->getSubCatById($categoryId->id);
         } else {

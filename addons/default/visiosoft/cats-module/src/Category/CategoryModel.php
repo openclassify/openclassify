@@ -177,6 +177,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             $new = array();
             $new['id'] = $main->id;
             $new['val'] = $main->name;
+            $new['slug'] = $main->slug;
             $categories[] = $new;
             if ($main->parent_category_id != null) {
                 $id = $main->parent_category_id;
