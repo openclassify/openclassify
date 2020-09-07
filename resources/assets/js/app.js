@@ -15,8 +15,29 @@ require('./bootstrap');
 
 window.Vue = require('vue');
 
+const requireModulesVueFiles = (moduleVueFiles) => {
+    moduleVueFiles.keys().map(key => {
+        Vue.component(
+            key.split('/').pop().split('.')[0],
+            moduleVueFiles(key).default
+        )
+    })
+}
+
+requireModulesVueFiles(require.context(
+    '../../../addons/default/visiosoft',
+    true,
+    /\.vue$/i
+))
+
+requireModulesVueFiles(require.context(
+    '../../../core/visiosoft',
+    true,
+    /\.vue$/i
+))
+
 // Vue.component('example', require('./components/Example.vue').default);
-//
-// const app = new Vue({
-//     el: '#app'
-// });
+
+const app = new Vue({
+    el: '#openclassify'
+});
