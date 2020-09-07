@@ -292,7 +292,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->inRandomOrder()
             ->first();
 
-        $adv = $this->getLocationNames($adv);
+        if ($adv) {
+            $adv = $this->getLocationNames($adv);
+        }
 
         return $adv;
     }
