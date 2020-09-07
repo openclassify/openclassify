@@ -23,9 +23,14 @@ class SitemapController extends PublicController
     public function index()
     {
         $categoriesCount = $this->categoryRepository->count();
-        $citiesCount = $this->cityRepository->count();
 
-        $pagesCount = $citiesCount ? $categoriesCount * $citiesCount : $categoriesCount;
+        if (setting_value('visiosoft.module.cats::include_cities_sitemap')) {
+            $citiesCount = $this->cityRepository->count();
+            $pagesCount = $citiesCount ? $categoriesCount * $citiesCount : $categoriesCount;
+        } else {
+            $pagesCount = $categoriesCount;
+        }
+
         $pagesCount = ceil($pagesCount / setting_value('visiosoft.module.cats::sitemap_dividing_number'));
 
         return response()->view('visiosoft.module.cats::sitemap.index', [
@@ -39,8 +44,8 @@ class SitemapController extends PublicController
         $page = request()->page ?: 1;
         $skip = $page - 1;
 
-        $citiesCount = $this->cityRepository->count();
-        if ($citiesCount) {
+        if (setting_value('visiosoft.module.cats::include_cities_sitemap')
+            && $citiesCount = $this->cityRepository->count()) {
             $categoriesCount = $this->categoryRepository->count();
 
             $takeCategories = $categoriesCount / ($categoriesCount * $citiesCount / $sitemapDividingNumber);

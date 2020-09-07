@@ -7,4 +7,11 @@ return [
             "default_value" => 5000,
         ]
     ],
+    "include_cities_sitemap" => [
+        "type"   => "anomaly.field_type.boolean",
+        "config" => [
+            "default_value" => true,
+            "mode"          => "checkbox",
+        ]
+    ]
 ];
