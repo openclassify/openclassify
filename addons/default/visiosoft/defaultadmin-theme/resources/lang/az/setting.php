@@ -17,6 +17,9 @@ return [
     "title" => [
         'name' => 'Başlıq',
     ],
+    "footer_copyright_org_name" => [
+        'name' => 'Footer Copyright Organization Name',
+    ],
     "sidebar_main_color" => [
         'name' => 'Yan panel əsas rəng',
     ],
