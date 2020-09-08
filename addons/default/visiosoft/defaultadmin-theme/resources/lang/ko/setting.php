@@ -17,6 +17,9 @@ return [
     "title" => [
         'name' => '표제',
     ],
+    "footer_copyright_org_name" => [
+        'name' => 'Footer Copyright Organization Name',
+    ],
     "sidebar_main_color" => [
         'name' => '사이드 바 기본 색상',
     ],
