@@ -17,6 +17,9 @@ return [
     "title" => [
         'name' => 'Τίτλος',
     ],
+    "footer_copyright_org_name" => [
+        'name' => 'Footer Copyright Organization Name',
+    ],
     "sidebar_main_color" => [
         'name' => 'Κύριο χρώμα πλευρικής γραμμής',
     ],
