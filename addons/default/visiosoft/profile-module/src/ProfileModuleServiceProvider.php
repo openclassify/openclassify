@@ -1,6 +1,9 @@
 <?php namespace Visiosoft\ProfileModule;
 
+use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Maatwebsite\Excel\ExcelServiceProvider;
+use Maatwebsite\Excel\Facades\Excel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressRepository;
 use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
@@ -133,6 +136,10 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.profile::address_soft_delete',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\AddressController@delete'
         ],
+        'admin/users/export' => [
+            'as' => 'users::exportUsers',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\Admin\UsersController@exportUsers'
+        ],
 
 
         // Cache links
@@ -183,7 +190,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $aliases = [
-        //'Example' => Visiosoft\ProfileModule\Example::class
+        'Excel' => Excel::class,
     ];
 
     /**
@@ -218,7 +225,9 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      *
      * @type array|null
      */
-    protected $providers = [];
+    protected $providers = [
+        ExcelServiceProvider::class,
+    ];
 
     /**
      * The addon view overrides.
@@ -252,10 +261,14 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
     /**
      * Boot the addon.
      */
-    public function boot()
+    public function boot(AddonCollection $addonCollection)
     {
-        // Run extra post-boot registration logic here.
-        // Use method injection or commands to bring in services.
+        $slug = 'export';
+        $section = [
+            'title' => 'visiosoft.module.profile::button.export',
+            'href' => route('users::exportUsers'),
+        ];
+        $addonCollection->get('anomaly.module.users')->addSection($slug, $section);
     }
 
     /**
