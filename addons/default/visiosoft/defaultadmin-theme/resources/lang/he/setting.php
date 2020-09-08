@@ -17,6 +17,9 @@ return [
     "title" => [
         'name' => 'כותרת',
     ],
+    "footer_copyright_org_name" => [
+        'name' => 'Footer Copyright Organization Name',
+    ],
     "sidebar_main_color" => [
         'name' => 'צבע עיקרי בסרגל הצד',
     ],
