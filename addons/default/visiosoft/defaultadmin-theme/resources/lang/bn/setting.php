@@ -17,6 +17,9 @@ return [
     "title" => [
         'name' => 'শিরোনাম',
     ],
+    "footer_copyright_org_name" => [
+        'name' => 'Footer Copyright Organization Name',
+    ],
     "sidebar_main_color" => [
         'name' => 'সাইডবার প্রধান রঙ Color',
     ],
