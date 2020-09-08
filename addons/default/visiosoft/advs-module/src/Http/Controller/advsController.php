@@ -343,89 +343,90 @@ class AdvsController extends PublicController
     {
         $id = is_null($id) ? $seo : $id;
 
-        $categories = array();
-        $categories_id = array();
-        $isActiveComplaints = $this->adv_model->is_enabled('complaints');
-        $isCommentActive = $this->adv_model->is_enabled('comments');
-
-        if ($isActiveComplaints) {
-            $complaints = ComplaintsComplainTypesEntryModel::all();
-        }
-
         $adv = $this->adv_repository->getListItemAdv($id);
 
-        $recommended_advs = $this->adv_repository->getRecommendedAds($adv->id);
+        if ($adv) {
 
-        foreach ($recommended_advs as $index => $ad) {
-            $recommended_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
-            $recommended_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
-        }
+            if ($this->adv_model->is_enabled('complaints')) {
+                $complaints = ComplaintsComplainTypesEntryModel::all();
+            }
 
-        for ($i = 1; $i <= 10; $i++) {
-            $cat = "cat" . $i;
-            if ($adv->$cat != null) {
-                $item = $this->category_repository->getItem($adv->$cat);
-                if (!is_null($item)) {
-                    $categories['cat' . $i] = [
-                        'name' => $item->name,
-                        'id' => $item->id
-                    ];
-                    $categories_id[] = $item->id;
+            $recommended_advs = $this->adv_repository->getRecommendedAds($adv->id);
+
+            foreach ($recommended_advs as $index => $ad) {
+                $recommended_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
+                $recommended_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
+            }
+
+            $categories = array();
+            $categories_id = array();
+            for ($i = 1; $i <= 10; $i++) {
+                $cat = "cat" . $i;
+                if ($adv->$cat != null) {
+                    $item = $this->category_repository->getItem($adv->$cat);
+                    if (!is_null($item)) {
+                        $categories['cat' . $i] = [
+                            'name' => $item->name,
+                            'id' => $item->id
+                        ];
+                        $categories_id[] = $item->id;
+                    }
+
                 }
-
             }
-        }
 
-        if ($this->adv_model->is_enabled('customfields')) {
-            $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
-        }
-
-        //Cloudinary Module
-        $adv->video_url = null;
-        $isActiveCloudinary = $this->adv_model->is_enabled('cloudinary');
-        if ($isActiveCloudinary) {
-
-            $CloudinaryModel = new VideoModel();
-            $Cloudinary = $CloudinaryModel->getVideo($id);
-
-            if (count($Cloudinary->get()) > 0) {
-                $adv->video_url = $Cloudinary->first()->toArray()['url'];
+            if ($this->adv_model->is_enabled('customfields')) {
+                $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
             }
-        }
 
-        $options = $this->optionRepository->findAllBy('adv_id', $id);
+            //Cloudinary Module
+            $adv->video_url = null;
+            if ($this->adv_model->is_enabled('cloudinary')) {
 
-        if ($isCommentActive) {
-            $CommentModel = new CommentModel();
-            $comments = $CommentModel->getComments($adv->id)->get();
-        }
-        $this->event->dispatch(new viewAd($adv));//view ad
+                $CloudinaryModel = new VideoModel();
+                $Cloudinary = $CloudinaryModel->getVideo($id);
 
-        $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
-        $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
-        $this->template->set('showTitle', false);
-        $this->template->set(
-            'meta_title',
-            $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain')
-        );
-        if (substr($adv->cover_photo, 0, 4) === "http") {
-            $coverPhoto = $adv->cover_photo;
-        } else {
-            if (substr($adv->cover_photo, 0, 1) === "/") {
-                $coverPhoto = \Illuminate\Support\Facades\Request::root() . $adv->cover_photo;
+                if (count($Cloudinary->get()) > 0) {
+                    $adv->video_url = $Cloudinary->first()->toArray()['url'];
+                }
+            }
+
+            $options = $this->optionRepository->findAllBy('adv_id', $id);
+
+            if ($this->adv_model->is_enabled('comments')) {
+                $CommentModel = new CommentModel();
+                $comments = $CommentModel->getComments($adv->id)->get();
+            }
+            $this->event->dispatch(new viewAd($adv));//view ad
+
+            $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
+            $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
+            $this->template->set('showTitle', false);
+            $this->template->set(
+                'meta_title',
+                $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain')
+            );
+            if (substr($adv->cover_photo, 0, 4) === "http") {
+                $coverPhoto = $adv->cover_photo;
             } else {
-                $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
+                if (substr($adv->cover_photo, 0, 1) === "/") {
+                    $coverPhoto = \Illuminate\Support\Facades\Request::root() . $adv->cover_photo;
+                } else {
+                    $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
+                }
             }
-        }
-        $this->template->set('meta_image', $coverPhoto);
+            $this->template->set('meta_image', $coverPhoto);
 
-        if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
-            return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-                'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options'));
+            if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
+                return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
+                    'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options'));
+            } else {
+                return back();
+            }
         } else {
-            return back();
+            $this->messages->error(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
+            return redirect()->route('visiosoft.module.advs::list');
         }
-
     }
 
     public function preview($id)

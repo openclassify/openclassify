@@ -2,7 +2,7 @@
 
     <ul class="meta">
         <li class="copyright">
-            &copy; {{ 'now'|date('Y') }} OpenClassify, Inc
+            &copy; {{ 'now'|date('Y') }} {{ setting_value('visiosoft.theme.defaultadmin::footer_copyright_org_name') }}
         </li>
         <li class="footprint">
             {{ request_time() }} <span>|</span> {{ memory_usage() }}

@@ -18,6 +18,12 @@ return [
             "default_value" => 'OpenClassify',
         ]
     ],
+    "footer_copyright_org_name" => [
+        "type"   => "anomaly.field_type.text",
+        "config" => [
+            "default_value" => 'OpenClassify, Inc',
+        ]
+    ],
     "sidebar_main_color" => [
         "type"   => "anomaly.field_type.colorpicker",
         "config" => [
