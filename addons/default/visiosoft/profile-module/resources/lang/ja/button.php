@@ -14,4 +14,5 @@ return [
     'go_user' => 'ユーザーの詳細に移動',
     'personal' => '個人的な',
     'corporate' => 'コーポレート',
+    'export' => 'Export',
 ];
