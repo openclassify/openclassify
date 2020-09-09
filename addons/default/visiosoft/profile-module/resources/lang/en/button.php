@@ -14,5 +14,5 @@ return [
     'go_user' => 'Go to User Detail',
     'personal' => 'Personal',
     'corporate' => 'Corporate',
-    'export' => 'Export CSV',
+    'export' => 'Export',
 ];
