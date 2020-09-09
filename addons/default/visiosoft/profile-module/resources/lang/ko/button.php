@@ -14,4 +14,5 @@ return [
     'go_user' => '사용자 정보로 이동',
     'personal' => '개인적인',
     'corporate' => '기업',
+    'export' => 'Export',
 ];
