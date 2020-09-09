@@ -14,4 +14,5 @@ return [
     'go_user' => 'İstifadəçi təfərrüatlarına keçin',
     'personal' => 'Şəxsi',
     'corporate' => 'Korporativ',
+    'export' => 'Export',
 ];
