@@ -14,4 +14,5 @@ return [
     'go_user' => 'ব্যবহারকারীর বিবরণে যান',
     'personal' => 'ব্যক্তিগত',
     'corporate' => 'কর্পোরেট',
+    'export' => 'Export',
 ];
