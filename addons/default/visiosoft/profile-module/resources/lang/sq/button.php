@@ -14,4 +14,5 @@ return [
     'go_user' => 'Shkoni te Detajet e përdoruesit',
     'personal' => 'personal',
     'corporate' => 'i korporatës',
+    'export' => 'Export',
 ];
