@@ -14,4 +14,5 @@ return [
     'go_user' => 'עבור לפרטי המשתמש',
     'personal' => 'אישי',
     'corporate' => 'תאגידי',
+    'export' => 'Export',
 ];
