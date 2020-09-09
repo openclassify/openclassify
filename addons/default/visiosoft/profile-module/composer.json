@@ -5,5 +5,8 @@
     "psr-4": {
       "Visiosoft\\ProfileModule\\": "src/"
     }
+  },
+  "require": {
+    "maatwebsite/excel": "*"
   }
 }
