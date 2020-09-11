@@ -29,9 +29,11 @@
                             <i class="fas fa-plus-circle"></i>
                             {{ trans("visiosoft.theme.base::button.post_ad.name") }}
                         </a>
-                        <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
-                            {{ trans('visiosoft.module.profile::button.extend_all') }}
-                        </a>
+                        {% if auth_user().hasRole('admin') %}
+                            <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
+                                {{ trans('visiosoft.module.profile::button.extend_all') }}
+                            </a>
+                        {% endif %}
                     </div>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                         <div class="tab-pane fade{{ type == 'approved' ? ' show active' : '' }}" id="nav-approved"
