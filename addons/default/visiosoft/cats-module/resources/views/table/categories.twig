@@ -8,15 +8,15 @@
     {{ asset_add("scripts.js", "streams::js/table/sortable.js") }}
 {% endif %}
 {% if app.request.get('cat') != null %}
-    {% set parent = category_detail(app.request.get('cat')) %}
+    {% set parent = findCategory(app.request.get('cat')) %}
     {% if parent.parent_category is null %}
         {% set parent_url = url('admin/cats') %}
     {% else %}
         {% set parent_url = url('admin/cats?cat='~parent.parent_category_id) %}
     {% endif %}
     <ol class="breadcrumb">
-        {% for parnt in category_parents_name(app.request.get('cat'))|reverse %}
-        <li class="breadcrumb-item"><a><b>{{ parnt }}</b></a></li>
+        {% for parent in getParents(app.request.get('cat'))|reverse %}
+        <li class="breadcrumb-item"><a><b>{{ parent.name }}</b></a></li>
         {% endfor %}
     </ol>
     <div class="container-fluid">

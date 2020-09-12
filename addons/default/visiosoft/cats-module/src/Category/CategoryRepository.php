@@ -1,9 +1,9 @@
 <?php namespace Visiosoft\CatsModule\Category;
 
-use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
+use Visiosoft\CatsModule\Category\Events\DeletedCategory;
 
 class CategoryRepository extends EntryRepository implements CategoryRepositoryInterface
 {
@@ -14,7 +14,6 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
      * @var CategoryModel
      */
     protected $model;
-    protected $advRepository;
 
     /**
      * Create a new CategoryRepository instance.
@@ -22,38 +21,64 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
      * @param CategoryModel $model
      * @param AdvRepositoryInterface $advRepository
      */
-    public function __construct(CategoryModel $model, AdvRepositoryInterface $advRepository)
+    public function __construct(CategoryModel $model)
     {
         $this->model = $model;
-        $this->advRepository = $advRepository;
     }
 
-    public function findById($id)
+    public function deleteSubCategories($id)
     {
-        return $this->model->orderBy('created_at', 'DESC')->where('cats_category.id', $id)->first();
+        $sub = $this->getSubCategories($id);
+        for ($i = 0; $i <= count($sub) - 1; $i++) {
+            $sub = array_merge($sub, $this->getSubCategories($sub[$i]));
+        }
+
+        if (count($sub)) {
+            $this->newQuery()->whereIn('id', $sub)->delete();
+        }
+        return true;
     }
 
-    public function mainCats()
+    public function deleteCategories($id)
     {
-        return $this->newQuery()
-            ->whereNull('parent_category_id')
-            ->orderBy('sort_order')
+        if ($category = $this->find($id)) {
+            $category->delete();
+
+            event(new DeletedCategory($category, $this->getParents($id)));
+
+            $this->deleteSubCategories($id);
+        }
+    }
+
+    public function skipAndTake($take, $skip)
+    {
+        $this->newQuery()
+            ->skip($take * $skip)
+            ->take($take)
             ->get();
     }
 
-    public function getItem($cat)
+    public function getParents($id)
     {
-        return $this->model->where('cats_category.id', $cat)->first();
+        $category = $this->find($id);
+        $z = 1;
+        $categories = [$category];
+
+        for ($i = 0; $i < $z; $i++) {
+            if ($category = $this->find($category->parent_category_id)) {
+                $categories[] = $category;
+                if (!$category->parent_category_id) {
+                    break;
+                }
+                $z++;
+            }
+        }
+        return $categories;
     }
 
-    public function getCatById($id)
+    public function getSubCategories($id)
     {
-        return $this->model->where('cats_category.id', $id)->where('deleted_at', null)->orderBy('sort_order')->get();
-    }
-
-    public function getSubCatById($id)
-    {
-        $cats = $this->model->newQuery()
+        $cats = $this->newQuery()
             ->where('parent_category_id', $id)
             ->get();
 
@@ -61,54 +86,67 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
             $subCount = $this->model->newQuery()->where('parent_category_id', $cat->id)->count();
             $cat->hasChild = !!$subCount;
         }
-
         return $cats;
     }
 
-    public function getSingleCat($id)
+    public function getMainCategories()
     {
-        return CatsCategoryEntryModel::query()->where('cats_category.id', $id)->first();
+        return $this->newQuery()->whereNull('parent_category_id')->get();
     }
 
-    public function findBySlug($slug)
+    public function getCategoryTextSeo($categories)
     {
-        return $this->model->orderBy('created_at', 'DESC')->where('slug', $slug)->first();
-    }
-
-    public function getCategories()
-    {
-        return $this->model->orderBy('sort_order')->get();
-    }
-
-    public function removeCatFromAds($category)
-    {
-        $catLevelNum = 1;
-        if (!is_null($category->parent_category_id)) {
-            $catLevelNum = $this->model->getCatLevel($category->id);
-        }
-        $catLevelText = "cat" . $catLevelNum;
-
-        $advs = $this->advRepository->newQuery()->where($catLevelText, $category->id)->get();
-        foreach ($advs as $adv) {
-            $nullableCats = array();
-            for ($i = $catLevelNum; $i <= 10; $i++) {
-                $nullableCats['cat' . $i] = null;
+        if (count($categories) == 1 || count($categories) == 2) {
+            $catText = end($mainCats)['name'];
+        } elseif (count($categories) > 2) {
+            $catArray = array_slice($categories->toArray(), 2);
+            $catText = '';
+            $loop = 0;
+            foreach ($catArray as $cat) {
+                $catText = !$loop ? $catText . $cat['name'] : $catText . ' ' . $cat['name'];
+                $loop++;
             }
-            $adv->update($nullableCats);
         }
     }
 
-    public function DeleteCategories($id)
+    public function setQuerySearchingAds($query, $category)
     {
-        if (!is_null($category = $this->find($id))) {
-            // Remove deleted category from ads
-            $this->removeCatFromAds($category);
+        $catLevel = "cat" . (!$category->parent_category_id) ? 1 : count($this->getParents($category->id));
 
-            // Delete the category
-            $this->model->find($id)->delete();
+        return $query->where($catLevel, $category->id);
+    }
 
-            // Delete the subcategories
-            $this->model->deleteSubCategories($id);
+    public function searchKeyword($keyword, $selected = null)
+    {
+        $data = [];
+        $cats = $this->newQuery();
+
+        if ($selected) {
+            if (strpos($selected, "-") !== false) {
+                $cats = $cats->whereNotIn('id', explode('-', $selected));
+            } else {
+                $cats = $cats->where('id', '!=', $selected);
+            }
         }
+
+        $cats = $cats->where('name', 'like', $keyword . '%')
+            ->orderBy('id', 'DESC')
+            ->get();
+
+        foreach ($cats as $cat) {
+            $link = '';
+            $parents = $this->getParents($cat->id);
+            krsort($parents);
+            foreach ($parents as $key => $parent) {
+                $link .= ($key == 0) ? $parent->name . '' : $parent->name . ' > ';
+            }
+
+            $data[] = array(
+                'id' => $cat->id,
+                'name' => $cat->name,
+                'parents' => $link
+            );
+        }
+        return $data;
     }
 }

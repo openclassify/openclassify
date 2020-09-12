@@ -5,6 +5,7 @@ use Anomaly\UsersModule\User\UserModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
@@ -50,12 +51,12 @@ class AjaxController extends PublicController
         return response()->json($datas);
     }
 
-    public function keySearch(Request $request)
+    public function keySearch(Request $request, CategoryRepositoryInterface $categoryRepository)
     {
-        $datas = [];
-        $catModel = new CategoryModel();
-        $datas['category'] = $catModel->searchKeyword($request->q, $request->selected);
-        return response()->json($datas);
+        $response = [
+            'category' => $categoryRepository->searchKeyword($request->q, $request->selected)
+        ];
+        return response()->json($response);
     }
 
     public function viewed(AdvModel $advModel, $id)
@@ -75,7 +76,7 @@ class AjaxController extends PublicController
             $my_advs = $my_advs->myAdvsByUser();
         }
         $my_advs = $my_advs->select(['id', 'cover_photo', 'slug', 'price', 'currency', 'city', 'country_id', 'cat1', 'cat2', 'status'])
-                           ->orderByDesc('id');
+            ->orderByDesc('id');
         $my_advs = $advRepository->addAttributes($my_advs->get());
 
         foreach ($my_advs as $index => $ad) {

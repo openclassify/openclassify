@@ -20,15 +20,6 @@ class CategoryTableBuilder extends TableBuilder
     ];
 
     /**
-     * The table filters.
-     *
-     * @var array|string
-     */
-    protected $filters = [
-
-    ];
-
-    /**
      * The table columns.
      *
      * @var array|string

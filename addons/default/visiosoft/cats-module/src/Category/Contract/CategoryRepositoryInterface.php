@@ -4,21 +4,21 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryRepositoryInterface;
 
 interface CategoryRepositoryInterface extends EntryRepositoryInterface
 {
-    public function findById($id);
+    public function deleteSubCategories($id);
 
-    public function mainCats();
+    public function deleteCategories($id);
 
-    public function getItem($cat);
+    public function skipAndTake($take, $skip);
 
-    public function getCatById($id);
+    public function getParents($id);
 
-    public function getSubCatById($id);
+    public function getSubCategories($id);
 
-    public function getSingleCat($id);
+    public function getMainCategories();
 
-    public function findBySlug($slug);
+    public function getCategoryTextSeo($categories);
 
-    public function getCategories();
+    public function setQuerySearchingAds($query, $category);
 
-    public function DeleteCategories($id);
+    public function searchKeyword($keyword, $selected = null);
 }

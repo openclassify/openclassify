@@ -37,7 +37,6 @@ class VisiosoftModuleCatsCreateCatsFields extends Migration
         ],
         'seo_keyword' => 'anomaly.field_type.tags',
         'seo_description' => 'anomaly.field_type.text',
-
     ];
 
 }

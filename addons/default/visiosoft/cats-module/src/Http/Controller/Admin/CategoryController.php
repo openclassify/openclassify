@@ -31,15 +31,8 @@ class CategoryController extends AdminController
 
     public function index(CategoryTableBuilder $table, Request $request)
     {
-        if ($this->request->action == "delete") {
-            $CategoriesModel = new CategoryModel();
-            foreach ($this->request->id as $item) {
-                $CategoriesModel->deleteSubCategories($item);
-            }
-        }
-        if (!isset($request->cat) || $request->cat == "") {
-            $categories = CategoryModel::query()->where('parent_category_id', '')->orWhereNull('parent_category_id')->get();
-            $categories = $categories->where('deleted_at', null);
+        if ($request->cat || $request->cat == "") {
+            $categories = $this->categoryRepository->getMainCategories();
         } else {
             $categories = CategoryModel::query()->where('parent_category_id', $request->cat)->whereNull('deleted_at')->get();
         }

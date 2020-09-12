@@ -20,7 +20,7 @@ class CategoryCriteria extends EntryCriteria
     }
 
     public function getMainCats() {
-        $mainCats = $this->categoryRepository->mainCats();
+        $mainCats = $this->categoryRepository->getMainCategories();
 
         foreach ($mainCats as $cat) {
             $subCount = $this->categoryRepository->newQuery()->where('parent_category_id', $cat->id)->count();

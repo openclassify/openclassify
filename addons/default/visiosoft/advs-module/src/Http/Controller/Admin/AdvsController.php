@@ -19,6 +19,7 @@ use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 
@@ -134,9 +135,9 @@ class AdvsController extends AdminController
                 'value' => 'entry.created_by.name'
             ],
             'category' => [
-                'value' => function (EntryInterface $entry, CategoryModel $categoryModel) {
-                    $category = $categoryModel->getCat($entry->cat1);
-                    if (!is_null($category))
+                'value' => function (EntryInterface $entry, CategoryRepositoryInterface $categoryRepository) {
+                    $category = $categoryRepository->find($entry->cat1);
+                    if ($category)
                         return $category->name;
                 }
             ],

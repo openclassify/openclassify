@@ -30,11 +30,6 @@ class CatsModule extends Module
                 'new_category',
             ],
         ],
-        'placeholderforsearch' => [
-            'buttons' => [
-                'new_placeholderforsearch',
-            ],
-        ],
     ];
 
 }

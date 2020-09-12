@@ -7,77 +7,70 @@ use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 class SitemapController extends PublicController
 {
 
-    private $categoryRepository;
-    private $cityRepository;
+    private $category;
+    private $city;
 
     public function __construct(
-        CategoryRepositoryInterface $categoryRepository,
-        CityRepositoryInterface $cityRepository
+        CategoryRepositoryInterface $category,
+        CityRepositoryInterface $city
     )
     {
         parent::__construct();
-        $this->categoryRepository = $categoryRepository;
-        $this->cityRepository = $cityRepository;
+        $this->category = $category;
+        $this->city = $city;
     }
 
     public function index()
     {
-        $categoriesCount = $this->categoryRepository->count();
+        $categoriesCount = $this->category->count();
+        $include_cities_sitemap = setting_value('visiosoft.module.cats::include_cities_sitemap');
+        $sitemap_dividing_number = setting_value('visiosoft.module.cats::sitemap_dividing_number');
 
-        if (setting_value('visiosoft.module.cats::include_cities_sitemap')) {
-            $citiesCount = $this->cityRepository->count();
+        if ($include_cities_sitemap) {
+            $citiesCount = $this->city->count();
             $pagesCount = $citiesCount ? $categoriesCount * $citiesCount : $categoriesCount;
         } else {
             $pagesCount = $categoriesCount;
         }
 
-        $pagesCount = ceil($pagesCount / setting_value('visiosoft.module.cats::sitemap_dividing_number'));
+        $pagesCount = ceil($pagesCount / $sitemap_dividing_number);
 
-        return response()->view('visiosoft.module.cats::sitemap.index', [
-            'pagesCount' => $pagesCount,
-        ])->header('Content-Type', 'text/xml');
+        return $this->response->view('visiosoft.module.cats::sitemap.index', compact('pagesCount'))
+            ->header('Content - Type', 'text / xml');
     }
 
     public function categories()
     {
-        $sitemapDividingNumber = setting_value('visiosoft.module.cats::sitemap_dividing_number');
         $page = request()->page ?: 1;
         $skip = $page - 1;
+        $sitemapLinks = array();
+        $sitemap_dividing_number = setting_value('visiosoft.module.cats::sitemap_dividing_number');
+        $include_cities_sitemap = setting_value('visiosoft.module.cats::include_cities_sitemap');
 
-        if (setting_value('visiosoft.module.cats::include_cities_sitemap')
-            && $citiesCount = $this->cityRepository->count()) {
-            $categoriesCount = $this->categoryRepository->count();
 
-            $takeCategories = $categoriesCount / ($categoriesCount * $citiesCount / $sitemapDividingNumber);
+        if ($citiesCount = $this->city->count() && $include_cities_sitemap) {
+            $categoriesCount = $this->category->count();
 
-            $categories = $this->categoryRepository
-                ->newQuery()
-                ->skip($takeCategories * $skip)
-                ->take($takeCategories)
-                ->get();
+            $take = $categoriesCount / ($categoriesCount * $citiesCount / $sitemap_dividing_number);
 
-            $sitemapLinks = array();
-            $cities = $this->cityRepository->all();
+            $categories = $this->category->skipAndTake($take, $skip);
+
+            $cities = $this->city->all();
+
             foreach ($categories as $category) {
                 foreach ($cities as $city) {
                     $sitemapLinks[] = route('adv_list_seo', [$category->slug, $city->slug]);
                 }
             }
         } else {
-            $categories = $this->categoryRepository
-                ->newQuery()
-                ->skip($sitemapDividingNumber * $skip)
-                ->take($sitemapDividingNumber)
-                ->get();
+            $categories = $this->category->skipAndTake($sitemap_dividing_number, $skip);
 
-            $sitemapLinks = array();
             foreach ($categories as $category) {
                 $sitemapLinks[] = route('adv_list_seo', [$category->slug]);
             }
         }
 
-        return response()->view('visiosoft.module.cats::sitemap.categories', [
-            'sitemapLinks' => $sitemapLinks,
-        ])->header('Content-Type', 'text/xml');
+        return response()->view('visiosoft.module.cats::sitemap.categories', compact('sitemapLinks'))
+            ->header('Content - Type', 'text / xml');
     }
 }

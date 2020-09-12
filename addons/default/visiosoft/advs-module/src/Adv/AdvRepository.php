@@ -10,7 +10,7 @@ use Intervention\Image\Facades\Image;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\AdvsModule\Category\Contract\CategoryRepositoryInterface;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 
@@ -34,6 +34,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
      */
     private $folderRepository;
 
+    public $categoryRepository;
+
+
     /**
      * Create a new AdvRepository instance.
      *
@@ -43,13 +46,15 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         AdvModel $model,
         SettingRepositoryInterface $settings,
         FileRepositoryInterface $fileRepository,
-        FolderRepositoryInterface $folderRepository
+        FolderRepositoryInterface $folderRepository,
+        CategoryRepositoryInterface $categoryRepository
     )
     {
         $this->model = $model;
         $this->settings = $settings;
         $this->fileRepository = $fileRepository;
         $this->folderRepository = $folderRepository;
+        $this->categoryRepository = $categoryRepository;
     }
 
     /**
@@ -112,16 +117,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         }
         if ($category) {
-            $cat = new CategoryModel();
-            if ($category) {
-                if ($category->parent_category_id == null) {
-                    $catLevel = 1;
-                } else {
-                    $catLevel = $cat->getCatLevel($category->id);
-                }
-                $catLevel = "cat" . $catLevel;
-                $query = $query->where($catLevel, $category->id);
-            }
+            $query = $this->categoryRepository->setQuerySearchingAds($query, $category);
         }
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
@@ -265,20 +261,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function getCatNames($adv)
     {
-        $cat1 = CategoryModel::query()->where('cats_category.id', $adv->cat1)->first();
-        $cat2 = CategoryModel::query()->where('cats_category.id', $adv->cat2)->first();
+        $cat1 = $this->categoryRepository->find($adv->cat1);
+        $cat2 = $this->categoryRepository->find($adv->cat2);
 
-        if (!is_null($cat1))
-            $adv->setAttribute('cat1_name', $cat1->name);
-        else
-            $adv->setAttribute('cat1_name', "");
-
-        if (!is_null($cat2))
-            $adv->setAttribute('cat2_name', $cat2->name);
-
-        else
-            $adv->setAttribute('cat2_name', "");
-
+        $adv->setAttribute('cat1_name', ($cat1) ? $cat1->name : "");
+        $adv->setAttribute('cat2_name', ($cat2) ? $cat2->name : "");
 
         return $adv;
     }
@@ -301,9 +288,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function addAttributes($advs)
     {
-        foreach ($advs as $adv) {
-            $adv = $this->getLocationNames($adv);
-            $adv = $this->getCatNames($adv);
+        foreach ($advs as $key => $adv) {
+            $advs[$key] = $this->getLocationNames($adv);
+            $advs[$key] = $this->getCatNames($adv);
         }
 
         return $advs;

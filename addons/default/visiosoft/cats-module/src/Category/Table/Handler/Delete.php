@@ -2,14 +2,10 @@
 
 use Anomaly\Streams\Platform\Ui\Table\Component\Action\ActionHandler;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
-use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 
 class Delete extends ActionHandler
 {
-    public function handle(
-        CategoryTableBuilder $builder, array $selected,
-        CategoryRepositoryInterface $categoryRepository
-    )
+    public function handle(array $selected, CategoryRepositoryInterface $categoryRepository)
     {
         try {
             foreach ($selected as $id) {

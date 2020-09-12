@@ -1,10 +1,6 @@
 <?php namespace Visiosoft\CatsModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
-use Visiosoft\CatsModule\Placeholderforsearch\Contract\PlaceholderforsearchRepositoryInterface;
-use Visiosoft\CatsModule\Placeholderforsearch\PlaceholderforsearchRepository;
-use Anomaly\Streams\Platform\Model\Cats\CatsPlaceholderforsearchEntryModel;
-use Visiosoft\CatsModule\Placeholderforsearch\PlaceholderforsearchModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
@@ -51,9 +47,6 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      */
     protected $routes = [
         'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubcats',
-        'admin/cats/placeholderforsearch' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@index',
-        'admin/cats/placeholderforsearch/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@create',
-        'admin/cats/placeholderforsearch/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\PlaceholderforsearchController@edit',
         'admin/cats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index',
         'admin/cats/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',
         'admin/cats/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@edit',
@@ -117,7 +110,6 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $bindings = [
-        CatsPlaceholderforsearchEntryModel::class => PlaceholderforsearchModel::class,
         CatsCategoryEntryModel::class => CategoryModel::class,
     ];
 
@@ -127,7 +119,6 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $singletons = [
-        PlaceholderforsearchRepositoryInterface::class => PlaceholderforsearchRepository::class,
         CategoryRepositoryInterface::class => CategoryRepository::class,
     ];
 
@@ -201,11 +192,6 @@ class CatsModuleServiceProvider extends AddonServiceProvider
                         'new_category' => [
                             'href' => '/admin/cats/create?parent='.$request->cat
                         ],
-                    ],
-                ],
-                'placeholderforsearch' => [
-                    'buttons' => [
-                        'new_placeholderforsearch',
                     ],
                 ],
             ];

@@ -10,11 +10,13 @@ use Visiosoft\AdvsModule\Adv\AdvRepository;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
+use Visiosoft\AdvsModule\Adv\Listener\CategoryDeleted;
 use Visiosoft\AdvsModule\Http\Middleware\redirectDiffrentLang;
 use Visiosoft\AdvsModule\Http\Middleware\SetLang;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\Option\OptionRepository;
+use Visiosoft\CatsModule\Category\Events\DeletedCategory;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -177,6 +179,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     protected $listeners = [
         TableIsQuerying::class => [
             AddAdvsSettingsScript::class,
+        ],
+        DeletedCategory::class => [
+            CategoryDeleted::class
         ],
     ];
 

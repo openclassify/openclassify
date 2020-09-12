@@ -1,50 +1,32 @@
 <?php namespace Visiosoft\CatsModule;
 
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\CatsModule\Category\Command\GetCategoryName;
-use Visiosoft\CatsModule\Category\Command\GetCategoryDetail;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 
 class CatsModulePlugin extends Plugin
 {
+    public $categoryRepository;
 
-    /**
-     * @return array
-     */
+    public function __construct(CategoryRepositoryInterface $categoryRepository)
+    {
+        $this->categoryRepository = $categoryRepository;
+    }
+
     public function getFunctions()
     {
         return [
             new \Twig_SimpleFunction(
-                'category_name',
+                'findCategory',
                 function ($id) {
-
-                    if (!$ad = $this->dispatch(new GetCategoryName($id))) {
+                    if (!$category = $this->categoryRepository->find($id)) {
                         return null;
                     }
-
-                    return $ad;
+                    return $category;
                 }
             ), new \Twig_SimpleFunction(
-                'category_detail',
+                'getParents',
                 function ($id) {
-
-                    if (!$ad = $this->dispatch(new GetCategoryDetail($id))) {
-                        return null;
-                    }
-
-                    return $ad;
-                }
-            ), new \Twig_SimpleFunction(
-                'category_parents_name',
-                function ($id) {
-                    $category_model = new CategoryModel();
-                    return $category_model->getParentCats($id,'add_main');
-                }
-            ), new \Twig_SimpleFunction(
-                'getParentsCount',
-                function ($id) {
-                    $category_model = new CategoryModel();
-                    return $category_model->getParentsCount($id);
+                    return $this->categoryRepository->getParents($id);
                 }
             )
         ];
