@@ -35,7 +35,10 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function mainCats()
     {
-        return $this->model->where('parent_category_id', null)->where('deleted_at', null)->orderBy('sort_order')->get();
+        return $this->newQuery()
+            ->whereNull('parent_category_id')
+            ->orderBy('sort_order')
+            ->get();
     }
 
     public function getItem($cat)

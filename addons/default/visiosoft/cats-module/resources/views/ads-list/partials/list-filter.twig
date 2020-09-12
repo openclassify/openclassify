@@ -30,7 +30,7 @@
                 <a href="{% if(viewType != "map") %}
                     {{ appendRequestURL(request_query(),url_route('adv_list_seo', [catId.slug, citySlug]),{},['page']) }}
                 {% else %}
-                    {{ appendRequestURL(request_query(),url_route('advs_map'),{'cat':id},['page']) }}
+                    {{ appendRequestURL(request_query(),url_route('adv_list_seo'),{'cat':id},['page']) }}
                 {% endif %}" class="list-group-item list-group-item-action text-truncate">
                     <i class="fas fa-dot-circle"></i>
                     {{ name }}
@@ -42,7 +42,7 @@
                             <a href="{% if(viewType != "map") %}
                                 {{ appendRequestURL(request_query(),url_route('adv_list_seo', [subCatId.slug, citySlug]),{},['page']) }}
                             {% else %}
-                                {{ appendRequestURL(request_query(),url_route('advs_map'),{'cat':subcat.id},['page']) }}
+                                {{ appendRequestURL(request_query(),url_route('adv_list_seo'),{'cat':subcat.id},['page']) }}
                             {% endif %}" class="list-group-item list-group-item-action text-truncate">
                                 {{ subcat.name }}
                             </a>
