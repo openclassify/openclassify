@@ -11,7 +11,6 @@ use Rinvex\Subscriptions\Models\Plan;
 use Rinvex\Subscriptions\Models\PlanSubscription;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\CloudsiteModule\CloudsiteModule;
@@ -96,11 +95,11 @@ class MyProfileController extends PublicController
         }
     }
 
-    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, AdvModel $advModel)
+    public function statusAds($id, $type, Dispatcher $events, AdvModel $advModel)
     {
         $ad = $advModel->getAdv($id);
-        $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
-        $default_published_time = $settings->value('visiosoft.module.advs::default_published_time');
+        $auto_approved = setting_value('visiosoft.module.advs::auto_approve');
+        $default_published_time = setting_value('visiosoft.module.advs::default_published_time');
 
         if ($auto_approved == true AND $type == 'pending_admin') {
             $type = "approved";
@@ -123,10 +122,9 @@ class MyProfileController extends PublicController
         $isActiveAlgolia = $isActiveAlgolia->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
-            $algolia->updateStatus($id, $type, $settings);
+            $algolia->updateStatus($id, $type);
         }
         $status = $advModel->statusAds($id, $type);
-        $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
 
         return response()->json(['status' => $status]);
 
@@ -244,6 +242,11 @@ class MyProfileController extends PublicController
             ]);
         }
         return response()->json(['status' => 'success', 'data' => $profile]);
+    }
+
+    public function checkUser()
+    {
+        return \auth()->check() ? ['success' => true] : ['success' => false];
     }
 
 }

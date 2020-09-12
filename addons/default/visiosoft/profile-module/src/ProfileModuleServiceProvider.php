@@ -144,6 +144,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
 
         // Cache links
         'ajax/get-user-info' => 'Visiosoft\ProfileModule\Http\Controller\CacheController@getUserInfo',
+
+        'check-user' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@checkUser',
     ];
 
     /**
