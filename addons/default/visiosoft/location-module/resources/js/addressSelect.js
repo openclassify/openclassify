@@ -25,10 +25,10 @@ $('.edit-this-address').on('click', function () {
     resetForm();
 
     //Set Update Form Action
-    $("#newAdd-address").attr("action", '/profile/adress/ajaxUpdate/' + edit_address_id);
+    $("#newAdd-address").attr("action", '/profile/adress/ajax-update/' + edit_address_id);
 
     //Get Address Detail
-    crud({"id": edit_address_id}, '/profile/adress/ajaxDetail', 'POST', function (callback) {
+    crud({"id": edit_address_id}, '/profile/adress/ajax-detail', 'POST', function (callback) {
         var address_detail = callback.data;
         var address_field = ['adress_name', 'adress_gsm_phone', 'adress_first_name', 'adress_last_name'];
 

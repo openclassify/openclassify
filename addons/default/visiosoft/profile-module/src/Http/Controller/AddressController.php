@@ -1,28 +1,22 @@
 <?php namespace Visiosoft\ProfileModule\Http\Controller;
 
-use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
-use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
-use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
-use Visiosoft\ProfileModule\Adress\AdressModel;
-use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
-use Visiosoft\ProfileModule\Adress\Table\AdressTableBuilder;
+use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
 class AddressController extends AdminController
 {
-    private $address;
 
-    public function __construct(AdressModel $address)
+    private $adressRepository;
+
+    public function __construct(AdressRepositoryInterface $adressRepository)
     {
-        $this->address = $address;
         parent::__construct();
+        $this->adressRepository = $adressRepository;
     }
 
-    public function index(AdressTableBuilder $table)
+    public function index()
     {
-        $address = $this->address->getUserAdress();
+        $address = $this->adressRepository->getUserAddresses();
         return $this->view->make('visiosoft.module.profile::address/list', compact('address'));
     }
 
@@ -39,9 +33,9 @@ class AddressController extends AdminController
 
     public function delete($id)
     {
-        $address = $this->address->newQuery()->find($id);
+        $address = $this->adressRepository->find($id);
 
-        if ($address->user_id == Auth::id()) {
+        if ($address->user_id == \auth()->id()) {
             $address->delete();
         }
 

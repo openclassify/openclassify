@@ -478,4 +478,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->where('advs_advs.status', 'approved')
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
     }
+
+    public function myAdvsByUser()
+    {
+        return $this->model->userAdv()
+            ->where('advs_advs.status', 'approved')
+            ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+    }
 }

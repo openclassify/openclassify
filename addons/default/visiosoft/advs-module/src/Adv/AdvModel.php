@@ -109,13 +109,6 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             ->where('advs_advs.status', 'approved');
     }
 
-    public function myAdvsByUser()
-    {
-        return $this->userAdv()
-            ->where('advs_advs.status', 'approved')
-            ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
-    }
-
     public function foreignCurrency($currency, $price, $isUpdate, $settings)
     {
         $currencies = setting_value('visiosoft.module.advs::enabled_currencies');

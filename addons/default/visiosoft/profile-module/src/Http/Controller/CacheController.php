@@ -5,10 +5,11 @@ use Visiosoft\AddblockExtension\Command\addBlock;
 
 class CacheController extends PublicController
 {
+
     public function getUserInfo()
     {
         $user = auth()->user();
-        $user = $user ? $user->first_name . ' ' . $user->last_name : $user;
+        $user = $user ? $user->name() : $user;
 
         $getAddBlockHtml = new addBlock('navigation/dropdown', []);
         $addBlockHtml = $getAddBlockHtml->handle();
