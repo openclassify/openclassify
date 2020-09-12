@@ -439,9 +439,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function getCategoriesWithAdID($id)
     {
-        $adv = $this->model->find($id);
+        $adv = $this->find($id);
 
-        if (!is_null($adv)) {
+        if ($adv) {
             $categories = array();
             foreach ($adv->toArray() as $key => $field) {
                 if (preg_match('/cat\d/', $key) and !is_null($field)) {
@@ -450,6 +450,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
             return $categories;
         }
+
         return null;
     }
 

@@ -41,17 +41,6 @@ class AdvsModule extends Module
             'title' => 'visiosoft.module.advs::section.assets_clear.name',
             'href' => '/admin/assets/clear',
         ]
-        // 'custom_fields' => [
-        //     'buttons' => [
-        //         'new_custom_field',
-        //     ],
-        // ],
-        // 'custom_field_advs' => [
-        //     // 'buttons' => [
-        //     //     'new_custom_field_adv',
-        //     // ],
-        // ],
-        
     ];
 
 }

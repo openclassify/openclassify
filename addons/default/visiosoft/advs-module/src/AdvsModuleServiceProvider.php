@@ -20,8 +20,6 @@ use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Illuminate\Routing\Router;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryRepository;
 
@@ -38,45 +36,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     ];
 
     /**
-     * The addon Artisan commands.
-     *
-     * @type array|null
-     */
-    protected $commands = [];
-
-    /**
-     * The addon's scheduled commands.
-     *
-     * @type array|null
-     */
-    protected $schedules = [];
-
-    /**
-     * The addon API routes.
-     *
-     * @type array|null
-     */
-    protected $api = [];
-
-    /**
      * The addon routes.
      *
      * @type array|null
      */
     protected $routes = [
-        'admin/advs/advs' => [
-            'as' => 'visiosoft.module.advs::admin_advs',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
-        ],
-        'admin/advs/advs/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
-        'admin/advs/advs/edit/{id}' => [
-            'middleware' => 'auth',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit'
-        ],
-        'admin/advs/village' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@index',
-        'admin/advs/village/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@create',
-        'admin/advs/village/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\VillageController@edit',
-        'categories/checkparent/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkParentCat',
+        // Admin routes
         'admin/advs/ajax' => [
             'as' => 'visiosoft.module.advs::ajax',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@locations',
@@ -94,8 +59,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'admin/advs' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@index',
         // User choose modal
         'admin/advs-users/choose/{advId}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@choose',
-        'admin/advs/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@create',
-        'admin/advs/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@edit',
         'admin/advs/list' => [
             'as' => 'visiosoft.module.advs::admin-list',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@manage'
@@ -105,15 +68,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.advs::list',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index'
         ],
-        'advs/list?user={id}' => [
-            'as' => 'visiosoft.module.advs::list_user_ad',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
-        ],
-        'advs/list?cat={id}' => [
-            'as' => 'visiosoft.module.advs::list_cat',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
-        ],
-        'getlocations' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getLocations',
         'advs/main' => 'Visiosoft\AdvsModule\Http\Controller\advsController@advsMainPage',
         'advs/adv/{id}' => [
             'as' => 'adv_detail_backup',
@@ -135,12 +89,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'advs_preview',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@preview'
         ],
-        'advs/map?country={country}&city[]={city}&district={districts}' => [
-            'as' => 'visiosoft.module.advs::show_ad_map_location',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map'
-        ],
-        'advs/categories' => 'Visiosoft\AdvsModule\Http\Controller\CategoriesController@index',
-        'advs/c/{cat}' => 'Visiosoft\AdvsModule\Http\Controller\CategoriesController@listByCat',
         'c/{category?}/{city?}' => [
             'as' => 'adv_list_seo',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index'
@@ -148,6 +96,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'advs/module_active' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
         'advs/create_adv' => [
             'as' => "advs::create_adv",
+            'middleware' => "auth",
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@cats',
         ],
         'advs/create_adv/post_cat' => [
@@ -156,6 +105,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'class/getcats/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCatsForNewAd',
         'advs/save_adv' => [
+            'middleware' => 'auth',
             'as' => 'visiosoft.module.advs::post_cat',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@store'
         ],
@@ -170,38 +120,13 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@statusAds'
         ],
         'routes' => 'Visiosoft\AdvsModule\Http\Controller\advsController@routes',
-        'advs/map/advs/list' => [
-            'as' => 'advs_map_list',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map',
-        ],
-        'advs/map' => [
-            'as' => 'advs_map',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@map',
-        ],
-        'mapJson' => 'Visiosoft\AdvsModule\Http\Controller\advsController@mapJson',
+        'map-json' => 'Visiosoft\AdvsModule\Http\Controller\advsController@mapJson',
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
         'advs/delete/{id}' => [
             'as' => 'advs::delete',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@deleteAd',
         ],
-        'check_user' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkUser',
         'keySearch' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@keySearch',
-        'adv/addCart/{id}' => [
-            'as' => 'adv_AddCart',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@advAddCart',
-        ],
-        'ajax/StockControl' => [
-            'as' => 'adv_stock_control_ajax',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@stockControl',
-        ],
-        'ajax/addCart' => [
-            'as' => 'adv_add_cart_ajax',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@addCart',
-        ],
-        'ajax/countPhone' => [
-            'as' => 'adv_count_show_phone',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@showPhoneCounter',
-        ],
         'view/{type}' => [
             'as' => 'visiosoft.module.advs::view_type',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@viewType',
@@ -211,12 +136,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@assetsClear',
         ],
         'adv/edit/category/{id}' => [
+            'middleware' => 'auth',
             'as' => 'adv::edit_category',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@editCategoryForAd',
-        ],
-        'ajax/getcats/{id}' => [
-            'as' => 'ajax::getCats',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
         ],
 
         'ajax/getAdvs' => [
@@ -248,24 +170,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     ];
 
     /**
-     * Addon group middleware.
-     *
-     * @var array
-     */
-    protected $groupMiddleware = [
-        //'web' => [
-        //    Visiosoft\AdvsModule\Http\Middleware\ExampleMiddleware::class,
-        //],
-    ];
-
-    /**
-     * Addon route middleware.
-     *
-     * @type array|null
-     */
-    protected $routeMiddleware = [];
-
-    /**
      * The addon event listeners.
      *
      * @type array|null
@@ -274,15 +178,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         TableIsQuerying::class => [
             AddAdvsSettingsScript::class,
         ],
-    ];
-
-    /**
-     * The addon alias bindings.
-     *
-     * @type array|null
-     */
-    protected $aliases = [
-        //'Example' => Visiosoft\AdvsModule\Example::class
     ];
 
     /**
@@ -296,8 +191,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         // AdvsCustomFieldsEntryModel::class => CustomFieldModel::class,
         AdvsAdvsEntryModel::class => AdvModel::class,
         LocationVillageEntryModel::class => VillageModel::class,
-        AdvsCategoriesEntryModel::class => CategoryModel::class,
-        AdvsAdvsEntryModel::class => AdvModel::class,
         'my_form' => AdvFormBuilder::class,
     ];
 
@@ -307,23 +200,11 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $singletons = [
-        // CfValueRepositoryInterface::class => CfValueRepository::class,
-        // CustomFieldAdvRepositoryInterface::class => CustomFieldAdvRepository::class,
-        // CustomFieldRepositoryInterface::class => CustomFieldRepository::class,
         AdvRepositoryInterface::class => AdvRepository::class,
         VillageRepositoryInterface::class => VillageRepository::class,
         CategoryRepositoryInterface::class => CategoryRepository::class,
         CountryRepositoryInterface::class => CountryRepository::class,
         OptionRepositoryInterface::class => OptionRepository::class,
-    ];
-
-    /**
-     * Additional service providers.
-     *
-     * @type array|null
-     */
-    protected $providers = [
-        //\ExamplePackage\Provider\ExampleProvider::class
     ];
 
     /**
@@ -333,28 +214,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
      */
     protected $overrides = [
         'streams::form/form' => 'visiosoft.module.advs::form/form',
-        //'streams::errors/404' => 'module::errors/404',
-        //'streams::errors/500' => 'module::errors/500',
     ];
-
-    /**
-     * The addon mobile-only view overrides.
-     *
-     * @type array|null
-     */
-    protected $mobile = [
-        //'streams::errors/404' => 'module::mobile/errors/404',
-        //'streams::errors/500' => 'module::mobile/errors/500',
-    ];
-
-    /**
-     * Register the addon.
-     */
-    public function register()
-    {
-        // Run extra pre-boot registration logic here.
-        // Use method injection or commands to bring in services.
-    }
 
     /**
      * Boot the addon.
@@ -380,19 +240,5 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
         // Disable file versioning
         $fileModel->disableVersioning();
-    }
-
-    /**
-     * Map additional addon routes.
-     *
-     * @param Router $router
-     */
-    // public function map(Router $router)
-    // {
-    //     // Register dynamic routes here for example.
-    //     // Use method injection or commands to bring in services.
-    // }
-    public function map(Router $router)
-    {
     }
 }

@@ -1,13 +1,10 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller\Admin;
 
-
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryTranslationsModel;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
-use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
@@ -18,7 +15,6 @@ use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
-use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
@@ -28,23 +24,24 @@ use Visiosoft\AlgoliaModule\Search\SearchModel;
 
 class AdvsController extends AdminController
 {
-    private $model;
+
     private $advRepository;
     private $advsEntryTranslationsModel;
     private $optionRepository;
+    private $userRepository;
 
     public function __construct(
-        AdvModel $model,
         AdvRepositoryInterface $advRepository,
         AdvsAdvsEntryTranslationsModel $advsEntryTranslationsModel,
-        OptionRepositoryInterface $optionRepository
+        OptionRepositoryInterface $optionRepository,
+        UserRepositoryInterface $userRepository
     )
     {
         parent::__construct();
-        $this->model = $model;
         $this->advRepository = $advRepository;
         $this->advsEntryTranslationsModel = $advsEntryTranslationsModel;
         $this->optionRepository = $optionRepository;
+        $this->userRepository = $userRepository;
     }
 
     /**
@@ -53,11 +50,8 @@ class AdvsController extends AdminController
      * @param AdvTableBuilder $table
      * @return \Symfony\Component\HttpFoundation\Response
      */
-    public function index(AdvTableBuilder $table, \Anomaly\UsersModule\User\UserModel $userModel, CityModel $cityModel, CatsCategoryEntryModel $categoryModel)
+    public function index(AdvTableBuilder $table, CityModel $cityModel, CatsCategoryEntryModel $categoryModel)
     {
-        $table->addAsset("styles.css", "visiosoft.module.advs::css/custom.css");
-        $table->addAsset('scripts.js', 'visiosoft.module.advs::js/list.js');
-
         $table->addButtons([
             'status' => [
                 'text' => function (EntryInterface $entry) {
@@ -89,10 +83,7 @@ class AdvsController extends AdminController
                     }
                 },
             ],
-            'edit' => [
-                'href' => '/advs/edit_advs/{entry.id}',
-                'text' => "<font class='hidden-xs-down'>" . trans('streams::button.edit') . "</font>",
-            ],
+
             'settings' => [
                 'text'     => false,
                 'href'     => false,
@@ -110,19 +101,11 @@ class AdvsController extends AdminController
             ],
         ]);
 
-        if ($this->model->is_enabled('recommendedads')) {
-            $table->addButton('add_recommended', [
-                'type' => 'default',
-                'icon' => 'fa fa-gg',
-                'text' => 'Add Recommended',
-                'href' => '/admin/recommendedads/create/{entry.id}',
-            ]);
-        }
-
         $table->setColumns([
             'cover_photo' => [
                 'value' => function (EntryInterface $entry) {
-                    return "<img width='80px' src='" . $this->model->AddAdsDefaultCoverImage($entry)->cover_photo . "' >";
+                    $coverImageUrl = $this->advRepository->getModel()->AddAdsDefaultCoverImage($entry)->cover_photo;
+                    return "<img width='80px' src='{$coverImageUrl}' >";
                 },
             ],
             'entry.id',
@@ -130,7 +113,12 @@ class AdvsController extends AdminController
                 'class' => 'advs-name',
                 'sort_column' => 'slug',
                 'value' => function (EntryInterface $entry) {
-                    return (!is_null($entry->name)) ? "<a href='" . $this->model->getAdvDetailLinkByModel($entry, 'list') . "' > " . $entry->name . "</a > " : "<font color='red'>" . trans("visiosoft.module.advs::view.unfinished") . "</font>";
+                    if ($entry->name) {
+                        $adLink = $this->advRepository->getModel()->getAdvDetailLinkByModel($entry, 'list');
+                        return "<a href='$adLink' >{$entry->name}</a >";
+                    } else {
+                        return "<span class='text-danger'>" . trans("visiosoft.module.advs::view.unfinished") . "</span>";
+                    }
                 },
             ],
             'price' => [
@@ -143,11 +131,7 @@ class AdvsController extends AdminController
                 'class' => 'advs-country',
             ],
             'created_by' => [
-                'value' => function (EntryInterface $entry, UserModel $userModel) {
-                    $user = $userModel->find($entry->created_by_id);
-                    if (!is_null($user))
-                        return $user->first_name . " " . $user->last_name;
-                }
+                'value' => 'entry.created_by.name'
             ],
             'category' => [
                 'value' => function (EntryInterface $entry, CategoryModel $categoryModel) {
@@ -161,7 +145,7 @@ class AdvsController extends AdminController
 
 
         $cities = $cityModel->all()->pluck('name', 'id')->all();
-        $users = $userModel->newQuery()
+        $users = $this->userRepository->newQuery()
             ->select(DB::raw("CONCAT_WS('', first_name, ' ', last_name, ' (', gsm_phone, ' || ', email, ')') AS display_name"), 'id')
             ->pluck('display_name', 'id')
             ->toArray();
@@ -212,55 +196,29 @@ class AdvsController extends AdminController
         if (empty($request->all())) {
             return $this->view->make('module::admin/advs/choose', ['users' => $users->all(), 'advId' => $advId]);
         } else {
-            $this->model->newQuery()->find($advId)->update(['created_by_id' => $request->user_id]);
+            $this->advRepository->getModel()->newQuery()->find($advId)->update(['created_by_id' => $request->user_id]);
             $this->messages->success(trans('module::message.owner_updated_successfully'));
             return redirect()->back();
         }
     }
 
-    /**
-     * Create a new entry.
-     *
-     * @param AdvFormBuilder $form
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function create(AdvFormBuilder $form)
+    public function actions($id, $type)
     {
-        // $this->dispatch(new AddEntryFormFromRequest($form));
-        // $this->dispatch(new AddAdvFormFromRequest($form));
-        return $form->render();
-    }
-
-    /**
-     * Edit an existing entry.
-     *
-     * @param AdvFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function edit(AdvFormBuilder $form, $id)
-    {
-        return $form->render($id);
-    }
-
-    public function actions($id, $type, SettingRepositoryInterface $settings, AdvModel $advModel)
-    {
-
-        $ad = $advModel->where('advs_advs.id', '=', $id)->first();
+        $ad = $this->advRepository->find($id);
         $ad->status = $type;
 
-        $default_adv_publish = $settings->value('visiosoft.module.advs::default_published_time');
+        $default_adv_publish = setting_value('visiosoft.module.advs::default_published_time');
         $ad->finish_at = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $default_adv_publish . ' day'));
         $ad->publish_at = date('Y-m-d H:i:s');
 
         //algolia Search Module
-        $isActiveAlgolia = $advModel->is_enabled('algolia');
+        $isActiveAlgolia = $this->advRepository->getModel()->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
-            $algolia->updateStatus($id, $type, $settings);
+            $algolia->updateStatus($id, $type);
         }
         $ad->update();
-        event(new ChangedStatusAd($ad));//Create Notify
+        event(new ChangedStatusAd($ad)); //Create Notify
         return back();
     }
 
@@ -328,42 +286,34 @@ class AdvsController extends AdminController
 
     public function assetsClear(Filesystem $files, Application $application, Request $request)
     {
-        $directory = 'assets';
-        $files->deleteDirectory($directory = $application->getAssetsPath($directory), true);
-        echo "<div class='bar'></div>" . "<br>";
-        echo "<style>
-.bar {
-  width: 30%;
-  height: 20px;
-  border: 1px solid #2980b9;
-  border-radius: 3px;
-  background-image: 
-    repeating-linear-gradient(
-      -45deg,
-      #2980b9,
-      #2980b9 11px,
-      #eee 10px,
-      #eee 20px /* determines size */
-    );
-  background-size: 28px 28px;
-  animation: move .5s linear infinite;
-}
+        $files->deleteDirectory($directory = $application->getAssetsPath('assets'), true);
+        echo "
+            <div class='bar'></div>
+            <br>
+            <style>
+                .bar {
+                  width: 30%;
+                  height: 20px;
+                  border: 1px solid #2980b9;
+                  border-radius: 3px;
+                  background-image: repeating-linear-gradient(-45deg, #2980b9, #2980b9 11px, #eee 10px, #eee 20px);
+                  background-size: 28px 28px;
+                  animation: move .5s linear infinite;
+                }
 
-@keyframes move {
-  0% {
-    background-position: 0 0;
-  }
-  100% {
-    background-position: 28px 0;
-  }
-}
-
-</style>
-        <script>
-        location.href = '" . $request->server('HTTP_REFERER') . "';
-        </script>
-        
-        <a href='" . $request->server('HTTP_REFERER') . "'><b>Return Back</b></a>";
-        echo "<br><a href='/admin'><b>Return Admin Panel</b></a>";
+                @keyframes move {
+                  0% {
+                    background-position: 0 0;
+                  }
+                  100% {
+                    background-position: 28px 0;
+                  }
+                }
+            </style>
+            
+            <script>
+                location.href = '{$request->server('HTTP_REFERER')}';
+            </script>
+        ";
     }
 }

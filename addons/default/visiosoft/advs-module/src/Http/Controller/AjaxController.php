@@ -19,9 +19,9 @@ class AjaxController extends PublicController
 
     public function __construct(AdvModel $advModel, UserModel $userModel)
     {
+        parent::__construct();
         $this->adv_model = $advModel;
         $this->userModel = $userModel;
-        parent::__construct();
     }
 
     public function locations(Request $request)
