@@ -284,36 +284,9 @@ class AdvsController extends AdminController
         }
     }
 
-    public function assetsClear(Filesystem $files, Application $application, Request $request)
+    public function assetsClear(Filesystem $files, Application $application)
     {
         $files->deleteDirectory($directory = $application->getAssetsPath('assets'), true);
-        echo "
-            <div class='bar'></div>
-            <br>
-            <style>
-                .bar {
-                  width: 30%;
-                  height: 20px;
-                  border: 1px solid #2980b9;
-                  border-radius: 3px;
-                  background-image: repeating-linear-gradient(-45deg, #2980b9, #2980b9 11px, #eee 10px, #eee 20px);
-                  background-size: 28px 28px;
-                  animation: move .5s linear infinite;
-                }
-
-                @keyframes move {
-                  0% {
-                    background-position: 0 0;
-                  }
-                  100% {
-                    background-position: 28px 0;
-                  }
-                }
-            </style>
-            
-            <script>
-                location.href = '{$request->server('HTTP_REFERER')}';
-            </script>
-        ";
+        echo view('visiosoft.module.advs::admin/clear-assets')->render();
     }
 }
