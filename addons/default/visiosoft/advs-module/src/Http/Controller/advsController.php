@@ -367,7 +367,8 @@ class AdvsController extends PublicController
                     if (!is_null($item)) {
                         $categories['cat' . $i] = [
                             'name' => $item->name,
-                            'id' => $item->id
+                            'id' => $item->id,
+                            'slug' => $item->slug
                         ];
                         $categories_id[] = $item->id;
                     }
