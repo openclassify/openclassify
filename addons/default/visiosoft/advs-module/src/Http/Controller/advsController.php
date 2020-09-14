@@ -220,6 +220,13 @@ class AdvsController extends PublicController
                     ));
                 } else { // Only slug
                     $cityId = $this->cityRepository->findBy('slug', $city);
+                    if (!$cityId) {
+                        return redirect($this->fullLink(
+                            $param,
+                            route('adv_list_seo', [$categoryId->slug]),
+                            array()
+                        ), 301);
+                    }
                 }
             }
         }
@@ -232,6 +239,7 @@ class AdvsController extends PublicController
             $featured_advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->listFeatures($advs);
         }
 
+        $seenList = null;
         foreach ($advs as $index => $ad) {
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
@@ -263,6 +271,7 @@ class AdvsController extends PublicController
                 'slug' => $current_cat->slug,
             ];
             $subCats = $this->category_repository->getSubCatById($categoryId->id);
+            $allCats = false;
         } else {
             $mainCats = $this->category_repository->mainCats();
             $allCats = true;
@@ -283,6 +292,7 @@ class AdvsController extends PublicController
 
         $viewType = $this->requestHttp->cookie('viewType');
 
+        $catText = '';
         if (!isset($allCats)) {
             if (count($mainCats) == 1 || count($mainCats) == 2) {
                 $catText = end($mainCats)['val'];
@@ -299,15 +309,16 @@ class AdvsController extends PublicController
             $this->template->set('meta_title', $catText);
         }
 
+        $user = null;
         if (!empty($param['user'])) {
             $user = $this->userRepository->find($param['user']);
             $this->template->set('showTitle', false);
             $this->template->set('meta_title', $user->name() . ' ' . trans('visiosoft.module.advs::field.ads'));
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'request', 'param',
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'seenList', 'searchedCountry', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
+            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
