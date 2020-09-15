@@ -3,24 +3,19 @@
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
-use Anomaly\Streams\Platform\Model\Advs\PurchasePurchaseEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
-use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
-use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\LocationModule\City\CityRepository;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
-use function PMA\Util\get;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\priceChange;
-use Visiosoft\AdvsModule\Adv\Event\UpdateAd;
 use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\CatsModule\Category\CategoryModel;
@@ -29,21 +24,17 @@ use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\AlgoliatestModule\Http\Controller\Admin\IndexController;
 use Visiosoft\CloudinaryModule\Video\VideoModel;
-use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
-use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Visiosoft\PackagesModule\Package\PackageModel;
-
 use Illuminate\Contracts\Events\Dispatcher;
 use Visiosoft\QrcontactModule\Qr\QrModel;
 use Visiosoft\StoreModule\Ad\AdModel;
-
 
 class AdvsController extends PublicController
 {
@@ -101,6 +92,8 @@ class AdvsController extends PublicController
         Request $request
     )
     {
+        parent::__construct();
+
         $this->userRepository = $userRepository;
 
         $this->adv_model = $advModel;
@@ -126,14 +119,9 @@ class AdvsController extends PublicController
 
         $this->requestHttp = $request;
 
-        parent::__construct();
         $this->optionRepository = $optionRepository;
     }
 
-
-    /**
-     * @return \Illuminate\Contracts\View\View|mixed
-     */
     public function index($category = null, $city = null)
     {
         $customParameters = array();
@@ -367,7 +355,8 @@ class AdvsController extends PublicController
                     if (!is_null($item)) {
                         $categories['cat' . $i] = [
                             'name' => $item->name,
-                            'id' => $item->id
+                            'id' => $item->id,
+                            'slug' => $item->slug
                         ];
                         $categories_id[] = $item->id;
                     }
@@ -463,26 +452,6 @@ class AdvsController extends PublicController
             compact('adv', 'categories', 'features', 'isActiveDopings', 'options'));
     }
 
-    public function getLocations()
-    {
-        $table = $this->requestHttp->table;
-        $id = $this->requestHttp->id;
-        $db = $this->requestHttp->typeDb;
-
-        $location = "";
-        if ($table == "cities") {
-            $location = $this->city_model->query()->where($db, $id)->get();
-        } elseif ($table == "districts") {
-            $location = $this->district_model->query()->whereIn($db, $id)->get();
-        } elseif ($table == "neighborhoods") {
-            $location = $this->neighborhood_model->query()->where($db, $id)->get();
-        } elseif ($table == "village") {
-            $location = $this->village_model->query()->where($db, $id)->get();
-        }
-
-        return $location;
-    }
-
     public function deleteAd(AdvRepositoryInterface $advs, $id)
     {
         $ad = $this->adv_model->find($id);
@@ -499,18 +468,12 @@ class AdvsController extends PublicController
         return back();
     }
 
-    public function getCats($id)
-    {
-        return $this->category_repository->getSubCatById($id);
-    }
-
     public function getCatsForNewAd($id)
     {
-
         if ($this->adv_model->is_enabled('packages')) {
             $cats = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForCategorySelection($id);
         } else {
-            $cats = $this->getCats($id);
+            $cats = $this->category_repository->getSubCatById($id);
 
             if (empty($cats->toArray())) {
                 $cats = trans('visiosoft.module.advs::message.create_ad_with_post_cat');
@@ -548,87 +511,76 @@ class AdvsController extends PublicController
             'request', 'formBuilder', 'cats_d', 'custom_fields'));
     }
 
-    public function store
-    (
+    public function store(
         AdvFormBuilder $form,
         MessageBag $messages,
-        Request $request,
-        SettingRepositoryInterface $settings,
-        AdvRepositoryInterface $advRepository,
-        CategoryRepositoryInterface $categoryRepository,
-        Dispatcher $events,
-        AdvModel $advModel,
-        AdressRepositoryInterface $address,
-        CategoryModel $categoryModel
+        AdressRepositoryInterface $address
     )
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
         $messages->pull('error');
-        if ($request->action == "update") {
-            $error = $form->build($request->update_id)->validate()->getFormErrors()->getMessages();
+        if (\request()->action == "update") {
+            $error = $form->build(\request()->update_id)->validate()->getFormErrors()->getMessages();
             if (!empty($error)) {
                 return $this->redirect->back();
             }
             /*  Update Adv  */
-            $adv = AdvsAdvsEntryModel::find($request->update_id);
+            $adv = AdvsAdvsEntryModel::find(\request()->update_id);
 
-            if ($advModel->is_enabled('packages') and $adv->slug == "") {
-                $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
+            if ($this->adv_repository->getModel()->is_enabled('packages') and $adv->slug == "") {
+                $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd(\request());
                 if (!is_null($cat)) {
                     return redirect('/');
                 }
             }
 
             // Create options
-            $deletedOptions = $request->deleted_options;
-            $newOptions = $request->new_options;
+            $deletedOptions = \request()->deleted_options;
+            $newOptions = \request()->new_options;
             if (!empty($deletedOptions)) {
-                $deletedOptions = explode(',', $request->deleted_options);
+                $deletedOptions = explode(',', \request()->deleted_options);
                 $this->optionRepository->newQuery()
                     ->whereIn('id', $deletedOptions)
-                    ->where('adv_id', $request->update_id)
+                    ->where('adv_id', \request()->update_id)
                     ->delete();
             }
             if (!empty($newOptions)) {
-                $newOptions = explode(',', $request->new_options);
+                $newOptions = explode(',', \request()->new_options);
                 foreach ($newOptions as $option) {
                     $this->optionRepository->create([
                         'name' => $option,
-                        'adv_id' => $request->update_id,
+                        'adv_id' => \request()->update_id,
                     ]);
                 }
             }
 
-            $adv->is_get_adv = $request->is_get_adv;
+            $adv->is_get_adv = \request()->is_get_adv;
             $adv->save();
 
             //algolia Search Module
-            $isActiveAlgolia = $advModel->is_enabled('algolia');
+            $isActiveAlgolia = $this->adv_repository->getModel()->is_enabled('algolia');
             if ($isActiveAlgolia) {
                 $algolia = new SearchModel();
                 if ($adv->slug == "") {
-                    $algolia->saveAlgolia($adv->toArray(), $settings);
+                    $algolia->saveAlgolia($adv->toArray());
                 } else {
-                    $algolia->updateAlgolia($request->toArray(), $settings);
+                    $algolia->updateAlgolia(\request()->toArray());
                 }
             }
             //Cloudinary Module
-            $isActiveCloudinary = $advModel->is_enabled('cloudinary');
+            $isActiveCloudinary = $this->adv_repository->getModel()->is_enabled('cloudinary');
             if ($isActiveCloudinary) {
 
                 $CloudinaryModel = new VideoModel();
-                $CloudinaryModel->updateRequest($request);
+                $CloudinaryModel->updateRequest(\request());
 
-                if ($request->url != "") {
-                    $adv->cover_photo = "https://res.cloudinary.com/" . $request->cloudName . "/video/upload/w_400,e_loop/" .
-                        $request->uploadKey . "/" . $request->filename . "gif";
+                if (\request()->url != "") {
+                    $adv->cover_photo = "https://res.cloudinary.com/" . \request()->cloudName . "/video/upload/w_400,e_loop/" .
+                        \request()->uploadKey . "/" . \request()->filename . "gif";
                     $adv->save();
                 }
             }
             if ($this->adv_model->is_enabled('customfields')) {
-                app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $request);
+                app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, \request());
             }
 
             // Auto approve
@@ -641,8 +593,8 @@ class AdvsController extends PublicController
                 ]);
             }
 
-            $form->render($request->update_id);
-            $adv = $this->adv_repository->find($request->update_id);
+            $form->render(\request()->update_id);
+            $adv = $this->adv_repository->find(\request()->update_id);
 
             if ($this->request->address_id != "") {
                 $address = $address->find($this->request->address_id);
@@ -654,35 +606,35 @@ class AdvsController extends PublicController
                 $adv->save();
             }
             $post = $form->getPostData();
-            $post['id'] = $request->update_id;
-            $events->dispatch(new priceChange($post));//price history
-            if ($request->url == "") {
-                $advRepository->cover_image_update($adv);
+            $post['id'] = \request()->update_id;
+            event(new priceChange($post));
+            if (\request()->url == "") {
+                $this->adv_repository->cover_image_update($adv);
             }
 
             if ($form->hasFormErrors()) {
-                $cats = $request->toArray();
+                $cats = \request()->toArray();
 
                 $cats_d = array();
 
                 foreach ($cats as $para => $value) {
                     if (substr($para, 0, 3) === "cat") {
                         $id = $cats[$para];
-                        $cat = $categoryRepository->getSingleCat($id);
+                        $cat = $this->category_repository->getSingleCat($id);
                         if ($cat != null) {
                             $cats_d[$para] = $cat->name;
                         }
                     }
                 }
-                return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
+                return redirect('/advs/edit_advs/' . \request()->update_id)->with('cats_d', $cats_d)->with('request', \request());
             }
             event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+            return redirect(route('advs_preview', [\request()->update_id]));
         }
 
         /* New Create Adv */
-        $request->publish_at = date('Y-m-d H:i:s');
-        $all = $request->all();
+        \request()->publish_at = date('Y-m-d H:i:s');
+        $all = \request()->all();
         $new = AdvModel::query()->create($all);
         return redirect('/advs/edit_advs/' . $new->id);
     }
@@ -745,16 +697,15 @@ class AdvsController extends PublicController
         );
     }
 
-    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events)
+    public function statusAds($id, $type)
     {
         $ad = $this->adv_model->getAdv($id);
-        $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
-        $default_published_time = $settings->value('visiosoft.module.advs::default_published_time');
+        $auto_approved = setting_value('visiosoft.module.advs::auto_approve');
+        $default_published_time = setting_value('visiosoft.module.advs::default_published_time');
 
-        if ($auto_approved == true AND $type == 'pending_admin') {
+        if ($type == 'pending_admin' && $auto_approved == true) {
             $type = "approved";
-        }
-        if ($type == "approved" and $auto_approved != true) {
+        } elseif ($type == "approved" && $auto_approved != true) {
             $type = "pending_admin";
         }
 
@@ -775,291 +726,66 @@ class AdvsController extends PublicController
         $isActiveAlgolia = $this->adv_model->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
-            $algolia->updateStatus($id, $type, $settings);
+            $algolia->updateStatus($id, $type);
         }
 
         $this->adv_model->statusAds($id, $type);
-        event(new ChangedStatusAd($ad));//Create Notify
+
+        event(new ChangedStatusAd($ad));
+
         $this->messages->success(trans('streams::message.edit_success', ['name' => 'Status']));
         return back();
     }
 
     public function cats()
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-        $main_cats = $this->category_repository->mainCats();
+        $mainCats = $this->category_repository->mainCats();
 
-        return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('main_cats'));
+        return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('mainCats'));
     }
 
-    /**
-     * @param $id
-     * @return \Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|mixed
-     */
     public function editCategoryForAd($id)
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-
         $adv = $this->adv_model->userAdv(true)->find($id);
 
-        if (is_null($adv)) {
+        if (!$adv) {
             abort(403);
         }
 
-        if ($this->requestHttp->action == 'update') {
-            $params = $this->requestHttp->all();
+        if (\request()->action == 'update') {
+            $params = \request()->all();
             unset($params['action']);
 
             for ($i = 2; $i <= 10; $i++) {
                 if (!isset($params['cat' . $i])) {
-                    $params['cat' . $i] = NULL;
+                    $params['cat' . $i] = null;
                 }
             }
 
             $adv->update($params);
             $this->messages->success(trans('visiosoft.module.advs::message.updated_category_msg'));
-            return redirect('/advs/edit_advs/' . $id);
+            return redirect()->route('visiosoft.module.advs::edit_adv', [$id]);
         }
 
         $categories = $this->adv_repository->getCategoriesWithAdID($id);
 
-        return $this->view->make('visiosoft.module.advs::new-ad/edit-cat', compact('id', 'adv', 'categories'));
-
+        return $this->view->make(
+            'visiosoft.module.advs::new-ad/edit-cat',
+            compact('id', 'adv', 'categories')
+        );
     }
 
-    public function login()
+    public function mapJson()
     {
-        if (auth()->check()) {
-            return $this->redirect->to($this->request->get('redirect', '/'));
-        }
-
-        $urlPrev = str_replace(url('/'), '', url()->previous());
-
-        return $this->view->make('theme::login', compact('urlPrev'));
-    }
-
-    public function register()
-    {
-
-        if (auth()->check()) {
-            return redirect('/');
-        }
-
-        return $this->view->make('theme::register');
-    }
-
-    public function passwordForgot()
-    {
-        if (auth()->check()) {
-            return redirect('/');
-        }
-
-        return $this->view->make('theme::passwords/forgot');
-    }
-
-    public function passwordReset(Request $request)
-    {
-        if (auth()->check()) {
-            return redirect('/');
-        }
-        $code = $request->email;
-        return $this->view->make('theme::passwords/reset', compact('code'));
-    }
-
-    public function homePage(CategoryRepositoryInterface $repository)
-    {
-        $cats = $repository->mainCats();
-
-        return $this->view->make('theme::addons/anomaly/pages-module/page', compact('cats'));
-    }
-
-    public function map(
-        AdvRepositoryInterface $advRepository,
-        CategoryRepositoryInterface $categories,
-        CountryRepositoryInterface $countries,
-        Request $request
-    )
-    {
-
-        return $this->index($advRepository, $categories, $countries, $request, true);
-
-    }
-
-    public function mapJson(Request $request, AdvRepositoryInterface $repository)
-    {
-        $param = $request->toArray();
+        $param = \request()->toArray();
         $customParameters = array();
-        $advModel = new AdvModel();
 
-        $advs = $repository->searchAdvs('map', $param, $customParameters);
+        $advs = $this->adv_repository->searchAdvs('map', $param, $customParameters);
         foreach ($advs as $index => $ad) {
-            $advs[$index]->seo_link = $advModel->getAdvDetailLinkByModel($ad, 'list');
-            $advs[$index] = $advModel->AddAdsDefaultCoverImage($ad);
+            $advs[$index]->seo_link = $this->adv_repository->getModel()->getAdvDetailLinkByModel($ad, 'list');
+            $advs[$index] = $this->adv_repository->getModel()->AddAdsDefaultCoverImage($ad);
         }
         return response()->json($advs);
-    }
-
-    public function getAdvsByProfile(AdvRepositoryInterface $advRepository, Request $request)
-    {
-        $my_advs = new AdvModel();
-        $type = $request->type;
-        if ($type == 'pending') {
-            $page_title = trans('visiosoft.module.advs::field.pending_adv.name');
-            $my_advs = $my_advs->pendingAdvsByUser();
-        } else if ($type == 'favs') {
-            //Get Favorites Advs
-            $isActiveFavs = new AdvModel();
-            $isActiveFavs = $isActiveFavs->is_enabled('favs');
-
-            if ($isActiveFavs) {
-
-                $page_title = trans('visiosoft.module.advs::field.favs_adv.name');
-                $favs = new FavsController();
-                $favs = $favs->getFavsByProfile();
-
-                $fav_ids = array();
-                foreach ($favs as $fav) {
-                    $fav_ids[] = $fav['adv_name_id'];//fav advs id List
-                }
-                $my_advs = $my_advs->favsAdvsByUser($fav_ids);
-            }
-        } else {
-            $page_title = trans('visiosoft.module.advs::field.my_adv.name');
-            $my_advs = $my_advs->myAdvsByUser();
-        }
-        $my_advs = $my_advs->orderByDesc('id');
-        $my_advs = $advRepository->addAttributes($my_advs->get());
-        $files = array();
-        foreach ($my_advs as $my_adv) {
-            $files[] = $my_adv->files;
-        }
-        return response()->json(['success' => true, 'content' => $my_advs, 'files' => $files, 'title' => $page_title]);
-    }
-
-    public function authCheck()
-    {
-        if (auth()->check()) {
-            return auth()->user();
-        }
-
-        return "false";
-    }
-
-    public function isActive($slug)
-    {
-        $query = new AdvModel();
-
-        return $query->is_enabled($slug);
-    }
-
-    public function isActiveJson($slug)
-    {
-        $isActive = $this->isActive($slug);
-        return response()->json(array('isActive' => $isActive));
-    }
-
-    public function checkParentCat($id)
-    {
-        $option = new CategoryModel();
-        return $option->getParentCats($id);
-    }
-
-    public function checkUser()
-    {
-        if (Auth::check()) {
-            return response()->json([
-                'success' => true,
-            ]);
-        } else {
-            return response()->json([
-                'success' => false,
-            ]);
-        }
-    }
-
-    public function advAddCart($id, $quantity = 1)
-    {
-        $thisModel = new AdvModel();
-        $adv = $thisModel->isAdv($id);
-        $response = array();
-        if ($adv) {
-            $cart = $thisModel->addCart($adv, $quantity);
-            $response['status'] = "success";
-        } else {
-            $response['status'] = "error";
-            $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
-        }
-        return back();
-    }
-
-    public function addCart(Request $request)
-    {
-        if (\auth()->check()) {
-            $id = $request->id;
-            $quantity = $request->quantity;
-            $name = $request->name;
-            $thisModel = new AdvModel();
-            $adv = $thisModel->isAdv($id);
-            $response = array();
-            if ($adv) {
-                $cart = $thisModel->addCart($adv, $quantity, $name);
-                $response['status'] = "success";
-            } else {
-                $response['status'] = "error";
-                $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
-            }
-        } else {
-            $response['status'] = "guest";
-        }
-        return $response;
-    }
-
-    public function stockControl(Request $request, AdvRepositoryInterface $advRepository)
-    {
-        $quantity = $request->quantity;
-        $id = $request->id;
-        $type = $request->type;
-        $advmodel = new AdvModel();
-        $adv = $advmodel->getAdv($id);
-
-        $status = $advmodel->stockControl($id, $quantity);
-
-        $response = array();
-        if ($status == 1) {
-            $response['newQuantity'] = $advRepository->getQuantity($quantity, $type, $adv);
-
-        } else {
-            $response['newQuantity'] = $adv->stock;
-        }
-
-        $response['newPrice'] = $adv->price * $response['newQuantity'];
-
-        $separator = ",";
-        $decimals = 2;
-        $point = ".";
-
-        $response['newPrice'] = number_format($response['newPrice'], $decimals, $point, str_replace('&#160;', ' ', $separator));
-        $symbol = config('streams::currencies.supported.' . strtoupper($adv->currency) . '.symbol');
-
-        $response['newPrice'] = $symbol . $response['newPrice'];
-        $response['status'] = $status;
-        $response['maxQuantity'] = $adv->stock;
-        return $response;
-    }
-
-    public function showPhoneCounter(Request $request, AdvModel $advModel, Dispatcher $events)
-    {
-        $ad_id = $request->id;
-        $ad = $advModel->getAdv($ad_id);
-
-        if ($advModel->is_enabled('phoneclickcounter')) {
-            $events->dispatch(new showAdPhone($ad));//show ad phone events
-        }
-        return "success";
     }
 
     public function extendAll($isAdmin = null)

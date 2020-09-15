@@ -39,7 +39,7 @@
             $.ajax({
                 async: false,
                 type: 'GET',
-                url: '{{ url('mapJson') }}',
+                url: '{{ url('map-json') }}',
                 data: QueryString(window.location.href),
                 success: function (data) {
                     console.log(data)

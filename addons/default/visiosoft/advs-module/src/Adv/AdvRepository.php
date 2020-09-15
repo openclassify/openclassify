@@ -439,9 +439,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function getCategoriesWithAdID($id)
     {
-        $adv = $this->model->find($id);
+        $adv = $this->find($id);
 
-        if (!is_null($adv)) {
+        if ($adv) {
             $categories = array();
             foreach ($adv->toArray() as $key => $field) {
                 if (preg_match('/cat\d/', $key) and !is_null($field)) {
@@ -450,6 +450,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
             return $categories;
         }
+
         return null;
     }
 
@@ -474,6 +475,13 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->newQuery()
             ->whereIn('advs_advs.created_by_id', $usersIDs)
             ->where('advs_advs.slug', '!=', "")
+            ->where('advs_advs.status', 'approved')
+            ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+    }
+
+    public function myAdvsByUser()
+    {
+        return $this->model->userAdv()
             ->where('advs_advs.status', 'approved')
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
     }

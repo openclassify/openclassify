@@ -3,7 +3,7 @@ var filter = {};
 filter.checkUser = () => {
     $.ajax({
         type: 'get',
-        url: '/check_user',
+        url: '/check-user',
         success: function (response) {
             if (response.success == true) {
                 $('#search-fav-modal').modal('toggle');

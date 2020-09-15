@@ -107,6 +107,13 @@ class AdvTableBuilder extends TableBuilder
      *
      * @var array
      */
-    protected $assets = [];
+    protected $assets = [
+        'scripts.js' => [
+            'visiosoft.module.advs::js/list.js',
+        ],
+        'styles.css' => [
+            'visiosoft.module.advs::css/custom.css',
+        ]
+    ];
 
 }

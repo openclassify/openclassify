@@ -1,15 +1,22 @@
 <?php namespace Visiosoft\ProfileModule\Http\Controller\Admin;
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
-use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
-use Illuminate\Http\Request;
 use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
+use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
 use Visiosoft\ProfileModule\Adress\Table\AdressTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
 class AdressController extends AdminController
 {
+
+    private $adressRepository;
+
+    public function __construct(AdressRepositoryInterface $adressRepository)
+    {
+        parent::__construct();
+        $this->adressRepository = $adressRepository;
+    }
 
     /**
      * Display an index of existing entries.
@@ -41,47 +48,5 @@ class AdressController extends AdminController
         $form->setOption('heading', "visiosoft.module.profile::field");
 
         return $form->render();
-    }
-
-    /**
-     * Edit an existing entry.
-     *
-     * @param AdressFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function edit(AdressFormBuilder $form, $id)
-    {
-        $form->setOption('heading', "visiosoft.module.profile::field");
-
-        return $form->render($id);
-    }
-
-    public function adresList(AdressTableBuilder $table, $id)
-    {
-        $table->setColumns(['adress_name','user']);
-        $table->setButtons(['edit' => [
-            'href' => '/admin/profile/adress/editAdress/{entry.id}',
-        ],]);
-        return $table->render();
-    }
-
-    public function adressUpdate(AdressFormBuilder $form,Request $request,$id)
-    {
-        $error = $form->build()->validate()->getFormErrors()->getMessages();
-        if(!empty($error))
-        {
-            return $this->redirect->back();
-        }
-        $New_value = $request->all();
-        unset($New_value['_token'],$New_value['action']);
-        ProfileAdressEntryModel::find($id)->update($New_value);
-        $message = [];
-        $message[] = trans('visiosoft.module.profile::message.adress_success_update');
-        if($request->get('action') == "save_create")
-        {
-            return redirect('admin/profile/adress/create')->with('success', $message);
-        }
-        return $this->redirect->back()->with('success', $message);
     }
 }

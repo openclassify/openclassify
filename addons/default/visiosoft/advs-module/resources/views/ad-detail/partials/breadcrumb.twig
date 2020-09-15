@@ -2,7 +2,7 @@
     <ol class="breadcrumb">
         {% for cat in categories %}
             <li class="breadcrumb-item">
-                <a href="{{ url_route('visiosoft.module.advs::list_cat', [cat.id]) }}" class="text-primary">{{ cat['name'] }}</a>
+                <a href="{{ url_route('adv_list_seo', [cat.slug]) }}" class="text-primary">{{ cat['name'] }}</a>
             </li>
         {% endfor %}
         <input class="hidden" id="adv-id" value="{{ adv.id }}">

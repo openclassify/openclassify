@@ -27,7 +27,7 @@ function doneTyping(phoneNum) {
         $.ajax({
             type: 'GET',
             data: {'phoneNumber': countryCode + phoneNum.substr(1)},
-            url: 'ajax/phone-validation',
+            url: 'api/phone-validation',
             success: function (response) {
                 if (response.userExists) {
                     phoneInput.addClass('rejected-phone');

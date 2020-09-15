@@ -7,17 +7,17 @@ class GetAddressByUser
 {
 
     /**
-     * @var $id
+     * @var $userId
      */
-    protected $id;
+    protected $userId;
 
     /**
      * GetProduct constructor.
-     * @param $id
+     * @param $userId
      */
-    public function __construct($id)
+    public function __construct($userId)
     {
-        $this->id = $id;
+        $this->userId = $userId;
     }
 
     /**
@@ -26,8 +26,8 @@ class GetAddressByUser
      */
     public function handle(AdressRepositoryInterface $adressRepository)
     {
-        if ($this->id) {
-            return $adressRepository->findByUser($this->id);
+        if ($this->userId) {
+            return $adressRepository->getUserAddresses($this->userId);
         }
         return null;
     }
