@@ -9,7 +9,7 @@ class getExchange
         $this->currency = $currency;
     }
 
-    public function handle($currency = null)
+    public function handle()
     {
         $exchange_xml = simplexml_load_file(setting_value('visiosoft.module.advs::tcmb_exchange_url') . '/today.xml');
         $exchange_xml = json_decode(json_encode($exchange_xml), TRUE);
