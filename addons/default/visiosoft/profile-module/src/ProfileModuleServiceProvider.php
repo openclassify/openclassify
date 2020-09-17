@@ -141,6 +141,10 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\Admin\UsersController@exportUsers'
         ],
 
+        'users/activate'        => [
+            'ttl'  => 0,
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\RegisterController@activate',
+        ],
 
         // Cache links
         'ajax/get-user-info' => 'Visiosoft\ProfileModule\Http\Controller\CacheController@getUserInfo',
