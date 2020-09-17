@@ -16,19 +16,8 @@ use Illuminate\Notifications\AnonymousNotifiable;
  */
 class HandleManualRegistration
 {
-
-    /**
-     * The form builder.
-     *
-     * @var RegisterFormBuilder
-     */
     protected $builder;
 
-    /**
-     * Create a new HandleManualRegistration instance.
-     *
-     * @param RegisterFormBuilder $builder
-     */
     public function __construct(Register2FormBuilder $builder)
     {
         $this->builder = $builder;
