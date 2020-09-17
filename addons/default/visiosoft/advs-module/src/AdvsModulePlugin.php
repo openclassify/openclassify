@@ -15,12 +15,6 @@ use Visiosoft\AdvsModule\Currency\CurrencyFormat;
 
 class AdvsModulePlugin extends Plugin
 {
-    public $repository;
-
-    public function __construct(AdvRepositoryInterface $repository)
-    {
-        $this->repository = $repository;
-    }
 
     /**
      * @return array

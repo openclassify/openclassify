@@ -371,12 +371,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
                 'href' => '/admin/settings/modules/visiosoft.module.advs',
             ],
             'theme_settings' => [
-                'title' => 'visiosoft.module.advs::section.theme_settings.name',
+                'title' => 'visiosoft.theme.defaultadmin::section.theme_settings.name',
                 'href' => url('admin/settings/themes/' . setting_value('streams::standard_theme')),
             ],
             'assets_clear' => [
                 'title' => 'visiosoft.module.advs::section.assets_clear.name',
-                'href' => '/admin/assets/clear',
+                'href' => route('assets_clear'),
             ],
         ];
 
