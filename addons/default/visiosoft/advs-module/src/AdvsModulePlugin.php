@@ -5,6 +5,7 @@ use Twig_Environment;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
+use Visiosoft\AdvsModule\Adv\Command\getExchange;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
 use Visiosoft\AdvsModule\Currency\Currency;
@@ -98,6 +99,16 @@ class AdvsModulePlugin extends Plugin
 
                     return $fn->getCallable()(...$args);
                 }, ['needs_environment' => true]
+            ),
+            new \Twig_SimpleFunction(
+                'getExchange',
+                function ($currency = null) {
+
+                    if (!$exchange = $this->dispatch(new getExchange($currency))) {
+                        return null;
+                    }
+                    return $exchange;
+                }
             )
         ];
     }
