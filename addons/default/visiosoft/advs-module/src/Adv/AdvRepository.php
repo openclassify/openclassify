@@ -477,4 +477,14 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->where('advs_advs.status', 'approved')
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
     }
+
+    public function getPopular()
+    {
+        return $this->newQuery()
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', '=', 'approved')
+            ->where('slug', '!=', '')
+            ->orderBy('count_show_ad', 'desc')
+            ->paginate(setting_value('visiosoft.module.advs::popular_ads_limit', setting_value('streams::per_page')));
+    }
 }
