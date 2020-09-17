@@ -248,4 +248,11 @@ return [
             'default_value' => false,
         ]
     ],
+
+    'popular_ads_limit' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 15,
+        ],
+    ],
 ];

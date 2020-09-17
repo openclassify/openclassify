@@ -21,6 +21,7 @@ return [
                 'title' => 'visiosoft.module.advs::section.ads',
                 'fields' => [
                     'latest-limit',
+                    'popular_ads_limit',
                     'default_view_type',
                     'hide_zero_price',
                     'auto_approve',

@@ -44,4 +44,7 @@ return [
     'options' => [
         'title' => 'Options',
     ],
+    'theme_settings' => [
+        'name' => 'Theme Settings'
+    ],
 ];

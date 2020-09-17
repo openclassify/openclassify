@@ -6,13 +6,21 @@ use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
 use Visiosoft\AdvsModule\Adv\Command\getExchange;
+use Visiosoft\AdvsModule\Adv\Command\getPopular;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Currency\Currency;
 use Visiosoft\AdvsModule\Currency\CurrencyFormat;
 
 class AdvsModulePlugin extends Plugin
 {
+    public $repository;
+
+    public function __construct(AdvRepositoryInterface $repository)
+    {
+        $this->repository = $repository;
+    }
 
     /**
      * @return array
@@ -109,7 +117,15 @@ class AdvsModulePlugin extends Plugin
                     }
                     return $exchange;
                 }
-            )
+            ), new \Twig_SimpleFunction(
+                'getPopular',
+                function () {
+                    if (!$popular = $this->dispatch(new getPopular())) {
+                        return null;
+                    }
+                    return $popular;
+                }
+            ),
         ];
     }
 }

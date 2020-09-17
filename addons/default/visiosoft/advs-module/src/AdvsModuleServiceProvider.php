@@ -365,18 +365,24 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     {
         // Run extra post-boot registration logic here.
         // Use method injection or commands to bring in services.
-        $slug = 'general_settings';
-        $section = [
-            'title' => 'visiosoft.module.advs::button.general_settings',
-            'href' => '/admin/settings/modules/visiosoft.module.advs',
+        $settings_url = [
+            'general_settings' => [
+                'title' => 'visiosoft.module.advs::button.general_settings',
+                'href' => '/admin/settings/modules/visiosoft.module.advs',
+            ],
+            'theme_settings' => [
+                'title' => 'visiosoft.module.advs::section.theme_settings.name',
+                'href' => url('admin/settings/themes/' . setting_value('streams::standard_theme')),
+            ],
+            'assets_clear' => [
+                'title' => 'visiosoft.module.advs::section.assets_clear.name',
+                'href' => '/admin/assets/clear',
+            ],
         ];
-        $slug2 = 'assets_clear';
-        $section2 = [
-            'title' => 'visiosoft.module.advs::section.assets_clear.name',
-            'href' => '/admin/assets/clear',
-        ];
-        $addonCollection->get('anomaly.module.settings')->addSection($slug, $section);
-        $addonCollection->get('anomaly.module.settings')->addSection($slug2, $section2);
+
+        foreach ($settings_url as $key => $value) {
+            $addonCollection->get('anomaly.module.settings')->addSection($key, $value);
+        }
 
         // Disable file versioning
         $fileModel->disableVersioning();
