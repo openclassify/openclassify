@@ -1,11 +1,10 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
-use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Illuminate\Support\Facades\DB;
 
-class CategoriesController extends PublicController {
-
+class CategoriesController extends PublicController
+{
     public function listByCat($cat)
     {
         $advs = DB::table('advs_advs')
