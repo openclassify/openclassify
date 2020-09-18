@@ -218,31 +218,6 @@ class AdvsController extends AdminController
         }
     }
 
-    /**
-     * Create a new entry.
-     *
-     * @param AdvFormBuilder $form
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function create(AdvFormBuilder $form)
-    {
-        // $this->dispatch(new AddEntryFormFromRequest($form));
-        // $this->dispatch(new AddAdvFormFromRequest($form));
-        return $form->render();
-    }
-
-    /**
-     * Edit an existing entry.
-     *
-     * @param AdvFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function edit(AdvFormBuilder $form, $id)
-    {
-        return $form->render($id);
-    }
-
     public function actions($id, $type, SettingRepositoryInterface $settings, AdvModel $advModel)
     {
 

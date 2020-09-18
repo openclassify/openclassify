@@ -889,18 +889,6 @@ class AdvsController extends PublicController
         return $this->view->make('theme::addons/anomaly/pages-module/page', compact('cats'));
     }
 
-    public function map(
-        AdvRepositoryInterface $advRepository,
-        CategoryRepositoryInterface $categories,
-        CountryRepositoryInterface $countries,
-        Request $request
-    )
-    {
-
-        return $this->index($advRepository, $categories, $countries, $request, true);
-
-    }
-
     public function mapJson(Request $request, AdvRepositoryInterface $repository)
     {
         $param = $request->toArray();
