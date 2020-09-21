@@ -57,15 +57,6 @@ class AdressController extends AdminController
         return $form->render($id);
     }
 
-    public function adresList(AdressTableBuilder $table, $id)
-    {
-        $table->setColumns(['adress_name','user']);
-        $table->setButtons(['edit' => [
-            'href' => '/admin/profile/adress/editAdress/{entry.id}',
-        ],]);
-        return $table->render();
-    }
-
     public function adressUpdate(AdressFormBuilder $form,Request $request,$id)
     {
         $error = $form->build()->validate()->getFormErrors()->getMessages();

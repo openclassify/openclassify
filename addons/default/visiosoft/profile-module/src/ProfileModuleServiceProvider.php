@@ -59,20 +59,22 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        /* Ads */
+        // Admin AdressController
+        'admin/profile' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@index',
+        'admin/profile/create' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@create',
+        'admin/profile/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adressupdate',
+
+        // Admin UsersController
+        'admin/users/export' => [
+            'as' => 'users::exportUsers',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\Admin\UsersController@exportUsers'
+        ],
+
+        // MyProfileController
         'profile/ads' => [
             'as' => 'profile::ads',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@myAds'
         ],
-
-        /*Address */
-        'admin/profile' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@index',
-        'admin/profile/create' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@create',
-        'admin/profile/edit/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adresList',
-        'admin/profile/editAdress/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@edit',
-        'admin/profile/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\Admin\AdressController@adressupdate',
-        'profile/adress/update/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressUpdate',
-
         'profile/adress/ajaxCreate' => [
             'as' => 'visiosoft.module.profile::adress_ajax_create',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxCreate'
@@ -85,41 +87,35 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.profile::adress_ajax_detail',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxDetail'
         ],
-
-        /* Profile */
-        'profile/edit' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@edit',
-        'profile/update' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@update',
         'profile' => [
             'as' => 'profile::profile',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@home'
         ],
+        'profile/class/status/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusAds',
+        'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
+        'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
+        'profile/closeAccount' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount',
+        'profile/notification' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
+        'ajax/update-user-info' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
+
+        // UserAuthenticator
+        'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',
         'ajax/phone-validation' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@phoneValidation',
 
+        // RegisterController
         'register' => [
             'middleware' => [
                 authCheck::class
             ],
             'ttl' => 0,
-            'as' => 'anomaly.module.users::register',
             'uses' => 'Anomaly\UsersModule\Http\Controller\RegisterController@register',
         ],
-
-        /* Login */
-        'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',
-
-
-        'profile/class/status/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusAds',
-        'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
-        'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
-        'profile/closeAccount' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount',
-        'profile/notification' => [
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
+        'users/activate' => [
+            'ttl'  => 0,
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\RegisterController@activate',
         ],
 
-        'ajax/update-user-info' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
-
-
-        //Address
+        // AddressController
         'profile/address' => [
             'as' => 'profile::address',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\AddressController@index',
@@ -136,17 +132,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.profile::address_soft_delete',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\AddressController@delete'
         ],
-        'admin/users/export' => [
-            'as' => 'users::exportUsers',
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\Admin\UsersController@exportUsers'
-        ],
 
-        'users/activate'        => [
-            'ttl'  => 0,
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\RegisterController@activate',
-        ],
-
-        // Cache links
+        // CacheController
         'ajax/get-user-info' => 'Visiosoft\ProfileModule\Http\Controller\CacheController@getUserInfo',
     ];
 
