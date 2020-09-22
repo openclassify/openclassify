@@ -41,8 +41,6 @@ use Visiosoft\PackagesModule\Package\PackageModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\QrcontactModule\Qr\QrModel;
 use Visiosoft\StoreModule\Ad\AdModel;
-use function PMA\Util\get;
-
 
 class AdvsController extends PublicController
 {
