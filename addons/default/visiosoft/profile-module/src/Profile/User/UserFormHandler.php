@@ -38,7 +38,7 @@ class UserFormHandler
         $user->fill($data);
         $changes = $user->getDirty();
         $user->save();
-        if (count($changes) == 0) {
+        if (!count($changes)) {
             return false;
         }
         return $changes;
