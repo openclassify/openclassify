@@ -1070,21 +1070,4 @@ class AdvsController extends PublicController
         $this->messages->success(trans('visiosoft.module.advs::message.extended', ['number' => $adsExtended]));
         return $this->redirect->back();
     }
-
-    public function saveComment($id)
-    {
-        $comment = $this->request->validate([
-            'rating' => 'required',
-            'username' => 'required',
-            'title' => 'required',
-            'detail' => 'required',
-        ]);
-
-        if ($adv = $this->adv_repository->find($id)) {
-            event(new CreateNewComment($adv, $comment));
-            $this->messages->success(trans('visiosoft.module.comments::message.comment_success'));
-        } else {
-            $this->messages->error(trans('visiosoft.module.comments::message.comment_error'));
-        }
-    }
 }
