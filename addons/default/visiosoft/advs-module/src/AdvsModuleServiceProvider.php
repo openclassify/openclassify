@@ -209,11 +209,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
         // Others
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
-
-        'advs/comments/save/{id}' => [
-            'as' => 'advs::saveComment',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@saveComment'
-        ]
     ];
 
     /**
