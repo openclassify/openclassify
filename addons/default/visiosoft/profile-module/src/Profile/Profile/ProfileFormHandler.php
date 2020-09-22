@@ -2,7 +2,7 @@
 
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\UsersModule\User\UserModel;
-use Illuminate\Support\Facades\Auth;
+use Visiosoft\ProfileModule\Events\UserUpdated;
 
 class ProfileFormHandler
 {
@@ -30,8 +30,25 @@ class ProfileFormHandler
             $parameters['file_id'] = null;
         }
 
-        $userModel->newQuery()->where('id', Auth::id())->update($parameters);
+        $user = $userModel->newQuery()->find(\auth()->id());
+
+        $oldCustomerInfo = $user->toArray();
+
+        $changes = $this->change($user, $parameters);
+
+        event(new UserUpdated($oldCustomerInfo, $changes));
 
         $messages->success(trans('visiosoft.module.profile::message.success_update'));
+    }
+
+    public function change($user, $data)
+    {
+        $user->fill($data);
+        $changes = $user->getDirty();
+        $user->save();
+        if (count($changes) == 0) {
+            return false;
+        }
+        return $changes;
     }
 }
