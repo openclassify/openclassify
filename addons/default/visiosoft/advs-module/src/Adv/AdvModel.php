@@ -355,4 +355,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             redirect('/login?redirect=' . url()->current())->send();
         }
     }
+
+    public function inStock()
+    {
+        return $this->is_get_adv && $this->stock;
+    }
 }
