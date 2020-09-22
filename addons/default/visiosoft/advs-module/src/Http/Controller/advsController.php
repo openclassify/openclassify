@@ -2,47 +2,46 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
+use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Advs\PurchasePurchaseEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
 use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
-use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
-use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
-use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
-use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
+use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
-use Visiosoft\LocationModule\City\CityRepository;
-use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
-use function PMA\Util\get;
 use Visiosoft\AdvsModule\Adv\AdvModel;
+use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
+use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
 use Visiosoft\AdvsModule\Adv\Event\priceChange;
+use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Visiosoft\AdvsModule\Adv\Event\UpdateAd;
 use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\CommentsModule\Comment\CommentModel;
-use Visiosoft\LocationModule\City\CityModel;
+use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\AlgoliatestModule\Http\Controller\Admin\IndexController;
+use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CloudinaryModule\Video\VideoModel;
+use Visiosoft\CommentsModule\Comment\Events\CreateNewComment;
 use Visiosoft\FavsModule\Http\Controller\FavsController;
+use Visiosoft\LocationModule\City\CityModel;
+use Visiosoft\LocationModule\City\CityRepository;
+use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
 use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
-use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
-use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
-use Anomaly\Streams\Platform\Message\MessageBag;
 use Visiosoft\PackagesModule\Package\PackageModel;
-
-use Illuminate\Contracts\Events\Dispatcher;
+use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\QrcontactModule\Qr\QrModel;
 use Visiosoft\StoreModule\Ad\AdModel;
+use function PMA\Util\get;
 
 
 class AdvsController extends PublicController
@@ -405,10 +404,6 @@ class AdvsController extends PublicController
 
             $options = $this->optionRepository->findAllBy('adv_id', $id);
 
-            if ($this->adv_model->is_enabled('comments')) {
-                $CommentModel = new CommentModel();
-                $comments = $CommentModel->getComments($adv->id)->get();
-            }
             $this->event->dispatch(new viewAd($adv));//view ad
 
             $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
@@ -429,7 +424,7 @@ class AdvsController extends PublicController
             }
             $this->template->set('meta_image', $coverPhoto);
 
-            if ($adv->created_by_id == isset(auth()->user()->id) OR $adv->status == "approved") {
+            if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
                     'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options'));
             } else {
@@ -509,11 +504,6 @@ class AdvsController extends PublicController
         $advs->softDeleteAdv($id);
         $this->messages->error(trans('visiosoft.module.advs::message.success_delete'));
         return back();
-    }
-
-    public function getCats($id)
-    {
-        return $this->category_repository->getSubCatById($id);
     }
 
     public function getCatsForNewAd($id)
@@ -763,7 +753,7 @@ class AdvsController extends PublicController
         $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
         $default_published_time = $settings->value('visiosoft.module.advs::default_published_time');
 
-        if ($auto_approved == true AND $type == 'pending_admin') {
+        if ($auto_approved == true and $type == 'pending_admin') {
             $type = "approved";
         }
         if ($type == "approved" and $auto_approved != true) {
@@ -772,7 +762,7 @@ class AdvsController extends PublicController
 
         if ($type == "approved") {
             $this->adv_model->publish_at_Ads($id);
-            if ($ad->finish_at == NULL AND $type == "approved") {
+            if ($ad->finish_at == NULL and $type == "approved") {
                 if ($this->adv_model->is_enabled('packages')) {
                     $packageModel = new PackageModel();
                     $published_time = $packageModel->reduceTimeLimit($ad->cat1);
@@ -949,17 +939,17 @@ class AdvsController extends PublicController
         return "false";
     }
 
+    public function isActiveJson($slug)
+    {
+        $isActive = $this->isActive($slug);
+        return response()->json(array('isActive' => $isActive));
+    }
+
     public function isActive($slug)
     {
         $query = new AdvModel();
 
         return $query->is_enabled($slug);
-    }
-
-    public function isActiveJson($slug)
-    {
-        $isActive = $this->isActive($slug);
-        return response()->json(array('isActive' => $isActive));
     }
 
     public function checkParentCat($id)
@@ -1074,5 +1064,22 @@ class AdvsController extends PublicController
         $adsExtended = $this->adv_repository->extendAds($adId);
         $this->messages->success(trans('visiosoft.module.advs::message.extended', ['number' => $adsExtended]));
         return $this->redirect->back();
+    }
+
+    public function saveComment($id)
+    {
+        $comment = $this->request->validate([
+            'rating' => 'required',
+            'username' => 'required',
+            'title' => 'required',
+            'detail' => 'required',
+        ]);
+
+        if ($adv = $this->adv_repository->find($id)) {
+            event(new CreateNewComment($adv, $comment));
+            $this->messages->success(trans('visiosoft.module.comments::message.comment_success'));
+        } else {
+            $this->messages->error(trans('visiosoft.module.comments::message.comment_error'));
+        }
     }
 }

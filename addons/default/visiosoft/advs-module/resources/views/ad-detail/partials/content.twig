@@ -37,7 +37,9 @@
                 </div>
 
                 <!-- Content With Block -->
-                {{ addBlock('ad-detail/content',{'features':features,'adv':adv, 'profile': profile})|raw }}
+                <div id="nav-comments" class="tab-pane fade in">
+                    {{ addBlock('ad-detail/content',{'features':features,'entry':adv, 'profile': profile, 'commenturl': 'advs::saveComment', 'entry_type': 'Visiosoft\\AdvsModule\\Adv\\AdvModel'})|raw }}
+                </div>
                 <!-- Content With Block -->
             </div>
         </div>
