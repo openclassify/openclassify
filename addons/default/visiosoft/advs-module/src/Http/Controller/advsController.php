@@ -506,6 +506,11 @@ class AdvsController extends PublicController
         return back();
     }
 
+    public function getCats($id)
+    {
+        return $this->category_repository->getSubCatById($id);
+    }
+
     public function getCatsForNewAd($id)
     {
 
