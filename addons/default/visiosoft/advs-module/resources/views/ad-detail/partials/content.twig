@@ -37,10 +37,8 @@
                 </div>
 
                 <!-- Content With Block -->
-                <div id="nav-comments" class="tab-pane fade in">
-                    {{ addBlock('ad-detail/content',{'features':features,'entry': adv, 'type': 'adv', 'profile': profile,
+                    {{ addBlock('ad-detail/content',{'features':features,'adv': adv, 'type': 'adv', 'profile': profile,
                         'commenturl': 'comments::save_comment'})|raw }}
-                </div>
                 <!-- Content With Block -->
             </div>
         </div>
