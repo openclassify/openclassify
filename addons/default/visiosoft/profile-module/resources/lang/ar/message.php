@@ -35,6 +35,6 @@ return [
     'disable_account' => 'هل تريد إغلاق حسابك؟ هذه العملية لا يمكن التراجع عنها.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'تم تحديث البريد الإلكتروني!',
+    'update_email_mail_message' => 'تم تحديث بريدك الإلكتروني!',
 ];
