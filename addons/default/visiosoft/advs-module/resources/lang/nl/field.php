@@ -20,7 +20,7 @@ return [
         'name' => 'Prijs'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standaard prijs'
     ],
     'date' => [
         'name' => 'Datum'
@@ -267,8 +267,8 @@ return [
     "no_location" => "Er is geen locatie geselecteerd.",
     "continue" => 'Doorgaan met',
     "gallery" => 'Galerij',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Advertenties',
+    "were_found" => 'zijn gevonden.',
 
     // Pending screen
     'pending_message_1' => 'De advertentie bevindt zich in het goedkeuringsproces',
@@ -296,5 +296,5 @@ return [
     'select_category_step_by_step' => 'Selecteer stap voor stap categorie',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opties',
 ];
