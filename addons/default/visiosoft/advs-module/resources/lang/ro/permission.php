@@ -50,11 +50,11 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'Opțiuni',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'Pot citi opțiuni?',
+            'write'  => 'Poate crea / edita opțiuni?',
+            'delete' => 'Poți șterge opțiunile?',
         ],
     ],
 ];
