@@ -429,19 +429,19 @@ return [
     'my_address' => 'Мой адрес',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'название компании'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Налоговая служба'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Налоговый номер'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Мой профайл',
+    'edit_profile' => 'Редактировать профиль',
+    'edit_details' => 'Редактировать детали',
+    'update' => 'Обновить',
+    'change_password' => 'Сменить пароль',
 ];
