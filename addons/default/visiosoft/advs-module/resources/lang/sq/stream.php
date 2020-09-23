@@ -20,6 +20,6 @@ return [
         'name' => 'Cf vlerat',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Opsione',
     ],
 ];
