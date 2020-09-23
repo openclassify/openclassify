@@ -35,6 +35,6 @@ return [
     'disable_account' => 'Wil je je account sluiten? Deze bewerking kan niet ongedaan worden gemaakt.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-mail bijgewerkt!',
+    'update_email_mail_message' => 'Uw e-mail is bijgewerkt!',
 ];
