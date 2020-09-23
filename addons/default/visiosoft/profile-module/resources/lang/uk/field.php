@@ -428,19 +428,19 @@ return [
     'my_address' => 'Моя адреса',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Назва компанії'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Податкова'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Податковий номер'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Мій профіль',
+    'edit_profile' => 'Редагувати профіль',
+    'edit_details' => 'Редагувати деталі',
+    'update' => 'Оновлення',
+    'change_password' => 'Змінити пароль',
 ];
