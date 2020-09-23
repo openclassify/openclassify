@@ -20,6 +20,6 @@ return [
         'name' => 'Значения ср',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Параметры',
     ],
 ];
