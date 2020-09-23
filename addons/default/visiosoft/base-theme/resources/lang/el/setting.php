@@ -32,7 +32,7 @@ return [
         'name' => 'Εγγραφή λογότυπου οδηγιών σελίδας',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Εγγραφή συνδέσμου ειδοποίησης σελίδας',
     ],
     'style' => [
         'name' => 'Στυλ (CSS)',
