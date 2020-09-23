@@ -20,7 +20,7 @@ return [
         'name' => 'Prix'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Prix standard'
     ],
     'date' => [
         'name' => 'Date'
@@ -267,8 +267,8 @@ return [
     "no_location" => "Aucun emplacement n'est sélectionné.",
     "continue" => 'Continuer',
     "gallery" => 'Galerie',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Les publicités',
+    "were_found" => 'ont été trouvés.',
 
     // Pending screen
     'pending_message_1' => 'L\'annonce est en cours d\'approbation',
