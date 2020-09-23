@@ -428,19 +428,19 @@ return [
     'my_address' => 'Mój adres',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Nazwa firmy'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Urząd podatkowy'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Numer identyfikacji podatkowej'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Mój profil',
+    'edit_profile' => 'Edytuj profil',
+    'edit_details' => 'Edytuj szczegóły',
+    'update' => 'Aktualizacja',
+    'change_password' => 'Zmień hasło',
 ];
