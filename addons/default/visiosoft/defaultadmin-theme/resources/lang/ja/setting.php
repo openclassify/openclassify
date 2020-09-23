@@ -11,4 +11,22 @@ return [
         'warning'      => '最初のアクセス可能なナビゲーション項目は、 <strong>ホーム</strong> エリアとして使用されます。',
         'reorder'      => 'プライマリナビゲーションアイテムを <strong>サイドバー</strong> にドラッグアンドドロップして並べ替えます。',
     ],
+    "icon" => [
+        'name' => 'アイコン',
+    ],
+    "title" => [
+        'name' => '題名',
+    ],
+    "footer_copyright_org_name" => [
+        'name' => 'フッター著作権機関名',
+    ],
+    "sidebar_main_color" => [
+        'name' => 'サイドバーのメインカラー',
+    ],
+    "sidebar_secondary_color" => [
+        'name' => 'サイドバーのセカンダリカラー',
+    ],
+    "active_sidebar_border_color" => [
+        'name' => 'アクティブなサイドバーのボーダー色',
+    ]
 ];
