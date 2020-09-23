@@ -32,7 +32,7 @@ return [
         'name' => 'Registrieren Sie das Anweisungslogo für die Seite',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Link zum Registrieren von Seitenalarmen',
     ],
     'style' => [
         'name' => 'Stil (CSS)',
