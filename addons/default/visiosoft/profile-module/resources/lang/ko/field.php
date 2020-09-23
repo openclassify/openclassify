@@ -428,19 +428,19 @@ return [
     'my_address' => '내 주소',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => '회사 이름'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => '세무서'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => '세금 번호'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => '내 프로필',
+    'edit_profile' => '프로필 편집',
+    'edit_details' => '세부 정보 편집',
+    'update' => '최신 정보',
+    'change_password' => '비밀번호 변경',
 ];
