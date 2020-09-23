@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'המרת מטבע בהצלחה.',
     'choose_user' => 'בחר משתמש',
     'owner_updated_successfully' => 'הבעלים עודכן בהצלחה!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'לא נמצאה מודעה!',
+    'replicated_success' => 'המודעה שוכפלה בהצלחה!',
+    'ad_doesnt_exist' => "מודעה זו אינה קיימת!",
 ];
