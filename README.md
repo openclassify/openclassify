@@ -19,7 +19,7 @@ https://crowdin.com/project/openclassify
 
 ## Server Requirements
 
-- PHP >= 7.2
+- PHP = 7.2.x
 - XML PHP Extension
 - PDO PHP Extension
 - cURL PHP Extension
