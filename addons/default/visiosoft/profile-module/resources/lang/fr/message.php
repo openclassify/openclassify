@@ -36,6 +36,6 @@ return [
     'disable_account' => 'Voulez-vous fermer votre compte? Cette opération ne peut pas être annulée.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Email mis à jour!',
+    'update_email_mail_message' => 'Votre e-mail a été mis à jour!',
 ];
