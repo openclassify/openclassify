@@ -268,8 +268,8 @@ return [
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'İlanlar',
+    "were_found" => 'bulundular.',
 
     // Pending screen
     'pending_message_1' => 'Reklam Onay Sürecinde',
