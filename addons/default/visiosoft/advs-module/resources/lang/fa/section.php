@@ -40,7 +40,8 @@ return [
     'general' => 'عمومی',
     'ads' => 'اعلانات',
     'user' => 'یوزر',
+    'filter' => 'فیلتر',
     'options' => [
-        'title' => 'Options',
+        'title' => 'گزینه ها',
     ],
 ];
