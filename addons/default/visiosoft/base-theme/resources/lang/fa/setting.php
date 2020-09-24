@@ -32,7 +32,7 @@ return [
         'name' => 'آرم صفحه آموزش را ثبت کنید',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'پیوند هشدار صفحه را ثبت کنید',
     ],
     'style' => [
         'name' => 'سبک (CSS)',
