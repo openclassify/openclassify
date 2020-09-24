@@ -32,7 +32,7 @@ return [
         'name' => 'পৃষ্ঠা নির্দেশিকা লোগো নিবন্ধন করুন',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'পৃষ্ঠা সতর্কতা লিঙ্ক নিবন্ধন করুন',
     ],
     'style' => [
         'name' => 'স্টাইল (css)',
