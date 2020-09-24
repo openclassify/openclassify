@@ -20,7 +20,7 @@ return [
         'name' => 'कीमत'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'प्रामाणिक मूल्य'
     ],
     'date' => [
         'name' => 'तारीख'
@@ -266,8 +266,8 @@ return [
     "no_location" => "कोई स्थान चयनित नहीं है।",
     "continue" => 'जारी रखें',
     "gallery" => 'गेलरी',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'विज्ञापन',
+    "were_found" => 'पाये गए।',
 
     // Pending screen
     'pending_message_1' => 'विज्ञापन अनुमोदन प्रक्रिया में है',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'श्रेणी चरण दर चरण चुनें',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'विकल्प',
 ];
