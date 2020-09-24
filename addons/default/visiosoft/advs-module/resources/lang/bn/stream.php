@@ -20,6 +20,6 @@ return [
         'name' => 'সিএফ মান',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'বিকল্পগুলি',
     ],
 ];
