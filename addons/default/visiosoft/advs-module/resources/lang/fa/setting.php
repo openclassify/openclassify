@@ -80,6 +80,9 @@ return [
     'default_GET' => [
         'name' => 'تبلیغات پیش فرض GET',
     ],
+    'add_canvas' => [
+        'name' => 'بوم را اضافه کنید',
+    ],
     'thumbnail_width' => [
         'name' => 'عرض تصویر',
     ],
@@ -120,7 +123,7 @@ return [
         'name' => 'لیست صفحه تصویر',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'زمینه قیمت استاندارد را مخفی کنید',
     ],
     'enabled_currencies' => [
         'name' => 'ارزهای فعال شده',
@@ -132,6 +135,28 @@ return [
         'name' => 'ثبت نام از طریق پست الکترونیکی',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'محل بازار',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'فیلتر قیمت مخفی کنید',
+    ],
+    'hide_date_filter' => [
+        'name' => 'پنهان کردن فیلتر تاریخ',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'فیلتر عکس مخفی کنید',
+    ],
+    'hide_map_filter' => [
+        'name' => 'فیلتر نقشه مخفی شود',
+    ],
+    'show_lang_url' => [
+        'name' => 'نمایش پارامتر Lang برای URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL تبادل TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'محدودیت تبلیغات محبوب',
     ],
 ];
