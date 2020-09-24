@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Defolt Elan GET',
     ],
+    'add_canvas' => [
+        'name' => 'Kətan əlavə edin',
+    ],
     'thumbnail_width' => [
         'name' => 'Eskiz eni',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Səhifənin görüntüləməsi',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Standart qiymət sahəsini gizlət',
     ],
     'enabled_currencies' => [
         'name' => 'Aktiv valyutalar',
@@ -131,6 +134,28 @@ return [
         'name' => 'İstifadəçi Qeyd E-poçtu tələbi',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Bazar yeri',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Qiymət filtrini gizlət',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Tarix Filtrini Gizlət',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Şəkil Filtrini Gizlət',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Xəritə filtrini gizlət',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL üçün Lang Parametrini Göstərin',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'TCMB mübadilə URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Populyar elanlar limiti',
     ],
 ];
