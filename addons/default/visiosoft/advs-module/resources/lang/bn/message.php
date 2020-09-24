@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'মুদ্রা সফলভাবে রূপান্তরিত হয়েছে।',
     'choose_user' => 'একটি ব্যবহারকারী চয়ন করুন',
     'owner_updated_successfully' => 'মালিক সফলভাবে আপডেট হয়েছে!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'কোনও বিজ্ঞাপন পাওয়া যায়নি!',
+    'replicated_success' => 'বিজ্ঞাপনটি সফলভাবে প্রতিলিপি করা হয়েছে!',
+    'ad_doesnt_exist' => "এই বিজ্ঞাপনের অস্তিত্ব নেই!",
 ];
