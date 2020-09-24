@@ -40,7 +40,8 @@ return [
     'general' => 'Загальні',
     'ads' => 'Оголошення',
     'user' => 'Користувач',
+    'filter' => 'Фільтр',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Параметри',
     ],
 ];
