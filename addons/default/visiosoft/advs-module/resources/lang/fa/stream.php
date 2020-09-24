@@ -20,6 +20,6 @@ return [
         'name' => 'مقادیر Cf',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'گزینه ها',
     ],
 ];
