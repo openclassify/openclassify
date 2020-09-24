@@ -427,19 +427,19 @@ return [
     'my_address' => 'Benim adresim',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Şirket Adı'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Vergi Dairesi'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Vergi numarası'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Benim profilim',
+    'edit_profile' => 'Profili Düzenle',
+    'edit_details' => 'Detayları düzenle',
+    'update' => 'Güncelleme',
+    'change_password' => 'Şifre değiştir',
 ];
