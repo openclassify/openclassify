@@ -7,7 +7,15 @@ OpenClassify is the extensible and most advanced open source classified app buil
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/openclassify/openclassify/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
  
 
-[!['Preview Homapage Openclassify'](https://openclassify.com/files/images/open.jpg)](https://openclassify.com/)
+<div align="center">
+ <a href="https://openclassify.com">
+    <img src="https://avatars3.githubusercontent.com/u/48027403?s=400&u=ba200b1c35510b27be9997ed7fbf45995a6f6e69&v=4">
+  </a>
+</div>
+ 
+
+
+[!['Preview Homapage Classified Script'](https://openclassify.com/files/images/open.jpg)](https://openclassify.com/)
 
 ## Translation
 
