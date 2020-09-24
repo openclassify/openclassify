@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'ডিফল্ট বিজ্ঞাপন জিইটি',
     ],
+    'add_canvas' => [
+        'name' => 'ক্যানভাস যুক্ত করুন',
+    ],
     'thumbnail_width' => [
         'name' => 'থাম্বনেইল প্রস্থ',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'পৃষ্ঠার চিত্র তালিকাভুক্ত',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'স্ট্যান্ডার্ড দাম ক্ষেত্র লুকান ide',
     ],
     'enabled_currencies' => [
         'name' => 'সক্ষম মুদ্রা',
@@ -131,6 +134,28 @@ return [
         'name' => 'সদস্য নিবন্ধকরণ ইমেল প্রয়োজনীয়তা',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'মার্কেট প্লেস',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'দাম ফিল্টার লুকান',
+    ],
+    'hide_date_filter' => [
+        'name' => 'তারিখ ফিল্টার লুকান',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'ফটো ফিল্টার লুকান',
+    ],
+    'hide_map_filter' => [
+        'name' => 'মানচিত্র ফিল্টার লুকান',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL এর জন্য ল্যাঙ্গ প্যারামিটার দেখান',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'টিসিএমবি এক্সচেঞ্জ ইউআরএল',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'জনপ্রিয় বিজ্ঞাপন সীমাবদ্ধতা',
     ],
 ];
