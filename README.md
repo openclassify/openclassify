@@ -9,7 +9,7 @@ OpenClassify is the extensible and most advanced open source classified app buil
 
 <div align="center">
  <a href="https://openclassify.com">
-    <img src="https://avatars3.githubusercontent.com/u/48027403?s=400&u=ba200b1c35510b27be9997ed7fbf45995a6f6e69&v=4">
+    <img src="https://repository-images.githubusercontent.com/193061961/48452600-72c0-11ea-88f5-77566c3527eb">
   </a>
 </div>
  
