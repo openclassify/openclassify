@@ -21,7 +21,7 @@
                     <div class="row">
                         <div class="col-md-12">
                             <p class="theme-price-old small mb-0"><del>
-                                    {{ adv.standard_price.currency(null,'currency') != adv.price.currency(null,'currency')
+                                    {{ adv.standard_price != adv.price and adv.standard_price != '0'
                                     ? adv.standard_price.currency(null,"currency")
                                     : '' }}
                             </del></p>
