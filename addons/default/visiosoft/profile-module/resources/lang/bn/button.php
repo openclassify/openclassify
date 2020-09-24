@@ -12,6 +12,7 @@ return [
     'edit' => 'সম্পাদন করা',
     'go_profile' => 'প্রোফাইল বিশদে যান',
     'go_user' => 'ব্যবহারকারীর বিবরণে যান',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'ব্যক্তিগত',
+    'corporate' => 'কর্পোরেট',
+    'export' => 'রফতানি',
 ];
