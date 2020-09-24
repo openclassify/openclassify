@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'پیش فرض Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'فیلتر مکان را مخفی کنید',
+    ],
 ];
