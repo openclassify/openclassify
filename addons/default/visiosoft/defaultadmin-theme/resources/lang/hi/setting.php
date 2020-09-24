@@ -11,4 +11,22 @@ return [
         'warning'      => 'पहला सुलभ नेविगेशन आइटम <strong>होम</strong> क्षेत्र के रूप में उपयोग किया जाता है।',
         'reorder'      => 'उन्हें पुन: व्यवस्थित करने के लिए <strong>साइडबार</strong> में प्राथमिक नेविगेशन आइटम खींचें और छोड़ें।',
     ],
+    "icon" => [
+        'name' => 'चिह्न',
+    ],
+    "title" => [
+        'name' => 'शीर्षक',
+    ],
+    "footer_copyright_org_name" => [
+        'name' => 'पाद कॉपीराइट संगठन का नाम',
+    ],
+    "sidebar_main_color" => [
+        'name' => 'साइडबार मेन कलर',
+    ],
+    "sidebar_secondary_color" => [
+        'name' => 'साइडबार माध्यमिक रंग',
+    ],
+    "active_sidebar_border_color" => [
+        'name' => 'सक्रिय साइडबार बॉर्डर रंग',
+    ]
 ];
