@@ -32,7 +32,7 @@ return [
         'name' => 'रजिस्टर पेज इंस्ट्रक्शन लोगो',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'पेज अलर्ट लिंक रजिस्टर करें',
     ],
     'style' => [
         'name' => 'शैली (सीएसएस)',
