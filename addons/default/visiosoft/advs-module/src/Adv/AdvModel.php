@@ -11,6 +11,7 @@ use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
 use Visiosoft\LocationModule\District\DistrictModel;
+use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
@@ -362,5 +363,12 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $districtModel = new DistrictModel();
         $district = $districtModel->newQuery()->find($this->district);
         return $district ? $district->name : false;
+    }
+
+    public function getNeighborhood()
+    {
+        $neighborhoodModel = new NeighborhoodModel();
+        $neighborhood = $neighborhoodModel->newQuery()->find($this->neighborhood);
+        return $neighborhood ? $neighborhood->name : false;
     }
 }
