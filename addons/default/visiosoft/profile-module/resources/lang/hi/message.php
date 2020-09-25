@@ -35,6 +35,6 @@ return [
     'disable_account' => 'क्या आप अपना खाता बंद करना चाहते हैं? यह ऑपरेशन पूर्ववत नहीं किया जा सकता है।',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'ईमेल अपडेट किया गया!',
+    'update_email_mail_message' => 'आपका ईमेल अपडेट किया गया है!',
 ];

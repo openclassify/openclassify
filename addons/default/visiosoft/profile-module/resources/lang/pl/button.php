@@ -12,6 +12,7 @@ return [
     'edit' => 'Edytować',
     'go_profile' => 'Przejdź do szczegółów profilu',
     'go_user' => 'Przejdź do szczegółów użytkownika',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'Osobisty',
+    'corporate' => 'Zbiorowy',
+    'export' => 'Eksport',
 ];

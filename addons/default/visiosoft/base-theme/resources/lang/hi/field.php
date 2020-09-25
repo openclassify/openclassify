@@ -52,8 +52,8 @@ return [
     'mail' => 'मेल भेजे',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'निर्देश दर्ज करें',
+    'list' => 'सूची',
+    'instruction_description' => 'निर्देश विवरण',
+    'instruction_list' => 'निर्देश सूची',
 ];

@@ -428,19 +428,19 @@ return [
     'my_address' => 'Adresa ime',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Emri i Kompanise'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Zyra e Taksave'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Numri i takses'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
+    'my_profile' => 'Profili im',
+    'edit_profile' => 'Ndrysho Profilin',
+    'edit_details' => 'Ndryshoni Detajet',
     'update' => 'Update',
-    'change_password' => 'Change Password',
+    'change_password' => 'Ndrysho fjalekalimin',
 ];

@@ -32,7 +32,7 @@ return [
         'name' => 'Logo d\'instructions de la page d\'inscription',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Enregistrer le lien d\'alerte de la page',
     ],
     'style' => [
         'name' => 'Style (CSS)',

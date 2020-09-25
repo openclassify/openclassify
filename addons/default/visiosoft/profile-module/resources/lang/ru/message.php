@@ -38,6 +38,6 @@ return [
     'disable_account' => 'Вы хотите закрыть свой аккаунт? Эта операция не может быть отменена.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Электронная почта обновлена!',
+    'update_email_mail_message' => 'Ваш адрес электронной почты обновлен!',
 ];

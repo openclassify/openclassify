@@ -428,19 +428,19 @@ return [
     'my_address' => 'मेरा पता',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'कंपनी का नाम'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'कर कार्यालय'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'कर संख्या'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'मेरी प्रोफाइल',
+    'edit_profile' => 'प्रोफ़ाइल संपादित करें',
+    'edit_details' => 'विवरण संपादित करें',
+    'update' => 'अपडेट करें',
+    'change_password' => 'पासवर्ड बदलें',
 ];

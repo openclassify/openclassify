@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Standardannons GET',
     ],
+    'add_canvas' => [
+        'name' => 'Lägg till Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Miniatyrbredd',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Lista sidbild',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Dölj standardprisfältet',
     ],
     'enabled_currencies' => [
         'name' => 'Aktiverade valutor',
@@ -132,5 +135,27 @@ return [
     ],
     'market_place' => [
         'name' => 'Market Place',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Dölj prisfilter',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Dölj datumfilter',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Dölj fotofilter',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Dölj kartfilter',
+    ],
+    'show_lang_url' => [
+        'name' => 'Visa Lang-parameter för URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'TCMB Exchange URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Gräns för populära annonser',
     ],
 ];

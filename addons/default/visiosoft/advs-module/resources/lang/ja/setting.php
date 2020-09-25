@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'デフォルト広告GET',
     ],
+    'add_canvas' => [
+        'name' => 'キャンバスを追加',
+    ],
     'thumbnail_width' => [
         'name' => 'サムネイルの幅',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'リストページの画像',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => '標準価格フィールドを非表示',
     ],
     'enabled_currencies' => [
         'name' => '有効な通貨',
@@ -131,6 +134,28 @@ return [
         'name' => '会員登録メールの要件',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'マーケットプレイス',
+    ],
+
+    'hide_price_filter' => [
+        'name' => '価格フィルターを非表示',
+    ],
+    'hide_date_filter' => [
+        'name' => '日付フィルターを非表示',
+    ],
+    'hide_photo_filter' => [
+        'name' => '写真フィルターを非表示',
+    ],
+    'hide_map_filter' => [
+        'name' => 'マップフィルターを非表示',
+    ],
+    'show_lang_url' => [
+        'name' => 'URLのLangパラメータを表示',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'TCMB Exchange URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => '人気の広告制限',
     ],
 ];

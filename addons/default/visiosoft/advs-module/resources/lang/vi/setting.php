@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Quảng cáo mặc định NHẬN',
     ],
+    'add_canvas' => [
+        'name' => 'Thêm Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Chiều rộng hình thu nhỏ',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Danh sách trang hình ảnh',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Ẩn trường giá chuẩn',
     ],
     'enabled_currencies' => [
         'name' => 'Tiền tệ được kích hoạt',
@@ -131,6 +134,28 @@ return [
         'name' => 'Yêu cầu email đăng ký thành viên',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Thương trường',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Ẩn bộ lọc giá',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Ẩn Bộ lọc Ngày',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Ẩn bộ lọc ảnh',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Ẩn bộ lọc bản đồ',
+    ],
+    'show_lang_url' => [
+        'name' => 'Hiển thị Tham số Lang cho URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL trao đổi TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Giới hạn Quảng cáo Phổ biến',
     ],
 ];

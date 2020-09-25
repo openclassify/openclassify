@@ -52,8 +52,8 @@ return [
     'mail' => 'Skicka brev',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'Registrera instruktioner',
+    'list' => 'Lista',
+    'instruction_description' => 'Instruktionsbeskrivning',
+    'instruction_list' => 'Instruktionslista',
 ];

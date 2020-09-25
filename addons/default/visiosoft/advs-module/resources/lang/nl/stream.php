@@ -20,6 +20,6 @@ return [
         'name' => 'Zie waarden',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Opties',
     ],
 ];

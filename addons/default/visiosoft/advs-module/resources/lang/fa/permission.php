@@ -50,11 +50,11 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'گزینه ها',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'آیا می توانید گزینه ها را بخوانید؟',
+            'write'  => 'آیا می توانید گزینه های ایجاد یا ویرایش کنید؟',
+            'delete' => 'آیا می توانید گزینه ها را حذف کنید؟',
         ],
     ],
 ];

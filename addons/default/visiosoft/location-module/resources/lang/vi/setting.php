@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Lat mặc định',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Ẩn Bộ lọc Vị trí',
+    ],
 ];

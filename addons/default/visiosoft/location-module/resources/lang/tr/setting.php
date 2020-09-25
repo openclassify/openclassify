@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Varsayılan Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Konum Filtresini Gizle',
+    ],
 ];

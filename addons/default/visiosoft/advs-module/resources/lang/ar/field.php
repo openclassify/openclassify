@@ -20,7 +20,7 @@ return [
         'name' => 'السعر'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'سعر قياسي'
     ],
     'date' => [
         'name' => 'تاريخ'
@@ -266,8 +266,8 @@ return [
     "no_location" => "لا يوجد موقع محدد.",
     "continue" => 'استمر',
     "gallery" => 'صالة عرض',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'إعلانات',
+    "were_found" => 'تم ايجادها.',
 
     // Pending screen
     'pending_message_1' => 'الإعلان قيد عملية الموافقة',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'حدد الفئة خطوة بخطوة',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'خيارات',
 ];

@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'Para Birimi Başarıyla Dönüştürüldü.',
     'choose_user' => 'Bir kullanıcı seçin',
     'owner_updated_successfully' => 'Sahibi Başarıyla Güncellenmiştir!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'İlan Bulunamadı!',
+    'replicated_success' => 'Reklam başarıyla kopyalandı!',
+    'ad_doesnt_exist' => "Bu reklam mevcut değil!",
 ];

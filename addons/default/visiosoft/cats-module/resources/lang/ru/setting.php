@@ -2,6 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => 'Разделительный номер карты сайта',
+    ],
+    'include_cities_sitemap' => [
+        'name' => 'Включить города в карту сайта',
     ],
 ];

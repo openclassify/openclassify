@@ -20,7 +20,7 @@ return [
         'name' => 'Çmim'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Mimi standard'
     ],
     'date' => [
         'name' => 'Data'
@@ -267,7 +267,7 @@ return [
     "continue" => 'Vazhdo',
     "gallery" => 'Galeria',
     "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "were_found" => 'u gjetën',
 
     // Pending screen
     'pending_message_1' => 'Njoftimi është në Procesin e Miratimit',
@@ -296,5 +296,5 @@ return [
     'select_category_step_by_step' => 'Zgjidhni kategorinë hap pas hapi',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opsione',
 ];

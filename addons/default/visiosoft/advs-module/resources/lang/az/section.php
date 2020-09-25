@@ -40,7 +40,8 @@ return [
     'general' => 'Ümumi',
     'ads' => 'Elanlar',
     'user' => 'İstifadəçi',
+    'filter' => 'Süzgəc',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Seçimlər',
     ],
 ];

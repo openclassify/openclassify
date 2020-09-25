@@ -32,7 +32,7 @@ return [
         'name' => 'Logotipo de instrucciones de la página de registro',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Enlace de alerta de página de registro',
     ],
     'style' => [
         'name' => 'Estilo (CSS)',

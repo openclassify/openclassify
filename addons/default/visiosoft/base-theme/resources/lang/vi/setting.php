@@ -32,7 +32,7 @@ return [
         'name' => 'Đăng ký Trang hướng dẫn Logo',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Đăng ký liên kết cảnh báo trang',
     ],
     'style' => [
         'name' => 'Phong cách (CSS)',

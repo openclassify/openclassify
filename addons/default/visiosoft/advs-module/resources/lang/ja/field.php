@@ -20,7 +20,7 @@ return [
         'name' => '価格'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => '標準価格'
     ],
     'date' => [
         'name' => '日付'
@@ -266,8 +266,8 @@ return [
     "no_location" => "場所が選択されていません。",
     "continue" => '継続する',
     "gallery" => 'ギャラリー',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => '広告',
+    "were_found" => '発見されました。',
 
     // Pending screen
     'pending_message_1' => '広告は承認プロセス中です',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'ステップバイステップでカテゴリを選択',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'オプション',
 ];

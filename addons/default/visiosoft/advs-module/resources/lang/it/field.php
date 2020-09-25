@@ -20,7 +20,7 @@ return [
         'name' => 'Prezzo'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Prezzo standard'
     ],
     'date' => [
         'name' => 'Data'
@@ -267,8 +267,8 @@ return [
     "no_location" => "Nessuna posizione selezionata.",
     "continue" => 'Continua',
     "gallery" => 'Galleria',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Annunci',
+    "were_found" => 'furono trovati.',
 
     // Pending screen
     'pending_message_1' => 'L\'annuncio è in fase di approvazione',
@@ -296,5 +296,5 @@ return [
     'select_category_step_by_step' => 'Seleziona la categoria Step by Step',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opzioni',
 ];

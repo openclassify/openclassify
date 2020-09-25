@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Anunț implicit GET',
     ],
+    'add_canvas' => [
+        'name' => 'Adăugați pânză',
+    ],
     'thumbnail_width' => [
         'name' => 'Lățimea miniaturii',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Listare imagine pagină',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Ascundeți câmpul de preț standard',
     ],
     'enabled_currencies' => [
         'name' => 'Valute activate',
@@ -131,6 +134,28 @@ return [
         'name' => 'Cerință de e-mail de înregistrare a membrilor',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Piata de desfacere',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Ascundeți filtrul de preț',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Ascundeți filtrul de date',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Ascundeți filtrul foto',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Ascundeți filtrul de hartă',
+    ],
+    'show_lang_url' => [
+        'name' => 'Afișați parametrul Lang pentru URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'Adresa URL Exchange TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Limita de anunțuri populare',
     ],
 ];

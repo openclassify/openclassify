@@ -35,6 +35,6 @@ return [
     'disable_account' => 'Doriți să vă închideți contul? Această operație nu poate fi anulată.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-mail actualizat!',
+    'update_email_mail_message' => 'E-mailul dvs. a fost actualizat!',
 ];

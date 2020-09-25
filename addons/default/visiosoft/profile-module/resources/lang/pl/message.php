@@ -35,6 +35,6 @@ return [
     'disable_account' => 'Czy chcesz zamknąć swoje konto? Tej operacji nie można cofnąć.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Email zaktualizowany!',
+    'update_email_mail_message' => 'Twój e-mail został zaktualizowany!',
 ];

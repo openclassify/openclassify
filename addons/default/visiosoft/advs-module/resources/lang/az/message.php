@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'Valyuta uğurla çevrildi.',
     'choose_user' => 'İstifadəçi seçin',
     'owner_updated_successfully' => 'Sahib uğurla yeniləndi!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Elan tapılmadı!',
+    'replicated_success' => 'Reklam uğurla təkrarlandı!',
+    'ad_doesnt_exist' => "Bu reklam mövcud deyil!",
 ];

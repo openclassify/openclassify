@@ -32,7 +32,7 @@ return [
         'name' => 'Zarejestruj stronę Instrukcja Logo',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Zarejestruj link do ostrzeżenia o stronie',
     ],
     'style' => [
         'name' => 'Styl (CSS)',

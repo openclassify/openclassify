@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'ברירת מחדל של מודעות GET',
     ],
+    'add_canvas' => [
+        'name' => 'הוסף בד',
+    ],
     'thumbnail_width' => [
         'name' => 'רוחב תמונה ממוזערת',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'תמונת עמוד רישום',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'הסתר שדה מחיר רגיל',
     ],
     'enabled_currencies' => [
         'name' => 'מטבעות מופעלים',
@@ -131,6 +134,28 @@ return [
         'name' => 'דרישת דוא"ל לרישום חבר',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'זירת מסחר',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'הסתר מסנן מחירים',
+    ],
+    'hide_date_filter' => [
+        'name' => 'הסתר מסנן תאריכים',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'הסתר מסנן תמונות',
+    ],
+    'hide_map_filter' => [
+        'name' => 'הסתר את מסנן המפות',
+    ],
+    'show_lang_url' => [
+        'name' => 'הצג פרמטר Lang עבור URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'כתובת URL של TCMB Exchange',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'מגבלת מודעות פופולריות',
     ],
 ];

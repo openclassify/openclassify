@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Προεπιλεγμένη διαφήμιση GET',
     ],
+    'add_canvas' => [
+        'name' => 'Προσθήκη καμβά',
+    ],
     'thumbnail_width' => [
         'name' => 'Πλάτος μικρογραφιών',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Λίστα εικόνων σελίδας',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Απόκρυψη πεδίου τυπικής τιμής',
     ],
     'enabled_currencies' => [
         'name' => 'Ενεργοποιημένα νομίσματα',
@@ -131,6 +134,28 @@ return [
         'name' => 'Απαίτηση ηλεκτρονικού ταχυδρομείου εγγραφής μέλους',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Αγορά',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Απόκρυψη φίλτρου τιμών',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Απόκρυψη φίλτρου ημερομηνίας',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Απόκρυψη φίλτρου φωτογραφιών',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Απόκρυψη φίλτρου χάρτη',
+    ],
+    'show_lang_url' => [
+        'name' => 'Εμφάνιση παραμέτρου Lang για διεύθυνση URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL ανταλλαγής TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Όριο δημοφιλών διαφημίσεων',
     ],
 ];
