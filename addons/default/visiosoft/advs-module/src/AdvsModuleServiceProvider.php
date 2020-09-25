@@ -130,6 +130,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@store'
         ],
         'advs/edit_advs/{id}' => [
+            'middleware' => 'auth',
             'as' => 'visiosoft.module.advs::edit_adv',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@edit',
         ],
