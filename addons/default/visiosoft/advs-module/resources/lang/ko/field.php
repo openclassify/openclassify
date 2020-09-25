@@ -296,4 +296,6 @@ return [
 
     // New create page
     'options' => '옵션',
+
+    'free' => 'Free'
 ];
