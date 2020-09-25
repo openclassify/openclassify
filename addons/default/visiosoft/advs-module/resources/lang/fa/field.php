@@ -296,4 +296,6 @@ return [
 
     // New create page
     'options' => 'گزینه ها',
+
+    'free' => 'Free'
 ];
