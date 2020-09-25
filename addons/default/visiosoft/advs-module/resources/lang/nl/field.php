@@ -297,4 +297,6 @@ return [
 
     // New create page
     'options' => 'Opties',
+
+    'free' => 'Free'
 ];
