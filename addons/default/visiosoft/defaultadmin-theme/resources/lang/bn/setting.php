@@ -11,8 +11,11 @@ return [
         'warning'      => 'প্রথম অ্যাক্সেসযোগ্য নেভিগেশন আইটেমটি <strong>হোম</strong> অঞ্চল হিসাবে ব্যবহৃত হয়।',
         'reorder'      => 'পুনরায় ক্রম করতে প্রাথমিক নেভিগেশন আইটেমগুলিকে <strong>সাইডবার</strong> টেনে আনুন।',
     ],
-    "icon" => [
-        'name' => 'আইকন',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'শিরোনাম',
