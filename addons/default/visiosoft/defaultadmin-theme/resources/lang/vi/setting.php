@@ -11,8 +11,11 @@ return [
         'warning'      => 'Mục điều hướng có thể truy cập đầu tiên được sử dụng làm khu vực <strong>nhà</strong>.',
         'reorder'      => 'Kéo và thả các mục điều hướng chính trong thanh bên <strong></strong> để sắp xếp lại chúng.',
     ],
-    "icon" => [
-        'name' => 'Biểu tượng',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'Tiêu đề',
