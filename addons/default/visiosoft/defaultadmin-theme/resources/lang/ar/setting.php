@@ -11,8 +11,11 @@ return [
         'warning'      => 'يتم استخدام أول عنصر تنقل يمكن الوصول إليه باعتباره منطقة <strong>home</strong>.',
         'reorder'      => 'سحب وإسقاط البنود الملاحة الابتدائية في <strong>الشريط الجانبي</strong> إلى إعادة ترتيب لهم.',
     ],
-    "icon" => [
-        'name' => 'أيقونة',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'عنوان',
