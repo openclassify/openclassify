@@ -11,8 +11,11 @@ return [
         'warning'      => 'פריט הניווט הנגיש הראשון משמש כאזור <strong>ביתי</strong>.',
         'reorder'      => 'גרור ושחרר את הפריטים ניווט העיקרי <strong>הצדדי</strong> כדי לסדר אותן מחדש.',
     ],
-    "icon" => [
-        'name' => 'אייקון',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'כותרת',
