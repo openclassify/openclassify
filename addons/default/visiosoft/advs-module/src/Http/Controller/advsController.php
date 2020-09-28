@@ -232,6 +232,15 @@ class AdvsController extends PublicController
         $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters, null, $categoryId, $cityId);
         $advs = $this->adv_repository->addAttributes($advs);
 
+        if ($advs->currentPage() > $advs->lastPage()) {
+            unset($param['page']);
+            return redirect($this->fullLink(
+                $param,
+                \request()->url(),
+                array()
+            ), 301);
+        }
+
         if ($isActiveDopings and $param != null) {
             $featured_advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->listFeatures($advs);
         }
@@ -290,7 +299,7 @@ class AdvsController extends PublicController
         $viewType = $this->requestHttp->cookie('viewType');
 
         $catText = '';
-        if (!isset($allCats)) {
+        if (!$allCats) {
             if (count($mainCats) == 1 || count($mainCats) == 2) {
                 $catText = end($mainCats)['val'];
             } elseif (count($mainCats) > 2) {
@@ -302,6 +311,11 @@ class AdvsController extends PublicController
                     $loop++;
                 }
             }
+
+            if ($cityId) {
+                $catText = "$cityId->name $catText";
+            }
+
             $this->template->set('showTitle', false);
             $this->template->set('meta_title', $catText);
         }
