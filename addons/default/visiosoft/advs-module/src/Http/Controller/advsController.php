@@ -305,6 +305,11 @@ class AdvsController extends PublicController
                     $loop++;
                 }
             }
+
+            if ($cityId) {
+                $catText = "$cityId->name $catText";
+            }
+
             $this->template->set('showTitle', false);
             $this->template->set('meta_title', $catText);
         }
