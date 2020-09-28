@@ -11,8 +11,11 @@ return [
         'warning'      => 'پہلا قابل رسائی نیویگیشن آئٹم <strong>ہوم</strong> ایریا کے بطور استعمال ہوتا ہے۔',
         'reorder'      => 'پرائمری نیویگیشن آئٹمز کو دوبارہ ترتیب دینے کیلئے <strong>سائڈبار</strong> میں گھسیٹیں اور چھوڑیں۔',
     ],
-    "icon" => [
-        'name' => 'شبیہہ',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'عنوان',
