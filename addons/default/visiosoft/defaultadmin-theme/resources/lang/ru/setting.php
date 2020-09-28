@@ -11,8 +11,11 @@ return [
         'warning'      => 'Первый доступный элемент навигации используется как область <strong>home</strong>.',
         'reorder'      => 'Перетащите основные элементы навигации на боковой панели <strong></strong> чтобы изменить их порядок.',
     ],
-    "icon" => [
-        'name' => 'Значок',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'заглавие',
