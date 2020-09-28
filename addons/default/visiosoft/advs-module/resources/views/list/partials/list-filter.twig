@@ -16,11 +16,11 @@
         {% endset %}
         {% endif %}
         {{ formHtml }}
-        <div class="row">
+        <div>
             <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
             <input type="hidden" name="user" value="{{ app.request.get('user') }}">
-            <div class="col-md-12 px-4">
-                <div class="row">
+            <div>
+                <div>
                     <div id="filter" class="w-100 mb-3">
 
                         {{ addBlock('ads-list/partials/list-filter',{

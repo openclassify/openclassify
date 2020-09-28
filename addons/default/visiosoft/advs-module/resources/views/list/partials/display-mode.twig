@@ -4,7 +4,7 @@
             <button onclick="changeViewType('{{ url_route('visiosoft.module.advs::view_type', ['map']) }}')"
                class="mx-auto border-0 text-dark d-flex align-items-center justify-content-center">
                 <img src="{{ img('visiosoft.module.advs::images/map-icon.svg').url }}" alt="map icon" class="mr-1">
-                <small>{{ trans("visiosoft.module.advs::field.show_display_mode.map") }}</small>
+                <small class="d-md-none d-lg-inline">{{ trans("visiosoft.module.advs::field.show_display_mode.map") }}</small>
             </button>
         {% endif %}
     </div>
@@ -12,21 +12,21 @@
         <button onclick="changeViewType('{{ url_route('visiosoft.module.advs::view_type', ['list']) }}')"
            class="mx-auto border-0 text-dark d-flex align-items-center justify-content-center">
             <img src="{{ img('visiosoft.module.advs::images/list-icon.svg').url }}" alt="list icon" class="mr-1">
-            <small>{{ trans('visiosoft.module.advs::field.show_list_view.name') }}</small>
+            <small class="d-md-none d-lg-inline">{{ trans('visiosoft.module.advs::field.show_list_view.name') }}</small>
         </button>
     </div>
     <div class="col-3 list-table-view d-none d-md-block">
         <button onclick="changeViewType('{{ url_route('visiosoft.module.advs::view_type', ['table']) }}')"
            class="border-0 text-dark d-flex align-items-center justify-content-center">
             <img src="{{ img('visiosoft.module.advs::images/table-icon.svg').url }}" alt="table icon" class="mr-1">
-            <small>{{ trans('visiosoft.module.advs::field.show_table_view.name') }}</small>
+            <small class="d-md-none d-lg-inline">{{ trans('visiosoft.module.advs::field.show_table_view.name') }}</small>
         </button>
     </div>
     <div class="col-4 col-md-3 pr-0">
         <button onclick="changeViewType('{{ url_route('visiosoft.module.advs::view_type', ['gallery']) }}')"
            class="mx-auto border-0 text-dark d-flex align-items-center justify-content-center">
             <img src="{{ img('visiosoft.module.advs::images/gallery-icon.svg').url }}" alt="gallery icon" class="mr-1">
-            <small> {{ trans('visiosoft.module.advs::field.gallery') }}</small>
+            <small class="d-md-none d-lg-inline"> {{ trans('visiosoft.module.advs::field.gallery') }}</small>
         </button>
     </div>
 </div>

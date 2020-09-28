@@ -293,7 +293,7 @@ class AdvsController extends PublicController
         $viewType = $this->requestHttp->cookie('viewType');
 
         $catText = '';
-        if (!isset($allCats)) {
+        if (!$allCats) {
             if (count($mainCats) == 1 || count($mainCats) == 2) {
                 $catText = end($mainCats)['val'];
             } elseif (count($mainCats) > 2) {
