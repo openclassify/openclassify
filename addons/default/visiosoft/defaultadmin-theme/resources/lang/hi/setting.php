@@ -11,8 +11,11 @@ return [
         'warning'      => 'पहला सुलभ नेविगेशन आइटम <strong>होम</strong> क्षेत्र के रूप में उपयोग किया जाता है।',
         'reorder'      => 'उन्हें पुन: व्यवस्थित करने के लिए <strong>साइडबार</strong> में प्राथमिक नेविगेशन आइटम खींचें और छोड़ें।',
     ],
-    "icon" => [
-        'name' => 'चिह्न',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'शीर्षक',
