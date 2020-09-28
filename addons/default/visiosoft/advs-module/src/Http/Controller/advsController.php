@@ -232,6 +232,15 @@ class AdvsController extends PublicController
         $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters, null, $categoryId, $cityId);
         $advs = $this->adv_repository->addAttributes($advs);
 
+        if ($advs->currentPage() > $advs->lastPage()) {
+            unset($param['page']);
+            return redirect($this->fullLink(
+                $param,
+                \request()->url(),
+                array()
+            ), 301);
+        }
+
         if ($isActiveDopings and $param != null) {
             $featured_advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->listFeatures($advs);
         }
