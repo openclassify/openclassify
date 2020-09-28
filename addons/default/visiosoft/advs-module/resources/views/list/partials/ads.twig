@@ -4,7 +4,8 @@
         <a href="{{ adv.detail_url }}" class="text-dark">
             <div class="row{% if adv.doping != null %} doping_type4 {% endif %}">
                 <div class="col-md-2 justify-content-center align-self-center text-center border-right border-white">
-                    <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
+                    <img class="img-thumbnail lazy" src="{{ img('visiosoft.theme.base::images/no-image.png').url }}"
+                         data-src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
                          style="max-height:80px;">
                 </div>
                 <div class="col-md-7 justify-content-center align-self-center border-right border-white">

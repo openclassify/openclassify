@@ -11,8 +11,11 @@ return [
         'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
         'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
     ],
-    "icon" => [
-        'name' => 'Icon',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'Title',

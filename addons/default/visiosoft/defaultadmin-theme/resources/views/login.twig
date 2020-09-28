@@ -4,8 +4,8 @@
 
     <div class="logo-container">
         <div class="logo">
-            {% if setting_value('visiosoft.theme.defaultadmin::icon') %}
-                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::icon')).url }}" alt="site icon">
+            {% if setting_value('visiosoft.theme.defaultadmin::login_icon') %}
+                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::login_icon')).url }}" alt="site icon">
             {% else %}
                 {{ img('theme::img/icon.svg').data|raw }}
             {% endif %}
@@ -18,8 +18,8 @@
         <div class="login-wrapper container-fluid">
 
             <div class="logo">
-                {% if setting_value('visiosoft.theme.defaultadmin::icon') %}
-                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::icon')).url }}" alt="site icon">
+                {% if setting_value('visiosoft.theme.defaultadmin::login_icon') %}
+                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::login_icon')).url }}" alt="site icon">
                 {% else %}
                     {{ img('theme::img/icon.svg').data|raw }}
                 {% endif %}
