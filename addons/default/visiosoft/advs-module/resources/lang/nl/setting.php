@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Standaardadvertentie GET',
     ],
+    'add_canvas' => [
+        'name' => 'Canvas toevoegen',
+    ],
     'thumbnail_width' => [
         'name' => 'Thumbnail breedte',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Lijstpagina-afbeelding',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Verberg standaardprijsveld',
     ],
     'enabled_currencies' => [
         'name' => 'Ingeschakelde valuta\\'s',
@@ -131,6 +134,28 @@ return [
         'name' => 'Lidregistratie E-mailvereiste',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Marktplaats',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Prijsfilter verbergen',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Datumfilter verbergen',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Verberg fotofilter',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Verberg kaartfilter',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang-parameter voor URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'TCMB Exchange-URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Beperking van populaire advertenties',
     ],
 ];

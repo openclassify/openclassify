@@ -428,19 +428,19 @@ return [
     'my_address' => 'Min adress',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Företagsnamn'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Skattekontor'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Skattenummer'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Min profil',
+    'edit_profile' => 'Redigera profil',
+    'edit_details' => 'Redigera detaljer',
+    'update' => 'Uppdatering',
+    'change_password' => 'Ändra lösenord',
 ];

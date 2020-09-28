@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'الإعلان الافتراضي',
     ],
+    'add_canvas' => [
+        'name' => 'أضف قماش',
+    ],
     'thumbnail_width' => [
         'name' => 'عرض الصورة المصغرة',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'سرد صورة الصفحة',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'إخفاء حقل السعر القياسي',
     ],
     'enabled_currencies' => [
         'name' => 'العملات الممكّنة',
@@ -131,6 +134,28 @@ return [
         'name' => 'متطلبات تسجيل البريد الإلكتروني للعضو',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'المتجر',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'إخفاء عامل تصفية السعر',
+    ],
+    'hide_date_filter' => [
+        'name' => 'إخفاء مرشح التاريخ',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'إخفاء مرشح الصورة',
+    ],
+    'hide_map_filter' => [
+        'name' => 'إخفاء عامل تصفية الخريطة',
+    ],
+    'show_lang_url' => [
+        'name' => 'إظهار معلمة Lang لعنوان URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL تبادل TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'حد الإعلانات الشعبية',
     ],
 ];

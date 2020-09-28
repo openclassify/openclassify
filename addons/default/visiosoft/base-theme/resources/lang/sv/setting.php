@@ -32,7 +32,7 @@ return [
         'name' => 'Registrera sidinstruktionslogotyp',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Registrera sidalarmlänk',
     ],
     'style' => [
         'name' => 'Stil (CSS)',

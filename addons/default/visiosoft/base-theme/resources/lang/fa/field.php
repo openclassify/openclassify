@@ -52,8 +52,8 @@ return [
     'mail' => 'ارسال ایمیل',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'دستورالعمل های ثبت نام',
+    'list' => 'لیست',
+    'instruction_description' => 'توضیحات دستورالعمل',
+    'instruction_list' => 'لیست دستورالعمل ها',
 ];

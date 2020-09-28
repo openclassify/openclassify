@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => '기본 광고 GET',
     ],
+    'add_canvas' => [
+        'name' => '캔버스 추가',
+    ],
     'thumbnail_width' => [
         'name' => '썸네일 폭',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => '리스팅 페이지 이미지',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => '표준 가격 필드 숨기기',
     ],
     'enabled_currencies' => [
         'name' => '활성화 된 통화',
@@ -131,6 +134,28 @@ return [
         'name' => '회원 등록 이메일 요구 사항',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => '마켓 플레이스',
+    ],
+
+    'hide_price_filter' => [
+        'name' => '가격 필터 숨기기',
+    ],
+    'hide_date_filter' => [
+        'name' => '날짜 필터 숨기기',
+    ],
+    'hide_photo_filter' => [
+        'name' => '사진 필터 숨기기',
+    ],
+    'hide_map_filter' => [
+        'name' => '지도 필터 숨기기',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL에 대한 언어 매개 변수 표시',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'TCMB 교환 URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => '인기 광고 제한',
     ],
 ];

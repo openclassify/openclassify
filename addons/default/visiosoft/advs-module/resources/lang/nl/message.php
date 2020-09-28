@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'Valuta succesvol omgezet.',
     'choose_user' => 'Kies een gebruiker',
     'owner_updated_successfully' => 'De eigenaar is met succes bijgewerkt!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Geen advertentie gevonden!',
+    'replicated_success' => 'De advertentie is met succes gerepliceerd!',
+    'ad_doesnt_exist' => "Deze advertentie bestaat niet!",
 ];

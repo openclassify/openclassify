@@ -5,15 +5,29 @@ OpenClassify is the extensible and most advanced open source classified app buil
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/openclassify/openclassify/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/openclassify/openclassify/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/openclassify/openclassify/badges/build.png?b=master)](https://scrutinizer-ci.com/g/openclassify/openclassify/build-status/master)
 [![Code Intelligence Status](https://scrutinizer-ci.com/g/openclassify/openclassify/badges/code-intelligence.svg?b=master)](https://scrutinizer-ci.com/code-intelligence)
+ 
+
+<div align="center">
+ <a href="https://openclassify.com">
+    <img src="https://repository-images.githubusercontent.com/193061961/48452600-72c0-11ea-88f5-77566c3527eb">
+  </a>
+</div>
+ 
 
 
-[!['Preview Homapage Openclassify'](https://openclassify.com/files/images/open.jpg)](https://openclassify.com/)
+[!['Preview Homapage Classified Script'](https://openclassify.com/files/images/open.jpg)](https://openclassify.com/)
+
+## Translation
+
+Openclassify support 22+ languages. Help translation on crowdin
+
+https://crowdin.com/project/openclassify
 
 # Installation
 
 ## Server Requirements
 
-- PHP >= 7.2
+- PHP = 7.2.x
 - XML PHP Extension
 - PDO PHP Extension
 - cURL PHP Extension

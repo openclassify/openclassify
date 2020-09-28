@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Annonce par défaut GET',
     ],
+    'add_canvas' => [
+        'name' => 'Ajouter une toile',
+    ],
     'thumbnail_width' => [
         'name' => 'Largeur de vignette',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Image de page de liste',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Masquer le champ de prix standard',
     ],
     'enabled_currencies' => [
         'name' => 'Devises activées',
@@ -131,6 +134,28 @@ return [
         'name' => 'Inscription par e-mail',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Place du marché',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Masquer le filtre de prix',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Masquer le filtre de date',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Masquer le filtre photo',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Masquer le filtre de la carte',
+    ],
+    'show_lang_url' => [
+        'name' => 'Afficher le paramètre de langue pour l\'URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL d\'échange TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Limite des annonces populaires',
     ],
 ];

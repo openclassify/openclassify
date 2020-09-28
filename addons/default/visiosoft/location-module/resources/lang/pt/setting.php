@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Lat padrão',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Ocultar filtro de localização',
+    ],
 ];

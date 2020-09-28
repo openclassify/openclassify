@@ -52,8 +52,8 @@ return [
     'mail' => 'Posta göndermek',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'Kayıt Talimatları',
+    'list' => 'Liste',
+    'instruction_description' => 'Talimat Açıklama',
+    'instruction_list' => 'Talimat Listesi',
 ];

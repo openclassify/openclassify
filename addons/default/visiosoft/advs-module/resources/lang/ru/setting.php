@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Реклама по умолчанию GET',
     ],
+    'add_canvas' => [
+        'name' => 'Добавить холст',
+    ],
     'thumbnail_width' => [
         'name' => 'Ширина миниатюры',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Изображение страницы со списком',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Скрыть поле стандартной цены',
     ],
     'enabled_currencies' => [
         'name' => 'Включенные валюты',
@@ -131,6 +134,28 @@ return [
         'name' => 'Требуется регистрация по электронной почте',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Рыночная площадь',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Скрыть фильтр цен',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Скрыть фильтр даты',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Скрыть фотофильтр',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Скрыть фильтр карты',
+    ],
+    'show_lang_url' => [
+        'name' => 'Показать параметр языка для URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL-адрес обмена TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Лимит популярной рекламы',
     ],
 ];

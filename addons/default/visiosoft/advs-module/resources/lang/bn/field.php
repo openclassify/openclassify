@@ -20,7 +20,7 @@ return [
         'name' => 'মূল্য'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'প্রমাণ মূল্য'
     ],
     'date' => [
         'name' => 'তারিখ'
@@ -266,8 +266,8 @@ return [
     "no_location" => "কোনও অবস্থান নির্বাচন করা হয়নি।",
     "continue" => 'চালিয়ে',
     "gallery" => 'দরদালান',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'বিজ্ঞাপন',
+    "were_found" => 'পাওয়া গেছে।',
 
     // Pending screen
     'pending_message_1' => 'বিজ্ঞাপনটি অনুমোদনের প্রক্রিয়াধীন',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'ধাপে ধাপে বিভাগ নির্বাচন করুন',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'বিকল্পগুলি',
 ];

@@ -50,11 +50,11 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'বিকল্পগুলি',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'বিকল্পগুলি পড়তে পারেন?',
+            'write'  => 'বিকল্পগুলি সম্পাদনা / সম্পাদনা করতে পারে?',
+            'delete' => 'বিকল্পগুলি মুছতে পারবেন?',
         ],
     ],
 ];

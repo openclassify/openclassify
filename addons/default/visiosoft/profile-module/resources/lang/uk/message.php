@@ -35,6 +35,6 @@ return [
     'disable_account' => 'Ви хочете закрити свій рахунок? Цю операцію не можна скасувати.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Оновлено електронний лист!',
+    'update_email_mail_message' => 'Ваш електронний лист оновлено!',
 ];

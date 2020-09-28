@@ -428,19 +428,19 @@ return [
     'my_address' => 'הכתובת שלי',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'שם החברה'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'משרד המס'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'מספר מס'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'הפרופיל שלי',
+    'edit_profile' => 'ערוך פרופיל',
+    'edit_details' => 'לערוך פרטים',
+    'update' => 'עדכון',
+    'change_password' => 'שנה סיסמא',
 ];

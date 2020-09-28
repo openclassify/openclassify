@@ -428,19 +428,19 @@ return [
     'my_address' => 'আমার ঠিকানা',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'কোমপানির নাম'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'কর অফিস'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'কর নম্বর'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'আমার প্রোফাইল',
+    'edit_profile' => 'জীবন বৃত্তান্ত সম্পাদনা',
+    'edit_details' => 'তথ্য সংশোধন কর',
+    'update' => 'হালনাগাদ',
+    'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
 ];

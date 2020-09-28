@@ -20,7 +20,7 @@ return [
         'name' => 'Pris'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standard pris'
     ],
     'date' => [
         'name' => 'Datum'
@@ -266,8 +266,8 @@ return [
     "no_location" => "Ingen plats har valts.",
     "continue" => 'Fortsätta',
     "gallery" => 'Galleri',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'annonser',
+    "were_found" => 'hittades.',
 
     // Pending screen
     'pending_message_1' => 'Annonsen är i godkännandeprocessen',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'Välj kategori steg för steg',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'alternativ',
 ];

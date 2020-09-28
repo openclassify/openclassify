@@ -20,7 +20,7 @@ return [
         'name' => 'Qiyməti'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standart qiymət'
     ],
     'date' => [
         'name' => 'Tarix'
@@ -266,8 +266,8 @@ return [
     "no_location" => "Heç bir yer seçilməyib.",
     "continue" => 'Davam edin',
     "gallery" => 'Qalereya',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Elanlar',
+    "were_found" => 'tapıldı.',
 
     // Pending screen
     'pending_message_1' => 'Elan təsdiqləmə prosesindədir',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'Addım-addım Kateqoriya seçin',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Seçimlər',
 ];

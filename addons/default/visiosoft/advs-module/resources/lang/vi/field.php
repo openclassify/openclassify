@@ -20,7 +20,7 @@ return [
         'name' => 'Giá bán'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Giá chuẩn'
     ],
     'date' => [
         'name' => 'Ngày'
@@ -266,8 +266,8 @@ return [
     "no_location" => "Không có địa điểm được chọn.",
     "continue" => 'Tiếp tục',
     "gallery" => 'Bộ sưu tập',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Quảng cáo',
+    "were_found" => 'đã được tìm thấy.',
 
     // Pending screen
     'pending_message_1' => 'Quảng cáo đang trong quá trình phê duyệt',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'Chọn danh mục từng bước',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Tùy chọn',
 ];

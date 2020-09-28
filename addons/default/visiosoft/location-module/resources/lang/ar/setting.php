@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'الافتراضي اللات',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'إخفاء عامل تصفية الموقع',
+    ],
 ];

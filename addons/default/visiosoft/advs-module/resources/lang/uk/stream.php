@@ -20,6 +20,6 @@ return [
         'name' => 'Значення Cf',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Параметри',
     ],
 ];

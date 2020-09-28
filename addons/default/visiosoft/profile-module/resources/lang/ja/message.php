@@ -35,6 +35,6 @@ return [
     'disable_account' => 'アカウントを閉鎖しますか？この操作は元に戻せません。',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'メールを更新しました！',
+    'update_email_mail_message' => 'メールが更新されました！',
 ];

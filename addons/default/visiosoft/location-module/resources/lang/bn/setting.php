@@ -40,4 +40,8 @@ return [
     'map_coordinates_lat' => [
         'name' => 'ডিফল্ট ল্যাট',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'অবস্থান ফিল্টার লুকান',
+    ],
 ];

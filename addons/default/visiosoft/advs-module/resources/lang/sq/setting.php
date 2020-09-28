@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Përcaktuar SET',
     ],
+    'add_canvas' => [
+        'name' => 'Shto Canvas',
+    ],
     'thumbnail_width' => [
         'name' => 'Gjerësia e Thumbnail',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Lista e figurës së faqes',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Fshih Fushën Standarde të mimeve',
     ],
     'enabled_currencies' => [
         'name' => 'Monedhat e aktivizuara',
@@ -131,6 +134,28 @@ return [
         'name' => 'Kërkesa për regjistrim përmes e-mail',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Vendi i tregut',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Fsheh Filterin e Pricemimeve',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Fsheh Filterin e datës',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Fsheh Filterin e Fotove',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Fsheh Filterin e Hartës',
+    ],
+    'show_lang_url' => [
+        'name' => 'Trego Parametrin e Lang për URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL-ja e shkëmbimit të TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Kufiri i reklamave popullore',
     ],
 ];

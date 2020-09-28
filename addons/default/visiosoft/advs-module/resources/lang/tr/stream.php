@@ -20,6 +20,6 @@ return [
         'name' => 'ÖA değerleri',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Seçenekler',
     ],
 ];

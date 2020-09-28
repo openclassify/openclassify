@@ -12,6 +12,7 @@ return [
     'edit' => '편집하다',
     'go_profile' => '프로필 정보로 이동',
     'go_user' => '사용자 정보로 이동',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => '개인적인',
+    'corporate' => '기업',
+    'export' => '수출',
 ];

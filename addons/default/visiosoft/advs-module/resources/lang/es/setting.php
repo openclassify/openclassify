@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Anuncio predeterminado GET',
     ],
+    'add_canvas' => [
+        'name' => 'Agregar lienzo',
+    ],
     'thumbnail_width' => [
         'name' => 'Ancho de miniaturas',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Imagen de la página de listado',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Ocultar campo de precio estándar',
     ],
     'enabled_currencies' => [
         'name' => 'Monedas habilitadas',
@@ -132,5 +135,27 @@ return [
     ],
     'market_place' => [
         'name' => 'Market Place',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Ocultar filtro de precio',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Ocultar filtro de fecha',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Ocultar filtro de fotos',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Ocultar filtro de mapa',
+    ],
+    'show_lang_url' => [
+        'name' => 'Mostrar parámetro de idioma para URL',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL de intercambio de TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Límite de anuncios populares',
     ],
 ];

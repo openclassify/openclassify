@@ -433,19 +433,19 @@ return [
     'my_address' => 'Meine Adresse',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Name der Firma'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Finanzamt'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Steuernummer'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Mein Profil',
+    'edit_profile' => 'Profil bearbeiten',
+    'edit_details' => 'Details bearbeiten',
+    'update' => 'Aktualisieren',
+    'change_password' => 'Ändere das Passwort',
 ];

@@ -52,8 +52,8 @@ return [
     'mail' => 'メールを送る',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => '登録手順',
+    'list' => 'リスト',
+    'instruction_description' => '命令の説明',
+    'instruction_list' => '指示リスト',
 ];

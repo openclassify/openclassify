@@ -36,6 +36,6 @@ return [
     'disable_account' => 'Θέλετε να κλείσετε τον λογαριασμό σας; Δεν είναι δυνατή η αναίρεση αυτής της λειτουργίας.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Ενημερώθηκε το email!',
+    'update_email_mail_message' => 'Το email σας ενημερώθηκε!',
 ];

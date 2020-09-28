@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'Валюта успешно конвертирована.',
     'choose_user' => 'Выберите пользователя',
     'owner_updated_successfully' => 'Владелец обновлен успешно!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Объявление не найдено!',
+    'replicated_success' => 'Объявление успешно тиражировано!',
+    'ad_doesnt_exist' => "Такого объявления не существует!",
 ];

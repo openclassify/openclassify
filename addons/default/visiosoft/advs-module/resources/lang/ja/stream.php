@@ -20,6 +20,6 @@ return [
         'name' => 'Cf値',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'オプション',
     ],
 ];

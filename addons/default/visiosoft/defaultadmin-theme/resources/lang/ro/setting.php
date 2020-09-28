@@ -11,4 +11,22 @@ return [
         'warning'      => 'Primul articol accesibil de navigare este utilizat ca zonă <strong>acasă</strong>.',
         'reorder'      => 'Trageți și fixați elementele principale de navigație în bara laterală <strong></strong> pentru a le reordona.',
     ],
+    "icon" => [
+        'name' => 'icoană',
+    ],
+    "title" => [
+        'name' => 'Titlu',
+    ],
+    "footer_copyright_org_name" => [
+        'name' => 'Subsol Nume organizație drepturi de autor',
+    ],
+    "sidebar_main_color" => [
+        'name' => 'Bara principală a culorii principale',
+    ],
+    "sidebar_secondary_color" => [
+        'name' => 'Bara laterală secundară',
+    ],
+    "active_sidebar_border_color" => [
+        'name' => 'Culoare activă a marginii laterale',
+    ]
 ];

@@ -35,6 +35,6 @@ return [
     'disable_account' => 'Dëshiron të mbyllësh llogarinë tënde? Ky operacion nuk mund të zhbëhet.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Email Azhurnohet!',
+    'update_email_mail_message' => 'Emaili juaj është azhurnuar!',
 ];

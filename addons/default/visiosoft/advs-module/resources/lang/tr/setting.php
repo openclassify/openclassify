@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Varsayılan İlan GET',
     ],
+    'add_canvas' => [
+        'name' => 'Tuval Ekle',
+    ],
     'thumbnail_width' => [
         'name' => 'Küçük Resim Genişliği',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Sayfa Resmi Listeleme',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Standart Fiyat Alanını Gizle',
     ],
     'enabled_currencies' => [
         'name' => 'Etkin Para Birimleri',
@@ -131,6 +134,28 @@ return [
         'name' => 'Üye Kayıt E-posta Zorunluluğu',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Pazar Yeri',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Fiyat Filtresini Gizle',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Tarih Filtresini Gizle',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Fotoğraf Filtresini Gizle',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Harita Filtresini Gizle',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL için Dil Parametresini Göster',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'TCMB Exchange URL\'si',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Popüler Reklam Limiti',
     ],
 ];

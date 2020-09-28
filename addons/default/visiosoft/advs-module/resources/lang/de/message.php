@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'Währung erfolgreich umgerechnet.',
     'choose_user' => 'Wählen Sie einen Benutzer',
     'owner_updated_successfully' => 'Der Besitzer wurde erfolgreich aktualisiert!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Keine Anzeige gefunden!',
+    'replicated_success' => 'Die Anzeige wurde erfolgreich repliziert!',
+    'ad_doesnt_exist' => "Diese Anzeige existiert nicht!",
 ];
