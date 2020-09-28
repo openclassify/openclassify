@@ -11,8 +11,11 @@ return [
         'warning'      => '最初のアクセス可能なナビゲーション項目は、 <strong>ホーム</strong> エリアとして使用されます。',
         'reorder'      => 'プライマリナビゲーションアイテムを <strong>サイドバー</strong> にドラッグアンドドロップして並べ替えます。',
     ],
-    "icon" => [
-        'name' => 'アイコン',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => '題名',
