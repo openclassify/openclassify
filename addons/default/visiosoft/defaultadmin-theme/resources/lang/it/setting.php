@@ -11,8 +11,11 @@ return [
         'warning'      => 'Il primo elemento di navigazione accessibile viene utilizzato come area <strong>home</strong>.',
         'reorder'      => 'Trascina e rilascia gli elementi di navigazione principali nella barra laterale <strong></strong> per riordinarli.',
     ],
-    "icon" => [
-        'name' => 'Icona',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'Titolo',
