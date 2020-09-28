@@ -11,8 +11,11 @@ return [
         'warning'      => 'اولین آیتم در منو به عنوان خانه در نظر گرفته می شود',
         'reorder'      => 'برای مرتب کردن آیتم ها را در سایدبار با موس جابجا کنید',
     ],
-    "icon" => [
-        'name' => 'آیکون',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'عنوان',
