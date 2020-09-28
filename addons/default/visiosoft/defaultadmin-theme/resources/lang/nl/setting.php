@@ -11,8 +11,11 @@ return [
         'warning'      => 'Het eerste toegankelijke navigatie-item wordt gebruikt als het <strong>home</strong> gebied.',
         'reorder'      => 'Sleep de primaire navigatie-items in de <strong>zijbalk</strong> om ze opnieuw te ordenen.',
     ],
-    "icon" => [
-        'name' => 'Icoon',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'Titel',
