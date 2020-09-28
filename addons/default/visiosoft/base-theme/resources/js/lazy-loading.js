@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 if (entry.isIntersecting) {
                     let lazyImage = entry.target;
                     if (lazyImage.dataset.background) {
-                        console.log(123)
                         lazyImage.style.backgroundImage = `url('${lazyImage.dataset.background}')`
                     } else {
                         lazyImage.src = lazyImage.dataset.src;
