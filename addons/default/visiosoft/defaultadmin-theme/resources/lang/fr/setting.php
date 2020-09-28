@@ -11,8 +11,11 @@ return [
         'warning'      => 'Le premier élément de navigation accessible est utilisé comme zone <strong>origine</strong>.',
         'reorder'      => 'Faites glisser et déposez les éléments de navigation principaux dans la barre latérale <strong></strong> pour les réorganiser.',
     ],
-    "icon" => [
-        'name' => 'Icône',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'Titre',
