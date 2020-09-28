@@ -32,7 +32,7 @@ return [
         'name' => '페이지 지시 로고 등록',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => '페이지 경고 링크 등록',
     ],
     'style' => [
         'name' => '스타일 (CSS)',

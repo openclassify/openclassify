@@ -430,19 +430,19 @@ return [
     'my_address' => 'Η διεύθυνσή μου',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Όνομα εταιρείας'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Εφορία'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'ΑΦΜ'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Το ΠΡΟΦΙΛ μου',
+    'edit_profile' => 'Επεξεργασία προφίλ',
+    'edit_details' => 'Επεξεργασία λεπτομερειών',
+    'update' => 'Εκσυγχρονίζω',
+    'change_password' => 'Άλλαξε κωδικό',
 ];

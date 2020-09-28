@@ -35,6 +35,6 @@ return [
     'disable_account' => '계정을 폐쇄 하시겠습니까? 이 작업은 취소 할 수 없습니다.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => '이메일이 업데이트되었습니다!',
+    'update_email_mail_message' => '귀하의 이메일이 업데이트되었습니다!',
 ];

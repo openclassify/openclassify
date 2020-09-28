@@ -20,6 +20,6 @@ return [
         'name' => 'CF 값',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => '옵션',
     ],
 ];

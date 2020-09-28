@@ -1,27 +1,17 @@
 <?php namespace Visiosoft\AdvsModule\Adv;
 
-use Anomaly\SelectFieldType\Handler\Currencies;
-use Anomaly\SettingsModule\Setting\Command\GetSettingValue;
-use Anomaly\SettingsModule\Setting\Contract\SettingInterface;
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
-use Anomaly\SettingsModule\Setting\SettingRepository;
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
-use Anomaly\Streams\Platform\Image\Image;
 use Anomaly\Streams\Platform\Model\Advs\AdvsCustomFieldsEntryModel;
-use Anomaly\Streams\Platform\Support\Currency;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Money\Currencies\CurrencyList;
-use Money\Number;
 use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
-use Visiosoft\AdvsModule\CustomField\CustomFieldModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
-
+use Visiosoft\LocationModule\District\DistrictModel;
+use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
@@ -359,5 +349,26 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function inStock()
     {
         return $this->is_get_adv && $this->stock;
+    }
+
+    public function getCity()
+    {
+        $cityModel = new CityModel();
+        $city = $cityModel->newQuery()->find($this->city);
+        return $city ? $city->name : false;
+    }
+
+    public function getDistrict()
+    {
+        $districtModel = new DistrictModel();
+        $district = $districtModel->newQuery()->find($this->district);
+        return $district ? $district->name : false;
+    }
+
+    public function getNeighborhood()
+    {
+        $neighborhoodModel = new NeighborhoodModel();
+        $neighborhood = $neighborhoodModel->newQuery()->find($this->neighborhood);
+        return $neighborhood ? $neighborhood->name : false;
     }
 }

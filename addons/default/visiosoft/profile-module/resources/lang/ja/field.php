@@ -428,19 +428,19 @@ return [
     'my_address' => '私のアドレス',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => '会社名'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => '税務署'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => '税番号'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => '私のプロフィール',
+    'edit_profile' => 'プロファイル編集',
+    'edit_details' => '詳細を編集する',
+    'update' => '更新',
+    'change_password' => 'パスワードを変更する',
 ];

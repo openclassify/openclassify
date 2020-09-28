@@ -32,7 +32,7 @@ return [
         'name' => 'רשום לוגו של הוראות הדרכה',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'רישום קישור התראה לדף',
     ],
     'style' => [
         'name' => 'סגנון (CSS)',

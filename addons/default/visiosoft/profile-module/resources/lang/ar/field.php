@@ -427,19 +427,19 @@ return [
     'my_address' => 'عنواني',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'اسم الشركة'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'مكتب الضرائب'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'الرقم الضريبي'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'ملفي',
+    'edit_profile' => 'تعديل الملف الشخصي',
+    'edit_details' => 'عدل التفاصيل',
+    'update' => 'تحديث',
+    'change_password' => 'غير كلمة السر',
 ];

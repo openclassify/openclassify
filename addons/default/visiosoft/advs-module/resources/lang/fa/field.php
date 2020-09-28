@@ -20,7 +20,7 @@ return [
         'name' => 'قیمت'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'قیمت استاندارد'
     ],
     'date' => [
         'name' => 'تاریخ'
@@ -266,8 +266,8 @@ return [
     "no_location" => "هیچ موقعیتی انتخاب نشده است.",
     "continue" => 'ادامه',
     "gallery" => 'عکس ها',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'تبلیغات',
+    "were_found" => 'پیدا شدند.',
 
     // Pending screen
     'pending_message_1' => 'اعلان در مراحل تأیید است',
@@ -295,5 +295,5 @@ return [
     'select_category_step_by_step' => 'طبقه بندی را مرحله به مرحله انتخاب کنید',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'گزینه ها',
 ];

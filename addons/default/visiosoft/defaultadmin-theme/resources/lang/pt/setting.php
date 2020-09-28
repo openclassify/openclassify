@@ -11,4 +11,22 @@ return [
         'warning'      => 'O primeiro item de navegação acessível é usado como a área <strong>inicial</strong>.',
         'reorder'      => 'Arraste e solte os itens de navegação principais na barra lateral <strong></strong> para reordená-los.',
     ],
+    "icon" => [
+        'name' => 'Ícone',
+    ],
+    "title" => [
+        'name' => 'Título',
+    ],
+    "footer_copyright_org_name" => [
+        'name' => 'Rodapé Copyright Nome da Organização',
+    ],
+    "sidebar_main_color" => [
+        'name' => 'Cor principal da barra lateral',
+    ],
+    "sidebar_secondary_color" => [
+        'name' => 'Cor secundária da barra lateral',
+    ],
+    "active_sidebar_border_color" => [
+        'name' => 'Cor ativa da borda da barra lateral',
+    ]
 ];

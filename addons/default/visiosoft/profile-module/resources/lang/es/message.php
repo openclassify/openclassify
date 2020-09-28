@@ -36,6 +36,6 @@ return [
     'disable_account' => '¿Quieres cerrar tu cuenta? Esta operación no se puede deshacer.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => '¡Correo electrónico actualizado!',
+    'update_email_mail_message' => '¡Su correo electrónico ha sido actualizado!',
 ];

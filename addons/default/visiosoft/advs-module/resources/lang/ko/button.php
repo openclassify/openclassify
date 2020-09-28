@@ -31,5 +31,5 @@ return [
     'update_category' => [
         'name' => '카테고리 업데이트'
     ],
-    'new_option' => 'New Option',
+    'new_option' => '새로운 옵션',
 ];

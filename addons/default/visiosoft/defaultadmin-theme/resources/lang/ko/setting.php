@@ -11,4 +11,22 @@ return [
         'warning'      => '액세스 가능한 첫 번째 탐색 항목은 <strong>홈</strong> 영역으로 사용됩니다.',
         'reorder'      => '<strong>사이드 바</strong> 에서 기본 탐색 항목을 끌어다 놓아 순서를 바꿉니다.',
     ],
+    "icon" => [
+        'name' => '상',
+    ],
+    "title" => [
+        'name' => '표제',
+    ],
+    "footer_copyright_org_name" => [
+        'name' => '바닥 글 저작권 조직 이름',
+    ],
+    "sidebar_main_color" => [
+        'name' => '사이드 바 기본 색상',
+    ],
+    "sidebar_secondary_color" => [
+        'name' => '사이드 바 보조 색상',
+    ],
+    "active_sidebar_border_color" => [
+        'name' => '활성 사이드 바 테두리 색상',
+    ]
 ];

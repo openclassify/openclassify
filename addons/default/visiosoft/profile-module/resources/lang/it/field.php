@@ -430,19 +430,19 @@ return [
     'my_address' => 'Il mio indirizzo',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Nome della ditta'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Ufficio delle imposte'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Codice fiscale'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Il mio profilo',
+    'edit_profile' => 'Modifica Profilo',
+    'edit_details' => 'Modifica i dettagli',
+    'update' => 'Aggiornare',
+    'change_password' => 'Cambia la password',
 ];

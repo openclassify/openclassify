@@ -50,11 +50,11 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'Параметры',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'Может варианты прочитать?',
+            'write'  => 'Может создавать / редактировать варианты?',
+            'delete' => 'Может варианты удалить?',
         ],
     ],
 ];

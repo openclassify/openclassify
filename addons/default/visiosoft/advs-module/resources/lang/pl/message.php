@@ -22,5 +22,7 @@ return [
     'currency_converted' => 'Pomyślnie przeliczono walutę.',
     'choose_user' => 'Wybierz użytkownika',
     'owner_updated_successfully' => 'Właściciel został zaktualizowany pomyślnie!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Nie znaleziono reklamy!',
+    'replicated_success' => 'Reklama została pomyślnie zreplikowana!',
+    'ad_doesnt_exist' => "Ta reklama nie istnieje!",
 ];

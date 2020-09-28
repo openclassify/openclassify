@@ -2,6 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => 'Mapa witryny Dzielenie liczby',
+    ],
+    'include_cities_sitemap' => [
+        'name' => 'Uwzględnij miasta w mapie witryny',
     ],
 ];

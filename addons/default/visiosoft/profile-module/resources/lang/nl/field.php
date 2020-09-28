@@ -430,19 +430,19 @@ return [
     'my_address' => 'Mijn adres',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Bedrijfsnaam'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Belastingkantoor'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Btw nummer'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Mijn profiel',
+    'edit_profile' => 'Bewerk profiel',
+    'edit_details' => 'Details bewerken',
+    'update' => 'Bijwerken',
+    'change_password' => 'Wachtwoord wijzigen',
 ];

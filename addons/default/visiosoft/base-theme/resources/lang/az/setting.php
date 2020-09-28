@@ -32,7 +32,7 @@ return [
         'name' => 'Səhifə Təlimatı Loqosunu qeyd edin',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Qeyd Alert Linkini Qeyd et',
     ],
     'style' => [
         'name' => 'Stil (CSS)',

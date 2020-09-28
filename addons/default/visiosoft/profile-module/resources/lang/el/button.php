@@ -12,6 +12,7 @@ return [
     'edit' => 'Επεξεργασία',
     'go_profile' => 'Μεταβείτε στη Λεπτομέρεια προφίλ',
     'go_user' => 'Μεταβείτε στη Λεπτομέρεια χρήστη',
-    'personal' => 'Personal',
-    'corporate' => 'Corporate',
+    'personal' => 'Προσωπικός',
+    'corporate' => 'Εταιρικός',
+    'export' => 'Εξαγωγή',
 ];

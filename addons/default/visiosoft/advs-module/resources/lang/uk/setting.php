@@ -79,6 +79,9 @@ return [
     'default_GET' => [
         'name' => 'Оголошення за замовчуванням GET',
     ],
+    'add_canvas' => [
+        'name' => 'Додати полотно',
+    ],
     'thumbnail_width' => [
         'name' => 'Ширина мініатюри',
     ],
@@ -119,7 +122,7 @@ return [
         'name' => 'Зображення сторінки лістингу',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Сховати поле стандартної ціни',
     ],
     'enabled_currencies' => [
         'name' => 'Увімкнено валюти',
@@ -131,6 +134,28 @@ return [
         'name' => 'Вимога електронної пошти щодо реєстрації учасника',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Ринок',
+    ],
+
+    'hide_price_filter' => [
+        'name' => 'Сховати фільтр цін',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Сховати фільтр дати',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Сховати фільтр фотографій',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Сховати фільтр карти',
+    ],
+    'show_lang_url' => [
+        'name' => 'Показати параметр мови для URL-адреси',
+    ],
+    'tcmb_exchange_url' => [
+        'name' => 'URL-адреса обміну TCMB',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Ліміт популярних оголошень',
     ],
 ];

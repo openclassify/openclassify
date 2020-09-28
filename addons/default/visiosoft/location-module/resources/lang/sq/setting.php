@@ -30,7 +30,7 @@ return [
     ],
 
     'google_map_key' => [
-        'name' => 'Google Maps Api Key',
+        'name' => 'Google Key Api Key',
     ],
 
     'map_coordinates_long' => [
@@ -39,5 +39,9 @@ return [
 
     'map_coordinates_lat' => [
         'name' => 'Default Lat',
+    ],
+
+    'hide_location_filter' => [
+        'name' => 'Fshih Filtrin e Vendndodhjes',
     ],
 ];
