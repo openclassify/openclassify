@@ -11,8 +11,11 @@ return [
         'warning'      => 'İlk erişilebilir gezinme öğesi <strong>ana</strong> alanı olarak kullanılır.',
         'reorder'      => 'Birincil gezinme öğelerini yeniden sıralamak için <strong>kenar çubuğu</strong> sürükleyip bırakın.',
     ],
-    "icon" => [
-        'name' => 'ikon',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'Başlık',
