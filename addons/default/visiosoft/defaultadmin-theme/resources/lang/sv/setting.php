@@ -11,8 +11,11 @@ return [
         'warning'      => 'Det första tillgängliga navigationsobjektet används som <strong>hem</strong> området.',
         'reorder'      => 'Dra och släpp de primära navigeringsobjekten i <strong>sidfältet</strong> att ordna dem.',
     ],
-    "icon" => [
-        'name' => 'Ikon',
+    "login_icon" => [
+        'name' => 'Login Icon',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel Icon',
     ],
     "title" => [
         'name' => 'Titel',
