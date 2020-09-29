@@ -19,7 +19,7 @@
     height: 0;
     width: 100%;
     border: none;
-    overflow-y: auto
+    overflow-y: auto;
 }
 
 .cat-select:focus {
@@ -31,12 +31,17 @@
     width: 13rem;
 }
 
-.cat-select option {
+.cat-select li {
     cursor: pointer;
     border-radius: 2px;
     position: relative;
     font-size: 13px;
     color: #505050;
+}
+
+.cat-select li.selected {
+    background-color: #1E90FF;
+    color: #fff;
 }
 
 .cat-item-2 {
