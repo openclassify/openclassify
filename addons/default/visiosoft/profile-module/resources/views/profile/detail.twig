@@ -13,25 +13,25 @@
             <div class="row px-3">
 
                 <!-- User Profile Form Section-->
-                <div class="col-md-12 mt-5 bg-light profile-section pb-4">
+                <div class="col-md-12 bg-light profile-section pb-4">
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             <a class="nav-item nav-link active text-dark" id="nav-profile-tab" data-toggle="tab"
                                href="#nav-profile"
                                role="tab" aria-controls="nav-profile" aria-selected="true">
-                                <img src="{{ img('visiosoft.module.profile::images/user.svg').url }}" alt="">
+                                <img src="{{ img('visiosoft.module.profile::images/profile2.svg').url }}" alt="">
                                 {{ trans('visiosoft.module.profile::field.profile.name') }}
                             </a>
                             <a class="nav-item nav-link text-dark" id="nav-details-tab" data-toggle="tab"
                                href="#nav-details"
                                role="tab" aria-controls="nav-details" aria-selected="false">
-                                <img src="{{ img('visiosoft.module.profile::images/detail.svg').url }}" alt="">
+                                <img src="{{ img('visiosoft.module.profile::images/detail2.svg').url }}" alt="">
                                 {{ trans('visiosoft.module.profile::field.details.name') }}
                             </a>
                             <a class="nav-item nav-link text-dark" id="nav-password-tab" data-toggle="tab"
                                href="#nav-password"
                                role="tab" aria-controls="nav-password" aria-selected="false">
-                                <img src="{{ img('visiosoft.module.profile::images/password.svg').url }}" alt="">
+                                <img src="{{ img('visiosoft.module.profile::images/password2.svg').url }}" alt="">
                                 {{ trans('visiosoft.module.profile::field.password.name') }}
                             </a>
                             {{ addBlock('profile/detail/content-tab')|raw }}
@@ -75,7 +75,7 @@
                                             {{ userForm.fields.email.input|raw }}
                                         </div>
                                     </div>
-                                    <div class="form-group text-right pr-3">
+                                    <div class="form-group text-right">
                                         {{ userForm.actions|raw }}
                                     </div>
 
