@@ -142,3 +142,8 @@ a.sort-by-open-dropdown:hover {
     font-weight: 500;
     color: #8598AA;
 }
+
+.sort-by-item:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
