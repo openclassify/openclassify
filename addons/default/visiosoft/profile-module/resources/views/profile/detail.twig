@@ -1,5 +1,9 @@
 {% extends "theme::layouts/default" %}
 
+{% block styles %}
+    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
+{% endblock %}
+
 {% block content %}
     {% embed 'visiosoft.module.profile::profile/index' %}
         {% block detail %}
