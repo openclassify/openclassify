@@ -46,7 +46,7 @@ $(document).ready(function () {
                     stop();
                 } else {
                     response.forEach(function(options){
-                        $(catId).append("<option class='text-truncate pl-1 my-1' value="+options.id+">"+options.name+"</option>");
+                        $(catId).append("<li class='text-truncate pl-1 my-1' data-value="+options.id+">"+options.name+"</li>");
                     });
                     $('.focus-select').removeClass('focus-select');
                     // $(catId).animate({height: '14rem'}, 200);
@@ -78,18 +78,15 @@ $(document).ready(function () {
         }
     };
 
-    for (var i = 1; i <= 10; i++) {
-        (function(){
-            var ii = i;
-            $('#cat' + i).on('change', function (i, e) {
-                let selectedOption = $(this).find('option:selected');
-                let divId = selectedOption.val();
-                if (divId == 0) {
-                    filter.hideCats(ii + 1);
-                }
-                filter.hideCats(ii + 1);
-                filter.getCats("#cat" + (ii + 1), divId);
-            });
-        })();
-    }
+    $('.cat-select').on('click', 'li', function () {
+        $(this).addClass('selected').siblings().removeClass('selected')
+        let divId = $(this).data('value');
+        let catSelectId = $(this).closest('.cat-select').attr('id')
+        catSelectId = catSelectId.substring(3)
+
+        $(`input[name=cat${catSelectId}]`).val(divId);
+
+        filter.hideCats(Number(catSelectId) + 1);
+        filter.getCats("#cat" + (Number(catSelectId) + 1), divId);
+    });
 });

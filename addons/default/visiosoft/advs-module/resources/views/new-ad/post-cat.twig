@@ -13,66 +13,30 @@
                 {{ trans('visiosoft.module.advs::field.select_category_step_by_step') }}
             </h5>
             <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
+                {% for i in 1..10 %}
+                    <input type="hidden" name="cat{{ i }}">
+                {% endfor %}
+
                 <div class="d-flex category-tab pb-3">
                     <div class="pr-2 cat-item mb-2 focus-select">
                         <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat1" id="cat1" style="height: 14rem" multiple>
+                            <ul class="cat-select mx-0 mb-0 mt-2 py-0 pl-0 pr-1" name="cat1" id="cat1" style="height: 14rem" multiple>
                                 {% for cat in main_cats %}
-                                    <option class="text-truncate pl-1 my-1" value="{{ cat.id }}">
+                                    <li class="text-truncate pl-1 my-1" data-value="{{ cat.id }}">
                                         {{ cat.name }}
-                                    </option>
+                                    </li>
                                 {% endfor %}
-                            </select>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat2" id="cat2" multiple></select>
+                    {% for i in 2..10 %}
+                        <div class="pr-2 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card px-1">
+                                <ul class="cat-select mx-0 mb-0 mt-2 py-0 pl-0 pr-1" name="cat{{ i }}" id="cat{{ i }}" multiple></ul>
+                            </div>
                         </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat3" id="cat3" multiple></select>
-                        </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat4" id="cat4" multiple></select>
-                        </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat5" id="cat5" multiple></select>
-                        </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat6" id="cat6" multiple>
-
-                            </select>
-                        </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat7" id="cat7" multiple></select>
-                        </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat8" id="cat8" multiple></select>
-                        </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat9" id="cat9" multiple></select>
-                        </div>
-                    </div>
-                    <div class="pr-2 cat-item mb-2 cat-item-2">
-                        <div class="section cat-option select-category post-option card px-1">
-                            <select class="cat-select mt-2 pr-1" name="cat10" id="cat10" multiple></select>
-                        </div>
-                    </div>
+                    {% endfor %}
 
                     <div class="cat-item mb-2 shadow-sm border rounded align-items-center">
                         <div class="cat-item-3">
