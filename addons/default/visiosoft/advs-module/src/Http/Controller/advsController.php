@@ -4,9 +4,7 @@ use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
-use Anomaly\Streams\Platform\Model\Advs\PurchasePurchaseEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
-use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
@@ -19,16 +17,15 @@ use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
 use Visiosoft\AdvsModule\Adv\Event\priceChange;
 use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
-use Visiosoft\AdvsModule\Adv\Event\UpdateAd;
 use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
-use Visiosoft\AlgoliatestModule\Http\Controller\Admin\IndexController;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CloudinaryModule\Video\VideoModel;
-use Visiosoft\CommentsModule\Comment\Events\CreateNewComment;
+use Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface;
+use Visiosoft\CustomfieldsModule\CustomField\CustomFieldModel;
 use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
@@ -36,11 +33,8 @@ use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
-use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
 use Visiosoft\PackagesModule\Package\PackageModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
-use Visiosoft\QrcontactModule\Qr\QrModel;
-use Visiosoft\StoreModule\Ad\AdModel;
 
 class AdvsController extends PublicController
 {
@@ -69,6 +63,11 @@ class AdvsController extends PublicController
 
     private $optionRepository;
 
+
+
+
+    private $customFieldRepository;
+
     public function __construct(
         UserRepositoryInterface $userRepository,
 
@@ -95,7 +94,10 @@ class AdvsController extends PublicController
 
         Dispatcher $events,
 
-        Request $request
+        Request $request,
+
+
+        CustomFieldRepositoryInterface $customFieldRepository
     )
     {
         $this->userRepository = $userRepository;
@@ -125,6 +127,7 @@ class AdvsController extends PublicController
 
         parent::__construct();
         $this->optionRepository = $optionRepository;
+        $this->customFieldRepository = $customFieldRepository;
     }
 
 
@@ -292,6 +295,76 @@ class AdvsController extends PublicController
             $selectImage = $returnvalues['selectImage'];
             $ranges = $returnvalues['ranges'];
             $radio = $returnvalues['radio'];
+
+            $customFieldParameters = array_filter($param, function ($var) {
+                return strpos($var, 'cf_') === 0
+                    || strpos($var, 'min_cf_') === 0
+                    || strpos($var, 'max_cf_') === 0;
+            }, ARRAY_FILTER_USE_KEY);
+
+            $cFArray = array();
+            foreach ($customFieldParameters as $id => $value) {
+                if (strpos($id, 'min_cf_') === 0 || strpos($id, 'max_cf_') === 0) {
+                    $cFId = substr($id, 7);
+                    $cF = $this->customFieldRepository->newQuery()->find($cFId);
+                    $keyExists = array_key_exists($cFId, $cFArray);
+                    if (strpos($id, 'min_cf_') === 0) {
+                        if ($keyExists) {
+                            $cFArray[$cFId] = [
+                                'name' => $cFArray[$cFId]['name'],
+                                'value' => [
+                                    'min' => $value,
+                                    'max' => $cFArray[$cFId]['value']['max'],
+                                ]
+                            ];
+                        } else {
+                            $cFArray[$cFId] = [
+                                'name' => $cF->name,
+                                'value' => [
+                                    'min' => $value,
+                                ]
+                            ];
+                        }
+                    } else {
+                        if ($keyExists) {
+                            $cFArray[$cFId] = [
+                                'name' => $cFArray[$cFId]['name'],
+                                'value' => [
+                                    'min' => $cFArray[$cFId]['value']['min'],
+                                    'max' => $value,
+                                ]
+                            ];
+                        } else {
+                            $cFArray[$cFId] = [
+                                'name' => $cF->name,
+                                'value' => [
+                                    'max' => $value,
+                                ]
+                            ];
+                        }
+                    }
+                } elseif (strpos($id, 'cf_') === 0) {
+                    $cFId = substr($id, 3);
+                    $cF = $this->customFieldRepository->newQuery()->find($cFId);
+                    if ($cF->type === 'radio' || $cF->type === 'selecttop') {
+                        $cFArray[$cFId] = [
+                            'name' => $cF->name,
+                            'value' => reset($value)
+                        ];
+                    } elseif ($cF->type === 'selectdropdown') {
+                        $cFArray[$cFId] = [
+                            'name' => $cF->name,
+                            'value' => $value
+                        ];
+                    } elseif ($cF->type === 'select') {
+                        $cFArray[$cFId] = [
+                            'name' => $cF->name,
+                            'value' => $value
+                        ];
+                    }
+                }
+            }
+            dd($cFArray);
         }
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
@@ -330,6 +403,8 @@ class AdvsController extends PublicController
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
             'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
+
+//        dd($checkboxes, $radio, $param, $returnvalues , $topfields , $selectDropdown , $selectRange , $selectImage , $ranges);
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }

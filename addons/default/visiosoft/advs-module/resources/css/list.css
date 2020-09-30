@@ -124,6 +124,52 @@
     font-weight: 500;
 }
 
+.result-text .filter-tabs > div {
+    margin: 3px 16px 4px 0;
+}
+
+.result-text .filter-tabs div > span {
+    color: #292d2e;
+}
+
+.result-text .filter-tabs a {
+    background-color: #eee;
+    font-size: 12px;
+    padding: 4px 7px;
+    border-radius: 2px;
+    text-decoration: none;
+    max-width: 400px;
+}
+
+.result-text .filter-tabs a:hover {
+    background-color: #e0e0e0;
+}
+
+.result-text .filter-tabs a span {
+    color: #666;
+}
+
+.result-text .filter-tabs a:hover span {
+    color: #444;
+}
+
+.result-text .filter-tabs a:hover button {
+    background-color: #CD7D22;
+}
+
+.result-text .filter-tabs a button {
+    height: 12px;
+    width: 12px;
+    background-color: #EC9C4A;
+    border-radius: 2px;
+}
+
+.result-text .filter-tabs a svg {
+    flex-shrink: 0;
+    height: 6px;
+    width: 6px;
+}
+
 a.sort-by-open-dropdown:hover {
     color: #8598AA !important;
 }
