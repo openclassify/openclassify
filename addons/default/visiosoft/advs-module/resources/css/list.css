@@ -164,6 +164,10 @@
     border-radius: 2px;
 }
 
+.result-text .filter-tabs a button:focus {
+    outline: none;
+}
+
 .result-text .filter-tabs a svg {
     flex-shrink: 0;
     height: 6px;
