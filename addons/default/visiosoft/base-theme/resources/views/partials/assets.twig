@@ -21,6 +21,8 @@
 
 {{ asset_script("theme.js") }}
 
+{{ addBlock('theme/partials/assets/additional-assets')|raw }}
+
 {# Include Styles Loaded From Outside #}
 <style>
     {% for style in asset_inlines("styles.css", ["min"]) %}

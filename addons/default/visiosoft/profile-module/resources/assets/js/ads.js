@@ -4,24 +4,21 @@ var ads_type = "";
 
 var objJson = [];
 
-function prevPage()
-{
+function prevPage() {
     if (current_page > 1) {
         current_page--;
         changePage(current_page);
     }
 }
 
-function nextPage(event)
-{
+function nextPage(event) {
     if (current_page < numPages()) {
         current_page++;
         changePage(current_page);
     }
 }
 
-function changePage(page)
-{
+function changePage(page) {
     var btn_next = $("#btn_next");
     var btn_prev = $("#btn_prev");
     var listing_table = $("#nav-" + ads_type);
@@ -33,12 +30,12 @@ function changePage(page)
 
     listing_table.html("");
 
-    if(objJson.length == 0) {
+    if (objJson.length == 0) {
         listing_table.html('<div class="alert alert-warning" role="alert">' +
-                            no_ads_message +
-                            '</div>');
+            no_ads_message +
+            '</div>');
     }
-    for (var i = (page-1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
+    for (var i = (page - 1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
         listing_table.append(addAdsRow(objJson[i].id, objJson[i].detail_url, objJson[i].cover_photo, objJson[i].name,
             objJson[i].price + " " + objJson[i].currency,
             objJson[i].city_name, objJson[i].country_name, objJson[i].cat1_name, objJson[i].cat2_name, objJson[i].status));
@@ -65,8 +62,7 @@ function changePage(page)
     }
 }
 
-function numPages()
-{
+function numPages() {
     return Math.ceil(objJson.length / records_per_page);
 }
 
@@ -164,7 +160,7 @@ function dropdownRow(id, type) {
         extend_ad +
         "</a>\n";
 
-    dropdown += "</div></div>";
+    dropdown += getBlock('profile/dropdown-ad', {'id': id}) + "</div></div>";
     return dropdown;
 
 }
