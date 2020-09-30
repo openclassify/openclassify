@@ -2,67 +2,41 @@
 
 use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Illuminate\Support\Carbon;
-use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\AdvsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 
 class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 {
-
-    /**
-     * The entry model.
-     *
-     * @var AdvModel
-     */
     protected $model;
-
-    /**
-     * @var FileRepositoryInterface
-     */
     private $fileRepository;
-
-    /**
-     * @var FolderRepositoryInterface
-     */
     private $folderRepository;
 
-    /**
-     * Create a new AdvRepository instance.
-     *
-     * @param AdvModel $model
-     */
     public function __construct(
         AdvModel $model,
-        SettingRepositoryInterface $settings,
         FileRepositoryInterface $fileRepository,
         FolderRepositoryInterface $folderRepository
     )
     {
         $this->model = $model;
-        $this->settings = $settings;
         $this->fileRepository = $fileRepository;
         $this->folderRepository = $folderRepository;
     }
 
-    /**
-     * Resolve the advs.
-     *
-     * @return AdvsInterface|null
-     */
     public function findById($id)
     {
         return $this->model->orderBy('created_at', 'DESC')->where('advs_advs.id', $id)->first();
     }
 
-    public function searchAdvs($type, $param = null, $customParameters = null, $limit = null, $category = null, $city = null)
+    public function searchAdvs(
+        $type, $param = null, $customParameters = null,
+        $limit = null, $category = null, $city = null, $paginate = true
+    )
     {
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
@@ -239,7 +213,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         if ($type == "list") {
-            return $query->paginate($this->settings->value('streams::per_page'));
+            return $paginate ? $query->paginate(setting_value('streams::per_page')) : $query;
         } else {
             return $query->get();
         }

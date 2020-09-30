@@ -6,7 +6,10 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 {
     public function findById($id);
 
-    public function searchAdvs($type, $param = null, $customParameters = null, $limit = null, $category = null, $city = null);
+    public function searchAdvs(
+        $type, $param = null, $customParameters = null,
+        $limit = null, $category = null, $city = null, $paginate = true
+    );
 
     public function softDeleteAdv($id);
 
