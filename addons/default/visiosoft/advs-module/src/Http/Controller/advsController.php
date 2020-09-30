@@ -232,7 +232,17 @@ class AdvsController extends PublicController
         }
 
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
-        $advs = $this->adv_repository->searchAdvs('list', $param, $customParameters, null, $categoryId, $cityId);
+        $advs = $this->adv_repository->searchAdvs(
+            'list', $param, $customParameters, null, $categoryId, $cityId, false
+        );
+
+        if ($isActiveDopings) {
+            $featuredAdvsQuery = clone $advs;
+            $advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')
+                ->listFeatures($featuredAdvsQuery)->union($advs);
+        }
+
+        $advs = $advs->paginate(setting_value('streams::per_page'));
         $advs = $this->adv_repository->addAttributes($advs);
 
         if ($advs->currentPage() > $advs->lastPage()) {
@@ -242,10 +252,6 @@ class AdvsController extends PublicController
                 \request()->url(),
                 array()
             ), 301);
-        }
-
-        if ($isActiveDopings and $param != null) {
-            $featured_advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->listFeatures($advs);
         }
 
         $seenList = null;
