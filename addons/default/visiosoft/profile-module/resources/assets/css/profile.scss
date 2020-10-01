@@ -3,7 +3,6 @@
 		border-bottom: 1px solid #dee2e6;
 		padding-bottom: 10px;
 	}
-
 	.nav-link {
 		border: none;
 		border-radius: 0;
@@ -11,77 +10,61 @@
 		color: #BCBDC3;
 		padding: 0;
 		margin-bottom: 5px;
-
 		&:not(:last-child) {
 			border-right: 1px solid #dee2e6;
 		}
-
 		img {
 			opacity: .5;
 			width: 15px;
 		}
 	}
-
 	.nav-link.active {
 		font-size: 17px;
 		font-weight: bold;
 		color: #505050;
-
 		img {
 			opacity: 1;
 		}
 	}
 }
-
 .tab-content {
 	color: #707070;
-
 	#nav-profile {
-
 		.username {
 			font-size: 19px;
 			font-weight: 600;
 		}
-
 		.last-login {
 			font-weight: 400;
 		}
-
 		img {
 			width: 165px;
 			height: 130px;
 			object-fit: cover;
 			border-radius: 20px;
 		}
-
 		.profile--form--area {
 			display: flex;
 			justify-content: space-between;
-
 			.form-group {
 				width: 100%;
-
 				&:not(:last-child) {
 					margin-right: 10px;
 				}
-
 				input {
 					border-radius: 4px;
 					font-size: 13px;
 					border: 1px solid #E5E5E5;
 				}
 			}
-
 			@media (max-width: 992px) {
 				display: block;
-
 				& input {
 					width: 100%;
 
 				}
 			}
 		}
-
 		.account--disable--content {
 			width: 80%;
 			height: 58px;
@@ -94,13 +77,11 @@
 				width: 100%;
 				height: auto;
 			}
-
 				button {
 				font-size: 14px;
 				height: 34px;
 			}
 		}
-
 		@media (max-width: 992px) {
 			.profile--desc {
 				flex-direction: column;

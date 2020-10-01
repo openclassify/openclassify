@@ -1,7 +1,9 @@
 {% extends "theme::layouts/default" %}
 
 {% block styles %}
-    {{ asset_style("visiosoft.module.profile::assets/css/profile.scss") }}
+    <style>
+        {{ asset_inline("visiosoft.module.profile::assets/css/profile.scss") }}
+    </style>
 {% endblock %}
 
 {% block content %}
@@ -60,20 +62,20 @@
                                 <div class="mt-4">
                                     <div class="profile--form--area">
                                         <div class="form-group">
-                                            <label class="control-label font-weight-bold" for="">
+                                            <label class="control-label font-weight-bold">
                                                 {{ trans("visiosoft.module.profile::field.first_name.name") }}
                                             </label>
                                             {{ userForm.fields.first_name.input|raw }}
 
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label font-weight-bold" for="">
+                                            <label class="control-label font-weight-bold">
                                                 {{ trans("visiosoft.module.profile::field.last_name.name") }}
                                             </label>
                                             {{ userForm.fields.last_name.input|raw }}
                                         </div>
                                         <div class="form-group">
-                                            <label class="control-label font-weight-bold" for="">
+                                            <label class="control-label font-weight-bold">
                                                 {{ trans("visiosoft.module.profile::field.email.name") }}
                                             </label>
                                             {{ userForm.fields.email.input|raw }}
@@ -88,10 +90,10 @@
                                             <p class="mb-0 mr-4">
                                                 {{ trans('visiosoft.module.profile::message.disable_account') }}
                                             </p>
-                                            <button type="button" class="btn btn-danger"
+                                            <a type="button" class="btn btn-danger text-white"
                                                     onclick="window.location.href='/profile/closeAccount'">
                                                 {{ trans("visiosoft.module.profile::field.disable_account.name") }}
-                                            </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
