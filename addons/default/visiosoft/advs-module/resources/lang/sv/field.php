@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Under de senaste 24 timmarna'
     ],
+    'in_the_last_day' => [
+        'name' => 'In The Last 24 Hours'
+    ],
     'in_the_last_week' => [
         'name' => 'Under den sista veckan'
     ],
@@ -297,5 +300,10 @@ return [
     // New create page
     'options' => 'alternativ',
 
-    'free' => 'Free'
+    'free' => 'Free',
+    'ad_date' => 'Ad Date',
+    'photo_video' => 'Photo, Video',
+    'and_above' => 'and above',
+    'and_below' => 'and below',
+    'clear_all' => 'Clear All',
 ];
