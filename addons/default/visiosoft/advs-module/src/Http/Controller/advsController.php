@@ -235,17 +235,16 @@ class AdvsController extends PublicController
             ), 301);
         }
 
-        $seenList = null;
         foreach ($advs as $index => $ad) {
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
+        }
 
-            if ($isActiveCustomFields && isset($param['cat']) and $param['cat'] != "") {
-                $rtnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')
-                    ->indexseen($ad, $param['cat'], $advs, $index);
-                $advs = $rtnvalues['advs'];
-                $seenList = $rtnvalues['seenList'];
-            }
+        if ($isActiveCustomFields) {
+            $return_values = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')
+                ->indexseen($categoryId, $advs);
+            $advs = $return_values['advs'];
+            $seenList = $return_values['seenList'];
         }
 
 
