@@ -257,8 +257,13 @@ class AdvsController extends PublicController
         }
 
         if ($isActiveCustomFields) {
-            $return_values = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')
-                ->indexseen($categoryId, $advs);
+            $cfRepository = app('Visiosoft\CustomfieldsModule\CustomField\CustomFieldRepository');
+
+            $return_values = $cfRepository->getSeenList($advs);
+
+            $return_values = $cfRepository
+                ->getSeenWithCategory($return_values['advs'], $return_values['seenList'], $categoryId);
+
             $advs = $return_values['advs'];
             $seenList = $return_values['seenList'];
         }
