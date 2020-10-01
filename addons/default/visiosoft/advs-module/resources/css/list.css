@@ -132,6 +132,7 @@
 }
 
 .result-text .filter-tabs div > span {
+    font-weight: 500;
     color: #292d2e;
 }
 
@@ -147,7 +148,7 @@
 .result-text .filter-tabs div:last-child a {
     background-color: unset;
     font-size: 10px;
-    padding: 4px 7px;
+    padding: 0;
     text-decoration: none;
     color: #039;
 }
