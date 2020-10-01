@@ -118,13 +118,8 @@
 .result-text h1 {
     font-size: 13px;
     margin: 0;
-    padding-right: 6px;
     line-height: 1.5;
     max-width: 330px;
-}
-
-.result-text span:first-child {
-    font-weight: 500;
 }
 
 .result-text span:last-child {
