@@ -2,6 +2,9 @@
     "name": "visiosoft/advs-module",
     "type": "streams-addon",
     "autoload": {
+        "files": [
+            "src/helpers.php"
+        ],
         "psr-4": {
             "Visiosoft\\AdvsModule\\": "src/"
         }
