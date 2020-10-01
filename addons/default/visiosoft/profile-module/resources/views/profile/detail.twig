@@ -22,22 +22,22 @@
                 <div class="col-md-12 bg-light profile-section pb-4">
                     <nav>
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active text-dark" id="nav-profile-tab" data-toggle="tab"
+                            <a class="nav-item nav-link active text-dark d-flex justify-content-center align-items-center" id="nav-profile-tab" data-toggle="tab"
                                href="#nav-profile"
                                role="tab" aria-controls="nav-profile" aria-selected="true">
-                                <img src="{{ img('visiosoft.module.profile::images/profile2.svg').url }}" alt="">
+                                {{ img('visiosoft.module.profile::images/profile2.svg').data|raw }}
                                 {{ trans('visiosoft.module.profile::field.profile.name') }}
                             </a>
-                            <a class="nav-item nav-link text-dark" id="nav-details-tab" data-toggle="tab"
+                            <a class="nav-item nav-link text-dark d-flex justify-content-center align-items-center" id="nav-details-tab" data-toggle="tab"
                                href="#nav-details"
                                role="tab" aria-controls="nav-details" aria-selected="false">
-                                <img src="{{ img('visiosoft.module.profile::images/detail2.svg').url }}" alt="">
+                                {{ img('visiosoft.module.profile::images/detail2.svg').data|raw }}
                                 {{ trans('visiosoft.module.profile::field.details.name') }}
                             </a>
-                            <a class="nav-item nav-link text-dark" id="nav-password-tab" data-toggle="tab"
+                            <a class="nav-item nav-link text-dark d-flex justify-content-center align-items-center" id="nav-password-tab" data-toggle="tab"
                                href="#nav-password"
                                role="tab" aria-controls="nav-password" aria-selected="false">
-                                <img src="{{ img('visiosoft.module.profile::images/password2.svg').url }}" alt="">
+                                {{ img('visiosoft.module.profile::images/password2.svg').data|raw }}
                                 {{ trans('visiosoft.module.profile::field.password.name') }}
                             </a>
                             {{ addBlock('profile/detail/content-tab')|raw }}
@@ -50,13 +50,13 @@
                             <div>
                                 {% set userForm = form('userProfile').entry(user.id).get() %}
                                 {{ userForm.open()|raw }}
-                                <div class="mt-4 d-flex profile--desc">
-                                    <div class="ml-4">
+                                <div class="mt-4 d-flex profile--desc flex-column flex-lg-row text-lg-center">
+                                    <div class="d-flex d-sm-block m-auto m-sm-0 mr-sm-3">
                                         <img src="{{ profile_photo }}">
                                     </div>
-                                    <div class="ml-3 pt-2">
+                                    <div class="pt-2 d-flex flex-column flex-sm-row d-sm-block m-auto m-sm-0">
                                         <p class="mb-1 username">{{ user.name }}</p>
-                                        <p class="mb-1 last-login">{{ auth_user().last_login_at|date("d.m.Y - H:i") }}</p>
+                                        <p class="mb-1 last-login d-flex d-sm-block m-auto m-sm-0">{{ auth_user().last_login_at|date("d.m.Y - H:i") }}</p>
                                     </div>
                                 </div>
                                 <div class="mt-4">
