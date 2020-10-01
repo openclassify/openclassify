@@ -90,8 +90,7 @@
                                             <p class="mb-0 mr-4">
                                                 {{ trans('visiosoft.module.profile::message.disable_account') }}
                                             </p>
-                                            <a type="button" class="btn btn-danger text-white"
-                                                    onclick="window.location.href='/profile/closeAccount'">
+                                            <a href="{{ url_route("visiosoft.module.profile::profile_close_account") }}" class="btn btn-danger text-white">
                                                 {{ trans("visiosoft.module.profile::field.disable_account.name") }}
                                             </a>
                                         </div>
