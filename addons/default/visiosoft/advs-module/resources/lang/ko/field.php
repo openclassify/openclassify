@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => '지난 24 시간 동안'
     ],
+    'in_the_last_day' => [
+        'name' => 'In The Last 24 Hours'
+    ],
     'in_the_last_week' => [
         'name' => '지난주에'
     ],
@@ -297,5 +300,10 @@ return [
     // New create page
     'options' => '옵션',
 
-    'free' => 'Free'
+    'free' => 'Free',
+    'ad_date' => 'Ad Date',
+    'photo_video' => 'Photo, Video',
+    'and_above' => 'and above',
+    'and_below' => 'and below',
+    'clear_all' => 'Clear All',
 ];
