@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'द लास्ट 24 ऑवर्स में'
     ],
+    'in_the_last_day' => [
+        'name' => 'In The Last 24 Hours'
+    ],
     'in_the_last_week' => [
         'name' => 'पिछले हफ़्ते में'
     ],
@@ -297,5 +300,10 @@ return [
     // New create page
     'options' => 'विकल्प',
 
-    'free' => 'Free'
+    'free' => 'Free',
+    'ad_date' => 'Ad Date',
+    'photo_video' => 'Photo, Video',
+    'and_above' => 'and above',
+    'and_below' => 'and below',
+    'clear_all' => 'Clear All',
 ];
