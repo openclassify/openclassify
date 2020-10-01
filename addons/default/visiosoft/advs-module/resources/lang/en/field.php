@@ -305,4 +305,5 @@ return [
     'photo_video' => 'Photo, Video',
     'and_above' => 'and above',
     'and_below' => 'and below',
+    'clear_all' => 'Clear All',
 ];
