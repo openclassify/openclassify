@@ -115,13 +115,79 @@
     font-size: 13px;
 }
 
-.result-text span:first-child {
-    font-weight: 500;
+.result-text h1 {
+    font-size: 13px;
+    margin: 0;
+    line-height: 1.5;
+    max-width: 330px;
 }
 
 .result-text span:last-child {
     color: #8f0100;
     font-weight: 500;
+}
+
+.result-text .filter-tabs > div {
+    margin: 3px 16px 4px 0;
+}
+
+.result-text .filter-tabs div > span {
+    font-weight: 500;
+    color: #292d2e;
+}
+
+.result-text .filter-tabs a {
+    background-color: #eee;
+    font-size: 12px;
+    padding: 4px 7px;
+    border-radius: 2px;
+    text-decoration: none;
+    max-width: 400px;
+}
+
+.result-text .filter-tabs div:last-child a {
+    background-color: unset;
+    font-size: 10px;
+    padding: 0;
+    text-decoration: none;
+    color: #039;
+}
+
+.result-text .filter-tabs div:last-child a:hover {
+    text-decoration: underline;
+}
+
+.result-text .filter-tabs a:hover {
+    background-color: #e0e0e0;
+}
+
+.result-text .filter-tabs a span {
+    color: #666;
+}
+
+.result-text .filter-tabs a:hover span {
+    color: #444;
+}
+
+.result-text .filter-tabs a:hover button {
+    background-color: #CD7D22;
+}
+
+.result-text .filter-tabs a button {
+    height: 12px;
+    width: 12px;
+    background-color: #EC9C4A;
+    border-radius: 2px;
+}
+
+.result-text .filter-tabs a button:focus {
+    outline: none;
+}
+
+.result-text .filter-tabs a svg {
+    flex-shrink: 0;
+    height: 6px;
+    width: 6px;
 }
 
 a.sort-by-open-dropdown:hover {

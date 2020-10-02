@@ -19,15 +19,45 @@
                 </div>
                 <div class="col-md-9">
                     <div class="section recommended-classified">
-                        {% if catText %}
-                            <div class="result-text border py-2 px-3 mb-3 d-none d-sm-block">
-                                <p class="mb-0">
-                                    <span>"{{ catText }}"</span>
-                                    <span>{{ advs.total }} {{ trans('visiosoft.module.advs::field.ads')|lower }}</span>
-                                    {{ trans('visiosoft.module.advs::field.were_found') }}
-                                </p>
+                        <div class="result-text border d-none d-sm-block">
+                            <div class="mx-3 py-2">
+                                {% if catText %}
+                                    <h1 class="d-inline text-truncate">
+                                        "{{ catText }}"
+                                    </h1>
+                                {% endif %}
+                                <span>
+                                    {{ advs.total }} {{ trans('visiosoft.module.advs::field.ads')|lower }}
+                                </span>
+                                {{ trans('visiosoft.module.advs::field.were_found') }}
                             </div>
-                        {% endif %}
+
+                            {% if count(cFArray) %}
+                                <div class="mx-3 border-top py-2 filter-tabs d-flex flex-wrap">
+                                    {% for customParam in cFArray %}
+                                        <div class="d-flex align-items-center">
+                                            <span class="mr-1">{{ customParam['name'] }}</span>
+                                            {% for customValue in customParam['value'] %}
+                                                <a href="{{ customValue['removalLink'] }}"
+                                                   class="text-truncate d-flex align-items-center mr-1">
+                                                    <span class="mr-2">{{ customValue['name'] }}</span>
+                                                    <button class="border-0 d-flex align-items-center justify-content-center">
+                                                        {{ img('visiosoft.module.advs::images/close.svg').data|raw }}
+                                                    </button>
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                    {% endfor %}
+                                    <div class="d-flex align-items-center">
+                                        <a href="{{ app.request.pathinfo }}"
+                                           class="text-truncate d-flex align-items-center mr-1">
+                                            {{ trans('visiosoft.module.advs::field.clear_all') }}
+                                        </a>
+                                    </div>
+                                </div>
+                            {% endif %}
+                        </div>
+
                         <div class="row breadcrumb list-header">
 
                             <div class="col-md-6 my-2 d-none d-sm-block">

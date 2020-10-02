@@ -94,7 +94,10 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile/class/status/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusAds',
         'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
         'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
-        'profile/closeAccount' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount',
+        'profile/close-account' => [
+        	'as' => 'visiosoft.module.profile::profile_close_account',
+	        'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount'
+        ],
         'profile/notification' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
         'ajax/update-user-info' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
 
