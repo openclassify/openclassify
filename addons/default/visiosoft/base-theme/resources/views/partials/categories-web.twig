@@ -5,26 +5,22 @@
             <img src="{{ url('files/' ~ main_category.icon.path) }}" alt="{{ main_category.name }}"
                  class="img-responsive">
         {% else %}
-            <img src="{{ img('visiosoft.theme.base::images/default-categories-icon.png').url }}"
-                 alt="{{ main_category.name }}"
-                 class="img-responsive">
+            <img src="{{ img('visiosoft.theme.base::images/default-categories-icon.png').url }}" class="img-responsive"
+                 alt="{{ main_category.name }}">
         {% endif %}
-        <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ main_category.id }}"
-           class="main-category">
+        <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}" class="main-category">
             <b>{{ main_category.name }}</b>
         </a>
-        <ul class="p-0" style="">
+        <ul class="p-0">
             {% set sub_categories = entries('cats','category').where('parent_category_id', main_category.id).where('deleted_at', null).orderBy('sort_order').get() %}
             {% for sub_category in sub_categories|slice(0,sub_categories_limit) %}
                 <li>
-                    <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ sub_category.id }}"
-                       class="">{{ sub_category.name }}</a>
+                    <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}">{{ sub_category.name }}</a>
                 </li>
             {% endfor %}
             {% for sub_category in sub_categories|slice(sub_categories_limit,count(sub_categories)) %}
                 <li class="hidden hidden-category">
-                    <a href="{{ url_route('visiosoft.module.advs::list') }}?cat={{ sub_category.id }}"
-                       class="">{{ sub_category.name }}</a>
+                    <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}">{{ sub_category.name }}</a>
                 </li>
             {% endfor %}
             {% if count(sub_categories) > sub_categories_limit %}
