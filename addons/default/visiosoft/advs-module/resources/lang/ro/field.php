@@ -249,7 +249,7 @@ return [
         'name' => 'În ultimele 24 de ore'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'În ultimele 24 de ore'
     ],
     'in_the_last_week' => [
         'name' => 'In ultima saptamana'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'Opțiuni',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Gratuit',
+    'ad_date' => 'Data publicității',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'Si mai sus',
+    'and_below' => 'si sub',
+    'clear_all' => 'Curata tot',
 ];
