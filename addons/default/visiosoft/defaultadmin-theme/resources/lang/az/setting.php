@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Sıralamaq üçün <strong>yan çubuğun</strong> də ilkin naviqasiya elementlərini sürükləyin və buraxın.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Giriş nişanı',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Panel nişanı',
     ],
     "title" => [
         'name' => 'Başlıq',
