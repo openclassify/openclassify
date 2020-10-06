@@ -12,10 +12,10 @@ return [
         'reorder'      => 'পুনরায় ক্রম করতে প্রাথমিক নেভিগেশন আইটেমগুলিকে <strong>সাইডবার</strong> টেনে আনুন।',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'লগইন আইকন',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'প্যানেল আইকন',
     ],
     "title" => [
         'name' => 'শিরোনাম',
