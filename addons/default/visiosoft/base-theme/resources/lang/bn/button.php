@@ -10,5 +10,5 @@ return [
     'reset_password' => 'পাসওয়ার্ড রিসেট করুন',
     'email' => 'ইমেইল',
     'phone' => 'ফোন',
-    'show_all' => 'Show All',
+    'show_all' => 'সব দেখাও',
 ];
