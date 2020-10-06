@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Sleep de primaire navigatie-items in de <strong>zijbalk</strong> om ze opnieuw te ordenen.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Login pictogram',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Paneel Icoon',
     ],
     "title" => [
         'name' => 'Titel',
