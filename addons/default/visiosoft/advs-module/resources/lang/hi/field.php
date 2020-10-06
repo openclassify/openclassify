@@ -249,7 +249,7 @@ return [
         'name' => 'द लास्ट 24 ऑवर्स में'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'द लास्ट 24 ऑवर्स में'
     ],
     'in_the_last_week' => [
         'name' => 'पिछले हफ़्ते में'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'विकल्प',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'नि: शुल्क',
+    'ad_date' => 'विज्ञापन तिथि',
+    'photo_video' => 'फोटो, वीडियो',
+    'and_above' => 'और ऊपर',
+    'and_below' => 'और नीचे',
+    'clear_all' => 'सभी साफ करें',
 ];
