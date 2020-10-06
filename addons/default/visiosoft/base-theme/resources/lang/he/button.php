@@ -10,5 +10,5 @@ return [
     'reset_password' => 'לאפס את הסיסמה',
     'email' => 'אימייל',
     'phone' => 'טלפון',
-    'show_all' => 'Show All',
+    'show_all' => 'תראה הכול',
 ];
