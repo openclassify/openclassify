@@ -44,4 +44,5 @@ return [
     'options' => [
         'title' => 'বিকল্পগুলি',
     ],
+    'ads_image' => 'Ads Image',
 ];
