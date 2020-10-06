@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Defolt Elan GET',
     ],
-    'add_canvas' => [
-        'name' => 'Kətan əlavə edin',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Eskiz eni',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Eskiz hündürlüyü',
-    ],
-    'picture_width' => [
-        'name' => 'Şəkil genişliyi',
-    ],
-    'picture_height' => [
-        'name' => 'Şəkil Boyu',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Su nişanının növü',
-    ],
-    'watermark_text' => [
-        'name' => 'Su nişanı Mətn',
-    ],
-    'watermark_image' => [
-        'name' => 'Su nişanı şəkli',
-    ],
-    'watermark_position' => [
-        'name' => 'Su nişanının mövqeyi',
     ],
     'listing_page_image' => [
         'name' => 'Səhifənin görüntüləməsi',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Populyar elanlar limiti',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Eskiz eni',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Eskiz hündürlüyü',
+    ],
+    'add_canvas' => [
+        'name' => 'Kətan əlavə edin',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Su nişanının növü',
+    ],
+    'watermark_text' => [
+        'name' => 'Su nişanı Mətn',
+    ],
+    'watermark_image' => [
+        'name' => 'Su nişanı şəkli',
+    ],
+    'watermark_position' => [
+        'name' => 'Su nişanının mövqeyi',
     ],
 ];
