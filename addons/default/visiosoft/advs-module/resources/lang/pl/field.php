@@ -249,7 +249,7 @@ return [
         'name' => 'W ciągu ostatnich 24 godzin'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'W ciągu ostatnich 24 godzin'
     ],
     'in_the_last_week' => [
         'name' => 'W ostatnim tygodniu'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'Opcje',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Wolny',
+    'ad_date' => 'Data ogłoszenia',
+    'photo_video' => 'Zdjęcie, wideo',
+    'and_above' => 'i powyżej',
+    'and_below' => 'i poniżej',
+    'clear_all' => 'Wyczyść wszystko',
 ];
