@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Quảng cáo mặc định NHẬN',
     ],
-    'add_canvas' => [
-        'name' => 'Thêm Canvas',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Chiều rộng hình thu nhỏ',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Chiều cao hình thu nhỏ',
-    ],
-    'picture_width' => [
-        'name' => 'Chiều rộng hình ảnh',
-    ],
-    'picture_height' => [
-        'name' => 'Chiều cao hình ảnh',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Loại hình mờ',
-    ],
-    'watermark_text' => [
-        'name' => 'Văn bản thủy ấn',
-    ],
-    'watermark_image' => [
-        'name' => 'Hình mờ',
-    ],
-    'watermark_position' => [
-        'name' => 'Vị trí hình mờ',
     ],
     'listing_page_image' => [
         'name' => 'Danh sách trang hình ảnh',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Giới hạn Quảng cáo Phổ biến',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Chiều rộng hình thu nhỏ',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Chiều cao hình thu nhỏ',
+    ],
+    'add_canvas' => [
+        'name' => 'Thêm Canvas',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Loại hình mờ',
+    ],
+    'watermark_text' => [
+        'name' => 'Văn bản thủy ấn',
+    ],
+    'watermark_image' => [
+        'name' => 'Hình mờ',
+    ],
+    'watermark_position' => [
+        'name' => 'Vị trí hình mờ',
     ],
 ];
