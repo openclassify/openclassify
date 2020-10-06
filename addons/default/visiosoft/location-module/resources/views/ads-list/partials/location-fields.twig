@@ -2,27 +2,28 @@
     {% set defaultCountry = setting_value('visiosoft.module.location::default_country') %}
     {% set selectedCountry =  app.request.get('country') %}
 
+    {% set countryValue = '' %}
+    {% if selectedCountry %}
+        {% set countryName = getCountry(selectedCountry).name %}
+        {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
+    {% elseif defaultCountry %}
+        {% set countryName = getCountry(defaultCountry).name %}
+        {% set countryValue = defaultCountry %}
+    {% else %}
+        {% set countryName = trans("visiosoft.module.location::field.country.name") %}
+    {% endif %}
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 selected-country filter-country-btn"
                 data-toggle="modal">
-            <span class="float-left">{{ trans("visiosoft.module.location::field.country.name") }}</span>
+            <span class="float-left">
+                {{ trans("visiosoft.module.location::field.country.name") }}
+                    <small class="text-muted selected-country">{{ countryName }}</small>
+            </span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
-        {% set countryValue = '' %}
-        {% if selectedCountry %}
-            {% set countryName = getCountry(selectedCountry).name %}
-            {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
-        {% elseif defaultCountry %}
-            {% set countryName = getCountry(defaultCountry).name %}
-            {% set countryValue = defaultCountry %}
-        {% else %}
-            {% set countryName = trans("visiosoft.module.location::field.country.name") %}
-        {% endif %}
-        <div class="text-muted selected-country">
-            <small>{{ countryName }}</small>
-        </div>
         <input name="country" value="{{ countryValue }}" type="hidden">
     </div>
+
 
 
     <div class="col-12 px-0 py-1">
