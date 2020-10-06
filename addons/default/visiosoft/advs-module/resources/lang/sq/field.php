@@ -249,7 +249,7 @@ return [
         'name' => 'Në 24 orët e fundit'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Në 24 orët e fundit'
     ],
     'in_the_last_week' => [
         'name' => 'Në Javën e Fundit'
@@ -301,10 +301,10 @@ return [
     // New create page
     'options' => 'Opsione',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Falas',
+    'ad_date' => 'Data e shpalljes',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'dhe më lart',
+    'and_below' => 'dhe më poshtë',
+    'clear_all' => 'Pastroji të gjitha',
 ];
