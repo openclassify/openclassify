@@ -12,10 +12,10 @@ return [
         'reorder'      => 'プライマリナビゲーションアイテムを <strong>サイドバー</strong> にドラッグアンドドロップして並べ替えます。',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'ログインアイコン',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'パネルアイコン',
     ],
     "title" => [
         'name' => '題名',
