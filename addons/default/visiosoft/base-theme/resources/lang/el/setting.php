@@ -38,6 +38,6 @@ return [
         'name' => 'Στυλ (CSS)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'Όριο υποκατηγοριών αρχικής σελίδας',
     ],
 ];
