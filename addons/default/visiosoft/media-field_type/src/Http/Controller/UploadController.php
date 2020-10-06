@@ -24,9 +24,7 @@ use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 class UploadController extends AdminController
 {
     public $uploader;
-
     public $folders;
-
     public $files;
 
     use DispatchesJobs;

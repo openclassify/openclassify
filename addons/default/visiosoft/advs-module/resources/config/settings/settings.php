@@ -192,7 +192,6 @@ return [
     ],
 
     //Image Settings
-
     'image_resize_backend' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
@@ -205,7 +204,6 @@ return [
             'default_value' => 800,
         ],
     ],
-
     'full_image_height' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
@@ -273,9 +271,6 @@ return [
         'type' => 'anomaly.field_type.file',
         'bind' => 'adv.watermark_image',
         'env' => 'ADV_WATERMARK_IMAGE',
-        'config' => [
-            'default_value' => '',
-        ],
     ],
     'watermark_position' => [
         'type' => 'anomaly.field_type.select',

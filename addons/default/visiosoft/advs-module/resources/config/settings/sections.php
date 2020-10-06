@@ -32,8 +32,8 @@ return [
                     'listing_page_image',
                 ],
             ],
-            'ads-image' => [
-                'title' => 'visiosoft.module.advs::section.ads-image',
+            'ads_image' => [
+                'title' => 'visiosoft.module.advs::section.ads_image',
                 'fields' => [
                     'image_resize_backend',
                     'full_image_width',
