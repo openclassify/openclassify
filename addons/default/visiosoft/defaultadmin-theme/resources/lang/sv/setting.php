@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Dra och släpp de primära navigeringsobjekten i <strong>sidfältet</strong> att ordna dem.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Inloggningsikon',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Panelikon',
     ],
     "title" => [
         'name' => 'Titel',
