@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Sie können die primären Navigationelemente per Drag & Drop in der <strong>Sidebar</strong> sortieren.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Anmeldesymbol',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Panel-Symbol',
     ],
     "title" => [
         'name' => 'Titel',
