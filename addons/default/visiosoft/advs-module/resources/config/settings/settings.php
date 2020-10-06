@@ -108,71 +108,6 @@ return [
             'default_value' => 0,
         ],
     ],
-    'thumbnail_width' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 270,
-        ],
-    ],
-    'add_canvas' => [
-        'type' => 'anomaly.field_type.boolean',
-        'config' => [
-            'default_value' => true,
-            'mode' => 'checkbox',
-        ],
-    ],
-    'thumbnail_height' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 180,
-        ],
-    ],
-    'picture_width' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 600,
-        ],
-    ],
-    'picture_height' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 400,
-        ],
-    ],
-    'watermark_type' => [
-        'type' => 'anomaly.field_type.select',
-        'bind' => 'adv.watermark_type',
-        'env' => 'ADV_WATERMARK_TYPE',
-        'required' => true,
-        'config' => [
-            'options' => ['image' => 'Image', 'text' => 'Text'],
-            'default_value' => 'text',
-        ]
-    ],
-    'watermark_text' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.watermark_text',
-        'env' => 'ADV_WATERMARK_TEXT',
-    ],
-    'watermark_image' => [
-        'type' => 'anomaly.field_type.file',
-        'bind' => 'adv.watermark_image',
-        'env' => 'ADV_WATERMARK_IMAGE',
-        'config' => [
-            'default_value' => '',
-        ],
-    ],
-    'watermark_position' => [
-        'type' => 'anomaly.field_type.select',
-        'bind' => 'adv.watermark_position',
-        'env' => 'ADV_WATERMARK_POSITION',
-        'required' => true,
-        'config' => [
-            'options' => ['top-right' => 'Top Right', 'top-left' => 'Top Left', 'bottom-right' => 'Bottom Right',
-                'bottom-left' => 'Bottom Left', 'center' => 'Middle'],
-            'default_value' => 'top-right',
-        ]
-    ],
 
     'listing_page_image' => [
         'type' => 'anomaly.field_type.file',
@@ -254,5 +189,103 @@ return [
         'config' => [
             'default_value' => 15,
         ],
+    ],
+
+    //Image Settings
+
+    'image_resize_backend' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+    'full_image_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 800,
+        ],
+    ],
+
+    'full_image_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 600,
+        ],
+    ],
+    'medium_image_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 600,
+        ],
+    ],
+    'medium_image_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 400,
+        ],
+    ],
+    'thumbnail_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 270,
+        ],
+    ],
+    'thumbnail_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 180,
+        ],
+    ],
+    'add_canvas' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+    'image_canvas_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 800,
+        ],
+    ],
+    'image_canvas_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 600,
+        ],
+    ],
+    'watermark_type' => [
+        'type' => 'anomaly.field_type.select',
+        'bind' => 'adv.watermark_type',
+        'env' => 'ADV_WATERMARK_TYPE',
+        'required' => true,
+        'config' => [
+            'options' => ['image' => 'Image', 'text' => 'Text'],
+            'default_value' => 'text',
+        ]
+    ],
+    'watermark_text' => [
+        'type' => 'anomaly.field_type.text',
+        'bind' => 'adv.watermark_text',
+        'env' => 'ADV_WATERMARK_TEXT',
+    ],
+    'watermark_image' => [
+        'type' => 'anomaly.field_type.file',
+        'bind' => 'adv.watermark_image',
+        'env' => 'ADV_WATERMARK_IMAGE',
+        'config' => [
+            'default_value' => '',
+        ],
+    ],
+    'watermark_position' => [
+        'type' => 'anomaly.field_type.select',
+        'bind' => 'adv.watermark_position',
+        'env' => 'ADV_WATERMARK_POSITION',
+        'required' => true,
+        'config' => [
+            'options' => ['top-right' => 'Top Right', 'top-left' => 'Top Left', 'bottom-right' => 'Bottom Right',
+                'bottom-left' => 'Bottom Left', 'center' => 'Middle'],
+            'default_value' => 'top-right',
+        ]
     ],
 ];

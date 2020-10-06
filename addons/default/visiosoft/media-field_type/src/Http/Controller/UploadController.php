@@ -5,7 +5,6 @@ use Anomaly\Streams\Platform\Model\Files\FilesFilesEntryModel;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
-use Visiosoft\MediaFieldType\Table\FileTableBuilder;
 use Visiosoft\MediaFieldType\Table\UploadTableBuilder;
 use Anomaly\FilesModule\File\FileUploader;
 use Anomaly\FilesModule\Folder\Command\GetFolder;
@@ -13,7 +12,6 @@ use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Intervention\Image\Facades\Image as WaterMark;
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 
 /**
@@ -25,16 +23,22 @@ use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
  */
 class UploadController extends AdminController
 {
+    public $uploader;
+
+    public $folders;
+
+    public $files;
 
     use DispatchesJobs;
 
-    /**
-     * Return the uploader.
-     *
-     * @param UploadTableBuilder $table
-     * @param                        $folder
-     * @return \Illuminate\View\View
-     */
+    public function __construct(FileUploader $uploader, FolderRepositoryInterface $folders, FileRepositoryInterface $files)
+    {
+        $this->uploader = $uploader;
+        $this->folders = $folders;
+        $this->files = $files;
+        parent::__construct();
+    }
+
     public function index(UploadTableBuilder $table, $folder)
     {
         return $this->view->make(
@@ -46,90 +50,102 @@ class UploadController extends AdminController
         );
     }
 
-    /**
-     * Upload a file.
-     *
-     * @param FileUploader $uploader
-     * @param FolderRepositoryInterface $folders
-     * @return \Illuminate\Http\JsonResponse
-     */
-    public function upload(FileUploader $uploader, FolderRepositoryInterface $folders, SettingRepositoryInterface $settings, FileRepositoryInterface $files)
+    public function upload()
     {
-        if ($file = $uploader->upload($this->request->file('upload'), $folders->find($this->request->get('folder')))) {
+        $file = $this->uploader->upload($this->request->file('upload'), $this->folders->find($this->request->get('folder')));
+        if ($file) {
 
-            $watermarktype = $settings->value('visiosoft.module.advs::watermark_type');
-            $position = $settings->value('visiosoft.module.advs::watermark_position');
-            $fullImg = WaterMark::make($this->request->file('upload')->getRealPath())
-                    ->resize(null, setting_value('visiosoft.field_type.media::imageResizeH', 600),function ($constraint) {
-                            $constraint->aspectRatio();
-                    });
-            $mdImg = WaterMark::make($this->request->file('upload')->getRealPath())
-                    ->resize(null, setting_value('visiosoft.module.advs::picture_height'),function ($constraint) {
+            $settings_key = [
+                'image_resize_backend',
+                'full_image_width',
+                'full_image_height',
+                'medium_image_width',
+                'medium_image_height',
+                'thumbnail_width',
+                'thumbnail_height',
+                'add_canvas',
+                'image_canvas_width',
+                'image_canvas_height',
+                'watermark_type',
+                'watermark_text',
+                'watermark_image',
+                'watermark_position'
+            ];
+
+            $settings_value = array();
+
+            foreach ($settings_key as $key) {
+                $settings_value[$key] = setting_value('visiosoft.module.advs::' . $key);
+            }
+
+
+            $fullImg = WaterMark::make($this->request->file('upload')->getRealPath());
+
+            if ($settings_value['image_resize_backend']) {
+                $fullImg = $fullImg->resize(null, $settings_value['full_image_height'],
+                    function ($constraint) {
                         $constraint->aspectRatio();
                     });
-            if (setting_value('visiosoft.module.advs::add_canvas')) {
+            }
+
+            $mdImg = WaterMark::make($this->request->file('upload')->getRealPath())
+                ->resize(null, $settings_value['medium_image_height'], function ($constraint) {
+                    $constraint->aspectRatio();
+                });
+
+
+            if ($settings_value['add_canvas']) {
+
                 $fullImg->resizeCanvas(
-                    setting_value('visiosoft.field_type.media::imageCanvasW', 800),
-                    setting_value('visiosoft.field_type.media::imageCanvasH', 600),
+                    $settings_value['image_canvas_width'], $settings_value['image_canvas_height'],
                     'center', false, 'fff'
                 );
+
                 $mdImg->resizeCanvas(
-                    setting_value('visiosoft.module.advs::picture_width', 400),
-                    setting_value('visiosoft.module.advs::picture_height', 300),
+                    $settings_value['medium_image_width'], $settings_value['medium_image_height'],
                     'center', false, 'fff'
                 );
             }
-            foreach ([$fullImg, $mdImg] as $index => $image) {
-                if ($watermarktype == 'image') {
-                    $watermarkimage_id = $settings->value('visiosoft.module.advs::watermark_image');
-                    $watermarkimage = $files->find($watermarkimage_id);
-                    if ($watermarkimage != null) {
+
+            $image_types = array('full' => $fullImg, 'medium' => $mdImg);
+
+            foreach ($image_types as $key => $image) {
+
+                if ($settings_value['watermark_type'] == 'image') {
+
+                    if (!$watermarkimage = $this->files->find($settings_value['watermark_image'])) {
                         $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
-                        $image->insert($watermark, $position);
+                        $image->insert($watermark, $settings_value['watermark_position']);
                     }
+
                 } else {
-                    $watermarktext = $settings->value('visiosoft.module.advs::watermark_text');
                     $v = "top";
                     $h = "center";
                     $w = $image->width() / 2;
                     $h1 = $image->height() / 2;
                     $font_size = $w / 20;
-                    $image->text($watermarktext, $w, $h1, function ($font) use ($v, $h, $font_size) {
+                    $image->text($settings_value['watermark_text'], $w, $h1, function ($font) use ($v, $h, $font_size) {
                         $font->file(public_path('Antonio-Bold.ttf'));
                         $font->size($font_size);
                         $font->align($h);
                         $font->valign($v);
                     });
                 }
-                if ($index === 0) {
+                if ($key === "full") {
                     $fileName = $file->getAttributes()['name'];
                 } else {
                     $fileName = 'md-' . $file->getAttributes()['name'];
 
-                    $files->create([
-                        'folder_id' => $this->request->get('folder'),
-                        'name' => $fileName,
-                        'disk_id' => 1,
-                        'size' => $image->filesize(),
-                        'mime_type' => $image->mime,
-                        'extension' => $image->extension,
-                    ]);
+                    $this->createFile($this->request->get('folder'),$fileName,$image);
                 }
                 $image->save(app_storage_path() . '/files-module/local/images/' . $fileName);
             }
-
             return $this->response->json($file->getAttributes());
         }
 
-        return $this->response->json(['error' => 'There was a problem uploading the file.'], 500);
+        return $this->response->json(['error' => trans('visiosoft.field_type.media::message.error_upload')], 500);
     }
 
-    /**
-     * Return the recently uploaded files.
-     *
-     * @param FileTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function recent(UploadTableBuilder $table)
     {
         return $table->setUploaded(explode(',', $this->request->get('uploaded')))
@@ -157,5 +173,17 @@ class UploadController extends AdminController
             return response()->json(['status' => 'success']);
         }
         return response()->json(['status' => 'error']);
+    }
+
+    public function createFile($folder, $filename, $image)
+    {
+        $this->files->create([
+            'folder_id' => $folder,
+            'name' => $filename,
+            'disk_id' => 1,
+            'size' => $image->filesize(),
+            'mime_type' => $image->mime,
+            'extension' => $image->extension,
+        ]);
     }
 }
