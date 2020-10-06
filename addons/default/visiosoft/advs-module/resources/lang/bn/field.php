@@ -249,7 +249,7 @@ return [
         'name' => 'শেষ 24 ঘন্টা'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'শেষ 24 ঘন্টা'
     ],
     'in_the_last_week' => [
         'name' => 'গত সপ্তাহে'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'বিকল্পগুলি',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'ফ্রি',
+    'ad_date' => 'বিজ্ঞাপন তারিখ',
+    'photo_video' => 'ছবি, ভিডিও',
+    'and_above' => 'এবং উপরে',
+    'and_below' => 'এবং নিচে',
+    'clear_all' => 'সব পরিষ্কার করে দাও',
 ];
