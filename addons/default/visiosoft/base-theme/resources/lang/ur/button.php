@@ -10,5 +10,5 @@ return [
     'reset_password' => 'پاس ورڈ ری سیٹ',
     'email' => 'ای میل',
     'phone' => 'فون',
-    'show_all' => 'Show All',
+    'show_all' => 'سارے دکھاو',
 ];
