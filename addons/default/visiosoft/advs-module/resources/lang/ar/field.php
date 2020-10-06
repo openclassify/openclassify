@@ -249,7 +249,7 @@ return [
         'name' => 'في ال 24 ساعة الماضية'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'في آخر 24 ساعة'
     ],
     'in_the_last_week' => [
         'name' => 'في الأسبوع الماضي'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'خيارات',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'مجانا',
+    'ad_date' => 'تاريخ الإعلان',
+    'photo_video' => 'صور وفيديو',
+    'and_above' => 'و ما فوق',
+    'and_below' => 'و تحت',
+    'clear_all' => 'امسح الكل',
 ];
