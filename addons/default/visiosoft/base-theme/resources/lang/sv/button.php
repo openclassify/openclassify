@@ -10,5 +10,5 @@ return [
     'reset_password' => 'Återställ lösenord',
     'email' => 'E-post',
     'phone' => 'Telefon',
-    'show_all' => 'Show All',
+    'show_all' => 'Visa allt',
 ];
