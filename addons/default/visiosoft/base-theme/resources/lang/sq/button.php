@@ -10,4 +10,5 @@ return [
     'reset_password' => 'Rivendosni fjalëkalimin',
     'email' => 'Email',
     'phone' => 'Telefon',
+    'show_all' => 'Show All',
 ];
