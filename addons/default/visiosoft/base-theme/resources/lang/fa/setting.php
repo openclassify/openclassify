@@ -38,6 +38,6 @@ return [
         'name' => 'سبک (CSS)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'زیرمجموعه ها',
     ],
 ];
