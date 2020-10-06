@@ -250,7 +250,7 @@ return [
         'name' => 'Τις τελευταίες 24 ώρες'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Τις τελευταίες 24 ώρες'
     ],
     'in_the_last_week' => [
         'name' => 'Την τελευταία εβδομάδα'
@@ -301,10 +301,10 @@ return [
     // New create page
     'options' => 'Επιλογές',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Ελεύθερος',
+    'ad_date' => 'Ημερομηνία διαφήμισης',
+    'photo_video' => 'Φωτογραφία, βίντεο',
+    'and_above' => 'και παραπανω',
+    'and_below' => 'και παρακάτω',
+    'clear_all' => 'Τα καθαρίζω όλα',
 ];
