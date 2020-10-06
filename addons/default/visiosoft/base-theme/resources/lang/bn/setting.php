@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'স্টাইল (css)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'হোমপেজ সাব বিভাগের সীমা',
+    ],
 ];

@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'در 24 ساعت گذشته'
     ],
+    'in_the_last_day' => [
+        'name' => 'در 24 ساعت گذشته'
+    ],
     'in_the_last_week' => [
         'name' => 'در هفته گذشته'
     ],
@@ -296,4 +299,11 @@ return [
 
     // New create page
     'options' => 'گزینه ها',
+
+    'free' => 'رایگان',
+    'ad_date' => 'تاریخ آگهی',
+    'photo_video' => 'عکس ، فیلم',
+    'and_above' => 'و بالاتر',
+    'and_below' => 'و در زیر',
+    'clear_all' => 'همه را پاک کن',
 ];

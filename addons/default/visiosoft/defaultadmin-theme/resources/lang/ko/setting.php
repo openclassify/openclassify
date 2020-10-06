@@ -11,8 +11,11 @@ return [
         'warning'      => '액세스 가능한 첫 번째 탐색 항목은 <strong>홈</strong> 영역으로 사용됩니다.',
         'reorder'      => '<strong>사이드 바</strong> 에서 기본 탐색 항목을 끌어다 놓아 순서를 바꿉니다.',
     ],
-    "icon" => [
-        'name' => '상',
+    "login_icon" => [
+        'name' => '로그인 아이콘',
+    ],
+    "panel_icon" => [
+        'name' => '패널 아이콘',
     ],
     "title" => [
         'name' => '표제',

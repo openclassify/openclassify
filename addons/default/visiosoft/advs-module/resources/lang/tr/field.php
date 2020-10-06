@@ -250,6 +250,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Son 24 saat'
     ],
+    'in_the_last_day' => [
+        'name' => 'Son 24 Saat İçinde'
+    ],
     'in_the_last_week' => [
         'name' => 'Son 1 hafta'
     ],
@@ -298,4 +301,11 @@ return [
 
     // New create page
     'options' => 'Opsiyonlar',
+
+    'free' => 'Bedava',
+    'ad_date' => 'İlan Tarihi',
+    'photo_video' => 'Fotoğraf, Video',
+    'and_above' => 've yukarıda',
+    'and_below' => 've aşağıda',
+    'clear_all' => 'Hepsini temizle',
 ];

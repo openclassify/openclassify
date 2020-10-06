@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'Стиль (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Підкатегорії домашньої сторінки Обмеження',
+    ],
 ];
