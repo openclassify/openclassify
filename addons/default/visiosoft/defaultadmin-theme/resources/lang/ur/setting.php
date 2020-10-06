@@ -12,10 +12,10 @@ return [
         'reorder'      => 'پرائمری نیویگیشن آئٹمز کو دوبارہ ترتیب دینے کیلئے <strong>سائڈبار</strong> میں گھسیٹیں اور چھوڑیں۔',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'لاگ ان کا آئیکن',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'پینل کی علامت',
     ],
     "title" => [
         'name' => 'عنوان',
