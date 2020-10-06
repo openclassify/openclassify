@@ -12,10 +12,10 @@ return [
         'reorder'      => 'سحب وإسقاط البنود الملاحة الابتدائية في <strong>الشريط الجانبي</strong> إلى إعادة ترتيب لهم.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'رمز تسجيل الدخول',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'رمز اللوحة',
     ],
     "title" => [
         'name' => 'عنوان',
