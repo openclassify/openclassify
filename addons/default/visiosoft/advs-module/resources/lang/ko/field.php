@@ -249,7 +249,7 @@ return [
         'name' => '지난 24 시간 동안'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => '지난 24 시간 동안'
     ],
     'in_the_last_week' => [
         'name' => '지난주에'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => '옵션',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => '비어 있는',
+    'ad_date' => '광고 날짜',
+    'photo_video' => '사진, 비디오',
+    'and_above' => '이상',
+    'and_below' => '이하',
+    'clear_all' => '모두 지우기',
 ];
