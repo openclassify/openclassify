@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'ברירת מחדל של מודעות GET',
     ],
-    'add_canvas' => [
-        'name' => 'הוסף בד',
-    ],
-    'thumbnail_width' => [
-        'name' => 'רוחב תמונה ממוזערת',
-    ],
-    'thumbnail_height' => [
-        'name' => 'גובה תמונה ממוזערת',
-    ],
-    'picture_width' => [
-        'name' => 'רוחב תמונה',
-    ],
-    'picture_height' => [
-        'name' => 'גובה תמונה',
-    ],
     'twitter' => [
         'name' => 'טוויטר',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'גוגל',
-    ],
-    'watermark_type' => [
-        'name' => 'סוג סימן מים',
-    ],
-    'watermark_text' => [
-        'name' => 'טקסט סימן מים',
-    ],
-    'watermark_image' => [
-        'name' => 'תמונה של סימן מים',
-    ],
-    'watermark_position' => [
-        'name' => 'מיקום סימן מים',
     ],
     'listing_page_image' => [
         'name' => 'תמונת עמוד רישום',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'מגבלת מודעות פופולריות',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'רוחב תמונה ממוזערת',
+    ],
+    'thumbnail_height' => [
+        'name' => 'גובה תמונה ממוזערת',
+    ],
+    'add_canvas' => [
+        'name' => 'הוסף בד',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'סוג סימן מים',
+    ],
+    'watermark_text' => [
+        'name' => 'טקסט סימן מים',
+    ],
+    'watermark_image' => [
+        'name' => 'תמונה של סימן מים',
+    ],
+    'watermark_position' => [
+        'name' => 'מיקום סימן מים',
     ],
 ];
