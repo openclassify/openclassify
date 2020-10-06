@@ -249,7 +249,7 @@ return [
         'name' => 'ביממה האחרונה'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'ב 24 השעות האחרונות'
     ],
     'in_the_last_week' => [
         'name' => 'בשבוע שעבר'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'אפשרויות',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'חינם',
+    'ad_date' => 'תאריך מודעה',
+    'photo_video' => 'צילום, וידאו',
+    'and_above' => 'ומעל',
+    'and_below' => 'ומתחת',
+    'clear_all' => 'נקה הכל',
 ];
