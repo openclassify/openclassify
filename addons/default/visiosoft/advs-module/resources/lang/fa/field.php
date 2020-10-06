@@ -249,7 +249,7 @@ return [
         'name' => 'در 24 ساعت گذشته'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'در 24 ساعت گذشته'
     ],
     'in_the_last_week' => [
         'name' => 'در هفته گذشته'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'گزینه ها',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'رایگان',
+    'ad_date' => 'تاریخ آگهی',
+    'photo_video' => 'عکس ، فیلم',
+    'and_above' => 'و بالاتر',
+    'and_below' => 'و در زیر',
+    'clear_all' => 'همه را پاک کن',
 ];
