@@ -44,4 +44,5 @@ return [
     'options' => [
         'title' => '옵션',
     ],
+    'ads_image' => 'Ads Image',
 ];
