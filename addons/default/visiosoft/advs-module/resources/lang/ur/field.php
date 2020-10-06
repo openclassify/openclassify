@@ -249,7 +249,7 @@ return [
         'name' => 'آخری 24 گھنٹوں میں'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'آخری 24 گھنٹوں میں'
     ],
     'in_the_last_week' => [
         'name' => 'آخری ہفتے میں'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'اختیارات',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'مفت',
+    'ad_date' => 'اشتہاری تاریخ',
+    'photo_video' => 'تصویر ، ویڈیو',
+    'and_above' => 'اور اوپر',
+    'and_below' => 'اور نیچے',
+    'clear_all' => 'تمام کو صاف کریں',
 ];
