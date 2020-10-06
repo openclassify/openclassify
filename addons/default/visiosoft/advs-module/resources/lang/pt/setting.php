@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Ad GET padrão',
     ],
-    'add_canvas' => [
-        'name' => 'Adicionar tela',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Largura da miniatura',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Altura da miniatura',
-    ],
-    'picture_width' => [
-        'name' => 'Largura da imagem',
-    ],
-    'picture_height' => [
-        'name' => 'Altura da imagem',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Tipo de marca d\\'água',
-    ],
-    'watermark_text' => [
-        'name' => 'Texto de marca d\\'água',
-    ],
-    'watermark_image' => [
-        'name' => 'Imagem de marca d\\'água',
-    ],
-    'watermark_position' => [
-        'name' => 'Posição da marca d\\'água',
     ],
     'listing_page_image' => [
         'name' => 'Listar imagem da página',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Limite de anúncios populares',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Largura da miniatura',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Altura da miniatura',
+    ],
+    'add_canvas' => [
+        'name' => 'Adicionar tela',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Tipo de marca d\\'água',
+    ],
+    'watermark_text' => [
+        'name' => 'Texto de marca d\\'água',
+    ],
+    'watermark_image' => [
+        'name' => 'Imagem de marca d\\'água',
+    ],
+    'watermark_position' => [
+        'name' => 'Posição da marca d\\'água',
     ],
 ];
