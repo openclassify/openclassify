@@ -250,7 +250,7 @@ return [
         'name' => 'In den letzten 24 Stunden'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'In den letzten 24 Stunden'
     ],
     'in_the_last_week' => [
         'name' => 'In der letzten Woche'
@@ -301,10 +301,10 @@ return [
     // New create page
     'options' => 'Optionen',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Frei',
+    'ad_date' => 'Anzeigedatum',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'und darüber',
+    'and_below' => 'und darunter',
+    'clear_all' => 'Alles löschen',
 ];
