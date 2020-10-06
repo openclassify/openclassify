@@ -11,8 +11,11 @@ return [
         'warning'      => 'Primul articol accesibil de navigare este utilizat ca zonă <strong>acasă</strong>.',
         'reorder'      => 'Trageți și fixați elementele principale de navigație în bara laterală <strong></strong> pentru a le reordona.',
     ],
-    "icon" => [
-        'name' => 'icoană',
+    "login_icon" => [
+        'name' => 'Pictogramă de autentificare',
+    ],
+    "panel_icon" => [
+        'name' => 'Pictogramă panou',
     ],
     "title" => [
         'name' => 'Titlu',

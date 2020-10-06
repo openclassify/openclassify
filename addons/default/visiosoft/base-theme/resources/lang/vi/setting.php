@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'Phong cách (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Giới hạn danh mục phụ của trang chủ',
+    ],
 ];

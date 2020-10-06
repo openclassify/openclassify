@@ -11,8 +11,11 @@ return [
         'warning'      => 'O primeiro item de navegação acessível é usado como a área <strong>inicial</strong>.',
         'reorder'      => 'Arraste e solte os itens de navegação principais na barra lateral <strong></strong> para reordená-los.',
     ],
-    "icon" => [
-        'name' => 'Ícone',
+    "login_icon" => [
+        'name' => 'Ícone de login',
+    ],
+    "panel_icon" => [
+        'name' => 'Ícone do painel',
     ],
     "title" => [
         'name' => 'Título',

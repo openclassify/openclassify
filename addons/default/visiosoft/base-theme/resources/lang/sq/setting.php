@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'Style (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Nënkategoritë e faqes kryesore Kufiri',
+    ],
 ];
