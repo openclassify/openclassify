@@ -1,25 +1,29 @@
 <div class="row w-100 px-2 m-0">
-    <div class="col-12 px-0 py-1 px-2">
-        <b>
-            <span class="float-left">{{ trans('visiosoft.module.location::field.address.name') }}</span>
-        </b>
-        {% set defaultCountry = setting_value('visiosoft.module.location::default_country') %}
-        {% set selectedCountry =  app.request.get('country') %}
-        <a href="#" class="a-sahibinden-type selected-country filter-country-btn float-right">
-            {% set countryValue = '' %}
-            {% if selectedCountry %}
-                {% set countryName = getCountry(selectedCountry).name %}
-                {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
-            {% elseif defaultCountry %}
-                {% set countryName = getCountry(defaultCountry).name %}
-                {% set countryValue = defaultCountry %}
-            {% else %}
-                {% set countryName = trans("visiosoft.module.location::field.country.name") %}
-            {% endif %}
-            <small>{{ countryName }}</small>
-        </a>
+    {% set defaultCountry = setting_value('visiosoft.module.location::default_country') %}
+    {% set selectedCountry =  app.request.get('country') %}
+
+    {% set countryValue = '' %}
+    {% if selectedCountry %}
+        {% set countryName = getCountry(selectedCountry).name %}
+        {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
+    {% elseif defaultCountry %}
+        {% set countryName = getCountry(defaultCountry).name %}
+        {% set countryValue = defaultCountry %}
+    {% else %}
+        {% set countryName = trans("visiosoft.module.location::field.country.name") %}
+    {% endif %}
+    <div class="col-12 px-0 py-1">
+        <button type="button" class="btn btn-default border border-1 w-100 selected-country filter-country-btn"
+                data-toggle="modal">
+            <span class="float-left">
+                {{ trans("visiosoft.module.location::field.country.name") }}
+                    <small class="text-muted selected-country">{{ countryName }}</small>
+            </span>
+            <i class="fas fa-sort-down float-right"></i>
+        </button>
         <input name="country" value="{{ countryValue }}" type="hidden">
     </div>
+
     <div class="col-12 px-0 py-1">
         <button type="button" class="btn btn-default border border-1 w-100 filter-city-btn" data-toggle="modal"
                 data-parent="">
