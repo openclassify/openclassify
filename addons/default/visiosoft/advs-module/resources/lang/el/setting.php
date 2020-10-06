@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Προεπιλεγμένη διαφήμιση GET',
     ],
-    'add_canvas' => [
-        'name' => 'Προσθήκη καμβά',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Πλάτος μικρογραφιών',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Ύψος μικρογραφιών',
-    ],
-    'picture_width' => [
-        'name' => 'Πλάτος εικόνας',
-    ],
-    'picture_height' => [
-        'name' => 'Ύψος εικόνας',
-    ],
     'twitter' => [
         'name' => 'Κελάδημα',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Τύπος υδατογραφήματος',
-    ],
-    'watermark_text' => [
-        'name' => 'Κείμενο υδατογράφημα',
-    ],
-    'watermark_image' => [
-        'name' => 'Εικόνα υδατογράφημα',
-    ],
-    'watermark_position' => [
-        'name' => 'Θέση υδατοσήματος',
     ],
     'listing_page_image' => [
         'name' => 'Λίστα εικόνων σελίδας',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Όριο δημοφιλών διαφημίσεων',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Πλάτος μικρογραφιών',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Ύψος μικρογραφιών',
+    ],
+    'add_canvas' => [
+        'name' => 'Προσθήκη καμβά',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Τύπος υδατογραφήματος',
+    ],
+    'watermark_text' => [
+        'name' => 'Κείμενο υδατογράφημα',
+    ],
+    'watermark_image' => [
+        'name' => 'Εικόνα υδατογράφημα',
+    ],
+    'watermark_position' => [
+        'name' => 'Θέση υδατοσήματος',
     ],
 ];
