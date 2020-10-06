@@ -10,5 +10,5 @@ return [
     'reset_password' => 'إعادة تعيين كلمة المرور',
     'email' => 'البريد الإلكتروني',
     'phone' => 'هاتف',
-    'show_all' => 'Show All',
+    'show_all' => 'عرض الكل',
 ];
