@@ -249,7 +249,7 @@ return [
         'name' => 'Son 24 saatda'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Son 24 Saatda'
     ],
     'in_the_last_week' => [
         'name' => 'Son Həftədə'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'Seçimlər',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Pulsuz',
+    'ad_date' => 'Reklam Tarixi',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'və yuxarıda',
+    'and_below' => 'və aşağıda',
+    'clear_all' => 'Hamısını sil, hamısını təmizlə',
 ];
