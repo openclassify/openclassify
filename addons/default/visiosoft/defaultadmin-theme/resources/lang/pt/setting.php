@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Arraste e solte os itens de navegação principais na barra lateral <strong></strong> para reordená-los.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Ícone de login',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Ícone do painel',
     ],
     "title" => [
         'name' => 'Título',
