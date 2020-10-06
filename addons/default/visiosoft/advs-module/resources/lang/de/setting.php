@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Standardanzeige GET',
     ],
-    'add_canvas' => [
-        'name' => 'Leinwand hinzufügen',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Miniaturbildbreite',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Miniaturbildhöhe',
-    ],
-    'picture_width' => [
-        'name' => 'Bildbreite',
-    ],
-    'picture_height' => [
-        'name' => 'Bildhöhe',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Wasserzeichentyp',
-    ],
-    'watermark_text' => [
-        'name' => 'Wasserzeichentext',
-    ],
-    'watermark_image' => [
-        'name' => 'Wasserzeichen Bild',
-    ],
-    'watermark_position' => [
-        'name' => 'Wasserzeichen Position',
     ],
     'listing_page_image' => [
         'name' => 'Listing Page Image',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Beliebtes Anzeigenlimit',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Miniaturbildbreite',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Miniaturbildhöhe',
+    ],
+    'add_canvas' => [
+        'name' => 'Leinwand hinzufügen',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Wasserzeichentyp',
+    ],
+    'watermark_text' => [
+        'name' => 'Wasserzeichentext',
+    ],
+    'watermark_image' => [
+        'name' => 'Wasserzeichen Bild',
+    ],
+    'watermark_position' => [
+        'name' => 'Wasserzeichen Position',
     ],
 ];
