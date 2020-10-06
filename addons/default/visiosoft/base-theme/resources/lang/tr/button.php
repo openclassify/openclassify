@@ -10,4 +10,5 @@ return [
     'reset_password' => 'Şifremi Güncelle',
     'email' => 'E-posta',
     'phone' => 'Telefon',
+    'show_all' => 'Show All',
 ];
