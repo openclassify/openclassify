@@ -38,6 +38,6 @@ return [
         'name' => 'النمط (CSS)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'حد الفئات الفرعية للصفحة الرئيسية',
     ],
 ];
