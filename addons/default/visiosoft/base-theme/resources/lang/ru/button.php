@@ -10,5 +10,5 @@ return [
     'reset_password' => 'Сброс пароля',
     'email' => 'Электронное письмо',
     'phone' => 'Телефон',
-    'show_all' => 'Show All',
+    'show_all' => 'Показать все',
 ];
