@@ -10,5 +10,5 @@ return [
     'reset_password' => '암호를 재설정',
     'email' => '이메일',
     'phone' => '전화',
-    'show_all' => 'Show All',
+    'show_all' => '모두 표시',
 ];
