@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Kéo và thả các mục điều hướng chính trong thanh bên <strong></strong> để sắp xếp lại chúng.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Biểu tượng đăng nhập',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Biểu tượng bảng điều khiển',
     ],
     "title" => [
         'name' => 'Tiêu đề',
