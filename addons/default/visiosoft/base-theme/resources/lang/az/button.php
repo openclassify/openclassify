@@ -10,4 +10,5 @@ return [
     'reset_password' => 'Parolu sıfırlamak',
     'email' => 'Elektron poçt',
     'phone' => 'Telefon',
+    'show_all' => 'Show All',
 ];
