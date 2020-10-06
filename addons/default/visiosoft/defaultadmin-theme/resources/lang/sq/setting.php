@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Zvarritni dhe lëshoni artikujt kryesorë të lundrimit në <strong>sidebar</strong> për t\'i rivartuar ato.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Ikona e hyrjes',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Ikona e panelit',
     ],
     "title" => [
         'name' => 'titull',
