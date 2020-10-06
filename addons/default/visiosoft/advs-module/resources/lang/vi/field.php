@@ -249,7 +249,7 @@ return [
         'name' => 'Trong 24 giờ qua'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Trong 24 giờ qua'
     ],
     'in_the_last_week' => [
         'name' => 'Trong tuần trước'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'Tùy chọn',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Miễn phí',
+    'ad_date' => 'Ngày quảng cáo',
+    'photo_video' => 'Ảnh, Video',
+    'and_above' => 'trở lên',
+    'and_below' => 'và dưới đây',
+    'clear_all' => 'Làm sạch tất cả',
 ];
