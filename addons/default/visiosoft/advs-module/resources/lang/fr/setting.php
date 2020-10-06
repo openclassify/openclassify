@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Annonce par défaut GET',
     ],
-    'add_canvas' => [
-        'name' => 'Ajouter une toile',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Largeur de vignette',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Hauteur de la vignette',
-    ],
-    'picture_width' => [
-        'name' => 'Largeur de l\'image',
-    ],
-    'picture_height' => [
-        'name' => 'Hauteur de l\'image',
-    ],
     'twitter' => [
         'name' => 'Gazouillement',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Type defiligrane',
-    ],
-    'watermark_text' => [
-        'name' => 'Texte en filigrane',
-    ],
-    'watermark_image' => [
-        'name' => 'Image en filigrane',
-    ],
-    'watermark_position' => [
-        'name' => 'Position du filigrane',
     ],
     'listing_page_image' => [
         'name' => 'Image de page de liste',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Limite des annonces populaires',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Largeur de vignette',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Hauteur de la vignette',
+    ],
+    'add_canvas' => [
+        'name' => 'Ajouter une toile',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Type defiligrane',
+    ],
+    'watermark_text' => [
+        'name' => 'Texte en filigrane',
+    ],
+    'watermark_image' => [
+        'name' => 'Image en filigrane',
+    ],
+    'watermark_position' => [
+        'name' => 'Position du filigrane',
     ],
 ];
