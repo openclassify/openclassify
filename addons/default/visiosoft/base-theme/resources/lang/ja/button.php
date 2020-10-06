@@ -10,5 +10,5 @@ return [
     'reset_password' => 'パスワードを再設定する',
     'email' => 'Eメール',
     'phone' => '電話',
-    'show_all' => 'Show All',
+    'show_all' => 'すべて表示する',
 ];
