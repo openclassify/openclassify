@@ -12,10 +12,10 @@ return [
         'reorder'      => 'גרור ושחרר את הפריטים ניווט העיקרי <strong>הצדדי</strong> כדי לסדר אותן מחדש.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'סמל כניסה',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'אייקון פאנל',
     ],
     "title" => [
         'name' => 'כותרת',
