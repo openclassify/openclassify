@@ -249,7 +249,7 @@ return [
         'name' => 'За останні 24 години'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'В останні 24 години'
     ],
     'in_the_last_week' => [
         'name' => 'В останній тиждень'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'Параметри',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => 'Безкоштовно',
+    'ad_date' => 'Дата оголошення',
+    'photo_video' => 'Фото, Відео',
+    'and_above' => 'і вище',
+    'and_below' => 'і нижче',
+    'clear_all' => 'Очистити все',
 ];
