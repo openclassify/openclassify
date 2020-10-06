@@ -38,6 +38,6 @@ return [
         'name' => 'शैली (सीएसएस)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'मुखपृष्ठ उप श्रेणियाँ श्रेणियाँ सीमा',
     ],
 ];
