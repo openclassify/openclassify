@@ -38,6 +38,6 @@ return [
         'name' => 'انداز (سی ایس ایس)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'مرکزی صفحہ ذیلی زمرے کی حد',
     ],
 ];
