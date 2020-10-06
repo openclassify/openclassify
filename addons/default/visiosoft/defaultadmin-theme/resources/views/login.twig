@@ -7,7 +7,7 @@
             {% if setting_value('visiosoft.theme.defaultadmin::login_icon') %}
                 <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::login_icon')).url }}" alt="site icon">
             {% else %}
-                {{ img('theme::img/icon.svg').data|raw }}
+                {{ img('theme::img/login-icon.svg').data|raw }}
             {% endif %}
             {{ setting_value('visiosoft.theme.defaultadmin::title') }}
         </div>
@@ -21,7 +21,7 @@
                 {% if setting_value('visiosoft.theme.defaultadmin::login_icon') %}
                     <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::login_icon')).url }}" alt="site icon">
                 {% else %}
-                    {{ img('theme::img/icon.svg').data|raw }}
+                    {{ img('theme::img/login-icon.svg').data|raw }}
                 {% endif %}
             </div>
 
