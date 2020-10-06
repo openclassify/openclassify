@@ -249,7 +249,7 @@ return [
         'name' => '過去24時間'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => '過去24時間で'
     ],
     'in_the_last_week' => [
         'name' => '先週'
@@ -300,10 +300,10 @@ return [
     // New create page
     'options' => 'オプション',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
+    'free' => '自由',
+    'ad_date' => '広告日',
+    'photo_video' => '写真、ビデオ',
+    'and_above' => '以上',
+    'and_below' => '以下',
+    'clear_all' => 'すべてクリア',
 ];
