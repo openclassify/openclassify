@@ -10,5 +10,5 @@ return [
     'reset_password' => 'بازنشانی گذرواژه',
     'email' => 'پست الکترونیک',
     'phone' => 'تلفن',
-    'show_all' => 'Show All',
+    'show_all' => 'نمایش همه',
 ];
