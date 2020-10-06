@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Birincil gezinme öğelerini yeniden sıralamak için <strong>kenar çubuğu</strong> sürükleyip bırakın.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Oturum Açma Simgesi',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Panel Simgesi',
     ],
     "title" => [
         'name' => 'Başlık',
