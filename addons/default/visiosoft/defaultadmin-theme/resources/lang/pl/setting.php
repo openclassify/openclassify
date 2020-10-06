@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Przeciągnij i upuść podstawowe elementy nawigacji na pasku bocznym <strong></strong> aby zmienić ich kolejność.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Ikona logowania',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Ikona panelu',
     ],
     "title" => [
         'name' => 'Tytuł',
