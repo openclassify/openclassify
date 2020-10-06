@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Domyślna reklama GET',
     ],
-    'add_canvas' => [
-        'name' => 'Dodaj płótno',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Szerokość miniatury',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Wysokość miniatury',
-    ],
-    'picture_width' => [
-        'name' => 'Szerokość obrazu',
-    ],
-    'picture_height' => [
-        'name' => 'Wysokość obrazu',
-    ],
     'twitter' => [
         'name' => 'Świergot',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Rodzaj znaku wodnego',
-    ],
-    'watermark_text' => [
-        'name' => 'Tekst znaku wodnego',
-    ],
-    'watermark_image' => [
-        'name' => 'Obraz znaku wodnego',
-    ],
-    'watermark_position' => [
-        'name' => 'Pozycja znaku wodnego',
     ],
     'listing_page_image' => [
         'name' => 'Obraz strony z listą',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Limit popularnych reklam',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Szerokość miniatury',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Wysokość miniatury',
+    ],
+    'add_canvas' => [
+        'name' => 'Dodaj płótno',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Rodzaj znaku wodnego',
+    ],
+    'watermark_text' => [
+        'name' => 'Tekst znaku wodnego',
+    ],
+    'watermark_image' => [
+        'name' => 'Obraz znaku wodnego',
+    ],
+    'watermark_position' => [
+        'name' => 'Pozycja znaku wodnego',
     ],
 ];
