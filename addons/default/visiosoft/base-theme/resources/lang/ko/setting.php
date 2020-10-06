@@ -38,6 +38,6 @@ return [
         'name' => '스타일 (CSS)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => '홈페이지 하위 카테고리 제한',
     ],
 ];
