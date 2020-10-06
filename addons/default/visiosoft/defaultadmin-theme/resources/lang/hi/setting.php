@@ -12,10 +12,10 @@ return [
         'reorder'      => 'उन्हें पुन: व्यवस्थित करने के लिए <strong>साइडबार</strong> में प्राथमिक नेविगेशन आइटम खींचें और छोड़ें।',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'लॉगिन आइकन',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'पैनल आइकन',
     ],
     "title" => [
         'name' => 'शीर्षक',
