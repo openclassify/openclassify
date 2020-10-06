@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Trageți și fixați elementele principale de navigație în bara laterală <strong></strong> pentru a le reordona.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Pictogramă de autentificare',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Pictogramă panou',
     ],
     "title" => [
         'name' => 'Titlu',
