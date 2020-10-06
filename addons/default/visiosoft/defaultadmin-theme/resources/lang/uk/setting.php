@@ -12,10 +12,10 @@ return [
         'reorder'      => 'Перетягніть основні елементи навігації в <strong>бічній панелі</strong> , щоб змінити їх порядок.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Значок входу',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Значок панелі',
     ],
     "title" => [
         'name' => 'Назва',
