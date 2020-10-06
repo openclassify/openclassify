@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'Style(CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Homepage Sub Categories Limit',
+    ],
 ];
