@@ -62,6 +62,12 @@ return [
             "default_value" => "/",
         ]
     ],
+    "home_page_sub_categories_limit" => [
+        "type"   => "anomaly.field_type.integer",
+        "config" => [
+            "default_value" => 5,
+        ]
+    ],
     'style' => [
         'type' => 'anomaly.field_type.editor',
     ],
