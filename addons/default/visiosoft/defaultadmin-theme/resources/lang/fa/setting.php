@@ -12,10 +12,10 @@ return [
         'reorder'      => 'برای مرتب کردن آیتم ها را در سایدبار با موس جابجا کنید',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'نماد ورود به سیستم',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'نماد صفحه',
     ],
     "title" => [
         'name' => 'عنوان',
