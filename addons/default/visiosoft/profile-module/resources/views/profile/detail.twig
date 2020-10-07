@@ -50,7 +50,7 @@
                             <div>
                                 {% set userForm = form('userProfile').entry(user.id).get() %}
                                 {{ userForm.open()|raw }}
-                                <div class="mt-4 d-flex profile--desc flex-column flex-lg-row text-lg-center">
+                                <div class="mt-4 d-flex profile--desc flex-column flex-lg-row">
                                     <div class="d-flex d-sm-block m-auto m-sm-0 mr-sm-3">
                                         <img src="{{ profile_photo }}">
                                     </div>
