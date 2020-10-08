@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'ڈیفالٹ اشتہار GET',
     ],
-    'add_canvas' => [
-        'name' => 'کینوس شامل کریں',
-    ],
-    'thumbnail_width' => [
-        'name' => 'تھمب نیل چوڑائی',
-    ],
-    'thumbnail_height' => [
-        'name' => 'تھمب نیل اونچائی',
-    ],
-    'picture_width' => [
-        'name' => 'تصویر کی چوڑائی',
-    ],
-    'picture_height' => [
-        'name' => 'تصویر کی اونچائی',
-    ],
     'twitter' => [
         'name' => 'ٹویٹر',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'گوگل',
-    ],
-    'watermark_type' => [
-        'name' => 'واٹر مارک کی قسم',
-    ],
-    'watermark_text' => [
-        'name' => 'واٹر مارک ٹیکسٹ',
-    ],
-    'watermark_image' => [
-        'name' => 'واٹر مارک امیج',
-    ],
-    'watermark_position' => [
-        'name' => 'واٹر مارک پوزیشن',
     ],
     'listing_page_image' => [
         'name' => 'صفحہ کی فہرست کی فہرست',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'مقبول اشتہارات کی حد',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'شبیہہ کا سائز تبدیل کریں پسدید',
+    ],
+    'full_image_width' => [
+        'name' => 'مکمل تصویری چوڑائی',
+    ],
+    'full_image_height' => [
+        'name' => 'مکمل امیج کی اونچائی',
+    ],
+    'medium_image_width' => [
+        'name' => 'میڈیم تصویری چوڑائی',
+    ],
+    'medium_image_height' => [
+        'name' => 'میڈیم امیج کی اونچائی',
+    ],
+    'thumbnail_width' => [
+        'name' => 'تھمب نیل چوڑائی',
+    ],
+    'thumbnail_height' => [
+        'name' => 'تھمب نیل اونچائی',
+    ],
+    'add_canvas' => [
+        'name' => 'کینوس شامل کریں',
+    ],
+    'image_canvas_width' => [
+        'name' => 'تصویری کینوس کی چوڑائی',
+    ],
+    'image_canvas_height' => [
+        'name' => 'تصویری کینوس کی اونچائی',
+    ],
+    'watermark_type' => [
+        'name' => 'واٹر مارک کی قسم',
+    ],
+    'watermark_text' => [
+        'name' => 'واٹر مارک ٹیکسٹ',
+    ],
+    'watermark_image' => [
+        'name' => 'واٹر مارک امیج',
+    ],
+    'watermark_position' => [
+        'name' => 'واٹر مارک پوزیشن',
     ],
 ];
