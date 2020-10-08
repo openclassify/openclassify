@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'الإعلان الافتراضي',
     ],
-    'add_canvas' => [
-        'name' => 'أضف قماش',
-    ],
-    'thumbnail_width' => [
-        'name' => 'عرض الصورة المصغرة',
-    ],
-    'thumbnail_height' => [
-        'name' => 'ارتفاع الصورة المصغرة',
-    ],
-    'picture_width' => [
-        'name' => 'عرض الصورة',
-    ],
-    'picture_height' => [
-        'name' => 'ارتفاع الصورة',
-    ],
     'twitter' => [
         'name' => 'تغريد',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'جوجل',
-    ],
-    'watermark_type' => [
-        'name' => 'نوع العلامة المائية',
-    ],
-    'watermark_text' => [
-        'name' => 'نص العلامة المائية',
-    ],
-    'watermark_image' => [
-        'name' => 'صورة العلامة المائية',
-    ],
-    'watermark_position' => [
-        'name' => 'موقف العلامة المائية',
     ],
     'listing_page_image' => [
         'name' => 'سرد صورة الصفحة',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'حد الإعلانات الشعبية',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'تغيير حجم الصورة الخلفية',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'ارتفاع الصورة الكاملة',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'متوسط ارتفاع الصورة',
+    ],
+    'thumbnail_width' => [
+        'name' => 'عرض الصورة المصغرة',
+    ],
+    'thumbnail_height' => [
+        'name' => 'ارتفاع الصورة المصغرة',
+    ],
+    'add_canvas' => [
+        'name' => 'أضف قماش',
+    ],
+    'image_canvas_width' => [
+        'name' => 'عرض قماش الصورة',
+    ],
+    'image_canvas_height' => [
+        'name' => 'ارتفاع قماش الصورة',
+    ],
+    'watermark_type' => [
+        'name' => 'نوع العلامة المائية',
+    ],
+    'watermark_text' => [
+        'name' => 'نص العلامة المائية',
+    ],
+    'watermark_image' => [
+        'name' => 'صورة العلامة المائية',
+    ],
+    'watermark_position' => [
+        'name' => 'موقف العلامة المائية',
     ],
 ];
