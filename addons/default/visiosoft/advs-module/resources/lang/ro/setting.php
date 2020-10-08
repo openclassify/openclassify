@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Anunț implicit GET',
     ],
-    'add_canvas' => [
-        'name' => 'Adăugați pânză',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Lățimea miniaturii',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Înălțimea miniaturii',
-    ],
-    'picture_width' => [
-        'name' => 'Lățimea imaginii',
-    ],
-    'picture_height' => [
-        'name' => 'Înălțimea imaginii',
-    ],
     'twitter' => [
         'name' => 'Stare de nervozitate',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Tip filigran',
-    ],
-    'watermark_text' => [
-        'name' => 'Text Filigran',
-    ],
-    'watermark_image' => [
-        'name' => 'Filigran imagine',
-    ],
-    'watermark_position' => [
-        'name' => 'Poziția filigranului',
     ],
     'listing_page_image' => [
         'name' => 'Listare imagine pagină',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Limita de anunțuri populare',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Backend de redimensionare imagine',
+    ],
+    'full_image_width' => [
+        'name' => 'Lățimea imaginii complete',
+    ],
+    'full_image_height' => [
+        'name' => 'Înălțimea imaginii complete',
+    ],
+    'medium_image_width' => [
+        'name' => 'Lățimea medie a imaginii',
+    ],
+    'medium_image_height' => [
+        'name' => 'Înălțimea medie a imaginii',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Lățimea miniaturii',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Înălțimea miniaturii',
+    ],
+    'add_canvas' => [
+        'name' => 'Adăugați pânză',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Lățimea pânzei imaginii',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Înălțimea imaginii pânzei',
+    ],
+    'watermark_type' => [
+        'name' => 'Tip filigran',
+    ],
+    'watermark_text' => [
+        'name' => 'Text Filigran',
+    ],
+    'watermark_image' => [
+        'name' => 'Filigran imagine',
+    ],
+    'watermark_position' => [
+        'name' => 'Poziția filigranului',
     ],
 ];
