@@ -306,4 +306,10 @@ return [
     'and_above' => '이상',
     'and_below' => '이하',
     'clear_all' => '모두 지우기',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
