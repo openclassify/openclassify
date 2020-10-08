@@ -306,4 +306,10 @@ return [
     'and_above' => 'trở lên',
     'and_below' => 'và dưới đây',
     'clear_all' => 'Làm sạch tất cả',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
