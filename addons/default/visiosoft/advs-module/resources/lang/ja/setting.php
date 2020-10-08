@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'デフォルト広告GET',
     ],
-    'add_canvas' => [
-        'name' => 'キャンバスを追加',
-    ],
-    'thumbnail_width' => [
-        'name' => 'サムネイルの幅',
-    ],
-    'thumbnail_height' => [
-        'name' => 'サムネイルの高さ',
-    ],
-    'picture_width' => [
-        'name' => '画像の幅',
-    ],
-    'picture_height' => [
-        'name' => '画像の高さ',
-    ],
     'twitter' => [
         'name' => 'ツイッター',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'グーグル',
-    ],
-    'watermark_type' => [
-        'name' => '透かしタイプ',
-    ],
-    'watermark_text' => [
-        'name' => '透かしテキスト',
-    ],
-    'watermark_image' => [
-        'name' => '透かし画像',
-    ],
-    'watermark_position' => [
-        'name' => '透かしの位置',
     ],
     'listing_page_image' => [
         'name' => 'リストページの画像',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => '人気の広告制限',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => '画像サイズ変更バックエンド',
+    ],
+    'full_image_width' => [
+        'name' => '全画像幅',
+    ],
+    'full_image_height' => [
+        'name' => '全画像の高さ',
+    ],
+    'medium_image_width' => [
+        'name' => '中程度の画像幅',
+    ],
+    'medium_image_height' => [
+        'name' => '中程度の画像の高さ',
+    ],
+    'thumbnail_width' => [
+        'name' => 'サムネイルの幅',
+    ],
+    'thumbnail_height' => [
+        'name' => 'サムネイルの高さ',
+    ],
+    'add_canvas' => [
+        'name' => 'キャンバスを追加',
+    ],
+    'image_canvas_width' => [
+        'name' => '画像のキャンバスの幅',
+    ],
+    'image_canvas_height' => [
+        'name' => '画像キャンバスの高さ',
+    ],
+    'watermark_type' => [
+        'name' => '透かしタイプ',
+    ],
+    'watermark_text' => [
+        'name' => '透かしテキスト',
+    ],
+    'watermark_image' => [
+        'name' => '透かし画像',
+    ],
+    'watermark_position' => [
+        'name' => '透かしの位置',
     ],
 ];
