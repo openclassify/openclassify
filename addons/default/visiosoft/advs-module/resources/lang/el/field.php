@@ -307,4 +307,10 @@ return [
     'and_above' => 'και παραπανω',
     'and_below' => 'και παρακάτω',
     'clear_all' => 'Τα καθαρίζω όλα',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
