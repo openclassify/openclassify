@@ -44,4 +44,5 @@ return [
     'options' => [
         'title' => 'گزینه ها',
     ],
+    'ads_image' => 'تصویر تبلیغات',
 ];

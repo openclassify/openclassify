@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => '기본 광고 GET',
     ],
-    'add_canvas' => [
-        'name' => '캔버스 추가',
-    ],
-    'thumbnail_width' => [
-        'name' => '썸네일 폭',
-    ],
-    'thumbnail_height' => [
-        'name' => '썸네일 높이',
-    ],
-    'picture_width' => [
-        'name' => '사진 폭',
-    ],
-    'picture_height' => [
-        'name' => '사진 높이',
-    ],
     'twitter' => [
         'name' => '트위터',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => '구글',
-    ],
-    'watermark_type' => [
-        'name' => '워터 마크 유형',
-    ],
-    'watermark_text' => [
-        'name' => '워터 마크 텍스트',
-    ],
-    'watermark_image' => [
-        'name' => '워터 마크 이미지',
-    ],
-    'watermark_position' => [
-        'name' => '워터 마크 위치',
     ],
     'listing_page_image' => [
         'name' => '리스팅 페이지 이미지',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => '인기 광고 제한',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => '이미지 크기 조정 백엔드',
+    ],
+    'full_image_width' => [
+        'name' => '전체 이미지 너비',
+    ],
+    'full_image_height' => [
+        'name' => '전체 이미지 높이',
+    ],
+    'medium_image_width' => [
+        'name' => '중간 이미지 너비',
+    ],
+    'medium_image_height' => [
+        'name' => '중간 이미지 높이',
+    ],
+    'thumbnail_width' => [
+        'name' => '썸네일 폭',
+    ],
+    'thumbnail_height' => [
+        'name' => '썸네일 높이',
+    ],
+    'add_canvas' => [
+        'name' => '캔버스 추가',
+    ],
+    'image_canvas_width' => [
+        'name' => '이미지 캔버스 너비',
+    ],
+    'image_canvas_height' => [
+        'name' => '이미지 캔버스 높이',
+    ],
+    'watermark_type' => [
+        'name' => '워터 마크 유형',
+    ],
+    'watermark_text' => [
+        'name' => '워터 마크 텍스트',
+    ],
+    'watermark_image' => [
+        'name' => '워터 마크 이미지',
+    ],
+    'watermark_position' => [
+        'name' => '워터 마크 위치',
     ],
 ];

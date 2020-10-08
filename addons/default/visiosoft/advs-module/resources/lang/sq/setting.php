@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Përcaktuar SET',
     ],
-    'add_canvas' => [
-        'name' => 'Shto Canvas',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Gjerësia e Thumbnail',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Lartësia e Thumbnail',
-    ],
-    'picture_width' => [
-        'name' => 'Gjerësia e figurës',
-    ],
-    'picture_height' => [
-        'name' => 'Lartësia e figurës',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Tipi Filigranit',
-    ],
-    'watermark_text' => [
-        'name' => 'Teksti i Filigranit',
-    ],
-    'watermark_image' => [
-        'name' => 'Imazhi i Filigranit',
-    ],
-    'watermark_position' => [
-        'name' => 'Pozicioni i Filigranit',
     ],
     'listing_page_image' => [
         'name' => 'Lista e figurës së faqes',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Kufiri i reklamave popullore',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Ndryshimi i madhësisë së imazhit Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Gjerësia e imazhit të plotë',
+    ],
+    'full_image_height' => [
+        'name' => 'Lartësia e imazhit të plotë',
+    ],
+    'medium_image_width' => [
+        'name' => 'Gjerësia Mesatare e Imazhit',
+    ],
+    'medium_image_height' => [
+        'name' => 'Lartësia mesatare e figurës',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Gjerësia e Thumbnail',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Lartësia e Thumbnail',
+    ],
+    'add_canvas' => [
+        'name' => 'Shto Canvas',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Gjerësia e kanavacës së imazhit',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Lartësia e kanavacës së imazhit',
+    ],
+    'watermark_type' => [
+        'name' => 'Tipi Filigranit',
+    ],
+    'watermark_text' => [
+        'name' => 'Teksti i Filigranit',
+    ],
+    'watermark_image' => [
+        'name' => 'Imazhi i Filigranit',
+    ],
+    'watermark_position' => [
+        'name' => 'Pozicioni i Filigranit',
     ],
 ];

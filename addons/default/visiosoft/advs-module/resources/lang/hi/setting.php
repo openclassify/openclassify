@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'डिफ़ॉल्ट विज्ञापन GET',
     ],
-    'add_canvas' => [
-        'name' => 'कैनवास जोड़ें',
-    ],
-    'thumbnail_width' => [
-        'name' => 'थंबनेल की चौड़ाई',
-    ],
-    'thumbnail_height' => [
-        'name' => 'थंबनेल की ऊँचाई',
-    ],
-    'picture_width' => [
-        'name' => 'चित्र चौड़ाई',
-    ],
-    'picture_height' => [
-        'name' => 'चित्र ऊंचाई',
-    ],
     'twitter' => [
         'name' => 'ट्विटर',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'गूगल',
-    ],
-    'watermark_type' => [
-        'name' => 'वॉटरमार्क प्रकार',
-    ],
-    'watermark_text' => [
-        'name' => 'वॉटरमार्क पाठ',
-    ],
-    'watermark_image' => [
-        'name' => 'वॉटरमार्क छवि',
-    ],
-    'watermark_position' => [
-        'name' => 'वॉटरमार्क स्थिति',
     ],
     'listing_page_image' => [
         'name' => 'लिस्टिंग पृष्ठ छवि',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'लोकप्रिय विज्ञापन सीमा',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'छवि बैकएंड का आकार बदलें',
+    ],
+    'full_image_width' => [
+        'name' => 'पूर्ण छवि चौड़ाई',
+    ],
+    'full_image_height' => [
+        'name' => 'पूर्ण छवि ऊँचाई',
+    ],
+    'medium_image_width' => [
+        'name' => 'मध्यम छवि चौड़ाई',
+    ],
+    'medium_image_height' => [
+        'name' => 'मध्यम छवि ऊँचाई',
+    ],
+    'thumbnail_width' => [
+        'name' => 'थंबनेल की चौड़ाई',
+    ],
+    'thumbnail_height' => [
+        'name' => 'थंबनेल की ऊँचाई',
+    ],
+    'add_canvas' => [
+        'name' => 'कैनवास जोड़ें',
+    ],
+    'image_canvas_width' => [
+        'name' => 'छवि कैनवास की चौड़ाई',
+    ],
+    'image_canvas_height' => [
+        'name' => 'छवि कैनवास ऊंचाई',
+    ],
+    'watermark_type' => [
+        'name' => 'वॉटरमार्क प्रकार',
+    ],
+    'watermark_text' => [
+        'name' => 'वॉटरमार्क पाठ',
+    ],
+    'watermark_image' => [
+        'name' => 'वॉटरमार्क छवि',
+    ],
+    'watermark_position' => [
+        'name' => 'वॉटरमार्क स्थिति',
     ],
 ];

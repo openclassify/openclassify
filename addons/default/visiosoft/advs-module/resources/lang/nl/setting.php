@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Standaardadvertentie GET',
     ],
-    'add_canvas' => [
-        'name' => 'Canvas toevoegen',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Thumbnail breedte',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Hoogte miniatuur',
-    ],
-    'picture_width' => [
-        'name' => 'Beeldbreedte',
-    ],
-    'picture_height' => [
-        'name' => 'Beeldhoogte',
-    ],
     'twitter' => [
         'name' => 'tjilpen',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Watermerk Type',
-    ],
-    'watermark_text' => [
-        'name' => 'Watermerktekst',
-    ],
-    'watermark_image' => [
-        'name' => 'Watermerk afbeelding',
-    ],
-    'watermark_position' => [
-        'name' => 'Watermerkpositie',
     ],
     'listing_page_image' => [
         'name' => 'Lijstpagina-afbeelding',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Beperking van populaire advertenties',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Afbeelding formaat wijzigen backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Volledige afbeeldingsbreedte',
+    ],
+    'full_image_height' => [
+        'name' => 'Volledige beeldhoogte',
+    ],
+    'medium_image_width' => [
+        'name' => 'Gemiddelde afbeeldingsbreedte',
+    ],
+    'medium_image_height' => [
+        'name' => 'Gemiddelde afbeeldingshoogte',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail breedte',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Hoogte miniatuur',
+    ],
+    'add_canvas' => [
+        'name' => 'Canvas toevoegen',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Breedte afbeelding canvas',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Hoogte afbeelding canvas',
+    ],
+    'watermark_type' => [
+        'name' => 'Watermerk Type',
+    ],
+    'watermark_text' => [
+        'name' => 'Watermerktekst',
+    ],
+    'watermark_image' => [
+        'name' => 'Watermerk afbeelding',
+    ],
+    'watermark_position' => [
+        'name' => 'Watermerkpositie',
     ],
 ];
