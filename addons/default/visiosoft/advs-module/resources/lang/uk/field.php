@@ -306,4 +306,10 @@ return [
     'and_above' => 'і вище',
     'and_below' => 'і нижче',
     'clear_all' => 'Очистити все',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
