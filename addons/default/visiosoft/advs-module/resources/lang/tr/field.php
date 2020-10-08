@@ -308,4 +308,10 @@ return [
     'and_above' => 've yukarıda',
     'and_below' => 've aşağıda',
     'clear_all' => 'Hepsini temizle',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
