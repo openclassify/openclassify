@@ -213,3 +213,7 @@ a.sort-by-open-dropdown:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
+.filter-section .countries input[type=checkbox] {
+    display: none;
+}

@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'शैली (सीएसएस)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'मुखपृष्ठ उप श्रेणियाँ श्रेणियाँ सीमा',
+    ],
 ];

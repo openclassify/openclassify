@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'Στυλ (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Όριο υποκατηγοριών αρχικής σελίδας',
+    ],
 ];

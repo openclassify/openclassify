@@ -11,8 +11,11 @@ return [
         'warning'      => 'Pierwszy dostępny element nawigacyjny jest używany jako obszar <strong>domu</strong>.',
         'reorder'      => 'Przeciągnij i upuść podstawowe elementy nawigacji na pasku bocznym <strong></strong> aby zmienić ich kolejność.',
     ],
-    "icon" => [
-        'name' => 'Ikona',
+    "login_icon" => [
+        'name' => 'Ikona logowania',
+    ],
+    "panel_icon" => [
+        'name' => 'Ikona panelu',
     ],
     "title" => [
         'name' => 'Tytuł',

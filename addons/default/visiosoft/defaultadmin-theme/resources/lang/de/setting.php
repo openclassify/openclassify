@@ -11,8 +11,11 @@ return [
         'warning'      => 'Das erste verfügbare Navigationselement wird als <strong>Startseite</strong> verwendet.',
         'reorder'      => 'Sie können die primären Navigationelemente per Drag & Drop in der <strong>Sidebar</strong> sortieren.',
     ],
-    "icon" => [
-        'name' => 'Symbol',
+    "login_icon" => [
+        'name' => 'Anmeldesymbol',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel-Symbol',
     ],
     "title" => [
         'name' => 'Titel',

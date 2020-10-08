@@ -249,6 +249,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Au cours des dernières 24 heures'
     ],
+    'in_the_last_day' => [
+        'name' => 'Au cours des dernières 24 heures'
+    ],
     'in_the_last_week' => [
         'name' => 'La semaine dernière'
     ],
@@ -297,4 +300,11 @@ return [
 
     // New create page
     'options' => 'Options',
+
+    'free' => 'Gratuit',
+    'ad_date' => 'Date de l\'annonce',
+    'photo_video' => 'Photo, vidéo',
+    'and_above' => 'et ci-dessus',
+    'and_below' => 'et plus bas',
+    'clear_all' => 'Tout effacer',
 ];

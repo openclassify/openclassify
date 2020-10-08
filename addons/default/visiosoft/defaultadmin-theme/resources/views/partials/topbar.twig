@@ -5,7 +5,7 @@
             {% if setting_value('visiosoft.theme.defaultadmin::panel_icon') %}
                 <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).url }}" alt="site icon">
             {% else %}
-                {{ img('theme::img/icon.svg').data|raw }}
+                {{ img('theme::img/panel-icon.svg').data|raw }}
             {% endif %}
             <span>{{ setting_value('visiosoft.theme.defaultadmin::title') }}</span>
         </a>

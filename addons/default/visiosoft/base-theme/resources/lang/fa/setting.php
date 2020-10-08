@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'سبک (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'زیرمجموعه ها',
+    ],
 ];

@@ -37,4 +37,7 @@ return [
     'style' => [
         'name' => 'Estilo (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Limite de subcategorias da página inicial',
+    ],
 ];
