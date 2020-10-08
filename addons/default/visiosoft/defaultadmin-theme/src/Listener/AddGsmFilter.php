@@ -51,6 +51,8 @@ class AddGsmFilter
 
         $builder->getTable()->addFilter($filter);
         $builder->setColumns([
+        	    'first_name',
+                'last_name',
                 'email',
                 'gsm_phone',
                 'created_at' => [
@@ -68,7 +70,11 @@ class AddGsmFilter
         ]);
 
         $collection = new Collection();
-        $header_email = new Header();
+	    $header_firstname = new Header();
+	    $header_firstname = $header_firstname->setBuilder($builder)->setHeading('anomaly.module.users::field.first_name.name');
+	    $header_lastname = new Header();
+	    $header_lastname = $header_lastname->setBuilder($builder)->setHeading('anomaly.module.users::field.last_name.name');
+	    $header_email = new Header();
         $header_email = $header_email->setBuilder($builder)->setHeading('anomaly.module.users::field.email.name')->setSortable(true)->setSortColumn('email');
         $header_phone = new Header();
         $header_gsm_phone = $header_phone->setBuilder($builder)->setHeading('visiosoft.module.profile::field.gsm_phone.name');
@@ -77,6 +83,8 @@ class AddGsmFilter
         $header_status = new Header();
         $header_status = $header_status->setBuilder($builder)->setHeading('anomaly.module.users::field.status.name');
 
+        $collection = $collection->add($header_firstname);
+        $collection = $collection->add($header_lastname);
         $collection = $collection->add($header_email);
         $collection = $collection->add($header_gsm_phone);
         $collection = $collection->add($header_created_at);
