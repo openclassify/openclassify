@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'ডিফল্ট বিজ্ঞাপন জিইটি',
     ],
-    'add_canvas' => [
-        'name' => 'ক্যানভাস যুক্ত করুন',
-    ],
-    'thumbnail_width' => [
-        'name' => 'থাম্বনেইল প্রস্থ',
-    ],
-    'thumbnail_height' => [
-        'name' => 'থাম্বনেইল উচ্চতা',
-    ],
-    'picture_width' => [
-        'name' => 'চিত্র প্রস্থ',
-    ],
-    'picture_height' => [
-        'name' => 'চিত্র উচ্চতা',
-    ],
     'twitter' => [
         'name' => 'টুইটার',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'গুগল',
-    ],
-    'watermark_type' => [
-        'name' => 'ওয়াটারমার্ক টাইপ',
-    ],
-    'watermark_text' => [
-        'name' => 'জলছবি পাঠ্য',
-    ],
-    'watermark_image' => [
-        'name' => 'জলছবি ইমেজ',
-    ],
-    'watermark_position' => [
-        'name' => 'জলছবি অবস্থান',
     ],
     'listing_page_image' => [
         'name' => 'পৃষ্ঠার চিত্র তালিকাভুক্ত',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'জনপ্রিয় বিজ্ঞাপন সীমাবদ্ধতা',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'চিত্র পুনরায় আকার ব্যাকএন্ড',
+    ],
+    'full_image_width' => [
+        'name' => 'পূর্ণ চিত্র প্রস্থ',
+    ],
+    'full_image_height' => [
+        'name' => 'পূর্ণ চিত্র উচ্চতা',
+    ],
+    'medium_image_width' => [
+        'name' => 'মাঝারি চিত্র প্রস্থ',
+    ],
+    'medium_image_height' => [
+        'name' => 'মাঝারি চিত্র উচ্চতা',
+    ],
+    'thumbnail_width' => [
+        'name' => 'থাম্বনেইল প্রস্থ',
+    ],
+    'thumbnail_height' => [
+        'name' => 'থাম্বনেইল উচ্চতা',
+    ],
+    'add_canvas' => [
+        'name' => 'ক্যানভাস যুক্ত করুন',
+    ],
+    'image_canvas_width' => [
+        'name' => 'চিত্র ক্যানভাস প্রস্থ',
+    ],
+    'image_canvas_height' => [
+        'name' => 'চিত্র ক্যানভাস উচ্চতা',
+    ],
+    'watermark_type' => [
+        'name' => 'ওয়াটারমার্ক টাইপ',
+    ],
+    'watermark_text' => [
+        'name' => 'জলছবি পাঠ্য',
+    ],
+    'watermark_image' => [
+        'name' => 'জলছবি ইমেজ',
+    ],
+    'watermark_position' => [
+        'name' => 'জলছবি অবস্থান',
     ],
 ];
