@@ -306,4 +306,10 @@ return [
     'and_above' => 'və yuxarıda',
     'and_below' => 'və aşağıda',
     'clear_all' => 'Hamısını sil, hamısını təmizlə',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
