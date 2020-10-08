@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Standardannons GET',
     ],
-    'add_canvas' => [
-        'name' => 'Lägg till Canvas',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Miniatyrbredd',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Miniatyrhöjd',
-    ],
-    'picture_width' => [
-        'name' => 'Bildbredd',
-    ],
-    'picture_height' => [
-        'name' => 'Bildhöjd',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Vattenmärketyp',
-    ],
-    'watermark_text' => [
-        'name' => 'Vattenmärketekst',
-    ],
-    'watermark_image' => [
-        'name' => 'Vattenmärkesbild',
-    ],
-    'watermark_position' => [
-        'name' => 'Vattenmärkes position',
     ],
     'listing_page_image' => [
         'name' => 'Lista sidbild',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Gräns för populära annonser',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Bild Ändra storlek på backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full bildbredd',
+    ],
+    'full_image_height' => [
+        'name' => 'Full bildhöjd',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium bildbredd',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium bildhöjd',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Miniatyrbredd',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Miniatyrhöjd',
+    ],
+    'add_canvas' => [
+        'name' => 'Lägg till Canvas',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Bild Canvas Bredd',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Bild Kanvashöjd',
+    ],
+    'watermark_type' => [
+        'name' => 'Vattenmärketyp',
+    ],
+    'watermark_text' => [
+        'name' => 'Vattenmärketekst',
+    ],
+    'watermark_image' => [
+        'name' => 'Vattenmärkesbild',
+    ],
+    'watermark_position' => [
+        'name' => 'Vattenmärkes position',
     ],
 ];
