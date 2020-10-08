@@ -306,4 +306,10 @@ return [
     'and_above' => 'and above',
     'and_below' => 'and below',
     'clear_all' => 'Clear All',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
