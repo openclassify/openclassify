@@ -306,4 +306,10 @@ return [
     'and_above' => 'और ऊपर',
     'and_below' => 'और नीचे',
     'clear_all' => 'सभी साफ करें',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
