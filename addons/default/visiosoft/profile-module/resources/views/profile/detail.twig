@@ -147,13 +147,14 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-right">
-                                    <div class="form-group">
+                                    <div class="form-group d-flex align-items-center justify-content-end">
+                                        {{ addBlock('profile/detail/profile-detail-form/actions', {'user': user})|raw }}
+
                                         {{ profileForm.actions|raw }}
                                     </div>
-
                                 </div>
                             </div>
-                                {{ profileForm.close()|raw }}
+                            {{ profileForm.close()|raw }}
                         </div>
                         <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
                             {% set passwordForm = form('updatePassword').get() %}
