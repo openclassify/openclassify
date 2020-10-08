@@ -306,4 +306,10 @@ return [
     'and_above' => '以上',
     'and_below' => '以下',
     'clear_all' => 'すべてクリア',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
