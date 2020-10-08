@@ -307,4 +307,10 @@ return [
     'and_above' => 'dhe më lart',
     'and_below' => 'dhe më poshtë',
     'clear_all' => 'Pastroji të gjitha',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
