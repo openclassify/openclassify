@@ -306,4 +306,10 @@ return [
     'and_above' => 'Si mai sus',
     'and_below' => 'si sub',
     'clear_all' => 'Curata tot',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
