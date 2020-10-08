@@ -306,4 +306,10 @@ return [
     'and_above' => 'و ما فوق',
     'and_below' => 'و تحت',
     'clear_all' => 'امسح الكل',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
