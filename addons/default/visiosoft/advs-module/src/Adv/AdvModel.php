@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Anomaly\Streams\Platform\Model\Advs\AdvsCustomFieldsEntryModel;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -370,5 +371,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $neighborhoodModel = new NeighborhoodModel();
         $neighborhood = $neighborhoodModel->newQuery()->find($this->neighborhood);
         return $neighborhood ? $neighborhood->name : false;
+    }
+
+    public function expired()
+    {
+        return $this->finish_at ? $this->finish_at < Carbon::now() : true;
     }
 }

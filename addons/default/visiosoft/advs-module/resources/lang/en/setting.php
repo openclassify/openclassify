@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Default Ad GET',
     ],
-    'add_canvas' => [
-        'name' => 'Add Canvas',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
-    ],
-    'picture_width' => [
-        'name' => 'Picture Width',
-    ],
-    'picture_height' => [
-        'name' => 'Picture Height',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Watermark Type',
-    ],
-    'watermark_text' => [
-        'name' => 'Watermark Text',
-    ],
-    'watermark_image' => [
-        'name' => 'Watermark Image',
-    ],
-    'watermark_position' => [
-        'name' => 'Watermark Position',
     ],
     'listing_page_image' => [
         'name' => 'Listing Page Image',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Popular Ads Limit',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail Width',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Thumbnail Height',
+    ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Watermark Type',
+    ],
+    'watermark_text' => [
+        'name' => 'Watermark Text',
+    ],
+    'watermark_image' => [
+        'name' => 'Watermark Image',
+    ],
+    'watermark_position' => [
+        'name' => 'Watermark Position',
     ],
 ];
