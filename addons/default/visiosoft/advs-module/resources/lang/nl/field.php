@@ -307,4 +307,10 @@ return [
     'and_above' => 'en hoger',
     'and_below' => 'en onder',
     'clear_all' => 'Wis alles',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
 ];
