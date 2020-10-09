@@ -25,3 +25,10 @@ if (!function_exists('get_buyables'))
 		return dispatch_now(new GetBuyables());
 	}
 }
+
+if (!function_exists('auth_id_if_null'))
+{
+	function auth_id_if_null($userId) {
+		return $userId ?: auth()->id();
+	}
+}
