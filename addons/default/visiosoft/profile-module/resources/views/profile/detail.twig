@@ -96,6 +96,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{ userForm.close()|raw }}
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-details" role="tabpanel"
@@ -138,6 +139,14 @@
                                             {{ profileForm.fields.land_phone.label }}
                                         </label>
                                         {{ profileForm.fields.land_phone.input|raw }}
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="form-group birthday-field">
+                                        <label class="control-label font-weight-bold">
+                                            {{ trans("visiosoft.module.profile::field.birthday.name") }}
+                                        </label>
+                                        {{ profileForm.fields.birthday.input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
