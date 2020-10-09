@@ -21,6 +21,7 @@ class ProfileFormHandler
             'office_phone' => $builder->getPostValue('office_phone'),
             'land_phone' => $builder->getPostValue('land_phone'),
             'identification_number' => $builder->getPostValue('identification_number'),
+            'birthday' => $builder->getPostValue('birthday'),
             'register_type' => $builder->getPostValue('register_type'),
         ];
 
