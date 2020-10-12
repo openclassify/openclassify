@@ -144,7 +144,7 @@ class UsersFieldsSeeder extends Seeder
                     ]
                 ],
                 14 => [
-                    'name' => 'Birthday',
+                    'name' => trans('visiosoft.module.profile::field.birthday.name'),
                     'slug' => 'birthday',
                     'type' => 'anomaly.field_type.datetime',
                     'config' => [

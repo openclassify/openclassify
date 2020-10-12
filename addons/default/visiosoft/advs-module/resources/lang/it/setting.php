@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Annuncio predefinito GET',
     ],
-    'add_canvas' => [
-        'name' => 'Aggiungi tela',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Larghezza Miniatura',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Altezza Miniatura',
-    ],
-    'picture_width' => [
-        'name' => 'Larghezza immagine',
-    ],
-    'picture_height' => [
-        'name' => 'Altezza dell\'immagine',
-    ],
     'twitter' => [
         'name' => 'cinguettio',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Tipo di filigrana',
-    ],
-    'watermark_text' => [
-        'name' => 'Testo filigrana',
-    ],
-    'watermark_image' => [
-        'name' => 'Immagine filigrana',
-    ],
-    'watermark_position' => [
-        'name' => 'Posizione della filigrana',
     ],
     'listing_page_image' => [
         'name' => 'Immagine della pagina di elenco',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Limite annunci popolari',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Backend ridimensionamento immagine',
+    ],
+    'full_image_width' => [
+        'name' => 'Larghezza immagine completa',
+    ],
+    'full_image_height' => [
+        'name' => 'Altezza completa dell\'immagine',
+    ],
+    'medium_image_width' => [
+        'name' => 'Larghezza immagine media',
+    ],
+    'medium_image_height' => [
+        'name' => 'Altezza media dell\'immagine',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Larghezza Miniatura',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Altezza Miniatura',
+    ],
+    'add_canvas' => [
+        'name' => 'Aggiungi tela',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Larghezza tela immagine',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Altezza tela immagine',
+    ],
+    'watermark_type' => [
+        'name' => 'Tipo di filigrana',
+    ],
+    'watermark_text' => [
+        'name' => 'Testo filigrana',
+    ],
+    'watermark_image' => [
+        'name' => 'Immagine filigrana',
+    ],
+    'watermark_position' => [
+        'name' => 'Posizione della filigrana',
     ],
 ];

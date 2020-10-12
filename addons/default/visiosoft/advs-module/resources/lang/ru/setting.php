@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Реклама по умолчанию GET',
     ],
-    'add_canvas' => [
-        'name' => 'Добавить холст',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Ширина миниатюры',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Высота миниатюры',
-    ],
-    'picture_width' => [
-        'name' => 'Ширина картинки',
-    ],
-    'picture_height' => [
-        'name' => 'Высота картинки',
-    ],
     'twitter' => [
         'name' => 'щебет',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Тип водяного знака',
-    ],
-    'watermark_text' => [
-        'name' => 'Текст водяного знака',
-    ],
-    'watermark_image' => [
-        'name' => 'Изображение водяного знака',
-    ],
-    'watermark_position' => [
-        'name' => 'Положение водяного знака',
     ],
     'listing_page_image' => [
         'name' => 'Изображение страницы со списком',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Лимит популярной рекламы',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Бэкэнд изменения размера изображения',
+    ],
+    'full_image_width' => [
+        'name' => 'Полная ширина изображения',
+    ],
+    'full_image_height' => [
+        'name' => 'Полная высота изображения',
+    ],
+    'medium_image_width' => [
+        'name' => 'Средняя ширина изображения',
+    ],
+    'medium_image_height' => [
+        'name' => 'Средняя высота изображения',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Ширина миниатюры',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Высота миниатюры',
+    ],
+    'add_canvas' => [
+        'name' => 'Добавить холст',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Ширина холста изображения',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Высота холста изображения',
+    ],
+    'watermark_type' => [
+        'name' => 'Тип водяного знака',
+    ],
+    'watermark_text' => [
+        'name' => 'Текст водяного знака',
+    ],
+    'watermark_image' => [
+        'name' => 'Изображение водяного знака',
+    ],
+    'watermark_position' => [
+        'name' => 'Положение водяного знака',
     ],
 ];

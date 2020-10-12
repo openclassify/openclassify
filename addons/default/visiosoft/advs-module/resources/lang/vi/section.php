@@ -44,4 +44,5 @@ return [
     'options' => [
         'title' => 'Tùy chọn',
     ],
+    'ads_image' => 'Hình ảnh Quảng cáo',
 ];
