@@ -1,5 +1,5 @@
 <?php
-
+use Visiosoft\LocationModule\Country\CountryRepository;
 return [
     'navigation_title' => [
         'type' => 'anomaly.field_type.boolean',
@@ -71,4 +71,24 @@ return [
     'style' => [
         'type' => 'anomaly.field_type.editor',
     ],
+
+	'enabled_countries' => [
+		'bind' => 'visiosoft.theme.base::countries.enabled',
+		'env' => 'ADV_ENABLED_COUNTRIES',
+		'type' => 'anomaly.field_type.select',
+		'required' => false,
+		'config' => [
+			'default_value' => function () {
+				return [config('visiosoft.theme.base::countries.default')];
+			},
+			'options' => function () {
+				$array = \Visiosoft\LocationModule\Country\CountryModel::query()->get();
+				$cur = array();
+				foreach ($array as $key => $value) {
+					$cur[$value['abv']] = $value['name'];
+				}
+				return $cur;
+			},
+		],
+	],
 ];
