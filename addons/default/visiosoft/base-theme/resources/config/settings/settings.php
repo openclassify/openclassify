@@ -1,5 +1,5 @@
 <?php
-use Visiosoft\LocationModule\Country\CountryRepository;
+use \Visiosoft\LocationModule\Country\CountryModel;
 return [
     'navigation_title' => [
         'type' => 'anomaly.field_type.boolean',
@@ -82,7 +82,7 @@ return [
 				return [config('visiosoft.theme.base::countries.default')];
 			},
 			'options' => function () {
-				$array = \Visiosoft\LocationModule\Country\CountryModel::query()->get();
+				$array = CountryModel::query()->get();
 				$cur = array();
 				foreach ($array as $key => $value) {
 					$cur[$value['abv']] = $value['name'];
