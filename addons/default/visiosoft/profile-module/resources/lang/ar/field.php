@@ -56,7 +56,7 @@ return [
         'name' => 'نوع السجل'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'عيد ميلاد'
     ],
     'identification_number' => [
         'name' => 'رقم الهوية'
