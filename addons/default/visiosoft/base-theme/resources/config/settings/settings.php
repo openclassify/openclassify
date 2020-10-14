@@ -72,7 +72,7 @@ return [
         'type' => 'anomaly.field_type.editor',
     ],
 
-	'enabled_countries' => [
+	'default_country' => [
 		'bind' => 'visiosoft.theme.base::countries.enabled',
 		'env' => 'ADV_ENABLED_COUNTRIES',
 		'type' => 'anomaly.field_type.select',
