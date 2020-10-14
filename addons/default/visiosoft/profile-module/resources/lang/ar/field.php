@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'نوع السجل'
     ],
+    'birthday' => [
+        'name' => 'Birthday'
+    ],
     'identification_number' => [
         'name' => 'رقم الهوية'
     ],
