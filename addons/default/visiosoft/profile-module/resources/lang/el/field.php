@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'Τύπος μητρώου'
     ],
+    'birthday' => [
+        'name' => 'Birthday'
+    ],
     'identification_number' => [
         'name' => 'Αριθμός αναγνώρισης'
     ],
