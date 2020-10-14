@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'Homepage Sub Categories Limit',
     ],
+	'enabled_countries' => [
+		'name' => 'Enabled Country',
+	]
 ];
