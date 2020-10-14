@@ -32,9 +32,7 @@ class AdvsExport implements WithMapping, FromCollection, WithHeadings
 			})
 			->leftJoin('cats_category_translations', 'cats_category.id', 'cats_category_translations.entry_id')
 			->leftJoin('location_countries_translations','advs_advs.country_id', 'location_countries_translations.entry_id')
-
 			->leftJoin('location_cities_translations','advs_advs.city', 'location_cities_translations.entry_id')
-
 			->leftJoin('location_districts_translations','advs_advs.district', 'location_districts_translations.entry_id')
 			->where('cats_category_translations.locale',Request()->session()->get('_locale', setting_value('streams::default_locale', 'en')))
 			->where('advs_advs_translations.locale',Request()->session()->get('_locale', setting_value('streams::default_locale', 'en')))
