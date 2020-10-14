@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'סוג הרשמה'
     ],
+    'birthday' => [
+        'name' => 'Birthday'
+    ],
     'identification_number' => [
         'name' => 'מספר זיהוי'
     ],
