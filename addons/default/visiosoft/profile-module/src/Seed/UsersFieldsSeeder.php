@@ -3,11 +3,9 @@
 use Anomaly\Streams\Platform\Assignment\AssignmentModelTranslation;
 use Anomaly\Streams\Platform\Assignment\Contract\AssignmentRepositoryInterface;
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
-use Anomaly\Streams\Platform\Entry\EntryTranslationsModel;
 use Anomaly\Streams\Platform\Field\Contract\FieldRepositoryInterface;
 use Anomaly\Streams\Platform\Field\FieldModelTranslation;
 use Anomaly\Streams\Platform\Stream\Contract\StreamRepositoryInterface;
-use Anomaly\Streams\Platform\Stream\StreamModelTranslation;
 use Visiosoft\LocationModule\Country\CountryModel;
 
 class UsersFieldsSeeder extends Seeder
@@ -142,6 +140,15 @@ class UsersFieldsSeeder extends Seeder
                     'default_value' => 1,
                     'options' => [0 => 'Active', 1 => 'Passive'],
                     'separator' => ':',
+                ]
+            ],
+            14 => [
+                'name' => trans('visiosoft.module.profile::field.birthday.name'),
+                'slug' => 'birthday',
+                'type' => 'anomaly.field_type.datetime',
+                'config' => [
+                    "mode" => "date",
+                    "picker" => true,
                 ]
             ],
         ];
