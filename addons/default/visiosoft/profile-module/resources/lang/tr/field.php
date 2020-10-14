@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'Üyelik Tipi'
     ],
+    'birthday' => [
+        'name' => 'Birthday'
+    ],
     'identification_number' => [
         'name' => 'Kimlik Numarası'
     ],
