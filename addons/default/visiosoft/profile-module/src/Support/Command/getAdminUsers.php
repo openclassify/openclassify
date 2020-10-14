@@ -2,7 +2,7 @@
 
 use Anomaly\UsersModule\Role\Contract\RoleRepositoryInterface;
 
-class getAdmins
+class getAdminUsers
 {
     public function handle()
     {
