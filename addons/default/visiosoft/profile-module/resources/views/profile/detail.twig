@@ -96,6 +96,7 @@
                                         </div>
                                     </div>
                                 </div>
+                                {{ userForm.close()|raw }}
                             </div>
                         </div>
                         <div class="tab-pane fade" id="nav-details" role="tabpanel"
@@ -141,14 +142,24 @@
                                     </div>
                                 </div>
                                 <div class="col-md-12">
+                                    <div class="form-group birthday-field">
+                                        <label class="control-label font-weight-bold">
+                                            {{ trans("visiosoft.module.profile::field.birthday.name") }}
+                                        </label>
+                                        {{ profileForm.fields.birthday.input|raw }}
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
                                     <div class="form-group">
-                                        <label class="control-label font-weight-bold">{{ trans("visiosoft.module.profile::field.register_type.name") }}</label>
+                                        <label class="control-label font-weight-bold">
+                                            {{ trans("visiosoft.module.profile::field.register_type.name") }}
+                                        </label>
                                         {{ profileForm.fields.register_type.input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-right">
                                     <div class="form-group d-flex align-items-center justify-content-end">
-                                        {{ addBlock('profile/detail/profile-detail-form/actions', {'user': user})|raw }}
+                                        {{ addBlock('profile/detail/profile-detail-form/actions')|raw }}
 
                                         {{ profileForm.actions|raw }}
                                     </div>
