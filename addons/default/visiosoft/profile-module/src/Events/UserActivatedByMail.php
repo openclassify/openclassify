@@ -14,4 +14,9 @@ class UserActivatedByMail
     {
         $this->user = $user;
     }
+
+    public function getUser()
+    {
+        return $this->user;
+    }
 }
