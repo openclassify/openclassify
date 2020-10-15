@@ -55,6 +55,9 @@
         {% include "visiosoft.module.advs::ad-detail/partials/dropleft-edit" %}
     </section>
 
+    <script>
+        let advID = "{{ adv.id }}"
+    </script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
 
 {% endblock %}
