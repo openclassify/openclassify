@@ -1,7 +1,8 @@
 function viewed_ad() {
+    var id = $('#adv-id').val();
     $.ajax({
         type: 'get',
-        url: '/ajax/viewed/' + advID,
+        url: '/ajax/viewed/' + id,
     });
 }
 
