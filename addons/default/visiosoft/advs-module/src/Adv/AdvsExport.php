@@ -64,16 +64,16 @@ class AdvsExport implements WithMapping, FromCollection, WithHeadings
 	{
 		return [
 			'ID',
-			'Name',
-			'Description',
-			'Currency',
-			'Price',
-			'Standard Price',
-			'Created By Id',
-			'Categories',
-			'Country',
-			'City',
-			'District',
+			trans('module::field.name.name'),
+			trans('module::field.description'),
+			trans('module::field.currency.name'),
+			trans('module::field.price.name'),
+			trans('module::field.standard_price.name'),
+			trans('module::field.created'),
+			trans('module::field.categories'),
+			trans('module::field.country.name'),
+			trans('module::field.city.name'),
+			trans('module::field.district.name'),
 		];
 	}
 }
