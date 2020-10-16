@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'मुखपृष्ठ उप श्रेणियाँ श्रेणियाँ सीमा',
     ],
+	'default_country' => [
+		'name' => 'Register page, default country for phone',
+	]
 ];
