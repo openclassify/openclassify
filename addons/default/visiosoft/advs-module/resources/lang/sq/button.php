@@ -32,4 +32,5 @@ return [
         'name' => 'Kategoria Azhornimeve'
     ],
     'new_option' => 'Opsioni i ri',
+	'export' => 'Export'
 ];
