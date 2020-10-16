@@ -82,10 +82,8 @@ return [
 				return [config('visiosoft.theme.base::countries.default')];
 			},
 			'options' => function () {
-				$array = CountryModel::query()->get();
-				$cur = array();
-				$cur[] = $array->pluck('name', 'abv');
-				return $cur;
+				$array = CountryModel::query()->get()->pluck('name', 'abv')->toArray();
+				return $array;
 			},
 		],
 	],
