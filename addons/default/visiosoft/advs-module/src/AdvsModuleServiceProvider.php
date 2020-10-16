@@ -75,6 +75,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'admin/advs-users/choose/{advId}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@choose',
         'admin/class/actions/{id}/{type}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@actions',
+	    'admin/advs/export' => [
+	    	'as' => 'advs::exportAdvs',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@exportAdvs',
+	    ],
 
         // advsController
         'advs/list' => [
@@ -344,22 +348,30 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'general_settings' => [
                 'title' => 'visiosoft.module.advs::button.general_settings',
                 'href' => '/admin/settings/modules/visiosoft.module.advs',
+	            'page' => 'anomaly.module.settings'
             ],
             'theme_settings' => [
                 'title' => 'visiosoft.theme.defaultadmin::section.theme_settings.name',
                 'href' => url('admin/settings/themes/' . setting_value('streams::standard_theme')),
+	            'page' => 'anomaly.module.settings'
             ],
             'assets_clear' => [
                 'title' => 'visiosoft.module.advs::section.assets_clear.name',
                 'href' => route('assets_clear'),
+	            'page' => 'anomaly.module.settings'
             ],
+	        'export' => [
+	        	'title' => 'visiosoft.module.advs::button.export',
+		        'href' => route('advs::exportAdvs'),
+		        'page' => 'visiosoft.module.advs'
+	        ]
         ];
 
         foreach ($settings_url as $key => $value) {
-            $addonCollection->get('anomaly.module.settings')->addSection($key, $value);
+            $addonCollection->get($value['page'])->addSection($key, $value);
         }
 
-        // Disable file versioning
+	    // Disable file versioning
         $fileModel->disableVersioning();
     }
 

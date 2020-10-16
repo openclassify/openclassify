@@ -56,6 +56,7 @@
 
         <div class="input-wrapper validate-phone">
             {{ form.fields.phone.setValue(form.fields.phone.value).input|raw }}
+            <div id="country" class="hidden">{{ setting_value('visiosoft.theme.base::default_country') }}</div>
         </div>
     </div>
 </div>
