@@ -32,4 +32,5 @@ return [
         'name' => 'Оновити категорію'
     ],
     'new_option' => 'Нова опція',
+	'export' => 'Export'
 ];
