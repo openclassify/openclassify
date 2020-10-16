@@ -32,4 +32,5 @@ return [
         'name' => 'カテゴリを更新'
     ],
     'new_option' => '新しいオプション',
+	'export' => 'Export'
 ];
