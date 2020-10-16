@@ -32,4 +32,5 @@ return [
         'name' => 'زمرہ اپ ڈیٹ کریں'
     ],
     'new_option' => 'نیا آپشن',
+	'export' => 'Export'
 ];
