@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => '홈페이지 하위 카테고리 제한',
     ],
+	'default_country' => [
+		'name' => 'Register page, default country for phone',
+	]
 ];
