@@ -32,4 +32,5 @@ return [
         'name' => 'Cập nhật danh mục'
     ],
     'new_option' => 'Tùy chọn mới',
+	'export' => 'Export'
 ];
