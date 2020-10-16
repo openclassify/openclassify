@@ -506,7 +506,14 @@ class AdvsController extends PublicController
                     $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
                 }
             }
-            $this->template->set('meta_image', $coverPhoto);
+            $coverPhotoInfo = pathinfo($coverPhoto);
+            if (substr($coverPhotoInfo['basename'], 0, 3) === "tn-") {
+                $ogImage = substr(basename($coverPhotoInfo['basename']), 3);
+                $ogImage = $coverPhotoInfo['dirname'] . "/$ogImage";
+            } else {
+                $ogImage = $coverPhoto;
+            }
+            $this->template->set('meta_image', $ogImage);
 
             if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
