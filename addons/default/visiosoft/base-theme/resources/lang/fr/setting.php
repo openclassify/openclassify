@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'Limite des sous-catégories de la page d\'accueil',
     ],
+	'default_country' => [
+		'name' => 'Register page, default country for phone',
+	]
 ];
