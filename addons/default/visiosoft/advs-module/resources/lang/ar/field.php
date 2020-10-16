@@ -312,4 +312,5 @@ return [
     'advs' => 'Advs',
     'site' => 'الموقع',
     'subscription' => 'اشتراك',
+	'created' => 'Created',
 ];
