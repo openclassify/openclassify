@@ -398,6 +398,12 @@ class AdvsController extends PublicController
             $this->template->set('meta_title', $user->name() . ' ' . trans('visiosoft.module.advs::field.ads'));
         }
 
+        // Set rel="canonical"
+        $canonParam = $param;
+        unset($canonParam['sort_by'], $canonParam['doping']);
+        $canonUrl = fullLink($canonParam, \request()->url());
+        $this->template->set('additional_meta', "<link rel='canonical' href='$canonUrl'/>");
+
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
             'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
