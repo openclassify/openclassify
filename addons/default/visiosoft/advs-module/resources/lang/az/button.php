@@ -32,4 +32,5 @@ return [
         'name' => 'Kateqoriya yeniləyin'
     ],
     'new_option' => 'Yeni Seçim',
+	'export' => 'Export'
 ];
