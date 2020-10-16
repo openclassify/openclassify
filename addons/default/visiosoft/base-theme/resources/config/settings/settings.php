@@ -84,9 +84,7 @@ return [
 			'options' => function () {
 				$array = CountryModel::query()->get();
 				$cur = array();
-				foreach ($array as $key => $value) {
-					$cur[$value['abv']] = $value['name'];
-				}
+				$cur[] = $array->pluck('name', 'abv');
 				return $cur;
 			},
 		],
