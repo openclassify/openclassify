@@ -313,4 +313,10 @@ return [
     'site' => 'Site',
     'subscription' => 'Subscription',
 	'created' => 'Created',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	]
 ];
