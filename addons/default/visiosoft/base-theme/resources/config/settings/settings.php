@@ -79,7 +79,7 @@ return [
 		'required' => false,
 		'config' => [
 			'default_value' => function () {
-				return [config('visiosoft.theme.base::countries.default')];
+				return config('visiosoft.theme.base::countries.default');
 			},
 			'options' => function () {
 				$array = CountryModel::query()->get()->pluck('name', 'abv')->toArray();
