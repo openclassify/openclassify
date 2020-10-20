@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'فیلتر مکان را مخفی کنید',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Default Country For Register Phone Field'
+	]
 ];
