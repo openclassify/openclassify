@@ -399,10 +399,12 @@ class AdvsController extends PublicController
         }
 
         // Set rel="canonical"
-        $canonParam = $param;
-        unset($canonParam['sort_by'], $canonParam['doping']);
-        $canonUrl = fullLink($canonParam, \request()->url());
-        $this->template->set('additional_meta', "<link rel='canonical' href='$canonUrl'/>");
+        if (array_key_exists('sort_by', $param) || array_key_exists('doping', $param)) {
+            $canonParam = $param;
+            unset($canonParam['sort_by'], $canonParam['doping']);
+            $canonUrl = fullLink($canonParam, \request()->url());
+            $this->template->set('additional_meta', "<link rel='canonical' href='$canonUrl'/>");
+        }
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
