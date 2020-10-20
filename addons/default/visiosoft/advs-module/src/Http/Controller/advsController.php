@@ -672,10 +672,15 @@ class AdvsController extends PublicController
             /*  Update Adv  */
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
+            $allowPendingAdCreation = false;
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
                 $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
                 if (!is_null($cat)) {
-                    return redirect('/');
+                    if (is_array($cat) && array_key_exists('allowPendingAds', $cat)) {
+                        $allowPendingAdCreation = $cat['allowPendingAds'];
+                    } else {
+                        return redirect('/');
+                    }
                 }
             }
 
@@ -730,7 +735,7 @@ class AdvsController extends PublicController
             }
 
             // Auto approve
-            if (setting_value('visiosoft.module.advs::auto_approve')) {
+            if (setting_value('visiosoft.module.advs::auto_approve') && !$allowPendingAdCreation) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
                 $adv->update([
                     'status' => 'approved',
@@ -775,7 +780,11 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
             event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+            if ($allowPendingAdCreation) {
+                return redirect(route("visiosoft.module.packages::buy_package") . '?ad_id=' . $adv->id);
+            } else {
+                return redirect(route('advs_preview', [$request->update_id]));
+            }
         }
 
         /* New Create Adv */
