@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'অবস্থান ফিল্টার লুকান',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Default Country For Register Phone Field'
+	]
 ];
