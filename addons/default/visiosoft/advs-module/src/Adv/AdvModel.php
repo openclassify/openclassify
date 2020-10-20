@@ -377,4 +377,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         return $this->finish_at ? $this->finish_at < Carbon::now() : true;
     }
+
+    public function getProductOptionsValues()
+    {
+    	return $this->product_options_value;
+    }
 }
