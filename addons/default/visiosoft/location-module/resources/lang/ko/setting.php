@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => '위치 필터 숨기기',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Default Country For Register Phone Field'
+	]
 ];
