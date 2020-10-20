@@ -1,31 +1,9 @@
--- phpMyAdmin SQL Dump
--- version 4.8.4
--- https://www.phpmyadmin.net/
---
--- Host: localhost
--- Generation Time: Jan 31, 2019 at 12:17 PM
--- Server version: 10.3.11-MariaDB
--- PHP Version: 7.2.13
-
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `celep`
---
-
---
--- Dumping data for table `default_location_countries`
---
-
+TRUNCATE `default_location_countries`;
 INSERT INTO `default_location_countries` (`id`, `sort_order`, `created_at`, `created_by_id`, `updated_at`, `updated_by_id`, `slug`, `order`) VALUES
 (1, 1, '2019-01-31 10:27:49', NULL, '2019-01-31 10:27:49', NULL, 'afghanistan', NULL),
 (2, 2, '2019-01-31 10:27:49', NULL, '2019-01-31 10:27:49', NULL, 'albania', NULL),
@@ -260,10 +238,7 @@ INSERT INTO `default_location_countries` (`id`, `sort_order`, `created_at`, `cre
 (231, 231, '2019-01-31 10:27:55', NULL, '2019-01-31 10:27:55', NULL, 'zimbabwe', NULL),
 (232, 232, '2019-01-31 10:27:55', NULL, '2019-01-31 10:27:55', NULL, 'kktc', NULL);
 
---
--- Dumping data for table `default_location_countries_translations`
---
-
+TRUNCATE `default_location_countries_translations`;
 INSERT INTO `default_location_countries_translations` (`id`, `entry_id`, `created_at`, `created_by_id`, `updated_at`, `updated_by_id`, `locale`, `name`, `abv`) VALUES
 (1,	1,	'2019-01-31 10:27:49',	NULL,	'2019-01-31 10:27:49',	NULL,	'en',	'Afghanistan',	'AF'),
 (2,	2,	'2019-01-31 10:27:49',	NULL,	'2019-01-31 10:27:49',	NULL,	'en',	'Albania',	'AL'),
@@ -496,9 +471,5 @@ INSERT INTO `default_location_countries_translations` (`id`, `entry_id`, `create
 (229,	229,	'2019-01-31 10:27:55',	NULL,	'2019-01-31 10:27:55',	NULL,	'en',	'Yemen',	'YE'),
 (230,	230,	'2019-01-31 10:27:55',	NULL,	'2019-01-31 10:27:55',	NULL,	'en',	'Zambia',	'ZM'),
 (231,	231,	'2019-01-31 10:27:55',	NULL,	'2019-01-31 10:27:55',	NULL,	'en',	'Zimbabwe',	'ZW'),
-(232,	232,	'2019-01-31 10:27:55',	NULL,	'2019-01-31 10:27:55',	NULL,	'en',	'KKTC',	'ZW');
+(232,	232,	'2019-01-31 10:27:55',	NULL,	'2019-01-31 10:27:55',	NULL,	'en',	'KKTC',	'KKTC');
 COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
