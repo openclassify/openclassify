@@ -41,6 +41,6 @@ return [
         'name' => 'Nënkategoritë e faqes kryesore Kufiri',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Faqja e regjistrimit, vendi i paracaktuar për telefon',
 	]
 ];
