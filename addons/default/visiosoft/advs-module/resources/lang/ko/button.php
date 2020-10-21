@@ -32,5 +32,5 @@ return [
         'name' => '카테고리 업데이트'
     ],
     'new_option' => '새로운 옵션',
-	'export' => 'Export'
+	'export' => '수출'
 ];
