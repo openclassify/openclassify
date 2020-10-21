@@ -41,6 +41,6 @@ return [
         'name' => 'مرکزی صفحہ ذیلی زمرے کی حد',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'صفحہ کیلئے رجسٹر ، فون کے لئے پہلے سے طے شدہ ملک',
 	]
 ];
