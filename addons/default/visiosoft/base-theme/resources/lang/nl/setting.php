@@ -41,6 +41,6 @@ return [
         'name' => 'Limiet subcategorieën op homepage',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Registratiepagina, standaardland voor telefoon',
 	]
 ];
