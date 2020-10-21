@@ -307,14 +307,14 @@ return [
     'and_above' => 'e acima',
     'and_below' => 'e abaixo',
     'clear_all' => 'Limpar tudo',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
+    'balances' => 'Saldos',
+    'packages' => 'Pacotes',
     'dopings' => 'Dopings',
     'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'site' => 'Local',
+    'subscription' => 'Inscrição',
+	'created' => 'Criado',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Preço antigo'
     ],
 ];
