@@ -45,6 +45,6 @@ return [
         'name' => 'Standortfilter ausblenden',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Standardland für das Feld "Telefon registrieren"'
 	]
 ];
