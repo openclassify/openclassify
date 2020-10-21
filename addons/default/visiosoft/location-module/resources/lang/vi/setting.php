@@ -45,6 +45,6 @@ return [
         'name' => 'Ẩn Bộ lọc Vị trí',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Quốc gia mặc định để đăng ký trường điện thoại'
 	]
 ];
