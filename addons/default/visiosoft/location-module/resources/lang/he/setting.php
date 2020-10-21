@@ -45,6 +45,6 @@ return [
         'name' => 'הסתר מסנן מיקום',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'מדינה ברירת מחדל לשדה טלפון רישום'
 	]
 ];
