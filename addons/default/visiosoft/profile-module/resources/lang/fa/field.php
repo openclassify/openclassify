@@ -56,7 +56,7 @@ return [
         'name' => 'نوع ثبت نام'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'روز تولد'
     ],
     'identification_number' => [
         'name' => 'شماره شناسایی'
