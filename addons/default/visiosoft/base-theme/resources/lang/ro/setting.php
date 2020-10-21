@@ -41,6 +41,6 @@ return [
         'name' => 'Limita de subcategorii pentru pagina principală',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Pagina de înregistrare, țara implicită pentru telefon',
 	]
 ];
