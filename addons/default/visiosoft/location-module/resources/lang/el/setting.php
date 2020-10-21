@@ -45,6 +45,6 @@ return [
         'name' => 'Απόκρυψη φίλτρου τοποθεσίας',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Προεπιλεγμένη χώρα για εγγραφή πεδίου τηλεφώνου'
 	]
 ];
