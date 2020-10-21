@@ -56,7 +56,7 @@ return [
         'name' => 'रजिस्टर प्रकार'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'जन्मदिन'
     ],
     'identification_number' => [
         'name' => 'पहचान संख्या'
