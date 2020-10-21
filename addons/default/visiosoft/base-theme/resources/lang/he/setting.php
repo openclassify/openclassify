@@ -41,6 +41,6 @@ return [
         'name' => 'מגבלת קטגוריות המשנה לדף הבית',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'דף הרשמה, ארץ ברירת המחדל לטלפון',
 	]
 ];
