@@ -41,6 +41,6 @@ return [
         'name' => 'ホームページのサブカテゴリの制限',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => '登録ページ、電話のデフォルトの国',
 	]
 ];
