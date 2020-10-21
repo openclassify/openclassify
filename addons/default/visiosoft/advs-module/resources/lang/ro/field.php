@@ -306,14 +306,14 @@ return [
     'and_above' => 'Si mai sus',
     'and_below' => 'si sub',
     'clear_all' => 'Curata tot',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
-    'advs' => 'Advs',
+    'balances' => 'Solduri',
+    'packages' => 'Pachete',
+    'dopings' => 'Dopaje',
+    'advs' => 'Sfaturi',
     'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'subscription' => 'Abonament',
+	'created' => 'Creată',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Preț vechi'
     ],
 ];
