@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Yer filtrini gizlət',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Telefon sahəsi üçün qeydiyyatdan keçmiş ölkə'
+	]
 ];

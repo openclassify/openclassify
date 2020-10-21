@@ -27,9 +27,9 @@ return [
     // Registration instructions
     'personal_registration_header' => 'Bireysel Üyelik Avantajları Nelerdir?',
     'personal_registration_body' => 'Evinizi, arabanızı satmak ve kiralamak, kullanılmayan eşyalarınızı satmak, yenilerini almak.',
-    'personal_registration_list_1' => 'Ücretsiz bir reklam gönderin,',
-    'personal_registration_list_2' => 'İlgilendiğiniz reklamları ekleyin, favorilerinize ekledikten sonra fiyat değişikliklerini takip edin, kriterlerinize uygun favori aramalar oluşturun,',
-    'personal_registration_list_3' => 'Sitedeki reklam sahiplerine mesaj gönderin.',
+    'personal_registration_list_1' => 'Ücretsiz bir İlan gönderin,',
+    'personal_registration_list_2' => 'İlgilendiğiniz ilanları ekleyin, favorilerinize ekledikten sonra fiyat değişikliklerini takip edin, kriterlerinize uygun favori aramalar oluşturun,',
+    'personal_registration_list_3' => 'Sitedeki İlan sahiplerine mesaj gönderin.',
     'register_information_note' => 'Bu sayfadaki bilgiler ' . env('APPLICATION_DOMAIN') . ' üyelik. Kişisel verilerin korunması hakkında ayrıntılı bilgiyi burada bulabilirsiniz.',
 
     // Register page
@@ -45,7 +45,7 @@ return [
 
     // Side menu links
     'company_directory' => 'Firma Rehberi',
-    'popular_ads' => 'popüler reklamlar',
+    'popular_ads' => 'Popüler İlanlar',
     'last_48_hours' => 'son 48 saat',
     'secure_e-commerce_ads' => 'güvenli e-ticaret',
     'sms' => 'Kısa Mesaj Gönder (SMS)',

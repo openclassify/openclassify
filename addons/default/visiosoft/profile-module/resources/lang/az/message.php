@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'Heç bir ünvan və ya görmək icazəsi yoxdur.',
     'empty_password_sms_message' => 'Təhlükəsizlik problemləri ilə əlaqədar olaraq şifrənizi dəyişdirdik! Yeni parolunuz:',
     'required_all' => "Bütün sahə tələb olunur!",
+    'can_not_remove_filled_fields' => "Doldurulmuş sahələri silə bilməzsiniz!",
 
     // Forgot Password
     'email_phone_not_found' => 'Elektron poçt, telefon nömrəsi düzgün deyil!',

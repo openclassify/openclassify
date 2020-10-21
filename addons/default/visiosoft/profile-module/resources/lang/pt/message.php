@@ -31,6 +31,7 @@ return [
     'ajax_address_error' => 'Nenhum endereço ou não está autorizado a visualizar.',
     'empty_password_sms_message' => 'Devido a problemas de segurança, alteramos sua senha! Sua nova senha é:',
     'required_all' => "Todo o campo é obrigatório!",
+    'can_not_remove_filled_fields' => "Você não pode remover os campos preenchidos!",
 
     // Forgot Password
     'email_phone_not_found' => 'O e-mail, número de telefone não está correto!',

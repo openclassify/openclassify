@@ -9,7 +9,7 @@ return [
     ],
     'hide_zero_price' => [
         'name' => 'Sıfır ise Fiyatı Gizle',
-        'instructions' => 'Reklam fiyatı 0 ise fiyatı gizle',
+        'instructions' => 'İlan fiyatı 0 ise fiyatı gizle',
     ],
     'estimated_pending_time' => [
         'name' => 'Tahmini Bekleme Süresi',
@@ -129,7 +129,7 @@ return [
         'name' => 'TCMB Exchange URL\'si',
     ],
     'popular_ads_limit' => [
-        'name' => 'Popüler Reklam Limiti',
+        'name' => 'Popüler İlan Limiti',
     ],
 
     //Image

@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'Limita de subcategorii pentru pagina principală',
     ],
+	'default_country' => [
+		'name' => 'Pagina de înregistrare, țara implicită pentru telefon',
+	]
 ];

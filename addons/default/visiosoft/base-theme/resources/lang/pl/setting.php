@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'Limit podkategorii strony głównej',
     ],
+	'default_country' => [
+		'name' => 'Strona rejestracji, domyślny kraj dla telefonu',
+	]
 ];

@@ -306,4 +306,14 @@ return [
     'and_above' => 'و بالاتر',
     'and_below' => 'و در زیر',
     'clear_all' => 'همه را پاک کن',
+    'balances' => 'موازنه',
+    'packages' => 'بسته ها',
+    'dopings' => 'دوپینگ',
+    'advs' => 'تبلیغات',
+    'site' => 'سایت',
+    'subscription' => 'اشتراک، ابونمان',
+	'created' => 'ایجاد شده',
+    'old_price' => [
+        'name' => 'قیمت قدیمی'
+    ],
 ];

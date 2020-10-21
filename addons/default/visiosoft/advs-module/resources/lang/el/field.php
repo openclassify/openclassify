@@ -307,4 +307,14 @@ return [
     'and_above' => 'και παραπανω',
     'and_below' => 'και παρακάτω',
     'clear_all' => 'Τα καθαρίζω όλα',
+    'balances' => 'Υπόλοιπα',
+    'packages' => 'Πακέτα',
+    'dopings' => 'Ντόπινγκ',
+    'advs' => 'Advs',
+    'site' => 'Ιστοσελίδα',
+    'subscription' => 'Συνδρομή',
+	'created' => 'Δημιουργήθηκε',
+    'old_price' => [
+        'name' => 'Παλιά τιμή'
+    ],
 ];
