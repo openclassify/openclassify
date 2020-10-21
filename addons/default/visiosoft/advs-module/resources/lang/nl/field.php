@@ -307,14 +307,14 @@ return [
     'and_above' => 'en hoger',
     'and_below' => 'en onder',
     'clear_all' => 'Wis alles',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
+    'balances' => 'Weegschalen',
+    'packages' => 'Pakketjes',
     'dopings' => 'Dopings',
     'advs' => 'Advs',
     'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'subscription' => 'Abonnement',
+	'created' => 'Gemaakt',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Oude prijs'
     ],
 ];
