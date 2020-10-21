@@ -667,8 +667,7 @@ class AdvsController extends PublicController
         CategoryRepositoryInterface $categoryRepository,
         Dispatcher $events,
         AdvModel $advModel,
-        AdressRepositoryInterface $address,
-        CategoryModel $categoryModel
+        AdressRepositoryInterface $address
     )
     {
         if (!Auth::user()) {
@@ -693,10 +692,10 @@ class AdvsController extends PublicController
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
                 $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
                 if (!is_null($cat)) {
-                    if (is_array($cat) && array_key_exists('allowPendingAds', $cat)) {
+                    if (array_key_exists('allowPendingAds', $cat)) {
                         $allowPendingAdCreation = $cat['allowPendingAds'];
                     } else {
-                        return redirect('/');
+                        return redirect($cat['redirect']);
                     }
                 }
             }
