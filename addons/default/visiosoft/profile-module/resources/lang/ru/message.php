@@ -31,6 +31,7 @@ return [
     'ajax_address_error' => 'Нет адреса или не авторизован для просмотра.',
     'empty_password_sms_message' => 'Из-за проблем безопасности мы изменили ваш пароль! Ваш новый пароль:',
     'required_all' => "Все поля обязательны для заполнения!",
+    'can_not_remove_filled_fields' => "You can not remove filled fields!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mail, номер телефона неверен!',
