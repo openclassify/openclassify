@@ -45,6 +45,6 @@ return [
         'name' => 'Fshih Filtrin e Vendndodhjes',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Vendi i paracaktuar për fushën e regjistrimit të telefonit'
 	]
 ];
