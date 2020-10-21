@@ -313,4 +313,7 @@ return [
     'site' => 'الموقع',
     'subscription' => 'اشتراك',
 	'created' => 'Created',
+    'old_price' => [
+        'name' => 'Old Price'
+    ],
 ];
