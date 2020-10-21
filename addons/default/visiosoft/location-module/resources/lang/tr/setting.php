@@ -17,7 +17,7 @@ return [
         'name' => 'Varsayılan Ülke',
     ],
     'create_ad_page_location' => [
-        'name' => 'Reklam Sayfası Konumu Oluşturun',
+        'name' => 'İlan Sayfası Konumu Oluşturun',
     ],
     'default_city' => [
         'name' => 'Varsayılan İl',
@@ -45,6 +45,6 @@ return [
         'name' => 'Konum Filtresini Gizle',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Kayıtlı Telefon Alanı İçin Varsayılan Ülke'
 	]
 ];
