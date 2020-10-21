@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "E-posta adresinize yeni bir şifre gönderildi.",
     "success" => "İşlem Başarılı",
     "notified_new_updates" => "Yeni güncellemelerden haberdar olmak istiyorum",
-    "notified_about_ads" => "Reklamlarım hakkında bildirimlere izin ver",
+    "notified_about_ads" => "İlanlarım hakkında bildirimlere izin ver",
     "receive_messages_email" => "Mesajları e-posta olarak almak istiyorum",
     "no_packages_module" => "Paket Modülü Bulunamadı!",
     "required_add"=> "Lütfen gerekli tüm satırları doldurun.",
@@ -28,7 +28,7 @@ return [
     'ajax_address_error' => 'Adres yok veya görüntüleme yetkiniz bulunmamaktadır.',
     'empty_password_sms_message' => 'Güvenlik sorunları nedeniyle şifrenizi değiştirdik! Yeni parolanız:',
     'required_all' => "Tüm Alanlar Zorunludur!",
-    'can_not_remove_filled_fields' => "You can not remove filled fields!",
+    'can_not_remove_filled_fields' => "Doldurulmuş alanları kaldıramazsınız!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-posta, Telefon Numarası doğru değil!',
