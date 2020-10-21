@@ -398,6 +398,14 @@ class AdvsController extends PublicController
             $this->template->set('meta_title', $user->name() . ' ' . trans('visiosoft.module.advs::field.ads'));
         }
 
+        // Set rel="canonical"
+        if (array_key_exists('sort_by', $param) || array_key_exists('doping', $param)) {
+            $canonParam = $param;
+            unset($canonParam['sort_by'], $canonParam['doping']);
+            $canonUrl = fullLink($canonParam, \request()->url());
+            $this->template->set('additional_meta', "<link rel='canonical' href='$canonUrl'/>");
+        }
+
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
             'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
@@ -500,7 +508,14 @@ class AdvsController extends PublicController
                     $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
                 }
             }
-            $this->template->set('meta_image', $coverPhoto);
+            $coverPhotoInfo = pathinfo($coverPhoto);
+            if (substr($coverPhotoInfo['basename'], 0, 3) === "tn-") {
+                $ogImage = substr(basename($coverPhotoInfo['basename']), 3);
+                $ogImage = $coverPhotoInfo['dirname'] . "/$ogImage";
+            } else {
+                $ogImage = $coverPhoto;
+            }
+            $this->template->set('meta_image', $ogImage);
 
             if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
@@ -659,10 +674,15 @@ class AdvsController extends PublicController
             /*  Update Adv  */
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
+            $allowPendingAdCreation = false;
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
                 $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
                 if (!is_null($cat)) {
-                    return redirect('/');
+                    if (is_array($cat) && array_key_exists('allowPendingAds', $cat)) {
+                        $allowPendingAdCreation = $cat['allowPendingAds'];
+                    } else {
+                        return redirect('/');
+                    }
                 }
             }
 
@@ -717,7 +737,7 @@ class AdvsController extends PublicController
             }
 
             // Auto approve
-            if (setting_value('visiosoft.module.advs::auto_approve')) {
+            if (setting_value('visiosoft.module.advs::auto_approve') && !$allowPendingAdCreation) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
                 $adv->update([
                     'status' => 'approved',
@@ -762,7 +782,11 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
             event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+            if ($allowPendingAdCreation) {
+                return redirect(route("visiosoft.module.packages::buy_package") . '?ad_id=' . $adv->id);
+            } else {
+                return redirect(route('advs_preview', [$request->update_id]));
+            }
         }
 
         /* New Create Adv */

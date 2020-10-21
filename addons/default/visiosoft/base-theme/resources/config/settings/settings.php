@@ -71,20 +71,4 @@ return [
     'style' => [
         'type' => 'anomaly.field_type.editor',
     ],
-
-	'default_country' => [
-		'bind' => 'visiosoft.theme.base::countries.enabled',
-		'env' => 'ADV_ENABLED_COUNTRIES',
-		'type' => 'anomaly.field_type.select',
-		'required' => false,
-		'config' => [
-			'default_value' => function () {
-				return config('visiosoft.theme.base::countries.default');
-			},
-			'options' => function () {
-				$array = CountryModel::query()->get()->pluck('name', 'abv')->toArray();
-				return $array;
-			},
-		],
-	],
 ];
