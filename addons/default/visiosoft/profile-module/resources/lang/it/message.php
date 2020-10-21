@@ -29,6 +29,7 @@ return [
     'ajax_address_error' => 'Nessun indirizzo o non autorizzato a visualizzare.',
     'empty_password_sms_message' => 'Per problemi di sicurezza, abbiamo cambiato la tua password! La tua nuova password è:',
     'required_all' => "Tutti i campi sono obbligatori!",
+    'can_not_remove_filled_fields' => "You can not remove filled fields!",
 
     // Forgot Password
     'email_phone_not_found' => 'L\'e-mail, il numero di telefono non è corretto!',
