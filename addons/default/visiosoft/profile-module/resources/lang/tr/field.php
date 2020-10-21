@@ -56,7 +56,7 @@ return [
         'name' => 'Üyelik Tipi'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Doğum günü'
     ],
     'identification_number' => [
         'name' => 'Kimlik Numarası'
