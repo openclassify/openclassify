@@ -28,7 +28,7 @@ return [
     'ajax_address_error' => 'Brak adresu lub brak uprawnień do przeglądania.',
     'empty_password_sms_message' => 'Ze względów bezpieczeństwa zmieniliśmy twoje hasło! Twoje nowe hasło to:',
     'required_all' => "Wszystkie pola są wymagane!",
-    'can_not_remove_filled_fields' => "You can not remove filled fields!",
+    'can_not_remove_filled_fields' => "Nie możesz usunąć wypełnionych pól!",
 
     // Forgot Password
     'email_phone_not_found' => 'Adres e-mail, numer telefonu jest nieprawidłowy!',
