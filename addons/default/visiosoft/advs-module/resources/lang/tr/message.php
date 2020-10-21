@@ -23,6 +23,6 @@ return [
     'choose_user' => 'Bir kullanıcı seçin',
     'owner_updated_successfully' => 'Sahibi Başarıyla Güncellenmiştir!',
     'no_add_found' => 'İlan Bulunamadı!',
-    'replicated_success' => 'Reklam başarıyla kopyalandı!',
-    'ad_doesnt_exist' => "Bu reklam mevcut değil!",
+    'replicated_success' => 'İlan başarıyla kopyalandı!',
+    'ad_doesnt_exist' => "Bu İlan mevcut değil!",
 ];
