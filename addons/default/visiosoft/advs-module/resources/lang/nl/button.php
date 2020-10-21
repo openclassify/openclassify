@@ -32,5 +32,5 @@ return [
         'name' => 'Categorie bijwerken'
     ],
     'new_option' => 'Nieuwe optie',
-	'export' => 'Export'
+	'export' => 'Exporteren'
 ];
