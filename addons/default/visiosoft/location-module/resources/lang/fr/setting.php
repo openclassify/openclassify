@@ -45,6 +45,6 @@ return [
         'name' => 'Masquer le filtre de localisation',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Pays par défaut pour le champ de téléphone d\'enregistrement'
 	]
 ];
