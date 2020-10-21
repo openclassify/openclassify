@@ -150,7 +150,7 @@ return [
     'search_desc' => 'Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.',
     'complaint_placeholder' => 'Şikayet ayrıntılarınızı buraya yazın.',
     'show_details' => 'Detayları göster',
-    'ad_actions' => 'Reklam İşlemleri',
+    'ad_actions' => 'İlan İşlemleri',
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
     'passive' => "Pasif",
@@ -275,11 +275,11 @@ return [
     "were_found" => 'bulundular.',
 
     // Pending screen
-    'pending_message_1' => 'Reklam Onay Sürecinde',
-    'pending_message_2' => "Reklamın Güncelleme Tarihi",
+    'pending_message_1' => 'İlan Onay Sürecinde',
+    'pending_message_2' => "İlan Güncelleme Tarihi",
     'pending_message_3' => 'Tahmini Bekleme Süresi',
     'pending_message_4' => 'Onay sürecinde geçirilen süre doping zamanına eklenecektir.',
-    'pending_message_5' => 'Onay sürecinde reklamla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
+    'pending_message_5' => 'Onay sürecinde ilanla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
     'hours' => 'saatler',
 
     // Preview page
@@ -308,14 +308,14 @@ return [
     'and_above' => 've yukarıda',
     'and_below' => 've aşağıda',
     'clear_all' => 'Hepsini temizle',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
+    'balances' => 'Bakiyeler',
+    'packages' => 'Paketler',
+    'dopings' => 'Dopingler',
     'advs' => 'Advs',
     'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'subscription' => 'Abonelik',
+	'created' => 'Oluşturuldu',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Eski fiyat'
     ],
 ];
