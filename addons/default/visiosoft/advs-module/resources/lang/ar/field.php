@@ -312,8 +312,8 @@ return [
     'advs' => 'Advs',
     'site' => 'الموقع',
     'subscription' => 'اشتراك',
-	'created' => 'Created',
+	'created' => 'خلقت',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'سعر قديم'
     ],
 ];
