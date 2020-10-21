@@ -41,6 +41,6 @@ return [
         'name' => 'হোমপেজ সাব বিভাগের সীমা',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'ফোনের জন্য পৃষ্ঠা, ডিফল্ট দেশ নিবন্ধ করুন',
 	]
 ];
