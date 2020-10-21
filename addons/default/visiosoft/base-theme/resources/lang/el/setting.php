@@ -41,6 +41,6 @@ return [
         'name' => 'Όριο υποκατηγοριών αρχικής σελίδας',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Σελίδα εγγραφής, προεπιλεγμένη χώρα για τηλέφωνο',
 	]
 ];
