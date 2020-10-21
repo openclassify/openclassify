@@ -41,6 +41,6 @@ return [
         'name' => 'Əsas alt kateqoriyalar məhdudiyyəti',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Qeydiyyat səhifəsi, telefon üçün standart ölkə',
 	]
 ];
