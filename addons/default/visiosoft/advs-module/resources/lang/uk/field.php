@@ -306,14 +306,14 @@ return [
     'and_above' => 'і вище',
     'and_below' => 'і нижче',
     'clear_all' => 'Очистити все',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
+    'balances' => 'Баланси',
+    'packages' => 'Пакети',
+    'dopings' => 'Допінг',
     'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'site' => 'Сайт',
+    'subscription' => 'Передплата',
+	'created' => 'Створено',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Стара ціна'
     ],
 ];
