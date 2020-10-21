@@ -306,14 +306,14 @@ return [
     'and_above' => 'এবং উপরে',
     'and_below' => 'এবং নিচে',
     'clear_all' => 'সব পরিষ্কার করে দাও',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
-    'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'balances' => 'ব্যালেন্স',
+    'packages' => 'প্যাকেজগুলি',
+    'dopings' => 'ডোপিংস',
+    'advs' => 'অ্যাড',
+    'site' => 'সাইট',
+    'subscription' => 'সাবস্ক্রিপশন',
+	'created' => 'তৈরি হয়েছে',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'পুরাতন মূল্য'
     ],
 ];
