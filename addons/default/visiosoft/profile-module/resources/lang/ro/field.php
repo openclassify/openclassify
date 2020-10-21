@@ -56,7 +56,7 @@ return [
         'name' => 'Tip de înregistrare'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Zi de nastere'
     ],
     'identification_number' => [
         'name' => 'Numar de identificare'
