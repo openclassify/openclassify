@@ -28,7 +28,7 @@ return [
     'ajax_address_error' => '住所がないか、表示する権限がありません。',
     'empty_password_sms_message' => 'セキュリティ上の問題により、パスワードを変更しました！新しいパスワードは：',
     'required_all' => "すべてのフィールドが必要です！",
-    'can_not_remove_filled_fields' => "You can not remove filled fields!",
+    'can_not_remove_filled_fields' => "塗りつぶされたフィールドは削除できません！",
 
     // Forgot Password
     'email_phone_not_found' => 'メール、電話番号が違います！',
