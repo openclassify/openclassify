@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'אין כתובת או לא מורשה להציג.',
     'empty_password_sms_message' => 'בגלל בעיות אבטחה, שינינו את הסיסמא שלך! הסיסמה החדשה שלך היא:',
     'required_all' => "כל השדה נדרש!",
+    'can_not_remove_filled_fields' => "You can not remove filled fields!",
 
     // Forgot Password
     'email_phone_not_found' => 'הדואר האלקטרוני, מספר הטלפון אינו תקין!',
