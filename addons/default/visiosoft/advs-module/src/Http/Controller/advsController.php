@@ -254,15 +254,6 @@ class AdvsController extends PublicController
 
 
         if ($categoryId) {
-            $seo_keywords = $this->category_model->getMeta_keywords($categoryId->id);
-            $seo_description = $this->category_model->getMeta_description($categoryId->id);
-            $seo_title = $this->category_model->getMeta_title($categoryId->id);
-
-            $this->template->set('og_description', $seo_description);
-            $this->template->set('meta_description', $seo_description);
-            $this->template->set('meta_title', $seo_title);
-            $this->template->set('meta_keywords', implode(', ', $seo_keywords));
-
             $mainCats = $this->category_model->getMains($categoryId->id);
             $current_cat = $this->category_model->getCat($categoryId->id);
             $mainCats[] = [
@@ -369,13 +360,36 @@ class AdvsController extends PublicController
 
         $viewType = $this->requestHttp->cookie('viewType');
 
-        $catText = '';
-        if (!$allCats) {
-            if (count($mainCats) == 1 || count($mainCats) == 2) {
+        list('catText' => $catText, 'user' => $user) = $this->handleSeo($categoryId, $mainCats, $cityId);
+
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
+            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
+            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
+
+        return $this->viewTypeBasedRedirect($viewType, $compact);
+    }
+
+    private function handleSeo($category, $mainCats, $city)
+    {
+        $showTitle = true;
+        $metaTitle = '';
+
+        if ($category) {
+            $seo_keywords = $this->category_model->getMeta_keywords($category->id);
+            $seo_description = $this->category_model->getMeta_description($category->id);
+            $seo_title = $this->category_model->getMeta_title($category->id);
+
+            $this->template->set('og_description', $seo_description);
+            $this->template->set('meta_description', $seo_description);
+            $this->template->set('meta_keywords', implode(', ', $seo_keywords));
+
+            $catText = '';
+            if ($city) {
+                $catText = "$city->name $catText";
+            } elseif (count($mainCats) == 1 || count($mainCats) == 2) {
                 $catText = end($mainCats)['val'];
             } elseif (count($mainCats) > 2) {
                 $catArray = array_slice($mainCats, 2);
-                $catText = '';
                 $loop = 0;
                 foreach ($catArray as $cat) {
                     $catText = !$loop ? $catText . $cat['val'] : $catText . ' ' . $cat['val'];
@@ -383,34 +397,29 @@ class AdvsController extends PublicController
                 }
             }
 
-            if ($cityId) {
-                $catText = "$cityId->name $catText";
-            }
-
-            $this->template->set('showTitle', false);
-            $this->template->set('meta_title', $catText);
+            $showTitle = false;
+            $metaTitle = $catText ?: $seo_title;
         }
 
         $user = null;
-        if (!empty($param['user'])) {
-            $user = $this->userRepository->find($param['user']);
-            $this->template->set('showTitle', false);
-            $this->template->set('meta_title', $user->name() . ' ' . trans('visiosoft.module.advs::field.ads'));
+        if (\request()->user) {
+            $user = $this->userRepository->find(\request()->user);
+            $showTitle = false;
+            $metaTitle = $user->name() . ' ' . trans('visiosoft.module.advs::field.ads');
         }
 
+        $this->template->set('showTitle', $showTitle);
+        $this->template->set('meta_title', $metaTitle);
+
         // Set rel="canonical"
-        if (array_key_exists('sort_by', $param) || array_key_exists('doping', $param)) {
-            $canonParam = $param;
+        if (\request()->sort_by || \request()->doping) {
+            $canonParam = \request()->all();
             unset($canonParam['sort_by'], $canonParam['doping']);
             $canonUrl = fullLink($canonParam, \request()->url());
             $this->template->set('additional_meta', "<link rel='canonical' href='$canonUrl'/>");
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
-
-        return $this->viewTypeBasedRedirect($viewType, $compact);
+        return compact('catText', 'user');
     }
 
     public function viewTypeBasedRedirect($viewType, $compact)
