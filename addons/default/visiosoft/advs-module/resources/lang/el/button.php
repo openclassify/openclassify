@@ -32,5 +32,5 @@ return [
         'name' => 'Ενημέρωση κατηγορίας'
     ],
     'new_option' => 'Νέα επιλογή',
-	'export' => 'Export'
+	'export' => 'Εξαγωγή'
 ];
