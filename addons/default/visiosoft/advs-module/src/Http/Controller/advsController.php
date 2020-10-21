@@ -373,6 +373,7 @@ class AdvsController extends PublicController
     {
         $showTitle = true;
         $metaTitle = '';
+        $catText = '';
 
         if ($category) {
             $seo_keywords = $this->category_model->getMeta_keywords($category->id);
@@ -383,7 +384,6 @@ class AdvsController extends PublicController
             $this->template->set('meta_description', $seo_description);
             $this->template->set('meta_keywords', implode(', ', $seo_keywords));
 
-            $catText = '';
             if ($city) {
                 $catText = "$city->name $catText";
             } elseif (count($mainCats) == 1 || count($mainCats) == 2) {
