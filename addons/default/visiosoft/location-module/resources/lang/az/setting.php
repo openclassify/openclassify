@@ -45,6 +45,6 @@ return [
         'name' => 'Yer filtrini gizlət',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Telefon sahəsi üçün qeydiyyatdan keçmiş ölkə'
 	]
 ];
