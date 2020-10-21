@@ -45,6 +45,6 @@ return [
         'name' => '場所フィルターを非表示',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => '電話登録フィールドのデフォルトの国'
 	]
 ];
