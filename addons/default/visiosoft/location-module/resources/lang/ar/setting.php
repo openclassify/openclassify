@@ -45,6 +45,6 @@ return [
         'name' => 'إخفاء عامل تصفية الموقع',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'البلد الافتراضي لتسجيل حقل الهاتف'
 	]
 ];
