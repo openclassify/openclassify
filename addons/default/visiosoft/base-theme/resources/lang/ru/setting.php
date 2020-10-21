@@ -41,6 +41,6 @@ return [
         'name' => 'Ограничение подкатегорий домашней страницы',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Страница регистрации, страна по умолчанию для телефона',
 	]
 ];
