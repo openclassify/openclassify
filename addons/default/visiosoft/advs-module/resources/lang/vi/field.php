@@ -306,14 +306,14 @@ return [
     'and_above' => 'trở lên',
     'and_below' => 'và dưới đây',
     'clear_all' => 'Làm sạch tất cả',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
-    'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'balances' => 'Cân bằng',
+    'packages' => 'Các gói',
+    'dopings' => 'Liều lượng',
+    'advs' => 'Lời khuyên',
+    'site' => 'Địa điểm',
+    'subscription' => 'Đăng ký',
+	'created' => 'Tạo',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Giá cũ'
     ],
 ];
