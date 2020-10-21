@@ -41,6 +41,6 @@ return [
         'name' => 'حد الفئات الفرعية للصفحة الرئيسية',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'صفحة التسجيل ، البلد الافتراضي للهاتف',
 	]
 ];
