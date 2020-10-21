@@ -306,14 +306,14 @@ return [
     'and_above' => 'və yuxarıda',
     'and_below' => 'və aşağıda',
     'clear_all' => 'Hamısını sil, hamısını təmizlə',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
+    'balances' => 'Qalıqlar',
+    'packages' => 'Paketlər',
+    'dopings' => 'Dopinqlər',
     'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'site' => 'Sayt',
+    'subscription' => 'Abunə',
+	'created' => 'Yarandı',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Köhnə Qiymət'
     ],
 ];
