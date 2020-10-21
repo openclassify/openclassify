@@ -32,5 +32,5 @@ return [
         'name' => 'আপডেট বিভাগ'
     ],
     'new_option' => 'নতুন বিকল্প',
-	'export' => 'Export'
+	'export' => 'রফতানি'
 ];
