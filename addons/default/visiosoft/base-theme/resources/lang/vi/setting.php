@@ -41,6 +41,6 @@ return [
         'name' => 'Giới hạn danh mục phụ của trang chủ',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Trang đăng ký, quốc gia mặc định cho điện thoại',
 	]
 ];
