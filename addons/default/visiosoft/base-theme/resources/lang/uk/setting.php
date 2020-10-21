@@ -41,6 +41,6 @@ return [
         'name' => 'Підкатегорії домашньої сторінки Обмеження',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Сторінка реєстрації, країна за замовчуванням для телефону',
 	]
 ];
