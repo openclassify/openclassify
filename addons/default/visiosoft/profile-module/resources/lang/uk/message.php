@@ -28,7 +28,7 @@ return [
     'ajax_address_error' => 'Немає адреси або не має права перегляду.',
     'empty_password_sms_message' => 'Через проблеми безпеки ми змінили ваш пароль! Ваш новий пароль:',
     'required_all' => "Поле обов'язкове!",
-    'can_not_remove_filled_fields' => "You can not remove filled fields!",
+    'can_not_remove_filled_fields' => "Ви не можете видалити заповнені поля!",
 
     // Forgot Password
     'email_phone_not_found' => 'Неправильний електронний лист, номер телефону!',
