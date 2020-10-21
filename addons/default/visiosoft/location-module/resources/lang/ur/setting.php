@@ -45,6 +45,6 @@ return [
         'name' => 'لوکیشن فلٹر چھپائیں',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'ڈیفالٹ کنٹری برائے رجسٹر فون فیلڈ'
 	]
 ];
