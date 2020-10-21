@@ -315,4 +315,7 @@ return [
     'site' => 'Site',
     'subscription' => 'Subscription',
 	'created' => 'Created',
+    'old_price' => [
+        'name' => 'Old Price'
+    ],
 ];
