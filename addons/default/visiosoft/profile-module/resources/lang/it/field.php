@@ -56,7 +56,7 @@ return [
         'name' => 'Tipo di registro'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Compleanno'
     ],
     'identification_number' => [
         'name' => 'Numero identificativo'
