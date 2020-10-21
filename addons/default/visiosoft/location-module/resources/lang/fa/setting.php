@@ -45,6 +45,6 @@ return [
         'name' => 'فیلتر مکان را مخفی کنید',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'کشور پیش فرض برای ثبت نام قسمت تلفن'
 	]
 ];
