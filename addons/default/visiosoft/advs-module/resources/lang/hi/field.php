@@ -306,14 +306,14 @@ return [
     'and_above' => 'और ऊपर',
     'and_below' => 'और नीचे',
     'clear_all' => 'सभी साफ करें',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
-    'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'balances' => 'शेष',
+    'packages' => 'संकुल',
+    'dopings' => 'dopings',
+    'advs' => 'advs',
+    'site' => 'साइट',
+    'subscription' => 'अंशदान',
+	'created' => 'बनाया था',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'पुरानी कीमत'
     ],
 ];
