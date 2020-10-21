@@ -45,6 +45,6 @@ return [
         'name' => 'Сховати фільтр місцеположення',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Країна за замовчуванням для телефонного поля реєстрації'
 	]
 ];
