@@ -41,6 +41,6 @@ return [
         'name' => 'मुखपृष्ठ उप श्रेणियाँ श्रेणियाँ सीमा',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'रजिस्टर पेज, फोन के लिए डिफ़ॉल्ट देश',
 	]
 ];
