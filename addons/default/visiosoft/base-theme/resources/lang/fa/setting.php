@@ -41,6 +41,6 @@ return [
         'name' => 'زیرمجموعه ها',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'صفحه ثبت نام ، کشور پیش فرض تلفن',
 	]
 ];
