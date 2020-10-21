@@ -29,6 +29,7 @@ return [
     'ajax_address_error' => 'Καμία διεύθυνση ή μη εξουσιοδοτημένη προβολή.',
     'empty_password_sms_message' => 'Λόγω προβλημάτων ασφαλείας, αλλάξαμε τον κωδικό πρόσβασής σας! Ο νέος κωδικός πρόσβασής σας είναι:',
     'required_all' => "Απαιτείται όλο το πεδίο!",
+    'can_not_remove_filled_fields' => "You can not remove filled fields!",
 
     // Forgot Password
     'email_phone_not_found' => 'Το E-mail, ο αριθμός τηλεφώνου δεν είναι σωστός!',
