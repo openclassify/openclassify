@@ -56,7 +56,7 @@ return [
         'name' => 'Đăng ký loại'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Sinh nhật'
     ],
     'identification_number' => [
         'name' => 'Mã số'
