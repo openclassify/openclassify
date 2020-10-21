@@ -1,6 +1,7 @@
 function phoneMask(fields) {
-    var country = document.getElementById('country')
-        ? document.getElementById('country').innerText : null;
+    var country = document.getElementById('default-phone-country')
+        ? document.getElementById('default-phone-country').innerText : null;
+    alert(country)
     var inputQueries = document.querySelectorAll(fields);
     inputQueries.forEach(function (inputQuery, key) {
         var iti = intlTelInput(inputQuery, {
