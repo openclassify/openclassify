@@ -41,6 +41,6 @@ return [
         'name' => 'Homepage Unterkategorien Limit',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Registrierungsseite, Standardland für Telefon',
 	]
 ];
