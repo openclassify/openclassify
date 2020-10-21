@@ -45,6 +45,6 @@ return [
         'name' => 'Nascondi filtro posizione',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Paese predefinito per il campo del telefono di registrazione'
 	]
 ];
