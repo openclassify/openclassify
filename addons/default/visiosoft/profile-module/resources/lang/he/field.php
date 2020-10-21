@@ -56,7 +56,7 @@ return [
         'name' => 'סוג הרשמה'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'יום הולדת'
     ],
     'identification_number' => [
         'name' => 'מספר זיהוי'
