@@ -32,4 +32,5 @@ return [
         'name' => 'Kategorie aktualisieren'
     ],
     'new_option' => 'Neue Option',
+	'export' => 'Export'
 ];

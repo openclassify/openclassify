@@ -307,4 +307,14 @@ return [
     'and_above' => 'dhe më lart',
     'and_below' => 'dhe më poshtë',
     'clear_all' => 'Pastroji të gjitha',
+    'balances' => 'Bilancet',
+    'packages' => 'Paketat',
+    'dopings' => 'Dopingët',
+    'advs' => 'Adv',
+    'site' => 'Faqen',
+    'subscription' => 'Abonim',
+	'created' => 'Krijuar',
+    'old_price' => [
+        'name' => 'Çmimi i Vjetër'
+    ],
 ];

@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Dölj platsfilter',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Standardland för att registrera telefonfält'
+	]
 ];

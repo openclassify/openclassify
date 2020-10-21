@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'Nënkategoritë e faqes kryesore Kufiri',
     ],
+	'default_country' => [
+		'name' => 'Faqja e regjistrimit, vendi i paracaktuar për telefon',
+	]
 ];

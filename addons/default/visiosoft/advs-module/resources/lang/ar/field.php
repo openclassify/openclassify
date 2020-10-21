@@ -306,4 +306,14 @@ return [
     'and_above' => 'و ما فوق',
     'and_below' => 'و تحت',
     'clear_all' => 'امسح الكل',
+    'balances' => 'الرصيد',
+    'packages' => 'الحزمة',
+    'dopings' => 'المنشطات',
+    'advs' => 'Advs',
+    'site' => 'الموقع',
+    'subscription' => 'اشتراك',
+	'created' => 'خلقت',
+    'old_price' => [
+        'name' => 'سعر قديم'
+    ],
 ];

@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'Type register'
     ],
+    'birthday' => [
+        'name' => 'Verjaardag'
+    ],
     'identification_number' => [
         'name' => 'Identificatie Nummer'
     ],

@@ -683,6 +683,12 @@ class AdvsController extends PublicController
             /*  Update Adv  */
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
+
+            //Set Old Price
+            $old_price = ($adv->slug == "") ? $request->price : $adv->price;
+            $adv->old_price = $old_price;
+
+
             $allowPendingAdCreation = false;
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
                 $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);

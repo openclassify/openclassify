@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => '場所フィルターを非表示',
     ],
+	'country_for_phone_field' => [
+		'name' => '電話登録フィールドのデフォルトの国'
+	]
 ];

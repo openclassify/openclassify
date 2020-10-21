@@ -306,4 +306,14 @@ return [
     'and_above' => '이상',
     'and_below' => '이하',
     'clear_all' => '모두 지우기',
+    'balances' => '균형',
+    'packages' => '패키지',
+    'dopings' => '도핑',
+    'advs' => 'Advs',
+    'site' => '대지',
+    'subscription' => '신청',
+	'created' => '만들어진',
+    'old_price' => [
+        'name' => '이전 가격'
+    ],
 ];
