@@ -56,7 +56,7 @@ return [
         'name' => 'Tipi i regjistrimit'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Ditëlindja'
     ],
     'identification_number' => [
         'name' => 'Numrin e identifikimit'
