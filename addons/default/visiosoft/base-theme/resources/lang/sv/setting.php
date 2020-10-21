@@ -41,6 +41,6 @@ return [
         'name' => 'Hemsida Underkategorier Begränsning',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Registrera sida, standardland för telefon',
 	]
 ];
