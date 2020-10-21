@@ -45,6 +45,6 @@ return [
         'name' => 'Ascundeți filtrul de locație',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Țara implicită pentru câmpul de telefon al înregistrării'
 	]
 ];
