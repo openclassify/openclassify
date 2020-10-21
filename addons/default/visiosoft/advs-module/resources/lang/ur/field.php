@@ -306,14 +306,14 @@ return [
     'and_above' => 'اور اوپر',
     'and_below' => 'اور نیچے',
     'clear_all' => 'تمام کو صاف کریں',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
-    'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'balances' => 'توازن',
+    'packages' => 'پیکیجز',
+    'dopings' => 'ڈوپنگز',
+    'advs' => 'ایڈز',
+    'site' => 'سائٹ',
+    'subscription' => 'سب سکریپشن',
+	'created' => 'بنائی گئی',
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'پرانی قیمت'
     ],
 ];
