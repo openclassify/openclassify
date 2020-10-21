@@ -32,5 +32,5 @@ return [
         'name' => 'अद्यतन श्रेणी'
     ],
     'new_option' => 'नया विकल्प',
-	'export' => 'Export'
+	'export' => 'निर्यात'
 ];
