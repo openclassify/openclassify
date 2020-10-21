@@ -45,6 +45,6 @@ return [
         'name' => '위치 필터 숨기기',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => '전화 번호 등록 필드의 기본 국가'
 	]
 ];
