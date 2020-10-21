@@ -32,5 +32,5 @@ return [
         'name' => 'تحديث الفئة'
     ],
     'new_option' => 'خيار جديد',
-	'export' => 'Export'
+	'export' => 'تصدير'
 ];
