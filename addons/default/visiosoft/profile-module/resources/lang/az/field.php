@@ -56,7 +56,7 @@ return [
         'name' => 'Qeyd Növü'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Ad günü'
     ],
     'identification_number' => [
         'name' => 'İdentifikasiya nömrəsi'
