@@ -56,7 +56,7 @@ return [
         'name' => 'Τύπος μητρώου'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Γενέθλια'
     ],
     'identification_number' => [
         'name' => 'Αριθμός αναγνώρισης'
