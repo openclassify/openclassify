@@ -45,6 +45,6 @@ return [
         'name' => 'Dölj platsfilter',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Standardland för att registrera telefonfält'
 	]
 ];
