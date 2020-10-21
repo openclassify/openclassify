@@ -32,5 +32,5 @@ return [
         'name' => 'رده به روزرسانی'
     ],
     'new_option' => 'گزینه جدید',
-	'export' => 'Export'
+	'export' => 'صادرات'
 ];
