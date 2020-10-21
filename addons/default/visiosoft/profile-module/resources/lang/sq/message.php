@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'Asnjë adresë ose jo e autorizuar për të parë.',
     'empty_password_sms_message' => 'Për shkak të çështjeve të sigurisë, ne ndryshuam fjalëkalimin tuaj! Fjalëkalimi juaj i ri është:',
     'required_all' => "Kërkohet e gjithë fusha!",
+    'can_not_remove_filled_fields' => "You can not remove filled fields!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!',
