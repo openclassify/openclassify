@@ -44,41 +44,10 @@
                     {{ adv.created_at|date('d/m/Y') }}
                 </div>
 
-
-{#                {{ dd(configurations) }}#}
-                {% if configurations != null %}
-                    <div class="col-12 justify-content-start pl-0 row m-0">
-                        <form action="{{ route('configuration::add_cart') }}" class="">
-                            <div class="row mb-1">
-                                <div class="input-group col-12">
-                                    <select name="configuration" id="" class="form-control">
-                                        {% for key, configuration in configurations %}
-                                            <option value="{{ key }}">
-                                                {{ configuration.name }} - {{ configuration.price }} {{ configuration.currency }}
-                                            </option>
-                                        {% endfor %}
-                                    </select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="input-group col-6 quantity-row">
-                                    <input type="number" data-id="29" name="quantity" class="form-control text-center quantity" value="1" min="1">
-                                </div>
-                                <div class="col-6 p-0">
-                                    <button class="btn btn-success text-white" type="submit">
-                                        <i class="fa fa-shopping-cart"></i>
-                                        Sepete Ekle
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                {% else %}
-                    <!-- Detail With Block -->
-                    {{ addBlock('ad-detail/details',{'adv':adv, 'options':options})|raw }}
-                    {{ addBlock('ad-detail/widget-details',{'adv':adv})|raw }}
-                    <!-- Detail With Block -->
-                {% endif %}
+                <!-- Detail With Block -->
+                {{ addBlock('ad-detail/details',{'adv':adv, 'options':options, 'configurations':configurations})|raw }}
+                {{ addBlock('ad-detail/widget-details',{'adv':adv})|raw }}
+                <!-- Detail With Block -->
 
                 {% if adv.isCorporate == 2 %}
                     <div class="col-md-12 m-2">
