@@ -22,4 +22,9 @@ class ProductoptionRepository extends EntryRepository implements ProductoptionRe
     {
         $this->model = $model;
     }
+
+    public function getWithCategoryId($id)
+    {
+    	return $this->findAllBy('category',$id);
+    }
 }

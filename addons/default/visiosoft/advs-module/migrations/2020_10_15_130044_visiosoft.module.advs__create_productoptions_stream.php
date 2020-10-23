@@ -15,7 +15,7 @@ class VisiosoftModuleAdvsCreateProductoptionsStream extends Migration
     protected $delete = true;
 
     protected $fields = [
-    	'categories' => [
+    	'category' => [
     		'type' => 'anomaly.field_type.select',
 		    'config' => [
 		    	'handler' => 'Visiosoft\AdvsModule\OptionHandler\CategoriesOptions@handle'
@@ -43,7 +43,7 @@ class VisiosoftModuleAdvsCreateProductoptionsStream extends Migration
      * @var array
      */
     protected $assignments = [
-    	'categories',
+    	'category',
 	    'name' => [
             'translatable' => true,
             'required' => true,

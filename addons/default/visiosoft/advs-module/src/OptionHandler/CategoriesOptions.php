@@ -15,7 +15,7 @@ class CategoriesOptions
 	public function handle(SelectFieldType $fieldType)
 	{
 		$categories = $this->categoryRepository->mainCats();
-		$options[] = $categories->pluck('name', 'id');
+		$options = $categories->pluck('name', 'id')->all();
 		$fieldType->setOptions($options);
 	}
 }
