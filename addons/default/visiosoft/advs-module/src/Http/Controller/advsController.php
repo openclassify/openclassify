@@ -19,6 +19,10 @@ use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
 use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
+use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
+use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
@@ -39,6 +43,10 @@ class AdvsController extends PublicController
 
     private $adv_model;
     private $adv_repository;
+
+    private $optionConfigurationRepository;
+	private $productOptionRepository;
+	private $productOptionsValueRepository;
 
     private $country_repository;
 
@@ -65,6 +73,10 @@ class AdvsController extends PublicController
 
         AdvModel $advModel,
         AdvRepositoryInterface $advRepository,
+
+        OptionConfigurationRepositoryInterface $optionConfigurationRepository,
+		ProductoptionRepositoryInterface $productOptionRepository,
+		ProductoptionsValueRepositoryInterface $productOptionsValueRepository,
 
         CountryRepositoryInterface $country_repository,
 
@@ -93,6 +105,10 @@ class AdvsController extends PublicController
 
         $this->adv_model = $advModel;
         $this->adv_repository = $advRepository;
+
+        $this->optionConfigurationRepository = $optionConfigurationRepository;
+        $this->productOptionRepository = $productOptionRepository;
+		$this->productOptionsValueRepository = $productOptionsValueRepository;
 
         $this->country_repository = $country_repository;
 
@@ -502,9 +518,11 @@ class AdvsController extends PublicController
             }
             $this->template->set('meta_image', $coverPhoto);
 
-            if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
+	        $configurations = $this->optionConfigurationRepository->getConf($adv->id);
+
+	        if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-                    'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options'));
+                    'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options', 'configurations'));
             } else {
                 return back();
             }
@@ -545,7 +563,7 @@ class AdvsController extends PublicController
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
-            compact('adv', 'categories', 'features', 'isActiveDopings', 'options'));
+            compact('adv', 'categories', 'features', 'isActiveDopings', 'configurations'));
     }
 
     public function getLocations()

@@ -5,4 +5,6 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryRepositoryInterface;
 interface OptionConfigurationRepositoryInterface extends EntryRepositoryInterface
 {
 	public function createConfigration($ad_id,$price,$currency,$stock,$option_json);
+
+	public function getConf($ad_id);
 }

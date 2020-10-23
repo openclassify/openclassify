@@ -221,7 +221,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         // Others
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
 
-	    //Configrations Admin Controller
+	    //Configurations Admin Controller
 	    'admin/advs/option_configuration/create' => [
 		    'as' => 'visiosoft.module.advs::configrations.create',
 		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@create',
@@ -230,6 +230,18 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 		    'as' => 'visiosoft.module.advs::configrations.index',
 		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@index',
 	    ],
+
+	    //Configuration Controller
+	    'advs/option_configuration/create' => [
+		    'as' => 'visiosoft.module.advs::user.configrations.create',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
+	    ],
+	    'conf/addCart' => [
+		    'as' => 'configuration::add_cart',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
+	    ],
+
+
     ];
 
     /**

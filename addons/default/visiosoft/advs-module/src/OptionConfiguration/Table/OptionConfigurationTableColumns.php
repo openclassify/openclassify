@@ -19,7 +19,7 @@ class OptionConfigurationTableColumns
 				                     AdvRepositoryInterface $advRepository) {
 
 					$adv = $advRepository->findById($entry->parent_adv_id);
-					return "<span><a href='" . route('adv_detail', [$entry->parent_adv_id]) ."'>$adv->name</a></span>";
+					return "<span><a href='" . route('adv_detail', [$entry->parent_adv_id]) . "'>$adv->name</a></span>";
 				}
 			],
 			'option_json' => [
@@ -35,8 +35,8 @@ class OptionConfigurationTableColumns
 						$productOptionsValue = $productOptionsValueRepository->findBy('entry_id', $value);
 
 						$text .=
-							'<span class="tag tag-sm tag-info mr-1">'.
-							$productOption->name . ': ' . $productOptionsValue->name.
+							'<span class="tag tag-sm tag-info mr-1">' .
+							$productOption->name . ': ' . $productOptionsValue->name .
 							'</span>';
 
 					}

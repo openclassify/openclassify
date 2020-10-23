@@ -15,7 +15,12 @@ class VisiosoftModuleAdvsCreateProductoptionsStream extends Migration
     protected $delete = true;
 
     protected $fields = [
-    	'categories' => 'anomaly.field_type.select',
+    	'categories' => [
+    		'type' => 'anomaly.field_type.select',
+		    'config' => [
+		    	'handler' => 'Visiosoft\AdvsModule\OptionHandler\CategoriesOptions@handle'
+		    ]
+	    ],
     ];
     /**
      * The stream definition.
