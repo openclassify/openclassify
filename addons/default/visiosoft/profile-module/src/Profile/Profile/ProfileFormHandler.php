@@ -36,7 +36,7 @@ class ProfileFormHandler
         // Prevent removing already filled fields
         foreach ($parameters as $field => $value) {
             if ($user->$field && !$value) {
-                $messages->error('visiosoft.module.profile::message.can_not_changed_filled_fields');
+                $messages->error('visiosoft.module.profile::message.can_not_remove_filled_fields');
                 return;
             }
         }
