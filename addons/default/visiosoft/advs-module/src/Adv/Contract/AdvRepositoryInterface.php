@@ -46,4 +46,6 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
     public function getPopular();
 
     public function approveAds($adsIDs);
+
+    public function getUserAds($userID = null);
 }

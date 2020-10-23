@@ -13,6 +13,8 @@ use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
+use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
+use Visiosoft\LocationModule\Village\VillageModel;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
@@ -371,6 +373,12 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $neighborhoodModel = new NeighborhoodModel();
         $neighborhood = $neighborhoodModel->newQuery()->find($this->neighborhood);
         return $neighborhood ? $neighborhood->name : false;
+    }
+
+    public function getVillage()
+    {
+        $village = app(VillageRepositoryInterface::class)->find($this->village);
+        return $village ? $village->name : false;
     }
 
     public function expired()

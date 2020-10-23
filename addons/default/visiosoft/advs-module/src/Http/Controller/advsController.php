@@ -450,7 +450,7 @@ class AdvsController extends PublicController
 
         $adv = $this->adv_repository->getListItemAdv($id);
 
-        if ($adv && !$adv->expired()) {
+        if ($adv && (!$adv->expired() || $adv->created_by_id === \auth()->id())) {
 
             if ($this->adv_model->is_enabled('complaints')) {
                 $complaints = ComplaintsComplainTypesEntryModel::all();
