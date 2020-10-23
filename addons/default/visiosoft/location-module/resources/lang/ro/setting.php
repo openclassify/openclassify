@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Ascundeți filtrul de locație',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Țara implicită pentru câmpul de telefon al înregistrării'
+	]
 ];

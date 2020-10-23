@@ -318,5 +318,8 @@ return [
 	],
 	'option_json' => [
 		'name' => 'Option'
-	]
+	],
+    'old_price' => [
+        'name' => 'Old Price'
+    ],
 ];

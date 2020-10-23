@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'لوکیشن فلٹر چھپائیں',
     ],
+	'country_for_phone_field' => [
+		'name' => 'ڈیفالٹ کنٹری برائے رجسٹر فون فیلڈ'
+	]
 ];

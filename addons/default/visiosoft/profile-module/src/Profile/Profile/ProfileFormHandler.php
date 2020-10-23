@@ -33,6 +33,14 @@ class ProfileFormHandler
 
         $user = $userModel->newQuery()->find(\auth()->id());
 
+        // Prevent removing already filled fields
+        foreach ($parameters as $field => $value) {
+            if ($user->$field && !$value) {
+                $messages->error('visiosoft.module.profile::message.can_not_remove_filled_fields');
+                return;
+            }
+        }
+
         $oldCustomerInfo = $user->toArray();
 
         $changes = $this->change($user, $parameters);

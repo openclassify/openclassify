@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Απόκρυψη φίλτρου τοποθεσίας',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Προεπιλεγμένη χώρα για εγγραφή πεδίου τηλεφώνου'
+	]
 ];

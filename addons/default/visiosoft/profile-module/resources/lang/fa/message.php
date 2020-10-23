@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'هیچ آدرس و یا مجاز به مشاهده نیست.',
     'empty_password_sms_message' => 'به دلیل مشکلات امنیتی رمز عبور شما را تغییر دادیم! گذرواژه جدید شما این است:',
     'required_all' => "همه زمینه لازم است!",
+    'can_not_remove_filled_fields' => "شما نمی توانید زمینه های پر شده را حذف کنید!",
 
     // Forgot Password
     'email_phone_not_found' => 'ایمیل ، شماره تلفن صحیح نیست!',

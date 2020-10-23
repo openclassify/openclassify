@@ -306,4 +306,14 @@ return [
     'and_above' => 'اور اوپر',
     'and_below' => 'اور نیچے',
     'clear_all' => 'تمام کو صاف کریں',
+    'balances' => 'توازن',
+    'packages' => 'پیکیجز',
+    'dopings' => 'ڈوپنگز',
+    'advs' => 'ایڈز',
+    'site' => 'سائٹ',
+    'subscription' => 'سب سکریپشن',
+	'created' => 'بنائی گئی',
+    'old_price' => [
+        'name' => 'پرانی قیمت'
+    ],
 ];

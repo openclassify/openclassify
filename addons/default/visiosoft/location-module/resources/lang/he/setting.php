@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'הסתר מסנן מיקום',
     ],
+	'country_for_phone_field' => [
+		'name' => 'מדינה ברירת מחדל לשדה טלפון רישום'
+	]
 ];

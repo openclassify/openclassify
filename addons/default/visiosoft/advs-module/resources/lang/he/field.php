@@ -306,4 +306,14 @@ return [
     'and_above' => 'ומעל',
     'and_below' => 'ומתחת',
     'clear_all' => 'נקה הכל',
+    'balances' => 'יתרות',
+    'packages' => 'חבילות',
+    'dopings' => 'סמים',
+    'advs' => 'עו"ד',
+    'site' => 'אֲתַר',
+    'subscription' => 'מִנוּי',
+	'created' => 'נוצר',
+    'old_price' => [
+        'name' => 'מחיר ישן'
+    ],
 ];

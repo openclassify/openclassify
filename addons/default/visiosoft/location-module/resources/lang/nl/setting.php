@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Verberg locatiefilter',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Standaardland voor register telefoonveld'
+	]
 ];

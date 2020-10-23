@@ -306,4 +306,14 @@ return [
     'and_above' => '以上',
     'and_below' => '以下',
     'clear_all' => 'すべてクリア',
+    'balances' => 'バランス',
+    'packages' => 'パッケージ',
+    'dopings' => 'ドーピング',
+    'advs' => 'アドバンス',
+    'site' => '地点',
+    'subscription' => 'サブスクリプション',
+	'created' => '作成した',
+    'old_price' => [
+        'name' => '古い価格'
+    ],
 ];

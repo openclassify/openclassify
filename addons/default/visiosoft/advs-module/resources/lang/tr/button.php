@@ -32,4 +32,5 @@ return [
         'name' => 'Kategori Güncelle'
     ],
     'new_option' => 'Yeni Seçenek',
+	'export' => 'İhracat'
 ];

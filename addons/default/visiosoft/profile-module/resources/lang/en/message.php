@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'No address or not authorized to view.',
     'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
     'required_all' => "All Field is Required!",
+    'can_not_remove_filled_fields' => "You can not remove filled fields!",
 
     // Forgot Password
     'email_phone_not_found' => 'The E-mail, Phone Number is not correct!',

@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Nascondi filtro posizione',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Paese predefinito per il campo del telefono di registrazione'
+	]
 ];

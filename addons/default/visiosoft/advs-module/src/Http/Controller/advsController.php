@@ -270,15 +270,6 @@ class AdvsController extends PublicController
 
 
         if ($categoryId) {
-            $seo_keywords = $this->category_model->getMeta_keywords($categoryId->id);
-            $seo_description = $this->category_model->getMeta_description($categoryId->id);
-            $seo_title = $this->category_model->getMeta_title($categoryId->id);
-
-            $this->template->set('og_description', $seo_description);
-            $this->template->set('meta_description', $seo_description);
-            $this->template->set('meta_title', $seo_title);
-            $this->template->set('meta_keywords', implode(', ', $seo_keywords));
-
             $mainCats = $this->category_model->getMains($categoryId->id);
             $current_cat = $this->category_model->getCat($categoryId->id);
             $mainCats[] = [
@@ -385,13 +376,36 @@ class AdvsController extends PublicController
 
         $viewType = $this->requestHttp->cookie('viewType');
 
+        list('catText' => $catText, 'user' => $user) = $this->handleSeo($categoryId, $mainCats, $cityId);
+
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
+            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
+            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
+
+        return $this->viewTypeBasedRedirect($viewType, $compact);
+    }
+
+    private function handleSeo($category, $mainCats, $city)
+    {
+        $showTitle = true;
+        $metaTitle = '';
         $catText = '';
-        if (!$allCats) {
-            if (count($mainCats) == 1 || count($mainCats) == 2) {
+
+        if ($category) {
+            $seo_keywords = $this->category_model->getMeta_keywords($category->id);
+            $seo_description = $this->category_model->getMeta_description($category->id);
+            $seo_title = $this->category_model->getMeta_title($category->id);
+
+            $this->template->set('og_description', $seo_description);
+            $this->template->set('meta_description', $seo_description);
+            $this->template->set('meta_keywords', implode(', ', $seo_keywords));
+
+            if ($city) {
+                $catText = "$city->name $catText";
+            } elseif (count($mainCats) == 1 || count($mainCats) == 2) {
                 $catText = end($mainCats)['val'];
             } elseif (count($mainCats) > 2) {
                 $catArray = array_slice($mainCats, 2);
-                $catText = '';
                 $loop = 0;
                 foreach ($catArray as $cat) {
                     $catText = !$loop ? $catText . $cat['val'] : $catText . ' ' . $cat['val'];
@@ -399,26 +413,29 @@ class AdvsController extends PublicController
                 }
             }
 
-            if ($cityId) {
-                $catText = "$cityId->name $catText";
-            }
-
-            $this->template->set('showTitle', false);
-            $this->template->set('meta_title', $catText);
+            $showTitle = false;
+            $metaTitle = $catText ?: $seo_title;
         }
 
         $user = null;
-        if (!empty($param['user'])) {
-            $user = $this->userRepository->find($param['user']);
-            $this->template->set('showTitle', false);
-            $this->template->set('meta_title', $user->name() . ' ' . trans('visiosoft.module.advs::field.ads'));
+        if (\request()->user) {
+            $user = $this->userRepository->find(\request()->user);
+            $showTitle = false;
+            $metaTitle = $user->name() . ' ' . trans('visiosoft.module.advs::field.ads');
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
+        $this->template->set('showTitle', $showTitle);
+        $this->template->set('meta_title', $metaTitle);
 
-        return $this->viewTypeBasedRedirect($viewType, $compact);
+        // Set rel="canonical"
+        if (\request()->sort_by || \request()->doping) {
+            $canonParam = \request()->all();
+            unset($canonParam['sort_by'], $canonParam['doping']);
+            $canonUrl = fullLink($canonParam, \request()->url());
+            $this->template->set('additional_meta', "<link rel='canonical' href='$canonUrl'/>");
+        }
+
+        return compact('catText', 'user');
     }
 
     public function viewTypeBasedRedirect($viewType, $compact)
@@ -449,7 +466,7 @@ class AdvsController extends PublicController
 
         $adv = $this->adv_repository->getListItemAdv($id);
 
-        if ($adv && !$adv->expired()) {
+        if ($adv && (!$adv->expired() || $adv->created_by_id === \auth()->id())) {
 
             if ($this->adv_model->is_enabled('complaints')) {
                 $complaints = ComplaintsComplainTypesEntryModel::all();
@@ -516,7 +533,14 @@ class AdvsController extends PublicController
                     $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
                 }
             }
-            $this->template->set('meta_image', $coverPhoto);
+            $coverPhotoInfo = pathinfo($coverPhoto);
+            if (substr($coverPhotoInfo['basename'], 0, 3) === "tn-") {
+                $ogImage = substr(basename($coverPhotoInfo['basename']), 3);
+                $ogImage = $coverPhotoInfo['dirname'] . "/$ogImage";
+            } else {
+                $ogImage = $coverPhoto;
+            }
+            $this->template->set('meta_image', $ogImage);
 
 	        $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
@@ -661,8 +685,7 @@ class AdvsController extends PublicController
         CategoryRepositoryInterface $categoryRepository,
         Dispatcher $events,
         AdvModel $advModel,
-        AdressRepositoryInterface $address,
-        CategoryModel $categoryModel
+        AdressRepositoryInterface $address
     )
     {
         if (!Auth::user()) {
@@ -677,10 +700,21 @@ class AdvsController extends PublicController
             /*  Update Adv  */
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
+
+            //Set Old Price
+            $old_price = ($adv->slug == "") ? $request->price : $adv->price;
+            $adv->old_price = $old_price;
+
+
+            $allowPendingAdCreation = false;
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
                 $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
                 if (!is_null($cat)) {
-                    return redirect('/');
+                    if (array_key_exists('allowPendingAds', $cat)) {
+                        $allowPendingAdCreation = $cat['allowPendingAds'];
+                    } else {
+                        return redirect($cat['redirect']);
+                    }
                 }
             }
 
@@ -735,7 +769,7 @@ class AdvsController extends PublicController
             }
 
             // Auto approve
-            if (setting_value('visiosoft.module.advs::auto_approve')) {
+            if (setting_value('visiosoft.module.advs::auto_approve') && !$allowPendingAdCreation) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
                 $adv->update([
                     'status' => 'approved',
@@ -780,7 +814,11 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
             event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+            if ($allowPendingAdCreation) {
+                return redirect(route("visiosoft.module.packages::buy_package") . '?ad_id=' . $adv->id);
+            } else {
+                return redirect(route('advs_preview', [$request->update_id]));
+            }
         }
 
         /* New Create Adv */

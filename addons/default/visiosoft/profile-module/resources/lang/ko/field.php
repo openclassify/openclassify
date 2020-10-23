@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => '등록 유형'
     ],
+    'birthday' => [
+        'name' => '생신'
+    ],
     'identification_number' => [
         'name' => '식별 번호'
     ],

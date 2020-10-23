@@ -44,5 +44,5 @@ return [
     'options' => [
         'title' => 'Seçenekler',
     ],
-    'ads_image' => 'Reklam Resmi',
+    'ads_image' => 'İlan Resmi',
 ];
