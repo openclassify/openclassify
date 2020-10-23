@@ -45,47 +45,27 @@ class OptionConfigurationRepository extends EntryRepository implements OptionCon
 		]);
 	}
 
-	public function getConf($ad_id, $conf_id = null)
+	public function getConf($ad_id)
 	{
 		$adv = $this->advRepository->find($ad_id);
 		$configurations = array();
 
-		if ($conf_id == null) {
-			$product_configurations = $this->model->where('stock', '>', '0')->where('parent_adv_id', $ad_id)->get();
+		$product_configurations = $this->model->where('stock', '>', '0')->where('parent_adv_id', $ad_id)->get();
 
-			foreach ($product_configurations as $product_configuration) {
-				$configurations_item = json_decode($product_configuration->option_json, true);
-				$option_group_value = "";
-				foreach ($configurations_item as $option_id => $value) {
-					$value_entry = $this->productOptionsValueRepository->find($value);
-					$option_group_value .= " " . $value_entry->getName();
-				}
-				$configurations[$product_configuration->getId()] = [
-					'name' => $option_group_value,
-					'price' => $product_configuration->price,
-					'currency' => $product_configuration->currency,
-					'stock' => $product_configuration->stock,
-					'adv' => $adv->name . ' (' . trim($option_group_value, ' ') . ')',
-				];
-			}
-		} else {
-			$product_configuration = $this->model->find($conf_id);
+		foreach ($product_configurations as $product_configuration) {
 			$configurations_item = json_decode($product_configuration->option_json, true);
 			$option_group_value = "";
-
 			foreach ($configurations_item as $option_id => $value) {
 				$value_entry = $this->productOptionsValueRepository->find($value);
 				$option_group_value .= " " . $value_entry->getName();
 			}
-
-			$configurations = [
-				'name' => trim($option_group_value),
+			$configurations[$product_configuration->getId()] = [
+				'name' => $option_group_value,
 				'price' => $product_configuration->price,
 				'currency' => $product_configuration->currency,
 				'stock' => $product_configuration->stock,
 				'adv' => $adv->name . ' (' . trim($option_group_value, ' ') . ')',
 			];
-
 		}
 
 		return $configurations;

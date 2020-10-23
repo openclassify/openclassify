@@ -6,10 +6,5 @@ use Anomaly\Streams\Platform\Model\Advs\AdvsOptionConfigurationEntryModel;
 
 class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel implements OptionConfigurationInterface
 {
-	public function getName($id)
-	{
-		$configuration = $this->find($id);
-		$adv = $this->adv_model->find($configuration->parent_adv_id);
-		dd($adv);
-	}
+
 }

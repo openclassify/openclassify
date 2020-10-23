@@ -38,4 +38,5 @@ return [
     'new_options_configuration' => 'New Options configuration',
     'new_option_configuration' => 'New Option configuration',
     'new_option_configuration' => 'New Option configuration',
+	'create_configurations' => 'Create Configurations',
 ];

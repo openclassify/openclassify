@@ -16,7 +16,7 @@
         {% endif %}
         <a href="{{ route('visiosoft.module.advs::user.configrations.create') }}?ad={{ adv.id }}"
            class="btn btn-warning shadow-sm mr-4 text-white">
-            Konfigürasyon Oluştur
+            {{trans('visiosoft.module.advs::button.create_configurations')}}
         </a>
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
            class="btn preview-edit shadow-sm border">
@@ -33,7 +33,7 @@
     <div class="preview-actions text-center">
         <a href="{{ route('visiosoft.module.advs::user.configrations.create') }}?ad={{ adv.id }}"
            class="btn btn-warning shadow-sm mr-4 text-white">
-            Konfigürasyon Oluştur
+            {{trans('visiosoft.module.advs::button.create_configurations')}}
         </a>
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}" class="btn preview-edit shadow-sm border">
             {{ trans('visiosoft.module.advs::field.edit') }}

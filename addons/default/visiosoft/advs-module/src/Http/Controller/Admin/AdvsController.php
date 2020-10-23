@@ -109,7 +109,7 @@ class AdvsController extends AdminController
                         'text' => 'Replicate',
                     ],
 	                'create_configration' => [
-		                'text' => 'Create Configrations',
+		                'text' => trans('visiosoft.module.advs::button.create_configurations'),
 		                'href' => route('visiosoft.module.advs::configrations.create')."?ad={entry.id}"
 	                ],
                 ],
