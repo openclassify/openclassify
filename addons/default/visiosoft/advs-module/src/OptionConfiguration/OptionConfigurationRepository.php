@@ -70,19 +70,4 @@ class OptionConfigurationRepository extends EntryRepository implements OptionCon
 
 		return $configurations;
 	}
-
-	public function getName($id){
-		$configuration = $this->find($id);
-		$adv = $this->advRepository->getName($configuration->parent_adv_id);
-
-		$configurations_item = json_decode($configuration->option_json, true);
-		$option_group_value = "";
-
-		foreach ($configurations_item as $option_id => $value) {
-			$value_entry = $this->productOptionsValueRepository->find($value);
-			$option_group_value .= " " . $value_entry->getName();
-		}
-
-		return $adv . ' | ' . trim($option_group_value, ' ');
-	}
 }
