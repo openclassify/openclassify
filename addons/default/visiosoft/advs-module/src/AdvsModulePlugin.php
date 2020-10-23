@@ -7,9 +7,9 @@ use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
 use Visiosoft\AdvsModule\Adv\Command\getExchange;
 use Visiosoft\AdvsModule\Adv\Command\getPopular;
+use Visiosoft\AdvsModule\Adv\Command\GetUserAds;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
-use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Currency\Currency;
 use Visiosoft\AdvsModule\Currency\CurrencyFormat;
 
@@ -76,6 +76,12 @@ class AdvsModulePlugin extends Plugin
                     return $advModel->newQuery()
                         ->where('advs_advs.created_by_id', $user->id)
                         ->get();
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'getUserAds',
+                function ($userID = null) {
+                    return $this->dispatch(new GetUserAds($userID));
                 }
             ),
             new \Twig_SimpleFunction(

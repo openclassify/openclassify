@@ -459,4 +459,14 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         return $ads;
     }
+
+    public function getUserAds($userID = null)
+    {
+        $userID = auth_id_if_null($userID);
+        return $this->newQuery()
+            ->where('advs_advs.created_by_id', $userID)
+            ->where('status', 'approved')
+            ->where('finish_at', '>', date('Y-m-d H:i:s'))
+            ->get();
+    }
 }
