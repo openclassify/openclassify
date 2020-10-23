@@ -42,18 +42,20 @@ class OptionConfigurationController extends PublicController
 
 	public function confAddCart()
 	{
-		$conf = $this->optionConfigurationRepository->find($this->request->configuration);
 
-		$conf->name = $this->optionConfigurationRepository->getName($this->request->configuration);
+		if($conf = $this->optionConfigurationRepository->find($this->request->configuration))
+		{
+				$conf->name = $conf->getName();
 
-		$this->adv_model->authControl();
+				$this->adv_model->authControl();
 
-		if ($conf->stock < $this->request->quantity){
-			return redirect()->back()->with('warning', [trans('visiosoft.module.carts::message.error1in2')]);
-		}else{
-			$cart = $this->dispatch(new GetCart());
-			$cart->add($conf, $this->request->quantity);
-			return $this->redirect->to(route('visiosoft.module.carts::cart'));
+			if ($conf->stock < $this->request->quantity){
+				return redirect()->back()->with('warning', [trans('visiosoft.module.carts::message.error1in2')]);
+			}else{
+				$cart = $this->dispatch(new GetCart());
+				$cart->add($conf, $this->request->quantity);
+				return $this->redirect->to(route('visiosoft.module.carts::cart'));
+			}
 		}
 	}
 }
