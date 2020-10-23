@@ -32,6 +32,7 @@ use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
 use Visiosoft\PackagesModule\Package\PackageModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
+use Visiosoft\SeoModule\Legend\Command\AddMetaData;
 
 class AdvsController extends PublicController
 {
@@ -378,10 +379,10 @@ class AdvsController extends PublicController
         if ($category) {
             $seo_keywords = $this->category_model->getMeta_keywords($category->id);
             $seo_description = $this->category_model->getMeta_description($category->id);
-            $seo_title = $this->category_model->getMeta_title($category->id);
 
-            $this->template->set('og_description', $seo_description);
-            $this->template->set('meta_description', $seo_description);
+            $metaTitle = $this->category_model->getMeta_title($category->id);
+            $metaDesc = $seo_description;
+
             $this->template->set('meta_keywords', implode(', ', $seo_keywords));
 
             if ($city) {
@@ -396,9 +397,21 @@ class AdvsController extends PublicController
                     $loop++;
                 }
             }
+            $metaTitle = $catText ?: $metaTitle;
+
+            if (is_module_installed('visiosoft.module.seo')) {
+                $metaData = dispatch_now(new AddMetaData($category->id, 'category'));
+                if ($metaData) {
+                    list('metaTitle' => $seoMetaTitle, 'metaDesc' => $seoMetaDesc) = $metaData;
+                    $metaTitle = $seoMetaTitle ?: $metaTitle;
+                    $metaDesc = $seoMetaDesc ?: $metaDesc;
+                }
+            }
+
+            $this->template->set('og_description', $metaDesc);
+            $this->template->set('meta_description', $metaDesc);
 
             $showTitle = false;
-            $metaTitle = $catText ?: $seo_title;
         }
 
         $user = null;
@@ -501,13 +514,6 @@ class AdvsController extends PublicController
 
             $this->event->dispatch(new viewAd($adv));//view ad
 
-            $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
-            $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
-            $this->template->set('showTitle', false);
-            $this->template->set(
-                'meta_title',
-                $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain')
-            );
             if (substr($adv->cover_photo, 0, 4) === "http") {
                 $coverPhoto = $adv->cover_photo;
             } else {
@@ -517,6 +523,19 @@ class AdvsController extends PublicController
                     $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
                 }
             }
+
+            $metaTitle = $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain');
+            $metaDesc = strip_tags($adv->advs_desc, '');
+
+            if (is_module_installed('visiosoft.module.seo')) {
+                $metaData = dispatch_now(new AddMetaData($adv->cat1, 'ad', $adv->id));
+                if ($metaData) {
+                    list('metaTitle' => $seoMetaTitle, 'metaDesc' => $seoMetaDesc) = $metaData;
+                    $metaTitle = $seoMetaTitle ?: $metaTitle;
+                    $metaDesc = $seoMetaDesc ?: $metaDesc;
+                }
+            }
+
             $coverPhotoInfo = pathinfo($coverPhoto);
             if (substr($coverPhotoInfo['basename'], 0, 3) === "tn-") {
                 $ogImage = substr(basename($coverPhotoInfo['basename']), 3);
@@ -524,7 +543,12 @@ class AdvsController extends PublicController
             } else {
                 $ogImage = $coverPhoto;
             }
+
             $this->template->set('meta_image', $ogImage);
+            $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
+            $this->template->set('meta_description', $metaDesc);
+            $this->template->set('showTitle', false);
+            $this->template->set('meta_title', $metaTitle);
 
             if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
