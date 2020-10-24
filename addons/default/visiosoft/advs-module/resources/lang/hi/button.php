@@ -32,5 +32,11 @@ return [
         'name' => 'अद्यतन श्रेणी'
     ],
     'new_option' => 'नया विकल्प',
-	'export' => 'निर्यात'
+	'export' => 'निर्यात',
+    'new_productoption' => 'New Productoption',
+    'new_productoptions_value' => 'New Productoptions value',
+    'new_options_configuration' => 'New Options configuration',
+    'new_option_configuration' => 'New Option configuration',
+    'new_option_configuration' => 'New Option configuration',
+	'create_configurations' => 'Create Configurations',
 ];
