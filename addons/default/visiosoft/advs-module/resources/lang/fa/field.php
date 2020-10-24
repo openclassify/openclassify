@@ -137,7 +137,9 @@ return [
     'oldest' => 'قدیمی ترین',
     'address_a_z' => 'آدرس (الف تا ی)',
     'address_z_a' => 'آدرس ( از ی تا الف )',
-    'categories' => 'گتگوری ها',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'همه گتگوری ها',
     'location' => 'موقعيت',
     'send_message' => 'پیام فرستادن',
@@ -313,6 +315,12 @@ return [
     'site' => 'سایت',
     'subscription' => 'اشتراک، ابونمان',
 	'created' => 'ایجاد شده',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'قیمت قدیمی'
     ],
