@@ -32,5 +32,11 @@ return [
         'name' => '카테고리 업데이트'
     ],
     'new_option' => '새로운 옵션',
-	'export' => '수출'
+	'export' => '수출',
+    'new_productoption' => 'New Productoption',
+    'new_productoptions_value' => 'New Productoptions value',
+    'new_options_configuration' => 'New Options configuration',
+    'new_option_configuration' => 'New Option configuration',
+    'new_option_configuration' => 'New Option configuration',
+	'create_configurations' => 'Create Configurations',
 ];
