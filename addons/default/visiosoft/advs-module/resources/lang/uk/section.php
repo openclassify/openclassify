@@ -45,4 +45,13 @@ return [
         'title' => 'Параметри',
     ],
     'ads_image' => 'Зображення оголошень',
+    'product_options' => [
+        'title' => 'Options',
+    ],
+    'productoptions_value' => [
+        'title' => 'Options Value',
+    ],
+    'option_configuration' => [
+        'title' => 'Configuration',
+    ],
 ];
