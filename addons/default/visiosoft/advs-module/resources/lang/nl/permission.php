@@ -57,4 +57,44 @@ return [
             'delete' => 'Kan opties verwijderen?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Productoptions',
+        'option' => [
+            'read'   => 'Can read productoptions?',
+            'write'  => 'Can create/edit productoptions?',
+            'delete' => 'Can delete productoptions?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Productoptions value',
+        'option' => [
+            'read'   => 'Can read productoptions value?',
+            'write'  => 'Can create/edit productoptions value?',
+            'delete' => 'Can delete productoptions value?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Options configuration',
+        'option' => [
+            'read'   => 'Can read options configuration?',
+            'write'  => 'Can create/edit options configuration?',
+            'delete' => 'Can delete options configuration?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Option configuration',
+        'option' => [
+            'read'   => 'Can read option configuration?',
+            'write'  => 'Can create/edit option configuration?',
+            'delete' => 'Can delete option configuration?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Option configuration',
+        'option' => [
+            'read'   => 'Can read option configuration?',
+            'write'  => 'Can create/edit option configuration?',
+            'delete' => 'Can delete option configuration?',
+        ],
+    ],
 ];
