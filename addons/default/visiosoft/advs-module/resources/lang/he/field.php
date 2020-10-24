@@ -137,7 +137,9 @@ return [
     'oldest' => 'הוותיק ביותר',
     'address_a_z' => 'כתובת (א \'עד ת\')',
     'address_z_a' => 'כתובת (Z עד A)',
-    'categories' => 'קטגוריות',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'כל הקטגוריות',
     'location' => 'מקום',
     'send_message' => 'לשלוח הודעה',
@@ -313,6 +315,12 @@ return [
     'site' => 'אֲתַר',
     'subscription' => 'מִנוּי',
 	'created' => 'נוצר',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'מחיר ישן'
     ],
