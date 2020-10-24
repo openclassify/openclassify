@@ -45,4 +45,13 @@ return [
         'title' => 'اختیارات',
     ],
     'ads_image' => 'اشتہارات کی تصویر',
+    'product_options' => [
+        'title' => 'Options',
+    ],
+    'productoptions_value' => [
+        'title' => 'Options Value',
+    ],
+    'option_configuration' => [
+        'title' => 'Configuration',
+    ],
 ];
