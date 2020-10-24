@@ -45,4 +45,13 @@ return [
         'title' => 'বিকল্পগুলি',
     ],
     'ads_image' => 'বিজ্ঞাপন চিত্র',
+    'product_options' => [
+        'title' => 'Options',
+    ],
+    'productoptions_value' => [
+        'title' => 'Options Value',
+    ],
+    'option_configuration' => [
+        'title' => 'Configuration',
+    ],
 ];
