@@ -137,7 +137,9 @@ return [
     'oldest' => 'Cũ nhất',
     'address_a_z' => 'Địa chỉ (A đến Z)',
     'address_z_a' => 'Địa chỉ (Z đến A)',
-    'categories' => 'Thể loại',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'Tất cả danh mục',
     'location' => 'Vị trí',
     'send_message' => 'Gửi tin nhắn',
@@ -313,6 +315,12 @@ return [
     'site' => 'Địa điểm',
     'subscription' => 'Đăng ký',
 	'created' => 'Tạo',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'Giá cũ'
     ],
