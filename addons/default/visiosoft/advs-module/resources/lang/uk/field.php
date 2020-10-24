@@ -137,7 +137,9 @@ return [
     'oldest' => 'Найдавніший',
     'address_a_z' => 'Адреса (від A до Z)',
     'address_z_a' => 'Адреса (від Z до A)',
-    'categories' => 'Категорії',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'всі категорії',
     'location' => 'Розташування',
     'send_message' => 'Відправити повідомлення',
@@ -313,6 +315,12 @@ return [
     'site' => 'Сайт',
     'subscription' => 'Передплата',
 	'created' => 'Створено',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'Стара ціна'
     ],
