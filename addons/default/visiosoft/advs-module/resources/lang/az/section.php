@@ -45,4 +45,13 @@ return [
         'title' => 'Seçimlər',
     ],
     'ads_image' => 'Reklamlar şəkli',
+    'product_options' => [
+        'title' => 'Options',
+    ],
+    'productoptions_value' => [
+        'title' => 'Options Value',
+    ],
+    'option_configuration' => [
+        'title' => 'Configuration',
+    ],
 ];
