@@ -15,6 +15,12 @@ use Visiosoft\AdvsModule\Http\Middleware\SetLang;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\Option\OptionRepository;
+use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationRepository;
+use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
+use Visiosoft\AdvsModule\Productoption\ProductoptionRepository;
+use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
+use Visiosoft\AdvsModule\ProductoptionsValue\ProductoptionsValueRepository;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -214,6 +220,28 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
         // Others
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
+
+	    //Configurations Admin Controller
+	    'admin/advs/option_configuration/create' => [
+		    'as' => 'visiosoft.module.advs::configrations.create',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@create',
+	    ],
+	    'admin/advs/option_configuration' => [
+		    'as' => 'visiosoft.module.advs::configrations.index',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@index',
+	    ],
+
+	    //Configuration Controller
+	    'advs/option_configuration/create' => [
+		    'as' => 'visiosoft.module.advs::user.configrations.create',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
+	    ],
+	    'conf/addCart' => [
+		    'as' => 'configuration::add_cart',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
+	    ],
+
+
     ];
 
     /**
@@ -294,6 +322,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         CategoryRepositoryInterface::class => CategoryRepository::class,
         CountryRepositoryInterface::class => CountryRepository::class,
         OptionRepositoryInterface::class => OptionRepository::class,
+	    ProductoptionRepositoryInterface::class => ProductoptionRepository::class,
+	    OptionConfigurationRepositoryInterface::class => OptionConfigurationRepository::class,
+	    ProductoptionsValueRepositoryInterface::class => ProductoptionsValueRepository::class,
     ];
 
     /**

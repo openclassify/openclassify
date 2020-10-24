@@ -448,6 +448,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->paginate(setting_value('visiosoft.module.advs::popular_ads_limit', setting_value('streams::per_page')));
     }
 
+    public function getName($id){
+    	return $this->find($id)->name;
+    }
+
     public function approveAds($adsIDs)
     {
         $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');

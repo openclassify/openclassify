@@ -137,7 +137,9 @@ return [
     'oldest' => 'Oldest',
     'address_a_z' => 'Address (A to Z)',
     'address_z_a' => 'Address (Z to A)',
-    'categories' => 'Categories',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'All Categories',
     'location' => 'Location',
     'send_message' => 'Send Message',
@@ -313,6 +315,12 @@ return [
     'site' => 'Site',
     'subscription' => 'Subscription',
 	'created' => 'Created',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'Old Price'
     ],
