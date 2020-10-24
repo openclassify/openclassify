@@ -32,5 +32,11 @@ return [
         'name' => 'رده به روزرسانی'
     ],
     'new_option' => 'گزینه جدید',
-	'export' => 'صادرات'
+	'export' => 'صادرات',
+    'new_productoption' => 'New Productoption',
+    'new_productoptions_value' => 'New Productoptions value',
+    'new_options_configuration' => 'New Options configuration',
+    'new_option_configuration' => 'New Option configuration',
+    'new_option_configuration' => 'New Option configuration',
+	'create_configurations' => 'Create Configurations',
 ];
