@@ -32,5 +32,11 @@ return [
         'name' => 'Cập nhật danh mục'
     ],
     'new_option' => 'Tùy chọn mới',
-	'export' => 'Xuất khẩu'
+	'export' => 'Xuất khẩu',
+    'new_productoption' => 'New Productoption',
+    'new_productoptions_value' => 'New Productoptions value',
+    'new_options_configuration' => 'New Options configuration',
+    'new_option_configuration' => 'New Option configuration',
+    'new_option_configuration' => 'New Option configuration',
+	'create_configurations' => 'Create Configurations',
 ];
