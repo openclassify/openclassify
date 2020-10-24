@@ -45,4 +45,13 @@ return [
         'title' => 'オプション',
     ],
     'ads_image' => '広告画像',
+    'product_options' => [
+        'title' => 'Options',
+    ],
+    'productoptions_value' => [
+        'title' => 'Options Value',
+    ],
+    'option_configuration' => [
+        'title' => 'Configuration',
+    ],
 ];
