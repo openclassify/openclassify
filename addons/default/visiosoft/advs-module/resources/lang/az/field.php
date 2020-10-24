@@ -137,7 +137,9 @@ return [
     'oldest' => 'Ən qədim',
     'address_a_z' => 'Ünvan (A-dan Z)',
     'address_z_a' => 'Ünvan (Z-dən A)',
-    'categories' => 'Kateqoriyalar',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'bütün kateqoriyalar',
     'location' => 'Yer',
     'send_message' => 'Mesaj göndər',
@@ -313,6 +315,12 @@ return [
     'site' => 'Sayt',
     'subscription' => 'Abunə',
 	'created' => 'Yarandı',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'Köhnə Qiymət'
     ],
