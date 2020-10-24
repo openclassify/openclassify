@@ -137,7 +137,9 @@ return [
     'oldest' => 'الأقدم',
     'address_a_z' => 'العنوان (من الألف إلى الياء)',
     'address_z_a' => 'العنوان (ي إلى أ)',
-    'categories' => 'الاقسام',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'جميع الفئات',
     'location' => 'موقعك',
     'send_message' => 'إرسال رسالة',
@@ -313,6 +315,12 @@ return [
     'site' => 'الموقع',
     'subscription' => 'اشتراك',
 	'created' => 'خلقت',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'سعر قديم'
     ],
