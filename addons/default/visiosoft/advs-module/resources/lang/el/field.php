@@ -137,7 +137,9 @@ return [
     'oldest' => 'Παλαιότερα',
     'address_a_z' => 'Διεύθυνση (A έως Z)',
     'address_z_a' => 'Διεύθυνση (Ω έως Α)',
-    'categories' => 'Κατηγορίες',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'Όλες οι κατηγορίες',
     'location' => 'Τοποθεσία',
     'send_message' => 'Να στείλετε μήνυμα',
@@ -314,6 +316,12 @@ return [
     'site' => 'Ιστοσελίδα',
     'subscription' => 'Συνδρομή',
 	'created' => 'Δημιουργήθηκε',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => 'Παλιά τιμή'
     ],
