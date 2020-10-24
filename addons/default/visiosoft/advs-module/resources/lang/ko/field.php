@@ -137,7 +137,9 @@ return [
     'oldest' => '가장 오래된',
     'address_a_z' => '주소 (A ~ Z)',
     'address_z_a' => '주소 (Z ~ A)',
-    'categories' => '카테고리',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => '모든 카테고리',
     'location' => '위치',
     'send_message' => '문자 보내',
@@ -313,6 +315,12 @@ return [
     'site' => '대지',
     'subscription' => '신청',
 	'created' => '만들어진',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
     'old_price' => [
         'name' => '이전 가격'
     ],
