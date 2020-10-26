@@ -11,8 +11,11 @@ return [
         'warning'      => 'El primer elemento de navegación accesible se utiliza como el área <strong>inicio</strong>.',
         'reorder'      => 'Arrastre y suelte los elementos de navegación principales en la barra lateral <strong></strong> para reordenarlos.',
     ],
-    "icon" => [
-        'name' => 'Icono',
+    "login_icon" => [
+        'name' => 'Icono de inicio de sesión',
+    ],
+    "panel_icon" => [
+        'name' => 'Icono de panel',
     ],
     "title" => [
         'name' => 'Título',

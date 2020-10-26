@@ -100,17 +100,19 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
         }
-        if (!empty($param['min_price'])) {
-            $num = $param['min_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') >=" . $int;
-            $query = $query->whereRaw($column);
-        }
-        if (!empty($param['max_price'])) {
-            $num = $param['max_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-            $query = $query->whereRaw($column);
+        if (!empty($param['currency'])) {
+            if (!empty($param['min_price'])) {
+                $num = $param['min_price'];
+                $int = (int)$num;
+                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') >=" . $int;
+                $query = $query->whereRaw($column);
+            }
+            if (!empty($param['max_price'])) {
+                $num = $param['max_price'];
+                $int = (int)$num;
+                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
+                $query = $query->whereRaw($column);
+            }
         }
         if (!empty($param['date'])) {
             if ($param['date'] === 'day') {
@@ -146,22 +148,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if ($this->model->is_enabled('customfields')) {
             $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $param, $query);
         }
-
-
-        if (!empty($param['max_price'])) {
-            $num = $param['max_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-            $query = $query->whereRaw($column);
-        }
-
-        if (!empty($param['max_price'])) {
-            $num = $param['max_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-            $query = $query->whereRaw($column);
-        }
-
 
 //        //UPDATE `default_advs_advs` SET `coor` = (PointFromText('POINT(41.085022 28.804754)')) WHERE `default_advs_advs`.`id` = 8
 //        //SELECT * FROM `default_advs_advs` WHERE ST_DISTANCE(ST_GeomFromText('POINT(41.0709052 28.829627)'), coor) < 20
@@ -460,5 +446,31 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->where('slug', '!=', '')
             ->orderBy('count_show_ad', 'desc')
             ->paginate(setting_value('visiosoft.module.advs::popular_ads_limit', setting_value('streams::per_page')));
+    }
+
+    public function getName($id){
+    	return $this->find($id)->name;
+    }
+
+    public function approveAds($adsIDs)
+    {
+        $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
+        $ads = $this->newQuery()->whereIn('advs_advs.id', $adsIDs)->update([
+            'status' => 'approved',
+            'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+            'publish_at' => date('Y-m-d H:i:s')
+        ]);
+
+        return $ads;
+    }
+
+    public function getUserAds($userID = null)
+    {
+        $userID = auth_id_if_null($userID);
+        return $this->newQuery()
+            ->where('advs_advs.created_by_id', $userID)
+            ->where('status', 'approved')
+            ->where('finish_at', '>', date('Y-m-d H:i:s'))
+            ->get();
     }
 }

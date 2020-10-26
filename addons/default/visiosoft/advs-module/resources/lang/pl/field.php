@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'W ciągu ostatnich 24 godzin'
     ],
+    'in_the_last_day' => [
+        'name' => 'W ciągu ostatnich 24 godzin'
+    ],
     'in_the_last_week' => [
         'name' => 'W ostatnim tygodniu'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'Opcje',
+
+    'free' => 'Wolny',
+    'ad_date' => 'Data ogłoszenia',
+    'photo_video' => 'Zdjęcie, wideo',
+    'and_above' => 'i powyżej',
+    'and_below' => 'i poniżej',
+    'clear_all' => 'Wyczyść wszystko',
+    'balances' => 'Salda',
+    'packages' => 'Pakiety',
+    'dopings' => 'Dopingi',
+    'advs' => 'Advs',
+    'site' => 'Teren',
+    'subscription' => 'Subskrypcja',
+	'created' => 'Utworzony',
+    'old_price' => [
+        'name' => 'Stara cena'
+    ],
 ];

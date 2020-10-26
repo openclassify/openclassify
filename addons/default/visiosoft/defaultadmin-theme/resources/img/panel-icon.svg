@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="25.7" viewBox="0 0 40 25.7">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.906" y1="0.743" x2="0.193" y2="0.743" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#22547c"/>
+      <stop offset="1" stop-color="#0e3c61"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.367" y1="0.156" x2="0.779" y2="0.997" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.26" y1="0.715" x2="0.846" y2="0.216" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="oc_logo1" data-name="oc logo1" transform="translate(16924 -4360)">
+    <rect id="Rectangle_165" data-name="Rectangle 165" width="40" height="25.7" transform="translate(-16924 4360)" fill="#e2c756" opacity="0"/>
+    <g id="Group_16418" data-name="Group 16418" transform="translate(-16917.654 4360)">
+      <g id="Group_16370" data-name="Group 16370" transform="translate(0 0)">
+        <path id="Union_161" data-name="Union 161" d="M12.825,25.7h0ZM0,12.85a12.818,12.818,0,1,1,23.489,7.109,8.4,8.4,0,0,0-3.2-.69H16.277a7.31,7.31,0,1,0-3.555.882h6.534c4.015,0,7.851,4.117,7.851,5.549H12.774A12.818,12.818,0,0,1,0,12.85Z" fill="#22547c"/>
+        <path id="Path_4453" data-name="Path 4453" d="M10721.249,13446.667a12.814,12.814,0,0,0,1.841-9.667,23.133,23.133,0,0,1-7.479,7.775,7.526,7.526,0,0,1-1.61,1.176h4A8.229,8.229,0,0,1,10721.249,13446.667Z" transform="translate(-10697.711 -13426.683)" opacity="0.49" fill="url(#linear-gradient)"/>
+        <path id="Path_4455" data-name="Path 4455" d="M9615.6,12634a12.748,12.748,0,0,0-9.6,5.741,22.838,22.838,0,0,1,10.778-.205,7.235,7.235,0,0,1,5.2,2.289A20.174,20.174,0,0,0,9615.6,12634Z" transform="translate(-9603.875 -12633.949)" opacity="0.49" fill="url(#linear-gradient-2)"/>
+        <path id="Path_4456" data-name="Path 4456" d="M9499,13345.158a12.86,12.86,0,0,0,8,7.852,23.4,23.4,0,0,1-3.057-10.4,7.245,7.245,0,0,1,.871-5.614A19.88,19.88,0,0,0,9499,13345.158Z" transform="translate(-9498.241 -13327.961)" opacity="0.49" fill="url(#linear-gradient-3)"/>
+      </g>
+    </g>
+  </g>
+</svg>

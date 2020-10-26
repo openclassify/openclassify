@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Anuncio predeterminado GET',
     ],
-    'add_canvas' => [
-        'name' => 'Agregar lienzo',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Ancho de miniaturas',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Altura de miniatura',
-    ],
-    'picture_width' => [
-        'name' => 'Ancho de imagen',
-    ],
-    'picture_height' => [
-        'name' => 'Altura de imagen',
-    ],
     'twitter' => [
         'name' => 'Gorjeo',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Tipo de marca de agua',
-    ],
-    'watermark_text' => [
-        'name' => 'Texto de marca de agua',
-    ],
-    'watermark_image' => [
-        'name' => 'Imagen de marca de agua',
-    ],
-    'watermark_position' => [
-        'name' => 'Posición de marca de agua',
     ],
     'listing_page_image' => [
         'name' => 'Imagen de la página de listado',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Límite de anuncios populares',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Backend de cambio de tamaño de imagen',
+    ],
+    'full_image_width' => [
+        'name' => 'Ancho de imagen completo',
+    ],
+    'full_image_height' => [
+        'name' => 'Altura de imagen completa',
+    ],
+    'medium_image_width' => [
+        'name' => 'Ancho de imagen medio',
+    ],
+    'medium_image_height' => [
+        'name' => 'Altura de imagen media',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Ancho de miniaturas',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Altura de miniatura',
+    ],
+    'add_canvas' => [
+        'name' => 'Agregar lienzo',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Ancho del lienzo de la imagen',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Altura del lienzo de la imagen',
+    ],
+    'watermark_type' => [
+        'name' => 'Tipo de marca de agua',
+    ],
+    'watermark_text' => [
+        'name' => 'Texto de marca de agua',
+    ],
+    'watermark_image' => [
+        'name' => 'Imagen de marca de agua',
+    ],
+    'watermark_position' => [
+        'name' => 'Posición de marca de agua',
     ],
 ];

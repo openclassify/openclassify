@@ -33,6 +33,19 @@ return [
             'default_value' => 212,
         ]
     ],
+	'country_for_phone_field' => [
+		'type' => 'anomaly.field_type.select',
+		'required' => false,
+		'config' => [
+			'default_value' => function () {
+				return config('visiosoft.theme.base::countries.default');
+			},
+			'options' => function () {
+				$array = \Visiosoft\LocationModule\Country\CountryModel::query()->get()->pluck('name', 'abv')->toArray();
+				return $array;
+			},
+		],
+	],
     'default_city' => [
         'type' => 'anomaly.field_type.select',
     ],

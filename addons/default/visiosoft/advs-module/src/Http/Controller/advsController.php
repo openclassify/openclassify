@@ -4,31 +4,29 @@ use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
-use Anomaly\Streams\Platform\Model\Advs\PurchasePurchaseEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
-use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
 use Visiosoft\AdvsModule\Adv\Event\priceChange;
 use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
-use Visiosoft\AdvsModule\Adv\Event\UpdateAd;
 use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
+use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
+use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
-use Visiosoft\AlgoliatestModule\Http\Controller\Admin\IndexController;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CloudinaryModule\Video\VideoModel;
-use Visiosoft\CommentsModule\Comment\Events\CreateNewComment;
 use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
@@ -36,11 +34,9 @@ use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
-use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
 use Visiosoft\PackagesModule\Package\PackageModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
-use Visiosoft\QrcontactModule\Qr\QrModel;
-use Visiosoft\StoreModule\Ad\AdModel;
+use Visiosoft\SeoModule\Legend\Command\AddMetaData;
 
 class AdvsController extends PublicController
 {
@@ -48,6 +44,10 @@ class AdvsController extends PublicController
 
     private $adv_model;
     private $adv_repository;
+
+    private $optionConfigurationRepository;
+	private $productOptionRepository;
+	private $productOptionsValueRepository;
 
     private $country_repository;
 
@@ -74,6 +74,10 @@ class AdvsController extends PublicController
 
         AdvModel $advModel,
         AdvRepositoryInterface $advRepository,
+
+        OptionConfigurationRepositoryInterface $optionConfigurationRepository,
+		ProductoptionRepositoryInterface $productOptionRepository,
+		ProductoptionsValueRepositoryInterface $productOptionsValueRepository,
 
         CountryRepositoryInterface $country_repository,
 
@@ -103,6 +107,10 @@ class AdvsController extends PublicController
         $this->adv_model = $advModel;
         $this->adv_repository = $advRepository;
 
+        $this->optionConfigurationRepository = $optionConfigurationRepository;
+        $this->productOptionRepository = $productOptionRepository;
+		$this->productOptionsValueRepository = $productOptionsValueRepository;
+
         $this->country_repository = $country_repository;
 
         $this->city_model = $city_model;
@@ -123,8 +131,8 @@ class AdvsController extends PublicController
 
         $this->requestHttp = $request;
 
-        parent::__construct();
         $this->optionRepository = $optionRepository;
+        parent::__construct();
     }
 
 
@@ -153,10 +161,9 @@ class AdvsController extends PublicController
             }
             if (isset($param['cat'])) {
                 unset($param['cat']);
-                return redirect($this->fullLink(
+                return redirect(fullLink(
                     $param,
-                    route('adv_list_seo', [$categoryId->slug]),
-                    array()
+                    route('adv_list_seo', [$categoryId->slug])
                 ));
             }
         } elseif (isset($param['cat']) && !empty($param['cat'])) { // Only Param
@@ -166,10 +173,9 @@ class AdvsController extends PublicController
                 return redirect('/');
             }
             unset($param['cat']);
-            return redirect($this->fullLink(
+            return redirect(fullLink(
                 $param,
-                route('adv_list_seo', [$categoryId->slug]),
-                array()
+                route('adv_list_seo', [$categoryId->slug])
             ));
         }
 
@@ -186,23 +192,21 @@ class AdvsController extends PublicController
             if (is_null($city) && $isOneCity) { // Param and no slug
                 $cityId = $this->cityRepository->find($param['city'][0]);
                 unset($param['city']);
-                return redirect($this->fullLink(
+                return redirect(fullLink(
                     $param,
-                    route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
-                    array()
+                    route('adv_list_seo', [$categoryId->slug, $cityId->slug])
                 ));
             } elseif ($isOneCity) { // Param and slug
                 $cityId = $this->cityRepository->find($param['city'][0]);
                 if ($city !== $cityId->slug) {
                     unset($param['city']);
-                    return redirect($this->fullLink(
+                    return redirect(fullLink(
                         $param,
-                        route('adv_list_seo', [$categoryId->slug, $cityId->slug]),
-                        array()
+                        route('adv_list_seo', [$categoryId->slug, $cityId->slug])
                     ));
                 }
             } elseif ($city && $isMultipleCity) { // Slug and multiple param cities
-                return redirect($this->fullLink(
+                return redirect(fullLink(
                     $param,
                     route('adv_list_seo', [$categoryId->slug]),
                     array()
@@ -210,18 +214,16 @@ class AdvsController extends PublicController
             } elseif ($city) {
                 if (isset($param['city'][0]) && empty($param['city'][0])) { // Slug and empty param
                     unset($param['city']);
-                    return redirect($this->fullLink(
+                    return redirect(fullLink(
                         $param,
-                        route('adv_list_seo', [$categoryId->slug]),
-                        array()
+                        route('adv_list_seo', [$categoryId->slug])
                     ));
                 } else { // Only slug
                     $cityId = $this->cityRepository->findBy('slug', $city);
                     if (!$cityId) {
-                        return redirect($this->fullLink(
+                        return redirect(fullLink(
                             $param,
-                            route('adv_list_seo', [$categoryId->slug]),
-                            array()
+                            route('adv_list_seo', [$categoryId->slug])
                         ), 301);
                     }
                 }
@@ -244,37 +246,31 @@ class AdvsController extends PublicController
 
         if ($advs->currentPage() > $advs->lastPage()) {
             unset($param['page']);
-            return redirect($this->fullLink(
+            return redirect(fullLink(
                 $param,
-                \request()->url(),
-                array()
+                \request()->url()
             ), 301);
         }
 
-        $seenList = null;
         foreach ($advs as $index => $ad) {
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
+        }
 
-            if ($isActiveCustomFields && isset($param['cat']) and $param['cat'] != "") {
-                $rtnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')
-                    ->indexseen($ad, $param['cat'], $advs, $index);
-                $advs = $rtnvalues['advs'];
-                $seenList = $rtnvalues['seenList'];
-            }
+        if ($isActiveCustomFields) {
+            $cfRepository = app('Visiosoft\CustomfieldsModule\CustomField\CustomFieldRepository');
+
+            $return_values = $cfRepository->getSeenList($advs);
+
+            $return_values = $cfRepository
+                ->getSeenWithCategory($return_values['advs'], $return_values['seenList'], $categoryId);
+
+            $advs = $return_values['advs'];
+            $seenList = $return_values['seenList'];
         }
 
 
         if ($categoryId) {
-            $seo_keywords = $this->category_model->getMeta_keywords($categoryId->id);
-            $seo_description = $this->category_model->getMeta_description($categoryId->id);
-            $seo_title = $this->category_model->getMeta_title($categoryId->id);
-
-            $this->template->set('og_description', $seo_description);
-            $this->template->set('meta_description', $seo_description);
-            $this->template->set('meta_title', $seo_title);
-            $this->template->set('meta_keywords', implode(', ', $seo_keywords));
-
             $mainCats = $this->category_model->getMains($categoryId->id);
             $current_cat = $this->category_model->getCat($categoryId->id);
             $mainCats[] = [
@@ -289,6 +285,7 @@ class AdvsController extends PublicController
             $allCats = true;
         }
 
+        $cFArray = array();
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats);
             $checkboxes = $returnvalues['checkboxes'];
@@ -298,51 +295,160 @@ class AdvsController extends PublicController
             $selectImage = $returnvalues['selectImage'];
             $ranges = $returnvalues['ranges'];
             $radio = $returnvalues['radio'];
+
+            $cFArray = app('Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface')
+                ->getCFParamValues($param);
+        }
+
+        $photoVideoParams = ['photo', 'video'];
+        $photoExists = false;
+        foreach ($photoVideoParams as $pV) {
+            if (\request()->{$pV} === 'true') {
+                $removalLink = array_filter($param, function ($singleParam) use ($pV) {
+                    return $singleParam !== $pV;
+                }, ARRAY_FILTER_USE_KEY);
+                $removalLink = fullLink($removalLink, \request()->url());
+
+                if ($photoExists) {
+                    $cFArray['photoVideo']['value'][] = [
+                        'name' => trans('visiosoft.module.advs::field.ads_with_' . $pV . '.name'),
+                        'removalLink' => $removalLink
+                    ];
+                } else {
+                    $cFArray['photoVideo'] = [
+                        'name' => trans('visiosoft.module.advs::field.photo_video'),
+                        'value' => [
+                            [
+                                'name' => trans('visiosoft.module.advs::field.ads_with_' . $pV . '.name'),
+                                'removalLink' => $removalLink
+                            ]
+                        ]
+                    ];
+                    $photoExists = true;
+                }
+            }
+        }
+
+        if ($dateParam = \request()->date) {
+            $removalLink = array_filter($param, function ($singleParam) {
+                return $singleParam !== 'date';
+            }, ARRAY_FILTER_USE_KEY);
+            $removalLink = fullLink($removalLink, \request()->url());
+
+            $cFArray[] = [
+                'name' => trans('visiosoft.module.advs::field.ad_date'),
+                'value' => [
+                    [
+                        'name' => trans('visiosoft.module.advs::field.in_the_last_' . $dateParam . '.name'),
+                        'removalLink' => $removalLink
+                    ]
+                ]
+            ];
+        }
+
+        $minPrice = \request()->min_price;
+        $maxPrice = \request()->max_price;
+        if ($minPrice || $maxPrice) {
+            $removalLink = array_filter($param, function ($singleParam) {
+                return $singleParam !== 'min_price' && $singleParam !== 'max_price' && $singleParam !== 'currency';
+            }, ARRAY_FILTER_USE_KEY);
+            $removalLink = fullLink($removalLink, \request()->url());
+
+            if ($minPrice && $maxPrice) {
+                $name = "$minPrice - $maxPrice";
+            } elseif ($minPrice) {
+                $name = "$minPrice " . trans('visiosoft.module.advs::field.and_above');
+            } elseif ($maxPrice) {
+                $name = "$maxPrice " . trans('visiosoft.module.advs::field.and_below');
+            }
+
+            $cFArray[] = [
+                'name' => trans('visiosoft.module.advs::field.price.name'),
+                'value' => [
+                    [
+                        'name' => $name,
+                        'removalLink' => $removalLink
+                    ]
+                ]
+            ];
         }
 
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
         $viewType = $this->requestHttp->cookie('viewType');
 
+        list('catText' => $catText, 'user' => $user) = $this->handleSeo($categoryId, $mainCats, $cityId);
+
+        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
+            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
+            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
+
+        return $this->viewTypeBasedRedirect($viewType, $compact);
+    }
+
+    private function handleSeo($category, $mainCats, $city)
+    {
+        $showTitle = true;
+        $metaTitle = '';
         $catText = '';
-        if (!$allCats) {
-            if (count($mainCats) == 1 || count($mainCats) == 2) {
+
+        if ($category) {
+            $seo_keywords = $this->category_model->getMeta_keywords($category->id);
+            $seo_description = $this->category_model->getMeta_description($category->id);
+
+            $metaTitle = $this->category_model->getMeta_title($category->id);
+            $metaDesc = $seo_description;
+
+            $this->template->set('meta_keywords', implode(', ', $seo_keywords));
+
+            if ($city) {
+                $catText = "$city->name $catText";
+            } elseif (count($mainCats) == 1 || count($mainCats) == 2) {
                 $catText = end($mainCats)['val'];
             } elseif (count($mainCats) > 2) {
                 $catArray = array_slice($mainCats, 2);
-                $catText = '';
                 $loop = 0;
                 foreach ($catArray as $cat) {
                     $catText = !$loop ? $catText . $cat['val'] : $catText . ' ' . $cat['val'];
                     $loop++;
                 }
             }
+            $metaTitle = $catText ?: $metaTitle;
 
-            if ($cityId) {
-                $catText = "$cityId->name $catText";
+            if (is_module_installed('visiosoft.module.seo')) {
+                $metaData = dispatch_now(new AddMetaData($category->id, 'category'));
+                if ($metaData) {
+                    list('metaTitle' => $seoMetaTitle, 'metaDesc' => $seoMetaDesc) = $metaData;
+                    $metaTitle = $seoMetaTitle ?: $metaTitle;
+                    $metaDesc = $seoMetaDesc ?: $metaDesc;
+                }
             }
 
-            $this->template->set('showTitle', false);
-            $this->template->set('meta_title', $catText);
+            $this->template->set('og_description', $metaDesc);
+            $this->template->set('meta_description', $metaDesc);
+
+            $showTitle = false;
         }
 
         $user = null;
-        if (!empty($param['user'])) {
-            $user = $this->userRepository->find($param['user']);
-            $this->template->set('showTitle', false);
-            $this->template->set('meta_title', $user->name() . ' ' . trans('visiosoft.module.advs::field.ads'));
+        if (\request()->user) {
+            $user = $this->userRepository->find(\request()->user);
+            $showTitle = false;
+            $metaTitle = $user->name() . ' ' . trans('visiosoft.module.advs::field.ads');
         }
 
-        $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
-            'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText');
+        $this->template->set('showTitle', $showTitle);
+        $this->template->set('meta_title', $metaTitle);
 
-        return $this->viewTypeBasedRedirect($viewType, $compact);
-    }
+        // Set rel="canonical"
+        if (\request()->sort_by || \request()->doping) {
+            $canonParam = \request()->all();
+            unset($canonParam['sort_by'], $canonParam['doping']);
+            $canonUrl = fullLink($canonParam, \request()->url());
+            $this->template->set('additional_meta', "<link rel='canonical' href='$canonUrl'/>");
+        }
 
-    public function fullLink($request, $url, $newParameters)
-    {
-        return $this->dispatch(new appendRequestURL($request, $url, $newParameters));
+        return compact('catText', 'user');
     }
 
     public function viewTypeBasedRedirect($viewType, $compact)
@@ -373,7 +479,7 @@ class AdvsController extends PublicController
 
         $adv = $this->adv_repository->getListItemAdv($id);
 
-        if ($adv) {
+        if ($adv && (!$adv->expired() || $adv->created_by_id === \auth()->id())) {
 
             if ($this->adv_model->is_enabled('complaints')) {
                 $complaints = ComplaintsComplainTypesEntryModel::all();
@@ -424,13 +530,6 @@ class AdvsController extends PublicController
 
             $this->event->dispatch(new viewAd($adv));//view ad
 
-            $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
-            $this->template->set('meta_description', strip_tags($adv->advs_desc, ''));
-            $this->template->set('showTitle', false);
-            $this->template->set(
-                'meta_title',
-                $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain')
-            );
             if (substr($adv->cover_photo, 0, 4) === "http") {
                 $coverPhoto = $adv->cover_photo;
             } else {
@@ -440,11 +539,38 @@ class AdvsController extends PublicController
                     $coverPhoto = \Illuminate\Support\Facades\Request::root() . '/' . $adv->cover_photo;
                 }
             }
-            $this->template->set('meta_image', $coverPhoto);
 
-            if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
+            $metaTitle = $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain');
+            $metaDesc = strip_tags($adv->advs_desc, '');
+
+            if (is_module_installed('visiosoft.module.seo')) {
+                $metaData = dispatch_now(new AddMetaData($adv->cat1, 'ad', $adv->id));
+                if ($metaData) {
+                    list('metaTitle' => $seoMetaTitle, 'metaDesc' => $seoMetaDesc) = $metaData;
+                    $metaTitle = $seoMetaTitle ?: $metaTitle;
+                    $metaDesc = $seoMetaDesc ?: $metaDesc;
+                }
+            }
+
+            $coverPhotoInfo = pathinfo($coverPhoto);
+            if (substr($coverPhotoInfo['basename'], 0, 3) === "tn-") {
+                $ogImage = substr(basename($coverPhotoInfo['basename']), 3);
+                $ogImage = $coverPhotoInfo['dirname'] . "/$ogImage";
+            } else {
+                $ogImage = $coverPhoto;
+            }
+
+            $this->template->set('meta_image', $ogImage);
+            $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
+            $this->template->set('meta_description', $metaDesc);
+            $this->template->set('showTitle', false);
+            $this->template->set('meta_title', $metaTitle);
+
+	        $configurations = $this->optionConfigurationRepository->getConf($adv->id);
+
+	        if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-                    'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options'));
+                    'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options', 'configurations'));
             } else {
                 return back();
             }
@@ -485,7 +611,7 @@ class AdvsController extends PublicController
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
-            compact('adv', 'categories', 'features', 'isActiveDopings', 'options'));
+            compact('adv', 'categories', 'features', 'isActiveDopings', 'configurations'));
     }
 
     public function getLocations()
@@ -583,8 +709,7 @@ class AdvsController extends PublicController
         CategoryRepositoryInterface $categoryRepository,
         Dispatcher $events,
         AdvModel $advModel,
-        AdressRepositoryInterface $address,
-        CategoryModel $categoryModel
+        AdressRepositoryInterface $address
     )
     {
         if (!Auth::user()) {
@@ -599,10 +724,21 @@ class AdvsController extends PublicController
             /*  Update Adv  */
             $adv = AdvsAdvsEntryModel::find($request->update_id);
 
+
+            //Set Old Price
+            $old_price = ($adv->slug == "") ? $request->price : $adv->price;
+            $adv->old_price = $old_price;
+
+
+            $allowPendingAdCreation = false;
             if ($advModel->is_enabled('packages') and $adv->slug == "") {
                 $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
                 if (!is_null($cat)) {
-                    return redirect('/');
+                    if (array_key_exists('allowPendingAds', $cat)) {
+                        $allowPendingAdCreation = $cat['allowPendingAds'];
+                    } else {
+                        return redirect($cat['redirect']);
+                    }
                 }
             }
 
@@ -657,7 +793,7 @@ class AdvsController extends PublicController
             }
 
             // Auto approve
-            if (setting_value('visiosoft.module.advs::auto_approve')) {
+            if (setting_value('visiosoft.module.advs::auto_approve') && !$allowPendingAdCreation) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
                 $adv->update([
                     'status' => 'approved',
@@ -702,7 +838,11 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
             event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+            if ($allowPendingAdCreation) {
+                return redirect(route("visiosoft.module.packages::buy_package") . '?ad_id=' . $adv->id);
+            } else {
+                return redirect(route('advs_preview', [$request->update_id]));
+            }
         }
 
         /* New Create Adv */

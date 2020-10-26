@@ -249,6 +249,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'In de afgelopen 24 uur'
     ],
+    'in_the_last_day' => [
+        'name' => 'In de afgelopen 24 uur'
+    ],
     'in_the_last_week' => [
         'name' => 'In de laatste week'
     ],
@@ -297,4 +300,21 @@ return [
 
     // New create page
     'options' => 'Opties',
+
+    'free' => 'Vrij',
+    'ad_date' => 'Advertentiedatum',
+    'photo_video' => 'Foto, video',
+    'and_above' => 'en hoger',
+    'and_below' => 'en onder',
+    'clear_all' => 'Wis alles',
+    'balances' => 'Weegschalen',
+    'packages' => 'Pakketjes',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Abonnement',
+	'created' => 'Gemaakt',
+    'old_price' => [
+        'name' => 'Oude prijs'
+    ],
 ];

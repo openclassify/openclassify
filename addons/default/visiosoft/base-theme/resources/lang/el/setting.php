@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'Στυλ (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Όριο υποκατηγοριών αρχικής σελίδας',
+    ],
+	'default_country' => [
+		'name' => 'Σελίδα εγγραφής, προεπιλεγμένη χώρα για τηλέφωνο',
+	]
 ];

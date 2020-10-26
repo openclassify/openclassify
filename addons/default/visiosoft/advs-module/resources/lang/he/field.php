@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'ביממה האחרונה'
     ],
+    'in_the_last_day' => [
+        'name' => 'ב 24 השעות האחרונות'
+    ],
     'in_the_last_week' => [
         'name' => 'בשבוע שעבר'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'אפשרויות',
+
+    'free' => 'חינם',
+    'ad_date' => 'תאריך מודעה',
+    'photo_video' => 'צילום, וידאו',
+    'and_above' => 'ומעל',
+    'and_below' => 'ומתחת',
+    'clear_all' => 'נקה הכל',
+    'balances' => 'יתרות',
+    'packages' => 'חבילות',
+    'dopings' => 'סמים',
+    'advs' => 'עו"ד',
+    'site' => 'אֲתַר',
+    'subscription' => 'מִנוּי',
+	'created' => 'נוצר',
+    'old_price' => [
+        'name' => 'מחיר ישן'
+    ],
 ];

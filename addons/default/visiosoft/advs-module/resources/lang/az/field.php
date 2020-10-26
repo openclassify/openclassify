@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Son 24 saatda'
     ],
+    'in_the_last_day' => [
+        'name' => 'Son 24 Saatda'
+    ],
     'in_the_last_week' => [
         'name' => 'Son Həftədə'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'Seçimlər',
+
+    'free' => 'Pulsuz',
+    'ad_date' => 'Reklam Tarixi',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'və yuxarıda',
+    'and_below' => 'və aşağıda',
+    'clear_all' => 'Hamısını sil, hamısını təmizlə',
+    'balances' => 'Qalıqlar',
+    'packages' => 'Paketlər',
+    'dopings' => 'Dopinqlər',
+    'advs' => 'Advs',
+    'site' => 'Sayt',
+    'subscription' => 'Abunə',
+	'created' => 'Yarandı',
+    'old_price' => [
+        'name' => 'Köhnə Qiymət'
+    ],
 ];

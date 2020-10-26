@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'Không có địa chỉ hoặc không được phép xem.',
     'empty_password_sms_message' => 'Do vấn đề bảo mật, chúng tôi đã thay đổi mật khẩu của bạn! Mật khẩu mới của bạn là:',
     'required_all' => "Tất cả các lĩnh vực là bắt buộc!",
+    'can_not_remove_filled_fields' => "Bạn không thể loại bỏ các trường đã điền!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mail, số điện thoại không chính xác!',

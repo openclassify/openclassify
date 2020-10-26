@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'শেষ 24 ঘন্টা'
     ],
+    'in_the_last_day' => [
+        'name' => 'শেষ 24 ঘন্টা'
+    ],
     'in_the_last_week' => [
         'name' => 'গত সপ্তাহে'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'বিকল্পগুলি',
+
+    'free' => 'ফ্রি',
+    'ad_date' => 'বিজ্ঞাপন তারিখ',
+    'photo_video' => 'ছবি, ভিডিও',
+    'and_above' => 'এবং উপরে',
+    'and_below' => 'এবং নিচে',
+    'clear_all' => 'সব পরিষ্কার করে দাও',
+    'balances' => 'ব্যালেন্স',
+    'packages' => 'প্যাকেজগুলি',
+    'dopings' => 'ডোপিংস',
+    'advs' => 'অ্যাড',
+    'site' => 'সাইট',
+    'subscription' => 'সাবস্ক্রিপশন',
+	'created' => 'তৈরি হয়েছে',
+    'old_price' => [
+        'name' => 'পুরাতন মূল্য'
+    ],
 ];

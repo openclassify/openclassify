@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'În ultimele 24 de ore'
     ],
+    'in_the_last_day' => [
+        'name' => 'În ultimele 24 de ore'
+    ],
     'in_the_last_week' => [
         'name' => 'In ultima saptamana'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'Opțiuni',
+
+    'free' => 'Gratuit',
+    'ad_date' => 'Data publicității',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'Si mai sus',
+    'and_below' => 'si sub',
+    'clear_all' => 'Curata tot',
+    'balances' => 'Solduri',
+    'packages' => 'Pachete',
+    'dopings' => 'Dopaje',
+    'advs' => 'Sfaturi',
+    'site' => 'Site',
+    'subscription' => 'Abonament',
+	'created' => 'Creată',
+    'old_price' => [
+        'name' => 'Preț vechi'
+    ],
 ];

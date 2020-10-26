@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'Estilo (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Límite de subcategorías de la página de inicio',
+    ],
+	'default_country' => [
+		'name' => 'Página de registro, país predeterminado para el teléfono',
+	]
 ];

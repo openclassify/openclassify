@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'Stil (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Əsas alt kateqoriyalar məhdudiyyəti',
+    ],
+	'default_country' => [
+		'name' => 'Qeydiyyat səhifəsi, telefon üçün standart ölkə',
+	]
 ];

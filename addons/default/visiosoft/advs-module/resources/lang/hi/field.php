@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'द लास्ट 24 ऑवर्स में'
     ],
+    'in_the_last_day' => [
+        'name' => 'द लास्ट 24 ऑवर्स में'
+    ],
     'in_the_last_week' => [
         'name' => 'पिछले हफ़्ते में'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'विकल्प',
+
+    'free' => 'नि: शुल्क',
+    'ad_date' => 'विज्ञापन तिथि',
+    'photo_video' => 'फोटो, वीडियो',
+    'and_above' => 'और ऊपर',
+    'and_below' => 'और नीचे',
+    'clear_all' => 'सभी साफ करें',
+    'balances' => 'शेष',
+    'packages' => 'संकुल',
+    'dopings' => 'dopings',
+    'advs' => 'advs',
+    'site' => 'साइट',
+    'subscription' => 'अंशदान',
+	'created' => 'बनाया था',
+    'old_price' => [
+        'name' => 'पुरानी कीमत'
+    ],
 ];

@@ -10,4 +10,5 @@ return [
     'reset_password' => 'Đặt lại mật khẩu',
     'email' => 'E-mail',
     'phone' => 'Điện thoại',
+    'show_all' => 'Hiển thị tất cả',
 ];

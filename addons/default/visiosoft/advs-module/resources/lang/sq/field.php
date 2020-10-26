@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Në 24 orët e fundit'
     ],
+    'in_the_last_day' => [
+        'name' => 'Në 24 orët e fundit'
+    ],
     'in_the_last_week' => [
         'name' => 'Në Javën e Fundit'
     ],
@@ -297,4 +300,21 @@ return [
 
     // New create page
     'options' => 'Opsione',
+
+    'free' => 'Falas',
+    'ad_date' => 'Data e shpalljes',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'dhe më lart',
+    'and_below' => 'dhe më poshtë',
+    'clear_all' => 'Pastroji të gjitha',
+    'balances' => 'Bilancet',
+    'packages' => 'Paketat',
+    'dopings' => 'Dopingët',
+    'advs' => 'Adv',
+    'site' => 'Faqen',
+    'subscription' => 'Abonim',
+	'created' => 'Krijuar',
+    'old_price' => [
+        'name' => 'Çmimi i Vjetër'
+    ],
 ];

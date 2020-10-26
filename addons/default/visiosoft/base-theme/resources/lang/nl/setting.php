@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'Stijl (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Limiet subcategorieën op homepage',
+    ],
+	'default_country' => [
+		'name' => 'Registratiepagina, standaardland voor telefoon',
+	]
 ];

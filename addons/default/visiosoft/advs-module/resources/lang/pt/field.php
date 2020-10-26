@@ -249,6 +249,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Nas últimas 24 horas'
     ],
+    'in_the_last_day' => [
+        'name' => 'Nas últimas 24 horas'
+    ],
     'in_the_last_week' => [
         'name' => 'Na última semana'
     ],
@@ -297,4 +300,21 @@ return [
 
     // New create page
     'options' => 'Opções',
+
+    'free' => 'Livre',
+    'ad_date' => 'Data do Anúncio',
+    'photo_video' => 'Foto, Vídeo',
+    'and_above' => 'e acima',
+    'and_below' => 'e abaixo',
+    'clear_all' => 'Limpar tudo',
+    'balances' => 'Saldos',
+    'packages' => 'Pacotes',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Local',
+    'subscription' => 'Inscrição',
+	'created' => 'Criado',
+    'old_price' => [
+        'name' => 'Preço antigo'
+    ],
 ];

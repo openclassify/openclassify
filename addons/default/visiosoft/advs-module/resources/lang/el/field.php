@@ -249,6 +249,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Τις τελευταίες 24 ώρες'
     ],
+    'in_the_last_day' => [
+        'name' => 'Τις τελευταίες 24 ώρες'
+    ],
     'in_the_last_week' => [
         'name' => 'Την τελευταία εβδομάδα'
     ],
@@ -297,4 +300,21 @@ return [
 
     // New create page
     'options' => 'Επιλογές',
+
+    'free' => 'Ελεύθερος',
+    'ad_date' => 'Ημερομηνία διαφήμισης',
+    'photo_video' => 'Φωτογραφία, βίντεο',
+    'and_above' => 'και παραπανω',
+    'and_below' => 'και παρακάτω',
+    'clear_all' => 'Τα καθαρίζω όλα',
+    'balances' => 'Υπόλοιπα',
+    'packages' => 'Πακέτα',
+    'dopings' => 'Ντόπινγκ',
+    'advs' => 'Advs',
+    'site' => 'Ιστοσελίδα',
+    'subscription' => 'Συνδρομή',
+	'created' => 'Δημιουργήθηκε',
+    'old_price' => [
+        'name' => 'Παλιά τιμή'
+    ],
 ];

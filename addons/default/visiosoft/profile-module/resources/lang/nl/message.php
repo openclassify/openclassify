@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'Geen adres of niet geautoriseerd om te bekijken.',
     'empty_password_sms_message' => 'Vanwege beveiligingsproblemen hebben we uw wachtwoord gewijzigd! Je nieuwe wachtwoord is:',
     'required_all' => "Alle velden zijn vereist!",
+    'can_not_remove_filled_fields' => "U kunt geen ingevulde velden verwijderen!",
 
     // Forgot Password
     'email_phone_not_found' => 'Het e-mailadres, telefoonnummer is niet correct!',

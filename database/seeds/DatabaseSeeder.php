@@ -44,13 +44,13 @@ class DatabaseSeeder extends Seeder
         $admin = $this->roles->findBySlug('admin');
 
         $this->users->unguard();
-        $this->users->newQuery()->where('email', "admin@visiosoft.com.tr")->forceDelete();
+        $this->users->newQuery()->where('email', "info@openclassify.com")->forceDelete();
         $visiosoft_administrator = $this->users->create(
             [
-                'display_name' => 'Visiosoft Dev',
-                'email' => "admin@visiosoft.com.tr",
-                'username' => "visiosoft",
-                'password' => "visiosoft123",
+                'display_name' => 'openclassify',
+                'email' => "info@openclassify.com",
+                'username' => "openclassify",
+                'password' => "openclassify",
             ]
         );
 

@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Anomaly\Streams\Platform\Model\Advs\AdvsCustomFieldsEntryModel;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -12,6 +13,8 @@ use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
+use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
+use Visiosoft\LocationModule\Village\VillageModel;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
@@ -66,9 +69,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return $query->where('advs_advs.slug', '!=', "");
     }
 
-    public function userAdv($nullable_ad = false)
+    public function userAdv($nullable_ad = false, $checkRole = true)
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin') && $checkRole) {
             return $this->getAdv(null, $nullable_ad);
         } else {
             return $this->getAdv(null, $nullable_ad)
@@ -370,5 +373,21 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $neighborhoodModel = new NeighborhoodModel();
         $neighborhood = $neighborhoodModel->newQuery()->find($this->neighborhood);
         return $neighborhood ? $neighborhood->name : false;
+    }
+
+    public function getVillage()
+    {
+        $village = app(VillageRepositoryInterface::class)->find($this->village);
+        return $village ? $village->name : false;
+    }
+
+    public function expired()
+    {
+        return $this->finish_at ? $this->finish_at < Carbon::now() : true;
+    }
+
+    public function getProductOptionsValues()
+    {
+    	return $this->product_options_value;
     }
 }

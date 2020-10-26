@@ -21,6 +21,7 @@ class ProfileFormHandler
             'office_phone' => $builder->getPostValue('office_phone'),
             'land_phone' => $builder->getPostValue('land_phone'),
             'identification_number' => $builder->getPostValue('identification_number'),
+            'birthday' => $builder->getPostValue('birthday'),
             'register_type' => $builder->getPostValue('register_type'),
         ];
 
@@ -31,6 +32,14 @@ class ProfileFormHandler
         }
 
         $user = $userModel->newQuery()->find(\auth()->id());
+
+        // Prevent removing already filled fields
+        foreach ($parameters as $field => $value) {
+            if ($user->$field && !$value) {
+                $messages->error('visiosoft.module.profile::message.can_not_remove_filled_fields');
+                return;
+            }
+        }
 
         $oldCustomerInfo = $user->toArray();
 

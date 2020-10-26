@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'في ال 24 ساعة الماضية'
     ],
+    'in_the_last_day' => [
+        'name' => 'في آخر 24 ساعة'
+    ],
     'in_the_last_week' => [
         'name' => 'في الأسبوع الماضي'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'خيارات',
+
+    'free' => 'مجانا',
+    'ad_date' => 'تاريخ الإعلان',
+    'photo_video' => 'صور وفيديو',
+    'and_above' => 'و ما فوق',
+    'and_below' => 'و تحت',
+    'clear_all' => 'امسح الكل',
+    'balances' => 'الرصيد',
+    'packages' => 'الحزمة',
+    'dopings' => 'المنشطات',
+    'advs' => 'Advs',
+    'site' => 'الموقع',
+    'subscription' => 'اشتراك',
+	'created' => 'خلقت',
+    'old_price' => [
+        'name' => 'سعر قديم'
+    ],
 ];

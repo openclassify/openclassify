@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="40" height="25.7" viewBox="0 0 40 25.7">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.906" y1="0.743" x2="0.193" y2="0.743" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#c6c4c4"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="0.367" y1="0.156" x2="0.779" y2="0.997" xlink:href="#linear-gradient"/>
+    <linearGradient id="linear-gradient-3" x1="0.26" y1="0.715" x2="0.846" y2="0.216" xlink:href="#linear-gradient"/>
+  </defs>
+  <g id="oc_logo2" data-name="oc logo2" transform="translate(16875 -4360)">
+    <rect id="Rectangle_166" data-name="Rectangle 166" width="40" height="25.7" transform="translate(-16875 4360)" fill="#e2c756" opacity="0"/>
+    <g id="Group_16415" data-name="Group 16415" transform="translate(365.099 -0.303)">
+      <path id="Union_162" data-name="Union 162" d="M12.825,25.7h0ZM0,12.85a12.818,12.818,0,1,1,23.489,7.109,8.4,8.4,0,0,0-3.2-.69H16.277a7.31,7.31,0,1,0-3.555.882h6.534c4.015,0,7.851,4.117,7.851,5.549H12.774A12.818,12.818,0,0,1,0,12.85Z" transform="translate(-17233.715 4360.303)" fill="#fff"/>
+      <path id="Path_10942" data-name="Path 10942" d="M10721.25,13446.668a12.819,12.819,0,0,0,1.842-9.667,23.11,23.11,0,0,1-7.479,7.774,7.484,7.484,0,0,1-1.612,1.177h4A8.2,8.2,0,0,1,10721.25,13446.668Z" transform="translate(-27931.426 -9066.381)" opacity="0.49" fill="url(#linear-gradient)"/>
+      <path id="Path_10943" data-name="Path 10943" d="M9615.6,12634a12.736,12.736,0,0,0-9.6,5.741,22.812,22.812,0,0,1,10.778-.205,7.232,7.232,0,0,1,5.2,2.288A20.176,20.176,0,0,0,9615.6,12634Z" transform="translate(-26837.588 -8273.647)" opacity="0.49" fill="url(#linear-gradient-2)"/>
+      <path id="Path_10944" data-name="Path 10944" d="M9499,13345.158a12.865,12.865,0,0,0,8.006,7.852,23.372,23.372,0,0,1-3.057-10.4,7.239,7.239,0,0,1,.869-5.612A19.873,19.873,0,0,0,9499,13345.158Z" transform="translate(-26731.959 -8967.659)" opacity="0.49" fill="url(#linear-gradient-3)"/>
+    </g>
+  </g>
+</svg>

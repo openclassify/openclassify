@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'آخری 24 گھنٹوں میں'
     ],
+    'in_the_last_day' => [
+        'name' => 'آخری 24 گھنٹوں میں'
+    ],
     'in_the_last_week' => [
         'name' => 'آخری ہفتے میں'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'اختیارات',
+
+    'free' => 'مفت',
+    'ad_date' => 'اشتہاری تاریخ',
+    'photo_video' => 'تصویر ، ویڈیو',
+    'and_above' => 'اور اوپر',
+    'and_below' => 'اور نیچے',
+    'clear_all' => 'تمام کو صاف کریں',
+    'balances' => 'توازن',
+    'packages' => 'پیکیجز',
+    'dopings' => 'ڈوپنگز',
+    'advs' => 'ایڈز',
+    'site' => 'سائٹ',
+    'subscription' => 'سب سکریپشن',
+	'created' => 'بنائی گئی',
+    'old_price' => [
+        'name' => 'پرانی قیمت'
+    ],
 ];

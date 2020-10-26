@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'शैली (सीएसएस)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'मुखपृष्ठ उप श्रेणियाँ श्रेणियाँ सीमा',
+    ],
+	'default_country' => [
+		'name' => 'रजिस्टर पेज, फोन के लिए डिफ़ॉल्ट देश',
+	]
 ];

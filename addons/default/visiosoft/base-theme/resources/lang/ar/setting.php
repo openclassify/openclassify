@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'النمط (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'حد الفئات الفرعية للصفحة الرئيسية',
+    ],
+	'default_country' => [
+		'name' => 'صفحة التسجيل ، البلد الافتراضي للهاتف',
+	]
 ];

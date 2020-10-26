@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'سبک (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'زیرمجموعه ها',
+    ],
+	'default_country' => [
+		'name' => 'صفحه ثبت نام ، کشور پیش فرض تلفن',
+	]
 ];

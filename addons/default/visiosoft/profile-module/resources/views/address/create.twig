@@ -51,7 +51,9 @@
                             {{ form_close() }}
 
                         </div>
-                        <div class="tab-pane fade p-3 {% if isCompany %}active show{% endif  %}" id="corporate" role="tabpanel" aria-labelledby="corporate-tab">
+
+                        <div class="tab-pane fade p-3 {{ isCompany ? ' active show' }}" id="corporate" role="tabpanel"
+                             aria-labelledby="corporate-tab">
                             {% set form = form('addressCompany').entry(id).actions({'save':'save'}).get() %}
                             {{ form_open({
                                 'class': 'form ' ~ form.options.class ,

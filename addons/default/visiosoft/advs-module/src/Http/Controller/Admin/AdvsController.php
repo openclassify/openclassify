@@ -25,6 +25,8 @@ use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
+use Maatwebsite\Excel\Facades\Excel;
+use Visiosoft\AdvsModule\Adv\AdvsExport;
 
 class AdvsController extends AdminController
 {
@@ -106,6 +108,10 @@ class AdvsController extends AdminController
                     'replicate' => [
                         'text' => 'Replicate',
                     ],
+	                'create_configration' => [
+		                'text' => trans('visiosoft.module.advs::button.create_configurations'),
+		                'href' => route('visiosoft.module.advs::configrations.create')."?ad={entry.id}"
+	                ],
                 ],
             ],
         ]);
@@ -341,4 +347,9 @@ class AdvsController extends AdminController
         <a href='" . $request->server('HTTP_REFERER') . "'><b>Return Back</b></a>";
         echo "<br><a href='/admin'><b>Return Admin Panel</b></a>";
     }
+
+
+	public function exportAdvs(){
+		return Excel::download(new AdvsExport(), 'advs-' . time() . '.xlsx');
+	}
 }

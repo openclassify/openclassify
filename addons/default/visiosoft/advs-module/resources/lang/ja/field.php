@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => '過去24時間'
     ],
+    'in_the_last_day' => [
+        'name' => '過去24時間で'
+    ],
     'in_the_last_week' => [
         'name' => '先週'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'オプション',
+
+    'free' => '自由',
+    'ad_date' => '広告日',
+    'photo_video' => '写真、ビデオ',
+    'and_above' => '以上',
+    'and_below' => '以下',
+    'clear_all' => 'すべてクリア',
+    'balances' => 'バランス',
+    'packages' => 'パッケージ',
+    'dopings' => 'ドーピング',
+    'advs' => 'アドバンス',
+    'site' => '地点',
+    'subscription' => 'サブスクリプション',
+	'created' => '作成した',
+    'old_price' => [
+        'name' => '古い価格'
+    ],
 ];

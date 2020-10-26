@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Fshih Filtrin e Vendndodhjes',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Vendi i paracaktuar për fushën e regjistrimit të telefonit'
+	]
 ];

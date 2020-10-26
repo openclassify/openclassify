@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Скрыть фильтр местоположения',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Страна по умолчанию для поля регистрации телефона'
+	]
 ];

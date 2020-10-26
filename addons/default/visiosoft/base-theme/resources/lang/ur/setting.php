@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'انداز (سی ایس ایس)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'مرکزی صفحہ ذیلی زمرے کی حد',
+    ],
+	'default_country' => [
+		'name' => 'صفحہ کیلئے رجسٹر ، فون کے لئے پہلے سے طے شدہ ملک',
+	]
 ];

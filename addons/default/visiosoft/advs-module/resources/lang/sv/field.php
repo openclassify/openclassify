@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Under de senaste 24 timmarna'
     ],
+    'in_the_last_day' => [
+        'name' => 'Under de senaste 24 timmarna'
+    ],
     'in_the_last_week' => [
         'name' => 'Under den sista veckan'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'alternativ',
+
+    'free' => 'Fri',
+    'ad_date' => 'Annonsdatum',
+    'photo_video' => 'Foto, video',
+    'and_above' => 'och ovan',
+    'and_below' => 'och under',
+    'clear_all' => 'Rensa alla',
+    'balances' => 'Balanser',
+    'packages' => 'Paket',
+    'dopings' => 'Dopings',
+    'advs' => 'Adv',
+    'site' => 'Webbplats',
+    'subscription' => 'Prenumeration',
+	'created' => 'Skapad',
+    'old_price' => [
+        'name' => 'Gammalt pris'
+    ],
 ];

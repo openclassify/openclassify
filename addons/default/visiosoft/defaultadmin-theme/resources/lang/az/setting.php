@@ -11,8 +11,11 @@ return [
         'warning'      => 'İlk əlçatan naviqasiya elementi <strong>ev</strong> sahə kimi istifadə olunur.',
         'reorder'      => 'Sıralamaq üçün <strong>yan çubuğun</strong> də ilkin naviqasiya elementlərini sürükləyin və buraxın.',
     ],
-    "icon" => [
-        'name' => 'Nişan',
+    "login_icon" => [
+        'name' => 'Giriş nişanı',
+    ],
+    "panel_icon" => [
+        'name' => 'Panel nişanı',
     ],
     "title" => [
         'name' => 'Başlıq',

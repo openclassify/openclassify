@@ -9,7 +9,7 @@ return [
     ],
     'hide_zero_price' => [
         'name' => 'Sıfır ise Fiyatı Gizle',
-        'instructions' => 'Reklam fiyatı 0 ise fiyatı gizle',
+        'instructions' => 'İlan fiyatı 0 ise fiyatı gizle',
     ],
     'estimated_pending_time' => [
         'name' => 'Tahmini Bekleme Süresi',
@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Varsayılan İlan GET',
     ],
-    'add_canvas' => [
-        'name' => 'Tuval Ekle',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Küçük Resim Genişliği',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Küçük Resim Yüksekliği',
-    ],
-    'picture_width' => [
-        'name' => 'Resim Genişliği',
-    ],
-    'picture_height' => [
-        'name' => 'Resim Yüksekliği',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Filigran Türü',
-    ],
-    'watermark_text' => [
-        'name' => 'Filigran Metni',
-    ],
-    'watermark_image' => [
-        'name' => 'Filigran Görüntüsü',
-    ],
-    'watermark_position' => [
-        'name' => 'Filigran Konumu',
     ],
     'listing_page_image' => [
         'name' => 'Sayfa Resmi Listeleme',
@@ -156,6 +129,51 @@ return [
         'name' => 'TCMB Exchange URL\'si',
     ],
     'popular_ads_limit' => [
-        'name' => 'Popüler Reklam Limiti',
+        'name' => 'Popüler İlan Limiti',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Görüntüyü Yeniden Boyutlandır Arka Uç',
+    ],
+    'full_image_width' => [
+        'name' => 'Tam Resim Genişliği',
+    ],
+    'full_image_height' => [
+        'name' => 'Tam Resim Yüksekliği',
+    ],
+    'medium_image_width' => [
+        'name' => 'Orta Resim Genişliği',
+    ],
+    'medium_image_height' => [
+        'name' => 'Orta Resim Yüksekliği',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Küçük Resim Genişliği',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Küçük Resim Yüksekliği',
+    ],
+    'add_canvas' => [
+        'name' => 'Tuval Ekle',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Görüntü Tuvali Genişliği',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Resim Tuval Yüksekliği',
+    ],
+    'watermark_type' => [
+        'name' => 'Filigran Türü',
+    ],
+    'watermark_text' => [
+        'name' => 'Filigran Metni',
+    ],
+    'watermark_image' => [
+        'name' => 'Filigran Görüntüsü',
+    ],
+    'watermark_position' => [
+        'name' => 'Filigran Konumu',
     ],
 ];

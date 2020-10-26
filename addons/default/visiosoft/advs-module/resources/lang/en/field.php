@@ -137,7 +137,9 @@ return [
     'oldest' => 'Oldest',
     'address_a_z' => 'Address (A to Z)',
     'address_z_a' => 'Address (Z to A)',
-    'categories' => 'Categories',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'All Categories',
     'location' => 'Location',
     'send_message' => 'Send Message',
@@ -248,6 +250,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'In The Last 24 Hours'
     ],
+    'in_the_last_day' => [
+        'name' => 'In The Last 24 Hours'
+    ],
     'in_the_last_week' => [
         'name' => 'In The Last Week'
     ],
@@ -297,5 +302,26 @@ return [
     // New create page
     'options' => 'Options',
 
-    'free' => 'Free'
+    'free' => 'Free',
+    'ad_date' => 'Ad Date',
+    'photo_video' => 'Photo, Video',
+    'and_above' => 'and above',
+    'and_below' => 'and below',
+    'clear_all' => 'Clear All',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
+	'created' => 'Created',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
+    'old_price' => [
+        'name' => 'Old Price'
+    ],
 ];

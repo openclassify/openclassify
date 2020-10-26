@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'স্টাইল (css)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'হোমপেজ সাব বিভাগের সীমা',
+    ],
+	'default_country' => [
+		'name' => 'ফোনের জন্য পৃষ্ঠা, ডিফল্ট দেশ নিবন্ধ করুন',
+	]
 ];

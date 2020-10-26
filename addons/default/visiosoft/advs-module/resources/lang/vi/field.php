@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Trong 24 giờ qua'
     ],
+    'in_the_last_day' => [
+        'name' => 'Trong 24 giờ qua'
+    ],
     'in_the_last_week' => [
         'name' => 'Trong tuần trước'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'Tùy chọn',
+
+    'free' => 'Miễn phí',
+    'ad_date' => 'Ngày quảng cáo',
+    'photo_video' => 'Ảnh, Video',
+    'and_above' => 'trở lên',
+    'and_below' => 'và dưới đây',
+    'clear_all' => 'Làm sạch tất cả',
+    'balances' => 'Cân bằng',
+    'packages' => 'Các gói',
+    'dopings' => 'Liều lượng',
+    'advs' => 'Lời khuyên',
+    'site' => 'Địa điểm',
+    'subscription' => 'Đăng ký',
+	'created' => 'Tạo',
+    'old_price' => [
+        'name' => 'Giá cũ'
+    ],
 ];

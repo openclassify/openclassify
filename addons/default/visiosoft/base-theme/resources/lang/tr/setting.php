@@ -20,10 +20,10 @@ return [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Reklam Ayrıntıları',
+        'name' => 'İlan Ayrıntıları',
     ],
     'ad_details_tab' => [
-        'name' => 'Reklam Ayrıntıları Sekmesi',
+        'name' => 'İlan Ayrıntıları Sekmesi',
     ],
     'latest_and_view_all_btn' => [
         'name' => 'Tümünü Görüntüle',
@@ -37,4 +37,10 @@ return [
     'style' => [
         'name' => 'Stil (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Ana Sayfa Alt Kategoriler Sınırı',
+    ],
+	'default_country' => [
+		'name' => 'Kayıt sayfası, telefon için varsayılan ülke',
+	]
 ];

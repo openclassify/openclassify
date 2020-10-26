@@ -248,6 +248,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'За останні 24 години'
     ],
+    'in_the_last_day' => [
+        'name' => 'В останні 24 години'
+    ],
     'in_the_last_week' => [
         'name' => 'В останній тиждень'
     ],
@@ -296,4 +299,21 @@ return [
 
     // New create page
     'options' => 'Параметри',
+
+    'free' => 'Безкоштовно',
+    'ad_date' => 'Дата оголошення',
+    'photo_video' => 'Фото, Відео',
+    'and_above' => 'і вище',
+    'and_below' => 'і нижче',
+    'clear_all' => 'Очистити все',
+    'balances' => 'Баланси',
+    'packages' => 'Пакети',
+    'dopings' => 'Допінг',
+    'advs' => 'Advs',
+    'site' => 'Сайт',
+    'subscription' => 'Передплата',
+	'created' => 'Створено',
+    'old_price' => [
+        'name' => 'Стара ціна'
+    ],
 ];
