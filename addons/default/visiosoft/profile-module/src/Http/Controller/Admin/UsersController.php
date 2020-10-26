@@ -22,7 +22,7 @@ class UsersController extends AdminController
                 ->where('first_name', 'LIKE', "%$term%")
                 ->orWhere('last_name', 'LIKE', "%$term%")
                 ->orWhere('gsm_phone', 'LIKE', "%$term%")
-                ->limit(5)
+                ->limit(setting_value('visiosoft.module.advs::user_filter_limit'))
                 ->pluck('name', 'id');
         }
     }
