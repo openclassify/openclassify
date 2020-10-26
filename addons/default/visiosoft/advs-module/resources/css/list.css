@@ -147,3 +147,7 @@ a.sort-by-open-dropdown:hover {
     text-decoration: underline;
     cursor: pointer;
 }
+
+.gallery-tn {
+    object-fit: cover;
+}
