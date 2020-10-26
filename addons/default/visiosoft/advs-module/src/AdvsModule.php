@@ -37,9 +37,22 @@ class AdvsModule extends Module
                 ],
             ],
         ],
+	    'product_options' => [
+		    'title' => 'visiosoft.module.advs::section.product_options.title',
+		    'buttons' => [
+			    'new_productoption',
+		    ],
+	    ],
+	    'productoptions_value' => [
+		    'title' => 'visiosoft.module.advs::section.productoptions_value.title',
+		    'buttons' => [
+			    'new_productoptions_value',
+		    ],
+	    ],
+	    'option_configuration',
         'assets_clear' => [
-            'title' => 'visiosoft.module.advs::section.assets_clear.name',
-            'href' => '/admin/assets/clear',
+	        'title' => 'visiosoft.module.advs::section.assets_clear.name',
+	        'href' => '/admin/assets/clear',
         ]
         // 'custom_fields' => [
         //     'buttons' => [
