@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'Nicio adresă sau nu este autorizată să vizualizeze.',
     'empty_password_sms_message' => 'Din cauza problemelor de securitate, v-am schimbat parola! Noua dvs. parolă este:',
     'required_all' => "Tot câmpul este obligatoriu!",
+    'can_not_remove_filled_fields' => "Nu puteți elimina câmpurile umplute!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mailul, numărul de telefon nu este corect!',

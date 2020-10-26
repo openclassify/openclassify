@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'ホームページのサブカテゴリの制限',
     ],
+	'default_country' => [
+		'name' => '登録ページ、電話のデフォルトの国',
+	]
 ];

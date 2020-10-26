@@ -80,21 +80,6 @@ return [
     'default_GET' => [
         'name' => 'تبلیغات پیش فرض GET',
     ],
-    'add_canvas' => [
-        'name' => 'بوم را اضافه کنید',
-    ],
-    'thumbnail_width' => [
-        'name' => 'عرض تصویر',
-    ],
-    'thumbnail_height' => [
-        'name' => 'ارتفاع تصویر بند انگشتی',
-    ],
-    'picture_width' => [
-        'name' => 'عرض تصویر',
-    ],
-    'picture_height' => [
-        'name' => 'ارتفاع تصویر',
-    ],
     'twitter' => [
         'name' => 'توییتر',
     ],
@@ -106,18 +91,6 @@ return [
     ],
     'google' => [
         'name' => 'گوگل',
-    ],
-    'watermark_type' => [
-        'name' => 'نوع علامت',
-    ],
-    'watermark_text' => [
-        'name' => 'متن علامت',
-    ],
-    'watermark_image' => [
-        'name' => 'تصویر علامت',
-    ],
-    'watermark_position' => [
-        'name' => 'موقعیت علامت سفید',
     ],
     'listing_page_image' => [
         'name' => 'لیست صفحه تصویر',
@@ -158,5 +131,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'محدودیت تبلیغات محبوب',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'تغییر اندازه تصویر Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'عرض تصویر کامل',
+    ],
+    'full_image_height' => [
+        'name' => 'ارتفاع تصویر کامل',
+    ],
+    'medium_image_width' => [
+        'name' => 'عرض تصویر متوسط',
+    ],
+    'medium_image_height' => [
+        'name' => 'ارتفاع تصویر متوسط',
+    ],
+    'thumbnail_width' => [
+        'name' => 'عرض تصویر',
+    ],
+    'thumbnail_height' => [
+        'name' => 'ارتفاع تصویر بند انگشتی',
+    ],
+    'add_canvas' => [
+        'name' => 'بوم را اضافه کنید',
+    ],
+    'image_canvas_width' => [
+        'name' => 'عرض بوم تصویر',
+    ],
+    'image_canvas_height' => [
+        'name' => 'ارتفاع بوم تصویر',
+    ],
+    'watermark_type' => [
+        'name' => 'نوع علامت',
+    ],
+    'watermark_text' => [
+        'name' => 'متن علامت',
+    ],
+    'watermark_image' => [
+        'name' => 'تصویر علامت',
+    ],
+    'watermark_position' => [
+        'name' => 'موقعیت علامت سفید',
     ],
 ];

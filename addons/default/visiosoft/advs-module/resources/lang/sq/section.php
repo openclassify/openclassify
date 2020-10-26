@@ -44,4 +44,5 @@ return [
     'options' => [
         'title' => 'Opsione',
     ],
+    'ads_image' => 'Imazhi i reklamave',
 ];

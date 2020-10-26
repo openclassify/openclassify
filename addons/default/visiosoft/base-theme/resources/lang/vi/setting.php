@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'Giới hạn danh mục phụ của trang chủ',
     ],
+	'default_country' => [
+		'name' => 'Trang đăng ký, quốc gia mặc định cho điện thoại',
+	]
 ];

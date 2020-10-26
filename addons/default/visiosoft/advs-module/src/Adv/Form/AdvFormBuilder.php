@@ -60,7 +60,8 @@ class AdvFormBuilder extends FormBuilder
         ],
         'files',
         'popular_adv',
-        'adv_day'
+        'adv_day',
+	     'product_options_value'
     ];
 
     protected $category = null;

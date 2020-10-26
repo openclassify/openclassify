@@ -307,4 +307,14 @@ return [
     'and_above' => 'и выше',
     'and_below' => 'и ниже',
     'clear_all' => 'Очистить все',
+    'balances' => 'Балансы',
+    'packages' => 'Пакеты',
+    'dopings' => 'Допинг',
+    'advs' => 'Advs',
+    'site' => 'Сайт',
+    'subscription' => 'Подписка',
+	'created' => 'Создано',
+    'old_price' => [
+        'name' => 'Старая цена'
+    ],
 ];

@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'Qeyd Növü'
     ],
+    'birthday' => [
+        'name' => 'Ad günü'
+    ],
     'identification_number' => [
         'name' => 'İdentifikasiya nömrəsi'
     ],

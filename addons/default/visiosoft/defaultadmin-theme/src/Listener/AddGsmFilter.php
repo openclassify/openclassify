@@ -71,10 +71,10 @@ class AddGsmFilter
 
         $collection = new Collection();
 	    $header_firstname = new Header();
-	    $header_firstname = $header_firstname->setBuilder($builder)->setHeading('anomaly.module.users::field.first_name.name');
-	    $header_lastname = new Header();
+        $header_firstname = $header_firstname->setBuilder($builder)->setHeading('anomaly.module.users::field.first_name.name');
+        $header_lastname = new Header();
 	    $header_lastname = $header_lastname->setBuilder($builder)->setHeading('anomaly.module.users::field.last_name.name');
-	    $header_email = new Header();
+        $header_email = new Header();
         $header_email = $header_email->setBuilder($builder)->setHeading('anomaly.module.users::field.email.name')->setSortable(true)->setSortColumn('email');
         $header_phone = new Header();
         $header_gsm_phone = $header_phone->setBuilder($builder)->setHeading('visiosoft.module.profile::field.gsm_phone.name');

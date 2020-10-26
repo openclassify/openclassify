@@ -1,5 +1,5 @@
 <?php
-
+use \Visiosoft\LocationModule\Country\CountryModel;
 return [
     'navigation_title' => [
         'type' => 'anomaly.field_type.boolean',

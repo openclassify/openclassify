@@ -1,7 +1,7 @@
 <div class="slider-text">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
         {% set standardPrice = adv.standard_price.value %}
-        {% if standardPrice %}
+        {% if standardPrice and standardPrice > 0 %}
             <div class="d-flex flex-wrap align-items-center">
                 <h3 class="ad-price-standard mr-3 text-truncate">
                     <b>{{ adv.standard_price.currency(null,'currency') }}</b>
@@ -45,7 +45,7 @@
                 </div>
 
                 <!-- Detail With Block -->
-                {{ addBlock('ad-detail/details',{'adv':adv, 'options':options})|raw }}
+                {{ addBlock('ad-detail/details',{'adv':adv, 'options':options, 'configurations':configurations})|raw }}
                 {{ addBlock('ad-detail/widget-details',{'adv':adv})|raw }}
                 <!-- Detail With Block -->
 

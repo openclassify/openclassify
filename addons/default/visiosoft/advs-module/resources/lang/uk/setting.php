@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Оголошення за замовчуванням GET',
     ],
-    'add_canvas' => [
-        'name' => 'Додати полотно',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Ширина мініатюри',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Висота мініатюри',
-    ],
-    'picture_width' => [
-        'name' => 'Ширина зображення',
-    ],
-    'picture_height' => [
-        'name' => 'Висота зображення',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -105,18 +90,6 @@ return [
     ],
     'google' => [
         'name' => 'Google',
-    ],
-    'watermark_type' => [
-        'name' => 'Тип водяного знака',
-    ],
-    'watermark_text' => [
-        'name' => 'Текст водяного знака',
-    ],
-    'watermark_image' => [
-        'name' => 'Зображення водяного знака',
-    ],
-    'watermark_position' => [
-        'name' => 'Позиція водяного знака',
     ],
     'listing_page_image' => [
         'name' => 'Зображення сторінки лістингу',
@@ -157,5 +130,50 @@ return [
     ],
     'popular_ads_limit' => [
         'name' => 'Ліміт популярних оголошень',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Змінення розміру зображення',
+    ],
+    'full_image_width' => [
+        'name' => 'Повна ширина зображення',
+    ],
+    'full_image_height' => [
+        'name' => 'Повна висота зображення',
+    ],
+    'medium_image_width' => [
+        'name' => 'Середня ширина зображення',
+    ],
+    'medium_image_height' => [
+        'name' => 'Середня висота зображення',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Ширина мініатюри',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Висота мініатюри',
+    ],
+    'add_canvas' => [
+        'name' => 'Додати полотно',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Ширина полотна зображення',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Висота полотна зображення',
+    ],
+    'watermark_type' => [
+        'name' => 'Тип водяного знака',
+    ],
+    'watermark_text' => [
+        'name' => 'Текст водяного знака',
+    ],
+    'watermark_image' => [
+        'name' => 'Зображення водяного знака',
+    ],
+    'watermark_position' => [
+        'name' => 'Позиція водяного знака',
     ],
 ];

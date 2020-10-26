@@ -306,4 +306,14 @@ return [
     'and_above' => 'och ovan',
     'and_below' => 'och under',
     'clear_all' => 'Rensa alla',
+    'balances' => 'Balanser',
+    'packages' => 'Paket',
+    'dopings' => 'Dopings',
+    'advs' => 'Adv',
+    'site' => 'Webbplats',
+    'subscription' => 'Prenumeration',
+	'created' => 'Skapad',
+    'old_price' => [
+        'name' => 'Gammalt pris'
+    ],
 ];

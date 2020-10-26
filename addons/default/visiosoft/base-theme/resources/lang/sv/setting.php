@@ -40,4 +40,7 @@ return [
     'home_page_sub_categories_limit' => [
         'name' => 'Hemsida Underkategorier Begränsning',
     ],
+	'default_country' => [
+		'name' => 'Registrera sida, standardland för telefon',
+	]
 ];

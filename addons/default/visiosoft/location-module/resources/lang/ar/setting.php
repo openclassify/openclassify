@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'إخفاء عامل تصفية الموقع',
     ],
+	'country_for_phone_field' => [
+		'name' => 'البلد الافتراضي لتسجيل حقل الهاتف'
+	]
 ];

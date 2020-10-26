@@ -15,6 +15,12 @@ use Visiosoft\AdvsModule\Http\Middleware\SetLang;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\Option\OptionRepository;
+use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationRepository;
+use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
+use Visiosoft\AdvsModule\Productoption\ProductoptionRepository;
+use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
+use Visiosoft\AdvsModule\ProductoptionsValue\ProductoptionsValueRepository;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -75,6 +81,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'admin/advs-users/choose/{advId}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@choose',
         'admin/class/actions/{id}/{type}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@actions',
+	    'admin/advs/export' => [
+	    	'as' => 'advs::exportAdvs',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@exportAdvs',
+	    ],
 
         // advsController
         'advs/list' => [
@@ -210,6 +220,28 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
         // Others
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
+
+	    //Configurations Admin Controller
+	    'admin/advs/option_configuration/create' => [
+		    'as' => 'visiosoft.module.advs::configrations.create',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@create',
+	    ],
+	    'admin/advs/option_configuration' => [
+		    'as' => 'visiosoft.module.advs::configrations.index',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@index',
+	    ],
+
+	    //Configuration Controller
+	    'advs/option_configuration/create' => [
+		    'as' => 'visiosoft.module.advs::user.configrations.create',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
+	    ],
+	    'conf/addCart' => [
+		    'as' => 'configuration::add_cart',
+		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
+	    ],
+
+
     ];
 
     /**
@@ -290,6 +322,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         CategoryRepositoryInterface::class => CategoryRepository::class,
         CountryRepositoryInterface::class => CountryRepository::class,
         OptionRepositoryInterface::class => OptionRepository::class,
+	    ProductoptionRepositoryInterface::class => ProductoptionRepository::class,
+	    OptionConfigurationRepositoryInterface::class => OptionConfigurationRepository::class,
+	    ProductoptionsValueRepositoryInterface::class => ProductoptionsValueRepository::class,
     ];
 
     /**
@@ -344,22 +379,30 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'general_settings' => [
                 'title' => 'visiosoft.module.advs::button.general_settings',
                 'href' => '/admin/settings/modules/visiosoft.module.advs',
+	            'page' => 'anomaly.module.settings'
             ],
             'theme_settings' => [
                 'title' => 'visiosoft.theme.defaultadmin::section.theme_settings.name',
                 'href' => url('admin/settings/themes/' . setting_value('streams::standard_theme')),
+	            'page' => 'anomaly.module.settings'
             ],
             'assets_clear' => [
                 'title' => 'visiosoft.module.advs::section.assets_clear.name',
                 'href' => route('assets_clear'),
+	            'page' => 'anomaly.module.settings'
             ],
+	        'export' => [
+	        	'title' => 'visiosoft.module.advs::button.export',
+		        'href' => route('advs::exportAdvs'),
+		        'page' => 'visiosoft.module.advs'
+	        ]
         ];
 
         foreach ($settings_url as $key => $value) {
-            $addonCollection->get('anomaly.module.settings')->addSection($key, $value);
+            $addonCollection->get($value['page'])->addSection($key, $value);
         }
 
-        // Disable file versioning
+	    // Disable file versioning
         $fileModel->disableVersioning();
     }
 

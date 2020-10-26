@@ -28,6 +28,7 @@ return [
     'ajax_address_error' => 'کوئی پتہ اور نہ ہی دیکھنے کا اختیار ہے۔',
     'empty_password_sms_message' => 'سیکیورٹی کے مسائل کی وجہ سے ، ہم نے آپ کا پاس ورڈ تبدیل کردیا! آپ کا نیا پاس ورڈ یہ ہے:',
     'required_all' => "تمام فیلڈ کی ضرورت ہے!",
+    'can_not_remove_filled_fields' => "آپ بھرے کھیتوں کو نہیں ہٹا سکتے!",
 
     // Forgot Password
     'email_phone_not_found' => 'ای میل ، فون نمبر درست نہیں ہے!',

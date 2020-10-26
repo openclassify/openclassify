@@ -447,4 +447,30 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->orderBy('count_show_ad', 'desc')
             ->paginate(setting_value('visiosoft.module.advs::popular_ads_limit', setting_value('streams::per_page')));
     }
+
+    public function getName($id){
+    	return $this->find($id)->name;
+    }
+
+    public function approveAds($adsIDs)
+    {
+        $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
+        $ads = $this->newQuery()->whereIn('advs_advs.id', $adsIDs)->update([
+            'status' => 'approved',
+            'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+            'publish_at' => date('Y-m-d H:i:s')
+        ]);
+
+        return $ads;
+    }
+
+    public function getUserAds($userID = null)
+    {
+        $userID = auth_id_if_null($userID);
+        return $this->newQuery()
+            ->where('advs_advs.created_by_id', $userID)
+            ->where('status', 'approved')
+            ->where('finish_at', '>', date('Y-m-d H:i:s'))
+            ->get();
+    }
 }

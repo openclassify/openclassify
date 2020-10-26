@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'رجسٹر کی قسم'
     ],
+    'birthday' => [
+        'name' => 'Birthday'
+    ],
     'identification_number' => [
         'name' => 'شناختی نمبر'
     ],

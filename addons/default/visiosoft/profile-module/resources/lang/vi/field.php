@@ -55,6 +55,9 @@ return [
     'register_type' => [
         'name' => 'Đăng ký loại'
     ],
+    'birthday' => [
+        'name' => 'Sinh nhật'
+    ],
     'identification_number' => [
         'name' => 'Mã số'
     ],

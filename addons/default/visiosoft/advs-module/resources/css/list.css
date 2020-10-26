@@ -200,6 +200,10 @@ a.sort-by-open-dropdown:hover {
     color: #8598AA;
 }
 
+.list-view-type button {
+    background-color: unset;
+}
+
 .list-view-type button:focus {
     outline: none;
 }

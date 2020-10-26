@@ -44,4 +44,7 @@ return [
     'hide_location_filter' => [
         'name' => 'Masquer le filtre de localisation',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Pays par défaut pour le champ de téléphone d\'enregistrement'
+	]
 ];
