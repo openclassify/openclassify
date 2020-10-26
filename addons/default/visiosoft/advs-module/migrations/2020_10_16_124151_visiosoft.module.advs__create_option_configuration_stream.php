@@ -52,7 +52,6 @@ class VisiosoftModuleAdvsCreateOptionConfigurationStream extends Migration
 	    ],
 	    'option_json' => [
 	    	'required' => true,
-		    'unique' => true,
 	    ],
     ];
 
