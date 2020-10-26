@@ -167,10 +167,6 @@ class AdvsController extends AdminController
 
 
         $cities = $cityModel->all()->pluck('name', 'id')->all();
-        $users = $userModel->newQuery()
-            ->select(DB::raw("CONCAT_WS('', first_name, ' ', last_name, ' (', gsm_phone, ' || ', email, ')') AS display_name"), 'id')
-            ->pluck('display_name', 'id')
-            ->toArray();
         $categories = $categoryModel::query()->where('parent_category_id', null)
             ->leftJoin('cats_category_translations', 'cats_category.id', '=', 'cats_category_translations.entry_id')
             ->where('locale', config('app.locale'))
@@ -194,7 +190,6 @@ class AdvsController extends AdminController
                         'exact' => true,
                         'filter' => 'select',
                         'query' => UserFilterQuery::class,
-                        'options' => $users,
                     ],
                     'status' => [
                         'filter' => 'select',
