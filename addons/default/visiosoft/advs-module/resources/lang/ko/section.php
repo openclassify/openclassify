@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => '광고 이미지',
     'product_options' => [
-        'title' => 'Options',
+        'title' => '옵션',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => '옵션 값',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => '구성',
     ],
 ];
