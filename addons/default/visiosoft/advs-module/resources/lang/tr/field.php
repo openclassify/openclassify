@@ -137,7 +137,9 @@ return [
     'oldest' => 'En eski',
     'address_a_z' => 'Adres (A\'dan Z\'ye)',
     'address_z_a' => 'Adres (Z\'den A\'ya)',
-    'categories' => 'Kategoriler',
+	'categories' => [
+		'name' => 'Kategoriler'
+	],
     'all_categories' => 'Tüm Kategoriler',
     'location' => 'Lokasyon',
     'send_message' => 'Mesaj gönder',
@@ -315,6 +317,12 @@ return [
     'site' => 'Site',
     'subscription' => 'Abonelik',
 	'created' => 'Oluşturuldu',
+	'product_option' => [
+		'name' => 'Ürün Seçeneği'
+	],
+	'option_json' => [
+		'name' => 'Seçenek'
+	],
     'old_price' => [
         'name' => 'Eski fiyat'
     ],
