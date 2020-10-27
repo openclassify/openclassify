@@ -22,4 +22,13 @@ return [
     'options' => [
         'name' => 'Параметры',
     ],
+    'product_options' => [
+        'name' => 'Варианты продукта',
+    ],
+    'productoptions_value' => [
+        'name' => 'Стоимость опционов',
+    ],
+    'option_configuration' => [
+        'name' => 'Конфигурация',
+    ],
 ];
