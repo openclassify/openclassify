@@ -60,41 +60,41 @@ return [
     'productoptions' => [
         'name'   => 'Productoptions',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => '¿Puede leer opciones de producto?',
+            'write'  => '¿Puede crear / editar opciones de producto?',
+            'delete' => '¿Se pueden eliminar opciones de producto?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'Valor de las opciones de producto',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => '¿Puede leer el valor de las opciones de producto?',
+            'write'  => '¿Puede crear / editar el valor de las opciones de producto?',
+            'delete' => '¿Se puede eliminar el valor de las opciones de producto?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'Configuración de opciones',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => '¿Puede leer la configuración de opciones?',
+            'write'  => '¿Se puede crear / editar la configuración de opciones?',
+            'delete' => '¿Se puede eliminar la configuración de opciones?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Configuración de opciones',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => '¿Puede leer la configuración de opciones?',
+            'write'  => '¿Se puede crear / editar la configuración de opciones?',
+            'delete' => '¿Se puede eliminar la configuración de opciones?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Configuración de opciones',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => '¿Puede leer la configuración de opciones?',
+            'write'  => '¿Se puede crear / editar la configuración de opciones?',
+            'delete' => '¿Se puede eliminar la configuración de opciones?',
         ],
     ],
 ];
