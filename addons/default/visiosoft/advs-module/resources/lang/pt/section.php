@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'Imagem de Anúncios',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Opções',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Valor de opções',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Configuração',
     ],
 ];
