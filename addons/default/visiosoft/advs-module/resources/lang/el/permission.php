@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'Επιλογές προϊόντων',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'Μπορείτε να διαβάσετε τις επιλογές προϊόντων;',
+            'write'  => 'Μπορείτε να δημιουργήσετε / επεξεργαστείτε επιλογές προϊόντων;',
+            'delete' => 'Μπορείτε να διαγράψετε τις επιλογές προϊόντων;',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'Αξία επιλογών προϊόντος',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'Μπορεί να διαβάσει την τιμή του προϊόντος;',
+            'write'  => 'Μπορεί να δημιουργήσει / επεξεργαστεί αξία επιλογών προϊόντος;',
+            'delete' => 'Μπορεί να διαγραφεί η τιμή επιλογών προϊόντος;',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'Διαμόρφωση επιλογών',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'Μπορείτε να διαβάσετε τις επιλογές διαμόρφωσης;',
+            'write'  => 'Μπορείτε να δημιουργήσετε / επεξεργαστείτε ρυθμίσεις διαμόρφωσης;',
+            'delete' => 'Μπορεί να διαγραφεί η διαμόρφωση επιλογών;',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Διαμόρφωση επιλογής',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Μπορείτε να διαβάσετε τη διαμόρφωση επιλογών;',
+            'write'  => 'Μπορεί να δημιουργήσει / επεξεργαστεί τη διαμόρφωση επιλογών;',
+            'delete' => 'Μπορεί να διαγραφεί η διαμόρφωση επιλογών;',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Διαμόρφωση επιλογής',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Μπορείτε να διαβάσετε τη διαμόρφωση επιλογών;',
+            'write'  => 'Μπορείτε να δημιουργήσετε / επεξεργαστείτε τη διαμόρφωση επιλογών;',
+            'delete' => 'Μπορεί να διαγραφεί η διαμόρφωση επιλογών;',
         ],
     ],
 ];
