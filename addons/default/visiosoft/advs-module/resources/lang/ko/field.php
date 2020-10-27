@@ -138,7 +138,7 @@ return [
     'address_a_z' => '주소 (A ~ Z)',
     'address_z_a' => '주소 (Z ~ A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => '카테고리'
 	],
     'all_categories' => '모든 카테고리',
     'location' => '위치',
@@ -316,10 +316,10 @@ return [
     'subscription' => '신청',
 	'created' => '만들어진',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => '제품 옵션'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => '선택권'
 	],
     'old_price' => [
         'name' => '이전 가격'
