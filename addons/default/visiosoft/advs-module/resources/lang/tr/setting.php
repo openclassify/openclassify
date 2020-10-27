@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Filigran Konumu',
     ],
+    'user_filter_limit' => [
+        'name' => 'Kullanıcı Filtresi Sınırı',
+        'instructions' => 'Yönetici panelinde'
+    ]
 ];
