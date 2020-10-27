@@ -32,5 +32,11 @@ return [
         'name' => 'Categorie bijwerken'
     ],
     'new_option' => 'Nieuwe optie',
-	'export' => 'Exporteren'
+	'export' => 'Exporteren',
+    'new_productoption' => 'Nieuwe productoptie',
+    'new_productoptions_value' => 'Waarde voor nieuwe productopties',
+    'new_options_configuration' => 'Nieuwe configuratie van opties',
+    'new_option_configuration' => 'Nieuwe optieconfiguratie',
+    'new_option_configuration' => 'Nieuwe optieconfiguratie',
+	'create_configurations' => 'Maak configuraties',
 ];
