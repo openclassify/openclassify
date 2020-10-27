@@ -177,7 +177,7 @@ return [
         'name' => 'Poziția filigranului',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Limita de filtrare a utilizatorilor',
+        'instructions' => 'În panoul de administrare'
     ]
 ];
