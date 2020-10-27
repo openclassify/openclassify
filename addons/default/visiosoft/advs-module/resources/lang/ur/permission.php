@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'پروڈکٹشن',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'productoptions پڑھ سکتے ہیں؟',
+            'write'  => 'کیا پروڈکٹپشن تخلیق / ترمیم کرسکتے ہیں؟',
+            'delete' => 'پروڈکٹشن کو حذف کرسکتے ہیں؟',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'پروڈکٹشن کی قیمت',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'productoptions قدر پڑھ سکتے ہیں؟',
+            'write'  => 'کیا پروڈکٹپوشن ویلیو تخلیق / ترمیم کرسکتے ہیں؟',
+            'delete' => 'کیا پروڈکٹپوشن کی قیمت کو حذف کرسکتے ہیں؟',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'اختیارات کی تشکیل',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'اختیارات کی ترتیب کو پڑھ سکتے ہیں؟',
+            'write'  => 'اختیارات کی تشکیل تشکیل / ترمیم کرسکتے ہیں؟',
+            'delete' => 'کیا اختیارات کی ترتیب کو حذف کرسکتے ہیں؟',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'آپشن ترتیب',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'آپشن ترتیب کو پڑھ سکتے ہیں؟',
+            'write'  => 'آپشن کنفیگریشن تشکیل / ترمیم کرسکتے ہیں؟',
+            'delete' => 'آپشن ترتیب کو حذف کرسکتے ہیں؟',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'آپشن ترتیب',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'آپشن ترتیب کو پڑھ سکتے ہیں؟',
+            'write'  => 'آپشن کنفیگریشن تشکیل / ترمیم کرسکتے ہیں؟',
+            'delete' => 'آپشن ترتیب کو حذف کرسکتے ہیں؟',
         ],
     ],
 ];
