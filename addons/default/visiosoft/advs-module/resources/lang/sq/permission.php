@@ -57,4 +57,44 @@ return [
             'delete' => 'Mund të fshini opsionet?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Operimet e produkteve',
+        'option' => [
+            'read'   => 'A mund të lexoni opsionet e produkteve?',
+            'write'  => 'A mund të krijoni / modifikoni opsionet e produkteve?',
+            'delete' => 'A mund të fshihen opsionet e produkteve?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Vlera e opsioneve të produkteve',
+        'option' => [
+            'read'   => 'A mund të lexohet vlera e opsioneve të produkteve?',
+            'write'  => 'A mund të krijojë / modifikojë vlerën e opsioneve të produkteve?',
+            'delete' => 'A mund të fshihet vlera e opsioneve të produkteve?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Konfigurimi i opsioneve',
+        'option' => [
+            'read'   => 'Mund të lexoni konfigurimin e opsioneve?',
+            'write'  => 'Mund të krijoni / modifikoni konfigurimin e opsioneve?',
+            'delete' => 'Mund të fshini konfigurimin e opsioneve?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Konfigurimi i opsionit',
+        'option' => [
+            'read'   => 'Mund ta lexoni konfigurimin e opsionit?',
+            'write'  => 'Mund të krijoni / modifikoni konfigurimin e opsionit?',
+            'delete' => 'A mund të fshihet konfigurimi i opsionit?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Konfigurimi i opsionit',
+        'option' => [
+            'read'   => 'Mund ta lexoni konfigurimin e opsionit?',
+            'write'  => 'Mund të krijoni / modifikoni konfigurimin e opsionit?',
+            'delete' => 'A mund të fshihet konfigurimi i opsionit?',
+        ],
+    ],
 ];
