@@ -32,5 +32,11 @@ return [
         'name' => 'Zaktualizuj kategorię'
     ],
     'new_option' => 'Nowa opcja',
-	'export' => 'Eksport'
+	'export' => 'Eksport',
+    'new_productoption' => 'Nowa opcja produktu',
+    'new_productoptions_value' => 'Nowa wartość opcji produktu',
+    'new_options_configuration' => 'Nowa konfiguracja opcji',
+    'new_option_configuration' => 'Nowa konfiguracja opcji',
+    'new_option_configuration' => 'Nowa konfiguracja opcji',
+	'create_configurations' => 'Utwórz konfiguracje',
 ];
