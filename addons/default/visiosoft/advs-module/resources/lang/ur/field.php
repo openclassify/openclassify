@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'پتہ (A سے Z)',
     'address_z_a' => 'پتہ (زیڈ ٹو اے)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'اقسام'
 	],
     'all_categories' => 'تمام زمرے',
     'location' => 'مقام',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'سب سکریپشن',
 	'created' => 'بنائی گئی',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'پروڈکٹ آپشن'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'آپشن'
 	],
     'old_price' => [
         'name' => 'پرانی قیمت'
