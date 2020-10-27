@@ -177,7 +177,7 @@ return [
         'name' => 'Pozicioni i Filigranit',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Kufiri i filtrit të përdoruesit',
+        'instructions' => 'Në panelin e administratorit'
     ]
 ];
