@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Adresse (A à Z)',
     'address_z_a' => 'Adresse (Z à A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Catégories'
 	],
     'all_categories' => 'toutes catégories',
     'location' => 'Emplacement',
@@ -317,7 +317,7 @@ return [
     'subscription' => 'Abonnement',
 	'created' => 'Créé',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Option de produit'
 	],
 	'option_json' => [
 		'name' => 'Option'
