@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Posición de marca de agua',
     ],
+    'user_filter_limit' => [
+        'name' => 'Límite de filtro de usuario',
+        'instructions' => 'En el panel de administración'
+    ]
 ];
