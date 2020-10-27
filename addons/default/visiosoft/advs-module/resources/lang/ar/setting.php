@@ -177,7 +177,7 @@ return [
         'name' => 'موقف العلامة المائية',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'حد تصفية المستخدم',
+        'instructions' => 'في لوحة الادارة'
     ]
 ];
