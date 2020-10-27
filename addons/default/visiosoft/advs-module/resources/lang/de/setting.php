@@ -177,7 +177,7 @@ return [
         'name' => 'Wasserzeichen Position',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Benutzerfilterlimit',
+        'instructions' => 'Im Admin-Bereich'
     ]
 ];
