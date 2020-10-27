@@ -177,7 +177,7 @@ return [
         'name' => 'מיקום סימן מים',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'מגבלת מסנן משתמשים',
+        'instructions' => 'בחלונית הניהול'
     ]
 ];
