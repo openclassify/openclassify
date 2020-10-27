@@ -137,7 +137,9 @@ return [
     'oldest' => 'سب سے قدیم',
     'address_a_z' => 'پتہ (A سے Z)',
     'address_z_a' => 'پتہ (زیڈ ٹو اے)',
-    'categories' => 'اقسام',
+	'categories' => [
+		'name' => 'اقسام'
+	],
     'all_categories' => 'تمام زمرے',
     'location' => 'مقام',
     'send_message' => 'پیغام بھیجیں',
@@ -313,6 +315,12 @@ return [
     'site' => 'سائٹ',
     'subscription' => 'سب سکریپشن',
 	'created' => 'بنائی گئی',
+	'product_option' => [
+		'name' => 'پروڈکٹ آپشن'
+	],
+	'option_json' => [
+		'name' => 'آپشن'
+	],
     'old_price' => [
         'name' => 'پرانی قیمت'
     ],
