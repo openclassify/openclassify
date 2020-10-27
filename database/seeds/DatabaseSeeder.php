@@ -100,11 +100,26 @@ class DatabaseSeeder extends Seeder
                 'type' => 'anomaly.extension.url_link_type',
             ]
         );
-        /* Settings Start */
-        Model::unguard();
-        DB::unprepared(file_get_contents(__DIR__ . '/settings.sql'));
-        Model::reguard();
-        /* Settings Stop*/
+
+	    DB::table('files_files')->truncate();
+
+	    $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/muammer/";
+	    file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
+	    file_put_contents(storage_path('store.sql'), fopen($repository . "store.sql", 'r'));
+	    file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
+	    file_put_contents(storage_path('images.zip'), fopen($repository . "images.zip", "r"));
+
+	    Model::unguard();
+	    DB::unprepared(file_get_contents(storage_path('advs.sql')));
+	    DB::unprepared(file_get_contents(storage_path('store.sql')));
+	    DB::unprepared(file_get_contents(storage_path('settings.sql')));
+	    Model::reguard();
+
+
+	    $zip = new ZipArchive();
+	    $zip->open(storage_path('images.zip'), ZipArchive::CREATE);
+	    $zip->extractTo(storage_path('streams/default/files-module/local/images/'));
+	    $zip->close();
 
         $this->call(widgetSeeder::class);
     }
