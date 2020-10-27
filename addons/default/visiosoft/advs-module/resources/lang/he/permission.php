@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'אפשרויות מוצר',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'האם יכול לקרוא אפשרויות מוצר?',
+            'write'  => 'האם ניתן ליצור / לערוך אפשרויות מוצר?',
+            'delete' => 'האם ניתן למחוק אפשרויות מוצר?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'ערך אופציות המוצר',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'האם ניתן לקרוא את ערך אפשרויות המוצר?',
+            'write'  => 'האם ניתן ליצור / לערוך ערך של אפשרויות מוצר?',
+            'delete' => 'האם ניתן למחוק את ערך אפשרויות האופציות?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'תצורת אפשרויות',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'האם תצורת אפשרויות קריאה יכולה?',
+            'write'  => 'האם ניתן ליצור / לערוך תצורת אפשרויות?',
+            'delete' => 'האם ניתן למחוק את תצורת האפשרויות?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'תצורת אפשרות',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'האם תצורת אפשרות לקרוא?',
+            'write'  => 'האם ניתן ליצור / לערוך תצורת אפשרויות?',
+            'delete' => 'האם ניתן למחוק את תצורת האפשרויות?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'תצורת אפשרות',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'האם תצורת אפשרות לקרוא?',
+            'write'  => 'האם ניתן ליצור / לערוך תצורת אפשרויות?',
+            'delete' => 'האם ניתן למחוק את תצורת האפשרויות?',
         ],
     ],
 ];
