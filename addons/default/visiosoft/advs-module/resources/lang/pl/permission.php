@@ -57,4 +57,44 @@ return [
             'delete' => 'Czy można usunąć opcje?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Productoptions',
+        'option' => [
+            'read'   => 'Czy można odczytać opcje produktu?',
+            'write'  => 'Czy można tworzyć / edytować opcje produktów?',
+            'delete' => 'Czy można usunąć opcje produktu?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Wartość Productoptions',
+        'option' => [
+            'read'   => 'Czy można odczytać wartość opcji produktu?',
+            'write'  => 'Czy można tworzyć / edytować wartości opcji produktów?',
+            'delete' => 'Czy można usunąć wartość opcji produktu?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Konfiguracja opcji',
+        'option' => [
+            'read'   => 'Czy można odczytać konfigurację opcji?',
+            'write'  => 'Czy można tworzyć / edytować konfiguracje opcji?',
+            'delete' => 'Czy można usunąć konfigurację opcji?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Konfiguracja opcji',
+        'option' => [
+            'read'   => 'Czy można odczytać konfigurację opcji?',
+            'write'  => 'Czy można tworzyć / edytować konfiguracje opcji?',
+            'delete' => 'Czy można usunąć konfigurację opcji?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Konfiguracja opcji',
+        'option' => [
+            'read'   => 'Czy można odczytać konfigurację opcji?',
+            'write'  => 'Czy można tworzyć / edytować konfiguracje opcji?',
+            'delete' => 'Czy można usunąć konfigurację opcji?',
+        ],
+    ],
 ];
