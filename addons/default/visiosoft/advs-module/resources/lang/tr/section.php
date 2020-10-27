@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'İlan Resmi',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Seçenekler',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Seçenekler Değeri',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Yapılandırma',
     ],
 ];
