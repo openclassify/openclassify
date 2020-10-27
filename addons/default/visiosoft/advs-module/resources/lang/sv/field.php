@@ -137,7 +137,9 @@ return [
     'oldest' => 'äldsta',
     'address_a_z' => 'Adress (A till Ö)',
     'address_z_a' => 'Adress (Z till A)',
-    'categories' => 'kategorier',
+	'categories' => [
+		'name' => 'Kategorier'
+	],
     'all_categories' => 'alla kategorier',
     'location' => 'Plats',
     'send_message' => 'Skicka meddelande',
@@ -313,6 +315,12 @@ return [
     'site' => 'Webbplats',
     'subscription' => 'Prenumeration',
 	'created' => 'Skapad',
+	'product_option' => [
+		'name' => 'Produktalternativ'
+	],
+	'option_json' => [
+		'name' => 'Alternativ'
+	],
     'old_price' => [
         'name' => 'Gammalt pris'
     ],
