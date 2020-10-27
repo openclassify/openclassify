@@ -177,7 +177,7 @@ return [
         'name' => 'জলছবি অবস্থান',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'ব্যবহারকারী ফিল্টার সীমা',
+        'instructions' => 'অ্যাডমিন প্যানেলে'
     ]
 ];
