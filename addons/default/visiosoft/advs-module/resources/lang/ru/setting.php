@@ -177,7 +177,7 @@ return [
         'name' => 'Положение водяного знака',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Предел пользовательского фильтра',
+        'instructions' => 'В админке'
     ]
 ];
