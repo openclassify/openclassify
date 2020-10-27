@@ -177,7 +177,7 @@ return [
         'name' => 'Posición de marca de agua',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Límite de filtro de usuario',
+        'instructions' => 'En el panel de administración'
     ]
 ];
