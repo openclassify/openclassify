@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'Hình ảnh Quảng cáo',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Tùy chọn',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Giá trị tùy chọn',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Cấu hình',
     ],
 ];
