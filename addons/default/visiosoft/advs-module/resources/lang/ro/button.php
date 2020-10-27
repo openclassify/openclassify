@@ -32,5 +32,11 @@ return [
         'name' => 'Actualizare categorie'
     ],
     'new_option' => 'Opțiune nouă',
-	'export' => 'Export'
+	'export' => 'Export',
+    'new_productoption' => 'Opțiune pentru noi produse',
+    'new_productoptions_value' => 'Noua valoare a opțiunilor de produs',
+    'new_options_configuration' => 'Configurare Opțiuni noi',
+    'new_option_configuration' => 'Configurare opțiune nouă',
+    'new_option_configuration' => 'Configurare opțiune nouă',
+	'create_configurations' => 'Creați configurații',
 ];
