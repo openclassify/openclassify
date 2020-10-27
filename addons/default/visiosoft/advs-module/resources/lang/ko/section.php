@@ -45,4 +45,13 @@ return [
         'title' => '옵션',
     ],
     'ads_image' => '광고 이미지',
+    'product_options' => [
+        'title' => '옵션',
+    ],
+    'productoptions_value' => [
+        'title' => '옵션 값',
+    ],
+    'option_configuration' => [
+        'title' => '구성',
+    ],
 ];
