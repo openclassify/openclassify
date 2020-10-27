@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'Imazhi i reklamave',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Opsione',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Vlera e opsioneve',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Konfigurimi',
     ],
 ];
