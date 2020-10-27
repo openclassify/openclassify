@@ -23,12 +23,12 @@ return [
         'name' => 'گزینه ها',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'گزینه های محصول',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'مقدار گزینه ها',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'پیکربندی',
     ],
 ];
