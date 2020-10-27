@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'گزینه های محصول',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'آیا می توانید محصولات تولیدی را بخوانید؟',
+            'write'  => 'آیا می توان محصولات تولیدی را ایجاد / ویرایش کرد؟',
+            'delete' => 'آیا می توان محصولات تولیدی را حذف کرد؟',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'ارزش تولیدات',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'آیا می توان محصولات تولیدی را خواند؟',
+            'write'  => 'آیا می توان مقدار تولید محصولات را ایجاد یا ویرایش کرد؟',
+            'delete' => 'آیا می توان مقدار تولید را حذف کرد؟',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'پیکربندی گزینه ها',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'آیا می توان پیکربندی گزینه ها را خواند؟',
+            'write'  => 'آیا می توان پیکربندی گزینه ها را ایجاد یا ویرایش کرد؟',
+            'delete' => 'آیا می توان پیکربندی گزینه ها را حذف کرد؟',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'پیکربندی گزینه',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'آیا می توان پیکربندی گزینه را خواند؟',
+            'write'  => 'آیا می توان پیکربندی گزینه را ایجاد یا ویرایش کرد؟',
+            'delete' => 'آیا می توان پیکربندی گزینه را حذف کرد؟',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'پیکربندی گزینه',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'آیا می توان پیکربندی گزینه را خواند؟',
+            'write'  => 'آیا می توان پیکربندی گزینه را ایجاد یا ویرایش کرد؟',
+            'delete' => 'آیا می توان پیکربندی گزینه را حذف کرد؟',
         ],
     ],
 ];
