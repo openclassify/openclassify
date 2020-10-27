@@ -23,12 +23,12 @@ return [
         'name' => 'اختیارات',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'مصنوع کے اختیارات',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'اختیارات کی قیمت',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'تشکیل',
     ],
 ];
