@@ -177,7 +177,7 @@ return [
         'name' => '透かしの位置',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'ユーザーフィルターの制限',
+        'instructions' => '管理パネルで'
     ]
 ];
