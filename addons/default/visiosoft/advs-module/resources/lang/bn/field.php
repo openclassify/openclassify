@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'ঠিকানা (A থেকে Z)',
     'address_z_a' => 'ঠিকানা (জেড টু এ)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'বিভাগসমূহ'
 	],
     'all_categories' => 'সব ধরনের',
     'location' => 'অবস্থান',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'সাবস্ক্রিপশন',
 	'created' => 'তৈরি হয়েছে',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'পণ্য বিকল্প'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'বিকল্প'
 	],
     'old_price' => [
         'name' => 'পুরাতন মূল্য'
