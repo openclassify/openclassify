@@ -138,7 +138,7 @@ return [
     'address_a_z' => '住所（AからZ）',
     'address_z_a' => 'アドレス（ZからA）',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'カテゴリ'
 	],
     'all_categories' => 'すべてのカテゴリ',
     'location' => 'ロケーション',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'サブスクリプション',
 	'created' => '作成した',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => '製品オプション'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'オプション'
 	],
     'old_price' => [
         'name' => '古い価格'
