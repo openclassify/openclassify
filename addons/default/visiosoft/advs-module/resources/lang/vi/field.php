@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Địa chỉ (A đến Z)',
     'address_z_a' => 'Địa chỉ (Z đến A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Thể loại'
 	],
     'all_categories' => 'Tất cả danh mục',
     'location' => 'Vị trí',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'Đăng ký',
 	'created' => 'Tạo',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Tùy chọn sản phẩm'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Lựa chọn'
 	],
     'old_price' => [
         'name' => 'Giá cũ'
