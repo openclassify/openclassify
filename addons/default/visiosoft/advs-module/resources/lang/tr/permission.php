@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'Üretim seçenekleri',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'Prodüksiyonları okuyabilir mi?',
+            'write'  => 'Prodüksiyonlar oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Prodüksiyonları silebilir mi?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'Productoptions değeri',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'Prodüksiyonların değerini okuyabilir mi?',
+            'write'  => 'Prodüksiyonlar değeri oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Prodüksiyonlar değerini silebilir mi?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'Seçenekler yapılandırması',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'Seçenekler yapılandırmasını okuyabilir mi?',
+            'write'  => 'Seçenekler yapılandırması oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Seçenekler yapılandırmasını silebilir mi?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Seçenek yapılandırması',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Seçenek yapılandırmasını okuyabilir mi?',
+            'write'  => 'Seçenek yapılandırması oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Seçenek yapılandırmasını silebilir mi?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Seçenek yapılandırması',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Seçenek yapılandırmasını okuyabilir mi?',
+            'write'  => 'Seçenek yapılandırması oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Seçenek yapılandırmasını silebilir mi?',
         ],
     ],
 ];
