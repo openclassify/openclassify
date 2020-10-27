@@ -45,4 +45,13 @@ return [
         'title' => 'Opcje',
     ],
     'ads_image' => 'Obraz reklam',
+    'product_options' => [
+        'title' => 'Opcje',
+    ],
+    'productoptions_value' => [
+        'title' => 'Wartość opcji',
+    ],
+    'option_configuration' => [
+        'title' => 'Konfiguracja',
+    ],
 ];
