@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Adresa (A deri Z)',
     'address_z_a' => 'Adresa (Z në A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Kategoritë'
 	],
     'all_categories' => 'Të gjitha Kategoritë',
     'location' => 'Vendndodhja',
@@ -317,10 +317,10 @@ return [
     'subscription' => 'Abonim',
 	'created' => 'Krijuar',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Opsioni i produktit'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Opsioni'
 	],
     'old_price' => [
         'name' => 'Çmimi i Vjetër'
