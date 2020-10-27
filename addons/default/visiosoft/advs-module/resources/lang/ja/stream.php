@@ -23,12 +23,12 @@ return [
         'name' => 'オプション',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => '製品オプション',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'オプション値',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => '構成',
     ],
 ];
