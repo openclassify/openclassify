@@ -177,7 +177,7 @@ return [
         'name' => 'Pozycja znaku wodnego',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Limit filtrów użytkownika',
+        'instructions' => 'W panelu administracyjnym'
     ]
 ];
