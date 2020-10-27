@@ -23,12 +23,12 @@ return [
         'name' => 'Tùy chọn',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'Tùy chọn sản phẩm',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'Giá trị tùy chọn',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'Cấu hình',
     ],
 ];
