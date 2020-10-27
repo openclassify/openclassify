@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Ünvan (A-dan Z)',
     'address_z_a' => 'Ünvan (Z-dən A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Kateqoriyalar'
 	],
     'all_categories' => 'bütün kateqoriyalar',
     'location' => 'Yer',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'Abunə',
 	'created' => 'Yarandı',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Məhsul seçimi'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Seçim'
 	],
     'old_price' => [
         'name' => 'Köhnə Qiymət'
