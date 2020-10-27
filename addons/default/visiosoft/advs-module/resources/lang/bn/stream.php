@@ -23,12 +23,12 @@ return [
         'name' => 'বিকল্পগুলি',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'পণ্য বিকল্প',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'বিকল্প মান',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'কনফিগারেশন',
     ],
 ];
