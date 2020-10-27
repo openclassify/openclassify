@@ -137,7 +137,9 @@ return [
     'oldest' => 'Najstarszy',
     'address_a_z' => 'Adres (od A do Z)',
     'address_z_a' => 'Adres (od Z do A)',
-    'categories' => 'Kategorie',
+	'categories' => [
+		'name' => 'Kategorie'
+	],
     'all_categories' => 'Wszystkie kategorie',
     'location' => 'Lokalizacja',
     'send_message' => 'Wyślij wiadomość',
@@ -313,6 +315,12 @@ return [
     'site' => 'Teren',
     'subscription' => 'Subskrypcja',
 	'created' => 'Utworzony',
+	'product_option' => [
+		'name' => 'Opcja produktu'
+	],
+	'option_json' => [
+		'name' => 'Opcja'
+	],
     'old_price' => [
         'name' => 'Stara cena'
     ],
