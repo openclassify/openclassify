@@ -137,7 +137,9 @@ return [
     'oldest' => 'Më të vjetrat',
     'address_a_z' => 'Adresa (A deri Z)',
     'address_z_a' => 'Adresa (Z në A)',
-    'categories' => 'Kategoritë',
+	'categories' => [
+		'name' => 'Kategoritë'
+	],
     'all_categories' => 'Të gjitha Kategoritë',
     'location' => 'Vendndodhja',
     'send_message' => 'Dërgoni mesazh',
@@ -314,6 +316,12 @@ return [
     'site' => 'Faqen',
     'subscription' => 'Abonim',
 	'created' => 'Krijuar',
+	'product_option' => [
+		'name' => 'Opsioni i produktit'
+	],
+	'option_json' => [
+		'name' => 'Opsioni'
+	],
     'old_price' => [
         'name' => 'Çmimi i Vjetër'
     ],
