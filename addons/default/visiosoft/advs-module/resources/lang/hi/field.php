@@ -137,7 +137,9 @@ return [
     'oldest' => 'सबसे पुराना',
     'address_a_z' => 'पता (A से Z)',
     'address_z_a' => 'पता (Z से A)',
-    'categories' => 'श्रेणियाँ',
+	'categories' => [
+		'name' => 'श्रेणियाँ'
+	],
     'all_categories' => 'सब वर्ग',
     'location' => 'स्थान',
     'send_message' => 'मेसेज भेजें',
@@ -313,6 +315,12 @@ return [
     'site' => 'साइट',
     'subscription' => 'अंशदान',
 	'created' => 'बनाया था',
+	'product_option' => [
+		'name' => 'उत्पाद विकल्प'
+	],
+	'option_json' => [
+		'name' => 'विकल्प'
+	],
     'old_price' => [
         'name' => 'पुरानी कीमत'
     ],
