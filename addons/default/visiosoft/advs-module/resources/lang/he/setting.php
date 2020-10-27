@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'מיקום סימן מים',
     ],
+    'user_filter_limit' => [
+        'name' => 'מגבלת מסנן משתמשים',
+        'instructions' => 'בחלונית הניהול'
+    ]
 ];
