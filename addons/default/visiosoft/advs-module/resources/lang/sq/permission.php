@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'Operimet e produkteve',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'A mund të lexoni opsionet e produkteve?',
+            'write'  => 'A mund të krijoni / modifikoni opsionet e produkteve?',
+            'delete' => 'A mund të fshihen opsionet e produkteve?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'Vlera e opsioneve të produkteve',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'A mund të lexohet vlera e opsioneve të produkteve?',
+            'write'  => 'A mund të krijojë / modifikojë vlerën e opsioneve të produkteve?',
+            'delete' => 'A mund të fshihet vlera e opsioneve të produkteve?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'Konfigurimi i opsioneve',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'Mund të lexoni konfigurimin e opsioneve?',
+            'write'  => 'Mund të krijoni / modifikoni konfigurimin e opsioneve?',
+            'delete' => 'Mund të fshini konfigurimin e opsioneve?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Konfigurimi i opsionit',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Mund ta lexoni konfigurimin e opsionit?',
+            'write'  => 'Mund të krijoni / modifikoni konfigurimin e opsionit?',
+            'delete' => 'A mund të fshihet konfigurimi i opsionit?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Konfigurimi i opsionit',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Mund ta lexoni konfigurimin e opsionit?',
+            'write'  => 'Mund të krijoni / modifikoni konfigurimin e opsionit?',
+            'delete' => 'A mund të fshihet konfigurimi i opsionit?',
         ],
     ],
 ];
