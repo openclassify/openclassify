@@ -45,4 +45,13 @@ return [
         'title' => 'گزینه ها',
     ],
     'ads_image' => 'تصویر تبلیغات',
+    'product_options' => [
+        'title' => 'گزینه ها',
+    ],
+    'productoptions_value' => [
+        'title' => 'مقدار گزینه ها',
+    ],
+    'option_configuration' => [
+        'title' => 'پیکربندی',
+    ],
 ];
