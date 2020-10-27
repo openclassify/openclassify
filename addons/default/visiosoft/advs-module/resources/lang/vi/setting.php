@@ -177,7 +177,7 @@ return [
         'name' => 'Vị trí hình mờ',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Giới hạn Bộ lọc Người dùng',
+        'instructions' => 'Trong bảng quản trị'
     ]
 ];
