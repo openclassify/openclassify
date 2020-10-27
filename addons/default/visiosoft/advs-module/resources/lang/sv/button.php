@@ -32,5 +32,11 @@ return [
         'name' => 'Uppdatera kategori'
     ],
     'new_option' => 'Nytt alternativ',
-	'export' => 'Exportera'
+	'export' => 'Exportera',
+    'new_productoption' => 'Ny produktalternativ',
+    'new_productoptions_value' => 'Nytt produktalternativvärde',
+    'new_options_configuration' => 'Ny alternativkonfiguration',
+    'new_option_configuration' => 'Ny alternativkonfiguration',
+    'new_option_configuration' => 'Ny alternativkonfiguration',
+	'create_configurations' => 'Skapa konfigurationer',
 ];
