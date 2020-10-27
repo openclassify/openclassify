@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Διεύθυνση (A έως Z)',
     'address_z_a' => 'Διεύθυνση (Ω έως Α)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Κατηγορίες'
 	],
     'all_categories' => 'Όλες οι κατηγορίες',
     'location' => 'Τοποθεσία',
@@ -317,10 +317,10 @@ return [
     'subscription' => 'Συνδρομή',
 	'created' => 'Δημιουργήθηκε',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Επιλογή προϊόντος'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Επιλογή'
 	],
     'old_price' => [
         'name' => 'Παλιά τιμή'
