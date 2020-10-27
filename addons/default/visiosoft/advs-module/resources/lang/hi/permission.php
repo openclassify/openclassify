@@ -60,41 +60,41 @@ return [
     'productoptions' => [
         'name'   => 'Productoptions',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'Productoptions पढ़ सकते हैं?',
+            'write'  => 'Productoptions बना / संपादित कर सकते हैं?',
+            'delete' => 'Productoptions हटा सकते हैं?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'उत्पाद के मूल्य',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'क्या उत्पाद अपनाने के मूल्य पढ़ सकते हैं?',
+            'write'  => 'Productoptions मान बना / संपादित कर सकते हैं?',
+            'delete' => 'क्या Productoptions मान हटा सकते हैं?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'विकल्प विन्यास',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'विकल्प विन्यास पढ़ सकते हैं?',
+            'write'  => 'विकल्प विन्यास बना / संपादित कर सकते हैं?',
+            'delete' => 'विकल्प कॉन्फ़िगरेशन हटा सकते हैं?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'विकल्प विन्यास',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'विकल्प विन्यास पढ़ सकते हैं?',
+            'write'  => 'विकल्प विन्यास बना / संपादित कर सकते हैं?',
+            'delete' => 'विकल्प कॉन्फ़िगरेशन हटा सकते हैं?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'विकल्प विन्यास',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'विकल्प विन्यास पढ़ सकते हैं?',
+            'write'  => 'विकल्प विन्यास बना / संपादित कर सकते हैं?',
+            'delete' => 'विकल्प कॉन्फ़िगरेशन हटा सकते हैं?',
         ],
     ],
 ];
