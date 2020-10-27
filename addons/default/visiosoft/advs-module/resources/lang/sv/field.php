@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Adress (A till Ö)',
     'address_z_a' => 'Adress (Z till A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Kategorier'
 	],
     'all_categories' => 'alla kategorier',
     'location' => 'Plats',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'Prenumeration',
 	'created' => 'Skapad',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Produktalternativ'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Alternativ'
 	],
     'old_price' => [
         'name' => 'Gammalt pris'
