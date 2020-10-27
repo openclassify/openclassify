@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'पता (A से Z)',
     'address_z_a' => 'पता (Z से A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'श्रेणियाँ'
 	],
     'all_categories' => 'सब वर्ग',
     'location' => 'स्थान',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'अंशदान',
 	'created' => 'बनाया था',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'उत्पाद विकल्प'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'विकल्प'
 	],
     'old_price' => [
         'name' => 'पुरानी कीमत'
