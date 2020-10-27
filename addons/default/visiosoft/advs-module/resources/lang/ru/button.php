@@ -32,5 +32,11 @@ return [
         'name' => 'Обновить категорию'
     ],
     'new_option' => 'Новый вариант',
-	'export' => 'Экспорт'
+	'export' => 'Экспорт',
+    'new_productoption' => 'Новый вариант продукта',
+    'new_productoptions_value' => 'Стоимость опции нового продукта',
+    'new_options_configuration' => 'Новая конфигурация опций',
+    'new_option_configuration' => 'Новая конфигурация опций',
+    'new_option_configuration' => 'Новая конфигурация опций',
+	'create_configurations' => 'Создать конфигурации',
 ];

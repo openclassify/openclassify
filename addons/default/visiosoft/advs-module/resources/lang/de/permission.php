@@ -57,4 +57,44 @@ return [
             'delete' => 'Kann Optionen löschen?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Produktoptionen',
+        'option' => [
+            'read'   => 'Kann Produktoptionen lesen?',
+            'write'  => 'Können Produktoptionen erstellt / bearbeitet werden?',
+            'delete' => 'Kann Produktoptionen löschen?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Wert der Produktoptionen',
+        'option' => [
+            'read'   => 'Kann Produktoptionswert lesen?',
+            'write'  => 'Kann Produktoptionswert erstellen / bearbeiten?',
+            'delete' => 'Kann Produktoptionswert löschen?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Optionskonfiguration',
+        'option' => [
+            'read'   => 'Kann Optionen Konfiguration lesen?',
+            'write'  => 'Kann ich Optionen konfigurieren / bearbeiten?',
+            'delete' => 'Kann Optionskonfiguration löschen?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Optionskonfiguration',
+        'option' => [
+            'read'   => 'Kann Optionskonfiguration lesen?',
+            'write'  => 'Kann Optionskonfiguration erstellen / bearbeiten?',
+            'delete' => 'Kann Optionskonfiguration löschen?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Optionskonfiguration',
+        'option' => [
+            'read'   => 'Kann Optionskonfiguration lesen?',
+            'write'  => 'Kann Optionskonfiguration erstellen / bearbeiten?',
+            'delete' => 'Kann Optionskonfiguration löschen?',
+        ],
+    ],
 ];

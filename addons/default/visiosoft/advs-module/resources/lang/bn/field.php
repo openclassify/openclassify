@@ -137,7 +137,9 @@ return [
     'oldest' => 'প্রবীণতম',
     'address_a_z' => 'ঠিকানা (A থেকে Z)',
     'address_z_a' => 'ঠিকানা (জেড টু এ)',
-    'categories' => 'ধরন',
+	'categories' => [
+		'name' => 'বিভাগসমূহ'
+	],
     'all_categories' => 'সব ধরনের',
     'location' => 'অবস্থান',
     'send_message' => 'বার্তা পাঠান',
@@ -313,6 +315,12 @@ return [
     'site' => 'সাইট',
     'subscription' => 'সাবস্ক্রিপশন',
 	'created' => 'তৈরি হয়েছে',
+	'product_option' => [
+		'name' => 'পণ্য বিকল্প'
+	],
+	'option_json' => [
+		'name' => 'বিকল্প'
+	],
     'old_price' => [
         'name' => 'পুরাতন মূল্য'
     ],

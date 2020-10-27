@@ -57,4 +57,44 @@ return [
             'delete' => 'Kan radera alternativ?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Produktalternativ',
+        'option' => [
+            'read'   => 'Kan läsa produktalternativ?',
+            'write'  => 'Kan du skapa / redigera produktalternativ?',
+            'delete' => 'Kan radera produktalternativ?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Productoptions värde',
+        'option' => [
+            'read'   => 'Kan läsa produktalternativets värde?',
+            'write'  => 'Kan du skapa / redigera produktalternativ?',
+            'delete' => 'Kan ta bort produktalternativ?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Alternativkonfiguration',
+        'option' => [
+            'read'   => 'Kan konfiguration av läsalternativ?',
+            'write'  => 'Kan du skapa / redigera alternativkonfiguration?',
+            'delete' => 'Kan radera alternativkonfiguration?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Alternativkonfiguration',
+        'option' => [
+            'read'   => 'Kan konfiguration av läsalternativ?',
+            'write'  => 'Kan skapa / redigera alternativkonfiguration?',
+            'delete' => 'Kan radera alternativkonfiguration?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Alternativkonfiguration',
+        'option' => [
+            'read'   => 'Kan konfiguration av läsalternativ?',
+            'write'  => 'Kan skapa / redigera alternativkonfiguration?',
+            'delete' => 'Kan radera alternativkonfiguration?',
+        ],
+    ],
 ];

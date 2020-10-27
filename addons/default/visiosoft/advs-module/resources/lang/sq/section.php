@@ -45,4 +45,13 @@ return [
         'title' => 'Opsione',
     ],
     'ads_image' => 'Imazhi i reklamave',
+    'product_options' => [
+        'title' => 'Opsione',
+    ],
+    'productoptions_value' => [
+        'title' => 'Vlera e opsioneve',
+    ],
+    'option_configuration' => [
+        'title' => 'Konfigurimi',
+    ],
 ];

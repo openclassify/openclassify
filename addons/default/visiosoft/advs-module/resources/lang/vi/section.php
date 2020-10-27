@@ -45,4 +45,13 @@ return [
         'title' => 'Tùy chọn',
     ],
     'ads_image' => 'Hình ảnh Quảng cáo',
+    'product_options' => [
+        'title' => 'Tùy chọn',
+    ],
+    'productoptions_value' => [
+        'title' => 'Giá trị tùy chọn',
+    ],
+    'option_configuration' => [
+        'title' => 'Cấu hình',
+    ],
 ];

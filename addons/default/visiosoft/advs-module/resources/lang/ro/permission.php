@@ -57,4 +57,44 @@ return [
             'delete' => 'Poți șterge opțiunile?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Opțiuni de produs',
+        'option' => [
+            'read'   => 'Pot citi opțiunile de produs?',
+            'write'  => 'Poate crea / edita opțiuni de produs?',
+            'delete' => 'Poate șterge opțiunile de produs?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Valoarea opțiunilor de produs',
+        'option' => [
+            'read'   => 'Poate citi opțiunile de produs?',
+            'write'  => 'Poate crea / edita valoarea opțiunilor de produs?',
+            'delete' => 'Poate șterge valoarea opțiunilor de produs?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Configurare opțiuni',
+        'option' => [
+            'read'   => 'Poate citi opțiunile de configurare?',
+            'write'  => 'Poate crea / edita configurarea opțiunilor?',
+            'delete' => 'Poate șterge configurarea opțiunilor?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configurarea opțiunii',
+        'option' => [
+            'read'   => 'Poate citi configurarea opțiunii?',
+            'write'  => 'Poate crea / edita configurația opțiunii?',
+            'delete' => 'Poate șterge configurația opțiunii?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configurarea opțiunii',
+        'option' => [
+            'read'   => 'Poate citi configurarea opțiunii?',
+            'write'  => 'Poate crea / edita configurația opțiunii?',
+            'delete' => 'Poate șterge configurația opțiunii?',
+        ],
+    ],
 ];

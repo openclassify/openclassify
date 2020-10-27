@@ -57,4 +57,44 @@ return [
             'delete' => 'Seçenekleri silebilir mi?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Üretim seçenekleri',
+        'option' => [
+            'read'   => 'Prodüksiyonları okuyabilir mi?',
+            'write'  => 'Prodüksiyonlar oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Prodüksiyonları silebilir mi?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Productoptions değeri',
+        'option' => [
+            'read'   => 'Prodüksiyonların değerini okuyabilir mi?',
+            'write'  => 'Prodüksiyonlar değeri oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Prodüksiyonlar değerini silebilir mi?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Seçenekler yapılandırması',
+        'option' => [
+            'read'   => 'Seçenekler yapılandırmasını okuyabilir mi?',
+            'write'  => 'Seçenekler yapılandırması oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Seçenekler yapılandırmasını silebilir mi?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Seçenek yapılandırması',
+        'option' => [
+            'read'   => 'Seçenek yapılandırmasını okuyabilir mi?',
+            'write'  => 'Seçenek yapılandırması oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Seçenek yapılandırmasını silebilir mi?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Seçenek yapılandırması',
+        'option' => [
+            'read'   => 'Seçenek yapılandırmasını okuyabilir mi?',
+            'write'  => 'Seçenek yapılandırması oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Seçenek yapılandırmasını silebilir mi?',
+        ],
+    ],
 ];

@@ -22,4 +22,13 @@ return [
     'options' => [
         'name' => 'Επιλογές',
     ],
+    'product_options' => [
+        'name' => 'Επιλογές προϊόντος',
+    ],
+    'productoptions_value' => [
+        'name' => 'Αξία επιλογών',
+    ],
+    'option_configuration' => [
+        'name' => 'Διαμόρφωση',
+    ],
 ];
