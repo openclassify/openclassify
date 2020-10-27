@@ -49,7 +49,7 @@ return [
         'title' => 'Options',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Valeur des options',
     ],
     'option_configuration' => [
         'title' => 'Configuration',
