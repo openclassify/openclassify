@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'विज्ञापन छवि',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'विकल्प',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'विकल्प मान',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'विन्यास',
     ],
 ];
