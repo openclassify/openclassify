@@ -23,12 +23,12 @@ return [
         'name' => 'विकल्प',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'उत्पाद विकल्प',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'विकल्प मान',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'विन्यास',
     ],
 ];
