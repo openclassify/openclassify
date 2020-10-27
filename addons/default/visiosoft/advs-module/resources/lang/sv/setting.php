@@ -177,7 +177,7 @@ return [
         'name' => 'Vattenmärkes position',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Användarfiltergräns',
+        'instructions' => 'I adminpanelen'
     ]
 ];
