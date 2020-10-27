@@ -32,5 +32,11 @@ return [
         'name' => 'Kateqoriya yeniləyin'
     ],
     'new_option' => 'Yeni Seçim',
-	'export' => 'İxrac'
+	'export' => 'İxrac',
+    'new_productoption' => 'Yeni Productoption',
+    'new_productoptions_value' => 'Yeni Productoptions dəyəri',
+    'new_options_configuration' => 'Yeni Seçimlər konfiqurasiyası',
+    'new_option_configuration' => 'Yeni Seçim konfiqurasiyası',
+    'new_option_configuration' => 'Yeni Seçim konfiqurasiyası',
+	'create_configurations' => 'Konfiqurasiyalar yaradın',
 ];
