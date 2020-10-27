@@ -177,7 +177,7 @@ return [
         'name' => 'واٹر مارک پوزیشن',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'صارف کے فلٹر کی حد',
+        'instructions' => 'ایڈمن پینل میں'
     ]
 ];
