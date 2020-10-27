@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'Produktalternativ',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'Kan läsa produktalternativ?',
+            'write'  => 'Kan du skapa / redigera produktalternativ?',
+            'delete' => 'Kan radera produktalternativ?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'Productoptions värde',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'Kan läsa produktalternativets värde?',
+            'write'  => 'Kan du skapa / redigera produktalternativ?',
+            'delete' => 'Kan ta bort produktalternativ?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'Alternativkonfiguration',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'Kan konfiguration av läsalternativ?',
+            'write'  => 'Kan du skapa / redigera alternativkonfiguration?',
+            'delete' => 'Kan radera alternativkonfiguration?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Alternativkonfiguration',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Kan konfiguration av läsalternativ?',
+            'write'  => 'Kan skapa / redigera alternativkonfiguration?',
+            'delete' => 'Kan radera alternativkonfiguration?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Alternativkonfiguration',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Kan konfiguration av läsalternativ?',
+            'write'  => 'Kan skapa / redigera alternativkonfiguration?',
+            'delete' => 'Kan radera alternativkonfiguration?',
         ],
     ],
 ];
