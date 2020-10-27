@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'Imagine publicitară',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Opțiuni',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Opțiuni Valoare',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Configurare',
     ],
 ];
