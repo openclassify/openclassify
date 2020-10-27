@@ -177,7 +177,7 @@ return [
         'name' => '워터 마크 위치',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => '사용자 필터 제한',
+        'instructions' => '관리자 패널에서'
     ]
 ];
