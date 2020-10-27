@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'آدرس (الف تا ی)',
     'address_z_a' => 'آدرس ( از ی تا الف )',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'دسته بندی ها'
 	],
     'all_categories' => 'همه گتگوری ها',
     'location' => 'موقعيت',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'اشتراک، ابونمان',
 	'created' => 'ایجاد شده',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'گزینه محصول'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'گزینه'
 	],
     'old_price' => [
         'name' => 'قیمت قدیمی'
