@@ -177,7 +177,7 @@ return [
         'name' => 'Θέση υδατοσήματος',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Όριο φίλτρου χρήστη',
+        'instructions' => 'Στον πίνακα διαχείρισης'
     ]
 ];
