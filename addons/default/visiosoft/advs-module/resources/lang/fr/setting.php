@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Position du filigrane',
     ],
+    'user_filter_limit' => [
+        'name' => 'Limite de filtre utilisateur',
+        'instructions' => 'Dans le panneau d\'administration'
+    ]
 ];
