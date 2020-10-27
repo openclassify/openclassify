@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Watermerkpositie',
     ],
+    'user_filter_limit' => [
+        'name' => 'Limiet gebruikersfilter',
+        'instructions' => 'In het admin-paneel'
+    ]
 ];
