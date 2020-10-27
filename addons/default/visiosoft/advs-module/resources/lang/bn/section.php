@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'বিজ্ঞাপন চিত্র',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'বিকল্পগুলি',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'বিকল্প মান',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'কনফিগারেশন',
     ],
 ];
