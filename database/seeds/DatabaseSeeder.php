@@ -103,7 +103,7 @@ class DatabaseSeeder extends Seeder
 
 	    DB::table('files_files')->truncate();
 
-	    $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/muammer/";
+	    $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
 	    file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
 	    file_put_contents(storage_path('store.sql'), fopen($repository . "store.sql", 'r'));
 	    file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
