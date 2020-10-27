@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'প্রোডাক্টপশনস',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'Productoptions পড়তে পারেন?',
+            'write'  => 'Productoptions তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'প্রোডাক্টপশনগুলি মুছতে পারবেন?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'প্রোডাক্টপশন মান',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'Productoptions মান পড়তে পারেন?',
+            'write'  => 'Productoptions মান তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'Productoptions মান মুছতে পারেন?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'বিকল্প কনফিগারেশন',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'বিকল্প কনফিগারেশন পড়তে পারেন?',
+            'write'  => 'বিকল্প কনফিগারেশন তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'বিকল্প কনফিগারেশন মুছতে পারেন?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'বিকল্প কনফিগারেশন',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'বিকল্প কনফিগারেশন পড়তে পারেন?',
+            'write'  => 'বিকল্প কনফিগারেশন তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'বিকল্প কনফিগারেশন মুছতে পারেন?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'বিকল্প কনফিগারেশন',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'বিকল্প কনফিগারেশন পড়তে পারেন?',
+            'write'  => 'বিকল্প কনফিগারেশন তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'বিকল্প কনফিগারেশন মুছতে পারেন?',
         ],
     ],
 ];
