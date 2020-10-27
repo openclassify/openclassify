@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Pozycja znaku wodnego',
     ],
+    'user_filter_limit' => [
+        'name' => 'Limit filtrów użytkownika',
+        'instructions' => 'W panelu administracyjnym'
+    ]
 ];
