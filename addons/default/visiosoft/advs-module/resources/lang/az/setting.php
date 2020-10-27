@@ -177,7 +177,7 @@ return [
         'name' => 'Su nişanının mövqeyi',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'İstifadəçi Filter Limiti',
+        'instructions' => 'İdarə panelində'
     ]
 ];
