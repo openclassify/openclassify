@@ -177,7 +177,7 @@ return [
         'name' => 'Position du filigrane',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Limite de filtre utilisateur',
+        'instructions' => 'Dans le panneau d\'administration'
     ]
 ];
