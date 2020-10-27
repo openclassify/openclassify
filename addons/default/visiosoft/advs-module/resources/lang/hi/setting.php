@@ -177,7 +177,7 @@ return [
         'name' => 'वॉटरमार्क स्थिति',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'उपयोगकर्ता फ़िल्टर सीमा',
+        'instructions' => 'व्यवस्थापक पैनल में'
     ]
 ];
