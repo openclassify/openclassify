@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Vị trí hình mờ',
     ],
+    'user_filter_limit' => [
+        'name' => 'Giới hạn Bộ lọc Người dùng',
+        'instructions' => 'Trong bảng quản trị'
+    ]
 ];
