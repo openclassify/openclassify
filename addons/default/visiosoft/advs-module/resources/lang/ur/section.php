@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'اشتہارات کی تصویر',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'اختیارات',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'اختیارات کی قیمت',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'تشکیل',
     ],
 ];
