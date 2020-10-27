@@ -177,7 +177,7 @@ return [
         'name' => 'Watermerkpositie',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Limiet gebruikersfilter',
+        'instructions' => 'In het admin-paneel'
     ]
 ];
