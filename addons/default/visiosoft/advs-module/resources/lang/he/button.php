@@ -32,5 +32,11 @@ return [
         'name' => 'עדכן קטגוריה'
     ],
     'new_option' => 'אפשרות חדשה',
-	'export' => 'יְצוּא'
+	'export' => 'יְצוּא',
+    'new_productoption' => 'מוצר חדש',
+    'new_productoptions_value' => 'ערך מוצר חדש',
+    'new_options_configuration' => 'תצורת אפשרויות חדשות',
+    'new_option_configuration' => 'תצורת אפשרות חדשה',
+    'new_option_configuration' => 'תצורת אפשרות חדשה',
+	'create_configurations' => 'צור תצורות',
 ];
