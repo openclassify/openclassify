@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Adres (A tot Z)',
     'address_z_a' => 'Adres (Z tot A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Categorieën'
 	],
     'all_categories' => 'Alle categorieën',
     'location' => 'Plaats',
@@ -317,10 +317,10 @@ return [
     'subscription' => 'Abonnement',
 	'created' => 'Gemaakt',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Productoptie'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Keuze'
 	],
     'old_price' => [
         'name' => 'Oude prijs'
