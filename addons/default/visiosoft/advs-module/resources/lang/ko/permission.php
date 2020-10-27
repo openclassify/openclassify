@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => '제품 옵션',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => '제품 옵션을 읽을 수 있습니까?',
+            'write'  => '제품 옵션을 생성 / 편집 할 수 있습니까?',
+            'delete' => '제품 옵션을 삭제할 수 있습니까?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => '제품 옵션 값',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'productoptions 값을 읽을 수 있습니까?',
+            'write'  => '제품 옵션 값을 생성 / 편집 할 수 있습니까?',
+            'delete' => 'productoptions 값을 삭제할 수 있습니까?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => '옵션 구성',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => '옵션 구성을 읽을 수 있습니까?',
+            'write'  => '옵션 구성을 생성 / 편집 할 수 있습니까?',
+            'delete' => '옵션 구성을 삭제할 수 있습니까?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => '옵션 구성',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => '옵션 구성을 읽을 수 있습니까?',
+            'write'  => '옵션 구성을 생성 / 편집 할 수 있습니까?',
+            'delete' => '옵션 구성을 삭제할 수 있습니까?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => '옵션 구성',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => '옵션 구성을 읽을 수 있습니까?',
+            'write'  => '옵션 구성을 생성 / 편집 할 수 있습니까?',
+            'delete' => '옵션 구성을 삭제할 수 있습니까?',
         ],
     ],
 ];
