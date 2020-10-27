@@ -23,12 +23,12 @@ return [
         'name' => '옵션',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => '제품 옵션',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => '옵션 값',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => '구성',
     ],
 ];
