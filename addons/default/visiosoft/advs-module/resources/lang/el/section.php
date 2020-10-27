@@ -46,12 +46,12 @@ return [
     ],
     'ads_image' => 'Εικόνα διαφημίσεων',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Επιλογές',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Αξία επιλογών',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Διαμόρφωση',
     ],
 ];
