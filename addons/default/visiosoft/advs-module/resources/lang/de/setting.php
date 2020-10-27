@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Wasserzeichen Position',
     ],
+    'user_filter_limit' => [
+        'name' => 'Benutzerfilterlimit',
+        'instructions' => 'Im Admin-Bereich'
+    ]
 ];
