@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'כתובת (א \'עד ת\')',
     'address_z_a' => 'כתובת (Z עד A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'קטגוריות'
 	],
     'all_categories' => 'כל הקטגוריות',
     'location' => 'מקום',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'מִנוּי',
 	'created' => 'נוצר',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'אפשרות מוצר'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'אוֹפְּצִיָה'
 	],
     'old_price' => [
         'name' => 'מחיר ישן'
