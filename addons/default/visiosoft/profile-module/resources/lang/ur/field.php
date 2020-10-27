@@ -56,7 +56,7 @@ return [
         'name' => 'رجسٹر کی قسم'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'سالگرہ'
     ],
     'identification_number' => [
         'name' => 'شناختی نمبر'
