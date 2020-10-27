@@ -137,7 +137,9 @@ return [
     'oldest' => 'Cele mai vechi',
     'address_a_z' => 'Adresa (de la A la Z)',
     'address_z_a' => 'Adresa (de la Z la A)',
-    'categories' => 'Categorii',
+	'categories' => [
+		'name' => 'Categorii'
+	],
     'all_categories' => 'toate categoriile',
     'location' => 'Locație',
     'send_message' => 'Trimite mesaj',
@@ -313,6 +315,12 @@ return [
     'site' => 'Site',
     'subscription' => 'Abonament',
 	'created' => 'Creată',
+	'product_option' => [
+		'name' => 'Opțiunea produsului'
+	],
+	'option_json' => [
+		'name' => 'Opțiune'
+	],
     'old_price' => [
         'name' => 'Preț vechi'
     ],
