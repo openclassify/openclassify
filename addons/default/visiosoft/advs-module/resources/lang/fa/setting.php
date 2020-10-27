@@ -178,7 +178,7 @@ return [
         'name' => 'موقعیت علامت سفید',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'محدودیت فیلتر کاربر',
+        'instructions' => 'در پنل مدیریت'
     ]
 ];
