@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'Productopties',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'Kan productopties lezen?',
+            'write'  => 'Kan productopties maken / bewerken?',
+            'delete' => 'Kan productopties worden verwijderd?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'Productopties waarde',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'Kan de waarde van productopties lezen?',
+            'write'  => 'Kan waarde voor productopties creëren / bewerken?',
+            'delete' => 'Kan de waarde van productopties verwijderen?',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'Opties configuratie',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'Kan de configuratie van opties lezen?',
+            'write'  => 'Kan configuratie van opties maken / bewerken?',
+            'delete' => 'Kan de configuratie van opties verwijderen?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Optie configuratie',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Kan optieconfiguratie lezen?',
+            'write'  => 'Kan optieconfiguratie maken / bewerken?',
+            'delete' => 'Kan de optieconfiguratie verwijderen?',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'Optie configuratie',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'Kan optieconfiguratie lezen?',
+            'write'  => 'Kan optieconfiguratie maken / bewerken?',
+            'delete' => 'Kan de optieconfiguratie verwijderen?',
         ],
     ],
 ];
