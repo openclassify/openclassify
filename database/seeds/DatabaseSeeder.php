@@ -105,7 +105,6 @@ class DatabaseSeeder extends Seeder
 
 	    $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/muammer/";
 	    file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
-//	    file_put_contents(storage_path('categories.sql'), fopen($repository . "categories.sql", 'r'));
 	    file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
 	    file_put_contents(storage_path('images.zip'), fopen($repository . "images.zip", "r"));
 	    file_put_contents(storage_path('cats.zip'), fopen($repository . "cats.zip", "r"));
