@@ -58,43 +58,43 @@ return [
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'خيارات الإنتاج',
         'option' => [
-            'read'   => 'Can read productoptions?',
-            'write'  => 'Can create/edit productoptions?',
-            'delete' => 'Can delete productoptions?',
+            'read'   => 'هل تستطيع قراءة خيارات المنتج؟',
+            'write'  => 'هل يمكن إنشاء / تعديل خيارات المنتج؟',
+            'delete' => 'هل يمكن حذف خيارات المنتج؟',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Productoptions value',
+        'name'   => 'قيمة Productoptions',
         'option' => [
-            'read'   => 'Can read productoptions value?',
-            'write'  => 'Can create/edit productoptions value?',
-            'delete' => 'Can delete productoptions value?',
+            'read'   => 'هل يمكن قراءة قيمة productoptions؟',
+            'write'  => 'هل يمكن إنشاء / تحرير قيمة productoptions؟',
+            'delete' => 'هل يمكن حذف قيمة productoptions؟',
         ],
     ],
     'options_configuration' => [
-        'name'   => 'Options configuration',
+        'name'   => 'تكوين الخيارات',
         'option' => [
-            'read'   => 'Can read options configuration?',
-            'write'  => 'Can create/edit options configuration?',
-            'delete' => 'Can delete options configuration?',
+            'read'   => 'يمكن قراءة تكوين الخيارات؟',
+            'write'  => 'يمكن إنشاء / تحرير تكوين الخيارات؟',
+            'delete' => 'يمكن حذف تكوين الخيارات؟',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'تكوين الخيار',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'يمكن قراءة تكوين الخيار؟',
+            'write'  => 'يمكن إنشاء / تعديل تكوين الخيار؟',
+            'delete' => 'يمكن حذف تكوين الخيار؟',
         ],
     ],
     'option_configuration' => [
-        'name'   => 'Option configuration',
+        'name'   => 'تكوين الخيار',
         'option' => [
-            'read'   => 'Can read option configuration?',
-            'write'  => 'Can create/edit option configuration?',
-            'delete' => 'Can delete option configuration?',
+            'read'   => 'يمكن قراءة تكوين الخيار؟',
+            'write'  => 'يمكن إنشاء / تعديل تكوين الخيار؟',
+            'delete' => 'يمكن حذف تكوين الخيار؟',
         ],
     ],
 ];
