@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'Adres (A\'dan Z\'ye)',
     'address_z_a' => 'Adres (Z\'den A\'ya)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Kategoriler'
 	],
     'all_categories' => 'Tüm Kategoriler',
     'location' => 'Lokasyon',
@@ -318,10 +318,10 @@ return [
     'subscription' => 'Abonelik',
 	'created' => 'Oluşturuldu',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Ürün Seçeneği'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Seçenek'
 	],
     'old_price' => [
         'name' => 'Eski fiyat'
