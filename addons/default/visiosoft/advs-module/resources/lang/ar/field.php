@@ -138,7 +138,7 @@ return [
     'address_a_z' => 'العنوان (من الألف إلى الياء)',
     'address_z_a' => 'العنوان (ي إلى أ)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'التصنيفات'
 	],
     'all_categories' => 'جميع الفئات',
     'location' => 'موقعك',
@@ -316,10 +316,10 @@ return [
     'subscription' => 'اشتراك',
 	'created' => 'خلقت',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'خيار المنتج'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'اختيار'
 	],
     'old_price' => [
         'name' => 'سعر قديم'
