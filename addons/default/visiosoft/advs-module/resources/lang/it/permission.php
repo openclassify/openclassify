@@ -57,4 +57,44 @@ return [
             'delete' => 'Può eliminare le opzioni?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Productoptions',
+        'option' => [
+            'read'   => 'Può leggere le interruzioni di produzione?',
+            'write'  => 'Può creare / modificare le opzioni di produzione?',
+            'delete' => 'È possibile eliminare le interruzioni di produzione?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Valore delle produzioni',
+        'option' => [
+            'read'   => 'Può leggere il valore delle opzioni di produzione?',
+            'write'  => 'Può creare / modificare il valore delle opzioni di produzione?',
+            'delete' => 'Può eliminare il valore delle opzioni di produzione?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Configurazione delle opzioni',
+        'option' => [
+            'read'   => 'Può leggere la configurazione delle opzioni?',
+            'write'  => 'Può creare / modificare la configurazione delle opzioni?',
+            'delete' => 'Può eliminare la configurazione delle opzioni?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configurazione delle opzioni',
+        'option' => [
+            'read'   => 'Può leggere la configurazione delle opzioni?',
+            'write'  => 'Può creare / modificare la configurazione delle opzioni?',
+            'delete' => 'Può eliminare la configurazione delle opzioni?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configurazione delle opzioni',
+        'option' => [
+            'read'   => 'Può leggere la configurazione delle opzioni?',
+            'write'  => 'Può creare / modificare la configurazione delle opzioni?',
+            'delete' => 'Può eliminare la configurazione delle opzioni?',
+        ],
+    ],
 ];
