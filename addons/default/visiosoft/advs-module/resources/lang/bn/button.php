@@ -32,5 +32,11 @@ return [
         'name' => 'আপডেট বিভাগ'
     ],
     'new_option' => 'নতুন বিকল্প',
-	'export' => 'রফতানি'
+	'export' => 'রফতানি',
+    'new_productoption' => 'নতুন প্রোডাক্টপশন',
+    'new_productoptions_value' => 'নতুন প্রোডাক্টশনের মান',
+    'new_options_configuration' => 'নতুন বিকল্প কনফিগারেশন',
+    'new_option_configuration' => 'নতুন বিকল্প কনফিগারেশন',
+    'new_option_configuration' => 'নতুন বিকল্প কনফিগারেশন',
+	'create_configurations' => 'কনফিগারেশন তৈরি করুন',
 ];
