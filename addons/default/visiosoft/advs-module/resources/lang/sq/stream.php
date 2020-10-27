@@ -23,12 +23,12 @@ return [
         'name' => 'Opsione',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'Opsionet e Produktit',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'Vlera e opsioneve',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'Konfigurimi',
     ],
 ];
