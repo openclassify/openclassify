@@ -32,5 +32,11 @@ return [
         'name' => 'Kategori Güncelle'
     ],
     'new_option' => 'Yeni Seçenek',
-	'export' => 'İhracat'
+	'export' => 'Dışa aktar',
+    'new_productoption' => 'Yeni Üretim',
+    'new_productoptions_value' => 'Yeni Ürün seçeneği değeri',
+    'new_options_configuration' => 'Yeni Seçenek yapılandırması',
+    'new_option_configuration' => 'Yeni Seçenek yapılandırması',
+    'new_option_configuration' => 'Yeni Seçenek yapılandırması',
+	'create_configurations' => 'Konfigürasyonlar Oluşturun',
 ];
