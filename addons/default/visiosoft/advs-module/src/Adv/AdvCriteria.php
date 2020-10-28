@@ -84,9 +84,14 @@ class AdvCriteria extends EntryCriteria
         return $ads;
     }
 
-    public function findAdsByCategoryId($catId, $level = 1)
+    public function findAdsByCategoryId($catId, $level = 1, $limit = 20)
     {
-        return $this->advRepository->getByCat($catId, $level);
+        return $this->advRepository->getByCat($catId, $level, $limit);
+    }
+
+    public function countAdsByCategoryId($catId, $level = 1)
+    {
+        return $this->advRepository->countByCat($catId, $level);
     }
 
     public function getCurrentLocale()

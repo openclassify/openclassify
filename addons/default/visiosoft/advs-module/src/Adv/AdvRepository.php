@@ -4,6 +4,7 @@ use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
@@ -377,15 +378,19 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
-    public function getByCat($catID, $level = 1)
+    public function getByCat($catID, $level = 1, $limit = 20)
     {
         $advs = $this->model
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', 'approved')
             ->where('slug', '!=', '')
-            ->where('cat' . $level, $catID)
-            ->limit(20)
-            ->get();
+            ->where('cat' . $level, $catID);
+
+        if ($limit) {
+            $advs = $advs->limit($limit);
+        }
+
+        $advs = $advs->get();
 
         $ads = $this->model->getLocationNames($advs);
 
@@ -395,6 +400,16 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         return $ads;
+    }
+
+    public function countByCat($catID, $level = 1)
+    {
+        return DB::table('advs_advs')
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', 'approved')
+            ->where('slug', '!=', '')
+            ->where('cat' . $level, $catID)
+            ->count();
     }
 
     public function getCategoriesWithAdID($id)
