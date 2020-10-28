@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'স্ট্যান্ডার্ড দাম ক্ষেত্র লুকান ide',
     ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
     'enabled_currencies' => [
         'name' => 'সক্ষম মুদ্রা',
     ],
