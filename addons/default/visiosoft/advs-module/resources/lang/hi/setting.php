@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'मानक मूल्य फ़ील्ड छिपाएँ',
     ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
     'enabled_currencies' => [
         'name' => 'सक्षम मुद्राएँ',
     ],
