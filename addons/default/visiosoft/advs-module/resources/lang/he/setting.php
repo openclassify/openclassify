@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'הסתר שדה מחיר רגיל',
     ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
     'enabled_currencies' => [
         'name' => 'מטבעות מופעלים',
     ],
