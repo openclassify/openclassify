@@ -32,5 +32,11 @@ return [
         'name' => 'Categoria di aggiornamento'
     ],
     'new_option' => 'Nuova opzione',
-	'export' => 'Esportare'
+	'export' => 'Esportare',
+    'new_productoption' => 'New Productoption',
+    'new_productoptions_value' => 'Nuovo valore dell\'opzione del prodotto',
+    'new_options_configuration' => 'Nuova configurazione delle opzioni',
+    'new_option_configuration' => 'Nuova configurazione delle opzioni',
+    'new_option_configuration' => 'Nuova configurazione delle opzioni',
+	'create_configurations' => 'Crea configurazioni',
 ];

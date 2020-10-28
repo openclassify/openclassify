@@ -69,6 +69,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
             'as' => 'users::exportUsers',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\Admin\UsersController@exportUsers'
         ],
+        'api/profile/query-users' => 'Visiosoft\ProfileModule\Http\Controller\Admin\UsersController@queryUsers',
 
         // MyProfileController
         'profile/ads' => [

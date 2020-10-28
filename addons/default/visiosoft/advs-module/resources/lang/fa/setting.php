@@ -177,4 +177,8 @@ return [
     'watermark_position' => [
         'name' => 'موقعیت علامت سفید',
     ],
+    'user_filter_limit' => [
+        'name' => 'محدودیت فیلتر کاربر',
+        'instructions' => 'در پنل مدیریت'
+    ]
 ];

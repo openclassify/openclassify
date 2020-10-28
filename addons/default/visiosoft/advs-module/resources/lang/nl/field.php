@@ -137,7 +137,9 @@ return [
     'oldest' => 'Oudste',
     'address_a_z' => 'Adres (A tot Z)',
     'address_z_a' => 'Adres (Z tot A)',
-    'categories' => 'Categorieën',
+	'categories' => [
+		'name' => 'Categorieën'
+	],
     'all_categories' => 'Alle categorieën',
     'location' => 'Plaats',
     'send_message' => 'Bericht versturen',
@@ -314,6 +316,12 @@ return [
     'site' => 'Site',
     'subscription' => 'Abonnement',
 	'created' => 'Gemaakt',
+	'product_option' => [
+		'name' => 'Productoptie'
+	],
+	'option_json' => [
+		'name' => 'Keuze'
+	],
     'old_price' => [
         'name' => 'Oude prijs'
     ],

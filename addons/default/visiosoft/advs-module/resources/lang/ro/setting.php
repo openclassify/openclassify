@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Poziția filigranului',
     ],
+    'user_filter_limit' => [
+        'name' => 'Limita de filtrare a utilizatorilor',
+        'instructions' => 'În panoul de administrare'
+    ]
 ];

@@ -57,4 +57,44 @@ return [
             'delete' => 'Kan opties verwijderen?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Productopties',
+        'option' => [
+            'read'   => 'Kan productopties lezen?',
+            'write'  => 'Kan productopties maken / bewerken?',
+            'delete' => 'Kan productopties worden verwijderd?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Productopties waarde',
+        'option' => [
+            'read'   => 'Kan de waarde van productopties lezen?',
+            'write'  => 'Kan waarde voor productopties creëren / bewerken?',
+            'delete' => 'Kan de waarde van productopties verwijderen?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Opties configuratie',
+        'option' => [
+            'read'   => 'Kan de configuratie van opties lezen?',
+            'write'  => 'Kan configuratie van opties maken / bewerken?',
+            'delete' => 'Kan de configuratie van opties verwijderen?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Optie configuratie',
+        'option' => [
+            'read'   => 'Kan optieconfiguratie lezen?',
+            'write'  => 'Kan optieconfiguratie maken / bewerken?',
+            'delete' => 'Kan de optieconfiguratie verwijderen?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Optie configuratie',
+        'option' => [
+            'read'   => 'Kan optieconfiguratie lezen?',
+            'write'  => 'Kan optieconfiguratie maken / bewerken?',
+            'delete' => 'Kan de optieconfiguratie verwijderen?',
+        ],
+    ],
 ];

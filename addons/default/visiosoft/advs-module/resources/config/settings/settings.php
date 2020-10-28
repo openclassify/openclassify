@@ -283,4 +283,10 @@ return [
             'default_value' => 'top-right',
         ]
     ],
+    'user_filter_limit' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 5,
+        ],
+    ],
 ];

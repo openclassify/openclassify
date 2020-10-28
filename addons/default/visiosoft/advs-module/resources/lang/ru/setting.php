@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Положение водяного знака',
     ],
+    'user_filter_limit' => [
+        'name' => 'Предел пользовательского фильтра',
+        'instructions' => 'В админке'
+    ]
 ];

@@ -57,4 +57,44 @@ return [
             'delete' => 'Seçimləri silə bilərsiniz?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Məhsul seçimləri',
+        'option' => [
+            'read'   => 'Productoptions oxuya bilərsiniz?',
+            'write'  => 'Productoptions yarada / redaktə edə bilərəmmi?',
+            'delete' => 'Productoptions silə bilərsiniz?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Productoptions dəyəri',
+        'option' => [
+            'read'   => 'Productoptions dəyərini oxuya bilərsinizmi?',
+            'write'  => 'Productoptions dəyərini yarada / redaktə edə bilərəmmi?',
+            'delete' => 'Productoptions dəyərini silə bilərsiniz?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Seçimlər konfiqurasiya',
+        'option' => [
+            'read'   => 'Seçimlərin konfiqurasiyasını oxuya bilərsinizmi?',
+            'write'  => 'Seçimlər konfiqurasiyasını yarada / redaktə edə bilərəmmi?',
+            'delete' => 'Seçimlərin konfiqurasiyasını silə bilərsiniz?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Seçim konfiqurasiyası',
+        'option' => [
+            'read'   => 'Seçim konfiqurasiyasını oxuya bilərsinizmi?',
+            'write'  => 'Seçim konfiqurasiyasını yarada / redaktə edə bilərəmmi?',
+            'delete' => 'Seçim konfiqurasiyasını silə bilərsiniz?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Seçim konfiqurasiyası',
+        'option' => [
+            'read'   => 'Seçim konfiqurasiyasını oxuya bilərsinizmi?',
+            'write'  => 'Seçim konfiqurasiyasını yarada / redaktə edə bilərəmmi?',
+            'delete' => 'Seçim konfiqurasiyasını silə bilərsiniz?',
+        ],
+    ],
 ];

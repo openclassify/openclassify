@@ -32,5 +32,11 @@ return [
         'name' => 'زمرہ اپ ڈیٹ کریں'
     ],
     'new_option' => 'نیا آپشن',
-	'export' => 'برآمد کریں'
+	'export' => 'برآمد کریں',
+    'new_productoption' => 'نیا پروڈکٹشن',
+    'new_productoptions_value' => 'نئی پروڈکٹ آپشن ویلیو',
+    'new_options_configuration' => 'نئی آپشن ترتیب',
+    'new_option_configuration' => 'نئی آپشن ترتیب',
+    'new_option_configuration' => 'نئی آپشن ترتیب',
+	'create_configurations' => 'تشکیلات بنائیں',
 ];

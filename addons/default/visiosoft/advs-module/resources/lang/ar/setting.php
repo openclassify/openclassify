@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'موقف العلامة المائية',
     ],
+    'user_filter_limit' => [
+        'name' => 'حد تصفية المستخدم',
+        'instructions' => 'في لوحة الادارة'
+    ]
 ];

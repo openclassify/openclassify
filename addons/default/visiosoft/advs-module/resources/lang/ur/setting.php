@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'واٹر مارک پوزیشن',
     ],
+    'user_filter_limit' => [
+        'name' => 'صارف کے فلٹر کی حد',
+        'instructions' => 'ایڈمن پینل میں'
+    ]
 ];

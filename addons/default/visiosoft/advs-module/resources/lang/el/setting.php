@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Θέση υδατοσήματος',
     ],
+    'user_filter_limit' => [
+        'name' => 'Όριο φίλτρου χρήστη',
+        'instructions' => 'Στον πίνακα διαχείρισης'
+    ]
 ];

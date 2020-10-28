@@ -32,5 +32,11 @@ return [
         'name' => 'Cập nhật danh mục'
     ],
     'new_option' => 'Tùy chọn mới',
-	'export' => 'Xuất khẩu'
+	'export' => 'Xuất khẩu',
+    'new_productoption' => 'Sản phẩm mới',
+    'new_productoptions_value' => 'Giá trị tùy chọn sản phẩm mới',
+    'new_options_configuration' => 'Cấu hình tùy chọn mới',
+    'new_option_configuration' => 'Cấu hình tùy chọn mới',
+    'new_option_configuration' => 'Cấu hình tùy chọn mới',
+	'create_configurations' => 'Tạo cấu hình',
 ];

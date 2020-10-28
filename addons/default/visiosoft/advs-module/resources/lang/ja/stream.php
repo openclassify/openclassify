@@ -22,4 +22,13 @@ return [
     'options' => [
         'name' => 'オプション',
     ],
+    'product_options' => [
+        'name' => '製品オプション',
+    ],
+    'productoptions_value' => [
+        'name' => 'オプション値',
+    ],
+    'option_configuration' => [
+        'name' => '構成',
+    ],
 ];

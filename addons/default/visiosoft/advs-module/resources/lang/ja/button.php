@@ -32,5 +32,11 @@ return [
         'name' => 'カテゴリを更新'
     ],
     'new_option' => '新しいオプション',
-	'export' => '書き出す'
+	'export' => '書き出す',
+    'new_productoption' => '新製品オプション',
+    'new_productoptions_value' => '新製品オプション値',
+    'new_options_configuration' => '新しいオプション構成',
+    'new_option_configuration' => '新しいオプション構成',
+    'new_option_configuration' => '新しいオプション構成',
+	'create_configurations' => '構成の作成',
 ];
