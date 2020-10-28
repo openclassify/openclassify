@@ -122,30 +122,32 @@
                                     </div>
                                 </div>
 
-                                <div class="row form-group select-options">
-                                    <label for="selectOptions" class="col-sm-2">
-                                        {{ trans('visiosoft.module.advs::field.options') }}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        <select id="selectOptions" class="form-control options-tags" multiple="multiple"
-                                                name="options[]">
-                                            {% if count(options) %}
-                                                {% for option in options %}
-                                                    <option id="advOption{{ option.id }}" selected="selected">{{ option.name }}</option>
-                                                {% endfor %}
-                                            {% endif %}
-                                        </select>
+                                {% if not setting_value('visiosoft.module.advs::hide_options_field') %}
+                                    <div class="row form-group select-options">
+                                        <label for="selectOptions" class="col-sm-2">
+                                            {{ trans('visiosoft.module.advs::field.options') }}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <select id="selectOptions" class="form-control options-tags" multiple="multiple"
+                                                    name="options[]">
+                                                {% if count(options) %}
+                                                    {% for option in options %}
+                                                        <option id="advOption{{ option.id }}" selected="selected">{{ option.name }}</option>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
-                                <div class="row form-group product-options">
-                                    <label for="productOptions" class="col-sm-2">
-                                        {{ trans('visiosoft.module.advs::field.product_option.name') }}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        {{ form.fields.product_options_value.input|raw }}
+                                    <div class="row form-group product-options">
+                                        <label for="productOptions" class="col-sm-2">
+                                            {{ trans('visiosoft.module.advs::field.product_option.name') }}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {{ form.fields.product_options_value.input|raw }}
+                                        </div>
                                     </div>
-                                </div>
+                                {% endif %}
 
                                 <div class="row form-group brand-name">
                                     <div class="col-md-12">
