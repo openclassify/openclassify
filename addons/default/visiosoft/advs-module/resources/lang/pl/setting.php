@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Ukryj pole ceny standardowej',
     ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Włączone waluty',
     ],
