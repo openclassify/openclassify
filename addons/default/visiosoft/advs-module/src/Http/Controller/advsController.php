@@ -237,8 +237,13 @@ class AdvsController extends PublicController
 
         if ($isActiveDopings) {
             $featuredAdvsQuery = clone $advs;
-            $advs = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')
-                ->listFeatures($featuredAdvsQuery)->union($advs);
+            $response__featured_doping = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')
+                ->listFeatures($featuredAdvsQuery);
+
+            $featured_advs = $response__featured_doping['featured_ads'];
+            $featured_advs_id_list = $response__featured_doping['ad_id_list'];
+
+            $advs = $advs->whereNotIn('advs_advs.id', $featured_advs_id_list);
         }
 
         $advs = $advs->paginate(setting_value('streams::per_page'));
