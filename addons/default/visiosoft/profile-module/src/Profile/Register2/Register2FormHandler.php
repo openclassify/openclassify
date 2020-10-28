@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Register2;
 
+use Anomaly\UsersModule\Role\Command\GetRole;
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Event\UserHasRegistered;
@@ -83,6 +84,14 @@ class Register2FormHandler
                 dispatch_now(new HandleEmailRegistration($builder));
                 break;
         }
+
+	    $user = $builder->getFormEntry();
+
+	    foreach ($builder->getRoles() as $role) {
+		    if ($role = $this->dispatch(new GetRole($role))) {
+			    $user->attachRole($role);
+		    }
+	    }
 
         $events->dispatch(new UserHasRegistered($user));
     }

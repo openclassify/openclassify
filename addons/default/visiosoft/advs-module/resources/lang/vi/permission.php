@@ -57,4 +57,44 @@ return [
             'delete' => 'Có thể xóa các tùy chọn?',
         ],
     ],
+    'productoptions' => [
+        'name'   => 'Sản phẩm',
+        'option' => [
+            'read'   => 'Có thể đọc các danh sách sản phẩm?',
+            'write'  => 'Có thể tạo / chỉnh sửa các lựa chọn sản phẩm không?',
+            'delete' => 'Có thể xóa các tùy chọn sản phẩm?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Giá trị sản phẩm',
+        'option' => [
+            'read'   => 'Có thể đọc giá trị productoptions không?',
+            'write'  => 'Có thể tạo / chỉnh sửa giá trị productoptions không?',
+            'delete' => 'Có thể xóa giá trị productoptions không?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Cấu hình tùy chọn',
+        'option' => [
+            'read'   => 'Có thể đọc cấu hình tùy chọn?',
+            'write'  => 'Có thể tạo / chỉnh sửa cấu hình tùy chọn?',
+            'delete' => 'Có thể xóa cấu hình tùy chọn?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Cấu hình tùy chọn',
+        'option' => [
+            'read'   => 'Có thể đọc cấu hình tùy chọn?',
+            'write'  => 'Có thể tạo / chỉnh sửa cấu hình tùy chọn?',
+            'delete' => 'Có thể xóa cấu hình tùy chọn?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Cấu hình tùy chọn',
+        'option' => [
+            'read'   => 'Có thể đọc cấu hình tùy chọn?',
+            'write'  => 'Có thể tạo / chỉnh sửa cấu hình tùy chọn?',
+            'delete' => 'Có thể xóa cấu hình tùy chọn?',
+        ],
+    ],
 ];

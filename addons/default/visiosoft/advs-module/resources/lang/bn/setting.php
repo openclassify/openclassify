@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'জলছবি অবস্থান',
     ],
+    'user_filter_limit' => [
+        'name' => 'ব্যবহারকারী ফিল্টার সীমা',
+        'instructions' => 'অ্যাডমিন প্যানেলে'
+    ]
 ];

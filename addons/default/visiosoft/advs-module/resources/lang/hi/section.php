@@ -45,4 +45,13 @@ return [
         'title' => 'विकल्प',
     ],
     'ads_image' => 'विज्ञापन छवि',
+    'product_options' => [
+        'title' => 'विकल्प',
+    ],
+    'productoptions_value' => [
+        'title' => 'विकल्प मान',
+    ],
+    'option_configuration' => [
+        'title' => 'विन्यास',
+    ],
 ];

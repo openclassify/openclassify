@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => '透かしの位置',
     ],
+    'user_filter_limit' => [
+        'name' => 'ユーザーフィルターの制限',
+        'instructions' => '管理パネルで'
+    ]
 ];

@@ -22,4 +22,13 @@ return [
     'options' => [
         'name' => 'Opciones',
     ],
+    'product_options' => [
+        'name' => 'Opciones de producto',
+    ],
+    'productoptions_value' => [
+        'name' => 'Valor de opciones',
+    ],
+    'option_configuration' => [
+        'name' => 'Configuración',
+    ],
 ];

@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Pozicioni i Filigranit',
     ],
+    'user_filter_limit' => [
+        'name' => 'Kufiri i filtrit të përdoruesit',
+        'instructions' => 'Në panelin e administratorit'
+    ]
 ];

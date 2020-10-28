@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'वॉटरमार्क स्थिति',
     ],
+    'user_filter_limit' => [
+        'name' => 'उपयोगकर्ता फ़िल्टर सीमा',
+        'instructions' => 'व्यवस्थापक पैनल में'
+    ]
 ];

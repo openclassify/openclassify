@@ -176,4 +176,8 @@ return [
     'watermark_position' => [
         'name' => 'Vattenmärkes position',
     ],
+    'user_filter_limit' => [
+        'name' => 'Användarfiltergräns',
+        'instructions' => 'I adminpanelen'
+    ]
 ];

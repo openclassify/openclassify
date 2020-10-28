@@ -124,6 +124,13 @@ return [
             'default_value' => false,
         ]
     ],
+    'hide_options_field' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
     'enabled_currencies' => [
         'bind' => 'streams::currencies.enabled',
         'env' => 'ADV_ENABLED_CURRENCIES',

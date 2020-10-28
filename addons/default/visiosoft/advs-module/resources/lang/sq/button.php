@@ -32,5 +32,11 @@ return [
         'name' => 'Kategoria Azhornimeve'
     ],
     'new_option' => 'Opsioni i ri',
-	'export' => 'Eksporto'
+	'export' => 'Eksporto',
+    'new_productoption' => 'Produkt i ri',
+    'new_productoptions_value' => 'Vlera e opsionit të produktit të ri',
+    'new_options_configuration' => 'Konfigurimi i ri i opsionit',
+    'new_option_configuration' => 'Konfigurimi i ri i opsionit',
+    'new_option_configuration' => 'Konfigurimi i ri i opsionit',
+	'create_configurations' => 'Krijoni konfigurime',
 ];
