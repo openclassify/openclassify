@@ -29,6 +29,7 @@ return [
                     'default_published_time',
                     'default_GET',
                     'hide_standard_price_field',
+                    'hide_options_field',
                     'listing_page_image',
                 ],
             ],
