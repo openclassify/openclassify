@@ -35,7 +35,9 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function latestAds();
 
-    public function getByCat($catID, $level = 1);
+    public function getByCat($catID, $level = 1, $limit = 20);
+
+    public function countByCat($catID, $level = 1);
 
     public function getCategoriesWithAdID($id);
 
