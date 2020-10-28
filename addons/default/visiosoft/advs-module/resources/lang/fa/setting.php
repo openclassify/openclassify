@@ -98,6 +98,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'زمینه قیمت استاندارد را مخفی کنید',
     ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
     'enabled_currencies' => [
         'name' => 'ارزهای فعال شده',
     ],
