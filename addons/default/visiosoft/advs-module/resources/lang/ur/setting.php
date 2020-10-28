@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'معیاری قیمت کا میدان چھپائیں',
     ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
     'enabled_currencies' => [
         'name' => 'فعال کرنسیوں',
     ],
