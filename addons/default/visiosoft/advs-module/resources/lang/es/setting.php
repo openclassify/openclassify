@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Ocultar campo de precio estándar',
     ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Monedas habilitadas',
     ],
