@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Сховати поле стандартної ціни',
     ],
+    'hide_options_field' => [
+        'name' => 'Сховати поле параметрів',
+    ],
     'enabled_currencies' => [
         'name' => 'Увімкнено валюти',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Показати параметр мови для URL-адреси',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL-адреса обміну TCMB',
     ],
     'popular_ads_limit' => [
         'name' => 'Ліміт популярних оголошень',
