@@ -98,7 +98,7 @@ return [
         'name' => 'Standart Fiyat Alanını Gizle',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Seçenekler Alanını Gizle',
     ],
     'enabled_currencies' => [
         'name' => 'Etkin Para Birimleri',
