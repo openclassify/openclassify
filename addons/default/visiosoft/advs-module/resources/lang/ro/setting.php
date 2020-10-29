@@ -98,7 +98,7 @@ return [
         'name' => 'Ascundeți câmpul de preț standard',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Ascundeți câmpul Opțiuni',
     ],
     'enabled_currencies' => [
         'name' => 'Valute activate',
