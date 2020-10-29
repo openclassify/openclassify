@@ -98,7 +98,7 @@ return [
         'name' => '표준 가격 필드 숨기기',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => '옵션 필드 숨기기',
     ],
     'enabled_currencies' => [
         'name' => '활성화 된 통화',
