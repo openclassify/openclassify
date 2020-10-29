@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Ẩn trường giá chuẩn',
     ],
+    'hide_options_field' => [
+        'name' => 'Ẩn trường tùy chọn',
+    ],
     'enabled_currencies' => [
         'name' => 'Tiền tệ được kích hoạt',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Hiển thị Tham số Lang cho URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL trao đổi TCMB',
     ],
     'popular_ads_limit' => [
         'name' => 'Giới hạn Quảng cáo Phổ biến',
