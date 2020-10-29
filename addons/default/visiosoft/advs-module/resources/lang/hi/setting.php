@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'URL के लिए Lang पैरामीटर दिखाएं',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'टीसीएमबी एक्सचेंज यूआरएल',
-    ],
     'popular_ads_limit' => [
         'name' => 'लोकप्रिय विज्ञापन सीमा',
     ],
