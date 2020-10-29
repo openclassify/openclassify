@@ -98,7 +98,7 @@ return [
         'name' => 'Verberg standaardprijsveld',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Optieveld verbergen',
     ],
     'enabled_currencies' => [
         'name' => 'Ingeschakelde valuta\\'s',
