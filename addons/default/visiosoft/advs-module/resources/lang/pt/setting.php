@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'Mostrar parâmetro de idioma para URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL de troca TCMB',
-    ],
     'popular_ads_limit' => [
         'name' => 'Limite de anúncios populares',
     ],
