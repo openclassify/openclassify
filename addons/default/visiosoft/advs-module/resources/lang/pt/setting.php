@@ -98,7 +98,7 @@ return [
         'name' => 'Ocultar campo de preço padrão',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Ocultar campo de opções',
     ],
     'enabled_currencies' => [
         'name' => 'Moedas ativadas',
