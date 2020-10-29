@@ -129,9 +129,6 @@ return [
     'show_lang_url' => [
         'name' => 'نمایش پارامتر Lang برای URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL تبادل TCMB',
-    ],
     'popular_ads_limit' => [
         'name' => 'محدودیت تبلیغات محبوب',
     ],
