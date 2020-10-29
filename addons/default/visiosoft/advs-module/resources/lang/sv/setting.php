@@ -98,7 +98,7 @@ return [
         'name' => 'Dölj standardprisfältet',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Dölj alternativfält',
     ],
     'enabled_currencies' => [
         'name' => 'Aktiverade valutor',
