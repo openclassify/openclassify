@@ -98,7 +98,7 @@ return [
         'name' => 'إخفاء حقل السعر القياسي',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'إخفاء حقل الخيارات',
     ],
     'enabled_currencies' => [
         'name' => 'العملات الممكّنة',
