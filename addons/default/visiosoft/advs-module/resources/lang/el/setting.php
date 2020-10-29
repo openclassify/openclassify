@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'Εμφάνιση παραμέτρου Lang για διεύθυνση URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL ανταλλαγής TCMB',
-    ],
     'popular_ads_limit' => [
         'name' => 'Όριο δημοφιλών διαφημίσεων',
     ],
