@@ -98,7 +98,7 @@ return [
         'name' => 'Nascondi campo prezzo standard',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Nascondi campo opzioni',
     ],
     'enabled_currencies' => [
         'name' => 'Valute abilitate',
