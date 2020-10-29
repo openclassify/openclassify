@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'Hiển thị Tham số Lang cho URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL trao đổi TCMB',
-    ],
     'popular_ads_limit' => [
         'name' => 'Giới hạn Quảng cáo Phổ biến',
     ],
