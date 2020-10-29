@@ -98,7 +98,7 @@ return [
         'name' => '標準価格フィールドを非表示',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'オプションフィールドを非表示',
     ],
     'enabled_currencies' => [
         'name' => '有効な通貨',
