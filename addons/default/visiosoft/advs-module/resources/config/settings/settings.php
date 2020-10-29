@@ -41,12 +41,6 @@ return [
             'default_value' => 6,
         ],
     ],
-    'tcmb_exchange_url' => [
-        'type' => 'anomaly.field_type.url',
-        'config' => [
-            'default_value' => 'http://www.tcmb.gov.tr/kurlar',
-        ],
-    ],
     'default_published_time' => [
         'type' => 'anomaly.field_type.integer',
         'bind' => 'adv.default_published_time',
