@@ -98,7 +98,7 @@ return [
         'name' => 'Masquer le champ de prix standard',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Masquer le champ d\'options',
     ],
     'enabled_currencies' => [
         'name' => 'Devises activées',
