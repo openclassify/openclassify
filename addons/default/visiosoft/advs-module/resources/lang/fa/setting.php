@@ -98,6 +98,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'زمینه قیمت استاندارد را مخفی کنید',
     ],
+    'hide_options_field' => [
+        'name' => 'قسمت گزینه ها را پنهان کنید',
+    ],
     'enabled_currencies' => [
         'name' => 'ارزهای فعال شده',
     ],
@@ -125,9 +128,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'نمایش پارامتر Lang برای URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL تبادل TCMB',
     ],
     'popular_ads_limit' => [
         'name' => 'محدودیت تبلیغات محبوب',
