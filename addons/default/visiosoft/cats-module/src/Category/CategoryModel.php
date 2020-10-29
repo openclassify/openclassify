@@ -15,7 +15,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             ->first();
     }
 
-    public function getParentCats($id, $type = null)
+    public function getParentCats($id, $type = null, $noMainCat = true)
     {
         $cat = $this->getCat($id);
         $catNames = array();
@@ -30,7 +30,9 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
                     if ($parCat->parent_category_id == "") {
                         if ($type == "add_main")
                             $catNames[] = $parCat->name;
-                        break;
+                        if ($noMainCat) {
+                            break;
+                        }
                     }
                     $catNames[] = $parCat->name;
                     $cat_ids[] = $parCat->id;
