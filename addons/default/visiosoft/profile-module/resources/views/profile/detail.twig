@@ -104,7 +104,7 @@
                             {% set profileForm = form('profile').entry(user.id).get() %}
                             {{ profileForm.open()|raw }}
                             <div class="row">
-                                <div class="col-md-12">
+                                <div class="col-md-12 profile-pic">
                                     {% if setting_value('visiosoft.module.profile::upload_avatar') %}
                                         <div class="form-group">
                                             {{ profileForm.fields.file|raw }}

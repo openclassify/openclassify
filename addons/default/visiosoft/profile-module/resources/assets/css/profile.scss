@@ -116,6 +116,28 @@
 	}
 
 	#nav-details {
+		.profile-pic {
+			.input-wrapper {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+
+				.file-rows-table {
+					flex: 1 1 auto;
+					margin-left: 1rem;
+
+					.text-lg-right {
+						text-align: right;
+						vertical-align: middle;
+					}
+
+					.btn-danger {
+						display: none;
+					}
+				}
+			}
+		}
+
 		.birthday-field .input-group-addon {
 			display: none;
 		}
