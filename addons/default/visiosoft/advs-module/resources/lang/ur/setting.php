@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'URL کے ل For لانگ پیرامیٹر دکھائیں',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'ٹی سی ایم بی ایکسچینج یو آر ایل',
-    ],
     'popular_ads_limit' => [
         'name' => 'مقبول اشتہارات کی حد',
     ],
