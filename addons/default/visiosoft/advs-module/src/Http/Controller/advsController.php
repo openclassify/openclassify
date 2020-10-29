@@ -844,7 +844,7 @@ class AdvsController extends PublicController
             }
             event(new CreatedAd($adv));
             if ($allowPendingAdCreation) {
-                return redirect(route("visiosoft.module.packages::buy_package") . '?ad_id=' . $adv->id);
+                return redirect(route("visiosoft.module.packages::buy_package") . '?ad_id=' . $adv->id . '&category_id=' . $adv->cat1);
             } else {
                 return redirect(route('advs_preview', [$request->update_id]));
             }
