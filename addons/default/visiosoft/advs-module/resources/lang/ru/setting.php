@@ -98,7 +98,7 @@ return [
         'name' => 'Скрыть поле стандартной цены',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Скрыть поле параметров',
     ],
     'enabled_currencies' => [
         'name' => 'Включенные валюты',
