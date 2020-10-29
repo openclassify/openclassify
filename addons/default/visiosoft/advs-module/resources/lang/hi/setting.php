@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'मानक मूल्य फ़ील्ड छिपाएँ',
     ],
+    'hide_options_field' => [
+        'name' => 'विकल्प फ़ील्ड छिपाएँ',
+    ],
     'enabled_currencies' => [
         'name' => 'सक्षम मुद्राएँ',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'URL के लिए Lang पैरामीटर दिखाएं',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'टीसीएमबी एक्सचेंज यूआरएल',
     ],
     'popular_ads_limit' => [
         'name' => 'लोकप्रिय विज्ञापन सीमा',
