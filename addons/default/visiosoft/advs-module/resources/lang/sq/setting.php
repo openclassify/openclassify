@@ -98,7 +98,7 @@ return [
         'name' => 'Fshih Fushën Standarde të mimeve',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Fshih fushën e opsioneve',
     ],
     'enabled_currencies' => [
         'name' => 'Monedhat e aktivizuara',
