@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'הצג פרמטר Lang עבור URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'כתובת URL של TCMB Exchange',
-    ],
     'popular_ads_limit' => [
         'name' => 'מגבלת מודעות פופולריות',
     ],
