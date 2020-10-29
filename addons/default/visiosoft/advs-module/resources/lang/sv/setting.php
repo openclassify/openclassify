@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'Visa Lang-parameter för URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB Exchange URL',
-    ],
     'popular_ads_limit' => [
         'name' => 'Gräns för populära annonser',
     ],
