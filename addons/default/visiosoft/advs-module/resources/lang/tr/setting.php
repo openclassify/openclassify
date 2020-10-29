@@ -125,15 +125,11 @@ return [
     'show_lang_url' => [
         'name' => 'URL için Dil Parametresini Göster',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB Exchange URL\'si',
-    ],
     'popular_ads_limit' => [
         'name' => 'Popüler İlan Limiti',
     ],
 
     //Image
-
     'image_resize_backend' => [
         'name' => 'Görüntüyü Yeniden Boyutlandır Arka Uç',
     ],
