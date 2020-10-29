@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'URLのLangパラメータを表示',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB Exchange URL',
-    ],
     'popular_ads_limit' => [
         'name' => '人気の広告制限',
     ],
