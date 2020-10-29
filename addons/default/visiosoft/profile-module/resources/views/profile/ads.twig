@@ -4,8 +4,10 @@
     {% embed 'visiosoft.module.profile::profile/index' %}
         {% block detail %}
             <div class="row px-3">
-                <div class="col-md-12 bg-dark text-white p-5">
+                <div class="col-md-12 bg-dark text-white p-5 d-flex justify-content-between align-items-center flex-wrap">
                     <h3>{{ trans('visiosoft.module.advs::field.my_ads.name') }}</h3>
+
+                    {{ addBlock('profile/ads/header')|raw }}
                 </div>
 
                 <div class="col-md-12 bg-light advs-section">
