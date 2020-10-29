@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'URL에 대한 언어 매개 변수 표시',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB 교환 URL',
-    ],
     'popular_ads_limit' => [
         'name' => '인기 광고 제한',
     ],
