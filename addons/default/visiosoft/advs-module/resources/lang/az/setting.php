@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'URL üçün Lang Parametrini Göstərin',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB mübadilə URL',
-    ],
     'popular_ads_limit' => [
         'name' => 'Populyar elanlar limiti',
     ],
