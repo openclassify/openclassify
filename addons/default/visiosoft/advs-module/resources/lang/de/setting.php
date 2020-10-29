@@ -98,7 +98,7 @@ return [
         'name' => 'Standardpreisfeld ausblenden',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Optionsfeld ausblenden',
     ],
     'enabled_currencies' => [
         'name' => 'Aktivierte Währungen',
