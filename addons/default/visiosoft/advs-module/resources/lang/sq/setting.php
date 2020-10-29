@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'Trego Parametrin e Lang për URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL-ja e shkëmbimit të TCMB',
-    ],
     'popular_ads_limit' => [
         'name' => 'Kufiri i reklamave popullore',
     ],
