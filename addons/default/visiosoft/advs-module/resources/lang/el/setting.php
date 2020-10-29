@@ -98,7 +98,7 @@ return [
         'name' => 'Απόκρυψη πεδίου τυπικής τιμής',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Απόκρυψη πεδίου επιλογών',
     ],
     'enabled_currencies' => [
         'name' => 'Ενεργοποιημένα νομίσματα',
