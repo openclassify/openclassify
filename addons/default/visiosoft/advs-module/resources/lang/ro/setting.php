@@ -128,9 +128,6 @@ return [
     'show_lang_url' => [
         'name' => 'Afișați parametrul Lang pentru URL',
     ],
-    'tcmb_exchange_url' => [
-        'name' => 'Adresa URL Exchange TCMB',
-    ],
     'popular_ads_limit' => [
         'name' => 'Limita de anunțuri populare',
     ],
