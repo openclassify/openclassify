@@ -12,7 +12,7 @@
                 <img src="{{ img('visiosoft.module.advs::images/ascend.svg').url }}" class="step-icon mr-1">
                 {{ trans('visiosoft.module.advs::field.select_category_step_by_step') }}
             </h5>
-            <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post">
+            <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post" id="catSelectionStepForm">
                 {% for i in 1..10 %}
                     <input type="hidden" name="cat{{ i }}">
                 {% endfor %}

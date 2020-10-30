@@ -843,17 +843,27 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
             event(new CreatedAd($adv));
-            if ($allowPendingAdCreation) {
-                return redirect(route("visiosoft.module.packages::buy_package") . '?ad_id=' . $adv->id . '&category_id=' . $adv->cat1);
-            } else {
-                return redirect(route('advs_preview', [$request->update_id]));
-            }
+            return redirect(route('advs_preview', [$request->update_id]));
         }
 
-        /* New Create Adv */
+            /* New Create Adv */
         $request->publish_at = date('Y-m-d H:i:s');
         $all = $request->all();
+
+        $packageEnabled = $advModel->is_enabled('packages');
+        if ($packageEnabled) {
+            unset($all['pack_id']);
+        }
+
         $new = AdvModel::query()->create($all);
+
+        if ($packageEnabled
+            && \request()->pack_id
+            && setting_value('visiosoft.module.packages::allow_pending_ad_creation')) {
+            app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')
+                ->packageAddCart(\request()->pack_id, $new->id);
+        }
+
         return redirect('/advs/edit_advs/' . $new->id);
     }
 

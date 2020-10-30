@@ -5,6 +5,20 @@ function showLoader() {
 function hideLoader() {
     $('.loading-cart').remove();
 }
+$("#catSelectionStepForm").submit(function(e) {
+    var val = $("input[type=submit][clicked=true]").data('pack-id');
+
+    $("<input />").attr("type", "hidden")
+        .attr("name", "pack_id")
+        .attr("value", val)
+        .appendTo(this);
+
+    return true;
+});
+$("#catSelectionStepForm").on('click', 'input[type=submit]', function() {
+    $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
+    $(this).attr("clicked", "true");
+});
 
 $(document).ready(function () {
     $('select[name="cat1"], select[name="cat2"], select[name="cat3"], select[name="cat4"], select[name="cat5"], ' +
@@ -26,7 +40,18 @@ $(document).ready(function () {
 
                     let btn = '<button type="submit" class="btn-1">'+response['continueBtn']+'</button>';
                     if (response['link']) {
-                        btn = "<a class='link-unstyled btn-1 text-white' href='"+response['link']+"' role='button'>"+response['continueBtn']+"</a>";
+                        const res = response['link']
+                        if (Array.isArray(res)) {
+                            btn = '';
+                            res.forEach(function (link) {
+                                btn += `
+                                    <input type="submit" data-pack-id="${link.packID}" class="btn-1 mb-2"
+                                        value="${response['continueBtn']}` + ' ' + `(${link.price})" />
+                                `
+                            })
+                        } else {
+                            btn = "<a class='link-unstyled btn-1 text-white' href='"+res+"' role='button'>"+response['continueBtn']+"</a>";
+                        }
                     }
                     let content;
                     if (response['msg']) {
