@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => '標準価格フィールドを非表示',
     ],
+    'hide_options_field' => [
+        'name' => 'オプションフィールドを非表示',
+    ],
     'enabled_currencies' => [
         'name' => '有効な通貨',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'URLのLangパラメータを表示',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB Exchange URL',
     ],
     'popular_ads_limit' => [
         'name' => '人気の広告制限',
