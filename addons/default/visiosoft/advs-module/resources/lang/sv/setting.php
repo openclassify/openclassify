@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Dölj standardprisfältet',
     ],
+    'hide_options_field' => [
+        'name' => 'Dölj alternativfält',
+    ],
     'enabled_currencies' => [
         'name' => 'Aktiverade valutor',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Visa Lang-parameter för URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB Exchange URL',
     ],
     'popular_ads_limit' => [
         'name' => 'Gräns för populära annonser',
