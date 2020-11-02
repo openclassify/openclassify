@@ -2,7 +2,7 @@
 
 return [
     'post_ad' => [
-        'name' => 'İlan Ver',
+        'name' => 'Ücretsiz İlan Ver',
     ],
     'login' => 'Giriş Yap',
     'register' => 'Üye Ol',
