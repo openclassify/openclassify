@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'إخفاء حقل السعر القياسي',
     ],
+    'hide_options_field' => [
+        'name' => 'إخفاء حقل الخيارات',
+    ],
     'enabled_currencies' => [
         'name' => 'العملات الممكّنة',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'إظهار معلمة Lang لعنوان URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL تبادل TCMB',
     ],
     'popular_ads_limit' => [
         'name' => 'حد الإعلانات الشعبية',
