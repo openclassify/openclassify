@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'new_adv' => 'نئی ایڈوائس',
+    'new_adv' => 'نئی درجہ بندی',
     'new_category' => 'نئی قسم',
     'new_country' => 'نیا ملک',
     'new_city' => 'نیا شہر',
