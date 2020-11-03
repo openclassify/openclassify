@@ -64,6 +64,9 @@ $(function () {
         var response = JSON.parse(file.xhr.response);
 
         uploaded.push(response.id);
+        $('[data-provides="visiosoft.field_type.singlefile"]').val(response.id)
+        $('#file-modal').modal('hide');
+        $('#profile-detail').submit();
 
         file.previewElement.querySelector('[data-dz-uploadprogress]').setAttribute('class', 'progress progress-success');
 
@@ -79,13 +82,5 @@ $(function () {
         file.previewElement.querySelector('[data-dz-uploadprogress]').setAttribute('class', 'progress progress-danger');
 
         alert(message.error ? message.error : message);
-    });
-
-    // When all files are processed.
-    dropzone.on('queuecomplete', function () {
-
-        uploader.find('.uploaded .modal-body').html(element.data('loading') + '...');
-
-        uploader.find('.uploaded').load(REQUEST_ROOT_PATH + '/streams/singlefile-field_type/recent?uploaded=' + uploaded.join(','));
     });
 });
