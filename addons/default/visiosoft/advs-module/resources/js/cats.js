@@ -5,16 +5,6 @@ function showLoader() {
 function hideLoader() {
     $('.loading-cart').remove();
 }
-$("#catSelectionStepForm").submit(function(e) {
-    var val = $("input[type=submit][clicked=true]").data('pack-id');
-
-    $("<input />").attr("type", "hidden")
-        .attr("name", "pack_id")
-        .attr("value", val)
-        .appendTo(this);
-
-    return true;
-});
 $("#catSelectionStepForm").on('click', 'input[type=submit]', function() {
     $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
     $(this).attr("clicked", "true");
