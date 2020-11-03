@@ -112,7 +112,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-
+	'get' => [
+		'name' => 'Get',
+	],
     'hide_price_filter' => [
         'name' => 'Hide Price Filter',
     ],

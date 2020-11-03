@@ -42,11 +42,13 @@
                             {{ trans('visiosoft.theme.base::field.profile') }}
                         </a>
                     </li>
+                    {% if setting_value('visiosoft.module.advs::market_place') %}
                     <li class="nav-item">
                         <a href="/advs/create_adv" class="btn btn-primary" rel="nofollow">
                             {{ trans("visiosoft.theme.base::button.post_ad.name") }}
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
             {% endif %}
         </div>
@@ -69,11 +71,13 @@
                             {{ trans('visiosoft.theme.base::field.profile') }}
                         </a>
                     </li>
+                    {% if setting_value('visiosoft.module.advs::market_place') %}
                     <li class="nav-item">
                         <a href="/advs/create_adv" class="btn btn-primary" rel="nofollow">
                             {{ trans("visiosoft.theme.base::button.post_ad.name") }}
                         </a>
                     </li>
+                    {% endif %}
                 </ul>
             {% endif %}
         </div>
