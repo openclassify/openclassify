@@ -120,7 +120,7 @@ if (locationedit) {
 var mapOptions = {
 
     center: coordcenter,
-    zoom: 20,
+    zoom: 6,
     mapTypeId: google.maps.MapTypeId.STREET
 };
 var secildi = 0;
