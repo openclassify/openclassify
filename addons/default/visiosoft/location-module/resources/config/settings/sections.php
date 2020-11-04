@@ -7,7 +7,10 @@ return [
             'general' => [
                 'title' => 'visiosoft.module.location::section.general',
                 'fields' => [
-                    'home_page_location', 'list_page_location', 'detail_page_location', 'create_ad_page_location', 'country_for_phone_field'
+                    'sorting_column','sorting_type',
+                    'home_page_location', 'list_page_location',
+                    'detail_page_location', 'create_ad_page_location',
+                    'country_for_phone_field'
                 ],
             ],
             'map' => [

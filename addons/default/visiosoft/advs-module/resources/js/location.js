@@ -1,6 +1,8 @@
 /* Location Data */
 var boundsAction = false;
 
+getCountries();
+
 var getCountry = $('.country-data').data('content');
 if (getCountry == "") {
     getCountry = default_country;
@@ -205,4 +207,12 @@ function editMarket() {
             });
         }
     }
+}
+
+function getCountries() {
+    crud('', '/ajax/getCountry', 'GET', function (callback) {
+        $.each(callback, function (index, value) {
+            $('select[name="country"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
+        });
+    })
 }

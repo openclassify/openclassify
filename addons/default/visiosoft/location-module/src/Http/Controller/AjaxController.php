@@ -57,8 +57,11 @@ class AjaxController extends PublicController
     {
         if ($this->request->id)
             return $this->country_model->find($this->request->id);
-        else
-            return $this->country_model->orderBy('order', 'ASC')->get();
+        else {
+            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
+            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
+            return $this->country_model->orderBy($sorting_column, $sorting_type)->get();
+        }
     }
 
     /**
@@ -68,7 +71,12 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->city_model->whereIn('parent_country_id', $id)->orderBy('order', 'ASC')->get();
+            $query = $this->city_model->whereIn('parent_country_id', $id);
+
+            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
+            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
+
+            return $query->orderBy($sorting_column, $sorting_type)->get();
         }
     }
 
@@ -79,7 +87,13 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->district_model->whereIn('parent_city_id', $id)->orderBy('order', 'ASC')->get();
+
+            $query = $this->district_model->whereIn('parent_city_id', $id);
+
+            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
+            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
+
+            return $query->orderBy($sorting_column, $sorting_type)->get();
         }
     }
 
@@ -90,7 +104,13 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->neighborhood_model->whereIn('parent_district_id', $id)->orderBy('order', 'ASC')->get();
+
+            $query = $this->neighborhood_model->whereIn('parent_district_id', $id);
+
+            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
+            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
+
+            return $query->orderBy($sorting_column, $sorting_type)->get();
         }
     }
 
@@ -101,7 +121,14 @@ class AjaxController extends PublicController
     {
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
-            return $this->village_model->whereIn('parent_neighborhood_id', $id)->orderBy('order', 'ASC')->get();
+
+            $query = $this->village_model->whereIn('parent_neighborhood_id', $id);
+
+            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
+            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
+
+            return $query->orderBy($sorting_column, $sorting_type)->get();
+
         }
     }
 
@@ -112,7 +139,7 @@ class AjaxController extends PublicController
     {
         if ($this->request->name) {
             $slug = Str::slug($this->request->name, '_');
-            if ($city = $this->  city_model->newQuery()->where('slug', 'LIKE', $slug . '%')->first()) {
+            if ($city = $this->city_model->newQuery()->where('slug', 'LIKE', $slug . '%')->first()) {
                 return ['success' => true, 'city' => $city];
             } else {
                 return ['success' => false];
