@@ -446,4 +446,10 @@ return [
     'edit_details' => 'তথ্য সংশোধন কর',
     'update' => 'হালনাগাদ',
     'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
+
+    // Register page
+    'accept_terms_label' => 'I accept the terms.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on Protection of Personal Data.',
+    'accept_privacy_terms_label' => 'I accept privacy terms.',
+    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
 ];
