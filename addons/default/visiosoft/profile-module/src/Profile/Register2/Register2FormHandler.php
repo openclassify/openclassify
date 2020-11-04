@@ -57,7 +57,13 @@ class Register2FormHandler
         $fields = $builder->getPostData();
         $fields['display_name'] = $fields['first_name'] . " " . $fields['last_name'];
         $fields['gsm_phone'] = $builder->getPostValue('phone');
-        unset($fields['phone']);
+        unset(
+            $fields['phone'],
+            $fields['accept_terms'],
+            $fields['accept_protection_law'],
+            $fields['accept_privacy_terms'],
+            $fields['receive_sms_emails']
+        );
 
         $register = $users->create($fields);
         $register->setAttribute('password', $fields['password']);

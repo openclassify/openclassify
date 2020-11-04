@@ -67,6 +67,42 @@ class Register2FormBuilder extends FormBuilder
         'password' => [
             'instructions' => false,
         ],
+        "accept_terms" => [
+            "type"   => "anomaly.field_type.boolean",
+            "required" => true,
+            "config" => [
+                "default_value" => false,
+                "mode"          => "checkbox",
+                "label"         => 'visiosoft.module.profile::field.accept_terms_label',
+            ]
+        ],
+        "accept_protection_law" => [
+            "type"   => "anomaly.field_type.boolean",
+            "required" => true,
+            "config" => [
+                "default_value" => false,
+                "mode"          => "checkbox",
+                "label"         => 'visiosoft.module.profile::field.accept_protection_law_label',
+            ]
+        ],
+        "accept_privacy_terms" => [
+            "type"   => "anomaly.field_type.boolean",
+            "required" => true,
+            "config" => [
+                "default_value" => false,
+                "mode"          => "checkbox",
+                "label"         => 'visiosoft.module.profile::field.accept_privacy_terms_label',
+            ]
+        ],
+        "receive_sms_emails" => [
+            "type"   => "anomaly.field_type.boolean",
+            "required" => true,
+            "config" => [
+                "default_value" => false,
+                "mode"          => "checkbox",
+                "label"         => 'visiosoft.module.profile::field.receive_sms_emails_label',
+            ]
+        ],
     ];
 
     /**

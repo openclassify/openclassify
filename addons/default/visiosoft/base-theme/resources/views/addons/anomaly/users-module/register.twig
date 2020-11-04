@@ -22,6 +22,22 @@
 
                     {% include 'visiosoft.theme.base::addons/anomaly/users-module/partials/register-form' %}
 
+                    <div class="col-12">
+                        {{ form.fields.accept_terms|raw }}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.fields.accept_protection_law|raw }}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.fields.accept_privacy_terms|raw }}
+                    </div>
+
+                    <div class="col-12">
+                        {{ form.fields.receive_sms_emails|raw }}
+                    </div>
+
                     <div class="col-12 row m-0">
                         <div class="col-6 pr-0 pl-1">
                             <button class="btn btn-sm btn-success py-2">
