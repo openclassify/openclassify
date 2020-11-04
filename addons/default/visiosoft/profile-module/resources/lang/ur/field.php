@@ -446,4 +446,10 @@ return [
     'edit_details' => 'تفصیلات میں ترمیم کریں',
     'update' => 'اپ ڈیٹ',
     'change_password' => 'پاس ورڈ تبدیل کریں',
+
+    // Register page
+    'accept_terms_label' => 'I accept the terms.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on Protection of Personal Data.',
+    'accept_privacy_terms_label' => 'I accept privacy terms.',
+    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
 ];
