@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'הסתר שדה מחיר רגיל',
     ],
+    'hide_options_field' => [
+        'name' => 'הסתר שדה אפשרויות',
+    ],
     'enabled_currencies' => [
         'name' => 'מטבעות מופעלים',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'הצג פרמטר Lang עבור URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'כתובת URL של TCMB Exchange',
     ],
     'popular_ads_limit' => [
         'name' => 'מגבלת מודעות פופולריות',

@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Απόκρυψη πεδίου τυπικής τιμής',
     ],
+    'hide_options_field' => [
+        'name' => 'Απόκρυψη πεδίου επιλογών',
+    ],
     'enabled_currencies' => [
         'name' => 'Ενεργοποιημένα νομίσματα',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Εμφάνιση παραμέτρου Lang για διεύθυνση URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL ανταλλαγής TCMB',
     ],
     'popular_ads_limit' => [
         'name' => 'Όριο δημοφιλών διαφημίσεων',

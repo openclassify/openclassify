@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Ascundeți câmpul de preț standard',
     ],
+    'hide_options_field' => [
+        'name' => 'Ascundeți câmpul Opțiuni',
+    ],
     'enabled_currencies' => [
         'name' => 'Valute activate',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Afișați parametrul Lang pentru URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'Adresa URL Exchange TCMB',
     ],
     'popular_ads_limit' => [
         'name' => 'Limita de anunțuri populare',

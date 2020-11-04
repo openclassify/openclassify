@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Verberg standaardprijsveld',
     ],
+    'hide_options_field' => [
+        'name' => 'Optieveld verbergen',
+    ],
     'enabled_currencies' => [
         'name' => 'Ingeschakelde valuta\\'s',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Show Lang-parameter voor URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB Exchange-URL',
     ],
     'popular_ads_limit' => [
         'name' => 'Beperking van populaire advertenties',

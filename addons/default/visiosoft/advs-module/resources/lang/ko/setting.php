@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => '표준 가격 필드 숨기기',
     ],
+    'hide_options_field' => [
+        'name' => '옵션 필드 숨기기',
+    ],
     'enabled_currencies' => [
         'name' => '활성화 된 통화',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'URL에 대한 언어 매개 변수 표시',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB 교환 URL',
     ],
     'popular_ads_limit' => [
         'name' => '인기 광고 제한',

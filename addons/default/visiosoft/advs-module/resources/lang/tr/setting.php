@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Standart Fiyat Alanını Gizle',
     ],
+    'hide_options_field' => [
+        'name' => 'Seçenekler Alanını Gizle',
+    ],
     'enabled_currencies' => [
         'name' => 'Etkin Para Birimleri',
     ],
@@ -130,6 +133,7 @@ return [
     ],
 
     //Image
+
     'image_resize_backend' => [
         'name' => 'Görüntüyü Yeniden Boyutlandır Arka Uç',
     ],

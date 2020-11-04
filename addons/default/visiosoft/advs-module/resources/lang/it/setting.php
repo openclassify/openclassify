@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Nascondi campo prezzo standard',
     ],
+    'hide_options_field' => [
+        'name' => 'Nascondi campo opzioni',
+    ],
     'enabled_currencies' => [
         'name' => 'Valute abilitate',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Mostra parametro Lang per URL',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'URL di scambio TCMB',
     ],
     'popular_ads_limit' => [
         'name' => 'Limite annunci popolari',

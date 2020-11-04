@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'স্ট্যান্ডার্ড দাম ক্ষেত্র লুকান ide',
     ],
+    'hide_options_field' => [
+        'name' => 'বিকল্প ক্ষেত্র লুকান',
+    ],
     'enabled_currencies' => [
         'name' => 'সক্ষম মুদ্রা',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'URL এর জন্য ল্যাঙ্গ প্যারামিটার দেখান',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'টিসিএমবি এক্সচেঞ্জ ইউআরএল',
     ],
     'popular_ads_limit' => [
         'name' => 'জনপ্রিয় বিজ্ঞাপন সীমাবদ্ধতা',

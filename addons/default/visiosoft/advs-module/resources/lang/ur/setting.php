@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'معیاری قیمت کا میدان چھپائیں',
     ],
+    'hide_options_field' => [
+        'name' => 'اختیارات کا میدان چھپائیں',
+    ],
     'enabled_currencies' => [
         'name' => 'فعال کرنسیوں',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'URL کے ل For لانگ پیرامیٹر دکھائیں',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'ٹی سی ایم بی ایکسچینج یو آر ایل',
     ],
     'popular_ads_limit' => [
         'name' => 'مقبول اشتہارات کی حد',

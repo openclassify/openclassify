@@ -97,6 +97,9 @@ return [
     'hide_standard_price_field' => [
         'name' => 'Standart qiymət sahəsini gizlət',
     ],
+    'hide_options_field' => [
+        'name' => 'Seçimlər sahəsini gizlədin',
+    ],
     'enabled_currencies' => [
         'name' => 'Aktiv valyutalar',
     ],
@@ -124,9 +127,6 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'URL üçün Lang Parametrini Göstərin',
-    ],
-    'tcmb_exchange_url' => [
-        'name' => 'TCMB mübadilə URL',
     ],
     'popular_ads_limit' => [
         'name' => 'Populyar elanlar limiti',
