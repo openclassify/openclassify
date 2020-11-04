@@ -446,4 +446,10 @@ return [
     'edit_details' => '세부 정보 편집',
     'update' => '최신 정보',
     'change_password' => '비밀번호 변경',
+
+    // Register page
+    'accept_terms_label' => 'I accept the terms.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on Protection of Personal Data.',
+    'accept_privacy_terms_label' => 'I accept privacy terms.',
+    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
 ];
