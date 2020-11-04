@@ -448,4 +448,10 @@ return [
     'edit_details' => 'Modifier les détails',
     'update' => 'Mettre à jour',
     'change_password' => 'Changer le mot de passe',
+
+    // Register page
+    'accept_terms_label' => 'I accept the terms.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on Protection of Personal Data.',
+    'accept_privacy_terms_label' => 'I accept privacy terms.',
+    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
 ];
