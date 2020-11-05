@@ -62,7 +62,8 @@ class Register2FormHandler
             $fields['accept_terms'],
             $fields['accept_protection_law'],
             $fields['accept_privacy_terms'],
-            $fields['receive_sms_emails']
+            $fields['receive_sms_emails'],
+            $fields['recaptcha_token']
         );
 
         $register = $users->create($fields);

@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Visiosoft\ProfileModule\Profile\Register2\Command\SetOptions;
 use Anomaly\UsersModule\User\UserModel;
 use Visiosoft\ProfileModule\Profile\Validation\ValidateRegister;
+use Visiosoft\ProfileModule\Rules\ReCaptchaRule;
 
 /**
  * Class RegisterFormBuilder
@@ -37,6 +38,22 @@ class Register2FormBuilder extends FormBuilder
      * @var array
      */
     protected $fields = [
+        'recaptcha_token' => [
+            'required' => true,
+            'type' => 'anomaly.field_type.text',
+            'config' => [
+                "max" => 0,
+            ],
+            'rules' => [
+                'valid_recaptcha'
+            ],
+            'validators' => [
+                'valid_recaptcha' => [
+                    'message' => false,
+                    'handler' => ReCaptchaRule::class
+                ]
+            ]
+        ],
         'username' => [
             'required' => true,
         ],

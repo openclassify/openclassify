@@ -20,6 +20,8 @@
                         'url':form.options.url
                     })|raw }}
 
+                    <input type="hidden" name="recaptcha_token" id="recaptcha_token">
+
                     {% include 'visiosoft.theme.base::addons/anomaly/users-module/partials/register-form' %}
 
                     <div class="col-12">
@@ -76,6 +78,12 @@
         </div>
     </div>
 
+    {% set reCAPTCHASiteKey = setting_value('visiosoft.module.profile::google_captcha_site_key') %}
+    <script>
+        let reCAPTCHASiteKey = "{{ reCAPTCHASiteKey }}"
+    </script>
+    {{ asset_add('scripts.js', asset_download('https://www.google.com/recaptcha/api.js?render=' ~ reCAPTCHASiteKey, 60*60*24)) }}
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/register.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/captcha.js") }}
 {% endblock %}
 
