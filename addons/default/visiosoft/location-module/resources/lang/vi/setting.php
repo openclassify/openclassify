@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Quốc gia mặc định để đăng ký trường điện thoại'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sorting Column',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorting Type',
+    ],
 ];
