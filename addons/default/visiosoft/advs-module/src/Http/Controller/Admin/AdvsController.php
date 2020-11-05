@@ -153,13 +153,12 @@ class AdvsController extends AdminController
                 }
             ],
             'category' => [
+                'sort_column' => 'cat1',
                 'value' => function (EntryInterface $entry, CategoryModel $categoryModel) {
                     $category = $categoryModel->getCat($entry->cat1);
                     if (!is_null($category))
                         return $category->name;
                 }
-//                'sort_column' => 'cat',
-//                'value' => 'entry.cat'
             ],
             'finish_at',
         ]);

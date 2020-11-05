@@ -221,7 +221,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     protected $listeners = [
         TableIsQuerying::class => [
             AddAdvsSettingsScript::class,
-            AddTableCategoryColumn::class,
         ],
     ];
 
