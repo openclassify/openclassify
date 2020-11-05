@@ -201,6 +201,7 @@
         var default_currency = "{{ setting_value('streams::currency') }}";
         var default_GET = "{{ setting_value('visiosoft.module.advs::default_GET') }}";
         var adv_id = "{{ id }}";
+        var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
     </script>
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}

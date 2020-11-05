@@ -12,7 +12,7 @@
 </div>
 <div class="row form-group location-map">
     <div class="col-sm-4 font-weight-bold">
-        {{ form.fields.country|raw }}
+        {{ form.fields.country.setOptions({})|raw }}
     </div>
 
     <div class="col-sm-4 location-field city-data font-weight-bold"
@@ -34,3 +34,6 @@
         </div>
     </div>
 </div>
+<script>
+    var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+</script>

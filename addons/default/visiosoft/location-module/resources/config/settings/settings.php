@@ -33,19 +33,19 @@ return [
             'default_value' => 212,
         ]
     ],
-	'country_for_phone_field' => [
-		'type' => 'anomaly.field_type.select',
-		'required' => false,
-		'config' => [
-			'default_value' => function () {
-				return config('visiosoft.theme.base::countries.default');
-			},
-			'options' => function () {
-				$array = \Visiosoft\LocationModule\Country\CountryModel::query()->get()->pluck('name', 'abv')->toArray();
-				return $array;
-			},
-		],
-	],
+    'country_for_phone_field' => [
+        'type' => 'anomaly.field_type.select',
+        'required' => false,
+        'config' => [
+            'default_value' => function () {
+                return config('visiosoft.theme.base::countries.default');
+            },
+            'options' => function () {
+                $array = \Visiosoft\LocationModule\Country\CountryModel::query()->get()->pluck('name', 'abv')->toArray();
+                return $array;
+            },
+        ],
+    ],
     'default_city' => [
         'type' => 'anomaly.field_type.select',
     ],
@@ -86,6 +86,26 @@ return [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
             'default_value' => false,
+        ],
+    ],
+    'sorting_column' => [
+        'type' => 'anomaly.field_type.select',
+        'config' => [
+            'default_value' => 'slug',
+            'options' => [
+                'slug' => 'slug',
+                'id' => 'id',
+                'order' => 'order'
+            ],
+        ],
+    ],
+    'sorting_type' => [
+        'type' => 'anomaly.field_type.select',
+        'config' => [
+            'default_value' => 'ASC',
+            'options' => [
+                'ASC' => 'ASC', 'DESC' => 'DESC'
+            ],
         ],
     ],
 ];
