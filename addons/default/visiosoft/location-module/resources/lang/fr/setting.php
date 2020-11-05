@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Pays par défaut pour le champ de téléphone d\'enregistrement'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sorting Column',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorting Type',
+    ],
 ];
