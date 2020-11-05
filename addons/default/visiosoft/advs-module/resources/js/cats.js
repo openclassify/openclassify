@@ -35,7 +35,7 @@ $(document).ready(function () {
                             btn = '';
                             res.forEach(function (link) {
                                 btn += `
-                                    <input type="submit" data-pack-id="${link.packID}" class="btn-1 mb-2"
+                                    <input type="submit" data-pack-id="${link.packID}" class="btn-1 mb-2 text-wrap"
                                         value="${response['continueBtn']}` + ' ' + `(${link.price})" />
                                 `
                             })
