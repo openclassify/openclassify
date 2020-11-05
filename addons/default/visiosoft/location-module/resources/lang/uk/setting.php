@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Країна за замовчуванням для телефонного поля реєстрації'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sorting Column',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorting Type',
+    ],
 ];
