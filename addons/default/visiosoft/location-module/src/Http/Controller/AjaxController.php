@@ -58,9 +58,8 @@ class AjaxController extends PublicController
         if ($this->request->id)
             return $this->country_model->find($this->request->id);
         else {
-            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
-            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
-            return $this->country_model->orderBy($sorting_column, $sorting_type)->get();
+            $query = $this->country_model;
+            return $this->queryOrder($query);
         }
     }
 
@@ -73,10 +72,7 @@ class AjaxController extends PublicController
             $id = explode(',', $this->request->id);
             $query = $this->city_model->whereIn('parent_country_id', $id);
 
-            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
-            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
-
-            return $query->orderBy($sorting_column, $sorting_type)->get();
+            return $this->queryOrder($query);
         }
     }
 
@@ -90,10 +86,7 @@ class AjaxController extends PublicController
 
             $query = $this->district_model->whereIn('parent_city_id', $id);
 
-            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
-            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
-
-            return $query->orderBy($sorting_column, $sorting_type)->get();
+            return $this->queryOrder($query);
         }
     }
 
@@ -107,10 +100,7 @@ class AjaxController extends PublicController
 
             $query = $this->neighborhood_model->whereIn('parent_district_id', $id);
 
-            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
-            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
-
-            return $query->orderBy($sorting_column, $sorting_type)->get();
+            return $this->queryOrder($query);
         }
     }
 
@@ -124,11 +114,7 @@ class AjaxController extends PublicController
 
             $query = $this->village_model->whereIn('parent_neighborhood_id', $id);
 
-            $sorting_type = setting_value('visiosoft.module.location::sorting_type');
-            $sorting_column = setting_value('visiosoft.module.location::sorting_column');
-
-            return $query->orderBy($sorting_column, $sorting_type)->get();
-
+            return $this->queryOrder($query);
         }
     }
 
@@ -145,5 +131,13 @@ class AjaxController extends PublicController
                 return ['success' => false];
             }
         }
+    }
+
+    public function queryOrder($query)
+    {
+        $sorting_type = setting_value('visiosoft.module.location::sorting_type');
+        $sorting_column = setting_value('visiosoft.module.location::sorting_column');
+
+        return $query->orderBy($sorting_column, $sorting_type)->get();
     }
 }
