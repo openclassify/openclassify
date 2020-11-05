@@ -5,6 +5,8 @@ $(document).on('change', 'select[name="city"]', function () {
     Locations($(this).val(), 2, "district")
 });
 
+getCountries();
+
 function Locations(cat, level, name) {
     $.ajax({
         type: "GET",
@@ -49,3 +51,14 @@ if (country != "") {
 }
 
 phoneMask("input[name='adress_gsm_phone']");
+
+
+function getCountries() {
+    crud('', '/ajax/getCountry', 'GET', function (callback) {
+        $('select[name="country"]').html("<option>" + pick_option + "</option>");
+        $.each(callback, function (index, value) {
+            $('select[name="country"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
+        });
+        $('select[name="country"]').val(country);
+    })
+}
