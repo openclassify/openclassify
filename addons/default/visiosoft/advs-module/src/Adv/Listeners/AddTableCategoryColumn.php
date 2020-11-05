@@ -7,8 +7,11 @@ class AddTableCategoryColumn
     public function handle(TableIsQuerying $event)
     {
         $query = $event->getQuery();
+        $builder = $event->getBuilder();
 
-        $query->join('cats_category_translations as cats_trans', 'advs_advs.cat1', '=', 'cats_trans.entry_id')
-            ->select('advs_advs.*', 'cats_trans.name as cat');
+        if ($builder->getModel() === "Visiosoft\AdvsModule\Adv\AdvModel") {
+            $query->join('cats_category_translations as cats_trans', 'advs_advs.cat1', '=', 'cats_trans.entry_id')
+                ->select('advs_advs.*', 'cats_trans.name as cat');
+        }
     }
 }
