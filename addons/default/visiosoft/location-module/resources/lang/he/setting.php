@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'מדינה ברירת מחדל לשדה טלפון רישום'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sorting Column',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorting Type',
+    ],
 ];
