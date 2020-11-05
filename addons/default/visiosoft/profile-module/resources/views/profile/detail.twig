@@ -102,7 +102,7 @@
                         <div class="tab-pane fade" id="nav-details" role="tabpanel"
                              aria-labelledby="nav-details-tab">
                             {% set profileForm = form('profile').entry(user.id).get() %}
-                            {{ profileForm.open()|raw }}
+                            {{ profileForm.open({ 'id': 'profile-detail' })|raw }}
                             <div class="row">
                                 <div class="col-md-12 profile-pic">
                                     {% if setting_value('visiosoft.module.profile::upload_avatar') %}
