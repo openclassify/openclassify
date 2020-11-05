@@ -453,5 +453,5 @@ return [
     'accept_terms_label' => 'Accetto i termini.',
     'accept_protection_law_label' => 'Accetto i termini della Legge sulla Protezione dei Dati Personali.',
     'accept_privacy_terms_label' => 'Accetto i termini della privacy.',
-    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
+    'receive_sms_emails_label' => 'Voglio ricevere email ed sms.',
 ];
