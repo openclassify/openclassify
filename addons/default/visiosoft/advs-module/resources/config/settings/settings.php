@@ -290,4 +290,11 @@ return [
             'default_value' => 5,
         ],
     ],
+    'show_breadcrumb_when_creating_ad' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox'
+        ],
+    ],
 ];
