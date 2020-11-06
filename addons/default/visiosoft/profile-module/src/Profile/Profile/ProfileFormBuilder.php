@@ -13,6 +13,9 @@ class ProfileFormBuilder extends FormBuilder
         'office_phone',
         'land_phone',
         'identification_number',
+        'education',
+        'state_of_education',
+        'profession',
         'birthday',
         'register_type'
     ];

@@ -41,4 +41,11 @@ return [
             'mode' => 'checkbox'
         ]
     ],
+    'show_education_profession' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox'
+        ]
+    ],
 ];

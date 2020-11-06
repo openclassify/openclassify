@@ -149,6 +149,33 @@
                                         {{ profileForm.fields.birthday.input|raw }}
                                     </div>
                                 </div>
+
+                                {% if setting_value('visiosoft.module.profile::show_education_profession') %}
+                                    <div class="col-md-12">
+                                        <div class="form-group education-field">
+                                            <label class="control-label font-weight-bold">
+                                                {{ trans("visiosoft.module.profile::field.education.name") }}
+                                            </label>
+                                            {{ profileForm.fields.education.input|raw }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group state_of_education-field">
+                                            <label class="control-label font-weight-bold">
+                                                {{ trans("visiosoft.module.profile::field.state_of_education.name") }}
+                                            </label>
+                                            {{ profileForm.fields.state_of_education.input|raw }}
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <div class="form-group profession-field">
+                                            <label class="control-label font-weight-bold">
+                                                {{ trans("visiosoft.module.profile::field.profession.name") }}
+                                            </label>
+                                            {{ profileForm.fields.profession.input|raw }}
+                                        </div>
+                                    </div>
+                                {% endif %}
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label class="control-label font-weight-bold">

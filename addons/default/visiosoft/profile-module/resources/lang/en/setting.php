@@ -14,6 +14,10 @@ return [
         'name' => 'Show Checkbox Terms on Register',
         'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
     ],
+    'show_education_profession' => [
+        'name' => 'Show Education and Profession Fields',
+        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+    ],
     'google_captcha_site_key' => [
         'name' => 'Google Captcha Site Key',
     ],
