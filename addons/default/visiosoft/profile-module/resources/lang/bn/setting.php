@@ -11,12 +11,12 @@ return [
         'name' => 'কর অফিস ক্ষেত্র প্রদর্শন করুন',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'নিবন্ধটিতে চেকবক্স শর্তাদি প্রদর্শন করুন',
+        'instructions' => '"স্বীকৃতি শর্ত", "সুরক্ষা আইন", "গোপনীয়তা শর্ত", "এসএমএস এবং ইমেল" রেজিস্টার ফর্মটিতে দেখান'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'শিক্ষা এবং পেশার ক্ষেত্রগুলি দেখান',
+        'instructions' => 'প্রোফাইল সম্পাদনা পৃষ্ঠায় "শিক্ষা", "শিক্ষার রাজ্য" এবং "পেশা" দেখান'
     ],
     'google_captcha_site_key' => [
         'name' => 'গুগল ক্যাপচা সাইট কী',
@@ -29,12 +29,12 @@ return [
         'instructions' => '0 এবং 1 এর মধ্যে একটি মান একটি প্রারম্ভিক যত বেশি তত বেশি কঠোর রিক্যাপ্টচা নির্ধারণ করার চেষ্টা করছে যে কোনও ব্যবহারকারী বট বা না।',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'শিক্ষা'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'শিক্ষা রাজ্য'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'পেশা'
     ],
 ];
