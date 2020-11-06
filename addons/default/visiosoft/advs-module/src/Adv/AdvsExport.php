@@ -38,7 +38,7 @@ class AdvsExport implements WithMapping, FromCollection, WithHeadings
 			->select(['advs_advs_translations.name', 'advs_advs_translations.advs_desc', 'location_countries_translations.name as country', 'location_cities_translations.name as city_name', DB::raw("group_concat(default_cats_category_translations.name SEPARATOR ', ') as categories")])
 			->groupBy('advs_advs.id')
 			->get();
-//dd($cats);
+
 		return $cats;
 	}
 
