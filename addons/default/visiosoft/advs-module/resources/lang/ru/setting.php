@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Предел пользовательского фильтра',
         'instructions' => 'В админке'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Show Breadcrumb When Creating an Ad',
+    ],
 ];
