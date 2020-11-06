@@ -59,13 +59,13 @@ return [
         'name' => 'Γενέθλια'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Εκπαίδευση'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Κατάσταση εκπαίδευσης'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Επάγγελμα'
     ],
     'identification_number' => [
         'name' => 'Αριθμός αναγνώρισης'
