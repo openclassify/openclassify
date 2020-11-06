@@ -59,13 +59,13 @@ return [
         'name' => 'День народження'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Освіта'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Стан освіти'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Професія'
     ],
     'identification_number' => [
         'name' => 'Ідентифікаційний номер'
