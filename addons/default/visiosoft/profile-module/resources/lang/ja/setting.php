@@ -11,12 +11,12 @@ return [
         'name' => '税務署フィールドを表示',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => '登録時にチェックボックスの条件を表示する',
+        'instructions' => '登録フォームに「同意条件」、「保護法」、「プライバシー期間」、「SMSとメール」を表示します'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => '教育と職業の分野を表示する',
+        'instructions' => 'プロファイル編集ページに「教育」、「教育の現状」、「職業」を表示します'
     ],
     'google_captcha_site_key' => [
         'name' => 'GoogleCaptchaサイトキー',
@@ -29,12 +29,12 @@ return [
         'instructions' => '0から1までの値。しきい値が高いほど、ReCaptchaはユーザーがボットであるかどうかを判断する際に厳密になります。',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => '教育'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => '教育の状態'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => '職業'
     ],
 ];
