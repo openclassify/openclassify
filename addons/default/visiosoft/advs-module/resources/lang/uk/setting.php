@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Обмеження фільтра користувача',
         'instructions' => 'На панелі адміністратора'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Показати хлібну крихту під час створення реклами',
+    ],
 ];
