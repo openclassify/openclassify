@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'حد تصفية المستخدم',
         'instructions' => 'في لوحة الادارة'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'إظهار مسار التنقل عند إنشاء إعلان',
+    ],
 ];
