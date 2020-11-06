@@ -59,13 +59,13 @@ return [
         'name' => 'Ad günü'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Təhsil'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Təhsil vəziyyəti'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Peşə'
     ],
     'identification_number' => [
         'name' => 'İdentifikasiya nömrəsi'
