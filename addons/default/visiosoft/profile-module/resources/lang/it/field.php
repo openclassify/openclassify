@@ -59,13 +59,13 @@ return [
         'name' => 'Compleanno'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Formazione scolastica'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Stato dell\'istruzione'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Professione'
     ],
     'identification_number' => [
         'name' => 'Numero identificativo'
