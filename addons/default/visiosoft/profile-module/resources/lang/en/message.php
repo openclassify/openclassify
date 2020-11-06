@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Email Updated!',
     'update_email_mail_message' => 'Your Email Has Been Updated!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha field is required.',
+    'failed_to_validate_captcha' => 'Failed to validate captcha.',
 ];

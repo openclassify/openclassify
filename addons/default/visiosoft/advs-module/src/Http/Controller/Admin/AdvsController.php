@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller\Admin;
 
-
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
@@ -10,7 +9,6 @@ use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
@@ -18,7 +16,6 @@ use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
-use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
@@ -156,6 +153,7 @@ class AdvsController extends AdminController
                 }
             ],
             'category' => [
+                'sort_column' => 'cat1',
                 'value' => function (EntryInterface $entry, CategoryModel $categoryModel) {
                     $category = $categoryModel->getCat($entry->cat1);
                     if (!is_null($category))

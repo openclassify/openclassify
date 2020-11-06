@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'User Filter Limit',
         'instructions' => 'In the admin panel'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Show Breadcrumb When Creating an Ad',
+    ],
 ];
