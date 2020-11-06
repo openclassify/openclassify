@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Verjaardag'
     ],
+    'education' => [
+        'name' => 'Education'
+    ],
+    'state_of_education' => [
+        'name' => 'State of Education'
+    ],
+    'profession' => [
+        'name' => 'Profession'
+    ],
     'identification_number' => [
         'name' => 'Identificatie Nummer'
     ],
@@ -448,4 +457,10 @@ return [
     'edit_details' => 'Details bewerken',
     'update' => 'Bijwerken',
     'change_password' => 'Wachtwoord wijzigen',
+
+    // Register page
+    'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
+    'accept_protection_law_label' => 'Ik accepteer de voorwaarden van de wet op de bescherming van persoonlijke gegevens.',
+    'accept_privacy_terms_label' => 'Ik accepteer de privacyvoorwaarden.',
+    'receive_sms_emails_label' => 'Ik wil e-mail en sms ontvangen.',
 ];
