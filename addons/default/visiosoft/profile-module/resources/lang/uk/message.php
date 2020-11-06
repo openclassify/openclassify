@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Оновлено електронний лист!',
     'update_email_mail_message' => 'Ваш електронний лист оновлено!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Поле reCaptcha обов’язкове.',
+    'failed_to_validate_captcha' => 'Не вдалося перевірити капчу.',
 ];
