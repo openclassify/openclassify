@@ -32,6 +32,43 @@ class Register2FormFields
             ];
         }
 
+        if (setting_value('visiosoft.module.profile::show_checkbox_terms_on_register')) {
+            $register = array_merge($register, [
+                "accept_terms" => [
+                    "type"   => "anomaly.field_type.boolean",
+                    "config" => [
+                        "default_value" => false,
+                        "mode"          => "checkbox",
+                        "label"         => 'visiosoft.module.profile::field.accept_terms_label',
+                    ]
+                ],
+                "accept_protection_law" => [
+                    "type"   => "anomaly.field_type.boolean",
+                    "config" => [
+                        "default_value" => false,
+                        "mode"          => "checkbox",
+                        "label"         => 'visiosoft.module.profile::field.accept_protection_law_label',
+                    ]
+                ],
+                "accept_privacy_terms" => [
+                    "type"   => "anomaly.field_type.boolean",
+                    "config" => [
+                        "default_value" => false,
+                        "mode"          => "checkbox",
+                        "label"         => 'visiosoft.module.profile::field.accept_privacy_terms_label',
+                    ]
+                ],
+                "receive_sms_emails" => [
+                    "type"   => "anomaly.field_type.boolean",
+                    "config" => [
+                        "default_value" => false,
+                        "mode"          => "checkbox",
+                        "label"         => 'visiosoft.module.profile::field.receive_sms_emails_label',
+                    ]
+                ],
+            ]);
+        }
+
         $builder->setFields(
             array_merge(
                 $register,
@@ -65,42 +102,6 @@ class Register2FormFields
                     ],
                     'password' => [
                         'instructions' => false,
-                    ],
-                    "accept_terms" => [
-                        "type"   => "anomaly.field_type.boolean",
-                        "required" => true,
-                        "config" => [
-                            "default_value" => false,
-                            "mode"          => "checkbox",
-                            "label"         => 'visiosoft.module.profile::field.accept_terms_label',
-                        ]
-                    ],
-                    "accept_protection_law" => [
-                        "type"   => "anomaly.field_type.boolean",
-                        "required" => true,
-                        "config" => [
-                            "default_value" => false,
-                            "mode"          => "checkbox",
-                            "label"         => 'visiosoft.module.profile::field.accept_protection_law_label',
-                        ]
-                    ],
-                    "accept_privacy_terms" => [
-                        "type"   => "anomaly.field_type.boolean",
-                        "required" => true,
-                        "config" => [
-                            "default_value" => false,
-                            "mode"          => "checkbox",
-                            "label"         => 'visiosoft.module.profile::field.accept_privacy_terms_label',
-                        ]
-                    ],
-                    "receive_sms_emails" => [
-                        "type"   => "anomaly.field_type.boolean",
-                        "required" => true,
-                        "config" => [
-                            "default_value" => false,
-                            "mode"          => "checkbox",
-                            "label"         => 'visiosoft.module.profile::field.receive_sms_emails_label',
-                        ]
                     ],
                 ]
             )

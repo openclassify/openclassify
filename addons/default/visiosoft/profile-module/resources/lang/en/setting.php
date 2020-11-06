@@ -10,6 +10,10 @@ return [
     'show_tax_office' => [
         'name' => 'Show Tax Office Field',
     ],
+    'show_checkbox_terms_on_register' => [
+        'name' => 'Show Checkbox Terms on Register',
+        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+    ],
     'google_captcha_site_key' => [
         'name' => 'Google Captcha Site Key',
     ],

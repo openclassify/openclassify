@@ -34,4 +34,11 @@ return [
             "max"       => 1.0,
         ]
     ],
+    'show_checkbox_terms_on_register' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
 ];
