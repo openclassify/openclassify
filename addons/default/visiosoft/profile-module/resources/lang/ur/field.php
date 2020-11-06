@@ -59,13 +59,13 @@ return [
         'name' => 'سالگرہ'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'تعلیم'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'ریاست تعلیم'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'پیشہ'
     ],
     'identification_number' => [
         'name' => 'شناختی نمبر'
