@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => '이메일이 업데이트되었습니다!',
     'update_email_mail_message' => '귀하의 이메일이 업데이트되었습니다!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha field is required.',
+    'failed_to_validate_captcha' => 'Failed to validate captcha.',
 ];
