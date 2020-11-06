@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'البلد الافتراضي لتسجيل حقل الهاتف'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'عمود الفرز',
+    ],
+    'sorting_type' => [
+        'name' => 'نوع الفرز',
+    ],
 ];
