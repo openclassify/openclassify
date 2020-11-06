@@ -210,7 +210,8 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
 	    ],
 
-
+        // Admin ProductoptionsController
+        'admin/advs/product_options' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@index'
     ];
 
     protected $middleware = [
