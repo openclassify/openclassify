@@ -5,11 +5,6 @@ use Anomaly\Streams\Platform\Database\Migration\Migration;
 class VisiosoftModuleProfileCreateProfessionAndEducationalFields extends Migration
 {
 
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
     public function up()
     {
         if ($stream = $this->streams()->findBySlugAndNamespace('users', 'users')) {
@@ -40,7 +35,7 @@ class VisiosoftModuleProfileCreateProfessionAndEducationalFields extends Migrati
                         'name' => $field['name'],
                         'namespace' => 'users',
                         'slug' => $field['slug'],
-                        'type' => 'anomaly.field_type.tags',
+                        'type' => 'anomaly.field_type.text',
                         'locked' => 0,
                     ]);
 

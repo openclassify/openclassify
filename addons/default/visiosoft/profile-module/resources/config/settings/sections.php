@@ -11,7 +11,10 @@ return [
                     'upload_avatar',
                     'show_tax_office',
                     'show_checkbox_terms_on_register',
-                    'show_education_profession'
+                    'show_education_profession',
+                    'education',
+                    'state_of_education',
+                    'profession',
                 ],
             ],
             'recaptcha' => [

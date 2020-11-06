@@ -28,4 +28,13 @@ return [
         'name' => 'Score Threshold',
         'instructions' => 'A value between 0 and 1. The higher the threshold the more strict ReCaptcha is in trying to determine if a user is a bot or not.',
     ],
+    'education' => [
+        'name' => 'Education'
+    ],
+    'state_of_education' => [
+        'name' => 'State of Education'
+    ],
+    'profession' => [
+        'name' => 'Profession'
+    ],
 ];
