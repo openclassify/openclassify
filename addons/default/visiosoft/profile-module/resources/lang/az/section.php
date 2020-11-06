@@ -8,4 +8,5 @@ return [
         'title' => 'Ünvan',
     ],
     'general_setting' => 'Ümumi Ayarlar',
+    'recaptcha' => 'reCAPTCHA',
 ];
