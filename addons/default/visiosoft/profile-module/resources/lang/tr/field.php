@@ -59,13 +59,13 @@ return [
         'name' => 'Doğum günü'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Eğitim'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Eğitim Durumu'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Meslek'
     ],
     'identification_number' => [
         'name' => 'Kimlik Numarası'
