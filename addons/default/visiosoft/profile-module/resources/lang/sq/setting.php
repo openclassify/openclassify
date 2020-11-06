@@ -11,12 +11,12 @@ return [
         'name' => 'Trego Fushën e Zyrës së Taksave',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Trego Kushtet e Kutisë së Regjistrimit',
+        'instructions' => 'Shfaqni "Prano termin", "ligjin e mbrojtjes", "termin e privatësisë", "sms & email" në formularin e regjistrimit'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Tregoni Fushat e Edukimit dhe Profesionit',
+        'instructions' => 'Shfaqni "Edukimin", "Gjendjen e Arsimit" dhe "Profesionin" në faqen e redaktimit të profilit'
     ],
     'google_captcha_site_key' => [
         'name' => 'Çelësi i faqes Google Captcha',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'Një vlerë ndërmjet 0 dhe 1. Sa më i lartë pragu, aq më i rreptë është ReCaptcha në përpjekjen për të përcaktuar nëse një përdorues është bot apo jo.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Arsimi'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Shteti i Arsimit'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Profesioni'
     ],
 ];
