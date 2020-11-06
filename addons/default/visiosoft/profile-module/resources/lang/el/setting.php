@@ -11,12 +11,12 @@ return [
         'name' => 'Εμφάνιση πεδίου φορολογικής υπηρεσίας',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Εμφάνιση Όρων πλαισίου ελέγχου στο Μητρώο',
+        'instructions' => 'Δείξτε την ένδειξη "Αποδοχή όρου", "νόμος προστασίας", "όρος απορρήτου", "sms & email"'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Εμφάνιση πεδίων εκπαίδευσης και επαγγέλματος',
+        'instructions' => 'Εμφάνιση των "Εκπαίδευση", "Κατάσταση Εκπαίδευσης" και "Επάγγελμα" στη σελίδα επεξεργασίας προφίλ'
     ],
     'google_captcha_site_key' => [
         'name' => 'Κλειδί ιστότοπου Google Captcha',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'Μια τιμή μεταξύ 0 και 1. Όσο υψηλότερο είναι το όριο, τόσο πιο αυστηρό ReCaptcha προσπαθεί να προσδιορίσει εάν ένας χρήστης είναι bot ή όχι.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Εκπαίδευση'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Κατάσταση εκπαίδευσης'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Επάγγελμα'
     ],
 ];
