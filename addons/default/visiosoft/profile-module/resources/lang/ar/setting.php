@@ -11,12 +11,12 @@ return [
         'name' => 'إظهار حقل مكتب الضرائب',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'إظهار شروط خانة الاختيار في التسجيل',
+        'instructions' => 'أظهر "قبول مصطلح" ، "قانون الحماية" ، "مصطلح الخصوصية" ، "الرسائل القصيرة والبريد الإلكتروني" في نموذج التسجيل'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'إظهار مجالات التعليم والمهنة',
+        'instructions' => 'اعرض "التعليم" و "حالة التعليم" و "المهنة" في صفحة تعديل الملف الشخصي'
     ],
     'google_captcha_site_key' => [
         'name' => 'مفتاح موقع Google Captcha',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'قيمة بين 0 و 1. كلما زادت العتبة ، زادت صرامة ReCaptcha في محاولة تحديد ما إذا كان المستخدم روبوتًا أم لا.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'التعليم'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'حالة التعليم'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'مهنة'
     ],
 ];
