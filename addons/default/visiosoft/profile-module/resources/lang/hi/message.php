@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'ईमेल अपडेट किया गया!',
     'update_email_mail_message' => 'आपका ईमेल अपडेट किया गया है!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha फ़ील्ड की आवश्यकता है।',
+    'failed_to_validate_captcha' => 'कैप्चा को मान्य करने में विफल।',
 ];
