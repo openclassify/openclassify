@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'E-mail actualizat!',
     'update_email_mail_message' => 'E-mailul dvs. a fost actualizat!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha field is required.',
+    'failed_to_validate_captcha' => 'Failed to validate captcha.',
 ];
