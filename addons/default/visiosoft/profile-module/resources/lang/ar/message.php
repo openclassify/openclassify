@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'تم تحديث البريد الإلكتروني!',
     'update_email_mail_message' => 'تم تحديث بريدك الإلكتروني!',
+
+    // Register
+    'recaptcha_field_is_required' => 'حقل reCaptcha مطلوب.',
+    'failed_to_validate_captcha' => 'فشل التحقق من صحة captcha.',
 ];
