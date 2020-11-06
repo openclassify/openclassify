@@ -11,12 +11,12 @@ return [
         'name' => 'Vergi Dairəsi Sahəsini göstərin',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Qeyd qutusundakı onay qutusunun şərtlərini göstərin',
+        'instructions' => 'Qeyd formasında "Qəbul müddəti", "qoruma qanunu", "məxfilik müddəti", "sms və e-poçtlar" göstər'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Təhsil və Peşə Sahələrini göstərin',
+        'instructions' => 'Profili düzəltmə səhifəsində "Təhsil", "Təhsil Vəziyyəti" və "Peşə" ni göstərin'
     ],
     'google_captcha_site_key' => [
         'name' => 'Google Captcha Sayt Açarı',
@@ -29,12 +29,12 @@ return [
         'instructions' => '0 ilə 1 arasındakı dəyər. Eşik nə qədər yüksək olsa, ReCaptcha istifadəçinin bot olub olmadığını müəyyənləşdirməyə çalışır.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Təhsil'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Təhsil vəziyyəti'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Peşə'
     ],
 ];
