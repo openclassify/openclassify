@@ -181,6 +181,6 @@ return [
         'instructions' => 'W panelu administracyjnym'
     ],
     'show_breadcrumb_when_creating_ad' => [
-        'name' => 'Show Breadcrumb When Creating an Ad',
+        'name' => 'Pokaż menu nawigacyjne podczas tworzenia reklamy',
     ],
 ];
