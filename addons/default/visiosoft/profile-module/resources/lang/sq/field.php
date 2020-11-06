@@ -59,13 +59,13 @@ return [
         'name' => 'Ditëlindja'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Arsimi'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Shteti i Arsimit'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Profesioni'
     ],
     'identification_number' => [
         'name' => 'Numrin e identifikimit'
