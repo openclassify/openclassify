@@ -59,13 +59,13 @@ return [
         'name' => '생신'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => '교육'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => '교육 현황'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => '직업'
     ],
     'identification_number' => [
         'name' => '식별 번호'
