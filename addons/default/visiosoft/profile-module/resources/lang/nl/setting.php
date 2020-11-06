@@ -11,12 +11,12 @@ return [
         'name' => 'Toon belastingkantoor veld',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Toon selectievakje voorwaarden bij registreren',
+        'instructions' => 'Toon de "Accepteer term", "beschermingswet", "privacy term", "sms & e-mails" op het registratieformulier'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Toon onderwijs- en beroepsvelden',
+        'instructions' => 'Toon de "Opleiding", "Staat van opleiding" en "Beroep" op de profielbewerkingspagina'
     ],
     'google_captcha_site_key' => [
         'name' => 'Google Captcha-sitesleutel',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'Een waarde tussen 0 en 1. Hoe hoger de drempel, hoe strikter ReCaptcha is om te bepalen of een gebruiker een bot is of niet.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Opleiding'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Staat van onderwijs'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Beroep'
     ],
 ];
