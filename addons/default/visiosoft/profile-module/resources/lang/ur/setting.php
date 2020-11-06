@@ -11,12 +11,12 @@ return [
         'name' => 'ٹیکس آفس فیلڈ دکھائیں',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'رجسٹر پر چیک باکس کی شرائط دکھائیں',
+        'instructions' => 'رجسٹر فارم پر "قبول شدہ اصطلاح" ، "تحفظ قانون" ، "رازداری کی اصطلاح" ، "ایس ایم ایس اور ای میلز" دکھائیں۔'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'تعلیم اور پیشہ ور فیلڈز دکھائیں',
+        'instructions' => 'پروفائل میں ترمیم والے صفحے پر "تعلیم" ، "ریاست تعلیم" اور "پیشہ" دکھائیں'
     ],
     'google_captcha_site_key' => [
         'name' => 'گوگل کیپچا سائٹ کی',
@@ -29,12 +29,12 @@ return [
         'instructions' => '0 اور 1 کے درمیان ایک قدر جس کی حد زیادہ ہے اس سے زیادہ سخت ری کیپچا اس بات کا تعین کرنے کی کوشش میں ہے کہ آیا صارف بوٹ ہے یا نہیں۔',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'تعلیم'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'ریاست تعلیم'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'پیشہ'
     ],
 ];
