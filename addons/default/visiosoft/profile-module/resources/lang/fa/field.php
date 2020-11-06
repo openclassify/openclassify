@@ -59,13 +59,13 @@ return [
         'name' => 'روز تولد'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'تحصیلات'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'دولت آموزش و پرورش'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'حرفه'
     ],
     'identification_number' => [
         'name' => 'شماره شناسایی'
