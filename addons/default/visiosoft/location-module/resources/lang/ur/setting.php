@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'ڈیفالٹ کنٹری برائے رجسٹر فون فیلڈ'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'چھانٹ رہا ہے کالم',
+    ],
+    'sorting_type' => [
+        'name' => 'ترتیب کی قسم',
+    ],
 ];
