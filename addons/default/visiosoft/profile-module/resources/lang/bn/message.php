@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'ইমেল আপডেট!',
     'update_email_mail_message' => 'আপনার ইমেল আপডেট হয়েছে!',
+
+    // Register
+    'recaptcha_field_is_required' => 'পুনরায় ক্যাপচা ক্ষেত্র প্রয়োজন।',
+    'failed_to_validate_captcha' => 'ক্যাপচাকে বৈধতা দিতে ব্যর্থ।',
 ];
