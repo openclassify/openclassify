@@ -11,12 +11,12 @@ return [
         'name' => 'نمایش زمینه اداره مالیات',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'نمایش شرایط جعبه تأیید در ثبت نام',
+        'instructions' => '"فرم پذیرش" ، "قانون حمایت" ، "اصطلاح حریم خصوصی" ، "پیام کوتاه و ایمیل" را در فرم ثبت نام نشان دهید'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'زمینه های آموزش و حرفه را نشان دهید',
+        'instructions' => '"آموزش" ، "وضعیت آموزش" و "حرفه" را در صفحه ویرایش نمایه نشان دهید'
     ],
     'google_captcha_site_key' => [
         'name' => 'کلید سایت Google Captcha',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'مقداری بین 0 تا 1. هرچه آستانه بالاتر باشد ReCaptcha سختگیرانه تر است تا تلاش کند ربات را رد کند یا خیر.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'تحصیلات'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'دولت آموزش و پرورش'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'حرفه'
     ],
 ];
