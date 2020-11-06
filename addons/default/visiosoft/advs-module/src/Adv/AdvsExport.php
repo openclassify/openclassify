@@ -34,8 +34,8 @@ class AdvsExport implements WithMapping, FromCollection, WithHeadings
 			->leftJoin('location_countries_translations','advs_advs.country_id', 'location_countries_translations.entry_id')
 			->leftJoin('location_cities_translations','advs_advs.city', 'location_cities_translations.entry_id')
 			->leftJoin('location_districts_translations','advs_advs.district', 'location_districts_translations.entry_id')
-			->where('cats_category_translations.locale',Request()->session()->get('_locale', setting_value('streams::default_locale', 'en')))
-			->where('advs_advs_translations.locale',Request()->session()->get('_locale', setting_value('streams::default_locale', 'en')))
+			->whereIn('cats_category_translations.locale', array(Request()->session()->get('_locale'), setting_value('streams::default_locale'), 'en'))
+			->whereIn('advs_advs_translations.locale', array(Request()->session()->get('_locale'), setting_value('streams::default_locale'), 'en'))
 			->select(['advs_advs.*', 'location_countries_translations.name as country', 'location_cities_translations.name as city_name', 'location_districts_translations.name as district', DB::raw("group_concat(default_cats_category_translations.name SEPARATOR ', ') as categories")])
 			->groupBy('advs_advs.id')
 			->get();
