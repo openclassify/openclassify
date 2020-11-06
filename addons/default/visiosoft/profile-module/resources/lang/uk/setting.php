@@ -11,12 +11,12 @@ return [
         'name' => 'Показати поле податкової служби',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Показати умови прапорця для реєстрації',
+        'instructions' => 'Показати "Форма прийняття", "Закон про захист", "Термін конфіденційності", "SMS та електронні листи" у формі реєстрації'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Показати галузі освіти та професії',
+        'instructions' => 'Покажіть "Освіта", "Стан освіти" та "Професія" на сторінці редагування профілю'
     ],
     'google_captcha_site_key' => [
         'name' => 'Ключ сайту Google Captcha',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'Значення від 0 до 1. Чим вище поріг, тим суворіший ReCaptcha намагається визначити, є користувач ботом чи ні.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Освіта'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Стан освіти'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Професія'
     ],
 ];
