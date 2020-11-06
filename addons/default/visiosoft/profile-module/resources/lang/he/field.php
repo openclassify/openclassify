@@ -59,13 +59,13 @@ return [
         'name' => 'יום הולדת'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'חינוך'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'מצב החינוך'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'מִקצוֹעַ'
     ],
     'identification_number' => [
         'name' => 'מספר זיהוי'
