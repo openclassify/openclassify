@@ -8,4 +8,5 @@ return [
         'title' => 'Adres',
     ],
     'general_setting' => 'Ustawienia główne',
+    'recaptcha' => 'reCAPTCHA',
 ];
