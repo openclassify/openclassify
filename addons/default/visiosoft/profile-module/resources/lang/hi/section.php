@@ -8,4 +8,5 @@ return [
         'title' => 'पता',
     ],
     'general_setting' => 'सामान्य सेटिंग्स',
+    'recaptcha' => 'reCAPTCHA',
 ];
