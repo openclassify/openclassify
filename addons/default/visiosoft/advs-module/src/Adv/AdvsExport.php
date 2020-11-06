@@ -70,7 +70,7 @@ class AdvsExport implements WithMapping, FromCollection, WithHeadings
 			trans('module::field.price.name'),
 			trans('module::field.standard_price.name'),
 			trans('module::field.created'),
-			trans('module::field.categories'),
+			trans('module::field.categories.name'),
 			trans('module::field.country.name'),
 			trans('module::field.city.name'),
 			trans('module::field.district.name'),
