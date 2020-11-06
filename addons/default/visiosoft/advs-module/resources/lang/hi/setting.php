@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'उपयोगकर्ता फ़िल्टर सीमा',
         'instructions' => 'व्यवस्थापक पैनल में'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Show Breadcrumb When Creating an Ad',
+    ],
 ];
