@@ -59,13 +59,13 @@ return [
         'name' => 'お誕生日'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => '教育'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => '教育の状態'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => '職業'
     ],
     'identification_number' => [
         'name' => '識別番号'
