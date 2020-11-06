@@ -3,8 +3,6 @@
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Visiosoft\ProfileModule\Profile\Register2\Command\SetOptions;
 use Anomaly\UsersModule\User\UserModel;
-use Visiosoft\ProfileModule\Profile\Validation\ValidateRegister;
-use Visiosoft\ProfileModule\Rules\ReCaptchaRule;
 
 /**
  * Class RegisterFormBuilder
@@ -31,96 +29,6 @@ class Register2FormBuilder extends FormBuilder
      * @var string
      */
     protected $model = UserModel::class;
-
-    /**
-     * The form fields.
-     *
-     * @var array
-     */
-    protected $fields = [
-        'recaptcha_token' => [
-            'required' => true,
-            'type' => 'anomaly.field_type.text',
-            'config' => [
-                "max" => 0,
-            ],
-            'rules' => [
-                'valid_recaptcha'
-            ],
-            'validators' => [
-                'valid_recaptcha' => [
-                    'message' => false,
-                    'handler' => ReCaptchaRule::class
-                ]
-            ]
-        ],
-        'username' => [
-            'required' => true,
-        ],
-        'first_name' => [
-            'instructions' => false,
-            'required' => true,
-        ],
-        'last_name' => [
-            'instructions' => false,
-            'required' => true,
-        ],
-        'phone' => [
-            'type' => 'anomaly.field_type.text',
-            'required' => true,
-            'rules' => [
-                'valid_register',
-            ],
-            'validators' => [
-                'valid_register' => [
-                    'message' => false,
-                    'handler' => ValidateRegister::class,
-                ],
-            ],
-        ],
-        'email' => [
-            'instructions' => false,
-        ],
-        'password' => [
-            'instructions' => false,
-        ],
-        "accept_terms" => [
-            "type"   => "anomaly.field_type.boolean",
-            "required" => true,
-            "config" => [
-                "default_value" => false,
-                "mode"          => "checkbox",
-                "label"         => 'visiosoft.module.profile::field.accept_terms_label',
-            ]
-        ],
-        "accept_protection_law" => [
-            "type"   => "anomaly.field_type.boolean",
-            "required" => true,
-            "config" => [
-                "default_value" => false,
-                "mode"          => "checkbox",
-                "label"         => 'visiosoft.module.profile::field.accept_protection_law_label',
-            ]
-        ],
-        "accept_privacy_terms" => [
-            "type"   => "anomaly.field_type.boolean",
-            "required" => true,
-            "config" => [
-                "default_value" => false,
-                "mode"          => "checkbox",
-                "label"         => 'visiosoft.module.profile::field.accept_privacy_terms_label',
-            ]
-        ],
-        "receive_sms_emails" => [
-            "type"   => "anomaly.field_type.boolean",
-            "required" => true,
-            "config" => [
-                "default_value" => false,
-                "mode"          => "checkbox",
-                "label"         => 'visiosoft.module.profile::field.receive_sms_emails_label',
-            ]
-        ],
-    ];
 
     /**
      * The form actions.
