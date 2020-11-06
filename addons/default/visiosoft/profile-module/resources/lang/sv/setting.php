@@ -11,12 +11,12 @@ return [
         'name' => 'Visa fält för skattekontor',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Visa kryssrutans villkor i registret',
+        'instructions' => 'Visa "Acceptera term", "skyddslag", "sekretessbegrepp", "sms & e-post" på registerformuläret'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Visa utbildnings- och yrkesfält',
+        'instructions' => 'Visa "Utbildning", "Utbildningsläge" och "Yrke" på profilredigeringssidan'
     ],
     'google_captcha_site_key' => [
         'name' => 'Google Captcha-webbplatsnyckel',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'Ett värde mellan 0 och 1. Ju högre tröskel desto strängare är ReCaptcha i att försöka avgöra om en användare är en bot eller inte.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Utbildning'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Utbildningsstatus'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Yrke'
     ],
 ];
