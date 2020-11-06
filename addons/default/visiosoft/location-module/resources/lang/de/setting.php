@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Standardland für das Feld "Telefon registrieren"'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Spalte sortieren',
+    ],
+    'sorting_type' => [
+        'name' => 'Sortierart',
+    ],
 ];
