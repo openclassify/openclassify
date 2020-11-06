@@ -11,12 +11,12 @@ return [
         'name' => 'Pokaż pole Urzędu Skarbowego',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Pokaż warunki pola wyboru w rejestrze',
+        'instructions' => 'Pokaż w formularzu rejestracyjnym „Zaakceptuj termin”, „Prawo ochrony”, „Warunki prywatności”, „SMS-y i e-maile”'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Pokaż pola edukacji i zawodów',
+        'instructions' => 'Pokaż „Wykształcenie”, „Stan edukacji” i „Zawód” na stronie edycji profilu'
     ],
     'google_captcha_site_key' => [
         'name' => 'Klucz witryny Google Captcha',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'Wartość od 0 do 1. Im wyższy próg, tym bardziej reCaptcha próbuje określić, czy użytkownik jest botem, czy nie.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Edukacja'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Stan edukacji'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Zawód'
     ],
 ];
