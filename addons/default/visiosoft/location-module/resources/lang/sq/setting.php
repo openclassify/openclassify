@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Vendi i paracaktuar për fushën e regjistrimit të telefonit'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Renditja e kolonës',
+    ],
+    'sorting_type' => [
+        'name' => 'Lloji i renditjes',
+    ],
 ];
