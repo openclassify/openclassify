@@ -211,7 +211,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 	    ],
 
         // Admin ProductoptionsController
-        'admin/advs/product_options' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@index'
+        'admin/advs/product_options' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@index',
+        'admin/advs/product_options/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@create',
+        'admin/advs/product_options/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@edit',
     ];
 
     protected $middleware = [
