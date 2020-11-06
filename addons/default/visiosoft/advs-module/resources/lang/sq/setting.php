@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Kufiri i filtrit të përdoruesit',
         'instructions' => 'Në panelin e administratorit'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Tregoni Breadcrumb kur krijoni një reklamë',
+    ],
 ];
