@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'صارف کے فلٹر کی حد',
         'instructions' => 'ایڈمن پینل میں'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'جب کوئی اشتہار بناتے ہو تو بریڈ کرمب دکھائیں',
+    ],
 ];
