@@ -41,4 +41,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Email atualizado!',
     'update_email_mail_message' => 'Seu e-mail foi atualizado!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha field is required.',
+    'failed_to_validate_captcha' => 'Failed to validate captcha.',
 ];
