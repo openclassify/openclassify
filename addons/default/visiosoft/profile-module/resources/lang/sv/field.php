@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Födelsedag'
     ],
+    'education' => [
+        'name' => 'Utbildning'
+    ],
+    'state_of_education' => [
+        'name' => 'Utbildningsstatus'
+    ],
+    'profession' => [
+        'name' => 'Yrke'
+    ],
     'identification_number' => [
         'name' => 'Identifieringsnummer'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'Redigera detaljer',
     'update' => 'Uppdatering',
     'change_password' => 'Ändra lösenord',
+
+    // Register page
+    'accept_terms_label' => 'Jag accepterar villkoren.',
+    'accept_protection_law_label' => 'Jag accepterar villkoren i lagen om skydd av personuppgifter.',
+    'accept_privacy_terms_label' => 'Jag accepterar sekretessvillkor.',
+    'receive_sms_emails_label' => 'Jag vill få e-post och sms.',
 ];

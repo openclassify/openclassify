@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Γενέθλια'
     ],
+    'education' => [
+        'name' => 'Εκπαίδευση'
+    ],
+    'state_of_education' => [
+        'name' => 'Κατάσταση εκπαίδευσης'
+    ],
+    'profession' => [
+        'name' => 'Επάγγελμα'
+    ],
     'identification_number' => [
         'name' => 'Αριθμός αναγνώρισης'
     ],
@@ -448,4 +457,10 @@ return [
     'edit_details' => 'Επεξεργασία λεπτομερειών',
     'update' => 'Εκσυγχρονίζω',
     'change_password' => 'Άλλαξε κωδικό',
+
+    // Register page
+    'accept_terms_label' => 'Αποδέχομαι τους όρους.',
+    'accept_protection_law_label' => 'Αποδέχομαι τους όρους του Νόμου περί Προστασίας Προσωπικών Δεδομένων.',
+    'accept_privacy_terms_label' => 'Αποδέχομαι τους όρους απορρήτου.',
+    'receive_sms_emails_label' => 'Θέλω να λαμβάνω e-mail & sms.',
 ];

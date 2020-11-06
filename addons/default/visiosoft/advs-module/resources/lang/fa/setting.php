@@ -180,5 +180,8 @@ return [
     'user_filter_limit' => [
         'name' => 'محدودیت فیلتر کاربر',
         'instructions' => 'در پنل مدیریت'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'هنگام ایجاد تبلیغ ، Breadcrumb را نشان دهید',
+    ],
 ];

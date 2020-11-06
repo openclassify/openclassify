@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'روز تولد'
     ],
+    'education' => [
+        'name' => 'تحصیلات'
+    ],
+    'state_of_education' => [
+        'name' => 'دولت آموزش و پرورش'
+    ],
+    'profession' => [
+        'name' => 'حرفه'
+    ],
     'identification_number' => [
         'name' => 'شماره شناسایی'
     ],
@@ -445,4 +454,10 @@ return [
     'edit_details' => 'جزئیات ویرایش',
     'update' => 'به روز رسانی',
     'change_password' => 'تغییر رمز عبور',
+
+    // Register page
+    'accept_terms_label' => 'من شرایط را قبول می کنم',
+    'accept_protection_law_label' => 'من شرایط قانون حمایت از داده های شخصی را می پذیرم.',
+    'accept_privacy_terms_label' => 'من شرایط حریم خصوصی را می پذیرم.',
+    'receive_sms_emails_label' => 'من می خواهم ایمیل و پیام کوتاه دریافت کنم.',
 ];

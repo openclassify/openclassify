@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'E-post uppdaterad!',
     'update_email_mail_message' => 'Din e-postadress har uppdaterats!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha-fält krävs.',
+    'failed_to_validate_captcha' => 'Det gick inte att validera captcha.',
 ];

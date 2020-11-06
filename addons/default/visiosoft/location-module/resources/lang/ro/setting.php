@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Țara implicită pentru câmpul de telefon al înregistrării'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sortarea coloanei',
+    ],
+    'sorting_type' => [
+        'name' => 'Tipul de sortare',
+    ],
 ];

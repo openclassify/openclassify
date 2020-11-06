@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Email Azhurnohet!',
     'update_email_mail_message' => 'Emaili juaj është azhurnuar!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Kërkohet fusha reCaptcha.',
+    'failed_to_validate_captcha' => 'Vlerësimi i kapjes dështoi.',
 ];

@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => '電話登録フィールドのデフォルトの国'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'ソート列',
+    ],
+    'sorting_type' => [
+        'name' => 'ソートタイプ',
+    ],
 ];

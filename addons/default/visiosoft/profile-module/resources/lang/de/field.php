@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Geburtstag'
     ],
+    'education' => [
+        'name' => 'Bildung'
+    ],
+    'state_of_education' => [
+        'name' => 'Bildungsstand'
+    ],
+    'profession' => [
+        'name' => 'Beruf'
+    ],
     'identification_number' => [
         'name' => 'Identifikationsnummer'
     ],
@@ -451,4 +460,10 @@ return [
     'edit_details' => 'Details bearbeiten',
     'update' => 'Aktualisieren',
     'change_password' => 'Ändere das Passwort',
+
+    // Register page
+    'accept_terms_label' => 'Ich akzeptiere die Bedingungen.',
+    'accept_protection_law_label' => 'Ich akzeptiere die Bestimmungen des Gesetzes zum Schutz personenbezogener Daten.',
+    'accept_privacy_terms_label' => 'Ich akzeptiere Datenschutzbestimmungen.',
+    'receive_sms_emails_label' => 'Ich möchte E-Mail & SMS erhalten.',
 ];

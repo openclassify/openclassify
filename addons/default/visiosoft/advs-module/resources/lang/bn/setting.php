@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'ব্যবহারকারী ফিল্টার সীমা',
         'instructions' => 'অ্যাডমিন প্যানেলে'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'বিজ্ঞাপন তৈরি করার সময় ব্রেডক্রাম্ব প্রদর্শন করুন',
+    ],
 ];

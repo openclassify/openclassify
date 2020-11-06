@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'יום הולדת'
     ],
+    'education' => [
+        'name' => 'חינוך'
+    ],
+    'state_of_education' => [
+        'name' => 'מצב החינוך'
+    ],
+    'profession' => [
+        'name' => 'מִקצוֹעַ'
+    ],
     'identification_number' => [
         'name' => 'מספר זיהוי'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'לערוך פרטים',
     'update' => 'עדכון',
     'change_password' => 'שנה סיסמא',
+
+    // Register page
+    'accept_terms_label' => 'אני מקבל את התנאים.',
+    'accept_protection_law_label' => 'אני מקבל את תנאי החוק להגנת נתונים אישיים.',
+    'accept_privacy_terms_label' => 'אני מקבל תנאי פרטיות.',
+    'receive_sms_emails_label' => 'אני רוצה לקבל דואר אלקטרוני וסמס.',
 ];

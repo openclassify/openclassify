@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'День народження'
     ],
+    'education' => [
+        'name' => 'Освіта'
+    ],
+    'state_of_education' => [
+        'name' => 'Стан освіти'
+    ],
+    'profession' => [
+        'name' => 'Професія'
+    ],
     'identification_number' => [
         'name' => 'Ідентифікаційний номер'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'Редагувати деталі',
     'update' => 'Оновлення',
     'change_password' => 'Змінити пароль',
+
+    // Register page
+    'accept_terms_label' => 'Я приймаю умови.',
+    'accept_protection_law_label' => 'Я приймаю умови Закону про захист персональних даних.',
+    'accept_privacy_terms_label' => 'Я приймаю умови конфіденційності.',
+    'receive_sms_emails_label' => 'Я хочу отримувати електронну пошту та sms.',
 ];

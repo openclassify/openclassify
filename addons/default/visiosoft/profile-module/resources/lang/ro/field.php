@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Zi de nastere'
     ],
+    'education' => [
+        'name' => 'Educaţie'
+    ],
+    'state_of_education' => [
+        'name' => 'Starea educației'
+    ],
+    'profession' => [
+        'name' => 'Profesie'
+    ],
     'identification_number' => [
         'name' => 'Numar de identificare'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'Editează detaliile',
     'update' => 'Actualizați',
     'change_password' => 'Schimbați parola',
+
+    // Register page
+    'accept_terms_label' => 'Accept termenii.',
+    'accept_protection_law_label' => 'Accept termenii Legii privind protecția datelor cu caracter personal.',
+    'accept_privacy_terms_label' => 'Accept condițiile de confidențialitate.',
+    'receive_sms_emails_label' => 'Vreau să primesc e-mail și sms.',
 ];

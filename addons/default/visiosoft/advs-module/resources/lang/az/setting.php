@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'İstifadəçi Filter Limiti',
         'instructions' => 'İdarə panelində'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Reklam yaratarkən çörək parçasını göstərin',
+    ],
 ];

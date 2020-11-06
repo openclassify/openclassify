@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Kullanıcı Filtresi Sınırı',
         'instructions' => 'Yönetici panelinde'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Reklam Oluştururken İçerik Haritasını Göster',
+    ],
 ];

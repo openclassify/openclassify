@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Kayıtlı Telefon Alanı İçin Varsayılan Ülke'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sıralama Sütunu',
+    ],
+    'sorting_type' => [
+        'name' => 'Sıralama Türü',
+    ],
 ];

@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'E-poçt Yenilənib!',
     'update_email_mail_message' => 'E-poçtunuz Yeniləndi!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha sahəsi tələb olunur.',
+    'failed_to_validate_captcha' => 'Captcha doğrulana bilmədi.',
 ];

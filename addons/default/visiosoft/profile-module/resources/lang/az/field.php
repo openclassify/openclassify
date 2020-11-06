@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Ad günü'
     ],
+    'education' => [
+        'name' => 'Təhsil'
+    ],
+    'state_of_education' => [
+        'name' => 'Təhsil vəziyyəti'
+    ],
+    'profession' => [
+        'name' => 'Peşə'
+    ],
     'identification_number' => [
         'name' => 'İdentifikasiya nömrəsi'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'Ətraflı məlumatları redaktə edin',
     'update' => 'Yeniləyin',
     'change_password' => 'Parolu dəyişdirin',
+
+    // Register page
+    'accept_terms_label' => 'Şərtləri qəbul edirəm.',
+    'accept_protection_law_label' => 'Fərdi məlumatların qorunması haqqında Qanunun şərtlərini qəbul edirəm.',
+    'accept_privacy_terms_label' => 'Gizlilik şərtlərini qəbul edirəm.',
+    'receive_sms_emails_label' => 'E-poçt və sms almaq istəyirəm.',
 ];

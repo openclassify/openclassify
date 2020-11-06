@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Limit filtrów użytkownika',
         'instructions' => 'W panelu administracyjnym'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Pokaż menu nawigacyjne podczas tworzenia reklamy',
+    ],
 ];
