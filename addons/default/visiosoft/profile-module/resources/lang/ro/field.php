@@ -59,13 +59,13 @@ return [
         'name' => 'Zi de nastere'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Educaţie'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Starea educației'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Profesie'
     ],
     'identification_number' => [
         'name' => 'Numar de identificare'
