@@ -11,12 +11,12 @@ return [
         'name' => 'Hiển thị Trường Văn phòng Thuế',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Hiển thị Điều khoản Hộp kiểm trên Đăng ký',
+        'instructions' => 'Hiển thị "Điều khoản chấp nhận", "luật bảo vệ", "điều khoản bảo mật", "sms & email" trên biểu mẫu đăng ký'
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Hiển thị các lĩnh vực giáo dục và nghề nghiệp',
+        'instructions' => 'Hiển thị "Học vấn", "Trạng thái giáo dục" và "Nghề nghiệp" trên trang chỉnh sửa hồ sơ'
     ],
     'google_captcha_site_key' => [
         'name' => 'Khóa trang web Captcha của Google',
@@ -29,12 +29,12 @@ return [
         'instructions' => 'Giá trị từ 0 đến 1. Ngưỡng càng cao thì ReCaptcha càng nghiêm ngặt trong việc cố gắng xác định xem người dùng có phải là bot hay không.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Giáo dục'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Bang giáo dục'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Nghề nghiệp'
     ],
 ];
