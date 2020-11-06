@@ -59,13 +59,13 @@ return [
         'name' => 'Sinh nhật'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Giáo dục'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Bang giáo dục'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Nghề nghiệp'
     ],
     'identification_number' => [
         'name' => 'Mã số'
