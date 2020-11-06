@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Användarfiltergräns',
         'instructions' => 'I adminpanelen'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Visa brödsmulan när du skapar en annons',
+    ],
 ];
