@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'お誕生日'
     ],
+    'education' => [
+        'name' => 'Education'
+    ],
+    'state_of_education' => [
+        'name' => 'State of Education'
+    ],
+    'profession' => [
+        'name' => 'Profession'
+    ],
     'identification_number' => [
         'name' => '識別番号'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => '詳細を編集する',
     'update' => '更新',
     'change_password' => 'パスワードを変更する',
+
+    // Register page
+    'accept_terms_label' => '利用規約に同意します。',
+    'accept_protection_law_label' => '私は個人データの保護に関する法律の条件に同意します。',
+    'accept_privacy_terms_label' => 'プライバシー規約に同意します。',
+    'receive_sms_emails_label' => 'メールとSMSを受け取りたいです。',
 ];
