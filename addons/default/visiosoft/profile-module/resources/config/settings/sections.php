@@ -7,7 +7,14 @@ return [
             'general_setting' => [
                 'title' => 'visiosoft.module.profile::section.general_setting',
                 'fields' => [
-                    'show_my_ads', 'upload_avatar', 'show_tax_office'
+                    'show_my_ads',
+                    'upload_avatar',
+                    'show_tax_office',
+                    'show_checkbox_terms_on_register',
+                    'show_education_profession',
+                    'education',
+                    'state_of_education',
+                    'profession',
                 ],
             ],
             'recaptcha' => [

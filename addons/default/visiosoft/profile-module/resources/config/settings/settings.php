@@ -34,4 +34,21 @@ return [
             "max"       => 1.0,
         ]
     ],
+    'show_checkbox_terms_on_register' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
+    'show_education_profession' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox'
+        ]
+    ],
+    "education" => "anomaly.field_type.tags",
+    "state_of_education" => "anomaly.field_type.tags",
+    "profession" => "anomaly.field_type.tags",
 ];

@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Birthday'
     ],
+    'education' => [
+        'name' => 'Education'
+    ],
+    'state_of_education' => [
+        'name' => 'State of Education'
+    ],
+    'profession' => [
+        'name' => 'Profession'
+    ],
     'identification_number' => [
         'name' => 'Identification Number'
     ],

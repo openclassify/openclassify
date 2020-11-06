@@ -141,5 +141,9 @@
 		.birthday-field .input-group-addon {
 			display: none;
 		}
+
+		.education-field > .tagify, .state_of_education-field > .tagify, .profession-field > .tagify {
+			height: initial;
+		}
 	}
 }
