@@ -59,13 +59,13 @@ return [
         'name' => 'जन्मदिन'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'शिक्षा'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'शिक्षा की स्थिति'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'व्यवसाय'
     ],
     'identification_number' => [
         'name' => 'पहचान संख्या'
