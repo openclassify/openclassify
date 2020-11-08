@@ -19,9 +19,7 @@ OpenClassify is the extensible and most advanced open source classified app buil
 
 ## Translation
 
-Openclassify support 22+ languages. Help translation on crowdin
-
-https://crowdin.com/project/openclassify
+Openclassify support 22+ languages. If you'd like to contribute translations, please check out our [Crowdin](https://crowdin.com/project/openclassify) project.
 
 # Installation
 
