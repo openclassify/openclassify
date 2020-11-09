@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'אימייל עודכן!',
     'update_email_mail_message' => 'הדוא"ל שלך עודכן!',
+
+    // Register
+    'recaptcha_field_is_required' => 'נדרש שדה reCaptcha.',
+    'failed_to_validate_captcha' => 'אימות ה- captcha נכשל.',
 ];

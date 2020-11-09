@@ -39,4 +39,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Ενημερώθηκε το email!',
     'update_email_mail_message' => 'Το email σας ενημερώθηκε!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Απαιτείται πεδίο reCaptcha.',
+    'failed_to_validate_captcha' => 'Αποτυχία επικύρωσης captcha.',
 ];

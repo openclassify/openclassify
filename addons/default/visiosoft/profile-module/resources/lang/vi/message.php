@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Đã cập nhật email!',
     'update_email_mail_message' => 'Email của bạn đã được cập nhật!',
+
+    // Register
+    'recaptcha_field_is_required' => 'trường reCaptcha là bắt buộc.',
+    'failed_to_validate_captcha' => 'Không xác thực được hình ảnh xác thực.',
 ];

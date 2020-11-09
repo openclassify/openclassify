@@ -29,8 +29,7 @@ return [
     'default_country' => [
         'type' => 'anomaly.field_type.relationship',
         "config" => [
-            "related" => \Visiosoft\LocationModule\Country\CountryModel::class,
-            'default_value' => 212,
+            "related" => \Visiosoft\LocationModule\Country\CountryModel::class
         ]
     ],
     'country_for_phone_field' => [

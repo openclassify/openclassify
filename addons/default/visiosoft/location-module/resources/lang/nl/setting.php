@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Standaardland voor register telefoonveld'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sorteerkolom',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorteringstype',
+    ],
 ];

@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Ditëlindja'
     ],
+    'education' => [
+        'name' => 'Arsimi'
+    ],
+    'state_of_education' => [
+        'name' => 'Shteti i Arsimit'
+    ],
+    'profession' => [
+        'name' => 'Profesioni'
+    ],
     'identification_number' => [
         'name' => 'Numrin e identifikimit'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'Ndryshoni Detajet',
     'update' => 'Update',
     'change_password' => 'Ndrysho fjalekalimin',
+
+    // Register page
+    'accept_terms_label' => 'Unë i pranoj kushtet.',
+    'accept_protection_law_label' => 'Unë i pranoj kushtet e Ligjit për Mbrojtjen e të Dhënave Personale.',
+    'accept_privacy_terms_label' => 'Unë i pranoj kushtet e privatësisë.',
+    'receive_sms_emails_label' => 'Dua të marr e-mail dhe sms.',
 ];

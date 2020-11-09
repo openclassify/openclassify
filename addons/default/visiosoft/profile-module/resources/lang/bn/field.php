@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'জন্মদিন'
     ],
+    'education' => [
+        'name' => 'শিক্ষা'
+    ],
+    'state_of_education' => [
+        'name' => 'শিক্ষা রাজ্য'
+    ],
+    'profession' => [
+        'name' => 'পেশা'
+    ],
     'identification_number' => [
         'name' => 'সনাক্তকরণ নম্বর'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'তথ্য সংশোধন কর',
     'update' => 'হালনাগাদ',
     'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
+
+    // Register page
+    'accept_terms_label' => 'আমি শর্তাদি গ্রহণ করি।',
+    'accept_protection_law_label' => 'আমি ব্যক্তিগত তথ্য সুরক্ষা আইনের শর্তাদি স্বীকার করি।',
+    'accept_privacy_terms_label' => 'আমি গোপনীয়তার শর্তাদি গ্রহণ করি।',
+    'receive_sms_emails_label' => 'আমি ইমেইল এবং এসএমএস পেতে চাই',
 ];

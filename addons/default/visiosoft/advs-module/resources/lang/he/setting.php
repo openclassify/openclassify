@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'מגבלת מסנן משתמשים',
         'instructions' => 'בחלונית הניהול'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'הראה פירורי לחם בעת יצירת מודעה',
+    ],
 ];

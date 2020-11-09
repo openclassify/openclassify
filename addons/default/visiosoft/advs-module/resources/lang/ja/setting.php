@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'ユーザーフィルターの制限',
         'instructions' => '管理パネルで'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => '広告を作成するときにブレッドクラムを表示する',
+    ],
 ];

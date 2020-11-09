@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'ایمیل به روز شد!',
     'update_email_mail_message' => 'ایمیل شما به روز شده است!',
+
+    // Register
+    'recaptcha_field_is_required' => 'زمینه reCaptcha لازم است.',
+    'failed_to_validate_captcha' => 'تأیید captcha انجام نشد.',
 ];

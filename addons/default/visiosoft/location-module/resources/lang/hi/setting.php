@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'डिफ़ॉल्ट देश रजिस्टर फोन क्षेत्र के लिए'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'सॉर्टिंग कॉलम',
+    ],
+    'sorting_type' => [
+        'name' => 'सॉर्टिंग प्रकार',
+    ],
 ];

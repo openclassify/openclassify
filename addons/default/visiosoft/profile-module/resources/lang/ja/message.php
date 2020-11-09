@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'メールを更新しました！',
     'update_email_mail_message' => 'メールが更新されました！',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptchaフィールドは必須です。',
+    'failed_to_validate_captcha' => 'キャプチャの検証に失敗しました。',
 ];

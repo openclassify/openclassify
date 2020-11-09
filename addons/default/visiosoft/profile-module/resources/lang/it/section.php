@@ -8,4 +8,5 @@ return [
         'title' => 'Un vestito',
     ],
     'general_setting' => 'impostazioni generali',
+    'recaptcha' => 'reCAPTCHA',
 ];

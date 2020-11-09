@@ -5,6 +5,8 @@
 {% endblock %}
 
 {% block content %}
+    {% set enableCaptcha = setting_value('visiosoft.module.profile::google_captcha_site_key') and setting_value('visiosoft.module.profile::google_captcha_secret_key') %}
+
     <div class="py-4">
         <div class="row justify-content-center bg-light rounded border px-3">
             <div class="col-12 col-md-6 text-left p-3 m-0">
@@ -20,23 +22,29 @@
                         'url':form.options.url
                     })|raw }}
 
+                    {% if enableCaptcha %}
+                        <input type="hidden" name="recaptcha_token" id="recaptcha_token" class="recaptcha-token">
+                    {% endif %}
+
                     {% include 'visiosoft.theme.base::addons/anomaly/users-module/partials/register-form' %}
 
-                    <div class="col-12">
-                        {{ form.fields.accept_terms|raw }}
-                    </div>
+                    {% if setting_value('visiosoft.module.profile::show_checkbox_terms_on_register') %}
+                        <div class="col-12">
+                            {{ form.fields.accept_terms|raw }}
+                        </div>
 
-                    <div class="col-12">
-                        {{ form.fields.accept_protection_law|raw }}
-                    </div>
+                        <div class="col-12">
+                            {{ form.fields.accept_protection_law|raw }}
+                        </div>
 
-                    <div class="col-12">
-                        {{ form.fields.accept_privacy_terms|raw }}
-                    </div>
+                        <div class="col-12">
+                            {{ form.fields.accept_privacy_terms|raw }}
+                        </div>
 
-                    <div class="col-12">
-                        {{ form.fields.receive_sms_emails|raw }}
-                    </div>
+                        <div class="col-12">
+                            {{ form.fields.receive_sms_emails|raw }}
+                        </div>
+                    {% endif %}
 
                     <div class="col-12 row m-0">
                         <div class="col-6 pr-0 pl-1">
@@ -49,7 +57,7 @@
                     {{ form_close() }}
                 </div>
 
-                {{ addBlock('register/corporate-register')|raw }}
+                {{ addBlock('register/corporate-register', {'enableCaptcha': enableCaptcha})|raw }}
             </div>
 
             <div class="col-12 col-md-6 py-3 pr-0 instructions d-none d-md-block">
@@ -76,6 +84,14 @@
         </div>
     </div>
 
+    {% if enableCaptcha %}
+        {% set reCAPTCHASiteKey = setting_value('visiosoft.module.profile::google_captcha_site_key') %}
+        <script>
+            let reCAPTCHASiteKey = "{{ reCAPTCHASiteKey }}"
+        </script>
+        {{ asset_add('scripts.js', asset_download('https://www.google.com/recaptcha/api.js?render=' ~ reCAPTCHASiteKey, 60*60*24)) }}
+        {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/captcha.js") }}
+    {% endif %}
     {{ asset_add("scripts.js", "visiosoft.theme.base::js/register.js") }}
 {% endblock %}
 

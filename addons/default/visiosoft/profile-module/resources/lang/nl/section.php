@@ -8,4 +8,5 @@ return [
         'title' => 'Een jurk',
     ],
     'general_setting' => 'Algemene instellingen',
+    'recaptcha' => 'reCAPTCHA',
 ];

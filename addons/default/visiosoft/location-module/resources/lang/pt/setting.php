@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'País padrão para campo de telefone de registro'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Coluna de classificação',
+    ],
+    'sorting_type' => [
+        'name' => 'Tipo de classificação',
+    ],
 ];

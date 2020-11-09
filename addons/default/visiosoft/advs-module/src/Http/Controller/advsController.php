@@ -20,7 +20,6 @@ use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
-use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
@@ -801,7 +800,13 @@ class AdvsController extends PublicController
             }
 
             // Auto approve
-            if (setting_value('visiosoft.module.advs::auto_approve') && !$allowPendingAdCreation) {
+            $autoApprove = true;
+            if ($allowPendingAdCreation) {
+                $adLogExists = app('Visiosoft\PackagesModule\AdvsLog\Contract\AdvsLogRepositoryInterface')
+                    ->findByAdID($adv->id);
+                $autoApprove = $adLogExists ? false : true;
+            }
+            if (setting_value('visiosoft.module.advs::auto_approve') && $autoApprove) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
                 $adv->update([
                     'status' => 'approved',
@@ -863,8 +868,12 @@ class AdvsController extends PublicController
         if ($packageEnabled
             && \request()->pack_id
             && setting_value('visiosoft.module.packages::allow_pending_ad_creation')) {
-            app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')
-                ->packageAddCart(\request()->pack_id, $new->id);
+            $package = app('Visiosoft\PackagesModule\Package\Contract\PackageRepositoryInterface')
+                ->find(\request()->pack_id);
+            if ($package->price) {
+                app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')
+                    ->packageAddCart(\request()->pack_id, $new->id);
+            }
         }
 
         return redirect('/advs/edit_advs/' . $new->id);
