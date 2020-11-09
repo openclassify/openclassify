@@ -18,18 +18,18 @@
         </div>
         <div class="card-body pb-0">
             {% if app.request.get('cat') != null %}
-                {% set parent = category_detail(app.request.get('cat')) %}
-                {% if parent.parent_category is null %}
-                    {% set parent_url = url('admin/cats') %}
-                {% else %}
-                    {% set parent_url = url('admin/cats?cat='~parent.parent_category_id) %}
-                {% endif %}
                 <ol class="breadcrumb">
                     {% for parnt in category_parents_name(app.request.get('cat'))|reverse %}
-                        <li class="breadcrumb-item"><a><b>{{ parnt }}</b></a></li>
+                        <li class="breadcrumb-item"><b>{{ parnt }}</b></li>
                     {% endfor %}
                 </ol>
                 <div id="buttons">
+                    {% set parent = category_detail(app.request.get('cat')) %}
+                    {% if parent.parent_category is null %}
+                        {% set parent_url = url('admin/cats') %}
+                    {% else %}
+                        {% set parent_url = url('admin/cats?cat='~parent.parent_category_id) %}
+                    {% endif %}
                     <a class="btn btn-md btn-warning " href="{{ parent_url }}">
                         <i class="fa fa-arrow-left"></i> Go To Parent
                     </a>
