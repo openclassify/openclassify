@@ -6,17 +6,6 @@ use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueReposit
 
 class ProductoptionTableBuilder extends TableBuilder
 {
-
-	public function setTableEntries(\Illuminate\Support\Collection $entries)
-	{
-		$option_repository = app(ProductoptionRepositoryInterface::class);
-		$value_repository = app(ProductoptionsValueRepositoryInterface::class);
-
-		$options_id = $option_repository->getWithCategoryId(7)->pluck('id')->all();
-
-		$values = $value_repository->getWithOptionsId($options_id);
-		return parent::setTableEntries($values);
-	}
     /**
      * The table views.
      *
