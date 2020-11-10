@@ -31,7 +31,7 @@
                         {% set parent_url = url('admin/cats?cat='~parent.parent_category_id) %}
                     {% endif %}
                     <a class="btn btn-md btn-warning " href="{{ parent_url }}">
-                        <i class="fa fa-arrow-left"></i> {{ trans('module.field.go_to_parent') }}
+                        <i class="fa fa-arrow-left"></i> {{ trans('module::field.go_to_parent') }}
                     </a>
                 </div>
             {% endif %}
