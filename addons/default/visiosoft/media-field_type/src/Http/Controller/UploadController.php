@@ -111,7 +111,7 @@ class UploadController extends AdminController
 
                 if ($settings_value['watermark_type'] == 'image') {
 
-                    if (!$watermarkimage = $this->files->find($settings_value['watermark_image'])) {
+                    if ($watermarkimage = $this->files->find($settings_value['watermark_image'])) {
                         $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
                         $image->insert($watermark, $settings_value['watermark_position']);
                     }
