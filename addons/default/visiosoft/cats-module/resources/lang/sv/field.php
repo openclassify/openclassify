@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'Vänta. Ta bort underkategorier',
     'category_selection' => 'Val av kategori',
+    'go_to_parent' => 'Go To Parent',
 ];
