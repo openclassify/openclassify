@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'ای میل کی تازہ کاری!',
     'update_email_mail_message' => 'آپ کا ای میل تازہ ترین ہوگیا ہے!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha فیلڈ درکار ہے۔',
+    'failed_to_validate_captcha' => 'کیپچا کی توثیق کرنے میں ناکام۔',
 ];

@@ -38,4 +38,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'E-mail bijgewerkt!',
     'update_email_mail_message' => 'Uw e-mail is bijgewerkt!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha-veld is verplicht.',
+    'failed_to_validate_captcha' => 'Kan captcha niet valideren.',
 ];

@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => '생신'
     ],
+    'education' => [
+        'name' => '교육'
+    ],
+    'state_of_education' => [
+        'name' => '교육 현황'
+    ],
+    'profession' => [
+        'name' => '직업'
+    ],
     'identification_number' => [
         'name' => '식별 번호'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => '세부 정보 편집',
     'update' => '최신 정보',
     'change_password' => '비밀번호 변경',
+
+    // Register page
+    'accept_terms_label' => '약관에 동의합니다.',
+    'accept_protection_law_label' => '개인 데이터 보호에 관한 법률 조항에 동의합니다.',
+    'accept_privacy_terms_label' => '개인 정보 보호 약관에 동의합니다.',
+    'receive_sms_emails_label' => '이메일과 SMS를 받고 싶습니다.',
 ];

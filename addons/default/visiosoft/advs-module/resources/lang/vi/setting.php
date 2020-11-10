@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Giới hạn Bộ lọc Người dùng',
         'instructions' => 'Trong bảng quản trị'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Hiển thị Breadcrumb Khi Tạo Quảng cáo',
+    ],
 ];

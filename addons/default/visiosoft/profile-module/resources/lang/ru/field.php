@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'День рождения'
     ],
+    'education' => [
+        'name' => 'Образование'
+    ],
+    'state_of_education' => [
+        'name' => 'Состояние образования'
+    ],
+    'profession' => [
+        'name' => 'Профессия'
+    ],
     'identification_number' => [
         'name' => 'Идентификационный номер'
     ],
@@ -447,4 +456,10 @@ return [
     'edit_details' => 'Редактировать детали',
     'update' => 'Обновить',
     'change_password' => 'Сменить пароль',
+
+    // Register page
+    'accept_terms_label' => 'Я принимаю условия.',
+    'accept_protection_law_label' => 'Я принимаю условия Закона о защите личных данных.',
+    'accept_privacy_terms_label' => 'Я принимаю условия конфиденциальности.',
+    'receive_sms_emails_label' => 'Я хочу получать электронную почту и смс.',
 ];

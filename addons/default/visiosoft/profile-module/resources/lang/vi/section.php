@@ -8,4 +8,5 @@ return [
         'title' => 'Địa chỉ',
     ],
     'general_setting' => 'Cài đặt chung',
+    'recaptcha' => 'reCAPTCHA',
 ];

@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Doğum günü'
     ],
+    'education' => [
+        'name' => 'Eğitim'
+    ],
+    'state_of_education' => [
+        'name' => 'Eğitim Durumu'
+    ],
+    'profession' => [
+        'name' => 'Meslek'
+    ],
     'identification_number' => [
         'name' => 'Kimlik Numarası'
     ],
@@ -445,4 +454,10 @@ return [
     'edit_details' => 'Detayları düzenle',
     'update' => 'Güncelleme',
     'change_password' => 'Şifre değiştir',
+
+    // Register page
+    'accept_terms_label' => 'Koşulları kabul ediyorum.',
+    'accept_protection_law_label' => 'Kişisel Verilerin Korunması Kanunu hükümlerini kabul ediyorum.',
+    'accept_privacy_terms_label' => 'Gizlilik şartlarını kabul ediyorum.',
+    'receive_sms_emails_label' => 'E-posta ve sms almak istiyorum.',
 ];

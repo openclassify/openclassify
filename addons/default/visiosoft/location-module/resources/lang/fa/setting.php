@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'کشور پیش فرض برای ثبت نام قسمت تلفن'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'مرتب سازی ستون',
+    ],
+    'sorting_type' => [
+        'name' => 'نوع مرتب سازی',
+    ],
 ];

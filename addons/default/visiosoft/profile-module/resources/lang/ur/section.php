@@ -8,4 +8,5 @@ return [
         'title' => 'ایڈریس',
     ],
     'general_setting' => 'عام ترتیبات',
+    'recaptcha' => 'reCAPTCHA',
 ];

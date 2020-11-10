@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'Sinh nhật'
     ],
+    'education' => [
+        'name' => 'Giáo dục'
+    ],
+    'state_of_education' => [
+        'name' => 'Bang giáo dục'
+    ],
+    'profession' => [
+        'name' => 'Nghề nghiệp'
+    ],
     'identification_number' => [
         'name' => 'Mã số'
     ],
@@ -446,4 +455,10 @@ return [
     'edit_details' => 'Chỉnh sửa chi tiết',
     'update' => 'Cập nhật',
     'change_password' => 'Đổi mật khẩu',
+
+    // Register page
+    'accept_terms_label' => 'Tôi chấp nhận các điều khoản.',
+    'accept_protection_law_label' => 'Tôi chấp nhận các điều khoản của Luật Bảo vệ Dữ liệu Cá nhân.',
+    'accept_privacy_terms_label' => 'Tôi chấp nhận các điều khoản về quyền riêng tư.',
+    'receive_sms_emails_label' => 'Tôi muốn nhận e-mail & sms.',
 ];

@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Limiet gebruikersfilter',
         'instructions' => 'In het admin-paneel'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Toon breadcrumb bij het maken van een advertentie',
+    ],
 ];

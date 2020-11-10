@@ -41,4 +41,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Электронная почта обновлена!',
     'update_email_mail_message' => 'Ваш адрес электронной почты обновлен!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Поле reCaptcha обязательно.',
+    'failed_to_validate_captcha' => 'Не удалось проверить капчу.',
 ];

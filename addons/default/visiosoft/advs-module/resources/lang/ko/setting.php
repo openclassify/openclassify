@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => '사용자 필터 제한',
         'instructions' => '관리자 패널에서'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => '광고를 만들 때 이동 경로 표시',
+    ],
 ];

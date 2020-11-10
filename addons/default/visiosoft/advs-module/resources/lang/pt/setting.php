@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Limite de filtro de usuário',
         'instructions' => 'No painel de administração'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Mostrar localização atual ao criar um anúncio',
+    ],
 ];

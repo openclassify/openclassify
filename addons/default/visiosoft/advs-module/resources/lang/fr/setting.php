@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Limite de filtre utilisateur',
         'instructions' => 'Dans le panneau d\'administration'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Afficher le fil d\'Ariane lors de la création d\'une annonce',
+    ],
 ];

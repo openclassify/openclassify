@@ -58,6 +58,15 @@ return [
     'birthday' => [
         'name' => 'عيد ميلاد'
     ],
+    'education' => [
+        'name' => 'التعليم'
+    ],
+    'state_of_education' => [
+        'name' => 'حالة التعليم'
+    ],
+    'profession' => [
+        'name' => 'مهنة'
+    ],
     'identification_number' => [
         'name' => 'رقم الهوية'
     ],
@@ -445,4 +454,10 @@ return [
     'edit_details' => 'عدل التفاصيل',
     'update' => 'تحديث',
     'change_password' => 'غير كلمة السر',
+
+    // Register page
+    'accept_terms_label' => 'أوافق على شروط.',
+    'accept_protection_law_label' => 'أوافق على شروط قانون حماية البيانات الشخصية.',
+    'accept_privacy_terms_label' => 'أقبل شروط الخصوصية.',
+    'receive_sms_emails_label' => 'أرغب في تلقي البريد الإلكتروني والرسائل القصيرة.',
 ];

@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Domyślny kraj dla pola numeru rejestracji'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Kolumna sortowania',
+    ],
+    'sorting_type' => [
+        'name' => 'Typ sortowania',
+    ],
 ];

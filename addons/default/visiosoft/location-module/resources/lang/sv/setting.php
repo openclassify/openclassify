@@ -46,5 +46,11 @@ return [
     ],
 	'country_for_phone_field' => [
 		'name' => 'Standardland för att registrera telefonfält'
-	]
+	],
+    'sorting_column' => [
+        'name' => 'Sorteringskolumn',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorteringstyp',
+    ],
 ];

@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Limita de filtrare a utilizatorilor',
         'instructions' => 'În panoul de administrare'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Afișați pesmet atunci când creați un anunț',
+    ],
 ];

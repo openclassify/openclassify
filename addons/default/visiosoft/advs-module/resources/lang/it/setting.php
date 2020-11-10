@@ -179,5 +179,8 @@ return [
     'user_filter_limit' => [
         'name' => 'Limite filtro utente',
         'instructions' => 'Nel pannello di amministrazione'
-    ]
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Mostra breadcrumb durante la creazione di un annuncio',
+    ],
 ];
