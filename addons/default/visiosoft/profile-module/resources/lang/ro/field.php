@@ -428,7 +428,7 @@ return [
         'name' => 'individual',
     ],
     'corporate' => [
-        'name' => 'corporativ',
+        'name' => 'Corporate',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'Accept termenii Legii privind protecția datelor cu caracter personal.',
     'accept_privacy_terms_label' => 'Accept condițiile de confidențialitate.',
     'receive_sms_emails_label' => 'Vreau să primesc e-mail și sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personal'
+    ],
+
 ];
