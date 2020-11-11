@@ -466,7 +466,7 @@ return [
 
     // Register Type
     'personal' => [
-        'name' => 'Personal'
+        'name' => 'Personale'
     ],
 
 ];
