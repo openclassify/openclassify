@@ -427,7 +427,7 @@ return [
         'name' => 'Bireysel',
     ],
     'corporate' => [
-        'name' => 'Corporate',
+        'name' => 'Kurumsal',
     ],
 
     'details' => [
@@ -463,7 +463,7 @@ return [
 
     // Register Type
     'personal' => [
-        'name' => 'Personal'
+        'name' => 'Kişiye özel'
     ],
 
 ];
