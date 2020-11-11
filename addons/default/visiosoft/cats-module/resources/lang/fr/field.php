@@ -32,5 +32,5 @@ return [
 
     'please_wait' => 'Veuillez patienter. Suppression des sous-catégories',
     'category_selection' => 'Sélection de catégorie',
-    'go_to_parent' => 'Go To Parent',
+    'go_to_parent' => 'Aller au parent',
 ];
