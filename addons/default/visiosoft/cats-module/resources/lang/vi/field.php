@@ -32,5 +32,5 @@ return [
 
     'please_wait' => 'Xin vui lòng chờ. Xóa danh mục phụ',
     'category_selection' => 'Lựa chọn danh mục',
-    'go_to_parent' => 'Go To Parent',
+    'go_to_parent' => 'Đi tới cha mẹ',
 ];
