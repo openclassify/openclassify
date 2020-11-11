@@ -11,8 +11,6 @@
         <div class="row justify-content-center bg-light rounded border px-3 register-area">
             <div class="col-12 col-md-6 text-left p-3 m-0">
 
-                {{ addBlock('register/register-type')|raw }}
-
                 <div class="personal-register">
                     {% set form = form('register2').redirect(request_get('redirect', '/'))
                         .get() %}
@@ -21,6 +19,8 @@
                         'enctype': 'multipart/form-data',
                         'url':form.options.url
                     })|raw }}
+
+                    {{ addBlock('register/register-type',{'form':form})|raw }}
 
                     {% if enableCaptcha %}
                         <input type="hidden" name="recaptcha_token" id="recaptcha_token" class="recaptcha-token">
