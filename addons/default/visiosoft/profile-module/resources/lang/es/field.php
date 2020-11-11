@@ -430,7 +430,7 @@ return [
         'name' => 'individual',
     ],
     'corporate' => [
-        'name' => 'Corporate',
+        'name' => 'Corporativo',
     ],
 
     'details' => [
