@@ -144,7 +144,7 @@
                                             {{ trans('visiosoft.module.advs::field.product_option.name') }}
                                         </label>
                                         <div class="col-sm-10">
-                                            {{ form.fields.product_options_value.input|raw }}
+                                            {{ form.fields.product_options_value.configSet('cat1',adv.cat1).input|raw }}
                                         </div>
                                     </div>
                                 {% endif %}
