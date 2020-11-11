@@ -32,5 +32,5 @@ return [
 
     'please_wait' => 'Παρακαλώ περιμένετε. Διαγραφή υπο-κατηγοριών',
     'category_selection' => 'Επιλογή κατηγορίας',
-    'go_to_parent' => 'Go To Parent',
+    'go_to_parent' => 'Μετάβαση στο γονέα',
 ];
