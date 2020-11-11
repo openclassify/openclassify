@@ -73,6 +73,13 @@ class Register2FormFields
             array_merge(
                 $register,
                 [
+                    "register_type" => [
+                        "type" => "anomaly.field_type.select",
+                        "config" => [
+                            "options" => ['personal' => 'visiosoft.module.profile::field.personal.name', 'corporate' => 'visiosoft.module.profile::field.corporate.name'],
+                            "mode" => "radio",
+                        ],
+                    ],
                     'username' => [
                         'required' => true,
                     ],
