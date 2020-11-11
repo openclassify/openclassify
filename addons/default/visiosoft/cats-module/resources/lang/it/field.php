@@ -32,5 +32,5 @@ return [
 
     'please_wait' => 'Attendere. Eliminazione delle sottocategorie',
     'category_selection' => 'Selezione della categoria',
-    'go_to_parent' => 'Go To Parent',
+    'go_to_parent' => 'Vai al genitore',
 ];
