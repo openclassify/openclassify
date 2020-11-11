@@ -428,7 +428,7 @@ return [
         'name' => 'אינדיבידואל',
     ],
     'corporate' => [
-        'name' => 'תאגידי',
+        'name' => 'Corporate',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'אני מקבל את תנאי החוק להגנת נתונים אישיים.',
     'accept_privacy_terms_label' => 'אני מקבל תנאי פרטיות.',
     'receive_sms_emails_label' => 'אני רוצה לקבל דואר אלקטרוני וסמס.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personal'
+    ],
+
 ];
