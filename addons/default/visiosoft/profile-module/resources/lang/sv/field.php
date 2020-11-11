@@ -428,7 +428,7 @@ return [
         'name' => 'enskild',
     ],
     'corporate' => [
-        'name' => 'Corporate',
+        'name' => 'Företags',
     ],
 
     'details' => [
@@ -464,7 +464,7 @@ return [
 
     // Register Type
     'personal' => [
-        'name' => 'Personal'
+        'name' => 'Personlig'
     ],
 
 ];
