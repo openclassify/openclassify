@@ -430,7 +430,7 @@ return [
         'name' => 'individuel',
     ],
     'corporate' => [
-        'name' => 'Corporate',
+        'name' => 'Entreprise',
     ],
 
     'details' => [
@@ -466,7 +466,7 @@ return [
 
     // Register Type
     'personal' => [
-        'name' => 'Personal'
+        'name' => 'Personnel'
     ],
 
 ];
