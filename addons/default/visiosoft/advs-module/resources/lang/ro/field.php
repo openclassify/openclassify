@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'Opțiuni',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
