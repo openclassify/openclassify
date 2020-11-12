@@ -41,6 +41,7 @@ return [
     'ads' => 'বিজ্ঞাপন',
     'user' => 'ব্যবহারকারী',
     'filter' => 'ছাঁকনি',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'বিকল্পগুলি',
     ],
