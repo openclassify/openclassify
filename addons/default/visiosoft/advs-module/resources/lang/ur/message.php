@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'کوئی اشتہار نہیں ملا!',
     'replicated_success' => 'اشتہار کامیابی کے ساتھ نقل کیا گیا ہے!',
     'ad_doesnt_exist' => "یہ اشتہار موجود نہیں ہے!",
+    'select_location_error' => "Please select a location on the map!",
 ];
