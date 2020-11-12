@@ -41,6 +41,7 @@ return [
     'ads' => '広告',
     'user' => 'ユーザー',
     'filter' => 'フィルタ',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'オプション',
     ],
