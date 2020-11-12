@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'اختیارات',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
