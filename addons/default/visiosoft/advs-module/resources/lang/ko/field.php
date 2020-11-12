@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => '옵션',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',
