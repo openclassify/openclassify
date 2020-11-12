@@ -302,6 +302,10 @@ return [
 
     // New create page
     'options' => 'Opsione',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',
