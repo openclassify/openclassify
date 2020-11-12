@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'هیچ تبلیغی یافت نشد!',
     'replicated_success' => 'آگهی با موفقیت تکثیر شد!',
     'ad_doesnt_exist' => "این آگهی وجود ندارد!",
+    'select_location_error' => "Please select a location on the map!",
 ];
