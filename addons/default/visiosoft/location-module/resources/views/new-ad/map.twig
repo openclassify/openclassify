@@ -27,8 +27,10 @@
                                     class="location-field district-data">{{ form.fields.district|raw }}</li>
                                 <li class="neighborhood-data" data-content="{{ adv['neighborhood'] }}"
                                     class="location-field neighborhood-data">{{ form.fields.neighborhood|raw }}</li>
-                                <li class="village-data" data-content="{{ adv['village'] }}"
-                                    class="location-field">{{ form.fields.village|raw }}</li>
+                                {% if not setting_value('visiosoft.module.advs::hide_village_field') %}
+                                    <li class="village-data" data-content="{{ adv['village'] }}"
+                                        class="location-field">{{ form.fields.village|raw }}</li>
+                                {% endif %}
                             </ul>
                         </div>
                         <div class="col-sm-8">

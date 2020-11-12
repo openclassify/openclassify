@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'No Ad Found!',
     'replicated_success' => 'The ad has been replicated successfully!',
     'ad_doesnt_exist' => "This ad doesn't exist!",
+    'select_location_error' => "Please select a location on the map!",
 ];
