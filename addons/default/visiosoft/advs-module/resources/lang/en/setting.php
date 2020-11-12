@@ -103,6 +103,10 @@ return [
     'hide_village_field' => [
         'name' => 'Hide Village Field',
     ],
+    'hide_configurations' => [
+        'name' => 'Hide the Configurations Button',
+        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+    ],
     'enabled_currencies' => [
         'name' => 'Enabled Currencies',
     ],

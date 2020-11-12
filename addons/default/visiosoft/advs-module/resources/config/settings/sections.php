@@ -37,6 +37,7 @@ return [
                     'hide_standard_price_field',
                     'hide_options_field',
                     'hide_village_field',
+                    'hide_configurations',
                     'show_breadcrumb_when_creating_ad',
                 ],
             ],
