@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'विकल्प',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',
