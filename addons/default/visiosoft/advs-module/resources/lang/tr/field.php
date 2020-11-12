@@ -303,10 +303,10 @@ return [
 
     // New create page
     'options' => 'Opsiyonlar',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => 'Kategori Seçimi',
+    'listing_details' => 'Liste ayrıntıları',
+    'preview' => 'Ön izleme',
+    'congratulations' => 'Tebrikler',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
