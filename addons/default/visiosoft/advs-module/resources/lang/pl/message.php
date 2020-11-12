@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'Nie znaleziono reklamy!',
     'replicated_success' => 'Reklama została pomyślnie zreplikowana!',
     'ad_doesnt_exist' => "Ta reklama nie istnieje!",
+    'select_location_error' => "Please select a location on the map!",
 ];
