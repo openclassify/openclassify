@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'گزینه ها',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',
