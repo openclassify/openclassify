@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'Δεν βρέθηκε διαφήμιση!',
     'replicated_success' => 'Η διαφήμιση έχει αναπαραχθεί με επιτυχία!',
     'ad_doesnt_exist' => "Αυτή η διαφήμιση δεν υπάρχει!",
+    'select_location_error' => "Please select a location on the map!",
 ];
