@@ -301,10 +301,10 @@ return [
 
     // New create page
     'options' => '옵션',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => '카테고리 선택',
+    'listing_details' => '리스팅 세부 사항',
+    'preview' => '시사',
+    'congratulations' => '축하합니다',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',
