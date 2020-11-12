@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'Оголошення не знайдено!',
     'replicated_success' => 'Оголошення успішно відтворено!',
     'ad_doesnt_exist' => "Цього оголошення не існує!",
+    'select_location_error' => "Please select a location on the map!",
 ];
