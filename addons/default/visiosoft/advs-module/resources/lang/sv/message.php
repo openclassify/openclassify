@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'Ingen annons hittades!',
     'replicated_success' => 'Annonsen har replikerats framgångsrikt!',
     'ad_doesnt_exist' => "Den här annonsen finns inte!",
+    'select_location_error' => "Please select a location on the map!",
 ];
