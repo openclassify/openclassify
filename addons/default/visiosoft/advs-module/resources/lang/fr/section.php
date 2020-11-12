@@ -41,6 +41,7 @@ return [
     'ads' => 'Les publicités',
     'user' => 'Utilisateur',
     'filter' => 'Filtre',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'Options',
     ],
