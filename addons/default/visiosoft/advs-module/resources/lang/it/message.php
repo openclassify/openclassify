@@ -25,4 +25,5 @@ return [
     'no_add_found' => 'Nessun annuncio trovato!',
     'replicated_success' => 'L\'annuncio è stato replicato con successo!',
     'ad_doesnt_exist' => "Questo annuncio non esiste!",
+    'select_location_error' => "Please select a location on the map!",
 ];
