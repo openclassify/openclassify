@@ -1,6 +1,8 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
+    {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'preview'} %}
+
     <div class="pt-5">
         <p class="preview-paragraph">
             {{ trans('visiosoft.module.advs::field.preview_text.part_1') }}

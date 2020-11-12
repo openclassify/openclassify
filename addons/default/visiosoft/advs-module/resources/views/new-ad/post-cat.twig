@@ -1,14 +1,19 @@
 {% extends layout('post-cat') %}
 
 {% block styles %}
-    {{ asset_style("visiosoft.module.advs::css/post-category.css") }}
+    <style>
+        {{ asset_inline("visiosoft.module.advs::css/post-category.css") }}
+    </style>
 {% endblock %}
 
 {% block content %}
     <section class="clearfix ad-post-page">
+        {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'post-cat'} %}
+
         {% if setting_value('visiosoft.module.advs::show_breadcrumb_when_creating_ad') %}
             {% include "visiosoft.module.advs::new-ad/partials/breadcrumb" %}
         {% endif %}
+
         <div id="ad-cat-section" class="border rounded shadow-sm bg-light py-4 px-3">
             <h5 class="mb-3">
                 <img src="{{ img('visiosoft.module.advs::images/ascend.svg').url }}" class="step-icon mr-1">
