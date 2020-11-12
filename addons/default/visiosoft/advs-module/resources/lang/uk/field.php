@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'Параметри',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'Безкоштовно',
     'ad_date' => 'Дата оголошення',
