@@ -35,7 +35,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     }
 
     public function searchAdvs(
-        $type, $param = null, $customParameters = null,
+        $type, $param = null, $customParameters = [],
         $limit = null, $category = null, $city = null, $paginate = true
     )
     {
