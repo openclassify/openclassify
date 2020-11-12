@@ -107,6 +107,10 @@ return [
         'name' => 'Hide the Configurations Button',
         'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
     ],
+    'make_map_required' => [
+        'name' => 'Make Map Required',
+        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+    ],
     'enabled_currencies' => [
         'name' => 'Enabled Currencies',
     ],

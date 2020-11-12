@@ -139,6 +139,13 @@ return [
             'mode' => 'checkbox'
         ]
     ],
+    'make_map_required' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
     'enabled_currencies' => [
         'bind' => 'streams::currencies.enabled',
         'env' => 'ADV_ENABLED_CURRENCIES',

@@ -38,6 +38,7 @@ return [
                     'hide_options_field',
                     'hide_village_field',
                     'hide_configurations',
+                    'make_map_required',
                     'show_breadcrumb_when_creating_ad',
                 ],
             ],
