@@ -301,10 +301,10 @@ return [
 
     // New create page
     'options' => 'বিকল্পগুলি',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => 'বিভাগ নির্বাচন',
+    'listing_details' => 'তালিকা বিবরণ',
+    'preview' => 'পূর্বরূপ',
+    'congratulations' => 'অভিনন্দন',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',
