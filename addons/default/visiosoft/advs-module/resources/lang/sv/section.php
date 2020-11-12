@@ -41,6 +41,7 @@ return [
     'ads' => 'annonser',
     'user' => 'Användare',
     'filter' => 'Filtrera',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'alternativ',
     ],
