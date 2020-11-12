@@ -37,8 +37,8 @@ function changePage(page) {
     }
     for (var i = (page - 1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
         listing_table.append(addAdsRow(objJson[i].id, objJson[i].detail_url, objJson[i].cover_photo, objJson[i].name,
-            objJson[i].price + " " + objJson[i].currency,
-            objJson[i].city_name, objJson[i].country_name, objJson[i].cat1_name, objJson[i].cat2_name, objJson[i].status));
+            objJson[i].formatted_price, objJson[i].city_name, objJson[i].country_name, objJson[i].cat1_name,
+            objJson[i].cat2_name, objJson[i].status));
     }
 
     page_span.html(page + "/" + numPages());
@@ -97,7 +97,7 @@ type = type ? type : 'approved';
 getMyAdvs(type);
 
 
-function addAdsRow(id, href, image, name, price, city, country, cat1, cat2, status) {
+function addAdsRow(id, href, image, name, formatted_price, city, country, cat1, cat2, status) {
     return "<div class='col-md-12 mb-2 profile-ads border-bottom border-white'>\n" +
         "<div class='row bg-light'>\n" +
         "<div class='col-md-2 justify-content-center align-self-center border-right border-white'>\n" +
@@ -120,7 +120,7 @@ function addAdsRow(id, href, image, name, price, city, country, cat1, cat2, stat
         "<div class='col-md-3 text-left justify-content-center align-self-center'>\n" +
         "<div class='row'>\n" +
         "<div class='col-md-12'>\n" +
-        "<b>" + price + "</b>\n" +
+        "<b>" + formatted_price + "</b>\n" +
         "</div>\n" +
         "<div class='col-md-12 justify-content-center align-self-center text-truncate'>\n" +
         "<small>" + city + " " + country + "</small>\n" +
