@@ -41,6 +41,7 @@ return [
     'ads' => 'Объявления',
     'user' => 'пользователь',
     'filter' => 'Фильтр',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'Параметры',
     ],
