@@ -41,6 +41,7 @@ return [
     'ads' => 'اشتہارات',
     'user' => 'صارف',
     'filter' => 'فلٹر کریں',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'اختیارات',
     ],
