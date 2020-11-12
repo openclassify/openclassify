@@ -100,6 +100,9 @@ return [
     'hide_options_field' => [
         'name' => 'Hide Options Field',
     ],
+    'hide_village_field' => [
+        'name' => 'Hide Village Field',
+    ],
     'enabled_currencies' => [
         'name' => 'Enabled Currencies',
     ],

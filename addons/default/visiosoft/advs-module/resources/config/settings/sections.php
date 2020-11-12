@@ -28,9 +28,15 @@ return [
                     'estimated_pending_time',
                     'default_published_time',
                     'default_GET',
+                    'listing_page_image',
+                ],
+            ],
+            'create_ad' => [
+                'title' => 'visiosoft.module.advs::section.create_ad',
+                'fields' => [
                     'hide_standard_price_field',
                     'hide_options_field',
-                    'listing_page_image',
+                    'hide_village_field',
                     'show_breadcrumb_when_creating_ad',
                 ],
             ],
