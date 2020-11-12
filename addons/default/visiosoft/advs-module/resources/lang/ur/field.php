@@ -301,10 +301,10 @@ return [
 
     // New create page
     'options' => 'اختیارات',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => 'زمرہ انتخاب',
+    'listing_details' => 'فہرست سازی کی تفصیلات',
+    'preview' => 'پیش نظارہ',
+    'congratulations' => 'مبارک ہو',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
