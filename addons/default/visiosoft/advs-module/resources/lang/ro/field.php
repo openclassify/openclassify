@@ -301,10 +301,10 @@ return [
 
     // New create page
     'options' => 'Opțiuni',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => 'Selectarea categoriei',
+    'listing_details' => 'Detalii listare',
+    'preview' => 'previzualizare',
+    'congratulations' => 'Felicitări',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
