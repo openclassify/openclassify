@@ -302,6 +302,10 @@ return [
 
     // New create page
     'options' => 'Opties',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'Vrij',
     'ad_date' => 'Advertentiedatum',
