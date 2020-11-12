@@ -301,10 +301,10 @@ return [
 
     // New create page
     'options' => 'Параметри',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => 'Вибір категорії',
+    'listing_details' => 'Деталі переліку',
+    'preview' => 'Попередній перегляд',
+    'congratulations' => 'Вітаю',
 
     'free' => 'Безкоштовно',
     'ad_date' => 'Дата оголошення',
