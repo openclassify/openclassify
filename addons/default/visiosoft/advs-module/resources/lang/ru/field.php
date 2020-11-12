@@ -302,10 +302,10 @@ return [
 
     // New create page
     'options' => 'Параметры',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => 'Выбор категории',
+    'listing_details' => 'Детали объявления',
+    'preview' => 'Предварительный просмотр',
+    'congratulations' => 'Поздравления',
 
     'free' => 'Бесплатно',
     'ad_date' => 'Дата объявления',
