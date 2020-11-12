@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'Seçimlər',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Reklam Tarixi',
