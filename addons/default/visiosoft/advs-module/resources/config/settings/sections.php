@@ -23,6 +23,7 @@ return [
                     'latest-limit',
                     'popular_ads_limit',
                     'default_view_type',
+                    'hide_listing_standard_price',
                     'hide_zero_price',
                     'auto_approve',
                     'estimated_pending_time',

@@ -111,6 +111,9 @@ return [
         'name' => 'Make Map Required',
         'instructions' => 'Require the user to place a pin on the map when creating an ad',
     ],
+    'hide_listing_standard_price' => [
+        'name' => 'Hide Listing Standard Price',
+    ],
     'enabled_currencies' => [
         'name' => 'Enabled Currencies',
     ],
