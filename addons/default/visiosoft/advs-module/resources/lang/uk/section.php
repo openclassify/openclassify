@@ -41,6 +41,7 @@ return [
     'ads' => 'Оголошення',
     'user' => 'Користувач',
     'filter' => 'Фільтр',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'Параметри',
     ],
