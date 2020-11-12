@@ -301,10 +301,10 @@ return [
 
     // New create page
     'options' => 'خيارات',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'category_selection' => 'اختيار الفئة',
+    'listing_details' => 'تفاصيل قائمة',
+    'preview' => 'معاينة',
+    'congratulations' => 'تهانينا',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
