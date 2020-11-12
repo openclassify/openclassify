@@ -41,6 +41,7 @@ return [
     'ads' => '광고',
     'user' => '사용자',
     'filter' => '필터',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => '옵션',
     ],
