@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\LocationModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
+use Anomaly\Streams\Platform\Model\Location\LocationCitiesEntryTranslationsModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\LocationModule\District\DistrictModel;
@@ -30,6 +31,10 @@ class AjaxController extends PublicController
      * @var VillageModel
      */
     private $village_model;
+    /**
+     * @var LocationCitiesEntryTranslationsModel
+     */
+    private $citiesEntryTranslationsModel;
 
     /**
      * AjaxController constructor.
@@ -40,7 +45,9 @@ class AjaxController extends PublicController
         CityModel $cityModel,
         DistrictModel $districtModel,
         NeighborhoodModel $neighborhoodModel,
-        VillageModel $villageModel)
+        VillageModel $villageModel,
+        LocationCitiesEntryTranslationsModel $citiesEntryTranslationsModel
+    )
     {
         $this->country_model = $countryModel;
         $this->city_model = $cityModel;
@@ -48,6 +55,7 @@ class AjaxController extends PublicController
         $this->neighborhood_model = $neighborhoodModel;
         $this->village_model = $villageModel;
         parent::__construct();
+        $this->citiesEntryTranslationsModel = $citiesEntryTranslationsModel;
     }
 
     /**
@@ -71,6 +79,21 @@ class AjaxController extends PublicController
         if ($this->request->id) {
             $id = explode(',', $this->request->id);
             $query = $this->city_model->whereIn('parent_country_id', $id);
+
+            if (request()->order_by && $this->city_model->isTranslatedAttribute(request()->order_by)) {
+                return $this->citiesEntryTranslationsModel->newQuery()
+                    ->select('entry_id as id', 'name')
+                    ->whereIn('locale', [
+                        Request()->session()->get('_locale'),
+                        setting_value('streams::default_locale'),
+                        'en'
+                    ])
+                    ->whereIn('entry_id', $query->pluck('id')->all())
+                    ->orderBy(request()->order_by)
+                    ->get();
+            } elseif ($orderBy = request()->order_by) {
+                return $this->queryOrder($query, $orderBy);
+            }
 
             return $this->queryOrder($query);
         }
@@ -133,10 +156,10 @@ class AjaxController extends PublicController
         }
     }
 
-    public function queryOrder($query)
+    public function queryOrder($query, $orderBy = null)
     {
         $sorting_type = setting_value('visiosoft.module.location::sorting_type');
-        $sorting_column = setting_value('visiosoft.module.location::sorting_column');
+        $sorting_column = $orderBy ?: setting_value('visiosoft.module.location::sorting_column');
 
         return $query->orderBy($sorting_column, $sorting_type)->get();
     }
