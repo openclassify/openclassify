@@ -21,11 +21,13 @@
                 <div class="col-md-3 text-left justify-content-center align-self-center">
                     <div class="row">
                         <div class="col-md-12">
-                            <p class="theme-price-old small mb-0"><del>
-                                    {{ adv.standard_price != adv.price and adv.standard_price != '0'
-                                    ? adv.standard_price.currency()
-                                    : '' }}
-                            </del></p>
+                            {% if not setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
+                                <p class="theme-price-old small mb-0"><del>
+                                        {{ adv.standard_price != adv.price and adv.standard_price != '0'
+                                        ? adv.standard_price.currency()
+                                        : '' }}
+                                </del></p>
+                            {% endif %}
                             <b>{{ adv.price != '0'
                                     ? adv.price.currency()
                                     : trans('visiosoft.module.advs::field.free') }}</b>

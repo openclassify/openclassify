@@ -2,6 +2,8 @@
 
 {% block content %}
     <section class="clearfix home-default">
+        {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'new-create'} %}
+
         <div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -203,6 +205,13 @@
         var adv_id = "{{ id }}";
         var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
     </script>
+
+    {% if setting_value('visiosoft.module.advs::make_map_required') %}
+        <script>
+            let selectLocationAlert = "{{ trans('visiosoft.module.advs::message.select_location_error') }}"
+        </script>
+        {{ asset_add("scripts.js", "visiosoft.module.advs::js/required-map.js") }}
+    {% endif %}
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
     {{ asset_add("scripts.js", "streams::js/form/form.js") }}
