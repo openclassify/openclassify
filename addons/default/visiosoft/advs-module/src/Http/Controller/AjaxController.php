@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
+use Anomaly\Streams\Platform\Support\Currency;
 use Anomaly\UsersModule\User\UserModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Illuminate\Http\Request;
@@ -86,6 +87,7 @@ class AjaxController extends PublicController
         foreach ($my_advs as $index => $ad) {
             $my_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $my_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
+            $my_advs[$index]->formatted_price = app(Currency::class)->format($ad->price, $ad->currency);
         }
 
         return response()->json(['success' => true, 'content' => $my_advs, 'title' => $page_title]);
