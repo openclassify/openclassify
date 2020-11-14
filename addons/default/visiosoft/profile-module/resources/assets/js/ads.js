@@ -3,18 +3,19 @@ var records_per_page = ads_per_page;
 var ads_type = "";
 
 var objJson = [];
+let totalAdvs = 0
 
 function prevPage() {
     if (current_page > 1) {
         current_page--;
-        changePage(current_page);
+        getMyAdvs(ads_type)
     }
 }
 
 function nextPage(event) {
     if (current_page < numPages()) {
         current_page++;
-        changePage(current_page);
+        getMyAdvs(ads_type)
     }
 }
 
@@ -30,12 +31,14 @@ function changePage(page) {
 
     listing_table.html("");
 
-    if (objJson.length == 0) {
-        listing_table.html('<div class="alert alert-warning" role="alert">' +
-            no_ads_message +
-            '</div>');
+    if (objJson.length === 0) {
+        listing_table.html(`
+            <div class="alert alert-warning" role="alert">
+                ${no_ads_message}
+            </div>
+        `);
     }
-    for (var i = (page - 1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
+    for (var i = 0; i < objJson.length; i++) {
         listing_table.append(addAdsRow(objJson[i].id, objJson[i].detail_url, objJson[i].cover_photo, objJson[i].name,
             objJson[i].price + " " + objJson[i].currency,
             objJson[i].city_name, objJson[i].country_name, objJson[i].cat1_name, objJson[i].cat2_name, objJson[i].status));
@@ -63,7 +66,7 @@ function changePage(page) {
 }
 
 function numPages() {
-    return Math.ceil(objJson.length / records_per_page);
+    return Math.ceil(totalAdvs / records_per_page);
 }
 
 function crud(params, url, type, callback) {
@@ -78,15 +81,16 @@ function crud(params, url, type, callback) {
 }
 
 function getMyAdvs(type) {
-    crud({'type': type}, '/ajax/getAdvs', 'GET', function (callback) {
+    crud({'type': type, 'paginate': true, 'page': current_page}, '/ajax/getAdvs', 'GET', function (callback) {
         ads_type = type;
-        current_page = 1;
-        objJson = callback.content;
-        changePage(1);
+        objJson = callback.content.data;
+        totalAdvs = callback.content.total
+        changePage(current_page);
     })
 }
 
 $('.profile-advs-tab a').on('click', function () {
+    current_page = 1
     getMyAdvs($(this).attr('data-type'))
 });
 
@@ -128,7 +132,7 @@ function addAdsRow(id, href, image, name, price, city, country, cat1, cat2, stat
 }
 
 function dropdownRow(id, type) {
-    var dropdown = "<div class='dropdown'>\n" +
+    var dropdown = "<div class='dropdown my-ads-dropdown' data-id='" + id + "'>\n" +
         "  <button class='dropdown-toggle btn btn-outline-dark' type='button' id='dropdownMenuButton' data-toggle='dropdown'>\n" +
         "<i class=\"fas fa-ellipsis-v\"></i>" +
         "  </button>\n" +
@@ -160,7 +164,12 @@ function dropdownRow(id, type) {
         extend_ad +
         "</a>\n";
 
-    dropdown += getBlock('profile/dropdown-ad', {'id': id}) + "</div></div>";
+    dropdown += "</div></div>";
+
+    getBlock('profile/dropdown-ad', {'id': id}, function (r) {
+        $(`.my-ads-dropdown[data-id=${id}] .dropdown-menu`).append(r.html)
+    })
+
     return dropdown;
 
 }
