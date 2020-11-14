@@ -62,7 +62,7 @@ class AdvPresenter extends EntryPresenter
     public function isCorporate()
     {
         $user_id = $this->getObject()->created_by;
-        if ($user_id->register_type != null) {
+        if ($user_id && $user_id->register_type != null) {
             return $user_id->register_type;
         } else {
             return 1;
