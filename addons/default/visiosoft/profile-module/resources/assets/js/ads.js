@@ -44,6 +44,8 @@ function changePage(page) {
             objJson[i].cat2_name, objJson[i].status));
     }
 
+    addDropdownBlock()
+
     page_span.html(page + "/" + numPages());
 
     if (numPages() === 1) {
@@ -166,10 +168,15 @@ function dropdownRow(id, type) {
 
     dropdown += "</div></div>";
 
-    getBlock('profile/dropdown-ad', {'id': id}, function (r) {
-        $(`.my-ads-dropdown[data-id=${id}] .dropdown-menu`).append(r.html)
-    })
-
     return dropdown;
+}
 
+const dropdownBlock = getBlock('profile/dropdown-ad', {'id': ':id'})
+function addDropdownBlock () {
+    const dropdowns = $('.my-ads-dropdown')
+    for (let i = 0; i < dropdowns.length; i++) {
+        console.log()
+        const currentDropdown = $(dropdowns[i])
+        $('.dropdown-menu', currentDropdown).append(dropdownBlock.replace(':id', currentDropdown.data('id')))
+    }
 }
