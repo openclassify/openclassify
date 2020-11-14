@@ -436,9 +436,10 @@ class AdvsController extends PublicController
 
         $user = null;
         if (\request()->user) {
-            $user = $this->userRepository->find(\request()->user);
-            $showTitle = false;
-            $metaTitle = $user->name() . ' ' . trans('visiosoft.module.advs::field.ads');
+            if ($user = $this->userRepository->find(\request()->user)) {
+                $showTitle = false;
+                $metaTitle = $user->name() . ' ' . trans('visiosoft.module.advs::field.ads');
+            }
         }
 
         $this->template->set('showTitle', $showTitle);
