@@ -6,5 +6,5 @@ interface CityRepositoryInterface extends EntryRepositoryInterface
 {
     public function findById($id);
 
-    public function getByEntryIDsAndOrderByTransCol($entryIDs, $orderBy);
+    public function getByEntryIDsAndOrderByTransCol($entryIDs, $orderBy, $direction = 'asc');
 }
