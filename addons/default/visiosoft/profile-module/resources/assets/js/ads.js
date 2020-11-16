@@ -175,7 +175,6 @@ const dropdownBlock = getBlock('profile/dropdown-ad', {'id': ':id'})
 function addDropdownBlock () {
     const dropdowns = $('.my-ads-dropdown')
     for (let i = 0; i < dropdowns.length; i++) {
-        console.log()
         const currentDropdown = $(dropdowns[i])
         $('.dropdown-menu', currentDropdown).append(dropdownBlock.replace(':id', currentDropdown.data('id')))
     }
