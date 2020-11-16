@@ -41,7 +41,7 @@ return [
     'ads' => 'Njoftimi',
     'user' => 'Përdorues',
     'filter' => 'filtër',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'Krijo shpallje',
     'options' => [
         'title' => 'Opsione',
     ],
