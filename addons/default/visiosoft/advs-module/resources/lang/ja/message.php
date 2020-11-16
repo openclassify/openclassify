@@ -25,5 +25,5 @@ return [
     'no_add_found' => '広告が見つかりません！',
     'replicated_success' => '広告が正常に複製されました！',
     'ad_doesnt_exist' => "この広告は存在しません！",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "地図上で場所を選択してください！",
 ];
