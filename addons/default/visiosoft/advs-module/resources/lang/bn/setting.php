@@ -101,18 +101,18 @@ return [
         'name' => 'বিকল্প ক্ষেত্র লুকান',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'ভিলেজ ফিল্ড লুকান',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'কনফিগারেশন বাটনটি লুকান',
+        'instructions' => 'বিজ্ঞাপন পূর্বরূপ পৃষ্ঠায় কনফিগারেশন বাটনটি লুকান',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'প্রয়োজনীয় মানচিত্র তৈরি করুন',
+        'instructions' => 'কোনও বিজ্ঞাপন তৈরি করার সময় ব্যবহারকারীকে মানচিত্রে একটি পিন রাখতে হবে',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'তালিকাবদ্ধকরণ স্ট্যান্ডার্ড দাম লুকান',
     ],
     'enabled_currencies' => [
         'name' => 'সক্ষম মুদ্রা',
