@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'Dans quel dossier souhaitez-vous télécharger?',
-    'upload' => 'Ajouter des images | Téléchargez des images | Joindre une photo',
+    'upload' => 'Add images | Upload images | Attach a photo',
     'choose_files' => 'Quels fichiers aimeriez-vous utiliser?',
     'no_files_selected' => 'Aucun fichier sélectionné.',
     'no_uploads' => 'Aucun fichier téléchargé.',
