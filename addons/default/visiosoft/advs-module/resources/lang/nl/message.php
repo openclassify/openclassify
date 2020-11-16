@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'Geen advertentie gevonden!',
     'replicated_success' => 'De advertentie is met succes gerepliceerd!',
     'ad_doesnt_exist' => "Deze advertentie bestaat niet!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "Selecteer een locatie op de kaart!",
 ];
