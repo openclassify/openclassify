@@ -101,18 +101,18 @@ return [
         'name' => 'Nascondi campo opzioni',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Nascondi campo villaggio',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Nascondi il pulsante Configurazioni',
+        'instructions' => 'Nascondi il pulsante Configurazioni nella pagina Anteprima annunci',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Rendi la mappa richiesta',
+        'instructions' => 'Richiedi all\'utente di posizionare un segnaposto sulla mappa durante la creazione di un annuncio',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Nascondi elenco prezzo standard',
     ],
     'enabled_currencies' => [
         'name' => 'Valute abilitate',
