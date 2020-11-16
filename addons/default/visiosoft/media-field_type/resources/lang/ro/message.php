@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'În ce folder doriți să încărcați?',
-    'upload' => 'Adăugați İmages | Încărcați imagini | Atașați o fotografie',
+    'upload' => 'Add images | Upload images | Attach a photo',
     'choose_files' => 'Ce fișiere doriți să utilizați?',
     'no_files_selected' => 'Nu au fost selectate fișiere.',
     'no_uploads' => 'Nu s-au încărcat fișiere.',
