@@ -101,18 +101,18 @@ return [
         'name' => 'Сховати поле параметрів',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Сховати село поле',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Сховати кнопку конфігурацій',
+        'instructions' => 'Сховати кнопку конфігурацій на сторінці попереднього перегляду оголошення',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Зробіть карту обов’язковою',
+        'instructions' => 'Потрібно, щоб користувач розміщував шпильку на карті під час створення оголошення',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Сховати лістинг стандартної ціни',
     ],
     'enabled_currencies' => [
         'name' => 'Увімкнено валюти',
