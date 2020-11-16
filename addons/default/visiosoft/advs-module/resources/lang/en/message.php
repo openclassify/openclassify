@@ -26,4 +26,5 @@ return [
     'replicated_success' => 'The ad has been replicated successfully!',
     'ad_doesnt_exist' => "This ad doesn't exist!",
     'select_location_error' => "Please select a location on the map!",
+    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
 ];
