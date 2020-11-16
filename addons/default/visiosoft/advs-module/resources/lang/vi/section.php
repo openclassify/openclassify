@@ -41,7 +41,7 @@ return [
     'ads' => 'Quảng cáo',
     'user' => 'Người dùng',
     'filter' => 'Bộ lọc',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'Tạo quảng cáo',
     'options' => [
         'title' => 'Tùy chọn',
     ],
