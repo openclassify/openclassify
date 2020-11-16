@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'کدام پوشه را می خواهید بارگذاری کنید؟',
-    'upload' => 'agesmages اضافه کنید | بارگیری agesmages | پیوست یک عکس',
+    'upload' => 'Add images | Upload images | Attach a photo',
     'choose_files' => 'از کدام پرونده ها می خواهید استفاده کنید؟',
     'no_files_selected' => 'هیچ پرونده ای انتخاب نشده است.',
     'no_uploads' => 'هیچ پرونده بارگذاری نشده است.',
