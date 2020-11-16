@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'Объявление не найдено!',
     'replicated_success' => 'Объявление успешно тиражировано!',
     'ad_doesnt_exist' => "Такого объявления не существует!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "Пожалуйста, выберите место на карте!",
 ];
