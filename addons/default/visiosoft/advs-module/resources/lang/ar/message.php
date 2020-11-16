@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'لا يوجد إعلان!',
     'replicated_success' => 'تم نسخ الإعلان بنجاح!',
     'ad_doesnt_exist' => "هذا الإعلان غير موجود!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "الرجاء تحديد موقع على الخريطة!",
 ];
