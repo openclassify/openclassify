@@ -101,18 +101,18 @@ return [
         'name' => 'إخفاء حقل الخيارات',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'إخفاء حقل القرية',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'إخفاء زر التكوينات',
+        'instructions' => 'إخفاء زر التهيئة في صفحة معاينة الإعلان',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'اجعل الخريطة مطلوبة',
+        'instructions' => 'مطالبة المستخدم بوضع دبوس على الخريطة عند إنشاء إعلان',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'إخفاء قائمة الأسعار القياسية',
     ],
     'enabled_currencies' => [
         'name' => 'العملات الممكّنة',
