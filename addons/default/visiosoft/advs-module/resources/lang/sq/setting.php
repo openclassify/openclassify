@@ -101,18 +101,18 @@ return [
         'name' => 'Fshih fushën e opsioneve',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Fshih fushën e fshatit',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Fshih butonin e konfigurimeve',
+        'instructions' => 'Fshihni butonin e konfigurimeve në faqen e pamjes paraprake',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Kërkoni hartën',
+        'instructions' => 'Kërkoni nga përdoruesi të vendosë një majë në hartë kur krijon një reklamë',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Fshih listimin Çmimi standard',
     ],
     'enabled_currencies' => [
         'name' => 'Monedhat e aktivizuara',
