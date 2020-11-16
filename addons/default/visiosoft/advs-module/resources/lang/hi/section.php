@@ -41,7 +41,7 @@ return [
     'ads' => 'विज्ञापन',
     'user' => 'उपयोगकर्ता',
     'filter' => 'फ़िल्टर',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'विज्ञापन बनाना',
     'options' => [
         'title' => 'विकल्प',
     ],
