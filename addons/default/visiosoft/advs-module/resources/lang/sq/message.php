@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'Asnjë shpallje nuk u gjet!',
     'replicated_success' => 'Shpallja është përsëritur me sukses!',
     'ad_doesnt_exist' => "Kjo shpallje nuk ekziston!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "Ju lutemi zgjidhni një vendndodhje në hartë!",
 ];
