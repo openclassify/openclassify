@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'Naar welke map wil je uploaden?',
-    'upload' => 'İmages | İmages uploaden | Voeg een foto toe',
+    'upload' => 'Add images | Upload images | Attach a photo',
     'choose_files' => 'Welke bestanden wil je gebruiken?',
     'no_files_selected' => 'Geen bestanden geselecteerd.',
     'no_uploads' => 'Geen bestanden geüpload.',
