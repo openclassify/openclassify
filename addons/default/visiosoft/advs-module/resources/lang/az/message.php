@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'Elan tapılmadı!',
     'replicated_success' => 'Reklam uğurla təkrarlandı!',
     'ad_doesnt_exist' => "Bu reklam mövcud deyil!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "Xahiş edirəm xəritədə bir yer seçin!",
 ];
