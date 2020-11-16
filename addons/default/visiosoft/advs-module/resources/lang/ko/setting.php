@@ -101,18 +101,18 @@ return [
         'name' => '옵션 필드 숨기기',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => '마을 필드 숨기기',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => '구성 버튼 숨기기',
+        'instructions' => '광고 미리보기 페이지에서 구성 버튼 숨기기',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => '지도 필수',
+        'instructions' => '사용자가 광고를 만들 때지도에 핀을 배치하도록 요구',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => '리스팅 표준 가격 숨기기',
     ],
     'enabled_currencies' => [
         'name' => '활성화 된 통화',
