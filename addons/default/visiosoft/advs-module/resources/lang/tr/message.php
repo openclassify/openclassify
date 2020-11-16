@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'İlan Bulunamadı!',
     'replicated_success' => 'İlan başarıyla kopyalandı!',
     'ad_doesnt_exist' => "Bu İlan mevcut değil!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "Lütfen haritada bir yer seçin!",
 ];
