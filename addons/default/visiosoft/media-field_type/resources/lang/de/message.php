@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'In welchen Ordner möchten Sie hochladen?',
-    'upload' => 'Klicken Sie oder ziehen Sie Dateien hierher um Sie hochzuladen.',
+    'upload' => 'Add images | Upload images | Attach a photo',
     'choose_files' => 'Welche Dateien möchten Sie benutzen?',
     'no_files_selected' => 'Keine Dateien ausgewählt.',
     'no_uploads' => 'Keine Dateien hochgeladen.',
