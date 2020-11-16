@@ -41,7 +41,7 @@ return [
     'ads' => 'İlan',
     'user' => 'Kullanıcı',
     'filter' => 'filtre',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'Reklam oluştur',
     'options' => [
         'title' => 'Seçenekler',
     ],
