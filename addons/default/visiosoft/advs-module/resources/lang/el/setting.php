@@ -101,18 +101,18 @@ return [
         'name' => 'Απόκρυψη πεδίου επιλογών',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Απόκρυψη χωριού',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Απόκρυψη του κουμπιού διαμόρφωσης',
+        'instructions' => 'Απόκρυψη του κουμπιού διαμόρφωσης στη σελίδα προεπισκόπησης διαφημίσεων',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Απαιτείται χάρτης',
+        'instructions' => 'Απαιτήστε από το χρήστη να τοποθετήσει μια καρφίτσα στον χάρτη κατά τη δημιουργία μιας διαφήμισης',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Απόκρυψη βασικής τιμής καταχώρησης',
     ],
     'enabled_currencies' => [
         'name' => 'Ενεργοποιημένα νομίσματα',
