@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'Nu a fost găsit niciun anunț!',
     'replicated_success' => 'Anunțul a fost reprodus cu succes!',
     'ad_doesnt_exist' => "Acest anunț nu există!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "Vă rugăm să selectați o locație pe hartă!",
 ];
