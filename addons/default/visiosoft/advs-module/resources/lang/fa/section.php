@@ -41,7 +41,7 @@ return [
     'ads' => 'اعلانات',
     'user' => 'یوزر',
     'filter' => 'فیلتر',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'تبلیغ ایجاد کنید',
     'options' => [
         'title' => 'گزینه ها',
     ],
