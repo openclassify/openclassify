@@ -101,18 +101,18 @@ return [
         'name' => 'Ocultar campo de opções',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Esconder o Campo da Aldeia',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Ocultar o botão de configurações',
+        'instructions' => 'Oculte o botão de configurações na página de visualização do anúncio',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Tornar mapa obrigatório',
+        'instructions' => 'Exigir que o usuário coloque um alfinete no mapa ao criar um anúncio',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Ocultar preço padrão de listagem',
     ],
     'enabled_currencies' => [
         'name' => 'Moedas ativadas',
