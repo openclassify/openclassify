@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'В какую папку вы хотите загрузить файлы?',
-    'upload' => 'Добавить изображения | Загрузить изображения | Прикрепить фото',
+    'upload' => 'Add images | Upload images | Attach a photo',
     'choose_files' => 'Какие файлы вы хотели бы использовать?',
     'no_files_selected' => 'Файлы не выбраны.',
     'no_uploads' => 'Файлы не загружены.',
