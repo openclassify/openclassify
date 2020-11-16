@@ -101,18 +101,18 @@ return [
         'name' => 'Ascundeți câmpul Opțiuni',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Ascunde câmpul satului',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Ascundeți butonul Configurări',
+        'instructions' => 'Ascundeți butonul Configurări din pagina de previzualizare a anunțurilor',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Faceți harta necesară',
+        'instructions' => 'Solicitați utilizatorului să plaseze un pin pe hartă atunci când creați un anunț',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Ascundeți prețul standard al listei',
     ],
     'enabled_currencies' => [
         'name' => 'Valute activate',
