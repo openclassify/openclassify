@@ -101,18 +101,18 @@ return [
         'name' => 'הסתר שדה אפשרויות',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'הסתר את שדה הכפר',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'הסתר את לחצן התצורות',
+        'instructions' => 'הסתר את לחצן התצורות בדף תצוגה מקדימה של מודעות',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'הפוך את המפה לחובה',
+        'instructions' => 'דרוש מהמשתמש להציב סיכה על המפה בעת יצירת מודעה',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'הסתר מחיר סטנדרטי של רישום',
     ],
     'enabled_currencies' => [
         'name' => 'מטבעות מופעלים',
