@@ -101,18 +101,18 @@ return [
         'name' => 'विकल्प फ़ील्ड छिपाएँ',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'गाँव का मैदान छिपाओ',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'कॉन्फ़िगरेशन बटन छिपाएं',
+        'instructions' => 'विज्ञापन पूर्वावलोकन पृष्ठ में कॉन्फ़िगरेशन बटन छिपाएं',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'नक्शा आवश्यक करें',
+        'instructions' => 'विज्ञापन बनाते समय उपयोगकर्ता को मानचित्र पर एक पिन लगाने की आवश्यकता होती है',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'सूचीकरण मानक मूल्य छिपाएँ',
     ],
     'enabled_currencies' => [
         'name' => 'सक्षम मुद्राएँ',
