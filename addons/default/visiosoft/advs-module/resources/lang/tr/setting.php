@@ -101,18 +101,18 @@ return [
         'name' => 'Seçenekler Alanını Gizle',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Köy Alanını Gizle',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Yapılandırmalar Düğmesini Gizle',
+        'instructions' => 'Reklam Önizleme Sayfasında Yapılandırmalar Düğmesini Gizle',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Haritayı Gerekli Yap',
+        'instructions' => 'Bir reklam oluştururken kullanıcının haritaya raptiye koymasını zorunlu kılın',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Liste Standart Fiyatını Gizle',
     ],
     'enabled_currencies' => [
         'name' => 'Etkin Para Birimleri',
