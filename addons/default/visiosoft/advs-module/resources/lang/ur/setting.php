@@ -101,18 +101,18 @@ return [
         'name' => 'اختیارات کا میدان چھپائیں',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'گاؤں کا میدان چھپائیں',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'کنفیگریشن بٹن کو چھپائیں',
+        'instructions' => 'اشتہار پیش نظارہ صفحہ میں کنفیگریشن بٹن کو چھپائیں',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'نقشہ ضروری بنائیں',
+        'instructions' => 'صارف سے اشتہار تیار کرتے وقت نقشہ پر ایک پن رکھنے کی ضرورت ہوتی ہے',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'لسٹنگ معیاری قیمت چھپائیں',
     ],
     'enabled_currencies' => [
         'name' => 'فعال کرنسیوں',
