@@ -101,18 +101,18 @@ return [
         'name' => 'Masquer le champ d\'options',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Masquer le champ du village',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Masquer le bouton Configurations',
+        'instructions' => 'Masquer le bouton Configurations dans la page d\'aperçu de l\'annonce',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Rendre la carte obligatoire',
+        'instructions' => 'Obliger l\'utilisateur à placer une épingle sur la carte lors de la création d\'une annonce',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Masquer le prix standard de l\'annonce',
     ],
     'enabled_currencies' => [
         'name' => 'Devises activées',
