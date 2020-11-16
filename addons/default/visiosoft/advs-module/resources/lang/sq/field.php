@@ -302,6 +302,10 @@ return [
 
     // New create page
     'options' => 'Opsione',
+    'category_selection' => 'Përzgjedhja e kategorisë',
+    'listing_details' => 'Detajet e Listimit',
+    'preview' => 'Paraqitje',
+    'congratulations' => 'Urime',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',

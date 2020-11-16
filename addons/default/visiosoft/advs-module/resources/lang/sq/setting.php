@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Fshih fushën e opsioneve',
     ],
+    'hide_village_field' => [
+        'name' => 'Fshih fushën e fshatit',
+    ],
+    'hide_configurations' => [
+        'name' => 'Fshih butonin e konfigurimeve',
+        'instructions' => 'Fshihni butonin e konfigurimeve në faqen e pamjes paraprake',
+    ],
+    'make_map_required' => [
+        'name' => 'Kërkoni hartën',
+        'instructions' => 'Kërkoni nga përdoruesi të vendosë një majë në hartë kur krijon një reklamë',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Fshih listimin Çmimi standard',
+    ],
     'enabled_currencies' => [
         'name' => 'Monedhat e aktivizuara',
     ],

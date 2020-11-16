@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Ukryj pole opcji',
     ],
+    'hide_village_field' => [
+        'name' => 'Ukryj pole wioski',
+    ],
+    'hide_configurations' => [
+        'name' => 'Ukryj przycisk Konfiguracje',
+        'instructions' => 'Ukryj przycisk Konfiguracje na stronie podglądu reklamy',
+    ],
+    'make_map_required' => [
+        'name' => 'Wymagana mapa',
+        'instructions' => 'Wymagaj od użytkownika umieszczenia pinezki na mapie podczas tworzenia reklamy',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Ukryj standardową cenę oferty',
+    ],
     'enabled_currencies' => [
         'name' => 'Włączone waluty',
     ],

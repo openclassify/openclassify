@@ -428,7 +428,7 @@ return [
         'name' => 'індивідуальний',
     ],
     'corporate' => [
-        'name' => 'корпоративний',
+        'name' => 'Корпоративні',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'Я приймаю умови Закону про захист персональних даних.',
     'accept_privacy_terms_label' => 'Я приймаю умови конфіденційності.',
     'receive_sms_emails_label' => 'Я хочу отримувати електронну пошту та sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Особистий'
+    ],
+
 ];

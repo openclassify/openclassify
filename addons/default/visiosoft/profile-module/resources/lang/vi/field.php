@@ -428,7 +428,7 @@ return [
         'name' => 'cá nhân',
     ],
     'corporate' => [
-        'name' => 'công ty',
+        'name' => 'Công ty',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'Tôi chấp nhận các điều khoản của Luật Bảo vệ Dữ liệu Cá nhân.',
     'accept_privacy_terms_label' => 'Tôi chấp nhận các điều khoản về quyền riêng tư.',
     'receive_sms_emails_label' => 'Tôi muốn nhận e-mail & sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Cá nhân'
+    ],
+
 ];

@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Seçenekler Alanını Gizle',
     ],
+    'hide_village_field' => [
+        'name' => 'Köy Alanını Gizle',
+    ],
+    'hide_configurations' => [
+        'name' => 'Yapılandırmalar Düğmesini Gizle',
+        'instructions' => 'Reklam Önizleme Sayfasında Yapılandırmalar Düğmesini Gizle',
+    ],
+    'make_map_required' => [
+        'name' => 'Haritayı Gerekli Yap',
+        'instructions' => 'Bir reklam oluştururken kullanıcının haritaya raptiye koymasını zorunlu kılın',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Liste Standart Fiyatını Gizle',
+    ],
     'enabled_currencies' => [
         'name' => 'Etkin Para Birimleri',
     ],

@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'براہ کرم انتظار کریں۔ ذیلی زمرے ختم کرنا',
     'category_selection' => 'زمرہ انتخاب',
+    'go_to_parent' => 'پیرنٹ پر جائیں',
 ];

@@ -428,7 +428,7 @@ return [
         'name' => 'indywidualny',
     ],
     'corporate' => [
-        'name' => 'zbiorowy',
+        'name' => 'Zbiorowy',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'Akceptuję warunki ustawy o ochronie danych osobowych.',
     'accept_privacy_terms_label' => 'Akceptuję warunki prywatności.',
     'receive_sms_emails_label' => 'Chcę otrzymywać e-maile i smsy.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Osobisty'
+    ],
+
 ];

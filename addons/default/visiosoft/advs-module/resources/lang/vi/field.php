@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'Tùy chọn',
+    'category_selection' => 'Lựa chọn danh mục',
+    'listing_details' => 'Chi tiết danh sách',
+    'preview' => 'Xem trước',
+    'congratulations' => 'Xin chúc mừng',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',

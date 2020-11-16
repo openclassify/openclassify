@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'گزینه ها',
+    'category_selection' => 'انتخاب دسته',
+    'listing_details' => 'جزئیات لیست',
+    'preview' => 'پیش نمایش',
+    'congratulations' => 'تبریک می گویم',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',

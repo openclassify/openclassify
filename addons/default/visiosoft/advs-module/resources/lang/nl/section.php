@@ -41,6 +41,7 @@ return [
     'ads' => 'Advertenties',
     'user' => 'Gebruiker',
     'filter' => 'Filter',
+    'create_ad' => 'Maak advertentie',
     'options' => [
         'title' => 'Opties',
     ],

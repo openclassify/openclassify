@@ -41,6 +41,7 @@ return [
     'ads' => 'Elanlar',
     'user' => 'İstifadəçi',
     'filter' => 'Süzgəc',
+    'create_ad' => 'Reklam yarat',
     'options' => [
         'title' => 'Seçimlər',
     ],

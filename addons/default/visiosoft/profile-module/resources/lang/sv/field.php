@@ -428,7 +428,7 @@ return [
         'name' => 'enskild',
     ],
     'corporate' => [
-        'name' => 'företags-',
+        'name' => 'Företags',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'Jag accepterar villkoren i lagen om skydd av personuppgifter.',
     'accept_privacy_terms_label' => 'Jag accepterar sekretessvillkor.',
     'receive_sms_emails_label' => 'Jag vill få e-post och sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personlig'
+    ],
+
 ];

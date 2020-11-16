@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'میں ذاتی ڈیٹا کے تحفظ سے متعلق قانون کی شرائط کو قبول کرتا ہوں۔',
     'accept_privacy_terms_label' => 'میں رازداری کی شرائط قبول کرتا ہوں۔',
     'receive_sms_emails_label' => 'میں ای میل اور ایس ایم ایس وصول کرنا چاہتا ہوں۔',
+
+    // Register Type
+    'personal' => [
+        'name' => 'ذاتی'
+    ],
+
 ];

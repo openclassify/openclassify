@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'alternativ',
+    'category_selection' => 'Kategorivalg',
+    'listing_details' => 'Listningsinformation',
+    'preview' => 'Förhandsvisning',
+    'congratulations' => 'Grattis',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',

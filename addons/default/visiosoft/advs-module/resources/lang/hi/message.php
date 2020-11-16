@@ -25,4 +25,6 @@ return [
     'no_add_found' => 'कोई विज्ञापन नहीं मिला!',
     'replicated_success' => 'विज्ञापन को सफलतापूर्वक दोहराया गया है!',
     'ad_doesnt_exist' => "यह विज्ञापन मौजूद नहीं है!",
+    'select_location_error' => "कृपया मानचित्र पर एक स्थान चुनें!",
+    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
 ];

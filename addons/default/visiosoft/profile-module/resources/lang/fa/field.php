@@ -460,4 +460,10 @@ return [
     'accept_protection_law_label' => 'من شرایط قانون حمایت از داده های شخصی را می پذیرم.',
     'accept_privacy_terms_label' => 'من شرایط حریم خصوصی را می پذیرم.',
     'receive_sms_emails_label' => 'من می خواهم ایمیل و پیام کوتاه دریافت کنم.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'شخصی'
+    ],
+
 ];

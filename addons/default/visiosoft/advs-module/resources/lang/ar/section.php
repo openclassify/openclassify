@@ -41,6 +41,7 @@ return [
     'ads' => 'إعلانات',
     'user' => 'العضو',
     'filter' => 'منقي',
+    'create_ad' => 'أعلن',
     'options' => [
         'title' => 'خيارات',
     ],

@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'विकल्प फ़ील्ड छिपाएँ',
     ],
+    'hide_village_field' => [
+        'name' => 'गाँव का मैदान छिपाओ',
+    ],
+    'hide_configurations' => [
+        'name' => 'कॉन्फ़िगरेशन बटन छिपाएं',
+        'instructions' => 'विज्ञापन पूर्वावलोकन पृष्ठ में कॉन्फ़िगरेशन बटन छिपाएं',
+    ],
+    'make_map_required' => [
+        'name' => 'नक्शा आवश्यक करें',
+        'instructions' => 'विज्ञापन बनाते समय उपयोगकर्ता को मानचित्र पर एक पिन लगाने की आवश्यकता होती है',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'सूचीकरण मानक मूल्य छिपाएँ',
+    ],
     'enabled_currencies' => [
         'name' => 'सक्षम मुद्राएँ',
     ],

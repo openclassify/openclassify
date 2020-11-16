@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'اختیارات کا میدان چھپائیں',
     ],
+    'hide_village_field' => [
+        'name' => 'گاؤں کا میدان چھپائیں',
+    ],
+    'hide_configurations' => [
+        'name' => 'کنفیگریشن بٹن کو چھپائیں',
+        'instructions' => 'اشتہار پیش نظارہ صفحہ میں کنفیگریشن بٹن کو چھپائیں',
+    ],
+    'make_map_required' => [
+        'name' => 'نقشہ ضروری بنائیں',
+        'instructions' => 'صارف سے اشتہار تیار کرتے وقت نقشہ پر ایک پن رکھنے کی ضرورت ہوتی ہے',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'لسٹنگ معیاری قیمت چھپائیں',
+    ],
     'enabled_currencies' => [
         'name' => 'فعال کرنسیوں',
     ],

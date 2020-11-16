@@ -302,6 +302,10 @@ return [
 
     // New create page
     'options' => 'Opções',
+    'category_selection' => 'Seleção de Categoria',
+    'listing_details' => 'Detalhes da lista',
+    'preview' => 'Antevisão',
+    'congratulations' => 'Parabéns',
 
     'free' => 'Livre',
     'ad_date' => 'Data do Anúncio',

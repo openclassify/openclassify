@@ -25,4 +25,6 @@ return [
     'no_add_found' => 'কোনও বিজ্ঞাপন পাওয়া যায়নি!',
     'replicated_success' => 'বিজ্ঞাপনটি সফলভাবে প্রতিলিপি করা হয়েছে!',
     'ad_doesnt_exist' => "এই বিজ্ঞাপনের অস্তিত্ব নেই!",
+    'select_location_error' => "দয়া করে মানচিত্রে একটি অবস্থান নির্বাচন করুন!",
+    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
 ];

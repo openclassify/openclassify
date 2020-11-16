@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Ascundeți câmpul Opțiuni',
     ],
+    'hide_village_field' => [
+        'name' => 'Ascunde câmpul satului',
+    ],
+    'hide_configurations' => [
+        'name' => 'Ascundeți butonul Configurări',
+        'instructions' => 'Ascundeți butonul Configurări din pagina de previzualizare a anunțurilor',
+    ],
+    'make_map_required' => [
+        'name' => 'Faceți harta necesară',
+        'instructions' => 'Solicitați utilizatorului să plaseze un pin pe hartă atunci când creați un anunț',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Ascundeți prețul standard al listei',
+    ],
     'enabled_currencies' => [
         'name' => 'Valute activate',
     ],

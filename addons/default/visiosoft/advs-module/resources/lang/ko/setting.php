@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => '옵션 필드 숨기기',
     ],
+    'hide_village_field' => [
+        'name' => '마을 필드 숨기기',
+    ],
+    'hide_configurations' => [
+        'name' => '구성 버튼 숨기기',
+        'instructions' => '광고 미리보기 페이지에서 구성 버튼 숨기기',
+    ],
+    'make_map_required' => [
+        'name' => '지도 필수',
+        'instructions' => '사용자가 광고를 만들 때지도에 핀을 배치하도록 요구',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => '리스팅 표준 가격 숨기기',
+    ],
     'enabled_currencies' => [
         'name' => '활성화 된 통화',
     ],

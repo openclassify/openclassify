@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Dölj alternativfält',
     ],
+    'hide_village_field' => [
+        'name' => 'Göm byfältet',
+    ],
+    'hide_configurations' => [
+        'name' => 'Dölj konfigurationsknappen',
+        'instructions' => 'Dölj konfigurationsknappen på sidan för förhandsgranskning av annonser',
+    ],
+    'make_map_required' => [
+        'name' => 'Gör kartan obligatorisk',
+        'instructions' => 'Kräva att användaren placerar en nål på kartan när han skapar en annons',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Dölj listning Standardpris',
+    ],
     'enabled_currencies' => [
         'name' => 'Aktiverade valutor',
     ],

@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'אפשרויות',
+    'category_selection' => 'בחירת קטגוריות',
+    'listing_details' => 'פרטי רישום',
+    'preview' => 'תצוגה מקדימה',
+    'congratulations' => 'מזל טוב',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',

@@ -101,6 +101,20 @@ return [
     'hide_options_field' => [
         'name' => 'قسمت گزینه ها را پنهان کنید',
     ],
+    'hide_village_field' => [
+        'name' => 'میدان دهکده را پنهان کنید',
+    ],
+    'hide_configurations' => [
+        'name' => 'دکمه تنظیمات را پنهان کنید',
+        'instructions' => 'دکمه تنظیمات را در صفحه پیش نمایش تبلیغ پنهان کنید',
+    ],
+    'make_map_required' => [
+        'name' => 'تهیه نقشه مورد نیاز',
+        'instructions' => 'هنگام ایجاد تبلیغ ، از کاربر بخواهید که یک پین روی نقشه قرار دهد',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'پنهان کردن لیست قیمت استاندارد',
+    ],
     'enabled_currencies' => [
         'name' => 'ارزهای فعال شده',
     ],

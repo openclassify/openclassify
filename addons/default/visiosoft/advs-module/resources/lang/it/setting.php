@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Nascondi campo opzioni',
     ],
+    'hide_village_field' => [
+        'name' => 'Nascondi campo villaggio',
+    ],
+    'hide_configurations' => [
+        'name' => 'Nascondi il pulsante Configurazioni',
+        'instructions' => 'Nascondi il pulsante Configurazioni nella pagina Anteprima annunci',
+    ],
+    'make_map_required' => [
+        'name' => 'Rendi la mappa richiesta',
+        'instructions' => 'Richiedi all\'utente di posizionare un segnaposto sulla mappa durante la creazione di un annuncio',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Nascondi elenco prezzo standard',
+    ],
     'enabled_currencies' => [
         'name' => 'Valute abilitate',
     ],

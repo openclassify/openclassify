@@ -25,4 +25,6 @@ return [
     'no_add_found' => '광고가 없습니다!',
     'replicated_success' => '광고가 성공적으로 복제되었습니다!',
     'ad_doesnt_exist' => "이 광고는 존재하지 않습니다!",
+    'select_location_error' => "지도에서 위치를 선택하세요!",
+    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
 ];

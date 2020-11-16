@@ -430,7 +430,7 @@ return [
         'name' => 'άτομο',
     ],
     'corporate' => [
-        'name' => 'εταιρικός',
+        'name' => 'Εταιρικός',
     ],
 
     'details' => [
@@ -463,4 +463,10 @@ return [
     'accept_protection_law_label' => 'Αποδέχομαι τους όρους του Νόμου περί Προστασίας Προσωπικών Δεδομένων.',
     'accept_privacy_terms_label' => 'Αποδέχομαι τους όρους απορρήτου.',
     'receive_sms_emails_label' => 'Θέλω να λαμβάνω e-mail & sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Προσωπικός'
+    ],
+
 ];

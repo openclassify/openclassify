@@ -25,4 +25,6 @@ return [
     'no_add_found' => 'Nu a fost găsit niciun anunț!',
     'replicated_success' => 'Anunțul a fost reprodus cu succes!',
     'ad_doesnt_exist' => "Acest anunț nu există!",
+    'select_location_error' => "Vă rugăm să selectați o locație pe hartă!",
+    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
 ];

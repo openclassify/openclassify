@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Optieveld verbergen',
     ],
+    'hide_village_field' => [
+        'name' => 'Verberg Village Field',
+    ],
+    'hide_configurations' => [
+        'name' => 'Verberg de configuratieknop',
+        'instructions' => 'Verberg de configuratieknop op de pagina Advertentievoorbeeld',
+    ],
+    'make_map_required' => [
+        'name' => 'Maak een kaart vereist',
+        'instructions' => 'Vereisen dat de gebruiker een speld op de kaart plaatst bij het maken van een advertentie',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Verberg aanbieding standaardprijs',
+    ],
     'enabled_currencies' => [
         'name' => 'Ingeschakelde valuta\\'s',
     ],

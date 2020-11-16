@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Ocultar campo de opciones',
     ],
+    'hide_village_field' => [
+        'name' => 'Ocultar campo de aldea',
+    ],
+    'hide_configurations' => [
+        'name' => 'Ocultar el botón Configuraciones',
+        'instructions' => 'Ocultar el botón Configuraciones en la página de vista previa del anuncio',
+    ],
+    'make_map_required' => [
+        'name' => 'Hacer mapa obligatorio',
+        'instructions' => 'Solicitar al usuario que coloque un marcador en el mapa al crear un anuncio.',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Ocultar listado Precio estándar',
+    ],
     'enabled_currencies' => [
         'name' => 'Monedas habilitadas',
     ],

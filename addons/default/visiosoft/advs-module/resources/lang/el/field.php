@@ -302,6 +302,10 @@ return [
 
     // New create page
     'options' => 'Επιλογές',
+    'category_selection' => 'Επιλογή κατηγορίας',
+    'listing_details' => 'Λεπτομέρειες καταχώρησης',
+    'preview' => 'Προεπισκόπηση',
+    'congratulations' => 'Συγχαρητήρια',
 
     'free' => 'Ελεύθερος',
     'ad_date' => 'Ημερομηνία διαφήμισης',
