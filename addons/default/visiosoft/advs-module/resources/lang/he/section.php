@@ -41,7 +41,7 @@ return [
     'ads' => 'מודעות',
     'user' => 'משתמש',
     'filter' => 'לְסַנֵן',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'צור מודעה',
     'options' => [
         'title' => 'אפשרויות',
     ],
