@@ -101,18 +101,18 @@ return [
         'name' => 'Ẩn trường tùy chọn',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Ẩn ruộng làng',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Ẩn nút cấu hình',
+        'instructions' => 'Ẩn nút Cấu hình trong Trang Xem trước Quảng cáo',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Đặt bản đồ là bắt buộc',
+        'instructions' => 'Yêu cầu người dùng ghim trên bản đồ khi tạo quảng cáo',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Ẩn giá chuẩn của danh sách',
     ],
     'enabled_currencies' => [
         'name' => 'Tiền tệ được kích hoạt',
