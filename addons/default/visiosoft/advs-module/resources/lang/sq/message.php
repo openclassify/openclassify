@@ -26,4 +26,5 @@ return [
     'replicated_success' => 'Shpallja është përsëritur me sukses!',
     'ad_doesnt_exist' => "Kjo shpallje nuk ekziston!",
     'select_location_error' => "Ju lutemi zgjidhni një vendndodhje në hartë!",
+    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
 ];
