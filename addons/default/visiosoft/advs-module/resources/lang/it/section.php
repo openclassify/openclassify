@@ -41,7 +41,7 @@ return [
     'ads' => 'Annunci',
     'user' => 'Utente',
     'filter' => 'Filtro',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'Crea annuncio',
     'options' => [
         'title' => 'Opzioni',
     ],
