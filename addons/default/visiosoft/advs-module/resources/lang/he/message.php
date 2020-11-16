@@ -25,5 +25,5 @@ return [
     'no_add_found' => 'לא נמצאה מודעה!',
     'replicated_success' => 'המודעה שוכפלה בהצלחה!',
     'ad_doesnt_exist' => "מודעה זו אינה קיימת!",
-    'select_location_error' => "Please select a location on the map!",
+    'select_location_error' => "אנא בחר מיקום במפה!",
 ];
