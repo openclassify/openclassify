@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'Σε ποιον φάκελο θέλετε να ανεβάσετε;',
-    'upload' => 'Προσθήκη agesmages | Μεταφόρτωση İmages | Επισυνάψτε μια φωτογραφία',
+    'upload' => 'Add images | Upload images | Attach a photo',
     'choose_files' => 'Ποια αρχεία θέλετε να χρησιμοποιήσετε;',
     'no_files_selected' => 'Δεν έχουν επιλεγεί αρχεία.',
     'no_uploads' => 'Δεν μεταφορτώθηκαν αρχεία.',
