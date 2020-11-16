@@ -101,18 +101,18 @@ return [
         'name' => 'Скрыть поле параметров',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Скрыть поле деревни',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Скрыть кнопку настроек',
+        'instructions' => 'Скрыть кнопку настроек на странице предварительного просмотра объявления',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Сделать карту обязательной',
+        'instructions' => 'Требовать, чтобы пользователь поместил булавку на карту при создании объявления',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Скрыть стандартную цену листинга',
     ],
     'enabled_currencies' => [
         'name' => 'Включенные валюты',
