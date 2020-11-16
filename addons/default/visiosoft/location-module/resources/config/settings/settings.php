@@ -94,7 +94,8 @@ return [
             'options' => [
                 'slug' => 'slug',
                 'id' => 'id',
-                'order' => 'order'
+                'order' => 'order',
+                'name' => 'name',
             ],
         ],
     ],
