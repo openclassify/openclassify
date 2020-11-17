@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'Thư mục nào bạn muốn tải lên?',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => 'Thêm hình ảnh | Tải lên hình ảnh | Đính kèm ảnh',
     'choose_files' => 'Những tập tin bạn muốn sử dụng?',
     'no_files_selected' => 'Không có tập tin được chọn.',
     'no_uploads' => 'Không có tập tin tải lên.',
