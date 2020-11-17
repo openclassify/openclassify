@@ -1,5 +1,5 @@
 function crudAjax(params, url, type, callback, async = false) {
-    $.ajax({
+    return $.ajax({
         type: type,
         data: params,
         async: async,
