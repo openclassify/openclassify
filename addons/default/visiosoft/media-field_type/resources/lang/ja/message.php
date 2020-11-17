@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'どのフォルダにアップロードしますか？',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => '画像を追加|画像をアップロード|写真を添付',
     'choose_files' => 'どのファイルを使用しますか？',
     'no_files_selected' => 'ファイルが選択されていません。',
     'no_uploads' => 'アップロードされたファイルはありません。',
