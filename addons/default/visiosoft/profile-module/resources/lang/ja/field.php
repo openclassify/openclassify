@@ -428,7 +428,7 @@ return [
         'name' => '個人',
     ],
     'corporate' => [
-        'name' => '企業の',
+        'name' => '企業',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => '私は個人データの保護に関する法律の条件に同意します。',
     'accept_privacy_terms_label' => 'プライバシー規約に同意します。',
     'receive_sms_emails_label' => 'メールとSMSを受け取りたいです。',
+
+    // Register Type
+    'personal' => [
+        'name' => '個人'
+    ],
+
 ];

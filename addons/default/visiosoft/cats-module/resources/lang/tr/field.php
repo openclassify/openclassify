@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'Lütfen bekleyin. Alt Kategoriler Siliniyor',
     'category_selection' => 'Kategori Seçimi',
+    'go_to_parent' => 'Ebeveyne Git',
 ];

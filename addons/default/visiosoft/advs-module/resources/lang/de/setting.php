@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Optionsfeld ausblenden',
     ],
+    'hide_village_field' => [
+        'name' => 'Dorffeld verstecken',
+    ],
+    'hide_configurations' => [
+        'name' => 'Blenden Sie die Schaltfläche Konfigurationen aus',
+        'instructions' => 'Blenden Sie die Schaltfläche "Konfigurationen" auf der Anzeigenvorschau aus',
+    ],
+    'make_map_required' => [
+        'name' => 'Karte erforderlich machen',
+        'instructions' => 'Fordern Sie den Nutzer auf, beim Erstellen einer Anzeige eine Stecknadel auf der Karte zu platzieren',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Listing Standardpreis ausblenden',
+    ],
     'enabled_currencies' => [
         'name' => 'Aktivierte Währungen',
     ],

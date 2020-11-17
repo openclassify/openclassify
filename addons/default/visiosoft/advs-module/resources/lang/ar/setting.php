@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'إخفاء حقل الخيارات',
     ],
+    'hide_village_field' => [
+        'name' => 'إخفاء حقل القرية',
+    ],
+    'hide_configurations' => [
+        'name' => 'إخفاء زر التكوينات',
+        'instructions' => 'إخفاء زر التهيئة في صفحة معاينة الإعلان',
+    ],
+    'make_map_required' => [
+        'name' => 'اجعل الخريطة مطلوبة',
+        'instructions' => 'مطالبة المستخدم بوضع دبوس على الخريطة عند إنشاء إعلان',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'إخفاء قائمة الأسعار القياسية',
+    ],
     'enabled_currencies' => [
         'name' => 'العملات الممكّنة',
     ],

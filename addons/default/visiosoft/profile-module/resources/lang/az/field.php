@@ -428,7 +428,7 @@ return [
         'name' => 'fərdi',
     ],
     'corporate' => [
-        'name' => 'korporativ',
+        'name' => 'Korporativ',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'Fərdi məlumatların qorunması haqqında Qanunun şərtlərini qəbul edirəm.',
     'accept_privacy_terms_label' => 'Gizlilik şərtlərini qəbul edirəm.',
     'receive_sms_emails_label' => 'E-poçt və sms almaq istəyirəm.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Şəxsi'
+    ],
+
 ];

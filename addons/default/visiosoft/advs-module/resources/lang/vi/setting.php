@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Ẩn trường tùy chọn',
     ],
+    'hide_village_field' => [
+        'name' => 'Ẩn ruộng làng',
+    ],
+    'hide_configurations' => [
+        'name' => 'Ẩn nút cấu hình',
+        'instructions' => 'Ẩn nút Cấu hình trong Trang Xem trước Quảng cáo',
+    ],
+    'make_map_required' => [
+        'name' => 'Đặt bản đồ là bắt buộc',
+        'instructions' => 'Yêu cầu người dùng ghim trên bản đồ khi tạo quảng cáo',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Ẩn giá chuẩn của danh sách',
+    ],
     'enabled_currencies' => [
         'name' => 'Tiền tệ được kích hoạt',
     ],

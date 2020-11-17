@@ -429,7 +429,7 @@ return [
         'name' => 'индивидуальный',
     ],
     'corporate' => [
-        'name' => 'корпоративный',
+        'name' => 'Корпоративный',
     ],
 
     'details' => [
@@ -462,4 +462,10 @@ return [
     'accept_protection_law_label' => 'Я принимаю условия Закона о защите личных данных.',
     'accept_privacy_terms_label' => 'Я принимаю условия конфиденциальности.',
     'receive_sms_emails_label' => 'Я хочу получать электронную почту и смс.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Личное'
+    ],
+
 ];

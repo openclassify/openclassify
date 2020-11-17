@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Seçimlər sahəsini gizlədin',
     ],
+    'hide_village_field' => [
+        'name' => 'Kənd sahəsini gizlədin',
+    ],
+    'hide_configurations' => [
+        'name' => 'Konfiqurasiyalar düyməsini gizlədin',
+        'instructions' => 'Reklam Önizləmə Səhifəsində Konfiqurasiyalar Düyməsini gizlədin',
+    ],
+    'make_map_required' => [
+        'name' => 'Xəritə tələb olun',
+        'instructions' => 'Reklam yaratarkən istifadəçidən xəritədə bir sancaq yerləşdirməsini tələb edin',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Listing Standart Qiymətini gizlədin',
+    ],
     'enabled_currencies' => [
         'name' => 'Aktiv valyutalar',
     ],

@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'मैं व्यक्तिगत डेटा के संरक्षण पर कानून की शर्तों को स्वीकार करता हूं।',
     'accept_privacy_terms_label' => 'मैं गोपनीयता की शर्तें स्वीकार करता हूं।',
     'receive_sms_emails_label' => 'मैं ई-मेल और एसएमएस प्राप्त करना चाहता हूं।',
+
+    // Register Type
+    'personal' => [
+        'name' => 'निजी'
+    ],
+
 ];

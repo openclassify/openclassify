@@ -430,7 +430,7 @@ return [
         'name' => 'individueel',
     ],
     'corporate' => [
-        'name' => 'zakelijk',
+        'name' => 'Zakelijk',
     ],
 
     'details' => [
@@ -463,4 +463,10 @@ return [
     'accept_protection_law_label' => 'Ik accepteer de voorwaarden van de wet op de bescherming van persoonlijke gegevens.',
     'accept_privacy_terms_label' => 'Ik accepteer de privacyvoorwaarden.',
     'receive_sms_emails_label' => 'Ik wil e-mail en sms ontvangen.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Persoonlijk'
+    ],
+
 ];

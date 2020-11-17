@@ -25,4 +25,6 @@ return [
     'no_add_found' => 'Aucune annonce trouvée!',
     'replicated_success' => 'L\'annonce a été répliquée avec succès!',
     'ad_doesnt_exist' => "Cette annonce n'existe pas!",
+    'select_location_error' => "Veuillez sélectionner un emplacement sur la carte!",
+    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
 ];

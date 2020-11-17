@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'Masquer le champ d\'options',
     ],
+    'hide_village_field' => [
+        'name' => 'Masquer le champ du village',
+    ],
+    'hide_configurations' => [
+        'name' => 'Masquer le bouton Configurations',
+        'instructions' => 'Masquer le bouton Configurations dans la page d\'aperçu de l\'annonce',
+    ],
+    'make_map_required' => [
+        'name' => 'Rendre la carte obligatoire',
+        'instructions' => 'Obliger l\'utilisateur à placer une épingle sur la carte lors de la création d\'une annonce',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Masquer le prix standard de l\'annonce',
+    ],
     'enabled_currencies' => [
         'name' => 'Devises activées',
     ],

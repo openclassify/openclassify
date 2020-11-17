@@ -460,4 +460,10 @@ return [
     'accept_protection_law_label' => 'أوافق على شروط قانون حماية البيانات الشخصية.',
     'accept_privacy_terms_label' => 'أقبل شروط الخصوصية.',
     'receive_sms_emails_label' => 'أرغب في تلقي البريد الإلكتروني والرسائل القصيرة.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'شخصي'
+    ],
+
 ];

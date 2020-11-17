@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'הסתר שדה אפשרויות',
     ],
+    'hide_village_field' => [
+        'name' => 'הסתר את שדה הכפר',
+    ],
+    'hide_configurations' => [
+        'name' => 'הסתר את לחצן התצורות',
+        'instructions' => 'הסתר את לחצן התצורות בדף תצוגה מקדימה של מודעות',
+    ],
+    'make_map_required' => [
+        'name' => 'הפוך את המפה לחובה',
+        'instructions' => 'דרוש מהמשתמש להציב סיכה על המפה בעת יצירת מודעה',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'הסתר מחיר סטנדרטי של רישום',
+    ],
     'enabled_currencies' => [
         'name' => 'מטבעות מופעלים',
     ],

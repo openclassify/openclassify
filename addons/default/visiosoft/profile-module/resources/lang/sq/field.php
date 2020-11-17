@@ -428,7 +428,7 @@ return [
         'name' => 'Individual',
     ],
     'corporate' => [
-        'name' => 'Korporatë',
+        'name' => 'Korporatave',
     ],
 
     'details' => [
@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => 'Unë i pranoj kushtet e Ligjit për Mbrojtjen e të Dhënave Personale.',
     'accept_privacy_terms_label' => 'Unë i pranoj kushtet e privatësisë.',
     'receive_sms_emails_label' => 'Dua të marr e-mail dhe sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personale'
+    ],
+
 ];

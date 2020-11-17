@@ -33,7 +33,7 @@ $(function () {
                 formData.append('folder', element.data('folder'));
             },
             renameFile: function (file) {
-                let newName = new Date().getTime() + '_' + adv_id + "_" + file.name;
+                let newName = new Date().getTime() + '_' + file.name;
                 return newName;
             },
             accept: function (file, done) {
@@ -69,7 +69,8 @@ $(function () {
         var response = JSON.parse(file.xhr.response);
 
         uploaded.push(response.id);
-        $('.panel-table').load(
+
+        $('.media-selected-wrapper').load(
             REQUEST_ROOT_PATH + '/streams/media-field_type/selected?uploaded=' + uploaded.join(','),
             function () {
                 $('input[name="files"]').val(uploaded.join(','))

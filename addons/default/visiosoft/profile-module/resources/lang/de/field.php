@@ -433,7 +433,7 @@ return [
         'name' => 'Individuell',
     ],
     'corporate' => [
-        'name' => 'Unternehmen',
+        'name' => 'Corporate',
     ],
 
     'details' => [
@@ -466,4 +466,10 @@ return [
     'accept_protection_law_label' => 'Ich akzeptiere die Bestimmungen des Gesetzes zum Schutz personenbezogener Daten.',
     'accept_privacy_terms_label' => 'Ich akzeptiere Datenschutzbestimmungen.',
     'receive_sms_emails_label' => 'Ich möchte E-Mail & SMS erhalten.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'persönlich'
+    ],
+
 ];

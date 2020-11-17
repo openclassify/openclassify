@@ -100,6 +100,20 @@ return [
     'hide_options_field' => [
         'name' => 'オプションフィールドを非表示',
     ],
+    'hide_village_field' => [
+        'name' => '村のフィールドを隠す',
+    ],
+    'hide_configurations' => [
+        'name' => '構成ボタンを非表示にする',
+        'instructions' => '広告プレビューページの[設定]ボタンを非表示にします',
+    ],
+    'make_map_required' => [
+        'name' => 'マップを必須にする',
+        'instructions' => '広告を作成するときに、ユーザーに地図上にピンを配置するように要求する',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'リスティングの標準価格を非表示',
+    ],
     'enabled_currencies' => [
         'name' => '有効な通貨',
     ],

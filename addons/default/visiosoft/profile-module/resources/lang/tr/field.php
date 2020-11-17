@@ -460,4 +460,10 @@ return [
     'accept_protection_law_label' => 'Kişisel Verilerin Korunması Kanunu hükümlerini kabul ediyorum.',
     'accept_privacy_terms_label' => 'Gizlilik şartlarını kabul ediyorum.',
     'receive_sms_emails_label' => 'E-posta ve sms almak istiyorum.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Kişiye özel'
+    ],
+
 ];

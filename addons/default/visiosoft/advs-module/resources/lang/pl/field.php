@@ -301,6 +301,10 @@ return [
 
     // New create page
     'options' => 'Opcje',
+    'category_selection' => 'Wybór kategorii',
+    'listing_details' => 'Szczegóły aukcji',
+    'preview' => 'Zapowiedź',
+    'congratulations' => 'Gratulacje',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',

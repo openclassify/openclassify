@@ -461,4 +461,10 @@ return [
     'accept_protection_law_label' => '개인 데이터 보호에 관한 법률 조항에 동의합니다.',
     'accept_privacy_terms_label' => '개인 정보 보호 약관에 동의합니다.',
     'receive_sms_emails_label' => '이메일과 SMS를 받고 싶습니다.',
+
+    // Register Type
+    'personal' => [
+        'name' => '개인적인'
+    ],
+
 ];
