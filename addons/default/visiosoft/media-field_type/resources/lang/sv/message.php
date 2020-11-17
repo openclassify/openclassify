@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'Vilken mapp vill du ladda upp till?',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => 'Lägg till bilder | Ladda upp bilder | Bifoga ett foto',
     'choose_files' => 'Vilka filer vill du använda?',
     'no_files_selected' => 'Inga filer valda.',
     'no_uploads' => 'Inga filer laddas upp.',
