@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'In quale cartella desideri caricare?',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => 'Aggiungi immagini | Carica immagini | Allega una foto',
     'choose_files' => 'Quali file vorresti usare?',
     'no_files_selected' => 'Nessun file selezionato.',
     'no_uploads' => 'Nessun file caricato.',
