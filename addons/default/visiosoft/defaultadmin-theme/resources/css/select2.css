@@ -26,7 +26,8 @@
   .select2-container .select2-selection--multiple {
     box-sizing: border-box;
     cursor: pointer;
-    display: block ruby;
+    display: inline-block;
+    padding-bottom: 5px;
     min-height: 32px;
     user-select: none;
     -webkit-user-select: none; }
