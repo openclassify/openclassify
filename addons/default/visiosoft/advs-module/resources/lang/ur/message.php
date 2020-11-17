@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'اشتہار کامیابی کے ساتھ نقل کیا گیا ہے!',
     'ad_doesnt_exist' => "یہ اشتہار موجود نہیں ہے!",
     'select_location_error' => "براہ کرم نقشے پر ایک مقام منتخب کریں!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "اب یہ اشتہار درست نہیں ہے!",
 ];
