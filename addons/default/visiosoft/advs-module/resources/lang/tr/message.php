@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'İlan başarıyla kopyalandı!',
     'ad_doesnt_exist' => "Bu İlan mevcut değil!",
     'select_location_error' => "Lütfen haritada bir yer seçin!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Bu ürün veya ilan artık geçerli değil!",
 ];
