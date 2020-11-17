@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'Reklam uğurla təkrarlandı!',
     'ad_doesnt_exist' => "Bu reklam mövcud deyil!",
     'select_location_error' => "Xahiş edirəm xəritədə bir yer seçin!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Bu reklam artıq etibarlı deyil!",
 ];
