@@ -71,19 +71,8 @@ function numPages() {
     return Math.ceil(totalAdvs / records_per_page);
 }
 
-function crud(params, url, type, callback) {
-    $.ajax({
-        type: type,
-        data: params,
-        url: url,
-        success: function (response) {
-            callback(response);
-        },
-    });
-}
-
 function getMyAdvs(type) {
-    crud({'type': type, 'paginate': true, 'page': current_page}, '/ajax/getAdvs', 'GET', function (callback) {
+    crudAjax({'type': type, 'paginate': true, 'page': current_page}, '/ajax/getAdvs', 'GET', function (callback) {
         ads_type = type;
         objJson = callback.content.data;
         totalAdvs = callback.content.total

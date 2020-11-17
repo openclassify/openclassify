@@ -28,7 +28,7 @@ $('.edit-this-address').on('click', function () {
     $("#newAdd-address").attr("action", '/profile/adress/ajaxUpdate/' + edit_address_id);
 
     //Get Address Detail
-    crud({"id": edit_address_id}, '/profile/adress/ajaxDetail', 'POST', function (callback) {
+    crudAjax({"id": edit_address_id}, '/profile/adress/ajaxDetail', 'POST', function (callback) {
         var address_detail = callback.data;
         var address_field = ['adress_name', 'adress_gsm_phone', 'adress_first_name', 'adress_last_name'];
 
@@ -44,13 +44,13 @@ $('.edit-this-address').on('click', function () {
         $("#newAdd-address").find('select[name="country"]').val(address_detail.country_id)
 
         //Get City Options
-        crud('id=' + address_detail.country_id, '/ajax/getCities', 'POST',function (callback){
+        crudAjax('id=' + address_detail.country_id, '/ajax/getCities', 'POST',function (callback){
             setSelectOptions($("#newAdd-address").find('select[name="city"]'),callback,'id','name');
         })
 
         //Get District Options
         var selectedCity = new Promise(function (resolve) {
-            crud('id=' + address_detail.city, '/ajax/getDistricts', 'POST',function (callback){
+            crudAjax('id=' + address_detail.city, '/ajax/getDistricts', 'POST',function (callback){
                 setSelectOptions($("#newAdd-address").find('select[name="district"]'),callback,'id','name');
             });
             $("#newAdd-address").find('select[name="city"]').val(address_detail.city)
@@ -77,7 +77,7 @@ $("#newAdd-address").submit(function (e) {
     e.preventDefault(); // avoid to execute the actual submit of the form.
     var form = $(this);
     var url = form.attr('action');
-    crud(form.serialize(), url, "POST", function (response) {
+    crudAjax(form.serialize(), url, "POST", function (response) {
         if (response.status == "updated") {
             $('.row-address' + response.data.id).find(".address-title").html(response.data.adress_name)
             $('#editAddress').modal('hide');
