@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => '어느 폴더에 업로드 하시겠습니까?',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => '이미지 추가 | 이미지 업로드 | 사진 첨부',
     'choose_files' => '어떤 파일을 사용 하시겠습니까?',
     'no_files_selected' => '선택된 파일이 없습니다.',
     'no_uploads' => '파일이 업로드되지 않았습니다.',
