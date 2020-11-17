@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'آپ کس فولڈر میں اپ لوڈ کرنا چاہیں گے؟',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => 'تصاویر شامل کریں | تصاویر اپ لوڈ کریں | تصویر منسلک کریں',
     'choose_files' => 'آپ کون سی فائلیں استعمال کرنا چاہیں گے؟',
     'no_files_selected' => 'کوئی فائلیں منتخب نہیں کی گئیں۔',
     'no_uploads' => 'کوئی فائلیں اپ لوڈ نہیں کی گئیں۔',
