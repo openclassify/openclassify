@@ -171,7 +171,6 @@ function dropdownRow(id, type) {
     return dropdown;
 }
 
-const dropdownBlock = getBlock('profile/dropdown-ad', {'id': ':id'})
 function addDropdownBlock () {
     const dropdowns = $('.my-ads-dropdown')
     for (let i = 0; i < dropdowns.length; i++) {
