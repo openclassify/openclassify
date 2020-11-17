@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'आप किस फ़ोल्डर में अपलोड करना चाहते हैं?',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => 'चित्र जोड़ें | चित्र अपलोड करें | एक तस्वीर लगाओ',
     'choose_files' => 'आप किन फ़ाइलों का उपयोग करना चाहेंगे?',
     'no_files_selected' => 'कोई फ़ाइल चयनित नहीं है।',
     'no_uploads' => 'कोई फ़ाइल अपलोड नहीं की गई।',
