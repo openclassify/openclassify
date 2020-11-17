@@ -105,11 +105,11 @@ return [
     ],
     'hide_configurations' => [
         'name' => 'Yapılandırmalar Düğmesini Gizle',
-        'instructions' => 'Reklam Önizleme Sayfasında Yapılandırmalar Düğmesini Gizle',
+        'instructions' => 'İlan Önizleme Sayfasında Yapılandırma butonunu Gizle',
     ],
     'make_map_required' => [
         'name' => 'Haritayı Gerekli Yap',
-        'instructions' => 'Bir reklam oluştururken kullanıcının haritaya raptiye koymasını zorunlu kılın',
+        'instructions' => 'Ürün/İlan oluştururken kullanıcının haritaya nokta koymasını zorunlu kılın',
     ],
     'hide_listing_standard_price' => [
         'name' => 'Liste Standart Fiyatını Gizle',
@@ -195,6 +195,6 @@ return [
         'instructions' => 'Yönetici panelinde'
     ],
     'show_breadcrumb_when_creating_ad' => [
-        'name' => 'Reklam Oluştururken İçerik Haritasını Göster',
+        'name' => 'İlan/ürün eklerken Oluştururken harita Göster',
     ],
 ];
