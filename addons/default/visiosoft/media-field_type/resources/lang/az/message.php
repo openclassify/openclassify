@@ -2,7 +2,7 @@
 
 return [
     'choose_folder' => 'Hansı qovluğa yükləmək istərdiniz?',
-    'upload' => 'Add images | Upload images | Attach a photo',
+    'upload' => 'Şəkillər əlavə et | Şəkillər yükləyin | Bir şəkil əlavə edin',
     'choose_files' => 'Hansı fayllardan istifadə etmək istərdiniz?',
     'no_files_selected' => 'Fayl seçilməyib.',
     'no_uploads' => 'Fayl yüklənməyib.',
