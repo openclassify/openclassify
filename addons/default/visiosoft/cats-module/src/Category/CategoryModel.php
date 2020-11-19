@@ -144,7 +144,8 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             $data[] = array(
                 'id' => $cat->id,
                 'name' => $cat->name,
-                'parents' => $link
+                'parents' => $link,
+                'slug' => $cat->slug
             );
         }
         return $data;
