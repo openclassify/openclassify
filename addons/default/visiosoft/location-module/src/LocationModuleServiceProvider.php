@@ -76,6 +76,7 @@ class LocationModuleServiceProvider extends AddonServiceProvider
         'admin/location/neighborhoods/create' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@create',
         'admin/location/neighborhoods/edit/{id}' => 'Visiosoft\LocationModule\Http\Controller\Admin\NeighborhoodsController@edit',
 
+        // AjaxController
         'ajax/getCountry' => [
             'as' => 'location::getCountry',
             'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getCountries'
@@ -96,6 +97,10 @@ class LocationModuleServiceProvider extends AddonServiceProvider
         'ajax/getVillage' => [
             'as' => 'location::getVillage',
             'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@getVillage'
+        ],
+        'api/find-location' => [
+            'as' => 'visiosoft.module.location::api_find_location',
+            'uses' => 'Visiosoft\LocationModule\Http\Controller\AjaxController@findLocation'
         ],
     ];
 

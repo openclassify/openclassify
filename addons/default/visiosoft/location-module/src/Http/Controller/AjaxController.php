@@ -1,6 +1,9 @@
 <?php namespace Visiosoft\LocationModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule;
 use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\District\Contract\DistrictRepositoryInterface;
@@ -111,5 +114,44 @@ class AjaxController extends PublicController
         }
 
         return $query->orderBy($sorting_column, $sorting_type)->get();
+    }
+
+    public function findLocation()
+    {
+        try {
+            $validator = Validator::make(request()->all(), [
+                'type' => [
+                    'required',
+                    Rule::in(['countries', 'cities', 'districts', 'neighborhoods', 'village'])
+                ],
+                'id' => 'required|exists:location_' . request()->type,
+            ]);
+
+            if ($validator->fails()) {
+                throw new \Exception($validator->messages()->first());
+            }
+
+            $dBName = 'location_' . request()->type;
+            $location = DB::table($dBName)
+                ->join(
+                    $dBName . '_translations as location_trans',
+                    $dBName . '.id',
+                    '=',
+                    'location_trans.entry_id'
+                )
+                ->where($dBName . '.id', request()->id)
+                ->first();
+
+            return [
+                'success' => true,
+                'data' => $location
+            ];
+        } catch (\Exception $e) {
+            return [
+                'success' => false,
+                'msg' => $e->getMessage()
+            ];
+        }
+
     }
 }
