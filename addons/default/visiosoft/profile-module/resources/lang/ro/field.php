@@ -455,6 +455,7 @@ return [
     'edit_details' => 'Editează detaliile',
     'update' => 'Actualizați',
     'change_password' => 'Schimbați parola',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Accept termenii.',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'Personal'
     ],
-
 ];
