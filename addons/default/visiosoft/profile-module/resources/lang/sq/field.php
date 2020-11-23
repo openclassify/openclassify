@@ -455,6 +455,7 @@ return [
     'edit_details' => 'Ndryshoni Detajet',
     'update' => 'Update',
     'change_password' => 'Ndrysho fjalekalimin',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Unë i pranoj kushtet.',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'Personale'
     ],
-
 ];
