@@ -157,11 +157,7 @@ class UsersFieldsSeeder extends Seeder
         ];
 
         foreach ($customFields as $customField) {
-            $field = $fieldRepository
-                ->newQuery()
-                ->where('slug', $customField['slug'])
-                ->where('namespace', $namespace)
-                ->first();
+            $field = $fieldRepository->findBySlugAndNamespace($customField['slug'], $namespace);
 
             if (!$field) {
                 $data = [
