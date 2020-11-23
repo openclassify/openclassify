@@ -460,6 +460,7 @@ return [
     'edit_details' => 'Details bearbeiten',
     'update' => 'Aktualisieren',
     'change_password' => 'Ändere das Passwort',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Ich akzeptiere die Bedingungen.',
@@ -471,5 +472,4 @@ return [
     'personal' => [
         'name' => 'persönlich'
     ],
-
 ];
