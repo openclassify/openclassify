@@ -455,6 +455,7 @@ return [
     'edit_details' => 'विवरण संपादित करें',
     'update' => 'अपडेट करें',
     'change_password' => 'पासवर्ड बदलें',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'मैं शर्तें मंज़ूर करता हूँ।',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'निजी'
     ],
-
 ];
