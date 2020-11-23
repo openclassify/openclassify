@@ -455,6 +455,7 @@ return [
     'edit_details' => 'לערוך פרטים',
     'update' => 'עדכון',
     'change_password' => 'שנה סיסמא',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'אני מקבל את התנאים.',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'אישי'
     ],
-
 ];
