@@ -455,6 +455,7 @@ return [
     'edit_details' => 'Chỉnh sửa chi tiết',
     'update' => 'Cập nhật',
     'change_password' => 'Đổi mật khẩu',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Tôi chấp nhận các điều khoản.',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'Cá nhân'
     ],
-
 ];
