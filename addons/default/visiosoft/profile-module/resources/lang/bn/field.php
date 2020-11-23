@@ -455,6 +455,7 @@ return [
     'edit_details' => 'তথ্য সংশোধন কর',
     'update' => 'হালনাগাদ',
     'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'আমি শর্তাদি গ্রহণ করি।',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'ব্যক্তিগত'
     ],
-
 ];
