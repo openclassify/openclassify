@@ -491,6 +491,7 @@ class AdvsController extends PublicController
                 return $this->redirect->route('visiosoft.module.advs::list');
             }
 
+            $complaints = null;
             if ($this->adv_model->is_enabled('complaints')) {
                 $complaints = ComplaintsComplainTypesEntryModel::all();
             }
@@ -580,7 +581,7 @@ class AdvsController extends PublicController
 
 	        if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-                    'recommended_advs', 'categories', 'features', 'comments', 'qrSRC', 'options', 'configurations'));
+                    'recommended_advs', 'categories', 'features', 'options', 'configurations'));
             } else {
                 return back();
             }
@@ -624,7 +625,7 @@ class AdvsController extends PublicController
         }
 
         return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
-            compact('adv', 'categories', 'features', 'isActiveDopings', 'configurations'));
+            compact('adv', 'categories', 'features', 'isActiveDopings'));
     }
 
     public function getLocations()
@@ -920,6 +921,7 @@ class AdvsController extends PublicController
         $options = $this->optionRepository->findAllBy('adv_id', $id);
 
         //Cloudinary Module
+        $Cloudinary = null;
         $isActiveCloudinary = $this->adv_model->is_enabled('cloudinary');
         if ($isActiveCloudinary) {
             $CloudinaryModel = new VideoModel();
@@ -939,7 +941,7 @@ class AdvsController extends PublicController
 
         return $this->view->make(
             'visiosoft.module.advs::new-ad/new-create',
-            compact('id', 'cats_d', 'cats', 'Cloudinary', 'cities', 'adv', 'custom_fields', 'options')
+            compact('id', 'cats_d', 'cats', 'Cloudinary', 'adv', 'custom_fields', 'options')
         );
     }
 
