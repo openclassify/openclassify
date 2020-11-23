@@ -454,6 +454,7 @@ return [
     'edit_details' => 'Detayları düzenle',
     'update' => 'Güncelleme',
     'change_password' => 'Şifre değiştir',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Koşulları kabul ediyorum.',
@@ -465,5 +466,4 @@ return [
     'personal' => [
         'name' => 'Kişiye özel'
     ],
-
 ];
