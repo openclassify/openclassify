@@ -457,6 +457,7 @@ return [
     'edit_details' => 'Details bewerken',
     'update' => 'Bijwerken',
     'change_password' => 'Wachtwoord wijzigen',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
@@ -468,5 +469,4 @@ return [
     'personal' => [
         'name' => 'Persoonlijk'
     ],
-
 ];
