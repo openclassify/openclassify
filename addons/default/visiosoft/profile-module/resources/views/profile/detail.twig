@@ -146,7 +146,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ trans("visiosoft.module.profile::field.birthday.name") }}
                                         </label>
-                                        {{ profileForm.fields.birthday.input|raw }}
+                                        {{ profileForm.fields.birthday.configSet('date_format','Y-m-d').setPlaceholder(now|date('Y-m-d')).input|raw }}
                                     </div>
                                 </div>
 
