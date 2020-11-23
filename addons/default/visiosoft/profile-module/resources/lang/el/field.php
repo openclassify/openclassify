@@ -457,6 +457,7 @@ return [
     'edit_details' => 'Επεξεργασία λεπτομερειών',
     'update' => 'Εκσυγχρονίζω',
     'change_password' => 'Άλλαξε κωδικό',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Αποδέχομαι τους όρους.',
@@ -468,5 +469,4 @@ return [
     'personal' => [
         'name' => 'Προσωπικός'
     ],
-
 ];
