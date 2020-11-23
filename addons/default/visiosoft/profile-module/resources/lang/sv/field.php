@@ -455,6 +455,7 @@ return [
     'edit_details' => 'Redigera detaljer',
     'update' => 'Uppdatering',
     'change_password' => 'Ändra lösenord',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Jag accepterar villkoren.',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'Personlig'
     ],
-
 ];
