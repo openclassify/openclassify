@@ -41,33 +41,21 @@ class UsersFieldsSeeder extends Seeder
                 'name' => 'City',
                 'slug' => 'city',
                 'type' => 'anomaly.field_type.select',
-                "config" => [
-                    "options" => [],
-                ]
             ],
             [
                 'name' => 'District',
                 'slug' => 'district',
                 'type' => 'anomaly.field_type.select',
-                "config" => [
-                    "options" => [],
-                ]
             ],
             [
                 'name' => 'Neighborhood',
                 'slug' => 'neighborhood',
                 'type' => 'anomaly.field_type.select',
-                "config" => [
-                    "options" => [],
-                ]
             ],
             [
                 'name' => 'Village',
                 'slug' => 'village',
                 'type' => 'anomaly.field_type.select',
-                "config" => [
-                    "options" => [],
-                ]
             ],
             [
                 'name' => 'Gsm Phone',
@@ -89,10 +77,7 @@ class UsersFieldsSeeder extends Seeder
                 'slug' => 'register_type',
                 'type' => 'anomaly.field_type.select',
                 "config" => [
-                    "options" => [
-                        '1' => trans('visiosoft.module.profile::field.individual.name'),
-                        '2' => trans('visiosoft.module.profile::field.corporate.name')
-                    ],
+                    'options' => '1: ' . trans('visiosoft.module.profile::field.individual.name') . "\n2: " . trans('visiosoft.module.profile::field.corporate.name')
                 ]
             ],
             [
@@ -106,7 +91,7 @@ class UsersFieldsSeeder extends Seeder
                 'type' => 'anomaly.field_type.select',
                 'config' => [
                     'default_value' => 1,
-                    'options' => [0 => 'Active', 1 => 'Passive'],
+                    'options' => "0: Active\n1: Passive",
                     'separator' => ':',
                 ]
             ],
@@ -116,7 +101,7 @@ class UsersFieldsSeeder extends Seeder
                 'type' => 'anomaly.field_type.select',
                 'config' => [
                     'default_value' => 1,
-                    'options' => [0 => 'Active', 1 => 'Passive'],
+                    'options' => "0: Active\n1: Passive",
                     'separator' => ':',
                 ]
             ],
@@ -126,7 +111,7 @@ class UsersFieldsSeeder extends Seeder
                 'type' => 'anomaly.field_type.select',
                 'config' => [
                     'default_value' => 1,
-                    'options' => [0 => 'Active', 1 => 'Passive'],
+                    'options' => "0: Active\n1: Passive",
                     'separator' => ':',
                 ]
             ],
