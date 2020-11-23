@@ -456,6 +456,7 @@ return [
     'edit_details' => 'Редактировать детали',
     'update' => 'Обновить',
     'change_password' => 'Сменить пароль',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Я принимаю условия.',
@@ -467,5 +468,4 @@ return [
     'personal' => [
         'name' => 'Личное'
     ],
-
 ];
