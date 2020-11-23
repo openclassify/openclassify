@@ -454,6 +454,7 @@ return [
     'edit_details' => 'عدل التفاصيل',
     'update' => 'تحديث',
     'change_password' => 'غير كلمة السر',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'أوافق على شروط.',
@@ -465,5 +466,4 @@ return [
     'personal' => [
         'name' => 'شخصي'
     ],
-
 ];
