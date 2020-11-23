@@ -455,6 +455,7 @@ return [
     'edit_details' => 'تفصیلات میں ترمیم کریں',
     'update' => 'اپ ڈیٹ',
     'change_password' => 'پاس ورڈ تبدیل کریں',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'میں شرائط کو قبول کرتا ہوں۔',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'ذاتی'
     ],
-
 ];
