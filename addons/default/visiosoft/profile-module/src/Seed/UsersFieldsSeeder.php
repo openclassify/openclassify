@@ -1,29 +1,17 @@
 <?php namespace Visiosoft\ProfileModule\Seed;
 
-use Anomaly\Streams\Platform\Assignment\AssignmentModelTranslation;
 use Anomaly\Streams\Platform\Assignment\Contract\AssignmentRepositoryInterface;
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
 use Anomaly\Streams\Platform\Field\Contract\FieldRepositoryInterface;
-use Anomaly\Streams\Platform\Field\FieldModelTranslation;
 use Anomaly\Streams\Platform\Stream\Contract\StreamRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryModel;
 
 class UsersFieldsSeeder extends Seeder
 {
-    /**
-     * Run the seeder.
-     * @param FieldRepositoryInterface $fieldRepository
-     * @param AssignmentRepositoryInterface $assignmentRepository
-     * @param StreamRepositoryInterface $streamRepository
-     * @param FieldModelTranslation $fieldModelTranslation
-     * @param AssignmentModelTranslation $assignmentModelTranslation
-     */
     public function run(
         FieldRepositoryInterface $fieldRepository,
         AssignmentRepositoryInterface $assignmentRepository,
-        StreamRepositoryInterface $streamRepository,
-        FieldModelTranslation $fieldModelTranslation,
-        AssignmentModelTranslation $assignmentModelTranslation
+        StreamRepositoryInterface $streamRepository
     )
     {
         $namespace = 'users';
@@ -31,7 +19,7 @@ class UsersFieldsSeeder extends Seeder
         $stream = $streamRepository->findBySlugAndNamespace('users', 'users');
 
         $customFields = [
-            0 => [
+            [
                 'name' => 'File',
                 'slug' => 'file',
                 'type' => 'visiosoft.field_type.singlefile',
@@ -40,7 +28,7 @@ class UsersFieldsSeeder extends Seeder
                     'mode' => 'upload',
                 ]
             ],
-            1 => [
+            [
                 'name' => 'Country',
                 'slug' => 'country',
                 'type' => 'anomaly.field_type.relationship',
@@ -49,7 +37,7 @@ class UsersFieldsSeeder extends Seeder
                     "default_value" => 0,
                 ],
             ],
-            2 => [
+            [
                 'name' => 'City',
                 'slug' => 'city',
                 'type' => 'anomaly.field_type.select',
@@ -57,7 +45,7 @@ class UsersFieldsSeeder extends Seeder
                     "options" => [],
                 ]
             ],
-            3 => [
+            [
                 'name' => 'District',
                 'slug' => 'district',
                 'type' => 'anomaly.field_type.select',
@@ -65,7 +53,7 @@ class UsersFieldsSeeder extends Seeder
                     "options" => [],
                 ]
             ],
-            4 => [
+            [
                 'name' => 'Neighborhood',
                 'slug' => 'neighborhood',
                 'type' => 'anomaly.field_type.select',
@@ -73,7 +61,7 @@ class UsersFieldsSeeder extends Seeder
                     "options" => [],
                 ]
             ],
-            5 => [
+            [
                 'name' => 'Village',
                 'slug' => 'village',
                 'type' => 'anomaly.field_type.select',
@@ -81,22 +69,22 @@ class UsersFieldsSeeder extends Seeder
                     "options" => [],
                 ]
             ],
-            6 => [
+            [
                 'name' => 'Gsm Phone',
                 'slug' => 'gsm_phone',
                 'type' => 'anomaly.field_type.text',
             ],
-            7 => [
+            [
                 'name' => 'Land Phone',
                 'slug' => 'land_phone',
                 'type' => 'anomaly.field_type.text',
             ],
-            8 => [
+            [
                 'name' => 'Office Phone',
                 'slug' => 'office_phone',
                 'type' => 'anomaly.field_type.text',
             ],
-            9 => [
+            [
                 'name' => 'Register Type',
                 'slug' => 'register_type',
                 'type' => 'anomaly.field_type.select',
@@ -107,12 +95,12 @@ class UsersFieldsSeeder extends Seeder
                     ],
                 ]
             ],
-            10 => [
+            [
                 'name' => 'Identification Number',
                 'slug' => 'identification_number',
                 'type' => 'anomaly.field_type.text',
             ],
-            11 => [
+            [
                 'name' => 'Notified New Updates',
                 'slug' => 'notified_new_updates',
                 'type' => 'anomaly.field_type.select',
@@ -122,7 +110,7 @@ class UsersFieldsSeeder extends Seeder
                     'separator' => ':',
                 ]
             ],
-            12 => [
+            [
                 'name' => 'Notified About Ads',
                 'slug' => 'notified_about_ads',
                 'type' => 'anomaly.field_type.select',
@@ -132,7 +120,7 @@ class UsersFieldsSeeder extends Seeder
                     'separator' => ':',
                 ]
             ],
-            13 => [
+            [
                 'name' => 'Receive Messages Email',
                 'slug' => 'receive_messages_email',
                 'type' => 'anomaly.field_type.select',
@@ -142,7 +130,7 @@ class UsersFieldsSeeder extends Seeder
                     'separator' => ':',
                 ]
             ],
-            14 => [
+            [
                 'name' => trans('visiosoft.module.profile::field.birthday.name'),
                 'slug' => 'birthday',
                 'type' => 'anomaly.field_type.datetime',
@@ -151,50 +139,49 @@ class UsersFieldsSeeder extends Seeder
                     "picker" => true,
                 ]
             ],
+            [
+                'name' => trans('visiosoft.module.profile::field.education.name'),
+                'slug' => 'education',
+                'type' => 'anomaly.field_type.text',
+            ],
+            [
+                'name' => trans('visiosoft.module.profile::field.state_of_education.name'),
+                'slug' => 'state_of_education',
+                'type' => 'anomaly.field_type.text',
+            ],
+            [
+                'name' => trans('visiosoft.module.profile::field.profession.name'),
+                'slug' => 'profession',
+                'type' => 'anomaly.field_type.text',
+            ],
         ];
 
         foreach ($customFields as $customField) {
-            $fields = $fieldRepository
+            $field = $fieldRepository
                 ->newQuery()
                 ->where('slug', $customField['slug'])
                 ->where('namespace', $namespace)
-                ->get();
+                ->first();
 
-            if ($fields) {
-                foreach ($fields as $field) {
-                    $fieldModelTranslation->newQuery()->where('field_id', $field->id)->delete();
-
-                    $assignment = $assignmentRepository
-                        ->newQuery()
-                        ->where('stream_id', $stream->id)
-                        ->where('field_id', $field->id)
-                        ->first();
-                    if ($assignment) {
-                        $assignmentModelTranslation->newQuery()->where('assignment_id', $assignment->id)->delete();
-                        $assignment->delete();
-                    }
-
-                    $field->delete();
+            if (!$field) {
+                $data = [
+                    'name' => $customField['name'],
+                    'namespace' => $namespace,
+                    'slug' => $customField['slug'],
+                    'type' => $customField['type'],
+                    'locked' => $locked
+                ];
+                if (isset($customField['config'])) {
+                    $data['config'] = $customField['config'];
                 }
+
+                $field = $fieldRepository->create($data);
+
+                $assignmentRepository->create([
+                    'stream_id' => $stream->id,
+                    'field_id' => $field->id
+                ]);
             }
-
-            $data = [
-                'name' => $customField['name'],
-                'namespace' => $namespace,
-                'slug' => $customField['slug'],
-                'type' => $customField['type'],
-                'locked' => $locked
-            ];
-            if (isset($customField['config'])) {
-                $data['config'] = $customField['config'];
-            }
-
-            $field = $fieldRepository->create($data);
-
-            $assignmentRepository->create([
-                'stream_id' => $stream->id,
-                'field_id' => $field->id
-            ]);
         }
     }
 }
