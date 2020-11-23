@@ -454,6 +454,7 @@ return [
     'edit_details' => 'جزئیات ویرایش',
     'update' => 'به روز رسانی',
     'change_password' => 'تغییر رمز عبور',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'من شرایط را قبول می کنم',
@@ -465,5 +466,4 @@ return [
     'personal' => [
         'name' => 'شخصی'
     ],
-
 ];
