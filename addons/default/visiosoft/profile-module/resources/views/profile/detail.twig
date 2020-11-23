@@ -212,7 +212,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ trans("visiosoft.module.profile::field.register_type.name") }}
                                         </label>
-                                        {{ profileForm.fields.register_type.input|raw }}
+                                        {{ profileForm.fields.register_type.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-12 text-right">
