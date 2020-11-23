@@ -455,6 +455,7 @@ return [
     'edit_details' => '詳細を編集する',
     'update' => '更新',
     'change_password' => 'パスワードを変更する',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => '利用規約に同意します。',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => '個人'
     ],
-
 ];
