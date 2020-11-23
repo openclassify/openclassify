@@ -455,6 +455,7 @@ return [
     'edit_details' => 'Ətraflı məlumatları redaktə edin',
     'update' => 'Yeniləyin',
     'change_password' => 'Parolu dəyişdirin',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Şərtləri qəbul edirəm.',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => 'Şəxsi'
     ],
-
 ];
