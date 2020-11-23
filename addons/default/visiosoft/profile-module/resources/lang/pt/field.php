@@ -457,6 +457,7 @@ return [
     'edit_details' => 'Editar Detalhes',
     'update' => 'Atualizar',
     'change_password' => 'Mudar senha',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => 'Eu aceito os termos.',
@@ -468,5 +469,4 @@ return [
     'personal' => [
         'name' => 'Pessoal'
     ],
-
 ];
