@@ -455,6 +455,7 @@ return [
     'edit_details' => '세부 정보 편집',
     'update' => '최신 정보',
     'change_password' => '비밀번호 변경',
+    'choose_an_option' => 'Choose an option...',
 
     // Register page
     'accept_terms_label' => '약관에 동의합니다.',
@@ -466,5 +467,4 @@ return [
     'personal' => [
         'name' => '개인적인'
     ],
-
 ];
