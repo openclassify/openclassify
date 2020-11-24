@@ -458,8 +458,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'من شرایط را قبول می کنم',
-    'accept_protection_law_label' => 'من شرایط قانون حمایت از داده های شخصی را می پذیرم.',
-    'accept_privacy_terms_label' => 'من شرایط حریم خصوصی را می پذیرم.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
     'receive_sms_emails_label' => 'من می خواهم ایمیل و پیام کوتاه دریافت کنم.',
 
     // Register Type
