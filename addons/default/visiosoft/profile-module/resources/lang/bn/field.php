@@ -459,8 +459,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'আমি শর্তাদি গ্রহণ করি।',
-    'accept_protection_law_label' => 'আমি ব্যক্তিগত তথ্য সুরক্ষা আইনের শর্তাদি স্বীকার করি।',
-    'accept_privacy_terms_label' => 'আমি গোপনীয়তার শর্তাদি গ্রহণ করি।',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
     'receive_sms_emails_label' => 'আমি ইমেইল এবং এসএমএস পেতে চাই',
 
     // Register Type
