@@ -14,6 +14,12 @@ return [
         'name' => 'Visa kryssrutans villkor i registret',
         'instructions' => 'Visa "Acceptera term", "skyddslag", "sekretessbegrepp", "sms & e-post" på registerformuläret'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Visa utbildnings- och yrkesfält',
         'instructions' => 'Visa "Utbildning", "Utbildningsläge" och "Yrke" på profilredigeringssidan'
