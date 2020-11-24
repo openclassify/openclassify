@@ -14,6 +14,12 @@ return [
         'name' => 'نمایش شرایط جعبه تأیید در ثبت نام',
         'instructions' => '"فرم پذیرش" ، "قانون حمایت" ، "اصطلاح حریم خصوصی" ، "پیام کوتاه و ایمیل" را در فرم ثبت نام نشان دهید'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'زمینه های آموزش و حرفه را نشان دهید',
         'instructions' => '"آموزش" ، "وضعیت آموزش" و "حرفه" را در صفحه ویرایش نمایه نشان دهید'
