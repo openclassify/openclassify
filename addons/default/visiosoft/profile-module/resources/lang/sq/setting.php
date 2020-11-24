@@ -14,6 +14,12 @@ return [
         'name' => 'Trego Kushtet e Kutisë së Regjistrimit',
         'instructions' => 'Shfaqni "Prano termin", "ligjin e mbrojtjes", "termin e privatësisë", "sms & email" në formularin e regjistrimit'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Tregoni Fushat e Edukimit dhe Profesionit',
         'instructions' => 'Shfaqni "Edukimin", "Gjendjen e Arsimit" dhe "Profesionin" në faqen e redaktimit të profilit'
