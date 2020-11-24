@@ -459,8 +459,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'Jag accepterar villkoren.',
-    'accept_protection_law_label' => 'Jag accepterar villkoren i lagen om skydd av personuppgifter.',
-    'accept_privacy_terms_label' => 'Jag accepterar sekretessvillkor.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
     'receive_sms_emails_label' => 'Jag vill få e-post och sms.',
 
     // Register Type
