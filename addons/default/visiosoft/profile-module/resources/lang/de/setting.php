@@ -14,6 +14,12 @@ return [
         'name' => 'Checkbox-Bedingungen im Register anzeigen',
         'instructions' => 'Zeigen Sie auf dem Registrierungsformular "Akzeptieren", "Schutzgesetz", "Datenschutz", "SMS & E-Mails" an'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Bildungs- und Berufsfelder anzeigen',
         'instructions' => 'Zeigen Sie "Bildung", "Bildungsstand" und "Beruf" auf der Profilbearbeitungsseite an'
