@@ -14,6 +14,12 @@ return [
         'name' => 'Toon selectievakje voorwaarden bij registreren',
         'instructions' => 'Toon de "Accepteer term", "beschermingswet", "privacy term", "sms & e-mails" op het registratieformulier'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Toon onderwijs- en beroepsvelden',
         'instructions' => 'Toon de "Opleiding", "Staat van opleiding" en "Beroep" op de profielbewerkingspagina'
