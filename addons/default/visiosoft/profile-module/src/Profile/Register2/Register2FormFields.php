@@ -34,15 +34,8 @@ class Register2FormFields
 
         if (setting_value('visiosoft.module.profile::show_checkbox_terms_on_register')) {
             $register = array_merge($register, [
-                "accept_terms" => [
-                    "type"   => "anomaly.field_type.boolean",
-                    "config" => [
-                        "default_value" => false,
-                        "mode"          => "checkbox",
-                        "label"         => 'visiosoft.module.profile::field.accept_terms_label',
-                    ]
-                ],
                 "accept_protection_law" => [
+                    'required' => true,
                     "type"   => "anomaly.field_type.boolean",
                     "config" => [
                         "default_value" => false,
@@ -51,6 +44,7 @@ class Register2FormFields
                     ]
                 ],
                 "accept_privacy_terms" => [
+                    'required' => true,
                     "type"   => "anomaly.field_type.boolean",
                     "config" => [
                         "default_value" => false,
