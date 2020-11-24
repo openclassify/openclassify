@@ -83,4 +83,6 @@ interface AdvInterface extends EntryInterface
     public function expired();
 
 	public function getProductOptionsValues();
+
+    public function status();
 }

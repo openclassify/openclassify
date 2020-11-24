@@ -1,16 +1,8 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Table;
 
-use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
-use Anomaly\UsersModule\UsersModule;
-use Illuminate\Database\Eloquent\Builder;
-use Visiosoft\AdvsModule\Adv\Table\Filter\NameDescFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Handler\AdvHandler;
 use Visiosoft\AdvsModule\Adv\Table\Views\All;
 use Visiosoft\AdvsModule\Adv\Table\Views\unfinished;
-use Visiosoft\AdvsModule\Category\CategoryModel;
-use Visiosoft\PackagesModule\User\UserModel;
 
 class AdvTableBuilder extends TableBuilder
 {
@@ -32,24 +24,6 @@ class AdvTableBuilder extends TableBuilder
             'view' => unfinished::class
         ],
 
-    ];
-
-    /**
-     * The table filters.
-     *
-     * @var array|string
-     */
-    protected $filters = [
-        'search' => [
-            'filter' => 'input',
-            'placeholder' => 'visiosoft.module.advs::field.search',
-            'query' => NameDescFilterQuery::class,
-        ],
-        'country',
-        'id' => [
-            'heading' => 'ID',
-            'filter' => 'input'
-        ],
     ];
 
     /**
