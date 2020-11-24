@@ -11,6 +11,8 @@ return [
                     'upload_avatar',
                     'show_tax_office',
                     'show_checkbox_terms_on_register',
+                    'register_protection_url',
+                    'register_privacy_url',
                     'show_education_profession',
                     'education',
                     'state_of_education',

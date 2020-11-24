@@ -41,6 +41,18 @@ return [
             'mode' => 'checkbox'
         ]
     ],
+    'register_protection_url' => [
+        'type' => 'anomaly.field_type.url',
+        'config' => [
+            'default_value' => '#',
+        ]
+    ],
+    'register_privacy_url' => [
+        'type' => 'anomaly.field_type.url',
+        'config' => [
+            'default_value' => '#',
+        ]
+    ],
     'show_education_profession' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [

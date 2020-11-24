@@ -12,26 +12,10 @@ use Visiosoft\ProfileModule\Profile\Register2\Command\HandleAutomaticRegistratio
 use Visiosoft\ProfileModule\Profile\Register2\Command\HandleEmailRegistration;
 use Visiosoft\ProfileModule\Profile\Register2\Command\HandleManualRegistration;
 
-/**
- * Class RegisterFormHandler
- *
- * @link   http://openclassify.com/
- * @author OpenClassify, Inc. <support@openclassify.com>
- * @author Visiosoft Inc <support@openclassify.com>
- */
 class Register2FormHandler
 {
-
     use DispatchesJobs;
 
-    /**
-     * Handle the form.
-     *
-     * @param Dispatcher $events
-     * @param UserRepositoryInterface $users
-     * @param Register2FormBuilder $builder
-     * @param UserActivator $activator
-     */
     public function handle(
         Dispatcher $events,
         UserRepositoryInterface $users,
@@ -59,7 +43,6 @@ class Register2FormHandler
         $fields['gsm_phone'] = $builder->getPostValue('phone');
         unset(
             $fields['phone'],
-            $fields['accept_terms'],
             $fields['accept_protection_law'],
             $fields['accept_privacy_terms'],
             $fields['receive_sms_emails'],
