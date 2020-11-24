@@ -20,6 +20,11 @@ var promiseForCategory = new Promise(function (resolve) {
 });
 
 promiseForCategory.then(function (categories_list) {
+
+    categories_list = $.grep(Object.values(categories_list), function (e) {
+        return (e.length > 0) ? e : '';
+    });
+
     level = 0;
     $.each(categories_list, function (index, value) {
         level++;
