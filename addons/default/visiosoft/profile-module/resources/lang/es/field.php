@@ -461,8 +461,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'Acepto los términos.',
-    'accept_protection_law_label' => 'Acepto los términos de la Ley de Protección de Datos Personales.',
-    'accept_privacy_terms_label' => 'Acepto términos de privacidad.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
     'receive_sms_emails_label' => 'Quiero recibir correos electrónicos y sms.',
 
     // Register Type
