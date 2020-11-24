@@ -980,7 +980,7 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         event(new ChangedStatusAd($ad));//Create Notify
-        $this->messages->success(trans('streams::message.edit_success', ['name' => 'Status']));
+        $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.advs::field.status.name')]));
         return back();
     }
 
