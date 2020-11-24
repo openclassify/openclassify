@@ -43,7 +43,7 @@ class AdvTableButtons
                         'href' => 'admin/advs-users/choose/{entry.id}'
                     ],
                     'replicate' => [
-                        'text' => 'Replicate'
+                        'text' => 'visiosoft.module.advs::button.replicate'
                     ],
                     'create_configration' => [
                         'text' => trans('visiosoft.module.advs::button.create_configurations'),
