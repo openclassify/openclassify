@@ -14,6 +14,12 @@ return [
         'name' => 'रजिस्टर पर चेकबॉक्स की शर्तें दिखाएं',
         'instructions' => 'रजिस्टर फॉर्म पर "स्वीकार करें", "सुरक्षा कानून", "गोपनीयता शब्द", "एसएमएस और ईमेल" दिखाएं'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'शिक्षा और पेशा क्षेत्र दिखाएँ',
         'instructions' => 'प्रोफ़ाइल संपादन पृष्ठ पर "शिक्षा", "शिक्षा की स्थिति" और "पेशा" दिखाएं'
