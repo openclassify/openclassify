@@ -461,8 +461,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
-    'accept_protection_law_label' => 'Ik accepteer de voorwaarden van de wet op de bescherming van persoonlijke gegevens.',
-    'accept_privacy_terms_label' => 'Ik accepteer de privacyvoorwaarden.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
     'receive_sms_emails_label' => 'Ik wil e-mail en sms ontvangen.',
 
     // Register Type
