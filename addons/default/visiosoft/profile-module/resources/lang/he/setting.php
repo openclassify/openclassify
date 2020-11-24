@@ -14,6 +14,12 @@ return [
         'name' => 'הצג תנאי תיבת סימון בהרשמה',
         'instructions' => 'הראה את "קבל מונח", "חוק הגנה", "מונח פרטיות", "הודעות SMS ודואר אלקטרוני" בטופס ההרשמה'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'הראה תחומי חינוך ומקצוע',
         'instructions' => 'הראה את "חינוך", "מצב חינוך" ו"מקצוע "בדף העריכה של הפרופיל'
