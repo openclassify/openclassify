@@ -14,6 +14,12 @@ return [
         'name' => 'رجسٹر پر چیک باکس کی شرائط دکھائیں',
         'instructions' => 'رجسٹر فارم پر "قبول شدہ اصطلاح" ، "تحفظ قانون" ، "رازداری کی اصطلاح" ، "ایس ایم ایس اور ای میلز" دکھائیں۔'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'تعلیم اور پیشہ ور فیلڈز دکھائیں',
         'instructions' => 'پروفائل میں ترمیم والے صفحے پر "تعلیم" ، "ریاست تعلیم" اور "پیشہ" دکھائیں'
