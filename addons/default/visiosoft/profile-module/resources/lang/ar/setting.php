@@ -14,6 +14,12 @@ return [
         'name' => 'إظهار شروط خانة الاختيار في التسجيل',
         'instructions' => 'أظهر "قبول مصطلح" ، "قانون الحماية" ، "مصطلح الخصوصية" ، "الرسائل القصيرة والبريد الإلكتروني" في نموذج التسجيل'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'إظهار مجالات التعليم والمهنة',
         'instructions' => 'اعرض "التعليم" و "حالة التعليم" و "المهنة" في صفحة تعديل الملف الشخصي'
