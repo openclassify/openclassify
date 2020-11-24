@@ -14,6 +14,12 @@ return [
         'name' => 'Qeyd qutusundakı onay qutusunun şərtlərini göstərin',
         'instructions' => 'Qeyd formasında "Qəbul müddəti", "qoruma qanunu", "məxfilik müddəti", "sms və e-poçtlar" göstər'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Təhsil və Peşə Sahələrini göstərin',
         'instructions' => 'Profili düzəltmə səhifəsində "Təhsil", "Təhsil Vəziyyəti" və "Peşə" ni göstərin'
