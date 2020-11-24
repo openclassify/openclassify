@@ -459,8 +459,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'Unë i pranoj kushtet.',
-    'accept_protection_law_label' => 'Unë i pranoj kushtet e Ligjit për Mbrojtjen e të Dhënave Personale.',
-    'accept_privacy_terms_label' => 'Unë i pranoj kushtet e privatësisë.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
     'receive_sms_emails_label' => 'Dua të marr e-mail dhe sms.',
 
     // Register Type
