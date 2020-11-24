@@ -14,6 +14,12 @@ return [
         'name' => 'Afișați termenii casetei de selectare la Înregistrare',
         'instructions' => 'Afișați „Acceptați termenul”, „legea protecției”, „termenul de confidențialitate”, „sms și e-mailuri” în formularul de înregistrare'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Afișați domeniile Educație și profesie',
         'instructions' => 'Afișați „Educație”, „Starea educației” și „Profesie” pe pagina de editare a profilului'
