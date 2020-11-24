@@ -459,8 +459,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'Şərtləri qəbul edirəm.',
-    'accept_protection_law_label' => 'Fərdi məlumatların qorunması haqqında Qanunun şərtlərini qəbul edirəm.',
-    'accept_privacy_terms_label' => 'Gizlilik şərtlərini qəbul edirəm.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
     'receive_sms_emails_label' => 'E-poçt və sms almaq istəyirəm.',
 
     // Register Type
