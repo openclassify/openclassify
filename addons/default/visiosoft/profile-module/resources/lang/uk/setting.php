@@ -14,6 +14,12 @@ return [
         'name' => 'Показати умови прапорця для реєстрації',
         'instructions' => 'Показати "Форма прийняття", "Закон про захист", "Термін конфіденційності", "SMS та електронні листи" у формі реєстрації'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Показати галузі освіти та професії',
         'instructions' => 'Покажіть "Освіта", "Стан освіти" та "Професія" на сторінці редагування профілю'
