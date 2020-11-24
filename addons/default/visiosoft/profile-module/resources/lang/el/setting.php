@@ -14,6 +14,12 @@ return [
         'name' => 'Εμφάνιση Όρων πλαισίου ελέγχου στο Μητρώο',
         'instructions' => 'Δείξτε την ένδειξη "Αποδοχή όρου", "νόμος προστασίας", "όρος απορρήτου", "sms & email"'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Εμφάνιση πεδίων εκπαίδευσης και επαγγέλματος',
         'instructions' => 'Εμφάνιση των "Εκπαίδευση", "Κατάσταση Εκπαίδευσης" και "Επάγγελμα" στη σελίδα επεξεργασίας προφίλ'
