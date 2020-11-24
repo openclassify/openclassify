@@ -465,7 +465,7 @@ return [
 
     // Register Type
     'personal' => [
-        'name' => 'Kişiye özel'
+        'name' => 'Bireysel'
     ],
 
 ];

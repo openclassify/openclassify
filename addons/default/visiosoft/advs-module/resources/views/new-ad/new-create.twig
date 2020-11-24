@@ -102,10 +102,12 @@
                                     <div class="col-8 pr-0 col-md-3">
                                         <input class="form-control priceField whole-price" value="{{ PriceValue|first }}">
                                     </div>
-                                    <div class="col-4 col-md-1">
-                                        <input class="form-control priceDecimalField decimal-price" placeholder="00" maxlength="2"
-                                               value="{{ PriceValue[1] }}">
-                                    </div>
+                                    {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
+                                        <div class="col-4 col-md-1">
+                                            <input class="form-control priceDecimalField decimal-price" placeholder="00" maxlength="2"
+                                                   value="{{ PriceValue[1] }}">
+                                        </div>
+                                    {% endif %}
                                     <div class="col-sm-3 col-xs-6">
                                         <select name="currency" class="custom-select form-control" data-field="currency"
                                                 data-field_name="currency" data-provides="anomaly.field_type.select"
