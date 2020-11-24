@@ -14,6 +14,12 @@ return [
         'name' => 'Mostrar términos de casilla de verificación en el registro',
         'instructions' => 'Muestre el "término de aceptación", "ley de protección", "término de privacidad", "sms y correos electrónicos" en el formulario de registro'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Mostrar campos de educación y profesión',
         'instructions' => 'Muestra la "Educación", "Estado de la educación" y "Profesión" en la página de edición del perfil.'
