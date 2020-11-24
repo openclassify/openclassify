@@ -14,6 +14,12 @@ return [
         'name' => 'নিবন্ধটিতে চেকবক্স শর্তাদি প্রদর্শন করুন',
         'instructions' => '"স্বীকৃতি শর্ত", "সুরক্ষা আইন", "গোপনীয়তা শর্ত", "এসএমএস এবং ইমেল" রেজিস্টার ফর্মটিতে দেখান'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'শিক্ষা এবং পেশার ক্ষেত্রগুলি দেখান',
         'instructions' => 'প্রোফাইল সম্পাদনা পৃষ্ঠায় "শিক্ষা", "শিক্ষার রাজ্য" এবং "পেশা" দেখান'
