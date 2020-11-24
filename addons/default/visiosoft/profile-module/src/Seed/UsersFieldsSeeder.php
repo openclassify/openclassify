@@ -77,7 +77,7 @@ class UsersFieldsSeeder extends Seeder
                 'slug' => 'register_type',
                 'type' => 'anomaly.field_type.select',
                 "config" => [
-                    'options' => '1: ' . trans('visiosoft.module.profile::field.individual.name') . "\n2: " . trans('visiosoft.module.profile::field.corporate.name')
+                    'options' => '1: ' . 'visiosoft.module.profile::field.individual.name' . "\n2: " . 'visiosoft.module.profile::field.corporate.name'
                 ]
             ],
             [
