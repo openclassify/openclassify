@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'نئی پروڈکٹ آپشن ویلیو',
     'new_options_configuration' => 'نئی آپشن ترتیب',
     'new_option_configuration' => 'نئی آپشن ترتیب',
-    'new_option_configuration' => 'نئی آپشن ترتیب',
 	'create_configurations' => 'تشکیلات بنائیں',
+	'replicate' => 'چربہ لگائیں',
 ];
