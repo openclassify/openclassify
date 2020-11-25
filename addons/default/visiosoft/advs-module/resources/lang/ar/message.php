@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'تم نسخ الإعلان بنجاح!',
     'ad_doesnt_exist' => "هذا الإعلان غير موجود!",
     'select_location_error' => "الرجاء تحديد موقع على الخريطة!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "هذا الإعلان غير صالح بعد الآن!",
 ];
