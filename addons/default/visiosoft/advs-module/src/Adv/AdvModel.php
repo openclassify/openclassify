@@ -391,7 +391,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     	return $this->product_options_value;
     }
 
-    public function status()
+    public function getStatus()
     {
         return $this->status;
     }
