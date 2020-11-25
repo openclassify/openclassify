@@ -14,6 +14,12 @@ return [
         'name' => 'Kayıtta Onay Kutusu Koşullarını Göster',
         'instructions' => 'Kayıt formunda "Şartları kabul et", "koruma yasası", "gizlilik şartı", "sms ve e-postalar" ı gösterin'
     ],
+    'register_protection_url' => [
+        'name' => 'Koruma URL\'sini Kaydet',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Gizlilik URL\'sini Kaydet',
+    ],
     'show_education_profession' => [
         'name' => 'Eğitim ve Meslek Alanlarını Göster',
         'instructions' => 'Profil düzenleme sayfasında "Eğitim", "Eğitim Durumu" ve "Meslek" bilgilerini gösterin'
