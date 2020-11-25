@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'Оголошення успішно відтворено!',
     'ad_doesnt_exist' => "Цього оголошення не існує!",
     'select_location_error' => "Виберіть місце на карті!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Це оголошення вже не діє!",
 ];
