@@ -455,16 +455,16 @@ return [
     'edit_details' => 'Редагувати деталі',
     'update' => 'Оновлення',
     'change_password' => 'Змінити пароль',
+    'choose_an_option' => 'Виберіть варіант ...',
 
     // Register page
     'accept_terms_label' => 'Я приймаю умови.',
-    'accept_protection_law_label' => 'Я приймаю умови Закону про захист персональних даних.',
-    'accept_privacy_terms_label' => 'Я приймаю умови конфіденційності.',
+    'accept_protection_law_label' => '<html>Я приймаю умови Закону про' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Захист персональних даних.</a>',
+    'accept_privacy_terms_label' => '<html>я приймаю' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> умови конфіденційності</a>.',
     'receive_sms_emails_label' => 'Я хочу отримувати електронну пошту та sms.',
 
     // Register Type
     'personal' => [
         'name' => 'Особистий'
     ],
-
 ];
