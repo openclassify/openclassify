@@ -456,16 +456,16 @@ return [
     'edit_details' => 'Редактировать детали',
     'update' => 'Обновить',
     'change_password' => 'Сменить пароль',
+    'choose_an_option' => 'Выберите опцию...',
 
     // Register page
     'accept_terms_label' => 'Я принимаю условия.',
-    'accept_protection_law_label' => 'Я принимаю условия Закона о защите личных данных.',
-    'accept_privacy_terms_label' => 'Я принимаю условия конфиденциальности.',
+    'accept_protection_law_label' => '<html>Я принимаю условия Закона о' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Защита личных данных.</a>',
+    'accept_privacy_terms_label' => '<html>Я принимаю Я согласен' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> условия конфиденциальности</a>.',
     'receive_sms_emails_label' => 'Я хочу получать электронную почту и смс.',
 
     // Register Type
     'personal' => [
         'name' => 'Личное'
     ],
-
 ];
