@@ -84,5 +84,5 @@ interface AdvInterface extends EntryInterface
 
 	public function getProductOptionsValues();
 
-    public function status();
+    public function getStatus();
 }
