@@ -10,12 +10,11 @@ use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 
 class AdvTableFilters
 {
-
     public function handle(AdvTableBuilder $builder, CategoryRepositoryInterface $categoryRepository, CityRepositoryInterface $cityRepository)
     {
         $cities = $cityRepository->all()->pluck('name', 'id')->all();
 
-        $categories = $categoryRepository->all()->mainCategories()->pluck('name', 'id')->all();
+        $categories = $categoryRepository->mainCats()->pluck('name', 'id')->all();
 
         $builder->setFilters(
             [
@@ -60,5 +59,4 @@ class AdvTableFilters
             ]
         );
     }
-
 }

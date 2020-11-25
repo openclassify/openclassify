@@ -2,25 +2,16 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
-use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryTranslationsModel;
-use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
-use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Maatwebsite\Excel\Facades\Excel;
 use Visiosoft\AdvsModule\Adv\AdvsExport;
@@ -46,12 +37,6 @@ class AdvsController extends AdminController
         $this->optionRepository = $optionRepository;
     }
 
-    /**
-     * Display an index of existing entries.
-     *
-     * @param AdvTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function index(AdvTableBuilder $table)
     {
         $table->addAsset("styles.css", "visiosoft.module.advs::css/custom.css");
