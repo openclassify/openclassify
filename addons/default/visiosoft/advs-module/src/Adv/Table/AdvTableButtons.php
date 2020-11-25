@@ -10,19 +10,19 @@ class AdvTableButtons
         $builder->setButtons([
             'status' => [
                 'text' => function (EntryInterface $entry) {
-                    $text_type = ($entry->status() == 'approved') ? 'decline' : 'approve';
+                    $text_type = ($entry->getStatus() == 'approved') ? 'decline' : 'approve';
                     return "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.' . $text_type) . "</font>";
 
                 },
                 'icon' => function (EntryInterface $entry) {
-                    return ($entry->status() == 'approved') ? "fa fa-eye-slash" : "fa fa-eye";
+                    return ($entry->getStatus() == 'approved') ? "fa fa-eye-slash" : "fa fa-eye";
                 },
                 'href' => function (EntryInterface $entry) {
-                    $action_type = ($entry->status() == 'approved') ? 'declined' : 'approved';
+                    $action_type = ($entry->getStatus() == 'approved') ? 'declined' : 'approved';
                     return "/admin/class/actions/{entry.id}/" . $action_type;
                 },
                 'type' => function (EntryInterface $entry) {
-                    return ($entry->status() == 'approved') ? "danger" : "success";
+                    return ($entry->getStatus() == 'approved') ? "danger" : "success";
                 },
             ],
 
