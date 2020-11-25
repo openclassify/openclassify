@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Waarde van nieuwe productoptie',
     'new_options_configuration' => 'Nieuwe optieconfiguratie',
     'new_option_configuration' => 'Nieuwe optieconfiguratie',
-    'new_option_configuration' => 'Nieuwe optieconfiguratie',
 	'create_configurations' => 'Maak configuraties',
+	'replicate' => 'Repliceren',
 ];
