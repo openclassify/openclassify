@@ -457,16 +457,16 @@ return [
     'edit_details' => 'Details bewerken',
     'update' => 'Bijwerken',
     'change_password' => 'Wachtwoord wijzigen',
+    'choose_an_option' => 'Kies een optie...',
 
     // Register page
     'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
-    'accept_protection_law_label' => 'Ik accepteer de voorwaarden van de wet op de bescherming van persoonlijke gegevens.',
-    'accept_privacy_terms_label' => 'Ik accepteer de privacyvoorwaarden.',
+    'accept_protection_law_label' => '<html>Ik accepteer de voorwaarden van de wet op' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Bescherming van persoonlijke gegevens.</a>',
+    'accept_privacy_terms_label' => '<html>ik aanvaard' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> privacyvoorwaarden</a>.',
     'receive_sms_emails_label' => 'Ik wil e-mail en sms ontvangen.',
 
     // Register Type
     'personal' => [
         'name' => 'Persoonlijk'
     ],
-
 ];
