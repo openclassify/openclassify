@@ -14,6 +14,12 @@ return [
         'name' => 'Afficher les conditions de la case à cocher lors de l\'inscription',
         'instructions' => 'Afficher les "Conditions d\'acceptation", "Loi de protection", "Conditions de confidentialité", "SMS et e-mails" sur le formulaire d\'inscription'
     ],
+    'register_protection_url' => [
+        'name' => 'Enregistrer l\'URL de protection',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Enregistrer l\'URL de confidentialité',
+    ],
     'show_education_profession' => [
         'name' => 'Afficher les champs de formation et de profession',
         'instructions' => 'Afficher les éléments "Formation", "État de la formation" et "Profession" sur la page de modification du profil'
