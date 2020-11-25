@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Нове значення продукту',
     'new_options_configuration' => 'Нова опція конфігурації',
     'new_option_configuration' => 'Нова опція конфігурації',
-    'new_option_configuration' => 'Нова опція конфігурації',
 	'create_configurations' => 'Створення конфігурацій',
+	'replicate' => 'Тиражувати',
 ];
