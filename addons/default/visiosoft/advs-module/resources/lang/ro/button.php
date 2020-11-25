@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Valoare opțiune produs nou',
     'new_options_configuration' => 'Configurare opțiune nouă',
     'new_option_configuration' => 'Configurare opțiune nouă',
-    'new_option_configuration' => 'Configurare opțiune nouă',
 	'create_configurations' => 'Creați configurații',
+	'replicate' => 'Replică',
 ];
