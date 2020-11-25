@@ -14,6 +14,12 @@ return [
         'name' => '登録時にチェックボックスの条件を表示する',
         'instructions' => '登録フォームに「同意条件」、「保護法」、「プライバシー期間」、「SMSとメール」を表示します'
     ],
+    'register_protection_url' => [
+        'name' => '保護URLを登録する',
+    ],
+    'register_privacy_url' => [
+        'name' => 'プライバシーURLを登録する',
+    ],
     'show_education_profession' => [
         'name' => '教育と職業の分野を表示する',
         'instructions' => 'プロファイル編集ページに「教育」、「教育の現状」、「職業」を表示します'
