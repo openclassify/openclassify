@@ -455,16 +455,16 @@ return [
     'edit_details' => 'Edytuj szczegóły',
     'update' => 'Aktualizacja',
     'change_password' => 'Zmień hasło',
+    'choose_an_option' => 'Wybierz opcję...',
 
     // Register page
     'accept_terms_label' => 'Akceptuję warunki.',
-    'accept_protection_law_label' => 'Akceptuję warunki ustawy o ochronie danych osobowych.',
-    'accept_privacy_terms_label' => 'Akceptuję warunki prywatności.',
+    'accept_protection_law_label' => '<html>Akceptuję warunki Ustawy o' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Ochrona danych osobowych.</a>',
+    'accept_privacy_terms_label' => '<html>Akceptuję' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> warunki prywatności</a>.',
     'receive_sms_emails_label' => 'Chcę otrzymywać e-maile i smsy.',
 
     // Register Type
     'personal' => [
         'name' => 'Osobisty'
     ],
-
 ];
