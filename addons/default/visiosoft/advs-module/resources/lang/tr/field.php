@@ -304,8 +304,8 @@ return [
     // New create page
     'options' => 'Opsiyonlar',
     'category_selection' => 'Kategori Seçimi',
-    'listing_details' => 'Liste ayrıntıları',
-    'preview' => 'Ön izleme',
+    'listing_details' => 'Liste Ayrıntıları',
+    'preview' => 'Ön İzleme',
     'congratulations' => 'Tebrikler',
 
     'free' => 'Bedava',
