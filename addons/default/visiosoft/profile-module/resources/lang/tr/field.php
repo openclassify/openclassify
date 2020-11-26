@@ -459,8 +459,8 @@ return [
 
     // Register page
     'accept_terms_label' => 'Koşulları kabul ediyorum.',
-    'accept_protection_law_label' => 'Kişisel Verilerin Korunması Kanunu hükümlerini kabul ediyorum.',
-    'accept_privacy_terms_label' => 'Gizlilik şartlarını kabul ediyorum.',
+    'accept_protection_law_label' => '<a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Kişisel Verilerin Korunması Kanunu hükümlerini</a> kabul ediyorum.',
+    'accept_privacy_terms_label' => '<a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">Gizlilik şartlarını</a> kabul ediyorum.',
     'receive_sms_emails_label' => 'E-posta ve sms almak istiyorum.',
 
     // Register Type
