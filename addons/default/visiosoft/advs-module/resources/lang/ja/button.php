@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => '新製品オプション値',
     'new_options_configuration' => '新しいオプション構成',
     'new_option_configuration' => '新しいオプション構成',
-    'new_option_configuration' => '新しいオプション構成',
 	'create_configurations' => '構成の作成',
+	'replicate' => '複製する',
 ];

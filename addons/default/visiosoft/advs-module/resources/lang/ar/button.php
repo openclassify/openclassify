@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'قيمة خيار منتج جديد',
     'new_options_configuration' => 'تكوين خيار جديد',
     'new_option_configuration' => 'تكوين خيار جديد',
-    'new_option_configuration' => 'تكوين خيار جديد',
 	'create_configurations' => 'تكوين التكوينات',
+	'replicate' => 'استنساخ',
 ];

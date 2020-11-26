@@ -14,6 +14,12 @@ return [
         'name' => 'Pokaż warunki pola wyboru w rejestrze',
         'instructions' => 'Pokaż w formularzu rejestracyjnym „Zaakceptuj termin”, „Prawo ochrony”, „Warunki prywatności”, „SMS-y i e-maile”'
     ],
+    'register_protection_url' => [
+        'name' => 'Zarejestruj adres URL ochrony',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Zarejestruj adres URL dotyczący prywatności',
+    ],
     'show_education_profession' => [
         'name' => 'Pokaż pola edukacji i zawodów',
         'instructions' => 'Pokaż „Wykształcenie”, „Stan edukacji” i „Zawód” na stronie edycji profilu'

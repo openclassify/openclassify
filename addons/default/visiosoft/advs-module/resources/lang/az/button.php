@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Yeni məhsul seçim dəyəri',
     'new_options_configuration' => 'Yeni Seçim konfiqurasiyası',
     'new_option_configuration' => 'Yeni Seçim konfiqurasiyası',
-    'new_option_configuration' => 'Yeni Seçim konfiqurasiyası',
 	'create_configurations' => 'Konfiqurasiyalar yaradın',
+	'replicate' => 'Təkrarlayın',
 ];

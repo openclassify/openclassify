@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'Quảng cáo đã được nhân rộng thành công!',
     'ad_doesnt_exist' => "Quảng cáo này không tồn tại!",
     'select_location_error' => "Vui lòng chọn một vị trí trên bản đồ!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Quảng cáo này không hợp lệ nữa!",
 ];

@@ -14,6 +14,12 @@ return [
         'name' => 'Hiển thị Điều khoản Hộp kiểm trên Đăng ký',
         'instructions' => 'Hiển thị "Điều khoản chấp nhận", "luật bảo vệ", "điều khoản bảo mật", "sms & email" trên biểu mẫu đăng ký'
     ],
+    'register_protection_url' => [
+        'name' => 'Đăng ký URL bảo vệ',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Đăng ký URL bảo mật',
+    ],
     'show_education_profession' => [
         'name' => 'Hiển thị các lĩnh vực giáo dục và nghề nghiệp',
         'instructions' => 'Hiển thị "Học vấn", "Trạng thái giáo dục" và "Nghề nghiệp" trên trang chỉnh sửa hồ sơ'

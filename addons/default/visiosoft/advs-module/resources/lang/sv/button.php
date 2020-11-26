@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Nytt produktalternativvärde',
     'new_options_configuration' => 'Ny alternativkonfiguration',
     'new_option_configuration' => 'Ny alternativkonfiguration',
-    'new_option_configuration' => 'Ny alternativkonfiguration',
 	'create_configurations' => 'Skapa konfigurationer',
+	'replicate' => 'Återskapa',
 ];

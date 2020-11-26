@@ -455,16 +455,16 @@ return [
     'edit_details' => 'Ətraflı məlumatları redaktə edin',
     'update' => 'Yeniləyin',
     'change_password' => 'Parolu dəyişdirin',
+    'choose_an_option' => 'Bir seçim seçin ...',
 
     // Register page
     'accept_terms_label' => 'Şərtləri qəbul edirəm.',
-    'accept_protection_law_label' => 'Fərdi məlumatların qorunması haqqında Qanunun şərtlərini qəbul edirəm.',
-    'accept_privacy_terms_label' => 'Gizlilik şərtlərini qəbul edirəm.',
+    'accept_protection_law_label' => '<html>Qanunun şərtlərini qəbul edirəm' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Fərdi məlumatların qorunması.</a>',
+    'accept_privacy_terms_label' => '<html>qəbul edirəm' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> gizlilik şərtləri</a>.',
     'receive_sms_emails_label' => 'E-poçt və sms almaq istəyirəm.',
 
     // Register Type
     'personal' => [
         'name' => 'Şəxsi'
     ],
-
 ];

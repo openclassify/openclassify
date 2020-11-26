@@ -455,16 +455,16 @@ return [
     'edit_details' => 'Chỉnh sửa chi tiết',
     'update' => 'Cập nhật',
     'change_password' => 'Đổi mật khẩu',
+    'choose_an_option' => 'Chọn một sự lựa chọn...',
 
     // Register page
     'accept_terms_label' => 'Tôi chấp nhận các điều khoản.',
-    'accept_protection_law_label' => 'Tôi chấp nhận các điều khoản của Luật Bảo vệ Dữ liệu Cá nhân.',
-    'accept_privacy_terms_label' => 'Tôi chấp nhận các điều khoản về quyền riêng tư.',
+    'accept_protection_law_label' => '<html>Tôi chấp nhận các điều khoản của Luật về' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Bảo vệ Dữ liệu Cá nhân.</a>',
+    'accept_privacy_terms_label' => '<html>tôi chấp nhận' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> điều khoản bảo mật</a>.',
     'receive_sms_emails_label' => 'Tôi muốn nhận e-mail & sms.',
 
     // Register Type
     'personal' => [
         'name' => 'Cá nhân'
     ],
-
 ];

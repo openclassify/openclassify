@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'Annonsen har replikerats framgångsrikt!',
     'ad_doesnt_exist' => "Den här annonsen finns inte!",
     'select_location_error' => "Välj en plats på kartan!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Denna annons är inte giltig längre!",
 ];

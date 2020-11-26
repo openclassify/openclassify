@@ -14,6 +14,12 @@ return [
         'name' => 'Mostra i termini della casella di controllo al momento della registrazione',
         'instructions' => 'Mostra il "termine di accettazione", "legge di protezione", "termine di privacy", "sms ed email" nel modulo di registrazione'
     ],
+    'register_protection_url' => [
+        'name' => 'Registrare l\'URL di protezione',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Registra URL privacy',
+    ],
     'show_education_profession' => [
         'name' => 'Mostra campi di istruzione e professione',
         'instructions' => 'Mostra "Istruzione", "Stato di istruzione" e "Professione" nella pagina di modifica del profilo'

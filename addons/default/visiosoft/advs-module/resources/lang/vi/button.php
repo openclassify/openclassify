@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Giá trị tùy chọn sản phẩm mới',
     'new_options_configuration' => 'Cấu hình tùy chọn mới',
     'new_option_configuration' => 'Cấu hình tùy chọn mới',
-    'new_option_configuration' => 'Cấu hình tùy chọn mới',
 	'create_configurations' => 'Tạo cấu hình',
+	'replicate' => 'Nhân rộng',
 ];

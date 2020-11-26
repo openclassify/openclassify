@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'নতুন পণ্য বিকল্প মান',
     'new_options_configuration' => 'নতুন বিকল্প কনফিগারেশন',
     'new_option_configuration' => 'নতুন বিকল্প কনফিগারেশন',
-    'new_option_configuration' => 'নতুন বিকল্প কনফিগারেশন',
 	'create_configurations' => 'কনফিগারেশন তৈরি করুন',
+	'replicate' => 'প্রতিলিপি',
 ];

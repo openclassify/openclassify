@@ -455,16 +455,16 @@ return [
     'edit_details' => 'לערוך פרטים',
     'update' => 'עדכון',
     'change_password' => 'שנה סיסמא',
+    'choose_an_option' => 'בחר אפשרות...',
 
     // Register page
     'accept_terms_label' => 'אני מקבל את התנאים.',
-    'accept_protection_law_label' => 'אני מקבל את תנאי החוק להגנת נתונים אישיים.',
-    'accept_privacy_terms_label' => 'אני מקבל תנאי פרטיות.',
+    'accept_protection_law_label' => '<html>אני מקבל את תנאי החוק בנושא' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> הגנה על נתונים אישיים.</a>',
+    'accept_privacy_terms_label' => '<html>אני מקבל' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> תנאי פרטיות</a>.',
     'receive_sms_emails_label' => 'אני רוצה לקבל דואר אלקטרוני וסמס.',
 
     // Register Type
     'personal' => [
         'name' => 'אישי'
     ],
-
 ];

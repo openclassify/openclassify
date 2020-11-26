@@ -454,16 +454,16 @@ return [
     'edit_details' => 'عدل التفاصيل',
     'update' => 'تحديث',
     'change_password' => 'غير كلمة السر',
+    'choose_an_option' => 'إختر خيار...',
 
     // Register page
     'accept_terms_label' => 'أوافق على شروط.',
-    'accept_protection_law_label' => 'أوافق على شروط قانون حماية البيانات الشخصية.',
-    'accept_privacy_terms_label' => 'أقبل شروط الخصوصية.',
+    'accept_protection_law_label' => '<html>أوافق على شروط قانون' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> حماية البيانات الشخصية</a>',
+    'accept_privacy_terms_label' => '<html>انا موافق' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> شروط الخصوصية</a>.',
     'receive_sms_emails_label' => 'أرغب في تلقي البريد الإلكتروني والرسائل القصيرة.',
 
     // Register Type
     'personal' => [
         'name' => 'شخصي'
     ],
-
 ];

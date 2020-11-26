@@ -455,16 +455,16 @@ return [
     'edit_details' => 'Ndryshoni Detajet',
     'update' => 'Update',
     'change_password' => 'Ndrysho fjalekalimin',
+    'choose_an_option' => 'Zgjidhni një opsion ...',
 
     // Register page
     'accept_terms_label' => 'Unë i pranoj kushtet.',
-    'accept_protection_law_label' => 'Unë i pranoj kushtet e Ligjit për Mbrojtjen e të Dhënave Personale.',
-    'accept_privacy_terms_label' => 'Unë i pranoj kushtet e privatësisë.',
+    'accept_protection_law_label' => '<html>Unë i pranoj kushtet e Ligjit për' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Mbrojtja e të Dhënave Personale.</a>',
+    'accept_privacy_terms_label' => '<html>Unë pranoj' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> kushtet e privatësisë</a>.',
     'receive_sms_emails_label' => 'Dua të marr e-mail dhe sms.',
 
     // Register Type
     'personal' => [
         'name' => 'Personale'
     ],
-
 ];

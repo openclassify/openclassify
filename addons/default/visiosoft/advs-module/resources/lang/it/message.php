@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'L\'annuncio è stato replicato con successo!',
     'ad_doesnt_exist' => "Questo annuncio non esiste!",
     'select_location_error' => "Seleziona una posizione sulla mappa!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Questo annuncio non è più valido!",
 ];

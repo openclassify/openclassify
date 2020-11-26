@@ -454,16 +454,16 @@ return [
     'edit_details' => 'جزئیات ویرایش',
     'update' => 'به روز رسانی',
     'change_password' => 'تغییر رمز عبور',
+    'choose_an_option' => 'گزینه ای را انتخاب کنید ...',
 
     // Register page
     'accept_terms_label' => 'من شرایط را قبول می کنم',
-    'accept_protection_law_label' => 'من شرایط قانون حمایت از داده های شخصی را می پذیرم.',
-    'accept_privacy_terms_label' => 'من شرایط حریم خصوصی را می پذیرم.',
+    'accept_protection_law_label' => '<html>من شرایط قانون را می پذیرم' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> حفاظت از اطلاعات شخصی.</a>',
+    'accept_privacy_terms_label' => '<html>قبول میکنم' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> شرایط حریم خصوصی</a>.',
     'receive_sms_emails_label' => 'من می خواهم ایمیل و پیام کوتاه دریافت کنم.',
 
     // Register Type
     'personal' => [
         'name' => 'شخصی'
     ],
-
 ];
