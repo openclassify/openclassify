@@ -10,7 +10,6 @@ use Visiosoft\AdvsModule\Adv\AdvRepository;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
-use Visiosoft\AdvsModule\Adv\Listeners\AddTableCategoryColumn;
 use Visiosoft\AdvsModule\Http\Middleware\redirectDiffrentLang;
 use Visiosoft\AdvsModule\Http\Middleware\SetLang;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
@@ -27,8 +26,6 @@ use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Illuminate\Routing\Router;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryRepository;
 
@@ -228,25 +225,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     ];
 
     protected $bindings = [
-        // AdvsCfValuesEntryModel::class => CfValueModel::class,
-        // AdvsCustomFieldAdvsEntryModel::class => CustomFieldAdvModel::class,
-        // AdvsCustomFieldsEntryModel::class => CustomFieldModel::class,
-        AdvsAdvsEntryModel::class => AdvModel::class,
         LocationVillageEntryModel::class => VillageModel::class,
-        AdvsCategoriesEntryModel::class => CategoryModel::class,
         AdvsAdvsEntryModel::class => AdvModel::class,
         'my_form' => AdvFormBuilder::class,
     ];
 
-    /**
-     * The addon singleton bindings.
-     *
-     * @type array|null
-     */
     protected $singletons = [
-        // CfValueRepositoryInterface::class => CfValueRepository::class,
-        // CustomFieldAdvRepositoryInterface::class => CustomFieldAdvRepository::class,
-        // CustomFieldRepositoryInterface::class => CustomFieldRepository::class,
         AdvRepositoryInterface::class => AdvRepository::class,
         VillageRepositoryInterface::class => VillageRepository::class,
         CategoryRepositoryInterface::class => CategoryRepository::class,
@@ -259,14 +243,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
     protected $overrides = [
         'streams::form/form' => 'visiosoft.module.advs::form/form',
-        //'streams::errors/404' => 'module::errors/404',
-        //'streams::errors/500' => 'module::errors/500',
     ];
 
     public function boot(AddonCollection $addonCollection, FileModel $fileModel)
     {
-        // Run extra post-boot registration logic here.
-        // Use method injection or commands to bring in services.
         $settings_url = [
             'general_settings' => [
                 'title' => 'visiosoft.module.advs::button.general_settings',
