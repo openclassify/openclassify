@@ -56,7 +56,7 @@ return [
         'name' => 'Üyelik Tipi'
     ],
     'birthday' => [
-        'name' => 'Doğum günü'
+        'name' => 'Doğum Günü'
     ],
     'education' => [
         'name' => 'Eğitim'
