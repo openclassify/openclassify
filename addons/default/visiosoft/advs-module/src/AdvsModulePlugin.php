@@ -9,8 +9,7 @@ use Visiosoft\AdvsModule\Adv\Command\getPopular;
 use Visiosoft\AdvsModule\Adv\Command\GetUserAds;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
-use Visiosoft\AdvsModule\Currency\Currency;
-use Visiosoft\AdvsModule\Currency\CurrencyFormat;
+use Visiosoft\AdvsModule\Support\Command\Currency;
 
 class AdvsModulePlugin extends Plugin
 {
@@ -30,11 +29,6 @@ class AdvsModulePlugin extends Plugin
                     }
 
                     return $ad;
-                }
-            ), new \Twig_SimpleFunction(
-                'currencyFormat',
-                function ($number, $currency = null, array $options = []) {
-                    return app(CurrencyFormat::class)->format($number, $currency, $options);
                 }
             ), new \Twig_SimpleFunction(
                 'isActive',
@@ -113,6 +107,15 @@ class AdvsModulePlugin extends Plugin
                         return null;
                     }
                     return $popular;
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'currency_*',
+                function ($name) {
+                    return call_user_func_array(
+                        [app(Currency::class), camel_case($name)],
+                        array_slice(func_get_args(), 1)
+                    );
                 }
             ),
         ];
