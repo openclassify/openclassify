@@ -4,69 +4,35 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 class VillageFormBuilder extends FormBuilder
 {
+    protected $neighborhood = null;
 
-    /**
-     * The form fields.
-     *
-     * @var array|string
-     */
-    protected $fields = [
-        'name','slug','order','parent_neighborhood_id'=>[
-            'type' => 'anomaly.field_type.text',
-            'class' => 'hidden',
-            'label' => '',
-        ],
+    protected $skips = [
+        'parent_neighborhood_id'
     ];
 
-    /**
-     * Additional validation rules.
-     *
-     * @var array|string
-     */
-    protected $rules = [];
-
-    /**
-     * Fields to skip.
-     *
-     * @var array|string
-     */
-    protected $skips = [];
-
-    /**
-     * The form actions.
-     *
-     * @var array|string
-     */
-    protected $actions = [];
-
-    /**
-     * The form buttons.
-     *
-     * @var array|string
-     */
     protected $buttons = [
         'cancel',
     ];
 
-    /**
-     * The form options.
-     *
-     * @var array
-     */
-    protected $options = [];
+    public function onSaving()
+    {
+        $neighborhood = $this->getNeighborhood();
+        $entry        = $this->getFormEntry();
 
-    /**
-     * The form sections.
-     *
-     * @var array
-     */
-    protected $sections = [];
+        if ($neighborhood) {
+            $entry->parent_neighborhood_id = $neighborhood;
+        }
+    }
 
-    /**
-     * The form assets.
-     *
-     * @var array
-     */
-    protected $assets = [];
+    public function getNeighborhood()
+    {
+        return $this->neighborhood;
+    }
 
+    public function setNeighborhood($neighborhood = null)
+    {
+        $this->neighborhood = $neighborhood;
+
+        return $this;
+    }
 }
