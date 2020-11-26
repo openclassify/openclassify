@@ -1,11 +1,12 @@
 <div class="home-container">
 
 
-    {{ addBlock('index_top')|raw }}
 
     <div class="row">
         <div class="col-md-4">{% include "visiosoft.theme.base::partials/categories" %}</div>
         <div class="col-md-8"><div class="album  bg-light">
+                {{ addBlock('index_top')|raw }}
+
                 <div class="row p-2">
                     {% if setting_value('visiosoft.theme.base::latest_and_view_all_btn') %}
                         <div class="col-md-6">
@@ -65,12 +66,13 @@
                         </div>
                     {% endfor %}
                 </div>
-            </div></div>
+            </div>
+            {{ addBlock('index')|raw }}
+        </div>
     </div>
 
 
 
-    {{ addBlock('index')|raw }}
 
 
 </div>
