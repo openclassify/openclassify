@@ -4,12 +4,6 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 class AdvFormBuilder extends FormBuilder
 {
-
-    /**
-     * The form fields.
-     *
-     * @var array|string
-     */
     protected $fields = [
         'name' => [
             'translatable' => true,
@@ -65,61 +59,20 @@ class AdvFormBuilder extends FormBuilder
     ];
 
     protected $category = null;
-    /**
-     * Additional validation rules.
-     *
-     * @var array|string
-     */
+
     protected $rules = [];
 
-    /**
-     * Fields to skip.
-     *
-     * @var array|string
-     */
     protected $skips = [];
 
-    /**
-     * The form actions.
-     *
-     * @var array|string
-     */
     protected $actions = [];
 
-    /**
-     * The form buttons.
-     *
-     * @var array|string
-     */
     protected $buttons = [
         'cancel',
     ];
 
-    /**
-     * The form options.
-     *
-     * @var array
-     */
     protected $options = [];
 
-    /**
-     * The form sections.
-     *
-     * @var array
-     */
     protected $sections = [];
 
-    /**
-     * The form assets.
-     *
-     * @var array
-     */
     protected $assets = [];
-
-    // public function setType(CategoryInterface $category)
-    // {
-    //     $this->category = $category;
-
-    //     return $this;
-    // }
 }

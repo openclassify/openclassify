@@ -160,7 +160,9 @@
                                             <select name="education" class="custom-select form-control"
                                                     data-field="education" data-field_name="education"
                                                     data-provides="anomaly.field_type.select" id="education">
-                                                <option value="">Choose an option...</option>
+                                                <option value="">
+                                                    {{ trans('visiosoft.module.profile::field.choose_an_option') }}
+                                                </option>
                                                 {% for education in setting_value('visiosoft.module.profile::education') %}
                                                     <option value="{{ education }}"
                                                             {{ profileForm.fields.education.value == education ? 'selected' }}>
@@ -178,7 +180,9 @@
                                             <select name="state_of_education" class="custom-select form-control"
                                                     data-field="state_of_education" data-field_name="state_of_education"
                                                     data-provides="anomaly.field_type.select" id="state_of_education">
-                                                <option value="">Choose an option...</option>
+                                                <option value="">
+                                                    {{ trans('visiosoft.module.profile::field.choose_an_option') }}
+                                                </option>
                                                 {% for state_of_education in setting_value('visiosoft.module.profile::state_of_education') %}
                                                     <option value="{{ state_of_education }}"
                                                             {{ profileForm.fields.state_of_education.value == state_of_education ? 'selected' }}>
@@ -196,7 +200,9 @@
                                             <select name="profession" class="custom-select form-control"
                                                     data-field="profession" data-field_name="profession"
                                                     data-provides="anomaly.field_type.select" id="profession">
-                                                <option value="">Choose an option...</option>
+                                                <option value="">
+                                                    {{ trans('visiosoft.module.profile::field.choose_an_option') }}
+                                                </option>
                                                 {% for profession in setting_value('visiosoft.module.profile::profession') %}
                                                     <option value="{{ profession }}"
                                                             {{ profileForm.fields.profession.value == profession ? 'selected' }}>
