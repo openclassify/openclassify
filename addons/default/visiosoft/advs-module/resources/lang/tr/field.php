@@ -274,7 +274,7 @@ return [
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
     "ads" => 'İlanlar',
-    "were_found" => 'bulundular.',
+    "were_found" => 'bulundu.',
 
     // Pending screen
     'pending_message_1' => 'İlan Onay Sürecinde',
