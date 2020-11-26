@@ -86,7 +86,7 @@ return [
         'name' => 'Para birimi'
     ],
     'status' => [
-        'name' => 'durum',
+        'name' => 'Durum',
         'option' => [
             'approved' => 'Onaylandı',
             'expired' => 'Süresi doldu',
