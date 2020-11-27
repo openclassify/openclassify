@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Νέο Adv',
+    'new_classified' => 'New classified',
     'new_category' => 'Νέα κατηγορία',
     'new_country' => 'Νέα χώρα',
     'new_city' => 'Νέα πόλη',
@@ -39,4 +40,5 @@ return [
     'new_option_configuration' => 'Διαμόρφωση νέας επιλογής',
 	'create_configurations' => 'Δημιουργήστε διαμορφώσεις',
 	'replicate' => 'Αντιγραφή',
+	'fast_create' => 'Fast create',
 ];
