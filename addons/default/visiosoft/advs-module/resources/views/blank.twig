@@ -1,0 +1,11 @@
+{% extends template.layout ?: "theme::layouts/default" %}
+
+{% block content %}
+    {{ content|raw }}
+
+    {% if form.mode == 'edit' %}
+        <script>
+            const ad = JSON.parse(`{{ form.entry|json_encode|raw }}`)
+        </script>
+    {% endif %}
+{% endblock %}

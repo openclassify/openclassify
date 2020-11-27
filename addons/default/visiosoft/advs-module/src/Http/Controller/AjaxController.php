@@ -42,7 +42,6 @@ class AjaxController extends PublicController
 
     public function categories(Request $request)
     {
-        $datas = [];
         if ($request->level == 0) {
             $datas = CategoryModel::whereNull('parent_category_id')->get();
         } else {
