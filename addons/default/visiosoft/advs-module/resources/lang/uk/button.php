@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Нова реклама',
+    'new_classified' => 'New classified',
     'new_category' => 'Нова категорія',
     'new_country' => 'Нова країна',
     'new_city' => 'Нове місто',
@@ -39,4 +40,5 @@ return [
     'new_option_configuration' => 'Нова опція конфігурації',
 	'create_configurations' => 'Створення конфігурацій',
 	'replicate' => 'Тиражувати',
+	'fast_create' => 'Fast create',
 ];
