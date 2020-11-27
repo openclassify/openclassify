@@ -218,10 +218,6 @@ a.sort-by-open-dropdown:hover {
     cursor: pointer;
 }
 
-.filter-section .countries input[type=checkbox] {
-    display: none;
-}
-
 .gallery-tn {
     object-fit: cover;
 }
