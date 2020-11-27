@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Yeni Adv',
+    'new_classified' => 'New classified',
     'new_category' => 'Yeni kateqoriya',
     'new_country' => 'Yeni Ölkə',
     'new_city' => 'Yeni Şəhər',
@@ -39,4 +40,5 @@ return [
     'new_option_configuration' => 'Yeni Seçim konfiqurasiyası',
 	'create_configurations' => 'Konfiqurasiyalar yaradın',
 	'replicate' => 'Təkrarlayın',
+	'fast_create' => 'Fast create',
 ];
