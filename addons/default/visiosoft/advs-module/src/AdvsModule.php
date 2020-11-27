@@ -11,15 +11,12 @@ class AdvsModule extends Module
     protected $sections = [
         'advs' => [
             'buttons' => [
-                'new_adv' => [
+                'new_classified' => [
                      'href' => "/advs/create_adv",
                 ],
-//                'new_classified' => [
-//                     'href' => "/advs/create_adv",
-//                ],
-//                'new_adv' => [
-//                    'text' => 'visiosoft.module.advs::button.fast_create'
-//                ],
+                'new_adv' => [
+                    'text' => 'visiosoft.module.advs::button.fast_create'
+                ],
                 'extend_all' => [
                     'href' => "/advs/extendAll/admin",
                     'icon' => 'fa fa-calendar',

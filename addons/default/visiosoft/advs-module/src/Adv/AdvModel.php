@@ -395,4 +395,14 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         return $this->status;
     }
+
+    public function approve()
+    {
+        $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
+        $this->update([
+            'status' => 'approved',
+            'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+            'publish_at' => date('Y-m-d H:i:s')
+        ]);
+    }
 }

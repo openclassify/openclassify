@@ -241,10 +241,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 	    ProductoptionsValueRepositoryInterface::class => ProductoptionsValueRepository::class,
     ];
 
-    protected $overrides = [
-        'streams::form/form' => 'visiosoft.module.advs::form/form',
-    ];
-
     public function boot(AddonCollection $addonCollection, FileModel $fileModel)
     {
         $settings_url = [

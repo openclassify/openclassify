@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
+use Visiosoft\AdvsModule\Adv\Form\SimpleAdvFormBuilder;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
@@ -54,6 +55,16 @@ class AdvsController extends AdminController
         return $table->render();
     }
 
+    public function create(SimpleAdvFormBuilder $form)
+    {
+        return $form->render();
+    }
+
+    public function edit(SimpleAdvFormBuilder $form, $id)
+    {
+        return $form->render($id);
+    }
+
     public function choose($advId, Request $request, UserRepositoryInterface $users)
     {
         if (empty($request->all())) {
@@ -67,7 +78,6 @@ class AdvsController extends AdminController
 
     public function actions($id, $type, SettingRepositoryInterface $settings, AdvModel $advModel)
     {
-
         $ad = $advModel->where('advs_advs.id', '=', $id)->first();
         $ad->status = $type;
 
