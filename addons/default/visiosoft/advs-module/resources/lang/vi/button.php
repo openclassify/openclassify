@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Adv mới',
+    'new_classified' => 'New classified',
     'new_category' => 'Thể loại mới',
     'new_country' => 'Quốc gia mới',
     'new_city' => 'Thành phố mới',
@@ -39,4 +40,5 @@ return [
     'new_option_configuration' => 'Cấu hình tùy chọn mới',
 	'create_configurations' => 'Tạo cấu hình',
 	'replicate' => 'Nhân rộng',
+	'fast_create' => 'Fast create',
 ];
