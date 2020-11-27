@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'جدید جدید',
+    'new_classified' => 'New classified',
     'new_category' => 'دسته بندی جدید',
     'new_country' => 'کشور جدید',
     'new_city' => 'شهر جدید',
@@ -39,4 +40,5 @@ return [
     'new_option_configuration' => 'پیکربندی گزینه جدید',
 	'create_configurations' => 'تنظیمات را ایجاد کنید',
 	'replicate' => 'تکثیر',
+	'fast_create' => 'Fast create',
 ];
