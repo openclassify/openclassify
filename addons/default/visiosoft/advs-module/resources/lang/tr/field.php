@@ -82,11 +82,20 @@ return [
     'cat7' => [
         'name' => 'Alt Kategori 6'
     ],
+    'cat8' => [
+        'name' => 'Sub Category 7'
+    ],
+    'cat9' => [
+        'name' => 'Sub Category 8'
+    ],
+    'cat10' => [
+        'name' => 'Sub Category 9'
+    ],
     'currency' => [
         'name' => 'Para birimi'
     ],
     'status' => [
-        'name' => 'Durum',
+        'name' => 'durum',
         'option' => [
             'approved' => 'Onaylandı',
             'expired' => 'Süresi doldu',
@@ -304,8 +313,8 @@ return [
     // New create page
     'options' => 'Opsiyonlar',
     'category_selection' => 'Kategori Seçimi',
-    'listing_details' => 'Liste Ayrıntıları',
-    'preview' => 'Ön İzleme',
+    'listing_details' => 'Liste ayrıntıları',
+    'preview' => 'Ön izleme',
     'congratulations' => 'Tebrikler',
 
     'free' => 'Bedava',
