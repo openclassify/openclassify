@@ -13,7 +13,7 @@ class SimpleAdvFormHandler
 
         $builder->saveForm();
 
-        $ad = $builder->getFormEntry();
+        $ad = $advRepository->find($builder->getFormEntryId());
         if ($ad->status !== 'approved') {
             $ad->approve();
         }
