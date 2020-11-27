@@ -457,16 +457,16 @@ return [
     'edit_details' => 'Επεξεργασία λεπτομερειών',
     'update' => 'Εκσυγχρονίζω',
     'change_password' => 'Άλλαξε κωδικό',
+    'choose_an_option' => 'Διάλεξε μια επιλογή...',
 
     // Register page
     'accept_terms_label' => 'Αποδέχομαι τους όρους.',
-    'accept_protection_law_label' => 'Αποδέχομαι τους όρους του Νόμου περί Προστασίας Προσωπικών Δεδομένων.',
-    'accept_privacy_terms_label' => 'Αποδέχομαι τους όρους απορρήτου.',
+    'accept_protection_law_label' => '<html>Αποδέχομαι τους όρους του Νόμου για' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Προστασία προσωπικών δεδομένων.</a>',
+    'accept_privacy_terms_label' => '<html>Δέχομαι' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> Όροι απορρήτου</a>.',
     'receive_sms_emails_label' => 'Θέλω να λαμβάνω e-mail & sms.',
 
     // Register Type
     'personal' => [
         'name' => 'Προσωπικός'
     ],
-
 ];

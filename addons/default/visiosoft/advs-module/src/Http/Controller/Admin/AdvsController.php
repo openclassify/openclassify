@@ -2,25 +2,16 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
-use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryTranslationsModel;
-use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
-use Anomaly\UsersModule\User\UserModel;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Maatwebsite\Excel\Facades\Excel;
 use Visiosoft\AdvsModule\Adv\AdvsExport;
@@ -46,72 +37,10 @@ class AdvsController extends AdminController
         $this->optionRepository = $optionRepository;
     }
 
-    /**
-     * Display an index of existing entries.
-     *
-     * @param AdvTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function index(AdvTableBuilder $table, \Anomaly\UsersModule\User\UserModel $userModel, CityModel $cityModel, CatsCategoryEntryModel $categoryModel)
+    public function index(AdvTableBuilder $table)
     {
         $table->addAsset("styles.css", "visiosoft.module.advs::css/custom.css");
         $table->addAsset('scripts.js', 'visiosoft.module.advs::js/list.js');
-
-        $table->addButtons([
-            'status' => [
-                'text' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.decline') . "</font>";
-                    } else {
-                        return "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.approve') . "</font>";
-                    }
-                },
-                'icon' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "fa fa-eye-slash";
-                    } else {
-                        return "fa fa-eye";
-                    }
-                },
-                'href' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "/admin/class/actions/{entry.id}/declined";
-                    } else {
-                        return "/admin/class/actions/{entry.id}/approved";
-                    }
-                },
-                'type' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "danger";
-                    } else {
-                        return "success";
-                    }
-                },
-            ],
-            'edit' => [
-                'href' => '/advs/edit_advs/{entry.id}',
-                'text' => "<font class='hidden-xs-down'>" . trans('streams::button.edit') . "</font>",
-            ],
-            'settings' => [
-                'text'     => false,
-                'href'     => false,
-                'dropdown' => [
-                    'change_owner'    => [
-                        'data-toggle' => 'modal',
-                        'data-target' => '#modal',
-                        'text'        => trans('visiosoft.module.advs::button.change_owner'),
-                        'href'        => 'admin/advs-users/choose/{entry.id}',
-                    ],
-                    'replicate' => [
-                        'text' => 'Replicate',
-                    ],
-	                'create_configration' => [
-		                'text' => trans('visiosoft.module.advs::button.create_configurations'),
-		                'href' => route('visiosoft.module.advs::configrations.create')."?ad={entry.id}"
-	                ],
-                ],
-            ],
-        ]);
 
         if ($this->model->is_enabled('recommendedads')) {
             $table->addButton('add_recommended', [
@@ -121,87 +50,6 @@ class AdvsController extends AdminController
                 'href' => '/admin/recommendedads/create/{entry.id}',
             ]);
         }
-
-        $table->setColumns([
-            'cover_photo' => [
-                'value' => function (EntryInterface $entry) {
-                    return "<img width='80px' src='" . $this->model->AddAdsDefaultCoverImage($entry)->cover_photo . "' >";
-                },
-            ],
-            'entry.id',
-            'name' => [
-                'class' => 'advs-name',
-                'sort_column' => 'slug',
-                'value' => function (EntryInterface $entry) {
-                    return (!is_null($entry->name)) ? "<a href='" . $this->model->getAdvDetailLinkByModel($entry, 'list') . "' > " . $entry->name . "</a > " : "<font color='red'>" . trans("visiosoft.module.advs::view.unfinished") . "</font>";
-                },
-            ],
-            'price' => [
-                'class' => 'advs-price',
-            ],
-            'currency' => [
-                'class' => 'advs-currency',
-            ],
-            'country' => [
-                'class' => 'advs-country',
-            ],
-            'created_by' => [
-                'value' => function (EntryInterface $entry, UserModel $userModel) {
-                    $user = $userModel->find($entry->created_by_id);
-                    if (!is_null($user))
-                        return $user->first_name . " " . $user->last_name;
-                }
-            ],
-            'category' => [
-                'sort_column' => 'cat1',
-                'value' => function (EntryInterface $entry, CategoryModel $categoryModel) {
-                    $category = $categoryModel->getCat($entry->cat1);
-                    if (!is_null($category))
-                        return $category->name;
-                }
-            ],
-            'finish_at',
-        ]);
-
-
-        $cities = $cityModel->all()->pluck('name', 'id')->all();
-        $categories = $categoryModel::query()->where('parent_category_id', null)
-            ->leftJoin('cats_category_translations', 'cats_category.id', '=', 'cats_category_translations.entry_id')
-            ->where('locale', config('app.locale'))
-            ->select('cats_category.*', 'cats_category_translations.name')
-            ->pluck('t1.name', 'id')->all();
-        $table->setFilters(array_merge($table->getFilters(),
-                [
-                    'City' => [
-                        'exact' => true,
-                        'filter' => 'select',
-                        'query' => CityFilterQuery::class,
-                        'options' => $cities,
-                    ],
-                    'Category' => [
-                        'exact' => true,
-                        'filter' => 'select',
-                        'query' => CategoryFilterQuery::class,
-                        'options' => $categories,
-                    ],
-                    'User' => [
-                        'exact' => true,
-                        'filter' => 'select',
-                        'query' => UserFilterQuery::class,
-                    ],
-                    'status' => [
-                        'filter' => 'select',
-                        'query' => StatusFilterQuery::class,
-                        'options' => [
-                            'approved' => 'visiosoft.module.advs::field.status.option.approved',
-                            'expired' => 'visiosoft.module.advs::field.status.option.expired',
-                            'unpublished' => 'visiosoft.module.advs::field.status.option.unpublished',
-                            'pending_admin' => 'visiosoft.module.advs::field.status.option.pending_admin',
-                            'pending_user' => 'visiosoft.module.advs::field.status.option.pending_user',
-                        ],
-                    ]
-                ])
-        );
 
         return $table->render();
     }
@@ -342,7 +190,8 @@ class AdvsController extends AdminController
     }
 
 
-	public function exportAdvs(){
-		return Excel::download(new AdvsExport(), 'advs-' . time() . '.xlsx');
-	}
+    public function exportAdvs()
+    {
+        return Excel::download(new AdvsExport(), 'advs-' . time() . '.xlsx');
+    }
 }

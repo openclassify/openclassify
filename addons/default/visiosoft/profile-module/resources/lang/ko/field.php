@@ -455,16 +455,16 @@ return [
     'edit_details' => '세부 정보 편집',
     'update' => '최신 정보',
     'change_password' => '비밀번호 변경',
+    'choose_an_option' => '옵션을 선택하세요...',
 
     // Register page
     'accept_terms_label' => '약관에 동의합니다.',
-    'accept_protection_law_label' => '개인 데이터 보호에 관한 법률 조항에 동의합니다.',
-    'accept_privacy_terms_label' => '개인 정보 보호 약관에 동의합니다.',
+    'accept_protection_law_label' => '<html>에 대한 법률 조항에 동의합니다.' . setting_value('visiosoft.module.profile::register_protection_url') . '"target ="_ blank "> 개인 데이터 보호.</a>',
+    'accept_privacy_terms_label' => '<html>동의 함' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target ="_ blank "> 개인 정보 보호 약관</a>.',
     'receive_sms_emails_label' => '이메일과 SMS를 받고 싶습니다.',
 
     // Register Type
     'personal' => [
         'name' => '개인적인'
     ],
-
 ];

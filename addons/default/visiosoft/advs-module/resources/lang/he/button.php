@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'ערך אפשרות מוצר חדש',
     'new_options_configuration' => 'תצורת אפשרות חדשה',
     'new_option_configuration' => 'תצורת אפשרות חדשה',
-    'new_option_configuration' => 'תצורת אפשרות חדשה',
 	'create_configurations' => 'צור תצורות',
+	'replicate' => 'העתק',
 ];

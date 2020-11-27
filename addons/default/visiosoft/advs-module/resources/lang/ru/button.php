@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Стоимость опции нового продукта',
     'new_options_configuration' => 'Новая конфигурация опций',
     'new_option_configuration' => 'Новая конфигурация опций',
-    'new_option_configuration' => 'Новая конфигурация опций',
 	'create_configurations' => 'Создать конфигурации',
+	'replicate' => 'Тиражировать',
 ];

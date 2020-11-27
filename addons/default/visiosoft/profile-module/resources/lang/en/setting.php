@@ -14,6 +14,12 @@ return [
         'name' => 'Show Checkbox Terms on Register',
         'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
     ],
+    'register_protection_url' => [
+        'name' => 'Register Protection URL',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Register Privacy URL',
+    ],
     'show_education_profession' => [
         'name' => 'Show Education and Profession Fields',
         'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'

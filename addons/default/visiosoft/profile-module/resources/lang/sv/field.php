@@ -455,16 +455,16 @@ return [
     'edit_details' => 'Redigera detaljer',
     'update' => 'Uppdatering',
     'change_password' => 'Ändra lösenord',
+    'choose_an_option' => 'Välj ett alternativ...',
 
     // Register page
     'accept_terms_label' => 'Jag accepterar villkoren.',
-    'accept_protection_law_label' => 'Jag accepterar villkoren i lagen om skydd av personuppgifter.',
-    'accept_privacy_terms_label' => 'Jag accepterar sekretessvillkor.',
+    'accept_protection_law_label' => '<html>Jag accepterar villkoren i lagen den' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Skydd av personuppgifter.</a>',
+    'accept_privacy_terms_label' => '<html>jag accepterar' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> sekretessvillkor</a>.',
     'receive_sms_emails_label' => 'Jag vill få e-post och sms.',
 
     // Register Type
     'personal' => [
         'name' => 'Personlig'
     ],
-
 ];

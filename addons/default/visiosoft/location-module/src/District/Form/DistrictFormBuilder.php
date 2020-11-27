@@ -4,69 +4,35 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 class DistrictFormBuilder extends FormBuilder
 {
+    protected $city = null;
 
-    /**
-     * The form fields.
-     *
-     * @var array|string
-     */
-    protected $fields = [
-        'name','slug','order','parent_city_id'=>[
-            'type' => 'anomaly.field_type.text',
-            'class' => 'hidden',
-            'label' => '',
-        ],
+    protected $skips = [
+        'parent_city_id'
     ];
 
-    /**
-     * Additional validation rules.
-     *
-     * @var array|string
-     */
-    protected $rules = [];
-
-    /**
-     * Fields to skip.
-     *
-     * @var array|string
-     */
-    protected $skips = [];
-
-    /**
-     * The form actions.
-     *
-     * @var array|string
-     */
-    protected $actions = [];
-
-    /**
-     * The form buttons.
-     *
-     * @var array|string
-     */
     protected $buttons = [
         'cancel',
     ];
 
-    /**
-     * The form options.
-     *
-     * @var array
-     */
-    protected $options = [];
+    public function onSaving()
+    {
+        $city  = $this->getCity();
+        $entry = $this->getFormEntry();
 
-    /**
-     * The form sections.
-     *
-     * @var array
-     */
-    protected $sections = [];
+        if ($city) {
+            $entry->parent_city_id = $city;
+        }
+    }
 
-    /**
-     * The form assets.
-     *
-     * @var array
-     */
-    protected $assets = [];
+    public function getCity()
+    {
+        return $this->city;
+    }
 
+    public function setCity($city = null)
+    {
+        $this->city = $city;
+
+        return $this;
+    }
 }

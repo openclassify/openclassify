@@ -1,4 +1,4 @@
-function crudAjax(params, url, type, callback, async = false) {
+function crudAjax(params, url, type, callback = () => {}, async = false) {
     return $.ajax({
         type: type,
         data: params,

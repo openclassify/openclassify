@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'New Product option value',
     'new_options_configuration' => 'New Option configuration',
     'new_option_configuration' => 'New Option configuration',
-    'new_option_configuration' => 'New Option configuration',
 	'create_configurations' => 'Create Configurations',
+	'replicate' => 'Replicate',
 ];

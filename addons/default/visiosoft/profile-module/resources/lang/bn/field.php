@@ -455,16 +455,16 @@ return [
     'edit_details' => 'তথ্য সংশোধন কর',
     'update' => 'হালনাগাদ',
     'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
+    'choose_an_option' => 'একটি বিকল্প নির্বাচন করুন...',
 
     // Register page
     'accept_terms_label' => 'আমি শর্তাদি গ্রহণ করি।',
-    'accept_protection_law_label' => 'আমি ব্যক্তিগত তথ্য সুরক্ষা আইনের শর্তাদি স্বীকার করি।',
-    'accept_privacy_terms_label' => 'আমি গোপনীয়তার শর্তাদি গ্রহণ করি।',
+    'accept_protection_law_label' => '<html>আমি আইনটির শর্তাদি স্বীকার করি' . setting_value('visiosoft.module.profile::register_protection_url') . '"টার্গেট =" _ ফাঁকা "> ব্যক্তিগত ডেটা সুরক্ষা</a>',
+    'accept_privacy_terms_label' => '<html>আমি স্বীকার করছি' . setting_value('visiosoft.module.profile::register_privacy_url') . '"টার্গেট =" _ ফাঁকা "> গোপনীয়তার শর্তাদি</a>।',
     'receive_sms_emails_label' => 'আমি ইমেইল এবং এসএমএস পেতে চাই',
 
     // Register Type
     'personal' => [
         'name' => 'ব্যক্তিগত'
     ],
-
 ];

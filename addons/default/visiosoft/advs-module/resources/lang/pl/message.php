@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'Reklama została pomyślnie zreplikowana!',
     'ad_doesnt_exist' => "Ta reklama nie istnieje!",
     'select_location_error' => "Wybierz lokalizację na mapie!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Ta reklama jest już nieważna!",
 ];

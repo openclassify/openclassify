@@ -43,8 +43,8 @@ return [
             'name' => 'US Dollar',
             'direction' => 'ltr',
             'symbol' => '',
-            'separator' => ',',
-            'point' => '.',
+            'separator' => '.',
+            'point' => ',',
             'decimals' => 2,
         ],
         'TRY' => [
@@ -1142,14 +1142,6 @@ return [
             'point' => '.',
             'decimals' => 2,
             'symbol' => 'Sh',
-        ],
-        'USD' => [
-            'name' => 'US Dollar',
-            'direction' => 'ltr',
-            'separator' => ',',
-            'point' => '.',
-            'decimals' => 2,
-            'symbol' => '$',
         ],
         'UYU' => [
             'name' => 'Peso Uruguayo',

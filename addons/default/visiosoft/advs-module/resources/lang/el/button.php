@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Νέα τιμή επιλογής προϊόντος',
     'new_options_configuration' => 'Διαμόρφωση νέας επιλογής',
     'new_option_configuration' => 'Διαμόρφωση νέας επιλογής',
-    'new_option_configuration' => 'Διαμόρφωση νέας επιλογής',
 	'create_configurations' => 'Δημιουργήστε διαμορφώσεις',
+	'replicate' => 'Αντιγραφή',
 ];

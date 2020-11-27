@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => '신제품 옵션 값',
     'new_options_configuration' => '새로운 옵션 구성',
     'new_option_configuration' => '새로운 옵션 구성',
-    'new_option_configuration' => '새로운 옵션 구성',
 	'create_configurations' => '구성 만들기',
+	'replicate' => '뒤로 젖히다',
 ];

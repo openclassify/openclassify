@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'مقدار گزینه محصول جدید',
     'new_options_configuration' => 'پیکربندی گزینه جدید',
     'new_option_configuration' => 'پیکربندی گزینه جدید',
-    'new_option_configuration' => 'پیکربندی گزینه جدید',
 	'create_configurations' => 'تنظیمات را ایجاد کنید',
+	'replicate' => 'تکثیر',
 ];

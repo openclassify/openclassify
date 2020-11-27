@@ -71,19 +71,8 @@ function numPages() {
     return Math.ceil(totalAdvs / records_per_page);
 }
 
-function crud(params, url, type, callback) {
-    $.ajax({
-        type: type,
-        data: params,
-        url: url,
-        success: function (response) {
-            callback(response);
-        },
-    });
-}
-
 function getMyAdvs(type) {
-    crud({'type': type, 'paginate': true, 'page': current_page}, '/ajax/getAdvs', 'GET', function (callback) {
+    crudAjax({'type': type, 'paginate': true, 'page': current_page}, '/ajax/getAdvs', 'GET', function (callback) {
         ads_type = type;
         objJson = callback.content.data;
         totalAdvs = callback.content.total
@@ -104,6 +93,8 @@ getMyAdvs(type);
 
 
 function addAdsRow(id, href, image, name, formatted_price, city, country, cat1, cat2, status) {
+    city =  (city) ? city : '';
+    country =  (country) ? country : '';
     return "<div class='col-md-12 mb-2 profile-ads border-bottom border-white'>\n" +
         "<div class='row bg-light'>\n" +
         "<div class='col-md-2 justify-content-center align-self-center border-right border-white'>\n" +
@@ -171,8 +162,7 @@ function dropdownRow(id, type) {
     return dropdown;
 }
 
-const dropdownBlock = getBlock('profile/dropdown-ad', {'id': ':id'})
-function addDropdownBlock () {
+function addDropdownBlock() {
     const dropdowns = $('.my-ads-dropdown')
     for (let i = 0; i < dropdowns.length; i++) {
         const currentDropdown = $(dropdowns[i])

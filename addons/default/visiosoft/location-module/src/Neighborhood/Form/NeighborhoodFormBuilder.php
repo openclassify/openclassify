@@ -4,69 +4,35 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 class NeighborhoodFormBuilder extends FormBuilder
 {
+    protected $district = null;
 
-    /**
-     * The form fields.
-     *
-     * @var array|string
-     */
-    protected $fields = [
-        'name','slug','order','parent_district_id'=>[
-            'type' => 'anomaly.field_type.text',
-            'class' => 'hidden',
-            'label' => '',
-        ],
+    protected $skips = [
+        'parent_district_id'
     ];
 
-    /**
-     * Additional validation rules.
-     *
-     * @var array|string
-     */
-    protected $rules = [];
-
-    /**
-     * Fields to skip.
-     *
-     * @var array|string
-     */
-    protected $skips = [];
-
-    /**
-     * The form actions.
-     *
-     * @var array|string
-     */
-    protected $actions = [];
-
-    /**
-     * The form buttons.
-     *
-     * @var array|string
-     */
     protected $buttons = [
         'cancel',
     ];
 
-    /**
-     * The form options.
-     *
-     * @var array
-     */
-    protected $options = [];
+    public function onSaving()
+    {
+        $district = $this->getDistrict();
+        $entry    = $this->getFormEntry();
 
-    /**
-     * The form sections.
-     *
-     * @var array
-     */
-    protected $sections = [];
+        if ($district) {
+            $entry->parent_district_id = $district;
+        }
+    }
 
-    /**
-     * The form assets.
-     *
-     * @var array
-     */
-    protected $assets = [];
+    public function getDistrict()
+    {
+        return $this->district;
+    }
 
+    public function setDistrict($district = null)
+    {
+        $this->district = $district;
+
+        return $this;
+    }
 }

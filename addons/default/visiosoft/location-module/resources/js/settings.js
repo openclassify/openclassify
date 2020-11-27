@@ -30,7 +30,7 @@ new Promise(function (resolve, reject) {
 
 
 function getCities(country) {
-    crud('id=' + country, '/ajax/getCities', 'POST', function (callback) {
+    crudAjax('id=' + country, '/ajax/getCities', 'POST', function (callback) {
         cities = callback;
         $('select[name="default_city"]').html("<option>" + pick_option + "</option>");
         $.each(cities, function (index, value) {
@@ -40,7 +40,7 @@ function getCities(country) {
 }
 
 function getDistricts(city) {
-    crud('id=' + city, '/ajax/getDistricts', 'POST', function (callback) {
+    crudAjax('id=' + city, '/ajax/getDistricts', 'POST', function (callback) {
         cities = callback;
         $('select[name="default_district"]').html("<option>" + pick_option + "</option>");
         $.each(cities, function (index, value) {
@@ -50,7 +50,7 @@ function getDistricts(city) {
 }
 
 function getNeighborhoods(district) {
-    crud('id=' + district, '/ajax/getNeighborhoods', 'POST', function (callback) {
+    crudAjax('id=' + district, '/ajax/getNeighborhoods', 'POST', function (callback) {
         cities = callback;
         $('select[name="default_neighborhood"]').html("<option>" + pick_option + "</option>");
         $.each(cities, function (index, value) {
@@ -71,16 +71,3 @@ $(document).on('change', 'select[name="default_city"]', function () {
 $(document).on('change', 'select[name="default_district"]', function () {
     getNeighborhoods($(this).val())
 });
-
-
-function crud(params, url, type, callback) {
-    $.ajax({
-        type: type,
-        data: params,
-        async: false,
-        url: url,
-        success: function (response) {
-            callback(response);
-        },
-    });
-}

@@ -14,6 +14,12 @@ return [
         'name' => 'Mostrar os termos da caixa de seleção ao se registrar',
         'instructions' => 'Mostrar "Aceitar termo", "lei de proteção", "termo de privacidade", "sms e e-mails" no formulário de registro'
     ],
+    'register_protection_url' => [
+        'name' => 'Registrar URL de proteção',
+    ],
+    'register_privacy_url' => [
+        'name' => 'Registrar URL de privacidade',
+    ],
     'show_education_profession' => [
         'name' => 'Mostrar campos de educação e profissão',
         'instructions' => 'Mostrar "Educação", "Estado da Educação" e "Profissão" na página de edição do perfil'

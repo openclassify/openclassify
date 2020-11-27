@@ -26,5 +26,5 @@ return [
     'replicated_success' => 'De advertentie is met succes gerepliceerd!',
     'ad_doesnt_exist' => "Deze advertentie bestaat niet!",
     'select_location_error' => "Selecteer een locatie op de kaart!",
-    'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'this_ad_is_not_valid_anymore' => "Deze advertentie is niet meer geldig!",
 ];

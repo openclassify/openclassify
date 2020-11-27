@@ -455,16 +455,16 @@ return [
     'edit_details' => 'Editează detaliile',
     'update' => 'Actualizați',
     'change_password' => 'Schimbați parola',
+    'choose_an_option' => 'Alege o opțiune...',
 
     // Register page
     'accept_terms_label' => 'Accept termenii.',
-    'accept_protection_law_label' => 'Accept termenii Legii privind protecția datelor cu caracter personal.',
-    'accept_privacy_terms_label' => 'Accept condițiile de confidențialitate.',
+    'accept_protection_law_label' => '<html>Accept termenii Legii privind' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Protecția datelor cu caracter personal.</a>',
+    'accept_privacy_terms_label' => '<html>accept' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> termeni de confidențialitate</a>.',
     'receive_sms_emails_label' => 'Vreau să primesc e-mail și sms.',
 
     // Register Type
     'personal' => [
         'name' => 'Personal'
     ],
-
 ];

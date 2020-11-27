@@ -86,7 +86,7 @@ return [
         'name' => 'Para birimi'
     ],
     'status' => [
-        'name' => 'durum',
+        'name' => 'Durum',
         'option' => [
             'approved' => 'Onaylandı',
             'expired' => 'Süresi doldu',
@@ -274,7 +274,7 @@ return [
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
     "ads" => 'İlanlar',
-    "were_found" => 'bulundular.',
+    "were_found" => 'bulundu.',
 
     // Pending screen
     'pending_message_1' => 'İlan Onay Sürecinde',
@@ -304,8 +304,8 @@ return [
     // New create page
     'options' => 'Opsiyonlar',
     'category_selection' => 'Kategori Seçimi',
-    'listing_details' => 'Liste ayrıntıları',
-    'preview' => 'Ön izleme',
+    'listing_details' => 'Liste Ayrıntıları',
+    'preview' => 'Ön İzleme',
     'congratulations' => 'Tebrikler',
 
     'free' => 'Bedava',

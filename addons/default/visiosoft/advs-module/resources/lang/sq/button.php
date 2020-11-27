@@ -37,6 +37,6 @@ return [
     'new_productoptions_value' => 'Vlera e opsionit të produktit të ri',
     'new_options_configuration' => 'Konfigurimi i ri i opsionit',
     'new_option_configuration' => 'Konfigurimi i ri i opsionit',
-    'new_option_configuration' => 'Konfigurimi i ri i opsionit',
 	'create_configurations' => 'Krijoni konfigurime',
+	'replicate' => 'Kopjoni',
 ];

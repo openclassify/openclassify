@@ -1,29 +1,17 @@
-function crud(params, url, type, callback) {
-    $.ajax({
-        type: type,
-        async: false,
-        data: params,
-        url: url,
-        success: function (response) {
-            callback(response);
-        },
-    });
-}
-
 var level = 0;
 var selected;
 var all_categories = {};
 var promiseForCategory = new Promise(function (resolve) {
     if (categories.length != 0) {
         $.each(categories, function (index, value) {
-            crud({'level': level, "cat": categories['cat' + level]}, '/class/ajaxCategory', 'POST', function (callback) {
+            crudAjax({'level': level, "cat": categories['cat' + level]}, '/class/ajaxCategory', 'POST', function (callback) {
                 // console.log('cat' + (level + 1), categories['cat' + level], callback)
                 all_categories['cat' + (level + 1)] = callback;
             })
             level++;
         });
     } else {
-        crud({'level': level, "cat": ""}, '/class/ajaxCategory', 'POST', function (callback) {
+        crudAjax({'level': level, "cat": ""}, '/class/ajaxCategory', 'POST', function (callback) {
             all_categories['cat' + (level + 1)] = callback;
         })
         level++;
@@ -32,6 +20,11 @@ var promiseForCategory = new Promise(function (resolve) {
 });
 
 promiseForCategory.then(function (categories_list) {
+
+    categories_list = $.grep(Object.values(categories_list), function (e) {
+        return (e.length > 0) ? e : '';
+    });
+
     level = 0;
     $.each(categories_list, function (index, value) {
         level++;
@@ -100,7 +93,7 @@ function selectedValue() {
 
         scroolToSelect(all_category_box)
 
-        crud({"cat": value[0], 'level': level}, '/class/ajaxCategory', 'POST', function (callback) {
+        crudAjax({"cat": value[0], 'level': level}, '/class/ajaxCategory', 'POST', function (callback) {
             if (callback.length <= 0) {
                 $('.category-row').append(completedField());
             } else {
