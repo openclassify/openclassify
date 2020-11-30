@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Αυτή η διαφήμιση δεν υπάρχει!",
     'select_location_error' => "Επιλέξτε μια τοποθεσία στον χάρτη!",
     'this_ad_is_not_valid_anymore' => "Αυτή η διαφήμιση δεν είναι πλέον έγκυρη!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
