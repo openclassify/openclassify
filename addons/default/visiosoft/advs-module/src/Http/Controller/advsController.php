@@ -484,7 +484,7 @@ class AdvsController extends PublicController
 
         $adv = $this->adv_repository->getListItemAdv($id);
 
-        if ($adv && (!$adv->expired() || $adv->created_by_id === \auth()->id())) {
+        if ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id())) {
             // Check if created by exists
             if (!$adv->created_by) {
                 $this->messages->error('visiosoft.module.advs::message.this_ad_is_not_valid_anymore');
