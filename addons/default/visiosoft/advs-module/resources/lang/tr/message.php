@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'İstenen ürün şu anda eksik veya etkin değil',
     'please_payment' => 'Lütfen Ödeme Yapınız',
     'bank_account_info' => 'Banka Hesap Bilgilerimiz',
-    'agreement' => 'Kullanım Koşulları ve Gizlilik Politikasını kabul ediyorum.',
+    'agreement' => 'Yayınlaya tıkladığınızda, Kullanım Koşulları ve Gizlilik Politikasını kabul etmiş olursunuz.',
     'update_category_msg' => 'İlan kategorisi güncellenecektir.',
     'updated_category_msg' => 'Kategori başarıyla güncellendi.',
     'create_ad_with_post_cat' => [
@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Bu İlan mevcut değil!",
     'select_location_error' => "Lütfen haritada bir yer seçin!",
     'this_ad_is_not_valid_anymore' => "Bu ürün veya ilan artık geçerli değil!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
