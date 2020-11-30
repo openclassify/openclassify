@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "এই বিজ্ঞাপনের অস্তিত্ব নেই!",
     'select_location_error' => "দয়া করে মানচিত্রে একটি অবস্থান নির্বাচন করুন!",
     'this_ad_is_not_valid_anymore' => "এই বিজ্ঞাপনটি আর বৈধ নয়!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
