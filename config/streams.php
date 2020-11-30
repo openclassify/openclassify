@@ -1,5 +1,7 @@
 <?php
 
+use App\Exceptions\ExceptionHandler;
+
 return [
     
     /*
@@ -22,7 +24,9 @@ return [
     |
     */
 
-    'bindings' => [],
+    'bindings' => [
+        'Anomaly\Streams\Platform\Exception\ExceptionHandler' => ExceptionHandler::class
+    ],
 
     /*
     |--------------------------------------------------------------------------
