@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Deze advertentie bestaat niet!",
     'select_location_error' => "Selecteer een locatie op de kaart!",
     'this_ad_is_not_valid_anymore' => "Deze advertentie is niet meer geldig!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
