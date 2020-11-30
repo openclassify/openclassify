@@ -34,5 +34,6 @@ return [
     'address' => [
         'name' => 'ঠিকানা',
     ],
-    'selected' => 'নির্বাচিত'
+    'selected' => 'নির্বাচিত',
+    'choose_an_option' => 'Choose an option...',
 ];
