@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Bu reklam mövcud deyil!",
     'select_location_error' => "Xahiş edirəm xəritədə bir yer seçin!",
     'this_ad_is_not_valid_anymore' => "Bu reklam artıq etibarlı deyil!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
