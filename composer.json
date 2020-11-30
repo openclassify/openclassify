@@ -79,7 +79,8 @@
     "visiosoft/integer-field_type": "~2.1.0",
     "visiosoft/list-field_type": "*",
     "guzzlehttp/guzzle": "~6.3.3",
-    "composer/composer": "^1.6"
+    "composer/composer": "^1.6",
+    "sentry/sentry-laravel": "*"
   },
   "replace": {
     "anomaly/streams-platform": "*"
