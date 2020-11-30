@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "هذا الإعلان غير موجود!",
     'select_location_error' => "الرجاء تحديد موقع على الخريطة!",
     'this_ad_is_not_valid_anymore' => "هذا الإعلان غير صالح بعد الآن!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
