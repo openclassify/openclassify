@@ -87,7 +87,7 @@ function Locations(cat, level, name) {
         url: "/class/ajax",
         success: function (msg) {
             $('select[name="' + name + '"]').find('option').remove();
-            $('select[name="' + name + '"]').append('<option value="">Choose an option...</option>');
+            $('select[name="' + name + '"]').append('<option value="">' + chooseOptionTrans + '</option>');
             $.each(msg, function (key, value) {
                 $('select[name="' + name + '"]').append('<option value="' + value.id + '">' + value.name + '</option>');
             });
