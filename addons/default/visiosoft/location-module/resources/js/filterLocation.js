@@ -6,19 +6,22 @@ var village;
 
 //Country
 $('.filter-country-btn').on('click', function () {
+    var selected__country_request = $('input[name="country[]"]').val();
     if (countries == undefined) {
         var promiseForCountries = new Promise(function (resolve, reject) {
             locationCrud('', '/ajax/getCountry', 'POST', beforeSend(), function (callback) {
                 countries = callback;
                 resetValue('country', true, false)
                 $.each(countries, function (index, value) {
-                    console.log(value)
-                    $('.filter-location-modal .countries').append(item('country', value.id, value.name, value.abv));
+                    $('.filter-location-modal .countries').append(item('country', value.id, value.name, value.abv.toLowerCase()));
                 });
                 if (countries == "")
                     $('.filter-location-modal .countries').html(null_msg);
-                else if ($('input[name="country"]').val() != "")
-                    $(".filter-location-body .countries li[data-id='" + $('input[name="country"]').val() + "'] input[type='checkbox']").prop('checked', true);
+                else if ($('input[name="country"]').val() != ""){
+                    $.each(selected__country_request.split(','), function (index, value){
+                        $(".filter-location-body .countries li[data-id='" + value.trim() + "'] input[type='checkbox']").prop('checked', true);
+                    })
+                }
                 resolve();
             })
         });
@@ -32,10 +35,9 @@ $('.filter-country-btn').on('click', function () {
     $('.filter-location-back').show();
     scroolToModal()
 });
-
 //City
 $('.filter-city-btn').on('click', function () {
-    var countries_value = $('input[name="country"]').val();
+    var countries_value = $('input[name="country[]"]').val();
     var selected__city_request = $('input[name="city[]"]').val();
     if (cities == undefined || $(this).attr('data-parent') != countries_value) {
         $(this).attr('data-parent', countries_value);
@@ -199,32 +201,31 @@ function SelectOnClick() {
         var id = $(this).attr('data-id');
 
         if ($(this).attr('data-field') == "country") {
-            $('.filter-location-modal,.filter-location-back,.filter-location-modal .countries').hide();
-            $('input[name="country"]').val(id)
+            // $('.filter-location-modal,.filter-location-back,.filter-location-modal .countries').hide();
+            // $('input[name="country"]').val(id)
             $('.selected-city').html('');
             $('input[name="city[]"]').val('');
             text_html.html(input_text)
-            $(".filter-location-body input[type='checkbox']").prop('checked', false);
+            // $(".filter-location-body input[type='checkbox']").prop('checked', false);
             $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
 
-        } else {
-            if (input_val != "") {
-                input_val = input_val.split(',');
-                text = text_html.html().split(',');
-            } else {
-                input_val = [];
-                text = [];
-            }
-            if (this.checked) {
-                input_val.push(id);
-                text.push(input_text)
-            } else {
-                input_val.splice($.inArray(id, input_val), 1);
-                text.splice($.inArray(input_text, text), 1);
-            }
-            input.val(input_val.join(','))
-            text_html.html(text.join(','))
         }
+        if (input_val != "") {
+            input_val = input_val.split(',');
+            text = text_html.html().split(',');
+        } else {
+            input_val = [];
+            text = [];
+        }
+        if (this.checked) {
+            input_val.push(id);
+            text.push(input_text)
+        } else {
+            input_val.splice($.inArray(id, input_val), 1);
+            text.splice($.inArray(input_text, text), 1);
+        }
+        input.val(input_val.join(','))
+        text_html.html(text.join(','))
     });
 }
 
@@ -243,15 +244,26 @@ function locationCrud(params, url, type, beforeSend, callback) {
     });
 }
 
-function item(field_name, id, value, abv ) {
-    return '<li class="px-2" data-id="' + id + '">\n' +
-        '                    <label class="w-100">\n' +
-        '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
-        '                                <span class="flag ml-1 flag-'+ abv.toLowerCase() +'">\n' +
-                    '                    </span>\n' +
-        '                        <small>' + value + '</small>\n' +
-        '                    </label>\n' +
-        '                </li>';
+function item(field_name, id, value, abv = '') {
+    if (field_name === 'country') {
+        return '<li class="px-2" data-id="' + id + '">\n' +
+            '                    <label class="w-100">\n' +
+            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
+            '                                <span class="flag ml-1 flag-' + abv + '">\n' +
+            '                    </span>\n' +
+            '                        <small>' + value + '</small>\n' +
+            '                    </label>\n' +
+            '                </li>';
+
+    } else {
+        return '<li class="px-2" data-id="' + id + '">\n' +
+            '                    <label class="w-100">\n' +
+            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
+            '                        <small>' + value + '</small>\n' +
+            '                    </label>\n' +
+            '                </li>';
+
+    }
 }
 
 function resetValue(location_type, reset_this, reset_parent) {
