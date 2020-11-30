@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "מודעה זו אינה קיימת!",
     'select_location_error' => "אנא בחר מיקום במפה!",
     'this_ad_is_not_valid_anymore' => "מודעה זו אינה תקפה יותר!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
