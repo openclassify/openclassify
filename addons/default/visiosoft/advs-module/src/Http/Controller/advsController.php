@@ -484,7 +484,7 @@ class AdvsController extends PublicController
 
         $adv = $this->adv_repository->getListItemAdv($id);
 
-        if ($adv && (!$adv->expired() || $adv->created_by_id === \auth()->id())) {
+        if ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id())) {
             // Check if created by exists
             if (!$adv->created_by) {
                 $this->messages->error('visiosoft.module.advs::message.this_ad_is_not_valid_anymore');
@@ -980,7 +980,10 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         event(new ChangedStatusAd($ad));//Create Notify
-        $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.advs::field.status.name')]));
+        $message = $type === 'approved' ?
+            trans('visiosoft.module.advs::message.approve_status_change')
+            : trans('visiosoft.module.advs::message.passive_status_change');
+        $this->messages->success($message);
         return back();
     }
 
