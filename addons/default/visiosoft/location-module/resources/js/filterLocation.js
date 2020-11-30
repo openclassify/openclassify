@@ -13,7 +13,7 @@ $('.filter-country-btn').on('click', function () {
                 resetValue('country', true, false)
                 $.each(countries, function (index, value) {
                     console.log(value)
-                    $('.filter-location-modal .countries').append(item('country', value.id, value.name, value.slug));
+                    $('.filter-location-modal .countries').append(item('country', value.id, value.name, value.abv));
                 });
                 if (countries == "")
                     $('.filter-location-modal .countries').html(null_msg);
@@ -243,11 +243,11 @@ function locationCrud(params, url, type, beforeSend, callback) {
     });
 }
 
-function item(field_name, id, value, slug = '' ) {
+function item(field_name, id, value, abv ) {
     return '<li class="px-2" data-id="' + id + '">\n' +
         '                    <label class="w-100">\n' +
         '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
-        '                                <span class="flag ml-1 flag-'+ slug +'">\n' +
+        '                                <span class="flag ml-1 flag-'+ abv.toLowerCase() +'">\n' +
                     '                    </span>\n' +
         '                        <small>' + value + '</small>\n' +
         '                    </label>\n' +
