@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "این آگهی وجود ندارد!",
     'select_location_error' => "لطفاً مکانی را روی نقشه انتخاب کنید!",
     'this_ad_is_not_valid_anymore' => "این آگهی دیگر معتبر نیست!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
