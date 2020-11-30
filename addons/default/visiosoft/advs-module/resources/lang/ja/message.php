@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "この広告は存在しません！",
     'select_location_error' => "地図上で場所を選択してください！",
     'this_ad_is_not_valid_anymore' => "この広告はもう有効ではありません！",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
