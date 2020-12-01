@@ -4,5 +4,5 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 interface AdressInterface extends EntryInterface
 {
-
+    public function getCountry();
 }
