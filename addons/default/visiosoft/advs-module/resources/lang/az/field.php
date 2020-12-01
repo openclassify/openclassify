@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Alt kateqoriya 6'
     ],
+    'cat8' => [
+        'name' => 'Alt kateqoriya 7'
+    ],
+    'cat9' => [
+        'name' => 'Alt kateqoriya 8'
+    ],
+    'cat10' => [
+        'name' => 'Alt kateqoriya 9'
+    ],
     'currency' => [
         'name' => 'Valyuta'
     ],
