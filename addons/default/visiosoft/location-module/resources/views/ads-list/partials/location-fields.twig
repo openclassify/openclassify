@@ -21,7 +21,7 @@
             </span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
-        <input name="country" value="{{ countryValue }}" type="hidden">
+        <input name="country[]" value="{% if countrySlug %}{{ countrySlug.id }}{% else %}{{ params.param['country']|join(',') }}{% endif %}" type="hidden" multiple>
     </div>
 
     <div class="col-12 px-0 py-1">

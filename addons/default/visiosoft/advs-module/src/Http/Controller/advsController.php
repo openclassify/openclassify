@@ -10,6 +10,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Str;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
@@ -579,12 +580,16 @@ class AdvsController extends PublicController
 
 	        $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
-	        if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
-                return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-                    'recommended_advs', 'categories', 'features', 'options', 'configurations'));
-            } else {
-                return back();
-            }
+
+	        if (Str::slug($adv->slug, '-') != $seo) {
+		        $this->messages->error(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
+		        return redirect()->route('visiosoft.module.advs::list');
+	        } else if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
+		        return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
+			        'recommended_advs', 'categories', 'features', 'options', 'configurations'));
+	        } else {
+		        return back();
+	        }
         } else {
             $this->messages->error(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
             return redirect()->route('visiosoft.module.advs::list');
