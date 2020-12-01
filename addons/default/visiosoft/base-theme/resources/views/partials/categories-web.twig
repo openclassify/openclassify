@@ -5,6 +5,12 @@
         <img src="{{ catIcon }}" alt="{{ main_category.name }}" class="img-responsive">
         <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}" class="main-category">
             <b>{{ main_category.name }}</b>
+            {% if setting_value('visiosoft.module.advs::show_ads_count') %}
+                {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(main_category.id) %}
+                <small class="text-muted">
+                    ({{ catAdsCount }})
+                </small>
+            {% endif %}
         </a>
         <ul class="p-0">
             {% set sub_categories = entries('cats','category').where('parent_category_id', main_category.id).where('deleted_at', null).orderBy('sort_order').get() %}
@@ -24,6 +30,13 @@
                 {% for sub_category in sub_categories|slice(subLoop.start, subLoop.end) %}
                     <li class="{{ subLoop.class }}">
                         <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}">{{ sub_category.name }}</a>
+                        {% if setting_value('visiosoft.module.advs::show_ads_count') %}
+                            {% set catLevel = getParentsCount(sub_category.id) + 1 %}
+                            {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(sub_category.id, catLevel) %}
+                            <small class="text-muted">
+                                ({{ catAdsCount }})
+                            </small>
+                        {% endif %}
                     </li>
                 {% endfor %}
             {% endfor %}

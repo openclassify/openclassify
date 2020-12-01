@@ -30,6 +30,7 @@ return [
                     'default_published_time',
                     'default_GET',
                     'listing_page_image',
+                    'show_ads_count',
                 ],
             ],
             'create_ad' => [

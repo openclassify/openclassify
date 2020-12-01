@@ -325,4 +325,11 @@ return [
             'mode' => 'checkbox'
         ],
     ],
+    'show_ads_count' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox'
+        ],
+    ],
 ];
