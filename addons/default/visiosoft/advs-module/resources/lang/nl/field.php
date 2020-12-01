@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Subcategorie 6'
     ],
+    'cat8' => [
+        'name' => 'Subcategorie 7'
+    ],
+    'cat9' => [
+        'name' => 'Subcategorie 8'
+    ],
+    'cat10' => [
+        'name' => 'Subcategorie 9'
+    ],
     'currency' => [
         'name' => 'Valuta'
     ],
