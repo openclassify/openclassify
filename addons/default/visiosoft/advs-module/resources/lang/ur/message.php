@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "یہ اشتہار موجود نہیں ہے!",
     'select_location_error' => "براہ کرم نقشے پر ایک مقام منتخب کریں!",
     'this_ad_is_not_valid_anymore' => "اب یہ اشتہار درست نہیں ہے!",
+    'approve_status_change' => "آپ کے اشتہار کی حیثیت فعال ہونے کے لئے مقرر کردی گئی ہے!",
+    'passive_status_change' => "آپ کے اشتہار کی حیثیت غیر فعال ہوچکی ہے۔",
 ];
