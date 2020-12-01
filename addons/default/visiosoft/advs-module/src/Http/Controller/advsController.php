@@ -10,6 +10,7 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
+use Illuminate\Support\Str;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
@@ -484,7 +485,7 @@ class AdvsController extends PublicController
 
         $adv = $this->adv_repository->getListItemAdv($id);
 
-        if ($adv && (!$adv->expired() || $adv->created_by_id === \auth()->id())) {
+        if ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id())) {
             // Check if created by exists
             if (!$adv->created_by) {
                 $this->messages->error('visiosoft.module.advs::message.this_ad_is_not_valid_anymore');
@@ -579,12 +580,16 @@ class AdvsController extends PublicController
 
 	        $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
-	        if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
-                return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-                    'recommended_advs', 'categories', 'features', 'options', 'configurations'));
-            } else {
-                return back();
-            }
+
+	        if (Str::slug($adv->slug, '-') != $seo) {
+		        $this->messages->error(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
+		        return redirect()->route('visiosoft.module.advs::list');
+	        } else if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
+		        return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
+			        'recommended_advs', 'categories', 'features', 'options', 'configurations'));
+	        } else {
+		        return back();
+	        }
         } else {
             $this->messages->error(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
             return redirect()->route('visiosoft.module.advs::list');
@@ -980,7 +985,10 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         event(new ChangedStatusAd($ad));//Create Notify
-        $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.advs::field.status.name')]));
+        $message = $type === 'approved' ?
+            trans('visiosoft.module.advs::message.approve_status_change')
+            : trans('visiosoft.module.advs::message.passive_status_change');
+        $this->messages->success($message);
         return back();
     }
 

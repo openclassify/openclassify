@@ -1,7 +1,9 @@
 <?php
 
+use App\Exceptions\ExceptionHandler;
+
 return [
-    
+
     /*
     |--------------------------------------------------------------------------
     | Listeners
@@ -22,7 +24,9 @@ return [
     |
     */
 
-    'bindings' => [],
+    'bindings' => [
+        'Anomaly\Streams\Platform\Exception\ExceptionHandler' => ExceptionHandler::class
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -118,7 +122,7 @@ return [
     */
 
     'middleware_priority' => [],
-    
+
     /*
     |--------------------------------------------------------------------------
     | View Overrides
@@ -129,7 +133,7 @@ return [
     */
 
     'overrides' => [],
-    
+
     /*
     |--------------------------------------------------------------------------
     | Control Panel Customization
