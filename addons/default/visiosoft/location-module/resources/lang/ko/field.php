@@ -34,5 +34,6 @@ return [
     'address' => [
         'name' => '주소',
     ],
-    'selected' => '선택된'
+    'selected' => '선택된',
+    'choose_an_option' => '옵션을 선택하세요...',
 ];
