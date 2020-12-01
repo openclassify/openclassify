@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Acest anunț nu există!",
     'select_location_error' => "Vă rugăm să selectați o locație pe hartă!",
     'this_ad_is_not_valid_anymore' => "Acest anunț nu mai este valabil!",
+    'approve_status_change' => "Starea anunțului dvs. a fost activată!",
+    'passive_status_change' => "Starea anunțului dvs. a fost setată la pasivă!",
 ];
