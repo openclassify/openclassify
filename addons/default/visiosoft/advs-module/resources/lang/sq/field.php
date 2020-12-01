@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Nënkategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Nën Kategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Nën Kategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Nënkategoria 9'
+    ],
     'currency' => [
         'name' => 'Monedhë'
     ],
