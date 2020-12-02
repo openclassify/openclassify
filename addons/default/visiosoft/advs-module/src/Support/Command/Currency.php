@@ -37,6 +37,9 @@ class Currency
             $suffix = $this->symbol($currency);
         }
 
+        if (is_object($number)) {
+            $number = $number->getValue();
+        }
 
         $decimal_value = $this->getDecimalValue($number);
 
