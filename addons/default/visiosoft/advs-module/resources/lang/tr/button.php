@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'new_adv' => 'Yeni İlan',
+    'new_adv' => 'Yeni ürün/ilan',
     'new_classified' => 'Yeni sınıflandırılmış',
     'new_category' => 'Yeni kategori',
     'new_country' => 'Yeni ülke',
@@ -40,5 +40,5 @@ return [
     'new_option_configuration' => 'Yeni Seçenek yapılandırması',
 	'create_configurations' => 'Konfigürasyonlar Oluşturun',
 	'replicate' => 'Tekrarlamak',
-	'fast_create' => 'Hızlı oluştur',
+	'fast_create' => 'Hızlı ekle',
 ];
