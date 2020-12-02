@@ -28,5 +28,5 @@ return [
     'select_location_error' => "Lütfen haritada bir yer seçin!",
     'this_ad_is_not_valid_anymore' => "Bu ürün veya ilan artık geçerli değil!",
     'approve_status_change' => "Reklamınızın Durumu Etkin Olarak Ayarlandı!",
-    'passive_status_change' => "Reklamınızın Durumu Pasif Olarak Ayarlandı!",
+    'passive_status_change' => "İlanın Durumu Pasif Olarak Ayarlandı!",
 ];
