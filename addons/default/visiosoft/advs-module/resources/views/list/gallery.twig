@@ -17,7 +17,9 @@
                         <div class="card-body">
                             {% if setting_value('visiosoft.theme.base::price_fields') %}
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <b>{{ adv.price }} {{ adv.currency }}</b>
+                                    <b>{{ adv.price != '0'
+                                        ? adv.price.currency()
+                                        : trans('visiosoft.module.advs::field.free') }}</b>
                                 </div>
                             {% endif %}
                             <div class="d-flex justify-content-between align-items-center text-truncate">
