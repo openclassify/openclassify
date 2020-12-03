@@ -316,6 +316,10 @@ return [
     'listing_details' => 'Liste Ayrıntıları',
     'preview' => 'Ön İzleme',
     'congratulations' => 'Tebrikler',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
