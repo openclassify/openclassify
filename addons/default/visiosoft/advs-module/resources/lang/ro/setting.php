@@ -198,11 +198,11 @@ return [
         'name' => 'Afișați pesmet atunci când creați un anunț',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Afișați numărul de anunțuri',
+        'instructions' => 'Afișați anunțurile în lista de categorii din stânga',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Afișați acordul de postare a anunțului',
+        'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
     ],
 ];
