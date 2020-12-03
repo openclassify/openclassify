@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'অনুরোধ করা পণ্য বর্তমানে অনুপস্থিত বা নিষ্ক্রিয়',
     'please_payment' => 'দয়া করে প্রদান করুন',
     'bank_account_info' => 'ব্যাংক অ্যাকাউন্টের তথ্য',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'প্রকাশিত ক্লিক করে আপনি আমাদের ব্যবহারের শর্তাদি এবং গোপনীয়তা নীতি সম্মত হন যে আপনি এই আইটেমটির অধিকারী মালিক the',
     'update_category_msg' => 'শ্রেণিবদ্ধ বিভাগটি আপডেট করা হবে।',
     'updated_category_msg' => 'বিভাগ সফলভাবে সম্পাদিত।',
     'create_ad_with_post_cat' => [
