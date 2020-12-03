@@ -197,4 +197,12 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'جب کوئی اشتہار بناتے ہو تو بریڈ کرمب دکھائیں',
     ],
+    'show_ads_count' => [
+        'name' => 'Show Ads Count',
+        'instructions' => 'Show ads count on the left categories list',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Show Post Ad Agreement',
+        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+    ],
 ];
