@@ -20,7 +20,9 @@
             <div class="adpost-details">
                 <div class="row">
                     <div class="col-md-12">
-                        {% set form = form('advs', 'advs').entry(id).actions(['update']).get() %}
+                        {% set form = form('advs', 'advs').entry(id).actions({'update': {
+                            'text': trans('visiosoft.module.advs::button.publish')
+                        }}).get() %}
                         {{ form_open({
                             'id': 'createEditAdvForm',
                             'class': 'form ' ~ form.options.class ,
@@ -45,7 +47,7 @@
                             {% include 'visiosoft.module.advs::new-ad/partials/contact-info' %}
 
                             <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.ad_info') }}</h5>
-                            <div class="section postdetails">
+                            <div class="section postdetails bg-light p-4">
                                 <div class="row form-group add-title">
                                     {% set fields = form.fields.base().pluck('field_name').all() %}
                                     <div class="col-md-12">
@@ -99,7 +101,7 @@
                                         }).input|raw }}
                                     </div>
                                     {% set PriceValue = form.fields.price.value|split('.') %}
-                                    <div class="col-8 pr-0 col-md-3">
+                                    <div class="col-6 col-sm-7 pr-0 col-md-3">
                                         <input class="form-control priceField whole-price" value="{{ PriceValue|first }}">
                                     </div>
                                     {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
@@ -108,7 +110,7 @@
                                                    value="{{ PriceValue[1] }}">
                                         </div>
                                     {% endif %}
-                                    <div class="col-sm-3 col-xs-6">
+                                    <div class="col-sm-3 col-6">
                                         <select name="currency" class="custom-select form-control" data-field="currency"
                                                 data-field_name="currency" data-provides="anomaly.field_type.select"
                                                 id="currency" required="">
@@ -152,7 +154,10 @@
                                         </div>
                                     </div>
                                 {% endif %}
+                            </div>
 
+                            <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.ad_desc') }}</h5>
+                            <div class="bg-light p-4">
                                 <div class="row form-group brand-name">
                                     <div class="col-md-12">
                                         <div class="field-group advs_desc">
@@ -162,13 +167,28 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.upload_photos') }}</h5>
+                            <div class="bg-light p-4">
                                 <div class="row form-group images">
                                     <div class="col-md-12">
                                         {{ form.fields.files.input |raw }}
                                     </div>
                                 </div>
-                                {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
+                            </div>
 
+                            <h5 class="mt-5 pb-1 border-bottom">
+                                {{ trans('visiosoft.module.advs::field.additional_fields') }}
+                            </h5>
+                            <div class="bg-light p-4">
+                                {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
+                            </div>
+
+                            <h5 class="mt-5 pb-1 border-bottom">
+                                {{ trans('visiosoft.module.advs::field.ad_location') }}
+                            </h5>
+                            <div class="bg-light p-4 mb-4">
                                 {% include "visiosoft.module.location::new-ad/map" %}
 
                                 <input value="{{ adv.map_Val }}" name="map_Val" data-max="255" data-mask=""
@@ -178,12 +198,14 @@
                             </div><!-- section -->
 
                             <div class="checkbox section agreement">
+                                {% if setting_value('visiosoft.module.advs::show_post_ad_agreement') %}
+                                    <label for="send">
+                                        <input type="checkbox" name="send" id="send" required>
 
-                                <label for="send">
-                                    <input type="checkbox" name="send" id="send" required>
+                                        {{ trans('visiosoft.module.advs::message.agreement') }}
+                                    </label><br>
+                                {% endif %}
 
-                                    {{ trans('visiosoft.module.advs::message.agreement') }}
-                                </label><br>
                                 {{ form.actions|raw }}
                             </div><!-- section -->
 
