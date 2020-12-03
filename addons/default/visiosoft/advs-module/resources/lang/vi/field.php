@@ -314,6 +314,10 @@ return [
     'listing_details' => 'Chi tiết danh sách',
     'preview' => 'Xem trước',
     'congratulations' => 'Xin chúc mừng',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',
