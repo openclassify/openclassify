@@ -314,6 +314,10 @@ return [
     'listing_details' => 'Listing Details',
     'preview' => 'Önizləmə',
     'congratulations' => 'Təbrik edirəm',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Reklam Tarixi',
