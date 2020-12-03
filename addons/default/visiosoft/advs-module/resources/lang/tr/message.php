@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'İstenen ürün şu anda eksik veya etkin değil',
     'please_payment' => 'Lütfen Ödeme Yapınız',
     'bank_account_info' => 'Banka Hesap Bilgilerimiz',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'Yayınla\'yı tıklayarak, Kullanım Koşullarımızı ve Gizlilik Politikamızı kabul edersiniz, bu öğenin gerçek sahibi olduğunuzu kabul edersiniz.',
     'update_category_msg' => 'İlan kategorisi güncellenecektir.',
     'updated_category_msg' => 'Kategori başarıyla güncellendi.',
     'create_ad_with_post_cat' => [
