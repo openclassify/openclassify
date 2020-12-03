@@ -41,4 +41,5 @@ return [
 	'create_configurations' => 'تشکیلات بنائیں',
 	'replicate' => 'چربہ لگائیں',
 	'fast_create' => 'فاسٹ بنائیں',
+	'publish' => 'Publish',
 ];
