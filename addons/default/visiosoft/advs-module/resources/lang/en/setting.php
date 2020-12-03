@@ -201,4 +201,8 @@ return [
         'name' => 'Show Ads Count',
         'instructions' => 'Show ads count on the left categories list',
     ],
+    'show_post_ad_agreement' => [
+        'name' => 'Show Post Ad Agreement',
+        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+    ],
 ];

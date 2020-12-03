@@ -42,6 +42,7 @@ return [
                     'hide_configurations',
                     'make_map_required',
                     'show_breadcrumb_when_creating_ad',
+                    'show_post_ad_agreement',
                 ],
             ],
             'ads_image' => [

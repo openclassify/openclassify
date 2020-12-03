@@ -314,6 +314,10 @@ return [
     'listing_details' => 'Listing Details',
     'preview' => 'Preview',
     'congratulations' => 'Congratulations',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Free',
     'ad_date' => 'Ad Date',

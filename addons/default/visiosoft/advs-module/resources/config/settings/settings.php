@@ -332,4 +332,11 @@ return [
             'mode' => 'checkbox'
         ],
     ],
+    'show_post_ad_agreement' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ],
+    ],
 ];
