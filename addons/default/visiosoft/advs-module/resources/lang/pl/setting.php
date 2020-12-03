@@ -198,11 +198,11 @@ return [
         'name' => 'Pokaż menu nawigacyjne podczas tworzenia reklamy',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Pokaż liczbę reklam',
+        'instructions' => 'Pokaż liczbę reklam na liście kategorii po lewej stronie',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Pokaż umowę opublikowania ogłoszenia',
+        'instructions' => 'Włącz tę opcję, jeśli chcesz wyświetlać umowę o polityce prywatności na stronie tworzenia reklamy',
     ],
 ];
