@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'המוצר המבוקש חסר או לא פעיל כרגע',
     'please_payment' => 'אנא שלם',
     'bank_account_info' => 'פרטי חשבון בנק',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'בלחיצה על פרסם אתה מסכים לתנאי השימוש שלנו ולמדיניות הפרטיות שלנו מאשר שאתה הבעלים החוקיים של פריט זה.',
     'update_category_msg' => 'הקטגוריה המסווגת תעודכן.',
     'updated_category_msg' => 'הקטגוריה נערכה בהצלחה.',
     'create_ad_with_post_cat' => [
