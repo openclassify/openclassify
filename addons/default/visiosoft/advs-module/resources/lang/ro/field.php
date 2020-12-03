@@ -314,6 +314,10 @@ return [
     'listing_details' => 'Detalii listare',
     'preview' => 'previzualizare',
     'congratulations' => 'Felicitări',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
