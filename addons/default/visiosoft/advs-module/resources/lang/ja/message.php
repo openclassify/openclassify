@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'リクエストされた製品が現在見つからないか、非アクティブです',
     'please_payment' => '支払ってください',
     'bank_account_info' => '銀行口座情報',
-    'agreement' => '[投稿]をクリックすると、利用規約に同意したことになります。プライバシーポリシーでは、このアイテムの正当な所有者であることを認めます。',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => '分類されたカテゴリが更新されます。',
     'updated_category_msg' => 'カテゴリを編集しました。',
     'create_ad_with_post_cat' => [
