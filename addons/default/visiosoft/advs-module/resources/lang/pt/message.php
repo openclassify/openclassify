@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'O produto solicitado está ausente ou inativo no momento',
     'please_payment' => 'Por favor pague',
     'bank_account_info' => 'informações de conta bancária',
-    'agreement' => 'Ao clicar em Publicar, você concorda com nossos Termos de Uso e Política de Privacidade, reconhecendo que você é o legítimo proprietário deste item.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'A categoria classificada será atualizada.',
     'updated_category_msg' => 'Categoria editada com sucesso.',
     'create_ad_with_post_cat' => [
