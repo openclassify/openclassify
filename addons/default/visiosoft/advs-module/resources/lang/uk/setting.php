@@ -198,11 +198,11 @@ return [
         'name' => 'Показати хлібну крихту під час створення реклами',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Показати показ оголошень',
+        'instructions' => 'Показати рекламу в списку категорій ліворуч',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Показати угоду про розміщення оголошень',
+        'instructions' => 'Увімкніть це, якщо ви хочете відображати угоду про політику конфіденційності на сторінці створення оголошення',
     ],
 ];
