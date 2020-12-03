@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Sản phẩm được yêu cầu hiện đang thiếu hoặc không hoạt động',
     'please_payment' => 'Vui long thanh toan',
     'bank_account_info' => 'Thông tin tài khoản ngân hàng',
-    'agreement' => 'Bằng cách nhấp vào Bài đăng, bạn đồng ý với Điều khoản sử dụng và Chính sách quyền riêng tư của chúng tôi thừa nhận rằng bạn là chủ sở hữu hợp pháp của mặt hàng này.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'Các danh mục phân loại sẽ được cập nhật.',
     'updated_category_msg' => 'Thể loại được chỉnh sửa thành công.',
     'create_ad_with_post_cat' => [
