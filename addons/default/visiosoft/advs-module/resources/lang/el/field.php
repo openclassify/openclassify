@@ -315,6 +315,10 @@ return [
     'listing_details' => 'Λεπτομέρειες καταχώρησης',
     'preview' => 'Προεπισκόπηση',
     'congratulations' => 'Συγχαρητήρια',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Ελεύθερος',
     'ad_date' => 'Ημερομηνία διαφήμισης',
