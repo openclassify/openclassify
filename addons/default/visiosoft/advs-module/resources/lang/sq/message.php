@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Produkti i kërkuar aktualisht mungon ose joaktiv',
     'please_payment' => 'Ju lutemi paguani',
     'bank_account_info' => 'Informacione për llogarinë bankare',
-    'agreement' => 'Duke klikuar Postën, ju pranoni që Kushtet tona të Përdorimit dhe Politika e Privatësisë pranojnë se jeni pronari i ligjshëm i këtij artikulli.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'Kategoria e klasifikuar do të azhurnohet.',
     'updated_category_msg' => 'Kategoria u redaktua me sukses.',
     'create_ad_with_post_cat' => [
