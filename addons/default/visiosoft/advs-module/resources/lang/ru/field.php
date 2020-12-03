@@ -315,6 +315,10 @@ return [
     'listing_details' => 'Детали объявления',
     'preview' => 'Предварительный просмотр',
     'congratulations' => 'Поздравления',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Бесплатно',
     'ad_date' => 'Дата объявления',
