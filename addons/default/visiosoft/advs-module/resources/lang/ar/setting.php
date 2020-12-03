@@ -198,11 +198,11 @@ return [
         'name' => 'إظهار مسار التنقل عند إنشاء إعلان',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'إظهار عدد الإعلانات',
+        'instructions' => 'عرض الإعلانات الاعتماد على قائمة الفئات اليسرى',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'إظهار اتفاقية ما بعد الإعلان',
+        'instructions' => 'قم بتشغيل هذا إذا كنت تريد عرض اتفاقية سياسة الخصوصية على صفحة إنشاء الإعلان',
     ],
 ];
