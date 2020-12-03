@@ -41,5 +41,5 @@ return [
 	'create_configurations' => 'تنظیمات را ایجاد کنید',
 	'replicate' => 'تکثیر',
 	'fast_create' => 'سریع ایجاد کنید',
-	'publish' => 'Publish',
+	'publish' => 'انتشار',
 ];
