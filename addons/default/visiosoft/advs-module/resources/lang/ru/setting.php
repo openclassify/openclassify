@@ -198,11 +198,11 @@ return [
         'name' => 'Показывать хлебные крошки при создании объявления',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Показать количество объявлений',
+        'instructions' => 'Показывать количество объявлений в левом списке категорий',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Показать соглашение о публикации рекламы',
+        'instructions' => 'Включите это, если вы хотите отображать соглашение о политике конфиденциальности на странице создания рекламы.',
     ],
 ];
