@@ -41,4 +41,5 @@ return [
 	'create_configurations' => 'تكوين التكوينات',
 	'replicate' => 'استنساخ',
 	'fast_create' => 'إنشاء سريع',
+	'publish' => 'Publish',
 ];
