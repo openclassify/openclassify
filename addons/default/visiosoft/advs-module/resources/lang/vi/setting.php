@@ -198,11 +198,11 @@ return [
         'name' => 'Hiển thị Breadcrumb Khi Tạo Quảng cáo',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Hiển thị Số lượng Quảng cáo',
+        'instructions' => 'Số lượng quảng cáo hiển thị trên danh sách danh mục bên trái',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Hiển thị Thỏa thuận Quảng cáo Đăng',
+        'instructions' => 'Bật tính năng này nếu bạn muốn hiển thị thỏa thuận chính sách bảo mật trên trang tạo quảng cáo',
     ],
 ];
