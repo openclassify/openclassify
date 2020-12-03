@@ -198,11 +198,11 @@ return [
         'name' => 'Afficher le fil d\'Ariane lors de la création d\'une annonce',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Afficher le nombre d\'annonces',
+        'instructions' => 'Les annonces diffusées comptent dans la liste des catégories de gauche',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Afficher l\'accord de publication d\'annonce',
+        'instructions' => 'Activez cette option si vous souhaitez afficher un accord de politique de confidentialité sur la page de création d\'annonces',
     ],
 ];
