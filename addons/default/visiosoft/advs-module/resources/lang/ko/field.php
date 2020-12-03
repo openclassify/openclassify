@@ -314,6 +314,10 @@ return [
     'listing_details' => '리스팅 세부 사항',
     'preview' => '시사',
     'congratulations' => '축하합니다',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',
