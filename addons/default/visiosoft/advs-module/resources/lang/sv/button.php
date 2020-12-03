@@ -41,5 +41,5 @@ return [
 	'create_configurations' => 'Skapa konfigurationer',
 	'replicate' => 'Återskapa',
 	'fast_create' => 'Skapa snabbt',
-	'publish' => 'Publish',
+	'publish' => 'Publicera',
 ];
