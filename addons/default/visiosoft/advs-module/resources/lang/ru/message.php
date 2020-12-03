@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Запрашиваемый продукт в настоящее время отсутствует или неактивен',
     'please_payment' => 'Пожалуйста оплатите',
     'bank_account_info' => 'Информация о банковском счете',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'Нажимая «Опубликовать», вы соглашаетесь с нашими Условиями использования и Политикой конфиденциальности, подтверждаете, что являетесь законным владельцем этого элемента.',
     'update_category_msg' => 'Классифицированная категория будет обновлена.',
     'updated_category_msg' => 'Категория успешно отредактирована.',
     'create_ad_with_post_cat' => [
