@@ -314,6 +314,10 @@ return [
     'listing_details' => 'Listningsinformation',
     'preview' => 'Förhandsvisning',
     'congratulations' => 'Grattis',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',
