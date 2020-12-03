@@ -41,5 +41,5 @@ return [
 	'create_configurations' => '構成の作成',
 	'replicate' => '複製する',
 	'fast_create' => '高速作成',
-	'publish' => 'Publish',
+	'publish' => '公開する',
 ];
