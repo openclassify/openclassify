@@ -315,6 +315,10 @@ return [
     'listing_details' => 'Détails de l\'annonce',
     'preview' => 'Aperçu',
     'congratulations' => 'Toutes nos félicitations',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Gratuit',
     'ad_date' => 'Date de l\'annonce',
