@@ -198,11 +198,11 @@ return [
         'name' => '広告を作成するときにブレッドクラムを表示する',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => '広告数を表示',
+        'instructions' => '左側のカテゴリリストに広告数を表示する',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'ポスト広告契約を表示する',
+        'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
     ],
 ];
