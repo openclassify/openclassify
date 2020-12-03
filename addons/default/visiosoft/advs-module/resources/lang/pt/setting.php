@@ -198,11 +198,11 @@ return [
         'name' => 'Mostrar localização atual ao criar um anúncio',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Mostrar contagem de anúncios',
+        'instructions' => 'Exibir contagem de anúncios na lista de categorias à esquerda',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Mostrar Acordo de Postagem',
+        'instructions' => 'Ative-o se quiser exibir um acordo de política de privacidade na página de criação de anúncios',
     ],
 ];
