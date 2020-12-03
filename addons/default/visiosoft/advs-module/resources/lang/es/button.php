@@ -41,4 +41,5 @@ return [
 	'create_configurations' => 'Crear configuraciones',
 	'replicate' => 'Reproducir exactamente',
 	'fast_create' => 'Creación rápida',
+	'publish' => 'Publish',
 ];
