@@ -198,11 +198,11 @@ return [
         'name' => '광고를 만들 때 이동 경로 표시',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => '광고 수 표시',
+        'instructions' => '왼쪽 카테고리 목록에 광고 개수 표시',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => '광고 게시 계약 표시',
+        'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
     ],
 ];
