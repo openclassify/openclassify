@@ -198,11 +198,11 @@ return [
         'name' => 'বিজ্ঞাপন তৈরি করার সময় ব্রেডক্রাম্ব প্রদর্শন করুন',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'বিজ্ঞাপন গণনা দেখান',
+        'instructions' => 'বাম বিভাগগুলির তালিকায় বিজ্ঞাপন গণনা দেখান',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'পোস্ট বিজ্ঞাপন চুক্তি প্রদর্শন করুন',
+        'instructions' => 'আপনি বিজ্ঞাপন তৈরি পৃষ্ঠায় কোনও গোপনীয়তা নীতি চুক্তি প্রদর্শন করতে চাইলে এটি চালু করুন',
     ],
 ];
