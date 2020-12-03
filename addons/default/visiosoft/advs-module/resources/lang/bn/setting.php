@@ -197,4 +197,12 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'বিজ্ঞাপন তৈরি করার সময় ব্রেডক্রাম্ব প্রদর্শন করুন',
     ],
+    'show_ads_count' => [
+        'name' => 'Show Ads Count',
+        'instructions' => 'Show ads count on the left categories list',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Show Post Ad Agreement',
+        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+    ],
 ];
