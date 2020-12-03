@@ -315,6 +315,10 @@ return [
     'listing_details' => 'Detalhes da lista',
     'preview' => 'Antevisão',
     'congratulations' => 'Parabéns',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Livre',
     'ad_date' => 'Data do Anúncio',
