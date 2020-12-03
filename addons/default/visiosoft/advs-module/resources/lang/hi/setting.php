@@ -198,11 +198,11 @@ return [
         'name' => 'विज्ञापन बनाते समय ब्रेडक्रंब दिखाएं',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'विज्ञापन गणना दिखाएं',
+        'instructions' => 'विज्ञापन को बाईं श्रेणियों की सूची में दिखाएं',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'विज्ञापन विज्ञापन दिखाएं',
+        'instructions' => 'यदि आप विज्ञापन निर्माण पृष्ठ पर गोपनीयता नीति अनुबंध प्रदर्शित करना चाहते हैं तो इसे चालू करें',
     ],
 ];
