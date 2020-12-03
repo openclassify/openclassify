@@ -198,11 +198,11 @@ return [
         'name' => 'הראה פירורי לחם בעת יצירת מודעה',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'ספירת מודעות הצגה',
+        'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'הצג הסכם מודעות לפרסום',
+        'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
     ],
 ];
