@@ -41,5 +41,5 @@ return [
 	'create_configurations' => '구성 만들기',
 	'replicate' => '뒤로 젖히다',
 	'fast_create' => '빠른 생성',
-	'publish' => 'Publish',
+	'publish' => '게시',
 ];
