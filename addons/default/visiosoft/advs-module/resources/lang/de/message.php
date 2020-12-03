@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Angefordertes Produkt fehlt derzeit oder ist inaktiv',
     'please_payment' => 'Bitte zahlen Sie',
     'bank_account_info' => 'Bankkonto Information',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'Wenn Sie auf "Veröffentlichen" klicken, stimmen Sie unseren Nutzungsbedingungen zu und bestätigen, dass Sie der rechtmäßige Eigentümer dieses Artikels sind.',
     'update_category_msg' => 'Die klassifizierte Kategorie wird aktualisiert.',
     'updated_category_msg' => 'Kategorie erfolgreich bearbeitet.',
     'create_ad_with_post_cat' => [
