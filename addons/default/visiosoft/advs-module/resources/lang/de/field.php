@@ -315,6 +315,10 @@ return [
     'listing_details' => 'Einzelheiten auflisten',
     'preview' => 'Vorschau',
     'congratulations' => 'Herzliche Glückwünsche',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Frei',
     'ad_date' => 'Anzeigedatum',
