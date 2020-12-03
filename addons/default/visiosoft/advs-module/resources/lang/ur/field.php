@@ -314,6 +314,10 @@ return [
     'listing_details' => 'فہرست سازی کی تفصیلات',
     'preview' => 'پیش نظارہ',
     'congratulations' => 'مبارک ہو',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
