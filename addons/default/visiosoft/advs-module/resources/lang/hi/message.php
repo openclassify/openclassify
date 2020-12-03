@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'अनुरोधित उत्पाद वर्तमान में गुम या निष्क्रिय है',
     'please_payment' => 'भुगतान करें',
     'bank_account_info' => 'बैंक खाता संबंधी जानकारी',
-    'agreement' => 'पोस्ट पर क्लिक करके, आप हमारी उपयोग की शर्तों से सहमत होते हैं और गोपनीयता नीति स्वीकार करते हैं कि आप इस आइटम के सही स्वामी हैं।',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'वर्गीकृत श्रेणी को अद्यतन किया जाएगा।',
     'updated_category_msg' => 'श्रेणी को सफलतापूर्वक संपादित किया गया।',
     'create_ad_with_post_cat' => [
