@@ -199,11 +199,11 @@ return [
         'name' => 'هنگام ایجاد تبلیغ ، Breadcrumb را نشان دهید',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'نمایش تعداد تبلیغات',
+        'instructions' => 'نمایش تعداد تبلیغات در لیست دسته های سمت چپ',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'نمایش قرارداد تبلیغات پست',
+        'instructions' => 'اگر می خواهید توافق نامه سیاست حفظ حریم خصوصی را در صفحه ایجاد آگهی نمایش دهید ، این گزینه را روشن کنید',
     ],
 ];
