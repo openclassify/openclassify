@@ -198,11 +198,11 @@ return [
         'name' => 'Toon breadcrumb bij het maken van een advertentie',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Toon het aantal advertenties',
+        'instructions' => 'Toon het aantal advertenties in de lijst met linkercategorieën',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Toon advertentieovereenkomst',
+        'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
     ],
 ];
