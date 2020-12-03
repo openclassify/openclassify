@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'На даний момент запитуваний продукт відсутній або неактивний',
     'please_payment' => 'Будь ласка, платіть',
     'bank_account_info' => 'Інформація про банківський рахунок',
-    'agreement' => 'Натиснувши Опублікувати, ви погоджуєтесь з нашими Умовами використання та Політикою конфіденційності визнаєте, що ви є законним власником цього предмета.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'Класифікована категорія буде оновлена.',
     'updated_category_msg' => 'Категорію успішно відредаговано.',
     'create_ad_with_post_cat' => [
