@@ -198,11 +198,11 @@ return [
         'name' => 'Visa brödsmulan när du skapar en annons',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Visa antal annonser',
+        'instructions' => 'Visa annonser räknas på listan till vänster',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Visa annonsannonsavtal',
+        'instructions' => 'Aktivera detta om du vill visa ett integritetspolicyavtal på sidan för skapande av annonser',
     ],
 ];
