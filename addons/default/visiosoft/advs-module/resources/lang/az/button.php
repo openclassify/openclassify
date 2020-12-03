@@ -41,4 +41,5 @@ return [
 	'create_configurations' => 'Konfiqurasiyalar yaradın',
 	'replicate' => 'Təkrarlayın',
 	'fast_create' => 'Sürətli yaradın',
+	'publish' => 'Publish',
 ];
