@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Den begärda produkten saknas eller är inaktiv för närvarande',
     'please_payment' => 'Var snäll och betala',
     'bank_account_info' => 'Bankkontoinformation',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'Genom att klicka på Publicera godkänner du våra användarvillkor och integritetspolicy och bekräftar att du är den rättmätiga ägaren av denna artikel.',
     'update_category_msg' => 'Den klassificerade kategorin kommer att uppdateras.',
     'updated_category_msg' => 'Kategori har redigerats.',
     'create_ad_with_post_cat' => [
