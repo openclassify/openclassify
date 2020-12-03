@@ -198,11 +198,11 @@ return [
         'name' => 'İlan/ürün eklerken Oluştururken harita Göster',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Reklam Sayısını Göster',
+        'instructions' => 'Soldaki kategori listesinde reklam sayısını göster',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'İlan Sonrası Sözleşmesini Göster',
+        'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
     ],
 ];
