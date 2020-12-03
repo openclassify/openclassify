@@ -198,11 +198,11 @@ return [
         'name' => 'جب کوئی اشتہار بناتے ہو تو بریڈ کرمب دکھائیں',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'اشتہارات کی گنتی دکھائیں',
+        'instructions' => 'بائیں زمروں کی فہرست میں اشتہارات کی گنتی دکھائیں',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'پوسٹ اشتہار کا معاہدہ دکھائیں',
+        'instructions' => 'اگر آپ اشتہار تخلیق کے صفحے پر رازداری کی پالیسی کا معاہدہ ظاہر کرنا چاہتے ہیں تو اسے آن کریں',
     ],
 ];
