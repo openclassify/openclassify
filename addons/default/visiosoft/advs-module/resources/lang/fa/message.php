@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'محصول درخواستی در حال حاضر پیدانشد یا غیرفعال است',
     'please_payment' => 'لطفا پرداخت کنید',
     'bank_account_info' => 'معلومات حساب بانکی',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'با کلیک بر روی انتشار ، شما با شرایط استفاده ما موافقت می کنید و سیاست حفظ حریم خصوصی تأیید می کند که شما صاحب قانونی این مورد هستید.',
     'update_category_msg' => 'گتگوری های طبقه بندی شده اپدیت می شود.',
     'updated_category_msg' => 'گتگوری با موفقیت تصحیح شد',
     'create_ad_with_post_cat' => [
