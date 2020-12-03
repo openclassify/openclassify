@@ -198,11 +198,11 @@ return [
         'name' => 'Mostrar ruta de navegación al crear un anuncio',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Mostrar recuento de anuncios',
+        'instructions' => 'Mostrar el recuento de anuncios en la lista de categorías de la izquierda',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Mostrar acuerdo de publicación',
+        'instructions' => 'Active esta opción si desea mostrar un acuerdo de política de privacidad en la página de creación de anuncios.',
     ],
 ];
