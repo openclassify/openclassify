@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Gevraagde product ontbreekt momenteel of is inactief',
     'please_payment' => 'Betaal alsjeblieft',
     'bank_account_info' => 'bankrekeninginformatie',
-    'agreement' => 'Door op Posten te klikken, gaat u akkoord met onze Gebruiksvoorwaarden en Privacybeleid en erkent u dat u de rechtmatige eigenaar van dit item bent.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'De ingedeelde categorie wordt bijgewerkt.',
     'updated_category_msg' => 'Categorie succesvol bewerkt.',
     'create_ad_with_post_cat' => [
