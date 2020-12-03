@@ -314,6 +314,10 @@ return [
     'listing_details' => 'جزئیات لیست',
     'preview' => 'پیش نمایش',
     'congratulations' => 'تبریک می گویم',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',
