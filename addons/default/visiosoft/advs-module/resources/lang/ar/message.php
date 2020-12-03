@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'المنتج المطلوب مفقود أو غير نشط حاليًا',
     'please_payment' => 'يرجى الدفع',
     'bank_account_info' => 'معلومات الحساب المصرفي',
-    'agreement' => 'بالنقر فوق نشر ، فأنت توافق على شروط الاستخدام وسياسة الخصوصية الخاصة بنا وتقر بأنك المالك الشرعي لهذا العنصر.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'سيتم تحديث الفئة المبوبة.',
     'updated_category_msg' => 'تم تعديل الفئة بنجاح.',
     'create_ad_with_post_cat' => [
