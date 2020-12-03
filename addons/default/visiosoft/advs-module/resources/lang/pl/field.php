@@ -314,6 +314,10 @@ return [
     'listing_details' => 'Szczegóły aukcji',
     'preview' => 'Zapowiedź',
     'congratulations' => 'Gratulacje',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',
