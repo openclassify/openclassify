@@ -4,7 +4,7 @@ return [
     'error_added_cart' => '요청한 제품이 현재 없거나 비활성입니다',
     'please_payment' => '지불 해주세요',
     'bank_account_info' => '은행 계좌 정보',
-    'agreement' => '게시를 클릭하면 귀하는 본 이용 약관 및 개인 정보 보호 정책에 동의하며 귀하가이 항목의 올바른 소유자임을 인정합니다.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => '분류 된 카테고리가 업데이트됩니다.',
     'updated_category_msg' => '카테고리가 성공적으로 수정되었습니다.',
     'create_ad_with_post_cat' => [
