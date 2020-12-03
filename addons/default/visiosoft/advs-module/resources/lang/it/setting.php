@@ -198,11 +198,11 @@ return [
         'name' => 'Mostra breadcrumb durante la creazione di un annuncio',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Mostra conteggio annunci',
+        'instructions' => 'Mostra il conteggio degli annunci nell\'elenco delle categorie a sinistra',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Mostra accordo post annuncio',
+        'instructions' => 'Attiva questa opzione se desideri visualizzare un accordo sulla politica sulla privacy nella pagina di creazione dell\'annuncio',
     ],
 ];
