@@ -41,5 +41,5 @@ return [
 	'create_configurations' => 'কনফিগারেশন তৈরি করুন',
 	'replicate' => 'প্রতিলিপি',
 	'fast_create' => 'দ্রুত তৈরি করুন',
-	'publish' => 'Publish',
+	'publish' => 'প্রকাশ করুন',
 ];
