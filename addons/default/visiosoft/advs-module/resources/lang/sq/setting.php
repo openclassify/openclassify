@@ -198,11 +198,11 @@ return [
         'name' => 'Tregoni Breadcrumb kur krijoni një reklamë',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Shfaq Numrin e Reklamave',
+        'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
+        'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
     ],
 ];
