@@ -314,6 +314,10 @@ return [
     'listing_details' => 'リストの詳細',
     'preview' => 'プレビュー',
     'congratulations' => 'おめでとう',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => '自由',
     'ad_date' => '広告日',
