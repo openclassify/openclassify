@@ -315,6 +315,10 @@ return [
     'listing_details' => 'Detajet e Listimit',
     'preview' => 'Paraqitje',
     'congratulations' => 'Urime',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',
