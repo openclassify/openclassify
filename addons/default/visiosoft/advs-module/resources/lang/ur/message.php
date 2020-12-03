@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'مطلوبہ مصنوعہ فی الحال غائب یا غیر فعال ہے',
     'please_payment' => 'برائے مہربانی ادا کریں',
     'bank_account_info' => 'بینک اکاؤنٹ کی معلومات',
-    'agreement' => 'پوسٹ پر کلک کرکے ، آپ ہماری استعمال کی شرائط اور رازداری کی پالیسی سے اتفاق کرتے ہیں کہ آپ اس شے کے صحیح مالک ہیں۔',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'درجہ بندی کی قسم کو اپ ڈیٹ کیا جائے گا۔',
     'updated_category_msg' => 'زمرہ کامیابی کے ساتھ ترمیم کی گئی۔',
     'create_ad_with_post_cat' => [
