@@ -198,11 +198,11 @@ return [
         'name' => 'Εμφάνιση Breadcrumb κατά τη δημιουργία μιας διαφήμισης',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Εμφάνιση πλήθους διαφημίσεων',
+        'instructions' => 'Εμφάνιση πλήθους διαφημίσεων στην αριστερή λίστα κατηγοριών',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Εμφάνιση συμφωνίας μετά τη διαφήμιση',
+        'instructions' => 'Ενεργοποιήστε το αν θέλετε να εμφανίσετε μια συμφωνία πολιτικής απορρήτου στη σελίδα δημιουργίας διαφημίσεων',
     ],
 ];
