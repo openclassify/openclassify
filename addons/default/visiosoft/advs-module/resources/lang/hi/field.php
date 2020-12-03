@@ -314,6 +314,10 @@ return [
     'listing_details' => 'सूची विवरण',
     'preview' => 'पूर्वावलोकन',
     'congratulations' => 'बधाई हो',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',
