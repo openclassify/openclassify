@@ -41,4 +41,5 @@ return [
 	'create_configurations' => 'Tạo cấu hình',
 	'replicate' => 'Nhân rộng',
 	'fast_create' => 'Tạo nhanh',
+	'publish' => 'Publish',
 ];
