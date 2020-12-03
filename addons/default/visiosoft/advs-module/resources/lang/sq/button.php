@@ -41,5 +41,5 @@ return [
 	'create_configurations' => 'Krijoni konfigurime',
 	'replicate' => 'Kopjoni',
 	'fast_create' => 'Krijo shpejt',
-	'publish' => 'Publish',
+	'publish' => 'Publikoni',
 ];
