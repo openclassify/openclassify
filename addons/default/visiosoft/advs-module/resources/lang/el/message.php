@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Το προϊόν που ζητήσατε λείπει ή είναι ανενεργό',
     'please_payment' => 'Παρακαλώ πληρώστε',
     'bank_account_info' => 'Στοιχεία τραπεζικού λογαριασμού',
-    'agreement' => 'Κάνοντας κλικ στο Δημοσίευση, αποδέχεστε τους Όρους Χρήσης και την Πολιτική απορρήτου, αναγνωρίζετε ότι είστε ο νόμιμος κάτοχος αυτού του στοιχείου.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'Η ταξινομημένη κατηγορία θα ενημερωθεί.',
     'updated_category_msg' => 'Η κατηγορία επεξεργάστηκε επιτυχώς.',
     'create_ad_with_post_cat' => [
