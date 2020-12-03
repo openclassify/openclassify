@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Żądany produkt jest obecnie niedostępny lub nieaktywny',
     'please_payment' => 'Proszę zapłacić',
     'bank_account_info' => 'informacje o koncie bankowym',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'Klikając Opublikuj, zgadzasz się na nasze Warunki użytkowania i Politykę prywatności, potwierdzając, że jesteś prawowitym właścicielem tego elementu.',
     'update_category_msg' => 'Kategoria sklasyfikowana zostanie zaktualizowana.',
     'updated_category_msg' => 'Kategoria pomyślnie edytowana.',
     'create_ad_with_post_cat' => [
