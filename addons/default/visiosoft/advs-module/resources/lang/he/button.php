@@ -41,4 +41,5 @@ return [
 	'create_configurations' => 'צור תצורות',
 	'replicate' => 'העתק',
 	'fast_create' => 'ליצור מהיר',
+	'publish' => 'Publish',
 ];
