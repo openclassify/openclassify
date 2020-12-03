@@ -41,4 +41,5 @@ return [
 	'create_configurations' => 'कॉन्फ़िगरेशन बनाएँ',
 	'replicate' => 'दोहराने',
 	'fast_create' => 'तेजी से बना',
+	'publish' => 'Publish',
 ];
