@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Produsul solicitat lipsește în prezent sau este inactiv',
     'please_payment' => 'Te rog plateste',
     'bank_account_info' => 'Informații despre contul bancar',
-    'agreement' => 'Dacă faceți clic pe Postare, sunteți de acord cu Termenii și condițiile noastre de utilizare a confidențialității, recunoașteți că sunteți proprietarul de drept al acestui articol.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'Categoria clasificată va fi actualizată.',
     'updated_category_msg' => 'Categoria a fost modificată cu succes.',
     'create_ad_with_post_cat' => [
