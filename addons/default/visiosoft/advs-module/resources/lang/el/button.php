@@ -41,5 +41,5 @@ return [
 	'create_configurations' => 'Δημιουργήστε διαμορφώσεις',
 	'replicate' => 'Αντιγραφή',
 	'fast_create' => 'Γρήγορη δημιουργία',
-	'publish' => 'Publish',
+	'publish' => 'Δημοσιεύω',
 ];
