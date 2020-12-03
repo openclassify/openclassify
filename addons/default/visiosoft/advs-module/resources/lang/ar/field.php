@@ -314,6 +314,10 @@ return [
     'listing_details' => 'تفاصيل قائمة',
     'preview' => 'معاينة',
     'congratulations' => 'تهانينا',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
