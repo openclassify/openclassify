@@ -314,6 +314,10 @@ return [
     'listing_details' => 'তালিকা বিবরণ',
     'preview' => 'পূর্বরূপ',
     'congratulations' => 'অভিনন্দন',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',
