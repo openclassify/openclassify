@@ -42,7 +42,7 @@ return [
         'USD' => [
             'name' => 'US Dollar',
             'direction' => 'ltr',
-            'symbol' => '',
+            'symbol' => '$',
             'separator' => '.',
             'point' => ',',
             'decimals' => 2,

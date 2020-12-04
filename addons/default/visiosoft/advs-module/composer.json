@@ -13,6 +13,7 @@
         "wirelab/language_switcher-plugin": "^1.3",
         "visiosoft/addblock-extension": "^1.1",
         "ext-zip": "*",
-        "chumper/zipper": "^1.0"
+        "chumper/zipper": "^1.0",
+        "sentry/sentry-laravel": "*"
     }
 }

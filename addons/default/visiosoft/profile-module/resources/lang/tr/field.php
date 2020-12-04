@@ -5,10 +5,10 @@ return [
         'name' => 'Fotoğraflar'
     ],
     'first_name' => [
-        'name' => 'İsim'
+        'name' => 'Adınız'
     ],
     'last_name' => [
-        'name' => 'Soyad'
+        'name' => 'Soyadınız'
     ],
     'username' => [
         'name' => 'Kullanıcı Adı'

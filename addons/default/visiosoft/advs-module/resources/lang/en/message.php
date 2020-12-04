@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Requested product is currently missing or inactive',
     'please_payment' => 'Please Pay',
     'bank_account_info' => 'Bank account information',
-    'agreement' => 'By clicking Post, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.',
     'update_category_msg' => 'The classified category will be updated.',
     'updated_category_msg' => 'Category successfully edited.',
     'create_ad_with_post_cat' => [
@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "This ad doesn't exist!",
     'select_location_error' => "Please select a location on the map!",
     'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
+    'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
+    'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 ];
