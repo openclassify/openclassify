@@ -1,6 +1,6 @@
 {% if setting_value('visiosoft.module.location::create_ad_page_location') %}
-    <div class="row form-group location-map">
-        <div class="col-12 m-0 p-0">
+    <div class="form-group location-map">
+        <div>
             <ul class="nav nav-tabs p-1 bg-dark border-bottom py-2" role="tablist">
                 <li role="presentation" class="p-0 m-0">
                     <a href="#location" class="text-dark py-1 px-4 border bg-white locationSection"
@@ -14,7 +14,7 @@
             </ul>
             <div class="tab-content bg-light">
                 <div role="tabpanel" class="tab-pane m-0 pt-2 active" id="location">
-                    <div class="col-12 row">
+                    <div class="row">
                         <div class="col-sm-4">
                             <ul style="padding: 0" class="list-unstyled">
                                 <li class="country-data" data-content="{{ adv['country_id'] }}"

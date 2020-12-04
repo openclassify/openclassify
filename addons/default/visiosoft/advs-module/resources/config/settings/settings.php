@@ -325,6 +325,20 @@ return [
             'mode' => 'checkbox'
         ],
     ],
+    'show_ads_count' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox'
+        ],
+    ],
+    'show_post_ad_agreement' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ],
+    ],
     'override_text' => [
         'type' => 'anomaly.field_type.tags',
         'bind' => 'override_text',

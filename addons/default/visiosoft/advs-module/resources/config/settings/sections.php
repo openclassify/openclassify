@@ -30,6 +30,7 @@ return [
                     'default_published_time',
                     'default_GET',
                     'listing_page_image',
+                    'show_ads_count',
                 ],
             ],
             'create_ad' => [
@@ -41,6 +42,7 @@ return [
                     'hide_configurations',
                     'make_map_required',
                     'show_breadcrumb_when_creating_ad',
+                    'show_post_ad_agreement',
                 ],
             ],
             'ads_image' => [
