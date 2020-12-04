@@ -798,8 +798,6 @@ class AdvsController extends PublicController
                 $CloudinaryModel->updateRequest($request);
 
                 if ($request->url != "") {
-                    $adv->cover_photo = "https://res.cloudinary.com/" . $request->cloudName . "/video/upload/w_400,e_loop/" .
-                        $request->uploadKey . "/" . $request->filename . "gif";
                     $adv->save();
                 }
             }
