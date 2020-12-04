@@ -801,11 +801,7 @@ class AdvsController extends PublicController
                 $CloudinaryModel = new VideoModel();
                 $CloudinaryModel->updateRequest($request);
 
-                if ($request->url != "") {
-                    $adv->cover_photo = "https://res.cloudinary.com/" . $request->cloudName . "/video/upload/w_400,e_loop/" .
-                        $request->uploadKey . "/" . $request->filename . "gif";
-                    $adv->save();
-                }
+                if ($request->url != "") { $adv->save(); }
             }
             if ($this->adv_model->is_enabled('customfields')) {
                 app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $request);
