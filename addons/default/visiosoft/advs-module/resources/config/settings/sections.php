@@ -65,13 +65,19 @@ return [
             'user' => [
                 'title' => 'visiosoft.module.advs::section.user',
                 'fields' => [
-                    'register_email_field',
+                    'register_email_field'
                 ],
             ],
             'filter' => [
                 'title' => 'visiosoft.module.advs::section.filter',
                 'fields' => [
                     'hide_price_filter', 'hide_date_filter', 'hide_photo_filter', 'hide_map_filter', 'user_filter_limit'
+                ],
+            ],
+            'translations' => [
+                'title' => 'visiosoft.module.advs::section.translations',
+                'fields' => [
+                    'override_text',
                 ],
             ],
         ],
