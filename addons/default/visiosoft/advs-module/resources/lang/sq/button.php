@@ -42,4 +42,5 @@ return [
 	'replicate' => 'Kopjoni',
 	'fast_create' => 'Krijo shpejt',
 	'publish' => 'Publikoni',
+	'import' => 'Import',
 ];
