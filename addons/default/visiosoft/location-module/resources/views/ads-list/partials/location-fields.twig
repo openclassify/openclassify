@@ -21,7 +21,8 @@
             </span>
             <i class="fas fa-sort-down float-right"></i>
         </button>
-        <input name="country[]" value="{% if countrySlug %}{{ countrySlug.id }}{% else %}{{ params.param['country']|join(',') }}{% endif %}" type="hidden" multiple>
+        <input name="country[]" id="listCountryFilter" type="hidden" multiple
+               value="{% if countrySlug %}{{ countrySlug.id }}{% else %}{{ params.param['country']|join(',') }}{% endif %}">
     </div>
 
     <div class="col-12 px-0 py-1">
@@ -45,7 +46,7 @@
         <div class="text-muted selected-city">
             <small>{{ selected_cities_name|join(',') }}</small>
         </div>
-        <input name="city[]" type="hidden"
+        <input name="city[]" id="listCityFilter" type="hidden"
                value="{% if citySlug %}{{ citySlug.id }}{% else %}{{ params.param['city']|join(',') }}{% endif %}">
     </div>
     <div class="col-12 px-0 py-1">
