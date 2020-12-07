@@ -205,4 +205,8 @@ return [
         'name' => 'পোস্ট বিজ্ঞাপন চুক্তি প্রদর্শন করুন',
         'instructions' => 'আপনি বিজ্ঞাপন তৈরি পৃষ্ঠায় কোনও গোপনীয়তা নীতি চুক্তি প্রদর্শন করতে চাইলে এটি চালু করুন',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
