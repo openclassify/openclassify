@@ -205,4 +205,8 @@ return [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];

@@ -25,13 +25,7 @@ class AdvTableButtons
                     return ($entry->getStatus() == 'approved') ? "danger" : "success";
                 },
             ],
-
-            'edit' => [
-                'href' => function (EntryModel $entry) {
-                    return route('visiosoft.module.advs::edit_adv', ['id' => $entry->getId()]);
-                },
-                'text' => "<font class='hidden-xs-down'>" . trans('streams::button.edit') . "</font>"
-            ],
+            'edit',
             'settings' => [
                 'text' => false,
                 'href' => false,

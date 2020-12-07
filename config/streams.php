@@ -13,7 +13,11 @@ return [
     |
     */
 
-    'listeners' => [],
+    'listeners' => [
+        \Anomaly\Streams\Platform\Event\Booted::class => [
+            \App\Listeners\Translations::class
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------

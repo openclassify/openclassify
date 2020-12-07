@@ -339,4 +339,9 @@ return [
             'mode' => 'checkbox'
         ],
     ],
+    'override_text' => [
+        'type' => 'anomaly.field_type.tags',
+        'bind' => 'override_text',
+        'env' => 'OVERRIDE_TEXT',
+    ],
 ];
