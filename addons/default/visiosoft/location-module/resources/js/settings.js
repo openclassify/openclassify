@@ -32,7 +32,7 @@ new Promise(function (resolve, reject) {
 function getCities(country) {
     crudAjax('id=' + country, '/ajax/getCities', 'POST', function (callback) {
         cities = callback;
-        $('select[name="default_city"]').html("<option>" + pick_option + "</option>");
+        $('select[name="default_city"]').html("<option value=''>" + pick_option + "</option>");
         $.each(cities, function (index, value) {
             $('select[name="default_city"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
         });
@@ -42,7 +42,7 @@ function getCities(country) {
 function getDistricts(city) {
     crudAjax('id=' + city, '/ajax/getDistricts', 'POST', function (callback) {
         cities = callback;
-        $('select[name="default_district"]').html("<option>" + pick_option + "</option>");
+        $('select[name="default_district"]').html("<option> value=''" + pick_option + "</option>");
         $.each(cities, function (index, value) {
             $('select[name="default_district"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
         });
@@ -52,7 +52,7 @@ function getDistricts(city) {
 function getNeighborhoods(district) {
     crudAjax('id=' + district, '/ajax/getNeighborhoods', 'POST', function (callback) {
         cities = callback;
-        $('select[name="default_neighborhood"]').html("<option>" + pick_option + "</option>");
+        $('select[name="default_neighborhood"]').html("<option value=''>" + pick_option + "</option>");
         $.each(cities, function (index, value) {
             $('select[name="default_neighborhood"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
         });
