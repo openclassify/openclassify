@@ -135,10 +135,6 @@ class AdvsController extends PublicController
         parent::__construct();
     }
 
-
-    /**
-     * @return \Illuminate\Contracts\View\View|mixed
-     */
     public function index($category = null, $city = null)
     {
         $customParameters = array();
@@ -481,9 +477,12 @@ class AdvsController extends PublicController
 
     public function view($seo, $id = null)
     {
-        $id = is_null($id) ? $seo : $id;
-
-        $adv = $this->adv_repository->getListItemAdv($id);
+        if ($id) {
+            $adv = $this->adv_repository->findByIDAndSlug($id, $seo);
+        } else {
+            $id = $seo;
+            $adv = $this->adv_repository->getListItemAdv($id);
+        }
 
         if ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id())) {
             // Check if created by exists

@@ -21,6 +21,8 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function getCatNames($adv);
 
+    public function findByIDAndSlug($id, $slug);
+
     public function cover_image_update($adv);
 
     public function getRecommendedAds($id);

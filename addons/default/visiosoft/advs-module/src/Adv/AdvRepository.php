@@ -244,6 +244,20 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $adv;
     }
 
+    public function findByIDAndSlug($id, $slug)
+    {
+        $adv = $this->newQuery()
+            ->where('advs_advs.id', $id)
+            ->where('slug', $slug)
+            ->first();
+
+        if ($adv) {
+            $adv = $this->getLocationNames($adv);
+        }
+
+        return $adv;
+    }
+
     public function getListItemAdv($id)
     {
         $adv = $this->model
