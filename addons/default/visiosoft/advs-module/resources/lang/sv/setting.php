@@ -205,4 +205,8 @@ return [
         'name' => 'Visa annonsannonsavtal',
         'instructions' => 'Aktivera detta om du vill visa ett integritetspolicyavtal på sidan för skapande av annonser',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
