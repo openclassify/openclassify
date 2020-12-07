@@ -42,4 +42,5 @@ return [
 	'replicate' => 'প্রতিলিপি',
 	'fast_create' => 'দ্রুত তৈরি করুন',
 	'publish' => 'প্রকাশ করুন',
+	'import' => 'Import',
 ];
