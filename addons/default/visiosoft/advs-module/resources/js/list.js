@@ -179,6 +179,7 @@ $(document).ready(function () {
 });
 
 $("#listFilterForm").submit(function(e) {
+    // Disable unselected inputs
     const inputs = $('#listFilterForm :input');
     [...inputs].forEach((input) => {
         if (input.type === 'checkbox' || input.type === 'radio') {
@@ -191,6 +192,11 @@ $("#listFilterForm").submit(function(e) {
             }
         }
     });
+
+    // Disable country if city is selected
+    if ($('#listCityFilter').val()) {
+        $('#listCountryFilter').prop('disabled', true)
+    }
 });
 
 // Change view type
