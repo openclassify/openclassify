@@ -42,4 +42,5 @@ return [
 	'replicate' => 'Återskapa',
 	'fast_create' => 'Skapa snabbt',
 	'publish' => 'Publicera',
+	'import' => 'Import',
 ];
