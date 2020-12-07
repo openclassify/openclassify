@@ -216,8 +216,15 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
 	public function getAdvDetailLinkByModel($object, $type = null)
 	{
-		$id = $object->id;
-		$seo = str_slug($object->slug, '-');
+		if ($type != null) {
+			$id = $object->id;
+			$seo = str_slug($object->name);
+			$seo = str_replace('_', '-', $seo);
+			return \route('adv_detail_seo', [$seo, $id]);
+		}
+		$id = $object->getObject()->id;
+		$seo = str_slug($object->getObject()->name);
+		$seo = str_replace('_', '-', $seo);
 		return \route('adv_detail_seo', [$seo, $id]);
 	}
 
