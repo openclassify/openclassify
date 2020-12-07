@@ -205,4 +205,8 @@ return [
         'name' => 'پوسٹ اشتہار کا معاہدہ دکھائیں',
         'instructions' => 'اگر آپ اشتہار تخلیق کے صفحے پر رازداری کی پالیسی کا معاہدہ ظاہر کرنا چاہتے ہیں تو اسے آن کریں',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
