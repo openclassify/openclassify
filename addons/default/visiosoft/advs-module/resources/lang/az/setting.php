@@ -205,4 +205,8 @@ return [
         'name' => 'Post Elan Müqaviləsini Göstərin',
         'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
