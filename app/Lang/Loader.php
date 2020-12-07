@@ -180,11 +180,12 @@ class Loader extends FileLoader
                 $lines = array_replace_recursive($lines, $this->files->getRequire($file));
             }
         }
+        if (config()->has('override_text')) {
+            foreach (config()->get('override_text') as $override) {
+                $override = explode(':', $override);
 
-        foreach (config()->get('override_text') as $override) {
-            $override = explode(':', $override);
-
-            $lines = $this->findArrayValue($override[0],$override[1],$lines);
+                $lines = $this->findArrayValue($override[0], $override[1], $lines);
+            }
         }
 
         return $lines;
@@ -211,7 +212,6 @@ class Loader extends FileLoader
         }
         return $arr;
     }
-
 
 
     /**
