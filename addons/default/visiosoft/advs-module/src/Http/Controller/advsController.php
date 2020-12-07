@@ -581,10 +581,7 @@ class AdvsController extends PublicController
 	        $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
 
-	        if (Str::slug($adv->slug, '-') != $seo) {
-		        $this->messages->error(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
-		        return redirect()->route('visiosoft.module.advs::list');
-	        } else if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
+	        if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
 		        return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
 			        'recommended_advs', 'categories', 'features', 'options', 'configurations'));
 	        } else {
@@ -801,11 +798,7 @@ class AdvsController extends PublicController
                 $CloudinaryModel = new VideoModel();
                 $CloudinaryModel->updateRequest($request);
 
-                if ($request->url != "") {
-                    $adv->cover_photo = "https://res.cloudinary.com/" . $request->cloudName . "/video/upload/w_400,e_loop/" .
-                        $request->uploadKey . "/" . $request->filename . "gif";
-                    $adv->save();
-                }
+                if ($request->url != "") { $adv->save(); }
             }
             if ($this->adv_model->is_enabled('customfields')) {
                 app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $request);
