@@ -1,5 +1,7 @@
 <?php
 
+use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
+use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\NavigationModule\Link\LinkModel;
 use Anomaly\NavigationModule\Menu\Contract\MenuRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
@@ -21,11 +23,15 @@ class DatabaseSeeder extends Seeder
     protected $users;
     protected $roles;
     protected $activator;
+    protected $disks;
+    protected $folders;
 
     public function __construct(
         WidgetRepositoryInterface $widgets,
         MenuRepositoryInterface $menus,
         UserRepositoryInterface $users,
+        DiskRepositoryInterface $disks,
+        FolderRepositoryInterface $folders,
         RoleRepositoryInterface $roles,
         UserActivator $activator
     )
@@ -35,6 +41,8 @@ class DatabaseSeeder extends Seeder
         $this->users = $users;
         $this->roles = $roles;
         $this->activator = $activator;
+        $this->disks = $disks;
+        $this->folders = $folders;
     }
 
     public function run()
@@ -125,5 +133,20 @@ class DatabaseSeeder extends Seeder
 	    $zip->close();
 
         $this->call(widgetSeeder::class);
+
+
+        //Create Store Icon Folder
+        if (!$this->folders->findBySlug('ads_excel')) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en' => [
+                    'name' => 'Ads Excel',
+                    'description' => 'A folder for Ads Excel.',
+                ],
+                'slug' => 'ads_excel',
+                'disk' => $disk
+            ]);
+        };
     }
 }
