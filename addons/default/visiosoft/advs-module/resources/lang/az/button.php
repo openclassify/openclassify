@@ -42,4 +42,5 @@ return [
 	'replicate' => 'Təkrarlayın',
 	'fast_create' => 'Sürətli yaradın',
 	'publish' => 'Nəşr edin',
+	'import' => 'Import',
 ];
