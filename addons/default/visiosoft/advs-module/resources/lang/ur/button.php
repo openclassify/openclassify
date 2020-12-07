@@ -42,4 +42,5 @@ return [
 	'replicate' => 'چربہ لگائیں',
 	'fast_create' => 'فاسٹ بنائیں',
 	'publish' => 'شائع کریں',
+	'import' => 'Import',
 ];
