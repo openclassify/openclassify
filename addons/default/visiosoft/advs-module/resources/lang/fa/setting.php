@@ -206,4 +206,8 @@ return [
         'name' => 'نمایش قرارداد تبلیغات پست',
         'instructions' => 'اگر می خواهید توافق نامه سیاست حفظ حریم خصوصی را در صفحه ایجاد آگهی نمایش دهید ، این گزینه را روشن کنید',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
