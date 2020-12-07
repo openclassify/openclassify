@@ -205,4 +205,8 @@ return [
         'name' => 'İlan Sonrası Sözleşmesini Göster',
         'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
