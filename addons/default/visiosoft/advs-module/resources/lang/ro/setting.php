@@ -205,4 +205,8 @@ return [
         'name' => 'Afișați acordul de postare a anunțului',
         'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
