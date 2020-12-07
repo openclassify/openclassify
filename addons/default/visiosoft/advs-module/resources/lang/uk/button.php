@@ -42,4 +42,5 @@ return [
 	'replicate' => 'Тиражувати',
 	'fast_create' => 'Швидке створення',
 	'publish' => 'Опублікувати',
+	'import' => 'Import',
 ];
