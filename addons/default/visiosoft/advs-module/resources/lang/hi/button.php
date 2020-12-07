@@ -42,4 +42,5 @@ return [
 	'replicate' => 'दोहराने',
 	'fast_create' => 'तेजी से बना',
 	'publish' => 'प्रकाशित करना',
+	'import' => 'Import',
 ];
