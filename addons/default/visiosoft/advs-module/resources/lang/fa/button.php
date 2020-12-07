@@ -42,4 +42,5 @@ return [
 	'replicate' => 'تکثیر',
 	'fast_create' => 'سریع ایجاد کنید',
 	'publish' => 'انتشار',
+	'import' => 'Import',
 ];
