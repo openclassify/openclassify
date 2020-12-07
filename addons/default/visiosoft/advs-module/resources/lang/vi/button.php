@@ -42,4 +42,5 @@ return [
 	'replicate' => 'Nhân rộng',
 	'fast_create' => 'Tạo nhanh',
 	'publish' => 'Công bố',
+	'import' => 'Import',
 ];
