@@ -205,4 +205,8 @@ return [
         'name' => 'Show Post Ad Agreement anzeigen',
         'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
