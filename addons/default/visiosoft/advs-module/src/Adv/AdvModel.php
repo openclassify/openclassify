@@ -218,13 +218,11 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 	{
 		if ($type != null) {
 			$id = $object->id;
-			$seo = str_slug($object->name);
-			$seo = str_replace('_', '-', $seo);
+			$seo = $object->slug;
 			return \route('adv_detail_seo', [$seo, $id]);
 		}
 		$id = $object->getObject()->id;
-		$seo = str_slug($object->getObject()->name);
-		$seo = str_replace('_', '-', $seo);
+		$seo = $object->getObject()->slug;
 		return \route('adv_detail_seo', [$seo, $id]);
 	}
 
@@ -233,8 +231,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $adv = $this->find($id);
         if ($adv != null) {
             $id = $adv->id;
-            $seo = str_slug($adv->name);
-            $seo = str_replace('_', '-', $seo);
+            $seo = $adv->slug;
             return \route('adv_detail_seo', [$seo, $id]);
         }
     }
