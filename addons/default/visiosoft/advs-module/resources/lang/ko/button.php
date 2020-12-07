@@ -42,4 +42,5 @@ return [
 	'replicate' => '뒤로 젖히다',
 	'fast_create' => '빠른 생성',
 	'publish' => '게시',
+	'import' => 'Import',
 ];
