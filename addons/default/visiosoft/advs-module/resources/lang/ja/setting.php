@@ -205,4 +205,8 @@ return [
         'name' => 'ポスト広告契約を表示する',
         'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
     ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
 ];
