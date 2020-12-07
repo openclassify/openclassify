@@ -42,4 +42,5 @@ return [
 	'replicate' => 'Repliceren',
 	'fast_create' => 'Snel aanmaken',
 	'publish' => 'Publiceren',
+	'import' => 'Import',
 ];
