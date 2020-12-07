@@ -42,4 +42,5 @@ return [
 	'replicate' => 'Replică',
 	'fast_create' => 'Crearea rapidă',
 	'publish' => 'Publica',
+	'import' => 'Import',
 ];
