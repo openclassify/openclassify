@@ -377,6 +377,9 @@ return [
     'password' => [
         'name' => 'Κωδικός πρόσβασης',
     ],
+    'old_password' => [
+        'name' => 'Old password',
+    ],
     'new_password' => [
         'name' => 'Νέος κωδικός πρόσβασης',
     ],
