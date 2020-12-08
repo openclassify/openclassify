@@ -206,7 +206,7 @@ return [
         'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Tekst overschrijven',
+        'instructions' => 'Oude waarde: nieuwe waarde'
     ],
 ];
