@@ -42,5 +42,5 @@ return [
 	'replicate' => 'Αντιγραφή',
 	'fast_create' => 'Γρήγορη δημιουργία',
 	'publish' => 'Δημοσιεύω',
-	'import' => 'Import',
+	'import' => 'Εισαγωγή',
 ];
