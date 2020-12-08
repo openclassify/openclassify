@@ -197,4 +197,16 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Afficher le fil d\'Ariane lors de la création d\'une annonce',
     ],
+    'show_ads_count' => [
+        'name' => 'Afficher le nombre d\'annonces',
+        'instructions' => 'Les annonces diffusées comptent dans la liste des catégories de gauche',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Afficher l\'accord de publication d\'annonce',
+        'instructions' => 'Activez cette option si vous souhaitez afficher un accord de politique de confidentialité sur la page de création d\'annonces',
+    ],
+    'override_text' => [
+        'name' => 'Remplacer le texte',
+        'instructions' => 'Ancienne valeur: nouvelle valeur'
+    ],
 ];
