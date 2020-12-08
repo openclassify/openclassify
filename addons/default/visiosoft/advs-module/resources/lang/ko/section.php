@@ -55,5 +55,5 @@ return [
     'option_configuration' => [
         'title' => '구성',
     ],
-    'translations' => 'Translations',
+    'translations' => '번역',
 ];
