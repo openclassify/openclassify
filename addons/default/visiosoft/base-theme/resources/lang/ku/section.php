@@ -2,7 +2,7 @@
 
 return [
     'catalog_mode' => [
-        'name' => 'Catalog Mode',
+        'name' => 'Modeya Katalogê',
     ],
-    'template' => 'Template',
+    'template' => 'Plateablon',
 ];
