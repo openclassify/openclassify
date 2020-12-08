@@ -375,6 +375,9 @@ return [
     'password' => [
         'name' => 'Şifrə',
     ],
+    'old_password' => [
+        'name' => 'Köhnə Şifrə',
+    ],
     'new_password' => [
         'name' => 'Yeni şifrə',
     ],
