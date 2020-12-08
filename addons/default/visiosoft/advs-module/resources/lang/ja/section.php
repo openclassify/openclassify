@@ -55,5 +55,5 @@ return [
     'option_configuration' => [
         'title' => '構成',
     ],
-    'translations' => 'Translations',
+    'translations' => '翻訳',
 ];
