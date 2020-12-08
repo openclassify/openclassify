@@ -2,19 +2,19 @@
 
 return [
     'category' => [
-        'name'   => 'Category',
+        'name'   => 'Liq',
         'option' => [
-            'read'   => 'Can read category?',
-            'write'  => 'Can create/edit category?',
-            'delete' => 'Can delete category?',
+            'read'   => 'Ma dikare kategoriyê bixwîne?',
+            'write'  => 'Dikare kategoriyê biafirîne / sererast bike?',
+            'delete' => 'Ma dikare kategoriyê jê bibe?',
         ],
     ],
     'placeholderforsearch' => [
         'name'   => 'Placeholderforsearch',
         'option' => [
-            'read'   => 'Can read placeholderforsearch?',
-            'write'  => 'Can create/edit placeholderforsearch?',
-            'delete' => 'Can delete placeholderforsearch?',
+            'read'   => 'Dikarin bixwînin placeholderforsearch?',
+            'write'  => 'Ma dikare cîhfilka cihan biafirîne / sererast bike?',
+            'delete' => 'Ma dikare cihekîforşeyê jêbirin?',
         ],
     ],
 ];
