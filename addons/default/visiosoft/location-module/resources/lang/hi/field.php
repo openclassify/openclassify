@@ -34,5 +34,6 @@ return [
     'address' => [
         'name' => 'पता',
     ],
-    'selected' => 'चुन लिया'
+    'selected' => 'चुन लिया',
+    'choose_an_option' => 'एक विकल्प चुनें...',
 ];
