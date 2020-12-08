@@ -2,58 +2,58 @@
 
 return [
     'advs' => [
-        'title' => 'Ads',
+        'title' => 'Reklam',
     ],
     'categories' => [
-        'title' => 'Categories',
+        'title' => 'Kategorî',
     ],
     'countries' => [
-        'title' => 'Countries',
+        'title' => 'Welat',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Bajar',
     ],
     'districts' => [
-        'title' => 'Districts',
+        'title' => 'Navçe',
     ],
     'neighborhoods' => [
-        'title' => 'Neighborhoods',
+        'title' => 'Taxan',
     ],
     'village' => [
-        'title' => 'Village',
+        'title' => 'Gûnd',
     ],
     'custom_fields' => [
-        'title' => 'Custom fields',
+        'title' => 'Zeviyên xwerû',
     ],
     'custom_field_advs' => [
-        'title' => 'Custom field ads',
+        'title' => 'Reklamên qada xwerû',
     ],
     'cf_values' => [
-        'title' => 'Cf values',
+        'title' => 'Nirxên Cf',
     ],
     'fields' => [
-        'title' => 'Custom Fields'
+        'title' => 'Zeviyên xwerû'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Hebûnên zelal'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
-    'filter' => 'Filter',
-    'create_ad' => 'Create Ad',
+    'general' => 'Giştî',
+    'ads' => 'Reklam',
+    'user' => 'Bikaranîvan',
+    'filter' => 'Parzûn',
+    'create_ad' => 'Ad biafirînin',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Vebijarkên',
     ],
-    'ads_image' => 'Ads Image',
+    'ads_image' => 'Ads Wêne',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Vebijarkên',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Nirx Nirx',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Veavakirina',
     ],
-    'translations' => 'Translations',
+    'translations' => 'Wergeran',
 ];
