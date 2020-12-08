@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Profile',
+    'title'       => 'Tengal',
     'name'        => 'Profile Module',
     'description' => ''
 ];
