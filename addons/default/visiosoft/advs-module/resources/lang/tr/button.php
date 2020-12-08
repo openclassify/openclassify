@@ -42,5 +42,5 @@ return [
 	'replicate' => 'Tekrarlamak',
 	'fast_create' => 'Hızlı ekle',
 	'publish' => 'Yayınla',
-	'import' => 'İthalat',
+	'import' => 'İçeri aktar',
 ];
