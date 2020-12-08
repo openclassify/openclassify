@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'サブカテゴリー6'
     ],
+    'cat8' => [
+        'name' => 'サブカテゴリー7'
+    ],
+    'cat9' => [
+        'name' => 'サブカテゴリー8'
+    ],
+    'cat10' => [
+        'name' => 'サブカテゴリー9'
+    ],
     'currency' => [
         'name' => '通貨'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'リストの詳細',
     'preview' => 'プレビュー',
     'congratulations' => 'おめでとう',
+    'ad_desc' => '広告の説明',
+    'upload_photos' => '写真をアップロードする',
+    'additional_fields' => '追加フィールド',
+    'ad_location' => '広告の場所',
 
     'free' => '自由',
     'ad_date' => '広告日',
