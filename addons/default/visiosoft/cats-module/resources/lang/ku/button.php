@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'new_category' => 'New Category',
-    'add_sub_category' => 'Add Sub Category',
-    'sub_category' => 'Show Sub Category',
+    'new_category' => 'Kategoriya Nû',
+    'add_sub_category' => 'Kategoriya Jêrîn zêde bikin',
+    'sub_category' => 'Kategoriya Jêrîn nîşan bide',
     'new_placeholderforsearch' => 'New Placeholderforsearch',
 ];
