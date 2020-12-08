@@ -2,45 +2,45 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Sernavê navîgasyonê',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Çalakiya Navîgasyonê',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Zeviyên Welat',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Zeviyên Dîrokê',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Qadên Bihayê',
     ],
     'breadcrumbs' => [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Agahdariyên Ad',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Tab Agahdariyên Adê',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Nûtirîn û Hemî Btn Nîşandan',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Logoya Fêrbûna Rûpelê Tomar Bikin',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Register Link Alert Link',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'Styleêwaz (CSS)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'Sermaseyên Bin Kategoriyên Serûpelê',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Rûpelê qeyd bikin, ji bo têlefonê welatê pêşîn',
 	]
 ];
