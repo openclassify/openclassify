@@ -206,7 +206,7 @@ return [
         'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'עקוף טקסט',
+        'instructions' => 'ערך ישן: ערך חדש'
     ],
 ];
