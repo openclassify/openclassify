@@ -5,30 +5,30 @@ return [
         'name' => 'Advs',
     ],
     'categories' => [
-        'name' => 'Categories',
+        'name' => 'Kategorî',
     ],
     'village' => [
-        'name' => 'Village',
+        'name' => 'Gûnd',
     ],
     'custom_fields' => [
-        'name' => 'Custom fields',
+        'name' => 'Zeviyên xwerû',
     ],
     'custom_field_advs' => [
-        'name' => 'Custom field advs',
+        'name' => 'Fieldêwirmendên qada xwerû',
     ],
     'cf_values' => [
-        'name' => 'Cf values',
+        'name' => 'Nirxên Cf',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Vebijarkên',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'Vebijarkên Hilberê',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'Nirxê vebijarkan',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'Veavakirina',
     ],
 ];
