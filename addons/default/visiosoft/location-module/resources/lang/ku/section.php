@@ -2,22 +2,22 @@
 
 return [
     'countries' => [
-        'title' => 'Countries',
+        'title' => 'Welat',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Bajar',
     ],
     'districts' => [
-        'title' => 'Districts',
+        'title' => 'Navçe',
     ],
     'neighborhoods' => [
-        'title' => 'Neighborhoods',
+        'title' => 'Taxan',
     ],
     'village' => [
-        'title' => 'Village',
+        'title' => 'Gûnd',
     ],
-    'general' => 'General',
-    'map' => 'Map',
-    'setting' => 'Setting',
-    'filter' => 'Filter',
+    'general' => 'Giştî',
+    'map' => 'Qert',
+    'setting' => 'Sazkirin',
+    'filter' => 'Parzûn',
 ];
