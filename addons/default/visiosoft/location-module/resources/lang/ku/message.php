@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Type here to search',
-    'null_msg' => 'Not Found',
+    'placeholder' => 'Ji bo lêgerînê li vir binivîse',
+    'null_msg' => 'Peyda nebû',
 ];
