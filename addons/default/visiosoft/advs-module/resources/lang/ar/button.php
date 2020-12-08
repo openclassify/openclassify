@@ -42,5 +42,5 @@ return [
 	'replicate' => 'استنساخ',
 	'fast_create' => 'إنشاء سريع',
 	'publish' => 'ينشر',
-	'import' => 'Import',
+	'import' => 'استيراد',
 ];
