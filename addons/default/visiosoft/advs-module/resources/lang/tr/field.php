@@ -82,11 +82,20 @@ return [
     'cat7' => [
         'name' => 'Alt Kategori 6'
     ],
+    'cat8' => [
+        'name' => 'Alt Kategori 7'
+    ],
+    'cat9' => [
+        'name' => 'Alt Kategori 8'
+    ],
+    'cat10' => [
+        'name' => 'Alt Kategori 9'
+    ],
     'currency' => [
         'name' => 'Para birimi'
     ],
     'status' => [
-        'name' => 'Durum',
+        'name' => 'durum',
         'option' => [
             'approved' => 'Onaylandı',
             'expired' => 'Süresi doldu',
@@ -308,6 +317,9 @@ return [
     'preview' => 'Ön İzleme',
     'congratulations' => 'Tebrikler',
     'ad_desc' => 'İlan Açıklaması',
+    'upload_photos' => 'Fotoğrafları yükle',
+    'additional_fields' => 'İlave Alanlar',
+    'ad_location' => 'İlan Yeri',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
