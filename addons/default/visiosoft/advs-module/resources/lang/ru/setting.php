@@ -206,7 +206,7 @@ return [
         'instructions' => 'Включите это, если вы хотите отображать соглашение о политике конфиденциальности на странице создания рекламы.',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Заменить текст',
+        'instructions' => 'Старое значение: новое значение'
     ],
 ];
