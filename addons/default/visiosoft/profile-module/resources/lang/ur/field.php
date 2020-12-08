@@ -375,6 +375,9 @@ return [
     'password' => [
         'name' => 'پاس ورڈ',
     ],
+    'old_password' => [
+        'name' => 'پرانا پاسورڈ',
+    ],
     'new_password' => [
         'name' => 'نیا پاس ورڈ',
     ],
