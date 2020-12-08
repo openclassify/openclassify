@@ -1,59 +1,59 @@
 <?php
 
 return [
-    'latest_ads' => 'Latest Ads',
-    'show_all' => 'Show All',
+    'latest_ads' => 'Reklamên Dawîn',
+    'show_all' => 'Hemî nîşan bide',
     'login' => [
-        'name' => 'Login',
+        'name' => 'Têkevin',
     ],
     'logout' => [
-        'name' => 'Logout',
+        'name' => 'Derkeve',
     ],
-    'profile' => 'Profile',
-    'email' => 'Email Address',
-    'phone' => 'Phone Number',
-    'reset_code' => 'Reset Code',
-    'password_confirmation' => 'Password Confirmation',
-    'password' => 'Password',
-    'first_name' => 'First Name',
-    'last_name' => 'Last Name',
-    'remember_me' => 'Remember Me',
-    'not_a_member_yet' => 'Not a Member Yet',
-    'not_a_member_yet_message' => 'Sign up for our members to benefit from our special service',
-    'forgot_password' => 'I Forgot My Password',
-    'email_or_phone_number' => 'Email Address or Phone Number',
-    'phone_number' => 'Phone Number',
+    'profile' => 'Tengal',
+    'email' => 'Navnîşana emailê',
+    'phone' => 'Jimare telefon',
+    'reset_code' => 'Vebijêrin Koda',
+    'password_confirmation' => 'Piştrastkirina Passwordîfreyê',
+    'password' => 'Şîfre',
+    'first_name' => 'Nav',
+    'last_name' => 'Paşnav',
+    'remember_me' => 'Min bîne bîra xwe',
+    'not_a_member_yet' => 'Endam Ne Dîsa',
+    'not_a_member_yet_message' => 'Ji bo endamên me navnîşan bikin ku ji karûbarê meya taybetî sûd werbigirin',
+    'forgot_password' => 'Min şîfreya xwe ji bîr kir',
+    'email_or_phone_number' => 'Navnîşana E-nameyê an Hejmara Telefonê',
+    'phone_number' => 'Jimare telefon',
 
     // Registration instructions
-    'personal_registration_header' => 'What Are Individual Membership Advantages?',
-    'personal_registration_body' => 'Sell and rent your home, car, sell your unused items, get new ones.',
-    'personal_registration_list_1' => 'Post a free ad,',
-    'personal_registration_list_2' => 'Add the ads you are interested in, follow the price changes after adding them to your favorites, create favorite searches that meet your criteria,',
-    'personal_registration_list_3' => 'Send messages to the ad owners on the site.',
-    'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
+    'personal_registration_header' => 'Awantajên Endametiya Kesane Çi ne?',
+    'personal_registration_body' => 'Xaniyê xwe, otomobîla xwe bifroşin û kirê bikin, tiştên xweyên bê karan bifroşin, yên nû jî bistînin.',
+    'personal_registration_list_1' => 'Reklamek belaş bişînin,',
+    'personal_registration_list_2' => 'Reklamên ku hûn pê re eleqedar dibin zêde bikin, piştî ku ew li bijareyên xwe zêde bikin, guhertinên bihayê bişopînin, lêgerînên bijare yên ku pîvanên we digirin biafirînin',
+    'personal_registration_list_3' => 'Li ser malperê ji xwedan reklaman re peyam bişînin.',
+    'register_information_note' => 'Agahdariya li ser vê rûpelê ji bo tête girtin ' . env('APPLICATION_DOMAIN') . ' endamî. Hûn dikarin li vir di derheqê parastina daneyên kesane de agahdariya berfireh bibînin.',
 
     // Register page
-    'phone_validation_error' => 'This phone number is in use by another member.',
+    'phone_validation_error' => 'Ev jimara têlefonê ji hêla endamek din ve tê bikar anîn.',
 
     // Forgot Password
-    'create_new_password' => 'Create New Password',
+    'create_new_password' => 'Passwordîfreyek Nû çêbikin',
 
     // Login page
-    'or' => 'or',
-    'login_with_phone_number' => 'Login with Phone Number',
-    'login_with_email_address' => 'Login with Email Address',
+    'or' => 'an',
+    'login_with_phone_number' => 'Bi Hejmara Telefonê têkevinê',
+    'login_with_email_address' => 'Bi Navnîşana E-nameyê têkevin',
 
     // Side menu links
-    'company_directory' => 'Company directory',
-    'popular_ads' => 'Popular Ads',
-    'last_48_hours' => 'Last 48 Hours',
-    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
-    'sms' => 'Send Text Message (SMS)',
+    'company_directory' => 'Pirtûkxaneya pargîdaniyê',
+    'popular_ads' => 'Reklamên populer',
+    'last_48_hours' => '48 Demjimêrên Dawîn',
+    'secure_e-commerce_ads' => 'Reklamên e-Bazirganiya Ewle bikin',
+    'sms' => 'Peyama Nivîsîn SMSand (SMS)',
     'mail' => 'Send Mail',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'Rêwerzên Tomarê',
+    'list' => 'Rêzok',
+    'instruction_description' => 'Danasîna Rêwerzê',
+    'instruction_list' => 'Lîsteya Rêwerziyê',
 ];
