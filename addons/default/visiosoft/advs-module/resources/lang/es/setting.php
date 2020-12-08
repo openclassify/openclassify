@@ -206,7 +206,7 @@ return [
         'instructions' => 'Active esta opción si desea mostrar un acuerdo de política de privacidad en la página de creación de anuncios.',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Anular texto',
+        'instructions' => 'Valor anterior: Valor nuevo'
     ],
 ];
