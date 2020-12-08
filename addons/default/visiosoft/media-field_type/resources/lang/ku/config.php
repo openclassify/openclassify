@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Peldankan',
+        'instructions' => 'Diyar bikin ka kîjan peldank ji bo vê qadê hene. Vala bihêle da ku hemî peldankan nîşan bide.',
+        'warning'      => 'Destûrên heyî yên peldankê pêşî li peldankên hilbijartî digirin.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'Hilbijarkên Kêmtirîn',
+        'instructions' => 'Hilbijarkên destûrkirî yên herî kêm binivîse.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'Hilbijartinên Maksîmûm',
+        'instructions' => 'Hejmara herî zêde ya hilbijartinên destûrkirî binivîse.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Modeya Input',
+        'instructions' => 'Divê bikarhêner çawa têkela pelê peyda bikin?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Pelan bar bikin û / an hilbijêrin.',
+            'select'  => 'Tenê pelan hilbijêrin.',
+            'upload'  => 'Tenê pelan hilînin.',
         ],
     ],
 ];
