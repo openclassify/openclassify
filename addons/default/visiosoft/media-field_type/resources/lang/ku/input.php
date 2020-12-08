@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'dropzone' => 'Click or drop files here to upload.',
-    'help'     => 'Click and drag to reorder attached files.',
+    'dropzone' => 'Ji bo barkirinê pelan li vir bikirtînin an bavêjin.',
+    'help'     => 'Ji bo sererastkirina pelên pêvekirî bikirtînin û bikişînin.',
 ];
