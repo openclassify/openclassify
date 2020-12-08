@@ -375,6 +375,9 @@ return [
     'password' => [
         'name' => 'कुंजिका',
     ],
+    'old_password' => [
+        'name' => 'पुराना पासवर्ड',
+    ],
     'new_password' => [
         'name' => 'नया पासवर्ड',
     ],
