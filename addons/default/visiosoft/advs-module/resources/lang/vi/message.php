@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Quảng cáo này không tồn tại!",
     'select_location_error' => "Vui lòng chọn một vị trí trên bản đồ!",
     'this_ad_is_not_valid_anymore' => "Quảng cáo này không hợp lệ nữa!",
+    'approve_status_change' => "Trạng thái Quảng cáo của Bạn Đã được Đặt thành Hoạt động!",
+    'passive_status_change' => "Trạng thái quảng cáo của bạn đã được đặt thành bị động!",
 ];
