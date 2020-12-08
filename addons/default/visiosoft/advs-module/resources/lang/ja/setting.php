@@ -206,7 +206,7 @@ return [
         'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'テキストを上書きする',
+        'instructions' => '古い値：新しい値'
     ],
 ];
