@@ -307,6 +307,7 @@ return [
     'listing_details' => 'Liste Ayrıntıları',
     'preview' => 'Ön İzleme',
     'congratulations' => 'Tebrikler',
+    'ad_desc' => 'İlan Açıklaması',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
