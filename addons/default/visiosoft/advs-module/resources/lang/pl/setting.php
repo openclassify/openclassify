@@ -206,7 +206,7 @@ return [
         'instructions' => 'Włącz tę opcję, jeśli chcesz wyświetlać umowę o polityce prywatności na stronie tworzenia reklamy',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Zastąp tekst',
+        'instructions' => 'Stara wartość: nowa wartość'
     ],
 ];
