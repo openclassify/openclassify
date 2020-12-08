@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'select_file' => 'Select File',
+    'select_file' => 'Pelê hilbijêrin',
     'upload'      => 'Upload',
-    'remove'      => 'Remove',
-    'change'      => 'Change',
+    'remove'      => 'Dûrxistin',
+    'change'      => 'Gûherrandinî',
 ];
