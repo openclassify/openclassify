@@ -236,6 +236,12 @@
 
                             {{ passwordForm.open()|raw }}
                             <div class="row">
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label class="font-weight-bold">{{ trans("visiosoft.module.profile::field.old_password.name") }}</label>
+                                        {{ passwordForm.fields.old_password.input|raw }}
+                                    </div>
+                                </div>
                                 <div class="col-md-6">
                                     <div class="form-group">
                                         <label class="font-weight-bold">{{ trans("visiosoft.module.profile::field.new_password.name") }}</label>

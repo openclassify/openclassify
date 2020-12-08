@@ -169,7 +169,9 @@
                                 </div>
                             </div>
 
-                            <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.upload_photos') }}</h5>
+                            <h5 class="mt-5 pb-1 border-bottom">
+                                {{ trans('visiosoft.module.advs::field.upload_photos') }}
+                            </h5>
                             <div class="bg-light p-4">
                                 <div class="row form-group images">
                                     <div class="col-md-12">
@@ -178,12 +180,14 @@
                                 </div>
                             </div>
 
-                            <h5 class="mt-5 pb-1 border-bottom">
-                                {{ trans('visiosoft.module.advs::field.additional_fields') }}
-                            </h5>
-                            <div class="bg-light p-4">
-                                {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
-                            </div>
+                            {% if count(custom_fields) %}
+                                <h5 class="mt-5 pb-1 border-bottom">
+                                    {{ trans('visiosoft.module.advs::field.additional_fields') }}
+                                </h5>
+                                <div class="bg-light p-4">
+                                    {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
+                                </div>
+                            {% endif %}
 
                             <h5 class="mt-5 pb-1 border-bottom">
                                 {{ trans('visiosoft.module.advs::field.ad_location') }}
