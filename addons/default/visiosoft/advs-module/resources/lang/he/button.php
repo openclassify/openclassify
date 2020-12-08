@@ -42,5 +42,5 @@ return [
 	'replicate' => 'העתק',
 	'fast_create' => 'ליצור מהיר',
 	'publish' => 'לְפַרְסֵם',
-	'import' => 'Import',
+	'import' => 'יְבוּא',
 ];
