@@ -377,6 +377,9 @@ return [
     'new_password' => [
         'name' => 'Yeni Şifre',
     ],
+    'old_password' => [
+        'name' => 'Eski Şifre',
+    ],
     're_new_password' => [
         'name' => 'Şifre Onayı',
     ],
