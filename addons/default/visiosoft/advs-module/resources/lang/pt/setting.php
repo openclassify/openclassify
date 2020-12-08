@@ -197,4 +197,16 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Mostrar localização atual ao criar um anúncio',
     ],
+    'show_ads_count' => [
+        'name' => 'Mostrar contagem de anúncios',
+        'instructions' => 'Exibir contagem de anúncios na lista de categorias à esquerda',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Mostrar Acordo de Postagem',
+        'instructions' => 'Ative-o se quiser exibir um acordo de política de privacidade na página de criação de anúncios',
+    ],
+    'override_text' => [
+        'name' => 'Substituir Texto',
+        'instructions' => 'Valor antigo: novo valor'
+    ],
 ];
