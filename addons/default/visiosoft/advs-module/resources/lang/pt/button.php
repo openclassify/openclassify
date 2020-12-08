@@ -42,5 +42,5 @@ return [
 	'replicate' => 'Replicar',
 	'fast_create' => 'Criação rápida',
 	'publish' => 'Publicar',
-	'import' => 'Import',
+	'import' => 'Importar',
 ];
