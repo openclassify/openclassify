@@ -5,466 +5,469 @@ return [
         'name' => 'Photos'
     ],
     'first_name' => [
-        'name' => 'First Name'
+        'name' => 'Nav'
     ],
     'last_name' => [
-        'name' => 'Last Name'
+        'name' => 'Paşnav'
     ],
     'username' => [
-        'name' => 'Username'
+        'name' => 'Navê bikarhêner'
     ],
     'display_name' => [
-        'name' => 'Display Name'
+        'name' => 'Navê Nîşan bide'
     ],
     'email' => [
-        'name' => 'Email Adress'
+        'name' => 'Navnîşana E-nameyê'
     ],
     'sitename' => [
         'name' => 'sitename'
     ],
     'activated' => [
-        'name' => 'User Active'
+        'name' => 'Bikarhêner Çalak'
     ],
     'enabled' => [
-        'name' => 'User Enable'
+        'name' => 'Bikarhêner Çalak bike'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'Welat'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'Bajar'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'Herêm'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Cînarî'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'Gûnd'
     ],
     'gsm_phone' => [
-        'name' => 'GSM Phone'
+        'name' => 'Telefonê GSM'
     ],
     'land_phone' => [
-        'name' => 'Land Phone'
+        'name' => 'Telefonê Land'
     ],
     'office_phone' => [
-        'name' => 'Office Phone'
+        'name' => 'Telefonê Ofîsê'
     ],
     'register_type' => [
         'name' => 'Register Type'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Rojbûn'
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Zanyarî'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Dewleta Perwerdehiyê'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Sinet'
     ],
     'identification_number' => [
-        'name' => 'Identification Number'
+        'name' => 'Nimara ye kiyîtî'
     ],
     'adress_name' => [
-        'name' => 'Adress Name'
+        'name' => 'Navnîşana Navnîşan'
     ],
     'adress_first_name' => [
-        'name' => 'First Name'
+        'name' => 'Nav'
     ],
     'adress_last_name' => [
-        'name' => 'Last Name'
+        'name' => 'Paşnav'
     ],
     'actions' => [
-        'name' => 'Actions'
+        'name' => 'Çalakî'
     ],
     'adress_content' => [
-        'name' => 'Adress Content'
+        'name' => 'Navnîşana Navnîşan'
     ],
     'adress_post_code' => [
-        'name' => 'Post Code'
+        'name' => 'Koda Postê'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Gsm Phone'
+        'name' => 'Telefonê Gsm'
     ],
     'adress_land_phone' => [
-        'name' => 'Land Phone'
+        'name' => 'Telefonê Land'
     ],
     'adress_country' => [
-        'name' => 'Country'
+        'name' => 'Welat'
     ],
     'adress_city' => [
-        'name' => 'City'
+        'name' => 'Bajar'
     ],
     'adress_district' => [
-        'name' => 'District'
+        'name' => 'Herêm'
     ],
     'adress_neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Cînarî'
     ],
     'adress_village' => [
-        'name' => 'Village'
+        'name' => 'Gûnd'
     ],
     'messages' => [
         'name' => 'Messages'
     ],
     'user' => [
-        'name' => 'User'
+        'name' => 'Bikaranîvan'
     ],
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Profile'
+        'name' => 'Tengal'
     ],
 
     'create' => [
-        'name' => 'Create'
+        'name' => 'Xûliqandin'
     ],
     'edit' => [
-        'name' => 'Edit'
+        'name' => 'Weşandin'
     ],
     'delete' => [
-        'name' => 'Delete'
+        'name' => 'Jêbirin'
     ],
     'list' => [
-        'name' => 'List'
+        'name' => 'Rêzok'
     ],
     'menu_address' => [
-        'name' => 'Address'
+        'name' => 'Navnîşan'
     ],
     'menu_orders' => [
-        'name' => 'Orders'
+        'name' => 'Ferman'
     ],
     'menu_favorites' => [
         'name' => 'Favorites'
     ],
     'menu_archived_ads' => [
-        'name' => 'Archived ads'
+        'name' => 'Reklamên arşîvkirî'
     ],
     'menu_pending_ads' => [
-        'name' => 'Pending approval'
+        'name' => 'Li benda pejirandinê ye'
     ],
     'menu_delete_account' => [
-        'name' => 'Close account'
+        'name' => 'Hesabê bigire'
     ],
     'menu_my_ads' => [
-        'name' => 'My ads'
+        'name' => 'Reklamên min'
     ],
     'menu_fav_ads' => [
-        'name' => 'Favourite ads'
+        'name' => 'Reklamên bijare'
     ],
     'menu_hello_msg' => [
-        'name' => 'Hello'
+        'name' => 'slav'
     ],
     'menu_last_msg' => [
-        'name' => 'You last logged in at'
+        'name' => 'We herî dawî li'
     ],
     'menu_packages' => [
-        'name' => 'My packages'
+        'name' => 'Pakêtên min'
     ],
     'menu_adv_packages' => [
-        'name' => 'Ads Packages'
+        'name' => 'Packages Ads'
     ],
     'menu_time_packages' => [
-        'name' => 'Time Packages'
+        'name' => 'Pakêtên Demjimêr'
     ],
     'profile_details' => [
         'name' => 'Profile Details'
     ],
     'profile_photo' => [
-        'name' => 'Profile Photo'
+        'name' => 'Photo Profile'
     ],
     'adv_listing_banner' => [
-        'name' => 'Ads Listing Page Banner'
+        'name' => 'Reklam Lîsteya Rûpelê Banner'
     ],
     'approve' => [
-        'name' => 'Approve'
+        'name' => 'Destûrdan'
     ],
     'approved' => [
-        'name' => 'Approved'
+        'name' => 'Pejirandin'
     ],
     'pending' => [
-        'name' => 'Pending'
+        'name' => 'Nexelas'
     ],
     'passive' => [
-        'name' => 'Passive'
+        'name' => 'Nejîr'
     ],
     'pending_admin' => [
-        'name' => 'Pending'
+        'name' => 'Nexelas'
     ],
     'menu_messages' => [
         'name' => 'Messages'
     ],
     'menu_my_purchase' => [
-        'name' => 'My Purchase'
+        'name' => 'Kirîna min'
     ],
     'menu_my_sales' => [
-        'name' => 'My Sales'
+        'name' => 'Firotanên min'
     ],
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
-        'name' => 'Secure Trading'
+        'name' => 'Bazirganiya Ewle'
     ],
     'right_secure_trading_msg' => [
-        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+        'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_support_subject' => [
-        'name' => '24/7 Support'
+        'name' => '24/7 Piştgirî'
     ],
     'right_support_msg' => [
-        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+        'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_easy_trading_subject' => [
-        'name' => 'Easy Trading'
+        'name' => 'Bazirganiya Hêsan'
     ],
     'right_easy_trading_msg' => [
-        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
+        'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_need_help_subject' => [
-        'name' => 'Need Help?'
+        'name' => 'Ma Alîkarî hewce dike?'
     ],
     'right_need_help_msg' => [
-        'name' => 'Give a call on'
+        'name' => 'Gazî bikin'
     ],
     'disable_account' => [
-        'name' => 'Disable Account'
+        'name' => 'Hesabê Neçalak bikin'
     ],
     'disable_account_msg' => [
-        'name' => 'Your account will be disabled.
-                                    This operation cannot be undone'
+        'name' => 'Dê hesabê we bête sekinandin.
+                                    Ev operasyon nayê paşve xistin'
     ],
 
-    'message_title' => 'Message Title',
-    'owner_name' => 'Message',
+    'message_title' => 'Sernavê peyamê',
+    'owner_name' => 'Agah',
 
     'favorites' => "Favorites",
-    'fav_advs' => 'Favorite Ads',
-    'fav_sellers' => "Fav Sellers",
-    'fav_searches' => "Fav Searches",
-    'posted_on' => "Posted On",
-    'message_details' => "Message Details",
-    'adv_no' => 'Ad No',
+    'fav_advs' => 'Reklamên Bijare',
+    'fav_sellers' => "Fav Firoşyar",
+    'fav_searches' => "Lêgerînên Fav",
+    'posted_on' => "Hat şandin",
+    'message_details' => "Agahdariyên Peyamê",
+    'adv_no' => 'Ad Na',
     'bill_address' => [
-        'name' => 'Bill Address',
+        'name' => 'Navnîşana Bill',
     ],
     'delivery_address' => [
-        'name' => 'Delivery Address',
+        'name' => 'Navnîşana Radestkirinê',
     ],
     'order_total' => [
-        'name' => 'Total',
+        'name' => 'Hemî',
     ],
     'order_date' => [
-        'name' => 'Order Date',
+        'name' => 'Date Order',
     ],
     'order_no' => [
-        'name' => 'Order ID',
+        'name' => 'Nasnameyê rêz bikin',
     ],
     'order_detail' => [
-        'name' => 'Show Detail',
+        'name' => 'Detail nîşan bide',
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => 'Detail',
+        'name' => 'Hûrî',
     ],
     'back' => [
-        'name' => 'Back',
+        'name' => 'Paş',
     ],
     'image' => [
-        'name' => 'Image',
+        'name' => 'Wêne',
     ],
     'subject' => [
-        'name' => 'Subject',
+        'name' => 'Mijar',
     ],
     'price' => [
-        'name' => 'Price',
+        'name' => 'Biha',
     ],
     'piece' => [
-        'name' => 'Piece',
+        'name' => 'Perçe',
     ],
     'commission' => [
-        'name' => 'Commission',
+        'name' => 'Simsarî',
     ],
     'total' => [
-        'name' => 'Total',
+        'name' => 'Hemî',
     ],
     'sub_total' => [
         'name' => 'Sub Total',
     ],
     'sale' => [
-        'name' => 'Sale',
+        'name' => 'Firotin',
     ],
     'awaiting_tracking_number' => [
-        'name' => 'Awaiting Tracking Number',
+        'name' => 'Li benda Hejmara ckopandinê ne',
     ],
     'awaiting_payment_approval' => [
-        'name' => 'Awaiting Payment Approval',
+        'name' => 'Li benda pejirandina drav',
     ],
     'paid' => [
-        'name' => 'Paid',
+        'name' => 'Pere kirin',
     ],
     'cancelled' => [
-        'name' => 'Cancelled',
+        'name' => 'Hat betalkirin',
     ],
     'waiting' => [
-        'name' => 'Waiting',
+        'name' => 'Li bendê ye',
     ],
     'awaiting_dispatch' => [
-        'name' => 'Awaiting dispatch',
+        'name' => 'Li benda şandinê ye',
     ],
     'shipped' => [
-        'name' => 'Shipped',
+        'name' => 'Ppedandin',
     ],
     'delivered' => [
-        'name' => 'Delivered',
+        'name' => 'Radest kirin',
     ],
     'tracking_number' => [
-        'name' => 'Tracking Number',
+        'name' => 'Hejmara ckopandinê',
     ],
     'was_delivered' => [
-        'name' => 'was delivered',
+        'name' => 'hate radest kirin',
     ],
     'not_delivered' => [
-        'name' => 'not delivered',
+        'name' => 'teslîm nebûye',
     ],
     'show_order_msg1' => [
-        'name' => 'The transaction result will be notified by mail.',
+        'name' => 'Encama danûstandinê dê bi nameyê were agahdar kirin.',
     ],
     'show_order_msg2' => [
-        'name' => 'Refund will be made if the product is not delivered within one week.',
+        'name' => 'Ger hilber di nav hefteyekê de neyê radest kirin dê paşve were dayîn.',
     ],
     'show_order_msg3' => [
-        'name' => 'The result of the transaction has been sent to your registered e-mail address.',
+        'name' => 'Encama danûstendinê ji navnîşana e-nameya weya tomarkirî re hate şandin.',
     ],
 
     'awaiting_payment' => [
-        'name' => 'Awaiting Payment',
+        'name' => 'Li benda dravdayînê ye',
     ],
     'please_entered_tracking_number' => [
-        'name' => 'Please Entered Tracking Number',
+        'name' => 'Ji kerema xwe Hejmara ckopandinê ketin hundir',
     ],
     'transport_days' => [
-        'name' => 'Transport Days',
+        'name' => 'Rojên Veguhestinê',
     ],
     'product_not_delivered' => [
-        'name' => 'Product not delivered',
+        'name' => 'Hilber nehatiye şandin',
     ],
     'status' => [
-        'name' => 'Status',
+        'name' => 'Cî',
     ],
     'cancel_sale' => [
-        'name' => 'Cancel Sale',
+        'name' => 'Firotanê Betal Bikin',
     ],
     'send_again' => [
-        'name' => 'I Will Send Again',
+        'name' => 'Ez ê Dîsa Sendandim',
     ],
     'content' => [
-        'name' => 'Content',
+        'name' => 'Dilşad',
     ],
     'preferences_settings' => [
-        'name' => 'Preferences Settings',
+        'name' => 'Mîhengên Bijareyan',
     ],
 
     'corporate_settings' => [
-        'name' => 'Corporate Settings',
+        'name' => 'Mîhengên Pargîdanî',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'Şîfre',
+    ],
+    'old_password' => [
+        'name' => 'Old password',
     ],
     'new_password' => [
-        'name' => 'New password',
+        'name' => 'Passwordîfreya nû',
     ],
     're_new_password' => [
-        'name' => 'Confirm password',
+        'name' => 'Di pêşîyê da em sipas dikin',
     ],
     'confirm_password_input' => [
-        'name' => 'I confirm my password change',
+        'name' => 'Ez guhertina şîfreya xwe piştrast dikim',
     ],
     'create_address' => [
-        'name' => 'Create Address',
+        'name' => 'Navnîşan çêbikin',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'Navnîşan Biguherîne',
     ],
     'balance_limit' => [
-        'name' => 'Balance Limit',
+        'name' => 'Sînora Hevsengiyê',
     ],
     'active_ads' => [
-        'name' => 'Active Ads',
+        'name' => 'Reklamên Çalak',
     ],
     'subscriptions' => [
-        'name' => 'Subscriptions',
+        'name' => 'Abonekirin',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Go to Subscriptions Page',
+        'name' => 'Herin Rûpelê Tevlêbûnan',
     ],
     'buy_package' => [
-        'name' => 'Buy Package',
+        'name' => 'Pakêtê bikirin',
     ],
     'expired_date' => [
-        'name' => 'Expired Date',
+        'name' => 'Date Date',
     ],
     'category' => [
-        'name' => 'Category',
+        'name' => 'Liq',
     ],
     'ad_limit' => [
-        'name' => 'Ad Limit',
+        'name' => 'Sînora Ad',
     ],
     'publish_time' => [
-        'name' => 'Publish Time',
+        'name' => 'Wext Weşandin',
     ],
     'all_categories' => [
-        'name' => 'All Categories',
+        'name' => 'Hemî Kategorî',
     ],
     'day' => [
-        'name' => 'Day',
+        'name' => 'Roj',
     ],
 
     'individual' => [
-        'name' => 'individual',
+        'name' => 'şexsî',
     ],
     'corporate' => [
-        'name' => 'Corporate',
+        'name' => 'Pargîdanî',
     ],
 
     'details' => [
-        'name' => 'Details'
+        'name' => 'Hûrgulî'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'Helbijartin'
     ],
-    'my_address' => 'My Address',
+    'my_address' => 'Navnîşana min',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Navê Pargîdanî'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Daîreya Bacê'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Hejmara Bacê'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
-    'choose_an_option' => 'Choose an option...',
+    'my_profile' => 'Profîla min',
+    'edit_profile' => 'Profîlê Biguherîne',
+    'edit_details' => 'Hûrgulî Biguherînin',
+    'update' => 'Rojanekirin',
+    'change_password' => '.Îfreyê biguherînin',
+    'choose_an_option' => 'Vebijarek hilbijêrin ...',
 
     // Register page
-    'accept_terms_label' => 'I accept the terms.',
-    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
-    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
-    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
+    'accept_terms_label' => 'Ez şertan qebûl dikim.',
+    'accept_protection_law_label' => '<html>Ez şertên Zagona li ser qebûl dikim' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ vala "> Parastina Daneyên Kesane.</a>',
+    'accept_privacy_terms_label' => '<html>Ez qebûl dikim' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ vala "> mercên nepenîtiyê</a>.',
+    'receive_sms_emails_label' => 'Ez dixwazim e-name & sms bistînim.',
 
     // Register Type
     'personal' => [
-        'name' => 'Personal'
+        'name' => 'Şexsî'
     ],
 ];
