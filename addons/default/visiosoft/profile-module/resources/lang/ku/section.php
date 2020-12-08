@@ -2,11 +2,11 @@
 
 return [
     'profile' => [
-        'title' => 'Profile',
+        'title' => 'Tengal',
     ],
     'adress' => [
-        'title' => 'Adress',
+        'title' => 'Navnîşan',
     ],
-    'general_setting' => 'General Settings',
+    'general_setting' => 'Mîhengên Giştî',
     'recaptcha' => 'reCAPTCHA',
 ];
