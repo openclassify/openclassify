@@ -377,6 +377,9 @@ return [
     'password' => [
         'name' => 'Senha',
     ],
+    'old_password' => [
+        'name' => 'Old password',
+    ],
     'new_password' => [
         'name' => 'Nova senha',
     ],
