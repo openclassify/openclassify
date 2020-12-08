@@ -206,7 +206,7 @@ return [
         'instructions' => 'Attiva questa opzione se desideri visualizzare un accordo sulla politica sulla privacy nella pagina di creazione dell\'annuncio',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Sostituisci testo',
+        'instructions' => 'Vecchio valore: nuovo valore'
     ],
 ];
