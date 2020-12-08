@@ -2,113 +2,113 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'Nav'
     ],
     'order' => [
-        'name' => 'Order'
+        'name' => 'Emir'
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'Şeytanok'
     ],
     'parent_category' => [
-        'name' => 'Parent'
+        'name' => 'Dêûbav'
     ],
     'category' => [
-        'name' => 'Category Title'
+        'name' => 'Title Kategorî'
     ],
     'price' => [
-        'name' => 'Price'
+        'name' => 'Biha'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Bihayê Standard'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'Rojek'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'Wêne'
     ],
     'video' => [
-        'name' => 'Video'
+        'name' => 'Vîdyo'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'Qert'
     ],
     'stock' => [
-        'name' => 'Stock'
+        'name' => 'Embar'
     ],
     'advs_desc' => [
-        'name' => 'Description'
+        'name' => 'Terîf'
     ],
     'online_payment' => [
-        'name' => 'Online Payment'
+        'name' => 'Tezmînata Serhêl'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'Bajar'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'Welat'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'Herêm'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Cînarî'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'Gûnd'
     ],
     'files' => [
-        'name' => 'Images'
+        'name' => 'Wêne'
     ],
     'cat1' => [
-        'name' => 'Main Category'
+        'name' => 'Kategorî Sereke'
     ],
     'cat2' => [
-        'name' => 'Sub Category 1'
+        'name' => 'Kategoriya Jêrîn 1'
     ],
     'cat3' => [
-        'name' => 'Sub Category 2'
+        'name' => 'Kategoriya Jêrîn 2'
     ],
     'cat4' => [
-        'name' => 'Sub Category 3'
+        'name' => 'Kategoriya Jêrîn 3'
     ],
     'cat5' => [
-        'name' => 'Sub Category 4'
+        'name' => 'Kategoriya Jêrîn 4'
     ],
     'cat6' => [
-        'name' => 'Sub Category 5'
+        'name' => 'Kategoriya Jêrîn 5'
     ],
     'cat7' => [
-        'name' => 'Sub Category 6'
+        'name' => 'Bine Kategorî 6'
     ],
     'cat8' => [
-        'name' => 'Sub Category 7'
+        'name' => 'Kategoriya Jêrîn 7'
     ],
     'cat9' => [
-        'name' => 'Sub Category 8'
+        'name' => 'Kategoriya Jêrîn 8'
     ],
     'cat10' => [
-        'name' => 'Sub Category 9'
+        'name' => 'Kategoriya Jêrîn 9'
     ],
     'currency' => [
-        'name' => 'Currency'
+        'name' => 'Diravcins'
     ],
     'status' => [
-        'name' => 'Status',
+        'name' => 'Cî',
         'option' => [
-            'approved' => 'Approved',
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished',
-            'pending_admin' => 'Pending Admin',
-            'pending_user' => 'Pending User'
+            'approved' => 'Pejirandin',
+            'expired' => 'Xilas bû',
+            'unpublished' => 'Neweşandî',
+            'pending_admin' => 'Li bendê Admin',
+            'pending_user' => 'Bikarhênera bendewar'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Unpublished'
+        'name' => 'Neweşandî'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Dawî Li'
     ],
     'cover_photo' => [
         'name' => 'Cover Photo'
@@ -119,137 +119,137 @@ return [
     'my_adv' => [
         'name' => 'ADVS'
     ],
-    'description' =>  'Description',
-    'explanation' =>  'Explanation',
+    'description' =>  'Terîf',
+    'explanation' =>  'Daxûyanî',
     'type' => [
-        'name' => 'Type'
+        'name' => 'Awa'
     ],
     'parent_adv' => [
-        'name' => 'Related Ad'
+        'name' => 'Girêdayî Ad'
     ],
     'value' => [
-        'name' => 'Value'
+        'name' => 'Giranî'
     ],
-    'list' => 'List',
-    'home' => 'Home',
-    'list-page' => 'List Page',
-    'search' => 'Search',
-    'recommended' => 'Recommended Ads for You',
-    'filter' => 'Filter',
-    'sort' => 'Sort',
+    'list' => 'Rêzok',
+    'home' => 'Xane',
+    'list-page' => 'Rûpela Rûpelê',
+    'search' => 'Gerr',
+    'recommended' => 'Ji bo We Reklamên Pêşniyar kirin',
+    'filter' => 'Parzûn',
+    'sort' => 'Jiberhevxistin',
     'sort_by' => 'Sort By',
-    'pick_option' => 'Pick an option',
-    'pick_ordering' => 'Ordering',
-    'price_high' => 'Price High to Low',
-    'price_low' => 'Price Low to High',
-    'newest' => 'Newest',
-    'oldest' => 'Oldest',
-    'address_a_z' => 'Address (A to Z)',
-    'address_z_a' => 'Address (Z to A)',
+    'pick_option' => 'Vebijarek hilbijêrin',
+    'pick_ordering' => 'Rêzkirin',
+    'price_high' => 'Bihayê Bilind heya Nizm',
+    'price_low' => 'Bihayê Kêm heya Bilind',
+    'newest' => 'Nûtirîn',
+    'oldest' => 'Kevintirîn',
+    'address_a_z' => 'Navnîşan (A-Z)',
+    'address_z_a' => 'Navnîşan (ji Z-A)',
 	'categories' => [
-		'name' => 'Categories'
+		'name' => 'Kategorî'
 	],
-    'all_categories' => 'All Categories',
-    'location' => 'Location',
-    'send_message' => 'Send Message',
-    'phone_gsm' => 'Gsm Phone',
-    'phone_office' => 'Office Phone',
+    'all_categories' => 'Hemî Kategorî',
+    'location' => 'Cîh',
+    'send_message' => 'Peyam bişînin',
+    'phone_gsm' => 'Telefonê Gsm',
+    'phone_office' => 'Telefonê Ofîsê',
     'add_to_favorites' => "Add to Favorites",
-    'send' => 'Send',
-    'search_name' => 'Search Name',
-    'my_favorite_searches' => 'Favorite Searches',
-    'search_desc' => 'You can add and manage your favorite search selections here.',
-    'complaint_placeholder' => 'Type your complaint details here.',
-    'show_details' => 'Show Details',
-    'ad_actions' => 'Ad Actions',
-    'edit' => 'Edit',
-    'approve' => 'Approve',
-    'passive' => "Passive",
-    'offered_by' => 'Offered By',
+    'send' => 'Şandin',
+    'search_name' => 'Navê Lêgerînê',
+    'my_favorite_searches' => 'Lêgerînên Bijare',
+    'search_desc' => 'Hûn dikarin li vir vebijarkên lêgerîna xweya bijare zêde bikin û rêve bibin.',
+    'complaint_placeholder' => 'Agahdariyên giliyê xwe li vir binivîsin.',
+    'show_details' => 'Agahdariyên Nîşan bidin',
+    'ad_actions' => 'Çalakiyên Ad',
+    'edit' => 'Weşandin',
+    'approve' => 'Destûrdan',
+    'passive' => "Nejîr",
+    'offered_by' => 'Ji hêla Pêşniyar kirin',
     'more_ads_by' => 'More Ads By',
-    'click_phone' => 'Show phone number',
-    'share' => 'Share',
-    'report' => 'Report this ad',
-    'features' => 'Features',
-    "streetview" => "Street View",
-    'recommended_ads' => 'Recommended Ads for You',
-    'new' => 'New',
-    'short_info' => 'Short Info',
-    'secure_trading' => 'Secure Trading',
-    '24/7' => '24/7 Support',
-    'easy_trading' => 'Easy Trading',
-    'need_help' => 'Need help?',
-    'give_a_call' => 'Give a call on',
-    'message_sent' => 'Message Sent!',
-    'asap' => 'Message sent, seller will contact you asap.',
+    'click_phone' => 'Hejmara têlefonê nîşan bide',
+    'share' => 'Par',
+    'report' => 'Vê reklamê ragihînin',
+    'features' => 'Taybetmendî',
+    "streetview" => "Dîmena Kolanê",
+    'recommended_ads' => 'Ji bo We Reklamên Pêşniyar kirin',
+    'new' => 'Nşh',
+    'short_info' => 'Kurte Agahdarî',
+    'secure_trading' => 'Bazirganiya Ewle',
+    '24/7' => '24/7 Piştgirî',
+    'easy_trading' => 'Bazirganiya Hêsan',
+    'need_help' => 'Alîkarî hewce dike?',
+    'give_a_call' => 'Gazî bikin',
+    'message_sent' => 'Peyam entandin!',
+    'asap' => 'Peyam şandî, dê firotkar asap bi we re têkilî dayne.',
     'ad_id' => 'Ad Id',
-    'contact_with' => 'Contact With',
-    'create_adv' => 'Create Ad',
-    'edit_adv' => 'Edit Ad',
-    'mandatory_fields' => 'Mandatory Fields',
+    'contact_with' => 'Têkilî Bi',
+    'create_adv' => 'Ad biafirînin',
+    'edit_adv' => 'Ad Adrast bike',
+    'mandatory_fields' => 'Zeviyên Mecbûrî',
     'ad_post' => 'Ad Post',
-    'sell_item' => 'Sell an item or service',
-    'search_save' => 'Favorite search saved successfully',
-    'address' => 'Address',
-    'email' => 'E-Mail',
-    'phone' => 'Phone',
-    'send_us_your_feedback' => 'Send Us Your Feedback',
-    'online_shopping' => 'GET',
-    'approved' => 'Approved Successfully',
-    'extended' => 'Extended Successfully',
-    'declined' => 'Declined Successfully',
-    'search_on_map' => 'Search on Map',
-    'post_free_ad' => 'Post Free Ad',
-    'select_a_category' => 'Select a Category',
-    'select_a_sub_category' => 'Select a Sub Category',
-    'all_dopings_added' => 'All doping types are added for this ad.',
+    'sell_item' => 'Tiştek an karûbarek bifroşin',
+    'search_save' => 'Lêgerîna bijare bi serkeftî hate tomarkirin',
+    'address' => 'Navnîşan',
+    'email' => 'E-name',
+    'phone' => 'Telefon',
+    'send_us_your_feedback' => 'Bersiva xwe ji me re bişînin',
+    'online_shopping' => 'STENDIN',
+    'approved' => 'Bi Serkeftin Hat Pejirandin',
+    'extended' => 'Bi Serkeftin Berfireh kirin',
+    'declined' => 'Bi Serkeftin Daketin',
+    'search_on_map' => 'Li Nexşeyê bigerin',
+    'post_free_ad' => 'Reklamek Belaş bişînin',
+    'select_a_category' => 'Kategoriyek hilbijêrin',
+    'select_a_sub_category' => 'Kategoriyek Jêrîn hilbijêrin',
+    'all_dopings_added' => 'Hemî celebên dopîngê ji bo vê reklamê têne zêdekirin.',
     'is_get_adv' => [
-        'name' => 'GET'
+        'name' => 'STENDIN'
     ],
-    'corporate_info' => 'Corporate Info',
-    'featured_ads' => "Featured Ads",
-    'trending_ads' => 'Trendind Ads',
+    'corporate_info' => 'Agahdariya Pargîdanî',
+    'featured_ads' => "Reklamên Taybetmendî",
+    'trending_ads' => 'Reklamên Trendind',
     'search_ads_result_message' => [
-        'name' => ':count ads found for :name search',
+        'name' => ': reklamên hejmartin ji bo: lêgerîna navan hate dîtin',
     ],
-    'total' => 'Total',
-    'quantity' => 'Quantity',
-    'view_cart' => 'View Cart',
-    'no_ads' => 'No Ads found.',
+    'total' => 'Hemî',
+    'quantity' => 'Jimarî',
+    'view_cart' => 'Cart View',
+    'no_ads' => 'Reklam nehat dîtin.',
     'show_display_mode' => [
-        'map' => 'Map',
-        'list' => 'List',
+        'map' => 'Qert',
+        'list' => 'Rêzok',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Ad Name',
-        'price' => 'Price',
-        'publish_at' => 'Ad Date',
-        'location_city' => 'City',
-        'location_country' => 'Country',
+        'name' => 'Navê Ad',
+        'price' => 'Biha',
+        'publish_at' => 'Dîroka Ad',
+        'location_city' => 'Bajar',
+        'location_country' => 'Welat',
     ],
     'show_list_view' => [
-        'name' => 'List',
+        'name' => 'Rêzok',
     ],
     'show_table_view' => [
-        'name' => 'Table',
+        'name' => 'Mêz',
     ],
     'showcase' => [
-        'name' => 'Showcase',
+        'name' => 'Pêşangeh',
     ],
     'new_ad' => [
-        'name' => 'New Ad',
+        'name' => 'Reklama Nû',
     ],
     'profile' => [
-        'name' => 'Profile',
+        'name' => 'Tengal',
     ],
     'my_ads' => [
-        'name' => 'My Ads',
+        'name' => 'Reklamên min',
     ],
     'sold_out' => [
-        'name' => 'Sold out',
+        'name' => 'Hate firotin',
     ],
-    'edit_category' => 'Edit Category',
-    'set_category' => 'Set Category',
+    'edit_category' => 'Kategorî biguherîne',
+    'set_category' => 'Kategorî danîn',
     'max' => [
         'name' => 'Max',
     ],
@@ -257,88 +257,88 @@ return [
         'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Di 24 Demjimêrên Dawîn de'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'Di 24 Demjimêrên Dawîn de'
     ],
     'in_the_last_week' => [
-        'name' => 'In The Last Week'
+        'name' => 'Di Hefteya Dawîn de'
     ],
     'in_the_last_month' => [
-        'name' => 'In The Last Month'
+        'name' => 'Di Meha Dawîn de'
     ],
     'ads_with_photo' => [
-        'name' => 'Ads With Photo'
+        'name' => 'Reklamên Bi Wêne'
     ],
     'ads_with_video' => [
-        'name' => 'Ads With Video'
+        'name' => 'Reklamên Bi Vîdyo'
     ],
     'yes' => [
-        'name' => 'Yes'
+        'name' => 'Erê'
     ],
-    "no_location" => "No location is selected.",
-    "continue" => 'Continue',
-    "gallery" => 'Gallery',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "no_location" => "Cîh nayê hilbijartin.",
+    "continue" => 'Berdewamkirin',
+    "gallery" => 'Galerya',
+    "ads" => 'Reklam',
+    "were_found" => 'hatin dîtin.',
 
     // Pending screen
-    'pending_message_1' => 'The Ad is in the Approval Process',
-    'pending_message_2' => "Ad's Update Date",
-    'pending_message_3' => 'Estimated Waiting Time',
-    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.',
-    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.',
-    'hours' => 'hours',
+    'pending_message_1' => 'Reklam di Pêvajoya Pejirandinê de ye',
+    'pending_message_2' => "Dîroka Nûvekirina Ad",
+    'pending_message_3' => 'Wextê Bendewariyê Texmîn kirin',
+    'pending_message_4' => 'Dema ku di pêvajoya pejirandinê de derbas bûye dê li dema dopîngê were zêdekirin.',
+    'pending_message_5' => 'Di pêvajoya pejirandinê de têkildarî reklamê ji navenda bangê çu danûstandin nayê kirin.',
+    'hours' => 'saetan',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'If the following information about your ad is correct, click the "Continue" button and go to the next step.',
-        'part_2' => 'If not, click the "Edit" button.',
+        'part_1' => 'Heke di derheqê reklama we de agahdariya jêrîn rast e, bişkoja "Berdewam" bikirtînin û biçin gava paşîn.',
+        'part_2' => 'Heke na, bişkoja "Biguherîne" bikirtînin.',
     ],
-    'views' => 'Views',
+    'views' => 'Dîtin',
 
     // Detail page
-    "no_street_view" => "No street view image in this location",
-    'edit_my_contact_info' => 'Edit My Contact Information',
-    'update_my_contact_info' => 'update my contact info',
-    'contact_info' => 'Contact information',
-    'ad_info' => 'Ad Information',
+    "no_street_view" => "Li vî cîhî wêneyek dîtina kolanan tune",
+    'edit_my_contact_info' => 'Agahdariya Têkiliya Min Biguherînin',
+    'update_my_contact_info' => 'agahdariya têkiliya min nûve bikin',
+    'contact_info' => 'Agahdariya têkiliyê',
+    'ad_info' => 'Agahdariya Ad',
 
     // Select cat
-    'select_category_step_by_step' => 'Select Category Step by Step',
+    'select_category_step_by_step' => 'Gav bi Gav Kategorî hilbijêrin',
 
     // New create page
-    'options' => 'Options',
-    'category_selection' => 'Category Selection',
-    'listing_details' => 'Listing Details',
-    'preview' => 'Preview',
-    'congratulations' => 'Congratulations',
+    'options' => 'Vebijarkên',
+    'category_selection' => 'Hilbijartina Kategorî',
+    'listing_details' => 'Details hûrgulî',
+    'preview' => 'Pêşnerîn',
+    'congratulations' => 'Pîrozbahî',
     'ad_desc' => 'Ad Description',
-    'upload_photos' => 'Upload Photos',
-    'additional_fields' => 'Additional Fields',
-    'ad_location' => 'Ad Location',
+    'upload_photos' => 'Wêneyan bar bikin',
+    'additional_fields' => 'Zeviyên Zêdeyî',
+    'ad_location' => 'Cihê Ad',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
-    'balances' => 'Balances',
+    'free' => 'Belaş',
+    'ad_date' => 'Dîroka Ad',
+    'photo_video' => 'Wêne, Vîdyo',
+    'and_above' => 'û li jor',
+    'and_below' => 'û li jêr',
+    'clear_all' => 'Hemî Paqij Bikin',
+    'balances' => 'Hevsengî',
     'packages' => 'Packages',
-    'dopings' => 'Dopings',
+    'dopings' => 'Dopîng',
     'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'site' => 'Malper',
+    'subscription' => 'Abonetî',
+	'created' => 'Afirandin',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Hilbijarka Hilberê'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Dibe'
 	],
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Bihayê Kevn'
     ],
 ];
