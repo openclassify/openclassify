@@ -24,9 +24,9 @@ return [
     'owner_updated_successfully' => 'Sahibi Başarıyla Güncellenmiştir!',
     'no_add_found' => 'İlan Bulunamadı!',
     'replicated_success' => 'İlan başarıyla kopyalandı!',
-    'ad_doesnt_exist' => "Bu İlan mevcut değil!",
+    'ad_doesnt_exist' => "Bu ilan mevcut değil!",
     'select_location_error' => "Lütfen haritada bir yer seçin!",
     'this_ad_is_not_valid_anymore' => "Bu ürün veya ilan artık geçerli değil!",
-    'approve_status_change' => "İlanınızın Durumu Etkin Olarak Ayarlandı!",
+    'approve_status_change' => "İlanın Durumu Etkin Olarak Ayarlandı!",
     'passive_status_change' => "İlanınızın Durumu Pasif Olarak Ayarlandı!",
 ];
