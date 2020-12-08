@@ -2,6 +2,6 @@
 
 return [
     'theme_settings' => [
-        'name' => 'Theme Settings'
+        'name' => 'Mîhengên Mijarê'
     ],
 ];
