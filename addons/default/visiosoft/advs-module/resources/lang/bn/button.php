@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'নতুন অ্যাড',
+    'new_classified' => 'নতুন শ্রেণিবদ্ধ',
     'new_category' => 'নতুন বিভাগ',
     'new_country' => 'নতুন দেশ',
     'new_city' => 'নতুন শহর',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'নতুন বিকল্প কনফিগারেশন',
 	'create_configurations' => 'কনফিগারেশন তৈরি করুন',
 	'replicate' => 'প্রতিলিপি',
+	'fast_create' => 'দ্রুত তৈরি করুন',
+	'publish' => 'প্রকাশ করুন',
+	'import' => 'আমদানি করুন',
 ];
