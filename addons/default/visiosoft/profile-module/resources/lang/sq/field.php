@@ -375,6 +375,9 @@ return [
     'password' => [
         'name' => 'Fjalëkalimi',
     ],
+    'old_password' => [
+        'name' => 'Old password',
+    ],
     'new_password' => [
         'name' => 'Fjalëkalim i ri',
     ],
