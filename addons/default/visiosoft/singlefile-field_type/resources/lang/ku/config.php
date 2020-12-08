@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Peldankan',
+        'instructions' => 'Diyar bikin ka kîjan peldank ji bo vê qadê hene. Vala bihêle da ku hemî peldankan nîşan bide.',
+        'warning'      => 'Destûrên heyî yên peldankê pêşî li peldankên hilbijartî digirin.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Mezinahiya Uploadê',
+        'instructions' => 'Mezinahiya barkirina herî zêde di <strong>megabytes</strong>.',
+        'warning'      => 'Heke peldanka ne diyar be max û paşê dê servera max li şûna wê were bikar anîn.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Modeya Input',
+        'instructions' => 'Divê bikarhêner çawa têkela pelê peyda bikin?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Pelan bar bikin û / an hilbijêrin.',
+            'select'  => 'Tenê pelan hilbijêrin.',
+            'upload'  => 'Tenê pelan hilînin.',
         ],
     ],
 ];
