@@ -55,5 +55,5 @@ return [
     'option_configuration' => [
         'title' => 'Διαμόρφωση',
     ],
-    'translations' => 'Translations',
+    'translations' => 'Μεταφράσεις',
 ];
