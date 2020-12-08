@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'کتگوری فرعی 6'
     ],
+    'cat8' => [
+        'name' => 'زیر گروه 7'
+    ],
+    'cat9' => [
+        'name' => 'زیر گروه 8'
+    ],
+    'cat10' => [
+        'name' => 'زیر گروه 9'
+    ],
     'currency' => [
         'name' => 'واحد پول'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'جزئیات لیست',
     'preview' => 'پیش نمایش',
     'congratulations' => 'تبریک می گویم',
+    'ad_desc' => 'شرح آگهی',
+    'upload_photos' => 'عکسها را بارگذاری کنید',
+    'additional_fields' => 'زمینه های اضافی',
+    'ad_location' => 'مکان تبلیغات',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',
