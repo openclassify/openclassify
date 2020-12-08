@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Single File',
-    'name'        => 'File Field Type',
-    'description' => 'A file upload field type.',
+    'title'       => 'Pelê Tekane',
+    'name'        => 'Pelê Zeviya Pelê',
+    'description' => 'Celebek zeviyê barkirina pelan.',
 ];
