@@ -197,4 +197,16 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'İlan/ürün eklerken Oluştururken harita Göster',
     ],
+    'show_ads_count' => [
+        'name' => 'Reklam Sayısını Göster',
+        'instructions' => 'Soldaki kategori listesinde reklam sayısını göster',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'İlan Sonrası Sözleşmesini Göster',
+        'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
+    ],
+    'override_text' => [
+        'name' => 'Metni Geçersiz Kıl',
+        'instructions' => 'Eski Değer: Yeni Değer'
+    ],
 ];
