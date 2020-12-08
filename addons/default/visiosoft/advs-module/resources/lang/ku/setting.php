@@ -2,36 +2,36 @@
 
 return [
     'auto_approve' => [
-        'name' => 'Auto Approve',
+        'name' => 'Jixweber Pejirandin',
     ],
     'default_view_type' => [
         'name' => 'Default View Type',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Ger Zero Bihayê Veşêre',
+        'instructions' => 'Heke bihayê reklamê 0 be bihayê veşêrin',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Dema Bendewarî ya Texmînkirî',
+        'instructions' => 'Di Saetan de',
     ],
     'default_published_time' => [
-        'name' => 'Default Publish Time',
+        'name' => 'Wextê Weşana Default',
     ],
     'address' => [
-        'name' => 'Contact Adress',
+        'name' => 'Navnîşana Têkiliyê',
     ],
     'phone' => [
-        'name' => 'Contact Phone',
+        'name' => 'Têlefonê Têkilî',
     ],
     'favicon' => [
         'name' => 'Favicon',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Map Long Coordinate',
+        'name' => 'Nexşeya Hevrêziya Dirêj',
     ],
     'map_coordinates_lat' => [
-        'name' => 'Map Lat Coordinate',
+        'name' => 'Nexşeya Hevrêziya Lat',
     ],
     'iban_numbers' => [
         'name' => 'IBAN',
@@ -40,29 +40,29 @@ return [
         'name' => 'Logo',
     ],
     'ogImage' => [
-        'name' => 'Social Share Logo',
-        'warning'      => 'It should be at a resolution of 1200 x 630. ',
+        'name' => 'Logoya Parvekirina Civakî',
+        'warning'      => 'Divê ew bi çareseriya 1200 x 630 be. ',
 
     ],
     'currencies' => [
-        'name' => 'Active Currencies',
+        'name' => 'Dravên Çalak',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Sînora herî dawî',
     ],
     'site_address' => [
-        'name' => 'Site address',
-        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
+        'name' => 'Navnîşana malperê',
+        'warning'      => 'Auto zêdekirî www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Google Map Api Key',
+        'name' => 'Nexşeya Google Key Api',
     ],
 
     'default_country' => [
         'name' => 'Default Ad Country',
     ],
     'free_currencyconverterapi_key' => [
-        'name' => 'Currency Converter API Key'
+        'name' => 'Mifteya API-ya veguherînerê Pereyê'
     ],
     'default_city' => [
         'name' => 'Default Ad City',
@@ -71,10 +71,10 @@ return [
         'name' => 'Default Ad District',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Ad Neighborhood',
+        'name' => 'Default Ad Taxa',
     ],
     'default_currency' => [
-        'name' => 'Default Ad Currency',
+        'name' => 'Dravê Ad Ademî',
     ],
     'default_GET' => [
         'name' => 'Default Ad GET',
@@ -89,124 +89,124 @@ return [
         'name' => 'Youtube',
     ],
     'google' => [
-        'name' => 'Google',
+        'name' => 'gûgil',
     ],
     'listing_page_image' => [
-        'name' => 'Listing Page Image',
+        'name' => 'Navnîşkirina Wêneya Rûpelê',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Zeviya Bihayê Standard veşêrin',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Qada Vebijarkan Veşêre',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Zeviyê Gundê Veşêre',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Bişkoja Configurations Veşêre',
+        'instructions' => 'Bişkoja Veavakirina Di Rûpelê Pêşdîtina Adê de Veşêre',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Nexşeyê Pêdivî ye',
+        'instructions' => 'Dema ku reklamek diafirîne bikarhêner hewce dike ku pîneyek li ser nexşeyê bicîh bike',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Veşêrin Navnîşa Bihayê Standard',
     ],
     'enabled_currencies' => [
-        'name' => 'Enabled Currencies',
+        'name' => 'Pereyên Çalakkirî',
     ],
     'google_statistic_code' => [
-        'name' => 'Google Statistic Code',
+        'name' => 'Google Code Code',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Endamtiya Serlêdana E-nameya Endamtiyê',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Cihê Sûkê',
     ],
 
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Parzûna Bihayê Veşêre',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Parzûna Dîrokê Veşêre',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Photo Filter Veşêre',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Parzûna Nexşeyê veşêrin',
     ],
     'show_lang_url' => [
-        'name' => 'Show Lang Parameter For URL',
+        'name' => 'Ji bo URL Parametreya Lang nîşan bidin',
     ],
     'popular_ads_limit' => [
-        'name' => 'Popular Ads Limit',
+        'name' => 'Sînorên Ads Popular',
     ],
 
     //Image
 
     'image_resize_backend' => [
-        'name' => 'Image Resize Backend',
+        'name' => 'Mezinahiya Wêne Paşve',
     ],
     'full_image_width' => [
-        'name' => 'Full Image Width',
+        'name' => 'Firehiya Wêne Tevahî',
     ],
     'full_image_height' => [
-        'name' => 'Full Image Height',
+        'name' => 'Bilindahiya Wêneya Tevahî',
     ],
     'medium_image_width' => [
-        'name' => 'Medium Image Width',
+        'name' => 'Firehiya Wêne ya Navîn',
     ],
     'medium_image_height' => [
-        'name' => 'Medium Image Height',
+        'name' => 'Bilindahiya Wêne ya Navîn',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Firehiya Thumbnail',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Bilindahiya Thumbnail',
     ],
     'add_canvas' => [
-        'name' => 'Add Canvas',
+        'name' => 'Canvas zêde bikin',
     ],
     'image_canvas_width' => [
-        'name' => 'Image Canvas Width',
+        'name' => 'Firehiya Canvas Wêne',
     ],
     'image_canvas_height' => [
-        'name' => 'Image Canvas Height',
+        'name' => 'Wêne Canvas Bilindî',
     ],
     'watermark_type' => [
-        'name' => 'Watermark Type',
+        'name' => 'Tîpa ava avê',
     ],
     'watermark_text' => [
-        'name' => 'Watermark Text',
+        'name' => 'Wateya Nivîsarê',
     ],
     'watermark_image' => [
-        'name' => 'Watermark Image',
+        'name' => 'Wêne Watermark',
     ],
     'watermark_position' => [
-        'name' => 'Watermark Position',
+        'name' => 'Positiona Watermark',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
-        'instructions' => 'In the admin panel'
+        'name' => 'Sînora Parzûna Bikarhêner',
+        'instructions' => 'Di panelê rêveberê de'
     ],
     'show_breadcrumb_when_creating_ad' => [
-        'name' => 'Show Breadcrumb When Creating an Ad',
+        'name' => 'Dema Afirandina Reklamek Breadcrumb nîşan bidin',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
-        'instructions' => 'Show ads count on the left categories list',
+        'name' => 'Nîşan Ads Count',
+        'instructions' => 'Reklamên li ser lîsteya kategoriyên çepê hesab bikin nîşan bikin',
     ],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Peymana Ad Ad-ê nîşan bide',
+        'instructions' => 'Heke hûn dixwazin li ser rûpela afirandina reklamê peymana siyaseta nepenîtiyê nîşan bikin vê yekê vekin',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Nivîsarê zêde bikin',
+        'instructions' => 'Nirxa Kevn: Nirxa Nû'
     ],
 ];
