@@ -42,5 +42,5 @@ return [
 	'replicate' => '複製する',
 	'fast_create' => '高速作成',
 	'publish' => '公開する',
-	'import' => 'Import',
+	'import' => 'インポート',
 ];
