@@ -55,5 +55,5 @@ return [
     'option_configuration' => [
         'title' => 'תְצוּרָה',
     ],
-    'translations' => 'Translations',
+    'translations' => 'תרגומים',
 ];
