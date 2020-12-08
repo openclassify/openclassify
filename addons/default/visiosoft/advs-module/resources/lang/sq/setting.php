@@ -197,4 +197,16 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Tregoni Breadcrumb kur krijoni një reklamë',
     ],
+    'show_ads_count' => [
+        'name' => 'Shfaq Numrin e Reklamave',
+        'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
+        'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
+    ],
+    'override_text' => [
+        'name' => 'Mbishkruaj tekstin',
+        'instructions' => 'Vlera e Vjetër: Vlera e Re'
+    ],
 ];
