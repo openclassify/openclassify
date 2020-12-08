@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Underkategori 6'
     ],
+    'cat8' => [
+        'name' => 'Underkategori 7'
+    ],
+    'cat9' => [
+        'name' => 'Underkategori 8'
+    ],
+    'cat10' => [
+        'name' => 'Underkategori 9'
+    ],
     'currency' => [
         'name' => 'Valuta'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'Listningsinformation',
     'preview' => 'Förhandsvisning',
     'congratulations' => 'Grattis',
+    'ad_desc' => 'Annonsbeskrivning',
+    'upload_photos' => 'Ladda upp foton',
+    'additional_fields' => 'Ytterligare fält',
+    'ad_location' => 'Annonsplats',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',
