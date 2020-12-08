@@ -55,5 +55,5 @@ return [
     'option_configuration' => [
         'title' => 'ترتيب',
     ],
-    'translations' => 'Translations',
+    'translations' => 'الترجمات',
 ];
