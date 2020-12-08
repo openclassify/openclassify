@@ -38,5 +38,7 @@ return [
     'new_options_configuration' => 'Yeni Seçenek yapılandırması',
     'new_option_configuration' => 'Yeni Seçenek yapılandırması',
 	'create_configurations' => 'Konfigürasyonlar Oluşturun',
-	'replicate' => 'Tekrarlamak',
+	'replicate' => 'Tekrarla',
+    'publish' => 'Yayınla',
+
 ];

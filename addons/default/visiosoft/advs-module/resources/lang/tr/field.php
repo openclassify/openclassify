@@ -308,6 +308,11 @@ return [
     'preview' => 'Ön İzleme',
     'congratulations' => 'Tebrikler',
     'ad_desc' => 'İlan Açıklaması',
+    'upload_photos' => 'Resim Yükle',
+    'additional_fields' => 'Özel Alanlar',
+    'ad_location' => 'Lokasyon Ekle',
+
+
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
