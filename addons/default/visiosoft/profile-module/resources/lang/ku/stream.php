@@ -2,9 +2,9 @@
 
 return [
     'profile' => [
-        'name' => 'Profile',
+        'name' => 'Tengal',
     ],
     'adress' => [
-        'name' => 'Address',
+        'name' => 'Navnîşan',
     ],
 ];
