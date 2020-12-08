@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'সুরক্ষা সমস্যার কারণে আমরা আপনার পাসওয়ার্ড পরিবর্তন করেছি! আপনার নতুন পাসওয়ার্ডটি হ\'ল:',
     'required_all' => "সমস্ত ক্ষেত্র প্রয়োজন!",
     'can_not_remove_filled_fields' => "আপনি ভরাট ক্ষেত্র সরাতে পারবেন না!",
+    'wrong_password' => "আপনি যে পাসওয়ার্ডটি লিখেছেন তা সঠিক নয়!",
 
     // Forgot Password
     'email_phone_not_found' => 'ই-মেইল, ফোন নম্বর ঠিক নয়!',
