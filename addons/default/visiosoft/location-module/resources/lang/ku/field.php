@@ -2,38 +2,38 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'Nav'
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'Şeytanok'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'Bajar'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'Welat'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'Herêm'
     ],
     'order' => [
-        'name' => 'Sort Order'
+        'name' => 'Rêzê Rêz bike'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Cînarî'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'Gûnd'
     ],
     'description' => [
-        'name' => 'Description'
+        'name' => 'Terîf'
     ],
     'pick_option' => [
-        'name' => 'Pick an option',
+        'name' => 'Vebijarek hilbijêrin',
     ],
     'address' => [
-        'name' => 'Address',
+        'name' => 'Navnîşan',
     ],
-    'selected' => 'Selected',
-    'choose_an_option' => 'Choose an option...',
+    'selected' => 'Hilbijartin',
+    'choose_an_option' => 'Vebijarek hilbijêrin ...',
 ];
