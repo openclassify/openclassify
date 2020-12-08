@@ -2,45 +2,45 @@
 
 return [
     'show_my_ads' => [
-        'name' => 'Show My Ads Tab',
+        'name' => 'Tab Reklamên Min Nîşan bidin',
     ],
     'upload_avatar' => [
         'name' => 'Avatar Upload',
     ],
     'show_tax_office' => [
-        'name' => 'Show Tax Office Field',
+        'name' => 'Qada Nivîsgeha Bacê Nîşan bidin',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Mercên Checkbox-ê li ser Tomarê nîşan bidin',
+        'instructions' => 'Li ser forma tomarê "Termê Qebûl Bike", "Zagona Parastinê", "Termê nepeniyê", "sms & e-name" nîşan bidin'
     ],
     'register_protection_url' => [
-        'name' => 'Register Protection URL',
+        'name' => 'URL-ya Parastinê tomar bikin',
     ],
     'register_privacy_url' => [
-        'name' => 'Register Privacy URL',
+        'name' => 'URL-ya nepenîtiyê tomar bikin',
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Qadên Perwerde û Pîşeyê nîşan bidin',
+        'instructions' => 'Li ser rûpelê guherandina profîlê "Perwerde", "Dewleta Perwerdehiyê" û "Pîşeyê" nîşan bidin'
     ],
     'google_captcha_site_key' => [
-        'name' => 'Google Captcha Site Key',
+        'name' => 'Mifteya Malpera Google Captcha',
     ],
     'google_captcha_secret_key' => [
-        'name' => 'Google Captcha Secret Key',
+        'name' => 'Mifteya Veşartî ya Google Captcha',
     ],
     'score_threshold' => [
-        'name' => 'Score Threshold',
-        'instructions' => 'A value between 0 and 1. The higher the threshold the more strict ReCaptcha is in trying to determine if a user is a bot or not.',
+        'name' => 'Benda Pûanê',
+        'instructions' => 'Nirxek di navbera 0 û 1. Çiqas benda mezintir ReCaptcha hişktir e ku hewl dide ka bikarhêner botek e an na.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Zanyarî'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Dewleta Perwerdehiyê'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Sinet'
     ],
 ];
