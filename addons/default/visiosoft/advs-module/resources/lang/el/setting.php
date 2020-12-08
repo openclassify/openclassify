@@ -206,7 +206,7 @@ return [
         'instructions' => 'Ενεργοποιήστε το αν θέλετε να εμφανίσετε μια συμφωνία πολιτικής απορρήτου στη σελίδα δημιουργίας διαφημίσεων',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Παράκαμψη κειμένου',
+        'instructions' => 'Παλιά τιμή: Νέα τιμή'
     ],
 ];
