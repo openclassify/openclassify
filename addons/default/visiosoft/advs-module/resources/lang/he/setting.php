@@ -197,4 +197,16 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'הראה פירורי לחם בעת יצירת מודעה',
     ],
+    'show_ads_count' => [
+        'name' => 'ספירת מודעות הצגה',
+        'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'הצג הסכם מודעות לפרסום',
+        'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
+    ],
+    'override_text' => [
+        'name' => 'עקוף טקסט',
+        'instructions' => 'ערך ישן: ערך חדש'
+    ],
 ];
