@@ -206,7 +206,7 @@ return [
         'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Text überschreiben',
+        'instructions' => 'Alter Wert: Neuer Wert'
     ],
 ];
