@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'नई सलाह',
+    'new_classified' => 'नया वर्गीकृत',
     'new_category' => 'नई श्रेणी',
     'new_country' => 'नया देश',
     'new_city' => 'नया शहर',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'नया विकल्प कॉन्फ़िगरेशन',
 	'create_configurations' => 'कॉन्फ़िगरेशन बनाएँ',
 	'replicate' => 'दोहराने',
+	'fast_create' => 'तेजी से बना',
+	'publish' => 'प्रकाशित करना',
+	'import' => 'आयात',
 ];
