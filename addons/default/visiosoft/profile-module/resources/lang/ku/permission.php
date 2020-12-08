@@ -2,19 +2,19 @@
 
 return [
     'profile' => [
-        'name'   => 'Profile',
+        'name'   => 'Tengal',
         'option' => [
-            'read'   => 'Can read profile?',
-            'write'  => 'Can create/edit profile?',
-            'delete' => 'Can delete profile?',
+            'read'   => 'Ma dikare profîlê bixwîne?',
+            'write'  => 'Ma dikare profîlek çêbike / sererast bike?',
+            'delete' => 'Ma dikare profîlê jê bibe?',
         ],
     ],
     'adress' => [
-        'name'   => 'Adress',
+        'name'   => 'Navnîşan',
         'option' => [
-            'read'   => 'Can read adress?',
-            'write'  => 'Can create/edit adress?',
-            'delete' => 'Can delete adress?',
+            'read'   => 'Ma dikare navnîşan bixwîne?',
+            'write'  => 'Ma dikare navnîşan çêbike / sererast bike?',
+            'delete' => 'Ma dikare navnîşan were jêbirin?',
         ],
     ],
 ];
