@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'choose_folder' => 'Which folder would you like to upload to?',
-    'upload' => 'Add images | Upload images | Attach a photo',
-    'choose_files' => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads' => 'No files uploaded.',
-    'overwrite' => 'has already been uploaded. Would you like to overwrite it?',
+    'choose_folder' => 'Hûn dixwazin li kîjan peldankê bar bikin?',
+    'upload' => 'Wêneyan zêde bikin | Wêneyan bar bike | Wêneyek pêve bikin',
+    'choose_files' => 'Hûn dixwazin kîjan pelan bikar bînin?',
+    'no_files_selected' => 'Tu pel nehatine hilbijartin.',
+    'no_uploads' => 'Tu pel nehatin barkirin.',
+    'overwrite' => 'berê hate barkirin. Ma hûn dixwazin wê binivîsin?',
     'uploading' => 'Uploading',
-    'loading' => 'Loading',
-    'error_upload' => 'There was a problem uploading the file.',
+    'loading' => 'Barkirin',
+    'error_upload' => 'Di barkirina dosyeyê de pirsgirêkek derket.',
 ];
