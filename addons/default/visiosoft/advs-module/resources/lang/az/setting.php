@@ -197,4 +197,16 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Reklam yaratarkən çörək parçasını göstərin',
     ],
+    'show_ads_count' => [
+        'name' => 'Reklam sayını göstərin',
+        'instructions' => 'Sol kateqoriyalar siyahısında reklamların sayını göstərin',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Post Elan Müqaviləsini Göstərin',
+        'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
+    ],
+    'override_text' => [
+        'name' => 'Mətni ləğv edin',
+        'instructions' => 'Köhnə dəyər: Yeni dəyər'
+    ],
 ];
