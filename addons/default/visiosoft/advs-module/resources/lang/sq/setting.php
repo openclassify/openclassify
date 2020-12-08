@@ -206,7 +206,7 @@ return [
         'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
     ],
     'override_text' => [
-        'name' => 'Override Text',
-        'instructions' => 'Old Value:New Value'
+        'name' => 'Mbishkruaj tekstin',
+        'instructions' => 'Vlera e Vjetër: Vlera e Re'
     ],
 ];
