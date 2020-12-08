@@ -380,6 +380,9 @@ return [
     'password' => [
         'name' => 'Passwort',
     ],
+    'old_password' => [
+        'name' => 'Altes Passwort',
+    ],
     'new_password' => [
         'name' => 'Neues Kennwort',
     ],
