@@ -3,28 +3,28 @@
 return [
     'sidebar_hover' => [
         'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'instructions' => 'Zivirandina kêleka kêlekê?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Rêserbirinî',
+        'instructions' => 'Hên xwe <em>şexsî</em> fermana navîgasyon.',
+        'warning'      => 'Yekem tişta navîgasyonê ya gihînbar wekî qada <strong>xaniyê we</strong> tê bikar anîn.',
+        'reorder'      => 'Tiştên navîgasyonên sereke di <strong>tenişta</strong> bikişînin û bavêjin da ku wan ji nû ve rêz bikin.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Density Display',
+        'instructions' => 'Dîmendera kompakt dihêle ku naverok bêtir bi carekê li ser dîmenderê were xuyang kirin.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'Destçûnî',
+            'compact' => 'Gişt',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Modeya Sidebar',
+        'instructions' => 'Dê teniştên statik her dem xuya bibin.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'Destçûnî',
+            'static'  => 'Statik',
         ],
     ],
 ];
