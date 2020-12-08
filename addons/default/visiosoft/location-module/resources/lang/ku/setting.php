@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Zeviyê Cihê Rûpela Rûpelê',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Qada Rûpelê Rûpela Rûpelê',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Zeviya Cihê Rûpelê Detail',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Bişkoja Cihê Lêgerînê nîşan bide',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Welatê Default',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Cihê Rûpela Rûpelê biafirînin',
     ],
     'default_city' => [
         'name' => 'Default City',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'Navçeya Default',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Taxa Default',
     ],
 
     'google_map_key' => [
@@ -42,15 +42,15 @@ return [
     ],
 
     'hide_location_filter' => [
-        'name' => 'Hide Location Filter',
+        'name' => 'Parzûna Cihê Veşêre',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Welatê Default Ji Bo Tomarbûna Qada Telefonê'
 	],
     'sorting_column' => [
-        'name' => 'Sorting Column',
+        'name' => 'Stûnê Rêzkirin',
     ],
     'sorting_type' => [
-        'name' => 'Sorting Type',
+        'name' => 'Cureyê Rêzkirinê',
     ],
 ];
