@@ -55,5 +55,5 @@ return [
     'option_configuration' => [
         'title' => 'Configuratie',
     ],
-    'translations' => 'Translations',
+    'translations' => 'Vertalingen',
 ];
