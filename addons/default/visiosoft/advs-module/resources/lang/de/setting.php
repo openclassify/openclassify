@@ -197,4 +197,16 @@ return [
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Breadcrumb beim Erstellen einer Anzeige anzeigen',
     ],
+    'show_ads_count' => [
+        'name' => 'Anzeigenanzahl anzeigen',
+        'instructions' => 'Anzeigenanzahl in der linken Kategorieliste anzeigen',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Show Post Ad Agreement anzeigen',
+        'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
+    ],
+    'override_text' => [
+        'name' => 'Text überschreiben',
+        'instructions' => 'Alter Wert: Neuer Wert'
+    ],
 ];
