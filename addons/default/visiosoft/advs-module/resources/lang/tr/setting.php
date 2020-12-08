@@ -198,8 +198,8 @@ return [
         'name' => 'İlan/ürün eklerken Oluştururken harita Göster',
     ],
     'show_ads_count' => [
-        'name' => 'Reklam Sayısını Göster',
-        'instructions' => 'Soldaki kategori listesinde reklam sayısını göster',
+        'name' => 'İlan Sayısını Göster',
+        'instructions' => 'Soldaki kategori listesinde ilan sayısını göster',
     ],
     'show_post_ad_agreement' => [
         'name' => 'İlan Sonrası Sözleşmesini Göster',
