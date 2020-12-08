@@ -374,6 +374,9 @@ return [
     'password' => [
         'name' => 'کلمه عبور',
     ],
+    'old_password' => [
+        'name' => 'رمز عبور قدیمی',
+    ],
     'new_password' => [
         'name' => 'رمز عبور جدید',
     ],
