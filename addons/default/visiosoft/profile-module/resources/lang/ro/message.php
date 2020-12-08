@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'Din cauza problemelor de securitate, v-am schimbat parola! Noua dvs. parolă este:',
     'required_all' => "Tot câmpul este obligatoriu!",
     'can_not_remove_filled_fields' => "Nu puteți elimina câmpurile umplute!",
+    'wrong_password' => "Parola pe care ați introdus-o nu este corectă!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mailul, numărul de telefon nu este corect!',
