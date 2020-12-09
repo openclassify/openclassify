@@ -4,14 +4,14 @@ return [
     'latest_ads' => 'Son Eklenenler',
     'show_all' => 'Tümünü Göster',
     'login' => [
-        'name' => 'Oturum aç',
+        'name' => 'Oturum Aç',
     ],
     'logout' => [
         'name' => 'Çıkış Yap',
     ],
     'profile' => 'Profil',
     'email' => 'Email Adresiniz',
-    'phone' => 'Telefon numarası',
+    'phone' => 'Telefon Numarası',
     'reset_code' => 'Sıfırlama Kodu',
     'password_confirmation' => 'Şifrenizi Onaylayın',
     'password' => 'Şifreniz',
@@ -19,14 +19,14 @@ return [
     'last_name' => 'Soyadınız',
     'remember_me' => 'Beni Hatırla',
     'not_a_member_yet' => 'Henüz Üye Değil Misiniz',
-    'not_a_member_yet_message' => 'Üyelerimize özel hizmetlerimizden faydalanabilmek için üye olun',
+    'not_a_member_yet_message' => 'Üyelerimize özel hizmetlerimizden faydalanmak için kaydolun',
     'forgot_password' => 'Şifremi Unuttum',
     'email_or_phone_number' => 'E-Posta Adresiniz veya Telefon Numaranız',
     'phone_number' => 'Telefon Numarası',
 
     // Registration instructions
     'personal_registration_header' => 'Bireysel Üyelik Avantajları Nelerdir?',
-    'personal_registration_body' => 'Evinizi, arabanızı satmak ve kiralamak, kullanılmayan eşyalarınızı satmak, yenilerini almak.',
+    'personal_registration_body' => 'Evinizi, arabanızı satın ve kiralayın, kullanılmayan eşyalarınızı satın, yenilerini alın.',
     'personal_registration_list_1' => 'Ücretsiz ilan gönder',
     'personal_registration_list_2' => 'İlgilendiğiniz ilanları ekleyin, favorilerinize ekledikten sonra fiyat değişikliklerini takip edin, kriterlerinize uygun favori aramalar oluşturun,',
     'personal_registration_list_3' => 'Sitedeki İlan sahiplerine mesaj gönderin.',
@@ -47,7 +47,7 @@ return [
     'company_directory' => 'Firma Rehberi',
     'popular_ads' => 'Popüler İlanlar',
     'last_48_hours' => 'son 48 saat',
-    'secure_e-commerce_ads' => 'güvenli e-ticaret',
+    'secure_e-commerce_ads' => 'Güvenli E-Ticaret',
     'sms' => 'Kısa Mesaj Gönder (SMS)',
     'mail' => 'Posta göndermek',
 
