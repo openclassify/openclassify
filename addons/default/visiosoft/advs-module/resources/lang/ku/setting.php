@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Cihê Sûkê',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => 'Parzûna Bihayê Veşêre',
     ],
