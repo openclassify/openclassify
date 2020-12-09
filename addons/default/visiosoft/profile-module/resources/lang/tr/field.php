@@ -59,10 +59,10 @@ return [
         'name' => 'Doğum Günü'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Facebook Adresi'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Google Adresi'
 	],
     'education' => [
         'name' => 'Eğitim'
