@@ -17,7 +17,9 @@ class ProfileFormBuilder extends FormBuilder
         'state_of_education',
         'profession',
         'birthday',
-        'register_type'
+        'register_type',
+	    'facebook_address',
+	    'google_address',
     ];
 
     protected $actions = [

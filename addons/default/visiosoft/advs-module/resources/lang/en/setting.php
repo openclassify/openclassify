@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => 'Hide Price Filter',
     ],

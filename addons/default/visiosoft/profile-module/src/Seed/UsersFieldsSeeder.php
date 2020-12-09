@@ -139,6 +139,16 @@ class UsersFieldsSeeder extends Seeder
                 'slug' => 'profession',
                 'type' => 'anomaly.field_type.text',
             ],
+	        [
+	        	'name' => trans('visiosoft.module.profile::field.facebook_address.name'),
+		        'slug' => 'facebook_address',
+		        'type' => 'anomaly.field_type.text',
+	        ],
+	        [
+	        	'name' => trans('visiosoft.module.profile::field.google_address.name'),
+		        'slug' => 'google_address',
+		        'type' => 'anomaly.field_type.text',
+	        ]
         ];
 
         foreach ($customFields as $customField) {
