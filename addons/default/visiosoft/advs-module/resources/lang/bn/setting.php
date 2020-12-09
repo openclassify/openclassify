@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'মার্কেট প্লেস',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => 'দাম ফিল্টার লুকান',
     ],
