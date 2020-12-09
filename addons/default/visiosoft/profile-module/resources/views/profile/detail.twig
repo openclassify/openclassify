@@ -149,7 +149,22 @@
                                         {{ profileForm.fields.birthday.configSet('date_format','Y-m-d').setPlaceholder(now|date('Y-m-d')).input|raw }}
                                     </div>
                                 </div>
-
+                                <div class="col-md-6">
+                                    <div class="form-group facebook_address-field">
+                                        <label class="control-label font-weight-bold">
+                                            {{ trans("visiosoft.module.profile::field.facebook_address.name") }}
+                                        </label>
+                                        {{ profileForm.fields.facebook_address.input|raw }}
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="form-group google_address-field">
+                                        <label class="control-label font-weight-bold">
+                                            {{ trans("visiosoft.module.profile::field.google_address.name") }}
+                                        </label>
+                                        {{ profileForm.fields.google_address.input|raw }}
+                                    </div>
+                                </div>
                                 {% if setting_value('visiosoft.module.profile::show_education_profession') %}
                                     <div class="col-md-12">
                                         <div class="form-group education-field">
