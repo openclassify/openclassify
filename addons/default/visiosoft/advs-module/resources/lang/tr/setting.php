@@ -51,7 +51,7 @@ return [
         'name' => 'Son Eklenenler Limiti',
     ],
     'site_address' => [
-        'name' => 'Site adresi',
+        'name' => 'Site Adresi',
         'warning'      => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
@@ -127,7 +127,7 @@ return [
         'name' => 'Pazar Yeri',
     ],
 	'price_area_hidden' => [
-		'name' => 'Price Area Hidden',
+		'name' => 'Fiyat Alanı Gizli',
 	],
     'hide_price_filter' => [
         'name' => 'Fiyat Filtresini Gizle',
