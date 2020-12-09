@@ -10,7 +10,7 @@ return [
     'create_ad_with_post_cat' => [
         'title' => "Kategori seçimi tamamlandı.",
         'success' => true,
-        'continueBtn' => "Devam et",
+        'continueBtn' => "Devam Et",
     ],
     'update_category_info' => 'Lütfen kategoriyi güncelleyiniz.',
     'filter_by_search_msg' => 'Aramanızı Daraltın.',
@@ -20,7 +20,7 @@ return [
     'extended' => ':number ilan süresi uzatıldı.',
     'category_not_exist' => 'Bu kategori artık mevcut değil!',
     'currency_converted' => 'Para Birimi Başarıyla Dönüştürüldü.',
-    'choose_user' => 'Bir kullanıcı seçin',
+    'choose_user' => 'Bir Kullanıcı Seçin',
     'owner_updated_successfully' => 'Sahibi Başarıyla Güncellenmiştir!',
     'no_add_found' => 'İlan Bulunamadı!',
     'replicated_success' => 'İlan başarıyla kopyalandı!',
