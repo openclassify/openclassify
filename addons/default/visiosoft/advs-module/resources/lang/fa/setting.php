@@ -127,7 +127,9 @@ return [
     'market_place' => [
         'name' => 'محل بازار',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => 'فیلتر قیمت مخفی کنید',
     ],
