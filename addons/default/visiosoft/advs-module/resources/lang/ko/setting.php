@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => '마켓 플레이스',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => '가격 필터 숨기기',
     ],
