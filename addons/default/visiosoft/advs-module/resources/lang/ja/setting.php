@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'マーケットプレイス',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => '価格フィルターを非表示',
     ],
