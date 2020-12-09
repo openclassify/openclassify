@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Cumpleaños'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Educación'
     ],
