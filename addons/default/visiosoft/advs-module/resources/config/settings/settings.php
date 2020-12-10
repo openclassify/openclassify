@@ -153,6 +153,12 @@ return [
             'mode' => 'checkbox'
         ]
     ],
+	'price_area_hidden' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	],
     'enabled_currencies' => [
         'bind' => 'streams::currencies.enabled',
         'env' => 'ADV_ENABLED_CURRENCIES',
@@ -338,5 +344,10 @@ return [
             'default_value' => false,
             'mode' => 'checkbox'
         ],
+    ],
+    'override_text' => [
+        'type' => 'anomaly.field_type.tags',
+        'bind' => 'override_text',
+        'env' => 'OVERRIDE_TEXT',
     ],
 ];

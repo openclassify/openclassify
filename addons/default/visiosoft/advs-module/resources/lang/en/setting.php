@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => 'Hide Price Filter',
     ],
@@ -204,5 +206,9 @@ return [
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+    ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
     ],
 ];

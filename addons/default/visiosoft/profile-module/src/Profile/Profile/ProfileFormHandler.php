@@ -23,6 +23,8 @@ class ProfileFormHandler
             'identification_number' => $builder->getPostValue('identification_number'),
             'birthday' => $builder->getPostValue('birthday'),
             'register_type' => $builder->getPostValue('register_type'),
+            'facebook_address' => $builder->getPostValue('facebook_address'),
+            'google_address' => $builder->getPostValue('google_address'),
         ];
 
         if (setting_value('visiosoft.module.profile::show_education_profession')) {

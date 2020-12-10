@@ -47,10 +47,18 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'admin/advs-users/choose/{advId}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@choose',
         'admin/class/actions/{id}/{type}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@actions',
-	    'admin/advs/export' => [
-	    	'as' => 'advs::exportAdvs',
-		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@exportAdvs',
-	    ],
+
+
+        //Excel
+        'admin/advs/export' => [
+            'as' => 'advs::exportAdvs',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@exportAdvs',
+        ],
+        'admin/advs/import' => [
+            'as' => 'visiosoft.module.advs::import.advs',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ExcelController@import',
+        ],
+
 
         // advsController
         'advs/list' => [
@@ -188,25 +196,25 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         // Others
         'advs/ttr/{id}' => 'Visiosoft\PackagesModule\Http\Controller\packageFEController@advsStatusbyUser',
 
-	    //Configurations Admin Controller
-	    'admin/advs/option_configuration/create' => [
-		    'as' => 'visiosoft.module.advs::configrations.create',
-		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@create',
-	    ],
-	    'admin/advs/option_configuration' => [
-		    'as' => 'visiosoft.module.advs::configrations.index',
-		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@index',
-	    ],
+        //Configurations Admin Controller
+        'admin/advs/option_configuration/create' => [
+            'as' => 'visiosoft.module.advs::configrations.create',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@create',
+        ],
+        'admin/advs/option_configuration' => [
+            'as' => 'visiosoft.module.advs::configrations.index',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@index',
+        ],
 
-	    //Configuration Controller
-	    'advs/option_configuration/create' => [
-		    'as' => 'visiosoft.module.advs::user.configrations.create',
-		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
-	    ],
-	    'conf/addCart' => [
-		    'as' => 'configuration::add_cart',
-		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
-	    ],
+        //Configuration Controller
+        'advs/option_configuration/create' => [
+            'as' => 'visiosoft.module.advs::user.configrations.create',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
+        ],
+        'conf/addCart' => [
+            'as' => 'configuration::add_cart',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
+        ],
 
         // Admin ProductoptionsController
         'admin/advs/product_options' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@index',
@@ -237,9 +245,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         CategoryRepositoryInterface::class => CategoryRepository::class,
         CountryRepositoryInterface::class => CountryRepository::class,
         OptionRepositoryInterface::class => OptionRepository::class,
-	    ProductoptionRepositoryInterface::class => ProductoptionRepository::class,
-	    OptionConfigurationRepositoryInterface::class => OptionConfigurationRepository::class,
-	    ProductoptionsValueRepositoryInterface::class => ProductoptionsValueRepository::class,
+        ProductoptionRepositoryInterface::class => ProductoptionRepository::class,
+        OptionConfigurationRepositoryInterface::class => OptionConfigurationRepository::class,
+        ProductoptionsValueRepositoryInterface::class => ProductoptionsValueRepository::class,
     ];
 
     public function boot(AddonCollection $addonCollection, FileModel $fileModel)
@@ -248,30 +256,35 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'general_settings' => [
                 'title' => 'visiosoft.module.advs::button.general_settings',
                 'href' => '/admin/settings/modules/visiosoft.module.advs',
-	            'page' => 'anomaly.module.settings'
+                'page' => 'anomaly.module.settings'
             ],
             'theme_settings' => [
                 'title' => 'visiosoft.theme.defaultadmin::section.theme_settings.name',
                 'href' => url('admin/settings/themes/' . setting_value('streams::standard_theme')),
-	            'page' => 'anomaly.module.settings'
+                'page' => 'anomaly.module.settings'
             ],
             'assets_clear' => [
                 'title' => 'visiosoft.module.advs::section.assets_clear.name',
                 'href' => route('assets_clear'),
-	            'page' => 'anomaly.module.settings'
+                'page' => 'anomaly.module.settings'
             ],
-	        'export' => [
-	        	'title' => 'visiosoft.module.advs::button.export',
-		        'href' => route('advs::exportAdvs'),
-		        'page' => 'visiosoft.module.advs'
-	        ]
+            'export' => [
+                'title' => 'visiosoft.module.advs::button.export',
+                'href' => route('advs::exportAdvs'),
+                'page' => 'visiosoft.module.advs'
+            ],
+            'import' => [
+                'title' => 'visiosoft.module.advs::button.import',
+                'href' => route('visiosoft.module.advs::import.advs'),
+                'page' => 'visiosoft.module.advs'
+            ]
         ];
 
         foreach ($settings_url as $key => $value) {
             $addonCollection->get($value['page'])->addSection($key, $value);
         }
 
-	    // Disable file versioning
+        // Disable file versioning
         $fileModel->disableVersioning();
     }
 }

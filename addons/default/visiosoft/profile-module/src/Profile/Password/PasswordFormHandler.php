@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\UsersModule\User\User;
 use Anomaly\UsersModule\User\UserPassword;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class PasswordFormHandler
 {
@@ -18,6 +19,11 @@ class PasswordFormHandler
 
         if (!$builder->canSave()) {
             return;
+        }
+
+        if (!Hash::check($builder->getPostValue('old_password'), \auth()->user()->password)) {
+            $messages->error(trans('visiosoft.module.profile::message.wrong_password'));
+            return redirect()->back();
         }
 
         if ($builder->getPostValue('new_password') != $builder->getPostValue('re_new_password')) {

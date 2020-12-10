@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Birthday'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Education'
     ],
@@ -374,6 +380,9 @@ return [
     ],
     'password' => [
         'name' => 'Password',
+    ],
+    'old_password' => [
+        'name' => 'Old password',
     ],
     'new_password' => [
         'name' => 'New password',
