@@ -994,16 +994,8 @@ class AdvsController extends PublicController
         return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('main_cats'));
     }
 
-    /**
-     * @param $id
-     * @return \Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse|\Illuminate\Routing\Redirector|mixed
-     */
     public function editCategoryForAd($id)
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-
         $adv = $this->adv_model->userAdv(true)->find($id);
 
         if (is_null($adv)) {
@@ -1014,7 +1006,7 @@ class AdvsController extends PublicController
             $params = $this->requestHttp->all();
             unset($params['action']);
 
-            for ($i = 2; $i <= 10; $i++) {
+            for ($i = 1; $i <= 10; $i++) {
                 if (!isset($params['cat' . $i])) {
                     $params['cat' . $i] = NULL;
                 }

@@ -147,6 +147,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@viewType',
         ],
         'adv/edit/category/{id}' => [
+            'middleware' => 'auth',
             'as' => 'adv::edit_category',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@editCategoryForAd',
         ],
