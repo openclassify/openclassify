@@ -5,7 +5,7 @@ return [
         'name' => 'Fotoğraflar'
     ],
     'first_name' => [
-        'name' => 'Adınız'
+        'name' => 'Ad'
     ],
     'last_name' => [
         'name' => 'Soyad'
@@ -80,7 +80,7 @@ return [
         'name' => 'Adres Adı'
     ],
     'adress_first_name' => [
-        'name' => 'İsim'
+        'name' => 'Ad'
     ],
     'adress_last_name' => [
         'name' => 'Soyad'
