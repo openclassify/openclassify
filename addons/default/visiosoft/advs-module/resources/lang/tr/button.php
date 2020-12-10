@@ -2,7 +2,7 @@
 
 return [
     'new_adv' => 'Yeni ürün/ilan',
-    'new_classified' => 'Yeni sınıflandırılmış',
+    'new_classified' => 'Yeni ürün/ilan',
     'new_category' => 'Yeni kategori',
     'new_country' => 'Yeni ülke',
     'new_city' => 'Yeni şehir',
