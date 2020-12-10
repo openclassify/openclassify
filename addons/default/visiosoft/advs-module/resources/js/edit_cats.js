@@ -28,6 +28,7 @@ promiseForCategory.then(function (categories_list) {
     level = 0;
     $.each(categories_list, function (index, value) {
         level++;
+        index = `cat${index + 1}`;
         $('.category-row').append(CategoryField(index, level));
         searchCategoryName(index)
         $.each(value, function (index2, value2) {
