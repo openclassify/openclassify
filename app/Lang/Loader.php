@@ -183,8 +183,9 @@ class Loader extends FileLoader
         if (config()->has('override_text')) {
             foreach (config()->get('override_text') as $override) {
                 $override = explode(':', $override);
-
-                $lines = $this->findArrayValue($override[0], $override[1], $lines);
+                if (count($override) > 1) {
+                    $lines = $this->findArrayValue($override[0], $override[1], $lines);
+                }
             }
         }
 
