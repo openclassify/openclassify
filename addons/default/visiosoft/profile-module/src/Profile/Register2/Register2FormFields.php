@@ -70,7 +70,10 @@ class Register2FormFields
                     "register_type" => [
                         "type" => "anomaly.field_type.select",
                         "config" => [
-                            "options" => ['personal' => 'visiosoft.module.profile::field.personal.name', 'corporate' => 'visiosoft.module.profile::field.corporate.name'],
+                            "options" => [
+                                1 => 'visiosoft.module.profile::field.personal.name',
+                                2 => 'visiosoft.module.profile::field.corporate.name'
+                            ],
                             "mode" => "radio",
                         ],
                     ],
