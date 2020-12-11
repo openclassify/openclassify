@@ -17,14 +17,14 @@ class ProfileFormHandler
         }
 
         $parameters = [
-            'gsm_phone' => $builder->getPostValue('gsm_phone'),
-            'office_phone' => $builder->getPostValue('office_phone'),
-            'land_phone' => $builder->getPostValue('land_phone'),
-            'identification_number' => $builder->getPostValue('identification_number'),
-            'birthday' => $builder->getPostValue('birthday'),
-            'register_type' => $builder->getPostValue('register_type'),
-            'facebook_address' => $builder->getPostValue('facebook_address'),
-            'google_address' => $builder->getPostValue('google_address'),
+            'gsm_phone' => $builder->getPostValue('gsm_phone') ?: null,
+            'office_phone' => $builder->getPostValue('office_phone') ?: null,
+            'land_phone' => $builder->getPostValue('land_phone') ?: null,
+            'identification_number' => $builder->getPostValue('identification_number') ?: null,
+            'birthday' => $builder->getPostValue('birthday') ?: null,
+            'register_type' => $builder->getPostValue('register_type') ?: null,
+            'facebook_address' => $builder->getPostValue('facebook_address') ?: null,
+            'google_address' => $builder->getPostValue('google_address') ?: null,
         ];
 
         if (setting_value('visiosoft.module.profile::show_education_profession')) {
