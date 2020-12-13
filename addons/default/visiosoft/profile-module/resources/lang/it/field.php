@@ -59,10 +59,10 @@ return [
         'name' => 'Compleanno'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Indirizzo di Facebook'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Indirizzo Google'
 	],
     'education' => [
         'name' => 'Formazione scolastica'
