@@ -127,7 +127,7 @@ return [
         'name' => 'Piazza del mercato',
     ],
 	'price_area_hidden' => [
-		'name' => 'Price Area Hidden',
+		'name' => 'Area di Prezzo Nascosta',
 	],
     'hide_price_filter' => [
         'name' => 'Nascondi filtro prezzo',
