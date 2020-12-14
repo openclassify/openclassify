@@ -5,10 +5,10 @@ return [
         'name' => 'Fotoğraflar'
     ],
     'first_name' => [
-        'name' => 'Adınız'
+        'name' => 'Ad'
     ],
     'last_name' => [
-        'name' => 'Soyadınız'
+        'name' => 'Soyad'
     ],
     'username' => [
         'name' => 'Kullanıcı Adı'
@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Doğum Günü'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Adresi'
+	],
+	'google_address' => [
+		'name' => 'Google Adresi'
+	],
     'education' => [
         'name' => 'Eğitim'
     ],
@@ -74,7 +80,7 @@ return [
         'name' => 'Adres Adı'
     ],
     'adress_first_name' => [
-        'name' => 'İsim'
+        'name' => 'Ad'
     ],
     'adress_last_name' => [
         'name' => 'Soyad'
@@ -374,11 +380,11 @@ return [
     'password' => [
         'name' => 'Şifre',
     ],
+    'old_password' => [
+        'name' => 'Eski şifre',
+    ],
     'new_password' => [
         'name' => 'Yeni Şifre',
-    ],
-    'old_password' => [
-        'name' => 'Eski Şifre',
     ],
     're_new_password' => [
         'name' => 'Şifre Onayı',
@@ -461,11 +467,9 @@ return [
 
     // Register page
     'accept_terms_label' => 'Koşulları kabul ediyorum.',
-
     'accept_protection_law_label' => '<a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Kişisel Verilerin Korunması Kanunu hükümlerini</a> kabul ediyorum.',
     'accept_privacy_terms_label' => '<a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">Gizlilik şartlarını</a> kabul ediyorum.',
-
-  'receive_sms_emails_label' => 'E-posta ve sms almak istiyorum.',
+    'receive_sms_emails_label' => 'E-posta ve sms almak istiyorum.',
 
     // Register Type
     'personal' => [
