@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Anomaly\Streams\Platform\Model\Profile\ProfileEducationEntryModel;
 use Maatwebsite\Excel\ExcelServiceProvider;
 use Maatwebsite\Excel\Facades\Excel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
@@ -10,6 +11,9 @@ use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
 use Visiosoft\ProfileModule\Adress\FormCompany\AddressCompanyFormBuilder;
+use Visiosoft\ProfileModule\Education\Contract\EducationRepositoryInterface;
+use Visiosoft\ProfileModule\Education\EducationModel;
+use Visiosoft\ProfileModule\Education\EducationRepository;
 use Visiosoft\ProfileModule\Http\Middleware\authCheck;
 use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
@@ -139,6 +143,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
 
         // CacheController
         'ajax/get-user-info' => 'Visiosoft\ProfileModule\Http\Controller\CacheController@getUserInfo',
+	    'ajax/setEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@setEducation',
+	    'ajax/getEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@getEducation',
     ];
 
     /**
@@ -201,6 +207,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'address' => AdressFormBuilder::class,
         'addressCompany' => AddressCompanyFormBuilder::class,
         ProfileAdressEntryModel::class => AdressModel::class,
+        ProfileEducationEntryModel::class => EducationModel::class,
     ];
 
     /**
@@ -210,6 +217,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
      */
     protected $singletons = [
         AdressRepositoryInterface::class => AdressRepository::class,
+        EducationRepositoryInterface::class => EducationRepository::class,
         'register2' => Register2FormBuilder::class,
         'sites' => SitesFormBuilder::class,
         'forgot_pass' => ForgotPassFormBuilder::class,

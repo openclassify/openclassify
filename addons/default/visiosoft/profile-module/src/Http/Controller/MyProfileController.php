@@ -24,6 +24,8 @@ use Visiosoft\PackagesModule\User\UserModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
+use Visiosoft\ProfileModule\Education\EducationModel;
+use Visiosoft\ProfileModule\EducationPart\EducationPartModel;
 use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -246,4 +248,18 @@ class MyProfileController extends PublicController
         return response()->json(['status' => 'success', 'data' => $profile]);
     }
 
+	public function getEducation(Request $request)
+	{
+		$user = $this->userRepository->find(auth()->user()->getAuthIdentifier());
+		$education = EducationModel::all();
+		$educationPart = EducationPartModel::all();
+		return response()->json(['user' => $user, 'education' => $education, 'education-part' => $educationPart], 200);
+	}
+
+	public function setEducation(Request $request)
+	{
+		$user = $this->userRepository->find(auth()->user()->getAuthIdentifier())->update(['education' => $request->education]);
+		$education_part = EducationPartModel::query()->where('education_id', $request->education)->get();
+		return response()->json(['messages' => $user, 'data' => $education_part], 200);
+	}
 }

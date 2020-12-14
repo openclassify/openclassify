@@ -30,6 +30,21 @@ class ProfileModule extends Module
                 'new_adress',
             ],
         ],
+	    'education' => [
+	    	'buttons' => [
+	    		'new_education',
+		    ]
+	    ],
+	    'education_part' => [
+		    'buttons' => [
+			    'new_education',
+		    ]
+	    ],
+	    'education_part_option' => [
+		    'buttons' => [
+			    'new_education',
+		    ]
+	    ]
     ];
 
 }
