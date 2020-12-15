@@ -251,7 +251,7 @@ class MyProfileController extends PublicController
 
 	public function getEducation(Request $request)
 	{
-		$user = $this->userRepository->find(auth()->user()->getAuthIdentifier());
+		$user = $this->userRepository->find(auth()->id());
 		$education = EducationModel::all();
 		$educationPart = EducationPartModel::query()->where('education_id', $user->education)->get();
 		return response()->json(['user' => $user, 'education' => $education, 'education-part' => $educationPart], 200);
@@ -259,7 +259,7 @@ class MyProfileController extends PublicController
 
 	public function setEducation(Request $request)
 	{
-		$user_id = auth()->user()->getAuthIdentifier();
+		$user_id = auth()->id();
 		if ($request->info == 'education') {
 			$user = $this->userRepository->find($user_id)->update(['education' => $request->education]);
 			$education = EducationPartModel::query()->where('education_id', $request->education)->get();

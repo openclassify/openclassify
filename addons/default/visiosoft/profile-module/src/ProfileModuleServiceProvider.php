@@ -105,6 +105,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         ],
         'profile/notification' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
         'ajax/update-user-info' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
+	    'api/setEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@setEducation',
+	    'api/getEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@getEducation',
 
         // UserAuthenticator
         'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',
@@ -143,8 +145,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
 
         // CacheController
         'ajax/get-user-info' => 'Visiosoft\ProfileModule\Http\Controller\CacheController@getUserInfo',
-	    'ajax/setEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@setEducation',
-	    'ajax/getEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@getEducation',
     ];
 
     /**

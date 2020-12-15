@@ -12,7 +12,7 @@ $(() => {
 
     $('#education').on('change', () => {
         $.ajax({
-            url: '/ajax/setEducation',
+            url: '/api/setEducation',
             data: {
                 info: 'education',
                 education: $('#education').val()
@@ -31,14 +31,10 @@ $(() => {
 
     $('#education_part').on('change', () => {
         $.ajax({
-            url: '/ajax/setEducation',
+            url: '/api/setEducation',
             data: {
                 info: 'education_part',
                 education: $('#education_part').val()
-            }, beforeSend: function (){
-                $('#education_part_option').html('');
-            }, success: function (response) {
-
             }
         })
     })

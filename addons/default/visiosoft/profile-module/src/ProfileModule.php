@@ -37,7 +37,7 @@ class ProfileModule extends Module
 	    ],
 	    'education_part' => [
 		    'buttons' => [
-			    'new_education',
+			    'new_education_part',
 		    ]
 	    ],
     ];

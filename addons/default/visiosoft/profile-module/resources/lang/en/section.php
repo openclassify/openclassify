@@ -12,13 +12,7 @@ return [
     'education' => [
         'title' => 'Education',
     ],
-    'education' => [
-        'title' => 'Education',
-    ],
     'education_part' => [
         'title' => 'Education part',
-    ],
-    'education_part_option' => [
-        'title' => 'Education part option',
     ],
 ];
