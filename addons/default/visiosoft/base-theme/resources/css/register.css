@@ -27,3 +27,13 @@
     color: #c75050;
     font-size: 14px;
 }
+
+input {
+    color: #707070 !important;
+}
+
+input::-webkit-input-placeholder,
+input::-moz-placeholder,
+input::placeholder {
+    color: #BCBDC3 !important;
+}
