@@ -125,6 +125,31 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
 	        [
+		        'name' => trans('visiosoft.module.profile::field.education.name'),
+		        'slug' => 'education',
+		        'type' => 'anomaly.field_type.text',
+	        ],
+	        [
+		        'name' => trans('visiosoft.module.profile::field.state_of_education.name'),
+		        'slug' => 'state_of_education',
+		        'type' => 'anomaly.field_type.text',
+	        ],
+	        [
+		        'name' => trans('visiosoft.module.profile::field.profession.name'),
+		        'slug' => 'profession',
+		        'type' => 'anomaly.field_type.select',
+	        ],
+	        [
+		        'name' => trans('visiosoft.module.profile::field.education_part.name'),
+		        'slug' => 'education_part',
+		        'type' => 'anomaly.field_type.select',
+	        ],
+	        [
+		        'name' => trans('visiosoft.module.profile::field.education_part_option.name'),
+		        'slug' => 'education_part_option',
+		        'type' => 'anomaly.field_type.select',
+	        ],
+	        [
 	        	'name' => trans('visiosoft.module.profile::field.facebook_address.name'),
 		        'slug' => 'facebook_address',
 		        'type' => 'anomaly.field_type.text',

@@ -175,7 +175,7 @@
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group education-part-field">
+                                    <div class="form-group education-part-field">
                                             <label class="control-label font-weight-bold">
                                                 {{ trans("visiosoft.module.profile::field.education_part.name") }}
                                             </label>
@@ -221,6 +221,7 @@
                             </div>
                             {{ profileForm.close()|raw }}
                         </div>
+                        </div>
                         <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
                             {% set passwordForm = form('updatePassword').get() %}
 
@@ -255,41 +256,12 @@
                     <!-- User Profile Form Section-->
                 </div>
             </div>
+            <script>
+                var choose_an_option = "{{ trans('visiosoft.module.profile::field.choose_an_option') }}"
+            </script>
         {% endblock %}
     {% endembed %}
 
-    <script>
-
-        $(() => {
-            $.ajax({
-                url: '/ajax/getEducation',
-                success: ((res)=>{
-                    // console.log(res.user.education)
-                    $.each(res['education-part'], function (key, value) {
-                        $('#education_part').append(
-                            '<option value="'+ value.id +'" ' + value.id === res.user[""] + '>'+ value.name +'</option>'
-                        )
-                    })
-                })
-            })
-        })
-
-        $('#education').on('change', () => {
-            $.ajax({
-                url: '/ajax/setEducation',
-                data: {
-                    education: $('#education').val()
-                },beforeSend: function (){
-                    $('#education_part').html('');
-                },success: function (response) {
-                    $.each(response.data, function (key, value) {
-                        $('#education_part').append(
-                            '<option value="'+ value.id +'">'+ value.name +'</option>'
-                        )
-                    })
-                }
-            });
-        })
-    </script>
+    {{ asset_script("visiosoft.module.profile::assets/js/education.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
 {% endblock %}

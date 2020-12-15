@@ -26,6 +26,7 @@ use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
 use Visiosoft\ProfileModule\Education\EducationModel;
 use Visiosoft\ProfileModule\EducationPart\EducationPartModel;
+use Visiosoft\ProfileModule\EducationPartOption\EducationPartOptionModel;
 use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -252,14 +253,20 @@ class MyProfileController extends PublicController
 	{
 		$user = $this->userRepository->find(auth()->user()->getAuthIdentifier());
 		$education = EducationModel::all();
-		$educationPart = EducationPartModel::all();
+		$educationPart = EducationPartModel::query()->where('education_id', $user->education)->get();
 		return response()->json(['user' => $user, 'education' => $education, 'education-part' => $educationPart], 200);
 	}
 
 	public function setEducation(Request $request)
 	{
-		$user = $this->userRepository->find(auth()->user()->getAuthIdentifier())->update(['education' => $request->education]);
-		$education_part = EducationPartModel::query()->where('education_id', $request->education)->get();
-		return response()->json(['messages' => $user, 'data' => $education_part], 200);
+		$user_id = auth()->user()->getAuthIdentifier();
+		if ($request->info == 'education') {
+			$user = $this->userRepository->find($user_id)->update(['education' => $request->education]);
+			$education = EducationPartModel::query()->where('education_id', $request->education)->get();
+		} elseif ($request->info == 'education_part') {
+			$user = $this->userRepository->find($user_id)->update(['education_part' => $request->education]);
+			$education = EducationPartOptionModel::query()->where('education_part_id', $request->education)->get();
+		}
+		return response()->json(['messages' => $user, 'data' => $education], 200);
 	}
 }

@@ -121,6 +121,9 @@ return [
     'user' => [
         'name' => 'User'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -476,4 +479,8 @@ return [
     'personal' => [
         'name' => 'Personal'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];

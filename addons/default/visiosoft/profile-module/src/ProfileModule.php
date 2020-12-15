@@ -40,11 +40,6 @@ class ProfileModule extends Module
 			    'new_education',
 		    ]
 	    ],
-	    'education_part_option' => [
-		    'buttons' => [
-			    'new_education',
-		    ]
-	    ]
     ];
 
 }
