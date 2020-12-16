@@ -31,7 +31,6 @@ class ProfileFormHandler
             $parameters = array_merge($parameters, [
                 'education' => $builder->getPostValue('education'),
                 'education_part' => $builder->getPostValue('education_part'),
-                'state_of_education' => $builder->getPostValue('state_of_education'),
                 'profession' => $builder->getPostValue('profession'),
             ]);
         }
