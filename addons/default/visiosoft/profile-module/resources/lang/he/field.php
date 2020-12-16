@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'יום הולדת'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'חינוך'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'משתמש'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'סיסמה',
     ],
+    'old_password' => [
+        'name' => 'סיסמה ישנה',
+    ],
     'new_password' => [
         'name' => 'סיסמה חדשה',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'אישי'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];
