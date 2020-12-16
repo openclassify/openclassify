@@ -15,6 +15,6 @@ return [
     'personal' => '개인적인',
     'corporate' => '기업',
     'export' => '수출',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => '새로운 교육',
+    'new_education_part' => '새로운 교육 부분',
 ];
