@@ -15,4 +15,6 @@ return [
     'personal' => 'شخصي',
     'corporate' => 'الشركات',
     'export' => 'تصدير',
+    'new_education' => 'New Education',
+    'new_education_part' => 'New Education part',
 ];
