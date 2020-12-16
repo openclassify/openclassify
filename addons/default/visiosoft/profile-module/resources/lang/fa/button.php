@@ -15,6 +15,6 @@ return [
     'personal' => 'شخصی',
     'corporate' => 'شرکت های بزرگ، دارای شخصیت حقوقی',
     'export' => 'صادرات',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'آموزش جدید',
+    'new_education_part' => 'قسمت آموزش جدید',
 ];
