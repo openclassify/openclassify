@@ -4,7 +4,7 @@ return [
     'error_added_cart' => 'Tələb olunan məhsul hazırda itkin və ya hərəkətsizdir',
     'please_payment' => 'Zəhmət olmasa ödəyin',
     'bank_account_info' => 'Bank hesabı məlumatları',
-    'agreement' => 'Post\'u tıklayarak, İstifadə şərtlərimizlə razılaşırsınız və Məxfilik Siyasəti bu maddənin qanuni sahibi olduğunuzu qəbul edirsiniz.',
+    'agreement' => 'Yayımla düyməsini basmaqla, İstifadə şərtlərimizi və Məxfilik Siyasətimizi bu maddənin həqiqi sahibi olduğunuzu qəbul etdiyinizi qəbul edirsiniz.',
     'update_category_msg' => 'Təsnif edilmiş kateqoriya yenilənəcəkdir.',
     'updated_category_msg' => 'Kateqoriya uğurla düzəldildi.',
     'create_ad_with_post_cat' => [
@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Bu reklam mövcud deyil!",
     'select_location_error' => "Xahiş edirəm xəritədə bir yer seçin!",
     'this_ad_is_not_valid_anymore' => "Bu reklam artıq etibarlı deyil!",
+    'approve_status_change' => "Reklamınızın Vəziyyəti Aktivləşdirildi!",
+    'passive_status_change' => "Reklamınızın Vəziyyəti Passiv təyin olundu!",
 ];
