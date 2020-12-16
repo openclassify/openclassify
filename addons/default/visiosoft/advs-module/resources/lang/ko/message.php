@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "이 광고는 존재하지 않습니다!",
     'select_location_error' => "지도에서 위치를 선택하세요!",
     'this_ad_is_not_valid_anymore' => "이 광고는 더 이상 유효하지 않습니다!",
+    'approve_status_change' => "귀하의 광고 상태가 활성으로 설정되었습니다!",
+    'passive_status_change' => "귀하의 광고 상태가 수동으로 설정되었습니다!",
 ];
