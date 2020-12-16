@@ -15,6 +15,6 @@ return [
     'personal' => 'ব্যক্তিগত',
     'corporate' => 'কর্পোরেট',
     'export' => 'রফতানি',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'নতুন শিক্ষা',
+    'new_education_part' => 'নতুন শিক্ষার অংশ',
 ];
