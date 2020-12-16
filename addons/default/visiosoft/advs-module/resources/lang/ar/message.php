@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "هذا الإعلان غير موجود!",
     'select_location_error' => "الرجاء تحديد موقع على الخريطة!",
     'this_ad_is_not_valid_anymore' => "هذا الإعلان غير صالح بعد الآن!",
+    'approve_status_change' => "تم تعيين حالة إعلانك على نشطة!",
+    'passive_status_change' => "تم تعيين حالة إعلانك على سلبية!",
 ];
