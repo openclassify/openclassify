@@ -15,4 +15,6 @@ return [
     'personal' => 'निजी',
     'corporate' => 'कॉर्पोरेट',
     'export' => 'निर्यात',
+    'new_education' => 'New Education',
+    'new_education_part' => 'New Education part',
 ];
