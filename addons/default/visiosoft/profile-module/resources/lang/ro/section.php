@@ -10,9 +10,9 @@ return [
     'general_setting' => 'setari generale',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Educaţie',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Partea educație',
     ],
 ];
