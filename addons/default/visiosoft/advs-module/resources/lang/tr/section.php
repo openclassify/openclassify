@@ -26,7 +26,7 @@ return [
         'title' => 'Özel Alanlar',
     ],
     'custom_field_advs' => [
-        'title' => 'Özel alan İlanları',
+        'title' => 'Özel Alan İlanları',
     ],
     'cf_values' => [
         'title' => 'Cf değerleri',
@@ -40,8 +40,8 @@ return [
     'general' => 'Genel',
     'ads' => 'İlan',
     'user' => 'Kullanıcı',
-    'filter' => 'filtre',
-    'create_ad' => 'Ürün/İlan oluştur',
+    'filter' => 'Filtre',
+    'create_ad' => 'İlan Oluştur',
     'options' => [
         'title' => 'Seçenekler',
     ],
@@ -55,4 +55,5 @@ return [
     'option_configuration' => [
         'title' => 'Yapılandırma',
     ],
+    'translations' => 'Çeviriler',
 ];
