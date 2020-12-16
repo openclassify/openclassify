@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Γενέθλια'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Εκπαίδευση'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Χρήστης'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -377,6 +386,9 @@ return [
     'password' => [
         'name' => 'Κωδικός πρόσβασης',
     ],
+    'old_password' => [
+        'name' => 'ΠΑΛΙΟΣ ΚΩΔΙΚΟΣ',
+    ],
     'new_password' => [
         'name' => 'Νέος κωδικός πρόσβασης',
     ],
@@ -469,4 +481,8 @@ return [
     'personal' => [
         'name' => 'Προσωπικός'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];
