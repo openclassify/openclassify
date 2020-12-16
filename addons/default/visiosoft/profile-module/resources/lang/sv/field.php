@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Födelsedag'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Utbildning'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Användare'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'Lösenord',
     ],
+    'old_password' => [
+        'name' => 'Gammalt lösenord',
+    ],
     'new_password' => [
         'name' => 'Nytt lösenord',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'Personlig'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];
