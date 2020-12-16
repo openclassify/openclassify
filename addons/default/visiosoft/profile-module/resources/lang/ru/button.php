@@ -15,6 +15,6 @@ return [
     'personal' => 'личный',
     'corporate' => 'Корпоративный',
     'export' => 'Экспорт',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'Новое образование',
+    'new_education_part' => 'Часть нового образования',
 ];
