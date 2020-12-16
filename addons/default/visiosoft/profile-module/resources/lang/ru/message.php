@@ -32,6 +32,7 @@ return [
     'empty_password_sms_message' => 'Из-за проблем безопасности мы изменили ваш пароль! Ваш новый пароль:',
     'required_all' => "Все поля обязательны для заполнения!",
     'can_not_remove_filled_fields' => "Заполненные поля удалить нельзя!",
+    'wrong_password' => "Вы ввели неверный пароль!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mail, номер телефона неверен!',
