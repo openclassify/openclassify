@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'نظرًا لمشاكل الأمان ، قمنا بتغيير كلمة المرور الخاصة بك! كلمة المرور الجديدة:',
     'required_all' => "كل الحقول مطلوبة!",
     'can_not_remove_filled_fields' => "لا يمكنك إزالة الحقول المملوءة!",
+    'wrong_password' => "كلمة المرور التي أدخلتها غير صحيحة!",
 
     // Forgot Password
     'email_phone_not_found' => 'البريد الإلكتروني ، رقم الهاتف غير صحيح!',
