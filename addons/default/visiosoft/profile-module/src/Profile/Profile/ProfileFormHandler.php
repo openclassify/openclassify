@@ -30,6 +30,7 @@ class ProfileFormHandler
         if (setting_value('visiosoft.module.profile::show_education_profession')) {
             $parameters = array_merge($parameters, [
                 'education' => $builder->getPostValue('education'),
+                'education_part' => $builder->getPostValue('education_part'),
                 'state_of_education' => $builder->getPostValue('state_of_education'),
                 'profession' => $builder->getPostValue('profession'),
             ]);

@@ -1,6 +1,6 @@
 $(() => {
     $.ajax({
-        url: '/ajax/getEducation',
+        url: '/api/getEducation',
         success: ((res)=>{
             $.each(res['education-part'], function (key, value) {
                 var selected = ""
@@ -12,14 +12,14 @@ $(() => {
 
     $('#education').on('change', () => {
         $.ajax({
-            url: '/api/setEducation',
+            url: '/api/changeEducation',
             data: {
                 info: 'education',
                 education: $('#education').val()
             },beforeSend: function (){
                 $('#education_part').html('');
             },success: function (response) {
-                $('#education_part').html('<option>'+ choose_an_option +'</option>')
+                $('#education_part').html('<option value="">'+ choose_an_option +'</option>')
                 $.each(response.data, function (key, value) {
                     $('#education_part').append(
                         '<option value="'+ value.id +'">'+ value.name +'</option>'
@@ -27,15 +27,5 @@ $(() => {
                 })
             }
         });
-    })
-
-    $('#education_part').on('change', () => {
-        $.ajax({
-            url: '/api/setEducation',
-            data: {
-                info: 'education_part',
-                education: $('#education_part').val()
-            }
-        })
     })
 })

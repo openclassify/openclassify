@@ -257,16 +257,11 @@ class MyProfileController extends PublicController
 		return response()->json(['user' => $user, 'education' => $education, 'education-part' => $educationPart], 200);
 	}
 
-	public function setEducation(Request $request)
+	public function changeEducation(Request $request)
 	{
-		$user_id = auth()->id();
 		if ($request->info == 'education') {
-			$user = $this->userRepository->find($user_id)->update(['education' => $request->education]);
 			$education = EducationPartModel::query()->where('education_id', $request->education)->get();
-		} elseif ($request->info == 'education_part') {
-			$user = $this->userRepository->find($user_id)->update(['education_part' => $request->education]);
-			$education = EducationPartOptionModel::query()->where('education_part_id', $request->education)->get();
 		}
-		return response()->json(['messages' => $user, 'data' => $education], 200);
+		return response()->json(['data' => $education], 200);
 	}
 }

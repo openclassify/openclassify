@@ -105,7 +105,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         ],
         'profile/notification' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
         'ajax/update-user-info' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
-	    'api/setEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@setEducation',
+	    'api/changeEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@changeEducation',
 	    'api/getEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@getEducation',
 
         // UserAuthenticator
