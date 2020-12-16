@@ -8,9 +8,9 @@ return [
         'name' => 'Adress',
     ],
     'education' => [
-        'name' => 'Education',
+        'name' => 'Utbildning',
     ],
     'education_part' => [
-        'name' => 'Education part',
+        'name' => 'Utbildningsdel',
     ],
 ];
