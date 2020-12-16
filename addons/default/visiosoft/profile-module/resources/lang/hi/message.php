@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'सुरक्षा समस्याओं के कारण, हमने आपका पासवर्ड बदल दिया है! आपका नया पासवर्ड है:',
     'required_all' => "सभी फ़ील्ड आवश्यक है!",
     'can_not_remove_filled_fields' => "आप भरे हुए खेतों को नहीं हटा सकते हैं!",
+    'wrong_password' => "आपके द्वारा दर्ज किया गया पासवर्ड सही नहीं है!",
 
     // Forgot Password
     'email_phone_not_found' => 'ई-मेल, फोन नंबर सही नहीं है!',
