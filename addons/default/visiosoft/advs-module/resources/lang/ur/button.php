@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'نئی درجہ بندی',
+    'new_classified' => 'نیا درجہ بند',
     'new_category' => 'نئی قسم',
     'new_country' => 'نیا ملک',
     'new_city' => 'نیا شہر',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'نئی آپشن ترتیب',
 	'create_configurations' => 'تشکیلات بنائیں',
 	'replicate' => 'چربہ لگائیں',
+	'fast_create' => 'فاسٹ بنائیں',
+	'publish' => 'شائع کریں',
+	'import' => 'درآمد کریں',
 ];
