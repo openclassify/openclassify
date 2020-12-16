@@ -9,4 +9,10 @@ return [
     ],
     'general_setting' => '일반 설정',
     'recaptcha' => 'reCAPTCHA',
+    'education' => [
+        'title' => 'Education',
+    ],
+    'education_part' => [
+        'title' => 'Education part',
+    ],
 ];
