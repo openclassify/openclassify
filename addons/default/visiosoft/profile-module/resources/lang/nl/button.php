@@ -15,6 +15,6 @@ return [
     'personal' => 'Persoonlijk',
     'corporate' => 'Zakelijk',
     'export' => 'Exporteren',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'Nieuw onderwijs',
+    'new_education_part' => 'Nieuw onderwijsgedeelte',
 ];
