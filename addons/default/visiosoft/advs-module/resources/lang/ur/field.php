@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'ذیلی زمرہ 6'
     ],
+    'cat8' => [
+        'name' => 'ذیلی زمرہ 7'
+    ],
+    'cat9' => [
+        'name' => 'ذیلی زمرہ 8'
+    ],
+    'cat10' => [
+        'name' => 'ذیلی زمرہ 9'
+    ],
     'currency' => [
         'name' => 'کرنسی'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'فہرست سازی کی تفصیلات',
     'preview' => 'پیش نظارہ',
     'congratulations' => 'مبارک ہو',
+    'ad_desc' => 'اشتہار کی تفصیل',
+    'upload_photos' => 'تصاویر اپ لوڈ کریں',
+    'additional_fields' => 'اضافی فیلڈز',
+    'ad_location' => 'اشتہار کی جگہ',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
