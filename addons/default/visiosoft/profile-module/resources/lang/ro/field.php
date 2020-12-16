@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Zi de nastere'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Educaţie'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Utilizator'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'Parola',
     ],
+    'old_password' => [
+        'name' => 'Parola veche',
+    ],
     'new_password' => [
         'name' => 'Parolă Nouă',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'Personal'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];
