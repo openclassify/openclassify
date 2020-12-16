@@ -10,9 +10,9 @@ return [
     'general_setting' => 'সাধারণ সেটিংস',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'শিক্ষা',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'শিক্ষার অংশ',
     ],
 ];
