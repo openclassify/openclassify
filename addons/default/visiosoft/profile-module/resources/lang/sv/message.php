@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'På grund av säkerhetsproblem har vi ändrat ditt lösenord! Ditt nya lösenord är:',
     'required_all' => "Allt fält krävs!",
     'can_not_remove_filled_fields' => "Du kan inte ta bort fyllda fält!",
+    'wrong_password' => "Lösenordet du angav är inte korrekt!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-post, telefonnummer är inte korrekt!',
