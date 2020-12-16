@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Subcategorie 6'
     ],
+    'cat8' => [
+        'name' => 'Subcategorie 7'
+    ],
+    'cat9' => [
+        'name' => 'Subcategorie 8'
+    ],
+    'cat10' => [
+        'name' => 'Subcategorie 9'
+    ],
     'currency' => [
         'name' => 'Valuta'
     ],
@@ -306,6 +315,10 @@ return [
     'listing_details' => 'Lijst details',
     'preview' => 'Voorbeeld',
     'congratulations' => 'Gefeliciteerd',
+    'ad_desc' => 'Beschrijving van de Reclame',
+    'upload_photos' => 'Foto\'s uploaden',
+    'additional_fields' => 'Extra velden',
+    'ad_location' => 'Advertentielocatie',
 
     'free' => 'Vrij',
     'ad_date' => 'Advertentiedatum',
