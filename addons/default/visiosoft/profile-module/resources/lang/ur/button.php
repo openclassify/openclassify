@@ -15,6 +15,6 @@ return [
     'personal' => 'ذاتی',
     'corporate' => 'کارپوریٹ',
     'export' => 'برآمد کریں',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'نئی تعلیم',
+    'new_education_part' => 'تعلیم کا نیا حصہ',
 ];
