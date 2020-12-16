@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Podkategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Podkategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Podkategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Podkategoria 9'
+    ],
     'currency' => [
         'name' => 'Waluta'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'Szczegóły aukcji',
     'preview' => 'Zapowiedź',
     'congratulations' => 'Gratulacje',
+    'ad_desc' => 'opis reklamy',
+    'upload_photos' => 'Załadować zdjęcia',
+    'additional_fields' => 'Dodatkowe pola',
+    'ad_location' => 'Lokalizacja reklamy',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',
