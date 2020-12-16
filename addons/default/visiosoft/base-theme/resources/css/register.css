@@ -28,12 +28,12 @@
     font-size: 14px;
 }
 
-input {
+.register-area input {
     color: #707070 !important;
 }
 
-input::-webkit-input-placeholder,
-input::-moz-placeholder,
-input::placeholder {
+.register-area input::-webkit-input-placeholder,
+.register-area input::-moz-placeholder,
+.register-area input::placeholder {
     color: #BCBDC3 !important;
 }
