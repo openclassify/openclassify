@@ -55,4 +55,5 @@ return [
     'option_configuration' => [
         'title' => '構成',
     ],
+    'translations' => '翻訳',
 ];
