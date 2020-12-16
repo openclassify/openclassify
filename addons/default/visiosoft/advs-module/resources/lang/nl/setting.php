@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Marktplaats',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Prijsgebied verborgen',
+	],
     'hide_price_filter' => [
         'name' => 'Prijsfilter verbergen',
     ],
@@ -196,5 +198,17 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Toon breadcrumb bij het maken van een advertentie',
+    ],
+    'show_ads_count' => [
+        'name' => 'Toon het aantal advertenties',
+        'instructions' => 'Toon het aantal advertenties in de lijst met linkercategorieën',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Toon advertentieovereenkomst',
+        'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
+    ],
+    'override_text' => [
+        'name' => 'Tekst overschrijven',
+        'instructions' => 'Oude waarde: nieuwe waarde'
     ],
 ];
