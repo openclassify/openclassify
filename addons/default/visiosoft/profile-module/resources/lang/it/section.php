@@ -10,9 +10,9 @@ return [
     'general_setting' => 'impostazioni generali',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Formazione scolastica',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Parte dell\'istruzione',
     ],
 ];
