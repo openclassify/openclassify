@@ -15,4 +15,6 @@ return [
     'personal' => '個人的な',
     'corporate' => 'コーポレート',
     'export' => '書き出す',
+    'new_education' => 'New Education',
+    'new_education_part' => 'New Education part',
 ];
