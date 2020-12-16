@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Piata de desfacere',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Zona de preț ascunsă',
+	],
     'hide_price_filter' => [
         'name' => 'Ascundeți filtrul de preț',
     ],
@@ -196,5 +198,17 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Afișați pesmet atunci când creați un anunț',
+    ],
+    'show_ads_count' => [
+        'name' => 'Afișați numărul de anunțuri',
+        'instructions' => 'Afișați anunțurile în lista de categorii din stânga',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Afișați acordul de postare a anunțului',
+        'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
+    ],
+    'override_text' => [
+        'name' => 'Înlocuiți textul',
+        'instructions' => 'Valoare veche: valoare nouă'
     ],
 ];
