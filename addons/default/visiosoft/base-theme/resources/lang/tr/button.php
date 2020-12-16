@@ -2,13 +2,14 @@
 
 return [
     'post_ad' => [
-        'name' => 'Ücretsiz İlan Ver',
+        'name' => 'İlan Ver',
     ],
     'login' => 'Giriş Yap',
     'register' => 'Üye Ol',
-    'continue' => 'Devam',
+    'continue' => 'Devam Et',
     'reset_password' => 'Şifremi Güncelle',
     'email' => 'E-posta',
     'phone' => 'Telefon',
     'show_all' => 'Hepsini Göster ↓',
+    'hide_all' => 'Hide All',
 ];
