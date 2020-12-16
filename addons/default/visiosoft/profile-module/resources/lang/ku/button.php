@@ -15,6 +15,6 @@ return [
     'personal' => 'Şexsî',
     'corporate' => 'Pargîdanî',
     'export' => 'Eksport',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'Perwerdehiya Nû',
+    'new_education_part' => 'Beşa Perwerdehiya Nû',
 ];
