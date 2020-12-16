@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'new_adv' => 'Yeni İlan',
+    'new_adv' => 'Yeni ürün/ilan',
+    'new_classified' => 'Yeni ürün/ilan',
     'new_category' => 'Yeni kategori',
     'new_country' => 'Yeni ülke',
     'new_city' => 'Yeni şehir',
@@ -38,7 +39,8 @@ return [
     'new_options_configuration' => 'Yeni Seçenek yapılandırması',
     'new_option_configuration' => 'Yeni Seçenek yapılandırması',
 	'create_configurations' => 'Konfigürasyonlar Oluşturun',
-	'replicate' => 'Tekrarla',
-    'publish' => 'Yayınla',
-
+	'replicate' => 'Tekrarlamak',
+	'fast_create' => 'Hızlı ekle',
+	'publish' => 'Yayınla',
+	'import' => 'İçe aktar',
 ];
