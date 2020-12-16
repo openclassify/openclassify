@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'セキュリティ上の問題により、パスワードを変更しました！新しいパスワードは：',
     'required_all' => "すべてのフィールドが必要です！",
     'can_not_remove_filled_fields' => "塗りつぶされたフィールドは削除できません！",
+    'wrong_password' => "入力したパスワードが正しくありません！",
 
     // Forgot Password
     'email_phone_not_found' => 'メール、電話番号が違います！',
