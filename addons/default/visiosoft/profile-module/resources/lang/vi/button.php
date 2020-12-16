@@ -15,4 +15,6 @@ return [
     'personal' => 'Cá nhân',
     'corporate' => 'Công ty',
     'export' => 'Xuất khẩu',
+    'new_education' => 'New Education',
+    'new_education_part' => 'New Education part',
 ];
