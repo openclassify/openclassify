@@ -8,9 +8,9 @@ return [
         'name' => 'पता',
     ],
     'education' => [
-        'name' => 'Education',
+        'name' => 'शिक्षा',
     ],
     'education_part' => [
-        'name' => 'Education part',
+        'name' => 'शिक्षा का हिस्सा',
     ],
 ];
