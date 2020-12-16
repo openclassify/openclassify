@@ -15,6 +15,6 @@ return [
     'personal' => 'Personlig',
     'corporate' => 'Företags',
     'export' => 'Exportera',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'Ny utbildning',
+    'new_education_part' => 'Ny utbildning del',
 ];
