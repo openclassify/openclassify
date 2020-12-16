@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Rynek',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Ukryty obszar cen',
+	],
     'hide_price_filter' => [
         'name' => 'Ukryj filtr cen',
     ],
@@ -196,5 +198,17 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Pokaż menu nawigacyjne podczas tworzenia reklamy',
+    ],
+    'show_ads_count' => [
+        'name' => 'Pokaż liczbę reklam',
+        'instructions' => 'Pokaż liczbę reklam na liście kategorii po lewej stronie',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Pokaż umowę opublikowania ogłoszenia',
+        'instructions' => 'Włącz tę opcję, jeśli chcesz wyświetlać umowę o polityce prywatności na stronie tworzenia reklamy',
+    ],
+    'override_text' => [
+        'name' => 'Zastąp tekst',
+        'instructions' => 'Stara wartość: nowa wartość'
     ],
 ];
