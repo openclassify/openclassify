@@ -7,4 +7,10 @@ return [
     'adress' => [
         'name' => 'Адрес',
     ],
+    'education' => [
+        'name' => 'Education',
+    ],
+    'education_part' => [
+        'name' => 'Education part',
+    ],
 ];
