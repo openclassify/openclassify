@@ -59,10 +59,10 @@ return [
         'name' => 'Ditëlindja'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Adresa në Facebook'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Adresa e Google'
 	],
     'education' => [
         'name' => 'Arsimi'
@@ -122,7 +122,7 @@ return [
         'name' => 'Perdoruesit'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Emrin'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Shteti i Arsimit'
 	],
 ];
