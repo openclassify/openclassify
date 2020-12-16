@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'День народження'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Освіта'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Користувач'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'Пароль',
     ],
+    'old_password' => [
+        'name' => 'Старий пароль',
+    ],
     'new_password' => [
         'name' => 'Новий пароль',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'Особистий'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];

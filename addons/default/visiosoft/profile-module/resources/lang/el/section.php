@@ -9,4 +9,10 @@ return [
     ],
     'general_setting' => 'Γενικές Ρυθμίσεις',
     'recaptcha' => 'reCAPTCHA',
+    'education' => [
+        'title' => 'Education',
+    ],
+    'education_part' => [
+        'title' => 'Education part',
+    ],
 ];

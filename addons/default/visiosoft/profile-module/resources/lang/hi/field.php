@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'जन्मदिन'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'शिक्षा'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'उपयोगकर्ता'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'कुंजिका',
     ],
+    'old_password' => [
+        'name' => 'पुराना पासवर्ड',
+    ],
     'new_password' => [
         'name' => 'नया पासवर्ड',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'निजी'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];

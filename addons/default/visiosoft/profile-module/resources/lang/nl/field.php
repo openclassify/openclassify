@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Verjaardag'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Opleiding'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Gebruiker'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -377,6 +386,9 @@ return [
     'password' => [
         'name' => 'Wachtwoord',
     ],
+    'old_password' => [
+        'name' => 'Oud Wachtwoord',
+    ],
     'new_password' => [
         'name' => 'Nieuw paswoord',
     ],
@@ -469,4 +481,8 @@ return [
     'personal' => [
         'name' => 'Persoonlijk'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];

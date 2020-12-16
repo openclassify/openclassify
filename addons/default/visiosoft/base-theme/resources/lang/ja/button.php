@@ -11,4 +11,5 @@ return [
     'email' => 'Eメール',
     'phone' => '電話',
     'show_all' => 'すべて表示する',
+    'hide_all' => 'Hide All',
 ];

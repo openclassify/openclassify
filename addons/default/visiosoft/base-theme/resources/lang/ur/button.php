@@ -11,4 +11,5 @@ return [
     'email' => 'ای میل',
     'phone' => 'فون',
     'show_all' => 'سارے دکھاو',
+    'hide_all' => 'Hide All',
 ];
