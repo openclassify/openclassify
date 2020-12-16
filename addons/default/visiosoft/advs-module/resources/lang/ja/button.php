@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => '新しい広告',
+    'new_classified' => '新しい機密',
     'new_category' => '新たなカテゴリー',
     'new_country' => '新しい国',
     'new_city' => '新しい街',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => '新しいオプション構成',
 	'create_configurations' => '構成の作成',
 	'replicate' => '複製する',
+	'fast_create' => '高速作成',
+	'publish' => '公開する',
+	'import' => 'インポート',
 ];
