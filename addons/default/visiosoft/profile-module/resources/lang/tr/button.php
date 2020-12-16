@@ -15,6 +15,6 @@ return [
     'personal' => 'Kişisel',
     'corporate' => 'Kurumsal',
     'export' => 'Dışa aktar',
-    'new_education' => 'New Education',
-    'new_education_part' => 'New Education part',
+    'new_education' => 'Yeni Eğitim',
+    'new_education_part' => 'Yeni Eğitim bölümü',
 ];
