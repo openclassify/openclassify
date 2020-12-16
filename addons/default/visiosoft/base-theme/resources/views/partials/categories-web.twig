@@ -45,8 +45,15 @@
             {% if count(sub_categories) > sub_categories_limit %}
                 <li class="show-all" data-limit="{{ sub_categories_limit }}">
                     <a>
-                        {{ trans('visiosoft.theme.base::button.show_all') }}
-                        <i class="fas fa-arrow-circle-down"></i>
+                        <span class="">
+                            {{ trans('visiosoft.theme.base::button.show_all') }}
+                            <i class="fas fa-arrow-circle-down"></i>
+                        </span>
+                        <span class="hidden">
+                            {{ trans('visiosoft.theme.base::button.hide_all') }}
+                            <i class="fas fa-arrow-circle-up"></i>
+                        </span>
+
                     </a>
                 </li>
             {% endif %}
