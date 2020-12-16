@@ -171,40 +171,15 @@
                                             <label class="control-label font-weight-bold">
                                                 {{ trans("visiosoft.module.profile::field.education.name") }}
                                             </label>
-                                            {{ profileForm.fields.education.value.input|raw }}
-                                            <select name="education" class="custom-select form-control"
-                                                    data-field="education" data-field_name="education"
-                                                    data-provides="anomaly.field_type.select" id="education">
-                                                <option value="">
-                                                    {{ trans('visiosoft.module.profile::field.choose_an_option') }}
-                                                </option>
-                                                {% for education in setting_value('visiosoft.module.profile::education') %}
-                                                    <option value="{{ education }}"
-                                                            {{ profileForm.fields.education.value == education ? 'selected' }}>
-                                                        {{ education }}
-                                                    </option>
-                                                {% endfor %}
-                                            </select>
+                                            {{ profileForm.fields.education.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
                                         </div>
                                     </div>
                                     <div class="col-md-12">
-                                        <div class="form-group state_of_education-field">
+                                    <div class="form-group education-part-field">
                                             <label class="control-label font-weight-bold">
-                                                {{ trans("visiosoft.module.profile::field.state_of_education.name") }}
+                                                {{ trans("visiosoft.module.profile::field.education_part.name") }}
                                             </label>
-                                            <select name="state_of_education" class="custom-select form-control"
-                                                    data-field="state_of_education" data-field_name="state_of_education"
-                                                    data-provides="anomaly.field_type.select" id="state_of_education">
-                                                <option value="">
-                                                    {{ trans('visiosoft.module.profile::field.choose_an_option') }}
-                                                </option>
-                                                {% for state_of_education in setting_value('visiosoft.module.profile::state_of_education') %}
-                                                    <option value="{{ state_of_education }}"
-                                                            {{ profileForm.fields.state_of_education.value == state_of_education ? 'selected' }}>
-                                                        {{ state_of_education }}
-                                                    </option>
-                                                {% endfor %}
-                                            </select>
+                                            {{ profileForm.fields.education_part.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -246,6 +221,7 @@
                             </div>
                             {{ profileForm.close()|raw }}
                         </div>
+                        </div>
                         <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
                             {% set passwordForm = form('updatePassword').get() %}
 
@@ -280,8 +256,12 @@
                     <!-- User Profile Form Section-->
                 </div>
             </div>
+            <script>
+                var choose_an_option = "{{ trans('visiosoft.module.profile::field.choose_an_option') }}"
+            </script>
         {% endblock %}
     {% endembed %}
 
+    {{ asset_script("visiosoft.module.profile::assets/js/education.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
 {% endblock %}
