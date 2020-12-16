@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => '새로운 Adv',
+    'new_classified' => '새로운 분류',
     'new_category' => '새 분류',
     'new_country' => '새로운 나라',
     'new_city' => '새로운 도시',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => '새로운 옵션 구성',
 	'create_configurations' => '구성 만들기',
 	'replicate' => '뒤로 젖히다',
+	'fast_create' => '빠른 생성',
+	'publish' => '게시',
+	'import' => '수입',
 ];
