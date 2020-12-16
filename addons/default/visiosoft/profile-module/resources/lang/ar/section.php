@@ -10,9 +10,9 @@ return [
     'general_setting' => 'الاعدادات العامة',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'التعليم',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'جزء التعليم',
     ],
 ];
