@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => '보안 문제로 인해 비밀번호가 변경되었습니다. 새 비밀번호는 다음과 같습니다.',
     'required_all' => "모든 필드는 필수입니다!",
     'can_not_remove_filled_fields' => "채워진 필드를 제거 할 수 없습니다!",
+    'wrong_password' => "입력 한 비밀번호가 올바르지 않습니다!",
 
     // Forgot Password
     'email_phone_not_found' => '이메일, 전화 번호가 올바르지 않습니다!',
