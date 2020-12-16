@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Sinh nhật'
     ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
     'education' => [
         'name' => 'Giáo dục'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Người dùng'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'Mật khẩu',
     ],
+    'old_password' => [
+        'name' => 'Mật khẩu cũ',
+    ],
     'new_password' => [
         'name' => 'Mật khẩu mới',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'Cá nhân'
     ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];
