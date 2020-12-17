@@ -19,7 +19,8 @@ $('.filter-country-btn').on('click', function () {
                     $('.filter-location-modal .countries').html(null_msg);
                 else if ($('input[name="country"]').val() != ""){
                     $.each(selected__country_request.split(','), function (index, value){
-                        $(".filter-location-body .countries li[data-id='" + value.trim() + "'] input[type='checkbox']").prop('checked', true);
+                        console.log(value.trim())
+                        $(".filter-location-body .countries li[data-id='" + value.trim() + "'] input[type='checkbox']")
                     })
                 }
                 resolve();
@@ -38,6 +39,7 @@ $('.filter-country-btn').on('click', function () {
 //City
 $('.filter-city-btn').on('click', function () {
     var countries_value = $('input[name="country[]"]').val();
+    countries_value += ',' + defaultCountry
     var selected__city_request = $('input[name="city[]"]').val();
     if (cities == undefined || $(this).attr('data-parent') != countries_value) {
         $(this).attr('data-parent', countries_value);
@@ -242,10 +244,11 @@ function locationCrud(params, url, type, beforeSend, callback) {
 }
 
 function item(field_name, id, value, abv = '') {
+    var selected = defaultCountry === id ? "checked" : "";
     if (field_name === 'country') {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
-            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
+            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
             '                                <span class="flag ml-1 flag-' + abv + '">\n' +
             '                    </span>\n' +
             '                        <small>' + value + '</small>\n' +
@@ -255,7 +258,7 @@ function item(field_name, id, value, abv = '') {
     } else {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
-            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
+            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
             '                        <small>' + value + '</small>\n' +
             '                    </label>\n' +
             '                </li>';
