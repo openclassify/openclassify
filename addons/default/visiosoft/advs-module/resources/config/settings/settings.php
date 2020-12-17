@@ -350,4 +350,16 @@ return [
         'bind' => 'override_text',
         'env' => 'OVERRIDE_TEXT',
     ],
+    'steps_color' => [
+        "type"   => "anomaly.field_type.colorpicker",
+        "config" => [
+            "default_value" => '#209579',
+        ]
+    ],
+    'create_ad_button_color' => [
+        "type"   => "anomaly.field_type.colorpicker",
+        "config" => [
+            "default_value" => '#00a651',
+        ]
+    ],
 ];

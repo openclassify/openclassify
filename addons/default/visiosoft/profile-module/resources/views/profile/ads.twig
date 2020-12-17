@@ -35,6 +35,9 @@
                             <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
                                 {{ trans('visiosoft.module.profile::button.extend_all') }}
                             </a>
+                            <a href="{{ url_route("advs::extendAll") }}?unpublished=1" class="btn btn-warning text-white">
+                                {{ trans('visiosoft.module.profile::button.extend_unpublished') }}
+                            </a>
                         {% endif %}
                     </div>
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">

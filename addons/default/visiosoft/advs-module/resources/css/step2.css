@@ -1,0 +1,18 @@
+{% set stepsColor = setting_value('visiosoft.module.advs::steps_color') %}
+
+#stepProgressBar .step.current .bullet {
+    color: {{ stepsColor }};
+    border: 0.2rem solid {{ stepsColor }};
+}
+
+#stepProgressBar .step .bullet {
+    background-color: {{ stepsColor }};
+}
+
+#stepProgressBar .step.current::after {
+    background: linear-gradient(to right, {{ stepsColor }} 50%, #dfdfdf 50%);
+}
+
+#stepProgressBar .step::after {
+    background-color: {{ stepsColor }};
+}
