@@ -34,5 +34,6 @@ return [
     'address' => [
         'name' => 'Ünvan',
     ],
-    'selected' => 'Seçilib'
+    'selected' => 'Seçilib',
+    'choose_an_option' => 'Bir seçim seçin ...',
 ];
