@@ -127,7 +127,9 @@ return [
     'market_place' => [
         'name' => 'محل بازار',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'منطقه پنهان',
+	],
     'hide_price_filter' => [
         'name' => 'فیلتر قیمت مخفی کنید',
     ],
@@ -197,5 +199,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'هنگام ایجاد تبلیغ ، Breadcrumb را نشان دهید',
+    ],
+    'show_ads_count' => [
+        'name' => 'نمایش تعداد تبلیغات',
+        'instructions' => 'نمایش تعداد تبلیغات در لیست دسته های سمت چپ',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'نمایش قرارداد تبلیغات پست',
+        'instructions' => 'اگر می خواهید توافق نامه سیاست حفظ حریم خصوصی را در صفحه ایجاد آگهی نمایش دهید ، این گزینه را روشن کنید',
+    ],
+    'override_text' => [
+        'name' => 'متن را لغو کنید',
+        'instructions' => 'ارزش قدیم: ارزش جدید'
+    ],
+    'steps_color' => [
+        'name' => 'Steps Color',
+        'instructions' => 'Changes the progressive steps color.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Create Ad Button Color',
+        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
     ],
 ];
