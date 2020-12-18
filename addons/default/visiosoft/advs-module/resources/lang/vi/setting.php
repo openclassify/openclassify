@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Thương trường',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Vùng giá bị ẩn',
+	],
     'hide_price_filter' => [
         'name' => 'Ẩn bộ lọc giá',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Hiển thị Breadcrumb Khi Tạo Quảng cáo',
+    ],
+    'show_ads_count' => [
+        'name' => 'Hiển thị Số lượng Quảng cáo',
+        'instructions' => 'Số lượng quảng cáo hiển thị trên danh sách danh mục bên trái',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Hiển thị Thỏa thuận Quảng cáo Đăng',
+        'instructions' => 'Bật tính năng này nếu bạn muốn hiển thị thỏa thuận chính sách bảo mật trên trang tạo quảng cáo',
+    ],
+    'override_text' => [
+        'name' => 'Ghi đè văn bản',
+        'instructions' => 'Giá trị cũ: Giá trị mới'
+    ],
+    'steps_color' => [
+        'name' => 'Steps Color',
+        'instructions' => 'Changes the progressive steps color.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Create Ad Button Color',
+        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
     ],
 ];
