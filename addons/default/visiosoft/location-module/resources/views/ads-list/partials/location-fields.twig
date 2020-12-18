@@ -6,6 +6,10 @@
     {% if selectedCountry %}
         {% set countryName = getCountry(selectedCountry).name %}
         {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
+        {% set selected_countries_name = [] %}
+        {% for selectedCountry in selectedCountry[0]|split(',') %}
+            {% set selected_countries_name = selected_countries_name|merge([getCountry(selectedCountry|trim(',')).name]) %}
+        {% endfor %}
     {% elseif defaultCountry %}
         {% set countryName = getCountry(defaultCountry).name %}
         {% set countryValue = defaultCountry %}
@@ -17,7 +21,7 @@
                 data-toggle="modal">
             <span class="float-left">
                 {{ trans("visiosoft.module.location::field.country.name") }}
-                    <small class="text-muted selected-country">{{ countryName }}</small>
+                    <small class="text-muted selected-country">{{ countryName }} {{ selected_countries_name|join(',') }}</small>
             </span>
             <i class="fas fa-sort-down float-right"></i>
         </button>

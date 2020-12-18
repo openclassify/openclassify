@@ -19,8 +19,7 @@ $('.filter-country-btn').on('click', function () {
                     $('.filter-location-modal .countries').html(null_msg);
                 else if ($('input[name="country"]').val() != ""){
                     $.each(selected__country_request.split(','), function (index, value){
-                        console.log(value.trim())
-                        $(".filter-location-body .countries li[data-id='" + value.trim() + "'] input[type='checkbox']")
+                        $(".filter-location-body .countries li[data-id='" + value.trim() + "'] input[type='checkbox']").prop('checked', true);
                     })
                 }
                 resolve();
@@ -205,8 +204,8 @@ function SelectOnClick() {
         if ($(this).attr('data-field') == "country") {
             $('.selected-city').html('');
             $('input[name="city[]"]').val('');
-            text_html.html(input_text)
-            $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
+            // text_html.html(input_text)
+            // $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
 
         }
         if (input_val != "") {
@@ -258,7 +257,7 @@ function item(field_name, id, value, abv = '') {
     } else {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
-            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
+            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
             '                        <small>' + value + '</small>\n' +
             '                    </label>\n' +
             '                </li>';
