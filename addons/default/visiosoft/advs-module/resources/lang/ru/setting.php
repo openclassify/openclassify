@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Рыночная площадь',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Цена Площадь Скрыта',
+	],
     'hide_price_filter' => [
         'name' => 'Скрыть фильтр цен',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Показывать хлебные крошки при создании объявления',
+    ],
+    'show_ads_count' => [
+        'name' => 'Показать количество объявлений',
+        'instructions' => 'Показывать количество объявлений в левом списке категорий',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Показать соглашение о публикации рекламы',
+        'instructions' => 'Включите это, если вы хотите отображать соглашение о политике конфиденциальности на странице создания рекламы.',
+    ],
+    'override_text' => [
+        'name' => 'Заменить текст',
+        'instructions' => 'Старое значение: новое значение'
+    ],
+    'steps_color' => [
+        'name' => 'Steps Color',
+        'instructions' => 'Changes the progressive steps color.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Create Ad Button Color',
+        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
     ],
 ];
