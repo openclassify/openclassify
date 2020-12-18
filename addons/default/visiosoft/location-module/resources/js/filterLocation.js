@@ -38,6 +38,7 @@ $('.filter-country-btn').on('click', function () {
 //City
 $('.filter-city-btn').on('click', function () {
     var countries_value = $('input[name="country[]"]').val();
+    countries_value += ',' + defaultCountry
     var selected__city_request = $('input[name="city[]"]').val();
     if (cities == undefined || $(this).attr('data-parent') != countries_value) {
         $(this).attr('data-parent', countries_value);
@@ -203,8 +204,8 @@ function SelectOnClick() {
         if ($(this).attr('data-field') == "country") {
             $('.selected-city').html('');
             $('input[name="city[]"]').val('');
-            text_html.html(input_text)
-            $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
+            // text_html.html(input_text)
+            // $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
 
         }
         if (input_val != "") {
@@ -242,10 +243,11 @@ function locationCrud(params, url, type, beforeSend, callback) {
 }
 
 function item(field_name, id, value, abv = '') {
+    var selected = defaultCountry === id ? "checked" : "";
     if (field_name === 'country') {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
-            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
+            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
             '                                <span class="flag ml-1 flag-' + abv + '">\n' +
             '                    </span>\n' +
             '                        <small>' + value + '</small>\n' +
