@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Αγορά',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Κρυφή περιοχή τιμών',
+	],
     'hide_price_filter' => [
         'name' => 'Απόκρυψη φίλτρου τιμών',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Εμφάνιση Breadcrumb κατά τη δημιουργία μιας διαφήμισης',
+    ],
+    'show_ads_count' => [
+        'name' => 'Εμφάνιση πλήθους διαφημίσεων',
+        'instructions' => 'Εμφάνιση πλήθους διαφημίσεων στην αριστερή λίστα κατηγοριών',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Εμφάνιση συμφωνίας μετά τη διαφήμιση',
+        'instructions' => 'Ενεργοποιήστε το αν θέλετε να εμφανίσετε μια συμφωνία πολιτικής απορρήτου στη σελίδα δημιουργίας διαφημίσεων',
+    ],
+    'override_text' => [
+        'name' => 'Παράκαμψη κειμένου',
+        'instructions' => 'Παλιά τιμή: Νέα τιμή'
+    ],
+    'steps_color' => [
+        'name' => 'Steps Color',
+        'instructions' => 'Changes the progressive steps color.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Create Ad Button Color',
+        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
     ],
 ];
