@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'মার্কেট প্লেস',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'মূল্য অঞ্চল লুকানো',
+	],
     'hide_price_filter' => [
         'name' => 'দাম ফিল্টার লুকান',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'বিজ্ঞাপন তৈরি করার সময় ব্রেডক্রাম্ব প্রদর্শন করুন',
+    ],
+    'show_ads_count' => [
+        'name' => 'বিজ্ঞাপন গণনা দেখান',
+        'instructions' => 'বাম বিভাগগুলির তালিকায় বিজ্ঞাপন গণনা দেখান',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'পোস্ট বিজ্ঞাপন চুক্তি প্রদর্শন করুন',
+        'instructions' => 'আপনি বিজ্ঞাপন তৈরি পৃষ্ঠায় কোনও গোপনীয়তা নীতি চুক্তি প্রদর্শন করতে চাইলে এটি চালু করুন',
+    ],
+    'override_text' => [
+        'name' => 'ওভাররাইড পাঠ্য',
+        'instructions' => 'পুরানো মান: নতুন মান'
+    ],
+    'steps_color' => [
+        'name' => 'Steps Color',
+        'instructions' => 'Changes the progressive steps color.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Create Ad Button Color',
+        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
     ],
 ];
