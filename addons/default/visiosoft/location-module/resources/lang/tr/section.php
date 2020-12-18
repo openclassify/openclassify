@@ -19,5 +19,5 @@ return [
     'general' => 'Genel',
     'map' => 'Harita',
     'setting' => 'Ayarlar',
-    'filter' => 'filtre',
+    'filter' => 'Filtre',
 ];
