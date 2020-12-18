@@ -124,7 +124,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ profileForm.fields.gsm_phone.label }}
                                         </label>
-                                        {{ profileForm.fields.gsm_phone.input|raw }}
+                                        {{ profileForm.fields.gsm_phone.setAttributes({'maxlength': '14'}).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -132,7 +132,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ profileForm.fields.office_phone.label }}
                                         </label>
-                                        {{ profileForm.fields.office_phone.input|raw }}
+                                        {{ profileForm.fields.office_phone.setAttributes({'maxlength': '14'}).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -140,7 +140,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ profileForm.fields.land_phone.label }}
                                         </label>
-                                        {{ profileForm.fields.land_phone.input|raw }}
+                                        {{ profileForm.fields.land_phone.setAttributes({'maxlength': '14'}).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
