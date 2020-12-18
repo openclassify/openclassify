@@ -444,7 +444,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function extendAds($allAds, $isAdmin = false)
     {
-        if (!is_numeric($allAds)) {
+        if (is_array($allAds)) {
+            $advs = $this->newQuery()->whereIn('id', $allAds);
+        } elseif (!is_numeric($allAds)) {
             if ($isAdmin && auth()->user()->hasRole('admin')) {
                 $advs = $this->newQuery();
             } else {

@@ -6,16 +6,10 @@
     min-width: 0;
 
     &.current {
-      &::after {
-        background: linear-gradient(to right, #209579 50%, #dfdfdf 50%);
-      }
-
       .bullet {
-        color: #209579;
         background-color: #fff;
-        border: .2rem solid #209579;
         @media only screen and (min-width: 768px) {
-          border: .3rem solid #209579;
+          border-width: .3rem;
         }
       }
 
@@ -43,7 +37,6 @@
       left: 0;
       z-index: -1;
       width: 100%;
-      background-color: #209579;
       @media only screen and (min-width: 768px) {
         height: .3rem;
         top: 1.4rem;
@@ -58,7 +51,6 @@
       display: inline-block;
       position: relative;
       line-height: 20px;
-      background-color: #209579;
       @media only screen and (min-width: 768px) {
         height: 3rem;
         width: 3rem;
