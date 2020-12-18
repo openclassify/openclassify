@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Ринок',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Цінова область прихована',
+	],
     'hide_price_filter' => [
         'name' => 'Сховати фільтр цін',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Показати хлібну крихту під час створення реклами',
+    ],
+    'show_ads_count' => [
+        'name' => 'Показати показ оголошень',
+        'instructions' => 'Показати рекламу в списку категорій ліворуч',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Показати угоду про розміщення оголошень',
+        'instructions' => 'Увімкніть це, якщо ви хочете відображати угоду про політику конфіденційності на сторінці створення оголошення',
+    ],
+    'override_text' => [
+        'name' => 'Замінити текст',
+        'instructions' => 'Старе значення: Нове значення'
+    ],
+    'steps_color' => [
+        'name' => 'Steps Color',
+        'instructions' => 'Changes the progressive steps color.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Create Ad Button Color',
+        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
     ],
 ];
