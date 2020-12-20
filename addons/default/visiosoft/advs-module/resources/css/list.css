@@ -221,3 +221,7 @@ a.sort-by-open-dropdown:hover {
 .gallery-tn {
     object-fit: cover;
 }
+
+#listFilterForm .card-header {
+    padding: 5px 0;
+}

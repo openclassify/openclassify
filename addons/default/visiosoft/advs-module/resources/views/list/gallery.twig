@@ -3,9 +3,9 @@
             {{ addBlock('ad-list/partials/gallery',{'featured_advs':featured_advs})|raw }}
             {% for adv in advs %}
                 <div class="col-sm-6 col-md-4 col-lg-4 d-flex align-items-stretch">
-                    <div class="card mb-4 box-shadow {% if adv.doping != null %} doping_type4 {% endif %}">
+                    <div class="card mb-4 box-shadow {% if adv.doping != null %} doping_type4 {% endif %} w-100">
                         <div class="row p-2" style="min-height: 150px;">
-                            <a href="{{ adv.detail_url }}">
+                            <a href="{{ adv.detail_url }}" class="w-100">
                                 <div class="col-md-12 justify-content-center align-self-center">
                                     <img class="card-img-top img-fluid img-thumbnail gallery-tn"
                                          src="{{ adv.cover_photo }}"
