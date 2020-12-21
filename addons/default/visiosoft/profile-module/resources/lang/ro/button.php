@@ -9,7 +9,7 @@ return [
     'delete' => 'Șterge',
     'extend' => 'Extinde',
     'extend_all' => 'Extindeți toate',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Extindeți nepublicat',
     'edit' => 'Editați | ×',
     'go_profile' => 'Accesați Detaliile profilului',
     'go_user' => 'Accesați Detaliile utilizatorului',
