@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Ta reklama nie istnieje!",
     'select_location_error' => "Wybierz lokalizację na mapie!",
     'this_ad_is_not_valid_anymore' => "Ta reklama jest już nieważna!",
+    'approve_status_change' => "Stan Twojej reklamy został ustawiony jako Aktywny!",
+    'passive_status_change' => "Stan Twojej reklamy został ustawiony na pasywny!",
 ];
