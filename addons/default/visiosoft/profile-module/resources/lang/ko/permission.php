@@ -18,19 +18,19 @@ return [
         ],
     ],
     'education' => [
-        'name'   => 'Education',
+        'name'   => '교육',
         'option' => [
-            'read'   => 'Can read education?',
-            'write'  => 'Can create/edit education?',
-            'delete' => 'Can delete education?',
+            'read'   => '교육을 읽을 수 있습니까?',
+            'write'  => '교육을 생성 / 편집 할 수 있습니까?',
+            'delete' => '교육을 삭제할 수 있습니까?',
         ],
     ],
     'education_part' => [
-        'name'   => 'Education part',
+        'name'   => '교육 부분',
         'option' => [
-            'read'   => 'Can read education part?',
-            'write'  => 'Can create/edit education part?',
-            'delete' => 'Can delete education part?',
+            'read'   => '교육 부분을 읽을 수 있습니까?',
+            'write'  => '교육 부분을 생성 / 편집 할 수 있습니까?',
+            'delete' => '교육 부분을 삭제할 수 있습니까?',
         ],
     ],
 ];
