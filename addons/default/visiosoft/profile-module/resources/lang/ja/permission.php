@@ -18,19 +18,19 @@ return [
         ],
     ],
     'education' => [
-        'name'   => 'Education',
+        'name'   => '教育',
         'option' => [
-            'read'   => 'Can read education?',
-            'write'  => 'Can create/edit education?',
-            'delete' => 'Can delete education?',
+            'read'   => '教育を読むことができますか？',
+            'write'  => '教育を作成/編集できますか？',
+            'delete' => '教育を削除できますか？',
         ],
     ],
     'education_part' => [
-        'name'   => 'Education part',
+        'name'   => '教育部分',
         'option' => [
-            'read'   => 'Can read education part?',
-            'write'  => 'Can create/edit education part?',
-            'delete' => 'Can delete education part?',
+            'read'   => '教育部分は読めますか？',
+            'write'  => '教育パートを作成/編集できますか？',
+            'delete' => '教育部分を削除できますか？',
         ],
     ],
 ];
