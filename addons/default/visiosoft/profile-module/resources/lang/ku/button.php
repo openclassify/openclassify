@@ -9,7 +9,7 @@ return [
     'delete' => 'Jêbirin',
     'extend' => 'N',
     'extend_all' => 'Hemî Dirêj Bikin',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Berfireh Nedayîn',
     'edit' => 'Weşandin',
     'go_profile' => 'Herin Detailê Profîl',
     'go_user' => 'Herin Berfirehiya Bikarhêner',
