@@ -9,7 +9,7 @@ return [
     'delete' => 'মুছে ফেলা',
     'extend' => 'প্রসারিত করা',
     'extend_all' => 'সমস্ত প্রসারিত করুন',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'অপ্রকাশিত প্রসারিত করুন',
     'edit' => 'সম্পাদন করা',
     'go_profile' => 'প্রোফাইল বিশদে যান',
     'go_user' => 'ব্যবহারকারীর বিবরণে যান',
