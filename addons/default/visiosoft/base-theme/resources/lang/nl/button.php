@@ -11,5 +11,5 @@ return [
     'email' => 'E-mail',
     'phone' => 'Telefoon',
     'show_all' => 'Toon alles',
-    'hide_all' => 'Hide All',
+    'hide_all' => 'Verstop alles',
 ];
