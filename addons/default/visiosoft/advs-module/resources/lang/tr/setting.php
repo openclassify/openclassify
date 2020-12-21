@@ -212,11 +212,11 @@ return [
         'instructions' => 'Eski Değer: Yeni Değer'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Adım Rengi',
+        'instructions' => 'Aşamalı adımların rengini değiştirir.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Reklam Düğmesi Rengi Oluştur',
+        'instructions' => 'Yeni reklam kategorisi seçimi bittiğinde görünen düğmeyi değiştirir.'
     ],
 ];
