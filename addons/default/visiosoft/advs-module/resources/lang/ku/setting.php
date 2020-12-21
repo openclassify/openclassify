@@ -213,10 +213,10 @@ return [
     ],
     'steps_color' => [
         'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'instructions' => 'Rengê gavên pêşverû diguherîne.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Rengê Bişkoja Adê biafirînin',
+        'instructions' => 'Bişkoja ku dema hilbijartina kategoriya reklama nû xilas dibe diguheze.'
     ],
 ];
