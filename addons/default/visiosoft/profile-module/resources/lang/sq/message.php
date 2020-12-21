@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'Për shkak të çështjeve të sigurisë, ne ndryshuam fjalëkalimin tuaj! Fjalëkalimi juaj i ri është:',
     'required_all' => "Kërkohet e gjithë fusha!",
     'can_not_remove_filled_fields' => "Ju nuk mund të hiqni fushat e mbushura!",
+    'wrong_password' => "Fjalëkalimi që keni futur nuk është i saktë!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!',
