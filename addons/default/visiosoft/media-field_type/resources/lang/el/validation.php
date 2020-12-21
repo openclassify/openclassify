@@ -2,5 +2,5 @@
 
 return [
     'valid_disk' => 'Ο διαμορφωμένος δίσκος μεταφόρτωσης για: χαρακτηριστικό δεν υπάρχει.',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+	'unsupported' => 'Αυτή η περιοχή προορίζεται μόνο για αρχεία εικόνας. Μπορείτε να προσθέσετε διαφορετικούς τύπους αρχείων στο πεδίο περιγραφής.'
 ];
