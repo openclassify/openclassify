@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'Ze względów bezpieczeństwa zmieniliśmy twoje hasło! Twoje nowe hasło to:',
     'required_all' => "Wszystkie pola są wymagane!",
     'can_not_remove_filled_fields' => "Nie możesz usunąć wypełnionych pól!",
+    'wrong_password' => "Wprowadzone hasło jest nieprawidłowe!",
 
     // Forgot Password
     'email_phone_not_found' => 'Adres e-mail, numer telefonu jest nieprawidłowy!',
