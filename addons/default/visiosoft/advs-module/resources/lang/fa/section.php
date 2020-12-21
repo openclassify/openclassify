@@ -55,4 +55,5 @@ return [
     'option_configuration' => [
         'title' => 'پیکربندی',
     ],
+    'translations' => 'ترجمه ها',
 ];
