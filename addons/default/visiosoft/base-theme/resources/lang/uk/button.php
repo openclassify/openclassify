@@ -11,5 +11,5 @@ return [
     'email' => 'Електронна пошта',
     'phone' => 'Телефон',
     'show_all' => 'Покажи все',
-    'hide_all' => 'Hide All',
+    'hide_all' => 'Сховати все',
 ];
