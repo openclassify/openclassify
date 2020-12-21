@@ -9,7 +9,7 @@ return [
     'delete' => 'حذف کریں',
     'extend' => 'بڑھائیں',
     'extend_all' => 'سب کو بڑھاؤ',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'غیر مطبوعہ کو بڑھاو',
     'edit' => 'ترمیم',
     'go_profile' => 'پروفائل کی تفصیل پر جائیں',
     'go_user' => 'صارف کی تفصیل پر جائیں',
