@@ -212,11 +212,11 @@ return [
         'instructions' => 'Old Value: New Value'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Stegfärg',
+        'instructions' => 'Ändrar de progressiva stegfärgen.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Skapa färg för annonsknapp',
+        'instructions' => 'Ändrar knappen som visas när det nya valet av annonskategori är klart.'
     ],
 ];
