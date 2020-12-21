@@ -9,7 +9,7 @@ return [
     'delete' => 'Silin',
     'extend' => 'Uzatmaq',
     'extend_all' => 'Hamısını genişləndirin',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Genişləndirin Nəşr olunmayıb',
     'edit' => 'Redaktə edin',
     'go_profile' => 'Profil təfərrüatlarına keçin',
     'go_user' => 'İstifadəçi təfərrüatlarına keçin',
