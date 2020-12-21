@@ -3,9 +3,9 @@
             {{ addBlock('ad-list/partials/gallery',{'featured_advs':featured_advs})|raw }}
             {% for adv in advs %}
                 <div class="col-sm-6 col-md-4 col-lg-4 d-flex align-items-stretch">
-                    <div class="card mb-4 box-shadow {% if adv.doping != null %} doping_type4 {% endif %}">
+                    <div class="card mb-4 box-shadow {% if adv.doping != null %} doping_type4 {% endif %} w-100">
                         <div class="row p-2" style="min-height: 150px;">
-                            <a href="{{ adv.detail_url }}">
+                            <a href="{{ adv.detail_url }}" class="w-100">
                                 <div class="col-md-12 justify-content-center align-self-center">
                                     <img class="card-img-top img-fluid img-thumbnail gallery-tn"
                                          src="{{ adv.cover_photo }}"
@@ -14,33 +14,33 @@
                             </a>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body pt-0">
                             {% if setting_value('visiosoft.theme.base::price_fields') %}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <b>{{ adv.price != '0'
-                                        ? adv.price.currency()
+                                        ? currency_format(adv.price,adv.currency)
                                         : trans('visiosoft.module.advs::field.free') }}</b>
                                 </div>
                             {% endif %}
                             <div class="d-flex justify-content-between align-items-center text-truncate">
                                 <a href="{{ adv.detail_url }}">
-                                    <p class="card-title d-inline-block">{{ adv.name }}</p>
+                                    <p class="card-title d-inline-block mb-1">{{ adv.name }}</p>
                                 </a>
                             </div>
                             {% if setting_value('visiosoft.module.location::home_page_location') %}
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small>
+                                    <span>
                                         <i class="fas fa-location-arrow text-primary"></i>
                                         {{ adv.city_name }}, {{ adv.country_name }}
-                                    </small>
+                                    </span>
                                 </div>
                             {% endif %}
                             {% if setting_value('visiosoft.theme.base::date_fields') %}
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small>
+                                    <span>
                                         <i class="far fa-clock text-dark"></i>
                                         {{ adv.created_at|date('d/m/Y') }}
-                                    </small>
+                                    </span>
                                 </div>
                             {% endif %}
                         </div>

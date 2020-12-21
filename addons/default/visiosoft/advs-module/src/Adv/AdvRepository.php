@@ -421,6 +421,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return DB::table('advs_advs')
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', 'approved')
+            ->whereNull('deleted_at')
             ->where('slug', '!=', '')
             ->where('cat' . $level, $catID)
             ->count();
