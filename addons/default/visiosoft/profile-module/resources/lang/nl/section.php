@@ -10,9 +10,9 @@ return [
     'general_setting' => 'Algemene instellingen',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Opleiding',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Onderwijsgedeelte',
     ],
 ];
