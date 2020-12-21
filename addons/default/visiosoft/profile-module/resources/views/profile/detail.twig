@@ -56,7 +56,9 @@
                                     </div>
                                     <div class="pt-2 d-flex flex-column flex-sm-row d-sm-block m-auto m-sm-0">
                                         <p class="mb-1 username">{{ user.name }}</p>
-                                        <p class="mb-1 last-login d-flex d-sm-block m-auto m-sm-0">{{ auth_user().last_login_at|date("d.m.Y - H:i") }}</p>
+                                        <p class="mb-1 last-login d-flex d-sm-block m-auto m-sm-0">
+                                            {{ auth_user().last_login_at|date(config_get('streams::datetime.date_format') ~ ' - ' ~ config_get('streams::datetime.time_format')) }}
+                                        </p>
                                     </div>
                                 </div>
                                 <div class="mt-4">
@@ -122,7 +124,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ profileForm.fields.gsm_phone.label }}
                                         </label>
-                                        {{ profileForm.fields.gsm_phone.input|raw }}
+                                        {{ profileForm.fields.gsm_phone.setAttributes({'maxlength': '14'}).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -130,7 +132,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ profileForm.fields.office_phone.label }}
                                         </label>
-                                        {{ profileForm.fields.office_phone.input|raw }}
+                                        {{ profileForm.fields.office_phone.setAttributes({'maxlength': '14'}).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -138,7 +140,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ profileForm.fields.land_phone.label }}
                                         </label>
-                                        {{ profileForm.fields.land_phone.input|raw }}
+                                        {{ profileForm.fields.land_phone.setAttributes({'maxlength': '14'}).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-12">
@@ -146,7 +148,7 @@
                                         <label class="control-label font-weight-bold">
                                             {{ trans("visiosoft.module.profile::field.birthday.name") }}
                                         </label>
-                                        {{ profileForm.fields.birthday.configSet('date_format','Y-m-d').setPlaceholder(now|date('Y-m-d')).input|raw }}
+                                        {{ profileForm.fields.birthday.configSet('date_format','Y-m-d').setPlaceholder(now|date(config_get('streams::datetime.date_format'))).input|raw }}
                                     </div>
                                 </div>
                                 <div class="col-md-6">
@@ -220,7 +222,6 @@
                                 </div>
                             </div>
                             {{ profileForm.close()|raw }}
-                        </div>
                         </div>
                         <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
                             {% set passwordForm = form('updatePassword').get() %}

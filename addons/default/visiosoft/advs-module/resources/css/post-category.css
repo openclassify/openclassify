@@ -52,8 +52,9 @@
     display: none;
 }
 
-.next-stap img {
+.next-stap svg {
     width: 60px;
+    height: 60px;
 }
 
 .next-stap p {
@@ -62,7 +63,7 @@
 }
 
 .btn-1 {
-    background-color: #00a651;
+    background-color: {{ setting_value('visiosoft.module.advs::create_ad_button_color') }};
     padding: 5px 30px 7px;
     color: #fff;
     border: 1px solid #dadada;

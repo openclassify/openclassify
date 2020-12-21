@@ -37,6 +37,8 @@ return [
             'create_ad' => [
                 'title' => 'visiosoft.module.advs::section.create_ad',
                 'fields' => [
+                    'steps_color',
+                    'create_ad_button_color',
                     'hide_standard_price_field',
                     'hide_options_field',
                     'hide_village_field',
