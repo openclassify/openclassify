@@ -212,11 +212,11 @@ return [
         'instructions' => '기존 가치 : 새로운 가치'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => '단계 색상',
+        'instructions' => '점진적 단계 색상을 변경합니다.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => '광고 버튼 색상 만들기',
+        'instructions' => '새 광고 카테고리 선택이 완료되면 표시되는 버튼을 변경합니다.'
     ],
 ];
