@@ -14,7 +14,7 @@
                             </a>
                         </div>
 
-                        <div class="card-body">
+                        <div class="card-body pt-0">
                             {% if setting_value('visiosoft.theme.base::price_fields') %}
                                 <div class="d-flex justify-content-between align-items-center">
                                     <b>{{ adv.price != '0'
@@ -24,23 +24,23 @@
                             {% endif %}
                             <div class="d-flex justify-content-between align-items-center text-truncate">
                                 <a href="{{ adv.detail_url }}">
-                                    <p class="card-title d-inline-block">{{ adv.name }}</p>
+                                    <p class="card-title d-inline-block mb-1">{{ adv.name }}</p>
                                 </a>
                             </div>
                             {% if setting_value('visiosoft.module.location::home_page_location') %}
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small>
+                                    <span>
                                         <i class="fas fa-location-arrow text-primary"></i>
                                         {{ adv.city_name }}, {{ adv.country_name }}
-                                    </small>
+                                    </span>
                                 </div>
                             {% endif %}
                             {% if setting_value('visiosoft.theme.base::date_fields') %}
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <small>
+                                    <span>
                                         <i class="far fa-clock text-dark"></i>
                                         {{ adv.created_at|date('d/m/Y') }}
-                                    </small>
+                                    </span>
                                 </div>
                             {% endif %}
                         </div>
