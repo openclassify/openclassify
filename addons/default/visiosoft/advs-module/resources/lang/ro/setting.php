@@ -212,11 +212,11 @@ return [
         'instructions' => 'Valoare veche: valoare nouă'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Pași Culoare',
+        'instructions' => 'Schimbă culoarea treptelor progresive.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Creați culoarea butonului publicitar',
+        'instructions' => 'Schimbă butonul care se afișează la finalizarea selecției noii categorii de anunțuri.'
     ],
 ];
