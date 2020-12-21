@@ -212,11 +212,11 @@ return [
         'instructions' => 'Stara wartość: nowa wartość'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Kolor kroków',
+        'instructions' => 'Zmienia kolor stopniowych kroków.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Utwórz kolor przycisku reklamy',
+        'instructions' => 'Zmienia przycisk wyświetlany po zakończeniu wyboru nowej kategorii reklam.'
     ],
 ];
