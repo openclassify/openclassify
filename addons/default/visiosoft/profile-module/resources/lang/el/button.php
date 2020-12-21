@@ -9,7 +9,7 @@ return [
     'delete' => 'Διαγράφω',
     'extend' => 'Επεκτείνω',
     'extend_all' => 'Επέκταση όλων',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Επέκταση μη δημοσιευμένου',
     'edit' => 'Επεξεργασία',
     'go_profile' => 'Μεταβείτε στη Λεπτομέρεια προφίλ',
     'go_user' => 'Μεταβείτε στη Λεπτομέρεια χρήστη',
