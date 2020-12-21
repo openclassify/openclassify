@@ -9,7 +9,7 @@ return [
     'delete' => 'Radera',
     'extend' => 'Förlänga',
     'extend_all' => 'Förläng alla',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Förlänga opublicerat',
     'edit' => 'Redigera',
     'go_profile' => 'Gå till profildetalj',
     'go_user' => 'Gå till användarinformation',
