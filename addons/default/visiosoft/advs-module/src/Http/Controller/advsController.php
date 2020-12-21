@@ -570,6 +570,9 @@ class AdvsController extends PublicController
             } else {
                 $ogImage = $coverPhoto;
             }
+            //ogMeta Tags
+            $this->template->set('og_image', $ogImage);
+            $this->template->set('og_url', $this->adv_model->getAdvDetailLinkByModel($adv, 'list'));
 
             $this->template->set('meta_image', $ogImage);
             $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
