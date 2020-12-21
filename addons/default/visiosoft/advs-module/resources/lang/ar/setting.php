@@ -212,11 +212,11 @@ return [
         'instructions' => 'القيمة القديمة: قيمة جديدة'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'خطوات اللون',
+        'instructions' => 'يغير لون الخطوات التدريجية.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'إنشاء لون زر الإعلان',
+        'instructions' => 'يغير الزر الذي يظهر عند الانتهاء من اختيار فئة الإعلان الجديدة.'
     ],
 ];
