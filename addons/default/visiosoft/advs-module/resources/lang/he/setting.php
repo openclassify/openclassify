@@ -212,11 +212,11 @@ return [
         'instructions' => 'ערך ישן: ערך חדש'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'מדרגות צבע',
+        'instructions' => 'משנה את צבע הצעדים המתקדמים.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'צור צבע כפתור מודעה',
+        'instructions' => 'משנה את הכפתור שמופיע לאחר בחירת קטגוריית המודעות החדשה.'
     ],
 ];
