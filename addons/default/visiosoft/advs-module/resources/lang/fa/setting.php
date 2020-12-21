@@ -213,11 +213,11 @@ return [
         'instructions' => 'ارزش قدیم: ارزش جدید'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'مراحل رنگ',
+        'instructions' => 'رنگ مراحل پیشرفته را تغییر می دهد.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'رنگ دکمه تبلیغات را ایجاد کنید',
+        'instructions' => 'دکمه ای را که با پایان یافتن انتخاب دسته جدید آگهی نشان داده می شود ، تغییر می دهد.'
     ],
 ];
