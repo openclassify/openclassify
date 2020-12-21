@@ -9,7 +9,7 @@ return [
     'delete' => 'Excluir',
     'extend' => 'Ampliar',
     'extend_all' => 'Estender tudo',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Estender não publicado',
     'edit' => 'Editar',
     'go_profile' => 'Ir para o detalhe do perfil',
     'go_user' => 'Ir para Detalhes do Usuário',
