@@ -9,7 +9,7 @@ return [
     'delete' => 'מחק',
     'extend' => 'הרחיבו',
     'extend_all' => 'הרחב את הכל',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'הרחב שלא פורסם',
     'edit' => 'ערוך',
     'go_profile' => 'עבור לפרטי הפרופיל',
     'go_user' => 'עבור לפרטי המשתמש',
