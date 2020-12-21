@@ -9,7 +9,7 @@ return [
     'delete' => 'حذف',
     'extend' => 'توسعه دادن، گسترش',
     'extend_all' => 'گسترش همه',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'منتشر نشده',
     'edit' => 'ویرایش کنید',
     'go_profile' => 'به جزئیات مشخصات بروید',
     'go_user' => 'به جزئیات کاربر بروید',
