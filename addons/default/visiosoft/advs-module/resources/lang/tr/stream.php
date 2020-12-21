@@ -14,7 +14,7 @@ return [
         'name' => 'Özel Alanlar',
     ],
     'custom_field_advs' => [
-        'name' => 'Özel alan önerileri',
+        'name' => 'Özel alan İlanları',
     ],
     'cf_values' => [
         'name' => 'ÖA değerleri',
@@ -26,7 +26,7 @@ return [
         'name' => 'Ürün Seçenekleri',
     ],
     'productoptions_value' => [
-        'name' => 'Seçenekler değeri',
+        'name' => 'Seçenekler Değeri',
     ],
     'option_configuration' => [
         'name' => 'Yapılandırma',

@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Новый адв',
+    'new_classified' => 'Новое объявление',
     'new_category' => 'Новая категория',
     'new_country' => 'Новая Страна',
     'new_city' => 'Новый город',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'Новая конфигурация опций',
 	'create_configurations' => 'Создать конфигурации',
 	'replicate' => 'Тиражировать',
+	'fast_create' => 'Быстрое создание',
+	'publish' => 'Публиковать',
+	'import' => 'Импортировать',
 ];

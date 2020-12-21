@@ -10,9 +10,9 @@ return [
     'general_setting' => 'Mîhengên Giştî',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Zanyarî',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Beşa perwerdehiyê',
     ],
 ];

@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'זירת מסחר',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'אזור מחיר מוסתר',
+	],
     'hide_price_filter' => [
         'name' => 'הסתר מסנן מחירים',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'הראה פירורי לחם בעת יצירת מודעה',
+    ],
+    'show_ads_count' => [
+        'name' => 'ספירת מודעות הצגה',
+        'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'הצג הסכם מודעות לפרסום',
+        'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
+    ],
+    'override_text' => [
+        'name' => 'עקוף טקסט',
+        'instructions' => 'ערך ישן: ערך חדש'
+    ],
+    'steps_color' => [
+        'name' => 'מדרגות צבע',
+        'instructions' => 'משנה את צבע הצעדים המתקדמים.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'צור צבע כפתור מודעה',
+        'instructions' => 'משנה את הכפתור שמופיע לאחר בחירת קטגוריית המודעות החדשה.'
     ],
 ];

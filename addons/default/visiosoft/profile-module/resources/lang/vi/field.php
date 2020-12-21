@@ -59,10 +59,10 @@ return [
         'name' => 'Sinh nhật'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Địa chỉ Facebook'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Địa chỉ Google'
 	],
     'education' => [
         'name' => 'Giáo dục'
@@ -122,7 +122,7 @@ return [
         'name' => 'Người dùng'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Tên'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Bang giáo dục'
 	],
 ];

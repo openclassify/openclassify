@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Njoftime i ri',
+    'new_classified' => 'Klasifikimi i ri',
     'new_category' => 'Kategoria e re',
     'new_country' => 'Shteti i ri',
     'new_city' => 'Qark i Ri',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'Konfigurimi i ri i opsionit',
 	'create_configurations' => 'Krijoni konfigurime',
 	'replicate' => 'Kopjoni',
+	'fast_create' => 'Krijo shpejt',
+	'publish' => 'Publikoni',
+	'import' => 'Importit',
 ];

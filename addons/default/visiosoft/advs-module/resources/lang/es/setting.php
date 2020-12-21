@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Zona de precio oculta',
+	],
     'hide_price_filter' => [
         'name' => 'Ocultar filtro de precio',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Mostrar ruta de navegación al crear un anuncio',
+    ],
+    'show_ads_count' => [
+        'name' => 'Mostrar recuento de anuncios',
+        'instructions' => 'Mostrar el recuento de anuncios en la lista de categorías de la izquierda',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Mostrar acuerdo de publicación',
+        'instructions' => 'Active esta opción si desea mostrar un acuerdo de política de privacidad en la página de creación de anuncios.',
+    ],
+    'override_text' => [
+        'name' => 'Anular texto',
+        'instructions' => 'Valor anterior: Valor nuevo'
+    ],
+    'steps_color' => [
+        'name' => 'Color de pasos',
+        'instructions' => 'Cambia el color de los pasos progresivos.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Crear color de botón de anuncio',
+        'instructions' => 'Cambia el botón que aparece cuando finaliza la selección de la nueva categoría de anuncios.'
     ],
 ];

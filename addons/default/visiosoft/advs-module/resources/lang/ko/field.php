@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => '하위 카테고리 6'
     ],
+    'cat8' => [
+        'name' => '하위 카테고리 7'
+    ],
+    'cat9' => [
+        'name' => '하위 카테고리 8'
+    ],
+    'cat10' => [
+        'name' => '하위 카테고리 9'
+    ],
     'currency' => [
         'name' => '통화'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => '리스팅 세부 사항',
     'preview' => '시사',
     'congratulations' => '축하합니다',
+    'ad_desc' => '광고 설명',
+    'upload_photos' => '사진 업로드',
+    'additional_fields' => '추가 필드',
+    'ad_location' => '광고 위치',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',

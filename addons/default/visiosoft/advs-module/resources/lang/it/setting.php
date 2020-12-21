@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Piazza del mercato',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Area di Prezzo Nascosta',
+	],
     'hide_price_filter' => [
         'name' => 'Nascondi filtro prezzo',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Mostra breadcrumb durante la creazione di un annuncio',
+    ],
+    'show_ads_count' => [
+        'name' => 'Mostra conteggio annunci',
+        'instructions' => 'Mostra il conteggio degli annunci nell\'elenco delle categorie a sinistra',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Mostra accordo post annuncio',
+        'instructions' => 'Attiva questa opzione se desideri visualizzare un accordo sulla politica sulla privacy nella pagina di creazione dell\'annuncio',
+    ],
+    'override_text' => [
+        'name' => 'Sostituisci testo',
+        'instructions' => 'Vecchio valore: nuovo valore'
+    ],
+    'steps_color' => [
+        'name' => 'Colore dei passaggi',
+        'instructions' => 'Cambia il colore dei gradini progressivi.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Crea colore pulsante annuncio',
+        'instructions' => 'Modifica il pulsante che viene visualizzato al termine della selezione della nuova categoria di annunci.'
     ],
 ];

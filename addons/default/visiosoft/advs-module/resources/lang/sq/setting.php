@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Vendi i tregut',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Zona e Çmimit e Fshehur',
+	],
     'hide_price_filter' => [
         'name' => 'Fsheh Filterin e Pricemimeve',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Tregoni Breadcrumb kur krijoni një reklamë',
+    ],
+    'show_ads_count' => [
+        'name' => 'Shfaq Numrin e Reklamave',
+        'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
+        'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
+    ],
+    'override_text' => [
+        'name' => 'Mbishkruaj tekstin',
+        'instructions' => 'Vlera e Vjetër: Vlera e Re'
+    ],
+    'steps_color' => [
+        'name' => 'Hapat Ngjyra',
+        'instructions' => 'Ndryshon ngjyrën e hapave progresivë.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Krijo ngjyrën e butonit të reklamës',
+        'instructions' => 'Ndryshon butonin që shfaqet kur të përfundojë zgjedhja e kategorisë së re të reklamës.'
     ],
 ];

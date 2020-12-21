@@ -8,9 +8,9 @@ return [
         'name' => 'Un vestito',
     ],
     'education' => [
-        'name' => 'Education',
+        'name' => 'Formazione scolastica',
     ],
     'education_part' => [
-        'name' => 'Education part',
+        'name' => 'Parte dell\'istruzione',
     ],
 ];

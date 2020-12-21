@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Subcategoría 6'
     ],
+    'cat8' => [
+        'name' => 'Subcategoría 7'
+    ],
+    'cat9' => [
+        'name' => 'Subcategoría 8'
+    ],
+    'cat10' => [
+        'name' => 'Subcategoría 9'
+    ],
     'currency' => [
         'name' => 'Moneda'
     ],
@@ -306,6 +315,10 @@ return [
     'listing_details' => 'listado de detalles',
     'preview' => 'Avance',
     'congratulations' => 'Felicidades',
+    'ad_desc' => 'Descripción del anuncio',
+    'upload_photos' => 'Subir fotos',
+    'additional_fields' => 'Campos Adicionales',
+    'ad_location' => 'Ubicación del anuncio',
 
     'free' => 'Gratis',
     'ad_date' => 'Fecha de anuncio',

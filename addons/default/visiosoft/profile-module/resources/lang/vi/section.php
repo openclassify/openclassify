@@ -10,9 +10,9 @@ return [
     'general_setting' => 'Cài đặt chung',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Giáo dục',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Phần giáo dục',
     ],
 ];

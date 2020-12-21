@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Nuovo Adv',
+    'new_classified' => 'Nuovo classificato',
     'new_category' => 'Nuova categoria',
     'new_country' => 'Nuovo Paese',
     'new_city' => 'Nuova città',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'Nuova configurazione delle opzioni',
 	'create_configurations' => 'Crea configurazioni',
 	'replicate' => 'Replicare',
+	'fast_create' => 'Creazione veloce',
+	'publish' => 'Pubblicare',
+	'import' => 'Importare',
 ];

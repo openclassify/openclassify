@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'উপ বিভাগ 6'
     ],
+    'cat8' => [
+        'name' => 'উপ বিভাগ 7'
+    ],
+    'cat9' => [
+        'name' => 'উপ বিভাগ 8'
+    ],
+    'cat10' => [
+        'name' => 'উপ বিভাগ 9'
+    ],
     'currency' => [
         'name' => 'মুদ্রা'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'তালিকা বিবরণ',
     'preview' => 'পূর্বরূপ',
     'congratulations' => 'অভিনন্দন',
+    'ad_desc' => 'বিজ্ঞাপন বিবরণ',
+    'upload_photos' => 'ফটো আপলোড',
+    'additional_fields' => 'অতিরিক্ত ক্ষেত্রসমূহ',
+    'ad_location' => 'বিজ্ঞাপনের অবস্থান',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',

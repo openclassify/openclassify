@@ -59,10 +59,10 @@ return [
         'name' => 'जन्मदिन'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'फेसबुक एड्रेस'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Google पता'
 	],
     'education' => [
         'name' => 'शिक्षा'
@@ -122,7 +122,7 @@ return [
         'name' => 'उपयोगकर्ता'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'नाम'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'शिक्षा की स्थिति'
 	],
 ];

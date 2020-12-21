@@ -10,9 +10,9 @@ return [
     'general_setting' => '일반 설정',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => '교육',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => '교육 부분',
     ],
 ];

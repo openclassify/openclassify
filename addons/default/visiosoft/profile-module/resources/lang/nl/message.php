@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'Vanwege beveiligingsproblemen hebben we uw wachtwoord gewijzigd! Je nieuwe wachtwoord is:',
     'required_all' => "Alle velden zijn vereist!",
     'can_not_remove_filled_fields' => "U kunt geen ingevulde velden verwijderen!",
+    'wrong_password' => "Het ingevoerde wachtwoord is niet correct!",
 
     // Forgot Password
     'email_phone_not_found' => 'Het e-mailadres, telefoonnummer is niet correct!',

@@ -8,9 +8,9 @@ return [
         'name' => 'Địa chỉ',
     ],
     'education' => [
-        'name' => 'Education',
+        'name' => 'Giáo dục',
     ],
     'education_part' => [
-        'name' => 'Education part',
+        'name' => 'Phần giáo dục',
     ],
 ];

@@ -59,10 +59,10 @@ return [
         'name' => 'День народження'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Адреса Facebook'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Адреса Google'
 	],
     'education' => [
         'name' => 'Освіта'
@@ -122,7 +122,7 @@ return [
         'name' => 'Користувач'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Ім\'я'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Стан освіти'
 	],
 ];

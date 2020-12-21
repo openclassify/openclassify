@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Ny adv',
+    'new_classified' => 'Ny klassificering',
     'new_category' => 'Ny kategori',
     'new_country' => 'Nytt land',
     'new_city' => 'Ny stad',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'Ny alternativkonfiguration',
 	'create_configurations' => 'Skapa konfigurationer',
 	'replicate' => 'Återskapa',
+	'fast_create' => 'Skapa snabbt',
+	'publish' => 'Publicera',
+	'import' => 'Importera',
 ];

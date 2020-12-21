@@ -11,5 +11,5 @@ return [
     'email' => 'E-nameyê bişînin',
     'phone' => 'Telefon',
     'show_all' => 'Hemî nîşan bide',
-    'hide_all' => 'Hide All',
+    'hide_all' => 'Veşêre Hemî',
 ];

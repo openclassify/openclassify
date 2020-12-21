@@ -122,7 +122,7 @@ return [
         'name' => 'Utente'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Nome'
 	],
 
     /*Menu Button*/
@@ -483,6 +483,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Stato dell\'istruzione'
 	],
 ];

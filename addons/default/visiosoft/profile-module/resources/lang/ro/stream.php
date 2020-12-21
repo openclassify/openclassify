@@ -8,9 +8,9 @@ return [
         'name' => 'Abordare',
     ],
     'education' => [
-        'name' => 'Education',
+        'name' => 'Educaţie',
     ],
     'education_part' => [
-        'name' => 'Education part',
+        'name' => 'Partea educație',
     ],
 ];

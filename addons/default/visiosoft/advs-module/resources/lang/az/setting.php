@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Bazar yeri',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Qiymət sahəsi gizlidir',
+	],
     'hide_price_filter' => [
         'name' => 'Qiymət filtrini gizlət',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Reklam yaratarkən çörək parçasını göstərin',
+    ],
+    'show_ads_count' => [
+        'name' => 'Reklam sayını göstərin',
+        'instructions' => 'Sol kateqoriyalar siyahısında reklamların sayını göstərin',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Post Elan Müqaviləsini Göstərin',
+        'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
+    ],
+    'override_text' => [
+        'name' => 'Mətni ləğv edin',
+        'instructions' => 'Köhnə dəyər: Yeni dəyər'
+    ],
+    'steps_color' => [
+        'name' => 'Adımlar Rəng',
+        'instructions' => 'Proqressiv addımların rəngini dəyişdirir.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Reklam Düyməsini Rəng Yaradın',
+        'instructions' => 'Yeni reklam kateqoriyası seçimi bitdikdə görünən düyməni dəyişdirir.'
     ],
 ];
