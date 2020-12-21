@@ -34,5 +34,6 @@ return [
     'address' => [
         'name' => '住所',
     ],
-    'selected' => '選択済み'
+    'selected' => '選択済み',
+    'choose_an_option' => 'オプションを選択...',
 ];
