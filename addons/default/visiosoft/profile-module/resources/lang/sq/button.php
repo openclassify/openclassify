@@ -9,7 +9,7 @@ return [
     'delete' => 'Fshini',
     'extend' => 'Shpreh',
     'extend_all' => 'Zgjeroni të gjitha',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Zgjasni të pabotuar',
     'edit' => 'Redakto',
     'go_profile' => 'Shkoni në Detajin e Profilit',
     'go_user' => 'Shkoni te Detajet e përdoruesit',
