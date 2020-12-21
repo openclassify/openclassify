@@ -212,11 +212,11 @@ return [
         'instructions' => 'Giá trị cũ: Giá trị mới'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Các bước màu',
+        'instructions' => 'Thay đổi màu của các bước tiến bộ.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Tạo màu nút quảng cáo',
+        'instructions' => 'Thay đổi nút hiển thị khi quá trình lựa chọn danh mục quảng cáo mới hoàn tất.'
     ],
 ];
