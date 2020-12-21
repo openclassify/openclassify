@@ -2,5 +2,5 @@
 
 return [
     'valid_disk' => 'القرص المخصص لـ :attribute غير موجود.',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+	'unsupported' => 'هذه المنطقة مخصصة لملفات الصور فقط. يمكنك إضافة أنواع ملفات مختلفة في حقل الوصف.'
 ];
