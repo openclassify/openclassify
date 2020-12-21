@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Kjo shpallje nuk ekziston!",
     'select_location_error' => "Ju lutemi zgjidhni një vendndodhje në hartë!",
     'this_ad_is_not_valid_anymore' => "Kjo reklamë nuk është më e vlefshme!",
+    'approve_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në Aktiv!",
+    'passive_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në pasiv!",
 ];
