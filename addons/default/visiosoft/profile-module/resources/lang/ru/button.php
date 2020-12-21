@@ -9,7 +9,7 @@ return [
     'delete' => 'удалять',
     'extend' => 'простираться',
     'extend_all' => 'Расширить все',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Продлить неопубликованные',
     'edit' => 'редактировать',
     'go_profile' => 'Перейти к профилю',
     'go_user' => 'Перейти к информации о пользователе',
