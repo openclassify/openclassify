@@ -212,11 +212,11 @@ return [
         'instructions' => 'Старое значение: новое значение'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Цвет ступеней',
+        'instructions' => 'Изменяет цвет прогрессивных шагов.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Создать цвет кнопки объявления',
+        'instructions' => 'Изменяет кнопку, которая появляется после завершения выбора новой категории объявлений.'
     ],
 ];
