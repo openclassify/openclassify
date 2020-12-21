@@ -212,11 +212,11 @@ return [
         'instructions' => 'پرانی قیمت: نیا ویلیو'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'اقدامات رنگین',
+        'instructions' => 'ترقی پسند اقدامات کا رنگ بدلتا ہے۔'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'ایڈ بٹن کا رنگ بنائیں',
+        'instructions' => 'نئے اشتہار کیٹیگری کا انتخاب ختم ہونے پر بٹن تبدیل ہوتا ہے۔'
     ],
 ];
