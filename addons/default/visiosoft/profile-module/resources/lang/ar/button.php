@@ -9,7 +9,7 @@ return [
     'delete' => 'حذف',
     'extend' => 'تمديد',
     'extend_all' => 'تمديد الكل',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'تمديد غير منشور',
     'edit' => 'تعديل',
     'go_profile' => 'الذهاب إلى تفاصيل الملف الشخصي',
     'go_user' => 'انتقل إلى تفاصيل المستخدم',
