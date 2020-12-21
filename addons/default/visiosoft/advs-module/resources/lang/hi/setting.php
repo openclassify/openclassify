@@ -212,11 +212,11 @@ return [
         'instructions' => 'पुराना मूल्य: नया मूल्य'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'चरण रंग',
+        'instructions' => 'प्रगतिशील चरणों का रंग बदलता है।'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'विज्ञापन बटन रंग बनाएँ',
+        'instructions' => 'नया विज्ञापन श्रेणी चयन समाप्त होने पर दिखाई देने वाले बटन को बदल देता है।'
     ],
 ];
