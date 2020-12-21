@@ -9,7 +9,7 @@ return [
     'delete' => '지우다',
     'extend' => '넓히다',
     'extend_all' => '모두 확장',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => '게시되지 않은 항목 확장',
     'edit' => '편집하다',
     'go_profile' => '프로필 정보로 이동',
     'go_user' => '사용자 정보로 이동',
