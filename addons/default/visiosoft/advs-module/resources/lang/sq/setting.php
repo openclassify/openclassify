@@ -212,11 +212,11 @@ return [
         'instructions' => 'Vlera e Vjetër: Vlera e Re'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Hapat Ngjyra',
+        'instructions' => 'Ndryshon ngjyrën e hapave progresivë.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Krijo ngjyrën e butonit të reklamës',
+        'instructions' => 'Ndryshon butonin që shfaqet kur të përfundojë zgjedhja e kategorisë së re të reklamës.'
     ],
 ];
