@@ -11,5 +11,5 @@ return [
     'email' => 'E-mail',
     'phone' => 'Điện thoại',
     'show_all' => 'Hiển thị tất cả',
-    'hide_all' => 'Hide All',
+    'hide_all' => 'Ẩn tất cả',
 ];
