@@ -212,11 +212,11 @@ return [
         'instructions' => 'Παλιά τιμή: Νέα τιμή'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Χρώμα βημάτων',
+        'instructions' => 'Αλλάζει το χρώμα των προοδευτικών βημάτων.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Δημιουργία χρώματος κουμπιού διαφήμισης',
+        'instructions' => 'Αλλάζει το κουμπί που εμφανίζεται όταν ολοκληρωθεί η νέα επιλογή κατηγορίας διαφημίσεων.'
     ],
 ];
