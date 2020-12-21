@@ -212,11 +212,11 @@ return [
         'instructions' => 'পুরানো মান: নতুন মান'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'পদক্ষেপের রঙ',
+        'instructions' => 'প্রগতিশীল পদক্ষেপের রঙ পরিবর্তন করে।'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'বিজ্ঞাপন বোতামের রঙ তৈরি করুন',
+        'instructions' => 'নতুন বিজ্ঞাপন বিভাগ নির্বাচন শেষ হলে যে বোতামটি প্রদর্শিত হবে তা পরিবর্তন করে।'
     ],
 ];
