@@ -59,10 +59,10 @@ return [
         'name' => 'روز تولد'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'آدرس فیس بوک'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'آدرس Google'
 	],
     'education' => [
         'name' => 'تحصیلات'
@@ -122,7 +122,7 @@ return [
         'name' => 'کاربر'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'نام'
 	],
 
     /*Menu Button*/
@@ -480,6 +480,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'دولت آموزش و پرورش'
 	],
 ];
