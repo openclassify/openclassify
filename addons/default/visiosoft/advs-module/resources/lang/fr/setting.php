@@ -212,11 +212,11 @@ return [
         'instructions' => 'Ancienne valeur: nouvelle valeur'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
-        'instructions' => 'Changes the progressive steps color.'
+        'name' => 'Couleur des étapes',
+        'instructions' => 'Modifie la couleur des étapes progressives.'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Créer une couleur de bouton d\'annonce',
+        'instructions' => 'Modifie le bouton qui apparaît lorsque la sélection de la nouvelle catégorie d\'annonces est terminée.'
     ],
 ];
