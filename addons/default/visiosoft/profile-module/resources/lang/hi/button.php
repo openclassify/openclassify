@@ -9,7 +9,7 @@ return [
     'delete' => 'हटाएं',
     'extend' => 'बढ़ाएँ',
     'extend_all' => 'सभी बढ़ाएँ',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'अप्रकाशित का विस्तार करें',
     'edit' => 'संपादित करें',
     'go_profile' => 'प्रोफाइल डिटेल पर जाएं',
     'go_user' => 'यूजर डिटेल पर जाएं',
