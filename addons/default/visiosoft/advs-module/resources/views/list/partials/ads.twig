@@ -24,12 +24,12 @@
                             {% if not setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
                                 <p class="theme-price-old small mb-0"><del>
                                         {{ adv.standard_price != adv.price and adv.standard_price != '0'
-                                        ? adv.standard_price.currency()
+                                        ? currency_format(adv.standard_price,adv.currency)
                                         : '' }}
                                 </del></p>
                             {% endif %}
                             <b>{{ adv.price != '0'
-                                    ? adv.price.currency()
+                                    ? currency_format(adv.price,adv.currency)
                                     : trans('visiosoft.module.advs::field.free') }}</b>
                         </div>
                         {% if setting_value('visiosoft.module.location::list_page_location') %}
