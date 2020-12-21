@@ -10,9 +10,9 @@ return [
     'general_setting' => 'Cilësimet e përgjithshme',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Arsimi',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Pjesa e arsimit',
     ],
 ];
