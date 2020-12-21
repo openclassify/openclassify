@@ -9,7 +9,7 @@ return [
     'delete' => '削除する',
     'extend' => '伸ばす',
     'extend_all' => 'すべて拡張',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => '未公開の拡張',
     'edit' => '編集する',
     'go_profile' => 'プロファイルの詳細に移動',
     'go_user' => 'ユーザーの詳細に移動',
