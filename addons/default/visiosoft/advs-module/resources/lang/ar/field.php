@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'الفئة الفرعية 6'
     ],
+    'cat8' => [
+        'name' => 'الفئة الفرعية 7'
+    ],
+    'cat9' => [
+        'name' => 'الفئة الفرعية 8'
+    ],
+    'cat10' => [
+        'name' => 'الفئة الفرعية 9'
+    ],
     'currency' => [
         'name' => 'دقة'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'تفاصيل قائمة',
     'preview' => 'معاينة',
     'congratulations' => 'تهانينا',
+    'ad_desc' => 'وصف الإعلان',
+    'upload_photos' => 'تحميل الصور',
+    'additional_fields' => 'حقول إضافية',
+    'ad_location' => 'موقع الإعلان',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
