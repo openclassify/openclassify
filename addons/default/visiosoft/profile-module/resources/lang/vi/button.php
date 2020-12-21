@@ -9,7 +9,7 @@ return [
     'delete' => 'Xóa bỏ',
     'extend' => 'Mở rộng',
     'extend_all' => 'Mở rộng tất cả',
-    'extend_unpublished' => 'Extend Unpublished',
+    'extend_unpublished' => 'Mở rộng Chưa xuất bản',
     'edit' => 'Biên tập',
     'go_profile' => 'Đi đến chi tiết hồ sơ',
     'go_user' => 'Đi đến chi tiết người dùng',
