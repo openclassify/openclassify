@@ -4,8 +4,9 @@
     {{ content|raw }}
 
     {% if form.mode == 'edit' %}
+        {% set entry = form.entry.setAttribute('cf_json', null) %}
         <script>
-            const ad = JSON.parse(`{{ form.entry|json_encode|raw }}`)
+            const ad = JSON.parse(`{{ entry|json_encode|raw }}`)
         </script>
     {% endif %}
 {% endblock %}
