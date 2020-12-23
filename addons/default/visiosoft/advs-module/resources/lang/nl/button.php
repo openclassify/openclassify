@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Nieuwe Adv',
+    'new_classified' => 'Nieuw ingedeeld',
     'new_category' => 'Nieuwe categorie',
     'new_country' => 'Nieuw Land',
     'new_city' => 'Nieuwe stad',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'Nieuwe optieconfiguratie',
 	'create_configurations' => 'Maak configuraties',
 	'replicate' => 'Repliceren',
+	'fast_create' => 'Snel aanmaken',
+	'publish' => 'Publiceren',
+	'import' => 'Importeren',
 ];

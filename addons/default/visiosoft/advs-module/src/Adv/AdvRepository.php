@@ -421,6 +421,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return DB::table('advs_advs')
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', 'approved')
+            ->whereNull('deleted_at')
             ->where('slug', '!=', '')
             ->where('cat' . $level, $catID)
             ->count();
@@ -444,7 +445,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function extendAds($allAds, $isAdmin = false)
     {
-        if (!is_numeric($allAds)) {
+        if (is_array($allAds)) {
+            $advs = $this->newQuery()->whereIn('id', $allAds);
+        } elseif (!is_numeric($allAds)) {
             if ($isAdmin && auth()->user()->hasRole('admin')) {
                 $advs = $this->newQuery();
             } else {

@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'お誕生日'
     ],
+	'facebook_address' => [
+		'name' => 'Facebookアドレス'
+	],
+	'google_address' => [
+		'name' => 'Googleアドレス'
+	],
     'education' => [
         'name' => '教育'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'ユーザー'
     ],
+	'name' => [
+		'name' => '名前'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'パスワード',
     ],
+    'old_password' => [
+        'name' => '以前のパスワード',
+    ],
     'new_password' => [
         'name' => '新しいパスワード',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => '個人'
     ],
+
+	'education_part' => [
+		'name' => '教育の状態'
+	],
 ];

@@ -9,10 +9,13 @@ return [
     'delete' => '削除する',
     'extend' => '伸ばす',
     'extend_all' => 'すべて拡張',
+    'extend_unpublished' => '未公開の拡張',
     'edit' => '編集する',
     'go_profile' => 'プロファイルの詳細に移動',
     'go_user' => 'ユーザーの詳細に移動',
     'personal' => '個人的な',
     'corporate' => 'コーポレート',
     'export' => '書き出す',
+    'new_education' => '新しい教育',
+    'new_education_part' => '新教育部',
 ];

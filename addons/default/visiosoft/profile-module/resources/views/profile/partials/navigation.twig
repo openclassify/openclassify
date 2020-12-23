@@ -28,6 +28,12 @@
     </a>
 
     {{ addBlock('profile/navigation',{'marketPlace':marketPlace})|raw }}
+
+    <a href="{{ url('logout') }}"
+       class="px-3 link-unstyled d-flex d-md-none">
+        <img src="{{ img('visiosoft.module.profile::images/logout.svg').url }}">
+        <p>{{ trans('visiosoft.theme.base::field.logout.name') }}</p>
+    </a>
 </div>
 
 <div class="overlay"></div>

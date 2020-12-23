@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Tiểu mục 6'
     ],
+    'cat8' => [
+        'name' => 'Danh mục phụ 7'
+    ],
+    'cat9' => [
+        'name' => 'Danh mục phụ 8'
+    ],
+    'cat10' => [
+        'name' => 'Danh mục phụ 9'
+    ],
     'currency' => [
         'name' => 'Tiền tệ'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'Chi tiết danh sách',
     'preview' => 'Xem trước',
     'congratulations' => 'Xin chúc mừng',
+    'ad_desc' => 'mô tả quảng cáo',
+    'upload_photos' => 'Tải ảnh lên',
+    'additional_fields' => 'các trường bổ sung',
+    'ad_location' => 'Vị trí Quảng cáo',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',

@@ -26,7 +26,7 @@ $(document).ready(function () {
             success: function (response) {
                 hideLoader();
                 if(response['title'] != undefined){
-                    response['success'] ? $('.cross-icon').hide() : $('.check-icon').hide();
+                    response['success'] ? $('.post-icon > svg:last-of-type').hide() : $('.post-icon > svg:first-of-type').hide();
 
                     let btn = '<button type="submit" class="btn-1">'+response['continueBtn']+'</button>';
                     if (response['link']) {

@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'اعلان جديد',
+    'new_classified' => 'تصنيف جديد',
     'new_category' => 'فئة جديدة',
     'new_country' => 'بلد جديد',
     'new_city' => 'مدينة جديدة',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'تكوين خيار جديد',
 	'create_configurations' => 'تكوين التكوينات',
 	'replicate' => 'استنساخ',
+	'fast_create' => 'إنشاء سريع',
+	'publish' => 'ينشر',
+	'import' => 'استيراد',
 ];

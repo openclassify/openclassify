@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Alt kateqoriya 6'
     ],
+    'cat8' => [
+        'name' => 'Alt kateqoriya 7'
+    ],
+    'cat9' => [
+        'name' => 'Alt kateqoriya 8'
+    ],
+    'cat10' => [
+        'name' => 'Alt kateqoriya 9'
+    ],
     'currency' => [
         'name' => 'Valyuta'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'Listing Details',
     'preview' => 'Önizləmə',
     'congratulations' => 'Təbrik edirəm',
+    'ad_desc' => 'Reklam Təsviri',
+    'upload_photos' => 'Şəkillər yükləyin',
+    'additional_fields' => 'Əlavə sahələr',
+    'ad_location' => 'Reklam yeri',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Reklam Tarixi',

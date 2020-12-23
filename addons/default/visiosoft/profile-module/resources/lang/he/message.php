@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'בגלל בעיות אבטחה, שינינו את הסיסמא שלך! הסיסמה החדשה שלך היא:',
     'required_all' => "כל השדה נדרש!",
     'can_not_remove_filled_fields' => "אינך יכול להסיר שדות מלאים!",
+    'wrong_password' => "הסיסמה שהזנת אינה נכונה!",
 
     // Forgot Password
     'email_phone_not_found' => 'הדואר האלקטרוני, מספר הטלפון אינו תקין!',

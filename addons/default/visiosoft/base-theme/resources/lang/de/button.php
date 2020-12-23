@@ -2,7 +2,7 @@
 
 return [
     'post_ad' => [
-        'name' => 'Postanzeige',
+        'name' => 'Anzeige erstellen',
     ],
     'login' => 'Einloggen',
     'register' => 'Registrieren',
@@ -11,4 +11,5 @@ return [
     'email' => 'Email',
     'phone' => 'Telefon',
     'show_all' => 'Zeige alles',
+    'hide_all' => 'Versteck alles',
 ];

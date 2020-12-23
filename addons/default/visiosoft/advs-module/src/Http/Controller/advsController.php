@@ -570,6 +570,9 @@ class AdvsController extends PublicController
             } else {
                 $ogImage = $coverPhoto;
             }
+            //ogMeta Tags
+            $this->template->set('og_image', $ogImage);
+            $this->template->set('og_url', $this->adv_model->getAdvDetailLinkByModel($adv, 'list'));
 
             $this->template->set('meta_image', $ogImage);
             $this->template->set('meta_keywords', implode(',', explode(' ', $adv->name)));
@@ -1244,7 +1247,12 @@ class AdvsController extends PublicController
 
     public function extendAll($isAdmin = null)
     {
-        $adsExtended = $this->adv_repository->extendAds(true, $isAdmin);
+        if (\request()->unpublished) {
+            $allAds = $this->adv_model->pendingAdvsByUser()->pluck('id')->all();
+        } else {
+            $allAds = true;
+        }
+        $adsExtended = $this->adv_repository->extendAds($allAds, $isAdmin);
         $this->messages->success(trans('visiosoft.module.advs::message.extended', ['number' => $adsExtended]));
         return $this->redirect->back();
     }

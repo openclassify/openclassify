@@ -17,4 +17,20 @@ return [
             'delete' => 'Se poate șterge adresa?',
         ],
     ],
+    'education' => [
+        'name'   => 'Educaţie',
+        'option' => [
+            'read'   => 'Poate citi educația?',
+            'write'  => 'Poate crea / edita educație?',
+            'delete' => 'Poate șterge educația?',
+        ],
+    ],
+    'education_part' => [
+        'name'   => 'Partea educație',
+        'option' => [
+            'read'   => 'Poate citi partea educației?',
+            'write'  => 'Poate crea / edita partea de educație?',
+            'delete' => 'Poate șterge partea de educație?',
+        ],
+    ],
 ];

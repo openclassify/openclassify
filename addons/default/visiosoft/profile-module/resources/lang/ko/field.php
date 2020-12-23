@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => '생신'
     ],
+	'facebook_address' => [
+		'name' => '페이스 북 주소'
+	],
+	'google_address' => [
+		'name' => 'Google 주소'
+	],
     'education' => [
         'name' => '교육'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => '사용자'
     ],
+	'name' => [
+		'name' => '이름'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => '암호',
     ],
+    'old_password' => [
+        'name' => '기존 비밀번호',
+    ],
     'new_password' => [
         'name' => '새 비밀번호',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => '개인적인'
     ],
+
+	'education_part' => [
+		'name' => '교육 현황'
+	],
 ];

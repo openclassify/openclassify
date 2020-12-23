@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Ditëlindja'
     ],
+	'facebook_address' => [
+		'name' => 'Adresa në Facebook'
+	],
+	'google_address' => [
+		'name' => 'Adresa e Google'
+	],
     'education' => [
         'name' => 'Arsimi'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Perdoruesit'
     ],
+	'name' => [
+		'name' => 'Emrin'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'Fjalëkalimi',
     ],
+    'old_password' => [
+        'name' => 'Fjalëkalimi i vjetër',
+    ],
     'new_password' => [
         'name' => 'Fjalëkalim i ri',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'Personale'
     ],
+
+	'education_part' => [
+		'name' => 'Shteti i Arsimit'
+	],
 ];

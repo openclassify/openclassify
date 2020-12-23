@@ -9,4 +9,10 @@ return [
     ],
     'general_setting' => 'Allgemeine Einstellungen',
     'recaptcha' => 'reCaptcha',
+    'education' => [
+        'title' => 'Bildung',
+    ],
+    'education_part' => [
+        'title' => 'Bildungsteil',
+    ],
 ];

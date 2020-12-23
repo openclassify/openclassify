@@ -30,6 +30,7 @@ return [
     'empty_password_sms_message' => 'Aus Sicherheitsgründen haben wir Ihr Passwort geändert! Dein neues Passwort ist:',
     'required_all' => "Alle Felder sind erforderlich!",
     'can_not_remove_filled_fields' => "Sie können gefüllte Felder nicht entfernen!",
+    'wrong_password' => "Das eingegebene Passwort ist nicht korrekt!",
 
     // Forgot Password
     'email_phone_not_found' => 'Die E-Mail, Telefonnummer ist nicht korrekt!',

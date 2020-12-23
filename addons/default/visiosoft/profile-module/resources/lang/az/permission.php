@@ -17,4 +17,20 @@ return [
             'delete' => 'Ünvanı silə bilərsiniz?',
         ],
     ],
+    'education' => [
+        'name'   => 'Təhsil',
+        'option' => [
+            'read'   => 'Təhsili oxuya bilərsən?',
+            'write'  => 'Təhsil yarada / redaktə edə bilərsənmi?',
+            'delete' => 'Təhsili silə bilərsən?',
+        ],
+    ],
+    'education_part' => [
+        'name'   => 'Təhsil hissəsi',
+        'option' => [
+            'read'   => 'Təhsil hissəsini oxuya bilərsinizmi?',
+            'write'  => 'Təhsil hissəsini yarada / redaktə edə bilərsənmi?',
+            'delete' => 'Təhsil hissəsini silə bilərsinizmi?',
+        ],
+    ],
 ];

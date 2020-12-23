@@ -17,4 +17,20 @@ return [
             'delete' => 'Peut effacer l\\'adresse?',
         ],
     ],
+    'education' => [
+        'name'   => 'Éducation',
+        'option' => [
+            'read'   => 'Peut lire l\'éducation?',
+            'write'  => 'Peut créer / modifier l\'éducation?',
+            'delete' => 'Peut supprimer l\'éducation?',
+        ],
+    ],
+    'education_part' => [
+        'name'   => 'Partie éducation',
+        'option' => [
+            'read'   => 'Peut lire la partie éducation?',
+            'write'  => 'Peut créer / modifier une partie éducation?',
+            'delete' => 'Peut-on supprimer la partie éducation?',
+        ],
+    ],
 ];

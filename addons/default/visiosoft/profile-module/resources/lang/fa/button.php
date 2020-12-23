@@ -9,10 +9,13 @@ return [
     'delete' => 'حذف',
     'extend' => 'توسعه دادن، گسترش',
     'extend_all' => 'گسترش همه',
+    'extend_unpublished' => 'منتشر نشده',
     'edit' => 'ویرایش کنید',
     'go_profile' => 'به جزئیات مشخصات بروید',
     'go_user' => 'به جزئیات کاربر بروید',
     'personal' => 'شخصی',
     'corporate' => 'شرکت های بزرگ، دارای شخصیت حقوقی',
     'export' => 'صادرات',
+    'new_education' => 'آموزش جدید',
+    'new_education_part' => 'قسمت آموزش جدید',
 ];

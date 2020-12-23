@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'Compleanno'
     ],
+	'facebook_address' => [
+		'name' => 'Indirizzo di Facebook'
+	],
+	'google_address' => [
+		'name' => 'Indirizzo Google'
+	],
     'education' => [
         'name' => 'Formazione scolastica'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'Utente'
     ],
+	'name' => [
+		'name' => 'Nome'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -377,6 +386,9 @@ return [
     'password' => [
         'name' => 'Parola d\'ordine',
     ],
+    'old_password' => [
+        'name' => 'Vecchia password',
+    ],
     'new_password' => [
         'name' => 'Nuova password',
     ],
@@ -469,4 +481,8 @@ return [
     'personal' => [
         'name' => 'Personale'
     ],
+
+	'education_part' => [
+		'name' => 'Stato dell\'istruzione'
+	],
 ];

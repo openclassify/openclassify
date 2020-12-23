@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Subcategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Subcategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Subcategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Subcategoria 9'
+    ],
     'currency' => [
         'name' => 'Valută'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'Detalii listare',
     'preview' => 'previzualizare',
     'congratulations' => 'Felicitări',
+    'ad_desc' => 'Descrierea anunțului',
+    'upload_photos' => 'Încarcă fotografii',
+    'additional_fields' => 'Câmpuri suplimentare',
+    'ad_location' => 'Locația anunțului',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',

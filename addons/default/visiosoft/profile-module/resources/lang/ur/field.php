@@ -58,6 +58,12 @@ return [
     'birthday' => [
         'name' => 'سالگرہ'
     ],
+	'facebook_address' => [
+		'name' => 'فیس بک ایڈریس'
+	],
+	'google_address' => [
+		'name' => 'گوگل ایڈریس'
+	],
     'education' => [
         'name' => 'تعلیم'
     ],
@@ -115,6 +121,9 @@ return [
     'user' => [
         'name' => 'صارف'
     ],
+	'name' => [
+		'name' => 'نام'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -375,6 +384,9 @@ return [
     'password' => [
         'name' => 'پاس ورڈ',
     ],
+    'old_password' => [
+        'name' => 'پرانا پاسورڈ',
+    ],
     'new_password' => [
         'name' => 'نیا پاس ورڈ',
     ],
@@ -467,4 +479,8 @@ return [
     'personal' => [
         'name' => 'ذاتی'
     ],
+
+	'education_part' => [
+		'name' => 'ریاست تعلیم'
+	],
 ];

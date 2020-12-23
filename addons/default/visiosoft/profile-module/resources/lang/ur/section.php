@@ -9,4 +9,10 @@ return [
     ],
     'general_setting' => 'عام ترتیبات',
     'recaptcha' => 'reCAPTCHA',
+    'education' => [
+        'title' => 'تعلیم',
+    ],
+    'education_part' => [
+        'title' => 'تعلیم کا حصہ',
+    ],
 ];

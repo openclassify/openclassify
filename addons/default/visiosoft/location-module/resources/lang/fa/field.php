@@ -34,5 +34,6 @@ return [
     'address' => [
         'name' => 'نشانی',
     ],
-    'selected' => 'انتخاب شد'
+    'selected' => 'انتخاب شد',
+    'choose_an_option' => 'گزینه ای را انتخاب کنید ...',
 ];

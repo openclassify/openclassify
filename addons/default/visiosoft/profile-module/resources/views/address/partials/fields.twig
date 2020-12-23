@@ -17,11 +17,11 @@
 
     <div class="col-sm-4 location-field city-data font-weight-bold"
          data-content="{{ adress.city }}">
-        {{ form.fields.city|raw }}
+        {{ form.fields.city.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option'))|raw }}
     </div>
     <div class="col-sm-4 location-field district-data font-weight-bold"
          data-content="{{ adress.district }}">
-        {{ form.fields.district|raw }}
+        {{ form.fields.district.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option'))|raw }}
     </div>
 </div>
 <div class="form-group location-map">

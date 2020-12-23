@@ -9,10 +9,13 @@ return [
     'delete' => 'Eliminar',
     'extend' => 'Ampliar',
     'extend_all' => 'Extender todo',
+    'extend_unpublished' => 'Ampliar sin publicar',
     'edit' => 'Editar',
     'go_profile' => 'Ir al detalle del perfil',
     'go_user' => 'Ir al detalle del usuario',
     'personal' => 'Personal',
     'corporate' => 'Corporativo',
     'export' => 'Exportar',
+    'new_education' => 'Nueva educación',
+    'new_education_part' => 'Nueva parte de educación',
 ];

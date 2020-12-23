@@ -20,7 +20,7 @@
                 </tr>
             </thead>
             <tbody>
-            {{ addBlock('ad-list/partials/table',{'featured_advs':featured_advs})|raw }}
+            {{ addBlock('ad-list/partials/table',{'featured_advs':featured_advs,'seenList':seenList})|raw }}
             {% for adv in advs %}
                 <tr class="text-center clickable-row{% if adv.doping != null %} doping_type4 {% endif %}" data-href='{{ adv.detail_url }}'>
                     <td class="justify-content-center align-middle text-center td-image">
@@ -36,7 +36,7 @@
                         </div>
                     </td>
                     <td class="justify-content-center align-middle td-price">
-                        <b>{{ adv.price.currency() }}</b>
+                        <b>{{ currency_format(adv.price,adv.currency) }}</b>
                     </td>
                     <td class="justify-content-center align-middle td-date">
                         <small>{{ adv.created_at|date("d/m/Y") }}</small>

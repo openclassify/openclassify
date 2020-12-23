@@ -32,6 +32,7 @@ return [
     'empty_password_sms_message' => 'Devido a problemas de segurança, alteramos sua senha! Sua nova senha é:',
     'required_all' => "Todo o campo é obrigatório!",
     'can_not_remove_filled_fields' => "Você não pode remover os campos preenchidos!",
+    'wrong_password' => "A senha que você digitou não está correta!",
 
     // Forgot Password
     'email_phone_not_found' => 'O e-mail, número de telefone não está correto!',
