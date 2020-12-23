@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use function foo\func;
 
 class AdvTableColumns
 {
@@ -47,7 +48,14 @@ class AdvTableColumns
             ],
 
             'country' => [
-                'class' => 'advs-country',
+                'class' => 'text-center',
+                'wrapper' => '<strong><span class="text-muted">{value.city}</span><br>{value.country}</strong>',
+                'value' => [
+                    'city' => function (EntryInterface $entry) {
+                        return $entry->getCity();
+                    },
+                    'country' => 'country',
+                ]
             ],
             'created_by' => [
                 'value' => 'entry.created_by.name',
