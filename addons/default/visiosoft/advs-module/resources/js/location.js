@@ -87,15 +87,20 @@ function Locations(cat, level, name) {
         url: "/class/ajax",
         success: function (msg) {
             $('select[name="' + name + '"]').find('option').remove();
-            $('select[name="' + name + '"]').append('<option value="">' + chooseOptionTrans + '</option>');
+            $('select[name="' + name + '"]').append(`<option value="">${chooseOptionTrans}</option>`);
             $.each(msg, function (key, value) {
-                $('select[name="' + name + '"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                $(`select[name="${name}"]`).append(`<option value="${value.id}">${capFirst(value.name)}</option>`);
             });
         }
     }).promise().done(function () {
         setLocation(level);
         haritaIslem(0);
     });
+}
+
+function capFirst(value) {
+    if (!value) return ''
+    return value.toLowerCase().replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
 }
 
 function setLocation(level) {
