@@ -362,4 +362,10 @@ return [
             "default_value" => '#00a651',
         ]
     ],
+	'ads_image_limit' => [
+		"type" => "anomaly.field_type.integer",
+		"config" => [
+			"default_value" => 25
+		]
+	]
 ];
