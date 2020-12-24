@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Table;
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
+use Anomaly\Streams\Platform\Entry\EntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 
 class AdvTableColumns
@@ -8,11 +9,11 @@ class AdvTableColumns
 
     public function handle(AdvTableBuilder $builder)
     {
-        $builder->setColumns([
+        $columns = [
             'cover_photo' => [
                 'value' => function (EntryInterface $entry) {
                     return "<img width='80px' src='" . $entry->AddAdsDefaultCoverImage($entry)->cover_photo . "' >";
-                },
+                }
             ],
 
             'name' => [
@@ -59,7 +60,18 @@ class AdvTableColumns
             'created_by' => [
                 'value' => 'entry.created_by.name',
             ],
-        ]);
+        ];
+
+        if ($builder->isActiveView('advanced')) {
+
+            $columns['price']['attributes'] = [
+                'html' => function (EntryModel $entry) {
+                    return '<input style="min-width:120px" type="text" class="form-control fast-update" value="' . $entry->price . '" data-column="price" data-entry_id="' . $entry->getId() . '">';
+                }
+            ];
+        }
+
+        $builder->setColumns($columns);
     }
 
 }
