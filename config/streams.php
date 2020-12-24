@@ -18,7 +18,7 @@ return [
             \App\Listeners\Translations::class
         ],
         \Anomaly\Streams\Platform\Ui\Form\Event\FormWasSaved::class => [
-            \App\Listeners\RunForSavedForm::class
+            \App\Listeners\EnableMaintenanceMode::class
         ],
     ],
 

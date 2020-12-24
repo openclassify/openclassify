@@ -3,7 +3,7 @@
 use Anomaly\SettingsModule\Setting\Form\SettingFormRepository;
 use Anomaly\Streams\Platform\Ui\Form\Event\FormWasSaved;
 
-class RunForSavedForm
+class EnableMaintenanceMode
 {
 
     public function handle(FormWasSaved $event)
