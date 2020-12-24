@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Marktplatz',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Preisbereich versteckt',
+	],
     'hide_price_filter' => [
         'name' => 'Preisfilter ausblenden',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Breadcrumb beim Erstellen einer Anzeige anzeigen',
+    ],
+    'show_ads_count' => [
+        'name' => 'Anzeigenanzahl anzeigen',
+        'instructions' => 'Anzeigenanzahl in der linken Kategorieliste anzeigen',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Show Post Ad Agreement anzeigen',
+        'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
+    ],
+    'override_text' => [
+        'name' => 'Text überschreiben',
+        'instructions' => 'Alter Wert: Neuer Wert'
+    ],
+    'steps_color' => [
+        'name' => 'Schritte Farbe',
+        'instructions' => 'Ändert die Farbe der progressiven Schritte.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Farbe der Anzeigenschaltfläche erstellen',
+        'instructions' => 'Ändert die Schaltfläche, die angezeigt wird, wenn die Auswahl der neuen Anzeigenkategorie abgeschlossen ist.'
     ],
 ];

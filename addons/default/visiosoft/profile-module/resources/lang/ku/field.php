@@ -59,10 +59,10 @@ return [
         'name' => 'Rojbûn'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Navnîşana Facebookê'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Navnîşana Google'
 	],
     'education' => [
         'name' => 'Zanyarî'
@@ -122,7 +122,7 @@ return [
         'name' => 'Bikaranîvan'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Nav'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Dewleta Perwerdehiyê'
 	],
 ];

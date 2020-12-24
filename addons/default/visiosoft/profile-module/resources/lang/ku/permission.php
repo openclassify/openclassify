@@ -18,19 +18,19 @@ return [
         ],
     ],
     'education' => [
-        'name'   => 'Education',
+        'name'   => 'Zanyarî',
         'option' => [
-            'read'   => 'Can read education?',
-            'write'  => 'Can create/edit education?',
-            'delete' => 'Can delete education?',
+            'read'   => 'Ma dikare perwerdehiyê bixwîne?',
+            'write'  => 'Ma dikare perwerdehiyê biafirîne / sererast bike?',
+            'delete' => 'Ma dikare perwerdehiyê jê bibe?',
         ],
     ],
     'education_part' => [
-        'name'   => 'Education part',
+        'name'   => 'Beşa perwerdehiyê',
         'option' => [
-            'read'   => 'Can read education part?',
-            'write'  => 'Can create/edit education part?',
-            'delete' => 'Can delete education part?',
+            'read'   => 'Dikarin beşê perwerdehiyê bixwînin?',
+            'write'  => 'Dikarin beşê perwerdehiyê biafirînin / sererast bikin?',
+            'delete' => 'Ma dikare beşa perwerdehiyê jê bibe?',
         ],
     ],
 ];

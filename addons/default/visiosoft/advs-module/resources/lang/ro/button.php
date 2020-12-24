@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Avocat nou',
+    'new_classified' => 'Nou clasificat',
     'new_category' => 'Categorie noua',
     'new_country' => 'Țara nouă',
     'new_city' => 'Oras nou',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'Configurare opțiune nouă',
 	'create_configurations' => 'Creați configurații',
 	'replicate' => 'Replică',
+	'fast_create' => 'Crearea rapidă',
+	'publish' => 'Publica',
+	'import' => 'Import',
 ];

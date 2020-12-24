@@ -59,10 +59,10 @@ return [
         'name' => 'Födelsedag'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Facebook-adress'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Google-adress'
 	],
     'education' => [
         'name' => 'Utbildning'
@@ -122,7 +122,7 @@ return [
         'name' => 'Användare'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'namn'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Utbildningsstatus'
 	],
 ];

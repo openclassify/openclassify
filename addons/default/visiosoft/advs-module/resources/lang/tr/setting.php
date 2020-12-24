@@ -51,7 +51,7 @@ return [
         'name' => 'Son Eklenenler Limiti',
     ],
     'site_address' => [
-        'name' => 'Site adresi',
+        'name' => 'Site Adresi',
         'warning'      => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Pazar Yeri',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Fiyat Alanı Gizli',
+	],
     'hide_price_filter' => [
         'name' => 'Fiyat Filtresini Gizle',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'İlan/ürün eklerken Oluştururken harita Göster',
+    ],
+    'show_ads_count' => [
+        'name' => 'İlan Sayısını Göster',
+        'instructions' => 'Soldaki kategori listesinde ilan sayısını göster',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'İlan Sonrası Sözleşmesini Göster',
+        'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
+    ],
+    'override_text' => [
+        'name' => 'Metni Geçersiz Kıl',
+        'instructions' => 'Eski Değer: Yeni Değer'
+    ],
+    'steps_color' => [
+        'name' => 'Adım Rengi',
+        'instructions' => 'Aşamalı adımların rengini değiştirir.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Reklam Düğmesi Rengi Oluştur',
+        'instructions' => 'Yeni reklam kategorisi seçimi bittiğinde görünen düğmeyi değiştirir.'
     ],
 ];

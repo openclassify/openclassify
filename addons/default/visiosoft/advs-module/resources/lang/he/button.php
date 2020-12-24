@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'עו"ד חדש',
+    'new_classified' => 'מסווג חדש',
     'new_category' => 'קטגוריה חדשה',
     'new_country' => 'מדינה חדשה',
     'new_city' => 'עיר חדשה',
@@ -39,4 +40,7 @@ return [
     'new_option_configuration' => 'תצורת אפשרות חדשה',
 	'create_configurations' => 'צור תצורות',
 	'replicate' => 'העתק',
+	'fast_create' => 'ליצור מהיר',
+	'publish' => 'לְפַרְסֵם',
+	'import' => 'יְבוּא',
 ];

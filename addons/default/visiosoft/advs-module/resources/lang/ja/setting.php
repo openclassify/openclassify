@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'マーケットプレイス',
     ],
-
+	'price_area_hidden' => [
+		'name' => '隠された価格帯',
+	],
     'hide_price_filter' => [
         'name' => '価格フィルターを非表示',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => '広告を作成するときにブレッドクラムを表示する',
+    ],
+    'show_ads_count' => [
+        'name' => '広告数を表示',
+        'instructions' => '左側のカテゴリリストに広告数を表示する',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'ポスト広告契約を表示する',
+        'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
+    ],
+    'override_text' => [
+        'name' => 'テキストを上書きする',
+        'instructions' => '古い値：新しい値'
+    ],
+    'steps_color' => [
+        'name' => 'ステップカラー',
+        'instructions' => 'プログレッシブステップの色を変更します。'
+    ],
+    'create_ad_button_color' => [
+        'name' => '広告ボタンの色を作成する',
+        'instructions' => '新しい広告カテゴリの選択が終了したときに表示されるボタンを変更します。'
     ],
 ];

@@ -59,10 +59,10 @@ return [
         'name' => 'Γενέθλια'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Διεύθυνση Facebook'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Διεύθυνση Google'
 	],
     'education' => [
         'name' => 'Εκπαίδευση'
@@ -122,7 +122,7 @@ return [
         'name' => 'Χρήστης'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Ονομα'
 	],
 
     /*Menu Button*/
@@ -483,6 +483,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Κατάσταση εκπαίδευσης'
 	],
 ];

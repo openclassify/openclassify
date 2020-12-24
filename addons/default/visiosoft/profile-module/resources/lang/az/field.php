@@ -59,10 +59,10 @@ return [
         'name' => 'Ad günü'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Facebook ünvanı'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Google ünvanı'
 	],
     'education' => [
         'name' => 'Təhsil'
@@ -122,7 +122,7 @@ return [
         'name' => 'İstifadəçi'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Ad'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Təhsil vəziyyəti'
 	],
 ];

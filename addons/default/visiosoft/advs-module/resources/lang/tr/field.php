@@ -82,21 +82,30 @@ return [
     'cat7' => [
         'name' => 'Alt Kategori 6'
     ],
+    'cat8' => [
+        'name' => 'Alt Kategori 7'
+    ],
+    'cat9' => [
+        'name' => 'Alt Kategori 8'
+    ],
+    'cat10' => [
+        'name' => 'Alt Kategori 9'
+    ],
     'currency' => [
-        'name' => 'Para birimi'
+        'name' => 'Para Birimi'
     ],
     'status' => [
-        'name' => 'Durum',
+        'name' => 'durum',
         'option' => [
             'approved' => 'Onaylandı',
-            'expired' => 'Süresi doldu',
+            'expired' => 'Süresi Doldu',
             'unpublished' => 'Pasif',
             'pending_admin' => 'Yönetici Onay Bekliyor',
             'pending_user' => 'Kullanıcının Yayınlaması Bekleniyor'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Yayında olmayan'
+        'name' => 'Yayınlanmamış'
     ],
     'finish_at' => [
         'name' => 'Bitiş Saati'
@@ -131,9 +140,9 @@ return [
     'sort_by' => 'Sırala',
     'pick_option' => 'Bir seçenek seçin',
     'pick_ordering' => 'Sıralama Seç',
-    'price_high' => 'Fiyat pahalıdan ucuza',
+    'price_high' => 'Fiyat Pahalıdan Ucuza',
     'price_low' => 'Fiyat Düşükten Yükseğe',
-    'newest' => 'En yeni',
+    'newest' => 'En Yeni',
     'oldest' => 'En eski',
     'address_a_z' => 'Adres (A\'dan Z\'ye)',
     'address_z_a' => 'Adres (Z\'den A\'ya)',
@@ -142,10 +151,10 @@ return [
 	],
     'all_categories' => 'Tüm Kategoriler',
     'location' => 'Lokasyon',
-    'send_message' => 'Mesaj gönder',
+    'send_message' => 'Mesaj Gönder',
     'phone_gsm' => 'Cep Telefonu',
     'phone_office' => 'Sabit telefon',
-    'add_to_favorites' => "Favorilere ekle",
+    'add_to_favorites' => "Favorilere Ekle",
     'send' => 'Gönder',
     'search_name' => 'Arama Adı',
     'my_favorite_searches' => 'Favori Aramalar',
@@ -311,8 +320,6 @@ return [
     'upload_photos' => 'Resim Yükle',
     'additional_fields' => 'Özel Alanlar',
     'ad_location' => 'Lokasyon Ekle',
-
-
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',

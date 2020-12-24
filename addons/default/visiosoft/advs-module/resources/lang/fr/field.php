@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Sous catégorie 6'
     ],
+    'cat8' => [
+        'name' => 'Sous-catégorie 7'
+    ],
+    'cat9' => [
+        'name' => 'Sous-catégorie 8'
+    ],
+    'cat10' => [
+        'name' => 'Sous-catégorie 9'
+    ],
     'currency' => [
         'name' => 'Devise'
     ],
@@ -306,6 +315,10 @@ return [
     'listing_details' => 'Détails de l\'annonce',
     'preview' => 'Aperçu',
     'congratulations' => 'Toutes nos félicitations',
+    'ad_desc' => 'Description de l\'annonce',
+    'upload_photos' => 'Télécharger des photos',
+    'additional_fields' => 'Champs supplémentaires',
+    'ad_location' => 'Emplacement de l\'annonce',
 
     'free' => 'Gratuit',
     'ad_date' => 'Date de l\'annonce',

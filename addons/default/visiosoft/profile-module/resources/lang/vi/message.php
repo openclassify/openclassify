@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'Do vấn đề bảo mật, chúng tôi đã thay đổi mật khẩu của bạn! Mật khẩu mới của bạn là:',
     'required_all' => "Tất cả các lĩnh vực là bắt buộc!",
     'can_not_remove_filled_fields' => "Bạn không thể loại bỏ các trường đã điền!",
+    'wrong_password' => "Mật khẩu bạn đã nhập không chính xác!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mail, số điện thoại không chính xác!',

@@ -11,5 +11,5 @@ return [
     'email' => 'ইমেইল',
     'phone' => 'ফোন',
     'show_all' => 'সব দেখাও',
-    'hide_all' => 'Hide All',
+    'hide_all' => 'সব লুকাও',
 ];

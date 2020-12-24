@@ -10,9 +10,9 @@ return [
     'general_setting' => 'Genel Ayarlar',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Eğitim',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Eğitim bölümü',
     ],
 ];

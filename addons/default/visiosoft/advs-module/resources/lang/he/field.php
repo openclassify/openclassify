@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'תת קטגוריה 6'
     ],
+    'cat8' => [
+        'name' => 'קטגוריית משנה 7'
+    ],
+    'cat9' => [
+        'name' => 'קטגוריית משנה 8'
+    ],
+    'cat10' => [
+        'name' => 'קטגוריית משנה 9'
+    ],
     'currency' => [
         'name' => 'מטבע'
     ],
@@ -305,6 +314,10 @@ return [
     'listing_details' => 'פרטי רישום',
     'preview' => 'תצוגה מקדימה',
     'congratulations' => 'מזל טוב',
+    'ad_desc' => 'תיאור המודעה',
+    'upload_photos' => 'להעלות תמונות',
+    'additional_fields' => 'שדות נוספים',
+    'ad_location' => 'מיקום מודעה',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',

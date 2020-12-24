@@ -11,5 +11,5 @@ return [
     'email' => 'E-posta',
     'phone' => 'Telefon',
     'show_all' => 'Hepsini Göster ↓',
-    'hide_all' => 'Hide All',
+    'hide_all' => 'Hepsini sakla',
 ];

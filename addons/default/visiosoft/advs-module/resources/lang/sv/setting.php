@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Prisområde dolt',
+	],
     'hide_price_filter' => [
         'name' => 'Dölj prisfilter',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Visa brödsmulan när du skapar en annons',
+    ],
+    'show_ads_count' => [
+        'name' => 'Visa antal annonser',
+        'instructions' => 'Visa annonser räknas på listan till vänster',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Visa annonsannonsavtal',
+        'instructions' => 'Aktivera detta om du vill visa ett integritetspolicyavtal på sidan för skapande av annonser',
+    ],
+    'override_text' => [
+        'name' => 'Åsidosätt text',
+        'instructions' => 'Old Value: New Value'
+    ],
+    'steps_color' => [
+        'name' => 'Stegfärg',
+        'instructions' => 'Ändrar de progressiva stegfärgen.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Skapa färg för annonsknapp',
+        'instructions' => 'Ändrar knappen som visas när det nya valet av annonskategori är klart.'
     ],
 ];

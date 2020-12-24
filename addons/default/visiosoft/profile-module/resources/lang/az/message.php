@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'Təhlükəsizlik problemləri ilə əlaqədar olaraq şifrənizi dəyişdirdik! Yeni parolunuz:',
     'required_all' => "Bütün sahə tələb olunur!",
     'can_not_remove_filled_fields' => "Doldurulmuş sahələri silə bilməzsiniz!",
+    'wrong_password' => "Girdiyiniz parol düzgün deyil!",
 
     // Forgot Password
     'email_phone_not_found' => 'Elektron poçt, telefon nömrəsi düzgün deyil!',

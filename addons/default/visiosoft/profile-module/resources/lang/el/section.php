@@ -10,9 +10,9 @@ return [
     'general_setting' => 'Γενικές Ρυθμίσεις',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Εκπαίδευση',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Εκπαιδευτικό μέρος',
     ],
 ];

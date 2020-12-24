@@ -18,19 +18,19 @@ return [
         ],
     ],
     'education' => [
-        'name'   => 'Education',
+        'name'   => 'Образование',
         'option' => [
-            'read'   => 'Can read education?',
-            'write'  => 'Can create/edit education?',
-            'delete' => 'Can delete education?',
+            'read'   => 'Может читать образование?',
+            'write'  => 'Может создавать / редактировать образование?',
+            'delete' => 'Может удалить образование?',
         ],
     ],
     'education_part' => [
-        'name'   => 'Education part',
+        'name'   => 'Образовательная часть',
         'option' => [
-            'read'   => 'Can read education part?',
-            'write'  => 'Can create/edit education part?',
-            'delete' => 'Can delete education part?',
+            'read'   => 'Может читать образовательную часть?',
+            'write'  => 'Может ли образовательная часть создавать / редактировать?',
+            'delete' => 'Можно удалить часть образования?',
         ],
     ],
 ];

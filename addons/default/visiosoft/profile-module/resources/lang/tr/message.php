@@ -29,6 +29,7 @@ return [
     'empty_password_sms_message' => 'Güvenlik sorunları nedeniyle şifrenizi değiştirdik! Yeni parolanız:',
     'required_all' => "Tüm Alanlar Zorunludur!",
     'can_not_remove_filled_fields' => "Doldurulmuş alanları kaldıramazsınız!",
+    'wrong_password' => "Girdiğiniz şifre doğru değil!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-posta, Telefon Numarası doğru değil!',

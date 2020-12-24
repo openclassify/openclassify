@@ -11,5 +11,5 @@ return [
     'email' => 'Elektron poçt',
     'phone' => 'Telefon',
     'show_all' => 'Hamısını göstər',
-    'hide_all' => 'Hide All',
+    'hide_all' => 'Hamısını gizlədin',
 ];

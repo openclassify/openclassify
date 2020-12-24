@@ -27,4 +27,6 @@ return [
     'ad_doesnt_exist' => "Diese Anzeige existiert nicht!",
     'select_location_error' => "Bitte wählen Sie einen Ort auf der Karte!",
     'this_ad_is_not_valid_anymore' => "Diese Anzeige ist nicht mehr gültig!",
+    'approve_status_change' => "Der Status Ihrer Anzeige wurde auf Aktiv gesetzt!",
+    'passive_status_change' => "Der Status Ihrer Anzeige wurde auf Passiv gesetzt!",
 ];

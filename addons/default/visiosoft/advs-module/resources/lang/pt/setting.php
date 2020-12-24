@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Mercado',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Área de preço oculta',
+	],
     'hide_price_filter' => [
         'name' => 'Ocultar filtro de preço',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => 'Mostrar localização atual ao criar um anúncio',
+    ],
+    'show_ads_count' => [
+        'name' => 'Mostrar contagem de anúncios',
+        'instructions' => 'Exibir contagem de anúncios na lista de categorias à esquerda',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Mostrar Acordo de Postagem',
+        'instructions' => 'Ative-o se quiser exibir um acordo de política de privacidade na página de criação de anúncios',
+    ],
+    'override_text' => [
+        'name' => 'Substituir Texto',
+        'instructions' => 'Valor antigo: novo valor'
+    ],
+    'steps_color' => [
+        'name' => 'Passos Cor',
+        'instructions' => 'Altera a cor dos passos progressivos.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Criar cor do botão do anúncio',
+        'instructions' => 'Altera o botão que aparece quando a seleção da nova categoria de anúncio é concluída.'
     ],
 ];

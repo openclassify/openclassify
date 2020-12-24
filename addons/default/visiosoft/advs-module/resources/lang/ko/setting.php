@@ -126,7 +126,9 @@ return [
     'market_place' => [
         'name' => '마켓 플레이스',
     ],
-
+	'price_area_hidden' => [
+		'name' => '가격 영역 숨김',
+	],
     'hide_price_filter' => [
         'name' => '가격 필터 숨기기',
     ],
@@ -196,5 +198,25 @@ return [
     ],
     'show_breadcrumb_when_creating_ad' => [
         'name' => '광고를 만들 때 이동 경로 표시',
+    ],
+    'show_ads_count' => [
+        'name' => '광고 수 표시',
+        'instructions' => '왼쪽 카테고리 목록에 광고 개수 표시',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => '광고 게시 계약 표시',
+        'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
+    ],
+    'override_text' => [
+        'name' => '텍스트 무시',
+        'instructions' => '기존 가치 : 새로운 가치'
+    ],
+    'steps_color' => [
+        'name' => '단계 색상',
+        'instructions' => '점진적 단계 색상을 변경합니다.'
+    ],
+    'create_ad_button_color' => [
+        'name' => '광고 버튼 색상 만들기',
+        'instructions' => '새 광고 카테고리 선택이 완료되면 표시되는 버튼을 변경합니다.'
     ],
 ];

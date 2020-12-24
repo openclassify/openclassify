@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Nënkategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Nën Kategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Nën Kategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Nënkategoria 9'
+    ],
     'currency' => [
         'name' => 'Monedhë'
     ],
@@ -306,6 +315,10 @@ return [
     'listing_details' => 'Detajet e Listimit',
     'preview' => 'Paraqitje',
     'congratulations' => 'Urime',
+    'ad_desc' => 'Përshkrimi i reklamës',
+    'upload_photos' => 'Ngarko Fotografitë',
+    'additional_fields' => 'Fushat shtesë',
+    'ad_location' => 'Vendndodhja e reklamës',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',

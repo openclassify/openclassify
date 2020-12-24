@@ -18,19 +18,19 @@ return [
         ],
     ],
     'education' => [
-        'name'   => 'Education',
+        'name'   => 'تحصیلات',
         'option' => [
-            'read'   => 'Can read education?',
-            'write'  => 'Can create/edit education?',
-            'delete' => 'Can delete education?',
+            'read'   => 'آیا می توانید آموزش بخوانید؟',
+            'write'  => 'آیا می توان آموزش ایجاد یا ویرایش کرد؟',
+            'delete' => 'آیا می توان آموزش را حذف کرد؟',
         ],
     ],
     'education_part' => [
-        'name'   => 'Education part',
+        'name'   => 'قسمت آموزش',
         'option' => [
-            'read'   => 'Can read education part?',
-            'write'  => 'Can create/edit education part?',
-            'delete' => 'Can delete education part?',
+            'read'   => 'آیا می توان قسمت آموزش را خواند؟',
+            'write'  => 'آیا می توان بخشی از آموزش را ایجاد یا ویرایش کرد؟',
+            'delete' => 'آیا می توان قسمت آموزش را حذف کرد؟',
         ],
     ],
 ];

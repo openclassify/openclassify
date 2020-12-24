@@ -59,10 +59,10 @@ return [
         'name' => '생신'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => '페이스 북 주소'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Google 주소'
 	],
     'education' => [
         'name' => '교육'
@@ -122,7 +122,7 @@ return [
         'name' => '사용자'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => '이름'
 	],
 
     /*Menu Button*/
@@ -481,6 +481,6 @@ return [
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => '교육 현황'
 	],
 ];

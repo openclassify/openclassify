@@ -131,17 +131,17 @@ var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions)
 
 function haritaIslem() {
     var str = '';
-    if ($('select[name="' + countrySelectName + '"]').val() != "") {
-        str += $('select[name="' + countrySelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + countrySelectName + '"]').val()) {
+        str += $('select[name="' + countrySelectName + '"] :selected').first().text() + ' ';
     }
-    if ($('select[name="' + citySelectName + '"]').val() != "") {
-        str += $('select[name="' + citySelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + citySelectName + '"]').val()) {
+        str += $('select[name="' + citySelectName + '"] :selected').first().text() + ' ';
     }
-    if ($('select[name="' + districtSelectName + '"]').val() != "") {
-        str += $('select[name="' + districtSelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + districtSelectName + '"]').val()) {
+        str += $('select[name="' + districtSelectName + '"] :selected').first().text() + ' ';
     }
-    if ($('select[name="' + neighborhoodSelectName + '"]').val() != "") {
-        str += $('select[name="' + neighborhoodSelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + neighborhoodSelectName + '"]').val()) {
+        str += $('select[name="' + neighborhoodSelectName + '"] :selected').first().text() + ' ';
     }
 
     if (!str) {
