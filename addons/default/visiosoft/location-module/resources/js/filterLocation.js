@@ -190,7 +190,7 @@ function SelectOnClick() {
     searchLocationName()
     $('.loading').hide();
 
-    return $(".filter-location-body input[type='checkbox']").change(function () {
+    return $(".filter-location-body input[type='checkbox']").on('change', function () {
 
         resetValue($(this).attr('data-field'), false, true)
 
@@ -202,7 +202,7 @@ function SelectOnClick() {
         var id = $(this).attr('data-id');
 
         if ($(this).attr('data-field') == "country") {
-            $('.selected-city').html('');
+            $('.selected-city small').html('');
             $('input[name="city[]"]').val('');
             // text_html.html(input_text)
             // $(".filter-location-body li[data-id='" + id + "'] input[type='checkbox']").prop('checked', true);
@@ -247,13 +247,13 @@ function item(field_name, id, value, abv = '') {
     if (field_name === 'country') {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
-            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
+            '                        <input' +
+            ' type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
             '                                <span class="flag ml-1 flag-' + abv + '">\n' +
             '                    </span>\n' +
             '                        <small>' + value + '</small>\n' +
             '                    </label>\n' +
             '                </li>';
-
     } else {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
