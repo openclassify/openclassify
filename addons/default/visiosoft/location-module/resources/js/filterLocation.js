@@ -248,16 +248,12 @@ function item(field_name, id, value, abv = '') {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
             '                        <input' +
-            '' +
-            '' +
-            '' +
             ' type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
             '                                <span class="flag ml-1 flag-' + abv + '">\n' +
             '                    </span>\n' +
             '                        <small>' + value + '</small>\n' +
             '                    </label>\n' +
             '                </li>';
-
     } else {
         return '<li class="px-2" data-id="' + id + '">\n' +
             '                    <label class="w-100">\n' +
