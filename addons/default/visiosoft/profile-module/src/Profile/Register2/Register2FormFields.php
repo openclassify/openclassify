@@ -74,7 +74,8 @@ class Register2FormFields
                                 1 => 'visiosoft.module.profile::field.personal.name',
                                 2 => 'visiosoft.module.profile::field.corporate.name'
                             ],
-                            "mode" => "radio",
+	                        "default_value" => 1,
+	                        "mode" => "radio",
                         ],
                     ],
                     'username' => [
