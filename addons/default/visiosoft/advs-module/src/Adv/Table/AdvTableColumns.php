@@ -2,7 +2,6 @@
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Visiosoft\CatsModule\Category\CategoryModel;
-use function foo\func;
 
 class AdvTableColumns
 {
