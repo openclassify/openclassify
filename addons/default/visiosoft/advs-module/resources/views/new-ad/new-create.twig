@@ -182,7 +182,7 @@
                                 </div>
                             </div>
 
-                            {% if count(custom_fields) %}
+                            {% if custom_fields and count(custom_fields) %}
                                 <h5 class="mt-5 pb-1 border-bottom">
                                     {{ trans('visiosoft.module.advs::field.additional_fields') }}
                                 </h5>
