@@ -13,6 +13,7 @@ return [
                     'show_checkbox_terms_on_register',
                     'register_protection_url',
                     'register_privacy_url',
+                    'hide_register_type_profile',
                     'show_education_profession',
                     'education',
                     'state_of_education',
