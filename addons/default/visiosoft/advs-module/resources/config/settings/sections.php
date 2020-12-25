@@ -22,7 +22,8 @@ return [
                 'fields' => [
                     'latest-limit',
                     'popular_ads_limit',
-                    'default_view_type',
+	                'ads_image_limit',
+	                'default_view_type',
 	                'price_area_hidden',
                     'hide_listing_standard_price',
                     'hide_zero_price',

@@ -16,6 +16,7 @@ $(function () {
     var dropzone = new Dropzone('.dropzone:not(data-initialized)',
         {
             paramName: 'upload',
+            maxFiles: imageCount,
             resizeWidth: settings_image['resize_width'],
             resizeHeight: settings_image['resize_height'],
             autoProcessQueue: true,
