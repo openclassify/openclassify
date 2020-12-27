@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Корпоративна інформація',
     'featured_ads' => "Рекомендовані реклами",
     'trending_ads' => 'Модні оголошення',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': кількість оголошень, знайдених для: пошук по імені',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "Місце не вибрано.",
     "continue" => 'Продовжуйте',
     "gallery" => 'Галерея',
+    "ad" => 'Ad',
     "ads" => 'Оголошення',
     "were_found" => 'були знайдені.',
 
