@@ -210,6 +210,7 @@ return [
     'corporate_info' => 'Unternehmensinfo',
     'featured_ads' => "Empfohlene Anzeigen",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':      Anzahl gefundener Anzeigen für:Namenssuche',
     ],
@@ -281,6 +282,7 @@ return [
     "no_location" => "Es ist kein Ort ausgewählt.",
     "continue" => 'Fortsetzen',
     "gallery" => 'Galerie',
+    "ad" => 'Ad',
     "ads" => 'Anzeigen',
     "were_found" => 'wurden gefunden.',
 
