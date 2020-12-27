@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'معلومات الشركة',
     'featured_ads' => "إعلانات مميزة",
     'trending_ads' => 'إعلانات Trendind',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':      عدد الإعلانات التي تم العثور عليها لـ:search name',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "لا يوجد موقع محدد.",
     "continue" => 'استمر',
     "gallery" => 'صالة عرض',
+    "ad" => 'Ad',
     "ads" => 'إعلانات',
     "were_found" => 'تم ايجادها.',
 
