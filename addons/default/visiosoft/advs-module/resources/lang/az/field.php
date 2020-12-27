@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Korporativ məlumat',
     'featured_ads' => "Xüsusi reklamlar",
     'trending_ads' => 'Trendind reklamları',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': axtardığınız elanları sayın',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "Heç bir yer seçilməyib.",
     "continue" => 'Davam edin',
     "gallery" => 'Qalereya',
+    "ad" => 'Ad',
     "ads" => 'Elanlar',
     "were_found" => 'tapıldı.',
 
