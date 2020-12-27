@@ -210,6 +210,7 @@ return [
     'corporate_info' => 'Información corporativa',
     'featured_ads' => "Anuncios destacados",
     'trending_ads' => 'Anuncios de tendencias',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':      cuenta de anuncios encontrados para:búsqueda de nombre',
     ],
@@ -281,6 +282,7 @@ return [
     "no_location" => "No se seleccionó ninguna ubicación.",
     "continue" => 'Seguir',
     "gallery" => 'Galería',
+    "ad" => 'Ad',
     "ads" => 'Anuncios',
     "were_found" => 'fueron encontrados.',
 
