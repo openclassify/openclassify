@@ -210,6 +210,7 @@ return [
     'corporate_info' => 'Informações corporativas',
     'featured_ads' => "Anúncios em destaque",
     'trending_ads' => 'Anúncios Trendind',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':      contagem de anúncios encontrados para:pesquisa de nome',
     ],
@@ -281,6 +282,7 @@ return [
     "no_location" => "Nenhum local está selecionado.",
     "continue" => 'Continuar',
     "gallery" => 'Galeria',
+    "ad" => 'Ad',
     "ads" => 'Publicidades',
     "were_found" => 'foram achados.',
 
