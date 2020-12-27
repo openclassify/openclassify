@@ -26,8 +26,9 @@
                                         "{{ catText }}"
                                     </h1>
                                 {% endif %}
+                                {{ trans('visiosoft.module.advs::field.search_ad_result_prefix')|lower }}
                                 <span>
-                                    {{ advs.total }} {{ trans('visiosoft.module.advs::field.ads')|lower }}
+                                   {{ advs.total }} {{ trans('visiosoft.module.advs::field.ad')|lower }}
                                 </span>
                                 {{ trans('visiosoft.module.advs::field.were_found') }}
                             </div>

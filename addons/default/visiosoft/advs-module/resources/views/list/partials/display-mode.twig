@@ -1,4 +1,4 @@
-<div class="row text-center list-view-type justify-content-center">
+<div class="row text-center list-view-type justify-content-center subbreadcrumb">
     <div class="col-4 col-md-3">
         {% if setting_value('visiosoft.module.location::list_page_location') %}
             <button onclick="changeViewType('{{ url_route('visiosoft.module.advs::view_type', ['map']) }}')"
@@ -15,14 +15,14 @@
             <small class="d-md-none d-lg-inline">{{ trans('visiosoft.module.advs::field.show_list_view.name') }}</small>
         </button>
     </div>
-    <div class="col-3 list-table-view d-none d-md-block">
+    <div class="col-3 col-md-3 list-table-view d-none d-md-block">
         <button onclick="changeViewType('{{ url_route('visiosoft.module.advs::view_type', ['table']) }}')"
            class="border-0 text-dark d-flex align-items-center justify-content-center">
             <img src="{{ img('visiosoft.module.advs::images/table-icon.svg').url }}" alt="table icon" class="mr-1">
             <small class="d-md-none d-lg-inline">{{ trans('visiosoft.module.advs::field.show_table_view.name') }}</small>
         </button>
     </div>
-    <div class="col-4 col-md-3 pr-0">
+    <div class="col-4 col-md-3">
         <button onclick="changeViewType('{{ url_route('visiosoft.module.advs::view_type', ['gallery']) }}')"
            class="mx-auto border-0 text-dark d-flex align-items-center justify-content-center">
             <img src="{{ img('visiosoft.module.advs::images/gallery-icon.svg').url }}" alt="gallery icon" class="mr-1">
