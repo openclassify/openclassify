@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Företagsinfo',
     'featured_ads' => "Utvalda annonser",
     'trending_ads' => 'Trendind-annonser',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': räkna annonser som hittades för: namnsökning',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "Ingen plats har valts.",
     "continue" => 'Fortsätta',
     "gallery" => 'Galleri',
+    "ad" => 'Ad',
     "ads" => 'annonser',
     "were_found" => 'hittades.',
 
