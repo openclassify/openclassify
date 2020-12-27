@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'מידע תאגידי',
     'featured_ads' => "מודעות ממומנות",
     'trending_ads' => 'מודעות טרנדינד',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': ספירת מודעות שנמצאו עבור: חיפוש שמות',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "לא נבחר מיקום.",
     "continue" => 'המשך',
     "gallery" => 'גלריה',
+    "ad" => 'Ad',
     "ads" => 'מודעות',
     "were_found" => 'נמצאו.',
 
