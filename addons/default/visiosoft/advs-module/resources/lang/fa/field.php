@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'اطلاعات شرکت',
     'featured_ads' => "اعلانات برجسته",
     'trending_ads' => 'اعلانات مدروز',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':تعداد اعلانات یافت شده برای:جستجوی نام',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "هیچ موقعیتی انتخاب نشده است.",
     "continue" => 'ادامه',
     "gallery" => 'عکس ها',
+    "ad" => 'Ad',
     "ads" => 'تبلیغات',
     "were_found" => 'پیدا شدند.',
 
