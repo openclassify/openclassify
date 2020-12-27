@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Thông tin doanh nghiệp',
     'featured_ads' => "Các bảng quảng cáo",
     'trending_ads' => 'Quảng cáo Trendind',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': đếm quảng cáo được tìm thấy cho: tìm kiếm tên',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "Không có địa điểm được chọn.",
     "continue" => 'Tiếp tục',
     "gallery" => 'Bộ sưu tập',
+    "ad" => 'Ad',
     "ads" => 'Quảng cáo',
     "were_found" => 'đã được tìm thấy.',
 
