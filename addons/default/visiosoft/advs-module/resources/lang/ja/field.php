@@ -209,6 +209,7 @@ return [
     'corporate_info' => '企業情報',
     'featured_ads' => "注目の広告",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => '：name検索で見つかった：count個の広告',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "場所が選択されていません。",
     "continue" => '継続する',
     "gallery" => 'ギャラリー',
+    "ad" => 'Ad',
     "ads" => '広告',
     "were_found" => '発見されました。',
 
