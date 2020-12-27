@@ -210,6 +210,7 @@ return [
     'corporate_info' => 'Kurumsal Bilgiler',
     'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
@@ -282,6 +283,7 @@ return [
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
+    "ad" => 'Ad',
     "ads" => 'İlanlar',
     "were_found" => 'bulundu.',
 
