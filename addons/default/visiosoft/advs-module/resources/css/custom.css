@@ -45,3 +45,7 @@
 select[name=filter_User] + .select2 {
     min-width: 20rem;
 }
+
+.navbar-collapse {
+    padding-left: 15px !important;
+}

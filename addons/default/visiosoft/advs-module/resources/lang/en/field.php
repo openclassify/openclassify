@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Corporate Info',
     'featured_ads' => "Featured Ads",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':count ads found for :name search',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "No location is selected.",
     "continue" => 'Continue',
     "gallery" => 'Gallery',
+    "ad" => 'Ad',
     "ads" => 'Ads',
     "were_found" => 'were found.',
 

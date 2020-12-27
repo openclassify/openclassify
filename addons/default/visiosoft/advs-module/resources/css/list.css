@@ -225,3 +225,57 @@ a.sort-by-open-dropdown:hover {
 #listFilterForm .card-header {
     padding: 5px 0;
 }
+
+.p-3{
+    background-color: #f4f4f4;
+}
+
+.card {
+    border: none;
+}
+
+.py-1 {
+    padding-top: 3px!important;
+    padding-bottom: 3px!important;
+}
+
+.px-2 {
+    padding: 0!important;
+}
+
+.btn-link {
+    font-weight: bold;
+}
+
+.p-3 {
+    padding: 8px !important;
+}
+
+.searchbut {
+    padding: 0px !important;
+}
+
+#main > div > nav {
+    padding-bottom: 10px !important;
+}
+
+.breadcrumb {
+    padding: 0px !important;
+}
+.subbreadcrumb small , .sort-by-selected-text{
+    color: black !important;
+}
+
+.img-thumbnail {
+    padding: 0px;
+    border: none;
+}
+
+.products-list p {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.navbar-collapse {
+    padding-left: 15px !important;
+}
