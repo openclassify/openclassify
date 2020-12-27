@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'کارپوریٹ معلومات',
     'featured_ads' => "نمایاں اشتہارات",
     'trending_ads' => 'رجحانات کے اشتہارات',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': کے لئے ملنے والے اشتہارات گنیں: نام کی تلاش',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "کوئی مقام منتخب نہیں ہوا ہے۔",
     "continue" => 'جاری رہے',
     "gallery" => 'گیلری',
+    "ad" => 'Ad',
     "ads" => 'اشتہارات',
     "were_found" => 'پائے گئے.',
 
