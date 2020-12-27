@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Informacje o firmie',
     'featured_ads' => "Polecane reklamy",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': liczba znalezionych reklam dla: wyszukiwania nazw',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "Nie wybrano lokalizacji.",
     "continue" => 'Kontyntynuj',
     "gallery" => 'Galeria',
+    "ad" => 'Ad',
     "ads" => 'Reklamy',
     "were_found" => 'zostały znalezione.',
 
