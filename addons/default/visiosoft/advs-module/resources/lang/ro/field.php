@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Informații corporative',
     'featured_ads' => "Anunțuri recomandate",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': numără anunțuri găsite pentru: căutare nume',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
     "gallery" => 'Galerie',
+    "ad" => 'Ad',
     "ads" => 'Reclame',
     "were_found" => 'au fost găsite.',
 
