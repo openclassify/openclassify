@@ -209,6 +209,7 @@ return [
     'corporate_info' => '회사 정보',
     'featured_ads' => "특집 광고",
     'trending_ads' => '트렌드 인 광고',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': 이름 검색에 대해 찾은 개수 광고',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "선택된 위치가 없습니다.",
     "continue" => '계속하다',
     "gallery" => '갤러리',
+    "ad" => 'Ad',
     "ads" => '광고',
     "were_found" => '발견되었습니다.',
 
