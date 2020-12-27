@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'कॉर्पोरेट जानकारी',
     'featured_ads' => "सुविधाजनक विज्ञापन",
     'trending_ads' => 'ट्रेंडइंड विज्ञापन',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': नाम खोज के लिए पाए गए विज्ञापनों की गणना करें',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "कोई स्थान चयनित नहीं है।",
     "continue" => 'जारी रखें',
     "gallery" => 'गेलरी',
+    "ad" => 'Ad',
     "ads" => 'विज्ञापन',
     "were_found" => 'पाये गए।',
 
