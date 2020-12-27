@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'Informacioni i korporatës',
     'featured_ads' => "Njoftimet e preferuara",
     'trending_ads' => 'Njoftimet në trend',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':Numëroni njoftime të gjetura për: kërkim të emrit',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
     "continue" => 'Vazhdo',
     "gallery" => 'Galeria',
+    "ad" => 'Ad',
     "ads" => 'Ads',
     "were_found" => 'u gjetën',
 
