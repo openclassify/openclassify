@@ -210,6 +210,7 @@ return [
     'corporate_info' => 'Bedrijfsinfo',
     'featured_ads' => "Aanbevolen advertenties",
     'trending_ads' => 'Trendind-advertenties',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':      tel advertenties gevonden voor:zoeken op naam',
     ],
@@ -281,6 +282,7 @@ return [
     "no_location" => "Er is geen locatie geselecteerd.",
     "continue" => 'Doorgaan met',
     "gallery" => 'Galerij',
+    "ad" => 'Ad',
     "ads" => 'Advertenties',
     "were_found" => 'zijn gevonden.',
 
