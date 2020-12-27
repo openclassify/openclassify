@@ -209,6 +209,7 @@ return [
     'corporate_info' => 'কর্পোরেট তথ্য',
     'featured_ads' => "বৈশিষ্ট্যযুক্ত বিজ্ঞাপন",
     'trending_ads' => 'ট্রেন্ডইন্ড বিজ্ঞাপন',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': নাম অনুসন্ধানের জন্য পাওয়া বিজ্ঞাপন গণনা করুন',
     ],
@@ -280,6 +281,7 @@ return [
     "no_location" => "কোনও অবস্থান নির্বাচন করা হয়নি।",
     "continue" => 'চালিয়ে',
     "gallery" => 'দরদালান',
+    "ad" => 'Ad',
     "ads" => 'বিজ্ঞাপন',
     "were_found" => 'পাওয়া গেছে।',
 
