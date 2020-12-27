@@ -210,6 +210,7 @@ return [
     'corporate_info' => 'Корпоративная информация',
     'featured_ads' => "Избранные объявления",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':      количество объявлений найдено для:поиск по названию',
     ],
@@ -281,6 +282,7 @@ return [
     "no_location" => "Местоположение не выбрано.",
     "continue" => 'Продолжить',
     "gallery" => 'Галерея',
+    "ad" => 'Ad',
     "ads" => 'Объявления',
     "were_found" => 'были найдены.',
 
