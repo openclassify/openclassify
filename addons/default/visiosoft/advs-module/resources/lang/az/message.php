@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Bu reklam artıq etibarlı deyil!",
     'approve_status_change' => "Reklamınızın Vəziyyəti Aktivləşdirildi!",
     'passive_status_change' => "Reklamınızın Vəziyyəti Passiv təyin olundu!",
+	'sold_status_change' => "Your Ad's Status Has Been Set to Sold!",
 ];
