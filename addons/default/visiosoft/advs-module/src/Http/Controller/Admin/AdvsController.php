@@ -204,4 +204,19 @@ class AdvsController extends AdminController
     {
         return Excel::download(new AdvsExport(), 'advs-' . time() . '.xlsx');
     }
+
+    public function advancedEdit()
+    {
+        $available_colmuns
+        if()
+        if ($this->request->has('advanced_column') and $this->request->has('advanced_entry_id') and $this->request->has('advanced_value')) {
+            $entry_id = $this->request->get('advanced_entry_id');
+            $column = $this->request->get('advanced_column');
+            $value = $this->request->get('advanced_value');
+            if ($entry = $this->advRepository->find($entry_id)) {
+                $entry->setAttribute($column, $value);
+                $entry->save();
+            }
+        }
+    }
 }
