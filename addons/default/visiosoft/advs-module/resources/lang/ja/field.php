@@ -165,6 +165,7 @@ return [
     'edit' => '編集する',
     'approve' => '承認する',
     'passive' => "受動的",
+	'sold' => 'Sold',
     'offered_by' => 'が提供します',
     'more_ads_by' => 'より多くの広告',
     'click_phone' => '電話番号を表示',
