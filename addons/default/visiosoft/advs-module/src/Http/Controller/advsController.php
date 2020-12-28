@@ -521,6 +521,7 @@ class AdvsController extends PublicController
                 }
             }
 
+            $features = null;
             if ($this->adv_model->is_enabled('customfields')) {
                 $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
             }
