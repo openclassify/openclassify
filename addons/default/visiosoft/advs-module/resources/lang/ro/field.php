@@ -165,6 +165,7 @@ return [
     'edit' => 'Editați | ×',
     'approve' => 'Aproba',
     'passive' => "Pasiv",
+	'sold' => 'Sold',
     'offered_by' => 'Oferit de',
     'more_ads_by' => 'Mai multe reclame de',
     'click_phone' => 'Afișează numărul de telefon',
