@@ -165,6 +165,7 @@ return [
     'edit' => 'Bewerk',
     'approve' => 'Goedkeuren',
     'passive' => "Passief",
+	'sold' => 'Sold',
     'offered_by' => 'Aangeboden door',
     'more_ads_by' => 'Meer advertenties door',
     'click_phone' => 'Toon telefoonnummer',
