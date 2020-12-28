@@ -165,6 +165,7 @@ return [
     'edit' => 'Edit',
     'approve' => 'Approve',
     'passive' => "Passive",
+	'sold' => 'Sold',
     'offered_by' => 'Offered By',
     'more_ads_by' => 'More Ads By',
     'click_phone' => 'Show phone number',
