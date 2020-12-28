@@ -11,8 +11,12 @@ class EnableMaintenanceMode
     {
         $builder = $event->getBuilder();
         if (get_class($builder->getRepository()) === SettingFormRepository::class) {
-            if ($builder->getFormValues()->has('maintenance') and $builder->getFormValues()->get('maintenance')) {
-                Artisan::call('down');
+            if ($builder->getFormValues()->has('maintenance')) {
+                if ($builder->getFormValues()->get('maintenance')) {
+                    Artisan::call('down');
+                } elseif (config('streams::maintenance.enabled')) {
+                    Artisan::call('up');
+                }
             }
         }
     }
