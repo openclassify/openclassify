@@ -165,6 +165,7 @@ return [
     'edit' => 'সম্পাদন করা',
     'approve' => 'অনুমোদন করা',
     'passive' => "নিষ্ক্রিয়",
+	'sold' => 'Sold',
     'offered_by' => 'প্রদত্ত',
     'more_ads_by' => 'আরও বিজ্ঞাপন দ্বারা',
     'click_phone' => 'ফোন নম্বর দেখান',
