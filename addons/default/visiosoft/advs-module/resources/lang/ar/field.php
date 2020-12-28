@@ -165,6 +165,7 @@ return [
     'edit' => 'تصحيح',
     'approve' => 'يوافق',
     'passive' => "مبني للمجهول",
+	'sold' => 'Sold',
     'offered_by' => 'مقدم بواسطة',
     'more_ads_by' => 'المزيد من الإعلانات بواسطة',
     'click_phone' => 'عرض رقم الهاتف',
