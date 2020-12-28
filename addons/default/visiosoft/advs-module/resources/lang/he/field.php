@@ -165,6 +165,7 @@ return [
     'edit' => 'ערוך',
     'approve' => 'אשר',
     'passive' => "פסיבי",
+	'sold' => 'Sold',
     'offered_by' => 'מוצע על ידי',
     'more_ads_by' => 'מודעות נוספות מאת',
     'click_phone' => 'הצג מספר טלפון',
