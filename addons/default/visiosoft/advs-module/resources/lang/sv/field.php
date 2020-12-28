@@ -165,6 +165,7 @@ return [
     'edit' => 'Redigera',
     'approve' => 'Godkänna',
     'passive' => "Passiv",
+	'sold' => 'Sold',
     'offered_by' => 'Erbjuds av',
     'more_ads_by' => 'Fler annonser av',
     'click_phone' => 'Visa telefonnummer',
