@@ -165,6 +165,7 @@ return [
     'edit' => 'Redakto',
     'approve' => 'Miratoj',
     'passive' => "Pasiv",
+	'sold' => 'Sold',
     'offered_by' => 'Ofrohet nga',
     'more_ads_by' => 'Më Shumë njoftime nga',
     'click_phone' => 'Trego numrin e telefonit',
