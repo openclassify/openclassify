@@ -165,6 +165,7 @@ return [
     'edit' => 'modificare',
     'approve' => 'Approvare',
     'passive' => "Passivo",
+	'sold' => 'Sold',
     'offered_by' => 'Offerto da',
     'more_ads_by' => 'Altre pubblicità di',
     'click_phone' => 'Mostra il numero di telefono',
