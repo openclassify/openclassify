@@ -165,6 +165,7 @@ return [
     'edit' => 'Weşandin',
     'approve' => 'Destûrdan',
     'passive' => "Nejîr",
+	'sold' => 'Sold',
     'offered_by' => 'Ji hêla Pêşniyar kirin',
     'more_ads_by' => 'More Ads By',
     'click_phone' => 'Hejmara têlefonê nîşan bide',
