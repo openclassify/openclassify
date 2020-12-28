@@ -165,6 +165,7 @@ return [
     'edit' => '편집하다',
     'approve' => '승인',
     'passive' => "수동태",
+	'sold' => 'Sold',
     'offered_by' => '에 의해 제공된',
     'more_ads_by' => '더 많은 광고',
     'click_phone' => '전화 번호 표시',
