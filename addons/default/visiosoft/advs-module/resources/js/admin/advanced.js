@@ -16,7 +16,17 @@ var getUrlParameter = function getUrlParameter(sParam) {
 
 if (getUrlParameter('view') === "advanced") {
     $('.fast-update').on('change', function () {
-        var value = $(this).val(), entry_id = $(this).data('entry_id'), column = $(this).data('column');
-        alert(value,entry_id,column);
+        var advanced_value = $(this).val(), advanced_entry_id = $(this).data('entry_id'),
+            advanced_column = $(this).data('column'), advanced_type = $(this).attr('type');
+
+        if (advanced_type === "checkbox") {
+            advanced_value = ($(this).prop('checked')) ? 1 : 0;
+        }
+
+        crudAjax({
+            'advanced_column': advanced_column,
+            'advanced_entry_id': advanced_entry_id,
+            'advanced_value': advanced_value
+        }, advanced_update_url, 'POST')
     })
 }
