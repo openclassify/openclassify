@@ -22,7 +22,7 @@ $(function () {
             autoProcessQueue: true,
             parallelUploads: 1,
             resizeMethod: 'contain',
-            resizeQuality: 0.8,
+            resizeQuality: 0.9,
             url: REQUEST_ROOT_PATH + '/streams/media-field_type/handle',
             headers: {
                 'X-CSRF-TOKEN': CSRF_TOKEN
