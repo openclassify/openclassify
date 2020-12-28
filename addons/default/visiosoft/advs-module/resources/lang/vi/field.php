@@ -165,6 +165,7 @@ return [
     'edit' => 'Biên tập',
     'approve' => 'Phê duyệt',
     'passive' => "Bị động",
+	'sold' => 'Sold',
     'offered_by' => 'Được cung cấp bởi',
     'more_ads_by' => 'Thêm quảng cáo bởi',
     'click_phone' => 'Hiển thị số điện thoại',
