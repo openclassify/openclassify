@@ -980,9 +980,13 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         event(new ChangedStatusAd($ad));//Create Notify
-        $message = $type === 'approved' ?
-            trans('visiosoft.module.advs::message.approve_status_change')
-            : trans('visiosoft.module.advs::message.passive_status_change');
+	    if ($type === 'approved') {
+		    $message = trans('visiosoft.module.advs::message.approve_status_change');
+	    } elseif ($type === 'sold') {
+		    $message = trans('visiosoft.module.advs::message.sold_status_change');
+	    } else {
+		    trans('visiosoft.module.advs::message.passive_status_change');
+	    }
         $this->messages->success($message);
         return back();
     }
@@ -1263,4 +1267,13 @@ class AdvsController extends PublicController
         $this->messages->success(trans('visiosoft.module.advs::message.extended', ['number' => $adsExtended]));
         return $this->redirect->back();
     }
+
+	public function sold($id, Request $request, AdvModel $advModel)
+	{
+		if ($request->sold == 'sold') {
+			$advModel->find($id)->update(['status' => 'sold']);
+		} elseif ($request->sold = 'not-sold') {
+			$advModel->find($id)->update(['status' => 'approved']);
+		}
+	}
 }

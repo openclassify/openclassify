@@ -20,6 +20,12 @@
                     {{ trans('visiosoft.module.advs::field.passive') }}
                 </a>
             {% endif %}
+            {% if adv.status != 'sold' and adv.is_get_adv != '1' %}
+                <a class="dropdown-item" href="{{ route('visiosoft.module.advs::status',[adv.id,"sold"]) }}">
+                    <i class="fa fa-gavel"></i>
+                    {{ trans('visiosoft.module.advs::field.sold') }}
+                </a>
+            {% endif %}
         </div>
     </div>
     {{ asset_add("styles.css", "visiosoft.module.advs::css/dropleft-edit.css") }}
