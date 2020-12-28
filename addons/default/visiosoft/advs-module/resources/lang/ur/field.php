@@ -165,6 +165,7 @@ return [
     'edit' => 'ترمیم',
     'approve' => 'منظور کریں',
     'passive' => "غیر فعال",
+	'sold' => 'Sold',
     'offered_by' => 'پیش کردہ',
     'more_ads_by' => 'مزید اشتہارات کے ذریعہ',
     'click_phone' => 'فون نمبر دکھائیں',
