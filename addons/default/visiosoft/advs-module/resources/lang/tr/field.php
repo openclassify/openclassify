@@ -165,6 +165,7 @@ return [
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
     'passive' => "Pasif",
+	'sold' => 'Sold',
     'offered_by' => 'İlan Sahibi',
     'more_ads_by' => 'Diğer İlanlar',
     'click_phone' => 'Telefon numarasını göster',
