@@ -31,4 +31,7 @@ return [
     'option_configuration' => [
         'name' => 'Cấu hình',
     ],
+    'status' => [
+        'name' => 'Status',
+    ],
 ];
