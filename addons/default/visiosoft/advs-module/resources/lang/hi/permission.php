@@ -97,4 +97,12 @@ return [
             'delete' => 'विकल्प कॉन्फ़िगरेशन हटा सकते हैं?',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Can read status?',
+            'write'  => 'Can create/edit status?',
+            'delete' => 'Can delete status?',
+        ],
+    ],
 ];
