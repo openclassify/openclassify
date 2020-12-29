@@ -97,4 +97,12 @@ return [
             'delete' => 'האם ניתן למחוק את תצורת האפשרויות?',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Can read status?',
+            'write'  => 'Can create/edit status?',
+            'delete' => 'Can delete status?',
+        ],
+    ],
 ];
