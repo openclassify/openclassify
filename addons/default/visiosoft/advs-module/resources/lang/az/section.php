@@ -56,4 +56,7 @@ return [
         'title' => 'Konfiqurasiya',
     ],
     'translations' => 'Tərcümə',
+    'status' => [
+        'title' => 'Status',
+    ],
 ];
