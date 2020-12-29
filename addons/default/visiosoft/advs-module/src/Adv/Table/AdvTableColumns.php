@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Table;
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
+use Anomaly\Streams\Platform\Entry\EntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 
 class AdvTableColumns
@@ -8,11 +9,11 @@ class AdvTableColumns
 
     public function handle(AdvTableBuilder $builder)
     {
-        $builder->setColumns([
+        $columns = [
             'cover_photo' => [
                 'value' => function (EntryInterface $entry) {
                     return "<img width='80px' src='" . $entry->AddAdsDefaultCoverImage($entry)->cover_photo . "' >";
-                },
+                }
             ],
 
             'name' => [
@@ -59,7 +60,36 @@ class AdvTableColumns
             'created_by' => [
                 'value' => 'entry.created_by.name',
             ],
-        ]);
+        ];
+
+        if ($builder->isActiveView('advanced')) {
+
+            unset($columns['created_by'], $columns['country']);
+            $columns['is_get_adv'] = [
+                'attributes' => [
+                    'html' => function (EntryModel $entry) {
+                        $checked = ($entry->is_get_adv) ? 'checked' : '';
+                        return '<input style="min-width:120px" type="checkbox" class="form-control fast-update" ' . $checked . ' data-column="is_get_adv" data-entry_id="' . $entry->getId() . '">';
+                    }
+                ],
+                'class' => 'advs-price',
+            ];
+            $columns['standard_price'] = [
+                'attributes' => [
+                    'html' => function (EntryModel $entry) {
+                        return '<input style="min-width:120px" type="number" min="0" class="form-control fast-update" value="' . $entry->standard_price . '" data-column="standard_price" data-entry_id="' . $entry->getId() . '">';
+                    }
+                ],
+                'class' => 'advs-price',
+            ];
+            $columns['price']['attributes'] = [
+                'html' => function (EntryModel $entry) {
+                    return '<input style="min-width:120px" type="number" min="0" class="form-control fast-update" value="' . $entry->price . '" data-column="price" data-entry_id="' . $entry->getId() . '">';
+                }
+            ];
+        }
+
+        $builder->setColumns($columns);
     }
 
 }
