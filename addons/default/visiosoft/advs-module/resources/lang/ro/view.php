@@ -2,4 +2,5 @@
 
 return [
     'unfinished' => 'Neterminat',
+    'advanced' => 'Advanced',
 ];
