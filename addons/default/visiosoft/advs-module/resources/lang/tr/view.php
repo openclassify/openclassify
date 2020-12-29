@@ -2,4 +2,5 @@
 
 return [
     'unfinished' => 'Bitmemiş',
+    'advanced' => 'Advanced',
 ];
