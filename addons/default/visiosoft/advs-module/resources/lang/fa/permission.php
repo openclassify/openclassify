@@ -97,4 +97,12 @@ return [
             'delete' => 'آیا می توان پیکربندی گزینه را حذف کرد؟',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Can read status?',
+            'write'  => 'Can create/edit status?',
+            'delete' => 'Can delete status?',
+        ],
+    ],
 ];
