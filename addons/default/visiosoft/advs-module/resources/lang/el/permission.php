@@ -97,4 +97,12 @@ return [
             'delete' => 'Μπορεί να διαγραφεί η διαμόρφωση επιλογών;',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Can read status?',
+            'write'  => 'Can create/edit status?',
+            'delete' => 'Can delete status?',
+        ],
+    ],
 ];
