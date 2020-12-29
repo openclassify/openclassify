@@ -97,4 +97,12 @@ return [
             'delete' => '옵션 구성을 삭제할 수 있습니까?',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Can read status?',
+            'write'  => 'Can create/edit status?',
+            'delete' => 'Can delete status?',
+        ],
+    ],
 ];
