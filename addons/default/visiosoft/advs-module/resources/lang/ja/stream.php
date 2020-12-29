@@ -31,4 +31,7 @@ return [
     'option_configuration' => [
         'name' => '構成',
     ],
+    'status' => [
+        'name' => 'Status',
+    ],
 ];
