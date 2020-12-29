@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'Fast biafirîne',
 	'publish' => 'Weşandin',
 	'import' => 'Malanîn',
+    'new_status' => 'New Status',
 ];
