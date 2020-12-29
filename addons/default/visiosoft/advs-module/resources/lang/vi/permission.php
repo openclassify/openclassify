@@ -97,4 +97,12 @@ return [
             'delete' => 'Có thể xóa cấu hình tùy chọn?',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Can read status?',
+            'write'  => 'Can create/edit status?',
+            'delete' => 'Can delete status?',
+        ],
+    ],
 ];
