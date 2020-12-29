@@ -31,4 +31,7 @@ return [
     'option_configuration' => [
         'name' => '구성',
     ],
+    'status' => [
+        'name' => 'Status',
+    ],
 ];
