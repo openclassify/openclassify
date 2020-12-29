@@ -2,4 +2,5 @@
 
 return [
     'unfinished' => 'Onvoltooid',
+    'advanced' => 'Advanced',
 ];
