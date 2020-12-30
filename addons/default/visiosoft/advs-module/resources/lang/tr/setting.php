@@ -219,4 +219,8 @@ return [
         'name' => 'Reklam Düğmesi Rengi Oluştur',
         'instructions' => 'Yeni reklam kategorisi seçimi bittiğinde görünen düğmeyi değiştirir.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Tarayıcı Diline Geç',
+        'instructions' => 'Seçili aktif bir dil olmadığında tarayıcı dilini aktif dil olarak seçmenize izin verir'
+    ],
 ];

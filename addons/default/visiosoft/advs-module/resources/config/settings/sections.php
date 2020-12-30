@@ -22,9 +22,9 @@ return [
                 'fields' => [
                     'latest-limit',
                     'popular_ads_limit',
-	                'ads_image_limit',
-	                'default_view_type',
-	                'price_area_hidden',
+                    'ads_image_limit',
+                    'default_view_type',
+                    'price_area_hidden',
                     'hide_listing_standard_price',
                     'hide_zero_price',
                     'auto_approve',
@@ -83,6 +83,7 @@ return [
             'translations' => [
                 'title' => 'visiosoft.module.advs::section.translations',
                 'fields' => [
+                    'lang_switcher_for_browser',
                     'override_text',
                 ],
             ],
