@@ -219,4 +219,8 @@ return [
         'name' => 'Criar cor do botão do anúncio',
         'instructions' => 'Altera o botão que aparece quando a seleção da nova categoria de anúncio é concluída.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
