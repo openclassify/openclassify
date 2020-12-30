@@ -219,4 +219,8 @@ return [
         'name' => 'Створіть колір кнопки об\'яви',
         'instructions' => 'Змінює кнопку, яка з’являється після завершення вибору нової категорії оголошень.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
