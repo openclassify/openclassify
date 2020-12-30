@@ -219,4 +219,8 @@ return [
         'name' => '広告ボタンの色を作成する',
         'instructions' => '新しい広告カテゴリの選択が終了したときに表示されるボタンを変更します。'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
