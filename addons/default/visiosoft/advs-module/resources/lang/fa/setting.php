@@ -220,4 +220,8 @@ return [
         'name' => 'رنگ دکمه تبلیغات را ایجاد کنید',
         'instructions' => 'دکمه ای را که با پایان یافتن انتخاب دسته جدید آگهی نشان داده می شود ، تغییر می دهد.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
