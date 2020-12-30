@@ -219,4 +219,8 @@ return [
         'name' => 'Create Ad Button Color',
         'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
