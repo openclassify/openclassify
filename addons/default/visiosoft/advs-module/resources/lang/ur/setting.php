@@ -219,4 +219,8 @@ return [
         'name' => 'ایڈ بٹن کا رنگ بنائیں',
         'instructions' => 'نئے اشتہار کیٹیگری کا انتخاب ختم ہونے پر بٹن تبدیل ہوتا ہے۔'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
