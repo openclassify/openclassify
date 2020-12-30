@@ -219,4 +219,8 @@ return [
         'name' => 'إنشاء لون زر الإعلان',
         'instructions' => 'يغير الزر الذي يظهر عند الانتهاء من اختيار فئة الإعلان الجديدة.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
