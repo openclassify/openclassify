@@ -219,4 +219,8 @@ return [
         'name' => 'Creați culoarea butonului publicitar',
         'instructions' => 'Schimbă butonul care se afișează la finalizarea selecției noii categorii de anunțuri.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
