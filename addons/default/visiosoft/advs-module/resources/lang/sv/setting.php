@@ -219,4 +219,8 @@ return [
         'name' => 'Skapa färg för annonsknapp',
         'instructions' => 'Ändrar knappen som visas när det nya valet av annonskategori är klart.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
