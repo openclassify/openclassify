@@ -10,6 +10,7 @@
         <a data-toggle="modal"
            data-target="#{{ field_type.input_name }}-modal" {% if field_type.config.folders|length == 1 %} href="{{ url('streams/singlefile-field_type/upload/' ~ field_type.config.folders|first) }}" {% else %} href="{{ url('streams/singlefile-field_type/choose/' ~ field_type.config_key) }}" {% endif %}
            class="btn btn-success btn-xs">{{ trans('visiosoft.field_type.singlefile::button.upload') }}</a>
+        {{ trans('visiosoft.field_type.singlefile::message.choose_file_option') }}
     {% endif %}
 {% endif %}
 

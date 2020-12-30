@@ -9,4 +9,5 @@ return [
     'overwrite'        => 'daha önce yüklenmiş. Üzerine kaydetmek ister misiniz?',
     'uploading'        => 'Karşıya Yükleniyor',
     'loading'          => 'Yükleniyor',
+    'choose_file_option' => 'Bir Dosya Seçin',
 ];
