@@ -46,4 +46,9 @@ return [
         'write',
         'delete',
     ],
+    'status' => [
+        'read',
+        'write',
+        'delete',
+    ],
 ];

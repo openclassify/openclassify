@@ -19,6 +19,11 @@ class AdvTableBuilder extends TableBuilder
             'slug' => 'all',
             'text' => 'streams::view.all',
         ],
+        'advanced' => [
+            'view' => All::class,
+            'slug' => 'advanced',
+            'text' => 'module::view.advanced',
+        ],
         'trash',
         'unfinished' => [
             'view' => unfinished::class
@@ -74,6 +79,7 @@ class AdvTableBuilder extends TableBuilder
         'order_by' => [
             'id' => 'DESC',
         ],
+        'table_view' => 'visiosoft.module.advs::admin/table/table'
     ];
 
     /**
@@ -81,6 +87,10 @@ class AdvTableBuilder extends TableBuilder
      *
      * @var array
      */
-    protected $assets = [];
+    protected $assets = [
+        'scripts.js' => [
+            'visiosoft.module.advs::js/admin/advanced.js'
+        ],
+    ];
 
 }

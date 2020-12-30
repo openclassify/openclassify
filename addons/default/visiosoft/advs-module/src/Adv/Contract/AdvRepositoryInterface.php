@@ -45,7 +45,7 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function extendAds($allAds, $isAdmin = false);
 
-    public function getByUsersIDs($usersIDs);
+    public function getByUsersIDs($usersIDs, $status = 'approved', $withDraft = false);
 
     public function getPopular();
 
