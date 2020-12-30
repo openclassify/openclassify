@@ -219,4 +219,8 @@ return [
         'name' => 'צור צבע כפתור מודעה',
         'instructions' => 'משנה את הכפתור שמופיע לאחר בחירת קטגוריית המודעות החדשה.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
