@@ -219,4 +219,8 @@ return [
         'name' => 'Kleur van advertentieknop maken',
         'instructions' => 'Wijzigt de knop die wordt weergegeven wanneer de selectie van de nieuwe advertentiecategorie is voltooid.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
