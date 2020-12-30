@@ -219,4 +219,8 @@ return [
         'name' => 'Utwórz kolor przycisku reklamy',
         'instructions' => 'Zmienia przycisk wyświetlany po zakończeniu wyboru nowej kategorii reklam.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
