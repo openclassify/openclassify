@@ -219,4 +219,8 @@ return [
         'name' => 'Δημιουργία χρώματος κουμπιού διαφήμισης',
         'instructions' => 'Αλλάζει το κουμπί που εμφανίζεται όταν ολοκληρωθεί η νέα επιλογή κατηγορίας διαφημίσεων.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
