@@ -219,4 +219,8 @@ return [
         'name' => 'Krijo ngjyrën e butonit të reklamës',
         'instructions' => 'Ndryshon butonin që shfaqet kur të përfundojë zgjedhja e kategorisë së re të reklamës.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
