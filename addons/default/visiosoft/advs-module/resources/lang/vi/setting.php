@@ -219,4 +219,8 @@ return [
         'name' => 'Tạo màu nút quảng cáo',
         'instructions' => 'Thay đổi nút hiển thị khi quá trình lựa chọn danh mục quảng cáo mới hoàn tất.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
 ];
