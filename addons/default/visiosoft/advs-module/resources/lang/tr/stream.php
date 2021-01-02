@@ -31,4 +31,7 @@ return [
     'option_configuration' => [
         'name' => 'Yapılandırma',
     ],
+    'status' => [
+        'name' => 'Durum',
+    ],
 ];
