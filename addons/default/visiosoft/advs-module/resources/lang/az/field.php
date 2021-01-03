@@ -162,7 +162,7 @@ return [
     'complaint_placeholder' => 'Şikayətlərinizi buraya yaza bilərsiniz.',
     'show_details' => 'Ətraflı bax',
     'ad_actions' => 'Elan düzəlişləri',
-    'edit' => 'Redaktə edin',
+    'edit' => 'Düzəliş et',
     'approve' => 'Təsdiqlə',
     'passive' => "Passivləşdir",
 	'sold' => 'Satıldı',
@@ -187,7 +187,7 @@ return [
     'ad_id' => 'Elan nömrəsi',
     'contact_with' => 'Əlaqə saxlayın',
     'create_adv' => 'Elan yaradın',
-    'edit_adv' => 'Elanı redaktə edin',
+    'edit_adv' => 'Düzəliş et',
     'mandatory_fields' => 'Məcburi sahələr',
     'ad_post' => 'Elanı Yayımla',
     'sell_item' => 'Məhsul və ya xidmət satın',
@@ -275,13 +275,13 @@ return [
         'name' => 'Şəkilli Elanlar'
     ],
     'ads_with_video' => [
-        'name' => 'Video ilə Reklamlar'
+        'name' => 'Videolu Elanlar'
     ],
     'yes' => [
         'name' => 'Bəli'
     ],
     "no_location" => "Heç bir yer seçilməyib.",
-    "continue" => 'Davam edin',
+    "continue" => 'Davam et',
     "gallery" => 'Qalereya',
     "ad" => 'elan',
     "ads" => 'Elanlar',
@@ -291,22 +291,22 @@ return [
     'pending_message_1' => 'Elan təsdiqləmə prosesindədir',
     'pending_message_2' => "Elanın Yeniləmə tarixi",
     'pending_message_3' => 'Təxmini gözləmə vaxtı',
-    'pending_message_4' => 'Təsdiqləmə müddətində keçirilmiş vaxt dopinq vaxtına əlavə ediləcəkdir.',
-    'pending_message_5' => 'Təsdiqləmə müddətində reklam ilə bağlı zəng mərkəzindən heç bir əməliyyat edilə bilməz.',
+    'pending_message_4' => 'Təsdiqləmə müddəti ödənişli elan vaxtına əlavə ediləcəkdir.',
+    'pending_message_5' => 'Təsdiqləmə müddətində elan ilə bağlı çağrı mərkəzindən heç bir əməliyyat edilə bilməz.',
     'hours' => 'saat',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'Reklamınız haqqında aşağıdakı məlumatlar düzgündürsə, "Davam et" düyməsini basın və növbəti mərhələyə keçin.',
-        'part_2' => 'Əgər deyilsə, "Düzəliş et" düyməsini basın.',
+        'part_1' => 'Reklamınız haqqında aşağıdakı məlumatlar düzgündürsə, "Davam et" düyməsinə klik edərək növbəti mərhələyə keçin.',
+        'part_2' => 'Əgər deyilsə, "Düzəliş et" düyməsini klik edin.',
     ],
-    'views' => 'Baxışlar',
+    'views' => 'Baxış sayı',
 
     // Detail page
-    "no_street_view" => "Bu yerdə küçə görünüşü görüntüsü yoxdur",
-    'edit_my_contact_info' => 'Əlaqə məlumatlarımı düzəldin',
-    'update_my_contact_info' => 'əlaqə məlumatımı yeniləyin',
-    'contact_info' => 'Əlaqə məlumatı',
+    "no_street_view" => "Bu ünvanda küçə görünüşü yoxdur",
+    'edit_my_contact_info' => 'Əlaqə məlumatlarımı dəyiş',
+    'update_my_contact_info' => 'əlaqə məlumatımı yenilə',
+    'contact_info' => 'Əlaqə məlumatları',
     'ad_info' => 'Elan haqqında məlumat',
 
     // Select cat
