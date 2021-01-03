@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'new_adv' => 'Yeni Adv',
-    'new_classified' => 'Yeni təsnif edilmişdir',
+    'new_adv' => 'Yeni Elan',
+    'new_classified' => 'Yeni Elan',
     'new_category' => 'Yeni kateqoriya',
     'new_country' => 'Yeni Ölkə',
     'new_city' => 'Yeni Şəhər',
@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'Sürətli yaradın',
 	'publish' => 'Nəşr edin',
 	'import' => 'İdxal',
+    'new_status' => 'New Status',
 ];
