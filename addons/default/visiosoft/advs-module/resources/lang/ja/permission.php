@@ -50,11 +50,51 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'オプション',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'オプションを読むことができますか？',
+            'write'  => 'オプションを作成/編集できますか？',
+            'delete' => 'オプションを削除できますか？',
+        ],
+    ],
+    'productoptions' => [
+        'name'   => '製品オプション',
+        'option' => [
+            'read'   => 'productoptionsを読むことができますか？',
+            'write'  => '製品オプションを作成/編集できますか？',
+            'delete' => 'productoptionsを削除できますか？',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Productoptionsの値',
+        'option' => [
+            'read'   => 'productoptionsの値を読み取ることができますか？',
+            'write'  => 'productoptions値を作成/編集できますか？',
+            'delete' => 'productoptions値を削除できますか？',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'オプション構成',
+        'option' => [
+            'read'   => 'オプション設定を読み取ることができますか？',
+            'write'  => 'オプション構成を作成/編集できますか？',
+            'delete' => 'オプション設定を削除できますか？',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'オプション構成',
+        'option' => [
+            'read'   => 'オプション設定を読み取ることができますか？',
+            'write'  => 'オプション構成を作成/編集できますか？',
+            'delete' => 'オプション設定を削除できますか？',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'オプション構成',
+        'option' => [
+            'read'   => 'オプション設定を読み取ることができますか？',
+            'write'  => 'オプション構成を作成/編集できますか？',
+            'delete' => 'オプション設定を削除できますか？',
         ],
     ],
 ];

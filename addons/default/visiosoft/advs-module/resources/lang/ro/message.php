@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Moneda convertită cu succes.',
     'choose_user' => 'Alegeți un utilizator',
     'owner_updated_successfully' => 'Proprietarul a fost actualizat cu succes!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Nu a fost găsit niciun anunț!',
+    'replicated_success' => 'Anunțul a fost reprodus cu succes!',
+    'ad_doesnt_exist' => "Acest anunț nu există!",
+    'select_location_error' => "Vă rugăm să selectați o locație pe hartă!",
+    'this_ad_is_not_valid_anymore' => "Acest anunț nu mai este valabil!",
+    'approve_status_change' => "Starea anunțului dvs. a fost activată!",
+    'passive_status_change' => "Starea anunțului dvs. a fost setată la pasivă!",
 ];

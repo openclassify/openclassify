@@ -20,7 +20,7 @@ return [
         'name' => 'السعر'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'سعر قياسي'
     ],
     'date' => [
         'name' => 'تاريخ'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'الفئة الفرعية 6'
     ],
+    'cat8' => [
+        'name' => 'الفئة الفرعية 7'
+    ],
+    'cat9' => [
+        'name' => 'الفئة الفرعية 8'
+    ],
+    'cat10' => [
+        'name' => 'الفئة الفرعية 9'
+    ],
     'currency' => [
         'name' => 'دقة'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'الأقدم',
     'address_a_z' => 'العنوان (من الألف إلى الياء)',
     'address_z_a' => 'العنوان (ي إلى أ)',
-    'categories' => 'الاقسام',
+	'categories' => [
+		'name' => 'التصنيفات'
+	],
     'all_categories' => 'جميع الفئات',
     'location' => 'موقعك',
     'send_message' => 'إرسال رسالة',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'في ال 24 ساعة الماضية'
     ],
+    'in_the_last_day' => [
+        'name' => 'في آخر 24 ساعة'
+    ],
     'in_the_last_week' => [
         'name' => 'في الأسبوع الماضي'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "لا يوجد موقع محدد.",
     "continue" => 'استمر',
     "gallery" => 'صالة عرض',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'إعلانات',
+    "were_found" => 'تم ايجادها.',
 
     // Pending screen
     'pending_message_1' => 'الإعلان قيد عملية الموافقة',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'حدد الفئة خطوة بخطوة',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'خيارات',
+    'category_selection' => 'اختيار الفئة',
+    'listing_details' => 'تفاصيل قائمة',
+    'preview' => 'معاينة',
+    'congratulations' => 'تهانينا',
+    'ad_desc' => 'وصف الإعلان',
+    'upload_photos' => 'تحميل الصور',
+    'additional_fields' => 'حقول إضافية',
+    'ad_location' => 'موقع الإعلان',
+
+    'free' => 'مجانا',
+    'ad_date' => 'تاريخ الإعلان',
+    'photo_video' => 'صور وفيديو',
+    'and_above' => 'و ما فوق',
+    'and_below' => 'و تحت',
+    'clear_all' => 'امسح الكل',
+    'balances' => 'الرصيد',
+    'packages' => 'الحزمة',
+    'dopings' => 'المنشطات',
+    'advs' => 'Advs',
+    'site' => 'الموقع',
+    'subscription' => 'اشتراك',
+	'created' => 'خلقت',
+	'product_option' => [
+		'name' => 'خيار المنتج'
+	],
+	'option_json' => [
+		'name' => 'اختيار'
+	],
+    'old_price' => [
+        'name' => 'سعر قديم'
+    ],
 ];

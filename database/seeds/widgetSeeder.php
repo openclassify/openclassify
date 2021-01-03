@@ -29,8 +29,8 @@ class widgetSeeder extends Seeder
             ->create(
                 [
                     'en'        => [
-                        'title'       => 'ARecent News',
-                        'description' => 'ARecent news from http://pyrocms.com/',
+                        'title'       => 'Recent News',
+                        'description' => 'Recent news'
                     ],
                     'extension' => 'anomaly.extension.xml_feed_widget',
                     'dashboard' => $dashboard,
@@ -43,7 +43,7 @@ class widgetSeeder extends Seeder
             [
                 'scope' => $widget->getId(),
                 'key'   => 'anomaly.extension.xml_feed_widget::url',
-                'value' => 'http://www.pyrocms.com/posts/rss.xml',
+                'value' => 'https://openclassify.com/posts/rss.xml',
             ]
         );
     }

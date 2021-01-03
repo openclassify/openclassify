@@ -20,7 +20,7 @@ return [
         'name' => 'Цена'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Стандартная цена'
     ],
     'date' => [
         'name' => 'Дата'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Подкатегория 6'
     ],
+    'cat8' => [
+        'name' => 'Подкатегория 7'
+    ],
+    'cat9' => [
+        'name' => 'Подкатегория 8'
+    ],
+    'cat10' => [
+        'name' => 'Подкатегория 9'
+    ],
     'currency' => [
         'name' => 'валюта'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'самый старший',
     'address_a_z' => 'Адрес (от А до Я)',
     'address_z_a' => 'Адрес (от Z до A)',
-    'categories' => 'категории',
+	'categories' => [
+		'name' => 'Категории'
+	],
     'all_categories' => 'все категории',
     'location' => 'Место нахождения',
     'send_message' => 'Отправить сообщение',
@@ -249,6 +260,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'В последние 24 часа'
     ],
+    'in_the_last_day' => [
+        'name' => 'За последние 24 часа'
+    ],
     'in_the_last_week' => [
         'name' => 'В последнюю неделю'
     ],
@@ -267,8 +281,8 @@ return [
     "no_location" => "Местоположение не выбрано.",
     "continue" => 'Продолжить',
     "gallery" => 'Галерея',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Объявления',
+    "were_found" => 'были найдены.',
 
     // Pending screen
     'pending_message_1' => 'Объявление находится в процессе одобрения',
@@ -296,5 +310,36 @@ return [
     'select_category_step_by_step' => 'Выберите категорию шаг за шагом',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Параметры',
+    'category_selection' => 'Выбор категории',
+    'listing_details' => 'Детали объявления',
+    'preview' => 'Предварительный просмотр',
+    'congratulations' => 'Поздравления',
+    'ad_desc' => 'Описание объявления',
+    'upload_photos' => 'Загрузить фотографии',
+    'additional_fields' => 'Дополнительные поля',
+    'ad_location' => 'Местоположение объявления',
+
+    'free' => 'Бесплатно',
+    'ad_date' => 'Дата объявления',
+    'photo_video' => 'Фото, видео',
+    'and_above' => 'и выше',
+    'and_below' => 'и ниже',
+    'clear_all' => 'Очистить все',
+    'balances' => 'Балансы',
+    'packages' => 'Пакеты',
+    'dopings' => 'Допинг',
+    'advs' => 'Advs',
+    'site' => 'Сайт',
+    'subscription' => 'Подписка',
+	'created' => 'Создано',
+	'product_option' => [
+		'name' => 'Вариант продукта'
+	],
+	'option_json' => [
+		'name' => 'Вариант'
+	],
+    'old_price' => [
+        'name' => 'Старая цена'
+    ],
 ];

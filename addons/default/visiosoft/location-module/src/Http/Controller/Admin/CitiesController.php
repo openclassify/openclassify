@@ -9,13 +9,6 @@ use Visiosoft\LocationModule\District\DistrictModel;
 
 class CitiesController extends AdminController
 {
-
-    /**
-     * Display an index of existing entries.
-     *
-     * @param CityTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function index(CityTableBuilder $table, Request $request)
     {
         if($this->request->action == "delete") {
@@ -39,32 +32,13 @@ class CitiesController extends AdminController
         return $table->render();
     }
 
-    /**
-     * Create a new entry.
-     *
-     * @param CityFormBuilder $form
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function create(CityFormBuilder $form,Request $request)
+    public function create(CityFormBuilder $form)
     {
-        if($this->request->action == "save") {
-            if ($form->hasFormErrors()) {
-                return back();
-            }
-            $form->make();
-            return $this->redirect->to('/admin/location/cities?country='.$request->parent_country_id);
-        }
+        $form->setCountry($this->request->get('cities'));
 
-        return $this->view->make('visiosoft.module.location::location/admin-sub-location');
+        return $form->render();
     }
 
-    /**
-     * Edit an existing entry.
-     *
-     * @param CityFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function edit(CityFormBuilder $form, $id)
     {
         return $form->render($id);

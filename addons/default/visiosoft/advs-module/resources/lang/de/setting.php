@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Standardanzeige GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Miniaturbildbreite',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Miniaturbildhöhe',
-    ],
-    'picture_width' => [
-        'name' => 'Bildbreite',
-    ],
-    'picture_height' => [
-        'name' => 'Bildhöhe',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Listing Page Image',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Standardpreisfeld ausblenden',
+    ],
+    'hide_options_field' => [
+        'name' => 'Optionsfeld ausblenden',
+    ],
+    'hide_village_field' => [
+        'name' => 'Dorffeld verstecken',
+    ],
+    'hide_configurations' => [
+        'name' => 'Blenden Sie die Schaltfläche Konfigurationen aus',
+        'instructions' => 'Blenden Sie die Schaltfläche "Konfigurationen" auf der Anzeigenvorschau aus',
+    ],
+    'make_map_required' => [
+        'name' => 'Karte erforderlich machen',
+        'instructions' => 'Fordern Sie den Nutzer auf, beim Erstellen einer Anzeige eine Stecknadel auf der Karte zu platzieren',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Listing Standardpreis ausblenden',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Aktivierte Währungen',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google Statistikcode',
+    ],
+    'register_email_field' => [
+        'name' => 'E-Mail-Anforderung für die Mitgliederregistrierung',
+    ],
+    'market_place' => [
+        'name' => 'Marktplatz',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Preisbereich versteckt',
+	],
+    'hide_price_filter' => [
+        'name' => 'Preisfilter ausblenden',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Datumsfilter ausblenden',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Fotofilter ausblenden',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Kartenfilter ausblenden',
+    ],
+    'show_lang_url' => [
+        'name' => 'Lang-Parameter für URL anzeigen',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Beliebtes Anzeigenlimit',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Bildgröße Backend ändern',
+    ],
+    'full_image_width' => [
+        'name' => 'Volle Bildbreite',
+    ],
+    'full_image_height' => [
+        'name' => 'Vollbildhöhe',
+    ],
+    'medium_image_width' => [
+        'name' => 'Mittlere Bildbreite',
+    ],
+    'medium_image_height' => [
+        'name' => 'Mittlere Bildhöhe',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Miniaturbildbreite',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Miniaturbildhöhe',
+    ],
+    'add_canvas' => [
+        'name' => 'Leinwand hinzufügen',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Bild Leinwandbreite',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Bild Leinwand Höhe',
     ],
     'watermark_type' => [
         'name' => 'Wasserzeichentyp',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Wasserzeichen Position',
     ],
-    'listing_page_image' => [
-        'name' => 'Listing Page Image',
+    'user_filter_limit' => [
+        'name' => 'Benutzerfilterlimit',
+        'instructions' => 'Im Admin-Bereich'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Breadcrumb beim Erstellen einer Anzeige anzeigen',
     ],
-    'enabled_currencies' => [
-        'name' => 'Aktivierte Währungen',
+    'show_ads_count' => [
+        'name' => 'Anzeigenanzahl anzeigen',
+        'instructions' => 'Anzeigenanzahl in der linken Kategorieliste anzeigen',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google Statistikcode',
+    'show_post_ad_agreement' => [
+        'name' => 'Show Post Ad Agreement anzeigen',
+        'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
     ],
-    'register_email_field' => [
-        'name' => 'E-Mail-Anforderung für die Mitgliederregistrierung',
+    'override_text' => [
+        'name' => 'Text überschreiben',
+        'instructions' => 'Alter Wert: Neuer Wert'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Schritte Farbe',
+        'instructions' => 'Ändert die Farbe der progressiven Schritte.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Farbe der Anzeigenschaltfläche erstellen',
+        'instructions' => 'Ändert die Schaltfläche, die angezeigt wird, wenn die Auswahl der neuen Anzeigenkategorie abgeschlossen ist.'
     ],
 ];

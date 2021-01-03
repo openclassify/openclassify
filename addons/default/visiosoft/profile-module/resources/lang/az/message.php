@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Heç bir ünvan və ya görmək icazəsi yoxdur.',
     'empty_password_sms_message' => 'Təhlükəsizlik problemləri ilə əlaqədar olaraq şifrənizi dəyişdirdik! Yeni parolunuz:',
     'required_all' => "Bütün sahə tələb olunur!",
+    'can_not_remove_filled_fields' => "Doldurulmuş sahələri silə bilməzsiniz!",
+    'wrong_password' => "Girdiyiniz parol düzgün deyil!",
 
     // Forgot Password
     'email_phone_not_found' => 'Elektron poçt, telefon nömrəsi düzgün deyil!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Hesabınızı bağlamaq istəyirsiniz? Bu əməliyyatı geri qaytarmaq olmaz.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-poçt Yenilənib!',
+    'update_email_mail_message' => 'E-poçtunuz Yeniləndi!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha sahəsi tələb olunur.',
+    'failed_to_validate_captcha' => 'Captcha doğrulana bilmədi.',
 ];

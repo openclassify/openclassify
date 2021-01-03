@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Annuncio predefinito GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Larghezza Miniatura',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Altezza Miniatura',
-    ],
-    'picture_width' => [
-        'name' => 'Larghezza immagine',
-    ],
-    'picture_height' => [
-        'name' => 'Altezza dell\'immagine',
-    ],
     'twitter' => [
         'name' => 'cinguettio',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Immagine della pagina di elenco',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Nascondi campo prezzo standard',
+    ],
+    'hide_options_field' => [
+        'name' => 'Nascondi campo opzioni',
+    ],
+    'hide_village_field' => [
+        'name' => 'Nascondi campo villaggio',
+    ],
+    'hide_configurations' => [
+        'name' => 'Nascondi il pulsante Configurazioni',
+        'instructions' => 'Nascondi il pulsante Configurazioni nella pagina Anteprima annunci',
+    ],
+    'make_map_required' => [
+        'name' => 'Rendi la mappa richiesta',
+        'instructions' => 'Richiedi all\'utente di posizionare un segnaposto sulla mappa durante la creazione di un annuncio',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Nascondi elenco prezzo standard',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Valute abilitate',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Codice statistico di Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Requisito e-mail di registrazione membro',
+    ],
+    'market_place' => [
+        'name' => 'Piazza del mercato',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Area di Prezzo Nascosta',
+	],
+    'hide_price_filter' => [
+        'name' => 'Nascondi filtro prezzo',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Nascondi filtro data',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Nascondi filtro foto',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Nascondi filtro mappa',
+    ],
+    'show_lang_url' => [
+        'name' => 'Mostra parametro Lang per URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Limite annunci popolari',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Backend ridimensionamento immagine',
+    ],
+    'full_image_width' => [
+        'name' => 'Larghezza immagine completa',
+    ],
+    'full_image_height' => [
+        'name' => 'Altezza completa dell\'immagine',
+    ],
+    'medium_image_width' => [
+        'name' => 'Larghezza immagine media',
+    ],
+    'medium_image_height' => [
+        'name' => 'Altezza media dell\'immagine',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Larghezza Miniatura',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Altezza Miniatura',
+    ],
+    'add_canvas' => [
+        'name' => 'Aggiungi tela',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Larghezza tela immagine',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Altezza tela immagine',
     ],
     'watermark_type' => [
         'name' => 'Tipo di filigrana',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Posizione della filigrana',
     ],
-    'listing_page_image' => [
-        'name' => 'Immagine della pagina di elenco',
+    'user_filter_limit' => [
+        'name' => 'Limite filtro utente',
+        'instructions' => 'Nel pannello di amministrazione'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Mostra breadcrumb durante la creazione di un annuncio',
     ],
-    'enabled_currencies' => [
-        'name' => 'Valute abilitate',
+    'show_ads_count' => [
+        'name' => 'Mostra conteggio annunci',
+        'instructions' => 'Mostra il conteggio degli annunci nell\'elenco delle categorie a sinistra',
     ],
-    'google_statistic_code' => [
-        'name' => 'Codice statistico di Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Mostra accordo post annuncio',
+        'instructions' => 'Attiva questa opzione se desideri visualizzare un accordo sulla politica sulla privacy nella pagina di creazione dell\'annuncio',
     ],
-    'register_email_field' => [
-        'name' => 'Requisito e-mail di registrazione membro',
+    'override_text' => [
+        'name' => 'Sostituisci testo',
+        'instructions' => 'Vecchio valore: nuovo valore'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Colore dei passaggi',
+        'instructions' => 'Cambia il colore dei gradini progressivi.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Crea colore pulsante annuncio',
+        'instructions' => 'Modifica il pulsante che viene visualizzato al termine della selezione della nuova categoria di annunci.'
     ],
 ];

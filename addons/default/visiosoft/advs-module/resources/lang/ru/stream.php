@@ -20,6 +20,15 @@ return [
         'name' => 'Значения ср',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Параметры',
+    ],
+    'product_options' => [
+        'name' => 'Варианты продукта',
+    ],
+    'productoptions_value' => [
+        'name' => 'Стоимость опционов',
+    ],
+    'option_configuration' => [
+        'name' => 'Конфигурация',
     ],
 ];

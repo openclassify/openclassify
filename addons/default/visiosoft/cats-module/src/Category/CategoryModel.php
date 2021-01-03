@@ -15,7 +15,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             ->first();
     }
 
-    public function getParentCats($id, $type = null)
+    public function getParentCats($id, $type = null, $noMainCat = true)
     {
         $cat = $this->getCat($id);
         $catNames = array();
@@ -30,7 +30,9 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
                     if ($parCat->parent_category_id == "") {
                         if ($type == "add_main")
                             $catNames[] = $parCat->name;
-                        break;
+                        if ($noMainCat) {
+                            break;
+                        }
                     }
                     $catNames[] = $parCat->name;
                     $cat_ids[] = $parCat->id;
@@ -122,7 +124,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 
         $cats = $cats->leftJoin('cats_category_translations', function ($join) {
             $join->on('cats_category.id', '=', 'cats_category_translations.entry_id');
-            $join->whereIn('cats_category_translations.locale', [config('app.locale'), setting_value('streams::default_locale'),'en']);//active lang
+            $join->whereIn('cats_category_translations.locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);//active lang
         });
         $cats = $cats->select('cats_category.*', 'cats_category_translations.name as name');
         $cats = $cats->orderBy('id', 'DESC')
@@ -130,7 +132,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             ->get();
         foreach ($cats as $cat) {
             $link = '';
-            $parents = $this->getParentCats($cat->id, null);
+            $parents = $this->getParentCats($cat->id, null, false);
             krsort($parents);
             foreach ($parents as $key => $parent) {
                 if ($key == 0) {
@@ -142,7 +144,8 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
             $data[] = array(
                 'id' => $cat->id,
                 'name' => $cat->name,
-                'parents' => $link
+                'parents' => $link,
+                'slug' => $cat->slug
             );
         }
         return $data;
@@ -173,19 +176,25 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         $categories = array();
         $z = 1;
         for ($i = 1; $i <= $z; $i++) {
-            $main = $this->newQuery()->where('id', $id)->first();
-            $new = array();
-            $new['id'] = $main->id;
-            $new['val'] = $main->name;
-            $new['slug'] = $main->slug;
-            $categories[] = $new;
-            if ($main->parent_category_id != null) {
-                $id = $main->parent_category_id;
-                $z++;
+            if ($main = $this->newQuery()->where('id', $id)->first()) {
+                $new = array();
+                $new['id'] = $main->id;
+                $new['val'] = $main->name;
+                $new['slug'] = $main->slug;
+                $categories[] = $new;
+                if ($main->parent_category_id != null) {
+                    $id = $main->parent_category_id;
+                    $z++;
+                }
             }
         }
         $categories = array_reverse($categories);
         unset($categories[count($categories) - 1]);
         return $categories;
+    }
+
+    public function getParent()
+    {
+        return $this->parent_category;
     }
 }

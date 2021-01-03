@@ -40,7 +40,20 @@ return [
     'general' => '일반',
     'ads' => '광고',
     'user' => '사용자',
+    'filter' => '필터',
+    'create_ad' => '광고 작성',
     'options' => [
-        'title' => 'Options',
+        'title' => '옵션',
     ],
+    'ads_image' => '광고 이미지',
+    'product_options' => [
+        'title' => '옵션',
+    ],
+    'productoptions_value' => [
+        'title' => '옵션 값',
+    ],
+    'option_configuration' => [
+        'title' => '구성',
+    ],
+    'translations' => '번역',
 ];

@@ -20,7 +20,7 @@ return [
         'name' => 'Preço'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Preço padrão'
     ],
     'date' => [
         'name' => 'Encontro'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Subcategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Subcategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Sub Categoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Subcategoria 9'
+    ],
     'currency' => [
         'name' => 'Moeda'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Mais antigas',
     'address_a_z' => 'Endereço (A a Z)',
     'address_z_a' => 'Endereço (Z a A)',
-    'categories' => 'Categorias',
+	'categories' => [
+		'name' => 'Categorias'
+	],
     'all_categories' => 'todas as categorias',
     'location' => 'Localização',
     'send_message' => 'Enviar mensagem',
@@ -249,6 +260,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Nas últimas 24 horas'
     ],
+    'in_the_last_day' => [
+        'name' => 'Nas últimas 24 horas'
+    ],
     'in_the_last_week' => [
         'name' => 'Na última semana'
     ],
@@ -267,8 +281,8 @@ return [
     "no_location" => "Nenhum local está selecionado.",
     "continue" => 'Continuar',
     "gallery" => 'Galeria',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Publicidades',
+    "were_found" => 'foram achados.',
 
     // Pending screen
     'pending_message_1' => 'O anúncio está no processo de aprovação',
@@ -296,5 +310,36 @@ return [
     'select_category_step_by_step' => 'Selecione a categoria passo a passo',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opções',
+    'category_selection' => 'Seleção de Categoria',
+    'listing_details' => 'Detalhes da lista',
+    'preview' => 'Antevisão',
+    'congratulations' => 'Parabéns',
+    'ad_desc' => 'Descrição de Anúncio',
+    'upload_photos' => 'Upload fotos',
+    'additional_fields' => 'Campos Adicionais',
+    'ad_location' => 'Localização do anúncio',
+
+    'free' => 'Livre',
+    'ad_date' => 'Data do Anúncio',
+    'photo_video' => 'Foto, Vídeo',
+    'and_above' => 'e acima',
+    'and_below' => 'e abaixo',
+    'clear_all' => 'Limpar tudo',
+    'balances' => 'Saldos',
+    'packages' => 'Pacotes',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Local',
+    'subscription' => 'Inscrição',
+	'created' => 'Criado',
+	'product_option' => [
+		'name' => 'Opção de Produto'
+	],
+	'option_json' => [
+		'name' => 'Opção'
+	],
+    'old_price' => [
+        'name' => 'Preço antigo'
+    ],
 ];

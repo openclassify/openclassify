@@ -16,12 +16,13 @@ $(function () {
     var dropzone = new Dropzone('.dropzone:not(data-initialized)',
         {
             paramName: 'upload',
-            resizeWidth: 800,
-            resizeHeight: 600,
+            maxFiles: imageCount,
+            resizeWidth: settings_image['resize_width'],
+            resizeHeight: settings_image['resize_height'],
             autoProcessQueue: true,
             parallelUploads: 1,
             resizeMethod: 'contain',
-            resizeQuality: 0.8,
+            resizeQuality: 0.9,
             url: REQUEST_ROOT_PATH + '/streams/media-field_type/handle',
             headers: {
                 'X-CSRF-TOKEN': CSRF_TOKEN
@@ -33,7 +34,7 @@ $(function () {
                 formData.append('folder', element.data('folder'));
             },
             renameFile: function (file) {
-                let newName = new Date().getTime() + '_' + adv_id + "_" + file.name;
+                let newName = new Date().getTime() + '_' + file.name;
                 return newName;
             },
             accept: function (file, done) {
@@ -69,7 +70,8 @@ $(function () {
         var response = JSON.parse(file.xhr.response);
 
         uploaded.push(response.id);
-        $('.panel-table').load(
+
+        $('.media-selected-wrapper').load(
             REQUEST_ROOT_PATH + '/streams/media-field_type/selected?uploaded=' + uploaded.join(','),
             function () {
                 $('input[name="files"]').val(uploaded.join(','))
@@ -99,14 +101,18 @@ function addAppendByData(data_id) {
 }
 
 
-function deleteImage(id) {
+function deleteImage(e, id) {
+    e.preventDefault()
+
     var key_item = $.inArray(id, uploaded);
     uploaded.splice(key_item, 1);
     $('input[name="files"]').val(uploaded.join(','))
     $('.imageList').find('div[data-id="' + id + '"]').remove()
 }
 
-function rotateImage(id) {
+function rotateImage(e, id) {
+    e.preventDefault()
+
     var img = $('.ads-box-image[data-id="' + id + '"]').find('img')
     var img_url = img.attr('src');
     $.ajax({
@@ -124,9 +130,11 @@ function rotateImage(id) {
 }
 
 
-//Set Main İmage
-function setMain(id) {
-    $('.image-eye-' + uploaded[0]).remove();
+//Set Main Image
+function setMain(e, id) {
+    e.preventDefault()
+
+    $('.main-image').remove();
     var key_item = $.inArray(id, uploaded);
     uploaded.splice(key_item, 1);
     uploaded.unshift(id);

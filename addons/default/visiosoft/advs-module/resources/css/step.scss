@@ -1,0 +1,78 @@
+#stepProgressBar {
+  counter-reset: step;
+
+  .step  {
+    text-align:  center;
+    min-width: 0;
+
+    &.current {
+      .bullet {
+        background-color: #fff;
+        @media only screen and (min-width: 768px) {
+          border-width: .3rem;
+        }
+      }
+
+      .step-text  {
+        font-weight: 500;
+      }
+
+      & ~ * {
+        &::after {
+          background-color: #dfdfdf;
+        }
+
+        .bullet {
+          color: #999;
+          background-color: #DFDFDF;
+        }
+      }
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      height: .16rem;
+      top: 0.96rem;
+      left: 0;
+      z-index: -1;
+      width: 100%;
+      @media only screen and (min-width: 768px) {
+        height: .3rem;
+        top: 1.4rem;
+      }
+    }
+
+    .bullet {
+      height: 2rem;
+      width: 2rem;
+      border-radius: 100%;
+      color: #fff;
+      display: inline-block;
+      position: relative;
+      line-height: 20px;
+      @media only screen and (min-width: 768px) {
+        height: 3rem;
+        width: 3rem;
+      }
+
+        &::before {
+        content: counter(step);
+        counter-increment: step;
+        font-size: 14px;
+        font-weight: 600;
+        @media only screen and (min-width: 768px) {
+          font-size: 20px;
+        }
+      }
+    }
+
+    .step-text  {
+      color: #999;
+      font-size: 12px;
+      @media only screen and (min-width: 768px) {
+        font-size: initial;
+      }
+    }
+  }
+}

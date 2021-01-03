@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Nicio adresă sau nu este autorizată să vizualizeze.',
     'empty_password_sms_message' => 'Din cauza problemelor de securitate, v-am schimbat parola! Noua dvs. parolă este:',
     'required_all' => "Tot câmpul este obligatoriu!",
+    'can_not_remove_filled_fields' => "Nu puteți elimina câmpurile umplute!",
+    'wrong_password' => "Parola pe care ați introdus-o nu este corectă!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mailul, numărul de telefon nu este corect!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Doriți să vă închideți contul? Această operație nu poate fi anulată.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-mail actualizat!',
+    'update_email_mail_message' => 'E-mailul dvs. a fost actualizat!',
+
+    // Register
+    'recaptcha_field_is_required' => 'câmpul reCaptcha este obligatoriu.',
+    'failed_to_validate_captcha' => 'Nu s-a validat captcha.',
 ];

@@ -32,9 +32,15 @@ return [
         'name' => 'Registrieren Sie das Anweisungslogo für die Seite',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Link zum Registrieren von Seitenalarmen',
     ],
     'style' => [
         'name' => 'Stil (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Homepage Unterkategorien Limit',
+    ],
+	'default_country' => [
+		'name' => 'Registrierungsseite, Standardland für Telefon',
+	]
 ];

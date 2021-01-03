@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Conversion de devise réussie.',
     'choose_user' => 'Choisissez un utilisateur',
     'owner_updated_successfully' => 'Le propriétaire a été mis à jour avec succès!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Aucune annonce trouvée!',
+    'replicated_success' => 'L\'annonce a été répliquée avec succès!',
+    'ad_doesnt_exist' => "Cette annonce n'existe pas!",
+    'select_location_error' => "Veuillez sélectionner un emplacement sur la carte!",
+    'this_ad_is_not_valid_anymore' => "Cette annonce n'est plus valide!",
+    'approve_status_change' => "Le statut de votre annonce a été défini sur Actif!",
+    'passive_status_change' => "Le statut de votre annonce a été défini sur Passif!",
 ];

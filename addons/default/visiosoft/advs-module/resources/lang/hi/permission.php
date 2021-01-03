@@ -50,11 +50,51 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'विकल्प',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'विकल्प पढ़ सकते हैं?',
+            'write'  => 'विकल्प बना / संपादित कर सकते हैं?',
+            'delete' => 'विकल्प हटा सकते हैं?',
+        ],
+    ],
+    'productoptions' => [
+        'name'   => 'Productoptions',
+        'option' => [
+            'read'   => 'Productoptions पढ़ सकते हैं?',
+            'write'  => 'Productoptions बना / संपादित कर सकते हैं?',
+            'delete' => 'Productoptions हटा सकते हैं?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'उत्पाद के मूल्य',
+        'option' => [
+            'read'   => 'क्या उत्पाद अपनाने के मूल्य पढ़ सकते हैं?',
+            'write'  => 'Productoptions मान बना / संपादित कर सकते हैं?',
+            'delete' => 'क्या Productoptions मान हटा सकते हैं?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'विकल्प विन्यास',
+        'option' => [
+            'read'   => 'विकल्प विन्यास पढ़ सकते हैं?',
+            'write'  => 'विकल्प विन्यास बना / संपादित कर सकते हैं?',
+            'delete' => 'विकल्प कॉन्फ़िगरेशन हटा सकते हैं?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'विकल्प विन्यास',
+        'option' => [
+            'read'   => 'विकल्प विन्यास पढ़ सकते हैं?',
+            'write'  => 'विकल्प विन्यास बना / संपादित कर सकते हैं?',
+            'delete' => 'विकल्प कॉन्फ़िगरेशन हटा सकते हैं?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'विकल्प विन्यास',
+        'option' => [
+            'read'   => 'विकल्प विन्यास पढ़ सकते हैं?',
+            'write'  => 'विकल्प विन्यास बना / संपादित कर सकते हैं?',
+            'delete' => 'विकल्प कॉन्फ़िगरेशन हटा सकते हैं?',
         ],
     ],
 ];

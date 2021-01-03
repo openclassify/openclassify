@@ -1,37 +1,22 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Register2;
 
+use Anomaly\UsersModule\Role\Command\GetRole;
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Event\UserHasRegistered;
 use Anomaly\UsersModule\User\UserActivator;
-use Illuminate\Contracts\Config\Repository;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Facades\Auth;
+use Visiosoft\ProfileModule\Profile\Register2\Command\HandleAutomaticRegistration;
+use Visiosoft\ProfileModule\Profile\Register2\Command\HandleEmailRegistration;
+use Visiosoft\ProfileModule\Profile\Register2\Command\HandleManualRegistration;
 
-/**
- * Class RegisterFormHandler
- *
- * @link   http://openclassify.com/
- * @author OpenClassify, Inc. <support@openclassify.com>
- * @author Visiosoft Inc <support@openclassify.com>
- */
 class Register2FormHandler
 {
-
     use DispatchesJobs;
 
-    /**
-     * Handle the form.
-     *
-     * @param Repository $config
-     * @param Dispatcher $events
-     * @param UserRepositoryInterface $users
-     * @param Register2FormBuilder $builder
-     * @param UserActivator $activator
-     */
     public function handle(
-        Repository $config,
         Dispatcher $events,
         UserRepositoryInterface $users,
         Register2FormBuilder $builder,
@@ -41,8 +26,6 @@ class Register2FormHandler
         if (!$builder->canSave()) {
             return;
         }
-
-        $profile_parameters = array();
 
         /* Create Profile in Register */
         $domain = setting_value('streams::domain');
@@ -58,7 +41,13 @@ class Register2FormHandler
         $fields = $builder->getPostData();
         $fields['display_name'] = $fields['first_name'] . " " . $fields['last_name'];
         $fields['gsm_phone'] = $builder->getPostValue('phone');
-        unset($fields['phone']);
+        unset(
+            $fields['phone'],
+            $fields['accept_protection_law'],
+            $fields['accept_privacy_terms'],
+            $fields['receive_sms_emails'],
+            $fields['recaptcha_token']
+        );
 
         $register = $users->create($fields);
         $register->setAttribute('password', $fields['password']);
@@ -66,11 +55,34 @@ class Register2FormHandler
 
         /* @var UserInterface $user */
         $user = $register;
+        $builder->setFormEntry($register);
 
         $activator->start($user);
-        $activator->force($user);
+
+        $mode = config('anomaly.module.users::config.activation_mode', 'automatic');
+
+        switch ($mode) {
+            case 'automatic':
+                dispatch_now(new HandleAutomaticRegistration($builder));
+                break;
+
+            case 'manual':
+                dispatch_now(new HandleManualRegistration($builder));
+                break;
+
+            case 'email':
+                dispatch_now(new HandleEmailRegistration($builder));
+                break;
+        }
+
+	    $user = $builder->getFormEntry();
+
+	    foreach ($builder->getRoles() as $role) {
+		    if ($role = $this->dispatch(new GetRole($role))) {
+			    $user->attachRole($role);
+		    }
+	    }
 
         $events->dispatch(new UserHasRegistered($user));
-        Auth::login($user);
     }
 }

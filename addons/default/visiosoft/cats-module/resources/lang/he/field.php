@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'אנא המתן. מחיקת קטגוריות משנה',
     'category_selection' => 'בחירת קטגוריה',
+    'go_to_parent' => 'עבור להורה',
 ];

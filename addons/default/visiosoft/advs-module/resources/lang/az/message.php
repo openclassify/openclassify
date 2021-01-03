@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Valyuta uğurla çevrildi.',
     'choose_user' => 'İstifadəçi seçin',
     'owner_updated_successfully' => 'Sahib uğurla yeniləndi!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Elan tapılmadı!',
+    'replicated_success' => 'Reklam uğurla təkrarlandı!',
+    'ad_doesnt_exist' => "Bu reklam mövcud deyil!",
+    'select_location_error' => "Xahiş edirəm xəritədə bir yer seçin!",
+    'this_ad_is_not_valid_anymore' => "Bu reklam artıq etibarlı deyil!",
+    'approve_status_change' => "Reklamınızın Vəziyyəti Aktivləşdirildi!",
+    'passive_status_change' => "Reklamınızın Vəziyyəti Passiv təyin olundu!",
 ];

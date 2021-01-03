@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'يرجى الانتظار',
     'category_selection' => 'اختيار الفئة',
+    'go_to_parent' => 'انتقل إلى الأصل',
 ];

@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Tipi i regjistrimit'
     ],
+    'birthday' => [
+        'name' => 'Ditëlindja'
+    ],
+	'facebook_address' => [
+		'name' => 'Adresa në Facebook'
+	],
+	'google_address' => [
+		'name' => 'Adresa e Google'
+	],
+    'education' => [
+        'name' => 'Arsimi'
+    ],
+    'state_of_education' => [
+        'name' => 'Shteti i Arsimit'
+    ],
+    'profession' => [
+        'name' => 'Profesioni'
+    ],
     'identification_number' => [
         'name' => 'Numrin e identifikimit'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Perdoruesit'
     ],
+	'name' => [
+		'name' => 'Emrin'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'Fjalëkalimi',
     ],
+    'old_password' => [
+        'name' => 'Fjalëkalimi i vjetër',
+    ],
     'new_password' => [
         'name' => 'Fjalëkalim i ri',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => 'Individual',
     ],
     'corporate' => [
-        'name' => 'Korporatë',
+        'name' => 'Korporatave',
     ],
 
     'details' => [
@@ -428,19 +452,35 @@ return [
     'my_address' => 'Adresa ime',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Emri i Kompanise'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Zyra e Taksave'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Numri i takses'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
+    'my_profile' => 'Profili im',
+    'edit_profile' => 'Ndrysho Profilin',
+    'edit_details' => 'Ndryshoni Detajet',
     'update' => 'Update',
-    'change_password' => 'Change Password',
+    'change_password' => 'Ndrysho fjalekalimin',
+    'choose_an_option' => 'Zgjidhni një opsion ...',
+
+    // Register page
+    'accept_terms_label' => 'Unë i pranoj kushtet.',
+    'accept_protection_law_label' => '<html>Unë i pranoj kushtet e Ligjit për' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Mbrojtja e të Dhënave Personale.</a>',
+    'accept_privacy_terms_label' => '<html>Unë pranoj' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> kushtet e privatësisë</a>.',
+    'receive_sms_emails_label' => 'Dua të marr e-mail dhe sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personale'
+    ],
+
+	'education_part' => [
+		'name' => 'Shteti i Arsimit'
+	],
 ];

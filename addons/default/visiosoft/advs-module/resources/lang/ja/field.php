@@ -20,7 +20,7 @@ return [
         'name' => '価格'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => '標準価格'
     ],
     'date' => [
         'name' => '日付'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'サブカテゴリー6'
     ],
+    'cat8' => [
+        'name' => 'サブカテゴリー7'
+    ],
+    'cat9' => [
+        'name' => 'サブカテゴリー8'
+    ],
+    'cat10' => [
+        'name' => 'サブカテゴリー9'
+    ],
     'currency' => [
         'name' => '通貨'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => '最古',
     'address_a_z' => '住所（AからZ）',
     'address_z_a' => 'アドレス（ZからA）',
-    'categories' => 'カテゴリー',
+	'categories' => [
+		'name' => 'カテゴリ'
+	],
     'all_categories' => 'すべてのカテゴリ',
     'location' => 'ロケーション',
     'send_message' => 'メッセージを送る',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => '過去24時間'
     ],
+    'in_the_last_day' => [
+        'name' => '過去24時間で'
+    ],
     'in_the_last_week' => [
         'name' => '先週'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "場所が選択されていません。",
     "continue" => '継続する',
     "gallery" => 'ギャラリー',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => '広告',
+    "were_found" => '発見されました。',
 
     // Pending screen
     'pending_message_1' => '広告は承認プロセス中です',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'ステップバイステップでカテゴリを選択',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'オプション',
+    'category_selection' => 'カテゴリの選択',
+    'listing_details' => 'リストの詳細',
+    'preview' => 'プレビュー',
+    'congratulations' => 'おめでとう',
+    'ad_desc' => '広告の説明',
+    'upload_photos' => '写真をアップロードする',
+    'additional_fields' => '追加フィールド',
+    'ad_location' => '広告の場所',
+
+    'free' => '自由',
+    'ad_date' => '広告日',
+    'photo_video' => '写真、ビデオ',
+    'and_above' => '以上',
+    'and_below' => '以下',
+    'clear_all' => 'すべてクリア',
+    'balances' => 'バランス',
+    'packages' => 'パッケージ',
+    'dopings' => 'ドーピング',
+    'advs' => 'アドバンス',
+    'site' => '地点',
+    'subscription' => 'サブスクリプション',
+	'created' => '作成した',
+	'product_option' => [
+		'name' => '製品オプション'
+	],
+	'option_json' => [
+		'name' => 'オプション'
+	],
+    'old_price' => [
+        'name' => '古い価格'
+    ],
 ];

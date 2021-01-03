@@ -20,6 +20,15 @@ return [
         'name' => 'Cf-värden',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'alternativ',
+    ],
+    'product_options' => [
+        'name' => 'Produktalternativ',
+    ],
+    'productoptions_value' => [
+        'name' => 'Alternativvärde',
+    ],
+    'option_configuration' => [
+        'name' => 'Konfiguration',
     ],
 ];

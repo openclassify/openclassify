@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'মুদ্রা সফলভাবে রূপান্তরিত হয়েছে।',
     'choose_user' => 'একটি ব্যবহারকারী চয়ন করুন',
     'owner_updated_successfully' => 'মালিক সফলভাবে আপডেট হয়েছে!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'কোনও বিজ্ঞাপন পাওয়া যায়নি!',
+    'replicated_success' => 'বিজ্ঞাপনটি সফলভাবে প্রতিলিপি করা হয়েছে!',
+    'ad_doesnt_exist' => "এই বিজ্ঞাপনের অস্তিত্ব নেই!",
+    'select_location_error' => "দয়া করে মানচিত্রে একটি অবস্থান নির্বাচন করুন!",
+    'this_ad_is_not_valid_anymore' => "এই বিজ্ঞাপনটি আর বৈধ নয়!",
+    'approve_status_change' => "আপনার বিজ্ঞাপনের স্থিতি সক্রিয় হয়ে গেছে!",
+    'passive_status_change' => "আপনার বিজ্ঞাপনের স্ট্যাটাসটি প্যাসিভের জন্য সেট হয়ে গেছে!",
 ];

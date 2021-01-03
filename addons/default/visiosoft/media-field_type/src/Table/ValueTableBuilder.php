@@ -60,7 +60,7 @@ class ValueTableBuilder extends TableBuilder
             'class' => 'col-4',
             'attributes' => [
                 'id' => 'setimage',
-                'onclick' => 'setMain({entry.id})'
+                'onclick' => 'setMain(event, {entry.id})'
             ],
         ],
         'rotate' => [
@@ -71,8 +71,7 @@ class ValueTableBuilder extends TableBuilder
             'class' => 'col-4',
             'attributes' => [
                 'id' => 'setimage',
-//                'data-action' => 'rotate-image',
-                'onclick' => 'rotateImage({entry.id})',
+                'onclick' => 'rotateImage(event, {entry.id})',
             ],
         ],
         'deleteImage' => [
@@ -82,7 +81,7 @@ class ValueTableBuilder extends TableBuilder
             'text' => '',
             'class' => 'col-4 deleteImage',
             'attributes' => [
-                'onclick' => 'deleteImage({entry.id})',
+                'onclick' => 'deleteImage(event, {entry.id})',
                 'id' => 'setimage',
             ],
         ],

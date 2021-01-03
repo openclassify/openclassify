@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Annonce par défaut GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Largeur de vignette',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Hauteur de la vignette',
-    ],
-    'picture_width' => [
-        'name' => 'Largeur de l\'image',
-    ],
-    'picture_height' => [
-        'name' => 'Hauteur de l\'image',
-    ],
     'twitter' => [
         'name' => 'Gazouillement',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Image de page de liste',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Masquer le champ de prix standard',
+    ],
+    'hide_options_field' => [
+        'name' => 'Masquer le champ d\'options',
+    ],
+    'hide_village_field' => [
+        'name' => 'Masquer le champ du village',
+    ],
+    'hide_configurations' => [
+        'name' => 'Masquer le bouton Configurations',
+        'instructions' => 'Masquer le bouton Configurations dans la page d\'aperçu de l\'annonce',
+    ],
+    'make_map_required' => [
+        'name' => 'Rendre la carte obligatoire',
+        'instructions' => 'Obliger l\'utilisateur à placer une épingle sur la carte lors de la création d\'une annonce',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Masquer le prix standard de l\'annonce',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Devises activées',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Code statistique Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Inscription par e-mail',
+    ],
+    'market_place' => [
+        'name' => 'Place du marché',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Zone de prix masquée',
+	],
+    'hide_price_filter' => [
+        'name' => 'Masquer le filtre de prix',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Masquer le filtre de date',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Masquer le filtre photo',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Masquer le filtre de la carte',
+    ],
+    'show_lang_url' => [
+        'name' => 'Afficher le paramètre de langue pour l\'URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Limite des annonces populaires',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Backend de redimensionnement d\'image',
+    ],
+    'full_image_width' => [
+        'name' => 'Largeur totale de l\'image',
+    ],
+    'full_image_height' => [
+        'name' => 'Hauteur totale de l\'image',
+    ],
+    'medium_image_width' => [
+        'name' => 'Largeur d\'image moyenne',
+    ],
+    'medium_image_height' => [
+        'name' => 'Hauteur d\'image moyenne',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Largeur de vignette',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Hauteur de la vignette',
+    ],
+    'add_canvas' => [
+        'name' => 'Ajouter une toile',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Largeur du canevas d\'image',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Hauteur du canevas d\'image',
     ],
     'watermark_type' => [
         'name' => 'Type defiligrane',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Position du filigrane',
     ],
-    'listing_page_image' => [
-        'name' => 'Image de page de liste',
+    'user_filter_limit' => [
+        'name' => 'Limite de filtre utilisateur',
+        'instructions' => 'Dans le panneau d\'administration'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Afficher le fil d\'Ariane lors de la création d\'une annonce',
     ],
-    'enabled_currencies' => [
-        'name' => 'Devises activées',
+    'show_ads_count' => [
+        'name' => 'Afficher le nombre d\'annonces',
+        'instructions' => 'Les annonces diffusées comptent dans la liste des catégories de gauche',
     ],
-    'google_statistic_code' => [
-        'name' => 'Code statistique Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Afficher l\'accord de publication d\'annonce',
+        'instructions' => 'Activez cette option si vous souhaitez afficher un accord de politique de confidentialité sur la page de création d\'annonces',
     ],
-    'register_email_field' => [
-        'name' => 'Inscription par e-mail',
+    'override_text' => [
+        'name' => 'Remplacer le texte',
+        'instructions' => 'Ancienne valeur: nouvelle valeur'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Couleur des étapes',
+        'instructions' => 'Modifie la couleur des étapes progressives.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Créer une couleur de bouton d\'annonce',
+        'instructions' => 'Modifie le bouton qui apparaît lorsque la sélection de la nouvelle catégorie d\'annonces est terminée.'
     ],
 ];

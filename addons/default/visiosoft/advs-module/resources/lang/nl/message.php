@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Valuta succesvol omgezet.',
     'choose_user' => 'Kies een gebruiker',
     'owner_updated_successfully' => 'De eigenaar is met succes bijgewerkt!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Geen advertentie gevonden!',
+    'replicated_success' => 'De advertentie is met succes gerepliceerd!',
+    'ad_doesnt_exist' => "Deze advertentie bestaat niet!",
+    'select_location_error' => "Selecteer een locatie op de kaart!",
+    'this_ad_is_not_valid_anymore' => "Deze advertentie is niet meer geldig!",
+    'approve_status_change' => "De status van uw advertentie is ingesteld op Actief!",
+    'passive_status_change' => "De status van uw advertentie is ingesteld op passief!",
 ];

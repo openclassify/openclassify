@@ -26,7 +26,7 @@ return [
         'title' => 'Özel Alanlar',
     ],
     'custom_field_advs' => [
-        'title' => 'Özel alan İlanları',
+        'title' => 'Özel Alan İlanları',
     ],
     'cf_values' => [
         'title' => 'Cf değerleri',
@@ -40,7 +40,20 @@ return [
     'general' => 'Genel',
     'ads' => 'İlan',
     'user' => 'Kullanıcı',
+    'filter' => 'Filtre',
+    'create_ad' => 'İlan Oluştur',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Seçenekler',
     ],
+    'ads_image' => 'İlan Resmi',
+    'product_options' => [
+        'title' => 'Seçenekler',
+    ],
+    'productoptions_value' => [
+        'title' => 'Seçenekler Değeri',
+    ],
+    'option_configuration' => [
+        'title' => 'Yapılandırma',
+    ],
+    'translations' => 'Çeviriler',
 ];

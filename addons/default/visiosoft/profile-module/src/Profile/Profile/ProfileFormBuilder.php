@@ -13,7 +13,18 @@ class ProfileFormBuilder extends FormBuilder
         'office_phone',
         'land_phone',
         'identification_number',
-        'register_type'
+        'education' => [
+	        'type' => 'anomaly.field_type.select',
+	        'config' => [
+		        'handler' => 'Visiosoft\ProfileModule\OptionHandler\EducationOptions@handle',
+	        ]
+        ],
+        'education_part' => 'anomaly.field_type.select',
+        'profession',
+        'birthday',
+        'register_type',
+	    'facebook_address',
+	    'google_address',
     ];
 
     protected $actions = [

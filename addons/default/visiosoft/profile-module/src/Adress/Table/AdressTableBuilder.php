@@ -48,7 +48,7 @@ class AdressTableBuilder extends TableBuilder
         'show' => [
             'type' => 'primary',
             'icon' => 'fa fa-eye',
-            'href' => '/admin/profile/adress/edit/{entry.id}?filter_search={entry.id}',
+            'href' => '/admin/profile/adress/edit/{entry.id}',
         ],
     ];
 

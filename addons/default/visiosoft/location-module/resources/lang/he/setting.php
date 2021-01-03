@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Lat ברירת מחדל',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'הסתר מסנן מיקום',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'מדינה ברירת מחדל לשדה טלפון רישום'
+	],
+    'sorting_column' => [
+        'name' => 'עמודת מיון',
+    ],
+    'sorting_type' => [
+        'name' => 'סוג מיון',
+    ],
 ];

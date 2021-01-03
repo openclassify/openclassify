@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => '기본 광고 GET',
     ],
-    'thumbnail_width' => [
-        'name' => '썸네일 폭',
-    ],
-    'thumbnail_height' => [
-        'name' => '썸네일 높이',
-    ],
-    'picture_width' => [
-        'name' => '사진 폭',
-    ],
-    'picture_height' => [
-        'name' => '사진 높이',
-    ],
     'twitter' => [
         'name' => '트위터',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => '구글',
+    ],
+    'listing_page_image' => [
+        'name' => '리스팅 페이지 이미지',
+    ],
+    'hide_standard_price_field' => [
+        'name' => '표준 가격 필드 숨기기',
+    ],
+    'hide_options_field' => [
+        'name' => '옵션 필드 숨기기',
+    ],
+    'hide_village_field' => [
+        'name' => '마을 필드 숨기기',
+    ],
+    'hide_configurations' => [
+        'name' => '구성 버튼 숨기기',
+        'instructions' => '광고 미리보기 페이지에서 구성 버튼 숨기기',
+    ],
+    'make_map_required' => [
+        'name' => '지도 필수',
+        'instructions' => '사용자가 광고를 만들 때지도에 핀을 배치하도록 요구',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => '리스팅 표준 가격 숨기기',
+    ],
+    'enabled_currencies' => [
+        'name' => '활성화 된 통화',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google 통계 코드',
+    ],
+    'register_email_field' => [
+        'name' => '회원 등록 이메일 요구 사항',
+    ],
+    'market_place' => [
+        'name' => '마켓 플레이스',
+    ],
+	'price_area_hidden' => [
+		'name' => '가격 영역 숨김',
+	],
+    'hide_price_filter' => [
+        'name' => '가격 필터 숨기기',
+    ],
+    'hide_date_filter' => [
+        'name' => '날짜 필터 숨기기',
+    ],
+    'hide_photo_filter' => [
+        'name' => '사진 필터 숨기기',
+    ],
+    'hide_map_filter' => [
+        'name' => '지도 필터 숨기기',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL에 대한 언어 매개 변수 표시',
+    ],
+    'popular_ads_limit' => [
+        'name' => '인기 광고 제한',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => '이미지 크기 조정 백엔드',
+    ],
+    'full_image_width' => [
+        'name' => '전체 이미지 너비',
+    ],
+    'full_image_height' => [
+        'name' => '전체 이미지 높이',
+    ],
+    'medium_image_width' => [
+        'name' => '중간 이미지 너비',
+    ],
+    'medium_image_height' => [
+        'name' => '중간 이미지 높이',
+    ],
+    'thumbnail_width' => [
+        'name' => '썸네일 폭',
+    ],
+    'thumbnail_height' => [
+        'name' => '썸네일 높이',
+    ],
+    'add_canvas' => [
+        'name' => '캔버스 추가',
+    ],
+    'image_canvas_width' => [
+        'name' => '이미지 캔버스 너비',
+    ],
+    'image_canvas_height' => [
+        'name' => '이미지 캔버스 높이',
     ],
     'watermark_type' => [
         'name' => '워터 마크 유형',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => '워터 마크 위치',
     ],
-    'listing_page_image' => [
-        'name' => '리스팅 페이지 이미지',
+    'user_filter_limit' => [
+        'name' => '사용자 필터 제한',
+        'instructions' => '관리자 패널에서'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => '광고를 만들 때 이동 경로 표시',
     ],
-    'enabled_currencies' => [
-        'name' => '활성화 된 통화',
+    'show_ads_count' => [
+        'name' => '광고 수 표시',
+        'instructions' => '왼쪽 카테고리 목록에 광고 개수 표시',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google 통계 코드',
+    'show_post_ad_agreement' => [
+        'name' => '광고 게시 계약 표시',
+        'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
     ],
-    'register_email_field' => [
-        'name' => '회원 등록 이메일 요구 사항',
+    'override_text' => [
+        'name' => '텍스트 무시',
+        'instructions' => '기존 가치 : 새로운 가치'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => '단계 색상',
+        'instructions' => '점진적 단계 색상을 변경합니다.'
+    ],
+    'create_ad_button_color' => [
+        'name' => '광고 버튼 색상 만들기',
+        'instructions' => '새 광고 카테고리 선택이 완료되면 표시되는 버튼을 변경합니다.'
     ],
 ];

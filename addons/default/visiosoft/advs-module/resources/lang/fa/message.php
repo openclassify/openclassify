@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'ارز با موفقیت تبدیل شد.',
     'choose_user' => 'یوزر را انتخاب کنید',
     'owner_updated_successfully' => 'فروشنده با موفقیت آپدیت شد!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'هیچ تبلیغی یافت نشد!',
+    'replicated_success' => 'آگهی با موفقیت تکثیر شد!',
+    'ad_doesnt_exist' => "این آگهی وجود ندارد!",
+    'select_location_error' => "لطفاً مکانی را روی نقشه انتخاب کنید!",
+    'this_ad_is_not_valid_anymore' => "این آگهی دیگر معتبر نیست!",
+    'approve_status_change' => "وضعیت آگهی شما روی فعال تنظیم شده است!",
+    'passive_status_change' => "وضعیت آگهی شما منفعل تنظیم شده است!",
 ];

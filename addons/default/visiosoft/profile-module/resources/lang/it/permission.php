@@ -17,4 +17,20 @@ return [
             'delete' => 'È possibile eliminare l\\'indirizzo?',
         ],
     ],
+    'education' => [
+        'name'   => 'Formazione scolastica',
+        'option' => [
+            'read'   => 'Può leggere l\'istruzione?',
+            'write'  => 'Può creare / modificare l\'istruzione?',
+            'delete' => 'Può eliminare l\'istruzione?',
+        ],
+    ],
+    'education_part' => [
+        'name'   => 'Parte dell\'istruzione',
+        'option' => [
+            'read'   => 'Può leggere la parte educativa?',
+            'write'  => 'Può creare / modificare la parte educativa?',
+            'delete' => 'Può eliminare la parte educativa?',
+        ],
+    ],
 ];

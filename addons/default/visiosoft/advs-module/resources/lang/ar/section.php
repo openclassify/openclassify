@@ -39,8 +39,21 @@ return [
     ],
     'general' => 'جنرال لواء',
     'ads' => 'إعلانات',
-    'user' => 'المستعمل',
+    'user' => 'العضو',
+    'filter' => 'منقي',
+    'create_ad' => 'أعلن',
     'options' => [
-        'title' => 'Options',
+        'title' => 'خيارات',
     ],
+    'ads_image' => 'صورة الإعلانات',
+    'product_options' => [
+        'title' => 'خيارات',
+    ],
+    'productoptions_value' => [
+        'title' => 'قيمة الخيارات',
+    ],
+    'option_configuration' => [
+        'title' => 'ترتيب',
+    ],
+    'translations' => 'الترجمات',
 ];

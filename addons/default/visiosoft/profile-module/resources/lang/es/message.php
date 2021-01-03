@@ -29,6 +29,8 @@ return [
     'ajax_address_error' => 'Sin dirección o sin autorización para ver.',
     'empty_password_sms_message' => '¡Debido a problemas de seguridad, cambiamos su contraseña! Tu nueva contraseña es:',
     'required_all' => "¡Todo el campo es obligatorio!",
+    'can_not_remove_filled_fields' => "¡No puedes eliminar los campos llenos!",
+    'wrong_password' => "¡La contraseña que ingresó no es correcta!",
 
     // Forgot Password
     'email_phone_not_found' => 'El correo electrónico, número de teléfono no es correcto!',
@@ -36,6 +38,10 @@ return [
     'disable_account' => '¿Quieres cerrar tu cuenta? Esta operación no se puede deshacer.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => '¡Correo electrónico actualizado!',
+    'update_email_mail_message' => '¡Su correo electrónico ha sido actualizado!',
+
+    // Register
+    'recaptcha_field_is_required' => 'El campo reCaptcha es obligatorio.',
+    'failed_to_validate_captcha' => 'No se pudo validar el captcha.',
 ];

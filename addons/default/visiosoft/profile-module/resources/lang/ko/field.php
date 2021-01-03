@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => '등록 유형'
     ],
+    'birthday' => [
+        'name' => '생신'
+    ],
+	'facebook_address' => [
+		'name' => '페이스 북 주소'
+	],
+	'google_address' => [
+		'name' => 'Google 주소'
+	],
+    'education' => [
+        'name' => '교육'
+    ],
+    'state_of_education' => [
+        'name' => '교육 현황'
+    ],
+    'profession' => [
+        'name' => '직업'
+    ],
     'identification_number' => [
         'name' => '식별 번호'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => '사용자'
     ],
+	'name' => [
+		'name' => '이름'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => '암호',
     ],
+    'old_password' => [
+        'name' => '기존 비밀번호',
+    ],
     'new_password' => [
         'name' => '새 비밀번호',
     ],
@@ -428,19 +452,35 @@ return [
     'my_address' => '내 주소',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => '회사 이름'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => '세무서'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => '세금 번호'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => '내 프로필',
+    'edit_profile' => '프로필 편집',
+    'edit_details' => '세부 정보 편집',
+    'update' => '최신 정보',
+    'change_password' => '비밀번호 변경',
+    'choose_an_option' => '옵션을 선택하세요...',
+
+    // Register page
+    'accept_terms_label' => '약관에 동의합니다.',
+    'accept_protection_law_label' => '<html>에 대한 법률 조항에 동의합니다.' . setting_value('visiosoft.module.profile::register_protection_url') . '"target ="_ blank "> 개인 데이터 보호.</a>',
+    'accept_privacy_terms_label' => '<html>동의 함' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target ="_ blank "> 개인 정보 보호 약관</a>.',
+    'receive_sms_emails_label' => '이메일과 SMS를 받고 싶습니다.',
+
+    // Register Type
+    'personal' => [
+        'name' => '개인적인'
+    ],
+
+	'education_part' => [
+		'name' => '교육 현황'
+	],
 ];

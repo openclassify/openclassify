@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Anunț implicit GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Lățimea miniaturii',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Înălțimea miniaturii',
-    ],
-    'picture_width' => [
-        'name' => 'Lățimea imaginii',
-    ],
-    'picture_height' => [
-        'name' => 'Înălțimea imaginii',
-    ],
     'twitter' => [
         'name' => 'Stare de nervozitate',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Listare imagine pagină',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Ascundeți câmpul de preț standard',
+    ],
+    'hide_options_field' => [
+        'name' => 'Ascundeți câmpul Opțiuni',
+    ],
+    'hide_village_field' => [
+        'name' => 'Ascunde câmpul satului',
+    ],
+    'hide_configurations' => [
+        'name' => 'Ascundeți butonul Configurări',
+        'instructions' => 'Ascundeți butonul Configurări din pagina de previzualizare a anunțurilor',
+    ],
+    'make_map_required' => [
+        'name' => 'Faceți harta necesară',
+        'instructions' => 'Solicitați utilizatorului să plaseze un pin pe hartă atunci când creați un anunț',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Ascundeți prețul standard al listei',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Valute activate',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Cod statistic Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Cerință de e-mail de înregistrare a membrilor',
+    ],
+    'market_place' => [
+        'name' => 'Piata de desfacere',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Zona de preț ascunsă',
+	],
+    'hide_price_filter' => [
+        'name' => 'Ascundeți filtrul de preț',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Ascundeți filtrul de date',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Ascundeți filtrul foto',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Ascundeți filtrul de hartă',
+    ],
+    'show_lang_url' => [
+        'name' => 'Afișați parametrul Lang pentru URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Limita de anunțuri populare',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Backend de redimensionare imagine',
+    ],
+    'full_image_width' => [
+        'name' => 'Lățimea imaginii complete',
+    ],
+    'full_image_height' => [
+        'name' => 'Înălțimea imaginii complete',
+    ],
+    'medium_image_width' => [
+        'name' => 'Lățimea medie a imaginii',
+    ],
+    'medium_image_height' => [
+        'name' => 'Înălțimea medie a imaginii',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Lățimea miniaturii',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Înălțimea miniaturii',
+    ],
+    'add_canvas' => [
+        'name' => 'Adăugați pânză',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Lățimea pânzei imaginii',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Înălțimea imaginii pânzei',
     ],
     'watermark_type' => [
         'name' => 'Tip filigran',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Poziția filigranului',
     ],
-    'listing_page_image' => [
-        'name' => 'Listare imagine pagină',
+    'user_filter_limit' => [
+        'name' => 'Limita de filtrare a utilizatorilor',
+        'instructions' => 'În panoul de administrare'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Afișați pesmet atunci când creați un anunț',
     ],
-    'enabled_currencies' => [
-        'name' => 'Valute activate',
+    'show_ads_count' => [
+        'name' => 'Afișați numărul de anunțuri',
+        'instructions' => 'Afișați anunțurile în lista de categorii din stânga',
     ],
-    'google_statistic_code' => [
-        'name' => 'Cod statistic Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Afișați acordul de postare a anunțului',
+        'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
     ],
-    'register_email_field' => [
-        'name' => 'Cerință de e-mail de înregistrare a membrilor',
+    'override_text' => [
+        'name' => 'Înlocuiți textul',
+        'instructions' => 'Valoare veche: valoare nouă'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Pași Culoare',
+        'instructions' => 'Schimbă culoarea treptelor progresive.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Creați culoarea butonului publicitar',
+        'instructions' => 'Schimbă butonul care se afișează la finalizarea selecției noii categorii de anunțuri.'
     ],
 ];

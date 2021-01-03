@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Đăng ký loại'
     ],
+    'birthday' => [
+        'name' => 'Sinh nhật'
+    ],
+	'facebook_address' => [
+		'name' => 'Địa chỉ Facebook'
+	],
+	'google_address' => [
+		'name' => 'Địa chỉ Google'
+	],
+    'education' => [
+        'name' => 'Giáo dục'
+    ],
+    'state_of_education' => [
+        'name' => 'Bang giáo dục'
+    ],
+    'profession' => [
+        'name' => 'Nghề nghiệp'
+    ],
     'identification_number' => [
         'name' => 'Mã số'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Người dùng'
     ],
+	'name' => [
+		'name' => 'Tên'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'Mật khẩu',
     ],
+    'old_password' => [
+        'name' => 'Mật khẩu cũ',
+    ],
     'new_password' => [
         'name' => 'Mật khẩu mới',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => 'cá nhân',
     ],
     'corporate' => [
-        'name' => 'công ty',
+        'name' => 'Công ty',
     ],
 
     'details' => [
@@ -428,19 +452,35 @@ return [
     'my_address' => 'Địa chỉ của tôi',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Tên công ty'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Phòng thuế'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Số thuế'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Thông tin của tôi',
+    'edit_profile' => 'Chỉnh sửa hồ sơ',
+    'edit_details' => 'Chỉnh sửa chi tiết',
+    'update' => 'Cập nhật',
+    'change_password' => 'Đổi mật khẩu',
+    'choose_an_option' => 'Chọn một sự lựa chọn...',
+
+    // Register page
+    'accept_terms_label' => 'Tôi chấp nhận các điều khoản.',
+    'accept_protection_law_label' => '<html>Tôi chấp nhận các điều khoản của Luật về' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Bảo vệ Dữ liệu Cá nhân.</a>',
+    'accept_privacy_terms_label' => '<html>tôi chấp nhận' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> điều khoản bảo mật</a>.',
+    'receive_sms_emails_label' => 'Tôi muốn nhận e-mail & sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Cá nhân'
+    ],
+
+	'education_part' => [
+		'name' => 'Bang giáo dục'
+	],
 ];

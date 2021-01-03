@@ -1,7 +1,9 @@
 <?php
 
+use App\Exceptions\ExceptionHandler;
+
 return [
-    
+
     /*
     |--------------------------------------------------------------------------
     | Listeners
@@ -11,7 +13,14 @@ return [
     |
     */
 
-    'listeners' => [],
+    'listeners' => [
+        \Anomaly\Streams\Platform\Event\Booted::class => [
+            \App\Listeners\Translations::class
+        ],
+        \Anomaly\Streams\Platform\Ui\Form\Event\FormWasSaved::class => [
+            \App\Listeners\EnableMaintenanceMode::class
+        ],
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -22,7 +31,9 @@ return [
     |
     */
 
-    'bindings' => [],
+    'bindings' => [
+        'Anomaly\Streams\Platform\Exception\ExceptionHandler' => ExceptionHandler::class
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -118,7 +129,7 @@ return [
     */
 
     'middleware_priority' => [],
-    
+
     /*
     |--------------------------------------------------------------------------
     | View Overrides
@@ -129,7 +140,7 @@ return [
     */
 
     'overrides' => [],
-    
+
     /*
     |--------------------------------------------------------------------------
     | Control Panel Customization

@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Sub Category 6'
     ],
+    'cat8' => [
+        'name' => 'Sub Category 7'
+    ],
+    'cat9' => [
+        'name' => 'Sub Category 8'
+    ],
+    'cat10' => [
+        'name' => 'Sub Category 9'
+    ],
     'currency' => [
         'name' => 'Currency'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Oldest',
     'address_a_z' => 'Address (A to Z)',
     'address_z_a' => 'Address (Z to A)',
-    'categories' => 'Categories',
+	'categories' => [
+		'name' => 'Categories'
+	],
     'all_categories' => 'All Categories',
     'location' => 'Location',
     'send_message' => 'Send Message',
@@ -154,6 +165,7 @@ return [
     'edit' => 'Edit',
     'approve' => 'Approve',
     'passive' => "Passive",
+	'sold' => 'Sold',
     'offered_by' => 'Offered By',
     'more_ads_by' => 'More Ads By',
     'click_phone' => 'Show phone number',
@@ -198,6 +210,7 @@ return [
     'corporate_info' => 'Corporate Info',
     'featured_ads' => "Featured Ads",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':count ads found for :name search',
     ],
@@ -248,6 +261,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'In The Last 24 Hours'
     ],
+    'in_the_last_day' => [
+        'name' => 'In The Last 24 Hours'
+    ],
     'in_the_last_week' => [
         'name' => 'In The Last Week'
     ],
@@ -266,6 +282,7 @@ return [
     "no_location" => "No location is selected.",
     "continue" => 'Continue',
     "gallery" => 'Gallery',
+    "ad" => 'Ad',
     "ads" => 'Ads',
     "were_found" => 'were found.',
 
@@ -296,4 +313,35 @@ return [
 
     // New create page
     'options' => 'Options',
+    'category_selection' => 'Category Selection',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Preview',
+    'congratulations' => 'Congratulations',
+    'ad_desc' => 'Ad Description',
+    'upload_photos' => 'Upload Photos',
+    'additional_fields' => 'Additional Fields',
+    'ad_location' => 'Ad Location',
+
+    'free' => 'Free',
+    'ad_date' => 'Ad Date',
+    'photo_video' => 'Photo, Video',
+    'and_above' => 'and above',
+    'and_below' => 'and below',
+    'clear_all' => 'Clear All',
+    'balances' => 'Balances',
+    'packages' => 'Packages',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Subscription',
+	'created' => 'Created',
+	'product_option' => [
+		'name' => 'Product Option'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
+    'old_price' => [
+        'name' => 'Old Price'
+    ],
 ];

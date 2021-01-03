@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'डिफ़ॉल्ट विज्ञापन GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'थंबनेल की चौड़ाई',
-    ],
-    'thumbnail_height' => [
-        'name' => 'थंबनेल की ऊँचाई',
-    ],
-    'picture_width' => [
-        'name' => 'चित्र चौड़ाई',
-    ],
-    'picture_height' => [
-        'name' => 'चित्र ऊंचाई',
-    ],
     'twitter' => [
         'name' => 'ट्विटर',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'गूगल',
+    ],
+    'listing_page_image' => [
+        'name' => 'लिस्टिंग पृष्ठ छवि',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'मानक मूल्य फ़ील्ड छिपाएँ',
+    ],
+    'hide_options_field' => [
+        'name' => 'विकल्प फ़ील्ड छिपाएँ',
+    ],
+    'hide_village_field' => [
+        'name' => 'गाँव का मैदान छिपाओ',
+    ],
+    'hide_configurations' => [
+        'name' => 'कॉन्फ़िगरेशन बटन छिपाएं',
+        'instructions' => 'विज्ञापन पूर्वावलोकन पृष्ठ में कॉन्फ़िगरेशन बटन छिपाएं',
+    ],
+    'make_map_required' => [
+        'name' => 'नक्शा आवश्यक करें',
+        'instructions' => 'विज्ञापन बनाते समय उपयोगकर्ता को मानचित्र पर एक पिन लगाने की आवश्यकता होती है',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'सूचीकरण मानक मूल्य छिपाएँ',
+    ],
+    'enabled_currencies' => [
+        'name' => 'सक्षम मुद्राएँ',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google सांख्यिकी कोड',
+    ],
+    'register_email_field' => [
+        'name' => 'सदस्य पंजीकरण ईमेल आवश्यकता',
+    ],
+    'market_place' => [
+        'name' => 'मार्केट प्लेस',
+    ],
+	'price_area_hidden' => [
+		'name' => 'मूल्य क्षेत्र छिपा हुआ',
+	],
+    'hide_price_filter' => [
+        'name' => 'मूल्य फ़िल्टर छिपाएँ',
+    ],
+    'hide_date_filter' => [
+        'name' => 'दिनांक फ़िल्टर छिपाएँ',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'फोटो फ़िल्टर छिपाएँ',
+    ],
+    'hide_map_filter' => [
+        'name' => 'मानचित्र फ़िल्टर छिपाएँ',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL के लिए Lang पैरामीटर दिखाएं',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'लोकप्रिय विज्ञापन सीमा',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'छवि बैकएंड का आकार बदलें',
+    ],
+    'full_image_width' => [
+        'name' => 'पूर्ण छवि चौड़ाई',
+    ],
+    'full_image_height' => [
+        'name' => 'पूर्ण छवि ऊँचाई',
+    ],
+    'medium_image_width' => [
+        'name' => 'मध्यम छवि चौड़ाई',
+    ],
+    'medium_image_height' => [
+        'name' => 'मध्यम छवि ऊँचाई',
+    ],
+    'thumbnail_width' => [
+        'name' => 'थंबनेल की चौड़ाई',
+    ],
+    'thumbnail_height' => [
+        'name' => 'थंबनेल की ऊँचाई',
+    ],
+    'add_canvas' => [
+        'name' => 'कैनवास जोड़ें',
+    ],
+    'image_canvas_width' => [
+        'name' => 'छवि कैनवास की चौड़ाई',
+    ],
+    'image_canvas_height' => [
+        'name' => 'छवि कैनवास ऊंचाई',
     ],
     'watermark_type' => [
         'name' => 'वॉटरमार्क प्रकार',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'वॉटरमार्क स्थिति',
     ],
-    'listing_page_image' => [
-        'name' => 'लिस्टिंग पृष्ठ छवि',
+    'user_filter_limit' => [
+        'name' => 'उपयोगकर्ता फ़िल्टर सीमा',
+        'instructions' => 'व्यवस्थापक पैनल में'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'विज्ञापन बनाते समय ब्रेडक्रंब दिखाएं',
     ],
-    'enabled_currencies' => [
-        'name' => 'सक्षम मुद्राएँ',
+    'show_ads_count' => [
+        'name' => 'विज्ञापन गणना दिखाएं',
+        'instructions' => 'विज्ञापन को बाईं श्रेणियों की सूची में दिखाएं',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google सांख्यिकी कोड',
+    'show_post_ad_agreement' => [
+        'name' => 'विज्ञापन विज्ञापन दिखाएं',
+        'instructions' => 'यदि आप विज्ञापन निर्माण पृष्ठ पर गोपनीयता नीति अनुबंध प्रदर्शित करना चाहते हैं तो इसे चालू करें',
     ],
-    'register_email_field' => [
-        'name' => 'सदस्य पंजीकरण ईमेल आवश्यकता',
+    'override_text' => [
+        'name' => 'पाठ को ओवरराइड करें',
+        'instructions' => 'पुराना मूल्य: नया मूल्य'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'चरण रंग',
+        'instructions' => 'प्रगतिशील चरणों का रंग बदलता है।'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'विज्ञापन बटन रंग बनाएँ',
+        'instructions' => 'नया विज्ञापन श्रेणी चयन समाप्त होने पर दिखाई देने वाले बटन को बदल देता है।'
     ],
 ];

@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Valutakonvertering framgångsrikt.',
     'choose_user' => 'Välj en användare',
     'owner_updated_successfully' => 'Ägaren har uppdaterats framgångsrikt!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Ingen annons hittades!',
+    'replicated_success' => 'Annonsen har replikerats framgångsrikt!',
+    'ad_doesnt_exist' => "Den här annonsen finns inte!",
+    'select_location_error' => "Välj en plats på kartan!",
+    'this_ad_is_not_valid_anymore' => "Denna annons är inte giltig längre!",
+    'approve_status_change' => "Din annons har ställts in som aktiv!",
+    'passive_status_change' => "Din annons har blivit passiv!",
 ];

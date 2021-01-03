@@ -2,6 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => 'Sitemap Scheidingsnummer',
+    ],
+    'include_cities_sitemap' => [
+        'name' => 'Plaats steden in sitemap',
     ],
 ];

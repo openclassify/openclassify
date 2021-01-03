@@ -2,9 +2,10 @@
 {% for adv in advs %}
     <div class="col-md-12 mb-2 list-classified bg-light">
         <a href="{{ adv.detail_url }}" class="text-dark">
-            <div class="row{% if adv.doping != null %} doping_type4 {% endif %}">
+            <div class="row{{ adv.doping_type ? ' doping_type' ~ adv.doping_type }}">
                 <div class="col-md-2 justify-content-center align-self-center text-center border-right border-white">
-                    <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
+                    <img class="img-thumbnail lazy" src="{{ img('visiosoft.theme.base::images/no-image.png').url }}"
+                         data-src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
                          style="max-height:80px;">
                 </div>
                 <div class="col-md-7 justify-content-center align-self-center border-right border-white">
@@ -20,7 +21,16 @@
                 <div class="col-md-3 text-left justify-content-center align-self-center">
                     <div class="row">
                         <div class="col-md-12">
-                            <b>{{ adv.price.currency(null,'currency') }}</b>
+                            {% if not setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
+                                <p class="theme-price-old small mb-0"><del>
+                                        {{ adv.standard_price != adv.price and adv.standard_price != '0'
+                                        ? currency_format(adv.standard_price,adv.currency)
+                                        : '' }}
+                                </del></p>
+                            {% endif %}
+                            <b>{{ adv.price != '0'
+                                    ? currency_format(adv.price,adv.currency)
+                                    : trans('visiosoft.module.advs::field.free') }}</b>
                         </div>
                         {% if setting_value('visiosoft.module.location::list_page_location') %}
                             <div class="col-md-12 justify-content-center align-self-center text-truncate">

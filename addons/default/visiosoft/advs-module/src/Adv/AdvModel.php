@@ -1,27 +1,20 @@
 <?php namespace Visiosoft\AdvsModule\Adv;
 
-use Anomaly\SelectFieldType\Handler\Currencies;
-use Anomaly\SettingsModule\Setting\Command\GetSettingValue;
-use Anomaly\SettingsModule\Setting\Contract\SettingInterface;
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
-use Anomaly\SettingsModule\Setting\SettingRepository;
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
-use Anomaly\Streams\Platform\Image\Image;
 use Anomaly\Streams\Platform\Model\Advs\AdvsCustomFieldsEntryModel;
-use Anomaly\Streams\Platform\Support\Currency;
+use Carbon\Carbon;
 use GuzzleHttp\Client;
-use GuzzleHttp\Exception\RequestException;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Money\Currencies\CurrencyList;
-use Money\Number;
 use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
-use Visiosoft\AdvsModule\CustomField\CustomFieldModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
-
+use Visiosoft\LocationModule\District\DistrictModel;
+use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
+use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
+use Visiosoft\LocationModule\Village\VillageModel;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
@@ -76,9 +69,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return $query->where('advs_advs.slug', '!=', "");
     }
 
-    public function userAdv($nullable_ad = false)
+    public function userAdv($nullable_ad = false, $checkRole = true)
     {
-        if (Auth::user()->hasRole('admin')) {
+        if (Auth::user()->hasRole('admin') && $checkRole) {
             return $this->getAdv(null, $nullable_ad);
         } else {
             return $this->getAdv(null, $nullable_ad)
@@ -214,27 +207,24 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     }
 
 
-    public function getAdvDetailLinkByModel($object, $type = null)
-    {
-        if ($type != null) {
-            $id = $object->id;
-            $seo = str_slug($object->name);
-            $seo = str_replace('_', '-', $seo);
-            return \route('adv_detail_seo', [$seo, $id]);
-        }
-        $id = $object->getObject()->id;
-        $seo = str_slug($object->getObject()->name);
-        $seo = str_replace('_', '-', $seo);
-        return \route('adv_detail_seo', [$seo, $id]);
-    }
+	public function getAdvDetailLinkByModel($object, $type = null)
+	{
+		if ($type != null) {
+			$id = $object->id;
+			$seo = $object->slug;
+			return \route('adv_detail_seo', [$seo, $id]);
+		}
+		$id = $object->getObject()->id;
+		$seo = $object->getObject()->slug;
+		return \route('adv_detail_seo', [$seo, $id]);
+	}
 
     public function getAdvDetailLinkByAdId($id)
     {
         $adv = $this->find($id);
         if ($adv != null) {
             $id = $adv->id;
-            $seo = str_slug($adv->name);
-            $seo = str_replace('_', '-', $seo);
+            $seo = $adv->slug;
             return \route('adv_detail_seo', [$seo, $id]);
         }
     }
@@ -347,5 +337,62 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
+    }
+
+    public function inStock()
+    {
+        return $this->is_get_adv && $this->stock;
+    }
+
+    public function getCity()
+    {
+        $cityModel = new CityModel();
+        $city = $cityModel->newQuery()->find($this->city);
+        return $city ? $city->name : false;
+    }
+
+    public function getDistrict()
+    {
+        $districtModel = new DistrictModel();
+        $district = $districtModel->newQuery()->find($this->district);
+        return $district ? $district->name : false;
+    }
+
+    public function getNeighborhood()
+    {
+        $neighborhoodModel = new NeighborhoodModel();
+        $neighborhood = $neighborhoodModel->newQuery()->find($this->neighborhood);
+        return $neighborhood ? $neighborhood->name : false;
+    }
+
+    public function getVillage()
+    {
+        $village = app(VillageRepositoryInterface::class)->find($this->village);
+        return $village ? $village->name : false;
+    }
+
+    public function expired()
+    {
+        return $this->finish_at ? $this->finish_at < Carbon::now() : true;
+    }
+
+    public function getProductOptionsValues()
+    {
+    	return $this->product_options_value;
+    }
+
+    public function getStatus()
+    {
+        return $this->status;
+    }
+
+    public function approve()
+    {
+        $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
+        $this->update([
+            'status' => 'approved',
+            'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+            'publish_at' => date('Y-m-d H:i:s')
+        ]);
     }
 }

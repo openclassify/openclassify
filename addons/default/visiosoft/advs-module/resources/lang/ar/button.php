@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'اعلان جديد',
+    'new_classified' => 'تصنيف جديد',
     'new_category' => 'فئة جديدة',
     'new_country' => 'بلد جديد',
     'new_city' => 'مدينة جديدة',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'تحديث الفئة'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'خيار جديد',
+	'export' => 'تصدير',
+    'new_productoption' => 'خيار منتج جديد',
+    'new_productoptions_value' => 'قيمة خيار منتج جديد',
+    'new_options_configuration' => 'تكوين خيار جديد',
+    'new_option_configuration' => 'تكوين خيار جديد',
+	'create_configurations' => 'تكوين التكوينات',
+	'replicate' => 'استنساخ',
+	'fast_create' => 'إنشاء سريع',
+	'publish' => 'ينشر',
+	'import' => 'استيراد',
 ];

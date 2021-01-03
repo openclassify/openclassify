@@ -19,4 +19,5 @@ return [
     'general' => 'Algemeen',
     'map' => 'Kaart',
     'setting' => 'Omgeving',
+    'filter' => 'Filter',
 ];

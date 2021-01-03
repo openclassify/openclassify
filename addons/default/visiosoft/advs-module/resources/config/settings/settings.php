@@ -102,71 +102,6 @@ return [
             'default_value' => 0,
         ],
     ],
-    'thumbnail_width' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 270,
-        ],
-    ],
-    'add_canvas' => [
-        'type' => 'anomaly.field_type.boolean',
-        'config' => [
-            'default_value' => true,
-            'mode' => 'checkbox',
-        ],
-    ],
-    'thumbnail_height' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 180,
-        ],
-    ],
-    'picture_width' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 600,
-        ],
-    ],
-    'picture_height' => [
-        'type' => 'anomaly.field_type.integer',
-        'config' => [
-            'default_value' => 400,
-        ],
-    ],
-    'watermark_type' => [
-        'type' => 'anomaly.field_type.select',
-        'bind' => 'adv.watermark_type',
-        'env' => 'ADV_WATERMARK_TYPE',
-        'required' => true,
-        'config' => [
-            'options' => ['image' => 'Image', 'text' => 'Text'],
-            'default_value' => 'text',
-        ]
-    ],
-    'watermark_text' => [
-        'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.watermark_text',
-        'env' => 'ADV_WATERMARK_TEXT',
-    ],
-    'watermark_image' => [
-        'type' => 'anomaly.field_type.file',
-        'bind' => 'adv.watermark_image',
-        'env' => 'ADV_WATERMARK_IMAGE',
-        'config' => [
-            'default_value' => '',
-        ],
-    ],
-    'watermark_position' => [
-        'type' => 'anomaly.field_type.select',
-        'bind' => 'adv.watermark_position',
-        'env' => 'ADV_WATERMARK_POSITION',
-        'required' => true,
-        'config' => [
-            'options' => ['top-right' => 'Top Right', 'top-left' => 'Top Left', 'bottom-right' => 'Bottom Right',
-                'bottom-left' => 'Bottom Left', 'center' => 'Middle'],
-            'default_value' => 'top-right',
-        ]
-    ],
 
     'listing_page_image' => [
         'type' => 'anomaly.field_type.file',
@@ -178,6 +113,47 @@ return [
         ]
     ],
     'hide_standard_price_field' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+    'hide_options_field' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
+    'hide_village_field' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
+    'hide_configurations' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
+    'make_map_required' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
+    'hide_listing_standard_price' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
+    'price_area_hidden' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
             'default_value' => false,
@@ -241,5 +217,160 @@ return [
         'config' => [
             'default_value' => false,
         ]
+    ],
+
+    'popular_ads_limit' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 15,
+        ],
+    ],
+
+    //Image Settings
+    'image_resize_backend' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+    'full_image_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 800,
+        ],
+    ],
+    'full_image_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 600,
+        ],
+    ],
+    'medium_image_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 600,
+        ],
+    ],
+    'medium_image_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 400,
+        ],
+    ],
+    'thumbnail_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 270,
+        ],
+    ],
+    'thumbnail_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 180,
+        ],
+    ],
+    'add_canvas' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
+    'image_canvas_width' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 800,
+        ],
+    ],
+    'image_canvas_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 600,
+        ],
+    ],
+    'watermark_type' => [
+        'type' => 'anomaly.field_type.select',
+        'bind' => 'adv.watermark_type',
+        'env' => 'ADV_WATERMARK_TYPE',
+        'required' => true,
+        'config' => [
+            'options' => ['image' => 'Image', 'text' => 'Text'],
+            'default_value' => 'text',
+        ]
+    ],
+    'watermark_text' => [
+        'type' => 'anomaly.field_type.text',
+        'bind' => 'adv.watermark_text',
+        'env' => 'ADV_WATERMARK_TEXT',
+    ],
+    'watermark_image' => [
+        'type' => 'anomaly.field_type.file',
+        'bind' => 'adv.watermark_image',
+        'env' => 'ADV_WATERMARK_IMAGE',
+    ],
+    'watermark_position' => [
+        'type' => 'anomaly.field_type.select',
+        'bind' => 'adv.watermark_position',
+        'env' => 'ADV_WATERMARK_POSITION',
+        'required' => true,
+        'config' => [
+            'options' => ['top-right' => 'Top Right', 'top-left' => 'Top Left', 'bottom-right' => 'Bottom Right',
+                'bottom-left' => 'Bottom Left', 'center' => 'Middle'],
+            'default_value' => 'top-right',
+        ]
+    ],
+    'user_filter_limit' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 5,
+        ],
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox'
+        ],
+    ],
+    'show_ads_count' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+            'mode' => 'checkbox'
+        ],
+    ],
+    'show_post_ad_agreement' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ],
+    ],
+    'override_text' => [
+        'type' => 'anomaly.field_type.tags',
+        'bind' => 'override_text',
+        'env' => 'OVERRIDE_TEXT',
+    ],
+    'steps_color' => [
+        "type" => "anomaly.field_type.colorpicker",
+        "config" => [
+            "default_value" => '#209579',
+        ]
+    ],
+    'create_ad_button_color' => [
+        "type" => "anomaly.field_type.colorpicker",
+        "config" => [
+            "default_value" => '#00a651',
+        ]
+    ],
+    'ads_image_limit' => [
+        "type" => "anomaly.field_type.integer",
+        "config" => [
+            "default_value" => 25
+        ]
+    ],
+    'lang_switcher_for_browser' => [
+        'type' => 'anomaly.field_type.boolean',
+        'bind' => 'advs.lang_switcher_for_browser',
+        'env' => 'LANG_SWITCHER_FOR_BROWSER',
     ],
 ];

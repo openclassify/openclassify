@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Lat mặc định',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Ẩn Bộ lọc Vị trí',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Quốc gia mặc định để đăng ký trường điện thoại'
+	],
+    'sorting_column' => [
+        'name' => 'Sắp xếp cột',
+    ],
+    'sorting_type' => [
+        'name' => 'Loại sắp xếp',
+    ],
 ];

@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Нова реклама',
+    'new_classified' => 'Новий секрет',
     'new_category' => 'Нова категорія',
     'new_country' => 'Нова країна',
     'new_city' => 'Нове місто',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Оновити категорію'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Нова опція',
+	'export' => 'Експорт',
+    'new_productoption' => 'Нова продукція',
+    'new_productoptions_value' => 'Нове значення продукту',
+    'new_options_configuration' => 'Нова опція конфігурації',
+    'new_option_configuration' => 'Нова опція конфігурації',
+	'create_configurations' => 'Створення конфігурацій',
+	'replicate' => 'Тиражувати',
+	'fast_create' => 'Швидке створення',
+	'publish' => 'Опублікувати',
+	'import' => 'Імпорт',
 ];

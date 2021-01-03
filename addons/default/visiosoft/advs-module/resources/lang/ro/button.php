@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Avocat nou',
+    'new_classified' => 'Nou clasificat',
     'new_category' => 'Categorie noua',
     'new_country' => 'Țara nouă',
     'new_city' => 'Oras nou',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Actualizare categorie'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Opțiune nouă',
+	'export' => 'Export',
+    'new_productoption' => 'Opțiune pentru noi produse',
+    'new_productoptions_value' => 'Valoare opțiune produs nou',
+    'new_options_configuration' => 'Configurare opțiune nouă',
+    'new_option_configuration' => 'Configurare opțiune nouă',
+	'create_configurations' => 'Creați configurații',
+	'replicate' => 'Replică',
+	'fast_create' => 'Crearea rapidă',
+	'publish' => 'Publica',
+	'import' => 'Import',
 ];

@@ -8,4 +8,11 @@ return [
         'title' => 'عنوان',
     ],
     'general_setting' => 'الاعدادات العامة',
+    'recaptcha' => 'reCAPTCHA',
+    'education' => [
+        'title' => 'التعليم',
+    ],
+    'education_part' => [
+        'title' => 'جزء التعليم',
+    ],
 ];

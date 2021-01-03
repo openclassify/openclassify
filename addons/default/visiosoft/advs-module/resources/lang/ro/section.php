@@ -40,7 +40,20 @@ return [
     'general' => 'General',
     'ads' => 'Reclame',
     'user' => 'Utilizator',
+    'filter' => 'Filtru',
+    'create_ad' => 'Creați anunț',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Opțiuni',
     ],
+    'ads_image' => 'Imagine publicitară',
+    'product_options' => [
+        'title' => 'Opțiuni',
+    ],
+    'productoptions_value' => [
+        'title' => 'Opțiuni Valoare',
+    ],
+    'option_configuration' => [
+        'title' => 'Configurare',
+    ],
+    'translations' => 'Traduceri',
 ];

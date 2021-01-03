@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'रजिस्टर प्रकार'
     ],
+    'birthday' => [
+        'name' => 'जन्मदिन'
+    ],
+	'facebook_address' => [
+		'name' => 'फेसबुक एड्रेस'
+	],
+	'google_address' => [
+		'name' => 'Google पता'
+	],
+    'education' => [
+        'name' => 'शिक्षा'
+    ],
+    'state_of_education' => [
+        'name' => 'शिक्षा की स्थिति'
+    ],
+    'profession' => [
+        'name' => 'व्यवसाय'
+    ],
     'identification_number' => [
         'name' => 'पहचान संख्या'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'उपयोगकर्ता'
     ],
+	'name' => [
+		'name' => 'नाम'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'कुंजिका',
     ],
+    'old_password' => [
+        'name' => 'पुराना पासवर्ड',
+    ],
     'new_password' => [
         'name' => 'नया पासवर्ड',
     ],
@@ -428,19 +452,35 @@ return [
     'my_address' => 'मेरा पता',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'कंपनी का नाम'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'कर कार्यालय'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'कर संख्या'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'मेरी प्रोफाइल',
+    'edit_profile' => 'प्रोफ़ाइल संपादित करें',
+    'edit_details' => 'विवरण संपादित करें',
+    'update' => 'अपडेट करें',
+    'change_password' => 'पासवर्ड बदलें',
+    'choose_an_option' => 'एक विकल्प चुनें...',
+
+    // Register page
+    'accept_terms_label' => 'मैं शर्तें मंज़ूर करता हूँ।',
+    'accept_protection_law_label' => '<html>मैं कानून की शर्तों को स्वीकार करता हूं' . setting_value('visiosoft.module.profile::register_protection_url') . '"लक्ष्य =" _ रिक्त "> व्यक्तिगत डेटा की सुरक्षा।</a>',
+    'accept_privacy_terms_label' => '<html>मुझे स्वीकार है' . setting_value('visiosoft.module.profile::register_privacy_url') . '"लक्ष्य =" _ रिक्त "> गोपनीयता शब्द</a>।',
+    'receive_sms_emails_label' => 'मैं ई-मेल और एसएमएस प्राप्त करना चाहता हूं।',
+
+    // Register Type
+    'personal' => [
+        'name' => 'निजी'
+    ],
+
+	'education_part' => [
+		'name' => 'शिक्षा की स्थिति'
+	],
 ];

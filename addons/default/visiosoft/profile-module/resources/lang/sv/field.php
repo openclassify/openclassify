@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Registreringstyp'
     ],
+    'birthday' => [
+        'name' => 'Födelsedag'
+    ],
+	'facebook_address' => [
+		'name' => 'Facebook-adress'
+	],
+	'google_address' => [
+		'name' => 'Google-adress'
+	],
+    'education' => [
+        'name' => 'Utbildning'
+    ],
+    'state_of_education' => [
+        'name' => 'Utbildningsstatus'
+    ],
+    'profession' => [
+        'name' => 'Yrke'
+    ],
     'identification_number' => [
         'name' => 'Identifieringsnummer'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Användare'
     ],
+	'name' => [
+		'name' => 'namn'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'Lösenord',
     ],
+    'old_password' => [
+        'name' => 'Gammalt lösenord',
+    ],
     'new_password' => [
         'name' => 'Nytt lösenord',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => 'enskild',
     ],
     'corporate' => [
-        'name' => 'företags-',
+        'name' => 'Företags',
     ],
 
     'details' => [
@@ -428,19 +452,35 @@ return [
     'my_address' => 'Min adress',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Företagsnamn'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Skattekontor'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Skattenummer'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Min profil',
+    'edit_profile' => 'Redigera profil',
+    'edit_details' => 'Redigera detaljer',
+    'update' => 'Uppdatering',
+    'change_password' => 'Ändra lösenord',
+    'choose_an_option' => 'Välj ett alternativ...',
+
+    // Register page
+    'accept_terms_label' => 'Jag accepterar villkoren.',
+    'accept_protection_law_label' => '<html>Jag accepterar villkoren i lagen den' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Skydd av personuppgifter.</a>',
+    'accept_privacy_terms_label' => '<html>jag accepterar' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> sekretessvillkor</a>.',
+    'receive_sms_emails_label' => 'Jag vill få e-post och sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personlig'
+    ],
+
+	'education_part' => [
+		'name' => 'Utbildningsstatus'
+	],
 ];

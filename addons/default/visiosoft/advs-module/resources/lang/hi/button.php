@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'नई सलाह',
+    'new_classified' => 'नया वर्गीकृत',
     'new_category' => 'नई श्रेणी',
     'new_country' => 'नया देश',
     'new_city' => 'नया शहर',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'अद्यतन श्रेणी'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'नया विकल्प',
+	'export' => 'निर्यात',
+    'new_productoption' => 'नया उत्पाद',
+    'new_productoptions_value' => 'नए उत्पाद विकल्प मूल्य',
+    'new_options_configuration' => 'नया विकल्प कॉन्फ़िगरेशन',
+    'new_option_configuration' => 'नया विकल्प कॉन्फ़िगरेशन',
+	'create_configurations' => 'कॉन्फ़िगरेशन बनाएँ',
+	'replicate' => 'दोहराने',
+	'fast_create' => 'तेजी से बना',
+	'publish' => 'प्रकाशित करना',
+	'import' => 'आयात',
 ];

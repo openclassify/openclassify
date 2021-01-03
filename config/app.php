@@ -1,5 +1,8 @@
 <?php
 
+use Sentry\Laravel\Facade;
+use Sentry\Laravel\ServiceProvider;
+
 return [
 
     /*
@@ -209,6 +212,8 @@ return [
          * Streams Service Provider
          */
         Anomaly\Streams\Platform\StreamsServiceProvider::class,
+        Sentry\Laravel\ServiceProvider::class,
+
     ],
 
     /*
@@ -257,6 +262,8 @@ return [
         'URL'          => Illuminate\Support\Facades\URL::class,
         'Validator'    => Illuminate\Support\Facades\Validator::class,
         'View'         => Illuminate\Support\Facades\View::class,
+        'Sentry' => Sentry\Laravel\Facade::class,
+
 
     ],
 

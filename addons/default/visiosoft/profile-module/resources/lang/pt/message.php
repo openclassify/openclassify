@@ -31,6 +31,8 @@ return [
     'ajax_address_error' => 'Nenhum endereço ou não está autorizado a visualizar.',
     'empty_password_sms_message' => 'Devido a problemas de segurança, alteramos sua senha! Sua nova senha é:',
     'required_all' => "Todo o campo é obrigatório!",
+    'can_not_remove_filled_fields' => "Você não pode remover os campos preenchidos!",
+    'wrong_password' => "A senha que você digitou não está correta!",
 
     // Forgot Password
     'email_phone_not_found' => 'O e-mail, número de telefone não está correto!',
@@ -38,6 +40,10 @@ return [
     'disable_account' => 'Deseja fechar sua conta? Esta operação não pode ser desfeita.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Email atualizado!',
+    'update_email_mail_message' => 'Seu e-mail foi atualizado!',
+
+    // Register
+    'recaptcha_field_is_required' => 'O campo reCaptcha é obrigatório.',
+    'failed_to_validate_captcha' => 'Falha ao validar o captcha.',
 ];

@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'סוג הרשמה'
     ],
+    'birthday' => [
+        'name' => 'יום הולדת'
+    ],
+	'facebook_address' => [
+		'name' => 'כתובת פייסבוק'
+	],
+	'google_address' => [
+		'name' => 'כתובת גוגל'
+	],
+    'education' => [
+        'name' => 'חינוך'
+    ],
+    'state_of_education' => [
+        'name' => 'מצב החינוך'
+    ],
+    'profession' => [
+        'name' => 'מִקצוֹעַ'
+    ],
     'identification_number' => [
         'name' => 'מספר זיהוי'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'משתמש'
     ],
+	'name' => [
+		'name' => 'שֵׁם'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'סיסמה',
     ],
+    'old_password' => [
+        'name' => 'סיסמה ישנה',
+    ],
     'new_password' => [
         'name' => 'סיסמה חדשה',
     ],
@@ -428,19 +452,35 @@ return [
     'my_address' => 'הכתובת שלי',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'שם החברה'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'משרד המס'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'מספר מס'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'הפרופיל שלי',
+    'edit_profile' => 'ערוך פרופיל',
+    'edit_details' => 'לערוך פרטים',
+    'update' => 'עדכון',
+    'change_password' => 'שנה סיסמא',
+    'choose_an_option' => 'בחר אפשרות...',
+
+    // Register page
+    'accept_terms_label' => 'אני מקבל את התנאים.',
+    'accept_protection_law_label' => '<html>אני מקבל את תנאי החוק בנושא' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> הגנה על נתונים אישיים.</a>',
+    'accept_privacy_terms_label' => '<html>אני מקבל' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> תנאי פרטיות</a>.',
+    'receive_sms_emails_label' => 'אני רוצה לקבל דואר אלקטרוני וסמס.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'אישי'
+    ],
+
+	'education_part' => [
+		'name' => 'מצב החינוך'
+	],
 ];

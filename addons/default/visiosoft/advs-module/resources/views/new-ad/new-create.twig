@@ -2,6 +2,8 @@
 
 {% block content %}
     <section class="clearfix home-default">
+        {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'new-create'} %}
+
         <div>
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -18,7 +20,9 @@
             <div class="adpost-details">
                 <div class="row">
                     <div class="col-md-12">
-                        {% set form = form('advs', 'advs').entry(id).actions(['update']).get() %}
+                        {% set form = form('advs', 'advs').entry(id).actions({'update': {
+                            'text': trans('visiosoft.module.advs::button.publish')
+                        }}).get() %}
                         {{ form_open({
                             'id': 'createEditAdvForm',
                             'class': 'form ' ~ form.options.class ,
@@ -43,7 +47,7 @@
                             {% include 'visiosoft.module.advs::new-ad/partials/contact-info' %}
 
                             <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.ad_info') }}</h5>
-                            <div class="section postdetails">
+                            <div class="section postdetails bg-light p-4">
                                 <div class="row form-group add-title">
                                     {% set fields = form.fields.base().pluck('field_name').all() %}
                                     <div class="col-md-12">
@@ -59,9 +63,12 @@
                                     </div>
                                 </div>
 
-                                {{ addBlock('new-ad/fields', {'adv': adv})|raw }}
-
-                                <div class="row form-group select-price{{ setting_value('visiosoft.module.advs::hide_standard_price_field') ? ' d-none' }}">
+                                {% if setting_value('visiosoft.module.advs::market_place') %}
+                                    {{ addBlock('new-ad/fields', {'adv': adv})|raw }}
+                                {% endif %}
+                                <div class="row form-group select-price
+                                            {{ setting_value('visiosoft.module.advs::hide_standard_price_field') ? ' d-none' }}
+                                            {{ setting_value('visiosoft.module.advs::market_place') != true ? 'd-none' }}">
                                     <label class="col-sm-2 col-xs-12">
                                         {{ form.fields.standard_price.label|raw }}
                                         <span class="required">*</span>
@@ -73,15 +80,19 @@
                                     </div>
                                     {% set standardPriceValue = form.fields.standard_price.value|split('.') %}
                                     <div class="col-8 pr-0 col-md-3">
-                                        <input class="form-control standard-price-field whole-price" value="{{ standardPriceValue|first }}">
+                                        <input class="form-control standard-price-field whole-price"
+                                               value="{{ standardPriceValue|first }}">
                                     </div>
                                     <div class="col-4 col-md-1">
-                                        <input class="form-control standard-price-decimal-field decimal-price" placeholder="00" maxlength="2"
+                                        <input class="form-control standard-price-decimal-field decimal-price"
+                                               placeholder="00" maxlength="2"
                                                value="{{ standardPriceValue[1] }}">
                                     </div>
                                 </div>
 
-                                <div class="row form-group select-price">
+                                <div class="row form-group select-price
+                                            {{ setting_value('visiosoft.module.advs::price_area_hidden') ? 'hidden' }}">
+
                                     <label class="col-sm-2 col-xs-12">
                                         {{ form.fields.price.label|raw }}
                                         <span class="required">*</span>
@@ -92,14 +103,16 @@
                                         }).input|raw }}
                                     </div>
                                     {% set PriceValue = form.fields.price.value|split('.') %}
-                                    <div class="col-8 pr-0 col-md-3">
+                                    <div class="col-6 col-sm-7 pr-0 col-md-3">
                                         <input class="form-control priceField whole-price" value="{{ PriceValue|first }}">
                                     </div>
-                                    <div class="col-4 col-md-1">
-                                        <input class="form-control priceDecimalField decimal-price" placeholder="00" maxlength="2"
-                                               value="{{ PriceValue[1] }}">
-                                    </div>
-                                    <div class="col-sm-3 col-xs-6">
+                                    {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
+                                        <div class="col-4 col-md-1">
+                                            <input class="form-control priceDecimalField decimal-price" placeholder="00" maxlength="2"
+                                                   value="{{ PriceValue[1] }}">
+                                        </div>
+                                    {% endif %}
+                                    <div class="col-sm-3 col-6">
                                         <select name="currency" class="custom-select form-control" data-field="currency"
                                                 data-field_name="currency" data-provides="anomaly.field_type.select"
                                                 id="currency" required="">
@@ -117,22 +130,36 @@
                                     </div>
                                 </div>
 
-                                <div class="row form-group select-options">
-                                    <label for="selectOptions" class="col-sm-2">
-                                        {{ trans('visiosoft.module.advs::field.options') }}
-                                    </label>
-                                    <div class="col-sm-10">
-                                        <select id="selectOptions" class="form-control options-tags" multiple="multiple"
-                                                name="options[]">
-                                            {% if count(options) %}
-                                                {% for option in options %}
-                                                    <option id="advOption{{ option.id }}" selected="selected">{{ option.name }}</option>
-                                                {% endfor %}
-                                            {% endif %}
-                                        </select>
+                                {% if not setting_value('visiosoft.module.advs::hide_options_field') %}
+                                    <div class="row form-group select-options">
+                                        <label for="selectOptions" class="col-sm-2">
+                                            {{ trans('visiosoft.module.advs::field.options') }}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            <select id="selectOptions" class="form-control options-tags" multiple="multiple"
+                                                    name="options[]">
+                                                {% if count(options) %}
+                                                    {% for option in options %}
+                                                        <option id="advOption{{ option.id }}" selected="selected">{{ option.name }}</option>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </select>
+                                        </div>
                                     </div>
-                                </div>
 
+                                    <div class="row form-group product-options">
+                                        <label for="productOptions" class="col-sm-2">
+                                            {{ trans('visiosoft.module.advs::field.product_option.name') }}
+                                        </label>
+                                        <div class="col-sm-10">
+                                            {{ form.fields.product_options_value.configSet('cat1',adv.cat1).input|raw }}
+                                        </div>
+                                    </div>
+                                {% endif %}
+                            </div>
+
+                            <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.ad_desc') }}</h5>
+                            <div class="bg-light p-4">
                                 <div class="row form-group brand-name">
                                     <div class="col-md-12">
                                         <div class="field-group advs_desc">
@@ -142,13 +169,32 @@
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+
+                            <h5 class="mt-5 pb-1 border-bottom">
+                                {{ trans('visiosoft.module.advs::field.upload_photos') }}
+                            </h5>
+                            <div class="bg-light p-4">
                                 <div class="row form-group images">
                                     <div class="col-md-12">
                                         {{ form.fields.files.input |raw }}
                                     </div>
                                 </div>
-                                {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
+                            </div>
 
+                            {% if custom_fields and count(custom_fields) %}
+                                <h5 class="mt-5 pb-1 border-bottom">
+                                    {{ trans('visiosoft.module.advs::field.additional_fields') }}
+                                </h5>
+                                <div class="bg-light p-4">
+                                    {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
+                                </div>
+                            {% endif %}
+
+                            <h5 class="mt-5 pb-1 border-bottom">
+                                {{ trans('visiosoft.module.advs::field.ad_location') }}
+                            </h5>
+                            <div class="bg-light p-4 mb-4">
                                 {% include "visiosoft.module.location::new-ad/map" %}
 
                                 <input value="{{ adv.map_Val }}" name="map_Val" data-max="255" data-mask=""
@@ -158,12 +204,14 @@
                             </div><!-- section -->
 
                             <div class="checkbox section agreement">
+                                {% if setting_value('visiosoft.module.advs::show_post_ad_agreement') %}
+                                    <label for="send">
+                                        <input type="checkbox" name="send" id="send" required>
 
-                                <label for="send">
-                                    <input type="checkbox" name="send" id="send" required>
+                                        {{ trans('visiosoft.module.advs::message.agreement') }}
+                                    </label><br>
+                                {% endif %}
 
-                                    {{ trans('visiosoft.module.advs::message.agreement') }}
-                                </label><br>
                                 {{ form.actions|raw }}
                             </div><!-- section -->
 
@@ -185,11 +233,19 @@
         var default_currency = "{{ setting_value('streams::currency') }}";
         var default_GET = "{{ setting_value('visiosoft.module.advs::default_GET') }}";
         var adv_id = "{{ id }}";
+        var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
     </script>
+
+    {% if setting_value('visiosoft.module.advs::make_map_required') %}
+        <script>
+            let selectLocationAlert = "{{ trans('visiosoft.module.advs::message.select_location_error') }}"
+        </script>
+        {{ asset_add("scripts.js", "visiosoft.module.advs::js/required-map.js") }}
+    {% endif %}
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
     {{ asset_add("scripts.js", "streams::js/form/form.js") }}
     {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
-    {{ asset_add("styles.css", "visiosoft.module.advs::css/new-create.js") }}
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/new-create.css") }}
 
 {% endblock %}

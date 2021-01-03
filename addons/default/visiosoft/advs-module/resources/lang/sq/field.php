@@ -20,7 +20,7 @@ return [
         'name' => 'Çmim'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Mimi standard'
     ],
     'date' => [
         'name' => 'Data'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Nënkategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Nën Kategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Nën Kategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Nënkategoria 9'
+    ],
     'currency' => [
         'name' => 'Monedhë'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Më të vjetrat',
     'address_a_z' => 'Adresa (A deri Z)',
     'address_z_a' => 'Adresa (Z në A)',
-    'categories' => 'Kategoritë',
+	'categories' => [
+		'name' => 'Kategoritë'
+	],
     'all_categories' => 'Të gjitha Kategoritë',
     'location' => 'Vendndodhja',
     'send_message' => 'Dërgoni mesazh',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Në 24 orët e fundit'
     ],
+    'in_the_last_day' => [
+        'name' => 'Në 24 orët e fundit'
+    ],
     'in_the_last_week' => [
         'name' => 'Në Javën e Fundit'
     ],
@@ -267,7 +281,7 @@ return [
     "continue" => 'Vazhdo',
     "gallery" => 'Galeria',
     "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "were_found" => 'u gjetën',
 
     // Pending screen
     'pending_message_1' => 'Njoftimi është në Procesin e Miratimit',
@@ -296,5 +310,36 @@ return [
     'select_category_step_by_step' => 'Zgjidhni kategorinë hap pas hapi',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opsione',
+    'category_selection' => 'Përzgjedhja e kategorisë',
+    'listing_details' => 'Detajet e Listimit',
+    'preview' => 'Paraqitje',
+    'congratulations' => 'Urime',
+    'ad_desc' => 'Përshkrimi i reklamës',
+    'upload_photos' => 'Ngarko Fotografitë',
+    'additional_fields' => 'Fushat shtesë',
+    'ad_location' => 'Vendndodhja e reklamës',
+
+    'free' => 'Falas',
+    'ad_date' => 'Data e shpalljes',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'dhe më lart',
+    'and_below' => 'dhe më poshtë',
+    'clear_all' => 'Pastroji të gjitha',
+    'balances' => 'Bilancet',
+    'packages' => 'Paketat',
+    'dopings' => 'Dopingët',
+    'advs' => 'Adv',
+    'site' => 'Faqen',
+    'subscription' => 'Abonim',
+	'created' => 'Krijuar',
+	'product_option' => [
+		'name' => 'Opsioni i produktit'
+	],
+	'option_json' => [
+		'name' => 'Opsioni'
+	],
+    'old_price' => [
+        'name' => 'Çmimi i Vjetër'
+    ],
 ];

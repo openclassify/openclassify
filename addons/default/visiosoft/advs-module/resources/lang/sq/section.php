@@ -40,7 +40,20 @@ return [
     'general' => 'I përgjithshëm',
     'ads' => 'Njoftimi',
     'user' => 'Përdorues',
+    'filter' => 'filtër',
+    'create_ad' => 'Krijo shpallje',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Opsione',
     ],
+    'ads_image' => 'Imazhi i reklamave',
+    'product_options' => [
+        'title' => 'Opsione',
+    ],
+    'productoptions_value' => [
+        'title' => 'Vlera e opsioneve',
+    ],
+    'option_configuration' => [
+        'title' => 'Konfigurimi',
+    ],
+    'translations' => 'Përkthime',
 ];

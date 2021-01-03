@@ -40,7 +40,20 @@ return [
     'general' => '一般的な',
     'ads' => '広告',
     'user' => 'ユーザー',
+    'filter' => 'フィルタ',
+    'create_ad' => '広告を作成する',
     'options' => [
-        'title' => 'Options',
+        'title' => 'オプション',
     ],
+    'ads_image' => '広告画像',
+    'product_options' => [
+        'title' => 'オプション',
+    ],
+    'productoptions_value' => [
+        'title' => 'オプション値',
+    ],
+    'option_configuration' => [
+        'title' => '構成',
+    ],
+    'translations' => '翻訳',
 ];

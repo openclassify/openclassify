@@ -40,7 +40,20 @@ return [
     'general' => 'عمومی',
     'ads' => 'اعلانات',
     'user' => 'یوزر',
+    'filter' => 'فیلتر',
+    'create_ad' => 'تبلیغ ایجاد کنید',
     'options' => [
-        'title' => 'Options',
+        'title' => 'گزینه ها',
     ],
+    'ads_image' => 'تصویر تبلیغات',
+    'product_options' => [
+        'title' => 'گزینه ها',
+    ],
+    'productoptions_value' => [
+        'title' => 'مقدار گزینه ها',
+    ],
+    'option_configuration' => [
+        'title' => 'پیکربندی',
+    ],
+    'translations' => 'ترجمه ها',
 ];

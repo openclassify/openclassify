@@ -1,13 +1,21 @@
 // Hide watermark_image by default
-$(".watermark_image").hide();
+const watermarkType = $("select[name='watermark_type']")
+const watermarkText = $(".watermark_text")
+const watermarkImage = $(".watermark_image")
 
-$("select[name='watermark_type']").change((event) => {
-    let watermarkType = event.target.value;
-    if (watermarkType === 'text') {
-        $(".watermark_image").hide();
-        $(".watermark_text").show()
+if (watermarkType.val() === 'text') {
+    watermarkImage.hide();
+} else {
+    watermarkText.hide();
+}
+
+$(watermarkType).change((event) => {
+    const watermarkTypeValue = event.target.value;
+    if (watermarkTypeValue === 'text') {
+        watermarkImage.hide();
+        watermarkText.show()
     } else if (event.target.value === 'image') {
-        $(".watermark_image").show();
-        $(".watermark_text").hide()
+        watermarkImage.show();
+        watermarkText.hide()
     }
 });

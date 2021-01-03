@@ -40,7 +40,20 @@ return [
     'general' => 'Generale',
     'ads' => 'Annunci',
     'user' => 'Utente',
+    'filter' => 'Filtro',
+    'create_ad' => 'Crea annuncio',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Opzioni',
     ],
+    'ads_image' => 'Immagine degli annunci',
+    'product_options' => [
+        'title' => 'Opzioni',
+    ],
+    'productoptions_value' => [
+        'title' => 'Valore delle opzioni',
+    ],
+    'option_configuration' => [
+        'title' => 'Configurazione',
+    ],
+    'translations' => 'Traduzioni',
 ];

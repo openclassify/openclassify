@@ -40,7 +40,20 @@ return [
     'general' => 'सामान्य',
     'ads' => 'विज्ञापन',
     'user' => 'उपयोगकर्ता',
+    'filter' => 'फ़िल्टर',
+    'create_ad' => 'विज्ञापन बनाना',
     'options' => [
-        'title' => 'Options',
+        'title' => 'विकल्प',
     ],
+    'ads_image' => 'विज्ञापन छवि',
+    'product_options' => [
+        'title' => 'विकल्प',
+    ],
+    'productoptions_value' => [
+        'title' => 'विकल्प मान',
+    ],
+    'option_configuration' => [
+        'title' => 'विन्यास',
+    ],
+    'translations' => 'अनुवाद',
 ];

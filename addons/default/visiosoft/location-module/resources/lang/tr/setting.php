@@ -17,7 +17,7 @@ return [
         'name' => 'Varsayılan Ülke',
     ],
     'create_ad_page_location' => [
-        'name' => 'Reklam Sayfası Konumu Oluşturun',
+        'name' => 'İlan Sayfası Konumu Oluşturun',
     ],
     'default_city' => [
         'name' => 'Varsayılan İl',
@@ -39,5 +39,18 @@ return [
 
     'map_coordinates_lat' => [
         'name' => 'Varsayılan Lat',
+    ],
+
+    'hide_location_filter' => [
+        'name' => 'Konum Filtresini Gizle',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Kayıtlı Telefon Alanı İçin Varsayılan Ülke'
+	],
+    'sorting_column' => [
+        'name' => 'Sıralama Sütunu',
+    ],
+    'sorting_type' => [
+        'name' => 'Sıralama Türü',
     ],
 ];

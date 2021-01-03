@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Defolt Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Yer filtrini gizlət',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Telefon sahəsi üçün qeydiyyatdan keçmiş ölkə'
+	],
+    'sorting_column' => [
+        'name' => 'Sütun çeşidlənir',
+    ],
+    'sorting_type' => [
+        'name' => 'Çeşidləmə növü',
+    ],
 ];

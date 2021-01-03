@@ -20,7 +20,7 @@ return [
         'name' => 'Giá bán'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Giá chuẩn'
     ],
     'date' => [
         'name' => 'Ngày'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Tiểu mục 6'
     ],
+    'cat8' => [
+        'name' => 'Danh mục phụ 7'
+    ],
+    'cat9' => [
+        'name' => 'Danh mục phụ 8'
+    ],
+    'cat10' => [
+        'name' => 'Danh mục phụ 9'
+    ],
     'currency' => [
         'name' => 'Tiền tệ'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Cũ nhất',
     'address_a_z' => 'Địa chỉ (A đến Z)',
     'address_z_a' => 'Địa chỉ (Z đến A)',
-    'categories' => 'Thể loại',
+	'categories' => [
+		'name' => 'Thể loại'
+	],
     'all_categories' => 'Tất cả danh mục',
     'location' => 'Vị trí',
     'send_message' => 'Gửi tin nhắn',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Trong 24 giờ qua'
     ],
+    'in_the_last_day' => [
+        'name' => 'Trong 24 giờ qua'
+    ],
     'in_the_last_week' => [
         'name' => 'Trong tuần trước'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "Không có địa điểm được chọn.",
     "continue" => 'Tiếp tục',
     "gallery" => 'Bộ sưu tập',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Quảng cáo',
+    "were_found" => 'đã được tìm thấy.',
 
     // Pending screen
     'pending_message_1' => 'Quảng cáo đang trong quá trình phê duyệt',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'Chọn danh mục từng bước',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Tùy chọn',
+    'category_selection' => 'Lựa chọn danh mục',
+    'listing_details' => 'Chi tiết danh sách',
+    'preview' => 'Xem trước',
+    'congratulations' => 'Xin chúc mừng',
+    'ad_desc' => 'mô tả quảng cáo',
+    'upload_photos' => 'Tải ảnh lên',
+    'additional_fields' => 'các trường bổ sung',
+    'ad_location' => 'Vị trí Quảng cáo',
+
+    'free' => 'Miễn phí',
+    'ad_date' => 'Ngày quảng cáo',
+    'photo_video' => 'Ảnh, Video',
+    'and_above' => 'trở lên',
+    'and_below' => 'và dưới đây',
+    'clear_all' => 'Làm sạch tất cả',
+    'balances' => 'Cân bằng',
+    'packages' => 'Các gói',
+    'dopings' => 'Liều lượng',
+    'advs' => 'Lời khuyên',
+    'site' => 'Địa điểm',
+    'subscription' => 'Đăng ký',
+	'created' => 'Tạo',
+	'product_option' => [
+		'name' => 'Tùy chọn sản phẩm'
+	],
+	'option_json' => [
+		'name' => 'Lựa chọn'
+	],
+    'old_price' => [
+        'name' => 'Giá cũ'
+    ],
 ];

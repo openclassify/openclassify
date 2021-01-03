@@ -20,7 +20,7 @@ return [
         'name' => 'Prijs'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standaard prijs'
     ],
     'date' => [
         'name' => 'Datum'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Subcategorie 6'
     ],
+    'cat8' => [
+        'name' => 'Subcategorie 7'
+    ],
+    'cat9' => [
+        'name' => 'Subcategorie 8'
+    ],
+    'cat10' => [
+        'name' => 'Subcategorie 9'
+    ],
     'currency' => [
         'name' => 'Valuta'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Oudste',
     'address_a_z' => 'Adres (A tot Z)',
     'address_z_a' => 'Adres (Z tot A)',
-    'categories' => 'Categorieën',
+	'categories' => [
+		'name' => 'Categorieën'
+	],
     'all_categories' => 'Alle categorieën',
     'location' => 'Plaats',
     'send_message' => 'Bericht versturen',
@@ -249,6 +260,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'In de afgelopen 24 uur'
     ],
+    'in_the_last_day' => [
+        'name' => 'In de afgelopen 24 uur'
+    ],
     'in_the_last_week' => [
         'name' => 'In de laatste week'
     ],
@@ -267,8 +281,8 @@ return [
     "no_location" => "Er is geen locatie geselecteerd.",
     "continue" => 'Doorgaan met',
     "gallery" => 'Galerij',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Advertenties',
+    "were_found" => 'zijn gevonden.',
 
     // Pending screen
     'pending_message_1' => 'De advertentie bevindt zich in het goedkeuringsproces',
@@ -296,5 +310,36 @@ return [
     'select_category_step_by_step' => 'Selecteer stap voor stap categorie',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opties',
+    'category_selection' => 'Categorie Selectie',
+    'listing_details' => 'Lijst details',
+    'preview' => 'Voorbeeld',
+    'congratulations' => 'Gefeliciteerd',
+    'ad_desc' => 'Beschrijving van de Reclame',
+    'upload_photos' => 'Foto\'s uploaden',
+    'additional_fields' => 'Extra velden',
+    'ad_location' => 'Advertentielocatie',
+
+    'free' => 'Vrij',
+    'ad_date' => 'Advertentiedatum',
+    'photo_video' => 'Foto, video',
+    'and_above' => 'en hoger',
+    'and_below' => 'en onder',
+    'clear_all' => 'Wis alles',
+    'balances' => 'Weegschalen',
+    'packages' => 'Pakketjes',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Abonnement',
+	'created' => 'Gemaakt',
+	'product_option' => [
+		'name' => 'Productoptie'
+	],
+	'option_json' => [
+		'name' => 'Keuze'
+	],
+    'old_price' => [
+        'name' => 'Oude prijs'
+    ],
 ];

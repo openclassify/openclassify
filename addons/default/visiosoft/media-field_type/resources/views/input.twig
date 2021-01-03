@@ -14,7 +14,7 @@
 <input type="hidden" name="{{ field_type.input_name }}"
        value="{{ field_type.ids|join(',') }}" {{ html_attributes(field_type.attributes) }} {{ field_type.disabled ? 'disabled' }} {{ field_type.readonly ? 'readonly' }}>
 
-<div class="selected">
+<div class="selected media-selected-wrapper">
     {{ field_type.value_table|raw }}
 </div>
 
@@ -23,4 +23,8 @@
         <div class="modal-content"></div>
     </div>
 </div>
+
+<script>
+    var unsupportedFile = '{{ trans('visiosoft.field_type.media::validation.unsupported') }}'
+</script>
 {{ asset_add("styles.css", "visiosoft.field_type.media::css/imgList.css") }}

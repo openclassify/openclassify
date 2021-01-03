@@ -32,9 +32,15 @@ return [
         'name' => 'Логотип інструкції на сторінку реєстрації',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Посилання попередження про сторінку',
     ],
     'style' => [
         'name' => 'Стиль (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Підкатегорії домашньої сторінки Обмеження',
+    ],
+	'default_country' => [
+		'name' => 'Сторінка реєстрації, країна за замовчуванням для телефону',
+	]
 ];

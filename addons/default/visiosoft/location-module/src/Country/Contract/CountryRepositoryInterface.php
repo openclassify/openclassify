@@ -7,4 +7,6 @@ interface CountryRepositoryInterface extends EntryRepositoryInterface
     public function findById($id);
 
     public function viewAll();
+
+    public function getByEntryIDsAndOrderByTransCol($entryIDs, $orderBy, $direction = 'asc');
 }

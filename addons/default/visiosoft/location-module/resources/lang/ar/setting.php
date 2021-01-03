@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'الافتراضي اللات',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'إخفاء عامل تصفية الموقع',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'البلد الافتراضي لتسجيل حقل الهاتف'
+	],
+    'sorting_column' => [
+        'name' => 'عمود الفرز',
+    ],
+    'sorting_type' => [
+        'name' => 'نوع الفرز',
+    ],
 ];

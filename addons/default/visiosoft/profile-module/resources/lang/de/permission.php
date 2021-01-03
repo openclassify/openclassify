@@ -17,4 +17,20 @@ return [
             'delete' => 'Kann Adresse löschen?',
         ],
     ],
+    'education' => [
+        'name'   => 'Bildung',
+        'option' => [
+            'read'   => 'Kann Bildung lesen?',
+            'write'  => 'Kann Bildung erstellen / bearbeiten?',
+            'delete' => 'Kann Bildung löschen?',
+        ],
+    ],
+    'education_part' => [
+        'name'   => 'Bildungsteil',
+        'option' => [
+            'read'   => 'Kann Bildung Teil lesen?',
+            'write'  => 'Kann Bildungsteil erstellen / bearbeiten?',
+            'delete' => 'Kann Bildungsteil gelöscht werden?',
+        ],
+    ],
 ];

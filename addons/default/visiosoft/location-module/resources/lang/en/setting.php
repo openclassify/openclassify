@@ -44,4 +44,13 @@ return [
     'hide_location_filter' => [
         'name' => 'Hide Location Filter',
     ],
+	'country_for_phone_field' => [
+		'name' => 'Default Country For Register Phone Field'
+	],
+    'sorting_column' => [
+        'name' => 'Sorting Column',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorting Type',
+    ],
 ];

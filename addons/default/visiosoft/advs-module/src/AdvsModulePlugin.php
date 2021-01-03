@@ -5,10 +5,11 @@ use Twig_Environment;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Command\appendRequestURL;
 use Visiosoft\AdvsModule\Adv\Command\GetAd;
+use Visiosoft\AdvsModule\Adv\Command\getPopular;
+use Visiosoft\AdvsModule\Adv\Command\GetUserAds;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
-use Visiosoft\AdvsModule\Currency\Currency;
-use Visiosoft\AdvsModule\Currency\CurrencyFormat;
+use Visiosoft\AdvsModule\Support\Command\Currency;
 
 class AdvsModulePlugin extends Plugin
 {
@@ -28,11 +29,6 @@ class AdvsModulePlugin extends Plugin
                     }
 
                     return $ad;
-                }
-            ), new \Twig_SimpleFunction(
-                'currencyFormat',
-                function ($number, $currency = null, array $options = []) {
-                    return app(CurrencyFormat::class)->format($number, $currency, $options);
                 }
             ), new \Twig_SimpleFunction(
                 'isActive',
@@ -76,6 +72,12 @@ class AdvsModulePlugin extends Plugin
                 }
             ),
             new \Twig_SimpleFunction(
+                'getUserAds',
+                function ($userID = null) {
+                    return $this->dispatch(new GetUserAds($userID));
+                }
+            ),
+            new \Twig_SimpleFunction(
                 'getUserPassiveAdvs',
                 function ($user = null) {
                     if (!$user) {
@@ -98,7 +100,24 @@ class AdvsModulePlugin extends Plugin
 
                     return $fn->getCallable()(...$args);
                 }, ['needs_environment' => true]
-            )
+            ), new \Twig_SimpleFunction(
+                'getPopular',
+                function () {
+                    if (!$popular = $this->dispatch(new getPopular())) {
+                        return null;
+                    }
+                    return $popular;
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'currency_*',
+                function ($name) {
+                    return call_user_func_array(
+                        [app(Currency::class), camel_case($name)],
+                        array_slice(func_get_args(), 1)
+                    );
+                }
+            ),
         ];
     }
 }

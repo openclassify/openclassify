@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'لطفاً صبر کنید. حذف دسته بندی های فرعی',
     'category_selection' => 'انتخاب دسته',
+    'go_to_parent' => 'به والدین بروید',
 ];

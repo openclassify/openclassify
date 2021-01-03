@@ -20,7 +20,7 @@ return [
         'name' => 'মূল্য'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'প্রমাণ মূল্য'
     ],
     'date' => [
         'name' => 'তারিখ'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'উপ বিভাগ 6'
     ],
+    'cat8' => [
+        'name' => 'উপ বিভাগ 7'
+    ],
+    'cat9' => [
+        'name' => 'উপ বিভাগ 8'
+    ],
+    'cat10' => [
+        'name' => 'উপ বিভাগ 9'
+    ],
     'currency' => [
         'name' => 'মুদ্রা'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'প্রবীণতম',
     'address_a_z' => 'ঠিকানা (A থেকে Z)',
     'address_z_a' => 'ঠিকানা (জেড টু এ)',
-    'categories' => 'ধরন',
+	'categories' => [
+		'name' => 'বিভাগসমূহ'
+	],
     'all_categories' => 'সব ধরনের',
     'location' => 'অবস্থান',
     'send_message' => 'বার্তা পাঠান',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'শেষ 24 ঘন্টা'
     ],
+    'in_the_last_day' => [
+        'name' => 'শেষ 24 ঘন্টা'
+    ],
     'in_the_last_week' => [
         'name' => 'গত সপ্তাহে'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "কোনও অবস্থান নির্বাচন করা হয়নি।",
     "continue" => 'চালিয়ে',
     "gallery" => 'দরদালান',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'বিজ্ঞাপন',
+    "were_found" => 'পাওয়া গেছে।',
 
     // Pending screen
     'pending_message_1' => 'বিজ্ঞাপনটি অনুমোদনের প্রক্রিয়াধীন',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'ধাপে ধাপে বিভাগ নির্বাচন করুন',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'বিকল্পগুলি',
+    'category_selection' => 'বিভাগ নির্বাচন',
+    'listing_details' => 'তালিকা বিবরণ',
+    'preview' => 'পূর্বরূপ',
+    'congratulations' => 'অভিনন্দন',
+    'ad_desc' => 'বিজ্ঞাপন বিবরণ',
+    'upload_photos' => 'ফটো আপলোড',
+    'additional_fields' => 'অতিরিক্ত ক্ষেত্রসমূহ',
+    'ad_location' => 'বিজ্ঞাপনের অবস্থান',
+
+    'free' => 'ফ্রি',
+    'ad_date' => 'বিজ্ঞাপন তারিখ',
+    'photo_video' => 'ছবি, ভিডিও',
+    'and_above' => 'এবং উপরে',
+    'and_below' => 'এবং নিচে',
+    'clear_all' => 'সব পরিষ্কার করে দাও',
+    'balances' => 'ব্যালেন্স',
+    'packages' => 'প্যাকেজগুলি',
+    'dopings' => 'ডোপিংস',
+    'advs' => 'অ্যাড',
+    'site' => 'সাইট',
+    'subscription' => 'সাবস্ক্রিপশন',
+	'created' => 'তৈরি হয়েছে',
+	'product_option' => [
+		'name' => 'পণ্য বিকল্প'
+	],
+	'option_json' => [
+		'name' => 'বিকল্প'
+	],
+    'old_price' => [
+        'name' => 'পুরাতন মূল্য'
+    ],
 ];

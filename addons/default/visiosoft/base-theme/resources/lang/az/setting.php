@@ -32,9 +32,15 @@ return [
         'name' => 'Səhifə Təlimatı Loqosunu qeyd edin',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Qeyd Alert Linkini Qeyd et',
     ],
     'style' => [
         'name' => 'Stil (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Əsas alt kateqoriyalar məhdudiyyəti',
+    ],
+	'default_country' => [
+		'name' => 'Qeydiyyat səhifəsi, telefon üçün standart ölkə',
+	]
 ];

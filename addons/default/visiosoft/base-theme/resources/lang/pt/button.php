@@ -10,4 +10,6 @@ return [
     'reset_password' => 'Redefinir senha',
     'email' => 'O email',
     'phone' => 'telefone',
+    'show_all' => 'Mostre tudo',
+    'hide_all' => 'Esconda tudo',
 ];

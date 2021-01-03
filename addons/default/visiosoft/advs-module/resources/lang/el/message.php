@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Το νόμισμα μετατράπηκε με επιτυχία.',
     'choose_user' => 'Επιλέξτε έναν χρήστη',
     'owner_updated_successfully' => 'Ο κάτοχος ενημερώθηκε με επιτυχία!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Δεν βρέθηκε διαφήμιση!',
+    'replicated_success' => 'Η διαφήμιση έχει αναπαραχθεί με επιτυχία!',
+    'ad_doesnt_exist' => "Αυτή η διαφήμιση δεν υπάρχει!",
+    'select_location_error' => "Επιλέξτε μια τοποθεσία στον χάρτη!",
+    'this_ad_is_not_valid_anymore' => "Αυτή η διαφήμιση δεν είναι πλέον έγκυρη!",
+    'approve_status_change' => "Η κατάσταση της διαφήμισής σας έχει ενεργοποιηθεί!",
+    'passive_status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί σε παθητική!",
 ];

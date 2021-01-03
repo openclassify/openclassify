@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Konvertimi i monedhës me sukses..',
     'choose_user' => 'Zgjidhni një përdorues',
     'owner_updated_successfully' => 'Pronari është azhurnuar me sukses!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Asnjë shpallje nuk u gjet!',
+    'replicated_success' => 'Shpallja është përsëritur me sukses!',
+    'ad_doesnt_exist' => "Kjo shpallje nuk ekziston!",
+    'select_location_error' => "Ju lutemi zgjidhni një vendndodhje në hartë!",
+    'this_ad_is_not_valid_anymore' => "Kjo reklamë nuk është më e vlefshme!",
+    'approve_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në Aktiv!",
+    'passive_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në pasiv!",
 ];

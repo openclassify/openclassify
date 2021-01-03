@@ -20,7 +20,7 @@ return [
         'name' => 'Preț'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Preț standard'
     ],
     'date' => [
         'name' => 'Data'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Subcategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Subcategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Subcategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Subcategoria 9'
+    ],
     'currency' => [
         'name' => 'Valută'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Cele mai vechi',
     'address_a_z' => 'Adresa (de la A la Z)',
     'address_z_a' => 'Adresa (de la Z la A)',
-    'categories' => 'Categorii',
+	'categories' => [
+		'name' => 'Categorii'
+	],
     'all_categories' => 'toate categoriile',
     'location' => 'Locație',
     'send_message' => 'Trimite mesaj',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'În ultimele 24 de ore'
     ],
+    'in_the_last_day' => [
+        'name' => 'În ultimele 24 de ore'
+    ],
     'in_the_last_week' => [
         'name' => 'In ultima saptamana'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
     "gallery" => 'Galerie',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Reclame',
+    "were_found" => 'au fost găsite.',
 
     // Pending screen
     'pending_message_1' => 'Anunțul se află în procesul de aprobare',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'Selectați Categorie pas cu pas',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opțiuni',
+    'category_selection' => 'Selectarea categoriei',
+    'listing_details' => 'Detalii listare',
+    'preview' => 'previzualizare',
+    'congratulations' => 'Felicitări',
+    'ad_desc' => 'Descrierea anunțului',
+    'upload_photos' => 'Încarcă fotografii',
+    'additional_fields' => 'Câmpuri suplimentare',
+    'ad_location' => 'Locația anunțului',
+
+    'free' => 'Gratuit',
+    'ad_date' => 'Data publicității',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'Si mai sus',
+    'and_below' => 'si sub',
+    'clear_all' => 'Curata tot',
+    'balances' => 'Solduri',
+    'packages' => 'Pachete',
+    'dopings' => 'Dopaje',
+    'advs' => 'Sfaturi',
+    'site' => 'Site',
+    'subscription' => 'Abonament',
+	'created' => 'Creată',
+	'product_option' => [
+		'name' => 'Opțiunea produsului'
+	],
+	'option_json' => [
+		'name' => 'Opțiune'
+	],
+    'old_price' => [
+        'name' => 'Preț vechi'
+    ],
 ];

@@ -49,4 +49,37 @@ class AdressController extends AdminController
 
         return $form->render();
     }
+
+    /**
+     * Edit an existing entry.
+     *
+     * @param AdressFormBuilder $form
+     * @param        $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function edit(AdressFormBuilder $form, $id)
+    {
+        $form->setOption('heading', "visiosoft.module.profile::field");
+
+        return $form->render($id);
+    }
+
+    public function adressUpdate(AdressFormBuilder $form,Request $request,$id)
+    {
+        $error = $form->build()->validate()->getFormErrors()->getMessages();
+        if(!empty($error))
+        {
+            return $this->redirect->back();
+        }
+        $New_value = $request->all();
+        unset($New_value['_token'],$New_value['action']);
+        ProfileAdressEntryModel::find($id)->update($New_value);
+        $message = [];
+        $message[] = trans('visiosoft.module.profile::message.adress_success_update');
+        if($request->get('action') == "save_create")
+        {
+            return redirect('admin/profile/adress/create')->with('success', $message);
+        }
+        return $this->redirect->back()->with('success', $message);
+    }
 }

@@ -20,7 +20,7 @@ return [
         'name' => 'Pris'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standard pris'
     ],
     'date' => [
         'name' => 'Datum'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Underkategori 6'
     ],
+    'cat8' => [
+        'name' => 'Underkategori 7'
+    ],
+    'cat9' => [
+        'name' => 'Underkategori 8'
+    ],
+    'cat10' => [
+        'name' => 'Underkategori 9'
+    ],
     'currency' => [
         'name' => 'Valuta'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'äldsta',
     'address_a_z' => 'Adress (A till Ö)',
     'address_z_a' => 'Adress (Z till A)',
-    'categories' => 'kategorier',
+	'categories' => [
+		'name' => 'Kategorier'
+	],
     'all_categories' => 'alla kategorier',
     'location' => 'Plats',
     'send_message' => 'Skicka meddelande',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Under de senaste 24 timmarna'
     ],
+    'in_the_last_day' => [
+        'name' => 'Under de senaste 24 timmarna'
+    ],
     'in_the_last_week' => [
         'name' => 'Under den sista veckan'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "Ingen plats har valts.",
     "continue" => 'Fortsätta',
     "gallery" => 'Galleri',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'annonser',
+    "were_found" => 'hittades.',
 
     // Pending screen
     'pending_message_1' => 'Annonsen är i godkännandeprocessen',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'Välj kategori steg för steg',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'alternativ',
+    'category_selection' => 'Kategorivalg',
+    'listing_details' => 'Listningsinformation',
+    'preview' => 'Förhandsvisning',
+    'congratulations' => 'Grattis',
+    'ad_desc' => 'Annonsbeskrivning',
+    'upload_photos' => 'Ladda upp foton',
+    'additional_fields' => 'Ytterligare fält',
+    'ad_location' => 'Annonsplats',
+
+    'free' => 'Fri',
+    'ad_date' => 'Annonsdatum',
+    'photo_video' => 'Foto, video',
+    'and_above' => 'och ovan',
+    'and_below' => 'och under',
+    'clear_all' => 'Rensa alla',
+    'balances' => 'Balanser',
+    'packages' => 'Paket',
+    'dopings' => 'Dopings',
+    'advs' => 'Adv',
+    'site' => 'Webbplats',
+    'subscription' => 'Prenumeration',
+	'created' => 'Skapad',
+	'product_option' => [
+		'name' => 'Produktalternativ'
+	],
+	'option_json' => [
+		'name' => 'Alternativ'
+	],
+    'old_price' => [
+        'name' => 'Gammalt pris'
+    ],
 ];

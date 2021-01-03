@@ -20,7 +20,7 @@ return [
         'name' => '가격'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => '표준 가격'
     ],
     'date' => [
         'name' => '데이트'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => '하위 카테고리 6'
     ],
+    'cat8' => [
+        'name' => '하위 카테고리 7'
+    ],
+    'cat9' => [
+        'name' => '하위 카테고리 8'
+    ],
+    'cat10' => [
+        'name' => '하위 카테고리 9'
+    ],
     'currency' => [
         'name' => '통화'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => '가장 오래된',
     'address_a_z' => '주소 (A ~ Z)',
     'address_z_a' => '주소 (Z ~ A)',
-    'categories' => '카테고리',
+	'categories' => [
+		'name' => '카테고리'
+	],
     'all_categories' => '모든 카테고리',
     'location' => '위치',
     'send_message' => '문자 보내',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => '지난 24 시간 동안'
     ],
+    'in_the_last_day' => [
+        'name' => '지난 24 시간 동안'
+    ],
     'in_the_last_week' => [
         'name' => '지난주에'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "선택된 위치가 없습니다.",
     "continue" => '계속하다',
     "gallery" => '갤러리',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => '광고',
+    "were_found" => '발견되었습니다.',
 
     // Pending screen
     'pending_message_1' => '광고가 승인 과정에 있습니다',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => '단계별로 카테고리 선택',
 
     // New create page
-    'options' => 'Options',
+    'options' => '옵션',
+    'category_selection' => '카테고리 선택',
+    'listing_details' => '리스팅 세부 사항',
+    'preview' => '시사',
+    'congratulations' => '축하합니다',
+    'ad_desc' => '광고 설명',
+    'upload_photos' => '사진 업로드',
+    'additional_fields' => '추가 필드',
+    'ad_location' => '광고 위치',
+
+    'free' => '비어 있는',
+    'ad_date' => '광고 날짜',
+    'photo_video' => '사진, 비디오',
+    'and_above' => '이상',
+    'and_below' => '이하',
+    'clear_all' => '모두 지우기',
+    'balances' => '균형',
+    'packages' => '패키지',
+    'dopings' => '도핑',
+    'advs' => 'Advs',
+    'site' => '대지',
+    'subscription' => '신청',
+	'created' => '만들어진',
+	'product_option' => [
+		'name' => '제품 옵션'
+	],
+	'option_json' => [
+		'name' => '선택권'
+	],
+    'old_price' => [
+        'name' => '이전 가격'
+    ],
 ];

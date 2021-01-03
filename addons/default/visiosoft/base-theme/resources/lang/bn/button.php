@@ -10,4 +10,6 @@ return [
     'reset_password' => 'পাসওয়ার্ড রিসেট করুন',
     'email' => 'ইমেইল',
     'phone' => 'ফোন',
+    'show_all' => 'সব দেখাও',
+    'hide_all' => 'সব লুকাও',
 ];

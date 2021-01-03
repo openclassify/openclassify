@@ -40,7 +40,20 @@ return [
     'general' => 'Γενικός',
     'ads' => 'Διαφημίσεις',
     'user' => 'Χρήστης',
+    'filter' => 'Φίλτρο',
+    'create_ad' => 'Δημιουργία διαφήμισης',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Επιλογές',
     ],
+    'ads_image' => 'Εικόνα διαφημίσεων',
+    'product_options' => [
+        'title' => 'Επιλογές',
+    ],
+    'productoptions_value' => [
+        'title' => 'Αξία επιλογών',
+    ],
+    'option_configuration' => [
+        'title' => 'Διαμόρφωση',
+    ],
+    'translations' => 'Μεταφράσεις',
 ];

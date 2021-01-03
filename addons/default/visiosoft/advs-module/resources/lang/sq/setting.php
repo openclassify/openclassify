@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Përcaktuar SET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Gjerësia e Thumbnail',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Lartësia e Thumbnail',
-    ],
-    'picture_width' => [
-        'name' => 'Gjerësia e figurës',
-    ],
-    'picture_height' => [
-        'name' => 'Lartësia e figurës',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Lista e figurës së faqes',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Fshih Fushën Standarde të mimeve',
+    ],
+    'hide_options_field' => [
+        'name' => 'Fshih fushën e opsioneve',
+    ],
+    'hide_village_field' => [
+        'name' => 'Fshih fushën e fshatit',
+    ],
+    'hide_configurations' => [
+        'name' => 'Fshih butonin e konfigurimeve',
+        'instructions' => 'Fshihni butonin e konfigurimeve në faqen e pamjes paraprake',
+    ],
+    'make_map_required' => [
+        'name' => 'Kërkoni hartën',
+        'instructions' => 'Kërkoni nga përdoruesi të vendosë një majë në hartë kur krijon një reklamë',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Fshih listimin Çmimi standard',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Monedhat e aktivizuara',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Kodi i Statistikave të Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Kërkesa për regjistrim përmes e-mail',
+    ],
+    'market_place' => [
+        'name' => 'Vendi i tregut',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Zona e Çmimit e Fshehur',
+	],
+    'hide_price_filter' => [
+        'name' => 'Fsheh Filterin e Pricemimeve',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Fsheh Filterin e datës',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Fsheh Filterin e Fotove',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Fsheh Filterin e Hartës',
+    ],
+    'show_lang_url' => [
+        'name' => 'Trego Parametrin e Lang për URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Kufiri i reklamave popullore',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Ndryshimi i madhësisë së imazhit Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Gjerësia e imazhit të plotë',
+    ],
+    'full_image_height' => [
+        'name' => 'Lartësia e imazhit të plotë',
+    ],
+    'medium_image_width' => [
+        'name' => 'Gjerësia Mesatare e Imazhit',
+    ],
+    'medium_image_height' => [
+        'name' => 'Lartësia mesatare e figurës',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Gjerësia e Thumbnail',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Lartësia e Thumbnail',
+    ],
+    'add_canvas' => [
+        'name' => 'Shto Canvas',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Gjerësia e kanavacës së imazhit',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Lartësia e kanavacës së imazhit',
     ],
     'watermark_type' => [
         'name' => 'Tipi Filigranit',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Pozicioni i Filigranit',
     ],
-    'listing_page_image' => [
-        'name' => 'Lista e figurës së faqes',
+    'user_filter_limit' => [
+        'name' => 'Kufiri i filtrit të përdoruesit',
+        'instructions' => 'Në panelin e administratorit'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Tregoni Breadcrumb kur krijoni një reklamë',
     ],
-    'enabled_currencies' => [
-        'name' => 'Monedhat e aktivizuara',
+    'show_ads_count' => [
+        'name' => 'Shfaq Numrin e Reklamave',
+        'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
     ],
-    'google_statistic_code' => [
-        'name' => 'Kodi i Statistikave të Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
+        'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
     ],
-    'register_email_field' => [
-        'name' => 'Kërkesa për regjistrim përmes e-mail',
+    'override_text' => [
+        'name' => 'Mbishkruaj tekstin',
+        'instructions' => 'Vlera e Vjetër: Vlera e Re'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Hapat Ngjyra',
+        'instructions' => 'Ndryshon ngjyrën e hapave progresivë.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Krijo ngjyrën e butonit të reklamës',
+        'instructions' => 'Ndryshon butonin që shfaqet kur të përfundojë zgjedhja e kategorisë së re të reklamës.'
     ],
 ];

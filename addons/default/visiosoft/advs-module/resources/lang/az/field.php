@@ -20,7 +20,7 @@ return [
         'name' => 'Qiyməti'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standart qiymət'
     ],
     'date' => [
         'name' => 'Tarix'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Alt kateqoriya 6'
     ],
+    'cat8' => [
+        'name' => 'Alt kateqoriya 7'
+    ],
+    'cat9' => [
+        'name' => 'Alt kateqoriya 8'
+    ],
+    'cat10' => [
+        'name' => 'Alt kateqoriya 9'
+    ],
     'currency' => [
         'name' => 'Valyuta'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Ən qədim',
     'address_a_z' => 'Ünvan (A-dan Z)',
     'address_z_a' => 'Ünvan (Z-dən A)',
-    'categories' => 'Kateqoriyalar',
+	'categories' => [
+		'name' => 'Kateqoriyalar'
+	],
     'all_categories' => 'bütün kateqoriyalar',
     'location' => 'Yer',
     'send_message' => 'Mesaj göndər',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Son 24 saatda'
     ],
+    'in_the_last_day' => [
+        'name' => 'Son 24 Saatda'
+    ],
     'in_the_last_week' => [
         'name' => 'Son Həftədə'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "Heç bir yer seçilməyib.",
     "continue" => 'Davam edin',
     "gallery" => 'Qalereya',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Elanlar',
+    "were_found" => 'tapıldı.',
 
     // Pending screen
     'pending_message_1' => 'Elan təsdiqləmə prosesindədir',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'Addım-addım Kateqoriya seçin',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Seçimlər',
+    'category_selection' => 'Kateqoriya seçimi',
+    'listing_details' => 'Listing Details',
+    'preview' => 'Önizləmə',
+    'congratulations' => 'Təbrik edirəm',
+    'ad_desc' => 'Reklam Təsviri',
+    'upload_photos' => 'Şəkillər yükləyin',
+    'additional_fields' => 'Əlavə sahələr',
+    'ad_location' => 'Reklam yeri',
+
+    'free' => 'Pulsuz',
+    'ad_date' => 'Reklam Tarixi',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'və yuxarıda',
+    'and_below' => 'və aşağıda',
+    'clear_all' => 'Hamısını sil, hamısını təmizlə',
+    'balances' => 'Qalıqlar',
+    'packages' => 'Paketlər',
+    'dopings' => 'Dopinqlər',
+    'advs' => 'Advs',
+    'site' => 'Sayt',
+    'subscription' => 'Abunə',
+	'created' => 'Yarandı',
+	'product_option' => [
+		'name' => 'Məhsul seçimi'
+	],
+	'option_json' => [
+		'name' => 'Seçim'
+	],
+    'old_price' => [
+        'name' => 'Köhnə Qiymət'
+    ],
 ];

@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Register Type'
     ],
+    'birthday' => [
+        'name' => 'Birthday'
+    ],
+	'facebook_address' => [
+		'name' => 'Facebook Address'
+	],
+	'google_address' => [
+		'name' => 'Google Address'
+	],
+    'education' => [
+        'name' => 'Education'
+    ],
+    'state_of_education' => [
+        'name' => 'State of Education'
+    ],
+    'profession' => [
+        'name' => 'Profession'
+    ],
     'identification_number' => [
         'name' => 'Identification Number'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'User'
     ],
+	'name' => [
+		'name' => 'Name'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'Password',
     ],
+    'old_password' => [
+        'name' => 'Old password',
+    ],
     'new_password' => [
         'name' => 'New password',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => 'individual',
     ],
     'corporate' => [
-        'name' => 'corporate',
+        'name' => 'Corporate',
     ],
 
     'details' => [
@@ -443,4 +467,20 @@ return [
     'edit_details' => 'Edit Details',
     'update' => 'Update',
     'change_password' => 'Change Password',
+    'choose_an_option' => 'Choose an option...',
+
+    // Register page
+    'accept_terms_label' => 'I accept the terms.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
+    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personal'
+    ],
+
+	'education_part' => [
+		'name' => 'State of Education'
+	],
 ];

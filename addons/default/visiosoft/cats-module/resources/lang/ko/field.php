@@ -32,4 +32,5 @@ return [
 
     'please_wait' => '하위 카테고리 삭제',
     'category_selection' => '카테고리 선택',
+    'go_to_parent' => '부모로 이동',
 ];

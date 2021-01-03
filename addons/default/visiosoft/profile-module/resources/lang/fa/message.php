@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'هیچ آدرس و یا مجاز به مشاهده نیست.',
     'empty_password_sms_message' => 'به دلیل مشکلات امنیتی رمز عبور شما را تغییر دادیم! گذرواژه جدید شما این است:',
     'required_all' => "همه زمینه لازم است!",
+    'can_not_remove_filled_fields' => "شما نمی توانید زمینه های پر شده را حذف کنید!",
+    'wrong_password' => "رمز عبوری که وارد کرده اید درست نیست!",
 
     // Forgot Password
     'email_phone_not_found' => 'ایمیل ، شماره تلفن صحیح نیست!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'آیا می خواهید حساب خود را ببندید؟ این عملیات قابل بازگشت نیست.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'ایمیل به روز شد!',
+    'update_email_mail_message' => 'ایمیل شما به روز شده است!',
+
+    // Register
+    'recaptcha_field_is_required' => 'زمینه reCaptcha لازم است.',
+    'failed_to_validate_captcha' => 'تأیید captcha انجام نشد.',
 ];

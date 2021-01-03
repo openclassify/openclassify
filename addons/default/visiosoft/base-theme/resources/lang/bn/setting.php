@@ -32,9 +32,15 @@ return [
         'name' => 'পৃষ্ঠা নির্দেশিকা লোগো নিবন্ধন করুন',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'পৃষ্ঠা সতর্কতা লিঙ্ক নিবন্ধন করুন',
     ],
     'style' => [
         'name' => 'স্টাইল (css)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'হোমপেজ সাব বিভাগের সীমা',
+    ],
+	'default_country' => [
+		'name' => 'ফোনের জন্য পৃষ্ঠা, ডিফল্ট দেশ নিবন্ধ করুন',
+	]
 ];

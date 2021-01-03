@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Adv nuevo',
+    'new_classified' => 'Nuevo clasificado',
     'new_category' => 'Nueva categoría',
     'new_country' => 'Nuevo país',
     'new_city' => 'Ciudad Nueva',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Actualizar categoría'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Nueva opción',
+	'export' => 'Exportar',
+    'new_productoption' => 'Nueva opción de producto',
+    'new_productoptions_value' => 'Valor de opción de producto nuevo',
+    'new_options_configuration' => 'Configuración de nueva opción',
+    'new_option_configuration' => 'Configuración de nueva opción',
+	'create_configurations' => 'Crear configuraciones',
+	'replicate' => 'Reproducir exactamente',
+	'fast_create' => 'Creación rápida',
+	'publish' => 'Publicar',
+	'import' => 'Importar',
 ];

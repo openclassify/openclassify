@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Ingen adress eller inte behörig att visa.',
     'empty_password_sms_message' => 'På grund av säkerhetsproblem har vi ändrat ditt lösenord! Ditt nya lösenord är:',
     'required_all' => "Allt fält krävs!",
+    'can_not_remove_filled_fields' => "Du kan inte ta bort fyllda fält!",
+    'wrong_password' => "Lösenordet du angav är inte korrekt!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-post, telefonnummer är inte korrekt!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Vill du stänga ditt konto? Denna åtgärd kan inte ångras.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-post uppdaterad!',
+    'update_email_mail_message' => 'Din e-postadress har uppdaterats!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha-fält krävs.',
+    'failed_to_validate_captcha' => 'Det gick inte att validera captcha.',
 ];

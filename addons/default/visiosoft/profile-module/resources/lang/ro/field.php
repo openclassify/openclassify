@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Tip de înregistrare'
     ],
+    'birthday' => [
+        'name' => 'Zi de nastere'
+    ],
+	'facebook_address' => [
+		'name' => 'Adresa Facebook'
+	],
+	'google_address' => [
+		'name' => 'Adresa Google'
+	],
+    'education' => [
+        'name' => 'Educaţie'
+    ],
+    'state_of_education' => [
+        'name' => 'Starea educației'
+    ],
+    'profession' => [
+        'name' => 'Profesie'
+    ],
     'identification_number' => [
         'name' => 'Numar de identificare'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Utilizator'
     ],
+	'name' => [
+		'name' => 'Nume'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'Parola',
     ],
+    'old_password' => [
+        'name' => 'Parola veche',
+    ],
     'new_password' => [
         'name' => 'Parolă Nouă',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => 'individual',
     ],
     'corporate' => [
-        'name' => 'corporativ',
+        'name' => 'Corporate',
     ],
 
     'details' => [
@@ -428,19 +452,35 @@ return [
     'my_address' => 'Adresa mea',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Numele Companiei'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Oficiu fiscal'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Cod fiscal'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Profilul meu',
+    'edit_profile' => 'Editează profilul',
+    'edit_details' => 'Editează detaliile',
+    'update' => 'Actualizați',
+    'change_password' => 'Schimbați parola',
+    'choose_an_option' => 'Alege o opțiune...',
+
+    // Register page
+    'accept_terms_label' => 'Accept termenii.',
+    'accept_protection_law_label' => '<html>Accept termenii Legii privind' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Protecția datelor cu caracter personal.</a>',
+    'accept_privacy_terms_label' => '<html>accept' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> termeni de confidențialitate</a>.',
+    'receive_sms_emails_label' => 'Vreau să primesc e-mail și sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personal'
+    ],
+
+	'education_part' => [
+		'name' => 'Starea educației'
+	],
 ];

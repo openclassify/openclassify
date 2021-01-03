@@ -1,194 +1,68 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller\Admin;
 
+use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
-use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryTranslationsModel;
-use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
-use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
+use Visiosoft\AdvsModule\Adv\Form\SimpleAdvFormBuilder;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
+use Maatwebsite\Excel\Facades\Excel;
+use Visiosoft\AdvsModule\Adv\AdvsExport;
 
 class AdvsController extends AdminController
 {
-
+    private $model;
     private $advRepository;
     private $advsEntryTranslationsModel;
     private $optionRepository;
-    private $userRepository;
 
     public function __construct(
+        AdvModel $model,
         AdvRepositoryInterface $advRepository,
         AdvsAdvsEntryTranslationsModel $advsEntryTranslationsModel,
-        OptionRepositoryInterface $optionRepository,
-        UserRepositoryInterface $userRepository
+        OptionRepositoryInterface $optionRepository
     )
     {
         parent::__construct();
+        $this->model = $model;
         $this->advRepository = $advRepository;
         $this->advsEntryTranslationsModel = $advsEntryTranslationsModel;
         $this->optionRepository = $optionRepository;
-        $this->userRepository = $userRepository;
     }
 
-    /**
-     * Display an index of existing entries.
-     *
-     * @param AdvTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function index(AdvTableBuilder $table, CityModel $cityModel, CatsCategoryEntryModel $categoryModel)
+    public function index(AdvTableBuilder $table)
     {
-        $table->addButtons([
-            'status' => [
-                'text' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.decline') . "</font>";
-                    } else {
-                        return "<font class='hidden-xs-down'>" . trans('visiosoft.module.advs::button.approve') . "</font>";
-                    }
-                },
-                'icon' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "fa fa-eye-slash";
-                    } else {
-                        return "fa fa-eye";
-                    }
-                },
-                'href' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "/admin/class/actions/{entry.id}/declined";
-                    } else {
-                        return "/admin/class/actions/{entry.id}/approved";
-                    }
-                },
-                'type' => function (EntryInterface $entry) {
-                    if ($entry->status == 'approved') {
-                        return "danger";
-                    } else {
-                        return "success";
-                    }
-                },
-            ],
+        $table->addAsset("styles.css", "visiosoft.module.advs::css/custom.css");
+        $table->addAsset('scripts.js', 'visiosoft.module.advs::js/list.js');
 
-            'settings' => [
-                'text'     => false,
-                'href'     => false,
-                'dropdown' => [
-                    'change_owner'    => [
-                        'data-toggle' => 'modal',
-                        'data-target' => '#modal',
-                        'text'        => trans('visiosoft.module.advs::button.change_owner'),
-                        'href'        => 'admin/advs-users/choose/{entry.id}',
-                    ],
-                    'replicate' => [
-                        'text' => 'Replicate',
-                    ],
-                ],
-            ],
-        ]);
-
-        $table->setColumns([
-            'cover_photo' => [
-                'value' => function (EntryInterface $entry) {
-                    $coverImageUrl = $this->advRepository->getModel()->AddAdsDefaultCoverImage($entry)->cover_photo;
-                    return "<img width='80px' src='{$coverImageUrl}' >";
-                },
-            ],
-            'entry.id',
-            'name' => [
-                'class' => 'advs-name',
-                'sort_column' => 'slug',
-                'value' => function (EntryInterface $entry) {
-                    if ($entry->name) {
-                        $adLink = $this->advRepository->getModel()->getAdvDetailLinkByModel($entry, 'list');
-                        return "<a href='$adLink' >{$entry->name}</a >";
-                    } else {
-                        return "<span class='text-danger'>" . trans("visiosoft.module.advs::view.unfinished") . "</span>";
-                    }
-                },
-            ],
-            'price' => [
-                'class' => 'advs-price',
-            ],
-            'currency' => [
-                'class' => 'advs-currency',
-            ],
-            'country' => [
-                'class' => 'advs-country',
-            ],
-            'created_by' => [
-                'value' => 'entry.created_by.name'
-            ],
-            'category' => [
-                'value' => function (EntryInterface $entry, CategoryModel $categoryModel) {
-                    $category = $categoryModel->getCat($entry->cat1);
-                    if (!is_null($category))
-                        return $category->name;
-                }
-            ],
-            'finish_at',
-        ]);
-
-
-        $cities = $cityModel->all()->pluck('name', 'id')->all();
-        $users = $this->userRepository->newQuery()
-            ->select(DB::raw("CONCAT_WS('', first_name, ' ', last_name, ' (', gsm_phone, ' || ', email, ')') AS display_name"), 'id')
-            ->pluck('display_name', 'id')
-            ->toArray();
-        $categories = $categoryModel::query()->where('parent_category_id', null)
-            ->leftJoin('cats_category_translations', 'cats_category.id', '=', 'cats_category_translations.entry_id')
-            ->where('locale', config('app.locale'))
-            ->select('cats_category.*', 'cats_category_translations.name')
-            ->pluck('t1.name', 'id')->all();
-        $table->setFilters(array_merge($table->getFilters(),
-                [
-                    'City' => [
-                        'exact' => true,
-                        'filter' => 'select',
-                        'query' => CityFilterQuery::class,
-                        'options' => $cities,
-                    ],
-                    'Category' => [
-                        'exact' => true,
-                        'filter' => 'select',
-                        'query' => CategoryFilterQuery::class,
-                        'options' => $categories,
-                    ],
-                    'User' => [
-                        'exact' => true,
-                        'filter' => 'select',
-                        'query' => UserFilterQuery::class,
-                        'options' => $users,
-                    ],
-                    'status' => [
-                        'filter' => 'select',
-                        'query' => StatusFilterQuery::class,
-                        'options' => [
-                            'approved' => 'visiosoft.module.advs::field.status.option.approved',
-                            'expired' => 'visiosoft.module.advs::field.status.option.expired',
-                            'unpublished' => 'visiosoft.module.advs::field.status.option.unpublished',
-                            'pending_admin' => 'visiosoft.module.advs::field.status.option.pending_admin',
-                            'pending_user' => 'visiosoft.module.advs::field.status.option.pending_user',
-                        ],
-                    ]
-                ])
-        );
+        if ($this->model->is_enabled('recommendedads')) {
+            $table->addButton('add_recommended', [
+                'type' => 'default',
+                'icon' => 'fa fa-gg',
+                'text' => 'Add Recommended',
+                'href' => '/admin/recommendedads/create/{entry.id}',
+            ]);
+        }
 
         return $table->render();
+    }
+
+    public function create(SimpleAdvFormBuilder $form)
+    {
+        return $form->render();
+    }
+
+    public function edit(SimpleAdvFormBuilder $form, $id)
+    {
+        return $form->render($id);
     }
 
     public function choose($advId, Request $request, UserRepositoryInterface $users)
@@ -196,29 +70,29 @@ class AdvsController extends AdminController
         if (empty($request->all())) {
             return $this->view->make('module::admin/advs/choose', ['users' => $users->all(), 'advId' => $advId]);
         } else {
-            $this->advRepository->getModel()->newQuery()->find($advId)->update(['created_by_id' => $request->user_id]);
+            $this->model->newQuery()->find($advId)->update(['created_by_id' => $request->user_id]);
             $this->messages->success(trans('module::message.owner_updated_successfully'));
             return redirect()->back();
         }
     }
 
-    public function actions($id, $type)
+    public function actions($id, $type, SettingRepositoryInterface $settings, AdvModel $advModel)
     {
-        $ad = $this->advRepository->find($id);
+        $ad = $advModel->where('advs_advs.id', '=', $id)->first();
         $ad->status = $type;
 
-        $default_adv_publish = setting_value('visiosoft.module.advs::default_published_time');
+        $default_adv_publish = $settings->value('visiosoft.module.advs::default_published_time');
         $ad->finish_at = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $default_adv_publish . ' day'));
         $ad->publish_at = date('Y-m-d H:i:s');
 
         //algolia Search Module
-        $isActiveAlgolia = $this->advRepository->getModel()->is_enabled('algolia');
+        $isActiveAlgolia = $advModel->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
-            $algolia->updateStatus($id, $type);
+            $algolia->updateStatus($id, $type, $settings);
         }
         $ad->update();
-        event(new ChangedStatusAd($ad)); //Create Notify
+        event(new ChangedStatusAd($ad));//Create Notify
         return back();
     }
 
@@ -284,9 +158,63 @@ class AdvsController extends AdminController
         }
     }
 
-    public function assetsClear(Filesystem $files, Application $application)
+    public function assetsClear(Filesystem $files, Application $application, Request $request)
     {
-        $files->deleteDirectory($directory = $application->getAssetsPath('assets'), true);
-        echo view('visiosoft.module.advs::admin/clear-assets')->render();
+        $directory = 'assets';
+        $files->deleteDirectory($directory = $application->getAssetsPath($directory), true);
+        echo "<div class='bar'></div>" . "<br>";
+        echo "<style>
+.bar {
+  width: 30%;
+  height: 20px;
+  border: 1px solid #2980b9;
+  border-radius: 3px;
+  background-image: 
+    repeating-linear-gradient(
+      -45deg,
+      #2980b9,
+      #2980b9 11px,
+      #eee 10px,
+      #eee 20px /* determines size */
+    );
+  background-size: 28px 28px;
+  animation: move .5s linear infinite;
+}
+
+@keyframes move {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 28px 0;
+  }
+}
+
+</style>
+        <script>
+        location.href = '" . $request->server('HTTP_REFERER') . "';
+        </script>
+        
+        <a href='" . $request->server('HTTP_REFERER') . "'><b>Return Back</b></a>";
+        echo "<br><a href='/admin'><b>Return Admin Panel</b></a>";
+    }
+
+
+    public function exportAdvs()
+    {
+        return Excel::download(new AdvsExport(), 'advs-' . time() . '.xlsx');
+    }
+
+    public function advancedUpdate()
+    {
+        if ($this->request->has('advanced_column') and $this->request->has('advanced_entry_id') and $this->request->has('advanced_value')) {
+            $entry_id = $this->request->get('advanced_entry_id');
+            $column = $this->request->get('advanced_column');
+            $value = $this->request->get('advanced_value');
+            if ($entry = $this->advRepository->find($entry_id)) {
+                $entry->setAttribute($column, $value);
+                $entry->save();
+            }
+        }
     }
 }

@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Ad GET padrão',
     ],
-    'thumbnail_width' => [
-        'name' => 'Largura da miniatura',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Altura da miniatura',
-    ],
-    'picture_width' => [
-        'name' => 'Largura da imagem',
-    ],
-    'picture_height' => [
-        'name' => 'Altura da imagem',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Listar imagem da página',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Ocultar campo de preço padrão',
+    ],
+    'hide_options_field' => [
+        'name' => 'Ocultar campo de opções',
+    ],
+    'hide_village_field' => [
+        'name' => 'Esconder o Campo da Aldeia',
+    ],
+    'hide_configurations' => [
+        'name' => 'Ocultar o botão de configurações',
+        'instructions' => 'Oculte o botão de configurações na página de visualização do anúncio',
+    ],
+    'make_map_required' => [
+        'name' => 'Tornar mapa obrigatório',
+        'instructions' => 'Exigir que o usuário coloque um alfinete no mapa ao criar um anúncio',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Ocultar preço padrão de listagem',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Moedas ativadas',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Código estatístico do Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Requisito de e-mail de registro de membro',
+    ],
+    'market_place' => [
+        'name' => 'Mercado',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Área de preço oculta',
+	],
+    'hide_price_filter' => [
+        'name' => 'Ocultar filtro de preço',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Ocultar filtro de data',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Ocultar filtro de fotos',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Ocultar filtro de mapa',
+    ],
+    'show_lang_url' => [
+        'name' => 'Mostrar parâmetro de idioma para URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Limite de anúncios populares',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Backend de redimensionamento de imagem',
+    ],
+    'full_image_width' => [
+        'name' => 'Largura total da imagem',
+    ],
+    'full_image_height' => [
+        'name' => 'Altura total da imagem',
+    ],
+    'medium_image_width' => [
+        'name' => 'Largura de imagem média',
+    ],
+    'medium_image_height' => [
+        'name' => 'Altura Média da Imagem',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Largura da miniatura',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Altura da miniatura',
+    ],
+    'add_canvas' => [
+        'name' => 'Adicionar tela',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Largura da tela da imagem',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Altura da tela da imagem',
     ],
     'watermark_type' => [
         'name' => 'Tipo de marca d\\'água',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Posição da marca d\\'água',
     ],
-    'listing_page_image' => [
-        'name' => 'Listar imagem da página',
+    'user_filter_limit' => [
+        'name' => 'Limite de filtro de usuário',
+        'instructions' => 'No painel de administração'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Mostrar localização atual ao criar um anúncio',
     ],
-    'enabled_currencies' => [
-        'name' => 'Moedas ativadas',
+    'show_ads_count' => [
+        'name' => 'Mostrar contagem de anúncios',
+        'instructions' => 'Exibir contagem de anúncios na lista de categorias à esquerda',
     ],
-    'google_statistic_code' => [
-        'name' => 'Código estatístico do Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Mostrar Acordo de Postagem',
+        'instructions' => 'Ative-o se quiser exibir um acordo de política de privacidade na página de criação de anúncios',
     ],
-    'register_email_field' => [
-        'name' => 'Requisito de e-mail de registro de membro',
+    'override_text' => [
+        'name' => 'Substituir Texto',
+        'instructions' => 'Valor antigo: novo valor'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Passos Cor',
+        'instructions' => 'Altera a cor dos passos progressivos.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Criar cor do botão do anúncio',
+        'instructions' => 'Altera o botão que aparece quando a seleção da nova categoria de anúncio é concluída.'
     ],
 ];

@@ -20,7 +20,7 @@ return [
         'name' => 'قیمت'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'قیمت استاندارد'
     ],
     'date' => [
         'name' => 'تاریخ'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'کتگوری فرعی 6'
     ],
+    'cat8' => [
+        'name' => 'زیر گروه 7'
+    ],
+    'cat9' => [
+        'name' => 'زیر گروه 8'
+    ],
+    'cat10' => [
+        'name' => 'زیر گروه 9'
+    ],
     'currency' => [
         'name' => 'واحد پول'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'قدیمی ترین',
     'address_a_z' => 'آدرس (الف تا ی)',
     'address_z_a' => 'آدرس ( از ی تا الف )',
-    'categories' => 'گتگوری ها',
+	'categories' => [
+		'name' => 'دسته بندی ها'
+	],
     'all_categories' => 'همه گتگوری ها',
     'location' => 'موقعيت',
     'send_message' => 'پیام فرستادن',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'در 24 ساعت گذشته'
     ],
+    'in_the_last_day' => [
+        'name' => 'در 24 ساعت گذشته'
+    ],
     'in_the_last_week' => [
         'name' => 'در هفته گذشته'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "هیچ موقعیتی انتخاب نشده است.",
     "continue" => 'ادامه',
     "gallery" => 'عکس ها',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'تبلیغات',
+    "were_found" => 'پیدا شدند.',
 
     // Pending screen
     'pending_message_1' => 'اعلان در مراحل تأیید است',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'طبقه بندی را مرحله به مرحله انتخاب کنید',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'گزینه ها',
+    'category_selection' => 'انتخاب دسته',
+    'listing_details' => 'جزئیات لیست',
+    'preview' => 'پیش نمایش',
+    'congratulations' => 'تبریک می گویم',
+    'ad_desc' => 'شرح آگهی',
+    'upload_photos' => 'عکسها را بارگذاری کنید',
+    'additional_fields' => 'زمینه های اضافی',
+    'ad_location' => 'مکان تبلیغات',
+
+    'free' => 'رایگان',
+    'ad_date' => 'تاریخ آگهی',
+    'photo_video' => 'عکس ، فیلم',
+    'and_above' => 'و بالاتر',
+    'and_below' => 'و در زیر',
+    'clear_all' => 'همه را پاک کن',
+    'balances' => 'موازنه',
+    'packages' => 'بسته ها',
+    'dopings' => 'دوپینگ',
+    'advs' => 'تبلیغات',
+    'site' => 'سایت',
+    'subscription' => 'اشتراک، ابونمان',
+	'created' => 'ایجاد شده',
+	'product_option' => [
+		'name' => 'گزینه محصول'
+	],
+	'option_json' => [
+		'name' => 'گزینه'
+	],
+    'old_price' => [
+        'name' => 'قیمت قدیمی'
+    ],
 ];

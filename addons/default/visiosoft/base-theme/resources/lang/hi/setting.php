@@ -32,9 +32,15 @@ return [
         'name' => 'रजिस्टर पेज इंस्ट्रक्शन लोगो',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'पेज अलर्ट लिंक रजिस्टर करें',
     ],
     'style' => [
         'name' => 'शैली (सीएसएस)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'मुखपृष्ठ उप श्रेणियाँ श्रेणियाँ सीमा',
+    ],
+	'default_country' => [
+		'name' => 'रजिस्टर पेज, फोन के लिए डिफ़ॉल्ट देश',
+	]
 ];

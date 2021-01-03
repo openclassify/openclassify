@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Конвертована валюта успішно.',
     'choose_user' => 'Виберіть користувача',
     'owner_updated_successfully' => 'Власник успішно оновлений!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Оголошення не знайдено!',
+    'replicated_success' => 'Оголошення успішно відтворено!',
+    'ad_doesnt_exist' => "Цього оголошення не існує!",
+    'select_location_error' => "Виберіть місце на карті!",
+    'this_ad_is_not_valid_anymore' => "Це оголошення вже не діє!",
+    'approve_status_change' => "Статус вашої реклами встановлено активним!",
+    'passive_status_change' => "Статус вашої реклами встановлено пасивним!",
 ];

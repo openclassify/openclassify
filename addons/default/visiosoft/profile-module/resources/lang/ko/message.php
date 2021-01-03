@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => '주소가 없거나 볼 권한이 없습니다.',
     'empty_password_sms_message' => '보안 문제로 인해 비밀번호가 변경되었습니다. 새 비밀번호는 다음과 같습니다.',
     'required_all' => "모든 필드는 필수입니다!",
+    'can_not_remove_filled_fields' => "채워진 필드를 제거 할 수 없습니다!",
+    'wrong_password' => "입력 한 비밀번호가 올바르지 않습니다!",
 
     // Forgot Password
     'email_phone_not_found' => '이메일, 전화 번호가 올바르지 않습니다!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => '계정을 폐쇄 하시겠습니까? 이 작업은 취소 할 수 없습니다.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => '이메일이 업데이트되었습니다!',
+    'update_email_mail_message' => '귀하의 이메일이 업데이트되었습니다!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha 필드는 필수입니다.',
+    'failed_to_validate_captcha' => '보안 문자를 확인하지 못했습니다.',
 ];

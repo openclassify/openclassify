@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'لا يوجد عنوان أو غير مصرح له بالمشاهدة.',
     'empty_password_sms_message' => 'نظرًا لمشاكل الأمان ، قمنا بتغيير كلمة المرور الخاصة بك! كلمة المرور الجديدة:',
     'required_all' => "كل الحقول مطلوبة!",
+    'can_not_remove_filled_fields' => "لا يمكنك إزالة الحقول المملوءة!",
+    'wrong_password' => "كلمة المرور التي أدخلتها غير صحيحة!",
 
     // Forgot Password
     'email_phone_not_found' => 'البريد الإلكتروني ، رقم الهاتف غير صحيح!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'هل تريد إغلاق حسابك؟ هذه العملية لا يمكن التراجع عنها.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'تم تحديث البريد الإلكتروني!',
+    'update_email_mail_message' => 'تم تحديث بريدك الإلكتروني!',
+
+    // Register
+    'recaptcha_field_is_required' => 'حقل reCaptcha مطلوب.',
+    'failed_to_validate_captcha' => 'فشل التحقق من صحة captcha.',
 ];

@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'تم تحويل العملة بنجاح.',
     'choose_user' => 'اختر مستخدمًا',
     'owner_updated_successfully' => 'تم تحديث المالك بنجاح!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'لا يوجد إعلان!',
+    'replicated_success' => 'تم نسخ الإعلان بنجاح!',
+    'ad_doesnt_exist' => "هذا الإعلان غير موجود!",
+    'select_location_error' => "الرجاء تحديد موقع على الخريطة!",
+    'this_ad_is_not_valid_anymore' => "هذا الإعلان غير صالح بعد الآن!",
+    'approve_status_change' => "تم تعيين حالة إعلانك على نشطة!",
+    'passive_status_change' => "تم تعيين حالة إعلانك على سلبية!",
 ];

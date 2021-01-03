@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'new_adv' => 'Yeni İlan',
+    'new_adv' => 'Yeni ürün/ilan',
+    'new_classified' => 'Yeni ürün/ilan',
     'new_category' => 'Yeni kategori',
     'new_country' => 'Yeni ülke',
     'new_city' => 'Yeni şehir',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Kategori Güncelle'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Yeni Seçenek',
+	'export' => 'Dışa aktar',
+    'new_productoption' => 'Yeni Üretim',
+    'new_productoptions_value' => 'Yeni Ürün seçeneği değeri',
+    'new_options_configuration' => 'Yeni Seçenek yapılandırması',
+    'new_option_configuration' => 'Yeni Seçenek yapılandırması',
+	'create_configurations' => 'Konfigürasyonlar Oluşturun',
+	'replicate' => 'Tekrarla',
+	'fast_create' => 'Hızlı ekle',
+	'publish' => 'Yayınla',
+	'import' => 'İçe aktar',
 ];

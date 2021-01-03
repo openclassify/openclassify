@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'unfinished' => 'Unfinished',
+    'unfinished' => 'Bitmemiş',
+    'advanced' => 'Gelişmiş',
 ];

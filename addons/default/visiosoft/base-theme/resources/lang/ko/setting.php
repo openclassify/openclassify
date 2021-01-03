@@ -32,9 +32,15 @@ return [
         'name' => '페이지 지시 로고 등록',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => '페이지 경고 링크 등록',
     ],
     'style' => [
         'name' => '스타일 (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => '홈페이지 하위 카테고리 제한',
+    ],
+	'default_country' => [
+		'name' => '등록 페이지, 전화의 기본 국가',
+	]
 ];

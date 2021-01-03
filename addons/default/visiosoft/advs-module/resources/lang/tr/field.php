@@ -82,21 +82,30 @@ return [
     'cat7' => [
         'name' => 'Alt Kategori 6'
     ],
+    'cat8' => [
+        'name' => 'Alt Kategori 7'
+    ],
+    'cat9' => [
+        'name' => 'Alt Kategori 8'
+    ],
+    'cat10' => [
+        'name' => 'Alt Kategori 9'
+    ],
     'currency' => [
-        'name' => 'Para birimi'
+        'name' => 'Para Birimi'
     ],
     'status' => [
         'name' => 'durum',
         'option' => [
             'approved' => 'Onaylandı',
-            'expired' => 'Süresi doldu',
+            'expired' => 'Süresi Doldu',
             'unpublished' => 'Pasif',
             'pending_admin' => 'Yönetici Onay Bekliyor',
             'pending_user' => 'Kullanıcının Yayınlaması Bekleniyor'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Yayında olmayan'
+        'name' => 'Yayınlanmamış'
     ],
     'finish_at' => [
         'name' => 'Bitiş Saati'
@@ -131,26 +140,28 @@ return [
     'sort_by' => 'Sırala',
     'pick_option' => 'Bir seçenek seçin',
     'pick_ordering' => 'Sıralama Seç',
-    'price_high' => 'Fiyat pahalıdan ucuza',
+    'price_high' => 'Fiyat Pahalıdan Ucuza',
     'price_low' => 'Fiyat Düşükten Yükseğe',
-    'newest' => 'En yeni',
+    'newest' => 'En Yeni',
     'oldest' => 'En eski',
     'address_a_z' => 'Adres (A\'dan Z\'ye)',
     'address_z_a' => 'Adres (Z\'den A\'ya)',
-    'categories' => 'Kategoriler',
+	'categories' => [
+		'name' => 'Kategoriler'
+	],
     'all_categories' => 'Tüm Kategoriler',
     'location' => 'Lokasyon',
-    'send_message' => 'Mesaj gönder',
+    'send_message' => 'Mesaj Gönder',
     'phone_gsm' => 'Cep Telefonu',
     'phone_office' => 'Sabit telefon',
-    'add_to_favorites' => "Favorilere ekle",
+    'add_to_favorites' => "Favorilere Ekle",
     'send' => 'Gönder',
     'search_name' => 'Arama Adı',
     'my_favorite_searches' => 'Favori Aramalar',
     'search_desc' => 'Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.',
     'complaint_placeholder' => 'Şikayet ayrıntılarınızı buraya yazın.',
     'show_details' => 'Detayları göster',
-    'ad_actions' => 'Reklam İşlemleri',
+    'ad_actions' => 'İlan İşlemleri',
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
     'passive' => "Pasif",
@@ -199,6 +210,7 @@ return [
     'corporate_info' => 'Kurumsal Bilgiler',
     'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
+    'search_ad_result_prefix' => 'Aramanızda',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
@@ -208,7 +220,7 @@ return [
     'view_cart' => 'Sepeti Görüntüle',
     'no_ads' => 'İlan bulunamadı!',
     'show_display_mode' => [
-        'map' => 'harita',
+        'map' => 'Harita',
         'list' => 'Liste',
     ],
     'advs_list_table_thead' => [
@@ -250,6 +262,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Son 24 saat'
     ],
+    'in_the_last_day' => [
+        'name' => 'Son 24 Saat İçinde'
+    ],
     'in_the_last_week' => [
         'name' => 'Son 1 hafta'
     ],
@@ -268,15 +283,16 @@ return [
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ad" => 'İlan',
+    "ads" => 'İlanlar',
+    "were_found" => 'bulundu.',
 
     // Pending screen
-    'pending_message_1' => 'Reklam Onay Sürecinde',
-    'pending_message_2' => "Reklamın Güncelleme Tarihi",
+    'pending_message_1' => 'İlan Onay Sürecinde',
+    'pending_message_2' => "İlan Güncelleme Tarihi",
     'pending_message_3' => 'Tahmini Bekleme Süresi',
     'pending_message_4' => 'Onay sürecinde geçirilen süre doping zamanına eklenecektir.',
-    'pending_message_5' => 'Onay sürecinde reklamla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
+    'pending_message_5' => 'Onay sürecinde ilanla ilgili çağrı merkezinden hiçbir işlem yapılamaz.',
     'hours' => 'saatler',
 
     // Preview page
@@ -298,4 +314,35 @@ return [
 
     // New create page
     'options' => 'Opsiyonlar',
+    'category_selection' => 'Kategori Seçimi',
+    'listing_details' => 'Liste Ayrıntıları',
+    'preview' => 'Ön İzleme',
+    'congratulations' => 'Tebrikler',
+    'ad_desc' => 'İlan Açıklaması',
+    'upload_photos' => 'Resim Yükle',
+    'additional_fields' => 'Özel Alanlar',
+    'ad_location' => 'Lokasyon Ekle',
+
+    'free' => 'Bedava',
+    'ad_date' => 'İlan Tarihi',
+    'photo_video' => 'Fotoğraf, Video',
+    'and_above' => 've yukarıda',
+    'and_below' => 've aşağıda',
+    'clear_all' => 'Hepsini temizle',
+    'balances' => 'Bakiyeler',
+    'packages' => 'Paketler',
+    'dopings' => 'Dopingler',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Abonelik',
+	'created' => 'Oluşturuldu',
+	'product_option' => [
+		'name' => 'Ürün Seçeneği'
+	],
+	'option_json' => [
+		'name' => 'Seçenek'
+	],
+    'old_price' => [
+        'name' => 'Eski fiyat'
+    ],
 ];

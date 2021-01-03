@@ -41,7 +41,22 @@ return [
     'ads' => 'Ads',
     'user' => 'User',
     'filter' => 'Filter',
+    'create_ad' => 'Create Ad',
     'options' => [
         'title' => 'Options',
+    ],
+    'ads_image' => 'Ads Image',
+    'product_options' => [
+        'title' => 'Options',
+    ],
+    'productoptions_value' => [
+        'title' => 'Options Value',
+    ],
+    'option_configuration' => [
+        'title' => 'Configuration',
+    ],
+    'translations' => 'Translations',
+    'status' => [
+        'title' => 'Status',
     ],
 ];

@@ -1,6 +1,8 @@
 {% extends "theme::layouts/default" %}
 
 {% block content %}
+    {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'preview'} %}
+
     <div class="pt-5">
         <p class="preview-paragraph">
             {{ trans('visiosoft.module.advs::field.preview_text.part_1') }}
@@ -13,6 +15,12 @@
             {% set continueLink = url_route('add_doping', [adv.id]) %}
         {% else %}
             {% set continueLink = url_route('adv_detail_seo', [adv.slug, adv.id]) %}
+        {% endif %}
+        {% if not setting_value('visiosoft.module.advs::hide_configurations') %}
+            <a href="{{ route('visiosoft.module.advs::user.configrations.create') }}?ad={{ adv.id }}"
+               class="btn btn-warning shadow-sm mr-4 text-white">
+                {{trans('visiosoft.module.advs::button.create_configurations')}}
+            </a>
         {% endif %}
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
            class="btn preview-edit shadow-sm border">
@@ -27,6 +35,12 @@
         <div class="preview-overlay position-absolute"></div>
     </div>
     <div class="preview-actions text-center">
+        {% if not setting_value('visiosoft.module.advs::hide_configurations') %}
+            <a href="{{ route('visiosoft.module.advs::user.configrations.create') }}?ad={{ adv.id }}"
+               class="btn btn-warning shadow-sm mr-4 text-white">
+                {{trans('visiosoft.module.advs::button.create_configurations')}}
+            </a>
+        {% endif %}
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}" class="btn preview-edit shadow-sm border">
             {{ trans('visiosoft.module.advs::field.edit') }}
         </a>

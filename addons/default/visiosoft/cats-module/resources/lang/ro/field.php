@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'Vă rugăm să așteptați. Ștergeți subcategorii',
     'category_selection' => 'Selectarea categoriei',
+    'go_to_parent' => 'Mergeți la părinte',
 ];

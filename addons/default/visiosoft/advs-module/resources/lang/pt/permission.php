@@ -50,11 +50,51 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'Opções',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'Pode ler as opções?',
+            'write'  => 'Pode criar / editar opções?',
+            'delete' => 'Pode excluir opções?',
+        ],
+    ],
+    'productoptions' => [
+        'name'   => 'Opções de produto',
+        'option' => [
+            'read'   => 'Pode ler as opções do produto?',
+            'write'  => 'Pode criar / editar opções de produto?',
+            'delete' => 'Pode excluir opções de produto?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Valor de opções de produto',
+        'option' => [
+            'read'   => 'Pode ler o valor das opções do produto?',
+            'write'  => 'Pode criar / editar o valor das opções do produto?',
+            'delete' => 'Pode excluir o valor de opções de produto?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Configuração de opções',
+        'option' => [
+            'read'   => 'Pode ler a configuração das opções?',
+            'write'  => 'Pode criar / editar configurações de opções?',
+            'delete' => 'Pode excluir a configuração de opções?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configuração de opções',
+        'option' => [
+            'read'   => 'Pode ler a configuração da opção?',
+            'write'  => 'Pode criar / editar configuração de opção?',
+            'delete' => 'Pode excluir a configuração da opção?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configuração de opções',
+        'option' => [
+            'read'   => 'Pode ler a configuração da opção?',
+            'write'  => 'Pode criar / editar configuração de opção?',
+            'delete' => 'Pode excluir a configuração da opção?',
         ],
     ],
 ];

@@ -32,9 +32,15 @@ return [
         'name' => 'Registreer Page Instructie Logo',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Meldingslink voor pagina registreren',
     ],
     'style' => [
         'name' => 'Stijl (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Limiet subcategorieën op homepage',
+    ],
+	'default_country' => [
+		'name' => 'Registratiepagina, standaardland voor telefoon',
+	]
 ];

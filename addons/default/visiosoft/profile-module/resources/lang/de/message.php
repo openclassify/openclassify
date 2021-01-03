@@ -29,6 +29,8 @@ return [
     'ajax_address_error' => 'Keine Adresse oder nicht zum Anzeigen berechtigt.',
     'empty_password_sms_message' => 'Aus Sicherheitsgründen haben wir Ihr Passwort geändert! Dein neues Passwort ist:',
     'required_all' => "Alle Felder sind erforderlich!",
+    'can_not_remove_filled_fields' => "Sie können gefüllte Felder nicht entfernen!",
+    'wrong_password' => "Das eingegebene Passwort ist nicht korrekt!",
 
     // Forgot Password
     'email_phone_not_found' => 'Die E-Mail, Telefonnummer ist nicht korrekt!',
@@ -36,6 +38,10 @@ return [
     'disable_account' => 'Möchten Sie Ihr Konto schließen? Dieser Vorgang kann nicht rückgängig gemacht werden.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-Mail aktualisiert!',
+    'update_email_mail_message' => 'Ihre E-Mail wurde aktualisiert!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Das Feld reCaptcha ist erforderlich.',
+    'failed_to_validate_captcha' => 'Captcha konnte nicht validiert werden.',
 ];

@@ -2,6 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => 'شماره تقسیم نقشه سایت',
+    ],
+    'include_cities_sitemap' => [
+        'name' => 'شهرها را در نقشه سایت بگنجانید',
     ],
 ];

@@ -20,6 +20,15 @@ return [
         'name' => 'ערכי ה- CF',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'אפשרויות',
+    ],
+    'product_options' => [
+        'name' => 'אפשרויות מוצר',
+    ],
+    'productoptions_value' => [
+        'name' => 'ערך אפשרויות',
+    ],
+    'option_configuration' => [
+        'name' => 'תְצוּרָה',
     ],
 ];

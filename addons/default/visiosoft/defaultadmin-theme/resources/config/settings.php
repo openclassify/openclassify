@@ -6,7 +6,13 @@ return [
         'type'       => 'anomaly.field_type.textarea',
         'input_view' => 'visiosoft.theme.defaultadmin::admin/navigation/settings',
     ],
-    "icon" => [
+    "login_icon" => [
+        "type"   => "anomaly.field_type.file",
+        "config" => [
+            "folders"       => ['images'],
+        ]
+    ],
+    "panel_icon" => [
         "type"   => "anomaly.field_type.file",
         "config" => [
             "folders"       => ['images'],

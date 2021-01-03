@@ -32,9 +32,15 @@ return [
         'name' => 'تسجيل صفحة تعليمات الشعار',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'تسجيل رابط تنبيه الصفحة',
     ],
     'style' => [
         'name' => 'النمط (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'حد الفئات الفرعية للصفحة الرئيسية',
+    ],
+	'default_country' => [
+		'name' => 'صفحة التسجيل ، البلد الافتراضي للهاتف',
+	]
 ];

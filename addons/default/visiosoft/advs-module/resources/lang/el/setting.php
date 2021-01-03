@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Προεπιλεγμένη διαφήμιση GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Πλάτος μικρογραφιών',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Ύψος μικρογραφιών',
-    ],
-    'picture_width' => [
-        'name' => 'Πλάτος εικόνας',
-    ],
-    'picture_height' => [
-        'name' => 'Ύψος εικόνας',
-    ],
     'twitter' => [
         'name' => 'Κελάδημα',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Λίστα εικόνων σελίδας',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Απόκρυψη πεδίου τυπικής τιμής',
+    ],
+    'hide_options_field' => [
+        'name' => 'Απόκρυψη πεδίου επιλογών',
+    ],
+    'hide_village_field' => [
+        'name' => 'Απόκρυψη χωριού',
+    ],
+    'hide_configurations' => [
+        'name' => 'Απόκρυψη του κουμπιού διαμόρφωσης',
+        'instructions' => 'Απόκρυψη του κουμπιού διαμόρφωσης στη σελίδα προεπισκόπησης διαφημίσεων',
+    ],
+    'make_map_required' => [
+        'name' => 'Απαιτείται χάρτης',
+        'instructions' => 'Απαιτήστε από το χρήστη να τοποθετήσει μια καρφίτσα στον χάρτη κατά τη δημιουργία μιας διαφήμισης',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Απόκρυψη βασικής τιμής καταχώρησης',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Ενεργοποιημένα νομίσματα',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Στατιστικό κώδικα Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Απαίτηση ηλεκτρονικού ταχυδρομείου εγγραφής μέλους',
+    ],
+    'market_place' => [
+        'name' => 'Αγορά',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Κρυφή περιοχή τιμών',
+	],
+    'hide_price_filter' => [
+        'name' => 'Απόκρυψη φίλτρου τιμών',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Απόκρυψη φίλτρου ημερομηνίας',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Απόκρυψη φίλτρου φωτογραφιών',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Απόκρυψη φίλτρου χάρτη',
+    ],
+    'show_lang_url' => [
+        'name' => 'Εμφάνιση παραμέτρου Lang για διεύθυνση URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Όριο δημοφιλών διαφημίσεων',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Μέγεθος εικόνας Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Πλήρες πλάτος εικόνας',
+    ],
+    'full_image_height' => [
+        'name' => 'Ύψος πλήρους εικόνας',
+    ],
+    'medium_image_width' => [
+        'name' => 'Μεσαίο πλάτος εικόνας',
+    ],
+    'medium_image_height' => [
+        'name' => 'Μεσαίο ύψος εικόνας',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Πλάτος μικρογραφιών',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Ύψος μικρογραφιών',
+    ],
+    'add_canvas' => [
+        'name' => 'Προσθήκη καμβά',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Πλάτος καμβά εικόνας',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Ύψος καμβά εικόνας',
     ],
     'watermark_type' => [
         'name' => 'Τύπος υδατογραφήματος',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Θέση υδατοσήματος',
     ],
-    'listing_page_image' => [
-        'name' => 'Λίστα εικόνων σελίδας',
+    'user_filter_limit' => [
+        'name' => 'Όριο φίλτρου χρήστη',
+        'instructions' => 'Στον πίνακα διαχείρισης'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Εμφάνιση Breadcrumb κατά τη δημιουργία μιας διαφήμισης',
     ],
-    'enabled_currencies' => [
-        'name' => 'Ενεργοποιημένα νομίσματα',
+    'show_ads_count' => [
+        'name' => 'Εμφάνιση πλήθους διαφημίσεων',
+        'instructions' => 'Εμφάνιση πλήθους διαφημίσεων στην αριστερή λίστα κατηγοριών',
     ],
-    'google_statistic_code' => [
-        'name' => 'Στατιστικό κώδικα Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Εμφάνιση συμφωνίας μετά τη διαφήμιση',
+        'instructions' => 'Ενεργοποιήστε το αν θέλετε να εμφανίσετε μια συμφωνία πολιτικής απορρήτου στη σελίδα δημιουργίας διαφημίσεων',
     ],
-    'register_email_field' => [
-        'name' => 'Απαίτηση ηλεκτρονικού ταχυδρομείου εγγραφής μέλους',
+    'override_text' => [
+        'name' => 'Παράκαμψη κειμένου',
+        'instructions' => 'Παλιά τιμή: Νέα τιμή'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Χρώμα βημάτων',
+        'instructions' => 'Αλλάζει το χρώμα των προοδευτικών βημάτων.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Δημιουργία χρώματος κουμπιού διαφήμισης',
+        'instructions' => 'Αλλάζει το κουμπί που εμφανίζεται όταν ολοκληρωθεί η νέα επιλογή κατηγορίας διαφημίσεων.'
     ],
 ];

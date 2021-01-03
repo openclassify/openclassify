@@ -20,7 +20,7 @@ return [
         'name' => 'Cena £'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standardowa cena'
     ],
     'date' => [
         'name' => 'Data'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Podkategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Podkategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Podkategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Podkategoria 9'
+    ],
     'currency' => [
         'name' => 'Waluta'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Najstarszy',
     'address_a_z' => 'Adres (od A do Z)',
     'address_z_a' => 'Adres (od Z do A)',
-    'categories' => 'Kategorie',
+	'categories' => [
+		'name' => 'Kategorie'
+	],
     'all_categories' => 'Wszystkie kategorie',
     'location' => 'Lokalizacja',
     'send_message' => 'Wyślij wiadomość',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'W ciągu ostatnich 24 godzin'
     ],
+    'in_the_last_day' => [
+        'name' => 'W ciągu ostatnich 24 godzin'
+    ],
     'in_the_last_week' => [
         'name' => 'W ostatnim tygodniu'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "Nie wybrano lokalizacji.",
     "continue" => 'Kontyntynuj',
     "gallery" => 'Galeria',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Reklamy',
+    "were_found" => 'zostały znalezione.',
 
     // Pending screen
     'pending_message_1' => 'Reklama jest w trakcie procesu zatwierdzania',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'Wybierz kategorię krok po kroku',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opcje',
+    'category_selection' => 'Wybór kategorii',
+    'listing_details' => 'Szczegóły aukcji',
+    'preview' => 'Zapowiedź',
+    'congratulations' => 'Gratulacje',
+    'ad_desc' => 'opis reklamy',
+    'upload_photos' => 'Załadować zdjęcia',
+    'additional_fields' => 'Dodatkowe pola',
+    'ad_location' => 'Lokalizacja reklamy',
+
+    'free' => 'Wolny',
+    'ad_date' => 'Data ogłoszenia',
+    'photo_video' => 'Zdjęcie, wideo',
+    'and_above' => 'i powyżej',
+    'and_below' => 'i poniżej',
+    'clear_all' => 'Wyczyść wszystko',
+    'balances' => 'Salda',
+    'packages' => 'Pakiety',
+    'dopings' => 'Dopingi',
+    'advs' => 'Advs',
+    'site' => 'Teren',
+    'subscription' => 'Subskrypcja',
+	'created' => 'Utworzony',
+	'product_option' => [
+		'name' => 'Opcja produktu'
+	],
+	'option_json' => [
+		'name' => 'Opcja'
+	],
+    'old_price' => [
+        'name' => 'Stara cena'
+    ],
 ];

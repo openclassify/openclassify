@@ -40,7 +40,20 @@ return [
     'general' => 'Chung',
     'ads' => 'Quảng cáo',
     'user' => 'Người dùng',
+    'filter' => 'Bộ lọc',
+    'create_ad' => 'Tạo quảng cáo',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Tùy chọn',
     ],
+    'ads_image' => 'Hình ảnh Quảng cáo',
+    'product_options' => [
+        'title' => 'Tùy chọn',
+    ],
+    'productoptions_value' => [
+        'title' => 'Giá trị tùy chọn',
+    ],
+    'option_configuration' => [
+        'title' => 'Cấu hình',
+    ],
+    'translations' => 'Bản dịch',
 ];

@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => '登録タイプ'
     ],
+    'birthday' => [
+        'name' => 'お誕生日'
+    ],
+	'facebook_address' => [
+		'name' => 'Facebookアドレス'
+	],
+	'google_address' => [
+		'name' => 'Googleアドレス'
+	],
+    'education' => [
+        'name' => '教育'
+    ],
+    'state_of_education' => [
+        'name' => '教育の状態'
+    ],
+    'profession' => [
+        'name' => '職業'
+    ],
     'identification_number' => [
         'name' => '識別番号'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'ユーザー'
     ],
+	'name' => [
+		'name' => '名前'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'パスワード',
     ],
+    'old_password' => [
+        'name' => '以前のパスワード',
+    ],
     'new_password' => [
         'name' => '新しいパスワード',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => '個人',
     ],
     'corporate' => [
-        'name' => '企業の',
+        'name' => '企業',
     ],
 
     'details' => [
@@ -428,19 +452,35 @@ return [
     'my_address' => '私のアドレス',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => '会社名'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => '税務署'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => '税番号'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => '私のプロフィール',
+    'edit_profile' => 'プロファイル編集',
+    'edit_details' => '詳細を編集する',
+    'update' => '更新',
+    'change_password' => 'パスワードを変更する',
+    'choose_an_option' => 'オプションを選択...',
+
+    // Register page
+    'accept_terms_label' => '利用規約に同意します。',
+    'accept_protection_law_label' => '<html>私は上の法律の条件に同意します' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _blank ">個人データの保護</a>',
+    'accept_privacy_terms_label' => '<html>承諾します' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _blank ">プライバシー条件</a>。',
+    'receive_sms_emails_label' => 'メールとSMSを受け取りたいです。',
+
+    // Register Type
+    'personal' => [
+        'name' => '個人'
+    ],
+
+	'education_part' => [
+		'name' => '教育の状態'
+	],
 ];

@@ -40,7 +40,20 @@ return [
     'general' => 'Allmän',
     'ads' => 'annonser',
     'user' => 'Användare',
+    'filter' => 'Filtrera',
+    'create_ad' => 'Skapa annons',
     'options' => [
-        'title' => 'Options',
+        'title' => 'alternativ',
     ],
+    'ads_image' => 'Annonsbild',
+    'product_options' => [
+        'title' => 'alternativ',
+    ],
+    'productoptions_value' => [
+        'title' => 'Alternativvärde',
+    ],
+    'option_configuration' => [
+        'title' => 'Konfiguration',
+    ],
+    'translations' => 'Översättningar',
 ];

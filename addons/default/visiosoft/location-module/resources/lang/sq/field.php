@@ -17,7 +17,7 @@ return [
         'name' => 'Bashkia'
     ],
     'order' => [
-        'name' => 'Sort Order'
+        'name' => 'Renditja e renditjes'
     ],
     'neighborhood' => [
         'name' => 'Njësitë Administrative'
@@ -34,5 +34,6 @@ return [
     'address' => [
         'name' => 'Adresë',
     ],
-    'selected' => 'I zgjedhur'
+    'selected' => 'I zgjedhur',
+    'choose_an_option' => 'Zgjidhni një opsion ...',
 ];

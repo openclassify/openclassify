@@ -7,6 +7,9 @@ use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
+use Visiosoft\ProfileModule\Education\EducationModel;
+use Visiosoft\ProfileModule\EducationPart\EducationPartModel;
+use Visiosoft\ProfileModule\EducationPartOption\EducationPartOptionModel;
 use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
 
 class MyProfileController extends PublicController
@@ -159,4 +162,19 @@ class MyProfileController extends PublicController
         return \auth()->check() ? ['success' => true] : ['success' => false];
     }
 
+	public function getEducation(Request $request)
+	{
+		$user = $this->userRepository->find(auth()->id());
+		$education = EducationModel::all();
+		$educationPart = EducationPartModel::query()->where('education_id', $user->education)->get();
+		return response()->json(['user' => $user, 'education' => $education, 'education-part' => $educationPart], 200);
+	}
+
+	public function changeEducation(Request $request)
+	{
+		if ($request->info == 'education') {
+			$education = EducationPartModel::query()->where('education_id', $request->education)->get();
+		}
+		return response()->json(['data' => $education], 200);
+	}
 }

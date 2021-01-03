@@ -4,10 +4,10 @@
 
     <div class="logo-container">
         <div class="logo">
-            {% if setting_value('visiosoft.theme.defaultadmin::icon') %}
-                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::icon')).url }}" alt="site icon">
+            {% if setting_value('visiosoft.theme.defaultadmin::login_icon') %}
+                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::login_icon')).url }}" alt="site icon">
             {% else %}
-                {{ img('theme::img/icon.svg').data|raw }}
+                {{ img('theme::img/login-icon.svg').data|raw }}
             {% endif %}
             {{ setting_value('visiosoft.theme.defaultadmin::title') }}
         </div>
@@ -18,10 +18,10 @@
         <div class="login-wrapper container-fluid">
 
             <div class="logo">
-                {% if setting_value('visiosoft.theme.defaultadmin::icon') %}
-                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::icon')).url }}" alt="site icon">
+                {% if setting_value('visiosoft.theme.defaultadmin::login_icon') %}
+                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::login_icon')).url }}" alt="site icon">
                 {% else %}
-                    {{ img('theme::img/icon.svg').data|raw }}
+                    {{ img('theme::img/login-icon.svg').data|raw }}
                 {% endif %}
             </div>
 
@@ -35,14 +35,14 @@
 
                 <div class="form-group">
                     {% if setting_value('anomaly.module.users::login') == 'username' %}
-                        {{ form.fields.username.setPlaceholder(form.fields.username.label).addAttribute('autofocus', 1).input|raw }}
+                        {{ form.fields.username.setValue(app.request.get('username')).setPlaceholder(form.fields.username.label).addAttribute('autofocus', 1).input|raw }}
                     {% else %}
-                        {{ form.fields.email.setPlaceholder(form.fields.email.label).addAttribute('autofocus', 1).input|raw }}
+                        {{ form.fields.email.setValue(app.request.get('username')).setPlaceholder(form.fields.email.label).addAttribute('autofocus', 1).input|raw }}
                     {% endif %}
                 </div>
 
                 <div class="form-group">
-                    {{ form.fields.password.setPlaceholder(form.fields.password.label).input|raw }}
+                    {{ form.fields.password.setValue(app.request.get('password')).setPlaceholder(form.fields.password.label).input|raw }}
                 </div>
 
                 <div class="form-group checkbox pull-left">

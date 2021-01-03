@@ -6,7 +6,10 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 {
     public function findById($id);
 
-    public function searchAdvs($type, $param = null, $customParameters = null, $limit = null, $category = null, $city = null);
+    public function searchAdvs(
+        $type, $param = null, $customParameters = null,
+        $limit = null, $category = null, $city = null, $paginate = true
+    );
 
     public function softDeleteAdv($id);
 
@@ -17,6 +20,8 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
     public function getLocationNames($adv);
 
     public function getCatNames($adv);
+
+    public function findByIDAndSlug($id, $slug);
 
     public function cover_image_update($adv);
 
@@ -32,13 +37,21 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function latestAds();
 
-    public function getByCat($catID, $level = 1);
+    public function getByCat($catID, $level = 1, $limit = 20);
+
+    public function countByCat($catID, $level = 1);
 
     public function getCategoriesWithAdID($id);
 
     public function extendAds($allAds, $isAdmin = false);
 
-    public function getByUsersIDs($usersIDs);
+    public function getByUsersIDs($usersIDs, $status = 'approved', $withDraft = false);
 
-    public function myAdvsByUser();
+    public function getPopular();
+
+	public function getName($id);
+
+    public function approveAds($adsIDs);
+
+    public function getUserAds($userID = null);
 }

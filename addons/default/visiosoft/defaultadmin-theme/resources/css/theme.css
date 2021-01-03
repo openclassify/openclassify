@@ -223,6 +223,8 @@
   height: 40px;
   margin-top: -9px;
   vertical-align: middle;
+  object-fit: contain;
+  object-position: center;
 }
 #topbar .logo svg .st0 {
   transition: fill 300ms 500ms;
@@ -2670,6 +2672,8 @@ body {
   max-height: 82px;
   margin-top: -30px;
   vertical-align: middle;
+  object-fit: contain;
+  object-position: center;
 }
 #login .logo svg .st0 {
   fill: #ffffff;

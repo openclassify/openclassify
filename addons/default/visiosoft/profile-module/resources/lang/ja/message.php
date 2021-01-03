@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => '住所がないか、表示する権限がありません。',
     'empty_password_sms_message' => 'セキュリティ上の問題により、パスワードを変更しました！新しいパスワードは：',
     'required_all' => "すべてのフィールドが必要です！",
+    'can_not_remove_filled_fields' => "塗りつぶされたフィールドは削除できません！",
+    'wrong_password' => "入力したパスワードが正しくありません！",
 
     // Forgot Password
     'email_phone_not_found' => 'メール、電話番号が違います！',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'アカウントを閉鎖しますか？この操作は元に戻せません。',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'メールを更新しました！',
+    'update_email_mail_message' => 'メールが更新されました！',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptchaフィールドは必須です。',
+    'failed_to_validate_captcha' => 'キャプチャの検証に失敗しました。',
 ];

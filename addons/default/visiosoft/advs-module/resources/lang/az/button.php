@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Yeni Adv',
+    'new_classified' => 'Yeni təsnif edilmişdir',
     'new_category' => 'Yeni kateqoriya',
     'new_country' => 'Yeni Ölkə',
     'new_city' => 'Yeni Şəhər',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Kateqoriya yeniləyin'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Yeni Seçim',
+	'export' => 'İxrac',
+    'new_productoption' => 'Yeni Productoption',
+    'new_productoptions_value' => 'Yeni məhsul seçim dəyəri',
+    'new_options_configuration' => 'Yeni Seçim konfiqurasiyası',
+    'new_option_configuration' => 'Yeni Seçim konfiqurasiyası',
+	'create_configurations' => 'Konfiqurasiyalar yaradın',
+	'replicate' => 'Təkrarlayın',
+	'fast_create' => 'Sürətli yaradın',
+	'publish' => 'Nəşr edin',
+	'import' => 'İdxal',
 ];

@@ -20,7 +20,7 @@ return [
         'name' => 'Prezzo'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Prezzo standard'
     ],
     'date' => [
         'name' => 'Data'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Sottocategoria 6'
     ],
+    'cat8' => [
+        'name' => 'Sottocategoria 7'
+    ],
+    'cat9' => [
+        'name' => 'Sottocategoria 8'
+    ],
+    'cat10' => [
+        'name' => 'Sottocategoria 9'
+    ],
     'currency' => [
         'name' => 'Moneta'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'il più vecchio',
     'address_a_z' => 'Indirizzo (dalla A alla Z)',
     'address_z_a' => 'Indirizzo (dalla Z alla A)',
-    'categories' => 'categorie',
+	'categories' => [
+		'name' => 'Categorie'
+	],
     'all_categories' => 'tutte le categorie',
     'location' => 'Posizione',
     'send_message' => 'Invia messaggio',
@@ -249,6 +260,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Nelle ultime 24 ore'
     ],
+    'in_the_last_day' => [
+        'name' => 'Nelle ultime 24 ore'
+    ],
     'in_the_last_week' => [
         'name' => 'Nell\'ultima settimana'
     ],
@@ -267,8 +281,8 @@ return [
     "no_location" => "Nessuna posizione selezionata.",
     "continue" => 'Continua',
     "gallery" => 'Galleria',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Annunci',
+    "were_found" => 'furono trovati.',
 
     // Pending screen
     'pending_message_1' => 'L\'annuncio è in fase di approvazione',
@@ -296,5 +310,36 @@ return [
     'select_category_step_by_step' => 'Seleziona la categoria Step by Step',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Opzioni',
+    'category_selection' => 'Selezione della categoria',
+    'listing_details' => 'Dettagli dell\'inserzione',
+    'preview' => 'Anteprima',
+    'congratulations' => 'Congratulazioni',
+    'ad_desc' => 'Descrizione dell\'annuncio',
+    'upload_photos' => 'Caricare foto',
+    'additional_fields' => 'Campi aggiuntivi',
+    'ad_location' => 'Posizione dell\'annuncio',
+
+    'free' => 'Gratuito',
+    'ad_date' => 'Data dell\'annuncio',
+    'photo_video' => 'Foto, video',
+    'and_above' => 'e al di sopra',
+    'and_below' => 'e sotto',
+    'clear_all' => 'Cancella tutto',
+    'balances' => 'Saldi',
+    'packages' => 'Pacchi',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Luogo',
+    'subscription' => 'Sottoscrizione',
+	'created' => 'Creato',
+	'product_option' => [
+		'name' => 'Opzione prodotto'
+	],
+	'option_json' => [
+		'name' => 'Opzione'
+	],
+    'old_price' => [
+        'name' => 'Vecchio prezzo'
+    ],
 ];

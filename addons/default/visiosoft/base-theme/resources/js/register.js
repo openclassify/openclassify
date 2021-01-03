@@ -1,4 +1,4 @@
-phoneMask("input[name='phone'],input[name='land_phone']");
+phoneMask("input[name='phone'],input[name='land_phone'],input[name='store_phone']");
 
 // Phone register validation
 //setup before functions

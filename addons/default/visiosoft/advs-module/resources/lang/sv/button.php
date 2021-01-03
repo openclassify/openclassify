@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Ny adv',
+    'new_classified' => 'Ny klassificering',
     'new_category' => 'Ny kategori',
     'new_country' => 'Nytt land',
     'new_city' => 'Ny stad',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Uppdatera kategori'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Nytt alternativ',
+	'export' => 'Exportera',
+    'new_productoption' => 'Ny produktalternativ',
+    'new_productoptions_value' => 'Nytt produktalternativvärde',
+    'new_options_configuration' => 'Ny alternativkonfiguration',
+    'new_option_configuration' => 'Ny alternativkonfiguration',
+	'create_configurations' => 'Skapa konfigurationer',
+	'replicate' => 'Återskapa',
+	'fast_create' => 'Skapa snabbt',
+	'publish' => 'Publicera',
+	'import' => 'Importera',
 ];

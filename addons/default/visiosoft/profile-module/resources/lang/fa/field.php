@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'نوع ثبت نام'
     ],
+    'birthday' => [
+        'name' => 'روز تولد'
+    ],
+	'facebook_address' => [
+		'name' => 'آدرس فیس بوک'
+	],
+	'google_address' => [
+		'name' => 'آدرس Google'
+	],
+    'education' => [
+        'name' => 'تحصیلات'
+    ],
+    'state_of_education' => [
+        'name' => 'دولت آموزش و پرورش'
+    ],
+    'profession' => [
+        'name' => 'حرفه'
+    ],
     'identification_number' => [
         'name' => 'شماره شناسایی'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'کاربر'
     ],
+	'name' => [
+		'name' => 'نام'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -362,6 +383,9 @@ return [
     'password' => [
         'name' => 'کلمه عبور',
     ],
+    'old_password' => [
+        'name' => 'رمز عبور قدیمی',
+    ],
     'new_password' => [
         'name' => 'رمز عبور جدید',
     ],
@@ -427,19 +451,35 @@ return [
     'my_address' => 'نشانی من',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'نام شرکت'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'اداره مالیات'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'شماره مالیاتی'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'پروفایل من',
+    'edit_profile' => 'ویرایش نمایه',
+    'edit_details' => 'جزئیات ویرایش',
+    'update' => 'به روز رسانی',
+    'change_password' => 'تغییر رمز عبور',
+    'choose_an_option' => 'گزینه ای را انتخاب کنید ...',
+
+    // Register page
+    'accept_terms_label' => 'من شرایط را قبول می کنم',
+    'accept_protection_law_label' => '<html>من شرایط قانون را می پذیرم' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> حفاظت از اطلاعات شخصی.</a>',
+    'accept_privacy_terms_label' => '<html>قبول میکنم' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> شرایط حریم خصوصی</a>.',
+    'receive_sms_emails_label' => 'من می خواهم ایمیل و پیام کوتاه دریافت کنم.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'شخصی'
+    ],
+
+	'education_part' => [
+		'name' => 'دولت آموزش و پرورش'
+	],
 ];

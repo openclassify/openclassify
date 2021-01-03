@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Brak adresu lub brak uprawnień do przeglądania.',
     'empty_password_sms_message' => 'Ze względów bezpieczeństwa zmieniliśmy twoje hasło! Twoje nowe hasło to:',
     'required_all' => "Wszystkie pola są wymagane!",
+    'can_not_remove_filled_fields' => "Nie możesz usunąć wypełnionych pól!",
+    'wrong_password' => "Wprowadzone hasło jest nieprawidłowe!",
 
     // Forgot Password
     'email_phone_not_found' => 'Adres e-mail, numer telefonu jest nieprawidłowy!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Czy chcesz zamknąć swoje konto? Tej operacji nie można cofnąć.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Email zaktualizowany!',
+    'update_email_mail_message' => 'Twój e-mail został zaktualizowany!',
+
+    // Register
+    'recaptcha_field_is_required' => 'pole reCaptcha jest wymagane.',
+    'failed_to_validate_captcha' => 'Nie udało się zweryfikować captcha.',
 ];

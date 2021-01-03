@@ -52,8 +52,8 @@ return [
     'mail' => 'Αποστολή αλληλογραφίας',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'Εγγραφή οδηγιών',
+    'list' => 'Λίστα',
+    'instruction_description' => 'Περιγραφή οδηγιών',
+    'instruction_list' => 'Λίστα οδηγιών',
 ];

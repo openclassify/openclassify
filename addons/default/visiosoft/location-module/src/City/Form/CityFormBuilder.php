@@ -4,68 +4,35 @@ use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
 class CityFormBuilder extends FormBuilder
 {
+    protected $country = null;
 
-    /**
-     * The form fields.
-     *
-     * @var array|string
-     */
-    protected $fields = [
-        'name','slug','order','parent_country_id'=>[
-            'class' => 'hidden',
-            'label' => '',
-        ],
+    protected $skips = [
+        'parent_country_id'
     ];
 
-    /**
-     * Additional validation rules.
-     *
-     * @var array|string
-     */
-    protected $rules = [];
-
-    /**
-     * Fields to skip.
-     *
-     * @var array|string
-     */
-    protected $skips = [];
-
-    /**
-     * The form actions.
-     *
-     * @var array|string
-     */
-    protected $actions = [];
-
-    /**
-     * The form buttons.
-     *
-     * @var array|string
-     */
     protected $buttons = [
         'cancel',
     ];
 
-    /**
-     * The form options.
-     *
-     * @var array
-     */
-    protected $options = [];
+    public function onSaving()
+    {
+        $country = $this->getCountry();
+        $entry   = $this->getFormEntry();
 
-    /**
-     * The form sections.
-     *
-     * @var array
-     */
-    protected $sections = [];
+        if ($country) {
+            $entry->parent_country_id = $country;
+        }
+    }
 
-    /**
-     * The form assets.
-     *
-     * @var array
-     */
-    protected $assets = [];
+    public function getCountry()
+    {
+        return $this->country;
+    }
 
+    public function setCountry($country = null)
+    {
+        $this->country = $country;
+
+        return $this;
+    }
 }

@@ -40,7 +40,20 @@ return [
     'general' => 'সাধারণ',
     'ads' => 'বিজ্ঞাপন',
     'user' => 'ব্যবহারকারী',
+    'filter' => 'ছাঁকনি',
+    'create_ad' => 'বিজ্ঞাপন তৈরি করুন',
     'options' => [
-        'title' => 'Options',
+        'title' => 'বিকল্পগুলি',
     ],
+    'ads_image' => 'বিজ্ঞাপন চিত্র',
+    'product_options' => [
+        'title' => 'বিকল্পগুলি',
+    ],
+    'productoptions_value' => [
+        'title' => 'বিকল্প মান',
+    ],
+    'option_configuration' => [
+        'title' => 'কনফিগারেশন',
+    ],
+    'translations' => 'অনুবাদ',
 ];

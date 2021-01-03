@@ -32,9 +32,15 @@ return [
         'name' => '登録ページの指示ロゴ',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => '登録ページのアラートリンク',
     ],
     'style' => [
         'name' => 'スタイル（CSS）',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'ホームページのサブカテゴリの制限',
+    ],
+	'default_country' => [
+		'name' => '登録ページ、電話のデフォルトの国',
+	]
 ];

@@ -20,7 +20,7 @@ return [
         'name' => 'מחיר'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'מחיר סטנדרטי'
     ],
     'date' => [
         'name' => 'תאריך'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'תת קטגוריה 6'
     ],
+    'cat8' => [
+        'name' => 'קטגוריית משנה 7'
+    ],
+    'cat9' => [
+        'name' => 'קטגוריית משנה 8'
+    ],
+    'cat10' => [
+        'name' => 'קטגוריית משנה 9'
+    ],
     'currency' => [
         'name' => 'מטבע'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'הוותיק ביותר',
     'address_a_z' => 'כתובת (א \'עד ת\')',
     'address_z_a' => 'כתובת (Z עד A)',
-    'categories' => 'קטגוריות',
+	'categories' => [
+		'name' => 'קטגוריות'
+	],
     'all_categories' => 'כל הקטגוריות',
     'location' => 'מקום',
     'send_message' => 'לשלוח הודעה',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'ביממה האחרונה'
     ],
+    'in_the_last_day' => [
+        'name' => 'ב 24 השעות האחרונות'
+    ],
     'in_the_last_week' => [
         'name' => 'בשבוע שעבר'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "לא נבחר מיקום.",
     "continue" => 'המשך',
     "gallery" => 'גלריה',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'מודעות',
+    "were_found" => 'נמצאו.',
 
     // Pending screen
     'pending_message_1' => 'המודעה נמצאת בתהליך האישור',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'בחר קטגוריה שלב אחר שלב',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'אפשרויות',
+    'category_selection' => 'בחירת קטגוריות',
+    'listing_details' => 'פרטי רישום',
+    'preview' => 'תצוגה מקדימה',
+    'congratulations' => 'מזל טוב',
+    'ad_desc' => 'תיאור המודעה',
+    'upload_photos' => 'להעלות תמונות',
+    'additional_fields' => 'שדות נוספים',
+    'ad_location' => 'מיקום מודעה',
+
+    'free' => 'חינם',
+    'ad_date' => 'תאריך מודעה',
+    'photo_video' => 'צילום, וידאו',
+    'and_above' => 'ומעל',
+    'and_below' => 'ומתחת',
+    'clear_all' => 'נקה הכל',
+    'balances' => 'יתרות',
+    'packages' => 'חבילות',
+    'dopings' => 'סמים',
+    'advs' => 'עו"ד',
+    'site' => 'אֲתַר',
+    'subscription' => 'מִנוּי',
+	'created' => 'נוצר',
+	'product_option' => [
+		'name' => 'אפשרות מוצר'
+	],
+	'option_json' => [
+		'name' => 'אוֹפְּצִיָה'
+	],
+    'old_price' => [
+        'name' => 'מחיר ישן'
+    ],
 ];

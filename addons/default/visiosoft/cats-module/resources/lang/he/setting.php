@@ -2,6 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => 'מספר חלוקת מפת האתר',
+    ],
+    'include_cities_sitemap' => [
+        'name' => 'כלול ערים במפת האתר',
     ],
 ];

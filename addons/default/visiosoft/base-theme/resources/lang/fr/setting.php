@@ -32,9 +32,15 @@ return [
         'name' => 'Logo d\'instructions de la page d\'inscription',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Enregistrer le lien d\'alerte de la page',
     ],
     'style' => [
         'name' => 'Style (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Limite des sous-catégories de la page d\'accueil',
+    ],
+	'default_country' => [
+		'name' => 'Page d\'enregistrement, pays par défaut pour le téléphone',
+	]
 ];

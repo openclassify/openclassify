@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'جدید جدید',
+    'new_classified' => 'طبقه بندی جدید',
     'new_category' => 'دسته بندی جدید',
     'new_country' => 'کشور جدید',
     'new_city' => 'شهر جدید',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'رده به روزرسانی'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'گزینه جدید',
+	'export' => 'صادرات',
+    'new_productoption' => 'محصول جدید',
+    'new_productoptions_value' => 'مقدار گزینه محصول جدید',
+    'new_options_configuration' => 'پیکربندی گزینه جدید',
+    'new_option_configuration' => 'پیکربندی گزینه جدید',
+	'create_configurations' => 'تنظیمات را ایجاد کنید',
+	'replicate' => 'تکثیر',
+	'fast_create' => 'سریع ایجاد کنید',
+	'publish' => 'انتشار',
+	'import' => 'وارد كردن',
 ];

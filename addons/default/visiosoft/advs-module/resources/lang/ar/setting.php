@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'الإعلان الافتراضي',
     ],
-    'thumbnail_width' => [
-        'name' => 'عرض الصورة المصغرة',
-    ],
-    'thumbnail_height' => [
-        'name' => 'ارتفاع الصورة المصغرة',
-    ],
-    'picture_width' => [
-        'name' => 'عرض الصورة',
-    ],
-    'picture_height' => [
-        'name' => 'ارتفاع الصورة',
-    ],
     'twitter' => [
         'name' => 'تغريد',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'جوجل',
+    ],
+    'listing_page_image' => [
+        'name' => 'سرد صورة الصفحة',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'إخفاء حقل السعر القياسي',
+    ],
+    'hide_options_field' => [
+        'name' => 'إخفاء حقل الخيارات',
+    ],
+    'hide_village_field' => [
+        'name' => 'إخفاء حقل القرية',
+    ],
+    'hide_configurations' => [
+        'name' => 'إخفاء زر التكوينات',
+        'instructions' => 'إخفاء زر التهيئة في صفحة معاينة الإعلان',
+    ],
+    'make_map_required' => [
+        'name' => 'اجعل الخريطة مطلوبة',
+        'instructions' => 'مطالبة المستخدم بوضع دبوس على الخريطة عند إنشاء إعلان',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'إخفاء قائمة الأسعار القياسية',
+    ],
+    'enabled_currencies' => [
+        'name' => 'العملات الممكّنة',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google Statistic Code',
+    ],
+    'register_email_field' => [
+        'name' => 'متطلبات تسجيل البريد الإلكتروني للعضو',
+    ],
+    'market_place' => [
+        'name' => 'المتجر',
+    ],
+	'price_area_hidden' => [
+		'name' => 'منطقة السعر مخفية',
+	],
+    'hide_price_filter' => [
+        'name' => 'إخفاء عامل تصفية السعر',
+    ],
+    'hide_date_filter' => [
+        'name' => 'إخفاء مرشح التاريخ',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'إخفاء مرشح الصورة',
+    ],
+    'hide_map_filter' => [
+        'name' => 'إخفاء عامل تصفية الخريطة',
+    ],
+    'show_lang_url' => [
+        'name' => 'إظهار معلمة Lang لعنوان URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'حد الإعلانات الشعبية',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'تغيير حجم الصورة الخلفية',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'ارتفاع الصورة الكاملة',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'متوسط ارتفاع الصورة',
+    ],
+    'thumbnail_width' => [
+        'name' => 'عرض الصورة المصغرة',
+    ],
+    'thumbnail_height' => [
+        'name' => 'ارتفاع الصورة المصغرة',
+    ],
+    'add_canvas' => [
+        'name' => 'أضف قماش',
+    ],
+    'image_canvas_width' => [
+        'name' => 'عرض قماش الصورة',
+    ],
+    'image_canvas_height' => [
+        'name' => 'ارتفاع قماش الصورة',
     ],
     'watermark_type' => [
         'name' => 'نوع العلامة المائية',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'موقف العلامة المائية',
     ],
-    'listing_page_image' => [
-        'name' => 'سرد صورة الصفحة',
+    'user_filter_limit' => [
+        'name' => 'حد تصفية المستخدم',
+        'instructions' => 'في لوحة الادارة'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'إظهار مسار التنقل عند إنشاء إعلان',
     ],
-    'enabled_currencies' => [
-        'name' => 'العملات الممكّنة',
+    'show_ads_count' => [
+        'name' => 'إظهار عدد الإعلانات',
+        'instructions' => 'عرض الإعلانات الاعتماد على قائمة الفئات اليسرى',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google Statistic Code',
+    'show_post_ad_agreement' => [
+        'name' => 'إظهار اتفاقية ما بعد الإعلان',
+        'instructions' => 'قم بتشغيل هذا إذا كنت تريد عرض اتفاقية سياسة الخصوصية على صفحة إنشاء الإعلان',
     ],
-    'register_email_field' => [
-        'name' => 'متطلبات تسجيل البريد الإلكتروني للعضو',
+    'override_text' => [
+        'name' => 'تجاوز النص',
+        'instructions' => 'القيمة القديمة: قيمة جديدة'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'خطوات اللون',
+        'instructions' => 'يغير لون الخطوات التدريجية.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'إنشاء لون زر الإعلان',
+        'instructions' => 'يغير الزر الذي يظهر عند الانتهاء من اختيار فئة الإعلان الجديدة.'
     ],
 ];

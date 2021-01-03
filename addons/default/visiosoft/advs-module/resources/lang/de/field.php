@@ -20,7 +20,7 @@ return [
         'name' => 'Preis'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standartpreis'
     ],
     'date' => [
         'name' => 'Datum'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Unterkategorie 6'
     ],
+    'cat8' => [
+        'name' => 'Unterkategorie 7'
+    ],
+    'cat9' => [
+        'name' => 'Unterkategorie 8'
+    ],
+    'cat10' => [
+        'name' => 'Unterkategorie 9'
+    ],
     'currency' => [
         'name' => 'Währung'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Älteste',
     'address_a_z' => 'Adresse (von A bis Z)',
     'address_z_a' => 'Adresse (Z bis A)',
-    'categories' => 'Kategorien',
+	'categories' => [
+		'name' => 'Kategorien'
+	],
     'all_categories' => 'Alle Kategorien',
     'location' => 'Ort',
     'send_message' => 'Nachricht senden',
@@ -249,6 +260,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'In den letzten 24 Stunden'
     ],
+    'in_the_last_day' => [
+        'name' => 'In den letzten 24 Stunden'
+    ],
     'in_the_last_week' => [
         'name' => 'In der letzten Woche'
     ],
@@ -267,8 +281,8 @@ return [
     "no_location" => "Es ist kein Ort ausgewählt.",
     "continue" => 'Fortsetzen',
     "gallery" => 'Galerie',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Anzeigen',
+    "were_found" => 'wurden gefunden.',
 
     // Pending screen
     'pending_message_1' => 'Die Anzeige befindet sich im Genehmigungsprozess',
@@ -296,5 +310,36 @@ return [
     'select_category_step_by_step' => 'Wählen Sie Kategorie Schritt für Schritt',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Optionen',
+    'category_selection' => 'Kategorieauswahl',
+    'listing_details' => 'Einzelheiten auflisten',
+    'preview' => 'Vorschau',
+    'congratulations' => 'Herzliche Glückwünsche',
+    'ad_desc' => 'Werbebeschreibung',
+    'upload_photos' => 'Fotos hochladen',
+    'additional_fields' => 'Zusätzliche Felder',
+    'ad_location' => 'Anzeigenposition',
+
+    'free' => 'Frei',
+    'ad_date' => 'Anzeigedatum',
+    'photo_video' => 'Foto, Video',
+    'and_above' => 'und darüber',
+    'and_below' => 'und darunter',
+    'clear_all' => 'Alles löschen',
+    'balances' => 'Guthaben',
+    'packages' => 'Pakete',
+    'dopings' => 'Dopings',
+    'advs' => 'Advs',
+    'site' => 'Seite? ˅',
+    'subscription' => 'Abonnement',
+	'created' => 'Erstellt',
+	'product_option' => [
+		'name' => 'Produktoption'
+	],
+	'option_json' => [
+		'name' => 'Möglichkeit'
+	],
+    'old_price' => [
+        'name' => 'Alter Preis'
+    ],
 ];

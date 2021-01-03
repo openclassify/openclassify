@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'نوع السجل'
     ],
+    'birthday' => [
+        'name' => 'عيد ميلاد'
+    ],
+	'facebook_address' => [
+		'name' => 'عنوان Facebook'
+	],
+	'google_address' => [
+		'name' => 'عنوان Google'
+	],
+    'education' => [
+        'name' => 'التعليم'
+    ],
+    'state_of_education' => [
+        'name' => 'حالة التعليم'
+    ],
+    'profession' => [
+        'name' => 'مهنة'
+    ],
     'identification_number' => [
         'name' => 'رقم الهوية'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'المستعمل'
     ],
+	'name' => [
+		'name' => 'اسم'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -362,6 +383,9 @@ return [
     'password' => [
         'name' => 'كلمه السر',
     ],
+    'old_password' => [
+        'name' => 'كلمة المرور القديمة',
+    ],
     'new_password' => [
         'name' => 'كلمة السر الجديدة',
     ],
@@ -427,19 +451,35 @@ return [
     'my_address' => 'عنواني',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'اسم الشركة'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'مكتب الضرائب'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'الرقم الضريبي'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'ملفي',
+    'edit_profile' => 'تعديل الملف الشخصي',
+    'edit_details' => 'عدل التفاصيل',
+    'update' => 'تحديث',
+    'change_password' => 'غير كلمة السر',
+    'choose_an_option' => 'إختر خيار...',
+
+    // Register page
+    'accept_terms_label' => 'أوافق على شروط.',
+    'accept_protection_law_label' => '<html>أوافق على شروط قانون' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> حماية البيانات الشخصية</a>',
+    'accept_privacy_terms_label' => '<html>انا موافق' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> شروط الخصوصية</a>.',
+    'receive_sms_emails_label' => 'أرغب في تلقي البريد الإلكتروني والرسائل القصيرة.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'شخصي'
+    ],
+
+	'education_part' => [
+		'name' => 'حالة التعليم'
+	],
 ];

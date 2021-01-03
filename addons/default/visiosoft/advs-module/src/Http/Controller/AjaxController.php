@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
+use Anomaly\Streams\Platform\Support\Currency;
 use Anomaly\UsersModule\User\UserModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Illuminate\Http\Request;
@@ -41,7 +42,6 @@ class AjaxController extends PublicController
 
     public function categories(Request $request)
     {
-        $datas = [];
         if ($request->level == 0) {
             $datas = CategoryModel::whereNull('parent_category_id')->get();
         } else {
@@ -76,11 +76,17 @@ class AjaxController extends PublicController
         }
         $my_advs = $my_advs->select(['id', 'cover_photo', 'slug', 'price', 'currency', 'city', 'country_id', 'cat1', 'cat2', 'status'])
                            ->orderByDesc('id');
-        $my_advs = $advRepository->addAttributes($my_advs->get());
+
+        if (\request()->paginate === 'true') {
+            $my_advs = $advRepository->addAttributes($my_advs->paginate(setting_value('streams::per_page')));
+        } else {
+            $my_advs = $advRepository->addAttributes($my_advs->get());
+        }
 
         foreach ($my_advs as $index => $ad) {
             $my_advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $my_advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
+            $my_advs[$index]->formatted_price = app(Currency::class)->format($ad->price, $ad->currency);
         }
 
         return response()->json(['success' => true, 'content' => $my_advs, 'title' => $page_title]);

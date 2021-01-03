@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Реклама по умолчанию GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Ширина миниатюры',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Высота миниатюры',
-    ],
-    'picture_width' => [
-        'name' => 'Ширина картинки',
-    ],
-    'picture_height' => [
-        'name' => 'Высота картинки',
-    ],
     'twitter' => [
         'name' => 'щебет',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Изображение страницы со списком',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Скрыть поле стандартной цены',
+    ],
+    'hide_options_field' => [
+        'name' => 'Скрыть поле параметров',
+    ],
+    'hide_village_field' => [
+        'name' => 'Скрыть поле деревни',
+    ],
+    'hide_configurations' => [
+        'name' => 'Скрыть кнопку настроек',
+        'instructions' => 'Скрыть кнопку настроек на странице предварительного просмотра объявления',
+    ],
+    'make_map_required' => [
+        'name' => 'Сделать карту обязательной',
+        'instructions' => 'Требовать, чтобы пользователь поместил булавку на карту при создании объявления',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Скрыть стандартную цену листинга',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Включенные валюты',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Статистический код Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Требуется регистрация по электронной почте',
+    ],
+    'market_place' => [
+        'name' => 'Рыночная площадь',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Цена Площадь Скрыта',
+	],
+    'hide_price_filter' => [
+        'name' => 'Скрыть фильтр цен',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Скрыть фильтр даты',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Скрыть фотофильтр',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Скрыть фильтр карты',
+    ],
+    'show_lang_url' => [
+        'name' => 'Показать параметр языка для URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Лимит популярной рекламы',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Бэкэнд изменения размера изображения',
+    ],
+    'full_image_width' => [
+        'name' => 'Полная ширина изображения',
+    ],
+    'full_image_height' => [
+        'name' => 'Полная высота изображения',
+    ],
+    'medium_image_width' => [
+        'name' => 'Средняя ширина изображения',
+    ],
+    'medium_image_height' => [
+        'name' => 'Средняя высота изображения',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Ширина миниатюры',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Высота миниатюры',
+    ],
+    'add_canvas' => [
+        'name' => 'Добавить холст',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Ширина холста изображения',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Высота холста изображения',
     ],
     'watermark_type' => [
         'name' => 'Тип водяного знака',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Положение водяного знака',
     ],
-    'listing_page_image' => [
-        'name' => 'Изображение страницы со списком',
+    'user_filter_limit' => [
+        'name' => 'Предел пользовательского фильтра',
+        'instructions' => 'В админке'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Показывать хлебные крошки при создании объявления',
     ],
-    'enabled_currencies' => [
-        'name' => 'Включенные валюты',
+    'show_ads_count' => [
+        'name' => 'Показать количество объявлений',
+        'instructions' => 'Показывать количество объявлений в левом списке категорий',
     ],
-    'google_statistic_code' => [
-        'name' => 'Статистический код Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Показать соглашение о публикации рекламы',
+        'instructions' => 'Включите это, если вы хотите отображать соглашение о политике конфиденциальности на странице создания рекламы.',
     ],
-    'register_email_field' => [
-        'name' => 'Требуется регистрация по электронной почте',
+    'override_text' => [
+        'name' => 'Заменить текст',
+        'instructions' => 'Старое значение: новое значение'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Цвет ступеней',
+        'instructions' => 'Изменяет цвет прогрессивных шагов.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Создать цвет кнопки объявления',
+        'instructions' => 'Изменяет кнопку, которая появляется после завершения выбора новой категории объявлений.'
     ],
 ];

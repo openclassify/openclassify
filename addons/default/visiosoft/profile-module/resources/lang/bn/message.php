@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'কোনও ঠিকানা নেই বা দেখার অনুমতি নেই।',
     'empty_password_sms_message' => 'সুরক্ষা সমস্যার কারণে আমরা আপনার পাসওয়ার্ড পরিবর্তন করেছি! আপনার নতুন পাসওয়ার্ডটি হ\'ল:',
     'required_all' => "সমস্ত ক্ষেত্র প্রয়োজন!",
+    'can_not_remove_filled_fields' => "আপনি ভরাট ক্ষেত্র সরাতে পারবেন না!",
+    'wrong_password' => "আপনি যে পাসওয়ার্ডটি লিখেছেন তা সঠিক নয়!",
 
     // Forgot Password
     'email_phone_not_found' => 'ই-মেইল, ফোন নম্বর ঠিক নয়!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'আপনি কি আপনার অ্যাকাউন্ট বন্ধ করতে চান? এই অপারেশনটি পূর্বাবস্থায় ফেরা যায় না।',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'ইমেল আপডেট!',
+    'update_email_mail_message' => 'আপনার ইমেল আপডেট হয়েছে!',
+
+    // Register
+    'recaptcha_field_is_required' => 'পুনরায় ক্যাপচা ক্ষেত্র প্রয়োজন।',
+    'failed_to_validate_captcha' => 'ক্যাপচাকে বৈধতা দিতে ব্যর্থ।',
 ];

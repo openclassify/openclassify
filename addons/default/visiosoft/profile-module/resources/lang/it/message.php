@@ -29,6 +29,8 @@ return [
     'ajax_address_error' => 'Nessun indirizzo o non autorizzato a visualizzare.',
     'empty_password_sms_message' => 'Per problemi di sicurezza, abbiamo cambiato la tua password! La tua nuova password è:',
     'required_all' => "Tutti i campi sono obbligatori!",
+    'can_not_remove_filled_fields' => "Non puoi rimuovere i campi compilati!",
+    'wrong_password' => "La password inserita non è corretta!",
 
     // Forgot Password
     'email_phone_not_found' => 'L\'e-mail, il numero di telefono non è corretto!',
@@ -36,6 +38,10 @@ return [
     'disable_account' => 'Vuoi chiudere il tuo account? Questa operazione non può essere annullata.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Email aggiornata!',
+    'update_email_mail_message' => 'La tua email è stata aggiornata!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Il campo reCaptcha è obbligatorio.',
+    'failed_to_validate_captcha' => 'Impossibile convalidare il captcha.',
 ];

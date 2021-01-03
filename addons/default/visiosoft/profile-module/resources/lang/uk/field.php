@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Тип реєстру'
     ],
+    'birthday' => [
+        'name' => 'День народження'
+    ],
+	'facebook_address' => [
+		'name' => 'Адреса Facebook'
+	],
+	'google_address' => [
+		'name' => 'Адреса Google'
+	],
+    'education' => [
+        'name' => 'Освіта'
+    ],
+    'state_of_education' => [
+        'name' => 'Стан освіти'
+    ],
+    'profession' => [
+        'name' => 'Професія'
+    ],
     'identification_number' => [
         'name' => 'Ідентифікаційний номер'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Користувач'
     ],
+	'name' => [
+		'name' => 'Ім\'я'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'Пароль',
     ],
+    'old_password' => [
+        'name' => 'Старий пароль',
+    ],
     'new_password' => [
         'name' => 'Новий пароль',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => 'індивідуальний',
     ],
     'corporate' => [
-        'name' => 'корпоративний',
+        'name' => 'Корпоративні',
     ],
 
     'details' => [
@@ -428,19 +452,35 @@ return [
     'my_address' => 'Моя адреса',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Назва компанії'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Податкова'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Податковий номер'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Мій профіль',
+    'edit_profile' => 'Редагувати профіль',
+    'edit_details' => 'Редагувати деталі',
+    'update' => 'Оновлення',
+    'change_password' => 'Змінити пароль',
+    'choose_an_option' => 'Виберіть варіант ...',
+
+    // Register page
+    'accept_terms_label' => 'Я приймаю умови.',
+    'accept_protection_law_label' => '<html>Я приймаю умови Закону про' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Захист персональних даних.</a>',
+    'accept_privacy_terms_label' => '<html>я приймаю' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> умови конфіденційності</a>.',
+    'receive_sms_emails_label' => 'Я хочу отримувати електронну пошту та sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Особистий'
+    ],
+
+	'education_part' => [
+		'name' => 'Стан освіти'
+	],
 ];

@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'নতুন অ্যাড',
+    'new_classified' => 'নতুন শ্রেণিবদ্ধ',
     'new_category' => 'নতুন বিভাগ',
     'new_country' => 'নতুন দেশ',
     'new_city' => 'নতুন শহর',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'আপডেট বিভাগ'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'নতুন বিকল্প',
+	'export' => 'রফতানি',
+    'new_productoption' => 'নতুন প্রোডাক্টপশন',
+    'new_productoptions_value' => 'নতুন পণ্য বিকল্প মান',
+    'new_options_configuration' => 'নতুন বিকল্প কনফিগারেশন',
+    'new_option_configuration' => 'নতুন বিকল্প কনফিগারেশন',
+	'create_configurations' => 'কনফিগারেশন তৈরি করুন',
+	'replicate' => 'প্রতিলিপি',
+	'fast_create' => 'দ্রুত তৈরি করুন',
+	'publish' => 'প্রকাশ করুন',
+	'import' => 'আমদানি করুন',
 ];

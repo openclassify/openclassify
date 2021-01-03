@@ -9,13 +9,6 @@ use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 
 class DistrictsController extends AdminController
 {
-
-    /**
-     * Display an index of existing entries.
-     *
-     * @param DistrictTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function index(DistrictTableBuilder $table, Request $request)
     {
         if($this->request->action == "delete") {
@@ -39,32 +32,13 @@ class DistrictsController extends AdminController
         return $table->render();
     }
 
-    /**
-     * Create a new entry.
-     *
-     * @param DistrictFormBuilder $form
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function create(DistrictFormBuilder $form,Request $request)
+    public function create(DistrictFormBuilder $form)
     {
-        if($this->request->action == "save") {
-            if ($form->hasFormErrors()) {
-                return back();
-            }
-            $form->make();
-            return $this->redirect->to('/admin/location/districts?city='.$request->parent_city_id);
-        }
+        $form->setCity($this->request->get('districts'));
 
-        return $this->view->make('visiosoft.module.location::location/admin-sub-location');
+        return $form->render();
     }
 
-    /**
-     * Edit an existing entry.
-     *
-     * @param DistrictFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function edit(DistrictFormBuilder $form, $id)
     {
         return $form->render($id);

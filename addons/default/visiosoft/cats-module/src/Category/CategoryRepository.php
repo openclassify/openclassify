@@ -35,10 +35,7 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
     public function mainCats()
     {
-        return $this->newQuery()
-            ->whereNull('parent_category_id')
-            ->orderBy('sort_order')
-            ->get();
+        return $this->model->where('parent_category_id', null)->orderBy('sort_order')->get();
     }
 
     public function getItem($cat)

@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'Please wait.Deleting Sub Categories',
     'category_selection' => 'Category Selection',
+    'go_to_parent' => 'Go To Parent',
 ];

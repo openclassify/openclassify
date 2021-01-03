@@ -32,9 +32,15 @@ return [
         'name' => 'Đăng ký Trang hướng dẫn Logo',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Đăng ký liên kết cảnh báo trang',
     ],
     'style' => [
         'name' => 'Phong cách (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Giới hạn danh mục phụ của trang chủ',
+    ],
+	'default_country' => [
+		'name' => 'Trang đăng ký, quốc gia mặc định cho điện thoại',
+	]
 ];

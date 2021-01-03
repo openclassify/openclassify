@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Ширина за замовчуванням',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Сховати фільтр місцеположення',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Країна за замовчуванням для телефонного поля реєстрації'
+	],
+    'sorting_column' => [
+        'name' => 'Сортування сортування',
+    ],
+    'sorting_type' => [
+        'name' => 'Тип сортування',
+    ],
 ];

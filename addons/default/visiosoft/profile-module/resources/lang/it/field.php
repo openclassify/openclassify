@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Tipo di registro'
     ],
+    'birthday' => [
+        'name' => 'Compleanno'
+    ],
+	'facebook_address' => [
+		'name' => 'Indirizzo di Facebook'
+	],
+	'google_address' => [
+		'name' => 'Indirizzo Google'
+	],
+    'education' => [
+        'name' => 'Formazione scolastica'
+    ],
+    'state_of_education' => [
+        'name' => 'Stato dell\'istruzione'
+    ],
+    'profession' => [
+        'name' => 'Professione'
+    ],
     'identification_number' => [
         'name' => 'Numero identificativo'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Utente'
     ],
+	'name' => [
+		'name' => 'Nome'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -365,6 +386,9 @@ return [
     'password' => [
         'name' => 'Parola d\'ordine',
     ],
+    'old_password' => [
+        'name' => 'Vecchia password',
+    ],
     'new_password' => [
         'name' => 'Nuova password',
     ],
@@ -418,7 +442,7 @@ return [
         'name' => 'individuale',
     ],
     'corporate' => [
-        'name' => 'aziendale',
+        'name' => 'Corporate',
     ],
 
     'details' => [
@@ -430,19 +454,35 @@ return [
     'my_address' => 'Il mio indirizzo',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Nome della ditta'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Ufficio delle imposte'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Codice fiscale'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Il mio profilo',
+    'edit_profile' => 'Modifica Profilo',
+    'edit_details' => 'Modifica i dettagli',
+    'update' => 'Aggiornare',
+    'change_password' => 'Cambia la password',
+    'choose_an_option' => 'Scegliere un\'opzione...',
+
+    // Register page
+    'accept_terms_label' => 'Accetto i termini.',
+    'accept_protection_law_label' => '<html>Accetto i termini della legge sul' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Protezione dei dati personali.</a>',
+    'accept_privacy_terms_label' => '<html>accetto' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> termini di privacy</a>.',
+    'receive_sms_emails_label' => 'Voglio ricevere email ed sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Personale'
+    ],
+
+	'education_part' => [
+		'name' => 'Stato dell\'istruzione'
+	],
 ];

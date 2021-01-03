@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Оголошення за замовчуванням GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Ширина мініатюри',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Висота мініатюри',
-    ],
-    'picture_width' => [
-        'name' => 'Ширина зображення',
-    ],
-    'picture_height' => [
-        'name' => 'Висота зображення',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Зображення сторінки лістингу',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Сховати поле стандартної ціни',
+    ],
+    'hide_options_field' => [
+        'name' => 'Сховати поле параметрів',
+    ],
+    'hide_village_field' => [
+        'name' => 'Сховати село поле',
+    ],
+    'hide_configurations' => [
+        'name' => 'Сховати кнопку конфігурацій',
+        'instructions' => 'Сховати кнопку конфігурацій на сторінці попереднього перегляду оголошення',
+    ],
+    'make_map_required' => [
+        'name' => 'Зробіть карту обов’язковою',
+        'instructions' => 'Потрібно, щоб користувач розміщував шпильку на карті під час створення оголошення',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Сховати лістинг стандартної ціни',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Увімкнено валюти',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Статистичний код Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Вимога електронної пошти щодо реєстрації учасника',
+    ],
+    'market_place' => [
+        'name' => 'Ринок',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Цінова область прихована',
+	],
+    'hide_price_filter' => [
+        'name' => 'Сховати фільтр цін',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Сховати фільтр дати',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Сховати фільтр фотографій',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Сховати фільтр карти',
+    ],
+    'show_lang_url' => [
+        'name' => 'Показати параметр мови для URL-адреси',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Ліміт популярних оголошень',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Змінення розміру зображення',
+    ],
+    'full_image_width' => [
+        'name' => 'Повна ширина зображення',
+    ],
+    'full_image_height' => [
+        'name' => 'Повна висота зображення',
+    ],
+    'medium_image_width' => [
+        'name' => 'Середня ширина зображення',
+    ],
+    'medium_image_height' => [
+        'name' => 'Середня висота зображення',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Ширина мініатюри',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Висота мініатюри',
+    ],
+    'add_canvas' => [
+        'name' => 'Додати полотно',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Ширина полотна зображення',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Висота полотна зображення',
     ],
     'watermark_type' => [
         'name' => 'Тип водяного знака',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Позиція водяного знака',
     ],
-    'listing_page_image' => [
-        'name' => 'Зображення сторінки лістингу',
+    'user_filter_limit' => [
+        'name' => 'Обмеження фільтра користувача',
+        'instructions' => 'На панелі адміністратора'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Показати хлібну крихту під час створення реклами',
     ],
-    'enabled_currencies' => [
-        'name' => 'Увімкнено валюти',
+    'show_ads_count' => [
+        'name' => 'Показати показ оголошень',
+        'instructions' => 'Показати рекламу в списку категорій ліворуч',
     ],
-    'google_statistic_code' => [
-        'name' => 'Статистичний код Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Показати угоду про розміщення оголошень',
+        'instructions' => 'Увімкніть це, якщо ви хочете відображати угоду про політику конфіденційності на сторінці створення оголошення',
     ],
-    'register_email_field' => [
-        'name' => 'Вимога електронної пошти щодо реєстрації учасника',
+    'override_text' => [
+        'name' => 'Замінити текст',
+        'instructions' => 'Старе значення: Нове значення'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Кроки Колір',
+        'instructions' => 'Змінює колір прогресивних кроків.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Створіть колір кнопки об\'яви',
+        'instructions' => 'Змінює кнопку, яка з’являється після завершення вибору нової категорії оголошень.'
     ],
 ];

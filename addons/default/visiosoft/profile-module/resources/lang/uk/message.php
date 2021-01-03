@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Немає адреси або не має права перегляду.',
     'empty_password_sms_message' => 'Через проблеми безпеки ми змінили ваш пароль! Ваш новий пароль:',
     'required_all' => "Поле обов'язкове!",
+    'can_not_remove_filled_fields' => "Ви не можете видалити заповнені поля!",
+    'wrong_password' => "Введений вами пароль неправильний!",
 
     // Forgot Password
     'email_phone_not_found' => 'Неправильний електронний лист, номер телефону!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Ви хочете закрити свій рахунок? Цю операцію не можна скасувати.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Оновлено електронний лист!',
+    'update_email_mail_message' => 'Ваш електронний лист оновлено!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Поле reCaptcha обов’язкове.',
+    'failed_to_validate_captcha' => 'Не вдалося перевірити капчу.',
 ];

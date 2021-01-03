@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'unfinished' => 'Unfinished',
+    'unfinished' => 'ناتمام',
 ];

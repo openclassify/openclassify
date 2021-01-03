@@ -32,9 +32,15 @@ return [
         'name' => 'آرم صفحه آموزش را ثبت کنید',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'پیوند هشدار صفحه را ثبت کنید',
     ],
     'style' => [
         'name' => 'سبک (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'زیرمجموعه ها',
+    ],
+	'default_country' => [
+		'name' => 'صفحه ثبت نام ، کشور پیش فرض تلفن',
+	]
 ];

@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Geen adres of niet geautoriseerd om te bekijken.',
     'empty_password_sms_message' => 'Vanwege beveiligingsproblemen hebben we uw wachtwoord gewijzigd! Je nieuwe wachtwoord is:',
     'required_all' => "Alle velden zijn vereist!",
+    'can_not_remove_filled_fields' => "U kunt geen ingevulde velden verwijderen!",
+    'wrong_password' => "Het ingevoerde wachtwoord is niet correct!",
 
     // Forgot Password
     'email_phone_not_found' => 'Het e-mailadres, telefoonnummer is niet correct!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Wil je je account sluiten? Deze bewerking kan niet ongedaan worden gemaakt.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'E-mail bijgewerkt!',
+    'update_email_mail_message' => 'Uw e-mail is bijgewerkt!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha-veld is verplicht.',
+    'failed_to_validate_captcha' => 'Kan captcha niet valideren.',
 ];

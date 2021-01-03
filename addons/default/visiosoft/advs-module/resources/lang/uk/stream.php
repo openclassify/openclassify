@@ -20,6 +20,15 @@ return [
         'name' => 'Значення Cf',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Параметри',
+    ],
+    'product_options' => [
+        'name' => 'Варіанти товару',
+    ],
+    'productoptions_value' => [
+        'name' => 'Значення опцій',
+    ],
+    'option_configuration' => [
+        'name' => 'Конфігурація',
     ],
 ];

@@ -19,4 +19,5 @@ return [
     'general' => 'Allmän',
     'map' => 'Karta',
     'setting' => 'Miljö',
+    'filter' => 'Filtrera',
 ];

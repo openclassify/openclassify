@@ -52,8 +52,8 @@ return [
     'mail' => 'Dërgo email',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'Udhëzimet Regjistrohuni',
+    'list' => 'Listë',
+    'instruction_description' => 'Përshkrimi i udhëzimit',
+    'instruction_list' => 'Lista e udhëzimeve',
 ];

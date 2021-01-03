@@ -50,11 +50,51 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => 'বিকল্পগুলি',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'বিকল্পগুলি পড়তে পারেন?',
+            'write'  => 'বিকল্পগুলি সম্পাদনা / সম্পাদনা করতে পারে?',
+            'delete' => 'বিকল্পগুলি মুছতে পারবেন?',
+        ],
+    ],
+    'productoptions' => [
+        'name'   => 'প্রোডাক্টপশনস',
+        'option' => [
+            'read'   => 'Productoptions পড়তে পারেন?',
+            'write'  => 'Productoptions তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'প্রোডাক্টপশনগুলি মুছতে পারবেন?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'প্রোডাক্টপশন মান',
+        'option' => [
+            'read'   => 'Productoptions মান পড়তে পারেন?',
+            'write'  => 'Productoptions মান তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'Productoptions মান মুছতে পারেন?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'বিকল্প কনফিগারেশন',
+        'option' => [
+            'read'   => 'বিকল্প কনফিগারেশন পড়তে পারেন?',
+            'write'  => 'বিকল্প কনফিগারেশন তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'বিকল্প কনফিগারেশন মুছতে পারেন?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'বিকল্প কনফিগারেশন',
+        'option' => [
+            'read'   => 'বিকল্প কনফিগারেশন পড়তে পারেন?',
+            'write'  => 'বিকল্প কনফিগারেশন তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'বিকল্প কনফিগারেশন মুছতে পারেন?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'বিকল্প কনফিগারেশন',
+        'option' => [
+            'read'   => 'বিকল্প কনফিগারেশন পড়তে পারেন?',
+            'write'  => 'বিকল্প কনফিগারেশন তৈরি / সম্পাদনা করতে পারেন?',
+            'delete' => 'বিকল্প কনফিগারেশন মুছতে পারেন?',
         ],
     ],
 ];

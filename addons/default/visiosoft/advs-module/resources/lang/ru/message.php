@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Валюта успешно конвертирована.',
     'choose_user' => 'Выберите пользователя',
     'owner_updated_successfully' => 'Владелец обновлен успешно!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Объявление не найдено!',
+    'replicated_success' => 'Объявление успешно тиражировано!',
+    'ad_doesnt_exist' => "Такого объявления не существует!",
+    'select_location_error' => "Пожалуйста, выберите место на карте!",
+    'this_ad_is_not_valid_anymore' => "Это объявление больше не действует!",
+    'approve_status_change' => "Статус вашего объявления установлен на \"Активно\"!",
+    'passive_status_change' => "Статус вашего объявления установлен на пассивный!",
 ];

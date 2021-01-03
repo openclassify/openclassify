@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Qeyd Növü'
     ],
+    'birthday' => [
+        'name' => 'Ad günü'
+    ],
+	'facebook_address' => [
+		'name' => 'Facebook ünvanı'
+	],
+	'google_address' => [
+		'name' => 'Google ünvanı'
+	],
+    'education' => [
+        'name' => 'Təhsil'
+    ],
+    'state_of_education' => [
+        'name' => 'Təhsil vəziyyəti'
+    ],
+    'profession' => [
+        'name' => 'Peşə'
+    ],
     'identification_number' => [
         'name' => 'İdentifikasiya nömrəsi'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'İstifadəçi'
     ],
+	'name' => [
+		'name' => 'Ad'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'Şifrə',
     ],
+    'old_password' => [
+        'name' => 'Köhnə Şifrə',
+    ],
     'new_password' => [
         'name' => 'Yeni şifrə',
     ],
@@ -416,7 +440,7 @@ return [
         'name' => 'fərdi',
     ],
     'corporate' => [
-        'name' => 'korporativ',
+        'name' => 'Korporativ',
     ],
 
     'details' => [
@@ -428,19 +452,35 @@ return [
     'my_address' => 'Ünvanım',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Şirkət Adı'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Vergi ofisi'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Vergi nömrəsi'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Mənim Hesabım',
+    'edit_profile' => 'Profilə düzəliş et',
+    'edit_details' => 'Ətraflı məlumatları redaktə edin',
+    'update' => 'Yeniləyin',
+    'change_password' => 'Parolu dəyişdirin',
+    'choose_an_option' => 'Bir seçim seçin ...',
+
+    // Register page
+    'accept_terms_label' => 'Şərtləri qəbul edirəm.',
+    'accept_protection_law_label' => '<html>Qanunun şərtlərini qəbul edirəm' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Fərdi məlumatların qorunması.</a>',
+    'accept_privacy_terms_label' => '<html>qəbul edirəm' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> gizlilik şərtləri</a>.',
+    'receive_sms_emails_label' => 'E-poçt və sms almaq istəyirəm.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Şəxsi'
+    ],
+
+	'education_part' => [
+		'name' => 'Təhsil vəziyyəti'
+	],
 ];

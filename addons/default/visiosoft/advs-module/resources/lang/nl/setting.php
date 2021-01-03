@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Standaardadvertentie GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Thumbnail breedte',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Hoogte miniatuur',
-    ],
-    'picture_width' => [
-        'name' => 'Beeldbreedte',
-    ],
-    'picture_height' => [
-        'name' => 'Beeldhoogte',
-    ],
     'twitter' => [
         'name' => 'tjilpen',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Lijstpagina-afbeelding',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Verberg standaardprijsveld',
+    ],
+    'hide_options_field' => [
+        'name' => 'Optieveld verbergen',
+    ],
+    'hide_village_field' => [
+        'name' => 'Verberg Village Field',
+    ],
+    'hide_configurations' => [
+        'name' => 'Verberg de configuratieknop',
+        'instructions' => 'Verberg de configuratieknop op de pagina Advertentievoorbeeld',
+    ],
+    'make_map_required' => [
+        'name' => 'Maak een kaart vereist',
+        'instructions' => 'Vereisen dat de gebruiker een speld op de kaart plaatst bij het maken van een advertentie',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Verberg aanbieding standaardprijs',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Ingeschakelde valuta\\'s',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google-statistiekcode',
+    ],
+    'register_email_field' => [
+        'name' => 'Lidregistratie E-mailvereiste',
+    ],
+    'market_place' => [
+        'name' => 'Marktplaats',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Prijsgebied verborgen',
+	],
+    'hide_price_filter' => [
+        'name' => 'Prijsfilter verbergen',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Datumfilter verbergen',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Verberg fotofilter',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Verberg kaartfilter',
+    ],
+    'show_lang_url' => [
+        'name' => 'Show Lang-parameter voor URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Beperking van populaire advertenties',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Afbeelding formaat wijzigen backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Volledige afbeeldingsbreedte',
+    ],
+    'full_image_height' => [
+        'name' => 'Volledige beeldhoogte',
+    ],
+    'medium_image_width' => [
+        'name' => 'Gemiddelde afbeeldingsbreedte',
+    ],
+    'medium_image_height' => [
+        'name' => 'Gemiddelde afbeeldingshoogte',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail breedte',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Hoogte miniatuur',
+    ],
+    'add_canvas' => [
+        'name' => 'Canvas toevoegen',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Breedte afbeelding canvas',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Hoogte afbeelding canvas',
     ],
     'watermark_type' => [
         'name' => 'Watermerk Type',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Watermerkpositie',
     ],
-    'listing_page_image' => [
-        'name' => 'Lijstpagina-afbeelding',
+    'user_filter_limit' => [
+        'name' => 'Limiet gebruikersfilter',
+        'instructions' => 'In het admin-paneel'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Toon breadcrumb bij het maken van een advertentie',
     ],
-    'enabled_currencies' => [
-        'name' => 'Ingeschakelde valuta\\'s',
+    'show_ads_count' => [
+        'name' => 'Toon het aantal advertenties',
+        'instructions' => 'Toon het aantal advertenties in de lijst met linkercategorieën',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google-statistiekcode',
+    'show_post_ad_agreement' => [
+        'name' => 'Toon advertentieovereenkomst',
+        'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
     ],
-    'register_email_field' => [
-        'name' => 'Lidregistratie E-mailvereiste',
+    'override_text' => [
+        'name' => 'Tekst overschrijven',
+        'instructions' => 'Oude waarde: nieuwe waarde'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Stappen kleur',
+        'instructions' => 'Verandert de kleur van de progressieve stappen.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Kleur van advertentieknop maken',
+        'instructions' => 'Wijzigt de knop die wordt weergegeven wanneer de selectie van de nieuwe advertentiecategorie is voltooid.'
     ],
 ];

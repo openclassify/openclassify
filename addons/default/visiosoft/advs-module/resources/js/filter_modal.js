@@ -7,18 +7,6 @@ $('.edit-category-filter-modal').on('click', function () {
     $('#categoryModal').modal('toggle');
 })
 
-function crud(params, url, type, callback) {
-    $.ajax({
-        type: type,
-        async: false,
-        data: params,
-        url: url,
-        success: function (response) {
-            callback(response);
-        },
-    });
-}
-
 var level = 0;
 var id_list = categories;
 var selected;
@@ -27,7 +15,7 @@ var all_categories = {};
 var promiseForCategory = new Promise(function (resolve) {
     if (categories.length != 0) {
         $.each(categories, function (index, value) {
-            crud({
+            crudAjax({
                 'level': level,
                 "cat": categories['cat' + level]
             }, '/class/ajaxCategory', 'POST', function (callback) {
@@ -36,7 +24,7 @@ var promiseForCategory = new Promise(function (resolve) {
             level++;
         });
     } else {
-        crud({'level': level, "cat": ""}, '/class/ajaxCategory', 'POST', function (callback) {
+        crudAjax({'level': level, "cat": ""}, '/class/ajaxCategory', 'POST', function (callback) {
             all_categories['cat' + (level + 1)] = callback;
         })
         level++;
@@ -59,7 +47,7 @@ promiseForCategory.then(function (categories_list) {
         });
     });
     level++;
-    crud({
+    crudAjax({
         'level': level,
         "cat": id_list['cat' + Object.keys(id_list).length]
     }, '/class/ajaxCategory', 'POST', function (callback) {
@@ -112,7 +100,7 @@ function selectedValue() {
         }
 
 
-        crud({"cat": value, 'level': level}, '/class/ajaxCategory', 'POST', function (callback) {
+        crudAjax({"cat": value, 'level': level}, '/class/ajaxCategory', 'POST', function (callback) {
             if (callback.length > 0) {
                 $('.category-row').append(CategoryField('cat' + level, level));
                 $.each(callback, function (index, value) {

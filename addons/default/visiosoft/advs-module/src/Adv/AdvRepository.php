@@ -2,7 +2,6 @@
 
 use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
@@ -10,59 +9,36 @@ use Intervention\Image\Facades\Image;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\AdvsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
+use Visiosoft\LocationModule\District\DistrictModel;
 
 class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 {
-
-    /**
-     * The entry model.
-     *
-     * @var AdvModel
-     */
     protected $model;
-
-    /**
-     * @var FileRepositoryInterface
-     */
     private $fileRepository;
-
-    /**
-     * @var FolderRepositoryInterface
-     */
     private $folderRepository;
 
-    /**
-     * Create a new AdvRepository instance.
-     *
-     * @param AdvModel $model
-     */
     public function __construct(
         AdvModel $model,
-        SettingRepositoryInterface $settings,
         FileRepositoryInterface $fileRepository,
         FolderRepositoryInterface $folderRepository
     )
     {
         $this->model = $model;
-        $this->settings = $settings;
         $this->fileRepository = $fileRepository;
         $this->folderRepository = $folderRepository;
     }
 
-    /**
-     * Resolve the advs.
-     *
-     * @return AdvsInterface|null
-     */
     public function findById($id)
     {
         return $this->model->orderBy('created_at', 'DESC')->where('advs_advs.id', $id)->first();
     }
 
-    public function searchAdvs($type, $param = null, $customParameters = null, $limit = null, $category = null, $city = null)
+    public function searchAdvs(
+        $type, $param = null, $customParameters = [],
+        $limit = null, $category = null, $city = null, $paginate = true
+    )
     {
         $isActiveDopings = new AdvModel();
         $isActiveDopings = $isActiveDopings->is_enabled('dopings');
@@ -91,8 +67,8 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 });
             }
         }
-        if (!setting_value('visiosoft.module.location::hide_location_filter')) {
-            $country = isset($param['country']) ? $param['country'] : setting_value('visiosoft.module.location::default_country');
+        if (!setting_value('visiosoft.module.location::hide_location_filter') and isset($param['country'])) {
+            $country = !empty($param['country']) ? $param['country'] : setting_value('visiosoft.module.location::default_country');
             if ($country) {
                 $query = $query->where('country_id', $country);
             }
@@ -126,17 +102,19 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
         }
-        if (!empty($param['min_price'])) {
-            $num = $param['min_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') >=" . $int;
-            $query = $query->whereRaw($column);
-        }
-        if (!empty($param['max_price'])) {
-            $num = $param['max_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-            $query = $query->whereRaw($column);
+        if (!empty($param['currency'])) {
+            if (!empty($param['min_price'])) {
+                $num = $param['min_price'];
+                $int = (int)$num;
+                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') >=" . $int;
+                $query = $query->whereRaw($column);
+            }
+            if (!empty($param['max_price'])) {
+                $num = $param['max_price'];
+                $int = (int)$num;
+                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
+                $query = $query->whereRaw($column);
+            }
         }
         if (!empty($param['date'])) {
             if ($param['date'] === 'day') {
@@ -172,22 +150,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if ($this->model->is_enabled('customfields')) {
             $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $param, $query);
         }
-
-
-        if (!empty($param['max_price'])) {
-            $num = $param['max_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-            $query = $query->whereRaw($column);
-        }
-
-        if (!empty($param['max_price'])) {
-            $num = $param['max_price'];
-            $int = (int)$num;
-            $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-            $query = $query->whereRaw($column);
-        }
-
 
 //        //UPDATE `default_advs_advs` SET `coor` = (PointFromText('POINT(41.085022 28.804754)')) WHERE `default_advs_advs`.`id` = 8
 //        //SELECT * FROM `default_advs_advs` WHERE ST_DISTANCE(ST_GeomFromText('POINT(41.0709052 28.829627)'), coor) < 20
@@ -239,7 +201,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         if ($type == "list") {
-            return $query->paginate($this->settings->value('streams::per_page'));
+            return $paginate ? $query->paginate(setting_value('streams::per_page')) : $query;
         } else {
             return $query->get();
         }
@@ -254,11 +216,15 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     {
         $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
         $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
+        $district = DistrictModel::query()->where('location_districts.id', $adv->district)->first();
         if ($country != null) {
             $adv->setAttribute('country_name', $country->name);
         }
         if ($city != null) {
             $adv->setAttribute('city_name', $city->name);
+        }
+        if ($district != null) {
+            $adv->setAttribute('district_name', $district->name);
         }
         return $adv;
     }
@@ -279,6 +245,20 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         else
             $adv->setAttribute('cat2_name', "");
 
+
+        return $adv;
+    }
+
+    public function findByIDAndSlug($id, $slug)
+    {
+        $adv = $this->newQuery()
+            ->where('advs_advs.id', $id)
+            ->where('slug', $slug)
+            ->first();
+
+        if ($adv) {
+            $adv = $this->getLocationNames($adv);
+        }
 
         return $adv;
     }
@@ -417,15 +397,19 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
-    public function getByCat($catID, $level = 1)
+    public function getByCat($catID, $level = 1, $limit = 20)
     {
         $advs = $this->model
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
             ->where('status', 'approved')
             ->where('slug', '!=', '')
-            ->where('cat' . $level, $catID)
-            ->limit(20)
-            ->get();
+            ->where('cat' . $level, $catID);
+
+        if ($limit) {
+            $advs = $advs->limit($limit);
+        }
+
+        $advs = $advs->get();
 
         $ads = $this->model->getLocationNames($advs);
 
@@ -435,6 +419,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         return $ads;
+    }
+
+    public function countByCat($catID, $level = 1)
+    {
+        return DB::table('advs_advs')
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', 'approved')
+            ->whereNull('deleted_at')
+            ->where('slug', '!=', '')
+            ->where('cat' . $level, $catID)
+            ->count();
     }
 
     public function getCategoriesWithAdID($id)
@@ -456,7 +451,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function extendAds($allAds, $isAdmin = false)
     {
-        if (!is_numeric($allAds)) {
+        if (is_array($allAds)) {
+            $advs = $this->newQuery()->whereIn('id', $allAds);
+        } elseif (!is_numeric($allAds)) {
             if ($isAdmin && auth()->user()->hasRole('admin')) {
                 $advs = $this->newQuery();
             } else {
@@ -469,14 +466,58 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $advs->update(['finish_at' => $newDate]);
     }
 
-    public function getByUsersIDs($usersIDs)
+    public function getByUsersIDs($usersIDs, $status = 'approved', $withDraft = false)
     {
-        return $this
+        $ads = $this
             ->newQuery()
             ->whereIn('advs_advs.created_by_id', $usersIDs)
-            ->where('advs_advs.slug', '!=', "")
-            ->where('advs_advs.status', 'approved')
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+
+        if ($status) {
+            $ads = $ads->where('advs_advs.status', 'approved');
+        }
+
+        if (!$withDraft) {
+            $ads = $ads->where('advs_advs.slug', '!=', "");
+        }
+
+        return $ads;
+    }
+
+    public function getPopular()
+    {
+        return $this->newQuery()
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', '=', 'approved')
+            ->where('slug', '!=', '')
+            ->orderBy('count_show_ad', 'desc')
+            ->paginate(setting_value('visiosoft.module.advs::popular_ads_limit', setting_value('streams::per_page')));
+    }
+
+    public function getName($id){
+    	return $this->find($id)->name;
+    }
+
+    public function approveAds($adsIDs)
+    {
+        $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
+        $ads = $this->newQuery()->whereIn('advs_advs.id', $adsIDs)->update([
+            'status' => 'approved',
+            'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+            'publish_at' => date('Y-m-d H:i:s')
+        ]);
+
+        return $ads;
+    }
+
+    public function getUserAds($userID = null)
+    {
+        $userID = auth_id_if_null($userID);
+        return $this->newQuery()
+            ->where('advs_advs.created_by_id', $userID)
+            ->where('status', 'approved')
+            ->where('finish_at', '>', date('Y-m-d H:i:s'))
+            ->get();
     }
 
     public function myAdvsByUser()

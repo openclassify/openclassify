@@ -10,4 +10,6 @@ return [
     'reset_password' => 'पासवर्ड रीसेट',
     'email' => 'ईमेल',
     'phone' => 'फ़ोन',
+    'show_all' => 'सब दिखाओ',
+    'hide_all' => 'सभी छुपाएं',
 ];

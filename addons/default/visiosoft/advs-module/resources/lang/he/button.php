@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'עו"ד חדש',
+    'new_classified' => 'מסווג חדש',
     'new_category' => 'קטגוריה חדשה',
     'new_country' => 'מדינה חדשה',
     'new_city' => 'עיר חדשה',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'עדכן קטגוריה'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'אפשרות חדשה',
+	'export' => 'יְצוּא',
+    'new_productoption' => 'מוצר חדש',
+    'new_productoptions_value' => 'ערך אפשרות מוצר חדש',
+    'new_options_configuration' => 'תצורת אפשרות חדשה',
+    'new_option_configuration' => 'תצורת אפשרות חדשה',
+	'create_configurations' => 'צור תצורות',
+	'replicate' => 'העתק',
+	'fast_create' => 'ליצור מהיר',
+	'publish' => 'לְפַרְסֵם',
+	'import' => 'יְבוּא',
 ];

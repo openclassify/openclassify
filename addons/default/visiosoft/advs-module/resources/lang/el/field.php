@@ -20,7 +20,7 @@ return [
         'name' => 'Τιμή'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Τυπική τιμή'
     ],
     'date' => [
         'name' => 'Ημερομηνία'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Υποκατηγορία 6'
     ],
+    'cat8' => [
+        'name' => 'Υποκατηγορία 7'
+    ],
+    'cat9' => [
+        'name' => 'Υποκατηγορία 8'
+    ],
+    'cat10' => [
+        'name' => 'Υποκατηγορία 9'
+    ],
     'currency' => [
         'name' => 'Νόμισμα'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Παλαιότερα',
     'address_a_z' => 'Διεύθυνση (A έως Z)',
     'address_z_a' => 'Διεύθυνση (Ω έως Α)',
-    'categories' => 'Κατηγορίες',
+	'categories' => [
+		'name' => 'Κατηγορίες'
+	],
     'all_categories' => 'Όλες οι κατηγορίες',
     'location' => 'Τοποθεσία',
     'send_message' => 'Να στείλετε μήνυμα',
@@ -249,6 +260,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Τις τελευταίες 24 ώρες'
     ],
+    'in_the_last_day' => [
+        'name' => 'Τις τελευταίες 24 ώρες'
+    ],
     'in_the_last_week' => [
         'name' => 'Την τελευταία εβδομάδα'
     ],
@@ -267,8 +281,8 @@ return [
     "no_location" => "Δεν έχει επιλεγεί τοποθεσία.",
     "continue" => 'Να συνεχίσει',
     "gallery" => 'Εκθεσιακός χώρος',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Διαφημίσεις',
+    "were_found" => 'βρέθηκαν.',
 
     // Pending screen
     'pending_message_1' => 'Η διαφήμιση βρίσκεται στη διαδικασία έγκρισης',
@@ -296,5 +310,36 @@ return [
     'select_category_step_by_step' => 'Επιλέξτε Κατηγορία Βήμα προς Βήμα',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Επιλογές',
+    'category_selection' => 'Επιλογή κατηγορίας',
+    'listing_details' => 'Λεπτομέρειες καταχώρησης',
+    'preview' => 'Προεπισκόπηση',
+    'congratulations' => 'Συγχαρητήρια',
+    'ad_desc' => 'Περιγραφή διαφήμισης',
+    'upload_photos' => 'Ανέβασε φωτογραφίες',
+    'additional_fields' => 'Πρόσθετα πεδία',
+    'ad_location' => 'Τοποθεσία διαφήμισης',
+
+    'free' => 'Ελεύθερος',
+    'ad_date' => 'Ημερομηνία διαφήμισης',
+    'photo_video' => 'Φωτογραφία, βίντεο',
+    'and_above' => 'και παραπανω',
+    'and_below' => 'και παρακάτω',
+    'clear_all' => 'Τα καθαρίζω όλα',
+    'balances' => 'Υπόλοιπα',
+    'packages' => 'Πακέτα',
+    'dopings' => 'Ντόπινγκ',
+    'advs' => 'Advs',
+    'site' => 'Ιστοσελίδα',
+    'subscription' => 'Συνδρομή',
+	'created' => 'Δημιουργήθηκε',
+	'product_option' => [
+		'name' => 'Επιλογή προϊόντος'
+	],
+	'option_json' => [
+		'name' => 'Επιλογή'
+	],
+    'old_price' => [
+        'name' => 'Παλιά τιμή'
+    ],
 ];

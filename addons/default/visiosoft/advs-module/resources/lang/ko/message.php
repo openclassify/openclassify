@@ -22,5 +22,11 @@ return [
     'currency_converted' => '통화가 성공적으로 변환되었습니다.',
     'choose_user' => '사용자를 선택하십시오',
     'owner_updated_successfully' => '소유자가 성공적으로 업데이트되었습니다!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => '광고가 없습니다!',
+    'replicated_success' => '광고가 성공적으로 복제되었습니다!',
+    'ad_doesnt_exist' => "이 광고는 존재하지 않습니다!",
+    'select_location_error' => "지도에서 위치를 선택하세요!",
+    'this_ad_is_not_valid_anymore' => "이 광고는 더 이상 유효하지 않습니다!",
+    'approve_status_change' => "귀하의 광고 상태가 활성으로 설정되었습니다!",
+    'passive_status_change' => "귀하의 광고 상태가 수동으로 설정되었습니다!",
 ];

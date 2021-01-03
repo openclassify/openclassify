@@ -32,9 +32,15 @@ return [
         'name' => 'Regjistrohu Logo udhëzuese',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Regjistrohu Lidhja e njoftimit të faqes',
     ],
     'style' => [
         'name' => 'Style (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Nënkategoritë e faqes kryesore Kufiri',
+    ],
+	'default_country' => [
+		'name' => 'Faqja e regjistrimit, vendi i paracaktuar për telefon',
+	]
 ];

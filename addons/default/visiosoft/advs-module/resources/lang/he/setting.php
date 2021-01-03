@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'ברירת מחדל של מודעות GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'רוחב תמונה ממוזערת',
-    ],
-    'thumbnail_height' => [
-        'name' => 'גובה תמונה ממוזערת',
-    ],
-    'picture_width' => [
-        'name' => 'רוחב תמונה',
-    ],
-    'picture_height' => [
-        'name' => 'גובה תמונה',
-    ],
     'twitter' => [
         'name' => 'טוויטר',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'גוגל',
+    ],
+    'listing_page_image' => [
+        'name' => 'תמונת עמוד רישום',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'הסתר שדה מחיר רגיל',
+    ],
+    'hide_options_field' => [
+        'name' => 'הסתר שדה אפשרויות',
+    ],
+    'hide_village_field' => [
+        'name' => 'הסתר את שדה הכפר',
+    ],
+    'hide_configurations' => [
+        'name' => 'הסתר את לחצן התצורות',
+        'instructions' => 'הסתר את לחצן התצורות בדף תצוגה מקדימה של מודעות',
+    ],
+    'make_map_required' => [
+        'name' => 'הפוך את המפה לחובה',
+        'instructions' => 'דרוש מהמשתמש להציב סיכה על המפה בעת יצירת מודעה',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'הסתר מחיר סטנדרטי של רישום',
+    ],
+    'enabled_currencies' => [
+        'name' => 'מטבעות מופעלים',
+    ],
+    'google_statistic_code' => [
+        'name' => 'קוד סטטיסטי של גוגל',
+    ],
+    'register_email_field' => [
+        'name' => 'דרישת דוא"ל לרישום חבר',
+    ],
+    'market_place' => [
+        'name' => 'זירת מסחר',
+    ],
+	'price_area_hidden' => [
+		'name' => 'אזור מחיר מוסתר',
+	],
+    'hide_price_filter' => [
+        'name' => 'הסתר מסנן מחירים',
+    ],
+    'hide_date_filter' => [
+        'name' => 'הסתר מסנן תאריכים',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'הסתר מסנן תמונות',
+    ],
+    'hide_map_filter' => [
+        'name' => 'הסתר את מסנן המפות',
+    ],
+    'show_lang_url' => [
+        'name' => 'הצג פרמטר Lang עבור URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'מגבלת מודעות פופולריות',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'תמונה שינוי גודל backend',
+    ],
+    'full_image_width' => [
+        'name' => 'רוחב תמונה מלא',
+    ],
+    'full_image_height' => [
+        'name' => 'תמונה מלאה גובה',
+    ],
+    'medium_image_width' => [
+        'name' => 'רוחב תמונה בינוני',
+    ],
+    'medium_image_height' => [
+        'name' => 'גובה תמונה בינוני',
+    ],
+    'thumbnail_width' => [
+        'name' => 'רוחב תמונה ממוזערת',
+    ],
+    'thumbnail_height' => [
+        'name' => 'גובה תמונה ממוזערת',
+    ],
+    'add_canvas' => [
+        'name' => 'הוסף בד',
+    ],
+    'image_canvas_width' => [
+        'name' => 'רוחב בד תמונה',
+    ],
+    'image_canvas_height' => [
+        'name' => 'תמונה גובה בד',
     ],
     'watermark_type' => [
         'name' => 'סוג סימן מים',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'מיקום סימן מים',
     ],
-    'listing_page_image' => [
-        'name' => 'תמונת עמוד רישום',
+    'user_filter_limit' => [
+        'name' => 'מגבלת מסנן משתמשים',
+        'instructions' => 'בחלונית הניהול'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'הראה פירורי לחם בעת יצירת מודעה',
     ],
-    'enabled_currencies' => [
-        'name' => 'מטבעות מופעלים',
+    'show_ads_count' => [
+        'name' => 'ספירת מודעות הצגה',
+        'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
     ],
-    'google_statistic_code' => [
-        'name' => 'קוד סטטיסטי של גוגל',
+    'show_post_ad_agreement' => [
+        'name' => 'הצג הסכם מודעות לפרסום',
+        'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
     ],
-    'register_email_field' => [
-        'name' => 'דרישת דוא"ל לרישום חבר',
+    'override_text' => [
+        'name' => 'עקוף טקסט',
+        'instructions' => 'ערך ישן: ערך חדש'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'מדרגות צבע',
+        'instructions' => 'משנה את צבע הצעדים המתקדמים.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'צור צבע כפתור מודעה',
+        'instructions' => 'משנה את הכפתור שמופיע לאחר בחירת קטגוריית המודעות החדשה.'
     ],
 ];

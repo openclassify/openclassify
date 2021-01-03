@@ -40,7 +40,20 @@ return [
     'general' => 'כללי',
     'ads' => 'מודעות',
     'user' => 'משתמש',
+    'filter' => 'לְסַנֵן',
+    'create_ad' => 'צור מודעה',
     'options' => [
-        'title' => 'Options',
+        'title' => 'אפשרויות',
     ],
+    'ads_image' => 'תמונת מודעות',
+    'product_options' => [
+        'title' => 'אפשרויות',
+    ],
+    'productoptions_value' => [
+        'title' => 'ערך אפשרויות',
+    ],
+    'option_configuration' => [
+        'title' => 'תְצוּרָה',
+    ],
+    'translations' => 'תרגומים',
 ];

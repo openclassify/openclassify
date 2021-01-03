@@ -5,7 +5,7 @@ return [
         'name' => 'Fotoğraflar'
     ],
     'first_name' => [
-        'name' => 'İsim'
+        'name' => 'Ad'
     ],
     'last_name' => [
         'name' => 'Soyad'
@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Üyelik Tipi'
     ],
+    'birthday' => [
+        'name' => 'Doğum Günü'
+    ],
+	'facebook_address' => [
+		'name' => 'Facebook Adresi'
+	],
+	'google_address' => [
+		'name' => 'Google Adresi'
+	],
+    'education' => [
+        'name' => 'Eğitim'
+    ],
+    'state_of_education' => [
+        'name' => 'Eğitim Durumu'
+    ],
+    'profession' => [
+        'name' => 'Meslek'
+    ],
     'identification_number' => [
         'name' => 'Kimlik Numarası'
     ],
@@ -62,7 +80,7 @@ return [
         'name' => 'Adres Adı'
     ],
     'adress_first_name' => [
-        'name' => 'İsim'
+        'name' => 'Ad'
     ],
     'adress_last_name' => [
         'name' => 'Soyad'
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Kullanıcı'
     ],
+	'name' => [
+		'name' => 'İsim'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -362,6 +383,9 @@ return [
     'password' => [
         'name' => 'Şifre',
     ],
+    'old_password' => [
+        'name' => 'Eski şifre',
+    ],
     'new_password' => [
         'name' => 'Yeni Şifre',
     ],
@@ -427,19 +451,35 @@ return [
     'my_address' => 'Benim adresim',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Şirket Adı'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Vergi Dairesi'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Vergi numarası'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Benim profilim',
+    'edit_profile' => 'Profili Düzenle',
+    'edit_details' => 'Detayları düzenle',
+    'update' => 'Güncelleme',
+    'change_password' => 'Şifre değiştir',
+    'choose_an_option' => 'Seçim yapınız...',
+
+    // Register page
+    'accept_terms_label' => 'Koşulları kabul ediyorum.',
+    'accept_protection_law_label' => '<a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Kişisel Verilerin Korunması Kanunu hükümlerini</a> kabul ediyorum.',
+    'accept_privacy_terms_label' => '<a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">Gizlilik şartlarını</a> kabul ediyorum.',
+    'receive_sms_emails_label' => 'E-posta ve sms almak istiyorum.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Bireysel'
+    ],
+
+	'education_part' => [
+		'name' => 'Eğitim Durumu'
+	],
 ];

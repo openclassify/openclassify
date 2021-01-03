@@ -5,6 +5,10 @@ function showLoader() {
 function hideLoader() {
     $('.loading-cart').remove();
 }
+$("#catSelectionStepForm").on('click', 'input[type=submit]', function() {
+    $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
+    $(this).attr("clicked", "true");
+});
 
 $(document).ready(function () {
     $('select[name="cat1"], select[name="cat2"], select[name="cat3"], select[name="cat4"], select[name="cat5"], ' +
@@ -22,11 +26,22 @@ $(document).ready(function () {
             success: function (response) {
                 hideLoader();
                 if(response['title'] != undefined){
-                    response['success'] ? $('.cross-icon').hide() : $('.check-icon').hide();
+                    response['success'] ? $('.post-icon > svg:last-of-type').hide() : $('.post-icon > svg:first-of-type').hide();
 
                     let btn = '<button type="submit" class="btn-1">'+response['continueBtn']+'</button>';
                     if (response['link']) {
-                        btn = "<a class='link-unstyled btn-1 text-white' href='"+response['link']+"' role='button'>"+response['continueBtn']+"</a>";
+                        const res = response['link']
+                        if (Array.isArray(res)) {
+                            btn = '';
+                            res.forEach(function (link) {
+                                btn += `
+                                    <input type="submit" data-pack-id="${link.packID}" class="btn-1 mb-2 text-wrap"
+                                        value="${response['continueBtn']}` + ' ' + `(${link.price})" />
+                                `
+                            })
+                        } else {
+                            btn = "<a class='link-unstyled btn-1 text-white' href='"+res+"' role='button'>"+response['continueBtn']+"</a>";
+                        }
                     }
                     let content;
                     if (response['msg']) {
@@ -46,7 +61,7 @@ $(document).ready(function () {
                     stop();
                 } else {
                     response.forEach(function(options){
-                        $(catId).append("<option class='text-truncate pl-1 my-1' value="+options.id+">"+options.name+"</option>");
+                        $(catId).append("<li class='text-truncate pl-1 my-1' data-value="+options.id+">"+options.name+"</li>");
                     });
                     $('.focus-select').removeClass('focus-select');
                     // $(catId).animate({height: '14rem'}, 200);
@@ -78,18 +93,15 @@ $(document).ready(function () {
         }
     };
 
-    for (var i = 1; i <= 10; i++) {
-        (function(){
-            var ii = i;
-            $('#cat' + i).on('change', function (i, e) {
-                let selectedOption = $(this).find('option:selected');
-                let divId = selectedOption.val();
-                if (divId == 0) {
-                    filter.hideCats(ii + 1);
-                }
-                filter.hideCats(ii + 1);
-                filter.getCats("#cat" + (ii + 1), divId);
-            });
-        })();
-    }
+    $('.cat-select').on('click', 'li', function () {
+        $(this).addClass('selected').siblings().removeClass('selected')
+        let divId = $(this).data('value');
+        let catSelectId = $(this).closest('.cat-select').attr('id')
+        catSelectId = catSelectId.substring(3)
+
+        $(`input[name=cat${catSelectId}]`).val(divId);
+
+        filter.hideCats(Number(catSelectId) + 1);
+        filter.getCats("#cat" + (Number(catSelectId) + 1), divId);
+    });
 });

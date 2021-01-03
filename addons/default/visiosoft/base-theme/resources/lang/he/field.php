@@ -52,8 +52,8 @@ return [
     'mail' => 'שלח מייל',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'רישום הוראות',
+    'list' => 'רשימה',
+    'instruction_description' => 'תיאור הוראות',
+    'instruction_list' => 'רשימת הוראות',
 ];

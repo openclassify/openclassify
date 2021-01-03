@@ -9,7 +9,7 @@ return [
     ],
     'hide_zero_price' => [
         'name' => 'Sıfır ise Fiyatı Gizle',
-        'instructions' => 'Reklam fiyatı 0 ise fiyatı gizle',
+        'instructions' => 'İlan fiyatı 0 ise fiyatı gizle',
     ],
     'estimated_pending_time' => [
         'name' => 'Tahmini Bekleme Süresi',
@@ -51,7 +51,7 @@ return [
         'name' => 'Son Eklenenler Limiti',
     ],
     'site_address' => [
-        'name' => 'Site adresi',
+        'name' => 'Site Adresi',
         'warning'      => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Varsayılan İlan GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Küçük Resim Genişliği',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Küçük Resim Yüksekliği',
-    ],
-    'picture_width' => [
-        'name' => 'Resim Genişliği',
-    ],
-    'picture_height' => [
-        'name' => 'Resim Yüksekliği',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Sayfa Resmi Listeleme',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Standart Fiyat Alanını Gizle',
+    ],
+    'hide_options_field' => [
+        'name' => 'Seçenekler Alanını Gizle',
+    ],
+    'hide_village_field' => [
+        'name' => 'Köy Alanını Gizle',
+    ],
+    'hide_configurations' => [
+        'name' => 'Yapılandırmalar Düğmesini Gizle',
+        'instructions' => 'İlan Önizleme Sayfasında Yapılandırma butonunu Gizle',
+    ],
+    'make_map_required' => [
+        'name' => 'Haritayı Gerekli Yap',
+        'instructions' => 'Ürün/İlan oluştururken kullanıcının haritaya nokta koymasını zorunlu kılın',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Liste Standart Fiyatını Gizle',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Etkin Para Birimleri',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google İstatistik Kodu',
+    ],
+    'register_email_field' => [
+        'name' => 'Üye Kayıt E-posta Zorunluluğu',
+    ],
+    'market_place' => [
+        'name' => 'Pazar Yeri',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Fiyat Alanı Gizli',
+	],
+    'hide_price_filter' => [
+        'name' => 'Fiyat Filtresini Gizle',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Tarih Filtresini Gizle',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Fotoğraf Filtresini Gizle',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Harita Filtresini Gizle',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL için Dil Parametresini Göster',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Popüler İlan Limiti',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Görüntüyü Yeniden Boyutlandır Arka Uç',
+    ],
+    'full_image_width' => [
+        'name' => 'Tam Resim Genişliği',
+    ],
+    'full_image_height' => [
+        'name' => 'Tam Resim Yüksekliği',
+    ],
+    'medium_image_width' => [
+        'name' => 'Orta Resim Genişliği',
+    ],
+    'medium_image_height' => [
+        'name' => 'Orta Resim Yüksekliği',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Küçük Resim Genişliği',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Küçük Resim Yüksekliği',
+    ],
+    'add_canvas' => [
+        'name' => 'Tuval Ekle',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Görüntü Tuvali Genişliği',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Resim Tuval Yüksekliği',
     ],
     'watermark_type' => [
         'name' => 'Filigran Türü',
@@ -115,22 +192,35 @@ return [
     'watermark_position' => [
         'name' => 'Filigran Konumu',
     ],
-    'listing_page_image' => [
-        'name' => 'Sayfa Resmi Listeleme',
+    'user_filter_limit' => [
+        'name' => 'Kullanıcı Filtresi Sınırı',
+        'instructions' => 'Yönetici panelinde'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'İlan/ürün eklerken Oluştururken harita Göster',
     ],
-    'enabled_currencies' => [
-        'name' => 'Etkin Para Birimleri',
+    'show_ads_count' => [
+        'name' => 'İlan Sayısını Göster',
+        'instructions' => 'Soldaki kategori listesinde ilan sayısını göster',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google İstatistik Kodu',
+    'show_post_ad_agreement' => [
+        'name' => 'İlan Sonrası Sözleşmesini Göster',
+        'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
     ],
-    'register_email_field' => [
-        'name' => 'Üye Kayıt E-posta Zorunluluğu',
+    'override_text' => [
+        'name' => 'Metni Geçersiz Kıl',
+        'instructions' => 'Eski Değer: Yeni Değer'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Adım Rengi',
+        'instructions' => 'Aşamalı adımların rengini değiştirir.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Reklam Düğmesi Rengi Oluştur',
+        'instructions' => 'Yeni reklam kategorisi seçimi bittiğinde görünen düğmeyi değiştirir.'
+    ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Tarayıcı Diline Geç',
+        'instructions' => 'Seçili aktif bir dil olmadığında tarayıcı dilini aktif dil olarak seçmenize izin verir'
     ],
 ];

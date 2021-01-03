@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'Een ogenblik geduld. Subcategorieën verwijderen',
     'category_selection' => 'Categorie selectie',
+    'go_to_parent' => 'Ga naar de ouder',
 ];

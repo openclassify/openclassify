@@ -32,9 +32,15 @@ return [
         'name' => 'Înregistrare Logo-ul Instrucțiunilor Pagina',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Înregistrare Link Alertă pagină',
     ],
     'style' => [
         'name' => 'Style (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Limita de subcategorii pentru pagina principală',
+    ],
+	'default_country' => [
+		'name' => 'Pagina de înregistrare, țara implicită pentru telefon',
+	]
 ];

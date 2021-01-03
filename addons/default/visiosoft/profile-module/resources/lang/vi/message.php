@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Không có địa chỉ hoặc không được phép xem.',
     'empty_password_sms_message' => 'Do vấn đề bảo mật, chúng tôi đã thay đổi mật khẩu của bạn! Mật khẩu mới của bạn là:',
     'required_all' => "Tất cả các lĩnh vực là bắt buộc!",
+    'can_not_remove_filled_fields' => "Bạn không thể loại bỏ các trường đã điền!",
+    'wrong_password' => "Mật khẩu bạn đã nhập không chính xác!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mail, số điện thoại không chính xác!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Bạn có muốn đóng tài khoản của bạn? Hoạt động này không thể được hoàn tác.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Đã cập nhật email!',
+    'update_email_mail_message' => 'Email của bạn đã được cập nhật!',
+
+    // Register
+    'recaptcha_field_is_required' => 'trường reCaptcha là bắt buộc.',
+    'failed_to_validate_captcha' => 'Không xác thực được hình ảnh xác thực.',
 ];

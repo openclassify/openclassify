@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'پیش فرض Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'فیلتر مکان را مخفی کنید',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'کشور پیش فرض برای ثبت نام قسمت تلفن'
+	],
+    'sorting_column' => [
+        'name' => 'مرتب سازی ستون',
+    ],
+    'sorting_type' => [
+        'name' => 'نوع مرتب سازی',
+    ],
 ];

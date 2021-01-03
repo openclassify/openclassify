@@ -20,6 +20,15 @@ return [
         'name' => 'مقادیر Cf',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'گزینه ها',
+    ],
+    'product_options' => [
+        'name' => 'گزینه های محصول',
+    ],
+    'productoptions_value' => [
+        'name' => 'مقدار گزینه ها',
+    ],
+    'option_configuration' => [
+        'name' => 'پیکربندی',
     ],
 ];

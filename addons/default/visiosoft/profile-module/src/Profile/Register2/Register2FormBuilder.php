@@ -1,10 +1,8 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Register2;
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
-use Visiosoft\ProfileModule\Profile\Register2\Command\AssociateActivationRoles;
 use Visiosoft\ProfileModule\Profile\Register2\Command\SetOptions;
 use Anomaly\UsersModule\User\UserModel;
-use Visiosoft\ProfileModule\Profile\Validation\ValidateRegister;
 
 /**
  * Class RegisterFormBuilder
@@ -33,44 +31,6 @@ class Register2FormBuilder extends FormBuilder
     protected $model = UserModel::class;
 
     /**
-     * The form fields.
-     *
-     * @var array
-     */
-    protected $fields = [
-        'username' => [
-            'required' => true,
-        ],
-        'first_name' => [
-            'instructions' => false,
-            'required' => true,
-        ],
-        'last_name' => [
-            'instructions' => false,
-            'required' => true,
-        ],
-        'phone' => [
-            'type' => 'anomaly.field_type.text',
-            'required' => true,
-            'rules' => [
-                'valid_register',
-            ],
-            'validators' => [
-                'valid_register' => [
-                    'message' => false,
-                    'handler' => ValidateRegister::class,
-                ],
-            ],
-        ],
-        'email' => [
-            'instructions' => false,
-        ],
-        'password' => [
-            'instructions' => false,
-        ],
-    ];
-
-    /**
      * The form actions.
      *
      * @var array
@@ -93,14 +53,6 @@ class Register2FormBuilder extends FormBuilder
         'confirm_message' => 'anomaly.module.users::message.pending_email_activation',
         'activated_message' => 'anomaly.module.users::message.account_activated',
     ];
-
-    /**
-     * Fired after the form is saved.
-     */
-    public function onSaved()
-    {
-        $this->dispatch(new AssociateActivationRoles($this));
-    }
 
     /**
      * Get the roles.

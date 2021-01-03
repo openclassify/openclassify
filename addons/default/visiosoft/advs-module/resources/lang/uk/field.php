@@ -20,7 +20,7 @@ return [
         'name' => 'Ціна'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Стандартна ціна'
     ],
     'date' => [
         'name' => 'Дата'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Підкатегорія 6'
     ],
+    'cat8' => [
+        'name' => 'Підкатегорія 7'
+    ],
+    'cat9' => [
+        'name' => 'Підкатегорія 8'
+    ],
+    'cat10' => [
+        'name' => 'Підкатегорія 9'
+    ],
     'currency' => [
         'name' => 'Валюта'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Найдавніший',
     'address_a_z' => 'Адреса (від A до Z)',
     'address_z_a' => 'Адреса (від Z до A)',
-    'categories' => 'Категорії',
+	'categories' => [
+		'name' => 'Категорії'
+	],
     'all_categories' => 'всі категорії',
     'location' => 'Розташування',
     'send_message' => 'Відправити повідомлення',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'За останні 24 години'
     ],
+    'in_the_last_day' => [
+        'name' => 'В останні 24 години'
+    ],
     'in_the_last_week' => [
         'name' => 'В останній тиждень'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "Місце не вибрано.",
     "continue" => 'Продовжуйте',
     "gallery" => 'Галерея',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Оголошення',
+    "were_found" => 'були знайдені.',
 
     // Pending screen
     'pending_message_1' => 'Оголошення знаходиться в процесі затвердження',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'Виберіть категорію крок за кроком',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'Параметри',
+    'category_selection' => 'Вибір категорії',
+    'listing_details' => 'Деталі переліку',
+    'preview' => 'Попередній перегляд',
+    'congratulations' => 'Вітаю',
+    'ad_desc' => 'Опис оголошення',
+    'upload_photos' => 'Завантажте фотографії',
+    'additional_fields' => 'Додаткові поля',
+    'ad_location' => 'Місце розташування оголошення',
+
+    'free' => 'Безкоштовно',
+    'ad_date' => 'Дата оголошення',
+    'photo_video' => 'Фото, Відео',
+    'and_above' => 'і вище',
+    'and_below' => 'і нижче',
+    'clear_all' => 'Очистити все',
+    'balances' => 'Баланси',
+    'packages' => 'Пакети',
+    'dopings' => 'Допінг',
+    'advs' => 'Advs',
+    'site' => 'Сайт',
+    'subscription' => 'Передплата',
+	'created' => 'Створено',
+	'product_option' => [
+		'name' => 'Варіант продукту'
+	],
+	'option_json' => [
+		'name' => 'Варіант'
+	],
+    'old_price' => [
+        'name' => 'Стара ціна'
+    ],
 ];

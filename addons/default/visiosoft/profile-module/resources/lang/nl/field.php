@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Type register'
     ],
+    'birthday' => [
+        'name' => 'Verjaardag'
+    ],
+	'facebook_address' => [
+		'name' => 'Facebook-adres'
+	],
+	'google_address' => [
+		'name' => 'Google-adres'
+	],
+    'education' => [
+        'name' => 'Opleiding'
+    ],
+    'state_of_education' => [
+        'name' => 'Staat van onderwijs'
+    ],
+    'profession' => [
+        'name' => 'Beroep'
+    ],
     'identification_number' => [
         'name' => 'Identificatie Nummer'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Gebruiker'
     ],
+	'name' => [
+		'name' => 'Naam'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -365,6 +386,9 @@ return [
     'password' => [
         'name' => 'Wachtwoord',
     ],
+    'old_password' => [
+        'name' => 'Oud Wachtwoord',
+    ],
     'new_password' => [
         'name' => 'Nieuw paswoord',
     ],
@@ -418,7 +442,7 @@ return [
         'name' => 'individueel',
     ],
     'corporate' => [
-        'name' => 'zakelijk',
+        'name' => 'Zakelijk',
     ],
 
     'details' => [
@@ -430,19 +454,35 @@ return [
     'my_address' => 'Mijn adres',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Bedrijfsnaam'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Belastingkantoor'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Btw nummer'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Mijn profiel',
+    'edit_profile' => 'Bewerk profiel',
+    'edit_details' => 'Details bewerken',
+    'update' => 'Bijwerken',
+    'change_password' => 'Wachtwoord wijzigen',
+    'choose_an_option' => 'Kies een optie...',
+
+    // Register page
+    'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
+    'accept_protection_law_label' => '<html>Ik accepteer de voorwaarden van de wet op' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Bescherming van persoonlijke gegevens.</a>',
+    'accept_privacy_terms_label' => '<html>ik aanvaard' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> privacyvoorwaarden</a>.',
+    'receive_sms_emails_label' => 'Ik wil e-mail en sms ontvangen.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Persoonlijk'
+    ],
+
+	'education_part' => [
+		'name' => 'Staat van onderwijs'
+	],
 ];

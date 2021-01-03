@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Default Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Ascundeți filtrul de locație',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Țara implicită pentru câmpul de telefon al înregistrării'
+	],
+    'sorting_column' => [
+        'name' => 'Sortarea coloanei',
+    ],
+    'sorting_type' => [
+        'name' => 'Tipul de sortare',
+    ],
 ];

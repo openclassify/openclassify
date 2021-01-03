@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'המרת מטבע בהצלחה.',
     'choose_user' => 'בחר משתמש',
     'owner_updated_successfully' => 'הבעלים עודכן בהצלחה!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'לא נמצאה מודעה!',
+    'replicated_success' => 'המודעה שוכפלה בהצלחה!',
+    'ad_doesnt_exist' => "מודעה זו אינה קיימת!",
+    'select_location_error' => "אנא בחר מיקום במפה!",
+    'this_ad_is_not_valid_anymore' => "מודעה זו אינה תקפה יותר!",
+    'approve_status_change' => "סטטוס המודעה שלך הוגדר לפעיל!",
+    'passive_status_change' => "סטטוס המודעה שלך הוגדר כפסיבי!",
 ];

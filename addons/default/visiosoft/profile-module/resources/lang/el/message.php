@@ -29,6 +29,8 @@ return [
     'ajax_address_error' => 'Καμία διεύθυνση ή μη εξουσιοδοτημένη προβολή.',
     'empty_password_sms_message' => 'Λόγω προβλημάτων ασφαλείας, αλλάξαμε τον κωδικό πρόσβασής σας! Ο νέος κωδικός πρόσβασής σας είναι:',
     'required_all' => "Απαιτείται όλο το πεδίο!",
+    'can_not_remove_filled_fields' => "Δεν μπορείτε να καταργήσετε τα γεμάτα πεδία!",
+    'wrong_password' => "Ο κωδικός πρόσβασης που εισαγάγατε δεν είναι σωστός!",
 
     // Forgot Password
     'email_phone_not_found' => 'Το E-mail, ο αριθμός τηλεφώνου δεν είναι σωστός!',
@@ -36,6 +38,10 @@ return [
     'disable_account' => 'Θέλετε να κλείσετε τον λογαριασμό σας; Δεν είναι δυνατή η αναίρεση αυτής της λειτουργίας.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Ενημερώθηκε το email!',
+    'update_email_mail_message' => 'Το email σας ενημερώθηκε!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Απαιτείται πεδίο reCaptcha.',
+    'failed_to_validate_captcha' => 'Αποτυχία επικύρωσης captcha.',
 ];

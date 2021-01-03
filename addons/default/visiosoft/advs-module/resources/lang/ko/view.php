@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'unfinished' => 'Unfinished',
+    'unfinished' => '다듬지 않은',
 ];

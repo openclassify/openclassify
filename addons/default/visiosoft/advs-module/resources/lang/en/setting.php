@@ -79,21 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Default Ad GET',
     ],
-    'add_canvas' => [
-        'name' => 'Add Canvas',
-    ],
-    'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
-    ],
-    'picture_width' => [
-        'name' => 'Picture Width',
-    ],
-    'picture_height' => [
-        'name' => 'Picture Height',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -106,23 +91,28 @@ return [
     'google' => [
         'name' => 'Google',
     ],
-    'watermark_type' => [
-        'name' => 'Watermark Type',
-    ],
-    'watermark_text' => [
-        'name' => 'Watermark Text',
-    ],
-    'watermark_image' => [
-        'name' => 'Watermark Image',
-    ],
-    'watermark_position' => [
-        'name' => 'Watermark Position',
-    ],
     'listing_page_image' => [
         'name' => 'Listing Page Image',
     ],
     'hide_standard_price_field' => [
         'name' => 'Hide Standard Price Field',
+    ],
+    'hide_options_field' => [
+        'name' => 'Hide Options Field',
+    ],
+    'hide_village_field' => [
+        'name' => 'Hide Village Field',
+    ],
+    'hide_configurations' => [
+        'name' => 'Hide the Configurations Button',
+        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+    ],
+    'make_map_required' => [
+        'name' => 'Make Map Required',
+        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Hide Listing Standard Price',
     ],
     'enabled_currencies' => [
         'name' => 'Enabled Currencies',
@@ -136,7 +126,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-
+	'price_area_hidden' => [
+		'name' => 'Price Area Hidden',
+	],
     'hide_price_filter' => [
         'name' => 'Hide Price Filter',
     ],
@@ -151,5 +143,84 @@ return [
     ],
     'show_lang_url' => [
         'name' => 'Show Lang Parameter For URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Popular Ads Limit',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Full Image Width',
+    ],
+    'full_image_height' => [
+        'name' => 'Full Image Height',
+    ],
+    'medium_image_width' => [
+        'name' => 'Medium Image Width',
+    ],
+    'medium_image_height' => [
+        'name' => 'Medium Image Height',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Thumbnail Width',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Thumbnail Height',
+    ],
+    'add_canvas' => [
+        'name' => 'Add Canvas',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Image Canvas Width',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Image Canvas Height',
+    ],
+    'watermark_type' => [
+        'name' => 'Watermark Type',
+    ],
+    'watermark_text' => [
+        'name' => 'Watermark Text',
+    ],
+    'watermark_image' => [
+        'name' => 'Watermark Image',
+    ],
+    'watermark_position' => [
+        'name' => 'Watermark Position',
+    ],
+    'user_filter_limit' => [
+        'name' => 'User Filter Limit',
+        'instructions' => 'In the admin panel'
+    ],
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Show Breadcrumb When Creating an Ad',
+    ],
+    'show_ads_count' => [
+        'name' => 'Show Ads Count',
+        'instructions' => 'Show ads count on the left categories list',
+    ],
+    'show_post_ad_agreement' => [
+        'name' => 'Show Post Ad Agreement',
+        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+    ],
+    'override_text' => [
+        'name' => 'Override Text',
+        'instructions' => 'Old Value:New Value'
+    ],
+    'steps_color' => [
+        'name' => 'Steps Color',
+        'instructions' => 'Changes the progressive steps color.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Create Ad Button Color',
+        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+    ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
     ],
 ];

@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\LocationModule\District;
 
+use Anomaly\Streams\Platform\Model\Location\LocationDistrictsEntryTranslationsModel;
 use Visiosoft\LocationModule\District\Contract\DistrictRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 
@@ -14,12 +15,35 @@ class DistrictRepository extends EntryRepository implements DistrictRepositoryIn
     protected $model;
 
     /**
+     * @var LocationDistrictsEntryTranslationsModel
+     */
+    private $districtsEntryTranslationsModel;
+
+    /**
      * Create a new DistrictRepository instance.
      *
      * @param DistrictModel $model
      */
-    public function __construct(DistrictModel $model)
+    public function __construct(
+        DistrictModel $model,
+        LocationDistrictsEntryTranslationsModel $districtsEntryTranslationsModel
+    )
     {
         $this->model = $model;
+        $this->districtsEntryTranslationsModel = $districtsEntryTranslationsModel;
+    }
+
+    public function getByEntryIDsAndOrderByTransCol($entryIDs, $orderBy, $direction = 'asc')
+    {
+        return $this->districtsEntryTranslationsModel->newQuery()
+            ->select('entry_id as id', 'name')
+            ->whereIn('locale', [
+                Request()->session()->get('_locale'),
+                setting_value('streams::default_locale'),
+                'en'
+            ])
+            ->whereIn('entry_id', $entryIDs)
+            ->orderBy($orderBy, $direction)
+            ->get();
     }
 }

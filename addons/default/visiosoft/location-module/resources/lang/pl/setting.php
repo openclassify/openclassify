@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Domyślnie Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Ukryj filtr lokalizacji',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Domyślny kraj dla pola numeru rejestracji'
+	],
+    'sorting_column' => [
+        'name' => 'Kolumna sortowania',
+    ],
+    'sorting_type' => [
+        'name' => 'Typ sortowania',
+    ],
 ];

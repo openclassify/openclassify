@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Defolt Elan GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'Eskiz eni',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Eskiz hündürlüyü',
-    ],
-    'picture_width' => [
-        'name' => 'Şəkil genişliyi',
-    ],
-    'picture_height' => [
-        'name' => 'Şəkil Boyu',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Səhifənin görüntüləməsi',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Standart qiymət sahəsini gizlət',
+    ],
+    'hide_options_field' => [
+        'name' => 'Seçimlər sahəsini gizlədin',
+    ],
+    'hide_village_field' => [
+        'name' => 'Kənd sahəsini gizlədin',
+    ],
+    'hide_configurations' => [
+        'name' => 'Konfiqurasiyalar düyməsini gizlədin',
+        'instructions' => 'Reklam Önizləmə Səhifəsində Konfiqurasiyalar Düyməsini gizlədin',
+    ],
+    'make_map_required' => [
+        'name' => 'Xəritə tələb olun',
+        'instructions' => 'Reklam yaratarkən istifadəçidən xəritədə bir sancaq yerləşdirməsini tələb edin',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Listing Standart Qiymətini gizlədin',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Aktiv valyutalar',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google Statistik Kod',
+    ],
+    'register_email_field' => [
+        'name' => 'İstifadəçi Qeyd E-poçtu tələbi',
+    ],
+    'market_place' => [
+        'name' => 'Bazar yeri',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Qiymət sahəsi gizlidir',
+	],
+    'hide_price_filter' => [
+        'name' => 'Qiymət filtrini gizlət',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Tarix Filtrini Gizlət',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Şəkil Filtrini Gizlət',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Xəritə filtrini gizlət',
+    ],
+    'show_lang_url' => [
+        'name' => 'URL üçün Lang Parametrini Göstərin',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Populyar elanlar limiti',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Image Resize Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'Tam şəkil genişliyi',
+    ],
+    'full_image_height' => [
+        'name' => 'Tam şəkil boyu',
+    ],
+    'medium_image_width' => [
+        'name' => 'Orta şəkil genişliyi',
+    ],
+    'medium_image_height' => [
+        'name' => 'Orta şəkil boyu',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Eskiz eni',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Eskiz hündürlüyü',
+    ],
+    'add_canvas' => [
+        'name' => 'Kətan əlavə edin',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Şəkil kətan eni',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Şəkil kətan hündürlüyü',
     ],
     'watermark_type' => [
         'name' => 'Su nişanının növü',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Su nişanının mövqeyi',
     ],
-    'listing_page_image' => [
-        'name' => 'Səhifənin görüntüləməsi',
+    'user_filter_limit' => [
+        'name' => 'İstifadəçi Filter Limiti',
+        'instructions' => 'İdarə panelində'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Reklam yaratarkən çörək parçasını göstərin',
     ],
-    'enabled_currencies' => [
-        'name' => 'Aktiv valyutalar',
+    'show_ads_count' => [
+        'name' => 'Reklam sayını göstərin',
+        'instructions' => 'Sol kateqoriyalar siyahısında reklamların sayını göstərin',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google Statistik Kod',
+    'show_post_ad_agreement' => [
+        'name' => 'Post Elan Müqaviləsini Göstərin',
+        'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
     ],
-    'register_email_field' => [
-        'name' => 'İstifadəçi Qeyd E-poçtu tələbi',
+    'override_text' => [
+        'name' => 'Mətni ləğv edin',
+        'instructions' => 'Köhnə dəyər: Yeni dəyər'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Adımlar Rəng',
+        'instructions' => 'Proqressiv addımların rəngini dəyişdirir.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Reklam Düyməsini Rəng Yaradın',
+        'instructions' => 'Yeni reklam kateqoriyası seçimi bitdikdə görünən düyməni dəyişdirir.'
     ],
 ];

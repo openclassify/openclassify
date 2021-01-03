@@ -9,13 +9,6 @@ use Visiosoft\LocationModule\Village\VillageModel;
 
 class NeighborhoodsController extends AdminController
 {
-
-    /**
-     * Display an index of existing entries.
-     *
-     * @param NeighborhoodTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function index(NeighborhoodTableBuilder $table, Request $request)
     {
         if($this->request->action == "delete") {
@@ -39,35 +32,13 @@ class NeighborhoodsController extends AdminController
         return $table->render();
     }
 
-    /**
-     * Create a new entry.
-     *
-     * @param NeighborhoodFormBuilder $form
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
-    public function create(NeighborhoodFormBuilder $form,Request $request)
+    public function create(NeighborhoodFormBuilder $form)
     {
-//        dd($request);
-        //        return $form->render();
-        if($this->request->action == "save") {
-            if ($form->hasFormErrors()) {
-                return back();
-            }
-            $form->make();
+        $form->setDistrict($this->request->get('neighborhoods'));
 
-            return $this->redirect->to('/admin/location/neighborhoods?district='.$request->parent_district_id);
-        }
-
-        return $this->view->make('visiosoft.module.location::location/admin-sub-location');
+        return $form->render();
     }
 
-    /**
-     * Edit an existing entry.
-     *
-     * @param NeighborhoodFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function edit(NeighborhoodFormBuilder $form, $id)
     {
         return $form->render($id);

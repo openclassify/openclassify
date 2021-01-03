@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'कोई पता या देखने के लिए अधिकृत नहीं है।',
     'empty_password_sms_message' => 'सुरक्षा समस्याओं के कारण, हमने आपका पासवर्ड बदल दिया है! आपका नया पासवर्ड है:',
     'required_all' => "सभी फ़ील्ड आवश्यक है!",
+    'can_not_remove_filled_fields' => "आप भरे हुए खेतों को नहीं हटा सकते हैं!",
+    'wrong_password' => "आपके द्वारा दर्ज किया गया पासवर्ड सही नहीं है!",
 
     // Forgot Password
     'email_phone_not_found' => 'ई-मेल, फोन नंबर सही नहीं है!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'क्या आप अपना खाता बंद करना चाहते हैं? यह ऑपरेशन पूर्ववत नहीं किया जा सकता है।',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'ईमेल अपडेट किया गया!',
+    'update_email_mail_message' => 'आपका ईमेल अपडेट किया गया है!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha फ़ील्ड की आवश्यकता है।',
+    'failed_to_validate_captcha' => 'कैप्चा को मान्य करने में विफल।',
 ];

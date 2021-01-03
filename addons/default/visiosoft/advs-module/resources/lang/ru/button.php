@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Новый адв',
+    'new_classified' => 'Новое объявление',
     'new_category' => 'Новая категория',
     'new_country' => 'Новая Страна',
     'new_city' => 'Новый город',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Обновить категорию'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Новый вариант',
+	'export' => 'Экспорт',
+    'new_productoption' => 'Новый вариант продукта',
+    'new_productoptions_value' => 'Стоимость опции нового продукта',
+    'new_options_configuration' => 'Новая конфигурация опций',
+    'new_option_configuration' => 'Новая конфигурация опций',
+	'create_configurations' => 'Создать конфигурации',
+	'replicate' => 'Тиражировать',
+	'fast_create' => 'Быстрое создание',
+	'publish' => 'Публиковать',
+	'import' => 'Импортировать',
 ];

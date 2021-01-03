@@ -31,6 +31,8 @@ return [
     'ajax_address_error' => 'Нет адреса или не авторизован для просмотра.',
     'empty_password_sms_message' => 'Из-за проблем безопасности мы изменили ваш пароль! Ваш новый пароль:',
     'required_all' => "Все поля обязательны для заполнения!",
+    'can_not_remove_filled_fields' => "Заполненные поля удалить нельзя!",
+    'wrong_password' => "Вы ввели неверный пароль!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-mail, номер телефона неверен!',
@@ -38,6 +40,10 @@ return [
     'disable_account' => 'Вы хотите закрыть свой аккаунт? Эта операция не может быть отменена.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Электронная почта обновлена!',
+    'update_email_mail_message' => 'Ваш адрес электронной почты обновлен!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Поле reCaptcha обязательно.',
+    'failed_to_validate_captcha' => 'Не удалось проверить капчу.',
 ];

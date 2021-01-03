@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'No address or not authorized to view.',
     'empty_password_sms_message' => 'Due to security issues, we changed your password! Your new password is:',
     'required_all' => "All Field is Required!",
+    'can_not_remove_filled_fields' => "You can not remove filled fields!",
+    'wrong_password' => "The password you entered is not correct!",
 
     // Forgot Password
     'email_phone_not_found' => 'The E-mail, Phone Number is not correct!',
@@ -37,4 +39,8 @@ return [
     // Mail
     'update_email_mail_subject' => 'Email Updated!',
     'update_email_mail_message' => 'Your Email Has Been Updated!',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha field is required.',
+    'failed_to_validate_captcha' => 'Failed to validate captcha.',
 ];

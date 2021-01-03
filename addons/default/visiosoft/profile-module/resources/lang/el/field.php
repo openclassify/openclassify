@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'Τύπος μητρώου'
     ],
+    'birthday' => [
+        'name' => 'Γενέθλια'
+    ],
+	'facebook_address' => [
+		'name' => 'Διεύθυνση Facebook'
+	],
+	'google_address' => [
+		'name' => 'Διεύθυνση Google'
+	],
+    'education' => [
+        'name' => 'Εκπαίδευση'
+    ],
+    'state_of_education' => [
+        'name' => 'Κατάσταση εκπαίδευσης'
+    ],
+    'profession' => [
+        'name' => 'Επάγγελμα'
+    ],
     'identification_number' => [
         'name' => 'Αριθμός αναγνώρισης'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'Χρήστης'
     ],
+	'name' => [
+		'name' => 'Ονομα'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -365,6 +386,9 @@ return [
     'password' => [
         'name' => 'Κωδικός πρόσβασης',
     ],
+    'old_password' => [
+        'name' => 'ΠΑΛΙΟΣ ΚΩΔΙΚΟΣ',
+    ],
     'new_password' => [
         'name' => 'Νέος κωδικός πρόσβασης',
     ],
@@ -418,7 +442,7 @@ return [
         'name' => 'άτομο',
     ],
     'corporate' => [
-        'name' => 'εταιρικός',
+        'name' => 'Εταιρικός',
     ],
 
     'details' => [
@@ -430,19 +454,35 @@ return [
     'my_address' => 'Η διεύθυνσή μου',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Όνομα εταιρείας'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Εφορία'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'ΑΦΜ'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'Το ΠΡΟΦΙΛ μου',
+    'edit_profile' => 'Επεξεργασία προφίλ',
+    'edit_details' => 'Επεξεργασία λεπτομερειών',
+    'update' => 'Εκσυγχρονίζω',
+    'change_password' => 'Άλλαξε κωδικό',
+    'choose_an_option' => 'Διάλεξε μια επιλογή...',
+
+    // Register page
+    'accept_terms_label' => 'Αποδέχομαι τους όρους.',
+    'accept_protection_law_label' => '<html>Αποδέχομαι τους όρους του Νόμου για' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Προστασία προσωπικών δεδομένων.</a>',
+    'accept_privacy_terms_label' => '<html>Δέχομαι' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> Όροι απορρήτου</a>.',
+    'receive_sms_emails_label' => 'Θέλω να λαμβάνω e-mail & sms.',
+
+    // Register Type
+    'personal' => [
+        'name' => 'Προσωπικός'
+    ],
+
+	'education_part' => [
+		'name' => 'Κατάσταση εκπαίδευσης'
+	],
 ];

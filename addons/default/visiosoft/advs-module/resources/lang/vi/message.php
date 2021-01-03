@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Chuyển đổi tiền tệ thành công.',
     'choose_user' => 'Chọn người dùng',
     'owner_updated_successfully' => 'Chủ sở hữu đã được cập nhật thành công!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Không tìm thấy quảng cáo!',
+    'replicated_success' => 'Quảng cáo đã được nhân rộng thành công!',
+    'ad_doesnt_exist' => "Quảng cáo này không tồn tại!",
+    'select_location_error' => "Vui lòng chọn một vị trí trên bản đồ!",
+    'this_ad_is_not_valid_anymore' => "Quảng cáo này không hợp lệ nữa!",
+    'approve_status_change' => "Trạng thái Quảng cáo của Bạn Đã được Đặt thành Hoạt động!",
+    'passive_status_change' => "Trạng thái quảng cáo của bạn đã được đặt thành bị động!",
 ];

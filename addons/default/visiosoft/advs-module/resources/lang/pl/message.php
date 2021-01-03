@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Pomyślnie przeliczono walutę.',
     'choose_user' => 'Wybierz użytkownika',
     'owner_updated_successfully' => 'Właściciel został zaktualizowany pomyślnie!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Nie znaleziono reklamy!',
+    'replicated_success' => 'Reklama została pomyślnie zreplikowana!',
+    'ad_doesnt_exist' => "Ta reklama nie istnieje!",
+    'select_location_error' => "Wybierz lokalizację na mapie!",
+    'this_ad_is_not_valid_anymore' => "Ta reklama jest już nieważna!",
+    'approve_status_change' => "Stan Twojej reklamy został ustawiony jako Aktywny!",
+    'passive_status_change' => "Stan Twojej reklamy został ustawiony na pasywny!",
 ];

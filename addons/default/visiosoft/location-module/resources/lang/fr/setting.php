@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Lat par défaut',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Masquer le filtre de localisation',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Pays par défaut pour le champ de téléphone d\'enregistrement'
+	],
+    'sorting_column' => [
+        'name' => 'Colonne de tri',
+    ],
+    'sorting_type' => [
+        'name' => 'Type de tri',
+    ],
 ];

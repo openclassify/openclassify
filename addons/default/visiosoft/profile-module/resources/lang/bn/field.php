@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => 'রেজিস্টার প্রকার'
     ],
+    'birthday' => [
+        'name' => 'জন্মদিন'
+    ],
+	'facebook_address' => [
+		'name' => 'ফেসবুক ঠিকানা'
+	],
+	'google_address' => [
+		'name' => 'গুগল ঠিকানা'
+	],
+    'education' => [
+        'name' => 'শিক্ষা'
+    ],
+    'state_of_education' => [
+        'name' => 'শিক্ষা রাজ্য'
+    ],
+    'profession' => [
+        'name' => 'পেশা'
+    ],
     'identification_number' => [
         'name' => 'সনাক্তকরণ নম্বর'
     ],
@@ -103,6 +121,9 @@ return [
     'user' => [
         'name' => 'ব্যবহারকারী'
     ],
+	'name' => [
+		'name' => 'নাম'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -363,6 +384,9 @@ return [
     'password' => [
         'name' => 'পাসওয়ার্ড',
     ],
+    'old_password' => [
+        'name' => 'পুরানো পাসওয়ার্ড',
+    ],
     'new_password' => [
         'name' => 'নতুন পাসওয়ার্ড',
     ],
@@ -428,19 +452,35 @@ return [
     'my_address' => 'আমার ঠিকানা',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'কোমপানির নাম'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'কর অফিস'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'কর নম্বর'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
+    'my_profile' => 'আমার প্রোফাইল',
+    'edit_profile' => 'জীবন বৃত্তান্ত সম্পাদনা',
+    'edit_details' => 'তথ্য সংশোধন কর',
+    'update' => 'হালনাগাদ',
+    'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
+    'choose_an_option' => 'একটি বিকল্প নির্বাচন করুন...',
+
+    // Register page
+    'accept_terms_label' => 'আমি শর্তাদি গ্রহণ করি।',
+    'accept_protection_law_label' => '<html>আমি আইনটির শর্তাদি স্বীকার করি' . setting_value('visiosoft.module.profile::register_protection_url') . '"টার্গেট =" _ ফাঁকা "> ব্যক্তিগত ডেটা সুরক্ষা</a>',
+    'accept_privacy_terms_label' => '<html>আমি স্বীকার করছি' . setting_value('visiosoft.module.profile::register_privacy_url') . '"টার্গেট =" _ ফাঁকা "> গোপনীয়তার শর্তাদি</a>।',
+    'receive_sms_emails_label' => 'আমি ইমেইল এবং এসএমএস পেতে চাই',
+
+    // Register Type
+    'personal' => [
+        'name' => 'ব্যক্তিগত'
+    ],
+
+	'education_part' => [
+		'name' => 'শিক্ষা রাজ্য'
+	],
 ];

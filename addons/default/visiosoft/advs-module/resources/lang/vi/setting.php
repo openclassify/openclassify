@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'Quảng cáo mặc định NHẬN',
     ],
-    'thumbnail_width' => [
-        'name' => 'Chiều rộng hình thu nhỏ',
-    ],
-    'thumbnail_height' => [
-        'name' => 'Chiều cao hình thu nhỏ',
-    ],
-    'picture_width' => [
-        'name' => 'Chiều rộng hình ảnh',
-    ],
-    'picture_height' => [
-        'name' => 'Chiều cao hình ảnh',
-    ],
     'twitter' => [
         'name' => 'Twitter',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'Google',
+    ],
+    'listing_page_image' => [
+        'name' => 'Danh sách trang hình ảnh',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'Ẩn trường giá chuẩn',
+    ],
+    'hide_options_field' => [
+        'name' => 'Ẩn trường tùy chọn',
+    ],
+    'hide_village_field' => [
+        'name' => 'Ẩn ruộng làng',
+    ],
+    'hide_configurations' => [
+        'name' => 'Ẩn nút cấu hình',
+        'instructions' => 'Ẩn nút Cấu hình trong Trang Xem trước Quảng cáo',
+    ],
+    'make_map_required' => [
+        'name' => 'Đặt bản đồ là bắt buộc',
+        'instructions' => 'Yêu cầu người dùng ghim trên bản đồ khi tạo quảng cáo',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'Ẩn giá chuẩn của danh sách',
+    ],
+    'enabled_currencies' => [
+        'name' => 'Tiền tệ được kích hoạt',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Mã thống kê Google',
+    ],
+    'register_email_field' => [
+        'name' => 'Yêu cầu email đăng ký thành viên',
+    ],
+    'market_place' => [
+        'name' => 'Thương trường',
+    ],
+	'price_area_hidden' => [
+		'name' => 'Vùng giá bị ẩn',
+	],
+    'hide_price_filter' => [
+        'name' => 'Ẩn bộ lọc giá',
+    ],
+    'hide_date_filter' => [
+        'name' => 'Ẩn Bộ lọc Ngày',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'Ẩn bộ lọc ảnh',
+    ],
+    'hide_map_filter' => [
+        'name' => 'Ẩn bộ lọc bản đồ',
+    ],
+    'show_lang_url' => [
+        'name' => 'Hiển thị Tham số Lang cho URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'Giới hạn Quảng cáo Phổ biến',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'Phần phụ trợ thay đổi kích thước hình ảnh',
+    ],
+    'full_image_width' => [
+        'name' => 'Chiều rộng hình ảnh đầy đủ',
+    ],
+    'full_image_height' => [
+        'name' => 'Chiều cao toàn ảnh',
+    ],
+    'medium_image_width' => [
+        'name' => 'Chiều rộng hình ảnh trung bình',
+    ],
+    'medium_image_height' => [
+        'name' => 'Chiều cao hình ảnh trung bình',
+    ],
+    'thumbnail_width' => [
+        'name' => 'Chiều rộng hình thu nhỏ',
+    ],
+    'thumbnail_height' => [
+        'name' => 'Chiều cao hình thu nhỏ',
+    ],
+    'add_canvas' => [
+        'name' => 'Thêm Canvas',
+    ],
+    'image_canvas_width' => [
+        'name' => 'Chiều rộng canvas hình ảnh',
+    ],
+    'image_canvas_height' => [
+        'name' => 'Chiều cao canvas hình ảnh',
     ],
     'watermark_type' => [
         'name' => 'Loại hình mờ',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => 'Vị trí hình mờ',
     ],
-    'listing_page_image' => [
-        'name' => 'Danh sách trang hình ảnh',
+    'user_filter_limit' => [
+        'name' => 'Giới hạn Bộ lọc Người dùng',
+        'instructions' => 'Trong bảng quản trị'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'Hiển thị Breadcrumb Khi Tạo Quảng cáo',
     ],
-    'enabled_currencies' => [
-        'name' => 'Tiền tệ được kích hoạt',
+    'show_ads_count' => [
+        'name' => 'Hiển thị Số lượng Quảng cáo',
+        'instructions' => 'Số lượng quảng cáo hiển thị trên danh sách danh mục bên trái',
     ],
-    'google_statistic_code' => [
-        'name' => 'Mã thống kê Google',
+    'show_post_ad_agreement' => [
+        'name' => 'Hiển thị Thỏa thuận Quảng cáo Đăng',
+        'instructions' => 'Bật tính năng này nếu bạn muốn hiển thị thỏa thuận chính sách bảo mật trên trang tạo quảng cáo',
     ],
-    'register_email_field' => [
-        'name' => 'Yêu cầu email đăng ký thành viên',
+    'override_text' => [
+        'name' => 'Ghi đè văn bản',
+        'instructions' => 'Giá trị cũ: Giá trị mới'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'Các bước màu',
+        'instructions' => 'Thay đổi màu của các bước tiến bộ.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'Tạo màu nút quảng cáo',
+        'instructions' => 'Thay đổi nút hiển thị khi quá trình lựa chọn danh mục quảng cáo mới hoàn tất.'
     ],
 ];

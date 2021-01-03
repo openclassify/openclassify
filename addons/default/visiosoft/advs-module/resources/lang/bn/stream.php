@@ -20,6 +20,15 @@ return [
         'name' => 'সিএফ মান',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'বিকল্পগুলি',
+    ],
+    'product_options' => [
+        'name' => 'পণ্য বিকল্প',
+    ],
+    'productoptions_value' => [
+        'name' => 'বিকল্প মান',
+    ],
+    'option_configuration' => [
+        'name' => 'কনফিগারেশন',
     ],
 ];

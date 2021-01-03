@@ -2,6 +2,7 @@
 
 return [
     'new_adv' => 'Njoftime i ri',
+    'new_classified' => 'Klasifikimi i ri',
     'new_category' => 'Kategoria e re',
     'new_country' => 'Shteti i ri',
     'new_city' => 'Qark i Ri',
@@ -31,5 +32,15 @@ return [
     'update_category' => [
         'name' => 'Kategoria Azhornimeve'
     ],
-    'new_option' => 'New Option',
+    'new_option' => 'Opsioni i ri',
+	'export' => 'Eksporto',
+    'new_productoption' => 'Produkt i ri',
+    'new_productoptions_value' => 'Vlera e opsionit të produktit të ri',
+    'new_options_configuration' => 'Konfigurimi i ri i opsionit',
+    'new_option_configuration' => 'Konfigurimi i ri i opsionit',
+	'create_configurations' => 'Krijoni konfigurime',
+	'replicate' => 'Kopjoni',
+	'fast_create' => 'Krijo shpejt',
+	'publish' => 'Publikoni',
+	'import' => 'Importit',
 ];

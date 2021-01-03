@@ -22,5 +22,11 @@ return [
     'currency_converted' => 'Moeda convertida com sucesso.',
     'choose_user' => 'Escolha um usuário',
     'owner_updated_successfully' => 'O proprietário foi atualizado com sucesso!',
-    'no_add_found' => 'No Ad Found!',
+    'no_add_found' => 'Nenhum anúncio encontrado!',
+    'replicated_success' => 'O anúncio foi replicado com sucesso!',
+    'ad_doesnt_exist' => "Este anúncio não existe!",
+    'select_location_error' => "Selecione um local no mapa!",
+    'this_ad_is_not_valid_anymore' => "Este anúncio não é mais válido!",
+    'approve_status_change' => "O status do seu anúncio foi definido como ativo!",
+    'passive_status_change' => "O status do seu anúncio foi definido como passivo!",
 ];

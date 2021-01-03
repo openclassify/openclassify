@@ -2,6 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => 'Sitemap-Teilungsnummer',
+    ],
+    'include_cities_sitemap' => [
+        'name' => 'Städte in Sitemap aufnehmen',
     ],
 ];

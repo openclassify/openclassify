@@ -79,18 +79,6 @@ return [
     'default_GET' => [
         'name' => 'デフォルト広告GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'サムネイルの幅',
-    ],
-    'thumbnail_height' => [
-        'name' => 'サムネイルの高さ',
-    ],
-    'picture_width' => [
-        'name' => '画像の幅',
-    ],
-    'picture_height' => [
-        'name' => '画像の高さ',
-    ],
     'twitter' => [
         'name' => 'ツイッター',
     ],
@@ -102,6 +90,95 @@ return [
     ],
     'google' => [
         'name' => 'グーグル',
+    ],
+    'listing_page_image' => [
+        'name' => 'リストページの画像',
+    ],
+    'hide_standard_price_field' => [
+        'name' => '標準価格フィールドを非表示',
+    ],
+    'hide_options_field' => [
+        'name' => 'オプションフィールドを非表示',
+    ],
+    'hide_village_field' => [
+        'name' => '村のフィールドを隠す',
+    ],
+    'hide_configurations' => [
+        'name' => '構成ボタンを非表示にする',
+        'instructions' => '広告プレビューページの[設定]ボタンを非表示にします',
+    ],
+    'make_map_required' => [
+        'name' => 'マップを必須にする',
+        'instructions' => '広告を作成するときに、ユーザーに地図上にピンを配置するように要求する',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'リスティングの標準価格を非表示',
+    ],
+    'enabled_currencies' => [
+        'name' => '有効な通貨',
+    ],
+    'google_statistic_code' => [
+        'name' => 'Google統計コード',
+    ],
+    'register_email_field' => [
+        'name' => '会員登録メールの要件',
+    ],
+    'market_place' => [
+        'name' => 'マーケットプレイス',
+    ],
+	'price_area_hidden' => [
+		'name' => '隠された価格帯',
+	],
+    'hide_price_filter' => [
+        'name' => '価格フィルターを非表示',
+    ],
+    'hide_date_filter' => [
+        'name' => '日付フィルターを非表示',
+    ],
+    'hide_photo_filter' => [
+        'name' => '写真フィルターを非表示',
+    ],
+    'hide_map_filter' => [
+        'name' => 'マップフィルターを非表示',
+    ],
+    'show_lang_url' => [
+        'name' => 'URLのLangパラメータを表示',
+    ],
+    'popular_ads_limit' => [
+        'name' => '人気の広告制限',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => '画像サイズ変更バックエンド',
+    ],
+    'full_image_width' => [
+        'name' => '全画像幅',
+    ],
+    'full_image_height' => [
+        'name' => '全画像の高さ',
+    ],
+    'medium_image_width' => [
+        'name' => '中程度の画像幅',
+    ],
+    'medium_image_height' => [
+        'name' => '中程度の画像の高さ',
+    ],
+    'thumbnail_width' => [
+        'name' => 'サムネイルの幅',
+    ],
+    'thumbnail_height' => [
+        'name' => 'サムネイルの高さ',
+    ],
+    'add_canvas' => [
+        'name' => 'キャンバスを追加',
+    ],
+    'image_canvas_width' => [
+        'name' => '画像のキャンバスの幅',
+    ],
+    'image_canvas_height' => [
+        'name' => '画像キャンバスの高さ',
     ],
     'watermark_type' => [
         'name' => '透かしタイプ',
@@ -115,22 +192,31 @@ return [
     'watermark_position' => [
         'name' => '透かしの位置',
     ],
-    'listing_page_image' => [
-        'name' => 'リストページの画像',
+    'user_filter_limit' => [
+        'name' => 'ユーザーフィルターの制限',
+        'instructions' => '管理パネルで'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => '広告を作成するときにブレッドクラムを表示する',
     ],
-    'enabled_currencies' => [
-        'name' => '有効な通貨',
+    'show_ads_count' => [
+        'name' => '広告数を表示',
+        'instructions' => '左側のカテゴリリストに広告数を表示する',
     ],
-    'google_statistic_code' => [
-        'name' => 'Google統計コード',
+    'show_post_ad_agreement' => [
+        'name' => 'ポスト広告契約を表示する',
+        'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
     ],
-    'register_email_field' => [
-        'name' => '会員登録メールの要件',
+    'override_text' => [
+        'name' => 'テキストを上書きする',
+        'instructions' => '古い値：新しい値'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'ステップカラー',
+        'instructions' => 'プログレッシブステップの色を変更します。'
+    ],
+    'create_ad_button_color' => [
+        'name' => '広告ボタンの色を作成する',
+        'instructions' => '新しい広告カテゴリの選択が終了したときに表示されるボタンを変更します。'
     ],
 ];

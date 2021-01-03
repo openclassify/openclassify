@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Lat predefinito',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Nascondi filtro posizione',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Paese predefinito per il campo del telefono di registrazione'
+	],
+    'sorting_column' => [
+        'name' => 'Ordinamento della colonna',
+    ],
+    'sorting_type' => [
+        'name' => 'Tipo di ordinamento',
+    ],
 ];

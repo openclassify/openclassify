@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Standard Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Standortfilter ausblenden',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Standardland für das Feld "Telefon registrieren"'
+	],
+    'sorting_column' => [
+        'name' => 'Spalte sortieren',
+    ],
+    'sorting_type' => [
+        'name' => 'Sortierart',
+    ],
 ];

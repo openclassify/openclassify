@@ -20,7 +20,7 @@ return [
         'name' => 'Prix'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Prix standard'
     ],
     'date' => [
         'name' => 'Date'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'Sous catégorie 6'
     ],
+    'cat8' => [
+        'name' => 'Sous-catégorie 7'
+    ],
+    'cat9' => [
+        'name' => 'Sous-catégorie 8'
+    ],
+    'cat10' => [
+        'name' => 'Sous-catégorie 9'
+    ],
     'currency' => [
         'name' => 'Devise'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'Le plus ancien',
     'address_a_z' => 'Adresse (A à Z)',
     'address_z_a' => 'Adresse (Z à A)',
-    'categories' => 'Les catégories',
+	'categories' => [
+		'name' => 'Catégories'
+	],
     'all_categories' => 'toutes catégories',
     'location' => 'Emplacement',
     'send_message' => 'Envoyer le message',
@@ -249,6 +260,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'Au cours des dernières 24 heures'
     ],
+    'in_the_last_day' => [
+        'name' => 'Au cours des dernières 24 heures'
+    ],
     'in_the_last_week' => [
         'name' => 'La semaine dernière'
     ],
@@ -267,8 +281,8 @@ return [
     "no_location" => "Aucun emplacement n'est sélectionné.",
     "continue" => 'Continuer',
     "gallery" => 'Galerie',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'Les publicités',
+    "were_found" => 'ont été trouvés.',
 
     // Pending screen
     'pending_message_1' => 'L\'annonce est en cours d\'approbation',
@@ -297,4 +311,35 @@ return [
 
     // New create page
     'options' => 'Options',
+    'category_selection' => 'Sélection de catégorie',
+    'listing_details' => 'Détails de l\'annonce',
+    'preview' => 'Aperçu',
+    'congratulations' => 'Toutes nos félicitations',
+    'ad_desc' => 'Description de l\'annonce',
+    'upload_photos' => 'Télécharger des photos',
+    'additional_fields' => 'Champs supplémentaires',
+    'ad_location' => 'Emplacement de l\'annonce',
+
+    'free' => 'Gratuit',
+    'ad_date' => 'Date de l\'annonce',
+    'photo_video' => 'Photo, vidéo',
+    'and_above' => 'et ci-dessus',
+    'and_below' => 'et plus bas',
+    'clear_all' => 'Tout effacer',
+    'balances' => 'Soldes',
+    'packages' => 'Paquets',
+    'dopings' => 'Dopage',
+    'advs' => 'Advs',
+    'site' => 'Site',
+    'subscription' => 'Abonnement',
+	'created' => 'Créé',
+	'product_option' => [
+		'name' => 'Option de produit'
+	],
+	'option_json' => [
+		'name' => 'Option'
+	],
+    'old_price' => [
+        'name' => 'Ancien prix'
+    ],
 ];

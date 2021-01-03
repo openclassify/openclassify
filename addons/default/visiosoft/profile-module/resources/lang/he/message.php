@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'אין כתובת או לא מורשה להציג.',
     'empty_password_sms_message' => 'בגלל בעיות אבטחה, שינינו את הסיסמא שלך! הסיסמה החדשה שלך היא:',
     'required_all' => "כל השדה נדרש!",
+    'can_not_remove_filled_fields' => "אינך יכול להסיר שדות מלאים!",
+    'wrong_password' => "הסיסמה שהזנת אינה נכונה!",
 
     // Forgot Password
     'email_phone_not_found' => 'הדואר האלקטרוני, מספר הטלפון אינו תקין!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'האם אתה רוצה לסגור את חשבונך? לא ניתן לבטל פעולה זו.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'אימייל עודכן!',
+    'update_email_mail_message' => 'הדוא"ל שלך עודכן!',
+
+    // Register
+    'recaptcha_field_is_required' => 'נדרש שדה reCaptcha.',
+    'failed_to_validate_captcha' => 'אימות ה- captcha נכשל.',
 ];

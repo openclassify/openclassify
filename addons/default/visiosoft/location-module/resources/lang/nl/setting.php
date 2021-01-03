@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => 'Standaard Lat',
     ],
+
+    'hide_location_filter' => [
+        'name' => 'Verberg locatiefilter',
+    ],
+	'country_for_phone_field' => [
+		'name' => 'Standaardland voor register telefoonveld'
+	],
+    'sorting_column' => [
+        'name' => 'Sorteerkolom',
+    ],
+    'sorting_type' => [
+        'name' => 'Sorteringstype',
+    ],
 ];

@@ -20,7 +20,7 @@ return [
         'name' => 'कीमत'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'प्रामाणिक मूल्य'
     ],
     'date' => [
         'name' => 'तारीख'
@@ -82,6 +82,15 @@ return [
     'cat7' => [
         'name' => 'उप श्रेणी ६'
     ],
+    'cat8' => [
+        'name' => 'उप श्रेणी 7'
+    ],
+    'cat9' => [
+        'name' => 'उप श्रेणी 8'
+    ],
+    'cat10' => [
+        'name' => 'उप श्रेणी ९'
+    ],
     'currency' => [
         'name' => 'मुद्रा'
     ],
@@ -137,7 +146,9 @@ return [
     'oldest' => 'सबसे पुराना',
     'address_a_z' => 'पता (A से Z)',
     'address_z_a' => 'पता (Z से A)',
-    'categories' => 'श्रेणियाँ',
+	'categories' => [
+		'name' => 'श्रेणियाँ'
+	],
     'all_categories' => 'सब वर्ग',
     'location' => 'स्थान',
     'send_message' => 'मेसेज भेजें',
@@ -248,6 +259,9 @@ return [
     'in_the_last_24_hours' => [
         'name' => 'द लास्ट 24 ऑवर्स में'
     ],
+    'in_the_last_day' => [
+        'name' => 'द लास्ट 24 ऑवर्स में'
+    ],
     'in_the_last_week' => [
         'name' => 'पिछले हफ़्ते में'
     ],
@@ -266,8 +280,8 @@ return [
     "no_location" => "कोई स्थान चयनित नहीं है।",
     "continue" => 'जारी रखें',
     "gallery" => 'गेलरी',
-    "ads" => 'Ads',
-    "were_found" => 'were found.',
+    "ads" => 'विज्ञापन',
+    "were_found" => 'पाये गए।',
 
     // Pending screen
     'pending_message_1' => 'विज्ञापन अनुमोदन प्रक्रिया में है',
@@ -295,5 +309,36 @@ return [
     'select_category_step_by_step' => 'श्रेणी चरण दर चरण चुनें',
 
     // New create page
-    'options' => 'Options',
+    'options' => 'विकल्प',
+    'category_selection' => 'श्रेणी चयन',
+    'listing_details' => 'सूची विवरण',
+    'preview' => 'पूर्वावलोकन',
+    'congratulations' => 'बधाई हो',
+    'ad_desc' => 'विज्ञापन विवरण',
+    'upload_photos' => 'तस्वीरें अपलोड करें',
+    'additional_fields' => 'अतिरिक्त क्षेत्र',
+    'ad_location' => 'विज्ञापन स्थान',
+
+    'free' => 'नि: शुल्क',
+    'ad_date' => 'विज्ञापन तिथि',
+    'photo_video' => 'फोटो, वीडियो',
+    'and_above' => 'और ऊपर',
+    'and_below' => 'और नीचे',
+    'clear_all' => 'सभी साफ करें',
+    'balances' => 'शेष',
+    'packages' => 'संकुल',
+    'dopings' => 'dopings',
+    'advs' => 'advs',
+    'site' => 'साइट',
+    'subscription' => 'अंशदान',
+	'created' => 'बनाया था',
+	'product_option' => [
+		'name' => 'उत्पाद विकल्प'
+	],
+	'option_json' => [
+		'name' => 'विकल्प'
+	],
+    'old_price' => [
+        'name' => 'पुरानी कीमत'
+    ],
 ];

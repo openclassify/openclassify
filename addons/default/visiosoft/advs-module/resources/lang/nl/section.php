@@ -40,7 +40,20 @@ return [
     'general' => 'Algemeen',
     'ads' => 'Advertenties',
     'user' => 'Gebruiker',
+    'filter' => 'Filter',
+    'create_ad' => 'Maak advertentie',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Opties',
     ],
+    'ads_image' => 'Advertenties afbeelding',
+    'product_options' => [
+        'title' => 'Opties',
+    ],
+    'productoptions_value' => [
+        'title' => 'Opties Waarde',
+    ],
+    'option_configuration' => [
+        'title' => 'Configuratie',
+    ],
+    'translations' => 'Vertalingen',
 ];

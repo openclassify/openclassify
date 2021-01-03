@@ -151,7 +151,25 @@ $(document).ready(function () {
 
     // User filter
     $("select[name=filter_User]").select2({
-        placeholder: $('select[name=filter_User] option:first-child').text()
+        placeholder: $('select[name=filter_User] option:first-child').text(),
+        ajax: {
+            url: '/api/profile/query-users',
+            dataType: 'json',
+            processResults: function (data) {
+                let formattedData = [];
+
+                Object.keys(data).forEach(function (id) {
+                    formattedData.push({
+                        'id': id,
+                        'text': data[id]
+                    })
+                })
+
+                return {
+                    results: formattedData
+                }
+            }
+        }
     });
 
     // Country filter
@@ -161,6 +179,7 @@ $(document).ready(function () {
 });
 
 $("#listFilterForm").submit(function(e) {
+    // Disable unselected inputs
     const inputs = $('#listFilterForm :input');
     [...inputs].forEach((input) => {
         if (input.type === 'checkbox' || input.type === 'radio') {
@@ -173,6 +192,11 @@ $("#listFilterForm").submit(function(e) {
             }
         }
     });
+
+    // Disable country if city is selected
+    if ($('#listCityFilter').val()) {
+        $('#listCountryFilter').prop('disabled', true)
+    }
 });
 
 // Change view type

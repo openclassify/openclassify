@@ -50,11 +50,51 @@ return [
         ],
     ],
     'options' => [
-        'name'   => 'Options',
+        'name'   => '옵션',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => '옵션을 읽을 수 있습니까?',
+            'write'  => '옵션을 생성 / 편집 할 수 있습니까?',
+            'delete' => '옵션을 삭제할 수 있습니까?',
+        ],
+    ],
+    'productoptions' => [
+        'name'   => '제품 옵션',
+        'option' => [
+            'read'   => '제품 옵션을 읽을 수 있습니까?',
+            'write'  => '제품 옵션을 생성 / 편집 할 수 있습니까?',
+            'delete' => '제품 옵션을 삭제할 수 있습니까?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => '제품 옵션 값',
+        'option' => [
+            'read'   => 'productoptions 값을 읽을 수 있습니까?',
+            'write'  => '제품 옵션 값을 생성 / 편집 할 수 있습니까?',
+            'delete' => 'productoptions 값을 삭제할 수 있습니까?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => '옵션 구성',
+        'option' => [
+            'read'   => '옵션 구성을 읽을 수 있습니까?',
+            'write'  => '옵션 구성을 생성 / 편집 할 수 있습니까?',
+            'delete' => '옵션 구성을 삭제할 수 있습니까?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => '옵션 구성',
+        'option' => [
+            'read'   => '옵션 구성을 읽을 수 있습니까?',
+            'write'  => '옵션 구성을 생성 / 편집 할 수 있습니까?',
+            'delete' => '옵션 구성을 삭제할 수 있습니까?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => '옵션 구성',
+        'option' => [
+            'read'   => '옵션 구성을 읽을 수 있습니까?',
+            'write'  => '옵션 구성을 생성 / 편집 할 수 있습니까?',
+            'delete' => '옵션 구성을 삭제할 수 있습니까?',
         ],
     ],
 ];

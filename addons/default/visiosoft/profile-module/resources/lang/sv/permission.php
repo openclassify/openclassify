@@ -17,4 +17,20 @@ return [
             'delete' => 'Kan radera adress?',
         ],
     ],
+    'education' => [
+        'name'   => 'Utbildning',
+        'option' => [
+            'read'   => 'Kan läsa utbildning?',
+            'write'  => 'Kan du skapa / redigera utbildning?',
+            'delete' => 'Kan ta bort utbildning?',
+        ],
+    ],
+    'education_part' => [
+        'name'   => 'Utbildningsdel',
+        'option' => [
+            'read'   => 'Kan läsa utbildning del?',
+            'write'  => 'Kan du skapa / redigera utbildningsdel?',
+            'delete' => 'Kan ta bort utbildningsdel?',
+        ],
+    ],
 ];

@@ -32,9 +32,15 @@ return [
         'name' => 'Registrera sidinstruktionslogotyp',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Registrera sidalarmlänk',
     ],
     'style' => [
         'name' => 'Stil (CSS)',
     ],
+    'home_page_sub_categories_limit' => [
+        'name' => 'Hemsida Underkategorier Begränsning',
+    ],
+	'default_country' => [
+		'name' => 'Registrera sida, standardland för telefon',
+	]
 ];

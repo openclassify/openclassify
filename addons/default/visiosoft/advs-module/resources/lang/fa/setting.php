@@ -80,18 +80,6 @@ return [
     'default_GET' => [
         'name' => 'تبلیغات پیش فرض GET',
     ],
-    'thumbnail_width' => [
-        'name' => 'عرض تصویر',
-    ],
-    'thumbnail_height' => [
-        'name' => 'ارتفاع تصویر بند انگشتی',
-    ],
-    'picture_width' => [
-        'name' => 'عرض تصویر',
-    ],
-    'picture_height' => [
-        'name' => 'ارتفاع تصویر',
-    ],
     'twitter' => [
         'name' => 'توییتر',
     ],
@@ -103,6 +91,95 @@ return [
     ],
     'google' => [
         'name' => 'گوگل',
+    ],
+    'listing_page_image' => [
+        'name' => 'لیست صفحه تصویر',
+    ],
+    'hide_standard_price_field' => [
+        'name' => 'زمینه قیمت استاندارد را مخفی کنید',
+    ],
+    'hide_options_field' => [
+        'name' => 'قسمت گزینه ها را پنهان کنید',
+    ],
+    'hide_village_field' => [
+        'name' => 'میدان دهکده را پنهان کنید',
+    ],
+    'hide_configurations' => [
+        'name' => 'دکمه تنظیمات را پنهان کنید',
+        'instructions' => 'دکمه تنظیمات را در صفحه پیش نمایش تبلیغ پنهان کنید',
+    ],
+    'make_map_required' => [
+        'name' => 'تهیه نقشه مورد نیاز',
+        'instructions' => 'هنگام ایجاد تبلیغ ، از کاربر بخواهید که یک پین روی نقشه قرار دهد',
+    ],
+    'hide_listing_standard_price' => [
+        'name' => 'پنهان کردن لیست قیمت استاندارد',
+    ],
+    'enabled_currencies' => [
+        'name' => 'ارزهای فعال شده',
+    ],
+    'google_statistic_code' => [
+        'name' => 'کد آماری Google',
+    ],
+    'register_email_field' => [
+        'name' => 'ثبت نام از طریق پست الکترونیکی',
+    ],
+    'market_place' => [
+        'name' => 'محل بازار',
+    ],
+	'price_area_hidden' => [
+		'name' => 'منطقه پنهان',
+	],
+    'hide_price_filter' => [
+        'name' => 'فیلتر قیمت مخفی کنید',
+    ],
+    'hide_date_filter' => [
+        'name' => 'پنهان کردن فیلتر تاریخ',
+    ],
+    'hide_photo_filter' => [
+        'name' => 'فیلتر عکس مخفی کنید',
+    ],
+    'hide_map_filter' => [
+        'name' => 'فیلتر نقشه مخفی شود',
+    ],
+    'show_lang_url' => [
+        'name' => 'نمایش پارامتر Lang برای URL',
+    ],
+    'popular_ads_limit' => [
+        'name' => 'محدودیت تبلیغات محبوب',
+    ],
+
+    //Image
+
+    'image_resize_backend' => [
+        'name' => 'تغییر اندازه تصویر Backend',
+    ],
+    'full_image_width' => [
+        'name' => 'عرض تصویر کامل',
+    ],
+    'full_image_height' => [
+        'name' => 'ارتفاع تصویر کامل',
+    ],
+    'medium_image_width' => [
+        'name' => 'عرض تصویر متوسط',
+    ],
+    'medium_image_height' => [
+        'name' => 'ارتفاع تصویر متوسط',
+    ],
+    'thumbnail_width' => [
+        'name' => 'عرض تصویر',
+    ],
+    'thumbnail_height' => [
+        'name' => 'ارتفاع تصویر بند انگشتی',
+    ],
+    'add_canvas' => [
+        'name' => 'بوم را اضافه کنید',
+    ],
+    'image_canvas_width' => [
+        'name' => 'عرض بوم تصویر',
+    ],
+    'image_canvas_height' => [
+        'name' => 'ارتفاع بوم تصویر',
     ],
     'watermark_type' => [
         'name' => 'نوع علامت',
@@ -116,22 +193,31 @@ return [
     'watermark_position' => [
         'name' => 'موقعیت علامت سفید',
     ],
-    'listing_page_image' => [
-        'name' => 'لیست صفحه تصویر',
+    'user_filter_limit' => [
+        'name' => 'محدودیت فیلتر کاربر',
+        'instructions' => 'در پنل مدیریت'
     ],
-    'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+    'show_breadcrumb_when_creating_ad' => [
+        'name' => 'هنگام ایجاد تبلیغ ، Breadcrumb را نشان دهید',
     ],
-    'enabled_currencies' => [
-        'name' => 'ارزهای فعال شده',
+    'show_ads_count' => [
+        'name' => 'نمایش تعداد تبلیغات',
+        'instructions' => 'نمایش تعداد تبلیغات در لیست دسته های سمت چپ',
     ],
-    'google_statistic_code' => [
-        'name' => 'کد آماری Google',
+    'show_post_ad_agreement' => [
+        'name' => 'نمایش قرارداد تبلیغات پست',
+        'instructions' => 'اگر می خواهید توافق نامه سیاست حفظ حریم خصوصی را در صفحه ایجاد آگهی نمایش دهید ، این گزینه را روشن کنید',
     ],
-    'register_email_field' => [
-        'name' => 'ثبت نام از طریق پست الکترونیکی',
+    'override_text' => [
+        'name' => 'متن را لغو کنید',
+        'instructions' => 'ارزش قدیم: ارزش جدید'
     ],
-    'market_place' => [
-        'name' => 'Market Place',
+    'steps_color' => [
+        'name' => 'مراحل رنگ',
+        'instructions' => 'رنگ مراحل پیشرفته را تغییر می دهد.'
+    ],
+    'create_ad_button_color' => [
+        'name' => 'رنگ دکمه تبلیغات را ایجاد کنید',
+        'instructions' => 'دکمه ای را که با پایان یافتن انتخاب دسته جدید آگهی نشان داده می شود ، تغییر می دهد.'
     ],
 ];

@@ -2,6 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Sitemap Dividing Number',
+        'name' => 'Αριθμός διαίρεσης χάρτη ιστότοπου',
+    ],
+    'include_cities_sitemap' => [
+        'name' => 'Συμπερίληψη πόλεων στον χάρτη ιστότοπου',
     ],
 ];

@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'new_adv' => 'New Adv',
+    'new_adv' => 'New classified',
+    'new_classified' => 'New classified',
     'new_category' => 'New Category',
     'new_country' => 'New Country',
     'new_city' => 'New City',
@@ -32,4 +33,15 @@ return [
         'name' => 'Update Category'
     ],
     'new_option' => 'New Option',
+	'export' => 'Export',
+    'new_productoption' => 'New Productoption',
+    'new_productoptions_value' => 'New Product option value',
+    'new_options_configuration' => 'New Option configuration',
+    'new_option_configuration' => 'New Option configuration',
+	'create_configurations' => 'Create Configurations',
+	'replicate' => 'Replicate',
+	'fast_create' => 'Fast create',
+	'publish' => 'Publish',
+	'import' => 'Import',
+    'new_status' => 'New Status',
 ];

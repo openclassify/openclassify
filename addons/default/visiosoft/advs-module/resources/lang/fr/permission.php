@@ -52,9 +52,49 @@ return [
     'options' => [
         'name'   => 'Options',
         'option' => [
-            'read'   => 'Can read options?',
-            'write'  => 'Can create/edit options?',
-            'delete' => 'Can delete options?',
+            'read'   => 'Peut lire les options?',
+            'write'  => 'Peut créer / modifier des options?',
+            'delete' => 'Peut supprimer des options?',
+        ],
+    ],
+    'productoptions' => [
+        'name'   => 'Options de produit',
+        'option' => [
+            'read'   => 'Peut lire les options de produit?',
+            'write'  => 'Peut créer / modifier des options de produit?',
+            'delete' => 'Peut-on supprimer les options de produit?',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => 'Valeur de Productoptions',
+        'option' => [
+            'read'   => 'Peut lire la valeur de productoptions?',
+            'write'  => 'Peut créer / modifier la valeur des options de produit?',
+            'delete' => 'Peut supprimer la valeur productoptions?',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => 'Configuration des options',
+        'option' => [
+            'read'   => 'Peut lire la configuration des options?',
+            'write'  => 'Peut créer / modifier la configuration des options?',
+            'delete' => 'Peut supprimer la configuration des options?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configuration des options',
+        'option' => [
+            'read'   => 'Peut lire la configuration des options?',
+            'write'  => 'Peut créer / modifier la configuration des options?',
+            'delete' => 'Peut supprimer la configuration des options?',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => 'Configuration des options',
+        'option' => [
+            'read'   => 'Peut lire la configuration des options?',
+            'write'  => 'Peut créer / modifier la configuration des options?',
+            'delete' => 'Peut supprimer la configuration des options?',
         ],
     ],
 ];

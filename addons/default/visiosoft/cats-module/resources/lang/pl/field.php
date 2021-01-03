@@ -32,4 +32,5 @@ return [
 
     'please_wait' => 'Proszę czekać. Usuwanie podkategorii',
     'category_selection' => 'Wybór kategorii',
+    'go_to_parent' => 'Idź do rodzica',
 ];

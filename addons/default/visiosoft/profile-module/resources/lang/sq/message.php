@@ -28,6 +28,8 @@ return [
     'ajax_address_error' => 'Asnjë adresë ose jo e autorizuar për të parë.',
     'empty_password_sms_message' => 'Për shkak të çështjeve të sigurisë, ne ndryshuam fjalëkalimin tuaj! Fjalëkalimi juaj i ri është:',
     'required_all' => "Kërkohet e gjithë fusha!",
+    'can_not_remove_filled_fields' => "Ju nuk mund të hiqni fushat e mbushura!",
+    'wrong_password' => "Fjalëkalimi që keni futur nuk është i saktë!",
 
     // Forgot Password
     'email_phone_not_found' => 'E-maili, numri i telefonit nuk është i saktë!',
@@ -35,6 +37,10 @@ return [
     'disable_account' => 'Dëshiron të mbyllësh llogarinë tënde? Ky operacion nuk mund të zhbëhet.',
 
     // Mail
-    'update_email_mail_subject' => 'Email Updated!',
-    'update_email_mail_message' => 'Your Email Has Been Updated!',
+    'update_email_mail_subject' => 'Email Azhurnohet!',
+    'update_email_mail_message' => 'Emaili juaj është azhurnuar!',
+
+    // Register
+    'recaptcha_field_is_required' => 'Kërkohet fusha reCaptcha.',
+    'failed_to_validate_captcha' => 'Vlerësimi i kapjes dështoi.',
 ];

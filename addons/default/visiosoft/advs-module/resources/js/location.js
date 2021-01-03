@@ -1,6 +1,8 @@
 /* Location Data */
 var boundsAction = false;
 
+getCountries();
+
 var getCountry = $('.country-data').data('content');
 if (getCountry == "") {
     getCountry = default_country;
@@ -85,15 +87,20 @@ function Locations(cat, level, name) {
         url: "/class/ajax",
         success: function (msg) {
             $('select[name="' + name + '"]').find('option').remove();
-            $('select[name="' + name + '"]').append('<option value="">Choose an option...</option>');
+            $('select[name="' + name + '"]').append(`<option value="">${chooseOptionTrans}</option>`);
             $.each(msg, function (key, value) {
-                $('select[name="' + name + '"]').append('<option value="' + value.id + '">' + value.name + '</option>');
+                $(`select[name="${name}"]`).append(`<option value="${value.id}">${capFirst(value.name)}</option>`);
             });
         }
     }).promise().done(function () {
         setLocation(level);
         haritaIslem(0);
     });
+}
+
+function capFirst(value) {
+    if (!value) return ''
+    return value.toLowerCase().replace(/(?:^|\s|["'([{])+\S/g, match => match.toUpperCase());
 }
 
 function setLocation(level) {
@@ -120,7 +127,7 @@ if (locationedit) {
 var mapOptions = {
 
     center: coordcenter,
-    zoom: 20,
+    zoom: 6,
     mapTypeId: google.maps.MapTypeId.STREET
 };
 var secildi = 0;
@@ -129,17 +136,17 @@ var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions)
 
 function haritaIslem() {
     var str = '';
-    if ($('select[name="' + countrySelectName + '"]').val() != "") {
-        str += $('select[name="' + countrySelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + countrySelectName + '"]').val()) {
+        str += $('select[name="' + countrySelectName + '"] :selected').first().text() + ' ';
     }
-    if ($('select[name="' + citySelectName + '"]').val() != "") {
-        str += $('select[name="' + citySelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + citySelectName + '"]').val()) {
+        str += $('select[name="' + citySelectName + '"] :selected').first().text() + ' ';
     }
-    if ($('select[name="' + districtSelectName + '"]').val() != "") {
-        str += $('select[name="' + districtSelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + districtSelectName + '"]').val()) {
+        str += $('select[name="' + districtSelectName + '"] :selected').first().text() + ' ';
     }
-    if ($('select[name="' + neighborhoodSelectName + '"]').val() != "") {
-        str += $('select[name="' + neighborhoodSelectName + '"] :selected').text() + ' ';
+    if ($('select[name="' + neighborhoodSelectName + '"]').val()) {
+        str += $('select[name="' + neighborhoodSelectName + '"] :selected').first().text() + ' ';
     }
 
     if (!str) {
@@ -205,4 +212,12 @@ function editMarket() {
             });
         }
     }
+}
+
+function getCountries() {
+    crudAjax('', '/ajax/getCountry', 'GET', function (callback) {
+        $.each(callback, function (index, value) {
+            $('select[name="country"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
+        });
+    })
 }
