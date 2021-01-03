@@ -310,34 +310,34 @@ return [
     'ad_info' => 'Elan haqqında məlumat',
 
     // Select cat
-    'select_category_step_by_step' => 'Addım-addım Kateqoriya seçin',
+    'select_category_step_by_step' => 'Sırayla Kateqoriya seçin',
 
     // New create page
     'options' => 'Seçimlər',
     'category_selection' => 'Kateqoriya seçimi',
-    'listing_details' => 'Listing Details',
+    'listing_details' => 'Elan Detalları',
     'preview' => 'Önizləmə',
-    'congratulations' => 'Təbrik edirəm',
-    'ad_desc' => 'Reklam Təsviri',
+    'congratulations' => 'Təbriklər',
+    'ad_desc' => 'Elan önizləməsi',
     'upload_photos' => 'Şəkillər yükləyin',
     'additional_fields' => 'Əlavə sahələr',
-    'ad_location' => 'Reklam yeri',
+    'ad_location' => 'Ünvan əlavə et',
 
     'free' => 'Pulsuz',
-    'ad_date' => 'Reklam Tarixi',
+    'ad_date' => 'Elan Tarixi',
     'photo_video' => 'Foto, Video',
     'and_above' => 'və yuxarıda',
     'and_below' => 'və aşağıda',
-    'clear_all' => 'Hamısını sil, hamısını təmizlə',
-    'balances' => 'Qalıqlar',
+    'clear_all' => 'Hamısını təmizlə',
+    'balances' => 'Balans',
     'packages' => 'Paketlər',
-    'dopings' => 'Dopinqlər',
+    'dopings' => 'Ödənişli elan',
     'advs' => 'Advs',
     'site' => 'Sayt',
-    'subscription' => 'Abunə',
-	'created' => 'Yarandı',
+    'subscription' => 'Abunəlik',
+	'created' => 'Yaradıldı',
 	'product_option' => [
-		'name' => 'Məhsul seçimi'
+		'name' => 'Məhsul seçimləri'
 	],
 	'option_json' => [
 		'name' => 'Seçim'
