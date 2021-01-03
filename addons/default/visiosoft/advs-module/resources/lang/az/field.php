@@ -5,10 +5,10 @@ return [
         'name' => 'Başlıq'
     ],
     'order' => [
-        'name' => 'Sifariş verin'
+        'name' => 'Sıralama'
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'Xüsusi ad (slug)'
     ],
     'parent_category' => [
         'name' => 'Valideyn'
@@ -17,7 +17,7 @@ return [
         'name' => 'Kateqoriya Başlığı'
     ],
     'price' => [
-        'name' => 'Qiyməti'
+        'name' => 'Qiymət'
     ],
     'standard_price' => [
         'name' => 'Standart qiymət'
@@ -165,6 +165,7 @@ return [
     'edit' => 'Redaktə edin',
     'approve' => 'Təsdiq edin',
     'passive' => "Passivdir",
+	'sold' => 'Satıldı',
     'offered_by' => 'Təqdim olunan',
     'more_ads_by' => 'Daha Elanlar',
     'click_phone' => 'Telefon nömrəsini göstərin',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Korporativ məlumat',
     'featured_ads' => "Xüsusi reklamlar",
     'trending_ads' => 'Trendind reklamları',
+    'search_ad_result_prefix' => 'kateqoriyasında',
     'search_ads_result_message' => [
         'name' => ': axtardığınız elanları sayın',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "Heç bir yer seçilməyib.",
     "continue" => 'Davam edin',
     "gallery" => 'Qalereya',
+    "ad" => 'elan',
     "ads" => 'Elanlar',
     "were_found" => 'tapıldı.',
 
