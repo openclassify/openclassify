@@ -185,47 +185,47 @@ return [
     'asap' => 'Mesaj göndərildi, 
 ən qısa zamanda satıcı sizinlə əlaqə saxlayacaq.',
     'ad_id' => 'Elan nömrəsi',
-    'contact_with' => 'İlə əlaqə saxlayın',
-    'create_adv' => 'Reklam yaradın',
+    'contact_with' => 'Əlaqə saxlayın',
+    'create_adv' => 'Elan yaradın',
     'edit_adv' => 'Elanı redaktə edin',
     'mandatory_fields' => 'Məcburi sahələr',
-    'ad_post' => 'Elan Yazısı',
-    'sell_item' => 'Bir məhsul və ya xidmət satın',
-    'search_save' => 'Sevimli axtarış uğurla qeyd olundu',
+    'ad_post' => 'Elanı Yayımla',
+    'sell_item' => 'Məhsul və ya xidmət satın',
+    'search_save' => 'Axtarış seçilmişlərə əlavə edildi',
     'address' => 'Ünvan',
     'email' => 'Elektron poçt',
     'phone' => 'Telefon',
-    'send_us_your_feedback' => 'Geribildiriminizi bizə göndərin',
-    'online_shopping' => 'GET',
+    'send_us_your_feedback' => 'Fikirlərinizi bizimlə paylaşın',
+    'online_shopping' => 'Mağaza',
     'approved' => 'Uğurla təsdiqləndi',
     'extended' => 'Müvəffəqiyyətlə uzadıldı',
     'declined' => 'Uğurla rədd edildi',
     'search_on_map' => 'Xəritədə axtar',
-    'post_free_ad' => 'Pulsuz Reklam elanı',
+    'post_free_ad' => 'Pulsuz Elan Ver',
     'select_a_category' => 'Kateqoriya seç',
     'select_a_sub_category' => 'Alt kateqoriya seçin',
-    'all_dopings_added' => 'Bu reklam üçün bütün dopinq növləri əlavə olunur.',
+    'all_dopings_added' => 'Bu elan üçün bütün ödənişli xidmət növləri əlavə olunub.',
     'is_get_adv' => [
-        'name' => 'GET'
+        'name' => 'Təhlükəsiz Ticarət'
     ],
     'corporate_info' => 'Korporativ məlumat',
-    'featured_ads' => "Xüsusi reklamlar",
-    'trending_ads' => 'Trendind reklamları',
+    'featured_ads' => "Xüsusi elanlar",
+    'trending_ads' => 'Populyar elanlar',
     'search_ad_result_prefix' => 'kateqoriyasında',
     'search_ads_result_message' => [
-        'name' => ': axtardığınız elanları sayın',
+        'name' => ':name axtarışınızda :count ədəd elan tapılmışdır.',
     ],
-    'total' => 'Ümumi',
-    'quantity' => 'Miqdarı',
-    'view_cart' => 'Səbətə baxın',
-    'no_ads' => 'Reklam tapılmadı.',
+    'total' => 'Toplam',
+    'quantity' => 'Ədəd',
+    'view_cart' => 'Səbətə bax',
+    'no_ads' => 'Elan tapılmadı.',
     'show_display_mode' => [
         'map' => 'Xəritə',
         'list' => 'Siyahı',
     ],
     'advs_list_table_thead' => [
         'name' => 'Elan Adı',
-        'price' => 'Qiyməti',
+        'price' => 'Qiymət',
         'publish_at' => 'Elan tarixi',
         'location_city' => 'Şəhər',
         'location_country' => 'Ölkə',
@@ -246,12 +246,12 @@ return [
         'name' => 'Profil',
     ],
     'my_ads' => [
-        'name' => 'Reklamlarım',
+        'name' => 'Elanlarım',
     ],
     'sold_out' => [
         'name' => 'Satıldı',
     ],
-    'edit_category' => 'Kateqoriya dəyişdirin',
+    'edit_category' => 'Kateqoriyaya düzəliş et',
     'set_category' => 'Kateqoriya təyin edin',
     'max' => [
         'name' => 'Maks',
@@ -272,7 +272,7 @@ return [
         'name' => 'Son Ayda'
     ],
     'ads_with_photo' => [
-        'name' => 'Fotoşəkilli Reklamlar'
+        'name' => 'Şəkilli Elanlar'
     ],
     'ads_with_video' => [
         'name' => 'Video ilə Reklamlar'
