@@ -620,6 +620,7 @@ class AdvsController extends PublicController
 
         $options = $this->optionRepository->findAllBy('adv_id', $id);
 
+        $features = array();
         if ($this->adv_model->is_enabled('customfields')) {
             $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
         }
@@ -935,6 +936,7 @@ class AdvsController extends PublicController
 
         $categories = array_keys($cats);
 
+        $custom_fields = array();
         if ($this->adv_model->is_enabled('customfields')) {
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')
                 ->edit($adv, $categories, $cats);
