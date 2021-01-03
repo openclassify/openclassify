@@ -35,7 +35,7 @@ return [
         'name' => 'Xəritə'
     ],
     'stock' => [
-        'name' => 'Fond'
+        'name' => 'Stok'
     ],
     'advs_desc' => [
         'name' => 'Təsvir'
@@ -53,7 +53,7 @@ return [
         'name' => 'Rayon'
     ],
     'neighborhood' => [
-        'name' => 'Qonşuluq'
+        'name' => 'Məhəllə'
     ],
     'village' => [
         'name' => 'Kənd'
@@ -95,37 +95,37 @@ return [
         'name' => 'Valyuta'
     ],
     'status' => [
-        'name' => 'Vəziyyət',
+        'name' => 'Status',
         'option' => [
-            'approved' => 'Təsdiqləndi',
-            'expired' => 'Müddəti bitmişdir',
-            'unpublished' => 'Yayılmadı',
-            'pending_admin' => 'Admin gözləyir',
-            'pending_user' => 'Gözləyən istifadəçi'
+            'approved' => 'Təsdiqlənmiş',
+            'expired' => 'Müddəti bitib',
+            'unpublished' => 'Yayılmlanmamış',
+            'pending_admin' => 'Təsdiq gözləyir',
+            'pending_user' => 'Təsdiqlənməmiş istifadəçi'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Yayılmadı'
+        'name' => 'Yayılmlanmamış'
     ],
     'finish_at' => [
-        'name' => 'At'
+        'name' => 'Bitmə saatı'
     ],
     'cover_photo' => [
         'name' => 'Örtük şəkli'
     ],
     'favs_adv' => [
-        'name' => 'Fav Elanları'
+        'name' => 'Seçilmiş Elanlar'
     ],
     'my_adv' => [
-        'name' => 'ADVS'
+        'name' => 'Elan'
     ],
     'description' =>  'Təsvir',
-    'explanation' =>  'İzahat',
+    'explanation' =>  'Açıqlama',
     'type' => [
-        'name' => 'Növü'
+        'name' => 'Tip'
     ],
     'parent_adv' => [
-        'name' => 'Əlaqədar Elan'
+        'name' => 'Oxşar Elanlar'
     ],
     'value' => [
         'name' => 'Dəyər'
@@ -134,11 +134,11 @@ return [
     'home' => 'Ev',
     'list-page' => 'Siyahı Səhifə',
     'search' => 'Axtarış',
-    'recommended' => 'Sizə tövsiyə olunan reklamlar',
-    'filter' => 'Süzgəc',
-    'sort' => 'Növ',
-    'sort_by' => 'Sortlaşdır',
-    'pick_option' => 'Bir seçim seçin',
+    'recommended' => 'Tövsiyə olunan elanlar',
+    'filter' => 'Filter',
+    'sort' => 'Sırala',
+    'sort_by' => 'Sırala',
+    'pick_option' => 'Seçim edin',
     'pick_ordering' => 'Sifariş verilir',
     'price_high' => 'Qiymət yüksəkdən aşağıya',
     'price_low' => 'Qiymət aşağıdan yuxarıya',
