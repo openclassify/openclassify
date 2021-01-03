@@ -81,7 +81,8 @@
     "visiosoft/addblock-extension": "^1.1",
     "maatwebsite/excel": "*",
     "google/recaptcha": "1.2.*",
-    "sentry/sentry-laravel": "*"
+    "sentry/sentry-laravel": "*",
+    "composer/composer": "^1.10"
   },
   "require-dev": {
     "filp/whoops": "~2.0",
