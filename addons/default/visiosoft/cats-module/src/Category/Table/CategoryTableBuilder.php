@@ -80,7 +80,7 @@ class CategoryTableBuilder extends TableBuilder
      * @var array
      */
     protected $options = [
-        'table_view' => 'visiosoft.module.cats::table.table'
+
     ];
 
     /**

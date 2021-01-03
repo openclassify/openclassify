@@ -21,7 +21,7 @@ class CitiesController extends AdminController
         $cities = new CityModel();
         if(!isset($request->country) || $request->country==""){
             return $table->render();
-        }else{
+        } else {
             $cities = $cities->getSubCities($request->country);
             if (count($cities) == 0) {
                 $this->messages->error('Selected country has no related city.');

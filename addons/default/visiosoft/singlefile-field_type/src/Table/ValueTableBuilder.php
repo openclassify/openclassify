@@ -63,7 +63,6 @@ class ValueTableBuilder extends TableBuilder
         'limit'              => 1,
         'show_headers'       => false,
         'sortable_headers'   => false,
-        'table_view'         => 'visiosoft.field_type.singlefile::table',
         'no_results_message' => 'visiosoft.field_type.singlefile::message.no_file_selected',
     ];
 

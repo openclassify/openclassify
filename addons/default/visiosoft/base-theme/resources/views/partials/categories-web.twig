@@ -7,7 +7,6 @@
         <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}" class="main-category">
             <b>{{ main_category.name }}</b>
             {% if showAdsCount %}
-                {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(main_category.id) %}
                 <small class="text-muted">
                     ({{ catAdsCount }})
                 </small>
@@ -33,7 +32,6 @@
                         <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}">{{ sub_category.name }}</a>
                         {% if showAdsCount %}
                             {% set catLevel = getParentsCount(sub_category.id) + 1 %}
-                            {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(sub_category.id, catLevel) %}
                             <small class="text-muted">
                                 ({{ catAdsCount }})
                             </small>

@@ -96,7 +96,6 @@ class ValueTableBuilder extends TableBuilder
         'limit' => 9999,
         'show_headers' => false,
         'sortable_headers' => false,
-        'table_view' => 'visiosoft.field_type.media::table/table',
         'no_results_message' => 'visiosoft.field_type.media::message.no_files_selected',
     ];
 

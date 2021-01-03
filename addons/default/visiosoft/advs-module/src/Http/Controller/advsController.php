@@ -23,7 +23,6 @@ use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
-use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CloudinaryModule\Video\VideoModel;
@@ -257,7 +256,7 @@ class AdvsController extends PublicController
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
         }
-
+        $seenList = array();
         if ($isActiveCustomFields) {
             $cfRepository = app('Visiosoft\CustomfieldsModule\CustomField\CustomFieldRepository');
 
@@ -286,7 +285,8 @@ class AdvsController extends PublicController
             $allCats = true;
         }
 
-        $cFArray = array();
+        $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = array();
+
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats);
             $checkboxes = $returnvalues['checkboxes'];
@@ -785,16 +785,6 @@ class AdvsController extends PublicController
             $adv->is_get_adv = $request->is_get_adv;
             $adv->save();
 
-            //algolia Search Module
-            $isActiveAlgolia = $advModel->is_enabled('algolia');
-            if ($isActiveAlgolia) {
-                $algolia = new SearchModel();
-                if ($adv->slug == "") {
-                    $algolia->saveAlgolia($adv->toArray(), $settings);
-                } else {
-                    $algolia->updateAlgolia($request->toArray(), $settings);
-                }
-            }
             //Cloudinary Module
             $isActiveCloudinary = $advModel->is_enabled('cloudinary');
             if ($isActiveCloudinary) {
@@ -884,6 +874,7 @@ class AdvsController extends PublicController
                     ->packageAddCart(\request()->pack_id, $new->id);
             }
         }
+        $events->dispatch(new EditAd($advModel));
 
         return redirect('/advs/edit_advs/' . $new->id);
     }
@@ -973,12 +964,6 @@ class AdvsController extends PublicController
                 }
                 $this->adv_model->finish_at_Ads($id, $default_published_time);
             }
-        }
-
-        $isActiveAlgolia = $this->adv_model->is_enabled('algolia');
-        if ($isActiveAlgolia) {
-            $algolia = new SearchModel();
-            $algolia->updateStatus($id, $type, $settings);
         }
 
         $this->adv_model->statusAds($id, $type);
