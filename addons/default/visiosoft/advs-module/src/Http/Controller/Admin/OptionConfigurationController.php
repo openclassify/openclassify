@@ -1,29 +1,27 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller\Admin;
 
+use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Form\OptionConfigurationFormBuilder;
 use Visiosoft\AdvsModule\OptionConfiguration\Table\OptionConfigurationTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
 class OptionConfigurationController extends AdminController
 {
-
-	/**
-	 * Display an index of existing entries.
-	 *
-	 * @param OptionConfigurationTableBuilder $table
-	 * @return \Symfony\Component\HttpFoundation\Response
-	 */
-	public function index(OptionConfigurationTableBuilder $table)
+    public function index(
+        OptionConfigurationTableBuilder $table,
+        OptionConfigurationRepositoryInterface $optionConfigurationRepository
+    )
 	{
+	    // Remove deleted ad's configuration
+        $unusedConfigs = $optionConfigurationRepository->getUnusedConfigs();
+
+        if (count($unusedConfigs)) {
+            $optionConfigurationRepository->deleteUnusedConfigs($unusedConfigs);
+        }
+
 		return $table->render();
 	}
 
-	/**
-	 * Create a new entry.
-	 *
-	 * @param OptionConfigurationFormBuilder $form
-	 * @return \Symfony\Component\HttpFoundation\Response
-	 */
 	public function create(OptionConfigurationFormBuilder $form)
 	{
 		$form->setOption('redirect', route('visiosoft.module.advs::configrations.index'));
