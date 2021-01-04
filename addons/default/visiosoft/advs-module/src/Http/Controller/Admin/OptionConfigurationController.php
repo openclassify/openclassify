@@ -16,7 +16,7 @@ class OptionConfigurationController extends AdminController
         $unusedConfigs = $optionConfigurationRepository->getUnusedConfigs();
 
         if (count($unusedConfigs)) {
-            $optionConfigurationRepository->deleteUnusedConfigs();
+            $optionConfigurationRepository->deleteUnusedConfigs($unusedConfigs);
         }
 
 		return $table->render();
