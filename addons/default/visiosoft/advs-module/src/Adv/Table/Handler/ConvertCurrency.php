@@ -13,7 +13,9 @@ class ConvertCurrency extends ActionHandler
 
         foreach ($selected as $id) {
             $entry = $model->newQuery()->find($id);
-            $model->foreignCurrency($entry->currency, $entry->price, $id, $settingRepository);
+            if ($entry) {
+                $model->foreignCurrency($entry->currency, $entry->price, $id, $settingRepository);
+            }
         }
         if ($selected) {
             $this->messages->success(trans('visiosoft.module.advs::message.currency_converted'));
