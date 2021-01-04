@@ -70,4 +70,24 @@ class OptionConfigurationRepository extends EntryRepository implements OptionCon
 
 		return $configurations;
 	}
+
+	public function getUnusedConfigs()
+	{
+		return $this->newQuery()
+            ->leftJoin('advs_advs as ads', 'advs_option_configuration.parent_adv_id', 'ads.id')
+            ->whereNull('ads.id')
+            ->orWhereNotNull('deleted_at')
+            ->pluck('parent_adv_id')
+            ->all();
+	}
+
+	public function deleteUnusedConfigs($adsIDs)
+	{
+		return $this->newQuery()->whereIn('parent_adv_id', $adsIDs)->delete();
+	}
+
+	public function deleteAdsConfigs($adID)
+	{
+		return $this->newQuery()->where('parent_adv_id', $adID)->delete();
+	}
 }
