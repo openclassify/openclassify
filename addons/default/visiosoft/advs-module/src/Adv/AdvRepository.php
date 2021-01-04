@@ -102,20 +102,26 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
         }
+        $currency = setting_value('streams::currency');
+
         if (!empty($param['currency'])) {
-            if (!empty($param['min_price'])) {
-                $num = $param['min_price'];
-                $int = (int)$num;
-                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') >=" . $int;
-                $query = $query->whereRaw($column);
-            }
-            if (!empty($param['max_price'])) {
-                $num = $param['max_price'];
-                $int = (int)$num;
-                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-                $query = $query->whereRaw($column);
-            }
+            $currency = $param['currency'];
         }
+
+        if (!empty($param['min_price'])) {
+            $num = $param['min_price'];
+            $int = (int)$num;
+            $column = "JSON_EXTRACT(foreign_currencies, '$." . $currency . "') >= " . $int;
+            $query = $query->whereRaw($column);
+        }
+
+        if (!empty($param['max_price'])) {
+            $num = $param['max_price'];
+            $int = (int)$num;
+            $column = "JSON_EXTRACT(foreign_currencies, '$." . $currency . "') <= " . $int;
+            $query = $query->whereRaw($column);
+        }
+
         if (!empty($param['date'])) {
             if ($param['date'] === 'day') {
                 $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subDay());

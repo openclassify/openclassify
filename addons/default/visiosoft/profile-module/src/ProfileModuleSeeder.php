@@ -43,21 +43,5 @@ class ProfileModuleSeeder extends Seeder
     {
         // Users Fields Seeder
         $this->call(UsersFieldsSeeder::class);
-
-        if (is_null($this->folders->findBy('slug', 'favicon'))) {
-            $disk = $this->disks->findBySlug('local');
-
-            $this->folders->create([
-                'en'            => [
-                    'name'        => 'Favicon',
-                    'description' => 'A folder for Favicon.',
-                ],
-                'slug'          => 'favicon',
-                'disk'          => $disk,
-                'allowed_types' => [
-                    'ico','png',
-                ],
-            ]);
-        };
     }
 }

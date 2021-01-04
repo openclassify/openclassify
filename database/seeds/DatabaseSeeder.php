@@ -156,5 +156,23 @@ class DatabaseSeeder extends Seeder
 				],
 			]);
 		}
+
+
+        //Favicon Folder
+        if (is_null($this->folders->findBy('slug', 'favicon'))) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en'            => [
+                    'name'        => 'Favicon',
+                    'description' => 'A folder for Favicon.',
+                ],
+                'slug'          => 'favicon',
+                'disk'          => $disk,
+                'allowed_types' => [
+                    'ico','png',
+                ],
+            ]);
+        };
 	}
 }
