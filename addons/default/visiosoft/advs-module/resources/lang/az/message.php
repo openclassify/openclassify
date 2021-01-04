@@ -21,7 +21,7 @@ return [
     'category_not_exist' => 'Bu kateqoriya artıq mövcud deyil!',
     'currency_converted' => 'Valyuta uğurla çevrildi.',
     'choose_user' => 'İstifadəçi seçin',
-    'owner_updated_successfully' => 'Sahib uğurla yeniləndi!',
+    'owner_updated_successfully' => 'Elan sahib uğurla yeniləndi!',
     'no_add_found' => 'Elan tapılmadı!',
     'replicated_success' => 'Reklam uğurla təkrarlandı!',
     'ad_doesnt_exist' => "Bu reklam mövcud deyil!",
