@@ -223,4 +223,8 @@ return [
         'name' => 'Lang Switcher For Browser',
         'instructions' => 'Allows you to choose browser language as active language'
     ],
+    'get_categories' => [
+        'name' => 'GET Categories',
+        'instructions' => 'It represents the categories in which the GET property will be valid.'
+    ],
 ];
