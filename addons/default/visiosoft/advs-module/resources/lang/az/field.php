@@ -320,6 +320,7 @@ return [
     'congratulations' => 'Təbriklər',
     'ad_desc' => 'Elan önizləməsi',
     'upload_photos' => 'Şəkillər yükləyin',
+    'upload_files' => 'Upload Files',
     'additional_fields' => 'Əlavə sahələr',
     'ad_location' => 'Ünvan əlavə et',
 
