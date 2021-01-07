@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "This ad is not valid anymore!",
     'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
     'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
+	'sold_status_change' => "Your Ad's Status Has Been Set to Sold!",
 ];

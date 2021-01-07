@@ -36,6 +36,12 @@
             </div>
             <!--detail-ad -->
 
+            <ul class="docs list-unstyled">
+                {% for doc in adv.doc_files %}
+                    <li><a class="text-dark small" href="{{ doc.url }}"><i class="fa fa-lg fa-download small"></i> {{ doc.name }}</a></li>
+                {% endfor %}
+            </ul>
+
             {% if setting_value('visiosoft.theme.base::ad_details_tab') %}
 
                 {% if blocks('ad-item-content-block-area') is null %}

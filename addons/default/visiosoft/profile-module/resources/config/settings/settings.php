@@ -60,6 +60,13 @@ return [
             'mode' => 'checkbox'
         ]
     ],
+    'hide_register_type_profile' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
     "education" => "anomaly.field_type.tags",
     "state_of_education" => "anomaly.field_type.tags",
     "profession" => "anomaly.field_type.tags",

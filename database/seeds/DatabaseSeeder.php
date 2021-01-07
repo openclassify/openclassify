@@ -156,5 +156,41 @@ class DatabaseSeeder extends Seeder
 				],
 			]);
 		}
+
+
+        //Favicon Folder
+        if (is_null($this->folders->findBy('slug', 'favicon'))) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en'            => [
+                    'name'        => 'Favicon',
+                    'description' => 'A folder for Favicon.',
+                ],
+                'slug'          => 'favicon',
+                'disk'          => $disk,
+                'allowed_types' => [
+                    'ico','png',
+                ],
+            ]);
+        };
+
+
+		//Create Ads Documents Folder
+		if (!$this->folders->findBySlug('ads_documents')) {
+			$disk = $this->disks->findBySlug('local');
+
+			$this->folders->create([
+				'en' => [
+					'name' => 'Ads Documents',
+					'description' => 'A folder for Ads Documents.',
+				],
+				'slug' => 'ads_documents',
+				'disk' => $disk,
+				'allowed_types' => [
+					'pdf', 'doc', 'docx', 'xls', 'xlsx',
+				],
+			]);
+		};
 	}
 }

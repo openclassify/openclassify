@@ -3,6 +3,7 @@ Dropzone.autoDiscover = false;
 $("div#myDrop").dropzone({url: "/file/post"});
 
 var uploaded = $('input[name="files"]').val().split(',').map(Number);
+var docsUploaded = $('input[name="doc_files"]').val().split(',').map(Number);
 
 $(function () {
 
@@ -16,12 +17,13 @@ $(function () {
     var dropzone = new Dropzone('.dropzone:not(data-initialized)',
         {
             paramName: 'upload',
+            maxFiles: imageCount,
             resizeWidth: settings_image['resize_width'],
             resizeHeight: settings_image['resize_height'],
             autoProcessQueue: true,
             parallelUploads: 1,
             resizeMethod: 'contain',
-            resizeQuality: 0.8,
+            resizeQuality: 0.9,
             url: REQUEST_ROOT_PATH + '/streams/media-field_type/handle',
             headers: {
                 'X-CSRF-TOKEN': CSRF_TOKEN
@@ -33,8 +35,7 @@ $(function () {
                 formData.append('folder', element.data('folder'));
             },
             renameFile: function (file) {
-                let newName = new Date().getTime() + '_' + file.name;
-                return newName;
+                return new Date().getTime() + '_' + file.name.replace(/ /g, '_');
             },
             accept: function (file, done) {
                 $.get(REQUEST_ROOT_PATH + '/streams/media-field_type/exists/' + element.data('folder'), {'file': file.name}, function (data) {
@@ -67,23 +68,28 @@ $(function () {
     dropzone.on('success', function (file) {
 
         var response = JSON.parse(file.xhr.response);
+        var mimeType = response.mime_type.split('/')
+        if (mimeType[0] === 'image'){
+            uploaded.push(response.id);
 
-        uploaded.push(response.id);
+            $('.media-selected-wrapper').load(
+                REQUEST_ROOT_PATH + '/streams/media-field_type/selected?uploaded=' + uploaded.join(','),
+                function () {
+                    $('input[name="files"]').val(uploaded.join(','))
+                }
+            );
 
-        $('.media-selected-wrapper').load(
-            REQUEST_ROOT_PATH + '/streams/media-field_type/selected?uploaded=' + uploaded.join(','),
-            function () {
-                $('input[name="files"]').val(uploaded.join(','))
-            }
-        );
+            file.previewElement.querySelector('[data-dz-uploadprogress]').setAttribute('class', 'progress progress-success');
 
-        file.previewElement.querySelector('[data-dz-uploadprogress]').setAttribute('class', 'progress progress-success');
+            setTimeout(function () {
 
-        setTimeout(function () {
-
-            addAppendByData(uploaded[0])
-            file.previewElement.remove();
-        }, 500);
+                addAppendByData(uploaded[0])
+                file.previewElement.remove();
+            }, 500);
+        } else {
+            docsUploaded.push(response.id);
+            $('input[name="doc_files"]').val(docsUploaded.join(','))
+        }
     });
 
     // When file fails to upload.
@@ -107,6 +113,13 @@ function deleteImage(e, id) {
     uploaded.splice(key_item, 1);
     $('input[name="files"]').val(uploaded.join(','))
     $('.imageList').find('div[data-id="' + id + '"]').remove()
+}
+
+function deleteDocs(id) {
+    var key_item = $.inArray(id, docsUploaded);
+    docsUploaded.splice(key_item, 1);
+    $('input[name="doc_files"]').val(docsUploaded.join(','))
+    $('.doc_list').find('#' + id).remove()
 }
 
 function rotateImage(e, id) {

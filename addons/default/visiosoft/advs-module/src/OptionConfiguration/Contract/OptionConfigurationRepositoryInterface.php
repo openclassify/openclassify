@@ -7,4 +7,10 @@ interface OptionConfigurationRepositoryInterface extends EntryRepositoryInterfac
 	public function createConfigration($ad_id,$price,$currency,$stock,$option_json);
 
 	public function getConf($ad_id);
+
+	public function getUnusedConfigs();
+
+	public function deleteUnusedConfigs($adsIDs);
+
+	public function deleteAdsConfigs($adID);
 }

@@ -53,7 +53,8 @@ class AdvFormBuilder extends FormBuilder
             'class' => 'hidden d-none mapVal'
         ],
         'files',
-        'popular_adv',
+	    'doc_files',
+	    'popular_adv',
         'adv_day',
 	     'product_options_value'
     ];

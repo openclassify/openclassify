@@ -165,6 +165,7 @@ return [
     'edit' => 'Edit',
     'approve' => 'Approve',
     'passive' => "Passive",
+	'sold' => 'Sold',
     'offered_by' => 'Offered By',
     'more_ads_by' => 'More Ads By',
     'click_phone' => 'Show phone number',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Corporate Info',
     'featured_ads' => "Featured Ads",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':count ads found for :name search',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "No location is selected.",
     "continue" => 'Continue',
     "gallery" => 'Gallery',
+    "ad" => 'Ad',
     "ads" => 'Ads',
     "were_found" => 'were found.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'Congratulations',
     'ad_desc' => 'Ad Description',
     'upload_photos' => 'Upload Photos',
+    'upload_files' => 'Upload Files',
     'additional_fields' => 'Additional Fields',
     'ad_location' => 'Ad Location',
 

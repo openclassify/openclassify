@@ -153,12 +153,12 @@ return [
             'mode' => 'checkbox'
         ]
     ],
-	'price_area_hidden' => [
-		'type' => 'anomaly.field_type.boolean',
-		'config' => [
-			'default_value' => false,
-		]
-	],
+    'price_area_hidden' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
     'enabled_currencies' => [
         'bind' => 'streams::currencies.enabled',
         'env' => 'ADV_ENABLED_CURRENCIES',
@@ -351,15 +351,34 @@ return [
         'env' => 'OVERRIDE_TEXT',
     ],
     'steps_color' => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#209579',
         ]
     ],
     'create_ad_button_color' => [
-        "type"   => "anomaly.field_type.colorpicker",
+        "type" => "anomaly.field_type.colorpicker",
         "config" => [
             "default_value" => '#00a651',
         ]
+    ],
+    'ads_image_limit' => [
+        "type" => "anomaly.field_type.integer",
+        "config" => [
+            "default_value" => 25
+        ]
+    ],
+    'lang_switcher_for_browser' => [
+        'type' => 'anomaly.field_type.boolean',
+        'bind' => 'advs.lang_switcher_for_browser',
+        'env' => 'LANG_SWITCHER_FOR_BROWSER',
+    ],
+    'get_categories' => [
+        'type' => 'anomaly.field_type.checkboxes',
+        'config' => [
+            'options' => function (\Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface $categoryRepository) {
+                return $categoryRepository->mainCats()->pluck('name', 'id')->all();
+            },
+        ],
     ],
 ];

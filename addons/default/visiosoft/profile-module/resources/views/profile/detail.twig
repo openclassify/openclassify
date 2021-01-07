@@ -92,7 +92,7 @@
                                             <p class="mb-0 mr-4">
                                                 {{ trans('visiosoft.module.profile::message.disable_account') }}
                                             </p>
-                                            <a href="{{ url_route("visiosoft.module.profile::profile_close_account") }}" class="btn btn-danger text-white">
+                                            <a href="{{ url_route("visiosoft.module.profile::profile_close_account") }}" class="btn btn-danger account-freeze text-white">
                                                 {{ trans("visiosoft.module.profile::field.disable_account.name") }}
                                             </a>
                                         </div>
@@ -205,7 +205,7 @@
                                         </div>
                                     </div>
                                 {% endif %}
-                                <div class="col-md-12">
+                                <div class="col-md-12{{ setting_value('visiosoft.module.profile::hide_register_type_profile') ? ' d-none' }}">
                                     <div class="form-group">
                                         <label class="control-label font-weight-bold">
                                             {{ trans("visiosoft.module.profile::field.register_type.name") }}

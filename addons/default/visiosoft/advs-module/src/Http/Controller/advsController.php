@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
+use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
@@ -521,6 +522,7 @@ class AdvsController extends PublicController
                 }
             }
 
+            $features = null;
             if ($this->adv_model->is_enabled('customfields')) {
                 $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
             }
@@ -780,7 +782,8 @@ class AdvsController extends PublicController
                 }
             }
 
-            $adv->is_get_adv = $request->is_get_adv;
+            $get_categories = in_array($adv->cat1, setting_value('visiosoft.module.advs::get_categories'));
+            $adv->is_get_adv = ($request->is_get_adv and $get_categories) ? true : false;
             $adv->save();
 
             //algolia Search Module
@@ -980,9 +983,13 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         event(new ChangedStatusAd($ad));//Create Notify
-        $message = $type === 'approved' ?
-            trans('visiosoft.module.advs::message.approve_status_change')
-            : trans('visiosoft.module.advs::message.passive_status_change');
+	    if ($type === 'approved') {
+		    $message = trans('visiosoft.module.advs::message.approve_status_change');
+	    } elseif ($type === 'sold') {
+		    $message = trans('visiosoft.module.advs::message.sold_status_change');
+	    } else {
+		    trans('visiosoft.module.advs::message.passive_status_change');
+	    }
         $this->messages->success($message);
         return back();
     }
@@ -1263,4 +1270,13 @@ class AdvsController extends PublicController
         $this->messages->success(trans('visiosoft.module.advs::message.extended', ['number' => $adsExtended]));
         return $this->redirect->back();
     }
+
+	public function sold($id, Request $request, AdvModel $advModel)
+	{
+		if ($request->sold == 'sold') {
+			$advModel->find($id)->update(['status' => 'sold']);
+		} elseif ($request->sold = 'not-sold') {
+			$advModel->find($id)->update(['status' => 'approved']);
+		}
+	}
 }

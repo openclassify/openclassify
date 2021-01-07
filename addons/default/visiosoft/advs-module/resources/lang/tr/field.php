@@ -210,6 +210,7 @@ return [
     'corporate_info' => 'Kurumsal Bilgiler',
     'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
+    'search_ad_result_prefix' => 'Aramanızda',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
@@ -219,7 +220,7 @@ return [
     'view_cart' => 'Sepeti Görüntüle',
     'no_ads' => 'İlan bulunamadı!',
     'show_display_mode' => [
-        'map' => 'harita',
+        'map' => 'Harita',
         'list' => 'Liste',
     ],
     'advs_list_table_thead' => [
@@ -282,6 +283,7 @@ return [
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
+    "ad" => 'İlan',
     "ads" => 'İlanlar',
     "were_found" => 'bulundu.',
 

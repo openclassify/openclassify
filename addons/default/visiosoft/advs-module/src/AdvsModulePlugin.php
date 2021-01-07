@@ -120,4 +120,22 @@ class AdvsModulePlugin extends Plugin
             ),
         ];
     }
+
+    /**
+     * Get the filters.
+     *
+     * @return array
+     */
+    public function getFilters()
+    {
+        return [
+            new \Twig_SimpleFilter(
+                'ksort',
+                function (array $array) {
+                    ksort($array);
+                    return $array;
+                }
+            ),
+        ];
+    }
 }

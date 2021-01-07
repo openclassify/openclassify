@@ -11,6 +11,7 @@ use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
+use Visiosoft\LocationModule\District\DistrictModel;
 
 class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 {
@@ -101,20 +102,26 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
         }
+        $currency = setting_value('streams::currency');
+
         if (!empty($param['currency'])) {
-            if (!empty($param['min_price'])) {
-                $num = $param['min_price'];
-                $int = (int)$num;
-                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') >=" . $int;
-                $query = $query->whereRaw($column);
-            }
-            if (!empty($param['max_price'])) {
-                $num = $param['max_price'];
-                $int = (int)$num;
-                $column = "JSON_EXTRACT(foreign_currencies, '$." . $param['currency'] . "') <=" . $int;
-                $query = $query->whereRaw($column);
-            }
+            $currency = $param['currency'];
         }
+
+        if (!empty($param['min_price'])) {
+            $num = $param['min_price'];
+            $int = (int)$num;
+            $column = "JSON_EXTRACT(foreign_currencies, '$." . $currency . "') >= " . $int;
+            $query = $query->whereRaw($column);
+        }
+
+        if (!empty($param['max_price'])) {
+            $num = $param['max_price'];
+            $int = (int)$num;
+            $column = "JSON_EXTRACT(foreign_currencies, '$." . $currency . "') <= " . $int;
+            $query = $query->whereRaw($column);
+        }
+
         if (!empty($param['date'])) {
             if ($param['date'] === 'day') {
                 $query = $query->where('advs_advs.publish_at', '>=', Carbon::now()->subDay());
@@ -215,11 +222,15 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     {
         $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
         $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
+        $district = DistrictModel::query()->where('location_districts.id', $adv->district)->first();
         if ($country != null) {
             $adv->setAttribute('country_name', $country->name);
         }
         if ($city != null) {
             $adv->setAttribute('city_name', $city->name);
+        }
+        if ($district != null) {
+            $adv->setAttribute('district_name', $district->name);
         }
         return $adv;
     }
@@ -460,14 +471,22 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $advs->update(['finish_at' => $newDate]);
     }
 
-    public function getByUsersIDs($usersIDs)
+    public function getByUsersIDs($usersIDs, $status = 'approved', $withDraft = false)
     {
-        return $this
+        $ads = $this
             ->newQuery()
             ->whereIn('advs_advs.created_by_id', $usersIDs)
-            ->where('advs_advs.slug', '!=', "")
-            ->where('advs_advs.status', 'approved')
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+
+        if ($status) {
+            $ads = $ads->where('advs_advs.status', 'approved');
+        }
+
+        if (!$withDraft) {
+            $ads = $ads->where('advs_advs.slug', '!=', "");
+        }
+
+        return $ads;
     }
 
     public function getPopular()
