@@ -165,6 +165,7 @@ return [
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
     'passive' => "Pasif",
+	'sold' => 'Sold',
     'offered_by' => 'İlan Sahibi',
     'more_ads_by' => 'Diğer İlanlar',
     'click_phone' => 'Telefon numarasını göster',
@@ -210,7 +211,7 @@ return [
     'corporate_info' => 'Kurumsal Bilgiler',
     'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
-    'search_ad_result_prefix' => 'Aramanızda',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
@@ -220,7 +221,7 @@ return [
     'view_cart' => 'Sepeti Görüntüle',
     'no_ads' => 'İlan bulunamadı!',
     'show_display_mode' => [
-        'map' => 'Harita',
+        'map' => 'harita',
         'list' => 'Liste',
     ],
     'advs_list_table_thead' => [
@@ -283,7 +284,7 @@ return [
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',
     "gallery" => 'Galeri',
-    "ad" => 'İlan',
+    "ad" => 'Ad',
     "ads" => 'İlanlar',
     "were_found" => 'bulundu.',
 
@@ -320,6 +321,7 @@ return [
     'congratulations' => 'Tebrikler',
     'ad_desc' => 'İlan Açıklaması',
     'upload_photos' => 'Resim Yükle',
+    'upload_files' => 'Upload Files',
     'additional_fields' => 'Özel Alanlar',
     'ad_location' => 'Lokasyon Ekle',
 
