@@ -373,4 +373,12 @@ return [
         'bind' => 'advs.lang_switcher_for_browser',
         'env' => 'LANG_SWITCHER_FOR_BROWSER',
     ],
+    'get_categories' => [
+        'type' => 'anomaly.field_type.checkboxes',
+        'config' => [
+            'options' => function (\Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface $categoryRepository) {
+                return $categoryRepository->mainCats()->pluck('name', 'id')->all();
+            },
+        ],
+    ],
 ];

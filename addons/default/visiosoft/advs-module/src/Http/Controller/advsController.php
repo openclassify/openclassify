@@ -781,7 +781,8 @@ class AdvsController extends PublicController
                 }
             }
 
-            $adv->is_get_adv = $request->is_get_adv;
+            $get_categories = in_array($adv->cat1, setting_value('visiosoft.module.advs::get_categories'));
+            $adv->is_get_adv = ($request->is_get_adv and $get_categories) ? true : false;
             $adv->save();
 
             //algolia Search Module
