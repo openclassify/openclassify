@@ -115,6 +115,13 @@ function deleteImage(e, id) {
     $('.imageList').find('div[data-id="' + id + '"]').remove()
 }
 
+function deleteDocs(id) {
+    var key_item = $.inArray(id, docsUploaded);
+    docsUploaded.splice(key_item, 1);
+    $('input[name="doc_files"]').val(docsUploaded.join(','))
+    $('.doc_list').find('#' + id).remove()
+}
+
 function rotateImage(e, id) {
     e.preventDefault()
 

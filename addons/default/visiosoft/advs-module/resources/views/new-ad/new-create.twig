@@ -178,7 +178,15 @@
                                 <div class="row form-group images">
                                     <div class="col-md-12">
                                         {{ form.fields.files.input |raw }}
-                                        <input name="doc_files" value="{{ form.fields.doc_files.value.pluck('id').all()|join(',') }}" >
+                                        <input name="doc_files" value="{{ form.fields.doc_files.value.pluck('id').all()|join(',') }}" hidden>
+                                        {% for docs in form.fields.doc_files.value %}
+                                            <div class="doc_list small">
+                                                {{ docs.name }}
+                                                <a id="{{ docs.id }}" href="javascript:void(0)" onclick="deleteDocs({{ docs.id }})" class="text-dark">
+                                                    <i class="fa fa-trash text-danger"></i>
+                                                </a><br>
+                                            </div>
+                                        {% endfor %}
                                     </div>
                                 </div>
                             </div>
