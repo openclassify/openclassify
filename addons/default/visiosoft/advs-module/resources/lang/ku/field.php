@@ -165,6 +165,7 @@ return [
     'edit' => 'Weşandin',
     'approve' => 'Destûrdan',
     'passive' => "Nejîr",
+	'sold' => 'Sold',
     'offered_by' => 'Ji hêla Pêşniyar kirin',
     'more_ads_by' => 'More Ads By',
     'click_phone' => 'Hejmara têlefonê nîşan bide',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Agahdariya Pargîdanî',
     'featured_ads' => "Reklamên Taybetmendî",
     'trending_ads' => 'Reklamên Trendind',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ': reklamên hejmartin ji bo: lêgerîna navan hate dîtin',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "Cîh nayê hilbijartin.",
     "continue" => 'Berdewamkirin',
     "gallery" => 'Galerya',
+    "ad" => 'Ad',
     "ads" => 'Reklam',
     "were_found" => 'hatin dîtin.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'Pîrozbahî',
     'ad_desc' => 'Ad Description',
     'upload_photos' => 'Wêneyan bar bikin',
+    'upload_files' => 'Upload Files',
     'additional_fields' => 'Zeviyên Zêdeyî',
     'ad_location' => 'Cihê Ad',
 
