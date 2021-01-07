@@ -219,4 +219,12 @@ return [
         'name' => '광고 버튼 색상 만들기',
         'instructions' => '새 광고 카테고리 선택이 완료되면 표시되는 버튼을 변경합니다.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
+    'get_categories' => [
+        'name' => 'GET Categories',
+        'instructions' => 'It represents the categories in which the GET property will be valid.'
+    ],
 ];
