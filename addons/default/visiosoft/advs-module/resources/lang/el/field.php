@@ -165,6 +165,7 @@ return [
     'edit' => 'Επεξεργασία',
     'approve' => 'Εγκρίνω',
     'passive' => "Παθητικός",
+	'sold' => 'Sold',
     'offered_by' => 'Προσφέρεται από',
     'more_ads_by' => 'Περισσότερες διαφημίσεις από',
     'click_phone' => 'Εμφάνιση αριθμού τηλεφώνου',
@@ -210,6 +211,7 @@ return [
     'corporate_info' => 'Εταιρικές πληροφορίες',
     'featured_ads' => "Προτεινόμενες διαφημίσεις",
     'trending_ads' => 'Αλλαγή διαφημίσεων',
+    'search_ad_result_prefix' => 'on',
     'search_ads_result_message' => [
         'name' => ':      βρέθηκαν οι αγγελίες που βρέθηκαν για:αναζήτηση ονόματος',
     ],
@@ -281,6 +283,7 @@ return [
     "no_location" => "Δεν έχει επιλεγεί τοποθεσία.",
     "continue" => 'Να συνεχίσει',
     "gallery" => 'Εκθεσιακός χώρος',
+    "ad" => 'Ad',
     "ads" => 'Διαφημίσεις',
     "were_found" => 'βρέθηκαν.',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Συγχαρητήρια',
     'ad_desc' => 'Περιγραφή διαφήμισης',
     'upload_photos' => 'Ανέβασε φωτογραφίες',
+    'upload_files' => 'Upload Files',
     'additional_fields' => 'Πρόσθετα πεδία',
     'ad_location' => 'Τοποθεσία διαφήμισης',
 
