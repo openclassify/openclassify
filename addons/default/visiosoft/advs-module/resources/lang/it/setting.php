@@ -219,4 +219,12 @@ return [
         'name' => 'Crea colore pulsante annuncio',
         'instructions' => 'Modifica il pulsante che viene visualizzato al termine della selezione della nuova categoria di annunci.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
+    'get_categories' => [
+        'name' => 'GET Categories',
+        'instructions' => 'It represents the categories in which the GET property will be valid.'
+    ],
 ];
