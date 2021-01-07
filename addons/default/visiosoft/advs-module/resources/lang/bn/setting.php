@@ -219,4 +219,12 @@ return [
         'name' => 'বিজ্ঞাপন বোতামের রঙ তৈরি করুন',
         'instructions' => 'নতুন বিজ্ঞাপন বিভাগ নির্বাচন শেষ হলে যে বোতামটি প্রদর্শিত হবে তা পরিবর্তন করে।'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
+    'get_categories' => [
+        'name' => 'GET Categories',
+        'instructions' => 'It represents the categories in which the GET property will be valid.'
+    ],
 ];
