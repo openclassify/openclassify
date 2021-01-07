@@ -219,4 +219,12 @@ return [
         'name' => 'Créer une couleur de bouton d\'annonce',
         'instructions' => 'Modifie le bouton qui apparaît lorsque la sélection de la nouvelle catégorie d\'annonces est terminée.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher For Browser',
+        'instructions' => 'Allows you to choose browser language as active language'
+    ],
+    'get_categories' => [
+        'name' => 'GET Categories',
+        'instructions' => 'It represents the categories in which the GET property will be valid.'
+    ],
 ];
