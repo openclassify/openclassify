@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
+use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;

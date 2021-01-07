@@ -174,5 +174,23 @@ class DatabaseSeeder extends Seeder
                 ],
             ]);
         };
+
+
+		//Create Ads Documents Folder
+		if (!$this->folders->findBySlug('ads_documents')) {
+			$disk = $this->disks->findBySlug('local');
+
+			$this->folders->create([
+				'en' => [
+					'name' => 'Ads Documents',
+					'description' => 'A folder for Ads Documents.',
+				],
+				'slug' => 'ads_documents',
+				'disk' => $disk,
+				'allowed_types' => [
+					'pdf', 'doc', 'docx', 'xls', 'xlsx',
+				],
+			]);
+		};
 	}
 }
