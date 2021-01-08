@@ -223,4 +223,8 @@ return [
         'name' => 'Tarayıcı Diline Geç',
         'instructions' => 'Seçili aktif bir dil olmadığında tarayıcı dilini aktif dil olarak seçmenize izin verir'
     ],
+    'get_categories' => [
+        'name' => 'GET Kategorileri',
+        'instructions' => 'GET özelliğinin geçerli olacağı kategorileri temsil eder.'
+    ],
 ];

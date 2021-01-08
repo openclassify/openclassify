@@ -31,6 +31,7 @@ return [
                     'estimated_pending_time',
                     'default_published_time',
                     'default_GET',
+                    'get_categories',
                     'listing_page_image',
                     'show_ads_count',
                 ],
