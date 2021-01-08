@@ -91,8 +91,8 @@ $(function () {
             $('input[name="doc_files"]').val(docsUploaded.join(','))
 
             $('.doc_list').append(`
-                ${ response.name }
                 <a id="${ response.id }" href="javascript:void(0)" onclick="deleteDocs(${ response.id })" class="text-dark">
+                                ${ response.name }
                     <i class="fa fa-trash text-danger"></i>
                 </a><br>
             `)
