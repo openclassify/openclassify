@@ -89,6 +89,19 @@ $(function () {
         } else {
             docsUploaded.push(response.id);
             $('input[name="doc_files"]').val(docsUploaded.join(','))
+
+            $('.doc_list').append(`
+                ${ response.name }
+                <a id="${ response.id }" href="javascript:void(0)" onclick="deleteDocs(${ response.id })" class="text-dark">
+                    <i class="fa fa-trash text-danger"></i>
+                </a><br>
+            `)
+
+            setTimeout(function () {
+
+                addAppendByData(docsUploaded[0])
+                file.previewElement.remove();
+            }, 500);
         }
     });
 
