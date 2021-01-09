@@ -10,4 +10,5 @@ return [
     'uploading' => 'بارگذاری',
     'loading' => 'بارگذاری',
     'error_upload' => 'هنگام بارگذاری پرونده مشکلی پیش آمد.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
