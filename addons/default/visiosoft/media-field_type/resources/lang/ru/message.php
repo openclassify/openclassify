@@ -10,4 +10,5 @@ return [
     'uploading' => 'Выгрузка',
     'loading' => 'загрузка',
     'error_upload' => 'При загрузке файла возникла проблема.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
