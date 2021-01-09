@@ -319,6 +319,7 @@ return [
     'congratulations' => 'Congratulations',
     'ad_desc' => 'Ad Description',
     'upload_photos' => 'Upload Photos',
+    'upload_files' => 'Upload Files',
     'additional_fields' => 'Additional Fields',
     'ad_location' => 'Ad Location',
 

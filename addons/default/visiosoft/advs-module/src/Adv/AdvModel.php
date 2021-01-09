@@ -1,9 +1,9 @@
 <?php namespace Visiosoft\AdvsModule\Adv;
 
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
+use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\Streams\Platform\Model\Advs\AdvsCustomFieldsEntryModel;
 use Carbon\Carbon;
-use GuzzleHttp\Client;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
@@ -112,9 +112,8 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function foreignCurrency($currency, $price, $isUpdate, $settings)
     {
         $currencies = setting_value('visiosoft.module.advs::enabled_currencies');
+        $messages = app(MessageBag::class);
         $foreign_currency = array();
-
-        $client = new Client();
 
         foreach ($currencies as $currencyIn) {
             if ($currencyIn == $currency) {
@@ -123,8 +122,14 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                 try {
                     $url = $currency . "_" . $currencyIn;
                     $freeCurrencyKey = $settings->value('visiosoft.module.advs::free_currencyconverterapi_key');
-                    $response = $client->get('http://free.currencyconverterapi.com/api/v6/convert?q='
-                        . $url . '&compact=y&apiKey=' . $freeCurrencyKey);
+
+                    $client = new \GuzzleHttp\Client();
+                    $response = $client->request('GET', 'http://free.currencyconverterapi.com/api/v6/convert', ['query' => [
+                        'q' => $url,
+                        'compact' => 'y',
+                        'apiKey' => $freeCurrencyKey
+                    ]]);
+
                     if ($response->getStatusCode() == '200') {
                         $response = (array)\GuzzleHttp\json_decode($response->getBody()->getContents());
                         if (!empty($response)) {
@@ -132,8 +137,11 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                             $foreign_currency[$currencyIn] = $price * $rate;
                         }
                     }
-                } catch (\Exception $e) {
-                    $this->messages->error((!is_null($e->getMessage())) ? $e->getMessage() : trans('streams::error.500.message'));
+                } catch (\GuzzleHttp\Exception\ClientException $e) {
+                    $response = $e->getResponse();
+                    $responseBodyAsString = $response->getBody()->getContents();
+                    $response = json_decode($responseBodyAsString, true);
+                    $messages->error($response['error']);
                 }
             }
         }

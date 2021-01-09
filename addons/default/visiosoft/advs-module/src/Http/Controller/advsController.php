@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
+use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
@@ -45,8 +46,8 @@ class AdvsController extends PublicController
     private $adv_repository;
 
     private $optionConfigurationRepository;
-	private $productOptionRepository;
-	private $productOptionsValueRepository;
+    private $productOptionRepository;
+    private $productOptionsValueRepository;
 
     private $country_repository;
 
@@ -75,8 +76,8 @@ class AdvsController extends PublicController
         AdvRepositoryInterface $advRepository,
 
         OptionConfigurationRepositoryInterface $optionConfigurationRepository,
-		ProductoptionRepositoryInterface $productOptionRepository,
-		ProductoptionsValueRepositoryInterface $productOptionsValueRepository,
+        ProductoptionRepositoryInterface $productOptionRepository,
+        ProductoptionsValueRepositoryInterface $productOptionsValueRepository,
 
         CountryRepositoryInterface $country_repository,
 
@@ -108,7 +109,7 @@ class AdvsController extends PublicController
 
         $this->optionConfigurationRepository = $optionConfigurationRepository;
         $this->productOptionRepository = $productOptionRepository;
-		$this->productOptionsValueRepository = $productOptionsValueRepository;
+        $this->productOptionsValueRepository = $productOptionsValueRepository;
 
         $this->country_repository = $country_repository;
 
@@ -581,15 +582,15 @@ class AdvsController extends PublicController
             $this->template->set('showTitle', false);
             $this->template->set('meta_title', $metaTitle);
 
-	        $configurations = $this->optionConfigurationRepository->getConf($adv->id);
+            $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
 
-	        if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
-		        return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-			        'recommended_advs', 'categories', 'features', 'options', 'configurations'));
-	        } else {
-		        return back();
-	        }
+            if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
+                return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
+                    'recommended_advs', 'categories', 'features', 'options', 'configurations'));
+            } else {
+                return back();
+            }
         } else {
             $this->messages->error(trans('visiosoft.module.advs::message.ad_doesnt_exist'));
             return redirect()->route('visiosoft.module.advs::list');
@@ -782,7 +783,12 @@ class AdvsController extends PublicController
                 }
             }
 
-            $adv->is_get_adv = $request->is_get_adv;
+            $get_categories_status = false;
+            if ($get_categories = setting_value('visiosoft.module.advs::get_categories') and $get_categories = in_array($adv->cat1, $get_categories)) {
+                $get_categories_status = true;
+            }
+
+            $adv->is_get_adv = ($request->is_get_adv and $get_categories_status) ? true : false;
             $adv->save();
 
             //Cloudinary Module
@@ -792,7 +798,9 @@ class AdvsController extends PublicController
                 $CloudinaryModel = new VideoModel();
                 $CloudinaryModel->updateRequest($request);
 
-                if ($request->url != "") { $adv->save(); }
+                if ($request->url != "") {
+                    $adv->save();
+                }
             }
             if ($this->adv_model->is_enabled('customfields')) {
                 app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $request);
@@ -853,7 +861,7 @@ class AdvsController extends PublicController
             return redirect(route('advs_preview', [$request->update_id]));
         }
 
-            /* New Create Adv */
+        /* New Create Adv */
         $request->publish_at = date('Y-m-d H:i:s');
         $all = $request->all();
 
@@ -968,13 +976,13 @@ class AdvsController extends PublicController
 
         $this->adv_model->statusAds($id, $type);
         event(new ChangedStatusAd($ad));//Create Notify
-	    if ($type === 'approved') {
-		    $message = trans('visiosoft.module.advs::message.approve_status_change');
-	    } elseif ($type === 'sold') {
-		    $message = trans('visiosoft.module.advs::message.sold_status_change');
-	    } else {
-		    trans('visiosoft.module.advs::message.passive_status_change');
-	    }
+        if ($type === 'approved') {
+            $message = trans('visiosoft.module.advs::message.approve_status_change');
+        } elseif ($type === 'sold') {
+            $message = trans('visiosoft.module.advs::message.sold_status_change');
+        } else {
+            trans('visiosoft.module.advs::message.passive_status_change');
+        }
         $this->messages->success($message);
         return back();
     }
@@ -1256,12 +1264,12 @@ class AdvsController extends PublicController
         return $this->redirect->back();
     }
 
-	public function sold($id, Request $request, AdvModel $advModel)
-	{
-		if ($request->sold == 'sold') {
-			$advModel->find($id)->update(['status' => 'sold']);
-		} elseif ($request->sold = 'not-sold') {
-			$advModel->find($id)->update(['status' => 'approved']);
-		}
-	}
+    public function sold($id, Request $request, AdvModel $advModel)
+    {
+        if ($request->sold == 'sold') {
+            $advModel->find($id)->update(['status' => 'sold']);
+        } elseif ($request->sold = 'not-sold') {
+            $advModel->find($id)->update(['status' => 'approved']);
+        }
+    }
 }

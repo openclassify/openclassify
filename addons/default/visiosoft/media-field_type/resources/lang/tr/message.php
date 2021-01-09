@@ -10,4 +10,5 @@ return [
     'uploading' => 'Yükleme',
     'loading' => 'Yükleniyor',
     'error_upload' => 'Dosyayı yüklerken bir sorun oluştu.',
+    'error_upload_docs' => 'Döküman yükleme desteği bulunmamaktadır.Lütfen sistem yöneticiniz ile iletişim kurunuz!',
 ];

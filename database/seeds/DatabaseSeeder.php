@@ -109,8 +109,6 @@ class DatabaseSeeder extends Seeder
 			]
 		);
 
-		DB::table('files_files')->truncate();
-
 		$repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
 		file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
 		file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
@@ -156,5 +154,41 @@ class DatabaseSeeder extends Seeder
 				],
 			]);
 		}
+
+
+        //Favicon Folder
+        if (is_null($this->folders->findBy('slug', 'favicon'))) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en'            => [
+                    'name'        => 'Favicon',
+                    'description' => 'A folder for Favicon.',
+                ],
+                'slug'          => 'favicon',
+                'disk'          => $disk,
+                'allowed_types' => [
+                    'ico','png',
+                ],
+            ]);
+        };
+
+
+		//Create Ads Documents Folder
+		if (!$this->folders->findBySlug('ads_documents')) {
+			$disk = $this->disks->findBySlug('local');
+
+			$this->folders->create([
+				'en' => [
+					'name' => 'Ads Documents',
+					'description' => 'A folder for Ads Documents.',
+				],
+				'slug' => 'ads_documents',
+				'disk' => $disk,
+				'allowed_types' => [
+					'pdf', 'doc', 'docx', 'xls', 'xlsx',
+				],
+			]);
+		};
 	}
 }
