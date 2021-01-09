@@ -10,4 +10,5 @@ return [
     'uploading' => 'uppladdning',
     'loading' => 'Läser in',
     'error_upload' => 'Det gick inte att ladda upp filen.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
