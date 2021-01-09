@@ -10,4 +10,5 @@ return [
     'uploading' => '업로드 중',
     'loading' => '로딩',
     'error_upload' => '파일을 업로드하는 중에 문제가 발생했습니다.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
