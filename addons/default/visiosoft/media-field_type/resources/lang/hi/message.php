@@ -10,4 +10,5 @@ return [
     'uploading' => 'अपलोड हो रहा है',
     'loading' => 'लोड हो रहा है',
     'error_upload' => 'फ़ाइल अपलोड करने में समस्या थी।',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
