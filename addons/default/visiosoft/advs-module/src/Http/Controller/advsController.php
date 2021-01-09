@@ -788,8 +788,6 @@ class AdvsController extends PublicController
             }
 
             $adv->is_get_adv = ($request->is_get_adv and $get_categories_status) ? true : false;
-
-
             $adv->save();
 
             //algolia Search Module
