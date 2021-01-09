@@ -10,4 +10,5 @@ return [
     'uploading' => 'Yüklənir',
     'loading' => 'Yüklənir',
     'error_upload' => 'Fayl yüklənərkən problem oldu.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
