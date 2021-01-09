@@ -10,4 +10,5 @@ return [
     'uploading' => 'Przesyłanie',
     'loading' => 'Ładowanie',
     'error_upload' => 'Wystąpił problem podczas przesyłania pliku.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
