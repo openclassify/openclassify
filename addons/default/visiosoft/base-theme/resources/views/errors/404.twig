@@ -1,0 +1,22 @@
+{% extends "visiosoft.theme.base::layouts/error" %}
+
+{% block styles %}
+    {{ asset_style('visiosoft.theme.base::css/error.css') }}
+{% endblock %}
+
+{% block content %}
+    <div class="container h-100 align-items-center d-flex">
+    <div class="col-12 bg-white shadow p-5 rounded text-center">
+        <img src="{{ img('visiosoft.theme.base::images/errors/404.png').url }}" class="w-100 error-image" alt="404">
+
+        <h3 class="h3 mb-3 font-weight-bold">{{ trans('visiosoft.theme.base::errors.404_title') }}</h3>
+        <h5 class="h5 mb-3 font-weight-bold color-error-message">{{ trans('visiosoft.theme.base::errors.404_message') }}</h5>
+        <div class="py-4">
+            <a class="error-btn-home rounded px-3 py-2" href="{{ url('/') }}"> {{ trans('visiosoft.theme.base::errors.home_page') }}</a>
+        </div>
+        {% if auth_check() %}
+            <a class="text-white bg-dark border rounded px-3 py-2" href="{{ url('/') }}">{{ trans('visiosoft.theme.base::field.logout.name') }}</a>
+        {% endif %}
+        <span class="small font-weight-bold mt-3 d-block text-muted">{{ setting_value('streams::domain', 'openclassify.com') }}</span>
+    </div>
+{% endblock %}

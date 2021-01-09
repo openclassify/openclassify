@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+
+<!--[if lt IE 7]>
+<html class="nojs ms lt_ie7" lang="{{ config('app.locale') }}"><![endif]-->
+<!--[if IE 7]>
+<html class="nojs ms ie7" lang="{{ config('app.locale') }}"><![endif]-->
+<!--[if IE 8]>
+<html class="nojs ms ie8" lang="{{ config('app.locale') }}"><![endif]-->
+<!--[if gt IE 8]>
+<html class="nojs ms" lang="{{ config('app.locale') }}"><![endif]-->
+
+<html lang="{{ config('app.locale') }}">
+
+<head>
+    {% include "visiosoft.theme.base::partials/metadata" %}
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+{% block content %}{% endblock %}
+</body>
+
+</html>
