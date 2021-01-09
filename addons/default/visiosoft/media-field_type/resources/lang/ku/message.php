@@ -10,4 +10,5 @@ return [
     'uploading' => 'Uploading',
     'loading' => 'Barkirin',
     'error_upload' => 'Di barkirina dosyeyê de pirsgirêkek derket.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
