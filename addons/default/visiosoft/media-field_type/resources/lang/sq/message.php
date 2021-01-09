@@ -10,4 +10,5 @@ return [
     'uploading' => 'Ngarkimi...',
     'loading' => 'Ngarkim...',
     'error_upload' => 'Kishte një problem në ngarkimin e skedarit.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
