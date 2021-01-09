@@ -10,4 +10,5 @@ return [
     'uploading' => 'Μεταφόρτωση',
     'loading' => 'Φόρτωση',
     'error_upload' => 'Παρουσιάστηκε πρόβλημα κατά τη μεταφόρτωση του αρχείου.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
