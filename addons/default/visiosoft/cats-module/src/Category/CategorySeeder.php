@@ -11,7 +11,6 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cats_category')->truncate();
-        DB::table('cats_category_translations')->truncate();
+        
     }
 }
