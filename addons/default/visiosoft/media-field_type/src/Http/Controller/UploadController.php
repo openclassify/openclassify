@@ -54,7 +54,7 @@ class UploadController extends AdminController
 
         if ($mimes[0] == 'image') {
             $file = $this->uploader->upload($this->request->file('upload'), $this->folders->find($this->request->get('folder')));
-        } else if ($doc_folder = app(FolderRepositoryInterface::class)->findBySlug('ads_documentsssssss')) {
+        } else if ($doc_folder = app(FolderRepositoryInterface::class)->findBySlug('ads_documents')) {
             $file = $this->uploader->upload($this->request->file('upload'), $doc_folder);
         } else {
             return $this->response->json(['error' => trans('visiosoft.field_type.media::message.error_upload_docs')], 500);
