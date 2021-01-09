@@ -10,4 +10,5 @@ return [
     'uploading' => 'Завантаження',
     'loading' => 'Завантаження',
     'error_upload' => 'Не вдалося завантажити файл.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
