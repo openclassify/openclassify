@@ -10,4 +10,5 @@ return [
     'uploading' => 'アップロードしています',
     'loading' => '読み込み中',
     'error_upload' => 'ファイルのアップロードで問題が発生しました。',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
