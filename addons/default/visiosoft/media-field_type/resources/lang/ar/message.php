@@ -10,4 +10,5 @@ return [
     'uploading' => 'جاري الرفع',
     'loading' => 'جاري التحميل',
     'error_upload' => 'كانت هناك مشكلة في تحميل الملف.',
+    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
 ];
