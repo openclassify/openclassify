@@ -47,6 +47,8 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      */
     protected $routes = [
         'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubcats',
+        'admin/cats/adcountcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@adCountCalc',
+        'admin/cats/catlevelcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@catLevelCalc',
 
         'admin/cats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index',
         'admin/cats/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',

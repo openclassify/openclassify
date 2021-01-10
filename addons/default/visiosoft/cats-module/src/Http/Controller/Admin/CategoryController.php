@@ -2,13 +2,16 @@
 
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
+use DateTime;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
 use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 
 class CategoryController extends AdminController
 {
@@ -207,6 +210,55 @@ class CategoryController extends AdminController
             }
         }
         return redirect('admin/cats')->with('success', [$deletedCatsCount . ' categories has been deleted.']);
+    }
+    public function adCountCalc(AdvRepositoryInterface $advRepository)
+    {
+        $date = new DateTime;
+        $date2 = new DateTime;
+        $date->modify('-30 minutes');
+        $formatted_date = $date->format('Y-m-d H:i:s');
+
+        $result = DB::table('cats_category')
+                        ->select('id','level')
+                        ->where('count_at','<',$formatted_date)
+                        ->orWhereNull('count_at')
+                        ->get();
+        foreach ($result as $key => $data) {
+            $id = $data->id;
+            $level = $data->level;
+            if(!empty($level)) {
+                $count = $advRepository->countByCat($id, $level);
+                DB::table('cats_category')->where('id',$id)->update(array(
+                    'count'=>$count,
+                    'count_at'=>$date2,
+                ));
+            }
+        }
+    }
+    public function catLevelCalc()
+    {
+        $date = new DateTime;
+        $date2 = new DateTime;
+        $date->modify('-30 minutes');
+        $formatted_date = $date->format('Y-m-d H:i:s');
+
+        $result = DB::table('cats_category')
+                        ->select('id')
+                        ->where('level_at','<',$formatted_date)
+                        ->where('level','=',0)
+                        ->orWhereNull('level_at')
+                        ->get();
+        foreach ($result as $key => $data) {
+            $id = $data->id;
+            $CategoriesModel = new CategoryModel();
+            $level = $CategoriesModel->getCatLevel($id);
+
+            DB::table('cats_category')->where('id',$id)->update(array(
+               'level'=>$level,
+               'level_at'=>$date2,
+            ));
+        }
+        return redirect('admin/cats')->with('success', ['Updated']);
     }
 
 }

@@ -5,7 +5,7 @@
             <b>{{ main_category.name }}</b>
             {% if showAdsCount %}
                 <small class="text-muted">
-                    ({{ main_category.adcount }})
+                    ({{ main_category.count }})
                 </small>
             {% endif %}
         </a>
@@ -25,7 +25,7 @@
                            class="">{{ subcats.c2_name }}</a>
                         {% if showAdsCount %}
                             <small class="text-muted">
-                                ({{ subcats.adcount }})
+                                ({{ subcats.c2_count }})
                             </small>
                         {% endif %}
                     </li>

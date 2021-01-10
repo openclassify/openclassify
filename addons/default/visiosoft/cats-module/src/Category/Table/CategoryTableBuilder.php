@@ -17,6 +17,12 @@ class CategoryTableBuilder extends TableBuilder
         'clean_subcategories' => [
             'href' => '/admin/cats/clean_subcats',
         ],
+        'adcountcalc' => [
+            'href' => '/admin/cats/adcountcalc',
+        ],
+        'catLevelCalc' => [
+            'href' => '/admin/cats/catlevelcalc',
+        ],
     ];
 
     /**
