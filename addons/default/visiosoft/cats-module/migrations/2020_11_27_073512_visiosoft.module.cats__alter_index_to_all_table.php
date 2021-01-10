@@ -11,9 +11,5 @@ class VisiosoftModuleCatsAlterIndexToAllTable extends Migration
         Schema::table('cats_category_translations', function (Blueprint $table) {
 	        $table->index('entry_id');
         });
-
-        Schema::table('cats_placeholderforsearch_translations', function (Blueprint $table) {
-	        $table->index('entry_id');
-        });
     }
 }

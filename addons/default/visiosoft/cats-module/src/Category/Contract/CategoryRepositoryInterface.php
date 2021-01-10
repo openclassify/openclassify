@@ -8,6 +8,8 @@ interface CategoryRepositoryInterface extends EntryRepositoryInterface
 
     public function mainCats();
 
+    public function getLevel2Cats();
+
     public function getItem($cat);
 
     public function getCatById($id);

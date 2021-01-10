@@ -1,5 +1,7 @@
-<div class="col left-categories-section mx-0">
+{% set sub_categories_limit = setting_value('visiosoft.theme.base::home_page_sub_categories_limit') %}
+{% set showAdsCount = setting_value('visiosoft.module.advs::show_ads_count') %}
 
+<div class="col left-categories-section mx-0">
     <ul class="categories-list p-0 d-none d-sm-block mb-0">
         <li class="categories-list-li category-icon border-bottom-0 mt-0">
             <img src="{{ img('visiosoft.theme.base::images/store-search.png').url }}" class="img-responsive">
@@ -35,12 +37,10 @@
         </li>
         {{ addBlock('base/leftSidebar')|raw }}
     </ul>
-
     {{ addBlock('base/categoriesRow')|raw }}
-
     <div class="col-12 p-0 m-0">
-        {% set main_categories = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}
-        {% for main_category in main_categories %}
+        {% set cats = getLevel2Cats() %}
+        {% for main_category in cats.maincats %}
             {% include "visiosoft.theme.base::partials/categories-web" %}
             {% include "visiosoft.theme.base::partials/categories-mobile" %}
         {% endfor %}

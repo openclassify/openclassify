@@ -43,18 +43,15 @@ class AdvsModulePlugin extends Plugin
             ), new \Twig_SimpleFunction(
                 'latestAds',
                 function () {
-
                     if (!$latestAds = $this->dispatch(new LatestAds())) {
                         return 0;
                     }
-
                     return $latestAds;
                 }
             ),
             new \Twig_SimpleFunction(
                 'appendRequestURL',
                 function ($request, $url, $new_parameters, $removeParams = []) {
-
                     return $this->dispatch(new appendRequestURL($request, $url, $new_parameters, $removeParams));
                 }
             ),

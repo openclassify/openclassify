@@ -1,46 +1,38 @@
-{% set sub_categories_limit = setting_value('visiosoft.theme.base::home_page_sub_categories_limit') %}
-{% set showAdsCount = setting_value('visiosoft.module.advs::show_ads_count') %}
 <ul class="categories-list p-0 d-none d-sm-block">
     <li class="categories-list-li category-icon category-{{ main_category.slug }}">
-        {% set catIcon = main_category.icon.path != "" ? url('files/' ~ main_category.icon.path) : img('visiosoft.theme.base::images/default-categories-icon.png').url %}
-        <img src="{{ catIcon }}" alt="{{ main_category.name }}" class="img-responsive">
+        <img src="{{ catIcon(main_category.icon.path) }}" alt="{{ main_category.name }}" class="img-responsive">
         <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}" class="main-category">
             <b>{{ main_category.name }}</b>
             {% if showAdsCount %}
                 <small class="text-muted">
-                    ({{ catAdsCount }})
+                    ({{ main_category.adcount }})
                 </small>
             {% endif %}
         </a>
         <ul class="p-0">
-            {% set sub_categories = entries('cats','category').where('parent_category_id', main_category.id).where('deleted_at', null).orderBy('sort_order').get() %}
-            {% set subCatLoop = [
-                {
-                    'start': 0,
-                    'end': sub_categories_limit,
-                    'class': '',
-                },
-                {
-                    'start': sub_categories_limit,
-                    'end': count(sub_categories),
-                    'class': 'hidden hidden-category',
-                }
-            ] %}
-            {% for subLoop in subCatLoop %}
-                {% for sub_category in sub_categories|slice(subLoop.start, subLoop.end) %}
-                    <li class="{{ subLoop.class }}">
-                        <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}">{{ sub_category.name }}</a>
+            {% set subCatCount = 0 %}
+            {% for subcats in cats.subcats %}
+                {% if main_category.id ==  subcats.id %}
+                    {% set subCatCount = subCatCount + 1 %}
+
+                    {% set hideclass =  "" %}
+                    {% if subCatCount > sub_categories_limit %}
+                        {% set hideclass =  "hidden hidden-category" %}
+                    {% endif %}
+
+                    <li class="{{ hideclass }}">
+                        <a href="{{ url_route('adv_list_seo', [subcats.c2_slug]) }}"
+                           class="">{{ subcats.c2_name }}</a>
                         {% if showAdsCount %}
-                            {% set catLevel = getParentsCount(sub_category.id) + 1 %}
                             <small class="text-muted">
-                                ({{ catAdsCount }})
+                                ({{ subcats.adcount }})
                             </small>
                         {% endif %}
                     </li>
-                {% endfor %}
+                {% endif %}
             {% endfor %}
 
-            {% if count(sub_categories) > sub_categories_limit %}
+            {% if subCatCount > sub_categories_limit %}
                 <li class="show-all" data-limit="{{ sub_categories_limit }}">
                     <a>
                         <span class="">
@@ -51,7 +43,6 @@
                             {{ trans('visiosoft.theme.base::button.hide_all') }}
                             <i class="fas fa-arrow-circle-up"></i>
                         </span>
-
                     </a>
                 </li>
             {% endif %}

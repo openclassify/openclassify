@@ -1065,13 +1065,6 @@ class AdvsController extends PublicController
         return $this->view->make('theme::passwords/reset', compact('code'));
     }
 
-    public function homePage(CategoryRepositoryInterface $repository)
-    {
-        $cats = $repository->mainCats();
-
-        return $this->view->make('theme::addons/anomaly/pages-module/page', compact('cats'));
-    }
-
     public function mapJson(Request $request, AdvRepositoryInterface $repository)
     {
         $param = $request->toArray();
