@@ -625,9 +625,6 @@ class AdvsController extends PublicController
         }
 
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
-        if ($isActiveDopings) {
-            $isActiveDopings = doping_check_role();
-        }
 
         return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
             compact('adv', 'categories', 'features', 'isActiveDopings'));
