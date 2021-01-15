@@ -16,7 +16,7 @@ class AppServiceProvider extends ServiceProvider
     {
         //Auto Language Switcher
         view()->composer('*', function ($view) {
-            if (config('advs.lang_switcher_for_browser') and is_null(Request()->session()->get('_locale'))) {
+            if (config('advs.lang_switcher_for_browser') and is_null(Request()->session()->get('_locale')) and isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
                 $lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);//Get Browser Language
                 $acceptLang = config('streams::locales.enabled'); //Supported Language
                 $lang = in_array($lang, $acceptLang) ? $lang : config('streams::locales.default', 'en');
