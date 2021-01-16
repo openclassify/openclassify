@@ -3,9 +3,10 @@
 return [
 
     'village' => [
-        'name'   => 'Gûnd',
+        'name'   => 'گوند',
         'option' => [
-            'read'   => 'Dikarin gund bixwînin?',
+            'read'   => 'دەتوانێت گوندە بخوێنێتەوە ؟
+',
             'write'  => 'Ma dikare gund çêbike / sererast bike?',
             'delete' => 'Ma dikare gund jê bibe?',
         ],
