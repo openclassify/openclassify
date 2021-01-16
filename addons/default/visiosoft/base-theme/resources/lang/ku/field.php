@@ -21,9 +21,10 @@ return [
     'last_name' => 'ناوی باپیر',
     'remember_me' => 'من لە بیرە
 ',
-    'not_a_member_yet' => 'هێشتا ئەندام نیە
+    'not_a_member_yet' => 'هێشتا ئەندام نیە ؟
 ',
-    'not_a_member_yet_message' => 'Ji bo endamên me navnîşan bikin ku ji karûbarê meya taybetî sûd werbigirin',
+    'not_a_member_yet_message' => 'خۆت تۆمار بکە بۆ ئەندامەکانمان بۆ سوودمەندبوون لە خزمەتگوزاری تایبەتمان
+',
     'forgot_password' => 'وشەی نهێنەکەم لەبیرکرد
 ',
     'email_or_phone_number' => 'ژماره‌ی مۆبایل یان ناونیشانی ئیمەیل',
@@ -64,14 +65,16 @@ return [
 ',
     'popular_ads' => 'ڕیکلامێکی بەناوبانگە
 ',
-    'last_48_hours' => '48 Demjimêrên Dawîn',
-    'secure_e-commerce_ads' => 'Reklamên e-Bazirganiya Ewle bikin',
-    'sms' => 'Peyama Nivîsîn SMSand (SMS)',
-    'mail' => 'Send Mail',
+    'last_48_hours' => 'ئاخیر48 کاتەکان',
+    'secure_e-commerce_ads' => 'ڕیکلامی نهێنی و بازرگانی
+',
+    'sms' => 'پەیامە بنێرە',
+    'mail' => 'مەیل بنێرە',
 
     // Register instruction seed
-    'register_instructions' => 'Rêwerzên Tomarê',
-    'list' => 'Rêzok',
+    'register_instructions' => 'ڕێنماییەکانی تۆمارکردن
+',
+    'list' => 'لیست',
     'instruction_description' => 'Danasîna Rêwerzê',
     'instruction_list' => 'Lîsteya Rêwerziyê',
 ];
