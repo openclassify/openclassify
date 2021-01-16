@@ -4,25 +4,30 @@ return [
     'latest_ads' => 'Reklamên Dawîn',
     'show_all' => 'Hemî nîşan bide',
     'login' => [
-        'name' => 'Têkevin',
+        'name' => 'چوونەژوورەوە',
     ],
     'logout' => [
-        'name' => 'Derkeve',
+        'name' => 'دەرچوون',
     ],
-    'profile' => 'Tengal',
-    'email' => 'Navnîşana emailê',
-    'phone' => 'Jimare telefon',
-    'reset_code' => 'Vebijêrin Koda',
-    'password_confirmation' => 'Piştrastkirina Passwordîfreyê',
-    'password' => 'Şîfre',
-    'first_name' => 'Nav',
-    'last_name' => 'Paşnav',
-    'remember_me' => 'Min bîne bîra xwe',
-    'not_a_member_yet' => 'Endam Ne Dîsa',
+    'profile' => 'پرۆفایل',
+    'email' => 'ناونیشانی ئیمەیل',
+    'phone' => 'ژماره‌ی مۆبایل',
+    'reset_code' => 'کۆدەکە تێپەڕەوشە',
+    'password_confirmation' => 'پشت راست کردنەوەی وشەی نهێنی
+',
+    'password' => 'وشەی نهێنی',
+    'first_name' => 'ناوی یەکەم
+',
+    'last_name' => 'ناوی باپیر',
+    'remember_me' => 'من لە بیرە
+',
+    'not_a_member_yet' => 'هێشتا ئەندام نیە
+',
     'not_a_member_yet_message' => 'Ji bo endamên me navnîşan bikin ku ji karûbarê meya taybetî sûd werbigirin',
-    'forgot_password' => 'Min şîfreya xwe ji bîr kir',
-    'email_or_phone_number' => 'Navnîşana E-nameyê an Hejmara Telefonê',
-    'phone_number' => 'Jimare telefon',
+    'forgot_password' => 'وشەی نهێنەکەم لەبیرکرد
+',
+    'email_or_phone_number' => 'ژماره‌ی مۆبایل یان ژماره‌ی مۆبایل',
+    'phone_number' => 'ژماره‌ی مۆبایل',
 
     // Registration instructions
     'personal_registration_header' => 'Awantajên Endametiya Kesane Çi ne?',
@@ -39,8 +44,9 @@ return [
     'create_new_password' => 'Passwordîfreyek Nû çêbikin',
 
     // Login page
-    'or' => 'an',
-    'login_with_phone_number' => 'Bi Hejmara Telefonê têkevinê',
+    'or' => 'یان',
+    'login_with_phone_number' => 'بە ژمارە مۆبایلەوە بچۆ ژوورەوە
+',
     'login_with_email_address' => 'Bi Navnîşana E-nameyê têkevin',
 
     // Side menu links
