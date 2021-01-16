@@ -26,7 +26,7 @@ return [
     'not_a_member_yet_message' => 'Ji bo endamên me navnîşan bikin ku ji karûbarê meya taybetî sûd werbigirin',
     'forgot_password' => 'وشەی نهێنەکەم لەبیرکرد
 ',
-    'email_or_phone_number' => 'ژماره‌ی مۆبایل یان ژماره‌ی مۆبایل',
+    'email_or_phone_number' => 'ژماره‌ی مۆبایل یان ناونیشانی ئیمەیل',
     'phone_number' => 'ژماره‌ی مۆبایل',
 
     // Registration instructions
@@ -35,19 +35,24 @@ return [
     'personal_registration_list_1' => 'Reklamek belaş bişînin,',
     'personal_registration_list_2' => 'Reklamên ku hûn pê re eleqedar dibin zêde bikin, piştî ku ew li bijareyên xwe zêde bikin, guhertinên bihayê bişopînin, lêgerînên bijare yên ku pîvanên we digirin biafirînin',
     'personal_registration_list_3' => 'Li ser malperê ji xwedan reklaman re peyam bişînin.',
-    'register_information_note' => 'Agahdariya li ser vê rûpelê ji bo tête girtin ' . env('APPLICATION_DOMAIN') . ' endamî. Hûn dikarin li vir di derheqê parastina daneyên kesane de agahdariya berfireh bibînin.',
+    'register_information_note' => ' زانیاریەکان لەم پەیجە وەرگیراوە بۆ
+' . env('APPLICATION_DOMAIN') . 'ئەندامێتی. لێرە زانیاری ورد دەربارەی پاراستنی داتا کەسیەکان بدۆزیتەوە 
+',
 
     // Register page
-    'phone_validation_error' => 'Ev jimara têlefonê ji hêla endamek din ve tê bikar anîn.',
+    'phone_validation_error' => 'ئەم ژمارە تەلەفۆنە لەلایەن ئەندامێکی ترەوە بەکاردەهێنرێت
+',
 
     // Forgot Password
-    'create_new_password' => 'Passwordîfreyek Nû çêbikin',
+    'create_new_password' => 'وشەی نوێ دروست بکە
+',
 
     // Login page
     'or' => 'یان',
     'login_with_phone_number' => 'بە ژمارە مۆبایلەوە بچۆ ژوورەوە
 ',
-    'login_with_email_address' => 'Bi Navnîşana E-nameyê têkevin',
+    'login_with_email_address' => 'بە ناونیشانی ئیمەیل بچۆ ژوورەوە
+',
 
     // Side menu links
     'company_directory' => 'Pirtûkxaneya pargîdaniyê',
