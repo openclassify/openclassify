@@ -2,16 +2,16 @@
 
 return [
     'name' => [
-        'name' => 'Nav'
+        'name' => 'سەردێڕ'
     ],
     'slug' => [
-        'name' => 'Şeytanok'
+        'name' => 'سلوگ'
     ],
     'city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'district' => [
         'name' => 'Herêm'
