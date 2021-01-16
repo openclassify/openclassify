@@ -2,14 +2,15 @@
 
 return [
     'post_ad' => [
-        'name' => 'Post Ad',
+        'name' => 'ڕیکلامەکە دانێ
+',
     ],
-    'login' => 'Têkevin',
-    'register' => 'Fêhrist',
-    'continue' => 'Berdewamkirin',
-    'reset_password' => 'Reset Passwordîfreyê',
+    'login' => 'چوونەژوورەوە',
+    'register' => 'تۆمارکردن',
+    'continue' => 'بەردەوام بوون',
+    'reset_password' => 'ڕێکخستنەوەی تێپەڕەوشە',
     'email' => 'E-nameyê bişînin',
-    'phone' => 'Telefon',
-    'show_all' => 'Hemî nîşan bide',
-    'hide_all' => 'Veşêre Hemî',
+    'phone' => 'تەلەفۆن',
+    'show_all' => 'پیشاندانی هەموو',
+    'hide_all' => 'هەموو بشارەوە',
 ];
