@@ -75,6 +75,8 @@ return [
     'register_instructions' => 'ڕێنماییەکانی تۆمارکردن
 ',
     'list' => 'لیست',
-    'instruction_description' => 'Danasîna Rêwerzê',
-    'instruction_list' => 'Lîsteya Rêwerziyê',
+    'instruction_description' => 'دەربارەی ڕێنماییەکان
+',
+    'instruction_list' => 'لیستی ڕێنماییەکان
+',
 ];
