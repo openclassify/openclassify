@@ -30,11 +30,16 @@ return [
     'phone_number' => 'ژماره‌ی مۆبایل',
 
     // Registration instructions
-    'personal_registration_header' => 'Awantajên Endametiya Kesane Çi ne?',
-    'personal_registration_body' => 'Xaniyê xwe, otomobîla xwe bifroşin û kirê bikin, tiştên xweyên bê karan bifroşin, yên nû jî bistînin.',
-    'personal_registration_list_1' => 'Reklamek belaş bişînin,',
-    'personal_registration_list_2' => 'Reklamên ku hûn pê re eleqedar dibin zêde bikin, piştî ku ew li bijareyên xwe zêde bikin, guhertinên bihayê bişopînin, lêgerînên bijare yên ku pîvanên we digirin biafirînin',
-    'personal_registration_list_3' => 'Li ser malperê ji xwedan reklaman re peyam bişînin.',
+    'personal_registration_header' => 'ئایا ئەندامێتیی ئیندیڤایدۆلۆژیا چین ؟
+',
+    'personal_registration_body' => 'ئۆتۆمبێلەکەت بفرۆشە و بەکرێ بگرە ، ماڵەکەت بفرۆشە ، شتی بەکارنەهێنراوت بفرۆشە ، نوێ بەدەست بهێنە.
+',
+    'personal_registration_list_1' => 'ڕیکلامی بەلاش دانێ
+',
+    'personal_registration_list_2' => 'ئەو ڕیکلامانە دابنێ کە تۆ حەزت لێیەتی ، شوێن گۆڕانکاری نرخەکە بکەو دوای زیادکردنیان بۆ دڵخوازەکانت ، گەڕانێکی دڵخواز دروست بکە کە کریتریاەکەت دەبینێت ،
+',
+    'personal_registration_list_3' => 'پەیامە بنێرن بۆ خاوەنی دوکان لە سایتەکە
+',
     'register_information_note' => ' زانیاریەکان لەم پەیجە وەرگیراوە بۆ
 ' . env('APPLICATION_DOMAIN') . 'ئەندامێتی. لێرە زانیاری ورد دەربارەی پاراستنی داتا کەسیەکان بدۆزیتەوە 
 ',
@@ -55,8 +60,10 @@ return [
 ',
 
     // Side menu links
-    'company_directory' => 'Pirtûkxaneya pargîdaniyê',
-    'popular_ads' => 'Reklamên populer',
+    'company_directory' => 'ئاڕاسته ی كۆمپانیا
+',
+    'popular_ads' => 'ڕیکلامێکی بەناوبانگە
+',
     'last_48_hours' => '48 Demjimêrên Dawîn',
     'secure_e-commerce_ads' => 'Reklamên e-Bazirganiya Ewle bikin',
     'sms' => 'Peyama Nivîsîn SMSand (SMS)',
