@@ -11,6 +11,6 @@ return [
     'reset_password' => 'ڕێکخستنەوەی تێپەڕەوشە',
     'email' => 'E-nameyê bişînin',
     'phone' => 'تەلەفۆن',
-    'show_all' => 'پیشاندانی هەموو',
+    'show_all' => ' هەموو پیشانبدە',
     'hide_all' => 'هەموو بشارەوە',
 ];
