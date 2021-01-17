@@ -1,6 +1,8 @@
 <?php
 
 return [
-    'send_forgot_sms' => 'SMS ji telefona xweya tomarkirî re şandiye. Ji kerema xwe venêrin.',
-    'found_phone' => 'Jimara têlefona ku di pergalê de hatî tomar kirin nehat dîtin.',
+    'send_forgot_sms' => '.پەیامە نارد بۆ مۆبایلە تۆمارکراوەکەت. تکایە سەیر بکەن
+',
+    'found_phone' => 'ئەو ژمارەی مۆبایلەی لە سیستمەکەدا تۆمارکراوە نەدۆزراوەتەوە
+',
 ];
