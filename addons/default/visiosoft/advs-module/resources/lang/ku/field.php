@@ -360,24 +360,32 @@ return [
     // Pending screen
     'pending_message_1' => 'ڕیکلامەکە لە پڕۆسەی پەسەندکردندایە
 ',
-    'pending_message_2' => "Dîroka Nûvekirina Ad",
-    'pending_message_3' => 'Wextê Bendewariyê Texmîn kirin',
-    'pending_message_4' => 'Dema ku di pêvajoya pejirandinê de derbas bûye dê li dema dopîngê were zêdekirin.',
-    'pending_message_5' => 'Di pêvajoya pejirandinê de têkildarî reklamê ji navenda bangê çu danûstandin nayê kirin.',
-    'hours' => 'saetan',
+    'pending_message_2' => "بەروارێکی نوێ نوێکردنەوەێ بۆ ڕیکلام
+",
+    'pending_message_3' => 'کاتی چاوەڕوانیکردنى هەستم پێگەشتووە
+',
+    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.
+',
+    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.
+',
+    'hours' => 'سات',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'Heke di derheqê reklama we de agahdariya jêrîn rast e, bişkoja "Berdewam" bikirtînin û biçin gava paşîn.',
-        'part_2' => 'Heke na, bişkoja "Biguherîne" bikirtînin.',
+        'part_1' => 'ئەگەر ئەم زانیاریانەی خوارەوە لەسەر ڕێکلامەکەت ڕاست بوو ، کرتە لە دوگمەی ′′ بەردەوام ′′ بکە و بەرەو هەنگاوی دواتر بڕۆ
+',
+        'part_2' => 'ئەگەر نا ، کرتە لەسەر دوگمەی ′′ دەسکاریکردن ′′ بکە.
+',
     ],
-    'views' => 'Dîtin',
+    'views' => 'دیتین',
 
     // Detail page
-    "no_street_view" => "Li vî cîhî wêneyek dîtina kolanan tune",
-    'edit_my_contact_info' => 'Agahdariya Têkiliya Min Biguherînin',
-    'update_my_contact_info' => 'agahdariya têkiliya min nûve bikin',
-    'contact_info' => 'Agahdariya têkiliyê',
+    "no_street_view" => "دیمەنێکی سەر شەقام لەم شوێنە نییە",
+    'edit_my_contact_info' => 'دەستکاری زانیاری پەیوەندیم بکە
+',
+    'update_my_contact_info' => 'زانیاری پەیوەندیم نوێ بکەرەوە
+',
+    'contact_info' => 'زانیاری پەیوەندی',
     'ad_info' => 'Agahdariya Ad',
 
     // Select cat
