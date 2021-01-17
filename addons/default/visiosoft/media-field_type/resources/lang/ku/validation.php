@@ -2,5 +2,5 @@
 
 return [
     'valid_disk' => 'Dîska barkirî ya mîhengkirî ji bo: taybetmendî tune.',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+	'unsupported' => 'Ev dever tenê ji bo pelên wêneyê ye. Hûn dikarin di qada ravekirinê de cûreyên pelên cuda lê zêde bikin.'
 ];
