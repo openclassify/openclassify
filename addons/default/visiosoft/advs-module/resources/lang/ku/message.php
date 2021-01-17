@@ -2,15 +2,19 @@
 
 return [
     'error_added_cart' => 'Hilbera ku tê xwestin niha tune an neçalak e',
-    'please_payment' => 'Ji kerema xwe bidin',
-    'bank_account_info' => 'Agahdariya hesabê bankê',
+    'please_payment' => 'تکایە پارە بدە
+',
+    'bank_account_info' => 'زانیاری هەژماری بانک
+',
     'agreement' => 'Bi tikandina Weşanê, hûn ji Mercên Bikaranînê û Siyaseta Veşarî ya me qebûl dikin ku hûn xwediyê rewa yê vî tiştî ne.',
     'update_category_msg' => 'Kategoriya dabeşkirî dê were nûve kirin.',
     'updated_category_msg' => 'Kategorî bi serfirazî hate guherandin.',
     'create_ad_with_post_cat' => [
-        'title' => "Hilbijartina kategoriyê qediya.",
+        'title' => "هەڵبژاردنی کەتێگۆری تەواو بوو
+",
         'success' => true,
-        'continueBtn' => "Berdewamkirin",
+        'continueBtn' => "بەردەوام بە
+",
     ],
     'update_category_info' => 'Ji kerema xwe kategoriyê nûve bikin.',
     'filter_by_search_msg' => 'Parzûn Bi Lêgerînê.',
