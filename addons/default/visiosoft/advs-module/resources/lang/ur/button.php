@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'فاسٹ بنائیں',
 	'publish' => 'شائع کریں',
 	'import' => 'درآمد کریں',
+    'new_status' => 'نئی حیثیت',
 ];
