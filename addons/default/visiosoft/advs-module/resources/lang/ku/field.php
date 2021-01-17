@@ -221,59 +221,80 @@ return [
 ',
     'ad_id' => 'ناسنامەی ڕیکلام
 ',
-    'contact_with' => 'Têkilî Bi',
-    'create_adv' => 'Ad biafirînin',
-    'edit_adv' => 'Ad Adrast bike',
-    'mandatory_fields' => 'Zeviyên Mecbûrî',
+    'contact_with' => 'پەیوەندی بکە لەگەڵ
+',
+    'create_adv' => 'ڕیکلام دروست بکە
+',
+    'edit_adv' => 'ڕیکلام دەستکاری بکات
+',
+    'mandatory_fields' => 'کێڵگەکانی بەزۆرەملێ
+',
     'ad_post' => 'ڕیکلامی دانێ',
-    'sell_item' => 'Tiştek an karûbarek bifroşin',
-    'search_save' => 'Lêgerîna bijare bi serkeftî hate tomarkirin',
-    'address' => 'Navnîşan',
-    'email' => 'E-name',
-    'phone' => 'Telefon',
-    'send_us_your_feedback' => 'Bersiva xwe ji me re bişînin',
-    'online_shopping' => 'STENDIN',
-    'approved' => 'Bi Serkeftin Hat Pejirandin',
-    'extended' => 'Bi Serkeftin Berfireh kirin',
+    'sell_item' => 'شتومەک یان خزمەتگوزاری بفرۆشە
+',
+    'search_save' => 'گەڕانی دڵخواز بە سەرکەوتوویی ڕزگار کرا
+',
+    'address' => 'ناونیشان',
+    'email' => 'ئی مەیل',
+    'phone' => 'تەلەفۆن',
+    'send_us_your_feedback' => 'Send Us Your Feedback
+',
+    'online_shopping' => 'GET',
+    'approved' => 'بە سەرکەوتوویی پەسەند کرا
+',
+    'extended' => 'بە سەرکەوتوویی درێژکرایەوە
+',
     'declined' => 'Bi Serkeftin Daketin',
-    'search_on_map' => 'Li Nexşeyê bigerin',
-    'post_free_ad' => 'Reklamek Belaş bişînin',
-    'select_a_category' => 'Kategoriyek hilbijêrin',
-    'select_a_sub_category' => 'Kategoriyek Jêrîn hilbijêrin',
-    'all_dopings_added' => 'Hemî celebên dopîngê ji bo vê reklamê têne zêdekirin.',
+    'search_on_map' => 'گەڕان لەسەر نەخشە
+',
+    'post_free_ad' => 'ڕیکلامی بەلاش دابنێ
+',
+    'select_a_category' => 'کەتێگۆری هەڵبژێرە
+',
+    'select_a_sub_category' => 'کەتێگۆریی ژێرەوە هەڵبژێرە
+',
+    'all_dopings_added' => 'هەموو جۆرەکانی دۆپینگ بۆ ئەم ڕیکلامە زیادکراوە
+',
     'is_get_adv' => [
-        'name' => 'STENDIN'
+        'name' => 'GET'
     ],
-    'corporate_info' => 'Agahdariya Pargîdanî',
-    'featured_ads' => "Reklamên Taybetmendî",
+    'corporate_info' => 'زانیاری کۆمپانیا
+',
+    'featured_ads' => "ڕیکلامی تایبەتمەندی بوو
+",
     'trending_ads' => 'Reklamên Trendind',
     'search_ad_result_prefix' => 'لەسەر',
     'search_ads_result_message' => [
-        'name' => ': reklamên hejmartin ji bo: lêgerîna navan hate dîtin',
+        'name' => 'ڕێکلامەکان دەژمێرن دۆزراونەتەوەبۆ :گەڕانی ناو:',
     ],
-    'total' => 'Hemî',
-    'quantity' => 'Jimarî',
-    'view_cart' => 'Cart View',
-    'no_ads' => 'Reklam nehat dîtin.',
+    'total' => 'هه موو
+',
+    'quantity' => 'چەندی',
+    'view_cart' => 'سەبەتە پیشاندان',
+    'no_ads' => 'هیچ ڕیکلامێک نەدۆزراوەتەوە
+',
     'show_display_mode' => [
-        'map' => 'Qert',
-        'list' => 'Rêzok',
+        'map' => 'نەخشە',
+        'list' => 'لیست',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Navê Ad',
-        'price' => 'Biha',
-        'publish_at' => 'Dîroka Ad',
-        'location_city' => 'Bajar',
-        'location_country' => 'Welat',
+        'name' => 'ناوی ڕیکلام
+',
+        'price' => 'نرخي',
+        'publish_at' => 'بەرواری ڕیکلام
+',
+        'location_city' => 'شار',
+        'location_country' => 'وڵات',
     ],
     'show_list_view' => [
-        'name' => 'Rêzok',
+        'name' => 'لیست',
     ],
     'show_table_view' => [
-        'name' => 'Mêz',
+        'name' => 'مێز',
     ],
     'showcase' => [
-        'name' => 'Pêşangeh',
+        'name' => 'عه رز
+',
     ],
     'new_ad' => [
         'name' => 'Reklama Nû',
