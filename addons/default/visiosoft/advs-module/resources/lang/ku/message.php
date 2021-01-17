@@ -1,14 +1,19 @@
 <?php
 
 return [
-    'error_added_cart' => 'Hilbera ku tê xwestin niha tune an neçalak e',
+    'error_added_cart' => 'بەرهەمی داواکراو ئێستا ناچالاکیە
+',
     'please_payment' => 'تکایە پارە بدە
 ',
     'bank_account_info' => 'زانیاری هەژماری بانک
 ',
-    'agreement' => 'Bi tikandina Weşanê, hûn ji Mercên Bikaranînê û Siyaseta Veşarî ya me qebûl dikin ku hûn xwediyê rewa yê vî tiştî ne.',
-    'update_category_msg' => 'Kategoriya dabeşkirî dê were nûve kirin.',
-    'updated_category_msg' => 'Kategorî bi serfirazî hate guherandin.',
+    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.
+
+',
+    'update_category_msg' => 'کەتێگۆریی ڕیکلام نوێ دەکرێتەوە
+',
+    'updated_category_msg' => 'کەتێگۆری بە سەرکەوتوویی دەستکاری کراوە
+',
     'create_ad_with_post_cat' => [
         'title' => "هەڵبژاردنی کەتێگۆری تەواو بوو
 ",
@@ -48,7 +53,8 @@ return [
 ",
     'approve_status_change' => "! دۆخی ڕیکلامەکەت وەک چالاک ڕێکخراوە
 ",
-    'passive_status_change' => "Rewşa Reklama We Pasîf Bû!",
+    'passive_status_change' => "! دۆخی ڕیکلامەکەت وەکو ناچالاک ڕێکخراوە
+",
 	'sold_status_change' => "! دۆخی ڕیکلامەکەت رێکخراو وەک فرۆشراوە
 ",
 ];
