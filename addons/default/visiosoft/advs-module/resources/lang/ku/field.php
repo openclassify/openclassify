@@ -182,30 +182,45 @@ return [
     'complaint_placeholder' => 'وردەکاری سکاڵاکانت لێرە بنوسە
 ',
     'show_details' => 'زانیارییەكان نیشاندە',
-    'ad_actions' => 'Çalakiyên Ad',
-    'edit' => 'Weşandin',
-    'approve' => 'Destûrdan',
-    'passive' => "Nejîr",
+    'ad_actions' => 'کرداری ڕیکلام',
+    'edit' => 'دەستکاری بکە',
+    'approve' => 'پەسەندی بکە
+',
+    'passive' => "ناچالاک",
 	'sold' => 'فرۆشرا
 ',
-    'offered_by' => 'Ji hêla Pêşniyar kirin',
-    'more_ads_by' => 'More Ads By',
-    'click_phone' => 'Hejmara têlefonê nîşan bide',
-    'share' => 'Par',
-    'report' => 'Vê reklamê ragihînin',
-    'features' => 'Taybetmendî',
-    "streetview" => "Dîmena Kolanê",
-    'recommended_ads' => 'Ji bo We Reklamên Pêşniyar kirin',
-    'new' => 'Nşh',
-    'short_info' => 'Kurte Agahdarî',
-    'secure_trading' => 'Bazirganiya Ewle',
-    '24/7' => '24/7 Piştgirî',
-    'easy_trading' => 'Bazirganiya Hêsan',
-    'need_help' => 'Alîkarî hewce dike?',
-    'give_a_call' => 'Gazî bikin',
-    'message_sent' => 'Peyam entandin!',
-    'asap' => 'Peyam şandî, dê firotkar asap bi we re têkilî dayne.',
-    'ad_id' => 'Ad Id',
+    'offered_by' => 'پێشکەشکراوە لەلایەن
+',
+    'more_ads_by' => 'ڕیکلامی زیاتر لەلایەن
+',
+    'click_phone' => 'ژمارە تەلەفونەکانی نیشاندە
+',
+    'share' => 'بەش بکەن',
+    'report' => 'ئەم ڕیکلامە ڕیپۆرت بکەن
+',
+    'features' => 'تایبەتمەندیە کان
+',
+    "streetview" => "دیمەنی سەر شەقام
+",
+    'recommended_ads' => 'ڕێکلامێکی پێشنیارکراو بۆ ئێوە
+',
+    'new' => 'نوێ',
+    'short_info' => 'زانیاریەکی کورت
+',
+    'secure_trading' => 'بازرگانیکردنێکی سەلامەت
+',
+    '24/7' => '24/7 پشتگری',
+    'easy_trading' => 'بازرگانی ئاسان
+',
+    'need_help' => 'ویستنی یارمەتی ؟',
+    'give_a_call' => 'تەلەفون بکە
+',
+    'message_sent' => '! پەیام نێردراوە
+',
+    'asap' => 'پەیام بنێرە ، فرۆشیار بەم زووانە پەیوەندیت پێوە دەکات
+',
+    'ad_id' => 'ناسنامەی ڕیکلام
+',
     'contact_with' => 'Têkilî Bi',
     'create_adv' => 'Ad biafirînin',
     'edit_adv' => 'Ad Adrast bike',
