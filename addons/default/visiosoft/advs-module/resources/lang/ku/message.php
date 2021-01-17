@@ -30,15 +30,24 @@ return [
 ',
     'category_not_exist' => 'چیتر ئەم کەتێگۆری بەردەست نییە!
 ',
-    'currency_converted' => 'Dirav Bi Serkeftin Ve Veguherandin.',
-    'choose_user' => 'Bikarhêner hilbijêrin',
-    'owner_updated_successfully' => 'Xwedî Serkeftin Hat Nûvekirin!',
-    'no_add_found' => 'Adek nehat dîtin!',
-    'replicated_success' => 'Reklam bi serfirazî hate dubare kirin!',
-    'ad_doesnt_exist' => "Ev reklam tune!",
-    'select_location_error' => "Ji kerema xwe li ser nexşeyê cîhek hilbijêrin!",
-    'this_ad_is_not_valid_anymore' => "Ev reklam ne derbasdar e êdî!",
-    'approve_status_change' => "Rewşa Reklama We Çalak Bûye!",
+    'currency_converted' => 'بە سەرکەوتوویی دراوی گۆڕاوە
+
+',
+    'choose_user' => 'بەکارهێنەرێک هەڵبژێرە
+',
+    'owner_updated_successfully' => '! خاوەنەکە بە سەرکەوتوویی نوێ کرایەوە
+',
+    'no_add_found' => '! ڕیکلامێک نەدۆزراوەتەوە',
+    'replicated_success' => '! ڕیکلامەکە بە سەرکەوتوویی پێشکەش کرا
+',
+    'ad_doesnt_exist' => "! ئەم ڕیکلامە بەردەست نییە
+",
+    'select_location_error' => "! تکایە شوێنێك لەسەر نەخشەکە هەڵبژێرە
+",
+    'this_ad_is_not_valid_anymore' => "! ئەم ڕیکلامە چیتر دروست نییە
+",
+    'approve_status_change' => "! دۆخی ڕیکلامەکەت وەک چالاک ڕێکخراوە
+",
     'passive_status_change' => "Rewşa Reklama We Pasîf Bû!",
 	'sold_status_change' => "! دۆخی ڕیکلامەکەت رێکخراو وەک فرۆشراوە
 ",
