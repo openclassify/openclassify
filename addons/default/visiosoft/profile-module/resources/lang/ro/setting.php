@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Profesie'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Ascundeți tipul de înregistrare în pagina de profil',
+        'instructions' => 'Ascunde câmpul tip de înregistrare în pagina de editare a profilului.',
+    ],
 ];
