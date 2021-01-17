@@ -10,4 +10,5 @@ return [
     'uploading' => 'Lädt hoch',
     'loading' => 'Lädt',
     'error_upload' => 'Beim Hochladen der Datei ist ein Problem aufgetreten.',
+    'error_upload_docs' => 'Es gibt keine Unterstützung für das Hochladen von Dokumenten. Bitte kontaktieren Sie Ihren Systemadministrator!',
 ];
