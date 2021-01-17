@@ -94,26 +94,28 @@ return [
         'name' => 'Kategoriya Jêrîn 9'
     ],
     'currency' => [
-        'name' => 'Diravcins'
+        'name' => 'دراو'
     ],
     'status' => [
-        'name' => 'Cî',
+        'name' => 'دۆخ',
         'option' => [
-            'approved' => 'Pejirandin',
-            'expired' => 'Xilas bû',
-            'unpublished' => 'Neweşandî',
-            'pending_admin' => 'Li bendê Admin',
-            'pending_user' => 'Bikarhênera bendewar'
+            'approved' => 'پەسەندکراوە',
+            'expired' => 'بەسەرچوون',
+            'unpublished' => 'بڵاونەکراوەتەوە',
+            'pending_admin' => 'هەڵواسراو بەڕێوەبردن',
+            'pending_user' => 'هەڵواسراو بەکارهێنەر'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Neweşandî'
+        'name' => 'بڵاونەکراوەتەوە'
     ],
     'finish_at' => [
-        'name' => 'Dawî Li'
+        'name' => 'تەواو بوون لە
+'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'وێنەی داپۆشراو
+'
     ],
     'favs_adv' => [
         'name' => 'Fav Ads'
