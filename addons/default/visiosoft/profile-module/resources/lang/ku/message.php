@@ -1,16 +1,23 @@
 <?php
 
 return [
-    "email"      => "! پێویستی بە ئی مەیل کێڵگە
+    "email"      => "! کێڵگەی بە ئی مەیل پێویستە
 ",
-    "username"      => "Navê Navnîş Pêdivî ye!",
-    "success_update"      => "Nûvekirina Profîl Bi Serkeftin!",
-    "adress_success_update"      => "Navnîşana Serkeftinê Bi Serkeftin!",
-    "adress_success_create"      => "Navnîşan Bi Serfirazî Afirandin!",
-    "login_error" => "Têketin an şîfreyek çewt.",
-    "login_noMail_old_user" => "Navnîşana e-nameya ku hûn xistî nehat dîtin.",
-    "login_noMail_old_user2" => "Ji kerema xwe navnîşana e-nameyê kontrol bikin û dîsa biceribînin.",
-    "login_noMail_old_user3" => "Ger pirsgirêk berdewam bike, ji kerema xwe li ser 'info@openclassify.com' têkilî daynin.",
+    "username"      => "! کێڵگەی ناوی بەکارهێنەر پێویستە
+",
+    "success_update"      => "! پڕۆفایل نوێکردنەوە بە سەرکەوتوویی
+",
+    "adress_success_update"      => "! ئەدرێس نوێ بکەرەوە بە سەرکەوتوویی
+",
+    "adress_success_create"      => "! ئەدرێس بە سەرکەوتوویی دروستکراوە
+",
+    "login_error" => "چوونە ژوورەوە یان وشەی تێپەڕ.
+",
+    "login_noMail_old_user" => ".ئەو ناونیشانی ئیمەیڵەی کە داخڵت بووە نادۆزرێتەوە
+",
+    "login_noMail_old_user2" => "تکایە سەیری ناونیشانی ئیمەیڵەکە بکە و دیسان تاقی بکەرەوە.
+",
+    "login_noMail_old_user3" => "'info@sayaram.com' ئەگەر کێشەکە بەردەوام بوو ، تکایە پەیوەندی بکە بە",
     "login_info_old_user" => "Passwordîfreyek nû ji navnîşana e-nameya we re hat şandin.",
     "success" => "Serketinî",
     "notified_new_updates" => "Ez dixwazim ji nûvekirinên nû agahdar bibim",
