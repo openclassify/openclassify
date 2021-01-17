@@ -489,21 +489,22 @@ return [
 ',
     ],
     'all_categories' => [
-        'name' => 'Hemî Kategorî',
+        'name' => 'هەموو کەتێگۆریکان
+',
     ],
     'day' => [
-        'name' => 'Roj',
+        'name' => 'رۆژ',
     ],
 
     'individual' => [
-        'name' => 'şexsî',
+        'name' => 'شه‌خسی',
     ],
     'corporate' => [
-        'name' => 'Pargîdanî',
+        'name' => 'شریکه‌',
     ],
 
     'details' => [
-        'name' => 'Hûrgulî'
+        'name' => 'ووردەکاریەکان'
     ],
     'choose' => [
         'name' => 'هەڵبژاردن'
@@ -521,19 +522,24 @@ return [
     ],
 
     // Profile page
-    'my_profile' => 'Profîla min',
-    'edit_profile' => 'Profîlê Biguherîne',
-    'edit_details' => 'Hûrgulî Biguherînin',
-    'update' => 'Rojanekirin',
-    'change_password' => '.Îfreyê biguherînin',
+    'my_profile' => 'پرۆفایلەکەم',
+    'edit_profile' => 'دەستکاری پڕۆفایلەکە بکە
+',
+    'edit_details' => 'دەستکاری وردەکاریەکان بکە
+',
+    'update' => 'نوێکردنەوە
+',
+    'change_password' => 'گۆڕینی تێپەڕەوشە',
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
 
     // Register page
-    'accept_terms_label' => 'Ez şertan qebûl dikim.',
-    'accept_protection_law_label' => '<html>Ez şertên Zagona li ser qebûl dikim' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ vala "> Parastina Daneyên Kesane.</a>',
+    'accept_terms_label' => 'من مەرجەکان قبوڵ دەکەم
+',
+    'accept_protection_law_label' => 'من مەرجەکانی یاساکە قبوڵ دەکەم<html>' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ vala "> Parastina Daneyên Kesane.</a>',
     'accept_privacy_terms_label' => '<html>Ez qebûl dikim' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ vala "> mercên nepenîtiyê</a>.',
-    'receive_sms_emails_label' => 'Ez dixwazim e-name & sms bistînim.',
+    'receive_sms_emails_label' => 'دەمەوێت ئی-مەیل و پەیامم پێ بگات.
+',
 
     // Register Type
     'personal' => [
