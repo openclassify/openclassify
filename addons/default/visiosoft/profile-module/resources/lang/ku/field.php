@@ -417,10 +417,11 @@ return [
         'name' => 'Firotanê Betal Bikin',
     ],
     'send_again' => [
-        'name' => 'Ez ê Dîsa Sendandim',
+        'name' => 'دیسان دەنێرم
+',
     ],
     'content' => [
-        'name' => 'Dilşad',
+        'name' => 'ناوەڕۆک',
     ],
     'preferences_settings' => [
         'name' => 'Mîhengên Bijareyan',
@@ -433,13 +434,14 @@ return [
         'name' => 'وشەی نهێنی',
     ],
     'old_password' => [
-        'name' => 'Passwordîfreya kevn',
+        'name' => 'وشەی نهێنیی کۆن',
     ],
     'new_password' => [
-        'name' => 'Passwordîfreya nû',
+        'name' => 'وشەی نهێنیی نوێ',
     ],
     're_new_password' => [
-        'name' => 'Di pêşîyê da em sipas dikin',
+        'name' => 'وشەی نهێنیەکە پشتڕاستی بکەرەوە
+',
     ],
     'confirm_password_input' => [
         'name' => 'Ez guhertina şîfreya xwe piştrast dikim',
