@@ -97,4 +97,12 @@ return [
             'delete' => 'Có thể xóa cấu hình tùy chọn?',
         ],
     ],
+    'status' => [
+        'name'   => 'Trạng thái',
+        'option' => [
+            'read'   => 'Có thể đọc trạng thái?',
+            'write'  => 'Có thể tạo / chỉnh sửa trạng thái không?',
+            'delete' => 'Có thể xóa trạng thái?',
+        ],
+    ],
 ];
