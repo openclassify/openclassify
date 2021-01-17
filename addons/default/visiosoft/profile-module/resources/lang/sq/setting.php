@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Profesioni'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Fshih llojin e regjistrimit në faqen e profilit',
+        'instructions' => 'Fsheh fushën e llojit të regjistrit në faqen e redaktimit të profilit.',
+    ],
 ];
