@@ -408,29 +408,37 @@ return [
     'upload_photos' => 'وێنەکانی دانێن',
     'upload_files' => 'فایلەکان دابنێن
 ',
-    'additional_fields' => 'Zeviyên Zêdeyî',
-    'ad_location' => 'Cihê Ad',
+    'additional_fields' => 'کێڵگە زیادەکان
+',
+    'ad_location' => 'شوێنی ڕێکلام
+',
 
-    'free' => 'Belaş',
-    'ad_date' => 'Dîroka Ad',
-    'photo_video' => 'Wêne, Vîdyo',
-    'and_above' => 'û li jor',
-    'and_below' => 'û li jêr',
-    'clear_all' => 'Hemî Paqij Bikin',
-    'balances' => 'Hevsengî',
-    'packages' => 'Packages',
-    'dopings' => 'Dopîng',
-    'advs' => 'Advs',
-    'site' => 'Malper',
-    'subscription' => 'Abonetî',
-	'created' => 'Afirandin',
+    'free' => 'بەلاش',
+    'ad_date' => 'بەرواری ڕیکلام
+',
+    'photo_video' => 'ڤیدیۆ, وێنە',
+    'and_above' => 'و لە سەرەوەش
+',
+    'and_below' => 'و لە خوارەوە
+',
+    'clear_all' => 'هەموو خاوێن بکە',
+    'balances' => 'باڵانسەکان',
+    'packages' => 'پاکێجەکان',
+    'dopings' => 'دۆپینگکان',
+    'advs' => 'ڕیکلامەکان',
+    'site' => 'سایت',
+    'subscription' => 'ئابوونە کردن',
+	'created' => 'درووستکراوە
+',
 	'product_option' => [
-		'name' => 'Hilbijarka Hilberê'
+		'name' => 'بژاردەی بەرهەمەکان
+'
 	],
 	'option_json' => [
-		'name' => 'Dibe'
+		'name' => 'بژاردەی'
 	],
     'old_price' => [
-        'name' => 'Bihayê Kevn'
+        'name' => 'نرخی کۆن
+'
     ],
 ];
