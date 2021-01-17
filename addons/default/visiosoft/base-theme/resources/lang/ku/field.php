@@ -2,7 +2,7 @@
 
 return [
     'latest_ads' => 'Reklamên Dawîn',
-    'show_all' => 'Hemî nîşan bide',
+    'show_all' => ' هەموو پیشانبدە',
     'login' => [
         'name' => 'چوونەژوورەوە',
     ],
