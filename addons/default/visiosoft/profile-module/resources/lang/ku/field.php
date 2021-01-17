@@ -254,22 +254,24 @@ return [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_support_subject' => [
-        'name' => '24/7 Piştgirî'
+        'name' => '24/7 پشتگری'
     ],
     'right_support_msg' => [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_easy_trading_subject' => [
-        'name' => 'Bazirganiya Hêsan'
+        'name' => 'بازرگانی ئاسان
+'
     ],
     'right_easy_trading_msg' => [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_need_help_subject' => [
-        'name' => 'Ma Alîkarî hewce dike?'
+        'name' => 'ویستنی یارمەتی؟'
     ],
     'right_need_help_msg' => [
-        'name' => 'Gazî bikin'
+        'name' => 'تەلەفون بکە
+'
     ],
     'disable_account' => [
         'name' => 'Hesabê Neçalak bikin'
