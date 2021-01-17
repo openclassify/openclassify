@@ -198,11 +198,11 @@ return [
 '
     ],
     'menu_adv_packages' => [
-        'name' => 'پاکێجی ڕیکلام
+        'name' => 'پاکێجەکانی ڕیکلام
 '
     ],
     'menu_time_packages' => [
-        'name' => 'پاکێجی کات
+        'name' => 'پاکێجەکانی کات
 '
     ],
     'profile_details' => [
@@ -214,36 +214,41 @@ return [
 '
     ],
     'adv_listing_banner' => [
-        'name' => 'Reklam Lîsteya Rûpelê Banner'
+        'name' => 'مانشێتی پەیجی لیستی ڕیکلامەکان 
+'
     ],
     'approve' => [
-        'name' => 'Destûrdan'
+        'name' => 'پەسەندی بکە
+'
     ],
     'approved' => [
-        'name' => 'Pejirandin'
+        'name' => 'پەسەندکراوە'
     ],
     'pending' => [
-        'name' => 'Nexelas'
+        'name' => 'هەڵپەسێردراو'
     ],
     'passive' => [
-        'name' => 'Nejîr'
+        'name' => 'ناچالاک'
     ],
     'pending_admin' => [
-        'name' => 'Nexelas'
+        'name' => 'هەڵپەسێردراو'
     ],
     'menu_messages' => [
-        'name' => 'Messages'
+        'name' => 'پەیامەکان'
     ],
     'menu_my_purchase' => [
-        'name' => 'Kirîna min'
+        'name' => 'کڕینەکەم
+'
     ],
     'menu_my_sales' => [
-        'name' => 'Firotanên min'
+        'name' => 'فرۆشتنەکانم
+'
     ],
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
-        'name' => 'Bazirganiya Ewle'
+        'name' => 'بازرگانیکردنێکی سەلامەت
+'
     ],
     'right_secure_trading_msg' => [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
