@@ -165,6 +165,7 @@ return [
     'edit' => '編集する',
     'approve' => '承認する',
     'passive' => "受動的",
+	'sold' => '販売済み',
     'offered_by' => 'が提供します',
     'more_ads_by' => 'より多くの広告',
     'click_phone' => '電話番号を表示',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => '企業情報',
     'featured_ads' => "注目の広告",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'オン',
     'search_ads_result_message' => [
         'name' => '：name検索で見つかった：count個の広告',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "場所が選択されていません。",
     "continue" => '継続する',
     "gallery" => 'ギャラリー',
+    "ad" => '広告',
     "ads" => '広告',
     "were_found" => '発見されました。',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'おめでとう',
     'ad_desc' => '広告の説明',
     'upload_photos' => '写真をアップロードする',
+    'upload_files' => 'ファイルのアップロード',
     'additional_fields' => '追加フィールド',
     'ad_location' => '広告の場所',
 
