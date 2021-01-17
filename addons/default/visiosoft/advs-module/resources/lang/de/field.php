@@ -165,6 +165,7 @@ return [
     'edit' => 'Bearbeiten',
     'approve' => 'Genehmigen',
     'passive' => "Passiv",
+	'sold' => 'Verkauft',
     'offered_by' => 'Angeboten von',
     'more_ads_by' => 'Mehr Anzeigen von',
     'click_phone' => 'Telefonnummer anzeigen',
@@ -210,6 +211,7 @@ return [
     'corporate_info' => 'Unternehmensinfo',
     'featured_ads' => "Empfohlene Anzeigen",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'auf',
     'search_ads_result_message' => [
         'name' => ':      Anzahl gefundener Anzeigen für:Namenssuche',
     ],
@@ -281,6 +283,7 @@ return [
     "no_location" => "Es ist kein Ort ausgewählt.",
     "continue" => 'Fortsetzen',
     "gallery" => 'Galerie',
+    "ad" => 'Anzeige',
     "ads" => 'Anzeigen',
     "were_found" => 'wurden gefunden.',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Herzliche Glückwünsche',
     'ad_desc' => 'Werbebeschreibung',
     'upload_photos' => 'Fotos hochladen',
+    'upload_files' => 'Daten hochladen',
     'additional_fields' => 'Zusätzliche Felder',
     'ad_location' => 'Anzeigenposition',
 
