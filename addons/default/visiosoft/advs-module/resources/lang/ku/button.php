@@ -1,11 +1,16 @@
 <?php
 
 return [
-    'new_adv' => 'Nifşek nû',
-    'new_classified' => 'Nifşek nû',
-    'new_category' => 'Kategoriya Nû',
-    'new_country' => 'Welatê Nû',
-    'new_city' => 'Bajarê Nû',
+    'new_adv' => 'ڕیکلامی نوێ
+',
+    'new_classified' => 'ڕیکلامی نوێ
+',
+    'new_category' => 'کەتێگۆریی نوێ
+',
+    'new_country' => 'وڵاتی نوێ
+',
+    'new_city' => 'شارێکی نوێ
+',
     'new_district' => 'Navçeya Nû',
     'new_neighborhood' => 'Taxa Nû',
     'new_village' => 'Gundê Nû',
