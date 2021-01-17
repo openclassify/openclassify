@@ -1,7 +1,8 @@
 <?php
 
 return [
-    "email"      => "Qada E-nameyê Pêdivî ye!",
+    "email"      => "! پێویستی بە ئی مەیل کێڵگە
+",
     "username"      => "Navê Navnîş Pêdivî ye!",
     "success_update"      => "Nûvekirina Profîl Bi Serkeftin!",
     "adress_success_update"      => "Navnîşana Serkeftinê Bi Serkeftin!",
