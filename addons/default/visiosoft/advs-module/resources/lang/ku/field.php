@@ -322,37 +322,44 @@ return [
         'name' => 'کەم',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'لە کاتژمێرەکانی 24 سات
+        'name' => 'لە دوایینی 24 سات
 '
     ],
     'in_the_last_day' => [
-        'name' => 'لە کاتژمێرەکانی 24 سات
+        'name' => 'لە دوایینی 24 سات
 '
     ],
     'in_the_last_week' => [
-        'name' => 'Di Hefteya Dawîn de'
+        'name' => 'له هه فته ی دوایین
+'
     ],
     'in_the_last_month' => [
-        'name' => 'Di Meha Dawîn de'
+        'name' => 'لە مانگی دوایین
+'
     ],
     'ads_with_photo' => [
-        'name' => 'Reklamên Bi Wêne'
+        'name' => 'ڕێکلامەکان بە وێنە
+'
     ],
     'ads_with_video' => [
-        'name' => 'Reklamên Bi Vîdyo'
+        'name' => 'ڕێکلامەکان بە ڤیدیۆ
+'
     ],
     'yes' => [
-        'name' => 'Erê'
+        'name' => 'بەڵێ'
     ],
-    "no_location" => "Cîh nayê hilbijartin.",
-    "continue" => 'Berdewamkirin',
-    "gallery" => 'Galerya',
+    "no_location" => "شوێنەکە دیاری نەکراوە
+",
+    "continue" => 'بەردەوام بوون',
+    "gallery" => 'گەلەری',
     "ad" => 'ڕیکلام',
-    "ads" => 'Reklam',
-    "were_found" => 'hatin dîtin.',
+    "ads" => 'ڕیکلامەکان',
+    "were_found" => 'دۆزرانەوە
+',
 
     // Pending screen
-    'pending_message_1' => 'Reklam di Pêvajoya Pejirandinê de ye',
+    'pending_message_1' => 'ڕیکلامەکە لە پڕۆسەی پەسەندکردندایە
+',
     'pending_message_2' => "Dîroka Nûvekirina Ad",
     'pending_message_3' => 'Wextê Bendewariyê Texmîn kirin',
     'pending_message_4' => 'Dema ku di pêvajoya pejirandinê de derbas bûye dê li dema dopîngê were zêdekirin.',
