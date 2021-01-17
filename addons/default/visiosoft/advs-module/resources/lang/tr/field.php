@@ -165,6 +165,7 @@ return [
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
     'passive' => "Pasif",
+	'sold' => 'Satıldı',
     'offered_by' => 'İlan Sahibi',
     'more_ads_by' => 'Diğer İlanlar',
     'click_phone' => 'Telefon numarasını göster',
@@ -220,7 +221,7 @@ return [
     'view_cart' => 'Sepeti Görüntüle',
     'no_ads' => 'İlan bulunamadı!',
     'show_display_mode' => [
-        'map' => 'Harita',
+        'map' => 'harita',
         'list' => 'Liste',
     ],
     'advs_list_table_thead' => [
@@ -320,6 +321,7 @@ return [
     'congratulations' => 'Tebrikler',
     'ad_desc' => 'İlan Açıklaması',
     'upload_photos' => 'Resim Yükle',
+    'upload_files' => 'Dosyaları yükle',
     'additional_fields' => 'Özel Alanlar',
     'ad_location' => 'Lokasyon Ekle',
 
