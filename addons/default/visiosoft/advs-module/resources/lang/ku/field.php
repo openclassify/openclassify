@@ -150,27 +150,38 @@ return [
 ',
     'pick_ordering' => ' داوای دەکەن
 ',
-    'price_high' => 'Bihayê Bilind heya Nizm',
-    'price_low' => 'Bihayê Kêm heya Bilind',
-    'newest' => 'Nûtirîn',
-    'oldest' => 'Kevintirîn',
-    'address_a_z' => 'Navnîşan (A-Z)',
-    'address_z_a' => 'Navnîşan (ji Z-A)',
+    'price_high' => 'نرخي لە بەرزەوە بۆ نزم
+',
+    'price_low' => 'نرخي لە نزم بۆ بەرزەوە
+',
+    'newest' => 'نویترین',
+    'oldest' => 'کۆنترین
+',
+    'address_a_z' => '(A-Z) ناونیشان',
+    'address_z_a' => ' (Z-A) ناونیشان',
 	'categories' => [
-		'name' => 'Kategorî'
+		'name' => 'کەتێگۆریکان'
 	],
-    'all_categories' => 'Hemî Kategorî',
-    'location' => 'Cîh',
-    'send_message' => 'Peyam bişînin',
-    'phone_gsm' => 'Telefonê Gsm',
-    'phone_office' => 'Telefonê Ofîsê',
-    'add_to_favorites' => "Add to Favorites",
-    'send' => 'Şandin',
-    'search_name' => 'Navê Lêgerînê',
-    'my_favorite_searches' => 'Lêgerînên Bijare',
-    'search_desc' => 'Hûn dikarin li vir vebijarkên lêgerîna xweya bijare zêde bikin û rêve bibin.',
-    'complaint_placeholder' => 'Agahdariyên giliyê xwe li vir binivîsin.',
-    'show_details' => 'Agahdariyên Nîşan bidin',
+    'all_categories' => 'هەموو کەتێگۆریکان
+',
+    'location' => 'شوێن',
+    'send_message' => 'پەیام بنێرە
+',
+    'phone_gsm' => 'ژماره‌ی مۆبایل
+',
+    'phone_office' => 'ژمارەی دوکان
+',
+    'add_to_favorites' => "دانێ ناو دڵخوازەکانەوە
+",
+    'send' => 'بنێرە',
+    'search_name' => 'گەڕان ناوەکە',
+    'my_favorite_searches' => 'گەڕانی دڵخوازترین
+',
+    'search_desc' => 'دەتوانیت لێرە زیاد بکەیت و هەڵبژاردنی گەڕانی دڵخوازت بەڕێوە ببەیت.
+',
+    'complaint_placeholder' => 'وردەکاری سکاڵاکانت لێرە بنوسە
+',
+    'show_details' => 'زانیارییەكان نیشاندە',
     'ad_actions' => 'Çalakiyên Ad',
     'edit' => 'Weşandin',
     'approve' => 'Destûrdan',
