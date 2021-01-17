@@ -118,32 +118,38 @@ return [
 '
     ],
     'favs_adv' => [
-        'name' => 'Fav Ads'
+        'name' => 'ڕێکلامێکی دڵخواز
+'
     ],
     'my_adv' => [
-        'name' => 'ADVS'
+        'name' => 'ڕێکلامەکان'
     ],
-    'description' =>  'Terîf',
-    'explanation' =>  'Daxûyanî',
+    'description' =>  'دەربارە',
+    'explanation' =>  'دەربارە',
     'type' => [
-        'name' => 'Awa'
+        'name' => 'جۆو'
     ],
     'parent_adv' => [
-        'name' => 'Girêdayî Ad'
+        'name' => 'ڕیکلامی پەیوەندیدار
+'
     ],
     'value' => [
-        'name' => 'Giranî'
+        'name' => 'نرخ'
     ],
-    'list' => 'Rêzok',
-    'home' => 'Xane',
-    'list-page' => 'Rûpela Rûpelê',
-    'search' => 'Gerr',
-    'recommended' => 'Ji bo We Reklamên Pêşniyar kirin',
-    'filter' => 'Parzûn',
-    'sort' => 'Jiberhevxistin',
-    'sort_by' => 'Sort By',
-    'pick_option' => 'Vebijarek hilbijêrin',
-    'pick_ordering' => 'Rêzkirin',
+    'list' => 'لیست',
+    'home' => 'ماڵپەڕ',
+    'list-page' => 'لیستکردنی پەیجەکە
+',
+    'search' => 'گەڕان',
+    'recommended' => 'ڕێکلامێکی پێشنیارکراو بۆ ئێوە
+',
+    'filter' => 'پارزوون',
+    'sort' => 'جووره‌',
+    'sort_by' => 'جووره‌ بە',
+    'pick_option' => 'بژاردەیەک هەڵبژێرە
+',
+    'pick_ordering' => ' داوای دەکەن
+',
     'price_high' => 'Bihayê Bilind heya Nizm',
     'price_low' => 'Bihayê Kêm heya Bilind',
     'newest' => 'Nûtirîn',
