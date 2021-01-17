@@ -297,30 +297,37 @@ return [
 ',
     ],
     'new_ad' => [
-        'name' => 'Reklama Nû',
+        'name' => 'ڕیکلامی نوێ
+',
     ],
     'profile' => [
-        'name' => 'Tengal',
+        'name' => 'پرۆفایل',
     ],
     'my_ads' => [
-        'name' => 'Reklamên min',
+        'name' => 'ڕیکلامەکانم
+',
     ],
     'sold_out' => [
-        'name' => 'Hate firotin',
+        'name' => 'فرۆشرا
+',
     ],
-    'edit_category' => 'Kategorî biguherîne',
-    'set_category' => 'Kategorî danîn',
+    'edit_category' => 'دەستکاری کەتێگۆریەکە بکە
+',
+    'set_category' => 'کەتێگۆریی دوکان
+',
     'max' => [
-        'name' => 'Max',
+        'name' => 'گەورە',
     ],
     'min' => [
-        'name' => 'Min',
+        'name' => 'کەم',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'Di 24 Demjimêrên Dawîn de'
+        'name' => 'لە کاتژمێرەکانی 24 سات
+'
     ],
     'in_the_last_day' => [
-        'name' => 'Di 24 Demjimêrên Dawîn de'
+        'name' => 'لە کاتژمێرەکانی 24 سات
+'
     ],
     'in_the_last_week' => [
         'name' => 'Di Hefteya Dawîn de'
