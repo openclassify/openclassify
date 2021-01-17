@@ -100,70 +100,75 @@ return [
         'name' => 'Çalakî'
     ],
     'adress_content' => [
-        'name' => 'Navnîşana Navnîşan'
+        'name' => 'ناوەڕۆکی ناونیشان
+'
     ],
     'adress_post_code' => [
-        'name' => 'Koda Postê'
+        'name' => 'کۆدی پۆستە
+'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Telefonê Gsm'
+        'name' => 'ژماره‌ی مۆبایل
+'
     ],
     'adress_land_phone' => [
-        'name' => 'Telefonê Land'
+        'name' => 'ژمارەی دوکانەکە
+'
     ],
     'adress_country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'adress_city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'adress_district' => [
-        'name' => 'Herêm'
+        'name' => 'ناوچە'
     ],
     'adress_neighborhood' => [
-        'name' => 'Cînarî'
+        'name' => 'هاوسایەتی'
     ],
     'adress_village' => [
-        'name' => 'Gûnd'
+        'name' => 'گوند'
     ],
     'messages' => [
-        'name' => 'Messages'
+        'name' => 'پەیامەکان'
     ],
     'user' => [
-        'name' => 'Bikaranîvan'
+        'name' => 'بەکارهێنەر'
     ],
 	'name' => [
-		'name' => 'Nav'
+		'name' => 'ناو'
 	],
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Tengal'
+        'name' => 'پرۆفایل'
     ],
 
     'create' => [
-        'name' => 'Xûliqandin'
+        'name' => 'دروست بکە'
     ],
     'edit' => [
-        'name' => 'Weşandin'
+        'name' => 'دەستکاری بکە'
     ],
     'delete' => [
-        'name' => 'Jêbirin'
+        'name' => 'سڕینەوە'
     ],
     'list' => [
-        'name' => 'Rêzok'
+        'name' => 'لیست'
     ],
     'menu_address' => [
-        'name' => 'Navnîşan'
+        'name' => 'ناونیشان'
     ],
     'menu_orders' => [
-        'name' => 'Ferman'
+        'name' => 'داواكردەکان'
     ],
     'menu_favorites' => [
-        'name' => 'Favorites'
+        'name' => 'دڵخوازەکان'
     ],
     'menu_archived_ads' => [
-        'name' => 'Reklamên arşîvkirî'
+        'name' => 'ڕێکلامەکانی ئەرشیف کراو
+'
     ],
     'menu_pending_ads' => [
         'name' => 'Li benda pejirandinê ye'
