@@ -171,37 +171,47 @@ return [
 '
     ],
     'menu_pending_ads' => [
-        'name' => 'Li benda pejirandinê ye'
+        'name' => 'قەبووڵی هەڵپەسێردراو
+'
     ],
     'menu_delete_account' => [
-        'name' => 'Hesabê bigire'
+        'name' => 'ئەکاونتەکە دابخە
+'
     ],
     'menu_my_ads' => [
-        'name' => 'Reklamên min'
+        'name' => 'ڕیکلامەکانم
+'
     ],
     'menu_fav_ads' => [
-        'name' => 'Reklamên bijare'
+        'name' => 'ڕێکلامێکی دڵخواز
+'
     ],
     'menu_hello_msg' => [
-        'name' => 'slav'
+        'name' => 'سڵاو'
     ],
     'menu_last_msg' => [
-        'name' => 'We herî dawî li'
+        'name' => 'تۆ دوایین جار هاتیتە ژوورەوە
+'
     ],
     'menu_packages' => [
-        'name' => 'Pakêtên min'
+        'name' => 'پاکێجەکانم
+'
     ],
     'menu_adv_packages' => [
-        'name' => 'Packages Ads'
+        'name' => 'پاکێجی ڕیکلام
+'
     ],
     'menu_time_packages' => [
-        'name' => 'Pakêtên Demjimêr'
+        'name' => 'پاکێجی کات
+'
     ],
     'profile_details' => [
-        'name' => 'Profile Details'
+        'name' => 'وردەکاری پڕۆفایل
+'
     ],
     'profile_photo' => [
-        'name' => 'Photo Profile'
+        'name' => 'وێنەی پڕۆفایل
+'
     ],
     'adv_listing_banner' => [
         'name' => 'Reklam Lîsteya Rûpelê Banner'
