@@ -1,10 +1,11 @@
 <?php
 
 return [
-    'new_profile' => 'Profîla Nû',
-    'new_adress' => 'Navnîşana Nû',
-    'show' => 'Navnîşan nîşan bide',
-    'update_password' => 'Passwordîfreyê nûve bikin',
+    'new_profile' => 'پرۆفایلی نوێ',
+    'new_adress' => 'ناونیشانی نوێ',
+    'show' => 'ناونیشانی پیشانبدە',
+    'update_password' => ' تێپەڕەوشەی نوێ بکەرەوە
+',
     'update_profile' => 'Nûvekirina Profîlê',
     'delete' => 'Jêbirin',
     'extend' => 'N',
