@@ -11,58 +11,60 @@ return [
         'name' => 'سلوگ'
     ],
     'parent_category' => [
-        'name' => 'Dêûbav'
+        'name' => 'باوان'
     ],
     'category' => [
-        'name' => 'Title Kategorî'
+        'name' => 'سەردێڕی کەتێگۆری'
     ],
     'price' => [
-        'name' => 'Biha'
+        'name' => 'نرخي'
     ],
     'standard_price' => [
-        'name' => 'Bihayê Standard'
+        'name' => 'نرخی ستاندارت
+'
     ],
     'date' => [
-        'name' => 'Rojek'
+        'name' => 'بەروار'
     ],
     'photo' => [
-        'name' => 'Wêne'
+        'name' => 'وێنە'
     ],
     'video' => [
-        'name' => 'Vîdyo'
+        'name' => 'ڤیدیۆ'
     ],
     'map' => [
-        'name' => 'Qert'
+        'name' => 'نەخشە'
     ],
     'stock' => [
-        'name' => 'Embar'
+        'name' => 'ستۆک'
     ],
     'advs_desc' => [
-        'name' => 'Terîf'
+        'name' => 'دەربارە'
     ],
     'online_payment' => [
-        'name' => 'Tezmînata Serhêl'
+        'name' => 'پارەدانی ئۆنلاین
+'
     ],
     'city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'district' => [
-        'name' => 'Herêm'
+        'name' => 'ناوچە'
     ],
     'neighborhood' => [
-        'name' => 'Cînarî'
+        'name' => 'هاوسایەتی'
     ],
     'village' => [
-        'name' => 'Gûnd'
+        'name' => 'گوند'
     ],
     'files' => [
-        'name' => 'Wêne'
+        'name' => 'وێنەکان'
     ],
     'cat1' => [
-        'name' => 'Kategorî Sereke'
+        'name' => 'کەتێگۆریی سەرەکی'
     ],
     'cat2' => [
         'name' => 'Kategoriya Jêrîn 1'
@@ -189,7 +191,7 @@ return [
     'create_adv' => 'Ad biafirînin',
     'edit_adv' => 'Ad Adrast bike',
     'mandatory_fields' => 'Zeviyên Mecbûrî',
-    'ad_post' => 'Ad Post',
+    'ad_post' => 'ڕیکلامی دانێ',
     'sell_item' => 'Tiştek an karûbarek bifroşin',
     'search_save' => 'Lêgerîna bijare bi serkeftî hate tomarkirin',
     'address' => 'Navnîşan',
@@ -318,7 +320,7 @@ return [
     'listing_details' => 'Details hûrgulî',
     'preview' => 'Pêşnerîn',
     'congratulations' => 'Pîrozbahî',
-    'ad_desc' => 'Ad Description',
+    'ad_desc' => 'دەربارەی ڕێکلام',
     'upload_photos' => 'Wêneyan bar bikin',
     'upload_files' => 'فایلەکانی بارکردن
 ',
