@@ -23,70 +23,78 @@ return [
 '
     ],
     'sitename' => [
-        'name' => 'sitename'
+        'name' => 'ناوی سایت
+'
     ],
     'activated' => [
-        'name' => 'Bikarhêner Çalak'
+        'name' => 'بەکارهێنەر چالاکیە
+'
     ],
     'enabled' => [
-        'name' => 'Bikarhêner Çalak bike'
+        'name' => 'بەکارهێنەر کارمەندی بەهێزە
+'
     ],
     'country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'district' => [
-        'name' => 'Herêm'
+        'name' => 'ناوچە'
     ],
     'neighborhood' => [
-        'name' => 'Cînarî'
+        'name' => 'هاوسایەتی'
     ],
     'village' => [
-        'name' => 'Gûnd'
+        'name' => 'گوند'
     ],
     'gsm_phone' => [
-        'name' => 'Telefonê GSM'
+        'name' => 'ژماره‌ی مۆبایل
+'
     ],
     'land_phone' => [
-        'name' => 'Telefonê Land'
+        'name' => 'ژمارەی دوکانەکە
+'
     ],
     'office_phone' => [
-        'name' => 'Telefonê Ofîsê'
+        'name' => 'ژمارەی دوکانەکە
+'
     ],
     'register_type' => [
-        'name' => 'Register Type'
+        'name' => 'جۆری تۆمارکردن'
     ],
     'birthday' => [
-        'name' => 'Rojbûn'
+        'name' => 'ڕۆژی لە دایک بوون'
     ],
 	'facebook_address' => [
-		'name' => 'Navnîşana Facebookê'
+		'name' => 'ناونیشانی فەیسبووک'
 	],
 	'google_address' => [
-		'name' => 'Navnîşana Google'
+		'name' => 'ناونیشانی گۆگڵ'
 	],
     'education' => [
-        'name' => 'Zanyarî'
+        'name' => 'په‌روه‌رده‌'
     ],
     'state_of_education' => [
-        'name' => 'Dewleta Perwerdehiyê'
+        'name' => 'ویلایەتی پەروەردە
+'
     ],
     'profession' => [
-        'name' => 'Sinet'
+        'name' => 'پیشە'
     ],
     'identification_number' => [
-        'name' => 'Nimara ye kiyîtî'
+        'name' => 'ژمارەی ناسنامە'
     ],
     'adress_name' => [
-        'name' => 'Navnîşana Navnîşan'
+        'name' => 'ناوی ناونیشان'
     ],
     'adress_first_name' => [
-        'name' => 'Nav'
+        'name' => 'ناوی یەکەم
+'
     ],
     'adress_last_name' => [
-        'name' => 'Paşnav'
+        'name' => 'ناوی باپیر'
     ],
     'actions' => [
         'name' => 'Çalakî'
