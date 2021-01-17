@@ -31,4 +31,7 @@ return [
     'option_configuration' => [
         'name' => 'ترتيب',
     ],
+    'status' => [
+        'name' => 'الحالة',
+    ],
 ];
