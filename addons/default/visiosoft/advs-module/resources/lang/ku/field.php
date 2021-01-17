@@ -67,31 +67,31 @@ return [
         'name' => 'کەتێگۆریی سەرەکی'
     ],
     'cat2' => [
-        'name' => 'Kategoriya Jêrîn 1'
+        'name' => '1 کەتێگۆریی ژێرین'
     ],
     'cat3' => [
-        'name' => 'Kategoriya Jêrîn 2'
+        'name' => '2 کەتێگۆریی ژێرین'
     ],
     'cat4' => [
-        'name' => 'Kategoriya Jêrîn 3'
+        'name' => '3 کەتێگۆریی ژێرین'
     ],
     'cat5' => [
-        'name' => 'Kategoriya Jêrîn 4'
+        'name' => '4 کەتێگۆریی ژێرین'
     ],
     'cat6' => [
-        'name' => 'Kategoriya Jêrîn 5'
+        'name' => '5 کەتێگۆریی ژێرین'
     ],
     'cat7' => [
-        'name' => 'Bine Kategorî 6'
+        'name' => '6 کەتێگۆریی ژێرین'
     ],
     'cat8' => [
-        'name' => 'Kategoriya Jêrîn 7'
+        'name' => '7 کەتێگۆریی ژێرین'
     ],
     'cat9' => [
-        'name' => 'Kategoriya Jêrîn 8'
+        'name' => '8 کەتێگۆریی ژێرین'
     ],
     'cat10' => [
-        'name' => 'Kategoriya Jêrîn 9'
+        'name' => '9 کەتێگۆریی ژێرین'
     ],
     'currency' => [
         'name' => 'دراو'
@@ -251,7 +251,7 @@ return [
 ',
     'select_a_category' => 'کەتێگۆری هەڵبژێرە
 ',
-    'select_a_sub_category' => 'کەتێگۆریی ژێرەوە هەڵبژێرە
+    'select_a_sub_category' => 'کەتێگۆریی ژێرین هەڵبژێرە
 ',
     'all_dopings_added' => 'هەموو جۆرەکانی دۆپینگ بۆ ئەم ڕیکلامە زیادکراوە
 ',
