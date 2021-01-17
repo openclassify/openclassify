@@ -336,19 +336,21 @@ return [
         'name' => 'نرخي',
     ],
     'piece' => [
-        'name' => 'Perçe',
+        'name' => 'پارچە',
     ],
     'commission' => [
-        'name' => 'Simsarî',
+        'name' => 'کۆمیسۆن',
     ],
     'total' => [
-        'name' => 'Hemî',
+        'name' => 'هه موو
+',
     ],
     'sub_total' => [
-        'name' => 'Sub Total',
+        'name' => 'هەڵپەسێردراو',
     ],
     'sale' => [
-        'name' => 'Firotin',
+        'name' => 'فرۆشتن
+',
     ],
     'awaiting_tracking_number' => [
         'name' => 'Li benda Hejmara ckopandinê ne',
@@ -357,16 +359,18 @@ return [
         'name' => 'Li benda pejirandina drav',
     ],
     'paid' => [
-        'name' => 'Pere kirin',
+        'name' => 'پارةي دراوة
+',
     ],
     'cancelled' => [
-        'name' => 'Hat betalkirin',
+        'name' => 'هەڵوەشایەوە',
     ],
     'waiting' => [
-        'name' => 'Li bendê ye',
+        'name' => 'چاوەڕێکە',
     ],
     'awaiting_dispatch' => [
-        'name' => 'Li benda şandinê ye',
+        'name' => 'چاوەڕوانی ناردن
+',
     ],
     'shipped' => [
         'name' => 'Ppedandin',
@@ -394,7 +398,8 @@ return [
     ],
 
     'awaiting_payment' => [
-        'name' => 'Li benda dravdayînê ye',
+        'name' => 'چاوەڕوانی پارەدان
+',
     ],
     'please_entered_tracking_number' => [
         'name' => 'Ji kerema xwe Hejmara ckopandinê ketin hundir',
@@ -510,7 +515,8 @@ return [
     'edit_details' => 'Hûrgulî Biguherînin',
     'update' => 'Rojanekirin',
     'change_password' => '.Îfreyê biguherînin',
-    'choose_an_option' => 'Vebijarek hilbijêrin ...',
+    'choose_an_option' => 'بژاردەیەک هەڵبژێرە
+',
 
     // Register page
     'accept_terms_label' => 'Ez şertan qebûl dikim.',
