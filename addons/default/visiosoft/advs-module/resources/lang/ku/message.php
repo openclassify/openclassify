@@ -16,13 +16,20 @@ return [
         'continueBtn' => "بەردەوام بە
 ",
     ],
-    'update_category_info' => 'Ji kerema xwe kategoriyê nûve bikin.',
-    'filter_by_search_msg' => 'Parzûn Bi Lêgerînê.',
-    'delete_author_error' => 'Hûn nekarin mesajek ku ne ya we be jêbirin',
-    'success_delete' => 'Ad Deleted',
-    'pending_ad_status' => 'Reklama we li benda pejirandina Edîtorê ye.',
-    'extended' => ': reklam (s) hejmar bi serfirazî hate dirêj kirin.',
-    'category_not_exist' => 'Ev kategorî êdî tune!',
+    'update_category_info' => 'تکایە کەتێگۆریەکە نوێ بکەنەوە
+',
+    'filter_by_search_msg' => 'پارزوون بە گەڕان
+',
+    'delete_author_error' => 'ناتوانی پۆستێک بسڕیتەوە کە هی تۆ نەبێت
+',
+    'success_delete' => 'ڕێکلامی سڕایەوە
+',
+    'pending_ad_status' => 'ڕیکلامەکەت لەلایەن ئیدیتۆرەوە پەسەندکراوە.
+',
+    'extended' => 'ژمارەی ڕیکلامی سەرکەوتوو درێژکرایەوە:
+',
+    'category_not_exist' => 'چیتر ئەم کەتێگۆری بەردەست نییە!
+',
     'currency_converted' => 'Dirav Bi Serkeftin Ve Veguherandin.',
     'choose_user' => 'Bikarhêner hilbijêrin',
     'owner_updated_successfully' => 'Xwedî Serkeftin Hat Nûvekirin!',
