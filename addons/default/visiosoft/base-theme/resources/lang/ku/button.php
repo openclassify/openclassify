@@ -9,7 +9,7 @@ return [
     'register' => 'تۆمارکردن',
     'continue' => 'بەردەوام بوون',
     'reset_password' => 'ڕێکخستنەوەی تێپەڕەوشە',
-    'email' => 'E-nameyê bişînin',
+    'email' => ' ئی مەیل',
     'phone' => 'تەلەفۆن',
     'show_all' => ' هەموو پیشانبدە',
     'hide_all' => 'هەموو بشارەوە',
