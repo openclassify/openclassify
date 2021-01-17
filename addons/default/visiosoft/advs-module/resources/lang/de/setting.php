@@ -219,4 +219,12 @@ return [
         'name' => 'Farbe der Anzeigenschaltfläche erstellen',
         'instructions' => 'Ändert die Schaltfläche, die angezeigt wird, wenn die Auswahl der neuen Anzeigenkategorie abgeschlossen ist.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher für Browser',
+        'instructions' => 'Ermöglicht die Auswahl der Browsersprache als aktive Sprache'
+    ],
+    'get_categories' => [
+        'name' => 'Kategorien abrufen',
+        'instructions' => 'Es stellt die Kategorien dar, in denen die GET-Eigenschaft gültig ist.'
+    ],
 ];
