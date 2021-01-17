@@ -18,20 +18,32 @@ return [
     "login_noMail_old_user2" => "تکایە سەیری ناونیشانی ئیمەیڵەکە بکە و دیسان تاقی بکەرەوە.
 ",
     "login_noMail_old_user3" => "'info@sayaram.com' ئەگەر کێشەکە بەردەوام بوو ، تکایە پەیوەندی بکە بە",
-    "login_info_old_user" => "Passwordîfreyek nû ji navnîşana e-nameya we re hat şandin.",
-    "success" => "Serketinî",
-    "notified_new_updates" => "Ez dixwazim ji nûvekirinên nû agahdar bibim",
-    "notified_about_ads" => "Di derheqê reklamên min de ragihînan bihêlin",
-    "receive_messages_email" => "Ez dixwazim wekî e-nameyan peyaman bistînim",
-    "no_packages_module" => "Moduleya Pakêtan tune!",
-    "required_add"=> "Ji kerema xwe hemî rêzikên hewce dagirin.",
-    "no_extend_package" => "Pakêtên Ad Adarê Dirêj Bikin",
-    "saved" => "Xilas kirin!",
+    "login_info_old_user" => "وشەی نهێنیی نوێ بۆ ناونیشانی ئی-مەیلەکەت نێردراوە
+",
+    "success" => "سەرکەوتن",
+    "notified_new_updates" => "دەمەوێت لە ئەپدەیتی نوێ ئاگاداربکرێتەوە
+",
+    "notified_about_ads" => "ئاگادارکردنەوەی ڕێگەپێدان دەربارەی ڕێکلامەکانم
+",
+    "receive_messages_email" => "دەمەوێت وەک ئیمەیڵ نامەم بۆبێت
+",
+    "no_packages_module" => "! هیچ پاکێجێکی مۆدول نییە
+",
+    "required_add"=> "تکایە هەموو هێڵە پێویستەکان پڕبکەنەوە.
+",
+    "no_extend_package" => "پاکێجەکانی ڕێکلام درێژکردنەوە نییە
+",
+    "saved" => "پاشکەوت کرا
+",
     'please_confirm_transaction' => 'Ji kerema xwe danûstendinê piştrast bikin',
-    'password_do_not_match' => 'Passwordîfre li hev nakin',
-    'your_password_changed' => 'Passwordîfreya we bi serfirazî hate nûve kirin',
-    'error_valid_email_or_phone' => 'Forma jimara telefonê an navnîşana E-nameyê ne rast e.',
-    'error_valid_phone' => 'Formata jimara têlefonê ne rast e.',
+    'password_do_not_match' => 'وشەی نهێنیەکان ناگونجێن
+',
+    'your_password_changed' => 'وشەی نهێنیەکەت بە سەرکەوتوویی نوێ کرایەوە
+',
+    'error_valid_email_or_phone' => 'ژمارە تەلەفون یان ناونیشانی ئیمەیل دروست نیە
+',
+    'error_valid_phone' => 'ژمارەی مۆبایل دروست نیە.
+',
     'registered_phone' => 'Ev jimara têlefonê jixwe hatî tomar kirin.',
     'ajax_address_error' => 'Navnîşan tune an ji bo dîtinê ne destûrdar e.',
     'empty_password_sms_message' => 'Ji ber pirsgirêkên ewlehiyê, me şîfreya we guherand! Passwordîfreya weya nû ev e:',
