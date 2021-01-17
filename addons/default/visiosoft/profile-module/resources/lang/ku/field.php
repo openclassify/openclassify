@@ -444,40 +444,49 @@ return [
 ',
     ],
     'confirm_password_input' => [
-        'name' => 'Ez guhertina şîfreya xwe piştrast dikim',
+        'name' => 'من گۆڕانی وشەی نهێنیەکەم قبوڵ دەکەم
+',
     ],
     'create_address' => [
-        'name' => 'Navnîşan çêbikin',
+        'name' => 'دروستی ناونیشانەکە بکە
+',
     ],
     'edit_address' => [
         'name' => 'Navnîşan Biguherîne',
     ],
     'balance_limit' => [
-        'name' => 'Sînora Hevsengiyê',
+        'name' => 'سنوری باڵانس
+',
     ],
     'active_ads' => [
-        'name' => 'Reklamên Çalak',
+        'name' => 'ڕێکلامێکی چالاک
+',
     ],
     'subscriptions' => [
-        'name' => 'Abonekirin',
+        'name' => 'ئابوونە کردن',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Herin Rûpelê Tevlêbûnan',
+        'name' => 'بڕۆ بۆ پەیجی ئابوونە کردن
+',
     ],
     'buy_package' => [
-        'name' => 'Pakêtê bikirin',
+        'name' => 'پاکێجی بکڕە
+',
     ],
     'expired_date' => [
-        'name' => 'Date Date',
+        'name' => 'بەرواری بەسەرچوون
+',
     ],
     'category' => [
-        'name' => 'Liq',
+        'name' => 'کەتێگۆری',
     ],
     'ad_limit' => [
-        'name' => 'Sînora Ad',
+        'name' => 'سنورى ڕیکلام
+',
     ],
     'publish_time' => [
-        'name' => 'Wext Weşandin',
+        'name' => 'کاتی بڵاوکردنەوە
+',
     ],
     'all_categories' => [
         'name' => 'Hemî Kategorî',
