@@ -274,18 +274,20 @@ return [
 '
     ],
     'disable_account' => [
-        'name' => 'Hesabê Neçalak bikin'
+        'name' => 'ئەکاونتەکە ناچالاک بکە
+'
     ],
     'disable_account_msg' => [
-        'name' => 'Dê hesabê we bête sekinandin.
-                                    Ev operasyon nayê paşve xistin'
+        'name' => '.ئەکاونتەکەت ناچالاک دەبێت
+ئەم کردارنە ناکرێت                                    '
     ],
 
-    'message_title' => 'Sernavê peyamê',
-    'owner_name' => 'Agah',
+    'message_title' => 'سەردێڕی پەیام
+',
+    'owner_name' => 'پەیام',
 
-    'favorites' => "Favorites",
-    'fav_advs' => 'Reklamên Bijare',
+    'favorites' => "دڵخوازەکان",
+    'fav_advs' => 'ڕێکلامێکی دڵخواز',
     'fav_sellers' => "Fav Firoşyar",
     'fav_searches' => "Lêgerînên Fav",
     'posted_on' => "Hat şandin",
