@@ -29,4 +29,6 @@ return [
     'this_ad_is_not_valid_anymore' => "Ev reklam ne derbasdar e êdî!",
     'approve_status_change' => "Rewşa Reklama We Çalak Bûye!",
     'passive_status_change' => "Rewşa Reklama We Pasîf Bû!",
+	'sold_status_change' => "! دۆخی ڕیکلامەکەت رێکخراو وەک فرۆشراوە
+",
 ];
