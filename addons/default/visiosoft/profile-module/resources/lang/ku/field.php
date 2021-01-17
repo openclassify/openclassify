@@ -287,45 +287,53 @@ return [
     'owner_name' => 'پەیام',
 
     'favorites' => "دڵخوازەکان",
-    'fav_advs' => 'ڕێکلامێکی دڵخواز',
-    'fav_sellers' => "Fav Firoşyar",
-    'fav_searches' => "Lêgerînên Fav",
+    'fav_advs' => 'ڕێکلامێکی دڵخوازترین',
+    'fav_sellers' => "فرۆشیاری دڵخوازترین
+",
+    'fav_searches' => "گەڕانی دڵخوازترین
+",
     'posted_on' => "Hat şandin",
-    'message_details' => "Agahdariyên Peyamê",
-    'adv_no' => 'Ad Na',
+    'message_details' => "وردەکاری پەیام
+",
+    'adv_no' => 'ژمارەی ڕیکلام
+',
     'bill_address' => [
-        'name' => 'Navnîşana Bill',
+        'name' => 'ناونیشانی فاتووره‌
+',
     ],
     'delivery_address' => [
-        'name' => 'Navnîşana Radestkirinê',
+        'name' => 'ناونیشانی ته‌سلیم
+',
     ],
     'order_total' => [
-        'name' => 'Hemî',
+        'name' => 'هه موو
+',
     ],
     'order_date' => [
-        'name' => 'Date Order',
+        'name' => 'بەروارى داواکردن
+',
     ],
     'order_no' => [
-        'name' => 'Nasnameyê rêz bikin',
+        'name' => 'ناسنامەی داواکردن',
     ],
     'order_detail' => [
-        'name' => 'Detail nîşan bide',
+        'name' => 'زانیارییە نیشاندە',
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => 'Hûrî',
+        'name' => 'وردەکاری',
     ],
     'back' => [
-        'name' => 'Paş',
+        'name' => 'پشت',
     ],
     'image' => [
-        'name' => 'Wêne',
+        'name' => 'وێنە',
     ],
     'subject' => [
-        'name' => 'Mijar',
+        'name' => 'بابەت',
     ],
     'price' => [
-        'name' => 'Biha',
+        'name' => 'نرخي',
     ],
     'piece' => [
         'name' => 'Perçe',
@@ -417,7 +425,7 @@ return [
         'name' => 'Mîhengên Pargîdanî',
     ],
     'password' => [
-        'name' => 'Şîfre',
+        'name' => 'وشەی نهێنی',
     ],
     'old_password' => [
         'name' => 'Passwordîfreya kevn',
@@ -482,12 +490,12 @@ return [
         'name' => 'Hûrgulî'
     ],
     'choose' => [
-        'name' => 'Helbijartin'
+        'name' => 'هەڵبژاردن'
     ],
-    'my_address' => 'Navnîşana min',
+    'my_address' => 'ناونیشانی من',
 
     'company' => [
-        'name' => 'Navê Pargîdanî'
+        'name' => 'ناوی کۆمپانیا'
     ],
     'tax_office' => [
         'name' => 'Daîreya Bacê'
@@ -512,10 +520,11 @@ return [
 
     // Register Type
     'personal' => [
-        'name' => 'Şexsî'
+        'name' => 'شه‌خسی'
     ],
 
 	'education_part' => [
-		'name' => 'Dewleta Perwerdehiyê'
+		'name' => 'ویلایەتی پەروەردە
+'
 	],
 ];
