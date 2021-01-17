@@ -44,21 +44,31 @@ return [
 ',
     'error_valid_phone' => 'ژمارەی مۆبایل دروست نیە.
 ',
-    'registered_phone' => 'Ev jimara têlefonê jixwe hatî tomar kirin.',
-    'ajax_address_error' => 'Navnîşan tune an ji bo dîtinê ne destûrdar e.',
-    'empty_password_sms_message' => 'Ji ber pirsgirêkên ewlehiyê, me şîfreya we guherand! Passwordîfreya weya nû ev e:',
-    'required_all' => "Hemî Zevî Pêdivî ye!",
-    'can_not_remove_filled_fields' => "Hûn nekarin zeviyên dagirtî rakin!",
-    'wrong_password' => "Passwordîfreya ku we xistî ne rast e!",
+    'registered_phone' => 'ئه م ژماره ته له فونه هه ر ئيستا تومار كراوه
+',
+    'ajax_address_error' => 'هیچ ناونیشانێک یان ڕێگە پێنەدراوە بۆ بینین
+',
+    'empty_password_sms_message' => ':بەهۆی کێشەی ئەمنیەوە ، ئێمە وشەی پاسۆردمان گۆڕی! وشەی نهێنی تۆ ئەوەیە
+',
+    'required_all' => "! هەموو کێڵگەکان پێویستە
+",
+    'can_not_remove_filled_fields' => "! تۆ ناتوانیت کێڵگە پڕکراوەکان لاببەیت
+",
+    'wrong_password' => "! ئەو وشەی نهێنی کە داخڵ بوویت ڕاست نییە
+",
 
     // Forgot Password
-    'email_phone_not_found' => 'E-name, Jimareya Têlefonê ne rast e!',
+    'email_phone_not_found' => 'ژمارە تەلەفون یان ناونیشانی ئیمەیل دروست نیە
+',
 
-    'disable_account' => 'Ma hûn dixwazin hesabê xwe bigirin? Ev operasyon nayê paşve xistin.',
+    'disable_account' => 'دەتەوێت ئەکاونتەکەت دابخەیت ؟ ئەم ئۆپراسیۆنە ناکرێت
+',
 
     // Mail
-    'update_email_mail_subject' => 'E-name hatî nûve kirin!',
-    'update_email_mail_message' => 'E-nameya We Hat Nûvekirin!',
+    'update_email_mail_subject' => '! ئیمەیڵ نوێ کرایەوە
+',
+    'update_email_mail_message' => '! ئیمەیلەکەت نوێ کراوەتەوە
+',
 
     // Register
     'recaptcha_field_is_required' => 'qada reCaptcha pêdivî ye.',
