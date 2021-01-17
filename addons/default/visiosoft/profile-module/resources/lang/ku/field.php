@@ -2,22 +2,25 @@
 
 return [
     'file' => [
-        'name' => 'Photos'
+        'name' => 'وێنه‌کان'
     ],
     'first_name' => [
-        'name' => 'Nav'
+        'name' => 'ناوی یەکەم
+'
     ],
     'last_name' => [
-        'name' => 'Paşnav'
+        'name' => 'ناوی باپیر'
     ],
     'username' => [
-        'name' => 'Navê bikarhêner'
+        'name' => 'ناوی بەکارهێنەر'
     ],
     'display_name' => [
-        'name' => 'Navê Nîşan bide'
+        'name' => 'ناوی پیشان دان
+'
     ],
     'email' => [
-        'name' => 'Navnîşana E-nameyê'
+        'name' => 'ناونیشانی ئیمەیل
+'
     ],
     'sitename' => [
         'name' => 'sitename'
