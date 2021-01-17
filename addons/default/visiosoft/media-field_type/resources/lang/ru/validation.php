@@ -2,5 +2,5 @@
 
 return [
     'valid_disk' => 'Настроенный загрузочный диск для: атрибута не существует.',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+	'unsupported' => 'Эта область предназначена только для файлов изображений. В поле описания можно добавлять файлы разных типов.'
 ];
