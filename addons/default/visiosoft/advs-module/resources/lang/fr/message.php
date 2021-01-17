@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Cette annonce n'est plus valide!",
     'approve_status_change' => "Le statut de votre annonce a été défini sur Actif!",
     'passive_status_change' => "Le statut de votre annonce a été défini sur Passif!",
+	'sold_status_change' => "Le statut de votre annonce a été défini sur Vendu!",
 ];
