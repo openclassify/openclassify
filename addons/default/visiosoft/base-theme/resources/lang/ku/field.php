@@ -19,9 +19,9 @@ return [
     'first_name' => 'ناوی یەکەم
 ',
     'last_name' => 'ناوی باپیر',
-    'remember_me' => 'من لە بیرە
+    'remember_me' => 'بیره بۆ من
 ',
-    'not_a_member_yet' => 'هێشتا ئەندام نیە ؟
+    'not_a_member_yet' => 'تۆ ئەندام نیت هێشتا ؟
 ',
     'not_a_member_yet_message' => 'خۆت تۆمار بکە بۆ ئەندامەکانمان بۆ سوودمەندبوون لە خزمەتگوزاری تایبەتمان
 ',
