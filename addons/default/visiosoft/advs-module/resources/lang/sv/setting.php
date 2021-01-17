@@ -219,4 +219,12 @@ return [
         'name' => 'Skapa färg för annonsknapp',
         'instructions' => 'Ändrar knappen som visas när det nya valet av annonskategori är klart.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher för webbläsare',
+        'instructions' => 'Låter dig välja webbläsarspråk som aktivt språk'
+    ],
+    'get_categories' => [
+        'name' => 'Hämta kategorier',
+        'instructions' => 'Det representerar de kategorier i vilka GET-egenskapen är giltig.'
+    ],
 ];
