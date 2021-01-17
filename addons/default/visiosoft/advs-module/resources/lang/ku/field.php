@@ -386,20 +386,27 @@ return [
     'update_my_contact_info' => 'زانیاری پەیوەندیم نوێ بکەرەوە
 ',
     'contact_info' => 'زانیاری پەیوەندی',
-    'ad_info' => 'Agahdariya Ad',
+    'ad_info' => 'زانیاری ڕێکلام
+',
 
     // Select cat
-    'select_category_step_by_step' => 'Gav bi Gav Kategorî hilbijêrin',
+    'select_category_step_by_step' => 'کەتێگۆری هەڵبژێرە هەنگاو بە هەنگاو
+
+',
 
     // New create page
-    'options' => 'Vebijarkên',
-    'category_selection' => 'Hilbijartina Kategorî',
-    'listing_details' => 'Details hûrgulî',
-    'preview' => 'Pêşnerîn',
-    'congratulations' => 'Pîrozbahî',
+    'options' => 'بژاردەکان
+',
+    'category_selection' => 'هەڵبژاردنەکانی کەتێگۆری
+',
+    'listing_details' => 'وردەکاریەکانی لیستکردن
+',
+    'preview' => 'پێشبینین
+',
+    'congratulations' => 'پیرۆزبایی',
     'ad_desc' => 'دەربارەی ڕێکلام',
-    'upload_photos' => 'Wêneyan bar bikin',
-    'upload_files' => 'فایلەکانی بارکردن
+    'upload_photos' => 'وێنەکانی دانێن',
+    'upload_files' => 'فایلەکان دابنێن
 ',
     'additional_fields' => 'Zeviyên Zêdeyî',
     'ad_location' => 'Cihê Ad',
