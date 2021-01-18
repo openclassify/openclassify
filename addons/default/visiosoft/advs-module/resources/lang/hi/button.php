@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'तेजी से बना',
 	'publish' => 'प्रकाशित करना',
 	'import' => 'आयात',
+    'new_status' => 'Naee sthiti',
 ];
