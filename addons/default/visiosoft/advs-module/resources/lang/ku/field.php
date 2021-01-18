@@ -225,7 +225,7 @@ return [
 ',
     'create_adv' => 'ڕیکلام دروست بکە
 ',
-    'edit_adv' => 'دەستکاریی ڕیکلامی بکات
+    'edit_adv' => 'دەستکاری ڕیکلامەکە بکات
 ',
     'mandatory_fields' => 'کێڵگەکانی بەزۆرەملێ
 ',
@@ -260,7 +260,7 @@ return [
     ],
     'corporate_info' => 'زانیاری کۆمپانیا
 ',
-    'featured_ads' => "ڕیکلامی تایبەتمەندی بوو
+    'featured_ads' => "ڕیکلامی عةرز
 ",
     'trending_ads' => 'Reklamên Trendind',
     'search_ad_result_prefix' => 'لەسەر',
@@ -293,8 +293,7 @@ return [
         'name' => 'مێز',
     ],
     'showcase' => [
-        'name' => 'عه رز
-',
+        'name' => 'عةرز',
     ],
     'new_ad' => [
         'name' => 'ڕیکلامی نوێ
