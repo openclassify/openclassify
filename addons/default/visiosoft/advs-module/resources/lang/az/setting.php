@@ -219,4 +219,12 @@ return [
         'name' => 'Reklam Düyməsini Rəng Yaradın',
         'instructions' => 'Yeni reklam kateqoriyası seçimi bitdikdə görünən düyməni dəyişdirir.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Brauzer üçün Lang Switcher',
+        'instructions' => 'Brauzer dilini aktiv dil kimi seçməyə imkan verir'
+    ],
+    'get_categories' => [
+        'name' => 'Kateqoriyalar alın',
+        'instructions' => 'GET mülkiyyətinin etibarlı olacağı kateqoriyanı təmsil edir.'
+    ],
 ];
