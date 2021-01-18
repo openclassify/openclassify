@@ -125,42 +125,69 @@ function addAdsRow(id, href, image, name, formatted_price, city, country, cat1, 
 }
 
 function dropdownRow(id, type) {
-    var dropdown = "<div class='dropdown my-ads-dropdown' data-id='" + id + "'>\n" +
-        "  <button class='dropdown-toggle btn btn-outline-dark' type='button' id='dropdownMenuButton' data-toggle='dropdown'>\n" +
-        "<i class=\"fas fa-ellipsis-v\"></i>" +
-        "  </button>\n" +
-        "  <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>\n";
+    var dropdown = `
+        <div class='dropdown my-ads-dropdown' data-id='${id}'>
+            <button class='dropdown-toggle btn btn-outline-dark' type='button' id='dropdownMenuButton'
+                data-toggle='dropdown'>
+                <i class="fas fa-ellipsis-v"></i>
+            </button>
+            <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+    `;
     if (type == "passive") {
-        dropdown += "<a class='dropdown-item text-success' href='/advs/status/" + id + ",approved'>" +
-            "<i class='fas fa-eye'></i> " +
-            approve +
-            "</a>\n";
+        dropdown += `
+            <a class='dropdown-item text-success' href='/advs/status/${id},approved'>
+                <i class='fas fa-eye'></i>
+                ${approve}
+            </a>
+        `;
     } else {
-        dropdown += "<a class='dropdown-item text-secondary' href='/advs/status/" + id + ",passive'>" +
-            "<i class='fas fa-eye-slash'></i> " +
-            passive +
-            "</a>\n";
+        dropdown += `
+            <a class='dropdown-item text-secondary' href='/advs/status/${id},passive'>
+                <i class='fas fa-eye-slash'></i>
+                ${passive}
+            </a>
+        `;
     }
 
-    dropdown += "<a class='dropdown-item text-primary' href='/advs/edit_advs/" + id + "'>" +
-        "<i class='fas fa-pencil-alt'></i> " +
-        edit_ad +
-        "</a>\n";
-
-    dropdown += "<a class='dropdown-item text-danger' href='/advs/delete/" + id + "'>" +
-        "<i class='fas fa-trash'></i> " +
-        delete_ad +
-        "</a>\n";
-
-    dropdown += "<a class='dropdown-item text-info' href='/advs/extend/" + id + "'>" +
-        "<i class='fas fa-calendar'></i> " +
-        extend_ad +
-        "</a>\n";
-
-    dropdown += "</div></div>";
+    dropdown += `
+                <a class='dropdown-item text-primary' href='/advs/edit_advs/${id}'>
+                    <i class='fas fa-pencil-alt'></i>
+                    ${edit_ad}
+                </a>
+                <a class='dropdown-item text-danger' href='/advs/delete/${id}'>
+                    <i class='fas fa-trash'></i>
+                    ${delete_ad}
+                </a>
+                <a class='dropdown-item text-info' href='/advs/extend/${id}'>
+                    <i class='fas fa-calendar'></i>
+                    ${extend_ad}
+                </a>
+                <div class="btn-group dropleft">
+                    <button type="button" class="btn btn-secondary dropdown-toggle adv-status-toggle" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Dropleft
+                    </button>
+                    <div class="dropdown-menu">
+                        <!-- Dropdown menu links -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 
     return dropdown;
 }
+
+$(document).on('click', '.adv-status-toggle', function (e) {
+    e.stopPropagation();
+    e.preventDefault();
+
+    if (!$(this).next('div').hasClass('show')) {
+        $(this).next('div').addClass('show');
+    } else {
+        $(this).next('div').removeClass('show');
+    }
+})
 
 function addDropdownBlock() {
     const dropdowns = $('.my-ads-dropdown')
