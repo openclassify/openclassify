@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Zawód'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Ukryj Zarejestruj Wpisz na stronie profilu',
+        'instructions' => 'Ukrywa pole typu rejestru na stronie edycji profilu.',
+    ],
 ];

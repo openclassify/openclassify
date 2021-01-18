@@ -1,23 +1,31 @@
 <?php
 
 return [
-    'new_adv' => 'Nifşek nû',
-    'new_classified' => 'Nifşek nû',
-    'new_category' => 'Kategoriya Nû',
-    'new_country' => 'Welatê Nû',
-    'new_city' => 'Bajarê Nû',
-    'new_district' => 'Navçeya Nû',
-    'new_neighborhood' => 'Taxa Nû',
-    'new_village' => 'Gundê Nû',
-    'edit' => "Weşandin",
-    'approve' => "Destûrdan",
-    'decline' => 'Paşvegerrî',
-    'extend' => 'N',
-    'extend_all' => 'Hemî Dirêj Bikin',
-    'convert_currency' => 'Dirav veguherînin',
-    'categories' => 'Kategorî',
-    'sub_category' => 'Kategoriyên bin',
-    'add_sub_category' => 'Kategoriya Jêrîn zêde bikin',
+    'new_adv' => 'ڕیکلامی نوێ
+',
+    'new_classified' => 'ڕیکلامی نوێ
+',
+    'new_category' => 'کەتێگۆریی نوێ
+',
+    'new_country' => 'وڵاتی نوێ
+',
+    'new_city' => 'شارێکی نوێ
+',
+    'new_district' => 'ناحیه ی نوێ
+',
+    'new_neighborhood' => 'هاوسایەتی نوێ',
+    'new_village' => 'گوندی نوێ
+',
+    'edit' => "دەستکاری بکە",
+    'approve' => "پەسەندی بکە
+",
+    'decline' => 'ڕەتکردنەوە',
+    'extend' => 'درێژ بکە',
+    'extend_all' => 'هەموو درێژ بکە',
+    'convert_currency' => 'گۆڕینی دراوی',
+    'categories' => 'کەتێگۆریکان',
+    'sub_category' => 'کەتێگۆریی ژێرەوە',
+    'add_sub_category' => 'دانێ کەتێگۆریی ژێرەوە',
     'sub_cities' => 'Bajarên bin',
     'add_sub_cities' => 'Sub City-ê zêde bikin',
     'add_sub_districts' => 'Navçeya Sub zêde bikin',
@@ -43,4 +51,6 @@ return [
 	'fast_create' => 'Fast biafirîne',
 	'publish' => 'Weşandin',
 	'import' => 'Malanîn',
+    'new_status' => 'دۆخی نوێ
+',
 ];

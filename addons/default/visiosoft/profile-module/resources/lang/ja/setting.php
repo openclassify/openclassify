@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => '職業'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'プロファイルページでレジスタタイプを非表示にする',
+        'instructions' => 'プロファイル編集ページのレジスタタイプフィールドを非表示にします。',
+    ],
 ];

@@ -219,4 +219,12 @@ return [
         'name' => 'צור צבע כפתור מודעה',
         'instructions' => 'משנה את הכפתור שמופיע לאחר בחירת קטגוריית המודעות החדשה.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher לדפדפן',
+        'instructions' => 'מאפשר לך לבחור את שפת הדפדפן כשפה פעילה'
+    ],
+    'get_categories' => [
+        'name' => 'קבל קטגוריות',
+        'instructions' => 'הוא מייצג את הקטגוריות בהן נכס ה- GET יהיה תקף.'
+    ],
 ];

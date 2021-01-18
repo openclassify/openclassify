@@ -97,4 +97,12 @@ return [
             'delete' => 'Peut supprimer la configuration des options?',
         ],
     ],
+    'status' => [
+        'name'   => 'Statut',
+        'option' => [
+            'read'   => 'Peut lire le statut?',
+            'write'  => 'Peut créer / modifier le statut?',
+            'delete' => 'Peut supprimer le statut?',
+        ],
+    ],
 ];

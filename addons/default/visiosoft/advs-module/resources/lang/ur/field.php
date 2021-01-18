@@ -165,6 +165,7 @@ return [
     'edit' => 'ترمیم',
     'approve' => 'منظور کریں',
     'passive' => "غیر فعال",
+	'sold' => 'بیچ دیا',
     'offered_by' => 'پیش کردہ',
     'more_ads_by' => 'مزید اشتہارات کے ذریعہ',
     'click_phone' => 'فون نمبر دکھائیں',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'کارپوریٹ معلومات',
     'featured_ads' => "نمایاں اشتہارات",
     'trending_ads' => 'رجحانات کے اشتہارات',
+    'search_ad_result_prefix' => 'پر',
     'search_ads_result_message' => [
         'name' => ': کے لئے ملنے والے اشتہارات گنیں: نام کی تلاش',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "کوئی مقام منتخب نہیں ہوا ہے۔",
     "continue" => 'جاری رہے',
     "gallery" => 'گیلری',
+    "ad" => 'اشتہار',
     "ads" => 'اشتہارات',
     "were_found" => 'پائے گئے.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'مبارک ہو',
     'ad_desc' => 'اشتہار کی تفصیل',
     'upload_photos' => 'تصاویر اپ لوڈ کریں',
+    'upload_files' => 'فائلیں اپ لوڈ کرو',
     'additional_fields' => 'اضافی فیلڈز',
     'ad_location' => 'اشتہار کی جگہ',
 

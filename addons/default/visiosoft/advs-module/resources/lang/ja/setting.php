@@ -219,4 +219,12 @@ return [
         'name' => '広告ボタンの色を作成する',
         'instructions' => '新しい広告カテゴリの選択が終了したときに表示されるボタンを変更します。'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'ブラウザ用ラングスイッチャー',
+        'instructions' => 'ブラウザの言語をアクティブな言語として選択できます'
+    ],
+    'get_categories' => [
+        'name' => 'カテゴリを取得',
+        'instructions' => 'これは、GETプロパティが有効になるカテゴリを表します。'
+    ],
 ];

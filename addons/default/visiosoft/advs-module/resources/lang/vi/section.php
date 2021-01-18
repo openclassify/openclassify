@@ -56,4 +56,7 @@ return [
         'title' => 'Cấu hình',
     ],
     'translations' => 'Bản dịch',
+    'status' => [
+        'title' => 'Trạng thái',
+    ],
 ];

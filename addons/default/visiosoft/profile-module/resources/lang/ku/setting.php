@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Sinet'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Di Rûpelê Profîl de Tîpa Tomarê Veşêre',
+        'instructions' => 'Zeviya tomara tomarê di rûpelê guheztina profîlê de vedişêre.',
+    ],
 ];

@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Nghề nghiệp'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Ẩn Đăng ký Nhập trang Tiểu sử',
+        'instructions' => 'Ẩn trường loại đăng ký trong trang chỉnh sửa hồ sơ.',
+    ],
 ];

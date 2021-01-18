@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Profissão'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Ocultar tipo de registro na página de perfil',
+        'instructions' => 'Oculta o campo do tipo de registro na página de edição do perfil.',
+    ],
 ];

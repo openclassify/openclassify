@@ -97,4 +97,12 @@ return [
             'delete' => 'Ma dikare veavakirina vebijarkê were jêbirin?',
         ],
     ],
+    'status' => [
+        'name'   => 'Cî',
+        'option' => [
+            'read'   => 'Ma dikare statûyê bixwîne?',
+            'write'  => 'Ma dikare statu biafirîne / sererast bike?',
+            'delete' => 'Ma dikare statuyê jê bibe?',
+        ],
+    ],
 ];

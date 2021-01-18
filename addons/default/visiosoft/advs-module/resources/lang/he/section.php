@@ -56,4 +56,7 @@ return [
         'title' => 'תְצוּרָה',
     ],
     'translations' => 'תרגומים',
+    'status' => [
+        'title' => 'סטָטוּס',
+    ],
 ];

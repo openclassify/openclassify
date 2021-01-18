@@ -165,6 +165,7 @@ return [
     'edit' => 'Bewerk',
     'approve' => 'Goedkeuren',
     'passive' => "Passief",
+	'sold' => 'Verkocht',
     'offered_by' => 'Aangeboden door',
     'more_ads_by' => 'Meer advertenties door',
     'click_phone' => 'Toon telefoonnummer',
@@ -210,6 +211,7 @@ return [
     'corporate_info' => 'Bedrijfsinfo',
     'featured_ads' => "Aanbevolen advertenties",
     'trending_ads' => 'Trendind-advertenties',
+    'search_ad_result_prefix' => 'Aan',
     'search_ads_result_message' => [
         'name' => ':      tel advertenties gevonden voor:zoeken op naam',
     ],
@@ -281,6 +283,7 @@ return [
     "no_location" => "Er is geen locatie geselecteerd.",
     "continue" => 'Doorgaan met',
     "gallery" => 'Galerij',
+    "ad" => 'Advertentie',
     "ads" => 'Advertenties',
     "were_found" => 'zijn gevonden.',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Gefeliciteerd',
     'ad_desc' => 'Beschrijving van de Reclame',
     'upload_photos' => 'Foto\'s uploaden',
+    'upload_files' => 'Upload bestanden',
     'additional_fields' => 'Extra velden',
     'ad_location' => 'Advertentielocatie',
 

@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Beroep'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Verberg register Typ in profielpagina',
+        'instructions' => 'Verbergt het registertypeveld op de profielbewerkingspagina.',
+    ],
 ];

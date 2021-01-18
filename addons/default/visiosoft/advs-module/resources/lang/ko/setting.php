@@ -219,4 +219,12 @@ return [
         'name' => '광고 버튼 색상 만들기',
         'instructions' => '새 광고 카테고리 선택이 완료되면 표시되는 버튼을 변경합니다.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => '브라우저 용 랭 스위처',
+        'instructions' => '브라우저 언어를 활성 언어로 선택할 수 있습니다.'
+    ],
+    'get_categories' => [
+        'name' => 'GET 카테고리',
+        'instructions' => 'GET 속성이 유효한 범주를 나타냅니다.'
+    ],
 ];

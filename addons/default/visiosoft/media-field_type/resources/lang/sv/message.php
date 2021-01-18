@@ -10,4 +10,5 @@ return [
     'uploading' => 'uppladdning',
     'loading' => 'Läser in',
     'error_upload' => 'Det gick inte att ladda upp filen.',
+    'error_upload_docs' => 'Det finns inget stöd för dokumentöverföring. Kontakta din systemadministratör!',
 ];

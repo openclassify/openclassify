@@ -9,7 +9,7 @@ return [
     'delete' => 'Sil',
     'extend' => 'Süre Uzat',
     'extend_all' => 'Tümünün Süresini Uzat',
-    'extend_unpublished' => 'Yayınlanmayanları Genişlet',
+    'extend_unpublished' => 'Pasif ilanları uzat',
     'edit' => 'Düzenle',
     'go_profile' => 'Profil Detayları',
     'go_user' => 'Kullanıcı Detayları',

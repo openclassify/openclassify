@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Ta reklama jest już nieważna!",
     'approve_status_change' => "Stan Twojej reklamy został ustawiony jako Aktywny!",
     'passive_status_change' => "Stan Twojej reklamy został ustawiony na pasywny!",
+	'sold_status_change' => "Stan Twojej reklamy został ustawiony na Sprzedane!",
 ];

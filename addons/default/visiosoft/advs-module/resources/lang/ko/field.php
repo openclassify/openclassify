@@ -165,6 +165,7 @@ return [
     'edit' => '편집하다',
     'approve' => '승인',
     'passive' => "수동태",
+	'sold' => '판매',
     'offered_by' => '에 의해 제공된',
     'more_ads_by' => '더 많은 광고',
     'click_phone' => '전화 번호 표시',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => '회사 정보',
     'featured_ads' => "특집 광고",
     'trending_ads' => '트렌드 인 광고',
+    'search_ad_result_prefix' => '의 위에',
     'search_ads_result_message' => [
         'name' => ': 이름 검색에 대해 찾은 개수 광고',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "선택된 위치가 없습니다.",
     "continue" => '계속하다',
     "gallery" => '갤러리',
+    "ad" => '기원 후',
     "ads" => '광고',
     "were_found" => '발견되었습니다.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => '축하합니다',
     'ad_desc' => '광고 설명',
     'upload_photos' => '사진 업로드',
+    'upload_files' => '파일 업로드하다',
     'additional_fields' => '추가 필드',
     'ad_location' => '광고 위치',
 

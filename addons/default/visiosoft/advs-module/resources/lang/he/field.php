@@ -165,6 +165,7 @@ return [
     'edit' => 'ערוך',
     'approve' => 'אשר',
     'passive' => "פסיבי",
+	'sold' => 'נמכר',
     'offered_by' => 'מוצע על ידי',
     'more_ads_by' => 'מודעות נוספות מאת',
     'click_phone' => 'הצג מספר טלפון',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'מידע תאגידי',
     'featured_ads' => "מודעות ממומנות",
     'trending_ads' => 'מודעות טרנדינד',
+    'search_ad_result_prefix' => 'עַל',
     'search_ads_result_message' => [
         'name' => ': ספירת מודעות שנמצאו עבור: חיפוש שמות',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "לא נבחר מיקום.",
     "continue" => 'המשך',
     "gallery" => 'גלריה',
+    "ad" => 'מוֹדָעָה',
     "ads" => 'מודעות',
     "were_found" => 'נמצאו.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'מזל טוב',
     'ad_desc' => 'תיאור המודעה',
     'upload_photos' => 'להעלות תמונות',
+    'upload_files' => 'העלה קבצים',
     'additional_fields' => 'שדות נוספים',
     'ad_location' => 'מיקום מודעה',
 

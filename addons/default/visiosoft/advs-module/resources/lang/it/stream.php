@@ -31,4 +31,7 @@ return [
     'option_configuration' => [
         'name' => 'Configurazione',
     ],
+    'status' => [
+        'name' => 'Stato',
+    ],
 ];

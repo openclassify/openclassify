@@ -43,4 +43,5 @@ return [
 	'fast_create' => '高速作成',
 	'publish' => '公開する',
 	'import' => 'インポート',
+    'new_status' => '新しいステータス',
 ];

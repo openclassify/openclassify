@@ -165,6 +165,7 @@ return [
     'edit' => 'Biên tập',
     'approve' => 'Phê duyệt',
     'passive' => "Bị động",
+	'sold' => 'Đã bán',
     'offered_by' => 'Được cung cấp bởi',
     'more_ads_by' => 'Thêm quảng cáo bởi',
     'click_phone' => 'Hiển thị số điện thoại',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Thông tin doanh nghiệp',
     'featured_ads' => "Các bảng quảng cáo",
     'trending_ads' => 'Quảng cáo Trendind',
+    'search_ad_result_prefix' => 'trên',
     'search_ads_result_message' => [
         'name' => ': đếm quảng cáo được tìm thấy cho: tìm kiếm tên',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "Không có địa điểm được chọn.",
     "continue" => 'Tiếp tục',
     "gallery" => 'Bộ sưu tập',
+    "ad" => 'Ad',
     "ads" => 'Quảng cáo',
     "were_found" => 'đã được tìm thấy.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'Xin chúc mừng',
     'ad_desc' => 'mô tả quảng cáo',
     'upload_photos' => 'Tải ảnh lên',
+    'upload_files' => 'Tải lên tệp',
     'additional_fields' => 'các trường bổ sung',
     'ad_location' => 'Vị trí Quảng cáo',
 

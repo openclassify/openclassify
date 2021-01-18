@@ -2,25 +2,25 @@
 
 return [
     'advs' => [
-        'title' => 'Reklam',
+        'title' => 'ڕیکلامەکان',
     ],
     'categories' => [
-        'title' => 'Kategorî',
+        'title' => 'کەتێگۆریکان',
     ],
     'countries' => [
-        'title' => 'Welat',
+        'title' => 'وڵاتەکان',
     ],
     'cities' => [
-        'title' => 'Bajar',
+        'title' => 'شارەکان',
     ],
     'districts' => [
-        'title' => 'Navçe',
+        'title' => 'ناوچەکان',
     ],
     'neighborhoods' => [
-        'title' => 'Taxan',
+        'title' => 'هاوسایەتیەکان',
     ],
     'village' => [
-        'title' => 'Gûnd',
+        'title' => 'گوندەکان',
     ],
     'custom_fields' => [
         'title' => 'Zeviyên xwerû',
@@ -56,4 +56,7 @@ return [
         'title' => 'Veavakirina',
     ],
     'translations' => 'Wergeran',
+    'status' => [
+        'title' => 'دۆخ',
+    ],
 ];

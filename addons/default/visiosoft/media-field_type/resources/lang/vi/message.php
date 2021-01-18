@@ -10,4 +10,5 @@ return [
     'uploading' => 'Đang tải lên',
     'loading' => 'Đang tải',
     'error_upload' => 'Đã xảy ra sự cố khi tải tệp lên.',
+    'error_upload_docs' => 'Không có hỗ trợ tải lên tài liệu. Xin vui lòng liên hệ với quản trị hệ thống của bạn!',
 ];

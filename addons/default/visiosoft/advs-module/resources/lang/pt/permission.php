@@ -97,4 +97,12 @@ return [
             'delete' => 'Pode excluir a configuração da opção?',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Pode ler o status?',
+            'write'  => 'Pode criar / editar o status?',
+            'delete' => 'Pode excluir o status?',
+        ],
+    ],
 ];

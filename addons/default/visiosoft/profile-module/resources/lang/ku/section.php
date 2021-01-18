@@ -2,17 +2,18 @@
 
 return [
     'profile' => [
-        'title' => 'Tengal',
+        'title' => 'پرۆفایل',
     ],
     'adress' => [
-        'title' => 'Navnîşan',
+        'title' => 'ناونیشان',
     ],
-    'general_setting' => 'Mîhengên Giştî',
+    'general_setting' => 'ڕێکخستنی گشتی',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Zanyarî',
+        'title' => 'په‌روه‌رده‌',
     ],
     'education_part' => [
-        'title' => 'Beşa perwerdehiyê',
+        'title' => 'بەشی پەروەردەی
+',
     ],
 ];

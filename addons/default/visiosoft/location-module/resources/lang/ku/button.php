@@ -1,11 +1,15 @@
 <?php
 
 return [
-    'new_country' => 'Welatê Nû',
-    'new_city' => 'Bajarê Nû',
-    'new_district' => 'Navçeya Nû',
-    'new_neighborhood' => 'Taxa Nû',
-    'new_village' => 'Gundê Nû',
+    'new_country' => 'شاری نوێ
+',
+    'new_city' => 'شارێکی نوێ
+',
+    'new_district' => 'ناحیه ی نوێ
+',
+    'new_neighborhood' => 'هاوسایەتی نوێ',
+    'new_village' => 'گوندی نوێ
+',
     'sub_cities' => 'Bajarên bin',
     'add_sub_cities' => 'Sub City-ê zêde bikin',
     'add_sub_districts' => 'Navçeya Sub zêde bikin',
