@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Cîh',
+    'title'       => 'شوێن',
     'name'        => 'Modula Cihê',
     'description' => 'Terîf',
 ];

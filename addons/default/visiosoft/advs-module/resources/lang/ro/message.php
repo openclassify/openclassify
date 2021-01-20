@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Acest anunț nu mai este valabil!",
     'approve_status_change' => "Starea anunțului dvs. a fost activată!",
     'passive_status_change' => "Starea anunțului dvs. a fost setată la pasivă!",
+	'sold_status_change' => "Starea anunțului dvs. a fost setată ca vândută!",
 ];

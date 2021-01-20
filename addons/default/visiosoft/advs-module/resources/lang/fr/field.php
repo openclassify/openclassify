@@ -165,6 +165,7 @@ return [
     'edit' => 'modifier',
     'approve' => 'Approuver',
     'passive' => "Passif",
+	'sold' => 'Vendu',
     'offered_by' => 'Offert par',
     'more_ads_by' => 'Plus dannonces par',
     'click_phone' => 'Afficher le numéro de téléphone',
@@ -210,6 +211,7 @@ return [
     'corporate_info' => 'Informations sur lentreprise',
     'featured_ads' => "Annonces en vedette",
     'trending_ads' => 'Annonces Trendind',
+    'search_ad_result_prefix' => 'sur',
     'search_ads_result_message' => [
         'name' => ':      compte annonces trouvées pour:recherche par nom',
     ],
@@ -281,6 +283,7 @@ return [
     "no_location" => "Aucun emplacement n'est sélectionné.",
     "continue" => 'Continuer',
     "gallery" => 'Galerie',
+    "ad" => 'Un d',
     "ads" => 'Les publicités',
     "were_found" => 'ont été trouvés.',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Toutes nos félicitations',
     'ad_desc' => 'Description de l\'annonce',
     'upload_photos' => 'Télécharger des photos',
+    'upload_files' => 'Télécharger des fichiers',
     'additional_fields' => 'Champs supplémentaires',
     'ad_location' => 'Emplacement de l\'annonce',
 

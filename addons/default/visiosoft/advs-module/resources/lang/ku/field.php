@@ -2,343 +2,443 @@
 
 return [
     'name' => [
-        'name' => 'Nav'
+        'name' => 'سەردێڕ'
     ],
     'order' => [
-        'name' => 'Emir'
+        'name' => 'داواكردن'
     ],
     'slug' => [
-        'name' => 'Şeytanok'
+        'name' => 'سلوگ'
     ],
     'parent_category' => [
-        'name' => 'Dêûbav'
+        'name' => 'باوان'
     ],
     'category' => [
-        'name' => 'Title Kategorî'
+        'name' => 'سەردێڕی کەتێگۆری'
     ],
     'price' => [
-        'name' => 'Biha'
+        'name' => 'نرخي'
     ],
     'standard_price' => [
-        'name' => 'Bihayê Standard'
+        'name' => 'نرخی ستاندارت
+'
     ],
     'date' => [
-        'name' => 'Rojek'
+        'name' => 'بەروار'
     ],
     'photo' => [
-        'name' => 'Wêne'
+        'name' => 'وێنە'
     ],
     'video' => [
-        'name' => 'Vîdyo'
+        'name' => 'ڤیدیۆ'
     ],
     'map' => [
-        'name' => 'Qert'
+        'name' => 'نەخشە'
     ],
     'stock' => [
-        'name' => 'Embar'
+        'name' => 'ستۆک'
     ],
     'advs_desc' => [
-        'name' => 'Terîf'
+        'name' => 'دەربارە'
     ],
     'online_payment' => [
-        'name' => 'Tezmînata Serhêl'
+        'name' => 'پارەدانی ئۆنلاین
+'
     ],
     'city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'district' => [
-        'name' => 'Herêm'
+        'name' => 'ناوچە'
     ],
     'neighborhood' => [
-        'name' => 'Cînarî'
+        'name' => 'هاوسایەتی'
     ],
     'village' => [
-        'name' => 'Gûnd'
+        'name' => 'گوند'
     ],
     'files' => [
-        'name' => 'Wêne'
+        'name' => 'وێنەکان'
     ],
     'cat1' => [
-        'name' => 'Kategorî Sereke'
+        'name' => 'کەتێگۆریی سەرەکی'
     ],
     'cat2' => [
-        'name' => 'Kategoriya Jêrîn 1'
+        'name' => '1 کەتێگۆریی ژێرین'
     ],
     'cat3' => [
-        'name' => 'Kategoriya Jêrîn 2'
+        'name' => '2 کەتێگۆریی ژێرین'
     ],
     'cat4' => [
-        'name' => 'Kategoriya Jêrîn 3'
+        'name' => '3 کەتێگۆریی ژێرین'
     ],
     'cat5' => [
-        'name' => 'Kategoriya Jêrîn 4'
+        'name' => '4 کەتێگۆریی ژێرین'
     ],
     'cat6' => [
-        'name' => 'Kategoriya Jêrîn 5'
+        'name' => '5 کەتێگۆریی ژێرین'
     ],
     'cat7' => [
-        'name' => 'Bine Kategorî 6'
+        'name' => '6 کەتێگۆریی ژێرین'
     ],
     'cat8' => [
-        'name' => 'Kategoriya Jêrîn 7'
+        'name' => '7 کەتێگۆریی ژێرین'
     ],
     'cat9' => [
-        'name' => 'Kategoriya Jêrîn 8'
+        'name' => '8 کەتێگۆریی ژێرین'
     ],
     'cat10' => [
-        'name' => 'Kategoriya Jêrîn 9'
+        'name' => '9 کەتێگۆریی ژێرین'
     ],
     'currency' => [
-        'name' => 'Diravcins'
+        'name' => 'دراو'
     ],
     'status' => [
-        'name' => 'Cî',
+        'name' => 'دۆخ',
         'option' => [
-            'approved' => 'Pejirandin',
-            'expired' => 'Xilas bû',
-            'unpublished' => 'Neweşandî',
-            'pending_admin' => 'Li bendê Admin',
-            'pending_user' => 'Bikarhênera bendewar'
+            'approved' => 'پەسەندکراوە',
+            'expired' => 'بەسەرچوون',
+            'unpublished' => 'بڵاونەکراوەتەوە',
+            'pending_admin' => 'هەڵواسراو بەڕێوەبردن',
+            'pending_user' => 'هەڵواسراو بەکارهێنەر'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Neweşandî'
+        'name' => 'بڵاونەکراوەتەوە'
     ],
     'finish_at' => [
-        'name' => 'Dawî Li'
+        'name' => 'تەواو بوون لە
+'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'وێنەی داپۆشراو
+'
     ],
     'favs_adv' => [
-        'name' => 'Fav Ads'
+        'name' => 'ڕێکلامێکی دڵخواز
+'
     ],
     'my_adv' => [
-        'name' => 'ADVS'
+        'name' => 'ڕێکلامەکان'
     ],
-    'description' =>  'Terîf',
-    'explanation' =>  'Daxûyanî',
+    'description' =>  'دەربارە',
+    'explanation' =>  'دەربارە',
     'type' => [
-        'name' => 'Awa'
+        'name' => 'جۆو'
     ],
     'parent_adv' => [
-        'name' => 'Girêdayî Ad'
+        'name' => 'ڕیکلامی پەیوەندیدار
+'
     ],
     'value' => [
-        'name' => 'Giranî'
+        'name' => 'نرخ'
     ],
-    'list' => 'Rêzok',
-    'home' => 'Xane',
-    'list-page' => 'Rûpela Rûpelê',
-    'search' => 'Gerr',
-    'recommended' => 'Ji bo We Reklamên Pêşniyar kirin',
-    'filter' => 'Parzûn',
-    'sort' => 'Jiberhevxistin',
-    'sort_by' => 'Sort By',
-    'pick_option' => 'Vebijarek hilbijêrin',
-    'pick_ordering' => 'Rêzkirin',
-    'price_high' => 'Bihayê Bilind heya Nizm',
-    'price_low' => 'Bihayê Kêm heya Bilind',
-    'newest' => 'Nûtirîn',
-    'oldest' => 'Kevintirîn',
-    'address_a_z' => 'Navnîşan (A-Z)',
-    'address_z_a' => 'Navnîşan (ji Z-A)',
+    'list' => 'لیست',
+    'home' => 'ماڵپەڕ',
+    'list-page' => 'لیستکردنی پەیجەکە
+',
+    'search' => 'گەڕان',
+    'recommended' => 'ڕێکلامێکی پێشنیارکراو بۆ ئێوە
+',
+    'filter' => 'پارزوون',
+    'sort' => 'جووره‌',
+    'sort_by' => 'جووره‌ بە',
+    'pick_option' => 'بژاردەیەک هەڵبژێرە
+',
+    'pick_ordering' => ' داوای دەکەن
+',
+    'price_high' => 'نرخي لە بەرزەوە بۆ نزم
+',
+    'price_low' => 'نرخي لە نزم بۆ بەرزەوە
+',
+    'newest' => 'نویترین',
+    'oldest' => 'کۆنترین
+',
+    'address_a_z' => '(A-Z) ناونیشان',
+    'address_z_a' => ' (Z-A) ناونیشان',
 	'categories' => [
-		'name' => 'Kategorî'
+		'name' => 'کەتێگۆریکان'
 	],
-    'all_categories' => 'Hemî Kategorî',
-    'location' => 'Cîh',
-    'send_message' => 'Peyam bişînin',
-    'phone_gsm' => 'Telefonê Gsm',
-    'phone_office' => 'Telefonê Ofîsê',
-    'add_to_favorites' => "Add to Favorites",
-    'send' => 'Şandin',
-    'search_name' => 'Navê Lêgerînê',
-    'my_favorite_searches' => 'Lêgerînên Bijare',
-    'search_desc' => 'Hûn dikarin li vir vebijarkên lêgerîna xweya bijare zêde bikin û rêve bibin.',
-    'complaint_placeholder' => 'Agahdariyên giliyê xwe li vir binivîsin.',
-    'show_details' => 'Agahdariyên Nîşan bidin',
-    'ad_actions' => 'Çalakiyên Ad',
-    'edit' => 'Weşandin',
-    'approve' => 'Destûrdan',
-    'passive' => "Nejîr",
-    'offered_by' => 'Ji hêla Pêşniyar kirin',
-    'more_ads_by' => 'More Ads By',
-    'click_phone' => 'Hejmara têlefonê nîşan bide',
-    'share' => 'Par',
-    'report' => 'Vê reklamê ragihînin',
-    'features' => 'Taybetmendî',
-    "streetview" => "Dîmena Kolanê",
-    'recommended_ads' => 'Ji bo We Reklamên Pêşniyar kirin',
-    'new' => 'Nşh',
-    'short_info' => 'Kurte Agahdarî',
-    'secure_trading' => 'Bazirganiya Ewle',
-    '24/7' => '24/7 Piştgirî',
-    'easy_trading' => 'Bazirganiya Hêsan',
-    'need_help' => 'Alîkarî hewce dike?',
-    'give_a_call' => 'Gazî bikin',
-    'message_sent' => 'Peyam entandin!',
-    'asap' => 'Peyam şandî, dê firotkar asap bi we re têkilî dayne.',
-    'ad_id' => 'Ad Id',
-    'contact_with' => 'Têkilî Bi',
-    'create_adv' => 'Ad biafirînin',
-    'edit_adv' => 'Ad Adrast bike',
-    'mandatory_fields' => 'Zeviyên Mecbûrî',
-    'ad_post' => 'Ad Post',
-    'sell_item' => 'Tiştek an karûbarek bifroşin',
-    'search_save' => 'Lêgerîna bijare bi serkeftî hate tomarkirin',
-    'address' => 'Navnîşan',
-    'email' => 'E-name',
-    'phone' => 'Telefon',
-    'send_us_your_feedback' => 'Bersiva xwe ji me re bişînin',
-    'online_shopping' => 'STENDIN',
-    'approved' => 'Bi Serkeftin Hat Pejirandin',
-    'extended' => 'Bi Serkeftin Berfireh kirin',
+    'all_categories' => 'هەموو کەتێگۆریکان
+',
+    'location' => 'شوێن',
+    'send_message' => 'پەیام بنێرە
+',
+    'phone_gsm' => 'ژماره‌ی مۆبایل
+',
+    'phone_office' => 'ژمارەی دوکان
+',
+    'add_to_favorites' => "دانێ ناو دڵخوازەکانەوە
+",
+    'send' => 'بنێرە',
+    'search_name' => 'گەڕان ناوەکە',
+    'my_favorite_searches' => 'گەڕانی دڵخوازترین
+',
+    'search_desc' => 'دەتوانیت لێرە زیاد بکەیت و هەڵبژاردنی گەڕانی دڵخوازت بەڕێوە ببەیت.
+',
+    'complaint_placeholder' => 'وردەکاری سکاڵاکانت لێرە بنوسە
+',
+    'show_details' => 'زانیارییەكان نیشاندە',
+    'ad_actions' => 'کرداری ڕیکلام',
+    'edit' => 'دەستکاری بکە',
+    'approve' => 'پەسەندی بکە
+',
+    'passive' => "ناچالاک",
+	'sold' => 'فرۆشرا
+',
+    'offered_by' => 'پێشکەشکراوە لەلایەن
+',
+    'more_ads_by' => 'ڕیکلامی زیاتر لەلایەن
+',
+    'click_phone' => 'ژمارە تەلەفونەکانی نیشاندە
+',
+    'share' => 'بەش بکەن',
+    'report' => 'ئەم ڕیکلامە ڕیپۆرت بکەن
+',
+    'features' => 'تایبەتمەندیە کان
+',
+    "streetview" => "دیمەنی سەر شەقام
+",
+    'recommended_ads' => 'ڕێکلامێکی پێشنیارکراو بۆ ئێوە
+',
+    'new' => 'نوێ',
+    'short_info' => 'زانیاریەکی کورت
+',
+    'secure_trading' => 'بازرگانیکردنێکی سەلامەت
+',
+    '24/7' => '24/7 پشتگری',
+    'easy_trading' => 'بازرگانی ئاسان
+',
+    'need_help' => 'ویستنی یارمەتی ؟',
+    'give_a_call' => 'تەلەفون بکە
+',
+    'message_sent' => '! پەیام نێردراوە
+',
+    'asap' => 'پەیام بنێرە ، فرۆشیار بەم زووانە پەیوەندیت پێوە دەکات
+',
+    'ad_id' => 'ناسنامەی ڕیکلام
+',
+    'contact_with' => 'پەیوەندی بکە لەگەڵ
+',
+    'create_adv' => 'ڕیکلام دروست بکە
+',
+    'edit_adv' => 'ڕیکلام دەستکاری بکات
+',
+    'mandatory_fields' => 'کێڵگەکانی بەزۆرەملێ
+',
+    'ad_post' => 'ڕیکلامی دانێ',
+    'sell_item' => 'شتومەک یان خزمەتگوزاری بفرۆشە
+',
+    'search_save' => 'گەڕانی دڵخواز بە سەرکەوتوویی ڕزگار کرا
+',
+    'address' => 'ناونیشان',
+    'email' => 'ئی مەیل',
+    'phone' => 'تەلەفۆن',
+    'send_us_your_feedback' => 'Send Us Your Feedback
+',
+    'online_shopping' => 'GET',
+    'approved' => 'بە سەرکەوتوویی پەسەند کرا
+',
+    'extended' => 'بە سەرکەوتوویی درێژکرایەوە
+',
     'declined' => 'Bi Serkeftin Daketin',
-    'search_on_map' => 'Li Nexşeyê bigerin',
-    'post_free_ad' => 'Reklamek Belaş bişînin',
-    'select_a_category' => 'Kategoriyek hilbijêrin',
-    'select_a_sub_category' => 'Kategoriyek Jêrîn hilbijêrin',
-    'all_dopings_added' => 'Hemî celebên dopîngê ji bo vê reklamê têne zêdekirin.',
+    'search_on_map' => 'گەڕان لەسەر نەخشە
+',
+    'post_free_ad' => 'ڕیکلامی بەلاش دابنێ
+',
+    'select_a_category' => 'کەتێگۆری هەڵبژێرە
+',
+    'select_a_sub_category' => 'کەتێگۆریی ژێرین هەڵبژێرە
+',
+    'all_dopings_added' => 'هەموو جۆرەکانی دۆپینگ بۆ ئەم ڕیکلامە زیادکراوە
+',
     'is_get_adv' => [
-        'name' => 'STENDIN'
+        'name' => 'GET'
     ],
-    'corporate_info' => 'Agahdariya Pargîdanî',
-    'featured_ads' => "Reklamên Taybetmendî",
+    'corporate_info' => 'زانیاری کۆمپانیا
+',
+    'featured_ads' => "ڕیکلامی تایبەتمەندی بوو
+",
     'trending_ads' => 'Reklamên Trendind',
+    'search_ad_result_prefix' => 'لەسەر',
     'search_ads_result_message' => [
-        'name' => ': reklamên hejmartin ji bo: lêgerîna navan hate dîtin',
+        'name' => 'ڕێکلامەکان دەژمێرن دۆزراونەتەوەبۆ :گەڕانی ناو:',
     ],
-    'total' => 'Hemî',
-    'quantity' => 'Jimarî',
-    'view_cart' => 'Cart View',
-    'no_ads' => 'Reklam nehat dîtin.',
+    'total' => 'هه موو
+',
+    'quantity' => 'چەندی',
+    'view_cart' => 'سەبەتە پیشاندان',
+    'no_ads' => 'هیچ ڕیکلامێک نەدۆزراوەتەوە
+',
     'show_display_mode' => [
-        'map' => 'Qert',
-        'list' => 'Rêzok',
+        'map' => 'نەخشە',
+        'list' => 'لیست',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Navê Ad',
-        'price' => 'Biha',
-        'publish_at' => 'Dîroka Ad',
-        'location_city' => 'Bajar',
-        'location_country' => 'Welat',
+        'name' => 'ناوی ڕیکلام
+',
+        'price' => 'نرخي',
+        'publish_at' => 'بەرواری ڕیکلام
+',
+        'location_city' => 'شار',
+        'location_country' => 'وڵات',
     ],
     'show_list_view' => [
-        'name' => 'Rêzok',
+        'name' => 'لیست',
     ],
     'show_table_view' => [
-        'name' => 'Mêz',
+        'name' => 'مێز',
     ],
     'showcase' => [
-        'name' => 'Pêşangeh',
+        'name' => 'عه رز
+',
     ],
     'new_ad' => [
-        'name' => 'Reklama Nû',
+        'name' => 'ڕیکلامی نوێ
+',
     ],
     'profile' => [
-        'name' => 'Tengal',
+        'name' => 'پرۆفایل',
     ],
     'my_ads' => [
-        'name' => 'Reklamên min',
+        'name' => 'ڕیکلامەکانم
+',
     ],
     'sold_out' => [
-        'name' => 'Hate firotin',
+        'name' => 'فرۆشرا
+',
     ],
-    'edit_category' => 'Kategorî biguherîne',
-    'set_category' => 'Kategorî danîn',
+    'edit_category' => 'دەستکاری کەتێگۆریەکە بکە
+',
+    'set_category' => 'کەتێگۆریی دوکان
+',
     'max' => [
-        'name' => 'Max',
+        'name' => 'گەورە',
     ],
     'min' => [
-        'name' => 'Min',
+        'name' => 'کەم',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'Di 24 Demjimêrên Dawîn de'
+        'name' => 'لە دوایینی 24 سات
+'
     ],
     'in_the_last_day' => [
-        'name' => 'Di 24 Demjimêrên Dawîn de'
+        'name' => 'لە دوایینی 24 سات
+'
     ],
     'in_the_last_week' => [
-        'name' => 'Di Hefteya Dawîn de'
+        'name' => 'له هه فته ی دوایین
+'
     ],
     'in_the_last_month' => [
-        'name' => 'Di Meha Dawîn de'
+        'name' => 'لە مانگی دوایین
+'
     ],
     'ads_with_photo' => [
-        'name' => 'Reklamên Bi Wêne'
+        'name' => 'ڕێکلامەکان بە وێنە
+'
     ],
     'ads_with_video' => [
-        'name' => 'Reklamên Bi Vîdyo'
+        'name' => 'ڕێکلامەکان بە ڤیدیۆ
+'
     ],
     'yes' => [
-        'name' => 'Erê'
+        'name' => 'بەڵێ'
     ],
-    "no_location" => "Cîh nayê hilbijartin.",
-    "continue" => 'Berdewamkirin',
-    "gallery" => 'Galerya',
-    "ads" => 'Reklam',
-    "were_found" => 'hatin dîtin.',
+    "no_location" => "شوێنەکە دیاری نەکراوە
+",
+    "continue" => 'بەردەوام بوون',
+    "gallery" => 'گەلەری',
+    "ad" => 'ڕیکلام',
+    "ads" => 'ڕیکلامەکان',
+    "were_found" => 'دۆزرانەوە
+',
 
     // Pending screen
-    'pending_message_1' => 'Reklam di Pêvajoya Pejirandinê de ye',
-    'pending_message_2' => "Dîroka Nûvekirina Ad",
-    'pending_message_3' => 'Wextê Bendewariyê Texmîn kirin',
-    'pending_message_4' => 'Dema ku di pêvajoya pejirandinê de derbas bûye dê li dema dopîngê were zêdekirin.',
-    'pending_message_5' => 'Di pêvajoya pejirandinê de têkildarî reklamê ji navenda bangê çu danûstandin nayê kirin.',
-    'hours' => 'saetan',
+    'pending_message_1' => 'ڕیکلامەکە لە پڕۆسەی پەسەندکردندایە
+',
+    'pending_message_2' => "بەروارێکی نوێ نوێکردنەوەێ بۆ ڕیکلام
+",
+    'pending_message_3' => 'کاتی چاوەڕوانیکردنى هەستم پێگەشتووە
+',
+    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.
+',
+    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.
+',
+    'hours' => 'سات',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'Heke di derheqê reklama we de agahdariya jêrîn rast e, bişkoja "Berdewam" bikirtînin û biçin gava paşîn.',
-        'part_2' => 'Heke na, bişkoja "Biguherîne" bikirtînin.',
+        'part_1' => 'ئەگەر ئەم زانیاریانەی خوارەوە لەسەر ڕێکلامەکەت ڕاست بوو ، کرتە لە دوگمەی ′′ بەردەوام ′′ بکە و بەرەو هەنگاوی دواتر بڕۆ
+',
+        'part_2' => 'ئەگەر نا ، کرتە لەسەر دوگمەی ′′ دەسکاریکردن ′′ بکە.
+',
     ],
-    'views' => 'Dîtin',
+    'views' => 'دیتین',
 
     // Detail page
-    "no_street_view" => "Li vî cîhî wêneyek dîtina kolanan tune",
-    'edit_my_contact_info' => 'Agahdariya Têkiliya Min Biguherînin',
-    'update_my_contact_info' => 'agahdariya têkiliya min nûve bikin',
-    'contact_info' => 'Agahdariya têkiliyê',
-    'ad_info' => 'Agahdariya Ad',
+    "no_street_view" => "دیمەنێکی سەر شەقام لەم شوێنە نییە",
+    'edit_my_contact_info' => 'دەستکاری زانیاری پەیوەندیم بکە
+',
+    'update_my_contact_info' => 'زانیاری پەیوەندیم نوێ بکەرەوە
+',
+    'contact_info' => 'زانیاری پەیوەندی',
+    'ad_info' => 'زانیاری ڕێکلام
+',
 
     // Select cat
-    'select_category_step_by_step' => 'Gav bi Gav Kategorî hilbijêrin',
+    'select_category_step_by_step' => 'کەتێگۆری هەڵبژێرە هەنگاو بە هەنگاو
+
+',
 
     // New create page
-    'options' => 'Vebijarkên',
-    'category_selection' => 'Hilbijartina Kategorî',
-    'listing_details' => 'Details hûrgulî',
-    'preview' => 'Pêşnerîn',
-    'congratulations' => 'Pîrozbahî',
-    'ad_desc' => 'Ad Description',
-    'upload_photos' => 'Wêneyan bar bikin',
-    'additional_fields' => 'Zeviyên Zêdeyî',
-    'ad_location' => 'Cihê Ad',
+    'options' => 'بژاردەکان
+',
+    'category_selection' => 'هەڵبژاردنەکانی کەتێگۆری
+',
+    'listing_details' => 'وردەکاریەکانی لیستکردن
+',
+    'preview' => 'پێشبینین
+',
+    'congratulations' => 'پیرۆزبایی',
+    'ad_desc' => 'دەربارەی ڕێکلام',
+    'upload_photos' => 'وێنەکانی دانێن',
+    'upload_files' => 'فایلەکان دابنێن
+',
+    'additional_fields' => 'کێڵگە زیادەکان
+',
+    'ad_location' => 'شوێنی ڕێکلام
+',
 
-    'free' => 'Belaş',
-    'ad_date' => 'Dîroka Ad',
-    'photo_video' => 'Wêne, Vîdyo',
-    'and_above' => 'û li jor',
-    'and_below' => 'û li jêr',
-    'clear_all' => 'Hemî Paqij Bikin',
-    'balances' => 'Hevsengî',
-    'packages' => 'Packages',
-    'dopings' => 'Dopîng',
-    'advs' => 'Advs',
-    'site' => 'Malper',
-    'subscription' => 'Abonetî',
-	'created' => 'Afirandin',
+    'free' => 'بەلاش',
+    'ad_date' => 'بەرواری ڕیکلام
+',
+    'photo_video' => 'ڤیدیۆ, وێنە',
+    'and_above' => 'و لە سەرەوەش
+',
+    'and_below' => 'و لە خوارەوە
+',
+    'clear_all' => 'هەموو خاوێن بکە',
+    'balances' => 'باڵانسەکان',
+    'packages' => 'پاکێجەکان',
+    'dopings' => 'دۆپینگکان',
+    'advs' => 'ڕیکلامەکان',
+    'site' => 'سایت',
+    'subscription' => 'ئابوونە کردن',
+	'created' => 'درووستکراوە
+',
 	'product_option' => [
-		'name' => 'Hilbijarka Hilberê'
+		'name' => 'بژاردەی بەرهەمەکان
+'
 	],
 	'option_json' => [
-		'name' => 'Dibe'
+		'name' => 'بژاردەی'
 	],
     'old_price' => [
-        'name' => 'Bihayê Kevn'
+        'name' => 'نرخی کۆن
+'
     ],
 ];

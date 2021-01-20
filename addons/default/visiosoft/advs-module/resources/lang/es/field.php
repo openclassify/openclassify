@@ -165,6 +165,7 @@ return [
     'edit' => 'Editar',
     'approve' => 'Aprobar',
     'passive' => "Pasivo",
+	'sold' => 'Vendido',
     'offered_by' => 'Ofrecido por',
     'more_ads_by' => 'Más anuncios de',
     'click_phone' => 'Mostrar número de teléfono',
@@ -210,6 +211,7 @@ return [
     'corporate_info' => 'Información corporativa',
     'featured_ads' => "Anuncios destacados",
     'trending_ads' => 'Anuncios de tendencias',
+    'search_ad_result_prefix' => 'en',
     'search_ads_result_message' => [
         'name' => ':      cuenta de anuncios encontrados para:búsqueda de nombre',
     ],
@@ -281,6 +283,7 @@ return [
     "no_location" => "No se seleccionó ninguna ubicación.",
     "continue" => 'Seguir',
     "gallery" => 'Galería',
+    "ad" => 'Anuncio',
     "ads" => 'Anuncios',
     "were_found" => 'fueron encontrados.',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Felicidades',
     'ad_desc' => 'Descripción del anuncio',
     'upload_photos' => 'Subir fotos',
+    'upload_files' => 'Subir archivos',
     'additional_fields' => 'Campos Adicionales',
     'ad_location' => 'Ubicación del anuncio',
 

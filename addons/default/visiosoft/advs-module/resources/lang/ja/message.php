@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "この広告はもう有効ではありません！",
     'approve_status_change' => "広告のステータスがアクティブに設定されました。",
     'passive_status_change' => "広告のステータスがパッシブに設定されました。",
+	'sold_status_change' => "広告のステータスが販売済みに設定されました。",
 ];

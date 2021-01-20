@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'ליצור מהיר',
 	'publish' => 'לְפַרְסֵם',
 	'import' => 'יְבוּא',
+    'new_status' => 'סטטוס חדש',
 ];

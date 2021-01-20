@@ -165,6 +165,7 @@ return [
     'edit' => 'تصحيح',
     'approve' => 'يوافق',
     'passive' => "مبني للمجهول",
+	'sold' => 'تم البيع',
     'offered_by' => 'مقدم بواسطة',
     'more_ads_by' => 'المزيد من الإعلانات بواسطة',
     'click_phone' => 'عرض رقم الهاتف',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'معلومات الشركة',
     'featured_ads' => "إعلانات مميزة",
     'trending_ads' => 'إعلانات Trendind',
+    'search_ad_result_prefix' => 'على',
     'search_ads_result_message' => [
         'name' => ':      عدد الإعلانات التي تم العثور عليها لـ:search name',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "لا يوجد موقع محدد.",
     "continue" => 'استمر',
     "gallery" => 'صالة عرض',
+    "ad" => 'ميلادي',
     "ads" => 'إعلانات',
     "were_found" => 'تم ايجادها.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'تهانينا',
     'ad_desc' => 'وصف الإعلان',
     'upload_photos' => 'تحميل الصور',
+    'upload_files' => 'تحميل الملفات',
     'additional_fields' => 'حقول إضافية',
     'ad_location' => 'موقع الإعلان',
 

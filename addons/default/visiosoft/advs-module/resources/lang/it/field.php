@@ -165,6 +165,7 @@ return [
     'edit' => 'modificare',
     'approve' => 'Approvare',
     'passive' => "Passivo",
+	'sold' => 'Venduto',
     'offered_by' => 'Offerto da',
     'more_ads_by' => 'Altre pubblicità di',
     'click_phone' => 'Mostra il numero di telefono',
@@ -210,6 +211,7 @@ return [
     'corporate_info' => 'Informazioni aziendali',
     'featured_ads' => "Annunci in primo piano",
     'trending_ads' => 'Annunci Trendind',
+    'search_ad_result_prefix' => 'sopra',
     'search_ads_result_message' => [
         'name' => ':      conta gli annunci trovati per:ricerca nome',
     ],
@@ -281,6 +283,7 @@ return [
     "no_location" => "Nessuna posizione selezionata.",
     "continue" => 'Continua',
     "gallery" => 'Galleria',
+    "ad" => 'Anno Domini',
     "ads" => 'Annunci',
     "were_found" => 'furono trovati.',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Congratulazioni',
     'ad_desc' => 'Descrizione dell\'annuncio',
     'upload_photos' => 'Caricare foto',
+    'upload_files' => 'Caricare files',
     'additional_fields' => 'Campi aggiuntivi',
     'ad_location' => 'Posizione dell\'annuncio',
 

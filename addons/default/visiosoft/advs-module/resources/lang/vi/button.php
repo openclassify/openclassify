@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'Tạo nhanh',
 	'publish' => 'Công bố',
 	'import' => 'Nhập khẩu',
+    'new_status' => 'Trạng thái mới',
 ];

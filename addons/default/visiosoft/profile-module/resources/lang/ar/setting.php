@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'مهنة'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'إخفاء نوع التسجيل في صفحة الملف الشخصي',
+        'instructions' => 'يخفي حقل نوع التسجيل في صفحة تحرير الملف الشخصي.',
+    ],
 ];

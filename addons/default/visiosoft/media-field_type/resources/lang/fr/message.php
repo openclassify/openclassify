@@ -10,4 +10,5 @@ return [
     'uploading' => 'Téléchargement',
     'loading' => 'Chargement',
     'error_upload' => 'Un problème est survenu lors du téléchargement du fichier.',
+    'error_upload_docs' => 'Il n\'y a pas de support de téléchargement de documents. Veuillez contacter votre administrateur système!',
 ];

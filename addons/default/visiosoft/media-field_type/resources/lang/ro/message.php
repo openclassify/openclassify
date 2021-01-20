@@ -10,4 +10,5 @@ return [
     'uploading' => 'Se încarcă',
     'loading' => 'Se încarcă',
     'error_upload' => 'A apărut o problemă la încărcarea fișierului.',
+    'error_upload_docs' => 'Nu există suport pentru încărcarea documentelor. Vă rugăm să contactați administratorul de sistem!',
 ];
