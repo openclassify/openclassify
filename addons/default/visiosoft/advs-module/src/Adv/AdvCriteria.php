@@ -67,6 +67,25 @@ class AdvCriteria extends EntryCriteria
         return $ads;
     }
 
+    public function buyingLeads($status = null){
+	    $advModel = new AdvModel();
+	    $latest_advs = AdvModel::query()
+		    ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+		    ->where('status', '=', 'approved')
+		    ->where('slug', '!=', '')
+		    ->where('is_buying', ($status == 'buying' ? true : false))
+		    ->orderBy('publish_at', 'desc')
+		    ->paginate($this->settings->value('streams::per_page'));
+
+
+	    $ads = $advModel->getLocationNames($latest_advs);
+	    foreach ($ads as $index => $ad) {
+		    $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
+		    $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
+	    }
+	    return $ads;
+    }
+
     public function allAdvs()
     {
         $advModel = new AdvModel();
