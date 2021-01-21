@@ -83,6 +83,7 @@ $(document).ready(function () {
 
 function selectedValue() {
     return $('.cat-select').on('change', function () {
+        console.log(234234)
         var value = $(this).val();
         var all_category_box = $('.category-row').find('.category-box');
         var level = parseInt($(this).attr('data-level')) + 1;

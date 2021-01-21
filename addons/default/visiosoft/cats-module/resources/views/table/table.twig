@@ -19,8 +19,8 @@
         <div class="card-body pb-0">
             {% if app.request.get('cat') != null %}
                 <ol class="breadcrumb">
-                    {% for parnt in category_parents_name(app.request.get('cat'))|reverse %}
-                        <li class="breadcrumb-item"><b>{{ parnt }}</b></li>
+                    {% for parent in category_parents_name(app.request.get('cat'))|reverse %}
+                        <li class="breadcrumb-item"><b>{{ parent.name }}</b></li>
                     {% endfor %}
                 </ol>
                 <div id="buttons">
@@ -37,7 +37,7 @@
             {% endif %}
         </div>
         <div class="card-body">
-            {% if not table.rows.empty() %}
+            {% if count(table.rows) %}
                 {% block card %}
                     {{ form_open({ 'url': url_full() }) }}
                     <div class="table-stack">

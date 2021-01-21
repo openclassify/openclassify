@@ -54,7 +54,7 @@ class AjaxController extends PublicController
     {
         $datas = [];
         $catModel = new CategoryModel();
-        $datas['category'] = $catModel->searchKeyword($request->q, $request->selected);
+        $datas['category'] = $catModel->searchKeyword($request->q);
         return response()->json($datas);
     }
 

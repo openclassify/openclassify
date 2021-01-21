@@ -10,45 +10,37 @@
     </div>
     <div id="category" class="collapse show overflow-auto" aria-labelledby="categoryHeading" style="max-height: 300px;">
         <div class="list-group">
-            {% for maincat in params.mainCats %}
-                {% set name = maincat['val'] %}
-                {% set id = maincat['id'] %}
-                {% set parent_category = true %}
-                {% if app.request.get('cat') is null or app.request.get('cat') == "" %}
-                    {% if params.categoryId is null %}
-                        {% set name = maincat.name %}
-                        {% set id = maincat.id %}
-                        {% set parent_category = false %}
-                    {% endif %}
+
+            {% set citySlug = null %}
+            {% set pathInfo = app.request.pathinfo|split('/') %}
+            {% if pathInfo|length is same as(4) %}
+                {% set citySlug = pathInfo[3] %}
+            {% endif %}
+
+
+            {% for maincat in params.mainCats|reverse %}
+                {% set url = appendRequestURL(request_query(),url_route('adv_list_seo', [maincat.slug, citySlug]),{},['page']) %}
+                {% if(viewType == "map") %}
+                    {% set url = appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':maincat.id},['page']) %}
                 {% endif %}
-                {% set catId = entries('cats', 'category').find(id) %}
-                {% set citySlug = null %}
-                {% set pathInfo = app.request.pathinfo|split('/') %}
-                {% if pathInfo|length is same as(4) %}
-                    {% set citySlug = pathInfo[3] %}
-                {% endif %}
-                <a href="{% if(viewType != "map") %}
-                    {{ appendRequestURL(request_query(),url_route('adv_list_seo', [catId.slug, citySlug]),{},['page']) }}
-                {% else %}
-                    {{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':id},['page']) }}
-                {% endif %}" class="list-group-item list-group-item-action text-truncate">
+
+                <a href="{{ url }}" class="list-group-item list-group-item-action text-truncate">
                     <i class="fas fa-dot-circle"></i>
-                    {{ name }}
+                    {{ maincat.name }}
                 </a>
-                {% for subcat in params.subCats %}
-                    <div class="list-group pl-3 bg-light">
-                        {% if subcat.parent_category_id == maincat['id'] %}
-                            {% set subCatId = entries('cats', 'category').find(subcat.id) %}
-                            <a href="{% if(viewType != "map") %}
-                                {{ appendRequestURL(request_query(),url_route('adv_list_seo', [subCatId.slug, citySlug]),{},['page']) }}
-                            {% else %}
-                                {{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':subcat.id},['page']) }}
-                            {% endif %}" class="list-group-item list-group-item-action text-truncate">
-                                {{ subcat.name }}
-                            </a>
-                        {% endif %}
-                    </div>
-                {% endfor %}
+            {% endfor %}
+
+            {% for subcat in params.subCats %}
+                <div class="list-group pl-3 bg-light">
+                    {% set subCatId = entries('cats', 'category').find(subcat.id) %}
+                    {% set url = appendRequestURL(request_query(),url_route('adv_list_seo', [subCatId.slug, citySlug]),{},['page']) %}
+                    {% if(viewType == "map") %}
+                        {% set url = appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':subcat.id},['page']) %}
+                    {% endif %}
+                    <a href="{{ url }}" class="list-group-item list-group-item-action text-truncate">
+                        {{ subcat.name }}
+                    </a>
+                </div>
             {% endfor %}
         </div>
     </div>

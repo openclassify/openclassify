@@ -6,6 +6,7 @@ use DateTime;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
+use Visiosoft\AdvsModule\Adv\Event\CreatedCategory;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
@@ -36,7 +37,7 @@ class CategoryController extends AdminController
         if ($this->request->action == "delete") {
             $CategoriesModel = new CategoryModel();
             foreach ($this->request->id as $item) {
-                $CategoriesModel->deleteSubCategories($item);
+                //Todo Delete sub Categories
             }
         }
         if (!isset($request->cat) || $request->cat == "") {
@@ -113,7 +114,7 @@ class CategoryController extends AdminController
                 }
             }
             if (empty($isMultiCat)) {
-                $this->categoryRepository->create(array_merge($translatableEntries, [
+                $category = $this->categoryRepository->create(array_merge($translatableEntries, [
                     'slug' => $all['slug'],
                     'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
                     'icon' => $all['icon'],
@@ -134,6 +135,8 @@ class CategoryController extends AdminController
                     ]));
                 }
             };
+
+            $this->catLevelCalc();
 
 //            $this->categoryRepository->create(array_merge($translatableEntries, [
 //                'slug' => $all['slug'],
@@ -186,9 +189,9 @@ class CategoryController extends AdminController
 
     public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
     {
-        $categoryRepository->DeleteCategories($id);
+        //Todo Delete Category and Sub Categories
         if ($request->parent != "") {
-            $subCats = $categoryRepository->getSubCatById($request->parent);
+            $subCats = $categoryRepository->getCategoryById($request->parent);
             if (count($subCats)) {
                 return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
             }
@@ -205,7 +208,7 @@ class CategoryController extends AdminController
             $parentCat = $this->categoryRepository->find($parentCatId);
             if (is_null($parentCat) && !is_null($parentCatId)) {
                 $this->categoryEntryTranslationsModel->where('entry_id', $cat->id)->delete();
-                $this->categoryRepository->DeleteCategories($cat->id);
+                //Todo Delete Category and Sub Categories
                 $deletedCatsCount++;
             }
         }
@@ -250,8 +253,8 @@ class CategoryController extends AdminController
                         ->get();
         foreach ($result as $key => $data) {
             $id = $data->id;
-            $CategoriesModel = new CategoryModel();
-            $level = $CategoriesModel->getCatLevel($id);
+            $category_repository = app(CategoryRepositoryInterface::class);
+            $level = $category_repository->getLevelById($id);
 
             DB::table('cats_category')->where('id',$id)->update(array(
                'level'=>$level,

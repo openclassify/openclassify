@@ -16,9 +16,12 @@ use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
-use Visiosoft\AdvsModule\Adv\Event\priceChange;
-use Visiosoft\AdvsModule\Adv\Event\showAdPhone;
-use Visiosoft\AdvsModule\Adv\Event\viewAd;
+use Visiosoft\AdvsModule\Adv\Event\EditAd;
+use Visiosoft\AdvsModule\Adv\Event\EditedAd;
+use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
+use Visiosoft\AdvsModule\Adv\Event\PriceChange;
+use Visiosoft\AdvsModule\Adv\Event\ShowAdPhone;
+use Visiosoft\AdvsModule\Adv\Event\ViewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
@@ -148,10 +151,9 @@ class AdvsController extends PublicController
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 
         // Search by category slug
-        $categoryId = null;
         if ($category) { // Slug
-            $categoryId = $this->category_repository->findBy('slug', $category);
-            if (!$categoryId) {
+            $category = $this->category_repository->findBy('slug', $category);
+            if (!$category) {
                 $this->messages->error(trans('visiosoft.module.advs::message.category_not_exist'));
                 return redirect('/');
             }
@@ -159,19 +161,19 @@ class AdvsController extends PublicController
                 unset($param['cat']);
                 return redirect(fullLink(
                     $param,
-                    route('adv_list_seo', [$categoryId->slug])
+                    route('adv_list_seo', [$category->slug])
                 ));
             }
         } elseif (isset($param['cat']) && !empty($param['cat'])) { // Only Param
-            $categoryId = $this->category_repository->find($param['cat']);
-            if (!$categoryId) {
+            $category = $this->category_repository->find($param['cat']);
+            if (!$category) {
                 $this->messages->error(trans('visiosoft.module.advs::message.category_not_exist'));
                 return redirect('/');
             }
             unset($param['cat']);
             return redirect(fullLink(
                 $param,
-                route('adv_list_seo', [$categoryId->slug])
+                route('adv_list_seo', [$category->slug])
             ));
         }
 
@@ -190,7 +192,7 @@ class AdvsController extends PublicController
                 unset($param['city']);
                 return redirect(fullLink(
                     $param,
-                    route('adv_list_seo', [$categoryId->slug, $cityId->slug])
+                    route('adv_list_seo', [$category->slug, $cityId->slug])
                 ));
             } elseif ($isOneCity) { // Param and slug
                 $cityId = $this->cityRepository->find($param['city'][0]);
@@ -198,13 +200,13 @@ class AdvsController extends PublicController
                     unset($param['city']);
                     return redirect(fullLink(
                         $param,
-                        route('adv_list_seo', [$categoryId->slug, $cityId->slug])
+                        route('adv_list_seo', [$category->slug, $cityId->slug])
                     ));
                 }
             } elseif ($city && $isMultipleCity) { // Slug and multiple param cities
                 return redirect(fullLink(
                     $param,
-                    route('adv_list_seo', [$categoryId->slug]),
+                    route('adv_list_seo', [$category->slug]),
                     array()
                 ));
             } elseif ($city) {
@@ -212,14 +214,14 @@ class AdvsController extends PublicController
                     unset($param['city']);
                     return redirect(fullLink(
                         $param,
-                        route('adv_list_seo', [$categoryId->slug])
+                        route('adv_list_seo', [$category->slug])
                     ));
                 } else { // Only slug
                     $cityId = $this->cityRepository->findBy('slug', $city);
                     if (!$cityId) {
                         return redirect(fullLink(
                             $param,
-                            route('adv_list_seo', [$categoryId->slug])
+                            route('adv_list_seo', [$category->slug])
                         ), 301);
                     }
                 }
@@ -228,7 +230,7 @@ class AdvsController extends PublicController
 
         $isActiveCustomFields = $this->adv_model->is_enabled('customfields');
         $advs = $this->adv_repository->searchAdvs(
-            'list', $param, $customParameters, null, $categoryId, $cityId, false
+            'list', $param, $customParameters, null, $category, $cityId, false
         );
 
         if ($isActiveDopings) {
@@ -264,25 +266,26 @@ class AdvsController extends PublicController
             $return_values = $cfRepository->getSeenList($advs);
 
             $return_values = $cfRepository
-                ->getSeenWithCategory($return_values['advs'], $return_values['seenList'], $categoryId);
+                ->getSeenWithCategory($return_values['advs'], $return_values['seenList'], $category);
 
             $advs = $return_values['advs'];
             $seenList = $return_values['seenList'];
         }
 
 
-        if ($categoryId) {
-            $mainCats = $this->category_model->getMains($categoryId->id);
-            $current_cat = $this->category_model->getCat($categoryId->id);
-            $mainCats[] = [
-                'id' => $current_cat->id,
-                'val' => $current_cat->name,
-                'slug' => $current_cat->slug,
-            ];
-            $subCats = $this->category_repository->getSubCatById($categoryId->id);
+        if ($category) {
+            $mainCats = $this->category_repository->getParentCategoryById($category->id);
+            $subCats = $this->category_repository->getCategoryById($category->id);
+
+            //if there is no subcategory
+            if (count($subCats) < 1) {
+                //fetch subcategories of the last category
+                $subCats = $this->category_repository->getCategoryById($mainCats[1]['id']);
+                unset($mainCats[0]);//remove last category
+            }
             $allCats = false;
         } else {
-            $mainCats = $this->category_repository->mainCats();
+            $mainCats = $this->category_repository->getMainCategories();
             $allCats = true;
         }
 
@@ -379,11 +382,11 @@ class AdvsController extends PublicController
 
         $viewType = $this->requestHttp->cookie('viewType');
 
-        list('catText' => $catText, 'user' => $user) = $this->handleSeo($categoryId, $mainCats, $cityId);
+        list('catText' => $catText, 'user' => $user) = $this->handleSeo($category, $mainCats, $cityId);
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'seenList', 'radio', 'categoryId', 'cityId', 'allCats', 'catText', 'cFArray');
+            'seenList', 'radio', 'category', 'cityId', 'allCats', 'catText', 'cFArray');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
@@ -395,10 +398,9 @@ class AdvsController extends PublicController
         $catText = '';
 
         if ($category) {
-            $seo_keywords = $this->category_model->getMeta_keywords($category->id);
-            $seo_description = $this->category_model->getMeta_description($category->id);
-
-            $metaTitle = $this->category_model->getMeta_title($category->id);
+            $seo_keywords = $category->getMetaKeywords();
+            $seo_description = $category->getMetaDescription();
+            $metaTitle = $category->name;
             $metaDesc = $seo_description;
 
             $this->template->set('meta_keywords', implode(', ', $seo_keywords));
@@ -509,7 +511,7 @@ class AdvsController extends PublicController
             for ($i = 1; $i <= 10; $i++) {
                 $cat = "cat" . $i;
                 if ($adv->$cat != null) {
-                    $item = $this->category_repository->getItem($adv->$cat);
+                    $item = $this->category_repository->find($adv->$cat);
                     if (!is_null($item)) {
                         $categories['cat' . $i] = [
                             'name' => $item->name,
@@ -541,7 +543,7 @@ class AdvsController extends PublicController
 
             $options = $this->optionRepository->findAllBy('adv_id', $id);
 
-            $this->event->dispatch(new viewAd($adv));//view ad
+            $this->event->dispatch(new ViewAd($adv));//view ad
 
             if (substr($adv->cover_photo, 0, 4) === "http") {
                 $coverPhoto = $adv->cover_photo;
@@ -607,7 +609,7 @@ class AdvsController extends PublicController
         for ($i = 1; $i <= 10; $i++) {
             $cat = "cat" . $i;
             if ($adv->$cat != null) {
-                $item = $this->category_repository->getItem($adv->$cat);
+                $item = $this->category_repository->find($adv->$cat);
                 if (!is_null($item)) {
                     $categories['cat' . $i] = [
                         'name' => $item->name,
@@ -670,7 +672,7 @@ class AdvsController extends PublicController
 
     public function getCats($id)
     {
-        return $this->category_repository->getSubCatById($id);
+        return $this->category_repository->getCategoryById($id);
     }
 
     public function getCatsForNewAd($id)
@@ -688,14 +690,14 @@ class AdvsController extends PublicController
         return $cats;
     }
 
-    public function create(Request $request, AdvFormBuilder $formBuilder, CategoryRepositoryInterface $repository)
+    public function create(AdvFormBuilder $formBuilder, CategoryRepositoryInterface $repository)
     {
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
 
         $isActive = new AdvModel();
-        $cats = $request->toArray();
+        $cats = $this->request->toArray();
         unset($cats['_token']);
 
         $end = count($cats);
@@ -706,7 +708,7 @@ class AdvsController extends PublicController
         for ($i = 0; $i < $end; $i++) {
             $plus1 = $i + 1;
 
-            $cat = $repository->getSingleCat($cats['cat' . $plus1]);
+            $cat = $repository->find($cats['cat' . $plus1]);
             $cats_d['cat' . $plus1] = $cat->name;
         }
         if ($isActive->is_enabled('customfields')) {
@@ -720,37 +722,31 @@ class AdvsController extends PublicController
     public function store
     (
         AdvFormBuilder $form,
-        MessageBag $messages,
-        Request $request,
-        SettingRepositoryInterface $settings,
-        AdvRepositoryInterface $advRepository,
-        CategoryRepositoryInterface $categoryRepository,
-        Dispatcher $events,
-        AdvModel $advModel,
         AdressRepositoryInterface $address
     )
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-        $messages->pull('error');
-        if ($request->action == "update") {
-            $error = $form->build($request->update_id)->validate()->getFormErrors()->getMessages();
+        if ($this->request->action == "update") {
+            $error = $form->build($this->request->update_id)->validate()->getFormErrors()->getMessages();
             if (!empty($error)) {
                 return $this->redirect->back();
             }
-            /*  Update Adv  */
-            $adv = AdvsAdvsEntryModel::find($request->update_id);
 
+            /*  Update Adv  */
+            $before_editing = $this->adv_repository->find($this->request->update_id);
+
+            $adv = $before_editing;
+
+            $is_new_create = ($adv->slug == "") ? true : false;
 
             //Set Old Price
-            $old_price = ($adv->slug == "") ? $request->price : $adv->price;
+            $old_price = ($adv->slug == "") ? $this->request->price : $adv->price;
             $adv->old_price = $old_price;
 
 
             $allowPendingAdCreation = false;
-            if ($advModel->is_enabled('packages') and $adv->slug == "") {
-                $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($request);
+
+            if (is_module_installed('visiosoft.module.packages') and $is_new_create) {
+                $cat = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForNewAd($this->request);
                 if (!is_null($cat)) {
                     if (array_key_exists('allowPendingAds', $cat)) {
                         $allowPendingAdCreation = $cat['allowPendingAds'];
@@ -761,55 +757,64 @@ class AdvsController extends PublicController
             }
 
             // Create options
-            $deletedOptions = $request->deleted_options;
-            $newOptions = $request->new_options;
+            $deletedOptions = $this->request->deleted_options;
+            $newOptions = $this->request->new_options;
+
             if (!empty($deletedOptions)) {
-                $deletedOptions = explode(',', $request->deleted_options);
+                $deletedOptions = explode(',', $this->request->deleted_options);
                 $this->optionRepository->newQuery()
                     ->whereIn('id', $deletedOptions)
-                    ->where('adv_id', $request->update_id)
+                    ->where('adv_id', $this->request->update_id)
                     ->delete();
             }
+
             if (!empty($newOptions)) {
-                $newOptions = explode(',', $request->new_options);
+                $newOptions = explode(',', $this->request->new_options);
                 foreach ($newOptions as $option) {
                     $this->optionRepository->create([
                         'name' => $option,
-                        'adv_id' => $request->update_id,
+                        'adv_id' => $this->request->update_id,
                     ]);
                 }
             }
 
+            //Get Categories Settings
             $get_categories_status = false;
             if ($get_categories = setting_value('visiosoft.module.advs::get_categories') and $get_categories = in_array($adv->cat1, $get_categories)) {
                 $get_categories_status = true;
             }
 
-            $adv->is_get_adv = ($request->is_get_adv and $get_categories_status) ? true : false;
+            $adv->is_get_adv = ($this->request->is_get_adv and $get_categories_status) ? true : false;
             $adv->save();
 
+
+            //Todo Move To Module
             //Cloudinary Module
-            $isActiveCloudinary = $advModel->is_enabled('cloudinary');
-            if ($isActiveCloudinary) {
-
+            if (is_module_installed('visiosoft.module.cloudinary')) {
                 $CloudinaryModel = new VideoModel();
-                $CloudinaryModel->updateRequest($request);
+                $CloudinaryModel->updateRequest($this->request);
 
-                if ($request->url != "") {
+                if ($this->request->url != "") {
                     $adv->save();
                 }
             }
-            if ($this->adv_model->is_enabled('customfields')) {
-                app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $request);
+
+
+            //Todo Create Event
+            if (is_module_installed('visiosoft.module.customfields')) {
+                app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $this->request);
             }
 
-            // Auto approve
+            //Todo Create Event
+            // Auto Approve
             $autoApprove = true;
+
             if ($allowPendingAdCreation) {
                 $adLogExists = app('Visiosoft\PackagesModule\AdvsLog\Contract\AdvsLogRepositoryInterface')
                     ->findByAdID($adv->id);
                 $autoApprove = $adLogExists ? false : true;
             }
+
             if (setting_value('visiosoft.module.advs::auto_approve') && $autoApprove) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
                 $adv->update([
@@ -819,9 +824,9 @@ class AdvsController extends PublicController
                 ]);
             }
 
-            $form->render($request->update_id);
-            $adv = $this->adv_repository->find($request->update_id);
+            $form->render($this->request->update_id);
 
+            //Create Adress
             if ($this->request->address_id != "") {
                 $address = $address->find($this->request->address_id);
                 $adv->country_id = $address->country_id;
@@ -831,57 +836,72 @@ class AdvsController extends PublicController
                 $adv->village = null;
                 $adv->save();
             }
+
+
             $post = $form->getPostData();
-            $post['id'] = $request->update_id;
-            $events->dispatch(new priceChange($post));//price history
-            if ($request->url == "") {
-                $advRepository->cover_image_update($adv);
+            $post['id'] = $this->request->update_id;
+
+            //Price Change Event
+            $this->event->dispatch(new PriceChange($post));
+
+            //Cover Image URL
+            if ($this->request->url == "") {
+                $this->adv_repository->cover_image_update($adv);
             }
 
+
             if ($form->hasFormErrors()) {
-                $cats = $request->toArray();
+                $cats = $this->request->toArray();
 
                 $cats_d = array();
 
                 foreach ($cats as $para => $value) {
                     if (substr($para, 0, 3) === "cat") {
                         $id = $cats[$para];
-                        $cat = $categoryRepository->getSingleCat($id);
+                        $cat = $this->category_repository->find($id);
                         if ($cat != null) {
                             $cats_d[$para] = $cat->name;
                         }
                     }
                 }
-                return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
+                return redirect('/advs/edit_advs/' . $this->request->update_id)
+                    ->with('cats_d', $cats_d)
+                    ->with('request', $this->request);
             }
-            event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+
+            if ($is_new_create) {
+                event(new CreatedAd($adv));
+            } else {
+                event(new EditedAd($before_editing, $adv));
+            }
+
+            return redirect(route('advs_preview', [$this->request->update_id]));
         }
 
         /* New Create Adv */
-        $request->publish_at = date('Y-m-d H:i:s');
-        $all = $request->all();
+        $this->request->publish_at = date('Y-m-d H:i:s');
+        $all = $this->request->all();
 
-        $packageEnabled = $advModel->is_enabled('packages');
-        if ($packageEnabled) {
+        if (is_module_installed('visiosoft.module.packages')) {
             unset($all['pack_id']);
         }
 
-        $new = AdvModel::query()->create($all);
+        $adv = $this->adv_repository->create($all);
 
-        if ($packageEnabled
+        if (is_module_installed('visiosoft.module.packages')
             && \request()->pack_id
             && setting_value('visiosoft.module.packages::allow_pending_ad_creation')) {
             $package = app('Visiosoft\PackagesModule\Package\Contract\PackageRepositoryInterface')
                 ->find(\request()->pack_id);
             if ($package->price) {
                 app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')
-                    ->packageAddCart(\request()->pack_id, $new->id);
+                    ->packageAddCart(\request()->pack_id, $adv->id);
             }
         }
-        $events->dispatch(new EditAd($advModel));
 
-        return redirect('/advs/edit_advs/' . $new->id);
+        $this->event->dispatch(new EditAd($adv));
+
+        return redirect('/advs/edit_advs/' . $adv->id);
     }
 
     public function edit($id)
@@ -905,7 +925,7 @@ class AdvsController extends PublicController
 
         for ($i = 1; $i <= 10; $i++) {
             if ($adv[$cat . $i]) {
-                $name = $this->category_repository->getSingleCat($adv[$cat . $i]);
+                $name = $this->category_repository->find($adv[$cat . $i]);
                 if ($name) {
                     $cats_d['cat' . $i] = $name->name;
                     $cats['cat' . $i] = $name->id;
@@ -989,7 +1009,7 @@ class AdvsController extends PublicController
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
-        $main_cats = $this->category_repository->mainCats();
+        $main_cats = $this->category_repository->getMainCategories();
 
         return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('main_cats'));
     }
@@ -997,13 +1017,14 @@ class AdvsController extends PublicController
     public function editCategoryForAd($id)
     {
         $adv = $this->adv_model->userAdv(true)->find($id);
+        $before_editing_ad_params = $adv->toArray();
 
         if (is_null($adv)) {
             abort(403);
         }
 
-        if ($this->requestHttp->action == 'update') {
-            $params = $this->requestHttp->all();
+        if ($this->request->action == 'update') {
+            $params = $this->request->all();
             unset($params['action']);
 
             for ($i = 1; $i <= 10; $i++) {
@@ -1013,6 +1034,7 @@ class AdvsController extends PublicController
             }
 
             $adv->update($params);
+            $this->event->dispatch(new EditedAdCategory($before_editing_ad_params,$adv));
             $this->messages->success(trans('visiosoft.module.advs::message.updated_category_msg'));
             return redirect('/advs/edit_advs/' . $id);
         }
@@ -1023,9 +1045,9 @@ class AdvsController extends PublicController
 
     }
 
-    public function mapJson(Request $request, AdvRepositoryInterface $repository)
+    public function mapJson(AdvRepositoryInterface $repository)
     {
-        $param = $request->toArray();
+        $param = $this->request->toArray();
         $customParameters = array();
         $advModel = new AdvModel();
 
@@ -1056,11 +1078,11 @@ class AdvsController extends PublicController
         return $this->redirect->back();
     }
 
-    public function sold($id, Request $request, AdvModel $advModel)
+    public function sold($id, AdvModel $advModel)
     {
-        if ($request->sold == 'sold') {
+        if ($this->request->sold == 'sold') {
             $advModel->find($id)->update(['status' => 'sold']);
-        } elseif ($request->sold = 'not-sold') {
+        } elseif ($this->request->sold = 'not-sold') {
             $advModel->find($id)->update(['status' => 'approved']);
         }
     }

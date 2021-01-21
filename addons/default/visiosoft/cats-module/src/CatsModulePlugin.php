@@ -3,14 +3,19 @@
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 
-use Visiosoft\CatsModule\Category\Command\getLevel2Cats;
-use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\CatsModule\Category\CategoryRepository;
+use Visiosoft\CatsModule\Category\Command\getCategoriesLevel2;
 use Visiosoft\CatsModule\Category\Command\GetCategoryName;
 use Visiosoft\CatsModule\Category\Command\GetCategoryDetail;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 
 class CatsModulePlugin extends Plugin
 {
+    protected $categoryRepository;
+
+    public function __construct(CategoryRepositoryInterface $categoryRepository)
+    {
+        $this->categoryRepository = $categoryRepository;
+    }
 
     /**
      * @return array
@@ -41,14 +46,12 @@ class CatsModulePlugin extends Plugin
             ), new \Twig_SimpleFunction(
                 'category_parents_name',
                 function ($id) {
-                    $category_model = new CategoryModel();
-                    return $category_model->getParentCats($id, 'add_main');
+                    return $this->categoryRepository->getParentCategoryById($id);
                 }
             ), new \Twig_SimpleFunction(
                 'getParentsCount',
                 function ($id) {
-                    $category_model = new CategoryModel();
-                    return $category_model->getParentsCount($id);
+                    return $this->categoryRepository->getParentCategoryById($id) - 1;
                 }
             ), new \Twig_SimpleFunction(
                 'catIcon',
@@ -56,16 +59,16 @@ class CatsModulePlugin extends Plugin
                     if ($path == "") {
                         return $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/default-categories-icon.png', 'img'))->url();
                     } else {
-                        return url('files/'.$path);
+                        return url('files/' . $path);
                     }
                 }
             ), new \Twig_SimpleFunction(
-                'getLevel2Cats',
+                'getCategoriesLevel2',
                 function () {
-                    if (!$getLevel2Cats = $this->dispatch(new getLevel2Cats())) {
+                    if (!$getCategoriesLevel2 = $this->dispatch(new getCategoriesLevel2())) {
                         return 0;
                     }
-                    return $getLevel2Cats;
+                    return $getCategoriesLevel2;
                 }
             )
         ];

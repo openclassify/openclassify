@@ -13,7 +13,7 @@ class Delete extends ActionHandler
     {
         try {
             foreach ($selected as $id) {
-                $categoryRepository->DeleteCategories($id);
+               //Todo Delete category and Sub Categories
             }
 
             if ($selected) {
