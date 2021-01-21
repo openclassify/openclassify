@@ -26,8 +26,7 @@ $(function () {
                 formData.append('folder', element.data('folder'));
             },
             renameFile: function (file) {
-                let newName = new Date().getTime() + '_' + file.name;
-                return newName;
+                return new Date().getTime() + '_' + file.name.replace(/ /g, '_');
             },
             accept: function (file, done) {
                 $.get(REQUEST_ROOT_PATH + '/streams/singlefile-field_type/exists/' + element.data('folder'), {'file': file.name}, function (data) {
