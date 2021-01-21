@@ -6,24 +6,33 @@ use Anomaly\Streams\Platform\Entry\EntryCriteria;
 use Anomaly\Streams\Platform\Image\Image;
 use Illuminate\Support\Facades\Auth;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\CustomfieldsModule\Cfvalue\CfvalueModel;
+use Visiosoft\CustomfieldsModule\Cfvalue\Contract\CfvalueRepositoryInterface;
 use Visiosoft\RecentlyviewedadsModule\Recently\RecentlyModel;
 use Visiosoft\SubscriptionsModule\User\UserModel;
+use Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface;
 
 class AdvCriteria extends EntryCriteria
 {
 
     private $image;
     private $advRepository;
+    private $customFieldRepository;
+    private $cfvalueModel;
 
     public function __construct(
         SettingRepositoryInterface $repository,
         Image $image,
-        AdvRepositoryInterface $advRepository
+        AdvRepositoryInterface $advRepository,
+	    CustomFieldRepositoryInterface $customFieldRepository,
+	    CfvalueModel $cfvalueModel
     )
     {
         $this->settings = $repository;
         $this->image = $image;
         $this->advRepository = $advRepository;
+        $this->customFieldRepository = $customFieldRepository;
+        $this->cfvalueModel = $cfvalueModel;
     }
 
     public function getAdvsModel()
@@ -69,14 +78,21 @@ class AdvCriteria extends EntryCriteria
 
     public function buyingLeads($status = null){
 	    $advModel = new AdvModel();
+
+	    $customfields = $this->customFieldRepository->findBySlug('is_buying');
+	    $cfvalue = $this->cfvalueModel->where('custom_field_id', $customfields->id)->first();
+
 	    $latest_advs = AdvModel::query()
 		    ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
 		    ->where('status', '=', 'approved')
 		    ->where('slug', '!=', '')
-		    ->where('is_buying', ($status == 'buying' ? true : false))
+		    ->where(function ($query) use ($status, $customfields, $cfvalue) {
+			    if ($status != null and $cfvalue->custom_field_value == 'Yes') {
+				    $query->whereRaw('JSON_CONTAINS(cf_json, \'"' . $cfvalue->id . '"\', \'$.cf' . $customfields->id . '\')');
+			    }
+		    })
 		    ->orderBy('publish_at', 'desc')
 		    ->paginate($this->settings->value('streams::per_page'));
-
 
 	    $ads = $advModel->getLocationNames($latest_advs);
 	    foreach ($ads as $index => $ad) {
