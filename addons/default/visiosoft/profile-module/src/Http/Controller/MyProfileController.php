@@ -2,31 +2,24 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
-use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Rinvex\Subscriptions\Models\Plan;
-use Rinvex\Subscriptions\Models\PlanSubscription;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\CloudsiteModule\CloudsiteModule;
-use Visiosoft\CloudsiteModule\Site\SiteModel;
-use Visiosoft\OrdersModule\Orderdetail\Event\AgainPuchaseOrder;
 use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
 use Visiosoft\MessagesModule\Message\MessageModel;
 use Visiosoft\PackagesModule\Package\PackageModel;
-use Visiosoft\PackagesModule\User\UserModel;
 use Visiosoft\ProfileModule\Adress\AdressModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
 use Visiosoft\ProfileModule\Education\EducationModel;
 use Visiosoft\ProfileModule\EducationPart\EducationPartModel;
-use Visiosoft\ProfileModule\EducationPartOption\EducationPartOptionModel;
 use Visiosoft\ProfileModule\Profile\Form\ProfileFormBuilder;
 use Illuminate\Contracts\Events\Dispatcher;
 
@@ -51,7 +44,7 @@ class MyProfileController extends PublicController
 
     protected $user;
 
-    public function home(ProfileFormBuilder $form, AdvRepositoryInterface $advRepository)
+    public function home(ProfileFormBuilder $form)
     {
         $advs_count = new AdvModel();
         $advs_count = count($advs_count->myAdvsByUser()->get());
