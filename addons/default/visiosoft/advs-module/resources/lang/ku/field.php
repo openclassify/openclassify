@@ -239,7 +239,7 @@ return [
     'phone' => 'تەلەفۆن',
     'send_us_your_feedback' => 'Send Us Your Feedback
 ',
-    'online_shopping' => 'GET',
+    'online_shopping' => 'Secure E-Trade',
     'approved' => 'بە سەرکەوتوویی پەسەند کرا
 ',
     'extended' => 'بە سەرکەوتوویی درێژکرایەوە
@@ -262,7 +262,8 @@ return [
 ',
     'featured_ads' => "ڕیکلامی عةرز
 ",
-    'trending_ads' => 'Reklamên Trendind',
+    'trending_ads' => 'Trendind Ads
+',
     'search_ad_result_prefix' => 'لەسەر',
     'search_ads_result_message' => [
         'name' => 'ڕێکلامەکان دەژمێرن دۆزراونەتەوەبۆ :گەڕانی ناو:',
@@ -270,7 +271,8 @@ return [
     'total' => 'هه موو
 ',
     'quantity' => 'چەندی',
-    'view_cart' => 'سەبەتە پیشاندان',
+    'view_cart' => 'سەبەتەکە نیشان بدە
+',
     'no_ads' => 'هیچ ڕیکلامێک نەدۆزراوەتەوە
 ',
     'show_display_mode' => [
