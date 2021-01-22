@@ -20,9 +20,8 @@ return [
     'first_name' => 'ناوی یەکەم
 ',
     'last_name' => 'پاشناو',
-    'remember_me' => 'بیره بۆ من
-',
-    'not_a_member_yet' => 'تۆ ئەندام نیت هێشتا
+    'remember_me' => 'بيرمبكةوة',
+    'not_a_member_yet' => 'تۆ هێشتا ئەندام نیت 
 ',
     'not_a_member_yet_message' => 'خۆت تۆمار بکە بۆ ئەندامەکانمان بۆ سوودمەندبوون لە خزمەتگوزاری تایبەتمان
 ',
@@ -32,7 +31,7 @@ return [
     'phone_number' => 'ژماره‌ی مۆبایل',
 
     // Registration instructions
-    'personal_registration_header' => 'ئایا ئەندامێتیی ئیندیڤایدۆلۆژیا چین ؟
+    'personal_registration_header' => 'ئایا ئەندامێتیی شه‌خسی چین ؟
 ',
     'personal_registration_body' => 'ئۆتۆمبێلەکەت بفرۆشە و بەکرێ بگرە ، ماڵەکەت بفرۆشە ، شتی بەکارنەهێنراوت بفرۆشە ، نوێ بەدەست بهێنە.
 ',
@@ -51,7 +50,7 @@ return [
 ',
 
     // Forgot Password
-    'create_new_password' => 'وشەی نوێ دروست بکە
+    'create_new_password' => 'وشەی نهێنی نوێ دروست بکە
 ',
 
     // Login page
