@@ -76,32 +76,6 @@ class AdvCriteria extends EntryCriteria
         return $ads;
     }
 
-    public function buyingLeads($status = null){
-	    $advModel = new AdvModel();
-
-	    $customfields = $this->customFieldRepository->findBySlug('is_buying');
-	    $cfvalue = $this->cfvalueModel->where('custom_field_id', $customfields->id)->first();
-
-	    $latest_advs = AdvModel::query()
-		    ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
-		    ->where('status', '=', 'approved')
-		    ->where('slug', '!=', '')
-		    ->where(function ($query) use ($status, $customfields, $cfvalue) {
-			    if ($status != null and $cfvalue->custom_field_value == 'Yes') {
-				    $query->whereRaw('JSON_CONTAINS(cf_json, \'"' . $cfvalue->id . '"\', \'$.cf' . $customfields->id . '\')');
-			    }
-		    })
-		    ->orderBy('publish_at', 'desc')
-		    ->paginate($this->settings->value('streams::per_page'));
-
-	    $ads = $advModel->getLocationNames($latest_advs);
-	    foreach ($ads as $index => $ad) {
-		    $ads[$index]->detail_url = $advModel->getAdvDetailLinkByModel($ad, 'list');
-		    $ads[$index] = $advModel->AddAdsDefaultCoverImage($ad);
-	    }
-	    return $ads;
-    }
-
     public function allAdvs()
     {
         $advModel = new AdvModel();
