@@ -74,5 +74,5 @@ return [
 
     // Register
     'recaptcha_field_is_required' => 'پێویستە reCaptcha',
-    'failed_to_validate_captcha' => 'Captcha nehat pejirandin.',
+    'failed_to_validate_captcha' => 'Captcha سەرنەکەوتوو بۆ سەلماندن',
 ];
