@@ -13,8 +13,8 @@ return [
     'profile' => 'پرۆفایل',
     'email' => 'ناونیشانی ئیمەیل',
     'phone' => 'ژماره‌ی مۆبایل',
-    'reset_code' => 'کۆدەکە تێپەڕەوشە',
-    'password_confirmation' => 'پشت راست کردنەوەی وشەی نهێنی
+    'reset_code' => 'کۆدەکە ڕێکخستنەوە',
+    'password_confirmation' => 'سەلماندنی وشەی نهێنی
 ',
     'password' => 'وشەی نهێنی',
     'first_name' => 'ناوی یەکەم
