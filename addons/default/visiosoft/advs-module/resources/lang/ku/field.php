@@ -323,19 +323,19 @@ return [
         'name' => 'کەم',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'لە دوایینی 24 سات
+        'name' => 'لە ئاخیر 24 کاتژمێر
 '
     ],
     'in_the_last_day' => [
-        'name' => 'لە دوایینی 24 سات
+        'name' => 'لە ئاخیر 24 کاتژمێر
 '
     ],
     'in_the_last_week' => [
-        'name' => 'له هه فته ی دوایین
+        'name' => 'له هه فته ی ئاخیر
 '
     ],
     'in_the_last_month' => [
-        'name' => 'لە مانگی دوایین
+        'name' => 'لە مانگی ئاخیر
 '
     ],
     'ads_with_photo' => [
