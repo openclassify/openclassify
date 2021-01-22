@@ -9,7 +9,7 @@ return [
 '
     ],
     'last_name' => [
-        'name' => 'ناوی باپیر'
+        'name' => 'پاشناو'
     ],
     'username' => [
         'name' => 'ناوی بەکارهێنەر'
@@ -31,7 +31,7 @@ return [
 '
     ],
     'enabled' => [
-        'name' => 'بەکارهێنەر کارمەندی بەهێزە
+        'name' => 'بەکارهێنەر چالاک نیە
 '
     ],
     'country' => [
@@ -94,10 +94,10 @@ return [
 '
     ],
     'adress_last_name' => [
-        'name' => 'ناوی باپیر'
+        'name' => 'پاشناو'
     ],
     'actions' => [
-        'name' => 'Çalakî'
+        'name' => 'کردەوە'
     ],
     'adress_content' => [
         'name' => 'ناوەڕۆکی ناونیشان
