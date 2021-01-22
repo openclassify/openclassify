@@ -529,7 +529,7 @@ return [
 ',
     'update' => 'نوێکردنەوە
 ',
-    'change_password' => 'گۆڕینی تێپەڕەوشە',
+    'change_password' => 'گۆڕینی وشەی نهێنەکە',
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
 
