@@ -21,7 +21,7 @@ class AdvCriteria extends EntryCriteria
     public function __construct(
         SettingRepositoryInterface $repository,
         Image $image,
-        AdvRepositoryInterface $advRepository,
+        AdvRepositoryInterface $advRepository
     )
     {
         $this->settings = $repository;
