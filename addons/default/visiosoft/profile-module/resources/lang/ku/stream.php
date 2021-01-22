@@ -2,15 +2,16 @@
 
 return [
     'profile' => [
-        'name' => 'Tengal',
+        'name' => 'پرۆفایل',
     ],
     'adress' => [
-        'name' => 'Navnîşan',
+        'name' => 'ناونیشان',
     ],
     'education' => [
-        'name' => 'Zanyarî',
+        'name' => 'په‌روه‌رده‌',
     ],
     'education_part' => [
-        'name' => 'Beşa perwerdehiyê',
+        'name' => 'بەشی پەروەردەی
+',
     ],
 ];
