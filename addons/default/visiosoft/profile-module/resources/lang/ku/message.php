@@ -1,9 +1,10 @@
 <?php
 
 return [
-    "email"      => "! کێڵگەی بە ئی مەیل پێویستە
+    "email"      => "! ئی مەیل پێویستە
+
 ",
-    "username"      => "! کێڵگەی ناوی بەکارهێنەر پێویستە
+    "username"      => "! ناوی بەکارهێنەر پێویستە
 ",
     "success_update"      => "! پڕۆفایل نوێکردنەوە بە سەرکەوتوویی
 ",
@@ -11,7 +12,7 @@ return [
 ",
     "adress_success_create"      => "! ئەدرێس بە سەرکەوتوویی دروستکراوە
 ",
-    "login_error" => "چوونە ژوورەوە یان وشەی تێپەڕ.
+    "login_error" => "چوونە ژوورەوە یان وشەی نهێنەکە دروست نییە
 ",
     "login_noMail_old_user" => ".ئەو ناونیشانی ئیمەیڵەی کە داخڵت بووە نادۆزرێتەوە
 ",
@@ -35,7 +36,8 @@ return [
 ",
     "saved" => "پاشکەوت کرا
 ",
-    'please_confirm_transaction' => 'Ji kerema xwe danûstendinê piştrast bikin',
+    'please_confirm_transaction' => 'تکایە تەئکید لە وەرگێرانی وەرگێرانەوە بکە
+',
     'password_do_not_match' => 'وشەی نهێنیەکان ناگونجێن
 ',
     'your_password_changed' => 'وشەی نهێنیەکەت بە سەرکەوتوویی نوێ کرایەوە
