@@ -17,22 +17,16 @@ class AdvCriteria extends EntryCriteria
 
     private $image;
     private $advRepository;
-    private $customFieldRepository;
-    private $cfvalueModel;
 
     public function __construct(
         SettingRepositoryInterface $repository,
         Image $image,
         AdvRepositoryInterface $advRepository,
-	    CustomFieldRepositoryInterface $customFieldRepository,
-	    CfvalueModel $cfvalueModel
     )
     {
         $this->settings = $repository;
         $this->image = $image;
         $this->advRepository = $advRepository;
-        $this->customFieldRepository = $customFieldRepository;
-        $this->cfvalueModel = $cfvalueModel;
     }
 
     public function getAdvsModel()
