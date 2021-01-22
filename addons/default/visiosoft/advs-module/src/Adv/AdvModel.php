@@ -200,6 +200,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
             if ($country != null) {
                 $adv->setAttribute('country_name', $country->name);
+                $adv->setAttribute('country_abv', $country->abv);
             }
             if ($city != null) {
                 $adv->setAttribute('city_name', $city->name);
