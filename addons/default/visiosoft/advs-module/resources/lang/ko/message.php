@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "이 광고는 더 이상 유효하지 않습니다!",
     'approve_status_change' => "귀하의 광고 상태가 활성으로 설정되었습니다!",
     'passive_status_change' => "귀하의 광고 상태가 수동으로 설정되었습니다!",
+	'sold_status_change' => "귀하의 광고 상태가 판매로 설정되었습니다!",
 ];

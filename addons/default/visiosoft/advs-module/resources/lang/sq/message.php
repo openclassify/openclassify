@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Kjo reklamë nuk është më e vlefshme!",
     'approve_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në Aktiv!",
     'passive_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në pasiv!",
+	'sold_status_change' => "Statusi i Reklamës suaj Setshtë vendosur të shitet!",
 ];

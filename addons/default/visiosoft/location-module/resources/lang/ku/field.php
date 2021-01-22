@@ -2,38 +2,40 @@
 
 return [
     'name' => [
-        'name' => 'Nav'
+        'name' => 'سەردێڕ'
     ],
     'slug' => [
-        'name' => 'Şeytanok'
+        'name' => 'سلوگ'
     ],
     'city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'district' => [
-        'name' => 'Herêm'
+        'name' => 'ناوچە'
     ],
     'order' => [
-        'name' => 'Rêzê Rêz bike'
+        'name' => 'جووره‌'
     ],
     'neighborhood' => [
-        'name' => 'Cînarî'
+        'name' => 'هاوسایەتی'
     ],
     'village' => [
-        'name' => 'Gûnd'
+        'name' => 'گوند'
     ],
     'description' => [
-        'name' => 'Terîf'
+        'name' => 'دەربارە'
     ],
     'pick_option' => [
-        'name' => 'Vebijarek hilbijêrin',
+        'name' => 'بژاردەیەک هەڵبژێرە
+',
     ],
     'address' => [
-        'name' => 'Navnîşan',
+        'name' => 'ناونیشان',
     ],
-    'selected' => 'Hilbijartin',
-    'choose_an_option' => 'Vebijarek hilbijêrin ...',
+    'selected' => 'هەڵبژێرراوە',
+    'choose_an_option' => 'بژاردەیەک هەڵبژێرە
+',
 ];

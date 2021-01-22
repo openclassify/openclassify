@@ -219,4 +219,12 @@ return [
         'name' => 'Utwórz kolor przycisku reklamy',
         'instructions' => 'Zmienia przycisk wyświetlany po zakończeniu wyboru nowej kategorii reklam.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Przełącznik języka dla przeglądarki',
+        'instructions' => 'Umożliwia wybranie języka przeglądarki jako aktywnego języka'
+    ],
+    'get_categories' => [
+        'name' => 'POBIERZ kategorie',
+        'instructions' => 'Reprezentuje kategorie, w których właściwość GET będzie ważna.'
+    ],
 ];

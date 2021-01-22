@@ -97,4 +97,12 @@ return [
             'delete' => 'Kan de optieconfiguratie verwijderen?',
         ],
     ],
+    'status' => [
+        'name'   => 'Toestand',
+        'option' => [
+            'read'   => 'Kan status lezen?',
+            'write'  => 'Kan status aanmaken / bewerken?',
+            'delete' => 'Kan de status verwijderen?',
+        ],
+    ],
 ];

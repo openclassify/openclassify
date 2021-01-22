@@ -2,310 +2,355 @@
 
 return [
     'file' => [
-        'name' => 'Photos'
+        'name' => 'وێنه‌کان'
     ],
     'first_name' => [
-        'name' => 'Nav'
+        'name' => 'ناوی یەکەم
+'
     ],
     'last_name' => [
-        'name' => 'Paşnav'
+        'name' => 'ناوی باپیر'
     ],
     'username' => [
-        'name' => 'Navê bikarhêner'
+        'name' => 'ناوی بەکارهێنەر'
     ],
     'display_name' => [
-        'name' => 'Navê Nîşan bide'
+        'name' => 'ناوی پیشان دان
+'
     ],
     'email' => [
-        'name' => 'Navnîşana E-nameyê'
+        'name' => 'ناونیشانی ئیمەیل
+'
     ],
     'sitename' => [
-        'name' => 'sitename'
+        'name' => 'ناوی سایت
+'
     ],
     'activated' => [
-        'name' => 'Bikarhêner Çalak'
+        'name' => 'بەکارهێنەر چالاکیە
+'
     ],
     'enabled' => [
-        'name' => 'Bikarhêner Çalak bike'
+        'name' => 'بەکارهێنەر کارمەندی بەهێزە
+'
     ],
     'country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'district' => [
-        'name' => 'Herêm'
+        'name' => 'ناوچە'
     ],
     'neighborhood' => [
-        'name' => 'Cînarî'
+        'name' => 'هاوسایەتی'
     ],
     'village' => [
-        'name' => 'Gûnd'
+        'name' => 'گوند'
     ],
     'gsm_phone' => [
-        'name' => 'Telefonê GSM'
+        'name' => 'ژماره‌ی مۆبایل
+'
     ],
     'land_phone' => [
-        'name' => 'Telefonê Land'
+        'name' => 'ژمارەی دوکانەکە
+'
     ],
     'office_phone' => [
-        'name' => 'Telefonê Ofîsê'
+        'name' => 'ژمارەی دوکانەکە
+'
     ],
     'register_type' => [
-        'name' => 'Register Type'
+        'name' => 'جۆری تۆمارکردن'
     ],
     'birthday' => [
-        'name' => 'Rojbûn'
+        'name' => 'ڕۆژی لە دایک بوون'
     ],
 	'facebook_address' => [
-		'name' => 'Navnîşana Facebookê'
+		'name' => 'ناونیشانی فەیسبووک'
 	],
 	'google_address' => [
-		'name' => 'Navnîşana Google'
+		'name' => 'ناونیشانی گۆگڵ'
 	],
     'education' => [
-        'name' => 'Zanyarî'
+        'name' => 'په‌روه‌رده‌'
     ],
     'state_of_education' => [
-        'name' => 'Dewleta Perwerdehiyê'
+        'name' => 'ویلایەتی پەروەردە
+'
     ],
     'profession' => [
-        'name' => 'Sinet'
+        'name' => 'پیشە'
     ],
     'identification_number' => [
-        'name' => 'Nimara ye kiyîtî'
+        'name' => 'ژمارەی ناسنامە'
     ],
     'adress_name' => [
-        'name' => 'Navnîşana Navnîşan'
+        'name' => 'ناوی ناونیشان'
     ],
     'adress_first_name' => [
-        'name' => 'Nav'
+        'name' => 'ناوی یەکەم
+'
     ],
     'adress_last_name' => [
-        'name' => 'Paşnav'
+        'name' => 'ناوی باپیر'
     ],
     'actions' => [
         'name' => 'Çalakî'
     ],
     'adress_content' => [
-        'name' => 'Navnîşana Navnîşan'
+        'name' => 'ناوەڕۆکی ناونیشان
+'
     ],
     'adress_post_code' => [
-        'name' => 'Koda Postê'
+        'name' => 'کۆدی پۆستە
+'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Telefonê Gsm'
+        'name' => 'ژماره‌ی مۆبایل
+'
     ],
     'adress_land_phone' => [
-        'name' => 'Telefonê Land'
+        'name' => 'ژمارەی دوکانەکە
+'
     ],
     'adress_country' => [
-        'name' => 'Welat'
+        'name' => 'وڵات'
     ],
     'adress_city' => [
-        'name' => 'Bajar'
+        'name' => 'شار'
     ],
     'adress_district' => [
-        'name' => 'Herêm'
+        'name' => 'ناوچە'
     ],
     'adress_neighborhood' => [
-        'name' => 'Cînarî'
+        'name' => 'هاوسایەتی'
     ],
     'adress_village' => [
-        'name' => 'Gûnd'
+        'name' => 'گوند'
     ],
     'messages' => [
-        'name' => 'Messages'
+        'name' => 'پەیامەکان'
     ],
     'user' => [
-        'name' => 'Bikaranîvan'
+        'name' => 'بەکارهێنەر'
     ],
 	'name' => [
-		'name' => 'Nav'
+		'name' => 'ناو'
 	],
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Tengal'
+        'name' => 'پرۆفایل'
     ],
 
     'create' => [
-        'name' => 'Xûliqandin'
+        'name' => 'دروست بکە'
     ],
     'edit' => [
-        'name' => 'Weşandin'
+        'name' => 'دەستکاری بکە'
     ],
     'delete' => [
-        'name' => 'Jêbirin'
+        'name' => 'سڕینەوە'
     ],
     'list' => [
-        'name' => 'Rêzok'
+        'name' => 'لیست'
     ],
     'menu_address' => [
-        'name' => 'Navnîşan'
+        'name' => 'ناونیشان'
     ],
     'menu_orders' => [
-        'name' => 'Ferman'
+        'name' => 'داواكردەکان'
     ],
     'menu_favorites' => [
-        'name' => 'Favorites'
+        'name' => 'دڵخوازەکان'
     ],
     'menu_archived_ads' => [
-        'name' => 'Reklamên arşîvkirî'
+        'name' => 'ڕێکلامەکانی ئەرشیف کراو
+'
     ],
     'menu_pending_ads' => [
-        'name' => 'Li benda pejirandinê ye'
+        'name' => 'قەبووڵی هەڵپەسێردراو
+'
     ],
     'menu_delete_account' => [
-        'name' => 'Hesabê bigire'
+        'name' => 'ئەکاونتەکە دابخە
+'
     ],
     'menu_my_ads' => [
-        'name' => 'Reklamên min'
+        'name' => 'ڕیکلامەکانم
+'
     ],
     'menu_fav_ads' => [
-        'name' => 'Reklamên bijare'
+        'name' => 'ڕێکلامێکی دڵخواز
+'
     ],
     'menu_hello_msg' => [
-        'name' => 'slav'
+        'name' => 'سڵاو'
     ],
     'menu_last_msg' => [
-        'name' => 'We herî dawî li'
+        'name' => 'تۆ دوایین جار هاتیتە ژوورەوە
+'
     ],
     'menu_packages' => [
-        'name' => 'Pakêtên min'
+        'name' => 'پاکێجەکانم
+'
     ],
     'menu_adv_packages' => [
-        'name' => 'Packages Ads'
+        'name' => 'پاکێجەکانی ڕیکلام
+'
     ],
     'menu_time_packages' => [
-        'name' => 'Pakêtên Demjimêr'
+        'name' => 'پاکێجەکانی کات
+'
     ],
     'profile_details' => [
-        'name' => 'Profile Details'
+        'name' => 'وردەکاری پڕۆفایل
+'
     ],
     'profile_photo' => [
-        'name' => 'Photo Profile'
+        'name' => 'وێنەی پڕۆفایل
+'
     ],
     'adv_listing_banner' => [
-        'name' => 'Reklam Lîsteya Rûpelê Banner'
+        'name' => 'مانشێتی پەیجی لیستی ڕیکلامەکان 
+'
     ],
     'approve' => [
-        'name' => 'Destûrdan'
+        'name' => 'پەسەندی بکە
+'
     ],
     'approved' => [
-        'name' => 'Pejirandin'
+        'name' => 'پەسەندکراوە'
     ],
     'pending' => [
-        'name' => 'Nexelas'
+        'name' => 'هەڵپەسێردراو'
     ],
     'passive' => [
-        'name' => 'Nejîr'
+        'name' => 'ناچالاک'
     ],
     'pending_admin' => [
-        'name' => 'Nexelas'
+        'name' => 'هەڵپەسێردراو'
     ],
     'menu_messages' => [
-        'name' => 'Messages'
+        'name' => 'پەیامەکان'
     ],
     'menu_my_purchase' => [
-        'name' => 'Kirîna min'
+        'name' => 'کڕینەکەم
+'
     ],
     'menu_my_sales' => [
-        'name' => 'Firotanên min'
+        'name' => 'فرۆشتنەکانم
+'
     ],
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
-        'name' => 'Bazirganiya Ewle'
+        'name' => 'بازرگانیکردنێکی سەلامەت
+'
     ],
     'right_secure_trading_msg' => [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_support_subject' => [
-        'name' => '24/7 Piştgirî'
+        'name' => '24/7 پشتگری'
     ],
     'right_support_msg' => [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_easy_trading_subject' => [
-        'name' => 'Bazirganiya Hêsan'
+        'name' => 'بازرگانی ئاسان
+'
     ],
     'right_easy_trading_msg' => [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_need_help_subject' => [
-        'name' => 'Ma Alîkarî hewce dike?'
+        'name' => 'ویستنی یارمەتی؟'
     ],
     'right_need_help_msg' => [
-        'name' => 'Gazî bikin'
+        'name' => 'تەلەفون بکە
+'
     ],
     'disable_account' => [
-        'name' => 'Hesabê Neçalak bikin'
+        'name' => 'ئەکاونتەکە ناچالاک بکە
+'
     ],
     'disable_account_msg' => [
-        'name' => 'Dê hesabê we bête sekinandin.
-                                    Ev operasyon nayê paşve xistin'
+        'name' => '.ئەکاونتەکەت ناچالاک دەبێت
+ئەم کردارنە ناکرێت                                    '
     ],
 
-    'message_title' => 'Sernavê peyamê',
-    'owner_name' => 'Agah',
+    'message_title' => 'سەردێڕی پەیام
+',
+    'owner_name' => 'پەیام',
 
-    'favorites' => "Favorites",
-    'fav_advs' => 'Reklamên Bijare',
-    'fav_sellers' => "Fav Firoşyar",
-    'fav_searches' => "Lêgerînên Fav",
+    'favorites' => "دڵخوازەکان",
+    'fav_advs' => 'ڕێکلامێکی دڵخوازترین',
+    'fav_sellers' => "فرۆشیاری دڵخوازترین
+",
+    'fav_searches' => "گەڕانی دڵخوازترین
+",
     'posted_on' => "Hat şandin",
-    'message_details' => "Agahdariyên Peyamê",
-    'adv_no' => 'Ad Na',
+    'message_details' => "وردەکاری پەیام
+",
+    'adv_no' => 'ژمارەی ڕیکلام
+',
     'bill_address' => [
-        'name' => 'Navnîşana Bill',
+        'name' => 'ناونیشانی فاتووره‌
+',
     ],
     'delivery_address' => [
-        'name' => 'Navnîşana Radestkirinê',
+        'name' => 'ناونیشانی ته‌سلیم
+',
     ],
     'order_total' => [
-        'name' => 'Hemî',
+        'name' => 'هه موو
+',
     ],
     'order_date' => [
-        'name' => 'Date Order',
+        'name' => 'بەروارى داواکردن
+',
     ],
     'order_no' => [
-        'name' => 'Nasnameyê rêz bikin',
+        'name' => 'ناسنامەی داواکردن',
     ],
     'order_detail' => [
-        'name' => 'Detail nîşan bide',
+        'name' => 'زانیارییە نیشاندە',
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => 'Hûrî',
+        'name' => 'وردەکاری',
     ],
     'back' => [
-        'name' => 'Paş',
+        'name' => 'پشت',
     ],
     'image' => [
-        'name' => 'Wêne',
+        'name' => 'وێنە',
     ],
     'subject' => [
-        'name' => 'Mijar',
+        'name' => 'بابەت',
     ],
     'price' => [
-        'name' => 'Biha',
+        'name' => 'نرخي',
     ],
     'piece' => [
-        'name' => 'Perçe',
+        'name' => 'پارچە',
     ],
     'commission' => [
-        'name' => 'Simsarî',
+        'name' => 'کۆمیسۆن',
     ],
     'total' => [
-        'name' => 'Hemî',
+        'name' => 'هه موو
+',
     ],
     'sub_total' => [
-        'name' => 'Sub Total',
+        'name' => 'هەڵپەسێردراو',
     ],
     'sale' => [
-        'name' => 'Firotin',
+        'name' => 'فرۆشتن
+',
     ],
     'awaiting_tracking_number' => [
         'name' => 'Li benda Hejmara ckopandinê ne',
@@ -314,16 +359,18 @@ return [
         'name' => 'Li benda pejirandina drav',
     ],
     'paid' => [
-        'name' => 'Pere kirin',
+        'name' => 'پارةي دراوة
+',
     ],
     'cancelled' => [
-        'name' => 'Hat betalkirin',
+        'name' => 'هەڵوەشایەوە',
     ],
     'waiting' => [
-        'name' => 'Li bendê ye',
+        'name' => 'چاوەڕێکە',
     ],
     'awaiting_dispatch' => [
-        'name' => 'Li benda şandinê ye',
+        'name' => 'چاوەڕوانی ناردن
+',
     ],
     'shipped' => [
         'name' => 'Ppedandin',
@@ -351,7 +398,8 @@ return [
     ],
 
     'awaiting_payment' => [
-        'name' => 'Li benda dravdayînê ye',
+        'name' => 'چاوەڕوانی پارەدان
+',
     ],
     'please_entered_tracking_number' => [
         'name' => 'Ji kerema xwe Hejmara ckopandinê ketin hundir',
@@ -369,10 +417,11 @@ return [
         'name' => 'Firotanê Betal Bikin',
     ],
     'send_again' => [
-        'name' => 'Ez ê Dîsa Sendandim',
+        'name' => 'دیسان دەنێرم
+',
     ],
     'content' => [
-        'name' => 'Dilşad',
+        'name' => 'ناوەڕۆک',
     ],
     'preferences_settings' => [
         'name' => 'Mîhengên Bijareyan',
@@ -382,77 +431,88 @@ return [
         'name' => 'Mîhengên Pargîdanî',
     ],
     'password' => [
-        'name' => 'Şîfre',
+        'name' => 'وشەی نهێنی',
     ],
     'old_password' => [
-        'name' => 'Passwordîfreya kevn',
+        'name' => 'وشەی نهێنیی کۆن',
     ],
     'new_password' => [
-        'name' => 'Passwordîfreya nû',
+        'name' => 'وشەی نهێنیی نوێ',
     ],
     're_new_password' => [
-        'name' => 'Di pêşîyê da em sipas dikin',
+        'name' => 'وشەی نهێنیەکە پشتڕاستی بکەرەوە
+',
     ],
     'confirm_password_input' => [
-        'name' => 'Ez guhertina şîfreya xwe piştrast dikim',
+        'name' => 'من گۆڕانی وشەی نهێنیەکەم قبوڵ دەکەم
+',
     ],
     'create_address' => [
-        'name' => 'Navnîşan çêbikin',
+        'name' => 'دروستی ناونیشانەکە بکە
+',
     ],
     'edit_address' => [
         'name' => 'Navnîşan Biguherîne',
     ],
     'balance_limit' => [
-        'name' => 'Sînora Hevsengiyê',
+        'name' => 'سنوری باڵانس
+',
     ],
     'active_ads' => [
-        'name' => 'Reklamên Çalak',
+        'name' => 'ڕێکلامێکی چالاک
+',
     ],
     'subscriptions' => [
-        'name' => 'Abonekirin',
+        'name' => 'ئابوونە کردن',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Herin Rûpelê Tevlêbûnan',
+        'name' => 'بڕۆ بۆ پەیجی ئابوونە کردن
+',
     ],
     'buy_package' => [
-        'name' => 'Pakêtê bikirin',
+        'name' => 'پاکێجی بکڕە
+',
     ],
     'expired_date' => [
-        'name' => 'Date Date',
+        'name' => 'بەرواری بەسەرچوون
+',
     ],
     'category' => [
-        'name' => 'Liq',
+        'name' => 'کەتێگۆری',
     ],
     'ad_limit' => [
-        'name' => 'Sînora Ad',
+        'name' => 'سنورى ڕیکلام
+',
     ],
     'publish_time' => [
-        'name' => 'Wext Weşandin',
+        'name' => 'کاتی بڵاوکردنەوە
+',
     ],
     'all_categories' => [
-        'name' => 'Hemî Kategorî',
+        'name' => 'هەموو کەتێگۆریکان
+',
     ],
     'day' => [
-        'name' => 'Roj',
+        'name' => 'رۆژ',
     ],
 
     'individual' => [
-        'name' => 'şexsî',
+        'name' => 'شه‌خسی',
     ],
     'corporate' => [
-        'name' => 'Pargîdanî',
+        'name' => 'شریکه‌',
     ],
 
     'details' => [
-        'name' => 'Hûrgulî'
+        'name' => 'ووردەکاریەکان'
     ],
     'choose' => [
-        'name' => 'Helbijartin'
+        'name' => 'هەڵبژاردن'
     ],
-    'my_address' => 'Navnîşana min',
+    'my_address' => 'ناونیشانی من',
 
     'company' => [
-        'name' => 'Navê Pargîdanî'
+        'name' => 'ناوی کۆمپانیا'
     ],
     'tax_office' => [
         'name' => 'Daîreya Bacê'
@@ -462,25 +522,32 @@ return [
     ],
 
     // Profile page
-    'my_profile' => 'Profîla min',
-    'edit_profile' => 'Profîlê Biguherîne',
-    'edit_details' => 'Hûrgulî Biguherînin',
-    'update' => 'Rojanekirin',
-    'change_password' => '.Îfreyê biguherînin',
-    'choose_an_option' => 'Vebijarek hilbijêrin ...',
+    'my_profile' => 'پرۆفایلەکەم',
+    'edit_profile' => 'دەستکاری پڕۆفایلەکە بکە
+',
+    'edit_details' => 'دەستکاری وردەکاریەکان بکە
+',
+    'update' => 'نوێکردنەوە
+',
+    'change_password' => 'گۆڕینی تێپەڕەوشە',
+    'choose_an_option' => 'بژاردەیەک هەڵبژێرە
+',
 
     // Register page
-    'accept_terms_label' => 'Ez şertan qebûl dikim.',
-    'accept_protection_law_label' => '<html>Ez şertên Zagona li ser qebûl dikim' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ vala "> Parastina Daneyên Kesane.</a>',
+    'accept_terms_label' => 'من مەرجەکان قبوڵ دەکەم
+',
+    'accept_protection_law_label' => 'من مەرجەکانی یاساکە قبوڵ دەکەم<html>' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ vala "> Parastina Daneyên Kesane.</a>',
     'accept_privacy_terms_label' => '<html>Ez qebûl dikim' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ vala "> mercên nepenîtiyê</a>.',
-    'receive_sms_emails_label' => 'Ez dixwazim e-name & sms bistînim.',
+    'receive_sms_emails_label' => 'دەمەوێت ئی-مەیل و پەیامم پێ بگات.
+',
 
     // Register Type
     'personal' => [
-        'name' => 'Şexsî'
+        'name' => 'شه‌خسی'
     ],
 
 	'education_part' => [
-		'name' => 'Dewleta Perwerdehiyê'
+		'name' => 'ویلایەتی پەروەردە
+'
 	],
 ];

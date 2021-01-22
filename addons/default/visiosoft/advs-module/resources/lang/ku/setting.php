@@ -219,4 +219,12 @@ return [
         'name' => 'Rengê Bişkoja Adê biafirînin',
         'instructions' => 'Bişkoja ku dema hilbijartina kategoriya reklama nû xilas dibe diguheze.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher Ji bo Gerokê',
+        'instructions' => 'Destûrê dide we ku hûn zimanê gerokê wekî zimanê çalak hilbijêrin'
+    ],
+    'get_categories' => [
+        'name' => 'Kategoriyan bistînin',
+        'instructions' => 'Ew kategoriyên ku tê de taybetmendiya GET dê derbasdar be temsîl dike.'
+    ],
 ];

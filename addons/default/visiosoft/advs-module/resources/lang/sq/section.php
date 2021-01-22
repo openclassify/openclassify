@@ -56,4 +56,7 @@ return [
         'title' => 'Konfigurimi',
     ],
     'translations' => 'Përkthime',
+    'status' => [
+        'title' => 'Statusi',
+    ],
 ];

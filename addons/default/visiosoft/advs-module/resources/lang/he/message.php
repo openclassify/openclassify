@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "מודעה זו אינה תקפה יותר!",
     'approve_status_change' => "סטטוס המודעה שלך הוגדר לפעיל!",
     'passive_status_change' => "סטטוס המודעה שלך הוגדר כפסיבי!",
+	'sold_status_change' => "סטטוס המודעה שלך הוגדר כמכר!",
 ];

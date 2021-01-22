@@ -1,13 +1,22 @@
 <?php
 
 return [
-    'choose_folder' => 'Hûn dixwazin li kîjan peldankê bar bikin?',
-    'upload' => 'Wêneyan zêde bikin | Wêneyan bar bike | Wêneyek pêve bikin',
-    'choose_files' => 'Hûn dixwazin kîjan pelan bikar bînin?',
-    'no_files_selected' => 'Tu pel nehatine hilbijartin.',
-    'no_uploads' => 'Tu pel nehatin barkirin.',
-    'overwrite' => 'berê hate barkirin. Ma hûn dixwazin wê binivîsin?',
-    'uploading' => 'Uploading',
-    'loading' => 'Barkirin',
-    'error_upload' => 'Di barkirina dosyeyê de pirsgirêkek derket.',
+    'choose_folder' => 'حەز دەکەیت کام بوخچە بەرز بکەیتەوە ؟
+',
+    'upload' => 'وێنەکانی دانێن | وێنەکانی بار بکه | وێنەیەک هاوپێچ بکە
+',
+    'choose_files' => 'حەزدەکەیت کام پەڕگەکان بەکاربهێنیت ؟
+',
+    'no_files_selected' => 'هیچ پەڕگەکان هەڵبژراردنی نەکراوە
+',
+    'no_uploads' => 'هیچ پەڕگەکان دانێنی نەکراوە
+',
+    'overwrite' => 'هەر ئێستا بارکراو. حەزدەکەیت بەسەریدا زاڵ بیت ؟
+',
+    'uploading' => 'بارکردن',
+    'loading' => 'بارکردن',
+    'error_upload' => 'There was a problem uploading the file.
+',
+    'error_upload_docs' => '! هیچ پاڵپشتیەکی بەڵگەنامە نییە. تکایە پەیوەندی بکە بە بەڕێوەبەری سیستمەکەتەوە
+',
 ];

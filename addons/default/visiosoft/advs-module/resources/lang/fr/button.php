@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'Création rapide',
 	'publish' => 'Publier',
 	'import' => 'Importer',
+    'new_status' => 'Nouveau statut',
 ];

@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Deze advertentie is niet meer geldig!",
     'approve_status_change' => "De status van uw advertentie is ingesteld op Actief!",
     'passive_status_change' => "De status van uw advertentie is ingesteld op passief!",
+	'sold_status_change' => "De status van uw advertentie is ingesteld op Verkocht!",
 ];

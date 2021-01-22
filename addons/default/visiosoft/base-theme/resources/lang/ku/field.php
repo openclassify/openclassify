@@ -2,58 +2,81 @@
 
 return [
     'latest_ads' => 'Reklamên Dawîn',
-    'show_all' => 'Hemî nîşan bide',
+    'show_all' => ' هەموو پیشانبدە',
     'login' => [
-        'name' => 'Têkevin',
+        'name' => 'چوونەژوورەوە',
     ],
     'logout' => [
-        'name' => 'Derkeve',
+        'name' => 'دەرچوون',
     ],
-    'profile' => 'Tengal',
-    'email' => 'Navnîşana emailê',
-    'phone' => 'Jimare telefon',
-    'reset_code' => 'Vebijêrin Koda',
-    'password_confirmation' => 'Piştrastkirina Passwordîfreyê',
-    'password' => 'Şîfre',
-    'first_name' => 'Nav',
-    'last_name' => 'Paşnav',
-    'remember_me' => 'Min bîne bîra xwe',
-    'not_a_member_yet' => 'Endam Ne Dîsa',
-    'not_a_member_yet_message' => 'Ji bo endamên me navnîşan bikin ku ji karûbarê meya taybetî sûd werbigirin',
-    'forgot_password' => 'Min şîfreya xwe ji bîr kir',
-    'email_or_phone_number' => 'Navnîşana E-nameyê an Hejmara Telefonê',
-    'phone_number' => 'Jimare telefon',
+    'profile' => 'پرۆفایل',
+    'email' => 'ناونیشانی ئیمەیل',
+    'phone' => 'ژماره‌ی مۆبایل',
+    'reset_code' => 'کۆدەکە تێپەڕەوشە',
+    'password_confirmation' => 'پشت راست کردنەوەی وشەی نهێنی
+',
+    'password' => 'وشەی نهێنی',
+    'first_name' => 'ناوی یەکەم
+',
+    'last_name' => 'ناوی باپیر',
+    'remember_me' => 'بیره بۆ من
+',
+    'not_a_member_yet' => 'تۆ ئەندام نیت هێشتا ؟
+',
+    'not_a_member_yet_message' => 'خۆت تۆمار بکە بۆ ئەندامەکانمان بۆ سوودمەندبوون لە خزمەتگوزاری تایبەتمان
+',
+    'forgot_password' => 'وشەی نهێنەکەم لەبیرکرد
+',
+    'email_or_phone_number' => 'ژماره‌ی مۆبایل یان ناونیشانی ئیمەیل',
+    'phone_number' => 'ژماره‌ی مۆبایل',
 
     // Registration instructions
-    'personal_registration_header' => 'Awantajên Endametiya Kesane Çi ne?',
-    'personal_registration_body' => 'Xaniyê xwe, otomobîla xwe bifroşin û kirê bikin, tiştên xweyên bê karan bifroşin, yên nû jî bistînin.',
-    'personal_registration_list_1' => 'Reklamek belaş bişînin,',
-    'personal_registration_list_2' => 'Reklamên ku hûn pê re eleqedar dibin zêde bikin, piştî ku ew li bijareyên xwe zêde bikin, guhertinên bihayê bişopînin, lêgerînên bijare yên ku pîvanên we digirin biafirînin',
-    'personal_registration_list_3' => 'Li ser malperê ji xwedan reklaman re peyam bişînin.',
-    'register_information_note' => 'Agahdariya li ser vê rûpelê ji bo tête girtin ' . env('APPLICATION_DOMAIN') . ' endamî. Hûn dikarin li vir di derheqê parastina daneyên kesane de agahdariya berfireh bibînin.',
+    'personal_registration_header' => 'ئایا ئەندامێتیی ئیندیڤایدۆلۆژیا چین ؟
+',
+    'personal_registration_body' => 'ئۆتۆمبێلەکەت بفرۆشە و بەکرێ بگرە ، ماڵەکەت بفرۆشە ، شتی بەکارنەهێنراوت بفرۆشە ، نوێ بەدەست بهێنە.
+',
+    'personal_registration_list_1' => 'ڕیکلامی بەلاش دانێ
+',
+    'personal_registration_list_2' => 'ئەو ڕیکلامانە دابنێ کە تۆ حەزت لێیەتی ، شوێن گۆڕانکاری نرخەکە بکەو دوای زیادکردنیان بۆ دڵخوازەکانت ، گەڕانێکی دڵخواز دروست بکە کە کریتریاەکەت دەبینێت ،
+',
+    'personal_registration_list_3' => 'پەیامە بنێرن بۆ خاوەنی دوکان لە سایتەکە
+',
+    'register_information_note' => ' زانیاریەکان لەم پەیجە وەرگیراوە بۆ
+' . env('APPLICATION_DOMAIN') . 'ئەندامێتی. لێرە زانیاری ورد دەربارەی پاراستنی داتا کەسیەکان بدۆزیتەوە 
+',
 
     // Register page
-    'phone_validation_error' => 'Ev jimara têlefonê ji hêla endamek din ve tê bikar anîn.',
+    'phone_validation_error' => 'ئەم ژمارە تەلەفۆنە لەلایەن ئەندامێکی ترەوە بەکاردەهێنرێت
+',
 
     // Forgot Password
-    'create_new_password' => 'Passwordîfreyek Nû çêbikin',
+    'create_new_password' => 'وشەی نوێ دروست بکە
+',
 
     // Login page
-    'or' => 'an',
-    'login_with_phone_number' => 'Bi Hejmara Telefonê têkevinê',
-    'login_with_email_address' => 'Bi Navnîşana E-nameyê têkevin',
+    'or' => 'یان',
+    'login_with_phone_number' => 'بە ژمارە مۆبایلەوە بچۆ ژوورەوە
+',
+    'login_with_email_address' => 'بە ناونیشانی ئیمەیل بچۆ ژوورەوە
+',
 
     // Side menu links
-    'company_directory' => 'Pirtûkxaneya pargîdaniyê',
-    'popular_ads' => 'Reklamên populer',
-    'last_48_hours' => '48 Demjimêrên Dawîn',
-    'secure_e-commerce_ads' => 'Reklamên e-Bazirganiya Ewle bikin',
-    'sms' => 'Peyama Nivîsîn SMSand (SMS)',
-    'mail' => 'Send Mail',
+    'company_directory' => 'ئاڕاسته ی كۆمپانیا
+',
+    'popular_ads' => 'ڕیکلامێکی بەناوبانگە
+',
+    'last_48_hours' => 'ئاخیر48 کاتەکان',
+    'secure_e-commerce_ads' => 'ڕیکلامی نهێنی و بازرگانی
+',
+    'sms' => 'پەیامە بنێرە',
+    'mail' => 'مەیل بنێرە',
 
     // Register instruction seed
-    'register_instructions' => 'Rêwerzên Tomarê',
-    'list' => 'Rêzok',
-    'instruction_description' => 'Danasîna Rêwerzê',
-    'instruction_list' => 'Lîsteya Rêwerziyê',
+    'register_instructions' => 'ڕێنماییەکانی تۆمارکردن
+',
+    'list' => 'لیست',
+    'instruction_description' => 'دەربارەی ڕێنماییەکان
+',
+    'instruction_list' => 'لیستی ڕێنماییەکان
+',
 ];

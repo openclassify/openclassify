@@ -2,5 +2,5 @@
 
 return [
     'valid_disk' => 'کے لئے تشکیل شدہ اپ لوڈ ڈسک: وصف موجود نہیں ہے۔',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+	'unsupported' => 'یہ علاقہ صرف تصویری فائلوں کے لئے ہے۔ آپ وضاحت کے میدان میں فائل کی مختلف اقسام شامل کرسکتے ہیں۔'
 ];

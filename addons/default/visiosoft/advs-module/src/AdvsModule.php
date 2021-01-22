@@ -24,6 +24,11 @@ class AdvsModule extends Module
                 ],
             ],
         ],
+	    'status' => [
+		    'buttons' => [
+			    'new_status',
+		    ],
+	    ],
 	    'product_options' => [
 		    'title' => 'visiosoft.module.advs::section.product_options.title',
 		    'buttons' => [

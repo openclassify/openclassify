@@ -97,4 +97,12 @@ return [
             'delete' => 'Seçenek yapılandırmasını silebilir mi?',
         ],
     ],
+    'status' => [
+        'name'   => 'Durum',
+        'option' => [
+            'read'   => 'Durumu okuyabilir mi?',
+            'write'  => 'Durum oluşturabilir / düzenleyebilir mi?',
+            'delete' => 'Durumu silebilir mi?',
+        ],
+    ],
 ];

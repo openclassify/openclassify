@@ -1,44 +1,74 @@
 <?php
 
 return [
-    "email"      => "Qada E-nameyê Pêdivî ye!",
-    "username"      => "Navê Navnîş Pêdivî ye!",
-    "success_update"      => "Nûvekirina Profîl Bi Serkeftin!",
-    "adress_success_update"      => "Navnîşana Serkeftinê Bi Serkeftin!",
-    "adress_success_create"      => "Navnîşan Bi Serfirazî Afirandin!",
-    "login_error" => "Têketin an şîfreyek çewt.",
-    "login_noMail_old_user" => "Navnîşana e-nameya ku hûn xistî nehat dîtin.",
-    "login_noMail_old_user2" => "Ji kerema xwe navnîşana e-nameyê kontrol bikin û dîsa biceribînin.",
-    "login_noMail_old_user3" => "Ger pirsgirêk berdewam bike, ji kerema xwe li ser 'info@openclassify.com' têkilî daynin.",
-    "login_info_old_user" => "Passwordîfreyek nû ji navnîşana e-nameya we re hat şandin.",
-    "success" => "Serketinî",
-    "notified_new_updates" => "Ez dixwazim ji nûvekirinên nû agahdar bibim",
-    "notified_about_ads" => "Di derheqê reklamên min de ragihînan bihêlin",
-    "receive_messages_email" => "Ez dixwazim wekî e-nameyan peyaman bistînim",
-    "no_packages_module" => "Moduleya Pakêtan tune!",
-    "required_add"=> "Ji kerema xwe hemî rêzikên hewce dagirin.",
-    "no_extend_package" => "Pakêtên Ad Adarê Dirêj Bikin",
-    "saved" => "Xilas kirin!",
+    "email"      => "! کێڵگەی بە ئی مەیل پێویستە
+",
+    "username"      => "! کێڵگەی ناوی بەکارهێنەر پێویستە
+",
+    "success_update"      => "! پڕۆفایل نوێکردنەوە بە سەرکەوتوویی
+",
+    "adress_success_update"      => "! ئەدرێس نوێ بکەرەوە بە سەرکەوتوویی
+",
+    "adress_success_create"      => "! ئەدرێس بە سەرکەوتوویی دروستکراوە
+",
+    "login_error" => "چوونە ژوورەوە یان وشەی تێپەڕ.
+",
+    "login_noMail_old_user" => ".ئەو ناونیشانی ئیمەیڵەی کە داخڵت بووە نادۆزرێتەوە
+",
+    "login_noMail_old_user2" => "تکایە سەیری ناونیشانی ئیمەیڵەکە بکە و دیسان تاقی بکەرەوە.
+",
+    "login_noMail_old_user3" => "'info@sayaram.com' ئەگەر کێشەکە بەردەوام بوو ، تکایە پەیوەندی بکە بە",
+    "login_info_old_user" => "وشەی نهێنیی نوێ بۆ ناونیشانی ئی-مەیلەکەت نێردراوە
+",
+    "success" => "سەرکەوتن",
+    "notified_new_updates" => "دەمەوێت لە ئەپدەیتی نوێ ئاگاداربکرێتەوە
+",
+    "notified_about_ads" => "ئاگادارکردنەوەی ڕێگەپێدان دەربارەی ڕێکلامەکانم
+",
+    "receive_messages_email" => "دەمەوێت وەک ئیمەیڵ نامەم بۆبێت
+",
+    "no_packages_module" => "! هیچ پاکێجێکی مۆدول نییە
+",
+    "required_add"=> "تکایە هەموو هێڵە پێویستەکان پڕبکەنەوە.
+",
+    "no_extend_package" => "پاکێجەکانی ڕێکلام درێژکردنەوە نییە
+",
+    "saved" => "پاشکەوت کرا
+",
     'please_confirm_transaction' => 'Ji kerema xwe danûstendinê piştrast bikin',
-    'password_do_not_match' => 'Passwordîfre li hev nakin',
-    'your_password_changed' => 'Passwordîfreya we bi serfirazî hate nûve kirin',
-    'error_valid_email_or_phone' => 'Forma jimara telefonê an navnîşana E-nameyê ne rast e.',
-    'error_valid_phone' => 'Formata jimara têlefonê ne rast e.',
-    'registered_phone' => 'Ev jimara têlefonê jixwe hatî tomar kirin.',
-    'ajax_address_error' => 'Navnîşan tune an ji bo dîtinê ne destûrdar e.',
-    'empty_password_sms_message' => 'Ji ber pirsgirêkên ewlehiyê, me şîfreya we guherand! Passwordîfreya weya nû ev e:',
-    'required_all' => "Hemî Zevî Pêdivî ye!",
-    'can_not_remove_filled_fields' => "Hûn nekarin zeviyên dagirtî rakin!",
-    'wrong_password' => "Passwordîfreya ku we xistî ne rast e!",
+    'password_do_not_match' => 'وشەی نهێنیەکان ناگونجێن
+',
+    'your_password_changed' => 'وشەی نهێنیەکەت بە سەرکەوتوویی نوێ کرایەوە
+',
+    'error_valid_email_or_phone' => 'ژمارە تەلەفون یان ناونیشانی ئیمەیل دروست نیە
+',
+    'error_valid_phone' => 'ژمارەی مۆبایل دروست نیە.
+',
+    'registered_phone' => 'ئه م ژماره ته له فونه هه ر ئيستا تومار كراوه
+',
+    'ajax_address_error' => 'هیچ ناونیشانێک یان ڕێگە پێنەدراوە بۆ بینین
+',
+    'empty_password_sms_message' => ':بەهۆی کێشەی ئەمنیەوە ، ئێمە وشەی پاسۆردمان گۆڕی! وشەی نهێنی تۆ ئەوەیە
+',
+    'required_all' => "! هەموو کێڵگەکان پێویستە
+",
+    'can_not_remove_filled_fields' => "! تۆ ناتوانیت کێڵگە پڕکراوەکان لاببەیت
+",
+    'wrong_password' => "! ئەو وشەی نهێنی کە داخڵ بوویت ڕاست نییە
+",
 
     // Forgot Password
-    'email_phone_not_found' => 'E-name, Jimareya Têlefonê ne rast e!',
+    'email_phone_not_found' => 'ژمارە تەلەفون یان ناونیشانی ئیمەیل دروست نیە
+',
 
-    'disable_account' => 'Ma hûn dixwazin hesabê xwe bigirin? Ev operasyon nayê paşve xistin.',
+    'disable_account' => 'دەتەوێت ئەکاونتەکەت دابخەیت ؟ ئەم ئۆپراسیۆنە ناکرێت
+',
 
     // Mail
-    'update_email_mail_subject' => 'E-name hatî nûve kirin!',
-    'update_email_mail_message' => 'E-nameya We Hat Nûvekirin!',
+    'update_email_mail_subject' => '! ئیمەیڵ نوێ کرایەوە
+',
+    'update_email_mail_message' => '! ئیمەیلەکەت نوێ کراوەتەوە
+',
 
     // Register
     'recaptcha_field_is_required' => 'qada reCaptcha pêdivî ye.',

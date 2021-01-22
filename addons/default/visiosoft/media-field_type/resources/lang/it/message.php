@@ -10,4 +10,5 @@ return [
     'uploading' => 'Caricamento',
     'loading' => 'Caricamento in corso',
     'error_upload' => 'Si è verificato un problema durante il caricamento del file.',
+    'error_upload_docs' => 'Non è disponibile alcun supporto per il caricamento dei documenti. Contatta l\'amministratore di sistema!',
 ];

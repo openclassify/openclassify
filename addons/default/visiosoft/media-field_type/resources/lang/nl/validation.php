@@ -2,5 +2,5 @@
 
 return [
     'valid_disk' => 'De geconfigureerde uploadschijf voor: attribuut bestaat niet.',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+	'unsupported' => 'Dit gebied is alleen voor afbeeldingsbestanden. U kunt verschillende bestandstypen toevoegen in het beschrijvingsveld.'
 ];

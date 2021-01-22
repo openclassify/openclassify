@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'Krijo shpejt',
 	'publish' => 'Publikoni',
 	'import' => 'Importit',
+    'new_status' => 'Statusi i Ri',
 ];

@@ -165,6 +165,7 @@ return [
     'edit' => 'Redakto',
     'approve' => 'Miratoj',
     'passive' => "Pasiv",
+	'sold' => 'Shitur',
     'offered_by' => 'Ofrohet nga',
     'more_ads_by' => 'Më Shumë njoftime nga',
     'click_phone' => 'Trego numrin e telefonit',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Informacioni i korporatës',
     'featured_ads' => "Njoftimet e preferuara",
     'trending_ads' => 'Njoftimet në trend',
+    'search_ad_result_prefix' => 'në',
     'search_ads_result_message' => [
         'name' => ':Numëroni njoftime të gjetura për: kërkim të emrit',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
     "continue" => 'Vazhdo',
     "gallery" => 'Galeria',
+    "ad" => 'Ad',
     "ads" => 'Ads',
     "were_found" => 'u gjetën',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Urime',
     'ad_desc' => 'Përshkrimi i reklamës',
     'upload_photos' => 'Ngarko Fotografitë',
+    'upload_files' => 'Ngarko skedarët',
     'additional_fields' => 'Fushat shtesë',
     'ad_location' => 'Vendndodhja e reklamës',
 

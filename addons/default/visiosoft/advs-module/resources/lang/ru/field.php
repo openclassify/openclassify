@@ -165,6 +165,7 @@ return [
     'edit' => 'редактировать',
     'approve' => 'Утвердить',
     'passive' => "пассивный",
+	'sold' => 'Продано',
     'offered_by' => 'Предложено',
     'more_ads_by' => 'Больше объявлений от',
     'click_phone' => 'Показать номер телефона',
@@ -210,6 +211,7 @@ return [
     'corporate_info' => 'Корпоративная информация',
     'featured_ads' => "Избранные объявления",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'на',
     'search_ads_result_message' => [
         'name' => ':      количество объявлений найдено для:поиск по названию',
     ],
@@ -281,6 +283,7 @@ return [
     "no_location" => "Местоположение не выбрано.",
     "continue" => 'Продолжить',
     "gallery" => 'Галерея',
+    "ad" => 'Объявление',
     "ads" => 'Объявления',
     "were_found" => 'были найдены.',
 
@@ -317,6 +320,7 @@ return [
     'congratulations' => 'Поздравления',
     'ad_desc' => 'Описание объявления',
     'upload_photos' => 'Загрузить фотографии',
+    'upload_files' => 'Загрузить файлы',
     'additional_fields' => 'Дополнительные поля',
     'ad_location' => 'Местоположение объявления',
 

@@ -219,4 +219,12 @@ return [
         'name' => 'Tạo màu nút quảng cáo',
         'instructions' => 'Thay đổi nút hiển thị khi quá trình lựa chọn danh mục quảng cáo mới hoàn tất.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher cho trình duyệt',
+        'instructions' => 'Cho phép bạn chọn ngôn ngữ trình duyệt làm ngôn ngữ hoạt động'
+    ],
+    'get_categories' => [
+        'name' => 'NHẬN danh mục',
+        'instructions' => 'Nó đại diện cho các danh mục mà thuộc tính GET sẽ hợp lệ.'
+    ],
 ];

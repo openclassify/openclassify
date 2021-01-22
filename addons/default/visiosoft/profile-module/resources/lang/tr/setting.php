@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Meslek'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Profil Sayfasındaki Kayıt Türünü Gizle',
+        'instructions' => 'Profil düzenleme sayfasındaki kayıt türü alanını gizler.',
+    ],
 ];

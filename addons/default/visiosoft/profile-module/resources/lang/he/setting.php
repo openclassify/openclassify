@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'מִקצוֹעַ'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'הסתר את סוג הרישום בדף הפרופיל',
+        'instructions' => 'מסתיר את שדה סוג הרישום בדף עריכת הפרופיל.',
+    ],
 ];

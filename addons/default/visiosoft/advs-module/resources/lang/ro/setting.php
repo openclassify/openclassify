@@ -219,4 +219,12 @@ return [
         'name' => 'Creați culoarea butonului publicitar',
         'instructions' => 'Schimbă butonul care se afișează la finalizarea selecției noii categorii de anunțuri.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher Pentru browser',
+        'instructions' => 'Vă permite să alegeți limba browserului ca limbă activă'
+    ],
+    'get_categories' => [
+        'name' => 'GET Categorii',
+        'instructions' => 'Reprezintă categoriile în care proprietatea GET va fi validă.'
+    ],
 ];
