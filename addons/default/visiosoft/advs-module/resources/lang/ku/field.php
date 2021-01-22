@@ -282,7 +282,7 @@ return [
     'advs_list_table_thead' => [
         'name' => 'ناوی ڕیکلام
 ',
-        'price' => 'نرخي',
+        'price' => 'نرخ',
         'publish_at' => 'بەرواری ڕیکلام
 ',
         'location_city' => 'شار',
@@ -365,9 +365,9 @@ return [
 ",
     'pending_message_3' => 'کاتی چاوەڕوانیکردنى هەستم پێگەشتووە
 ',
-    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.
+    'pending_message_4' => 'کاتی تەرخانکراو لە پڕۆسەی پەسەندکردندا زیاد دەکرێت
 ',
-    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.
+    'pending_message_5' => 'هیچ ئاڵوگۆڕێک ناکرێت لە ناوەندی بانگەشەوە بۆ ڕێکلامەکە لە پڕۆسەی پەسەندکردندا
 ',
     'hours' => 'سات',
 
