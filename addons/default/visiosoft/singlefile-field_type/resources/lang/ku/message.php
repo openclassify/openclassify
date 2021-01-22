@@ -13,7 +13,8 @@ return [
 ',
     'overwrite' => 'هەر ئێستا بارکراو. حەزدەکەیت بەسەریدا زاڵ بیت ؟
 ',
-    'uploading' => 'بارکردن',
-    'loading' => 'Barkirin',
-    'choose_file_option' => 'Hilbijarka Pelê Hilbijêrin',
+    'uploading' => 'بار دەکەن',
+    'loading' => 'بار دەکەن',
+    'choose_file_option' => 'بژاردەیی فایل هەڵبژێرە
+',
 ];
