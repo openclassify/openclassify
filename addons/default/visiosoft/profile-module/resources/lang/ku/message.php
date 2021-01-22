@@ -56,14 +56,14 @@ return [
 ",
     'can_not_remove_filled_fields' => "! تۆ ناتوانیت کێڵگە پڕکراوەکان لاببەیت
 ",
-    'wrong_password' => "! ئەو وشەی نهێنی کە داخڵ بوویت ڕاست نییە
+    'wrong_password' => "! ئەو وشەی نهێنی کە داخڵ بوویت دروست نییە
 ",
 
     // Forgot Password
     'email_phone_not_found' => 'ژمارە تەلەفون یان ناونیشانی ئیمەیل دروست نیە
 ',
 
-    'disable_account' => 'دەتەوێت ئەکاونتەکەت دابخەیت ؟ ئەم ئۆپراسیۆنە ناکرێت
+    'disable_account' => 'دەتەوێت ئةكاونتەت دابخەیت ؟ ئەم ئۆپراسیۆنە ناکرێت
 ',
 
     // Mail
@@ -73,6 +73,6 @@ return [
 ',
 
     // Register
-    'recaptcha_field_is_required' => 'qada reCaptcha pêdivî ye.',
+    'recaptcha_field_is_required' => 'پێویستە reCaptcha',
     'failed_to_validate_captcha' => 'Captcha nehat pejirandin.',
 ];
