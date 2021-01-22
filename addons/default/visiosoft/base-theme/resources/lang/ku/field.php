@@ -1,8 +1,9 @@
 <?php
 
 return [
-    'latest_ads' => 'Reklamên Dawîn',
-    'show_all' => ' هەموو پیشانبدە',
+    'latest_ads' => 'نوێترین ڕیکلامەکان
+',
+    'show_all' => 'هەموو نیشان بدە',
     'login' => [
         'name' => 'چوونەژوورەوە',
     ],
