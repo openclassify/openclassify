@@ -100,7 +100,7 @@ function selectedValue() {
             } else {
                 $('.category-row').append(CategoryField('cat' + level, level));
                 $.each(callback, function (index, value) {
-                    $('.cat' + level).append("<option value='" + value.id + "'" + selected + ">" + value.name + "</option>");
+                    $('.cat' + level).append("<option value='" + value.id + "'>" + value.name + "</option>");
                 });
             }
             selectedValue().unbind()
