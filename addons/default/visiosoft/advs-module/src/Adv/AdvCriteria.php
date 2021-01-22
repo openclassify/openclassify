@@ -6,11 +6,8 @@ use Anomaly\Streams\Platform\Entry\EntryCriteria;
 use Anomaly\Streams\Platform\Image\Image;
 use Illuminate\Support\Facades\Auth;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\CustomfieldsModule\Cfvalue\CfvalueModel;
-use Visiosoft\CustomfieldsModule\Cfvalue\Contract\CfvalueRepositoryInterface;
 use Visiosoft\RecentlyviewedadsModule\Recently\RecentlyModel;
 use Visiosoft\SubscriptionsModule\User\UserModel;
-use Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface;
 
 class AdvCriteria extends EntryCriteria
 {
