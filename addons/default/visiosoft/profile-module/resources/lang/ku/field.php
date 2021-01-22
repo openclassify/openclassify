@@ -31,7 +31,7 @@ return [
 '
     ],
     'enabled' => [
-        'name' => 'بەکارهێنەر چالاک نیە
+        'name' => 'بەکارهێنەر چالاکیە
 '
     ],
     'country' => [
@@ -292,7 +292,7 @@ return [
 ",
     'fav_searches' => "گەڕانی دڵخوازترین
 ",
-    'posted_on' => "Hat şandin",
+    'posted_on' => "بڵاوکرایەوە",
     'message_details' => "وردەکاری پەیام
 ",
     'adv_no' => 'ژمارەی ڕیکلام
@@ -333,7 +333,7 @@ return [
         'name' => 'بابەت',
     ],
     'price' => [
-        'name' => 'نرخي',
+        'name' => 'نرخ',
     ],
     'piece' => [
         'name' => 'پارچە',
@@ -500,7 +500,7 @@ return [
         'name' => 'شه‌خسی',
     ],
     'corporate' => [
-        'name' => 'شریکه‌',
+        'name' => 'کۆمپانیا',
     ],
 
     'details' => [
