@@ -19,7 +19,7 @@ return [
     'password' => 'وشەی نهێنی',
     'first_name' => 'ناوی یەکەم
 ',
-    'last_name' => 'ناوی باپیر',
+    'last_name' => 'پاشناو',
     'remember_me' => 'بیره بۆ من
 ',
     'not_a_member_yet' => 'تۆ ئەندام نیت هێشتا
