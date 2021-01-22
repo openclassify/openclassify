@@ -423,7 +423,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
-    public function countByCat($catID, $level = 1)
+    public function getAdsCountByCategory($catID, $level = 1)
     {
         return DB::table('advs_advs')
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))

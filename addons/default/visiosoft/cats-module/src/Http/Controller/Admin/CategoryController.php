@@ -1,13 +1,11 @@
 <?php namespace Visiosoft\CatsModule\Http\Controller\Admin;
 
-use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
-use DateTime;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Str;
-use Visiosoft\AdvsModule\Adv\Event\CreatedCategory;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Command\CalculateAdsCount;
+use Visiosoft\CatsModule\Category\Command\CalculateCategoryLevel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
 use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
@@ -35,7 +33,6 @@ class CategoryController extends AdminController
     public function index(CategoryTableBuilder $table, Request $request)
     {
         if ($this->request->action == "delete") {
-            $CategoriesModel = new CategoryModel();
             foreach ($this->request->id as $item) {
                 //Todo Delete sub Categories
             }
@@ -121,22 +118,26 @@ class CategoryController extends AdminController
                     'seo_keyword' => $all['seo_keyword'],
                     'seo_description' => $all['seo_description'],
                 ]));
+
+
+                $this->dispatch(new CalculateCategoryLevel($category->id));
+
             } else {
                 for ($i = 0; $i < count($isMultiCat[0]); $i++) {
                     foreach ($isMultiCat as $cat) {
                         $translatableEntries = array_merge($translatableEntries, $cat[$i]);
                     }
-                    $this->categoryRepository->create(array_merge($translatableEntries, [
+                    $category = $this->categoryRepository->create(array_merge($translatableEntries, [
                         'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
                         'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
                         'icon' => $all['icon'],
                         'seo_keyword' => $all['seo_keyword'],
                         'seo_description' => $all['seo_description'],
                     ]));
+
+                    $this->dispatch(new CalculateCategoryLevel($category->id));
                 }
             };
-
-            $this->catLevelCalc();
 
 //            $this->categoryRepository->create(array_merge($translatableEntries, [
 //                'slug' => $all['slug'],
@@ -214,54 +215,21 @@ class CategoryController extends AdminController
         }
         return redirect('admin/cats')->with('success', [$deletedCatsCount . ' categories has been deleted.']);
     }
-    public function adCountCalc(AdvRepositoryInterface $advRepository)
-    {
-        $date = new DateTime;
-        $date2 = new DateTime;
-        $date->modify('-30 minutes');
-        $formatted_date = $date->format('Y-m-d H:i:s');
 
-        $result = DB::table('cats_category')
-                        ->select('id','level')
-                        ->where('count_at','<',$formatted_date)
-                        ->orWhereNull('count_at')
-                        ->get();
-        foreach ($result as $key => $data) {
-            $id = $data->id;
-            $level = $data->level;
-            if(!empty($level)) {
-                $count = $advRepository->countByCat($id, $level);
-                DB::table('cats_category')->where('id',$id)->update(array(
-                    'count'=>$count,
-                    'count_at'=>$date2,
-                ));
-            }
-        }
+    public function adCountCalc()
+    {
+        $this->dispatch(new CalculateAdsCount());
+
+        $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.cats::addon.title')]));
+        return redirect('admin/cats');
     }
+
     public function catLevelCalc()
     {
-        $date = new DateTime;
-        $date2 = new DateTime;
-        $date->modify('-30 minutes');
-        $formatted_date = $date->format('Y-m-d H:i:s');
+        $this->dispatch(new CalculateCategoryLevel());
 
-        $result = DB::table('cats_category')
-                        ->select('id')
-                        ->where('level_at','<',$formatted_date)
-                        ->where('level','=',0)
-                        ->orWhereNull('level_at')
-                        ->get();
-        foreach ($result as $key => $data) {
-            $id = $data->id;
-            $category_repository = app(CategoryRepositoryInterface::class);
-            $level = $category_repository->getLevelById($id);
-
-            DB::table('cats_category')->where('id',$id)->update(array(
-               'level'=>$level,
-               'level_at'=>$date2,
-            ));
-        }
-        return redirect('admin/cats')->with('success', ['Updated']);
+        $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.cats::addon.title')]));
+        return redirect('admin/cats');
     }
 
 }

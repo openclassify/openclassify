@@ -29,7 +29,6 @@ use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
-use Visiosoft\CloudinaryModule\Video\VideoModel;
 use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
@@ -529,17 +528,7 @@ class AdvsController extends PublicController
                 $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
             }
 
-            //Cloudinary Module
             $adv->video_url = null;
-            if ($this->adv_model->is_enabled('cloudinary')) {
-
-                $CloudinaryModel = new VideoModel();
-                $Cloudinary = $CloudinaryModel->getVideo($id);
-
-                if (count($Cloudinary->get()) > 0) {
-                    $adv->video_url = $Cloudinary->first()->toArray()['url'];
-                }
-            }
 
             $options = $this->optionRepository->findAllBy('adv_id', $id);
 
@@ -714,7 +703,7 @@ class AdvsController extends PublicController
         if ($isActive->is_enabled('customfields')) {
             $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->create($categories);
         }
-        //Cloudinary Module
+
         return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact(
             'request', 'formBuilder', 'cats_d', 'custom_fields'));
     }
@@ -786,18 +775,6 @@ class AdvsController extends PublicController
 
             $adv->is_get_adv = ($this->request->is_get_adv and $get_categories_status) ? true : false;
             $adv->save();
-
-
-            //Todo Move To Module
-            //Cloudinary Module
-            if (is_module_installed('visiosoft.module.cloudinary')) {
-                $CloudinaryModel = new VideoModel();
-                $CloudinaryModel->updateRequest($this->request);
-
-                if ($this->request->url != "") {
-                    $adv->save();
-                }
-            }
 
 
             //Todo Create Event
@@ -938,18 +915,6 @@ class AdvsController extends PublicController
 
         $options = $this->optionRepository->findAllBy('adv_id', $id);
 
-        //Cloudinary Module
-        $Cloudinary = null;
-        $isActiveCloudinary = $this->adv_model->is_enabled('cloudinary');
-        if ($isActiveCloudinary) {
-            $CloudinaryModel = new VideoModel();
-            $Cloudinary = $CloudinaryModel->getVideo($id)->get();
-
-            if (count($Cloudinary) > 0) {
-                $Cloudinary = $Cloudinary->first()->toArray();
-            }
-        }
-
         $categories = array_keys($cats);
 
         $custom_fields = array();
@@ -960,7 +925,7 @@ class AdvsController extends PublicController
 
         return $this->view->make(
             'visiosoft.module.advs::new-ad/new-create',
-            compact('id', 'cats_d', 'cats', 'Cloudinary', 'adv', 'custom_fields', 'options')
+            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options')
         );
     }
 

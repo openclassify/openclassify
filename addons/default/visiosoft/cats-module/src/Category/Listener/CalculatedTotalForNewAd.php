@@ -1,10 +1,13 @@
 <?php namespace Visiosoft\CatsModule\Category\Listener;
 
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
+use Visiosoft\CatsModule\Category\Command\CalculateAdsCount;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 
 class CalculatedTotalForNewAd
 {
+    use DispatchesJobs;
     protected $categoryRepository;
 
     public function __construct(CategoryRepositoryInterface $categoryRepository)
@@ -26,11 +29,7 @@ class CalculatedTotalForNewAd
         $category_fields = array_filter($category_fields);
 
         foreach ($category_fields as $category_id) {
-            if ($category = $this->categoryRepository->find($category_id)) {
-                $category->setAttribute('count', $category->count + 1);
-                $category->setAttribute('count_at', now());
-                $category->save();
-            }
+            $this->dispatch(new CalculateAdsCount($category_id));
         }
     }
 }

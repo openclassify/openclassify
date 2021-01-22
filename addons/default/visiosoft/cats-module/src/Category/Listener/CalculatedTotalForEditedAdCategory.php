@@ -1,11 +1,14 @@
 <?php namespace Visiosoft\CatsModule\Category\Listener;
 
-use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
+use Visiosoft\CatsModule\Category\Command\CalculateAdsCount;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 
 class CalculatedTotalForEditedAdCategory
 {
+    use DispatchesJobs;
+
     protected $categoryRepository;
 
     public function __construct(CategoryRepositoryInterface $categoryRepository)
@@ -38,20 +41,12 @@ class CalculatedTotalForEditedAdCategory
 
         //Update previous category Count
         foreach ($category_fields_old as $category_id) {
-            if ($category = $this->categoryRepository->find($category_id)) {
-                $category->setAttribute('count', $category->count - 1);
-                $category->setAttribute('count_at', now());
-                $category->save();
-            }
+            $this->dispatch(new CalculateAdsCount($category_id));
         }
 
         //Update New Category Count
         foreach ($category_fields_new as $category_id) {
-            if ($category = $this->categoryRepository->find($category_id)) {
-                $category->setAttribute('count', $category->count + 1);
-                $category->setAttribute('count_at', now());
-                $category->save();
-            }
+            $this->dispatch(new CalculateAdsCount($category_id));
         }
     }
 }
