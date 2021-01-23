@@ -2,13 +2,13 @@
 
 return [
     'advs' => [
-        'name' => 'Advs',
+        'name' => 'ڕیکلامەکان',
     ],
     'categories' => [
-        'name' => 'Kategorî',
+        'name' => 'کەتێگۆریکان',
     ],
     'village' => [
-        'name' => 'Gûnd',
+        'name' => 'گوند',
     ],
     'custom_fields' => [
         'name' => 'Zeviyên xwerû',
