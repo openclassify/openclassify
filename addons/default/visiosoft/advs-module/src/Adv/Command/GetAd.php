@@ -27,7 +27,7 @@ class GetAd
     public function handle(AdvRepositoryInterface $groups)
     {
         if ($this->id) {
-            return $groups->findById($this->id);
+            return $groups->find($this->id);
         }
         return null;
     }

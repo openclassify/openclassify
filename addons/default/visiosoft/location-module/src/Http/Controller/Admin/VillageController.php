@@ -1,20 +1,21 @@
 <?php namespace Visiosoft\LocationModule\Http\Controller\Admin;
 
 use Illuminate\Http\Request;
+use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\Form\VillageFormBuilder;
 use Visiosoft\LocationModule\Village\Table\VillageTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
-use Visiosoft\LocationModule\Village\VillageModel;
 
 class VillageController extends AdminController
 {
     public function index(VillageTableBuilder $table, Request $request)
     {
-        $villages = new VillageModel();
+        $villages = app(VillageRepositoryInterface::class);
+
         if(!isset($request->neighborhood) || $request->neighborhood==""){
             return $table->render();
         }else{
-            $villages = $villages->getSubVillages($request->neighborhood);
+            $villages = $villages->getVillagesByNeighborhoodId($request->neighborhood);
             if (count($villages) == 0) {
                 $this->messages->error('Selected neighborhood has no related village.');
                 return back();

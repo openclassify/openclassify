@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\LocationModule\Http\Controller\Admin;
 
-use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\Form\CountryFormBuilder;
 use Visiosoft\LocationModule\Country\Table\CountryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
@@ -16,13 +15,6 @@ class CountriesController extends AdminController
      */
     public function index(CountryTableBuilder $table)
     {
-        if($this->request->action == "delete") {
-            $city = new CityModel();
-            foreach ($this->request->id as $item)
-            {
-                $city->deleteCitiesByCountry($item);
-            }
-        }
         return $table->render();
     }
 

@@ -145,7 +145,7 @@ class AdvsController extends PublicController
 
         $param = $this->requestHttp->toArray();
 
-        $countries = $this->country_repository->viewAll();
+        $countries = $this->country_repository->newQuery()->get();
 
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
 

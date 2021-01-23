@@ -31,11 +31,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $this->folderRepository = $folderRepository;
     }
 
-    public function findById($id)
-    {
-        return $this->model->orderBy('created_at', 'DESC')->where('advs_advs.id', $id)->first();
-    }
-
     public function searchAdvs(
         $type, $param = null, $customParameters = [],
         $limit = null, $category = null, $city = null, $paginate = true

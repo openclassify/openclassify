@@ -46,4 +46,12 @@ class NeighborhoodRepository extends EntryRepository implements NeighborhoodRepo
             ->orderBy($orderBy, $direction)
             ->get();
     }
+
+    public function getNeighborhoodsByDistrictId($district)
+    {
+        return $this->newQuery()
+            ->where('parent_district_id', $district)
+            ->orderBy('order', 'ASC')
+            ->get();
+    }
 }

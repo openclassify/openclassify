@@ -30,11 +30,6 @@ class CityRepository extends EntryRepository implements CityRepositoryInterface
         $this->citiesEntryTranslationsModel = $citiesEntryTranslationsModel;
     }
 
-    public function findById($id)
-    {
-        return $this->model->orderBy('created_at', 'DESC')->where('location_cities.id', $id)->first();
-    }
-
     public function getByEntryIDsAndOrderByTransCol($entryIDs, $orderBy, $direction = 'asc')
     {
         return $this->citiesEntryTranslationsModel->newQuery()
@@ -46,6 +41,13 @@ class CityRepository extends EntryRepository implements CityRepositoryInterface
             ])
             ->whereIn('entry_id', $entryIDs)
             ->orderBy($orderBy, $direction)
+            ->get();
+    }
+
+    public function getCitiesByCountryId($country_id) {
+        return $this->newQuery()
+            ->where('parent_country_id', $country_id)
+            ->orderBy('order','ASC')
             ->get();
     }
 }

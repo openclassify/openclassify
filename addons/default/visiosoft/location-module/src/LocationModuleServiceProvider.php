@@ -8,10 +8,14 @@ use Anomaly\Streams\Platform\Model\Location\LocationVillageEntryModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
 use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
+use Visiosoft\LocationModule\City\Events\DeletedCities;
+use Visiosoft\LocationModule\Country\Events\DeletedCountry;
 use Visiosoft\LocationModule\District\Contract\DistrictRepositoryInterface;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\District\DistrictRepository;
+use Visiosoft\LocationModule\District\Events\DeletedDistricts;
 use Visiosoft\LocationModule\Neighborhood\Contract\NeighborhoodRepositoryInterface;
+use Visiosoft\LocationModule\Neighborhood\Events\DeletedNeighborhoods;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodRepository;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
@@ -84,5 +88,20 @@ class LocationModuleServiceProvider extends AddonServiceProvider
         NeighborhoodRepositoryInterface::class => NeighborhoodRepository::class,
         VillageRepositoryInterface::class => VillageRepository::class,
         CountryRepositoryInterface::class => CountryRepository::class,
+    ];
+
+    protected $listeners = [
+        DeletedCountry::class => [
+            \Visiosoft\LocationModule\City\Listeners\DeletedCountry::class,
+        ],
+        DeletedCities::class => [
+            \Visiosoft\LocationModule\District\Listeners\DeletedCities::class,
+        ],
+        DeletedDistricts::class => [
+            \Visiosoft\LocationModule\Neighborhood\Listeners\DeletedDistricts::class,
+        ],
+        DeletedNeighborhoods::class => [
+            \Visiosoft\LocationModule\Village\Listeners\DeletedNeighborhoods::class
+        ],
     ];
 }

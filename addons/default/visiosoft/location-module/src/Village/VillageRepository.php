@@ -46,4 +46,9 @@ class VillageRepository extends EntryRepository implements VillageRepositoryInte
             ->orderBy($orderBy, $direction)
             ->get();
     }
+
+    public function getVillagesByNeighborhoodId($neighborhood)
+    {
+        return $this->newQuery()->where('parent_neighborhood_id', $neighborhood)->orderBy('order','ASC')->get();
+    }
 }
