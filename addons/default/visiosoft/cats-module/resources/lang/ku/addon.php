@@ -1,7 +1,8 @@
 <?php
 
 return [
-    'title'       => 'Liq',
-    'name'        => 'Kategorî Module',
+    'title'       => 'کەتێگۆری',
+    'name'        => 'مۆدیلی کەتێگۆری
+',
     'description' => ''
 ];
