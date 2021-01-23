@@ -1,6 +1,6 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Event;
 
-class ChangedStatusAd
+class DeletedAd
 {
     private $ad;
 

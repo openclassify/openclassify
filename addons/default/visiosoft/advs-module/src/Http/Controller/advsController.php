@@ -957,7 +957,9 @@ class AdvsController extends PublicController
         }
 
         $this->adv_model->statusAds($id, $type);
+
         event(new ChangedStatusAd($ad));//Create Notify
+
         if ($type === 'approved') {
             $message = trans('visiosoft.module.advs::message.approve_status_change');
         } elseif ($type === 'sold') {

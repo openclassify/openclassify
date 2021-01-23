@@ -25,9 +25,7 @@ class CalculateAdsCount
         $query = DB::table('cats_category')
             ->select('id', 'level');
 
-        if ($this->category_id) {
-            $category = $query->where('id', $this->category_id)->first();
-
+        if ($this->category_id and $category = $query->where('id', $this->category_id)->first()) {
             $this->calculateCategory($category->id, $category->level);
         } else {
             $result = $query->where('count_at', '<', $formatted_date)

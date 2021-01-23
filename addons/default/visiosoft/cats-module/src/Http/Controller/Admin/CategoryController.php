@@ -1,8 +1,13 @@
 <?php namespace Visiosoft\CatsModule\Http\Controller\Admin;
 
+use Anomaly\FilesModule\File\FileSanitizer;
+use Anomaly\FilesModule\File\FileUploader;
+use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
+use League\Flysystem\MountManager;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Command\CalculateAdsCount;
 use Visiosoft\CatsModule\Category\Command\CalculateCategoryLevel;
@@ -54,9 +59,11 @@ class CategoryController extends AdminController
         return $table->render();
     }
 
-    public function create(CategoryFormBuilder $form, Request $request)
+    public function create(FileUploader $uploader, FolderRepositoryInterface $folderRepository, MountManager $manager)
     {
         if ($this->request->action == "save") {
+
+
             $all = $this->request->all();
             $id = $all['parent_category'];
             $parent_id = $all['parent_category'];
@@ -114,13 +121,13 @@ class CategoryController extends AdminController
                 $category = $this->categoryRepository->create(array_merge($translatableEntries, [
                     'slug' => $all['slug'],
                     'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
-                    'icon' => $all['icon'],
                     'seo_keyword' => $all['seo_keyword'],
                     'seo_description' => $all['seo_description'],
                 ]));
 
+                $this->createIconFile($category->getId());
 
-                $this->dispatch(new CalculateCategoryLevel($category->id));
+                $this->dispatch(new CalculateCategoryLevel($category->getId()));
 
             } else {
                 for ($i = 0; $i < count($isMultiCat[0]); $i++) {
@@ -130,12 +137,13 @@ class CategoryController extends AdminController
                     $category = $this->categoryRepository->create(array_merge($translatableEntries, [
                         'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
                         'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
-                        'icon' => $all['icon'],
                         'seo_keyword' => $all['seo_keyword'],
                         'seo_description' => $all['seo_description'],
                     ]));
 
-                    $this->dispatch(new CalculateCategoryLevel($category->id));
+                    $this->createIconFile($category->getId());
+
+                    $this->dispatch(new CalculateCategoryLevel($category->getId()));
                 }
             };
 
@@ -177,6 +185,9 @@ class CategoryController extends AdminController
             if ($form->hasFormErrors()) {
                 return $this->redirect->back();
             }
+
+            $this->createIconFile($id);
+
             $parent = $request->parent_category;
             if ($parent != "") {
                 return $this->redirect->to('/admin/cats?cat=' . $parent);
@@ -230,6 +241,26 @@ class CategoryController extends AdminController
 
         $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.cats::addon.title')]));
         return redirect('admin/cats');
+    }
+
+    public function createIconFile($category_id)
+    {
+        $folderRepository = app(FolderRepositoryInterface::class);
+        $manager = app(MountManager::class);
+
+        if ($file = $this->request->file('icon') and $folder = $folderRepository->findBySlug('category_icon')) {
+
+            $type = explode('.', $file->getClientOriginalName());
+            $type = end($type);
+
+            $file_location = $folder->getDisk()->getSlug() . '://' . $folder->getSlug() . '/' . FileSanitizer::clean($category_id . "." . $type);
+
+            if (Storage::exists($file_location)) {
+                Storage::delete($file_location);
+            }
+
+            $manager->put($file_location, file_get_contents($file->getRealPath()));
+        }
     }
 
 }

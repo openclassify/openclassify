@@ -1,6 +1,6 @@
 {{ asset_add("scripts.js", "streams::js/table/table.js") }}
 
-{% if not actions.empty() %}
+{% if not actions.isEmpty() %}
     {{ asset_add("scripts.js", "streams::js/table/actions.js") }}
 {% endif %}
 
@@ -9,70 +9,71 @@
 {% endif %}
 
 <div class="{{ table.options.container_class ?: 'container-fluid' }}">
-    {{ view("streams::table/partials/filters", {'table': table}) }}
 
-    <div class="card card-custom gutter-b table-responsive">
-        <div class="card-body pb-0">
-            {{ view("streams::table/partials/views", {'table': table}) }}
-            {{ view(table.options.heading ?: "streams::table/partials/heading", {'table': table}) }}
-        </div>
-        <div class="card-body pb-0">
-            {% if app.request.get('cat') != null %}
-                <ol class="breadcrumb">
-                    {% for parent in category_parents_name(app.request.get('cat'))|reverse %}
-                        <li class="breadcrumb-item"><b>{{ parent.name }}</b></li>
-                    {% endfor %}
-                </ol>
-                <div id="buttons">
-                    {% set parent = category_detail(app.request.get('cat')) %}
-                    {% if parent.parent_category is null %}
-                        {% set parent_url = url('admin/cats') %}
-                    {% else %}
-                        {% set parent_url = url('admin/cats?cat='~parent.parent_category_id) %}
-                    {% endif %}
-                    <a class="btn btn-md btn-warning " href="{{ parent_url }}">
-                        <i class="fa fa-arrow-left"></i> {{ trans('module::field.go_to_parent') }}
-                    </a>
-                </div>
-            {% endif %}
-        </div>
-        <div class="card-body">
-            {% if count(table.rows) %}
-                {% block card %}
-                    {{ form_open({ 'url': url_full() }) }}
-                    <div class="table-stack">
-                        <table
-                                class="
+    {{ view("streams::table/partials/filters", {'table': table}) }}
+    {{ view("streams::table/partials/views", {'table': table}) }}
+
+    {{ view(table.options.heading ?: "streams::table/partials/heading", {'table': table}) }}
+
+    <div class="card-body pb-0">
+        {% if app.request.get('cat') != null %}
+            <ol class="breadcrumb">
+                {% for parent in category_parents_name(app.request.get('cat'))|reverse %}
+                    <li class="breadcrumb-item"><b>{{ parent.name }}</b></li>
+                {% endfor %}
+            </ol>
+            <div id="buttons">
+                {% set parent = category_detail(app.request.get('cat')) %}
+                {% if parent.parent_category is null %}
+                    {% set parent_url = url('admin/cats') %}
+                {% else %}
+                    {% set parent_url = url('admin/cats?cat='~parent.parent_category_id) %}
+                {% endif %}
+                <a class="btn btn-md btn-warning " href="{{ parent_url }}">
+                    <i class="fa fa-arrow-left"></i> {{ trans('module::field.go_to_parent') }}
+                </a>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if not table.rows.isEmpty() %}
+        {% block card %}
+            <div class="card">
+
+                {{ form_open({ 'url': table.options.url ?: url_full() }) }}
+                <div class="table-stack">
+                    <table
+                            class="
                                 {{ table.options.class ?: 'table' }}
                                 {{ table.options.sortable ? 'table--sortable' }}
                                 "
-                                {{ table.options.sortable ? 'data-sortable' }}
-                                {{ html_attributes(table.options.attributes) }}>
+                            {{ table.options.sortable ? 'data-sortable' }}
+                            {{ html_attributes(table.options.attributes) }}>
 
-                            {{ view("streams::table/partials/header", {'table': table}) }}
+                        {{ view("streams::table/partials/header", {'table': table}) }}
 
-                            {% block body %}
-                                {{ view("streams::table/partials/body", {'table': table}) }}
-                            {% endblock %}
+                        {% block body %}
+                            {{ view("streams::table/partials/body", {'table': table}) }}
+                        {% endblock %}
 
-                            {{ view("streams::table/partials/footer", {'table': table}) }}
+                        {{ view("streams::table/partials/footer", {'table': table}) }}
 
-                        </table>
-                    </div>
-                    {{ form_close() }}
-                {% endblock %}
-            {% else %}
+                    </table>
+                </div>
+                {{ form_close() }}
 
-                {% block no_results %}
-                    <div class="card">
-                        <div class="card-block card-body">
-                            {{ trans(table.options.get('no_results_message', 'streams::message.no_results')) }}
-                        </div>
-                    </div>
-                {% endblock %}
+            </div>
+        {% endblock %}
+    {% else %}
 
-            {% endif %}
-        </div>
-    </div>
+        {% block no_results %}
+            <div class="card">
+                <div class="card-block card-body">
+                    {{ trans(table.options.get('no_results_message', 'streams::message.no_results')) }}
+                </div>
+            </div>
+        {% endblock %}
+
+    {% endif %}
 
 </div>

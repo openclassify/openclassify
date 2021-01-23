@@ -1,10 +1,10 @@
 <?php namespace Visiosoft\CatsModule\Category\Listener;
 
-use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
+use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Listener\Traits\CalculateAdTrait;
 
-class CalculatedTotalForNewAd
+class CalculatedTotalForChangedAdStatus
 {
     use CalculateAdTrait;
 
@@ -15,7 +15,7 @@ class CalculatedTotalForNewAd
         return $this->categoryRepository = $categoryRepository;
     }
 
-    public function handle(CreatedAd $event)
+    public function handle(ChangedStatusAd $event)
     {
         $ad_detail = $event->getAdDetail()->toArray();
 
