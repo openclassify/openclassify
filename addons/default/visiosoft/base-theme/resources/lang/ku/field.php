@@ -56,7 +56,7 @@ return [
 
     // Login page
     'or' => 'یان',
-    'login_with_phone_number' => 'بە ژمارە مۆبایلەوە بچۆ ژوورەوە
+    'login_with_phone_number' => 'بە ژمارە تەلەفۆنەوە بچۆ ژوورەوە
 ',
     'login_with_email_address' => 'بە ناونیشانی ئیمەیل بچۆ ژوورەوە
 ',
