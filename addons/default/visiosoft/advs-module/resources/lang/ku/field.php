@@ -403,7 +403,7 @@ return [
     // New create page
     'options' => 'بژاردەکان
 ',
-    'category_selection' => 'هەڵبژاردنەکانی کەتێگۆری
+    'category_selection' => 'هەڵبژاردنی کەتێگۆری
 ',
     'listing_details' => 'وردەکاریەکانی لیستکردن
 ',
