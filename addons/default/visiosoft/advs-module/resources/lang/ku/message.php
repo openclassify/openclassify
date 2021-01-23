@@ -7,7 +7,7 @@ return [
 ',
     'bank_account_info' => 'زانیاری هەژماری بانک
 ',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.
+    'agreement' => 'بە کرتە کردنی یلا لە مەرجی بەکارهێنان و سیاسەتی تایبەت بە ئێمە ڕازیت کە خاوەنی ڕاستەقینەی ئەم بەرهەمەیت
 
 ',
     'update_category_msg' => 'کەتێگۆریی ڕیکلام نوێ دەکرێتەوە
