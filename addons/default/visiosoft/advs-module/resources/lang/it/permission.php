@@ -97,4 +97,12 @@ return [
             'delete' => 'Può eliminare la configurazione delle opzioni?',
         ],
     ],
+    'status' => [
+        'name'   => 'Stato',
+        'option' => [
+            'read'   => 'Può leggere lo stato?',
+            'write'  => 'Può creare / modificare lo stato?',
+            'delete' => 'Può eliminare lo stato?',
+        ],
+    ],
 ];

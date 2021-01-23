@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'إنشاء سريع',
 	'publish' => 'ينشر',
 	'import' => 'استيراد',
+    'new_status' => 'حالة جديدة',
 ];

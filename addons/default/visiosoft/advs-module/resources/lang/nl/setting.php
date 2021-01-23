@@ -219,4 +219,12 @@ return [
         'name' => 'Kleur van advertentieknop maken',
         'instructions' => 'Wijzigt de knop die wordt weergegeven wanneer de selectie van de nieuwe advertentiecategorie is voltooid.'
     ],
+    'lang_switcher_for_browser' => [
+        'name' => 'Lang Switcher voor browser',
+        'instructions' => 'Hiermee kunt u de browsertaal als actieve taal kiezen'
+    ],
+    'get_categories' => [
+        'name' => 'GET Categorieën',
+        'instructions' => 'Het vertegenwoordigt de categorieën waarin de eigenschap GET geldig zal zijn.'
+    ],
 ];

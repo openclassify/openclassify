@@ -165,6 +165,7 @@ return [
     'edit' => 'Redigera',
     'approve' => 'Godkänna',
     'passive' => "Passiv",
+	'sold' => 'Såld',
     'offered_by' => 'Erbjuds av',
     'more_ads_by' => 'Fler annonser av',
     'click_phone' => 'Visa telefonnummer',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Företagsinfo',
     'featured_ads' => "Utvalda annonser",
     'trending_ads' => 'Trendind-annonser',
+    'search_ad_result_prefix' => 'på',
     'search_ads_result_message' => [
         'name' => ': räkna annonser som hittades för: namnsökning',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "Ingen plats har valts.",
     "continue" => 'Fortsätta',
     "gallery" => 'Galleri',
+    "ad" => 'Annons',
     "ads" => 'annonser',
     "were_found" => 'hittades.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'Grattis',
     'ad_desc' => 'Annonsbeskrivning',
     'upload_photos' => 'Ladda upp foton',
+    'upload_files' => 'Ladda upp filer',
     'additional_fields' => 'Ytterligare fält',
     'ad_location' => 'Annonsplats',
 

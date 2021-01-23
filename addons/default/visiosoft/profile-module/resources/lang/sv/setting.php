@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Yrke'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Dölj registertyp i profilsidan',
+        'instructions' => 'Döljer registertypfältet i profilredigeringssidan.',
+    ],
 ];

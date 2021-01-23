@@ -43,4 +43,5 @@ return [
 	'fast_create' => '빠른 생성',
 	'publish' => '게시',
 	'import' => '수입',
+    'new_status' => '새로운 상태',
 ];

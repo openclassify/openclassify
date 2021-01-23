@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Beruf'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Registertyp in Profilseite ausblenden',
+        'instructions' => 'Blendet das Registertypfeld auf der Profilbearbeitungsseite aus.',
+    ],
 ];

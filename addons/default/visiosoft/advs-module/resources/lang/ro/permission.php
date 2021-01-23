@@ -97,4 +97,12 @@ return [
             'delete' => 'Poate șterge configurația opțiunii?',
         ],
     ],
+    'status' => [
+        'name'   => 'stare',
+        'option' => [
+            'read'   => 'Poate citi statutul?',
+            'write'  => 'Poate crea / edita starea?',
+            'delete' => 'Poate șterge starea?',
+        ],
+    ],
 ];

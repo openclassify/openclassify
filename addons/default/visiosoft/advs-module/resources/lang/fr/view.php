@@ -2,4 +2,5 @@
 
 return [
     'unfinished' => 'Inachevé',
+    'advanced' => 'Avancée',
 ];

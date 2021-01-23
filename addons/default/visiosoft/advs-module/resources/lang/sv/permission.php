@@ -97,4 +97,12 @@ return [
             'delete' => 'Kan radera alternativkonfiguration?',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Kan läsa status?',
+            'write'  => 'Kan du skapa / redigera status?',
+            'delete' => 'Kan radera status?',
+        ],
+    ],
 ];

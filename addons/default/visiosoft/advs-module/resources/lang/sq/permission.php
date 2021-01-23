@@ -97,4 +97,12 @@ return [
             'delete' => 'A mund të fshihet konfigurimi i opsionit?',
         ],
     ],
+    'status' => [
+        'name'   => 'Statusi',
+        'option' => [
+            'read'   => 'A mund ta lexoni statusin?',
+            'write'  => 'A mund të krijojë / modifikojë statusin?',
+            'delete' => 'Mund ta fshini statusin?',
+        ],
+    ],
 ];

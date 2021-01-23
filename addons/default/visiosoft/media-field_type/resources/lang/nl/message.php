@@ -10,4 +10,5 @@ return [
     'uploading' => 'Uploaden',
     'loading' => 'Bezig met laden',
     'error_upload' => 'Er is een probleem opgetreden bij het uploaden van het bestand.',
+    'error_upload_docs' => 'Er is geen ondersteuning voor het uploaden van documenten. Neem contact op met uw systeembeheerder!',
 ];

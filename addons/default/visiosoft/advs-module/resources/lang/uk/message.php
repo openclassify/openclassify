@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Це оголошення вже не діє!",
     'approve_status_change' => "Статус вашої реклами встановлено активним!",
     'passive_status_change' => "Статус вашої реклами встановлено пасивним!",
+	'sold_status_change' => "Статус вашої реклами продано!",
 ];

@@ -165,6 +165,7 @@ return [
     'edit' => 'Edytować',
     'approve' => 'Zatwierdzać',
     'passive' => "Bierny",
+	'sold' => 'Sprzedany',
     'offered_by' => 'Oferowane przez',
     'more_ads_by' => 'Więcej reklam autorstwa',
     'click_phone' => 'Pokaż numer telefonu',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Informacje o firmie',
     'featured_ads' => "Polecane reklamy",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'na',
     'search_ads_result_message' => [
         'name' => ': liczba znalezionych reklam dla: wyszukiwania nazw',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "Nie wybrano lokalizacji.",
     "continue" => 'Kontyntynuj',
     "gallery" => 'Galeria',
+    "ad" => 'Ogłoszenie',
     "ads" => 'Reklamy',
     "were_found" => 'zostały znalezione.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'Gratulacje',
     'ad_desc' => 'opis reklamy',
     'upload_photos' => 'Załadować zdjęcia',
+    'upload_files' => 'Prześlij pliki',
     'additional_fields' => 'Dodatkowe pola',
     'ad_location' => 'Lokalizacja reklamy',
 

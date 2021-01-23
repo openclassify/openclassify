@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "هذا الإعلان غير صالح بعد الآن!",
     'approve_status_change' => "تم تعيين حالة إعلانك على نشطة!",
     'passive_status_change' => "تم تعيين حالة إعلانك على سلبية!",
+	'sold_status_change' => "تم تعيين حالة إعلانك على البيع!",
 ];

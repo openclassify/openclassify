@@ -165,6 +165,7 @@ return [
     'edit' => 'Editați | ×',
     'approve' => 'Aproba',
     'passive' => "Pasiv",
+	'sold' => 'Vândut',
     'offered_by' => 'Oferit de',
     'more_ads_by' => 'Mai multe reclame de',
     'click_phone' => 'Afișează numărul de telefon',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'Informații corporative',
     'featured_ads' => "Anunțuri recomandate",
     'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'pe',
     'search_ads_result_message' => [
         'name' => ': numără anunțuri găsite pentru: căutare nume',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
     "gallery" => 'Galerie',
+    "ad" => 'Anunț',
     "ads" => 'Reclame',
     "were_found" => 'au fost găsite.',
 
@@ -316,6 +319,7 @@ return [
     'congratulations' => 'Felicitări',
     'ad_desc' => 'Descrierea anunțului',
     'upload_photos' => 'Încarcă fotografii',
+    'upload_files' => 'Încărca fișiere',
     'additional_fields' => 'Câmpuri suplimentare',
     'ad_location' => 'Locația anunțului',
 

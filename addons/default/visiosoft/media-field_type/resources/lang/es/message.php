@@ -10,4 +10,5 @@ return [
     'uploading' => 'Cargando',
     'loading' => 'Cargando',
     'error_upload' => 'Hubo un problema al cargar el archivo.',
+    'error_upload_docs' => 'No hay soporte para cargar documentos. ¡Por favor, póngase en contacto con el administrador del sistema!',
 ];

@@ -13,8 +13,8 @@ return [
         'name'   => 'Un vestito',
         'option' => [
             'read'   => 'Sai leggere l\\'indirizzo?        ',
-            'write'  => 'È possibile creare / modificare l\\'indirizzo?        ',
-            'delete' => 'È possibile eliminare l\\'indirizzo?',
+            'write'  => 'Può creare / modificare l\'istruzione?',
+            'delete' => 'Può eliminare l\'istruzione?',
         ],
     ],
     'education' => [

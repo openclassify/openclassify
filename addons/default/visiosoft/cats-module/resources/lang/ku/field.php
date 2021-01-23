@@ -2,20 +2,22 @@
 
 return [
     'name' => [
-        'name' => 'Nav',
-        'instructions' => 'Ew navê kategoriya sereke ye ku hûn ê diyar bikin. Ew dihêle bikarhêner bi hêsanî hilbera ku lê digerin bibîne.',
+        'name' => 'سەردێڕ',
+        'instructions' => 'ناوی پۆلێکی سەرەکییە کە تۆ پێناسەی دەکەیت. ڕێگە بە بەکارهێنەر دەدات بە ئاسانی ئەو بەرهەمەی بەدوایدا دەگەڕێن بدۆزنەوە.
+',
     ],
     'order' => [
-        'name' => 'Emir',
+        'name' => 'داواكردن',
     ],
 
     'slug' => [
-        'name' => 'Şeytanok',
-        'instructions' => 'Ji bo ku koma posta xwe bi yên din re bike alîkar her tagên rêxistinê diyar bikin.',
+        'name' => 'سلوگ',
+        'instructions' => 'هەموو ڕێکخراوێک تاگ بکە بۆ یارمەتیدانی پۆستەکەت لەگەڵ ئەوانی تر.
+',
 
     ],
     'files' => [
-        'name' => 'Wêne',
+        'name' => 'وێنە',
     ],
     'seo_keyword' => [
         'name' => 'Seo Keyword',

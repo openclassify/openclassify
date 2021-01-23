@@ -289,7 +289,7 @@ class AdvsController extends PublicController
         $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = array();
 
         if ($isActiveCustomFields) {
-            $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats);
+            $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats, $categoryId);
             $checkboxes = $returnvalues['checkboxes'];
             $topfields = $returnvalues['topfields'];
             $selectDropdown = $returnvalues['selectDropdown'];

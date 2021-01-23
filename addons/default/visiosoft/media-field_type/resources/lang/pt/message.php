@@ -10,4 +10,5 @@ return [
     'uploading' => 'Enviando',
     'loading' => 'Carregando',
     'error_upload' => 'Ocorreu um problema ao enviar o arquivo.',
+    'error_upload_docs' => 'Não há suporte para upload de documentos. Entre em contato com o administrador do sistema!',
 ];
