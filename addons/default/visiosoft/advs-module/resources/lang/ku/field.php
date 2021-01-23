@@ -385,7 +385,8 @@ return [
     'views' => 'دیتین',
 
     // Detail page
-    "no_street_view" => "ديمةني شةقام لةم شوينة ديار نية",
+    "no_street_view" => "دیمەنی شەقام لەم شوێنە نیە
+",
     'edit_my_contact_info' => 'دەستکاری زانیاری پەیوەندیم بکە
 ',
     'update_my_contact_info' => 'زانیاری پەیوەندیم نوێ بکەرەوە
