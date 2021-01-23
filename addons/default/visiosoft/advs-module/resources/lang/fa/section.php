@@ -56,4 +56,7 @@ return [
         'title' => 'پیکربندی',
     ],
     'translations' => 'ترجمه ها',
+    'status' => [
+        'title' => 'وضعیت',
+    ],
 ];
