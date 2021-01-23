@@ -2,5 +2,5 @@
 
 return [
     'valid_disk' => 'دیسک بارگذاری پیکربندی شده برای: ویژگی وجود ندارد.',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+	'unsupported' => 'این قسمت فقط برای پرونده های تصویری است. می توانید انواع مختلف پرونده را در قسمت توضیحات اضافه کنید.'
 ];
