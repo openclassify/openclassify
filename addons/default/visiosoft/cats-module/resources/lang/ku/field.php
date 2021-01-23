@@ -2,16 +2,17 @@
 
 return [
     'name' => [
-        'name' => 'سەردێڕ',
+        'name' => 'نازناو',
         'instructions' => 'ناوی پۆلێکی سەرەکییە کە تۆ پێناسەی دەکەیت. ڕێگە بە بەکارهێنەر دەدات بە ئاسانی ئەو بەرهەمەی بەدوایدا دەگەڕێن بدۆزنەوە.
 ',
     ],
     'order' => [
-        'name' => 'داواكردن',
+        'name' => 'ڕێک بخەن',
     ],
 
     'slug' => [
-        'name' => 'سلوگ',
+        'name' => 'ناوی تایبەت ئەوەیە
+',
         'instructions' => 'هەموو ڕێکخراوێک تاگ بکە بۆ یارمەتیدانی پۆستەکەت لەگەڵ ئەوانی تر.
 ',
 
@@ -26,14 +27,19 @@ return [
     ],
     'seo_description' => [
         'name' => 'Seo Danasîn',
-        'instructions' => 'Ew dikare li ser biryara mêvanên we bandor bike ka ew dixwazin naverokê di encamên lêgerînê de bikirtînin.',
+        'instructions' => 'دەکرێت کاریگەری لەسەر بڕیاری سەردانیکەرەکانت هەبێت کە ئایا ئەوان دەیانەوێت کلیک لەسەر ناوەڕۆکی ئەنجامەکانی گەڕانەکان بکەن.
+',
     ],
     'icon' => [
         'name' => 'وێنۆچکە',
-        'instructions' => 'Ew tê bikaranîn ku îkonên ku celebê kategoriyê nîşan dikin zêde bike.',
+        'instructions' => 'بەکاردێت بۆ زیادکردنی ئایکۆنەکان بۆ ئاماژەدان بە جۆری کەتێگۆریەکە.
+',
     ],
 
-    'please_wait' => 'Ji kerema xwe li bendê bimînin. Jêbirina Kategoriyên Bin',
-    'category_selection' => 'Hilbijartina Kategorî',
-    'go_to_parent' => 'Herin cem dêûbavan',
+    'please_wait' => 'Please wait. Deleting Sub Categories
+',
+    'category_selection' => 'هەڵبژاردنی کەتێگۆری
+',
+    'go_to_parent' => 'Go To Parent
+',
 ];
