@@ -20,7 +20,8 @@ return [
     'first_name' => 'ناوی یەکەم
 ',
     'last_name' => 'پاشناو',
-    'remember_me' => 'بيرمبكةوة',
+    'remember_me' => 'من لە بیرە
+',
     'not_a_member_yet' => 'تۆ هێشتا ئەندام نیت 
 ',
     'not_a_member_yet_message' => 'خۆت تۆمار بکە بۆ ئەندامەکانمان بۆ سوودمەندبوون لە خزمەتگوزاری تایبەتمان
@@ -28,7 +29,7 @@ return [
     'forgot_password' => 'وشەی نهێنەکەم لەبیرکرد
 ',
     'email_or_phone_number' => 'ژماره‌ی مۆبایل یان ناونیشانی ئیمەیل',
-    'phone_number' => 'ژماره‌ی مۆبایل',
+    'phone_number' => 'ژمارەی تەلەفۆن',
 
     // Registration instructions
     'personal_registration_header' => 'ئایا ئەندامێتیی شه‌خسی چین ؟
