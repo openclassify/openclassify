@@ -10,4 +10,5 @@ return [
     'uploading' => 'Yüklənir',
     'loading' => 'Yüklənir',
     'error_upload' => 'Fayl yüklənərkən problem oldu.',
+    'error_upload_docs' => 'Sənəd yükləmə dəstəyi yoxdur. Zəhmət olmasa sistem administratorunuzla əlaqə saxlayın!',
 ];
