@@ -2,7 +2,7 @@
 
 return [
     'name' => [
-        'name' => 'سەردێڕ'
+        'name' => 'نازناو'
     ],
     'order' => [
         'name' => 'ڕێک بخەن'
@@ -15,7 +15,7 @@ return [
         'name' => 'باوان'
     ],
     'category' => [
-        'name' => 'سەردێڕی کەتێگۆری'
+        'name' => 'نازناوی کەتێگۆری'
     ],
     'price' => [
         'name' => 'نرخ'
@@ -56,7 +56,7 @@ return [
         'name' => 'ناوچە'
     ],
     'neighborhood' => [
-        'name' => 'هاوسایەتی'
+        'name' => 'هودەکە'
     ],
     'village' => [
         'name' => 'گوند'
