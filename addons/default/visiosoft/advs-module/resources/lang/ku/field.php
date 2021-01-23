@@ -247,7 +247,8 @@ return [
 ',
     'extended' => 'بە سەرکەوتوویی درێژکرایەوە
 ',
-    'declined' => 'Bi Serkeftin Daketin',
+    'declined' => 'بە سەرکەوتوویی ڕەتکرایەوە
+',
     'search_on_map' => 'گەڕان لەسەر نەخشە
 ',
     'post_free_ad' => 'ڕیکلامی بەلاش دابنێ
@@ -259,7 +260,7 @@ return [
     'all_dopings_added' => 'هەموو جۆرەکانی دۆپینگ بۆ ئەم ڕیکلامە زیادکراوە
 ',
     'is_get_adv' => [
-        'name' => 'GET'
+        'name' => 'Secure e-Trade'
     ],
     'corporate_info' => 'زانیاری کۆمپانیا
 ',
@@ -274,7 +275,7 @@ return [
     'total' => 'هه موو
 ',
     'quantity' => 'چەندی',
-    'view_cart' => 'سەبەتەکە نیشان بدە
+    'view_cart' => 'سەبەتەکە نیشاندە
 ',
     'no_ads' => 'هیچ ڕیکلامێک نەدۆزراوەتەوە
 ',
@@ -354,7 +355,7 @@ return [
     ],
     "no_location" => "شوێنەکە دیاری نەکراوە
 ",
-    "continue" => 'بەردەوام بوون',
+    "continue" => 'بەردەوام بە',
     "gallery" => 'گەلەری',
     "ad" => 'ڕیکلام',
     "ads" => 'ڕیکلامەکان',
@@ -364,7 +365,7 @@ return [
     // Pending screen
     'pending_message_1' => 'ڕیکلامەکە لە پڕۆسەی پەسەندکردندایە
 ',
-    'pending_message_2' => "بەروارێکی نوێ نوێکردنەوەێ بۆ ڕیکلام
+    'pending_message_2' => "بەروارێکی نوێ کردنەوەێ بۆ ڕیکلام
 ",
     'pending_message_3' => 'کاتی چاوەڕوانیکردنى هەستم پێگەشتووە
 ',
