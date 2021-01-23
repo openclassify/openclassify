@@ -2,22 +2,23 @@
 
 return [
     'name' => [
-        'name' => 'سەردێڕ'
+        'name' => 'نازناو'
     ],
     'order' => [
-        'name' => 'داواكردن'
+        'name' => 'ڕێک بخەن'
     ],
     'slug' => [
-        'name' => 'سلوگ'
+        'name' => 'ناوی تایبەت ئەوەیە
+'
     ],
     'parent_category' => [
         'name' => 'باوان'
     ],
     'category' => [
-        'name' => 'سەردێڕی کەتێگۆری'
+        'name' => 'نازناوی کەتێگۆری'
     ],
     'price' => [
-        'name' => 'نرخي'
+        'name' => 'نرخ'
     ],
     'standard_price' => [
         'name' => 'نرخی ستاندارت
@@ -55,7 +56,7 @@ return [
         'name' => 'ناوچە'
     ],
     'neighborhood' => [
-        'name' => 'هاوسایەتی'
+        'name' => 'هودەکە'
     ],
     'village' => [
         'name' => 'گوند'
@@ -102,15 +103,16 @@ return [
             'approved' => 'پەسەندکراوە',
             'expired' => 'بەسەرچوون',
             'unpublished' => 'بڵاونەکراوەتەوە',
-            'pending_admin' => 'هەڵواسراو بەڕێوەبردن',
-            'pending_user' => 'هەڵواسراو بەکارهێنەر'
+            'pending_admin' => 'بەڕێوەبەر چاوەڕێیە',
+            'pending_user' => 'بەکارهێنەر چاوەڕێیە
+'
         ]
     ],
     'pending_adv' => [
         'name' => 'بڵاونەکراوەتەوە'
     ],
     'finish_at' => [
-        'name' => 'تەواو بوون لە
+        'name' => 'تەواو دەبێت لە
 '
     ],
     'cover_photo' => [
@@ -118,7 +120,8 @@ return [
 '
     ],
     'favs_adv' => [
-        'name' => 'ڕێکلامێکی دڵخواز
+        'name' => 'ڕێکلامێکی دڵخوازترین
+
 '
     ],
     'my_adv' => [
@@ -138,21 +141,21 @@ return [
     ],
     'list' => 'لیست',
     'home' => 'ماڵپەڕ',
-    'list-page' => 'لیستکردنی پەیجەکە
+    'list-page' => 'پەیجی لیست
 ',
     'search' => 'گەڕان',
     'recommended' => 'ڕێکلامێکی پێشنیارکراو بۆ ئێوە
 ',
-    'filter' => 'پارزوون',
+    'filter' => 'پاڵاوتن',
     'sort' => 'جووره‌',
     'sort_by' => 'جووره‌ بە',
     'pick_option' => 'بژاردەیەک هەڵبژێرە
 ',
     'pick_ordering' => ' داوای دەکەن
 ',
-    'price_high' => 'نرخي لە بەرزەوە بۆ نزم
+    'price_high' => 'نرخ لە گران بۆ هەرزان
 ',
-    'price_low' => 'نرخي لە نزم بۆ بەرزەوە
+    'price_low' => 'نرخ لە هەرزان بۆ گران
 ',
     'newest' => 'نویترین',
     'oldest' => 'کۆنترین
@@ -169,9 +172,9 @@ return [
 ',
     'phone_gsm' => 'ژماره‌ی مۆبایل
 ',
-    'phone_office' => 'ژمارەی دوکان
+    'phone_office' => 'ژمارەی تەلەفۆنی دوکان
 ',
-    'add_to_favorites' => "دانێ ناو دڵخوازەکانەوە
+    'add_to_favorites' => "دانێ بۆ دڵخوازەکانەوە
 ",
     'send' => 'بنێرە',
     'search_name' => 'گەڕان ناوەکە',
@@ -189,13 +192,13 @@ return [
     'passive' => "ناچالاک",
 	'sold' => 'فرۆشرا
 ',
-    'offered_by' => 'پێشکەشکراوە لەلایەن
+    'offered_by' => 'پێشکەشی کرد بە
 ',
-    'more_ads_by' => 'ڕیکلامی زیاتر لەلایەن
+    'more_ads_by' => 'ڕیکلامی زیاتر بە
 ',
-    'click_phone' => 'ژمارە تەلەفونەکانی نیشاندە
+    'click_phone' => 'ژمارە تەلەفونی نیشاندە
 ',
-    'share' => 'بەش بکەن',
+    'share' => 'بڵاوکردنەوە',
     'report' => 'ئەم ڕیکلامە ڕیپۆرت بکەن
 ',
     'features' => 'تایبەتمەندیە کان
@@ -212,7 +215,7 @@ return [
     '24/7' => '24/7 پشتگری',
     'easy_trading' => 'بازرگانی ئاسان
 ',
-    'need_help' => 'ویستنی یارمەتی ؟',
+    'need_help' => 'ویستنی یارمەتی',
     'give_a_call' => 'تەلەفون بکە
 ',
     'message_sent' => '! پەیام نێردراوە
@@ -221,25 +224,25 @@ return [
 ',
     'ad_id' => 'ناسنامەی ڕیکلام
 ',
-    'contact_with' => 'پەیوەندی بکە لەگەڵ
+    'contact_with' => 'پەیوەندی لەگەڵ
 ',
     'create_adv' => 'ڕیکلام دروست بکە
 ',
-    'edit_adv' => 'ڕیکلام دەستکاری بکات
+    'edit_adv' => 'دەستکاری ڕیکلامەکە بکات
 ',
     'mandatory_fields' => 'کێڵگەکانی بەزۆرەملێ
 ',
     'ad_post' => 'ڕیکلامی دانێ',
     'sell_item' => 'شتومەک یان خزمەتگوزاری بفرۆشە
 ',
-    'search_save' => 'گەڕانی دڵخواز بە سەرکەوتوویی ڕزگار کرا
+    'search_save' => 'گەڕانی دڵخواز بە سەرکەوتوویی فریای کرا
 ',
     'address' => 'ناونیشان',
     'email' => 'ئی مەیل',
     'phone' => 'تەلەفۆن',
     'send_us_your_feedback' => 'Send Us Your Feedback
 ',
-    'online_shopping' => 'GET',
+    'online_shopping' => 'Secure E-Trade',
     'approved' => 'بە سەرکەوتوویی پەسەند کرا
 ',
     'extended' => 'بە سەرکەوتوویی درێژکرایەوە
@@ -260,9 +263,10 @@ return [
     ],
     'corporate_info' => 'زانیاری کۆمپانیا
 ',
-    'featured_ads' => "ڕیکلامی تایبەتمەندی بوو
+    'featured_ads' => "ڕیکلامی عةرز
 ",
-    'trending_ads' => 'Reklamên Trendind',
+    'trending_ads' => 'Trendind Ads
+',
     'search_ad_result_prefix' => 'لەسەر',
     'search_ads_result_message' => [
         'name' => 'ڕێکلامەکان دەژمێرن دۆزراونەتەوەبۆ :گەڕانی ناو:',
@@ -270,7 +274,8 @@ return [
     'total' => 'هه موو
 ',
     'quantity' => 'چەندی',
-    'view_cart' => 'سەبەتە پیشاندان',
+    'view_cart' => 'سەبەتەکە نیشان بدە
+',
     'no_ads' => 'هیچ ڕیکلامێک نەدۆزراوەتەوە
 ',
     'show_display_mode' => [
@@ -280,7 +285,7 @@ return [
     'advs_list_table_thead' => [
         'name' => 'ناوی ڕیکلام
 ',
-        'price' => 'نرخي',
+        'price' => 'نرخ',
         'publish_at' => 'بەرواری ڕیکلام
 ',
         'location_city' => 'شار',
@@ -293,8 +298,7 @@ return [
         'name' => 'مێز',
     ],
     'showcase' => [
-        'name' => 'عه رز
-',
+        'name' => 'عةرز',
     ],
     'new_ad' => [
         'name' => 'ڕیکلامی نوێ
@@ -322,19 +326,19 @@ return [
         'name' => 'کەم',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'لە دوایینی 24 سات
+        'name' => 'لە ئاخیر 24 کاتژمێر
 '
     ],
     'in_the_last_day' => [
-        'name' => 'لە دوایینی 24 سات
+        'name' => 'لە ئاخیر 24 کاتژمێر
 '
     ],
     'in_the_last_week' => [
-        'name' => 'له هه فته ی دوایین
+        'name' => 'له هه فته ی ئاخیر
 '
     ],
     'in_the_last_month' => [
-        'name' => 'لە مانگی دوایین
+        'name' => 'لە مانگی ئاخیر
 '
     ],
     'ads_with_photo' => [
@@ -364,9 +368,9 @@ return [
 ",
     'pending_message_3' => 'کاتی چاوەڕوانیکردنى هەستم پێگەشتووە
 ',
-    'pending_message_4' => 'The time spent in the approval process will be added to the doping time.
+    'pending_message_4' => 'کاتی تەرخانکراو لە پڕۆسەی پەسەندکردندا زیاد دەکرێت
 ',
-    'pending_message_5' => 'No transactions can be made from the call center regarding the ad in the approval process.
+    'pending_message_5' => 'هیچ ئاڵوگۆڕێک ناکرێت لە ناوەندی بانگەشەوە بۆ ڕێکلامەکە لە پڕۆسەی پەسەندکردندا
 ',
     'hours' => 'سات',
 
@@ -374,13 +378,13 @@ return [
     'preview_text' => [
         'part_1' => 'ئەگەر ئەم زانیاریانەی خوارەوە لەسەر ڕێکلامەکەت ڕاست بوو ، کرتە لە دوگمەی ′′ بەردەوام ′′ بکە و بەرەو هەنگاوی دواتر بڕۆ
 ',
-        'part_2' => 'ئەگەر نا ، کرتە لەسەر دوگمەی ′′ دەسکاریکردن ′′ بکە.
+        'part_2' => '′′ ئەگەر نا ، کرتە لەسەر دوگمەی ′′ دەستکاری بکە
 ',
     ],
     'views' => 'دیتین',
 
     // Detail page
-    "no_street_view" => "دیمەنێکی سەر شەقام لەم شوێنە نییە",
+    "no_street_view" => "ديمةني شةقام لةم شوينة ديار نية",
     'edit_my_contact_info' => 'دەستکاری زانیاری پەیوەندیم بکە
 ',
     'update_my_contact_info' => 'زانیاری پەیوەندیم نوێ بکەرەوە
