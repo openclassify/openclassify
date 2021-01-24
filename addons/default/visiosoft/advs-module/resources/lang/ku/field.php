@@ -414,7 +414,7 @@ return [
     'upload_photos' => 'وێنەکانی دانێن',
     'upload_files' => 'فایلەکان دابنێن
 ',
-    'additional_fields' => 'کێڵگە زیادەکان
+    'additional_fields' => 'زەوی زیادەکان
 ',
     'ad_location' => 'شوێنی ڕێکلام
 ',
