@@ -127,7 +127,7 @@ return [
     'my_adv' => [
         'name' => 'ڕێکلامەکان'
     ],
-    'description' =>  'دەربارە',
+    'description' =>  'وەسف',
     'explanation' =>  'دەربارە',
     'type' => [
         'name' => 'جۆو'
