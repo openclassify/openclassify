@@ -46,10 +46,10 @@ return [
     // Side menu links
     'company_directory' => 'Firma Rehberi',
     'popular_ads' => 'Popüler İlanlar',
-    'last_48_hours' => 'son 48 saat',
+    'last_48_hours' => 'Son 48 Saat',
     'secure_e-commerce_ads' => 'Güvenli E-Ticaret',
     'sms' => 'Kısa Mesaj Gönder (SMS)',
-    'mail' => 'Posta göndermek',
+    'mail' => 'E-posta Gönder',
 
     // Register instruction seed
     'register_instructions' => 'Kayıt Talimatları',
