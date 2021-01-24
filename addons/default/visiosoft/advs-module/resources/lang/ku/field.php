@@ -40,7 +40,7 @@ return [
         'name' => 'ستۆک'
     ],
     'advs_desc' => [
-        'name' => 'وەسف'
+        'name' => 'شيكردنةوة'
     ],
     'online_payment' => [
         'name' => 'پارەدانی ئۆنلاین
@@ -127,8 +127,8 @@ return [
     'my_adv' => [
         'name' => 'ڕێکلامەکان'
     ],
-    'description' =>  'وەسف',
-    'explanation' =>  'دەربارە',
+    'description' =>  'شيكردنةوة',
+    'explanation' =>  'شيكردنةوة',
     'type' => [
         'name' => 'جۆو'
     ],
