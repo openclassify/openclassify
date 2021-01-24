@@ -261,16 +261,16 @@ return [
         'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'Son 24 saat'
+        'name' => 'Son 24 Saat İçinde'
     ],
     'in_the_last_day' => [
         'name' => 'Son 24 Saat İçinde'
     ],
     'in_the_last_week' => [
-        'name' => 'Son 1 hafta'
+        'name' => 'Son 1 Hafta İçinde'
     ],
     'in_the_last_month' => [
-        'name' => 'Son 1 Ay'
+        'name' => 'Son 1 Ay İçinde'
     ],
     'ads_with_photo' => [
         'name' => 'Fotoğraflı İlanlar'
@@ -307,7 +307,7 @@ return [
     "no_street_view" => "Bu konumda sokak görünümü resmi yok",
     'edit_my_contact_info' => 'İletişim Bilgilerimi Düzenle',
     'update_my_contact_info' => 'iletişim bilgilerimi güncelle',
-    'contact_info' => 'İletişim bilgileri',
+    'contact_info' => 'İletişim Bilgileri',
     'ad_info' => 'İlan Bilgileri',
 
     // Select cat
@@ -321,16 +321,16 @@ return [
     'congratulations' => 'Tebrikler',
     'ad_desc' => 'İlan Açıklaması',
     'upload_photos' => 'Resim Yükle',
-    'upload_files' => 'Dosyaları yükle',
+    'upload_files' => 'Dosyaları Yükle',
     'additional_fields' => 'Özel Alanlar',
-    'ad_location' => 'Lokasyon Ekle',
+    'ad_location' => 'İlan Konumu',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
     'photo_video' => 'Fotoğraf, Video',
     'and_above' => 've yukarıda',
     'and_below' => 've aşağıda',
-    'clear_all' => 'Hepsini temizle',
+    'clear_all' => 'Hepsini Temizle',
     'balances' => 'Bakiyeler',
     'packages' => 'Paketler',
     'dopings' => 'Dopingler',
