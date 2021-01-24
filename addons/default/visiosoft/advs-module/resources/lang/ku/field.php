@@ -40,7 +40,7 @@ return [
         'name' => 'ستۆک'
     ],
     'advs_desc' => [
-        'name' => 'دەربارە'
+        'name' => 'وەسف'
     ],
     'online_payment' => [
         'name' => 'پارەدانی ئۆنلاین
@@ -98,7 +98,7 @@ return [
         'name' => 'دراو'
     ],
     'status' => [
-        'name' => 'دۆخ',
+        'name' => 'بارودۆخ',
         'option' => [
             'approved' => 'پەسەندکراوە',
             'expired' => 'بەسەرچوون',
