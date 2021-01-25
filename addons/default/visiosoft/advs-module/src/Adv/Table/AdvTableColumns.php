@@ -3,6 +3,7 @@
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Entry\EntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 
 class AdvTableColumns
 {
@@ -35,10 +36,11 @@ class AdvTableColumns
                         }
                         return $value;
                     },
-                    'category' => function (EntryInterface $entry, CategoryModel $categoryModel) {
-                        $category = $categoryModel->getCat($entry->cat1);
-                        if (!is_null($category))
+                    'category' => function (EntryInterface $entry, CategoryRepositoryInterface $categoryRepository) {
+                        $category = $categoryRepository->find($entry->cat1);
+                        if ($category){
                             return $category->name;
+                        }
                     }
                 ],
             ],

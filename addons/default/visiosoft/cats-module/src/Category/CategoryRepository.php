@@ -1,148 +1,117 @@
 <?php namespace Visiosoft\CatsModule\Category;
 
-use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Illuminate\Support\Facades\DB;
-use Eloquent\Support\Collection;
 
 class CategoryRepository extends EntryRepository implements CategoryRepositoryInterface
 {
 
-    /**
-     * The entry model.
-     *
-     * @var CategoryModel
-     */
     protected $model;
     protected $advRepository;
 
-    /**
-     * Create a new CategoryRepository instance.
-     *
-     * @param CategoryModel $model
-     * @param AdvRepositoryInterface $advRepository
-     */
     public function __construct(CategoryModel $model, AdvRepositoryInterface $advRepository)
     {
         $this->model = $model;
         $this->advRepository = $advRepository;
     }
 
-    public function findById($id)
+    public function getMainCategories()
     {
-        return $this->model->orderBy('created_at', 'DESC')->where('cats_category.id', $id)->first();
+        return $this->newQuery()
+            ->where('parent_category_id', null)
+            ->orderBy('sort_order')
+            ->get();
     }
 
-    public function mainCats()
-    {
-        return $this->model->where('parent_category_id', null)->orderBy('sort_order')->get();
-    }
-    public function getLevel2Cats()
+    public function getCategoriesLevel2()
     {
         $dBName = 'default_cats_category';
-        $dBNamet = $dBName.'_translations';
+        $dBNamet = $dBName . '_translations';
 
-        $catsDB = DB::table((DB::raw($dBName.' c1')))
-                    ->select(
-                        DB::raw('c1.id'),
-                        DB::raw('c1.slug'),
-                        DB::raw('c1.count'),
-                        DB::raw('c1.parent_category_id'),
-                        DB::raw('t1.name'),
+        $catsDB = DB::table((DB::raw($dBName . ' c1')))
+            ->select(
+                DB::raw('c1.id'),
+                DB::raw('c1.slug'),
+                DB::raw('c1.count'),
+                DB::raw('c1.parent_category_id'),
+                DB::raw('t1.name'),
 
-                        DB::raw('c2.id as c2_id'),
-                        DB::raw('c2.slug as c2_slug'),
-                        DB::raw('c2.count as c2_count'),
-                        DB::raw('c2.parent_category_id as c2_parent_category_id'),
-                        DB::raw('t2.name as c2_name')
-                    )
-                    ->leftJoin((DB::raw($dBName.' c2')), DB::raw('c2.parent_category_id'), '=', DB::raw('c1.id'))
-                    ->leftJoin((DB::raw($dBNamet.' t1')), DB::raw('c1.id'), '=',  DB::raw('t1.entry_id'))
-                    ->leftJoin((DB::raw($dBNamet.' t2')), DB::raw('c2.id'), '=',  DB::raw('t2.entry_id'))
-                    ->where(DB::raw('t1.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
-                    ->where(DB::raw('t2.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
-                    ->where(DB::raw("c1.deleted_at"),NULL)
-                    ->where(DB::raw("c2.deleted_at"),NULL)
-                    ->whereNull(DB::raw("c1.parent_category_id"))
-                    ->orderBy(DB::raw("c1.sort_order"))
-                    ->orderBy(DB::raw("c2.sort_order"))
-                    ->get();
+                DB::raw('c2.id as c2_id'),
+                DB::raw('c2.slug as c2_slug'),
+                DB::raw('c2.count as c2_count'),
+                DB::raw('c2.parent_category_id as c2_parent_category_id'),
+                DB::raw('t2.name as c2_name')
+            )
+            ->leftJoin((DB::raw($dBName . ' c2')), DB::raw('c2.parent_category_id'), '=', DB::raw('c1.id'))
+            ->leftJoin((DB::raw($dBNamet . ' t1')), DB::raw('c1.id'), '=', DB::raw('t1.entry_id'))
+            ->leftJoin((DB::raw($dBNamet . ' t2')), DB::raw('c2.id'), '=', DB::raw('t2.entry_id'))
+            ->where(DB::raw('t1.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
+            ->where(DB::raw('t2.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
+            ->where(DB::raw("c1.deleted_at"), NULL)
+            ->where(DB::raw("c2.deleted_at"), NULL)
+            ->whereNull(DB::raw("c1.parent_category_id"))
+            ->orderBy(DB::raw("c1.sort_order"))
+            ->orderBy(DB::raw("c2.sort_order"))
+            ->get();
         $cats = collect([]);
         $cats->subcats = $catsDB;
         $cats->maincats = $catsDB->unique('id');
         return $cats;
     }
 
-    public function getItem($cat)
+    public function getCategoryById($id)
     {
-        return $this->model->where('cats_category.id', $cat)->first();
-    }
-
-    public function getCatById($id)
-    {
-        return $this->model->where('cats_category.id', $id)->where('deleted_at', null)->orderBy('sort_order')->get();
-    }
-
-    public function getSubCatById($id)
-    {
-        $cats = $this->model->newQuery()
+        return $this->newQuery()
             ->where('parent_category_id', $id)
-            ->get();
-
-        foreach ($cats as $cat) {
-            $subCount = $this->model->newQuery()->where('parent_category_id', $cat->id)->count();
-            $cat->hasChild = !!$subCount;
-        }
-
-        return $cats;
-    }
-
-    public function getSingleCat($id)
-    {
-        return CatsCategoryEntryModel::query()->where('cats_category.id', $id)->first();
+            ->where('deleted_at', null)
+            ->orderBy('sort_order')->get();
     }
 
     public function findBySlug($slug)
     {
-        return $this->model->orderBy('created_at', 'DESC')->where('slug', $slug)->first();
+        return $this->newQuery()
+            ->where('slug', $slug)
+            ->first();
     }
 
-    public function getCategories()
+    public function getParentCategoryById($id)
     {
-        return $this->model->orderBy('sort_order')->get();
-    }
-
-    public function removeCatFromAds($category)
-    {
-        $catLevelNum = 1;
-        if (!is_null($category->parent_category_id)) {
-            $catLevelNum = $this->model->getCatLevel($category->id);
-        }
-        $catLevelText = "cat" . $catLevelNum;
-
-        $advs = $this->advRepository->newQuery()->where($catLevelText, $category->id)->get();
-        foreach ($advs as $adv) {
-            $nullableCats = array();
-            for ($i = $catLevelNum; $i <= 10; $i++) {
-                $nullableCats['cat' . $i] = null;
+        if ($category = $this->find($id)) {
+            $parents_count = ($category->parent_category_id) ? 1 : 0;
+            $parents[] = $category;
+            for ($i = 0; $i < $parents_count; $i++) {
+                if ($category = $this->find($category->parent_category_id)) {
+                    $parents[] = $category;
+                    $parents_count++;
+                }
             }
-            $adv->update($nullableCats);
+
+            return $parents;
         }
+        return null;
     }
 
-    public function DeleteCategories($id)
+    public function getLevelById($id)
     {
-        if (!is_null($category = $this->find($id))) {
-            // Remove deleted category from ads
-            $this->removeCatFromAds($category);
+        return count($this->getParentCategoryById($id));
+    }
 
-            // Delete the category
-            $this->model->find($id)->delete();
+    public function getCategoriesByName($keyword)
+    {
+        $cats = DB::table('cats_category');
 
-            // Delete the subcategories
-            $this->model->deleteSubCategories($id);
-        }
+        $cats = $cats->where('name', 'like', $keyword . '%')
+            ->whereRaw('deleted_at IS NULL');
+
+        $cats = $cats->leftJoin('cats_category_translations', function ($join) {
+            $join->on('cats_category.id', '=', 'cats_category_translations.entry_id');
+            $join->whereIn('cats_category_translations.locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);//active lang
+        })
+            ->select('cats_category.*', 'cats_category_translations.name as name')
+            ->orderBy('id', 'DESC')->groupBy(['cats_category.id'])->get();
+
+        return $cats;
     }
 }

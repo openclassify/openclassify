@@ -1,7 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Event;
 
 
-class showAdPhone
+class ShowAdPhone
 {
     public function __construct($request)
     {

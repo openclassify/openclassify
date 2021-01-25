@@ -18,7 +18,7 @@ class OptionConfigurationTableColumns
 				'value' => function (EntryModel $entry,
 				                     AdvRepositoryInterface $advRepository) {
 
-					$adv = $advRepository->findById($entry->parent_adv_id);
+					$adv = $advRepository->find($entry->parent_adv_id);
 					return "<span><a href='" . route('adv_detail', [$entry->parent_adv_id]) . "'>$adv->name</a></span>";
 				}
 			],

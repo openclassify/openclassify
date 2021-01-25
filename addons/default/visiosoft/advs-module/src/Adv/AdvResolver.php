@@ -16,6 +16,6 @@ class AdvResolver {
     }
 
     public function resolve() {
-        return $this->adv->findById($this->route->parameter('id'));
+        return $this->adv->find($this->route->parameter('id'));
     }
 }

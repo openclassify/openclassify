@@ -3,10 +3,10 @@ namespace Visiosoft\CatsModule\Category\Command;
 
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 
-class getLevel2Cats
+class getCategoriesLevel2
 {
     public function handle(CategoryRepositoryInterface $repo)
     {
-        return $repo->getLevel2Cats();
+        return $repo->getCategoriesLevel2();
     }
 }

@@ -9,6 +9,7 @@ use Intervention\Image\Facades\Image;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\LocationModule\District\DistrictModel;
@@ -28,11 +29,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $this->model = $model;
         $this->fileRepository = $fileRepository;
         $this->folderRepository = $folderRepository;
-    }
-
-    public function findById($id)
-    {
-        return $this->model->orderBy('created_at', 'DESC')->where('advs_advs.id', $id)->first();
     }
 
     public function searchAdvs(
@@ -88,16 +84,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             }
         }
         if ($category) {
-            $cat = new CategoryModel();
-            if ($category) {
-                if ($category->parent_category_id == null) {
-                    $catLevel = 1;
-                } else {
-                    $catLevel = $cat->getCatLevel($category->id);
-                }
-                $catLevel = "cat" . $catLevel;
-                $query = $query->where($catLevel, $category->id);
-            }
+            $category_repository = app(CategoryRepositoryInterface::class);
+
+            $catLevel = $category_repository->getLevelById($category->id);
+            $catLevel = "cat" . $catLevel;
+            $query = $query->where($catLevel, $category->id);
         }
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
@@ -427,7 +418,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
-    public function countByCat($catID, $level = 1)
+    public function getAdsCountByCategory($catID, $level = 1)
     {
         return DB::table('advs_advs')
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
@@ -499,8 +490,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->paginate(setting_value('visiosoft.module.advs::popular_ads_limit', setting_value('streams::per_page')));
     }
 
-    public function getName($id){
-    	return $this->find($id)->name;
+    public function getName($id)
+    {
+        return $this->find($id)->name;
     }
 
     public function approveAds($adsIDs)

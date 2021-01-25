@@ -1,11 +1,20 @@
 <?php namespace Visiosoft\CatsModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
+use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
+use Visiosoft\AdvsModule\Adv\Event\DeletedAd;
+use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Illuminate\Routing\Router;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForChangedAdStatus;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForDeletedAd;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForEditedAdCategory;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForNewAd;
+use Visiosoft\CatsModule\Category\Table\Handler\Delete;
 
 class CatsModuleServiceProvider extends AddonServiceProvider
 {
@@ -93,9 +102,18 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $listeners = [
-        //Visiosoft\CatsModule\Event\ExampleEvent::class => [
-        //    Visiosoft\CatsModule\Listener\ExampleListener::class,
-        //],
+        CreatedAd::class => [
+            CalculatedTotalForNewAd::class,
+        ],
+        EditedAdCategory::class => [
+            CalculatedTotalForEditedAdCategory::class,
+        ],
+        ChangedStatusAd::class => [
+            CalculatedTotalForChangedAdStatus::class,
+        ],
+        DeletedAd::class => [
+            CalculatedTotalForDeletedAd::class,
+        ],
     ];
 
     /**
@@ -193,7 +211,7 @@ class CatsModuleServiceProvider extends AddonServiceProvider
                 'category' => [
                     'buttons' => [
                         'new_category' => [
-                            'href' => '/admin/cats/create?parent='.$request->cat
+                            'href' => '/admin/cats/create?parent=' . $request->cat
                         ],
                     ],
                 ]

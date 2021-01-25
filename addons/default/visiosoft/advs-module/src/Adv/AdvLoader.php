@@ -10,7 +10,7 @@ use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
 use Anomaly\Streams\Platform\View\ViewTemplate;
 use Visiosoft\CatsModule\Category\Contract\CategoryInterface;
 use Visiosoft\LocationModule\City\Contract\CityInterface;
-use Visiosoft\LocationModule\Country\Contract\CountryInterface;
+use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 
 class AdvLoader {
 
@@ -21,8 +21,8 @@ class AdvLoader {
         $this->template = $template;
     }
 
-    public function load(AdvInterface $adv, CategoryInterface $cats, CityInterface $city, CountryInterface $country) {
+    public function load(AdvInterface $adv, CategoryInterface $cats, CityInterface $city, CountryRepositoryInterface $country) {
         $this->template->set('adv', $adv);
-        $this->template->set('country', $country->getCountry($adv->country_id));
+        $this->template->set('country', $country->find($adv->country_id));
     }
 }

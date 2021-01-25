@@ -1,10 +1,12 @@
 <?php namespace Visiosoft\LocationModule\City;
 
 use Anomaly\Streams\Platform\Entry\EntryCriteria;
+use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 
 class CityCriteria extends EntryCriteria
 {
-    public function getSubCities($city) {
-        return $this->query->where('parent_country_id', $city)->get();
+    public function getCitiesByCountryId($country_id) {
+        $city_repository = app(CityRepositoryInterface::class);
+        return $city_repository->getCitiesByCountryId($country_id);
     }
 }

@@ -39,7 +39,7 @@
     </ul>
     {{ addBlock('base/categoriesRow')|raw }}
     <div class="col-12 p-0 m-0">
-        {% set cats = getLevel2Cats() %}
+        {% set cats = getCategoriesLevel2() %}
         {% for main_category in cats.maincats %}
             {% include "visiosoft.theme.base::partials/categories-web" %}
             {% include "visiosoft.theme.base::partials/categories-mobile" %}

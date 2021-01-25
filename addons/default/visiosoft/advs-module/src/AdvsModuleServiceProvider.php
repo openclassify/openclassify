@@ -254,8 +254,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ProductoptionsValueRepositoryInterface::class => ProductoptionsValueRepository::class,
     ];
 
-    public function boot(AddonCollection $addonCollection, FileModel $fileModel)
+    public function boot(AddonCollection $addonCollection, FileModel $fileModel,CategoryRepositoryInterface $categoryRepository)
     {
+
         $settings_url = [
             'general_settings' => [
                 'title' => 'visiosoft.module.advs::button.general_settings',

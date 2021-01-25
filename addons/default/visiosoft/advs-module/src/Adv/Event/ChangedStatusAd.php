@@ -1,12 +1,10 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Event;
 
-use Visiosoft\AdvsModule\Adv\AdvModel;
-
 class ChangedStatusAd
 {
     private $ad;
 
-    public function __construct(AdvModel $ad)
+    public function __construct($ad)
     {
         $this->ad = $ad;
     }

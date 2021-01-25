@@ -32,14 +32,6 @@ class CountryRepository extends EntryRepository implements CountryRepositoryInte
         $this->model = $model;
         $this->countriesEntryTranslationsModel = $countriesEntryTranslationsModel;
     }
-    public function findById($id)
-    {
-        return $this->model->orderBy('created_at', 'DESC')->where('location_countries.id', $id)->first();
-    }
-
-    public function viewAll(){
-        return $this->model->get();
-    }
 
     public function getByEntryIDsAndOrderByTransCol($entryIDs, $orderBy, $direction = 'asc')
     {

@@ -51,7 +51,9 @@ class AdvTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete',
+        'delete' => [
+            'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\Delete::class,
+        ],
         'approve' => [
             'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\Approve::class,
             'class' => 'btn btn-success'

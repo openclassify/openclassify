@@ -190,5 +190,20 @@ class DatabaseSeeder extends Seeder
 				],
 			]);
 		};
+
+
+        //Create Category Icon Folder
+        if (!$this->folders->findBySlug('category_icon')) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en' => [
+                    'name' => 'Category Icon',
+                    'description' => 'A folder for Category Icon.',
+                ],
+                'slug' => 'category_icon',
+                'disk' => $disk
+            ]);
+        };
 	}
 }
