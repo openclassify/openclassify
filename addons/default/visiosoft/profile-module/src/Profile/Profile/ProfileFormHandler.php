@@ -1,11 +1,23 @@
 <?php namespace Visiosoft\ProfileModule\Profile\Profile;
 
+use Anomaly\Streams\Platform\Addon\Extension\ExtensionCollection;
 use Anomaly\Streams\Platform\Message\MessageBag;
+use Anomaly\UsersModule\User\Authenticator\Contract\AuthenticatorExtensionInterface;
+use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\UserModel;
+use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
 use Visiosoft\ProfileModule\Events\UserUpdated;
 
 class ProfileFormHandler
 {
+    protected $extensions;
+
+    public function __construct(ExtensionCollection $extensions)
+    {
+        $this->extensions = $extensions;
+    }
+
     public function handle(
         ProfileFormBuilder $builder,
         MessageBag $messages,
@@ -26,6 +38,11 @@ class ProfileFormHandler
             'facebook_address' => $builder->getPostValue('facebook_address') ?: null,
             'google_address' => $builder->getPostValue('google_address') ?: null,
         ];
+
+        if (($valid = $this->validate($parameters)) !== true) {
+            $messages->error($valid['msg']);
+            return;
+        }
 
         if (setting_value('visiosoft.module.profile::show_education_profession')) {
             $parameters = array_merge($parameters, [
@@ -69,5 +86,22 @@ class ProfileFormHandler
             return false;
         }
         return $changes;
+    }
+
+    public function validate(array $fields)
+    {
+        $validators = $this->extensions
+            ->search('visiosoft.module.profile::validation.*')
+            ->enabled();
+
+        foreach ($validators as $validator) {
+            $valid = $validator->validate($fields);
+
+            if ($valid['error']) {
+                return $valid;
+            }
+        }
+
+        return true;
     }
 }
