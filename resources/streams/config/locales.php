@@ -391,7 +391,7 @@ return [
             'direction' => 'ltr',
         ],
         'ku' => [
-            'direction' => 'ltr',
+            'direction' => 'rtl',
         ],
         'kv' => [
             'direction' => 'ltr',
