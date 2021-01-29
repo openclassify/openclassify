@@ -323,6 +323,8 @@ return [
     'upload_files' => 'Télécharger des fichiers',
     'additional_fields' => 'Champs supplémentaires',
     'ad_location' => 'Emplacement de l\'annonce',
+    'owner' => 'Owner',
+    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
     'free' => 'Gratuit',
     'ad_date' => 'Date de l\'annonce',
