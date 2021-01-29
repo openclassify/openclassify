@@ -322,6 +322,8 @@ return [
     'upload_files' => 'تحميل الملفات',
     'additional_fields' => 'حقول إضافية',
     'ad_location' => 'موقع الإعلان',
+    'owner' => 'Owner',
+    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
