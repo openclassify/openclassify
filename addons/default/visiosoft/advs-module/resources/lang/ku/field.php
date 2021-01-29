@@ -418,6 +418,8 @@ return [
 ',
     'ad_location' => 'شوێنی ڕێکلام
 ',
+    'owner' => 'Owner',
+    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
     'free' => 'بەلاش',
     'ad_date' => 'بەرواری ڕیکلام
