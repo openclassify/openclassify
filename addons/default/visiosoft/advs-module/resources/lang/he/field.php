@@ -322,6 +322,8 @@ return [
     'upload_files' => 'העלה קבצים',
     'additional_fields' => 'שדות נוספים',
     'ad_location' => 'מיקום מודעה',
+    'owner' => 'Owner',
+    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',
