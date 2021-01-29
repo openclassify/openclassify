@@ -322,6 +322,8 @@ return [
     'upload_files' => 'फाइल अपलोड करो',
     'additional_fields' => 'अतिरिक्त क्षेत्र',
     'ad_location' => 'विज्ञापन स्थान',
+    'owner' => 'Owner',
+    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',
