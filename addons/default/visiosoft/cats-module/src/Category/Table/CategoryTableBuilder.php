@@ -18,9 +18,11 @@ class CategoryTableBuilder extends TableBuilder
             'href' => '/admin/cats/clean_subcats',
         ],
         'adcountcalc' => [
+            'text' => 'visiosoft.module.cats::view.ad_count_calculate',
             'href' => '/admin/cats/adcountcalc',
         ],
         'catLevelCalc' => [
+            'text' => 'visiosoft.module.cats::view.cat_level_calculate',
             'href' => '/admin/cats/catlevelcalc',
         ],
     ];

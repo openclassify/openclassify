@@ -875,9 +875,6 @@ class AdvsController extends PublicController
                     ->packageAddCart(\request()->pack_id, $adv->id);
             }
         }
-
-        $this->event->dispatch(new EditAd($adv));
-
         return redirect('/advs/edit_advs/' . $adv->id);
     }
 
