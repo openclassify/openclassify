@@ -323,6 +323,8 @@ return [
     'upload_files' => 'Загрузить файлы',
     'additional_fields' => 'Дополнительные поля',
     'ad_location' => 'Местоположение объявления',
+    'owner' => 'Owner',
+    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
     'free' => 'Бесплатно',
     'ad_date' => 'Дата объявления',
