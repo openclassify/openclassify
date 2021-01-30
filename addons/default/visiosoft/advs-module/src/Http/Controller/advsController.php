@@ -277,7 +277,7 @@ class AdvsController extends PublicController
             $subCats = $this->category_repository->getCategoryById($category->id);
 
             //if there is no subcategory
-            if (count($subCats) < 1) {
+            if (count($subCats) < 1 and count($mainCats) > 1) {
                 //fetch subcategories of the last category
                 $subCats = $this->category_repository->getCategoryById($mainCats[1]['id']);
                 unset($mainCats[0]);//remove last category
@@ -291,7 +291,7 @@ class AdvsController extends PublicController
         $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = array();
 
         if ($isActiveCustomFields) {
-            $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats, $categoryId);
+            $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats, $category);
             $checkboxes = $returnvalues['checkboxes'];
             $topfields = $returnvalues['topfields'];
             $selectDropdown = $returnvalues['selectDropdown'];
@@ -875,9 +875,6 @@ class AdvsController extends PublicController
                     ->packageAddCart(\request()->pack_id, $adv->id);
             }
         }
-
-        $this->event->dispatch(new EditAd($adv));
-
         return redirect('/advs/edit_advs/' . $adv->id);
     }
 
