@@ -64,100 +64,100 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
 
 
-        // advsController
+        // AdvsController
         'advs/list' => [
             'as' => 'visiosoft.module.advs::list',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@index'
         ],
         'advs/list?user={id}' => [
             'as' => 'visiosoft.module.advs::list_user_ad',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@index',
         ],
         'advs/list?cat={id}' => [
             'as' => 'visiosoft.module.advs::list_cat',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@index',
         ],
         'advs/adv/{id}' => [
             'as' => 'adv_detail_backup',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@view'
         ],
         'advs/adv/{id}/{seo}' => [
             'as' => 'adv_detail_seo_backup',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@view'
         ],
         'ad/{id}' => [
             'as' => 'adv_detail',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@view'
         ],
         'ad/{seo}/{id}' => [
             'as' => 'adv_detail_seo',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@view'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@view'
         ],
         'advs/preview/{id}' => [
             'as' => 'advs_preview',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@preview'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@preview'
         ],
         'advs/map?country={country}&city[]={city}&district={districts}' => [
             'as' => 'visiosoft.module.advs::show_ad_map_location',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@index'
         ],
         'c/{category?}/{city?}' => [
             'as' => 'adv_list_seo',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@index'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@index'
         ],
         'advs/create_adv' => [
             'as' => "advs::create_adv",
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@cats',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@cats',
         ],
         'advs/create_adv/post_cat' => [
             'as' => 'post_adv',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@create',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@create',
         ],
         'advs/save_adv' => [
             'as' => 'visiosoft.module.advs::post_cat',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@store'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@store'
         ],
         'advs/edit_advs/{id}' => [
             'middleware' => 'auth',
             'as' => 'visiosoft.module.advs::edit_adv',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@edit',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@edit',
         ],
         'advs/status/{id},{type}' => [
             'as' => 'visiosoft.module.advs::status',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@statusAds'
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@statusAds'
         ],
         'advs/delete/{id}' => [
             'as' => 'advs::delete',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@deleteAd',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@deleteAd',
         ],
         'adv/addCart/{id}' => [
             'as' => 'adv_AddCart',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@advAddCart',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@advAddCart',
         ],
         'ajax/StockControl' => [
             'as' => 'adv_stock_control_ajax',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@stockControl',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@stockControl',
         ],
         'ajax/addCart' => [
             'as' => 'adv_add_cart_ajax',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@addCart',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@addCart',
         ],
         'ajax/countPhone' => [
             'as' => 'adv_count_show_phone',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@showPhoneCounter',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@showPhoneCounter',
         ],
         'view/{type}' => [
             'as' => 'visiosoft.module.advs::view_type',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@viewType',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@viewType',
         ],
         'adv/edit/category/{id}' => [
             'middleware' => 'auth',
             'as' => 'adv::edit_category',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@editCategoryForAd',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@editCategoryForAd',
         ],
         'ajax/getcats/{id}' => [
             'as' => 'ajax::getCats',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCats',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@getCats',
         ],
         'advs/extendAll/{isAdmin?}' => [
             'as' => 'advs::extendAll',
@@ -167,11 +167,11 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'advs::extendSingle',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@extendSingle',
         ],
-        'categories/checkparent/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkParentCat',
-        'getlocations' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getLocations',
-        'class/getcats/{id}' => 'Visiosoft\AdvsModule\Http\Controller\advsController@getCatsForNewAd',
-        'mapJson' => 'Visiosoft\AdvsModule\Http\Controller\advsController@mapJson',
-        'check_user' => 'Visiosoft\AdvsModule\Http\Controller\advsController@checkUser',
+        'categories/checkparent/{id}' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@checkParentCat',
+        'getlocations' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@getLocations',
+        'class/getcats/{id}' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@getCatsForNewAd',
+        'mapJson' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@mapJson',
+        'check_user' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@checkUser',
 
         // AjaxController
         'admin/advs/ajax' => [
