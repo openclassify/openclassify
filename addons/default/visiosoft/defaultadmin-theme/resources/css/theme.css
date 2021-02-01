@@ -2761,3 +2761,7 @@ body {
     font-size: 2rem;
   }
 }
+
+
+/** bootstrap 4.1 Column Fix**/
+.col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}

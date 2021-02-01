@@ -4076,7 +4076,7 @@ readers do not read off random characters that represent icons */
     content: "\f7bc";
 }
 
-.fa-redo:before {
+.fa-redo:before, .fa-repeat:before {
     content: "\f01e";
 }
 
