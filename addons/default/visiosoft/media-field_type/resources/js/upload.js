@@ -2,8 +2,14 @@
 Dropzone.autoDiscover = false;
 $("div#myDrop").dropzone({url: "/file/post"});
 
+var doc_input = $('input[name="doc_files"]');
+
+
 var uploaded = $('input[name="files"]').val().split(',').map(Number);
-var docsUploaded = $('input[name="doc_files"]').val().split(',').map(Number);
+
+if (doc_input.length) {
+    var docsUploaded = doc_input.val().split(',').map(Number);
+}
 
 $(function () {
 
@@ -69,7 +75,7 @@ $(function () {
 
         var response = JSON.parse(file.xhr.response);
         var mimeType = response.mime_type.split('/')
-        if (mimeType[0] === 'image'){
+        if (mimeType[0] === 'image') {
             uploaded.push(response.id);
 
             $('.media-selected-wrapper').load(
@@ -87,21 +93,23 @@ $(function () {
                 file.previewElement.remove();
             }, 500);
         } else {
-            docsUploaded.push(response.id);
-            $('input[name="doc_files"]').val(docsUploaded.join(','))
+            if (doc_input.length) {
+                docsUploaded.push(response.id);
+                $('input[name="doc_files"]').val(docsUploaded.join(','))
 
-            $('.doc_list').append(`
-                <a id="${ response.id }" href="javascript:void(0)" onclick="deleteDocs(${ response.id })" class="text-dark">
-                                ${ response.name }
+                $('.doc_list').append(`
+                <a id="${response.id}" href="javascript:void(0)" onclick="deleteDocs(${response.id})" class="text-dark">
+                                ${response.name}
                     <i class="fa fa-trash text-danger"></i>
                 </a><br>
             `)
 
-            setTimeout(function () {
+                setTimeout(function () {
 
-                addAppendByData(docsUploaded[0])
-                file.previewElement.remove();
-            }, 500);
+                    addAppendByData(docsUploaded[0])
+                    file.previewElement.remove();
+                }, 500);
+            }
         }
     });
 
