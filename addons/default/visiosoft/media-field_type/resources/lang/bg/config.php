@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Папки',
+        'instructions' => 'Посочете кои папки са налични за това поле. Оставете празно, за да се покажат всички папки.',
+        'warning'      => 'Съществуващите разрешения за папки имат предимство пред избраните папки.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'Минимални селекции',
+        'instructions' => 'Въведете минималния брой разрешени селекции.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'Максимален избор',
+        'instructions' => 'Въведете максималния брой разрешени селекции.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Режим на въвеждане',
+        'instructions' => 'Как потребителите трябва да предоставят въвеждане на файлове?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Качете и / или изберете файлове.',
+            'select'  => 'Изберете само файлове.',
+            'upload'  => 'Качвайте само файлове.',
         ],
     ],
 ];
