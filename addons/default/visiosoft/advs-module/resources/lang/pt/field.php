@@ -323,8 +323,8 @@ return [
     'upload_files' => 'Fazer upload de arquivos',
     'additional_fields' => 'Campos Adicionais',
     'ad_location' => 'Localização do anúncio',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Proprietário',
+    'default_owner_instruction' => 'O proprietário assumirá como padrão o usuário atual se nenhum usuário for selecionado',
 
     'free' => 'Livre',
     'ad_date' => 'Data do Anúncio',
