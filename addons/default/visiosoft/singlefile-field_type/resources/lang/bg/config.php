@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Папки',
+        'instructions' => 'Посочете кои папки са налични за това поле. Оставете празно, за да се покажат всички папки.',
+        'warning'      => 'Съществуващите разрешения за папки имат предимство пред избраните папки.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Максимален размер на качването',
+        'instructions' => 'Посочете максималния размер на качване в <strong>мегабайта</strong>.',
+        'warning'      => 'Ако не е посочено, вместо това ще се използва папката max и след това max сървър.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Режим на въвеждане',
+        'instructions' => 'Как потребителите трябва да предоставят въвеждане на файлове?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Качете и / или изберете файлове.',
+            'select'  => 'Изберете само файлове.',
+            'upload'  => 'Качвайте само файлове.',
         ],
     ],
 ];
