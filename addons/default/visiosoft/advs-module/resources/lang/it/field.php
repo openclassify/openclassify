@@ -323,8 +323,8 @@ return [
     'upload_files' => 'Caricare files',
     'additional_fields' => 'Campi aggiuntivi',
     'ad_location' => 'Posizione dell\'annuncio',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Proprietario',
+    'default_owner_instruction' => 'Se non è selezionato alcun utente, per impostazione predefinita il proprietario sarà l\'utente corrente',
 
     'free' => 'Gratuito',
     'ad_date' => 'Data dell\'annuncio',
