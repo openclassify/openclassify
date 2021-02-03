@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'choose_folder' => 'Which folder would you like to upload to?',
-    'upload' => 'Add images | Upload images | Attach a photo',
-    'choose_files' => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads' => 'No files uploaded.',
-    'overwrite' => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading' => 'Uploading',
-    'loading' => 'Loading',
-    'error_upload' => 'There was a problem uploading the file.',
-    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
+    'choose_folder' => 'В коя папка искате да качите?',
+    'upload' => 'Добавяне на изображения | Качване на изображения | Прикачете снимка',
+    'choose_files' => 'Кои файлове бихте искали да използвате?',
+    'no_files_selected' => 'Няма избрани файлове.',
+    'no_uploads' => 'Няма качени файлове.',
+    'overwrite' => 'вече е качено. Искате ли да го презапишете?',
+    'uploading' => 'Качване',
+    'loading' => 'Зареждане',
+    'error_upload' => 'При качването на файла възникна проблем.',
+    'error_upload_docs' => 'Няма поддръжка за качване на документи. Моля, свържете се с вашия системен администратор!',
 ];
