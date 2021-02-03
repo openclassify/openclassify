@@ -1,9 +1,9 @@
 <?php
 
 return [
-    '404_title' => 'Not Found',
-    '403_title' => 'Forbidden',
-    '404_message' => 'The page you were looking for was not found.',
-    '403_message' => 'Access to this resources on the site is denied!',
-    'home_page' => 'Go to Home Page',
+    '404_title' => 'Не е намерен',
+    '403_title' => 'Забранен',
+    '404_message' => 'Страницата, която търсите, не е намерена.',
+    '403_message' => 'Достъпът до тези ресурси на сайта е отказан!',
+    'home_page' => 'Отидете в началната страница',
 ];
