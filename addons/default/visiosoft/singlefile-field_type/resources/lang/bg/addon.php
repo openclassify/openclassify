@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Single File',
-    'name'        => 'File Field Type',
-    'description' => 'A file upload field type.',
+    'title'       => 'Единичен файл',
+    'name'        => 'Тип поле на файла',
+    'description' => 'Тип поле за качване на файл.',
 ];
