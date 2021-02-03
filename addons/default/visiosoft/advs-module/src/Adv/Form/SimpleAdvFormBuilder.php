@@ -1,12 +1,13 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Form;
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
+use Anomaly\UsersModule\User\UserModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 
 class SimpleAdvFormBuilder extends FormBuilder
 {
     protected $model = AdvModel::class;
-
+  
     protected $assets = [
         'scripts.js' => [
             'visiosoft.module.advs::js/simple.js'

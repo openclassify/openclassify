@@ -23,6 +23,7 @@
 
 .upper-list-banner {
     min-height: 300px;
+    background-size: cover;
 }
 
 .upper-list-banner img {

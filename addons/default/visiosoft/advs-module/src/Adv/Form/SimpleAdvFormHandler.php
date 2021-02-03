@@ -11,6 +11,10 @@ class SimpleAdvFormHandler
             return;
         }
 
+        if (!$builder->getFormValue('created_by_id')) {
+            $builder->setFormValue('created_by_id', auth()->id());
+        }
+
         $builder->saveForm();
 
         $ad = $advRepository->find($builder->getFormEntryId());
