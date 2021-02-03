@@ -2,17 +2,17 @@
 
 return [
     'profile' => [
-        'title' => 'Profile',
+        'title' => 'Профил',
     ],
     'adress' => [
-        'title' => 'Adress',
+        'title' => 'Адрес',
     ],
-    'general_setting' => 'General Settings',
+    'general_setting' => 'Основни настройки',
     'recaptcha' => 'reCAPTCHA',
     'education' => [
-        'title' => 'Education',
+        'title' => 'Образование',
     ],
     'education_part' => [
-        'title' => 'Education part',
+        'title' => 'Образователна част',
     ],
 ];
