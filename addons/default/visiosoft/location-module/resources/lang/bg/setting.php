@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Поле за местоположение на началната страница',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Поле Местоположение на страницата със списък',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Поле за местоположение на страницата с подробности',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Показване на бутона за местоположение за търсене',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Държава по подразбиране',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Създайте местоположение на рекламната страница',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'Град по подразбиране',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'Област по подразбиране',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Квартал по подразбиране',
     ],
 
     'google_map_key' => [
@@ -34,23 +34,23 @@ return [
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'По подразбиране дълго',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'Лат. По подразбиране',
     ],
 
     'hide_location_filter' => [
-        'name' => 'Hide Location Filter',
+        'name' => 'Скриване на филтъра за местоположение',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Държава по подразбиране за телефонно поле за регистрация'
 	],
     'sorting_column' => [
-        'name' => 'Sorting Column',
+        'name' => 'Сортираща колона',
     ],
     'sorting_type' => [
-        'name' => 'Sorting Type',
+        'name' => 'Тип сортиране',
     ],
 ];
