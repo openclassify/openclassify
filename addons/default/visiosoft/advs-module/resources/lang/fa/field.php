@@ -322,8 +322,8 @@ return [
     'upload_files' => 'بارگذاری پرونده ها',
     'additional_fields' => 'زمینه های اضافی',
     'ad_location' => 'مکان تبلیغات',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'مالک',
+    'default_owner_instruction' => 'اگر هیچ کاربری انتخاب نشود ، مالک به عنوان کاربر پیش فرض عمل می کند',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',
