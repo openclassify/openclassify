@@ -322,8 +322,8 @@ return [
     'upload_files' => 'تحميل الملفات',
     'additional_fields' => 'حقول إضافية',
     'ad_location' => 'موقع الإعلان',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'صاحب',
+    'default_owner_instruction' => 'سيتحول المالك إلى المستخدم الحالي افتراضيًا إذا لم يتم تحديد أي مستخدم',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
