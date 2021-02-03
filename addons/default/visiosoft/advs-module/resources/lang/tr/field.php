@@ -324,8 +324,8 @@ return [
     'upload_files' => 'Dosyaları Yükle',
     'additional_fields' => 'Özel Alanlar',
     'ad_location' => 'İlan Konumu',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Sahip',
+    'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
