@@ -418,8 +418,8 @@ return [
 ',
     'ad_location' => 'شوێنی ڕێکلام
 ',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Xwedî',
+    'default_owner_instruction' => 'Ger bikarhêner neyê bijartin dê xwedêgiravî ji bikarhênerê heyî re veqetîne',
 
     'free' => 'بەلاش',
     'ad_date' => 'بەرواری ڕیکلام
