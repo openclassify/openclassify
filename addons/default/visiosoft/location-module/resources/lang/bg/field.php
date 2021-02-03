@@ -2,38 +2,38 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'Заглавие'
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'Плужек'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'Град'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'Страна'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'Област'
     ],
     'order' => [
-        'name' => 'Sort Order'
+        'name' => 'Сортирай ред'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Квартал'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'Село'
     ],
     'description' => [
-        'name' => 'Description'
+        'name' => 'Описание'
     ],
     'pick_option' => [
-        'name' => 'Pick an option',
+        'name' => 'Изберете опция',
     ],
     'address' => [
-        'name' => 'Address',
+        'name' => 'Адрес',
     ],
-    'selected' => 'Selected',
-    'choose_an_option' => 'Choose an option...',
+    'selected' => 'Избрано',
+    'choose_an_option' => 'Избери опция...',
 ];
