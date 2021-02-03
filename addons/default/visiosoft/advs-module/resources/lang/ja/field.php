@@ -322,8 +322,8 @@ return [
     'upload_files' => 'ファイルのアップロード',
     'additional_fields' => '追加フィールド',
     'ad_location' => '広告の場所',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'オーナー',
+    'default_owner_instruction' => 'ユーザーが選択されていない場合、所有者はデフォルトで現在のユーザーになります',
 
     'free' => '自由',
     'ad_date' => '広告日',
