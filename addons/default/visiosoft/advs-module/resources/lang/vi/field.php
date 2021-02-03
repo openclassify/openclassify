@@ -322,8 +322,8 @@ return [
     'upload_files' => 'Tải lên tệp',
     'additional_fields' => 'các trường bổ sung',
     'ad_location' => 'Vị trí Quảng cáo',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Chủ nhân',
+    'default_owner_instruction' => 'Chủ sở hữu sẽ mặc định là người dùng hiện tại nếu không có người dùng nào được chọn',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',
