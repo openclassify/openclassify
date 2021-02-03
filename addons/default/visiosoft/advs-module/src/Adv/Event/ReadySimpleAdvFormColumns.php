@@ -5,7 +5,6 @@ use Illuminate\Database\Eloquent\Builder;
 
 class ReadySimpleAdvFormColumns
 {
-
     protected $fields;
     public function __construct($fields)
     {
