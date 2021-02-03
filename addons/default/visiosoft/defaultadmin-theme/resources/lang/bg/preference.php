@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Задръжте курсора на страничната лента',
+        'instructions' => 'Разширяване на страничната лента при задържане на курсора на мишката?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Навигация',
+        'instructions' => 'Посочете вашия <em>личен</em> ред за навигация.',
+        'warning'      => 'Първият достъпен елемент за навигация се използва като вашата зона <strong>дома</strong>.',
+        'reorder'      => 'Влачите и пускате на първични навигационни елементи в <strong>лента</strong> , за да ги пренаредите.',
     ],
     'display'       => [
-        'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'name'         => 'Показване на плътността',
+        'instructions' => 'Компактният дисплей позволява едновременно да се показва повече съдържание на екрана.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'По подразбиране',
+            'compact' => 'Компактен',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Режим на страничната лента',
+        'instructions' => 'Статичните странични ленти винаги ще бъдат видими.',
         'option'       => [
-            'default' => 'Default',
-            'static'  => 'Static',
+            'default' => 'По подразбиране',
+            'static'  => 'Статично',
         ],
     ],
 ];
