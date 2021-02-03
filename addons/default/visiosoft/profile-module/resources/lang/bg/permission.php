@@ -2,35 +2,35 @@
 
 return [
     'profile' => [
-        'name'   => 'Profile',
+        'name'   => 'Профил',
         'option' => [
-            'read'   => 'Can read profile?',
-            'write'  => 'Can create/edit profile?',
-            'delete' => 'Can delete profile?',
+            'read'   => 'Може ли да се чете профил?',
+            'write'  => 'Може ли да създадете / редактирате профил?',
+            'delete' => 'Може ли да изтриете профил?',
         ],
     ],
     'adress' => [
-        'name'   => 'Adress',
+        'name'   => 'Адрес',
         'option' => [
-            'read'   => 'Can read adress?',
-            'write'  => 'Can create/edit adress?',
-            'delete' => 'Can delete adress?',
+            'read'   => 'Може ли да чете адрес?',
+            'write'  => 'Може ли да създавате / редактирате адрес?',
+            'delete' => 'Можете ли да изтриете адрес?',
         ],
     ],
     'education' => [
-        'name'   => 'Education',
+        'name'   => 'Образование',
         'option' => [
-            'read'   => 'Can read education?',
-            'write'  => 'Can create/edit education?',
-            'delete' => 'Can delete education?',
+            'read'   => 'Може ли да чете образование?',
+            'write'  => 'Може ли да създава / редактира образование?',
+            'delete' => 'Може ли да изтриете образованието?',
         ],
     ],
     'education_part' => [
-        'name'   => 'Education part',
+        'name'   => 'Образователна част',
         'option' => [
-            'read'   => 'Can read education part?',
-            'write'  => 'Can create/edit education part?',
-            'delete' => 'Can delete education part?',
+            'read'   => 'Може ли да чете образователна част?',
+            'write'  => 'Може ли да създава / редактира образователна част?',
+            'delete' => 'Може ли да изтриете образователната част?',
         ],
     ],
 ];
