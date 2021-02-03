@@ -323,8 +323,8 @@ return [
     'upload_files' => 'Μεταφόρτωση αρχείων',
     'additional_fields' => 'Πρόσθετα πεδία',
     'ad_location' => 'Τοποθεσία διαφήμισης',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Ιδιοκτήτης',
+    'default_owner_instruction' => 'Ο κάτοχος θα προεπιλογή στον τρέχοντα χρήστη εάν δεν έχει επιλεγεί κανένας χρήστης',
 
     'free' => 'Ελεύθερος',
     'ad_date' => 'Ημερομηνία διαφήμισης',
