@@ -322,8 +322,8 @@ return [
     'upload_files' => 'ফাইল আপলোড কর',
     'additional_fields' => 'অতিরিক্ত ক্ষেত্রসমূহ',
     'ad_location' => 'বিজ্ঞাপনের অবস্থান',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'মালিক',
+    'default_owner_instruction' => 'কোনও ব্যবহারকারী নির্বাচিত না হলে মালিক বর্তমান ব্যবহারকারীর কাছে ডিফল্ট হবে',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',
