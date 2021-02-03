@@ -323,8 +323,8 @@ return [
     'upload_files' => 'Ngarko skedarët',
     'additional_fields' => 'Fushat shtesë',
     'ad_location' => 'Vendndodhja e reklamës',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Pronar',
+    'default_owner_instruction' => 'Pronari do të zgjedhë përdoruesin aktual nëse nuk zgjidhet asnjë përdorues',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',
