@@ -322,8 +322,8 @@ return [
     'upload_files' => 'فائلیں اپ لوڈ کرو',
     'additional_fields' => 'اضافی فیلڈز',
     'ad_location' => 'اشتہار کی جگہ',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'مالک',
+    'default_owner_instruction' => 'اگر کوئی صارف منتخب نہیں ہوتا ہے تو مالک موجودہ صارف سے ڈیفالٹ ہوجائے گا',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
