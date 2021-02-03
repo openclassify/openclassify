@@ -322,8 +322,8 @@ return [
     'upload_files' => 'Prześlij pliki',
     'additional_fields' => 'Dodatkowe pola',
     'ad_location' => 'Lokalizacja reklamy',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Właściciel',
+    'default_owner_instruction' => 'Właścicielem będzie domyślnie bieżący użytkownik, jeśli żaden użytkownik nie zostanie wybrany',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',
