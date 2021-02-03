@@ -322,8 +322,8 @@ return [
     'upload_files' => 'Качване на файлове',
     'additional_fields' => 'Допълнителни полета',
     'ad_location' => 'Местоположение на рекламата',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Собственик',
+    'default_owner_instruction' => 'Собственикът ще използва по подразбиране текущия потребител, ако не е избран потребител',
 
     'free' => 'Безплатно',
     'ad_date' => 'Дата на рекламата',
