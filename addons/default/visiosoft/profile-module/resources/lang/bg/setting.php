@@ -2,49 +2,49 @@
 
 return [
     'show_my_ads' => [
-        'name' => 'Show My Ads Tab',
+        'name' => 'Показване на раздела „Моите реклами“',
     ],
     'upload_avatar' => [
-        'name' => 'Avatar Upload',
+        'name' => 'Качване на аватар',
     ],
     'show_tax_office' => [
-        'name' => 'Show Tax Office Field',
+        'name' => 'Покажи полето на данъчната служба',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Показване на условията за отметка в регистъра',
+        'instructions' => 'Показвайте „Приемете термин“, „закон за защита“, „термин за поверителност“, „sms и имейли“ във формуляра за регистрация'
     ],
     'register_protection_url' => [
-        'name' => 'Register Protection URL',
+        'name' => 'Регистрирайте защитен URL адрес',
     ],
     'register_privacy_url' => [
-        'name' => 'Register Privacy URL',
+        'name' => 'Регистрирайте URL за поверителност',
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Покажете полета за образование и професия',
+        'instructions' => 'Покажете „Образование“, „Състояние на образованието“ и „Професия“ на страницата за редактиране на профила'
     ],
     'google_captcha_site_key' => [
-        'name' => 'Google Captcha Site Key',
+        'name' => 'Ключ за сайта на Google Captcha',
     ],
     'google_captcha_secret_key' => [
-        'name' => 'Google Captcha Secret Key',
+        'name' => 'Тайният ключ на Google Captcha',
     ],
     'score_threshold' => [
-        'name' => 'Score Threshold',
-        'instructions' => 'A value between 0 and 1. The higher the threshold the more strict ReCaptcha is in trying to determine if a user is a bot or not.',
+        'name' => 'Резултатен праг',
+        'instructions' => 'Стойност между 0 и 1. Колкото по-висок е прагът, толкова по-строг ReCaptcha се опитва да определи дали потребителят е бот или не.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Образование'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Състояние на образованието'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Професия'
     ],
     'hide_register_type_profile' => [
-        'name' => 'Hide Register Type in Profile Page',
-        'instructions' => 'Hides the register type field in the profile edit page.',
+        'name' => 'Скриване на типа регистър в страницата на профила',
+        'instructions' => 'Скрива полето тип регистър в страницата за редактиране на профила.',
     ],
 ];
