@@ -2,34 +2,34 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Задръжте курсора на страничната лента',
+        'instructions' => 'Разширяване на страничната лента при задържане на курсора на мишката?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify the <em>default</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as the <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Навигация',
+        'instructions' => 'Посочете <em>по подразбиране</em> ред за навигация.',
+        'warning'      => 'Първият достъпен елемент за навигация се използва като зона <strong>начало</strong>.',
+        'reorder'      => 'Влачите и пускате на първични навигационни елементи в <strong>лента</strong> , за да ги пренаредите.',
     ],
     "login_icon" => [
-        'name' => 'Login Icon',
+        'name' => 'Икона за вход',
     ],
     "panel_icon" => [
-        'name' => 'Panel Icon',
+        'name' => 'Икона на панела',
     ],
     "title" => [
-        'name' => 'Title',
+        'name' => 'Заглавие',
     ],
     "footer_copyright_org_name" => [
-        'name' => 'Footer Copyright Organization Name',
+        'name' => 'Долен колонтитул Име на организацията за авторски права',
     ],
     "sidebar_main_color" => [
-        'name' => 'Sidebar Main Color',
+        'name' => 'Основен цвят на страничната лента',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Sidebar Secondary Color',
+        'name' => 'Вторичен цвят на страничната лента',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Active Sidebar Border Color',
+        'name' => 'Активен цвят на границата на страничната лента',
     ]
 ];
