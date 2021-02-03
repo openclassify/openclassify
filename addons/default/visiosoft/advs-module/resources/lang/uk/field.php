@@ -322,8 +322,8 @@ return [
     'upload_files' => 'Завантажити файли',
     'additional_fields' => 'Додаткові поля',
     'ad_location' => 'Місце розташування оголошення',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Власник',
+    'default_owner_instruction' => 'Власник встановить за замовчуванням поточного користувача, якщо не вибрано жодного користувача',
 
     'free' => 'Безкоштовно',
     'ad_date' => 'Дата оголошення',
