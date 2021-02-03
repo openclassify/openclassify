@@ -323,8 +323,8 @@ return [
     'upload_files' => 'Faylları yükləyin',
     'additional_fields' => 'Əlavə sahələr',
     'ad_location' => 'Ünvan əlavə et',
-    'owner' => 'Owner',
-    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'owner' => 'Sahib',
+    'default_owner_instruction' => 'Heç bir istifadəçi seçilmədiyi təqdirdə sahib cari istifadəçiyə borcludur',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Elan Tarixi',
