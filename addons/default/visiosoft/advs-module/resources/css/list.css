@@ -227,29 +227,12 @@ a.sort-by-open-dropdown:hover {
     padding: 5px 0;
 }
 
-.p-3{
-    background-color: #f4f4f4;
-}
-
 .card {
     border: none;
 }
 
-.py-1 {
-    padding-top: 3px!important;
-    padding-bottom: 3px!important;
-}
-
-.px-2 {
-    padding: 0!important;
-}
-
 .btn-link {
     font-weight: bold;
-}
-
-.p-3 {
-    padding: 8px !important;
 }
 
 .searchbut {
