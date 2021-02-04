@@ -145,7 +145,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         if ($this->model->is_enabled('customfields')) {
-            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $param, $query);
+            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->filterSearch($customParameters, $param, $query);
         }
 
 //        //UPDATE `default_advs_advs` SET `coor` = (PointFromText('POINT(41.085022 28.804754)')) WHERE `default_advs_advs`.`id` = 8

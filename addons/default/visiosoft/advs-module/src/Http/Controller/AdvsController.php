@@ -291,7 +291,7 @@ class AdvsController extends PublicController
         $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = array();
 
         if ($isActiveCustomFields) {
-            $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->index($mainCats, $subCats, $category);
+            $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->index($mainCats, $subCats, $category);
             $checkboxes = $returnvalues['checkboxes'];
             $topfields = $returnvalues['topfields'];
             $selectDropdown = $returnvalues['selectDropdown'];
@@ -525,7 +525,7 @@ class AdvsController extends PublicController
 
             $features = null;
             if ($this->adv_model->is_enabled('customfields')) {
-                $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
+                $features = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->view($adv);
             }
 
             $adv->video_url = null;
@@ -614,7 +614,7 @@ class AdvsController extends PublicController
 
         $features = array();
         if ($this->adv_model->is_enabled('customfields')) {
-            $features = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->view($adv);
+            $features = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->view($adv);
         }
 
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
@@ -701,7 +701,7 @@ class AdvsController extends PublicController
             $cats_d['cat' . $plus1] = $cat->name;
         }
         if ($isActive->is_enabled('customfields')) {
-            $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->create($categories);
+            $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->create($categories);
         }
 
         return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact(
@@ -779,7 +779,7 @@ class AdvsController extends PublicController
 
             //Todo Create Event
             if (is_module_installed('visiosoft.module.customfields')) {
-                app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->store($adv, $this->request);
+                app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->store($adv, $this->request);
             }
 
             //Todo Create Event
@@ -916,7 +916,7 @@ class AdvsController extends PublicController
 
         $custom_fields = array();
         if ($this->adv_model->is_enabled('customfields')) {
-            $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')
+            $custom_fields = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')
                 ->edit($adv, $categories, $cats);
         }
 
