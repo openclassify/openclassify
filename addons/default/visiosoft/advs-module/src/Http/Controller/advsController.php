@@ -674,8 +674,7 @@ class AdvsController extends PublicController
 
     public function getCatsForNewAd($id)
     {
-
-        if ($this->adv_model->is_enabled('packages')) {
+        if ($this->adv_model->is_enabled('packages') and !setting_value('visiosoft.module.packages::move_the_buy_package_to_the_end')) {
             $cats = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForCategorySelection($id);
         } else {
             $cats = $this->getCats($id);
