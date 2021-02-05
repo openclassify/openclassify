@@ -51,6 +51,12 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
             ];
         }
 
+	    if ($request->segment(2) === "settings") {
+		    return [
+			    'streams::form/partials/default' => 'visiosoft.theme.defaultadmin::admin/settings/form/partials/default',
+		    ];
+	    }
+
         return parent::getOverrides();
     }
 }

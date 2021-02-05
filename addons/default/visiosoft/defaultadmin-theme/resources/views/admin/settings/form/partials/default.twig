@@ -1,0 +1,18 @@
+<div class="card">
+
+	{% include "streams::form/partials/header" with {"section": section} %}
+
+	<div class="card-block card-body">
+
+		{% include "streams::form/partials/fields" with {"fields": form.fields.base().pluck('field_name').all()} %}
+
+	</div>
+</div>
+
+<script>
+    var buying_selling_title = "{{ setting_value('visiosoft.theme.alibaba::is_buying_selling_title') }}",
+	    is_buying = "{{ setting_value('visiosoft.theme.alibaba::is_buying_value') }}",
+        is_selling = "{{ setting_value('visiosoft.theme.alibaba::is_selling_value') }}",
+        pick_option = "{{ trans('visiosoft.theme.alibaba::field.pick_option.name') }}"
+</script>
+{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/alibaba/buyingSelling.js") }}
