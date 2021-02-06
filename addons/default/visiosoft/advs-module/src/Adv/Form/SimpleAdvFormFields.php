@@ -1,6 +1,6 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Form;
 
-use Visiosoft\AdvsModule\Adv\Event\ReadySimpleAdvFormColumns;
+use Visiosoft\AdvsModule\Adv\Event\ReadySimpleAdvFormFields;
 
 class SimpleAdvFormFields
 {
@@ -26,7 +26,7 @@ class SimpleAdvFormFields
             'files',
         ];
 
-        $eventFields = event(new ReadySimpleAdvFormColumns($form_fields));
+        $eventFields = event(new ReadySimpleAdvFormFields($form_fields));
 
         foreach ($eventFields as $field_array) {
             $form_fields = array_merge($field_array);

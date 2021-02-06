@@ -3,7 +3,7 @@
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Illuminate\Database\Eloquent\Builder;
 
-class ReadySimpleAdvFormColumns
+class ReadySimpleAdvFormFields
 {
     protected $fields;
     public function __construct($fields)
