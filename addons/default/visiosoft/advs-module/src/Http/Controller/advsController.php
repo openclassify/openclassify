@@ -991,7 +991,7 @@ class AdvsController extends PublicController
         } elseif ($type === 'sold') {
             $message = trans('visiosoft.module.advs::message.sold_status_change');
         } else {
-            trans('visiosoft.module.advs::message.passive_status_change');
+            $message = trans('visiosoft.module.advs::message.passive_status_change');
         }
         $this->messages->success($message);
         return back();

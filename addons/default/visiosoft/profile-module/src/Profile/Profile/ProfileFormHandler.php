@@ -2,11 +2,7 @@
 
 use Anomaly\Streams\Platform\Addon\Extension\ExtensionCollection;
 use Anomaly\Streams\Platform\Message\MessageBag;
-use Anomaly\UsersModule\User\Authenticator\Contract\AuthenticatorExtensionInterface;
-use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\UserModel;
-use Illuminate\Http\RedirectResponse;
-use Illuminate\Support\Facades\Redirect;
 use Visiosoft\ProfileModule\Events\UserUpdated;
 
 class ProfileFormHandler
@@ -72,7 +68,7 @@ class ProfileFormHandler
 
         $changes = $this->change($user, $parameters);
 
-        event(new UserUpdated($oldCustomerInfo, $changes));
+        event(new UserUpdated($oldCustomerInfo, $changes, $builder));
 
         $messages->success(trans('visiosoft.module.profile::message.success_update'));
     }
@@ -97,7 +93,7 @@ class ProfileFormHandler
         foreach ($validators as $validator) {
             $valid = $validator->validate($fields);
 
-            if ($valid['error']) {
+            if (isset($valid['error']) && $valid['error']) {
                 return $valid;
             }
         }

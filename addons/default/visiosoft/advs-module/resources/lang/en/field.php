@@ -322,6 +322,8 @@ return [
     'upload_files' => 'Upload Files',
     'additional_fields' => 'Additional Fields',
     'ad_location' => 'Ad Location',
+    'owner' => 'Owner',
+    'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
     'free' => 'Free',
     'ad_date' => 'Ad Date',

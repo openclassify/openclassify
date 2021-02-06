@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\AdvsModule\Adv;
 
 use Anomaly\Streams\Platform\Entry\EntryCollection;
+use Carbon\Carbon;
 use Illuminate\Container\Container;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
@@ -25,5 +26,14 @@ class AdvCollection extends EntryCollection
         return Container::getInstance()->makeWith(LengthAwarePaginator::class, compact(
             'items', 'total', 'perPage', 'currentPage', 'options'
         ));
+    }
+
+    public function nonExpired()
+    {
+        return $this->filter(
+            function ($ad) {
+                return $ad->finish_at->gt(Carbon::now());
+            }
+        );
     }
 }
