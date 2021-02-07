@@ -466,15 +466,16 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
     {
         $ads = $this
             ->newQuery()
-            ->whereIn('advs_advs.created_by_id', $usersIDs)
-            ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+            ->whereIn('advs_advs.created_by_id', $usersIDs);
 
         if ($status) {
             $ads = $ads->where('advs_advs.status', 'approved');
         }
 
         if (!$withDraft) {
-            $ads = $ads->where('advs_advs.slug', '!=', "");
+            $ads = $ads
+                ->where('advs_advs.slug', '!=', "")
+                ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
         }
 
         return $ads;

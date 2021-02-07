@@ -128,9 +128,12 @@ class AdvsModulePlugin extends Plugin
         return [
             new \Twig_SimpleFilter(
                 'ksort',
-                function (array $array) {
-                    ksort($array);
-                    return $array;
+                function ($array) {
+                    if ($array) {
+                        ksort($array);
+                        return $array;
+                    }
+                    return null;
                 }
             ),
         ];

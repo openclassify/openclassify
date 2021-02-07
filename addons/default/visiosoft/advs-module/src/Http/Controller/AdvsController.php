@@ -666,8 +666,7 @@ class AdvsController extends PublicController
 
     public function getCatsForNewAd($id)
     {
-
-        if ($this->adv_model->is_enabled('packages')) {
+        if ($this->adv_model->is_enabled('packages') and !setting_value('visiosoft.module.packages::move_the_buy_package_to_the_end')) {
             $cats = app('Visiosoft\PackagesModule\Http\Controller\PackageFEController')->AdLimitForCategorySelection($id);
         } else {
             $cats = $this->getCats($id);
@@ -962,7 +961,7 @@ class AdvsController extends PublicController
         } elseif ($type === 'sold') {
             $message = trans('visiosoft.module.advs::message.sold_status_change');
         } else {
-            trans('visiosoft.module.advs::message.passive_status_change');
+            $message = trans('visiosoft.module.advs::message.passive_status_change');
         }
         $this->messages->success($message);
         return back();

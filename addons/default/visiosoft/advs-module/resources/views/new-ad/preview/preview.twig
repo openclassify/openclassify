@@ -11,7 +11,9 @@
         </p>
     </div>
     <div class="preview-actions text-center">
-        {% if isActiveDopings %}
+        {% if isActive('packages') and setting_value('visiosoft.module.packages::move_the_buy_package_to_the_end') %}
+            {% set continueLink = url_route('visiosoft.module.packages::add_package', [adv.id]) %}
+        {% elseif isActive('dopings') %}
             {% set continueLink = url_route('add_doping', [adv.id]) %}
         {% else %}
             {% set continueLink = url_route('adv_detail_seo', [adv.slug, adv.id]) %}
