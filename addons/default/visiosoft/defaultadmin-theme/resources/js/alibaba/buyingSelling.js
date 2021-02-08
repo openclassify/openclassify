@@ -1,6 +1,5 @@
 $(() => {
     if (buying_selling_title) {
-        console.log(is_buying)
         getCfValue(buying_selling_title)
     }
     var is_buying_selling_title = $('#is_buying_selling_title');
