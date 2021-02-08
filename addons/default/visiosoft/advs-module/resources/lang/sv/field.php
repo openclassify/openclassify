@@ -322,6 +322,8 @@ return [
     'upload_files' => 'Ladda upp filer',
     'additional_fields' => 'Ytterligare fält',
     'ad_location' => 'Annonsplats',
+    'owner' => 'Ägare',
+    'default_owner_instruction' => 'Ägaren kommer som standard att använda den nuvarande användaren om ingen användare har valts',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',

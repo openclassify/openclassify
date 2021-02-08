@@ -165,6 +165,7 @@ return [
     'edit' => 'संपादित करें',
     'approve' => 'मंजूर',
     'passive' => "निष्क्रिय",
+	'sold' => 'बिक',
     'offered_by' => 'के द्वारा दिया गया',
     'more_ads_by' => 'अधिक विज्ञापन द्वारा',
     'click_phone' => 'फोन नंबर दिखाएं',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'कॉर्पोरेट जानकारी',
     'featured_ads' => "सुविधाजनक विज्ञापन",
     'trending_ads' => 'ट्रेंडइंड विज्ञापन',
+    'search_ad_result_prefix' => 'पर',
     'search_ads_result_message' => [
         'name' => ': नाम खोज के लिए पाए गए विज्ञापनों की गणना करें',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "कोई स्थान चयनित नहीं है।",
     "continue" => 'जारी रखें',
     "gallery" => 'गेलरी',
+    "ad" => 'विज्ञापन',
     "ads" => 'विज्ञापन',
     "were_found" => 'पाये गए।',
 
@@ -316,8 +319,11 @@ return [
     'congratulations' => 'बधाई हो',
     'ad_desc' => 'विज्ञापन विवरण',
     'upload_photos' => 'तस्वीरें अपलोड करें',
+    'upload_files' => 'फाइल अपलोड करो',
     'additional_fields' => 'अतिरिक्त क्षेत्र',
     'ad_location' => 'विज्ञापन स्थान',
+    'owner' => 'मालिक',
+    'default_owner_instruction' => 'यदि कोई उपयोगकर्ता चयनित नहीं है, तो स्वामी वर्तमान उपयोगकर्ता को डिफ़ॉल्ट करेगा',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',

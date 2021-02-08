@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Reklam',
-    'name'        => 'Modula Ads',
-    'description' => 'Modula Ads',
+    'title'       => 'ڕیکلامەکان',
+    'name'        => 'مۆدیلی ڕیکلامەکان',
+    'description' => 'مۆدیلی ڕیکلامەکان',
 ];

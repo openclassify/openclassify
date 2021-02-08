@@ -56,4 +56,7 @@ return [
         'title' => 'কনফিগারেশন',
     ],
     'translations' => 'অনুবাদ',
+    'status' => [
+        'title' => 'স্থিতি',
+    ],
 ];

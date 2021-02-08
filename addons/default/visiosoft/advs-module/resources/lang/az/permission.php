@@ -97,4 +97,12 @@ return [
             'delete' => 'Seçim konfiqurasiyasını silə bilərsiniz?',
         ],
     ],
+    'status' => [
+        'name'   => 'Status',
+        'option' => [
+            'read'   => 'Statusu oxuya bilirsinizmi?',
+            'write'  => 'Status yarada / redaktə edə bilərəmmi?',
+            'delete' => 'Vəziyyəti silə bilərsiniz?',
+        ],
+    ],
 ];

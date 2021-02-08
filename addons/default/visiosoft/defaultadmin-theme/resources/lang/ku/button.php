@@ -1,5 +1,6 @@
 <?php
 
 return [
-    'view_ads' => 'View Ads',
+    'view_ads' => 'ڕیکلامەکان نیشاندە
+',
 ];

@@ -323,6 +323,8 @@ return [
     'upload_files' => 'Upload bestanden',
     'additional_fields' => 'Extra velden',
     'ad_location' => 'Advertentielocatie',
+    'owner' => 'Eigenaar',
+    'default_owner_instruction' => 'De eigenaar wordt standaard de huidige gebruiker als er geen gebruiker is geselecteerd',
 
     'free' => 'Vrij',
     'ad_date' => 'Advertentiedatum',

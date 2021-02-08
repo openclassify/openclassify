@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'unfinished' => 'Neqedya',
-    'advanced' => 'Pêşveçû',
+    'unfinished' => 'تەواو نەکراو
+',
+    'advanced' => 'پێشکەوتوو',
 ];

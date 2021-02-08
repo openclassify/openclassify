@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Pelê Tekane',
+    'title'       => 'فایلی تاک',
     'name'        => 'Pelê Zeviya Pelê',
     'description' => 'Celebek zeviyê barkirina pelan.',
 ];

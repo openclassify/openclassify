@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'Peşə'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'Profil səhifəsində qeyd növünü gizlədin',
+        'instructions' => 'Profil redaktə səhifəsində qeyd növü sahəsini gizlədir.',
+    ],
 ];

@@ -43,4 +43,5 @@ return [
 	'fast_create' => 'سریع ایجاد کنید',
 	'publish' => 'انتشار',
 	'import' => 'وارد كردن',
+    'new_status' => 'وضعیت جدید',
 ];

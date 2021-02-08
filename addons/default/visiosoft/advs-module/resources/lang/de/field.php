@@ -323,6 +323,8 @@ return [
     'upload_files' => 'Daten hochladen',
     'additional_fields' => 'Zusätzliche Felder',
     'ad_location' => 'Anzeigenposition',
+    'owner' => 'Inhaber',
+    'default_owner_instruction' => 'Der Eigentümer verwendet standardmäßig den aktuellen Benutzer, wenn kein Benutzer ausgewählt ist',
 
     'free' => 'Frei',
     'ad_date' => 'Anzeigedatum',
