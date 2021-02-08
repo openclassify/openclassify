@@ -68,7 +68,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#approved').html("Onaylandi");
                 $('#declined').html('Reddet');
             },
@@ -87,7 +86,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#declined').html('Reddedildi');
                 $('#approved').html('Onayla');
             },
@@ -106,7 +104,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#declined').html('Reddet');
                 $('#approved').html('Onayla');
                 $('#passive').html('Aktif Et').attr('id', 'pending_admin');
@@ -126,7 +123,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#declined').html('Reddet');
                 $('#approved').html('Onayla');
                 $('#pending_admin').html('Pasif Et').attr('id', 'passive');

@@ -2,9 +2,6 @@ function showLoader() {
     $('body').append('<div class="loading-cart"><div class="lds-ripple"><div></div><div></div></div></div>');
 }
 
-function hideLoader() {
-    $('.loading-cart').remove();
-}
 $("#catSelectionStepForm").on('click', 'input[type=submit]', function() {
     $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
     $(this).attr("clicked", "true");
@@ -24,7 +21,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/class/getcats/'+ divId,
             success: function (response) {
-                hideLoader();
                 if(response['title'] != undefined){
                     response['success'] ? $('.post-icon > svg:last-of-type').hide() : $('.post-icon > svg:first-of-type').hide();
 
