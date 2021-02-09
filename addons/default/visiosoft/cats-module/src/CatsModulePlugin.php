@@ -51,7 +51,7 @@ class CatsModulePlugin extends Plugin
             ), new \Twig_SimpleFunction(
                 'getParentsCount',
                 function ($id) {
-                    return $this->categoryRepository->getParentCategoryById($id) - 1;
+                    return count($this->categoryRepository->getParentCategoryById($id)) - 1;
                 }
             ), new \Twig_SimpleFunction(
                 'catIcon',
