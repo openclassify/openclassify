@@ -120,16 +120,20 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 				DB::raw('c1.id'),
 				DB::raw('c1.slug'),
 				DB::raw('c1.parent_category_id'),
+				DB::raw('c1.icon_id'),
 				DB::raw('t1.name'),
 
 				DB::raw('c2.id as c2_id'),
 				DB::raw('c2.slug as c2_slug'),
 				DB::raw('c2.parent_category_id as c2_parent_category_id'),
-				DB::raw('t2.name as c2_name')
+				DB::raw('t2.name as c2_name'),
+
+				DB::raw('file.id as file_id')
 			)
 			->leftJoin((DB::raw($dBName . ' c2')), DB::raw('c2.parent_category_id'), '=', DB::raw('c1.id'))
 			->leftJoin((DB::raw($dBNamet . ' t1')), DB::raw('c1.id'), '=', DB::raw('t1.entry_id'))
 			->leftJoin((DB::raw($dBNamet . ' t2')), DB::raw('c2.id'), '=', DB::raw('t2.entry_id'))
+			->leftJoin(DB::raw('default_files_files file'), DB::raw('c1.icon_id'), DB::raw('file.id'))
 			->where(DB::raw('t1.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
 			->where(DB::raw('t2.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
 			->where(DB::raw("c1.deleted_at"), NULL)
