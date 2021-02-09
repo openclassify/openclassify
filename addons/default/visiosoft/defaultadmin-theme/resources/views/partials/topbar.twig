@@ -30,7 +30,7 @@
                 <div class="dropdown-menu results">
                     <h6 class="dropdown-header">Navigation</h6>
                     {% for key, navigation in template.cp.navigation %}
-                        <a class="dropdown-item" {{ html_attributes(navigation.attributes) }}>
+                        <a class="dropdown-item" {{ html_attributes(navigation.attributes) }}  {{ navigation.class }}>
                             <span class="title">{{ trans(navigation.title) }}</span>
                         </a>
                     {% endfor %}
