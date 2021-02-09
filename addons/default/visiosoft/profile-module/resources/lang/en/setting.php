@@ -17,9 +17,6 @@ return [
     'register_protection_url' => [
         'name' => 'Register Protection URL',
     ],
-	'register_corporate_protection_url' => [
-		'name' => 'Register Corporate Protection Url',
-	],
     'register_privacy_url' => [
         'name' => 'Register Privacy URL',
     ],
