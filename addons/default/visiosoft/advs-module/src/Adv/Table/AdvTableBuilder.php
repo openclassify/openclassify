@@ -89,7 +89,11 @@ class AdvTableBuilder extends TableBuilder
      */
     protected $assets = [
         'scripts.js' => [
-            'visiosoft.module.advs::js/admin/advanced.js'
+            'visiosoft.module.advs::js/admin/advanced.js',
+            'visiosoft.module.advs::js/admin/filter-user.js',
+        ],
+        'styles.css' => [
+            'visiosoft.module.advs::css/admin/filter-user.css',
         ],
     ];
 
