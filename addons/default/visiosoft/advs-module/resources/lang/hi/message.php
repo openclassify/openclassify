@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "यह विज्ञापन अब मान्य नहीं है!",
     'approve_status_change' => "आपके विज्ञापन की स्थिति सक्रिय हो गई है!",
     'passive_status_change' => "आपके विज्ञापन की स्थिति निष्क्रिय हो गई है!",
+	'sold_status_change' => "आपके विज्ञापन की स्थिति बिक चुकी है!",
 ];

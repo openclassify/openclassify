@@ -1,8 +1,9 @@
 <?php
 
 return [
-    'latest_ads' => 'Reklamên Dawîn',
-    'show_all' => ' هەموو پیشانبدە',
+    'latest_ads' => 'نوێترین ڕیکلامەکان
+',
+    'show_all' => 'هەموو نیشاندە',
     'login' => [
         'name' => 'چوونەژوورەوە',
     ],
@@ -12,26 +13,26 @@ return [
     'profile' => 'پرۆفایل',
     'email' => 'ناونیشانی ئیمەیل',
     'phone' => 'ژماره‌ی مۆبایل',
-    'reset_code' => 'کۆدەکە تێپەڕەوشە',
-    'password_confirmation' => 'پشت راست کردنەوەی وشەی نهێنی
+    'reset_code' => 'کۆدەکە ڕێکخستنەوە',
+    'password_confirmation' => 'سەلماندنی وشەی نهێنی
 ',
     'password' => 'وشەی نهێنی',
     'first_name' => 'ناوی یەکەم
 ',
-    'last_name' => 'ناوی باپیر',
-    'remember_me' => 'بیره بۆ من
+    'last_name' => 'پاشناو',
+    'remember_me' => 'من لە بیرە
 ',
-    'not_a_member_yet' => 'تۆ ئەندام نیت هێشتا ؟
+    'not_a_member_yet' => 'تۆ هێشتا ئەندام نیت 
 ',
     'not_a_member_yet_message' => 'خۆت تۆمار بکە بۆ ئەندامەکانمان بۆ سوودمەندبوون لە خزمەتگوزاری تایبەتمان
 ',
     'forgot_password' => 'وشەی نهێنەکەم لەبیرکرد
 ',
     'email_or_phone_number' => 'ژماره‌ی مۆبایل یان ناونیشانی ئیمەیل',
-    'phone_number' => 'ژماره‌ی مۆبایل',
+    'phone_number' => 'ژمارەی تەلەفۆن',
 
     // Registration instructions
-    'personal_registration_header' => 'ئایا ئەندامێتیی ئیندیڤایدۆلۆژیا چین ؟
+    'personal_registration_header' => 'ئایا ئەندامێتیی شه‌خسی چین ؟
 ',
     'personal_registration_body' => 'ئۆتۆمبێلەکەت بفرۆشە و بەکرێ بگرە ، ماڵەکەت بفرۆشە ، شتی بەکارنەهێنراوت بفرۆشە ، نوێ بەدەست بهێنە.
 ',
@@ -50,12 +51,12 @@ return [
 ',
 
     // Forgot Password
-    'create_new_password' => 'وشەی نوێ دروست بکە
+    'create_new_password' => 'وشەی نهێنی نوێ دروست بکە
 ',
 
     // Login page
     'or' => 'یان',
-    'login_with_phone_number' => 'بە ژمارە مۆبایلەوە بچۆ ژوورەوە
+    'login_with_phone_number' => 'بە ژمارە تەلەفۆنەوە بچۆ ژوورەوە
 ',
     'login_with_email_address' => 'بە ناونیشانی ئیمەیل بچۆ ژوورەوە
 ',
@@ -65,7 +66,7 @@ return [
 ',
     'popular_ads' => 'ڕیکلامێکی بەناوبانگە
 ',
-    'last_48_hours' => 'ئاخیر48 کاتەکان',
+    'last_48_hours' => 'ئاخیر 48 کاتژمێر',
     'secure_e-commerce_ads' => 'ڕیکلامی نهێنی و بازرگانی
 ',
     'sms' => 'پەیامە بنێرە',

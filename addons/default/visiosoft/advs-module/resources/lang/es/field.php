@@ -323,6 +323,8 @@ return [
     'upload_files' => 'Subir archivos',
     'additional_fields' => 'Campos Adicionales',
     'ad_location' => 'Ubicación del anuncio',
+    'owner' => 'Propietario',
+    'default_owner_instruction' => 'El propietario utilizará de forma predeterminada el usuario actual si no se selecciona ningún usuario',
 
     'free' => 'Gratis',
     'ad_date' => 'Fecha de anuncio',

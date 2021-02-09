@@ -65,7 +65,7 @@ class ValueTableBuilder extends TableBuilder
         ],
         'rotate' => [
             'target' => '_blank',
-            'icon' => 'fas fa-redo',
+            'icon' => 'fa fa-repeat',
             'type' => 'info',
             'text' => '',
             'class' => 'col-4',
@@ -76,7 +76,7 @@ class ValueTableBuilder extends TableBuilder
         ],
         'deleteImage' => [
             'target' => '_blank',
-            'icon' => 'fas fa-trash',
+            'icon' => 'fa fa-trash',
             'type' => 'danger',
             'text' => '',
             'class' => 'col-4 deleteImage',

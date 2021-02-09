@@ -101,7 +101,6 @@ class UploadController extends AdminController
                         $constraint->aspectRatio();
                     });
 
-
                 if ($settings_value['add_canvas']) {
 
                     $fullImg->resizeCanvas(
@@ -132,13 +131,15 @@ class UploadController extends AdminController
                         $w = $image->width() / 2;
                         $h1 = $image->height() / 2;
                         $font_size = $w / 20;
-                        $image->text($settings_value['watermark_text'], $w, $h1, function ($font) use ($v, $h, $font_size) {
+                        $image->text(($watermark_text = setting_value('visiosoft.module.advs::watermark_text')) ? $watermark_text : 'Openclassify', $w, $h1, function ($font) use ($v, $h, $font_size) {
                             $font->file(public_path('Antonio-Bold.ttf'));
                             $font->size($font_size);
                             $font->align($h);
                             $font->valign($v);
                         });
+
                     }
+
                     if ($key === "full") {
                         $fileName = $file->getAttributes()['name'];
                     } else {

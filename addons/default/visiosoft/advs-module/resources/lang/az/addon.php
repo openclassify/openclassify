@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Elanlar',
-    'name'        => 'Reklam Modulu',
-    'description' => 'Reklam Modulu',
+    'name'        => 'Elanlar Modulu',
+    'description' => 'Elan Modulu',
 ];

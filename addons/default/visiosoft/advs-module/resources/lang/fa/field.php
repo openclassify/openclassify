@@ -165,6 +165,7 @@ return [
     'edit' => 'تصحيح کردن',
     'approve' => 'تایید کردن',
     'passive' => "غير فعال",
+	'sold' => 'فروخته شده',
     'offered_by' => 'پیشنهاد شده توسط',
     'more_ads_by' => 'اعلانات بیشتر توسط',
     'click_phone' => 'نمایش شماره تلفن',
@@ -209,6 +210,7 @@ return [
     'corporate_info' => 'اطلاعات شرکت',
     'featured_ads' => "اعلانات برجسته",
     'trending_ads' => 'اعلانات مدروز',
+    'search_ad_result_prefix' => 'بر',
     'search_ads_result_message' => [
         'name' => ':تعداد اعلانات یافت شده برای:جستجوی نام',
     ],
@@ -280,6 +282,7 @@ return [
     "no_location" => "هیچ موقعیتی انتخاب نشده است.",
     "continue" => 'ادامه',
     "gallery" => 'عکس ها',
+    "ad" => 'آگهی',
     "ads" => 'تبلیغات',
     "were_found" => 'پیدا شدند.',
 
@@ -316,8 +319,11 @@ return [
     'congratulations' => 'تبریک می گویم',
     'ad_desc' => 'شرح آگهی',
     'upload_photos' => 'عکسها را بارگذاری کنید',
+    'upload_files' => 'بارگذاری پرونده ها',
     'additional_fields' => 'زمینه های اضافی',
     'ad_location' => 'مکان تبلیغات',
+    'owner' => 'مالک',
+    'default_owner_instruction' => 'اگر هیچ کاربری انتخاب نشود ، مالک به عنوان کاربر پیش فرض عمل می کند',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',

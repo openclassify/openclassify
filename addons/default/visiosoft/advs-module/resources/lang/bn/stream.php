@@ -31,4 +31,7 @@ return [
     'option_configuration' => [
         'name' => 'কনফিগারেশন',
     ],
+    'status' => [
+        'name' => 'স্থিতি',
+    ],
 ];

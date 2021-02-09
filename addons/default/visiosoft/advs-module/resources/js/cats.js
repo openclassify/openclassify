@@ -2,9 +2,6 @@ function showLoader() {
     $('body').append('<div class="loading-cart"><div class="lds-ripple"><div></div><div></div></div></div>');
 }
 
-function hideLoader() {
-    $('.loading-cart').remove();
-}
 $("#catSelectionStepForm").on('click', 'input[type=submit]', function() {
     $("input[type=submit]", $(this).parents("form")).removeAttr("clicked");
     $(this).attr("clicked", "true");
@@ -24,7 +21,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/class/getcats/'+ divId,
             success: function (response) {
-                hideLoader();
                 if(response['title'] != undefined){
                     response['success'] ? $('.post-icon > svg:last-of-type').hide() : $('.post-icon > svg:first-of-type').hide();
 
@@ -60,13 +56,15 @@ $(document).ready(function () {
                     $('.cat-item-3').parent().css('display', 'flex');
                     stop();
                 } else {
-                    response.forEach(function(options){
-                        $(catId).append("<li class='text-truncate pl-1 my-1' data-value="+options.id+">"+options.name+"</li>");
-                    });
-                    $('.focus-select').removeClass('focus-select');
-                    // $(catId).animate({height: '14rem'}, 200);
-                    $(catId).css({height: '14rem'});
-                    $(catId).closest('.cat-item-2').show().addClass('focus-select')
+                    if (!$('li', catId).length) {
+                        response.forEach(function(options){
+                            $(catId).append("<li class='text-truncate pl-1 my-1' data-value="+options.id+">"+options.name+"</li>");
+                        });
+                        $('.focus-select').removeClass('focus-select');
+                        // $(catId).animate({height: '14rem'}, 200);
+                        $(catId).css({height: '14rem'});
+                        $(catId).closest('.cat-item-2').show().addClass('focus-select')
+                    }
                 }
                 // Auto scroll right
                 let categoryTab = $('.category-tab');

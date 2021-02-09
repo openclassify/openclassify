@@ -1,13 +1,20 @@
 <?php
 
 return [
-    'choose_file' => 'Hûn dixwazin kîjan pelê bikar bînin?',
-    'choose_folder' => 'Hûn dixwazin li kîjan peldankê bar bikin?',
-    'upload' => 'Ji bo barkirinê pelan li vir bikirtînin an bavêjin.',
-    'no_file_selected' => 'Tu pel nehat hilbijartin.',
-    'no_uploads' => 'Tu pel nehatin barkirin.',
-    'overwrite' => 'berê hate barkirin. Ma hûn dixwazin wê binivîsin?',
-    'uploading' => 'Uploading',
-    'loading' => 'Barkirin',
-    'choose_file_option' => 'Hilbijarka Pelê Hilbijêrin',
+    'choose_file' => 'حەزدەکەیت کام فایل بەکاربهێنیت ؟
+',
+    'choose_folder' => 'حەز دەکەیت کام فلدەر بار بکەیتەوە ؟
+',
+    'upload' => 'کرتە بکە یان پەڕگەکان لێرە دابەزێنە بۆ بارکردن
+',
+    'no_file_selected' => 'هیچ پەڕگەکان هەڵبژراردنی نەکراوە
+',
+    'no_uploads' => 'هیچ پەڕگەکان دانێنی نەکراوە
+',
+    'overwrite' => 'هەر ئێستا بارکراو. حەزدەکەیت بەسەریدا زاڵ بیت ؟
+',
+    'uploading' => 'بار دەکەن',
+    'loading' => 'بار دەکەن',
+    'choose_file_option' => 'بژاردەیی فایل هەڵبژێرە
+',
 ];

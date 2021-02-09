@@ -1,9 +1,10 @@
 <?php
 
 return [
-    "email"      => "! کێڵگەی بە ئی مەیل پێویستە
+    "email"      => "! ئی مەیل پێویستە
+
 ",
-    "username"      => "! کێڵگەی ناوی بەکارهێنەر پێویستە
+    "username"      => "! ناوی بەکارهێنەر پێویستە
 ",
     "success_update"      => "! پڕۆفایل نوێکردنەوە بە سەرکەوتوویی
 ",
@@ -11,7 +12,7 @@ return [
 ",
     "adress_success_create"      => "! ئەدرێس بە سەرکەوتوویی دروستکراوە
 ",
-    "login_error" => "چوونە ژوورەوە یان وشەی تێپەڕ.
+    "login_error" => "چوونە ژوورەوە یان وشەی نهێنەکە دروست نییە
 ",
     "login_noMail_old_user" => ".ئەو ناونیشانی ئیمەیڵەی کە داخڵت بووە نادۆزرێتەوە
 ",
@@ -35,33 +36,34 @@ return [
 ",
     "saved" => "پاشکەوت کرا
 ",
-    'please_confirm_transaction' => 'Ji kerema xwe danûstendinê piştrast bikin',
+    'please_confirm_transaction' => 'تکایە تەئکید لە وەرگێرانی وەرگێرانەوە بکە
+',
     'password_do_not_match' => 'وشەی نهێنیەکان ناگونجێن
 ',
     'your_password_changed' => 'وشەی نهێنیەکەت بە سەرکەوتوویی نوێ کرایەوە
 ',
     'error_valid_email_or_phone' => 'ژمارە تەلەفون یان ناونیشانی ئیمەیل دروست نیە
 ',
-    'error_valid_phone' => 'ژمارەی مۆبایل دروست نیە.
+    'error_valid_phone' => 'ژمارەی مۆبایل دروست نیە
 ',
-    'registered_phone' => 'ئه م ژماره ته له فونه هه ر ئيستا تومار كراوه
+    'registered_phone' => 'ئه م ژماره ته له فونه پێشتر تومار كراوه
 ',
     'ajax_address_error' => 'هیچ ناونیشانێک یان ڕێگە پێنەدراوە بۆ بینین
 ',
-    'empty_password_sms_message' => ':بەهۆی کێشەی ئەمنیەوە ، ئێمە وشەی پاسۆردمان گۆڕی! وشەی نهێنی تۆ ئەوەیە
+    'empty_password_sms_message' => ':بەهۆی کێشەی ئەمنیەوە ، ئێمە وشەی نهێنیان گۆڕی! وشەی نهێنی تۆ ئەوەیە
 ',
     'required_all' => "! هەموو کێڵگەکان پێویستە
 ",
     'can_not_remove_filled_fields' => "! تۆ ناتوانیت کێڵگە پڕکراوەکان لاببەیت
 ",
-    'wrong_password' => "! ئەو وشەی نهێنی کە داخڵ بوویت ڕاست نییە
+    'wrong_password' => "! ئەو وشەی نهێنی کە داخڵ بوویت دروست نییە
 ",
 
     // Forgot Password
     'email_phone_not_found' => 'ژمارە تەلەفون یان ناونیشانی ئیمەیل دروست نیە
 ',
 
-    'disable_account' => 'دەتەوێت ئەکاونتەکەت دابخەیت ؟ ئەم ئۆپراسیۆنە ناکرێت
+    'disable_account' => 'دەتەوێت ئةكاونتەت دابخەیت ؟ ئەم ئۆپراسیۆنە ناکرێت
 ',
 
     // Mail
@@ -71,6 +73,6 @@ return [
 ',
 
     // Register
-    'recaptcha_field_is_required' => 'qada reCaptcha pêdivî ye.',
-    'failed_to_validate_captcha' => 'Captcha nehat pejirandin.',
+    'recaptcha_field_is_required' => 'پێویستە reCaptcha',
+    'failed_to_validate_captcha' => 'Captcha سەرنەکەوتوو بۆ سەلماندن',
 ];
