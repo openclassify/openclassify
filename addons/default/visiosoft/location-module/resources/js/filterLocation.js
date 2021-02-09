@@ -13,7 +13,9 @@ $('.filter-country-btn').on('click', function () {
                 countries = callback;
                 resetValue('country', true, false)
                 $.each(countries, function (index, value) {
-                    $('.filter-location-modal .countries').append(item('country', value.id, value.name, value.abv.toLowerCase()));
+                    $('.filter-location-modal .countries').append(
+                        item('country', value.id, value.name, value.abv ? value.abv.toLowerCase() : '')
+                    );
                 });
                 if (countries == "")
                     $('.filter-location-modal .countries').html(null_msg);
@@ -245,22 +247,24 @@ function locationCrud(params, url, type, beforeSend, callback) {
 function item(field_name, id, value, abv = '') {
     var selected = defaultCountry === id ? "checked" : "";
     if (field_name === 'country') {
-        return '<li class="px-2" data-id="' + id + '">\n' +
-            '                    <label class="w-100">\n' +
-            '                        <input' +
-            ' type="checkbox" data-field="' + field_name + '" data-id="' + id + '" '+ selected +'>\n' +
-            '                                <span class="flag ml-1 flag-' + abv + '">\n' +
-            '                    </span>\n' +
-            '                        <small>' + value + '</small>\n' +
-            '                    </label>\n' +
-            '                </li>';
+        return `
+            <li class="px-2" data-id="${id}">
+                <label class="w-100">
+                    <input type="checkbox" data-field="${field_name}" data-id="${id}" ${selected}>
+                    <span class="flag ml-1 flag-${abv}"></span>
+                    <small>${value}</small>
+                </label>
+            </li>
+        `;
     } else {
-        return '<li class="px-2" data-id="' + id + '">\n' +
-            '                    <label class="w-100">\n' +
-            '                        <input type="checkbox" data-field="' + field_name + '" data-id="' + id + '">\n' +
-            '                        <small>' + value + '</small>\n' +
-            '                    </label>\n' +
-            '                </li>';
+        return `
+            <li class="px-2" data-id="${id}">
+                <label class="w-100">
+                    <input type="checkbox" data-field="${field_name}" data-id="${id}">
+                    <small>${value}</small>
+                </label>
+            </li>
+        `;
 
     }
 }
