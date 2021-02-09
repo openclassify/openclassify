@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\CatsModule\Category;
 
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
+use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
@@ -108,4 +109,42 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
             $this->model->deleteSubCategories($id);
         }
     }
+
+	public function getMainAndSubCats()
+	{
+		$dBName = 'default_cats_category';
+		$dBNamet = $dBName . '_translations';
+
+		$catsDB = DB::table((DB::raw($dBName . ' c1')))
+			->select(
+				DB::raw('c1.id'),
+				DB::raw('c1.slug'),
+				DB::raw('c1.parent_category_id'),
+				DB::raw('c1.icon_id'),
+				DB::raw('t1.name'),
+
+				DB::raw('c2.id as c2_id'),
+				DB::raw('c2.slug as c2_slug'),
+				DB::raw('c2.parent_category_id as c2_parent_category_id'),
+				DB::raw('t2.name as c2_name'),
+
+				DB::raw('file.id as file_id')
+			)
+			->leftJoin((DB::raw($dBName . ' c2')), DB::raw('c2.parent_category_id'), '=', DB::raw('c1.id'))
+			->leftJoin((DB::raw($dBNamet . ' t1')), DB::raw('c1.id'), '=', DB::raw('t1.entry_id'))
+			->leftJoin((DB::raw($dBNamet . ' t2')), DB::raw('c2.id'), '=', DB::raw('t2.entry_id'))
+			->leftJoin(DB::raw('default_files_files file'), DB::raw('c1.icon_id'), DB::raw('file.id'))
+			->where(DB::raw('t1.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
+			->where(DB::raw('t2.locale'), Request()->session()->get('_locale', setting_value('streams::default_locale')))
+			->where(DB::raw("c1.deleted_at"), NULL)
+			->where(DB::raw("c2.deleted_at"), NULL)
+			->whereNull(DB::raw("c1.parent_category_id"))
+			->orderBy(DB::raw("c1.sort_order"))
+			->orderBy(DB::raw("c2.sort_order"))
+			->get();
+		$cats = collect([]);
+		$cats->subcats = $catsDB;
+		$cats->maincats = $catsDB->unique('id');
+		return $cats;
+	}
 }
