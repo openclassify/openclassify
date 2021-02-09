@@ -41,11 +41,6 @@
 .select2-container--default .select2-selection--single .select2-selection__arrow {
     top: unset;
 }
-
-select[name=filter_User] + .select2 {
-    min-width: 20rem;
-}
-
 .navbar-collapse {
     padding-left: 15px !important;
 }
