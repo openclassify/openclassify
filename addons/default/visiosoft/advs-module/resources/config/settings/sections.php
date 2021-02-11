@@ -7,6 +7,7 @@ return [
             'general' => [
                 'title' => 'visiosoft.module.advs::section.general',
                 'fields' => [
+                	'favicon',
                     'market_place',
                     'show_lang_url',
                     'iban_numbers',

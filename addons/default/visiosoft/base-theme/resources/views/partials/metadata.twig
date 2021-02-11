@@ -7,7 +7,7 @@
 {% include "visiosoft.theme.base::partials/metatags" %}
 
 <!-- Favicon -->
-{#{{ favicons("theme::img/favicon.png") }}#}
+{{ favicons(file(setting_value('visiosoft.module.advs::favicon')).url) }}
 
 {# Base Theme Components #}
 {{ asset_add("theme.css", "visiosoft.theme.base::css/base.css") }}

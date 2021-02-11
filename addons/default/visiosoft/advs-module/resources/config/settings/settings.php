@@ -381,4 +381,7 @@ return [
             },
         ],
     ],
+	'favicon' => [
+		'type' => 'anomaly.field_type.file',
+	]
 ];
