@@ -35,7 +35,7 @@ return [
         'name' => 'Peta'
     ],
     'stock' => [
-        'name' => 'persediaan'
+        'name' => 'Persediaan'
     ],
     'advs_desc' => [
         'name' => 'Deskripsi'
@@ -50,7 +50,7 @@ return [
         'name' => 'Negara'
     ],
     'district' => [
-        'name' => 'Distrik'
+        'name' => 'Kecamatan'
     ],
     'neighborhood' => [
         'name' => 'Lingkungan'
@@ -59,10 +59,10 @@ return [
         'name' => 'Desa'
     ],
     'files' => [
-        'name' => 'Gambar-gambar'
+        'name' => 'Gambar'
     ],
     'cat1' => [
-        'name' => 'kategori utama'
+        'name' => 'Kategori Utama'
     ],
     'cat2' => [
         'name' => 'Sub Kategori 1'
@@ -92,26 +92,26 @@ return [
         'name' => 'Sub Kategori 9'
     ],
     'currency' => [
-        'name' => 'Mata uang'
+        'name' => 'Mata Uang'
     ],
     'status' => [
         'name' => 'Status',
         'option' => [
             'approved' => 'Disetujui',
-            'expired' => 'Kedaluwarsa',
-            'unpublished' => 'Tidak diterbitkan',
+            'expired' => 'Kadaluwarsa',
+            'unpublished' => 'Tidak dipublikasikan',
             'pending_admin' => 'Admin Tertunda',
             'pending_user' => 'Pengguna Tertunda'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Tidak diterbitkan'
+        'name' => 'Tidak dipublikasikan'
     ],
     'finish_at' => [
-        'name' => 'Selesai Di'
+        'name' => 'Selesai Pada'
     ],
     'cover_photo' => [
-        'name' => 'Foto sampul'
+        'name' => 'Foto Sampul'
     ],
     'favs_adv' => [
         'name' => 'Iklan Favorit'
@@ -122,7 +122,7 @@ return [
     'description' =>  'Deskripsi',
     'explanation' =>  'Penjelasan',
     'type' => [
-        'name' => 'Tipe'
+        'name' => 'Jenis'
     ],
     'parent_adv' => [
         'name' => 'Iklan Terkait'
@@ -131,32 +131,32 @@ return [
         'name' => 'Nilai'
     ],
     'list' => 'Daftar',
-    'home' => 'Rumah',
+    'home' => 'Beranda',
     'list-page' => 'Halaman Daftar',
     'search' => 'Cari',
     'recommended' => 'Iklan yang Direkomendasikan untuk Anda',
     'filter' => 'Saring',
-    'sort' => 'Menyortir',
-    'sort_by' => 'Sortir dengan',
+    'sort' => 'Sortir',
+    'sort_by' => 'Sortir berdasarkan',
     'pick_option' => 'Pilih salah satu opsi',
-    'pick_ordering' => 'Memerintah',
+    'pick_ordering' => 'Memesan',
     'price_high' => 'Harga Tinggi ke Rendah',
     'price_low' => 'Harga Rendah ke Tinggi',
     'newest' => 'Terbaru',
-    'oldest' => 'Tertua',
+    'oldest' => 'Terlama',
     'address_a_z' => 'Alamat (A sampai Z)',
-    'address_z_a' => 'Alamat (Z ke A)',
+    'address_z_a' => 'Alamat (Z sampai A)',
 	'categories' => [
 		'name' => 'Kategori'
 	],
-    'all_categories' => 'semua Kategori',
+    'all_categories' => 'Semua Kategori',
     'location' => 'Lokasi',
-    'send_message' => 'Mengirim pesan',
+    'send_message' => 'Kirim Pesan',
     'phone_gsm' => 'Telepon Gsm',
     'phone_office' => 'Telepon Kantor',
-    'add_to_favorites' => "Tambahkan ke Favorit",
+    'add_to_favorites' => "Tambah ke Favorit",
     'send' => 'Kirim',
-    'search_name' => 'Nama Pencarian',
+    'search_name' => 'Cari Nama',
     'my_favorite_searches' => 'Pencarian Favorit',
     'search_desc' => 'Anda dapat menambah dan mengatur pilihan pencarian favorit Anda di sini.',
     'complaint_placeholder' => 'Ketik detail keluhan Anda di sini.',
