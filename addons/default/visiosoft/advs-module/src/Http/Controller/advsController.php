@@ -662,8 +662,8 @@ class AdvsController extends PublicController
             $this->messages->error(trans('visiosoft.module.advs::message.delete_author_error'));
         }
 
-        $advs->softDeleteAdv($id);
-        $this->messages->error(trans('visiosoft.module.advs::message.success_delete'));
+        $ad->delete();
+        $this->messages->success(trans('visiosoft.module.advs::message.success_delete'));
         return back();
     }
 
