@@ -36,4 +36,7 @@ return [
     ],
     'selected' => 'Wybrany',
     'choose_an_option' => 'Wybierz opcję...',
+	'abv' => [
+		'name' => 'Abbreviation',
+	]
 ];
