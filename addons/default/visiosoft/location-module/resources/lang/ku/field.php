@@ -39,4 +39,7 @@ return [
     'selected' => 'هەڵبژێرراوە',
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
+	'abv' => [
+		'name' => 'Abbreviation',
+	]
 ];
