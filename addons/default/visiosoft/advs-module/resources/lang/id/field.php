@@ -5,10 +5,10 @@ return [
         'name' => 'Judul'
     ],
     'order' => [
-        'name' => 'Memesan'
+        'name' => 'Pesan'
     ],
     'slug' => [
-        'name' => 'Siput'
+        'name' => 'Slug'
     ],
     'parent_category' => [
         'name' => 'Induk'
