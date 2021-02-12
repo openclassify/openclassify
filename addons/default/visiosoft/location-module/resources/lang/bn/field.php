@@ -36,4 +36,7 @@ return [
     ],
     'selected' => 'নির্বাচিত',
     'choose_an_option' => 'একটি বিকল্প নির্বাচন করুন...',
+	'abv' => [
+		'name' => 'Abbreviation',
+	]
 ];
