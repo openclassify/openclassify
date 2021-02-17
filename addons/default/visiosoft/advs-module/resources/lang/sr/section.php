@@ -2,61 +2,61 @@
 
 return [
     'advs' => [
-        'title' => 'Ads',
+        'title' => 'Огласи',
     ],
     'categories' => [
-        'title' => 'Categories',
+        'title' => 'Категорије',
     ],
     'countries' => [
-        'title' => 'Countries',
+        'title' => 'Земље',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Градови',
     ],
     'districts' => [
-        'title' => 'Districts',
+        'title' => 'Окрузи',
     ],
     'neighborhoods' => [
-        'title' => 'Neighborhoods',
+        'title' => 'Комшилуци',
     ],
     'village' => [
-        'title' => 'Village',
+        'title' => 'Село',
     ],
     'custom_fields' => [
-        'title' => 'Custom fields',
+        'title' => 'Прилагођена област',
     ],
     'custom_field_advs' => [
-        'title' => 'Custom field ads',
+        'title' => 'Прилагођени теренски огласи',
     ],
     'cf_values' => [
-        'title' => 'Cf values',
+        'title' => 'Цф вредности',
     ],
     'fields' => [
-        'title' => 'Custom Fields'
+        'title' => 'прилагођена област'
     ],
     'assets_clear' => [
-        'name' => 'Assets Clear'
+        'name' => 'Средства јасна'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
-    'filter' => 'Filter',
-    'create_ad' => 'Create Ad',
+    'general' => 'Генерал',
+    'ads' => 'Огласи',
+    'user' => 'Корисник',
+    'filter' => 'Филтер',
+    'create_ad' => 'Направите оглас',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Опције',
     ],
-    'ads_image' => 'Ads Image',
+    'ads_image' => 'Имаге Имаге',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Опције',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Опције Вредност',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Конфигурација',
     ],
-    'translations' => 'Translations',
+    'translations' => 'Преводи',
     'status' => [
-        'title' => 'Status',
+        'title' => 'Статус',
     ],
 ];
