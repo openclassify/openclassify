@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'Διάλεξε μια επιλογή...',
 	'abv' => [
 		'name' => 'Συντομογραφία',
-	]
+	],
+	'location' => 'Location',
 ];
