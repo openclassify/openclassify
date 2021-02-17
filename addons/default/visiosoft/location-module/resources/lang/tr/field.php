@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'Seçim yapınız..',
 	'abv' => [
 		'name' => 'Kısaltma',
-	]
+	],
+	'location' => 'Location',
 ];
