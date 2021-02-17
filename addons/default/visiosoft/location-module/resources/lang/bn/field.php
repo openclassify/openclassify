@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'একটি বিকল্প নির্বাচন করুন...',
 	'abv' => [
 		'name' => 'সংক্ষিপ্তসার',
-	]
+	],
+	'location' => 'Location',
 ];
