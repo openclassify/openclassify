@@ -71,6 +71,7 @@
                         {{ trans('visiosoft.theme.base::field.remember_me') }}
                     </label>
                 </div>
+                {{ form_close() }}
 
                 {% if addBlock('login/oauth') or setting_value('visiosoft.module.advs::register_email_field') %}
                     <div class="text-center text-muted">- {{ trans('visiosoft.theme.base::field.or') }} -</div>
