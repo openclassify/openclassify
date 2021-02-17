@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'USD' => 'Dollar',
-    'EUR' => 'Euro',
+    'USD' => 'Долар',
+    'EUR' => 'Еуро',
 ];
