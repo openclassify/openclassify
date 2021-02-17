@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'choose_folder' => 'Which folder would you like to upload to?',
-    'upload' => 'Add images | Upload images | Attach a photo',
-    'choose_files' => 'Which files would you like to use?',
-    'no_files_selected' => 'No files selected.',
-    'no_uploads' => 'No files uploaded.',
-    'overwrite' => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading' => 'Uploading',
-    'loading' => 'Loading',
-    'error_upload' => 'There was a problem uploading the file.',
-    'error_upload_docs' => 'There is no document upload support. Please contact your system administrator!',
+    'choose_folder' => 'У коју фасциклу бисте желели да отпремите?',
+    'upload' => 'Додај слике | Отпреми слике | Приложите фотографију',
+    'choose_files' => 'Које бисте датотеке желели да користите?',
+    'no_files_selected' => 'Није изабрана ниједна датотека.',
+    'no_uploads' => 'Није отпремљена ниједна датотека.',
+    'overwrite' => 'је већ постављено. Да ли желите да га препишете?',
+    'uploading' => 'Отпремање',
+    'loading' => 'Лоадинг',
+    'error_upload' => 'Дошло је до проблема при отпремању датотеке.',
+    'error_upload_docs' => 'Не постоји подршка за отпремање докумената. Молимо контактирајте свог администратора система!',
 ];
