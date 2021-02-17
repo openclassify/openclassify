@@ -37,6 +37,6 @@ return [
     'selected' => '선택된',
     'choose_an_option' => '옵션을 선택하세요...',
 	'abv' => [
-		'name' => 'Abbreviation',
+		'name' => '약어',
 	]
 ];
