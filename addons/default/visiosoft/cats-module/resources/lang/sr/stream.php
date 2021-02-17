@@ -2,9 +2,9 @@
 
 return [
     'category' => [
-        'name' => 'Category',
+        'name' => 'Категорија',
     ],
     'placeholderforsearch' => [
-        'name' => 'Placeholderforsearch',
+        'name' => 'Плацехолдерфорсеарцх',
     ],
 ];
