@@ -6,13 +6,6 @@ use Visiosoft\AdvsModule\Adv\Table\Views\unfinished;
 
 class AdvTableBuilder extends TableBuilder
 {
-
-    /**
-     * The table views.
-     *
-     * @var array|string
-     */
-
     protected $views = [
         'all' => [
             'view' => All::class,
@@ -31,25 +24,8 @@ class AdvTableBuilder extends TableBuilder
 
     ];
 
-    /**
-     * The table columns.
-     *
-     * @var array|string
-     */
-    protected $columns = [];
-
-    /**
-     * The table buttons.
-     *
-     * @var array|string
-     */
     protected $buttons = [];
 
-    /**
-     * The table actions.
-     *
-     * @var array|string
-     */
     protected $actions = [
         'delete',
         'approve' => [
@@ -70,11 +46,6 @@ class AdvTableBuilder extends TableBuilder
         ],
     ];
 
-    /**
-     * The table options.
-     *
-     * @var array
-     */
     protected $options = [
         'order_by' => [
             'id' => 'DESC',
@@ -82,11 +53,6 @@ class AdvTableBuilder extends TableBuilder
         'table_view' => 'visiosoft.module.advs::admin/table/table'
     ];
 
-    /**
-     * The table assets.
-     *
-     * @var array
-     */
     protected $assets = [
         'scripts.js' => [
             'visiosoft.module.advs::js/admin/advanced.js',
@@ -96,5 +62,4 @@ class AdvTableBuilder extends TableBuilder
             'visiosoft.module.advs::css/admin/filter-user.css',
         ],
     ];
-
 }

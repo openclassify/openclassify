@@ -42,7 +42,7 @@ class AdvTableButtons
                     'create_configration' => [
                         'text' => trans('visiosoft.module.advs::button.create_configurations'),
                         'href' => route('visiosoft.module.advs::configrations.create') . "?ad={entry.id}"]
-                ]
+                    ]
             ]
         ]);
     }
