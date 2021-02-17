@@ -55,14 +55,17 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubcats',
+        'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubCategories',
         'admin/cats/adcountcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@adCountCalc',
         'admin/cats/catlevelcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@catLevelCalc',
 
         'admin/cats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index',
         'admin/cats/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',
         'admin/cats/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@edit',
-        'admin/cats/category/delete/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@delete',
+        'admin/cats/category/delete/{id}' => [
+            'as' => 'visiosoft.module.cats::admin.delete_category',
+            'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@delete',
+        ],
 
         // Sitemap
         'sitemap.xml' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@index',

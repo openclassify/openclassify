@@ -15,4 +15,6 @@ interface CategoryRepositoryInterface extends EntryRepositoryInterface
     public function getParentCategoryById($id);
 
     public function getLevelById($id);
+
+    public function getDeletedCategories();
 }

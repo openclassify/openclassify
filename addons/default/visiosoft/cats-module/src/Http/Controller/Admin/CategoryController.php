@@ -16,12 +16,15 @@ use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
 use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\CatsModule\Category\Traits\DeleteCategory;
 
 class CategoryController extends AdminController
 {
     private $categoryRepository;
     private $categoryEntryTranslationsModel;
     private $str;
+
+    use DeleteCategory;
 
     public function __construct(
         CategoryRepositoryInterface $categoryRepository,
@@ -37,11 +40,6 @@ class CategoryController extends AdminController
 
     public function index(CategoryTableBuilder $table, Request $request)
     {
-        if ($this->request->action == "delete") {
-            foreach ($this->request->id as $item) {
-                //Todo Delete sub Categories
-            }
-        }
         if (!isset($request->cat) || $request->cat == "") {
             $categories = CategoryModel::query()->where('parent_category_id', '')->orWhereNull('parent_category_id')->get();
             $categories = $categories->where('deleted_at', null);
@@ -199,32 +197,38 @@ class CategoryController extends AdminController
         return $this->view->make('visiosoft.module.cats::cats/admin-cat')->with('id', $id);
     }
 
-    public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
+    public function delete(CategoryRepositoryInterface $categoryRepository, $id)
     {
-        //Todo Delete Category and Sub Categories
-        if ($request->parent != "") {
-            $subCats = $categoryRepository->getCategoryById($request->parent);
-            if (count($subCats)) {
-                return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
+        if ($this->deleteCategory($id)) {
+            $this->messages->success(trans('streams::message.delete_success', ['count' => 1]));
+        }
+
+        if (!empty($parent = $this->request->parent)) {
+            if (count($categoryRepository->getCategoryById($parent))) {
+                return redirect('admin/cats?cat=' . $parent);
             }
         }
-        return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
+        return redirect('admin/cats');
     }
 
-    public function cleanSubcats()
+    public function cleanSubCategories()
     {
-        $cats = $this->categoryRepository->all();
-        $deletedCatsCount = 0;
-        foreach ($cats as $cat) {
-            $parentCatId = $cat->parent_category_id;
-            $parentCat = $this->categoryRepository->find($parentCatId);
-            if (is_null($parentCat) && !is_null($parentCatId)) {
-                $this->categoryEntryTranslationsModel->where('entry_id', $cat->id)->delete();
-                //Todo Delete Category and Sub Categories
-                $deletedCatsCount++;
-            }
-        }
-        return redirect('admin/cats')->with('success', [$deletedCatsCount . ' categories has been deleted.']);
+//        $cats = $this->categoryRepository->getDeletedCategories();
+//
+//        $delete_category_keys = $cats->pluck('id');
+//
+//        dd($delete_category_keys);
+//
+//        foreach ($cats as $cat) {
+//            $parentCatId = $cat->parent_category_id;
+//            $parentCat = $this->categoryRepository->find($parentCatId);
+//            if (is_null($parentCat) && !is_null($parentCatId)) {
+//                $this->categoryEntryTranslationsModel->where('entry_id', $cat->id)->delete();
+//                //Todo Sub Categories
+//                $deletedCatsCount++;
+//            }
+//        }
+        return redirect('admin/cats');
     }
 
     public function adCountCalc()
