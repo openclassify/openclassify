@@ -2,15 +2,15 @@
 
 return [
     'profile' => [
-        'name' => 'Profile',
+        'name' => 'Профил',
     ],
     'adress' => [
-        'name' => 'Address',
+        'name' => 'Адреса',
     ],
     'education' => [
-        'name' => 'Education',
+        'name' => 'образовање',
     ],
     'education_part' => [
-        'name' => 'Education part',
+        'name' => 'Образовни део',
     ],
 ];
