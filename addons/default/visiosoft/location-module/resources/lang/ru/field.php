@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'Выберите опцию...',
 	'abv' => [
 		'name' => 'Сокращение',
-	]
+	],
+	'location' => 'Location',
 ];
