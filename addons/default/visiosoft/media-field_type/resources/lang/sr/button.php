@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'showOn' => 'Main',
+    'showOn' => 'Главни',
 ];
