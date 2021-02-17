@@ -41,5 +41,6 @@ return [
 ',
 	'abv' => [
 		'name' => 'Kinkirî',
-	]
+	],
+	'location' => 'Location',
 ];
