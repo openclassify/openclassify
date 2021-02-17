@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'Изабери опцију...',
 	'abv' => [
 		'name' => 'Скраћеница',
-	]
+	],
+	'location' => 'Location',
 ];
