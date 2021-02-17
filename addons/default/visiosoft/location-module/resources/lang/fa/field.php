@@ -37,6 +37,6 @@ return [
     'selected' => 'انتخاب شد',
     'choose_an_option' => 'گزینه ای را انتخاب کنید ...',
 	'abv' => [
-		'name' => 'Abbreviation',
+		'name' => 'مخفف',
 	]
 ];
