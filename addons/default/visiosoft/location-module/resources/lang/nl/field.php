@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'Kies een optie...',
 	'abv' => [
 		'name' => 'Afkorting',
-	]
+	],
+	'location' => 'Location',
 ];
