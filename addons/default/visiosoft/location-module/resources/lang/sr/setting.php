@@ -2,55 +2,55 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Поље локације почетне странице',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Поље локације странице листе',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Поље локације странице детаља',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Прикажи дугме локације за претрагу',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Подразумевана држава',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Направите локацију странице огласа',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'Дефаулт Цити',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'Подразумевани округ',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Подразумевано суседство',
     ],
 
     'google_map_key' => [
-        'name' => 'Google Maps Api Key',
+        'name' => 'Гоогле Мапс Апи кључ',
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'Дефаулт Лонг',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'Подразумевано Лат',
     ],
 
     'hide_location_filter' => [
-        'name' => 'Hide Location Filter',
+        'name' => 'Сакриј филтер локације',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Подразумевана држава за телефонско поље регистра'
 	],
     'sorting_column' => [
-        'name' => 'Sorting Column',
+        'name' => 'Колона за сортирање',
     ],
     'sorting_type' => [
-        'name' => 'Sorting Type',
+        'name' => 'Тип сортирања',
     ],
 ];
