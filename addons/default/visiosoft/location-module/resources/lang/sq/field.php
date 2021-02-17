@@ -37,6 +37,6 @@ return [
     'selected' => 'I zgjedhur',
     'choose_an_option' => 'Zgjidhni një opsion ...',
 	'abv' => [
-		'name' => 'Abbreviation',
+		'name' => 'Shkurtimi',
 	]
 ];
