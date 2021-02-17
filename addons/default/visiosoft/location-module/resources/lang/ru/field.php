@@ -37,6 +37,6 @@ return [
     'selected' => 'выбранный',
     'choose_an_option' => 'Выберите опцию...',
 	'abv' => [
-		'name' => 'Abbreviation',
+		'name' => 'Сокращение',
 	]
 ];
