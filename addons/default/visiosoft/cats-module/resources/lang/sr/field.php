@@ -2,35 +2,35 @@
 
 return [
     'name' => [
-        'name' => 'Title',
-        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
+        'name' => 'Наслов',
+        'instructions' => 'То је назив главне категорије коју ћете дефинисати. Омогућава кориснику да лако пронађе производ који тражи.',
     ],
     'order' => [
-        'name' => 'Order',
+        'name' => 'Наручи',
     ],
 
     'slug' => [
-        'name' => 'Slug',
-        'instructions' => 'Specify any organizational tags to help group your post with others.',
+        'name' => 'Слуг',
+        'instructions' => 'Наведите било какве организационе ознаке да бисте помогли груписање поста са другима.',
 
     ],
     'files' => [
-        'name' => 'Image',
+        'name' => 'Слика',
     ],
     'seo_keyword' => [
-        'name' => 'Seo Keyword',
-        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
+        'name' => 'Сео Кеиворд',
+        'instructions' => 'Речи додате на веб локацију у Гоогле прегледачу да би се појавиле изнад резултата претраге.',
     ],
     'seo_description' => [
-        'name' => 'Seo Description',
-        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
+        'name' => 'СЕО опис',
+        'instructions' => 'То може утицати на одлуку ваших посетилаца да ли желе да кликну на садржај у резултатима претраге.',
     ],
     'icon' => [
-        'name' => 'Icon',
-        'instructions' => 'It is used to add icons indicating the category type.',
+        'name' => 'Икона',
+        'instructions' => 'Користи се за додавање икона које означавају врсту категорије.',
     ],
 
-    'please_wait' => 'Please wait.Deleting Sub Categories',
-    'category_selection' => 'Category Selection',
-    'go_to_parent' => 'Go To Parent',
+    'please_wait' => 'Молимо причекајте.Брисање поткатегорија',
+    'category_selection' => 'Избор категорије',
+    'go_to_parent' => 'Идите код родитеља',
 ];
