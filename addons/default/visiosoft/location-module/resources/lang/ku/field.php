@@ -40,6 +40,6 @@ return [
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
 	'abv' => [
-		'name' => 'Abbreviation',
+		'name' => 'Kinkirî',
 	]
 ];
