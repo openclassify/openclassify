@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'オプションを選択...',
 	'abv' => [
 		'name' => '略語',
-	]
+	],
+	'location' => 'Location',
 ];
