@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'בחר אפשרות...',
 	'abv' => [
 		'name' => 'נוֹטָרִיקוֹן',
-	]
+	],
+	'location' => 'Location',
 ];
