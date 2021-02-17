@@ -38,5 +38,6 @@ return [
     'choose_an_option' => 'Pilih salah satu opsi ...',
 	'abv' => [
 		'name' => 'Singkatan',
-	]
+	],
+	'location' => 'Location',
 ];
