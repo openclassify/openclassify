@@ -114,4 +114,9 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 
         return $cats;
     }
+
+    public function getDeletedCategories()
+    {
+        return $this->newQuery()->whereNotNull('deleted_at')->get();
+    }
 }
