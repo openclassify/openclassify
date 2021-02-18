@@ -1208,6 +1208,9 @@ class AdvsController extends PublicController
         } else {
             $response['status'] = "guest";
         }
+
+        $count = $cart->getItems()->count;
+	    $response['count'] = $count;
         return $response;
     }
 
