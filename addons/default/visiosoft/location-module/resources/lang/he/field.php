@@ -39,5 +39,5 @@ return [
 	'abv' => [
 		'name' => 'נוֹטָרִיקוֹן',
 	],
-	'location' => 'Location',
+	'location' => 'מקום',
 ];
