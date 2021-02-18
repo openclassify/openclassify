@@ -39,5 +39,5 @@ return [
 	'abv' => [
 		'name' => 'Singkatan',
 	],
-	'location' => 'Location',
+	'location' => 'Lokasi',
 ];
