@@ -36,4 +36,8 @@ return [
     ],
     'selected' => '選択済み',
     'choose_an_option' => 'オプションを選択...',
+	'abv' => [
+		'name' => '略語',
+	],
+	'location' => 'ロケーション',
 ];

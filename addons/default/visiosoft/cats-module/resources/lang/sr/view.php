@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'clean_subcategories' => 'Clean Subcategories',
+    'clean_subcategories' => 'Чисте поткатегорије',
 ];

@@ -2,45 +2,45 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Наслов навигације',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Акција навигације',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Цоунтри Фиелдс',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Датумска поља',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Поља са ценама',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'Бреадцрумб',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Детаљи огласа',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Картица Детаљи огласа',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Најновије и погледајте све Бтн',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Логотип са упутством за регистрацију странице',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Линк упозорења на страницу регистрације',
     ],
     'style' => [
-        'name' => 'Style(CSS)',
+        'name' => 'Стил (ЦСС)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'Подкатегорије почетне странице Ограничење',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Страница за регистрацију, задата држава за телефон',
 	]
 ];

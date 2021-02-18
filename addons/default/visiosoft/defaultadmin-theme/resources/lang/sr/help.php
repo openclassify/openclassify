@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title'                     => 'Helpful Resources',
-    'description'               => 'Find help and discover features with these helpful resources.',
-    'documentation_link'        => 'OpenClassify Documentation',
-    'documentation_description' => 'Find documentation for OpenClassify, developing addons, and using addons too.',
-    'slack_link'                => 'Slack Team',
-    'slack_description'         => 'Find and communicate with other OpenClassify users and developers.',
-    'forum_link'                => 'Discussion Forum',
-    'forum_description'         => 'Find answers and post questions about using and developing with OpenClassify.',
-    'addons_link'               => 'Available Addons',
-    'addons_description'        => 'Discover addons available for OpenClassify.',
+    'title'                     => 'Корисни ресурси',
+    'description'               => 'Пронађите помоћ и откријте функције помоћу ових корисних ресурса.',
+    'documentation_link'        => 'ОпенЦлассифи Доцументатион',
+    'documentation_description' => 'Пронађите документацију за ОпенЦлассифи, развијање додатака и коришћење додатака.',
+    'slack_link'                => 'Слацк Теам',
+    'slack_description'         => 'Пронађите и комуницирајте са другим ОпенЦлассифи корисницима и програмерима.',
+    'forum_link'                => 'Форум за дискусију',
+    'forum_description'         => 'Пронађите одговоре и поставите питања о коришћењу и развоју ОпенЦлассифи.',
+    'addons_link'               => 'Доступни додаци',
+    'addons_description'        => 'Откријте додатке доступне за ОпенЦлассифи.',
 ];

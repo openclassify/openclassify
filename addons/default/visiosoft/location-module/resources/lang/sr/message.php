@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Type here to search',
-    'null_msg' => 'Not Found',
+    'placeholder' => 'Откуцајте овде за претрагу',
+    'null_msg' => 'Није пронађен',
 ];

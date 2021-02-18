@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'choose_file' => 'Which file would you like to use?',
-    'choose_folder' => 'Which folder would you like to upload to?',
-    'upload' => 'Click or drop files here to upload.',
-    'no_file_selected' => 'No file selected.',
-    'no_uploads' => 'No files uploaded.',
-    'overwrite' => 'has already been uploaded. Would you like to overwrite it?',
-    'uploading' => 'Uploading',
-    'loading' => 'Loading',
-    'choose_file_option' => 'Choose File Option',
+    'choose_file' => 'Коју датотеку бисте желели да користите?',
+    'choose_folder' => 'У коју фасциклу бисте желели да отпремите?',
+    'upload' => 'Кликните овде или испустите датотеке овде да бисте их отпремили.',
+    'no_file_selected' => 'Није изабрана ниједна датотека.',
+    'no_uploads' => 'Није отпремљена ниједна датотека.',
+    'overwrite' => 'је већ постављено. Да ли желите да га препишете?',
+    'uploading' => 'Отпремање',
+    'loading' => 'Лоадинг',
+    'choose_file_option' => 'Изаберите опцију датотеке',
 ];

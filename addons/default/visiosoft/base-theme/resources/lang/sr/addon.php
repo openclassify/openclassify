@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'BaseTheme',
-    'name'        => 'BaseTheme',
-    'description' => 'BaseTheme'
+    'title'       => 'БасеТхеме',
+    'name'        => 'БасеТхеме',
+    'description' => 'БасеТхеме'
 ];

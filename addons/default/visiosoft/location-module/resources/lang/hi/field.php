@@ -36,4 +36,8 @@ return [
     ],
     'selected' => 'चुन लिया',
     'choose_an_option' => 'एक विकल्प चुनें...',
+	'abv' => [
+		'name' => 'संक्षिप्त',
+	],
+	'location' => 'स्थान',
 ];

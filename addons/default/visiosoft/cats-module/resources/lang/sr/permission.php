@@ -2,19 +2,19 @@
 
 return [
     'category' => [
-        'name'   => 'Category',
+        'name'   => 'Категорија',
         'option' => [
-            'read'   => 'Can read category?',
-            'write'  => 'Can create/edit category?',
-            'delete' => 'Can delete category?',
+            'read'   => 'Може да чита категорију?',
+            'write'  => 'Можете ли креирати / уредити категорију?',
+            'delete' => 'Можете ли избрисати категорију?',
         ],
     ],
     'placeholderforsearch' => [
-        'name'   => 'Placeholderforsearch',
+        'name'   => 'Плацехолдерфорсеарцх',
         'option' => [
-            'read'   => 'Can read placeholderforsearch?',
-            'write'  => 'Can create/edit placeholderforsearch?',
-            'delete' => 'Can delete placeholderforsearch?',
+            'read'   => 'Може ли да прочита резервирано место за претрагу?',
+            'write'  => 'Може ли створити / уредити резервирано место за истраживање?',
+            'delete' => 'Можете ли избрисати резервирано место за претрагу?',
         ],
     ],
 ];

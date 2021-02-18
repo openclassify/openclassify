@@ -2,25 +2,25 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Фасцикле',
+        'instructions' => 'Наведите које су фасцикле доступне за ово поље. Оставите празно за приказ свих директоријума.',
+        'warning'      => 'Постојеће дозволе за фасцикле имају предност над одабраним директоријумима.',
     ],
     'min'     => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Enter the minimum number of allowed selections.',
+        'label'        => 'Минимум Селецтионс',
+        'instructions' => 'Унесите минимални број дозвољених избора.',
     ],
     'max'     => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Enter the maximum number of allowed selections.',
+        'label'        => 'Макимум Селецтионс',
+        'instructions' => 'Унесите максималан број дозвољених избора.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Улазни режим',
+        'instructions' => 'Како корисници треба да обезбеде унос датотека?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Отпремите и / или изаберите датотеке.',
+            'select'  => 'Изаберите само датотеке.',
+            'upload'  => 'Отпреми само датотеке.',
         ],
     ],
 ];

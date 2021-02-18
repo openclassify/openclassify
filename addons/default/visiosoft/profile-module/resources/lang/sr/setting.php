@@ -2,49 +2,49 @@
 
 return [
     'show_my_ads' => [
-        'name' => 'Show My Ads Tab',
+        'name' => 'Прикажи картицу Моји огласи',
     ],
     'upload_avatar' => [
-        'name' => 'Avatar Upload',
+        'name' => 'Аватар Уплоад',
     ],
     'show_tax_office' => [
-        'name' => 'Show Tax Office Field',
+        'name' => 'Покажите поље пореске управе',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Show Checkbox Terms on Register',
-        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
+        'name' => 'Прикажи услове за потврду у регистру',
+        'instructions' => 'На обрасцу за регистрацију прикажите „Прихвати појам“, „закон о заштити“, „термин за приватност“, „смс и е-пошту“'
     ],
     'register_protection_url' => [
-        'name' => 'Register Protection URL',
+        'name' => 'Региструјте заштитни УРЛ',
     ],
     'register_privacy_url' => [
-        'name' => 'Register Privacy URL',
+        'name' => 'Региструјте УРЛ приватности',
     ],
     'show_education_profession' => [
-        'name' => 'Show Education and Profession Fields',
-        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
+        'name' => 'Прикажите поља образовања и професије',
+        'instructions' => 'На страници за уређивање профила прикажите „Образовање“, „Стање образовања“ и „Занимање“'
     ],
     'google_captcha_site_key' => [
-        'name' => 'Google Captcha Site Key',
+        'name' => 'Кључ веб странице Гоогле Цаптцха',
     ],
     'google_captcha_secret_key' => [
-        'name' => 'Google Captcha Secret Key',
+        'name' => 'Гоогле Цаптцха тајни кључ',
     ],
     'score_threshold' => [
-        'name' => 'Score Threshold',
-        'instructions' => 'A value between 0 and 1. The higher the threshold the more strict ReCaptcha is in trying to determine if a user is a bot or not.',
+        'name' => 'Сцоре Тхресхолд',
+        'instructions' => 'Вредност између 0 и 1. Што је већи праг, строжији РеЦаптцха покушава да утврди да ли је корисник бот или не.',
     ],
     'education' => [
-        'name' => 'Education'
+        'name' => 'образовање'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Држава образовања'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Професија'
     ],
     'hide_register_type_profile' => [
-        'name' => 'Hide Register Type in Profile Page',
-        'instructions' => 'Hides the register type field in the profile edit page.',
+        'name' => 'Сакриј тип регистрације на страници профила',
+        'instructions' => 'Сакрива поље типа регистра на страници за уређивање профила.',
     ],
 ];

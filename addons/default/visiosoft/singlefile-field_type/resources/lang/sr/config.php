@@ -2,22 +2,22 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Фасцикле',
+        'instructions' => 'Наведите које су фасцикле доступне за ово поље. Оставите празно за приказ свих директоријума.',
+        'warning'      => 'Постојеће дозволе за фасцикле имају предност над одабраним директоријумима.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Максимална величина отпремања',
+        'instructions' => 'Наведите максималну величину отпремања у <strong>мегабајта</strong>.',
+        'warning'      => 'Ако није наведено, уместо тога користиће се мапа мак, а затим сервер мак.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Улазни режим',
+        'instructions' => 'Како корисници треба да обезбеде унос датотека?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Отпремите и / или изаберите датотеке.',
+            'select'  => 'Изаберите само датотеке.',
+            'upload'  => 'Отпреми само датотеке.',
         ],
     ],
 ];

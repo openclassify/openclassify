@@ -36,4 +36,8 @@ return [
     ],
     'selected' => '선택된',
     'choose_an_option' => '옵션을 선택하세요...',
+	'abv' => [
+		'name' => '약어',
+	],
+	'location' => '위치',
 ];

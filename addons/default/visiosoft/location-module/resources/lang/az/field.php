@@ -36,4 +36,8 @@ return [
     ],
     'selected' => 'Seçilib',
     'choose_an_option' => 'Bir seçim seçin ...',
+	'abv' => [
+		'name' => 'Qısaltma',
+	],
+	'location' => 'Yer',
 ];

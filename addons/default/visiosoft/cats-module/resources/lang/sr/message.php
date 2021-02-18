@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'categories_mass_delete_success' => 'Categories and related sub-categories has been deleted successfully!',
+    'categories_mass_delete_success' => 'Категорије и сродне подкатегорије су успешно избрисане!',
 ];

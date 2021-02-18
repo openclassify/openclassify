@@ -2,14 +2,14 @@
 
 return [
     'post_ad' => [
-        'name' => 'Post Ad',
+        'name' => 'Постави оглас',
     ],
-    'login' => 'Login',
-    'register' => 'Register',
-    'continue' => 'Continue',
-    'reset_password' => 'Reset Password',
-    'email' => 'Email',
-    'phone' => 'Phone',
-    'show_all' => 'Show All',
-    'hide_all' => 'Hide All',
+    'login' => 'Пријавите се',
+    'register' => 'Регистровати',
+    'continue' => 'Настави',
+    'reset_password' => 'Ресетуј шифру',
+    'email' => 'Емаил',
+    'phone' => 'Телефон',
+    'show_all' => 'Покажи све',
+    'hide_all' => 'Сакријете све',
 ];

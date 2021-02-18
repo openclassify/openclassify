@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'valid_disk' => 'The configured upload disk for :attribute does not exist.',
-	'unsupported' => 'This area is for image files only. You can add different file types in the description field.'
+    'valid_disk' => 'Конфигурисани диск за отпремање за атрибут: не постоји.',
+	'unsupported' => 'Ово подручје је само за датотеке слика. У поље за опис можете додати различите типове датотека.'
 ];

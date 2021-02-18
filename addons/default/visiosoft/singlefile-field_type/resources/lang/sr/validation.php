@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'valid_disk' => 'The configured upload disk for :attribute does not exist.',
+    'valid_disk' => 'Конфигурисани диск за отпремање за атрибут: не постоји.',
 ];
