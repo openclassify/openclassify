@@ -39,5 +39,5 @@ return [
 	'abv' => [
 		'name' => 'Viết tắt',
 	],
-	'location' => 'Location',
+	'location' => 'Vị trí',
 ];
