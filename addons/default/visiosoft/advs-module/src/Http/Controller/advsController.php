@@ -553,7 +553,8 @@ class AdvsController extends PublicController
                 }
             }
 
-            $metaTitle = $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain');
+            $metaCatName = end($categories) ? end($categories)['name'] : '|';
+            $metaTitle = $adv->name . " " . $metaCatName . ' ' . setting_value('streams::domain');
             $metaDesc = strip_tags($adv->advs_desc, '');
 
             if (is_module_installed('visiosoft.module.seo')) {
