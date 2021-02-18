@@ -39,5 +39,5 @@ return [
 	'abv' => [
 		'name' => '略語',
 	],
-	'location' => 'Location',
+	'location' => 'ロケーション',
 ];
