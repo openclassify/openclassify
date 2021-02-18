@@ -220,8 +220,8 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
         ],
 
-	    'ajax/conf/addCart' => [
-		    'as' => 'configuration::add_cart',
+	    'api/conf/add-cart' => [
+		    'as' => 'configuration::api_add_conf_cart',
 		    'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@ajaxConfAddCart',
 	    ],
 

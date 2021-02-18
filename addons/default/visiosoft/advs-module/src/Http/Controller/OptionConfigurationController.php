@@ -67,7 +67,7 @@ class OptionConfigurationController extends PublicController
 			$this->adv_model->authControl();
 
 			if ($conf->stock < $this->request->quantity){
-				return redirect()->back()->with('warning', [trans('visiosoft.module.carts::message.error1in2')]);
+				return $this->response->json(['status' => 'error', 'msg' => trans('visiosoft.module.carts::message.error1in2')]);
 			}else{
 				$cart = $this->dispatch(new GetCart());
 				$cart->add($conf, $this->request->quantity);
@@ -76,5 +76,6 @@ class OptionConfigurationController extends PublicController
 				return $this->response->json(['status'=> 'success', 'count' => $count]);
 			}
 		}
+		return $this->response->json(['status' => 'error', 'msg' => trans('visiosoft.module.carts::message.error2')]);
 	}
 }
