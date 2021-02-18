@@ -39,5 +39,5 @@ return [
 	'abv' => [
 		'name' => 'Abreviatura',
 	],
-	'location' => 'Location',
+	'location' => 'Localización',
 ];
