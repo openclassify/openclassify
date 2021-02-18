@@ -39,5 +39,5 @@ return [
 	'abv' => [
 		'name' => 'Kısaltma',
 	],
-	'location' => 'yer',
+	'location' => 'Lokasyon',
 ];
