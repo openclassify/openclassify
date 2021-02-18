@@ -60,22 +60,25 @@ class OptionConfigurationController extends PublicController
 
 	public function ajaxConfAddCart()
 	{
-		if($conf = $this->optionConfigurationRepository->find($this->request->configuration))
-		{
-			$conf->name = $conf->getName();
+		if (\auth()->check()) {
+			if($conf = $this->optionConfigurationRepository->find($this->request->configuration))
+			{
+				$conf->name = $conf->getName();
 
-			$this->adv_model->authControl();
+				$this->adv_model->authControl();
 
-			if ($conf->stock < $this->request->quantity){
-				return $this->response->json(['status' => 'error', 'msg' => trans('visiosoft.module.carts::message.error1in2')]);
-			}else{
-				$cart = $this->dispatch(new GetCart());
-				$cart->add($conf, $this->request->quantity);
+				if ($conf->stock < $this->request->quantity){
+					return $this->response->json(['status' => 'error', 'msg' => trans('visiosoft.module.carts::message.error1in2')]);
+				}else{
+					$cart = $this->dispatch(new GetCart());
+					$cart->add($conf, $this->request->quantity);
 
-				$count = $cart->getItems()->count;
-				return $this->response->json(['status'=> 'success', 'count' => $count]);
+					$count = $cart->getItems()->count;
+					return $this->response->json(['status'=> 'success', 'count' => $count]);
+				}
 			}
+			return $this->response->json(['status' => 'error', 'msg' => trans('visiosoft.module.carts::message.error2')]);
 		}
-		return $this->response->json(['status' => 'error', 'msg' => trans('visiosoft.module.carts::message.error2')]);
+		return $this->response->json(['status' => 'guest']);
 	}
 }

@@ -1200,6 +1200,8 @@ class AdvsController extends PublicController
             if ($adv) {
                 $cart = $thisModel->addCart($adv, $quantity, $name);
                 $response['status'] = "success";
+	            $count = $cart->getItems()->count;
+	            $response['count'] = $count;
             } else {
                 $response['status'] = "error";
                 $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
@@ -1208,8 +1210,6 @@ class AdvsController extends PublicController
             $response['status'] = "guest";
         }
 
-        $count = $cart->getItems()->count;
-	    $response['count'] = $count;
         return $response;
     }
 
