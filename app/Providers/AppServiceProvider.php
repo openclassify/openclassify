@@ -13,14 +13,23 @@ class AppServiceProvider extends ServiceProvider
      * @return void
      */
     public function boot()
-    {
+    { 
+
 	    view()->composer('*', function ($view) {
 	    	//Hidden menu items in sidebar on dashboard
 		    if (auth()->check() and template()->get('cp')){
-			    template()->get('cp')->getNavigation()->get('anomaly.module.variables')->setClass('hidden');
-			    template()->get('cp')->getNavigation()->get('anomaly.module.system')->setClass('hidden');
-			    template()->get('cp')->getNavigation()->get('anomaly.module.redirects')->setClass('hidden');
-			    template()->get('cp')->getNavigation()->get('anomaly.module.repeaters')->setClass('hidden');
+                if($variables = template()->get('cp')->getNavigation()->get('anomaly.module.variables')) {
+                  $variables->setClass('hidden');
+                }
+                if($system = template()->get('cp')->getNavigation()->get('anomaly.module.system')) {
+                  $system->setClass('hidden');
+                }
+                if($redirects = template()->get('cp')->getNavigation()->get('anomaly.module.redirects')) {
+                  $redirects->setClass('hidden');
+                }
+                if($repeaters = template()->get('cp')->getNavigation()->get('anomaly.module.repeaters')) {
+                  $repeaters->setClass('hidden');
+                }
 		    }
 		    //Auto Language Switcher
 		    if (config('advs.lang_switcher_for_browser') and is_null(Request()->session()->get('_locale')) and isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])) {
@@ -40,6 +49,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+
     }
 }
