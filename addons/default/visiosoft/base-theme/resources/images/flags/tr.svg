@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="33.563" height="19.582" viewBox="0 0 33.563 19.582">
+  <defs>
+    <clipPath id="clip-path">
+      <rect id="Rectangle_3332" data-name="Rectangle 3332" width="33.563" height="19.582" transform="translate(43.515 438.664)" fill="none"/>
+    </clipPath>
+  </defs>
+  <g id="TURKEY" transform="translate(-43.515 -438.664)">
+    <g id="Group_5436" data-name="Group 5436">
+      <g id="Group_5435" data-name="Group 5435">
+        <g id="Group_5434" data-name="Group 5434" clip-path="url(#clip-path)">
+          <rect id="Rectangle_3330" data-name="Rectangle 3330" width="33.563" height="19.582" transform="translate(43.515 438.664)" fill="#d00027"/>
+          <g id="Group_5433" data-name="Group 5433">
+            <g id="Group_5432" data-name="Group 5432" clip-path="url(#clip-path)">
+              <path id="Path_7696" data-name="Path 7696" d="M53.3,443.559a4.895,4.895,0,1,1-4.893,4.894,4.9,4.9,0,0,1,4.893-4.894" fill="#fff"/>
+              <path id="Path_7697" data-name="Path 7697" d="M54.527,444.535a3.918,3.918,0,1,1-3.916,3.918,3.918,3.918,0,0,1,3.916-3.918" fill="#d00027"/>
+              <path id="Path_7698" data-name="Path 7698" d="M57.441,448.453l2.324.758.378-1.168Z" fill="#fff"/>
+              <path id="Path_7699" data-name="Path 7699" d="M57.441,448.453l2.324-.754.378,1.164Z" fill="#fff"/>
+              <path id="Path_7700" data-name="Path 7700" d="M59.131,446.125v2.449h1.224Z" fill="#fff"/>
+              <path id="Path_7701" data-name="Path 7701" d="M59.131,446.125l1.438,1.98-.987.719Z" fill="#fff"/>
+              <path id="Path_7702" data-name="Path 7702" d="M59.131,450.785l1.438-1.984-.987-.719Z" fill="#fff"/>
+              <path id="Path_7703" data-name="Path 7703" d="M59.131,450.785v-2.453h1.224Z" fill="#fff"/>
+              <path id="Path_7704" data-name="Path 7704" d="M61.866,447.02l-2.324.75.378,1.164Z" fill="#fff"/>
+              <path id="Path_7705" data-name="Path 7705" d="M61.866,447.02,60.429,449l-.991-.719Z" fill="#fff"/>
+              <path id="Path_7706" data-name="Path 7706" d="M61.866,449.895l-1.437-1.98-.991.719Z" fill="#fff"/>
+              <path id="Path_7707" data-name="Path 7707" d="M61.866,449.895l-2.324-.758.378-1.164Z" fill="#fff"/>
+            </g>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

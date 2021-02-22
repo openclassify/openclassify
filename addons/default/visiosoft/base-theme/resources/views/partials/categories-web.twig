@@ -1,59 +1,55 @@
 {% set sub_categories_limit = setting_value('visiosoft.theme.base::home_page_sub_categories_limit') %}
-{% set showAdsCount = setting_value('visiosoft.module.advs::show_ads_count') %}
 <ul class="categories-list p-0 d-none d-sm-block">
     <li class="categories-list-li category-icon category-{{ main_category.slug }}">
-        {% set catIcon = main_category.icon.path != "" ? url('files/' ~ main_category.icon.path) : img('visiosoft.theme.base::images/default-categories-icon.png').url %}
-        <img src="{{ catIcon }}" alt="{{ main_category.name }}" class="img-responsive">
-        <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}" class="main-category">
+        {% if main_category.icon.path != "" %}
+            <img src="{{ url('files/' ~ main_category.icon.path) }}" alt="{{ main_category.name }}"
+                 class="img-responsive">
+        {% else %}
+            <img src="{{ img('visiosoft.theme.base::images/default-categories-icon.png').url }}"
+                 alt="{{ main_category.name }}"
+                 class="img-responsive">
+        {% endif %}
+        <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}"
+           class="main-category">
             <b>{{ main_category.name }}</b>
-            {% if showAdsCount %}
+            {% if setting_value('visiosoft.module.advs::show_ads_count') %}
                 {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(main_category.id) %}
                 <small class="text-muted">
                     ({{ catAdsCount }})
                 </small>
             {% endif %}
         </a>
-        <ul class="p-0">
+        <ul class="p-0" style="">
             {% set sub_categories = entries('cats','category').where('parent_category_id', main_category.id).where('deleted_at', null).orderBy('sort_order').get() %}
-            {% set subCatLoop = [
-                {
-                    'start': 0,
-                    'end': sub_categories_limit,
-                    'class': '',
-                },
-                {
-                    'start': sub_categories_limit,
-                    'end': count(sub_categories),
-                    'class': 'hidden hidden-category',
-                }
-            ] %}
-            {% for subLoop in subCatLoop %}
-                {% for sub_category in sub_categories|slice(subLoop.start, subLoop.end) %}
-                    <li class="{{ subLoop.class }}">
-                        <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}">{{ sub_category.name }}</a>
-                        {% if showAdsCount %}
-                            {% set catLevel = getParentsCount(sub_category.id) + 1 %}
-                            {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(sub_category.id, catLevel) %}
-                            <small class="text-muted">
-                                ({{ catAdsCount }})
-                            </small>
-                        {% endif %}
-                    </li>
-                {% endfor %}
+            {% for sub_category in sub_categories|slice(0,sub_categories_limit) %}
+                <li>
+                    <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}" class="">{{ sub_category.name }}</a>
+                    {% if setting_value('visiosoft.module.advs::show_ads_count') %}
+                        {% set catLevel = getParentsCount(sub_category.id) + 1 %}
+                        {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(sub_category.id, catLevel) %}
+                        <small class="text-muted">
+                            ({{ catAdsCount }})
+                        </small>
+                    {% endif %}
+                </li>
             {% endfor %}
-
+            {% for sub_category in sub_categories|slice(sub_categories_limit,count(sub_categories)) %}
+                <li class="hidden hidden-category">
+                    <a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}">{{ sub_category.name }}</a>
+                    {% if setting_value('visiosoft.module.advs::show_ads_count') %}
+                        {% set catLevel = getParentsCount(sub_category.id) + 1 %}
+                        {% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(sub_category.id, catLevel) %}
+                        <small class="text-muted">
+                            ({{ catAdsCount }})
+                        </small>
+                    {% endif %}
+                </li>
+            {% endfor %}
             {% if count(sub_categories) > sub_categories_limit %}
-                <li class="show-all" data-limit="{{ sub_categories_limit }}">
+                <li class="show-all">
                     <a>
-                        <span class="">
-                            {{ trans('visiosoft.theme.base::button.show_all') }}
-                            <i class="fas fa-arrow-circle-down"></i>
-                        </span>
-                        <span class="hidden">
-                            {{ trans('visiosoft.theme.base::button.hide_all') }}
-                            <i class="fas fa-arrow-circle-up"></i>
-                        </span>
-
+                        {{ trans('visiosoft.theme.base::button.show_all') }}
+                        <i class="fas fa-arrow-circle-down"></i>
                     </a>
                 </li>
             {% endif %}

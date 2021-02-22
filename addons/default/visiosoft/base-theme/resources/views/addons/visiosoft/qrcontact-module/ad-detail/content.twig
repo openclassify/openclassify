@@ -1,0 +1,26 @@
+{% if params.show %}
+    <div id="nav-qrtab" class="tab-pane fade in mt-3">
+        <div class="qr text-center">
+            {% if (params.adv.created_by.gsm_phone is null) %}
+                <h4>{{ trans('visiosoft.module.qrcontact::field.not-qr') }}</h4>
+            {% else %}
+                {% set qrLink = "https://chart.googleapis.com/chart?cht=qr&"
+                    ~ "chs=350x350&chld=L&choe=UTF-8&"
+                    ~ "chl=BEGIN%3AVCARD%0AVERSION%3A3.0%0AN%3A"
+                    ~ urlencode(params.adv.created_by.name)
+                    ~ "%0AORG%3A"
+                    ~ urlencode(config('app.name'))
+                    ~ "%0ATITLE%3A"
+                    ~ urlencode(params.adv.name)
+                    ~ "%0ATEL%3A"
+                    ~ urlencode(params.adv.created_by.gsm_phone)
+                    ~ "%0AURL%3A"
+                    ~ urlencode(url().current())
+                    ~ "%0AEMAIL%3A"
+                    ~ urlencode(params.adv.created_by.email)
+                    ~ "%0AEND%3AVCARD" %}
+                <img class="img-fluid" src="{{ qrLink }}" width="350" height="350">
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

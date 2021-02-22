@@ -1,0 +1,261 @@
+{% set userId = setting_value('visiosoft.theme.base::default_owner') ?: adv.created_by_id %}
+{% set user = setting_value('visiosoft.theme.base::default_owner') ? entries('users', 'users').find(setting_value('visiosoft.theme.base::default_owner')) : adv.created_by %}
+
+<section id="main" class="clearfix details-page">
+    <div class="classified-title row mx-0 mb-0 mb-sm-2">
+        <div class="col-12 col-sm-8 p-0 m-0">
+            <h1>
+                {{ adv.title }}
+            </h1>
+        </div>
+
+        <div class="col-4 pt-3 m-0 justify-content-end pull-right d-none d-sm-flex">
+            {{ addBlock('ad-detail/title/action', {'adv_id':adv.id, 'sahibinden':true})|raw }}
+            <a href="https://www.facebook.com/sharer/sharer.php?u={{ url_current()|url_encode }}" class="a-sahibinden-type pl-2"
+               onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+               target="_blank">
+                <i class="fab fa-facebook color-facebook-icon"></i>
+            </a>
+            <a href="http://twitter.com/share?url={{ url_current()|url_encode }}"
+               class="a-sahibinden-type pl-2">
+                <i class="fab fa-twitter color-twitter-icon"></i>
+            </a>
+            <a href="https://www.linkedin.com/sharing/share-offsite/?url={{ app.request.uri }}"
+               target="_blank" class="a-linkedin-type pl-2">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://wa.me/?text={{ setting_value('visiosoft.theme.base::shareWhatsappMsg')|url_encode }}%20{{ app.request.uri|url_encode }}"
+               target="_blank" class="a-sahibinden-type pl-2">
+                <i class="fab fa-whatsapp color-whatsapp-icon"></i>
+            </a>
+        </div>
+    </div>
+    <!--detail-ad -->
+    <div class="section slider mb-2 mb-sm-4">
+        <div class="row mx-0">
+            {% include "visiosoft.theme.base::addons/visiosoft/advs-module/ad-detail/partials/slider" %}
+
+            <!-- Small devices details -->
+            <div class="px-1 d-sm-none w-100 sm-detail">
+                {% if adv.video_url %}
+                    <button
+                        class="a-sahibinden-type border-0 w-100 text-center mt-1 mb-2"
+                        data-toggle="modal" data-target="#adv-video">
+                        <i class="fas fa-video"></i>
+                        {{ trans('visiosoft.theme.base::field.video.name') }}
+                    </button>
+                {% endif %}
+                <div class="text-center border-bottom border-top mt-2 mb-1 pb-1">
+                    <div class="sm-name">{{ user.name }}</div>
+                    <small class="text-muted">{{ trans('visiosoft.theme.base::field.member_since.name') }} {{ user.created_at|date('F Y') }}</small>
+                </div>
+                <div class="text-center px-3">
+                    <div class="sm-text text-truncate">
+                        {% for cat in categories %}
+                            <a href="{{ url_route('visiosoft.module.advs::list_cat', [cat.id]) }}"
+                               class="link-unstyled">
+                                {{ cat['name'] }}
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <div class="sm-text">
+                        {% set district = getDistrict(adv.district.getObject().value) %}
+                        {% set neighborhood = getNeighborhood(adv.neighborhood.getObject().value) %}
+                        {% set lastCatId = categories|last['id'] %}
+                        {% if setting_value('visiosoft.theme.base::show_country') %}
+                            {{ adv.country_name }}
+                            <span>/</span>
+                        {% endif %}
+                        <a href="{{ url_route('adv_list_seo') }}?city[]={{ adv.city }}&cat={{ lastCatId }}"
+                           class="link-unstyled">
+                            {{ adv.city_name }}
+                        </a>
+                        {% if district %}
+                            <span>/</span>
+                            <a href="{{ url_route('adv_list_seo') }}?city[]={{ adv.city }}&district[]={{ district.id }}&cat={{ lastCatId }}"
+                               class="link-unstyled">
+                                {{ district.name }}
+                            </a>
+                        {% endif %}
+                        {% if neighborhood %}
+                            <span>/</span>
+                            <a href="{{ url_route('adv_list_seo') }}?city[]={{ adv.city }}&district[]={{ district.id }}&neighborhood[]={{ neighborhood.id }}&cat={{ lastCatId }}"
+                               class="link-unstyled">
+                                {{ neighborhood.name }}
+                            </a>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-3 pl-0 d-none d-sm-block" id="detail-area">
+                {% include "visiosoft.theme.base::addons/visiosoft/advs-module/ad-detail/partials/detail" %}
+            </div>
+
+            <div class="col-md-3 px-0 classified-user-section">
+                {% if setting_value('visiosoft.theme.base::show_owner_details') %}
+                    <div class="userBox d-none d-sm-block">
+                        <div class="userDetail pb-0">
+                            <div class="border-bottom pb-2 mb-2">
+                                {{ addBlock('ad-details/user-image', {'userId': userId})|raw }}
+                                {% set owner = addBlock('ad-details/owner', {'userId': userId}) %}
+                                {% if owner %}
+                                    {{ owner|raw }}
+                                {% else %}
+                                    <h5 class="d-inline-block">{{ user.name }}</h5>
+                                {% endif %}
+                            </div>
+                            {% if owner %}
+                                <div class="d-flex justify-content-between">
+                                    <p class="d-inline-block">{{ user.name }}</p>
+                                </div>
+                            {% endif %}
+                            <div class="d-flex justify-content-between">
+                                <p>
+                                    {{ trans('visiosoft.theme.base::field.member_since.name') }}
+                                    {{ user(userId).created_at|date(config_get('streams::datetime.date_format')) }}
+                                </p>
+                                {% if profile.file.url is not null %}
+                                    <img src="{{ profile.file.url }}" class="user-profile-img">
+                                {% endif %}
+                            </div>
+                            <ul class="classified-owner-action list-unstyled d-flex text-nowrap mb-0 overflow-hidden">
+                                <li>
+                                    {% include 'visiosoft.theme.base::addons/visiosoft/advs-module/ad-detail/partials/list-link' %}
+                                </li>
+                                {{ addBlock('ad-detail/seller/action',{'seller_id':userId, 'sahibinden':true})|raw }}
+                            </ul>
+                        </div>
+                        <div class="userDetail">
+                            {% if setting_value('visiosoft.theme.base::contact_info_visible_to_login_user') ? auth_check() : true %}
+                                <ul class="list-unstyled classified-owner-contact">
+                                    {% if user.gsm_phone is not null %}
+                                        <li class="row">
+                                            <div class="col-md-4 p-0 m-0">
+                                                <strong>
+                                                    {{ trans('visiosoft.theme.base::field.mobile.name') }}
+                                                </strong>
+                                            </div>
+                                            <div class="col-md-8 p-0 m-0 text-right">{{ user.gsm_phone }}</div>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if user.office_phone is not empty %}
+                                        <li class="row border-1 border-top">
+                                            <div class="col-md-4 p-0 m-0">
+                                                <strong>
+                                                    {{ trans('visiosoft.theme.base::field.office_phone.name') }}
+                                                </strong>
+                                            </div>
+                                            <div class="col-md-8 p-0 m-0 text-right">{{ user.office_phone }}</div>
+                                        </li>
+                                    {% endif %}
+
+                                    {% if user.land_phone is not empty %}
+                                        <li class="row border-1 border-top">
+                                            <div class="col-md-4 p-0 m-0">
+                                                <strong>
+                                                    {{ trans('visiosoft.theme.base::field.land_phone.name') }}
+                                                </strong>
+                                            </div>
+                                            <div class="col-md-8 p-0 m-0 text-right">{{ user.land_phone }}</div>
+                                        </li>
+                                    {% endif %}
+                                </ul>
+                                {% if user.gsm_phone is not null %}
+                                    <div class="d-none">
+                                        <input class="phoneCheck" type="hidden" value="{{ user.gsm_phone }}">
+                                        {{ asset_add('scripts.js','visiosoft.theme.base::js/phoneCheck.js') }}
+                                    </div>
+                                    <div class="alert alert-info hidden alert-phoneNumber">
+                                        <p>
+                                            {{ trans('visiosoft.theme.base::message.invalid_phoneNumber') }}
+                                        </p>
+                                        {% if auth_check() %}
+                                            <p>
+                                                <a href="{{ url_route('profile::profile') }}">
+                                                    <b>
+                                                        {{ trans('visiosoft.theme.base::button.update_profile') }}
+                                                    </b>
+                                                </a>
+                                            </p>
+                                        {% endif %}
+                                        </p>
+                                    </div>
+                                    <a href="https://wa.me/{{ user.gsm_phone|replace({'+': ""}) }}" target="_blank"
+                                       class="whatsapp-link hidden">
+                                        <button type="button" class="whatsapp-message btn position-relative">
+                                            <i class="d-none d-lg-inline-block fab fa-whatsapp position-absolute"></i>
+                                            {{ trans('visiosoft.theme.base::field.whatsapp') }}
+                                        </button>
+                                    </a>
+                                {% endif %}
+                                {{ addBlock('ad-detail/contact-with', {'adv': adv, 'showTheme': false})|raw }}
+                            {% else %}
+                                <div class="text-center">
+                                    <small><b><a href="{{ url_route('anomaly.module.users::login') }}" class="text-dark">
+                                                {{ trans('visiosoft.theme.base::message.sign_in_to_contact') }}
+                                            </a></b></small>
+                                </div>
+                            {% endif %}
+                        </div>
+                    </div>
+                {% endif %}
+                {{ addBlock('ad-detail/widget', {'ad': adv, 'price': adv.price, 'id': adv.id, 'cat1': categories['cat1']})|raw }}
+                {{ addBlock('ad-detail/widget-details', {'adv': adv})|raw }}
+                {% if setting_value('visiosoft.theme.base::show_security_tips') %}
+                    <div class="security-tips d-none d-sm-block">
+                        <h6>
+                            {{ trans('visiosoft.theme.base::field.security_tips.name') }}
+                        </h6>
+                        <p>
+                            {{ setting_value('visiosoft.theme.base::security_tips_msg') }}
+                        </p>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+        <ul class="docs list-unstyled mt-3">
+            {% for doc in adv.doc_files %}
+                <li><a class="text-dark small" href="{{ doc.url }}" download><i class="fa fa-lg fa-download small"></i> {{ doc.name }}</a></li>
+            {% endfor %}
+        </ul>
+
+    </div>
+    {% include "visiosoft.theme.base::addons/visiosoft/advs-module/ad-detail/partials/content" %}
+    <!--detail-ad -->
+
+</section>
+{% if user.gsm_phone is not null or adv.inStock() %}
+    <div class="position-fixed w-100 d-block d-sm-none bg-light footer-mobile-device hidden">
+        <div class="row m-0 py-2 justify-content-center">
+            {% if setting_value('visiosoft.theme.base::contact_info_visible_to_login_user') ? auth_check() : true %}
+                {% if not adv.inStock() %}
+                    <div class="col pr-1">
+                        <a href="tel:{{ user.gsm_phone }}" class="btn btn-primary w-100 rounded-0">
+                            <i class="fas fa-phone"></i>
+                            {{ trans('visiosoft.theme.base::field.contact_us.name') }}
+                        </a>
+                    </div>
+                    <a href="https://wa.me/{{ user.gsm_phone|replace({'+': ""}) }}" target="_blank"
+                       class="whatsapp-link hidden col pl-1">
+                        <button type="button" class="whatsapp-message mt-0 btn position-relative rounded-0">
+                            <i class="fab fa-whatsapp"></i>
+                            {{ trans('visiosoft.theme.base::field.whatsapp') }}
+                        </button>
+                    </a>
+                {% endif %}
+
+                {{ addBlock('ad-detail/mobile-action', {'ad': adv})|raw }}
+            {% else %}
+                <div class="text-center">
+                    <small><b><a href="{{ url_route('anomaly.module.users::login') }}" class="text-dark">
+                                {{ trans('visiosoft.theme.base::message.sign_in_to_contact') }}
+                            </a></b></small>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+
+{% include "visiosoft.module.advs::ad-detail/partials/dropleft-edit" %}

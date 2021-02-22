@@ -1,16 +1,18 @@
-<div class="col left-categories-section mx-0">
-
+<div class="col-md-3 left-categories-section mx-0">
+    {{ addBlock('link/index')|raw }}
     <ul class="categories-list p-0 d-none d-sm-block mb-0">
         <li class="categories-list-li category-icon border-bottom-0 mt-0">
-            <img src="{{ img('visiosoft.theme.base::images/store-search.png').url }}" class="img-responsive">
+            <img src="{{ img('visiosoft.theme.base::images/store-search.png').url }}" class="img-responsive"
+                 alt="company directory">
             <a href="{{ url_route('store::list') }}" class="main-category">
-                <span class="text-dark" class="text-dark">
+                <span class="text-dark">
                     {{ trans('visiosoft.theme.base::field.company_directory') }}
                 </span>
             </a>
         </li>
         <li class="categories-list-li category-icon border-bottom-0 mt-0">
-            <img src="{{ img('visiosoft.theme.base::images/popular-ads.png').url }}" class="img-responsive">
+            <img src="{{ img('visiosoft.theme.base::images/popular-ads.png').url }}" class="img-responsive"
+                 alt="populars">
             <a href="{{ url_route('visiosoft.module.advs::list') }}?sort_by=popular" class="main-category">
                 <span class="text-dark">
                     {{ trans('visiosoft.theme.base::field.popular_ads') }}
@@ -18,7 +20,8 @@
             </a>
         </li>
         <li class="categories-list-li category-icon border-bottom-0 mt-0">
-            <img src="{{ img('visiosoft.theme.base::images/last-48-hours.png').url }}" class="img-responsive">
+            <img src="{{ img('visiosoft.theme.base::images/last-48-hours.png').url }}" class="img-responsive"
+                 alt="last 48 hours">
             <a href="{{ url_route('visiosoft.module.advs::list') }}?date=two_days" class="main-category">
                 <span class="text-dark">
                     {{ trans('visiosoft.theme.base::field.last_48_hours') }}
@@ -26,7 +29,8 @@
             </a>
         </li>
         <li class="categories-list-li category-icon mt-0 pb-3">
-            <img src="{{ img('visiosoft.theme.base::images/get-ads.png').url }}" class="img-responsive">
+            <img src="{{ img('visiosoft.theme.base::images/get-ads.png').url }}" class="img-responsive"
+                 alt="secure e-commerce">
             <a href="{{ url_route('visiosoft.module.advs::list') }}?get_ads=true" class="main-category">
                 <span class="text-dark">
                     {{ trans('visiosoft.theme.base::field.secure_e-commerce_ads') }}
@@ -36,7 +40,7 @@
         {{ addBlock('base/leftSidebar')|raw }}
     </ul>
 
-    {{ addBlock('base/categoriesRow')|raw }}
+    {{ addBlock('sahibinden/categoriesRow')|raw }}
 
     <div class="col-12 p-0 m-0">
         {% set main_categories = entries('cats','category').where('parent_category_id', null).where('deleted_at', null).orderBy('sort_order').get() %}

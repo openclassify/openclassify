@@ -1,0 +1,67 @@
+<!-- Share links modal -->
+<div class="modal fade" id="shareModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content col-12">
+
+            <button type="button" class="close position-absolute p-2" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+
+            <!--Header-->
+            <div class="modal-header d-flex justify-content-center white-text p-0">
+                <h4 class="title rounded-circle p-1 bg-white mb-0">
+                    <i class="fa fa-share-alt rounded-circle p-3 text-white"></i>
+                </h4>
+            </div>
+
+            <!--Body-->
+            <div class="modal-body">
+                <div class="d-flex justify-content-around">
+                    <a href="http://twitter.com/share?url={{ app.request.uri|url_encode }}"
+                       class="link-unstyled">
+                        <div class="smd">
+                            <i class=" img-thumbnail fab fa-twitter fa-2x"
+                               style="color:#4c6ef5; background-color: aliceblue"></i>
+                            <p>{{ trans('visiosoft.theme.base::field.twitter.name') }}</p>
+                        </div>
+                    </a>
+                    <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri|url_encode }}"
+                       class="link-unstyled">
+                        <div class="smd">
+                            <i class="img-thumbnail fab fa-facebook fa-2x"
+                               style="color: #3b5998; background-color: #eceff5;"></i>
+                            <p>{{ trans('visiosoft.theme.base::field.facebook.name') }}</p>
+                        </div>
+                    </a>
+                </div>
+                <div class="d-flex justify-content-around">
+                    <a href="https://wa.me/?text={{ setting_value('visiosoft.theme.base::shareWhatsappMsg')|url_encode }}%20{{ app.request.uri|url_encode }}"
+                       class="link-unstyled" target="_blank">
+                        <div class="smd">
+                            <i class="img-thumbnail fab fa-whatsapp fa-2x"
+                               style="color: #25D366; background-color: #cef5dc;"></i>
+                            <p>{{ trans('visiosoft.theme.base::field.whatsapp') }}</p>
+                        </div>
+                    </a>
+                    <a href="mailto:?subject={{ template.get('og_title', trans(template.meta_title))|url_encode }}&body={{ app.request.uri|url_encode }}"
+                       class="link-unstyled">
+                        <div class="smd">
+                            <i class="img-thumbnail fab fa-facebook-messenger fa-2x"
+                               style="color: #3b5998;background-color: #eceff5;"></i>
+                            <p>{{ trans('visiosoft.theme.base::field.e-mail') }}</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+
+            <!--Footer-->
+            <div class="modal-footer justify-content-center">
+                <div class="row w-100">
+                    <input class="col-12 ur rounded" type="url" disabled style="height: 40px;"
+                           value="{{ app.request.uri }}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End share links modal -->

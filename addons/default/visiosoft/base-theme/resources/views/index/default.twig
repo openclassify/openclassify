@@ -1,78 +1,140 @@
-<div class="home-container">
-
-
-
-    <div class="row">
-        <div class="col-md-4">{% include "visiosoft.theme.base::partials/categories" %}</div>
-        <div class="col-md-8"><div class="album  bg-light">
-                {{ addBlock('index_top')|raw }}
-
-                <div class="row p-2">
-                    {% if setting_value('visiosoft.theme.base::latest_and_view_all_btn') %}
-                        <div class="col-md-6">
-                            <h4 class="p-2">{{ trans('visiosoft.theme.base::field.latest_ads') }}</h4>
-                        </div>
-                        <div class="col-md-6 text-right">
-                            <a class="btn btn-outline-secondary"
-                               href="{{ url_route('visiosoft.module.advs::list') }}">{{ trans('visiosoft.theme.base::field.show_all') }}</a>
-                        </div>
+<div class="row home-container mt-3">
+    <div class="col-12 d-block d-sm-none">
+        {% if setting_value('visiosoft.theme.base::show_banner') %}
+            <div class="content text-center p-2 home-banner">
+                {% if isActive('slider') %}
+                    {{ addBlock('layouts/default/section')|raw }}
+                {% else %}
+                    {% set mobile_banner = file(setting_value('visiosoft.theme.base::banner_mobile')).url %}
+                    {% if mobile_banner is null %}
+                        {% set mobile_banner = img('visiosoft.theme.base::images/banner-mobile.png').url %}
                     {% endif %}
+                    <a href="{{ setting_value('visiosoft.theme.base::banner_mobile_link') }}"
+                       {% if setting_value('visiosoft.theme.base::banner_link_new_tab') == true %}target="_blank" {% endif %}>
+                        <img class="d-block d-sm-none" src="{{ mobile_banner }}" alt="banner image">
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+    </div>
+    {% if setting_value('visiosoft.theme.base::left_menu_side') == 'left' %}
+        {% include "visiosoft.theme.base::partials/categories" %}
+    {% endif %}
+    <!-- Showcase Mobile Area -->
+    <div class="col-12 d-block d-sm-none mt-4">
+        <div class="col">
+            <h5 class="p-0 latest-title mb-0 border-bottom">{{ trans('visiosoft.theme.base::field.latest_ads') }}</h5>
+        </div>
+        <div class="container">
+            <div class="row list-classified-home">
+                {% for latest in latestAds() %}
+                    <div class="col-6 d-flex align-items-stretch p-0 home-classified-row">
+                        <div class="mx-auto card mb-1 box-shadow border-0">
+                            <div class="row px-1 py-2 classified-image">
+                                <a href="{{ latest.detail_url }}">
+                                    <div class="col-md-12 justify-content-center align-self-center">
+                                        <img class="card-img-top img-fluid img-thumbnail lazy"
+                                             data-src="{{ latest.cover_photo }}" alt="{{ latest.name }}"
+                                             src="{{ img('visiosoft.theme.base::images/no-image.png').url }}">
+                                    </div>
+                                </a>
+                            </div>
 
+                            <div class="card-body px-2 py-0 classified-subject">
+                                <div class="d-flex justify-content-between align-items-center text-truncate">
+                                    <a href="{{ latest.detail_url }}" class="">
+                                        <span class="card-title">{{ latest.name }}</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        {{ setting_value('visiosoft.theme.base::home_bottom_mobile')|raw }}
+    </div>
+    <!-- Showcase Mobile Area -->
+
+    <!-- Showcase Web Area -->
+    <div class="col-md-9 d-none d-sm-inline-block">
+        {% if setting_value('visiosoft.theme.base::show_banner') %}
+            <div class="content text-center px-2 home-banner">
+                {% if isActive('slider') %}
+                    {{ addBlock('layouts/default/section')|raw }}
+                {% else %}
+                    {% set web_banner = file(setting_value('visiosoft.theme.base::banner_web')).url %}
+
+                    {% if web_banner is null %}
+                        {% set web_banner = img('visiosoft.theme.base::images/home-banner.png').url %}
+                    {% endif %}
+                    <!-- Demo Banner -->
+                    <a href="{{ setting_value('visiosoft.theme.base::banner_web_link') }}"
+                       {% if setting_value('visiosoft.theme.base::banner_link_new_tab') == true %}target="_blank" {% endif %}>
+                        <img class="d-none d-sm-inline-block banner-web" src="{{ web_banner }}" alt="banner image">
+                    </a>
+                {% endif %}
+            </div>
+        {% endif %}
+
+        {{ addBlock('index-top')|raw }}
+        <div class="latest-ads-home">
+            <div class="row pl-2 pt-2 pr-2 pb-0 header-home-centent mb-2">
+                <div class="col">
+                    <h3 class="p-0 latest-title">{{ trans('visiosoft.theme.base::field.latest_ads') }}</h3>
                 </div>
-
-
+                <div class="col text-right">
+                    <a class="a-sahibinden-type"
+                       href="{{ url_route('visiosoft.module.advs::list') }}">{{ trans('visiosoft.theme.base::field.show_all') }}</a>
+                </div>
+            </div>
+            <div class="home-page-ads-area px-2">
+                {{ setting_value('visiosoft.theme.base::home_top_latestAds')|raw }}
+            </div>
+            <div class="container">
                 <div class="row list-classified-home">
+                    {% set home_ad_height = setting_value('visiosoft.theme.base::home_ad_height') %}
                     {% for latestAd in latestAds() %}
-                        <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
-                            <div class="card mb-4 box-shadow">
-                                <div class="row p-2" style="min-height: 150px;">
+                        <div class="col-3 col-lg-2 d-flex align-items-stretch py-0 home-classified-row px-1">
+                            <div class="card border rounded-0">
+                                <div class="p-1 classified-image">
                                     <a href="{{ latestAd.detail_url }}">
-                                        <div class="col-md-12 justify-content-center align-self-center">
-                                            <img class="card-img-top img-fluid img-thumbnail" src="{{ latestAd.cover_photo }}"
-                                                 style="height: 150px">
+                                        <div class="position-relative text-center">
+                                            <img class="card-img-top img-fluid img-thumbnail lazy border-0"
+                                                 style="height: {{ home_ad_height }}px;"
+                                                 data-src="{{ latestAd.cover_photo }}" alt="{{ latestAd.name }}"
+                                                 src="{{ img('visiosoft.theme.base::images/no-image.png').url }}">
                                         </div>
                                     </a>
                                 </div>
 
-                                <div class="card-body">
-                                    {% if setting_value('visiosoft.theme.base::price_fields') %}
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <b>{{ currency_format(latestAd.price, latestAd.currency) }}</b>
-                                        </div>
-                                    {% endif %}
+                                <div class="card-body px-2 py-0 classified-subject">
                                     <div class="d-flex justify-content-between align-items-center text-truncate">
                                         <a href="{{ latestAd.detail_url }}">
-                                            <p class="card-title d-inline-block">{{ latestAd.name }}</p>
+                                            <p class="card-title mb-1 text-truncate">{{ latestAd.name }}</p>
                                         </a>
                                     </div>
-                                    {% if setting_value('visiosoft.module.location::home_page_location') %}
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <small>
-                                                <i class="fas fa-location-arrow text-primary"></i>
-                                                {{ latestAd.city_name }}, {{ latestAd.country_name }}
-                                            </small>
-                                        </div>
-                                    {% endif %}
-                                    {% if setting_value('visiosoft.theme.base::date_fields') %}
-                                        <div class="d-flex justify-content-between align-items-center">
-                                            <small>
-                                                <i class="far fa-clock text-dark"></i>
-                                                {{ latestAd.created_at|date('d/m/Y') }}
-                                            </small>
-                                        </div>
-                                    {% endif %}
                                 </div>
                             </div>
                         </div>
                     {% endfor %}
                 </div>
             </div>
-            {{ addBlock('index')|raw }}
+            <div class="home-page-ads-area px-2">
+                {{ setting_value('visiosoft.theme.base::home_bottom_latestAds')|raw }}
+            </div>
+        </div>
+        {{ addBlock('index')|raw }}
+        <div class="home-page-ads-area px-2">
+            {{ setting_value('visiosoft.theme.base::home_bottom')|raw }}
         </div>
     </div>
-
-
-
-
-
+    <!-- Showcase Web Area -->
+    {% if setting_value('visiosoft.theme.base::left_menu_side') == 'right' %}
+        {% include "visiosoft.theme.base::partials/categories" %}
+    {% endif %}
 </div>
+<script>
+    var show_all_text = `{{ trans('visiosoft.theme.base::button.show_all') }}`;
+    var close_text = `{{ trans('visiosoft.theme.base::button.hidden.name') }}`;
+</script>

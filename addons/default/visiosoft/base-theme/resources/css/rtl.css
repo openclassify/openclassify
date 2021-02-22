@@ -1,0 +1,107 @@
+@media (min-width: 577px) {
+    .left-categories-section .categories-list .categories-list-li img {
+        margin-left: 5px !important;
+    }
+}
+
+#footer .text-left {
+    text-align: right !important;
+}
+
+.navbar-sahibinden .home-page-search-form button[type="submit"] {
+    margin-right: 20rem;
+}
+
+p, .col,
+.home-classified-row,
+.left-categories-section .categories-list .categories-list-li,
+.user-menu ~ .dropdown-menu .dropdown-item,
+.user-menu ~ .dropdown-menu .border-bottom {
+    text-align: right;
+}
+
+.user-menu i {
+    margin-right: 7px;
+}
+
+.list-classified-category li {
+    text-align: right;
+    margin-right: 10px;
+}
+
+#location span {
+    float: right !important;
+    padding-left: 3px;
+}
+
+#mapContainer .form-check,
+#mediaContainer .form-check,
+#dateContainer .form-check {
+    text-align: right;
+    margin-right: 22px !important;
+}
+
+.products-list div {
+    text-align: right;
+}
+
+#mapHeading img,
+#dateHeading img,
+.list-view-type img,
+#locationHeading img {
+    margin-left: 7px;
+    margin-right: 0 !important;
+}
+
+.filtering-currencies-btn {
+    justify-content: start;
+    display: flex;
+    margin-right: 20px;
+}
+
+.classified-title h1 {
+    text-align: right;
+}
+
+#slider-box {
+    padding-right: 0 !important;
+}
+
+#detail-area {
+    padding-left: 15px !important;
+    padding-right: 0 !important;
+}
+
+.classified-user-section .userDetail {
+    text-align: right;
+}
+
+/* Mobile Template */
+@media (max-width: 576px) {
+
+    .left-categories-section .categories-list .categories-list-li .sub-categories {
+        margin-right: 40px !important;
+    }
+
+    .left-categories-section .categories-list .categories-list-li img {
+        margin-left: 0 !important;
+    }
+
+    .close-search-nav {
+        left: 8px;
+        top: 5px;
+        right: inherit !important;
+    }
+
+    .navigation-search input {
+        padding-right: 2rem !important;
+    }
+    .sah-search-icon {
+        z-index: 99999;
+    }
+
+    #slideShowCarousel .carousel-item {
+        float: right;
+        margin-right: initial;
+    }
+}

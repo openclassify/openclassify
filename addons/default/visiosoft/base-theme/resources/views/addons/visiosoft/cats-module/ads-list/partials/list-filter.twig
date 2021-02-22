@@ -1,0 +1,54 @@
+<div class="mb-3 d-none d-sm-block">
+    <div id="category" class="list-classified-category overflow-auto" aria-labelledby="categoryHeading"
+         data-parent="#filter">
+        <ul class="list-unstyled mb-0">
+            {% for key, maincat in params.mainCats %}
+                {% set name = maincat['val'] %}
+                {% set id = maincat['id'] %}
+                {% set parent_category = true %}
+                {% if app.request.get('cat') is null or app.request.get('cat') == "" %}
+                    {% if params.categoryId is null %}
+                        {% set name = maincat.name %}
+                        {% set id = maincat.id %}
+                        {% set parent_category = false %}
+                    {% endif %}
+                {% endif %}
+                {% set catId = entries('cats', 'category').find(id) %}
+                {% set citySlug = null %}
+                {% set pathInfo = app.request.pathinfo|split('/') %}
+                {% if pathInfo|length is same as(4) %}
+                    {% set citySlug = pathInfo[3] %}
+                {% endif %}
+                <li class="{{ loop.index }} overflow-hidden"
+                    {% if parent_category %}style="margin-left: {{ key*8 }}px"{% endif %}>
+                    <a href="
+                        {% if(viewType != "map") %}
+                            {{ appendRequestURL(request_query(),url_route('adv_list_seo', [catId.slug, citySlug]),{}) }}
+                        {% else %}
+                            {{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':id}) }}
+                        {% endif %}
+                    ">
+                        {{ name }}
+                    </a>
+                </li>
+                {% set last_index = key %}
+                {% for subcat in params.subCats %}
+                    {% if subcat.parent_category_id == id %}
+                        {% set subCatId = entries('cats', 'category').find(subcat.id) %}
+                        <li class="{{ last_index+1 }}" style="margin-left: {{ (last_index+1)*8 }}px">
+                            <a href="
+                                {% if(viewType != "map") %}
+                                    {{ appendRequestURL(request_query(),url_route('adv_list_seo', [subCatId.slug, citySlug]),{}) }}
+                                {% else %}
+                                    {{ appendRequestURL(request_query(),url_route('advs_map_list'),{'cat':subcat.id}) }}
+                                {% endif %}
+                            ">
+                                {{ subcat.name }}
+                            </a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>

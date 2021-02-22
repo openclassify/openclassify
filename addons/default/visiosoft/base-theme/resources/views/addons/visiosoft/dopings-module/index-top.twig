@@ -1,0 +1,37 @@
+{% set features = getFeatures(1)  %}
+{% if features|length %}
+<div class="latest-ads-home my-2">
+    <div class="row pl-2 pt-2 pr-2 pb-0 header-home-centent mb-2">
+        <div class="col">
+            <h3 class="p-0 latest-title">{{ trans('visiosoft.module.dopings::field.featured_ads') }}</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row list-classified-home">
+            {% for featuredAd in features %}
+                <div class="col-3 col-lg-2 d-flex align-items-stretch py-0 home-classified-row px-1">
+                    <div class="card border rounded-0">
+                        <div class="p-1 classified-image">
+                            <a href="{{ featuredAd.detail_url }}">
+                                <div class="position-relative text-center">
+                                    <img class="card-img-top img-fluid img-thumbnail border-0"
+                                         src="{{ featuredAd.cover_photo }}" alt="{{ featuredAd.name }}">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card-body px-2 py-0 classified-subject">
+                            <div class="d-flex justify-content-between align-items-center text-truncate">
+                                <a href="{{ featuredAd.detail_url }}" class="">
+                                    <p class="card-title mb-1 text-truncate">{{ featuredAd.name }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endif %}
