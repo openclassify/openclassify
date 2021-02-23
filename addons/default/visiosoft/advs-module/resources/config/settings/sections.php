@@ -35,6 +35,8 @@ return [
                     'get_categories',
                     'listing_page_image',
                     'show_ads_count',
+	                'ads_id_date_hidden',
+	                'hide_seller_info',
                 ],
             ],
             'create_ad' => [
@@ -79,7 +81,8 @@ return [
             'filter' => [
                 'title' => 'visiosoft.module.advs::section.filter',
                 'fields' => [
-                    'hide_price_filter', 'hide_date_filter', 'hide_photo_filter', 'hide_map_filter', 'user_filter_limit'
+                    'hide_filter_section', 'hide_price_filter', 'hide_date_filter', 'hide_photo_filter', 'hide_map_filter',
+	                'hide_listing_header', 'user_filter_limit',
                 ],
             ],
             'translations' => [

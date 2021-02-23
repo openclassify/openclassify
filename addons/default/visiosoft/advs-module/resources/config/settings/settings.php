@@ -383,5 +383,29 @@ return [
     ],
 	'favicon' => [
 		'type' => 'anomaly.field_type.file',
+	],
+	'ads_id_date_hidden' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	],
+	'hide_listing_header' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	],
+	'hide_filter_section' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	],
+	'hide_seller_info' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
 	]
 ];
