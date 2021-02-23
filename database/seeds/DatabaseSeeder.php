@@ -14,6 +14,7 @@ use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Database\Seeder;
 use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -190,5 +191,7 @@ class DatabaseSeeder extends Seeder
 				],
 			]);
 		};
-	}
+
+        Artisan::call('assets:clear');
+    }
 }
