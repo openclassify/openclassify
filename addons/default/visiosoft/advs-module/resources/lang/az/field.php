@@ -5,10 +5,10 @@ return [
         'name' => 'Başlıq'
     ],
     'order' => [
-        'name' => 'Sifariş verin'
+        'name' => 'Sıralama'
     ],
     'slug' => [
-        'name' => 'Slug'
+        'name' => 'Xüsusi ad (slug)'
     ],
     'parent_category' => [
         'name' => 'Valideyn'
@@ -17,7 +17,7 @@ return [
         'name' => 'Kateqoriya Başlığı'
     ],
     'price' => [
-        'name' => 'Qiyməti'
+        'name' => 'Qiymət'
     ],
     'standard_price' => [
         'name' => 'Standart qiymət'
@@ -35,7 +35,7 @@ return [
         'name' => 'Xəritə'
     ],
     'stock' => [
-        'name' => 'Fond'
+        'name' => 'Stok'
     ],
     'advs_desc' => [
         'name' => 'Təsvir'
@@ -53,7 +53,7 @@ return [
         'name' => 'Rayon'
     ],
     'neighborhood' => [
-        'name' => 'Qonşuluq'
+        'name' => 'Məhəllə'
     ],
     'village' => [
         'name' => 'Kənd'
@@ -95,37 +95,37 @@ return [
         'name' => 'Valyuta'
     ],
     'status' => [
-        'name' => 'Vəziyyət',
+        'name' => 'Status',
         'option' => [
-            'approved' => 'Təsdiqləndi',
-            'expired' => 'Müddəti bitmişdir',
-            'unpublished' => 'Yayılmadı',
-            'pending_admin' => 'Admin gözləyir',
-            'pending_user' => 'Gözləyən istifadəçi'
+            'approved' => 'Təsdiqlənmiş',
+            'expired' => 'Müddəti bitib',
+            'unpublished' => 'Yayılmlanmamış',
+            'pending_admin' => 'Təsdiq gözləyir',
+            'pending_user' => 'Təsdiqlənməmiş istifadəçi'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Yayılmadı'
+        'name' => 'Yayılmlanmamış'
     ],
     'finish_at' => [
-        'name' => 'At'
+        'name' => 'Bitmə saatı'
     ],
     'cover_photo' => [
         'name' => 'Örtük şəkli'
     ],
     'favs_adv' => [
-        'name' => 'Fav Elanları'
+        'name' => 'Seçilmiş Elanlar'
     ],
     'my_adv' => [
-        'name' => 'ADVS'
+        'name' => 'Elan'
     ],
     'description' =>  'Təsvir',
-    'explanation' =>  'İzahat',
+    'explanation' =>  'Açıqlama',
     'type' => [
-        'name' => 'Növü'
+        'name' => 'Tip'
     ],
     'parent_adv' => [
-        'name' => 'Əlaqədar Elan'
+        'name' => 'Oxşar Elanlar'
     ],
     'value' => [
         'name' => 'Dəyər'
@@ -134,95 +134,98 @@ return [
     'home' => 'Ev',
     'list-page' => 'Siyahı Səhifə',
     'search' => 'Axtarış',
-    'recommended' => 'Sizə tövsiyə olunan reklamlar',
-    'filter' => 'Süzgəc',
-    'sort' => 'Növ',
-    'sort_by' => 'Sortlaşdır',
-    'pick_option' => 'Bir seçim seçin',
-    'pick_ordering' => 'Sifariş verilir',
-    'price_high' => 'Qiymət yüksəkdən aşağıya',
-    'price_low' => 'Qiymət aşağıdan yuxarıya',
-    'newest' => 'Ən yeni',
-    'oldest' => 'Ən qədim',
-    'address_a_z' => 'Ünvan (A-dan Z)',
-    'address_z_a' => 'Ünvan (Z-dən A)',
+    'recommended' => 'Tövsiyə olunan elanlar',
+    'filter' => 'Filter',
+    'sort' => 'Sırala',
+    'sort_by' => 'Sırala',
+    'pick_option' => 'Seçim edin',
+    'pick_ordering' => 'Sıralama',
+    'price_high' => 'Əvvəlvə bahalı',
+    'price_low' => 'Əvvəlcə ucuz',
+    'newest' => 'Əvvəlvə yeni',
+    'oldest' => 'Əvvəlvə köhnə',
+    'address_a_z' => 'Ünvan (A-dan Z-yə)',
+    'address_z_a' => 'Ünvan (Z-dən A-ya)',
 	'categories' => [
 		'name' => 'Kateqoriyalar'
 	],
     'all_categories' => 'bütün kateqoriyalar',
     'location' => 'Yer',
     'send_message' => 'Mesaj göndər',
-    'phone_gsm' => 'Gsm Telefon',
+    'phone_gsm' => 'Mobil Telefon',
     'phone_office' => 'Ofis Telefonu',
     'add_to_favorites' => "Seçilmişlərə əlavə et",
     'send' => 'Göndər',
     'search_name' => 'Axtarış Adı',
-    'my_favorite_searches' => 'Sevimli axtarışlar',
-    'search_desc' => 'Sevimli axtarış seçimlərinizi buraya əlavə edə və idarə edə bilərsiniz.',
-    'complaint_placeholder' => 'Şikayət məlumatlarını buraya yazın.',
-    'show_details' => 'Ətraflı məlumatı göstərin',
-    'ad_actions' => 'Reklam aksiyaları',
-    'edit' => 'Redaktə edin',
-    'approve' => 'Təsdiq edin',
-    'passive' => "Passivdir",
-    'offered_by' => 'Təqdim olunan',
-    'more_ads_by' => 'Daha Elanlar',
-    'click_phone' => 'Telefon nömrəsini göstərin',
-    'share' => 'Paylaşın',
-    'report' => 'Bu elan barədə məlumat verin',
-    'features' => 'Xüsusiyyətləri',
-    "streetview" => "küçə görünüşü",
-    'recommended_ads' => 'Sizə tövsiyə olunan reklamlar',
+    'my_favorite_searches' => 'Seçilmiş axtarışlar',
+    'search_desc' => 'Seçilmiş axtarışlarınızı buradan əlavə edə və dəyişə bilərsiniz.',
+    'complaint_placeholder' => 'Şikayətlərinizi buraya yaza bilərsiniz.',
+    'show_details' => 'Ətraflı bax',
+    'ad_actions' => 'Elan düzəlişləri',
+    'edit' => 'Düzəliş et',
+    'approve' => 'Təsdiqlə',
+    'passive' => "Passivləşdir",
+	'sold' => 'Satıldı',
+    'offered_by' => 'Elan sahibi',
+    'more_ads_by' => 'İstifadəçinin Digər Elanları',
+    'click_phone' => 'Nömrəni göstər',
+    'share' => 'Paylaş',
+    'report' => 'Elanı şikayət et',
+    'features' => 'Xüsusiyyətlər',
+    "streetview" => "Küçə Görünüşü",
+    'recommended_ads' => 'Tövsiyə olunan elanlar',
     'new' => 'Yeni',
-    'short_info' => 'Qısa məlumat',
+    'short_info' => 'Qısa informasiya',
     'secure_trading' => 'Təhlükəsiz Ticarət',
     '24/7' => '24/7 Dəstək',
-    'easy_trading' => 'Asan Ticarət',
+    'easy_trading' => 'Asan Alış-veriş',
     'need_help' => 'Kömək lazımdır?',
     'give_a_call' => 'Zəng et',
     'message_sent' => 'Mesaj göndərildi!',
-    'asap' => 'Mesaj göndərildi, satıcı sizinlə asap əlaqə saxlayır.',
-    'ad_id' => 'Elan İddiası',
-    'contact_with' => 'İlə əlaqə saxlayın',
-    'create_adv' => 'Reklam yaradın',
-    'edit_adv' => 'Elanı redaktə edin',
+    'asap' => 'Mesaj göndərildi, 
+ən qısa zamanda satıcı sizinlə əlaqə saxlayacaq.',
+    'ad_id' => 'Elan nömrəsi',
+    'contact_with' => 'Əlaqə saxlayın',
+    'create_adv' => 'Elan yaradın',
+    'edit_adv' => 'Düzəliş et',
     'mandatory_fields' => 'Məcburi sahələr',
-    'ad_post' => 'Elan Yazısı',
-    'sell_item' => 'Bir məhsul və ya xidmət satın',
-    'search_save' => 'Sevimli axtarış uğurla qeyd olundu',
+    'ad_post' => 'Elanı Yayımla',
+    'sell_item' => 'Məhsul və ya xidmət satın',
+    'search_save' => 'Axtarış seçilmişlərə əlavə edildi',
     'address' => 'Ünvan',
     'email' => 'Elektron poçt',
     'phone' => 'Telefon',
-    'send_us_your_feedback' => 'Geribildiriminizi bizə göndərin',
-    'online_shopping' => 'GET',
+    'send_us_your_feedback' => 'Fikirlərinizi bizimlə paylaşın',
+    'online_shopping' => 'Mağaza',
     'approved' => 'Uğurla təsdiqləndi',
     'extended' => 'Müvəffəqiyyətlə uzadıldı',
     'declined' => 'Uğurla rədd edildi',
     'search_on_map' => 'Xəritədə axtar',
-    'post_free_ad' => 'Pulsuz Reklam elanı',
+    'post_free_ad' => 'Pulsuz Elan Ver',
     'select_a_category' => 'Kateqoriya seç',
     'select_a_sub_category' => 'Alt kateqoriya seçin',
-    'all_dopings_added' => 'Bu reklam üçün bütün dopinq növləri əlavə olunur.',
+    'all_dopings_added' => 'Bu elan üçün bütün ödənişli xidmət növləri əlavə olunub.',
     'is_get_adv' => [
-        'name' => 'GET'
+        'name' => 'Təhlükəsiz Ticarət'
     ],
     'corporate_info' => 'Korporativ məlumat',
-    'featured_ads' => "Xüsusi reklamlar",
-    'trending_ads' => 'Trendind reklamları',
+    'featured_ads' => "Xüsusi elanlar",
+    'trending_ads' => 'Populyar elanlar',
+    'search_ad_result_prefix' => 'kateqoriyasında',
     'search_ads_result_message' => [
-        'name' => ': axtardığınız elanları sayın',
+        'name' => ':name axtarışınızda :count ədəd elan tapılmışdır.',
     ],
-    'total' => 'Ümumi',
-    'quantity' => 'Miqdarı',
-    'view_cart' => 'Səbətə baxın',
-    'no_ads' => 'Reklam tapılmadı.',
+    'total' => 'Toplam',
+    'quantity' => 'Ədəd',
+    'view_cart' => 'Səbətə bax',
+    'no_ads' => 'Elan tapılmadı.',
     'show_display_mode' => [
         'map' => 'Xəritə',
         'list' => 'Siyahı',
     ],
     'advs_list_table_thead' => [
         'name' => 'Elan Adı',
-        'price' => 'Qiyməti',
+        'price' => 'Qiymət',
         'publish_at' => 'Elan tarixi',
         'location_city' => 'Şəhər',
         'location_country' => 'Ölkə',
@@ -243,12 +246,12 @@ return [
         'name' => 'Profil',
     ],
     'my_ads' => [
-        'name' => 'Reklamlarım',
+        'name' => 'Elanlarım',
     ],
     'sold_out' => [
         'name' => 'Satıldı',
     ],
-    'edit_category' => 'Kateqoriya dəyişdirin',
+    'edit_category' => 'Kateqoriyaya düzəliş et',
     'set_category' => 'Kateqoriya təyin edin',
     'max' => [
         'name' => 'Maks',
@@ -269,17 +272,18 @@ return [
         'name' => 'Son Ayda'
     ],
     'ads_with_photo' => [
-        'name' => 'Fotoşəkilli Reklamlar'
+        'name' => 'Şəkilli Elanlar'
     ],
     'ads_with_video' => [
-        'name' => 'Video ilə Reklamlar'
+        'name' => 'Videolu Elanlar'
     ],
     'yes' => [
         'name' => 'Bəli'
     ],
     "no_location" => "Heç bir yer seçilməyib.",
-    "continue" => 'Davam edin',
+    "continue" => 'Davam et',
     "gallery" => 'Qalereya',
+    "ad" => 'elan',
     "ads" => 'Elanlar',
     "were_found" => 'tapıldı.',
 
@@ -287,53 +291,56 @@ return [
     'pending_message_1' => 'Elan təsdiqləmə prosesindədir',
     'pending_message_2' => "Elanın Yeniləmə tarixi",
     'pending_message_3' => 'Təxmini gözləmə vaxtı',
-    'pending_message_4' => 'Təsdiqləmə müddətində keçirilmiş vaxt dopinq vaxtına əlavə ediləcəkdir.',
-    'pending_message_5' => 'Təsdiqləmə müddətində reklam ilə bağlı zəng mərkəzindən heç bir əməliyyat edilə bilməz.',
+    'pending_message_4' => 'Təsdiqləmə müddəti ödənişli elan vaxtına əlavə ediləcəkdir.',
+    'pending_message_5' => 'Təsdiqləmə müddətində elan ilə bağlı çağrı mərkəzindən heç bir əməliyyat edilə bilməz.',
     'hours' => 'saat',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'Reklamınız haqqında aşağıdakı məlumatlar düzgündürsə, "Davam et" düyməsini basın və növbəti mərhələyə keçin.',
-        'part_2' => 'Əgər deyilsə, "Düzəliş et" düyməsini basın.',
+        'part_1' => 'Reklamınız haqqında aşağıdakı məlumatlar düzgündürsə, "Davam et" düyməsinə klik edərək növbəti mərhələyə keçin.',
+        'part_2' => 'Əgər deyilsə, "Düzəliş et" düyməsini klik edin.',
     ],
-    'views' => 'Baxışlar',
+    'views' => 'Baxış sayı',
 
     // Detail page
-    "no_street_view" => "Bu yerdə küçə görünüşü görüntüsü yoxdur",
-    'edit_my_contact_info' => 'Əlaqə məlumatlarımı düzəldin',
-    'update_my_contact_info' => 'əlaqə məlumatımı yeniləyin',
-    'contact_info' => 'Əlaqə məlumatı',
+    "no_street_view" => "Bu ünvanda küçə görünüşü yoxdur",
+    'edit_my_contact_info' => 'Əlaqə məlumatlarımı dəyiş',
+    'update_my_contact_info' => 'əlaqə məlumatımı yenilə',
+    'contact_info' => 'Əlaqə məlumatları',
     'ad_info' => 'Elan haqqında məlumat',
 
     // Select cat
-    'select_category_step_by_step' => 'Addım-addım Kateqoriya seçin',
+    'select_category_step_by_step' => 'Sırayla Kateqoriya seçin',
 
     // New create page
     'options' => 'Seçimlər',
     'category_selection' => 'Kateqoriya seçimi',
-    'listing_details' => 'Listing Details',
+    'listing_details' => 'Elan Detalları',
     'preview' => 'Önizləmə',
-    'congratulations' => 'Təbrik edirəm',
-    'ad_desc' => 'Reklam Təsviri',
+    'congratulations' => 'Təbriklər',
+    'ad_desc' => 'Elan önizləməsi',
     'upload_photos' => 'Şəkillər yükləyin',
+    'upload_files' => 'Faylları yükləyin',
     'additional_fields' => 'Əlavə sahələr',
-    'ad_location' => 'Reklam yeri',
+    'ad_location' => 'Ünvan əlavə et',
+    'owner' => 'Sahib',
+    'default_owner_instruction' => 'Heç bir istifadəçi seçilmədiyi təqdirdə sahib cari istifadəçiyə borcludur',
 
     'free' => 'Pulsuz',
-    'ad_date' => 'Reklam Tarixi',
+    'ad_date' => 'Elan Tarixi',
     'photo_video' => 'Foto, Video',
     'and_above' => 'və yuxarıda',
     'and_below' => 'və aşağıda',
-    'clear_all' => 'Hamısını sil, hamısını təmizlə',
-    'balances' => 'Qalıqlar',
+    'clear_all' => 'Hamısını təmizlə',
+    'balances' => 'Balans',
     'packages' => 'Paketlər',
-    'dopings' => 'Dopinqlər',
+    'dopings' => 'Ödənişli elan',
     'advs' => 'Advs',
     'site' => 'Sayt',
-    'subscription' => 'Abunə',
-	'created' => 'Yarandı',
+    'subscription' => 'Abunəlik',
+	'created' => 'Yaradıldı',
 	'product_option' => [
-		'name' => 'Məhsul seçimi'
+		'name' => 'Məhsul seçimləri'
 	],
 	'option_json' => [
 		'name' => 'Seçim'

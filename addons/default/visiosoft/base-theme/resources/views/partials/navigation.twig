@@ -1,82 +1,106 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container">
-        {% if setting_value('visiosoft.theme.base::navigation_title') %}
-            <a class="navbar-brand"
-               href="{{ url("/") }}">{{ setting_value('streams::name', config_get('streams::distribution.name')) }}</a>
+{% set logo_web = file(setting_value('visiosoft.theme.base::logo_web')).url %}
+{% set logo_mobile = file(setting_value('visiosoft.theme.base::logo_mobile')).url %}
+{% if logo_web is null %}
+    {% set logo_web = img('visiosoft.theme.base::images/logo_web.png').url %}
+{% endif %}
+{% if logo_mobile is null %}
+    {% set logo_mobile = img('visiosoft.theme.base::images/logo_mobile.png').url %}
+{% endif %}
+
+<nav class="navbar navbar-expand-lg navbar-dark navbar-sahibinden">
+    <div class="container navigation-search d-none">
+        <div class="col-12 p-0">
+            <div class="sah-search-icon position-absolute m-0 p-1 pl-2">
+                <i class="fas fa-search text-white"></i>
+            </div>
+
+            <form action="{{ app.request.segment(1) == 'store' ?
+                    url_route('store::list') :
+                    url_route('visiosoft.module.advs::list')  }}" class="col-12 p-0" method="get">
+                <input type="search" id="searchMobile" name="keyword" class="w-100">
+            </form>
+            <div class="position-absolute m-0 close-search-nav">
+                <i class="fas fa-times text-white"></i>
+            </div>
+        </div>
+    </div>
+
+    {{ addBlock('autocomplete')|raw }}
+
+    <div class="container navigation-first">
+        <!-- Mobile nav -->
+        <div class="col-3 p-0 d-flex align-items-center">
+            <a class="navbar-brand py-0" href="{{ app.request.getScheme ~ '://' ~ setting_value('streams::domain') }}">
+                <img class="img-responsive d-none d-sm-block logo-web" alt="web logo"
+                     src="{{ logo_web }}">
+                <img class="img-responsive d-block d-sm-none logo-mobile" alt="mobile logo"
+                     src="{{ logo_mobile }}">
+            </a>
+        </div>
+        
+        <div class="col-3 p-0 text-right d-block d-sm-none">
+            <div class="mb-0 sah-mobile-nav-wrapper">
+                <a class="fas fa-search text-white search-nav-btn mr-2" href="javascript:"></a>
+                <a class="fa fa-share-alt text-white share-nav-btn link-unstyled" href="javascript:"
+                   data-toggle="modal" data-target="#shareModal"></a>
+            </div>
+        </div>
+        <!-- End mobile nav -->
+
+        <div class="collapse navbar-collapse">
+            <form class="my-2 my-lg-0 position-relative home-page-search-form d-flex justify-content-center"
+                  action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+                <div class="select-wrapper search-type h-100 mr-1 position-relative">
+                    <select class="custom-select search-type w-auto border-0 h-100 pr-4">
+                        <option value="{{ url_route('visiosoft.module.advs::list') }}">{{ trans('visiosoft.theme.base::field.products') }}</option>
+                        <option value="{{ url_route('store::list') }}">{{ trans('visiosoft.theme.base::field.suppliers') }}</option>
+                    </select>
+                    <i class="select-arrow"></i>
+                </div>
+
+                <input class="h-100" id="search" type="search" name="keyword" aria-label="Search"
+                       placeholder="{{ trans('visiosoft.theme.base::message.navigation_search_placeholder') }}">
+                <button class="btn my-2 my-sm-0 position-absolute" type="submit">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+        </div>
+        {% if setting_value('visiosoft.theme.base::show_navigation_switch_language') %}
+            {% include "visiosoft.theme.base::partials/lang-switcher" %}
         {% endif %}
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
-                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarContent">
-            {{ structure()
-            .linkAttributesDropdown({'data-toggle': 'dropdown'})
-            .item_class('nav-item')
-            .selected_class('active')
-            .child_item_class('dropdown-item')
-            .dropdown_class('dropdown')
-            .child_link_class('dropdown-item')
-            .link_class('nav-link')
-            .depth(5)
-            .listClass('nav navbar-nav navbar-right')
-            .childListClass('dropdown-menu')
-            .cache({'namespace': 'user'})
-            .render()|raw }}
-
-            {% if setting_value('visiosoft.theme.base::navigation_action') %}
-                <ul class="nav navbar-nav navbar-right d-block d-sm-none">
-                    <li class="nav-item">
-                        {% if auth_check() %}
-                            <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">
-                                {{ trans('visiosoft.theme.base::field.logout.name') }}
-                            </a>
-                        {% else %}
-                            <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}" rel="nofollow">
-                                {{ trans('visiosoft.theme.base::field.login.name') }}
-                            </a>
-                        {% endif %}
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_route('profile::profile') }}" rel="nofollow">
-                            {{ trans('visiosoft.theme.base::field.profile') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/advs/create_adv" class="btn btn-primary" rel="nofollow">
-                            {{ trans("visiosoft.theme.base::button.post_ad.name") }}
-                        </a>
-                    </li>
-                </ul>
-            {% endif %}
+        <div>
+            <ul class="nav navbar-nav navbar-right flex-row user-nav-menu">
+                <li class="nav-item m-2 d-none d-sm-block">
+                    <a class="border-right border-secondary p-1 pr-2 item-menu" rel="nofollow"
+                       href="{{ url_route('anomaly.module.users::login') }}">
+                        {{ trans('visiosoft.theme.base::button.login.name') }}
+                    </a>
+                </li>
+                <li class="nav-item mt-2 mb-2 mr-2 d-none d-sm-block">
+                    <a class="p-1 item-menu" rel="nofollow" href="{{ url_route('anomaly.module.users::register') }}">
+                        {{ trans('visiosoft.theme.base::button.register.name') }}
+                    </a>
+                </li>
+                <li class="nav-item post-free-btn d-none d-sm-block">
+                    <a href="{{ app.request.getScheme ~ '://' ~ setting_value('streams::domain') ~ '/advs/create_adv' }}" rel="nofollow" class="btn ml-3 mt-1 item-menu">
+                        {{ trans("visiosoft.theme.base::button.post_ad.name") }}
+                    </a>
+                </li>
+            </ul>
         </div>
-        <div class="d-none d-sm-block">
-            {% if setting_value('visiosoft.theme.base::navigation_action') %}
-                <ul class="nav navbar-nav navbar-right">
-                    <li class="nav-item">
-                        {% if auth_check() %}
-                            <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">
-                                {{ trans('visiosoft.theme.base::field.logout.name') }}
-                            </a>
-                        {% else %}
-                            <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}" rel="nofollow">
-                                {{ trans('visiosoft.theme.base::field.login.name') }}
-                            </a>
-                        {% endif %}
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ url_route('profile::profile') }}" rel="nofollow">
-                            {{ trans('visiosoft.theme.base::field.profile') }}
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="/advs/create_adv" class="btn btn-primary" rel="nofollow">
-                            {{ trans("visiosoft.theme.base::button.post_ad.name") }}
-                        </a>
-                    </li>
-                </ul>
-            {% endif %}
-        </div>
-
     </div>
 </nav>
+
+{% include 'visiosoft.theme.base::partials/share-modal' %}
+
+<script>
+    let profileAdsRoute = `{{ url_route('profile::ads') }}`;
+    let myAdvsTrans = `{{ trans('visiosoft.theme.base::button.my_ads.name') }}`;
+    let profileRoute = `{{ url_route('profile::profile') }}`;
+    let myAccountTrans = `{{ trans('visiosoft.theme.base::button.my_account.name') }}`;
+    let logoutRoute = `{{ url_route('anomaly.module.users::logout') }}`;
+    let logoutTrans = `{{ trans('visiosoft.theme.base::button.logout.name') }}`;
+    let createAdvRoute = `{{ url_route('advs::create_adv') }}`;
+    let postAdvTrans = `{{ trans("visiosoft.theme.base::button.post_ad.name") }}`;
+</script>
+{{ asset_add("scripts.js", "visiosoft.theme.base::js/userAuth.js") }}

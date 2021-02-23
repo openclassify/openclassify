@@ -1,5 +1,4 @@
 <!doctype html>
-
 <!--[if lt IE 7]>
 <html class="nojs ms lt_ie7" lang="{{ config('app.locale') }}"><![endif]-->
 <!--[if IE 7]>
@@ -15,29 +14,39 @@
     {% include "visiosoft.theme.base::partials/metadata" %}
     {% block styles %}{% endblock %}
 </head>
-
 <body>
+{% include "visiosoft.theme.base::base/header" %}
 
-{% include "visiosoft.theme.base::partials/header" %}
+{% if (request_path() == '/') %}
+    {{ addBlock('layouts/default/section')|raw }}
+    <main id="main">
+        <div class="container">
 
-{{ addBlock('layouts/default/section')|raw }}
-<main id="main">
-    <div class="container">
+            {% include "visiosoft.theme.base::partials/messages" %}
+            {% include "visiosoft.theme.base::base/default" %}
+        </div>
+    </main>
 
-        {% include "visiosoft.theme.base::partials/messages" %}
-
-        {% if (request_path() == '/') %}
-            {% include "visiosoft.theme.base::index/default" %}
-        {% else %}
+    {% include "visiosoft.theme.base::base/footer" %}
+{% else %}
+    <main id="main">
+        <div class="left-banner position-fixed pl-xl-2 d-none d-lg-flex">
+            {{ blocks(str_slug('Homepage Left Banner','-')) }}
+        </div>
+        <div class="container">
+            {% include "visiosoft.theme.base::partials/messages" %}
             {% block content %}{% endblock %}
-        {% endif %}
+        </div>
+        <div class="right-banner position-fixed pr-xl-2 d-none d-lg-flex">
+            {{ blocks(str_slug('Homepage Right Banner','-')) }}
+        </div>
+    </main>
 
-    </div>
-</main>
+    {% include "visiosoft.theme.base::partials/footer" %}
+{% endif %}
 
-{% include "visiosoft.theme.base::partials/footer" %}
-{% include "visiosoft.theme.base::partials/assets" %}
 {% include "visiosoft.theme.base::partials/settings" %}
+{% include "visiosoft.theme.base::partials/assets" %}
 
 </body>
 </html>

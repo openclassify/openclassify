@@ -36,4 +36,8 @@ return [
     ],
     'selected' => 'Ausgewählt',
     'choose_an_option' => 'Wähle eine Option...',
+	'abv' => [
+		'name' => 'Kurzname',
+	],
+	'location' => 'Ort',
 ];

@@ -1,0 +1,10 @@
+{% if params.category %}
+    {% for category_breadcrumbs in params.mainCats %}
+        <li class="breadcrumb-item float-left">
+            <a href="{{ url_route('adv_list_seo', [category_breadcrumbs['slug']]) }}">
+                <i class="fa fa-caret-right" aria-hidden="true"></i>
+                {{ category_breadcrumbs['val'] }}
+            </a>
+        </li>
+    {% endfor %}
+{% endif %}

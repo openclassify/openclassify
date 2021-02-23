@@ -9,7 +9,7 @@ return [
 '
     ],
     'last_name' => [
-        'name' => 'ناوی باپیر'
+        'name' => 'پاشناو'
     ],
     'username' => [
         'name' => 'ناوی بەکارهێنەر'
@@ -31,7 +31,7 @@ return [
 '
     ],
     'enabled' => [
-        'name' => 'بەکارهێنەر کارمەندی بەهێزە
+        'name' => 'بەکارهێنەر چالاکیە
 '
     ],
     'country' => [
@@ -94,10 +94,10 @@ return [
 '
     ],
     'adress_last_name' => [
-        'name' => 'ناوی باپیر'
+        'name' => 'پاشناو'
     ],
     'actions' => [
-        'name' => 'Çalakî'
+        'name' => 'کردەوە'
     ],
     'adress_content' => [
         'name' => 'ناوەڕۆکی ناونیشان
@@ -175,7 +175,7 @@ return [
 '
     ],
     'menu_delete_account' => [
-        'name' => 'ئەکاونتەکە دابخە
+        'name' => 'ئەکاونتەکە ئةكاونتە
 '
     ],
     'menu_my_ads' => [
@@ -190,7 +190,7 @@ return [
         'name' => 'سڵاو'
     ],
     'menu_last_msg' => [
-        'name' => 'تۆ دوایین جار هاتیتە ژوورەوە
+        'name' => 'تۆ ئاخیر جار هاتیتە ژوورەوە
 '
     ],
     'menu_packages' => [
@@ -267,7 +267,7 @@ return [
         'name' => 'Lorem ipsum dolor rûniştiye amet, elite adetekirina consectetur'
     ],
     'right_need_help_subject' => [
-        'name' => 'ویستنی یارمەتی؟'
+        'name' => 'ویستنی یارمەتی'
     ],
     'right_need_help_msg' => [
         'name' => 'تەلەفون بکە
@@ -292,7 +292,7 @@ return [
 ",
     'fav_searches' => "گەڕانی دڵخوازترین
 ",
-    'posted_on' => "Hat şandin",
+    'posted_on' => "بڵاوکرایەوە",
     'message_details' => "وردەکاری پەیام
 ",
     'adv_no' => 'ژمارەی ڕیکلام
@@ -333,7 +333,7 @@ return [
         'name' => 'بابەت',
     ],
     'price' => [
-        'name' => 'نرخي',
+        'name' => 'نرخ',
     ],
     'piece' => [
         'name' => 'پارچە',
@@ -500,7 +500,7 @@ return [
         'name' => 'شه‌خسی',
     ],
     'corporate' => [
-        'name' => 'شریکه‌',
+        'name' => 'کۆمپانیا',
     ],
 
     'details' => [
@@ -529,7 +529,7 @@ return [
 ',
     'update' => 'نوێکردنەوە
 ',
-    'change_password' => 'گۆڕینی تێپەڕەوشە',
+    'change_password' => 'گۆڕینی وشەی نهێنەکە',
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
 

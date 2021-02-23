@@ -1,0 +1,46 @@
+{#
+    Main CSS can be found in metadata.twig
+#}
+
+{# Core Theme Components #}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/popper.min.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/bootstrap.min.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/modal_include.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/select2.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/params.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/jquery.maskedinput.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/intlTelInput.min.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/utils.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/phonefield.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/jquery.inputmask.bundle.min.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/lazy-loading.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/script.js") }}
+
+{# Theme Scripts #}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/theme/initialize.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/theme/search.js") }}
+{{ asset_add("theme.js", "visiosoft.theme.base::js/theme/modal.js") }}
+
+{{ asset_script("theme.js") }}
+
+{{ addBlock('theme/partials/assets/additional-assets')|raw }}
+
+{# Include Styles Loaded From Outside #}
+<style>
+    {% for style in asset_inlines("styles.css", ["min"]) %}
+    {{ style|raw }}
+    {% endfor %}
+</style>
+
+{# Include Scripts Loaded From Outside #}
+<script>
+    {% for script in asset_inlines("scripts.js", ["min"]) %}
+    {{ script|raw }}
+    {% endfor %}
+</script>
+
+<script>
+    {% for script in asset_inlines("customjs.js") %}
+    {{ script|raw }}
+    {% endfor %}
+</script>

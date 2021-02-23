@@ -43,4 +43,8 @@ return [
     'profession' => [
         'name' => 'حرفه'
     ],
+    'hide_register_type_profile' => [
+        'name' => 'پنهان کردن ثبت نام در صفحه نمایه',
+        'instructions' => 'قسمت نوع ثبت نام را در صفحه ویرایش نمایه پنهان می کند.',
+    ],
 ];

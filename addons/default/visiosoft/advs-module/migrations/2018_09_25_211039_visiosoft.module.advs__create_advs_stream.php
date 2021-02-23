@@ -4,6 +4,11 @@ use Anomaly\Streams\Platform\Database\Migration\Migration;
 
 class VisiosoftModuleAdvsCreateAdvsStream extends Migration
 {
+    public function __construct()
+    {
+        \Illuminate\Support\Facades\DB::getDoctrineSchemaManager()
+            ->getDatabasePlatform()->registerDoctrineTypeMapping('point', 'string');
+    }
 
     /**
      * The stream definition.

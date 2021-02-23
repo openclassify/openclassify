@@ -1,6 +1,165 @@
 <footer id="footer">
     <div class="container text-center text-muted">
-        &copy;{{ 'now'|date('Y') }} {{ setting_value('streams::name', 'Your Site') }}, All rights reserved.
+        {#        {{ blocks('footer')|raw }}#}
+
+        <div class="row text-left mx-0">
+            {% set menus = entries('navigation', 'menus').whereIn('slug', ['customer_service', 'about_us', 'buy_and_sell']).get() %}
+            {% for menu in menus %}
+                {% set pages = entries('navigation', 'links').where('menu_id', menu.id).get() %}
+                {% if pages|length %}
+                    <div class="col-md-3 my-2 ml-0 pl-0">
+                        <h6>{{ menu.name }}</h6>
+                        <ul class="pl-0">
+                            {% for page in pages %}
+                                <li>
+                                    {% if page.entry.page.id is defined %}
+                                        <a href="{{ page.entry.page.path }}">
+                                            {{ page.entry.page.title }}
+                                        </a>
+                                    {% else %}
+                                        <a href="{{ page.entry.url }}">
+                                            {{ page.entry.title }}
+                                        </a>
+                                    {% endif %}
+                                </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endif %}
+            {% endfor %}
+            <div class="col-md-3 my-2 ml-0 pl-0 float-right">
+                <h6>{{ trans('visiosoft.theme.base::field.follow_us.name') }}</h6>
+                <ul class="pl-0">
+                    <li>
+                        <a href="{{ setting_value('visiosoft.theme.base::facebook') }}">{{ trans('visiosoft.theme.base::field.facebook.name') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ setting_value('visiosoft.theme.base::twitter') }}">{{ trans('visiosoft.theme.base::field.twitter.name') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ setting_value('visiosoft.theme.base::linkedin') }}">{{ trans('visiosoft.theme.base::field.linkedin.name') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ setting_value('visiosoft.theme.base::instagram') }}">{{ trans('visiosoft.theme.base::field.instagram.name') }}</a>
+                    </li>
+                    <li>
+                        <a href="{{ setting_value('visiosoft.theme.base::youtube') }}">{{ trans('visiosoft.theme.base::field.youtube.name') }}</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-12 row footer-help-box justify-content-end pl-0">
+                <div class="col-md-6 row pl-0 ml-0">
+                    <div class="col-12 col-md-6 pl-0 row">
+                        <div class="col-3 p-0 text-center text-danger">
+                            <div class="sah-phone-square">
+                                <i class="fas fa-phone-square"></i>
+                            </div>
+                        </div>
+                        <div class="col-9 p-0">
+                            <span class="text-danger font-weight-bold">
+                                {{ trans('visiosoft.theme.base::field.costumer_services.name') }}
+                            </span>
+                            <p class="font-weight-bold">
+                                {{ setting_value('visiosoft.theme.base::help_phone', '0850 000 00 00') }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-6 pl-0 row">
+                        <div class="col-3 p-0 text-center text-danger">
+                            <div class="sah-question-circle">
+                                <i class="fas fa-question-circle"></i>
+                            </div>
+                        </div>
+                        <div class="col-9 p-0">
+                            <span class="text-danger font-weight-bold">
+                                {{ trans('visiosoft.theme.base::field.help_center.name') }}
+                            </span>
+                            <p class="font-weight-bold">
+                                {{ setting_value('streams::email', 'openclassify.com') }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 row justify-content-end mx-0 px-0 d-none d-md-flex">
+                    <div class="col-md-5 row store_icon m-0 p-0 justify-content-end">
+                        <a href="{{ setting_value('visiosoft.theme.base::appstore') }}">
+                            <div class="m-0 p-0 appstore"></div>
+                        </a>
+                        <a href="{{ setting_value('visiosoft.theme.base::playstore') }}">
+                            <div class="m-0 p-0 ml-2 playstore"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <p class="warning-text">
+                    {{ setting_value('visiosoft.theme.base::warning_message') }}
+                </p>
+            </div>
+            <div class="col-md-12 row">
+                <div class="col-md-6 copyright px-0">
+                    <p>
+                        {{ trans('visiosoft.theme.base::field.copyright.name') }}
+                        © {{ 'now'|date('Y') }} {{ setting_value('streams::domain', 'openclassify.com') }}
+                    </p>
+                </div>
+                <div class="col-md-6 lang px-0 text-right">
+                    <p>
+                        (*) {{ trans('visiosoft.theme.base::field.all_rights_reserved.name') }}
+                        | {{ setting_value('streams::domain', 'openclassify.com') }} |
+                        {{ languageSwitcher('links-lang') }}                    </p>
+                </div>
+            </div>
+        </div>
     </div>
-    {{ addBlock('footer')|raw }}
+
+
+    <div class="d-block d-sm-none">
+        <div class="col-md-12 row justify-content-center mx-0 px-0 my-2">
+            <div class="col-md-5 row store_icon m-0 p-0 justify-content-center">
+                <a href="{{ setting_value('visiosoft.theme.base::appstore') }}">
+                    <div class="m-0 p-0 appstore"></div>
+                </a>
+                <a href="{{ setting_value('visiosoft.theme.base::playstore') }}">
+                    <div class="m-0 p-0 ml-2 playstore"></div>
+                </a>
+            </div>
+        </div>
+        <div class="col-md-12 copyright p-2 text-center">
+            <p>
+                (*) {{ trans('visiosoft.theme.base::field.all_rights_reserved.name') }}
+            </p>
+            <p>
+                {{ trans('visiosoft.theme.base::field.copyright.name') }}
+                © {{ 'now'|date('Y') }} {{ setting_value('streams::domain', 'openclassify.com') }}
+                | {{ languageSwitcher('links-lang') }}
+            </p>
+        </div>
+    </div>
+
+
 </footer>
+<ul class="footer-mobile d-flex align-items-center d-sm-none">
+    {{ addBlock('showcase/link')|raw }}
+    <li>
+        <a href="{{ url('/') }}" class="categories-icon">
+            {{ trans('visiosoft.theme.base::button.categories.name') }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ url_route('advs::create_adv') }}" class="add-ad-icon" rel="nofollow">
+            {{ trans("visiosoft.theme.base::button.post_ad.footer") }}
+        </a>
+    </li>
+    <li>
+        <a href="javascript:;" class="search-icon search-nav-btn">
+            {{ trans('visiosoft.theme.base::button.search.name') }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ url_route('profile::profile') }}" class="for-me-icon" rel="nofollow">
+            {{ trans('visiosoft.theme.base::button.my_account.name') }}
+        </a>
+    </li>
+</ul>
+{{ addBlock('footer')|raw }}

@@ -1,0 +1,47 @@
+{{ addBlock('ad-list/partials/ads',{'featured_advs':featured_advs})|raw }}
+{% for adv in advs %}
+    <div class="col-6 col-md-12 mb-1 list-classified bg-light aditem-wrapper doping-type-2">
+        <a href="{{ adv.detail_url }}" class="text-dark">
+            <div class="row{% if adv.doping != null %} doping_type4 {% endif %}">
+                <div class="col-md-2 justify-content-center align-self-center text-center border-right border-white">
+                    <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
+                         style="max-height:80px;">
+                </div>
+                <div class="col-md-7 justify-content-center align-self-center border-right border-white">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>{{ adv.name }}</p>
+                        </div>
+                        <div class="col-md-12 text-truncate d-none d-md-block">
+                            <small class="text-muted">{{ adv.cat1_name }}, {{ adv.cat2_name }}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-left justify-content-center align-self-center">
+                    <div class="row price-location">
+                        <div class="col-md-12 {{ setting_value('visiosoft.module.advs::price_area_hidden') ? 'hidden' }}">
+                            {% if setting_value('visiosoft.module.advs::hide_zero_price') == false or adv.price.value > 0 %}
+                                <b>{{ currency_format(adv.price,adv.currency) }}</b>
+                            {% else %}
+                                <span class="a-sahibinden-type">
+                                    {{ trans('visiosoft.theme.base::field.ask_for_price') }}
+                                </span>
+                            {% endif %}
+                        </div>
+                        {% if setting_value('visiosoft.module.location::list_page_location') %}
+                            <div class="col-md-12 justify-content-center align-self-center text-truncate">
+                                <small>{{ adv.city_name }} {{ adv.country_name }}</small>
+                            </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </a>
+        <div class="row mb-2">
+            <div class="col-md-2"></div>
+            <div class="col-md-7 justify-content-center align-self-center border-right border-white">
+                {{ addBlock('list/extra-actions', {'ad': adv})|raw }}
+            </div>
+        </div>
+    </div>
+{% endfor %}

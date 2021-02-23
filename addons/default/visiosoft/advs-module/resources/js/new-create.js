@@ -2,9 +2,7 @@ function showLoader() {
     $('body').append('<div class="loading-cart"><div class="lds-ripple"><div></div><div></div></div></div>');
 }
 
-function hideLoader() {
-    $('.loading-cart').remove();
-}
+
 
 
 var filter = {};
@@ -17,7 +15,6 @@ filter.getCats = (catId, divId) => {
         type: 'get',
         url: '/class/getcats/' + divId,
         success: function (response) {
-            hideLoader()
             if (response == 0) {
                 stop();
             } else {

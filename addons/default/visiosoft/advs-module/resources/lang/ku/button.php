@@ -11,7 +11,7 @@ return [
 ',
     'new_city' => 'شارێکی نوێ
 ',
-    'new_district' => 'ناحیه ی نوێ
+    'new_district' => 'ناحیهی نوێ
 ',
     'new_neighborhood' => 'هاوسایەتی نوێ',
     'new_village' => 'گوندی نوێ
@@ -25,32 +25,43 @@ return [
     'convert_currency' => 'گۆڕینی دراوی',
     'categories' => 'کەتێگۆریکان',
     'sub_category' => 'کەتێگۆریی ژێرەوە',
-    'add_sub_category' => 'دانێ کەتێگۆریی ژێرەوە',
-    'sub_cities' => 'Bajarên bin',
-    'add_sub_cities' => 'Sub City-ê zêde bikin',
-    'add_sub_districts' => 'Navçeya Sub zêde bikin',
-    'add_sub_neighborhoods' => 'Taxa Jêr Zêdekirin',
-    'add_sub_village' => 'Gundê Binî Zêde bikin',
-    'sub_districts' => 'Sub District',
-    'sub_neighborhoods' => 'Taxên Bin',
-    'sub_village' => 'Gundê binî',
-    'general_settings' => 'Mîhengên Giştî',
-    'save_category' => 'Kategorî tomar bikin',
-    'change_owner' => 'Xwedî biguherin',
+    'add_sub_category' => 'کەتێگۆریی ژێرەوە زیاد بکەن',
+    'sub_cities' => 'شارێکی ژێرەوە',
+    'add_sub_cities' => 'شارێکی ژێرەوە زیاد بکەن',
+    'add_sub_districts' => 'ناحیهی ژێرەوە زیاد بکەن',
+    'add_sub_neighborhoods' => 'هاوسایەتی ژێرەوە زیاد بکەن',
+    'add_sub_village' => 'گوندی ژێرەوە زیاد بکەن',
+    'sub_districts' => 'ناحیهی ژێرەوە',
+    'sub_neighborhoods' => 'هاوسایەتی ژێرەوە',
+    'sub_village' => 'گوندی ژێرەوە',
+    'general_settings' => 'ڕێکخستنەکانی گشتی
+',
+    'save_category' => 'کەتێگۆرییکە پاشەکەوت بکەن',
+    'change_owner' => 'خاوەنەکەی بگۆڕە
+',
     'update_category' => [
-        'name' => 'Kategorî nûve bikin'
+        'name' => 'کەتێگۆرییکە نوێ بکەن
+'
     ],
-    'new_option' => 'Vebijarka Nû',
-	'export' => 'Eksport',
-    'new_productoption' => 'Hilbera Hilbera Nû',
-    'new_productoptions_value' => 'Nirxa vebijarka Hilbera Nû',
-    'new_options_configuration' => 'Veavakirina Vebijarka Nû',
-    'new_option_configuration' => 'Veavakirina Vebijarka Nû',
-	'create_configurations' => 'Configurations biafirînin',
-	'replicate' => 'Replicate',
-	'fast_create' => 'Fast biafirîne',
-	'publish' => 'Weşandin',
-	'import' => 'Malanîn',
+    'new_option' => 'بژاردەی نوێ
+',
+	'export' => 'هەناردن',
+    'new_productoption' => 'بژاردەی بەرهەمی نوێ
+',
+    'new_productoptions_value' => 'بەهای بژاردەی بەرهەمی نوێ
+',
+    'new_options_configuration' => 'دانپێدانانی بژاردەی نوێ
+',
+    'new_option_configuration' => 'دانپێدانانی بژاردەی نوێ
+',
+	'create_configurations' => 'دروست کردنی دانپێدانانەکان
+',
+	'replicate' => 'وەڵام دانەوە
+',
+	'fast_create' => 'خێرا دروست بکە
+',
+	'publish' => 'بڵاوکەرەوە',
+	'import' => 'هێنان',
     'new_status' => 'دۆخی نوێ
 ',
 ];

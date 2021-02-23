@@ -1,0 +1,19 @@
+{% extends "theme::layouts/default" %}
+
+{% block styles %}
+    {{ asset_style('visiosoft.module.advs::css/fotorama.css') }}
+    {{ asset_style('visiosoft.theme.base::css/theme-base.css') }}
+    {{ asset_style('visiosoft.module.advs::css/detail.css') }}
+    {{ asset_style('visiosoft.theme.base::css/detail.css') }}
+{% endblock %}
+
+{% block content %}
+    <!-- breadcrumb -->
+    {%  include "visiosoft.theme.base::addons/visiosoft/advs-module/ad-detail/partials/breadcrumb" %}
+    <!-- breadcrumb -->
+    {% include "visiosoft.module.advs::ad-detail/partials/ad-status" %}
+
+    {%  include "visiosoft.theme.base::addons/visiosoft/advs-module/ad-detail/main" %}
+
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
+{% endblock %}

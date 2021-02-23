@@ -2,10 +2,11 @@
 
 return [
     'name' => [
-        'name' => 'سەردێڕ'
+        'name' => 'نازناو'
     ],
     'slug' => [
-        'name' => 'سلوگ'
+        'name' => 'ناوی تایبەت ئەوەیە
+'
     ],
     'city' => [
         'name' => 'شار'
@@ -38,4 +39,8 @@ return [
     'selected' => 'هەڵبژێرراوە',
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
+	'abv' => [
+		'name' => 'Kinkirî',
+	],
+	'location' => 'Cîh',
 ];

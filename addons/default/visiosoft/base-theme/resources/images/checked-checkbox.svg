@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10" height="10" viewBox="0 0 10 10">
+  <g id="Group_3202" data-name="Group 3202" transform="translate(-12331.121 -11012)">
+    <rect id="Rectangle_2571" data-name="Rectangle 2571" width="8.337" height="9.337" transform="translate(12332 11012)" fill="#fff"/>
+    <g id="checkbox" transform="translate(12331.121 11012)">
+      <path id="Path_6156" data-name="Path 6156" d="M8.828,10H1.172A1.173,1.173,0,0,1,0,8.828V1.172A1.173,1.173,0,0,1,1.172,0H8.828A1.173,1.173,0,0,1,10,1.172V8.828A1.173,1.173,0,0,1,8.828,10ZM1.172.781a.391.391,0,0,0-.391.391V8.828a.391.391,0,0,0,.391.391H8.828a.391.391,0,0,0,.391-.391V1.172A.391.391,0,0,0,8.828.781ZM8.416,2.956l-.582-.521L4.221,6.469l-2.1-1.993-.538.566L4.266,7.59Zm0,0" fill="#00c650"/>
+    </g>
+  </g>
+</svg>

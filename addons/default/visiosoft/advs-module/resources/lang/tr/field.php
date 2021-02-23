@@ -111,7 +111,7 @@ return [
         'name' => 'Bitiş Saati'
     ],
     'cover_photo' => [
-        'name' => 'Kapak fotoğrafı'
+        'name' => 'Kapak Fotoğrafı'
     ],
     'favs_adv' => [
         'name' => 'Favori İlanlar'
@@ -135,13 +135,13 @@ return [
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
     'recommended' => 'Sizin için Önerilen İlanlar',
-    'filter' => 'filtre',
+    'filter' => 'Filtre',
     'sort' => 'Çeşit',
     'sort_by' => 'Sırala',
     'pick_option' => 'Bir seçenek seçin',
     'pick_ordering' => 'Sıralama Seç',
     'price_high' => 'Fiyat Pahalıdan Ucuza',
-    'price_low' => 'Fiyat Düşükten Yükseğe',
+    'price_low' => 'Fiyat Ucuzdan Pahalıya',
     'newest' => 'En Yeni',
     'oldest' => 'En eski',
     'address_a_z' => 'Adres (A\'dan Z\'ye)',
@@ -160,7 +160,7 @@ return [
     'my_favorite_searches' => 'Favori Aramalar',
     'search_desc' => 'Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.',
     'complaint_placeholder' => 'Şikayet ayrıntılarınızı buraya yazın.',
-    'show_details' => 'Detayları göster',
+    'show_details' => 'Detayları Göster',
     'ad_actions' => 'İlan İşlemleri',
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
@@ -168,9 +168,9 @@ return [
 	'sold' => 'Satıldı',
     'offered_by' => 'İlan Sahibi',
     'more_ads_by' => 'Diğer İlanlar',
-    'click_phone' => 'Telefon numarasını göster',
+    'click_phone' => 'Telefon Numarasını Göster',
     'share' => 'Bu İlanı paylaş',
-    'report' => 'Bu İlanı bildir',
+    'report' => 'Bu İlanı Bildir',
     'features' => 'Özellikler',
     "streetview" => "Sokak Görünümü",
     'recommended_ads' => 'Sizin için Önerilen İlanlar',
@@ -181,29 +181,29 @@ return [
     'easy_trading' => 'Kolay Ticaret',
     'need_help' => 'Yardıma mı ihtiyacınız var?',
     'give_a_call' => 'Bir çağrı yap',
-    'message_sent' => 'Mesajı gönderildi!',
+    'message_sent' => 'Mesaj Gönderildi!',
     'asap' => 'Mesaj gönderildi,
    satıcı en kısa sürede sizinle irtibata geçecektir.',
     'ad_id' => 'İlan No',
-    'contact_with' => 'İletişime geç',
-    'create_adv' => 'İlan oluştur',
+    'contact_with' => 'İletişime Geç',
+    'create_adv' => 'İlan Oluştur',
     'edit_adv' => 'İlanı Düzenle',
-    'mandatory_fields' => 'Zorunlu alanlar',
+    'mandatory_fields' => 'Zorunlu Alanlar',
     'ad_post' => 'İlan Yayını',
-    'sell_item' => 'Detaylı bilgileri giriniz',
+    'sell_item' => 'Bir ürün veya hizmet sat',
     'search_save' => 'Favori arama başarıyla kaydedildi',
     'address' => 'Adres',
     'email' => 'E-Posta',
     'phone' => 'Telefon',
     'send_us_your_feedback' => 'Bize Görüşlerinizi Gönderin',
-    'online_shopping' => 'Mağaza',
+    'online_shopping' => 'Güvenle Satın Al',
     'approved' => 'Başarıyla Onaylandı',
     'extended' => 'Başarıyla Uzatıldı',
     'declined' => 'Başarıyla Reddedildi',
     'search_on_map' => 'Haritada Ara',
     'post_free_ad' => 'Ücretsiz İlan Ver',
-    'select_a_category' => 'Bir kategori seç',
-    'select_a_sub_category' => 'Bir alt kategori seçiniz',
+    'select_a_category' => 'Bir Kategori Seç',
+    'select_a_sub_category' => 'Bir Alt Kategori Seç',
     'all_dopings_added' => 'Bu İlan için tüm doping türleri eklenmiştir.',
     'is_get_adv' => [
         'name' => 'GET'
@@ -216,10 +216,10 @@ return [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
     ],
-    'total' => 'Genel Toplam',
+    'total' => 'Toplam',
     'quantity' => 'Adet',
     'view_cart' => 'Sepeti Görüntüle',
-    'no_ads' => 'İlan bulunamadı!',
+    'no_ads' => 'İlan Bulunamadı!',
     'show_display_mode' => [
         'map' => 'harita',
         'list' => 'Liste',
@@ -252,7 +252,7 @@ return [
     'sold_out' => [
         'name' => 'Tükendi',
     ],
-    'edit_category' => 'Kategori Düzenle',
+    'edit_category' => 'Kategoriyi Düzenle',
     'set_category' => 'Kategoriyi Ayarla',
     'max' => [
         'name' => 'Maksimum',
@@ -261,16 +261,16 @@ return [
         'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'Son 24 saat'
+        'name' => 'Son 24 Saat İçinde'
     ],
     'in_the_last_day' => [
         'name' => 'Son 24 Saat İçinde'
     ],
     'in_the_last_week' => [
-        'name' => 'Son 1 hafta'
+        'name' => 'Son 1 Hafta İçinde'
     ],
     'in_the_last_month' => [
-        'name' => 'Son 1 Ay'
+        'name' => 'Son 1 Ay İçinde'
     ],
     'ads_with_photo' => [
         'name' => 'Fotoğraflı İlanlar'
@@ -307,7 +307,7 @@ return [
     "no_street_view" => "Bu konumda sokak görünümü resmi yok",
     'edit_my_contact_info' => 'İletişim Bilgilerimi Düzenle',
     'update_my_contact_info' => 'iletişim bilgilerimi güncelle',
-    'contact_info' => 'İletişim bilgileri',
+    'contact_info' => 'İletişim Bilgileri',
     'ad_info' => 'İlan Bilgileri',
 
     // Select cat
@@ -321,16 +321,18 @@ return [
     'congratulations' => 'Tebrikler',
     'ad_desc' => 'İlan Açıklaması',
     'upload_photos' => 'Resim Yükle',
-    'upload_files' => 'Dosyaları yükle',
+    'upload_files' => 'Dosyaları Yükle',
     'additional_fields' => 'Özel Alanlar',
-    'ad_location' => 'Lokasyon Ekle',
+    'ad_location' => 'İlan Konumu',
+    'owner' => 'Sahip',
+    'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
     'photo_video' => 'Fotoğraf, Video',
     'and_above' => 've yukarıda',
     'and_below' => 've aşağıda',
-    'clear_all' => 'Hepsini temizle',
+    'clear_all' => 'Hepsini Temizle',
     'balances' => 'Bakiyeler',
     'packages' => 'Paketler',
     'dopings' => 'Dopingler',

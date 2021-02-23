@@ -19,19 +19,25 @@
 <body>
 
 {% include "visiosoft.theme.base::partials/header" %}
-
 <main id="main">
+    <div class="left-banner position-fixed pl-xl-2 d-none d-lg-flex">
+        {{ blocks(str_slug('Homepage Left Banner','-')) }}
+    </div>
     <div class="container">
-
         {% include "visiosoft.theme.base::partials/messages" %}
 
-        {% block content %}{% endblock %}
-
+        {% block content %}
+            {% include "visiosoft.theme.base::index/default" %}
+        {% endblock %}
+    </div>
+<div class="right-banner position-fixed pr-xl-2 d-none d-lg-flex">
+        {{ blocks(str_slug('Homepage Right Banner','-')) }}
     </div>
 </main>
 
 {% include "visiosoft.theme.base::partials/footer" %}
 {% include "visiosoft.theme.base::partials/settings" %}
+{% include "visiosoft.theme.base::partials/assets" %}
 
 </body>
 </html>

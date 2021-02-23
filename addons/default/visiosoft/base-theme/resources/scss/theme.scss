@@ -1,0 +1,62 @@
+//
+// Dropdown tips
+//
+//  To use, apply a dropdown-menu-tip-[n|ne|nw|s|se|sw] class to a dropdown menu.
+//
+
+// These two vars are provided by Boostrap, so you can remove these lines once you include variables.scss
+$dropdown-bg: white;
+$dropdown-border-color: rgba(0, 0, 0, .15);
+
+[class*="dropdown-menu-tip-"]::after {
+  content: '';
+  position: absolute;
+  width: .5rem;
+  height: .5rem;
+  background-color: $dropdown-bg;
+  border: solid 1px $dropdown-border-color;
+  border-bottom: none;
+  border-left: none;
+}
+
+// North
+.dropdown-menu-tip-n::after {
+  top: calc(-.25rem - 1px);
+  left: calc(50% - .25rem);
+  transform: rotate(-45deg);
+}
+
+// Northeast
+.dropdown-menu-tip-ne::after {
+  top: calc(-.25rem - 1px);
+  right: 1rem;
+  transform: rotate(-45deg);
+}
+
+// Northwest
+.dropdown-menu-tip-nw::after {
+  top: calc(-.25rem - 1px);
+  left: 1rem;
+  transform: rotate(-45deg);
+}
+
+// South
+.dropdown-menu-tip-s::after {
+  left: calc(50% - .25rem);
+  bottom: calc(-.25rem - 1px);
+  transform: rotate(135deg);
+}
+
+// Southeast
+.dropdown-menu-tip-se::after {
+  right: 1rem;
+  bottom: calc(-.25rem - 1px);
+  transform: rotate(135deg);
+}
+
+// Southwest
+.dropdown-menu-tip-sw::after {
+  left: 1rem;
+  bottom: calc(-.25rem - 1px);
+  transform: rotate(135deg);
+}

@@ -544,7 +544,8 @@ class AdvsController extends PublicController
                 }
             }
 
-            $metaTitle = $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain');
+            $metaCatName = end($categories) ? end($categories)['name'] : '|';
+            $metaTitle = $adv->name . " " . $metaCatName . ' ' . setting_value('streams::domain');
             $metaDesc = strip_tags($adv->advs_desc, '');
 
             if (is_module_installed('visiosoft.module.seo')) {
@@ -654,8 +655,8 @@ class AdvsController extends PublicController
             $this->messages->error(trans('visiosoft.module.advs::message.delete_author_error'));
         }
 
-        $advs->softDeleteAdv($id);
-        $this->messages->error(trans('visiosoft.module.advs::message.success_delete'));
+        $ad->delete();
+        $this->messages->success(trans('visiosoft.module.advs::message.success_delete'));
         return back();
     }
 
@@ -1062,6 +1063,8 @@ class AdvsController extends PublicController
             if ($adv) {
                 $cart = $thisModel->addCart($adv, $quantity, $name);
                 $response['status'] = "success";
+	            $count = $cart->getItems()->count;
+	            $response['count'] = $count;
             } else {
                 $response['status'] = "error";
                 $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
@@ -1069,6 +1072,7 @@ class AdvsController extends PublicController
         } else {
             $response['status'] = "guest";
         }
+
         return $response;
     }
 }

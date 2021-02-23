@@ -1,0 +1,37 @@
+{% for adv in params.featured_advs %}
+    <tr class="text-center clickable-row doping-type-2" data-href='{{ adv.detail_url }}'>
+        <td class="justify-content-center align-middle text-center td-image">
+            <a href="">
+                <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+            </a>
+        </td>
+        <td class="text-left justify-content-center align-middle">
+            <div class="table-row-name">
+                <a href="{{ adv.detail_url }}" class="text-dark">
+                    {{ adv.name }}
+                </a>
+            </div>
+        </td>
+        <td class="justify-content-center align-middle {{ setting_value('visiosoft.module.advs::price_area_hidden') ? 'hidden' }}">
+            <b>{{ adv.price.currency }}</b>
+        </td>
+        <td class="justify-content-center align-middle">
+            <small>{{ adv.created_at|date("d/m/Y") }}</small>
+        </td>
+        {% if setting_value('visiosoft.module.location::list_page_location') %}
+            <td class="justify-content-center align-middle">
+                <small>{{ adv.city_name }} / {{ adv.country_name }}</small>
+            </td>
+        {% endif %}
+        {{ addBlock('ads-list/table-row',{'seenList':params.seenList,'adv':adv})|raw }}
+    </tr>
+{% endfor %}
+<script>
+    var showcase = `<tr class="text-center clickable-row bg-warning listing-top-message" data-href='{{ adv.detail_url }}'>
+        <td class="justify-content-center align-middle text-center td-image" colspan="` + $('.doping-type-2 > td').length + `">
+        <a href="{{ url_route('profile::ads') }}">
+        {{ trans(setting_value('visiosoft.module.dopings::listing-ad-text')) }}</a></td></tr>`;
+    var type_class = '.doping-type-2', showcase_class = '.products-list';
+</script>
+{{ asset_script('visiosoft.module.dopings::js/showcase-ad.js') }}
+{{ asset_add('styles.css','visiosoft.module.dopings::css/dopings.css') }}

@@ -36,4 +36,8 @@ return [
     ],
     'selected' => 'Vald',
     'choose_an_option' => 'Välj ett alternativ...',
+	'abv' => [
+		'name' => 'Förkortning',
+	],
+	'location' => 'Plats',
 ];

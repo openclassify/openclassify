@@ -1,0 +1,7 @@
+{% if addBlock('store/link') is null %}
+    <a href="{{ url_route('visiosoft.module.advs::list_user_ad', [userId]) }}">
+        {{ trans('visiosoft.theme.base::field.other_ads.name') }}
+    </a>
+{% else %}
+    {{ addBlock('store/link', {'userId': userId})|raw }}
+{% endif %}

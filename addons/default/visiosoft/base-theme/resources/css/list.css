@@ -1,0 +1,250 @@
+.classified-breadcrumb {
+    height: 27px;
+    line-height: 1.75rem;
+    font-weight: 500;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.06), 1px 0 2px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 0px;
+}
+
+.classified-breadcrumb a {
+    max-width: 110px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #00339f;
+    padding-left: 10px;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.classified-breadcrumb a i {
+    color: #8498ab;
+}
+
+.classified-breadcrumb .breadcrumb-item .breadcrumb-item {
+    padding: 5px 0 0 0;
+    margin-right: 15px;
+}
+
+.classified-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: "";
+}
+
+.classified-breadcrumb .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0px;
+}
+
+.currency-filtering-btn {
+    display: none;
+    margin: 10px;
+}
+
+/*
+  Change the look'n'feel of labels (which are adjacent to radiobuttons).
+  Add some margin, padding to label
+*/
+.currency-filtering-btn + .currency-filtering-label {
+    display: inline-block;
+    margin: -2px;
+    padding: 4px 12px;
+    background-color: #e7e7e7;
+    border-color: #ddd;
+}
+
+.currency-filtering-label {
+    display: block;
+    max-width: 44px;
+    background-color: #fbfafa;
+    float: left;
+    padding: 9px 10px 7px;
+    font-weight: normal !important;
+    text-align: center;
+    font: 10px "Lucida Grande", "LucidaGrande", Arial, sans-serif;
+    zoom: 1;
+    border-radius: 2px;
+    margin-bottom: 10px;
+    margin-left: 1px;
+    border: 1px solid #c0c0c0;
+    color: #039;
+}
+
+.filtering-currencies-btn .active {
+    color: #fff;
+    background-color: #8598aa;
+}
+
+.price-input::-webkit-input-placeholder { /* Edge */
+    font-size: 10px;
+}
+
+.price-input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 10px;
+}
+
+.price-input::placeholder {
+    font-size: 10px;
+}
+
+/*
+ Change background color for label next to checked radio button
+ to make it look like highlighted button
+*/
+.currency-filtering-btn:checked + .currency-filtering-label {
+    background-image: none;
+    background-color: #d0d0d0;
+}
+
+.price-input {
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.price-filter-btn {
+    font-size: 12px;
+    border-radius: 2px;
+    background: #438ed8;
+    border-color: #438ed8;
+}
+
+.list-classified-category {
+    max-height: 300px;
+    border-radius: 2px;
+    border: solid 1px #dedede;
+    padding: 7px 0 8px 15px;
+}
+
+.list-classified-category li a {
+    line-height: 19px !important;
+    color: #039;
+    text-decoration: none;
+    outline: 0;
+    font: 13px "Lucida Grande", "LucidaGrande", Arial, sans-serif;
+}
+
+.list-classified-category li a:hover {
+    text-decoration: underline;
+}
+
+#filter .price-section {
+    background-color: #f4f4f4
+}
+
+#filter #price {
+    max-height: 300px;
+}
+
+/* Mobile Template */
+@media (max-width: 576px) {
+    .select2-container {
+        width: 90% !important;
+    }
+
+    #filterModal label {
+        width: 100%;
+    }
+
+    .list-ads .bg-light {
+        height: auto;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .aditem-wrapper {
+        background-color: initial !important;
+        padding-right: 0;
+        padding-left: 0;
+        margin-bottom: 0 !important;
+    }
+    .aditem-wrapper>a>div {
+        padding-top: .5rem;
+        padding-bottom: .5rem;
+        background-color: #f8f9fa;
+        border: 1px solid #dee2e6 !important;
+        border-radius: .25rem!important;
+        margin-right: 4px;
+        margin-left: 4px;
+    }
+    .aditem-wrapper>a>div p {
+        font-size: 14px;
+        font-weight: 500;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        margin-bottom: 0;
+    }
+    .price-location b {
+        color: #1E90FF;
+    }
+}
+@media (max-width: 576px) {
+    .mobile-sub-cats {
+        width: 100vw;
+        height: calc(100vh - 100px);
+        background: #fff;
+        padding: 0 !important;
+        left: 0;
+        position: fixed;
+        z-index: 111;
+        display: flex !important;
+        flex-direction: column;
+        justify-content: center;
+        list-style: none;
+    }
+
+    .mobile-sub-cats {
+        background-color: #f3f0f0;
+    }
+
+    .mobile-sub-cats ul {
+        background-color: #fff;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        padding-top: 10px;
+        margin-bottom: 0 !important;
+        width: 100%;
+        border-top: 1px solid #ccc;
+    }
+
+    .mobile-sub-cats .categories-list-li {
+        height: 48px;
+        line-height: 48px;
+        border-bottom: 1px solid #ccc;
+        padding: 0 15px;
+    }
+
+    .mobile-sub-cats .categories-list-li img {
+        object-fit: contain;
+    }
+
+    .mobile-sub-cats .categories-list-li .main-advs-count {
+        color: #1064bc !important;
+    }
+    .mobile-sub-cats .categories-list-li .advs-count{
+        font-weight: 200;
+        color: #bcbbbb !important;
+    }
+
+    .mobile-sub-cats .categories-list-li a {
+        margin-bottom: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        color: #000;
+    }
+
+    .mobile-sub-cats .categories-list-li i{
+        color: #bcbbbb !important;
+    }
+
+    .mobile-sub-cats .categories-list-li a span:first-child{
+        text-overflow: ellipsis;
+        overflow: hidden;
+    }
+
+    .mobile-sub-cats .show-all {
+        font-weight: bolder;
+        color: #1064bc !important;
+    }
+}

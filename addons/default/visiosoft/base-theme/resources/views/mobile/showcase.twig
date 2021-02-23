@@ -1,0 +1,13 @@
+{% extends layout('mobile/showcase') %}
+
+{% block content %}
+
+    <div class="row home-container">
+        {% include "visiosoft.theme.base::partials/showcase" %}
+    </div>
+    <script>
+        var show_all_text = "{{ trans('visiosoft.theme.base::button.show_all') }}";
+        var close_text = "{{ trans('visiosoft.theme.base::button.hidden.name') }}";
+    </script>
+
+{% endblock %}
