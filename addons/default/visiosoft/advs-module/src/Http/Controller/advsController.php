@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
-use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
@@ -11,7 +10,6 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Str;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
