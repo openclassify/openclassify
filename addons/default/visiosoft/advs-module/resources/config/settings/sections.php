@@ -35,10 +35,15 @@ return [
                     'get_categories',
                     'listing_page_image',
                     'show_ads_count',
-	                'ads_id_date_hidden',
-	                'hide_seller_info',
                 ],
             ],
+	        'ads_detail' => [
+	        	'title' => 'visiosoft.module.advs::section.ads_detail',
+		        'fields' => [
+			        'ads_id_date_hidden',
+			        'hide_seller_info',
+		        ]
+	        ],
             'create_ad' => [
                 'title' => 'visiosoft.module.advs::section.create_ad',
                 'fields' => [
