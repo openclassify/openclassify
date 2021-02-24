@@ -203,6 +203,22 @@ return [
         'name' => 'विज्ञापन गणना दिखाएं',
         'instructions' => 'विज्ञापन को बाईं श्रेणियों की सूची में दिखाएं',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'विज्ञापन विज्ञापन दिखाएं',
         'instructions' => 'यदि आप विज्ञापन निर्माण पृष्ठ पर गोपनीयता नीति अनुबंध प्रदर्शित करना चाहते हैं तो इसे चालू करें',
