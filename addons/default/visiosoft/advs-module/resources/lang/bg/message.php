@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "Състоянието на рекламата Ви е настроено на Активно!",
     'passive_status_change' => "Състоянието на вашата реклама е зададено на пасивно!",
 	'sold_status_change' => "Състоянието на вашата реклама е настроено да се продава!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
