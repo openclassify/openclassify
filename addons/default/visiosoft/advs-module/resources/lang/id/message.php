@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "Status Iklan Anda Telah Diatur ke Aktif!",
     'passive_status_change' => "Status Iklan Anda Telah Diatur ke Pasif!",
 	'sold_status_change' => "Status Iklan Anda Telah Ditetapkan untuk Dijual!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
