@@ -411,4 +411,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             'publish_at' => date('Y-m-d H:i:s')
         ]);
     }
+
+    public function changeStatus($status)
+    {
+        $this->update(['status' => $status]);
+    }
 }

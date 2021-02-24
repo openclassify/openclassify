@@ -63,7 +63,9 @@ class AdvFormBuilder extends FormBuilder
 
     protected $rules = [];
 
-    protected $skips = [];
+    protected $skips = [
+        'slug'
+    ];
 
     protected $actions = [];
 

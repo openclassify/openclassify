@@ -3,6 +3,7 @@
 use Anomaly\FilesModule\File\FileModel;
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Anomaly\Streams\Platform\Model\Advs\AdvsStatusEntryModel;
 use Anomaly\Streams\Platform\Model\Location\LocationVillageEntryModel;
 use Anomaly\Streams\Platform\Ui\Table\Event\TableIsQuerying;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
@@ -21,6 +22,9 @@ use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface
 use Visiosoft\AdvsModule\Productoption\ProductoptionRepository;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\ProductoptionsValueRepository;
+use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;
+use Visiosoft\AdvsModule\Status\StatusModel;
+use Visiosoft\AdvsModule\Status\StatusRepository;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 use Visiosoft\LocationModule\Village\VillageRepository;
 use Visiosoft\LocationModule\Village\VillageModel;
@@ -229,6 +233,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'admin/advs/product_options' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@index',
         'admin/advs/product_options/create' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@create',
         'admin/advs/product_options/edit/{id}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ProductoptionsController@edit',
+
+        // StatusController
+        'ad/{ad_id}/change-status/{status_id}' => [
+            'as' => 'visiosoft.module.advs::ad.change.status',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\StatusController@change'
+        ],
     ];
 
     protected $middleware = [
@@ -245,6 +255,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     protected $bindings = [
         LocationVillageEntryModel::class => VillageModel::class,
         AdvsAdvsEntryModel::class => AdvModel::class,
+        AdvsStatusEntryModel::class => StatusModel::class,
         'my_form' => AdvFormBuilder::class,
     ];
 
@@ -257,6 +268,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ProductoptionRepositoryInterface::class => ProductoptionRepository::class,
         OptionConfigurationRepositoryInterface::class => OptionConfigurationRepository::class,
         ProductoptionsValueRepositoryInterface::class => ProductoptionsValueRepository::class,
+        StatusRepositoryInterface::class => StatusRepository::class,
     ];
 
     public function boot(AddonCollection $addonCollection, FileModel $fileModel)

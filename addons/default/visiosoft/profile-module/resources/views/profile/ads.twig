@@ -74,7 +74,10 @@
                 var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
                 var ads_per_page = "{{ setting_value('streams::per_page') }}";
                 var no_ads_message = "{{ trans('visiosoft.module.advs::field.no_ads') }}";
+                let userStatus = JSON.parse(`{{ userStatus|raw }}`)
+                let statusChangeLink = `{{ changeStatusUrl }}`
                 let dropdownBlock = `{{ addBlock('profile/dropdown-ad', {'id': ':id'})|raw }}`
+                var changeStatusTrans = "{{ trans('visiosoft.module.profile::field.change_status') }}";
             </script>
             {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
         {% endblock %}

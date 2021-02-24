@@ -25,11 +25,19 @@ class AdvTableButtons
                     return ($entry->getStatus() == 'approved') ? "danger" : "success";
                 },
             ],
-            'edit',
             'settings' => [
                 'text' => false,
                 'href' => false,
                 'dropdown' => [
+                    'edit' => [
+                        'icon' => null,
+                        'href' => function (EntryInterface $entry) {
+                            return route('visiosoft.module.advs::edit_adv', [$entry->id]);
+                        },
+                    ],
+                    'fast_edit' => [
+                        'href' => '/admin/advs/edit/{entry.id}'
+                    ],
                     'change_owner' => [
                         'data-toggle' => 'modal',
                         'data-target' => '#modal',
