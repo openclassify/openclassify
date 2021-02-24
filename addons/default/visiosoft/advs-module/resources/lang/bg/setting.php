@@ -203,6 +203,22 @@ return [
         'name' => 'Показване на броя на рекламите',
         'instructions' => 'Показването на рекламите се брои в списъка с леви категории',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Показване на споразумението за публикуване на реклами',
         'instructions' => 'Включете това, ако искате да покажете споразумение за политика за поверителност на страницата за създаване на реклама',
