@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "İlanın Durumu Etkin Olarak Ayarlandı!",
     'passive_status_change' => "İlanınızın Durumu Pasif Olarak Ayarlandı!",
 	'sold_status_change' => "İlanın Durumu Satıldı Olarak Ayarlanmıştır!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
