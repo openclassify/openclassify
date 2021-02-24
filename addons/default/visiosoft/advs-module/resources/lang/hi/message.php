@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "आपके विज्ञापन की स्थिति सक्रिय हो गई है!",
     'passive_status_change' => "आपके विज्ञापन की स्थिति निष्क्रिय हो गई है!",
 	'sold_status_change' => "आपके विज्ञापन की स्थिति बिक चुकी है!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
