@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'بلی'
     ],
+    'no' => [
+        'name' => 'No'
+    ],
+    'is_system' => [
+        'name' => 'Is System',
+        'instructions' => 'System status are required and should not be changed',
+    ],
+    'user_access' => [
+        'name' => 'User Access',
+        'instructions' => 'Can a user use this status on his ads?',
+    ],
     "no_location" => "هیچ موقعیتی انتخاب نشده است.",
     "continue" => 'ادامه',
     "gallery" => 'عکس ها',
