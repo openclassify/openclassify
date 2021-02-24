@@ -203,6 +203,22 @@ return [
         'name' => 'Mostrar recuento de anuncios',
         'instructions' => 'Mostrar el recuento de anuncios en la lista de categorías de la izquierda',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar acuerdo de publicación',
         'instructions' => 'Active esta opción si desea mostrar un acuerdo de política de privacidad en la página de creación de anuncios.',
