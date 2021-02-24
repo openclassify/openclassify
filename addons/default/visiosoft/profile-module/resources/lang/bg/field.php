@@ -468,6 +468,7 @@ return [
     'update' => 'Актуализиране',
     'change_password' => 'Промяна на паролата',
     'choose_an_option' => 'Избери опция...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'Приемам условията.',
