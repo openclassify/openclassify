@@ -25,7 +25,6 @@ class StatusController extends AdminController
             $form->skipField('user_access');
         }
 
-        $form->skipField('is_system');
         $form->skipField('slug');
 
         return $form->render($id);
