@@ -44,4 +44,5 @@ return [
 	'publish' => 'प्रकाशित करना',
 	'import' => 'आयात',
     'new_status' => 'Naee sthiti',
+    'fast_edit' => 'Fast Edit',
 ];
