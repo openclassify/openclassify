@@ -203,6 +203,22 @@ return [
         'name' => 'বিজ্ঞাপন গণনা দেখান',
         'instructions' => 'বাম বিভাগগুলির তালিকায় বিজ্ঞাপন গণনা দেখান',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'পোস্ট বিজ্ঞাপন চুক্তি প্রদর্শন করুন',
         'instructions' => 'আপনি বিজ্ঞাপন তৈরি পৃষ্ঠায় কোনও গোপনীয়তা নীতি চুক্তি প্রদর্শন করতে চাইলে এটি চালু করুন',
