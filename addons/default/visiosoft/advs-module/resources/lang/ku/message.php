@@ -57,4 +57,5 @@ return [
     'passive_status_change' => "! دۆخی ڕیکلامەکەت وەکو ناچالاک ڕێکخراوە
 ",
 	'sold_status_change' => "! دۆخی ڕیکلامەکەت وەکو فرۆشراوە ڕێکخراوە ",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
