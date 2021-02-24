@@ -470,6 +470,7 @@ return [
     'update' => 'Εκσυγχρονίζω',
     'change_password' => 'Άλλαξε κωδικό',
     'choose_an_option' => 'Διάλεξε μια επιλογή...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'Αποδέχομαι τους όρους.',
