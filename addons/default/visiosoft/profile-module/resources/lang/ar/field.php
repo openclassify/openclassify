@@ -467,6 +467,7 @@ return [
     'update' => 'تحديث',
     'change_password' => 'غير كلمة السر',
     'choose_an_option' => 'إختر خيار...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'أوافق على شروط.',
