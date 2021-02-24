@@ -203,6 +203,22 @@ return [
         'name' => '광고 수 표시',
         'instructions' => '왼쪽 카테고리 목록에 광고 개수 표시',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => '광고 게시 계약 표시',
         'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
