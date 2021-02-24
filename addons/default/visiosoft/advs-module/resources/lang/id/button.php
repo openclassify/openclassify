@@ -44,4 +44,5 @@ return [
 	'publish' => 'Publikasikan',
 	'import' => 'Impor',
     'new_status' => 'Status Baru',
+    'fast_edit' => 'Fast Edit',
 ];
