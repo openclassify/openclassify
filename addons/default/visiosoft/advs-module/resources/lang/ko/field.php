@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => '예'
     ],
+    'no' => [
+        'name' => 'No'
+    ],
+    'is_system' => [
+        'name' => 'Is System',
+        'instructions' => 'System status are required and should not be changed',
+    ],
+    'user_access' => [
+        'name' => 'User Access',
+        'instructions' => 'Can a user use this status on his ads?',
+    ],
     "no_location" => "선택된 위치가 없습니다.",
     "continue" => '계속하다',
     "gallery" => '갤러리',
