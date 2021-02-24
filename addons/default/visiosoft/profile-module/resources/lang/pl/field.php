@@ -468,6 +468,7 @@ return [
     'update' => 'Aktualizacja',
     'change_password' => 'Zmień hasło',
     'choose_an_option' => 'Wybierz opcję...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'Akceptuję warunki.',
