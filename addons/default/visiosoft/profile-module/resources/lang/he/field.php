@@ -468,6 +468,7 @@ return [
     'update' => 'עדכון',
     'change_password' => 'שנה סיסמא',
     'choose_an_option' => 'בחר אפשרות...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'אני מקבל את התנאים.',
