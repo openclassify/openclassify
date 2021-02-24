@@ -179,7 +179,7 @@ function dropdownRow(id, type) {
 
         dropdown += `
         <li class="dropdown-submenu dropleft">
-            <button type="button" class="btn dropdown-item dropdown-toggle">Change Status</button>
+            <button type="button" class="btn dropdown-item dropdown-toggle">${changeStatusTrans}</button>
             <ul class="dropdown-menu">
                 ${statusItems}
             </ul>

@@ -77,6 +77,7 @@
                 let userStatus = JSON.parse(`{{ userStatus|raw }}`)
                 let statusChangeLink = `{{ changeStatusUrl }}`
                 let dropdownBlock = `{{ addBlock('profile/dropdown-ad', {'id': ':id'})|raw }}`
+                var changeStatusTrans = "{{ trans('visiosoft.module.profile::field.change_status') }}";
             </script>
             {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
         {% endblock %}
