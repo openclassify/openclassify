@@ -203,6 +203,22 @@ return [
         'name' => 'Mostra conteggio annunci',
         'instructions' => 'Mostra il conteggio degli annunci nell\'elenco delle categorie a sinistra',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Mostra accordo post annuncio',
         'instructions' => 'Attiva questa opzione se desideri visualizzare un accordo sulla politica sulla privacy nella pagina di creazione dell\'annuncio',
