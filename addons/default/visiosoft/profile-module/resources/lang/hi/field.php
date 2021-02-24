@@ -468,6 +468,7 @@ return [
     'update' => 'अपडेट करें',
     'change_password' => 'पासवर्ड बदलें',
     'choose_an_option' => 'एक विकल्प चुनें...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'मैं शर्तें मंज़ूर करता हूँ।',
