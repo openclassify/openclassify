@@ -468,6 +468,7 @@ return [
     'update' => 'Actualizați',
     'change_password' => 'Schimbați parola',
     'choose_an_option' => 'Alege o opțiune...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'Accept termenii.',
