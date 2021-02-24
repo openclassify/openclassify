@@ -470,6 +470,7 @@ return [
     'update' => 'Mettre à jour',
     'change_password' => 'Changer le mot de passe',
     'choose_an_option' => 'Choisis une option...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'J\'accepte les conditions.',
