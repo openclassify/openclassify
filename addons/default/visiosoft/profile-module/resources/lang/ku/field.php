@@ -532,6 +532,7 @@ return [
     'change_password' => 'گۆڕینی وشەی نهێنەکە',
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'من مەرجەکان قبوڵ دەکەم
