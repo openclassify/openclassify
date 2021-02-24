@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'स्थिति',
     ],
+	'ads_detail' => 'Ads Detail',
+
 ];
