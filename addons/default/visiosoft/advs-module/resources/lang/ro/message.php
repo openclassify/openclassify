@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "Starea anunțului dvs. a fost activată!",
     'passive_status_change' => "Starea anunțului dvs. a fost setată la pasivă!",
 	'sold_status_change' => "Starea anunțului dvs. a fost setată ca vândută!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
