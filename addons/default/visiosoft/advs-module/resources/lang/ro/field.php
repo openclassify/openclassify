@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'da'
     ],
+    'no' => [
+        'name' => 'No'
+    ],
+    'is_system' => [
+        'name' => 'Is System',
+        'instructions' => 'System status are required and should not be changed',
+    ],
+    'user_access' => [
+        'name' => 'User Access',
+        'instructions' => 'Can a user use this status on his ads?',
+    ],
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
     "gallery" => 'Galerie',
