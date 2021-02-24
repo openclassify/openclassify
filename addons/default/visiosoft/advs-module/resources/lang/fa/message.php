@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "وضعیت آگهی شما روی فعال تنظیم شده است!",
     'passive_status_change' => "وضعیت آگهی شما منفعل تنظیم شده است!",
 	'sold_status_change' => "وضعیت آگهی شما به فروش رسیده است!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
