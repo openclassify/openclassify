@@ -468,6 +468,7 @@ return [
     'update' => 'Memperbarui',
     'change_password' => 'Ganti kata sandi',
     'choose_an_option' => 'Pilih salah satu opsi ...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'Saya menerima persyaratannya.',
