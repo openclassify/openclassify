@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "Статус вашег огласа постављен је на активан!",
     'passive_status_change' => "Статус вашег огласа постављен је на пасиван!",
 	'sold_status_change' => "Статус вашег огласа је постављен на продају!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
