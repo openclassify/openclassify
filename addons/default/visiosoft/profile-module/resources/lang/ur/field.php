@@ -468,6 +468,7 @@ return [
     'update' => 'اپ ڈیٹ',
     'change_password' => 'پاس ورڈ تبدیل کریں',
     'choose_an_option' => 'ایک آپشن منتخب کریں ...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'میں شرائط کو قبول کرتا ہوں۔',
