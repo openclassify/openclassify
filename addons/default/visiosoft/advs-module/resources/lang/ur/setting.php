@@ -203,6 +203,22 @@ return [
         'name' => 'اشتہارات کی گنتی دکھائیں',
         'instructions' => 'بائیں زمروں کی فہرست میں اشتہارات کی گنتی دکھائیں',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'پوسٹ اشتہار کا معاہدہ دکھائیں',
         'instructions' => 'اگر آپ اشتہار تخلیق کے صفحے پر رازداری کی پالیسی کا معاہدہ ظاہر کرنا چاہتے ہیں تو اسے آن کریں',
