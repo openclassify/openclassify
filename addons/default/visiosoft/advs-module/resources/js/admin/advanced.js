@@ -24,9 +24,9 @@ if (getUrlParameter('view') === "advanced") {
         }
 
         crudAjax({
-            'advanced_column': advanced_column,
-            'advanced_entry_id': advanced_entry_id,
-            'advanced_value': advanced_value
+            'edit_column': advanced_column,
+            'edit_entry_id': advanced_entry_id,
+            'edit_value': advanced_value
         }, advanced_update_url, 'POST')
     })
 }
