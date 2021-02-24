@@ -164,6 +164,29 @@ function dropdownRow(id, type) {
         extend_ad +
         "</a>\n";
 
+    if (Object.keys(userStatus).length) {
+        let statusItems = ''
+        for (const status in userStatus) {
+            statusItems += `
+            <li>
+                <a class="dropdown-item"
+                    href="${statusChangeLink.replace(':adID', id).replace(':statusID', status)}">
+                    ${userStatus[status]}
+                </a>
+            </li>
+        `
+        }
+
+        dropdown += `
+        <li class="dropdown-submenu dropleft">
+            <button type="button" class="btn dropdown-item dropdown-toggle">Change Status</button>
+            <ul class="dropdown-menu">
+                ${statusItems}
+            </ul>
+          </li>
+        `;
+    }
+
     dropdown += "</div></div>";
 
     return dropdown;
@@ -173,6 +196,21 @@ function addDropdownBlock() {
     const dropdowns = $('.my-ads-dropdown')
     for (let i = 0; i < dropdowns.length; i++) {
         const currentDropdown = $(dropdowns[i])
-        $('.dropdown-menu', currentDropdown).append(dropdownBlock.replace(':id', currentDropdown.data('id')))
+        $('> .dropdown-menu', currentDropdown).append(dropdownBlock.replace(':id', currentDropdown.data('id')))
     }
 }
+
+// Nested dropdown
+$('.tab-pane').on('click', '.dropdown-menu button.dropdown-toggle', function(e) {
+    if (!$(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+    }
+    var $subMenu = $(this).next('.dropdown-menu');
+    $subMenu.toggleClass('show');
+
+    $(this).parents('.my-ads-dropdown.show').on('hidden.bs.dropdown', function(e) {
+        $('.dropdown-submenu .show').removeClass('show');
+    });
+
+    return false;
+});

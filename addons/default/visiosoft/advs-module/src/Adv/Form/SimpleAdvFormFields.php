@@ -1,11 +1,14 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Form;
 
 use Visiosoft\AdvsModule\Adv\Event\ReadySimpleAdvFormFields;
+use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;
 
 class SimpleAdvFormFields
 {
-    public function handle(SimpleAdvFormBuilder $builder)
+    public function handle(SimpleAdvFormBuilder $builder, StatusRepositoryInterface $statusRepository)
     {
+        $statuses = $statusRepository->all()->pluck('name', 'slug')->all();
+
         $form_fields = [
             'name',
             'price',
@@ -23,6 +26,13 @@ class SimpleAdvFormFields
             'cat10',
             'is_get_adv',
             'stock',
+            'status' => [
+                'type' => 'anomaly.field_type.select',
+                "config" => [
+                    "options" => $statuses,
+                    "mode" => "search",
+                ]
+            ],
             'files',
         ];
 
