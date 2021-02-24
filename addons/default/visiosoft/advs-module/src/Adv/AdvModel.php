@@ -71,7 +71,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function userAdv($nullable_ad = false, $checkRole = true)
     {
-        if (Auth::user()->hasRole('admin') && $checkRole) {
+        if ($user = Auth::user() and $user->hasRole('admin') && $checkRole) {
             return $this->getAdv(null, $nullable_ad);
         } else {
             return $this->getAdv(null, $nullable_ad)
