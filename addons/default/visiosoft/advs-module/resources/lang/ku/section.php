@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'دۆخ',
     ],
+	'ads_detail' => 'Ads Detail',
+
 ];
