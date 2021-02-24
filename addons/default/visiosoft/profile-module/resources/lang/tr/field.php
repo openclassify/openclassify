@@ -467,6 +467,7 @@ return [
     'update' => 'Güncelleme',
     'change_password' => 'Şifre değiştir',
     'choose_an_option' => 'Seçim yapınız...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'Koşulları kabul ediyorum.',
