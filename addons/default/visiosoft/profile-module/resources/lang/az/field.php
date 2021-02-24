@@ -468,6 +468,7 @@ return [
     'update' => 'Yeniləyin',
     'change_password' => 'Parolu dəyişdirin',
     'choose_an_option' => 'Bir seçim seçin ...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'Şərtləri qəbul edirəm.',
