@@ -467,6 +467,7 @@ return [
     'update' => 'به روز رسانی',
     'change_password' => 'تغییر رمز عبور',
     'choose_an_option' => 'گزینه ای را انتخاب کنید ...',
+    'change_status' => 'Change Status',
 
     // Register page
     'accept_terms_label' => 'من شرایط را قبول می کنم',
