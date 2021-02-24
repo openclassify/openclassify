@@ -203,6 +203,22 @@ return [
         'name' => 'Afficher le nombre d\'annonces',
         'instructions' => 'Les annonces diffusées comptent dans la liste des catégories de gauche',
     ],
+    'ads_id_date_hidden' => [
+        'name' => 'Hide ID and Created Date',
+        'instructions' => 'Hide ID and created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Afficher l\'accord de publication d\'annonce',
         'instructions' => 'Activez cette option si vous souhaitez afficher un accord de politique de confidentialité sur la page de création d\'annonces',
