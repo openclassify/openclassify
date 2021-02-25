@@ -204,20 +204,20 @@ return [
         'instructions' => 'Reklamên li ser lîsteya kategoriyên çepê hesab bikin nîşan bikin',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Nasname û Dîroka Afirandî Veşêre',
+        'instructions' => 'Nasname û dîroka çêkirî di rûpelê hûrguliya reklaman de veşêrin',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Serê Navnîşê Veşêre',
+		'instructions' => 'Ji bo rêzkirin û dîtina celeban vedişêrin',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Beşa Parzûnê Veşêre',
+		'instructions' => 'Di rûpelê navnîşkirinê de xwe vedişêrin qada feltera çepê',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Agahdariya Firoterê Veşêre',
+		'instructions' => 'Di rûpelê hûrguliyên reklaman de veşartina agahdariya firotanê',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Peymana Ad Ad-ê nîşan bide',
