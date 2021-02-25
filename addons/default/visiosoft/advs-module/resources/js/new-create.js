@@ -269,7 +269,11 @@ $(document).ready(function () {
     // add trigger button for dropzone in mobile view
     if( /Android|webOS|iPhone|iPad|Mac|Macintosh|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent) ) {
         $('#upload .modal-body').addClass('d-flex flex-column justify-content-center')
-        $('.dropzone').addClass('hidden').parent().append('<a class="btn btn-primary text-white mobile-img">'+ uploadText +'</a>')
+        $('.dropzone')
+            .css('height', '0').css('width', '0').css('border', '0')
+            .parent().append('<a class="btn btn-primary text-white mobile-img">'+ uploadText +'</a>')
+
+        $('.dz-message').html('')
         $('.mobile-img').on('click', () => {
             $('.dropzone').click()
         })
