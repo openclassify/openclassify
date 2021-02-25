@@ -280,15 +280,15 @@ return [
         'name' => 'نعم'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'لا'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'هو نظام',
+        'instructions' => 'حالة النظام مطلوبة ولا يجب تغييرها',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'وصول المستخدم',
+        'instructions' => 'هل يمكن للمستخدم استخدام هذه الحالة في إعلاناته؟',
     ],
     "no_location" => "لا يوجد موقع محدد.",
     "continue" => 'استمر',
