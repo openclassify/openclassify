@@ -59,6 +59,6 @@ return [
     'status' => [
         'title' => 'Κατάσταση',
     ],
-	'ads_detail' => 'Ads Detail',
+	'ads_detail' => 'Λεπτομέρεια διαφημίσεων',
 
 ];
