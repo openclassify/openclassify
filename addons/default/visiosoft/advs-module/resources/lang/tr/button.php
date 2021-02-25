@@ -44,5 +44,5 @@ return [
 	'publish' => 'Yayınla',
 	'import' => 'İçe aktar',
     'new_status' => 'Yeni Durum',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'Hızlı Düzenleme',
 ];
