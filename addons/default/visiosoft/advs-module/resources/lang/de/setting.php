@@ -204,20 +204,20 @@ return [
         'instructions' => 'Anzeigenanzahl in der linken Kategorieliste anzeigen',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'ID und Erstellungsdatum ausblenden',
+        'instructions' => 'ID und Erstellungsdatum auf der Anzeigen-Detailseite ausblenden',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Listenkopf ausblenden',
+		'instructions' => 'Verstecken, um Typen zu bestellen und anzuzeigen',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Filterbereich ausblenden',
+		'instructions' => 'Versteckt den linken Filterbereich auf der Listenseite',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Verkäuferinformationen ausblenden',
+		'instructions' => 'Ausblenden von Verkäuferinformationen auf der Anzeigen-Detailseite',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement anzeigen',
