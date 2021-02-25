@@ -280,15 +280,15 @@ return [
         'name' => '예'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => '아니'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => '시스템',
+        'instructions' => '시스템 상태는 필수이며 변경해서는 안됩니다.',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => '사용자 액세스',
+        'instructions' => '사용자가 광고에이 상태를 사용할 수 있습니까?',
     ],
     "no_location" => "선택된 위치가 없습니다.",
     "continue" => '계속하다',
