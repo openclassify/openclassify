@@ -204,20 +204,20 @@ return [
         'instructions' => '왼쪽 카테고리 목록에 광고 개수 표시',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'ID 및 만든 날짜 숨기기',
+        'instructions' => '광고 상세 페이지에서 ID 및 생성 날짜 숨기기',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => '목록 헤더 숨기기',
+		'instructions' => '주문 및보기 유형 숨기기',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => '필터 섹션 숨기기',
+		'instructions' => '목록 페이지에서 왼쪽 필터 영역으로 숨기기',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => '판매자 정보 숨기기',
+		'instructions' => '광고 세부 정보 페이지에서 판매자 정보 숨기기',
 	],
     'show_post_ad_agreement' => [
         'name' => '광고 게시 계약 표시',
