@@ -204,20 +204,20 @@ return [
         'instructions' => 'विज्ञापन को बाईं श्रेणियों की सूची में दिखाएं',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'आईडी और निर्मित तिथि छिपाएं',
+        'instructions' => 'विज्ञापन विस्तार पृष्ठ में आईडी और बनाई गई तिथि छिपाएं',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'लिस्टिंग हैडर छिपाएं',
+		'instructions' => 'ऑर्डर करने और देखने के प्रकारों के लिए छिपाना',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'फ़िल्टर अनुभाग छिपाएँ',
+		'instructions' => 'लिस्टिंग पृष्ठ में बाएं फिल्टर क्षेत्र में छिपा',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'विक्रेता की जानकारी छिपाएँ',
+		'instructions' => 'विज्ञापन विस्तार पृष्ठ में विक्रेता infos को छुपाता है',
 	],
     'show_post_ad_agreement' => [
         'name' => 'विज्ञापन विज्ञापन दिखाएं',
