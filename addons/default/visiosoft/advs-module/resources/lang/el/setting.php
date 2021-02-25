@@ -204,20 +204,20 @@ return [
         'instructions' => 'Εμφάνιση πλήθους διαφημίσεων στην αριστερή λίστα κατηγοριών',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Απόκρυψη αναγνωριστικού και ημερομηνίας δημιουργίας',
+        'instructions' => 'Απόκρυψη αναγνωριστικού και ημερομηνίας δημιουργίας στη σελίδα λεπτομερειών διαφημίσεων',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Απόκρυψη κεφαλίδας καταχώρισης',
+		'instructions' => 'Απόκρυψη σε παραγγελίες και προβολή τύπων',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Απόκρυψη ενότητας φίλτρου',
+		'instructions' => 'Απόκρυψη στην αριστερή περιοχή φίλτρου στη σελίδα καταχώρισης',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Απόκρυψη πληροφοριών πωλητή',
+		'instructions' => 'Απόκρυψη στις πληροφορίες πωλητή στη σελίδα λεπτομερειών διαφημίσεων',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Εμφάνιση συμφωνίας μετά τη διαφήμιση',
