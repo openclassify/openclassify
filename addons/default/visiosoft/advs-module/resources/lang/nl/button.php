@@ -44,5 +44,5 @@ return [
 	'publish' => 'Publiceren',
 	'import' => 'Importeren',
     'new_status' => 'Nieuwe status',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'Snel bewerken',
 ];
