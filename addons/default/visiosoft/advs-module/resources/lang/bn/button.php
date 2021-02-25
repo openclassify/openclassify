@@ -44,5 +44,5 @@ return [
 	'publish' => 'প্রকাশ করুন',
 	'import' => 'আমদানি করুন',
     'new_status' => 'নতুন অবস্থা',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'দ্রুত সম্পাদনা',
 ];
