@@ -204,20 +204,20 @@ return [
         'instructions' => 'Прикажи огласе рачунајте на левој листи категорија',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Сакриј ИД и датум креирања',
+        'instructions' => 'Сакријте ИД и датум креирања на страници са детаљима огласа',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Сакриј заглавље уноса',
+		'instructions' => 'Скривање редоследа и прегледа типова',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Сакриј одељак филтера',
+		'instructions' => 'Сакривање у лево подручје филтера на страници са списком',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Сакриј информације о продавцу',
+		'instructions' => 'Сакривање информације о продавцу на страници са детаљима огласа',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Прикажи уговор о објављивању огласа',
