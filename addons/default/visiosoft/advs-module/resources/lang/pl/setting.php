@@ -204,20 +204,20 @@ return [
         'instructions' => 'Pokaż liczbę reklam na liście kategorii po lewej stronie',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Ukryj identyfikator i datę utworzenia',
+        'instructions' => 'Ukryj identyfikator i datę utworzenia na stronie szczegółów reklam',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Ukryj nagłówek aukcji',
+		'instructions' => 'Ukrywanie do porządkowania i przeglądania typów',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Ukryj sekcję filtrów',
+		'instructions' => 'Ukrywanie w lewym obszarze filtra na stronie listy',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Ukryj informacje o sprzedającym',
+		'instructions' => 'Ukrywanie informacji o sprzedawcy na stronie szczegółów ogłoszeń',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Pokaż umowę opublikowania ogłoszenia',
