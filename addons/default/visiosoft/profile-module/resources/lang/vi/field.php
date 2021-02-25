@@ -468,7 +468,7 @@ return [
     'update' => 'Cập nhật',
     'change_password' => 'Đổi mật khẩu',
     'choose_an_option' => 'Chọn một sự lựa chọn...',
-    'change_status' => 'Change Status',
+    'change_status' => 'Thay đổi trạng thái',
 
     // Register page
     'accept_terms_label' => 'Tôi chấp nhận các điều khoản.',
