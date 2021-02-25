@@ -468,7 +468,7 @@ return [
     'update' => 'Uppdatering',
     'change_password' => 'Ändra lösenord',
     'choose_an_option' => 'Välj ett alternativ...',
-    'change_status' => 'Change Status',
+    'change_status' => 'Byta status',
 
     // Register page
     'accept_terms_label' => 'Jag accepterar villkoren.',
