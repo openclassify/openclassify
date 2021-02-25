@@ -281,15 +281,15 @@ return [
         'name' => 'Bəli'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Yox'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Sistemdir',
+        'instructions' => 'Sistem vəziyyəti tələb olunur və dəyişdirilməməlidir',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'İstifadəçi girişi',
+        'instructions' => 'Bir istifadəçi bu statusdan reklamlarında istifadə edə bilərmi?',
     ],
     "no_location" => "Heç bir yer seçilməyib.",
     "continue" => 'Davam et',
