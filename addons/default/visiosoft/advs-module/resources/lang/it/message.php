@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "Lo stato del tuo annuncio è stato impostato su Attivo!",
     'passive_status_change' => "Lo stato del tuo annuncio è stato impostato su Passivo!",
 	'sold_status_change' => "Lo stato del tuo annuncio è stato impostato su Venduto!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "Lo stato del tuo annuncio è stato impostato su: status!",
 ];
