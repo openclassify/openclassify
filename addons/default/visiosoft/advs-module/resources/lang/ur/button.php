@@ -44,5 +44,5 @@ return [
 	'publish' => 'شائع کریں',
 	'import' => 'درآمد کریں',
     'new_status' => 'نئی حیثیت',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'فاسٹ ترمیم',
 ];
