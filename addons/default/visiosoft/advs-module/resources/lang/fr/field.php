@@ -281,15 +281,15 @@ return [
         'name' => 'Oui'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Non'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Est le système',
+        'instructions' => 'L\'état du système est obligatoire et ne doit pas être modifié',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Accès utilisateur',
+        'instructions' => 'Un utilisateur peut-il utiliser ce statut sur ses annonces?',
     ],
     "no_location" => "Aucun emplacement n'est sélectionné.",
     "continue" => 'Continuer',
