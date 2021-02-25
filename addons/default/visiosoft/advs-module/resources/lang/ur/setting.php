@@ -204,20 +204,20 @@ return [
         'instructions' => 'بائیں زمروں کی فہرست میں اشتہارات کی گنتی دکھائیں',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'ID اور بنائی ہوئی تاریخ کو چھپائیں',
+        'instructions' => 'اشتہارات کے تفصیل والے صفحے میں ID اور بنائی گئی تاریخ کو چھپائیں',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'لسٹنگ ہیڈر چھپائیں',
+		'instructions' => 'ترتیب دینے اور دیکھنے کی اقسام کو چھپا رہا ہے',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'فلٹر سیکشن چھپائیں',
+		'instructions' => 'صفحہ کے لسٹنگ میں بائیں فلٹر کے علاقے میں چھپا',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'بیچنے والے کی معلومات چھپائیں',
+		'instructions' => 'اشتہارات کے تفصیل والے صفحے میں بیچنے والے انفو کو چھپا رہے ہیں',
 	],
     'show_post_ad_agreement' => [
         'name' => 'پوسٹ اشتہار کا معاہدہ دکھائیں',
