@@ -204,20 +204,20 @@ return [
         'instructions' => 'Số lượng quảng cáo hiển thị trên danh sách danh mục bên trái',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Ẩn ID và Ngày tạo',
+        'instructions' => 'Ẩn ID và ngày tạo trong trang chi tiết quảng cáo',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Ẩn tiêu đề danh sách',
+		'instructions' => 'Ẩn để đặt hàng và xem các loại',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Ẩn phần bộ lọc',
+		'instructions' => 'Ẩn vùng lọc bên trái trong trang danh sách',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Ẩn thông tin người bán',
+		'instructions' => 'Ẩn thông tin người bán trong trang chi tiết quảng cáo',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Hiển thị Thỏa thuận Quảng cáo Đăng',
