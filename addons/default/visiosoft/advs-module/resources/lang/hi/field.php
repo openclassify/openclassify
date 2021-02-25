@@ -280,15 +280,15 @@ return [
         'name' => 'हाँ'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'नहीं न'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'सिस्टम है',
+        'instructions' => 'सिस्टम की स्थिति की आवश्यकता है और इसे बदला नहीं जाना चाहिए',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'उपयोगकर्ता की पहुंच',
+        'instructions' => 'क्या कोई उपयोगकर्ता अपने विज्ञापनों पर इस स्थिति का उपयोग कर सकता है?',
     ],
     "no_location" => "कोई स्थान चयनित नहीं है।",
     "continue" => 'जारी रखें',
