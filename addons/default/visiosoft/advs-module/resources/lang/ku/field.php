@@ -354,15 +354,15 @@ return [
         'name' => 'بەڵێ'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Na'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Pergalê ye',
+        'instructions' => 'Rewşa pergalê pêdivî ye û divê neyê guhertin',
     ],
     'user_access' => [
         'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'instructions' => 'Bikarhêner dikare vê rewşê li ser reklamên xwe bikar bîne?',
     ],
     "no_location" => "شوێنەکە دیاری نەکراوە
 ",
