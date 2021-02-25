@@ -280,15 +280,15 @@ return [
         'name' => 'Так'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Ні'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Є система',
+        'instructions' => 'Статус системи є обов’язковим і не повинен змінюватися',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Доступ користувачів',
+        'instructions' => 'Чи може користувач використовувати цей статус у своїх оголошеннях?',
     ],
     "no_location" => "Місце не вибрано.",
     "continue" => 'Продовжуйте',
