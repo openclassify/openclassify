@@ -469,7 +469,7 @@ return [
     'update' => 'Обновить',
     'change_password' => 'Сменить пароль',
     'choose_an_option' => 'Выберите опцию...',
-    'change_status' => 'Change Status',
+    'change_status' => 'Изменить статус',
 
     // Register page
     'accept_terms_label' => 'Я принимаю условия.',
