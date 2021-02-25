@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "広告のステータスがアクティブに設定されました。",
     'passive_status_change' => "広告のステータスがパッシブに設定されました。",
 	'sold_status_change' => "広告のステータスが販売済みに設定されました。",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "広告のステータスが：statusに設定されました！",
 ];
