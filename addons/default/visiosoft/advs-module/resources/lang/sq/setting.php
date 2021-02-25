@@ -204,20 +204,20 @@ return [
         'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Fshih ID-në dhe datën e krijuar',
+        'instructions' => 'Fshih ID-në dhe datën e krijuar në faqen e detajeve të reklamave',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Fshih titullin e listës',
+		'instructions' => 'Fshehja për renditjen dhe shikimin e llojeve',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Fshih pjesën e filtrit',
+		'instructions' => 'Fshihet në zonën e majtë të filtrit në faqen e listës',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Fshih informacionin e shitësit',
+		'instructions' => 'Fshehja e informacionit të shitësit në faqen e detajeve të reklamave',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
