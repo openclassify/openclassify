@@ -204,20 +204,20 @@ return [
         'instructions' => 'Visa annonser räknas på listan till vänster',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Dölj ID och skapat datum',
+        'instructions' => 'Dölj ID och skapat datum på sidan med annonser',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Dölj listhuvud',
+		'instructions' => 'Döljer för beställning och visningstyper',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Dölj filteravsnittet',
+		'instructions' => 'Gömmer till vänster filterområde på listningssidan',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Dölj säljarinformation',
+		'instructions' => 'Dölja information till säljare på sidan med annonser',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Visa annonsannonsavtal',
