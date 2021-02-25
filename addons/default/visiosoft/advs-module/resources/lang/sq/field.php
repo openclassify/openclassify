@@ -280,15 +280,15 @@ return [
         'name' => 'Po'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Jo'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'A është sistemi',
+        'instructions' => 'Statusi i sistemit kërkohet dhe nuk duhet të ndryshohet',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Aksesi i Përdoruesit',
+        'instructions' => 'A mund ta përdorë një përdorues këtë status në reklamat e tij?',
     ],
     "no_location" => "Asnjë vendndodhje nuk është zgjedhur.",
     "continue" => 'Vazhdo',
