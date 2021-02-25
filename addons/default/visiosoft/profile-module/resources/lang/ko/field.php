@@ -468,7 +468,7 @@ return [
     'update' => '최신 정보',
     'change_password' => '비밀번호 변경',
     'choose_an_option' => '옵션을 선택하세요...',
-    'change_status' => 'Change Status',
+    'change_status' => '상태 변경',
 
     // Register page
     'accept_terms_label' => '약관에 동의합니다.',
