@@ -468,7 +468,7 @@ return [
     'update' => 'Update',
     'change_password' => 'Ndrysho fjalekalimin',
     'choose_an_option' => 'Zgjidhni një opsion ...',
-    'change_status' => 'Change Status',
+    'change_status' => 'Ndrysho statusin',
 
     // Register page
     'accept_terms_label' => 'Unë i pranoj kushtet.',
