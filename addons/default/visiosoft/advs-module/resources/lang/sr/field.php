@@ -280,15 +280,15 @@ return [
         'name' => 'да'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Не'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Је систем',
+        'instructions' => 'Статус система је обавезан и не би га требало мењати',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Приступ корисника',
+        'instructions' => 'Може ли корисник да користи овај статус у својим огласима?',
     ],
     "no_location" => "Није изабрана ниједна локација.",
     "continue" => 'Настави',
