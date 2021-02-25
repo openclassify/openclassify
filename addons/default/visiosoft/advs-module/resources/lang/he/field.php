@@ -280,15 +280,15 @@ return [
         'name' => 'כן'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'לא'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'האם מערכת',
+        'instructions' => 'סטטוס מערכת נדרש ואין לשנותו',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'הרשאת משתמש',
+        'instructions' => 'האם משתמש יכול להשתמש בסטטוס זה במודעות שלו?',
     ],
     "no_location" => "לא נבחר מיקום.",
     "continue" => 'המשך',
