@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "Η κατάσταση της διαφήμισής σας έχει ενεργοποιηθεί!",
     'passive_status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί σε παθητική!",
 	'sold_status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί για πώληση!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί σε: κατάσταση!",
 ];
