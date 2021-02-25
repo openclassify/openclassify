@@ -59,6 +59,6 @@ return [
     'status' => [
         'title' => 'Statut',
     ],
-	'ads_detail' => 'Ads Detail',
+	'ads_detail' => 'Détail des annonces',
 
 ];
