@@ -204,20 +204,20 @@ return [
         'instructions' => 'Afișați anunțurile în lista de categorii din stânga',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Ascunde ID-ul și data creării',
+        'instructions' => 'Ascundeți ID-ul și data creată în pagina de detalii a anunțurilor',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Ascundeți antetul listării',
+		'instructions' => 'Ascunderea la comanda și vizualizarea tipurilor',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Ascunde secțiunea de filtrare',
+		'instructions' => 'Se ascunde în zona de filtrare din stânga în pagina listării',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Ascundeți informațiile despre vânzător',
+		'instructions' => 'Ascunderea informațiilor despre vânzător în pagina de detalii a anunțurilor',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Afișați acordul de postare a anunțului',
