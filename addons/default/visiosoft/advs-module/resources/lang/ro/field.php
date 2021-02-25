@@ -280,15 +280,15 @@ return [
         'name' => 'da'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Nu'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Este Sistem',
+        'instructions' => 'Starea sistemului este obligatorie și nu trebuie modificată',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Acces utilizator',
+        'instructions' => 'Poate un utilizator să utilizeze această stare în anunțurile sale?',
     ],
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
