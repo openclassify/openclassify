@@ -468,7 +468,7 @@ return [
     'update' => 'Оновлення',
     'change_password' => 'Змінити пароль',
     'choose_an_option' => 'Виберіть варіант ...',
-    'change_status' => 'Change Status',
+    'change_status' => 'Змінити статус',
 
     // Register page
     'accept_terms_label' => 'Я приймаю умови.',
