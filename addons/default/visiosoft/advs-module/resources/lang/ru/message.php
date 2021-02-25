@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "Статус вашего объявления установлен на \"Активно\"!",
     'passive_status_change' => "Статус вашего объявления установлен на пассивный!",
 	'sold_status_change' => "Статус вашего объявления изменен на \"Продано\"!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "Статус вашего объявления был установлен на: status!",
 ];
