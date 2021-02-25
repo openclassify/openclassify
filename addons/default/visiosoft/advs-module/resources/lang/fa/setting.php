@@ -205,20 +205,20 @@ return [
         'instructions' => 'نمایش تعداد تبلیغات در لیست دسته های سمت چپ',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'مخفی کردن شناسه و تاریخ ایجاد شده',
+        'instructions' => 'شناسه و تاریخ ایجاد شده را در صفحه جزئیات تبلیغات پنهان کنید',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'پنهان کردن عنوان لیست',
+		'instructions' => 'مخفی شدن در سفارش و مشاهده انواع',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'پنهان کردن بخش فیلتر',
+		'instructions' => 'در صفحه لیست مخفی شدن در سمت چپ فیلتر',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'پنهان کردن اطلاعات فروشنده',
+		'instructions' => 'پنهان شدن در مورد اطلاعات فروشنده در صفحه جزئیات تبلیغات',
 	],
     'show_post_ad_agreement' => [
         'name' => 'نمایش قرارداد تبلیغات پست',
