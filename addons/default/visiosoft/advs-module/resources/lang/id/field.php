@@ -280,15 +280,15 @@ return [
         'name' => 'Iya'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Tidak'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Apakah Sistem',
+        'instructions' => 'Status sistem diperlukan dan tidak boleh diubah',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Akses Pengguna',
+        'instructions' => 'Dapatkah pengguna menggunakan status ini di iklannya?',
     ],
     "no_location" => "Tidak ada lokasi yang dipilih.",
     "continue" => 'Terus',
