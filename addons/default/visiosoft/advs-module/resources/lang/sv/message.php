@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "Din annons har ställts in som aktiv!",
     'passive_status_change' => "Din annons har blivit passiv!",
 	'sold_status_change' => "Din annons har ställts in såld!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "Annonsens status har ställts in på: status!",
 ];
