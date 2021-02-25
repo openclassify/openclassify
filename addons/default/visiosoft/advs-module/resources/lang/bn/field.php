@@ -280,15 +280,15 @@ return [
         'name' => 'হ্যাঁ'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'না'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'সিস্টেম',
+        'instructions' => 'সিস্টেমের স্থিতি প্রয়োজনীয় এবং এটি পরিবর্তন করা উচিত নয়',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'ব্যবহারকারী অ্যাক্সেস',
+        'instructions' => 'কোনও ব্যবহারকারী কি তার বিজ্ঞাপনে এই স্থিতিটি ব্যবহার করতে পারেন?',
     ],
     "no_location" => "কোনও অবস্থান নির্বাচন করা হয়নি।",
     "continue" => 'চালিয়ে',
