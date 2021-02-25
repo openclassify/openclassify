@@ -281,15 +281,15 @@ return [
         'name' => 'да'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Нет'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Система',
+        'instructions' => 'Статус системы является обязательным и не должен изменяться',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Доступ пользователя',
+        'instructions' => 'Может ли пользователь использовать этот статус в своих объявлениях?',
     ],
     "no_location" => "Местоположение не выбрано.",
     "continue" => 'Продолжить',
