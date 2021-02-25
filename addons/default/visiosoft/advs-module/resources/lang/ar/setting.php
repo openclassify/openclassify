@@ -204,20 +204,20 @@ return [
         'instructions' => 'عرض الإعلانات الاعتماد على قائمة الفئات اليسرى',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'إخفاء الهوية وتاريخ الإنشاء',
+        'instructions' => 'إخفاء المعرف وتاريخ الإنشاء في صفحة تفاصيل الإعلانات',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'إخفاء رأس القائمة',
+		'instructions' => 'الاختباء لطلب وعرض الأنواع',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'إخفاء قسم التصفية',
+		'instructions' => 'يختبئ إلى اليسار منطقة التصفية في قائمة الصفحة',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'إخفاء معلومات البائع',
+		'instructions' => 'إخفاء معلومات البائع في صفحة تفاصيل الإعلانات',
 	],
     'show_post_ad_agreement' => [
         'name' => 'إظهار اتفاقية ما بعد الإعلان',
