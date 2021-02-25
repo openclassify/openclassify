@@ -64,5 +64,5 @@ return [
 	'import' => 'هێنان',
     'new_status' => 'دۆخی نوێ
 ',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'Zûtirkirin',
 ];
