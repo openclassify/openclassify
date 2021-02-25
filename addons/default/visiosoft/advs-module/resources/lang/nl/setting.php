@@ -204,20 +204,20 @@ return [
         'instructions' => 'Toon het aantal advertenties in de lijst met linkercategorieën',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Verberg ID en aanmaakdatum',
+        'instructions' => 'Verberg ID en aanmaakdatum op de detailpagina van advertenties',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Verberg koptekst',
+		'instructions' => 'Verbergen om typen te bestellen en te bekijken',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Filtergedeelte verbergen',
+		'instructions' => 'Verbergen naar linker filtergebied op lijstpagina',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Verberg verkopersinformatie',
+		'instructions' => 'Verbergen voor verkopersinformatie op de detailpagina van advertenties',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertentieovereenkomst',
