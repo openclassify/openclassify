@@ -280,15 +280,15 @@ return [
         'name' => 'Ja'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Nej'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Är System',
+        'instructions' => 'Systemstatus krävs och bör inte ändras',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Användaråtkomst',
+        'instructions' => 'Kan en användare använda denna status i sina annonser?',
     ],
     "no_location" => "Ingen plats har valts.",
     "continue" => 'Fortsätta',
