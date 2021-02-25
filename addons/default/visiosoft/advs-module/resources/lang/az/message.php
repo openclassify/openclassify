@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "Reklamınızın Vəziyyəti Aktivləşdirildi!",
     'passive_status_change' => "Reklamınızın Vəziyyəti Passiv təyin olundu!",
 	'sold_status_change' => "Elanın Statusu Satıldı Olaraq Dəyişdirildi!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "Reklamınızın Vəziyyəti təyin olundu: status!",
 ];
