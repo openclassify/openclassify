@@ -204,20 +204,20 @@ return [
         'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'הסתר מזהה ותאריך יצירה',
+        'instructions' => 'הסתר מזהה ותאריך יצירה בדף פרטי המודעות',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'הסתר כותרת רישום',
+		'instructions' => 'הסתרה לסוגי הזמנה ותצוגה',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'הסתר את קטע המסנן',
+		'instructions' => 'הסתרת אזור הסינון השמאלי בדף הרישום',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'הסתר מידע על מוכר',
+		'instructions' => 'הסתרה למידע על מוכר בדף פירוט המודעות',
 	],
     'show_post_ad_agreement' => [
         'name' => 'הצג הסכם מודעות לפרסום',
