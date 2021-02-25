@@ -281,15 +281,15 @@ return [
         'name' => 'Ναί'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Οχι'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Είναι σύστημα',
+        'instructions' => 'Απαιτείται κατάσταση συστήματος και δεν πρέπει να αλλάξει',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Πρόσβαση χρήστη',
+        'instructions' => 'Μπορεί ένας χρήστης να χρησιμοποιήσει αυτήν την κατάσταση στις διαφημίσεις του;',
     ],
     "no_location" => "Δεν έχει επιλεγεί τοποθεσία.",
     "continue" => 'Να συνεχίσει',
