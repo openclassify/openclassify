@@ -204,20 +204,20 @@ return [
         'instructions' => 'Sol kateqoriyalar siyahısında reklamların sayını göstərin',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Şəxsiyyət və yaradılan tarixi gizlədin',
+        'instructions' => 'Reklam detalları səhifəsində şəxsiyyəti və yaradılan tarixi gizlədin',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Listing Header gizlədin',
+		'instructions' => 'Sifariş və görünüş növlərinə gizlənmək',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Filtr Bölməsini gizlədin',
+		'instructions' => 'Siyahı səhifəsində sol filtr sahəsinə gizlənir',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Satıcı haqqında məlumatları gizlədin',
+		'instructions' => 'Reklam detalları səhifəsində satıcı məlumatlarına gizlənmək',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Post Elan Müqaviləsini Göstərin',
