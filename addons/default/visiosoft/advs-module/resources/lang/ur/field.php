@@ -280,15 +280,15 @@ return [
         'name' => 'جی ہاں'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'نہیں'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'سسٹم ہے',
+        'instructions' => 'سسٹم کی حیثیت درکار ہے اور اسے تبدیل نہیں کیا جانا چاہئے',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'صارف تک رسائی',
+        'instructions' => 'کیا کوئی صارف اس اشتہار کو اپنے اشتہاروں پر استعمال کرسکتا ہے؟',
     ],
     "no_location" => "کوئی مقام منتخب نہیں ہوا ہے۔",
     "continue" => 'جاری رہے',
