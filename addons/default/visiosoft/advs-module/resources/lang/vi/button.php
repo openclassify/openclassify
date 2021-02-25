@@ -44,5 +44,5 @@ return [
 	'publish' => 'Công bố',
 	'import' => 'Nhập khẩu',
     'new_status' => 'Trạng thái mới',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'Chỉnh sửa nhanh',
 ];
