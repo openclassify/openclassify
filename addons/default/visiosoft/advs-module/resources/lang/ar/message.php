@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "تم تعيين حالة إعلانك على نشطة!",
     'passive_status_change' => "تم تعيين حالة إعلانك على سلبية!",
 	'sold_status_change' => "تم تعيين حالة إعلانك على البيع!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "تم تعيين حالة إعلانك على: الحالة!",
 ];
