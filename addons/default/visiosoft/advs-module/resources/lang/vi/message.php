@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "Trạng thái Quảng cáo của Bạn Đã được Đặt thành Hoạt động!",
     'passive_status_change' => "Trạng thái quảng cáo của bạn đã được đặt thành bị động!",
 	'sold_status_change' => "Trạng thái quảng cáo của bạn đã được đặt thành bán!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "Trạng thái Quảng cáo của Bạn Đã được Đặt thành: trạng thái!",
 ];
