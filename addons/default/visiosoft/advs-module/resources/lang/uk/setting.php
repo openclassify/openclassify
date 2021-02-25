@@ -204,20 +204,20 @@ return [
         'instructions' => 'Показати рекламу в списку категорій ліворуч',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Сховати ідентифікатор та дату створення',
+        'instructions' => 'Сховати ідентифікатор та дату створення на сторінці деталей оголошень',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Сховати заголовок списку',
+		'instructions' => 'Приховування впорядкування та перегляду типів',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Сховати розділ фільтра',
+		'instructions' => 'Приховання лівої області фільтра на сторінці списку',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Сховати інформацію про продавця',
+		'instructions' => 'Приховування інформації про продавця на сторінці деталей оголошень',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Показати угоду про розміщення оголошень',
