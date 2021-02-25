@@ -280,15 +280,15 @@ return [
         'name' => 'tak'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Nie'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Czy System',
+        'instructions' => 'Status systemu jest wymagany i nie należy go zmieniać',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Dostęp użytkownika',
+        'instructions' => 'Czy użytkownik może wykorzystać ten stan w swoich reklamach?',
     ],
     "no_location" => "Nie wybrano lokalizacji.",
     "continue" => 'Kontyntynuj',
