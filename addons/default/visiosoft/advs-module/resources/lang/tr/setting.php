@@ -204,20 +204,20 @@ return [
         'instructions' => 'Soldaki kategori listesinde ilan sayısını göster',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Kimliği ve Oluşturma Tarihi Gizle',
+        'instructions' => 'Reklam ayrıntı sayfasında kimliği ve oluşturulan tarihi gizle',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Liste Başlığını Gizle',
+		'instructions' => 'Türleri sıralamak ve görüntülemek için gizleme',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Filtre Bölümünü Gizle',
+		'instructions' => 'Liste sayfasında sol filtre alanına gizleniyor',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Satıcı Bilgilerini Gizle',
+		'instructions' => 'İlan detay sayfasında satıcı bilgilerinin gizlenmesi',
 	],
     'show_post_ad_agreement' => [
         'name' => 'İlan Sonrası Sözleşmesini Göster',
