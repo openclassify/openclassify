@@ -468,7 +468,7 @@ return [
     'update' => 'ажурирање',
     'change_password' => 'Промени лозинку',
     'choose_an_option' => 'Изабери опцију...',
-    'change_status' => 'Change Status',
+    'change_status' => 'Промени статус',
 
     // Register page
     'accept_terms_label' => 'Прихватам услове.',
