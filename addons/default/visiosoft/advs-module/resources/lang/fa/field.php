@@ -280,15 +280,15 @@ return [
         'name' => 'بلی'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'نه'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'سیستم است',
+        'instructions' => 'وضعیت سیستم لازم است و نباید تغییر کند',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'دسترسی کاربر',
+        'instructions' => 'آیا یک کاربر می تواند از این وضعیت در تبلیغات خود استفاده کند؟',
     ],
     "no_location" => "هیچ موقعیتی انتخاب نشده است.",
     "continue" => 'ادامه',
