@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "סטטוס המודעה שלך הוגדר לפעיל!",
     'passive_status_change' => "סטטוס המודעה שלך הוגדר כפסיבי!",
 	'sold_status_change' => "סטטוס המודעה שלך הוגדר כמכר!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "סטטוס המודעה שלך הוגדר ל: סטטוס!",
 ];
