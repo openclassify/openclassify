@@ -204,20 +204,20 @@ return [
         'instructions' => 'Exibir contagem de anúncios na lista de categorias à esquerda',
     ],
     'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+        'name' => 'Ocultar ID e Data de Criação',
+        'instructions' => 'Ocultar ID e data de criação na página de detalhes de anúncios',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Ocultar cabeçalho da lista',
+		'instructions' => 'Escondendo os tipos de pedido e visualização',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'name' => 'Ocultar seção de filtro',
+		'instructions' => 'Escondendo a área de filtro à esquerda na página de listagem',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Ocultar informações do vendedor',
+		'instructions' => 'Escondendo as informações do vendedor na página de detalhes dos anúncios',
 	],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar Acordo de Postagem',
