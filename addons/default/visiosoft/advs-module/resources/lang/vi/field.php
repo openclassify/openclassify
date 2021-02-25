@@ -280,15 +280,15 @@ return [
         'name' => 'Đúng'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Không'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Là hệ thống',
+        'instructions' => 'Trạng thái hệ thống là bắt buộc và không được thay đổi',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Người dùng truy cập',
+        'instructions' => 'Người dùng có thể sử dụng trạng thái này trên quảng cáo của mình không?',
     ],
     "no_location" => "Không có địa điểm được chọn.",
     "continue" => 'Tiếp tục',
