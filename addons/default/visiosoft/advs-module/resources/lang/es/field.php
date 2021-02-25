@@ -284,12 +284,12 @@ return [
         'name' => 'No'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Es el sistema',
+        'instructions' => 'El estado del sistema es obligatorio y no debe cambiarse',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Acceso de usuario',
+        'instructions' => '¿Puede un usuario utilizar este estado en sus anuncios?',
     ],
     "no_location" => "No se seleccionó ninguna ubicación.",
     "continue" => 'Seguir',
