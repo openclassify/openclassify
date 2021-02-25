@@ -470,7 +470,7 @@ return [
     'update' => 'Bijwerken',
     'change_password' => 'Wachtwoord wijzigen',
     'choose_an_option' => 'Kies een optie...',
-    'change_status' => 'Change Status',
+    'change_status' => 'Verander status',
 
     // Register page
     'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
