@@ -280,15 +280,15 @@ return [
         'name' => 'はい'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => '番号'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'システムは',
+        'instructions' => 'システムステータスは必須であり、変更しないでください',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'ユーザーアクセス',
+        'instructions' => 'ユーザーは自分の広告でこのステータスを使用できますか？',
     ],
     "no_location" => "場所が選択されていません。",
     "continue" => '継続する',
