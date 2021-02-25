@@ -44,5 +44,5 @@ return [
 	'publish' => 'ينشر',
 	'import' => 'استيراد',
     'new_status' => 'حالة جديدة',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'تحرير سريع',
 ];
