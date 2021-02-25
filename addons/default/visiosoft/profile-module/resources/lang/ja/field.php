@@ -468,7 +468,7 @@ return [
     'update' => '更新',
     'change_password' => 'パスワードを変更する',
     'choose_an_option' => 'オプションを選択...',
-    'change_status' => 'Change Status',
+    'change_status' => 'ステータスを変更する',
 
     // Register page
     'accept_terms_label' => '利用規約に同意します。',
