@@ -280,15 +280,15 @@ return [
         'name' => 'Да'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Не'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Е система',
+        'instructions' => 'Състоянието на системата е задължително и не трябва да се променя',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Потребителски достъп',
+        'instructions' => 'Може ли потребителят да използва това състояние в своите реклами?',
     ],
     "no_location" => "Не е избрано място.",
     "continue" => 'продължи',
