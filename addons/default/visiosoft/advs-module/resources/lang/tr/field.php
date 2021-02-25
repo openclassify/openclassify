@@ -282,15 +282,15 @@ return [
         'name' => 'Evet'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Hayır'
     ],
     'is_system' => [
-        'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'name' => 'Sistem mi',
+        'instructions' => 'Sistem durumu gereklidir ve değiştirilmemelidir',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Kullanıcı erişimi',
+        'instructions' => 'Bir kullanıcı bu durumu reklamlarında kullanabilir mi?',
     ],
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',
