@@ -30,5 +30,5 @@ return [
     'approve_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në Aktiv!",
     'passive_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në pasiv!",
 	'sold_status_change' => "Statusi i Reklamës suaj Setshtë vendosur të shitet!",
-	'status_change' => "Your Ad's Status Has Been Set to :status!",
+	'status_change' => "Statusi i Reklamës suaj Setshtë vendosur në: status!",
 ];
