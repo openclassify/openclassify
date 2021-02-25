@@ -281,15 +281,15 @@ return [
         'name' => 'Ja'
     ],
     'no' => [
-        'name' => 'No'
+        'name' => 'Nee'
     ],
     'is_system' => [
         'name' => 'Is System',
-        'instructions' => 'System status are required and should not be changed',
+        'instructions' => 'De systeemstatus is vereist en mag niet worden gewijzigd',
     ],
     'user_access' => [
-        'name' => 'User Access',
-        'instructions' => 'Can a user use this status on his ads?',
+        'name' => 'Gebruikerstoegang',
+        'instructions' => 'Kan een gebruiker deze status gebruiken voor zijn advertenties?',
     ],
     "no_location" => "Er is geen locatie geselecteerd.",
     "continue" => 'Doorgaan met',
