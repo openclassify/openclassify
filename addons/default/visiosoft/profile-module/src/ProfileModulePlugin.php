@@ -3,6 +3,7 @@
 use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Visiosoft\ProfileModule\Adress\Command\GetAddress;
 use Visiosoft\ProfileModule\Adress\Command\GetAddressByUser;
+use Visiosoft\ProfileModule\Profile\Command\Authorize;
 use Visiosoft\ProfileModule\Profile\Command\GetProfileDetail;
 
 class ProfileModulePlugin extends Plugin
@@ -44,6 +45,12 @@ class ProfileModulePlugin extends Plugin
                     }
 
                     return $ad;
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'authorize',
+                function ($permission) {
+                    return $this->dispatch(new Authorize($permission));
                 }
             )
         ];
