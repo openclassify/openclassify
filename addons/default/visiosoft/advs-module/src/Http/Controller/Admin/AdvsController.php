@@ -43,15 +43,6 @@ class AdvsController extends AdminController
         $table->addAsset("styles.css", "visiosoft.module.advs::css/custom.css");
         $table->addAsset('scripts.js', 'visiosoft.module.advs::js/list.js');
 
-        if ($this->model->is_enabled('recommendedads')) {
-            $table->addButton('add_recommended', [
-                'type' => 'default',
-                'icon' => 'fa fa-gg',
-                'text' => 'Add Recommended',
-                'href' => '/admin/recommendedads/create/{entry.id}',
-            ]);
-        }
-
         return $table->render();
     }
 
