@@ -1189,26 +1189,21 @@ class AdvsController extends PublicController
 
     public function addCart(Request $request)
     {
-        if (\auth()->check()) {
-            $id = $request->id;
-            $quantity = $request->quantity;
-            $name = $request->name;
-            $thisModel = new AdvModel();
-            $adv = $thisModel->isAdv($id);
-            $response = array();
-            if ($adv) {
-                $cart = $thisModel->addCart($adv, $quantity, $name);
-                $response['status'] = "success";
-	            $count = $cart->getItems()->count;
-	            $response['count'] = $count;
-            } else {
-                $response['status'] = "error";
-                $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
-            }
+        $id = $request->id;
+        $quantity = $request->quantity;
+        $name = $request->name;
+        $thisModel = new AdvModel();
+        $adv = $thisModel->isAdv($id);
+        $response = array();
+        if ($adv) {
+            $cart = $thisModel->addCart($adv, $quantity, $name);
+            $response['status'] = "success";
+            $count = $cart->getItems()->count;
+            $response['count'] = $count;
         } else {
-            $response['status'] = "guest";
+            $response['status'] = "error";
+            $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
         }
-
         return $response;
     }
 

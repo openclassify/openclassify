@@ -207,10 +207,10 @@ class AdvsController extends AdminController
 
     public function advancedUpdate()
     {
-        if ($this->request->has('advanced_column') and $this->request->has('advanced_entry_id') and $this->request->has('advanced_value')) {
-            $entry_id = $this->request->get('advanced_entry_id');
-            $column = $this->request->get('advanced_column');
-            $value = $this->request->get('advanced_value');
+        if ($this->request->has('edit_column') and $this->request->has('edit_entry_id') and $this->request->has('edit_value')) {
+            $entry_id = $this->request->get('edit_entry_id');
+            $column = $this->request->get('edit_column');
+            $value = $this->request->get('edit_value');
             if ($entry = $this->advRepository->find($entry_id)) {
                 $entry->setAttribute($column, $value);
                 $entry->save();

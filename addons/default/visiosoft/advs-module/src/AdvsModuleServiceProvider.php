@@ -50,8 +50,8 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@assetsClear',
         ],
         'admin/advs-users/choose/{advId}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@choose',
-        'admin/advs/ajax/advanced/advanced-update' => [
-            'as' => 'visiosoft.module.advs::ajax_advanced_update',
+        'admin/ajax/multiple/multiple-update' => [
+            'as' => 'visiosoft.module.advs::ajax_multiple_update',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@advancedUpdate',
         ],
         'admin/class/actions/{id}/{type}' => 'Visiosoft\AdvsModule\Http\Controller\Admin\AdvsController@actions',
