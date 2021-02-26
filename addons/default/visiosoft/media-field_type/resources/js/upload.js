@@ -57,7 +57,6 @@ $(function () {
             previewTemplate: preview,
             previewsContainer: '.uploads',
             maxFilesize: element.data('max-size'),
-            acceptedFiles: element.data('allowed'),
             dictDefaultMessage: element.data('icon') + ' ' + element.data('message'),
             uploadprogress: function (file, progress) {
                 file.previewElement.querySelector("[data-dz-uploadprogress]").setAttribute('value', progress);
