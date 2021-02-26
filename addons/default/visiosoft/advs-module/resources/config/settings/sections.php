@@ -40,7 +40,7 @@ return [
 	        'ads_detail' => [
 	        	'title' => 'visiosoft.module.advs::section.ads_detail',
 		        'fields' => [
-			        'ads_id_date_hidden',
+			        'ads_date_hidden',
 			        'hide_seller_info',
 		        ]
 	        ],

@@ -203,9 +203,9 @@ return [
         'name' => 'Show Ads Count',
         'instructions' => 'Show ads count on the left categories list',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Hide Listing Header',
