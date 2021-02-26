@@ -1,13 +1,12 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Table;
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
-use Anomaly\Streams\Platform\Entry\EntryModel;
 
 class AdvTableButtons
 {
     public function handle(AdvTableBuilder $builder)
     {
-        $builder->setButtons([
+        $buttons = [
             'status' => [
                 'text' => function (EntryInterface $entry) {
                     $text_type = ($entry->getStatus() == 'approved') ? 'decline' : 'approve';
@@ -50,9 +49,13 @@ class AdvTableButtons
                     'create_configration' => [
                         'text' => trans('visiosoft.module.advs::button.create_configurations'),
                         'href' => route('visiosoft.module.advs::configrations.create') . "?ad={entry.id}"]
-                    ]
+                ]
             ]
-        ]);
+        ];
+
+        $builder->setButtons($buttons);
+
+        return $buttons;
     }
 
 }
