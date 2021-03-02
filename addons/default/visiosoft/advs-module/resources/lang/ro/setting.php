@@ -203,9 +203,9 @@ return [
         'name' => 'Afișați numărul de anunțuri',
         'instructions' => 'Afișați anunțurile în lista de categorii din stânga',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Ascunde ID-ul și data creării',
-        'instructions' => 'Ascundeți ID-ul și data creată în pagina de detalii a anunțurilor',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Ascundeți antetul listării',
