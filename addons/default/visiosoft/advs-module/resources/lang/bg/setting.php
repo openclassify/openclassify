@@ -203,9 +203,9 @@ return [
         'name' => 'Показване на броя на рекламите',
         'instructions' => 'Показването на рекламите се брои в списъка с леви категории',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Скриване на идентификационния номер и датата на създаване',
-        'instructions' => 'Скриване на идентификационния номер и датата на създаване в страницата с подробности за рекламите',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Скриване на заглавката на списъка',
