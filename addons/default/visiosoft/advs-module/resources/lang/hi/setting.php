@@ -203,9 +203,9 @@ return [
         'name' => 'विज्ञापन गणना दिखाएं',
         'instructions' => 'विज्ञापन को बाईं श्रेणियों की सूची में दिखाएं',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'आईडी और निर्मित तिथि छिपाएं',
-        'instructions' => 'विज्ञापन विस्तार पृष्ठ में आईडी और बनाई गई तिथि छिपाएं',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'लिस्टिंग हैडर छिपाएं',
