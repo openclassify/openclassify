@@ -203,9 +203,9 @@ return [
         'name' => 'Reklam sayını göstərin',
         'instructions' => 'Sol kateqoriyalar siyahısında reklamların sayını göstərin',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Şəxsiyyət və yaradılan tarixi gizlədin',
-        'instructions' => 'Reklam detalları səhifəsində şəxsiyyəti və yaradılan tarixi gizlədin',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Listing Header gizlədin',
