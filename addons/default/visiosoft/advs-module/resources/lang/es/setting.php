@@ -203,9 +203,9 @@ return [
         'name' => 'Mostrar recuento de anuncios',
         'instructions' => 'Mostrar el recuento de anuncios en la lista de categorías de la izquierda',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Ocultar ID y fecha de creación',
-        'instructions' => 'Ocultar ID y fecha de creación en la página de detalles de anuncios',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Ocultar encabezado de listado',
