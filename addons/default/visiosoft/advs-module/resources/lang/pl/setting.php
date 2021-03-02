@@ -203,9 +203,9 @@ return [
         'name' => 'Pokaż liczbę reklam',
         'instructions' => 'Pokaż liczbę reklam na liście kategorii po lewej stronie',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Ukryj identyfikator i datę utworzenia',
-        'instructions' => 'Ukryj identyfikator i datę utworzenia na stronie szczegółów reklam',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Ukryj nagłówek aukcji',
