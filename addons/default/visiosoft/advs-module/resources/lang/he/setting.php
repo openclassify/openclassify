@@ -203,9 +203,9 @@ return [
         'name' => 'ספירת מודעות הצגה',
         'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'הסתר מזהה ותאריך יצירה',
-        'instructions' => 'הסתר מזהה ותאריך יצירה בדף פרטי המודעות',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'הסתר כותרת רישום',
