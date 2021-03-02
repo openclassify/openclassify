@@ -203,9 +203,9 @@ return [
         'name' => 'Показать количество объявлений',
         'instructions' => 'Показывать количество объявлений в левом списке категорий',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Скрыть идентификатор и дату создания',
-        'instructions' => 'Скрыть идентификатор и дату создания на странице сведений об объявлениях',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Скрыть заголовок объявления',
