@@ -203,9 +203,9 @@ return [
         'name' => 'বিজ্ঞাপন গণনা দেখান',
         'instructions' => 'বাম বিভাগগুলির তালিকায় বিজ্ঞাপন গণনা দেখান',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'আইডি এবং তৈরি তারিখ লুকান',
-        'instructions' => 'বিজ্ঞাপনের বিশদ পৃষ্ঠায় আইডি এবং তৈরি তারিখ লুকান',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'তালিকা শিরোনাম লুকান',
