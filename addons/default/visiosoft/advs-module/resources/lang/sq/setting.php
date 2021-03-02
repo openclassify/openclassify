@@ -203,9 +203,9 @@ return [
         'name' => 'Shfaq Numrin e Reklamave',
         'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Fshih ID-në dhe datën e krijuar',
-        'instructions' => 'Fshih ID-në dhe datën e krijuar në faqen e detajeve të reklamave',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Fshih titullin e listës',
