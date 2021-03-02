@@ -203,9 +203,9 @@ return [
         'name' => 'إظهار عدد الإعلانات',
         'instructions' => 'عرض الإعلانات الاعتماد على قائمة الفئات اليسرى',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'إخفاء الهوية وتاريخ الإنشاء',
-        'instructions' => 'إخفاء المعرف وتاريخ الإنشاء في صفحة تفاصيل الإعلانات',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'إخفاء رأس القائمة',
