@@ -203,9 +203,9 @@ return [
         'name' => 'Anzeigenanzahl anzeigen',
         'instructions' => 'Anzeigenanzahl in der linken Kategorieliste anzeigen',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'ID und Erstellungsdatum ausblenden',
-        'instructions' => 'ID und Erstellungsdatum auf der Anzeigen-Detailseite ausblenden',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Listenkopf ausblenden',
