@@ -203,9 +203,9 @@ return [
         'name' => 'Прикажи огласе',
         'instructions' => 'Прикажи огласе рачунајте на левој листи категорија',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Сакриј ИД и датум креирања',
-        'instructions' => 'Сакријте ИД и датум креирања на страници са детаљима огласа',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Сакриј заглавље уноса',
