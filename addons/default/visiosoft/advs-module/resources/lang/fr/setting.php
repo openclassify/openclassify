@@ -203,9 +203,9 @@ return [
         'name' => 'Afficher le nombre d\'annonces',
         'instructions' => 'Les annonces diffusées comptent dans la liste des catégories de gauche',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Masquer l\'ID et la date de création',
-        'instructions' => 'Masquer l\'identifiant et la date de création dans la page de détail des annonces',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Masquer l\'en-tête de l\'annonce',
