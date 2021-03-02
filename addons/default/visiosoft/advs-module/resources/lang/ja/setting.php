@@ -203,9 +203,9 @@ return [
         'name' => '広告数を表示',
         'instructions' => '左側のカテゴリリストに広告数を表示する',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'IDと作成日を非表示',
-        'instructions' => '広告の詳細ページでIDと作成日を非表示にする',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'リストヘッダーを非表示',
