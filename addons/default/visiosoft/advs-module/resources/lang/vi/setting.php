@@ -203,9 +203,9 @@ return [
         'name' => 'Hiển thị Số lượng Quảng cáo',
         'instructions' => 'Số lượng quảng cáo hiển thị trên danh sách danh mục bên trái',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Ẩn ID và Ngày tạo',
-        'instructions' => 'Ẩn ID và ngày tạo trong trang chi tiết quảng cáo',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Ẩn tiêu đề danh sách',
