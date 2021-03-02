@@ -203,9 +203,9 @@ return [
         'name' => '광고 수 표시',
         'instructions' => '왼쪽 카테고리 목록에 광고 개수 표시',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'ID 및 만든 날짜 숨기기',
-        'instructions' => '광고 상세 페이지에서 ID 및 생성 날짜 숨기기',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => '목록 헤더 숨기기',
