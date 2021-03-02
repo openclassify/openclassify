@@ -482,9 +482,10 @@ class AdvsController extends PublicController
             $id = $seo;
             $adv = $this->adv_repository->getListItemAdv($id);
         }
-        if (auth()->user()->hasRole('admin') or ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id()))) {
+
+        if ((auth()->user() and auth()->user()->hasRole('admin')) or ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id()))) {
             // Check if created by exists
-            if (!auth()->user()->hasRole('admin') and !$adv->created_by) {
+            if ((auth()->user() and !auth()->user()->hasRole('admin')) and !$adv->created_by) {
                 $this->messages->error('visiosoft.module.advs::message.this_ad_is_not_valid_anymore');
                 return $this->redirect->route('visiosoft.module.advs::list');
             }
