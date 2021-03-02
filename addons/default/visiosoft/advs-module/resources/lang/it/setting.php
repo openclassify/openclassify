@@ -203,9 +203,9 @@ return [
         'name' => 'Mostra conteggio annunci',
         'instructions' => 'Mostra il conteggio degli annunci nell\'elenco delle categorie a sinistra',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Nascondi ID e data di creazione',
-        'instructions' => 'Nascondi ID e data di creazione nella pagina dei dettagli degli annunci',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Nascondi intestazione elenco',
