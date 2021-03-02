@@ -203,9 +203,9 @@ return [
         'name' => 'İlan Sayısını Göster',
         'instructions' => 'Soldaki kategori listesinde ilan sayısını göster',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Kimliği ve Oluşturma Tarihi Gizle',
-        'instructions' => 'Reklam ayrıntı sayfasında kimliği ve oluşturulan tarihi gizle',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Liste Başlığını Gizle',
