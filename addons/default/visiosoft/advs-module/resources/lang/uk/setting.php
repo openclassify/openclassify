@@ -203,9 +203,9 @@ return [
         'name' => 'Показати показ оголошень',
         'instructions' => 'Показати рекламу в списку категорій ліворуч',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Сховати ідентифікатор та дату створення',
-        'instructions' => 'Сховати ідентифікатор та дату створення на сторінці деталей оголошень',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Сховати заголовок списку',
