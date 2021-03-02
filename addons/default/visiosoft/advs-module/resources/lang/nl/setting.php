@@ -203,9 +203,9 @@ return [
         'name' => 'Toon het aantal advertenties',
         'instructions' => 'Toon het aantal advertenties in de lijst met linkercategorieën',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Verberg ID en aanmaakdatum',
-        'instructions' => 'Verberg ID en aanmaakdatum op de detailpagina van advertenties',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Verberg koptekst',
