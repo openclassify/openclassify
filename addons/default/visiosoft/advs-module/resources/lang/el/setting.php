@@ -203,9 +203,9 @@ return [
         'name' => 'Εμφάνιση πλήθους διαφημίσεων',
         'instructions' => 'Εμφάνιση πλήθους διαφημίσεων στην αριστερή λίστα κατηγοριών',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Απόκρυψη αναγνωριστικού και ημερομηνίας δημιουργίας',
-        'instructions' => 'Απόκρυψη αναγνωριστικού και ημερομηνίας δημιουργίας στη σελίδα λεπτομερειών διαφημίσεων',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Απόκρυψη κεφαλίδας καταχώρισης',
