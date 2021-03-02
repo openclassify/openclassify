@@ -203,9 +203,9 @@ return [
         'name' => 'اشتہارات کی گنتی دکھائیں',
         'instructions' => 'بائیں زمروں کی فہرست میں اشتہارات کی گنتی دکھائیں',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'ID اور بنائی ہوئی تاریخ کو چھپائیں',
-        'instructions' => 'اشتہارات کے تفصیل والے صفحے میں ID اور بنائی گئی تاریخ کو چھپائیں',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'لسٹنگ ہیڈر چھپائیں',
