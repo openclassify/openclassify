@@ -204,9 +204,9 @@ return [
         'name' => 'نمایش تعداد تبلیغات',
         'instructions' => 'نمایش تعداد تبلیغات در لیست دسته های سمت چپ',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'مخفی کردن شناسه و تاریخ ایجاد شده',
-        'instructions' => 'شناسه و تاریخ ایجاد شده را در صفحه جزئیات تبلیغات پنهان کنید',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'پنهان کردن عنوان لیست',
