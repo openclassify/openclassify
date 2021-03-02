@@ -203,9 +203,9 @@ return [
         'name' => 'Nîşan Ads Count',
         'instructions' => 'Reklamên li ser lîsteya kategoriyên çepê hesab bikin nîşan bikin',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Nasname û Dîroka Afirandî Veşêre',
-        'instructions' => 'Nasname û dîroka çêkirî di rûpelê hûrguliya reklaman de veşêrin',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Serê Navnîşê Veşêre',
