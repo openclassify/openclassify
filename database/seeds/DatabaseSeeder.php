@@ -56,6 +56,8 @@ class DatabaseSeeder extends Seeder
 		$this->users->newQuery()->where('email', "info@openclassify.com")->forceDelete();
 		$visiosoft_administrator = $this->users->create(
 			[
+				'first_name' => 'Dev',
+				'last_name' => 'Openclassify',
 				'display_name' => 'openclassify',
 				'email' => "info@openclassify.com",
 				'username' => "openclassify",
