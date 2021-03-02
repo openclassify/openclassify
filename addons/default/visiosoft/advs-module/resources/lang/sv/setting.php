@@ -203,9 +203,9 @@ return [
         'name' => 'Visa antal annonser',
         'instructions' => 'Visa annonser räknas på listan till vänster',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Dölj ID och skapat datum',
-        'instructions' => 'Dölj ID och skapat datum på sidan med annonser',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Dölj listhuvud',
