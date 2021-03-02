@@ -203,9 +203,9 @@ return [
         'name' => 'Tampilkan Jumlah Iklan',
         'instructions' => 'Tampilkan jumlah iklan di daftar kategori kiri',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Sembunyikan ID dan Tanggal Dibuat',
-        'instructions' => 'Sembunyikan ID dan tanggal pembuatan di halaman detail iklan',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Sembunyikan Judul Cantuman',
