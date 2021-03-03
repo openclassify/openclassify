@@ -15,7 +15,7 @@
     }
   ],
   "require": {
-    "php": "^7.2|^7.3|^8.0",
+    "php": "^7.2.*|^7.3|^8.0",
     "wikimedia/composer-merge-plugin": "~1.4.0",
     "anomaly/streams-composer-plugin": "~1.1.0",
     "visiosoft/streams-platform": "^1.7",
