@@ -384,7 +384,7 @@ return [
 	'favicon' => [
 		'type' => 'anomaly.field_type.file',
 	],
-	'ads_id_date_hidden' => [
+	'ads_date_hidden' => [
 		'type' => 'anomaly.field_type.boolean',
 		'config' => [
 			'default_value' => false,

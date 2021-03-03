@@ -68,6 +68,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
         'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
         'profile/close-account' => [
+            'middleware' => 'auth',
         	'as' => 'visiosoft.module.profile::profile_close_account',
 	        'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount'
         ],
