@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'País de anúncios padrão',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Chave da API do conversor de moeda'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Exibir contagem de anúncios na lista de categorias à esquerda',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Ocultar data de criação',
+        'instructions' => 'Ocultar data de criação na página de detalhes de anúncios',
     ],
 	'hide_listing_header' => [
 		'name' => 'Ocultar cabeçalho da lista',
