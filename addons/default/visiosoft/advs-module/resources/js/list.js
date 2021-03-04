@@ -68,7 +68,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#approved').html("Onaylandi");
                 $('#declined').html('Reddet');
             },
@@ -87,7 +86,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#declined').html('Reddedildi');
                 $('#approved').html('Onayla');
             },
@@ -106,7 +104,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#declined').html('Reddet');
                 $('#approved').html('Onayla');
                 $('#passive').html('Aktif Et').attr('id', 'pending_admin');
@@ -126,7 +123,6 @@ $(document).ready(function () {
             type: 'get',
             url: '/admin/class/actions/' + id + "," + type,
             success: function (response) {
-                hideLoader()
                 $('#declined').html('Reddet');
                 $('#approved').html('Onayla');
                 $('#pending_admin').html('Pasif Et').attr('id', 'passive');
@@ -149,34 +145,32 @@ $(document).ready(function () {
         filter.checkUser();
     });
 
-    // User filter
-    $("select[name=filter_User]").select2({
-        placeholder: $('select[name=filter_User] option:first-child').text(),
-        ajax: {
-            url: '/api/profile/query-users',
-            dataType: 'json',
-            processResults: function (data) {
-                let formattedData = [];
-
-                Object.keys(data).forEach(function (id) {
-                    formattedData.push({
-                        'id': id,
-                        'text': data[id]
-                    })
-                })
-
-                return {
-                    results: formattedData
-                }
-            }
-        }
-    });
-
     // Country filter
-    $("select[name=filter_country]").select2({
+    const locationFilter = $("select[name=filter_country]")
+    locationFilter.select2({
         placeholder: $('select[name=filter_country] option:first-child').text()
     });
+    locationFilter.change(function () {
+        if ($(this).val()) {
+            getCities($(this).val())
+        }
+    }).trigger('change');
+
+    // City filter
+    $("select[name=filter_City]").select2({
+        placeholder: $('select[name=filter_City] option:first-child').text()
+    });
 });
+
+function getCities(country) {
+    return crudAjax(`id=${country}`, '/ajax/getCities', 'POST', () => {}, true)
+        .then(function (cities) {
+            $('select[name="filter_City"]').html("<option value=''>" + $('select[name=filter_City] option:first-child').text() + "</option>");
+            $.each(cities, function (index, value) {
+                $('select[name="filter_City"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
+            });
+        })
+}
 
 $("#listFilterForm").submit(function(e) {
     // Disable unselected inputs

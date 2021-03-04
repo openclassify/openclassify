@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use Rinvex\Subscriptions\Models\Plan;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
+use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\CloudsiteModule\CloudsiteModule;
@@ -222,9 +223,14 @@ class MyProfileController extends PublicController
 
     }
 
-    public function myAds()
+    public function myAds(StatusRepositoryInterface $statusRepository)
     {
-        return $this->view->make('visiosoft.module.profile::profile/ads');
+        $userStatus = $statusRepository->getUserAccessibleStatuses()->pluck('name', 'id')->toJson();
+        $changeStatusUrl = route('visiosoft.module.advs::ad.change.status', [':adID', ':statusID']);
+        return $this->view->make(
+            'visiosoft.module.profile::profile/ads',
+            compact('userStatus', 'changeStatusUrl')
+        );
     }
 
     public function updateAjaxProfile(UserRepositoryInterface $user)

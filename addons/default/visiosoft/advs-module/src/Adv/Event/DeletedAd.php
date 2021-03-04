@@ -13,5 +13,9 @@ class DeletedAd
     {
         return $this->ad;
     }
-}
 
+    public function getEntry()
+    {
+        return $this->ad;
+    }
+}

@@ -25,7 +25,7 @@ return [
     'no_add_found' => 'İlan Bulunamadı!',
     'replicated_success' => 'İlan başarıyla kopyalandı!',
     'ad_doesnt_exist' => "Bu ilan mevcut değil!",
-    'select_location_error' => "Lütfen haritada bir yer seçin!",
+    'select_location_error' => "Lütfen haritada bir nokta seçin!",
     'this_ad_is_not_valid_anymore' => "Bu ürün veya ilan artık geçerli değil!",
     'approve_status_change' => "İlanın Durumu Etkin Olarak Ayarlandı!",
     'passive_status_change' => "İlanınızın Durumu Pasif Olarak Ayarlandı!",

@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller;
 
-use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
@@ -11,7 +10,6 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
-use Illuminate\Support\Str;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
@@ -486,9 +484,9 @@ class AdvsController extends PublicController
             $adv = $this->adv_repository->getListItemAdv($id);
         }
 
-        if ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id())) {
+        if ((auth()->user() and auth()->user()->hasRole('admin')) or ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id()))) {
             // Check if created by exists
-            if (!$adv->created_by) {
+            if ((auth()->user() and !auth()->user()->hasRole('admin')) and !$adv->created_by) {
                 $this->messages->error('visiosoft.module.advs::message.this_ad_is_not_valid_anymore');
                 return $this->redirect->route('visiosoft.module.advs::list');
             }
@@ -544,7 +542,8 @@ class AdvsController extends PublicController
                 }
             }
 
-            $metaTitle = $adv->name . " " . end($categories)['name'] . ' ' . setting_value('streams::domain');
+            $metaCatName = end($categories) ? end($categories)['name'] : '|';
+            $metaTitle = $adv->name . " " . $metaCatName . ' ' . setting_value('streams::domain');
             $metaDesc = strip_tags($adv->advs_desc, '');
 
             if (is_module_installed('visiosoft.module.seo')) {
@@ -654,8 +653,8 @@ class AdvsController extends PublicController
             $this->messages->error(trans('visiosoft.module.advs::message.delete_author_error'));
         }
 
-        $advs->softDeleteAdv($id);
-        $this->messages->error(trans('visiosoft.module.advs::message.success_delete'));
+        $ad->delete();
+        $this->messages->success(trans('visiosoft.module.advs::message.success_delete'));
         return back();
     }
 
@@ -1052,22 +1051,20 @@ class AdvsController extends PublicController
 
     public function addCart(Request $request)
     {
-        if (\auth()->check()) {
-            $id = $request->id;
-            $quantity = $request->quantity;
-            $name = $request->name;
-            $thisModel = new AdvModel();
-            $adv = $thisModel->isAdv($id);
-            $response = array();
-            if ($adv) {
-                $cart = $thisModel->addCart($adv, $quantity, $name);
-                $response['status'] = "success";
-            } else {
-                $response['status'] = "error";
-                $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
-            }
+        $id = $request->id;
+        $quantity = $request->quantity;
+        $name = $request->name;
+        $thisModel = new AdvModel();
+        $adv = $thisModel->isAdv($id);
+        $response = array();
+        if ($adv) {
+            $cart = $thisModel->addCart($adv, $quantity, $name);
+            $response['status'] = "success";
+            $count = $cart->getItems()->count;
+            $response['count'] = $count;
         } else {
-            $response['status'] = "guest";
+            $response['status'] = "error";
+            $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
         }
         return $response;
     }

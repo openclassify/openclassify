@@ -2,10 +2,10 @@
 
 return [
     'post_ad' => [
-        'name' => 'Elan göndər',
+        'name' => 'Elan əlavə et',
     ],
     'login' => 'Daxil ol',
-    'register' => 'Qeydiyyatdan keçin',
+    'register' => 'Qeydiyyat',
     'continue' => 'Davam edin',
     'reset_password' => 'Parolu sıfırlamak',
     'email' => 'Elektron poçt',

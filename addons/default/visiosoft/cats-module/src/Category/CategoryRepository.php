@@ -119,4 +119,46 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
     {
         return $this->newQuery()->whereNotNull('deleted_at')->get();
     }
+
+	public function getMainAndSubCats()
+	{
+		$dBName = 'cats_category';
+		$dBNamet = $dBName . '_translations';
+
+		$catsDB = DB::table($dBName . ' as c1')
+			->select(
+				'c1.id',
+				'c1.slug',
+				'c1.parent_category_id',
+				'c1.icon_id',
+				't1.name',
+				'c2.id as c2_id',
+				'c2.slug as c2_slug',
+				'c2.parent_category_id as c2_parent_category_id',
+				't2.name as c2_name',
+				'file.id as file_id'
+			)
+			->leftJoin($dBName . ' as c2', function ($join) {
+			    $join->on('c2.parent_category_id', '=', 'c1.id')
+                    ->whereNull('c2.deleted_at');
+            })
+			->leftJoin($dBNamet . ' as t1', function ($join) use ($dBNamet) {
+			    $join->on('c1.id', '=', 't1.entry_id')
+                    ->where('t1.locale', Request()->session()->get('_locale', setting_value('streams::default_locale')));
+            })
+			->leftJoin($dBNamet . ' as t2', function ($join) use ($dBNamet) {
+			    $join->on('c2.id', '=', 't2.entry_id')
+                    ->where('t2.locale', Request()->session()->get('_locale', setting_value('streams::default_locale')));
+            })
+			->leftJoin('files_files as file', 'c1.icon_id', 'file.id')
+			->whereNull('c1.deleted_at')
+			->whereNull('c1.parent_category_id')
+			->orderBy('c1.sort_order')
+			->orderBy('c2.sort_order')
+			->get();
+		$cats = collect([]);
+		$cats->subcats = $catsDB;
+		$cats->maincats = $catsDB->unique('id');
+		return $cats;
+	}
 }

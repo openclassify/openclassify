@@ -7,6 +7,7 @@ return [
             'general' => [
                 'title' => 'visiosoft.module.advs::section.general',
                 'fields' => [
+                	'favicon',
                     'market_place',
                     'show_lang_url',
                     'iban_numbers',
@@ -36,6 +37,13 @@ return [
                     'show_ads_count',
                 ],
             ],
+	        'ads_detail' => [
+	        	'title' => 'visiosoft.module.advs::section.ads_detail',
+		        'fields' => [
+			        'ads_date_hidden',
+			        'hide_seller_info',
+		        ]
+	        ],
             'create_ad' => [
                 'title' => 'visiosoft.module.advs::section.create_ad',
                 'fields' => [
@@ -78,7 +86,8 @@ return [
             'filter' => [
                 'title' => 'visiosoft.module.advs::section.filter',
                 'fields' => [
-                    'hide_price_filter', 'hide_date_filter', 'hide_photo_filter', 'hide_map_filter', 'user_filter_limit'
+                    'hide_filter_section', 'hide_price_filter', 'hide_date_filter', 'hide_photo_filter', 'hide_map_filter',
+	                'hide_listing_header', 'user_filter_limit',
                 ],
             ],
             'translations' => [

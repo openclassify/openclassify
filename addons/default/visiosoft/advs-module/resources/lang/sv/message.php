@@ -29,4 +29,5 @@ return [
     'this_ad_is_not_valid_anymore' => "Denna annons är inte giltig längre!",
     'approve_status_change' => "Din annons har ställts in som aktiv!",
     'passive_status_change' => "Din annons har blivit passiv!",
+	'sold_status_change' => "Din annons har ställts in såld!",
 ];

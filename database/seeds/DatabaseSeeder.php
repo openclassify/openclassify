@@ -14,6 +14,7 @@ use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Database\Seeder;
 use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
@@ -55,6 +56,8 @@ class DatabaseSeeder extends Seeder
 		$this->users->newQuery()->where('email', "info@openclassify.com")->forceDelete();
 		$visiosoft_administrator = $this->users->create(
 			[
+				'first_name' => 'Dev',
+				'last_name' => 'Openclassify',
 				'display_name' => 'openclassify',
 				'email' => "info@openclassify.com",
 				'username' => "openclassify",
@@ -205,5 +208,7 @@ class DatabaseSeeder extends Seeder
                 'disk' => $disk
             ]);
         };
-	}
+
+        Artisan::call('assets:clear');
+    }
 }

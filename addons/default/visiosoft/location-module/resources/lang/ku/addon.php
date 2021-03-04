@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'شوێن',
-    'name'        => 'Modula Cihê',
-    'description' => 'Terîf',
+    'name'        => 'مۆدیلی شوێن',
+    'description' => 'دەربارە',
 ];

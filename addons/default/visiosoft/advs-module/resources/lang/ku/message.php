@@ -7,7 +7,7 @@ return [
 ',
     'bank_account_info' => 'زانیاری هەژماری بانک
 ',
-    'agreement' => 'By clicking Publish, you agree to our Terms of Use and Privacy Policy acknowledge that you are the rightful owner of this item.
+    'agreement' => 'بە کرتە کردنی یلا لە مەرجی بەکارهێنان و سیاسەتی تایبەت بە ئێمە ڕازیت کە خاوەنی ڕاستەقینەی ئەم بەرهەمەیت
 
 ',
     'update_category_msg' => 'کەتێگۆریی ڕیکلام نوێ دەکرێتەوە
@@ -27,9 +27,9 @@ return [
 ',
     'delete_author_error' => 'ناتوانی پۆستێک بسڕیتەوە کە هی تۆ نەبێت
 ',
-    'success_delete' => 'ڕێکلامی سڕایەوە
+    'success_delete' => 'ڕیکلام سڕایەوە
 ',
-    'pending_ad_status' => 'ڕیکلامەکەت لەلایەن ئیدیتۆرەوە پەسەندکراوە.
+    'pending_ad_status' => 'ڕیکلامەکەت چاوەڕێی پەسەندکردنی بەڕێوەبەرەکەیە
 ',
     'extended' => 'ژمارەی ڕیکلامی سەرکەوتوو درێژکرایەوە:
 ',
@@ -42,19 +42,19 @@ return [
 ',
     'owner_updated_successfully' => '! خاوەنەکە بە سەرکەوتوویی نوێ کرایەوە
 ',
-    'no_add_found' => '! ڕیکلامێک نەدۆزراوەتەوە',
+    'no_add_found' => '! هیچ ڕیکلامێک نەدۆزراوەتەوە',
     'replicated_success' => '! ڕیکلامەکە بە سەرکەوتوویی پێشکەش کرا
 ',
     'ad_doesnt_exist' => "! ئەم ڕیکلامە بەردەست نییە
 ",
     'select_location_error' => "! تکایە شوێنێك لەسەر نەخشەکە هەڵبژێرە
 ",
-    'this_ad_is_not_valid_anymore' => "! ئەم ڕیکلامە چیتر دروست نییە
+    'this_ad_is_not_valid_anymore' => "! چیتر ئەم ڕیکلامە بەردەست نییە
+
 ",
     'approve_status_change' => "! دۆخی ڕیکلامەکەت وەک چالاک ڕێکخراوە
 ",
     'passive_status_change' => "! دۆخی ڕیکلامەکەت وەکو ناچالاک ڕێکخراوە
 ",
-	'sold_status_change' => "! دۆخی ڕیکلامەکەت رێکخراو وەک فرۆشراوە
-",
+	'sold_status_change' => "! دۆخی ڕیکلامەکەت وەکو فرۆشراوە ڕێکخراوە ",
 ];

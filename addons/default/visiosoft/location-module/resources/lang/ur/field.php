@@ -36,4 +36,8 @@ return [
     ],
     'selected' => 'منتخب شدہ',
     'choose_an_option' => 'ایک آپشن منتخب کریں ...',
+	'abv' => [
+		'name' => 'مخفف',
+	],
+	'location' => 'مقام',
 ];

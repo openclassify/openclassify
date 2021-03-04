@@ -95,33 +95,40 @@ getMyAdvs(type);
 function addAdsRow(id, href, image, name, formatted_price, city, country, cat1, cat2, status) {
     city =  (city) ? city : '';
     country =  (country) ? country : '';
-    return "<div class='col-md-12 mb-2 profile-ads border-bottom border-white'>\n" +
-        "<div class='row bg-light'>\n" +
-        "<div class='col-md-2 justify-content-center align-self-center border-right border-white'>\n" +
-        "<img class='img-thumbnail' src='" + image + "' alt='" + name + "'>\n" +
-        "</div>\n" +
-        "<div class='col-md-7 justify-content-center align-self-center border-right border-white'>\n" +
-        "<div class='row'>\n" +
-        "<div class='col-md-10'>\n" +
-        "<a href='" + href + "' class='text-dark'>\n" +
-        "<p>" + name + "</p>\n</a>" +
-        "</div>\n" +
-        "<div class='col-md-2 text-right'>\n" +
-        dropdownRow(id, status) +
-        "</div>\n" +
-        "<div class='col-md-12 text-truncate'>\n" +
-        "<small class='text-muted'>" + cat1 + ", " + cat2 + "</small>\n" +
-        "</div>\n" +
-        "</div>\n" +
-        "</div>\n" +
-        "<div class='col-md-3 text-left justify-content-center align-self-center'>\n" +
-        "<div class='row'>\n" +
-        "<div class='col-md-12'>\n" +
-        "<b>" + formatted_price + "</b>\n" +
-        "</div>\n" +
-        "<div class='col-md-12 justify-content-center align-self-center text-truncate'>\n" +
-        "<small>" + city + " " + country + "</small>\n" +
-        "</div>\n</div>\n</div>\n</div>\n\n</div>";
+    return `
+        <div class='col-md-12 mb-2 profile-ads border-bottom border-white'>
+            <div class='row bg-light'>
+                <div class='col-md-2 justify-content-center align-self-center border-right border-white'>
+                    <img class='img-thumbnail' src='${image}' alt='${name}'>
+                </div>
+                <div class='col-md-7 justify-content-center align-self-center border-right border-white'>
+                    <div class='row'>
+                        <div class='col-md-10'>
+                            <a href='${href}' class='text-dark'>
+                                <p>${name}</p>
+                            </a>
+                        </div>
+                        <div class='col-md-2 text-right'>
+                            ${dropdownRow(id, status)}
+                        </div>
+                        <div class='col-md-12 text-truncate'>
+                            <small class='text-muted'>${cat1}, ${cat2}</small>
+                        </div>
+                    </div>
+                </div>
+                <div class='col-md-3 text-left justify-content-center align-self-center'>
+                    <div class='row'>
+                        <div class='col-md-12'>
+                            <b>${formatted_price}</b>
+                        </div>
+                        <div class='col-md-12 justify-content-center align-self-center text-truncate'>
+                            <small>${city} ${country}</small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    `;
 }
 
 function dropdownRow(id, type) {
@@ -157,6 +164,29 @@ function dropdownRow(id, type) {
         extend_ad +
         "</a>\n";
 
+    if (Object.keys(userStatus).length) {
+        let statusItems = ''
+        for (const status in userStatus) {
+            statusItems += `
+            <li>
+                <a class="dropdown-item"
+                    href="${statusChangeLink.replace(':adID', id).replace(':statusID', status)}">
+                    ${userStatus[status]}
+                </a>
+            </li>
+        `
+        }
+
+        dropdown += `
+        <li class="dropdown-submenu dropleft">
+            <button type="button" class="btn dropdown-item dropdown-toggle">${changeStatusTrans}</button>
+            <ul class="dropdown-menu">
+                ${statusItems}
+            </ul>
+          </li>
+        `;
+    }
+
     dropdown += "</div></div>";
 
     return dropdown;
@@ -166,6 +196,21 @@ function addDropdownBlock() {
     const dropdowns = $('.my-ads-dropdown')
     for (let i = 0; i < dropdowns.length; i++) {
         const currentDropdown = $(dropdowns[i])
-        $('.dropdown-menu', currentDropdown).append(dropdownBlock.replace(':id', currentDropdown.data('id')))
+        $('> .dropdown-menu', currentDropdown).append(dropdownBlock.replace(':id', currentDropdown.data('id')))
     }
 }
+
+// Nested dropdown
+$('.tab-pane').on('click', '.dropdown-menu button.dropdown-toggle', function(e) {
+    if (!$(this).next().hasClass('show')) {
+        $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
+    }
+    var $subMenu = $(this).next('.dropdown-menu');
+    $subMenu.toggleClass('show');
+
+    $(this).parents('.my-ads-dropdown.show').on('hidden.bs.dropdown', function(e) {
+        $('.dropdown-submenu .show').removeClass('show');
+    });
+
+    return false;
+});

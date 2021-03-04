@@ -36,4 +36,8 @@ return [
     ],
     'selected' => 'Đã chọn',
     'choose_an_option' => 'Chọn một sự lựa chọn...',
+	'abv' => [
+		'name' => 'Viết tắt',
+	],
+	'location' => 'Vị trí',
 ];

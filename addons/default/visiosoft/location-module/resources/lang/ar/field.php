@@ -36,4 +36,8 @@ return [
     ],
     'selected' => 'المحدد',
     'choose_an_option' => 'إختر خيار...',
+	'abv' => [
+		'name' => 'اختصار',
+	],
+	'location' => 'موقع',
 ];

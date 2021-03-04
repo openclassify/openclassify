@@ -5,5 +5,5 @@ return [
     '403_title' => 'Yasak',
     '404_message' => 'Aradığınız sayfa bulunamadı.',
     '403_message' => 'Sitedeki bu kaynaklara erişim reddedildi!',
-    'home_page' => 'Ana sayfaya git',
+    'home_page' => 'Ana Sayfaya Git',
 ];

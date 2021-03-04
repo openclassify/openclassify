@@ -17,4 +17,8 @@ interface CategoryRepositoryInterface extends EntryRepositoryInterface
     public function getLevelById($id);
 
     public function getDeletedCategories();
+
+    public function DeleteCategories($id);
+
+	public function getMainAndSubCats();
 }

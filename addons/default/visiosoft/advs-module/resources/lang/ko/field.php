@@ -322,6 +322,8 @@ return [
     'upload_files' => '파일 업로드하다',
     'additional_fields' => '추가 필드',
     'ad_location' => '광고 위치',
+    'owner' => '소유자',
+    'default_owner_instruction' => '사용자가 선택되지 않은 경우 소유자는 기본적으로 현재 사용자로 설정됩니다.',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',

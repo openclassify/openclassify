@@ -45,7 +45,7 @@ class ProfileModulePlugin extends Plugin
 
                     return $ad;
                 }
-            )
+            ),
         ];
     }
 }

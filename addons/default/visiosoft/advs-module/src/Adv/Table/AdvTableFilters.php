@@ -40,7 +40,7 @@ class AdvTableFilters
                     'query' => CategoryFilterQuery::class,
                     'options' => $categories,
                 ],
-                'User' => [
+                'user' => [
                     'exact' => true,
                     'filter' => 'select',
                     'query' => UserFilterQuery::class,

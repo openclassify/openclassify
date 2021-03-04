@@ -63,7 +63,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 });
             }
         }
-        if (!setting_value('visiosoft.module.location::hide_location_filter') and isset($param['country'])) {
+        if (!setting_value('visiosoft.module.location::hide_location_filter')) {
             $country = !empty($param['country']) ? $param['country'] : setting_value('visiosoft.module.location::default_country');
             if ($country) {
                 $query = $query->where('country_id', $country);
@@ -459,7 +459,9 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $advs = $this->newQuery()->where('id', $allAds);
         }
         $newDate = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . setting_value('visiosoft.module.advs::default_published_time') . ' day'));
-        return $advs->update(['finish_at' => $newDate]);
+        return $advs
+            ->where('slug', '!=', '')
+            ->update(['finish_at' => $newDate]);
     }
 
     public function getByUsersIDs($usersIDs, $status = 'approved', $withDraft = false)

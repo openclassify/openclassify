@@ -164,8 +164,6 @@
             data: "cat=" + cat	+ "&level=" + level,
             url: "{{ url_route('visiosoft.module.advs::ajax') }}",
             success: function(msg){
-                hideLoader()
-                console.log(msg);
                 $('.'+elem).find('option').remove();
                 $('.'+elem).append('<option value="">Choose an option...</option>');
                 $.each(msg, function(key, value){
@@ -217,8 +215,6 @@
             data: "cat=" + cat	+ "&level=" + level,
             url: "{{ url_route('visiosoft.module.advs::ajaxCategory') }}",
             success: function(msg){
-                hideLoader()
-                console.log(msg);
                 if(msg.length>0){
                     if(level!=0){
                         $('#category'+level).find('option').remove();

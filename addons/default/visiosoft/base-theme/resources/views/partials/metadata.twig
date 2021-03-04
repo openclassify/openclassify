@@ -1,5 +1,5 @@
 <!-- VueJS Requirements -->
-<meta name="csrf-token" content="{{ csrf_token() }}" />
+<meta name="csrf-token" content="{{ csrf_token() }}"/>
 
 <!-- To the Future! -->
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -7,7 +7,10 @@
 {% include "visiosoft.theme.base::partials/metatags" %}
 
 <!-- Favicon -->
-{#{{ favicons("theme::img/favicon.png") }}#}
+{% set favicon = file(setting_value('visiosoft.module.advs::favicon')).url %}
+{% if favicon %}
+    {{ favicons(favicon) }}
+{% endif %}
 
 {# Base Theme Components #}
 {{ asset_add("theme.css", "visiosoft.theme.base::css/base.css") }}

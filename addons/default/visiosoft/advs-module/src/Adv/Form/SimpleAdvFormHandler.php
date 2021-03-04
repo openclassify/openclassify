@@ -18,7 +18,7 @@ class SimpleAdvFormHandler
         $builder->saveForm();
 
         $ad = $advRepository->find($builder->getFormEntryId());
-        if ($ad->status !== 'approved') {
+        if (!$builder->getFormValue('status') && $ad->status !== 'approved') {
             $ad->approve();
         }
 

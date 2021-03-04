@@ -1,13 +1,12 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Table;
 
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
-use Anomaly\Streams\Platform\Entry\EntryModel;
 
 class AdvTableButtons
 {
     public function handle(AdvTableBuilder $builder)
     {
-        $builder->setButtons([
+        $buttons = [
             'status' => [
                 'text' => function (EntryInterface $entry) {
                     $text_type = ($entry->getStatus() == 'approved') ? 'decline' : 'approve';
@@ -25,11 +24,19 @@ class AdvTableButtons
                     return ($entry->getStatus() == 'approved') ? "danger" : "success";
                 },
             ],
-            'edit',
             'settings' => [
                 'text' => false,
                 'href' => false,
                 'dropdown' => [
+                    'edit' => [
+                        'icon' => null,
+                        'href' => function (EntryInterface $entry) {
+                            return route('visiosoft.module.advs::edit_adv', [$entry->id]);
+                        },
+                    ],
+                    'fast_edit' => [
+                        'href' => '/admin/advs/edit/{entry.id}'
+                    ],
                     'change_owner' => [
                         'data-toggle' => 'modal',
                         'data-target' => '#modal',
@@ -44,7 +51,11 @@ class AdvTableButtons
                         'href' => route('visiosoft.module.advs::configrations.create') . "?ad={entry.id}"]
                 ]
             ]
-        ]);
+        ];
+
+        $builder->setButtons($buttons);
+
+        return $buttons;
     }
 
 }

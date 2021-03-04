@@ -322,6 +322,8 @@ return [
     'upload_files' => 'Încărca fișiere',
     'additional_fields' => 'Câmpuri suplimentare',
     'ad_location' => 'Locația anunțului',
+    'owner' => 'Proprietar',
+    'default_owner_instruction' => 'Proprietarul va folosi implicit utilizatorul curent dacă nu este selectat niciun utilizator',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
