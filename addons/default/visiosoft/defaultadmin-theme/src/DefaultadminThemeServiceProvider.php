@@ -17,12 +17,6 @@ use Visiosoft\DefaultadminTheme\Listener\ApplySorting;
  */
 class DefaultadminThemeServiceProvider extends AddonServiceProvider
 {
-
-    /**
-     * The addon listeners.
-     *
-     * @var array
-     */
     protected $listeners = [
         SortNavigation::class => [
             ApplySorting::class,
@@ -33,9 +27,6 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
         ],
     ];
 
-    /**
-     * Register the addon.
-     */
     public function register()
     {
         AbstractPaginator::$defaultView       = 'visiosoft.theme.defaultadmin::pagination/bootstrap-4';

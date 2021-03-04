@@ -71,7 +71,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function userAdv($nullable_ad = false, $checkRole = true)
     {
-        if (Auth::user()->hasRole('admin') && $checkRole) {
+        if ($user = Auth::user() and $user->hasRole('admin') && $checkRole) {
             return $this->getAdv(null, $nullable_ad);
         } else {
             return $this->getAdv(null, $nullable_ad)
@@ -410,5 +410,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
             'publish_at' => date('Y-m-d H:i:s')
         ]);
+    }
+
+    public function changeStatus($status)
+    {
+        $this->update(['status' => $status]);
     }
 }

@@ -251,7 +251,9 @@
         </script>
         {{ asset_add("scripts.js", "visiosoft.module.advs::js/required-map.js") }}
     {% endif %}
-
+    <script>
+        let uploadText = "{{ trans('visiosoft.field_type.media::message.upload') }}"
+    </script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
     {{ asset_add("scripts.js", "streams::js/form/form.js") }}
     {{ asset_add("scripts.js", "streams::js/form/translations.js") }}

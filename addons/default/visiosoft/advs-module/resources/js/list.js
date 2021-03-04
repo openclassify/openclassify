@@ -146,10 +146,31 @@ $(document).ready(function () {
     });
 
     // Country filter
-    $("select[name=filter_country]").select2({
+    const locationFilter = $("select[name=filter_country]")
+    locationFilter.select2({
         placeholder: $('select[name=filter_country] option:first-child').text()
     });
+    locationFilter.change(function () {
+        if ($(this).val()) {
+            getCities($(this).val())
+        }
+    }).trigger('change');
+
+    // City filter
+    $("select[name=filter_City]").select2({
+        placeholder: $('select[name=filter_City] option:first-child').text()
+    });
 });
+
+function getCities(country) {
+    return crudAjax(`id=${country}`, '/ajax/getCities', 'POST', () => {}, true)
+        .then(function (cities) {
+            $('select[name="filter_City"]').html("<option value=''>" + $('select[name=filter_City] option:first-child').text() + "</option>");
+            $.each(cities, function (index, value) {
+                $('select[name="filter_City"]').append("<option value='" + value.id + "'>" + value.name + "</option>");
+            });
+        })
+}
 
 $("#listFilterForm").submit(function(e) {
     // Disable unselected inputs

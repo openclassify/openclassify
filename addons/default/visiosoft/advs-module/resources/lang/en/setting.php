@@ -203,6 +203,22 @@ return [
         'name' => 'Show Ads Count',
         'instructions' => 'Show ads count on the left categories list',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Hide Listing Header',
+		'instructions' => 'Hiding to ordering and view types',
+	],
+	'hide_filter_section' => [
+		'name' => 'Hide Filter Section',
+		'instructions' => 'Hiding to left filter area in listing page',
+	],
+	'hide_seller_info' => [
+		'name' => 'Hide Seller Information',
+		'instructions' => 'Hiding to seller infos in ads detail page',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',

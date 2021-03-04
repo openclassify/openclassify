@@ -18,9 +18,10 @@ class UsersController extends AdminController
         $term = request()->term;
         if ($term) {
             return $userRepository->newQuery()
-                ->select(DB::raw("CONCAT_WS('', first_name, ' ', last_name, ' (', gsm_phone, ' || ', email, ')') AS name"), 'id')
+                ->select(DB::raw("CONCAT_WS('', first_name, ' ', last_name, ' (', gsm_phone, ' || ', display_name, ' || ', email, ')') AS name"), 'id')
                 ->where('first_name', 'LIKE', "%$term%")
                 ->orWhere('last_name', 'LIKE', "%$term%")
+                ->orWhere('display_name', 'LIKE', "%$term%")
                 ->orWhere('gsm_phone', 'LIKE', "%$term%")
                 ->limit(setting_value('visiosoft.module.advs::user_filter_limit'))
                 ->pluck('name', 'id');

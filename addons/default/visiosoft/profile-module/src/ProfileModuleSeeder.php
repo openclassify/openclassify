@@ -3,6 +3,7 @@
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
+use Visiosoft\ProfileModule\Education\EducationSeeder;
 use Visiosoft\ProfileModule\Seed\UsersFieldsSeeder;
 
 class ProfileModuleSeeder extends Seeder
@@ -25,14 +26,14 @@ class ProfileModuleSeeder extends Seeder
     /**
      * Create a new FolderSeeder instance.
      *
-     * @param DiskRepositoryInterface   $disks
+     * @param DiskRepositoryInterface $disks
      * @param FolderRepositoryInterface $folders
      */
     public function __construct(DiskRepositoryInterface $disks, FolderRepositoryInterface $folders)
     {
         parent::__construct();
 
-        $this->disks   = $disks;
+        $this->disks = $disks;
         $this->folders = $folders;
     }
 
@@ -43,5 +44,8 @@ class ProfileModuleSeeder extends Seeder
     {
         // Users Fields Seeder
         $this->call(UsersFieldsSeeder::class);
+
+        //Educations Seeder
+        $this->call(EducationSeeder::class);
     }
 }
