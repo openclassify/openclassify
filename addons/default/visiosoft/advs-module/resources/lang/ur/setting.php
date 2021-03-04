@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'ڈیفالٹ ایڈ کنٹری',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'کرنسی کنورٹر API کلید'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'بائیں زمروں کی فہرست میں اشتہارات کی گنتی دکھائیں',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'بنائی گئی تاریخ چھپائیں',
+        'instructions' => 'تخلیق شدہ تاریخ کو اشتہارات کے تفصیل والے صفحے میں چھپائیں',
     ],
 	'hide_listing_header' => [
 		'name' => 'لسٹنگ ہیڈر چھپائیں',
