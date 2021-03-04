@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'デフォルトの広告国',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => '通貨コンバーターAPIキー'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => '左側のカテゴリリストに広告数を表示する',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => '作成日を非表示',
+        'instructions' => '広告詳細ページで作成日を非表示',
     ],
 	'hide_listing_header' => [
 		'name' => 'リストヘッダーを非表示',
