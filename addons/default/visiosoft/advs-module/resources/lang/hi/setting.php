@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'डिफ़ॉल्ट विज्ञापन देश',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'मुद्रा परिवर्तक एपीआई कुंजी'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'विज्ञापन को बाईं श्रेणियों की सूची में दिखाएं',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'बनाई गई तारीख छिपाएँ',
+        'instructions' => 'विज्ञापन विस्तार पृष्ठ में बनाई गई तिथि छिपाएँ',
     ],
 	'hide_listing_header' => [
 		'name' => 'लिस्टिंग हैडर छिपाएं',
