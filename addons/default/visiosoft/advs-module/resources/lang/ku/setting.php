@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Default Ad Country',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Mifteya API-ya veguherînerê Pereyê'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Reklamên li ser lîsteya kategoriyên çepê hesab bikin nîşan bikin',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Dîroka Afirandî Veşêre',
+        'instructions' => 'Di rûpela hûrguliyên reklaman de dîroka çêkirî veşêrin',
     ],
 	'hide_listing_header' => [
 		'name' => 'Serê Navnîşê Veşêre',
