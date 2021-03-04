@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Standardannonsland',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'API-nyckel för valutaomvandlare'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Visa annonser räknas på listan till vänster',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Dölj skapat datum',
+        'instructions' => 'Dölj skapat datum på sidan med annonser',
     ],
 	'hide_listing_header' => [
 		'name' => 'Dölj listhuvud',
