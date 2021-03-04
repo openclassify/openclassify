@@ -62,6 +62,10 @@ return [
     'default_country' => [
         'name' => 'کشور پیش فرض اعلان',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'کلید API تبادل ارز'
     ],
@@ -205,8 +209,8 @@ return [
         'instructions' => 'نمایش تعداد تبلیغات در لیست دسته های سمت چپ',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'پنهان کردن تاریخ ایجاد شده',
+        'instructions' => 'تاریخ ایجاد شده را در صفحه جزئیات تبلیغات پنهان کنید',
     ],
 	'hide_listing_header' => [
 		'name' => 'پنهان کردن عنوان لیست',
