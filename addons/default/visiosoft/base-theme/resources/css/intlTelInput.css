@@ -916,7 +916,7 @@
 .iti__flag {
     height: 15px;
     box-shadow: 0px 0px 1px 0px #888;
-    background-image: url('{{ img("visiosoft.theme.base::images/flags.png").url }}');
+    background-image: url('{{ img("visiosoft.theme.base::images/flags.png").path }}');
     background-repeat: no-repeat;
     background-color: #DBDBDB;
     background-position: 20px 0; }
