@@ -257,10 +257,11 @@ class AdvsController extends PublicController
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
 
 	        $foreign_currencies = json_decode($advs[$index]->foreign_currencies, true);
-	        if ($_COOKIE['currency'] && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
-		        $advs[$index]->currency = $_COOKIE['currency'];
-		        $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
-	        }
+		        if (isset($_COOKIE['currency']) && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+			        $advs[$index]->currency = $_COOKIE['currency'];
+			        $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
+		        }
+
         }
 
         if ($isActiveCustomFields) {
@@ -592,7 +593,8 @@ class AdvsController extends PublicController
 
 
 	        $foreign_currencies = json_decode($adv->foreign_currencies, true);
-	        if ($_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+
+	        if (isset($_COOKIE['currency']) && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
 		        $adv->currency = $_COOKIE['currency'];
 		        $adv->price = $foreign_currencies[$_COOKIE['currency']];
 	        }
