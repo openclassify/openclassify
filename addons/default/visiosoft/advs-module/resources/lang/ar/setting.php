@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'بلد الإعلان الافتراضي',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'تحويل العملات الرئيسية API'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'عرض الإعلانات الاعتماد على قائمة الفئات اليسرى',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'إخفاء تاريخ الإنشاء',
+        'instructions' => 'إخفاء تاريخ الإنشاء في صفحة تفاصيل الإعلانات',
     ],
 	'hide_listing_header' => [
 		'name' => 'إخفاء رأس القائمة',
