@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Країна оголошення за замовчуванням',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Ключ API конвертора валют'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Показати рекламу в списку категорій ліворуч',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Сховати дату створення',
+        'instructions' => 'Сховати дату створення на сторінці деталей оголошень',
     ],
 	'hide_listing_header' => [
 		'name' => 'Сховати заголовок списку',
