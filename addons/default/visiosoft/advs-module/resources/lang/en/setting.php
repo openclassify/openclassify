@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Default Ad Country',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Currency Converter API Key'
     ],

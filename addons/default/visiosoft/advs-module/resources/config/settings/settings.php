@@ -94,6 +94,14 @@ return [
             "default_value" => "1eea72940f3868c77420"
         ]
     ],
+    'hide_price_categories' => [
+        'type' => 'anomaly.field_type.checkboxes',
+        'config' => [
+            'options' => function (\Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface $categoryRepository) {
+                return $categoryRepository->mainCats()->pluck('name', 'id')->all();
+            },
+        ],
+    ],
     'default_GET' => [
         'type' => 'anomaly.field_type.boolean',
         'bind' => 'adv.default_GET',
