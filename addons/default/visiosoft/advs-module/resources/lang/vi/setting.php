@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Quốc gia quảng cáo mặc định',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Khóa API chuyển đổi tiền tệ'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Số lượng quảng cáo hiển thị trên danh sách danh mục bên trái',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Ẩn ngày tạo',
+        'instructions' => 'Ẩn ngày tạo trong trang chi tiết quảng cáo',
     ],
 	'hide_listing_header' => [
 		'name' => 'Ẩn tiêu đề danh sách',
