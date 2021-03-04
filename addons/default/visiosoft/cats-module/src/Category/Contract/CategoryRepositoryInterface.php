@@ -18,7 +18,5 @@ interface CategoryRepositoryInterface extends EntryRepositoryInterface
 
     public function getDeletedCategories();
 
-    public function DeleteCategories($id);
-
 	public function getMainAndSubCats();
 }
