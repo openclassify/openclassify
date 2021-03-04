@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Standaardadvertentieland',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Valutacalculator API-sleutel'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Toon het aantal advertenties in de lijst met linkercategorieën',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Aanmaakdatum verbergen',
+        'instructions' => 'Verberg de aanmaakdatum op de detailpagina van de advertenties',
     ],
 	'hide_listing_header' => [
 		'name' => 'Verberg koptekst',
