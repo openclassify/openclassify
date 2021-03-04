@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Държава на рекламата по подразбиране',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'API ключ за конвертор на валута'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Показването на рекламите се брои в списъка с леви категории',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Скриване на създадената дата',
+        'instructions' => 'Скриване на създадената дата в страницата с подробности за рекламите',
     ],
 	'hide_listing_header' => [
 		'name' => 'Скриване на заглавката на списъка',
