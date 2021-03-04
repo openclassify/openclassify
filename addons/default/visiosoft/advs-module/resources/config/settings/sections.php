@@ -14,8 +14,9 @@ return [
                     'google_statistic_code',
                     'ogImage',
                     'free_currencyconverterapi_key',
+                    'hide_price_categories',
+                    'tcmb_exchange_url',
                     'enabled_currencies',
-                    'tcmb_exchange_url'
                 ],
             ],
             'ads' => [
