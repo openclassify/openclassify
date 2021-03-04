@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Varsayılan İlan Ülkesi',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Para Birimi Dönüştürücü API Anahtarı'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Soldaki kategori listesinde ilan sayısını göster',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Oluşturulma Tarihini Gizle',
+        'instructions' => 'Reklam ayrıntı sayfasında oluşturulan tarihi gizle',
     ],
 	'hide_listing_header' => [
 		'name' => 'Liste Başlığını Gizle',
