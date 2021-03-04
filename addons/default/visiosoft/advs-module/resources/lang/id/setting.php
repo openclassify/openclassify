@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Negara Iklan Default',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Kunci API Pengonversi Mata Uang'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Tampilkan jumlah iklan di daftar kategori kiri',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Sembunyikan Tanggal Dibuat',
+        'instructions' => 'Sembunyikan tanggal pembuatan di halaman detail iklan',
     ],
 	'hide_listing_header' => [
 		'name' => 'Sembunyikan Judul Cantuman',
