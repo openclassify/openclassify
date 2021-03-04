@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Shtetet i përcaktuar i Njoftimeve',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Keyelësi API i Konvertuesit të Valutave'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Fshih datën e krijuar',
+        'instructions' => 'Fshih datën e krijuar në faqen e detajeve të reklamave',
     ],
 	'hide_listing_header' => [
 		'name' => 'Fshih titullin e listës',
