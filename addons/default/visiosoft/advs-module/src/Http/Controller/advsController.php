@@ -255,6 +255,12 @@ class AdvsController extends PublicController
         foreach ($advs as $index => $ad) {
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
+
+	        $foreign_currencies = json_decode($advs[$index]->foreign_currencies, true);
+	        if ($_COOKIE['currency'] && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+		        $advs[$index]->currency = $_COOKIE['currency'];
+		        $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
+	        }
         }
 
         if ($isActiveCustomFields) {
@@ -583,6 +589,13 @@ class AdvsController extends PublicController
 
             $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
+
+
+	        $foreign_currencies = json_decode($adv->foreign_currencies, true);
+	        if ($_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+		        $adv->currency = $_COOKIE['currency'];
+		        $adv->price = $foreign_currencies[$_COOKIE['currency']];
+	        }
 
             if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
