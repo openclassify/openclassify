@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'מדינה ברירת מחדל',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'מפתח API של ממיר מטבע'
     ],
@@ -204,8 +208,8 @@ return [
         'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'הסתר תאריך יצירה',
+        'instructions' => 'הסתר את התאריך שנוצר בדף פרטי המודעות',
     ],
 	'hide_listing_header' => [
 		'name' => 'הסתר כותרת רישום',
