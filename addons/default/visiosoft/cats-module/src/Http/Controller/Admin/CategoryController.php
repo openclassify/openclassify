@@ -213,21 +213,17 @@ class CategoryController extends AdminController
 
     public function cleanSubCategories()
     {
-//        $cats = $this->categoryRepository->getDeletedCategories();
-//
-//        $delete_category_keys = $cats->pluck('id');
-//
-//        dd($delete_category_keys);
-//
-//        foreach ($cats as $cat) {
-//            $parentCatId = $cat->parent_category_id;
-//            $parentCat = $this->categoryRepository->find($parentCatId);
-//            if (is_null($parentCat) && !is_null($parentCatId)) {
-//                $this->categoryEntryTranslationsModel->where('entry_id', $cat->id)->delete();
-//                //Todo Sub Categories
-//                $deletedCatsCount++;
-//            }
-//        }
+        $sub_c = 1;
+        for ($i = 0; $i <= $sub_c; $i++) {
+            $cats = $this->categoryRepository->getDeletedCategories();
+            $delete_category_keys = $cats->pluck('id')->all();
+            $query_delete = $this->categoryRepository->newQuery()->whereIn('parent_category_id', $delete_category_keys);
+            if ($query_delete->count()) {
+                $query_delete->delete();
+                $sub_c++;
+            }
+        }
+
         return redirect('admin/cats');
     }
 
