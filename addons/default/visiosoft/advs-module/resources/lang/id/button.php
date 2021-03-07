@@ -3,14 +3,14 @@
 return [
     'new_adv' => 'Iklan baru',
     'new_classified' => 'Iklan baru',
-    'new_category' => 'Kategori baru',
+    'new_category' => 'Kategori Baru',
     'new_country' => 'Negara Baru',
     'new_city' => 'Kota Baru',
-    'new_district' => 'Distrik Baru',
+    'new_district' => 'Kecamatan Baru',
     'new_neighborhood' => 'Lingkungan Baru',
     'new_village' => 'Desa Baru',
     'edit' => "Sunting",
-    'approve' => "Menyetujui",
+    'approve' => "Setujui",
     'decline' => 'Menurun',
     'extend' => 'Bentangkan',
     'extend_all' => 'Bentangkan Semua',
@@ -30,7 +30,7 @@ return [
     'save_category' => 'Simpan Kategori',
     'change_owner' => 'Ubah Pemilik',
     'update_category' => [
-        'name' => 'Perbarui Kategori'
+        'name' => 'Perbaharui Kategori'
     ],
     'new_option' => 'Opsi Baru',
 	'export' => 'Ekspor',
@@ -39,7 +39,7 @@ return [
     'new_options_configuration' => 'Konfigurasi Opsi baru',
     'new_option_configuration' => 'Konfigurasi Opsi baru',
 	'create_configurations' => 'Buat Konfigurasi',
-	'replicate' => 'Ulangi',
+	'replicate' => 'Ulangi Lagi',
 	'fast_create' => 'Buat cepat',
 	'publish' => 'Publikasikan',
 	'import' => 'Impor',
