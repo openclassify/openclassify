@@ -62,8 +62,8 @@ return [
         'name' => 'Negara Iklan Default',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Sembunyikan Harga Pada Kategori',
+        'instructions' => 'Harga akan disembunyikan ketika Anda membuat iklan atau melihat sebuah iklan di bawah kategori ini.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Kunci API Pengonversi Mata Uang'
