@@ -11,7 +11,7 @@ return [
     'new_village' => 'Desa Baru',
     'edit' => "Sunting",
     'approve' => "Setujui",
-    'decline' => 'Menurun',
+    'decline' => 'Tolak',
     'extend' => 'Bentangkan',
     'extend_all' => 'Bentangkan Semua',
     'convert_currency' => 'Konversi Mata Uang',
@@ -44,5 +44,5 @@ return [
 	'publish' => 'Publikasikan',
 	'import' => 'Impor',
     'new_status' => 'Status Baru',
-    'fast_edit' => 'Edit Cepat',
+    'fast_edit' => 'Sunting Cepat',
 ];
