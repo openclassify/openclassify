@@ -16,22 +16,22 @@ return [
         'instructions' => 'Dalam Jam',
     ],
     'default_published_time' => [
-        'name' => 'Waktu Penerbitan Default',
+        'name' => 'Waktu Publikasi Bawaan (default)',
     ],
     'address' => [
-        'name' => 'Hubungi Adress',
+        'name' => 'Alamat Kontak',
     ],
     'phone' => [
-        'name' => 'Hubungi Telepon',
+        'name' => 'Telepon Kontak',
     ],
     'favicon' => [
-        'name' => 'Favicon',
+        'name' => 'Ikonfav',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Peta Koordinat Panjang',
+        'name' => 'Koordinat Garis Bujur Peta',
     ],
     'map_coordinates_lat' => [
-        'name' => 'Peta Koordinat Lat',
+        'name' => 'Koordinat Garis Lintang Peta',
     ],
     'iban_numbers' => [
         'name' => 'IBAN',
@@ -40,8 +40,8 @@ return [
         'name' => 'Logo',
     ],
     'ogImage' => [
-        'name' => 'Berbagi Logo Sosial',
-        'warning'      => 'Ini harus pada resolusi 1200 x 630. ',
+        'name' => 'Logo Bagikan (media sosial)',
+        'warning'      => 'Harus pada resolusi 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,14 +52,14 @@ return [
     ],
     'site_address' => [
         'name' => 'Alamat situs',
-        'warning'      => 'Otomatis menambahkan www. www.<strong>sitename.com</strong> ',
+        'warning'      => 'Otomatis www ditambahkan. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Kunci Api Peta Google',
+        'name' => 'Kunci API Peta Google',
     ],
 
     'default_country' => [
-        'name' => 'Negara Iklan Default',
+        'name' => 'Negara Iklan Bawaan (default)',
     ],
     'hide_price_categories' => [
         'name' => 'Sembunyikan Harga Pada Kategori',
@@ -69,22 +69,22 @@ return [
         'name' => 'Kunci API Pengonversi Mata Uang'
     ],
     'default_city' => [
-        'name' => 'Kota Iklan Default',
+        'name' => 'Kota Iklan Bawaan (default)',
     ],
     'default_district' => [
-        'name' => 'Distrik Iklan Default',
+        'name' => 'Kecamatan Iklan Bawaan (default)',
     ],
     'default_neighborhood' => [
-        'name' => 'Lingkungan Iklan Default',
+        'name' => 'Lingkungan Iklan Bawaan (default)',
     ],
     'default_currency' => [
-        'name' => 'Mata Uang Iklan Default',
+        'name' => 'Mata Uang Iklan Bawan (default)',
     ],
     'default_GET' => [
-        'name' => 'Iklan Default GET',
+        'name' => ' GET Iklan Bawaan (default)',
     ],
     'twitter' => [
-        'name' => 'Indonesia',
+        'name' => 'Twitter',
     ],
     'facebook' => [
         'name' => 'Facebook',
@@ -96,27 +96,27 @@ return [
         'name' => 'Google',
     ],
     'listing_page_image' => [
-        'name' => 'Gambar Halaman Cantuman',
+        'name' => 'Gambar Halaman Daftar',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Sembunyikan Bidang Harga Standar',
+        'name' => 'Sembunyikan Baris Harga Standar',
     ],
     'hide_options_field' => [
-        'name' => 'Sembunyikan Bidang Opsi',
+        'name' => 'Sembunyikan Baris Opsi',
     ],
     'hide_village_field' => [
-        'name' => 'Sembunyikan Bidang Desa',
+        'name' => 'Sembunyikan Baris Desa',
     ],
     'hide_configurations' => [
         'name' => 'Sembunyikan Tombol Konfigurasi',
-        'instructions' => 'Sembunyikan Tombol Konfigurasi di Halaman Pratinjau Iklan',
+        'instructions' => 'Sembunyikan Tombol Konfigurasi pada Halaman Pratinjau Iklan',
     ],
     'make_map_required' => [
         'name' => 'Buat Peta Diperlukan',
-        'instructions' => 'Mewajibkan pengguna untuk menempatkan pin di peta saat membuat iklan',
+        'instructions' => 'Mewajibkan pengguna untuk menempatkan sebuah titik/pin pada peta saat membuat iklan',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Sembunyikan Daftar Harga Standar',
+        'name' => 'Sembunyikan Harga Standar Daftar',
     ],
     'enabled_currencies' => [
         'name' => 'Mata Uang yang Diaktifkan',
