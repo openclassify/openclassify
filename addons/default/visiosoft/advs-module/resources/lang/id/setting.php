@@ -5,7 +5,7 @@ return [
         'name' => 'Setujui Otomatis',
     ],
     'default_view_type' => [
-        'name' => 'Jenis Tampilan Default',
+        'name' => 'Jenis Tampilan Bawaan (default)',
     ],
     'hide_zero_price' => [
         'name' => 'Sembunyikan Harga jika Nol',
