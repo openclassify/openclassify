@@ -62,46 +62,46 @@ return [
         'option' => [
             'read'   => 'Bisa membaca opsiproduk?',
             'write'  => 'Bisakah membuat/menyunting opsiproduk?',
-            'delete' => 'Bisakah menghapus opsi produk?',
+            'delete' => 'Bisakah menghapus opsiproduk?',
         ],
     ],
     'productoptions_value' => [
-        'name'   => 'Nilai productoptions',
+        'name'   => 'Nilai opsiproduk',
         'option' => [
-            'read'   => 'Bisakah membaca nilai productoptions?',
-            'write'  => 'Bisakah membuat / mengedit nilai opsi produk?',
-            'delete' => 'Bisakah menghapus nilai productoptions?',
+            'read'   => 'Bisakah membaca nilai opsiproduk?',
+            'write'  => 'Bisakah membuat/menyunting nilai opsiproduk?',
+            'delete' => 'Bisakah menghapus nilai opsiproduk?',
         ],
     ],
     'options_configuration' => [
         'name'   => 'Konfigurasi opsi',
         'option' => [
-            'read'   => 'Dapat membaca konfigurasi opsi?',
-            'write'  => 'Dapatkah membuat / mengedit konfigurasi opsi?',
+            'read'   => 'Bisakah membaca konfigurasi opsi?',
+            'write'  => 'Bisakah membuat/menyunting konfigurasi opsi?',
             'delete' => 'Bisakah menghapus konfigurasi opsi?',
         ],
     ],
     'option_configuration' => [
         'name'   => 'Konfigurasi opsi',
         'option' => [
-            'read'   => 'Dapat membaca konfigurasi opsi?',
-            'write'  => 'Bisakah membuat / mengedit konfigurasi opsi?',
+            'read'   => 'Bisakah membaca konfigurasi opsi?',
+            'write'  => 'Bisakah membuat/menyunting konfigurasi opsi?',
             'delete' => 'Bisakah menghapus konfigurasi opsi?',
         ],
     ],
     'option_configuration' => [
         'name'   => 'Konfigurasi opsi',
         'option' => [
-            'read'   => 'Dapat membaca konfigurasi opsi?',
-            'write'  => 'Bisakah membuat / mengedit konfigurasi opsi?',
+            'read'   => 'Bisakah membaca konfigurasi opsi?',
+            'write'  => 'Bisakah membuat/menyunting konfigurasi opsi?',
             'delete' => 'Bisakah menghapus konfigurasi opsi?',
         ],
     ],
     'status' => [
         'name'   => 'Status',
         'option' => [
-            'read'   => 'Bisa membaca status?',
-            'write'  => 'Bisakah membuat / mengedit status?',
+            'read'   => 'Bisakah membaca status?',
+            'write'  => 'Bisakah membuat/menyunting status?',
             'delete' => 'Bisakah menghapus status?',
         ],
     ],
