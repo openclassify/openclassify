@@ -484,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => '교육 현황'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Notified New Updates',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Notified About Ads',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Receive Messages Email',
+    ],
 ];
