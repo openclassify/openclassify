@@ -486,4 +486,14 @@ return [
 	'education_part' => [
 		'name' => 'Estado de la educación'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Notified New Updates',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Notified About Ads',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Receive Messages Email',
+    ],
 ];
