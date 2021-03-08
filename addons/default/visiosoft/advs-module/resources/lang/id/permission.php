@@ -4,64 +4,64 @@ return [
     'advs' => [
         'name'   => 'Iklan',
         'option' => [
-            'read'   => 'Bisa membaca iklan?',
-            'write'  => 'Bisakah membuat / mengedit iklan?',
+            'read'   => 'Bisakah membaca iklan?',
+            'write'  => 'Bisakah membuat/menyunting iklan?',
             'delete' => 'Bisakah menghapus iklan?',
         ],
     ],
     'categories' => [
         'name'   => 'Kategori',
         'option' => [
-            'read'   => 'Bisa membaca kategori?',
-            'write'  => 'Bisakah membuat / mengedit kategori?',
+            'read'   => 'Bisakah membaca kategori?',
+            'write'  => 'Bisakah membuat/menyunting kategori?',
             'delete' => 'Bisakah menghapus kategori?',
         ],
     ],
     'village' => [
         'name'   => 'Desa',
         'option' => [
-            'read'   => 'Bisa membaca desa?',
-            'write'  => 'Bisakah membuat / mengedit desa?',
+            'read'   => 'Bisakah membaca desa?',
+            'write'  => 'Bisakah membuat/menyunting desa?',
             'delete' => 'Bisakah menghapus desa?',
         ],
     ],
     'custom_fields' => [
-        'name'   => 'Bidang khusus',
+        'name'   => 'Baris khusus',
         'option' => [
-            'read'   => 'Bisa membaca bidang khusus?',
-            'write'  => 'Bisakah membuat / mengedit bidang khusus?',
-            'delete' => 'Bisakah menghapus bidang khusus?',
+            'read'   => 'Bisa membaca baris khusus?',
+            'write'  => 'Bisakah membuat/menyunting baris khusus?',
+            'delete' => 'Bisakah menghapus baris khusus?',
         ],
     ],
     'custom_field_advs' => [
-        'name'   => 'Iklan bidang kustom',
+        'name'   => 'Iklan baris khusus',
         'option' => [
-            'read'   => 'Bisa membaca iklan custom field?',
-            'write'  => 'Dapatkah membuat / mengedit iklan bidang kustom?',
-            'delete' => 'Bisakah menghapus iklan bidang kustom?',
+            'read'   => 'Bisa membaca iklan baris khusus?',
+            'write'  => 'Dapatkah membuat/menyunting iklan baris khusus?',
+            'delete' => 'Bisakah menghapus iklan baris khusus?',
         ],
     ],
     'cf_values' => [
         'name'   => 'Nilai cf',
         'option' => [
-            'read'   => 'Bisa membaca nilai cf?',
-            'write'  => 'Bisakah membuat / mengedit nilai cf?',
+            'read'   => 'Bisakah membaca nilai cf?',
+            'write'  => 'Bisakah membuat/menyunting nilai cf?',
             'delete' => 'Bisakah menghapus nilai cf?',
         ],
     ],
     'options' => [
-        'name'   => 'Pilihan',
+        'name'   => 'Opsi',
         'option' => [
-            'read'   => 'Bisa membaca opsi?',
-            'write'  => 'Bisakah membuat / mengedit opsi?',
+            'read'   => 'Bisakah membaca opsi?',
+            'write'  => 'Bisakah membuat/menyunting opsi?',
             'delete' => 'Bisakah menghapus opsi?',
         ],
     ],
     'productoptions' => [
-        'name'   => 'Productoptions',
+        'name'   => 'Opsiproduk',
         'option' => [
-            'read'   => 'Bisa membaca opsi produk?',
-            'write'  => 'Bisakah membuat / mengedit pilihan produk?',
+            'read'   => 'Bisa membaca opsiproduk?',
+            'write'  => 'Bisakah membuat/menyunting opsiproduk?',
             'delete' => 'Bisakah menghapus opsi produk?',
         ],
     ],
