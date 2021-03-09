@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\DefaultadminTheme\Listener;
 
+use Anomaly\Streams\Platform\Entry\EntryModel;
 use Anomaly\Streams\Platform\Ui\Table\Component\Header\Header;
 use Illuminate\Support\Collection;
 use Anomaly\Streams\Platform\Ui\Table\Component\Filter\Type\SearchFilter;
@@ -53,7 +54,11 @@ class AddGsmFilter
         $builder->setColumns([
         	    'first_name',
                 'last_name',
-                'email',
+                'email' => [
+                    'value' => function (EntryModel $entry) {
+                        return str_ends_with($entry->email, '@example.com') ? '' : $entry->email;
+                    }
+                ],
                 'gsm_phone',
                 'created_at' => [
                     'value' => 'entry.created_at'

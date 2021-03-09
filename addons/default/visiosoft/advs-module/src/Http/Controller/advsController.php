@@ -255,6 +255,13 @@ class AdvsController extends PublicController
         foreach ($advs as $index => $ad) {
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
+
+	        $foreign_currencies = json_decode($advs[$index]->foreign_currencies, true);
+		        if (isset($_COOKIE['currency']) && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+			        $advs[$index]->currency = $_COOKIE['currency'];
+			        $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
+		        }
+
         }
 
         if ($isActiveCustomFields) {
@@ -483,9 +490,9 @@ class AdvsController extends PublicController
             $adv = $this->adv_repository->getListItemAdv($id);
         }
 
-        if ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id())) {
+        if ((auth()->user() and auth()->user()->hasRole('admin')) or ($adv && ((!$adv->expired() && $adv->getStatus() === 'approved') || $adv->created_by_id === \auth()->id()))) {
             // Check if created by exists
-            if (!$adv->created_by) {
+            if ((auth()->user() and !auth()->user()->hasRole('admin')) and !$adv->created_by) {
                 $this->messages->error('visiosoft.module.advs::message.this_ad_is_not_valid_anymore');
                 return $this->redirect->route('visiosoft.module.advs::list');
             }
@@ -583,10 +590,22 @@ class AdvsController extends PublicController
 
             $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
+	        $foreign_currencies = json_decode($adv->foreign_currencies, true);
+
+	        if (isset($_COOKIE['currency']) && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+		        $adv->currency = $_COOKIE['currency'];
+		        $adv->price = $foreign_currencies[$_COOKIE['currency']];
+	        }
+
+            // Check if hide price
+            $hidePrice = false;
+            if ($hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories')) {
+                $hidePrice = in_array($adv['cat1'], $hidePriceCats);
+            }
 
             if ($adv->created_by_id == isset(auth()->user()->id) or $adv->status == "approved") {
                 return $this->view->make('visiosoft.module.advs::ad-detail/detail', compact('adv', 'complaints',
-                    'recommended_advs', 'categories', 'features', 'options', 'configurations'));
+                    'recommended_advs', 'categories', 'features', 'options', 'configurations', 'hidePrice'));
             } else {
                 return back();
             }
@@ -943,9 +962,17 @@ class AdvsController extends PublicController
                 ->edit($adv, $categories, $cats);
         }
 
+        // Check if hide price
+        $hidePrice = false;
+        if (setting_value('visiosoft.module.advs::price_area_hidden')) {
+            $hidePrice = true;
+        } elseif ($hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories')) {
+            $hidePrice = in_array($adv['cat1'], $hidePriceCats);
+        }
+
         return $this->view->make(
             'visiosoft.module.advs::new-ad/new-create',
-            compact('id', 'cats_d', 'cats', 'Cloudinary', 'adv', 'custom_fields', 'options')
+            compact('id', 'cats_d', 'cats', 'Cloudinary', 'adv', 'custom_fields', 'options', 'hidePrice')
         );
     }
 

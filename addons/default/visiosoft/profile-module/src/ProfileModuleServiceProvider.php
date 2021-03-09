@@ -15,6 +15,7 @@ use Visiosoft\ProfileModule\Education\Contract\EducationRepositoryInterface;
 use Visiosoft\ProfileModule\Education\EducationModel;
 use Visiosoft\ProfileModule\Education\EducationRepository;
 use Visiosoft\ProfileModule\Http\Middleware\authCheck;
+use Visiosoft\ProfileModule\Http\Middleware\OGImage;
 use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
 use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
@@ -68,6 +69,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
         'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
         'profile/close-account' => [
+            'middleware' => 'auth',
         	'as' => 'visiosoft.module.profile::profile_close_account',
 	        'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount'
         ],
@@ -83,7 +85,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         // RegisterController
         'register' => [
             'middleware' => [
-                authCheck::class
+                authCheck::class,
+                OGImage::class
             ],
             'ttl' => 0,
             'uses' => 'Anomaly\UsersModule\Http\Controller\RegisterController@register',

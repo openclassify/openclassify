@@ -90,8 +90,7 @@
                                     </div>
                                 </div>
 
-                                <div class="row form-group select-price
-                                            {{ setting_value('visiosoft.module.advs::price_area_hidden') ? 'hidden' }}">
+                                <div class="row form-group select-price{{ hidePrice ? ' hidden' }}">
 
                                     <label class="col-sm-2 col-xs-12">
                                         {{ form.fields.price.label|raw }}

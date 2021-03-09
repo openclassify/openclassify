@@ -2,7 +2,7 @@
 
 return [
     'file' => [
-        'name' => 'foto\\'s'
+        'name' => 'foto\'s'
     ],
     'first_name' => [
         'name' => 'Voornaam'

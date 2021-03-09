@@ -20,7 +20,7 @@ class UsersFieldsSeeder extends Seeder
 
         $customFields = [
             [
-                'name' => 'File',
+                'name' => 'visiosoft.module.profile::field.file.name',
                 'slug' => 'file',
                 'type' => 'visiosoft.field_type.singlefile',
                 'config' => [
@@ -29,7 +29,7 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Country',
+                'name' => 'visiosoft.module.profile::field.country.name',
                 'slug' => 'country',
                 'type' => 'anomaly.field_type.relationship',
                 'config' => [
@@ -38,42 +38,42 @@ class UsersFieldsSeeder extends Seeder
                 ],
             ],
             [
-                'name' => 'City',
+                'name' => 'visiosoft.module.profile::field.city.name',
                 'slug' => 'city',
                 'type' => 'anomaly.field_type.select',
             ],
             [
-                'name' => 'District',
+                'name' => 'visiosoft.module.profile::field.district.name',
                 'slug' => 'district',
                 'type' => 'anomaly.field_type.select',
             ],
             [
-                'name' => 'Neighborhood',
+                'name' => 'visiosoft.module.profile::field.neighborhood.name',
                 'slug' => 'neighborhood',
                 'type' => 'anomaly.field_type.select',
             ],
             [
-                'name' => 'Village',
+                'name' => 'visiosoft.module.profile::field.village.name',
                 'slug' => 'village',
                 'type' => 'anomaly.field_type.select',
             ],
             [
-                'name' => 'Gsm Phone',
+                'name' => 'visiosoft.module.profile::field.gsm_phone.name',
                 'slug' => 'gsm_phone',
                 'type' => 'anomaly.field_type.text',
             ],
             [
-                'name' => 'Land Phone',
+                'name' => 'visiosoft.module.profile::field.land_phone.name',
                 'slug' => 'land_phone',
                 'type' => 'anomaly.field_type.text',
             ],
             [
-                'name' => 'Office Phone',
+                'name' => 'visiosoft.module.profile::field.office_phone.name',
                 'slug' => 'office_phone',
                 'type' => 'anomaly.field_type.text',
             ],
             [
-                'name' => 'Register Type',
+                'name' => 'visiosoft.module.profile::field.register_type.name',
                 'slug' => 'register_type',
                 'type' => 'anomaly.field_type.select',
                 "config" => [
@@ -81,12 +81,12 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Identification Number',
+                'name' => 'visiosoft.module.profile::field.identification_number.name',
                 'slug' => 'identification_number',
                 'type' => 'anomaly.field_type.text',
             ],
             [
-                'name' => 'Notified New Updates',
+                'name' => 'visiosoft.module.profile::field.notified_new_updates.name',
                 'slug' => 'notified_new_updates',
                 'type' => 'anomaly.field_type.select',
                 'config' => [
@@ -96,7 +96,7 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Notified About Ads',
+                'name' => 'visiosoft.module.profile::field.notified_about_ads.name',
                 'slug' => 'notified_about_ads',
                 'type' => 'anomaly.field_type.select',
                 'config' => [
@@ -106,7 +106,7 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'Receive Messages Email',
+                'name' => 'visiosoft.module.profile::field.receive_messages_email.name',
                 'slug' => 'receive_messages_email',
                 'type' => 'anomaly.field_type.select',
                 'config' => [
@@ -116,7 +116,7 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
             [
-                'name' => trans('visiosoft.module.profile::field.birthday.name'),
+                'name' => 'visiosoft.module.profile::field.birthday.name',
                 'slug' => 'birthday',
                 'type' => 'anomaly.field_type.datetime',
                 'config' => [
@@ -125,32 +125,32 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
 	        [
-		        'name' => trans('visiosoft.module.profile::field.education.name'),
+		        'name' => 'visiosoft.module.profile::field.education.name',
 		        'slug' => 'education',
 		        'type' => 'anomaly.field_type.text',
 	        ],
 	        [
-		        'name' => trans('visiosoft.module.profile::field.state_of_education.name'),
+		        'name' => 'visiosoft.module.profile::field.state_of_education.name',
 		        'slug' => 'state_of_education',
 		        'type' => 'anomaly.field_type.text',
 	        ],
 	        [
-		        'name' => trans('visiosoft.module.profile::field.profession.name'),
+		        'name' => 'visiosoft.module.profile::field.profession.name',
 		        'slug' => 'profession',
 		        'type' => 'anomaly.field_type.select',
 	        ],
 	        [
-		        'name' => trans('visiosoft.module.profile::field.education_part.name'),
+		        'name' => 'visiosoft.module.profile::field.education_part.name',
 		        'slug' => 'education_part',
 		        'type' => 'anomaly.field_type.select',
 	        ],
 	        [
-	        	'name' => trans('visiosoft.module.profile::field.facebook_address.name'),
+	        	'name' => 'visiosoft.module.profile::field.facebook_address.name',
 		        'slug' => 'facebook_address',
 		        'type' => 'anomaly.field_type.text',
 	        ],
 	        [
-	        	'name' => trans('visiosoft.module.profile::field.google_address.name'),
+	        	'name' => 'visiosoft.module.profile::field.google_address.name',
 		        'slug' => 'google_address',
 		        'type' => 'anomaly.field_type.text',
 	        ]
