@@ -62,8 +62,8 @@ return [
         'name' => 'Държава на рекламата по подразбиране',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Скриване на цените върху категориите',
+        'instructions' => 'Цената ще бъде скрита, когато създадете реклама или разгледате реклама под тези категории.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'API ключ за конвертор на валута'
