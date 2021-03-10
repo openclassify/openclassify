@@ -62,8 +62,8 @@ return [
         'name' => 'País de anúncios padrão',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Ocultar preço nas categorias',
+        'instructions' => 'O preço ficará oculto quando você criar um anúncio ou visualizar um anúncio nessas categorias.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Chave da API do conversor de moeda'
