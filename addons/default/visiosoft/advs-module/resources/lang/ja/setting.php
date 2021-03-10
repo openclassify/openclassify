@@ -62,8 +62,8 @@ return [
         'name' => 'デフォルトの広告国',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'カテゴリの価格を非表示',
+        'instructions' => 'これらのカテゴリで広告を作成したり、広告を表示したりすると、価格は非表示になります。'
     ],
     'free_currencyconverterapi_key' => [
         'name' => '通貨コンバーターAPIキー'
