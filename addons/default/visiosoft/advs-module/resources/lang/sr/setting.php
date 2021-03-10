@@ -62,8 +62,8 @@ return [
         'name' => 'Подразумевана земља огласа',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Сакриј цене по категоријама',
+        'instructions' => 'Цена ће бити скривена када направите оглас или погледате оглас у оквиру ових категорија.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'АПИ кључ конвертера валута'
