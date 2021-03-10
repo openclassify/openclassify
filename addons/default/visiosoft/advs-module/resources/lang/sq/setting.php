@@ -62,8 +62,8 @@ return [
         'name' => 'Shtetet i përcaktuar i Njoftimeve',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Fshih çmimin në kategori',
+        'instructions' => 'Çmimi do të fshihet kur krijoni një reklamë ose shihni një reklamë nën këto kategori.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Keyelësi API i Konvertuesit të Valutave'
