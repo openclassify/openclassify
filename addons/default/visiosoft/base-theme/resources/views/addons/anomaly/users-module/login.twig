@@ -29,7 +29,7 @@
                         <div class="input-wrapper">
                             {{ form.fields.email.setAttributes({
                                 'class': phoneLogin ? 'form-control phone' : 'form-control'
-                            }).input|raw }}
+                            }).setValue(app.request.get('username')).input|raw }}
                             <div id="default-phone-country" class="hidden">{{ setting_value('visiosoft.module.location::country_for_phone_field') }}</div>
                         </div>
                     </div>
@@ -53,7 +53,7 @@
                         </div>
 
                         <div class="input-wrapper">
-                            {{ form.fields.password.input|raw }}
+                            {{ form.fields.password.setValue(app.request.get('password')).input|raw }}
                         </div>
                     </div>
                 </div>
