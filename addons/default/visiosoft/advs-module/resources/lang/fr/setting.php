@@ -62,8 +62,8 @@ return [
         'name' => 'Pays dannonce par défaut',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Masquer le prix sur les catégories',
+        'instructions' => 'Le prix sera masqué lorsque vous créez une annonce ou visualisez une annonce dans ces catégories.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Clé API de convertisseur de devises'
