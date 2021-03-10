@@ -62,8 +62,8 @@ return [
         'name' => 'Țara anunțurilor implicite',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Ascundeți prețul la categorii',
+        'instructions' => 'Prețul va fi ascuns atunci când creați un anunț sau vizualizați un anunț în aceste categorii.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Cheia API a convertorului de monede'
