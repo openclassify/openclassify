@@ -62,8 +62,8 @@ return [
         'name' => '기본 광고 국가',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => '카테고리에서 가격 숨기기',
+        'instructions' => '광고를 만들거나 이러한 카테고리에서 광고를 볼 때 가격이 숨겨집니다.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => '통화 변환기 API 키'
