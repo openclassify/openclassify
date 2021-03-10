@@ -488,12 +488,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'Nouvelles mises à jour notifiées',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'Notifié à propos des annonces',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'Recevoir des messages par e-mail',
     ],
 ];
