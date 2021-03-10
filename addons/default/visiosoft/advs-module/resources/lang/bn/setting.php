@@ -62,8 +62,8 @@ return [
         'name' => 'ডিফল্ট বিজ্ঞাপন দেশ',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'বিভাগগুলিতে মূল্য লুকান',
+        'instructions' => 'আপনি যখন এই বিজ্ঞাপনটি তৈরি করেন বা এই বিভাগগুলির অধীনে কোনও বিজ্ঞাপন দেখেন তখন দামটি লুকানো থাকবে।'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'মুদ্রা রূপান্তরকারী API কী'
