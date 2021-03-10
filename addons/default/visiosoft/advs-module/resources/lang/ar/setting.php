@@ -62,8 +62,8 @@ return [
         'name' => 'بلد الإعلان الافتراضي',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'إخفاء السعر على الفئات',
+        'instructions' => 'سيتم إخفاء السعر عند إنشاء إعلان أو عرض إعلان ضمن هذه الفئات.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'تحويل العملات الرئيسية API'
