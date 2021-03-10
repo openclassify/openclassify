@@ -486,12 +486,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'অবহিত নতুন আপডেট',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'বিজ্ঞাপন সম্পর্কে অবহিত',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'বার্তা ইমেল পান',
     ],
 ];
