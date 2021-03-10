@@ -485,12 +485,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'Yeni Güncellemeler Bildirildi',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'İlanlar Hakkında Bildirildi',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'Mesaj E-postası Al',
     ],
 ];
