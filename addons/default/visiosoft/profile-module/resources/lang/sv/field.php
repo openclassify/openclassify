@@ -486,12 +486,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'Meddelade nya uppdateringar',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'Meddelas om annonser',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'Ta emot e-postmeddelanden',
     ],
 ];
