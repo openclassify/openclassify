@@ -62,8 +62,8 @@ return [
         'name' => 'Defolt Elan Ölkəsi',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Kateqoriyalardakı qiymətləri gizlədin',
+        'instructions' => 'Bir reklam yaratdığınızda və ya bu kateqoriyalara uyğun bir reklam görüntülədiyiniz zaman qiymət gizlədiləcəkdir.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Valyuta çeviricisinin API açarı'
