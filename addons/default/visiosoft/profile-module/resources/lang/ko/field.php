@@ -486,12 +486,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => '새로운 업데이트 알림',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => '광고에 대한 알림',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => '메시지 이메일 받기',
     ],
 ];
