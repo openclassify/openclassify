@@ -486,12 +486,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => '通知された新しい更新',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => '広告について通知',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'メッセージを受信するEメール',
     ],
 ];
