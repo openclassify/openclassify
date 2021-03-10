@@ -62,8 +62,8 @@ return [
         'name' => 'Standardannonsland',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Dölj pris på kategorier',
+        'instructions' => 'Priset döljs när du skapar en annons eller visar en annons under dessa kategorier.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'API-nyckel för valutaomvandlare'
