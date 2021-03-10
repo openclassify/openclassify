@@ -63,8 +63,8 @@ return [
         'name' => 'کشور پیش فرض اعلان',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'پنهان کردن قیمت در دسته ها',
+        'instructions' => 'قیمت شما هنگام ایجاد تبلیغ یا مشاهده آگهی تحت این دسته ها پنهان می شود.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'کلید API تبادل ارز'
