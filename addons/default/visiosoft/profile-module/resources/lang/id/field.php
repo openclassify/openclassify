@@ -486,12 +486,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'Diberitahu Pembaruan Baru',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'Diberitahu Tentang Iklan',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'Terima Pesan Email',
     ],
 ];
