@@ -62,8 +62,8 @@ return [
         'name' => 'Quốc gia quảng cáo mặc định',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Ẩn giá trên danh mục',
+        'instructions' => 'Giá sẽ bị ẩn khi bạn tạo quảng cáo hoặc xem quảng cáo trong các danh mục này.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Khóa API chuyển đổi tiền tệ'
