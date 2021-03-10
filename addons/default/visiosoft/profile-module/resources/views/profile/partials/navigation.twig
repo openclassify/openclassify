@@ -4,26 +4,26 @@
 </div>
 <div class="col-10 col-sm-6 col-md-3 profile-navigation border rounded navbar-side bg-white" id="navbarSide">
     <a href="{{ url_route('profile::profile') }}" class="px-3 mb-2 link-unstyled">
-        <img src="{{ img('visiosoft.module.profile::images/interface.svg').url }}">
+        {{ img('visiosoft.module.profile::images/interface.svg').data|raw }}
         <p>{{ auth_user().name }}</p>
     </a>
     <hr class="mt-2">
     <a href="{{ url_route('profile::profile') }}"
        class="px-3 link-unstyled{{ app.request.pathinfo == '/profile' ? ' active' : '' }}">
-        <img src="{{ img('visiosoft.module.profile::images/social-media.svg').url }}">
+        {{ img('visiosoft.module.profile::images/social-media.svg').data|raw }}
         <p>{{ trans('visiosoft.module.profile::addon.title') }}</p>
     </a>
     {% set marketPlace = setting_value('visiosoft.module.advs::market_place') %}
     {% if marketPlace %}
         <a href="{{ url_route('profile::ads') }}"
            class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/ads' ? ' active' : '' }}">
-            <img src="{{ img('visiosoft.module.profile::images/website.svg').url }}">
+            {{ img('visiosoft.module.profile::images/website.svg').data|raw }}
             <p>{{ trans('visiosoft.module.advs::addon.title') }}</p>
         </a>
     {% endif %}
     <a href="{{ url_route('profile::address') }}"
        class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/address' ? ' active' : '' }}">
-        <img src="{{ img('visiosoft.module.profile::images/location.svg').url }}">
+        {{ img('visiosoft.module.profile::images/location.svg').data|raw }}
         <p>{{ trans('visiosoft.module.profile::stream.adress.name') }}</p>
     </a>
 
@@ -31,7 +31,7 @@
 
     <a href="{{ url('logout') }}"
        class="px-3 link-unstyled d-flex d-md-none">
-        <img src="{{ img('visiosoft.module.profile::images/logout.svg').url }}">
+        {{ img('visiosoft.module.profile::images/logout.svg').data|raw }}
         <p>{{ trans('visiosoft.theme.base::field.logout.name') }}</p>
     </a>
 </div>
