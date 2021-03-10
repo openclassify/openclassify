@@ -62,8 +62,8 @@ return [
         'name' => 'Domyślny kraj reklamy',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Ukryj cenę w kategoriach',
+        'instructions' => 'Cena zostanie ukryta podczas tworzenia lub przeglądania reklamy w tych kategoriach.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Klucz API przelicznika walut'
