@@ -62,8 +62,8 @@ return [
         'name' => 'ڈیفالٹ ایڈ کنٹری',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'زمرہ جات پر قیمت چھپائیں',
+        'instructions' => 'جب آپ کوئی اشتہار بناتے یا ان زمروں کے تحت کوئی اشتہار دیکھیں گے تو قیمت چھپائی جائے گی۔'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'کرنسی کنورٹر API کلید'
