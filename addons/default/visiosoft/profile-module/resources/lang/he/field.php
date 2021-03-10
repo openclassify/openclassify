@@ -486,12 +486,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'הודיעו על עדכונים חדשים',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'הודיע על מודעות',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'קבל הודעות דוא"ל',
     ],
 ];
