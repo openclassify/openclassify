@@ -485,12 +485,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'به روز شده جدید',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'درباره تبلیغات اطلاع داده شده است',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'ایمیل را دریافت کنید',
     ],
 ];
