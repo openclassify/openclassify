@@ -62,8 +62,8 @@ return [
         'name' => 'Країна оголошення за замовчуванням',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Приховати ціну на категорії',
+        'instructions' => 'Ціна буде прихована, коли ви створюєте оголошення або переглядаєте оголошення за цими категоріями.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Ключ API конвертора валют'
