@@ -553,12 +553,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'Nû Rojanekirinên Nû',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'Derbarê Reklaman de Hatin Nûçe',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'E-nameyên Peyaman Bistînin',
     ],
 ];
