@@ -491,12 +491,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'Benachrichtigte neue Updates',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'Über Anzeigen informiert',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'Nachrichten per E-Mail erhalten',
     ],
 ];
