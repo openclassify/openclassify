@@ -486,12 +486,12 @@ return [
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'مطلع شدہ نئی تازہ ترین معلومات',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'اشتہارات کے بارے میں مطلع کیا گیا',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'پیغامات کا ای میل موصول کریں',
     ],
 ];
