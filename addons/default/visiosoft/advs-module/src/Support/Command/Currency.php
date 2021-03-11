@@ -5,7 +5,7 @@ class Currency
 
     public function format($number, $currency = null, array $options = [])
     {
-        $currency = strtoupper($currency ?: config('streams::currencies.default'));
+        $currency = strtoupper($currency ?: setting_value('streams::currency'));
 
         $direction = array_get(
             $options,
