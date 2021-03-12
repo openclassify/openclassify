@@ -247,4 +247,8 @@ return [
         'name' => 'فئات GET',
         'instructions' => 'إنه يمثل الفئات التي ستكون فيها خاصية GET صالحة.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
