@@ -249,5 +249,9 @@ return [
     ],
 	'disable_sentry' => [
 		'name' => 'Disable Sentry'
-	]
+	],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];

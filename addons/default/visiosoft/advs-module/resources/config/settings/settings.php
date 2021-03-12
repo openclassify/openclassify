@@ -295,6 +295,12 @@ return [
             'default_value' => 600,
         ],
     ],
+    'watermark' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
     'watermark_type' => [
         'type' => 'anomaly.field_type.select',
         'bind' => 'adv.watermark_type',

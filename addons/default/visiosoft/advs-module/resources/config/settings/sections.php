@@ -63,6 +63,7 @@ return [
             'ads_image' => [
                 'title' => 'visiosoft.module.advs::section.ads_image',
                 'fields' => [
+                    'watermark',
                     'image_resize_backend',
                     'full_image_width',
                     'full_image_height',
