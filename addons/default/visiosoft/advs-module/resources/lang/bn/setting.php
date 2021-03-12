@@ -247,4 +247,8 @@ return [
         'name' => 'GET বিভাগসমূহ',
         'instructions' => 'এটি এমন বিভাগগুলিতে প্রতিনিধিত্ব করে যেখানে জিইটি সম্পত্তি বৈধ হবে।'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
