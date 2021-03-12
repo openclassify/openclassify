@@ -247,4 +247,8 @@ return [
         'name' => 'GET Categorieën',
         'instructions' => 'Het vertegenwoordigt de categorieën waarin de eigenschap GET geldig zal zijn.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
