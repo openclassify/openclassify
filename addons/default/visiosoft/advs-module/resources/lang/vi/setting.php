@@ -247,6 +247,9 @@ return [
         'name' => 'NHẬN danh mục',
         'instructions' => 'Nó đại diện cho các danh mục mà thuộc tính GET sẽ hợp lệ.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
