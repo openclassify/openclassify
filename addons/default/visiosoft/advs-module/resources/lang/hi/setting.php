@@ -247,4 +247,8 @@ return [
         'name' => 'श्रेणियाँ प्राप्त करें',
         'instructions' => 'यह उन श्रेणियों का प्रतिनिधित्व करता है जिनमें GET संपत्ति मान्य होगी।'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
