@@ -247,6 +247,9 @@ return [
         'name' => 'ГЕТ Категорије',
         'instructions' => 'Представља категорије у којима ће ГЕТ својство бити важеће.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
