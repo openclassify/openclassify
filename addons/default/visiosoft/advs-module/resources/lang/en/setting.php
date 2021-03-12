@@ -247,4 +247,8 @@ return [
         'name' => 'GET Categories',
         'instructions' => 'It represents the categories in which the GET property will be valid.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
