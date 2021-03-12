@@ -32,7 +32,7 @@ class AdvCollection extends EntryCollection
     {
         return $this->filter(
             function ($ad) {
-                return $ad->finish_at->gt(Carbon::now());
+	            return $ad->where('finish_at', '>', Carbon::now());
             }
         );
     }

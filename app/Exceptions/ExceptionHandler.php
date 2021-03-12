@@ -87,7 +87,11 @@ class ExceptionHandler extends Handler
     public function report(Exception $e)
     {
 
-        if (app()->bound('sentry') && $this->shouldReport($e)) {
+        if (!setting_value('visiosoft.module.advs::disable_sentry')
+	        && app()->bound('sentry')
+	        && $this->shouldReport($e)
+	        && env('SENTRY_LARAVEL_DSN')) {
+
             app('sentry')->captureException($e);
         }
 

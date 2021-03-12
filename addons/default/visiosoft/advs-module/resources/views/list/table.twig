@@ -9,8 +9,10 @@
                         class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
                     <th scope="col"
                         class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
-                    <th scope="col"
-                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                    {% if not setting_value('visiosoft.module.advs::ads_date_hidden') %}
+                        <th scope="col"
+                            class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                    {% endif %}
                     {% if setting_value('visiosoft.module.location::list_page_location') %}
                         <th scope="col"
                             class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
@@ -38,9 +40,11 @@
                     <td class="justify-content-center align-middle td-price">
                         <b>{{ currency_format(adv.price,adv.currency) }}</b>
                     </td>
-                    <td class="justify-content-center align-middle td-date">
-                        <small>{{ adv.created_at|date("d/m/Y") }}</small>
-                    </td>
+                    {% if not setting_value('visiosoft.module.advs::ads_date_hidden') %}
+                        <td class="justify-content-center align-middle td-date">
+                            <small>{{ adv.created_at|date("d/m/Y") }}</small>
+                        </td>
+                    {% endif %}
                     {% if setting_value('visiosoft.module.location::list_page_location') %}
                         <td class="justify-content-center align-middle td-country">
                             <small>{{ adv.city_name }} / {{ adv.country_name }}</small>

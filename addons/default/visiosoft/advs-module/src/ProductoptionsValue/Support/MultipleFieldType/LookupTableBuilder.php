@@ -1,19 +1,9 @@
 <?php namespace Visiosoft\AdvsModule\ProductoptionsValue\Support\MultipleFieldType;
 
 use Anomaly\Streams\Platform\Ui\Table\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Anomaly\MultipleFieldType\Command\GetConfiguration;
-
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 
-/**
- * Class LookupTableBuilder
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class LookupTableBuilder extends \Anomaly\MultipleFieldType\Table\LookupTableBuilder
 {
 	public function __construct(Table $table,ValueTableBuilder $valueTableBuilder)
