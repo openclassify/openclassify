@@ -247,4 +247,7 @@ return [
         'name' => 'GET Categories',
         'instructions' => 'It represents the categories in which the GET property will be valid.'
     ],
+	'close_sentry' => [
+		'name' => 'Disable Sentry'
+	]
 ];

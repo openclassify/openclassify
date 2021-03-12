@@ -415,5 +415,6 @@ return [
 		'config' => [
 			'default_value' => false,
 		]
-	]
+	],
+	'close_sentry' => 'anomaly.field_type.boolean',
 ];
