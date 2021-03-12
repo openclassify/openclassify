@@ -247,4 +247,8 @@ return [
         'name' => 'DAPATKAN Kategori',
         'instructions' => 'Ini mewakili kategori di mana properti GET akan berlaku.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
