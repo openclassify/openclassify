@@ -247,4 +247,8 @@ return [
         'name' => 'GET Kategoritë',
         'instructions' => 'Ai përfaqëson kategoritë në të cilat prona GET do të jetë e vlefshme.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
