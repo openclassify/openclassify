@@ -247,6 +247,9 @@ return [
         'name' => 'DAPATKAN Kategori',
         'instructions' => 'Ini mewakili kategori di mana properti GET akan berlaku.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
