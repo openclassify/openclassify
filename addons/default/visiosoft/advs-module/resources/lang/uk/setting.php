@@ -247,6 +247,9 @@ return [
         'name' => 'ОТРИМАТИ Категорії',
         'instructions' => 'Він представляє категорії, в яких буде дійсним властивість GET.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
