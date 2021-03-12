@@ -247,4 +247,8 @@ return [
         'name' => 'ГЕТ Категорије',
         'instructions' => 'Представља категорије у којима ће ГЕТ својство бити важеће.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
