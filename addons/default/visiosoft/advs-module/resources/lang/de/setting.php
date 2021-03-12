@@ -247,6 +247,9 @@ return [
         'name' => 'Kategorien abrufen',
         'instructions' => 'Es stellt die Kategorien dar, in denen die GET-Eigenschaft gültig ist.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
