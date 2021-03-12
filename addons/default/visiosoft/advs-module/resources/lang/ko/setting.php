@@ -247,4 +247,8 @@ return [
         'name' => 'GET 카테고리',
         'instructions' => 'GET 속성이 유효한 범주를 나타냅니다.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
