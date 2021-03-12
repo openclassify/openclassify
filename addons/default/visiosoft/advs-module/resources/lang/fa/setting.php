@@ -248,4 +248,8 @@ return [
         'name' => 'دسته ها را دریافت کنید',
         'instructions' => 'این نشان دهنده دسته هایی است که ویژگی GET در آنها معتبر خواهد بود.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
