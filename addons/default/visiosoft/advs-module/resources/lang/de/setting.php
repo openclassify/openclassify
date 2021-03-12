@@ -247,4 +247,8 @@ return [
         'name' => 'Kategorien abrufen',
         'instructions' => 'Es stellt die Kategorien dar, in denen die GET-Eigenschaft gültig ist.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
