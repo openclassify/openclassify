@@ -247,6 +247,9 @@ return [
         'name' => 'קבל קטגוריות',
         'instructions' => 'הוא מייצג את הקטגוריות בהן נכס ה- GET יהיה תקף.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
