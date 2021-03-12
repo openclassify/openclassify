@@ -17,7 +17,7 @@ return [
                     'hide_price_categories',
                     'tcmb_exchange_url',
                     'enabled_currencies',
-	                'close_sentry',
+	                'disable_sentry',
                 ],
             ],
             'ads' => [

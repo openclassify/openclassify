@@ -416,5 +416,5 @@ return [
 			'default_value' => false,
 		]
 	],
-	'close_sentry' => 'anomaly.field_type.boolean',
+	'disable_sentry' => 'anomaly.field_type.boolean',
 ];
