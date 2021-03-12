@@ -247,6 +247,9 @@ return [
         'name' => 'ВЗЕМЕТЕ Категории',
         'instructions' => 'Той представлява категориите, в които свойството GET ще бъде валидно.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
