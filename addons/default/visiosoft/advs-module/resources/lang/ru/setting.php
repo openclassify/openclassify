@@ -247,4 +247,8 @@ return [
         'name' => 'Получить Категории',
         'instructions' => 'Он представляет категории, в которых будет действовать свойство GET.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
