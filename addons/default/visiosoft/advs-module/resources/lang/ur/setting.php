@@ -247,4 +247,8 @@ return [
         'name' => 'زمرہ جات حاصل کریں',
         'instructions' => 'یہ ان زمروں کی نمائندگی کرتا ہے جن میں جی ای ٹی پراپرٹی درست ہوگی۔'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
