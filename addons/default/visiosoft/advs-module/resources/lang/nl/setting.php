@@ -247,6 +247,9 @@ return [
         'name' => 'GET Categorieën',
         'instructions' => 'Het vertegenwoordigt de categorieën waarin de eigenschap GET geldig zal zijn.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
