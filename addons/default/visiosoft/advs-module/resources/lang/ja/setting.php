@@ -247,4 +247,8 @@ return [
         'name' => 'カテゴリを取得',
         'instructions' => 'これは、GETプロパティが有効になるカテゴリを表します。'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
