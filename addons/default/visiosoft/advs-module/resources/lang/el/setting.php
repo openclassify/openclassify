@@ -247,4 +247,8 @@ return [
         'name' => 'GET Κατηγορίες',
         'instructions' => 'Αντιπροσωπεύει τις κατηγορίες στις οποίες η ιδιότητα GET θα είναι έγκυρη.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
