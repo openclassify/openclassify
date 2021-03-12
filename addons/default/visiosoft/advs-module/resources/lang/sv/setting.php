@@ -247,6 +247,9 @@ return [
         'name' => 'Hämta kategorier',
         'instructions' => 'Det representerar de kategorier i vilka GET-egenskapen är giltig.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
