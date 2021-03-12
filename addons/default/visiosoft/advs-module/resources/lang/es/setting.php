@@ -247,6 +247,9 @@ return [
         'name' => 'OBTENER Categorías',
         'instructions' => 'Representa las categorías en las que será válida la propiedad GET.'
     ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
