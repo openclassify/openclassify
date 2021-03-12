@@ -247,4 +247,8 @@ return [
         'name' => 'Kategoriyan bistînin',
         'instructions' => 'Ew kategoriyên ku tê de taybetmendiya GET dê derbasdar be temsîl dike.'
     ],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
+    ],
 ];
