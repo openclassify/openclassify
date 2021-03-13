@@ -10,6 +10,8 @@ interface CategoryRepositoryInterface extends EntryRepositoryInterface
 
     public function getCategoryById($id);
 
+    public function getSubCatById($id);
+
     public function findBySlug($slug);
 
     public function getParentCategoryById($id);
