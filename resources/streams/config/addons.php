@@ -13,7 +13,6 @@ return [
     */
 
     'eager' => [
-        'core/anomaly/sitemap-extension',
         'core/anomaly/settings-module',
         'core/anomaly/preferences-module'
     ],
