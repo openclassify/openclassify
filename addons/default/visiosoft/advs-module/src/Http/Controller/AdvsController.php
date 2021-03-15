@@ -820,6 +820,8 @@ class AdvsController extends PublicController
 
             $form->render($this->request->update_id);
 
+            $adv = $this->adv_repository->find($form->getFormEntryId());
+
             //Create Adress
             if ($this->request->address_id != "") {
                 $address = $address->find($this->request->address_id);
