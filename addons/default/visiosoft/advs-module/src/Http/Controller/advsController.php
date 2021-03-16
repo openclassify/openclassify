@@ -5,6 +5,7 @@ use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
+use Anomaly\Streams\Platform\Support\Currency;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
@@ -1254,14 +1255,7 @@ class AdvsController extends PublicController
 
         $response['newPrice'] = $adv->price * $response['newQuantity'];
 
-        $separator = ",";
-        $decimals = 2;
-        $point = ".";
-
-        $response['newPrice'] = number_format($response['newPrice'], $decimals, $point, str_replace('&#160;', ' ', $separator));
-        $symbol = config('streams::currencies.supported.' . strtoupper($adv->currency) . '.symbol');
-
-        $response['newPrice'] = $symbol . $response['newPrice'];
+        $response['newPrice'] = app(Currency::class)->format($response['newPrice'], strtoupper($adv->currency));
         $response['status'] = $status;
         $response['maxQuantity'] = $adv->stock;
         return $response;
