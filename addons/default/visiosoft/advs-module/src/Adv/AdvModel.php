@@ -109,7 +109,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
     }
 
-    public function foreignCurrency($currency, $price, $isUpdate, $settings)
+    public function foreignCurrency($currency, $price, $isUpdate, $settings, $showMsg = true)
     {
         $currencies = setting_value('visiosoft.module.advs::enabled_currencies');
         $messages = app(MessageBag::class);
@@ -141,7 +141,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                     $response = $e->getResponse();
                     $responseBodyAsString = $response->getBody()->getContents();
                     $response = json_decode($responseBodyAsString, true);
-                    $messages->error($response['error']);
+                    if ($showMsg) {
+	                    $messages->error($response['error']);
+                    }
                 }
             }
         }
