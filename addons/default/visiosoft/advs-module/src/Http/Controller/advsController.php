@@ -882,7 +882,8 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
             event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+            $this->adv_model->foreignCurrency($request->currency, $request->price, $request->update_id, $this->settings_repository, false);
+	        return redirect(route('advs_preview', [$request->update_id]));
         }
 
         /* New Create Adv */
