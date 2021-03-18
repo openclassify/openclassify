@@ -5,6 +5,7 @@ use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
+use Anomaly\Streams\Platform\Support\Currency;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
@@ -868,6 +869,7 @@ class AdvsController extends PublicController
             if ($is_new_create) {
                 event(new CreatedAd($adv));
             } else {
+                $this->adv_model->foreignCurrency($request->currency, $request->price, $request->update_id, $this->settings_repository, false);
                 event(new EditedAd($before_editing, $adv));
             }
 
