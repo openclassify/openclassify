@@ -44,10 +44,13 @@ class CalculateCategoryLevel
 
         $level = $categoryRepository->getLevelById($category_id);
 
-        DB::table('cats_category')->where('id', $category_id)
-            ->update(array(
-                'level' => $level,
-                'level_at' => now(),
-            ));
+        if($level)
+        {
+            DB::table('cats_category')->where('id', $category_id)
+                ->update(array(
+                    'level' => $level,
+                    'level_at' => now(),
+                ));
+        }
     }
 }
