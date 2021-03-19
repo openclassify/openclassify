@@ -248,10 +248,10 @@ return [
         'instructions' => 'Nó đại diện cho các danh mục mà thuộc tính GET sẽ hợp lệ.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Tắt Sentry'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Chữ ký ảnh',
+        'instructions' => 'Hình mờ có hoạt động không?'
     ],
 ];
