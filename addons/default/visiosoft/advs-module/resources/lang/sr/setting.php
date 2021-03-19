@@ -248,10 +248,10 @@ return [
         'instructions' => 'Представља категорије у којима ће ГЕТ својство бити важеће.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Онемогући Сентри'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Водени жиг',
+        'instructions' => 'Да ли је активан водени жиг?'
     ],
 ];
