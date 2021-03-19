@@ -96,7 +96,7 @@ class AdvCriteria extends EntryCriteria
 
     public function getCurrentLocale()
     {
-        return locale_get_display_name(config('app.locale'));
+	    return trans('streams::locale.' . config('app.locale') . '.name');
     }
 
     public function isEnabled($slug)
