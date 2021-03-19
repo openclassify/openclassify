@@ -248,10 +248,10 @@ return [
         'instructions' => 'یہ ان زمروں کی نمائندگی کرتا ہے جن میں جی ای ٹی پراپرٹی درست ہوگی۔'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'سینٹری کو غیر فعال کریں'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'واٹر مارک',
+        'instructions' => 'کیا واٹر مارک سرگرم ہے؟'
     ],
 ];
