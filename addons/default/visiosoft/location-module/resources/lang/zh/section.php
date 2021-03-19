@@ -19,4 +19,5 @@ return [
     'general' => '一般',
     'map' => '地图',
     'setting' => '设置',
+    'filter' => '筛选',
 ];
