@@ -248,10 +248,10 @@ return [
         'instructions' => 'Ai përfaqëson kategoritë në të cilat prona GET do të jetë e vlefshme.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Çaktivizo rojet'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Filigranë',
+        'instructions' => 'A është ujëra aktive?'
     ],
 ];
