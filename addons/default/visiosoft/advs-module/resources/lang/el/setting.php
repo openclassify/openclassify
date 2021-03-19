@@ -248,10 +248,10 @@ return [
         'instructions' => 'Αντιπροσωπεύει τις κατηγορίες στις οποίες η ιδιότητα GET θα είναι έγκυρη.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Απενεργοποιήστε το Sentry'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Στάθμη ύδατος',
+        'instructions' => 'Είναι ενεργό το υδατογράφημα;'
     ],
 ];
