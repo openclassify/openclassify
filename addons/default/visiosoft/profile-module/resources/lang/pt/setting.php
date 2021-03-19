@@ -2,7 +2,7 @@
 
 return [
     'show_my_ads' => [
-        'name' => 'Guia Exibir meus anúncios',
+        'name' => 'Mostrar a guia Meus anúncios',
     ],
     'upload_avatar' => [
         'name' => 'Upload de Avatar',
@@ -12,13 +12,13 @@ return [
     ],
     'show_checkbox_terms_on_register' => [
         'name' => 'Mostrar os termos da caixa de seleção ao se registrar',
-        'instructions' => 'Mostrar "Aceitar termo", "lei de proteção", "termo de privacidade", "sms e e-mails" no formulário de registro'
+        'instructions' => 'Mostrar o "Aceitar termo", "lei de proteção", "termo de privacidade", "sms e e-mails" no formulário de registro'
     ],
     'register_protection_url' => [
         'name' => 'Registrar URL de proteção',
     ],
     'register_privacy_url' => [
-        'name' => 'Registrar URL de privacidade',
+        'name' => 'URL de privacidade de registro',
     ],
     'show_education_profession' => [
         'name' => 'Mostrar campos de educação e profissão',
@@ -32,7 +32,7 @@ return [
     ],
     'score_threshold' => [
         'name' => 'Limiar de pontuação',
-        'instructions' => 'Um valor entre 0 e 1. Quanto mais alto o limite, mais restrito o ReCaptcha é ao tentar determinar se um usuário é um bot ou não.',
+        'instructions' => 'Um valor entre 0 e 1. Quanto mais alto o limite, mais estrito o ReCaptcha se torna ao tentar determinar se um usuário é um bot ou não.',
     ],
     'education' => [
         'name' => 'Educação'
