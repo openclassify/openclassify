@@ -55,6 +55,24 @@ return [
     'register_type' => [
         'name' => '寄存器类型'
     ],
+    'birthday' => [
+        'name' => '生日'
+    ],
+	'facebook_address' => [
+		'name' => 'Facebook地址'
+	],
+	'google_address' => [
+		'name' => 'Google地址'
+	],
+    'education' => [
+        'name' => '教育'
+    ],
+    'state_of_education' => [
+        'name' => '教育状况'
+    ],
+    'profession' => [
+        'name' => '职业'
+    ],
     'identification_number' => [
         'name' => '身份证号码'
     ],
@@ -103,10 +121,9 @@ return [
     'user' => [
         'name' => '用户'
     ],
-
-
-
-
+	'name' => [
+		'name' => '姓名'
+	],
 
     /*Menu Button*/
     'profile' => [
@@ -197,7 +214,6 @@ return [
     'menu_my_sales' => [
         'name' => '我的销售'
     ],
-
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
@@ -362,12 +378,14 @@ return [
         'name' => '首选项设置',
     ],
 
-
     'corporate_settings' => [
         'name' => '公司设置',
     ],
     'password' => [
         'name' => '密码',
+    ],
+    'old_password' => [
+        'name' => '旧密码',
     ],
     'new_password' => [
         'name' => '新密码',
@@ -422,7 +440,7 @@ return [
         'name' => '个人',
     ],
     'corporate' => [
-        'name' => '企业的',
+        'name' => '公司的',
     ],
 
     'details' => [
@@ -431,5 +449,49 @@ return [
     'choose' => [
         'name' => '选择'
     ],
-    'my_address' => '我的地址'
+    'my_address' => '我的地址',
+
+    'company' => [
+        'name' => '公司名称'
+    ],
+    'tax_office' => [
+        'name' => '税务局'
+    ],
+    'tax_number' => [
+        'name' => '税号'
+    ],
+
+    // Profile page
+    'my_profile' => '我的简历',
+    'edit_profile' => '编辑个人资料',
+    'edit_details' => '编辑详细资料',
+    'update' => '更新',
+    'change_password' => '更改密码',
+    'choose_an_option' => '选择一个选项...',
+    'change_status' => '变更状态',
+
+    // Register page
+    'accept_terms_label' => '我接受这些条款。',
+    'accept_protection_law_label' => '<html>我接受有关' . setting_value('visiosoft.module.profile::register_protection_url') . '“ target =” _ blank“>个人数据保护</a>',
+    'accept_privacy_terms_label' => '<html>我接受' . setting_value('visiosoft.module.profile::register_privacy_url') . '“ target =” _ blank“>隐私条款</a>。',
+    'receive_sms_emails_label' => '我想接收电子邮件和短信。',
+
+    // Register Type
+    'personal' => [
+        'name' => '个人的'
+    ],
+
+	'education_part' => [
+		'name' => '教育状况'
+	],
+
+    'notified_new_updates' => [
+        'name' => '通知的新更新',
+    ],
+    'notified_about_ads' => [
+        'name' => '关于广告的通知',
+    ],
+    'receive_messages_email' => [
+        'name' => '接收邮件电子邮件',
+    ],
 ];
