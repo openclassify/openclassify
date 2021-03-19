@@ -28,9 +28,19 @@ return [
     'ajax_address_error' => '没有地址或无权查看。',
     'empty_password_sms_message' => '由于安全问题，我们更改了您的密码！您的新密码是：',
     'required_all' => "所有字段均为必填项！",
+    'can_not_remove_filled_fields' => "您无法删除填充字段！",
+    'wrong_password' => "您输入的密码不正确！",
 
     // Forgot Password
     'email_phone_not_found' => '电子邮件，电话号码不正确！',
 
     'disable_account' => '您要关闭帐户吗？此操作无法撤消。',
+
+    // Mail
+    'update_email_mail_subject' => '电子邮件已更新！',
+    'update_email_mail_message' => '您的电子邮件已更新！',
+
+    // Register
+    'recaptcha_field_is_required' => 'reCaptcha字段为必填字段。',
+    'failed_to_validate_captcha' => '无法验证验证码。',
 ];
