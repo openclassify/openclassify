@@ -248,10 +248,10 @@ return [
         'instructions' => 'Той представлява категориите, в които свойството GET ще бъде валидно.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Деактивирайте Sentry'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Воден знак',
+        'instructions' => 'Активен ли е водният знак?'
     ],
 ];
