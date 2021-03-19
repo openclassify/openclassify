@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Default Ad Country',
     ],
+    'hide_price_categories' => [
+        'name' => 'Hide Price On Categories',
+        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Currency Converter API Key'
     ],
@@ -203,9 +207,9 @@ return [
         'name' => 'Show Ads Count',
         'instructions' => 'Show ads count on the left categories list',
     ],
-    'ads_id_date_hidden' => [
-        'name' => 'Hide ID and Created Date',
-        'instructions' => 'Hide ID and created date in ads detail page',
+    'ads_date_hidden' => [
+        'name' => 'Hide Created Date',
+        'instructions' => 'Hide created date in ads detail page',
     ],
 	'hide_listing_header' => [
 		'name' => 'Hide Listing Header',
@@ -242,5 +246,12 @@ return [
     'get_categories' => [
         'name' => 'GET Categories',
         'instructions' => 'It represents the categories in which the GET property will be valid.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Disable Sentry'
+	],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Is watermark active?'
     ],
 ];
