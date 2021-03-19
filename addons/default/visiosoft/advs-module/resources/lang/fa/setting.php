@@ -249,10 +249,10 @@ return [
         'instructions' => 'این نشان دهنده دسته هایی است که ویژگی GET در آنها معتبر خواهد بود.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Sentry را غیرفعال کنید'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'علامت',
+        'instructions' => 'آیا علامت علامت فعال است؟'
     ],
 ];
