@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Categoria',
-    'name'        => 'Módulo de categoria',
+    'name'        => 'Módulo de Categoria',
     'description' => ''
 ];
