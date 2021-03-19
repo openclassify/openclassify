@@ -248,10 +248,10 @@ return [
         'instructions' => 'Det representerar de kategorier i vilka GET-egenskapen är giltig.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Inaktivera vaktpost'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Vattenstämpel',
+        'instructions' => 'Är vattenstämpel aktivt?'
     ],
 ];
