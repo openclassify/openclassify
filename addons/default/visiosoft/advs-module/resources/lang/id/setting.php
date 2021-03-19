@@ -248,10 +248,10 @@ return [
         'instructions' => 'Ini mewakili kategori di mana properti GET akan berlaku.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Nonaktifkan Sentry'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Tanda air',
+        'instructions' => 'Apakah watermark aktif?'
     ],
 ];
