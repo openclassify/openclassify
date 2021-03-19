@@ -14,7 +14,7 @@ return [
         'name' => 'Pai'
     ],
     'category' => [
-        'name' => 'Título da categoria'
+        'name' => 'Título da Categoria'
     ],
     'price' => [
         'name' => 'Preço'
@@ -35,7 +35,7 @@ return [
         'name' => 'Mapa'
     ],
     'stock' => [
-        'name' => 'estoque'
+        'name' => 'Estoque'
     ],
     'advs_desc' => [
         'name' => 'Descrição'
@@ -56,7 +56,7 @@ return [
         'name' => 'Vizinhança'
     ],
     'village' => [
-        'name' => 'Aldeia'
+        'name' => 'Vila'
     ],
     'files' => [
         'name' => 'Imagens'
@@ -86,7 +86,7 @@ return [
         'name' => 'Subcategoria 7'
     ],
     'cat9' => [
-        'name' => 'Sub Categoria 8'
+        'name' => 'Subcategoria 8'
     ],
     'cat10' => [
         'name' => 'Subcategoria 9'
@@ -101,11 +101,11 @@ return [
             'expired' => 'Expirado',
             'unpublished' => 'Não publicado',
             'pending_admin' => 'Administrador pendente',
-            'pending_user' => 'Usuário pendente'
+            'pending_user' => 'Usuário Pendente'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Anúncios pendentes'
+        'name' => 'Não publicado'
     ],
     'finish_at' => [
         'name' => 'Terminar em'
@@ -122,10 +122,10 @@ return [
     'description' =>  'Descrição',
     'explanation' =>  'Explicação',
     'type' => [
-        'name' => 'Tipo'
+        'name' => 'Modelo'
     ],
     'parent_adv' => [
-        'name' => 'Anúncio relacionado'
+        'name' => 'Anúncio Relacionado'
     ],
     'value' => [
         'name' => 'Valor'
@@ -136,14 +136,14 @@ return [
     'search' => 'Procurar',
     'recommended' => 'Anúncios recomendados para você',
     'filter' => 'Filtro',
-    'sort' => 'Ordenar',
+    'sort' => 'Organizar',
     'sort_by' => 'Ordenar por',
     'pick_option' => 'Escolha uma opção',
     'pick_ordering' => 'Encomenda',
     'price_high' => 'Preço alto para baixo',
-    'price_low' => 'Preço Baixo a Alto',
+    'price_low' => 'Preço baixo para alto',
     'newest' => 'O mais novo',
-    'oldest' => 'Mais antigas',
+    'oldest' => 'Mais velho',
     'address_a_z' => 'Endereço (A a Z)',
     'address_z_a' => 'Endereço (Z a A)',
 	'categories' => [
@@ -152,12 +152,12 @@ return [
     'all_categories' => 'todas as categorias',
     'location' => 'Localização',
     'send_message' => 'Enviar mensagem',
-    'phone_gsm' => 'Telefone Gsm',
-    'phone_office' => 'Telefone do escritório',
+    'phone_gsm' => 'Gsm Phone',
+    'phone_office' => 'Telefone Comercial',
     'add_to_favorites' => "Adicionar aos favoritos",
     'send' => 'Mandar',
-    'search_name' => 'Nome da pesquisa',
-    'my_favorite_searches' => 'Pesquisas Favoritas',
+    'search_name' => 'Nome da Pesquisa',
+    'my_favorite_searches' => 'Pesquisas favoritas',
     'search_desc' => 'Você pode adicionar e gerenciar suas seleções de pesquisa favoritas aqui.',
     'complaint_placeholder' => 'Digite os detalhes da sua reclamação aqui.',
     'show_details' => 'Mostrar detalhes',
@@ -169,7 +169,7 @@ return [
     'offered_by' => 'Oferecido por',
     'more_ads_by' => 'Mais anúncios por',
     'click_phone' => 'Mostrar número de telefone',
-    'share' => 'Compartilhe este anúncio',
+    'share' => 'Compartilhar',
     'report' => 'Denunciar este anúncio',
     'features' => 'Características',
     "streetview" => "vista da rua",
@@ -180,53 +180,52 @@ return [
     '24/7' => 'Suporte 24/7',
     'easy_trading' => 'Negociação Fácil',
     'need_help' => 'Preciso de ajuda?',
-    'give_a_call' => 'Faça uma chamada',
+    'give_a_call' => 'Ligue para o',
     'message_sent' => 'Mensagem enviada!',
-    'asap' => 'Mensagem enviada,
-   vendedor entrará em contato com você assim que possível.',
-    'ad_id' => 'ID do anúncio',
+    'asap' => 'Mensagem enviada, o vendedor entrará em contato com você o mais rápido possível.',
+    'ad_id' => 'Id do anúncio',
     'contact_with' => 'Contato com',
     'create_adv' => 'Criar um anúncio',
     'edit_adv' => 'Editar anúncio',
-    'mandatory_fields' => 'Campos obrigatórios',
-    'ad_post' => 'Anúncio de postagem',
+    'mandatory_fields' => 'Campos Obrigatórios',
+    'ad_post' => 'Postagem de anúncio',
     'sell_item' => 'Vender um item ou serviço',
     'search_save' => 'Pesquisa favorita salva com sucesso',
     'address' => 'Endereço',
     'email' => 'O email',
-    'phone' => 'telefone',
-    'send_us_your_feedback' => 'Envie-nos seus comentários',
-    'online_shopping' => 'PEGUE',
+    'phone' => 'Telefone',
+    'send_us_your_feedback' => 'Envie-nos seu feedback',
+    'online_shopping' => 'OBTER',
     'approved' => 'Aprovado com sucesso',
-    'extended' => 'Estendido com sucesso',
+    'extended' => 'Prolongado com sucesso',
     'declined' => 'Recusado com sucesso',
-    'search_on_map' => 'Pesquisa no Mapa',
+    'search_on_map' => 'Pesquisa no mapa',
     'post_free_ad' => 'Publicar anúncio grátis',
     'select_a_category' => 'Selecione uma categoria',
     'select_a_sub_category' => 'Selecione uma sub categoria',
-    'all_dopings_added' => 'Todos os tipos de doping são adicionados para este anúncio.',
+    'all_dopings_added' => 'Todos os tipos de doping são adicionados a este anúncio.',
     'is_get_adv' => [
-        'name' => 'PEGUE'
+        'name' => 'OBTER'
     ],
-    'corporate_info' => 'Informações corporativas',
+    'corporate_info' => 'Informações Corporativas',
     'featured_ads' => "Anúncios em destaque",
-    'trending_ads' => 'Anúncios Trendind',
-    'search_ad_result_prefix' => 'em',
+    'trending_ads' => 'Trendind Ads',
+    'search_ad_result_prefix' => 'sobre',
     'search_ads_result_message' => [
-        'name' => ':      contagem de anúncios encontrados para:pesquisa de nome',
+        'name' => ': contagem de anúncios encontrados para: pesquisa de nome',
     ],
     'total' => 'Total',
     'quantity' => 'Quantidade',
     'view_cart' => 'Ver carrinho',
-    'no_ads' => 'Sem anúncios!',
+    'no_ads' => 'Nenhum anúncio encontrado.',
     'show_display_mode' => [
         'map' => 'Mapa',
         'list' => 'Lista',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Nome do anúncio',
+        'name' => 'Nome do Anúncio',
         'price' => 'Preço',
-        'publish_at' => 'Data do anúncio',
+        'publish_at' => 'Data do Anúncio',
         'location_city' => 'Cidade',
         'location_country' => 'País',
     ],
@@ -240,24 +239,24 @@ return [
         'name' => 'Mostruário',
     ],
     'new_ad' => [
-        'name' => 'Novo anúncio',
+        'name' => 'Novo Anúncio',
     ],
     'profile' => [
         'name' => 'Perfil',
     ],
     'my_ads' => [
-        'name' => 'Meus anúncios',
+        'name' => 'Meus Anúncios',
     ],
     'sold_out' => [
-        'name' => 'Esgotado',
+        'name' => 'Vendido',
     ],
-    'edit_category' => 'Editar categoria',
+    'edit_category' => 'Editar Categoria',
     'set_category' => 'Definir categoria',
     'max' => [
         'name' => 'Máx.',
     ],
     'min' => [
-        'name' => 'Mín.',
+        'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
         'name' => 'Nas últimas 24 horas'
@@ -291,7 +290,7 @@ return [
         'name' => 'Acesso do usuário',
         'instructions' => 'Um usuário pode usar esse status em seus anúncios?',
     ],
-    "no_location" => "Nenhum local está selecionado.",
+    "no_location" => "Nenhum local foi selecionado.",
     "continue" => 'Continuar',
     "gallery" => 'Galeria',
     "ad" => 'de Anúncios',
@@ -299,16 +298,16 @@ return [
     "were_found" => 'foram achados.',
 
     // Pending screen
-    'pending_message_1' => 'O anúncio está no processo de aprovação',
+    'pending_message_1' => 'O anúncio está em processo de aprovação',
     'pending_message_2' => "Data de atualização do anúncio",
-    'pending_message_3' => 'Tempo de espera estimado',
+    'pending_message_3' => 'Tempo de Espera Estimado',
     'pending_message_4' => 'O tempo gasto no processo de aprovação será adicionado ao tempo de doping.',
-    'pending_message_5' => 'Nenhuma transação pode ser feita a partir do call center em relação ao anúncio no processo de aprovação.',
+    'pending_message_5' => 'Nenhuma transação pode ser feita a partir do call center em relação ao anúncio em processo de aprovação.',
     'hours' => 'horas',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'Se as seguintes informações sobre o seu anúncio estiverem corretas, clique no botão "Continuar" e vá para a próxima etapa.',
+        'part_1' => 'Se as informações a seguir sobre o seu anúncio estiverem corretas, clique no botão "Continuar" e vá para a próxima etapa.',
         'part_2' => 'Caso contrário, clique no botão "Editar".',
     ],
     'views' => 'Visualizações',
@@ -316,9 +315,9 @@ return [
     // Detail page
     "no_street_view" => "Nenhuma imagem do Street View neste local",
     'edit_my_contact_info' => 'Editar minhas informações de contato',
-    'update_my_contact_info' => 'atualizar minhas informações de contato',
+    'update_my_contact_info' => 'atualize minhas informações de contato',
     'contact_info' => 'Informações de Contato',
-    'ad_info' => 'Informações do anúncio',
+    'ad_info' => 'Informação do anúncio',
 
     // Select cat
     'select_category_step_by_step' => 'Selecione a categoria passo a passo',
