@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'Yes'
     ],
+    'no' => [
+        'name' => 'No'
+    ],
+    'is_system' => [
+        'name' => 'Is System',
+        'instructions' => 'System status are required and should not be changed',
+    ],
+    'user_access' => [
+        'name' => 'User Access',
+        'instructions' => 'Can a user use this status on his ads?',
+    ],
     "no_location" => "No location is selected.",
     "continue" => 'Continue',
     "gallery" => 'Gallery',
