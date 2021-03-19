@@ -14,10 +14,10 @@ return [
         'title' => 'Bairros',
     ],
     'village' => [
-        'title' => 'Aldeia',
+        'title' => 'Vila',
     ],
-    'general' => 'Geral',
+    'general' => 'Em geral',
     'map' => 'Mapa',
-    'setting' => 'Configuração',
+    'setting' => 'Contexto',
     'filter' => 'Filtro',
 ];
