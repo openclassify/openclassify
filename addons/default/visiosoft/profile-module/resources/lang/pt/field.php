@@ -8,13 +8,13 @@ return [
         'name' => 'Primeiro nome'
     ],
     'last_name' => [
-        'name' => 'Último nome'
+        'name' => 'Sobrenome'
     ],
     'username' => [
         'name' => 'Nome de usuário'
     ],
     'display_name' => [
-        'name' => 'Mostrar nome'
+        'name' => 'Nome em Exibição'
     ],
     'email' => [
         'name' => 'Endereço de email'
@@ -41,16 +41,16 @@ return [
         'name' => 'Vizinhança'
     ],
     'village' => [
-        'name' => 'Aldeia'
+        'name' => 'Vila'
     ],
     'gsm_phone' => [
-        'name' => 'Número de telefone GSM'
+        'name' => 'Telefone GSM'
     ],
     'land_phone' => [
-        'name' => 'Número de Telefone da Terra'
+        'name' => 'Telefone fixo'
     ],
     'office_phone' => [
-        'name' => 'Número de telefone do escritório'
+        'name' => 'Telefone Comercial'
     ],
     'register_type' => [
         'name' => 'Tipo de registro'
@@ -62,7 +62,7 @@ return [
 		'name' => 'Endereço do Facebook'
 	],
 	'google_address' => [
-		'name' => 'Endereço Google'
+		'name' => 'Endereço do Google'
 	],
     'education' => [
         'name' => 'Educação'
@@ -77,25 +77,25 @@ return [
         'name' => 'Número de identificação'
     ],
     'adress_name' => [
-        'name' => 'Nome do endereço'
+        'name' => 'Nome do Endereço'
     ],
     'adress_first_name' => [
         'name' => 'Primeiro nome'
     ],
     'adress_last_name' => [
-        'name' => 'Último nome'
+        'name' => 'Sobrenome'
     ],
     'actions' => [
         'name' => 'Ações'
     ],
     'adress_content' => [
-        'name' => 'Endereço de Conteúdo'
+        'name' => 'Conteúdo de endereço'
     ],
     'adress_post_code' => [
-        'name' => 'Código postal'
+        'name' => 'Código Postal'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Telefone Gsm'
+        'name' => 'Gsm Phone'
     ],
     'adress_land_phone' => [
         'name' => 'Telefone fixo'
@@ -113,7 +113,7 @@ return [
         'name' => 'Vizinhança'
     ],
     'adress_village' => [
-        'name' => 'Aldeia'
+        'name' => 'Vila'
     ],
     'messages' => [
         'name' => 'Mensagens'
@@ -146,7 +146,7 @@ return [
         'name' => 'Endereço'
     ],
     'menu_orders' => [
-        'name' => 'Encomendas'
+        'name' => 'Pedidos'
     ],
     'menu_favorites' => [
         'name' => 'Favoritos'
@@ -170,13 +170,13 @@ return [
         'name' => 'Olá'
     ],
     'menu_last_msg' => [
-        'name' => 'Você fez o último login'
+        'name' => 'Seu último login foi em'
     ],
     'menu_packages' => [
         'name' => 'Meus pacotes'
     ],
     'menu_adv_packages' => [
-        'name' => 'Pacotes de anúncios'
+        'name' => 'Pacotes de Anúncios'
     ],
     'menu_time_packages' => [
         'name' => 'Pacotes de tempo'
@@ -212,7 +212,7 @@ return [
         'name' => 'Minha compra'
     ],
     'menu_my_sales' => [
-        'name' => 'Minhas vendas'
+        'name' => 'Minhas Vendas'
     ],
 
     /* Right Dock*/
@@ -220,43 +220,41 @@ return [
         'name' => 'Negociação Segura'
     ],
     'right_secure_trading_msg' => [
-        'name' => 'Lorem ipsum dolor sente-se amet,
-      consectetur adipisicing elit'
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_support_subject' => [
         'name' => 'Suporte 24/7'
     ],
     'right_support_msg' => [
-        'name' => 'Lorem ipsum dolor sente-se amet,
-      consectetur adipisicing elit'
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_easy_trading_subject' => [
         'name' => 'Negociação Fácil'
     ],
     'right_easy_trading_msg' => [
-        'name' => 'Lorem ipsum dolor sente-se amet,
-      consectetur adipisicing elit'
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_need_help_subject' => [
         'name' => 'Preciso de ajuda?'
     ],
     'right_need_help_msg' => [
-        'name' => 'Faça uma chamada'
+        'name' => 'Ligue para o'
     ],
     'disable_account' => [
         'name' => 'Desativar conta'
     ],
     'disable_account_msg' => [
-        'name' => 'Sua conta será desativada. Esta operação não pode ser desfeita'
+        'name' => 'Sua conta será desativada.
+                                    Esta operação não pode ser desfeita'
     ],
 
-    'message_title' => 'Título da mensagem',
-    'owner_name' => 'mensagem',
+    'message_title' => 'Título da Mensagem',
+    'owner_name' => 'Mensagem',
 
     'favorites' => "Favoritos",
-    'fav_advs' => 'Anúncios Favoritos',
-    'fav_sellers' => "Vendedores de Fav",
-    'fav_searches' => "Pesquisas Fav",
+    'fav_advs' => 'Anúncios favoritos',
+    'fav_sellers' => "Vendedores favoritos",
+    'fav_searches' => "Pesquisas favoritas",
     'posted_on' => "Postado em",
     'message_details' => "detalhes da mensagem",
     'adv_no' => 'Anúncio Não',
@@ -276,14 +274,14 @@ return [
         'name' => 'ID do pedido',
     ],
     'order_detail' => [
-        'name' => 'Mostrar detalhes',
+        'name' => 'Mostrar Detalhe',
     ],
     /*Detail Page Order*/
     'detail' => [
         'name' => 'Detalhe',
     ],
     'back' => [
-        'name' => 'De volta',
+        'name' => 'Voltar',
     ],
     'image' => [
         'name' => 'Imagem',
@@ -307,7 +305,7 @@ return [
         'name' => 'Subtotal',
     ],
     'sale' => [
-        'name' => 'Venda',
+        'name' => 'Oferta',
     ],
     'awaiting_tracking_number' => [
         'name' => 'Aguardando Número de Rastreamento',
@@ -322,7 +320,7 @@ return [
         'name' => 'Cancelado',
     ],
     'waiting' => [
-        'name' => 'Esperando',
+        'name' => 'Espera',
     ],
     'awaiting_dispatch' => [
         'name' => 'Aguardando despacho',
@@ -343,20 +341,20 @@ return [
         'name' => 'não entregue',
     ],
     'show_order_msg1' => [
-        'name' => 'O resultado da transação será notificado por email.',
+        'name' => 'O resultado da transação será notificado por e-mail.',
     ],
     'show_order_msg2' => [
-        'name' => 'O reembolso será feito se o produto não for entregue dentro de uma semana.',
+        'name' => 'O reembolso será feito se o produto não for entregue no prazo de uma semana.',
     ],
     'show_order_msg3' => [
-        'name' => 'O resultado da transação foi enviado para o seu endereço de e-mail registrado.',
+        'name' => 'O resultado da transação foi enviado para o seu e-mail cadastrado.',
     ],
 
     'awaiting_payment' => [
         'name' => 'Aguardando Pagamento',
     ],
     'please_entered_tracking_number' => [
-        'name' => 'Por favor introduziu o número de rastreamento',
+        'name' => 'Digite o número de rastreamento',
     ],
     'transport_days' => [
         'name' => 'Dias de Transporte',
@@ -374,14 +372,14 @@ return [
         'name' => 'Vou enviar novamente',
     ],
     'content' => [
-        'name' => 'Conteúdo',
+        'name' => 'Contente',
     ],
     'preferences_settings' => [
-        'name' => 'Configurações de Preferências',
+        'name' => 'Configurações de preferências',
     ],
 
     'corporate_settings' => [
-        'name' => 'Configurações corporativas',
+        'name' => 'Configurações Corporativas',
     ],
     'password' => [
         'name' => 'Senha',
@@ -390,34 +388,34 @@ return [
         'name' => 'Senha Antiga',
     ],
     'new_password' => [
-        'name' => 'Nova senha',
+        'name' => 'Nova Senha',
     ],
     're_new_password' => [
-        'name' => 'Confirme a Senha',
+        'name' => 'Confirme sua senha',
     ],
     'confirm_password_input' => [
         'name' => 'Eu confirmo minha mudança de senha',
     ],
     'create_address' => [
-        'name' => 'Criar endereço',
+        'name' => 'Criar Endereço',
     ],
     'edit_address' => [
         'name' => 'Editar Endereço',
     ],
     'balance_limit' => [
-        'name' => 'Limite de Saldo',
+        'name' => 'Limite de equilíbrio',
     ],
     'active_ads' => [
-        'name' => 'Anúncios ativos',
+        'name' => 'Anúncios Ativos',
     ],
     'subscriptions' => [
         'name' => 'Assinaturas',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Ir para a página de assinaturas',
+        'name' => 'Vá para a página de assinaturas',
     ],
     'buy_package' => [
-        'name' => 'Compre o pacote',
+        'name' => 'Compre Pacote',
     ],
     'expired_date' => [
         'name' => 'Data expirada',
@@ -426,10 +424,10 @@ return [
         'name' => 'Categoria',
     ],
     'ad_limit' => [
-        'name' => 'Limite de anúncios',
+        'name' => 'Limite de anúncio',
     ],
     'publish_time' => [
-        'name' => 'Hora de publicação',
+        'name' => 'Hora de Publicação',
     ],
     'all_categories' => [
         'name' => 'todas as categorias',
@@ -475,7 +473,7 @@ return [
     // Register page
     'accept_terms_label' => 'Eu aceito os termos.',
     'accept_protection_law_label' => '<html>Eu aceito os termos da Lei sobre' . setting_value('visiosoft.module.profile::register_protection_url') . '"target =" _ blank "> Proteção de dados pessoais.</a>',
-    'accept_privacy_terms_label' => '<html>eu aceito' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> termos de privacidade</a>.',
+    'accept_privacy_terms_label' => '<html>aceito' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target =" _ blank "> termos de privacidade</a>.',
     'receive_sms_emails_label' => 'Quero receber e-mail e sms.',
 
     // Register Type
