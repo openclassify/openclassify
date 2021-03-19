@@ -10,4 +10,6 @@ return [
     'reset_password' => '重设密码',
     'email' => '电子邮件',
     'phone' => '电话',
+    'show_all' => '显示所有',
+    'hide_all' => '全部藏起来',
 ];
