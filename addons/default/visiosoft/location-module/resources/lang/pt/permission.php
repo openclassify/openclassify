@@ -3,11 +3,11 @@
 return [
 
     'village' => [
-        'name'   => 'Aldeia',
+        'name'   => 'Vila',
         'option' => [
-            'read'   => 'Pode ler a aldeia?        ',
-            'write'  => 'Pode criar / editar aldeia?        ',
-            'delete' => 'Pode apagar a aldeia?',
+            'read'   => 'Pode ler a aldeia?',
+            'write'  => 'Pode criar / editar aldeia?',
+            'delete' => 'Pode excluir a aldeia?',
         ],
     ],
 ];
