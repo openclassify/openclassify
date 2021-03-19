@@ -248,10 +248,10 @@ return [
         'instructions' => 'Il représente les catégories dans lesquelles la propriété GET sera valide.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Désactiver Sentry'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Filigrane',
+        'instructions' => 'Le filigrane est-il actif?'
     ],
 ];
