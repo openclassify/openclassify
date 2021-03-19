@@ -248,10 +248,10 @@ return [
         'instructions' => 'إنه يمثل الفئات التي ستكون فيها خاصية GET صالحة.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'تعطيل الحارس'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'علامة مائية',
+        'instructions' => 'هل العلامة المائية نشطة؟'
     ],
 ];
