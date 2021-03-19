@@ -248,10 +248,10 @@ return [
         'instructions' => 'GET özelliğinin geçerli olacağı kategorileri temsil eder.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Sentry\'yi devre dışı bırak'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Filigran',
+        'instructions' => 'Filigran etkin mi?'
     ],
 ];
