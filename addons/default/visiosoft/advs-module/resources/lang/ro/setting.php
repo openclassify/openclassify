@@ -248,10 +248,10 @@ return [
         'instructions' => 'Reprezintă categoriile în care proprietatea GET va fi validă.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Dezactivați Sentinela'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Filigran',
+        'instructions' => 'Filigranul este activ?'
     ],
 ];
