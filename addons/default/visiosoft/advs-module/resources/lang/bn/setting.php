@@ -248,10 +248,10 @@ return [
         'instructions' => 'এটি এমন বিভাগগুলিতে প্রতিনিধিত্ব করে যেখানে জিইটি সম্পত্তি বৈধ হবে।'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'সেন্ট্রি অক্ষম করুন'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'ওয়াটারমার্ক',
+        'instructions' => 'জলছবি সক্রিয়?'
     ],
 ];
