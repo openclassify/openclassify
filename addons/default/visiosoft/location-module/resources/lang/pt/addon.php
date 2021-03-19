@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Localização',
-    'name'        => 'Módulo de localização',
+    'name'        => 'Módulo de Localização',
     'description' => 'Descrição',
 ];
