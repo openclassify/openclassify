@@ -248,10 +248,10 @@ return [
         'instructions' => 'Он представляет категории, в которых будет действовать свойство GET.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Отключить Sentry'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Водяной знак',
+        'instructions' => 'Водяной знак активен?'
     ],
 ];
