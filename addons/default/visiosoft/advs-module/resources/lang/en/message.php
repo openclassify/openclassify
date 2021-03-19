@@ -30,4 +30,5 @@ return [
     'approve_status_change' => "Your Ad's Status Has Been Set to Active!",
     'passive_status_change' => "Your Ad's Status Has Been Set to Passive!",
 	'sold_status_change' => "Your Ad's Status Has Been Set to Sold!",
+	'status_change' => "Your Ad's Status Has Been Set to :status!",
 ];
