@@ -248,10 +248,10 @@ return [
         'instructions' => 'GET 속성이 유효한 범주를 나타냅니다.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => '센트리 비활성화'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => '양수표',
+        'instructions' => '워터 마크가 활성화되어 있습니까?'
     ],
 ];
