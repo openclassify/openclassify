@@ -248,10 +248,10 @@ return [
         'instructions' => 'הוא מייצג את הקטגוריות בהן נכס ה- GET יהיה תקף.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'השבת זקיף'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'סימן מים',
+        'instructions' => 'האם סימן מים פעיל?'
     ],
 ];
