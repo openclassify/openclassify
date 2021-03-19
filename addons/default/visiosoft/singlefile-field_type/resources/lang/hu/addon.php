@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Fájl',
-    'name'        => 'Fájl Mező Típus',
-    'description' => 'Fájl feltöltés bekérő típus.',
+    'title'       => 'Egyetlen fájl',
+    'name'        => 'Fájlmező típusa',
+    'description' => 'Fájl feltöltési mező típusa.',
 ];
