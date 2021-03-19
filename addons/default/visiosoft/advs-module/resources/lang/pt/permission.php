@@ -4,49 +4,49 @@ return [
     'advs' => [
         'name'   => 'Publicidades',
         'option' => [
-            'read'   => 'Pode ler anúncios?        ',
-            'write'  => 'Pode criar / editar anúncios?        ',
+            'read'   => 'Pode ler anúncios?',
+            'write'  => 'Pode criar / editar anúncios?',
             'delete' => 'Pode excluir anúncios?',
         ],
     ],
     'categories' => [
         'name'   => 'Categorias',
         'option' => [
-            'read'   => 'Pode ler categorias?        ',
-            'write'  => 'Pode criar / editar categorias?        ',
+            'read'   => 'Pode ler categorias?',
+            'write'  => 'Pode criar / editar categorias?',
             'delete' => 'Pode excluir categorias?',
         ],
     ],
     'village' => [
-        'name'   => 'Aldeia',
+        'name'   => 'Vila',
         'option' => [
-            'read'   => 'Pode ler a aldeia?        ',
-            'write'  => 'Pode criar / editar aldeia?        ',
-            'delete' => 'Pode apagar a aldeia?',
+            'read'   => 'Pode ler a aldeia?',
+            'write'  => 'Pode criar / editar aldeia?',
+            'delete' => 'Pode excluir a aldeia?',
         ],
     ],
     'custom_fields' => [
         'name'   => 'Os campos personalizados',
         'option' => [
-            'read'   => 'Pode ler campos personalizados?        ',
-            'write'  => 'Pode criar / editar campos personalizados?        ',
+            'read'   => 'Pode ler campos personalizados?',
+            'write'  => 'Pode criar / editar campos personalizados?',
             'delete' => 'Pode excluir campos personalizados?',
         ],
     ],
     'custom_field_advs' => [
         'name'   => 'Anúncios de campo personalizado',
         'option' => [
-            'read'   => 'Pode ler anúncios de campo personalizados?        ',
-            'write'  => 'Pode criar / editar anúncios de campo personalizados?        ',
+            'read'   => 'Pode ler anúncios de campo personalizado?',
+            'write'  => 'Pode criar / editar anúncios de campo personalizado?',
             'delete' => 'Pode excluir anúncios de campo personalizado?',
         ],
     ],
     'cf_values' => [
         'name'   => 'Valores Cf',
         'option' => [
-            'read'   => 'Pode ler valores de cf?        ',
-            'write'  => 'Pode criar / editar valores cf?        ',
-            'delete' => 'Pode excluir valores de cf?',
+            'read'   => 'Pode ler valores cf?',
+            'write'  => 'Pode criar / editar valores cf?',
+            'delete' => 'Pode deletar valores cf?',
         ],
     ],
     'options' => [
@@ -70,7 +70,7 @@ return [
         'option' => [
             'read'   => 'Pode ler o valor das opções do produto?',
             'write'  => 'Pode criar / editar o valor das opções do produto?',
-            'delete' => 'Pode excluir o valor de opções de produto?',
+            'delete' => 'Pode excluir o valor das opções de produto?',
         ],
     ],
     'options_configuration' => [
@@ -85,7 +85,7 @@ return [
         'name'   => 'Configuração de opções',
         'option' => [
             'read'   => 'Pode ler a configuração da opção?',
-            'write'  => 'Pode criar / editar configuração de opção?',
+            'write'  => 'Pode criar / editar a configuração da opção?',
             'delete' => 'Pode excluir a configuração da opção?',
         ],
     ],
@@ -93,7 +93,7 @@ return [
         'name'   => 'Configuração de opções',
         'option' => [
             'read'   => 'Pode ler a configuração da opção?',
-            'write'  => 'Pode criar / editar configuração de opção?',
+            'write'  => 'Pode criar / editar a configuração da opção?',
             'delete' => 'Pode excluir a configuração da opção?',
         ],
     ],
