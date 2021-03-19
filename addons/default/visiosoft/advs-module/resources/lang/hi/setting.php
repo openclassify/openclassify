@@ -248,10 +248,10 @@ return [
         'instructions' => 'यह उन श्रेणियों का प्रतिनिधित्व करता है जिनमें GET संपत्ति मान्य होगी।'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'संतरी अक्षम करें'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'वाटर-मार्क',
+        'instructions' => 'क्या वॉटरमार्क सक्रिय है?'
     ],
 ];
