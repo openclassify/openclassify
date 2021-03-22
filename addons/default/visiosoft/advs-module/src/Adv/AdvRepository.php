@@ -331,7 +331,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 ]);
 
             }
-            $coverPhoto = $thumbnail->url();
+            $coverPhoto = 'files/images/' . $fileName;
         } else {
             $coverPhoto = null;
         }
