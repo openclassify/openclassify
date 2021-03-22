@@ -32,3 +32,15 @@ if (!function_exists('auth_id_if_null'))
 		return $userId ?: auth()->id();
 	}
 }
+
+if (!function_exists('replace_to_text'))
+{
+	function replace_to_text($content, $array)
+	{
+		foreach ($array as $key => $value) {
+			$content = str_replace('${' . $key . '}', $value, $content);
+		}
+
+		return $content;
+	}
+}
