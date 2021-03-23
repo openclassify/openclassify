@@ -4,14 +4,6 @@
 <div class="col left-categories-section mx-0">
     <ul class="categories-list p-0 d-none d-sm-block mb-0">
         <li class="categories-list-li category-icon border-bottom-0 mt-0">
-            <img src="{{ img('visiosoft.theme.base::images/store-search.png').url }}" class="img-responsive">
-            <a href="{{ url_route('store::list') }}" class="main-category">
-                <span class="text-dark" class="text-dark">
-                    {{ trans('visiosoft.theme.base::field.company_directory') }}
-                </span>
-            </a>
-        </li>
-        <li class="categories-list-li category-icon border-bottom-0 mt-0">
             <img src="{{ img('visiosoft.theme.base::images/popular-ads.png').url }}" class="img-responsive">
             <a href="{{ url_route('visiosoft.module.advs::list') }}?sort_by=popular" class="main-category">
                 <span class="text-dark">
@@ -24,14 +16,6 @@
             <a href="{{ url_route('visiosoft.module.advs::list') }}?date=two_days" class="main-category">
                 <span class="text-dark">
                     {{ trans('visiosoft.theme.base::field.last_48_hours') }}
-                </span>
-            </a>
-        </li>
-        <li class="categories-list-li category-icon mt-0 pb-3">
-            <img src="{{ img('visiosoft.theme.base::images/get-ads.png').url }}" class="img-responsive">
-            <a href="{{ url_route('visiosoft.module.advs::list') }}?get_ads=true" class="main-category">
-                <span class="text-dark">
-                    {{ trans('visiosoft.theme.base::field.secure_e-commerce_ads') }}
                 </span>
             </a>
         </li>

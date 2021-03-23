@@ -4,7 +4,6 @@ use Anomaly\Streams\Platform\Database\Migration\Migration;
 
 class VisiosoftModuleProfileCreateBirthdayField extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -20,8 +19,8 @@ class VisiosoftModuleProfileCreateBirthdayField extends Migration
                 ->first();
 
             if (!$field) {
-                $field = $this->fields()->create([
-                    'name' => trans('visiosoft.module.profile::field.birthday.name'),
+                $field = $this->fields()->newQuery()->create([
+                    'name' => 'visiosoft.module.profile::field.birthday.name',
                     'namespace' => 'users',
                     'slug' => 'birthday',
                     'type' => 'anomaly.field_type.datetime',
@@ -32,7 +31,7 @@ class VisiosoftModuleProfileCreateBirthdayField extends Migration
                     ]
                 ]);
 
-                $this->assignments()->create([
+                $this->assignments()->newQuery()->create([
                     'stream_id' => $stream->id,
                     'field_id' => $field->id
                 ]);
@@ -47,10 +46,5 @@ class VisiosoftModuleProfileCreateBirthdayField extends Migration
      */
     public function down()
     {
-        /*
-         * I never go back on my word!
-         * That's my nindo: my ninja way!
-         * NARUTO
-         */
     }
 }
