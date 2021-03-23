@@ -21,12 +21,16 @@ class AdvTableColumns
                 'wrapper' => '
                     <strong><span class="text-muted">#{value.id}</span>{value.name}</strong>
                     <br>
-                    <small class="text-muted">{value.finish_at}</small>
+                    <small class="text-muted">{value.date}</small>
                     <br>
                     <span>{value.category}</span>',
                 'value' => [
                     'id' => 'entry.id',
-                    'finish_at' => 'entry.finish_at',
+	                'date' => function(EntryInterface $entry){
+        	            $created_at = date_format($entry['created_at'], 'd.m.Y H:i');
+        	            $finish_at = date_format($entry['finish_at'], 'd.m.Y H:i');
+        	            return $created_at . ' <i class="fa fa-angle-right"></i> ' . $finish_at;
+	                },
                     'name' => function (EntryInterface $entry) {
                         if ($entry->getTitle()) {
                             $value = "<a href='" . $entry->getAdvDetailLinkByModel($entry, 'list') . "' > {entry.name}</a > ";
