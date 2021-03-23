@@ -295,7 +295,7 @@ return [
     "gallery" => 'Галерија',
     "ad" => 'Ад',
     "ads" => 'Огласи',
-    "were_found" => 'нађена.',
+    "were_found" => 'пронађена.',
 
     // Pending screen
     'pending_message_1' => 'Оглас је у процесу одобравања',
