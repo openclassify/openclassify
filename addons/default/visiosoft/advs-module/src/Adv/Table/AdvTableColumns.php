@@ -27,8 +27,8 @@ class AdvTableColumns
                 'value' => [
                     'id' => 'entry.id',
 	                'date' => function(EntryInterface $entry){
-        	            $created_at = date_format($entry['created_at'], 'd.m.Y H:i');
-        	            $finish_at = date_format($entry['finish_at'], 'd.m.Y H:i');
+        	            $created_at = ($entry['created_at']) ?date_format($entry['created_at'], 'd.m.Y H:i'): '';
+        	            $finish_at = ($entry['finish_at']) ? date_format($entry['finish_at'], 'd.m.Y H:i'): '';
         	            return $created_at . ' <i class="fa fa-angle-right"></i> ' . $finish_at;
 	                },
                     'name' => function (EntryInterface $entry) {
