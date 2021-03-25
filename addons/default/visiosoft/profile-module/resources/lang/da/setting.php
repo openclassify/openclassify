@@ -47,4 +47,7 @@ return [
         'name' => 'Skjul registertype i profilsiden',
         'instructions' => 'Skjuler registertypefeltet på profilredigeringssiden.',
     ],
+    'required_district' => [
+        'name' => 'Required District'
+    ],
 ];
