@@ -35,7 +35,9 @@
                         {% endif %}
                     </a>
                 </div>
-                <div id="modalListFilterForm"></div>
+                <div id="modalListFilterForm">
+                    {% include 'visiosoft.module.advs::list/partials/list-filter' with {"filter_id": 'listFilterFormMobile'} %}
+                </div>
             </div>
         </div>
     </div>
