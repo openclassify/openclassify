@@ -47,4 +47,7 @@ return [
         'name' => '在配置文件页面中隐藏注册类型',
         'instructions' => '隐藏配置文件编辑页面中的寄存器类型字段。',
     ],
+    'required_district' => [
+        'name' => 'Required District'
+    ],
 ];
