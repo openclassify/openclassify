@@ -134,8 +134,15 @@ class MyProfileController extends PublicController
     {
         $message = [];
 
+        $error_district = false;
+        if (setting_value('visiosoft.module.profile::required_district') and (!$this->request->district or $this->request->district == "")) {
+            $error_district = true;
+        }
+
         $error = $form->build()->validate()->getFormErrors()->getMessages();
-        if (!empty($error)) {
+
+        if (!empty($error) or $error_district) {
+            $this->messages->flush();
             $message['status'] = "error";
             $message['msg'] = trans('visiosoft.module.profile::message.required_all');
             return $message;
@@ -248,19 +255,19 @@ class MyProfileController extends PublicController
         return response()->json(['status' => 'success', 'data' => $profile]);
     }
 
-	public function getEducation(Request $request)
-	{
-		$user = $this->userRepository->find(auth()->id());
-		$education = EducationModel::all();
-		$educationPart = EducationPartModel::query()->where('education_id', $user->education)->get();
-		return response()->json(['user' => $user, 'education' => $education, 'education-part' => $educationPart], 200);
-	}
+    public function getEducation(Request $request)
+    {
+        $user = $this->userRepository->find(auth()->id());
+        $education = EducationModel::all();
+        $educationPart = EducationPartModel::query()->where('education_id', $user->education)->get();
+        return response()->json(['user' => $user, 'education' => $education, 'education-part' => $educationPart], 200);
+    }
 
-	public function changeEducation(Request $request)
-	{
-		if ($request->info == 'education') {
-			$education = EducationPartModel::query()->where('education_id', $request->education)->get();
-		}
-		return response()->json(['data' => $education], 200);
-	}
+    public function changeEducation(Request $request)
+    {
+        if ($request->info == 'education') {
+            $education = EducationPartModel::query()->where('education_id', $request->education)->get();
+        }
+        return response()->json(['data' => $education], 200);
+    }
 }

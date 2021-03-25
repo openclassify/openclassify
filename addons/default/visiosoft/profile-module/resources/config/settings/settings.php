@@ -70,4 +70,10 @@ return [
     "education" => "anomaly.field_type.tags",
     "state_of_education" => "anomaly.field_type.tags",
     "profession" => "anomaly.field_type.tags",
+    'required_district' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
 ];
