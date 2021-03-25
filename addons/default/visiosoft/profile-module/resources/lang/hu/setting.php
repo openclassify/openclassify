@@ -47,4 +47,7 @@ return [
         'name' => 'A regisztráció típusának elrejtése a profil oldalon',
         'instructions' => 'Elrejti a regisztertípus mezőt a profilszerkesztő oldalon.',
     ],
+    'required_district' => [
+        'name' => 'Required District'
+    ],
 ];
