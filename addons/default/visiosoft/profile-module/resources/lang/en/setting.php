@@ -47,4 +47,7 @@ return [
         'name' => 'Hide Register Type in Profile Page',
         'instructions' => 'Hides the register type field in the profile edit page.',
     ],
+    'required_district' => [
+        'name' => 'Required District'
+    ],
 ];
