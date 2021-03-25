@@ -47,4 +47,7 @@ return [
         'name' => 'Versteek die tipe register in die profielblad',
         'instructions' => 'Versteek die veld van die registertipe op die profielbewerkingsbladsy.',
     ],
+    'required_district' => [
+        'name' => 'Required District'
+    ],
 ];
