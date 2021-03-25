@@ -70,7 +70,7 @@ promiseForCategory.then(function (categories_list) {
 function CategoryField(name, level) {
     return '<div class="col-12 px-0 py-1 category-select-mobile category-box" data-level="' + level + '">\n' +
         '</span>\n<select data-level="' + level + '" class="form-control cat-select ' + name + '">\n' +
-        '<option> ...</option>' +
+        '<option>'+ catsPlaceholder +'</option>' +
         '</select>\n</div>';
 }
 
