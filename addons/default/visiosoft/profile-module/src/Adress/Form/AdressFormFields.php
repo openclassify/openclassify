@@ -26,7 +26,9 @@ class AdressFormFields
                 'city' => [
                     'required' => true,
                 ],
-                'district',
+                'district' => [
+                    'required' => setting_value( 'visiosoft.module.profile::required_district'),
+                ],
                 'adress_content' => [
                     'required' => true,
                 ],
