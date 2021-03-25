@@ -47,4 +47,7 @@ return [
         'name' => 'Piilota rekisterityyppi profiilisivulla',
         'instructions' => 'Piilottaa rekisterityypin kentän profiilin muokkaussivulla.',
     ],
+    'required_district' => [
+        'name' => 'Required District'
+    ],
 ];
