@@ -47,4 +47,7 @@ return [
         'name' => 'Skrýt Typ registrace na stránce profilu',
         'instructions' => 'Skryje pole typu registru na stránce pro úpravu profilu.',
     ],
+    'required_district' => [
+        'name' => 'Required District'
+    ],
 ];
