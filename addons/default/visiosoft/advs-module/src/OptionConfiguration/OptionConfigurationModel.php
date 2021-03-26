@@ -1,11 +1,8 @@
 <?php namespace Visiosoft\AdvsModule\OptionConfiguration;
 
-use phpDocumentor\Reflection\Types\Boolean;
-use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsOptionConfigurationEntryModel;
-use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 
 class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel implements OptionConfigurationInterface
