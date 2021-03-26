@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\AdvsModule\OptionConfiguration;
 
+use phpDocumentor\Reflection\Types\Boolean;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationInterface;
@@ -23,5 +24,21 @@ class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel impleme
 
 			return $adv->name . ' | ' . trim($option_group_value, ' ');
 		}
+	}
+
+	public function stockControl($id, $quantity)
+	{
+		$conf = $this->newQuery()->find($id);
+		$stock = $conf->stock;
+
+		if ($stock === NULL || $stock === 0) {
+			return 0;
+		}
+
+		if ($stock < $quantity) {
+			return 0;
+		}
+
+		return 1;
 	}
 }
