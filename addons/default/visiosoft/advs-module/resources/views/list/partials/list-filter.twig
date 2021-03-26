@@ -1,5 +1,5 @@
 {% set formHtml %}
-<form action="{{ url_route('visiosoft.module.advs::list') }}" method="get" id="listFilterForm" rel="nofollow">
+<form action="{{ url_route('visiosoft.module.advs::list') }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow">
     {% endset %}
     {% set catSlug = null %}
     {% set citySlug = null %}
@@ -12,7 +12,7 @@
     {% endif %}
     {% if catSlug %}
     {% set formHtml %}
-    <form action="{{ url_route('adv_list_seo', [catSlug, citySlug]) }}" method="get" id="listFilterForm" rel="nofollow">
+    <form action="{{ url_route('adv_list_seo', [catSlug, citySlug]) }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow">
         {% endset %}
         {% endif %}
         {{ formHtml }}

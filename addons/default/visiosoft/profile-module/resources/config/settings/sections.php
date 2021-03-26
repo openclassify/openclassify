@@ -7,6 +7,7 @@ return [
             'general_setting' => [
                 'title' => 'visiosoft.module.profile::section.general_setting',
                 'fields' => [
+                    'required_district',
                     'show_my_ads',
                     'upload_avatar',
                     'show_tax_office',

@@ -118,26 +118,28 @@ class UploadController extends AdminController
 
                 foreach ($image_types as $key => $image) {
 
-                    if ($settings_value['watermark_type'] == 'image') {
+                    if (setting_value('visiosoft.module.advs::watermark', false)) {
+                        if ($settings_value['watermark_type'] == 'image') {
 
-                        if ($watermarkimage = $this->files->find($settings_value['watermark_image'])) {
-                            $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
-                            $image->insert($watermark, $settings_value['watermark_position']);
+                            if ($watermarkimage = $this->files->find($settings_value['watermark_image'])) {
+                                $watermark = WaterMark::make(app_storage_path() . '/files-module/local/' . $watermarkimage->path());
+                                $image->insert($watermark, $settings_value['watermark_position']);
+                            }
+
+                        } else {
+                            $v = "top";
+                            $h = "center";
+                            $w = $image->width() / 2;
+                            $h1 = $image->height() / 2;
+                            $font_size = $w / 20;
+                            $image->text(($watermark_text = setting_value('visiosoft.module.advs::watermark_text')) ? $watermark_text : 'Openclassify', $w, $h1, function ($font) use ($v, $h, $font_size) {
+                                $font->file(public_path('Antonio-Bold.ttf'));
+                                $font->size($font_size);
+                                $font->align($h);
+                                $font->valign($v);
+                            });
+
                         }
-
-                    } else {
-                        $v = "top";
-                        $h = "center";
-                        $w = $image->width() / 2;
-                        $h1 = $image->height() / 2;
-                        $font_size = $w / 20;
-                        $image->text(($watermark_text = setting_value('visiosoft.module.advs::watermark_text')) ? $watermark_text : 'Openclassify', $w, $h1, function ($font) use ($v, $h, $font_size) {
-                            $font->file(public_path('Antonio-Bold.ttf'));
-                            $font->size($font_size);
-                            $font->align($h);
-                            $font->valign($v);
-                        });
-
                     }
 
                     if ($key === "full") {

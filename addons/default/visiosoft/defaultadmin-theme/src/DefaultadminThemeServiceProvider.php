@@ -27,6 +27,10 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
         ],
     ];
 
+    protected $overrides = [
+	    'streams::table/partials/footer' => 'visiosoft.theme.defaultadmin::table/partials/footer'
+    ];
+
     public function register()
     {
         AbstractPaginator::$defaultView       = 'visiosoft.theme.defaultadmin::pagination/bootstrap-4';

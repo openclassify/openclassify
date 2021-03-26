@@ -173,6 +173,7 @@ return [
         'type' => 'anomaly.field_type.checkboxes',
         'required' => true,
         'config' => [
+        	'mode' => 'tags',
             'default_value' => function () {
                 return [config('streams::currencies.default')];
             },
@@ -295,6 +296,12 @@ return [
             'default_value' => 600,
         ],
     ],
+    'watermark' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
     'watermark_type' => [
         'type' => 'anomaly.field_type.select',
         'bind' => 'adv.watermark_type',
@@ -415,5 +422,6 @@ return [
 		'config' => [
 			'default_value' => false,
 		]
-	]
+	],
+	'disable_sentry' => 'anomaly.field_type.boolean',
 ];

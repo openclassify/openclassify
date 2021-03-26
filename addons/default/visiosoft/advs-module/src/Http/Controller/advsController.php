@@ -5,6 +5,7 @@ use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Anomaly\Streams\Platform\Message\MessageBag;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
+use Anomaly\Streams\Platform\Support\Currency;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\Request;
@@ -880,7 +881,8 @@ class AdvsController extends PublicController
                 return redirect('/advs/edit_advs/' . $request->update_id)->with('cats_d', $cats_d)->with('request', $request);
             }
             event(new CreatedAd($adv));
-            return redirect(route('advs_preview', [$request->update_id]));
+            $this->adv_model->foreignCurrency($request->currency, $request->price, $request->update_id, $this->settings_repository, false);
+	        return redirect(route('advs_preview', [$request->update_id]));
         }
 
         /* New Create Adv */
@@ -1253,14 +1255,7 @@ class AdvsController extends PublicController
 
         $response['newPrice'] = $adv->price * $response['newQuantity'];
 
-        $separator = ",";
-        $decimals = 2;
-        $point = ".";
-
-        $response['newPrice'] = number_format($response['newPrice'], $decimals, $point, str_replace('&#160;', ' ', $separator));
-        $symbol = config('streams::currencies.supported.' . strtoupper($adv->currency) . '.symbol');
-
-        $response['newPrice'] = $symbol . $response['newPrice'];
+        $response['newPrice'] = app(Currency::class)->format($response['newPrice'], strtoupper($adv->currency));
         $response['status'] = $status;
         $response['maxQuantity'] = $adv->stock;
         return $response;

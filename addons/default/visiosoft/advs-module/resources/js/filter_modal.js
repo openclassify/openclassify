@@ -70,7 +70,7 @@ promiseForCategory.then(function (categories_list) {
 function CategoryField(name, level) {
     return '<div class="col-12 px-0 py-1 category-select-mobile category-box" data-level="' + level + '">\n' +
         '</span>\n<select data-level="' + level + '" class="form-control cat-select ' + name + '">\n' +
-        '<option> ...</option>' +
+        '<option>'+ catsPlaceholder +'</option>' +
         '</select>\n</div>';
 }
 
@@ -129,13 +129,4 @@ $('.set_category').on('click', function () {
 
     $('#filterModal').find('form').attr("action", '/advs/list');
     $('#filterModal').modal('toggle');
-});
-
-// Move filter on small screen
-$(window).on("load resize", function () {
-    const width = (window.innerWidth > 0) ? window.innerWidth : screen.width;
-    if (width <= 575) {
-        const detach = $('#listFilterForm').detach();
-        $('#modalListFilterForm').append(detach);
-    }
 });

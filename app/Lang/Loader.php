@@ -180,6 +180,17 @@ class Loader extends FileLoader
                 $lines = array_replace_recursive($lines, $this->files->getRequire($file));
             }
         }
+
+        //Override System
+        $override_list = config('streams::translate.override');
+
+        foreach ($override_list as $override) {
+            $override = explode(':', $override);
+            if (count($override) > 1) {
+                $lines = $this->findArrayValue($override[0], $override[1], $lines);
+            }
+        }
+
         if (config()->has('override_text')) {
             foreach (config()->get('override_text') as $override) {
                 $override = explode(':', $override);
