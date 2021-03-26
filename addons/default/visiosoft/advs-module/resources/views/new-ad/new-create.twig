@@ -20,6 +20,8 @@
             <div class="adpost-details">
                 <div class="row">
                     <div class="col-md-12">
+                        {% set requiredFields = setting_value('visiosoft.module.advs::make_all_fields_required') %}
+
                         {% set form = form('advs', 'advs').entry(id).actions({'update': {
                             'text': trans('visiosoft.module.advs::button.publish')
                         }}).get() %}
