@@ -2,8 +2,5 @@
 
 class PasswordChanged
 {
-    public function __construct()
-    {
 
-    }
 }
