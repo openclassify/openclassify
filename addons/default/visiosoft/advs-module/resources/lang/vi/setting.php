@@ -111,6 +111,10 @@ return [
         'name' => 'Ẩn nút cấu hình',
         'instructions' => 'Ẩn nút Cấu hình trong Trang Xem trước Quảng cáo',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Đặt bản đồ là bắt buộc',
         'instructions' => 'Yêu cầu người dùng ghim trên bản đồ khi tạo quảng cáo',
