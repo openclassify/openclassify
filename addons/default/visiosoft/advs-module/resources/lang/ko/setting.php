@@ -111,6 +111,10 @@ return [
         'name' => '구성 버튼 숨기기',
         'instructions' => '광고 미리보기 페이지에서 구성 버튼 숨기기',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => '지도 필수',
         'instructions' => '사용자가 광고를 만들 때지도에 핀을 배치하도록 요구',
