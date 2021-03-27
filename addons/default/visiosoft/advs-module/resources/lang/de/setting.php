@@ -111,6 +111,10 @@ return [
         'name' => 'Blenden Sie die Schaltfläche Konfigurationen aus',
         'instructions' => 'Blenden Sie die Schaltfläche "Konfigurationen" auf der Anzeigenvorschau aus',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Karte erforderlich machen',
         'instructions' => 'Fordern Sie den Nutzer auf, beim Erstellen einer Anzeige eine Stecknadel auf der Karte zu platzieren',
