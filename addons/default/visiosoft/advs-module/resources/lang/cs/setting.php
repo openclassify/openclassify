@@ -111,6 +111,10 @@ return [
         'name' => 'Skrýt tlačítko Konfigurace',
         'instructions' => 'Skrýt tlačítko Konfigurace na stránce náhledu reklamy',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Vytvořit mapu jako požadovanou',
         'instructions' => 'Vyžadovat od uživatele, aby při vytváření reklamy umístil špendlík na mapu',
