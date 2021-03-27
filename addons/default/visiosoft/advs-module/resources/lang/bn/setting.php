@@ -111,6 +111,10 @@ return [
         'name' => 'কনফিগারেশন বাটনটি লুকান',
         'instructions' => 'বিজ্ঞাপন পূর্বরূপ পৃষ্ঠায় কনফিগারেশন বাটনটি লুকান',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'প্রয়োজনীয় মানচিত্র তৈরি করুন',
         'instructions' => 'কোনও বিজ্ঞাপন তৈরি করার সময় ব্যবহারকারীকে মানচিত্রে একটি পিন রাখতে হবে',
