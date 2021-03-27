@@ -111,6 +111,10 @@ return [
         'name' => 'Ocultar el botón Configuraciones',
         'instructions' => 'Ocultar el botón Configuraciones en la página de vista previa del anuncio',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Hacer mapa obligatorio',
         'instructions' => 'Solicitar al usuario que coloque un marcador en el mapa al crear un anuncio.',
