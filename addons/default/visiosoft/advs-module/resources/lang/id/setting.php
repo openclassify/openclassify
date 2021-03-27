@@ -111,6 +111,10 @@ return [
         'name' => 'Sembunyikan Tombol Konfigurasi',
         'instructions' => 'Sembunyikan Tombol Konfigurasi pada Halaman Pratinjau Iklan',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Buat Peta Diperlukan',
         'instructions' => 'Mewajibkan pengguna untuk menempatkan sebuah titik/pin pada peta saat membuat iklan',
