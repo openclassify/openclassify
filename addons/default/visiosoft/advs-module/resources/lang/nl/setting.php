@@ -111,6 +111,10 @@ return [
         'name' => 'Verberg de configuratieknop',
         'instructions' => 'Verberg de configuratieknop op de pagina Advertentievoorbeeld',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Maak een kaart vereist',
         'instructions' => 'Vereisen dat de gebruiker een speld op de kaart plaatst bij het maken van een advertentie',
