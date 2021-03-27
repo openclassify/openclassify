@@ -111,6 +111,10 @@ return [
         'name' => 'Скрыть кнопку настроек',
         'instructions' => 'Скрыть кнопку настроек на странице предварительного просмотра объявления',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Сделать карту обязательной',
         'instructions' => 'Требовать, чтобы пользователь поместил булавку на карту при создании объявления',
