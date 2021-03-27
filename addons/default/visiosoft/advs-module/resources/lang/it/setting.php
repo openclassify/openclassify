@@ -111,6 +111,10 @@ return [
         'name' => 'Nascondi il pulsante Configurazioni',
         'instructions' => 'Nascondi il pulsante Configurazioni nella pagina Anteprima annunci',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Rendi la mappa richiesta',
         'instructions' => 'Richiedi all\'utente di posizionare un segnaposto sulla mappa durante la creazione di un annuncio',
