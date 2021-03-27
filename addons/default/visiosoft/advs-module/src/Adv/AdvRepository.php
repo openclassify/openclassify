@@ -320,11 +320,8 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                     'mime_type' => $image->mime,
                     'extension' => $image->extension,
                 ]);
-
-                $coverPhoto = 'files/images/' . $fileName;
-            } else {
-                $coverPhoto = $thumbnail->make()->path();
             }
+            $coverPhoto = 'files/images/' . $fileName;
         } else {
             $coverPhoto = null;
         }
