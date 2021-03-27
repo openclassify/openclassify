@@ -111,6 +111,10 @@ return [
         'name' => 'Bişkoja Configurations Veşêre',
         'instructions' => 'Bişkoja Veavakirina Di Rûpelê Pêşdîtina Adê de Veşêre',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Nexşeyê Pêdivî ye',
         'instructions' => 'Dema ku reklamek diafirîne bikarhêner hewce dike ku pîneyek li ser nexşeyê bicîh bike',
