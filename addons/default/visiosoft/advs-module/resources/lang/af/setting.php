@@ -111,6 +111,10 @@ return [
         'name' => 'Versteek die Configuration Button',
         'instructions' => 'Versteek die Configurations-knoppie op die bladsy met voorskou van advertensies',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Maak kaart verlang',
         'instructions' => 'Vereis dat die gebruiker \'n speld op die kaart moet plaas wanneer hy \'n advertensie skep',
