@@ -111,6 +111,10 @@ return [
         'name' => 'कॉन्फ़िगरेशन बटन छिपाएं',
         'instructions' => 'विज्ञापन पूर्वावलोकन पृष्ठ में कॉन्फ़िगरेशन बटन छिपाएं',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'नक्शा आवश्यक करें',
         'instructions' => 'विज्ञापन बनाते समय उपयोगकर्ता को मानचित्र पर एक पिन लगाने की आवश्यकता होती है',
