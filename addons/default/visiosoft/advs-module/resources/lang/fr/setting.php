@@ -111,6 +111,10 @@ return [
         'name' => 'Masquer le bouton Configurations',
         'instructions' => 'Masquer le bouton Configurations dans la page d\'aperçu de l\'annonce',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Rendre la carte obligatoire',
         'instructions' => 'Obliger l\'utilisateur à placer une épingle sur la carte lors de la création d\'une annonce',
