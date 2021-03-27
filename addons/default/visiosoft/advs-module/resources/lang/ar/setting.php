@@ -111,6 +111,10 @@ return [
         'name' => 'إخفاء زر التكوينات',
         'instructions' => 'إخفاء زر التهيئة في صفحة معاينة الإعلان',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'اجعل الخريطة مطلوبة',
         'instructions' => 'مطالبة المستخدم بوضع دبوس على الخريطة عند إنشاء إعلان',
