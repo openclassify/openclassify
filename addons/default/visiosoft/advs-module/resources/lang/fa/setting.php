@@ -112,6 +112,10 @@ return [
         'name' => 'دکمه تنظیمات را پنهان کنید',
         'instructions' => 'دکمه تنظیمات را در صفحه پیش نمایش تبلیغ پنهان کنید',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'تهیه نقشه مورد نیاز',
         'instructions' => 'هنگام ایجاد تبلیغ ، از کاربر بخواهید که یک پین روی نقشه قرار دهد',
