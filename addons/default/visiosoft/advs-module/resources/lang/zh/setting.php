@@ -111,6 +111,10 @@ return [
         'name' => '隐藏配置按钮',
         'instructions' => '在广告预览页面中隐藏配置按钮',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => '将地图设为必填项',
         'instructions' => '制作广告时要求用户在地图上放置图钉',
