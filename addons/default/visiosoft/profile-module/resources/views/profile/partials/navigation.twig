@@ -3,10 +3,13 @@
          class="ml-2">
 </div>
 <div class="col-10 col-sm-6 col-md-3 profile-navigation border rounded navbar-side bg-white" id="navbarSide">
-    <a href="{{ url_route('profile::profile') }}" class="px-3 mb-2 link-unstyled">
+    <span class="px-3 mb-2 link-unstyled">
         {{ img('visiosoft.module.profile::images/interface.svg').data|raw }}
-        <p>{{ auth_user().name }}</p>
-    </a>
+        <p>
+            <a href="{{ url_route('profile::profile') }}" class="link-unstyled mb-0">{{ auth_user().name }}</a>
+            {{ addBlock('profile/navigation/username')|raw }}
+        </p>
+    </span>
     <hr class="mt-2">
     <a href="{{ url_route('profile::profile') }}"
        class="px-3 link-unstyled{{ app.request.pathinfo == '/profile' ? ' active' : '' }}">
