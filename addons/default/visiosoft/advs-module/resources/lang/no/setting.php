@@ -111,6 +111,10 @@ return [
         'name' => 'Skjul konfigurasjonsknappen',
         'instructions' => 'Skjul konfigurasjonsknappen på forhåndsvisningssiden for annonser',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Lag kart påkrevd',
         'instructions' => 'Krev brukeren å plassere en nål på kartet når han oppretter en annonse',
