@@ -111,6 +111,10 @@ return [
         'name' => 'Piilota kokoonpanopainike',
         'instructions' => 'Piilota kokoonpanopainike mainoksen esikatselusivulla',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Tee kartta pakolliseksi',
         'instructions' => 'Vaadi käyttäjää sijoittamaan tappi kartalle mainosta luodessaan',
