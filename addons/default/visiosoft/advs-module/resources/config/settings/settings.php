@@ -173,6 +173,7 @@ return [
         'type' => 'anomaly.field_type.checkboxes',
         'required' => true,
         'config' => [
+        	'mode' => 'tags',
             'default_value' => function () {
                 return [config('streams::currencies.default')];
             },

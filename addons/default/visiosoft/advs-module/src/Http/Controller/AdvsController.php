@@ -24,6 +24,7 @@ use Visiosoft\AdvsModule\Adv\Event\ViewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryModel;

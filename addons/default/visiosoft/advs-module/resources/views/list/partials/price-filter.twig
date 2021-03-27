@@ -1,4 +1,14 @@
-{% if setting_value('visiosoft.module.advs::hide_price_filter') == false %}
+{% set hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories') %}
+{% set cats = entries('cats','category').whereIn('id', hidePriceCats).get() %}
+{% set isHidden = false %}
+
+{% for cat in cats %}
+    {% if request().segment(2) == cat.slug %}
+        {% set isHidden = true %}
+    {% endif %}
+{% endfor %}
+
+{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden%}
     <div class="card mb-3">
         <div class="card-header breadcrumb mb-0" id="priceHeading">
             <h5 class="mb-0">

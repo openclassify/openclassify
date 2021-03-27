@@ -163,7 +163,8 @@ $(document).ready(function () {
 });
 
 function getCities(country) {
-    return crudAjax(`id=${country}`, '/ajax/getCities', 'POST', () => {}, true)
+    return crudAjax(`id=${country}`, '/ajax/getCities', 'POST', () => {
+    }, true)
         .then(function (cities) {
             $('select[name="filter_City"]').html("<option value=''>" + $('select[name=filter_City] option:first-child').text() + "</option>");
             $.each(cities, function (index, value) {
@@ -172,9 +173,10 @@ function getCities(country) {
         })
 }
 
-$("#listFilterForm").submit(function(e) {
+$("#listFilterForm, #listFilterFormMobile").submit(function (e) {
     // Disable unselected inputs
-    const inputs = $('#listFilterForm :input');
+    const inputs = $('#' + $(this).attr('id') + ' :input');
+
     [...inputs].forEach((input) => {
         if (input.type === 'checkbox' || input.type === 'radio') {
             if ($(input).prop("checked") == false) {
