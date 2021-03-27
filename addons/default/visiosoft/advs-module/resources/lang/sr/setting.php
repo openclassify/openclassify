@@ -111,6 +111,10 @@ return [
         'name' => 'Сакриј дугме за конфигурације',
         'instructions' => 'Сакријте дугме за конфигурације на страници за преглед огласа',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Нека карта буде обавезна',
         'instructions' => 'Захтевајте од корисника да постави прибадачу на мапу приликом прављења огласа',
