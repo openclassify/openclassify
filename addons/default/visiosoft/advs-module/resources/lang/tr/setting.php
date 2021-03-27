@@ -111,6 +111,10 @@ return [
         'name' => 'Yapılandırmalar Düğmesini Gizle',
         'instructions' => 'İlan Önizleme Sayfasında Yapılandırma butonunu Gizle',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Haritayı Gerekli Yap',
         'instructions' => 'Ürün/İlan oluştururken kullanıcının haritaya nokta koymasını zorunlu kılın',
