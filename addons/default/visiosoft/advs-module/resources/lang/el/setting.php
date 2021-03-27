@@ -111,6 +111,10 @@ return [
         'name' => 'Απόκρυψη του κουμπιού διαμόρφωσης',
         'instructions' => 'Απόκρυψη του κουμπιού διαμόρφωσης στη σελίδα προεπισκόπησης διαφημίσεων',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Απαιτείται χάρτης',
         'instructions' => 'Απαιτήστε από το χρήστη να τοποθετήσει μια καρφίτσα στον χάρτη κατά τη δημιουργία μιας διαφήμισης',
