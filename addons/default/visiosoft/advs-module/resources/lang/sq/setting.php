@@ -111,6 +111,10 @@ return [
         'name' => 'Fshih butonin e konfigurimeve',
         'instructions' => 'Fshihni butonin e konfigurimeve në faqen e pamjes paraprake',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Kërkoni hartën',
         'instructions' => 'Kërkoni nga përdoruesi të vendosë një majë në hartë kur krijon një reklamë',
