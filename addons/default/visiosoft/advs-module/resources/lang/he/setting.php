@@ -111,6 +111,10 @@ return [
         'name' => 'הסתר את לחצן התצורות',
         'instructions' => 'הסתר את לחצן התצורות בדף תצוגה מקדימה של מודעות',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'הפוך את המפה לחובה',
         'instructions' => 'דרוש מהמשתמש להציב סיכה על המפה בעת יצירת מודעה',
