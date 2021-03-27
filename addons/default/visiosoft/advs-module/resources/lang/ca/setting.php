@@ -111,6 +111,10 @@ return [
         'name' => 'Amagueu el botó Configuracions',
         'instructions' => 'Amagueu el botó Configuracions a la pàgina de visualització prèvia de l’anunci',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Feu que el mapa sigui obligatori',
         'instructions' => 'Sol·liciteu a l’usuari que col·loqui un pin al mapa en crear un anunci',
