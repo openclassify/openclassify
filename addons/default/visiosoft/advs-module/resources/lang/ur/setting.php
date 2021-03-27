@@ -111,6 +111,10 @@ return [
         'name' => 'کنفیگریشن بٹن کو چھپائیں',
         'instructions' => 'اشتہار پیش نظارہ صفحہ میں کنفیگریشن بٹن کو چھپائیں',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'نقشہ ضروری بنائیں',
         'instructions' => 'صارف سے اشتہار تیار کرتے وقت نقشہ پر ایک پن رکھنے کی ضرورت ہوتی ہے',
