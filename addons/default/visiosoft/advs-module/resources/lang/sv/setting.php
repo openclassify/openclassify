@@ -111,6 +111,10 @@ return [
         'name' => 'Dölj konfigurationsknappen',
         'instructions' => 'Dölj konfigurationsknappen på sidan för förhandsgranskning av annonser',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Gör kartan obligatorisk',
         'instructions' => 'Kräva att användaren placerar en nål på kartan när han skapar en annons',
