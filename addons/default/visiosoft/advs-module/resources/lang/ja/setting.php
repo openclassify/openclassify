@@ -111,6 +111,10 @@ return [
         'name' => '構成ボタンを非表示にする',
         'instructions' => '広告プレビューページの[設定]ボタンを非表示にします',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'マップを必須にする',
         'instructions' => '広告を作成するときに、ユーザーに地図上にピンを配置するように要求する',
