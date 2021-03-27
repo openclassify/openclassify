@@ -111,6 +111,10 @@ return [
         'name' => 'Konfiqurasiyalar düyməsini gizlədin',
         'instructions' => 'Reklam Önizləmə Səhifəsində Konfiqurasiyalar Düyməsini gizlədin',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Xəritə tələb olun',
         'instructions' => 'Reklam yaratarkən istifadəçidən xəritədə bir sancaq yerləşdirməsini tələb edin',
