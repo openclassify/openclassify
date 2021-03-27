@@ -111,6 +111,10 @@ return [
         'name' => 'Ascundeți butonul Configurări',
         'instructions' => 'Ascundeți butonul Configurări din pagina de previzualizare a anunțurilor',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Faceți harta necesară',
         'instructions' => 'Solicitați utilizatorului să plaseze un pin pe hartă atunci când creați un anunț',
