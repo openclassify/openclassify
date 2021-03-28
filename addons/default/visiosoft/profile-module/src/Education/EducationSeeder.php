@@ -5,10 +5,6 @@ use Visiosoft\ProfileModule\Education\Contract\EducationRepositoryInterface;
 
 class EducationSeeder extends Seeder
 {
-
-    /**
-     * Run the seeder.
-     */
     public function run()
     {
         $repository = app(EducationRepositoryInterface::class);

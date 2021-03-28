@@ -7,7 +7,6 @@ use Anomaly\UsersModule\User\Event\UserHasRegistered;
 use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Illuminate\Support\Facades\Auth;
 use Visiosoft\ProfileModule\Profile\Register2\Command\HandleAutomaticRegistration;
 use Visiosoft\ProfileModule\Profile\Register2\Command\HandleEmailRegistration;
 use Visiosoft\ProfileModule\Profile\Register2\Command\HandleManualRegistration;

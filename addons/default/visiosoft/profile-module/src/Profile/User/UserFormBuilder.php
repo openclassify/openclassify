@@ -3,7 +3,6 @@
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Anomaly\UsersModule\User\UserModel;
 
-
 class UserFormBuilder extends FormBuilder
 {
 

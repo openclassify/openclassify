@@ -2,7 +2,6 @@
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 
-
 class PasswordFormBuilder extends FormBuilder
 {
     protected $fields = [

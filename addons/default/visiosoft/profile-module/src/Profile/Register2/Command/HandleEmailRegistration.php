@@ -14,12 +14,6 @@ class HandleEmailRegistration
         $this->builder = $builder;
     }
 
-    /**
-     * Handle the command.
-     *
-     * @param UserActivator $activator
-     * @param MessageBag    $messages
-     */
     public function handle(UserActivator $activator, MessageBag $messages)
     {
         /* @var UserInterface $user */

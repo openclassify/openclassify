@@ -5,7 +5,6 @@ use Anomaly\UsersModule\User\UserSecurity;
 use Illuminate\Routing\Redirector;
 use Symfony\Component\HttpFoundation\Response;
 
-
 class SignInFormHandler
 {
     public function handle(

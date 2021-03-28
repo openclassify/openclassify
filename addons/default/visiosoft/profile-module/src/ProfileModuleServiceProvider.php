@@ -19,7 +19,6 @@ use Visiosoft\ProfileModule\Http\Middleware\OGImage;
 use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
 use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
-use Illuminate\Routing\Router;
 use Visiosoft\ProfileModule\Profile\Register2\Register2FormBuilder;
 use Visiosoft\ProfileModule\Profile\SignIn\SignInFormBuilder;
 use Visiosoft\ProfileModule\Profile\sites\SitesFormBuilder;

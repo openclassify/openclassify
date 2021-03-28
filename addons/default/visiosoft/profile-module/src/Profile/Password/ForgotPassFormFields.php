@@ -2,12 +2,6 @@
 
 class ForgotPassFormFields
 {
-
-    /**
-     * Handle the fields.
-     *
-     * @param ForgotPassFormBuilder $builder
-     */
     public function handle(ForgotPassFormBuilder $builder)
     {
         $builder->setFields(
