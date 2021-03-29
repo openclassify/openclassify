@@ -103,11 +103,13 @@
                                     </div>
                                     {% set PriceValue = form.fields.price.value|split('.') %}
                                     <div class="col-6 col-sm-7 pr-0 col-md-3">
-                                        <input class="form-control priceField whole-price" value="{{ PriceValue|first }}">
+                                        <input class="form-control priceField whole-price"
+                                               value="{{ PriceValue|first }}">
                                     </div>
                                     {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
                                         <div class="col-4 col-md-1">
-                                            <input class="form-control priceDecimalField decimal-price" placeholder="00" maxlength="2"
+                                            <input class="form-control priceDecimalField decimal-price" placeholder="00"
+                                                   maxlength="2"
                                                    value="{{ PriceValue[1] }}">
                                         </div>
                                     {% endif %}
@@ -135,11 +137,13 @@
                                             {{ trans('visiosoft.module.advs::field.options') }}
                                         </label>
                                         <div class="col-sm-10">
-                                            <select id="selectOptions" class="form-control options-tags" multiple="multiple"
+                                            <select id="selectOptions" class="form-control options-tags"
+                                                    multiple="multiple"
                                                     name="options[]">
                                                 {% if count(options) %}
                                                     {% for option in options %}
-                                                        <option id="advOption{{ option.id }}" selected="selected">{{ option.name }}</option>
+                                                        <option id="advOption{{ option.id }}"
+                                                                selected="selected">{{ option.name }}</option>
                                                     {% endfor %}
                                                 {% endif %}
                                             </select>
@@ -177,25 +181,28 @@
                                 <div class="row form-group images">
                                     <div class="col-md-12">
                                         {{ form.fields.files.input |raw }}
-                                        <input name="doc_files" value="{{ form.fields.doc_files.value.pluck('id').all()|join(',') }}" hidden>
+                                        <input name="doc_files"
+                                               value="{{ form.fields.doc_files.value.pluck('id').all()|join(',') }}"
+                                               hidden>
                                         <div class="doc_list small">
                                             {% for docs in form.fields.doc_files.value %}
-                                                    <a id="{{ docs.id }}" href="javascript:void(0)" onclick="deleteDocs({{ docs.id }})" class="text-dark">
-                                                        {{ docs.name }}
-                                                        <i class="fa fa-trash text-danger pl-2"></i>
-                                                    </a><br>
+                                                <a id="{{ docs.id }}" href="javascript:void(0)"
+                                                   onclick="deleteDocs({{ docs.id }})" class="text-dark">
+                                                    {{ docs.name }}
+                                                    <i class="fa fa-trash text-danger pl-2"></i>
+                                                </a><br>
                                             {% endfor %}
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-                            {% if custom_fields and count(custom_fields) %}
+                            {% set other_fields = addBlock('new-ad/other-fields',{'custom_fields':custom_fields}) %}
+                            {% if other_fields or (custom_fields and count(custom_fields)) %}
                                 <h5 class="mt-5 pb-1 border-bottom">
                                     {{ trans('visiosoft.module.advs::field.additional_fields') }}
                                 </h5>
                                 <div class="bg-light p-4">
-                                    {{ addBlock('new-ad/other-fields',{'custom_fields':custom_fields})|raw }}
+                                    {{ other_fields|raw }}
                                 </div>
                             {% endif %}
 
