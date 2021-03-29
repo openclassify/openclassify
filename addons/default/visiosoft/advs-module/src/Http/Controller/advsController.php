@@ -624,6 +624,10 @@ class AdvsController extends PublicController
 
         $adv = $this->adv_repository->getListItemAdv($id);
 
+        if (!Auth::check() or ($adv['created_by_id'] != auth()->id() and !Auth::user()->isAdmin())) {
+            abort(403);
+        }
+
         for ($i = 1; $i <= 10; $i++) {
             $cat = "cat" . $i;
             if ($adv->$cat != null) {
