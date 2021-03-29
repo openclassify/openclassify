@@ -19,17 +19,26 @@
                             <ul style="padding: 0" class="list-unstyled">
                                 <li class="country-data" data-content="{{ adv['country_id'] }}"
                                     data-default="{{ setting_value('visiosoft.module.location::default_country') }}"
-                                    class="location-field country-data">{{ form.fields.country.setOptions({})|raw }}</li>
+                                    class="location-field country-data">
+                                    {{ form.fields.country.setAttributes({'required': true}).setOptions({})|raw }}
+                                </li>
                                 <li class="city-data" data-content="{{ adv['city'] }}"
                                     data-default="{{ setting_value('visiosoft.module.location::default_city') }}"
-                                    class="location-field city-data">{{ form.fields.city|raw }}</li>
+                                    class="location-field city-data">
+                                    {{ form.fields.city.setAttributes({'required': true})|raw }}
+                                </li>
                                 <li class="district-data" data-content="{{ adv['district'] }}"
-                                    class="location-field district-data">{{ form.fields.district|raw }}</li>
+                                    class="location-field district-data">
+                                    {{ form.fields.district.setAttributes({'required': true})|raw }}
+                                </li>
                                 <li class="neighborhood-data" data-content="{{ adv['neighborhood'] }}"
-                                    class="location-field neighborhood-data">{{ form.fields.neighborhood|raw }}</li>
+                                    class="location-field neighborhood-data">
+                                    {{ form.fields.neighborhood.setAttributes({'required': true})|raw }}
+                                </li>
                                 {% if not setting_value('visiosoft.module.advs::hide_village_field') %}
-                                    <li class="village-data" data-content="{{ adv['village'] }}"
-                                        class="location-field">{{ form.fields.village|raw }}</li>
+                                    <li class="village-data" data-content="{{ adv['village'] }}" class="location-field">
+                                        {{ form.fields.village.setAttributes({'required': true})|raw }}
+                                    </li>
                                 {% endif %}
                             </ul>
                         </div>

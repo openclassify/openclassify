@@ -1,10 +1,8 @@
 <?php namespace Visiosoft\AdvsModule\OptionConfiguration;
 
-use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsOptionConfigurationEntryModel;
-use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 
 class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel implements OptionConfigurationInterface
@@ -23,5 +21,21 @@ class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel impleme
 
 			return $adv->name . ' | ' . trim($option_group_value, ' ');
 		}
+	}
+
+	public function stockControl($id, $quantity)
+	{
+		$conf = $this->newQuery()->find($id);
+		$stock = $conf->stock;
+
+		if ($stock === NULL || $stock === 0) {
+			return 0;
+		}
+
+		if ($stock < $quantity) {
+			return 0;
+		}
+
+		return 1;
 	}
 }

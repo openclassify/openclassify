@@ -21,6 +21,7 @@ use Visiosoft\AdvsModule\Adv\Event\viewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
@@ -621,6 +622,10 @@ class AdvsController extends PublicController
         $categories_id = array();
 
         $adv = $this->adv_repository->getListItemAdv($id);
+
+        if (!Auth::check() or ($adv['created_by_id'] != auth()->id() and !Auth::user()->isAdmin())) {
+            abort(403);
+        }
 
         for ($i = 1; $i <= 10; $i++) {
             $cat = "cat" . $i;
@@ -1240,10 +1245,15 @@ class AdvsController extends PublicController
         $quantity = $request->quantity;
         $id = $request->id;
         $type = $request->type;
-        $advmodel = new AdvModel();
-        $adv = $advmodel->getAdv($id);
-
-        $status = $advmodel->stockControl($id, $quantity);
+        if ($request->dataType === 'ad-configuration') {
+	        $optionConf = new  OptionConfigurationModel();
+	        $adv = $optionConf->newQuery()->find($id);
+        	$status = $adv->stockControl($id, $quantity);
+        } else {
+	        $advmodel = new AdvModel();
+	        $adv = $advmodel->getAdv($id);
+	        $status = $advmodel->stockControl($id, $quantity);
+        }
 
         $response = array();
         if ($status == 1) {
