@@ -71,12 +71,8 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function userAdv($nullable_ad = false, $checkRole = true)
     {
-        if ($user = Auth::user() and $user->hasRole('admin') && $checkRole) {
-            return $this->getAdv(null, $nullable_ad);
-        } else {
-            return $this->getAdv(null, $nullable_ad)
-                ->where('advs_advs.created_by_id', Auth::id());
-        }
+        return $this->getAdv(null, $nullable_ad)
+            ->where('advs_advs.created_by_id', Auth::id());
     }
 
     public function getAdvByCat($cat_id)
@@ -142,7 +138,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                     $responseBodyAsString = $response->getBody()->getContents();
                     $response = json_decode($responseBodyAsString, true);
                     if ($showMsg) {
-	                    $messages->error($response['error']);
+                        $messages->error($response['error']);
                     }
                 }
             }
@@ -225,17 +221,17 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     }
 
 
-	public function getAdvDetailLinkByModel($object, $type = null)
-	{
-		if ($type != null) {
-			$id = $object->id;
-			$seo = $object->slug;
-			return \route('adv_detail_seo', [$seo, $id]);
-		}
-		$id = $object->getObject()->id;
-		$seo = $object->getObject()->slug;
-		return \route('adv_detail_seo', [$seo, $id]);
-	}
+    public function getAdvDetailLinkByModel($object, $type = null)
+    {
+        if ($type != null) {
+            $id = $object->id;
+            $seo = $object->slug;
+            return \route('adv_detail_seo', [$seo, $id]);
+        }
+        $id = $object->getObject()->id;
+        $seo = $object->getObject()->slug;
+        return \route('adv_detail_seo', [$seo, $id]);
+    }
 
     public function getAdvDetailLinkByAdId($id)
     {
@@ -396,7 +392,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function getProductOptionsValues()
     {
-    	return $this->product_options_value;
+        return $this->product_options_value;
     }
 
     public function getStatus()
