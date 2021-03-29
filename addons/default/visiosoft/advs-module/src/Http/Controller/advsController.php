@@ -1229,7 +1229,7 @@ class AdvsController extends PublicController
         $thisModel = new AdvModel();
         $adv = $thisModel->isAdv($id);
         $response = array();
-        if ($adv) {
+        if ($adv and $adv->getStatus() == "approved") {
             $cart = $thisModel->addCart($adv, $quantity, $name);
             $response['status'] = "success";
             $count = $cart->getItems()->count;
