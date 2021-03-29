@@ -869,7 +869,7 @@ class AdvsController extends PublicController
             if ($is_new_create) {
                 event(new CreatedAd($adv));
             } else {
-                $this->adv_model->foreignCurrency($request->currency, $request->price, $request->update_id, $this->settings_repository, false);
+                $this->adv_model->foreignCurrency($this->request->currency, $this->request->price, $this->request->update_id, $this->settings_repository, false);
                 event(new EditedAd($before_editing, $adv));
             }
 
