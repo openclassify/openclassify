@@ -5,7 +5,6 @@ use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\UserSecurity;
 use Symfony\Component\HttpFoundation\Response;
 
-
 class SignInFormBuilder extends FormBuilder
 {
     protected $model = false;

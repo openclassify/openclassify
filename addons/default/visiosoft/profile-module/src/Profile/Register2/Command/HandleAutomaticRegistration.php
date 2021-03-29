@@ -6,14 +6,6 @@ use Visiosoft\ProfileModule\Profile\Register2\Register2FormBuilder;
 use Anomaly\UsersModule\User\UserActivator;
 use Anomaly\UsersModule\User\UserAuthenticator;
 
-
-/**
- * Class HandleAutomaticRegistration
- *
- * @link          http://openclassify.com/
- * @author        OpenClassify, Inc. <support@openclassify.com>
- * @author        Visiosoft Inc <support@openclassify.com>
- */
 class HandleAutomaticRegistration
 {
     protected $builder;
@@ -23,13 +15,6 @@ class HandleAutomaticRegistration
         $this->builder = $builder;
     }
 
-    /**
-     * Handle the command.
-     *
-     * @param UserAuthenticator $authenticator
-     * @param UserActivator     $activator
-     * @param MessageBag        $messages
-     */
     public function handle(UserAuthenticator $authenticator, UserActivator $activator, MessageBag $messages)
     {
         /* @var UserInterface $user */
@@ -44,5 +29,4 @@ class HandleAutomaticRegistration
 
         $messages->success('anomaly.module.users::message.logged_in');
     }
-
 }

@@ -8,16 +8,6 @@ use Visiosoft\ProfileModule\Profile\Events\SendForgotPasswordSms;
 
 class ForgotPassFormHandler
 {
-
-    /**
-     * Handle the form.
-     *
-     * @param ForgotPassFormBuilder $builder
-     * @param UserRepositoryInterface $users
-     * @param UserPassword $password
-     * @param MessageBag $messages
-     * @param Repository $config
-     */
     public function handle(
         ForgotPassFormBuilder $builder,
         UserRepositoryInterface $users,
