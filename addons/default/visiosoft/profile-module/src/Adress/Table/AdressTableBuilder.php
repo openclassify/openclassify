@@ -11,6 +11,7 @@ class AdressTableBuilder extends TableBuilder
                 'adress_name',
             ],
         ],
+        'user',
     ];
 
     protected $columns = [
@@ -30,5 +31,15 @@ class AdressTableBuilder extends TableBuilder
 
     protected $actions = [
         'delete'
+    ];
+
+    protected $assets = [
+        'scripts.js' => [
+            'visiosoft.module.advs::js/admin/filter-user.js',
+        ],
+        'styles.css' => [
+            'visiosoft.module.advs::css/admin/filter-user.css',
+            'visiosoft.module.advs::css/custom.css',
+        ],
     ];
 }
