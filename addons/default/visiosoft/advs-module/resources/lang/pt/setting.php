@@ -2,21 +2,21 @@
 
 return [
     'auto_approve' => [
-        'name' => 'Auto aprovar',
+        'name' => 'Aprovação Automática',
     ],
     'default_view_type' => [
-        'name' => 'Tipo de exibição padrão',
+        'name' => 'Tipo de visualização padrão',
     ],
     'hide_zero_price' => [
         'name' => 'Ocultar preço se zero',
-        'instructions' => 'Ocultar o preço se o preço do anúncio for 0',
+        'instructions' => 'Oculte o preço se o preço do anúncio for 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Tempo estimado estimado',
+        'name' => 'Tempo pendente estimado',
         'instructions' => 'Em horas',
     ],
     'default_published_time' => [
-        'name' => 'Tempo de Publicação Padrão',
+        'name' => 'Hora de publicação padrão',
     ],
     'address' => [
         'name' => 'Endereço de contato',
@@ -28,10 +28,10 @@ return [
         'name' => 'Favicon',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Mapear Coordenadas Longas',
+        'name' => 'Coordenada longa do mapa',
     ],
     'map_coordinates_lat' => [
-        'name' => 'Mapa Lat Coordinate',
+        'name' => 'Map Lat Coordinate',
     ],
     'iban_numbers' => [
         'name' => 'IBAN',
@@ -40,26 +40,26 @@ return [
         'name' => 'Logotipo',
     ],
     'ogImage' => [
-        'name' => 'Social Share Logo',
-        'warning'      => 'Deve estar em uma resolução de 1200 x 630.',
+        'name' => 'Logotipo do Social Share',
+        'warning'      => 'Deve ter uma resolução de 1200 x 630. ',
 
     ],
     'currencies' => [
-        'name' => 'Moedas Ativas',
+        'name' => 'Moedas ativas',
     ],
     'latest-limit' => [
-        'name' => 'Limite mais recente',
+        'name' => 'Último Limite',
     ],
     'site_address' => [
         'name' => 'Endereço do site',
-        'warning'      => 'Auto adicionado www. www. <strong>sitename.com</strong>',
+        'warning'      => 'Www. Adicionado automaticamente. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Chave da API do Google Map',
+        'name' => 'Chave de API do Google Map',
     ],
 
     'default_country' => [
-        'name' => 'País de anúncios padrão',
+        'name' => 'País do anúncio padrão',
     ],
     'hide_price_categories' => [
         'name' => 'Ocultar preço nas categorias',
@@ -69,34 +69,34 @@ return [
         'name' => 'Chave da API do conversor de moeda'
     ],
     'default_city' => [
-        'name' => 'Cidade de anúncios padrão',
+        'name' => 'Cidade do anúncio padrão',
     ],
     'default_district' => [
         'name' => 'Distrito de anúncios padrão',
     ],
     'default_neighborhood' => [
-        'name' => 'Vizinhamento de anúncios padrão',
+        'name' => 'Bairro de anúncios padrão',
     ],
     'default_currency' => [
         'name' => 'Moeda do anúncio padrão',
     ],
     'default_GET' => [
-        'name' => 'Ad GET padrão',
+        'name' => 'Anúncio padrão GET',
     ],
     'twitter' => [
         'name' => 'Twitter',
     ],
     'facebook' => [
-        'name' => 'Facebook',
+        'name' => 'o Facebook',
     ],
     'youtube' => [
-        'name' => 'Youtube',
+        'name' => 'você tubo',
     ],
     'google' => [
         'name' => 'Google',
     ],
     'listing_page_image' => [
-        'name' => 'Listar imagem da página',
+        'name' => 'Imagem da página de listagem',
     ],
     'hide_standard_price_field' => [
         'name' => 'Ocultar campo de preço padrão',
@@ -109,14 +109,14 @@ return [
     ],
     'hide_configurations' => [
         'name' => 'Ocultar o botão de configurações',
-        'instructions' => 'Oculte o botão de configurações na página de visualização do anúncio',
+        'instructions' => 'Ocultar o botão de configurações na página de visualização do anúncio',
     ],
     'make_all_fields_required' => [
         'name' => 'Make All Fields Required',
         'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
     ],
     'make_map_required' => [
-        'name' => 'Tornar mapa obrigatório',
+        'name' => 'Tornar o mapa obrigatório',
         'instructions' => 'Exigir que o usuário coloque um alfinete no mapa ao criar um anúncio',
     ],
     'hide_listing_standard_price' => [
@@ -126,7 +126,7 @@ return [
         'name' => 'Moedas ativadas',
     ],
     'google_statistic_code' => [
-        'name' => 'Código estatístico do Google',
+        'name' => 'Código de estatística do Google',
     ],
     'register_email_field' => [
         'name' => 'Requisito de e-mail de registro de membro',
@@ -141,7 +141,7 @@ return [
         'name' => 'Ocultar filtro de preço',
     ],
     'hide_date_filter' => [
-        'name' => 'Ocultar filtro de data',
+        'name' => 'Ocultar Filtro de Data',
     ],
     'hide_photo_filter' => [
         'name' => 'Ocultar filtro de fotos',
@@ -189,16 +189,16 @@ return [
         'name' => 'Altura da tela da imagem',
     ],
     'watermark_type' => [
-        'name' => 'Tipo de marca d\\'água',
+        'name' => 'Tipo de marca d\'água',
     ],
     'watermark_text' => [
-        'name' => 'Texto de marca d\\'água',
+        'name' => 'Texto de marca d\'água',
     ],
     'watermark_image' => [
-        'name' => 'Imagem de marca d\\'água',
+        'name' => 'Imagem de marca d\'água',
     ],
     'watermark_position' => [
-        'name' => 'Posição da marca d\\'água',
+        'name' => 'Posição da marca d\'água',
     ],
     'user_filter_limit' => [
         'name' => 'Limite de filtro de usuário',
