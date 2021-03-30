@@ -113,7 +113,7 @@ return [
     ],
     'make_all_fields_required' => [
         'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price, Description and Location fields when creating an ad',
+        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
     ],
     'make_map_required' => [
         'name' => 'Make Map Required',
