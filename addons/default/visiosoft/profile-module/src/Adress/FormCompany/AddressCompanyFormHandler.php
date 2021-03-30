@@ -2,12 +2,9 @@
 
 use Illuminate\Support\Facades\Auth;
 
-
 class AddressCompanyFormHandler
 {
-
-    public function handle(
-        AddressCompanyFormBuilder $builder)
+    public function handle(AddressCompanyFormBuilder $builder)
     {
         if (!$builder->canSave()) {
             return;

@@ -593,8 +593,7 @@ class AdvsController extends PublicController
             $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
 	        $foreign_currencies = json_decode($adv->foreign_currencies, true);
-
-	        if (isset($_COOKIE['currency']) && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+	        if (isset($_COOKIE['currency']) && $_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
 		        $adv->currency = $_COOKIE['currency'];
 		        $adv->price = $foreign_currencies[$_COOKIE['currency']];
 	        }

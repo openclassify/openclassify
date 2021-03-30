@@ -55,8 +55,10 @@
         </label>
 
         <div class="input-wrapper validate-phone">
-            {{ form.fields.phone.setValue(form.fields.phone.value).input|raw }}
-            <div id="default-phone-country" class="hidden">{{ setting_value('visiosoft.module.location::country_for_phone_field') }}</div>
+            {{ form.fields.phone.setAttributes({'maxlength': 15}).setValue(form.fields.phone.value).input|raw }}
+            <div id="default-phone-country" class="hidden">
+                {{ setting_value('visiosoft.module.location::country_for_phone_field') }}
+            </div>
         </div>
     </div>
 </div>

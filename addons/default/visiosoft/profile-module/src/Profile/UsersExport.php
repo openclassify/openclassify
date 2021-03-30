@@ -7,9 +7,6 @@ use Maatwebsite\Excel\Concerns\WithMapping;
 
 class UsersExport implements WithMapping, FromCollection, WithHeadings
 {
-    /**
-     * @return User[]|\Illuminate\Database\Eloquent\Collection|\Illuminate\Support\Collection
-     */
     public function collection()
     {
         return User::all();

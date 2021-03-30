@@ -19,10 +19,8 @@ use Visiosoft\ProfileModule\Http\Middleware\OGImage;
 use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
 use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
-use Illuminate\Routing\Router;
 use Visiosoft\ProfileModule\Profile\Register2\Register2FormBuilder;
 use Visiosoft\ProfileModule\Profile\SignIn\SignInFormBuilder;
-use Visiosoft\ProfileModule\Profile\sites\SitesFormBuilder;
 use Visiosoft\ProfileModule\Profile\User\UserFormBuilder;
 
 class ProfileModuleServiceProvider extends AddonServiceProvider
@@ -137,7 +135,6 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         AdressRepositoryInterface::class => AdressRepository::class,
         EducationRepositoryInterface::class => EducationRepository::class,
         'register2' => Register2FormBuilder::class,
-        'sites' => SitesFormBuilder::class,
         'forgot_pass' => ForgotPassFormBuilder::class,
     ];
 
