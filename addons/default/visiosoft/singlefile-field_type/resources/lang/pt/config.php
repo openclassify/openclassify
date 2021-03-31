@@ -9,15 +9,15 @@ return [
     'max'     => [
         'name'         => 'Tamanho máximo de upload',
         'instructions' => 'Especifique o tamanho máximo de upload em <strong>megabytes</strong>.',
-        'warning'      => 'Se não for especificado, a pasta max e o server max serão usados.',
+        'warning'      => 'Se não for especificada, a pasta max e o servidor max serão usados.',
     ],
     'mode'    => [
         'name'         => 'Modo de entrada',
         'instructions' => 'Como os usuários devem fornecer entrada de arquivo?',
         'option'       => [
-            'default' => 'Faça upload e / ou selecione arquivos.',
+            'default' => 'Carregar e / ou selecionar arquivos.',
             'select'  => 'Selecione apenas arquivos.',
-            'upload'  => 'Faça upload de arquivos apenas.',
+            'upload'  => 'Carregar apenas arquivos.',
         ],
     ],
 ];
