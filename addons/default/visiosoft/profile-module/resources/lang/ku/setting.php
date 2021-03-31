@@ -48,6 +48,6 @@ return [
         'instructions' => 'Zeviya tomara tomarê di rûpelê guheztina profîlê de vedişêre.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Navçeya Pêdivî'
     ],
 ];
