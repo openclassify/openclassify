@@ -48,6 +48,6 @@ return [
         'instructions' => 'Ascunde câmpul tip de înregistrare în pagina de editare a profilului.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Districtul necesar'
     ],
 ];
