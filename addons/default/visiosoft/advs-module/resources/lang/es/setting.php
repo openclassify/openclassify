@@ -112,8 +112,8 @@ return [
         'instructions' => 'Ocultar el botón Configuraciones en la página de vista previa del anuncio',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Hacer que todos los campos sean obligatorios',
+        'instructions' => 'Solicitar al usuario que complete los campos Precio y Descripción al crear un anuncio.',
     ],
     'make_map_required' => [
         'name' => 'Hacer mapa obligatorio',
@@ -259,7 +259,7 @@ return [
         'instructions' => '¿Está activa la marca de agua?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Opciones de producto detalladas',
+        'instructions' => 'Le permite ingresar información de stock y precio del producto'
     ],
 ];
