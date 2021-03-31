@@ -112,8 +112,8 @@ return [
         'instructions' => 'اشتہار پیش نظارہ صفحہ میں کنفیگریشن بٹن کو چھپائیں',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'تمام فیلڈز کو ضروری بنائیں',
+        'instructions' => 'صارف کو اشتہار تخلیق کرتے وقت قیمت اور تفصیل کے شعبوں کو پُر کرنے کی ضرورت ہے',
     ],
     'make_map_required' => [
         'name' => 'نقشہ ضروری بنائیں',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'کیا واٹر مارک سرگرم ہے؟'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'تفصیلی مصنوع کے اختیارات',
+        'instructions' => 'آپ کو مصنوعات کے ل stock اسٹاک اور قیمت کی معلومات داخل کرنے کی اجازت دیتا ہے'
     ],
 ];
