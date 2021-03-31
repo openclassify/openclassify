@@ -48,6 +48,6 @@ return [
         'instructions' => 'Profil redaktə səhifəsində qeyd növü sahəsini gizlədir.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Zəruri rayon'
     ],
 ];
