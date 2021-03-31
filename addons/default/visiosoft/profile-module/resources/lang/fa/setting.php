@@ -48,6 +48,6 @@ return [
         'instructions' => 'قسمت نوع ثبت نام را در صفحه ویرایش نمایه پنهان می کند.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'منطقه مورد نیاز'
     ],
 ];
