@@ -48,6 +48,6 @@ return [
         'instructions' => 'Blendet das Registertypfeld auf der Profilbearbeitungsseite aus.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Erforderlicher Bezirk'
     ],
 ];
