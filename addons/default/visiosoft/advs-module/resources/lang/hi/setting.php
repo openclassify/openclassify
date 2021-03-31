@@ -258,4 +258,8 @@ return [
         'name' => 'वाटर-मार्क',
         'instructions' => 'क्या वॉटरमार्क सक्रिय है?'
     ],
+    'detailed_product_options' => [
+        'name' => 'Detailed Product Options',
+        'instructions' => 'Allows you to enter stock and price information for the product'
+    ],
 ];
