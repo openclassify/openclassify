@@ -48,6 +48,6 @@ return [
         'instructions' => 'Masque le champ de type de registre dans la page de modification de profil.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'District obligatoire'
     ],
 ];
