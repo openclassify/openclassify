@@ -112,8 +112,8 @@ return [
         'instructions' => 'Skjul konfigurasjonsknappen på forhåndsvisningssiden for annonser',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Lag alle felt påkrevd',
+        'instructions' => 'Krev brukeren å fylle ut feltene Pris og beskrivelse når han oppretter en annonse',
     ],
     'make_map_required' => [
         'name' => 'Lag kart påkrevd',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Er vannmerke aktivt?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Detaljerte produktalternativer',
+        'instructions' => 'Lar deg legge inn lager- og prisinformasjon for produktet'
     ],
 ];
