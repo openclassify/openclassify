@@ -112,8 +112,8 @@ return [
         'instructions' => 'Dölj konfigurationsknappen på sidan för förhandsgranskning av annonser',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Gör alla fält obligatoriska',
+        'instructions' => 'Kräva att användaren fyller i fälten Pris och Beskrivning när han skapar en annons',
     ],
     'make_map_required' => [
         'name' => 'Gör kartan obligatorisk',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Är vattenstämpel aktivt?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Detaljerade produktalternativ',
+        'instructions' => 'Låter dig ange lager- och prisinformation för produkten'
     ],
 ];
