@@ -48,6 +48,6 @@ return [
         'instructions' => 'Скрива полето тип регистър в страницата за редактиране на профила.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Задължителен район'
     ],
 ];
