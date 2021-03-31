@@ -2,13 +2,13 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Título de Navegação',
+        'name' => 'Título da Navegação',
     ],
     'navigation_action' => [
         'name' => 'Ação de Navegação',
     ],
     'country_fields' => [
-        'name' => 'Campos de país',
+        'name' => 'Campos do país',
     ],
     'date_fields' => [
         'name' => 'Campos de Data',
@@ -26,10 +26,10 @@ return [
         'name' => 'Guia Detalhes do anúncio',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Últimos e ver todos os Btn',
+        'name' => 'Mais recentes e Ver todos Btn',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Registrar o logotipo de instrução da página',
+        'name' => 'Logotipo da instrução da página de registro',
     ],
     'register_page_alert_link' => [
         'name' => 'Registrar o link de alerta da página',
