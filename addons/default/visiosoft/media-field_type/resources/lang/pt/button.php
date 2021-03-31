@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'showOn' => 'Principal',
+    'showOn' => 'a Principal',
 ];
