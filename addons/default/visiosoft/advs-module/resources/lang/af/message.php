@@ -31,5 +31,5 @@ return [
     'passive_status_change' => "Jou advertensie se status is passief gestel!",
 	'sold_status_change' => "Jou advertensie se status is verkoop!",
 	'status_change' => "Jou advertensie se status is ingestel op: status!",
-	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+	'disabled_detailed_options_for_admin_role' => "Gedetailleerde produkopsies is gedeaktiveer.",
 ];
