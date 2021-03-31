@@ -48,6 +48,6 @@ return [
         'instructions' => 'Απόκρυψη του πεδίου τύπου μητρώου στη σελίδα επεξεργασίας προφίλ.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Απαιτούμενη περιοχή'
     ],
 ];
