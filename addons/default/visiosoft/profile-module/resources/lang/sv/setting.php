@@ -48,6 +48,6 @@ return [
         'instructions' => 'Döljer registertypfältet i profilredigeringssidan.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Obligatoriskt distrikt'
     ],
 ];
