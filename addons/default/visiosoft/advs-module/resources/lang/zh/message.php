@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "您的广告状态已设置为被动！",
 	'sold_status_change' => "您的广告状态已设置为“已售出”！",
 	'status_change' => "您的广告状态已设置为：status！",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
