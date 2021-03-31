@@ -48,6 +48,6 @@ return [
         'instructions' => 'Elrejti a regisztertípus mezőt a profilszerkesztő oldalon.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Szükséges körzet'
     ],
 ];
