@@ -48,6 +48,6 @@ return [
         'instructions' => 'Fsheh fushën e llojit të regjistrit në faqen e redaktimit të profilit.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Rrethi i kërkuar'
     ],
 ];
