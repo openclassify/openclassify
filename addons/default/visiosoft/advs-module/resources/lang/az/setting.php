@@ -112,8 +112,8 @@ return [
         'instructions' => 'Reklam Önizləmə Səhifəsində Konfiqurasiyalar Düyməsini gizlədin',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Bütün sahələri tələb olun',
+        'instructions' => 'Reklam yaratarkən istifadəçidən Qiymət və Təsvir sahələrini doldurmasını tələb edin',
     ],
     'make_map_required' => [
         'name' => 'Xəritə tələb olun',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Filigran aktivdir?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Ətraflı məhsul seçimləri',
+        'instructions' => 'Məhsul üçün stok və qiymət məlumatlarını daxil etməyə imkan verir'
     ],
 ];
