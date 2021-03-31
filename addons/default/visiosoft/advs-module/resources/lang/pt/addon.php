@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Publicidades',
-    'name'        => 'Módulo de Anúncios',
-    'description' => 'Módulo de Anúncios',
+    'name'        => 'Módulo de anúncios',
+    'description' => 'Módulo de anúncios',
 ];
