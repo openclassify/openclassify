@@ -258,4 +258,8 @@ return [
         'name' => 'Vattenstämpel',
         'instructions' => 'Är vattenstämpel aktivt?'
     ],
+    'detailed_product_options' => [
+        'name' => 'Detailed Product Options',
+        'instructions' => 'Allows you to enter stock and price information for the product'
+    ],
 ];
