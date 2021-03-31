@@ -258,4 +258,8 @@ return [
         'name' => 'Воден знак',
         'instructions' => 'Активен ли е водният знак?'
     ],
+    'detailed_product_options' => [
+        'name' => 'Detailed Product Options',
+        'instructions' => 'Allows you to enter stock and price information for the product'
+    ],
 ];
