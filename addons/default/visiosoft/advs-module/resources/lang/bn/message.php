@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "আপনার বিজ্ঞাপনের স্ট্যাটাসটি প্যাসিভের জন্য সেট হয়ে গেছে!",
 	'sold_status_change' => "আপনার বিজ্ঞাপনের স্থিতি বিক্রয় করা হয়েছে!",
 	'status_change' => "আপনার বিজ্ঞাপনের স্থিতি সেট করা হয়েছে: স্থিতি!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
