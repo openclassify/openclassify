@@ -8,13 +8,13 @@ return [
         'name' => 'Categorias',
     ],
     'village' => [
-        'name' => 'Vila',
+        'name' => 'Aldeia',
     ],
     'custom_fields' => [
         'name' => 'Os campos personalizados',
     ],
     'custom_field_advs' => [
-        'name' => 'Advs de campo personalizado',
+        'name' => 'Adames de campo personalizado',
     ],
     'cf_values' => [
         'name' => 'Valores Cf',
