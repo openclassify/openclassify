@@ -258,4 +258,8 @@ return [
         'name' => '양수표',
         'instructions' => '워터 마크가 활성화되어 있습니까?'
     ],
+    'detailed_product_options' => [
+        'name' => 'Detailed Product Options',
+        'instructions' => 'Allows you to enter stock and price information for the product'
+    ],
 ];
