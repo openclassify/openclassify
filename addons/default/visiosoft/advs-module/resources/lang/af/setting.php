@@ -112,8 +112,8 @@ return [
         'instructions' => 'Versteek die Configurations-knoppie op die bladsy met voorskou van advertensies',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Maak alle velde vereis',
+        'instructions' => 'Vereis dat die gebruiker die prys- en beskrywingsvelde moet invul wanneer hy \'n advertensie skep',
     ],
     'make_map_required' => [
         'name' => 'Maak kaart verlang',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Is watermerk aktief?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Gedetailleerde produkopsies',
+        'instructions' => 'Hiermee kan u voorraad- en prysinligting vir die produk invoer'
     ],
 ];
