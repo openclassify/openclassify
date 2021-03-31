@@ -48,6 +48,6 @@ return [
         'instructions' => 'Oculta el campo de tipo de registro en la página de edición del perfil.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Distrito requerido'
     ],
 ];
