@@ -48,6 +48,6 @@ return [
         'instructions' => 'प्रोफाइल एडिट पेज में रजिस्टर टाइप फील्ड को छुपाता है।',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'आवश्यक जिला'
     ],
 ];
