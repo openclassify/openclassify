@@ -5,6 +5,6 @@ return [
         'name' => 'Categoria',
     ],
     'placeholderforsearch' => [
-        'name' => 'Espaço reservado para pesquisa',
+        'name' => 'Placeholderforsearch',
     ],
 ];
