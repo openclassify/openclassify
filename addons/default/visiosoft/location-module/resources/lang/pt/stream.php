@@ -2,6 +2,6 @@
 
 return [
     'village' => [
-        'name' => 'Vila',
+        'name' => 'Aldeia',
     ],
 ];
