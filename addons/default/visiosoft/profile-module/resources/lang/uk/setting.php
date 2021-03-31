@@ -48,6 +48,6 @@ return [
         'instructions' => 'Приховує поле типу реєстру на сторінці редагування профілю.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Обов’язковий округ'
     ],
 ];
