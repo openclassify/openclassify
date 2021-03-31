@@ -112,8 +112,8 @@ return [
         'instructions' => 'विज्ञापन पूर्वावलोकन पृष्ठ में कॉन्फ़िगरेशन बटन छिपाएं',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'आवश्यक सभी फ़ील्ड बनाएँ',
+        'instructions' => 'विज्ञापन बनाते समय उपयोगकर्ता को मूल्य और विवरण फ़ील्ड भरने की आवश्यकता होती है',
     ],
     'make_map_required' => [
         'name' => 'नक्शा आवश्यक करें',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'क्या वॉटरमार्क सक्रिय है?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'विस्तृत उत्पाद विकल्प',
+        'instructions' => 'आपको उत्पाद के लिए स्टॉक और मूल्य की जानकारी दर्ज करने की अनुमति देता है'
     ],
 ];
