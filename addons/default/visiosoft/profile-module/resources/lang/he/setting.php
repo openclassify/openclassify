@@ -48,6 +48,6 @@ return [
         'instructions' => 'מסתיר את שדה סוג הרישום בדף עריכת הפרופיל.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'מחוז חובה'
     ],
 ];
