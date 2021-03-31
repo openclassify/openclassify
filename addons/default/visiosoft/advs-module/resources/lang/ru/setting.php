@@ -112,8 +112,8 @@ return [
         'instructions' => 'Скрыть кнопку настроек на странице предварительного просмотра объявления',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Сделать все поля обязательными',
+        'instructions' => 'Требовать от пользователя заполнения полей «Цена» и «Описание» при создании объявления.',
     ],
     'make_map_required' => [
         'name' => 'Сделать карту обязательной',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Водяной знак активен?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Подробные параметры продукта',
+        'instructions' => 'Позволяет вводить информацию о наличии и цене продукта.'
     ],
 ];
