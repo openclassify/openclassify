@@ -112,8 +112,8 @@ return [
         'instructions' => 'Amagueu el botó Configuracions a la pàgina de visualització prèvia de l’anunci',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Feu que tots els camps siguin obligatoris',
+        'instructions' => 'Cal que l\'usuari empleni els camps Preu i descripció en crear un anunci',
     ],
     'make_map_required' => [
         'name' => 'Feu que el mapa sigui obligatori',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'La filigrana està activa?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Opcions detallades del producte',
+        'instructions' => 'Permet introduir informació sobre existències i preus del producte'
     ],
 ];
