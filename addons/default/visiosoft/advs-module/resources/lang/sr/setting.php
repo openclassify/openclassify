@@ -258,4 +258,8 @@ return [
         'name' => 'Водени жиг',
         'instructions' => 'Да ли је активан водени жиг?'
     ],
+    'detailed_product_options' => [
+        'name' => 'Detailed Product Options',
+        'instructions' => 'Allows you to enter stock and price information for the product'
+    ],
 ];
