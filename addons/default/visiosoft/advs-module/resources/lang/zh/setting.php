@@ -112,8 +112,8 @@ return [
         'instructions' => '在广告预览页面中隐藏配置按钮',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => '使所有字段为必填项',
+        'instructions' => '制作广告时要求用户填写“价格”和“说明”字段',
     ],
     'make_map_required' => [
         'name' => '将地图设为必填项',
@@ -259,7 +259,7 @@ return [
         'instructions' => '水印活跃吗？'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => '详细的产品选项',
+        'instructions' => '允许您输入产品的库存和价格信息'
     ],
 ];
