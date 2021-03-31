@@ -48,6 +48,6 @@ return [
         'instructions' => 'Amaga el camp tipus de registre a la pàgina d\'edició del perfil.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Districte obligatori'
     ],
 ];
