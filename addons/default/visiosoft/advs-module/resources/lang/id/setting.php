@@ -112,8 +112,8 @@ return [
         'instructions' => 'Sembunyikan Tombol Konfigurasi pada Halaman Pratinjau Iklan',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Buat Semua Bidang Diperlukan',
+        'instructions' => 'Mewajibkan pengguna untuk mengisi bidang Harga dan Deskripsi saat membuat iklan',
     ],
     'make_map_required' => [
         'name' => 'Buat Peta Diperlukan',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Apakah watermark aktif?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Pilihan Produk Terperinci',
+        'instructions' => 'Memungkinkan Anda memasukkan informasi stok dan harga produk'
     ],
 ];
