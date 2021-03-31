@@ -112,8 +112,8 @@ return [
         'instructions' => 'Ascundeți butonul Configurări din pagina de previzualizare a anunțurilor',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Faceți obligatorii toate câmpurile',
+        'instructions' => 'Solicitați utilizatorului să completeze câmpurile Preț și Descriere atunci când creați un anunț',
     ],
     'make_map_required' => [
         'name' => 'Faceți harta necesară',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Filigranul este activ?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Opțiuni detaliate despre produs',
+        'instructions' => 'Vă permite să introduceți informații despre stoc și preț pentru produs'
     ],
 ];
