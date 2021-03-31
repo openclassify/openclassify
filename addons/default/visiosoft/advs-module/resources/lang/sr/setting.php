@@ -112,8 +112,8 @@ return [
         'instructions' => 'Сакријте дугме за конфигурације на страници за преглед огласа',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Нека сва поља буду обавезна',
+        'instructions' => 'Захтевајте од корисника да приликом израде огласа попуни поља Цена и Опис',
     ],
     'make_map_required' => [
         'name' => 'Нека карта буде обавезна',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Да ли је активан водени жиг?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Детаљне опције производа',
+        'instructions' => 'Омогућава вам да унесете информације о залихама и ценама производа'
     ],
 ];
