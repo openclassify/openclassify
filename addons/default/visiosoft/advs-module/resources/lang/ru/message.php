@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "Статус вашего объявления установлен на пассивный!",
 	'sold_status_change' => "Статус вашего объявления изменен на \"Продано\"!",
 	'status_change' => "Статус вашего объявления был установлен на: status!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
