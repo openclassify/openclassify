@@ -112,8 +112,8 @@ return [
         'instructions' => 'Skjul konfigurationsknappen på siden Annonceeksempel',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Foretag alle felter påkrævet',
+        'instructions' => 'Kræv, at brugeren udfylder felterne Pris og beskrivelse, når han opretter en annonce',
     ],
     'make_map_required' => [
         'name' => 'Lav kort påkrævet',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Er vandmærke aktivt?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Detaljerede produktmuligheder',
+        'instructions' => 'Giver dig mulighed for at indtaste lager- og prisoplysninger for produktet'
     ],
 ];
