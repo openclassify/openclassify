@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "Stav vaší reklamy byl nastaven na pasivní!",
 	'sold_status_change' => "Stav vaší reklamy byl nastaven na prodej!",
 	'status_change' => "Stav vaší reklamy byl nastaven na: stav!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
