@@ -112,8 +112,8 @@ return [
         'instructions' => 'إخفاء زر التهيئة في صفحة معاينة الإعلان',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'اجعل كافة الحقول مطلوبة',
+        'instructions' => 'اطلب من المستخدم ملء حقلي السعر والوصف عند إنشاء إعلان',
     ],
     'make_map_required' => [
         'name' => 'اجعل الخريطة مطلوبة',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'هل العلامة المائية نشطة؟'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'خيارات المنتج التفصيلية',
+        'instructions' => 'يسمح لك بإدخال معلومات المخزون والسعر للمنتج'
     ],
 ];
