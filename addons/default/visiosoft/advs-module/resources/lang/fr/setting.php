@@ -112,8 +112,8 @@ return [
         'instructions' => 'Masquer le bouton Configurations dans la page d\'aperçu de l\'annonce',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Rendre tous les champs obligatoires',
+        'instructions' => 'Exiger de l\'utilisateur qu\'il remplisse les champs Prix et Description lors de la création d\'une annonce',
     ],
     'make_map_required' => [
         'name' => 'Rendre la carte obligatoire',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Le filigrane est-il actif?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Options de produit détaillées',
+        'instructions' => 'Vous permet de saisir des informations sur le stock et le prix du produit'
     ],
 ];
