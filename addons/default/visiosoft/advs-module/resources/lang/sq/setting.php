@@ -112,8 +112,8 @@ return [
         'instructions' => 'Fshihni butonin e konfigurimeve në faqen e pamjes paraprake',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Bëni të gjitha fushat e kërkuara',
+        'instructions' => 'Kërkoni nga përdoruesi të plotësojë fushat Çmimi dhe Përshkrimi kur krijoni një reklamë',
     ],
     'make_map_required' => [
         'name' => 'Kërkoni hartën',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'A është ujëra aktive?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Opsione të hollësishme të produktit',
+        'instructions' => 'Ju lejon të futni informacione mbi stokun dhe çmimet për produktin'
     ],
 ];
