@@ -258,4 +258,8 @@ return [
         'name' => 'Wasserzeichen',
         'instructions' => 'Ist das Wasserzeichen aktiv?'
     ],
+    'detailed_product_options' => [
+        'name' => 'Detailed Product Options',
+        'instructions' => 'Allows you to enter stock and price information for the product'
+    ],
 ];
