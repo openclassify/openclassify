@@ -23,7 +23,7 @@ return [
         'name' => 'Vizinhança'
     ],
     'village' => [
-        'name' => 'Vila'
+        'name' => 'Aldeia'
     ],
     'description' => [
         'name' => 'Descrição'
