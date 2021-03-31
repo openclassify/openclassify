@@ -48,6 +48,6 @@ return [
         'instructions' => 'Profil düzenleme sayfasındaki kayıt türü alanını gizler.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Zorunlu Bölge'
     ],
 ];
