@@ -13,12 +13,7 @@ class VisiosoftModuleCatsAddIndexTable extends Migration
 			$table->index('slug');
 			$table->index('parent_category_id');
 			$table->index('icon_id');
-			$table->index('cat1');
-			$table->index('country_id');
-			$table->index('city');
-			$table->index('finish_at');
-			$table->index('status');
-			$table->index('count_show_ad');
+			$table->index('sort_order');
 		});
 	}
 }

@@ -14,9 +14,5 @@ class VisiosoftModuleProfileAddIndexTable extends Migration
 		    $table->index('folder_id');
 	    });
 
-	    Schema::table('page_link_type_pages_translations', function (Blueprint $table) {
-		    $table->index('entry_id');
-		    $table->index('locale');
-	    });
     }
 }
