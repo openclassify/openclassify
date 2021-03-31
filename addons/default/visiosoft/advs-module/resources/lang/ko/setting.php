@@ -112,8 +112,8 @@ return [
         'instructions' => '광고 미리보기 페이지에서 구성 버튼 숨기기',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => '모든 필드를 필수로 설정',
+        'instructions' => '사용자가 광고를 만들 때 가격 및 설명 입력란을 작성해야합니다.',
     ],
     'make_map_required' => [
         'name' => '지도 필수',
@@ -259,7 +259,7 @@ return [
         'instructions' => '워터 마크가 활성화되어 있습니까?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => '자세한 제품 옵션',
+        'instructions' => '제품의 재고 및 가격 정보를 입력 할 수 있습니다.'
     ],
 ];
