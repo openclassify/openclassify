@@ -48,6 +48,6 @@ return [
         'instructions' => 'Verbergt het registertypeveld op de profielbewerkingspagina.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Vereist district'
     ],
 ];
