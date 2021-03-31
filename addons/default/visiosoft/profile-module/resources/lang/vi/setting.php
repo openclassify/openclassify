@@ -48,6 +48,6 @@ return [
         'instructions' => 'Ẩn trường loại đăng ký trong trang chỉnh sửa hồ sơ.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Quận bắt buộc'
     ],
 ];
