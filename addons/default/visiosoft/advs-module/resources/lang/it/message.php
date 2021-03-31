@@ -31,5 +31,5 @@ return [
     'passive_status_change' => "Lo stato del tuo annuncio è stato impostato su Passivo!",
 	'sold_status_change' => "Lo stato del tuo annuncio è stato impostato su Venduto!",
 	'status_change' => "Lo stato del tuo annuncio è stato impostato su: status!",
-	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+	'disabled_detailed_options_for_admin_role' => "Le opzioni dettagliate del prodotto sono disabilitate.",
 ];
