@@ -2,28 +2,28 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Hover na barra lateral',
+        'name'         => 'Passe o cursor sobre a barra lateral',
         'instructions' => 'Expandir a barra lateral ao passar o mouse?',
     ],
     'navigation'    => [
         'name'         => 'Navegação',
-        'instructions' => 'Especifique sua ordem de navegação <em>pessoal</em>',
-        'warning'      => 'O primeiro item de navegação acessível é usado como sua <strong>área residencial</strong>',
-        'reorder'      => 'Arraste e solte os itens de navegação primários na barra lateral <strong></strong> para reordená-los.',
+        'instructions' => 'Especifique sua ordem de navegação <em>pessoal</em>.',
+        'warning'      => 'O primeiro item de navegação acessível é usado como sua área <strong>residencial</strong>.',
+        'reorder'      => 'Arraste e solte os itens de navegação principais na barra lateral <strong></strong> para reordená-los.',
     ],
     'display'       => [
         'name'         => 'Densidade de exibição',
-        'instructions' => 'A tela compacta permite que mais conteúdo seja mostrado na tela de uma vez.',
+        'instructions' => 'A tela compacta permite que mais conteúdo seja exibido na tela de uma só vez.',
         'option'       => [
-            'default' => 'Predefinição',
+            'default' => 'Padrão',
             'compact' => 'Compactar',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Modo de barra lateral',
-        'instructions' => 'Barras laterais estáticas sempre estarão visíveis.',
+        'name'         => 'Modo da barra lateral',
+        'instructions' => 'As barras laterais estáticas sempre estarão visíveis.',
         'option'       => [
-            'default' => 'Predefinição',
+            'default' => 'Padrão',
             'static'  => 'Estático',
         ],
     ],
