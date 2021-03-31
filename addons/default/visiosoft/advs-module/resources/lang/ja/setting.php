@@ -112,8 +112,8 @@ return [
         'instructions' => '広告プレビューページの[設定]ボタンを非表示にします',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'すべてのフィールドを必須にする',
+        'instructions' => '広告を作成するときに、ユーザーに[価格]フィールドと[説明]フィールドに入力するように要求します',
     ],
     'make_map_required' => [
         'name' => 'マップを必須にする',
@@ -259,7 +259,7 @@ return [
         'instructions' => '透かしはアクティブですか？'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => '詳細な製品オプション',
+        'instructions' => '製品の在庫および価格情報を入力できます'
     ],
 ];
