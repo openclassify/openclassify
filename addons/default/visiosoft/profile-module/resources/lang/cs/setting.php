@@ -48,6 +48,6 @@ return [
         'instructions' => 'Skryje pole typu registru na stránce pro úpravu profilu.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Povinný okres'
     ],
 ];
