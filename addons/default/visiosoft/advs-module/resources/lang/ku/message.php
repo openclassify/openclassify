@@ -58,5 +58,5 @@ return [
 ",
 	'sold_status_change' => "! دۆخی ڕیکلامەکەت وەکو فرۆشراوە ڕێکخراوە ",
 	'status_change' => "Rewşa Reklama We Bûye: Status!",
-	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+	'disabled_detailed_options_for_admin_role' => "Vebijarkên hilbera berfireh têne sekinandin.",
 ];
