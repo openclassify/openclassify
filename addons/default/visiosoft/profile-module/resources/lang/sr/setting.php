@@ -48,6 +48,6 @@ return [
         'instructions' => 'Сакрива поље типа регистра на страници за уређивање профила.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Потребан округ'
     ],
 ];
