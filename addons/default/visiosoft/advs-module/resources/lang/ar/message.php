@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "تم تعيين حالة إعلانك على سلبية!",
 	'sold_status_change' => "تم تعيين حالة إعلانك على البيع!",
 	'status_change' => "تم تعيين حالة إعلانك على: الحالة!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
