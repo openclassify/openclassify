@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "Mainoksesi tila on asetettu passiiviseksi!",
 	'sold_status_change' => "Mainoksesi tila on myyty!",
 	'status_change' => "Mainoksesi tila on asetettu tilaan: status!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
