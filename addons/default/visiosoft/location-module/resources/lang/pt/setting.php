@@ -2,39 +2,39 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Campo de localização da página inicial',
+        'name' => 'Campo Localização da Página Inicial',
     ],
     'list_page_location' => [
-        'name' => 'Campo de localização da página de lista',
+        'name' => 'Campo Local da Página da Lista',
     ],
     'detail_page_location' => [
-        'name' => 'Campo de localização da página de detalhes',
+        'name' => 'Campo Local da Página de Detalhes',
     ],
     'show_search_location_btn' => [
-        'name' => 'Mostrar botão de localização de pesquisa',
+        'name' => 'Mostrar botão de localização da pesquisa',
     ],
     'default_country' => [
-        'name' => 'País Padrão',
+        'name' => 'País padrão',
     ],
     'create_ad_page_location' => [
-        'name' => 'Criar local da página do anúncio',
+        'name' => 'Criar local da página de anúncio',
     ],
     'default_city' => [
-        'name' => 'Cidade Padrão',
+        'name' => 'Cidade padrão',
     ],
     'default_district' => [
         'name' => 'Distrito Padrão',
     ],
     'default_neighborhood' => [
-        'name' => 'Vizinhança padrão',
+        'name' => 'Bairro padrão',
     ],
 
     'google_map_key' => [
-        'name' => 'Chave API do Google Maps',
+        'name' => 'Chave da API do Google Maps',
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Padrão Longo',
+        'name' => 'Longo padrão',
     ],
 
     'map_coordinates_lat' => [
@@ -45,7 +45,7 @@ return [
         'name' => 'Ocultar filtro de localização',
     ],
 	'country_for_phone_field' => [
-		'name' => 'País padrão para registro de campo de telefone'
+		'name' => 'País padrão para campo de telefone de registro'
 	],
     'sorting_column' => [
         'name' => 'Coluna de classificação',
