@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "Starea anunțului dvs. a fost setată la pasivă!",
 	'sold_status_change' => "Starea anunțului dvs. a fost setată ca vândută!",
 	'status_change' => "Starea anunțului dvs. a fost setată la: stare!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
