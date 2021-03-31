@@ -20,7 +20,7 @@ return [
         'title' => 'Bairros',
     ],
     'village' => [
-        'title' => 'Vila',
+        'title' => 'Aldeia',
     ],
     'custom_fields' => [
         'title' => 'Os campos personalizados',
@@ -35,9 +35,9 @@ return [
         'title' => 'Os campos personalizados'
     ],
     'assets_clear' => [
-        'name' => 'Ativos livres'
+        'name' => 'Limpar ativos'
     ],
-    'general' => 'Em geral',
+    'general' => 'Geral',
     'ads' => 'Publicidades',
     'user' => 'Do utilizador',
     'filter' => 'Filtro',
