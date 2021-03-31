@@ -31,5 +31,5 @@ return [
     'passive_status_change' => "広告のステータスがパッシブに設定されました。",
 	'sold_status_change' => "広告のステータスが販売済みに設定されました。",
 	'status_change' => "広告のステータスが：statusに設定されました！",
-	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+	'disabled_detailed_options_for_admin_role' => "詳細な製品オプションは無効になっています。",
 ];
