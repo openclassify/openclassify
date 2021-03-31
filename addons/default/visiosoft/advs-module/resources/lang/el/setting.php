@@ -112,8 +112,8 @@ return [
         'instructions' => 'Απόκρυψη του κουμπιού διαμόρφωσης στη σελίδα προεπισκόπησης διαφημίσεων',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Να απαιτούνται όλα τα πεδία',
+        'instructions' => 'Απαιτήστε από το χρήστη να συμπληρώσει τα πεδία Τιμή και περιγραφή κατά τη δημιουργία μιας διαφήμισης',
     ],
     'make_map_required' => [
         'name' => 'Απαιτείται χάρτης',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Είναι ενεργό το υδατογράφημα;'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Λεπτομερείς επιλογές προϊόντος',
+        'instructions' => 'Σας επιτρέπει να εισαγάγετε πληροφορίες για το απόθεμα και την τιμή για το προϊόν'
     ],
 ];
