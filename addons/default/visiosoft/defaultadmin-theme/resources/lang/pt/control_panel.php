@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'help'      => 'Ajuda',
+    'help'      => 'Socorro',
     'search'    => 'Procurar',
     'logout'    => 'Sair',
-    'view_site' => 'Ver Site',
+    'view_site' => 'Exibir site',
     'title'     => 'Painel de controle',
     'search_placeholder'     => 'Escreva para pesquisar',
 
     // Users Module
-    'search_by_gsm_number'     => 'Pesquisar por número GSM',
+    'search_by_gsm_number'     => 'Pesquisa por número GSM',
 ];
