@@ -48,6 +48,6 @@ return [
         'instructions' => 'Ukrywa pole typu rejestru na stronie edycji profilu.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Okręg wymagany'
     ],
 ];
