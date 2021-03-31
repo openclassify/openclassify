@@ -112,8 +112,8 @@ return [
         'instructions' => 'Blenden Sie die Schaltfläche "Konfigurationen" auf der Anzeigenvorschau aus',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Machen Sie alle Felder erforderlich',
+        'instructions' => 'Fordern Sie den Nutzer auf, beim Erstellen einer Anzeige die Felder Preis und Beschreibung auszufüllen',
     ],
     'make_map_required' => [
         'name' => 'Karte erforderlich machen',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Ist das Wasserzeichen aktiv?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Detaillierte Produktoptionen',
+        'instructions' => 'Ermöglicht die Eingabe von Lager- und Preisinformationen für das Produkt'
     ],
 ];
