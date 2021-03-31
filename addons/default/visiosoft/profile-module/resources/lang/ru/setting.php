@@ -48,6 +48,6 @@ return [
         'instructions' => 'Скрывает поле типа регистра на странице редактирования профиля.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Требуемый район'
     ],
 ];
