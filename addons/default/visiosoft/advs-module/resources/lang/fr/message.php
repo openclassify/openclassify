@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "Le statut de votre annonce a été défini sur Passif!",
 	'sold_status_change' => "Le statut de votre annonce a été défini sur Vendu!",
 	'status_change' => "Le statut de votre annonce a été défini sur: statut!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
