@@ -48,6 +48,6 @@ return [
         'instructions' => 'Versteek die veld van die registertipe op die profielbewerkingsbladsy.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Vereiste distrik'
     ],
 ];
