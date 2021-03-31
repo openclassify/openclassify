@@ -48,6 +48,6 @@ return [
         'instructions' => 'プロファイル編集ページのレジスタタイプフィールドを非表示にします。',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => '必要な地区'
     ],
 ];
