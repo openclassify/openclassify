@@ -112,8 +112,8 @@ return [
         'instructions' => 'İlan Önizleme Sayfasında Yapılandırma butonunu Gizle',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Tüm Alanları Zorunlu Yap',
+        'instructions' => 'Bir reklam oluştururken kullanıcının Fiyat ve Açıklama alanlarını doldurmasını zorunlu kılın',
     ],
     'make_map_required' => [
         'name' => 'Haritayı Gerekli Yap',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Filigran etkin mi?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Ayrıntılı Ürün Seçenekleri',
+        'instructions' => 'Ürüne ait stok ve fiyat bilgilerini girmenizi sağlar'
     ],
 ];
