@@ -113,8 +113,8 @@ return [
         'instructions' => 'دکمه تنظیمات را در صفحه پیش نمایش تبلیغ پنهان کنید',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'همه زمینه ها را الزامی کنید',
+        'instructions' => 'هنگام ایجاد تبلیغ ، از کاربر بخواهید قسمتهای قیمت و توضیحات را پر کند',
     ],
     'make_map_required' => [
         'name' => 'تهیه نقشه مورد نیاز',
@@ -260,7 +260,7 @@ return [
         'instructions' => 'آیا علامت علامت فعال است؟'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'گزینه های دقیق محصول',
+        'instructions' => 'به شما امکان می دهد اطلاعات موجودی و قیمت محصول را وارد کنید'
     ],
 ];
