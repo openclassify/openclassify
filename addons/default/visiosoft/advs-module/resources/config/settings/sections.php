@@ -23,6 +23,7 @@ return [
             'ads' => [
                 'title' => 'visiosoft.module.advs::section.ads',
                 'fields' => [
+                    'detailed_product_options',
                     'latest-limit',
                     'popular_ads_limit',
                     'ads_image_limit',
