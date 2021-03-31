@@ -112,8 +112,8 @@ return [
         'instructions' => 'Bişkoja Veavakirina Di Rûpelê Pêşdîtina Adê de Veşêre',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Hemî Zeviyên Pêdivî Bikin',
+        'instructions' => 'Dema ku reklamek diafirîne bikarhêner hewce dike ku qadên Biha û Tarîfeyê dagire',
     ],
     'make_map_required' => [
         'name' => 'Nexşeyê Pêdivî ye',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Watermark çalak e?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Vebijarkên Hilbera Berfireh',
+        'instructions' => 'Destûrê dide ku hûn ji bo hilberê agahdariya pargîdanî û bihayê bikin'
     ],
 ];
