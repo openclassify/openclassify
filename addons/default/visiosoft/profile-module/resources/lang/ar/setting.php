@@ -48,6 +48,6 @@ return [
         'instructions' => 'يخفي حقل نوع التسجيل في صفحة تحرير الملف الشخصي.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'المنطقة المطلوبة'
     ],
 ];
