@@ -112,8 +112,8 @@ return [
         'instructions' => 'Ẩn nút Cấu hình trong Trang Xem trước Quảng cáo',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Đặt tất cả các trường là bắt buộc',
+        'instructions' => 'Yêu cầu người dùng điền vào các trường Giá và Mô tả khi tạo quảng cáo',
     ],
     'make_map_required' => [
         'name' => 'Đặt bản đồ là bắt buộc',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Hình mờ có hoạt động không?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Tùy chọn sản phẩm chi tiết',
+        'instructions' => 'Cho phép bạn nhập thông tin hàng tồn kho và giá cả cho sản phẩm'
     ],
 ];
