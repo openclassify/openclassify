@@ -31,5 +31,5 @@ return [
     'passive_status_change' => "Статус вашег огласа постављен је на пасиван!",
 	'sold_status_change' => "Статус вашег огласа је постављен на продају!",
 	'status_change' => "Статус вашег огласа постављен је на: статус!",
-	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+	'disabled_detailed_options_for_admin_role' => "Детаљне опције производа су онемогућене.",
 ];
