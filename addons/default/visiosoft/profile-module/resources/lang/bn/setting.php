@@ -48,6 +48,6 @@ return [
         'instructions' => 'প্রোফাইল সম্পাদনা পৃষ্ঠায় নিবন্ধকের ধরণের ক্ষেত্রটি লুকিয়ে রাখে।',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'প্রয়োজনীয় জেলা'
     ],
 ];
