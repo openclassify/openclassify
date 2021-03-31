@@ -48,6 +48,6 @@ return [
         'instructions' => 'Menyembunyikan bidang tipe register di halaman edit profil.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Distrik Wajib'
     ],
 ];
