@@ -112,8 +112,8 @@ return [
         'instructions' => 'Skrýt tlačítko Konfigurace na stránce náhledu reklamy',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Nastavit všechna pole jako povinná',
+        'instructions' => 'Vyžadovat, aby uživatel při vytváření reklamy vyplnil pole Cena a Popis',
     ],
     'make_map_required' => [
         'name' => 'Vytvořit mapu jako požadovanou',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Je vodoznak aktivní?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Podrobné možnosti produktu',
+        'instructions' => 'Umožňuje zadat informace o skladu a ceně produktu'
     ],
 ];
