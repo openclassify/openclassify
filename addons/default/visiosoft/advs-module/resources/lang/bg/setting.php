@@ -112,8 +112,8 @@ return [
         'instructions' => 'Скрийте бутона за конфигурации в страницата за визуализация на рекламата',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Направете всички полета задължителни',
+        'instructions' => 'Изисквайте от потребителя да попълва полетата Цена и Описание, когато създава реклама',
     ],
     'make_map_required' => [
         'name' => 'Направете карта задължителна',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Активен ли е водният знак?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Подробни опции за продукта',
+        'instructions' => 'Позволява ви да въведете информация за запасите и цените на продукта'
     ],
 ];
