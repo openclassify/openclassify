@@ -112,8 +112,8 @@ return [
         'instructions' => 'Ukryj przycisk Konfiguracje na stronie podglądu reklamy',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Ustaw wszystkie pola jako wymagane',
+        'instructions' => 'Wymagaj od użytkownika wypełnienia pól Cena i Opis podczas tworzenia reklamy',
     ],
     'make_map_required' => [
         'name' => 'Wymagana mapa',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Czy znak wodny jest aktywny?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Szczegółowe opcje produktu',
+        'instructions' => 'Umożliwia wprowadzenie informacji o stanie magazynowym i cenie produktu'
     ],
 ];
