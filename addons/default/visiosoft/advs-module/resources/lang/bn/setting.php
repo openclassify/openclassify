@@ -112,8 +112,8 @@ return [
         'instructions' => 'বিজ্ঞাপন পূর্বরূপ পৃষ্ঠায় কনফিগারেশন বাটনটি লুকান',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'সমস্ত ক্ষেত্র প্রয়োজনীয় করুন',
+        'instructions' => 'কোনও বিজ্ঞাপন তৈরি করার সময় ব্যবহারকারীকে দাম এবং বিবরণ ক্ষেত্রগুলি পূরণ করতে হবে',
     ],
     'make_map_required' => [
         'name' => 'প্রয়োজনীয় মানচিত্র তৈরি করুন',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'জলছবি সক্রিয়?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'বিস্তারিত পণ্য বিকল্প',
+        'instructions' => 'আপনাকে পণ্যটির জন্য স্টক এবং মূল্য তথ্য প্রবেশ করতে দেয়'
     ],
 ];
