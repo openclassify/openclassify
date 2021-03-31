@@ -31,5 +31,5 @@ return [
     'passive_status_change' => "Състоянието на вашата реклама е зададено на пасивно!",
 	'sold_status_change' => "Състоянието на вашата реклама е настроено да се продава!",
 	'status_change' => "Състоянието на вашата реклама е зададено на: статус!",
-	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+	'disabled_detailed_options_for_admin_role' => "Подробните опции за продукта са деактивирани.",
 ];
