@@ -112,8 +112,8 @@ return [
         'instructions' => 'Nascondi il pulsante Configurazioni nella pagina Anteprima annunci',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Rendi tutti i campi obbligatori',
+        'instructions' => 'Richiedi all\'utente di compilare i campi Prezzo e Descrizione durante la creazione di un annuncio',
     ],
     'make_map_required' => [
         'name' => 'Rendi la mappa richiesta',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'La filigrana è attiva?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Opzioni dettagliate del prodotto',
+        'instructions' => 'Consente di inserire informazioni sullo stock e sul prezzo del prodotto'
     ],
 ];
