@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί σε παθητική!",
 	'sold_status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί για πώληση!",
 	'status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί σε: κατάσταση!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
