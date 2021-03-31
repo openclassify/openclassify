@@ -48,6 +48,6 @@ return [
         'instructions' => 'پروفائل میں ترمیم والے صفحے میں رجسٹر قسم کے فیلڈ کو چھپاتا ہے۔',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'مطلوبہ ضلع'
     ],
 ];
