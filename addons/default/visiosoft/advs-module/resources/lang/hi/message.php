@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "आपके विज्ञापन की स्थिति निष्क्रिय हो गई है!",
 	'sold_status_change' => "आपके विज्ञापन की स्थिति बिक चुकी है!",
 	'status_change' => "आपके विज्ञापन की स्थिति सेट हो गई है: स्थिति!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
