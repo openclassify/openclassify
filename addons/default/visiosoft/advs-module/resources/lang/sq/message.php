@@ -31,5 +31,5 @@ return [
     'passive_status_change' => "Statusi i Reklamës suaj Setshtë vendosur në pasiv!",
 	'sold_status_change' => "Statusi i Reklamës suaj Setshtë vendosur të shitet!",
 	'status_change' => "Statusi i Reklamës suaj Setshtë vendosur në: status!",
-	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+	'disabled_detailed_options_for_admin_role' => "Opsionet e hollësishme të produktit janë çaktivizuar.",
 ];
