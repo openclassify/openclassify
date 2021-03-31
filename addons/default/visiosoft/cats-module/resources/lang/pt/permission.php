@@ -4,17 +4,17 @@ return [
     'category' => [
         'name'   => 'Categoria',
         'option' => [
-            'read'   => 'Pode ler a categoria?',
-            'write'  => 'Pode criar / editar categoria?',
-            'delete' => 'Pode excluir a categoria?',
+            'read'   => 'Pode ler categoria?        ',
+            'write'  => 'Pode criar / editar categoria?        ',
+            'delete' => 'Pode excluir categoria?',
         ],
     ],
     'placeholderforsearch' => [
-        'name'   => 'Espaço reservado para pesquisa',
+        'name'   => 'Placeholderforsearch',
         'option' => [
-            'read'   => 'Pode ler placeholderforsearch?',
-            'write'  => 'Pode criar / editar espaço reservado para pesquisa?',
-            'delete' => 'Pode excluir placeholderforsearch?',
+            'read'   => 'Pode ler o placeholderforsearch?        ',
+            'write'  => 'Pode criar / editar placeholderforsearch?        ',
+            'delete' => 'Pode excluir o placeholderforsearch?',
         ],
     ],
 ];
