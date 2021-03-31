@@ -48,6 +48,6 @@ return [
         'instructions' => 'Piilottaa rekisterityypin kentän profiilin muokkaussivulla.',
     ],
     'required_district' => [
-        'name' => 'Required District'
+        'name' => 'Vaadittu piiri'
     ],
 ];
