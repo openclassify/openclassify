@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Visiosoft Admin',
-    'name'        => 'Visiosoft Admin Theme',
+    'name'        => 'Tema de administrador do Visiosoft',
     'description' => 'O tema oficial de administração do OpenClassify.',
 ];
