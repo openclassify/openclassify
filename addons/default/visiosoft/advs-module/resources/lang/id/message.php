@@ -31,4 +31,5 @@ return [
     'passive_status_change' => "Status Iklan Anda Telah Diatur ke Pasif!",
 	'sold_status_change' => "Status Iklan Anda Telah Diatur ke Terjual!",
 	'status_change' => "Status Iklan Anda Telah Diatur ke :status!",
+	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
 ];
