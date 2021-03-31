@@ -112,8 +112,8 @@ return [
         'instructions' => 'Сховати кнопку конфігурацій на сторінці попереднього перегляду оголошення',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Зробіть усі поля обов’язковими',
+        'instructions' => 'Вимагайте від користувача заповнення полів Ціна та Опис під час створення оголошення',
     ],
     'make_map_required' => [
         'name' => 'Зробіть карту обов’язковою',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Активний водяний знак?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Детальні параметри товару',
+        'instructions' => 'Дозволяє вводити інформацію про запас та ціну товару'
     ],
 ];
