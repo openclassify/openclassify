@@ -112,8 +112,8 @@ return [
         'instructions' => 'Piilota kokoonpanopainike mainoksen esikatselusivulla',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Tee kaikki kentät pakollisiksi',
+        'instructions' => 'Vaadi käyttäjää täyttämään Hinta- ja Kuvaus-kentät mainosta luodessaan',
     ],
     'make_map_required' => [
         'name' => 'Tee kartta pakolliseksi',
@@ -259,7 +259,7 @@ return [
         'instructions' => 'Onko vesileima aktiivinen?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Yksityiskohtaiset tuotevaihtoehdot',
+        'instructions' => 'Voit antaa tuotteen varasto- ja hintatiedot'
     ],
 ];
