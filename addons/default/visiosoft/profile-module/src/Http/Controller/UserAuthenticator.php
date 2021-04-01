@@ -6,6 +6,7 @@ use Anomaly\UsersModule\User\Authenticator\Contract\AuthenticatorExtensionInterf
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Event\UserWasLoggedIn;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Container\Container;
@@ -13,10 +14,13 @@ use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
+use Visiosoft\ProfileModule\Command\AuthAuto;
 use Visiosoft\ProfileModule\Profile\ProfileRepository;
 
 class UserAuthenticator
 {
+    use DispatchesJobs;
+
     protected $guard;
     protected $events;
     protected $container;
@@ -123,5 +127,13 @@ class UserAuthenticator
         } else {
             return response()->json(['userExists' => false]);
         }
+    }
+
+    public function authAuto()
+    {
+        if (\request()->has(['token'])) {
+            $this->dispatch(new AuthAuto(\request('token')));
+        }
+        return \redirect('/');
     }
 }
