@@ -38,10 +38,12 @@ class AuthAuto
                 $activator->force($user);
             } elseif ($user->deleted_at) {
                 $user->update(['deleted_at' => null]);
-            } elseif (!$user->isActivated()) {
-                $user->update(['enabled' => true, 'activated' => true]);
-
             }
+
+            if (!$user->isActivated() or !$user->isEnabled()) {
+                $user->update(['enabled' => true, 'activated' => true]);
+            }
+
             Auth::login($user);
         }
     }
