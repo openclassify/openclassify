@@ -79,6 +79,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         // UserAuthenticator
         'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',
         'ajax/phone-validation' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@phoneValidation',
+        'auth-auto' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@authAuto',
 
         // RegisterController
         'register' => [
