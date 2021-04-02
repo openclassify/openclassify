@@ -75,4 +75,9 @@ class AdvPresenter extends EntryPresenter
         $advModel = new AdvModel();
         return $advModel->priceFormat($adv->getObject());
     }
+
+	public function detailUrl()
+	{
+		return $this->getObject()->getAdvDetailLinkByModel($this);
+	}
 }
