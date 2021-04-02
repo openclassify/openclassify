@@ -6,7 +6,7 @@ return [
         'option' => [
             'read'   => 'Kategorileri görebilir mi?',
             'write'  => 'Kategori oluşturabilir / düzenleyebilir mi?        ',
-            'delete' => 'Kategori silebilir miyim?',
+            'delete' => 'Kategori silebilir mi?',
         ],
     ],
     'placeholderforsearch' => [
