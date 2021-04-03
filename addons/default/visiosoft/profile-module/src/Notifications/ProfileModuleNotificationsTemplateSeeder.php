@@ -10,11 +10,9 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
     public function run()
     {
         if (is_module_installed('visiosoft.module.notifications')) {
-            $template_repo = app(TemplateRepositoryInterface::class);
 
-
-            if (!$template_repo->findBySlug(Str::slug('Registered User', '_'))) {
-                $template_repo->create([
+            $templates = [
+                [
                     'en' => [
                         'message' => '<p><strong>Your membership is activated.<br>Email:{email}</strong></p>',
                         'name' => 'Registered User',
@@ -23,13 +21,8 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
                     ],
                     'stream' => 'users',
                     'slug' => Str::slug('Registered User', '_')
-                ]);
-
-            }
-
-
-            if (!$template_repo->findBySlug(Str::slug('New User Welcome', '_'))) {
-                $template_repo->create([
+                ],
+                [
                     'en' => [
                         'message' => '<tr>
                                      <td class="esd-structure es-p20t es-p20b es-p20r es-p20l" align="left">
@@ -94,13 +87,8 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
                     ],
                     'stream' => 'users',
                     'slug' => Str::slug('New User Welcome', '_')
-                ]);
-            }
-
-
-            if (!$template_repo->findBySlug(Str::slug('Password Forget', '_'))) {
-
-                $template_repo->create([
+                ],
+                [
                     'en' => [
                         'message' => '<tr>
                                      <td class="esd-structure es-p20t es-p20b es-p20r es-p20l" align="left">
@@ -165,12 +153,8 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
                     ],
                     'stream' => 'users',
                     'slug' => Str::slug('Password Forget', '_')
-                ]);
-            }
-
-
-            if (!$template_repo->findBySlug('password_changed')) {
-                $template_repo->create([
+                ],
+                [
                     'en' => [
                         'message' => '<p><strong>Your password has been changed</strong></p>',
                         'name' => 'Password Changed',
@@ -179,9 +163,22 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
                     ],
                     'stream' => 'users',
                     'slug' => 'password_changed'
-                ]);
-            }
+                ],
 
+            ];
+
+            foreach ($templates as $template) {
+                $this->createTemplate($template);
+            }
+        }
+    }
+
+    public function createTemplate($params)
+    {
+        $template_repo = app(TemplateRepositoryInterface::class);
+
+        if (!$template_repo->findBySlug($params['slug'])) {
+            $template_repo->create($params);
         }
     }
 }
