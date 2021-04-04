@@ -1,9 +1,7 @@
 <?php namespace Visiosoft\ProfileModule\Adress\Form;
 
-
 class AdressFormFields
 {
-
     public function handle(AdressFormBuilder $builder)
     {
         $builder->setFields(

@@ -10,13 +10,6 @@ use Anomaly\Streams\Platform\Http\Controller\AdminController;
 
 class AdressController extends AdminController
 {
-
-    /**
-     * Display an index of existing entries.
-     *
-     * @param AdressTableBuilder $table
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function index(AdressTableBuilder $table)
     {
         $table->setColumns(array_merge($table->getColumns(), [
@@ -30,12 +23,6 @@ class AdressController extends AdminController
         return $table->render();
     }
 
-    /**
-     * Create a new entry.
-     *
-     * @param AdressFormBuilder $form
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function create(AdressFormBuilder $form)
     {
         $form->setOption('heading', "visiosoft.module.profile::field");
@@ -43,13 +30,6 @@ class AdressController extends AdminController
         return $form->render();
     }
 
-    /**
-     * Edit an existing entry.
-     *
-     * @param AdressFormBuilder $form
-     * @param        $id
-     * @return \Symfony\Component\HttpFoundation\Response
-     */
     public function edit(AdressFormBuilder $form, $id)
     {
         $form->setOption('heading', "visiosoft.module.profile::field");
@@ -60,19 +40,20 @@ class AdressController extends AdminController
     public function adressUpdate(AdressFormBuilder $form,Request $request,$id)
     {
         $error = $form->build()->validate()->getFormErrors()->getMessages();
-        if(!empty($error))
-        {
+
+        if(!empty($error)) {
             return $this->redirect->back();
         }
+
         $New_value = $request->all();
-        unset($New_value['_token'],$New_value['action']);
+        unset($New_value['_token'], $New_value['action']);
         ProfileAdressEntryModel::find($id)->update($New_value);
         $message = [];
         $message[] = trans('visiosoft.module.profile::message.adress_success_update');
-        if($request->get('action') == "save_create")
-        {
+        if ($request->get('action') == "save_create") {
             return redirect('admin/profile/adress/create')->with('success', $message);
         }
+
         return $this->redirect->back()->with('success', $message);
     }
 }

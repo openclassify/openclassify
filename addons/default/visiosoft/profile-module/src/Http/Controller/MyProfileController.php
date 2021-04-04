@@ -6,13 +6,11 @@ use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Rinvex\Subscriptions\Models\Plan;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
 use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
-use Visiosoft\CloudsiteModule\CloudsiteModule;
 use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
 use Visiosoft\MessagesModule\Message\MessageModel;
 use Visiosoft\PackagesModule\Package\PackageModel;
@@ -65,7 +63,6 @@ class MyProfileController extends PublicController
         $isActivePackages = $isActivePackages->is_enabled('packages');
 
         if ($isActivePackages) {
-
             //Search Last Time Packages By User
             $TimePackages = new PackageFEController();
             $LastTimePackages = $TimePackages->getPackagesByUser('lasttime');

@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\ProfileModule\Adress;
 
-use Illuminate\Support\Facades\Auth;
 use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\Contract\AdressInterface;
@@ -10,9 +9,10 @@ class AdressModel extends ProfileAdressEntryModel implements AdressInterface
 {
     public function getAdress($id = null)
     {
-        if ($id == null) {
+        if (!$id) {
             return AdressModel::query();
         }
+
         return AdressModel::query()->where('id', $id)->whereNull('deleted_at');
     }
 
@@ -23,10 +23,9 @@ class AdressModel extends ProfileAdressEntryModel implements AdressInterface
 
     public function getUserAdress($id = null)
     {
-        if ($id != null) {
-            return $this->query()->where('user_id', $id)->whereNull('deleted_at')->get();
-        }
-        return $this->query()->where('user_id', Auth::id())->whereNull('deleted_at')->get();
+        $id = auth_id_if_null($id);
+
+        return $this->query()->where('user_id', $id)->whereNull('deleted_at')->get();
     }
 
     public function getCountry()

@@ -147,6 +147,13 @@ return [
             'mode' => 'checkbox'
         ]
     ],
+    'make_all_fields_required' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+            'mode' => 'checkbox'
+        ]
+    ],
     'make_map_required' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
@@ -424,4 +431,10 @@ return [
 		]
 	],
 	'disable_sentry' => 'anomaly.field_type.boolean',
+    'detailed_product_options' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ]
+    ],
 ];

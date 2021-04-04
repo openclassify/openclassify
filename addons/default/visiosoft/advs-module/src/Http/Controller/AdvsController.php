@@ -584,8 +584,7 @@ class AdvsController extends PublicController
             $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
 	        $foreign_currencies = json_decode($adv->foreign_currencies, true);
-
-	        if (isset($_COOKIE['currency']) && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+	        if (isset($_COOKIE['currency']) && $_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
 		        $adv->currency = $_COOKIE['currency'];
 		        $adv->price = $foreign_currencies[$_COOKIE['currency']];
 	        }
@@ -614,6 +613,10 @@ class AdvsController extends PublicController
         $categories_id = array();
 
         $adv = $this->adv_repository->getListItemAdv($id);
+
+        if (!Auth::check() or ($adv['created_by_id'] != auth()->id() and !Auth::user()->isAdmin())) {
+            abort(403);
+        }
 
         for ($i = 1; $i <= 10; $i++) {
             $cat = "cat" . $i;
@@ -1089,7 +1092,7 @@ class AdvsController extends PublicController
         $thisModel = new AdvModel();
         $adv = $thisModel->isAdv($id);
         $response = array();
-        if ($adv) {
+        if ($adv and $adv->getStatus() == "approved") {
             $cart = $thisModel->addCart($adv, $quantity, $name);
             $response['status'] = "success";
             $count = $cart->getItems()->count;

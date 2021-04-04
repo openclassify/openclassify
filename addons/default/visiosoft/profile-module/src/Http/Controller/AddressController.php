@@ -1,12 +1,7 @@
 <?php namespace Visiosoft\ProfileModule\Http\Controller;
 
-use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
-use Anomaly\Streams\Platform\Model\Profile\ProfileAdressEntryModel;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 use Visiosoft\ProfileModule\Adress\AdressModel;
-use Visiosoft\ProfileModule\Adress\Form\AdressFormBuilder;
 use Visiosoft\ProfileModule\Adress\Table\AdressTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 

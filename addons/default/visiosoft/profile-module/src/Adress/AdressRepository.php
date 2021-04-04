@@ -5,19 +5,8 @@ use Anomaly\Streams\Platform\Entry\EntryRepository;
 
 class AdressRepository extends EntryRepository implements AdressRepositoryInterface
 {
-
-    /**
-     * The entry model.
-     *
-     * @var AdressModel
-     */
     protected $model;
 
-    /**
-     * Create a new AdressRepository instance.
-     *
-     * @param AdressModel $model
-     */
     public function __construct(AdressModel $model)
     {
         $this->model = $model;
@@ -25,7 +14,7 @@ class AdressRepository extends EntryRepository implements AdressRepositoryInterf
 
     public function findByUser($user_id)
     {
-        return $this->newQuery()->where('user_id', $user_id)->get();
+        return $this->findAllBy('user_id', $user_id);
     }
 
     public function createAddress($name, $user_id, $first_name, $last_name, $country_id, $city_id, $content, $gsm_phone)

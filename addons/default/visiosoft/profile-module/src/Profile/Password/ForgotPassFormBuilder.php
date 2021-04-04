@@ -7,27 +7,12 @@ class ForgotPassFormBuilder extends FormBuilder
 {
     protected $user = null;
 
-    /**
-     * No model.
-     *
-     * @var bool
-     */
     protected $model = false;
 
-    /**
-     * The form actions.
-     *
-     * @var array
-     */
     protected $actions = [
         'submit',
     ];
 
-    /**
-     * The form options.
-     *
-     * @var array
-     */
     protected $options = [
         'redirect'        => '/',
     ];

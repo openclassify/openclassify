@@ -6,34 +6,27 @@ use Anomaly\UsersModule\User\Authenticator\Contract\AuthenticatorExtensionInterf
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Event\UserWasLoggedIn;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\CloudsiteModule\Site\Event\CreateSite;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Events\Dispatcher;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redirect;
-use Visiosoft\CloudsiteModule\Site\SiteModel;
+use Visiosoft\ProfileModule\Command\AuthAuto;
 use Visiosoft\ProfileModule\Profile\ProfileRepository;
-use Visiosoft\SubscriptionsModule\User\UserModel;
 
-/**
- * Class UserAuthenticator
- *
- * @link   http://visiosoft.com.tr/
- * @author Visiosoft, Inc. <support@visiosoft.com.tr>
- * @author Vedat Akdoğan <vedat@visiosoft.com.tr>
- */
 class UserAuthenticator
 {
+    use DispatchesJobs;
+
     protected $guard;
     protected $events;
     protected $container;
     protected $extensions;
     protected $settings;
     protected $advModel;
-
 
     public function __construct(
         Guard $guard,
@@ -50,14 +43,6 @@ class UserAuthenticator
         $this->advModel = $advModel;
         $this->settings = $settings;
     }
-
-    /**
-     * Attempt to login a user.
-     *
-     * @param array $credentials
-     * @param bool $remember
-     * @return bool|UserInterface
-     */
 
     function valid_email($email)
     {
@@ -103,12 +88,6 @@ class UserAuthenticator
         return Redirect::back()->with('error', [trans('visiosoft.module.profile::message.login_error')]);
     }
 
-    /**
-     * Attempt to authenticate the credentials.
-     *
-     * @param array $credentials
-     * @return bool|UserInterface
-     */
     public function authenticate(array $credentials)
     {
         $authenticators = $this->extensions
@@ -132,12 +111,6 @@ class UserAuthenticator
         return false;
     }
 
-    /**
-     * Force login a user.
-     *
-     * @param UserInterface $user
-     * @param bool $remember
-     */
     public function login(UserInterface $user, $remember = false)
     {
         $this->guard->login($user, $remember);
@@ -154,5 +127,13 @@ class UserAuthenticator
         } else {
             return response()->json(['userExists' => false]);
         }
+    }
+
+    public function authAuto()
+    {
+        if (\request()->has(['token'])) {
+            $this->dispatch(new AuthAuto(\request('token')));
+        }
+        return \redirect('/');
     }
 }

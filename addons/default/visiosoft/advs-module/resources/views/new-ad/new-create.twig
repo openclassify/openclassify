@@ -20,6 +20,8 @@
             <div class="adpost-details">
                 <div class="row">
                     <div class="col-md-12">
+                        {% set requiredFields = setting_value('visiosoft.module.advs::make_all_fields_required') %}
+
                         {% set form = form('advs', 'advs').entry(id).actions({'update': {
                             'text': trans('visiosoft.module.advs::button.publish')
                         }}).get() %}
@@ -132,32 +134,42 @@
                                 </div>
 
                                 {% if not setting_value('visiosoft.module.advs::hide_options_field') %}
-                                    <div class="row form-group select-options">
-                                        <label for="selectOptions" class="col-sm-2">
-                                            {{ trans('visiosoft.module.advs::field.options') }}
-                                        </label>
-                                        <div class="col-sm-10">
-                                            <select id="selectOptions" class="form-control options-tags"
-                                                    multiple="multiple"
-                                                    name="options[]">
-                                                {% if count(options) %}
-                                                    {% for option in options %}
-                                                        <option id="advOption{{ option.id }}"
-                                                                selected="selected">{{ option.name }}</option>
-                                                    {% endfor %}
-                                                {% endif %}
-                                            </select>
+                                    {% if not setting_value('visiosoft.module.advs::detailed_product_options') %}
+                                        <div class="row form-group select-options">
+                                            <label for="selectOptions" class="col-sm-2">
+                                                {{ trans('visiosoft.module.advs::field.options') }}
+                                            </label>
+                                            <div class="col-sm-10">
+                                                <select id="selectOptions" class="form-control options-tags"
+                                                        multiple="multiple"
+                                                        name="options[]">
+                                                    {% if count(options) %}
+                                                        {% for option in options %}
+                                                            <option id="advOption{{ option.id }}"
+                                                                    selected="selected">{{ option.name }}</option>
+                                                        {% endfor %}
+                                                    {% endif %}
+                                                </select>
+                                            </div>
+                                            {% if auth_check() and auth_user().hasRole('admin') %}
+                                                <div class="col-12 text-right py-2">
+                                                    <p class="text-muted">
+                                                        <i class="fa fa-exclamation-triangle"></i>
+                                                        {{ trans('visiosoft.module.advs::message.disabled_detailed_options_for_admin_role') }}
+                                                    </p>
+                                                </div>
+                                            {% endif %}
                                         </div>
-                                    </div>
-
-                                    <div class="row form-group product-options">
-                                        <label for="productOptions" class="col-sm-2">
-                                            {{ trans('visiosoft.module.advs::field.product_option.name') }}
-                                        </label>
-                                        <div class="col-sm-10">
-                                            {{ form.fields.product_options_value.configSet('cat1',adv.cat1).input|raw }}
+                                    {% else %}
+                                        <div class="row form-group product-options">
+                                            <label for="productOptions" class="col-sm-2">
+                                                {{ trans('visiosoft.module.advs::field.product_option.name') }}
+                                            </label>
+                                            <div class="col-sm-10">
+                                                {{ form.fields.product_options_value.configSet('cat1',adv.cat1).input|raw }}
+                                            </div>
                                         </div>
-                                    </div>
+                                    {% endif %}
                                 {% endif %}
                             </div>
 

@@ -7,9 +7,6 @@ use Visiosoft\ProfileModule\Profile\Command\GetProfileDetail;
 
 class ProfileModulePlugin extends Plugin
 {
-    /**
-     * @return array
-     */
     public function getFunctions()
     {
         return [

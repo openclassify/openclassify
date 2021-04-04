@@ -4,16 +4,8 @@ use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 
 class GetProfileDetail
 {
-
-    /**
-     * @var $id
-     */
     protected $id;
 
-    /**
-     * GetProduct constructor.
-     * @param $id
-     */
     public function __construct($id)
     {
         $this->id = $id;

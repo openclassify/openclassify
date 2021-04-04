@@ -71,16 +71,16 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             if ($city) {
                 $query = $query->where('city', $city->id);
             } elseif (isset($param['city']) and !empty(array_filter($param['city']))) {
-                $query = $query->whereIn('city', $param['city']);
+                $query = $query->whereIn('city', explode(',', array_first($param['city'])));
             }
             if (isset($param['district']) and !empty(array_filter($param['district']))) {
-                $query = $query->whereIn('district', $param['district']);
+                $query = $query->whereIn('district', explode(',',array_first($param['district'])));
             }
             if (isset($param['neighborhood']) and !empty(array_filter($param['neighborhood']))) {
-                $query = $query->whereIn('neighborhood', $param['neighborhood']);
+                $query = $query->whereIn('neighborhood', explode(',',array_first($param['neighborhood'])));
             }
             if (isset($param['village']) and !empty(array_filter($param['village']))) {
-                $query = $query->whereIn('village', $param['village']);
+                $query = $query->whereIn('village', explode(',',array_first($param['village'])));
             }
         }
         if ($category) {

@@ -10,7 +10,6 @@ use Symfony\Component\HttpFoundation\Response;
 use Visiosoft\ProfileModule\Profile\Events\SendEmptyPassword;
 use Visiosoft\ProfileModule\Profile\SignIn\SignInFormBuilder;
 
-
 class ValidateCredentials
 {
     private $extensions;
@@ -101,7 +100,6 @@ class ValidateCredentials
 
     public function handle(SignInFormBuilder $builder)
     {
-
         if (!$response = $this->authenticate($builder->getPostData())) {
             return false;
         }

@@ -14,6 +14,7 @@ class ValidateRegister
             $builder->addFormError('phone', trans('visiosoft.module.profile::message.registered_phone'));
             return false;
         }
+
         return true;
     }
 }

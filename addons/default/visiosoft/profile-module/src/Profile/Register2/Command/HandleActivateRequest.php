@@ -8,17 +8,6 @@ use Illuminate\Http\Request;
 
 class HandleActivateRequest
 {
-
-    /**
-     * Handle the command.
-     *
-     * @param  UserRepositoryInterface $users
-     * @param  UserAuthenticator       $authenticator
-     * @param  UserActivator           $activator
-     * @param  Encrypter               $encrypter
-     * @param  Request                 $request
-     * @return bool
-     */
     public function handle(
         UserRepositoryInterface $users,
         UserAuthenticator $authenticator,

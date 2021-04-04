@@ -7,13 +7,6 @@ use Visiosoft\ProfileModule\Profile\Register2\Register2FormBuilder;
 use Illuminate\Contracts\Config\Repository;
 use Illuminate\Notifications\AnonymousNotifiable;
 
-/**
- * Class HandleManualRegistration
- *
- * @link   http://openclassify.com/
- * @author OpenClassify, Inc. <support@openclassify.com>
- * @author Visiosoft Inc <support@openclassify.com>
- */
 class HandleManualRegistration
 {
     protected $builder;
@@ -23,12 +16,6 @@ class HandleManualRegistration
         $this->builder = $builder;
     }
 
-    /**
-     * Handle the command.
-     *
-     * @param MessageBag $messages
-     * @param Repository $config
-     */
     public function handle(MessageBag $messages, Repository $config)
     {
         if (!is_null($message = $this->builder->getFormOption('pending_message'))) {

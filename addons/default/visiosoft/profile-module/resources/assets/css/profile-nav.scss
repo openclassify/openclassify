@@ -41,7 +41,7 @@
     z-index: 1040;
   }
 
-  a {
+  a, span {
     display: flex;
     align-items: center;
     margin-bottom: 1.25rem;
@@ -62,7 +62,7 @@
       }
     }
 
-    svg {
+    svg, img {
       margin-right: .75rem;
       width: 1.5rem;
       height: 1.5rem;

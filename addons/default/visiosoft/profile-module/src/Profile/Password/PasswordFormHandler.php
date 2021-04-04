@@ -5,6 +5,7 @@ use Anomaly\UsersModule\User\User;
 use Anomaly\UsersModule\User\UserPassword;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Visiosoft\ProfileModule\Events\PasswordChanged;
 
 class PasswordFormHandler
 {
@@ -43,6 +44,9 @@ class PasswordFormHandler
         $user = User::query()->find(Auth::id());
         $user->setAttribute('password', $builder->getPostValue('new_password'));
         $user->save($user->toArray());
+
+        event(new PasswordChanged());
+
         $messages->success(trans('visiosoft.module.profile::message.your_password_changed'));
     }
 }

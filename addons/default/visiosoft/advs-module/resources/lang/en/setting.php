@@ -111,6 +111,10 @@ return [
         'name' => 'Hide the Configurations Button',
         'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
     ],
+    'make_all_fields_required' => [
+        'name' => 'Make All Fields Required',
+        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+    ],
     'make_map_required' => [
         'name' => 'Make Map Required',
         'instructions' => 'Require the user to place a pin on the map when creating an ad',
@@ -253,5 +257,9 @@ return [
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Detailed Product Options',
+        'instructions' => 'Allows you to enter stock and price information for the product'
     ],
 ];
