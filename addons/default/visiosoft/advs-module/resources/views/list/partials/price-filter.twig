@@ -1,22 +1,24 @@
 {% set hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories') %}
-{% set cats = entries('cats','category').whereIn('id', hidePriceCats).get() %}
-{% set isHidden = false %}
+{% if (hidePriceCats != null) %}
+     {% set cats = entries('cats','category').whereIn('id', hidePriceCats).get() %}
+     {% set isHidden = false %}
 
-{% for cat in cats %}
-    {% if request().segment(2) == cat.slug %}
-        {% set isHidden = true %}
-    {% endif %}
-{% endfor %}
+     {% for cat in cats %}
+         {% if request().segment(2) == cat.slug %}
+             {% set isHidden = true %}
+         {% endif %}
+     {% endfor %}
+{% endif %}
 
-{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden%}
+{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden %}
     <div class="card mb-3">
         <div class="card-header breadcrumb mb-0" id="priceHeading">
             <h5 class="mb-0">
                 <button class="btn btn-link text-dark d-flex align-items-center" data-toggle="collapse"
                         data-target="#price"
                         aria-expanded="true" aria-controls="price">
-{#                    <img src="{{ img('visiosoft.module.advs::images/price-icon.svg').url }}" alt="price icon"#}
-{#                         class="mr-2">#}
+                    {#                    <img src="{{ img('visiosoft.module.advs::images/price-icon.svg').url }}" alt="price icon"#}
+                    {#                         class="mr-2">#}
                     <span>{{ trans("visiosoft.module.advs::field.price.name") }}</span>
                 </button>
             </h5>
@@ -47,7 +49,6 @@
                         {% endfor %}
                     </select>
                 </div>
-
             </div>
         </div>
     </div>

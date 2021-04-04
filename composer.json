@@ -15,8 +15,6 @@
         }
     ],
     "require": {
-        "wikimedia/composer-merge-plugin": "~1.4.0",
-        "anomaly/streams-composer-plugin": "~1.1.0",
         "anomaly/streams-platform": "~1.9.0",
         "anomaly/default_authenticator-extension": "~2.1.0",
         "anomaly/throttle_security_check-extension": "~2.1.0",
@@ -63,6 +61,7 @@
         "anomaly/settings-module": "~2.4.0",
         "anomaly/blocks-module": "~1.3.0",
         "anomaly/search-module": "~3.0.0",
+        "anomaly/system-module": "~1.1.0",
         "anomaly/users-module": "~2.5.0",
         "anomaly/pages-module": "~2.6.0",
         "anomaly/posts-module": "~2.6.0",
@@ -90,16 +89,16 @@
         "symfony/dom-crawler": "3.1.*",
         "anomaly/installer-module": "~2.4.0"
     },
-    "repositories": {
-        "0": {
+    "repositories": [
+        {
             "type": "composer",
             "url": "https://packages.pyrocms.com"
         },
-        "1": {
+        {
             "type": "composer",
             "url": "https://community.pyrocms.com"
         }
-    },
+    ],
     "autoload": {
         "classmap": [
             "database"
