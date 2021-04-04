@@ -17,7 +17,7 @@
     "require": {
         "wikimedia/composer-merge-plugin": "~1.4.0",
         "anomaly/streams-composer-plugin": "~1.1.0",
-        "visiosoft/streams-platform": "~1.8.0",
+        "anomaly/streams-platform": "~1.9.0",
         "anomaly/default_authenticator-extension": "~2.1.0",
         "anomaly/throttle_security_check-extension": "~2.1.0",
         "anomaly/private_storage_adapter-extension": "~1.1.0",
@@ -79,19 +79,16 @@
         "visiosoft/addblock-extension": "^1.1",
         "maatwebsite/excel": "*",
         "google/recaptcha": "1.2.*",
-        "sentry/sentry-laravel": "*",
+        "sentry/sentry-laravel": "2.3.1",
         "composer/composer": "^1.10",
         "pusher/pusher-php-server": "^5.0"
-    },
-    "replace": {
-        "anomaly/streams-platform": "*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
-        "anomaly/installer-module": "~2.3.0"
+        "anomaly/installer-module": "~2.4.0"
     },
     "repositories": {
         "0": {
