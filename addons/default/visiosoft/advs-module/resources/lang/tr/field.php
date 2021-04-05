@@ -161,7 +161,7 @@ return [
     'search_desc' => 'Burada favori arama seçimlerinizi ekleyebilir ve yönetebilirsiniz.',
     'complaint_placeholder' => 'Şikayet ayrıntılarınızı buraya yazın.',
     'show_details' => 'Detayları Göster',
-    'ad_actions' => 'İlan İşlemleri',
+    'ad_actions' => 'İşlemler',
     'edit' => 'Düzenle',
     'approve' => 'Onayla',
     'passive' => "Pasif",
@@ -280,6 +280,17 @@ return [
     ],
     'yes' => [
         'name' => 'Evet'
+    ],
+    'no' => [
+        'name' => 'Hayır'
+    ],
+    'is_system' => [
+        'name' => 'Sistem mi',
+        'instructions' => 'Sistem durumu gereklidir ve değiştirilmemelidir',
+    ],
+    'user_access' => [
+        'name' => 'Kullanıcı erişimi',
+        'instructions' => 'Bir kullanıcı bu durumu ilanlarında kullanabilir mi?',
     ],
     "no_location" => "Lokasyon eklenmemiş.",
     "continue" => 'Devam Et',

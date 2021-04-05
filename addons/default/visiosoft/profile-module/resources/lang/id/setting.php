@@ -47,4 +47,7 @@ return [
         'name' => 'Sembunyikan Jenis Register di Halaman Profil',
         'instructions' => 'Menyembunyikan bidang tipe register di halaman edit profil.',
     ],
+    'required_district' => [
+        'name' => 'Distrik Wajib'
+    ],
 ];

@@ -473,6 +473,7 @@ return [
     'update' => 'Aktualisieren',
     'change_password' => 'Ändere das Passwort',
     'choose_an_option' => 'Wähle eine Option...',
+    'change_status' => 'Status ändern',
 
     // Register page
     'accept_terms_label' => 'Ich akzeptiere die Bedingungen.',
@@ -488,4 +489,14 @@ return [
 	'education_part' => [
 		'name' => 'Bildungsstand'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Benachrichtigte neue Updates',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Über Anzeigen informiert',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Nachrichten per E-Mail erhalten',
+    ],
 ];

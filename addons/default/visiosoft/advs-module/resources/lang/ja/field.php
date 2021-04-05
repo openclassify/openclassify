@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'はい'
     ],
+    'no' => [
+        'name' => '番号'
+    ],
+    'is_system' => [
+        'name' => 'システムは',
+        'instructions' => 'システムステータスは必須であり、変更しないでください',
+    ],
+    'user_access' => [
+        'name' => 'ユーザーアクセス',
+        'instructions' => 'ユーザーは自分の広告でこのステータスを使用できますか？',
+    ],
     "no_location" => "場所が選択されていません。",
     "continue" => '継続する',
     "gallery" => 'ギャラリー',

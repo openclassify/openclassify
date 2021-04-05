@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "O status do seu anúncio foi definido como ativo!",
     'passive_status_change' => "O status do seu anúncio foi definido como passivo!",
 	'sold_status_change' => "O status do seu anúncio foi definido como vendido!",
+	'status_change' => "O status do seu anúncio foi definido como: status!",
+	'disabled_detailed_options_for_admin_role' => "As opções detalhadas do produto estão desativadas.",
 ];

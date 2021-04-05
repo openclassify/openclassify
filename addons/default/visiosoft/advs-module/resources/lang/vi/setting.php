@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Quốc gia quảng cáo mặc định',
     ],
+    'hide_price_categories' => [
+        'name' => 'Ẩn giá trên danh mục',
+        'instructions' => 'Giá sẽ bị ẩn khi bạn tạo quảng cáo hoặc xem quảng cáo trong các danh mục này.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Khóa API chuyển đổi tiền tệ'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Ẩn nút cấu hình',
         'instructions' => 'Ẩn nút Cấu hình trong Trang Xem trước Quảng cáo',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Đặt tất cả các trường là bắt buộc',
+        'instructions' => 'Yêu cầu người dùng điền vào các trường Giá và Mô tả khi tạo quảng cáo',
     ],
     'make_map_required' => [
         'name' => 'Đặt bản đồ là bắt buộc',
@@ -203,6 +211,22 @@ return [
         'name' => 'Hiển thị Số lượng Quảng cáo',
         'instructions' => 'Số lượng quảng cáo hiển thị trên danh sách danh mục bên trái',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Ẩn ngày tạo',
+        'instructions' => 'Ẩn ngày tạo trong trang chi tiết quảng cáo',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Ẩn tiêu đề danh sách',
+		'instructions' => 'Ẩn để đặt hàng và xem các loại',
+	],
+	'hide_filter_section' => [
+		'name' => 'Ẩn phần bộ lọc',
+		'instructions' => 'Ẩn vùng lọc bên trái trong trang danh sách',
+	],
+	'hide_seller_info' => [
+		'name' => 'Ẩn thông tin người bán',
+		'instructions' => 'Ẩn thông tin người bán trong trang chi tiết quảng cáo',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Hiển thị Thỏa thuận Quảng cáo Đăng',
         'instructions' => 'Bật tính năng này nếu bạn muốn hiển thị thỏa thuận chính sách bảo mật trên trang tạo quảng cáo',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'NHẬN danh mục',
         'instructions' => 'Nó đại diện cho các danh mục mà thuộc tính GET sẽ hợp lệ.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Tắt Sentry'
+	],
+    'watermark' => [
+        'name' => 'Chữ ký ảnh',
+        'instructions' => 'Hình mờ có hoạt động không?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Tùy chọn sản phẩm chi tiết',
+        'instructions' => 'Cho phép bạn nhập thông tin hàng tồn kho và giá cả cho sản phẩm'
     ],
 ];

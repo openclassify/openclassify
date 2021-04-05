@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Land der Standardanzeige',
     ],
+    'hide_price_categories' => [
+        'name' => 'Preis für Kategorien ausblenden',
+        'instructions' => 'Der Preis wird ausgeblendet, wenn Sie eine Anzeige erstellen oder eine Anzeige unter diesen Kategorien anzeigen.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Währungsumrechner-API-Schlüssel'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Blenden Sie die Schaltfläche Konfigurationen aus',
         'instructions' => 'Blenden Sie die Schaltfläche "Konfigurationen" auf der Anzeigenvorschau aus',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Machen Sie alle Felder erforderlich',
+        'instructions' => 'Fordern Sie den Nutzer auf, beim Erstellen einer Anzeige die Felder Preis und Beschreibung auszufüllen',
     ],
     'make_map_required' => [
         'name' => 'Karte erforderlich machen',
@@ -203,6 +211,22 @@ return [
         'name' => 'Anzeigenanzahl anzeigen',
         'instructions' => 'Anzeigenanzahl in der linken Kategorieliste anzeigen',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Erstellungsdatum ausblenden',
+        'instructions' => 'Erstellungsdatum auf der Anzeigen-Detailseite ausblenden',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Listenkopf ausblenden',
+		'instructions' => 'Verstecken, um Typen zu bestellen und anzuzeigen',
+	],
+	'hide_filter_section' => [
+		'name' => 'Filterbereich ausblenden',
+		'instructions' => 'Versteckt den linken Filterbereich auf der Listenseite',
+	],
+	'hide_seller_info' => [
+		'name' => 'Verkäuferinformationen ausblenden',
+		'instructions' => 'Ausblenden von Verkäuferinformationen auf der Anzeigen-Detailseite',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement anzeigen',
         'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'Kategorien abrufen',
         'instructions' => 'Es stellt die Kategorien dar, in denen die GET-Eigenschaft gültig ist.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Sentry deaktivieren'
+	],
+    'watermark' => [
+        'name' => 'Wasserzeichen',
+        'instructions' => 'Ist das Wasserzeichen aktiv?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Detaillierte Produktoptionen',
+        'instructions' => 'Ermöglicht die Eingabe von Lager- und Preisinformationen für das Produkt'
     ],
 ];

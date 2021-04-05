@@ -468,6 +468,7 @@ return [
     'update' => 'अपडेट करें',
     'change_password' => 'पासवर्ड बदलें',
     'choose_an_option' => 'एक विकल्प चुनें...',
+    'change_status' => 'अवस्था बदलो',
 
     // Register page
     'accept_terms_label' => 'मैं शर्तें मंज़ूर करता हूँ।',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'शिक्षा की स्थिति'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'अधिसूचित नई अद्यतन',
+    ],
+    'notified_about_ads' => [
+        'name' => 'विज्ञापनों के बारे में सूचित किया',
+    ],
+    'receive_messages_email' => [
+        'name' => 'संदेश ईमेल प्राप्त करें',
+    ],
 ];

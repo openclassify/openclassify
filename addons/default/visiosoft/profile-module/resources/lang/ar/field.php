@@ -467,6 +467,7 @@ return [
     'update' => 'تحديث',
     'change_password' => 'غير كلمة السر',
     'choose_an_option' => 'إختر خيار...',
+    'change_status' => 'تغيير الوضع',
 
     // Register page
     'accept_terms_label' => 'أوافق على شروط.',
@@ -482,4 +483,14 @@ return [
 	'education_part' => [
 		'name' => 'حالة التعليم'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'التحديثات الجديدة التي تم إخطارها',
+    ],
+    'notified_about_ads' => [
+        'name' => 'أخطرت عن الإعلانات',
+    ],
+    'receive_messages_email' => [
+        'name' => 'تلقي رسائل البريد الإلكتروني',
+    ],
 ];

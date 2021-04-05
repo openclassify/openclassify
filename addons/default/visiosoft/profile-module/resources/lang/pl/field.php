@@ -468,6 +468,7 @@ return [
     'update' => 'Aktualizacja',
     'change_password' => 'Zmień hasło',
     'choose_an_option' => 'Wybierz opcję...',
+    'change_status' => 'Zmień status',
 
     // Register page
     'accept_terms_label' => 'Akceptuję warunki.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Stan edukacji'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Powiadomione nowe aktualizacje',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Powiadomiony o reklamach',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Otrzymuj wiadomości e-mail',
+    ],
 ];

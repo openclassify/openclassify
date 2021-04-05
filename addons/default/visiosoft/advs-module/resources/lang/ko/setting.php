@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => '기본 광고 국가',
     ],
+    'hide_price_categories' => [
+        'name' => '카테고리에서 가격 숨기기',
+        'instructions' => '광고를 만들거나 이러한 카테고리에서 광고를 볼 때 가격이 숨겨집니다.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => '통화 변환기 API 키'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => '구성 버튼 숨기기',
         'instructions' => '광고 미리보기 페이지에서 구성 버튼 숨기기',
+    ],
+    'make_all_fields_required' => [
+        'name' => '모든 필드를 필수로 설정',
+        'instructions' => '사용자가 광고를 만들 때 가격 및 설명 입력란을 작성해야합니다.',
     ],
     'make_map_required' => [
         'name' => '지도 필수',
@@ -203,6 +211,22 @@ return [
         'name' => '광고 수 표시',
         'instructions' => '왼쪽 카테고리 목록에 광고 개수 표시',
     ],
+    'ads_date_hidden' => [
+        'name' => '만든 날짜 숨기기',
+        'instructions' => '광고 세부 정보 페이지에서 만든 날짜 숨기기',
+    ],
+	'hide_listing_header' => [
+		'name' => '목록 헤더 숨기기',
+		'instructions' => '주문 및보기 유형 숨기기',
+	],
+	'hide_filter_section' => [
+		'name' => '필터 섹션 숨기기',
+		'instructions' => '목록 페이지에서 왼쪽 필터 영역으로 숨기기',
+	],
+	'hide_seller_info' => [
+		'name' => '판매자 정보 숨기기',
+		'instructions' => '광고 세부 정보 페이지에서 판매자 정보 숨기기',
+	],
     'show_post_ad_agreement' => [
         'name' => '광고 게시 계약 표시',
         'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'GET 카테고리',
         'instructions' => 'GET 속성이 유효한 범주를 나타냅니다.'
+    ],
+	'disable_sentry' => [
+		'name' => '센트리 비활성화'
+	],
+    'watermark' => [
+        'name' => '양수표',
+        'instructions' => '워터 마크가 활성화되어 있습니까?'
+    ],
+    'detailed_product_options' => [
+        'name' => '자세한 제품 옵션',
+        'instructions' => '제품의 재고 및 가격 정보를 입력 할 수 있습니다.'
     ],
 ];

@@ -9,7 +9,7 @@ return [
     ],
     'hide_zero_price' => [
         'name' => 'Sıfır ise Fiyatı Gizle',
-        'instructions' => 'İlan fiyatı 0 ise fiyatı gizle',
+        'instructions' => 'İlan fiyatı sıfır ise fiyatı gizle',
     ],
     'estimated_pending_time' => [
         'name' => 'Tahmini Bekleme Süresi',
@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Varsayılan İlan Ülkesi',
     ],
+    'hide_price_categories' => [
+        'name' => 'Kategorilerdeki Fiyatı Gizle',
+        'instructions' => 'Bu kategoriler altında bir reklam oluşturduğunuzda veya bir reklamı görüntülediğinizde fiyat gizlenecektir.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Para Birimi Dönüştürücü API Anahtarı'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Yapılandırmalar Düğmesini Gizle',
         'instructions' => 'İlan Önizleme Sayfasında Yapılandırma butonunu Gizle',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Tüm Alanları Zorunlu Yap',
+        'instructions' => 'Bir ilan oluştururken kullanıcının Fiyat ve Açıklama alanlarını doldurmasını zorunlu kılın',
     ],
     'make_map_required' => [
         'name' => 'Haritayı Gerekli Yap',
@@ -203,6 +211,22 @@ return [
         'name' => 'İlan Sayısını Göster',
         'instructions' => 'Soldaki kategori listesinde ilan sayısını göster',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Oluşturulma Tarihini Gizle',
+        'instructions' => 'İlan detay sayfasında oluşturulan tarihi gizle',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Liste Başlığını Gizle',
+		'instructions' => 'Türleri sıralamak ve görüntülemek için gizleme',
+	],
+	'hide_filter_section' => [
+		'name' => 'Filtre Bölümünü Gizle',
+		'instructions' => 'Liste sayfasında sol filtre alanına gizleniyor',
+	],
+	'hide_seller_info' => [
+		'name' => 'Satıcı Bilgilerini Gizle',
+		'instructions' => 'İlan detay sayfasında satıcı bilgilerinin gizlenmesi',
+	],
     'show_post_ad_agreement' => [
         'name' => 'İlan Sonrası Sözleşmesini Göster',
         'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'GET Kategorileri',
         'instructions' => 'GET özelliğinin geçerli olacağı kategorileri temsil eder.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Sentry\'yi devre dışı bırak'
+	],
+    'watermark' => [
+        'name' => 'Filigran',
+        'instructions' => 'Filigran etkin mi?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Ayrıntılı Ürün Seçenekleri',
+        'instructions' => 'Ürüne ait stok ve fiyat bilgilerini girmenizi sağlar'
     ],
 ];

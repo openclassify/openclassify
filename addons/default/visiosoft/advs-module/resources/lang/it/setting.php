@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Paese annuncio predefinito',
     ],
+    'hide_price_categories' => [
+        'name' => 'Nascondi prezzo per categorie',
+        'instructions' => 'Il prezzo verrà nascosto quando crei un annuncio o visualizzi un annuncio in queste categorie.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Chiave API del convertitore di valuta'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Nascondi il pulsante Configurazioni',
         'instructions' => 'Nascondi il pulsante Configurazioni nella pagina Anteprima annunci',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Rendi tutti i campi obbligatori',
+        'instructions' => 'Richiedi all\'utente di compilare i campi Prezzo e Descrizione durante la creazione di un annuncio',
     ],
     'make_map_required' => [
         'name' => 'Rendi la mappa richiesta',
@@ -203,6 +211,22 @@ return [
         'name' => 'Mostra conteggio annunci',
         'instructions' => 'Mostra il conteggio degli annunci nell\'elenco delle categorie a sinistra',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Nascondi data di creazione',
+        'instructions' => 'Nascondi la data di creazione nella pagina dei dettagli degli annunci',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Nascondi intestazione elenco',
+		'instructions' => 'Nascondersi per ordinare e visualizzare i tipi',
+	],
+	'hide_filter_section' => [
+		'name' => 'Nascondi sezione filtro',
+		'instructions' => 'Nascondere nell\'area del filtro a sinistra nella pagina dell\'elenco',
+	],
+	'hide_seller_info' => [
+		'name' => 'Nascondi le informazioni sul venditore',
+		'instructions' => 'Nascondere alle informazioni del venditore nella pagina dei dettagli degli annunci',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Mostra accordo post annuncio',
         'instructions' => 'Attiva questa opzione se desideri visualizzare un accordo sulla politica sulla privacy nella pagina di creazione dell\'annuncio',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'OTTIENI Categorie',
         'instructions' => 'Rappresenta le categorie in cui sarà valida la proprietà GET.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Disabilita Sentry'
+	],
+    'watermark' => [
+        'name' => 'Filigrana',
+        'instructions' => 'La filigrana è attiva?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Opzioni dettagliate del prodotto',
+        'instructions' => 'Consente di inserire informazioni sullo stock e sul prezzo del prodotto'
     ],
 ];

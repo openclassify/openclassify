@@ -280,6 +280,17 @@ return [
     'yes' => [
         'name' => 'Ja'
     ],
+    'no' => [
+        'name' => 'Nee'
+    ],
+    'is_system' => [
+        'name' => 'Is System',
+        'instructions' => 'De systeemstatus is vereist en mag niet worden gewijzigd',
+    ],
+    'user_access' => [
+        'name' => 'Gebruikerstoegang',
+        'instructions' => 'Kan een gebruiker deze status gebruiken voor zijn advertenties?',
+    ],
     "no_location" => "Er is geen locatie geselecteerd.",
     "continue" => 'Doorgaan met',
     "gallery" => 'Galerij',

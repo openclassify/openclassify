@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Standaardadvertentieland',
     ],
+    'hide_price_categories' => [
+        'name' => 'Verberg prijs op categorieën',
+        'instructions' => 'De prijs wordt verborgen wanneer u een advertentie maakt of een advertentie in deze categorieën bekijkt.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Valutacalculator API-sleutel'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Verberg de configuratieknop',
         'instructions' => 'Verberg de configuratieknop op de pagina Advertentievoorbeeld',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Maak alle velden verplicht',
+        'instructions' => 'Vereisen dat de gebruiker de velden Prijs en Beschrijving invult bij het maken van een advertentie',
     ],
     'make_map_required' => [
         'name' => 'Maak een kaart vereist',
@@ -203,6 +211,22 @@ return [
         'name' => 'Toon het aantal advertenties',
         'instructions' => 'Toon het aantal advertenties in de lijst met linkercategorieën',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Aanmaakdatum verbergen',
+        'instructions' => 'Verberg de aanmaakdatum op de detailpagina van de advertenties',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Verberg koptekst',
+		'instructions' => 'Verbergen om typen te bestellen en te bekijken',
+	],
+	'hide_filter_section' => [
+		'name' => 'Filtergedeelte verbergen',
+		'instructions' => 'Verbergen naar linker filtergebied op lijstpagina',
+	],
+	'hide_seller_info' => [
+		'name' => 'Verberg verkopersinformatie',
+		'instructions' => 'Verbergen voor verkopersinformatie op de detailpagina van advertenties',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertentieovereenkomst',
         'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'GET Categorieën',
         'instructions' => 'Het vertegenwoordigt de categorieën waarin de eigenschap GET geldig zal zijn.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Schakel Sentry uit'
+	],
+    'watermark' => [
+        'name' => 'Watermerk',
+        'instructions' => 'Is watermerk actief?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Gedetailleerde productopties',
+        'instructions' => 'Hiermee kunt u voorraad- en prijsinformatie voor het product invoeren'
     ],
 ];

@@ -468,6 +468,7 @@ return [
     'update' => 'ажурирање',
     'change_password' => 'Промени лозинку',
     'choose_an_option' => 'Изабери опцију...',
+    'change_status' => 'Промени статус',
 
     // Register page
     'accept_terms_label' => 'Прихватам услове.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Држава образовања'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Обавештена нова ажурирања',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Обавештени о огласима',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Примите поруке е-поштом',
+    ],
 ];

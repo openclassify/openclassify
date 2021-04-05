@@ -47,4 +47,7 @@ return [
         'name' => 'Ukryj Zarejestruj Wpisz na stronie profilu',
         'instructions' => 'Ukrywa pole typu rejestru na stronie edycji profilu.',
     ],
+    'required_district' => [
+        'name' => 'Okręg wymagany'
+    ],
 ];

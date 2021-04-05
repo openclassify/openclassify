@@ -44,4 +44,5 @@ return [
 	'publish' => '게시',
 	'import' => '수입',
     'new_status' => '새로운 상태',
+    'fast_edit' => '빠른 편집',
 ];

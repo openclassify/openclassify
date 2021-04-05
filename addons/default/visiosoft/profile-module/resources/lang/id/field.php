@@ -468,6 +468,7 @@ return [
     'update' => 'Memperbarui',
     'change_password' => 'Ganti kata sandi',
     'choose_an_option' => 'Pilih salah satu opsi ...',
+    'change_status' => 'Merubah status',
 
     // Register page
     'accept_terms_label' => 'Saya menerima persyaratannya.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Status Pendidikan'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Diberitahu Pembaruan Baru',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Diberitahu Tentang Iklan',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Terima Pesan Email',
+    ],
 ];

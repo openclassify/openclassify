@@ -469,6 +469,7 @@ return [
     'update' => 'Обновить',
     'change_password' => 'Сменить пароль',
     'choose_an_option' => 'Выберите опцию...',
+    'change_status' => 'Изменить статус',
 
     // Register page
     'accept_terms_label' => 'Я принимаю условия.',
@@ -484,4 +485,14 @@ return [
 	'education_part' => [
 		'name' => 'Состояние образования'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Уведомленные новые обновления',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Уведомление о рекламе',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Получать сообщения по электронной почте',
+    ],
 ];

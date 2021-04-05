@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'デフォルトの広告国',
     ],
+    'hide_price_categories' => [
+        'name' => 'カテゴリの価格を非表示',
+        'instructions' => 'これらのカテゴリで広告を作成したり、広告を表示したりすると、価格は非表示になります。'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => '通貨コンバーターAPIキー'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => '構成ボタンを非表示にする',
         'instructions' => '広告プレビューページの[設定]ボタンを非表示にします',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'すべてのフィールドを必須にする',
+        'instructions' => '広告を作成するときに、ユーザーに[価格]フィールドと[説明]フィールドに入力するように要求します',
     ],
     'make_map_required' => [
         'name' => 'マップを必須にする',
@@ -203,6 +211,22 @@ return [
         'name' => '広告数を表示',
         'instructions' => '左側のカテゴリリストに広告数を表示する',
     ],
+    'ads_date_hidden' => [
+        'name' => '作成日を非表示',
+        'instructions' => '広告詳細ページで作成日を非表示',
+    ],
+	'hide_listing_header' => [
+		'name' => 'リストヘッダーを非表示',
+		'instructions' => '注文と表示タイプの非表示',
+	],
+	'hide_filter_section' => [
+		'name' => 'フィルタセクションを非表示',
+		'instructions' => 'リストページの左側のフィルター領域に非表示',
+	],
+	'hide_seller_info' => [
+		'name' => '売り手情報を隠す',
+		'instructions' => '広告の詳細ページで販売者情報を非表示にする',
+	],
     'show_post_ad_agreement' => [
         'name' => 'ポスト広告契約を表示する',
         'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'カテゴリを取得',
         'instructions' => 'これは、GETプロパティが有効になるカテゴリを表します。'
+    ],
+	'disable_sentry' => [
+		'name' => 'セントリーを無効にする'
+	],
+    'watermark' => [
+        'name' => '透かし',
+        'instructions' => '透かしはアクティブですか？'
+    ],
+    'detailed_product_options' => [
+        'name' => '詳細な製品オプション',
+        'instructions' => '製品の在庫および価格情報を入力できます'
     ],
 ];

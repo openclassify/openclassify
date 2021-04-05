@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Default Ad Country',
     ],
+    'hide_price_categories' => [
+        'name' => 'Li Ser Kategoriyan Veşêre',
+        'instructions' => 'Gava ku hûn reklamek biafirînin an reklamek di bin van kategoriyan de bibînin wê bihayê veşêrin.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Mifteya API-ya veguherînerê Pereyê'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Bişkoja Configurations Veşêre',
         'instructions' => 'Bişkoja Veavakirina Di Rûpelê Pêşdîtina Adê de Veşêre',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Hemî Zeviyên Pêdivî Bikin',
+        'instructions' => 'Dema ku reklamek diafirîne bikarhêner hewce dike ku qadên Biha û Tarîfeyê dagire',
     ],
     'make_map_required' => [
         'name' => 'Nexşeyê Pêdivî ye',
@@ -203,6 +211,22 @@ return [
         'name' => 'Nîşan Ads Count',
         'instructions' => 'Reklamên li ser lîsteya kategoriyên çepê hesab bikin nîşan bikin',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Dîroka Afirandî Veşêre',
+        'instructions' => 'Di rûpela hûrguliyên reklaman de dîroka çêkirî veşêrin',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Serê Navnîşê Veşêre',
+		'instructions' => 'Ji bo rêzkirin û dîtina celeban vedişêrin',
+	],
+	'hide_filter_section' => [
+		'name' => 'Beşa Parzûnê Veşêre',
+		'instructions' => 'Di rûpelê navnîşkirinê de xwe vedişêrin qada feltera çepê',
+	],
+	'hide_seller_info' => [
+		'name' => 'Agahdariya Firoterê Veşêre',
+		'instructions' => 'Di rûpelê hûrguliyên reklaman de veşartina agahdariya firotanê',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Peymana Ad Ad-ê nîşan bide',
         'instructions' => 'Heke hûn dixwazin li ser rûpela afirandina reklamê peymana siyaseta nepenîtiyê nîşan bikin vê yekê vekin',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'Kategoriyan bistînin',
         'instructions' => 'Ew kategoriyên ku tê de taybetmendiya GET dê derbasdar be temsîl dike.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Sentry Disable'
+	],
+    'watermark' => [
+        'name' => 'Watermark',
+        'instructions' => 'Watermark çalak e?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Vebijarkên Hilbera Berfireh',
+        'instructions' => 'Destûrê dide ku hûn ji bo hilberê agahdariya pargîdanî û bihayê bikin'
     ],
 ];

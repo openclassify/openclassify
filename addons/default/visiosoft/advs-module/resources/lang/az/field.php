@@ -280,6 +280,17 @@ return [
     'yes' => [
         'name' => 'Bəli'
     ],
+    'no' => [
+        'name' => 'Yox'
+    ],
+    'is_system' => [
+        'name' => 'Sistemdir',
+        'instructions' => 'Sistem vəziyyəti tələb olunur və dəyişdirilməməlidir',
+    ],
+    'user_access' => [
+        'name' => 'İstifadəçi girişi',
+        'instructions' => 'Bir istifadəçi bu statusdan reklamlarında istifadə edə bilərmi?',
+    ],
     "no_location" => "Heç bir yer seçilməyib.",
     "continue" => 'Davam et',
     "gallery" => 'Qalereya',

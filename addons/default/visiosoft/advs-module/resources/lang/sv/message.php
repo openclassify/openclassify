@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "Din annons har ställts in som aktiv!",
     'passive_status_change' => "Din annons har blivit passiv!",
 	'sold_status_change' => "Din annons har ställts in såld!",
+	'status_change' => "Annonsens status har ställts in på: status!",
+	'disabled_detailed_options_for_admin_role' => "Detaljerade produktalternativ är inaktiverade.",
 ];

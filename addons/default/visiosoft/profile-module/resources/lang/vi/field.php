@@ -468,6 +468,7 @@ return [
     'update' => 'Cập nhật',
     'change_password' => 'Đổi mật khẩu',
     'choose_an_option' => 'Chọn một sự lựa chọn...',
+    'change_status' => 'Thay đổi trạng thái',
 
     // Register page
     'accept_terms_label' => 'Tôi chấp nhận các điều khoản.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Bang giáo dục'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Cập nhật mới được thông báo',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Thông báo về Quảng cáo',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Nhận tin nhắn Email',
+    ],
 ];

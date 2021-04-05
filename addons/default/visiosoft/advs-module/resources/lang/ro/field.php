@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'da'
     ],
+    'no' => [
+        'name' => 'Nu'
+    ],
+    'is_system' => [
+        'name' => 'Este Sistem',
+        'instructions' => 'Starea sistemului este obligatorie și nu trebuie modificată',
+    ],
+    'user_access' => [
+        'name' => 'Acces utilizator',
+        'instructions' => 'Poate un utilizator să utilizeze această stare în anunțurile sale?',
+    ],
     "no_location" => "Nu este selectată nicio locație.",
     "continue" => 'Continua',
     "gallery" => 'Galerie',

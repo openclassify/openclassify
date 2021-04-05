@@ -49,4 +49,60 @@ return [
             'delete' => '可以删除cf值吗？',
         ],
     ],
+    'options' => [
+        'name'   => '选项',
+        'option' => [
+            'read'   => '可以阅读选项吗？',
+            'write'  => '可以创建/编辑选项吗？',
+            'delete' => '可以删除选项吗？',
+        ],
+    ],
+    'productoptions' => [
+        'name'   => '产品选项',
+        'option' => [
+            'read'   => '可以阅读产品选项吗？',
+            'write'  => '可以创建/编辑产品选项吗？',
+            'delete' => '可以删除产品选项吗？',
+        ],
+    ],
+    'productoptions_value' => [
+        'name'   => '产品选择价值',
+        'option' => [
+            'read'   => '可以读取productoptions的值吗？',
+            'write'  => '可以创建/编辑产品选项值吗？',
+            'delete' => '可以删除productoptions的值吗？',
+        ],
+    ],
+    'options_configuration' => [
+        'name'   => '选件配置',
+        'option' => [
+            'read'   => '可以读取选项配置吗？',
+            'write'  => '可以创建/编辑选项配置吗？',
+            'delete' => '可以删除选项配置吗？',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => '选件配置',
+        'option' => [
+            'read'   => '可以读取选件配置吗？',
+            'write'  => '可以创建/编辑选项配置吗？',
+            'delete' => '可以删除选件配置吗？',
+        ],
+    ],
+    'option_configuration' => [
+        'name'   => '选件配置',
+        'option' => [
+            'read'   => '可以读取选件配置吗？',
+            'write'  => '可以创建/编辑选项配置吗？',
+            'delete' => '可以删除选件配置吗？',
+        ],
+    ],
+    'status' => [
+        'name'   => '状态',
+        'option' => [
+            'read'   => '可以读取状态吗？',
+            'write'  => '可以创建/编辑状态吗？',
+            'delete' => '可以删除状态吗？',
+        ],
+    ],
 ];

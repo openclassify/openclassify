@@ -532,6 +532,7 @@ return [
     'change_password' => 'گۆڕینی وشەی نهێنەکە',
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
+    'change_status' => 'Guhertina Rewşê',
 
     // Register page
     'accept_terms_label' => 'من مەرجەکان قبوڵ دەکەم
@@ -550,4 +551,14 @@ return [
 		'name' => 'ویلایەتی پەروەردە
 '
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Nû Rojanekirinên Nû',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Derbarê Reklaman de Hatin Nûçe',
+    ],
+    'receive_messages_email' => [
+        'name' => 'E-nameyên Peyaman Bistînin',
+    ],
 ];

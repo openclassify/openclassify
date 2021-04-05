@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'স্থিতি',
     ],
+	'ads_detail' => 'বিজ্ঞাপন বিশদ',
+
 ];

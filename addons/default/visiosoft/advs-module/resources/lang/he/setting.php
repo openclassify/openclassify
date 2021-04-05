@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'מדינה ברירת מחדל',
     ],
+    'hide_price_categories' => [
+        'name' => 'הסתר מחיר בקטגוריות',
+        'instructions' => 'המחיר יוסתר כאשר תיצור מודעה או תראה מודעה בקטגוריות אלה.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'מפתח API של ממיר מטבע'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'הסתר את לחצן התצורות',
         'instructions' => 'הסתר את לחצן התצורות בדף תצוגה מקדימה של מודעות',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'הפוך את כל השדות לדרושים',
+        'instructions' => 'דרוש מהמשתמש למלא את שדות המחיר והתיאור בעת יצירת מודעה',
     ],
     'make_map_required' => [
         'name' => 'הפוך את המפה לחובה',
@@ -203,6 +211,22 @@ return [
         'name' => 'ספירת מודעות הצגה',
         'instructions' => 'הצגת מודעות נספרת ברשימת הקטגוריות השמאלית',
     ],
+    'ads_date_hidden' => [
+        'name' => 'הסתר תאריך יצירה',
+        'instructions' => 'הסתר את התאריך שנוצר בדף פרטי המודעות',
+    ],
+	'hide_listing_header' => [
+		'name' => 'הסתר כותרת רישום',
+		'instructions' => 'הסתרה לסוגי הזמנה ותצוגה',
+	],
+	'hide_filter_section' => [
+		'name' => 'הסתר את קטע המסנן',
+		'instructions' => 'הסתרת אזור הסינון השמאלי בדף הרישום',
+	],
+	'hide_seller_info' => [
+		'name' => 'הסתר מידע על מוכר',
+		'instructions' => 'הסתרה למידע על מוכר בדף פירוט המודעות',
+	],
     'show_post_ad_agreement' => [
         'name' => 'הצג הסכם מודעות לפרסום',
         'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'קבל קטגוריות',
         'instructions' => 'הוא מייצג את הקטגוריות בהן נכס ה- GET יהיה תקף.'
+    ],
+	'disable_sentry' => [
+		'name' => 'השבת זקיף'
+	],
+    'watermark' => [
+        'name' => 'סימן מים',
+        'instructions' => 'האם סימן מים פעיל?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'אפשרויות מוצר מפורטות',
+        'instructions' => 'מאפשר לך להזין מידע על מלאי ומחיר עבור המוצר'
     ],
 ];

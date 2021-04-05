@@ -47,4 +47,7 @@ return [
         'name' => 'Profil Sayfasındaki Kayıt Türünü Gizle',
         'instructions' => 'Profil düzenleme sayfasındaki kayıt türü alanını gizler.',
     ],
+    'required_district' => [
+        'name' => 'Zorunlu Bölge'
+    ],
 ];

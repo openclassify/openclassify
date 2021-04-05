@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Domyślny kraj reklamy',
     ],
+    'hide_price_categories' => [
+        'name' => 'Ukryj cenę w kategoriach',
+        'instructions' => 'Cena zostanie ukryta podczas tworzenia lub przeglądania reklamy w tych kategoriach.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Klucz API przelicznika walut'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Ukryj przycisk Konfiguracje',
         'instructions' => 'Ukryj przycisk Konfiguracje na stronie podglądu reklamy',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Ustaw wszystkie pola jako wymagane',
+        'instructions' => 'Wymagaj od użytkownika wypełnienia pól Cena i Opis podczas tworzenia reklamy',
     ],
     'make_map_required' => [
         'name' => 'Wymagana mapa',
@@ -203,6 +211,22 @@ return [
         'name' => 'Pokaż liczbę reklam',
         'instructions' => 'Pokaż liczbę reklam na liście kategorii po lewej stronie',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Ukryj datę utworzenia',
+        'instructions' => 'Ukryj datę utworzenia na stronie szczegółów reklam',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Ukryj nagłówek aukcji',
+		'instructions' => 'Ukrywanie do porządkowania i przeglądania typów',
+	],
+	'hide_filter_section' => [
+		'name' => 'Ukryj sekcję filtrów',
+		'instructions' => 'Ukrywanie w lewym obszarze filtra na stronie listy',
+	],
+	'hide_seller_info' => [
+		'name' => 'Ukryj informacje o sprzedającym',
+		'instructions' => 'Ukrywanie informacji o sprzedawcy na stronie szczegółów ogłoszeń',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Pokaż umowę opublikowania ogłoszenia',
         'instructions' => 'Włącz tę opcję, jeśli chcesz wyświetlać umowę o polityce prywatności na stronie tworzenia reklamy',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'POBIERZ kategorie',
         'instructions' => 'Reprezentuje kategorie, w których właściwość GET będzie ważna.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Wyłącz Sentry'
+	],
+    'watermark' => [
+        'name' => 'znak wodny',
+        'instructions' => 'Czy znak wodny jest aktywny?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Szczegółowe opcje produktu',
+        'instructions' => 'Umożliwia wprowadzenie informacji o stanie magazynowym i cenie produktu'
     ],
 ];

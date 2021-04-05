@@ -470,6 +470,7 @@ return [
     'update' => 'Εκσυγχρονίζω',
     'change_password' => 'Άλλαξε κωδικό',
     'choose_an_option' => 'Διάλεξε μια επιλογή...',
+    'change_status' => 'Αλλαγή κατάστασης',
 
     // Register page
     'accept_terms_label' => 'Αποδέχομαι τους όρους.',
@@ -485,4 +486,14 @@ return [
 	'education_part' => [
 		'name' => 'Κατάσταση εκπαίδευσης'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Ειδοποιημένες νέες ενημερώσεις',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Ειδοποιήθηκαν για διαφημίσεις',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Λήψη μηνυμάτων Email',
+    ],
 ];

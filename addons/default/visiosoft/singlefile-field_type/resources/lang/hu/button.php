@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'select_file' => 'Válassz Fájlt',
+    'select_file' => 'Válaszd ki a fájlt',
     'upload'      => 'Feltöltés',
     'remove'      => 'Eltávolítás',
-    'change'      => 'Változtatás',
+    'change'      => 'változás',
 ];

@@ -19,4 +19,19 @@ return [
     'cf_values' => [
         'name' => 'CF值',
     ],
+    'options' => [
+        'name' => '选项',
+    ],
+    'product_options' => [
+        'name' => '产品选件',
+    ],
+    'productoptions_value' => [
+        'name' => '期权价值',
+    ],
+    'option_configuration' => [
+        'name' => '配置',
+    ],
+    'status' => [
+        'name' => '状态',
+    ],
 ];

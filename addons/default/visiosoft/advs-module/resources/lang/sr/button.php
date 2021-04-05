@@ -44,4 +44,5 @@ return [
 	'publish' => 'Објави',
 	'import' => 'Увоз',
     'new_status' => 'Нови статус',
+    'fast_edit' => 'Брзо уређивање',
 ];

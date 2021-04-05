@@ -5,7 +5,7 @@ return [
         'name' => 'Judul'
     ],
     'order' => [
-        'name' => 'Pesan'
+        'name' => 'Urutan'
     ],
     'slug' => [
         'name' => 'Slug'
@@ -20,7 +20,7 @@ return [
         'name' => 'Harga'
     ],
     'standard_price' => [
-        'name' => 'Harga standar'
+        'name' => 'Harga Standar'
     ],
     'date' => [
         'name' => 'Tanggal'
@@ -35,7 +35,7 @@ return [
         'name' => 'Peta'
     ],
     'stock' => [
-        'name' => 'Persediaan'
+        'name' => 'Stok'
     ],
     'advs_desc' => [
         'name' => 'Deskripsi'
@@ -98,7 +98,7 @@ return [
         'name' => 'Status',
         'option' => [
             'approved' => 'Disetujui',
-            'expired' => 'Kadaluwarsa',
+            'expired' => 'Kadaluarsa',
             'unpublished' => 'Tidak dipublikasikan',
             'pending_admin' => 'Admin Tertunda',
             'pending_user' => 'Pengguna Tertunda'
@@ -134,7 +134,7 @@ return [
     'home' => 'Beranda',
     'list-page' => 'Halaman Daftar',
     'search' => 'Cari',
-    'recommended' => 'Iklan yang Direkomendasikan untuk Anda',
+    'recommended' => 'Iklan yang direkomendasikan untuk Anda',
     'filter' => 'Saring',
     'sort' => 'Sortir',
     'sort_by' => 'Sortir berdasarkan',
@@ -159,7 +159,7 @@ return [
     'search_name' => 'Cari Nama',
     'my_favorite_searches' => 'Pencarian Favorit',
     'search_desc' => 'Anda dapat menambah dan mengelola pilihan pencarian favorit Anda di sini.',
-    'complaint_placeholder' => 'Ketik detail keluhan Anda di sini.',
+    'complaint_placeholder' => 'Ketik rincian keluhan Anda di sini.',
     'show_details' => 'Tampilkan Rincian',
     'ad_actions' => 'Tindakan Iklan',
     'edit' => 'Sunting',
@@ -173,14 +173,14 @@ return [
     'report' => 'Laporkan iklan ini',
     'features' => 'Fitur',
     "streetview" => "Tampilan Jalan",
-    'recommended_ads' => 'Iklan yang Direkomendasikan untuk Anda',
+    'recommended_ads' => 'Iklan yang direkomendasikan untuk Anda',
     'new' => 'Baru',
     'short_info' => 'Info Singkat',
     'secure_trading' => 'Pasar Niaga yang Aman',
     '24/7' => 'Dukungan 24/7',
     'easy_trading' => 'Niaga yang Mudah',
     'need_help' => 'Butuh bantuan?',
-    'give_a_call' => 'Hubungi dengan telepon ke',
+    'give_a_call' => 'Hubungi dengan menghubungi',
     'message_sent' => 'Pesan Terkirim!',
     'asap' => 'Pesan terkirim, penjual akan segera menghubungi Anda.',
     'ad_id' => 'Id Iklan',
@@ -195,24 +195,24 @@ return [
     'email' => 'Surel',
     'phone' => 'Telepon',
     'send_us_your_feedback' => 'Kirimkan Masukan Anda',
-    'online_shopping' => 'DAPATKAN',
+    'online_shopping' => 'GET',
     'approved' => 'Berhasil Disetujui',
-    'extended' => 'Diperpanjang Berhasil',
+    'extended' => 'Berhasil Diperpanjang',
     'declined' => 'Berhasil Ditolak',
-    'search_on_map' => 'Cari di Peta',
+    'search_on_map' => 'Cari pada Peta',
     'post_free_ad' => 'Pasang Iklan Gratis',
-    'select_a_category' => 'Pilih Kategori',
+    'select_a_category' => 'Pilih sebuah Kategori',
     'select_a_sub_category' => 'Pilih sebuah Sub Kategori',
     'all_dopings_added' => 'Semua jenis doping ditambahkan untuk iklan ini.',
     'is_get_adv' => [
-        'name' => 'DAPATKAN'
+        'name' => 'GET'
     ],
     'corporate_info' => 'Info Perusahaan',
     'featured_ads' => "Iklan Unggulan",
-    'trending_ads' => 'Iklan Trendind',
+    'trending_ads' => 'Iklan Tren',
     'search_ad_result_prefix' => 'di',
     'search_ads_result_message' => [
-        'name' => ': hitung iklan yang ditemukan untuk: pencarian nama',
+        'name' => ': count iklan yang ditemukan untuk pencarian :name',
     ],
     'total' => 'Total',
     'quantity' => 'Kuantitas',
@@ -233,10 +233,10 @@ return [
         'name' => 'Daftar',
     ],
     'show_table_view' => [
-        'name' => 'Meja',
+        'name' => 'Tabel',
     ],
     'showcase' => [
-        'name' => 'Memamerkan',
+        'name' => 'Pameran',
     ],
     'new_ad' => [
         'name' => 'Iklan Baru',
@@ -250,10 +250,10 @@ return [
     'sold_out' => [
         'name' => 'Habis terjual',
     ],
-    'edit_category' => 'Edit Kategori',
+    'edit_category' => 'Sunting Kategori',
     'set_category' => 'Setel Kategori',
     'max' => [
-        'name' => 'Max',
+        'name' => 'Maks',
     ],
     'min' => [
         'name' => 'Min',
@@ -277,14 +277,25 @@ return [
         'name' => 'Iklan Dengan Video'
     ],
     'yes' => [
-        'name' => 'Iya'
+        'name' => 'Ya'
+    ],
+    'no' => [
+        'name' => 'Tidak'
+    ],
+    'is_system' => [
+        'name' => 'Adalah Sistem',
+        'instructions' => 'Status sistem diperlukan dan tidak seharusnya diubah',
+    ],
+    'user_access' => [
+        'name' => 'Akses Pengguna',
+        'instructions' => 'Dapatkah pengguna menggunakan status ini di iklannya?',
     ],
     "no_location" => "Tidak ada lokasi yang dipilih.",
-    "continue" => 'Terus',
+    "continue" => 'Lanjutkan',
     "gallery" => 'Galeri',
     "ad" => 'Iklan',
     "ads" => 'Iklan',
-    "were_found" => 'ditemukan.',
+    "were_found" => 'telah ditemukan.',
 
     // Pending screen
     'pending_message_1' => 'Iklan sedang dalam Proses Persetujuan',
@@ -297,15 +308,15 @@ return [
     // Preview page
     'preview_text' => [
         'part_1' => 'Jika informasi berikut tentang iklan Anda benar, klik tombol "Lanjutkan" dan lanjutkan ke langkah berikutnya.',
-        'part_2' => 'Jika tidak, klik tombol "Edit".',
+        'part_2' => 'Jika tidak, klik tombol "Sunting".',
     ],
-    'views' => 'Tampilan',
+    'views' => 'Dilihat',
 
     // Detail page
     "no_street_view" => "Tidak ada gambar tampilan jalan di lokasi ini",
     'edit_my_contact_info' => 'Edit Informasi Kontak Saya',
     'update_my_contact_info' => 'perbarui info kontak saya',
-    'contact_info' => 'Kontak informasi',
+    'contact_info' => 'Informasi kontak',
     'ad_info' => 'Informasi Iklan',
 
     // Select cat
@@ -319,21 +330,21 @@ return [
     'congratulations' => 'Selamat',
     'ad_desc' => 'Deskripsi Iklan',
     'upload_photos' => 'Unggah Foto',
-    'upload_files' => 'Unggah berkas',
-    'additional_fields' => 'Bidang Tambahan',
+    'upload_files' => 'Unggah Berkas',
+    'additional_fields' => 'Baris Tambahan',
     'ad_location' => 'Lokasi Iklan',
     'owner' => 'Pemilik',
-    'default_owner_instruction' => 'Pemilik akan menggunakan pengguna saat ini secara default jika tidak ada pengguna yang dipilih',
+    'default_owner_instruction' => 'Pemilik akan menggunakan pengguna saat ini secara bawaan/default jika tidak ada pengguna yang dipilih',
 
     'free' => 'Gratis',
     'ad_date' => 'Tanggal Iklan',
     'photo_video' => 'Foto, Video',
     'and_above' => 'dan di atas',
     'and_below' => 'dan di bawah',
-    'clear_all' => 'Bersihkan semua',
+    'clear_all' => 'Bersihkan Semua',
     'balances' => 'Saldo',
     'packages' => 'Paket',
-    'dopings' => 'Dopings',
+    'dopings' => 'Doping',
     'advs' => 'Advs',
     'site' => 'Situs',
     'subscription' => 'Berlangganan',
@@ -345,6 +356,6 @@ return [
 		'name' => 'Pilihan'
 	],
     'old_price' => [
-        'name' => 'Harga lama'
+        'name' => 'Harga Lama'
     ],
 ];
