@@ -213,7 +213,7 @@ return [
     ],
     'ads_date_hidden' => [
         'name' => 'Oluşturulma Tarihini Gizle',
-        'instructions' => 'Reklam ayrıntı sayfasında oluşturulan tarihi gizle',
+        'instructions' => 'İlan detay sayfasında oluşturulan tarihi gizle',
     ],
 	'hide_listing_header' => [
 		'name' => 'Liste Başlığını Gizle',
