@@ -9,7 +9,7 @@ return [
     ],
     'hide_zero_price' => [
         'name' => 'Sıfır ise Fiyatı Gizle',
-        'instructions' => 'İlan fiyatı 0 ise fiyatı gizle',
+        'instructions' => 'İlan fiyatı sıfır ise fiyatı gizle',
     ],
     'estimated_pending_time' => [
         'name' => 'Tahmini Bekleme Süresi',
@@ -113,7 +113,7 @@ return [
     ],
     'make_all_fields_required' => [
         'name' => 'Tüm Alanları Zorunlu Yap',
-        'instructions' => 'Bir reklam oluştururken kullanıcının Fiyat ve Açıklama alanlarını doldurmasını zorunlu kılın',
+        'instructions' => 'Bir ilan oluştururken kullanıcının Fiyat ve Açıklama alanlarını doldurmasını zorunlu kılın',
     ],
     'make_map_required' => [
         'name' => 'Haritayı Gerekli Yap',
