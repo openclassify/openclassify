@@ -9,6 +9,7 @@ use Illuminate\Foundation\Exceptions\Handler;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
+use Swift_TransportException;
 use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Throwable;
@@ -86,13 +87,16 @@ class ExceptionHandler extends Handler
 
     public function report(Exception $e)
     {
-
         if (app()->bound('sentry')
             && $this->shouldReport($e)
             && env('SENTRY_LARAVEL_DSN')) {
             if (!setting_value('visiosoft.module.advs::disable_sentry')) {
                 app('sentry')->captureException($e);
             }
+        }
+
+        if ($e instanceof Swift_TransportException) {
+            die(trans('visiosoft.theme.base::message.error_mail'));
         }
 
         parent::report($e);
