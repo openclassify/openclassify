@@ -44,24 +44,14 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
                                                          </tr>
                                                          <tr>
                                                              <td class="esd-block-text es-p15t" align="left">
-                                                                 <p style="color: #707070; font-size: 16px;">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                                                             </td>
-                                                         </tr>
-                                                         <tr>
-                                                             <td class="esd-block-text es-p15t" align="left">
-                                                                 <p style="color: #707070; font-size: 16px;">İndustry\'s&nbsp;make a type specimen book. It has survived not only five centuries, but also&nbsp;electronic typesetting, remaining essentially unchanged. It was populrised in the 1960&nbsp;containing Lorem Ipsum passages, and more recently.</p>
-                                                             </td>
-                                                         </tr>
-                                                         <tr>
-                                                             <td class="esd-block-text es-p20t" align="left">
-                                                                 <p style="color: #707070; font-size: 16px;">Lorem Visiosoft<br>Printing and typesetting team</p>
+                                                                 <p style="color: #707070; font-size: 16px;"></p>
                                                              </td>
                                                          </tr>
                                                          <tr>
                                                              <td align="center" class="esd-block-spacer" height="29"></td>
                                                          </tr>
                                                          <tr>
-                                                             <td align="center" class="esd-block-button es-p10"><span class="es-button-border" style="border-bottom-width: 0px; background: #ffb600; border-radius: 4px;"><a href class="es-button" target="_blank" style="background: #ffb600; border-color: #ffb600; border-radius: 4px; font-size: 16px;">LOREM IPSUM THERE</a></span></td>
+                                                             <td align="center" class="esd-block-button es-p10"><span class="es-button-border" style="border-bottom-width: 0px; background: #ffb600; border-radius: 4px;"><a href class="es-button" target="_blank" style="background: #ffb600; border-color: #ffb600; border-radius: 4px; font-size: 16px;"></a></span></td>
                                                          </tr>
                                                          <tr>
                                                              <td align="center" class="esd-block-spacer es-p20" style="font-size:0">
@@ -109,16 +99,6 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
                                                              </td>
                                                          </tr>
                                                          <tr>
-                                                             <td class="esd-block-text es-p15t" align="left">
-                                                                 <p style="color: #707070; font-size: 16px;">Don\'t worry! Reseting you password is easy. Just type in the email you registered to&nbsp;openclassify.</p>
-                                                             </td>
-                                                         </tr>
-                                                         <tr>
-                                                             <td class="esd-block-text es-p20t" align="left">
-                                                                 <p style="color: #707070; font-size: 16px;">Lorem Visiosoft<br>Printing and typesetting team</p>
-                                                             </td>
-                                                         </tr>
-                                                         <tr>
                                                              <td align="center" class="esd-block-spacer" height="29"></td>
                                                          </tr>
                                                          <tr>
@@ -126,7 +106,7 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
                                                          </tr>
                                                          <tr>
                                                              <td align="center" class="esd-block-text">
-                                                                 <p style="font-size: 11px; color: #707070;">Did you remember&nbsp;your password?&nbsp;<a target="_blank" style="font-size: 11px; ">Try logging in</a></p>
+                                                                 <p style="font-size: 11px; color: #707070;">Did you remember your password?<a target="_blank" style="font-size: 11px; ">Try logging in</a></p>
                                                              </td>
                                                          </tr>
                                                          <tr>

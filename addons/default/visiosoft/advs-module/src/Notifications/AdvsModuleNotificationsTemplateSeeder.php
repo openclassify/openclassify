@@ -14,7 +14,7 @@ class AdvsModuleNotificationsTemplateSeeder extends Seeder
             $templates = [
                 [
                     'en' => [
-                        'message' => '<p><strong>&nbsp;Your post <a href="{url}" target="_blank">{name}</a> has been created successfully.</strong></p>',
+                        'message' => '<p><strong>Your post <a href="{url}" target="_blank">{name}</a> has been created successfully.</strong></p>',
                         'name' => 'Created Ad',
                         'greeting' => 'Hi',
                         'subject' => 'Created Ad'
@@ -24,7 +24,7 @@ class AdvsModuleNotificationsTemplateSeeder extends Seeder
                 ],
                 [
                     'en' => [
-                        'message' => '<p><strong>Your ad for&nbsp;<a href="{url}" target="_blank">{name}</a>&nbsp;has been approved.</strong></p>',
+                        'message' => '<p><strong>Your ad for<a href="{url}" target="_blank">{name}</a>has been approved.</strong></p>',
                         'name' => 'Approved Ad',
                         'greeting' => 'Hi',
                         'subject' => 'Approved Ad'
@@ -34,7 +34,7 @@ class AdvsModuleNotificationsTemplateSeeder extends Seeder
                 ],
                 [
                     'en' => [
-                        'message' => '<p><strong>Your <a href="{url}" target="_blank">{name}</a>&nbsp;ad was rejected because it does not comply with the posting rules.</strong></p>',
+                        'message' => '<p><strong>Your <a href="{url}" target="_blank">{name}</a>ad was rejected because it does not comply with the posting rules.</strong></p>',
                         'name' => 'Declined Ad',
                         'greeting' => 'Hi',
                         'subject' => 'Declined Ad'
@@ -44,7 +44,7 @@ class AdvsModuleNotificationsTemplateSeeder extends Seeder
                 ],
                 [
                     'en' => [
-                        'message' => '<p><strong>You must confirm your <a href="{url}" target="_blank">{name}</a>&nbsp;posting to be published.</strong></p>',
+                        'message' => '<p><strong>You must confirm your <a href="{url}" target="_blank">{name}</a>posting to be published.</strong></p>',
                         'name' => 'Pending User Ad',
                         'greeting' => 'Hi',
                         'subject' => 'Pending User Ad'
