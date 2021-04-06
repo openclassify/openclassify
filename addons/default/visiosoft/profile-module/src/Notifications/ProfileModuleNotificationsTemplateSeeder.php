@@ -1,12 +1,15 @@
 <?php namespace Visiosoft\ProfileModule\Notifications;
 
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
+use Illuminate\Foundation\Bus\DispatchesJobs;
 use Illuminate\Support\Str;
+use Visiosoft\NotificationsModule\Template\Command\CreateTemplate;
 use Visiosoft\NotificationsModule\Template\Contract\TemplateRepositoryInterface;
 
 
 class ProfileModuleNotificationsTemplateSeeder extends Seeder
 {
+    use DispatchesJobs;
     public function run()
     {
         if (is_module_installed('visiosoft.module.notifications')) {
@@ -148,17 +151,8 @@ class ProfileModuleNotificationsTemplateSeeder extends Seeder
             ];
 
             foreach ($templates as $template) {
-                $this->createTemplate($template);
+                $this->dispatchNow(new CreateTemplate($template));
             }
-        }
-    }
-
-    public function createTemplate($params)
-    {
-        $template_repo = app(TemplateRepositoryInterface::class);
-
-        if (!$template_repo->findBySlug($params['slug'])) {
-            $template_repo->create($params);
         }
     }
 }
