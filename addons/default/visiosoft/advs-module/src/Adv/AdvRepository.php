@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\DB;
 use Intervention\Image\Facades\Image;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
+use Visiosoft\AdvsModule\Support\Command\Currency;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
@@ -419,6 +420,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         foreach ($ads as $index => $ad) {
             $ads[$index]->detail_url = $this->model->getAdvDetailLinkByModel($ad, 'list');
+            $ads[$index]->currency_price = app(Currency::class)->format($ad->price,$ad->currency);
             $ads[$index] = $this->model->AddAdsDefaultCoverImage($ad);
         }
 
