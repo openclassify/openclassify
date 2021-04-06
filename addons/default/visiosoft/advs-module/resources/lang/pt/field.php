@@ -280,6 +280,17 @@ return [
     'yes' => [
         'name' => 'sim'
     ],
+    'no' => [
+        'name' => 'Não'
+    ],
+    'is_system' => [
+        'name' => 'É sistema',
+        'instructions' => 'O status do sistema é obrigatório e não deve ser alterado',
+    ],
+    'user_access' => [
+        'name' => 'Acesso do usuário',
+        'instructions' => 'Um usuário pode usar esse status em seus anúncios?',
+    ],
     "no_location" => "Nenhum local está selecionado.",
     "continue" => 'Continuar',
     "gallery" => 'Galeria',

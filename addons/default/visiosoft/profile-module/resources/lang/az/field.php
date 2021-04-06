@@ -468,6 +468,7 @@ return [
     'update' => 'Yeniləyin',
     'change_password' => 'Parolu dəyişdirin',
     'choose_an_option' => 'Bir seçim seçin ...',
+    'change_status' => 'Vəziyyəti dəyişdirin',
 
     // Register page
     'accept_terms_label' => 'Şərtləri qəbul edirəm.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Təhsil vəziyyəti'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Yeni Yeniləmələr bildirildi',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Reklamlar haqqında bildiriş',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Mesaj e-poçtu alın',
+    ],
 ];

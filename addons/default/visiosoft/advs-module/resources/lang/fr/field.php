@@ -280,6 +280,17 @@ return [
     'yes' => [
         'name' => 'Oui'
     ],
+    'no' => [
+        'name' => 'Non'
+    ],
+    'is_system' => [
+        'name' => 'Est le système',
+        'instructions' => 'L\'état du système est obligatoire et ne doit pas être modifié',
+    ],
+    'user_access' => [
+        'name' => 'Accès utilisateur',
+        'instructions' => 'Un utilisateur peut-il utiliser ce statut sur ses annonces?',
+    ],
     "no_location" => "Aucun emplacement n'est sélectionné.",
     "continue" => 'Continuer',
     "gallery" => 'Galerie',

@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "Der Status Ihrer Anzeige wurde auf Aktiv gesetzt!",
     'passive_status_change' => "Der Status Ihrer Anzeige wurde auf Passiv gesetzt!",
 	'sold_status_change' => "Der Status Ihrer Anzeige wurde auf Verkauf gesetzt!",
+	'status_change' => "Der Status Ihrer Anzeige wurde auf: Status gesetzt!",
+	'disabled_detailed_options_for_admin_role' => "Detaillierte Produktoptionen sind deaktiviert.",
 ];

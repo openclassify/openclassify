@@ -44,4 +44,5 @@ return [
 	'publish' => 'Publikoni',
 	'import' => 'Importit',
     'new_status' => 'Statusi i Ri',
+    'fast_edit' => 'Redaktimi i shpejtë',
 ];

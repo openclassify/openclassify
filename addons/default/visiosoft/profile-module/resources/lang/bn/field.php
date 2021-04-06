@@ -468,6 +468,7 @@ return [
     'update' => 'হালনাগাদ',
     'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
     'choose_an_option' => 'একটি বিকল্প নির্বাচন করুন...',
+    'change_status' => 'স্ট্যাটাস বদলাও',
 
     // Register page
     'accept_terms_label' => 'আমি শর্তাদি গ্রহণ করি।',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'শিক্ষা রাজ্য'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'অবহিত নতুন আপডেট',
+    ],
+    'notified_about_ads' => [
+        'name' => 'বিজ্ঞাপন সম্পর্কে অবহিত',
+    ],
+    'receive_messages_email' => [
+        'name' => 'বার্তা ইমেল পান',
+    ],
 ];

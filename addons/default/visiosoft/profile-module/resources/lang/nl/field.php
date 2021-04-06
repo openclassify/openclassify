@@ -470,6 +470,7 @@ return [
     'update' => 'Bijwerken',
     'change_password' => 'Wachtwoord wijzigen',
     'choose_an_option' => 'Kies een optie...',
+    'change_status' => 'Verander status',
 
     // Register page
     'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
@@ -485,4 +486,14 @@ return [
 	'education_part' => [
 		'name' => 'Staat van onderwijs'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Gemelde nieuwe updates',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Melding over advertenties',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Ontvang berichten per e-mail',
+    ],
 ];

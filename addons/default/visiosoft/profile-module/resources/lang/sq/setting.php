@@ -47,4 +47,7 @@ return [
         'name' => 'Fshih llojin e regjistrimit në faqen e profilit',
         'instructions' => 'Fsheh fushën e llojit të regjistrit në faqen e redaktimit të profilit.',
     ],
+    'required_district' => [
+        'name' => 'Rrethi i kërkuar'
+    ],
 ];

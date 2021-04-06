@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'وضعیت',
     ],
+	'ads_detail' => 'جزئیات تبلیغات',
+
 ];

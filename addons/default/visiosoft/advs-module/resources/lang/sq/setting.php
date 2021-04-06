@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Shtetet i përcaktuar i Njoftimeve',
     ],
+    'hide_price_categories' => [
+        'name' => 'Fshih çmimin në kategori',
+        'instructions' => 'Çmimi do të fshihet kur krijoni një reklamë ose shihni një reklamë nën këto kategori.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Keyelësi API i Konvertuesit të Valutave'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Fshih butonin e konfigurimeve',
         'instructions' => 'Fshihni butonin e konfigurimeve në faqen e pamjes paraprake',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Bëni të gjitha fushat e kërkuara',
+        'instructions' => 'Kërkoni nga përdoruesi të plotësojë fushat Çmimi dhe Përshkrimi kur krijoni një reklamë',
     ],
     'make_map_required' => [
         'name' => 'Kërkoni hartën',
@@ -203,6 +211,22 @@ return [
         'name' => 'Shfaq Numrin e Reklamave',
         'instructions' => 'Shfaq reklamat në listën e kategorive të majta',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Fshih datën e krijuar',
+        'instructions' => 'Fshih datën e krijuar në faqen e detajeve të reklamave',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Fshih titullin e listës',
+		'instructions' => 'Fshehja për renditjen dhe shikimin e llojeve',
+	],
+	'hide_filter_section' => [
+		'name' => 'Fshih pjesën e filtrit',
+		'instructions' => 'Fshihet në zonën e majtë të filtrit në faqen e listës',
+	],
+	'hide_seller_info' => [
+		'name' => 'Fshih informacionin e shitësit',
+		'instructions' => 'Fshehja e informacionit të shitësit në faqen e detajeve të reklamave',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
         'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'GET Kategoritë',
         'instructions' => 'Ai përfaqëson kategoritë në të cilat prona GET do të jetë e vlefshme.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Çaktivizo rojet'
+	],
+    'watermark' => [
+        'name' => 'Filigranë',
+        'instructions' => 'A është ujëra aktive?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Opsione të hollësishme të produktit',
+        'instructions' => 'Ju lejon të futni informacione mbi stokun dhe çmimet për produktin'
     ],
 ];

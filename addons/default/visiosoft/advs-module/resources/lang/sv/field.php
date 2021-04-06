@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'Ja'
     ],
+    'no' => [
+        'name' => 'Nej'
+    ],
+    'is_system' => [
+        'name' => 'Är System',
+        'instructions' => 'Systemstatus krävs och bör inte ändras',
+    ],
+    'user_access' => [
+        'name' => 'Användaråtkomst',
+        'instructions' => 'Kan en användare använda denna status i sina annonser?',
+    ],
     "no_location" => "Ingen plats har valts.",
     "continue" => 'Fortsätta',
     "gallery" => 'Galleri',

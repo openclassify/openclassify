@@ -467,6 +467,7 @@ return [
     'update' => 'به روز رسانی',
     'change_password' => 'تغییر رمز عبور',
     'choose_an_option' => 'گزینه ای را انتخاب کنید ...',
+    'change_status' => 'تغییروضعیت، تغییر حالت',
 
     // Register page
     'accept_terms_label' => 'من شرایط را قبول می کنم',
@@ -482,4 +483,14 @@ return [
 	'education_part' => [
 		'name' => 'دولت آموزش و پرورش'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'به روز شده جدید',
+    ],
+    'notified_about_ads' => [
+        'name' => 'درباره تبلیغات اطلاع داده شده است',
+    ],
+    'receive_messages_email' => [
+        'name' => 'ایمیل را دریافت کنید',
+    ],
 ];

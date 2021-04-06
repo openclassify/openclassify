@@ -47,4 +47,7 @@ return [
         'name' => '프로필 페이지에서 등록 유형 숨기기',
         'instructions' => '프로필 편집 페이지에서 레지스터 유형 필드를 숨 깁니다.',
     ],
+    'required_district' => [
+        'name' => '필수 지구'
+    ],
 ];

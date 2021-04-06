@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Țara anunțurilor implicite',
     ],
+    'hide_price_categories' => [
+        'name' => 'Ascundeți prețul la categorii',
+        'instructions' => 'Prețul va fi ascuns atunci când creați un anunț sau vizualizați un anunț în aceste categorii.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Cheia API a convertorului de monede'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Ascundeți butonul Configurări',
         'instructions' => 'Ascundeți butonul Configurări din pagina de previzualizare a anunțurilor',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Faceți obligatorii toate câmpurile',
+        'instructions' => 'Solicitați utilizatorului să completeze câmpurile Preț și Descriere atunci când creați un anunț',
     ],
     'make_map_required' => [
         'name' => 'Faceți harta necesară',
@@ -203,6 +211,22 @@ return [
         'name' => 'Afișați numărul de anunțuri',
         'instructions' => 'Afișați anunțurile în lista de categorii din stânga',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Ascundeți data creată',
+        'instructions' => 'Ascundeți data creată în pagina de detalii a anunțurilor',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Ascundeți antetul listării',
+		'instructions' => 'Ascunderea la comanda și vizualizarea tipurilor',
+	],
+	'hide_filter_section' => [
+		'name' => 'Ascunde secțiunea de filtrare',
+		'instructions' => 'Se ascunde în zona de filtrare din stânga în pagina listării',
+	],
+	'hide_seller_info' => [
+		'name' => 'Ascundeți informațiile despre vânzător',
+		'instructions' => 'Ascunderea informațiilor despre vânzător în pagina de detalii a anunțurilor',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Afișați acordul de postare a anunțului',
         'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'GET Categorii',
         'instructions' => 'Reprezintă categoriile în care proprietatea GET va fi validă.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Dezactivați Sentinela'
+	],
+    'watermark' => [
+        'name' => 'Filigran',
+        'instructions' => 'Filigranul este activ?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Opțiuni detaliate despre produs',
+        'instructions' => 'Vă permite să introduceți informații despre stoc și preț pentru produs'
     ],
 ];

@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "Статус вашої реклами встановлено активним!",
     'passive_status_change' => "Статус вашої реклами встановлено пасивним!",
 	'sold_status_change' => "Статус вашої реклами продано!",
+	'status_change' => "Статус вашої реклами встановлено як: статус!",
+	'disabled_detailed_options_for_admin_role' => "Детальні параметри товару вимкнено.",
 ];

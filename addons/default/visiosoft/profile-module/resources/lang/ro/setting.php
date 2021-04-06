@@ -47,4 +47,7 @@ return [
         'name' => 'Ascundeți tipul de înregistrare în pagina de profil',
         'instructions' => 'Ascunde câmpul tip de înregistrare în pagina de editare a profilului.',
     ],
+    'required_district' => [
+        'name' => 'Districtul necesar'
+    ],
 ];

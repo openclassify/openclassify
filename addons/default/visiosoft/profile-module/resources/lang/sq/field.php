@@ -468,6 +468,7 @@ return [
     'update' => 'Update',
     'change_password' => 'Ndrysho fjalekalimin',
     'choose_an_option' => 'Zgjidhni një opsion ...',
+    'change_status' => 'Ndrysho statusin',
 
     // Register page
     'accept_terms_label' => 'Unë i pranoj kushtet.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Shteti i Arsimit'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Njoftime të reja të reja',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Njoftohet për reklamat',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Merrni emailin e mesazheve',
+    ],
 ];

@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Pays dannonce par défaut',
     ],
+    'hide_price_categories' => [
+        'name' => 'Masquer le prix sur les catégories',
+        'instructions' => 'Le prix sera masqué lorsque vous créez une annonce ou visualisez une annonce dans ces catégories.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Clé API de convertisseur de devises'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Masquer le bouton Configurations',
         'instructions' => 'Masquer le bouton Configurations dans la page d\'aperçu de l\'annonce',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Rendre tous les champs obligatoires',
+        'instructions' => 'Exiger de l\'utilisateur qu\'il remplisse les champs Prix et Description lors de la création d\'une annonce',
     ],
     'make_map_required' => [
         'name' => 'Rendre la carte obligatoire',
@@ -203,6 +211,22 @@ return [
         'name' => 'Afficher le nombre d\'annonces',
         'instructions' => 'Les annonces diffusées comptent dans la liste des catégories de gauche',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Masquer la date de création',
+        'instructions' => 'Masquer la date de création dans la page de détail des annonces',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Masquer l\'en-tête de l\'annonce',
+		'instructions' => 'Masquage des types de commande et d\'affichage',
+	],
+	'hide_filter_section' => [
+		'name' => 'Masquer la section de filtre',
+		'instructions' => 'Masquage dans la zone de filtre gauche de la page de liste',
+	],
+	'hide_seller_info' => [
+		'name' => 'Masquer les informations du vendeur',
+		'instructions' => 'Masquage des informations du vendeur dans la page de détail des annonces',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Afficher l\'accord de publication d\'annonce',
         'instructions' => 'Activez cette option si vous souhaitez afficher un accord de politique de confidentialité sur la page de création d\'annonces',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'OBTENIR Catégories',
         'instructions' => 'Il représente les catégories dans lesquelles la propriété GET sera valide.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Désactiver Sentry'
+	],
+    'watermark' => [
+        'name' => 'Filigrane',
+        'instructions' => 'Le filigrane est-il actif?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Options de produit détaillées',
+        'instructions' => 'Vous permet de saisir des informations sur le stock et le prix du produit'
     ],
 ];

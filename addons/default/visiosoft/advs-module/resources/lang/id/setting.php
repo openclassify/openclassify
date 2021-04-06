@@ -5,7 +5,7 @@ return [
         'name' => 'Setujui Otomatis',
     ],
     'default_view_type' => [
-        'name' => 'Jenis Tampilan Default',
+        'name' => 'Jenis Tampilan Bawaan (default)',
     ],
     'hide_zero_price' => [
         'name' => 'Sembunyikan Harga jika Nol',
@@ -16,22 +16,22 @@ return [
         'instructions' => 'Dalam Jam',
     ],
     'default_published_time' => [
-        'name' => 'Waktu Penerbitan Default',
+        'name' => 'Waktu Publikasi Bawaan (default)',
     ],
     'address' => [
-        'name' => 'Hubungi Adress',
+        'name' => 'Alamat Kontak',
     ],
     'phone' => [
-        'name' => 'Hubungi Telepon',
+        'name' => 'Telepon Kontak',
     ],
     'favicon' => [
-        'name' => 'Favicon',
+        'name' => 'Ikonfav',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Peta Koordinat Panjang',
+        'name' => 'Koordinat Garis Bujur Peta',
     ],
     'map_coordinates_lat' => [
-        'name' => 'Peta Koordinat Lat',
+        'name' => 'Koordinat Garis Lintang Peta',
     ],
     'iban_numbers' => [
         'name' => 'IBAN',
@@ -40,8 +40,8 @@ return [
         'name' => 'Logo',
     ],
     'ogImage' => [
-        'name' => 'Berbagi Logo Sosial',
-        'warning'      => 'Ini harus pada resolusi 1200 x 630. ',
+        'name' => 'Logo Bagikan (media sosial)',
+        'warning'      => 'Harus pada resolusi 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,35 +52,39 @@ return [
     ],
     'site_address' => [
         'name' => 'Alamat situs',
-        'warning'      => 'Otomatis menambahkan www. www.<strong>sitename.com</strong> ',
+        'warning'      => 'Otomatis www ditambahkan. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Kunci Api Peta Google',
+        'name' => 'Kunci API Peta Google',
     ],
 
     'default_country' => [
-        'name' => 'Negara Iklan Default',
+        'name' => 'Negara Iklan Bawaan (default)',
+    ],
+    'hide_price_categories' => [
+        'name' => 'Sembunyikan Harga Pada Kategori',
+        'instructions' => 'Harga akan disembunyikan ketika Anda membuat iklan atau melihat sebuah iklan di bawah kategori ini.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Kunci API Pengonversi Mata Uang'
     ],
     'default_city' => [
-        'name' => 'Kota Iklan Default',
+        'name' => 'Kota Iklan Bawaan (default)',
     ],
     'default_district' => [
-        'name' => 'Distrik Iklan Default',
+        'name' => 'Kecamatan Iklan Bawaan (default)',
     ],
     'default_neighborhood' => [
-        'name' => 'Lingkungan Iklan Default',
+        'name' => 'Lingkungan Iklan Bawaan (default)',
     ],
     'default_currency' => [
-        'name' => 'Mata Uang Iklan Default',
+        'name' => 'Mata Uang Iklan Bawan (default)',
     ],
     'default_GET' => [
-        'name' => 'Iklan Default GET',
+        'name' => ' GET Iklan Bawaan (default)',
     ],
     'twitter' => [
-        'name' => 'Indonesia',
+        'name' => 'Twitter',
     ],
     'facebook' => [
         'name' => 'Facebook',
@@ -92,27 +96,31 @@ return [
         'name' => 'Google',
     ],
     'listing_page_image' => [
-        'name' => 'Gambar Halaman Cantuman',
+        'name' => 'Gambar Halaman Daftar',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Sembunyikan Bidang Harga Standar',
+        'name' => 'Sembunyikan Baris Harga Standar',
     ],
     'hide_options_field' => [
-        'name' => 'Sembunyikan Bidang Opsi',
+        'name' => 'Sembunyikan Baris Opsi',
     ],
     'hide_village_field' => [
-        'name' => 'Sembunyikan Bidang Desa',
+        'name' => 'Sembunyikan Baris Desa',
     ],
     'hide_configurations' => [
         'name' => 'Sembunyikan Tombol Konfigurasi',
-        'instructions' => 'Sembunyikan Tombol Konfigurasi di Halaman Pratinjau Iklan',
+        'instructions' => 'Sembunyikan Tombol Konfigurasi pada Halaman Pratinjau Iklan',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Buat Semua Bidang Diperlukan',
+        'instructions' => 'Mewajibkan pengguna untuk mengisi bidang Harga dan Deskripsi saat membuat iklan',
     ],
     'make_map_required' => [
         'name' => 'Buat Peta Diperlukan',
-        'instructions' => 'Mewajibkan pengguna untuk menempatkan pin di peta saat membuat iklan',
+        'instructions' => 'Mewajibkan pengguna untuk menempatkan sebuah titik/pin pada peta saat membuat iklan',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Sembunyikan Daftar Harga Standar',
+        'name' => 'Sembunyikan Harga Standar Daftar',
     ],
     'enabled_currencies' => [
         'name' => 'Mata Uang yang Diaktifkan',
@@ -203,6 +211,22 @@ return [
         'name' => 'Tampilkan Jumlah Iklan',
         'instructions' => 'Tampilkan jumlah iklan di daftar kategori kiri',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Sembunyikan Tanggal Dibuat',
+        'instructions' => 'Sembunyikan tanggal pembuatan di halaman detail iklan',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Sembunyikan Judul Cantuman',
+		'instructions' => 'Menyembunyikan jenis pemesanan dan tampilan',
+	],
+	'hide_filter_section' => [
+		'name' => 'Sembunyikan Bagian Filter',
+		'instructions' => 'Bersembunyi di area filter kiri di halaman daftar',
+	],
+	'hide_seller_info' => [
+		'name' => 'Sembunyikan Informasi Penjual',
+		'instructions' => 'Menyembunyikan info penjual di halaman detail iklan',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Aktifkan ini jika Anda ingin menampilkan perjanjian kebijakan privasi di halaman pembuatan iklan',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'DAPATKAN Kategori',
         'instructions' => 'Ini mewakili kategori di mana properti GET akan berlaku.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Nonaktifkan Sentry'
+	],
+    'watermark' => [
+        'name' => 'Tanda air',
+        'instructions' => 'Apakah watermark aktif?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Pilihan Produk Terperinci',
+        'instructions' => 'Memungkinkan Anda memasukkan informasi stok dan harga produk'
     ],
 ];

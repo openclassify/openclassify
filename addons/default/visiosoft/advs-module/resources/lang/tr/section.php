@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'Durum',
     ],
+	'ads_detail' => 'İlan Detayı',
+
 ];

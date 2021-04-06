@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "آپ کے اشتہار کی حیثیت فعال ہونے کے لئے مقرر کردی گئی ہے!",
     'passive_status_change' => "آپ کے اشتہار کی حیثیت غیر فعال ہوچکی ہے۔",
 	'sold_status_change' => "آپ کے اشتہار کی حیثیت بیچ دی گئی ہے!",
+	'status_change' => "آپ کے اشتہار کی حیثیت اس پر سیٹ ہوچکی ہے: درجہ!",
+	'disabled_detailed_options_for_admin_role' => "مصنوع کے تفصیلی اختیارات غیر فعال ہیں۔",
 ];

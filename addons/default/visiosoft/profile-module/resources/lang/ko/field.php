@@ -468,6 +468,7 @@ return [
     'update' => '최신 정보',
     'change_password' => '비밀번호 변경',
     'choose_an_option' => '옵션을 선택하세요...',
+    'change_status' => '상태 변경',
 
     // Register page
     'accept_terms_label' => '약관에 동의합니다.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => '교육 현황'
 	],
+
+    'notified_new_updates' => [
+        'name' => '새로운 업데이트 알림',
+    ],
+    'notified_about_ads' => [
+        'name' => '광고에 대한 알림',
+    ],
+    'receive_messages_email' => [
+        'name' => '메시지 이메일 받기',
+    ],
 ];

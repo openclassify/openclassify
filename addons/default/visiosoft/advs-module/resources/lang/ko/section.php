@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => '상태',
     ],
+	'ads_detail' => '광고 세부 정보',
+
 ];

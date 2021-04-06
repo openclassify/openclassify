@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'País de anúncios padrão',
     ],
+    'hide_price_categories' => [
+        'name' => 'Ocultar preço nas categorias',
+        'instructions' => 'O preço ficará oculto quando você criar um anúncio ou visualizar um anúncio nessas categorias.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Chave da API do conversor de moeda'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Ocultar o botão de configurações',
         'instructions' => 'Oculte o botão de configurações na página de visualização do anúncio',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Tornar todos os campos obrigatórios',
+        'instructions' => 'Exigir que o usuário preencha os campos Preço e Descrição ao criar um anúncio',
     ],
     'make_map_required' => [
         'name' => 'Tornar mapa obrigatório',
@@ -203,6 +211,22 @@ return [
         'name' => 'Mostrar contagem de anúncios',
         'instructions' => 'Exibir contagem de anúncios na lista de categorias à esquerda',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Ocultar data de criação',
+        'instructions' => 'Ocultar data de criação na página de detalhes de anúncios',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Ocultar cabeçalho da lista',
+		'instructions' => 'Escondendo os tipos de pedido e visualização',
+	],
+	'hide_filter_section' => [
+		'name' => 'Ocultar seção de filtro',
+		'instructions' => 'Escondendo a área de filtro à esquerda na página de listagem',
+	],
+	'hide_seller_info' => [
+		'name' => 'Ocultar informações do vendedor',
+		'instructions' => 'Escondendo as informações do vendedor na página de detalhes dos anúncios',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar Acordo de Postagem',
         'instructions' => 'Ative-o se quiser exibir um acordo de política de privacidade na página de criação de anúncios',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'GET Categorias',
         'instructions' => 'Representa as categorias nas quais a propriedade GET será válida.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Desativar Sentinela'
+	],
+    'watermark' => [
+        'name' => 'Marca d\'água',
+        'instructions' => 'A marca d\'água está ativa?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Opções detalhadas do produto',
+        'instructions' => 'Permite inserir informações de estoque e preço do produto'
     ],
 ];

@@ -40,4 +40,17 @@ return [
     'map_coordinates_lat' => [
         'name' => '默认纬度',
     ],
+
+    'hide_location_filter' => [
+        'name' => '隐藏位置过滤器',
+    ],
+	'country_for_phone_field' => [
+		'name' => '注册电话字段的默认国家/地区'
+	],
+    'sorting_column' => [
+        'name' => '排序栏',
+    ],
+    'sorting_type' => [
+        'name' => '分选类型',
+    ],
 ];

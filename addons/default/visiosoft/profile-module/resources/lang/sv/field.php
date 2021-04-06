@@ -468,6 +468,7 @@ return [
     'update' => 'Uppdatering',
     'change_password' => 'Ändra lösenord',
     'choose_an_option' => 'Välj ett alternativ...',
+    'change_status' => 'Byta status',
 
     // Register page
     'accept_terms_label' => 'Jag accepterar villkoren.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Utbildningsstatus'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Meddelade nya uppdateringar',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Meddelas om annonser',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Ta emot e-postmeddelanden',
+    ],
 ];

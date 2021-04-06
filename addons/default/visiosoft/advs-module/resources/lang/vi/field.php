@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'Đúng'
     ],
+    'no' => [
+        'name' => 'Không'
+    ],
+    'is_system' => [
+        'name' => 'Là hệ thống',
+        'instructions' => 'Trạng thái hệ thống là bắt buộc và không được thay đổi',
+    ],
+    'user_access' => [
+        'name' => 'Người dùng truy cập',
+        'instructions' => 'Người dùng có thể sử dụng trạng thái này trên quảng cáo của mình không?',
+    ],
     "no_location" => "Không có địa điểm được chọn.",
     "continue" => 'Tiếp tục',
     "gallery" => 'Bộ sưu tập',

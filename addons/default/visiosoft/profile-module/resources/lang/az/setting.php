@@ -47,4 +47,7 @@ return [
         'name' => 'Profil səhifəsində qeyd növünü gizlədin',
         'instructions' => 'Profil redaktə səhifəsində qeyd növü sahəsini gizlədir.',
     ],
+    'required_district' => [
+        'name' => 'Zəruri rayon'
+    ],
 ];

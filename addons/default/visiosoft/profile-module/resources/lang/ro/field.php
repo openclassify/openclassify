@@ -468,6 +468,7 @@ return [
     'update' => 'Actualizați',
     'change_password' => 'Schimbați parola',
     'choose_an_option' => 'Alege o opțiune...',
+    'change_status' => 'Schimba starea',
 
     // Register page
     'accept_terms_label' => 'Accept termenii.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'Starea educației'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Actualizări noi notificate',
+    ],
+    'notified_about_ads' => [
+        'name' => 'Notificat despre anunțuri',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Primiți mesaje prin e-mail',
+    ],
 ];

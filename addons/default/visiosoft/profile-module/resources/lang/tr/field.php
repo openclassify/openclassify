@@ -467,6 +467,7 @@ return [
     'update' => 'Güncelleme',
     'change_password' => 'Şifre değiştir',
     'choose_an_option' => 'Seçim yapınız...',
+    'change_status' => 'Durum değiştirmek',
 
     // Register page
     'accept_terms_label' => 'Koşulları kabul ediyorum.',
@@ -482,4 +483,14 @@ return [
 	'education_part' => [
 		'name' => 'Eğitim Durumu'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'Yeni Güncellemeler Bildirildi',
+    ],
+    'notified_about_ads' => [
+        'name' => 'İlanlar Hakkında Bildirildi',
+    ],
+    'receive_messages_email' => [
+        'name' => 'Mesaj E-postası Al',
+    ],
 ];

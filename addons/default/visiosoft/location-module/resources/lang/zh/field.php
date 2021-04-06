@@ -34,5 +34,10 @@ return [
     'address' => [
         'name' => '地址',
     ],
-    'selected' => '已选'
+    'selected' => '已选',
+    'choose_an_option' => '选择一个选项...',
+	'abv' => [
+		'name' => '缩写',
+	],
+	'location' => '地点',
 ];

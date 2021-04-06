@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "Reklamınızın Vəziyyəti Aktivləşdirildi!",
     'passive_status_change' => "Reklamınızın Vəziyyəti Passiv təyin olundu!",
 	'sold_status_change' => "Elanın Statusu Satıldı Olaraq Dəyişdirildi!",
+	'status_change' => "Reklamınızın Vəziyyəti təyin olundu: status!",
+	'disabled_detailed_options_for_admin_role' => "Ətraflı məhsul seçimləri deaktiv edilmişdir.",
 ];
