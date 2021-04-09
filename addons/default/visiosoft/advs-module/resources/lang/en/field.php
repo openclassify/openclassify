@@ -337,6 +337,13 @@ return [
     'owner' => 'Owner',
     'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
 
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
+
     'free' => 'Free',
     'ad_date' => 'Ad Date',
     'photo_video' => 'Photo, Video',

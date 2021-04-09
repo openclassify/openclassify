@@ -1,51 +1,69 @@
-{{ addBlock('ad-list/partials/ads',{'featured_advs':featured_advs})|raw }}
-{% for adv in advs %}
-    <div class="col-md-12 mb-2 list-classified bg-light">
-        <a href="{{ adv.detail_url }}" class="text-dark">
-            <div class="row{{ adv.doping_type ? ' doping_type' ~ adv.doping_type }}">
-                <div class="col-md-2 justify-content-center align-self-center text-center border-right border-white">
-                    <img class="img-thumbnail lazy" src="{{ img('visiosoft.theme.base::images/no-image.png').url }}"
-                         data-src="{{ adv.cover_photo }}" alt="{{ adv.name }}"
-                         style="max-height:80px;">
-                </div>
-                <div class="col-md-7 justify-content-center align-self-center border-right border-white">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <p class="mb-0">{{ adv.name }}</p>
+{% set hideStandard = setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
+{% set listLocation = setting_value('visiosoft.module.location::list_page_location') %}
+
+<div id="listing">
+    <table class="w-100 text-center">
+        <thead>
+            <tr class="text-white">
+                <th class="text-nowrap" colspan="2">{{ trans('visiosoft.module.advs::field.ad_title') }}</th>
+                {% if listLocation %}
+                    <th class="text-nowrap">
+                        {{ trans('visiosoft.module.advs::field.city.name') }} / {{ trans('visiosoft.module.advs::field.district.name') }}
+                    </th>
+                {% endif %}
+                <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.listing_date') }}</th>
+                <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.price.name') }}</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+            {{ addBlock('ad-list/partials/ads', {'featured_advs': featured_advs})|raw }}
+
+            {% for adv in advs %}
+                <tr class="{{ adv.doping_type ? 'doping_type' ~ adv.doping_type }}">
+                    <td>
+                        <a href="{{ adv.detail_url }}">
+                            <img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}" class="rounded lazy"
+                                 alt="{{ adv.name }}" data-src="{{ adv.cover_photo }}">
+                        </a>
+                    </td>
+                    <td class="text-left pl-2">
+                        <p class="id-data">#{{ adv.id }}</p>
+                        <h6 class="mb-1">
+                            <a href="{{ adv.detail_url }}">{{ adv.name }}</a>
+                        </h6>
+                        <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
+                        <div class="action-data d-flex align-items-center">
+
+                            {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context})|raw }}
+
                         </div>
-                        <div class="col-md-12 text-truncate">
-                            <small class="text-muted">{{ adv.cat1_name }}, {{ adv.cat2_name }}</small>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 text-left justify-content-center align-self-center">
-                    <div class="row">
-                        <div class="col-md-12">
-                            {% if not setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
-                                <p class="theme-price-old small mb-0"><del>
-                                        {{ adv.standard_price != adv.price and adv.standard_price != '0'
-                                        ? currency_format(adv.standard_price,adv.currency)
-                                        : '' }}
-                                </del></p>
-                            {% endif %}
-                            <b>{{ adv.price != '0'
-                                    ? currency_format(adv.price,adv.currency)
-                                    : trans('visiosoft.module.advs::field.free') }}</b>
-                        </div>
-                        {% if setting_value('visiosoft.module.location::list_page_location') %}
-                            <div class="col-md-12 justify-content-center align-self-center text-truncate">
-                                <small>{{ adv.city_name }} {{ adv.country_name }}</small>
-                            </div>
+                    </td>
+                    {% if listLocation %}
+                        <td class="location-data">
+                            <p>{{ adv.country_name }}</p>
+                            <p>{{ adv.city_name }}</p>
+                        </td>
+                    {% endif %}
+                    <td class="date-data">
+                        <p>{{ adv.publish_at.value|date('d F') }}</p>
+                        <p>{{ adv.publish_at.value|date('Y') }}</p>
+                    </td>
+                    <td class="price-data">
+                        {% if not hideStandard %}
+                            <p class="text-nowrap">
+                                <s>
+                                    {{ adv.standard_price != adv.price and adv.standard_price != '0' ? currency_format(adv.standard_price,adv.currency) : '' }}
+                                </s>
+                            </p>
                         {% endif %}
-                    </div>
-                </div>
-            </div>
-        </a>
-        <div class="row mb-2">
-            <div class="col-md-2"></div>
-            <div class="col-md-7 justify-content-center align-self-center border-right border-white">
-                {{ addBlock('list/extra-actions', {'ad': adv})|raw }}
-            </div>
-        </div>
-    </div>
-{% endfor %}
+                        <p class="text-nowrap">
+                            {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
+                        </p>
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
