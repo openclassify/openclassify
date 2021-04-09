@@ -280,15 +280,16 @@ class AdvsController extends PublicController
 
 
         if ($categoryId) {
+//            if ($hierarchy = $categoryId->getMains()) {
+//                dd(123);
+//            }
+
             $mainCats = $this->category_model->getMains($categoryId->id);
             $current_cat = $this->category_model->getCat($categoryId->id);
-            $mainCats[] = [
-                'id' => $current_cat->id,
-                'val' => $current_cat->name,
-                'slug' => $current_cat->slug,
-            ];
+            $mainCats[] = $current_cat;
             $subCats = $this->category_repository->getSubCatById($categoryId->id);
             $allCats = false;
+//            dd($mainCats);
         } else {
             $mainCats = $this->category_repository->mainCats();
             $allCats = true;

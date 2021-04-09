@@ -1,0 +1,61 @@
+<ul id="categoryList" class="py-3 px-2">
+    {% for maincat in mainCats %}
+        {% set parent_category = noCat ? false : true %}
+
+        <li>
+            <div class="d-flex">
+                {% if maincat.icon %}
+                    <img src="{{ maincat.icon.url }}" alt="{{ maincat.name }}">
+                {% else %}
+                    {{ img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').data|raw }}
+                {% endif %}
+                <div class="ml-2">
+                    <a href="{{ appendRequestURL(request_query(),url_route('adv_list_seo', [maincat.slug, cityId.slug]),{},['page']) }}">
+                        {{ maincat.name }}
+                    </a>
+{#                    <ul class="sub-cat mt-1">#}
+{#                        {% for subcat in subCats %}#}
+{#                            {% if subcat.parent_category_id == maincat.id %}#}
+{#                                {% set subCatId = entries('cats', 'category').find(subcat.id) %}#}
+
+{#                                <li>#}
+{#                                    <a href="{{ appendRequestURL(request_query(), url_route('adv_list_seo', [subCatId.slug, citySlug]), {}, ['page']) }}">#}
+{#                                        {{ subcat.name }}#}
+{#                                    </a>#}
+{#                                    <ul>#}
+{#                                        <li>#}
+{#                                            <a href="#">Test</a>#}
+{#                                            <ul>#}
+{#                                                <li><a href="#">Test</a></li>#}
+{#                                                <li><a href="#">Test</a></li>#}
+{#                                                <li><a href="#">Test</a></li>#}
+{#                                                <li><a href="#">Test</a></li>#}
+{#                                                <li><a href="#">Test</a></li>#}
+{#                                                <li><a href="#">Test</a></li>#}
+{#                                            </ul>#}
+{#                                        </li>#}
+{#                                    </ul>#}
+{#                                </li>#}
+{#                            {% endif %}#}
+{#                        {% endfor %}#}
+{#                    </ul>#}
+                </div>
+            </div>
+        </li>
+
+        <li>
+            <div class="d-flex">
+                {% if maincat.icon %}
+                    <img src="{{ maincat.icon.url }}" alt="{{ maincat.name }}">
+                {% else %}
+                    {{ img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').data|raw }}
+                {% endif %}
+                <div class="ml-2">
+                    <a href="{{ appendRequestURL(request_query(),url_route('adv_list_seo', [maincat.slug, cityId.slug]),{},['page']) }}">
+                        {{ maincat.name }}
+                    </a>
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>
