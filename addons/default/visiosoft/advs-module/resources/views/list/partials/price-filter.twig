@@ -30,7 +30,7 @@
                 {% endfor %}
             </ul>
 
-            <div id="priceInputWrapper" class="d-flex justify-content-around mt-3">
+            <div id="priceInputWrapper" class="d-flex justify-content-around mt-3 range-input-wrapper">
                 <input type="number" class="border-0 shadow-sm rounded px-3 py-1" name="min_price" min="0"
                        placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}"
                        value="{{ app.request.get('min_price') }}">
