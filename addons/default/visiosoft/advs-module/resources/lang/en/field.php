@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Featured Ads",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'on',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':count ads found for :name search',
     ],
