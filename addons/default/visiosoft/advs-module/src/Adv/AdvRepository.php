@@ -79,13 +79,13 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 $query = $query->whereIn('city', explode(',', array_first($param['city'])));
             }
             if (isset($param['district']) and !empty(array_filter($param['district']))) {
-                $query = $query->whereIn('district', explode(',',array_first($param['district'])));
+                $query = $query->whereIn('district', explode(',', array_first($param['district'])));
             }
             if (isset($param['neighborhood']) and !empty(array_filter($param['neighborhood']))) {
-                $query = $query->whereIn('neighborhood', explode(',',array_first($param['neighborhood'])));
+                $query = $query->whereIn('neighborhood', explode(',', array_first($param['neighborhood'])));
             }
             if (isset($param['village']) and !empty(array_filter($param['village']))) {
-                $query = $query->whereIn('village', explode(',',array_first($param['village'])));
+                $query = $query->whereIn('village', explode(',', array_first($param['village'])));
             }
         }
         if ($category) {
@@ -145,6 +145,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
         if (!empty($param['get_ads']) && $param['get_ads'] == true) {
             $query = $query->where('is_get_adv', 1);
+        }
+
+        if (!empty($param['created_at'])) {
+            $query = $query->whereDate('advs_advs.created_at', $param['created_at']);
         }
 
         foreach ($param as $para => $value) {
@@ -420,7 +424,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         foreach ($ads as $index => $ad) {
             $ads[$index]->detail_url = $this->model->getAdvDetailLinkByModel($ad, 'list');
-            $ads[$index]->currency_price = app(Currency::class)->format($ad->price,$ad->currency);
+            $ads[$index]->currency_price = app(Currency::class)->format($ad->price, $ad->currency);
             $ads[$index] = $this->model->AddAdsDefaultCoverImage($ad);
         }
 
@@ -519,13 +523,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
-    public function getUserAds($userID = null)
+    public function getUserAds($userID = null, $status = "approved")
     {
         $userID = auth_id_if_null($userID);
-        return $this->newQuery()
-            ->where('advs_advs.created_by_id', $userID)
-            ->where('status', 'approved')
-            ->where('finish_at', '>', date('Y-m-d H:i:s'))
+
+        $query = $this->newQuery()
+            ->where('advs_advs.created_by_id', $userID);
+
+        if ($status) {
+            $query = $query->where('status', $status);
+        }
+        return $query->where('finish_at', '>', date('Y-m-d H:i:s'))
             ->get();
     }
 }
