@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Представени реклами",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'На',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ': брой реклами намерени за: търсене на име',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Местоположение на рекламата',
     'owner' => 'Собственик',
     'default_owner_instruction' => 'Собственикът ще използва по подразбиране текущия потребител, ако не е избран потребител',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Безплатно',
     'ad_date' => 'Дата на рекламата',
