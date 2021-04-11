@@ -215,11 +215,6 @@ a.sort-by-open-dropdown:hover {
     color: #8598AA;
 }
 
-.sort-by-item:hover {
-    text-decoration: underline;
-    cursor: pointer;
-}
-
 .gallery-tn {
     object-fit: cover;
 }

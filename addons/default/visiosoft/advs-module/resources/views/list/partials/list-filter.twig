@@ -1,201 +1,132 @@
-{% set formHtml %}
-<form action="{{ url_route('visiosoft.module.advs::list') }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow">
-    {% endset %}
-    {% set catSlug = null %}
-    {% set citySlug = null %}
-    {% set pathInfo = app.request.pathinfo|split('/') %}
-    {% if pathInfo[1] == 'c' %}
-        {% set catSlug = pathInfo[2] %}
-    {% endif %}
-    {% if pathInfo|length is same as(4) %}
-        {% set citySlug = pathInfo[3] %}
-    {% endif %}
-    {% if catSlug %}
-    {% set formHtml %}
-    <form action="{{ url_route('adv_list_seo', [catSlug, citySlug]) }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow">
-        {% endset %}
-        {% endif %}
-        {{ formHtml }}
-        <div>
-            <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
-            <input type="hidden" name="user" value="{{ app.request.get('user') }}">
-            <div>
-                <div>
-                    <div id="filter" class="w-100 mb-3">
+{% set pathInfo = app.request.pathinfo|split('/') %}
+{% set catSlug = pathInfo[1] == 'c' ? pathInfo[2] : null %}
+{% set citySlug = pathInfo|length is same as(4) ? pathInfo[3] : null %}
+{% set formAction = catSlug ? url_route('adv_list_seo', [catSlug, citySlug]) : url_route('visiosoft.module.advs::list') %}
+<form action="{{ formAction }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow"
+      class="flex-shrink-0">
+    <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
+    <input type="hidden" name="user" value="{{ app.request.get('user') }}">
 
-                        {{ addBlock('ads-list/partials/list-filter',{
-                            'mainCats':mainCats,
-                            'subCats':subCats,
-                            'ranges':ranges,
-                            'checkboxes':checkboxes,
-                            'topfields' : topfields,
-                            'selectDropdown' : selectDropdown,
-                            'selectRange' : selectRange,
-                            'selectImage' : selectImage,
-                            'radio':radio,
-                            'countries':countries,
-                            'cities':cities,
-                            'districts':districts,
-                            'neighborhoods':neighborhoods,
-                            'villages':villages,
-                            'param':param,
-                            'categoryId':categoryId,
-                            'cityId':cityId
-                        })|raw }}
+    <div id="category" class="border rounded p-3 mb-3 d-none d-sm-block">
+        <div id="categoryNav" class="d-flex">
+            <a href="{{ url_route('visiosoft.module.advs::view_type', ['list']) }}" rel="nofollow"
+               class="d-flex w-50 align-items-center pl-2 pb-1{{ request().cookie.viewType != "map" ? ' active' }}">
+                {{ img('visiosoft.module.advs::images/listing/list.svg').data|raw }}
+                <p class="ml-2">{{ trans("visiosoft.module.advs::field.list") }}</p>
+            </a>
+            <a href="{{ url_route('visiosoft.module.advs::view_type', ['map']) }}" rel="nofollow"
+               class="d-flex w-50 align-items-center pr-2 pb-1 justify-content-end{{ request().cookie.viewType == "map" ? ' active' }}">
+                {{ img('visiosoft.module.advs::images/listing/map.svg').data|raw }}
+                <p class="ml-2">{{ trans("visiosoft.module.advs::field.map.name") }}</p>
+            </a>
+        </div>
 
-                        <!-- Price Filter Start -->
-                        {% include 'visiosoft.module.advs::list/partials/price-filter' %}
-                        <!-- Price Filter End -->
+        {% include 'visiosoft.module.cats::ads-list/partials/cat-filter' %}
+    </div>
 
-                        {% if setting_value('visiosoft.module.advs::hide_date_filter') == false %}
-                            <!-- Date Filter Start -->
-                            <div class="card mb-3">
-                                <div class="card-header breadcrumb mb-0" id="dateHeading">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link text-dark d-flex align-items-center"
-                                                data-toggle="collapse" data-target="#dateContainer"
-                                                aria-expanded="true" aria-controls="dateContainer">
-{#                                            <img src="{{ img('visiosoft.module.advs::images/date-icon.svg').url }}"#}
-{#                                                 class="mr-2"#}
-{#                                                 alt="date icon">#}
-                                            <span>{{ trans("visiosoft.module.advs::field.date.name") }}</span>
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="dateContainer" class="collapse show overflow-auto"
-                                     aria-labelledby="dateHeading"
-                                     style="max-height: 300px;">
-                                    <div class="d-flex flex-column p-3 m-0">
-                                        <div class="form-check py-1">
-                                            <input class="form-check-input"
-                                                    {% if app.request.get('date') == 'day' %}
-                                                        checked
-                                                    {% endif %}
-                                                   type="radio" name="date" id="dateDay"
-                                                   value="day">
-                                            <label class="form-check-label" for="dateDay">
-                                                {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
-                                            </label>
-                                        </div>
-                                        <div class="form-check py-1">
-                                            <input class="form-check-input"
-                                                    {% if app.request.get('date') == 'week' %}
-                                                        checked
-                                                    {% endif %}
-                                                   type="radio" name="date" id="dateWeek"
-                                                   value="week">
-                                            <label class="form-check-label" for="dateWeek">
-                                                {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
-                                            </label>
-                                        </div>
-                                        <div class="form-check py-1">
-                                            <input class="form-check-input"
-                                                    {% if app.request.get('date') == 'month' %}
-                                                        checked
-                                                    {% endif %}
-                                                   type="radio" name="date" id="dateMonth"
-                                                   value="month">
-                                            <label class="form-check-label" for="dateMonth">
-                                                {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Date Filter End -->
-                        {% endif %}
+    {{ addBlock('ads-list/partials/list-filter',{
+        'mainCats':mainCats,
+        'subCats':subCats,
+        'ranges':ranges,
+        'checkboxes':checkboxes,
+        'topfields' : topfields,
+        'selectDropdown' : selectDropdown,
+        'selectRange' : selectRange,
+        'selectImage' : selectImage,
+        'radio':radio,
+        'countries':countries,
+        'cities':cities,
+        'districts':districts,
+        'neighborhoods':neighborhoods,
+        'villages':villages,
+        'param':param,
+        'categoryId':categoryId,
+        'cityId':cityId
+    })|raw }}
 
-                        {% if setting_value('visiosoft.module.advs::hide_photo_filter') == false %}
-                            <!-- Media Filter Start -->
-                            <div class="card mb-3">
-                                <div class="card-header breadcrumb mb-0" id="mediaHeading">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link text-dark" data-toggle="collapse"
-                                                data-target="#mediaContainer"
-                                                aria-expanded="true" aria-controls="mediaContainer">
-{#                                            <i class="fa fa-camera"></i>#}
-                                            {{ trans("visiosoft.module.advs::field.photo.name") }}
-                                            , {{ trans("visiosoft.module.advs::field.video.name") }}
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="mediaContainer" class="collapse show overflow-auto"
-                                     aria-labelledby="mediaHeading"
-                                     style="max-height: 300px;">
-                                    <div class="d-flex p-3 m-0 flex-column">
-                                        <div class="form-check py-1">
-                                            <input class="form-check-input" type="checkbox"
-                                                    {% if app.request.get('photo') == true %}
-                                                        checked
-                                                    {% endif %}
-                                                   value="true" name="photo"
-                                                   id="photo">
-                                            <label class="form-check-label" for="photo">
-                                                {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
-                                            </label>
-                                        </div>
-                                        <div class="form-check py-1">
-                                            <input class="form-check-input" type="checkbox"
-                                                    {% if app.request.get('video') == true %}
-                                                        checked
-                                                    {% endif %}
-                                                   value="true" name="video"
-                                                   id="video">
-                                            <label class="form-check-label" for="video">
-                                                {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Media Filter End -->
-                        {% endif %}
+    <!-- Price Filter Start -->
+    {% include 'visiosoft.module.advs::list/partials/price-filter' %}
+    <!-- Price Filter End -->
 
-                        {% if setting_value('visiosoft.module.advs::hide_map_filter') == false %}
-                            <!-- Map Filter Start -->
-                            <div class="card mb-3">
-                                <div class="card-header breadcrumb mb-0" id="mapHeading">
-                                    <h5 class="mb-0">
-                                        <button class="btn btn-link text-dark" data-toggle="collapse"
-                                                data-target="#mapContainer"
-                                                aria-expanded="true" aria-controls="mapContainer">
-{#                                            <i class="fa fa-map"></i>#}
-                                            {{ trans("visiosoft.module.advs::field.map.name") }}
-                                        </button>
-                                    </h5>
-                                </div>
-                                <div id="mapContainer" class="collapse show overflow-auto" aria-labelledby="mapHeading"
-                                     style="max-height: 300px;">
-                                    <div class="row p-3 m-0">
-                                        <div class="form-check py-1">
-                                            <input class="form-check-input" type="checkbox"
-                                                    {% if app.request.get('map') == true %}
-                                                        checked
-                                                    {% endif %}
-                                                   value="true" name="map"
-                                                   id="mapFilter">
-                                            <label class="form-check-label" for="mapFilter">
-                                                {{ trans("visiosoft.module.advs::field.yes.name") }}
-                                            </label>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!-- Map Filter End -->
-                        {% endif %}
+    {% if setting_value('visiosoft.module.advs::hide_date_filter') == false %}
+        <!-- Date Filter Start -->
+        <div id="date" class="border rounded filter-box p-3 mb-3">
+            <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+                <p>{{ trans("visiosoft.module.advs::field.date.name") }}</p>
+                {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+            </div>
 
-                        <div class="card">
-                            <div class="card-header bg-primary text-center" id="submitHeading">
-                                <h5 class="mb-0">
-                                    <button class="btn btn-link text-white w-100 searchbut">
-                                        <i class="fas fa-search"></i>
-                                        {{ trans("visiosoft.module.advs::field.search") }}
-                                    </button>
-                                </h5>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="px-2 mb-2 d-flex align-items-center">
+                <input type="radio" id="dateDay" {{ app.request.get('date') == 'day' ? 'checked' }} value="day"
+                       name="date">
+                <label for="dateDay" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
+                </label>
+            </div>
+            <div class="px-2 mb-2 d-flex align-items-center">
+                <input type="radio" id="dateWeek" {{ app.request.get('date') == 'week' ? 'checked' }} value="week"
+                       name="date">
+                <label for="dateWeek" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
+                </label>
+            </div>
+            <div class="px-2 mb-3 d-flex align-items-center">
+                <input type="radio" id="dateMonth" {{ app.request.get('date') == 'month' ? 'checked' }} value="month"
+                       name="date">
+                <label for="dateMonth" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
+                </label>
             </div>
         </div>
-    </form>
+        <!-- Date Filter End -->
+    {% endif %}
+
+    {% if setting_value('visiosoft.module.advs::hide_photo_filter') == false %}
+        <!-- Media Filter Start -->
+        <div id="media" class="border rounded filter-box p-3 mb-3">
+            <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+                <p>{{ trans("visiosoft.module.advs::field.photo.name") ~ ', ' ~ trans("visiosoft.module.advs::field.video.name") }}</p>
+                {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+            </div>
+
+            <div class="px-2 mb-2 d-flex align-items-center">
+                <input type="checkbox" id="photo" {{ app.request.get('photo') == true ? 'checked' }} value="true"
+                       name="photo">
+                <label for="photo" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
+                </label>
+            </div>
+            <div class="px-2 mb-3 d-flex align-items-center">
+                <input type="checkbox" id="video" {{ app.request.get('video') == true ? 'checked' }} value="true"
+                       name="video">
+                <label for="video" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
+                </label>
+            </div>
+        </div>
+        <!-- Media Filter End -->
+    {% endif %}
+
+    {% if setting_value('visiosoft.module.advs::hide_map_filter') == false %}
+        <!-- Map Filter Start -->
+        <div id="mapFilter" class="border rounded filter-box p-3 mb-3">
+            <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+                <p>{{ trans("visiosoft.module.advs::field.map.name") }}</p>
+                {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+            </div>
+
+            <div class="px-2 mb-3 d-flex align-items-center">
+                <input type="checkbox" id="mapFilter" {{ app.request.get('map') == true ? 'checked' }} value="true"
+                       name="map">
+                <label for="mapFilter" class="ml-2 mb-0">{{ trans("visiosoft.module.advs::field.ads_with_map") }}</label>
+            </div>
+        </div>
+        <!-- Map Filter End -->
+    {% endif %}
+
+    <div id="filterSubmit" class="px-3 text-right">
+        <button type="submit" class="btn text-white btn-sm px-3">
+            {{ trans("visiosoft.module.advs::field.search") }}
+        </button>
+    </div>
+</form>

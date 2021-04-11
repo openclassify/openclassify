@@ -1,54 +1,51 @@
 {% extends "visiosoft.module.advs::list/list" %}
-{% block listContent %}
-            {{ addBlock('ad-list/partials/gallery',{'featured_advs':featured_advs})|raw }}
-            {% for adv in advs %}
-                <div class="col-sm-6 col-md-4 col-lg-4 d-flex align-items-stretch">
-                    <div class="card mb-4 box-shadow {% if adv.doping != null %} doping_type4 {% endif %} w-100">
-                        <div class="row p-2" style="min-height: 150px;">
-                            <a href="{{ adv.detail_url }}" class="w-100">
-                                <div class="col-md-12 justify-content-center align-self-center">
-                                    <img class="card-img-top img-fluid img-thumbnail gallery-tn"
-                                         src="{{ adv.cover_photo }}"
-                                         style="height: 150px">
-                                </div>
-                            </a>
-                        </div>
 
-                        <div class="card-body pt-0">
-                            {% if setting_value('visiosoft.theme.base::price_fields') %}
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <b>{{ adv.price != '0'
-                                        ? currency_format(adv.price,adv.currency)
-                                        : trans('visiosoft.module.advs::field.free') }}</b>
-                                </div>
-                            {% endif %}
-                            <div class="d-flex justify-content-between align-items-center text-truncate">
-                                <a href="{{ adv.detail_url }}">
-                                    <p class="card-title d-inline-block mb-1">{{ adv.name }}</p>
-                                </a>
+{% block listContent %}
+    {% set showPrice = setting_value('visiosoft.theme.base::price_fields') %}
+    {% set showLocation = setting_value('visiosoft.module.location::home_page_location') %}
+    {% set showDate = setting_value('visiosoft.theme.base::date_fields') %}
+
+    <div id="gallerying" class="d-flex flex-wrap">
+
+        {{ addBlock('ad-list/partials/gallery',{'featured_advs':featured_advs})|raw }}
+
+        {% for adv in advs %}
+            <div class="w-50 gallery-item-wrapper mb-1{{ adv.doping != null ? ' doping_type4' }}">
+                <div class="gallery-item rounded p-3 d-flex h-100">
+                    <div>
+                        <a href="{{ adv.detail_url }}">
+                            <img src="{{ adv.cover_photo }}" alt="{{ adv.name }}" class="rounded">
+                        </a>
+                        <div class="action-data-wrapper d-flex justify-content-center">
+                            <div class="action-data d-flex flex-column">
+
+                                {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context})|raw }}
+
                             </div>
-                            {% if setting_value('visiosoft.module.location::home_page_location') %}
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span>
-                                        <i class="fas fa-location-arrow text-primary"></i>
-                                        {{ adv.city_name }}, {{ adv.country_name }}
-                                    </span>
-                                </div>
-                            {% endif %}
-                            {% if setting_value('visiosoft.theme.base::date_fields') %}
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span>
-                                        <i class="far fa-clock text-dark"></i>
-                                        {{ adv.created_at|date('d/m/Y') }}
-                                    </span>
-                                </div>
-                            {% endif %}
                         </div>
                     </div>
+                    <div class="ml-4 mt-1">
+                        <p class="id-data">#{{ adv.id }}</p>
+                        <h6 class="mb-1">
+                            <a href="{{ adv.detail_url }}">{{ adv.name }}</a>
+                        </h6>
+                        <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
+                        {% if showPrice %}
+                            <p class="price-data mb-1">
+                                {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
+                            </p>
+                        {% endif %}
+                        {% if showLocation %}
+                            <p class="location-data">{{ adv.country_name}}  / {{ adv.city_name }}</p>
+                        {% endif %}
+                        <p class="date-data">{{ adv.publish_at.value|date('d F Y') }}</p>
+                    </div>
                 </div>
-            {% endfor %}
-
+            </div>
+        {% endfor %}
+    </div>
 {% endblock %}
+
 {% block customjs %}
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
     {% include "theme::scroll-modal" %}
