@@ -211,6 +211,7 @@ return [
     'featured_ads' => "특집 광고",
     'trending_ads' => '트렌드 인 광고',
     'search_ad_result_prefix' => '의 위에',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ': 이름 검색에 대해 찾은 개수 광고',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => '광고 위치',
     'owner' => '소유자',
     'default_owner_instruction' => '사용자가 선택되지 않은 경우 소유자는 기본적으로 현재 사용자로 설정됩니다.',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',
