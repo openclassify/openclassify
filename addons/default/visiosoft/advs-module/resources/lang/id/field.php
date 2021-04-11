@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Iklan Unggulan",
     'trending_ads' => 'Iklan Tren',
     'search_ad_result_prefix' => 'di',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ': count iklan yang ditemukan untuk pencarian :name',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Lokasi Iklan',
     'owner' => 'Pemilik',
     'default_owner_instruction' => 'Pemilik akan menggunakan pengguna saat ini secara bawaan/default jika tidak ada pengguna yang dipilih',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Gratis',
     'ad_date' => 'Tanggal Iklan',
