@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Anuncis destacats",
     'trending_ads' => 'Anuncis Trendind',
     'search_ad_result_prefix' => 'encès',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ': compta els anuncis trobats per a: cerca de noms',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Ubicació de l’anunci',
     'owner' => 'Propietari',
     'default_owner_instruction' => 'El propietari passarà per defecte a l\'usuari actual si no se selecciona cap usuari',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Gratuït',
     'ad_date' => 'Data de l\'anunci',
