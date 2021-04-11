@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Истакнути огласи",
     'trending_ads' => 'Трендинд Адс',
     'search_ad_result_prefix' => 'на',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ': цоунт огласи пронађени за: сеарцх наме',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Локација огласа',
     'owner' => 'Власник',
     'default_owner_instruction' => 'Власник ће подразумевано подесити тренутног корисника ако није изабран ниједан корисник',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'бесплатно',
     'ad_date' => 'Датум огласа',
