@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Xüsusi elanlar",
     'trending_ads' => 'Populyar elanlar',
     'search_ad_result_prefix' => 'kateqoriyasında',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':name axtarışınızda :count ədəd elan tapılmışdır.',
     ],
@@ -336,6 +337,13 @@ return [
     'ad_location' => 'Ünvan əlavə et',
     'owner' => 'Sahib',
     'default_owner_instruction' => 'Heç bir istifadəçi seçilmədiyi təqdirdə sahib cari istifadəçiyə borcludur',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Elan Tarixi',
