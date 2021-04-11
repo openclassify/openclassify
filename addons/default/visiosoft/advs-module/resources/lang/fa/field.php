@@ -211,6 +211,7 @@ return [
     'featured_ads' => "اعلانات برجسته",
     'trending_ads' => 'اعلانات مدروز',
     'search_ad_result_prefix' => 'بر',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':تعداد اعلانات یافت شده برای:جستجوی نام',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'مکان تبلیغات',
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر هیچ کاربری انتخاب نشود ، مالک به عنوان کاربر پیش فرض عمل می کند',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',
