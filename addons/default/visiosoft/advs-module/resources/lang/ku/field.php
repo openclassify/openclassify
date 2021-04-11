@@ -269,6 +269,7 @@ return [
     'trending_ads' => 'Trendind Ads
 ',
     'search_ad_result_prefix' => 'لەسەر',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => 'ڕێکلامەکان دەژمێرن دۆزراونەتەوەبۆ :گەڕانی ناو:',
     ],
@@ -431,6 +432,13 @@ return [
 ',
     'owner' => 'Xwedî',
     'default_owner_instruction' => 'Ger bikarhêner neyê bijartin dê xwedêgiravî ji bikarhênerê heyî re veqetîne',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'بەلاش',
     'ad_date' => 'بەرواری ڕیکلام
