@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
     'search_ad_result_prefix' => 'Aramanızda',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
@@ -337,6 +338,13 @@ return [
     'ad_location' => 'İlan Konumu',
     'owner' => 'Sahip',
     'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
