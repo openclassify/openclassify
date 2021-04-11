@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Anuncios destacados",
     'trending_ads' => 'Anuncios de tendencias',
     'search_ad_result_prefix' => 'en',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':      cuenta de anuncios encontrados para:búsqueda de nombre',
     ],
@@ -336,6 +337,13 @@ return [
     'ad_location' => 'Ubicación del anuncio',
     'owner' => 'Propietario',
     'default_owner_instruction' => 'El propietario utilizará de forma predeterminada el usuario actual si no se selecciona ningún usuario',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Gratis',
     'ad_date' => 'Fecha de anuncio',
