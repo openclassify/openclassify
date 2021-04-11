@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Njoftimet e preferuara",
     'trending_ads' => 'Njoftimet në trend',
     'search_ad_result_prefix' => 'në',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':Numëroni njoftime të gjetura për: kërkim të emrit',
     ],
@@ -336,6 +337,13 @@ return [
     'ad_location' => 'Vendndodhja e reklamës',
     'owner' => 'Pronar',
     'default_owner_instruction' => 'Pronari do të zgjedhë përdoruesin aktual nëse nuk zgjidhet asnjë përdorues',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',
