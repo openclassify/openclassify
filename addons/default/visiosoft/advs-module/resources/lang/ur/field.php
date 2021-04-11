@@ -211,6 +211,7 @@ return [
     'featured_ads' => "نمایاں اشتہارات",
     'trending_ads' => 'رجحانات کے اشتہارات',
     'search_ad_result_prefix' => 'پر',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ': کے لئے ملنے والے اشتہارات گنیں: نام کی تلاش',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'اشتہار کی جگہ',
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر کوئی صارف منتخب نہیں ہوتا ہے تو مالک موجودہ صارف سے ڈیفالٹ ہوجائے گا',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
