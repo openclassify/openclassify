@@ -3,5 +3,5 @@
 return [
     'send_forgot_sms' => 'SMS, изпратен на вашия регистриран телефон. Моля те, провери.',
     'found_phone' => 'Телефонният номер, регистриран в системата, не е намерен.',
-    'error_mail' => 'Your transaction was completed successfully, but the notification e-mail could not be sent.',
+    'error_mail' => 'Вашата транзакция е завършена успешно, но имейл за уведомяване не може да бъде изпратен.',
 ];
