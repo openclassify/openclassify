@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Các bảng quảng cáo",
     'trending_ads' => 'Quảng cáo Trendind',
     'search_ad_result_prefix' => 'trên',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ': đếm quảng cáo được tìm thấy cho: tìm kiếm tên',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Vị trí Quảng cáo',
     'owner' => 'Chủ nhân',
     'default_owner_instruction' => 'Chủ sở hữu sẽ mặc định là người dùng hiện tại nếu không có người dùng nào được chọn',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',
