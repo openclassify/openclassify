@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Annonces en vedette",
     'trending_ads' => 'Annonces Trendind',
     'search_ad_result_prefix' => 'sur',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':      compte annonces trouvées pour:recherche par nom',
     ],
@@ -336,6 +337,13 @@ return [
     'ad_location' => 'Emplacement de l\'annonce',
     'owner' => 'Propriétaire',
     'default_owner_instruction' => 'Le propriétaire utilisera par défaut l\'utilisateur actuel si aucun utilisateur n\'est sélectionné',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Gratuit',
     'ad_date' => 'Date de l\'annonce',
