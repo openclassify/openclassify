@@ -16,6 +16,11 @@
         {{ img('visiosoft.module.profile::images/social-media.svg').data|raw }}
         <p>{{ trans('visiosoft.module.profile::addon.title') }}</p>
     </a>
+    <a href="{{ url_route('profile::detail') }}"
+       class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/detail' ? ' active' : '' }}">
+        {{ img('visiosoft.module.profile::images/detail2.svg').data|raw }}
+        <p>{{ trans('visiosoft.module.profile::field.details.name') }}</p>
+    </a>
     {% set marketPlace = setting_value('visiosoft.module.advs::market_place') %}
     {% if marketPlace %}
         <a href="{{ url_route('profile::ads') }}"
@@ -32,6 +37,11 @@
 
     {{ addBlock('profile/navigation',{'marketPlace':marketPlace})|raw }}
 
+    <a href="{{ url_route('profile::password') }}"
+       class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/password' ? ' active' : '' }}">
+        {{ img('visiosoft.module.profile::images/password2.svg').data|raw }}
+        <p>{{ trans('visiosoft.module.profile::field.password.name') }}</p>
+    </a>
     <a href="{{ url('logout') }}"
        class="px-3 link-unstyled d-flex d-md-none">
         {{ img('visiosoft.module.profile::images/logout.svg').data|raw }}

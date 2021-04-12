@@ -85,6 +85,14 @@ $(function () {
 
         uploader.find('.uploaded .modal-body').html(element.data('loading') + '...');
 
-        uploader.find('.uploaded').load(REQUEST_ROOT_PATH + '/streams/singlefile-field_type/recent?uploaded=' + uploaded.join(','));
+        $.when(
+            $.get(REQUEST_ROOT_PATH + '/streams/singlefile-field_type/recent?uploaded=' + uploaded.join(','), function(data) {
+                uploader.find('.uploaded').html(data);
+            })
+        ).done(function() {
+            let changedPhoto = new CustomEvent('uploadedSingleField');
+
+            window.dispatchEvent(changedPhoto);
+        });
     });
 });

@@ -52,10 +52,19 @@ class MyProfileController extends PublicController
 
         $country = CountryModel::all();
 
-        return $this->view->make('visiosoft.module.profile::profile.detail',
+        return $this->view->make('visiosoft.module.profile::profile.profile',
             compact('user', 'country', 'form', 'advs_count'));
     }
 
+    public function detail(ProfileFormBuilder $form){
+	    $user = $this->userRepository->find(Auth::id());
+	    $country = CountryModel::all();
+	    return $this->view->make('visiosoft.module.profile::profile.detail', compact('user', 'country', 'form'));
+    }
+
+    public function password(){
+	    return $this->view->make('visiosoft.module.profile::profile.password');
+    }
 
     public function extendAds($id, $type, SettingRepositoryInterface $settings)
     {
