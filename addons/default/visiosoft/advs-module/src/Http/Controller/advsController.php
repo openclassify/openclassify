@@ -409,12 +409,12 @@ class AdvsController extends PublicController
             if ($city) {
                 $catText = "$city->name $catText";
             } elseif (count($mainCats) == 1 || count($mainCats) == 2) {
-                $catText = end($mainCats)['val'];
+                $catText = end($mainCats)->name;
             } elseif (count($mainCats) > 2) {
                 $catArray = array_slice($mainCats, 2);
                 $loop = 0;
                 foreach ($catArray as $cat) {
-                    $catText = !$loop ? $catText . $cat['val'] : $catText . ' ' . $cat['val'];
+                    $catText = !$loop ? $catText . $cat->name : $catText . ' ' . $cat->name;
                     $loop++;
                 }
             }
