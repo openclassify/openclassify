@@ -44,4 +44,5 @@ return [
 	'publish' => 'לְפַרְסֵם',
 	'import' => 'יְבוּא',
     'new_status' => 'סטטוס חדש',
+    'fast_edit' => 'עריכה מהירה',
 ];

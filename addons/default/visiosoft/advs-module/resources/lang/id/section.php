@@ -14,7 +14,7 @@ return [
         'title' => 'Kota',
     ],
     'districts' => [
-        'title' => 'Distrik',
+        'title' => 'Kecamatan',
     ],
     'neighborhoods' => [
         'title' => 'Lingkungan',
@@ -23,25 +23,25 @@ return [
         'title' => 'Desa',
     ],
     'custom_fields' => [
-        'title' => 'Bidang khusus',
+        'title' => 'Baris khusus',
     ],
     'custom_field_advs' => [
-        'title' => 'Iklan bidang kustom',
+        'title' => 'Iklan baris khusus',
     ],
     'cf_values' => [
         'title' => 'Nilai cf',
     ],
     'fields' => [
-        'title' => 'Bidang Kustom'
+        'title' => 'Baris khusus'
     ],
     'assets_clear' => [
-        'name' => 'Aset Hapus'
+        'name' => 'Bersihkan Aset'
     ],
     'general' => 'Umum',
     'ads' => 'Iklan',
     'user' => 'Pengguna',
     'filter' => 'Saring',
-    'create_ad' => 'Buat iklan',
+    'create_ad' => 'Buat Iklan',
     'options' => [
         'title' => 'Pilihan',
     ],
@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'Status',
     ],
+	'ads_detail' => 'Rincian Iklan',
+
 ];

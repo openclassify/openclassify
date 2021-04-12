@@ -40,4 +40,25 @@ return [
     'general' => '一般',
     'ads' => '广告',
     'user' => '用户',
+    'filter' => '筛选',
+    'create_ad' => '制作广告',
+    'options' => [
+        'title' => '选项',
+    ],
+    'ads_image' => '广告图片',
+    'product_options' => [
+        'title' => '选项',
+    ],
+    'productoptions_value' => [
+        'title' => '期权价值',
+    ],
+    'option_configuration' => [
+        'title' => '配置',
+    ],
+    'translations' => '笔译',
+    'status' => [
+        'title' => '状态',
+    ],
+	'ads_detail' => '广告详情',
+
 ];

@@ -50,4 +50,10 @@ return [
     'secure_e-commerce_ads' => '安全的电子商务广告',
     'sms' => '发送短信（SMS）',
     'mail' => '发送邮件',
+
+    // Register instruction seed
+    'register_instructions' => '注册说明',
+    'list' => '列表',
+    'instruction_description' => '指令说明',
+    'instruction_list' => '指令清单',
 ];

@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Standardannonsland',
     ],
+    'hide_price_categories' => [
+        'name' => 'Dölj pris på kategorier',
+        'instructions' => 'Priset döljs när du skapar en annons eller visar en annons under dessa kategorier.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'API-nyckel för valutaomvandlare'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Dölj konfigurationsknappen',
         'instructions' => 'Dölj konfigurationsknappen på sidan för förhandsgranskning av annonser',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Gör alla fält obligatoriska',
+        'instructions' => 'Kräva att användaren fyller i fälten Pris och Beskrivning när han skapar en annons',
     ],
     'make_map_required' => [
         'name' => 'Gör kartan obligatorisk',
@@ -203,6 +211,22 @@ return [
         'name' => 'Visa antal annonser',
         'instructions' => 'Visa annonser räknas på listan till vänster',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Dölj skapat datum',
+        'instructions' => 'Dölj skapat datum på sidan med annonser',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Dölj listhuvud',
+		'instructions' => 'Döljer för beställning och visningstyper',
+	],
+	'hide_filter_section' => [
+		'name' => 'Dölj filteravsnittet',
+		'instructions' => 'Gömmer till vänster filterområde på listningssidan',
+	],
+	'hide_seller_info' => [
+		'name' => 'Dölj säljarinformation',
+		'instructions' => 'Dölja information till säljare på sidan med annonser',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Visa annonsannonsavtal',
         'instructions' => 'Aktivera detta om du vill visa ett integritetspolicyavtal på sidan för skapande av annonser',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'Hämta kategorier',
         'instructions' => 'Det representerar de kategorier i vilka GET-egenskapen är giltig.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Inaktivera vaktpost'
+	],
+    'watermark' => [
+        'name' => 'Vattenstämpel',
+        'instructions' => 'Är vattenstämpel aktivt?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Detaljerade produktalternativ',
+        'instructions' => 'Låter dig ange lager- och prisinformation för produkten'
     ],
 ];

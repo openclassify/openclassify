@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => '예'
     ],
+    'no' => [
+        'name' => '아니'
+    ],
+    'is_system' => [
+        'name' => '시스템',
+        'instructions' => '시스템 상태는 필수이며 변경해서는 안됩니다.',
+    ],
+    'user_access' => [
+        'name' => '사용자 액세스',
+        'instructions' => '사용자가 광고에이 상태를 사용할 수 있습니까?',
+    ],
     "no_location" => "선택된 위치가 없습니다.",
     "continue" => '계속하다',
     "gallery" => '갤러리',

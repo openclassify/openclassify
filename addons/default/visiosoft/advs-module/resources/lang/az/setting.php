@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'Defolt Elan Ölkəsi',
     ],
+    'hide_price_categories' => [
+        'name' => 'Kateqoriyalardakı qiymətləri gizlədin',
+        'instructions' => 'Bir reklam yaratdığınızda və ya bu kateqoriyalara uyğun bir reklam görüntülədiyiniz zaman qiymət gizlədiləcəkdir.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Valyuta çeviricisinin API açarı'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Konfiqurasiyalar düyməsini gizlədin',
         'instructions' => 'Reklam Önizləmə Səhifəsində Konfiqurasiyalar Düyməsini gizlədin',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Bütün sahələri tələb olun',
+        'instructions' => 'Reklam yaratarkən istifadəçidən Qiymət və Təsvir sahələrini doldurmasını tələb edin',
     ],
     'make_map_required' => [
         'name' => 'Xəritə tələb olun',
@@ -203,6 +211,22 @@ return [
         'name' => 'Reklam sayını göstərin',
         'instructions' => 'Sol kateqoriyalar siyahısında reklamların sayını göstərin',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Yaranmış Tarixi Gizlət',
+        'instructions' => 'Reklamların ətraflı səhifəsində yaradılan tarixi gizlədin',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Listing Header gizlədin',
+		'instructions' => 'Sifariş və görünüş növlərinə gizlənmək',
+	],
+	'hide_filter_section' => [
+		'name' => 'Filtr Bölməsini gizlədin',
+		'instructions' => 'Siyahı səhifəsində sol filtr sahəsinə gizlənir',
+	],
+	'hide_seller_info' => [
+		'name' => 'Satıcı haqqında məlumatları gizlədin',
+		'instructions' => 'Reklam detalları səhifəsində satıcı məlumatlarına gizlənmək',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Post Elan Müqaviləsini Göstərin',
         'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'Kateqoriyalar alın',
         'instructions' => 'GET mülkiyyətinin etibarlı olacağı kateqoriyanı təmsil edir.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Nöqtəni deaktiv edin'
+	],
+    'watermark' => [
+        'name' => 'Filigran',
+        'instructions' => 'Filigran aktivdir?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Ətraflı məhsul seçimləri',
+        'instructions' => 'Məhsul üçün stok və qiymət məlumatlarını daxil etməyə imkan verir'
     ],
 ];

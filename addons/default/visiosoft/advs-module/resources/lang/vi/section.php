@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'Trạng thái',
     ],
+	'ads_detail' => 'Chi tiết Quảng cáo',
+
 ];

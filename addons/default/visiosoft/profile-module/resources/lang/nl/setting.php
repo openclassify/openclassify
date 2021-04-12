@@ -47,4 +47,7 @@ return [
         'name' => 'Verberg register Typ in profielpagina',
         'instructions' => 'Verbergt het registertypeveld op de profielbewerkingspagina.',
     ],
+    'required_district' => [
+        'name' => 'Vereist district'
+    ],
 ];

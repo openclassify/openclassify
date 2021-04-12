@@ -1,9 +1,10 @@
 {% if params.category %}
     {% for category_breadcrumbs in params.mainCats %}
-        <li class="breadcrumb-item">
-            <a href="{{ url_route('adv_list_seo', [category_breadcrumbs['slug']]) }}"
-               class="text-dark font-weight-bold">{{ category_breadcrumbs['val'] }}
+        <span class="text-truncate">
+            <a href="{{ url_route('adv_list_seo', [category_breadcrumbs['slug']]) }}" data-toggle="tooltip"
+               data-placement="bottom" title="{{ category_breadcrumbs['val'] }}">
+                {{ category_breadcrumbs['val'] }}
             </a>
-        </li>
+        </span>
     {% endfor %}
 {% endif %}

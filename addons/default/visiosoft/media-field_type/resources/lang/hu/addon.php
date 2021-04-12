@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Fájlok',
-    'name'        => 'Fájlok mező típus',
-    'description' => 'Többszörös fájlfeltöltés mező típus.',
+    'title'       => 'Média mező típusa',
+    'name'        => 'Fájlok mező típusa',
+    'description' => 'Több fájl feltöltési mezőtípus.',
 ];

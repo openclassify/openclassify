@@ -280,6 +280,17 @@ return [
     'yes' => [
         'name' => 'Ja'
     ],
+    'no' => [
+        'name' => 'Nein'
+    ],
+    'is_system' => [
+        'name' => 'Ist System',
+        'instructions' => 'Der Systemstatus ist erforderlich und sollte nicht geändert werden',
+    ],
+    'user_access' => [
+        'name' => 'Benutzerzugriff',
+        'instructions' => 'Kann ein Nutzer diesen Status für seine Anzeigen verwenden?',
+    ],
     "no_location" => "Es ist kein Ort ausgewählt.",
     "continue" => 'Fortsetzen',
     "gallery" => 'Galerie',

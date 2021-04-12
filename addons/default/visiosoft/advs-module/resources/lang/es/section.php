@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'Estado',
     ],
+	'ads_detail' => 'Detalle de anuncios',
+
 ];

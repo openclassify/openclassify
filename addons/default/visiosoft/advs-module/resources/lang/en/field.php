@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Featured Ads",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'on',
+    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
     'search_ads_result_message' => [
         'name' => ':count ads found for :name search',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Ad Location',
     'owner' => 'Owner',
     'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+
+    // Listing page
+    'ad_title' => 'Ad title',
+    'listing_date' => 'Listing Date',
+    'view' => 'View',
+    'ads_with_map' => 'Ads With Map',
+    'advanced_sorting' => 'Advanced Sorting',
 
     'free' => 'Free',
     'ad_date' => 'Ad Date',

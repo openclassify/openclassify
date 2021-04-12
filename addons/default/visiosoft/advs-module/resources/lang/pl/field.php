@@ -279,6 +279,17 @@ return [
     'yes' => [
         'name' => 'tak'
     ],
+    'no' => [
+        'name' => 'Nie'
+    ],
+    'is_system' => [
+        'name' => 'Czy System',
+        'instructions' => 'Status systemu jest wymagany i nie należy go zmieniać',
+    ],
+    'user_access' => [
+        'name' => 'Dostęp użytkownika',
+        'instructions' => 'Czy użytkownik może wykorzystać ten stan w swoich reklamach?',
+    ],
     "no_location" => "Nie wybrano lokalizacji.",
     "continue" => 'Kontyntynuj',
     "gallery" => 'Galeria',

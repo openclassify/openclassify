@@ -51,5 +51,5 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function approveAds($adsIDs);
 
-    public function getUserAds($userID = null);
+    public function getUserAds($userID = null, $status = "approved");
 }

@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'dropzone' => 'Kattint ide, vagy ejtsd ide a fájlokat a feltöltéshez.',
-    'help'     => 'Kattints és húzd a fájlok átrendezéséhez.',
+    'dropzone' => 'Kattintson vagy dobja le a fájlokat ide a feltöltéshez.',
+    'help'     => 'Kattintson és húzza a csatolt fájlok átrendezéséhez.',
 ];

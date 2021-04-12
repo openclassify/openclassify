@@ -47,4 +47,7 @@ return [
         'name' => 'Di Rûpelê Profîl de Tîpa Tomarê Veşêre',
         'instructions' => 'Zeviya tomara tomarê di rûpelê guheztina profîlê de vedişêre.',
     ],
+    'required_district' => [
+        'name' => 'Navçeya Pêdivî'
+    ],
 ];

@@ -1,7 +1,4 @@
-{% set hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories') %}
-{% if (hidePriceCats != null) %}
-     {% set cats = entries('cats','category').whereIn('id', hidePriceCats).get() %}
-     {% set isHidden = false %}
+{% set isHidden = false %}
 
      {% for cat in cats %}
          {% if request().segment(2) == cat.slug %}
@@ -10,45 +7,37 @@
      {% endfor %}
 {% endif %}
 
-{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden %}
-    <div class="card mb-3">
-        <div class="card-header breadcrumb mb-0" id="priceHeading">
-            <h5 class="mb-0">
-                <button class="btn btn-link text-dark d-flex align-items-center" data-toggle="collapse"
-                        data-target="#price"
-                        aria-expanded="true" aria-controls="price">
-                    {#                    <img src="{{ img('visiosoft.module.advs::images/price-icon.svg').url }}" alt="price icon"#}
-                    {#                         class="mr-2">#}
-                    <span>{{ trans("visiosoft.module.advs::field.price.name") }}</span>
-                </button>
-            </h5>
-        </div>
-        <div id="price" class="collapse show overflow-auto" aria-labelledby="priceHeading"
-             style="max-height: 300px;">
-            <div class="row p-0 m-0">
-                {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
-                <div class="col-md-4 p-1 m-0">
-                    <input type="number" class="price-input form-control w-100"
-                           value="{{ app.request.get('min_price') }}"
-                           name="min_price" min="0"
-                           placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}">
-                </div>
-                <div class="col-md-4 p-1 pr-0 m-0">
-                    <input class="price-input form-control w-100" type="number"
-                           value="{{ app.request.get('max_price') }}"
-                           name="max_price"
-                           placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}">
+{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden%}
+    {% set hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories') %}
+    {% set cats = entries('cats','category').whereIn('id', hidePriceCats).get() %}
+    {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
 
-                </div>
-                <div class="col-md-4 py-1 px-0">
-                    <select name="currency" id="currency" class="form-control">
-                        {% for currency in active_currencies %}
-                            <option {{ app.request.get('currency') == currency ? 'selected' }} value="{{ currency }}">
-                                {{ currency_symbol(currency) }}
-                            </option>
-                        {% endfor %}
-                    </select>
-                </div>
+    <div id="price" class="border rounded filter-box p-3 mb-3">
+        <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+            <p>{{ trans("visiosoft.module.advs::field.price.name") }}</p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+
+        <div class="px-3 mb-1">
+            <ul class="w-100 d-flex flex-wrap justify-content-center">
+                {% for currency in active_currencies %}
+                    <li class="w-25">
+                        <input type="radio" id="{{ currency }}" name="currency"
+                               value="{{ currency }}" {{ app.request.get('currency') == currency ? 'checked' }}>
+                        <label for="{{ currency }}" class="mb-0 w-100 px-2 py-1 text-center">
+                            {{ currency }}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div id="priceInputWrapper" class="d-flex justify-content-around mt-3 range-input-wrapper">
+                <input type="number" class="border-0 shadow-sm rounded px-3 py-1" name="min_price" min="0"
+                       placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}"
+                       value="{{ app.request.get('min_price') }}">
+                <input type="number" class="border-0 shadow-sm rounded px-3 py-1" name="max_price"
+                       placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}"
+                       value="{{ app.request.get('max_price') }}">
             </div>
         </div>
     </div>

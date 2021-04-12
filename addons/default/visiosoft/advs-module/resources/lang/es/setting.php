@@ -61,6 +61,10 @@ return [
     'default_country' => [
         'name' => 'País de anuncio predeterminado',
     ],
+    'hide_price_categories' => [
+        'name' => 'Ocultar precio en categorías',
+        'instructions' => 'El precio se ocultará cuando cree un anuncio o vea un anuncio en estas categorías.'
+    ],
     'free_currencyconverterapi_key' => [
         'name' => 'Clave API de convertidor de divisas'
     ],
@@ -106,6 +110,10 @@ return [
     'hide_configurations' => [
         'name' => 'Ocultar el botón Configuraciones',
         'instructions' => 'Ocultar el botón Configuraciones en la página de vista previa del anuncio',
+    ],
+    'make_all_fields_required' => [
+        'name' => 'Hacer que todos los campos sean obligatorios',
+        'instructions' => 'Solicitar al usuario que complete los campos Precio y Descripción al crear un anuncio.',
     ],
     'make_map_required' => [
         'name' => 'Hacer mapa obligatorio',
@@ -203,6 +211,22 @@ return [
         'name' => 'Mostrar recuento de anuncios',
         'instructions' => 'Mostrar el recuento de anuncios en la lista de categorías de la izquierda',
     ],
+    'ads_date_hidden' => [
+        'name' => 'Ocultar fecha de creación',
+        'instructions' => 'Ocultar la fecha de creación en la página de detalles de los anuncios',
+    ],
+	'hide_listing_header' => [
+		'name' => 'Ocultar encabezado de listado',
+		'instructions' => 'Ocultar para ordenar y ver tipos',
+	],
+	'hide_filter_section' => [
+		'name' => 'Ocultar sección de filtro',
+		'instructions' => 'Ocultar en el área de filtro izquierda en la página de listado',
+	],
+	'hide_seller_info' => [
+		'name' => 'Ocultar información del vendedor',
+		'instructions' => 'Ocultar información del vendedor en la página de detalles de anuncios',
+	],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar acuerdo de publicación',
         'instructions' => 'Active esta opción si desea mostrar un acuerdo de política de privacidad en la página de creación de anuncios.',
@@ -226,5 +250,16 @@ return [
     'get_categories' => [
         'name' => 'OBTENER Categorías',
         'instructions' => 'Representa las categorías en las que será válida la propiedad GET.'
+    ],
+	'disable_sentry' => [
+		'name' => 'Desactivar centinela'
+	],
+    'watermark' => [
+        'name' => 'Filigrana',
+        'instructions' => '¿Está activa la marca de agua?'
+    ],
+    'detailed_product_options' => [
+        'name' => 'Opciones de producto detalladas',
+        'instructions' => 'Le permite ingresar información de stock y precio del producto'
     ],
 ];

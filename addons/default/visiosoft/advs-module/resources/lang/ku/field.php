@@ -353,6 +353,17 @@ return [
     'yes' => [
         'name' => 'بەڵێ'
     ],
+    'no' => [
+        'name' => 'Na'
+    ],
+    'is_system' => [
+        'name' => 'Pergalê ye',
+        'instructions' => 'Rewşa pergalê pêdivî ye û divê neyê guhertin',
+    ],
+    'user_access' => [
+        'name' => 'User Access',
+        'instructions' => 'Bikarhêner dikare vê rewşê li ser reklamên xwe bikar bîne?',
+    ],
     "no_location" => "شوێنەکە دیاری نەکراوە
 ",
     "continue" => 'بەردەوام بە',

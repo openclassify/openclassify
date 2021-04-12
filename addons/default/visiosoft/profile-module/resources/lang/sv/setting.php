@@ -47,4 +47,7 @@ return [
         'name' => 'Dölj registertyp i profilsidan',
         'instructions' => 'Döljer registertypfältet i profilredigeringssidan.',
     ],
+    'required_district' => [
+        'name' => 'Obligatoriskt distrikt'
+    ],
 ];

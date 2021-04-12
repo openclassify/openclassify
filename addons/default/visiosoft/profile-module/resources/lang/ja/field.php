@@ -468,6 +468,7 @@ return [
     'update' => '更新',
     'change_password' => 'パスワードを変更する',
     'choose_an_option' => 'オプションを選択...',
+    'change_status' => 'ステータスを変更する',
 
     // Register page
     'accept_terms_label' => '利用規約に同意します。',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => '教育の状態'
 	],
+
+    'notified_new_updates' => [
+        'name' => '通知された新しい更新',
+    ],
+    'notified_about_ads' => [
+        'name' => '広告について通知',
+    ],
+    'receive_messages_email' => [
+        'name' => 'メッセージを受信するEメール',
+    ],
 ];

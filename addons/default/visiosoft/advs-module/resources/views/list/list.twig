@@ -2,109 +2,98 @@
 
 {% block styles %}
     {{ asset_style("visiosoft.module.advs::css/list.css") }}
+    {{ asset_style("visiosoft.module.advs::css/list-new.scss") }}
 {% endblock %}
 
 {% block content %}
-    <section>
 
-        <div class="container">
+    {% include "visiosoft.module.advs::list/partials/mobile-list" %}
 
-            <!-- breadcrumb -->
-            {% include "visiosoft.module.advs::list/partials/breadcrumb" %}
-            <!-- breadcrumb -->
+    <div id="listingPage" class="d-none d-sm-block">
 
-            <div class="row my-3 adv-list-wrapper">
-                <div class="col-md-3 d-none d-sm-block filter-section">
-                    {% include "visiosoft.module.advs::list/partials/list-filter" %}
+        {% include "visiosoft.module.advs::list/partials/breadcrumb" %}
+
+        <div id="mainContainer" class="d-flex mb-5">
+
+            {% include "visiosoft.module.advs::list/partials/list-filter" %}
+
+            <div id="listingContainer" class="flex-fill ml-4">
+                <div id="pageTitle" class="d-flex justify-content-between border-bottom pb-2 px-3 mb-3">
+                    <p>
+                        {{ trans('visiosoft.module.advs::field.search_ad_result_text', {
+                            'count': advs.total,
+                            'name': catText ? catText : '',
+                        })|raw }}
+                    </p>
+
+                    <a href="javascript:void(0)" class="d-flex align-items-center fav-search-modal">
+                        <span class="mr-2">Save Search</span>
+                        {{ img('visiosoft.module.advs::images/listing/save-search.svg').data|raw }}
+                    </a>
                 </div>
-                <div class="col-md-9">
-                    <div class="section recommended-classified">
-                        <div class="result-text border d-none d-sm-block">
-                            <div class="mx-3 py-2">
-                                {% if catText %}
-                                    <h1 class="d-inline text-truncate">
-                                        "{{ catText }}"
-                                    </h1>
-                                {% endif %}
-                                {{ trans('visiosoft.module.advs::field.search_ad_result_prefix')|lower }}
-                                <span>
-                                   {{ advs.total }} {{ trans('visiosoft.module.advs::field.ad')|lower }}
-                                </span>
-                                {{ trans('visiosoft.module.advs::field.were_found') }}
-                            </div>
 
-                            {% if count(cFArray) %}
-                                <div class="mx-3 border-top py-2 filter-tabs d-flex flex-wrap">
-                                    {% for customParam in cFArray %}
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-1">{{ customParam['name'] }}</span>
-                                            {% for customValue in customParam['value'] %}
-                                                <a href="{{ customValue['removalLink'] }}"
-                                                   class="text-truncate d-flex align-items-center mr-1">
-                                                    <span class="mr-2">{{ customValue['name'] }}</span>
-                                                    <button class="border-0 d-flex align-items-center justify-content-center">
-                                                        {{ img('visiosoft.module.advs::images/close.svg').data|raw }}
-                                                    </button>
-                                                </a>
-                                            {% endfor %}
-                                        </div>
-                                    {% endfor %}
-                                    <div class="d-flex align-items-center">
-                                        <a href="{{ app.request.pathinfo }}"
-                                           class="text-truncate d-flex align-items-center mr-1">
-                                            {{ trans('visiosoft.module.advs::field.clear_all') }}
-                                        </a>
-                                    </div>
-                                </div>
-                            {% endif %}
+                {% if count(cFArray) %}
+                    <div id="queryBar" class="px-3 border py-2 filter-tabs d-flex flex-wrap mb-3">
+                        {% for customParam in cFArray %}
+                            <div class="d-flex align-items-center">
+                                <span class="mr-1">{{ customParam['name'] }}</span>
+                                {% for customValue in customParam['value'] %}
+                                    <a href="{{ customValue['removalLink'] }}"
+                                       class="text-truncate d-flex align-items-center mr-1">
+                                        <span class="mr-2">{{ customValue['name'] }}</span>
+                                        <button class="border-0 d-flex align-items-center justify-content-center">
+                                            {{ img('visiosoft.module.advs::images/close.svg').data|raw }}
+                                        </button>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                        <div class="d-flex align-items-center">
+                            <a href="{{ app.request.pathinfo }}"
+                               class="text-truncate d-flex align-items-center mr-1">
+                                {{ trans('visiosoft.module.advs::field.clear_all') }}
+                            </a>
                         </div>
-
-                        <div class="row breadcrumb list-header">
-
-                            <div class="col-md-6 my-2 d-none d-sm-block">
-                                {% include "visiosoft.module.advs::list/partials/list-sort-by" %}
-                            </div>
-                            <div class="col-md-6 my-2">
-                                {% include "visiosoft.module.advs::list/partials/display-mode" %}
-                            </div>
-                        </div>
-                        <div class="my-2 p-0 bg-light d-flex d-sm-none mobile-list-action row text-center align-items-center">
-                            <div class="col-4" id="filter_modal_btn">
-                                <i class="fas fa-filter w-100"></i>
-                                <a href="javascript:;">{{ trans('visiosoft.module.advs::field.filter') }}</a>
-                            </div>
-                            <div class="col-4" id="sort_modal_btn">
-                                <i class="fas fa-sort-amount-down w-100"></i>
-                                <a href="javascript:;">{{ trans('visiosoft.module.advs::field.sort') }}</a>
-                            </div>
-                            {{ addBlock('ads-list/row-bottom',{'show_favorite_search':true})|raw }}
-                        </div>
-                        {{ addBlock('ads-list/row',{'topfields':topfields,'selectRange':selectRange,'advs':advs, 'mainCats':mainCats|length})|raw }}
-                        <div class="row products-list">
-                            {% block listContent %}
-                                {% include "visiosoft.module.advs::list/partials/ads" %}
-                            {% endblock %}
-                        </div>
-                        {% include "visiosoft.module.advs::list/partials/pagination" %}
-
-                        {{ addBlock('ads-list/row-bottom')|raw }}
-
                     </div>
+                {% endif %}
+
+                <div id="viewTypes" class="d-flex justify-content-between">
+
+                    {{ addBlock('ads-list/partials/before-display-mode', {'topfields': topfields})|raw }}
+
+                    {% include "visiosoft.module.advs::list/partials/display-mode" %}
+
+                </div>
+
+                {{ addBlock('ads-list/row',{'topfields':topfields,'selectRange':selectRange,'advs':advs, 'mainCats':mainCats|length})|raw }}
+
+                <div id="listingWrapper" class="border rounded p-3">
+                    {% block listContent %}
+                        {% include "visiosoft.module.advs::list/partials/ads" %}
+                    {% endblock %}
+
+                    {% include "visiosoft.module.advs::list/partials/pagination" %}
+
+                    {{ addBlock('ads-list/row-bottom')|raw }}
+
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
     {% include "visiosoft.module.advs::list/partials/filter-modal" %}
     {% include "visiosoft.module.advs::list/partials/sort-modal" %}
+    {{ addBlock('list/partials/modal')|raw }}
 
     <script>
         var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
     </script>
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/list.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-new.js") }}
 
 {% endblock %}
+
 {% block customjs %}
-    {{ addBlock('ads-list/list',{'adv':adv})|raw }}
+    {{ addBlock('ads-list/list', {'adv': adv})|raw }}
 {% endblock %}

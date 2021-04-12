@@ -44,4 +44,5 @@ return [
 	'publish' => 'Publica',
 	'import' => 'Import',
     'new_status' => 'Stare nouă',
+    'fast_edit' => 'Editare rapidă',
 ];

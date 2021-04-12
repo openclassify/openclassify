@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "귀하의 광고 상태가 활성으로 설정되었습니다!",
     'passive_status_change' => "귀하의 광고 상태가 수동으로 설정되었습니다!",
 	'sold_status_change' => "귀하의 광고 상태가 판매로 설정되었습니다!",
+	'status_change' => "귀하의 광고 상태가 : status로 설정되었습니다!",
+	'disabled_detailed_options_for_admin_role' => "자세한 제품 옵션이 비활성화됩니다.",
 ];

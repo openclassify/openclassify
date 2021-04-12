@@ -70,8 +70,8 @@ class AdvsModulePlugin extends Plugin
             ),
             new \Twig_SimpleFunction(
                 'getUserAds',
-                function ($userID = null) {
-                    return $this->dispatch(new GetUserAds($userID));
+                function ($userID = null, $status = "approved") {
+                    return $this->dispatch(new GetUserAds($userID, $status));
                 }
             ),
             new \Twig_SimpleFunction(

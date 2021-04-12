@@ -59,4 +59,6 @@ return [
     'status' => [
         'title' => 'סטָטוּס',
     ],
+	'ads_detail' => 'פרטי מודעות',
+
 ];

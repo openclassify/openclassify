@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'valid_disk' => 'A beállított feltöltési lemez :attribute nem létezik.',
+    'valid_disk' => 'A (z): attribútumhoz konfigurált feltöltési lemez nem létezik.',
 ];

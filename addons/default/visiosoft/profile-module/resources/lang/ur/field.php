@@ -468,6 +468,7 @@ return [
     'update' => 'اپ ڈیٹ',
     'change_password' => 'پاس ورڈ تبدیل کریں',
     'choose_an_option' => 'ایک آپشن منتخب کریں ...',
+    'change_status' => 'حالت تبدیل کریں',
 
     // Register page
     'accept_terms_label' => 'میں شرائط کو قبول کرتا ہوں۔',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'ریاست تعلیم'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'مطلع شدہ نئی تازہ ترین معلومات',
+    ],
+    'notified_about_ads' => [
+        'name' => 'اشتہارات کے بارے میں مطلع کیا گیا',
+    ],
+    'receive_messages_email' => [
+        'name' => 'پیغامات کا ای میل موصول کریں',
+    ],
 ];

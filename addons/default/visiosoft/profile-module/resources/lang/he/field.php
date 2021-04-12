@@ -468,6 +468,7 @@ return [
     'update' => 'עדכון',
     'change_password' => 'שנה סיסמא',
     'choose_an_option' => 'בחר אפשרות...',
+    'change_status' => 'לשנות סטטוס',
 
     // Register page
     'accept_terms_label' => 'אני מקבל את התנאים.',
@@ -483,4 +484,14 @@ return [
 	'education_part' => [
 		'name' => 'מצב החינוך'
 	],
+
+    'notified_new_updates' => [
+        'name' => 'הודיעו על עדכונים חדשים',
+    ],
+    'notified_about_ads' => [
+        'name' => 'הודיע על מודעות',
+    ],
+    'receive_messages_email' => [
+        'name' => 'קבל הודעות דוא"ל',
+    ],
 ];

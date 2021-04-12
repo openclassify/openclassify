@@ -198,7 +198,7 @@ function SelectOnClick() {
 
         var input = $('input[name="' + $(this).attr('data-field') + '[]"]');
         var input_text = $(this).parent().find('small').html();
-        var text_html = $('.selected-' + $(this).attr('data-field') + ' small');
+        var text_html = $('.selected-' + $(this).attr('data-field'));
         var text = "";
         var input_val = input.val();
         var id = $(this).attr('data-id');
@@ -225,7 +225,7 @@ function SelectOnClick() {
             text.splice($.inArray(input_text, text), 1);
         }
         input.val(input_val.join(','))
-        text_html.html(text.join(','))
+        text_html.html(text.join(', '))
     });
 }
 
@@ -249,19 +249,19 @@ function item(field_name, id, value, abv = '') {
     if (field_name === 'country') {
         return `
             <li class="px-2" data-id="${id}">
-                <label class="w-100">
+                <label class="w-100 d-flex align-items-center">
                     <input type="checkbox" data-field="${field_name}" data-id="${id}" ${selected}>
-                    <span class="flag ml-1 flag-${abv}"></span>
-                    <small>${value}</small>
+                    <span class="flag ml-2 flag-${abv}"></span>
+                    <small class="ml-2">${value}</small>
                 </label>
             </li>
         `;
     } else {
         return `
             <li class="px-2" data-id="${id}">
-                <label class="w-100">
+                <label class="w-100 d-flex align-items-center">
                     <input type="checkbox" data-field="${field_name}" data-id="${id}">
-                    <small>${value}</small>
+                    <small class="ml-2">${value}</small>
                 </label>
             </li>
         `;

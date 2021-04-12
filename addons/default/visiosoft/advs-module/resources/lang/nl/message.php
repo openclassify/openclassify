@@ -30,4 +30,6 @@ return [
     'approve_status_change' => "De status van uw advertentie is ingesteld op Actief!",
     'passive_status_change' => "De status van uw advertentie is ingesteld op passief!",
 	'sold_status_change' => "De status van uw advertentie is ingesteld op Verkocht!",
+	'status_change' => "De status van uw advertentie is ingesteld op: status!",
+	'disabled_detailed_options_for_admin_role' => "Gedetailleerde productopties zijn uitgeschakeld.",
 ];

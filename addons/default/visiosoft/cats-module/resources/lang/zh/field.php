@@ -32,4 +32,5 @@ return [
 
     'please_wait' => '请稍候。正在删除子类别',
     'category_selection' => '类别选择',
+    'go_to_parent' => '去父母',
 ];
