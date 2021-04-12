@@ -178,7 +178,7 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         $categories = array();
         $z = 1;
         for ($i = 1; $i <= $z; $i++) {
-            if ($main = $this->newQuery()->where('id', $id)->first()->select('id', 'name', 'slug', '')) {
+            if ($main = $this->find($id)) {
                 $categories[] = $main;
                 if ($main->parent_category_id != null) {
                     $id = $main->parent_category_id;
