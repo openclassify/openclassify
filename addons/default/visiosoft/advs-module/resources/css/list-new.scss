@@ -101,11 +101,16 @@ ul {
         & > div {
           div {
             line-height: 1;
+
+            &.sub-cat {
+              margin-left: 1.65rem;
+            }
           }
 
           svg, img {
             width: 1.15rem;
             height: 1.15rem;
+            overflow: hidden;
             object-fit: contain;
             flex-shrink: 0;
           }
@@ -117,12 +122,12 @@ ul {
           }
 
           .sub-cat {
+            a {
+              font-size: calc(12rem / 16);
+            }
+
             li {
               margin-bottom: .25rem;
-
-              a {
-                font-size: calc(12rem / 16);
-              }
 
               ul {
                 padding-left: .5rem;
