@@ -469,6 +469,8 @@ return [
     'change_password' => 'Ändra lösenord',
     'choose_an_option' => 'Välj ett alternativ...',
     'change_status' => 'Byta status',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => 'Jag accepterar villkoren.',
