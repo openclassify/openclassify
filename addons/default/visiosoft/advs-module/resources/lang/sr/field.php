@@ -228,13 +228,13 @@ return [
         'price' => 'Цена',
         'publish_at' => 'Датум огласа',
         'location_city' => 'Град',
-        'location_country' => 'Цоунтри',
+        'location_country' => 'Држава',
     ],
     'show_list_view' => [
         'name' => 'Листа',
     ],
     'show_table_view' => [
-        'name' => 'Сто',
+        'name' => 'Табела',
     ],
     'showcase' => [
         'name' => 'Витрина',
