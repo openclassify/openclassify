@@ -469,6 +469,8 @@ return [
     'change_password' => 'Промяна на паролата',
     'choose_an_option' => 'Избери опция...',
     'change_status' => 'Промяна на състоянието',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => 'Приемам условията.',
