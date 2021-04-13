@@ -474,6 +474,8 @@ return [
     'change_password' => 'Ändere das Passwort',
     'choose_an_option' => 'Wähle eine Option...',
     'change_status' => 'Status ändern',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => 'Ich akzeptiere die Bedingungen.',
