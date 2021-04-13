@@ -469,6 +469,8 @@ return [
     'change_password' => 'Zmień hasło',
     'choose_an_option' => 'Wybierz opcję...',
     'change_status' => 'Zmień status',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => 'Akceptuję warunki.',
