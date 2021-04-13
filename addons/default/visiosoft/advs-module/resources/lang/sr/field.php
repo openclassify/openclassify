@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Истакнути огласи",
     'trending_ads' => 'Трендинд Адс',
     'search_ad_result_prefix' => 'на',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>:count</strong> огласа је пронађено у вашој <strong>:name</strong> претрази',
     'search_ads_result_message' => [
         'name' => ': цоунт огласи пронађени за: сеарцх наме',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'Власник ће подразумевано подесити тренутног корисника ако није изабран ниједан корисник',
 
     // Listing page
-    'ad_title' => 'Ad title',
+    'ad_title' => 'Наслов огласа',
     'listing_date' => 'Listing Date',
     'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ads_with_map' => 'Огласи са мапом',
+    'advanced_sorting' => 'Напредно сортирање',
 
     'free' => 'бесплатно',
     'ad_date' => 'Датум огласа',
