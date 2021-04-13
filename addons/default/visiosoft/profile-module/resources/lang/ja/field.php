@@ -469,6 +469,8 @@ return [
     'change_password' => 'パスワードを変更する',
     'choose_an_option' => 'オプションを選択...',
     'change_status' => 'ステータスを変更する',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => '利用規約に同意します。',
