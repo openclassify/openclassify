@@ -469,6 +469,8 @@ return [
     'change_password' => 'Verander wagwoord',
     'choose_an_option' => 'Kies \'n opsie ...',
     'change_status' => 'Verander status',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => 'Ek aanvaar die bepalings.',
