@@ -470,6 +470,8 @@ return [
     'change_password' => 'Сменить пароль',
     'choose_an_option' => 'Выберите опцию...',
     'change_status' => 'Изменить статус',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => 'Я принимаю условия.',
