@@ -209,11 +209,11 @@ return [
     ],
     'corporate_info' => 'Информације о предузећу',
     'featured_ads' => "Истакнути огласи",
-    'trending_ads' => 'Трендинд Адс',
+    'trending_ads' => 'Огласи у тренду',
     'search_ad_result_prefix' => 'на',
     'search_ad_result_text' => '<strong>:count</strong> огласа је пронађено у вашој <strong>:name</strong> претрази',
     'search_ads_result_message' => [
-        'name' => ': цоунт огласи пронађени за: сеарцх наме',
+        'name' => ':count огласа пронађено за претрагу :name',
     ],
     'total' => 'Укупно',
     'quantity' => 'Количина',
