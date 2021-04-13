@@ -469,6 +469,8 @@ return [
     'change_password' => '更改密码',
     'choose_an_option' => '选择一个选项...',
     'change_status' => '变更状态',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => '我接受这些条款。',
