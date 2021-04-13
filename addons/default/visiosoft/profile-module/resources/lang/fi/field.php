@@ -469,6 +469,8 @@ return [
     'change_password' => 'Vaihda salasana',
     'choose_an_option' => 'Valitse vaihtoehto...',
     'change_status' => 'Vaihda tilaa',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
     'accept_terms_label' => 'Hyväksyn ehdot.',
