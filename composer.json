@@ -79,7 +79,8 @@
         "google/recaptcha": "1.2.*",
         "sentry/sentry-laravel": "2.3.1",
         "composer/composer": "^1.10",
-        "pusher/pusher-php-server": "^5.0"
+        "pusher/pusher-php-server": "^5.0",
+        "laravel/framework": "v8.36.2"
     },
     "replace": {
         "anomaly/streams-platform": "*"
