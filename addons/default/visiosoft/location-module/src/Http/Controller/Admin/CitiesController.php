@@ -5,6 +5,7 @@ use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\Form\CityFormBuilder;
 use Visiosoft\LocationModule\City\Table\CityTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\District\DistrictModel;
 
 class CitiesController extends AdminController
@@ -30,6 +31,13 @@ class CitiesController extends AdminController
         }
         $table->setTableEntries($cities);
         return $table->render();
+    }
+
+    public function choose(CountryRepositoryInterface $countryRepository)
+    {
+        $countries = $countryRepository->all();
+
+        return $this->view->make('visiosoft.module.location::admin/fields/choose', ['countries' => $countries]);
     }
 
     public function create(CityFormBuilder $form)
