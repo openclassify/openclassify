@@ -533,7 +533,7 @@ return [
     'choose_an_option' => 'بژاردەیەک هەڵبژێرە
 ',
     'change_status' => 'Guhertina Rewşê',
-	'profile_settings' => 'Profile Settings',
+	'profile_settings' => 'Mîhengên Profîlê',
 	'profile_detail' => 'Profile Detail',
 
     // Register page
