@@ -471,8 +471,8 @@ return [
     'change_password' => 'Wachtwoord wijzigen',
     'choose_an_option' => 'Kies een optie...',
     'change_status' => 'Verander status',
-	'profile_settings' => 'Profile Settings',
-	'profile_detail' => 'Profile Detail',
+	'profile_settings' => 'Profielinstellingen',
+	'profile_detail' => 'Profiel Detail',
 
     // Register page
     'accept_terms_label' => 'Ik ga akkoord met de voorwaarden.',
