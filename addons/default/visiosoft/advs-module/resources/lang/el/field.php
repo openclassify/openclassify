@@ -212,7 +212,7 @@ return [
     'featured_ads' => "Προτεινόμενες διαφημίσεις",
     'trending_ads' => 'Αλλαγή διαφημίσεων',
     'search_ad_result_prefix' => 'επί',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: μετρήθηκαν</strong> διαφημίσεις στην αναζήτησή σας <strong>: όνομα</strong>',
     'search_ads_result_message' => [
         'name' => ':      βρέθηκαν οι αγγελίες που βρέθηκαν για:αναζήτηση ονόματος',
     ],
@@ -339,11 +339,11 @@ return [
     'default_owner_instruction' => 'Ο κάτοχος θα προεπιλογή στον τρέχοντα χρήστη εάν δεν έχει επιλεγεί κανένας χρήστης',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'Τίτλος διαφήμισης',
+    'listing_date' => 'Ημερομηνία καταχώρησης',
+    'view' => 'Θέα',
+    'ads_with_map' => 'Διαφημίσεις με χάρτη',
+    'advanced_sorting' => 'Προηγμένη ταξινόμηση',
 
     'free' => 'Ελεύθερος',
     'ad_date' => 'Ημερομηνία διαφήμισης',
