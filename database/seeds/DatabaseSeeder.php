@@ -133,7 +133,7 @@ class DatabaseSeeder extends Seeder
 		$zip->extractTo(storage_path('streams/default/files-module/local/images/'));
 		$zip->close();
 
-		$this->call(widgetSeeder::class);
+//		$this->call(widgetSeeder::class);
 
 
 		//Create Store Icon Folder
