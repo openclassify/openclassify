@@ -3,5 +3,5 @@
 return [
     'placeholder' => 'Kirjoita tähän etsiäksesi',
     'null_msg' => 'Ei löydetty',
-    'choose_country' => 'Choose a Country',
+    'choose_country' => 'Valitse maa',
 ];
