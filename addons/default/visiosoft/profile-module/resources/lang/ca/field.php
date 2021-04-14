@@ -469,8 +469,8 @@ return [
     'change_password' => 'Canvia la contrasenya',
     'choose_an_option' => 'Trieu una opció ...',
     'change_status' => 'Canvia l\'estat',
-	'profile_settings' => 'Profile Settings',
-	'profile_detail' => 'Profile Detail',
+	'profile_settings' => 'Configuració del perfil',
+	'profile_detail' => 'Detall del perfil',
 
     // Register page
     'accept_terms_label' => 'Accepto les condicions.',
