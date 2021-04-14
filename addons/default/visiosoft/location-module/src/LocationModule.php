@@ -14,7 +14,15 @@ class LocationModule extends Module
                 'new_country',
             ],
         ],
-        'cities',
+        'cities' => [
+            'buttons' => [
+                'new_city' => [
+                    'data-toggle' => 'modal',
+                    'data-target' => '#modal',
+                    'href'        => 'admin/location/cities/choose',
+                ],
+            ],
+        ],
         'districts',
         'neighborhoods',
         'village',
