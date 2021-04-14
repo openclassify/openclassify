@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Suositellut mainokset",
     'trending_ads' => 'Trendind-mainokset',
     'search_ad_result_prefix' => 'päällä',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: count</strong> ilmoitusta löytyi <strong>: name</strong> -hakustasi',
     'search_ads_result_message' => [
         'name' => ': laskea ilmoituksia haulle: nimihaku',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'Omistaja määrittää oletusasetukset nykyiselle käyttäjälle, jos ketään ei ole valittu',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'Mainoksen otsikko',
+    'listing_date' => 'Listauspäivä',
+    'view' => 'Näytä',
+    'ads_with_map' => 'Mainokset kartalla',
+    'advanced_sorting' => 'Edistynyt lajittelu',
 
     'free' => 'Vapaa',
     'ad_date' => 'Ilmoituksen päivämäärä',
