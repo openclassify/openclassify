@@ -339,8 +339,8 @@ return [
 
     // Listing page
     'ad_title' => 'Наслов огласа',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
+    'listing_date' => 'Датум уврштавања',
+    'view' => 'Поглед',
     'ads_with_map' => 'Огласи са мапом',
     'advanced_sorting' => 'Напредно сортирање',
 
