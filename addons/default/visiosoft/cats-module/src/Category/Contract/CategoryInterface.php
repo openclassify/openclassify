@@ -11,4 +11,6 @@ interface CategoryInterface extends EntryInterface
     public function getParent();
 
     public function getMains($id);
+
+    public function setCategoryIconUrl($url);
 }

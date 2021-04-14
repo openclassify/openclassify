@@ -59,4 +59,9 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
         unset($categories[count($categories) - 1]);
         return $categories;
     }
+
+    public function setCategoryIconUrl($url)
+    {
+        $this->update(['icon' => $url]);
+    }
 }

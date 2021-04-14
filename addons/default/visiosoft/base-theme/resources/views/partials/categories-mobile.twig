@@ -1,9 +1,7 @@
 <ul class="categories-list px-0 mr-2 d-block d-sm-none">
     <li class="categories-list-li category-icon text-truncate category-{{ main_category.slug }}">
         <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}" class="main-category">
-            {% set icon = img(url('local://category_icon/'~main_category.id~'.png')) %}
-            {% set categoryIcon = (icon.data()) ? icon.url() : img('visiosoft.theme.base::images/default-categories-icon.png').url %}
-
+            {% set categoryIcon = (main_category.icon) ? main_category.icon : img('visiosoft.theme.base::images/default-categories-icon.png').url %}
             <img src="{{ categoryIcon }}" alt="{{ main_category.name }}" class="img-responsive">
             <span>{{ main_category.name }}</span>
             <p class="p-0 sub-categories">

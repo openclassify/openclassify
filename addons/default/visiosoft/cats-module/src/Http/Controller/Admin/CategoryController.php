@@ -248,18 +248,28 @@ class CategoryController extends AdminController
         $folderRepository = app(FolderRepositoryInterface::class);
         $manager = app(MountManager::class);
 
-        if ($file = $this->request->file('icon') and $folder = $folderRepository->findBySlug('category_icon')) {
+        if ($file = $this->request->file('icon') and $folder = $folderRepository->findBySlug('category_icon') and $category = $this->categoryRepository->find($category_id)) {
 
             $type = explode('.', $file->getClientOriginalName());
             $type = end($type);
 
             $file_location = $folder->getDisk()->getSlug() . '://' . $folder->getSlug() . '/' . FileSanitizer::clean($category_id . "." . $type);
 
+            $file_url = '/files/' . $folder->getSlug() . '/' . FileSanitizer::clean($category_id . "." . $type);
+
             if (Storage::exists($file_location)) {
                 Storage::delete($file_location);
             }
 
-            $manager->put($file_location, file_get_contents($file->getRealPath()));
+            try {
+                $manager->put($file_location, file_get_contents($file->getRealPath()));
+
+                $category->setCategoryIconUrl($file_url);
+
+            } catch (\Exception $exception) {
+                $this->messages->error([$exception->getMessage()]);
+            }
+
         }
     }
 
