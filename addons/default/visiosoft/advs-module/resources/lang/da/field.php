@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Fremhævede annoncer",
     'trending_ads' => 'Trendind-annoncer',
     'search_ad_result_prefix' => 'på',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: tæl</strong> annoncer blev fundet i din søgning <strong>: navn</strong>',
     'search_ads_result_message' => [
         'name' => ': tæl annoncer fundet for: navnesøgning',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'Ejeren vil som standard være den nuværende bruger, hvis ingen bruger er valgt',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'Annoncetitel',
+    'listing_date' => 'Noteringsdato',
+    'view' => 'Udsigt',
+    'ads_with_map' => 'Annoncer med kort',
+    'advanced_sorting' => 'Avanceret sortering',
 
     'free' => 'Gratis',
     'ad_date' => 'Annoncedato',
