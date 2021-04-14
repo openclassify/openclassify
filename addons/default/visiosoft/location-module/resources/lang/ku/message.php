@@ -5,5 +5,5 @@ return [
 ',
     'null_msg' => 'نەدۆزراوەتەوە
 ',
-    'choose_country' => 'Choose a Country',
+    'choose_country' => 'Welatek hilbijêrin',
 ];
