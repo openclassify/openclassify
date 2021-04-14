@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Gewilde advertensies",
     'trending_ads' => 'Trendind-advertensies',
     'search_ad_result_prefix' => 'aan',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: tel</strong> advertensies in u <strong>: naam</strong> soektog',
     'search_ads_result_message' => [
         'name' => ': tel advertensies gevind vir: naam soek',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'Die eienaar is die huidige gebruiker as geen gebruiker gekies word nie',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'Advertensietitel',
+    'listing_date' => 'Lysdatum',
+    'view' => 'Beskou',
+    'ads_with_map' => 'Advertensies Met Kaart',
+    'advanced_sorting' => 'Gevorderde sortering',
 
     'free' => 'Vry',
     'ad_date' => 'Advertensiedatum',
