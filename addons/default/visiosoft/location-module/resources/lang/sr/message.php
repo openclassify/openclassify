@@ -3,5 +3,5 @@
 return [
     'placeholder' => 'Откуцајте овде за претрагу',
     'null_msg' => 'Није пронађен',
-    'choose_country' => 'Choose a Country',
+    'choose_country' => 'Изаберите државу',
 ];
