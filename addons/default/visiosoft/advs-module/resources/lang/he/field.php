@@ -211,7 +211,7 @@ return [
     'featured_ads' => "מודעות ממומנות",
     'trending_ads' => 'מודעות טרנדינד',
     'search_ad_result_prefix' => 'עַל',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: נמצאו מודעות</strong> בחיפוש <strong>: שם</strong>',
     'search_ads_result_message' => [
         'name' => ': ספירת מודעות שנמצאו עבור: חיפוש שמות',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'הבעלים יוגדר כברירת מחדל למשתמש הנוכחי אם לא ייבחר משתמש',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'כותרת המודעה',
+    'listing_date' => 'תאריך רישום',
+    'view' => 'נוף',
+    'ads_with_map' => 'מודעות עם מפה',
+    'advanced_sorting' => 'מיון מתקדם',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',
