@@ -5,7 +5,7 @@
         <li>
             <div class="d-flex">
                 {% if (not categoryId) or (loop.first and categoryId) %}
-                    {% set categoryIcon = (maincat.icon) ? maincat.icon : img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').url %}
+                    {% set categoryIcon = (maincat.icon.value) ? maincat.icon.value : img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').url %}
                     <img src="{{ categoryIcon }}" alt="{{ main_category.name }}" class="img-responsive">
                 {% endif %}
                 <div class="{{ not loop.first and categoryId ? 'sub-cat' : 'ml-2' }}" style="{{ not loop.first and categoryId ? 'padding-left: ' ~ (loop.index - 1) * 0.5 ~ 'rem;' }}">
