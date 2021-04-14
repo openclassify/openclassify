@@ -35,7 +35,7 @@ return [
         'name' => 'Мапа'
     ],
     'stock' => [
-        'name' => 'акција'
+        'name' => 'Залихе'
     ],
     'advs_desc' => [
         'name' => 'Опис'
