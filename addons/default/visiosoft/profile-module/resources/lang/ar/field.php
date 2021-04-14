@@ -468,8 +468,8 @@ return [
     'change_password' => 'غير كلمة السر',
     'choose_an_option' => 'إختر خيار...',
     'change_status' => 'تغيير الوضع',
-	'profile_settings' => 'Profile Settings',
-	'profile_detail' => 'Profile Detail',
+	'profile_settings' => 'إعدادات الملف الشخصي',
+	'profile_detail' => 'تفاصيل الملف الشخصي',
 
     // Register page
     'accept_terms_label' => 'أوافق على شروط.',
