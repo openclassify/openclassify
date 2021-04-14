@@ -3,5 +3,5 @@
 return [
     'placeholder' => 'Schreibe hier um zu suchen',
     'null_msg' => 'Nicht gefunden',
-    'choose_country' => 'Choose a Country',
+    'choose_country' => 'Wähle ein Land',
 ];
