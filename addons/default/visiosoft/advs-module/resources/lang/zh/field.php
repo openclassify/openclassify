@@ -211,7 +211,7 @@ return [
     'featured_ads' => "精选广告",
     'trending_ads' => 'Trendind广告',
     'search_ad_result_prefix' => '在',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>：在您的 <strong>：名称</strong> 搜索</strong>',
     'search_ads_result_message' => [
         'name' => '：count个针对：name搜索找到的广告',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => '如果未选择任何用户，所有者将默认为当前用户',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => '广告标题',
+    'listing_date' => '上市日期',
+    'view' => '看法',
+    'ads_with_map' => '带有地图的广告',
+    'advanced_sorting' => '高级排序',
 
     'free' => '自由',
     'ad_date' => '广告日期',
