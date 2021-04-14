@@ -18,7 +18,7 @@
 
         <tbody>
 
-            {{ addBlock('ad-list/partials/ads', {'featured_advs': featured_advs})|raw }}
+            {{ addBlock('ad-list/partials/ads', {'featured_advs': featured_advs, 'vars': _context})|raw }}
 
             {% for adv in advs %}
                 <tr class="{{ adv.doping_type ? 'doping_type' ~ adv.doping_type }}">

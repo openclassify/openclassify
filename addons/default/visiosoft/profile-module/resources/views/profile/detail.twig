@@ -18,246 +18,130 @@
 
             <div class="row px-3">
 
-                <!-- User Profile Form Section-->
-                <div class="col-md-12 bg-light profile-section pb-4">
-                    <nav>
-                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
-                            <a class="nav-item nav-link active text-dark d-flex justify-content-center align-items-center" id="nav-profile-tab" data-toggle="tab"
-                               href="#nav-profile"
-                               role="tab" aria-controls="nav-profile" aria-selected="true">
-                                {{ img('visiosoft.module.profile::images/profile2.svg').data|raw }}
-                                {{ trans('visiosoft.module.profile::field.profile.name') }}
-                            </a>
-                            <a class="nav-item nav-link text-dark d-flex justify-content-center align-items-center" id="nav-details-tab" data-toggle="tab"
-                               href="#nav-details"
-                               role="tab" aria-controls="nav-details" aria-selected="false">
-                                {{ img('visiosoft.module.profile::images/detail2.svg').data|raw }}
-                                {{ trans('visiosoft.module.profile::field.details.name') }}
-                            </a>
-                            <a class="nav-item nav-link text-dark d-flex justify-content-center align-items-center" id="nav-password-tab" data-toggle="tab"
-                               href="#nav-password"
-                               role="tab" aria-controls="nav-password" aria-selected="false">
-                                {{ img('visiosoft.module.profile::images/password2.svg').data|raw }}
-                                {{ trans('visiosoft.module.profile::field.password.name') }}
-                            </a>
-                            {{ addBlock('profile/detail/content-tab')|raw }}
-                        </div>
-                    </nav>
+				<!-- User Profile Form Section-->
+				<div class="col-md-12 bg-light profile-section py-4 px-5">
+					<div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+						<div class="tab-pane fade show active" id="nav-details" role="tabpanel"
+						     aria-labelledby="nav-details-tab">
+							{% set profileForm = form('profile').entry(user.id).get() %}
+							{{ profileForm.open({ 'id': 'profile-detail' })|raw }}
+							<div class="row">
+								<div class="col-md-6">
+									<div class=" form-group">
+										<label class="control-label font-weight-bold">{{ trans("visiosoft.module.profile::field.identification_number.name") }}</label>
+										{{ profileForm.fields.identification_number.input|raw }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group required-profile-phone-field">
+										<label class="control-label font-weight-bold">
+											{{ profileForm.fields.gsm_phone.label }}
+										</label>
+										{{ profileForm.fields.gsm_phone.setAttributes({'maxlength': '14'}).input|raw }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group required-profile-phone-field">
+										<label class="control-label font-weight-bold">
+											{{ profileForm.fields.office_phone.label }}
+										</label>
+										{{ profileForm.fields.office_phone.setAttributes({'maxlength': '14'}).input|raw }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group required-profile-phone-field">
+										<label class="control-label font-weight-bold">
+											{{ profileForm.fields.land_phone.label }}
+										</label>
+										{{ profileForm.fields.land_phone.setAttributes({'maxlength': '14'}).input|raw }}
+									</div>
+								</div>
+								<div class="col-md-12">
+									<div class="form-group birthday-field">
+										<label class="control-label font-weight-bold">
+											{{ trans("visiosoft.module.profile::field.birthday.name") }}
+										</label>
+										{{ profileForm.fields.birthday.configSet('date_format','Y-m-d').setPlaceholder(now|date(config_get('streams::datetime.date_format'))).input|raw }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group facebook_address-field">
+										<label class="control-label font-weight-bold">
+											{{ trans("visiosoft.module.profile::field.facebook_address.name") }}
+										</label>
+										{{ profileForm.fields.facebook_address.input|raw }}
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group google_address-field">
+										<label class="control-label font-weight-bold">
+											{{ trans("visiosoft.module.profile::field.google_address.name") }}
+										</label>
+										{{ profileForm.fields.google_address.input|raw }}
+									</div>
+								</div>
+								{% if setting_value('visiosoft.module.profile::show_education_profession') %}
+									<div class="col-md-12">
+										<div class="form-group education-field">
+											<label class="control-label font-weight-bold">
+												{{ trans("visiosoft.module.profile::field.education.name") }}
+											</label>
+											{{ profileForm.fields.education.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group education-part-field">
+											<label class="control-label font-weight-bold">
+												{{ trans("visiosoft.module.profile::field.education_part.name") }}
+											</label>
+											{{ profileForm.fields.education_part.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
+										</div>
+									</div>
+									<div class="col-md-12">
+										<div class="form-group profession-field">
+											<label class="control-label font-weight-bold">
+												{{ trans("visiosoft.module.profile::field.profession.name") }}
+											</label>
+											<select name="profession" class="custom-select form-control"
+											        data-field="profession" data-field_name="profession"
+											        data-provides="anomaly.field_type.select" id="profession">
+												<option value="">
+													{{ trans('visiosoft.module.profile::field.choose_an_option') }}
+												</option>
+												{% for profession in setting_value('visiosoft.module.profile::profession') %}
+													<option value="{{ profession }}"
+														{{ profileForm.fields.profession.value == profession ? 'selected' }}>
+														{{ profession }}
+													</option>
+												{% endfor %}
+											</select>
+										</div>
+									</div>
+								{% endif %}
+								<div class="col-md-12{{ setting_value('visiosoft.module.profile::hide_register_type_profile') ? ' d-none' }}">
+									<div class="form-group">
+										<label class="control-label font-weight-bold">
+											{{ trans("visiosoft.module.profile::field.register_type.name") }}
+										</label>
+										{{ profileForm.fields.register_type.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
+									</div>
+								</div>
+								<div class="col-md-12 text-right">
+									<div class="form-group d-flex align-items-center justify-content-end">
+										{{ addBlock('profile/detail/profile-detail-form/actions')|raw }}
 
-                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
-                        <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
-                             aria-labelledby="nav-profile-tab">
-                            <div>
-                                {% set userForm = form('userProfile').entry(user.id).get() %}
-                                {{ userForm.open()|raw }}
-                                <div class="mt-4 d-flex profile--desc flex-column flex-lg-row">
-                                    <div class="d-flex d-sm-block m-auto m-sm-0 mr-sm-3">
-                                        <img src="{{ profile_photo }}" width="150">
-                                    </div>
-                                    <div class="pt-2 d-flex flex-column flex-sm-row d-sm-block m-auto m-sm-0">
-                                        <p class="mb-1 username">{{ user.name }}</p>
-                                        <p class="mb-1 last-login d-flex d-sm-block m-auto m-sm-0">
-                                            {{ auth_user().last_login_at|date(config_get('streams::datetime.date_format') ~ ' - ' ~ config_get('streams::datetime.time_format')) }}
-                                        </p>
-                                    </div>
-                                </div>
-                                <div class="mt-4">
-                                    <div class="profile--form--area">
-                                        <div class="form-group">
-                                            <label class="control-label font-weight-bold">
-                                                {{ trans("visiosoft.module.profile::field.first_name.name") }}
-                                            </label>
-                                            {{ userForm.fields.first_name.input|raw }}
-
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label font-weight-bold">
-                                                {{ trans("visiosoft.module.profile::field.last_name.name") }}
-                                            </label>
-                                            {{ userForm.fields.last_name.input|raw }}
-                                        </div>
-                                        <div class="form-group">
-                                            <label class="control-label font-weight-bold">
-                                                {{ trans("visiosoft.module.profile::field.email.name") }}
-                                            </label>
-                                            {{ userForm.fields.email.input|raw }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group text-right">
-                                        {{ userForm.actions|raw }}
-                                    </div>
-
-                                    <div class="account--disable--content d-flex align-item-center justify-content-center mx-auto">
-                                        <div class="d-flex justify-content-center align-items-center">
-                                            <p class="mb-0 mr-4">
-                                                {{ trans('visiosoft.module.profile::message.disable_account') }}
-                                            </p>
-                                            <a href="{{ url_route("visiosoft.module.profile::profile_close_account") }}" class="btn btn-danger account-freeze text-white">
-                                                {{ trans("visiosoft.module.profile::field.disable_account.name") }}
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                                {{ userForm.close()|raw }}
-                            </div>
-                        </div>
-                        <div class="tab-pane fade" id="nav-details" role="tabpanel"
-                             aria-labelledby="nav-details-tab">
-                            {% set profileForm = form('profile').entry(user.id).get() %}
-                            {{ profileForm.open({ 'id': 'profile-detail' })|raw }}
-                            <div class="row">
-                                <div class="col-md-12 profile-pic">
-                                    {% if setting_value('visiosoft.module.profile::upload_avatar') %}
-                                        <div class="form-group">
-                                            {{ profileForm.fields.file|raw }}
-                                        </div>
-                                    {% endif %}
-                                </div>
-                                <div class="col-md-6">
-                                    <div class=" form-group">
-                                        <label class="control-label font-weight-bold">{{ trans("visiosoft.module.profile::field.identification_number.name") }}</label>
-                                        {{ profileForm.fields.identification_number.input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group required-profile-phone-field">
-                                        <label class="control-label font-weight-bold">
-                                            {{ profileForm.fields.gsm_phone.label }}
-                                        </label>
-                                        {{ profileForm.fields.gsm_phone.setAttributes({'maxlength': '14'}).input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group required-profile-phone-field">
-                                        <label class="control-label font-weight-bold">
-                                            {{ profileForm.fields.office_phone.label }}
-                                        </label>
-                                        {{ profileForm.fields.office_phone.setAttributes({'maxlength': '14'}).input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group required-profile-phone-field">
-                                        <label class="control-label font-weight-bold">
-                                            {{ profileForm.fields.land_phone.label }}
-                                        </label>
-                                        {{ profileForm.fields.land_phone.setAttributes({'maxlength': '14'}).input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="form-group birthday-field">
-                                        <label class="control-label font-weight-bold">
-                                            {{ trans("visiosoft.module.profile::field.birthday.name") }}
-                                        </label>
-                                        {{ profileForm.fields.birthday.configSet('date_format','Y-m-d').setPlaceholder(now|date(config_get('streams::datetime.date_format'))).input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group facebook_address-field">
-                                        <label class="control-label font-weight-bold">
-                                            {{ trans("visiosoft.module.profile::field.facebook_address.name") }}
-                                        </label>
-                                        {{ profileForm.fields.facebook_address.input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group google_address-field">
-                                        <label class="control-label font-weight-bold">
-                                            {{ trans("visiosoft.module.profile::field.google_address.name") }}
-                                        </label>
-                                        {{ profileForm.fields.google_address.input|raw }}
-                                    </div>
-                                </div>
-                                {% if setting_value('visiosoft.module.profile::show_education_profession') %}
-                                    <div class="col-md-12">
-                                        <div class="form-group education-field">
-                                            <label class="control-label font-weight-bold">
-                                                {{ trans("visiosoft.module.profile::field.education.name") }}
-                                            </label>
-                                            {{ profileForm.fields.education.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                    <div class="form-group education-part-field">
-                                            <label class="control-label font-weight-bold">
-                                                {{ trans("visiosoft.module.profile::field.education_part.name") }}
-                                            </label>
-                                            {{ profileForm.fields.education_part.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12">
-                                        <div class="form-group profession-field">
-                                            <label class="control-label font-weight-bold">
-                                                {{ trans("visiosoft.module.profile::field.profession.name") }}
-                                            </label>
-                                            <select name="profession" class="custom-select form-control"
-                                                    data-field="profession" data-field_name="profession"
-                                                    data-provides="anomaly.field_type.select" id="profession">
-                                                <option value="">
-                                                    {{ trans('visiosoft.module.profile::field.choose_an_option') }}
-                                                </option>
-                                                {% for profession in setting_value('visiosoft.module.profile::profession') %}
-                                                    <option value="{{ profession }}"
-                                                            {{ profileForm.fields.profession.value == profession ? 'selected' }}>
-                                                        {{ profession }}
-                                                    </option>
-                                                {% endfor %}
-                                            </select>
-                                        </div>
-                                    </div>
-                                {% endif %}
-                                <div class="col-md-12{{ setting_value('visiosoft.module.profile::hide_register_type_profile') ? ' d-none' }}">
-                                    <div class="form-group">
-                                        <label class="control-label font-weight-bold">
-                                            {{ trans("visiosoft.module.profile::field.register_type.name") }}
-                                        </label>
-                                        {{ profileForm.fields.register_type.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option')).input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-12 text-right">
-                                    <div class="form-group d-flex align-items-center justify-content-end">
-                                        {{ addBlock('profile/detail/profile-detail-form/actions')|raw }}
-
-                                        {{ profileForm.actions|raw }}
-                                    </div>
-                                </div>
-                            </div>
-                            {{ profileForm.close()|raw }}
-                        </div>
-                        <div class="tab-pane fade" id="nav-password" role="tabpanel" aria-labelledby="nav-password-tab">
-                            {% set passwordForm = form('updatePassword').get() %}
-
-                            {{ passwordForm.open()|raw }}
-                            <div class="row">
-                                <div class="col-12">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold">{{ trans("visiosoft.module.profile::field.old_password.name") }}</label>
-                                        {{ passwordForm.fields.old_password.input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold">{{ trans("visiosoft.module.profile::field.new_password.name") }}</label>
-                                        {{ passwordForm.fields.new_password.input|raw }}
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="form-group">
-                                        <label class="font-weight-bold">{{ trans("visiosoft.module.profile::field.re_new_password.name") }}</label>
-                                        {{ passwordForm.fields.re_new_password.input|raw }}
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="form-group text-right">
-                                {{ passwordForm.actions|raw }}
-                            </div>
-                        </div>
-                        {{ passwordForm.close|raw }}
-                        {{ addBlock('profile/detail/content')|raw }}
-                    </div>
-                    <!-- User Profile Form Section-->
-                </div>
-            </div>
-            <script>
+										{{ profileForm.actions|raw }}
+									</div>
+								</div>
+							</div>
+							{{ profileForm.close()|raw }}
+						</div>
+						{{ addBlock('profile/detail/content')|raw }}
+					</div>
+					<!-- User Profile Form Section-->
+				</div>
+			</div>
+			<script>
                 var choose_an_option = "{{ trans('visiosoft.module.profile::field.choose_an_option') }}"
             </script>
         {% endblock %}

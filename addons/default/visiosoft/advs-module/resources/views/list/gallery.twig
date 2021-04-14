@@ -7,7 +7,7 @@
 
     <div id="gallerying" class="d-flex flex-wrap">
 
-        {{ addBlock('ad-list/partials/gallery',{'featured_advs':featured_advs})|raw }}
+        {{ addBlock('ad-list/partials/gallery',{'featured_advs': featured_advs, 'vars': _context})|raw }}
 
         {% for adv in advs %}
             <div class="w-50 gallery-item-wrapper mb-1{{ adv.doping != null ? ' doping_type4' }}">
