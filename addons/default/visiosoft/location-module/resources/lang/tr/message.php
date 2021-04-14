@@ -3,5 +3,5 @@
 return [
     'placeholder' => 'Ara',
     'null_msg' => 'Bulunamadı',
-    'choose_country' => 'Choose a Country',
+    'choose_country' => 'Bir ülke seç',
 ];
