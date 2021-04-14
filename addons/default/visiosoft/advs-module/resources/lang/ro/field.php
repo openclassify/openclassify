@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Anunțuri recomandate",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'pe',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: count</strong> anunțuri au fost găsite în căutarea <strong>: name</strong>',
     'search_ads_result_message' => [
         'name' => ': numără anunțuri găsite pentru: căutare nume',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'Proprietarul va folosi implicit utilizatorul curent dacă nu este selectat niciun utilizator',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'Adaugă titlu',
+    'listing_date' => 'Data listării',
+    'view' => 'Vedere',
+    'ads_with_map' => 'Anunțuri cu hartă',
+    'advanced_sorting' => 'Sortare avansată',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
