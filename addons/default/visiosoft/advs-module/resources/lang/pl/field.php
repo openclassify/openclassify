@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Polecane reklamy",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'na',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: policzyć</strong> reklamy zostały znalezione w <strong>: nazwa</strong> poszukiwaniu',
     'search_ads_result_message' => [
         'name' => ': liczba znalezionych reklam dla: wyszukiwania nazw',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'Właścicielem będzie domyślnie bieżący użytkownik, jeśli żaden użytkownik nie zostanie wybrany',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'Tytuł ogłoszenia',
+    'listing_date' => 'Data notowania',
+    'view' => 'Widok',
+    'ads_with_map' => 'Reklamy z mapą',
+    'advanced_sorting' => 'Zaawansowane sortowanie',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',
