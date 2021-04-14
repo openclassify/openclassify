@@ -5,11 +5,11 @@
         <li>
             <div class="d-flex">
                 {% if (not categoryId) or (loop.first and categoryId) %}
-                    {% if maincat.icon %}
-                        <img src="{{ maincat.icon.url }}" alt="{{ maincat.name }}">
-                    {% else %}
-                        {{ img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').data|raw }}
-                    {% endif %}
+                    {#                    {% if maincat.icon %}#}
+                    {#                        <img src="{{ maincat.icon.url }}" alt="{{ maincat.name }}">#}
+                    {#                    {% else %}#}
+                    {{ img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').data|raw }}
+                    {#                    {% endif %}#}
                 {% endif %}
                 <div class="{{ not loop.first and categoryId ? 'sub-cat' : 'ml-2' }}" style="{{ not loop.first and categoryId ? 'padding-left: ' ~ (loop.index - 1) * 0.5 ~ 'rem;' }}">
                     <a href="{{ appendRequestURL(request_query(),url_route('adv_list_seo', [maincat.slug, cityId.slug]),{},['page']) }}">
