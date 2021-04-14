@@ -60,10 +60,10 @@
 		}
 
 		img {
-			width: 165px;
+			width: 130px;
 			height: 130px;
 			object-fit: cover;
-			border-radius: 20px;
+			border-radius: 50%;
 			@media (max-width: 992px) {
 				display: flex;
 				justify-content: center;
@@ -111,6 +111,36 @@
 			button {
 				font-size: 14px;
 				height: 34px;
+			}
+		}
+
+		form {
+			.new-profile-image {
+				position: relative;
+				bottom: 25px;
+				right: 30px;
+				cursor: pointer;
+
+				@media (max-width: 992px) {
+					bottom: 120px;
+					left: 100px;
+					top: auto;
+				}
+
+				@media (max-width: 576px) {
+					bottom: auto;
+					left: auto;
+					top: 10px;
+				}
+			}
+			.file-field {
+				visibility: hidden;
+				height: 0;
+				width: 0;
+
+				#file-modal {
+					visibility: visible;
+				}
 			}
 		}
 	}

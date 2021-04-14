@@ -4,56 +4,30 @@
 
         <li>
             <div class="d-flex">
-                {% if maincat.icon %}
-                    <img src="{{ maincat.icon.url }}" alt="{{ maincat.name }}">
-                {% else %}
+                {% if (not categoryId) or (loop.first and categoryId) %}
+                    {#                    {% if maincat.icon %}#}
+                    {#                        <img src="{{ maincat.icon.url }}" alt="{{ maincat.name }}">#}
+                    {#                    {% else %}#}
                     {{ img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').data|raw }}
+                    {#                    {% endif %}#}
                 {% endif %}
-                <div class="ml-2">
+                <div class="{{ not loop.first and categoryId ? 'sub-cat' : 'ml-2' }}" style="{{ not loop.first and categoryId ? 'padding-left: ' ~ (loop.index - 1) * 0.5 ~ 'rem;' }}">
                     <a href="{{ appendRequestURL(request_query(),url_route('adv_list_seo', [maincat.slug, cityId.slug]),{},['page']) }}">
                         {{ maincat.name }}
                     </a>
-{#                    <ul class="sub-cat mt-1">#}
-{#                        {% for subcat in subCats %}#}
-{#                            {% if subcat.parent_category_id == maincat.id %}#}
-{#                                {% set subCatId = entries('cats', 'category').find(subcat.id) %}#}
-
-{#                                <li>#}
-{#                                    <a href="{{ appendRequestURL(request_query(), url_route('adv_list_seo', [subCatId.slug, citySlug]), {}, ['page']) }}">#}
-{#                                        {{ subcat.name }}#}
-{#                                    </a>#}
-{#                                    <ul>#}
-{#                                        <li>#}
-{#                                            <a href="#">Test</a>#}
-{#                                            <ul>#}
-{#                                                <li><a href="#">Test</a></li>#}
-{#                                                <li><a href="#">Test</a></li>#}
-{#                                                <li><a href="#">Test</a></li>#}
-{#                                                <li><a href="#">Test</a></li>#}
-{#                                                <li><a href="#">Test</a></li>#}
-{#                                                <li><a href="#">Test</a></li>#}
-{#                                            </ul>#}
-{#                                        </li>#}
-{#                                    </ul>#}
-{#                                </li>#}
-{#                            {% endif %}#}
-{#                        {% endfor %}#}
-{#                    </ul>#}
-                </div>
-            </div>
-        </li>
-
-        <li>
-            <div class="d-flex">
-                {% if maincat.icon %}
-                    <img src="{{ maincat.icon.url }}" alt="{{ maincat.name }}">
-                {% else %}
-                    {{ img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').data|raw }}
-                {% endif %}
-                <div class="ml-2">
-                    <a href="{{ appendRequestURL(request_query(),url_route('adv_list_seo', [maincat.slug, cityId.slug]),{},['page']) }}">
-                        {{ maincat.name }}
-                    </a>
+                    {% if count(subCats) %}
+                        <ul class="sub-cat mt-1 ml-2">
+                            {% for subcat in subCats %}
+                                {% if subcat.parent_category_id == maincat.id %}
+                                    <li>
+                                        <a href="{{ appendRequestURL(request_query(), url_route('adv_list_seo', [subcat.slug, citySlug]), {}, ['page']) }}">
+                                            {{ subcat.name }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
                 </div>
             </div>
         </li>

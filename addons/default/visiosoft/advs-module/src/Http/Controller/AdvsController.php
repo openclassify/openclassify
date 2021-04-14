@@ -290,7 +290,6 @@ class AdvsController extends PublicController
                 unset($mainCats[0]);//remove last category
             }
             $allCats = false;
-//            dd($mainCats);
         } else {
             $mainCats = $this->category_repository->getMainCategories();
             $allCats = true;
