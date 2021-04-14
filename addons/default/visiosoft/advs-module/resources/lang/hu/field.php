@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Kiemelt hirdetések",
     'trending_ads' => 'Trendind hirdetések',
     'search_ad_result_prefix' => 'tovább',
-    'search_ad_result_text' => '<strong>:count</strong> ads were found in your <strong>:name</strong> search',
+    'search_ad_result_text' => '<strong>: <strong>: név</strong> keresés</strong> hirdetés található',
     'search_ads_result_message' => [
         'name' => ': megtalált hirdetések a következőre: név keresés',
     ],
@@ -338,11 +338,11 @@ return [
     'default_owner_instruction' => 'A tulajdonos alapértelmezés szerint az aktuális felhasználót állítja be, ha nincs kiválasztva felhasználó',
 
     // Listing page
-    'ad_title' => 'Ad title',
-    'listing_date' => 'Listing Date',
-    'view' => 'View',
-    'ads_with_map' => 'Ads With Map',
-    'advanced_sorting' => 'Advanced Sorting',
+    'ad_title' => 'Hirdetés címe',
+    'listing_date' => 'Felsorolási dátum',
+    'view' => 'Kilátás',
+    'ads_with_map' => 'Hirdetések térképpel',
+    'advanced_sorting' => 'Haladó rendezés',
 
     'free' => 'Ingyenes',
     'ad_date' => 'Hirdetés dátuma',
