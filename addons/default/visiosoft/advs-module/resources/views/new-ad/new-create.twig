@@ -208,7 +208,7 @@
                                     </div>
                                 </div>
                             </div>
-                            {% set other_fields = addBlock('new-ad/other-fields',{'custom_fields':custom_fields}) %}
+                            {% set other_fields = addBlock('new-ad/other-fields',{'custom_fields':custom_fields,'id':id}) %}
                             {% if other_fields or (custom_fields and count(custom_fields)) %}
                                 <h5 class="mt-5 pb-1 border-bottom">
                                     {{ trans('visiosoft.module.advs::field.additional_fields') }}

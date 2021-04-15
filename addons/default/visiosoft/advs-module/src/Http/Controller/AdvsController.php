@@ -536,6 +536,9 @@ class AdvsController extends PublicController
             }
 
             $adv->video_url = null;
+            if ($this->adv_model->is_enabled('cloudinary')) {
+                $adv->video_url = app('Visiosoft\CloudinaryModule\Http\Controller\VideoController')->getVideoUrl($adv->id);
+            }
 
             $options = $this->optionRepository->findAllBy('adv_id', $id);
 
@@ -846,7 +849,7 @@ class AdvsController extends PublicController
             $this->event->dispatch(new PriceChange($post));
 
             //Cover Image URL
-            if ($this->request->url == "") {
+            if ($this->request->video_url == "") {
                 $this->adv_repository->cover_image_update($adv);
             }
 
