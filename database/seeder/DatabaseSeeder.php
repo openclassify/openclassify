@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
