@@ -191,7 +191,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@getMyAds'
         ],
         'ajax/get-advs-by-category/{categoryID}' => [
-            'as' => 'ajax::getAds',
+            'as' => 'ajax::getAdvsByCat',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@getAdvsByCat'
         ],
         'class/ajax' => 'Visiosoft\AdvsModule\Http\Controller\AjaxController@locations',
