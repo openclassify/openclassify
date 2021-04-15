@@ -1,22 +1,26 @@
 <div id="mobileListingPage" class="d-sm-none mb-5">
 
-    {% include "visiosoft.module.advs::list/partials/mobile-breadcrumb" %}
+    {% if not hideBreadcrump %}
+        {% include "visiosoft.module.advs::list/partials/mobile-breadcrumb" %}
+    {% endif %}
 
-    <div id="mobileListNav" class="d-flex p-2 align-items-center mb-1">
-        <div id="filter_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
-            {{ img('visiosoft.module.advs::images/listing/mobile-filter.svg').data|raw }}
-            <p class="mt-1">{{ trans('visiosoft.module.advs::field.filter') }}</p>
+    {% if not hideActions %}
+        <div id="mobileListNav" class="d-flex p-2 align-items-center mb-1">
+            <div id="filter_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
+                {{ img('visiosoft.module.advs::images/listing/mobile-filter.svg').data|raw }}
+                <p class="mt-1">{{ trans('visiosoft.module.advs::field.filter') }}</p>
+            </div>
+            <div class="divider"></div>
+            <div id="sort_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
+                {{ img('visiosoft.module.advs::images/listing/mobile-sort.svg').data|raw }}
+                <p class="mt-1">{{ trans('visiosoft.module.advs::field.sort') }}</p>
+            </div>
+            <div class="divider"></div>
+
+            {{ addBlock('ads-list/mobile/action-bar')|raw }}
+
         </div>
-        <div class="divider"></div>
-        <div id="sort_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
-            {{ img('visiosoft.module.advs::images/listing/mobile-sort.svg').data|raw }}
-            <p class="mt-1">{{ trans('visiosoft.module.advs::field.sort') }}</p>
-        </div>
-        <div class="divider"></div>
-
-        {{ addBlock('ads-list/mobile/action-bar')|raw }}
-
-    </div>
+    {% endif %}
 
     <div id="mobileListing">
         {% for adv in advs %}

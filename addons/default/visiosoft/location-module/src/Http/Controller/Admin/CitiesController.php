@@ -25,6 +25,13 @@ class CitiesController extends AdminController
         return $table->render();
     }
 
+    public function choose(CountryRepositoryInterface $countryRepository)
+    {
+        $countries = $countryRepository->all();
+
+        return $this->view->make('visiosoft.module.location::admin/fields/choose', ['countries' => $countries]);
+    }
+
     public function create(CityFormBuilder $form)
     {
         $form->setCountry($this->request->get('cities'));

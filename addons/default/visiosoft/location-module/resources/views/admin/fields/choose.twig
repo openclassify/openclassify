@@ -2,7 +2,7 @@
     <button class="close" data-dismiss="modal">
         <span>&times;</span>
     </button>
-    <h4 class="modal-title">{{ trans('visiosoft.module.advs::message.choose_field_type') }}</h4>
+    <h4 class="modal-title">{{ trans('visiosoft.module.location::message.choose_country') }}</h4>
 </div>
 
 <div class="modal-body">
@@ -10,12 +10,10 @@
     {% include "streams::modals/filter" %}
 
     <ul class="nav nav-pills nav-stacked">
-        {% for field_type in field_types %}
+        {% for country in countries %}
             <li class="nav-item">
-                <a href="{{ url_to('admin/advs/fields/create?field_type=' ~ field_type.namespace) }}"  class="nav-link">
-                    <strong>{{ trans(field_type.getTitle()) }}</strong>
-                    <br>
-                    <small>{{ trans(field_type.getDescription()) }}</small>
+                <a href="{{ url_to('admin/location/cities/create?cities=' ~ country.id) }}"  class="nav-link">
+                    <strong>{{ country.name }}</strong>
                 </a>
             </li>
         {% endfor %}
