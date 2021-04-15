@@ -340,7 +340,7 @@ return [
     'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
 
     // Listing page
-    'ad_title' => 'Reklam Başlığı',
+    'ad_title' => 'Başlık',
     'listing_date' => 'İlan Tarihi',
     'view' => 'Görünüm',
     'ads_with_map' => 'Haritalı İlanlar',
