@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Рекомендовані реклами",
     'trending_ads' => 'Модні оголошення',
     'search_ad_result_prefix' => 'на',
+    'search_ad_result_text' => '<strong>: підрахувати</strong> оголошення було знайдено у вашому пошуку <strong>: name</strong>',
     'search_ads_result_message' => [
         'name' => ': кількість оголошень, знайдених для: пошук по імені',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Місце розташування оголошення',
     'owner' => 'Власник',
     'default_owner_instruction' => 'Власник встановить за замовчуванням поточного користувача, якщо не вибрано жодного користувача',
+
+    // Listing page
+    'ad_title' => 'Заголовок оголошення',
+    'listing_date' => 'Дата лістингу',
+    'view' => 'Переглянути',
+    'ads_with_map' => 'Оголошення з картою',
+    'advanced_sorting' => 'Розширене сортування',
 
     'free' => 'Безкоштовно',
     'ad_date' => 'Дата оголошення',

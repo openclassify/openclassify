@@ -211,6 +211,7 @@ return [
     'featured_ads' => "বৈশিষ্ট্যযুক্ত বিজ্ঞাপন",
     'trending_ads' => 'ট্রেন্ডইন্ড বিজ্ঞাপন',
     'search_ad_result_prefix' => 'চালু',
+    'search_ad_result_text' => '<strong>: গণনা</strong> <strong>আপনার নাম:</strong> অনুসন্ধানে পাওয়া গেছে',
     'search_ads_result_message' => [
         'name' => ': নাম অনুসন্ধানের জন্য পাওয়া বিজ্ঞাপন গণনা করুন',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'বিজ্ঞাপনের অবস্থান',
     'owner' => 'মালিক',
     'default_owner_instruction' => 'কোনও ব্যবহারকারী নির্বাচিত না হলে মালিক বর্তমান ব্যবহারকারীর কাছে ডিফল্ট হবে',
+
+    // Listing page
+    'ad_title' => 'বিজ্ঞাপনের শিরোনাম',
+    'listing_date' => 'তালিকার তারিখ',
+    'view' => 'দেখুন',
+    'ads_with_map' => 'মানচিত্র সহ বিজ্ঞাপন',
+    'advanced_sorting' => 'উন্নত বাছাই',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',

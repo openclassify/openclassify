@@ -211,6 +211,7 @@ return [
     'featured_ads' => "सुविधाजनक विज्ञापन",
     'trending_ads' => 'ट्रेंडइंड विज्ञापन',
     'search_ad_result_prefix' => 'पर',
+    'search_ad_result_text' => '<strong>: गिनती</strong> <strong>: नाम</strong> खोज में पाए गए थे',
     'search_ads_result_message' => [
         'name' => ': नाम खोज के लिए पाए गए विज्ञापनों की गणना करें',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'विज्ञापन स्थान',
     'owner' => 'मालिक',
     'default_owner_instruction' => 'यदि कोई उपयोगकर्ता चयनित नहीं है, तो स्वामी वर्तमान उपयोगकर्ता को डिफ़ॉल्ट करेगा',
+
+    // Listing page
+    'ad_title' => 'विज्ञापन शीर्षक',
+    'listing_date' => 'लिस्टिंग की तारीख',
+    'view' => 'राय',
+    'ads_with_map' => 'मानचित्र के साथ विज्ञापन',
+    'advanced_sorting' => 'उन्नत छँटाई',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',

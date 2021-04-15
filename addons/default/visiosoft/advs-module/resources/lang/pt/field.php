@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Anúncios em destaque",
     'trending_ads' => 'Anúncios Trendind',
     'search_ad_result_prefix' => 'em',
+    'search_ad_result_text' => '<strong>: contagem de</strong> anúncios foram encontrados em sua pesquisa <strong>: nome</strong>',
     'search_ads_result_message' => [
         'name' => ':      contagem de anúncios encontrados para:pesquisa de nome',
     ],
@@ -336,6 +337,13 @@ return [
     'ad_location' => 'Localização do anúncio',
     'owner' => 'Proprietário',
     'default_owner_instruction' => 'O proprietário assumirá como padrão o usuário atual se nenhum usuário for selecionado',
+
+    // Listing page
+    'ad_title' => 'Título do anúncio',
+    'listing_date' => 'Data de Listagem',
+    'view' => 'Visualizar',
+    'ads_with_map' => 'Anúncios com mapa',
+    'advanced_sorting' => 'Classificação Avançada',
 
     'free' => 'Livre',
     'ad_date' => 'Data do Anúncio',

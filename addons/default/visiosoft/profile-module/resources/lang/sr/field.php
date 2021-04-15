@@ -44,13 +44,13 @@ return [
         'name' => 'Село'
     ],
     'gsm_phone' => [
-        'name' => 'ГСМ телефон'
+        'name' => 'Мобилни телефон'
     ],
     'land_phone' => [
-        'name' => 'Земаљски телефон'
+        'name' => 'Фиксни телефон'
     ],
     'office_phone' => [
-        'name' => 'Канцеларијски телефон'
+        'name' => 'Службени телефон'
     ],
     'register_type' => [
         'name' => 'Тип регистра'
@@ -95,10 +95,10 @@ return [
         'name' => 'Поштански број'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Гсм телефон'
+        'name' => 'Мобилни телефон'
     ],
     'adress_land_phone' => [
-        'name' => 'Земаљски телефон'
+        'name' => 'Фиксни телефон'
     ],
     'adress_country' => [
         'name' => 'Цоунтри'
@@ -469,6 +469,8 @@ return [
     'change_password' => 'Промени лозинку',
     'choose_an_option' => 'Изабери опцију...',
     'change_status' => 'Промени статус',
+	'profile_settings' => 'Подешавања профила',
+	'profile_detail' => 'Детаљи профила',
 
     // Register page
     'accept_terms_label' => 'Прихватам услове.',

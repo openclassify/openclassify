@@ -469,6 +469,8 @@ return [
     'change_password' => 'Ndrysho fjalekalimin',
     'choose_an_option' => 'Zgjidhni një opsion ...',
     'change_status' => 'Ndrysho statusin',
+	'profile_settings' => 'Cilësimet e profilit',
+	'profile_detail' => 'Detaji i profilit',
 
     // Register page
     'accept_terms_label' => 'Unë i pranoj kushtet.',

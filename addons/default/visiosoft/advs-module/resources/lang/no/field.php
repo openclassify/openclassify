@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Utvalgte annonser",
     'trending_ads' => 'Trendind-annonser',
     'search_ad_result_prefix' => 'på',
+    'search_ad_result_text' => '<strong>: tell</strong> annonser ble funnet i <strong>: navn</strong> søket ditt',
     'search_ads_result_message' => [
         'name' => ': tell annonser funnet for: navnesøk',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Annonseplassering',
     'owner' => 'Eieren',
     'default_owner_instruction' => 'Eieren vil som standard være den nåværende brukeren hvis ingen bruker er valgt',
+
+    // Listing page
+    'ad_title' => 'Annonsetittel',
+    'listing_date' => 'Oppføringsdato',
+    'view' => 'Utsikt',
+    'ads_with_map' => 'Annonser med kart',
+    'advanced_sorting' => 'Avansert sortering',
 
     'free' => 'Gratis',
     'ad_date' => 'Annonsedato',

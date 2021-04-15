@@ -35,7 +35,7 @@ return [
         'name' => 'Мапа'
     ],
     'stock' => [
-        'name' => 'акција'
+        'name' => 'Залихе'
     ],
     'advs_desc' => [
         'name' => 'Опис'
@@ -152,8 +152,8 @@ return [
     'all_categories' => 'Све категорије',
     'location' => 'Локација',
     'send_message' => 'Пошаљи поруку',
-    'phone_gsm' => 'Гсм телефон',
-    'phone_office' => 'Канцеларијски телефон',
+    'phone_gsm' => 'Мобилни телефон',
+    'phone_office' => 'Службени телефон',
     'add_to_favorites' => "Додај у фаворите",
     'send' => 'Пошаљите',
     'search_name' => 'Име претраживања',
@@ -209,10 +209,11 @@ return [
     ],
     'corporate_info' => 'Информације о предузећу',
     'featured_ads' => "Истакнути огласи",
-    'trending_ads' => 'Трендинд Адс',
+    'trending_ads' => 'Огласи у тренду',
     'search_ad_result_prefix' => 'на',
+    'search_ad_result_text' => '<strong>:count</strong> огласа је пронађено у вашој <strong>:name</strong> претрази',
     'search_ads_result_message' => [
-        'name' => ': цоунт огласи пронађени за: сеарцх наме',
+        'name' => ':count огласа пронађено за претрагу :name',
     ],
     'total' => 'Укупно',
     'quantity' => 'Количина',
@@ -227,13 +228,13 @@ return [
         'price' => 'Цена',
         'publish_at' => 'Датум огласа',
         'location_city' => 'Град',
-        'location_country' => 'Цоунтри',
+        'location_country' => 'Држава',
     ],
     'show_list_view' => [
         'name' => 'Листа',
     ],
     'show_table_view' => [
-        'name' => 'Сто',
+        'name' => 'Табела',
     ],
     'showcase' => [
         'name' => 'Витрина',
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Локација огласа',
     'owner' => 'Власник',
     'default_owner_instruction' => 'Власник ће подразумевано подесити тренутног корисника ако није изабран ниједан корисник',
+
+    // Listing page
+    'ad_title' => 'Наслов огласа',
+    'listing_date' => 'Датум уврштавања',
+    'view' => 'Поглед',
+    'ads_with_map' => 'Огласи са мапом',
+    'advanced_sorting' => 'Напредно сортирање',
 
     'free' => 'бесплатно',
     'ad_date' => 'Датум огласа',

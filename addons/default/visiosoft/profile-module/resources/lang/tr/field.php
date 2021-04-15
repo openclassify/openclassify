@@ -468,6 +468,8 @@ return [
     'change_password' => 'Şifre değiştir',
     'choose_an_option' => 'Seçim yapınız...',
     'change_status' => 'Durum değiştirmek',
+	'profile_settings' => 'Profil ayarları',
+	'profile_detail' => 'Profil Detayı',
 
     // Register page
     'accept_terms_label' => 'Koşulları kabul ediyorum.',

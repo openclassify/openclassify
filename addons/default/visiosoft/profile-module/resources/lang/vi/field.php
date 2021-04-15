@@ -469,6 +469,8 @@ return [
     'change_password' => 'Đổi mật khẩu',
     'choose_an_option' => 'Chọn một sự lựa chọn...',
     'change_status' => 'Thay đổi trạng thái',
+	'profile_settings' => 'Cài đặt cấu hình',
+	'profile_detail' => 'Chi tiết hồ sơ',
 
     // Register page
     'accept_terms_label' => 'Tôi chấp nhận các điều khoản.',

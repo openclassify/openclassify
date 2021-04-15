@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Polecane reklamy",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'na',
+    'search_ad_result_text' => '<strong>: policzyć</strong> reklamy zostały znalezione w <strong>: nazwa</strong> poszukiwaniu',
     'search_ads_result_message' => [
         'name' => ': liczba znalezionych reklam dla: wyszukiwania nazw',
     ],
@@ -335,6 +336,13 @@ return [
     'ad_location' => 'Lokalizacja reklamy',
     'owner' => 'Właściciel',
     'default_owner_instruction' => 'Właścicielem będzie domyślnie bieżący użytkownik, jeśli żaden użytkownik nie zostanie wybrany',
+
+    // Listing page
+    'ad_title' => 'Tytuł ogłoszenia',
+    'listing_date' => 'Data notowania',
+    'view' => 'Widok',
+    'ads_with_map' => 'Reklamy z mapą',
+    'advanced_sorting' => 'Zaawansowane sortowanie',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',

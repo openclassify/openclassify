@@ -469,6 +469,8 @@ return [
     'change_password' => 'پاس ورڈ تبدیل کریں',
     'choose_an_option' => 'ایک آپشن منتخب کریں ...',
     'change_status' => 'حالت تبدیل کریں',
+	'profile_settings' => 'پروفائل کی ترتیبات',
+	'profile_detail' => 'پروفائل تفصیل',
 
     // Register page
     'accept_terms_label' => 'میں شرائط کو قبول کرتا ہوں۔',

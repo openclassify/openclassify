@@ -471,6 +471,8 @@ return [
     'change_password' => 'Cambia la contraseña',
     'choose_an_option' => 'Escoge una opción...',
     'change_status' => 'Cambiar Estado',
+	'profile_settings' => 'Configuración de perfil',
+	'profile_detail' => 'Detalle de perfil',
 
     // Register page
     'accept_terms_label' => 'Acepto los términos.',

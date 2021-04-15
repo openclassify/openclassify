@@ -469,6 +469,8 @@ return [
     'change_password' => 'שנה סיסמא',
     'choose_an_option' => 'בחר אפשרות...',
     'change_status' => 'לשנות סטטוס',
+	'profile_settings' => 'הגדרות פרופיל',
+	'profile_detail' => 'פרטי הפרופיל',
 
     // Register page
     'accept_terms_label' => 'אני מקבל את התנאים.',

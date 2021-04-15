@@ -50,7 +50,7 @@ return [
         'name' => 'Numero di telefono di terra'
     ],
     'office_phone' => [
-        'name' => 'Numero di telefono dell\'ufficio'
+        'name' => 'Numero di telefono dell\\'ufficio'
     ],
     'register_type' => [
         'name' => 'Tipo di registro'
@@ -158,7 +158,7 @@ return [
         'name' => 'In attesa di approvazione'
     ],
     'menu_delete_account' => [
-        'name' => 'Chiudere l\'account'
+        'name' => 'Chiudere l\\'account'
     ],
     'menu_my_ads' => [
         'name' => 'I miei annunci'
@@ -170,7 +170,7 @@ return [
         'name' => 'Ciao'
     ],
     'menu_last_msg' => [
-        'name' => 'Hai effettuato l\'ultimo accesso alle'
+        'name' => 'Hai effettuato l\\'ultimo accesso alle'
     ],
     'menu_packages' => [
         'name' => 'I miei pacchetti'
@@ -270,7 +270,7 @@ return [
         'name' => 'Totale',
     ],
     'order_date' => [
-        'name' => 'Data dell\'ordine',
+        'name' => 'Data dell\\'ordine',
     ],
     'order_no' => [
         'name' => 'ID ordine',
@@ -471,6 +471,8 @@ return [
     'change_password' => 'Cambia la password',
     'choose_an_option' => 'Scegliere un\'opzione...',
     'change_status' => 'Cambiare stato',
+	'profile_settings' => 'Impostazioni del profilo',
+	'profile_detail' => 'Dettaglio profilo',
 
     // Register page
     'accept_terms_label' => 'Accetto i termini.',

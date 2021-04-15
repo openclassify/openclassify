@@ -469,6 +469,8 @@ return [
     'change_password' => 'Jelszó módosítása',
     'choose_an_option' => 'Válassz egy lehetőséget...',
     'change_status' => 'Állapotváltozás',
+	'profile_settings' => 'Profilbeállítások',
+	'profile_detail' => 'Profil részlete',
 
     // Register page
     'accept_terms_label' => 'Elfogadom a feltételeket.',

@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Annunci in primo piano",
     'trending_ads' => 'Annunci Trendind',
     'search_ad_result_prefix' => 'sopra',
+    'search_ad_result_text' => '<strong>: count</strong> annunci trovati nella tua ricerca <strong>: name</strong>',
     'search_ads_result_message' => [
         'name' => ':      conta gli annunci trovati per:ricerca nome',
     ],
@@ -336,6 +337,13 @@ return [
     'ad_location' => 'Posizione dell\'annuncio',
     'owner' => 'Proprietario',
     'default_owner_instruction' => 'Se non è selezionato alcun utente, per impostazione predefinita il proprietario sarà l\'utente corrente',
+
+    // Listing page
+    'ad_title' => 'Titolo dell\'annuncio',
+    'listing_date' => 'Data di quotazione',
+    'view' => 'Visualizza',
+    'ads_with_map' => 'Annunci con mappa',
+    'advanced_sorting' => 'Ordinamento avanzato',
 
     'free' => 'Gratuito',
     'ad_date' => 'Data dell\'annuncio',

@@ -269,6 +269,7 @@ return [
     'trending_ads' => 'Trendind Ads
 ',
     'search_ad_result_prefix' => 'لەسەر',
+    'search_ad_result_text' => '<strong>: hejmartin</strong> reklam di lêgerîna <strong>: nav</strong>',
     'search_ads_result_message' => [
         'name' => 'ڕێکلامەکان دەژمێرن دۆزراونەتەوەبۆ :گەڕانی ناو:',
     ],
@@ -431,6 +432,13 @@ return [
 ',
     'owner' => 'Xwedî',
     'default_owner_instruction' => 'Ger bikarhêner neyê bijartin dê xwedêgiravî ji bikarhênerê heyî re veqetîne',
+
+    // Listing page
+    'ad_title' => 'Sernavê reklamê',
+    'listing_date' => 'Dîroka Navnîşanê',
+    'view' => 'Dîtinî',
+    'ads_with_map' => 'Reklamên Bi Nexşe',
+    'advanced_sorting' => 'Rêzkirina Pêşkeftî',
 
     'free' => 'بەلاش',
     'ad_date' => 'بەرواری ڕیکلام

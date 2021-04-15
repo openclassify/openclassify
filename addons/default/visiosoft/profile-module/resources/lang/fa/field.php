@@ -468,6 +468,8 @@ return [
     'change_password' => 'تغییر رمز عبور',
     'choose_an_option' => 'گزینه ای را انتخاب کنید ...',
     'change_status' => 'تغییروضعیت، تغییر حالت',
+	'profile_settings' => 'تنظیمات نمایه',
+	'profile_detail' => 'مشخصات مشخصات',
 
     // Register page
     'accept_terms_label' => 'من شرایط را قبول می کنم',
