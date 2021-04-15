@@ -1,4 +1,5 @@
 <?php
+namespace Database\Seeders;
 
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
@@ -126,7 +127,7 @@ class DatabaseSeeder extends Seeder
 		Model::reguard();
 
 
-		$zip = new ZipArchive();
+		$zip = new \ZipArchive();
 		$zip->open(storage_path('images.zip'), ZipArchive::CREATE);
 		$zip->extractTo(storage_path('streams/default/files-module/local/images/'));
 		$zip->open(storage_path('cats.zip'), ZipArchive::CREATE);
