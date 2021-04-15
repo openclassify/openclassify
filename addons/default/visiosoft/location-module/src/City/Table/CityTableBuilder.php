@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\LocationModule\City\Table;
 
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
+use Visiosoft\LocationModule\City\Table\Handler\Delete;
 
 class CityTableBuilder extends TableBuilder
 {
@@ -60,7 +61,9 @@ class CityTableBuilder extends TableBuilder
      * @var array|string
      */
     protected $actions = [
-        'delete'
+        'delete' => [
+            'handler' => Delete::class,
+        ],
     ];
 
     /**

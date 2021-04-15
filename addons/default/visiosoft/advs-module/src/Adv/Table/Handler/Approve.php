@@ -15,14 +15,16 @@ class Approve extends ActionHandler
         foreach ($selected as $id) {
             $defaultAdPublishTime = $settingRepository->value('visiosoft.module.advs::default_published_time');
 
-            $ad = $model->newQuery()->find($id);
-            $ad->update([
-                'status' => 'approved',
-                'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
-                'publish_at' => date('Y-m-d H:i:s')
-            ]);
-            event(new ChangedStatusAd($ad));//Create Notify
+            if ($ad = $model->newQuery()->find($id)) {
 
+                $ad->update([
+                    'status' => 'approved',
+                    'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+                    'publish_at' => date('Y-m-d H:i:s')
+                ]);
+
+                event(new ChangedStatusAd($ad));//Create Notify
+            }
         }
 
         if ($selected) {

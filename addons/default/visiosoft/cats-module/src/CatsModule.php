@@ -28,8 +28,8 @@ class CatsModule extends Module
         'category' => [
             'buttons' => [
                 'new_category',
-            ],
-        ],
+            ]
+        ]
     ];
 
 }

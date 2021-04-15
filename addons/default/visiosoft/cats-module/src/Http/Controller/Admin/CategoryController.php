@@ -1,21 +1,30 @@
 <?php namespace Visiosoft\CatsModule\Http\Controller\Admin;
 
-use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
+use Anomaly\FilesModule\File\FileSanitizer;
+use Anomaly\FilesModule\File\FileUploader;
+use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
-use Sunra\PhpSimple\HtmlDomParser;
+use League\Flysystem\MountManager;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Command\CalculateAdsCount;
+use Visiosoft\CatsModule\Category\Command\CalculateCategoryLevel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
 use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\CatsModule\Category\Traits\DeleteCategory;
 
 class CategoryController extends AdminController
 {
     private $categoryRepository;
     private $categoryEntryTranslationsModel;
     private $str;
+
+    use DeleteCategory;
 
     public function __construct(
         CategoryRepositoryInterface $categoryRepository,
@@ -31,12 +40,6 @@ class CategoryController extends AdminController
 
     public function index(CategoryTableBuilder $table, Request $request)
     {
-        if ($this->request->action == "delete") {
-            $CategoriesModel = new CategoryModel();
-            foreach ($this->request->id as $item) {
-                $CategoriesModel->deleteSubCategories($item);
-            }
-        }
         if (!isset($request->cat) || $request->cat == "") {
             $categories = CategoryModel::query()->where('parent_category_id', '')->orWhereNull('parent_category_id')->get();
             $categories = $categories->where('deleted_at', null);
@@ -54,9 +57,11 @@ class CategoryController extends AdminController
         return $table->render();
     }
 
-    public function create(CategoryFormBuilder $form, Request $request)
+    public function create(FileUploader $uploader, FolderRepositoryInterface $folderRepository, MountManager $manager)
     {
         if ($this->request->action == "save") {
+
+
             $all = $this->request->all();
             $id = $all['parent_category'];
             $parent_id = $all['parent_category'];
@@ -111,25 +116,32 @@ class CategoryController extends AdminController
                 }
             }
             if (empty($isMultiCat)) {
-                $this->categoryRepository->create(array_merge($translatableEntries, [
+                $category = $this->categoryRepository->create(array_merge($translatableEntries, [
                     'slug' => $all['slug'],
                     'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
-                    'icon' => $all['icon'],
                     'seo_keyword' => $all['seo_keyword'],
                     'seo_description' => $all['seo_description'],
                 ]));
+
+                $this->createIconFile($category->getId());
+
+                $this->dispatch(new CalculateCategoryLevel($category->getId()));
+
             } else {
                 for ($i = 0; $i < count($isMultiCat[0]); $i++) {
                     foreach ($isMultiCat as $cat) {
                         $translatableEntries = array_merge($translatableEntries, $cat[$i]);
                     }
-                    $this->categoryRepository->create(array_merge($translatableEntries, [
+                    $category = $this->categoryRepository->create(array_merge($translatableEntries, [
                         'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
                         'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
-                        'icon' => $all['icon'],
                         'seo_keyword' => $all['seo_keyword'],
                         'seo_description' => $all['seo_description'],
                     ]));
+
+                    $this->createIconFile($category->getId());
+
+                    $this->dispatch(new CalculateCategoryLevel($category->getId()));
                 }
             };
 
@@ -171,6 +183,9 @@ class CategoryController extends AdminController
             if ($form->hasFormErrors()) {
                 return $this->redirect->back();
             }
+
+            $this->createIconFile($id);
+
             $parent = $request->parent_category;
             if ($parent != "") {
                 return $this->redirect->to('/admin/cats?cat=' . $parent);
@@ -182,32 +197,80 @@ class CategoryController extends AdminController
         return $this->view->make('visiosoft.module.cats::cats/admin-cat')->with('id', $id);
     }
 
-    public function delete(CategoryRepositoryInterface $categoryRepository, Request $request, CategoryModel $categoryModel, $id)
+    public function delete(CategoryRepositoryInterface $categoryRepository, $id)
     {
-        $categoryRepository->DeleteCategories($id);
-        if ($request->parent != "") {
-            $subCats = $categoryRepository->getSubCatById($request->parent);
-            if (count($subCats)) {
-                return redirect('admin/cats?cat=' . $request->parent)->with('success', ['Category and related sub-categories deleted successfully.']);
+        if ($this->deleteCategory($id)) {
+            $this->messages->success(trans('streams::message.delete_success', ['count' => 1]));
+        }
+
+        if (!empty($parent = $this->request->parent)) {
+            if (count($categoryRepository->getCategoryById($parent))) {
+                return redirect('admin/cats?cat=' . $parent);
             }
         }
-        return redirect('admin/cats')->with('success', ['Category and related sub-categories deleted successfully.']);
+        return redirect('admin/cats');
     }
 
-    public function cleanSubcats()
+    public function cleanSubCategories()
     {
-        $cats = $this->categoryRepository->all();
-        $deletedCatsCount = 0;
-        foreach ($cats as $cat) {
-            $parentCatId = $cat->parent_category_id;
-            $parentCat = $this->categoryRepository->find($parentCatId);
-            if (is_null($parentCat) && !is_null($parentCatId)) {
-                $this->categoryEntryTranslationsModel->where('entry_id', $cat->id)->delete();
-                $this->categoryRepository->DeleteCategories($cat->id);
-                $deletedCatsCount++;
+        $sub_c = 1;
+        for ($i = 0; $i <= $sub_c; $i++) {
+            $cats = $this->categoryRepository->getDeletedCategories();
+            $delete_category_keys = $cats->pluck('id')->all();
+            $query_delete = $this->categoryRepository->newQuery()->whereIn('parent_category_id', $delete_category_keys);
+            if ($query_delete->count()) {
+                $query_delete->delete();
+                $sub_c++;
             }
         }
-        return redirect('admin/cats')->with('success', [$deletedCatsCount . ' categories has been deleted.']);
+
+        return redirect('admin/cats');
+    }
+
+    public function adCountCalc()
+    {
+        $this->dispatch(new CalculateAdsCount());
+
+        $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.cats::addon.title')]));
+        return redirect('admin/cats');
+    }
+
+    public function catLevelCalc()
+    {
+        $this->dispatch(new CalculateCategoryLevel());
+
+        $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.cats::addon.title')]));
+        return redirect('admin/cats');
+    }
+
+    public function createIconFile($category_id)
+    {
+        $folderRepository = app(FolderRepositoryInterface::class);
+        $manager = app(MountManager::class);
+
+        if ($file = $this->request->file('icon') and $folder = $folderRepository->findBySlug('category_icon') and $category = $this->categoryRepository->find($category_id)) {
+
+            $type = explode('.', $file->getClientOriginalName());
+            $type = end($type);
+
+            $file_location = $folder->getDisk()->getSlug() . '://' . $folder->getSlug() . '/' . FileSanitizer::clean($category_id . "." . $type);
+
+            $file_url = '/files/' . $folder->getSlug() . '/' . FileSanitizer::clean($category_id . "." . $type);
+
+            if (Storage::exists($file_location)) {
+                Storage::delete($file_location);
+            }
+
+            try {
+                $manager->put($file_location, file_get_contents($file->getRealPath()));
+
+                $category->setCategoryIconUrl($file_url);
+
+            } catch (\Exception $exception) {
+                $this->messages->error([$exception->getMessage()]);
+            }
+
+        }
     }
 
 }

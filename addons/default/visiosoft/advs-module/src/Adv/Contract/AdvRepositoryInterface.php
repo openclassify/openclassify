@@ -4,8 +4,6 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryRepositoryInterface;
 
 interface AdvRepositoryInterface extends EntryRepositoryInterface
 {
-    public function findById($id);
-
     public function searchAdvs(
         $type, $param = null, $customParameters = null,
         $limit = null, $category = null, $city = null, $paginate = true
@@ -39,7 +37,7 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function getByCat($catID, $level = 1, $limit = 20);
 
-    public function countByCat($catID, $level = 1);
+    public function getAdsCountByCategory($catID, $level = 1);
 
     public function getCategoriesWithAdID($id);
 
@@ -53,5 +51,5 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function approveAds($adsIDs);
 
-    public function getUserAds($userID = null);
+    public function getUserAds($userID = null, $status = "approved");
 }

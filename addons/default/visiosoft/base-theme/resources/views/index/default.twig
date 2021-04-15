@@ -1,10 +1,8 @@
 <div class="home-container">
-
-
-
     <div class="row">
         <div class="col-md-4">{% include "visiosoft.theme.base::partials/categories" %}</div>
-        <div class="col-md-8"><div class="album  bg-light">
+        <div class="col-md-8">
+            <div class="album  bg-light">
                 {{ addBlock('index_top')|raw }}
 
                 <div class="row p-2">
@@ -19,8 +17,6 @@
                     {% endif %}
 
                 </div>
-
-
                 <div class="row list-classified-home">
                     {% for latestAd in latestAds() %}
                         <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
@@ -28,7 +24,8 @@
                                 <div class="row p-2" style="min-height: 150px;">
                                     <a href="{{ latestAd.detail_url }}">
                                         <div class="col-md-12 justify-content-center align-self-center">
-                                            <img class="card-img-top img-fluid img-thumbnail" src="{{ latestAd.cover_photo }}"
+                                            <img class="card-img-top img-fluid img-thumbnail"
+                                                 src="{{ latestAd.cover_photo }}"
                                                  style="height: 150px">
                                         </div>
                                     </a>
@@ -70,9 +67,4 @@
             {{ addBlock('index')|raw }}
         </div>
     </div>
-
-
-
-
-
 </div>

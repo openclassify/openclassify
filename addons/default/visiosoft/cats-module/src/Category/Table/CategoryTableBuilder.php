@@ -17,6 +17,14 @@ class CategoryTableBuilder extends TableBuilder
         'clean_subcategories' => [
             'href' => '/admin/cats/clean_subcats',
         ],
+        'adcountcalc' => [
+            'text' => 'visiosoft.module.cats::view.ad_count_calculate',
+            'href' => '/admin/cats/adcountcalc',
+        ],
+        'catLevelCalc' => [
+            'text' => 'visiosoft.module.cats::view.cat_level_calculate',
+            'href' => '/admin/cats/catlevelcalc',
+        ],
     ];
 
     /**
@@ -38,32 +46,6 @@ class CategoryTableBuilder extends TableBuilder
     ];
 
     /**
-     * The table buttons.
-     *
-     * @var array|string
-     */
-    protected $buttons = [
-        'edit' => [
-            'href' => '/admin/cats/edit/{entry.id}?parent={entry.parent_category_id}'
-        ],
-        'add_sub_category' => [
-            'icon' => 'fa fa-caret-square-o-down',
-            'type' => 'success',
-            'href' => '/admin/cats/create?parent={entry.id}'
-        ],
-        'sub_category' => [
-            'icon' => 'fa fa-caret-square-o-down',
-            'type' => 'success',
-            'href' => '/admin/cats?cat={entry.id}'
-        ],
-        'delete' => [
-            'icon' => 'fa fa-trash',
-            'type' => 'danger',
-            'href' => '/admin/cats/category/delete/{entry.id}?parent={entry.parent_category_id}'
-        ]
-    ];
-
-    /**
      * The table actions.
      *
      * @var array|string
@@ -80,7 +62,7 @@ class CategoryTableBuilder extends TableBuilder
      * @var array
      */
     protected $options = [
-        'table_view' => 'visiosoft.module.cats::table.table'
+        'table_view' => 'visiosoft.module.cats::table/table'
     ];
 
     /**

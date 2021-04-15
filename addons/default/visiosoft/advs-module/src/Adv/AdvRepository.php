@@ -10,6 +10,7 @@ use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Visiosoft\AdvsModule\Support\Command\Currency;
 use Visiosoft\CatsModule\Category\CategoryModel;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\LocationModule\District\DistrictModel;
@@ -29,11 +30,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         $this->model = $model;
         $this->fileRepository = $fileRepository;
         $this->folderRepository = $folderRepository;
-    }
-
-    public function findById($id)
-    {
-        return $this->model->orderBy('created_at', 'DESC')->where('advs_advs.id', $id)->first();
     }
 
     public function searchAdvs(
@@ -79,26 +75,21 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 $query = $query->whereIn('city', explode(',', array_first($param['city'])));
             }
             if (isset($param['district']) and !empty(array_filter($param['district']))) {
-                $query = $query->whereIn('district', explode(',',array_first($param['district'])));
+                $query = $query->whereIn('district', explode(',', array_first($param['district'])));
             }
             if (isset($param['neighborhood']) and !empty(array_filter($param['neighborhood']))) {
-                $query = $query->whereIn('neighborhood', explode(',',array_first($param['neighborhood'])));
+                $query = $query->whereIn('neighborhood', explode(',', array_first($param['neighborhood'])));
             }
             if (isset($param['village']) and !empty(array_filter($param['village']))) {
-                $query = $query->whereIn('village', explode(',',array_first($param['village'])));
+                $query = $query->whereIn('village', explode(',', array_first($param['village'])));
             }
         }
         if ($category) {
-            $cat = new CategoryModel();
-            if ($category) {
-                if ($category->parent_category_id == null) {
-                    $catLevel = 1;
-                } else {
-                    $catLevel = $cat->getCatLevel($category->id);
-                }
-                $catLevel = "cat" . $catLevel;
-                $query = $query->where($catLevel, $category->id);
-            }
+            $category_repository = app(CategoryRepositoryInterface::class);
+
+            $catLevel = $category_repository->getLevelById($category->id);
+            $catLevel = "cat" . $catLevel;
+            $query = $query->where($catLevel, $category->id);
         }
         if (!empty($param['user'])) {
             $query = $query->where('advs_advs.created_by_id', $param['user']);
@@ -147,6 +138,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $query = $query->where('is_get_adv', 1);
         }
 
+        if (!empty($param['created_at'])) {
+            $query = $query->whereDate('advs_advs.created_at', $param['created_at']);
+        }
+
         foreach ($param as $para => $value) {
             if (substr($para, 0, 3) === "cf_") {
                 $id = substr($para, 3);
@@ -155,7 +150,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         }
 
         if ($this->model->is_enabled('customfields')) {
-            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\cfController')->filterSearch($customParameters, $param, $query);
+            $query = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->filterSearch($customParameters, $param, $query);
         }
 
 //        //UPDATE `default_advs_advs` SET `coor` = (PointFromText('POINT(41.085022 28.804754)')) WHERE `default_advs_advs`.`id` = 8
@@ -304,7 +299,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             $thumbnail = $this->fileRepository->findByNameAndFolder($fileName, $folder);
             if (!$thumbnail) {
                 // Create thumbnail image
-                $image = Image::make(file_get_contents($adv->files[0]->url()));
+                $image = Image::make(file_get_contents($adv->files[0]->make()->url()));
                 $image->resize(
                     null,
                     setting_value('visiosoft.module.advs::thumbnail_height'),
@@ -420,14 +415,14 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         foreach ($ads as $index => $ad) {
             $ads[$index]->detail_url = $this->model->getAdvDetailLinkByModel($ad, 'list');
-            $ads[$index]->currency_price = app(Currency::class)->format($ad->price,$ad->currency);
+            $ads[$index]->currency_price = app(Currency::class)->format($ad->price, $ad->currency);
             $ads[$index] = $this->model->AddAdsDefaultCoverImage($ad);
         }
 
         return $ads;
     }
 
-    public function countByCat($catID, $level = 1)
+    public function getAdsCountByCategory($catID, $level = 1)
     {
         return DB::table('advs_advs')
             ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
@@ -519,13 +514,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
-    public function getUserAds($userID = null)
+    public function getUserAds($userID = null, $status = "approved")
     {
         $userID = auth_id_if_null($userID);
-        return $this->newQuery()
-            ->where('advs_advs.created_by_id', $userID)
-            ->where('status', 'approved')
-            ->where('finish_at', '>', date('Y-m-d H:i:s'))
+
+        $query = $this->newQuery()
+            ->where('advs_advs.created_by_id', $userID);
+
+        if ($status) {
+            $query = $query->where('status', $status);
+        }
+        return $query->where('finish_at', '>', date('Y-m-d H:i:s'))
             ->get();
     }
 }

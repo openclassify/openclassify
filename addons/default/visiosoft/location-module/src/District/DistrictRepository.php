@@ -46,4 +46,11 @@ class DistrictRepository extends EntryRepository implements DistrictRepositoryIn
             ->orderBy($orderBy, $direction)
             ->get();
     }
+
+    public function getDistrictByCityId($city) {
+        return $this->newQuery()
+            ->where('parent_city_id', $city)
+            ->orderBy('order','ASC')
+            ->get();
+    }
 }

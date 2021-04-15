@@ -14,7 +14,7 @@ class AdvTableFilters
     {
         $cities = $cityRepository->all()->pluck('name', 'id')->all();
 
-        $categories = $categoryRepository->mainCats()->pluck('name', 'id')->all();
+        $categories = $categoryRepository->getMainCategories()->pluck('name', 'id')->all();
 
         $builder->setFilters(
             [

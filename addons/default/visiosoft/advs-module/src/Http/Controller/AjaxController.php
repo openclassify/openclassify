@@ -50,14 +50,6 @@ class AjaxController extends PublicController
         return response()->json($datas);
     }
 
-    public function keySearch(Request $request)
-    {
-        $datas = [];
-        $catModel = new CategoryModel();
-        $datas['category'] = $catModel->searchKeyword($request->q, $request->selected);
-        return response()->json($datas);
-    }
-
     public function viewed(AdvModel $advModel, $id)
     {
         $advModel->viewed_Ad($id);

@@ -21,13 +21,13 @@
     color: #fff;
     position: absolute;
     z-index: 15;
-    right: 0px;
-    top: 0px;
+    right: 0;
+    top: 0;
 }
-#setimage {
+#setimage,#rotateImage,#deleteImage {
     padding: 9px 10px;
     color: white;
-    border-radius: 0px;
+    border-radius: 0;
     font-weight: bold;
 }
 /*Mobil Modu*/

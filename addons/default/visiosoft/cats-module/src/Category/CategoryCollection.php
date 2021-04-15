@@ -1,16 +1,14 @@
 <?php namespace Visiosoft\CatsModule\Category;
 
 use Anomaly\Streams\Platform\Entry\EntryCollection;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 
 class CategoryCollection extends EntryCollection
 {
 
-    public function mainCategories()
+    public function getMainCategories()
     {
-        return $this->filter(
-            function ($category) {
-                return (is_null($category->parent_category_id));
-            }
-        );
+        $category_repository = app(CategoryRepositoryInterface::class);
+        return $category_repository->getMainCategories();
     }
 }

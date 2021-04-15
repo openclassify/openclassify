@@ -4,5 +4,5 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 interface CityInterface extends EntryInterface
 {
-    public function getCities();
+
 }

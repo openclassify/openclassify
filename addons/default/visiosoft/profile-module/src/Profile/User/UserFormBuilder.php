@@ -9,6 +9,7 @@ class UserFormBuilder extends FormBuilder
     protected $model = UserModel::class;
 
     protected $fields = [
+    	'file',
         'first_name' => [
             'required' => true,
         ],

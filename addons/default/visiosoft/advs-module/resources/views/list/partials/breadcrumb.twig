@@ -1,18 +1,19 @@
-<nav aria-label="breadcrumb" class="d-none d-sm-block">
-    <ol class="breadcrumb">
-        <li class="breadcrumb-item">
-            <a href="{{ url('') }}" class="text-dark">
-                <i class="fas fa-home"></i>
+<div id="breadcrumb" class="border-bottom border-right border-left d-flex justify-content-between">
+    <div class="overflow-hidden d-flex align-items-center">
+        <span class="text-truncate">
+            <a href="{{ url('/') }}" data-toggle="tooltip" data-placement="bottom"
+               title="{{ trans("visiosoft.module.advs::field.home") }}">
                 {{ trans("visiosoft.module.advs::field.home") }}
             </a>
-        </li>
-        <li class="breadcrumb-item">
-            <a href="{{ url_route('visiosoft.module.advs::list') }}" class="text-dark">
-                {{ trans("visiosoft.module.advs::field.list") }}
-            </a>
-        </li>
+        </span>
 
-        {{ addBlock('ads-list/partials/breadcrumb',{'mainCats': mainCats, 'category': categoryId})|raw }}
+        {{ addBlock('ads-list/partials/breadcrumb', {'mainCats': mainCats, 'category': categoryId})|raw }}
 
-    </ol>
-</nav>
+    </div>
+
+    <div class="text-nowrap ml-3">
+
+        {{ addBlock('ads-list/partials/breadcrumb/action')|raw }}
+
+    </div>
+</div>

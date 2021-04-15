@@ -1,24 +1,18 @@
-{% if setting_value('visiosoft.module.location::hide_location_filter') == false %}
-    {% if setting_value('visiosoft.module.location::list_page_location') %}
-        <div class="card mb-3">
-            <div class="card-header breadcrumb mb-0" id="locationHeading">
-                <h5 class="mb-0">
-                    <button class="btn btn-link text-dark d-flex align-items-center" data-toggle="collapse"
-                            data-target="#location" aria-expanded="true" aria-controls="location">
-{#                        <img src="{{ img('visiosoft.module.location::images/location-icon.svg').url }}" class="mr-2"#}
-{#                             alt="location icon">#}
-                        <span>{{ trans("visiosoft.module.location::addon.title") }}</span>
-                    </button>
-                </h5>
-            </div>
-            <div id="location" class="collapse show overflow-auto" aria-labelledby="locationHeading">
-                {% include "visiosoft.module.location::ads-list/partials/location-fields" %}
-            </div>
+{% if setting_value('visiosoft.module.location::hide_location_filter') == false and setting_value('visiosoft.module.location::list_page_location') %}
+    <div id="location" class="border rounded filter-box p-3 mb-3 position-relative">
+        <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+            <p>{{ trans("visiosoft.module.location::addon.title") }}</p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
         </div>
-        <script>
-            var select_trans = "{{ trans('visiosoft.module.location::field.pick_option.name') }}";
-        </script>
-        {{ asset_add("scripts.js", "visiosoft.module.location::js/filterLocation.js") }}
-        {{ asset_add("styles.css", "visiosoft.module.location::css/filterLocation.css") }}
-    {% endif %}
+
+        {% include "visiosoft.module.location::ads-list/partials/location-fields" %}
+
+    </div>
+
+    <script>
+        var select_trans = "{{ trans('visiosoft.module.location::field.pick_option.name') }}";
+    </script>
+
+    {{ asset_add("scripts.js", "visiosoft.module.location::js/filterLocation.js") }}
+    {{ asset_add("styles.css", "visiosoft.module.location::css/filterLocation.css") }}
 {% endif %}

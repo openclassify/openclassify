@@ -98,7 +98,7 @@ return [
         'type' => 'anomaly.field_type.checkboxes',
         'config' => [
             'options' => function (\Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface $categoryRepository) {
-                return $categoryRepository->mainCats()->pluck('name', 'id')->all();
+                return $categoryRepository->getMainCategories()->pluck('name', 'id')->all();
             },
         ],
     ],
@@ -399,7 +399,7 @@ return [
         'type' => 'anomaly.field_type.checkboxes',
         'config' => [
             'options' => function (\Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface $categoryRepository) {
-                return $categoryRepository->mainCats()->pluck('name', 'id')->all();
+                return $categoryRepository->getMainCategories()->pluck('name', 'id')->all();
             },
         ],
     ],
