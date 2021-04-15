@@ -1,6 +1,6 @@
 # OpenClassify -  Laravel Classified Script Platform
 
-OpenClassify is the extensible and most advanced open source classified app build with Laravel and Pyrocms.
+OpenClassify is the extensible and most advanced open source classified app build with Laravel 8 and Pyrocms.
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/openclassify/openclassify/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/openclassify/openclassify/?branch=master)
 [![Build Status](https://scrutinizer-ci.com/g/openclassify/openclassify/badges/build.png?b=master)](https://scrutinizer-ci.com/g/openclassify/openclassify/build-status/master)
@@ -25,7 +25,7 @@ Openclassify support 22+ languages. If you'd like to contribute translations, pl
 
 ## Server Requirements
 
-- PHP = 7.2.x
+- PHP => 7.3
 - XML PHP Extension
 - PDO PHP Extension
 - cURL PHP Extension
