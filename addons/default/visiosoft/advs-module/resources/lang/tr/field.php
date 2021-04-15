@@ -212,7 +212,7 @@ return [
     'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
     'search_ad_result_prefix' => 'Aramanızda',
-    'search_ad_result_text' => '<strong>: <strong>: name</strong> aramanızda</strong> adet ilan bulundu',
+    'search_ad_result_text' => '  <strong>:name</strong> aramanızda <strong>:count</strong> adet ilan bulundu',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
