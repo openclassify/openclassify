@@ -19,11 +19,7 @@ class UserFormHandler
 
         $data = $builder->getPostData();
 
-        if ($builder->getPostValue('file') != null) {
-            $data['file_id'] = $builder->getPostValue('file');
-        } elseif (empty($builder->getPostValue('file'))) {
-            $data['file_id'] = null;
-        }
+        $data['file_id'] = $builder->getPostValue('file');
 
         $user = $userModel->find(\auth()->id());
         if ($user->email != $data['email']) {
