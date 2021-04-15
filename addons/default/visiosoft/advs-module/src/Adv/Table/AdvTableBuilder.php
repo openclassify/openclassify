@@ -27,7 +27,9 @@ class AdvTableBuilder extends TableBuilder
     protected $buttons = [];
 
     protected $actions = [
-        'delete',
+        'delete' => [
+            'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\Delete::class,
+        ],
         'approve' => [
             'handler' => \Visiosoft\AdvsModule\Adv\Table\Handler\Approve::class,
             'class' => 'btn btn-success'
@@ -49,8 +51,7 @@ class AdvTableBuilder extends TableBuilder
     protected $options = [
         'order_by' => [
             'id' => 'DESC',
-        ],
-        'table_view' => 'visiosoft.module.advs::admin/table/table'
+        ]
     ];
 
     protected $assets = [

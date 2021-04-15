@@ -8,11 +8,12 @@ class VisiosoftModuleProfileAddIndexTable extends Migration
 {
     public function up()
     {
-	    Schema::table('files_files', function (Blueprint $table) {
-		    $table->index('deleted_at');
-		    $table->index('name');
-		    $table->index('folder_id');
-	    });
+        // it broke installation
+        //	    Schema::table('files_files', function (Blueprint $table) {
+        //		    $table->index('deleted_at');
+        //		    $table->index('name');
+        //		    $table->index('folder_id');
+        //	    });
 
     }
 }

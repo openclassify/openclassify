@@ -24,25 +24,25 @@
         {% include 'visiosoft.module.cats::ads-list/partials/cat-filter' %}
     </div>
 
-    {{ addBlock('ads-list/partials/list-filter',{
-        'mainCats':mainCats,
-        'subCats':subCats,
-        'ranges':ranges,
-        'checkboxes':checkboxes,
-        'topfields' : topfields,
-        'selectDropdown' : selectDropdown,
-        'selectRange' : selectRange,
-        'selectImage' : selectImage,
-        'radio':radio,
-        'countries':countries,
-        'cities':cities,
-        'districts':districts,
-        'neighborhoods':neighborhoods,
-        'villages':villages,
-        'param':param,
-        'categoryId':categoryId,
-        'cityId':cityId
-    })|raw }}
+                        {{ addBlock('ads-list/partials/list-filter',{
+                            'mainCats':mainCats,
+                            'subCats':subCats,
+                            'ranges':ranges,
+                            'checkboxes':checkboxes,
+                            'topfields' : topfields,
+                            'selectDropdown' : selectDropdown,
+                            'selectRange' : selectRange,
+                            'selectImage' : selectImage,
+                            'radio':radio,
+                            'countries':countries,
+                            'cities':cities,
+                            'districts':districts,
+                            'neighborhoods':neighborhoods,
+                            'villages':villages,
+                            'param':param,
+                            'category':category,
+                            'cityId':cityId
+                        })|raw }}
 
     <!-- Price Filter Start -->
     {% include 'visiosoft.module.advs::list/partials/price-filter' %}

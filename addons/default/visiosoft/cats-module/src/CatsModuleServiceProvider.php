@@ -1,11 +1,20 @@
 <?php namespace Visiosoft\CatsModule;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
+use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
+use Visiosoft\AdvsModule\Adv\Event\DeletedAd;
+use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Illuminate\Routing\Router;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForChangedAdStatus;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForDeletedAd;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForEditedAdCategory;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForNewAd;
+use Visiosoft\CatsModule\Category\Table\Handler\Delete;
 
 class CatsModuleServiceProvider extends AddonServiceProvider
 {
@@ -46,11 +55,17 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $routes = [
-        'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubcats',
+        'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubCategories',
+        'admin/cats/adcountcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@adCountCalc',
+        'admin/cats/catlevelcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@catLevelCalc',
+
         'admin/cats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index',
         'admin/cats/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',
         'admin/cats/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@edit',
-        'admin/cats/category/delete/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@delete',
+        'admin/cats/category/delete/{id}' => [
+            'as' => 'visiosoft.module.cats::admin.delete_category',
+            'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@delete',
+        ],
 
         // Sitemap
         'sitemap.xml' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@index',
@@ -90,9 +105,18 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $listeners = [
-        //Visiosoft\CatsModule\Event\ExampleEvent::class => [
-        //    Visiosoft\CatsModule\Listener\ExampleListener::class,
-        //],
+        CreatedAd::class => [
+            CalculatedTotalForNewAd::class,
+        ],
+        EditedAdCategory::class => [
+            CalculatedTotalForEditedAdCategory::class,
+        ],
+        ChangedStatusAd::class => [
+            CalculatedTotalForChangedAdStatus::class,
+        ],
+        DeletedAd::class => [
+            CalculatedTotalForDeletedAd::class,
+        ],
     ];
 
     /**
@@ -190,16 +214,13 @@ class CatsModuleServiceProvider extends AddonServiceProvider
                 'category' => [
                     'buttons' => [
                         'new_category' => [
-                            'href' => '/admin/cats/create?parent='.$request->cat
+                            'href' => '/admin/cats/create?parent=' . $request->cat
                         ],
                     ],
-                ],
+                ]
             ];
             $this->addon->setSections($sections);
         }
-
         return parent::getOverrides();
     }
-
-
 }

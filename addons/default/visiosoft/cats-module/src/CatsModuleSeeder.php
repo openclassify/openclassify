@@ -9,6 +9,6 @@ class CatsModuleSeeder extends Seeder
      */
     public function run()
     {
-		//
+
     }
 }

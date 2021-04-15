@@ -112,7 +112,7 @@ class DatabaseSeeder extends Seeder
 			]
 		);
 
-		$repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
+		$repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/upgrade3.8/";
 		file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
 		file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
 		file_put_contents(storage_path('categories.sql'), fopen($repository . "categories.sql", 'r'));
@@ -193,6 +193,21 @@ class DatabaseSeeder extends Seeder
 				],
 			]);
 		};
+
+
+        //Create Category Icon Folder
+        if (!$this->folders->findBySlug('category_icon')) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en' => [
+                    'name' => 'Category Icon',
+                    'description' => 'A folder for Category Icon.',
+                ],
+                'slug' => 'category_icon',
+                'disk' => $disk
+            ]);
+        };
 
         Artisan::call('assets:clear');
     }

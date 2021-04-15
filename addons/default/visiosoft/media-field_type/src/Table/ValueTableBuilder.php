@@ -44,6 +44,7 @@ class ValueTableBuilder extends TableBuilder
      */
     protected $columns = [
         'path' => '{entry.path}',
+//        'path' => '<img src="/files/{entry.path}" width="64" height="48" />',
     ];
 
     /**
@@ -65,12 +66,12 @@ class ValueTableBuilder extends TableBuilder
         ],
         'rotate' => [
             'target' => '_blank',
-            'icon' => 'fa fa-repeat',
+            'icon' => 'fa fa-sync-alt',
             'type' => 'info',
             'text' => '',
             'class' => 'col-4',
             'attributes' => [
-                'id' => 'setimage',
+                'id' => 'rotateImage',
                 'onclick' => 'rotateImage(event, {entry.id})',
             ],
         ],
@@ -78,11 +79,11 @@ class ValueTableBuilder extends TableBuilder
             'target' => '_blank',
             'icon' => 'fa fa-trash',
             'type' => 'danger',
-            'text' => '',
+            'text' => 'visiosoft.field_type.media::button.delete',
             'class' => 'col-4 deleteImage',
             'attributes' => [
                 'onclick' => 'deleteImage(event, {entry.id})',
-                'id' => 'setimage',
+                'id' => 'deleteImage',
             ],
         ],
     ];
@@ -96,8 +97,8 @@ class ValueTableBuilder extends TableBuilder
         'limit' => 9999,
         'show_headers' => false,
         'sortable_headers' => false,
-        'table_view' => 'visiosoft.field_type.media::table/table',
         'no_results_message' => 'visiosoft.field_type.media::message.no_files_selected',
+        'table_view' => 'visiosoft.field_type.media::table/table'
     ];
 
     /**

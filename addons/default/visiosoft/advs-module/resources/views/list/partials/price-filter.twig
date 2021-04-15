@@ -1,14 +1,16 @@
-{% set isHidden = false %}
-
-{% for cat in cats %}
-    {% if request().segment(2) == cat.slug %}
-        {% set isHidden = true %}
-    {% endif %}
-{% endfor %}
-
-{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden%}
-    {% set hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories') %}
+{% set hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories') %}
+{% if (hidePriceCats != null) %}
     {% set cats = entries('cats','category').whereIn('id', hidePriceCats).get() %}
+    {% set isHidden = false %}
+
+    {% for cat in cats %}
+        {% if request().segment(2) == cat.slug %}
+            {% set isHidden = true %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden %}
+
     {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
 
     <div id="price" class="border rounded filter-box p-3 mb-3">

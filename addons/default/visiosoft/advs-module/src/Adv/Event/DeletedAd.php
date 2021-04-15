@@ -1,17 +1,21 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Event;
 
-
 class DeletedAd
 {
-    protected $entry;
+    private $ad;
 
-    public function __construct($entry)
+    public function __construct($ad)
     {
-        $this->entry = $entry;
+        $this->ad = $ad;
+    }
+
+    public function getAdDetail()
+    {
+        return $this->ad;
     }
 
     public function getEntry()
     {
-        return $this->entry;
+        return $this->ad;
     }
 }
