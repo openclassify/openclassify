@@ -136,7 +136,7 @@ Emek Sancar @emeksancar
 
 Ozcan Durak @ozcandurak
 
-Dia @Diatrex
+Dia @diashalabi
 
 ## Thanks to
 
