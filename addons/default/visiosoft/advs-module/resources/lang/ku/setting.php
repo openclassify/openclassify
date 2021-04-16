@@ -262,4 +262,7 @@ return [
         'name' => 'Vebijarkên Hilbera Berfireh',
         'instructions' => 'Destûrê dide ku hûn ji bo hilberê agahdariya pargîdanî û bihayê bikin'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];
