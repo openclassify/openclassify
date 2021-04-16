@@ -262,4 +262,7 @@ return [
         'name' => 'خيارات المنتج التفصيلية',
         'instructions' => 'يسمح لك بإدخال معلومات المخزون والسعر للمنتج'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];
