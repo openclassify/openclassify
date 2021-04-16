@@ -262,4 +262,7 @@ return [
         'name' => 'Opsione të hollësishme të produktit',
         'instructions' => 'Ju lejon të futni informacione mbi stokun dhe çmimet për produktin'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];
