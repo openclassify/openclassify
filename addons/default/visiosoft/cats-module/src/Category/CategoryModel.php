@@ -64,4 +64,9 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
     {
         $this->update(['icon' => $url]);
     }
+
+    public function getSubCategories()
+    {
+        return $this->where('parent_category_id', $this->getId())->get();
+    }
 }
