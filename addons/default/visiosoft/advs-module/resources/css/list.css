@@ -271,7 +271,7 @@ a.sort-by-open-dropdown:hover {
         z-index: 999;
         display: flex !important;
         flex-direction: column;
-        justify-content: center;
+        justify-content: start;
         list-style: none;
     }
 
