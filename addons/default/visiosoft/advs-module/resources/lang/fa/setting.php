@@ -263,4 +263,7 @@ return [
         'name' => 'گزینه های دقیق محصول',
         'instructions' => 'به شما امکان می دهد اطلاعات موجودی و قیمت محصول را وارد کنید'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];
