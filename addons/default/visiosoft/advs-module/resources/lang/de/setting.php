@@ -262,4 +262,7 @@ return [
         'name' => 'Detaillierte Produktoptionen',
         'instructions' => 'Ermöglicht die Eingabe von Lager- und Preisinformationen für das Produkt'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];
