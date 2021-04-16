@@ -8,13 +8,12 @@
 				<li class="categories-list-li category-icon text-truncate d-flex justify-content-between text-dark">
 					<a href="{{ url_current() }}?show=all" class="sub-category show-all">
 						<span>
-							{{ trans('visiosoft.theme.sahibinden::field.show_all_for_cats', {cat_name: mainCats|last.val})}}
+							{{ trans('visiosoft.theme.sahibinden::field.show_all_for_cats', {cat_name: mainCats|last.name})}}
 						</span>
 					<span>
 			            {% if setting_value('visiosoft.module.advs::show_ads_count') %}
-							{% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(mainCats[1].id) %}
 			                <span class="text-muted main-advs-count">
-			                    ({{ catAdsCount }})
+			                    ({{ mainCats|first.count }})
 			                </span>
 						{% endif %}
 						<i class="fa fa-angle-right"></i>
@@ -35,9 +34,8 @@
 						<span>
 				            {% if setting_value('visiosoft.module.advs::show_ads_count') %}
 								{% set catLevel = getParentsCount(sub_category.id) + 1 %}
-								{% set catAdsCount = entries('advs', 'advs').countAdsByCategoryId(sub_category.id, catLevel) %}
 		                        <span class="text-muted advs-count mr-1">
-		                            ({{ catAdsCount }})
+		                            ({{ sub_category.count }})
 		                        </span>
 							{% endif %}
 							<i class="fa fa-angle-right mt-1"></i>
