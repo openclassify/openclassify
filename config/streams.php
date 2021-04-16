@@ -15,7 +15,7 @@ return [
 
     'listeners' => [
         \Anomaly\Streams\Platform\Event\Booted::class => [
-           // \App\Listeners\Translations::class
+            \App\Listeners\Translations::class
         ],
         \Anomaly\Streams\Platform\Ui\Form\Event\FormWasSaved::class => [
             \App\Listeners\EnableMaintenanceMode::class
