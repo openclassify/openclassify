@@ -262,4 +262,7 @@ return [
         'name' => 'Detailed Product Options',
         'instructions' => 'Allows you to enter stock and price information for the product'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];

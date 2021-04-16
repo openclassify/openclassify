@@ -1,5 +1,7 @@
 <div id="mobileListingPage" class="d-sm-none mb-5">
-
+    {% if setting_value('visiosoft.module.advs::show_subcats_mobile') %}
+        {% include "visiosoft.module.advs::list/partials/sub-categories-mobile" %}
+    {% endif %}
     {% if not hideBreadcrump %}
         {% include "visiosoft.module.advs::list/partials/mobile-breadcrumb" %}
     {% endif %}
