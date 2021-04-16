@@ -6,10 +6,8 @@ use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\NavigationModule\Link\LinkModel;
 use Anomaly\NavigationModule\Menu\Contract\MenuRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
-use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\UrlLinkTypeExtension\UrlLinkTypeModel;
 use Anomaly\UsersModule\Role\Contract\RoleRepositoryInterface;
-use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Database\Seeder;
@@ -17,6 +15,8 @@ use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use widgetSeeder;
+use ZipArchive;
 
 class DatabaseSeeder extends Seeder
 {
@@ -127,7 +127,7 @@ class DatabaseSeeder extends Seeder
 		Model::reguard();
 
 
-		$zip = new ZipArchive();
+		$zip = new \ZipArchive();
 		$zip->open(storage_path('images.zip'), ZipArchive::CREATE);
 		$zip->extractTo(storage_path('streams/default/files-module/local/images/'));
 		$zip->open(storage_path('cats.zip'), ZipArchive::CREATE);
