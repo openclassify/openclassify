@@ -262,4 +262,7 @@ return [
         'name' => 'Детальні параметри товару',
         'instructions' => 'Дозволяє вводити інформацію про запас та ціну товару'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];
