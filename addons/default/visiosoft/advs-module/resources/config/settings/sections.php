@@ -38,6 +38,7 @@ return [
                     'get_categories',
                     'listing_page_image',
                     'show_ads_count',
+                    'show_subcats_mobile',
                 ],
             ],
 	        'ads_detail' => [
