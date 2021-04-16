@@ -16,7 +16,7 @@ use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
-use widgetSeeder;
+use WidgetSeeder;
 use ZipArchive;
 
 class DatabaseSeeder extends Seeder
@@ -141,7 +141,7 @@ class DatabaseSeeder extends Seeder
         //Sync Files
         $this->command->call('files:sync');
 
-        $this->call(widgetSeeder::class);
+        $this->call(WidgetSeeder::class);
 
 
         //Create Store Icon Folder

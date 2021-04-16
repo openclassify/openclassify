@@ -5,7 +5,7 @@ use Anomaly\DashboardModule\Dashboard\Contract\DashboardRepositoryInterface;
 use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Database\Seeder;
 
-class widgetSeeder extends Seeder
+class WidgetSeeder extends Seeder
 {
     protected $widgets;
     protected $dashboards;
