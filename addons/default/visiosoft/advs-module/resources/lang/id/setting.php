@@ -262,4 +262,7 @@ return [
         'name' => 'Pilihan Produk Terperinci',
         'instructions' => 'Memungkinkan Anda memasukkan informasi stok dan harga produk'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ]
 ];
