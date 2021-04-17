@@ -263,6 +263,6 @@ return [
         'instructions' => 'Consente di inserire informazioni sullo stock e sul prezzo del prodotto'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Mostra le sottocategorie nella visualizzazione mobile',
     ]
 ];
