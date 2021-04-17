@@ -263,6 +263,6 @@ return [
         'instructions' => 'Lehetővé teszi a termék készlet- és árinformációinak megadását'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Alkategóriák megjelenítése mobil nézetben',
     ]
 ];
