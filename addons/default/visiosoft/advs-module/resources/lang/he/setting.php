@@ -263,6 +263,6 @@ return [
         'instructions' => 'מאפשר לך להזין מידע על מלאי ומחיר עבור המוצר'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'הצג קטגוריות משנה בתצוגת הנייד',
     ]
 ];
