@@ -263,6 +263,6 @@ return [
         'instructions' => 'Омогућава вам да унесете информације о залихама и ценама производа'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Прикажите поткатегорије на мобилном приказу',
     ]
 ];
