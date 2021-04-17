@@ -263,6 +263,6 @@ return [
         'instructions' => 'Позволяет вводить информацию о наличии и цене продукта.'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Показывать подкатегории в мобильном представлении',
     ]
 ];
