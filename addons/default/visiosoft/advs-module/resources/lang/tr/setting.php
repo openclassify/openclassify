@@ -263,6 +263,6 @@ return [
         'instructions' => 'Ürüne ait stok ve fiyat bilgilerini girmenizi sağlar'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Alt kategorileri mobil görünümde göster',
     ]
 ];
