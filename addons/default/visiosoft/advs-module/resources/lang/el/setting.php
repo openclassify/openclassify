@@ -263,6 +263,6 @@ return [
         'instructions' => 'Σας επιτρέπει να εισαγάγετε πληροφορίες για το απόθεμα και την τιμή για το προϊόν'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Εμφάνιση υποκατηγοριών σε προβολή για κινητά',
     ]
 ];
