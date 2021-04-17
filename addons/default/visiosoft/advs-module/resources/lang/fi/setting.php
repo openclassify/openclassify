@@ -263,6 +263,6 @@ return [
         'instructions' => 'Voit antaa tuotteen varasto- ja hintatiedot'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Näytä alaluokat mobiilinäkymässä',
     ]
 ];
