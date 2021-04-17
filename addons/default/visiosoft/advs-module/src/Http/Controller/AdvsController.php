@@ -1106,4 +1106,34 @@ class AdvsController extends PublicController
         }
         return $response;
     }
+    public function stockControl(Request $request, AdvRepositoryInterface $advRepository)
+    {
+        $quantity = $request->quantity;
+        $id = $request->id;
+        $type = $request->type;
+        if ($request->dataType === 'ad-configuration') {
+            $optionConf = new  OptionConfigurationModel();
+            $adv = $optionConf->newQuery()->find($id);
+            $status = $adv->stockControl($id, $quantity);
+        } else {
+            $advmodel = new AdvModel();
+            $adv = $advmodel->getAdv($id);
+            $status = $advmodel->stockControl($id, $quantity);
+        }
+
+        $response = array();
+        if ($status == 1) {
+            $response['newQuantity'] = $advRepository->getQuantity($quantity, $type, $adv);
+
+        } else {
+            $response['newQuantity'] = $adv->stock;
+        }
+
+        $response['newPrice'] = $adv->price * $response['newQuantity'];
+
+        $response['newPrice'] = app(Currency::class)->format($response['newPrice'], strtoupper($adv->currency));
+        $response['status'] = $status;
+        $response['maxQuantity'] = $adv->stock;
+        return $response;
+    }
 }
