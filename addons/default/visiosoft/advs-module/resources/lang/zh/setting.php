@@ -263,6 +263,6 @@ return [
         'instructions' => '允许您输入产品的库存和价格信息'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => '在移动视图中显示子类别',
     ]
 ];
