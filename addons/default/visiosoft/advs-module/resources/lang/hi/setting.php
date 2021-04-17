@@ -263,6 +263,6 @@ return [
         'instructions' => 'आपको उत्पाद के लिए स्टॉक और मूल्य की जानकारी दर्ज करने की अनुमति देता है'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'मोबाइल दृश्य पर उपश्रेणियाँ दिखाएँ',
     ]
 ];
