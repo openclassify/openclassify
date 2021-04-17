@@ -263,6 +263,6 @@ return [
         'instructions' => 'Позволява ви да въведете информация за запасите и цените на продукта'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Показване на подкатегории в мобилен изглед',
     ]
 ];
