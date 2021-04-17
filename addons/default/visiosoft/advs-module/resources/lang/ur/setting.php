@@ -263,6 +263,6 @@ return [
         'instructions' => 'آپ کو مصنوعات کے ل stock اسٹاک اور قیمت کی معلومات داخل کرنے کی اجازت دیتا ہے'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'موبائل ویو پر ذیلی زمرہ جات دکھائیں',
     ]
 ];
