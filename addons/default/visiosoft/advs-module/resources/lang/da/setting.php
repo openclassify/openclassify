@@ -263,6 +263,6 @@ return [
         'instructions' => 'Giver dig mulighed for at indtaste lager- og prisoplysninger for produktet'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Vis underkategorier i mobilvisning',
     ]
 ];
