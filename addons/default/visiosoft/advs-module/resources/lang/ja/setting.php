@@ -263,6 +263,6 @@ return [
         'instructions' => '製品の在庫および価格情報を入力できます'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'モバイルビューでサブカテゴリを表示する',
     ]
 ];
