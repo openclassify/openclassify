@@ -263,6 +263,6 @@ return [
         'instructions' => 'Permite inserir informações de estoque e preço do produto'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Mostrar subcategorias na visualização móvel',
     ]
 ];
