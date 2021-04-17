@@ -263,6 +263,6 @@ return [
         'instructions' => 'Permet introduir informació sobre existències i preus del producte'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Mostra subcategories a la visualització per a mòbils',
     ]
 ];
