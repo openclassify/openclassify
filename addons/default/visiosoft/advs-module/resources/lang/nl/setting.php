@@ -263,6 +263,6 @@ return [
         'instructions' => 'Hiermee kunt u voorraad- en prijsinformatie voor het product invoeren'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Toon subcategorieën op mobiele weergave',
     ]
 ];
