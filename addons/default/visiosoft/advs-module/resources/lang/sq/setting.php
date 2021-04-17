@@ -263,6 +263,6 @@ return [
         'instructions' => 'Ju lejon të futni informacione mbi stokun dhe çmimet për produktin'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Shfaq nënkategoritë në pamjen e celularëve',
     ]
 ];
