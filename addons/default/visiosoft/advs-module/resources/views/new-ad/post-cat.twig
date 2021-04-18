@@ -45,11 +45,13 @@
                         </div>
                     {% endfor %}
 
-                    <div class="cat-item mb-2 shadow-sm border rounded align-items-center">
+                    <div class="cat-item mb-2 shadow-sm border rounded align-items-center mr-2">
                         <div class="cat-item-3">
                             <div class="section next-stap post-option post-icon px-4 text-center py-2">
-                                {{ img('visiosoft.module.advs::images/check.svg').data|raw }}
-                                {{ img('visiosoft.module.advs::images/cross.svg').data|raw }}
+                                <div class="cat-item-icons post-icon d-flex align-items-center justify-content-center">
+                                    {{ img('visiosoft.module.advs::images/check.svg').data|raw }}
+                                    {{ img('visiosoft.module.advs::images/cross.svg').data|raw }}
+                                </div>
                                 <div class="next-content"></div>
                             </div>
                         </div>
@@ -63,7 +65,9 @@
             </form>
         </div>
     </section>
-
+    <script>
+        let isRtl = '{{ locale().isRtl() }}';
+    </script>
     {{ addBlock('post-cat/section') }}
 
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/cats.js") }}
