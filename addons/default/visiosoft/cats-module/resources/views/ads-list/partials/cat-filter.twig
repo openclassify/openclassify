@@ -4,7 +4,7 @@
 
         <li>
             <div class="d-flex">
-                {% if (not categoryId) or (loop.first and categoryId) %}
+                {% if (not category) or (loop.first and category) %}
                     {% set categoryIcon = (maincat.icon.value) ? maincat.icon.value : img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').url %}
                     <img src="{{ categoryIcon }}" alt="{{ main_category.name }}" class="img-responsive">
                 {% endif %}

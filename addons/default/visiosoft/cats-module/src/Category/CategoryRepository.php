@@ -102,10 +102,14 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
                     $parents_count++;
                 }
             }
-
             return $parents;
         }
         return null;
+    }
+
+    public function getParentCategoryByOrder($id)
+    {
+        return array_reverse($this->getParentCategoryById($id));
     }
 
     public function getLevelById($id)
