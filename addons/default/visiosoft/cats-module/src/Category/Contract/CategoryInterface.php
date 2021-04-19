@@ -4,6 +4,8 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 interface CategoryInterface extends EntryInterface
 {
+    public function getCat($id);
+
     public function getParentCats($id, $type = null, $noMainCat = true);
 
     public function getMetaKeywords();
