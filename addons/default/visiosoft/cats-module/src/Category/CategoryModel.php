@@ -5,6 +5,44 @@ use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 
 class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 {
+    public function getParentCats($id, $type = null, $noMainCat = true)
+    {
+        $cat = $this->getCat($id);
+        $catNames = array();
+        $cat_ids = array();
+        $catNames[] = $cat->name;
+        $cat_ids[] = $cat->id;
+        $subCat = $cat->parent_category_id;
+        if ($subCat != null) {
+            for ($i = 0; $i < 10; $i++) {
+                $parCat = $this->getCat($subCat);
+                if (isset($parCat)) {
+                    if ($parCat->parent_category_id == "") {
+                        if ($type == "add_main")
+                            $catNames[] = $parCat->name;
+                        if ($noMainCat) {
+                            break;
+                        }
+                    }
+                    $catNames[] = $parCat->name;
+                    $cat_ids[] = $parCat->id;
+                    $subCat = $parCat->parent_category_id;
+                }
+            }
+        }
+        if ($type == 'category_ids') {
+            return CategoryModel::query()
+                ->whereIn('cats_category.id', $cat_ids)
+                ->whereRaw('deleted_at IS NULL')
+                ->orderBy('cats_category.id', 'asc')
+                ->get();
+        }
+        if ($type == "parent_id") {
+            $cat_ids = array_reverse($cat_ids);
+            return $cat_ids[0];
+        }
+        return $catNames;
+    }
 
     public function getMetaKeywords()
     {
