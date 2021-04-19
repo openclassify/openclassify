@@ -25,7 +25,6 @@
                         </div>
                     </div>
                     <div class="ml-4 mt-1">
-                        <p class="id-data">#{{ adv.id }}</p>
                         <h6 class="mb-1">
                             <a href="{{ adv.detail_url }}">{{ adv.name }}</a>
                         </h6>
@@ -36,9 +35,11 @@
                             </p>
                         {% endif %}
                         {% if showLocation %}
-                            <p class="location-data">{{ adv.country_name}}  / {{ adv.city_name }}</p>
+                            <p class="location-data">{{ adv.country_name }} / {{ adv.city_name }}</p>
                         {% endif %}
-                        <p class="date-data">{{ adv.publish_at.value|date('d F Y') }}</p>
+                        {% if setting_value('visiosoft.module.advs::market_place') %}
+                            <p class="date-data">{{ adv.publish_at.value|date('d/m/Y') }}</p>
+                        {% endif %}
                     </div>
                 </div>
             </div>

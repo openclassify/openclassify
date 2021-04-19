@@ -258,11 +258,11 @@ class AdvsController extends PublicController
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
 
-	        $foreign_currencies = json_decode($advs[$index]->foreign_currencies, true);
-		        if (isset($_COOKIE['currency']) && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
-			        $advs[$index]->currency = $_COOKIE['currency'];
-			        $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
-		        }
+            $foreign_currencies = json_decode($advs[$index]->foreign_currencies, true);
+            if (isset($_COOKIE['currency']) && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+                $advs[$index]->currency = $_COOKIE['currency'];
+                $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
+            }
 
         }
         $seenList = array();
@@ -280,15 +280,8 @@ class AdvsController extends PublicController
 
 
         if ($category) {
-            $mainCats = $this->category_repository->getParentCategoryById($category->id);
-            $subCats = $this->category_repository->getCategoryById($category->id);
-
-            //if there is no subcategory
-            if (count($subCats) < 1 and count($mainCats) > 1) {
-                //fetch subcategories of the last category
-                $subCats = $this->category_repository->getCategoryById($mainCats[1]['id']);
-                unset($mainCats[0]);//remove last category
-            }
+            $mainCats = $this->category_repository->getParentCategoryByOrder($category->id);
+            $subCats = $category->getSubCategories();
             $allCats = false;
         } else {
             $mainCats = $this->category_repository->getMainCategories();
@@ -586,11 +579,11 @@ class AdvsController extends PublicController
 
             $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
-	        $foreign_currencies = json_decode($adv->foreign_currencies, true);
-	        if (isset($_COOKIE['currency']) && $_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
-		        $adv->currency = $_COOKIE['currency'];
-		        $adv->price = $foreign_currencies[$_COOKIE['currency']];
-	        }
+            $foreign_currencies = json_decode($adv->foreign_currencies, true);
+            if (isset($_COOKIE['currency']) && $_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+                $adv->currency = $_COOKIE['currency'];
+                $adv->price = $foreign_currencies[$_COOKIE['currency']];
+            }
 
             // Check if hide price
             $hidePrice = false;
@@ -1034,7 +1027,7 @@ class AdvsController extends PublicController
             }
 
             $adv->update($params);
-            $this->event->dispatch(new EditedAdCategory($before_editing_ad_params,$adv));
+            $this->event->dispatch(new EditedAdCategory($before_editing_ad_params, $adv));
             $this->messages->success(trans('visiosoft.module.advs::message.updated_category_msg'));
             return redirect('/advs/edit_advs/' . $id);
         }
@@ -1106,6 +1099,7 @@ class AdvsController extends PublicController
         }
         return $response;
     }
+
     public function stockControl(Request $request, AdvRepositoryInterface $advRepository)
     {
         $quantity = $request->quantity;
