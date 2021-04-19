@@ -95,6 +95,8 @@ ul {
     }
 
     #categoryList {
+      max-height: 24rem;
+
       & > li {
         margin-bottom: .4rem;
 
