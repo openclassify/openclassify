@@ -5,6 +5,14 @@ use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 
 class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 {
+    public function getCat($id)
+    {
+        return CategoryModel::query()
+            ->where('cats_category.id', $id)
+            ->whereRaw('deleted_at IS NULL')
+            ->first();
+    }
+
     public function getParentCats($id, $type = null, $noMainCat = true)
     {
         $cat = $this->getCat($id);
