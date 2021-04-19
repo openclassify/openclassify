@@ -2,8 +2,6 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
-use Anomaly\Streams\Platform\Message\MessageBag;
-use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
 use Anomaly\Streams\Platform\Support\Currency;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
@@ -15,21 +13,15 @@ use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
-use Visiosoft\AdvsModule\Adv\Event\EditAd;
 use Visiosoft\AdvsModule\Adv\Event\EditedAd;
 use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
 use Visiosoft\AdvsModule\Adv\Event\PriceChange;
-use Visiosoft\AdvsModule\Adv\Event\ShowAdPhone;
 use Visiosoft\AdvsModule\Adv\Event\ViewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
-use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
-use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
-use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
-use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
@@ -48,8 +40,6 @@ class AdvsController extends PublicController
     private $adv_repository;
 
     private $optionConfigurationRepository;
-    private $productOptionRepository;
-    private $productOptionsValueRepository;
 
     private $country_repository;
 
@@ -62,7 +52,6 @@ class AdvsController extends PublicController
 
     private $village_model;
 
-    private $category_model;
     private $category_repository;
 
     private $requestHttp;
@@ -78,8 +67,6 @@ class AdvsController extends PublicController
         AdvRepositoryInterface $advRepository,
 
         OptionConfigurationRepositoryInterface $optionConfigurationRepository,
-        ProductoptionRepositoryInterface $productOptionRepository,
-        ProductoptionsValueRepositoryInterface $productOptionsValueRepository,
 
         CountryRepositoryInterface $country_repository,
 
@@ -92,7 +79,6 @@ class AdvsController extends PublicController
 
         VillageModel $village_model,
 
-        CategoryModel $categoryModel,
         CategoryRepositoryInterface $category_repository,
 
         OptionRepositoryInterface $optionRepository,
@@ -110,8 +96,6 @@ class AdvsController extends PublicController
         $this->adv_repository = $advRepository;
 
         $this->optionConfigurationRepository = $optionConfigurationRepository;
-        $this->productOptionRepository = $productOptionRepository;
-        $this->productOptionsValueRepository = $productOptionsValueRepository;
 
         $this->country_repository = $country_repository;
 
@@ -124,7 +108,6 @@ class AdvsController extends PublicController
 
         $this->village_model = $village_model;
 
-        $this->category_model = $categoryModel;
         $this->category_repository = $category_repository;
 
         $this->settings_repository = $settings_repository;
