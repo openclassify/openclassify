@@ -48,12 +48,12 @@ return [
     'popular_ads' => 'Popularni oglasi',
     'last_48_hours' => 'Poslednjih 48 sati',
     'secure_e-commerce_ads' => 'Sigurni oglasi za e-trgovinu',
-    'sms' => 'Send Text Message (SMS)',
-    'mail' => 'Send Mail',
+    'sms' => 'Pošaljite tekstualnu poruku (SMS)',
+    'mail' => 'Pošalji Email',
 
     // Register instruction seed
-    'register_instructions' => 'Register Instructions',
-    'list' => 'List',
-    'instruction_description' => 'Instruction Description',
-    'instruction_list' => 'Instruction List',
+    'register_instructions' => 'Uputstva za registraciju',
+    'list' => 'Lista',
+    'instruction_description' => 'Opis uputstva',
+    'instruction_list' => 'Instrukcije',
 ];
