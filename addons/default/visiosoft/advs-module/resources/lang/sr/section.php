@@ -2,63 +2,63 @@
 
 return [
     'advs' => [
-        'title' => 'Огласи',
+        'title' => 'Ads',
     ],
     'categories' => [
-        'title' => 'Категорије',
+        'title' => 'Categories',
     ],
     'countries' => [
-        'title' => 'Земље',
+        'title' => 'Countries',
     ],
     'cities' => [
-        'title' => 'Градови',
+        'title' => 'Cities',
     ],
     'districts' => [
-        'title' => 'Окрузи',
+        'title' => 'Districts',
     ],
     'neighborhoods' => [
-        'title' => 'Комшилуци',
+        'title' => 'Neighborhoods',
     ],
     'village' => [
-        'title' => 'Село',
+        'title' => 'Village',
     ],
     'custom_fields' => [
-        'title' => 'Прилагођена област',
+        'title' => 'Custom fields',
     ],
     'custom_field_advs' => [
-        'title' => 'Прилагођени теренски огласи',
+        'title' => 'Custom field ads',
     ],
     'cf_values' => [
-        'title' => 'Цф вредности',
+        'title' => 'Cf values',
     ],
     'fields' => [
-        'title' => 'прилагођена област'
+        'title' => 'Custom Fields'
     ],
     'assets_clear' => [
-        'name' => 'Средства јасна'
+        'name' => 'Assets Clear'
     ],
-    'general' => 'Генерал',
-    'ads' => 'Огласи',
-    'user' => 'Корисник',
-    'filter' => 'Филтер',
-    'create_ad' => 'Направите оглас',
+    'general' => 'General',
+    'ads' => 'Ads',
+    'user' => 'User',
+    'filter' => 'Filter',
+    'create_ad' => 'Create Ad',
     'options' => [
-        'title' => 'Опције',
+        'title' => 'Options',
     ],
-    'ads_image' => 'Имаге Имаге',
+    'ads_image' => 'Ads Image',
     'product_options' => [
-        'title' => 'Опције',
+        'title' => 'Options',
     ],
     'productoptions_value' => [
-        'title' => 'Опције Вредност',
+        'title' => 'Options Value',
     ],
     'option_configuration' => [
-        'title' => 'Конфигурација',
+        'title' => 'Configuration',
     ],
-    'translations' => 'Преводи',
+    'translations' => 'Translations',
     'status' => [
-        'title' => 'Статус',
+        'title' => 'Status',
     ],
-	'ads_detail' => 'Детаљи огласа',
+	'ads_detail' => 'Ads Detail',
 
 ];
