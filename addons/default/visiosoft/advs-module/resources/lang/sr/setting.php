@@ -2,36 +2,36 @@
 
 return [
     'auto_approve' => [
-        'name' => 'Auto Approve',
+        'name' => 'Automatsko odobrenje',
     ],
     'default_view_type' => [
-        'name' => 'Default View Type',
+        'name' => 'Podrazumevani tip prikaza',
     ],
     'hide_zero_price' => [
-        'name' => 'Hide Price if Zero',
-        'instructions' => 'Hide the price if the ad price is 0',
+        'name' => 'Sakrij cenu ako je 0',
+        'instructions' => 'Sakrij cenu akoje cena oglasa 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Estimated Pending Time',
-        'instructions' => 'In Hours',
+        'name' => 'Procenjeno vreme čekanja',
+        'instructions' => 'U satima',
     ],
     'default_published_time' => [
-        'name' => 'Default Publish Time',
+        'name' => 'Podrazumevano vreme objavljivanja',
     ],
     'address' => [
-        'name' => 'Contact Adress',
+        'name' => 'Kontakt adresa',
     ],
     'phone' => [
-        'name' => 'Contact Phone',
+        'name' => 'Kontakt telefon',
     ],
     'favicon' => [
         'name' => 'Favicon',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Map Long Coordinate',
+        'name' => 'Map Long Koordinate',
     ],
     'map_coordinates_lat' => [
-        'name' => 'Map Lat Coordinate',
+        'name' => 'Map Lat Koordinate',
     ],
     'iban_numbers' => [
         'name' => 'IBAN',
@@ -40,45 +40,45 @@ return [
         'name' => 'Logo',
     ],
     'ogImage' => [
-        'name' => 'Social Share Logo',
-        'warning'      => 'It should be at a resolution of 1200 x 630. ',
+        'name' => 'Logo za deljenje na društvenim mrežama',
+        'warning'      => 'Trebalo bi da bude u rezoluciji 1200x630. ',
 
     ],
     'currencies' => [
-        'name' => 'Active Currencies',
+        'name' => 'Aktivne valute',
     ],
     'latest-limit' => [
         'name' => 'Latest Limit',
     ],
     'site_address' => [
         'name' => 'Site address',
-        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
+        'warning'      => 'Automatski dodato www.  www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
     ],
 
     'default_country' => [
-        'name' => 'Default Ad Country',
+        'name' => 'Podrazumevana država Oglasa',
     ],
     'hide_price_categories' => [
-        'name' => 'Hide Price On Categories',
-        'instructions' => 'The price will be hidden when you create an ad or view an ad under these categories.'
+        'name' => 'Sakrij cenu u Kategorijama',
+        'instructions' => 'Cena će biti skrivena kada kreirate oglas ili pogledate oglas u okviru ovih kategorija.'
     ],
     'free_currencyconverterapi_key' => [
         'name' => 'Currency Converter API Key'
     ],
     'default_city' => [
-        'name' => 'Default Ad City',
+        'name' => 'Podrazumevani grad Oglasa',
     ],
     'default_district' => [
-        'name' => 'Default Ad District',
+        'name' => 'Podrazumevani deo grada u Oglasu',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Ad Neighborhood',
+        'name' => 'Podrazumevano susedstvo Oglasa',
     ],
     'default_currency' => [
-        'name' => 'Default Ad Currency',
+        'name' => 'Podrazumevana valuta Oglasa',
     ],
     'default_GET' => [
         'name' => 'Default Ad GET',
@@ -99,13 +99,13 @@ return [
         'name' => 'Listing Page Image',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Hide Standard Price Field',
+        'name' => 'Sakrij polje sa standardnom cenom',
     ],
     'hide_options_field' => [
-        'name' => 'Hide Options Field',
+        'name' => 'Hide Options polje',
     ],
     'hide_village_field' => [
-        'name' => 'Hide Village Field',
+        'name' => 'Sakrij polje Selo',
     ],
     'hide_configurations' => [
         'name' => 'Hide the Configurations Button',
