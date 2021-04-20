@@ -5,7 +5,7 @@ return [
         'name' => 'Naslov'
     ],
     'order' => [
-        'name' => 'Order'
+        'name' => 'Redosled'
     ],
     'slug' => [
         'name' => 'Slug'
@@ -139,7 +139,7 @@ return [
     'sort' => 'Sortiraj',
     'sort_by' => 'Sortiraj po',
     'pick_option' => 'Izaberi opciju',
-    'pick_ordering' => 'Ordering',
+    'pick_ordering' => 'Redosled',
     'price_high' => 'Cena od više ka nižoj',
     'price_low' => 'Cena od niže ka višoj',
     'newest' => 'Najnovije',
