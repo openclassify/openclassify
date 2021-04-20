@@ -2,34 +2,34 @@
 
 return [
     'advs' => [
-        'name' => 'Advs',
+        'name' => 'Oglasi',
     ],
     'categories' => [
-        'name' => 'Categories',
+        'name' => 'Kategorije',
     ],
     'village' => [
-        'name' => 'Village',
+        'name' => 'Selo',
     ],
     'custom_fields' => [
-        'name' => 'Custom fields',
+        'name' => 'Prilagođena polja',
     ],
     'custom_field_advs' => [
-        'name' => 'Custom field advs',
+        'name' => 'Prilagođena polja oglasa',
     ],
     'cf_values' => [
-        'name' => 'Cf values',
+        'name' => 'Vrednosti prilagođenog polja',
     ],
     'options' => [
-        'name' => 'Options',
+        'name' => 'Opcije',
     ],
     'product_options' => [
-        'name' => 'Product Options',
+        'name' => 'Opcije proizvoda',
     ],
     'productoptions_value' => [
-        'name' => 'Options value',
+        'name' => 'Vrednosti opcija',
     ],
     'option_configuration' => [
-        'name' => 'Configuration',
+        'name' => 'Konfiguracija',
     ],
     'status' => [
         'name' => 'Status',
