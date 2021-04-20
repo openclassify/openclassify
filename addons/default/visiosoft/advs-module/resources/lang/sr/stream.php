@@ -2,36 +2,36 @@
 
 return [
     'advs' => [
-        'name' => 'Адвс',
+        'name' => 'Advs',
     ],
     'categories' => [
-        'name' => 'Категорије',
+        'name' => 'Categories',
     ],
     'village' => [
-        'name' => 'Село',
+        'name' => 'Village',
     ],
     'custom_fields' => [
-        'name' => 'Прилагођена област',
+        'name' => 'Custom fields',
     ],
     'custom_field_advs' => [
-        'name' => 'Адвс по мери',
+        'name' => 'Custom field advs',
     ],
     'cf_values' => [
-        'name' => 'Цф вредности',
+        'name' => 'Cf values',
     ],
     'options' => [
-        'name' => 'Опције',
+        'name' => 'Options',
     ],
     'product_options' => [
-        'name' => 'Опције производа',
+        'name' => 'Product Options',
     ],
     'productoptions_value' => [
-        'name' => 'Вредност опција',
+        'name' => 'Options value',
     ],
     'option_configuration' => [
-        'name' => 'Конфигурација',
+        'name' => 'Configuration',
     ],
     'status' => [
-        'name' => 'Статус',
+        'name' => 'Status',
     ],
 ];
