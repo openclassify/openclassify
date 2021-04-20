@@ -23,10 +23,10 @@ return [
         'name' => 'sitename'
     ],
     'activated' => [
-        'name' => 'User Active'
+        'name' => 'Korisnik aktivan'
     ],
     'enabled' => [
-        'name' => 'User Enable'
+        'name' => 'Korisnik Omogućen'
     ],
     'country' => [
         'name' => 'Država'
@@ -155,25 +155,25 @@ return [
         'name' => 'Arhivirani oglasi'
     ],
     'menu_pending_ads' => [
-        'name' => 'Pending approval'
+        'name' => 'Odobravanje u toku'
     ],
     'menu_delete_account' => [
-        'name' => 'Close account'
+        'name' => 'Zatvorite račun'
     ],
     'menu_my_ads' => [
-        'name' => 'My ads'
+        'name' => 'Moji oglasi'
     ],
     'menu_fav_ads' => [
-        'name' => 'Favourite ads'
+        'name' => 'Omiljeno'
     ],
     'menu_hello_msg' => [
-        'name' => 'Hello'
+        'name' => 'Pozdrav'
     ],
     'menu_last_msg' => [
-        'name' => 'You last logged in at'
+        'name' => 'Последњи пут сте се пријавили'
     ],
     'menu_packages' => [
-        'name' => 'My packages'
+        'name' => 'Paketi'
     ],
     'menu_adv_packages' => [
         'name' => 'Ads Packages'
@@ -185,60 +185,60 @@ return [
         'name' => 'Profile Details'
     ],
     'profile_photo' => [
-        'name' => 'Profile Photo'
+        'name' => 'Profilna slika'
     ],
     'adv_listing_banner' => [
-        'name' => 'Ads Listing Page Banner'
+        'name' => 'Baner stranice sa oglasima'
     ],
     'approve' => [
-        'name' => 'Approve'
+        'name' => 'Odobri'
     ],
     'approved' => [
-        'name' => 'Approved'
+        'name' => 'Odobreno'
     ],
     'pending' => [
-        'name' => 'Pending'
+        'name' => 'Na čekanju'
     ],
     'passive' => [
-        'name' => 'Passive'
+        'name' => 'Neaktivno'
     ],
     'pending_admin' => [
-        'name' => 'Pending'
+        'name' => 'Na čekanju'
     ],
     'menu_messages' => [
-        'name' => 'Messages'
+        'name' => 'Poruke'
     ],
     'menu_my_purchase' => [
-        'name' => 'My Purchase'
+        'name' => ' Kupovina'
     ],
     'menu_my_sales' => [
-        'name' => 'My Sales'
+        'name' => 'Prodaja'
     ],
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
-        'name' => 'Secure Trading'
+        'name' => 'Sigurno trgovanje'
     ],
     'right_secure_trading_msg' => [
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_support_subject' => [
-        'name' => '24/7 Support'
+        'name' => 'Podrška 24/7'
     ],
     'right_support_msg' => [
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_easy_trading_subject' => [
-        'name' => 'Easy Trading'
+        'name' => 'Jednostavno trgovanje'
     ],
     'right_easy_trading_msg' => [
         'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_need_help_subject' => [
-        'name' => 'Need Help?'
+        'name' => 'Trebate Pomoć?'
     ],
     'right_need_help_msg' => [
-        'name' => 'Give a call on'
+        'name' => 'Pozovite me na'
     ],
     'disable_account' => [
         'name' => 'Disable Account'
@@ -341,7 +341,7 @@ return [
         'name' => 'nije dostavljeno',
     ],
     'show_order_msg1' => [
-        'name' => 'Rezultat transakcije biće dostavljen putem pošte.',
+        'name' => 'Rezultat transakcije biće dostavljen na mail.',
     ],
     'show_order_msg2' => [
         'name' => 'Povrat novca biće izvršen ako proizvod nije isporučen u roku od jedne nedelje.',
@@ -351,86 +351,86 @@ return [
     ],
 
     'awaiting_payment' => [
-        'name' => 'Awaiting Payment',
+        'name' => 'Očekujem plaćanje',
     ],
     'please_entered_tracking_number' => [
-        'name' => 'Please Entered Tracking Number',
+        'name' => 'Molimo unesite Unesite broj za praćenje',
     ],
     'transport_days' => [
-        'name' => 'Transport Days',
+        'name' => 'Dani transporta',
     ],
     'product_not_delivered' => [
-        'name' => 'Product not delivered',
+        'name' => 'Proizvod nije isporučen',
     ],
     'status' => [
         'name' => 'Status',
     ],
     'cancel_sale' => [
-        'name' => 'Cancel Sale',
+        'name' => 'Otkaži prodaju',
     ],
     'send_again' => [
-        'name' => 'I Will Send Again',
+        'name' => 'Poslaću ponovo',
     ],
     'content' => [
-        'name' => 'Content',
+        'name' => 'Sadržaj',
     ],
     'preferences_settings' => [
         'name' => 'Preferences Settings',
     ],
 
     'corporate_settings' => [
-        'name' => 'Corporate Settings',
+        'name' => 'Korporativna podešavanja',
     ],
     'password' => [
-        'name' => 'Password',
+        'name' => 'Lozinka',
     ],
     'old_password' => [
-        'name' => 'Old password',
+        'name' => 'Stara lozinka',
     ],
     'new_password' => [
-        'name' => 'New password',
+        'name' => 'Nova lozinka',
     ],
     're_new_password' => [
-        'name' => 'Confirm password',
+        'name' => 'Potvrda lozinke',
     ],
     'confirm_password_input' => [
-        'name' => 'I confirm my password change',
+        'name' => 'Potvrđujem promenu lozinke',
     ],
     'create_address' => [
-        'name' => 'Create Address',
+        'name' => 'Kreiraj adresu',
     ],
     'edit_address' => [
-        'name' => 'Edit Address',
+        'name' => 'Izmeni adresu',
     ],
     'balance_limit' => [
-        'name' => 'Balance Limit',
+        'name' => 'Ograničenje stanja',
     ],
     'active_ads' => [
-        'name' => 'Active Ads',
+        'name' => 'Aktivni oglasi',
     ],
     'subscriptions' => [
-        'name' => 'Subscriptions',
+        'name' => 'Pretplate',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Go to Subscriptions Page',
+        'name' => 'Idite na stranicu sa pretplatama',
     ],
     'buy_package' => [
-        'name' => 'Buy Package',
+        'name' => 'Kupite paket',
     ],
     'expired_date' => [
-        'name' => 'Expired Date',
+        'name' => 'Datum isteka',
     ],
     'category' => [
-        'name' => 'Category',
+        'name' => 'Kategorija',
     ],
     'ad_limit' => [
-        'name' => 'Ad Limit',
+        'name' => 'Ograničenje oglasa',
     ],
     'publish_time' => [
-        'name' => 'Publish Time',
+        'name' => 'Vreme objave',
     ],
     'all_categories' => [
-        'name' => 'All Categories',
+        'name' => 'Sve kategorije',
     ],
     'day' => [
         'name' => 'Day',
