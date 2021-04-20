@@ -26,7 +26,7 @@ return [
         'title' => 'Prilagođena polja',
     ],
     'custom_field_advs' => [
-        'title' => 'Custom field ads',
+        'title' => 'Prilagođena polja oglasa',
     ],
     'cf_values' => [
         'title' => 'Vrednosti prilagođenog polja',
