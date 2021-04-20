@@ -14,13 +14,13 @@ return [
         'name' => 'Korisničko Ime'
     ],
     'display_name' => [
-        'name' => 'Display Name'
+        'name' => 'Ime koje se prikazuje'
     ],
     'email' => [
         'name' => 'Email adresa'
     ],
     'sitename' => [
-        'name' => 'sitename'
+        'name' => 'naziv sajta'
     ],
     'activated' => [
         'name' => 'Korisnik aktivan'
@@ -176,13 +176,13 @@ return [
         'name' => 'Paketi'
     ],
     'menu_adv_packages' => [
-        'name' => 'Ads Packages'
+        'name' => 'Paketi oglasa'
     ],
     'menu_time_packages' => [
-        'name' => 'Time Packages'
+        'name' => 'Vremenski paketi'
     ],
     'profile_details' => [
-        'name' => 'Profile Details'
+        'name' => 'Detalji profila'
     ],
     'profile_photo' => [
         'name' => 'Profilna slika'
@@ -241,44 +241,44 @@ return [
         'name' => 'Pozovite me na'
     ],
     'disable_account' => [
-        'name' => 'Disable Account'
+        'name' => 'Onemogući nalog'
     ],
     'disable_account_msg' => [
-        'name' => 'Your account will be disabled.
-                                    This operation cannot be undone'
+        'name' => 'Vaš račun će biti onemogućen.
+                                    Ova operacija se ne može poništiti'
     ],
 
-    'message_title' => 'Message Title',
-    'owner_name' => 'Message',
+    'message_title' => 'Naslov poruke',
+    'owner_name' => 'Poruka',
 
-    'favorites' => "Favorites",
-    'fav_advs' => 'Favorite Ads',
-    'fav_sellers' => "Fav Sellers",
-    'fav_searches' => "Fav Searches",
-    'posted_on' => "Posted On",
-    'message_details' => "Message Details",
-    'adv_no' => 'Ad No',
+    'favorites' => "Omiljeno",
+    'fav_advs' => 'Omiljeni oglasi',
+    'fav_sellers' => "Omiljeni prodavci",
+    'fav_searches' => "Sačuvane pretrage",
+    'posted_on' => "Postavljeno",
+    'message_details' => "Detalji poruke",
+    'adv_no' => 'Broj oglasa',
     'bill_address' => [
-        'name' => 'Bill Address',
+        'name' => 'Adresa za dostavu računa',
     ],
     'delivery_address' => [
-        'name' => 'Delivery Address',
+        'name' => 'Adresa za dostavu',
     ],
     'order_total' => [
-        'name' => 'Total',
+        'name' => 'Ukupno',
     ],
     'order_date' => [
-        'name' => 'Order Date',
+        'name' => 'Datum narudžbe',
     ],
     'order_no' => [
-        'name' => 'Order ID',
+        'name' => 'ID narudžbine',
     ],
     'order_detail' => [
-        'name' => 'Show Detail',
+        'name' => 'Pokaži detalje',
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => 'Detail',
+        'name' => 'Detalji',
     ],
     'back' => [
         'name' => 'Nazad',
@@ -293,7 +293,7 @@ return [
         'name' => 'Cena',
     ],
     'piece' => [
-        'name' => 'Piece',
+        'name' => 'Komad',
     ],
     'commission' => [
         'name' => 'Provizija',
@@ -305,7 +305,7 @@ return [
         'name' => 'Ukupno',
     ],
     'sale' => [
-        'name' => 'Sale',
+        'name' => 'Prodaja',
     ],
     'awaiting_tracking_number' => [
         'name' => 'Čeka se broj za praćenje',
@@ -375,7 +375,7 @@ return [
         'name' => 'Sadržaj',
     ],
     'preferences_settings' => [
-        'name' => 'Preferences Settings',
+        'name' => 'Prodešavanja',
     ],
 
     'corporate_settings' => [
@@ -433,67 +433,67 @@ return [
         'name' => 'Sve kategorije',
     ],
     'day' => [
-        'name' => 'Day',
+        'name' => 'Dan',
     ],
 
     'individual' => [
-        'name' => 'individual',
+        'name' => 'Lični',
     ],
     'corporate' => [
-        'name' => 'Corporate',
+        'name' => 'Korporativni',
     ],
 
     'details' => [
-        'name' => 'Details'
+        'name' => 'Detalji'
     ],
     'choose' => [
-        'name' => 'Choose'
+        'name' => 'Izaberite'
     ],
-    'my_address' => 'My Address',
+    'my_address' => 'Moja adresa',
 
     'company' => [
-        'name' => 'Company Name'
+        'name' => 'Ime kompanije'
     ],
     'tax_office' => [
-        'name' => 'Tax Office'
+        'name' => 'Poreska uprava'
     ],
     'tax_number' => [
-        'name' => 'Tax Number'
+        'name' => 'Poreski broj'
     ],
 
     // Profile page
-    'my_profile' => 'My Profile',
-    'edit_profile' => 'Edit Profile',
-    'edit_details' => 'Edit Details',
-    'update' => 'Update',
-    'change_password' => 'Change Password',
-    'choose_an_option' => 'Choose an option...',
-    'change_status' => 'Change Status',
-	'profile_settings' => 'Profile Settings',
-	'profile_detail' => 'Profile Detail',
+    'my_profile' => 'Moj profil',
+    'edit_profile' => 'Urеdi profil',
+    'edit_details' => 'Uredi detalje',
+    'update' => 'Ažuriraj',
+    'change_password' => 'Promeni lozinku',
+    'choose_an_option' => 'Odaberite Opciju...',
+    'change_status' => 'Promeni status',
+	'profile_settings' => 'Podešavanja profila',
+	'profile_detail' => 'Detalji profila',
 
     // Register page
-    'accept_terms_label' => 'I accept the terms.',
-    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
-    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
-    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
+    'accept_terms_label' => 'Prihvatam uslove.',
+    'accept_protection_law_label' => 'Prihvatam uslove zakona o <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '"target=" _ blank"> Zaštiti ličnih podataka.</a>',
+    'accept_privacy_terms_label' => 'Prihvatam <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '"target="_ blank ">uslove privatnosti </a>.',
+    'receive_sms_emails_label' => 'Želim da primam e-poštu i sms.',
 
     // Register Type
     'personal' => [
-        'name' => 'Personal'
+        'name' => 'Lični'
     ],
 
 	'education_part' => [
-		'name' => 'State of Education'
+		'name' => 'Država obrazovanja'
 	],
 
     'notified_new_updates' => [
-        'name' => 'Notified New Updates',
+        'name' => 'Obavešten o novim ažuriranjima',
     ],
     'notified_about_ads' => [
-        'name' => 'Notified About Ads',
+        'name' => 'Obavešten o oglasima',
     ],
     'receive_messages_email' => [
-        'name' => 'Receive Messages Email',
+        'name' => 'Primite poruke putem Email-a',
     ],
 ];
