@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'help'      => 'Help',
-    'search'    => 'Search',
-    'logout'    => 'Logout',
-    'view_site' => 'View Site',
-    'title'     => 'Control Panel',
-    'search_placeholder'     => 'Type to search',
+    'help'      => 'Pomoć',
+    'search'    => 'Pronađi',
+    'logout'    => 'Odjavite se',
+    'view_site' => 'Pogledaj sajt',
+    'title'     => 'Control panel',
+    'search_placeholder'     => 'Otkucajte za pretragu',
 
     // Users Module
-    'search_by_gsm_number'     => 'Search By GSM Number',
+    'search_by_gsm_number'     => 'Pretražite po broju telefona',
 ];
