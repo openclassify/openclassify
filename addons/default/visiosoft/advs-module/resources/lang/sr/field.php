@@ -5,7 +5,7 @@ return [
         'name' => 'Naslov'
     ],
     'order' => [
-        'name' => 'Redosled'
+        'name' => 'Order'
     ],
     'slug' => [
         'name' => 'Slug'
