@@ -2,7 +2,7 @@
 
 return [
     'advs' => [
-        'name'   => 'Ads',
+        'name'   => 'Oglasi',
         'option' => [
             'read'   => 'Can read ads?',
             'write'  => 'Can create/edit ads?',
