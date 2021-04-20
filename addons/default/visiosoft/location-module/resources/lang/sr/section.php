@@ -2,22 +2,22 @@
 
 return [
     'countries' => [
-        'title' => 'Земље',
+        'title' => 'Countries',
     ],
     'cities' => [
-        'title' => 'Градови',
+        'title' => 'Cities',
     ],
     'districts' => [
-        'title' => 'Окрузи',
+        'title' => 'Districts',
     ],
     'neighborhoods' => [
-        'title' => 'Комшилуци',
+        'title' => 'Neighborhoods',
     ],
     'village' => [
-        'title' => 'Село',
+        'title' => 'Village',
     ],
-    'general' => 'Генерал',
-    'map' => 'Мапа',
-    'setting' => 'Подешавање',
-    'filter' => 'Филтер',
+    'general' => 'General',
+    'map' => 'Map',
+    'setting' => 'Setting',
+    'filter' => 'Filter',
 ];
