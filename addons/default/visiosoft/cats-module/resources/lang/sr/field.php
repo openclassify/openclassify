@@ -2,35 +2,35 @@
 
 return [
     'name' => [
-        'name' => 'Наслов',
-        'instructions' => 'То је назив главне категорије коју ћете дефинисати. Омогућава кориснику да лако пронађе производ који тражи.',
+        'name' => 'Title',
+        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
     ],
     'order' => [
-        'name' => 'Наручи',
+        'name' => 'Order',
     ],
 
     'slug' => [
-        'name' => 'Слуг',
-        'instructions' => 'Наведите било какве организационе ознаке да бисте помогли груписање поста са другима.',
+        'name' => 'Slug',
+        'instructions' => 'Specify any organizational tags to help group your post with others.',
 
     ],
     'files' => [
-        'name' => 'Слика',
+        'name' => 'Image',
     ],
     'seo_keyword' => [
-        'name' => 'Сео Кеиворд',
-        'instructions' => 'Речи додате на веб локацију у Гоогле прегледачу да би се појавиле изнад резултата претраге.',
+        'name' => 'Seo Keyword',
+        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
     ],
     'seo_description' => [
-        'name' => 'СЕО опис',
-        'instructions' => 'То може утицати на одлуку ваших посетилаца да ли желе да кликну на садржај у резултатима претраге.',
+        'name' => 'Seo Description',
+        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
     ],
     'icon' => [
-        'name' => 'Икона',
-        'instructions' => 'Користи се за додавање икона које означавају врсту категорије.',
+        'name' => 'Icon',
+        'instructions' => 'It is used to add icons indicating the category type.',
     ],
 
-    'please_wait' => 'Молимо причекајте.Брисање поткатегорија',
-    'category_selection' => 'Избор категорије',
-    'go_to_parent' => 'Идите код родитеља',
+    'please_wait' => 'Please wait.Deleting Sub Categories',
+    'category_selection' => 'Category Selection',
+    'go_to_parent' => 'Go To Parent',
 ];
