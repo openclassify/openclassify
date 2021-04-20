@@ -1,8 +1,8 @@
 <?php
 
 return [
-    "email"      => "E-Mail Field is Required!",
-    "username"      => "Username Field is Required!",
+    "email"      => "Email je obavezan!",
+    "username"      => "Korisničko ime je obavezno!",
     "success_update"      => "Profile Update Successfully!",
     "adress_success_update"      => "Adress Update Successfully!",
     "adress_success_create"      => "Adress Create Successfully!",
