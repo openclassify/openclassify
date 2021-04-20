@@ -2,26 +2,26 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Sidebar Hover',
-        'instructions' => 'Expand the sidebar on hover?',
+        'name'         => 'Hover Sidebar-a',
+        'instructions' => 'Proširi sajdbar na hover?',
     ],
     'navigation'    => [
-        'name'         => 'Navigation',
-        'instructions' => 'Specify your <em>personal</em> order of navigation.',
-        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
-        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
+        'name'         => 'Navigacija',
+        'instructions' => 'Navedite <em>svoj</em> redosled navigacije.',
+        'warning'      => 'Prva dostupna navigaciona stavka koristi se kao <strong> početna </strong>.',
+        'reorder'      => 'Prevucite i ispustite primarne stavke za navigaciju na <strong> bočnoj traci </strong> da biste ih preuredili.',
     ],
     'display'       => [
         'name'         => 'Display Density',
-        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
+        'instructions' => 'Kompaktan prikaz omogućava istovremeno prikazivanje više sadržaja na ekranu.',
         'option'       => [
-            'default' => 'Default',
-            'compact' => 'Compact',
+            'default' => 'Podrazumevano',
+            'compact' => 'Kompaktno',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Sidebar Mode',
-        'instructions' => 'Static sidebars will always be visible.',
+        'name'         => 'Mod Sidebar-a',
+        'instructions' => 'Statičke bočne trake će uvek biti vidljive.',
         'option'       => [
             'default' => 'Default',
             'static'  => 'Static',
