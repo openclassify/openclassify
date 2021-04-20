@@ -2,7 +2,7 @@
 
 return [
     'category' => [
-        'title' => 'Category',
+        'title' => 'Kategorija',
     ],
     'placeholderforsearch' => [
         'title' => 'Placeholder',
