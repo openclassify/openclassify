@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Лебдење бочне траке',
-        'instructions' => 'Проширити бочну траку при преласку показивача?',
+        'name'         => 'Sidebar Hover',
+        'instructions' => 'Expand the sidebar on hover?',
     ],
     'navigation'    => [
-        'name'         => 'Навигација',
-        'instructions' => 'Одредите свој <em>лични</em> редослед навигације.',
-        'warning'      => 'Прва доступна навигацијска ставка користи се као ваша <strong>почетна</strong> област.',
-        'reorder'      => 'Драг анд дроп на главну навигацију ставке у <strong>бочној траци</strong> да их преуредити.',
+        'name'         => 'Navigation',
+        'instructions' => 'Specify your <em>personal</em> order of navigation.',
+        'warning'      => 'The first accessible navigation item is used as your <strong>home</strong> area.',
+        'reorder'      => 'Drag and drop the primary navigation items in the <strong>sidebar</strong> to reorder them.',
     ],
     'display'       => [
-        'name'         => 'Приказ густине',
-        'instructions' => 'Компактан приказ омогућава истовремено приказивање више садржаја на екрану.',
+        'name'         => 'Display Density',
+        'instructions' => 'Compact display allows more content to be shown on the screen at once.',
         'option'       => [
-            'default' => 'Уобичајено',
-            'compact' => 'Компактан',
+            'default' => 'Default',
+            'compact' => 'Compact',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Режим бочне траке',
-        'instructions' => 'Статичке бочне траке ће увек бити видљиве.',
+        'name'         => 'Sidebar Mode',
+        'instructions' => 'Static sidebars will always be visible.',
         'option'       => [
-            'default' => 'Уобичајено',
-            'static'  => 'Статички',
+            'default' => 'Default',
+            'static'  => 'Static',
         ],
     ],
 ];
