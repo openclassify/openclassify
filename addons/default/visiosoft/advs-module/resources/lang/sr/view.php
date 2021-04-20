@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'unfinished' => 'Недовршена',
-    'advanced' => 'Напредно',
+    'unfinished' => 'Unfinished',
+    'advanced' => 'Advanced',
 ];
