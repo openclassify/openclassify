@@ -2,55 +2,55 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Поље локације почетне странице',
+        'name' => 'Home Page Location Field',
     ],
     'list_page_location' => [
-        'name' => 'Поље локације странице листе',
+        'name' => 'List Page Location Field',
     ],
     'detail_page_location' => [
-        'name' => 'Поље локације странице детаља',
+        'name' => 'Detail Page Location Field',
     ],
     'show_search_location_btn' => [
-        'name' => 'Прикажи дугме локације за претрагу',
+        'name' => 'Show Search Location Button',
     ],
     'default_country' => [
-        'name' => 'Подразумевана држава',
+        'name' => 'Default Country',
     ],
     'create_ad_page_location' => [
-        'name' => 'Направите локацију странице огласа',
+        'name' => 'Create Ad Page Location',
     ],
     'default_city' => [
-        'name' => 'Дефаулт Цити',
+        'name' => 'Default City',
     ],
     'default_district' => [
-        'name' => 'Подразумевани округ',
+        'name' => 'Default District',
     ],
     'default_neighborhood' => [
-        'name' => 'Подразумевано суседство',
+        'name' => 'Default Neighborhood',
     ],
 
     'google_map_key' => [
-        'name' => 'Гоогле Мапс Апи кључ',
+        'name' => 'Google Maps Api Key',
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Дефаулт Лонг',
+        'name' => 'Default Long',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Подразумевано Лат',
+        'name' => 'Default Lat',
     ],
 
     'hide_location_filter' => [
-        'name' => 'Сакриј филтер локације',
+        'name' => 'Hide Location Filter',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Подразумевана држава за телефонско поље регистра'
+		'name' => 'Default Country For Register Phone Field'
 	],
     'sorting_column' => [
-        'name' => 'Колона за сортирање',
+        'name' => 'Sorting Column',
     ],
     'sorting_type' => [
-        'name' => 'Тип сортирања',
+        'name' => 'Sorting Type',
     ],
 ];
