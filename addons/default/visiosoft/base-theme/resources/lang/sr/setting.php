@@ -2,45 +2,45 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Navigation Title',
+        'name' => 'Naslov Navigacije',
     ],
     'navigation_action' => [
-        'name' => 'Navigation Action',
+        'name' => 'Akcija navigacije',
     ],
     'country_fields' => [
-        'name' => 'Country Fields',
+        'name' => 'Država polja',
     ],
     'date_fields' => [
-        'name' => 'Date Fields',
+        'name' => 'Datum polja',
     ],
     'price_fields' => [
-        'name' => 'Price Fields',
+        'name' => 'Cena polja',
     ],
     'breadcrumbs' => [
-        'name' => 'Breadcrumb',
+        'name' => 'Breadcrumb polja',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Detalji oglasa',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Kartica Detalji oglasa',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Latest and View All Btn',
+        'name' => 'Najnovije i pogledajte sve dugme',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Register Page Instruction Logo',
+        'name' => 'Logotip sa uputstvom za registraciju stranice',
     ],
     'register_page_alert_link' => [
-        'name' => 'Register Page Alert Link',
+        'name' => 'Link upozorenja na stranici registracije',
     ],
     'style' => [
         'name' => 'Style(CSS)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Homepage Sub Categories Limit',
+        'name' => 'Ograničenje potkategorija na početnoj strani',
     ],
 	'default_country' => [
-		'name' => 'Register page, default country for phone',
+		'name' => 'Stranica za registraciju, zadata država za telefon',
 	]
 ];
