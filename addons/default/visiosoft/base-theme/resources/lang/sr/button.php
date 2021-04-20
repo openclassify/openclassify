@@ -2,14 +2,14 @@
 
 return [
     'post_ad' => [
-        'name' => 'Post Ad',
+        'name' => 'Postavi oglas',
     ],
-    'login' => 'Login',
-    'register' => 'Register',
-    'continue' => 'Continue',
-    'reset_password' => 'Reset Password',
+    'login' => 'Prijite se',
+    'register' => 'Registrujte se',
+    'continue' => 'Nastavi',
+    'reset_password' => 'Zaboravio sam lozinku',
     'email' => 'Email',
-    'phone' => 'Phone',
+    'phone' => 'Telefon',
     'show_all' => 'Show All',
     'hide_all' => 'Hide All',
 ];
