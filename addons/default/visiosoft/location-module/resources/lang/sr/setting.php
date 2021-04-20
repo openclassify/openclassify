@@ -2,31 +2,31 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Home Page Location Field',
+        'name' => 'Polje lokacije početne stranice',
     ],
     'list_page_location' => [
-        'name' => 'List Page Location Field',
+        'name' => 'Polje lokacije Na stranici liste oglasa',
     ],
     'detail_page_location' => [
-        'name' => 'Detail Page Location Field',
+        'name' => 'Polje lokacije na stranici sa detaljima',
     ],
     'show_search_location_btn' => [
-        'name' => 'Show Search Location Button',
+        'name' => 'Prikaži dugme lokacije za pretragu',
     ],
     'default_country' => [
-        'name' => 'Default Country',
+        'name' => 'Podrazumevana država',
     ],
     'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+        'name' => 'Lokacija na stranici za kreiranje oglasa',
     ],
     'default_city' => [
-        'name' => 'Default City',
+        'name' => 'Podrazumevani grad',
     ],
     'default_district' => [
-        'name' => 'Default District',
+        'name' => 'Podrazumevani deo grada',
     ],
     'default_neighborhood' => [
-        'name' => 'Default Neighborhood',
+        'name' => 'Podrazumevano susedstvo',
     ],
 
     'google_map_key' => [
@@ -34,23 +34,23 @@ return [
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Default Long',
+        'name' => 'Podrazumevani Long',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Default Lat',
+        'name' => 'Podrazumevani Lat',
     ],
 
     'hide_location_filter' => [
-        'name' => 'Hide Location Filter',
+        'name' => 'Sakrij filter lokacije',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Default Country For Register Phone Field'
+		'name' => 'Podrazumevana država za telefonsko polje registra'
 	],
     'sorting_column' => [
-        'name' => 'Sorting Column',
+        'name' => 'Kolona za sortiranje',
     ],
     'sorting_type' => [
-        'name' => 'Sorting Type',
+        'name' => 'Tip sortiranja',
     ],
 ];
