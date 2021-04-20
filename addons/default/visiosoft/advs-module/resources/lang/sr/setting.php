@@ -202,41 +202,41 @@ return [
     ],
     'user_filter_limit' => [
         'name' => 'Ograničenje korisničkog filtera',
-        'instructions' => 'In the admin panel'
+        'instructions' => 'U admin panelu'
     ],
     'show_breadcrumb_when_creating_ad' => [
-        'name' => 'Show Breadcrumb When Creating an Ad',
+        'name' => 'Prikaži Breadcrumb pri kreiranju oglasa',
     ],
     'show_ads_count' => [
-        'name' => 'Show Ads Count',
+        'name' => 'Prikaži broj oglasa',
         'instructions' => 'Show ads count on the left categories list',
     ],
     'ads_date_hidden' => [
-        'name' => 'Hide Created Date',
-        'instructions' => 'Hide created date in ads detail page',
+        'name' => 'Sakrij datum kreiranja',
+        'instructions' => 'Sakrij datum kreranja u detaljima oglasa',
     ],
 	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
+		'name' => 'Sakrij Zaglavlje liste',
+		'instructions' => 'Sakrivanje redosleda i tipova pregleda',
 	],
 	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
+		'name' => 'Sakrij filter sekciju',
 		'instructions' => 'Hiding to left filter area in listing page',
 	],
 	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
+		'name' => 'Sakrij Informacije prodavca',
+		'instructions' => 'Sakrij informacije o prodavcu na stranici sa detaljima oglasa',
 	],
     'show_post_ad_agreement' => [
-        'name' => 'Show Post Ad Agreement',
-        'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
+        'name' => 'Prikaži ugovor o objavljivanju oglasa',
+        'instructions' => 'Uključite ovo ako želite da na stranici za izradu oglasa prikažete ugovor o politici privatnosti',
     ],
     'override_text' => [
-        'name' => 'Override Text',
+        'name' => 'Zameni tekst',
         'instructions' => 'Old Value:New Value'
     ],
     'steps_color' => [
-        'name' => 'Steps Color',
+        'name' => 'Boja koraka',
         'instructions' => 'Changes the progressive steps color.'
     ],
     'create_ad_button_color' => [
