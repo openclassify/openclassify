@@ -2,35 +2,35 @@
 
 return [
     'name' => [
-        'name' => 'Title',
-        'instructions' => 'It is the name of the main category that you will define. It allows the user to easily find the product they are looking for.',
+        'name' => 'Naziv',
+        'instructions' => 'To je naziv glavne kategorije koju ćete definisati. Omogućava korisniku da lako pronađe proizvod koji traži.',
     ],
     'order' => [
-        'name' => 'Order',
+        'name' => 'Redosled',
     ],
 
     'slug' => [
         'name' => 'Slug',
-        'instructions' => 'Specify any organizational tags to help group your post with others.',
+        'instructions' => 'Navedite bilo kakve organizacione oznake da biste grupisali svoj post sa drugima.',
 
     ],
     'files' => [
-        'name' => 'Image',
+        'name' => 'Slika',
     ],
     'seo_keyword' => [
-        'name' => 'Seo Keyword',
-        'instructions' => 'Words added to the site in the Google browser to appear above the search results.',
+        'name' => 'Seo Ključne reči',
+        'instructions' => 'Reči dodate na stranicu u Google pretraživaču koje se pojavljuju ispod rezultata pretrage.',
     ],
     'seo_description' => [
-        'name' => 'Seo Description',
-        'instructions' => 'It can affect your visitors\' decision on whether they want to click on the content in the search results.',
+        'name' => 'Seo Opis',
+        'instructions' => 'To može uticati na odluku vaših posetilaca da li žele da kliknu na sadržaj u rezultatima pretrage.',
     ],
     'icon' => [
-        'name' => 'Icon',
-        'instructions' => 'It is used to add icons indicating the category type.',
+        'name' => 'Ikona',
+        'instructions' => 'Koristi se za dodavanje ikona koje označavaju vrstu kategorije.',
     ],
 
-    'please_wait' => 'Please wait.Deleting Sub Categories',
-    'category_selection' => 'Category Selection',
-    'go_to_parent' => 'Go To Parent',
+    'please_wait' => 'Molimo pričekajte.Brisanje potkategorija',
+    'category_selection' => 'Selekcija kategorija',
+    'go_to_parent' => 'Idi na Parent-a',
 ];
