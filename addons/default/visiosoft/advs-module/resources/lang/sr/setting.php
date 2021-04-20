@@ -96,7 +96,7 @@ return [
         'name' => 'Google',
     ],
     'listing_page_image' => [
-        'name' => 'Listing Page Image',
+        'name' => 'Slika na stranici sa listom oglasa',
     ],
     'hide_standard_price_field' => [
         'name' => 'Sakrij polje sa standardnom cenom',
@@ -209,7 +209,7 @@ return [
     ],
     'show_ads_count' => [
         'name' => 'Prikaži broj oglasa',
-        'instructions' => 'Show ads count on the left categories list',
+        'instructions' => 'Pokaži broj oglasa u kategorijama levo u listi',
     ],
     'ads_date_hidden' => [
         'name' => 'Sakrij datum kreiranja',
@@ -221,7 +221,7 @@ return [
 	],
 	'hide_filter_section' => [
 		'name' => 'Sakrij filter sekciju',
-		'instructions' => 'Hiding to left filter area in listing page',
+		'instructions' => 'Sakrijte područje filtera sa leve strane u Listi',
 	],
 	'hide_seller_info' => [
 		'name' => 'Sakrij Informacije prodavca',
@@ -237,22 +237,22 @@ return [
     ],
     'steps_color' => [
         'name' => 'Boja koraka',
-        'instructions' => 'Changes the progressive steps color.'
+        'instructions' => 'Menja boju progresivnih koraka'
     ],
     'create_ad_button_color' => [
-        'name' => 'Create Ad Button Color',
-        'instructions' => 'Changes the button that shows up when the new ad category selection is finished.'
+        'name' => 'Boja dugmeta Create Ad',
+        'instructions' => 'Menja dugme koje se prikazuje kada je izbor nove kategorije oglasa završen. '
     ],
     'lang_switcher_for_browser' => [
-        'name' => 'Lang Switcher For Browser',
-        'instructions' => 'Allows you to choose browser language as active language'
+        'name' => 'Prekidač za jezik u pregledaču',
+        'instructions' => 'Omogućava vam da kao aktivni jezik izaberete jezik pregledača'
     ],
     'get_categories' => [
-        'name' => 'GET Categories',
-        'instructions' => 'It represents the categories in which the GET property will be valid.'
+        'name' => 'GET Kategorije',
+        'instructions' => 'Predstavlja kategorije u kojima će GET svojstvo biti važeće.'
     ],
 	'disable_sentry' => [
-		'name' => 'Disable Sentry'
+		'name' => 'Isključite Sentry'
 	],
     'watermark' => [
         'name' => 'Vodeni žig',
