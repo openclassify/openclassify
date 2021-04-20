@@ -66,9 +66,15 @@ $(document).ready(function () {
                         $(catId).closest('.cat-item-2').show().addClass('focus-select')
                     }
                 }
-                // Auto scroll right
+                // Auto scroll right or left
                 let categoryTab = $('.category-tab');
-                let pos = categoryTab.scrollLeft() + categoryTab.width();
+                let pos;
+                if (isRtl){
+                    pos = categoryTab.scrollLeft() - (categoryTab.width() * 2);
+                    $('.cat-item-3').css('display', 'flex');
+                } else {
+                    pos = categoryTab.scrollLeft() + categoryTab.width();
+                }
                 categoryTab.animate( {scrollLeft: pos}, 1000);
             },
             beforeSend: function () {
