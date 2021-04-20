@@ -2,498 +2,498 @@
 
 return [
     'file' => [
-        'name' => 'Фотографије'
+        'name' => 'Photos'
     ],
     'first_name' => [
-        'name' => 'Име'
+        'name' => 'First Name'
     ],
     'last_name' => [
-        'name' => 'Презиме'
+        'name' => 'Last Name'
     ],
     'username' => [
-        'name' => 'Корисничко име'
+        'name' => 'Username'
     ],
     'display_name' => [
-        'name' => 'Показати име'
+        'name' => 'Display Name'
     ],
     'email' => [
-        'name' => 'Емаил адреса'
+        'name' => 'Email Adress'
     ],
     'sitename' => [
-        'name' => 'Назив сајт'
+        'name' => 'sitename'
     ],
     'activated' => [
-        'name' => 'Корисник активан'
+        'name' => 'User Active'
     ],
     'enabled' => [
-        'name' => 'Усер Енабле'
+        'name' => 'User Enable'
     ],
     'country' => [
-        'name' => 'Цоунтри'
+        'name' => 'Country'
     ],
     'city' => [
-        'name' => 'Град'
+        'name' => 'City'
     ],
     'district' => [
-        'name' => 'Дистрикт'
+        'name' => 'District'
     ],
     'neighborhood' => [
-        'name' => 'Комшилук'
+        'name' => 'Neighborhood'
     ],
     'village' => [
-        'name' => 'Село'
+        'name' => 'Village'
     ],
     'gsm_phone' => [
-        'name' => 'Мобилни телефон'
+        'name' => 'GSM Phone'
     ],
     'land_phone' => [
-        'name' => 'Фиксни телефон'
+        'name' => 'Land Phone'
     ],
     'office_phone' => [
-        'name' => 'Службени телефон'
+        'name' => 'Office Phone'
     ],
     'register_type' => [
-        'name' => 'Тип регистра'
+        'name' => 'Register Type'
     ],
     'birthday' => [
-        'name' => 'Рођендан'
+        'name' => 'Birthday'
     ],
 	'facebook_address' => [
-		'name' => 'Фацебоок адреса'
+		'name' => 'Facebook Address'
 	],
 	'google_address' => [
-		'name' => 'Гоогле адреса'
+		'name' => 'Google Address'
 	],
     'education' => [
-        'name' => 'образовање'
+        'name' => 'Education'
     ],
     'state_of_education' => [
-        'name' => 'Држава образовања'
+        'name' => 'State of Education'
     ],
     'profession' => [
-        'name' => 'Професија'
+        'name' => 'Profession'
     ],
     'identification_number' => [
-        'name' => 'Матични број'
+        'name' => 'Identification Number'
     ],
     'adress_name' => [
-        'name' => 'Име адресе'
+        'name' => 'Adress Name'
     ],
     'adress_first_name' => [
-        'name' => 'Име'
+        'name' => 'First Name'
     ],
     'adress_last_name' => [
-        'name' => 'Презиме'
+        'name' => 'Last Name'
     ],
     'actions' => [
-        'name' => 'Акције'
+        'name' => 'Actions'
     ],
     'adress_content' => [
-        'name' => 'Садржај адресе'
+        'name' => 'Adress Content'
     ],
     'adress_post_code' => [
-        'name' => 'Поштански број'
+        'name' => 'Post Code'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Мобилни телефон'
+        'name' => 'Gsm Phone'
     ],
     'adress_land_phone' => [
-        'name' => 'Фиксни телефон'
+        'name' => 'Land Phone'
     ],
     'adress_country' => [
-        'name' => 'Цоунтри'
+        'name' => 'Country'
     ],
     'adress_city' => [
-        'name' => 'Град'
+        'name' => 'City'
     ],
     'adress_district' => [
-        'name' => 'Дистрикт'
+        'name' => 'District'
     ],
     'adress_neighborhood' => [
-        'name' => 'Комшилук'
+        'name' => 'Neighborhood'
     ],
     'adress_village' => [
-        'name' => 'Село'
+        'name' => 'Village'
     ],
     'messages' => [
-        'name' => 'Поруке'
+        'name' => 'Messages'
     ],
     'user' => [
-        'name' => 'Корисник'
+        'name' => 'User'
     ],
 	'name' => [
-		'name' => 'Име'
+		'name' => 'Name'
 	],
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Профил'
+        'name' => 'Profile'
     ],
 
     'create' => [
-        'name' => 'Креирај'
+        'name' => 'Create'
     ],
     'edit' => [
-        'name' => 'Уредити'
+        'name' => 'Edit'
     ],
     'delete' => [
-        'name' => 'Избриши'
+        'name' => 'Delete'
     ],
     'list' => [
-        'name' => 'Листа'
+        'name' => 'List'
     ],
     'menu_address' => [
-        'name' => 'Адреса'
+        'name' => 'Address'
     ],
     'menu_orders' => [
-        'name' => 'Поруџбине'
+        'name' => 'Orders'
     ],
     'menu_favorites' => [
-        'name' => 'Фаворити'
+        'name' => 'Favorites'
     ],
     'menu_archived_ads' => [
-        'name' => 'Архивирани огласи'
+        'name' => 'Archived ads'
     ],
     'menu_pending_ads' => [
-        'name' => 'Чека одобрење'
+        'name' => 'Pending approval'
     ],
     'menu_delete_account' => [
-        'name' => 'Затвори рачун'
+        'name' => 'Close account'
     ],
     'menu_my_ads' => [
-        'name' => 'Моји огласи'
+        'name' => 'My ads'
     ],
     'menu_fav_ads' => [
-        'name' => 'Омиљени огласи'
+        'name' => 'Favourite ads'
     ],
     'menu_hello_msg' => [
-        'name' => 'Здраво'
+        'name' => 'Hello'
     ],
     'menu_last_msg' => [
-        'name' => 'Последњи пут сте се пријавили на'
+        'name' => 'You last logged in at'
     ],
     'menu_packages' => [
-        'name' => 'Моји пакети'
+        'name' => 'My packages'
     ],
     'menu_adv_packages' => [
-        'name' => 'Пакети огласа'
+        'name' => 'Ads Packages'
     ],
     'menu_time_packages' => [
-        'name' => 'Временски пакети'
+        'name' => 'Time Packages'
     ],
     'profile_details' => [
-        'name' => 'Детаљи профила'
+        'name' => 'Profile Details'
     ],
     'profile_photo' => [
-        'name' => 'Фотографија профила'
+        'name' => 'Profile Photo'
     ],
     'adv_listing_banner' => [
-        'name' => 'Банер странице са огласима'
+        'name' => 'Ads Listing Page Banner'
     ],
     'approve' => [
-        'name' => 'Одобри'
+        'name' => 'Approve'
     ],
     'approved' => [
-        'name' => 'Одобрено'
+        'name' => 'Approved'
     ],
     'pending' => [
-        'name' => 'нерешен'
+        'name' => 'Pending'
     ],
     'passive' => [
-        'name' => 'Пасивно'
+        'name' => 'Passive'
     ],
     'pending_admin' => [
-        'name' => 'нерешен'
+        'name' => 'Pending'
     ],
     'menu_messages' => [
-        'name' => 'Поруке'
+        'name' => 'Messages'
     ],
     'menu_my_purchase' => [
-        'name' => 'Моја куповина'
+        'name' => 'My Purchase'
     ],
     'menu_my_sales' => [
-        'name' => 'Моја продаја'
+        'name' => 'My Sales'
     ],
 
     /* Right Dock*/
     'right_secure_trading_subject' => [
-        'name' => 'Сигурно трговање'
+        'name' => 'Secure Trading'
     ],
     'right_secure_trading_msg' => [
-        'name' => 'Лорем ипсум долор сит амет, цонсецтетур адиписицинг елит'
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_support_subject' => [
-        'name' => '24/7 подршка'
+        'name' => '24/7 Support'
     ],
     'right_support_msg' => [
-        'name' => 'Лорем ипсум долор сит амет, цонсецтетур адиписицинг елит'
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_easy_trading_subject' => [
-        'name' => 'Једноставно трговање'
+        'name' => 'Easy Trading'
     ],
     'right_easy_trading_msg' => [
-        'name' => 'Лорем ипсум долор сит амет, цонсецтетур адиписицинг елит'
+        'name' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit'
     ],
     'right_need_help_subject' => [
-        'name' => 'Потребна помоћ?'
+        'name' => 'Need Help?'
     ],
     'right_need_help_msg' => [
-        'name' => 'Позовите'
+        'name' => 'Give a call on'
     ],
     'disable_account' => [
-        'name' => 'Онемогући рачун'
+        'name' => 'Disable Account'
     ],
     'disable_account_msg' => [
-        'name' => 'Ваш рачун ће бити онемогућен.
-                                    Ову операцију није могуће поништити'
+        'name' => 'Your account will be disabled.
+                                    This operation cannot be undone'
     ],
 
-    'message_title' => 'Наслов поруке',
-    'owner_name' => 'Порука',
+    'message_title' => 'Message Title',
+    'owner_name' => 'Message',
 
-    'favorites' => "Фаворити",
-    'fav_advs' => 'Омиљени огласи',
-    'fav_sellers' => "Фав Селлерс",
-    'fav_searches' => "Фав Сеарцхес",
-    'posted_on' => "Објављено",
-    'message_details' => "Детаљи поруке",
-    'adv_no' => 'Оглас бр',
+    'favorites' => "Favorites",
+    'fav_advs' => 'Favorite Ads',
+    'fav_sellers' => "Fav Sellers",
+    'fav_searches' => "Fav Searches",
+    'posted_on' => "Posted On",
+    'message_details' => "Message Details",
+    'adv_no' => 'Ad No',
     'bill_address' => [
-        'name' => 'Адреса рачуна',
+        'name' => 'Bill Address',
     ],
     'delivery_address' => [
-        'name' => 'Адреса испоруке',
+        'name' => 'Delivery Address',
     ],
     'order_total' => [
-        'name' => 'Укупно',
+        'name' => 'Total',
     ],
     'order_date' => [
-        'name' => 'Датум поруџбине',
+        'name' => 'Order Date',
     ],
     'order_no' => [
-        'name' => 'ИД поруџбине',
+        'name' => 'Order ID',
     ],
     'order_detail' => [
-        'name' => 'Прикажи детаље',
+        'name' => 'Show Detail',
     ],
     /*Detail Page Order*/
     'detail' => [
-        'name' => 'Детаљ',
+        'name' => 'Detail',
     ],
     'back' => [
-        'name' => 'Назад',
+        'name' => 'Back',
     ],
     'image' => [
-        'name' => 'Слика',
+        'name' => 'Image',
     ],
     'subject' => [
-        'name' => 'Предмет',
+        'name' => 'Subject',
     ],
     'price' => [
-        'name' => 'Цена',
+        'name' => 'Price',
     ],
     'piece' => [
-        'name' => 'Комад',
+        'name' => 'Piece',
     ],
     'commission' => [
-        'name' => 'Комисија',
+        'name' => 'Commission',
     ],
     'total' => [
-        'name' => 'Укупно',
+        'name' => 'Total',
     ],
     'sub_total' => [
-        'name' => 'Суб Тотал',
+        'name' => 'Sub Total',
     ],
     'sale' => [
-        'name' => 'Продаја',
+        'name' => 'Sale',
     ],
     'awaiting_tracking_number' => [
-        'name' => 'Чека се број за праћење',
+        'name' => 'Awaiting Tracking Number',
     ],
     'awaiting_payment_approval' => [
-        'name' => 'Чека одобрење за плаћање',
+        'name' => 'Awaiting Payment Approval',
     ],
     'paid' => [
-        'name' => 'Плаћено',
+        'name' => 'Paid',
     ],
     'cancelled' => [
-        'name' => 'Отказано',
+        'name' => 'Cancelled',
     ],
     'waiting' => [
-        'name' => 'Чекање',
+        'name' => 'Waiting',
     ],
     'awaiting_dispatch' => [
-        'name' => 'Чека се слање',
+        'name' => 'Awaiting dispatch',
     ],
     'shipped' => [
-        'name' => 'Испоручен',
+        'name' => 'Shipped',
     ],
     'delivered' => [
-        'name' => 'Испоручена',
+        'name' => 'Delivered',
     ],
     'tracking_number' => [
-        'name' => 'Број за праћење',
+        'name' => 'Tracking Number',
     ],
     'was_delivered' => [
-        'name' => 'је достављено',
+        'name' => 'was delivered',
     ],
     'not_delivered' => [
-        'name' => 'није испоручено',
+        'name' => 'not delivered',
     ],
     'show_order_msg1' => [
-        'name' => 'Резултат трансакције биће обавештен поштом.',
+        'name' => 'The transaction result will be notified by mail.',
     ],
     'show_order_msg2' => [
-        'name' => 'Поврат ће бити извршен ако производ није испоручен у року од једне недеље.',
+        'name' => 'Refund will be made if the product is not delivered within one week.',
     ],
     'show_order_msg3' => [
-        'name' => 'Резултат трансакције је послат на вашу регистровану е-адресу.',
+        'name' => 'The result of the transaction has been sent to your registered e-mail address.',
     ],
 
     'awaiting_payment' => [
-        'name' => 'Очекујем Плаћање',
+        'name' => 'Awaiting Payment',
     ],
     'please_entered_tracking_number' => [
-        'name' => 'Унесите број за праћење',
+        'name' => 'Please Entered Tracking Number',
     ],
     'transport_days' => [
-        'name' => 'Дани транспорта',
+        'name' => 'Transport Days',
     ],
     'product_not_delivered' => [
-        'name' => 'Производ није испоручен',
+        'name' => 'Product not delivered',
     ],
     'status' => [
-        'name' => 'Статус',
+        'name' => 'Status',
     ],
     'cancel_sale' => [
-        'name' => 'Откажи продају',
+        'name' => 'Cancel Sale',
     ],
     'send_again' => [
-        'name' => 'Послаћу поново',
+        'name' => 'I Will Send Again',
     ],
     'content' => [
-        'name' => 'Садржај',
+        'name' => 'Content',
     ],
     'preferences_settings' => [
-        'name' => 'Поставке подешавања',
+        'name' => 'Preferences Settings',
     ],
 
     'corporate_settings' => [
-        'name' => 'Корпоративна подешавања',
+        'name' => 'Corporate Settings',
     ],
     'password' => [
-        'name' => 'Лозинка',
+        'name' => 'Password',
     ],
     'old_password' => [
-        'name' => 'Стара шифра',
+        'name' => 'Old password',
     ],
     'new_password' => [
-        'name' => 'Нова лозинка',
+        'name' => 'New password',
     ],
     're_new_password' => [
-        'name' => 'Потврди лозинку',
+        'name' => 'Confirm password',
     ],
     'confirm_password_input' => [
-        'name' => 'Потврђујем промену лозинке',
+        'name' => 'I confirm my password change',
     ],
     'create_address' => [
-        'name' => 'Направи адресу',
+        'name' => 'Create Address',
     ],
     'edit_address' => [
-        'name' => 'Измени адресу',
+        'name' => 'Edit Address',
     ],
     'balance_limit' => [
-        'name' => 'Ограничење стања',
+        'name' => 'Balance Limit',
     ],
     'active_ads' => [
-        'name' => 'Активни огласи',
+        'name' => 'Active Ads',
     ],
     'subscriptions' => [
-        'name' => 'Претплате',
+        'name' => 'Subscriptions',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Идите на страницу Претплате',
+        'name' => 'Go to Subscriptions Page',
     ],
     'buy_package' => [
-        'name' => 'Купите пакет',
+        'name' => 'Buy Package',
     ],
     'expired_date' => [
-        'name' => 'Истекао рок',
+        'name' => 'Expired Date',
     ],
     'category' => [
-        'name' => 'Категорија',
+        'name' => 'Category',
     ],
     'ad_limit' => [
-        'name' => 'Ограничење огласа',
+        'name' => 'Ad Limit',
     ],
     'publish_time' => [
-        'name' => 'Публисх Тиме',
+        'name' => 'Publish Time',
     ],
     'all_categories' => [
-        'name' => 'Све категорије',
+        'name' => 'All Categories',
     ],
     'day' => [
-        'name' => 'Дан',
+        'name' => 'Day',
     ],
 
     'individual' => [
-        'name' => 'појединац',
+        'name' => 'individual',
     ],
     'corporate' => [
-        'name' => 'Корпоративни',
+        'name' => 'Corporate',
     ],
 
     'details' => [
-        'name' => 'Детаљи'
+        'name' => 'Details'
     ],
     'choose' => [
-        'name' => 'Изаберите'
+        'name' => 'Choose'
     ],
-    'my_address' => 'Моја адреса',
+    'my_address' => 'My Address',
 
     'company' => [
-        'name' => 'назив фирме'
+        'name' => 'Company Name'
     ],
     'tax_office' => [
-        'name' => 'Пореска управа'
+        'name' => 'Tax Office'
     ],
     'tax_number' => [
-        'name' => 'Порески број'
+        'name' => 'Tax Number'
     ],
 
     // Profile page
-    'my_profile' => 'Мој профил',
-    'edit_profile' => 'Измени профил',
-    'edit_details' => 'Уреди детаље',
-    'update' => 'ажурирање',
-    'change_password' => 'Промени лозинку',
-    'choose_an_option' => 'Изабери опцију...',
-    'change_status' => 'Промени статус',
-	'profile_settings' => 'Подешавања профила',
-	'profile_detail' => 'Детаљи профила',
+    'my_profile' => 'My Profile',
+    'edit_profile' => 'Edit Profile',
+    'edit_details' => 'Edit Details',
+    'update' => 'Update',
+    'change_password' => 'Change Password',
+    'choose_an_option' => 'Choose an option...',
+    'change_status' => 'Change Status',
+	'profile_settings' => 'Profile Settings',
+	'profile_detail' => 'Profile Detail',
 
     // Register page
-    'accept_terms_label' => 'Прихватам услове.',
-    'accept_protection_law_label' => '<html>Прихватам услове Закона о' . setting_value('visiosoft.module.profile::register_protection_url') . '"таргет =" _ бланк "> Заштита личних података.</a>',
-    'accept_privacy_terms_label' => '<html>прихватам' . setting_value('visiosoft.module.profile::register_privacy_url') . '"таргет =" _ бланк "> услови приватности</a>.',
-    'receive_sms_emails_label' => 'Желим да примам е-пошту и смс.',
+    'accept_terms_label' => 'I accept the terms.',
+    'accept_protection_law_label' => 'I accept the terms of the Law on <a href="' . setting_value('visiosoft.module.profile::register_protection_url') . '" target="_blank">Protection of Personal Data.</a>',
+    'accept_privacy_terms_label' => 'I accept <a href="' . setting_value('visiosoft.module.profile::register_privacy_url') . '" target="_blank">privacy terms</a>.',
+    'receive_sms_emails_label' => 'I want to receive e-mail & sms.',
 
     // Register Type
     'personal' => [
-        'name' => 'Лични'
+        'name' => 'Personal'
     ],
 
 	'education_part' => [
-		'name' => 'Држава образовања'
+		'name' => 'State of Education'
 	],
 
     'notified_new_updates' => [
-        'name' => 'Обавештена нова ажурирања',
+        'name' => 'Notified New Updates',
     ],
     'notified_about_ads' => [
-        'name' => 'Обавештени о огласима',
+        'name' => 'Notified About Ads',
     ],
     'receive_messages_email' => [
-        'name' => 'Примите поруке е-поштом',
+        'name' => 'Receive Messages Email',
     ],
 ];
