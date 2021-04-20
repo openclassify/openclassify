@@ -10,27 +10,27 @@ return [
         ],
     ],
     'adress' => [
-        'name'   => 'Adress',
+        'name'   => 'Adresa',
         'option' => [
-            'read'   => 'Can read adress?',
-            'write'  => 'Can create/edit adress?',
-            'delete' => 'Can delete adress?',
+            'read'   => 'Može da vidi adresu?',
+            'write'  => 'Može da kreira / uređuje adresu?',
+            'delete' => 'Može da obriše adresu?',
         ],
     ],
     'education' => [
-        'name'   => 'Education',
+        'name'   => 'Obrazovanje',
         'option' => [
-            'read'   => 'Can read education?',
-            'write'  => 'Can create/edit education?',
-            'delete' => 'Can delete education?',
+            'read'   => 'Može da vidi obrazovanje?',
+            'write'  => 'Može da kreira / uređuje obrazovanje?',
+            'delete' => 'Može da obriše obrazovanje?',
         ],
     ],
     'education_part' => [
-        'name'   => 'Education part',
+        'name'   => 'Deo obrazovanja',
         'option' => [
-            'read'   => 'Can read education part?',
-            'write'  => 'Can create/edit education part?',
-            'delete' => 'Can delete education part?',
+            'read'   => 'Može da vidi deo obrazovanja?',
+            'write'  => 'Može da kreira / uređuje deo obrazovanja?',
+            'delete' => 'Može da obriše deo obrazovanja?',
         ],
     ],
 ];
