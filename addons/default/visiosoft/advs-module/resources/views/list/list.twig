@@ -49,7 +49,7 @@
                             </div>
                         {% endfor %}
                         <div class="d-flex align-items-center">
-                            <a href="{{ app.request.pathinfo }}"
+                            <a href="{{ url_route('adv_list_seo', [category.slug]) }}"
                                class="text-truncate d-flex align-items-center mr-1">
                                 {{ trans('visiosoft.module.advs::field.clear_all') }}
                             </a>

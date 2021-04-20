@@ -50,4 +50,10 @@ class CityRepository extends EntryRepository implements CityRepositoryInterface
             ->orderBy('order','ASC')
             ->get();
     }
+
+    public function findAllByIDs($citiesIDs) {
+        return $this->newQuery()
+            ->whereIn('location_cities.id', $citiesIDs)
+            ->get();
+    }
 }

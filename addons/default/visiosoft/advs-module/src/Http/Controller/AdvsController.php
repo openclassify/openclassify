@@ -360,6 +360,38 @@ class AdvsController extends PublicController
             ];
         }
 
+        if (($cities = \request()->city) && $cities = $cities[0]) {
+            $citiesIDs = $cityId ? [$cityId->id] : explode(',', $cities);
+            $cities = $this->cityRepository->findAllByIDs($citiesIDs);
+
+            $value = array();
+            foreach ($cities as $city) {
+                $removalLink = array_filter($param, function ($singleParam) {
+                    return $singleParam !== 'city';
+                }, ARRAY_FILTER_USE_KEY);
+                $removalLink = fullLink(
+                    $removalLink,
+                    \request()->url(),
+                    ['city[]' => implode(
+                        ',',
+                        array_filter($citiesIDs, function ($singleCity) use ($city) {
+                            return $singleCity != $city->id;
+                        })
+                    )]
+                );
+
+                $value[] = [
+                    'name' => $city->name,
+                    'removalLink' => $removalLink
+                ];
+            }
+
+            $cFArray[] = [
+                'name' => trans('visiosoft.module.advs::field.address'),
+                'value' => $value
+            ];
+        }
+
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
         $viewType = $this->requestHttp->cookie('viewType');
