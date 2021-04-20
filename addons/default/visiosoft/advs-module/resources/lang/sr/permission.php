@@ -101,8 +101,8 @@ return [
         'name'   => 'Status',
         'option' => [
             'read'   => 'Može da vidi status?',
-            'write'  => 'Can create/edit status?',
-            'delete' => 'Can delete status?',
+            'write'  => 'Može da kreira / uređuje status?',
+            'delete' => 'Može da obriše status?',
         ],
     ],
 ];
