@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'send_forgot_sms' => 'SMS sent to your registered phone. Please check.',
-    'found_phone' => 'The phone number registered in the system was not found.',
-    'error_mail' => 'Your transaction was completed successfully, but the notification e-mail could not be sent.',
+    'send_forgot_sms' => 'SMS poslan na vaš registrovani telefon. Molim te proveri.',
+    'found_phone' => 'Telefonski broj registrovan u sistemu nije pronađen.',
+    'error_mail' => 'Vaša transakcija je uspešno završena, ali e-mail sa obaveštenjem nije mogo biti poslat.',
 ];
