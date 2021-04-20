@@ -2,42 +2,42 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'Naziv'
     ],
     'slug' => [
         'name' => 'Slug'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'Grad'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'Država'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'Deo grad'
     ],
     'order' => [
-        'name' => 'Sort Order'
+        'name' => 'Redosled sortiranja'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Susedstvo'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'Selo'
     ],
     'description' => [
-        'name' => 'Description'
+        'name' => 'Opis'
     ],
     'pick_option' => [
-        'name' => 'Pick an option',
+        'name' => 'Izaberi opciju',
     ],
     'address' => [
-        'name' => 'Address',
+        'name' => 'Adresa',
     ],
-    'selected' => 'Selected',
-    'choose_an_option' => 'Choose an option...',
+    'selected' => 'Odabrano',
+    'choose_an_option' => 'Odaberite Opciju...',
 	'abv' => [
-		'name' => 'Abbreviation',
+		'name' => 'Skraćenica',
 	],
-	'location' => 'Location',
+	'location' => 'Lokacija',
 ];
