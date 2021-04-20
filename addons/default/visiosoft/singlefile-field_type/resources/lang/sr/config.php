@@ -2,9 +2,9 @@
 
 return [
     'folders' => [
-        'name'         => 'Folders',
-        'instructions' => 'Specify which folders are available for this field. Leave blank to display all folders.',
-        'warning'      => 'Existing folder permissions take precedence over selected folders.',
+        'name'         => 'Folderi',
+        'instructions' => 'Navedite koje su fascikle dostupne za ovo polje. Ostavite prazno za prikaz svih direktorijuma.',
+        'warning'      => 'Postojeće dozvole za fascikle imaju prednost nad odabranim direktorijumima.',
     ],
     'max'     => [
         'name'         => 'Max Upload Size',
