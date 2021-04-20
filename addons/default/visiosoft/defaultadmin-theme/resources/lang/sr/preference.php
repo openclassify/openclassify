@@ -23,7 +23,7 @@ return [
         'name'         => 'Mod Sidebar-a',
         'instructions' => 'Statičke bočne trake će uvek biti vidljive.',
         'option'       => [
-            'default' => 'Default',
+            'default' => 'Podrazumevano',
             'static'  => 'Static',
         ],
     ],
