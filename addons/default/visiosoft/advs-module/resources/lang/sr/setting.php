@@ -48,10 +48,10 @@ return [
         'name' => 'Aktivne valute',
     ],
     'latest-limit' => [
-        'name' => 'Latest Limit',
+        'name' => 'Ograniči najnovije',
     ],
     'site_address' => [
-        'name' => 'Site address',
+        'name' => 'Adresa sajta',
         'warning'      => 'Automatski dodato www.  www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
@@ -81,7 +81,7 @@ return [
         'name' => 'Podrazumevana valuta Oglasa',
     ],
     'default_GET' => [
-        'name' => 'Default Ad GET',
+        'name' => 'Podrazumevani oglas Get',
     ],
     'twitter' => [
         'name' => 'Twitter',
@@ -108,100 +108,100 @@ return [
         'name' => 'Sakrij polje Selo',
     ],
     'hide_configurations' => [
-        'name' => 'Hide the Configurations Button',
-        'instructions' => 'Hide the Configurations Button in the Ad Preview Page',
+        'name' => 'Sakrij dugme za konfiguracije',
+        'instructions' => 'Sakrij dugme za konfiguracije u pregledu oglasa',
     ],
     'make_all_fields_required' => [
-        'name' => 'Make All Fields Required',
-        'instructions' => 'Require the user to fill the Price and Description fields when creating an ad',
+        'name' => 'Neka sva polja budu obavezna',
+        'instructions' => 'Zahtevaj od korisnika da prilikom kreiranja oglasa popuni polja Cena i Opis',
     ],
     'make_map_required' => [
-        'name' => 'Make Map Required',
-        'instructions' => 'Require the user to place a pin on the map when creating an ad',
+        'name' => 'Neka Mapa bude obavezna',
+        'instructions' => 'Zahtevajte od korisnika da postavi pribadaču na mapu prilikom pravljenja oglasa',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Hide Listing Standard Price',
+        'name' => 'Sakrij standardnu cenu na listi',
     ],
     'enabled_currencies' => [
-        'name' => 'Enabled Currencies',
+        'name' => 'Omogućene valute',
     ],
     'google_statistic_code' => [
         'name' => 'Google Statistic Code',
     ],
     'register_email_field' => [
-        'name' => 'Member Registration Email Requirement',
+        'name' => 'Zahtevaj Email za registraciju članova',
     ],
     'market_place' => [
-        'name' => 'Market Place',
+        'name' => 'Trgovina',
     ],
 	'price_area_hidden' => [
-		'name' => 'Price Area Hidden',
+		'name' => 'Područje cena skriveno',
 	],
     'hide_price_filter' => [
-        'name' => 'Hide Price Filter',
+        'name' => 'Sakrij filter cena',
     ],
     'hide_date_filter' => [
-        'name' => 'Hide Date Filter',
+        'name' => 'Sakrij filter za datum',
     ],
     'hide_photo_filter' => [
-        'name' => 'Hide Photo Filter',
+        'name' => 'Sakrij foto filter',
     ],
     'hide_map_filter' => [
-        'name' => 'Hide Map Filter',
+        'name' => 'Sakrij filter mape',
     ],
     'show_lang_url' => [
-        'name' => 'Show Lang Parameter For URL',
+        'name' => 'Prikaži parametar jezika za URL',
     ],
     'popular_ads_limit' => [
-        'name' => 'Popular Ads Limit',
+        'name' => 'Ograničenje popularnih oglasa',
     ],
 
     //Image
 
     'image_resize_backend' => [
-        'name' => 'Image Resize Backend',
+        'name' => 'Izmenjivanje veličine slike',
     ],
     'full_image_width' => [
-        'name' => 'Full Image Width',
+        'name' => 'Puna širina slike',
     ],
     'full_image_height' => [
-        'name' => 'Full Image Height',
+        'name' => 'Visina pune slike ',
     ],
     'medium_image_width' => [
-        'name' => 'Medium Image Width',
+        'name' => 'Srednja širina slike',
     ],
     'medium_image_height' => [
-        'name' => 'Medium Image Height',
+        'name' => 'Srednja visina slike',
     ],
     'thumbnail_width' => [
-        'name' => 'Thumbnail Width',
+        'name' => 'Širina sličice (Thumnail)',
     ],
     'thumbnail_height' => [
-        'name' => 'Thumbnail Height',
+        'name' => 'Visina sličice (Thumbnail)',
     ],
     'add_canvas' => [
-        'name' => 'Add Canvas',
+        'name' => 'Dodajte platno',
     ],
     'image_canvas_width' => [
-        'name' => 'Image Canvas Width',
+        'name' => 'Širina slike canvasa',
     ],
     'image_canvas_height' => [
-        'name' => 'Image Canvas Height',
+        'name' => 'Visina slike canvasa',
     ],
     'watermark_type' => [
-        'name' => 'Watermark Type',
+        'name' => 'Tip vodenog žiga',
     ],
     'watermark_text' => [
-        'name' => 'Watermark Text',
+        'name' => 'Tekst vodenog žiga',
     ],
     'watermark_image' => [
-        'name' => 'Watermark Image',
+        'name' => 'Slika vodenog žiga',
     ],
     'watermark_position' => [
-        'name' => 'Watermark Position',
+        'name' => 'Pozicija vodenog žiga',
     ],
     'user_filter_limit' => [
-        'name' => 'User Filter Limit',
+        'name' => 'Ograničenje korisničkog filtera',
         'instructions' => 'In the admin panel'
     ],
     'show_breadcrumb_when_creating_ad' => [
@@ -255,14 +255,14 @@ return [
 		'name' => 'Disable Sentry'
 	],
     'watermark' => [
-        'name' => 'Watermark',
-        'instructions' => 'Is watermark active?'
+        'name' => 'Vodeni žig',
+        'instructions' => 'Da li je aktivan vodeni žig?'
     ],
     'detailed_product_options' => [
-        'name' => 'Detailed Product Options',
-        'instructions' => 'Allows you to enter stock and price information for the product'
+        'name' => 'Detaljne opcije proizvoda',
+        'instructions' => 'Omogućava vam da unesete informacije o zalihama i cenama proizvoda'
     ],
     'show_subcats_mobile' => [
-        'name' => 'Show subcategories on mobile view',
+        'name' => 'Prikažite potkategorije na mobilnom prikazu',
     ]
 ];
