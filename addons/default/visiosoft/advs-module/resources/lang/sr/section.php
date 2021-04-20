@@ -2,50 +2,50 @@
 
 return [
     'advs' => [
-        'title' => 'Ads',
+        'title' => 'Oglasi',
     ],
     'categories' => [
-        'title' => 'Categories',
+        'title' => 'Kategorije',
     ],
     'countries' => [
-        'title' => 'Countries',
+        'title' => 'Države',
     ],
     'cities' => [
-        'title' => 'Cities',
+        'title' => 'Gradovi',
     ],
     'districts' => [
-        'title' => 'Districts',
+        'title' => 'Delovi grada',
     ],
     'neighborhoods' => [
-        'title' => 'Neighborhoods',
+        'title' => 'Susedstva',
     ],
     'village' => [
-        'title' => 'Village',
+        'title' => 'Selo',
     ],
     'custom_fields' => [
-        'title' => 'Custom fields',
+        'title' => 'Prilagođena polja',
     ],
     'custom_field_advs' => [
         'title' => 'Custom field ads',
     ],
     'cf_values' => [
-        'title' => 'Cf values',
+        'title' => 'Vrednosti prilagođenog polja',
     ],
     'fields' => [
-        'title' => 'Custom Fields'
+        'title' => 'Prilagođena polja'
     ],
     'assets_clear' => [
         'name' => 'Assets Clear'
     ],
-    'general' => 'General',
-    'ads' => 'Ads',
-    'user' => 'User',
+    'general' => 'Opšte',
+    'ads' => 'Oglasi',
+    'user' => 'Korisnik',
     'filter' => 'Filter',
-    'create_ad' => 'Create Ad',
+    'create_ad' => 'Kreiraj oglas',
     'options' => [
-        'title' => 'Options',
+        'title' => 'Opcije',
     ],
-    'ads_image' => 'Ads Image',
+    'ads_image' => 'Slika oglasa',
     'product_options' => [
         'title' => 'Options',
     ],
