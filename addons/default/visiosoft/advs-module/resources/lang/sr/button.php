@@ -39,10 +39,10 @@ return [
     'new_options_configuration' => 'Konfiguracija Nove opcije',
     'new_option_configuration' => 'Konfiguracija nove opcije',
 	'create_configurations' => 'Kreiraj konfiguracije',
-	'replicate' => 'Replicate',
+	'replicate' => 'Repliciraj',
 	'fast_create' => 'Brzo kreirajte',
 	'publish' => 'Objavi',
 	'import' => 'Uvezi',
     'new_status' => 'Novi status',
-    'fast_edit' => 'Fast Edit',
+    'fast_edit' => 'Brzo uredi',
 ];
