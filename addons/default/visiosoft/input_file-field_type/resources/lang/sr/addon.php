@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Input File',
-    'name'        => 'Input File Field Type',
+    'title'       => 'Ulazna datoteka',
+    'name'        => 'Tip polja ulazne datoteke',
     'description' => ''
 ];
