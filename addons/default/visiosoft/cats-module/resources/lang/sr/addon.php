@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Категорија',
-    'name'        => 'Модул категорије',
+    'title'       => 'Category',
+    'name'        => 'Category Module',
     'description' => ''
 ];
