@@ -2,52 +2,52 @@
 
 return [
     'show_my_ads' => [
-        'name' => 'Прикажи картицу Моји огласи',
+        'name' => 'Show My Ads Tab',
     ],
     'upload_avatar' => [
-        'name' => 'Аватар Уплоад',
+        'name' => 'Avatar Upload',
     ],
     'show_tax_office' => [
-        'name' => 'Покажите поље пореске управе',
+        'name' => 'Show Tax Office Field',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Прикажи услове за потврду у регистру',
-        'instructions' => 'На обрасцу за регистрацију прикажите „Прихвати појам“, „закон о заштити“, „термин за приватност“, „смс и е-пошту“'
+        'name' => 'Show Checkbox Terms on Register',
+        'instructions' => 'Show the "Accept term", "protection law", "privacy term", "sms & emails" on the register form'
     ],
     'register_protection_url' => [
-        'name' => 'Региструјте заштитни УРЛ',
+        'name' => 'Register Protection URL',
     ],
     'register_privacy_url' => [
-        'name' => 'Региструјте УРЛ приватности',
+        'name' => 'Register Privacy URL',
     ],
     'show_education_profession' => [
-        'name' => 'Прикажите поља образовања и професије',
-        'instructions' => 'На страници за уређивање профила прикажите „Образовање“, „Стање образовања“ и „Занимање“'
+        'name' => 'Show Education and Profession Fields',
+        'instructions' => 'Show the "Education", "State of Education" and "Profession" on the profile edit page'
     ],
     'google_captcha_site_key' => [
-        'name' => 'Кључ веб странице Гоогле Цаптцха',
+        'name' => 'Google Captcha Site Key',
     ],
     'google_captcha_secret_key' => [
-        'name' => 'Гоогле Цаптцха тајни кључ',
+        'name' => 'Google Captcha Secret Key',
     ],
     'score_threshold' => [
-        'name' => 'Сцоре Тхресхолд',
-        'instructions' => 'Вредност између 0 и 1. Што је већи праг, строжији РеЦаптцха покушава да утврди да ли је корисник бот или не.',
+        'name' => 'Score Threshold',
+        'instructions' => 'A value between 0 and 1. The higher the threshold the more strict ReCaptcha is in trying to determine if a user is a bot or not.',
     ],
     'education' => [
-        'name' => 'образовање'
+        'name' => 'Education'
     ],
     'state_of_education' => [
-        'name' => 'Држава образовања'
+        'name' => 'State of Education'
     ],
     'profession' => [
-        'name' => 'Професија'
+        'name' => 'Profession'
     ],
     'hide_register_type_profile' => [
-        'name' => 'Сакриј тип регистрације на страници профила',
-        'instructions' => 'Сакрива поље типа регистра на страници за уређивање профила.',
+        'name' => 'Hide Register Type in Profile Page',
+        'instructions' => 'Hides the register type field in the profile edit page.',
     ],
     'required_district' => [
-        'name' => 'Потребан округ'
+        'name' => 'Required District'
     ],
 ];
