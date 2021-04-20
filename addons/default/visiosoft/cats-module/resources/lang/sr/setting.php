@@ -5,6 +5,6 @@ return [
         'name' => 'Sitemap Dividing Number',
     ],
     'include_cities_sitemap' => [
-        'name' => 'Include Cities in Sitemap',
+        'name' => 'Uključite gradove u Sitemap',
     ],
 ];
