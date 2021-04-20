@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Media Field Type',
-    'name'        => 'Files Field Type',
-    'description' => 'A multiple files upload field type.',
+    'title'       => 'Vrsta medijskog polja',
+    'name'        => 'Tip polja datoteka',
+    'description' => 'Tip polja za otpremanje više datoteka.',
 ];
