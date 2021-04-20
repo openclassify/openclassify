@@ -2,11 +2,11 @@
 
 return [
     'profile' => [
-        'name'   => 'Profile',
+        'name'   => 'Profil',
         'option' => [
-            'read'   => 'Can read profile?',
-            'write'  => 'Can create/edit profile?',
-            'delete' => 'Can delete profile?',
+            'read'   => 'Može da vidi profil?',
+            'write'  => 'Može da kreira / uređuje profil?',
+            'delete' => 'Može da obriše profil?',
         ],
     ],
     'adress' => [
