@@ -1,53 +1,53 @@
 <?php
 
 return [
-    'latest_ads' => 'Latest Ads',
-    'show_all' => 'Show All',
+    'latest_ads' => 'Najnoviji oglasi',
+    'show_all' => 'Pokaži sve',
     'login' => [
-        'name' => 'Login',
+        'name' => 'Prijavite se',
     ],
     'logout' => [
-        'name' => 'Logout',
+        'name' => 'Odjavite se',
     ],
-    'profile' => 'Profile',
-    'email' => 'Email Address',
-    'phone' => 'Phone Number',
-    'reset_code' => 'Reset Code',
-    'password_confirmation' => 'Password Confirmation',
-    'password' => 'Password',
-    'first_name' => 'First Name',
-    'last_name' => 'Last Name',
-    'remember_me' => 'Remember Me',
-    'not_a_member_yet' => 'Not a Member Yet',
-    'not_a_member_yet_message' => 'Sign up for our members to benefit from our special service',
-    'forgot_password' => 'I Forgot My Password',
-    'email_or_phone_number' => 'Email Address or Phone Number',
-    'phone_number' => 'Phone Number',
+    'profile' => 'Profil',
+    'email' => 'Email adresa',
+    'phone' => 'Broj telefona',
+    'reset_code' => 'Kod za resetovanje',
+    'password_confirmation' => 'Potvrda lozinke',
+    'password' => 'Lozinka',
+    'first_name' => 'Ime',
+    'last_name' => 'Prezime',
+    'remember_me' => 'Zapamti me',
+    'not_a_member_yet' => 'Još niste član',
+    'not_a_member_yet_message' => 'Registrujte se kao naš član kako bi imali koristi od naše posebne usluge',
+    'forgot_password' => 'Zaboravio sam šifru',
+    'email_or_phone_number' => 'Email adresa ili broj telefona',
+    'phone_number' => 'Broj telefona',
 
     // Registration instructions
-    'personal_registration_header' => 'What Are Individual Membership Advantages?',
-    'personal_registration_body' => 'Sell and rent your home, car, sell your unused items, get new ones.',
-    'personal_registration_list_1' => 'Post a free ad,',
-    'personal_registration_list_2' => 'Add the ads you are interested in, follow the price changes after adding them to your favorites, create favorite searches that meet your criteria,',
-    'personal_registration_list_3' => 'Send messages to the ad owners on the site.',
-    'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
+    'personal_registration_header' => 'Koje su prednosti pojedinačnog članstva? ',
+    'personal_registration_body' => 'Prodajte i iznajmite svoj dom, automobil, prodajte neiskorišćene stvari i nabavite nove. ',
+    'personal_registration_list_1' => 'Objavite besplatan oglas,',
+    'personal_registration_list_2' => 'Dodajte oglase koji vas zanimaju, pratite promene cena nakon što ih dodate u svoje favorite, napravite omiljene pretrage koje ispunjavaju vaše kriterijume,',
+    'personal_registration_list_3' => 'Pošaljite poruke vlasnicima oglasa na stranici.',
+    'register_information_note' => 'Informacije na ovoj stranici su uzete za ' . env('APPLICATION_DOMAIN') . ' članstvo. Detaljne informacije o zaštiti ličnih podataka možete pronaći ovde.',
 
     // Register page
-    'phone_validation_error' => 'This phone number is in use by another member.',
+    'phone_validation_error' => 'Ovaj broj telefona koristi drugi član.',
 
     // Forgot Password
-    'create_new_password' => 'Create New Password',
+    'create_new_password' => 'Napravite novu lozinku',
 
     // Login page
-    'or' => 'or',
-    'login_with_phone_number' => 'Login with Phone Number',
-    'login_with_email_address' => 'Login with Email Address',
+    'or' => 'ili',
+    'login_with_phone_number' => 'Prijavite se sa brojem telefona',
+    'login_with_email_address' => 'Prijavite se sa Email adresom',
 
     // Side menu links
-    'company_directory' => 'Company directory',
-    'popular_ads' => 'Popular Ads',
-    'last_48_hours' => 'Last 48 Hours',
-    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
+    'company_directory' => 'Imenik preduzeća',
+    'popular_ads' => 'Popularni oglasi',
+    'last_48_hours' => 'Poslednjih 48 sati',
+    'secure_e-commerce_ads' => 'Sigurni oglasi za e-trgovinu',
     'sms' => 'Send Text Message (SMS)',
     'mail' => 'Send Mail',
 
