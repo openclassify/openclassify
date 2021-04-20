@@ -36,7 +36,7 @@ return [
     'phone_validation_error' => 'Ovaj broj telefona koristi drugi član.',
 
     // Forgot Password
-    'create_new_password' => 'Napravite novu lozinku',
+    'create_new_password' => 'Kreirajte novu lozinku',
 
     // Login page
     'or' => 'ili',
