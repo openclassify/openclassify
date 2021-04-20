@@ -7,17 +7,17 @@ return [
         'warning'      => 'Postojeće dozvole za fascikle imaju prednost nad odabranim direktorijumima.',
     ],
     'max'     => [
-        'name'         => 'Max Upload Size',
-        'instructions' => 'Specify the max upload size in <strong>megabytes</strong>.',
-        'warning'      => 'If not specified the folder max and then server max will be used instead.',
+        'name'         => 'Maksimalna veličina otpremanja',
+        'instructions' => 'Navedite maksimalnu veličinu otpremanja u <strong>megabajtima</strong>.',
+        'warning'      => 'Ako nije navedeno, umesto toga koristiće se folder max, a zatim server max.',
     ],
     'mode'    => [
-        'name'         => 'Input Mode',
-        'instructions' => 'How should users provide file input?',
+        'name'         => 'Mod unosa',
+        'instructions' => 'Kako korisnici treba da obezbede unos datoteka?',
         'option'       => [
-            'default' => 'Upload and/or select files.',
-            'select'  => 'Select files only.',
-            'upload'  => 'Upload files only.',
+            'default' => 'Otpremite i / ili izaberite datoteke.',
+            'select'  => 'Izaberite samo datoteke.',
+            'upload'  => 'Отпреми само датотеке.',
         ],
     ],
 ];
