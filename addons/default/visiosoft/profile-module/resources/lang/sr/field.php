@@ -74,85 +74,85 @@ return [
         'name' => 'Profesija'
     ],
     'identification_number' => [
-        'name' => 'Identification Number'
+        'name' => 'Matični broj'
     ],
     'adress_name' => [
-        'name' => 'Adress Name'
+        'name' => 'Naziv adrese'
     ],
     'adress_first_name' => [
-        'name' => 'First Name'
+        'name' => 'Ime'
     ],
     'adress_last_name' => [
-        'name' => 'Last Name'
+        'name' => 'Prezime'
     ],
     'actions' => [
-        'name' => 'Actions'
+        'name' => 'Akcije'
     ],
     'adress_content' => [
-        'name' => 'Adress Content'
+        'name' => 'Sadržaj adrese'
     ],
     'adress_post_code' => [
-        'name' => 'Post Code'
+        'name' => 'Poštanski broj'
     ],
     'adress_gsm_phone' => [
-        'name' => 'Gsm Phone'
+        'name' => 'Mobilni telefon'
     ],
     'adress_land_phone' => [
-        'name' => 'Land Phone'
+        'name' => 'Fiksni telefon'
     ],
     'adress_country' => [
-        'name' => 'Country'
+        'name' => 'Država'
     ],
     'adress_city' => [
-        'name' => 'City'
+        'name' => 'Grad'
     ],
     'adress_district' => [
-        'name' => 'District'
+        'name' => 'Deo grada'
     ],
     'adress_neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Susedstvo'
     ],
     'adress_village' => [
-        'name' => 'Village'
+        'name' => 'Selo'
     ],
     'messages' => [
-        'name' => 'Messages'
+        'name' => 'Poruke'
     ],
     'user' => [
-        'name' => 'User'
+        'name' => 'Korisnik'
     ],
 	'name' => [
-		'name' => 'Name'
+		'name' => 'Име'
 	],
 
     /*Menu Button*/
     'profile' => [
-        'name' => 'Profile'
+        'name' => 'Profil'
     ],
 
     'create' => [
-        'name' => 'Create'
+        'name' => 'Dodaj'
     ],
     'edit' => [
-        'name' => 'Edit'
+        'name' => 'Uredi'
     ],
     'delete' => [
-        'name' => 'Delete'
+        'name' => 'Obriši'
     ],
     'list' => [
-        'name' => 'List'
+        'name' => 'Lista'
     ],
     'menu_address' => [
-        'name' => 'Address'
+        'name' => 'Adresa'
     ],
     'menu_orders' => [
-        'name' => 'Orders'
+        'name' => 'Kupljeno'
     ],
     'menu_favorites' => [
-        'name' => 'Favorites'
+        'name' => 'Omiljeno'
     ],
     'menu_archived_ads' => [
-        'name' => 'Archived ads'
+        'name' => 'Arhivirani oglasi'
     ],
     'menu_pending_ads' => [
         'name' => 'Pending approval'
@@ -281,73 +281,73 @@ return [
         'name' => 'Detail',
     ],
     'back' => [
-        'name' => 'Back',
+        'name' => 'Nazad',
     ],
     'image' => [
-        'name' => 'Image',
+        'name' => 'Slika',
     ],
     'subject' => [
-        'name' => 'Subject',
+        'name' => 'Naslov',
     ],
     'price' => [
-        'name' => 'Price',
+        'name' => 'Cena',
     ],
     'piece' => [
         'name' => 'Piece',
     ],
     'commission' => [
-        'name' => 'Commission',
+        'name' => 'Provizija',
     ],
     'total' => [
-        'name' => 'Total',
+        'name' => 'Ukupno',
     ],
     'sub_total' => [
-        'name' => 'Sub Total',
+        'name' => 'Ukupno',
     ],
     'sale' => [
         'name' => 'Sale',
     ],
     'awaiting_tracking_number' => [
-        'name' => 'Awaiting Tracking Number',
+        'name' => 'Čeka se broj za praćenje',
     ],
     'awaiting_payment_approval' => [
-        'name' => 'Awaiting Payment Approval',
+        'name' => 'Čeka odobrenje za plaćanje',
     ],
     'paid' => [
-        'name' => 'Paid',
+        'name' => 'Plaćeno',
     ],
     'cancelled' => [
-        'name' => 'Cancelled',
+        'name' => 'Otkazano',
     ],
     'waiting' => [
-        'name' => 'Waiting',
+        'name' => 'Na čekanju',
     ],
     'awaiting_dispatch' => [
-        'name' => 'Awaiting dispatch',
+        'name' => 'Čeka se slanje',
     ],
     'shipped' => [
-        'name' => 'Shipped',
+        'name' => 'Poslato',
     ],
     'delivered' => [
-        'name' => 'Delivered',
+        'name' => 'Isporučeno',
     ],
     'tracking_number' => [
-        'name' => 'Tracking Number',
+        'name' => 'Broj za praćenje',
     ],
     'was_delivered' => [
-        'name' => 'was delivered',
+        'name' => 'je dostavljeno',
     ],
     'not_delivered' => [
-        'name' => 'not delivered',
+        'name' => 'nije dostavljeno',
     ],
     'show_order_msg1' => [
-        'name' => 'The transaction result will be notified by mail.',
+        'name' => 'Rezultat transakcije biće dostavljen putem pošte.',
     ],
     'show_order_msg2' => [
-        'name' => 'Refund will be made if the product is not delivered within one week.',
+        'name' => 'Povrat novca biće izvršen ako proizvod nije isporučen u roku od jedne nedelje.',
     ],
     'show_order_msg3' => [
-        'name' => 'The result of the transaction has been sent to your registered e-mail address.',
+        'name' => 'Rezultat transakcije je poslat na vaš registrovani email.',
     ],
 
     'awaiting_payment' => [
