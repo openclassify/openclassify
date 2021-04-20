@@ -50,90 +50,90 @@ return [
         'name' => 'Država'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'Deo grad'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Susedstvo'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'Selo'
     ],
     'files' => [
-        'name' => 'Images'
+        'name' => 'Slike'
     ],
     'cat1' => [
-        'name' => 'Main Category'
+        'name' => 'Glavna kategorija'
     ],
     'cat2' => [
-        'name' => 'Sub Category 1'
+        'name' => 'Potkategorija 1'
     ],
     'cat3' => [
-        'name' => 'Sub Category 2'
+        'name' => 'Potkategorija 2'
     ],
     'cat4' => [
-        'name' => 'Sub Category 3'
+        'name' => 'Potkategorija 3'
     ],
     'cat5' => [
-        'name' => 'Sub Category 4'
+        'name' => 'Potkategorija 4'
     ],
     'cat6' => [
-        'name' => 'Sub Category 5'
+        'name' => 'Potkategorija 5'
     ],
     'cat7' => [
-        'name' => 'Sub Category 6'
+        'name' => 'Potkategorija 6'
     ],
     'cat8' => [
-        'name' => 'Sub Category 7'
+        'name' => 'Potkategorija 7'
     ],
     'cat9' => [
-        'name' => 'Sub Category 8'
+        'name' => 'Potkategorija 8'
     ],
     'cat10' => [
-        'name' => 'Sub Category 9'
+        'name' => 'Potkategorija 9'
     ],
     'currency' => [
-        'name' => 'Currency'
+        'name' => 'Valuta'
     ],
     'status' => [
         'name' => 'Status',
         'option' => [
-            'approved' => 'Approved',
-            'expired' => 'Expired',
-            'unpublished' => 'Unpublished',
-            'pending_admin' => 'Pending Admin',
-            'pending_user' => 'Pending User'
+            'approved' => 'Odobreno',
+            'expired' => 'Istekao',
+            'unpublished' => 'Neobjavljeno',
+            'pending_admin' => 'Na čekanju za administratora',
+            'pending_user' => 'Korisnik na čekanju'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Unpublished'
+        'name' => 'Neobjavljeno'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Završeno u'
     ],
     'cover_photo' => [
-        'name' => 'Cover Photo'
+        'name' => 'Naslovna fotografija'
     ],
     'favs_adv' => [
-        'name' => 'Fav Ads'
+        'name' => 'Omiljeni oglasi'
     ],
     'my_adv' => [
-        'name' => 'ADVS'
+        'name' => 'Oglasi'
     ],
-    'description' =>  'Description',
-    'explanation' =>  'Explanation',
+    'description' =>  'Opis',
+    'explanation' =>  'Objašnjenje',
     'type' => [
-        'name' => 'Type'
+        'name' => 'Tip'
     ],
     'parent_adv' => [
-        'name' => 'Related Ad'
+        'name' => 'Povezani oglas'
     ],
     'value' => [
-        'name' => 'Value'
+        'name' => 'Vrednost'
     ],
-    'list' => 'List',
-    'home' => 'Home',
-    'list-page' => 'List Page',
-    'search' => 'Search',
+    'list' => 'Lista',
+    'home' => 'Početna',
+    'list-page' => 'Izlistaj stranu',
+    'search' => 'Pronađi',
     'recommended' => 'Recommended Ads for You',
     'filter' => 'Filter',
     'sort' => 'Sort',
@@ -185,11 +185,11 @@ return [
     'asap' => 'Message sent, seller will contact you asap.',
     'ad_id' => 'Ad Id',
     'contact_with' => 'Contact With',
-    'create_adv' => 'Create Ad',
-    'edit_adv' => 'Edit Ad',
-    'mandatory_fields' => 'Mandatory Fields',
-    'ad_post' => 'Ad Post',
-    'sell_item' => 'Sell an item or service',
+    'create_adv' => 'Kreiraj oglas',
+    'edit_adv' => 'Uredi oglas',
+    'mandatory_fields' => 'Obavezna polja',
+    'ad_post' => 'Postavi oglas',
+    'sell_item' => 'Prodajte predmet ili uslugu',
     'search_save' => 'Favorite search saved successfully',
     'address' => 'Address',
     'email' => 'E-Mail',
