@@ -2,7 +2,7 @@
 
 return [
     'error_added_cart' => 'Traženi proizvod trenutno ne postoji ili je neaktivan',
-    'please_payment' => 'Molim vas platite',
+    'please_payment' => 'Platite',
     'bank_account_info' => 'Podaci o bankovnom računu',
     'agreement' => 'Klikom na Objavi slažete se sa našim Uslovima korišćenja i Politikom privatnosti potvrđujete da ste zakoniti vlasnik ove stavke.',
     'update_category_msg' => 'Klasifikovana kategorija će biti ažurirana.',
