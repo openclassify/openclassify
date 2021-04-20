@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'choose_file' => 'Choose File',
+    'choose_file' => 'Izaberi datoteku',
 ];
