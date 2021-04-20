@@ -134,11 +134,11 @@ return [
     'home' => 'Početna',
     'list-page' => 'Izlistaj stranu',
     'search' => 'Pronađi',
-    'recommended' => 'Recommended Ads for You',
+    'recommended' => 'Preporučeni oglasi za vas',
     'filter' => 'Filter',
-    'sort' => 'Sort',
-    'sort_by' => 'Sort By',
-    'pick_option' => 'Pick an option',
+    'sort' => 'Sortiraj',
+    'sort_by' => 'Sortiraj po',
+    'pick_option' => 'Izaberi opciju',
     'pick_ordering' => 'Ordering',
     'price_high' => 'Price High to Low',
     'price_low' => 'Price Low to High',
@@ -251,8 +251,8 @@ return [
     'sold_out' => [
         'name' => 'Plaćanje pouzećem',
     ],
-    'edit_category' => 'Edit Category',
-    'set_category' => 'Set Category',
+    'edit_category' => 'Uredi kategoriju',
+    'set_category' => 'Postavi kategoriju',
     'max' => [
         'name' => 'Max',
     ],
@@ -260,10 +260,10 @@ return [
         'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'U poslednjih 24 časa'
     ],
     'in_the_last_day' => [
-        'name' => 'In The Last 24 Hours'
+        'name' => 'U poslednjih 24 časa'
     ],
     'in_the_last_week' => [
         'name' => 'In The Last Week'
@@ -344,26 +344,26 @@ return [
     'ads_with_map' => 'Ads With Map',
     'advanced_sorting' => 'Advanced Sorting',
 
-    'free' => 'Free',
-    'ad_date' => 'Ad Date',
-    'photo_video' => 'Photo, Video',
-    'and_above' => 'and above',
-    'and_below' => 'and below',
-    'clear_all' => 'Clear All',
-    'balances' => 'Balances',
-    'packages' => 'Packages',
-    'dopings' => 'Dopings',
-    'advs' => 'Advs',
-    'site' => 'Site',
-    'subscription' => 'Subscription',
-	'created' => 'Created',
+    'free' => 'Besplatno',
+    'ad_date' => 'Datum oglasa',
+    'photo_video' => 'Slika, Video',
+    'and_above' => 'i iznad',
+    'and_below' => 'i ispod',
+    'clear_all' => 'Obriši sve',
+    'balances' => 'Stanje',
+    'packages' => 'Paketi',
+    'dopings' => 'Dodaci',
+    'advs' => 'Oglasi',
+    'site' => 'Sajt',
+    'subscription' => 'Pretplata',
+	'created' => 'Kreiran',
 	'product_option' => [
-		'name' => 'Product Option'
+		'name' => 'Opcije proizvoda'
 	],
 	'option_json' => [
-		'name' => 'Option'
+		'name' => 'Opcije'
 	],
     'old_price' => [
-        'name' => 'Old Price'
+        'name' => 'Stare cena'
     ],
 ];
