@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'showOn' => 'Главни',
-    'rotate' => 'Ротирај',
-    'delete' => 'Избриши'
+    'showOn' => 'Main',
+    'rotate' => 'Rotate',
+    'delete' => 'Delete'
 ];
