@@ -47,18 +47,18 @@ return [
     ],
     'ads_image' => 'Slika oglasa',
     'product_options' => [
-        'title' => 'Options',
+        'title' => 'Opcije',
     ],
     'productoptions_value' => [
-        'title' => 'Options Value',
+        'title' => 'Vrednost opcija',
     ],
     'option_configuration' => [
-        'title' => 'Configuration',
+        'title' => 'Konfiguracija',
     ],
-    'translations' => 'Translations',
+    'translations' => 'Prevodi',
     'status' => [
         'title' => 'Status',
     ],
-	'ads_detail' => 'Ads Detail',
+	'ads_detail' => 'Detalji oglasa',
 
 ];
