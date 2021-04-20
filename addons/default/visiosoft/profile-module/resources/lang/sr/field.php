@@ -2,22 +2,22 @@
 
 return [
     'file' => [
-        'name' => 'Photos'
+        'name' => 'Slike'
     ],
     'first_name' => [
-        'name' => 'First Name'
+        'name' => 'Ime'
     ],
     'last_name' => [
-        'name' => 'Last Name'
+        'name' => 'Prezime'
     ],
     'username' => [
-        'name' => 'Username'
+        'name' => 'Korisničko Ime'
     ],
     'display_name' => [
         'name' => 'Display Name'
     ],
     'email' => [
-        'name' => 'Email Adress'
+        'name' => 'Email adresa'
     ],
     'sitename' => [
         'name' => 'sitename'
@@ -29,49 +29,49 @@ return [
         'name' => 'User Enable'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'Država'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'Grad'
     ],
     'district' => [
-        'name' => 'District'
+        'name' => 'Deo grada'
     ],
     'neighborhood' => [
-        'name' => 'Neighborhood'
+        'name' => 'Susedstvo'
     ],
     'village' => [
-        'name' => 'Village'
+        'name' => 'Selo'
     ],
     'gsm_phone' => [
-        'name' => 'GSM Phone'
+        'name' => 'Mobilni telefon'
     ],
     'land_phone' => [
-        'name' => 'Land Phone'
+        'name' => 'Fiksni telefon'
     ],
     'office_phone' => [
-        'name' => 'Office Phone'
+        'name' => 'Službeni telefon'
     ],
     'register_type' => [
-        'name' => 'Register Type'
+        'name' => 'Tip registra'
     ],
     'birthday' => [
-        'name' => 'Birthday'
+        'name' => 'Rođendan'
     ],
 	'facebook_address' => [
-		'name' => 'Facebook Address'
+		'name' => 'Facebook adresa'
 	],
 	'google_address' => [
-		'name' => 'Google Address'
+		'name' => 'Adresa'
 	],
     'education' => [
-        'name' => 'Education'
+        'name' => 'Obrazovanje'
     ],
     'state_of_education' => [
-        'name' => 'State of Education'
+        'name' => 'Država obrazovanja'
     ],
     'profession' => [
-        'name' => 'Profession'
+        'name' => 'Profesija'
     ],
     'identification_number' => [
         'name' => 'Identification Number'
