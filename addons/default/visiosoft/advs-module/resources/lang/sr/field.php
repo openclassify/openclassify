@@ -2,7 +2,7 @@
 
 return [
     'name' => [
-        'name' => 'Title'
+        'name' => 'Naslov'
     ],
     'order' => [
         'name' => 'Order'
@@ -14,40 +14,40 @@ return [
         'name' => 'Parent'
     ],
     'category' => [
-        'name' => 'Category Title'
+        'name' => 'Naziv kategorije'
     ],
     'price' => [
-        'name' => 'Price'
+        'name' => 'Cena'
     ],
     'standard_price' => [
-        'name' => 'Standard Price'
+        'name' => 'Standardna cena'
     ],
     'date' => [
-        'name' => 'Date'
+        'name' => 'Datum'
     ],
     'photo' => [
-        'name' => 'Photo'
+        'name' => 'Slika'
     ],
     'video' => [
         'name' => 'Video'
     ],
     'map' => [
-        'name' => 'Map'
+        'name' => 'Mapa'
     ],
     'stock' => [
-        'name' => 'Stock'
+        'name' => 'Zalihe'
     ],
     'advs_desc' => [
-        'name' => 'Description'
+        'name' => 'Opis'
     ],
     'online_payment' => [
-        'name' => 'Online Payment'
+        'name' => 'Onlajn plaćanje'
     ],
     'city' => [
-        'name' => 'City'
+        'name' => 'Grad'
     ],
     'country' => [
-        'name' => 'Country'
+        'name' => 'Država'
     ],
     'district' => [
         'name' => 'District'
