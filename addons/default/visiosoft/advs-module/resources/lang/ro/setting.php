@@ -262,4 +262,7 @@ return [
         'name' => 'Opțiuni detaliate despre produs',
         'instructions' => 'Vă permite să introduceți informații despre stoc și preț pentru produs'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Afișați subcategoriile pe ecranul mobil',
+    ]
 ];

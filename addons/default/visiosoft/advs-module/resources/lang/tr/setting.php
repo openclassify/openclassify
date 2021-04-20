@@ -262,4 +262,7 @@ return [
         'name' => 'Ayrıntılı Ürün Seçenekleri',
         'instructions' => 'Ürüne ait stok ve fiyat bilgilerini girmenizi sağlar'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Alt kategorileri mobil görünümde göster',
+    ]
 ];

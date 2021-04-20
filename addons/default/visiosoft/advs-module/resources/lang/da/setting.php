@@ -262,4 +262,7 @@ return [
         'name' => 'Detaljerede produktmuligheder',
         'instructions' => 'Giver dig mulighed for at indtaste lager- og prisoplysninger for produktet'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Vis underkategorier i mobilvisning',
+    ]
 ];
