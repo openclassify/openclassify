@@ -2,6 +2,6 @@
 
 return [
     'title'       => 'Single File',
-    'name'        => 'File Field Type',
-    'description' => 'A file upload field type.',
+    'name'        => 'Tip polja datoteka',
+    'description' => 'Tip polja za otpremanje datoteka.',
 ];
