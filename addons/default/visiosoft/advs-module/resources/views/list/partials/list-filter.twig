@@ -56,26 +56,28 @@
                 {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
             </div>
 
-            <div class="px-2 mb-2 d-flex align-items-center">
-                <input type="radio" id="dateDay" {{ app.request.get('date') == 'day' ? 'checked' }} value="day"
-                       name="date">
-                <label for="dateDay" class="ml-2 mb-0">
-                    {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
-                </label>
-            </div>
-            <div class="px-2 mb-2 d-flex align-items-center">
-                <input type="radio" id="dateWeek" {{ app.request.get('date') == 'week' ? 'checked' }} value="week"
-                       name="date">
-                <label for="dateWeek" class="ml-2 mb-0">
-                    {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
-                </label>
-            </div>
-            <div class="px-2 mb-3 d-flex align-items-center">
-                <input type="radio" id="dateMonth" {{ app.request.get('date') == 'month' ? 'checked' }} value="month"
-                       name="date">
-                <label for="dateMonth" class="ml-2 mb-0">
-                    {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
-                </label>
+            <div class="overflow-auto">
+                <div class="px-2 mb-2 d-flex align-items-center">
+                    <input type="radio" id="dateDay" {{ app.request.get('date') == 'day' ? 'checked' }} value="day"
+                           name="date">
+                    <label for="dateDay" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
+                    </label>
+                </div>
+                <div class="px-2 mb-2 d-flex align-items-center">
+                    <input type="radio" id="dateWeek" {{ app.request.get('date') == 'week' ? 'checked' }} value="week"
+                           name="date">
+                    <label for="dateWeek" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
+                    </label>
+                </div>
+                <div class="px-2 mb-3 d-flex align-items-center">
+                    <input type="radio" id="dateMonth" {{ app.request.get('date') == 'month' ? 'checked' }} value="month"
+                           name="date">
+                    <label for="dateMonth" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
+                    </label>
+                </div>
             </div>
         </div>
         <!-- Date Filter End -->
@@ -89,19 +91,21 @@
                 {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
             </div>
 
-            <div class="px-2 mb-2 d-flex align-items-center">
-                <input type="checkbox" id="photo" {{ app.request.get('photo') == true ? 'checked' }} value="true"
-                       name="photo">
-                <label for="photo" class="ml-2 mb-0">
-                    {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
-                </label>
-            </div>
-            <div class="px-2 mb-3 d-flex align-items-center">
-                <input type="checkbox" id="video" {{ app.request.get('video') == true ? 'checked' }} value="true"
-                       name="video">
-                <label for="video" class="ml-2 mb-0">
-                    {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
-                </label>
+            <div class="overflow-auto">
+                <div class="px-2 mb-2 d-flex align-items-center">
+                    <input type="checkbox" id="photo" {{ app.request.get('photo') == true ? 'checked' }} value="true"
+                           name="photo">
+                    <label for="photo" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
+                    </label>
+                </div>
+                <div class="px-2 mb-3 d-flex align-items-center">
+                    <input type="checkbox" id="video" {{ app.request.get('video') == true ? 'checked' }} value="true"
+                           name="video">
+                    <label for="video" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
+                    </label>
+                </div>
             </div>
         </div>
         <!-- Media Filter End -->
@@ -115,10 +119,12 @@
                 {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
             </div>
 
-            <div class="px-2 mb-3 d-flex align-items-center">
-                <input type="checkbox" id="mapFilter" {{ app.request.get('map') == true ? 'checked' }} value="true"
-                       name="map">
-                <label for="mapFilter" class="ml-2 mb-0">{{ trans("visiosoft.module.advs::field.ads_with_map") }}</label>
+            <div class="overflow-auto">
+                <div class="px-2 mb-3 d-flex align-items-center">
+                    <input type="checkbox" id="mapFilter" {{ app.request.get('map') == true ? 'checked' }} value="true"
+                           name="map">
+                    <label for="mapFilter" class="ml-2 mb-0">{{ trans("visiosoft.module.advs::field.ads_with_map") }}</label>
+                </div>
             </div>
         </div>
         <!-- Map Filter End -->

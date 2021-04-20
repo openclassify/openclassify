@@ -55,8 +55,12 @@ ul {
         }
       }
 
-      & > label {
-        font-size: calc(14rem / 16);
+      &:last-child {
+        max-height: 11rem;
+
+        label {
+          font-size: calc(14rem / 16);
+        }
       }
     }
   }
@@ -513,13 +517,13 @@ ul {
                   }
 
                   .cat-data {
-                    font-size: calc(12rem / 16);
+                    font-size: calc(13rem / 16);
                     color: rgba(34, 34, 34, .4);
                   }
 
                   .action-data {
                     color: #A1A1A1;
-                    font-size: calc(8rem / 16);
+                    font-size: calc(10.7rem / 16);
 
                     & > a {
                       visibility: hidden;
@@ -541,7 +545,7 @@ ul {
                     }
 
                     svg {
-                      width: .4rem;
+                      width: .45rem;
                       height: auto;
                     }
                   }
