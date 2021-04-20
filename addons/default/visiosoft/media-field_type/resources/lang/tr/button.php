@@ -3,5 +3,5 @@
 return [
     'showOn' => 'Vitrin',
     'rotate' => 'Döndür',
-    'delete' => 'Silme'
+    'delete' => 'Sil'
 ];
