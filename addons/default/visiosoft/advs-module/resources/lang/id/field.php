@@ -343,6 +343,7 @@ return [
     'view' => 'Melihat',
     'ads_with_map' => 'Iklan Dengan Peta',
     'advanced_sorting' => 'Penyortiran Lanjutan',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Gratis',
     'ad_date' => 'Tanggal Iklan',
