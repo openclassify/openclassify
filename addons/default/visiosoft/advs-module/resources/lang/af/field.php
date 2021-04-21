@@ -343,6 +343,7 @@ return [
     'view' => 'Beskou',
     'ads_with_map' => 'Advertensies Met Kaart',
     'advanced_sorting' => 'Gevorderde sortering',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Vry',
     'ad_date' => 'Advertensiedatum',
