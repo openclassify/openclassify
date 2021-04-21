@@ -343,6 +343,7 @@ return [
     'view' => 'Переглянути',
     'ads_with_map' => 'Оголошення з картою',
     'advanced_sorting' => 'Розширене сортування',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Безкоштовно',
     'ad_date' => 'Дата оголошення',
