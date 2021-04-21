@@ -344,6 +344,7 @@ return [
     'view' => 'Bax',
     'ads_with_map' => 'Xəritə ilə elanlar',
     'advanced_sorting' => 'Qabaqcıl çeşidləmə',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Elan Tarixi',
