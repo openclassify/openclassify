@@ -343,6 +343,7 @@ return [
     'view' => 'राय',
     'ads_with_map' => 'मानचित्र के साथ विज्ञापन',
     'advanced_sorting' => 'उन्नत छँटाई',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',
