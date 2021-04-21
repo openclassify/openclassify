@@ -343,6 +343,7 @@ return [
     'view' => 'נוף',
     'ads_with_map' => 'מודעות עם מפה',
     'advanced_sorting' => 'מיון מתקדם',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',
