@@ -166,7 +166,7 @@ ul {
   /* End Location */
 
   /* Price */
-  #price {
+  #price, .range-filter {
     li {
       & + & {
         margin-left: 0.5em;
@@ -228,6 +228,14 @@ ul {
     }
   }
   /* End Map */
+
+  /* Keyword */
+  #keywordFilter {
+    input {
+      font-size: calc(14rem / 16);
+    }
+  }
+  /* End Keyword */
 
   /* Filter submit */
   #filterSubmit {
