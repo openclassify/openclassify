@@ -130,6 +130,22 @@
         <!-- Map Filter End -->
     {% endif %}
 
+    <!-- Keyword Filter Start -->
+    <div id="keywordFilter" class="border rounded filter-box p-3 mb-3">
+        <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+            <p>{{ trans("visiosoft.module.advs::field.filter_by_word") }}</p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+
+        <div class="px-3 mb-1">
+            <div class="d-flex justify-content-around mt-3 range-input-wrapper">
+                <input type="text" class="border-0 shadow-sm rounded px-3 py-1" name="keyword"
+                       value="{{ app.request.get('keyword') }}">
+            </div>
+        </div>
+    </div>
+    <!-- Keyword Filter End -->
+
     <div id="filterSubmit" class="px-3 text-right">
         <button type="submit" class="btn text-white btn-sm px-3">
             {{ trans("visiosoft.module.advs::field.search") }}

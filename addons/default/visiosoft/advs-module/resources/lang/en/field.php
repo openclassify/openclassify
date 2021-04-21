@@ -343,6 +343,7 @@ return [
     'view' => 'View',
     'ads_with_map' => 'Ads With Map',
     'advanced_sorting' => 'Advanced Sorting',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Free',
     'ad_date' => 'Ad Date',
