@@ -343,6 +343,7 @@ return [
     'view' => 'Vedere',
     'ads_with_map' => 'Anunțuri cu hartă',
     'advanced_sorting' => 'Sortare avansată',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
