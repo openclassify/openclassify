@@ -343,6 +343,7 @@ return [
     'view' => 'Prikaži',
     'ads_with_map' => 'Oglasi sa mapom',
     'advanced_sorting' => 'Napredno sortiranje',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Besplatno',
     'ad_date' => 'Datum oglasa',
