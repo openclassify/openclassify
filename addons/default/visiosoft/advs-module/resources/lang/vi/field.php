@@ -343,6 +343,7 @@ return [
     'view' => 'Lượt xem',
     'ads_with_map' => 'Quảng cáo có Bản đồ',
     'advanced_sorting' => 'Sắp xếp nâng cao',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',
