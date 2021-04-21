@@ -343,6 +343,7 @@ return [
     'view' => 'Se',
     'ads_with_map' => 'Annonser med karta',
     'advanced_sorting' => 'Avancerad sortering',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',
