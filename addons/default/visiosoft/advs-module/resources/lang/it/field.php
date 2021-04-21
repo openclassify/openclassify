@@ -344,6 +344,7 @@ return [
     'view' => 'Visualizza',
     'ads_with_map' => 'Annunci con mappa',
     'advanced_sorting' => 'Ordinamento avanzato',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Gratuito',
     'ad_date' => 'Data dell\'annuncio',

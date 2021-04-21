@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'dropzone' => 'Кликните овде или испустите датотеке овде да бисте их отпремили.',
-    'help'     => 'Кликните и превуците да бисте преуредили приложене датотеке.',
+    'dropzone' => 'Kliknite ovde ili prevucite datoteke ovde da biste ih otpremili.',
+    'help'     => 'Kliknite i prevucite da biste preuredili priložene datoteke.',
 ];

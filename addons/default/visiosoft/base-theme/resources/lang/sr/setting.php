@@ -2,45 +2,45 @@
 
 return [
     'navigation_title' => [
-        'name' => 'Наслов навигације',
+        'name' => 'Naslov Navigacije',
     ],
     'navigation_action' => [
-        'name' => 'Акција навигације',
+        'name' => 'Akcija navigacije',
     ],
     'country_fields' => [
-        'name' => 'Цоунтри Фиелдс',
+        'name' => 'Država polja',
     ],
     'date_fields' => [
-        'name' => 'Датумска поља',
+        'name' => 'Datum polja',
     ],
     'price_fields' => [
-        'name' => 'Поља са ценама',
+        'name' => 'Cena polja',
     ],
     'breadcrumbs' => [
-        'name' => 'Бреадцрумб',
+        'name' => 'Breadcrumb polja',
     ],
     'ad_details' => [
-        'name' => 'Детаљи огласа',
+        'name' => 'Detalji oglasa',
     ],
     'ad_details_tab' => [
-        'name' => 'Картица Детаљи огласа',
+        'name' => 'Kartica Detalji oglasa',
     ],
     'latest_and_view_all_btn' => [
-        'name' => 'Најновије и погледајте све Бтн',
+        'name' => 'Najnovije i pogledajte sve dugme',
     ],
     'register_page_instruction_logo' => [
-        'name' => 'Логотип са упутством за регистрацију странице',
+        'name' => 'Logotip sa uputstvom za registraciju stranice',
     ],
     'register_page_alert_link' => [
-        'name' => 'Линк упозорења на страницу регистрације',
+        'name' => 'Link upozorenja na stranici registracije',
     ],
     'style' => [
-        'name' => 'Стил (ЦСС)',
+        'name' => 'Style(CSS)',
     ],
     'home_page_sub_categories_limit' => [
-        'name' => 'Подкатегорије почетне странице Ограничење',
+        'name' => 'Ograničenje potkategorija na početnoj strani',
     ],
 	'default_country' => [
-		'name' => 'Страница за регистрацију, задата држава за телефон',
+		'name' => 'Stranica za registraciju, zadata država za telefon',
 	]
 ];

@@ -2,35 +2,35 @@
 
 return [
     'name' => [
-        'name' => 'Наслов',
-        'instructions' => 'То је назив главне категорије коју ћете дефинисати. Омогућава кориснику да лако пронађе производ који тражи.',
+        'name' => 'Naziv',
+        'instructions' => 'To je naziv glavne kategorije koju ćete definisati. Omogućava korisniku da lako pronađe proizvod koji traži.',
     ],
     'order' => [
-        'name' => 'Наручи',
+        'name' => 'Redosled',
     ],
 
     'slug' => [
-        'name' => 'Слуг',
-        'instructions' => 'Наведите било какве организационе ознаке да бисте помогли груписање поста са другима.',
+        'name' => 'Slug',
+        'instructions' => 'Navedite bilo kakve organizacione oznake da biste grupisali svoj post sa drugima.',
 
     ],
     'files' => [
-        'name' => 'Слика',
+        'name' => 'Slika',
     ],
     'seo_keyword' => [
-        'name' => 'Сео Кеиворд',
-        'instructions' => 'Речи додате на веб локацију у Гоогле прегледачу да би се појавиле изнад резултата претраге.',
+        'name' => 'Seo Ključne reči',
+        'instructions' => 'Reči dodate na stranicu u Google pretraživaču koje se pojavljuju ispod rezultata pretrage.',
     ],
     'seo_description' => [
-        'name' => 'СЕО опис',
-        'instructions' => 'То може утицати на одлуку ваших посетилаца да ли желе да кликну на садржај у резултатима претраге.',
+        'name' => 'Seo Opis',
+        'instructions' => 'To može uticati na odluku vaših posetilaca da li žele da kliknu na sadržaj u rezultatima pretrage.',
     ],
     'icon' => [
-        'name' => 'Икона',
-        'instructions' => 'Користи се за додавање икона које означавају врсту категорије.',
+        'name' => 'Ikona',
+        'instructions' => 'Koristi se za dodavanje ikona koje označavaju vrstu kategorije.',
     ],
 
-    'please_wait' => 'Молимо причекајте.Брисање поткатегорија',
-    'category_selection' => 'Избор категорије',
-    'go_to_parent' => 'Идите код родитеља',
+    'please_wait' => 'Molimo pričekajte.Brisanje potkategorija',
+    'category_selection' => 'Selekcija kategorija',
+    'go_to_parent' => 'Idi na Parent-a',
 ];

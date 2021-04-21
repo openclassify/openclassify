@@ -343,6 +343,7 @@ return [
     'view' => 'Udsigt',
     'ads_with_map' => 'Annoncer med kort',
     'advanced_sorting' => 'Avanceret sortering',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Gratis',
     'ad_date' => 'Annoncedato',

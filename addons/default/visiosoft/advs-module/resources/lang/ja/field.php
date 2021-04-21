@@ -343,6 +343,7 @@ return [
     'view' => '見る',
     'ads_with_map' => '地図付きの広告',
     'advanced_sorting' => '高度な並べ替え',
+    'filter_by_word' => 'Filter by word',
 
     'free' => '自由',
     'ad_date' => '広告日',

@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'title'                     => 'Корисни ресурси',
-    'description'               => 'Пронађите помоћ и откријте функције помоћу ових корисних ресурса.',
-    'documentation_link'        => 'ОпенЦлассифи Доцументатион',
-    'documentation_description' => 'Пронађите документацију за ОпенЦлассифи, развијање додатака и коришћење додатака.',
-    'slack_link'                => 'Слацк Теам',
-    'slack_description'         => 'Пронађите и комуницирајте са другим ОпенЦлассифи корисницима и програмерима.',
-    'forum_link'                => 'Форум за дискусију',
-    'forum_description'         => 'Пронађите одговоре и поставите питања о коришћењу и развоју ОпенЦлассифи.',
-    'addons_link'               => 'Доступни додаци',
-    'addons_description'        => 'Откријте додатке доступне за ОпенЦлассифи.',
+    'title'                     => 'Korisni resursi',
+    'description'               => 'Pronađite pomoć i otkrijte funkcije pomoću ovih korisnih resursa.',
+    'documentation_link'        => 'OpenClassify Dokumentacija',
+    'documentation_description' => 'Pronađite dokumentaciju za OpenClassifi, razvijanje dodataka i korišćenje dodataka.',
+    'slack_link'                => 'Slack Team',
+    'slack_description'         => 'Pronađite i komunicirajte sa drugim OpenClassifi korisnicima i programerima.',
+    'forum_link'                => 'Forum za diskusiju',
+    'forum_description'         => 'Pronađite odgovore i postavite pitanja o korišćenju i razvoju programa OpenClassifi.',
+    'addons_link'               => 'Dostupni dodaci',
+    'addons_description'        => 'Otkrijte dodatke dostupne za OpenClassifi.',
 ];

@@ -2,9 +2,9 @@
 
 return [
     'sitemap_dividing_number' => [
-        'name' => 'Дељени број мапе сајта',
+        'name' => 'Sitemap Dividing Number',
     ],
     'include_cities_sitemap' => [
-        'name' => 'Укључите градове у Ситемап',
+        'name' => 'Uključite gradove u Sitemap',
     ],
 ];

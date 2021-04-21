@@ -2,21 +2,21 @@
 
 return [
     'folders' => [
-        'name'         => 'Фасцикле',
-        'instructions' => 'Наведите које су фасцикле доступне за ово поље. Оставите празно за приказ свих директоријума.',
-        'warning'      => 'Постојеће дозволе за фасцикле имају предност над одабраним директоријумима.',
+        'name'         => 'Folderi',
+        'instructions' => 'Navedite koje su fascikle dostupne za ovo polje. Ostavite prazno za prikaz svih direktorijuma.',
+        'warning'      => 'Postojeće dozvole za fascikle imaju prednost nad odabranim direktorijumima.',
     ],
     'max'     => [
-        'name'         => 'Максимална величина отпремања',
-        'instructions' => 'Наведите максималну величину отпремања у <strong>мегабајта</strong>.',
-        'warning'      => 'Ако није наведено, уместо тога користиће се мапа мак, а затим сервер мак.',
+        'name'         => 'Maksimalna veličina otpremanja',
+        'instructions' => 'Navedite maksimalnu veličinu otpremanja u <strong>megabajtima</strong>.',
+        'warning'      => 'Ako nije navedeno, umesto toga koristiće se folder max, a zatim server max.',
     ],
     'mode'    => [
-        'name'         => 'Улазни режим',
-        'instructions' => 'Како корисници треба да обезбеде унос датотека?',
+        'name'         => 'Mod unosa',
+        'instructions' => 'Kako korisnici treba da obezbede unos datoteka?',
         'option'       => [
-            'default' => 'Отпремите и / или изаберите датотеке.',
-            'select'  => 'Изаберите само датотеке.',
+            'default' => 'Otpremite i / ili izaberite datoteke.',
+            'select'  => 'Izaberite samo datoteke.',
             'upload'  => 'Отпреми само датотеке.',
         ],
     ],

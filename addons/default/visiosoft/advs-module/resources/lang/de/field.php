@@ -344,6 +344,7 @@ return [
     'view' => 'Aussicht',
     'ads_with_map' => 'Anzeigen mit Karte',
     'advanced_sorting' => 'Erweiterte Sortierung',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Frei',
     'ad_date' => 'Anzeigedatum',

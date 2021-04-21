@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'clean_subcategories' => 'Чисте поткатегорије',
-    'ad_count_calculate' => 'Израчунавање броја огласа',
-    'cat_level_calculate' => 'Израчунајте ниво категорије',
+    'clean_subcategories' => 'Obriši potkategorije',
+    'ad_count_calculate' => 'Izračunaj broj Oglasa',
+    'cat_level_calculate' => 'Nivo kategorije za računanje',
 ];

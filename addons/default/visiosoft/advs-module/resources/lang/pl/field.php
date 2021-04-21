@@ -343,6 +343,7 @@ return [
     'view' => 'Widok',
     'ads_with_map' => 'Reklamy z mapą',
     'advanced_sorting' => 'Zaawansowane sortowanie',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',

@@ -343,6 +343,7 @@ return [
     'view' => 'Kilátás',
     'ads_with_map' => 'Hirdetések térképpel',
     'advanced_sorting' => 'Haladó rendezés',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Ingyenes',
     'ad_date' => 'Hirdetés dátuma',
