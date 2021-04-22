@@ -263,16 +263,16 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function stockControl($id, $quantity)
     {
-        $adv = $this->getAdv($id);
-        $stock = $adv->stock;
-        if ($stock == NULL or $stock == 0) {
-            return 0;
-        } elseif ($stock < $quantity) {
-            return 0;//Adet yetmiyorsa
-        } else {
-            return 1;
-        }
+        if($adv = $this->getAdv($id))
+        {
+            $stock = $adv->stock;
 
+            if($stock and $stock >= $quantity)
+            {
+                return 1;
+            }
+        }
+        return 0;
     }
 
     public function saveCustomField($category_id, $field_id, $name)
