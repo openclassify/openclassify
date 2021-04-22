@@ -1,0 +1,185 @@
+#pageTitle {
+  margin: 4rem 0;
+
+  h1 {
+    font-weight: 700;
+  }
+
+  h2 {
+    color: #707070;
+    font-size: 24px;
+    font-weight: 400;
+  }
+}
+
+#contactInfo {
+  background-color: #FBFBFD;
+  padding: 2.4rem 4rem 4.3rem;
+
+  h3 {
+    color: #6E5DDB;
+    font-size: 26px;
+    margin-bottom: 2rem;
+  }
+
+  #reachInfo {
+    font-family: Poppins;
+    margin-bottom: 2rem;
+
+    p {
+      color: #4A4A4A;
+      font-size: 14px;
+      font-weight: 500;
+    }
+
+    div {
+      label {
+        color: #505050;
+        font-size: 18px;
+        font-weight: 400;
+      }
+    }
+  }
+
+  #contactSummary {
+    font-family: Poppins;
+    margin-bottom: 2rem;
+
+    label {
+      font-size: 14px;
+      color: #4A4A4A;
+      width: 32.4%;
+      font-weight: 500;
+
+      input {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+        font-size: 17px;
+        padding: 1.1rem 1.5rem;
+        color: #707070;
+      }
+    }
+  }
+
+  #editContact {
+    button {
+      color: #0075FF;
+      background: none;
+      font-size: 18px;
+
+      svg {
+        height: 1.08rem;
+        width: auto;
+      }
+
+      span {
+        margin-left: .75rem;
+      }
+    }
+  }
+}
+
+#mainInfo {
+  background-color: #FBFBFD;
+  padding: 2.4rem 4rem 4.3rem;
+
+  h3 {
+    color: #6E5DDB;
+    font-size: 26px;
+    margin-bottom: 2rem;
+  }
+
+  label {
+    font-family: Poppins;
+    font-size: 14px;
+    color: #4A4A4A;
+    font-weight: 500;
+
+    input {
+      box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+      font-size: 17px;
+      padding: 1.1rem 1.5rem;
+      color: #707070;
+    }
+  }
+
+  #stockInput {
+    & > label {
+      width: 47.5%;
+
+      &:not(.d-none) + div {
+        top: .6rem;
+      }
+
+      &.d-none + div {
+        margin-bottom: .5rem;
+      }
+    }
+
+    div {
+      width: 47.5%;
+      position: relative;
+
+      svg {
+        width: 2.2rem;
+        height: auto;
+      }
+
+      label {
+        position: relative;
+        top: .25rem;
+        font-weight: 400;
+        font-size: 16px;
+      }
+    }
+  }
+
+  #priceInput {
+    & > div {
+      ::placeholder {
+        color: #B9C0CF;
+        opacity: 1;
+      }
+
+      :-ms-input-placeholder {
+        color: #B9C0CF;
+      }
+
+      ::-ms-input-placeholder {
+        color: #B9C0CF;
+      }
+
+      input, select {
+        box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
+        font-size: 17px;
+        padding: 1.1rem 1.5rem;
+        color: #707070;
+      }
+
+      &:first-child {
+        width: 47.5%;
+
+        input {
+          &:first-child {
+            width: 83%;
+          }
+
+          &:last-child {
+            width: 17%;
+          }
+        }
+      }
+
+      &:last-child {
+        width: 50.75%;
+
+        input {
+          width: 83%;
+        }
+
+        select {
+          width: 17%;
+        }
+      }
+    }
+  }
+}

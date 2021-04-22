@@ -11,14 +11,21 @@ $('.formEditInfo').on('submit', function (e) {
 
     $.ajax({
         type: 'POST',
-        data: form.serialize() + "&action=update",
+        data: {
+            action: 'update',
+            first_name: $('input[name=first_name]', form).val(),
+            last_name: $('input[name=last_name]', form).val(),
+            gsm_phone: $('#gsm_phone', form).val(),
+            office_phone: $('#office_phone', form).val(),
+            land_phone: $('#land_phone', form).val(),
+        },
         url: '/ajax/update-user-info',
         success: function (response) {
             if (response.status == "success") {
                 var profile = response.data;
-                $('.infoName').html(profile.first_name + " " + profile.last_name);
-                $('.infoGsmPhone').html(profile.gsm_phone);
-                $('.infoOfficePhone').html(profile.office_phone);
+                $('.infoName').val(profile.first_name + " " + profile.last_name);
+                $('.infoGsmPhone').val(profile.gsm_phone);
+                $('.infoOfficePhone').val(profile.office_phone);
                 $('.infoLandPhone').html(profile.land_phone);
                 $('#editMyInfo').modal('hide');
 
