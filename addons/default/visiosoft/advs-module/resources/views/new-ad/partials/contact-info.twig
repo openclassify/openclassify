@@ -1,47 +1,39 @@
-<h5 class="pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.contact_info') }}</h5>
-<div class="px-3 bg-light row justify-content-center m-0">
-    <div class="col-md-9 col-lg-7 border my-4 bg-white py-3 row m-0 px-0 editContact rounded">
-        <div class="col-12 row m-0 border-bottom py-2">
-            <div class="col-12 col-md-4 pl-0">
-                <label class="mb-0 font-weight-bold">
-                    {{ trans('visiosoft.module.profile::field.first_name.name') }}
-                    {{ trans('visiosoft.module.profile::field.last_name.name') }}:
-                </label>
-            </div>
-            <div class="col-12 col-md-8 infoName">
-                {{ getProfileDetail(auth_user().id).first_name }}
-                {{ getProfileDetail(auth_user().id).last_name }}
-            </div>
+<div id="contactInfo" class="mb-3">
+    <h3>{{ trans('visiosoft.module.advs::field.contact_info') }}</h3>
+    <div id="reachInfo">
+        <p>Size nasıl ulaşılsın?</p>
+        <div>
+            <label class="mr-3">
+                <input type="radio" class="mr-1" checked>
+                Telefon numaralarım ile
+            </label>
+            <label>
+                <input type="radio" class="mr-1">
+                Telefonla ulaşılmak istemiyorum
+            </label>
         </div>
-        <div class="col-12 row m-0 border-bottom py-1">
-            <div class="col-12 col-md-4 pl-0">
-                <label class="mb-0 font-weight-bold">{{ trans('visiosoft.module.profile::field.gsm_phone.name') }}</label>
-            </div>
-            <div class="col-12 col-md-8 infoGsmPhone">
-                {{ getProfileDetail(auth_user().id).gsm_phone }}
-            </div>
-        </div>
-        <div class="col-12 row m-0 border-bottom py-1">
-            <div class="col-12 col-md-4 pl-0">
-                <label class="mb-0 font-weight-bold">{{ trans('visiosoft.module.profile::field.office_phone.name') }}</label>
-            </div>
-            <div class="col-12 col-md-8 infoOfficePhone">
-                {{ getProfileDetail(auth_user().id).office_phone }}
-            </div>
-        </div>
-        <div class="col-12 row m-0 py-1">
-            <div class="col-12 col-md-4 pl-0">
-                <label class="mb-0 font-weight-bold">{{ trans('visiosoft.module.profile::field.land_phone.name') }}</label>
-            </div>
-            <div class="col-12 col-md-8 infoLandPhone">
-                {{ getProfileDetail(auth_user().id).land_phone }}
-            </div>
-        </div>
-        <p class="px-3 py-2">
-            <a href="#" class="editInformationUser">
-                <i class="fas fa-pen"></i>
-                {{ trans('visiosoft.module.advs::field.update_my_contact_info') }}
-            </a>
-        </p>
+    </div>
+    <div id="contactSummary" class="d-flex justify-content-between">
+        <label>
+            {{ trans('visiosoft.module.profile::field.name.name') }}
+            <input type="text" class="d-block mt-3 w-100 border-0 bg-white infoName" value="{{ auth_user().name }}"
+                   disabled>
+        </label>
+        <label>
+            {{ trans('visiosoft.module.profile::field.gsm_phone.name') }}
+            <input type="text" class="d-block mt-3 w-100 border-0 bg-white infoGsmPhone" disabled
+                   value="{{ auth_user().gsm_phone }}">
+        </label>
+        <label>
+            {{ trans('visiosoft.module.profile::field.office_phone.name') }}
+            <input type="text" class="d-block mt-3 w-100 border-0 bg-white infoOfficePhone" disabled
+                   value="{{ auth_user().office_phone }}">
+        </label>
+    </div>
+    <div id="editContact">
+        <button type="button" class="d-flex ml-auto align-items-center border-0 editInformationUser">
+            {{ img('visiosoft.module.advs::images/create/contact-edit.svg').data|raw }}
+            <span>{{ trans('visiosoft.module.advs::field.update_my_contact_info') }}</span>
+        </button>
     </div>
 </div>
