@@ -9,23 +9,13 @@ class AdvFormBuilder extends FormBuilder
 
     protected $category = null;
 
-    protected $rules = [];
-
     protected $skips = [
         'slug'
     ];
 
-    protected $actions = [];
-
     protected $buttons = [
         'cancel',
     ];
-
-    protected $options = [];
-
-    protected $sections = [];
-
-    protected $assets = [];
 
     public function __construct(Form $form)
     {
