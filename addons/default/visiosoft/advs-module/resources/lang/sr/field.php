@@ -211,7 +211,7 @@ return [
     'featured_ads' => "Istaknuti oglasi",
     'trending_ads' => 'Oglasi u trendu',
     'search_ad_result_prefix' => 'na',
-    'search_ad_result_text' => '<strong>:count</strong> ogala pronađeno je u vašoj pretrazi <strong>:name</strong>',
+    'search_ad_result_text' => '<strong>:count</strong> oglasa pronađeno je u vašoj pretrazi <strong>:name</strong>',
     'search_ads_result_message' => [
         'name' => ':count oglasa pronađeno u :name pretrazi',
     ],
@@ -343,7 +343,7 @@ return [
     'view' => 'Prikaži',
     'ads_with_map' => 'Oglasi sa mapom',
     'advanced_sorting' => 'Napredno sortiranje',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filter po reči',
 
     'free' => 'Besplatno',
     'ad_date' => 'Datum oglasa',
