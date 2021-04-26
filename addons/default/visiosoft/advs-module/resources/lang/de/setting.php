@@ -264,5 +264,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Unterkategorien in der mobilen Ansicht anzeigen',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
