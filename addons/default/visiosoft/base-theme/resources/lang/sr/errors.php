@@ -1,9 +1,9 @@
 <?php
 
 return [
-    '404_title' => 'Није пронађен',
-    '403_title' => 'Забрањено',
-    '404_message' => 'Страница коју сте тражили није пронађена.',
-    '403_message' => 'Приступ овим ресурсима на веб локацији је одбијен!',
-    'home_page' => 'Иди на почетну страницу',
+    '404_title' => 'Nije pronađeno',
+    '403_title' => 'Zabranjeno',
+    '404_message' => 'Stranica koju ste tražili nije pronađena.',
+    '403_message' => 'Pristup ovim resursima na web lokaciji je odbijen!',
+    'home_page' => 'Idi na početnu stranicu',
 ];

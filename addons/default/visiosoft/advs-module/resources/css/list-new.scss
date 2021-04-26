@@ -55,8 +55,12 @@ ul {
         }
       }
 
-      & > label {
-        font-size: calc(14rem / 16);
+      &:last-child {
+        max-height: 11rem;
+
+        label {
+          font-size: calc(14rem / 16);
+        }
       }
     }
   }
@@ -95,6 +99,8 @@ ul {
     }
 
     #categoryList {
+      max-height: 24rem;
+
       & > li {
         margin-bottom: .4rem;
 
@@ -160,7 +166,7 @@ ul {
   /* End Location */
 
   /* Price */
-  #price {
+  #price, .range-filter {
     li {
       & + & {
         margin-left: 0.5em;
@@ -222,6 +228,14 @@ ul {
     }
   }
   /* End Map */
+
+  /* Keyword */
+  #keywordFilter {
+    input {
+      font-size: calc(14rem / 16);
+    }
+  }
+  /* End Keyword */
 
   /* Filter submit */
   #filterSubmit {
@@ -511,13 +525,13 @@ ul {
                   }
 
                   .cat-data {
-                    font-size: calc(12rem / 16);
+                    font-size: calc(13rem / 16);
                     color: rgba(34, 34, 34, .4);
                   }
 
                   .action-data {
                     color: #A1A1A1;
-                    font-size: calc(8rem / 16);
+                    font-size: calc(10.7rem / 16);
 
                     & > a {
                       visibility: hidden;
@@ -539,7 +553,7 @@ ul {
                     }
 
                     svg {
-                      width: .4rem;
+                      width: .45rem;
                       height: auto;
                     }
                   }

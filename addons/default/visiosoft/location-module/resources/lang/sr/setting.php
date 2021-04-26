@@ -2,55 +2,55 @@
 
 return [
     'home_page_location' => [
-        'name' => 'Поље локације почетне странице',
+        'name' => 'Polje lokacije početne stranice',
     ],
     'list_page_location' => [
-        'name' => 'Поље локације странице листе',
+        'name' => 'Polje lokacije Na stranici liste oglasa',
     ],
     'detail_page_location' => [
-        'name' => 'Поље локације странице детаља',
+        'name' => 'Polje lokacije na stranici sa detaljima',
     ],
     'show_search_location_btn' => [
-        'name' => 'Прикажи дугме локације за претрагу',
+        'name' => 'Prikaži dugme lokacije za pretragu',
     ],
     'default_country' => [
-        'name' => 'Подразумевана држава',
+        'name' => 'Podrazumevana država',
     ],
     'create_ad_page_location' => [
-        'name' => 'Направите локацију странице огласа',
+        'name' => 'Lokacija na stranici za kreiranje oglasa',
     ],
     'default_city' => [
-        'name' => 'Дефаулт Цити',
+        'name' => 'Podrazumevani grad',
     ],
     'default_district' => [
-        'name' => 'Подразумевани округ',
+        'name' => 'Podrazumevani deo grada',
     ],
     'default_neighborhood' => [
-        'name' => 'Подразумевано суседство',
+        'name' => 'Podrazumevano susedstvo',
     ],
 
     'google_map_key' => [
-        'name' => 'Гоогле Мапс Апи кључ',
+        'name' => 'Google Maps Api Key',
     ],
 
     'map_coordinates_long' => [
-        'name' => 'Дефаулт Лонг',
+        'name' => 'Podrazumevani Long',
     ],
 
     'map_coordinates_lat' => [
-        'name' => 'Подразумевано Лат',
+        'name' => 'Podrazumevani Lat',
     ],
 
     'hide_location_filter' => [
-        'name' => 'Сакриј филтер локације',
+        'name' => 'Sakrij filter lokacije',
     ],
 	'country_for_phone_field' => [
-		'name' => 'Подразумевана држава за телефонско поље регистра'
+		'name' => 'Podrazumevana država za telefonsko polje registra'
 	],
     'sorting_column' => [
-        'name' => 'Колона за сортирање',
+        'name' => 'Kolona za sortiranje',
     ],
     'sorting_type' => [
-        'name' => 'Тип сортирања',
+        'name' => 'Tip sortiranja',
     ],
 ];

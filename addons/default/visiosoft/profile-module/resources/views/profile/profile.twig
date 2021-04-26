@@ -9,12 +9,7 @@
 {% block content %}
     {% embed 'visiosoft.module.profile::profile/index' %}
         {% block detail %}
-            {% set profile_photo = user.file %}
-            {% if profile_photo %}
-                {% set profile_photo = file(profile_photo.id).url %}
-            {% else %}
-                {% set profile_photo = img('visiosoft.module.profile::images/profile-default.png').url %}
-            {% endif %}
+            {% set profile_photo = user.file ? user.file.make.url : img('visiosoft.module.profile::images/profile-default.png').url %}
 
             <div class="row px-3">
 

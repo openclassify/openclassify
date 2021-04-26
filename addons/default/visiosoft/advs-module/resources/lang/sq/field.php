@@ -344,6 +344,7 @@ return [
     'view' => 'Pamje',
     'ads_with_map' => 'Reklama me hartë',
     'advanced_sorting' => 'Renditja e avancuar',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',

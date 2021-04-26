@@ -343,6 +343,7 @@ return [
     'view' => 'দেখুন',
     'ads_with_map' => 'মানচিত্র সহ বিজ্ঞাপন',
     'advanced_sorting' => 'উন্নত বাছাই',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',

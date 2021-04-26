@@ -262,4 +262,7 @@ return [
         'name' => 'Gedetailleerde produkopsies',
         'instructions' => 'Hiermee kan u voorraad- en prysinligting vir die produk invoer'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Wys subkategorieë op mobiele aansig',
+    ]
 ];

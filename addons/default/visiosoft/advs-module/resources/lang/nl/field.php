@@ -344,6 +344,7 @@ return [
     'view' => 'Visie',
     'ads_with_map' => 'Advertenties met kaart',
     'advanced_sorting' => 'Geavanceerd sorteren',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Vrij',
     'ad_date' => 'Advertentiedatum',

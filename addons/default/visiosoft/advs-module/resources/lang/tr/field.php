@@ -345,6 +345,7 @@ return [
     'view' => 'Görünüm',
     'ads_with_map' => 'Haritalı İlanlar',
     'advanced_sorting' => 'Gelişmiş Sıralama',
+    'filter_by_word' => 'Kelime İle Filtrele',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',

@@ -343,6 +343,7 @@ return [
     'view' => 'Pohled',
     'ads_with_map' => 'Reklamy s mapou',
     'advanced_sorting' => 'Pokročilé třídění',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Volný, uvolnit',
     'ad_date' => 'Datum inzerátu',

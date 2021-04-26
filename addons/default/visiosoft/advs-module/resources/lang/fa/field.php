@@ -343,6 +343,7 @@ return [
     'view' => 'چشم انداز',
     'ads_with_map' => 'تبلیغات با نقشه',
     'advanced_sorting' => 'مرتب سازی پیشرفته',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',

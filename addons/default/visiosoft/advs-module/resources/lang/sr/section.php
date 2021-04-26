@@ -2,63 +2,63 @@
 
 return [
     'advs' => [
-        'title' => 'Огласи',
+        'title' => 'Oglasi',
     ],
     'categories' => [
-        'title' => 'Категорије',
+        'title' => 'Kategorije',
     ],
     'countries' => [
-        'title' => 'Земље',
+        'title' => 'Države',
     ],
     'cities' => [
-        'title' => 'Градови',
+        'title' => 'Gradovi',
     ],
     'districts' => [
-        'title' => 'Окрузи',
+        'title' => 'Delovi grada',
     ],
     'neighborhoods' => [
-        'title' => 'Комшилуци',
+        'title' => 'Susedstva',
     ],
     'village' => [
-        'title' => 'Село',
+        'title' => 'Selo',
     ],
     'custom_fields' => [
-        'title' => 'Прилагођена област',
+        'title' => 'Prilagođena polja',
     ],
     'custom_field_advs' => [
-        'title' => 'Прилагођени теренски огласи',
+        'title' => 'Prilagođena polja oglasa',
     ],
     'cf_values' => [
-        'title' => 'Цф вредности',
+        'title' => 'Vrednosti prilagođenog polja',
     ],
     'fields' => [
-        'title' => 'прилагођена област'
+        'title' => 'Prilagođena polja'
     ],
     'assets_clear' => [
-        'name' => 'Средства јасна'
+        'name' => 'Assets Clear'
     ],
-    'general' => 'Генерал',
-    'ads' => 'Огласи',
-    'user' => 'Корисник',
-    'filter' => 'Филтер',
-    'create_ad' => 'Направите оглас',
+    'general' => 'Opšte',
+    'ads' => 'Oglasi',
+    'user' => 'Korisnik',
+    'filter' => 'Filter',
+    'create_ad' => 'Kreiraj oglas',
     'options' => [
-        'title' => 'Опције',
+        'title' => 'Opcije',
     ],
-    'ads_image' => 'Имаге Имаге',
+    'ads_image' => 'Slika oglasa',
     'product_options' => [
-        'title' => 'Опције',
+        'title' => 'Opcije',
     ],
     'productoptions_value' => [
-        'title' => 'Опције Вредност',
+        'title' => 'Vrednost opcija',
     ],
     'option_configuration' => [
-        'title' => 'Конфигурација',
+        'title' => 'Konfiguracija',
     ],
-    'translations' => 'Преводи',
+    'translations' => 'Prevodi',
     'status' => [
-        'title' => 'Статус',
+        'title' => 'Status',
     ],
-	'ads_detail' => 'Детаљи огласа',
+	'ads_detail' => 'Detalji oglasa',
 
 ];

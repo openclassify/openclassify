@@ -2,34 +2,34 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Лебдење бочне траке',
-        'instructions' => 'Проширити бочну траку при преласку показивача?',
+        'name'         => 'Hover Sidebar-a',
+        'instructions' => 'Proširi sajdbar na hover?',
     ],
     'navigation'    => [
-        'name'         => 'Навигација',
-        'instructions' => 'Наведите <em>заданих</em> редослед навигације.',
-        'warning'      => 'Прва доступна навигациона ставка користи се као подручје <strong>куће</strong>.',
-        'reorder'      => 'Драг анд дроп на главну навигацију ставке у <strong>бочној траци</strong> да их преуредити.',
+        'name'         => 'Navigacija',
+        'instructions' => 'Navedite <em>svoj</em> redosled navigacije.',
+        'warning'      => 'Prva dostupna navigaciona stavka koristi se kao <strong> početna </strong>.',
+        'reorder'      => 'Prevucite i ispustite primarne stavke za navigaciju na <strong> bočnoj traci </strong> da biste ih preuredili.',
     ],
     "login_icon" => [
-        'name' => 'Икона за пријаву',
+        'name' => 'Login Ikonica',
     ],
     "panel_icon" => [
-        'name' => 'Икона панела',
+        'name' => 'Panel Ikonica',
     ],
     "title" => [
-        'name' => 'Наслов',
+        'name' => 'Naslov',
     ],
     "footer_copyright_org_name" => [
-        'name' => 'Подножје Назив организације за заштиту ауторских права',
+        'name' => 'Podnožje Naziv organizacije za zaštitu autorskih prava',
     ],
     "sidebar_main_color" => [
-        'name' => 'Главна боја бочне траке',
+        'name' => 'Glavna boja bočne trake',
     ],
     "sidebar_secondary_color" => [
-        'name' => 'Секундарна боја бочне траке',
+        'name' => 'Sekundarna boja bočne trake',
     ],
     "active_sidebar_border_color" => [
-        'name' => 'Активна боја обруба бочне траке',
+        'name' => 'Aktivna boja bordera bočne trake',
     ]
 ];

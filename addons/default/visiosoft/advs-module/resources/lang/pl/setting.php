@@ -262,4 +262,7 @@ return [
         'name' => 'Szczegółowe opcje produktu',
         'instructions' => 'Umożliwia wprowadzenie informacji o stanie magazynowym i cenie produktu'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Pokaż podkategorie w widoku mobilnym',
+    ]
 ];

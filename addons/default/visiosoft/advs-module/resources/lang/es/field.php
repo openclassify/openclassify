@@ -344,6 +344,7 @@ return [
     'view' => 'Vista',
     'ads_with_map' => 'Anuncios con mapa',
     'advanced_sorting' => 'Clasificación avanzada',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Gratis',
     'ad_date' => 'Fecha de anuncio',

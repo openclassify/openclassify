@@ -344,6 +344,7 @@ return [
     'view' => 'Вид',
     'ads_with_map' => 'Объявления с картой',
     'advanced_sorting' => 'Расширенная сортировка',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Бесплатно',
     'ad_date' => 'Дата объявления',

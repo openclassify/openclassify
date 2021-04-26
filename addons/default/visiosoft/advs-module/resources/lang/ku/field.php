@@ -439,6 +439,7 @@ return [
     'view' => 'Dîtinî',
     'ads_with_map' => 'Reklamên Bi Nexşe',
     'advanced_sorting' => 'Rêzkirina Pêşkeftî',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'بەلاش',
     'ad_date' => 'بەرواری ڕیکلام

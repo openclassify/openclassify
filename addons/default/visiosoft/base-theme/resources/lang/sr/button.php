@@ -2,14 +2,14 @@
 
 return [
     'post_ad' => [
-        'name' => 'Постави оглас',
+        'name' => 'Postavi oglas',
     ],
-    'login' => 'Пријавите се',
-    'register' => 'Регистровати',
-    'continue' => 'Настави',
-    'reset_password' => 'Ресетуј шифру',
-    'email' => 'Емаил',
-    'phone' => 'Телефон',
-    'show_all' => 'Покажи све',
-    'hide_all' => 'Сакријете све',
+    'login' => 'Prijavite se',
+    'register' => 'Registrujte se',
+    'continue' => 'Nastavi',
+    'reset_password' => 'Zaboravio sam lozinku',
+    'email' => 'Email',
+    'phone' => 'Telefon',
+    'show_all' => 'Pokaži sve',
+    'hide_all' => 'Sakrij sve',
 ];

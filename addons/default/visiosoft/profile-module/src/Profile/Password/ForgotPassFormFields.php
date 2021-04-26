@@ -4,6 +4,13 @@ class ForgotPassFormFields
 {
     public function handle(ForgotPassFormBuilder $builder)
     {
+        $resetTypeOptions = [
+            'mail' => 'visiosoft.theme.base::field.mail',
+        ];
+        if (is_module_installed('visiosoft.module.sms')) {
+            $resetTypeOptions['sms'] = 'visiosoft.theme.base::field.sms';
+        }
+
         $builder->setFields(
             [
                 'email' => [
@@ -23,10 +30,7 @@ class ForgotPassFormFields
                 "resetType" => [
                     "type" => "anomaly.field_type.select",
                     "config" => [
-                        "options" => [
-                            'sms' => 'visiosoft.theme.base::field.sms',
-                            'mail' => 'visiosoft.theme.base::field.mail',
-                        ],
+                        "options" => $resetTypeOptions,
                         "separator" => ":",
                         "default_value" => 'mail',
                         "mode" => "radio",

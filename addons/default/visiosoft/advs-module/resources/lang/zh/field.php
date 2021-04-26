@@ -343,6 +343,7 @@ return [
     'view' => '看法',
     'ads_with_map' => '带有地图的广告',
     'advanced_sorting' => '高级排序',
+    'filter_by_word' => 'Filter by word',
 
     'free' => '自由',
     'ad_date' => '广告日期',

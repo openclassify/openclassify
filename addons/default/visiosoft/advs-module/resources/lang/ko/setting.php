@@ -262,4 +262,7 @@ return [
         'name' => '자세한 제품 옵션',
         'instructions' => '제품의 재고 및 가격 정보를 입력 할 수 있습니다.'
     ],
+    'show_subcats_mobile' => [
+        'name' => '모바일보기에 하위 범주 표시',
+    ]
 ];

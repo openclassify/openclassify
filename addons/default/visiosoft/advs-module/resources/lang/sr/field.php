@@ -2,368 +2,369 @@
 
 return [
     'name' => [
-        'name' => 'Наслов'
+        'name' => 'Naslov'
     ],
     'order' => [
-        'name' => 'Наручи'
+        'name' => 'Redosled'
     ],
     'slug' => [
-        'name' => 'Слуг'
+        'name' => 'Slug'
     ],
     'parent_category' => [
-        'name' => 'Родитељ'
+        'name' => 'Parent'
     ],
     'category' => [
-        'name' => 'Наслов категорије'
+        'name' => 'Naziv kategorije'
     ],
     'price' => [
-        'name' => 'Цена'
+        'name' => 'Cena'
     ],
     'standard_price' => [
-        'name' => 'Стандардна цена'
+        'name' => 'Standardna cena'
     ],
     'date' => [
-        'name' => 'Датум'
+        'name' => 'Datum'
     ],
     'photo' => [
-        'name' => 'Пхото'
+        'name' => 'Slika'
     ],
     'video' => [
-        'name' => 'Видео'
+        'name' => 'Video'
     ],
     'map' => [
-        'name' => 'Мапа'
+        'name' => 'Mapa'
     ],
     'stock' => [
-        'name' => 'Залихе'
+        'name' => 'Zalihe'
     ],
     'advs_desc' => [
-        'name' => 'Опис'
+        'name' => 'Opis'
     ],
     'online_payment' => [
-        'name' => 'Интернет плаћања'
+        'name' => 'Onlajn plaćanje'
     ],
     'city' => [
-        'name' => 'Град'
+        'name' => 'Grad'
     ],
     'country' => [
-        'name' => 'Цоунтри'
+        'name' => 'Država'
     ],
     'district' => [
-        'name' => 'Дистрикт'
+        'name' => 'Deo grad'
     ],
     'neighborhood' => [
-        'name' => 'Комшилук'
+        'name' => 'Susedstvo'
     ],
     'village' => [
-        'name' => 'Село'
+        'name' => 'Selo'
     ],
     'files' => [
-        'name' => 'Слике'
+        'name' => 'Slike'
     ],
     'cat1' => [
-        'name' => 'Главна категорија'
+        'name' => 'Glavna kategorija'
     ],
     'cat2' => [
-        'name' => 'Подкатегорија 1'
+        'name' => 'Potkategorija 1'
     ],
     'cat3' => [
-        'name' => 'Подкатегорија 2'
+        'name' => 'Potkategorija 2'
     ],
     'cat4' => [
-        'name' => 'Подкатегорија 3'
+        'name' => 'Potkategorija 3'
     ],
     'cat5' => [
-        'name' => 'Подкатегорија 4'
+        'name' => 'Potkategorija 4'
     ],
     'cat6' => [
-        'name' => 'Подкатегорија 5'
+        'name' => 'Potkategorija 5'
     ],
     'cat7' => [
-        'name' => 'Подкатегорија 6'
+        'name' => 'Potkategorija 6'
     ],
     'cat8' => [
-        'name' => 'Подкатегорија 7'
+        'name' => 'Potkategorija 7'
     ],
     'cat9' => [
-        'name' => 'Подкатегорија 8'
+        'name' => 'Potkategorija 8'
     ],
     'cat10' => [
-        'name' => 'Поткатегорија 9'
+        'name' => 'Potkategorija 9'
     ],
     'currency' => [
-        'name' => 'Валута'
+        'name' => 'Valuta'
     ],
     'status' => [
-        'name' => 'Статус',
+        'name' => 'Status',
         'option' => [
-            'approved' => 'Одобрено',
-            'expired' => 'Истекло',
-            'unpublished' => 'Необјављено',
-            'pending_admin' => 'На чекању за администратора',
-            'pending_user' => 'Корисник на чекању'
+            'approved' => 'Odobreno',
+            'expired' => 'Istekao',
+            'unpublished' => 'Neobjavljeno',
+            'pending_admin' => 'Na čekanju za administratora',
+            'pending_user' => 'Korisnik na čekanju'
         ]
     ],
     'pending_adv' => [
-        'name' => 'Необјављено'
+        'name' => 'Neobjavljeno'
     ],
     'finish_at' => [
-        'name' => 'Заврши у'
+        'name' => 'Završeno u'
     ],
     'cover_photo' => [
-        'name' => 'Насловна фотографија'
+        'name' => 'Naslovna fotografija'
     ],
     'favs_adv' => [
-        'name' => 'Фав Адс'
+        'name' => 'Omiljeni oglasi'
     ],
     'my_adv' => [
-        'name' => 'АДВС'
+        'name' => 'Oglasi'
     ],
-    'description' =>  'Опис',
-    'explanation' =>  'Објашњење',
+    'description' =>  'Opis',
+    'explanation' =>  'Objašnjenje',
     'type' => [
-        'name' => 'Тип'
+        'name' => 'Tip'
     ],
     'parent_adv' => [
-        'name' => 'Повезани оглас'
+        'name' => 'Povezani oglas'
     ],
     'value' => [
-        'name' => 'Вредност'
+        'name' => 'Vrednost'
     ],
-    'list' => 'Листа',
-    'home' => 'Кућа',
-    'list-page' => 'Страница са списком',
-    'search' => 'Претрага',
-    'recommended' => 'Препоручени огласи за вас',
-    'filter' => 'Филтер',
-    'sort' => 'Врста',
-    'sort_by' => 'Сортирај по',
-    'pick_option' => 'Изаберите опцију',
-    'pick_ordering' => 'Сортирај',
-    'price_high' => 'Цена висока до ниска',
-    'price_low' => 'Цена од ниске до високе',
-    'newest' => 'Најновије',
-    'oldest' => 'Најстарији',
-    'address_a_z' => 'Адреса (од А до Ж)',
-    'address_z_a' => 'Адреса (од З до А)',
+    'list' => 'Lista',
+    'home' => 'Početna',
+    'list-page' => 'Izlistaj stranu',
+    'search' => 'Pronađi',
+    'recommended' => 'Preporučeni oglasi za vas',
+    'filter' => 'Filter',
+    'sort' => 'Sortiraj',
+    'sort_by' => 'Sortiraj po',
+    'pick_option' => 'Izaberi opciju',
+    'pick_ordering' => 'Redosled',
+    'price_high' => 'Cena od više ka nižoj',
+    'price_low' => 'Cena od niže ka višoj',
+    'newest' => 'Najnovije',
+    'oldest' => 'Najstarije',
+    'address_a_z' => 'Adresa (od A do Ž)',
+    'address_z_a' => 'Adresa (od Ž do A)',
 	'categories' => [
-		'name' => 'Категорије'
+		'name' => 'Kategorije'
 	],
-    'all_categories' => 'Све категорије',
-    'location' => 'Локација',
-    'send_message' => 'Пошаљи поруку',
-    'phone_gsm' => 'Мобилни телефон',
-    'phone_office' => 'Службени телефон',
-    'add_to_favorites' => "Додај у фаворите",
-    'send' => 'Пошаљите',
-    'search_name' => 'Име претраживања',
-    'my_favorite_searches' => 'Омиљене претраге',
-    'search_desc' => 'Овде можете додати и управљати омиљеним одабирима претраживања.',
-    'complaint_placeholder' => 'Овде унесите детаље жалбе.',
-    'show_details' => 'Прикажи детаље',
-    'ad_actions' => 'Радње огласа',
-    'edit' => 'Уредити',
-    'approve' => 'Одобри',
-    'passive' => "Пасивно",
-	'sold' => 'Продато',
-    'offered_by' => 'Нуде',
-    'more_ads_by' => 'Још огласа од',
-    'click_phone' => 'Прикажите број телефона',
-    'share' => 'Објави',
-    'report' => 'Пријави овај оглас',
-    'features' => 'Карактеристике',
-    "streetview" => "Стреет Виев",
-    'recommended_ads' => 'Препоручени огласи за вас',
-    'new' => 'Нова',
-    'short_info' => 'Кратке информације',
-    'secure_trading' => 'Сигурно трговање',
-    '24/7' => '24/7 подршка',
-    'easy_trading' => 'Једноставно трговање',
-    'need_help' => 'Потребна помоћ?',
-    'give_a_call' => 'Позовите',
-    'message_sent' => 'Порука послата!',
-    'asap' => 'Порука послата, продавац ће вас контактирати што пре.',
-    'ad_id' => 'Ид огласа',
-    'contact_with' => 'Контактирајте са',
-    'create_adv' => 'Направите оглас',
-    'edit_adv' => 'Измените оглас',
-    'mandatory_fields' => 'Обавезна поља',
-    'ad_post' => 'Ад Пост',
-    'sell_item' => 'Продај предмет или услугу',
-    'search_save' => 'Омиљена претрага је успешно сачувана',
-    'address' => 'Адреса',
-    'email' => 'Е-маил',
-    'phone' => 'Телефон',
-    'send_us_your_feedback' => 'Пошаљите нам своје повратне информације',
-    'online_shopping' => 'ДОБИТИ',
-    'approved' => 'Одобрено успешно',
-    'extended' => 'Успешно продужено',
-    'declined' => 'Одбијено успешно',
-    'search_on_map' => 'Претражите на мапи',
-    'post_free_ad' => 'Објавите бесплатни оглас',
-    'select_a_category' => 'Изаберите категорију',
-    'select_a_sub_category' => 'Изаберите поткатегорију',
-    'all_dopings_added' => 'Све врсте допинга су додате за овај оглас.',
+    'all_categories' => 'Sve kategorije',
+    'location' => 'Lokacija',
+    'send_message' => 'Pošalji poruku',
+    'phone_gsm' => 'Mobilni telefon',
+    'phone_office' => 'Službeni telefon',
+    'add_to_favorites' => "Dodaj u omiljeno",
+    'send' => 'Pošalji',
+    'search_name' => 'Naziv pretrage',
+    'my_favorite_searches' => 'Sačuvane pretrage',
+    'search_desc' => 'Ovde možete dodati i upravljati omiljenim pretragama.',
+    'complaint_placeholder' => 'Unesite detalje žalbe ovde.',
+    'show_details' => 'Pokaži detalje',
+    'ad_actions' => 'Upravljaj oglasom',
+    'edit' => 'Uredi',
+    'approve' => 'Odobri',
+    'passive' => "Neaktivno",
+	'sold' => 'Prodato',
+    'offered_by' => 'Ponudio',
+    'more_ads_by' => 'Više oglasa od',
+    'click_phone' => 'Prikaži broj telefona',
+    'share' => 'Podeli',
+    'report' => 'Prijavi ovaj oglas',
+    'features' => 'Karakteristike',
+    "streetview" => "Prikaz ulice",
+    'recommended_ads' => 'Preporučeni oglasi za vas',
+    'new' => 'Novo',
+    'short_info' => 'Ukratko',
+    'secure_trading' => 'Sigurno trgovanje',
+    '24/7' => 'Podrška 24/7',
+    'easy_trading' => 'Jednostavno trgovanje',
+    'need_help' => 'Trebate pomoć?',
+    'give_a_call' => 'Pozovite me na',
+    'message_sent' => 'Poruka poslata!',
+    'asap' => 'Poruka poslata, prodavac će vas kontaktirati uskoro.',
+    'ad_id' => 'Id oglasa',
+    'contact_with' => 'Kontaktirajte sa',
+    'create_adv' => 'Kreiraj oglas',
+    'edit_adv' => 'Uredi oglas',
+    'mandatory_fields' => 'Obavezna polja',
+    'ad_post' => 'Postavi oglas',
+    'sell_item' => 'Prodajte predmet ili uslugu',
+    'search_save' => 'Omiljena pretraga je uspešno sačuvana',
+    'address' => 'Adresa',
+    'email' => 'E-mail',
+    'phone' => 'Telefon',
+    'send_us_your_feedback' => 'Pošaljite nam vaše utiske',
+    'online_shopping' => 'GET',
+    'approved' => 'Uspešno odobreno',
+    'extended' => 'Uspešno produženo',
+    'declined' => 'Uspešno odbijeno',
+    'search_on_map' => 'Pretraži na mapi',
+    'post_free_ad' => 'Postavi besplatan oglas',
+    'select_a_category' => 'Izaberi kategoriju',
+    'select_a_sub_category' => 'Izaberi potkategoriju',
+    'all_dopings_added' => 'Sve vrste dodataka su dodate za ovaj oglas.',
     'is_get_adv' => [
-        'name' => 'ДОБИТИ'
+        'name' => 'GET'
     ],
-    'corporate_info' => 'Информације о предузећу',
-    'featured_ads' => "Истакнути огласи",
-    'trending_ads' => 'Огласи у тренду',
-    'search_ad_result_prefix' => 'на',
-    'search_ad_result_text' => '<strong>:count</strong> огласа је пронађено у вашој <strong>:name</strong> претрази',
+    'corporate_info' => 'Informacije o preduzeću',
+    'featured_ads' => "Istaknuti oglasi",
+    'trending_ads' => 'Oglasi u trendu',
+    'search_ad_result_prefix' => 'na',
+    'search_ad_result_text' => '<strong>:count</strong> oglasa pronađeno je u vašoj pretrazi <strong>:name</strong>',
     'search_ads_result_message' => [
-        'name' => ':count огласа пронађено за претрагу :name',
+        'name' => ':count oglasa pronađeno u :name pretrazi',
     ],
-    'total' => 'Укупно',
-    'quantity' => 'Количина',
-    'view_cart' => 'Виев Царт',
-    'no_ads' => 'Није пронађен ниједан оглас.',
+    'total' => 'Ukupno',
+    'quantity' => 'Količina',
+    'view_cart' => 'Pogledaj korpu',
+    'no_ads' => 'Nije pronađen nijedan oglas.',
     'show_display_mode' => [
-        'map' => 'Мапа',
-        'list' => 'Листа',
+        'map' => 'Mapa',
+        'list' => 'Lista',
     ],
     'advs_list_table_thead' => [
-        'name' => 'Име огласа',
-        'price' => 'Цена',
-        'publish_at' => 'Датум огласа',
-        'location_city' => 'Град',
-        'location_country' => 'Држава',
+        'name' => 'Naslov oglasa',
+        'price' => 'Cena',
+        'publish_at' => 'Datum oglasa',
+        'location_city' => 'Grad',
+        'location_country' => 'Država',
     ],
     'show_list_view' => [
-        'name' => 'Листа',
+        'name' => 'Lista',
     ],
     'show_table_view' => [
-        'name' => 'Табела',
+        'name' => 'Tabela',
     ],
     'showcase' => [
-        'name' => 'Витрина',
+        'name' => 'Izlog',
     ],
     'new_ad' => [
-        'name' => 'Нови оглас',
+        'name' => 'Novi oglas',
     ],
     'profile' => [
-        'name' => 'Профил',
+        'name' => 'Profil',
     ],
     'my_ads' => [
-        'name' => 'Моји огласи',
+        'name' => 'Moji oglasi',
     ],
     'sold_out' => [
-        'name' => 'Распродато',
+        'name' => 'Plaćanje pouzećem',
     ],
-    'edit_category' => 'Уреди категорију',
-    'set_category' => 'Постави категорију',
+    'edit_category' => 'Uredi kategoriju',
+    'set_category' => 'Postavi kategoriju',
     'max' => [
-        'name' => 'Макс',
+        'name' => 'Max',
     ],
     'min' => [
-        'name' => 'Мин',
+        'name' => 'Min',
     ],
     'in_the_last_24_hours' => [
-        'name' => 'У последња 24 сата'
+        'name' => 'U poslednjih 24 časa'
     ],
     'in_the_last_day' => [
-        'name' => 'У последња 24 сата'
+        'name' => 'U poslednjih 24 časa'
     ],
     'in_the_last_week' => [
-        'name' => 'У Последњој недељи'
+        'name' => 'U poslednjih nedelju dana'
     ],
     'in_the_last_month' => [
-        'name' => 'Последњег месеца'
+        'name' => 'U poslednjih mesec'
     ],
     'ads_with_photo' => [
-        'name' => 'Огласи са фотографијом'
+        'name' => 'Oglasi sa slikom'
     ],
     'ads_with_video' => [
-        'name' => 'Огласи са видеом'
+        'name' => 'Oglasi sa videom'
     ],
     'yes' => [
-        'name' => 'да'
+        'name' => 'Da'
     ],
     'no' => [
-        'name' => 'Не'
+        'name' => 'Ne'
     ],
     'is_system' => [
-        'name' => 'Је систем',
-        'instructions' => 'Статус система је обавезан и не би га требало мењати',
+        'name' => 'Je li sistem',
+        'instructions' => 'Status sistema je obavezan i ne bi ga trebalo menjati',
     ],
     'user_access' => [
-        'name' => 'Приступ корисника',
-        'instructions' => 'Може ли корисник да користи овај статус у својим огласима?',
+        'name' => 'Korisnički pristup',
+        'instructions' => 'Može li korisnik da koristi ovaj status u svojim oglasima?',
     ],
-    "no_location" => "Није изабрана ниједна локација.",
-    "continue" => 'Настави',
-    "gallery" => 'Галерија',
-    "ad" => 'Огласа',
-    "ads" => 'Огласи',
-    "were_found" => 'пронађена.',
+    "no_location" => "Nije odabrana lokacija.",
+    "continue" => 'Nastavi',
+    "gallery" => 'Galerija',
+    "ad" => 'Oglas',
+    "ads" => 'Oglasi',
+    "were_found" => 'pronađeno.',
 
     // Pending screen
-    'pending_message_1' => 'Оглас је у процесу одобравања',
-    'pending_message_2' => "Датум ажурирања огласа",
-    'pending_message_3' => 'Процењено време чекања',
-    'pending_message_4' => 'Време проведено у поступку одобравања додаће се времену допинга.',
-    'pending_message_5' => 'Из позивног центра не могу се извршити трансакције у вези са огласом у поступку одобравања.',
-    'hours' => 'сати',
+    'pending_message_1' => 'Oglas je u procesu odobravanja',
+    'pending_message_2' => "Datum ažuriranja oglasa",
+    'pending_message_3' => 'Procenjeno vreme čekanja',
+    'pending_message_4' => 'Vreme provedeno u postupku odobravanje dodaće se vremenu dodatka.',
+    'pending_message_5' => 'Iz call centra ne mogu se izvršiti transakcije u veza sa oglasom u procesu odobravanja.',
+    'hours' => 'sati',
 
     // Preview page
     'preview_text' => [
-        'part_1' => 'Ако су следеће информације о вашем огласу тачне, кликните на дугме „Настави“ и пређите на следећи корак.',
-        'part_2' => 'Ако није, кликните на дугме „Уреди“.',
+        'part_1' => 'Ako su sledeće informacije o vašem oglasu tačne, kliknite na dugme "Nastavi" i pređite na sledeći korak.',
+        'part_2' => 'Ako nisu, kliknite na dugme "Uredi".',
     ],
-    'views' => 'Виевс',
+    'views' => 'Pregledano',
 
     // Detail page
-    "no_street_view" => "На овој локацији нема слике погледа улице",
-    'edit_my_contact_info' => 'Уредите моје контакт информације',
-    'update_my_contact_info' => 'ажурирај моје контакт информације',
-    'contact_info' => 'Контакт информације',
-    'ad_info' => 'Информације о огласу',
+    "no_street_view" => "Nema street view slike na ovoj lokaciji",
+    'edit_my_contact_info' => 'Uredi moje kontakt informacije',
+    'update_my_contact_info' => 'ažuriraj moje kontakt informacije',
+    'contact_info' => 'Kontakt informacije',
+    'ad_info' => 'Informacije o oglasu',
 
     // Select cat
-    'select_category_step_by_step' => 'Изаберите категорију Корак по корак',
+    'select_category_step_by_step' => 'Izaberite kategoriju Korak po korak',
 
     // New create page
-    'options' => 'Опције',
-    'category_selection' => 'Избор категорије',
-    'listing_details' => 'Детаљи пописа',
-    'preview' => 'Преглед',
-    'congratulations' => 'Честитам',
-    'ad_desc' => 'Опис огласа',
-    'upload_photos' => 'Отпреми слике',
-    'upload_files' => 'Додај фајлове',
-    'additional_fields' => 'Додатна поља',
-    'ad_location' => 'Локација огласа',
-    'owner' => 'Власник',
-    'default_owner_instruction' => 'Власник ће подразумевано подесити тренутног корисника ако није изабран ниједан корисник',
+    'options' => 'Opcije',
+    'category_selection' => 'Izbor kategorije',
+    'listing_details' => 'Detalji liste',
+    'preview' => 'Pregled',
+    'congratulations' => 'Čestitamo!',
+    'ad_desc' => 'Opis oglasa',
+    'upload_photos' => 'Otpremi fotografije',
+    'upload_files' => 'Otpremi datoteke',
+    'additional_fields' => 'Dodatna polja',
+    'ad_location' => 'Lokacija oglasa',
+    'owner' => 'Vlasnik',
+    'default_owner_instruction' => 'Vlasnik će podrazumevano biti trenutni korisnk, ukoliko korisnik nije izabran',
 
     // Listing page
-    'ad_title' => 'Наслов огласа',
-    'listing_date' => 'Датум уврштавања',
-    'view' => 'Поглед',
-    'ads_with_map' => 'Огласи са мапом',
-    'advanced_sorting' => 'Напредно сортирање',
+    'ad_title' => 'Naslov oglasa',
+    'listing_date' => 'Datum',
+    'view' => 'Prikaži',
+    'ads_with_map' => 'Oglasi sa mapom',
+    'advanced_sorting' => 'Napredno sortiranje',
+    'filter_by_word' => 'Filter po reči',
 
-    'free' => 'бесплатно',
-    'ad_date' => 'Датум огласа',
-    'photo_video' => 'Пхото, Видео',
-    'and_above' => 'и изнад',
-    'and_below' => 'и испод',
-    'clear_all' => 'Избриши све',
-    'balances' => 'Биланси',
-    'packages' => 'Пакети',
-    'dopings' => 'Допинги',
-    'advs' => 'Адвс',
-    'site' => 'Сите',
-    'subscription' => 'Претплата',
-	'created' => 'Створено',
+    'free' => 'Besplatno',
+    'ad_date' => 'Datum oglasa',
+    'photo_video' => 'Slika, Video',
+    'and_above' => 'i iznad',
+    'and_below' => 'i ispod',
+    'clear_all' => 'Obriši sve',
+    'balances' => 'Stanje',
+    'packages' => 'Paketi',
+    'dopings' => 'Dodaci',
+    'advs' => 'Oglasi',
+    'site' => 'Sajt',
+    'subscription' => 'Pretplata',
+	'created' => 'Kreiran',
 	'product_option' => [
-		'name' => 'Опција производа'
+		'name' => 'Opcije proizvoda'
 	],
 	'option_json' => [
-		'name' => 'Опција'
+		'name' => 'Opcije'
 	],
     'old_price' => [
-        'name' => 'Стара цена'
+        'name' => 'Stare cena'
     ],
 ];

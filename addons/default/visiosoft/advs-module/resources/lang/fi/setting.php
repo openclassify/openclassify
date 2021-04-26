@@ -262,4 +262,7 @@ return [
         'name' => 'Yksityiskohtaiset tuotevaihtoehdot',
         'instructions' => 'Voit antaa tuotteen varasto- ja hintatiedot'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Näytä alaluokat mobiilinäkymässä',
+    ]
 ];

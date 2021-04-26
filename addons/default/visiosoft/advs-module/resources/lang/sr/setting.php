@@ -2,264 +2,267 @@
 
 return [
     'auto_approve' => [
-        'name' => 'Аутоматско одобрење',
+        'name' => 'Automatsko odobrenje',
     ],
     'default_view_type' => [
-        'name' => 'Подразумевани тип приказа',
+        'name' => 'Podrazumevani tip prikaza',
     ],
     'hide_zero_price' => [
-        'name' => 'Сакриј цену ако је нула',
-        'instructions' => 'Сакријте цену ако је цена огласа 0',
+        'name' => 'Sakrij cenu ako je 0',
+        'instructions' => 'Sakrij cenu akoje cena oglasa 0',
     ],
     'estimated_pending_time' => [
-        'name' => 'Процењено време на чекању',
-        'instructions' => 'За неколико сати',
+        'name' => 'Procenjeno vreme čekanja',
+        'instructions' => 'U satima',
     ],
     'default_published_time' => [
-        'name' => 'Подразумевано време објављивања',
+        'name' => 'Podrazumevano vreme objavljivanja',
     ],
     'address' => [
-        'name' => 'Контакт адреса',
+        'name' => 'Kontakt adresa',
     ],
     'phone' => [
-        'name' => 'Контакт телефон',
+        'name' => 'Kontakt telefon',
     ],
     'favicon' => [
-        'name' => 'Фавицон',
+        'name' => 'Favicon',
     ]
     ,'map_coordinates_long' => [
-        'name' => 'Мапа дуга координата',
+        'name' => 'Map Long Koordinate',
     ],
     'map_coordinates_lat' => [
-        'name' => 'Мапа Лат координата',
+        'name' => 'Map Lat Koordinate',
     ],
     'iban_numbers' => [
-        'name' => 'ИБАН',
+        'name' => 'IBAN',
     ],
     'logo' => [
-        'name' => 'Лого',
+        'name' => 'Logo',
     ],
     'ogImage' => [
-        'name' => 'Социал Схаре Лого',
-        'warning'      => 'Требало би да буде у резолуцији 1200 к 630. ',
+        'name' => 'Logo za deljenje na društvenim mrežama',
+        'warning'      => 'Trebalo bi da bude u rezoluciji 1200x630. ',
 
     ],
     'currencies' => [
-        'name' => 'Активне валуте',
+        'name' => 'Aktivne valute',
     ],
     'latest-limit' => [
-        'name' => 'Најновије ограничење',
+        'name' => 'Ograniči najnovije',
     ],
     'site_address' => [
-        'name' => 'Адреса сајта',
-        'warning'      => 'Аутоматски додато ввв. ввв.<strong>сајта.цом</strong> ',
+        'name' => 'Adresa sajta',
+        'warning'      => 'Automatski dodato www.  www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
-        'name' => 'Гоогле Мап Апи кључ',
+        'name' => 'Google Map Api Key',
     ],
 
     'default_country' => [
-        'name' => 'Подразумевана земља огласа',
+        'name' => 'Podrazumevana država Oglasa',
     ],
     'hide_price_categories' => [
-        'name' => 'Сакриј цене по категоријама',
-        'instructions' => 'Цена ће бити скривена када направите оглас или погледате оглас у оквиру ових категорија.'
+        'name' => 'Sakrij cenu u Kategorijama',
+        'instructions' => 'Cena će biti skrivena kada kreirate oglas ili pogledate oglas u okviru ovih kategorija.'
     ],
     'free_currencyconverterapi_key' => [
-        'name' => 'АПИ кључ конвертера валута'
+        'name' => 'Currency Converter API Key'
     ],
     'default_city' => [
-        'name' => 'Подразумевани град огласа',
+        'name' => 'Podrazumevani grad Oglasa',
     ],
     'default_district' => [
-        'name' => 'Подразумевани огласни округ',
+        'name' => 'Podrazumevani deo grada u Oglasu',
     ],
     'default_neighborhood' => [
-        'name' => 'Подразумевано суседство огласа',
+        'name' => 'Podrazumevano susedstvo Oglasa',
     ],
     'default_currency' => [
-        'name' => 'Подразумевана валута огласа',
+        'name' => 'Podrazumevana valuta Oglasa',
     ],
     'default_GET' => [
-        'name' => 'Подразумевани оглас ГЕТ',
+        'name' => 'Podrazumevani oglas Get',
     ],
     'twitter' => [
-        'name' => 'Твиттер',
+        'name' => 'Twitter',
     ],
     'facebook' => [
-        'name' => 'Фејсбук',
+        'name' => 'Facebook',
     ],
     'youtube' => [
-        'name' => 'ЈуТјуб',
+        'name' => 'Youtube',
     ],
     'google' => [
-        'name' => 'Гоогле',
+        'name' => 'Google',
     ],
     'listing_page_image' => [
-        'name' => 'Слика странице са огласом',
+        'name' => 'Slika na stranici sa listom oglasa',
     ],
     'hide_standard_price_field' => [
-        'name' => 'Сакриј поље са стандардном ценом',
+        'name' => 'Sakrij polje sa standardnom cenom',
     ],
     'hide_options_field' => [
-        'name' => 'Сакриј поље опција',
+        'name' => 'Hide Options polje',
     ],
     'hide_village_field' => [
-        'name' => 'Сакриј Сеоско поље',
+        'name' => 'Sakrij polje Selo',
     ],
     'hide_configurations' => [
-        'name' => 'Сакриј дугме за конфигурације',
-        'instructions' => 'Сакријте дугме за конфигурације на страници за преглед огласа',
+        'name' => 'Sakrij dugme za konfiguracije',
+        'instructions' => 'Sakrij dugme za konfiguracije u pregledu oglasa',
     ],
     'make_all_fields_required' => [
-        'name' => 'Нека сва поља буду обавезна',
-        'instructions' => 'Захтевајте од корисника да приликом израде огласа попуни поља Цена и Опис',
+        'name' => 'Neka sva polja budu obavezna',
+        'instructions' => 'Zahtevaj od korisnika da prilikom kreiranja oglasa popuni polja Cena i Opis',
     ],
     'make_map_required' => [
-        'name' => 'Нека карта буде обавезна',
-        'instructions' => 'Захтевајте од корисника да постави прибадачу на мапу приликом прављења огласа',
+        'name' => 'Neka Mapa bude obavezna',
+        'instructions' => 'Zahtevajte od korisnika da postavi pribadaču na mapu prilikom pravljenja oglasa',
     ],
     'hide_listing_standard_price' => [
-        'name' => 'Сакриј унос стандардне цене',
+        'name' => 'Sakrij standardnu cenu na listi',
     ],
     'enabled_currencies' => [
-        'name' => 'Омогућене валуте',
+        'name' => 'Omogućene valute',
     ],
     'google_statistic_code' => [
-        'name' => 'Гоогле статистички код',
+        'name' => 'Google Statistic Code',
     ],
     'register_email_field' => [
-        'name' => 'Захтев за е-пошту за регистрацију чланова',
+        'name' => 'Zahtevaj Email za registraciju članova',
     ],
     'market_place' => [
-        'name' => 'Маркет Плаце',
+        'name' => 'Trgovina',
     ],
 	'price_area_hidden' => [
-		'name' => 'Подручје цена скривено',
+		'name' => 'Područje cena skriveno',
 	],
     'hide_price_filter' => [
-        'name' => 'Сакриј филтер цена',
+        'name' => 'Sakrij filter cena',
     ],
     'hide_date_filter' => [
-        'name' => 'Сакриј филтер за датум',
+        'name' => 'Sakrij filter za datum',
     ],
     'hide_photo_filter' => [
-        'name' => 'Сакриј фото филтер',
+        'name' => 'Sakrij foto filter',
     ],
     'hide_map_filter' => [
-        'name' => 'Сакриј филтер мапе',
+        'name' => 'Sakrij filter mape',
     ],
     'show_lang_url' => [
-        'name' => 'Прикажи параметар језика за УРЛ',
+        'name' => 'Prikaži parametar jezika za URL',
     ],
     'popular_ads_limit' => [
-        'name' => 'Ограничење популарних огласа',
+        'name' => 'Ograničenje popularnih oglasa',
     ],
 
     //Image
 
     'image_resize_backend' => [
-        'name' => 'Измењивање величине позадине слике',
+        'name' => 'Izmenjivanje veličine slike',
     ],
     'full_image_width' => [
-        'name' => 'Пуна ширина слике',
+        'name' => 'Puna širina slike',
     ],
     'full_image_height' => [
-        'name' => 'Висина пуне слике',
+        'name' => 'Visina pune slike ',
     ],
     'medium_image_width' => [
-        'name' => 'Средња ширина слике',
+        'name' => 'Srednja širina slike',
     ],
     'medium_image_height' => [
-        'name' => 'Средња висина слике',
+        'name' => 'Srednja visina slike',
     ],
     'thumbnail_width' => [
-        'name' => 'Ширина сличице',
+        'name' => 'Širina sličice (Thumnail)',
     ],
     'thumbnail_height' => [
-        'name' => 'Висина сличице',
+        'name' => 'Visina sličice (Thumbnail)',
     ],
     'add_canvas' => [
-        'name' => 'Додајте платно',
+        'name' => 'Dodajte platno',
     ],
     'image_canvas_width' => [
-        'name' => 'Ширина платна слике',
+        'name' => 'Širina slike canvasa',
     ],
     'image_canvas_height' => [
-        'name' => 'Висина платна слике',
+        'name' => 'Visina slike canvasa',
     ],
     'watermark_type' => [
-        'name' => 'Тип воденог жига',
+        'name' => 'Tip vodenog žiga',
     ],
     'watermark_text' => [
-        'name' => 'Текст воденог жига',
+        'name' => 'Tekst vodenog žiga',
     ],
     'watermark_image' => [
-        'name' => 'Ватермарк Имаге',
+        'name' => 'Slika vodenog žiga',
     ],
     'watermark_position' => [
-        'name' => 'Позиција воденог жига',
+        'name' => 'Pozicija vodenog žiga',
     ],
     'user_filter_limit' => [
-        'name' => 'Ограничење корисничког филтера',
-        'instructions' => 'У админ табли'
+        'name' => 'Ograničenje korisničkog filtera',
+        'instructions' => 'U admin panelu'
     ],
     'show_breadcrumb_when_creating_ad' => [
-        'name' => 'Прикажите крух при креирању огласа',
+        'name' => 'Prikaži Breadcrumb pri kreiranju oglasa',
     ],
     'show_ads_count' => [
-        'name' => 'Прикажи огласе',
-        'instructions' => 'Прикажи огласе рачунајте на левој листи категорија',
+        'name' => 'Prikaži broj oglasa',
+        'instructions' => 'Pokaži broj oglasa u kategorijama levo u listi',
     ],
     'ads_date_hidden' => [
-        'name' => 'Сакриј креирани датум',
-        'instructions' => 'Сакриј датум креирања на страници са детаљима огласа',
+        'name' => 'Sakrij datum kreiranja',
+        'instructions' => 'Sakrij datum kreranja u detaljima oglasa',
     ],
 	'hide_listing_header' => [
-		'name' => 'Сакриј заглавље уноса',
-		'instructions' => 'Скривање редоследа и прегледа типова',
+		'name' => 'Sakrij Zaglavlje liste',
+		'instructions' => 'Sakrivanje redosleda i tipova pregleda',
 	],
 	'hide_filter_section' => [
-		'name' => 'Сакриј одељак филтера',
-		'instructions' => 'Сакривање у лево подручје филтера на страници са списком',
+		'name' => 'Sakrij filter sekciju',
+		'instructions' => 'Sakrijte područje filtera sa leve strane u Listi',
 	],
 	'hide_seller_info' => [
-		'name' => 'Сакриј информације о продавцу',
-		'instructions' => 'Сакривање информације о продавцу на страници са детаљима огласа',
+		'name' => 'Sakrij Informacije prodavca',
+		'instructions' => 'Sakrij informacije o prodavcu na stranici sa detaljima oglasa',
 	],
     'show_post_ad_agreement' => [
-        'name' => 'Прикажи уговор о објављивању огласа',
-        'instructions' => 'Укључите ово ако желите да на страници за израду огласа прикажете уговор о политици приватности',
+        'name' => 'Prikaži ugovor o objavljivanju oglasa',
+        'instructions' => 'Uključite ovo ako želite da na stranici za izradu oglasa prikažete ugovor o politici privatnosti',
     ],
     'override_text' => [
-        'name' => 'Замени текст',
-        'instructions' => 'Стара вредност: нова вредност'
+        'name' => 'Zameni tekst',
+        'instructions' => 'Old Value:New Value'
     ],
     'steps_color' => [
-        'name' => 'Степс Цолор',
-        'instructions' => 'Мења боју прогресивних корака.'
+        'name' => 'Boja koraka',
+        'instructions' => 'Menja boju progresivnih koraka'
     ],
     'create_ad_button_color' => [
-        'name' => 'Направите боју дугмета за огласе',
-        'instructions' => 'Мења дугме које се приказује када је избор нове категорије огласа завршен.'
+        'name' => 'Boja dugmeta Create Ad',
+        'instructions' => 'Menja dugme koje se prikazuje kada je izbor nove kategorije oglasa završen. '
     ],
     'lang_switcher_for_browser' => [
-        'name' => 'Прекидач језика за прегледач',
-        'instructions' => 'Омогућава вам да као активни језик изаберете језик прегледача'
+        'name' => 'Prekidač za jezik u pregledaču',
+        'instructions' => 'Omogućava vam da kao aktivni jezik izaberete jezik pregledača'
     ],
     'get_categories' => [
-        'name' => 'ГЕТ Категорије',
-        'instructions' => 'Представља категорије у којима ће ГЕТ својство бити важеће.'
+        'name' => 'GET Kategorije',
+        'instructions' => 'Predstavlja kategorije u kojima će GET svojstvo biti važeće.'
     ],
 	'disable_sentry' => [
-		'name' => 'Онемогући Сентри'
+		'name' => 'Isključite Sentry'
 	],
     'watermark' => [
-        'name' => 'Водени жиг',
-        'instructions' => 'Да ли је активан водени жиг?'
+        'name' => 'Vodeni žig',
+        'instructions' => 'Da li je aktivan vodeni žig?'
     ],
     'detailed_product_options' => [
-        'name' => 'Детаљне опције производа',
-        'instructions' => 'Омогућава вам да унесете информације о залихама и ценама производа'
+        'name' => 'Detaljne opcije proizvoda',
+        'instructions' => 'Omogućava vam da unesete informacije o zalihama i cenama proizvoda'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Prikažite potkategorije na mobilnom prikazu',
+    ]
 ];
