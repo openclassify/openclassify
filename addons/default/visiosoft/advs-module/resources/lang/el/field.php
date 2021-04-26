@@ -344,6 +344,7 @@ return [
     'view' => 'Θέα',
     'ads_with_map' => 'Διαφημίσεις με χάρτη',
     'advanced_sorting' => 'Προηγμένη ταξινόμηση',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Ελεύθερος',
     'ad_date' => 'Ημερομηνία διαφήμισης',

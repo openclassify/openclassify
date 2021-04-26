@@ -1,59 +1,59 @@
 <?php
 
 return [
-    'latest_ads' => 'Најновији огласи',
-    'show_all' => 'Покажи све',
+    'latest_ads' => 'Najnoviji oglasi',
+    'show_all' => 'Pokaži sve',
     'login' => [
-        'name' => 'Пријавите се',
+        'name' => 'Prijavite se',
     ],
     'logout' => [
-        'name' => 'Одјавити се',
+        'name' => 'Odjavite se',
     ],
-    'profile' => 'Профил',
-    'email' => 'Адреса Е-поште',
-    'phone' => 'Број телефона',
-    'reset_code' => 'Ресетуј код',
-    'password_confirmation' => 'Потврда шифре',
-    'password' => 'Лозинка',
-    'first_name' => 'Име',
-    'last_name' => 'Презиме',
-    'remember_me' => 'Сети ме се',
-    'not_a_member_yet' => 'Још нисте члан',
-    'not_a_member_yet_message' => 'Пријавите се за наше чланове који ће имати користи од наше посебне услуге',
-    'forgot_password' => 'Заборавио сам шифру',
-    'email_or_phone_number' => 'Адреса е-поште или број телефона',
-    'phone_number' => 'Број телефона',
+    'profile' => 'Profil',
+    'email' => 'Email adresa',
+    'phone' => 'Broj telefona',
+    'reset_code' => 'Kod za resetovanje',
+    'password_confirmation' => 'Potvrda lozinke',
+    'password' => 'Lozinka',
+    'first_name' => 'Ime',
+    'last_name' => 'Prezime',
+    'remember_me' => 'Zapamti me',
+    'not_a_member_yet' => 'Još niste član',
+    'not_a_member_yet_message' => 'Registrujte se kao naš član kako bi imali koristi od naše posebne usluge',
+    'forgot_password' => 'Zaboravio sam šifru',
+    'email_or_phone_number' => 'Email adresa ili broj telefona',
+    'phone_number' => 'Broj telefona',
 
     // Registration instructions
-    'personal_registration_header' => 'Које су предности појединачног чланства?',
-    'personal_registration_body' => 'Продајте и изнајмите свој дом, аутомобил, продајте неискоришћене ствари и набавите нове.',
-    'personal_registration_list_1' => 'Објавите бесплатан оглас,',
-    'personal_registration_list_2' => 'Додајте огласе који вас занимају, пратите промене цена након што их додате у своје фаворите, направите омиљене претраге које испуњавају ваше критеријуме,',
-    'personal_registration_list_3' => 'Пошаљите поруке власницима огласа на веб локацији.',
-    'register_information_note' => 'Информације на овој страници су узете за ' . env('APPLICATION_DOMAIN') . ' чланство. Детаљне информације о заштити личних података можете пронаћи овде.',
+    'personal_registration_header' => 'Koje su prednosti pojedinačnog članstva? ',
+    'personal_registration_body' => 'Prodajte i iznajmite svoj dom, automobil, prodajte neiskorišćene stvari i nabavite nove. ',
+    'personal_registration_list_1' => 'Objavite besplatan oglas,',
+    'personal_registration_list_2' => 'Dodajte oglase koji vas zanimaju, pratite promene cena nakon što ih dodate u svoje favorite, napravite omiljene pretrage koje ispunjavaju vaše kriterijume,',
+    'personal_registration_list_3' => 'Pošaljite poruke vlasnicima oglasa na stranici.',
+    'register_information_note' => 'Informacije na ovoj stranici su uzete za ' . env('APPLICATION_DOMAIN') . ' članstvo. Detaljne informacije o zaštiti ličnih podataka možete pronaći ovde.',
 
     // Register page
-    'phone_validation_error' => 'Овај број телефона користи други члан.',
+    'phone_validation_error' => 'Ovaj broj telefona koristi drugi član.',
 
     // Forgot Password
-    'create_new_password' => 'Направите нову лозинку',
+    'create_new_password' => 'Kreirajte novu lozinku',
 
     // Login page
-    'or' => 'или',
-    'login_with_phone_number' => 'Пријавите се са бројем телефона',
-    'login_with_email_address' => 'Пријави се помоћу адресе е-поште',
+    'or' => 'ili',
+    'login_with_phone_number' => 'Prijavite se sa brojem telefona',
+    'login_with_email_address' => 'Prijavite se sa Email adresom',
 
     // Side menu links
-    'company_directory' => 'Именик предузећа',
-    'popular_ads' => 'Популарни огласи',
-    'last_48_hours' => 'Последњих 48 сати',
-    'secure_e-commerce_ads' => 'Сигурни огласи за е-трговину',
-    'sms' => 'Пошаљите текстуалну поруку (СМС)',
-    'mail' => 'Пошаљи пошту',
+    'company_directory' => 'Imenik preduzeća',
+    'popular_ads' => 'Popularni oglasi',
+    'last_48_hours' => 'Poslednjih 48 sati',
+    'secure_e-commerce_ads' => 'Sigurni oglasi za e-trgovinu',
+    'sms' => 'Pošaljite tekstualnu poruku (SMS)',
+    'mail' => 'Pošalji Email',
 
     // Register instruction seed
-    'register_instructions' => 'Упутства за регистрацију',
-    'list' => 'Листа',
-    'instruction_description' => 'Опис упутства',
-    'instruction_list' => 'Листа упутстава',
+    'register_instructions' => 'Uputstva za registraciju',
+    'list' => 'Lista',
+    'instruction_description' => 'Opis uputstva',
+    'instruction_list' => 'Instrukcije',
 ];

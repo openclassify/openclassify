@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'valid_disk' => 'Конфигурисани диск за отпремање за атрибут: не постоји.',
+    'valid_disk' => 'Konfigurisani disk za otpremanje za :atribut ne postoji.',
 ];

@@ -2,9 +2,9 @@
 
 return [
     'category' => [
-        'title' => 'Категорија',
+        'title' => 'Kategorija',
     ],
     'placeholderforsearch' => [
-        'title' => 'Резервисано место',
+        'title' => 'Placeholder',
     ],
 ];

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Један фајл',
-    'name'        => 'Тип поља датотеке',
-    'description' => 'Тип поља за отпремање датотека.',
+    'title'       => 'Single File',
+    'name'        => 'Tip polja datoteka',
+    'description' => 'Tip polja za otpremanje datoteka.',
 ];

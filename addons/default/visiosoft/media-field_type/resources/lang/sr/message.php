@@ -1,14 +1,14 @@
 <?php
 
 return [
-    'choose_folder' => 'У коју фасциклу бисте желели да отпремите?',
-    'upload' => 'Додај слике | Отпреми слике | Приложите фотографију',
-    'choose_files' => 'Које бисте датотеке желели да користите?',
-    'no_files_selected' => 'Није изабрана ниједна датотека.',
-    'no_uploads' => 'Није отпремљена ниједна датотека.',
-    'overwrite' => 'је већ постављено. Да ли желите да га препишете?',
-    'uploading' => 'Отпремање',
-    'loading' => 'Лоадинг',
-    'error_upload' => 'Дошло је до проблема при отпремању датотеке.',
-    'error_upload_docs' => 'Не постоји подршка за отпремање докумената. Молимо контактирајте свог администратора система!',
+    'choose_folder' => 'U koju fasciklu biste želeli da otpremite?',
+    'upload' => 'Dodaj slike | Otpremi slike | Priložite fotografiju',
+    'choose_files' => 'Koje biste datoteke želeli da koristite?',
+    'no_files_selected' => 'Nije izabrana nijedna datoteka.',
+    'no_uploads' => 'Nije otpremljena nijedna datoteka.',
+    'overwrite' => 'je već postavljeno. Da li želite da ga prepišete?',
+    'uploading' => 'Otpremanje',
+    'loading' => 'Učitavanje',
+    'error_upload' => 'Došlo je do problema pri otpremanju datoteke.',
+    'error_upload_docs' => 'Ne postoji podrška za otpremanje dokumenata. Molimo kontaktirajte svog administratora sistema!',
 ];

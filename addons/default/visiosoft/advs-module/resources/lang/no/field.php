@@ -343,6 +343,7 @@ return [
     'view' => 'Utsikt',
     'ads_with_map' => 'Annonser med kart',
     'advanced_sorting' => 'Avansert sortering',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Gratis',
     'ad_date' => 'Annonsedato',

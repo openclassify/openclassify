@@ -343,6 +343,7 @@ return [
     'view' => '전망',
     'ads_with_map' => '지도가있는 광고',
     'advanced_sorting' => '고급 정렬',
+    'filter_by_word' => 'Filter by word',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',

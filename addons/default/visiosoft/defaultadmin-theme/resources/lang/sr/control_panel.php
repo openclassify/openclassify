@@ -1,13 +1,13 @@
 <?php
 
 return [
-    'help'      => 'Помоћ',
-    'search'    => 'Претрага',
-    'logout'    => 'Одјавити се',
-    'view_site' => 'Виев Сите',
-    'title'     => 'Контролна табла',
-    'search_placeholder'     => 'Откуцајте за претрагу',
+    'help'      => 'Pomoć',
+    'search'    => 'Pronađi',
+    'logout'    => 'Odjavite se',
+    'view_site' => 'Pogledaj sajt',
+    'title'     => 'Control panel',
+    'search_placeholder'     => 'Otkucajte za pretragu',
 
     // Users Module
-    'search_by_gsm_number'     => 'Тражи по ГСМ броју',
+    'search_by_gsm_number'     => 'Pretražite po broju telefona',
 ];

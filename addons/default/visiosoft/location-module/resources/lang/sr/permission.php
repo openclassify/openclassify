@@ -3,11 +3,11 @@
 return [
 
     'village' => [
-        'name'   => 'Село',
+        'name'   => 'Selo',
         'option' => [
-            'read'   => 'Знате ли читати село?',
-            'write'  => 'Можете ли створити / уредити село?',
-            'delete' => 'Можете ли избрисати село?',
+            'read'   => 'Može da vidi selo?',
+            'write'  => 'Može da kreira / uređuje selo?',
+            'delete' => 'Može da obriše selo?',
         ],
     ],
 ];

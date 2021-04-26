@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Улазни документ',
-    'name'        => 'Тип поља улазне датотеке',
+    'title'       => 'Ulazna datoteka',
+    'name'        => 'Tip polja ulazne datoteke',
     'description' => ''
 ];

@@ -343,6 +343,7 @@ return [
     'view' => 'Näytä',
     'ads_with_map' => 'Mainokset kartalla',
     'advanced_sorting' => 'Edistynyt lajittelu',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Vapaa',
     'ad_date' => 'Ilmoituksen päivämäärä',
