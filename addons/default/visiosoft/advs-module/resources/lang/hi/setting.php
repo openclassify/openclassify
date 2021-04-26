@@ -264,5 +264,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'मोबाइल दृश्य पर उपश्रेणियाँ दिखाएँ',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
