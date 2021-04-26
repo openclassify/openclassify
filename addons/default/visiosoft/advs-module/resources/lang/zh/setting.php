@@ -264,5 +264,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => '在移动视图中显示子类别',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
