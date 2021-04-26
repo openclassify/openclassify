@@ -1108,6 +1108,16 @@ class AdvsController extends PublicController
             $response['status'] = "success";
             $count = $cart->getItems()->count;
             $response['count'] = $count;
+            $response['item'] = [
+                'id' => $cart->getItems()->last->id,
+                'adv_id' => $cart->getItems()->last->entry_id,
+                'photo' => url($cart->getItems()->last->entry->cover_photo),
+                'url' => $thisModel->getAdvDetailLinkByAdId($adv->id),
+                'name' => $adv->name,
+                'quantity' => $cart->getItems()->last->quantity,
+                'price' => app(Currency::class)->format($cart->getItems()->last->price, $cart->getItems()->last->currency),
+                'subtotal' => app(Currency::class)->format($cart->subtotal, setting_value('streams::currency'))
+            ];
         } else {
             $response['status'] = "error";
             $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');

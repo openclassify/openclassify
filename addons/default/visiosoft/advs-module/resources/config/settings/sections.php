@@ -28,6 +28,7 @@ return [
                     'popular_ads_limit',
                     'ads_image_limit',
                     'default_view_type',
+	                'show_price_to_members_only',
                     'price_area_hidden',
                     'hide_listing_standard_price',
                     'hide_zero_price',

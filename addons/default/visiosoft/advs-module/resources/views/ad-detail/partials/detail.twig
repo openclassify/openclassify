@@ -1,5 +1,6 @@
 <div class="slider-text">
-    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row
+        {{ setting_value('visiosoft.module.advs::show_price_to_members_only') ? (not auth_check() ? 'd-none') }}">
         {% set standardPrice = adv.standard_price.value %}
         {% if standardPrice and standardPrice > 0 %}
             <div class="d-flex flex-wrap align-items-center">
