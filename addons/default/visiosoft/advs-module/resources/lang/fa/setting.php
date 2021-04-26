@@ -265,5 +265,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'زیر مجموعه ها را در نمای موبایل نشان دهید',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
