@@ -264,5 +264,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => '모바일보기에 하위 범주 표시',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
