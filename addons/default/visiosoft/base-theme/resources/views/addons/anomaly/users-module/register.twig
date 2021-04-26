@@ -11,7 +11,7 @@
         <div class="row justify-content-center bg-light rounded border px-3 register-area">
             <div class="col-12 col-md-6 text-left p-3 m-0">
 
-                <div class="personal-register">
+                <div class="personal-register {{ setting_value('visiosoft.module.store::hide_personal_register') ? 'd-none' }}">
                     {% set form = form('register2').redirect(request_get('redirect', '/'))
                         .get() %}
                     {{ form_open({
