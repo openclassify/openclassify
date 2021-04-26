@@ -264,5 +264,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Hiển thị các danh mục phụ trên chế độ xem trên thiết bị di động',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
