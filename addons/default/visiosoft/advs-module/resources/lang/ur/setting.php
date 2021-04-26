@@ -264,5 +264,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'موبائل ویو پر ذیلی زمرہ جات دکھائیں',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
