@@ -264,5 +264,8 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Alkategóriák megjelenítése mobil nézetben',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Show Price To Members Only',
+	],
 ];
