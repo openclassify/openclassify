@@ -1,0 +1,41 @@
+<div class="custom-inputs-stacked">
+
+    {% for key, title in field_type.options %}
+
+        {% if title is iterable %}
+            <p>
+                <strong> {{ trans(key) }} </strong>
+
+                {% for key, title in title %}
+                    <label class="custom-checkbox" style="display: block;">
+                        <input
+                                type="checkbox"
+                                value="{{ key }}"
+                                name="{{ field_type.input_name }}[]"
+                                {{ field_type.disabled ? 'disabled' }}
+                                {{ key in field_type.config.disabled ? 'disabled' }}
+                                {{ key in field_type.config.checked ? 'checked' }}
+                                {{ key in field_type.ids ? 'checked' }}>
+
+                        {{ trans(title)|raw }}
+                    </label>
+                {% endfor %}
+            </p>
+        {% else %}
+            <label class="custom-checkbox" style="display: block;">
+                <input
+                        type="checkbox"
+                        value="{{ key }}"
+                        name="{{ field_type.input_name }}[]"
+                        {{ field_type.disabled ? 'disabled' }}
+                        {{ key in field_type.config.disabled ? 'disabled' }}
+                        {{ key in field_type.config.checked ? 'checked' }}
+                        {{ key in field_type.ids ? 'checked' }}>
+
+                {{ trans(title)|raw }}
+            </label>
+        {% endif %}
+
+    {% endfor %}
+
+</div>
