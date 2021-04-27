@@ -369,4 +369,5 @@ return [
     'old_price' => [
         'name' => 'Eski fiyat'
     ],
+	'save_search' => 'Aramayı Kaydet',
 ];

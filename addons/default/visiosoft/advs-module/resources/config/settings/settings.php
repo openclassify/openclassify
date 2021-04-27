@@ -449,4 +449,10 @@ return [
 			'default_value' => false,
 		]
 	],
+	'hide_ad_cat' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	],
 ];
