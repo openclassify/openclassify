@@ -31,7 +31,7 @@ requireModulesVueFiles(require.context(
 ))
 
 requireModulesVueFiles(require.context(
-    '../../../core/visiosoft',
+    '../../../vendor/visiosoft',
     true,
     /\.vue$/i
 ))
