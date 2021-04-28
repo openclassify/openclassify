@@ -1,17 +1,13 @@
 <?php namespace Visiosoft\MultipleFieldType\Http\Controller;
 
 use Visiosoft\MultipleFieldType\Command\GetConfiguration;
-use Visiosoft\MultipleFieldType\Command\HydrateLookupTable;
-use Visiosoft\MultipleFieldType\Command\HydrateSelectedTable;
 use Visiosoft\MultipleFieldType\MultipleFieldType;
 use Visiosoft\MultipleFieldType\Table\LookupTableBuilder;
 use Visiosoft\MultipleFieldType\Table\SelectedTableBuilder;
-use Visiosoft\MultipleFieldType\Table\ValueTableBuilder;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Anomaly\Streams\Platform\Model\EloquentModel;
 use Anomaly\Streams\Platform\Support\Collection;
-use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Contracts\Container\Container;
 
 class LookupController extends AdminController

@@ -164,8 +164,7 @@
                                             <label for="productOptions">
                                                 {{ trans('visiosoft.module.advs::field.product_option.name') }}
                                             </label>
-                                            <div class="mt-3">
-{#                                                {{ dd(form.fields.product_options_value) }}#}
+                                            <div class="mt-3 form-group mb-0">
                                                 {{ form.fields.product_options_value.configSet('cat1', adv.cat1).input|raw }}
                                             </div>
                                         </div>

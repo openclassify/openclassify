@@ -1,0 +1,19 @@
+{% if (table.options.title or table.options.description) and table.options.title %}
+    <div class="modal-header">
+        <div class="btn-wrapper">
+            <button data-dismiss="modal">
+                {{ img('visiosoft.field_type.multiple::images/close.svg').data|raw }}
+            </button>
+        </div>
+
+        <h4 class="modal-title">
+            {{ trans(table.options.title)|raw }}
+
+            {% if table.options.description %}
+                <small class="clearfix">
+                    {{ trans(table.options.description)|raw }}
+                </small>
+            {% endif %}
+        </h4>
+    </div>
+{% endif %}

@@ -2,13 +2,15 @@
 
 {% if not table.rows.isEmpty() %}
     {% block panel %}
-        <div class="{{ table.options.panel_class }} panel-table">
+        <div class="{{ table.options.panel_class }} panel-table multiple-field_type-value-table">
 
             <div class="table-responsive">
                 <table
-                        class="{{ table.options.class ?: 'table table-striped' }}"
+                        class="{{ table.options.class ?: 'table' }}"
                         {{ table.options.sortable ? 'data-sortable' }}
                         {{ html_attributes(table.options.attributes) }}>
+
+                    {{ view("visiosoft.field_type.multiple::table/ajax/header", {'table': table}) }}
 
                     {% block body %}
                         {{ view("visiosoft.field_type.multiple::table/partials/body", {'table': table}) }}

@@ -54,8 +54,9 @@ class LookupTableBuilder extends TableBuilder
      * @var array
      */
     protected $options = [
-        'sortable' => false,
-        'title'    => 'visiosoft.field_type.multiple::message.select_entries',
+        'sortable'   => false,
+        'title'      => 'visiosoft.field_type.multiple::message.select_entries',
+        'table_view' => 'visiosoft.field_type.multiple::table/ajax',
     ];
 
     /**
