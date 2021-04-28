@@ -3,13 +3,6 @@
 use Visiosoft\MultipleFieldType\MultipleFieldType;
 use Anomaly\Streams\Platform\Support\Value;
 
-/**
- * Class Related
- *
- * @link   http://pyrocms.com/
- * @author PyroCMS, Inc. <support@pyrocms.com>
- * @author Ryan Thompson <ryan@pyrocms.com>
- */
 class Related
 {
 

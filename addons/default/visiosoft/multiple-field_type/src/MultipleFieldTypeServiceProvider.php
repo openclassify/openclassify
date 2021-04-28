@@ -9,13 +9,6 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Anomaly\Streams\Platform\Entry\EntryModel;
 use Illuminate\Contracts\Container\Container;
 
-/**
- * Class MultipleFieldTypeServiceProvider
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class MultipleFieldTypeServiceProvider extends AddonServiceProvider
 {
 

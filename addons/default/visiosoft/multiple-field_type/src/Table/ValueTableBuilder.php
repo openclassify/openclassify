@@ -5,13 +5,6 @@ use Anomaly\Streams\Platform\Support\Collection;
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
 use Illuminate\Database\Eloquent\Builder;
 
-/**
- * Class ValueTableBuilder
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class ValueTableBuilder extends TableBuilder
 {
 

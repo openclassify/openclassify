@@ -3,13 +3,6 @@
 use Anomaly\Streams\Platform\Support\Collection;
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
 
-/**
- * Class LookupTableBuilder
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class LookupTableBuilder extends TableBuilder
 {
 

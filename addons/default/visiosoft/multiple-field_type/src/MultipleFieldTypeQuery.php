@@ -4,13 +4,6 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeQuery;
 use Anomaly\Streams\Platform\Ui\Table\Component\Filter\Contract\FilterInterface;
 use Illuminate\Database\Eloquent\Builder;
 
-/**
- * Class MultipleFieldTypeQuery
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class MultipleFieldTypeQuery extends FieldTypeQuery
 {
 

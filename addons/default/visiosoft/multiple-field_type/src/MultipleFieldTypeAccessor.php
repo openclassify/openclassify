@@ -4,13 +4,6 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeAccessor;
 use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 use Illuminate\Database\Eloquent\Collection;
 
-/**
- * Class MultipleFieldTypeAccessor
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class MultipleFieldTypeAccessor extends FieldTypeAccessor
 {
 

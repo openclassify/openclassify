@@ -5,13 +5,6 @@ use Anomaly\Streams\Platform\Addon\FieldType\FieldTypeSchema;
 use Anomaly\Streams\Platform\Assignment\Contract\AssignmentInterface;
 use Illuminate\Database\Schema\Blueprint;
 
-/**
- * Class MultipleFieldTypeSchema
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class MultipleFieldTypeSchema extends FieldTypeSchema
 {
 

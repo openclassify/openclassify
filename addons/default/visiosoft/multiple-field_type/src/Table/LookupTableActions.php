@@ -1,13 +1,6 @@
 <?php namespace Visiosoft\MultipleFieldType\Table;
 
 
-/**
- * Class LookupTableActions
- *
- * @link   http://pyrocms.com/
- * @author PyroCMS, Inc. <support@pyrocms.com>
- * @author Ryan Thompson <ryan@pyrocms.com>
- */
 class LookupTableActions
 {
 

@@ -4,13 +4,6 @@ use Anomaly\Streams\Platform\Support\Collection;
 use Illuminate\Contracts\Cache\Repository;
 use Illuminate\Support\Facades\Crypt;
 
-/**
- * Class GetConfiguration
- *
- * @link          http://pyrocms.com/
- * @author        PyroCMS, Inc. <support@pyrocms.com>
- * @author        Ryan Thompson <ryan@pyrocms.com>
- */
 class GetConfiguration
 {
 
