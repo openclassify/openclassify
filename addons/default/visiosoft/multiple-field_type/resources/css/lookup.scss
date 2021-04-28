@@ -1,6 +1,6 @@
 /* Main styles */
 .multiple-field_type .selected {
-  margin-top: 15px;
+  margin-top: calc(15rem / 16);
 }
 
 .multiple-field_type .selected table tr td {
@@ -11,11 +11,11 @@
 
 .multiple-field_type .selected table tr td:first-of-type {
   width: 0;
-  padding-right: 15px;
+  padding-right: calc(15rem / 16);
 }
 
 .multiple-field_type .selected table tr td:last-of-type {
-  padding-left: 15px;
+  padding-left: calc(15rem / 16);
 }
 /* End main styles */
 
@@ -24,7 +24,7 @@
   background-color: #6E5DDB;
   padding: 1rem 2rem;
   font-family: 'Poppins', sans-serif;
-  font-size: 18px;
+  font-size: calc(18rem / 16);
   border-radius: .25rem;
   border: 0;
   color: #fff;
@@ -35,14 +35,19 @@
   &:hover {
     color: #fff;
   }
+
+  svg {
+    width: 1.5rem;
+    height: auto;
+  }
 }
 /* End Button */
 
 /* Modal */
-.modal {
+.multiple-select-btn ~ .modal {
   .modal-dialog {
     @media only screen and (min-width: 576px) {
-      max-width: 840px;
+      max-width: calc(840rem / 16);
       margin: 1.75rem auto;
     }
 
@@ -70,13 +75,19 @@
 
         h4 {
           color: #6E5DDB;
-          padding: 0 5rem;
+          padding: 0 1rem;
+          @media only screen and (min-width: 576px) {
+            padding: 0 5rem;
+          }
         }
       }
 
       .table-filters {
-        padding: 0 5rem;
+        padding: 0 1rem;
         margin: 2rem 0;
+        @media only screen and (min-width: 576px) {
+          padding: 0 5rem;
+        }
 
         form {
           justify-content: space-between;
@@ -84,7 +95,7 @@
           select {
             border: 0;
             box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
-            font-size: 14px;
+            font-size: calc(14rem / 16);
             font-family: 'Poppins', sans-serif;
             font-weight: 500;
             padding: .5rem 1.5rem;
@@ -106,16 +117,19 @@
       }
 
       .table-responsive {
-        padding: 0 5rem;
+        padding: 0 1rem;
+        @media only screen and (min-width: 576px) {
+          padding: 0 5rem;
+        }
 
         table {
           thead {
             tr {
               th {
-                border-bottom: 1px solid #E5E5E5;
+                border-bottom: calc(1rem / 16) solid #E5E5E5;
                 border-top: 0;
                 font-family: 'Poppins', sans-serif;
-                font-size: 19px;
+                font-size: calc(19rem / 16);
                 font-weight: 600;
                 color: #505050;
 
@@ -132,8 +146,8 @@
 
           tbody {
             td {
-              border-bottom: 1px solid #E5E5E5;
-              font-size: 19px;
+              border-bottom: calc(1rem / 16) solid #E5E5E5;
+              font-size: calc(19rem / 16);
               font-family: 'Poppins', sans-serif;
               font-weight: 500;
               color: #505050;
@@ -153,7 +167,7 @@
                 background-color: #6E5DDB;
                 padding: 1rem 2rem;
                 font-family: 'Poppins', sans-serif;
-                font-size: 18px;
+                font-size: calc(18rem / 16);
                 border-radius: .25rem;
                 border: 0;
                 color: #fff;
@@ -176,7 +190,7 @@
               color: #999;
 
               small {
-                font-size: 15px;
+                font-size: calc(15rem / 16);
                 color: #999 !important;
                 font-family: 'Poppins', sans-serif;
               }
@@ -192,16 +206,18 @@
 /* Value table */
 .multiple-field_type-value-table {
   .table-responsive {
-    padding: 0 4rem;
+    @media only screen and (min-width: 576px) {
+      padding: 0 4rem;
+    }
 
     table {
       thead {
         tr {
           th {
-            border-bottom: 1px solid #E5E5E5;
+            border-bottom: calc(1rem / 16) solid #E5E5E5;
             border-top: 0;
             font-family: 'Poppins', sans-serif;
-            font-size: 19px;
+            font-size: calc(19rem / 16);
             font-weight: 600;
             color: #505050;
 
@@ -214,8 +230,8 @@
 
       tbody {
         td {
-          border-bottom: 1px solid #E5E5E5;
-          font-size: 19px;
+          border-bottom: calc(1rem / 16) solid #E5E5E5;
+          font-size: calc(19rem / 16);
           font-family: 'Poppins', sans-serif;
           font-weight: 500;
           color: #505050;
@@ -230,7 +246,7 @@
               display: inline-flex;
               align-items: center;
               line-height: 1;
-              font-size: 17px;
+              font-size: calc(17rem / 16);
               cursor: pointer;
             }
 
@@ -250,7 +266,7 @@
             background-color: #6E5DDB;
             padding: 1rem 2rem;
             font-family: 'Poppins', sans-serif;
-            font-size: 18px;
+            font-size: calc(18rem / 16);
             border-radius: .25rem;
             border: 0;
             color: #fff;
@@ -273,7 +289,7 @@
           color: #999;
 
           small {
-            font-size: 15px;
+            font-size: calc(15rem / 16);
             color: #999 !important;
             font-family: 'Poppins', sans-serif;
           }

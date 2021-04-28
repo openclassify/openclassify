@@ -1,11 +1,30 @@
 /* Main styles */
+html {
+  font-size: 12px;
+  @media only screen and (min-width: 576px) {
+    font-size: 7.5789px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 10.1052px;
+  }
+  @media only screen and (min-width: 992px) {
+    font-size: 13.4736px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+}
+
 label {
   margin-bottom: 0;
 }
 /* End Main styles */
 
 #pageTitle {
-  margin: 4rem 0;
+  margin: 2rem 0;
+  @media only screen and (min-width: 576px) {
+    margin: 4rem 0;
+  }
 
   h1 {
     font-weight: 700;
@@ -13,18 +32,21 @@ label {
 
   h2 {
     color: #707070;
-    font-size: 24px;
+    font-size: calc(24rem / 16);
     font-weight: 400;
   }
 }
 
 #contactInfo {
   background-color: #FBFBFD;
-  padding: 2.4rem 4rem 5.5rem;
+  padding: 1.4rem 1rem 1.5rem;
+  @media only screen and (min-width: 576px) {
+    padding: 2.4rem 4rem 5.5rem;
+  }
 
   h3 {
     color: #6E5DDB;
-    font-size: 26px;
+    font-size: calc(26rem / 16);
     margin-bottom: 2rem;
   }
 
@@ -34,14 +56,14 @@ label {
 
     p {
       color: #4A4A4A;
-      font-size: 14px;
+      font-size: calc(14rem / 16);
       font-weight: 600;
     }
 
     div {
       label {
         color: #505050;
-        font-size: 18px;
+        font-size: calc(18rem / 16);
         font-weight: 500;
       }
     }
@@ -49,17 +71,25 @@ label {
 
   #contactSummary {
     font-family: 'Poppins', sans-serif;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
+    @media only screen and (min-width: 576px) {
+      margin-bottom: 2rem;
+    }
 
     label {
-      font-size: 14px;
+      font-size: calc(14rem / 16);
       color: #4A4A4A;
-      width: 32.4%;
+      width: 100%;
       font-weight: 600;
+      margin-bottom: 1rem;
+      @media only screen and (min-width: 576px) {
+        width: 32.4%;
+        margin-bottom: 0;
+      }
 
       input {
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
-        font-size: 17px;
+        box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+        font-size: calc(17rem / 16);
         padding: 1.1rem 1.5rem;
         color: #707070;
       }
@@ -70,7 +100,7 @@ label {
     button {
       color: #0075FF;
       background: none;
-      font-size: 18px;
+      font-size: calc(18rem / 16);
 
       svg {
         height: 1.08rem;
@@ -86,31 +116,42 @@ label {
 
 #mainInfo {
   background-color: #FBFBFD;
-  padding: 2.4rem 4rem 4.3rem;
+  padding: 1.4rem 1rem 2.3rem;
+  @media only screen and (min-width: 576px) {
+    padding: 2.4rem 4rem 4.3rem;
+  }
 
   h3 {
     color: #6E5DDB;
-    font-size: 26px;
+    font-size: calc(26rem / 16);
     margin-bottom: 2rem;
   }
 
   label {
     font-family: 'Poppins', sans-serif;
-    font-size: 14px;
+    font-size: calc(14rem / 16);
     color: #4A4A4A;
     font-weight: 600;
 
     input {
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
-      font-size: 17px;
+      box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+      font-size: calc(17rem / 16);
       padding: 1.1rem 1.5rem;
       color: #707070;
     }
   }
 
   #stockInput {
+    flex-wrap: wrap;
+    @media only screen and (min-width: 576px) {
+      flex-wrap: nowrap;
+    }
+
     & > label {
-      width: 47.5%;
+      width: 100%;
+      @media only screen and (min-width: 576px) {
+        width: 47.5%;
+      }
 
       &:not(.d-none) + div {
         top: .6rem;
@@ -122,8 +163,12 @@ label {
     }
 
     div {
-      width: 47.5%;
       position: relative;
+      margin: 1rem 0;
+      @media only screen and (min-width: 576px) {
+        margin: 0;
+        width: 47.5%;
+      }
 
       svg {
         width: 2.2rem;
@@ -134,7 +179,7 @@ label {
         position: relative;
         top: .25rem;
         font-weight: 500;
-        font-size: 16px;
+        font-size: calc(16rem / 16);
       }
     }
   }
@@ -155,14 +200,16 @@ label {
       }
 
       input, select {
-        box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
-        font-size: 17px;
+        box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+        font-size: calc(17rem / 16);
         padding: 1.1rem 1.5rem;
         color: #707070;
       }
 
       &:first-child {
-        width: 47.5%;
+        @media only screen and (min-width: 576px) {
+          width: 47.5%;
+        }
 
         input {
           &.decimal-price {
@@ -172,7 +219,9 @@ label {
       }
 
       &:last-child {
-        width: 50.75%;
+        @media only screen and (min-width: 576px) {
+          width: 50.75%;
+        }
 
         select, .decimal-price {
           width: 17%;
@@ -187,8 +236,8 @@ label {
 
   #simpleOptionsInput {
     .select2-selection {
-      box-shadow: 0 1px 2px rgba(0, 0, 0, .04);
-      font-size: 17px;
+      box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+      font-size: calc(17rem / 16);
       padding: 1.1rem 1.5rem;
       color: #707070;
       border: 0;

@@ -65,7 +65,7 @@
 
                             {% include 'visiosoft.module.advs::new-ad/partials/contact-info' %}
 
-                            <div id="mainInfo" class="border">
+                            <div id="mainInfo">
                                 <h3>{{ trans('visiosoft.module.advs::field.ad_info') }}</h3>
 
                                 <label class="w-100 mb-2">
@@ -81,8 +81,8 @@
                                     {{ addBlock('new-ad/fields', {'adv': adv})|raw }}
                                 {% endif %}
 
-                                <div id="priceInput" class="d-flex justify-content-between mb-4">
-                                    <div class="select-price{{ hidePrice ? ' hidden' }}">
+                                <div id="priceInput" class="d-flex justify-content-between mb-4 flex-wrap">
+                                    <div class="mb-3 mb-sm-0 select-price{{ hidePrice ? ' hidden' }}">
                                         <label>
                                             {{ form.fields.price.label|raw }}
                                             <span class="required">*</span>

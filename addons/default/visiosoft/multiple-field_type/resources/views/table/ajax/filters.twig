@@ -6,7 +6,7 @@
         <input type="hidden" name="{{ table.options.prefix }}page" value="">
 
         {% for filter in table.filters %}
-            <div class="form-group">
+            <div class="form-group mb-0">
                 {{ filter.input|raw }}
             </div>
         {% endfor %}
