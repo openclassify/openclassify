@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'select_entries' => 'Select the entries you would like to add.',
+    'select_entries' => 'उन प्रविष्टियों का चयन करें जिन्हें आप जोड़ना चाहते हैं।',
 ];
