@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Stream correlato',
+        'instructions' => 'Specificare le voci del flusso correlate da visualizzare nel menu a discesa.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Modalità di immissione',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Tag',
+            'lookup'     => 'Consultare',
+            'checkboxes' => 'Caselle di controllo',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Selezioni minime',
+        'instructions' => 'Specificare il numero minimo di selezioni consentite.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Selezioni massime',
+        'instructions' => 'Specificare il numero massimo di selezioni consentite.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Campo del titolo',
+        'placeholder'  => 'nome di battesimo',
+        'instructions' => 'Specificare lo slug <strong></strong> del campo da visualizzare per le opzioni di menu a discesa / ricerca.<br>È possibile specificare titoli analizzabili come <strong>{entry.first_name} {entry.last_name}</strong><br>La colonna del titolo del flusso correlato verrà utilizzata per impostazione predefinita.',
     ],
 ];
