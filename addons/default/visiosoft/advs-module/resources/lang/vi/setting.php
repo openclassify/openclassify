@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Hiển thị các danh mục phụ trên chế độ xem trên thiết bị di động',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Chỉ hiển thị giá cho thành viên',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Ẩn danh mục',
+		'instructions' => 'Ẩn danh mục trong danh sách quảng cáo'
+	]
 ];
