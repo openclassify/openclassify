@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'Válassz egy lehetőséget...',
+    'help'        => 'Válassza az értékeket vesszővel vagy az "Enter" megnyomásával.',
 ];
