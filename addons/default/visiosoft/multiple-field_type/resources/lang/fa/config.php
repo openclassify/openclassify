@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'جریان مرتبط',
+        'instructions' => 'ورودی های مربوط به جریان را برای نمایش در لیست کشویی مشخص کنید.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'حالت ورودی',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'برچسب ها',
+            'lookup'     => 'جستجو',
+            'checkboxes' => 'کادرهای تأیید',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'حداقل انتخاب ها',
+        'instructions' => 'حداقل تعداد انتخاب مجاز را مشخص کنید.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'حداکثر انتخاب ها',
+        'instructions' => 'حداکثر تعداد انتخاب مجاز را مشخص کنید.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'فیلد عنوان',
+        'placeholder'  => 'نام کوچک',
+        'instructions' => 'برای نمایش گزینه های کشویی / جستجو ، فیلد <strong>Slug</strong> مشخص کنید.<br>می توانید عناوین قابل تجزیه را مانند <strong>{entry.first_name} {entry.last_name}</strong><br>مشخص کنید ستون عنوان جریان مرتبط به طور پیش فرض استفاده می شود.',
     ],
 ];
