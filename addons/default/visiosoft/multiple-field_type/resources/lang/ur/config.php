@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'متعلقہ سلسلہ',
+        'instructions' => 'ڈراپ ڈاؤن میں نمائش کے ل stream متعلقہ اسٹریم اندراجات کی وضاحت کریں۔',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'ان پٹ وضع',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'ٹیگز',
+            'lookup'     => 'اوپر دیکھو',
+            'checkboxes' => 'چیک باکسز',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'کم سے کم انتخاب',
+        'instructions' => 'اجازت شدہ انتخاب کی کم سے کم تعداد بتائیں۔',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'زیادہ سے زیادہ انتخاب',
+        'instructions' => 'اجازت شدہ انتخاب کی زیادہ سے زیادہ تعداد بتائیں۔',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'ٹائٹل فیلڈ',
+        'placeholder'  => 'پہلا نام',
+        'instructions' => 'ڈراپ ڈاؤن / تلاش کے اختیارات کے ل display ڈسپلے کرنے کیلئے فیلڈ کا <strong>سلگ</strong> بتائیں۔<br>آپ پارس ایبل عنوانز کی وضاحت کرسکتے ہیں جیسے <strong>{entry.first_name} {entry.last_name}</strong><br>متعلقہ اسٹریم کا عنوان کالم بطور ڈیفالٹ استعمال ہوگا۔',
     ],
 ];
