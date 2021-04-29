@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Vị trí Quảng cáo',
     'owner' => 'Chủ nhân',
     'default_owner_instruction' => 'Chủ sở hữu sẽ mặc định là người dùng hiện tại nếu không có người dùng nào được chọn',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Tiêu đề quảng cáo',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Giá cũ'
     ],
+	'save_search' => 'Save Search',
 ];
