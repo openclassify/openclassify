@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Annonseplassering',
     'owner' => 'Eieren',
     'default_owner_instruction' => 'Eieren vil som standard være den nåværende brukeren hvis ingen bruker er valgt',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Annonsetittel',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Gammel pris'
     ],
+	'save_search' => 'Save Search',
 ];
