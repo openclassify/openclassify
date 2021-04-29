@@ -336,6 +336,7 @@ return [
     'ad_location' => '광고 위치',
     'owner' => '소유자',
     'default_owner_instruction' => '사용자가 선택되지 않은 경우 소유자는 기본적으로 현재 사용자로 설정됩니다.',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => '광고 제목',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => '이전 가격'
     ],
+	'save_search' => 'Save Search',
 ];
