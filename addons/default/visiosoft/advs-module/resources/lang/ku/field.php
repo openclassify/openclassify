@@ -432,6 +432,7 @@ return [
 ',
     'owner' => 'Xwedî',
     'default_owner_instruction' => 'Ger bikarhêner neyê bijartin dê xwedêgiravî ji bikarhênerê heyî re veqetîne',
+    'create_page_subtitle' => 'Bi ketina agahdariyên berfireh ên der barê reklama xwe de bêkêmasî reklamê biafirînin.',
 
     // Listing page
     'ad_title' => 'Sernavê reklamê',
@@ -439,7 +440,7 @@ return [
     'view' => 'Dîtinî',
     'ads_with_map' => 'Reklamên Bi Nexşe',
     'advanced_sorting' => 'Rêzkirina Pêşkeftî',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Bi peyvê parzûn bikin',
 
     'free' => 'بەلاش',
     'ad_date' => 'بەرواری ڕیکلام
@@ -469,4 +470,5 @@ return [
         'name' => 'نرخی کۆن
 '
     ],
+	'save_search' => 'Lêgerînê Biparêzin',
 ];
