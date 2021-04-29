@@ -266,10 +266,10 @@ return [
         'name' => 'モバイルビューでサブカテゴリを表示する',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'メンバーのみに価格を表示',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'カテゴリを非表示',
+		'instructions' => '広告リストのカテゴリを非表示'
 	]
 ];
