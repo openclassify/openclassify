@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Lokalizacja reklamy',
     'owner' => 'Właściciel',
     'default_owner_instruction' => 'Właścicielem będzie domyślnie bieżący użytkownik, jeśli żaden użytkownik nie zostanie wybrany',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Tytuł ogłoszenia',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Stara cena'
     ],
+	'save_search' => 'Save Search',
 ];
