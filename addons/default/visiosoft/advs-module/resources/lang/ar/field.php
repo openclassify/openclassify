@@ -336,7 +336,7 @@ return [
     'ad_location' => 'موقع الإعلان',
     'owner' => 'صاحب',
     'default_owner_instruction' => 'سيتحول المالك إلى المستخدم الحالي افتراضيًا إذا لم يتم تحديد أي مستخدم',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'قم بإنشاء الإعلان بشكل لا تشوبه شائبة عن طريق إدخال معلومات مفصلة حول إعلانك.',
 
     // Listing page
     'ad_title' => 'عنوان الاعلان',
@@ -344,7 +344,7 @@ return [
     'view' => 'منظر',
     'ads_with_map' => 'الإعلانات مع الخريطة',
     'advanced_sorting' => 'الفرز المتقدم',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'تصفية بالكلمة',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'سعر قديم'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'حفظ البحث',
 ];
