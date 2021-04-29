@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Umístění reklamy',
     'owner' => 'Majitel',
     'default_owner_instruction' => 'Vlastník bude výchozí pro aktuálního uživatele, pokud není vybrán žádný uživatel',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Název reklamy',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Stará cena'
     ],
+	'save_search' => 'Save Search',
 ];
