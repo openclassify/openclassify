@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Flux associé',
+        'instructions' => 'Spécifiez les entrées de flux associées à afficher dans la liste déroulante.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Mode d\'entrée',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Mots clés',
+            'lookup'     => 'Chercher',
+            'checkboxes' => 'Cases à cocher',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Sélections minimales',
+        'instructions' => 'Spécifiez le nombre minimum de sélections autorisées.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Taille maximale',
+        'instructions' => 'Spécifiez le nombre maximum de sélections autorisées.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Champ de titre',
+        'placeholder'  => 'Prénom',
+        'instructions' => 'Spécifiez le <strong>slug</strong> du champ à afficher pour les options de liste déroulante / de recherche.<br>Vous pouvez spécifier des titres analysables tels que <strong>{entry.first_name} {entry.last_name}</strong><br>La colonne de titre du flux associé sera utilisée par défaut.',
     ],
 ];
