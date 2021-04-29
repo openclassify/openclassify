@@ -266,10 +266,10 @@ return [
         'name' => 'Mostrar subcategorias na visualização móvel',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Mostrar preço apenas para membros',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Ocultar categorias',
+		'instructions' => 'Ocultar categorias na lista de anúncios'
 	]
 ];
