@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Σχετική ροή',
+        'instructions' => 'Καθορίστε τις σχετικές καταχωρήσεις ροής που θα εμφανίζονται στο αναπτυσσόμενο μενού.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Λειτουργία εισαγωγής',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Ετικέτες',
+            'lookup'     => 'Ψάχνω',
+            'checkboxes' => 'Πλαίσια ελέγχου',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Ελάχιστες επιλογές',
+        'instructions' => 'Καθορίστε τον ελάχιστο αριθμό επιτρεπόμενων επιλογών.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Μέγιστες επιλογές',
+        'instructions' => 'Καθορίστε τον μέγιστο αριθμό επιτρεπόμενων επιλογών.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Πεδίο τίτλου',
+        'placeholder'  => 'όνομα',
+        'instructions' => 'Καθορίστε το πεδίο <strong>slug</strong> για εμφάνιση για αναπτυσσόμενες επιλογές / επιλογές αναζήτησης.<br>Μπορείτε να καθορίσετε αναλύσιμους τίτλους όπως <strong>{entry.first_name} {entry.last_name}</strong><br>Η στήλη τίτλου της σχετικής ροής θα χρησιμοποιηθεί από προεπιλογή.',
     ],
 ];
