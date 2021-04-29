@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Gerelateerde stream',
+        'instructions' => 'Geef de gerelateerde streamvermeldingen op die in de vervolgkeuzelijst moeten worden weergegeven.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Invoer modus',
         'option' => [
             'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'lookup'     => 'Opzoeken',
+            'checkboxes' => 'Selectievakjes',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minimale selecties',
+        'instructions' => 'Specificeer het minimum aantal toegestane selecties.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maximale selecties',
+        'instructions' => 'Specificeer het maximum aantal toegestane selecties.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Titelveld',
+        'placeholder'  => 'Voornaam',
+        'instructions' => 'Specificeer <strong>slug</strong> van veld om weer te geven voor vervolgkeuzelijst / zoekopties.<br>U kunt parseerbare titels specificeren, zoals <strong>{entry.first_name} {entry.last_name}</strong><br>De titelkolom van de gerelateerde stream wordt standaard gebruikt.',
     ],
 ];
