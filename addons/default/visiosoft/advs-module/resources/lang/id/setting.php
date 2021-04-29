@@ -266,10 +266,10 @@ return [
         'name' => 'Tampilkan subkategori pada tampilan seluler',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Tunjukkan Harga Hanya Untuk Anggota',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Sembunyikan Kategori',
+		'instructions' => 'Sembunyikan kategori dalam daftar iklan'
 	]
 ];
