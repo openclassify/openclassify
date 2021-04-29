@@ -336,7 +336,7 @@ return [
     'ad_location' => 'Lokalizacja reklamy',
     'owner' => 'Właściciel',
     'default_owner_instruction' => 'Właścicielem będzie domyślnie bieżący użytkownik, jeśli żaden użytkownik nie zostanie wybrany',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Utwórz reklamę bezbłędnie, wprowadzając szczegółowe informacje o swojej reklamie.',
 
     // Listing page
     'ad_title' => 'Tytuł ogłoszenia',
@@ -344,7 +344,7 @@ return [
     'view' => 'Widok',
     'ads_with_map' => 'Reklamy z mapą',
     'advanced_sorting' => 'Zaawansowane sortowanie',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtruj według słowa',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'Stara cena'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Zapisz wyszukanie',
 ];
