@@ -336,6 +336,7 @@ return [
     'ad_location' => '広告の場所',
     'owner' => 'オーナー',
     'default_owner_instruction' => 'ユーザーが選択されていない場合、所有者はデフォルトで現在のユーザーになります',
+    'create_page_subtitle' => '広告に関する詳細情報を入力して、完璧に広告を作成します。',
 
     // Listing page
     'ad_title' => '広告タイトル',
@@ -343,7 +344,7 @@ return [
     'view' => '見る',
     'ads_with_map' => '地図付きの広告',
     'advanced_sorting' => '高度な並べ替え',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => '単語でフィルタリング',
 
     'free' => '自由',
     'ad_date' => '広告日',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => '古い価格'
     ],
+	'save_search' => '検索を保存',
 ];
