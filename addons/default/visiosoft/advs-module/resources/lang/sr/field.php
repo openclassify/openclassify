@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Lokacija oglasa',
     'owner' => 'Vlasnik',
     'default_owner_instruction' => 'Vlasnik će podrazumevano biti trenutni korisnk, ukoliko korisnik nije izabran',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Naslov oglasa',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Stare cena'
     ],
+	'save_search' => 'Save Search',
 ];
