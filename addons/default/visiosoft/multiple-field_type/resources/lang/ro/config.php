@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Flux asociat',
+        'instructions' => 'Specificați intrările de flux aferente care vor fi afișate în meniul derulant.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Modul de introducere',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Etichete',
+            'lookup'     => 'Privește în sus',
+            'checkboxes' => 'Casete de selectare',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Selecții minime',
+        'instructions' => 'Specificați numărul minim de selecții permise.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Selecții maxime',
+        'instructions' => 'Specificați numărul maxim de selecții permise.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Câmpul de titlu',
+        'placeholder'  => 'Nume',
+        'instructions' => 'Specificați <strong>slug</strong> de câmp de afișat pentru opțiunile drop-down / căutare.<br>Puteți specifica titluri analizate precum <strong>{entry.first_name} {entry.last_name}</strong><br>Coloana de titlu a fluxului aferent va fi utilizată în mod implicit.',
     ],
 ];
