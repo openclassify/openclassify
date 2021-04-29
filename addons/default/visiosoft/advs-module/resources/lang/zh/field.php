@@ -336,6 +336,7 @@ return [
     'ad_location' => '广告位置',
     'owner' => '所有者',
     'default_owner_instruction' => '如果未选择任何用户，所有者将默认为当前用户',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => '广告标题',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => '旧价格'
     ],
+	'save_search' => 'Save Search',
 ];
