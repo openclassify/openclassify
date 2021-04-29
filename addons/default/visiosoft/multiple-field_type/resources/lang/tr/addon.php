@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Multiple',
-    'name'        => 'Multiple Field Type',
-    'description' => 'A multiple relationship field type.',
+    'title'       => 'Birden Fazla',
+    'name'        => 'Dosya Alan Tipi',
+    'description' => 'Çoklu ilişki alanı türü.',
 ];
