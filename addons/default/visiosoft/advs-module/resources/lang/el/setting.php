@@ -266,10 +266,10 @@ return [
         'name' => 'Εμφάνιση υποκατηγοριών σε προβολή για κινητά',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Εμφάνιση τιμής μόνο στα μέλη',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Απόκρυψη κατηγοριών',
+		'instructions' => 'Απόκρυψη κατηγοριών στη λίστα διαφημίσεων'
 	]
 ];
