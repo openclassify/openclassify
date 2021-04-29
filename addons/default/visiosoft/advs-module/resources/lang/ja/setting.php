@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'モバイルビューでサブカテゴリを表示する',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'メンバーのみに価格を表示',
+	],
+	'hide_ad_cat' => [
+		'name' => 'カテゴリを非表示',
+		'instructions' => '広告リストのカテゴリを非表示'
+	]
 ];
