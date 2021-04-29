@@ -336,6 +336,7 @@ return [
     'ad_location' => 'مکان تبلیغات',
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر هیچ کاربری انتخاب نشود ، مالک به عنوان کاربر پیش فرض عمل می کند',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'عنوان آگهی',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'قیمت قدیمی'
     ],
+	'save_search' => 'Save Search',
 ];
