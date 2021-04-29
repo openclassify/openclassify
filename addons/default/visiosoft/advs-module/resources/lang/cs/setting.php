@@ -266,10 +266,10 @@ return [
         'name' => 'Zobrazit podkategorie v mobilním zobrazení',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Zobrazit cenu pouze pro členy',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Skrýt kategorie',
+		'instructions' => 'Skrýt kategorie v seznamu reklam'
 	]
 ];
