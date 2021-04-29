@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Местоположение на рекламата',
     'owner' => 'Собственик',
     'default_owner_instruction' => 'Собственикът ще използва по подразбиране текущия потребител, ако не е избран потребител',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Заглавие на рекламата',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Стара цена'
     ],
+	'save_search' => 'Save Search',
 ];
