@@ -266,10 +266,10 @@ return [
         'name' => 'মোবাইল ভিউতে উপশ্রেণীগুলি দেখান',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'মূল্য শুধুমাত্র সদস্যদের দেখান',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'বিভাগগুলি লুকান',
+		'instructions' => 'বিজ্ঞাপনের তালিকায় বিভাগগুলি লুকান'
 	]
 ];
