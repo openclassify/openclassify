@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Mainoksen sijainti',
     'owner' => 'Omistaja',
     'default_owner_instruction' => 'Omistaja määrittää oletusasetukset nykyiselle käyttäjälle, jos ketään ei ole valittu',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Mainoksen otsikko',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Vanha hinta'
     ],
+	'save_search' => 'Save Search',
 ];
