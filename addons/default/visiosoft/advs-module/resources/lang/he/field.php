@@ -336,7 +336,7 @@ return [
     'ad_location' => 'מיקום מודעה',
     'owner' => 'בעלים',
     'default_owner_instruction' => 'הבעלים יוגדר כברירת מחדל למשתמש הנוכחי אם לא ייבחר משתמש',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'צור את המודעה ללא רבב על ידי הזנת מידע מפורט אודות המודעה שלך.',
 
     // Listing page
     'ad_title' => 'כותרת המודעה',
@@ -344,7 +344,7 @@ return [
     'view' => 'נוף',
     'ads_with_map' => 'מודעות עם מפה',
     'advanced_sorting' => 'מיון מתקדם',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'סנן לפי מילה',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'מחיר ישן'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'שמור חיפוש',
 ];
