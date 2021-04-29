@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'Pilih salah satu opsi ...',
+    'help'        => 'Pisahkan nilai dengan koma atau dengan menekan "Enter".',
 ];
