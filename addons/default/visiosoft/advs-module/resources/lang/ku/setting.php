@@ -266,10 +266,10 @@ return [
         'name' => 'Binkategoriyan li ser dîmendera mobîl nîşan bide',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Nîşan bidin Bihayê Tenê Endaman',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Kategoriyan veşêrin',
+		'instructions' => 'Di lîsteya reklaman de kategoriyan veşêrin'
 	]
 ];
