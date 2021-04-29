@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'select_entries' => 'Select the entries you would like to add.',
+    'select_entries' => '选择您要添加的条目。',
 ];
