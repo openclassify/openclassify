@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Annonsplats',
     'owner' => 'Ägare',
     'default_owner_instruction' => 'Ägaren kommer som standard att använda den nuvarande användaren om ingen användare har valts',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Lägg till titel',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Gammalt pris'
     ],
+	'save_search' => 'Save Search',
 ];
