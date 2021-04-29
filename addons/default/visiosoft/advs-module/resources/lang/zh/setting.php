@@ -266,10 +266,10 @@ return [
         'name' => '在移动视图中显示子类别',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => '仅向会员显示价格',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => '隐藏类别',
+		'instructions' => '隐藏广告列表中的类别'
 	]
 ];
