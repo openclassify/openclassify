@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Aliran Terkait',
+        'instructions' => 'Tentukan entri aliran terkait untuk ditampilkan di tarik-turun.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Mode Masukan',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Tag',
+            'lookup'     => 'Mencari',
+            'checkboxes' => 'Kotak centang',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Seleksi Minimum',
+        'instructions' => 'Tentukan jumlah minimum pilihan yang diizinkan.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Pilihan Maksimum',
+        'instructions' => 'Tentukan jumlah maksimum pilihan yang diperbolehkan.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Bidang Judul',
+        'placeholder'  => 'nama depan',
+        'instructions' => 'Tentukan bidang <strong>siput</strong> akan ditampilkan untuk opsi tarik-turun / pencarian.<br>Anda dapat menentukan judul yang dapat diuraikan seperti <strong>{entry.first_name} {entry.last_name}</strong><br>Kolom judul aliran terkait akan digunakan secara default.',
     ],
 ];
