@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'Trieu una opció ...',
+    'help'        => 'Separeu els valors amb una coma o prement "Retorn".',
 ];
