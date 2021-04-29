@@ -337,6 +337,7 @@ return [
     'ad_location' => 'Localização do anúncio',
     'owner' => 'Proprietário',
     'default_owner_instruction' => 'O proprietário assumirá como padrão o usuário atual se nenhum usuário for selecionado',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Título do anúncio',
@@ -368,4 +369,5 @@ return [
     'old_price' => [
         'name' => 'Preço antigo'
     ],
+	'save_search' => 'Save Search',
 ];
