@@ -336,6 +336,7 @@ return [
     'ad_location' => '广告位置',
     'owner' => '所有者',
     'default_owner_instruction' => '如果未选择任何用户，所有者将默认为当前用户',
+    'create_page_subtitle' => '输入有关您广告的详细信息，以完美无瑕地制作广告。',
 
     // Listing page
     'ad_title' => '广告标题',
@@ -343,7 +344,7 @@ return [
     'view' => '看法',
     'ads_with_map' => '带有地图的广告',
     'advanced_sorting' => '高级排序',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => '按字过滤',
 
     'free' => '自由',
     'ad_date' => '广告日期',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => '旧价格'
     ],
+	'save_search' => '保存搜索',
 ];
