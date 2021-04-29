@@ -337,6 +337,7 @@ return [
     'ad_location' => 'Vendndodhja e reklamës',
     'owner' => 'Pronar',
     'default_owner_instruction' => 'Pronari do të zgjedhë përdoruesin aktual nëse nuk zgjidhet asnjë përdorues',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Titulli i reklamës',
@@ -368,4 +369,5 @@ return [
     'old_price' => [
         'name' => 'Çmimi i Vjetër'
     ],
+	'save_search' => 'Save Search',
 ];
