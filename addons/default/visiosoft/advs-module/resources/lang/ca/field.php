@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Ubicació de l’anunci',
     'owner' => 'Propietari',
     'default_owner_instruction' => 'El propietari passarà per defecte a l\'usuari actual si no se selecciona cap usuari',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Títol de l\'anunci',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Preu antic'
     ],
+	'save_search' => 'Save Search',
 ];
