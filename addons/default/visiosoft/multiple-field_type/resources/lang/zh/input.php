@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => '选择一个选项...',
+    'help'        => '用逗号或按“ Enter”分隔值。',
 ];
