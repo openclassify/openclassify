@@ -337,7 +337,7 @@ return [
     'ad_location' => 'Advertentielocatie',
     'owner' => 'Eigenaar',
     'default_owner_instruction' => 'De eigenaar wordt standaard de huidige gebruiker als er geen gebruiker is geselecteerd',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Maak de advertentie feilloos door gedetailleerde informatie over uw advertentie in te voeren.',
 
     // Listing page
     'ad_title' => 'Voeg titel toe',
@@ -345,7 +345,7 @@ return [
     'view' => 'Visie',
     'ads_with_map' => 'Advertenties met kaart',
     'advanced_sorting' => 'Geavanceerd sorteren',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filter op woord',
 
     'free' => 'Vrij',
     'ad_date' => 'Advertentiedatum',
@@ -369,5 +369,5 @@ return [
     'old_price' => [
         'name' => 'Oude prijs'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Zoekopdracht opslaan',
 ];
