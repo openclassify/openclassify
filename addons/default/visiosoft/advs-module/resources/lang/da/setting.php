@@ -266,10 +266,10 @@ return [
         'name' => 'Vis underkategorier i mobilvisning',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Vis pris kun til medlemmer',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Skjul kategorier',
+		'instructions' => 'Skjul kategorier i annoncelisten'
 	]
 ];
