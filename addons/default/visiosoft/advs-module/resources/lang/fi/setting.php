@@ -266,10 +266,10 @@ return [
         'name' => 'Näytä alaluokat mobiilinäkymässä',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Näytä hinta vain jäsenille',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Piilota luokat',
+		'instructions' => 'Piilota luokat mainosluettelossa'
 	]
 ];
