@@ -266,10 +266,10 @@ return [
         'name' => 'Visa underkategorier i mobilvy',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Visa pris endast för medlemmar',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Dölj kategorier',
+		'instructions' => 'Dölj kategorier i annonslistan'
 	]
 ];
