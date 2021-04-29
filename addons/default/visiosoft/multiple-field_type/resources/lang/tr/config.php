@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'İlgili Akış',
+        'instructions' => 'Açılır menüde görüntülenecek ilgili akış girişlerini belirtin.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Giriş Modu',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Etiket',
+            'lookup'     => 'Arama',
+            'checkboxes' => 'Onay Kutuları',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minimum Seçim',
+        'instructions' => 'Minimum izin verilen seçim sayı girin.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maksimum Seçim',
+        'instructions' => 'İzin verilen maksimum seçim sayı girin.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Başlık Alanı',
+        'placeholder'  => 'İsim',
+        'instructions' => 'Açılır menü / arama seçeneklerini görüntülemek için alanın <strong>slug</strong> değerini belirtin.<br> <strong>{entry.first_name} {entry.last_name}</strong><br> gibi sütun isimleri belirtebilirsiniz.',
     ],
 ];
