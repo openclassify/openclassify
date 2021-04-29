@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Mostra subcategories a la visualització per a mòbils',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Mostrar preu només per a membres',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Amaga les categories',
+		'instructions' => 'Amaga les categories a la llista d\'anuncis'
+	]
 ];
