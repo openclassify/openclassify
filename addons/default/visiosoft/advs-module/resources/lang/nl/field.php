@@ -337,6 +337,7 @@ return [
     'ad_location' => 'Advertentielocatie',
     'owner' => 'Eigenaar',
     'default_owner_instruction' => 'De eigenaar wordt standaard de huidige gebruiker als er geen gebruiker is geselecteerd',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Voeg titel toe',
@@ -368,4 +369,5 @@ return [
     'old_price' => [
         'name' => 'Oude prijs'
     ],
+	'save_search' => 'Save Search',
 ];
