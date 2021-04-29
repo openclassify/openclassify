@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'تيار ذات صلة',
+        'instructions' => 'حدد إدخالات الدفق ذات الصلة لعرضها في القائمة المنسدلة.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'وضع الإدخال',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'العلامات',
+            'lookup'     => 'ابحث عن',
+            'checkboxes' => 'مربعات الاختيار',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'الحد الأدنى للاختيارت',
+        'instructions' => 'حدد الحد الأدنى لعدد التحديدات المسموح بها.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'الحد الأعلى للاختيارات',
+        'instructions' => 'حدد الحد الأقصى لعدد التحديدات المسموح بها.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'حقل العنوان',
+        'placeholder'  => 'الاسم الأول',
+        'instructions' => 'حدد <strong>slug</strong> لعرضه لخيارات القائمة المنسدلة / البحث.<br>يمكنك تحديد عناوين قابلة للتحليل مثل <strong>{entry.first_name} {entry.last_name}</strong><br>سيتم استخدام عمود عنوان التدفق ذي الصلة افتراضيًا.',
     ],
 ];
