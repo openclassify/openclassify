@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'ایک آپشن منتخب کریں ...',
+    'help'        => 'کوما سے یا "داخل کریں" کو دبانے سے اقدار الگ کریں۔',
 ];
