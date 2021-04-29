@@ -432,6 +432,7 @@ return [
 ',
     'owner' => 'Xwedî',
     'default_owner_instruction' => 'Ger bikarhêner neyê bijartin dê xwedêgiravî ji bikarhênerê heyî re veqetîne',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Sernavê reklamê',
@@ -469,4 +470,5 @@ return [
         'name' => 'نرخی کۆن
 '
     ],
+	'save_search' => 'Save Search',
 ];
