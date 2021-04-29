@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Multiple',
-    'name'        => 'Multiple Field Type',
-    'description' => 'A multiple relationship field type.',
+    'title'       => 'چندتایی',
+    'name'        => 'نوع زمینه چندگانه',
+    'description' => 'یک نوع زمینه ارتباط چندگانه.',
 ];
