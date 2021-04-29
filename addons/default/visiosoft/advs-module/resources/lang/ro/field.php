@@ -336,7 +336,7 @@ return [
     'ad_location' => 'Locația anunțului',
     'owner' => 'Proprietar',
     'default_owner_instruction' => 'Proprietarul va folosi implicit utilizatorul curent dacă nu este selectat niciun utilizator',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Creați anunțul impecabil introducând informații detaliate despre anunțul dvs.',
 
     // Listing page
     'ad_title' => 'Adaugă titlu',
@@ -344,7 +344,7 @@ return [
     'view' => 'Vedere',
     'ads_with_map' => 'Anunțuri cu hartă',
     'advanced_sorting' => 'Sortare avansată',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrează după cuvânt',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'Preț vechi'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Salvează căutarea',
 ];
