@@ -266,10 +266,10 @@ return [
         'name' => 'Shfaq nënkategoritë në pamjen e celularëve',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Shfaq Çmimin Vetëm Anëtarëve',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Fshih kategoritë',
+		'instructions' => 'Fshih kategoritë në listën e reklamave'
 	]
 ];
