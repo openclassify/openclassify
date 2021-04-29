@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'إظهار الفئات الفرعية على طريقة عرض الجوال',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'عرض السعر للأعضاء فقط',
+	],
+	'hide_ad_cat' => [
+		'name' => 'إخفاء الفئات',
+		'instructions' => 'إخفاء الفئات في قائمة الإعلانات'
+	]
 ];
