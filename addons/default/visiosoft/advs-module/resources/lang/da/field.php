@@ -336,7 +336,7 @@ return [
     'ad_location' => 'Annonceplacering',
     'owner' => 'Ejer',
     'default_owner_instruction' => 'Ejeren vil som standard være den nuværende bruger, hvis ingen bruger er valgt',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Opret annoncen fejlfrit ved at indtaste detaljerede oplysninger om din annonce.',
 
     // Listing page
     'ad_title' => 'Annoncetitel',
@@ -344,7 +344,7 @@ return [
     'view' => 'Udsigt',
     'ads_with_map' => 'Annoncer med kort',
     'advanced_sorting' => 'Avanceret sortering',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrer efter ord',
 
     'free' => 'Gratis',
     'ad_date' => 'Annoncedato',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'Gammel pris'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Gem søgning',
 ];
