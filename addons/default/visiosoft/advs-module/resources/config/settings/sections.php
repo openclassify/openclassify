@@ -23,7 +23,6 @@ return [
             'ads' => [
                 'title' => 'visiosoft.module.advs::section.ads',
                 'fields' => [
-                    'detailed_product_options',
                     'latest-limit',
                     'popular_ads_limit',
                     'ads_image_limit',
@@ -52,6 +51,7 @@ return [
             'create_ad' => [
                 'title' => 'visiosoft.module.advs::section.create_ad',
                 'fields' => [
+                    'detailed_product_options',
                     'steps_color',
                     'create_ad_button_color',
                     'hide_standard_price_field',

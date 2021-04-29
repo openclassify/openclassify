@@ -1,0 +1,36 @@
+<thead>
+<tr>
+
+    {% if table.options.sortable %}
+        <th style="width: 30px;">&nbsp;</th>
+    {% endif %}
+
+    {% if not table.actions.isEmpty() %}
+        <th style="width: 30px;">
+            <input data-toggle="all" type="checkbox">
+        </th>
+    {% endif %}
+
+    {% for header in table.headers %}
+        <th>
+            {% if header.sortable %}
+
+                {{ html_link(url_current() ~ '?' ~ header.getQueryString(), trans(header.heading), {'class': 'ajax'}) }}
+
+                {% if header.direction == 'asc' %}
+                    {{ icon('sort-ascending', 'text-muted') }}
+                {% elseif header.direction == 'desc' %}
+                    {{ icon('sort-descending', 'text-muted') }}
+                {% else %}
+                    {{ icon('sortable', 'text-muted') }}
+                {% endif %}
+
+            {% else %}
+                {{ trans(header.heading)|raw }}
+            {% endif %}
+        </th>
+    {% endfor %}
+
+    <th class="buttons">&nbsp;</th>
+</tr>
+</thead>

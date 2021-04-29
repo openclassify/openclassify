@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Ad Location',
     'owner' => 'Owner',
     'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Ad title',
