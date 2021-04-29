@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Relatert strøm',
+        'instructions' => 'Spesifiser de relaterte strømoppføringene som skal vises i rullegardinmenyen.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Inndatamodus',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Merker',
+            'lookup'     => 'Se opp',
+            'checkboxes' => 'Avkrysningsruter',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minimumsvalg',
+        'instructions' => 'Spesifiser minimum antall tillatte valg.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maksimum utvalg',
+        'instructions' => 'Spesifiser maksimalt antall tillatte valg.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Tittelfelt',
+        'placeholder'  => 'fornavn',
+        'instructions' => 'Spesifiser <strong>slug</strong> i feltet som skal vises for rullegardin / søkealternativer.<br>Du kan spesifisere parsable titler som <strong>{entry.first_name} {entry.last_name}</strong><br>Den relaterte streamens tittelkolonne vil bli brukt som standard.',
     ],
 ];
