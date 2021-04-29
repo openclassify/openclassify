@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'گزینه ای را انتخاب کنید ...',
+    'help'        => 'مقادیر را با ویرگول یا با فشار دادن "Enter" جدا کنید.',
 ];
