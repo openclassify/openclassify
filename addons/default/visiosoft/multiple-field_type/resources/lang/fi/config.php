@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Liittyvä virta',
+        'instructions' => 'Määritä liittyvät stream-merkinnät näytettäväksi pudotusvalikossa.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Tulotila',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Tunnisteet',
+            'lookup'     => 'Katso ylös',
+            'checkboxes' => 'Valintaruudut',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Vähimmäisvalinnat',
+        'instructions' => 'Määritä sallittujen valintojen vähimmäismäärä.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Suurin valikoima',
+        'instructions' => 'Määritä sallittujen valintojen enimmäismäärä.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Otsikkokenttä',
+        'placeholder'  => 'etunimi',
+        'instructions' => 'Määritä avattavien valintojen / hakuvaihtoehtojen yhteydessä näytettävän kentän <strong></strong><br>Voit määrittää jäsennettäviä otsikoita, kuten <strong>{entry.first_name} {entry.last_name}</strong><br>, oletuksena käytetään siihen liittyvän suoran otsikon saraketta.',
     ],
 ];
