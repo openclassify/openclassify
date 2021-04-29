@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Annonceplacering',
     'owner' => 'Ejer',
     'default_owner_instruction' => 'Ejeren vil som standard være den nuværende bruger, hvis ingen bruger er valgt',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Annoncetitel',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Gammel pris'
     ],
+	'save_search' => 'Save Search',
 ];
