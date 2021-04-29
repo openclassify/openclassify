@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Mostrar subcategorias na visualização móvel',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Mostrar preço apenas para membros',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Ocultar categorias',
+		'instructions' => 'Ocultar categorias na lista de anúncios'
+	]
 ];
