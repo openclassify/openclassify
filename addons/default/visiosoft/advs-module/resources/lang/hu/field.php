@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Hirdetés helye',
     'owner' => 'Tulajdonos',
     'default_owner_instruction' => 'A tulajdonos alapértelmezés szerint az aktuális felhasználót állítja be, ha nincs kiválasztva felhasználó',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Hirdetés címe',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Régi ár'
     ],
+	'save_search' => 'Save Search',
 ];
