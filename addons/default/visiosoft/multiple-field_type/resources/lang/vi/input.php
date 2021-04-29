@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'Chọn một sự lựa chọn...',
+    'help'        => 'Phân tách các giá trị bằng dấu phẩy hoặc bằng cách nhấn "Enter".',
 ];
