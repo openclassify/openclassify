@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Visa underkategorier i mobilvy',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Visa pris endast för medlemmar',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Dölj kategorier',
+		'instructions' => 'Dölj kategorier i annonslistan'
+	]
 ];
