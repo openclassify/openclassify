@@ -336,7 +336,7 @@ return [
     'ad_location' => 'विज्ञापन स्थान',
     'owner' => 'मालिक',
     'default_owner_instruction' => 'यदि कोई उपयोगकर्ता चयनित नहीं है, तो स्वामी वर्तमान उपयोगकर्ता को डिफ़ॉल्ट करेगा',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'अपने विज्ञापन के बारे में विस्तृत जानकारी दर्ज करके विज्ञापन को त्रुटिपूर्ण बनाएं।',
 
     // Listing page
     'ad_title' => 'विज्ञापन शीर्षक',
@@ -344,7 +344,7 @@ return [
     'view' => 'राय',
     'ads_with_map' => 'मानचित्र के साथ विज्ञापन',
     'advanced_sorting' => 'उन्नत छँटाई',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'शब्द द्वारा फ़िल्टर करें',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'पुरानी कीमत'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'खोज संग्रहित करें',
 ];
