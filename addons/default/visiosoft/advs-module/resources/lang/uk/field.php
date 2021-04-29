@@ -336,7 +336,7 @@ return [
     'ad_location' => 'Місце розташування оголошення',
     'owner' => 'Власник',
     'default_owner_instruction' => 'Власник встановить за замовчуванням поточного користувача, якщо не вибрано жодного користувача',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Створіть оголошення бездоганно, ввівши детальну інформацію про нього.',
 
     // Listing page
     'ad_title' => 'Заголовок оголошення',
@@ -344,7 +344,7 @@ return [
     'view' => 'Переглянути',
     'ads_with_map' => 'Оголошення з картою',
     'advanced_sorting' => 'Розширене сортування',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Фільтрувати за словом',
 
     'free' => 'Безкоштовно',
     'ad_date' => 'Дата оголошення',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'Стара ціна'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Зберегти пошук',
 ];
