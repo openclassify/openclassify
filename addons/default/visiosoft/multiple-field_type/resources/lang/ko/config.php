@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => '관련 스트림',
+        'instructions' => '드롭 다운에 표시 할 관련 스트림 항목을 지정합니다.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => '입력 모드',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => '태그',
+            'lookup'     => '조회',
+            'checkboxes' => '체크 박스',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => '최소 선택',
+        'instructions' => '허용되는 최소 선택 수를 지정합니다.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => '최대 선택',
+        'instructions' => '허용되는 최대 선택 수를 지정합니다.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => '제목 필드',
+        'placeholder'  => '이름',
+        'instructions' => '드롭 다운 / 검색 옵션에 대해 표시 할 필드 <strong>슬러그</strong> 을 지정합니다.<br> <strong>{entry.first_name} {entry.last_name}</strong><br>과 같이 구문 분석 가능한 제목을 지정할 수 있습니다. 관련 스트림의 제목 열이 기본적으로 사용됩니다.',
     ],
 ];
