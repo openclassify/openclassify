@@ -266,10 +266,10 @@ return [
         'name' => 'إظهار الفئات الفرعية على طريقة عرض الجوال',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'عرض السعر للأعضاء فقط',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'إخفاء الفئات',
+		'instructions' => 'إخفاء الفئات في قائمة الإعلانات'
 	]
 ];
