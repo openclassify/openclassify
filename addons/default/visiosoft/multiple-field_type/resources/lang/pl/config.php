@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Powiązany strumień',
+        'instructions' => 'Określ powiązane wpisy strumieni, które mają być wyświetlane na liście rozwijanej.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Tryb wejściowy',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Tagi',
+            'lookup'     => 'Wyszukaj',
+            'checkboxes' => 'Pola wyboru',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minimalne wybory',
+        'instructions' => 'Określ minimalną liczbę dozwolonych wyborów.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maksymalne wybory',
+        'instructions' => 'Określ maksymalną liczbę dozwolonych wyborów.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Pole tytułu',
+        'placeholder'  => 'Imię',
+        'instructions' => 'Określ <strong>slug</strong> pola, które ma być wyświetlane dla opcji menu rozwijanego / wyszukiwania.<br>Możesz określić tytuły do analizy, takie jak <strong>{entry.first_name} {entry.last_name}</strong><br>Kolumna tytułu powiązanego strumienia będzie używana domyślnie.',
     ],
 ];
