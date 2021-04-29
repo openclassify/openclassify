@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Місце розташування оголошення',
     'owner' => 'Власник',
     'default_owner_instruction' => 'Власник встановить за замовчуванням поточного користувача, якщо не вибрано жодного користувача',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Заголовок оголошення',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Стара ціна'
     ],
+	'save_search' => 'Save Search',
 ];
