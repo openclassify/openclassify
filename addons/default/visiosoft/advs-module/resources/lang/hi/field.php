@@ -336,6 +336,7 @@ return [
     'ad_location' => 'विज्ञापन स्थान',
     'owner' => 'मालिक',
     'default_owner_instruction' => 'यदि कोई उपयोगकर्ता चयनित नहीं है, तो स्वामी वर्तमान उपयोगकर्ता को डिफ़ॉल्ट करेगा',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'विज्ञापन शीर्षक',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'पुरानी कीमत'
     ],
+	'save_search' => 'Save Search',
 ];
