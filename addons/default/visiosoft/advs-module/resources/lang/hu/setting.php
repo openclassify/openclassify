@@ -266,10 +266,10 @@ return [
         'name' => 'Alkategóriák megjelenítése mobil nézetben',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Árak megjelenítése csak tagoknak',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Kategóriák elrejtése',
+		'instructions' => 'Kategóriák elrejtése a hirdetési listában'
 	]
 ];
