@@ -337,6 +337,7 @@ return [
     'ad_location' => 'Ünvan əlavə et',
     'owner' => 'Sahib',
     'default_owner_instruction' => 'Heç bir istifadəçi seçilmədiyi təqdirdə sahib cari istifadəçiyə borcludur',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Reklam adı',
@@ -368,4 +369,5 @@ return [
     'old_price' => [
         'name' => 'Köhnə Qiymət'
     ],
+	'save_search' => 'Save Search',
 ];
