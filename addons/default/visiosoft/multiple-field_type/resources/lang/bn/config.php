@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'সম্পর্কিত স্ট্রিম',
+        'instructions' => 'ড্রপডাউনতে প্রদর্শন করতে সম্পর্কিত স্ট্রিম এন্ট্রিগুলি নির্দিষ্ট করুন।',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'ইনপুট মোড',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'ট্যাগ',
+            'lookup'     => 'খুঁজে দেখো',
+            'checkboxes' => 'চেকবাক্স',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'ন্যূনতম নির্বাচন',
+        'instructions' => 'অনুমোদিত নির্বাচনের সর্বনিম্ন সংখ্যা নির্দিষ্ট করুন।',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'সর্বোচ্চ নির্বাচন',
+        'instructions' => 'অনুমোদিত নির্বাচনের সর্বাধিক সংখ্যা উল্লেখ করুন।',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'শিরোনাম ক্ষেত্র',
+        'placeholder'  => 'নামের প্রথম অংশ',
+        'instructions' => 'ড্রপডাউন / অনুসন্ধান বিকল্পগুলির জন্য প্রদর্শন করতে ক্ষেত্রের <strong>স্লাগ</strong> উল্লেখ করুন।<br> <strong>{entry.first_name} {entry.last_name}</strong><br>এর মতো পার্সেবল শিরোনাম নির্দিষ্ট করতে পারেন সম্পর্কিত স্ট্রিমের শিরোনাম কলামটি ডিফল্টরূপে ব্যবহৃত হবে।',
     ],
 ];
