@@ -336,7 +336,7 @@ return [
     'ad_location' => 'Annonsplats',
     'owner' => 'Ägare',
     'default_owner_instruction' => 'Ägaren kommer som standard att använda den nuvarande användaren om ingen användare har valts',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Skapa annonsen felfritt genom att ange detaljerad information om din annons.',
 
     // Listing page
     'ad_title' => 'Lägg till titel',
@@ -344,7 +344,7 @@ return [
     'view' => 'Se',
     'ads_with_map' => 'Annonser med karta',
     'advanced_sorting' => 'Avancerad sortering',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrera efter ord',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'Gammalt pris'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Spara sökning',
 ];
