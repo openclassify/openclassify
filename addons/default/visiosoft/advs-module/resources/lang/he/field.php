@@ -336,6 +336,7 @@ return [
     'ad_location' => 'מיקום מודעה',
     'owner' => 'בעלים',
     'default_owner_instruction' => 'הבעלים יוגדר כברירת מחדל למשתמש הנוכחי אם לא ייבחר משתמש',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'כותרת המודעה',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'מחיר ישן'
     ],
+	'save_search' => 'Save Search',
 ];
