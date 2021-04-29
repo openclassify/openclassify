@@ -266,10 +266,10 @@ return [
         'name' => 'Hiển thị các danh mục phụ trên chế độ xem trên thiết bị di động',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Chỉ hiển thị giá cho thành viên',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Ẩn danh mục',
+		'instructions' => 'Ẩn danh mục trong danh sách quảng cáo'
 	]
 ];
