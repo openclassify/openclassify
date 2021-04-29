@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Toon subcategorieën op mobiele weergave',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Toon prijs alleen aan leden',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Categorieën verbergen',
+		'instructions' => 'Verberg categorieën in de lijst met advertenties'
+	]
 ];
