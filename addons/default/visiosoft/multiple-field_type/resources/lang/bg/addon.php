@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Multiple',
-    'name'        => 'Multiple Field Type',
-    'description' => 'A multiple relationship field type.',
+    'title'       => 'Многократни',
+    'name'        => 'Тип на множество полета',
+    'description' => 'Тип поле с множество връзки.',
 ];
