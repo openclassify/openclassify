@@ -14,11 +14,13 @@
                 {{ img('visiosoft.module.advs::images/listing/list.svg').data|raw }}
                 <p class="ml-2">{{ trans("visiosoft.module.advs::field.list") }}</p>
             </a>
-            <a href="{{ url_route('visiosoft.module.advs::view_type', ['map']) }}" rel="nofollow"
-               class="d-flex w-50 align-items-center pr-2 pb-1 justify-content-end{{ request().cookie.viewType == "map" ? ' active' }}">
-                {{ img('visiosoft.module.advs::images/listing/map.svg').data|raw }}
-                <p class="ml-2">{{ trans("visiosoft.module.advs::field.map.name") }}</p>
-            </a>
+            {% if setting_value('visiosoft.module.location::list_page_location') %}
+                <a href="{{ url_route('visiosoft.module.advs::view_type', ['map']) }}" rel="nofollow"
+                   class="d-flex w-50 align-items-center pr-2 pb-1 justify-content-end{{ request().cookie.viewType == "map" ? ' active' }}">
+                    {{ img('visiosoft.module.advs::images/listing/map.svg').data|raw }}
+                    <p class="ml-2">{{ trans("visiosoft.module.advs::field.map.name") }}</p>
+                </a>
+            {% endif %}
         </div>
 
         {% include 'visiosoft.module.cats::ads-list/partials/cat-filter' %}

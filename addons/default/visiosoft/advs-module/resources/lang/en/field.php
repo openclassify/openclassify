@@ -368,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Old Price'
     ],
+	'save_search' => 'Save Search',
 ];

@@ -18,6 +18,7 @@ return [
                     'tcmb_exchange_url',
                     'enabled_currencies',
 	                'disable_sentry',
+	                'hide_ad_cat',
                 ],
             ],
             'ads' => [
