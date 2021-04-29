@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Corrent relacionat',
+        'instructions' => 'Especifiqueu les entrades de flux relacionades que es mostraran al menú desplegable.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Mode d\'entrada',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Etiquetes',
+            'lookup'     => 'Cercar',
+            'checkboxes' => 'Caselles de selecció',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Seleccions mínimes',
+        'instructions' => 'Especifiqueu el nombre mínim de seleccions permeses.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Seleccions màximes',
+        'instructions' => 'Especifiqueu el nombre màxim de seleccions permeses.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Camp del títol',
+        'placeholder'  => 'nom',
+        'instructions' => 'Especifiqueu el <strong>slug</strong> de camp que es mostrarà per a les opcions desplegables / de cerca.<br>Podeu especificar títols analitzables com <strong>{entry.first_name} {entry.last_name}</strong><br>per defecte s\'utilitzarà la columna de títol del flux relacionat.',
     ],
 ];
