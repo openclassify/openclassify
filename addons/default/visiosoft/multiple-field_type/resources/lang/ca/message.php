@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'select_entries' => 'Select the entries you would like to add.',
+    'select_entries' => 'Seleccioneu les entrades que vulgueu afegir.',
 ];
