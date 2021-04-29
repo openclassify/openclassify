@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Relaterad ström',
+        'instructions' => 'Ange relaterade strömposter som ska visas i rullgardinsmenyn.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Ingångsläge',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Taggar',
+            'lookup'     => 'Slå upp',
+            'checkboxes' => 'Kryssrutor',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minsta val',
+        'instructions' => 'Ange det minsta antalet tillåtna val.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maximala val',
+        'instructions' => 'Ange det maximala antalet tillåtna val.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Titelfält',
+        'placeholder'  => 'förnamn',
+        'instructions' => 'Ange <strong>slug</strong> i fältet som ska visas för rullgardins- / sökalternativ.<br>Du kan ange tolkbara titlar som <strong>{entry.first_name} {entry.last_name}</strong><br>Den relaterade strömens titelkolumn används som standard.',
     ],
 ];
