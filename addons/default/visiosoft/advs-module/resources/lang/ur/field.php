@@ -336,6 +336,7 @@ return [
     'ad_location' => 'اشتہار کی جگہ',
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر کوئی صارف منتخب نہیں ہوتا ہے تو مالک موجودہ صارف سے ڈیفالٹ ہوجائے گا',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'اشتہار کا عنوان',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'پرانی قیمت'
     ],
+	'save_search' => 'Save Search',
 ];
