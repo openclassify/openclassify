@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Пов’язаний потік',
+        'instructions' => 'Вкажіть відповідні записи потоку, які відображатимуться у спадному меню.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Режим введення',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Теги',
+            'lookup'     => 'Пошук',
+            'checkboxes' => 'Прапорці',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Мінімальний вибір',
+        'instructions' => 'Вкажіть мінімальну кількість дозволених виділень.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Максимальний вибір',
+        'instructions' => 'Вкажіть максимальну кількість дозволених виділень.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Поле заголовка',
+        'placeholder'  => 'ім\'я',
+        'instructions' => 'Вкажіть поле <strong>slug</strong> яке відображатиметься для розкривного меню / параметрів пошуку.<br>Ви можете вказати синтаксичні заголовки, такі як <strong>{entry.first_name} {entry.last_name}</strong><br>Стовпець заголовка відповідного потоку буде використовуватися за замовчуванням.',
     ],
 ];
