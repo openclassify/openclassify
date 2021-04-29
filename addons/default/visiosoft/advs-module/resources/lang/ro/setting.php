@@ -266,10 +266,10 @@ return [
         'name' => 'Afișați subcategoriile pe ecranul mobil',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Afișați prețul numai membrilor',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Ascundeți categoriile',
+		'instructions' => 'Ascundeți categoriile din lista de anunțuri'
 	]
 ];
