@@ -267,10 +267,10 @@ return [
         'name' => 'زیر مجموعه ها را در نمای موبایل نشان دهید',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'نمایش قیمت فقط به اعضا',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'پنهان کردن دسته ها',
+		'instructions' => 'پنهان کردن دسته ها در لیست تبلیغات'
 	]
 ];
