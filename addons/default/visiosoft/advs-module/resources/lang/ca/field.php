@@ -336,7 +336,7 @@ return [
     'ad_location' => 'Ubicació de l’anunci',
     'owner' => 'Propietari',
     'default_owner_instruction' => 'El propietari passarà per defecte a l\'usuari actual si no se selecciona cap usuari',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Creeu l’anunci perfectament introduint informació detallada sobre el vostre anunci.',
 
     // Listing page
     'ad_title' => 'Títol de l\'anunci',
@@ -344,7 +344,7 @@ return [
     'view' => 'Veure',
     'ads_with_map' => 'Anuncis amb mapa',
     'advanced_sorting' => 'Ordenació avançada',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtra per paraula',
 
     'free' => 'Gratuït',
     'ad_date' => 'Data de l\'anunci',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'Preu antic'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Desa la cerca',
 ];
