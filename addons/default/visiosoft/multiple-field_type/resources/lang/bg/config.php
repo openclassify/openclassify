@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Свързан поток',
+        'instructions' => 'Посочете свързаните записи в потока, които да се показват в падащото меню.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Режим на въвеждане',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Етикети',
+            'lookup'     => 'Погледни нагоре',
+            'checkboxes' => 'Квадратчета за отметка',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Минимални селекции',
+        'instructions' => 'Посочете минималния брой разрешени селекции.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Максимален избор',
+        'instructions' => 'Посочете максималния брой разрешени селекции.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Поле за заглавие',
+        'placeholder'  => 'първо име',
+        'instructions' => 'Посочете <strong>slug</strong> за показване за падащи опции / опции за търсене.<br>Можете да посочите синтаксируеми заглавия като <strong>{entry.first_name} {entry.last_name}</strong><br>По подразбиране ще се използва заглавната колона на свързания поток.',
     ],
 ];
