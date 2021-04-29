@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Multiple',
-    'name'        => 'Multiple Field Type',
-    'description' => 'A multiple relationship field type.',
+    'title'       => 'Shumëfish',
+    'name'        => 'Lloji i fushës së shumëfishtë',
+    'description' => 'Një lloj i fushës së marrëdhënieve të shumëfishta.',
 ];
