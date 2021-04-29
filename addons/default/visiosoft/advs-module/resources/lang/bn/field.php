@@ -336,6 +336,7 @@ return [
     'ad_location' => 'বিজ্ঞাপনের অবস্থান',
     'owner' => 'মালিক',
     'default_owner_instruction' => 'কোনও ব্যবহারকারী নির্বাচিত না হলে মালিক বর্তমান ব্যবহারকারীর কাছে ডিফল্ট হবে',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'বিজ্ঞাপনের শিরোনাম',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'পুরাতন মূল্য'
     ],
+	'save_search' => 'Save Search',
 ];
