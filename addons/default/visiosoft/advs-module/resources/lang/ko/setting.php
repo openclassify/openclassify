@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => '모바일보기에 하위 범주 표시',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => '회원에게만 가격 표시',
+	],
+	'hide_ad_cat' => [
+		'name' => '카테고리 숨기기',
+		'instructions' => '광고 목록에서 카테고리 숨기기'
+	]
 ];
