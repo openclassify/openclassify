@@ -336,7 +336,7 @@ return [
     'ad_location' => 'Annonseplassering',
     'owner' => 'Eieren',
     'default_owner_instruction' => 'Eieren vil som standard være den nåværende brukeren hvis ingen bruker er valgt',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Opprett annonsen feilfritt ved å legge inn detaljert informasjon om annonsen din.',
 
     // Listing page
     'ad_title' => 'Annonsetittel',
@@ -344,7 +344,7 @@ return [
     'view' => 'Utsikt',
     'ads_with_map' => 'Annonser med kart',
     'advanced_sorting' => 'Avansert sortering',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrer etter ord',
 
     'free' => 'Gratis',
     'ad_date' => 'Annonsedato',
@@ -368,5 +368,5 @@ return [
     'old_price' => [
         'name' => 'Gammel pris'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Lagre søk',
 ];
