@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Wys subkategorieë op mobiele aansig',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Wys prys slegs vir lede',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Versteek kategorieë',
+		'instructions' => 'Versteek kategorieë in advertensielys'
+	]
 ];
