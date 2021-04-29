@@ -266,10 +266,10 @@ return [
         'name' => 'Mostra subcategories a la visualització per a mòbils',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Mostrar preu només per a membres',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Amaga les categories',
+		'instructions' => 'Amaga les categories a la llista d\'anuncis'
 	]
 ];
