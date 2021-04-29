@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Tampilkan subkategori pada tampilan seluler',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Tunjukkan Harga Hanya Untuk Anggota',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Sembunyikan Kategori',
+		'instructions' => 'Sembunyikan kategori dalam daftar iklan'
+	]
 ];
