@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Zobrazit podkategorie v mobilním zobrazení',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Zobrazit cenu pouze pro členy',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Skrýt kategorie',
+		'instructions' => 'Skrýt kategorie v seznamu reklam'
+	]
 ];
