@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Umístění reklamy',
     'owner' => 'Majitel',
     'default_owner_instruction' => 'Vlastník bude výchozí pro aktuálního uživatele, pokud není vybrán žádný uživatel',
+    'create_page_subtitle' => 'Vytvořte reklamu bezchybně zadáním podrobných informací o reklamě.',
 
     // Listing page
     'ad_title' => 'Název reklamy',
@@ -343,7 +344,7 @@ return [
     'view' => 'Pohled',
     'ads_with_map' => 'Reklamy s mapou',
     'advanced_sorting' => 'Pokročilé třídění',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrovat podle slova',
 
     'free' => 'Volný, uvolnit',
     'ad_date' => 'Datum inzerátu',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Stará cena'
     ],
+	'save_search' => 'Uložit hledání',
 ];
