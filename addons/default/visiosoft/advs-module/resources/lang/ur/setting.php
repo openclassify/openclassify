@@ -266,10 +266,10 @@ return [
         'name' => 'موبائل ویو پر ذیلی زمرہ جات دکھائیں',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'صرف ممبروں کو قیمت دکھائیں',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'زمرہ جات چھپائیں',
+		'instructions' => 'اشتہارات کی فہرست میں زمرے چھپائیں'
 	]
 ];
