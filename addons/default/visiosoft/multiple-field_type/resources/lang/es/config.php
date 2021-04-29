@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Corriente relacionada',
+        'instructions' => 'Especifique las entradas de flujo relacionadas para mostrar en el menú desplegable.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Modo de entrada',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Etiquetas',
+            'lookup'     => 'Buscar',
+            'checkboxes' => 'Casillas de verificación',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Selecciones mínimas',
+        'instructions' => 'Especifique el número mínimo de selecciones permitidas.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Selecciones máximas',
+        'instructions' => 'Especifique el número máximo de selecciones permitidas.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Campo de título',
+        'placeholder'  => 'primer nombre',
+        'instructions' => 'Especifique el <strong>slug</strong> del campo para mostrar las opciones de búsqueda / menú desplegable.<br>Puede especificar títulos analizables como <strong>{entry.first_name} {entry.last_name}</strong><br>La columna de título de la secuencia relacionada se utilizará de forma predeterminada.',
     ],
 ];
