@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'select_entries' => 'Select the entries you would like to add.',
+    'select_entries' => 'Selecteer de vermeldingen die u wilt toevoegen.',
 ];
