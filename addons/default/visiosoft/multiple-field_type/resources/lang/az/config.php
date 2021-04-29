@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Əlaqəli axın',
+        'instructions' => 'Açılan siyahıda göstəriləcək əlaqəli axın girişlərini göstərin.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Giriş rejimi',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Teqlər',
+            'lookup'     => 'Axtarış',
+            'checkboxes' => 'Onay qutuları',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minimum seçimlər',
+        'instructions' => 'Minimum icazə verilən seçim sayını göstərin.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maksimum seçimlər',
+        'instructions' => 'İcazəli seçimlərin maksimum sayını göstərin.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Başlıq sahəsi',
+        'placeholder'  => 'ilk_ad',
+        'instructions' => 'Açılan / axtarış seçimləri üçün göstəriləcək sahənin <strong>slug</strong> göstərin.<br> <strong>{entry.first_name} {entry.last_name}</strong><br>kimi ayrıştırılabilir başlıqlar təyin edə bilərsiniz. Müvafiq yayının başlıq sütunu varsayılan olaraq istifadə ediləcək.',
     ],
 ];
