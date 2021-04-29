@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Afișați subcategoriile pe ecranul mobil',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Afișați prețul numai membrilor',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Ascundeți categoriile',
+		'instructions' => 'Ascundeți categoriile din lista de anunțuri'
+	]
 ];
