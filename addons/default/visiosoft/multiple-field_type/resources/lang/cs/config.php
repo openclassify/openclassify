@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Související stream',
+        'instructions' => 'Určete související položky streamu, které se mají zobrazit v rozbalovací nabídce.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Režim vstupu',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Značky',
+            'lookup'     => 'Vzhlédnout',
+            'checkboxes' => 'Zaškrtávací políčka',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minimální výběr',
+        'instructions' => 'Určete minimální počet povolených výběrů.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maximální výběr',
+        'instructions' => 'Zadejte maximální počet povolených výběrů.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Pole názvu',
+        'placeholder'  => 'jméno',
+        'instructions' => 'Určete <strong>slimáka</strong> pole, které se má zobrazit pro možnosti rozevíracího seznamu / vyhledávání.<br>Můžete zadat srovnatelné tituly jako <strong>{entry.first_name} {entry.last_name}</strong><br>Ve výchozím nastavení se použije sloupec názvu souvisejícího streamu.',
     ],
 ];
