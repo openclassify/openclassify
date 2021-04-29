@@ -6,7 +6,7 @@ return [
         'instructions' => 'Specify the related stream entries to display in the dropdown.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Mod unosa',
         'option' => [
             'tags'       => 'Tags',
             'lookup'     => 'Lookup',
@@ -14,11 +14,11 @@ return [
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
+        'label'        => 'Minimalni odabir',
         'instructions' => 'Specify the minimum number of allowed selections.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
+        'label'        => 'Maksimalni odabir',
         'instructions' => 'Specify the maximum number of allowed selections.',
     ],
     'title_name' => [
