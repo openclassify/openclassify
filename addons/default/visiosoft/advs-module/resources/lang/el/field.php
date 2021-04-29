@@ -337,6 +337,7 @@ return [
     'ad_location' => 'Τοποθεσία διαφήμισης',
     'owner' => 'Ιδιοκτήτης',
     'default_owner_instruction' => 'Ο κάτοχος θα προεπιλογή στον τρέχοντα χρήστη εάν δεν έχει επιλεγεί κανένας χρήστης',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Τίτλος διαφήμισης',
@@ -368,4 +369,5 @@ return [
     'old_price' => [
         'name' => 'Παλιά τιμή'
     ],
+	'save_search' => 'Save Search',
 ];
