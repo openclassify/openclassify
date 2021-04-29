@@ -266,10 +266,10 @@ return [
         'name' => 'Показване на подкатегории в мобилен изглед',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Покажи цена само за членовете',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Скриване на категории',
+		'instructions' => 'Скриване на категориите в списъка с реклами'
 	]
 ];
