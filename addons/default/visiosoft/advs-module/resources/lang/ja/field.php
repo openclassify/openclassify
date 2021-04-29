@@ -336,6 +336,7 @@ return [
     'ad_location' => '広告の場所',
     'owner' => 'オーナー',
     'default_owner_instruction' => 'ユーザーが選択されていない場合、所有者はデフォルトで現在のユーザーになります',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => '広告タイトル',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => '古い価格'
     ],
+	'save_search' => 'Save Search',
 ];
