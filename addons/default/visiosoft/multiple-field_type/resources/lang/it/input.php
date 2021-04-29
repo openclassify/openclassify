@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'Scegliere un\'opzione...',
+    'help'        => 'Separare i valori con una virgola o premendo "Invio".',
 ];
