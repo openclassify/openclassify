@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'संबंधित स्ट्रीम',
+        'instructions' => 'ड्रॉपडाउन में प्रदर्शित करने के लिए संबंधित स्ट्रीम प्रविष्टियों को निर्दिष्ट करें।',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'इनपुट मोड',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'टैग',
+            'lookup'     => 'ऊपर देखो',
+            'checkboxes' => 'चेक बॉक्स',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'न्यूनतम चयन',
+        'instructions' => 'अनुमत चयनों की न्यूनतम संख्या निर्दिष्ट करें।',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'अधिकतम चयन',
+        'instructions' => 'अनुमत चयन की अधिकतम संख्या निर्दिष्ट करें।',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'शीर्षक क्षेत्र',
+        'placeholder'  => 'पहला नाम',
+        'instructions' => 'ड्रॉपडाउन / खोज विकल्पों के लिए प्रदर्शित करने के लिए फ़ील्ड के <strong>स्लग</strong><br> <strong>{entry.first_name} {entry.last_name}</strong><br>जैसे पार्स करने योग्य शीर्षक निर्दिष्ट कर सकते हैं। संबंधित स्ट्रीम का शीर्षक कॉलम डिफ़ॉल्ट रूप से उपयोग किया जाएगा।',
     ],
 ];
