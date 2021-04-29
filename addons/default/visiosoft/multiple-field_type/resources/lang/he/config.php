@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'זרם קשור',
+        'instructions' => 'ציין את ערכי הזרם הקשורים שיוצגו בתפריט הנפתח.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'מצב קלט',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'תגים',
+            'lookup'     => 'הבט מעלה',
+            'checkboxes' => 'תיבות סימון',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'בחירות מינימליות',
+        'instructions' => 'ציין את המספר המינימלי של הבחירות המותרות.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'בחירות מרביות',
+        'instructions' => 'ציין את המספר המרבי של הבחירות המותרות.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'שדה כותרת',
+        'placeholder'  => 'שם פרטי',
+        'instructions' => 'ציין את <strong>שבלול</strong> של השדה לתצוגה עבור אפשרויות נפתחות / חיפוש.<br>ניתן לציין כותרות ניתנות כמו <strong>{entry.first_name} {entry.last_name}</strong><br>בעמודת הכותרת של הזרם הקשור ישמש כברירת מחדל.',
     ],
 ];
