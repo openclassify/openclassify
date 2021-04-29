@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => '在移动视图中显示子类别',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => '仅向会员显示价格',
+	],
+	'hide_ad_cat' => [
+		'name' => '隐藏类别',
+		'instructions' => '隐藏广告列表中的类别'
+	]
 ];
