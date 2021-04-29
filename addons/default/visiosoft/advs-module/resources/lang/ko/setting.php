@@ -266,10 +266,10 @@ return [
         'name' => '모바일보기에 하위 범주 표시',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => '회원에게만 가격 표시',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => '카테고리 숨기기',
+		'instructions' => '광고 목록에서 카테고리 숨기기'
 	]
 ];
