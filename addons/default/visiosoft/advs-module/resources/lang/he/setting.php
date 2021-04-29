@@ -266,10 +266,10 @@ return [
         'name' => 'הצג קטגוריות משנה בתצוגת הנייד',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'הצג מחיר לחברים בלבד',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'הסתר קטגוריות',
+		'instructions' => 'הסתר קטגוריות ברשימת המודעות'
 	]
 ];
