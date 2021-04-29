@@ -266,10 +266,10 @@ return [
         'name' => 'मोबाइल दृश्य पर उपश्रेणियाँ दिखाएँ',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'केवल सदस्यों को मूल्य दिखाएं',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'श्रेणियाँ छिपाएँ',
+		'instructions' => 'विज्ञापन सूची में श्रेणियां छिपाएं'
 	]
 ];
