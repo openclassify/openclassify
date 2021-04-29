@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Verwante stroom',
+        'instructions' => 'Spesifiseer die verwante stroominskrywings wat in die keuselys vertoon moet word.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Invoermodus',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Merkers',
+            'lookup'     => 'Soek',
+            'checkboxes' => 'Merkblokkies',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Minimum keuses',
+        'instructions' => 'Spesifiseer die minimum aantal toegelate keuses.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Maksimum keuses',
+        'instructions' => 'Spesifiseer die maksimum aantal toegelate keuses.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Titelveld',
+        'placeholder'  => 'eerste naam',
+        'instructions' => 'Spesifiseer die <strong>slak</strong> van die veld om te vertoon vir die keuselys / soekopsies.<br>U kan ontleedbare titels spesifiseer soos <strong>{entry.first_name} {entry.last_name}</strong><br>Die titelkolom van die verwante stroom sal standaard gebruik word.',
     ],
 ];
