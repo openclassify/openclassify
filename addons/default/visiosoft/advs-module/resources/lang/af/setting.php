@@ -266,10 +266,10 @@ return [
         'name' => 'Wys subkategorieë op mobiele aansig',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Wys prys slegs vir lede',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Versteek kategorieë',
+		'instructions' => 'Versteek kategorieë in advertensielys'
 	]
 ];
