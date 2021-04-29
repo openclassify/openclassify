@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Locația anunțului',
     'owner' => 'Proprietar',
     'default_owner_instruction' => 'Proprietarul va folosi implicit utilizatorul curent dacă nu este selectat niciun utilizator',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Adaugă titlu',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Preț vechi'
     ],
+	'save_search' => 'Save Search',
 ];
