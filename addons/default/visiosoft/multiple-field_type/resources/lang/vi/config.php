@@ -2,28 +2,28 @@
 
 return [
     'related'    => [
-        'label'        => 'Related Stream',
-        'instructions' => 'Specify the related stream entries to display in the dropdown.',
+        'label'        => 'Luồng liên quan',
+        'instructions' => 'Chỉ định các mục nhập luồng liên quan để hiển thị trong menu thả xuống.',
     ],
     'mode'       => [
-        'label'  => 'Input Mode',
+        'label'  => 'Chế độ đầu vào',
         'option' => [
-            'tags'       => 'Tags',
-            'lookup'     => 'Lookup',
-            'checkboxes' => 'Checkboxes',
+            'tags'       => 'Thẻ',
+            'lookup'     => 'Tra cứu',
+            'checkboxes' => 'Hộp kiểm',
         ],
     ],
     'min'        => [
-        'label'        => 'Minimum Selections',
-        'instructions' => 'Specify the minimum number of allowed selections.',
+        'label'        => 'Lựa chọn tối thiểu',
+        'instructions' => 'Chỉ định số lượng tối thiểu các lựa chọn được phép.',
     ],
     'max'        => [
-        'label'        => 'Maximum Selections',
-        'instructions' => 'Specify the maximum number of allowed selections.',
+        'label'        => 'Lựa chọn tối đa',
+        'instructions' => 'Chỉ định số lượng tối đa các lựa chọn được phép.',
     ],
     'title_name' => [
-        'label'        => 'Title Field',
-        'placeholder'  => 'first_name',
-        'instructions' => 'Specify the <strong>slug</strong> of field to display for dropdown/search options.<br>You can specify parsable titles like <strong>{entry.first_name} {entry.last_name}</strong><br>The related stream\'s title column will be used by default.',
+        'label'        => 'Trường tiêu đề',
+        'placeholder'  => 'tên đầu tiên',
+        'instructions' => 'Chỉ định <strong>slug</strong> của trường để hiển thị cho các tùy chọn thả xuống / tìm kiếm.<br>Bạn có thể chỉ định tiêu đề có thể phân tích cú pháp như <strong>{entry.first_name} {entry.last_name}</strong><br>Cột tiêu đề của luồng liên quan sẽ được sử dụng theo mặc định.',
     ],
 ];
