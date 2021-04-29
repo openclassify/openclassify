@@ -264,5 +264,12 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Näytä alaluokat mobiilinäkymässä',
-    ]
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Näytä hinta vain jäsenille',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Piilota luokat',
+		'instructions' => 'Piilota luokat mainosluettelossa'
+	]
 ];
