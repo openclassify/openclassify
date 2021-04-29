@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Lokasi Iklan',
     'owner' => 'Pemilik',
     'default_owner_instruction' => 'Pemilik akan menggunakan pengguna saat ini secara bawaan/default jika tidak ada pengguna yang dipilih',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Judul Iklan',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Harga Lama'
     ],
+	'save_search' => 'Save Search',
 ];
