@@ -337,7 +337,7 @@ return [
     'ad_location' => 'Местоположение объявления',
     'owner' => 'Владелец',
     'default_owner_instruction' => 'Если пользователь не выбран, владельцем по умолчанию будет текущий пользователь',
-    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'create_page_subtitle' => 'Создайте объявление безупречно, введя подробную информацию о нем.',
 
     // Listing page
     'ad_title' => 'Заголовок объявления',
@@ -345,7 +345,7 @@ return [
     'view' => 'Вид',
     'ads_with_map' => 'Объявления с картой',
     'advanced_sorting' => 'Расширенная сортировка',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Фильтр по слову',
 
     'free' => 'Бесплатно',
     'ad_date' => 'Дата объявления',
@@ -369,5 +369,5 @@ return [
     'old_price' => [
         'name' => 'Старая цена'
     ],
-	'save_search' => 'Save Search',
+	'save_search' => 'Сохранить поиск',
 ];
