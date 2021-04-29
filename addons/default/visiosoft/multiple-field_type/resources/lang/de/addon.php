@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'title'       => 'Multiple',
-    'name'        => 'Multiple Field Type',
-    'description' => 'A multiple relationship field type.',
+    'title'       => 'Mehrere',
+    'name'        => 'Typ mit mehreren Feldern',
+    'description' => 'Ein Feldtyp mit mehreren Beziehungen.',
 ];
