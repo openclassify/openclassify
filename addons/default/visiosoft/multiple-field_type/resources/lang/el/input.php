@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'placeholder' => 'Choose an option...',
-    'help'        => 'Separate values with a comma or by pressing "Enter".',
+    'placeholder' => 'Διάλεξε μια επιλογή...',
+    'help'        => 'Διαχωρίστε τις τιμές με κόμμα ή πατώντας "Enter".',
 ];
