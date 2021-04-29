@@ -266,10 +266,10 @@ return [
         'name' => 'Alt kategorileri mobil görünümde göster',
     ],
 	'show_price_to_members_only' => [
-		'name' => 'Show Price To Members Only',
+		'name' => 'Sadece Üyelere Fiyat Göster',
 	],
 	'hide_ad_cat' => [
-		'name' => 'Hide Categories',
-		'instructions' => 'Hide categories in ads list'
+		'name' => 'Kategorileri gizle',
+		'instructions' => 'Reklam listesindeki kategorileri gizle'
 	]
 ];
