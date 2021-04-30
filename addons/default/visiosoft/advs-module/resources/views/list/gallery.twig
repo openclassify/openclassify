@@ -32,7 +32,8 @@
                             <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
                         {% endif %}
                         {% if showPrice %}
-                            <p class="price-data mb-1">
+                            <p class="price-data mb-1
+                                    {{ setting_value('visiosoft.module.advs::show_price_to_members_only') ? (auth_check() ? false : 'd-none') }}">
                                 {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
                             </p>
                         {% endif %}

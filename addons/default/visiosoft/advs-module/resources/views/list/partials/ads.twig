@@ -15,7 +15,9 @@
             {% if setting_value('visiosoft.module.advs::market_place') %}
                 <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.listing_date') }}</th>
             {% endif %}
-            <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.price.name') }}</th>
+            <th class="text-nowrap {{ setting_value('visiosoft.module.advs::show_price_to_members_only') ? (auth_check() ? false : 'd-none') }}">
+                {{ trans('visiosoft.module.advs::field.price.name') }}
+            </th>
         </tr>
         </thead>
 
@@ -56,7 +58,7 @@
                         <p>{{ adv.publish_at.value|date('Y') }}</p>
                     </td>
                 {% endif %}
-                <td class="price-data">
+                <td class="price-data {{ setting_value('visiosoft.module.advs::show_price_to_members_only') ? (auth_check() ? false : 'd-none') }}">
                     {% if not hideStandard %}
                         <p class="text-nowrap">
                             <s>
