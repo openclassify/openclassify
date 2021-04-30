@@ -4,6 +4,13 @@ use Anomaly\Streams\Platform\Database\Migration\Migration;
 
 class VisiosoftModuleAdvsChangeProductOptionsValue extends Migration
 {
+    public function __construct()
+    {
+        //Maria DB will be removed when the version is updated.
+        \Illuminate\Support\Facades\DB::getDoctrineSchemaManager()
+            ->getDatabasePlatform()->registerDoctrineTypeMapping('point', 'string');
+    }
+
     public function up()
     {
         if (!$field = $this->fields()->findBySlugAndNamespace('product_options_value', 'advs')) {
