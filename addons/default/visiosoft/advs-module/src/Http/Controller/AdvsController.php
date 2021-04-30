@@ -400,7 +400,7 @@ class AdvsController extends PublicController
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'seenList', 'radio', 'category', 'cityId', 'allCats', 'catText', 'cFArray');
+            'text', 'seenList', 'radio', 'category', 'cityId', 'allCats', 'catText', 'cFArray');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
