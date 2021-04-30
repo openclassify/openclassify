@@ -282,6 +282,7 @@ class AdvsController extends PublicController
             $selectImage = $returnvalues['selectImage'];
             $ranges = $returnvalues['ranges'];
             $radio = $returnvalues['radio'];
+            $text = $returnvalues['text'];
 
             $cFArray = app('Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface')
                 ->getCFParamValues($param);
