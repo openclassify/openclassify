@@ -271,7 +271,7 @@ class AdvsController extends PublicController
             $allCats = true;
         }
 
-        $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = $listingCFs = array();
+        $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = $text = $listingCFs = array();
 
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->index($mainCats, $subCats, $category);
