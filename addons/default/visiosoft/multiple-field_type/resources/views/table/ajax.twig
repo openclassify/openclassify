@@ -1,0 +1,53 @@
+{{ asset_add("scripts.js", "streams::js/table/table.js") }}
+
+{% if not actions.isEmpty() %}
+    {{ asset_add("scripts.js", "streams::js/table/actions.js") }}
+{% endif %}
+
+{% if table.options.sortable %}
+    {{ asset_add("scripts.js", "streams::js/table/sortable.js") }}
+{% endif %}
+
+{{ view("visiosoft.field_type.multiple::table/ajax/heading", {'table': table}) }}
+
+{{ view("visiosoft.field_type.multiple::table/ajax/views", {'table': table}) }}
+{{ view("visiosoft.field_type.multiple::table/ajax/filters", {'table': table}) }}
+
+{% if table.rows.isEmpty() %}
+    {% block no_results %}
+        <div class="no-results">
+            <p>
+                {{ trans(table.options.get('no_results_message', 'streams::message.no_results')) }}
+            </p>
+        </div>
+    {% endblock %}
+{% endif %}
+
+{% if not table.rows.isEmpty() %}
+
+    {{ form_open({'url': url_full(), 'class': 'ajax'}) }}
+
+    <div class="table-responsive">
+        <table
+                class="
+                    table ajax table--ajax
+                    {{ table.options.class ?: 'table-condensed table--condensed' }}
+                    {{ table.options.sortable ? 'table--sortable' }}
+                "
+                {{ table.options.sortable ? 'data-sortable' }}
+                {{ html_attributes(table.options.attributes) }}>
+
+            {{ view("visiosoft.field_type.multiple::table/ajax/header", {'table': table}) }}
+
+            {% block body %}
+                {{ view("visiosoft.field_type.multiple::table/partials/body", {'table': table}) }}
+            {% endblock %}
+
+            {{ view("streams::table/partials/footer", {'table': table}) }}
+
+        </table>
+    </div>
+
+    {{ form_close() }}
+
+{% endif %}

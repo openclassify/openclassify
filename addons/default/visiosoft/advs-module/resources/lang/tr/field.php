@@ -338,6 +338,7 @@ return [
     'ad_location' => 'İlan Konumu',
     'owner' => 'Sahip',
     'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
+    'create_page_subtitle' => 'Ürün veya ilan hakkında detaylı bilgi girebilirsiniz',
 
     // Listing page
     'ad_title' => 'Başlık',
@@ -369,4 +370,5 @@ return [
     'old_price' => [
         'name' => 'Eski fiyat'
     ],
+	'save_search' => 'Aramayı Kaydet',
 ];

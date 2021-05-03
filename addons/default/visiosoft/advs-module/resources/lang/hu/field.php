@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Hirdetés helye',
     'owner' => 'Tulajdonos',
     'default_owner_instruction' => 'A tulajdonos alapértelmezés szerint az aktuális felhasználót állítja be, ha nincs kiválasztva felhasználó',
+    'create_page_subtitle' => 'Hozza létre a hirdetést hibátlanul a hirdetésével kapcsolatos részletes információk megadásával.',
 
     // Listing page
     'ad_title' => 'Hirdetés címe',
@@ -343,7 +344,7 @@ return [
     'view' => 'Kilátás',
     'ads_with_map' => 'Hirdetések térképpel',
     'advanced_sorting' => 'Haladó rendezés',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Szűrés szó szerint',
 
     'free' => 'Ingyenes',
     'ad_date' => 'Hirdetés dátuma',
@@ -367,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'Régi ár'
     ],
+	'save_search' => 'Keresés mentése',
 ];

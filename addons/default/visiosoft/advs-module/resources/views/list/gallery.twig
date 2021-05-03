@@ -28,7 +28,9 @@
                         <h6 class="mb-1">
                             <a href="{{ adv.detail_url }}">{{ adv.name }}</a>
                         </h6>
-                        <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
+                        {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
+                            <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
+                        {% endif %}
                         {% if showPrice %}
                             <p class="price-data mb-1">
                                 {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}

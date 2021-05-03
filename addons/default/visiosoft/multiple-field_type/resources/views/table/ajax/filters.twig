@@ -1,0 +1,27 @@
+{% if not table.filters.isEmpty() %}
+    <div class="table-filters">
+
+        {{ form_open({'method': 'get', 'id': 'filters', 'url': url_full(), 'class': 'ajax form-inline'}) }}
+        <input type="hidden" name="{{ table.options.prefix }}view" value="{{ table.views.active().getSlug() }}">
+        <input type="hidden" name="{{ table.options.prefix }}page" value="">
+
+        {% for filter in table.filters %}
+            <div class="form-group mb-0">
+                {{ filter.input|raw }}
+            </div>
+        {% endfor %}
+
+        <div class="filter-buttons">
+            <button type="submit" class="btn">
+                {{ icon(table.options.filters.filter_icon ?: 'filter') }}
+                {{ trans(table.options.filters.filter_text ?: 'streams::button.filter') }}
+            </button>
+            <a href="{{ url_current() }}" class="btn ajax">
+                {{ icon(table.options.filters.clear_icon ? table.options.filters.clear_icon) }}
+                {{ trans(table.options.filters.clear_text ?: 'streams::button.clear') }}
+            </a>
+        </div>
+        {{ form_close() }}
+
+    </div>
+{% endif %}
