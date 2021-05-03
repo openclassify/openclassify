@@ -471,7 +471,7 @@ ul {
                   background-color: #3F475F;
                   font-weight: 400;
                   font-size: calc(12rem / 16);
-                  padding: .2rem;
+                  padding: .2rem .5rem;
 
                   &:first-child {
                     border-top-left-radius: .25rem;
@@ -495,7 +495,7 @@ ul {
                 }
 
                 td {
-                  padding: .4rem 0;
+                  padding: .4rem .5rem;
 
                   & > a {
                     img {
@@ -559,7 +559,6 @@ ul {
                   }
 
                   &.location-data, &.date-data {
-                    width: 13%;
                     font-size: calc(13rem / 16);
                     color: #707070;
                   }

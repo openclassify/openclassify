@@ -271,7 +271,7 @@ class AdvsController extends PublicController
             $allCats = true;
         }
 
-        $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = array();
+        $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = $listingCFs = array();
 
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->index($mainCats, $subCats, $category);
@@ -283,6 +283,22 @@ class AdvsController extends PublicController
             $ranges = $returnvalues['ranges'];
             $radio = $returnvalues['radio'];
             $text = $returnvalues['text'];
+
+            $listingCFs = app('Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface')
+                ->getSeenCustomFieldsWithCategory($category);
+            foreach ($advs as $adv) {
+                if ($adv->cf_json) {
+                    $tempFeatures = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')
+                        ->view($adv);
+                    $features = array();
+                    foreach ($listingCFs as $listingCF) {
+                        if ($key = array_search($listingCF->slug, array_column($tempFeatures, 'slug'))) {
+                            $features[$listingCF->slug] = $tempFeatures[$key];
+                        }
+                    }
+                    $adv->features = $features;
+                }
+            }
 
             $cFArray = app('Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface')
                 ->getCFParamValues($param);
@@ -401,7 +417,7 @@ class AdvsController extends PublicController
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'text', 'seenList', 'radio', 'category', 'cityId', 'allCats', 'catText', 'cFArray');
+            'text', 'seenList', 'radio', 'category', 'cityId', 'allCats', 'catText', 'cFArray', 'listingCFs');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
