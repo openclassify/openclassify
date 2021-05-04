@@ -48,6 +48,11 @@ return [
         'instructions' => 'Скрывает поле типа регистра на странице редактирования профиля.',
     ],
     'required_district' => [
-        'name' => 'Требуемый район'
+        'name' => 'Требуемый район',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
