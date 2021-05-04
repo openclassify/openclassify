@@ -48,6 +48,11 @@ return [
         'instructions' => 'प्रोफाइल एडिट पेज में रजिस्टर टाइप फील्ड को छुपाता है।',
     ],
     'required_district' => [
-        'name' => 'आवश्यक जिला'
+        'name' => 'आवश्यक जिला',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
