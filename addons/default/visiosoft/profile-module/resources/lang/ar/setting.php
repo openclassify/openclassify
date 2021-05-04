@@ -48,6 +48,11 @@ return [
         'instructions' => 'يخفي حقل نوع التسجيل في صفحة تحرير الملف الشخصي.',
     ],
     'required_district' => [
-        'name' => 'المنطقة المطلوبة'
+        'name' => 'المنطقة المطلوبة',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
