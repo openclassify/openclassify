@@ -441,6 +441,7 @@ return [
     'ads_with_map' => 'Reklamên Bi Nexşe',
     'advanced_sorting' => 'Rêzkirina Pêşkeftî',
     'filter_by_word' => 'Bi peyvê parzûn bikin',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'بەلاش',
     'ad_date' => 'بەرواری ڕیکلام
