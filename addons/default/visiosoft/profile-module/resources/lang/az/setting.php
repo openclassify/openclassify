@@ -48,6 +48,11 @@ return [
         'instructions' => 'Profil redaktə səhifəsində qeyd növü sahəsini gizlədir.',
     ],
     'required_district' => [
-        'name' => 'Zəruri rayon'
+        'name' => 'Zəruri rayon',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
