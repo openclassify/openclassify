@@ -346,6 +346,7 @@ return [
     'ads_with_map' => 'Anuncios con mapa',
     'advanced_sorting' => 'Clasificación avanzada',
     'filter_by_word' => 'Filtrar por palabra',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Gratis',
     'ad_date' => 'Fecha de anuncio',
