@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'मानचित्र के साथ विज्ञापन',
     'advanced_sorting' => 'उन्नत छँटाई',
     'filter_by_word' => 'शब्द द्वारा फ़िल्टर करें',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',
