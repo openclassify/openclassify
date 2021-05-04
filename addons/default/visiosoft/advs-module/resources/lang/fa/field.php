@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'تبلیغات با نقشه',
     'advanced_sorting' => 'مرتب سازی پیشرفته',
     'filter_by_word' => 'فیلتر با کلمه',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',
