@@ -48,6 +48,11 @@ return [
         'instructions' => 'Blendet das Registertypfeld auf der Profilbearbeitungsseite aus.',
     ],
     'required_district' => [
-        'name' => 'Erforderlicher Bezirk'
+        'name' => 'Erforderlicher Bezirk',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
