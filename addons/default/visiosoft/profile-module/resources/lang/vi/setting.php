@@ -48,6 +48,11 @@ return [
         'instructions' => 'Ẩn trường loại đăng ký trong trang chỉnh sửa hồ sơ.',
     ],
     'required_district' => [
-        'name' => 'Quận bắt buộc'
+        'name' => 'Quận bắt buộc',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
