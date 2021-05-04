@@ -346,6 +346,7 @@ return [
     'ads_with_map' => 'Xəritə ilə elanlar',
     'advanced_sorting' => 'Qabaqcıl çeşidləmə',
     'filter_by_word' => 'Sözə görə süzün',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Elan Tarixi',
