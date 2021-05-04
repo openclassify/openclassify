@@ -48,6 +48,11 @@ return [
         'instructions' => 'Fsheh fushën e llojit të regjistrit në faqen e redaktimit të profilit.',
     ],
     'required_district' => [
-        'name' => 'Rrethi i kërkuar'
+        'name' => 'Rrethi i kërkuar',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
