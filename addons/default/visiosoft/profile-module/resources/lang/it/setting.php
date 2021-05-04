@@ -48,6 +48,11 @@ return [
         'instructions' => 'Nasconde il campo del tipo di registro nella pagina di modifica del profilo.',
     ],
     'required_district' => [
-        'name' => 'Distretto richiesto'
+        'name' => 'Distretto richiesto',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
