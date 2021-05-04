@@ -48,6 +48,11 @@ return [
         'instructions' => 'Ukrywa pole typu rejestru na stronie edycji profilu.',
     ],
     'required_district' => [
-        'name' => 'Okręg wymagany'
+        'name' => 'Okręg wymagany',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
