@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Reklamy s mapou',
     'advanced_sorting' => 'Pokročilé třídění',
     'filter_by_word' => 'Filtrovat podle slova',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Volný, uvolnit',
     'ad_date' => 'Datum inzerátu',
