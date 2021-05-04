@@ -48,6 +48,11 @@ return [
         'instructions' => 'قسمت نوع ثبت نام را در صفحه ویرایش نمایه پنهان می کند.',
     ],
     'required_district' => [
-        'name' => 'منطقه مورد نیاز'
+        'name' => 'منطقه مورد نیاز',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
