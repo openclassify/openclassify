@@ -346,6 +346,7 @@ return [
     'ads_with_map' => 'Reklama me hartë',
     'advanced_sorting' => 'Renditja e avancuar',
     'filter_by_word' => 'Filtro me fjalë',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',
