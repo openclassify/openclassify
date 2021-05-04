@@ -48,6 +48,11 @@ return [
         'instructions' => 'Απόκρυψη του πεδίου τύπου μητρώου στη σελίδα επεξεργασίας προφίλ.',
     ],
     'required_district' => [
-        'name' => 'Απαιτούμενη περιοχή'
+        'name' => 'Απαιτούμενη περιοχή',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
