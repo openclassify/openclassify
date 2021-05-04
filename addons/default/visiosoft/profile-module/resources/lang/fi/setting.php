@@ -48,6 +48,11 @@ return [
         'instructions' => 'Piilottaa rekisterityypin kentän profiilin muokkaussivulla.',
     ],
     'required_district' => [
-        'name' => 'Vaadittu piiri'
+        'name' => 'Vaadittu piiri',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
