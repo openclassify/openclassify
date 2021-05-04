@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'نقشہ والے اشتہارات',
     'advanced_sorting' => 'اعلی درجے کی ترتیب',
     'filter_by_word' => 'لفظ بہ فلٹر',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
