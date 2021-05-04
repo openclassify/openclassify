@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Hirdetések térképpel',
     'advanced_sorting' => 'Haladó rendezés',
     'filter_by_word' => 'Szűrés szó szerint',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Ingyenes',
     'ad_date' => 'Hirdetés dátuma',
