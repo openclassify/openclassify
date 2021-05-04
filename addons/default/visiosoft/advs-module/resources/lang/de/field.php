@@ -346,6 +346,7 @@ return [
     'ads_with_map' => 'Anzeigen mit Karte',
     'advanced_sorting' => 'Erweiterte Sortierung',
     'filter_by_word' => 'Nach Wort filtern',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Frei',
     'ad_date' => 'Anzeigedatum',
