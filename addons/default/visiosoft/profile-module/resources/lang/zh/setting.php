@@ -48,6 +48,11 @@ return [
         'instructions' => '隐藏配置文件编辑页面中的寄存器类型字段。',
     ],
     'required_district' => [
-        'name' => '必选地区'
+        'name' => '必选地区',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
