@@ -1,11 +1,17 @@
 {% set hideStandard = setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
 {% set listLocation = setting_value('visiosoft.module.location::list_page_location') %}
 
-<div id="listing" class="w-100">
+<div id="listing" class="w-100 table-responsive">
     <table class="w-100 text-center">
         <thead>
         <tr class="text-white">
             <th class="text-nowrap" colspan="3">{{ trans('visiosoft.module.advs::field.ad_title') }}</th>
+            <th class="text-nowrap" colspan="2">{{ trans('visiosoft.module.advs::field.ad_title') }}</th>
+
+            {% for cF in listingCFs %}
+                <th class="text-nowrap">{{ cF.name }}</th>
+            {% endfor %}
+
             {% if listLocation %}
                 <th class="text-nowrap">
                     {{ trans('visiosoft.module.advs::field.city.name') }}
@@ -35,12 +41,18 @@
                     {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
                         <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
                     {% endif %}
-                    <div class="action-data d-flex align-items-center">
+                    <div class="action-data d-flex align-items-center text-truncate">
 
                         {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context})|raw }}
 
                     </div>
                 </td>
+
+                {% for listingCF in listingCFs %}
+                    {% set feature = adv.features[listingCF.slug.value] %}
+                    <td class="location-data">{{ feature ? feature.custom_field_value : '-' }}</td>
+                {% endfor %}
+
                 {% if listLocation %}
                     <td class="location-data">
                         <p>{{ adv.country_name }}</p>
