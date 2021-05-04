@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Oglasi sa mapom',
     'advanced_sorting' => 'Napredno sortiranje',
     'filter_by_word' => 'Filter po reči',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Besplatno',
     'ad_date' => 'Datum oglasa',
