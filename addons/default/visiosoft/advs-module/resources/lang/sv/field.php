@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Annonser med karta',
     'advanced_sorting' => 'Avancerad sortering',
     'filter_by_word' => 'Filtrera efter ord',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',
