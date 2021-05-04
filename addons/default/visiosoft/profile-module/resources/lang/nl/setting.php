@@ -48,6 +48,11 @@ return [
         'instructions' => 'Verbergt het registertypeveld op de profielbewerkingspagina.',
     ],
     'required_district' => [
-        'name' => 'Vereist district'
+        'name' => 'Vereist district',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
