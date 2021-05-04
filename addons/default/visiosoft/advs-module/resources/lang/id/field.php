@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Iklan Dengan Peta',
     'advanced_sorting' => 'Penyortiran Lanjutan',
     'filter_by_word' => 'Filter menurut kata',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Gratis',
     'ad_date' => 'Tanggal Iklan',
