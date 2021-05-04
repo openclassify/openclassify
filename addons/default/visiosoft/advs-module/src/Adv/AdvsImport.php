@@ -4,16 +4,21 @@ namespace Visiosoft\AdvsModule\Adv;
 
 use Illuminate\Support\Str;
 use Maatwebsite\Excel\Concerns\ToModel;
+use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
-class AdvsImport implements ToModel
+
+class AdvsImport implements ToModel, WithHeadingRow
 {
 	public function model(array $row)
     {
-        return new AdvModel([
-            'name' => $row[0],
-            'slug' => Str::slug($row[0]),
-            'price' => $row[1],
-            'currency' => $row[2],
-        ]);
+        if ($row['name'] !== null && $row['price'] !== null && $row['currency'] !== null) {
+            return new AdvModel([
+                'name' => $row['name'],
+                'slug' => Str::slug($row['name']),
+                'advs_desc' => $row['description'],
+                'price' => $row['price'],
+                'currency' => $row['currency'],
+            ]);
+        }
     }
 }
