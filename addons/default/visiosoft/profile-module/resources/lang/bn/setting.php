@@ -48,6 +48,11 @@ return [
         'instructions' => 'প্রোফাইল সম্পাদনা পৃষ্ঠায় নিবন্ধকের ধরণের ক্ষেত্রটি লুকিয়ে রাখে।',
     ],
     'required_district' => [
-        'name' => 'প্রয়োজনীয় জেলা'
+        'name' => 'প্রয়োজনীয় জেলা',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
