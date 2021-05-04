@@ -48,6 +48,11 @@ return [
         'instructions' => '프로필 편집 페이지에서 레지스터 유형 필드를 숨 깁니다.',
     ],
     'required_district' => [
-        'name' => '필수 지구'
+        'name' => '필수 지구',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
