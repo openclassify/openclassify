@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Ads With Map',
     'advanced_sorting' => 'Advanced Sorting',
     'filter_by_word' => 'Filter by word',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Free',
     'ad_date' => 'Ad Date',
