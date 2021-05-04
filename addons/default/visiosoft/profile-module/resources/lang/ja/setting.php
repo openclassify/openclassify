@@ -48,6 +48,11 @@ return [
         'instructions' => 'プロファイル編集ページのレジスタタイプフィールドを非表示にします。',
     ],
     'required_district' => [
-        'name' => '必要な地区'
+        'name' => '必要な地区',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
