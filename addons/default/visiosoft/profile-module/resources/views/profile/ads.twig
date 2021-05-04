@@ -31,7 +31,7 @@
                             <i class="fas fa-plus-circle"></i>
                             {{ trans("visiosoft.theme.base::button.post_ad.name") }}
                         </a>
-                        {% if auth_user().hasRole('admin') %}
+                        {% if auth_user().hasRole('admin') and setting_value('visiosoft.module.profile::show_extends_actions') %}
                             <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
                                 {{ trans('visiosoft.module.profile::button.extend_all') }}
                             </a>

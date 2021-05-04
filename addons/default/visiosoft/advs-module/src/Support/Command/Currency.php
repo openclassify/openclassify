@@ -48,7 +48,9 @@ class Currency
                 $decimals = 0;
             }
         }
-
+        if (setting_value('visiosoft.module.advs::show_price_to_members_only') && !auth()->check()){
+            return null;
+        }
         return $prefix . number_format($number, $decimals, $point, str_replace('&#160;', ' ', $separator)) . $suffix;
     }
 

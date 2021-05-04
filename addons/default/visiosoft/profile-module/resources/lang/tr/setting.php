@@ -48,11 +48,11 @@ return [
         'instructions' => 'Profil düzenleme sayfasındaki kayıt türü alanını gizler.',
     ],
     'required_district' => [
-        'name' => 'Zorunlu Bölge',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'name' => 'İlçe Zorunluluğu',
+        'instructions' => 'Adres kayıtta ilçe zorunluluğunu temsil eder.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Süre Uzatma Seçeneklerini Göster',
+        'instructions' => 'Profilim İlanlar sayfasında bulunan Süre uzatma seçeneklerini temsil eder.',
     ],
 ];

@@ -76,4 +76,10 @@ return [
             'default_value' => false,
         ]
     ],
+    'show_extends_actions' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ]
+    ],
 ];
