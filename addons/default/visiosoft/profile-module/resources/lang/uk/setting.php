@@ -48,6 +48,11 @@ return [
         'instructions' => 'Приховує поле типу реєстру на сторінці редагування профілю.',
     ],
     'required_district' => [
-        'name' => 'Обов’язковий округ'
+        'name' => 'Обов’язковий округ',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
