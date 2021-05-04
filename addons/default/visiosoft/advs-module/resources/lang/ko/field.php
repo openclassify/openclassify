@@ -345,6 +345,7 @@ return [
     'ads_with_map' => '지도가있는 광고',
     'advanced_sorting' => '고급 정렬',
     'filter_by_word' => '단어로 필터링',
+    'filter_by' => 'Filter by :name',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',
