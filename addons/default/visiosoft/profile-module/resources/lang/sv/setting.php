@@ -48,6 +48,11 @@ return [
         'instructions' => 'Döljer registertypfältet i profilredigeringssidan.',
     ],
     'required_district' => [
-        'name' => 'Obligatoriskt distrikt'
+        'name' => 'Obligatoriskt distrikt',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
