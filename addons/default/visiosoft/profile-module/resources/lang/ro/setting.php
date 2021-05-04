@@ -48,6 +48,11 @@ return [
         'instructions' => 'Ascunde câmpul tip de înregistrare în pagina de editare a profilului.',
     ],
     'required_district' => [
-        'name' => 'Districtul necesar'
+        'name' => 'Districtul necesar',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
