@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'الإعلانات مع الخريطة',
     'advanced_sorting' => 'الفرز المتقدم',
     'filter_by_word' => 'تصفية بالكلمة',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
