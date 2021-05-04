@@ -48,6 +48,11 @@ return [
         'instructions' => 'پروفائل میں ترمیم والے صفحے میں رجسٹر قسم کے فیلڈ کو چھپاتا ہے۔',
     ],
     'required_district' => [
-        'name' => 'مطلوبہ ضلع'
+        'name' => 'مطلوبہ ضلع',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
