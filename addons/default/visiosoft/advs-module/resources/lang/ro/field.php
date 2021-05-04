@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Anunțuri cu hartă',
     'advanced_sorting' => 'Sortare avansată',
     'filter_by_word' => 'Filtrează după cuvânt',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Gratuit',
     'ad_date' => 'Data publicității',
