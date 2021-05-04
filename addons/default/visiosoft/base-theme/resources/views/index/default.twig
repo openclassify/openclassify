@@ -19,12 +19,12 @@
                 </div>
                 <div class="row list-classified-home">
                     {% for latestAd in latestAds() %}
-                        <div class="col-sm-6 col-md-4 col-lg-3 d-flex align-items-stretch">
+                        <div class="col-sm-6 col-lg-4 d-flex align-items-stretch justify-content-center">
                             <div class="card mb-4 box-shadow">
-                                <div class="row p-2" style="min-height: 150px;">
+                                <div class="row py-2 mx-2" style="min-height: 150px;">
                                     <a href="{{ latestAd.detail_url }}">
-                                        <div class="col-md-12 justify-content-center align-self-center">
-                                            <img class="card-img-top img-fluid img-thumbnail"
+                                        <div class="col-md-12 justify-content-center align-self-center p-0">
+                                            <img class="card-img-top img-fluid img-thumbnail w-auto"
                                                  src="{{ latestAd.cover_photo }}"
                                                  style="height: 150px">
                                         </div>
