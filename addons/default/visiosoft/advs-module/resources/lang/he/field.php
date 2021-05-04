@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'מודעות עם מפה',
     'advanced_sorting' => 'מיון מתקדם',
     'filter_by_word' => 'סנן לפי מילה',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',
