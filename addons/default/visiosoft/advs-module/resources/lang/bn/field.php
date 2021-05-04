@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'মানচিত্র সহ বিজ্ঞাপন',
     'advanced_sorting' => 'উন্নত বাছাই',
     'filter_by_word' => 'কথায় কথায় ফিল্টার করুন',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',
