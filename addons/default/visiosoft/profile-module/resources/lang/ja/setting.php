@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => '必要な地区',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => '住所の追加は、地区の義務を表しています。',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Show ExtendsActions',
+        'instructions' => 'マイプロフィール広告ページで利用可能な拡張オプションを表します。',
     ],
 ];
