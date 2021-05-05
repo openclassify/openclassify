@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Påkrævet distrikt',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Tilføjelse af en adresse repræsenterer distriktsforpligtelsen.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Vis udvider handlinger',
+        'instructions' => 'Repræsenterer de tilgængelige udvidelsesmuligheder på siden med min profilannoncer.',
     ],
 ];
