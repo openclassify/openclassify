@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Обов’язковий округ',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Додавання адреси означає зобов’язання району.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Показати розширені дії',
+        'instructions' => 'Представляє параметри розширень, доступні на моїй сторінці Оголошення профілю.',
     ],
 ];
