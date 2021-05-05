@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Erforderlicher Bezirk',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Das Hinzufügen einer Adresse stellt die Distriktverpflichtung dar.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Show erweitert Aktionen',
+        'instructions' => 'Stellt die auf der Seite "Meine Profilanzeigen" verfügbaren Erweiterungsoptionen dar.',
     ],
 ];
