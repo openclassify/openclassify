@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => '必选地区',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => '添加地址代表地区义务。',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => '显示扩展动作',
+        'instructions' => '代表我的个人资料广告页面上可用的扩展选项。',
     ],
 ];
