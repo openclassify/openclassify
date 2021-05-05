@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => '필수 지구',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => '주소 추가는 지구 의무를 나타냅니다.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => '확장 동작 표시',
+        'instructions' => '내 프로필 광고 페이지에서 사용할 수있는 확장 옵션을 나타냅니다.',
     ],
 ];
