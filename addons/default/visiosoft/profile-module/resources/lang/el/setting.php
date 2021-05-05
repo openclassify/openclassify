@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Απαιτούμενη περιοχή',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Η προσθήκη διεύθυνσης αντιπροσωπεύει την υποχρέωση περιοχής.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Εμφάνιση επεκτάσεων ενεργειών',
+        'instructions' => 'Αντιπροσωπεύει τις διαθέσιμες επιλογές στη σελίδα Διαφημίσεις προφίλ μου.',
     ],
 ];
