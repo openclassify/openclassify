@@ -345,7 +345,7 @@ return [
     'ads_with_map' => 'Reklamy z mapą',
     'advanced_sorting' => 'Zaawansowane sortowanie',
     'filter_by_word' => 'Filtruj według słowa',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Filtruj według: nazwa',
 
     'free' => 'Wolny',
     'ad_date' => 'Data ogłoszenia',
