@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'منطقه مورد نیاز',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'افزودن آدرس نشان دهنده تعهد منطقه است.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'نمایش اقدامات گسترده',
+        'instructions' => 'گزینه های Extends موجود در صفحه تبلیغات نمایه من را نشان می دهد.',
     ],
 ];
