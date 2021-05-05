@@ -346,7 +346,7 @@ return [
     'ads_with_map' => 'Διαφημίσεις με χάρτη',
     'advanced_sorting' => 'Προηγμένη ταξινόμηση',
     'filter_by_word' => 'Φιλτράρισμα κατά λέξη',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Φιλτράρισμα κατά: όνομα',
 
     'free' => 'Ελεύθερος',
     'ad_date' => 'Ημερομηνία διαφήμισης',
