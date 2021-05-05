@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Vaadittu piiri',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Osoitteen lisääminen edustaa piirivelvoitetta.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Näytä laajentaa toimintoja',
+        'instructions' => 'Edustaa Profiilimainokset-sivulla käytettävissä olevia Laajennukset-vaihtoehtoja.',
     ],
 ];
