@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Navçeya Pêdivî',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Zêdekirina navnîşanek berpirsiyariya navçeyê temsîl dike.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Kiryarên Berfireh nîşan bide',
+        'instructions' => 'Vebijarkên Dirêjkirinê yên li ser rûpelê Reklamên profîla min hene temsîl dike.',
     ],
 ];
