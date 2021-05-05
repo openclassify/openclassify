@@ -346,7 +346,7 @@ return [
     'ads_with_map' => 'Объявления с картой',
     'advanced_sorting' => 'Расширенная сортировка',
     'filter_by_word' => 'Фильтр по слову',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Фильтровать по: названию',
 
     'free' => 'Бесплатно',
     'ad_date' => 'Дата объявления',
