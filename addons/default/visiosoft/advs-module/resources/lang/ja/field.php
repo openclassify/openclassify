@@ -345,7 +345,7 @@ return [
     'ads_with_map' => '地図付きの広告',
     'advanced_sorting' => '高度な並べ替え',
     'filter_by_word' => '単語でフィルタリング',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => '：nameでフィルタリング',
 
     'free' => '自由',
     'ad_date' => '広告日',
