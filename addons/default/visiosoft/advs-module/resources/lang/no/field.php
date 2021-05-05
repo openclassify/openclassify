@@ -345,7 +345,7 @@ return [
     'ads_with_map' => 'Annonser med kart',
     'advanced_sorting' => 'Avansert sortering',
     'filter_by_word' => 'Filtrer etter ord',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Filtrer etter: navn',
 
     'free' => 'Gratis',
     'ad_date' => 'Annonsedato',
