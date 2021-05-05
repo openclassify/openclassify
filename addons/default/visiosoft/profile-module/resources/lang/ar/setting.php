@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'المنطقة المطلوبة',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'إضافة عنوان يمثل التزام المنطقة.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'إظهار يمتد الإجراءات',
+        'instructions' => 'يمثل خيارات الامتداد المتوفرة في صفحة إعلانات ملفي الشخصي.',
     ],
 ];
