@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Zəruri rayon',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Ünvan əlavə etmək rayon öhdəliyini əks etdirir.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Şou Əməliyyatları Genişləndirir',
+        'instructions' => 'Profil reklam səhifəmdə mövcud olan Genişləndirmə seçimlərini təmsil edir.',
     ],
 ];
