@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Szükséges körzet',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Cím hozzáadása a kerületi kötelezettséget jelenti.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Megjeleníti a műveletek kiterjesztését',
+        'instructions' => 'A Saját profil hirdetések oldalon elérhető kiterjesztési lehetőségeket képviseli.',
     ],
 ];
