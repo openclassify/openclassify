@@ -345,7 +345,7 @@ return [
     'ads_with_map' => 'Реклами с карта',
     'advanced_sorting' => 'Разширено сортиране',
     'filter_by_word' => 'Филтрирайте по дума',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Филтрирайте по: име',
 
     'free' => 'Безплатно',
     'ad_date' => 'Дата на рекламата',
