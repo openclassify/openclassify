@@ -345,7 +345,7 @@ return [
     'ads_with_map' => 'Mainokset kartalla',
     'advanced_sorting' => 'Edistynyt lajittelu',
     'filter_by_word' => 'Suodata sanan mukaan',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Suodata: nimen mukaan',
 
     'free' => 'Vapaa',
     'ad_date' => 'Ilmoituksen päivämäärä',
