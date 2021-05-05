@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Quận bắt buộc',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Thêm một địa chỉ thể hiện nghĩa vụ của học khu.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Hiển thị các hành động mở rộng',
+        'instructions' => 'Trình bày các tùy chọn Tiện ích mở rộng có sẵn trên trang Quảng cáo hồ sơ của tôi.',
     ],
 ];
