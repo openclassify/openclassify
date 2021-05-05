@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Districtul necesar',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Adăugarea unei adrese reprezintă obligația districtului.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Afișați acțiuni extinse',
+        'instructions' => 'Reprezintă opțiunile Extinde disponibile în pagina Anunțuri din profilul meu.',
     ],
 ];
