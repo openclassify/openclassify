@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'প্রয়োজনীয় জেলা',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'ঠিকানা যুক্ত করা জেলার দায়বদ্ধতার প্রতিনিধিত্ব করে।',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'প্রসারিত ক্রিয়াগুলি দেখান',
+        'instructions' => 'আমার প্রোফাইল বিজ্ঞাপন পৃষ্ঠায় উপলভ্য বর্ধিত বিকল্পগুলির প্রতিনিধিত্ব করে।',
     ],
 ];
