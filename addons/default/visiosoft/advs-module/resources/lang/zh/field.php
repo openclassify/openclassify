@@ -345,7 +345,7 @@ return [
     'ads_with_map' => '带有地图的广告',
     'advanced_sorting' => '高级排序',
     'filter_by_word' => '按字过滤',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => '筛选：名称',
 
     'free' => '自由',
     'ad_date' => '广告日期',
