@@ -345,7 +345,7 @@ return [
     'ads_with_map' => 'Quảng cáo có Bản đồ',
     'advanced_sorting' => 'Sắp xếp nâng cao',
     'filter_by_word' => 'Lọc theo từ',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Lọc theo: tên',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',
