@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Povinný okres',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Přidání adresy představuje povinnost okresu.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Zobrazit rozšiřuje akce',
+        'instructions' => 'Představuje možnosti rozšíření dostupné na stránce Reklamy mého profilu.',
     ],
 ];
