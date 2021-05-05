@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'מחוז חובה',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'הוספת כתובת מייצגת את החובה המחוזית.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'הצג מאריך פעולות',
+        'instructions' => 'מייצג את אפשרויות הרחבות הזמינות בדף מודעות הפרופיל שלי.',
     ],
 ];
