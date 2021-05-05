@@ -345,7 +345,7 @@ return [
     'ads_with_map' => 'Advertensies Met Kaart',
     'advanced_sorting' => 'Gevorderde sortering',
     'filter_by_word' => 'Filtreer volgens woord',
-    'filter_by' => 'Filter by :name',
+    'filter_by' => 'Filtreer volgens: naam',
 
     'free' => 'Vry',
     'ad_date' => 'Advertensiedatum',
