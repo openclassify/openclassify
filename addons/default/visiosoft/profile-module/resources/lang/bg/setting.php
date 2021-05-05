@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Задължителен район',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Добавянето на адрес представлява задължението на областта.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Показване на действия за разширяване',
+        'instructions' => 'Представлява опциите за разширения, налични на страницата с реклами в моя профил.',
     ],
 ];
