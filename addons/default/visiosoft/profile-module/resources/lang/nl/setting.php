@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'Vereist district',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'Het toevoegen van een adres vertegenwoordigt de wijkverplichting.',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'Toon uitgebreide acties',
+        'instructions' => 'Vertegenwoordigt de uitbreidingsopties die beschikbaar zijn op de pagina Mijn profieladvertenties.',
     ],
 ];
