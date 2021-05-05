@@ -49,10 +49,10 @@ return [
     ],
     'required_district' => [
         'name' => 'مطلوبہ ضلع',
-        'instructions' => 'Adding an address represents the district obligation.',
+        'instructions' => 'ایڈریس شامل کرنا ضلعی ذمہ داری کی نمائندگی کرتا ہے۔',
     ],
     'show_extends_actions' => [
-        'name' => 'Show Extends Actions',
-        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
+        'name' => 'توسیعی کارروائیوں کو دکھائیں',
+        'instructions' => 'میرے پروفائل اشتہارات کے صفحے پر دستیاب توسیعی اختیارات کی نمائندگی کرتا ہے۔',
     ],
 ];
