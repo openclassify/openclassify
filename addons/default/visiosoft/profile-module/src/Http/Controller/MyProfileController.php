@@ -6,6 +6,7 @@ use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
 use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;
@@ -56,14 +57,16 @@ class MyProfileController extends PublicController
             compact('user', 'country', 'form', 'advs_count'));
     }
 
-    public function detail(ProfileFormBuilder $form){
-	    $user = $this->userRepository->find(Auth::id());
-	    $country = CountryModel::all();
-	    return $this->view->make('visiosoft.module.profile::profile.detail', compact('user', 'country', 'form'));
+    public function detail(ProfileFormBuilder $form)
+    {
+        $user = $this->userRepository->find(Auth::id());
+        $country = CountryModel::all();
+        return $this->view->make('visiosoft.module.profile::profile.detail', compact('user', 'country', 'form'));
     }
 
-    public function password(){
-	    return $this->view->make('visiosoft.module.profile::profile.password');
+    public function password()
+    {
+        return $this->view->make('visiosoft.module.profile::profile.password');
     }
 
     public function extendAds($id, $type, SettingRepositoryInterface $settings)
@@ -272,7 +275,18 @@ class MyProfileController extends PublicController
     public function changeEducation(Request $request)
     {
         if ($request->info == 'education') {
-            $education = EducationPartModel::query()->where('education_id', $request->education)->get();
+            $education = DB::table('profile_education_part')
+                ->leftJoin(
+                    'profile_education_part_translations',
+                    'profile_education_part.id',
+                    '=',
+                    'profile_education_part_translations.entry_id'
+                )
+                ->where('profile_education_part_translations.locale', '=', Request()->session()->get('_locale', setting_value('streams::default_locale')))
+                ->where('education_id', $request->education)
+                ->selectRaw('default_profile_education_part.*, default_profile_education_part_translations.name as name')
+                ->orderBy('name', 'ASC')
+                ->get();
         }
         return response()->json(['data' => $education], 200);
     }
