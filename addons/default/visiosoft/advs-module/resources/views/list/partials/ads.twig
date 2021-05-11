@@ -1,11 +1,12 @@
 {% set hideStandard = setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
 {% set listLocation = setting_value('visiosoft.module.location::list_page_location') %}
+{% set showDate = setting_value('visiosoft.theme.base::date_fields') %}
 
 <div id="listing" class="w-100 table-responsive">
     <table class="w-100 text-center">
         <thead>
         <tr class="text-white">
-            <th class="text-nowrap" colspan="3">{{ trans('visiosoft.module.advs::field.ad_title') }}</th>
+            <th class="text-nowrap" colspan="2">{{ trans('visiosoft.module.advs::field.ad_title') }}</th>
 
             {% for cF in listingCFs %}
                 <th class="text-nowrap">{{ cF.name }}</th>
@@ -16,6 +17,9 @@
                     {{ trans('visiosoft.module.advs::field.city.name') }}
                     / {{ trans('visiosoft.module.advs::field.district.name') }}
                 </th>
+            {% endif %}
+            {% if setting_value('visiosoft.module.advs::market_place') and showDate %}
+                <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.date.name') }}</th>
             {% endif %}
             <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.price.name') }}</th>
         </tr>
@@ -58,7 +62,7 @@
                         <p>{{ adv.city_name }}</p>
                     </td>
                 {% endif %}
-                {% if setting_value('visiosoft.module.advs::market_place') %}
+                {% if setting_value('visiosoft.module.advs::market_place') and showDate%}
                     <td class="date-data">
                         <p>{{ adv.publish_at.value|date('d/m') }}</p>
                         <p>{{ adv.publish_at.value|date('Y') }}</p>
