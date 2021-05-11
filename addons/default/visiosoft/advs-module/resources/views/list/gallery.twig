@@ -39,10 +39,8 @@
                         {% if showLocation %}
                             <p class="location-data">{{ adv.country_name }} / {{ adv.city_name }}</p>
                         {% endif %}
-                        {% if setting_value('visiosoft.module.advs::market_place') %}
-                            {% if showDate %}
+                        {% if setting_value('visiosoft.module.advs::market_place') and showDate %}
                                 <p class="date-data">{{ adv.publish_at.value|date('d/m/Y') }}</p>
-                            {% endif %}
                         {% endif %}
                     </div>
                 </div>

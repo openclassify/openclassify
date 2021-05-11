@@ -18,10 +18,8 @@
                     / {{ trans('visiosoft.module.advs::field.district.name') }}
                 </th>
             {% endif %}
-            {% if setting_value('visiosoft.module.advs::market_place') %}
-                {% if showDate %}
-                    <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.date.name') }}</th>
-                {% endif %}
+            {% if setting_value('visiosoft.module.advs::market_place') and showDate %}
+                <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.date.name') }}</th>
             {% endif %}
             <th class="text-nowrap">{{ trans('visiosoft.module.advs::field.price.name') }}</th>
         </tr>
@@ -64,13 +62,11 @@
                         <p>{{ adv.city_name }}</p>
                     </td>
                 {% endif %}
-                {% if setting_value('visiosoft.module.advs::market_place') %}
-                    {% if showDate %}
-                        <td class="date-data">
-                            <p>{{ adv.publish_at.value|date('d/m') }}</p>
-                            <p>{{ adv.publish_at.value|date('Y') }}</p>
-                        </td>
-                    {% endif %}
+                {% if setting_value('visiosoft.module.advs::market_place') and showDate%}
+                    <td class="date-data">
+                        <p>{{ adv.publish_at.value|date('d/m') }}</p>
+                        <p>{{ adv.publish_at.value|date('Y') }}</p>
+                    </td>
                 {% endif %}
                 <td class="price-data">
                     {% if not hideStandard %}
