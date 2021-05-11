@@ -108,7 +108,7 @@ return [
         'name' => 'Yayınlanmamış'
     ],
     'finish_at' => [
-        'name' => 'Bitiş Saati'
+        'name' => 'Bitiş Tarihi'
     ],
     'cover_photo' => [
         'name' => 'Kapak Fotoğrafı'
@@ -371,4 +371,7 @@ return [
         'name' => 'Eski fiyat'
     ],
 	'save_search' => 'Aramayı Kaydet',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
