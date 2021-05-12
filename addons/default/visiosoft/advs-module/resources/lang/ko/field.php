@@ -108,7 +108,7 @@ return [
         'name' => '널리 알려지지 않은'
     ],
     'finish_at' => [
-        'name' => '마감'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => '표지 사진'
@@ -370,4 +370,7 @@ return [
         'name' => '이전 가격'
     ],
 	'save_search' => '검색 저장',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
