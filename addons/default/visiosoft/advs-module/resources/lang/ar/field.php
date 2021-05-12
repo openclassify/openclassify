@@ -108,7 +108,7 @@ return [
         'name' => 'اعلانات معلقة'
     ],
     'finish_at' => [
-        'name' => 'ينتهي عند'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'صورة الغلاف'
@@ -370,4 +370,7 @@ return [
         'name' => 'سعر قديم'
     ],
 	'save_search' => 'حفظ البحث',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
