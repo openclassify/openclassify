@@ -292,7 +292,7 @@ class AdvsController extends PublicController
                         ->view($adv);
                     $features = array();
                     foreach ($listingCFs as $listingCF) {
-                        if ($key = array_search($listingCF->slug, array_column($tempFeatures, 'slug'))) {
+                        if (($key = array_search($listingCF->slug, array_column($tempFeatures, 'slug'))) !== false) {
                             $features[$listingCF->slug] = $tempFeatures[$key];
                         }
                     }
