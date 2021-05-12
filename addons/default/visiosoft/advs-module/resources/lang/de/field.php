@@ -108,7 +108,7 @@ return [
         'name' => 'Ausstehende Anzeigen'
     ],
     'finish_at' => [
-        'name' => 'Beenden um'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Titelfoto'
@@ -371,4 +371,7 @@ return [
         'name' => 'Alter Preis'
     ],
 	'save_search' => 'Sichere Suche',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
