@@ -108,7 +108,7 @@ return [
         'name' => 'לא פורסם'
     ],
     'finish_at' => [
-        'name' => 'סיים בשעה'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'תמונת רקע'
@@ -370,4 +370,7 @@ return [
         'name' => 'מחיר ישן'
     ],
 	'save_search' => 'שמור חיפוש',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
