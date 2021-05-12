@@ -112,8 +112,7 @@ return [
         'name' => 'بڵاونەکراوەتەوە'
     ],
     'finish_at' => [
-        'name' => 'تەواو دەبێت لە
-'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'وێنەی داپۆشراو
@@ -472,4 +471,7 @@ return [
 '
     ],
 	'save_search' => 'Lêgerînê Biparêzin',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
