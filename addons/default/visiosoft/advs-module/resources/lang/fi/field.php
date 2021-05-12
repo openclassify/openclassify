@@ -108,7 +108,7 @@ return [
         'name' => 'Julkaisematon'
     ],
     'finish_at' => [
-        'name' => 'Lopeta'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Kansikuva'
@@ -370,4 +370,7 @@ return [
         'name' => 'Vanha hinta'
     ],
 	'save_search' => 'Tallenna haku',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
