@@ -108,7 +108,7 @@ return [
         'name' => 'Anuncios pendientes'
     ],
     'finish_at' => [
-        'name' => 'Terminar en'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Foto de cubierta'
@@ -371,4 +371,7 @@ return [
         'name' => 'Precio anterior'
     ],
 	'save_search' => 'Guardar búsqueda',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
