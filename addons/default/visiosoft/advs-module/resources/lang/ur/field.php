@@ -108,7 +108,7 @@ return [
         'name' => 'غیر مطبوعہ'
     ],
     'finish_at' => [
-        'name' => 'ختم کریں'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'سرورق کی تصویر'
@@ -370,4 +370,7 @@ return [
         'name' => 'پرانی قیمت'
     ],
 	'save_search' => 'تلاش محفوظ کریں',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
