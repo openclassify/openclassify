@@ -108,7 +108,7 @@ return [
         'name' => 'Kiadatlan'
     ],
     'finish_at' => [
-        'name' => 'Befejezés itt'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Borítókép'
@@ -370,4 +370,7 @@ return [
         'name' => 'Régi ár'
     ],
 	'save_search' => 'Keresés mentése',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
