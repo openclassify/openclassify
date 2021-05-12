@@ -844,11 +844,19 @@ class AdvsController extends PublicController
 
             if (setting_value('visiosoft.module.advs::auto_approve') && $autoApprove) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
-                $adv->update([
+
+                $update = [
                     'status' => 'approved',
-                    'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
-                    'publish_at' => date('Y-m-d H:i:s')
-                ]);
+                ];
+
+                if (!setting_value('visiosoft.module.advs::show_finish_and_publish_date')) {
+                    $update = array_merge($update, [
+                        'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+                        'publish_at' => date('Y-m-d H:i:s')
+                    ]);
+                }
+
+                $adv->update($update);
             }
 
             $form->render($this->request->update_id);

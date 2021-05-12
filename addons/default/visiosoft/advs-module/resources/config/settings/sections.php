@@ -24,6 +24,7 @@ return [
             'ads' => [
                 'title' => 'visiosoft.module.advs::section.ads',
                 'fields' => [
+                    'show_finish_and_publish_date',
                     'latest-limit',
                     'popular_ads_limit',
                     'ads_image_limit',

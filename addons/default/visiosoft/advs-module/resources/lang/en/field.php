@@ -108,7 +108,7 @@ return [
         'name' => 'Unpublished'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Cover Photo'
@@ -370,4 +370,7 @@ return [
         'name' => 'Old Price'
     ],
 	'save_search' => 'Save Search',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];

@@ -17,11 +17,18 @@ class Approve extends ActionHandler
 
             if ($ad = $model->newQuery()->find($id)) {
 
-                $ad->update([
+                $update = [
                     'status' => 'approved',
-                    'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
-                    'publish_at' => date('Y-m-d H:i:s')
-                ]);
+                ];
+
+                if (!setting_value('visiosoft.module.advs::show_finish_and_publish_date')) {
+                    $update = array_merge($update, [
+                        'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+                        'publish_at' => date('Y-m-d H:i:s')
+                    ]);
+                }
+
+                $ad->update($update);
 
                 event(new ChangedStatusAd($ad));//Create Notify
             }

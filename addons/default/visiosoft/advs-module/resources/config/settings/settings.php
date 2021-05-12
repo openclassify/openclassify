@@ -455,4 +455,11 @@ return [
 			'default_value' => false,
 		]
 	],
+
+    'show_finish_and_publish_date' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ],
+    ],
 ];
