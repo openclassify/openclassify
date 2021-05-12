@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Χάρτης Μεγάλος Συντονισμός',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Κοινωνικό Λογότυπο Share',
-        'warning'      => 'Θα πρέπει να έχει ανάλυση 1200 x 630.',
+        'warning' => 'Θα πρέπει να έχει ανάλυση 1200 x 630.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Διεύθυνση ιστοτόπου',
-        'warning'      => 'Αυτόματη προσθήκη www. www. <strong>sitename.com</strong>',
+        'warning' => 'Αυτόματη προσθήκη www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Το Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Αγορά',
     ],
-	'price_area_hidden' => [
-		'name' => 'Κρυφή περιοχή τιμών',
-	],
+    'price_area_hidden' => [
+        'name' => 'Κρυφή περιοχή τιμών',
+    ],
     'hide_price_filter' => [
         'name' => 'Απόκρυψη φίλτρου τιμών',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Απόκρυψη ημερομηνίας δημιουργίας',
         'instructions' => 'Απόκρυψη ημερομηνίας δημιουργίας στη σελίδα λεπτομερειών διαφημίσεων',
     ],
-	'hide_listing_header' => [
-		'name' => 'Απόκρυψη κεφαλίδας καταχώρισης',
-		'instructions' => 'Απόκρυψη σε παραγγελίες και προβολή τύπων',
-	],
-	'hide_filter_section' => [
-		'name' => 'Απόκρυψη ενότητας φίλτρου',
-		'instructions' => 'Απόκρυψη στην αριστερή περιοχή φίλτρου στη σελίδα καταχώρισης',
-	],
-	'hide_seller_info' => [
-		'name' => 'Απόκρυψη πληροφοριών πωλητή',
-		'instructions' => 'Απόκρυψη στις πληροφορίες πωλητή στη σελίδα λεπτομερειών διαφημίσεων',
-	],
+    'hide_listing_header' => [
+        'name' => 'Απόκρυψη κεφαλίδας καταχώρισης',
+        'instructions' => 'Απόκρυψη σε παραγγελίες και προβολή τύπων',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Απόκρυψη ενότητας φίλτρου',
+        'instructions' => 'Απόκρυψη στην αριστερή περιοχή φίλτρου στη σελίδα καταχώρισης',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Απόκρυψη πληροφοριών πωλητή',
+        'instructions' => 'Απόκρυψη στις πληροφορίες πωλητή στη σελίδα λεπτομερειών διαφημίσεων',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Εμφάνιση συμφωνίας μετά τη διαφήμιση',
         'instructions' => 'Ενεργοποιήστε το αν θέλετε να εμφανίσετε μια συμφωνία πολιτικής απορρήτου στη σελίδα δημιουργίας διαφημίσεων',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Κατηγορίες',
         'instructions' => 'Αντιπροσωπεύει τις κατηγορίες στις οποίες η ιδιότητα GET θα είναι έγκυρη.'
     ],
-	'disable_sentry' => [
-		'name' => 'Απενεργοποιήστε το Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Απενεργοποιήστε το Sentry'
+    ],
     'watermark' => [
         'name' => 'Στάθμη ύδατος',
         'instructions' => 'Είναι ενεργό το υδατογράφημα;'
@@ -265,11 +265,15 @@ return [
     'show_subcats_mobile' => [
         'name' => 'Εμφάνιση υποκατηγοριών σε προβολή για κινητά',
     ],
-	'show_price_to_members_only' => [
-		'name' => 'Εμφάνιση τιμής μόνο στα μέλη',
-	],
-	'hide_ad_cat' => [
-		'name' => 'Απόκρυψη κατηγοριών',
-		'instructions' => 'Απόκρυψη κατηγοριών στη λίστα διαφημίσεων'
-	]
+    'show_price_to_members_only' => [
+        'name' => 'Εμφάνιση τιμής μόνο στα μέλη',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Απόκρυψη κατηγοριών',
+        'instructions' => 'Απόκρυψη κατηγοριών στη λίστα διαφημίσεων'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Show Finish Date And Publish Date For Create',
+        'instructions' => 'Displays the publish_at and finish_at fields on the ad creation page.'
+    ],
 ];
