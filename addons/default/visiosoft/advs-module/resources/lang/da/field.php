@@ -108,7 +108,7 @@ return [
         'name' => 'Ikke offentliggjort'
     ],
     'finish_at' => [
-        'name' => 'Afslut kl'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Coverbillede'
@@ -370,4 +370,7 @@ return [
         'name' => 'Gammel pris'
     ],
 	'save_search' => 'Gem søgning',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
