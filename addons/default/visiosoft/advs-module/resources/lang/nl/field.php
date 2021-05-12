@@ -108,7 +108,7 @@ return [
         'name' => 'In afwachting van advertenties'
     ],
     'finish_at' => [
-        'name' => 'Eindig bij'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Omslagfoto'
@@ -371,4 +371,7 @@ return [
         'name' => 'Oude prijs'
     ],
 	'save_search' => 'Zoekopdracht opslaan',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
