@@ -108,7 +108,7 @@ return [
         'name' => 'Ожидающие объявления'
     ],
     'finish_at' => [
-        'name' => 'Закончить в'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Фото на обложке'
@@ -371,4 +371,7 @@ return [
         'name' => 'Старая цена'
     ],
 	'save_search' => 'Сохранить поиск',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
