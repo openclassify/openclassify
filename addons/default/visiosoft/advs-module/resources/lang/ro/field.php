@@ -108,7 +108,7 @@ return [
         'name' => 'Nepublicat'
     ],
     'finish_at' => [
-        'name' => 'Termină la'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Copertă fotografie'
@@ -370,4 +370,7 @@ return [
         'name' => 'Preț vechi'
     ],
 	'save_search' => 'Salvează căutarea',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
