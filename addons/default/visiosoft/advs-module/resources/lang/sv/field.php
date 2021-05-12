@@ -108,7 +108,7 @@ return [
         'name' => 'Opublicerad'
     ],
     'finish_at' => [
-        'name' => 'Avsluta kl'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Omslagsfoto'
@@ -370,4 +370,7 @@ return [
         'name' => 'Gammalt pris'
     ],
 	'save_search' => 'Spara sökning',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
