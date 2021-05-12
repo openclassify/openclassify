@@ -108,7 +108,7 @@ return [
         'name' => 'لغو انتشار'
     ],
     'finish_at' => [
-        'name' => 'تکمیل کردن به'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'عکس پوششی'
@@ -370,4 +370,7 @@ return [
         'name' => 'قیمت قدیمی'
     ],
 	'save_search' => 'ذخیره جستجو',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
