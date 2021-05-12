@@ -108,7 +108,7 @@ return [
         'name' => 'Niepublikowane'
     ],
     'finish_at' => [
-        'name' => 'Zakończ o'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Zdjęcie na okładce'
@@ -370,4 +370,7 @@ return [
         'name' => 'Stara cena'
     ],
 	'save_search' => 'Zapisz wyszukanie',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
