@@ -108,7 +108,7 @@ return [
         'name' => '未发表'
     ],
     'finish_at' => [
-        'name' => '在完成'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => '封面照片'
@@ -370,4 +370,7 @@ return [
         'name' => '旧价格'
     ],
 	'save_search' => '保存搜索',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
