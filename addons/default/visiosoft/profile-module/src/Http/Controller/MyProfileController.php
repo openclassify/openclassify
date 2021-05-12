@@ -275,18 +275,7 @@ class MyProfileController extends PublicController
     public function changeEducation(Request $request)
     {
         if ($request->info == 'education') {
-            $education = DB::table('profile_education_part')
-                ->leftJoin(
-                    'profile_education_part_translations',
-                    'profile_education_part.id',
-                    '=',
-                    'profile_education_part_translations.entry_id'
-                )
-                ->where('profile_education_part_translations.locale', '=', Request()->session()->get('_locale', setting_value('streams::default_locale')))
-                ->where('education_id', $request->education)
-                ->selectRaw('default_profile_education_part.*, default_profile_education_part_translations.name as name')
-                ->orderBy('name', 'ASC')
-                ->get();
+            $education = EducationPartModel::query()->where('education_id', $request->education)->get()->sortBy('name');
         }
         return response()->json(['data' => $education], 200);
     }
