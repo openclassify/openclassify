@@ -108,7 +108,7 @@ return [
         'name' => 'Neobjavljeno'
     ],
     'finish_at' => [
-        'name' => 'Završeno u'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Naslovna fotografija'
@@ -370,4 +370,7 @@ return [
         'name' => 'Stare cena'
     ],
 	'save_search' => 'Save Search',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
