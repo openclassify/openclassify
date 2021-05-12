@@ -108,7 +108,7 @@ return [
         'name' => 'Nepublikovaný'
     ],
     'finish_at' => [
-        'name' => 'Dokončit v'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Úvodní fotka'
@@ -370,4 +370,7 @@ return [
         'name' => 'Stará cena'
     ],
 	'save_search' => 'Uložit hledání',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
