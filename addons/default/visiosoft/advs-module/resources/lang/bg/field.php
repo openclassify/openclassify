@@ -108,7 +108,7 @@ return [
         'name' => 'Непубликувано'
     ],
     'finish_at' => [
-        'name' => 'Завършете в'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Снимка на корицата'
@@ -370,4 +370,7 @@ return [
         'name' => 'Стара цена'
     ],
 	'save_search' => 'Запазване на търсенето',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
