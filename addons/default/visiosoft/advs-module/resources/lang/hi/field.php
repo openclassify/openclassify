@@ -108,7 +108,7 @@ return [
         'name' => 'अप्रकाशित'
     ],
     'finish_at' => [
-        'name' => 'पर खत्म करो'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'आवरण चित्र'
@@ -370,4 +370,7 @@ return [
         'name' => 'पुरानी कीमत'
     ],
 	'save_search' => 'खोज संग्रहित करें',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
