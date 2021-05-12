@@ -108,7 +108,7 @@ return [
         'name' => 'Yayılmlanmamış'
     ],
     'finish_at' => [
-        'name' => 'Bitmə saatı'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Örtük şəkli'
@@ -371,4 +371,7 @@ return [
         'name' => 'Köhnə Qiymət'
     ],
 	'save_search' => 'Axtarışı saxla',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
