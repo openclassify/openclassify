@@ -108,7 +108,7 @@ return [
         'name' => 'Annunci in sospeso'
     ],
     'finish_at' => [
-        'name' => 'Termina alle'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Foto di copertina'
@@ -371,4 +371,7 @@ return [
         'name' => 'Vecchio prezzo'
     ],
 	'save_search' => 'Salva ricerca',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
