@@ -108,7 +108,7 @@ return [
         'name' => '未公開'
     ],
     'finish_at' => [
-        'name' => 'で終了'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'カバー写真'
@@ -370,4 +370,7 @@ return [
         'name' => '古い価格'
     ],
 	'save_search' => '検索を保存',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
