@@ -108,7 +108,7 @@ return [
         'name' => 'Εν αναμονή διαφημίσεων'
     ],
     'finish_at' => [
-        'name' => 'Τελειώστε στο'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Φωτογραφία εξωφύλλου'
@@ -371,4 +371,7 @@ return [
         'name' => 'Παλιά τιμή'
     ],
 	'save_search' => 'Αποθήκευση αναζήτησης',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
