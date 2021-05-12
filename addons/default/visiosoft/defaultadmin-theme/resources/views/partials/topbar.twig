@@ -3,7 +3,7 @@
     <div class="topbar-left">
         <a href="/admin" class="logo variant-logo">
             {% if setting_value('visiosoft.theme.defaultadmin::panel_icon') %}
-                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).url }}" alt="site icon">
+                <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).make.url }}" alt="site icon">
             {% else %}
                 {{ img('theme::img/panel-icon.svg').data|raw }}
             {% endif %}
