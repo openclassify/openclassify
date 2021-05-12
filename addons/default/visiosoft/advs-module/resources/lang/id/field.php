@@ -108,7 +108,7 @@ return [
         'name' => 'Tidak dipublikasikan'
     ],
     'finish_at' => [
-        'name' => 'Selesai Pada'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Foto Sampul'
@@ -370,4 +370,7 @@ return [
         'name' => 'Harga Lama'
     ],
 	'save_search' => 'Simpan pencarian',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
