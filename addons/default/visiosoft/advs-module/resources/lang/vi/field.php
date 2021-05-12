@@ -108,7 +108,7 @@ return [
         'name' => 'Chưa được công bố'
     ],
     'finish_at' => [
-        'name' => 'Kết thúc tại'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Ảnh bìa'
@@ -370,4 +370,7 @@ return [
         'name' => 'Giá cũ'
     ],
 	'save_search' => 'Lưu tìm kiếm',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
