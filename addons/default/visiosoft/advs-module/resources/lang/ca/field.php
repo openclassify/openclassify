@@ -108,7 +108,7 @@ return [
         'name' => 'Inèdit'
     ],
     'finish_at' => [
-        'name' => 'Acaba a'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Foto de portada'
@@ -370,4 +370,7 @@ return [
         'name' => 'Preu antic'
     ],
 	'save_search' => 'Desa la cerca',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
