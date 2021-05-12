@@ -108,7 +108,7 @@ return [
         'name' => 'Ongepubliseer'
     ],
     'finish_at' => [
-        'name' => 'Klaar by'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Voorbladfoto'
@@ -370,4 +370,7 @@ return [
         'name' => 'Ou prys'
     ],
 	'save_search' => 'Stoor soektog',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
