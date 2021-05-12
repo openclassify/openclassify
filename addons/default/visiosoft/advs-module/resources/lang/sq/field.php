@@ -108,7 +108,7 @@ return [
         'name' => 'I pabotuar'
     ],
     'finish_at' => [
-        'name' => 'Koha e mbarimit'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Kopertin'
@@ -371,4 +371,7 @@ return [
         'name' => 'Çmimi i Vjetër'
     ],
 	'save_search' => 'Ruaj kërkimin',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
