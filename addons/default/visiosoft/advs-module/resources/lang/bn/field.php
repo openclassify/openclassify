@@ -108,7 +108,7 @@ return [
         'name' => 'অপ্রকাশিত'
     ],
     'finish_at' => [
-        'name' => 'সমাপ্তি'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'প্রচ্ছদ ছবি'
@@ -370,4 +370,7 @@ return [
         'name' => 'পুরাতন মূল্য'
     ],
 	'save_search' => 'অনুসন্ধান সংরক্ষণ করুন',
+    'publish_at' => [
+        'name' => 'Publish Date'
+    ],
 ];
