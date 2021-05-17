@@ -48,6 +48,11 @@ return [
         'instructions' => 'Zeviya tomara tomarê di rûpelê guheztina profîlê de vedişêre.',
     ],
     'required_district' => [
-        'name' => 'Navçeya Pêdivî'
+        'name' => 'Navçeya Pêdivî',
+        'instructions' => 'Zêdekirina navnîşanek berpirsiyariya navçeyê temsîl dike.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Kiryarên Berfireh nîşan bide',
+        'instructions' => 'Vebijarkên Dirêjkirinê yên li ser rûpelê Reklamên profîla min hene temsîl dike.',
     ],
 ];
