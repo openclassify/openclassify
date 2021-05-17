@@ -336,6 +336,7 @@ return [
     'ad_location' => 'اشتہار کی جگہ',
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر کوئی صارف منتخب نہیں ہوتا ہے تو مالک موجودہ صارف سے ڈیفالٹ ہوجائے گا',
+    'create_page_subtitle' => 'اپنے اشتہار کے بارے میں تفصیلی معلومات داخل کرکے بلا اشتعال اشتہار بنائیں۔',
 
     // Listing page
     'ad_title' => 'اشتہار کا عنوان',
@@ -343,7 +344,8 @@ return [
     'view' => 'دیکھیں',
     'ads_with_map' => 'نقشہ والے اشتہارات',
     'advanced_sorting' => 'اعلی درجے کی ترتیب',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'لفظ بہ فلٹر',
+    'filter_by' => 'فلٹر بذریعہ: نام',
 
     'free' => 'مفت',
     'ad_date' => 'اشتہاری تاریخ',
@@ -366,5 +368,9 @@ return [
 	],
     'old_price' => [
         'name' => 'پرانی قیمت'
+    ],
+	'save_search' => 'تلاش محفوظ کریں',
+    'publish_at' => [
+        'name' => 'تاریخ شائع کریں'
     ],
 ];
