@@ -345,6 +345,7 @@ return [
     'ads_with_map' => 'Hirdetések térképpel',
     'advanced_sorting' => 'Haladó rendezés',
     'filter_by_word' => 'Szűrés szó szerint',
+    'filter_by' => 'Szűrés: név szerint',
 
     'free' => 'Ingyenes',
     'ad_date' => 'Hirdetés dátuma',
@@ -369,4 +370,7 @@ return [
         'name' => 'Régi ár'
     ],
 	'save_search' => 'Keresés mentése',
+    'publish_at' => [
+        'name' => 'Közzététel dátuma'
+    ],
 ];
