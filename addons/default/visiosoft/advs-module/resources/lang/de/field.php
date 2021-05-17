@@ -346,6 +346,7 @@ return [
     'ads_with_map' => 'Anzeigen mit Karte',
     'advanced_sorting' => 'Erweiterte Sortierung',
     'filter_by_word' => 'Nach Wort filtern',
+    'filter_by' => 'Filtern nach: Name',
 
     'free' => 'Frei',
     'ad_date' => 'Anzeigedatum',
@@ -370,4 +371,7 @@ return [
         'name' => 'Alter Preis'
     ],
 	'save_search' => 'Sichere Suche',
+    'publish_at' => [
+        'name' => 'Erscheinungsdatum'
+    ],
 ];
