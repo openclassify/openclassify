@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Vị trí Quảng cáo',
     'owner' => 'Chủ nhân',
     'default_owner_instruction' => 'Chủ sở hữu sẽ mặc định là người dùng hiện tại nếu không có người dùng nào được chọn',
+    'create_page_subtitle' => 'Tạo quảng cáo hoàn hảo bằng cách nhập thông tin chi tiết về quảng cáo của bạn.',
 
     // Listing page
     'ad_title' => 'Tiêu đề quảng cáo',
@@ -343,7 +344,8 @@ return [
     'view' => 'Lượt xem',
     'ads_with_map' => 'Quảng cáo có Bản đồ',
     'advanced_sorting' => 'Sắp xếp nâng cao',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Lọc theo từ',
+    'filter_by' => 'Lọc theo: tên',
 
     'free' => 'Miễn phí',
     'ad_date' => 'Ngày quảng cáo',
@@ -366,5 +368,9 @@ return [
 	],
     'old_price' => [
         'name' => 'Giá cũ'
+    ],
+	'save_search' => 'Lưu tìm kiếm',
+    'publish_at' => [
+        'name' => 'Ngày xuất bản'
     ],
 ];
