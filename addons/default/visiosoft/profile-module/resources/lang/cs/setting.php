@@ -48,6 +48,11 @@ return [
         'instructions' => 'Skryje pole typu registru na stránce pro úpravu profilu.',
     ],
     'required_district' => [
-        'name' => 'Povinný okres'
+        'name' => 'Povinný okres',
+        'instructions' => 'Přidání adresy představuje povinnost okresu.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Zobrazit rozšiřuje akce',
+        'instructions' => 'Představuje možnosti rozšíření dostupné na stránce Reklamy mého profilu.',
     ],
 ];
