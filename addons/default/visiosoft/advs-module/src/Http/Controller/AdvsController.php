@@ -290,6 +290,9 @@ class AdvsController extends PublicController
                 if ($adv->cf_json) {
                     $tempFeatures = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')
                         ->view($adv);
+                    $tempFeatures = array_values(array_filter($tempFeatures, function ($tempFeature) {
+                        return !is_array($tempFeature['custom_field_value']);
+                    }));
                     $features = array();
                     foreach ($listingCFs as $listingCF) {
                         if (($key = array_search($listingCF->slug, array_column($tempFeatures, 'slug'))) !== false) {
