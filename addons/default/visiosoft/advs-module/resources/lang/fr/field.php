@@ -346,6 +346,7 @@ return [
     'ads_with_map' => 'Annonces avec carte',
     'advanced_sorting' => 'Tri avancé',
     'filter_by_word' => 'Filtrer par mot',
+    'filter_by' => 'Filtrer par: nom',
 
     'free' => 'Gratuit',
     'ad_date' => 'Date de l\'annonce',
@@ -370,4 +371,7 @@ return [
         'name' => 'Ancien prix'
     ],
 	'save_search' => 'Sauvegarder la recherche',
+    'publish_at' => [
+        'name' => 'Date de publication'
+    ],
 ];
