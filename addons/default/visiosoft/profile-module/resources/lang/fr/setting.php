@@ -48,6 +48,11 @@ return [
         'instructions' => 'Masque le champ de type de registre dans la page de modification de profil.',
     ],
     'required_district' => [
-        'name' => 'District obligatoire'
+        'name' => 'District obligatoire',
+        'instructions' => 'L\'ajout d\'une adresse représente l\'obligation du district.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Afficher étend les actions',
+        'instructions' => 'Représente les options d\'extension disponibles sur la page d\'annonces de mon profil.',
     ],
 ];
