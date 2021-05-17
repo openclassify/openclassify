@@ -48,6 +48,11 @@ return [
         'instructions' => 'Amaga el camp tipus de registre a la pàgina d\'edició del perfil.',
     ],
     'required_district' => [
-        'name' => 'Districte obligatori'
+        'name' => 'Districte obligatori',
+        'instructions' => 'Afegir una adreça representa l’obligació del districte.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Mostra les accions ampliades',
+        'instructions' => 'Representa les opcions Extends disponibles a la pàgina Anuncis del meu perfil.',
     ],
 ];
