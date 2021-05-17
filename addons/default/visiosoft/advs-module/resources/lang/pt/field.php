@@ -337,6 +337,7 @@ return [
     'ad_location' => 'Localização do anúncio',
     'owner' => 'Proprietário',
     'default_owner_instruction' => 'O proprietário assumirá como padrão o usuário atual se nenhum usuário for selecionado',
+    'create_page_subtitle' => 'Crie o anúncio perfeitamente inserindo informações detalhadas sobre o seu anúncio.',
 
     // Listing page
     'ad_title' => 'Título do anúncio',
@@ -344,7 +345,8 @@ return [
     'view' => 'Visualizar',
     'ads_with_map' => 'Anúncios com mapa',
     'advanced_sorting' => 'Classificação Avançada',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrar por palavra',
+    'filter_by' => 'Filtrar por: nome',
 
     'free' => 'Livre',
     'ad_date' => 'Data do Anúncio',
@@ -367,5 +369,9 @@ return [
 	],
     'old_price' => [
         'name' => 'Preço antigo'
+    ],
+	'save_search' => 'Salvar busca',
+    'publish_at' => [
+        'name' => 'Data de publicação'
     ],
 ];
