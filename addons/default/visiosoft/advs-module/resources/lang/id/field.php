@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Lokasi Iklan',
     'owner' => 'Pemilik',
     'default_owner_instruction' => 'Pemilik akan menggunakan pengguna saat ini secara bawaan/default jika tidak ada pengguna yang dipilih',
+    'create_page_subtitle' => 'Buat iklan tanpa masalah dengan memasukkan informasi rinci tentang iklan Anda.',
 
     // Listing page
     'ad_title' => 'Judul Iklan',
@@ -343,7 +344,8 @@ return [
     'view' => 'Melihat',
     'ads_with_map' => 'Iklan Dengan Peta',
     'advanced_sorting' => 'Penyortiran Lanjutan',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filter menurut kata',
+    'filter_by' => 'Filter berdasarkan: nama',
 
     'free' => 'Gratis',
     'ad_date' => 'Tanggal Iklan',
@@ -366,5 +368,9 @@ return [
 	],
     'old_price' => [
         'name' => 'Harga Lama'
+    ],
+	'save_search' => 'Simpan pencarian',
+    'publish_at' => [
+        'name' => 'Tanggal Penerbitan'
     ],
 ];
