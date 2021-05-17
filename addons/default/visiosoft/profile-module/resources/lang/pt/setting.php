@@ -48,6 +48,11 @@ return [
         'instructions' => 'Oculta o campo do tipo de registro na página de edição do perfil.',
     ],
     'required_district' => [
-        'name' => 'Distrito Requerido'
+        'name' => 'Distrito Requerido',
+        'instructions' => 'Adicionar um endereço representa a obrigação do distrito.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Mostrar ações de extensão',
+        'instructions' => 'Representa as opções de extensão disponíveis na página de anúncios do meu perfil.',
     ],
 ];
