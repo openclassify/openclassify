@@ -336,6 +336,7 @@ return [
     'ad_location' => 'مکان تبلیغات',
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر هیچ کاربری انتخاب نشود ، مالک به عنوان کاربر پیش فرض عمل می کند',
+    'create_page_subtitle' => 'با وارد کردن اطلاعات دقیق در مورد تبلیغ خود ، تبلیغ را بدون نقص ایجاد کنید.',
 
     // Listing page
     'ad_title' => 'عنوان آگهی',
@@ -343,7 +344,8 @@ return [
     'view' => 'چشم انداز',
     'ads_with_map' => 'تبلیغات با نقشه',
     'advanced_sorting' => 'مرتب سازی پیشرفته',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'فیلتر با کلمه',
+    'filter_by' => 'فیلتر بر اساس: نام',
 
     'free' => 'رایگان',
     'ad_date' => 'تاریخ آگهی',
@@ -366,5 +368,9 @@ return [
 	],
     'old_price' => [
         'name' => 'قیمت قدیمی'
+    ],
+	'save_search' => 'ذخیره جستجو',
+    'publish_at' => [
+        'name' => 'تاریخ انتشار'
     ],
 ];
