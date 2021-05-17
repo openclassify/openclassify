@@ -48,6 +48,11 @@ return [
         'instructions' => 'Sakriva polje tipa registra na stranici za uređivanje profila.',
     ],
     'required_district' => [
-        'name' => 'Obavezan deo grada'
+        'name' => 'Obavezan deo grada',
+        'instructions' => 'Adding an address represents the district obligation.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show Extends Actions',
+        'instructions' => 'Represents the Extends options available on the my profile Ads page.',
     ],
 ];
