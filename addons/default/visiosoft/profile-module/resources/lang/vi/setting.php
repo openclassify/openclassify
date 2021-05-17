@@ -48,6 +48,11 @@ return [
         'instructions' => 'Ẩn trường loại đăng ký trong trang chỉnh sửa hồ sơ.',
     ],
     'required_district' => [
-        'name' => 'Quận bắt buộc'
+        'name' => 'Quận bắt buộc',
+        'instructions' => 'Thêm một địa chỉ thể hiện nghĩa vụ của học khu.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Hiển thị các hành động mở rộng',
+        'instructions' => 'Trình bày các tùy chọn Tiện ích mở rộng có sẵn trên trang Quảng cáo hồ sơ của tôi.',
     ],
 ];
