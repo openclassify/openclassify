@@ -48,6 +48,11 @@ return [
         'instructions' => 'Skjuler registertypefeltet i profilredigeringssiden.',
     ],
     'required_district' => [
-        'name' => 'Nødvendig distrikt'
+        'name' => 'Nødvendig distrikt',
+        'instructions' => 'Å legge til en adresse representerer distriktsplikten.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Vis utvider handlinger',
+        'instructions' => 'Representerer utvidelsesalternativene som er tilgjengelige på min profilannonseside.',
     ],
 ];
