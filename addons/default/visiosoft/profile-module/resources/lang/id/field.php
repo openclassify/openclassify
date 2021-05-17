@@ -469,6 +469,8 @@ return [
     'change_password' => 'Ganti kata sandi',
     'choose_an_option' => 'Pilih salah satu opsi ...',
     'change_status' => 'Merubah status',
+	'profile_settings' => 'Pengaturan Profil',
+	'profile_detail' => 'Detail Profil',
 
     // Register page
     'accept_terms_label' => 'Saya menerima persyaratannya.',

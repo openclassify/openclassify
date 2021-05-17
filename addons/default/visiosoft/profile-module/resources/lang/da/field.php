@@ -469,6 +469,8 @@ return [
     'change_password' => 'Skift kodeord',
     'choose_an_option' => 'Vælg en mulighed ...',
     'change_status' => 'Skift status',
+	'profile_settings' => 'Profilindstillinger',
+	'profile_detail' => 'Profildetalje',
 
     // Register page
     'accept_terms_label' => 'Jeg accepterer vilkårene.',

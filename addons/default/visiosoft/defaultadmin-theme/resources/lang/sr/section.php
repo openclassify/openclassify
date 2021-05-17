@@ -2,6 +2,6 @@
 
 return [
     'theme_settings' => [
-        'name' => 'Подешавање тема'
+        'name' => 'Podešavanje teme'
     ],
 ];

@@ -469,6 +469,8 @@ return [
     'change_password' => 'Schimbați parola',
     'choose_an_option' => 'Alege o opțiune...',
     'change_status' => 'Schimba starea',
+	'profile_settings' => 'Setarile profilului',
+	'profile_detail' => 'Detaliu profil',
 
     // Register page
     'accept_terms_label' => 'Accept termenii.',

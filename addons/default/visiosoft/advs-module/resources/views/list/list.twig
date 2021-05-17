@@ -27,7 +27,7 @@
                     </p>
 
                     <a href="javascript:void(0)" class="d-flex align-items-center fav-search-modal">
-                        <span class="mr-2">Save Search</span>
+                        <span class="mr-2">{{ trans('visiosoft.module.advs::field.save_search') }}</span>
                         {{ img('visiosoft.module.advs::images/listing/save-search.svg').data|raw }}
                     </a>
                 </div>
@@ -49,7 +49,7 @@
                             </div>
                         {% endfor %}
                         <div class="d-flex align-items-center">
-                            <a href="{{ app.request.pathinfo }}"
+                            <a href="{{ url_route('adv_list_seo', [category.slug]) }}"
                                class="text-truncate d-flex align-items-center mr-1">
                                 {{ trans('visiosoft.module.advs::field.clear_all') }}
                             </a>

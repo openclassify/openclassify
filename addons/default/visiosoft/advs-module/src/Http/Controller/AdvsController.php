@@ -2,8 +2,6 @@
 
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Http\Controller\PublicController;
-use Anomaly\Streams\Platform\Message\MessageBag;
-use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Anomaly\Streams\Platform\Model\Complaints\ComplaintsComplainTypesEntryModel;
 use Anomaly\Streams\Platform\Support\Currency;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
@@ -15,21 +13,15 @@ use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
-use Visiosoft\AdvsModule\Adv\Event\EditAd;
 use Visiosoft\AdvsModule\Adv\Event\EditedAd;
 use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
 use Visiosoft\AdvsModule\Adv\Event\PriceChange;
-use Visiosoft\AdvsModule\Adv\Event\ShowAdPhone;
 use Visiosoft\AdvsModule\Adv\Event\ViewAd;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
-use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
-use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
-use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
-use Visiosoft\FavsModule\Http\Controller\FavsController;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
@@ -48,8 +40,6 @@ class AdvsController extends PublicController
     private $adv_repository;
 
     private $optionConfigurationRepository;
-    private $productOptionRepository;
-    private $productOptionsValueRepository;
 
     private $country_repository;
 
@@ -62,7 +52,6 @@ class AdvsController extends PublicController
 
     private $village_model;
 
-    private $category_model;
     private $category_repository;
 
     private $requestHttp;
@@ -78,8 +67,6 @@ class AdvsController extends PublicController
         AdvRepositoryInterface $advRepository,
 
         OptionConfigurationRepositoryInterface $optionConfigurationRepository,
-        ProductoptionRepositoryInterface $productOptionRepository,
-        ProductoptionsValueRepositoryInterface $productOptionsValueRepository,
 
         CountryRepositoryInterface $country_repository,
 
@@ -92,7 +79,6 @@ class AdvsController extends PublicController
 
         VillageModel $village_model,
 
-        CategoryModel $categoryModel,
         CategoryRepositoryInterface $category_repository,
 
         OptionRepositoryInterface $optionRepository,
@@ -110,8 +96,6 @@ class AdvsController extends PublicController
         $this->adv_repository = $advRepository;
 
         $this->optionConfigurationRepository = $optionConfigurationRepository;
-        $this->productOptionRepository = $productOptionRepository;
-        $this->productOptionsValueRepository = $productOptionsValueRepository;
 
         $this->country_repository = $country_repository;
 
@@ -124,7 +108,6 @@ class AdvsController extends PublicController
 
         $this->village_model = $village_model;
 
-        $this->category_model = $categoryModel;
         $this->category_repository = $category_repository;
 
         $this->settings_repository = $settings_repository;
@@ -258,11 +241,11 @@ class AdvsController extends PublicController
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
 
-	        $foreign_currencies = json_decode($advs[$index]->foreign_currencies, true);
-		        if (isset($_COOKIE['currency']) && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
-			        $advs[$index]->currency = $_COOKIE['currency'];
-			        $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
-		        }
+            $foreign_currencies = json_decode($advs[$index]->foreign_currencies, true);
+            if (isset($_COOKIE['currency']) && $advs[$index]->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+                $advs[$index]->currency = $_COOKIE['currency'];
+                $advs[$index]->price = $foreign_currencies[$_COOKIE['currency']];
+            }
 
         }
         $seenList = array();
@@ -280,22 +263,15 @@ class AdvsController extends PublicController
 
 
         if ($category) {
-            $mainCats = $this->category_repository->getParentCategoryById($category->id);
-            $subCats = $this->category_repository->getCategoryById($category->id);
-
-            //if there is no subcategory
-            if (count($subCats) < 1 and count($mainCats) > 1) {
-                //fetch subcategories of the last category
-                $subCats = $this->category_repository->getCategoryById($mainCats[1]['id']);
-                unset($mainCats[0]);//remove last category
-            }
+            $mainCats = $this->category_repository->getParentCategoryByOrder($category->id);
+            $subCats = $category->getSubCategories();
             $allCats = false;
         } else {
             $mainCats = $this->category_repository->getMainCategories();
             $allCats = true;
         }
 
-        $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = array();
+        $cFArray = $checkboxes = $topfields = $selectDropdown = $selectRange = $selectImage = $ranges = $radio = $text = $listingCFs = array();
 
         if ($isActiveCustomFields) {
             $returnvalues = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->index($mainCats, $subCats, $category);
@@ -306,6 +282,23 @@ class AdvsController extends PublicController
             $selectImage = $returnvalues['selectImage'];
             $ranges = $returnvalues['ranges'];
             $radio = $returnvalues['radio'];
+            $text = $returnvalues['text'];
+
+            $listingCFs = app('Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface')
+                ->getSeenCustomFieldsWithCategory($category);
+            foreach ($advs as $adv) {
+                if ($adv->cf_json) {
+                    $tempFeatures = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')
+                        ->view($adv);
+                    $features = array();
+                    foreach ($listingCFs as $listingCF) {
+                        if (($key = array_search($listingCF->slug, array_column($tempFeatures, 'slug'))) !== false) {
+                            $features[$listingCF->slug] = $tempFeatures[$key];
+                        }
+                    }
+                    $adv->features = $features;
+                }
+            }
 
             $cFArray = app('Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface')
                 ->getCFParamValues($param);
@@ -384,6 +377,38 @@ class AdvsController extends PublicController
             ];
         }
 
+        if (($cities = \request()->city) && $cities = $cities[0]) {
+            $citiesIDs = $cityId ? [$cityId->id] : explode(',', $cities);
+            $cities = $this->cityRepository->findAllByIDs($citiesIDs);
+
+            $value = array();
+            foreach ($cities as $city) {
+                $removalLink = array_filter($param, function ($singleParam) {
+                    return $singleParam !== 'city';
+                }, ARRAY_FILTER_USE_KEY);
+                $removalLink = fullLink(
+                    $removalLink,
+                    \request()->url(),
+                    ['city[]' => implode(
+                        ',',
+                        array_filter($citiesIDs, function ($singleCity) use ($city) {
+                            return $singleCity != $city->id;
+                        })
+                    )]
+                );
+
+                $value[] = [
+                    'name' => $city->name,
+                    'removalLink' => $removalLink
+                ];
+            }
+
+            $cFArray[] = [
+                'name' => trans('visiosoft.module.advs::field.address'),
+                'value' => $value
+            ];
+        }
+
         Cookie::queue(Cookie::make('last_search', $this->requestHttp->getRequestUri(), 84000));
 
         $viewType = $this->requestHttp->cookie('viewType');
@@ -392,7 +417,7 @@ class AdvsController extends PublicController
 
         $compact = compact('advs', 'countries', 'mainCats', 'subCats', 'checkboxes', 'param',
             'user', 'featured_advs', 'viewType', 'topfields', 'selectDropdown', 'selectRange', 'selectImage', 'ranges',
-            'seenList', 'radio', 'category', 'cityId', 'allCats', 'catText', 'cFArray');
+            'text', 'seenList', 'radio', 'category', 'cityId', 'allCats', 'catText', 'cFArray', 'listingCFs');
 
         return $this->viewTypeBasedRedirect($viewType, $compact);
     }
@@ -586,11 +611,11 @@ class AdvsController extends PublicController
 
             $configurations = $this->optionConfigurationRepository->getConf($adv->id);
 
-	        $foreign_currencies = json_decode($adv->foreign_currencies, true);
-	        if (isset($_COOKIE['currency']) && $_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
-		        $adv->currency = $_COOKIE['currency'];
-		        $adv->price = $foreign_currencies[$_COOKIE['currency']];
-	        }
+            $foreign_currencies = json_decode($adv->foreign_currencies, true);
+            if (isset($_COOKIE['currency']) && $_COOKIE['currency'] && $adv->foreign_currencies && array_key_exists($_COOKIE['currency'], $foreign_currencies)) {
+                $adv->currency = $_COOKIE['currency'];
+                $adv->price = $foreign_currencies[$_COOKIE['currency']];
+            }
 
             // Check if hide price
             $hidePrice = false;
@@ -819,11 +844,19 @@ class AdvsController extends PublicController
 
             if (setting_value('visiosoft.module.advs::auto_approve') && $autoApprove) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
-                $adv->update([
+
+                $update = [
                     'status' => 'approved',
-                    'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
-                    'publish_at' => date('Y-m-d H:i:s')
-                ]);
+                ];
+
+                if (!setting_value('visiosoft.module.advs::show_finish_and_publish_date')) {
+                    $update = array_merge($update, [
+                        'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+                        'publish_at' => date('Y-m-d H:i:s')
+                    ]);
+                }
+
+                $adv->update($update);
             }
 
             $form->render($this->request->update_id);
@@ -1034,7 +1067,7 @@ class AdvsController extends PublicController
             }
 
             $adv->update($params);
-            $this->event->dispatch(new EditedAdCategory($before_editing_ad_params,$adv));
+            $this->event->dispatch(new EditedAdCategory($before_editing_ad_params, $adv));
             $this->messages->success(trans('visiosoft.module.advs::message.updated_category_msg'));
             return redirect('/advs/edit_advs/' . $id);
         }
@@ -1100,10 +1133,51 @@ class AdvsController extends PublicController
             $response['status'] = "success";
             $count = $cart->getItems()->count;
             $response['count'] = $count;
+            $response['item'] = [
+                'id' => $cart->getItems()->last->id,
+                'adv_id' => $cart->getItems()->last->entry_id,
+                'photo' => url($cart->getItems()->last->entry->cover_photo),
+                'url' => $thisModel->getAdvDetailLinkByAdId($adv->id),
+                'name' => $adv->name,
+                'quantity' => $cart->getItems()->last->quantity,
+                'price' => app(Currency::class)->format($cart->getItems()->last->price, $cart->getItems()->last->currency),
+                'subtotal' => app(Currency::class)->format($cart->subtotal, setting_value('streams::currency'))
+            ];
         } else {
             $response['status'] = "error";
             $response['msg'] = trans('visiosoft.module.advs::message.error_added_cart');
         }
+        return $response;
+    }
+
+    public function stockControl(Request $request, AdvRepositoryInterface $advRepository)
+    {
+        $quantity = $request->quantity;
+        $id = $request->id;
+        $type = $request->type;
+        if ($request->dataType === 'ad-configuration') {
+            $optionConf = new  OptionConfigurationModel();
+            $adv = $optionConf->newQuery()->find($id);
+            $status = $adv->stockControl($id, $quantity);
+        } else {
+            $advmodel = new AdvModel();
+            $adv = $advmodel->getAdv($id);
+            $status = $advmodel->stockControl($id, $quantity);
+        }
+
+        $response = array();
+        if ($status == 1) {
+            $response['newQuantity'] = $advRepository->getQuantity($quantity, $type, $adv);
+
+        } else {
+            $response['newQuantity'] = $adv->stock;
+        }
+
+        $response['newPrice'] = $adv->price * $response['newQuantity'];
+
+        $response['newPrice'] = app(Currency::class)->format($response['newPrice'], strtoupper($adv->currency));
+        $response['status'] = $status;
+        $response['maxQuantity'] = $adv->stock;
         return $response;
     }
 }

@@ -9,23 +9,13 @@ class AdvFormBuilder extends FormBuilder
 
     protected $category = null;
 
-    protected $rules = [];
-
     protected $skips = [
         'slug'
     ];
 
-    protected $actions = [];
-
     protected $buttons = [
         'cancel',
     ];
-
-    protected $options = [];
-
-    protected $sections = [];
-
-    protected $assets = [];
 
     public function __construct(Form $form)
     {
@@ -37,7 +27,7 @@ class AdvFormBuilder extends FormBuilder
     {
         $requiredFields = setting_value('visiosoft.module.advs::make_all_fields_required');
 
-        return [
+        $fields = [
             'name' => [
                 'translatable' => true,
                 'required' => true,
@@ -94,5 +84,18 @@ class AdvFormBuilder extends FormBuilder
             'adv_day',
             'product_options_value'
         ];
+
+        if (setting_value('visiosoft.module.advs::show_finish_and_publish_date')) {
+            $fields = array_merge($fields, [
+                'finish_at' => [
+                    'required' => true,
+                ],
+                'publish_at' => [
+                    'required' => true,
+                ],
+            ]);
+        }
+
+        return $fields;
     }
 }

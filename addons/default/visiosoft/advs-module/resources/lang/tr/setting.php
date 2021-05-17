@@ -262,4 +262,14 @@ return [
         'name' => 'Ayrıntılı Ürün Seçenekleri',
         'instructions' => 'Ürüne ait stok ve fiyat bilgilerini girmenizi sağlar'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Alt kategorileri mobil görünümde göster',
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Sadece Üyelere Fiyat Göster',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Kategorileri Gizle',
+		'instructions' => 'İlan listelemede ilan kategorilerini gizle'
+	]
 ];

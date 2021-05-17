@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Map Long Coordinate',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Social Share Logo',
-        'warning'      => 'It should be at a resolution of 1200 x 630. ',
+        'warning' => 'It should be at a resolution of 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Site address',
-        'warning'      => 'Auto added www.  www.<strong>sitename.com</strong> ',
+        'warning' => 'Auto added www.  www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-	'price_area_hidden' => [
-		'name' => 'Price Area Hidden',
-	],
+    'price_area_hidden' => [
+        'name' => 'Price Area Hidden',
+    ],
     'hide_price_filter' => [
         'name' => 'Hide Price Filter',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Hide Created Date',
         'instructions' => 'Hide created date in ads detail page',
     ],
-	'hide_listing_header' => [
-		'name' => 'Hide Listing Header',
-		'instructions' => 'Hiding to ordering and view types',
-	],
-	'hide_filter_section' => [
-		'name' => 'Hide Filter Section',
-		'instructions' => 'Hiding to left filter area in listing page',
-	],
-	'hide_seller_info' => [
-		'name' => 'Hide Seller Information',
-		'instructions' => 'Hiding to seller infos in ads detail page',
-	],
+    'hide_listing_header' => [
+        'name' => 'Hide Listing Header',
+        'instructions' => 'Hiding to ordering and view types',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Hide Filter Section',
+        'instructions' => 'Hiding to left filter area in listing page',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Hide Seller Information',
+        'instructions' => 'Hiding to seller infos in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Categories',
         'instructions' => 'It represents the categories in which the GET property will be valid.'
     ],
-	'disable_sentry' => [
-		'name' => 'Disable Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Disable Sentry'
+    ],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
@@ -261,5 +261,19 @@ return [
     'detailed_product_options' => [
         'name' => 'Detailed Product Options',
         'instructions' => 'Allows you to enter stock and price information for the product'
+    ],
+    'show_subcats_mobile' => [
+        'name' => 'Show subcategories on mobile view',
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Show Price To Members Only',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Hide Categories',
+        'instructions' => 'Hide categories in ads list'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Show Finish Date And Publish Date For Create',
+        'instructions' => 'Displays the publish_at and finish_at fields on the ad creation page.'
     ],
 ];

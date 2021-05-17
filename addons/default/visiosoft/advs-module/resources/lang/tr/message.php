@@ -30,6 +30,6 @@ return [
     'approve_status_change' => "İlanın Durumu Etkin Olarak Ayarlandı!",
     'passive_status_change' => "İlanınızın Durumu Pasif Olarak Ayarlandı!",
 	'sold_status_change' => "İlanın Durumu Satıldı Olarak Ayarlanmıştır!",
-	'status_change' => "İlanın durumu Ayarland :status!",
+	'status_change' => "İlanın durumu Ayarland :status !",
 	'disabled_detailed_options_for_admin_role' => "Ayrıntılı ürün seçenekleri devre dışı bırakıldı.",
 ];

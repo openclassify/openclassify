@@ -262,4 +262,14 @@ return [
         'name' => 'Részletes termékopciók',
         'instructions' => 'Lehetővé teszi a termék készlet- és árinformációinak megadását'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Alkategóriák megjelenítése mobil nézetben',
+    ],
+	'show_price_to_members_only' => [
+		'name' => 'Árak megjelenítése csak tagoknak',
+	],
+	'hide_ad_cat' => [
+		'name' => 'Kategóriák elrejtése',
+		'instructions' => 'Kategóriák elrejtése a hirdetési listában'
+	]
 ];

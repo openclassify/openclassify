@@ -469,6 +469,8 @@ return [
     'change_password' => 'পাসওয়ার্ড পরিবর্তন করুন',
     'choose_an_option' => 'একটি বিকল্প নির্বাচন করুন...',
     'change_status' => 'স্ট্যাটাস বদলাও',
+	'profile_settings' => 'প্রোফাইল সেটিংস',
+	'profile_detail' => 'প্রোফাইল বিশদ',
 
     // Register page
     'accept_terms_label' => 'আমি শর্তাদি গ্রহণ করি।',

@@ -437,4 +437,29 @@ return [
             'default_value' => true,
         ]
     ],
+    'show_subcats_mobile' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+	'show_price_to_members_only' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	],
+	'hide_ad_cat' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	],
+
+    'show_finish_and_publish_date' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ],
+    ],
 ];

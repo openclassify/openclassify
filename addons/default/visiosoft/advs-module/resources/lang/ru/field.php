@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Избранные объявления",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'на',
+    'search_ad_result_text' => '<strong>: count</strong> объявлений было найдено в вашем поиске <strong>: name</strong>',
     'search_ads_result_message' => [
         'name' => ':      количество объявлений найдено для:поиск по названию',
     ],
@@ -336,6 +337,14 @@ return [
     'ad_location' => 'Местоположение объявления',
     'owner' => 'Владелец',
     'default_owner_instruction' => 'Если пользователь не выбран, владельцем по умолчанию будет текущий пользователь',
+
+    // Listing page
+    'ad_title' => 'Заголовок объявления',
+    'listing_date' => 'Дата листинга',
+    'view' => 'Вид',
+    'ads_with_map' => 'Объявления с картой',
+    'advanced_sorting' => 'Расширенная сортировка',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Бесплатно',
     'ad_date' => 'Дата объявления',

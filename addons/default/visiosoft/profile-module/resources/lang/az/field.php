@@ -469,6 +469,8 @@ return [
     'change_password' => 'Parolu dəyişdirin',
     'choose_an_option' => 'Bir seçim seçin ...',
     'change_status' => 'Vəziyyəti dəyişdirin',
+	'profile_settings' => 'Profil parametrləri',
+	'profile_detail' => 'Profil ətraflı',
 
     // Register page
     'accept_terms_label' => 'Şərtləri qəbul edirəm.',

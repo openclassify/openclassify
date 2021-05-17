@@ -2,24 +2,24 @@
 
 return [
     'folders' => [
-        'name'         => 'Фасцикле',
-        'instructions' => 'Наведите које су фасцикле доступне за ово поље. Оставите празно за приказ свих директоријума.',
-        'warning'      => 'Постојеће дозволе за фасцикле имају предност над одабраним директоријумима.',
+        'name'         => 'Folderi',
+        'instructions' => 'Navedite koje su fascikle dostupne za ovo polje. Ostavite prazno za prikaz svih direktorijuma.',
+        'warning'      => 'Postojeće dozvole za fascikle imaju prednost nad odabranim direktorijumima.',
     ],
     'min'     => [
-        'label'        => 'Минимум Селецтионс',
-        'instructions' => 'Унесите минимални број дозвољених избора.',
+        'label'        => 'Minimalni odabir',
+        'instructions' => 'Unesite minimalni broj dozvoljenih izbora.',
     ],
     'max'     => [
-        'label'        => 'Макимум Селецтионс',
-        'instructions' => 'Унесите максималан број дозвољених избора.',
+        'label'        => 'Maksimalni odabir',
+        'instructions' => 'Unesite maksimalan broj dozvoljenih izbora.',
     ],
     'mode'    => [
-        'name'         => 'Улазни режим',
-        'instructions' => 'Како корисници треба да обезбеде унос датотека?',
+        'name'         => 'Mod unosa',
+        'instructions' => 'Kako korisnici treba da obezbede unos datoteka?',
         'option'       => [
-            'default' => 'Отпремите и / или изаберите датотеке.',
-            'select'  => 'Изаберите само датотеке.',
+            'default' => 'Otpremite i / ili izaberite datoteke.',
+            'select'  => 'Izaberite samo datoteke.',
             'upload'  => 'Отпреми само датотеке.',
         ],
     ],

@@ -4,7 +4,7 @@ use Anomaly\Streams\Platform\Ui\Table\Table;
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 
-class LookupTableBuilder extends \Anomaly\MultipleFieldType\Table\LookupTableBuilder
+class LookupTableBuilder extends \Visiosoft\MultipleFieldType\Table\LookupTableBuilder
 {
 	public function __construct(Table $table,ValueTableBuilder $valueTableBuilder)
 	{

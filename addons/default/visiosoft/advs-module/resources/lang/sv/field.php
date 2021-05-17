@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Utvalda annonser",
     'trending_ads' => 'Trendind-annonser',
     'search_ad_result_prefix' => 'på',
+    'search_ad_result_text' => '<strong>: räkna</strong> annonser hittades i din sökning <strong>: namn</strong>',
     'search_ads_result_message' => [
         'name' => ': räkna annonser som hittades för: namnsökning',
     ],
@@ -335,6 +336,14 @@ return [
     'ad_location' => 'Annonsplats',
     'owner' => 'Ägare',
     'default_owner_instruction' => 'Ägaren kommer som standard att använda den nuvarande användaren om ingen användare har valts',
+
+    // Listing page
+    'ad_title' => 'Lägg till titel',
+    'listing_date' => 'Noteringsdatum',
+    'view' => 'Se',
+    'ads_with_map' => 'Annonser med karta',
+    'advanced_sorting' => 'Avancerad sortering',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',

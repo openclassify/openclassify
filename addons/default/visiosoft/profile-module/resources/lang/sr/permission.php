@@ -2,35 +2,35 @@
 
 return [
     'profile' => [
-        'name'   => 'Профил',
+        'name'   => 'Profil',
         'option' => [
-            'read'   => 'Можете ли прочитати профил?',
-            'write'  => 'Можете ли да направите / измените профил?',
-            'delete' => 'Можете ли избрисати профил?',
+            'read'   => 'Može da vidi profil?',
+            'write'  => 'Može da kreira / uređuje profil?',
+            'delete' => 'Može da obriše profil?',
         ],
     ],
     'adress' => [
-        'name'   => 'Адреса',
+        'name'   => 'Adresa',
         'option' => [
-            'read'   => 'Можете да прочитате адресу?',
-            'write'  => 'Можете ли креирати / уредити адресу?',
-            'delete' => 'Можете ли избрисати адресу?',
+            'read'   => 'Može da vidi adresu?',
+            'write'  => 'Može da kreira / uređuje adresu?',
+            'delete' => 'Može da obriše adresu?',
         ],
     ],
     'education' => [
-        'name'   => 'образовање',
+        'name'   => 'Obrazovanje',
         'option' => [
-            'read'   => 'Зна да чита образовање?',
-            'write'  => 'Може ли створити / уредити образовање?',
-            'delete' => 'Можете ли избрисати образовање?',
+            'read'   => 'Može da vidi obrazovanje?',
+            'write'  => 'Može da kreira / uređuje obrazovanje?',
+            'delete' => 'Može da obriše obrazovanje?',
         ],
     ],
     'education_part' => [
-        'name'   => 'Образовни део',
+        'name'   => 'Deo obrazovanja',
         'option' => [
-            'read'   => 'Зна ли да чита образовни део?',
-            'write'  => 'Може ли креирати / уредити образовни део?',
-            'delete' => 'Можете ли избрисати део образовања?',
+            'read'   => 'Može da vidi deo obrazovanja?',
+            'write'  => 'Može da kreira / uređuje deo obrazovanja?',
+            'delete' => 'Može da obriše deo obrazovanja?',
         ],
     ],
 ];

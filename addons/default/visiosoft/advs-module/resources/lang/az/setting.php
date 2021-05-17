@@ -262,4 +262,7 @@ return [
         'name' => 'Ətraflı məhsul seçimləri',
         'instructions' => 'Məhsul üçün stok və qiymət məlumatlarını daxil etməyə imkan verir'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Mobil görünüşdə alt kateqoriyalar göstərin',
+    ]
 ];

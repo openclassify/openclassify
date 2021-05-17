@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Empfohlene Anzeigen",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'auf',
+    'search_ad_result_text' => '<strong>: Anzahl</strong> Anzeigen wurden in Ihrer <strong>: Name</strong> Suche gefunden',
     'search_ads_result_message' => [
         'name' => ':      Anzahl gefundener Anzeigen für:Namenssuche',
     ],
@@ -336,6 +337,15 @@ return [
     'ad_location' => 'Anzeigenposition',
     'owner' => 'Inhaber',
     'default_owner_instruction' => 'Der Eigentümer verwendet standardmäßig den aktuellen Benutzer, wenn kein Benutzer ausgewählt ist',
+    'create_page_subtitle' => 'Erstellen Sie die Anzeige fehlerfrei, indem Sie detaillierte Informationen zu Ihrer Anzeige eingeben.',
+
+    // Listing page
+    'ad_title' => 'Anzeigentitel',
+    'listing_date' => 'Listing Date',
+    'view' => 'Aussicht',
+    'ads_with_map' => 'Anzeigen mit Karte',
+    'advanced_sorting' => 'Erweiterte Sortierung',
+    'filter_by_word' => 'Nach Wort filtern',
 
     'free' => 'Frei',
     'ad_date' => 'Anzeigedatum',
@@ -359,4 +369,5 @@ return [
     'old_price' => [
         'name' => 'Alter Preis'
     ],
+	'save_search' => 'Sichere Suche',
 ];

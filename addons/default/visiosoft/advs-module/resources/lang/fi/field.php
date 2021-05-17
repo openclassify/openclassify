@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Suositellut mainokset",
     'trending_ads' => 'Trendind-mainokset',
     'search_ad_result_prefix' => 'päällä',
+    'search_ad_result_text' => '<strong>: count</strong> ilmoitusta löytyi <strong>: name</strong> -hakustasi',
     'search_ads_result_message' => [
         'name' => ': laskea ilmoituksia haulle: nimihaku',
     ],
@@ -335,6 +336,14 @@ return [
     'ad_location' => 'Mainoksen sijainti',
     'owner' => 'Omistaja',
     'default_owner_instruction' => 'Omistaja määrittää oletusasetukset nykyiselle käyttäjälle, jos ketään ei ole valittu',
+
+    // Listing page
+    'ad_title' => 'Mainoksen otsikko',
+    'listing_date' => 'Listauspäivä',
+    'view' => 'Näytä',
+    'ads_with_map' => 'Mainokset kartalla',
+    'advanced_sorting' => 'Edistynyt lajittelu',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Vapaa',
     'ad_date' => 'Ilmoituksen päivämäärä',

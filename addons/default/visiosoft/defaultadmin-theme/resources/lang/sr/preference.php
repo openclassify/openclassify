@@ -2,29 +2,29 @@
 
 return [
     'sidebar_hover' => [
-        'name'         => 'Лебдење бочне траке',
-        'instructions' => 'Проширити бочну траку при преласку показивача?',
+        'name'         => 'Hover Sidebar-a',
+        'instructions' => 'Proširi sajdbar na hover?',
     ],
     'navigation'    => [
-        'name'         => 'Навигација',
-        'instructions' => 'Одредите свој <em>лични</em> редослед навигације.',
-        'warning'      => 'Прва доступна навигацијска ставка користи се као ваша <strong>почетна</strong> област.',
-        'reorder'      => 'Драг анд дроп на главну навигацију ставке у <strong>бочној траци</strong> да их преуредити.',
+        'name'         => 'Navigacija',
+        'instructions' => 'Navedite <em>svoj</em> redosled navigacije.',
+        'warning'      => 'Prva dostupna navigaciona stavka koristi se kao <strong> početna </strong>.',
+        'reorder'      => 'Prevucite i ispustite primarne stavke za navigaciju na <strong> bočnoj traci </strong> da biste ih preuredili.',
     ],
     'display'       => [
-        'name'         => 'Приказ густине',
-        'instructions' => 'Компактан приказ омогућава истовремено приказивање више садржаја на екрану.',
+        'name'         => 'Display Density',
+        'instructions' => 'Kompaktan prikaz omogućava istovremeno prikazivanje više sadržaja na ekranu.',
         'option'       => [
-            'default' => 'Уобичајено',
-            'compact' => 'Компактан',
+            'default' => 'Podrazumevano',
+            'compact' => 'Kompaktno',
         ],
     ],
     'sidebars'      => [
-        'name'         => 'Режим бочне траке',
-        'instructions' => 'Статичке бочне траке ће увек бити видљиве.',
+        'name'         => 'Mod Sidebar-a',
+        'instructions' => 'Statičke bočne trake će uvek biti vidljive.',
         'option'       => [
-            'default' => 'Уобичајено',
-            'static'  => 'Статички',
+            'default' => 'Podrazumevano',
+            'static'  => 'Static',
         ],
     ],
 ];

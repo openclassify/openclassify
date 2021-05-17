@@ -108,7 +108,7 @@ return [
         'name' => 'Unpublished'
     ],
     'finish_at' => [
-        'name' => 'Finish At'
+        'name' => 'Finish Date'
     ],
     'cover_photo' => [
         'name' => 'Cover Photo'
@@ -336,6 +336,7 @@ return [
     'ad_location' => 'Ad Location',
     'owner' => 'Owner',
     'default_owner_instruction' => 'The owner will default to the current user if no user is selected',
+    'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
 
     // Listing page
     'ad_title' => 'Ad title',
@@ -343,6 +344,8 @@ return [
     'view' => 'View',
     'ads_with_map' => 'Ads With Map',
     'advanced_sorting' => 'Advanced Sorting',
+    'filter_by_word' => 'Filter by word',
+    'filter_by' => 'Filter by :name',
 
     'free' => 'Free',
     'ad_date' => 'Ad Date',
@@ -365,5 +368,9 @@ return [
 	],
     'old_price' => [
         'name' => 'Old Price'
+    ],
+	'save_search' => 'Save Search',
+    'publish_at' => [
+        'name' => 'Publish Date'
     ],
 ];

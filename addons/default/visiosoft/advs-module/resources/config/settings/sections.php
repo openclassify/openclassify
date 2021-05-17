@@ -18,16 +18,18 @@ return [
                     'tcmb_exchange_url',
                     'enabled_currencies',
 	                'disable_sentry',
+	                'hide_ad_cat',
                 ],
             ],
             'ads' => [
                 'title' => 'visiosoft.module.advs::section.ads',
                 'fields' => [
-                    'detailed_product_options',
+                    'show_finish_and_publish_date',
                     'latest-limit',
                     'popular_ads_limit',
                     'ads_image_limit',
                     'default_view_type',
+	                'show_price_to_members_only',
                     'price_area_hidden',
                     'hide_listing_standard_price',
                     'hide_zero_price',
@@ -38,6 +40,7 @@ return [
                     'get_categories',
                     'listing_page_image',
                     'show_ads_count',
+                    'show_subcats_mobile',
                 ],
             ],
 	        'ads_detail' => [
@@ -50,6 +53,7 @@ return [
             'create_ad' => [
                 'title' => 'visiosoft.module.advs::section.create_ad',
                 'fields' => [
+                    'detailed_product_options',
                     'steps_color',
                     'create_ad_button_color',
                     'hide_standard_price_field',

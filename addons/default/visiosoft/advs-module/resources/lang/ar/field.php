@@ -211,6 +211,7 @@ return [
     'featured_ads' => "إعلانات مميزة",
     'trending_ads' => 'إعلانات Trendind',
     'search_ad_result_prefix' => 'على',
+    'search_ad_result_text' => '<strong>: عدد</strong> تم العثور على إعلانات في <strong>: اسم</strong> بحث',
     'search_ads_result_message' => [
         'name' => ':      عدد الإعلانات التي تم العثور عليها لـ:search name',
     ],
@@ -335,6 +336,15 @@ return [
     'ad_location' => 'موقع الإعلان',
     'owner' => 'صاحب',
     'default_owner_instruction' => 'سيتحول المالك إلى المستخدم الحالي افتراضيًا إذا لم يتم تحديد أي مستخدم',
+    'create_page_subtitle' => 'قم بإنشاء الإعلان بشكل لا تشوبه شائبة عن طريق إدخال معلومات مفصلة حول إعلانك.',
+
+    // Listing page
+    'ad_title' => 'عنوان الاعلان',
+    'listing_date' => 'تاريخ الإدراج',
+    'view' => 'منظر',
+    'ads_with_map' => 'الإعلانات مع الخريطة',
+    'advanced_sorting' => 'الفرز المتقدم',
+    'filter_by_word' => 'تصفية بالكلمة',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
@@ -358,4 +368,5 @@ return [
     'old_price' => [
         'name' => 'سعر قديم'
     ],
+	'save_search' => 'حفظ البحث',
 ];

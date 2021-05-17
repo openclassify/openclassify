@@ -211,6 +211,7 @@ return [
     'featured_ads' => "Doporučené reklamy",
     'trending_ads' => 'Trendové reklamy',
     'search_ad_result_prefix' => 'na',
+    'search_ad_result_text' => '<strong>: při <strong>: name</strong> bylo nalezeno</strong>',
     'search_ads_result_message' => [
         'name' => ': počet nalezených reklam pro: vyhledávání jmen',
     ],
@@ -335,6 +336,14 @@ return [
     'ad_location' => 'Umístění reklamy',
     'owner' => 'Majitel',
     'default_owner_instruction' => 'Vlastník bude výchozí pro aktuálního uživatele, pokud není vybrán žádný uživatel',
+
+    // Listing page
+    'ad_title' => 'Název reklamy',
+    'listing_date' => 'Datum zápisu',
+    'view' => 'Pohled',
+    'ads_with_map' => 'Reklamy s mapou',
+    'advanced_sorting' => 'Pokročilé třídění',
+    'filter_by_word' => 'Filter by word',
 
     'free' => 'Volný, uvolnit',
     'ad_date' => 'Datum inzerátu',

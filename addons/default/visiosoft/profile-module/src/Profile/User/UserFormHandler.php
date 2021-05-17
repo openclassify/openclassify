@@ -19,6 +19,8 @@ class UserFormHandler
 
         $data = $builder->getPostData();
 
+        $data['file_id'] = $builder->getPostValue('file');
+
         $user = $userModel->find(\auth()->id());
         if ($user->email != $data['email']) {
             $user->notify(new UserUpdateEmailMail());

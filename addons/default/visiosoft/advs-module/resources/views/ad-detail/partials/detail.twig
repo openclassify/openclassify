@@ -35,14 +35,16 @@
                     </a>
                     {{ addBlock('ad-detail/seller/action',{'seller_id':adv.owner_id})|raw }}
                 </div>
-                <div class="col-md-12 m-2">
-                    <i class="fas fa-hashtag"></i>
-                    {{ trans('visiosoft.module.advs::field.ad_id') }}:{{ adv.id }}
-                </div>
-                <div class="col-md-12 m-2">
-                    <i class="far fa-clock text-dark"></i>
-                    {{ adv.created_at|date('d/m/Y') }}
-                </div>
+                {% if setting_value('visiosoft.module.advs::market_place') %}
+                    <div class="col-md-12 m-2">
+                        <i class="fas fa-hashtag"></i>
+                        {{ trans('visiosoft.module.advs::field.ad_id') }}:{{ adv.id }}
+                    </div>
+                    <div class="col-md-12 m-2">
+                        <i class="far fa-clock text-dark"></i>
+                        {{ adv.created_at|date('d/m/Y') }}
+                    </div>
+                {% endif %}
 
                 <!-- Detail With Block -->
                 {{ addBlock('ad-detail/details',{'adv':adv, 'options':options, 'configurations':configurations})|raw }}

@@ -108,7 +108,7 @@ return [
         'name' => 'Yayınlanmamış'
     ],
     'finish_at' => [
-        'name' => 'Bitiş Saati'
+        'name' => 'Bitiş Tarihi'
     ],
     'cover_photo' => [
         'name' => 'Kapak Fotoğrafı'
@@ -212,6 +212,7 @@ return [
     'featured_ads' => "Öne Çıkan İlanlar",
     'trending_ads' => 'Popüler İlanlar',
     'search_ad_result_prefix' => 'Aramanızda',
+    'search_ad_result_text' => '  <strong>:name</strong> aramanızda <strong>:count</strong> adet ilan bulundu',
     'search_ads_result_message' => [
         'name' => ':name aramanızda :count adet ilan bulunmuştur.
 ',
@@ -337,6 +338,15 @@ return [
     'ad_location' => 'İlan Konumu',
     'owner' => 'Sahip',
     'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
+    'create_page_subtitle' => 'Ürün veya ilan hakkında detaylı bilgi girebilirsiniz',
+
+    // Listing page
+    'ad_title' => 'Başlık',
+    'listing_date' => 'İlan Tarihi',
+    'view' => 'Görünüm',
+    'ads_with_map' => 'Haritalı İlanlar',
+    'advanced_sorting' => 'Gelişmiş Sıralama',
+    'filter_by_word' => 'Kelime İle Filtrele',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
@@ -359,5 +369,9 @@ return [
 	],
     'old_price' => [
         'name' => 'Eski fiyat'
+    ],
+	'save_search' => 'Aramayı Kaydet',
+    'publish_at' => [
+        'name' => 'Publish Date'
     ],
 ];

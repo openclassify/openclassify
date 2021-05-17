@@ -469,6 +469,8 @@ return [
     'change_password' => 'Změnit heslo',
     'choose_an_option' => 'Vyberte možnost...',
     'change_status' => 'Změnit stav',
+	'profile_settings' => 'Nastavení profilu',
+	'profile_detail' => 'Detail profilu',
 
     // Register page
     'accept_terms_label' => 'Souhlasím s podmínkami.',

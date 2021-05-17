@@ -8,7 +8,6 @@ class ProfileFormBuilder extends FormBuilder
     protected $model = UserModel::class;
 
     protected $fields = [
-        'file',
         'gsm_phone',
         'office_phone',
         'land_phone',

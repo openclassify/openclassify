@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'new_category' => 'Нова категорија',
-    'add_sub_category' => 'Додај подкатегорију',
-    'sub_category' => 'Прикажи поткатегорију',
-    'new_placeholderforsearch' => 'Ново резервирано место за истраживање',
+    'new_category' => 'Nova kategorija',
+    'add_sub_category' => 'Dodaj potkategoriju',
+    'sub_category' => 'Prikaži potkategoriju',
+    'new_placeholderforsearch' => 'Novi placeholder za pretragu',
 ];

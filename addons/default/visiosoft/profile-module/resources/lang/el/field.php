@@ -471,6 +471,8 @@ return [
     'change_password' => 'Άλλαξε κωδικό',
     'choose_an_option' => 'Διάλεξε μια επιλογή...',
     'change_status' => 'Αλλαγή κατάστασης',
+	'profile_settings' => 'Ρυθμίσεις προφίλ',
+	'profile_detail' => 'Λεπτομέρεια προφίλ',
 
     // Register page
     'accept_terms_label' => 'Αποδέχομαι τους όρους.',

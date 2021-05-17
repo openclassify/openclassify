@@ -64,7 +64,7 @@ class ValueTableBuilder extends TableBuilder
         'show_headers'       => false,
         'sortable_headers'   => false,
         'table_view'         => 'anomaly.field_type.file::table',
-        'no_results_message' => 'visiosoft.field_type.singlefile::message.no_file_selected',
+        'no_results_message' => null,
     ];
 
     /**

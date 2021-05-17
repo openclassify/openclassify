@@ -262,4 +262,7 @@ return [
         'name' => 'Podrobné možnosti produktu',
         'instructions' => 'Umožňuje zadat informace o skladu a ceně produktu'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Zobrazit podkategorie v mobilním zobrazení',
+    ]
 ];

@@ -1,6 +1,7 @@
 <?php
 
 return [
-    'placeholder' => 'Откуцајте овде за претрагу',
-    'null_msg' => 'Није пронађен',
+    'placeholder' => 'Otkucajte ovde za pretragu',
+    'null_msg' => 'Nije pronađen',
+    'choose_country' => 'Izaberite državu',
 ];

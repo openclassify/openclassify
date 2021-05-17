@@ -82,7 +82,6 @@
         "composer/composer": "2.*",
         "wikimedia/composer-merge-plugin": "2.*",
         "pusher/pusher-php-server": "^5.0",
-        "laravel/framework": "v8.36.2",
         "simplepie/simplepie": "^1.5.0",
         "guzzlehttp/guzzle": "^7.3"
     },
@@ -111,7 +110,9 @@
             "database"
         ],
         "psr-4": {
-            "App\\": "app/"
+            "App\\": "app/",
+            "Database\\Factories\\": "database/factories/",
+            "Database\\Seeders\\": "database/seeders/"
         }
     },
     "autoload-dev": {

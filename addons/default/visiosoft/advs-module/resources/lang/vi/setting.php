@@ -262,4 +262,7 @@ return [
         'name' => 'Tùy chọn sản phẩm chi tiết',
         'instructions' => 'Cho phép bạn nhập thông tin hàng tồn kho và giá cả cho sản phẩm'
     ],
+    'show_subcats_mobile' => [
+        'name' => 'Hiển thị các danh mục phụ trên chế độ xem trên thiết bị di động',
+    ]
 ];

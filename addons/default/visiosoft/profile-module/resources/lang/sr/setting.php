@@ -2,52 +2,52 @@
 
 return [
     'show_my_ads' => [
-        'name' => 'Прикажи картицу Моји огласи',
+        'name' => 'Prikaži karticu Moji oglasi',
     ],
     'upload_avatar' => [
-        'name' => 'Аватар Уплоад',
+        'name' => 'Otpremanje avatara',
     ],
     'show_tax_office' => [
-        'name' => 'Покажите поље пореске управе',
+        'name' => 'Pokažite polje poreske uprave',
     ],
     'show_checkbox_terms_on_register' => [
-        'name' => 'Прикажи услове за потврду у регистру',
-        'instructions' => 'На обрасцу за регистрацију прикажите „Прихвати појам“, „закон о заштити“, „термин за приватност“, „смс и е-пошту“'
+        'name' => 'Pokaži checkbox Uslovi za registraciju',
+        'instructions' => 'Na obrascu za registraciju prikažite „Prihvati pojam“, „zakon o zaštiti“, „termin za privatnost“, „sms i e-poštu“'
     ],
     'register_protection_url' => [
-        'name' => 'Региструјте заштитни УРЛ',
+        'name' => 'Registrujte zaštitni URL',
     ],
     'register_privacy_url' => [
-        'name' => 'Региструјте УРЛ приватности',
+        'name' => 'Registrujte URL za privatnost',
     ],
     'show_education_profession' => [
-        'name' => 'Прикажите поља образовања и професије',
-        'instructions' => 'На страници за уређивање профила прикажите „Образовање“, „Стање образовања“ и „Занимање“'
+        'name' => 'Prikažite polja obrazovanja i profesije',
+        'instructions' => 'Prikažite „Obrazovanje“, „Država obrazovanja“ i „Zanimanje“ na stranici za uređivanje profila'
     ],
     'google_captcha_site_key' => [
-        'name' => 'Кључ веб странице Гоогле Цаптцха',
+        'name' => 'Google Captcha Site Key',
     ],
     'google_captcha_secret_key' => [
-        'name' => 'Гоогле Цаптцха тајни кључ',
+        'name' => 'Google Captcha Secret Key',
     ],
     'score_threshold' => [
-        'name' => 'Сцоре Тхресхолд',
-        'instructions' => 'Вредност између 0 и 1. Што је већи праг, строжији РеЦаптцха покушава да утврди да ли је корисник бот или не.',
+        'name' => 'Score Threshold',
+        'instructions' => 'Vrednost između 0 i 1. Što je veći prag, to je strožiji ReCaptcha u pokušaju da utvrdi da li je korisnik bot ili ne.',
     ],
     'education' => [
-        'name' => 'образовање'
+        'name' => 'Obrazovanje'
     ],
     'state_of_education' => [
-        'name' => 'Држава образовања'
+        'name' => 'Država obrazovanja'
     ],
     'profession' => [
-        'name' => 'Професија'
+        'name' => 'Profesija'
     ],
     'hide_register_type_profile' => [
-        'name' => 'Сакриј тип регистрације на страници профила',
-        'instructions' => 'Сакрива поље типа регистра на страници за уређивање профила.',
+        'name' => 'Sakrij tip registracije na stranici profila',
+        'instructions' => 'Sakriva polje tipa registra na stranici za uređivanje profila.',
     ],
     'required_district' => [
-        'name' => 'Потребан округ'
+        'name' => 'Obavezan deo grada'
     ],
 ];

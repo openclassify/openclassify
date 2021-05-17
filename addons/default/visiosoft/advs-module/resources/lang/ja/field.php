@@ -211,6 +211,7 @@ return [
     'featured_ads' => "注目の広告",
     'trending_ads' => 'Trendind Ads',
     'search_ad_result_prefix' => 'オン',
+    'search_ad_result_text' => '<strong>：カウント</strong> <strong>：名前</strong> 検索で見つかりました',
     'search_ads_result_message' => [
         'name' => '：name検索で見つかった：count個の広告',
     ],
@@ -335,6 +336,14 @@ return [
     'ad_location' => '広告の場所',
     'owner' => 'オーナー',
     'default_owner_instruction' => 'ユーザーが選択されていない場合、所有者はデフォルトで現在のユーザーになります',
+
+    // Listing page
+    'ad_title' => '広告タイトル',
+    'listing_date' => '上場日',
+    'view' => '見る',
+    'ads_with_map' => '地図付きの広告',
+    'advanced_sorting' => '高度な並べ替え',
+    'filter_by_word' => 'Filter by word',
 
     'free' => '自由',
     'ad_date' => '広告日',
