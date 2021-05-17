@@ -336,6 +336,7 @@ return [
     'ad_location' => '광고 위치',
     'owner' => '소유자',
     'default_owner_instruction' => '사용자가 선택되지 않은 경우 소유자는 기본적으로 현재 사용자로 설정됩니다.',
+    'create_page_subtitle' => '광고에 대한 자세한 정보를 입력하여 완벽하게 광고를 만드십시오.',
 
     // Listing page
     'ad_title' => '광고 제목',
@@ -343,7 +344,8 @@ return [
     'view' => '전망',
     'ads_with_map' => '지도가있는 광고',
     'advanced_sorting' => '고급 정렬',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => '단어로 필터링',
+    'filter_by' => ': 이름으로 필터링',
 
     'free' => '비어 있는',
     'ad_date' => '광고 날짜',
@@ -366,5 +368,9 @@ return [
 	],
     'old_price' => [
         'name' => '이전 가격'
+    ],
+	'save_search' => '검색 저장',
+    'publish_at' => [
+        'name' => '게시 날짜'
     ],
 ];
