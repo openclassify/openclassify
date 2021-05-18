@@ -106,10 +106,14 @@
                                             {% endif %}
                                         </div>
                                     </div>
-                                    <div class="select-price{{ setting_value('visiosoft.module.advs::hide_standard_price_field') or setting_value('visiosoft.module.advs::market_place') != true ? ' d-none' }}">
+                                    <div class="select-price">
+                                        {% set HideStandardPrice = setting_value('visiosoft.module.advs::hide_standard_price_field') or setting_value('visiosoft.module.advs::market_place') != true ? ' d-none' %}
+
                                         <label>
-                                            {{ form.fields.standard_price.label }}
-                                            <span class="required">*</span>
+                                            <span class="{{ HideStandardPrice }}">
+                                                {{ form.fields.standard_price.label }}
+                                                <span class="required">*</span>
+                                            </span>
                                         </label>
 
                                         <div class="col-12 standard-price-hidden d-none">
@@ -119,14 +123,16 @@
                                         </div>
 
                                         <div class="d-flex">
-                                            {% set standardPriceValue = form.fields.standard_price.value|split('.') %}
-                                            <input class="mt-3 border-0 text-right standard-price-field whole-price flex-fill"
-                                                   placeholder="0" value="{{ standardPriceValue|first }}" type="text">
-                                            {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
-                                                <input class="mt-3 border-0 ml-2 text-center standard-price-decimal decimal-price"
-                                                       placeholder="00" type="text" value="{{ standardPriceValue[1] }}"
-                                                       maxlength="2">
-                                            {% endif %}
+                                            <span class="w-100 {{ HideStandardPrice }}">
+                                                {% set standardPriceValue = form.fields.standard_price.value|split('.') %}
+                                                <input class="mt-3 border-0 text-right standard-price-field whole-price flex-fill w-100"
+                                                       placeholder="0" value="{{ standardPriceValue|first }}" type="text">
+                                                {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
+                                                    <input class="mt-3 border-0 ml-2 text-center standard-price-decimal decimal-price"
+                                                           placeholder="00" type="text" value="{{ standardPriceValue[1] }}"
+                                                           maxlength="2">
+                                                {% endif %}
+                                            </span>
                                             <select name="currency" class="mt-3 border-0 ml-2" id="currency" required>
                                                 {% for currency in config_get('streams::currencies.enabled') %}
                                                     <option value="{{ currency }}">
