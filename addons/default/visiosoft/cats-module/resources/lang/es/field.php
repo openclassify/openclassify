@@ -34,4 +34,5 @@ return [
    espere. Eliminar subcategorías',
     'category_selection' => 'Selección de categoría',
     'go_to_parent' => 'Ir a los padres',
+	'preview' => 'Preview'
 ];
