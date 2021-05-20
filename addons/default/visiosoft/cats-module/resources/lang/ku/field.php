@@ -42,4 +42,5 @@ return [
 ',
     'go_to_parent' => 'Go To Parent
 ',
+	'preview' => 'Preview'
 ];
