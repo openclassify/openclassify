@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Si us plau, espereu. Esborra les subcategories',
     'category_selection' => 'Selecció de categories',
     'go_to_parent' => 'Ves al pare',
+	'preview' => 'Preview'
 ];
