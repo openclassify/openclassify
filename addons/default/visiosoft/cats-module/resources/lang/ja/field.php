@@ -33,4 +33,5 @@ return [
     'please_wait' => 'サブカテゴリを削除しています',
     'category_selection' => 'カテゴリー選択',
     'go_to_parent' => '親に移動',
+	'preview' => 'Preview'
 ];
