@@ -34,4 +34,5 @@ return [
    подождите. Удаление подкатегорий',
     'category_selection' => 'Выбор категории',
     'go_to_parent' => 'Перейти к родителю',
+	'preview' => 'Preview'
 ];
