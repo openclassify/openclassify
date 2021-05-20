@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Harap tunggu. Menghapus Sub Kategori',
     'category_selection' => 'Pemilihan Kategori',
     'go_to_parent' => 'Buka Orang Tua',
+	'preview' => 'Preview'
 ];
