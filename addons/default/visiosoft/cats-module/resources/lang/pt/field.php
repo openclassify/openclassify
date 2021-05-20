@@ -34,4 +34,5 @@ return [
    aguarde. Excluindo Subcategorias',
     'category_selection' => 'Seleção de categoria',
     'go_to_parent' => 'Vá para o pai',
+	'preview' => 'Preview'
 ];
