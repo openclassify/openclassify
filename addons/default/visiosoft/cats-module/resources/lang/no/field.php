@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Vent. Sletter underkategorier',
     'category_selection' => 'Kategorivalg',
     'go_to_parent' => 'Gå til foreldre',
+	'preview' => 'Preview'
 ];
