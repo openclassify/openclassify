@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Molimo pričekajte.Brisanje potkategorija',
     'category_selection' => 'Selekcija kategorija',
     'go_to_parent' => 'Idi na Parent-a',
+	'preview' => 'Preview'
 ];
