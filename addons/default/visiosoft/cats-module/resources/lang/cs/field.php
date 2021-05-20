@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Čekejte prosím. Odstranění podkategorií',
     'category_selection' => 'Výběr kategorie',
     'go_to_parent' => 'Přejít na rodiče',
+	'preview' => 'Preview'
 ];
