@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Wag asseblief. Verwyder subkategorieë',
     'category_selection' => 'Kategorie seleksie',
     'go_to_parent' => 'Gaan na ouer',
+	'preview' => 'Preview'
 ];
