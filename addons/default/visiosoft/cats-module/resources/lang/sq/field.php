@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Ju lutemi prisni. Zgjedhja e kategorive nën',
     'category_selection' => 'Zgjedhja e kategorisë',
     'go_to_parent' => 'Shkoni te Prindi',
+	'preview' => 'Preview'
 ];
