@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Odota. Poistetaan alaluokat',
     'category_selection' => 'Luokan valinta',
     'go_to_parent' => 'Mene vanhemmalle',
+	'preview' => 'Preview'
 ];
