@@ -33,4 +33,5 @@ return [
     'please_wait' => 'Vent venligst. Sletning af underkategorier',
     'category_selection' => 'Valg af kategori',
     'go_to_parent' => 'Gå til forælder',
+	'preview' => 'Preview'
 ];
