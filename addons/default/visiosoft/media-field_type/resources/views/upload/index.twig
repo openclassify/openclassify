@@ -18,7 +18,7 @@
 
     var imageCount = {{ field_type.value|length < setting_value('visiosoft.module.advs::ads_image_limit')
     ? setting_value('visiosoft.module.advs::ads_image_limit') - field_type.value|length
-    : 0 }}
+    : 0 }};
 
     var settings_image = {
         'resize_width':"{{ setting_value('visiosoft.module.advs::full_image_width') }}",
