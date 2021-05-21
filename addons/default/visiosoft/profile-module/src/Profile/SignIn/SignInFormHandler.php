@@ -33,7 +33,7 @@ class SignInFormHandler
             (strpos(session('url')['intended'], 'admin') !== false) ? request()->session()->flush() : '';
         }
 
-        $authenticator->login($user, $builder->getFormValue('remember_me'));
+        $authenticator->login($user, !!$builder->getFormValue('remember_me'));
 
         $builder->setFormResponse($redirect->intended($builder->getFormOption('redirect', '/')));
     }
