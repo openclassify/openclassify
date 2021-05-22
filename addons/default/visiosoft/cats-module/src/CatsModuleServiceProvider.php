@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\CatsModule;
 
+use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
@@ -59,12 +60,23 @@ class CatsModuleServiceProvider extends AddonServiceProvider
         'admin/cats/adcountcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@adCountCalc',
         'admin/cats/catlevelcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@catLevelCalc',
 
-        'admin/cats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index',
+        'admin/cats' => [
+            'as' => 'visiosoft.module.cats::admin_cats',
+            'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@index'
+        ],
         'admin/cats/create' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@create',
         'admin/cats/edit/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@edit',
         'admin/cats/category/delete/{id}' => [
             'as' => 'visiosoft.module.cats::admin.delete_category',
             'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@delete',
+        ],
+        'admin/cats/import' => [
+            'as' => 'visiosoft.module.cats::import',
+            'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@import',
+        ],
+        'admin/cats/export' => [
+            'as' => 'visiosoft.module.cats::export',
+            'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@export',
         ],
 
         // Sitemap
@@ -187,10 +199,24 @@ class CatsModuleServiceProvider extends AddonServiceProvider
     /**
      * Boot the addon.
      */
-    public function boot()
+    public function boot(AddonCollection $addonCollection)
     {
-        // Run extra post-boot registration logic here.
-        // Use method injection or commands to bring in services.
+        $settings_url = [
+            'import' => [
+                'title' => 'visiosoft.module.advs::button.import',
+                'href' => route('visiosoft.module.cats::import'),
+                'page' => 'visiosoft.module.cats'
+            ],
+            'export' => [
+                'title' => 'visiosoft.module.advs::button.export',
+                'href' => route('visiosoft.module.cats::export'),
+                'page' => 'visiosoft.module.cats'
+            ],
+        ];
+
+        foreach ($settings_url as $key => $value) {
+            $addonCollection->get($value['page'])->addSection($key, $value);
+        }
     }
 
     /**

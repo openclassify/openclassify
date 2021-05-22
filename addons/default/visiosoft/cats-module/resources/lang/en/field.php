@@ -30,6 +30,10 @@ return [
         'instructions' => 'It is used to add icons indicating the category type.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Please wait.Deleting Sub Categories',
     'category_selection' => 'Category Selection',
     'go_to_parent' => 'Go To Parent',

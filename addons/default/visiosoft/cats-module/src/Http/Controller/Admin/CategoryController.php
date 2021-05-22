@@ -1,13 +1,17 @@
 <?php namespace Visiosoft\CatsModule\Http\Controller\Admin;
 
+use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
 use Anomaly\FilesModule\File\FileSanitizer;
 use Anomaly\FilesModule\File\FileUploader;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
+use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use League\Flysystem\MountManager;
+use Visiosoft\CatsModule\Category\CategoryExport;
+use Visiosoft\CatsModule\Category\CategoryImport;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Visiosoft\CatsModule\Category\Command\CalculateAdsCount;
 use Visiosoft\CatsModule\Category\Command\CalculateCategoryLevel;
@@ -17,6 +21,7 @@ use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Traits\DeleteCategory;
+use Maatwebsite\Excel\Facades\Excel;
 
 class CategoryController extends AdminController
 {
@@ -273,4 +278,38 @@ class CategoryController extends AdminController
         }
     }
 
+    public function import(FormBuilder $builder, FileRepositoryInterface $fileRepository){
+
+        if (request()->action == "save" and $file = $fileRepository->find(request()->file)) {
+            if ($file->extension === 'xls' || $file->extension === 'xlsx') {
+                $pathToFolder = "/storage/streams/default/files-module/local/ads_excel/";
+                Excel::import(new CategoryImport(), base_path() . $pathToFolder . $file->name);
+                $this->messages->success(trans('streams::message.create_success', ['name' => trans('module::addon.title')]));
+            }
+        }
+
+        //Form Render
+        $builder->setFields([
+            'file' => [
+                "type" => "anomaly.field_type.file",
+                "config" => [
+                    'folders' => ["ads_excel"],
+                    'mode' => 'upload'
+                ]
+            ],
+        ]);
+        $builder->setActions([
+            'save'
+        ]);
+
+        $builder->setOptions([
+            'redirect' => route('visiosoft.module.cats::admin_cats')
+        ]);
+
+        return $builder->render();
+    }
+
+    public function export(){
+        return Excel::download(new CategoryExport(), 'cats-' . time() . '.xlsx');
+    }
 }
