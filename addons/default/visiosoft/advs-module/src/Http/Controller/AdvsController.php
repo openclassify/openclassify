@@ -290,9 +290,12 @@ class AdvsController extends PublicController
                 if ($adv->cf_json) {
                     $tempFeatures = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')
                         ->view($adv);
+                    $tempFeatures = array_values(array_filter($tempFeatures, function ($tempFeature) {
+                        return !is_array($tempFeature['custom_field_value']);
+                    }));
                     $features = array();
                     foreach ($listingCFs as $listingCF) {
-                        if ($key = array_search($listingCF->slug, array_column($tempFeatures, 'slug'))) {
+                        if (($key = array_search($listingCF->slug, array_column($tempFeatures, 'slug'))) !== false) {
                             $features[$listingCF->slug] = $tempFeatures[$key];
                         }
                     }
@@ -844,11 +847,19 @@ class AdvsController extends PublicController
 
             if (setting_value('visiosoft.module.advs::auto_approve') && $autoApprove) {
                 $defaultAdPublishTime = setting_value('visiosoft.module.advs::default_published_time');
-                $adv->update([
+
+                $update = [
                     'status' => 'approved',
-                    'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
-                    'publish_at' => date('Y-m-d H:i:s')
-                ]);
+                ];
+
+                if (!setting_value('visiosoft.module.advs::show_finish_and_publish_date')) {
+                    $update = array_merge($update, [
+                        'finish_at' => date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $defaultAdPublishTime . ' day')),
+                        'publish_at' => date('Y-m-d H:i:s')
+                    ]);
+                }
+
+                $adv->update($update);
             }
 
             $form->render($this->request->update_id);
