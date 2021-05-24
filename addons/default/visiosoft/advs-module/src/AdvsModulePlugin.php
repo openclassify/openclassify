@@ -136,6 +136,12 @@ class AdvsModulePlugin extends Plugin
                     return null;
                 }
             ),
+            new \Twig_SimpleFilter(
+                'json_decode',
+                function ($array) {
+                    return json_decode($array, true);
+                }
+            ),
         ];
     }
 }
