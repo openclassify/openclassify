@@ -116,9 +116,9 @@ class AdvsModulePlugin extends Plugin
                 }
             ),
 	        new \Twig_SimpleFunction(
-		        'diffForHumans',
-		        function ($date) {
-			        return $date->diffForHumans();
+		        'dateFormat',
+		        function ($date, $functionName) {
+			        return $date->{$functionName}();
 		        }
 	        )
         ];
