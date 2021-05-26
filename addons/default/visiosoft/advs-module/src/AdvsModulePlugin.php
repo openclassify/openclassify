@@ -115,6 +115,12 @@ class AdvsModulePlugin extends Plugin
                     );
                 }
             ),
+	        new \Twig_SimpleFunction(
+		        'diffForHumans',
+		        function ($date) {
+			        return $date->diffForHumans();
+		        }
+	        )
         ];
     }
 
