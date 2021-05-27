@@ -30,6 +30,10 @@ return [
         'instructions' => 'Dit word gebruik om ikone by te voeg wat die kategorietipe aandui.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Wag asseblief. Verwyder subkategorieë',
     'category_selection' => 'Kategorie seleksie',
     'go_to_parent' => 'Gaan na ouer',
