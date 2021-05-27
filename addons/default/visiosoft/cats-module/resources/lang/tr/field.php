@@ -30,6 +30,10 @@ return [
         'instructions' => 'Kategori türünü belirten ikon eklemeye yarar.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Lütfen bekleyin. Alt Kategoriler Siliniyor',
     'category_selection' => 'Kategori Seçimi',
     'go_to_parent' => 'Kategoriye Dön',
