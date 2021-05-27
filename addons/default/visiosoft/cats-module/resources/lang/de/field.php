@@ -30,6 +30,10 @@ return [
         'instructions' => 'Es wird verwendet, um Symbole hinzuzufügen, die den Kategorietyp angeben.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Bitte warten. Löschen von Unterkategorien',
     'category_selection' => 'Kategorieauswahl',
     'go_to_parent' => 'Gehe zu Eltern',
