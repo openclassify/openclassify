@@ -30,6 +30,10 @@ return [
         'instructions' => 'A kategória típusát jelző ikonok hozzáadására szolgál.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Kérjük, várjon. Alkategóriák törlése',
     'category_selection' => 'Kategória kiválasztása',
     'go_to_parent' => 'Menjen a Szülőhöz',
