@@ -30,6 +30,10 @@ return [
         'instructions' => 'Bu kateqoriya növünü göstərən nişanlar əlavə etmək üçün istifadə olunur.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Xahiş edirəm gözləyin. Alt kateqoriyaların silinməsi',
     'category_selection' => 'Kateqoriya seçimi',
     'go_to_parent' => 'Valideynə get',
