@@ -30,6 +30,10 @@ return [
         'instructions' => 'カテゴリタイプを示すアイコンを追加するために使用されます。',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'サブカテゴリを削除しています',
     'category_selection' => 'カテゴリー選択',
     'go_to_parent' => '親に移動',
