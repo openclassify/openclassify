@@ -30,6 +30,10 @@ return [
         'instructions' => 'Ini digunakan untuk menambahkan ikon yang menunjukkan jenis kategori.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Harap tunggu. Menghapus Sub Kategori',
     'category_selection' => 'Pemilihan Kategori',
     'go_to_parent' => 'Buka Orang Tua',
