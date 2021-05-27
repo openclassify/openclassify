@@ -30,6 +30,10 @@ return [
         'instructions' => 'Viene utilizzato per aggiungere icone che indicano il tipo di categoria.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Attendere. Eliminazione delle sottocategorie',
     'category_selection' => 'Selezione della categoria',
     'go_to_parent' => 'Vai al genitore',
