@@ -338,6 +338,9 @@ return [
     'owner' => 'Proprietario',
     'default_owner_instruction' => 'Se non è selezionato alcun utente, per impostazione predefinita il proprietario sarà l\'utente corrente',
     'create_page_subtitle' => 'Crea l\'annuncio in modo impeccabile inserendo informazioni dettagliate sul tuo annuncio.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Titolo dell\'annuncio',
