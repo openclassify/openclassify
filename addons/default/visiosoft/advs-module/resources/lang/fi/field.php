@@ -337,6 +337,9 @@ return [
     'owner' => 'Omistaja',
     'default_owner_instruction' => 'Omistaja määrittää oletusasetukset nykyiselle käyttäjälle, jos ketään ei ole valittu',
     'create_page_subtitle' => 'Luo mainos moitteettomasti syöttämällä yksityiskohtaiset tiedot mainoksestasi.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Mainoksen otsikko',
