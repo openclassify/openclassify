@@ -337,6 +337,9 @@ return [
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر هیچ کاربری انتخاب نشود ، مالک به عنوان کاربر پیش فرض عمل می کند',
     'create_page_subtitle' => 'با وارد کردن اطلاعات دقیق در مورد تبلیغ خود ، تبلیغ را بدون نقص ایجاد کنید.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'عنوان آگهی',
