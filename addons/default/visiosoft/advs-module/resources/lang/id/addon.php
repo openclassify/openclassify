@@ -4,5 +4,5 @@ return [
     'title'       => 'Iklan',
     'name'        => 'Modul Iklan',
     'description' => 'Modul Iklan',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Ini adalah layar tempat Anda dapat menambahkan, menghapus, dan menyunting iklan dari halaman Iklan. Pada halaman ini, Anda dapat dengan mudah melakukan operasi seperti mengelola postingan dan konfigurasi iklan.'
 ];
