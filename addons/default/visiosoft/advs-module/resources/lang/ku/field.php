@@ -433,6 +433,9 @@ return [
     'owner' => 'Xwedî',
     'default_owner_instruction' => 'Ger bikarhêner neyê bijartin dê xwedêgiravî ji bikarhênerê heyî re veqetîne',
     'create_page_subtitle' => 'Bi ketina agahdariyên berfireh ên der barê reklama xwe de bêkêmasî reklamê biafirînin.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Sernavê reklamê',
