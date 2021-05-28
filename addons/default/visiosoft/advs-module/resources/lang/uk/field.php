@@ -337,6 +337,9 @@ return [
     'owner' => 'Власник',
     'default_owner_instruction' => 'Власник встановить за замовчуванням поточного користувача, якщо не вибрано жодного користувача',
     'create_page_subtitle' => 'Створіть оголошення бездоганно, ввівши детальну інформацію про нього.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Заголовок оголошення',
