@@ -337,6 +337,9 @@ return [
     'owner' => '所有者',
     'default_owner_instruction' => '如果未选择任何用户，所有者将默认为当前用户',
     'create_page_subtitle' => '输入有关您广告的详细信息，以完美无瑕地制作广告。',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => '广告标题',
