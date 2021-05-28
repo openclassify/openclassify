@@ -337,6 +337,9 @@ return [
     'owner' => 'Vlasnik',
     'default_owner_instruction' => 'Vlasnik će podrazumevano biti trenutni korisnk, ukoliko korisnik nije izabran',
     'create_page_subtitle' => 'Create the ad flawlessly by entering detailed information about your ad.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Naslov oglasa',
