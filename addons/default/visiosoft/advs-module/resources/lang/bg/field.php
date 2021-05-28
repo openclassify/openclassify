@@ -337,6 +337,9 @@ return [
     'owner' => 'Собственик',
     'default_owner_instruction' => 'Собственикът ще използва по подразбиране текущия потребител, ако не е избран потребител',
     'create_page_subtitle' => 'Създайте рекламата безупречно, като въведете подробна информация за нея.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Заглавие на рекламата',
