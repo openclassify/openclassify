@@ -4,5 +4,5 @@ return [
     'title'       => 'Kategori',
     'name'        => 'Modul Kategori',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Ini adalah layar dimana Anda dapat menambah, menghapus, dan menyunting kategori dari halaman kategori. Anda dapat dengan mudah mengelola kategori dan subkategori utama dari halaman ini.',
 ];
