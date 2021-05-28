@@ -337,6 +337,9 @@ return [
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر کوئی صارف منتخب نہیں ہوتا ہے تو مالک موجودہ صارف سے ڈیفالٹ ہوجائے گا',
     'create_page_subtitle' => 'اپنے اشتہار کے بارے میں تفصیلی معلومات داخل کرکے بلا اشتعال اشتہار بنائیں۔',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'اشتہار کا عنوان',
