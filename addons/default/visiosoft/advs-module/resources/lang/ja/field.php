@@ -337,6 +337,9 @@ return [
     'owner' => 'オーナー',
     'default_owner_instruction' => 'ユーザーが選択されていない場合、所有者はデフォルトで現在のユーザーになります',
     'create_page_subtitle' => '広告に関する詳細情報を入力して、完璧に広告を作成します。',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => '広告タイトル',
