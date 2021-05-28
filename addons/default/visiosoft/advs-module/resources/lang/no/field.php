@@ -337,6 +337,9 @@ return [
     'owner' => 'Eieren',
     'default_owner_instruction' => 'Eieren vil som standard være den nåværende brukeren hvis ingen bruker er valgt',
     'create_page_subtitle' => 'Opprett annonsen feilfritt ved å legge inn detaljert informasjon om annonsen din.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Annonsetittel',
