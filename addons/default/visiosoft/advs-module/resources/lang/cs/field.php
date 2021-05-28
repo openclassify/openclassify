@@ -337,6 +337,9 @@ return [
     'owner' => 'Majitel',
     'default_owner_instruction' => 'Vlastník bude výchozí pro aktuálního uživatele, pokud není vybrán žádný uživatel',
     'create_page_subtitle' => 'Vytvořte reklamu bezchybně zadáním podrobných informací o reklamě.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Název reklamy',
