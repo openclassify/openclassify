@@ -338,6 +338,9 @@ return [
     'owner' => 'Eigenaar',
     'default_owner_instruction' => 'De eigenaar wordt standaard de huidige gebruiker als er geen gebruiker is geselecteerd',
     'create_page_subtitle' => 'Maak de advertentie feilloos door gedetailleerde informatie over uw advertentie in te voeren.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Voeg titel toe',
