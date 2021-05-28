@@ -339,6 +339,9 @@ return [
     'owner' => 'Sahip',
     'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
     'create_page_subtitle' => 'Ürün veya ilan hakkında detaylı bilgi girebilirsiniz',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Başlık',
