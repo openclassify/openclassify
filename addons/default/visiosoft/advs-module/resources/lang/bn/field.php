@@ -337,6 +337,9 @@ return [
     'owner' => 'মালিক',
     'default_owner_instruction' => 'কোনও ব্যবহারকারী নির্বাচিত না হলে মালিক বর্তমান ব্যবহারকারীর কাছে ডিফল্ট হবে',
     'create_page_subtitle' => 'আপনার বিজ্ঞাপন সম্পর্কে বিস্তারিত তথ্য প্রবেশ করে নির্বিঘ্নে বিজ্ঞাপনটি তৈরি করুন।',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'বিজ্ঞাপনের শিরোনাম',
