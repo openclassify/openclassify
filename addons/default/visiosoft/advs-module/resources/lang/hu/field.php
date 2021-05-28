@@ -337,6 +337,9 @@ return [
     'owner' => 'Tulajdonos',
     'default_owner_instruction' => 'A tulajdonos alapértelmezés szerint az aktuális felhasználót állítja be, ha nincs kiválasztva felhasználó',
     'create_page_subtitle' => 'Hozza létre a hirdetést hibátlanul a hirdetésével kapcsolatos részletes információk megadásával.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Hirdetés címe',
