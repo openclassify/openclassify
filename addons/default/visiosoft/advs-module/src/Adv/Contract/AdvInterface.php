@@ -4,6 +4,8 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 interface AdvInterface extends EntryInterface
 {
+    public function getTransNameAttribute();
+
     public function is_enabled($slug);
 
     public function is_enabled_extension($slug);
