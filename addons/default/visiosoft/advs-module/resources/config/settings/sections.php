@@ -53,6 +53,7 @@ return [
             'create_ad' => [
                 'title' => 'visiosoft.module.advs::section.create_ad',
                 'fields' => [
+                    'show_tax_field',
                     'detailed_product_options',
                     'steps_color',
                     'create_ad_button_color',
