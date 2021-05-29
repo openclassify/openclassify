@@ -1,4 +1,5 @@
 <?php
+
 namespace Database\Seeders;
 
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
@@ -16,6 +17,7 @@ use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use Visiosoft\AdvsModule\Adv\Command\DeleteInstaller;
 use WidgetSeeder;
 use ZipArchive;
 
@@ -143,6 +145,9 @@ class DatabaseSeeder extends Seeder
 
         $this->call(WidgetSeeder::class);
 
+        //Delete Installer
+        dispatch_now(new DeleteInstaller());
+
 
         //Create Store Icon Folder
         if (!$this->folders->findBySlug('ads_excel')) {
@@ -218,8 +223,7 @@ class DatabaseSeeder extends Seeder
         };
 
         //Demodata Seeder
-        if(is_module_installed('visiosoft.module.demodata'))
-        {
+        if (is_module_installed('visiosoft.module.demodata')) {
             $this->call(\Visiosoft\DemodataModule\Demodata\DemodataSeeder::class);
         }
 
