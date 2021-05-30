@@ -375,6 +375,6 @@ return [
         'name' => 'Publish Date'
     ],
     'tax' => [
-        'name' => 'KDV Dahil Oranı'
+        'name' => 'KDV Oranı'
     ],
 ];

@@ -19,7 +19,7 @@ class VisiosoftModuleAdvsCreateTaxField extends Migration
         'tax' => [
             'type' => 'anomaly.field_type.integer',
             'config' => [
-                'default_value' => null,
+                'default_value' => 0,
             ],
         ],
     ];
