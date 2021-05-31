@@ -277,4 +277,8 @@ return [
         'name' => 'تاریخ پایان را نشان دهید و تاریخ ایجاد را ایجاد کنید',
         'instructions' => 'قسمت های publ_at و finish_at را در صفحه ایجاد تبلیغ نمایش می دهد.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
