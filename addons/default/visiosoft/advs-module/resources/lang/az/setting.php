@@ -276,4 +276,8 @@ return [
         'name' => 'Bitmə tarixini göstərin və Yaratma Tarixini Yayınlayın',
         'instructions' => 'Reklam yaratma səhifəsindəki dərc_at və bitir_at sahələrini göstərir.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
