@@ -276,4 +276,8 @@ return [
         'name' => 'Hiển thị ngày kết thúc và ngày xuất bản để tạo',
         'instructions' => 'Hiển thị các trường Publishing_at và finish_at trên trang tạo quảng cáo.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
