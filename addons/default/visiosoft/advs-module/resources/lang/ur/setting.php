@@ -276,4 +276,8 @@ return [
         'name' => 'تخلیق کیلئے آخری تاریخ اور اشاعت کی تاریخ دکھائیں',
         'instructions' => 'اشتہار تخلیق کے صفحے پر پبلک_اٹ اور فائنل_اٹ فیلڈز دکھاتا ہے۔'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
