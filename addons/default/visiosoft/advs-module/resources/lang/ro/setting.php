@@ -276,4 +276,8 @@ return [
         'name' => 'Afișați data de finalizare și data de publicare pentru a crea',
         'instructions' => 'Afișează câmpurile publish_at și finish_at de pe pagina de creare a anunțului.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
