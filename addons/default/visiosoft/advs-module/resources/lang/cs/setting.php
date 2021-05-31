@@ -276,4 +276,8 @@ return [
         'name' => 'Zobrazit datum dokončení a datum publikování pro vytvoření',
         'instructions' => 'Zobrazí pole publish_at a finish_at na stránce pro vytvoření reklamy.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
