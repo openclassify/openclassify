@@ -276,4 +276,8 @@ return [
         'name' => 'Pokaż datę zakończenia i datę publikacji do utworzenia',
         'instructions' => 'Wyświetla pola publ_at i finish_at na stronie tworzenia reklamy.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
