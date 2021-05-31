@@ -376,4 +376,7 @@ return [
     'publish_at' => [
         'name' => '게시 날짜'
     ],
+    'tax' => [
+        'name' => 'Tax'
+    ],
 ];
