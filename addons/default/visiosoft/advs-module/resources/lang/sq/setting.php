@@ -276,4 +276,8 @@ return [
         'name' => 'Trego datën e përfundimit dhe datën e publikimit për krijimin',
         'instructions' => 'Shfaq fushat publ_at dhe finish_at në faqen e krijimit të reklamave.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
