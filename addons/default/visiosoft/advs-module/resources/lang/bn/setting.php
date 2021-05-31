@@ -276,4 +276,8 @@ return [
         'name' => 'তৈরির জন্য শেষ তারিখ এবং প্রকাশের তারিখ দেখান',
         'instructions' => 'বিজ্ঞাপন তৈরি পৃষ্ঠায় প্রকাশ_আট এবং সমাপ্তি_এ ক্ষেত্রগুলি প্রদর্শন করে।'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
