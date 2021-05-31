@@ -276,4 +276,8 @@ return [
         'name' => 'Näytä lopetuspäivä ja julkaisupäivä luomista varten',
         'instructions' => 'Näyttää julkaisun_at ja viimeistelyn_at-kentät mainoksen luomissivulla.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
