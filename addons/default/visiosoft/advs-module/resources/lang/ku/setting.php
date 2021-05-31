@@ -276,4 +276,8 @@ return [
         'name' => 'Ji Bo Afirandinê Dîroka Dawî And Nîşan Bikin',
         'instructions' => 'Zeviyên publ_at û finish_at li ser rûpela afirandina reklaman nîşan dide.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
