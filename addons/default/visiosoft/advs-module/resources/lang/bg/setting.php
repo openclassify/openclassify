@@ -276,4 +276,8 @@ return [
         'name' => 'Показване на крайната дата и датата на публикуване за създаване',
         'instructions' => 'Показва полетата objav_at и finish_at на страницата за създаване на реклама.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
