@@ -276,4 +276,8 @@ return [
         'name' => '显示完成日期并发布创建日期',
         'instructions' => '在广告创建页面上显示publish_at和finish_at字段。'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
