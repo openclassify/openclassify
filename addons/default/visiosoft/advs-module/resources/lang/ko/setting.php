@@ -276,4 +276,8 @@ return [
         'name' => '작성을위한 완료 날짜 및 게시 날짜 표시',
         'instructions' => '광고 작성 페이지에 publish_at 및 finish_at 필드를 표시합니다.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
