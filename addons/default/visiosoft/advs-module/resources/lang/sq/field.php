@@ -377,4 +377,7 @@ return [
     'publish_at' => [
         'name' => 'Data e Publikimit'
     ],
+    'tax' => [
+        'name' => 'Tax'
+    ],
 ];
