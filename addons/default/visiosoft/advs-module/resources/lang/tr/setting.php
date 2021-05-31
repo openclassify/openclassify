@@ -276,4 +276,8 @@ return [
         'name' => 'Oluşturma İçin Bitiş Tarihini ve Yayınlanma Tarihini Göster',
         'instructions' => 'Reklam oluşturma sayfasında publish_at ve finish_at alanlarını görüntüler.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
