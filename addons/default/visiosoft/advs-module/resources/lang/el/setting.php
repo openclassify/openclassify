@@ -276,4 +276,8 @@ return [
         'name' => 'Εμφάνιση ημερομηνίας λήξης και ημερομηνίας δημοσίευσης για δημιουργία',
         'instructions' => 'Εμφανίζει τα πεδία publish_at και finish_at στη σελίδα δημιουργίας διαφημίσεων.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
