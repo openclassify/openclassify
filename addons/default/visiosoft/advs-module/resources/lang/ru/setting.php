@@ -276,4 +276,8 @@ return [
         'name' => 'Показать дату окончания и дату публикации для создания',
         'instructions' => 'Отображает поля publish_at и finish_at на странице создания объявления.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
