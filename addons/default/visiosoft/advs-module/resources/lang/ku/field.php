@@ -478,4 +478,7 @@ return [
     'publish_at' => [
         'name' => 'Dîroka Weşanê'
     ],
+    'tax' => [
+        'name' => 'Tax'
+    ],
 ];
