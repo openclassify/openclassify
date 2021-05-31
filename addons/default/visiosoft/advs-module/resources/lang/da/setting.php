@@ -276,4 +276,8 @@ return [
         'name' => 'Vis slutdato og offentliggør dato for oprettelse',
         'instructions' => 'Viser felterne publish_at og finish_at på siden til annonceoprettelse.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
