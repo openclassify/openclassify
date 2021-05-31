@@ -276,4 +276,8 @@ return [
         'name' => 'Toon einddatum en publicatiedatum voor maken',
         'instructions' => 'Geeft de velden publish_at en finish_at weer op de pagina voor het maken van advertenties.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
