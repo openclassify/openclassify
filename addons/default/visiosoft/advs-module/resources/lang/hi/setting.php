@@ -276,4 +276,8 @@ return [
         'name' => 'बनाने के लिए समाप्ति तिथि और प्रकाशन तिथि दिखाएं',
         'instructions' => 'विज्ञापन निर्माण पृष्ठ पर publish_at और finish_at फ़ील्ड प्रदर्शित करता है।'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
