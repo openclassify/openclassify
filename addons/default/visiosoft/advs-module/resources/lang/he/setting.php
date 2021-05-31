@@ -276,4 +276,8 @@ return [
         'name' => 'הצג תאריך סיום ופרסם תאריך ליצירה',
         'instructions' => 'מציג את השדות publish_at ו- finish_at בדף יצירת המודעות.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
