@@ -276,4 +276,8 @@ return [
         'name' => 'إظهار تاريخ الانتهاء وتاريخ النشر للإنشاء',
         'instructions' => 'يعرض حقلي publish_at و finish_at في صفحة إنشاء الإعلان.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
