@@ -276,4 +276,8 @@ return [
         'name' => 'Tampilkan Tanggal Selesai Dan Tanggal Publikasi Untuk Membuat',
         'instructions' => 'Menampilkan bidang publish_at dan finish_at pada halaman pembuatan iklan.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
