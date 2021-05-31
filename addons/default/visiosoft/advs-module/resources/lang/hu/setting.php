@@ -276,4 +276,8 @@ return [
         'name' => 'A befejezés dátumának és a létrehozás közzétételének dátumának megjelenítése',
         'instructions' => 'Megjeleníti a public_at és a finish_at mezőket a hirdetés létrehozása oldalon.'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
