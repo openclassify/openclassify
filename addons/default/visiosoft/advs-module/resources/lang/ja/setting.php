@@ -276,4 +276,8 @@ return [
         'name' => '作成の終了日と公開日を表示する',
         'instructions' => '広告作成ページにpublish_atフィールドとfinish_atフィールドを表示します。'
     ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];
