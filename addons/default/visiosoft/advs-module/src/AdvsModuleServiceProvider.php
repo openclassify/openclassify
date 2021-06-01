@@ -146,10 +146,6 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'adv_add_cart_ajax',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@addCart',
         ],
-        'ajax/countPhone' => [
-            'as' => 'adv_count_show_phone',
-            'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@showPhoneCounter',
-        ],
         'view/{type}' => [
             'as' => 'visiosoft.module.advs::view_type',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@viewType',

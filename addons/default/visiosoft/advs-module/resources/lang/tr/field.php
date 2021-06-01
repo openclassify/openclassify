@@ -374,4 +374,7 @@ return [
     'publish_at' => [
         'name' => 'Publish Date'
     ],
+    'tax' => [
+        'name' => 'KDV Oranı'
+    ],
 ];

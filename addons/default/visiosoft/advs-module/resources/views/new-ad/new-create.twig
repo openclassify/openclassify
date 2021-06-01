@@ -145,6 +145,29 @@
                                         </div>
                                     </div>
                                 </div>
+
+                                {% if setting_value("visiosoft.module.advs::show_tax_field") %}
+                                    <div class="row mx-0 my-3">
+                                        <div class="col-4 px-0">
+                                            <label>
+                                                {{ trans('visiosoft.module.advs::field.tax.name') }}
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <div class="py-2 pr-3">
+                                                <div class="input-wrapper">
+                                                    <select class="custom-select form-control" name="tax">
+                                                        <option value="0" {{ (form.fields.tax.value == "0") ? 'selected':'' }}>0</option>
+                                                        <option value="1" {{ (form.fields.tax.value == "1") ? 'selected':'' }}>%1</option>
+                                                        <option value="8"{{ (form.fields.tax.value == "8") ? 'selected':'' }}>%8</option>
+                                                        <option value="18"{{ (form.fields.tax.value == "18") ? 'selected':'' }}>%18</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
                                 {% if setting_value("visiosoft.module.advs::show_finish_and_publish_date") %}
                                     <div class="row mx-0 my-3">
                                         <div class="col-6 px-0">

@@ -57,6 +57,7 @@ class AdvFormBuilder extends FormBuilder
             'cat9',
             'cat10',
             'currency',
+            'tax',
             'online_payment',
             'stock',
             'country' => [
