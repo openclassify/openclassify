@@ -337,9 +337,9 @@ return [
     'owner' => 'Pemilik',
     'default_owner_instruction' => 'Pemilik akan menggunakan pengguna saat ini secara bawaan/default jika tidak ada pengguna yang dipilih',
     'create_page_subtitle' => 'Buat iklan tanpa masalah dengan memasukkan informasi rinci tentang iklan Anda.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Dengan nomor telepon saya',
+    'not_with_my_phone_numbers' => "Saya tidak ingin dihubungi melalui telepon",
+    'how_can_you_be_contacted' => "Bagaimana Anda dapat dihubungi?",
 
     // Listing page
     'ad_title' => 'Judul Iklan',
@@ -377,6 +377,6 @@ return [
         'name' => 'Tanggal Penerbitan'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Pajak'
     ],
 ];
