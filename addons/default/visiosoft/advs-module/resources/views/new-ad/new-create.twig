@@ -126,10 +126,12 @@
                                             <span class="w-100 {{ HideStandardPrice }}">
                                                 {% set standardPriceValue = form.fields.standard_price.value|split('.') %}
                                                 <input class="mt-3 border-0 text-right standard-price-field whole-price flex-fill w-100"
-                                                       placeholder="0" value="{{ standardPriceValue|first }}" type="text">
+                                                       placeholder="0" value="{{ standardPriceValue|first }}"
+                                                       type="text">
                                                 {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
                                                     <input class="mt-3 border-0 ml-2 text-center standard-price-decimal decimal-price"
-                                                           placeholder="00" type="text" value="{{ standardPriceValue[1] }}"
+                                                           placeholder="00" type="text"
+                                                           value="{{ standardPriceValue[1] }}"
                                                            maxlength="2">
                                                 {% endif %}
                                             </span>
@@ -194,14 +196,16 @@
                                             </div>
                                         {% endif %}
                                     {% else %}
-                                        <div class="product-options">
-                                            <label for="productOptions">
-                                                {{ trans('visiosoft.module.advs::field.product_option.name') }}
-                                            </label>
-                                            <div class="mt-3 form-group mb-0">
-                                                {{ form.fields.product_options_value.configSet('cat1', adv.cat1).input|raw }}
+                                        {% if is_options %}
+                                            <div class="product-options">
+                                                <label for="productOptions">
+                                                    {{ trans('visiosoft.module.advs::field.product_option.name') }}
+                                                </label>
+                                                <div class="mt-3 form-group mb-0">
+                                                    {{ form.fields.product_options_value.configSet('cat1', adv.cat1).input|raw }}
+                                                </div>
                                             </div>
-                                        </div>
+                                        {% endif %}
                                     {% endif %}
                                 {% endif %}
                             </div>
