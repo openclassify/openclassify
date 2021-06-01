@@ -277,7 +277,7 @@ return [
         'instructions' => 'Reklam oluşturma sayfasında publish_at ve finish_at alanlarını görüntüler.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Vergi alanını gizle',
+        'instructions' => 'Bu seçenek etkinleştirildiğinde, ilan veya ürün oluşturma sayfasında vergi oranını ayarlayabilirsiniz.'
     ],
 ];
