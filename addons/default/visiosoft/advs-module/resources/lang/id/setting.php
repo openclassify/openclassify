@@ -277,7 +277,7 @@ return [
         'instructions' => 'Menampilkan bidang publish_at dan finish_at pada halaman pembuatan iklan.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Tampilkan Baris Pajak',
+        'instructions' => 'Ketika opsi ini diaktifkan, Anda dapat mengatur tarif pajak pada halaman pembuatan iklan.'
     ],
 ];
