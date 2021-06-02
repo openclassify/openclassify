@@ -10,6 +10,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Visiosoft\AdvsModule\Adv\AdvModel;
+use Visiosoft\AdvsModule\Adv\Command\IsOptionsByCategory;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
@@ -21,6 +22,8 @@ use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
+use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
+use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
@@ -992,9 +995,14 @@ class AdvsController extends PublicController
             $hidePrice = in_array($adv['cat1'], $hidePriceCats);
         }
 
+        /* Check Options
+         * Added to query if there are product options.
+         */
+        $is_options = dispatch_now(new IsOptionsByCategory($adv['cat1']));
+
         return $this->view->make(
             'visiosoft.module.advs::new-ad/new-create',
-            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options', 'hidePrice')
+            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options', 'hidePrice','is_options')
         );
     }
 
