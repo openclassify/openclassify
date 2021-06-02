@@ -14,10 +14,25 @@ use Visiosoft\CartsModule\Cart\Command\GetCart;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
-use Visiosoft\LocationModule\Village\VillageModel;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
+    public function getTransNameAttribute()
+    {
+        if (is_null($this->name)) {
+            $ad = DB::table('advs_advs')
+                ->join('advs_advs_translations', 'advs_advs.id', '=', 'entry_id')
+                ->select('name')
+                ->where('advs_advs.id', $this->id)
+                ->whereNotNull('name')
+                ->first();
+
+            return $ad ? $ad->name : '-';
+        }
+
+        return $this->name;
+    }
+
     public function is_enabled($slug)
     {
         if ($addon = app('module.collection')->get($slug)) {

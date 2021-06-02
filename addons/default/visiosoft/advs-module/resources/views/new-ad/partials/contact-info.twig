@@ -1,19 +1,19 @@
 <div id="contactInfo" class="mb-3">
     <h3>{{ trans('visiosoft.module.advs::field.contact_info') }}</h3>
-{#    TODO Add an option to show or hide phone number #}
-{#    <div id="reachInfo">#}
-{#        <p>Size nasıl ulaşılsın?</p>#}
-{#        <div>#}
-{#            <label class="mr-3">#}
-{#                <input type="radio" class="mr-1" checked>#}
-{#                Telefon numaralarım ile#}
-{#            </label>#}
-{#            <label>#}
-{#                <input type="radio" class="mr-1">#}
-{#                Telefonla ulaşılmak istemiyorum#}
-{#            </label>#}
-{#        </div>#}
-{#    </div>#}
+    <div id="reachInfo">
+        {% set showPhoneNumber = form.fields.show_phone_number.value %}
+        <p>{{ trans('visiosoft.module.advs::field.how_can_you_be_contacted') }}</p>
+        <div>
+            <label class="mr-3">
+                <input type="radio" class="mr-1" name="show_phone_number" value="1" {{ showPhoneNumber ? 'checked' }}>
+                {{ trans('visiosoft.module.advs::field.with_my_phone_numbers') }}
+            </label>
+            <label>
+                <input type="radio" class="mr-1" name="show_phone_number" value="0" {{ not showPhoneNumber ? 'checked' }}>
+                {{ trans('visiosoft.module.advs::field.not_with_my_phone_numbers') }}
+            </label>
+        </div>
+    </div>
     <div id="contactSummary" class="d-flex justify-content-between flex-wrap">
         <label>
             {{ trans('visiosoft.module.profile::field.name.name') }}

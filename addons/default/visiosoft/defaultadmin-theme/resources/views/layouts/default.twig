@@ -24,6 +24,10 @@
 
         {{ breadcrumb() }}
 
+        {% if trans('module::addon.info') != 'module::addon.info' %}
+            <div class="page-info m-2 small text-white alert rounded">{{ trans('module::addon.info') }}</div>
+        {% endif %}
+
         <div class="container-fluid">
             {% include "theme::partials/messages" %}
             {% include "theme::partials/buttons" %}

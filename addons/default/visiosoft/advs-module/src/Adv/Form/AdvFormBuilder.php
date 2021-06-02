@@ -57,6 +57,7 @@ class AdvFormBuilder extends FormBuilder
             'cat9',
             'cat10',
             'currency',
+            'tax',
             'online_payment',
             'stock',
             'country' => [
@@ -82,7 +83,8 @@ class AdvFormBuilder extends FormBuilder
             'doc_files',
             'popular_adv',
             'adv_day',
-            'product_options_value'
+            'product_options_value',
+            'show_phone_number'
         ];
 
         if (setting_value('visiosoft.module.advs::show_finish_and_publish_date')) {

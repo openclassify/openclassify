@@ -382,4 +382,7 @@ return [
     'tax' => [
         'name' => 'Vergi'
     ],
+    'tax' => [
+        'name' => 'KDV Oranı'
+    ],
 ];
