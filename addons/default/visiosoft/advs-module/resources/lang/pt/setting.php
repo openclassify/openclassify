@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Mapear Coordenadas Longas',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Social Share Logo',
-        'warning'      => 'Deve estar em uma resolução de 1200 x 630.',
+        'warning' => 'Deve estar em uma resolução de 1200 x 630.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Endereço do site',
-        'warning'      => 'Auto adicionado www. www. <strong>sitename.com</strong>',
+        'warning' => 'Auto adicionado www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Chave da API do Google Map',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Mercado',
     ],
-	'price_area_hidden' => [
-		'name' => 'Área de preço oculta',
-	],
+    'price_area_hidden' => [
+        'name' => 'Área de preço oculta',
+    ],
     'hide_price_filter' => [
         'name' => 'Ocultar filtro de preço',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Ocultar data de criação',
         'instructions' => 'Ocultar data de criação na página de detalhes de anúncios',
     ],
-	'hide_listing_header' => [
-		'name' => 'Ocultar cabeçalho da lista',
-		'instructions' => 'Escondendo os tipos de pedido e visualização',
-	],
-	'hide_filter_section' => [
-		'name' => 'Ocultar seção de filtro',
-		'instructions' => 'Escondendo a área de filtro à esquerda na página de listagem',
-	],
-	'hide_seller_info' => [
-		'name' => 'Ocultar informações do vendedor',
-		'instructions' => 'Escondendo as informações do vendedor na página de detalhes dos anúncios',
-	],
+    'hide_listing_header' => [
+        'name' => 'Ocultar cabeçalho da lista',
+        'instructions' => 'Escondendo os tipos de pedido e visualização',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Ocultar seção de filtro',
+        'instructions' => 'Escondendo a área de filtro à esquerda na página de listagem',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Ocultar informações do vendedor',
+        'instructions' => 'Escondendo as informações do vendedor na página de detalhes dos anúncios',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar Acordo de Postagem',
         'instructions' => 'Ative-o se quiser exibir um acordo de política de privacidade na página de criação de anúncios',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Categorias',
         'instructions' => 'Representa as categorias nas quais a propriedade GET será válida.'
     ],
-	'disable_sentry' => [
-		'name' => 'Desativar Sentinela'
-	],
+    'disable_sentry' => [
+        'name' => 'Desativar Sentinela'
+    ],
     'watermark' => [
         'name' => 'Marca d\'água',
         'instructions' => 'A marca d\'água está ativa?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Mostrar subcategorias na visualização móvel',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Mostrar preço apenas para membros',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Ocultar categorias',
+        'instructions' => 'Ocultar categorias na lista de anúncios'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Mostrar data de término e data de publicação para criar',
+        'instructions' => 'Exibe os campos publish_at e finish_at na página de criação do anúncio.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

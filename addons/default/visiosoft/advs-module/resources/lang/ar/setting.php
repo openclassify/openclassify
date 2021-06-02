@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'فافيكون',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'خريطة تنسيق طويل',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'شعار المشاركة الاجتماعية',
-        'warning'      => 'يجب أن يكون بدقة 1200 × 630.',
+        'warning' => 'يجب أن يكون بدقة 1200 × 630.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'عنوان الموقع',
-        'warning'      => 'تمت إضافة www. شبكة الاتصالات العالمية. <strong>sitename.com</strong>',
+        'warning' => 'تمت إضافة www. شبكة الاتصالات العالمية. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'خريطة جوجل ابي كي',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'المتجر',
     ],
-	'price_area_hidden' => [
-		'name' => 'منطقة السعر مخفية',
-	],
+    'price_area_hidden' => [
+        'name' => 'منطقة السعر مخفية',
+    ],
     'hide_price_filter' => [
         'name' => 'إخفاء عامل تصفية السعر',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'إخفاء تاريخ الإنشاء',
         'instructions' => 'إخفاء تاريخ الإنشاء في صفحة تفاصيل الإعلانات',
     ],
-	'hide_listing_header' => [
-		'name' => 'إخفاء رأس القائمة',
-		'instructions' => 'الاختباء لطلب وعرض الأنواع',
-	],
-	'hide_filter_section' => [
-		'name' => 'إخفاء قسم التصفية',
-		'instructions' => 'يختبئ إلى اليسار منطقة التصفية في قائمة الصفحة',
-	],
-	'hide_seller_info' => [
-		'name' => 'إخفاء معلومات البائع',
-		'instructions' => 'إخفاء معلومات البائع في صفحة تفاصيل الإعلانات',
-	],
+    'hide_listing_header' => [
+        'name' => 'إخفاء رأس القائمة',
+        'instructions' => 'الاختباء لطلب وعرض الأنواع',
+    ],
+    'hide_filter_section' => [
+        'name' => 'إخفاء قسم التصفية',
+        'instructions' => 'يختبئ إلى اليسار منطقة التصفية في قائمة الصفحة',
+    ],
+    'hide_seller_info' => [
+        'name' => 'إخفاء معلومات البائع',
+        'instructions' => 'إخفاء معلومات البائع في صفحة تفاصيل الإعلانات',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'إظهار اتفاقية ما بعد الإعلان',
         'instructions' => 'قم بتشغيل هذا إذا كنت تريد عرض اتفاقية سياسة الخصوصية على صفحة إنشاء الإعلان',
@@ -251,9 +251,9 @@ return [
         'name' => 'فئات GET',
         'instructions' => 'إنه يمثل الفئات التي ستكون فيها خاصية GET صالحة.'
     ],
-	'disable_sentry' => [
-		'name' => 'تعطيل الحارس'
-	],
+    'disable_sentry' => [
+        'name' => 'تعطيل الحارس'
+    ],
     'watermark' => [
         'name' => 'علامة مائية',
         'instructions' => 'هل العلامة المائية نشطة؟'
@@ -265,11 +265,19 @@ return [
     'show_subcats_mobile' => [
         'name' => 'إظهار الفئات الفرعية على طريقة عرض الجوال',
     ],
-	'show_price_to_members_only' => [
-		'name' => 'عرض السعر للأعضاء فقط',
-	],
-	'hide_ad_cat' => [
-		'name' => 'إخفاء الفئات',
-		'instructions' => 'إخفاء الفئات في قائمة الإعلانات'
-	]
+    'show_price_to_members_only' => [
+        'name' => 'عرض السعر للأعضاء فقط',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'إخفاء الفئات',
+        'instructions' => 'إخفاء الفئات في قائمة الإعلانات'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'إظهار تاريخ الانتهاء وتاريخ النشر للإنشاء',
+        'instructions' => 'يعرض حقلي publish_at و finish_at في صفحة إنشاء الإعلان.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

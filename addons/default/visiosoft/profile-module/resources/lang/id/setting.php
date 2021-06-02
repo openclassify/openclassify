@@ -48,6 +48,11 @@ return [
         'instructions' => 'Menyembunyikan bidang tipe register di halaman edit profil.',
     ],
     'required_district' => [
-        'name' => 'Distrik Wajib'
+        'name' => 'Distrik Wajib',
+        'instructions' => 'Menambahkan alamat mewakili kewajiban distrik.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Tunjukkan Memperluas Tindakan',
+        'instructions' => 'Mewakili opsi Perluas yang tersedia di halaman Iklan profil saya.',
     ],
 ];

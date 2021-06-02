@@ -30,7 +30,12 @@ return [
         'instructions' => 'הוא משמש להוספת סמלים המציינים את סוג הקטגוריה.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'אנא המתן. מחיקת קטגוריות משנה',
     'category_selection' => 'בחירת קטגוריה',
     'go_to_parent' => 'עבור להורה',
+	'preview' => 'Preview'
 ];

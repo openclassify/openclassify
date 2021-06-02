@@ -30,7 +30,12 @@ return [
         'instructions' => '카테고리 유형을 나타내는 아이콘을 추가하는 데 사용됩니다.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => '하위 카테고리 삭제',
     'category_selection' => '카테고리 선택',
     'go_to_parent' => '부모로 이동',
+	'preview' => 'Preview'
 ];

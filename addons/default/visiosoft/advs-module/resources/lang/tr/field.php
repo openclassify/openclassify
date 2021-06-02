@@ -339,6 +339,10 @@ return [
     'owner' => 'Sahip',
     'default_owner_instruction' => 'Hiçbir kullanıcı seçilmezse, sahip varsayılan olarak mevcut kullanıcıyı kullanır',
     'create_page_subtitle' => 'Ürün veya ilan hakkında detaylı bilgi girebilirsiniz',
+    'with_my_phone_numbers' => 'Telefon numaralarım ile',
+    'not_with_my_phone_numbers' => "Telefonla ulaşım sağlamak istemiyorum.",
+    'how_can_you_be_contacted' => "Nasıl iletişime geçilebilir?
+",
 
     // Listing page
     'ad_title' => 'Başlık',
@@ -347,6 +351,7 @@ return [
     'ads_with_map' => 'Haritalı İlanlar',
     'advanced_sorting' => 'Gelişmiş Sıralama',
     'filter_by_word' => 'Kelime İle Filtrele',
+    'filter_by' => 'Filtreleme ölçütü: ad',
 
     'free' => 'Bedava',
     'ad_date' => 'İlan Tarihi',
@@ -372,7 +377,10 @@ return [
     ],
 	'save_search' => 'Aramayı Kaydet',
     'publish_at' => [
-        'name' => 'Publish Date'
+        'name' => 'Yayın tarihi'
+    ],
+    'tax' => [
+        'name' => 'Vergi'
     ],
     'tax' => [
         'name' => 'KDV Oranı'

@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Nexşeya Hevrêziya Dirêj',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logoya Parvekirina Civakî',
-        'warning'      => 'Divê ew bi çareseriya 1200 x 630 be. ',
+        'warning' => 'Divê ew bi çareseriya 1200 x 630 be. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Navnîşana malperê',
-        'warning'      => 'Auto zêdekirî www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Auto zêdekirî www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Nexşeya Google Key Api',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Cihê Sûkê',
     ],
-	'price_area_hidden' => [
-		'name' => 'Qada Bihayê Veşartî',
-	],
+    'price_area_hidden' => [
+        'name' => 'Qada Bihayê Veşartî',
+    ],
     'hide_price_filter' => [
         'name' => 'Parzûna Bihayê Veşêre',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Dîroka Afirandî Veşêre',
         'instructions' => 'Di rûpela hûrguliyên reklaman de dîroka çêkirî veşêrin',
     ],
-	'hide_listing_header' => [
-		'name' => 'Serê Navnîşê Veşêre',
-		'instructions' => 'Ji bo rêzkirin û dîtina celeban vedişêrin',
-	],
-	'hide_filter_section' => [
-		'name' => 'Beşa Parzûnê Veşêre',
-		'instructions' => 'Di rûpelê navnîşkirinê de xwe vedişêrin qada feltera çepê',
-	],
-	'hide_seller_info' => [
-		'name' => 'Agahdariya Firoterê Veşêre',
-		'instructions' => 'Di rûpelê hûrguliyên reklaman de veşartina agahdariya firotanê',
-	],
+    'hide_listing_header' => [
+        'name' => 'Serê Navnîşê Veşêre',
+        'instructions' => 'Ji bo rêzkirin û dîtina celeban vedişêrin',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Beşa Parzûnê Veşêre',
+        'instructions' => 'Di rûpelê navnîşkirinê de xwe vedişêrin qada feltera çepê',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Agahdariya Firoterê Veşêre',
+        'instructions' => 'Di rûpelê hûrguliyên reklaman de veşartina agahdariya firotanê',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Peymana Ad Ad-ê nîşan bide',
         'instructions' => 'Heke hûn dixwazin li ser rûpela afirandina reklamê peymana siyaseta nepenîtiyê nîşan bikin vê yekê vekin',
@@ -251,9 +251,9 @@ return [
         'name' => 'Kategoriyan bistînin',
         'instructions' => 'Ew kategoriyên ku tê de taybetmendiya GET dê derbasdar be temsîl dike.'
     ],
-	'disable_sentry' => [
-		'name' => 'Sentry Disable'
-	],
+    'disable_sentry' => [
+        'name' => 'Sentry Disable'
+    ],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Watermark çalak e?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Binkategoriyan li ser dîmendera mobîl nîşan bide',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Nîşan bidin Bihayê Tenê Endaman',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Kategoriyan veşêrin',
+        'instructions' => 'Di lîsteya reklaman de kategoriyan veşêrin'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Ji Bo Afirandinê Dîroka Dawî And Nîşan Bikin',
+        'instructions' => 'Zeviyên publ_at û finish_at li ser rûpela afirandina reklaman nîşan dide.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

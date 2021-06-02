@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Mapa de coordenades llargues',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logotip de Compartir social',
-        'warning'      => 'Hauria de tenir una resolució de 1200 x 630. ',
+        'warning' => 'Hauria de tenir una resolució de 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Adreça del lloc',
-        'warning'      => 'S\'ha afegit automàticament www. www.<strong>nom</strong> ',
+        'warning' => 'S\'ha afegit automàticament www. www.<strong>nom</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Clau API de Google Map',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Mercat',
     ],
-	'price_area_hidden' => [
-		'name' => 'Zona de preus oculta',
-	],
+    'price_area_hidden' => [
+        'name' => 'Zona de preus oculta',
+    ],
     'hide_price_filter' => [
         'name' => 'Amaga el filtre de preus',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Amaga la data de creació',
         'instructions' => 'Amaga la data de creació a la pàgina de detalls dels anuncis',
     ],
-	'hide_listing_header' => [
-		'name' => 'Amaga la capçalera del llistat',
-		'instructions' => 'Ocultant els tipus d\'ordres i visualitzacions',
-	],
-	'hide_filter_section' => [
-		'name' => 'Amaga la secció del filtre',
-		'instructions' => 'S’amaga a l’àrea de filtre esquerra a la pàgina de la llista',
-	],
-	'hide_seller_info' => [
-		'name' => 'Amaga la informació del venedor',
-		'instructions' => 'Ocultació de la informació del venedor a la pàgina de detalls dels anuncis',
-	],
+    'hide_listing_header' => [
+        'name' => 'Amaga la capçalera del llistat',
+        'instructions' => 'Ocultant els tipus d\'ordres i visualitzacions',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Amaga la secció del filtre',
+        'instructions' => 'S’amaga a l’àrea de filtre esquerra a la pàgina de la llista',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Amaga la informació del venedor',
+        'instructions' => 'Ocultació de la informació del venedor a la pàgina de detalls dels anuncis',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Mostra l\'acord per publicar publicacions',
         'instructions' => 'Activeu aquesta opció si voleu mostrar un acord de política de privadesa a la pàgina de creació d\'anuncis',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Categories',
         'instructions' => 'Representa les categories en què la propietat GET serà vàlida.'
     ],
-	'disable_sentry' => [
-		'name' => 'Desactiva Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Desactiva Sentry'
+    ],
     'watermark' => [
         'name' => 'Filigrana',
         'instructions' => 'La filigrana està activa?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Mostra subcategories a la visualització per a mòbils',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Mostrar preu només per a membres',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Amaga les categories',
+        'instructions' => 'Amaga les categories a la llista d\'anuncis'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Mostra la data de finalització i la data de publicació per crear',
+        'instructions' => 'Mostra els camps publish_at i finish_at de la pàgina de creació d\'anuncis.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

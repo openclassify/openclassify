@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Kaart lang koördinaat',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Sosiale Deel-logo',
-        'warning'      => 'Dit moet \'n resolusie van 1200 x 630 hê. ',
+        'warning' => 'Dit moet \'n resolusie van 1200 x 630 hê. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Werfadres',
-        'warning'      => 'Auto bygevoeg www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Auto bygevoeg www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api-sleutel',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Markplein',
     ],
-	'price_area_hidden' => [
-		'name' => 'Prysarea versteek',
-	],
+    'price_area_hidden' => [
+        'name' => 'Prysarea versteek',
+    ],
     'hide_price_filter' => [
         'name' => 'Versteek prysfilter',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Versteek geskep datum',
         'instructions' => 'Versteek die geskepde datum in die besonderhede-bladsy',
     ],
-	'hide_listing_header' => [
-		'name' => 'Versteek koplys van lys',
-		'instructions' => 'Versteek na bestelling en besigtigingstipes',
-	],
-	'hide_filter_section' => [
-		'name' => 'Versteek die filterafdeling',
-		'instructions' => 'Versteek na die linker filterarea op die lys bladsy',
-	],
-	'hide_seller_info' => [
-		'name' => 'Versteek verkoperinligting',
-		'instructions' => 'Versteek inligting aan die verkoper op die besonderhede bladsy',
-	],
+    'hide_listing_header' => [
+        'name' => 'Versteek koplys van lys',
+        'instructions' => 'Versteek na bestelling en besigtigingstipes',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Versteek die filterafdeling',
+        'instructions' => 'Versteek na die linker filterarea op die lys bladsy',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Versteek verkoperinligting',
+        'instructions' => 'Versteek inligting aan die verkoper op die besonderhede bladsy',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertensie-ooreenkoms',
         'instructions' => 'Skakel dit aan as u \'n privaatheidsbeleidsooreenkoms op die advertensie-bladsy wil vertoon',
@@ -251,9 +251,9 @@ return [
         'name' => 'KRY Kategorieë',
         'instructions' => 'Dit verteenwoordig die kategorieë waarin die GET-eiendom geldig sal wees.'
     ],
-	'disable_sentry' => [
-		'name' => 'Skakel wagwag uit'
-	],
+    'disable_sentry' => [
+        'name' => 'Skakel wagwag uit'
+    ],
     'watermark' => [
         'name' => 'Watermerk',
         'instructions' => 'Is watermerk aktief?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Wys subkategorieë op mobiele aansig',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Wys prys slegs vir lede',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Versteek kategorieë',
+        'instructions' => 'Versteek kategorieë in advertensielys'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Toon einddatum en publiseer datum vir skep',
+        'instructions' => 'Vertoon die velde publish_at en finish_at op die bladsy vir die skep van advertensies.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

@@ -30,7 +30,12 @@ return [
         'instructions' => 'Il est utilisé pour ajouter des icônes indiquant le type de catégorie.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Veuillez patienter. Suppression des sous-catégories',
     'category_selection' => 'Sélection de catégorie',
     'go_to_parent' => 'Aller au parent',
+	'preview' => 'Preview'
 ];

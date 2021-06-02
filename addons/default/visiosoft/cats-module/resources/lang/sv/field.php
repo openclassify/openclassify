@@ -30,7 +30,12 @@ return [
         'instructions' => 'Det används för att lägga till ikoner som anger kategoritypen.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Vänta. Ta bort underkategorier',
     'category_selection' => 'Val av kategori',
     'go_to_parent' => 'Gå till förälder',
+	'preview' => 'Preview'
 ];

@@ -273,11 +273,11 @@ return [
         'instructions' => 'İlan listelemede ilan kategorilerini gizle'
     ],
     'show_finish_and_publish_date' => [
-        'name' => 'İlan Oluşturma Sayfasında Publish_at ve Finish_at göster',
-        'instructions' => 'İlan oluşturma sayfasında Publish_at ve Finish_at alanlarını gösterir.'
+        'name' => 'İlan ekleme ve düzenleme sayfasında Bitiş Tarihini ve Yayınlanma Tarihini Göster',
+        'instructions' => 'Kullanıcı yayınlama tarihini ve bitiş tarihini görebilir. '
     ],
     'show_tax_field' => [
-        'name' => 'Vergi Oranı Seçmeyi Göster',
-        'instructions' => 'Bu seçenek etkinleştirildiğinde ilan oluşturma sayfasında vergi oranı belirleyebilirsiniz.'
-    ],
+         'name' => 'KDV (Vergi) Oranı Seçmeyi Göster',
+        'instructions' => 'Bu seçenek etkinleştirildiğinde, ilan veya ürün oluşturma sayfasında vergi oranını ayarlayabilirsiniz.'
+    ]
 ];

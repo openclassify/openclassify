@@ -336,6 +336,10 @@ return [
     'ad_location' => 'Mainoksen sijainti',
     'owner' => 'Omistaja',
     'default_owner_instruction' => 'Omistaja määrittää oletusasetukset nykyiselle käyttäjälle, jos ketään ei ole valittu',
+    'create_page_subtitle' => 'Luo mainos moitteettomasti syöttämällä yksityiskohtaiset tiedot mainoksestasi.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Mainoksen otsikko',
@@ -343,7 +347,8 @@ return [
     'view' => 'Näytä',
     'ads_with_map' => 'Mainokset kartalla',
     'advanced_sorting' => 'Edistynyt lajittelu',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Suodata sanan mukaan',
+    'filter_by' => 'Suodata: nimen mukaan',
 
     'free' => 'Vapaa',
     'ad_date' => 'Ilmoituksen päivämäärä',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Vanha hinta'
+    ],
+	'save_search' => 'Tallenna haku',
+    'publish_at' => [
+        'name' => 'Julkaisupäivä'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

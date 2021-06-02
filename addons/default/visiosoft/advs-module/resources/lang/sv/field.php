@@ -336,6 +336,10 @@ return [
     'ad_location' => 'Annonsplats',
     'owner' => 'Ägare',
     'default_owner_instruction' => 'Ägaren kommer som standard att använda den nuvarande användaren om ingen användare har valts',
+    'create_page_subtitle' => 'Skapa annonsen felfritt genom att ange detaljerad information om din annons.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Lägg till titel',
@@ -343,7 +347,8 @@ return [
     'view' => 'Se',
     'ads_with_map' => 'Annonser med karta',
     'advanced_sorting' => 'Avancerad sortering',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrera efter ord',
+    'filter_by' => 'Filtrera efter: namn',
 
     'free' => 'Fri',
     'ad_date' => 'Annonsdatum',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Gammalt pris'
+    ],
+	'save_search' => 'Spara sökning',
+    'publish_at' => [
+        'name' => 'Utgivningsdatum'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

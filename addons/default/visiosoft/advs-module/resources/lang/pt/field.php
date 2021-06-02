@@ -337,6 +337,10 @@ return [
     'ad_location' => 'Localização do anúncio',
     'owner' => 'Proprietário',
     'default_owner_instruction' => 'O proprietário assumirá como padrão o usuário atual se nenhum usuário for selecionado',
+    'create_page_subtitle' => 'Crie o anúncio perfeitamente inserindo informações detalhadas sobre o seu anúncio.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Título do anúncio',
@@ -344,7 +348,8 @@ return [
     'view' => 'Visualizar',
     'ads_with_map' => 'Anúncios com mapa',
     'advanced_sorting' => 'Classificação Avançada',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtrar por palavra',
+    'filter_by' => 'Filtrar por: nome',
 
     'free' => 'Livre',
     'ad_date' => 'Data do Anúncio',
@@ -367,5 +372,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Preço antigo'
+    ],
+	'save_search' => 'Salvar busca',
+    'publish_at' => [
+        'name' => 'Data de publicação'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

@@ -336,6 +336,10 @@ return [
     'ad_location' => 'Advertensie-ligging',
     'owner' => 'Eienaar',
     'default_owner_instruction' => 'Die eienaar is die huidige gebruiker as geen gebruiker gekies word nie',
+    'create_page_subtitle' => 'Skep die advertensie foutloos deur gedetailleerde inligting oor u advertensie in te voer.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Advertensietitel',
@@ -343,7 +347,8 @@ return [
     'view' => 'Beskou',
     'ads_with_map' => 'Advertensies Met Kaart',
     'advanced_sorting' => 'Gevorderde sortering',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtreer volgens woord',
+    'filter_by' => 'Filtreer volgens: naam',
 
     'free' => 'Vry',
     'ad_date' => 'Advertensiedatum',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Ou prys'
+    ],
+	'save_search' => 'Stoor soektog',
+    'publish_at' => [
+        'name' => 'Publiseer datum'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

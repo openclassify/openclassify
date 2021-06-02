@@ -48,6 +48,11 @@ return [
         'instructions' => 'Fsheh fushën e llojit të regjistrit në faqen e redaktimit të profilit.',
     ],
     'required_district' => [
-        'name' => 'Rrethi i kërkuar'
+        'name' => 'Rrethi i kërkuar',
+        'instructions' => 'Shtimi i një adrese përfaqëson detyrimin e rrethit.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Shfaq veprimet e zgjatura',
+        'instructions' => 'Përfaqëson opsionet Zgjat në dispozicion në faqen time Reklama të profilit tim.',
     ],
 ];

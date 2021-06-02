@@ -84,9 +84,9 @@ return [
     'option_configuration' => [
         'name'   => 'Konfiguracija opcije',
         'option' => [
-            'read'   => 'Može da vidi Konfiguracija opcije?',
-            'write'  => 'Može da kreira/uređuje Konfiguracija opcije?',
-            'delete' => 'Može da obriše Konfiguracija opcije?',
+            'read'   => 'Može da vidi konfiguraciju opcije?',
+            'write'  => 'Može da kreira / uređuje konfiguraciju opcije?',
+            'delete' => 'Može da obriše konfiguraciju opcije?',
         ],
     ],
     'option_configuration' => [

@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Bản đồ tọa độ dài',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logo chia sẻ xã hội',
-        'warning'      => 'Nó phải ở độ phân giải 1200 x 630. ',
+        'warning' => 'Nó phải ở độ phân giải 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Địa chỉ trang web',
-        'warning'      => 'Tự động thêm www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Tự động thêm www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Khóa bản đồ Google',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Thương trường',
     ],
-	'price_area_hidden' => [
-		'name' => 'Vùng giá bị ẩn',
-	],
+    'price_area_hidden' => [
+        'name' => 'Vùng giá bị ẩn',
+    ],
     'hide_price_filter' => [
         'name' => 'Ẩn bộ lọc giá',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Ẩn ngày tạo',
         'instructions' => 'Ẩn ngày tạo trong trang chi tiết quảng cáo',
     ],
-	'hide_listing_header' => [
-		'name' => 'Ẩn tiêu đề danh sách',
-		'instructions' => 'Ẩn để đặt hàng và xem các loại',
-	],
-	'hide_filter_section' => [
-		'name' => 'Ẩn phần bộ lọc',
-		'instructions' => 'Ẩn vùng lọc bên trái trong trang danh sách',
-	],
-	'hide_seller_info' => [
-		'name' => 'Ẩn thông tin người bán',
-		'instructions' => 'Ẩn thông tin người bán trong trang chi tiết quảng cáo',
-	],
+    'hide_listing_header' => [
+        'name' => 'Ẩn tiêu đề danh sách',
+        'instructions' => 'Ẩn để đặt hàng và xem các loại',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Ẩn phần bộ lọc',
+        'instructions' => 'Ẩn vùng lọc bên trái trong trang danh sách',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Ẩn thông tin người bán',
+        'instructions' => 'Ẩn thông tin người bán trong trang chi tiết quảng cáo',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Hiển thị Thỏa thuận Quảng cáo Đăng',
         'instructions' => 'Bật tính năng này nếu bạn muốn hiển thị thỏa thuận chính sách bảo mật trên trang tạo quảng cáo',
@@ -251,9 +251,9 @@ return [
         'name' => 'NHẬN danh mục',
         'instructions' => 'Nó đại diện cho các danh mục mà thuộc tính GET sẽ hợp lệ.'
     ],
-	'disable_sentry' => [
-		'name' => 'Tắt Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Tắt Sentry'
+    ],
     'watermark' => [
         'name' => 'Chữ ký ảnh',
         'instructions' => 'Hình mờ có hoạt động không?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Hiển thị các danh mục phụ trên chế độ xem trên thiết bị di động',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Chỉ hiển thị giá cho thành viên',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Ẩn danh mục',
+        'instructions' => 'Ẩn danh mục trong danh sách quảng cáo'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Hiển thị ngày kết thúc và ngày xuất bản để tạo',
+        'instructions' => 'Hiển thị các trường Publishing_at và finish_at trên trang tạo quảng cáo.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

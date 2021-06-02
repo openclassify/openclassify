@@ -30,7 +30,12 @@ return [
         'instructions' => 'Koristi se za dodavanje ikona koje označavaju vrstu kategorije.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Molimo pričekajte.Brisanje potkategorija',
     'category_selection' => 'Selekcija kategorija',
     'go_to_parent' => 'Idi na Parent-a',
+	'preview' => 'Preview'
 ];

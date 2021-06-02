@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Coordonarea pe hartă lungă',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logo Social Share',
-        'warning'      => 'Ar trebui să fie la o rezoluție de 1200 x 630. ',
+        'warning' => 'Ar trebui să fie la o rezoluție de 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Adresa site-ului',
-        'warning'      => 'Auto adăugat www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Auto adăugat www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Cheie Api Google Map',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Piata de desfacere',
     ],
-	'price_area_hidden' => [
-		'name' => 'Zona de preț ascunsă',
-	],
+    'price_area_hidden' => [
+        'name' => 'Zona de preț ascunsă',
+    ],
     'hide_price_filter' => [
         'name' => 'Ascundeți filtrul de preț',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Ascundeți data creată',
         'instructions' => 'Ascundeți data creată în pagina de detalii a anunțurilor',
     ],
-	'hide_listing_header' => [
-		'name' => 'Ascundeți antetul listării',
-		'instructions' => 'Ascunderea la comanda și vizualizarea tipurilor',
-	],
-	'hide_filter_section' => [
-		'name' => 'Ascunde secțiunea de filtrare',
-		'instructions' => 'Se ascunde în zona de filtrare din stânga în pagina listării',
-	],
-	'hide_seller_info' => [
-		'name' => 'Ascundeți informațiile despre vânzător',
-		'instructions' => 'Ascunderea informațiilor despre vânzător în pagina de detalii a anunțurilor',
-	],
+    'hide_listing_header' => [
+        'name' => 'Ascundeți antetul listării',
+        'instructions' => 'Ascunderea la comanda și vizualizarea tipurilor',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Ascunde secțiunea de filtrare',
+        'instructions' => 'Se ascunde în zona de filtrare din stânga în pagina listării',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Ascundeți informațiile despre vânzător',
+        'instructions' => 'Ascunderea informațiilor despre vânzător în pagina de detalii a anunțurilor',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Afișați acordul de postare a anunțului',
         'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Categorii',
         'instructions' => 'Reprezintă categoriile în care proprietatea GET va fi validă.'
     ],
-	'disable_sentry' => [
-		'name' => 'Dezactivați Sentinela'
-	],
+    'disable_sentry' => [
+        'name' => 'Dezactivați Sentinela'
+    ],
     'watermark' => [
         'name' => 'Filigran',
         'instructions' => 'Filigranul este activ?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Afișați subcategoriile pe ecranul mobil',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Afișați prețul numai membrilor',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Ascundeți categoriile',
+        'instructions' => 'Ascundeți categoriile din lista de anunțuri'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Afișați data de finalizare și data de publicare pentru a crea',
+        'instructions' => 'Afișează câmpurile publish_at și finish_at de pe pagina de creare a anunțului.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

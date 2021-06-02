@@ -48,6 +48,11 @@ return [
         'instructions' => 'Skjuler registertypefeltet på profilredigeringssiden.',
     ],
     'required_district' => [
-        'name' => 'Påkrævet distrikt'
+        'name' => 'Påkrævet distrikt',
+        'instructions' => 'Tilføjelse af en adresse repræsenterer distriktsforpligtelsen.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Vis udvider handlinger',
+        'instructions' => 'Repræsenterer de tilgængelige udvidelsesmuligheder på siden med min profilannoncer.',
     ],
 ];

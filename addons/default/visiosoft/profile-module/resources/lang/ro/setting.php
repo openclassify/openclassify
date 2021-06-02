@@ -48,6 +48,11 @@ return [
         'instructions' => 'Ascunde câmpul tip de înregistrare în pagina de editare a profilului.',
     ],
     'required_district' => [
-        'name' => 'Districtul necesar'
+        'name' => 'Districtul necesar',
+        'instructions' => 'Adăugarea unei adrese reprezintă obligația districtului.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Afișați acțiuni extinse',
+        'instructions' => 'Reprezintă opțiunile Extinde disponibile în pagina Anunțuri din profilul meu.',
     ],
 ];

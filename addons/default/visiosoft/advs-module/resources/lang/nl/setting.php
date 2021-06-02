@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Lange coördinaten in kaart brengen',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Social Share-logo',
-        'warning'      => 'Het moet een resolutie hebben van 1200 x 630.',
+        'warning' => 'Het moet een resolutie hebben van 1200 x 630.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Siteadres',
-        'warning'      => 'Auto toegevoegd www. www. <strong>sitename.com</strong>',
+        'warning' => 'Auto toegevoegd www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Marktplaats',
     ],
-	'price_area_hidden' => [
-		'name' => 'Prijsgebied verborgen',
-	],
+    'price_area_hidden' => [
+        'name' => 'Prijsgebied verborgen',
+    ],
     'hide_price_filter' => [
         'name' => 'Prijsfilter verbergen',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Aanmaakdatum verbergen',
         'instructions' => 'Verberg de aanmaakdatum op de detailpagina van de advertenties',
     ],
-	'hide_listing_header' => [
-		'name' => 'Verberg koptekst',
-		'instructions' => 'Verbergen om typen te bestellen en te bekijken',
-	],
-	'hide_filter_section' => [
-		'name' => 'Filtergedeelte verbergen',
-		'instructions' => 'Verbergen naar linker filtergebied op lijstpagina',
-	],
-	'hide_seller_info' => [
-		'name' => 'Verberg verkopersinformatie',
-		'instructions' => 'Verbergen voor verkopersinformatie op de detailpagina van advertenties',
-	],
+    'hide_listing_header' => [
+        'name' => 'Verberg koptekst',
+        'instructions' => 'Verbergen om typen te bestellen en te bekijken',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Filtergedeelte verbergen',
+        'instructions' => 'Verbergen naar linker filtergebied op lijstpagina',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Verberg verkopersinformatie',
+        'instructions' => 'Verbergen voor verkopersinformatie op de detailpagina van advertenties',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertentieovereenkomst',
         'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Categorieën',
         'instructions' => 'Het vertegenwoordigt de categorieën waarin de eigenschap GET geldig zal zijn.'
     ],
-	'disable_sentry' => [
-		'name' => 'Schakel Sentry uit'
-	],
+    'disable_sentry' => [
+        'name' => 'Schakel Sentry uit'
+    ],
     'watermark' => [
         'name' => 'Watermerk',
         'instructions' => 'Is watermerk actief?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Toon subcategorieën op mobiele weergave',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Toon prijs alleen aan leden',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Categorieën verbergen',
+        'instructions' => 'Verberg categorieën in de lijst met advertenties'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Toon einddatum en publicatiedatum voor maken',
+        'instructions' => 'Geeft de velden publish_at en finish_at weer op de pagina voor het maken van advertenties.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

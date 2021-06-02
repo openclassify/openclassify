@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'فیویکن',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'نقشہ لانگ کوآرڈینیٹ',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'سوشل شیئر لوگو',
-        'warning'      => 'یہ 1200 x 630 کی قرارداد میں ہونا چاہئے۔ ',
+        'warning' => 'یہ 1200 x 630 کی قرارداد میں ہونا چاہئے۔ ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'سائٹ کا پتہ',
-        'warning'      => 'آٹو شامل www. www.<strong>sitename.com</strong> ',
+        'warning' => 'آٹو شامل www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'گوگل میپ آپ کی کلید',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'مارکیٹ پلیس',
     ],
-	'price_area_hidden' => [
-		'name' => 'قیمت کا رقبہ پوشیدہ ہے',
-	],
+    'price_area_hidden' => [
+        'name' => 'قیمت کا رقبہ پوشیدہ ہے',
+    ],
     'hide_price_filter' => [
         'name' => 'پرائس فلٹر چھپائیں',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'بنائی گئی تاریخ چھپائیں',
         'instructions' => 'تخلیق شدہ تاریخ کو اشتہارات کے تفصیل والے صفحے میں چھپائیں',
     ],
-	'hide_listing_header' => [
-		'name' => 'لسٹنگ ہیڈر چھپائیں',
-		'instructions' => 'ترتیب دینے اور دیکھنے کی اقسام کو چھپا رہا ہے',
-	],
-	'hide_filter_section' => [
-		'name' => 'فلٹر سیکشن چھپائیں',
-		'instructions' => 'صفحہ کے لسٹنگ میں بائیں فلٹر کے علاقے میں چھپا',
-	],
-	'hide_seller_info' => [
-		'name' => 'بیچنے والے کی معلومات چھپائیں',
-		'instructions' => 'اشتہارات کے تفصیل والے صفحے میں بیچنے والے انفو کو چھپا رہے ہیں',
-	],
+    'hide_listing_header' => [
+        'name' => 'لسٹنگ ہیڈر چھپائیں',
+        'instructions' => 'ترتیب دینے اور دیکھنے کی اقسام کو چھپا رہا ہے',
+    ],
+    'hide_filter_section' => [
+        'name' => 'فلٹر سیکشن چھپائیں',
+        'instructions' => 'صفحہ کے لسٹنگ میں بائیں فلٹر کے علاقے میں چھپا',
+    ],
+    'hide_seller_info' => [
+        'name' => 'بیچنے والے کی معلومات چھپائیں',
+        'instructions' => 'اشتہارات کے تفصیل والے صفحے میں بیچنے والے انفو کو چھپا رہے ہیں',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'پوسٹ اشتہار کا معاہدہ دکھائیں',
         'instructions' => 'اگر آپ اشتہار تخلیق کے صفحے پر رازداری کی پالیسی کا معاہدہ ظاہر کرنا چاہتے ہیں تو اسے آن کریں',
@@ -251,9 +251,9 @@ return [
         'name' => 'زمرہ جات حاصل کریں',
         'instructions' => 'یہ ان زمروں کی نمائندگی کرتا ہے جن میں جی ای ٹی پراپرٹی درست ہوگی۔'
     ],
-	'disable_sentry' => [
-		'name' => 'سینٹری کو غیر فعال کریں'
-	],
+    'disable_sentry' => [
+        'name' => 'سینٹری کو غیر فعال کریں'
+    ],
     'watermark' => [
         'name' => 'واٹر مارک',
         'instructions' => 'کیا واٹر مارک سرگرم ہے؟'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'موبائل ویو پر ذیلی زمرہ جات دکھائیں',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'صرف ممبروں کو قیمت دکھائیں',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'زمرہ جات چھپائیں',
+        'instructions' => 'اشتہارات کی فہرست میں زمرے چھپائیں'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'تخلیق کیلئے آخری تاریخ اور اشاعت کی تاریخ دکھائیں',
+        'instructions' => 'اشتہار تخلیق کے صفحے پر پبلک_اٹ اور فائنل_اٹ فیلڈز دکھاتا ہے۔'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

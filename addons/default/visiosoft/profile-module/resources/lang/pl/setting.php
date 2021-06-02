@@ -48,6 +48,11 @@ return [
         'instructions' => 'Ukrywa pole typu rejestru na stronie edycji profilu.',
     ],
     'required_district' => [
-        'name' => 'Okręg wymagany'
+        'name' => 'Okręg wymagany',
+        'instructions' => 'Dodanie adresu jest obowiązkiem powiatu.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Pokaż działania rozszerzeń',
+        'instructions' => 'Reprezentuje opcje Rozszerzenia dostępne na stronie Mój profil Reklamy.',
     ],
 ];

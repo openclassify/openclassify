@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Карта Длинная координата',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Social Share Logo',
-        'warning'      => 'Это должно быть с разрешением 1200 х 630.',
+        'warning' => 'Это должно быть с разрешением 1200 х 630.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Адрес сайта',
-        'warning'      => 'Авто добавлено www. WWW. <strong>sitename.com</strong>',
+        'warning' => 'Авто добавлено www. WWW. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Рыночная площадь',
     ],
-	'price_area_hidden' => [
-		'name' => 'Цена Площадь Скрыта',
-	],
+    'price_area_hidden' => [
+        'name' => 'Цена Площадь Скрыта',
+    ],
     'hide_price_filter' => [
         'name' => 'Скрыть фильтр цен',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Скрыть дату создания',
         'instructions' => 'Скрыть дату создания на странице сведений об объявлениях',
     ],
-	'hide_listing_header' => [
-		'name' => 'Скрыть заголовок объявления',
-		'instructions' => 'Скрытие для заказа и просмотра типов',
-	],
-	'hide_filter_section' => [
-		'name' => 'Скрыть раздел фильтра',
-		'instructions' => 'Скрытие в левой области фильтра на странице списка',
-	],
-	'hide_seller_info' => [
-		'name' => 'Скрыть информацию о продавце',
-		'instructions' => 'Скрытие информации о продавце на странице сведений о рекламе',
-	],
+    'hide_listing_header' => [
+        'name' => 'Скрыть заголовок объявления',
+        'instructions' => 'Скрытие для заказа и просмотра типов',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Скрыть раздел фильтра',
+        'instructions' => 'Скрытие в левой области фильтра на странице списка',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Скрыть информацию о продавце',
+        'instructions' => 'Скрытие информации о продавце на странице сведений о рекламе',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показать соглашение о публикации рекламы',
         'instructions' => 'Включите это, если вы хотите отображать соглашение о политике конфиденциальности на странице создания рекламы.',
@@ -251,9 +251,9 @@ return [
         'name' => 'Получить Категории',
         'instructions' => 'Он представляет категории, в которых будет действовать свойство GET.'
     ],
-	'disable_sentry' => [
-		'name' => 'Отключить Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Отключить Sentry'
+    ],
     'watermark' => [
         'name' => 'Водяной знак',
         'instructions' => 'Водяной знак активен?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Показывать подкатегории в мобильном представлении',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Показывать цену только участникам',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Скрыть категории',
+        'instructions' => 'Скрыть категории в списке объявлений'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Показать дату окончания и дату публикации для создания',
+        'instructions' => 'Отображает поля publish_at и finish_at на странице создания объявления.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

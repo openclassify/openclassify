@@ -30,7 +30,12 @@ return [
         'instructions' => 'Използва се за добавяне на икони, указващи типа категория.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Моля, изчакайте Изтриване на подкатегории',
     'category_selection' => 'Избор на категория',
     'go_to_parent' => 'Отидете при родител',
+	'preview' => 'Preview'
 ];

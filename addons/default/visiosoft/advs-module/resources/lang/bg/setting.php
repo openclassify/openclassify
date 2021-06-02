@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Карта Дълги координати',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Лого на Social Share',
-        'warning'      => 'Трябва да е с разделителна способност 1200 x 630. ',
+        'warning' => 'Трябва да е с разделителна способност 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Адрес на сайта',
-        'warning'      => 'Автоматично добавено www. www.<strong>сайта.com</strong> ',
+        'warning' => 'Автоматично добавено www. www.<strong>сайта.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Пазар',
     ],
-	'price_area_hidden' => [
-		'name' => 'Скрита цена',
-	],
+    'price_area_hidden' => [
+        'name' => 'Скрита цена',
+    ],
     'hide_price_filter' => [
         'name' => 'Скриване на ценовия филтър',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Скриване на създадената дата',
         'instructions' => 'Скриване на създадената дата в страницата с подробности за рекламите',
     ],
-	'hide_listing_header' => [
-		'name' => 'Скриване на заглавката на списъка',
-		'instructions' => 'Скриване за подреждане и преглед на типове',
-	],
-	'hide_filter_section' => [
-		'name' => 'Скриване на раздела за филтри',
-		'instructions' => 'Скриване в лявата зона на филтъра в страницата с обяви',
-	],
-	'hide_seller_info' => [
-		'name' => 'Скриване на информацията за продавача',
-		'instructions' => 'Скриване на информация за продавача в страницата с подробности за рекламите',
-	],
+    'hide_listing_header' => [
+        'name' => 'Скриване на заглавката на списъка',
+        'instructions' => 'Скриване за подреждане и преглед на типове',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Скриване на раздела за филтри',
+        'instructions' => 'Скриване в лявата зона на филтъра в страницата с обяви',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Скриване на информацията за продавача',
+        'instructions' => 'Скриване на информация за продавача в страницата с подробности за рекламите',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показване на споразумението за публикуване на реклами',
         'instructions' => 'Включете това, ако искате да покажете споразумение за политика за поверителност на страницата за създаване на реклама',
@@ -251,9 +251,9 @@ return [
         'name' => 'ВЗЕМЕТЕ Категории',
         'instructions' => 'Той представлява категориите, в които свойството GET ще бъде валидно.'
     ],
-	'disable_sentry' => [
-		'name' => 'Деактивирайте Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Деактивирайте Sentry'
+    ],
     'watermark' => [
         'name' => 'Воден знак',
         'instructions' => 'Активен ли е водният знак?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Показване на подкатегории в мобилен изглед',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Покажи цена само за членовете',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Скриване на категории',
+        'instructions' => 'Скриване на категориите в списъка с реклами'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Показване на крайната дата и датата на публикуване за създаване',
+        'instructions' => 'Показва полетата objav_at и finish_at на страницата за създаване на реклама.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

@@ -337,6 +337,9 @@ return [
     'owner' => 'صاحب',
     'default_owner_instruction' => 'سيتحول المالك إلى المستخدم الحالي افتراضيًا إذا لم يتم تحديد أي مستخدم',
     'create_page_subtitle' => 'قم بإنشاء الإعلان بشكل لا تشوبه شائبة عن طريق إدخال معلومات مفصلة حول إعلانك.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'عنوان الاعلان',
@@ -345,6 +348,7 @@ return [
     'ads_with_map' => 'الإعلانات مع الخريطة',
     'advanced_sorting' => 'الفرز المتقدم',
     'filter_by_word' => 'تصفية بالكلمة',
+    'filter_by' => 'التصفية حسب: الاسم',
 
     'free' => 'مجانا',
     'ad_date' => 'تاريخ الإعلان',
@@ -369,4 +373,10 @@ return [
         'name' => 'سعر قديم'
     ],
 	'save_search' => 'حفظ البحث',
+    'publish_at' => [
+        'name' => 'تاريخ النشر'
+    ],
+    'tax' => [
+        'name' => 'Tax'
+    ],
 ];

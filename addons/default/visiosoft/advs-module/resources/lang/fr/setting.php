@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Carte Longue Coordonnée',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logo de partage social',
-        'warning'      => 'Il devrait être à une résolution de 1200 x 630.',
+        'warning' => 'Il devrait être à une résolution de 1200 x 630.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Adresse du site',
-        'warning'      => 'Auto ajouté www. www. <strong>sitename.com</strong>',
+        'warning' => 'Auto ajouté www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Clé Api Google Map',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Place du marché',
     ],
-	'price_area_hidden' => [
-		'name' => 'Zone de prix masquée',
-	],
+    'price_area_hidden' => [
+        'name' => 'Zone de prix masquée',
+    ],
     'hide_price_filter' => [
         'name' => 'Masquer le filtre de prix',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Masquer la date de création',
         'instructions' => 'Masquer la date de création dans la page de détail des annonces',
     ],
-	'hide_listing_header' => [
-		'name' => 'Masquer l\'en-tête de l\'annonce',
-		'instructions' => 'Masquage des types de commande et d\'affichage',
-	],
-	'hide_filter_section' => [
-		'name' => 'Masquer la section de filtre',
-		'instructions' => 'Masquage dans la zone de filtre gauche de la page de liste',
-	],
-	'hide_seller_info' => [
-		'name' => 'Masquer les informations du vendeur',
-		'instructions' => 'Masquage des informations du vendeur dans la page de détail des annonces',
-	],
+    'hide_listing_header' => [
+        'name' => 'Masquer l\'en-tête de l\'annonce',
+        'instructions' => 'Masquage des types de commande et d\'affichage',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Masquer la section de filtre',
+        'instructions' => 'Masquage dans la zone de filtre gauche de la page de liste',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Masquer les informations du vendeur',
+        'instructions' => 'Masquage des informations du vendeur dans la page de détail des annonces',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Afficher l\'accord de publication d\'annonce',
         'instructions' => 'Activez cette option si vous souhaitez afficher un accord de politique de confidentialité sur la page de création d\'annonces',
@@ -251,9 +251,9 @@ return [
         'name' => 'OBTENIR Catégories',
         'instructions' => 'Il représente les catégories dans lesquelles la propriété GET sera valide.'
     ],
-	'disable_sentry' => [
-		'name' => 'Désactiver Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Désactiver Sentry'
+    ],
     'watermark' => [
         'name' => 'Filigrane',
         'instructions' => 'Le filigrane est-il actif?'
@@ -265,11 +265,19 @@ return [
     'show_subcats_mobile' => [
         'name' => 'Afficher les sous-catégories sur la vue mobile',
     ],
-	'show_price_to_members_only' => [
-		'name' => 'Afficher le prix aux membres seulement',
-	],
-	'hide_ad_cat' => [
-		'name' => 'Masquer les catégories',
-		'instructions' => 'Masquer les catégories dans la liste des annonces'
-	]
+    'show_price_to_members_only' => [
+        'name' => 'Afficher le prix aux membres seulement',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Masquer les catégories',
+        'instructions' => 'Masquer les catégories dans la liste des annonces'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Afficher la date de fin et la date de publication pour la création',
+        'instructions' => 'Affiche les champs publish_at et finish_at sur la page de création d\'annonce.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

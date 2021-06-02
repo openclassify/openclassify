@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'פייביקון',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'מפה לתיאום ארוך',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'לוגו של שיתוף חברתי',
-        'warning'      => 'זה אמור להיות ברזולוציה של 1200 x 630. ',
+        'warning' => 'זה אמור להיות ברזולוציה של 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'כתובת אתר',
-        'warning'      => 'נוסף אוטומטית www. www.<strong>sitename.com</strong> ',
+        'warning' => 'נוסף אוטומטית www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'מפתח המפתח של גוגל',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'זירת מסחר',
     ],
-	'price_area_hidden' => [
-		'name' => 'אזור מחיר מוסתר',
-	],
+    'price_area_hidden' => [
+        'name' => 'אזור מחיר מוסתר',
+    ],
     'hide_price_filter' => [
         'name' => 'הסתר מסנן מחירים',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'הסתר תאריך יצירה',
         'instructions' => 'הסתר את התאריך שנוצר בדף פרטי המודעות',
     ],
-	'hide_listing_header' => [
-		'name' => 'הסתר כותרת רישום',
-		'instructions' => 'הסתרה לסוגי הזמנה ותצוגה',
-	],
-	'hide_filter_section' => [
-		'name' => 'הסתר את קטע המסנן',
-		'instructions' => 'הסתרת אזור הסינון השמאלי בדף הרישום',
-	],
-	'hide_seller_info' => [
-		'name' => 'הסתר מידע על מוכר',
-		'instructions' => 'הסתרה למידע על מוכר בדף פירוט המודעות',
-	],
+    'hide_listing_header' => [
+        'name' => 'הסתר כותרת רישום',
+        'instructions' => 'הסתרה לסוגי הזמנה ותצוגה',
+    ],
+    'hide_filter_section' => [
+        'name' => 'הסתר את קטע המסנן',
+        'instructions' => 'הסתרת אזור הסינון השמאלי בדף הרישום',
+    ],
+    'hide_seller_info' => [
+        'name' => 'הסתר מידע על מוכר',
+        'instructions' => 'הסתרה למידע על מוכר בדף פירוט המודעות',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'הצג הסכם מודעות לפרסום',
         'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
@@ -251,9 +251,9 @@ return [
         'name' => 'קבל קטגוריות',
         'instructions' => 'הוא מייצג את הקטגוריות בהן נכס ה- GET יהיה תקף.'
     ],
-	'disable_sentry' => [
-		'name' => 'השבת זקיף'
-	],
+    'disable_sentry' => [
+        'name' => 'השבת זקיף'
+    ],
     'watermark' => [
         'name' => 'סימן מים',
         'instructions' => 'האם סימן מים פעיל?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'הצג קטגוריות משנה בתצוגת הנייד',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'הצג מחיר לחברים בלבד',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'הסתר קטגוריות',
+        'instructions' => 'הסתר קטגוריות ברשימת המודעות'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'הצג תאריך סיום ופרסם תאריך ליצירה',
+        'instructions' => 'מציג את השדות publish_at ו- finish_at בדף יצירת המודעות.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

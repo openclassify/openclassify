@@ -48,6 +48,11 @@ return [
         'instructions' => 'Verbergt het registertypeveld op de profielbewerkingspagina.',
     ],
     'required_district' => [
-        'name' => 'Vereist district'
+        'name' => 'Vereist district',
+        'instructions' => 'Het toevoegen van een adres vertegenwoordigt de wijkverplichting.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Toon uitgebreide acties',
+        'instructions' => 'Vertegenwoordigt de uitbreidingsopties die beschikbaar zijn op de pagina Mijn profieladvertenties.',
     ],
 ];

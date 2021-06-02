@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => '网站图标',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => '地图长坐标',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => '社交分享徽标',
-        'warning'      => '分辨率应为1200 x 630。 ',
+        'warning' => '分辨率应为1200 x 630。 ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => '网站地址',
-        'warning'      => '自动添加www。万维网。<strong>sitename.com</strong> ',
+        'warning' => '自动添加www。万维网。<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api密钥',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => '市场地点',
     ],
-	'price_area_hidden' => [
-		'name' => '隐藏价格区',
-	],
+    'price_area_hidden' => [
+        'name' => '隐藏价格区',
+    ],
     'hide_price_filter' => [
         'name' => '隐藏价格过滤器',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => '隐藏创建日期',
         'instructions' => '在广告详细信息页面中隐藏创建日期',
     ],
-	'hide_listing_header' => [
-		'name' => '隐藏列表标题',
-		'instructions' => '隐藏订购和视图类型',
-	],
-	'hide_filter_section' => [
-		'name' => '隐藏筛选器部分',
-		'instructions' => '隐藏在列表页面的左侧过滤器区域',
-	],
-	'hide_seller_info' => [
-		'name' => '隐藏卖家信息',
-		'instructions' => '隐藏在广告详细信息页面中的卖方信息',
-	],
+    'hide_listing_header' => [
+        'name' => '隐藏列表标题',
+        'instructions' => '隐藏订购和视图类型',
+    ],
+    'hide_filter_section' => [
+        'name' => '隐藏筛选器部分',
+        'instructions' => '隐藏在列表页面的左侧过滤器区域',
+    ],
+    'hide_seller_info' => [
+        'name' => '隐藏卖家信息',
+        'instructions' => '隐藏在广告详细信息页面中的卖方信息',
+    ],
     'show_post_ad_agreement' => [
         'name' => '显示发布广告协议',
         'instructions' => '如果要在广告制作页面上显示隐私权政策协议，请启用此功能',
@@ -251,9 +251,9 @@ return [
         'name' => '获取类别',
         'instructions' => '它代表GET属性将在其中有效的类别。'
     ],
-	'disable_sentry' => [
-		'name' => '禁用哨兵'
-	],
+    'disable_sentry' => [
+        'name' => '禁用哨兵'
+    ],
     'watermark' => [
         'name' => '水印',
         'instructions' => '水印活跃吗？'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => '在移动视图中显示子类别',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => '仅向会员显示价格',
+    ],
+    'hide_ad_cat' => [
+        'name' => '隐藏类别',
+        'instructions' => '隐藏广告列表中的类别'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => '显示完成日期并发布创建日期',
+        'instructions' => '在广告创建页面上显示publish_at和finish_at字段。'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

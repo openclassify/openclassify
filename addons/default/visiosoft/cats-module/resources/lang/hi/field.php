@@ -30,7 +30,12 @@ return [
         'instructions' => 'इसका उपयोग श्रेणी प्रकार को इंगित करने वाले आइकन जोड़ने के लिए किया जाता है।',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'कृपया प्रतीक्षा करें। सबलेटिंग सब श्रेणियां',
     'category_selection' => 'श्रेणी चयन',
     'go_to_parent' => 'जनक के पास जाओ',
+	'preview' => 'Preview'
 ];

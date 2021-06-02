@@ -30,8 +30,13 @@ return [
         'instructions' => 'Se utiliza para agregar iconos que indican el tipo de categoría.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Por favor,
    espere. Eliminar subcategorías',
     'category_selection' => 'Selección de categoría',
     'go_to_parent' => 'Ir a los padres',
+	'preview' => 'Preview'
 ];

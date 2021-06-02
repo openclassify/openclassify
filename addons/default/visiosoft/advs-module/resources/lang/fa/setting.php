@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'آیکن مورد علاقه',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'نقشه طولانی مربوط',
     ],
     'map_coordinates_lat' => [
@@ -42,7 +42,7 @@ return [
     'ogImage' => [
         'name' => 'لوگوی اشتراک گذاری شبکه های اجتماعی
 ',
-        'warning'      => 'باید دارای کیفیت 1200X 630 باشد.',
+        'warning' => 'باید دارای کیفیت 1200X 630 باشد.',
 
     ],
     'currencies' => [
@@ -53,7 +53,7 @@ return [
     ],
     'site_address' => [
         'name' => 'آدرس سایت',
-        'warning'      => 'خودکار اضافه شد www. www <strong>sitename.com</strong>',
+        'warning' => 'خودکار اضافه شد www. www <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -135,9 +135,9 @@ return [
     'market_place' => [
         'name' => 'محل بازار',
     ],
-	'price_area_hidden' => [
-		'name' => 'منطقه پنهان',
-	],
+    'price_area_hidden' => [
+        'name' => 'منطقه پنهان',
+    ],
     'hide_price_filter' => [
         'name' => 'فیلتر قیمت مخفی کنید',
     ],
@@ -216,18 +216,18 @@ return [
         'name' => 'پنهان کردن تاریخ ایجاد شده',
         'instructions' => 'تاریخ ایجاد شده را در صفحه جزئیات تبلیغات پنهان کنید',
     ],
-	'hide_listing_header' => [
-		'name' => 'پنهان کردن عنوان لیست',
-		'instructions' => 'مخفی شدن در سفارش و مشاهده انواع',
-	],
-	'hide_filter_section' => [
-		'name' => 'پنهان کردن بخش فیلتر',
-		'instructions' => 'در صفحه لیست مخفی شدن در سمت چپ فیلتر',
-	],
-	'hide_seller_info' => [
-		'name' => 'پنهان کردن اطلاعات فروشنده',
-		'instructions' => 'پنهان شدن در مورد اطلاعات فروشنده در صفحه جزئیات تبلیغات',
-	],
+    'hide_listing_header' => [
+        'name' => 'پنهان کردن عنوان لیست',
+        'instructions' => 'مخفی شدن در سفارش و مشاهده انواع',
+    ],
+    'hide_filter_section' => [
+        'name' => 'پنهان کردن بخش فیلتر',
+        'instructions' => 'در صفحه لیست مخفی شدن در سمت چپ فیلتر',
+    ],
+    'hide_seller_info' => [
+        'name' => 'پنهان کردن اطلاعات فروشنده',
+        'instructions' => 'پنهان شدن در مورد اطلاعات فروشنده در صفحه جزئیات تبلیغات',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'نمایش قرارداد تبلیغات پست',
         'instructions' => 'اگر می خواهید توافق نامه سیاست حفظ حریم خصوصی را در صفحه ایجاد آگهی نمایش دهید ، این گزینه را روشن کنید',
@@ -252,9 +252,9 @@ return [
         'name' => 'دسته ها را دریافت کنید',
         'instructions' => 'این نشان دهنده دسته هایی است که ویژگی GET در آنها معتبر خواهد بود.'
     ],
-	'disable_sentry' => [
-		'name' => 'Sentry را غیرفعال کنید'
-	],
+    'disable_sentry' => [
+        'name' => 'Sentry را غیرفعال کنید'
+    ],
     'watermark' => [
         'name' => 'علامت',
         'instructions' => 'آیا علامت علامت فعال است؟'
@@ -265,5 +265,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'زیر مجموعه ها را در نمای موبایل نشان دهید',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'نمایش قیمت فقط به اعضا',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'پنهان کردن دسته ها',
+        'instructions' => 'پنهان کردن دسته ها در لیست تبلیغات'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'تاریخ پایان را نشان دهید و تاریخ ایجاد را ایجاد کنید',
+        'instructions' => 'قسمت های publ_at و finish_at را در صفحه ایجاد تبلیغ نمایش می دهد.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

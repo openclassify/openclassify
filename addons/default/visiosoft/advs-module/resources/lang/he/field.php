@@ -336,6 +336,10 @@ return [
     'ad_location' => 'מיקום מודעה',
     'owner' => 'בעלים',
     'default_owner_instruction' => 'הבעלים יוגדר כברירת מחדל למשתמש הנוכחי אם לא ייבחר משתמש',
+    'create_page_subtitle' => 'צור את המודעה ללא רבב על ידי הזנת מידע מפורט אודות המודעה שלך.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'כותרת המודעה',
@@ -343,7 +347,8 @@ return [
     'view' => 'נוף',
     'ads_with_map' => 'מודעות עם מפה',
     'advanced_sorting' => 'מיון מתקדם',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'סנן לפי מילה',
+    'filter_by' => 'סנן לפי: שם',
 
     'free' => 'חינם',
     'ad_date' => 'תאריך מודעה',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'מחיר ישן'
+    ],
+	'save_search' => 'שמור חיפוש',
+    'publish_at' => [
+        'name' => 'פרסם תאריך'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

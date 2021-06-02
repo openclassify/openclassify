@@ -30,7 +30,12 @@ return [
         'instructions' => 'বিভাগের ধরণটি চিহ্নিত করে আইকন যুক্ত করতে এটি ব্যবহৃত হয়।',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'অনুগ্রহ করে অপেক্ষা করুন Sub সাব বিভাগগুলি মোছা',
     'category_selection' => 'বিভাগ নির্বাচন',
     'go_to_parent' => 'পিতামাতায় যান',
+	'preview' => 'Preview'
 ];

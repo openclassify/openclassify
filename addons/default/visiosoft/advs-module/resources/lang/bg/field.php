@@ -336,6 +336,10 @@ return [
     'ad_location' => 'Местоположение на рекламата',
     'owner' => 'Собственик',
     'default_owner_instruction' => 'Собственикът ще използва по подразбиране текущия потребител, ако не е избран потребител',
+    'create_page_subtitle' => 'Създайте рекламата безупречно, като въведете подробна информация за нея.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Заглавие на рекламата',
@@ -343,7 +347,8 @@ return [
     'view' => 'Изглед',
     'ads_with_map' => 'Реклами с карта',
     'advanced_sorting' => 'Разширено сортиране',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Филтрирайте по дума',
+    'filter_by' => 'Филтрирайте по: име',
 
     'free' => 'Безплатно',
     'ad_date' => 'Дата на рекламата',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Стара цена'
+    ],
+	'save_search' => 'Запазване на търсенето',
+    'publish_at' => [
+        'name' => 'Дата на публикуване'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

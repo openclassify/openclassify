@@ -48,6 +48,11 @@ return [
         'instructions' => 'Nasconde il campo del tipo di registro nella pagina di modifica del profilo.',
     ],
     'required_district' => [
-        'name' => 'Distretto richiesto'
+        'name' => 'Distretto richiesto',
+        'instructions' => 'L\'aggiunta di un indirizzo rappresenta l\'obbligo del distretto.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Mostra azioni estensioni',
+        'instructions' => 'Rappresenta le opzioni Estende disponibili nella pagina Annunci del mio profilo.',
     ],
 ];

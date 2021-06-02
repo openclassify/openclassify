@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Map Long Koordinate',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logo za deljenje na društvenim mrežama',
-        'warning'      => 'Trebalo bi da bude u rezoluciji 1200x630. ',
+        'warning' => 'Trebalo bi da bude u rezoluciji 1200x630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Adresa sajta',
-        'warning'      => 'Automatski dodato www.  www.<strong>sitename.com</strong> ',
+        'warning' => 'Automatski dodato www.  www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Trgovina',
     ],
-	'price_area_hidden' => [
-		'name' => 'Područje cena skriveno',
-	],
+    'price_area_hidden' => [
+        'name' => 'Područje cena skriveno',
+    ],
     'hide_price_filter' => [
         'name' => 'Sakrij filter cena',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Sakrij datum kreiranja',
         'instructions' => 'Sakrij datum kreranja u detaljima oglasa',
     ],
-	'hide_listing_header' => [
-		'name' => 'Sakrij Zaglavlje liste',
-		'instructions' => 'Sakrivanje redosleda i tipova pregleda',
-	],
-	'hide_filter_section' => [
-		'name' => 'Sakrij filter sekciju',
-		'instructions' => 'Sakrijte područje filtera sa leve strane u Listi',
-	],
-	'hide_seller_info' => [
-		'name' => 'Sakrij Informacije prodavca',
-		'instructions' => 'Sakrij informacije o prodavcu na stranici sa detaljima oglasa',
-	],
+    'hide_listing_header' => [
+        'name' => 'Sakrij Zaglavlje liste',
+        'instructions' => 'Sakrivanje redosleda i tipova pregleda',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Sakrij filter sekciju',
+        'instructions' => 'Sakrijte područje filtera sa leve strane u Listi',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Sakrij Informacije prodavca',
+        'instructions' => 'Sakrij informacije o prodavcu na stranici sa detaljima oglasa',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Prikaži ugovor o objavljivanju oglasa',
         'instructions' => 'Uključite ovo ako želite da na stranici za izradu oglasa prikažete ugovor o politici privatnosti',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Kategorije',
         'instructions' => 'Predstavlja kategorije u kojima će GET svojstvo biti važeće.'
     ],
-	'disable_sentry' => [
-		'name' => 'Isključite Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Isključite Sentry'
+    ],
     'watermark' => [
         'name' => 'Vodeni žig',
         'instructions' => 'Da li je aktivan vodeni žig?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Prikažite potkategorije na mobilnom prikazu',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Show Price To Members Only',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Hide Categories',
+        'instructions' => 'Hide categories in ads list'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Show Finish Date And Publish Date For Create',
+        'instructions' => 'Displays the publish_at and finish_at fields on the ad creation page.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

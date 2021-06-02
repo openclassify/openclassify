@@ -48,6 +48,11 @@ return [
         'instructions' => '프로필 편집 페이지에서 레지스터 유형 필드를 숨 깁니다.',
     ],
     'required_district' => [
-        'name' => '필수 지구'
+        'name' => '필수 지구',
+        'instructions' => '주소 추가는 지구 의무를 나타냅니다.',
+    ],
+    'show_extends_actions' => [
+        'name' => '확장 동작 표시',
+        'instructions' => '내 프로필 광고 페이지에서 사용할 수있는 확장 옵션을 나타냅니다.',
     ],
 ];
