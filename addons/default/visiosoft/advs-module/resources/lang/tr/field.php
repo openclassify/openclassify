@@ -341,7 +341,8 @@ return [
     'create_page_subtitle' => 'Ürün veya ilan hakkında detaylı bilgi girebilirsiniz',
     'with_my_phone_numbers' => 'Telefon numaralarım ile',
     'not_with_my_phone_numbers' => "Telefonla ulaşım sağlamak istemiyorum.",
-    'how_can_you_be_contacted' => "İletişime nasıl geçebilirsiniz?",
+    'how_can_you_be_contacted' => "Nasıl iletişime geçilebilir?
+",
 
     // Listing page
     'ad_title' => 'Başlık',
