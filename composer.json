@@ -92,8 +92,7 @@
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*",
-        "anomaly/installer-module": "~2.4.0"
+        "symfony/dom-crawler": "3.1.*"
     },
     "repositories": [
         {
@@ -112,7 +111,7 @@
         "psr-4": {
             "App\\": "app/",
             "Database\\Factories\\": "database/factories/",
-            "Database\\Seeders\\": "database/seeders/"
+            "Database\\Seeders\\": "database/seeder/"
         }
     },
     "autoload-dev": {
