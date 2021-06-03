@@ -32,7 +32,7 @@ return [
     */
 
     'bindings' => [
-        // 'Anomaly\Streams\Platform\Exception\ExceptionHandler' => ExceptionHandler::class
+         'Anomaly\Streams\Platform\Exception\ExceptionHandler' => ExceptionHandler::class
     ],
 
     /*
