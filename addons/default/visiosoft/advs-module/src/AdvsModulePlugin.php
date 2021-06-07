@@ -116,9 +116,9 @@ class AdvsModulePlugin extends Plugin
                 }
             ),
 	        new \Twig_SimpleFunction(
-	        	'is_module_installed',
-		        function ($moduleNamespace) {
-	        		return is_module_installed($moduleNamespace);
+	        	'is_module_enabled',
+		        function ($slug) {
+	        		return app(AdvModel::class)->is_enabled($slug);
 		        }
 	        )
         ];
