@@ -115,6 +115,12 @@ class AdvsModulePlugin extends Plugin
                     );
                 }
             ),
+	        new \Twig_SimpleFunction(
+	        	'is_module_installed',
+		        function ($moduleNamespace) {
+	        		return is_module_installed($moduleNamespace);
+		        }
+	        )
         ];
     }
 
