@@ -134,6 +134,7 @@ return [
     'home' => 'itthon',
     'list-page' => 'Lista oldal',
     'search' => 'Keresés',
+	'reset' => 'Reset',
     'recommended' => 'Ajánlott hirdetések az Ön számára',
     'filter' => 'Szűrő',
     'sort' => 'Fajta',
