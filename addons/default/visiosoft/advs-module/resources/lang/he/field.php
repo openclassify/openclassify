@@ -134,6 +134,7 @@ return [
     'home' => 'בית',
     'list-page' => 'עמוד רשימה',
     'search' => 'לחפש',
+	'reset' => 'Reset',
     'recommended' => 'מודעות מומלצות עבורך',
     'filter' => 'סנן',
     'sort' => 'סוג',
