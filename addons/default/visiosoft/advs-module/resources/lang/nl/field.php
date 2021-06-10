@@ -134,6 +134,7 @@ return [
     'home' => 'Huis',
     'list-page' => 'Lijstpagina',
     'search' => 'Zoeken',
+	'reset' => 'Reset',
     'recommended' => 'Aanbevolen advertenties voor u',
     'filter' => 'Filter',
     'sort' => 'Soort',
