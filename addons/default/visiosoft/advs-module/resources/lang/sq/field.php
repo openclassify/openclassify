@@ -134,6 +134,7 @@ return [
     'home' => 'Faqja Kryesore',
     'list-page' => 'Faqja e Listës',
     'search' => 'Kërko',
+	'reset' => 'Reset',
     'recommended' => 'Njoftime të rekomanduara për ju',
     'filter' => 'Filtër',
     'sort' => 'Tipi',
