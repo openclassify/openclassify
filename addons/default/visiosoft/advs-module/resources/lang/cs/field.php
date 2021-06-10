@@ -134,6 +134,7 @@ return [
     'home' => 'Domov',
     'list-page' => 'Stránka seznamu',
     'search' => 'Vyhledávání',
+	'reset' => 'Reset',
     'recommended' => 'Doporučené reklamy pro vás',
     'filter' => 'Filtr',
     'sort' => 'Třídit',
