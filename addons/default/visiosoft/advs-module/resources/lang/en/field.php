@@ -134,6 +134,7 @@ return [
     'home' => 'Home',
     'list-page' => 'List Page',
     'search' => 'Search',
+	'reset' => 'Reset',
     'recommended' => 'Recommended Ads for You',
     'filter' => 'Filter',
     'sort' => 'Sort',

@@ -148,10 +148,16 @@
         </div>
     </div>
     <!-- Keyword Filter End -->
-
-    <div id="filterSubmit" class="px-3 text-right">
-        <button type="submit" class="btn text-white btn-sm px-3">
-            {{ trans("visiosoft.module.advs::field.search") }}
-        </button>
+    <div class="d-flex justify-content-end">
+        <div id="filterReset" class="mr-1 text-right">
+            <button type="reset" class="btn btn-light bg-light btn-sm px-3 filter-form-reset">
+                {{ trans("visiosoft.module.advs::field.reset") }}
+            </button>
+        </div>
+        <div id="filterSubmit" class="text-right">
+            <button type="submit" class="btn text-white btn-sm px-3">
+                {{ trans("visiosoft.module.advs::field.search") }}
+            </button>
+        </div>
     </div>
 </form>
