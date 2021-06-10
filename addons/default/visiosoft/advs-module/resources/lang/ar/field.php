@@ -134,6 +134,7 @@ return [
     'home' => 'الصفحة الرئيسية',
     'list-page' => 'قائمة الصفحة',
     'search' => 'بحث',
+	'reset' => 'Reset',
     'recommended' => 'الإعلانات الموصى بها لك',
     'filter' => 'منقي',
     'sort' => 'فرز',
