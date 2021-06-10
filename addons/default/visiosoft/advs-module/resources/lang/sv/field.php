@@ -134,6 +134,7 @@ return [
     'home' => 'Hem',
     'list-page' => 'Lista sida',
     'search' => 'Sök',
+	'reset' => 'Reset',
     'recommended' => 'Rekommenderade annonser för dig',
     'filter' => 'Filtrera',
     'sort' => 'Sortera',
