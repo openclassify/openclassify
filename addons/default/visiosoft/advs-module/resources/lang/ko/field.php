@@ -134,6 +134,7 @@ return [
     'home' => '집',
     'list-page' => '리스트 페이지',
     'search' => '검색',
+	'reset' => 'Reset',
     'recommended' => '추천 광고',
     'filter' => '필터',
     'sort' => '종류',
