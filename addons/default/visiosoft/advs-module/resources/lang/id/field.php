@@ -134,6 +134,7 @@ return [
     'home' => 'Beranda',
     'list-page' => 'Halaman Daftar',
     'search' => 'Cari',
+	'reset' => 'Reset',
     'recommended' => 'Iklan yang direkomendasikan untuk Anda',
     'filter' => 'Saring',
     'sort' => 'Sortir',
