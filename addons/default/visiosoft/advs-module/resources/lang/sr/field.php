@@ -134,6 +134,7 @@ return [
     'home' => 'Početna',
     'list-page' => 'Izlistaj stranu',
     'search' => 'Pronađi',
+	'reset' => 'Reset',
     'recommended' => 'Preporučeni oglasi za vas',
     'filter' => 'Filter',
     'sort' => 'Sortiraj',
