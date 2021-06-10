@@ -134,6 +134,7 @@ return [
     'home' => 'Tuis',
     'list-page' => 'Lys bladsy',
     'search' => 'Soek',
+	'reset' => 'Reset',
     'recommended' => 'Aanbevole advertensies vir u',
     'filter' => 'Filtreer',
     'sort' => 'Sorteer',
