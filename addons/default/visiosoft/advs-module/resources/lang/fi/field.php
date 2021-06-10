@@ -134,6 +134,7 @@ return [
     'home' => 'Koti',
     'list-page' => 'Luettelosivu',
     'search' => 'Hae',
+	'reset' => 'Reset',
     'recommended' => 'Suositellut mainokset sinulle',
     'filter' => 'Suodattaa',
     'sort' => 'Järjestellä',
