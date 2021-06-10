@@ -134,6 +134,7 @@ return [
     'home' => 'Acasă',
     'list-page' => 'Pagina de listă',
     'search' => 'Căutare',
+	'reset' => 'Reset',
     'recommended' => 'Anunțuri recomandate pentru dvs.',
     'filter' => 'Filtru',
     'sort' => 'Fel',
