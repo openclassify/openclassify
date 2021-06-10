@@ -134,6 +134,7 @@ return [
     'home' => 'Casa',
     'list-page' => 'Página de lista',
     'search' => 'Buscar',
+	'reset' => 'Reset',
     'recommended' => 'Anuncios recomendados para usted',
     'filter' => 'Filtrar',
     'sort' => 'Ordenar',
