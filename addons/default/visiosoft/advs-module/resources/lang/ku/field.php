@@ -144,6 +144,7 @@ return [
     'list-page' => 'پەیجی لیست
 ',
     'search' => 'گەڕان',
+	'reset' => 'Reset',
     'recommended' => 'ڕێکلامێکی پێشنیارکراو بۆ ئێوە
 ',
     'filter' => 'پاڵاوتن',
