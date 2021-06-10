@@ -134,6 +134,7 @@ return [
     'home' => 'Anasayfa',
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
+	'reset' => 'Reset',
     'recommended' => 'Sizin için Önerilen İlanlar',
     'filter' => 'Filtre',
     'sort' => 'Çeşit',
@@ -381,8 +382,5 @@ return [
     ],
     'tax' => [
         'name' => 'Vergi'
-    ],
-    'tax' => [
-        'name' => 'KDV Oranı'
     ],
 ];
