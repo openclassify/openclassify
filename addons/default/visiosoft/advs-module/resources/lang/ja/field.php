@@ -134,6 +134,7 @@ return [
     'home' => 'ホーム',
     'list-page' => 'リストページ',
     'search' => '探す',
+	'reset' => 'Reset',
     'recommended' => 'あなたにおすすめの広告',
     'filter' => 'フィルタ',
     'sort' => 'ソート',
