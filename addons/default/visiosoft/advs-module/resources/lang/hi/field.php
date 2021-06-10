@@ -134,6 +134,7 @@ return [
     'home' => 'घर',
     'list-page' => 'सूची पृष्ठ',
     'search' => 'खोज',
+	'reset' => 'Reset',
     'recommended' => 'आपके लिए अनुशंसित विज्ञापन',
     'filter' => 'फ़िल्टर',
     'sort' => 'तरह',
