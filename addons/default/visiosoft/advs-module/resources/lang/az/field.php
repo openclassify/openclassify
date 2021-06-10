@@ -134,6 +134,7 @@ return [
     'home' => 'Ev',
     'list-page' => 'Siyahı Səhifə',
     'search' => 'Axtarış',
+	'reset' => 'Reset',
     'recommended' => 'Tövsiyə olunan elanlar',
     'filter' => 'Filter',
     'sort' => 'Sırala',
