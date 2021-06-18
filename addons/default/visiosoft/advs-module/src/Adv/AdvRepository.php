@@ -389,11 +389,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         $ads = $this->model->getLocationNames($latest_advs);
 
-        foreach ($ads as $index => $ad) {
-            $ads[$index]->detail_url = $this->model->getAdvDetailLinkByModel($ad, 'list');
-            $ads[$index] = $this->model->AddAdsDefaultCoverImage($ad);
-        }
-
         return $ads;
     }
 
