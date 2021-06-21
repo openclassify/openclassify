@@ -278,17 +278,19 @@
                                 </div>
                             {% endif %}
 
-                            <h5 class="mt-5 pb-1 border-bottom">
-                                {{ trans('visiosoft.module.advs::field.ad_location') }}
-                            </h5>
-                            <div class="bg-light p-4 mb-4">
-                                {% include "visiosoft.module.location::new-ad/map" %}
+                            {% if setting_value('visiosoft.module.location::create_ad_page_location') %}
+                                <h5 class="mt-5 pb-1 border-bottom">
+                                    {{ trans('visiosoft.module.advs::field.ad_location') }}
+                                </h5>
+                                <div class="bg-light p-4 mb-4">
+                                    {% include "visiosoft.module.location::new-ad/map" %}
 
-                                <input value="{{ adv.map_Val }}" name="map_Val" data-max="255" data-mask=""
-                                       data-alias="" data-regex=""
-                                       type="text" placeholder="" class="hidden d-none mapVal" data-field="map_Val"
-                                       data-field_name="map_Val" data-provides="anomaly.field_type.text">
-                            </div><!-- section -->
+                                    <input value="{{ adv.map_Val }}" name="map_Val" data-max="255" data-mask=""
+                                           data-alias="" data-regex=""
+                                           type="text" placeholder="" class="hidden d-none mapVal" data-field="map_Val"
+                                           data-field_name="map_Val" data-provides="anomaly.field_type.text">
+                                </div><!-- section -->
+                            {% endif %}
 
                             <div class="checkbox section agreement">
                                 {% if setting_value('visiosoft.module.advs::show_post_ad_agreement') %}
