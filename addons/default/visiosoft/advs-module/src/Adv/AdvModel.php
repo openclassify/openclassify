@@ -21,8 +21,8 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     protected $appends = [
         'detail_url',
         'currency_price',
-        'cat1_name',
-        'cat2_name',
+        'category1',
+        'category2',
         'thumbnail',
     ];
 
@@ -36,15 +36,15 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return app(Currency::class)->format($this->price, $this->currency);
     }
 
-    public function getCat1NameAttribute()
+    public function getCategory1Attribute()
     {
-        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first()->name;
+        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first();
 
     }
 
-    public function getCat2NameAttribute()
+    public function getCategory2Attribute()
     {
-        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first()->name;
+        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first();
 
     }
 
