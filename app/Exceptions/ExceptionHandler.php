@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use Anomaly\Streams\Platform\Exception\ExceptionIdentifier;
 use Swift_TransportException;
 use Throwable;
 use Illuminate\Support\Facades\Auth;
