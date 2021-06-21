@@ -49,6 +49,19 @@ class AdvsModulePlugin extends Plugin
                     return $latestAds;
                 }
             ),
+	        new \Twig_SimpleFunction(
+	            'bestsellerAds',
+		        function ($catId = null) {
+	            	return AdvModel::query()
+			            ->orderBy('total_sales', 'desc')
+			            ->where(function ($query) use ($catId) {
+			            	if ($catId) {
+			            		$query->where('cat1', $catId);
+				            }
+			            })
+			            ->limit(10)->get();
+		        }
+	        ),
             new \Twig_SimpleFunction(
                 'appendRequestURL',
                 function ($request, $url, $new_parameters, $removeParams = []) {
