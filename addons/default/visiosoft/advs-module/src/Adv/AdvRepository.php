@@ -58,8 +58,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 $delimiter = '_';
                 $keyword = str_slug($param['keyword'], $delimiter);
                 $query = $query->where(function ($query) use ($keyword) {
-                    $query->where('advs_advs_translations.advs_desc', 'like', $keyword)
-                        ->orWhere('slug', 'like', '%' . $keyword . '%')
+                    $query->where('slug', 'like', '%' . $keyword . '%')
                         ->orWhere('advs_advs_translations.name', 'like', '%' . $keyword . '%');
                 });
             }
