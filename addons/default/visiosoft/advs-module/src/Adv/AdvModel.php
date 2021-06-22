@@ -50,7 +50,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function getCategory2Attribute()
     {
-        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first();
+        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat2')->first();
 
     }
 
