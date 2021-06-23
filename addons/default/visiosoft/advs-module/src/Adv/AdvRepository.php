@@ -391,6 +391,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $ads;
     }
 
+	public function bestsellerAds($catId = null, $limit = 10)
+	{
+		return $this->model->orderBy('total_sales', 'desc')
+			->where(function ($query) use ($catId) {
+				if ($catId) {
+					$query->where('cat1', $catId);
+				}
+			})
+			->limit($limit)->get();
+	}
+
     public function getByCat($catID, $level = 1, $limit = 20)
     {
         $advs = $this->model
