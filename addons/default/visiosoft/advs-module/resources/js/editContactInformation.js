@@ -46,9 +46,13 @@ $('.editInformationUser').on('click', function () {
                 var profile = response.data;
                 $('input[name="first_name"]').val(profile.first_name);
                 $('input[name="last_name"]').val(profile.last_name);
-                intlTelInput(document.querySelector("input[name='gsm_phone']")).setNumber(profile.gsm_phone);
-                intlTelInput(document.querySelector("input[name='office_phone']")).setNumber(profile.office_phone);
-                intlTelInput(document.querySelector("input[name='land_phone']")).setNumber(profile.land_phone);
+                const numbers = ['gsm_phone', 'office_phone', 'land_phone'];
+                for (let i = 0; i < numbers.length; i++) {
+                    const number = numbers[i];
+                    if (profile[number]) {
+                        intlTelInput(document.querySelector(`input[name=${number}]`)).setNumber(profile[number]);
+                    }
+                }
             }
         }
     });
