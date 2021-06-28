@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Xəritə Uzun Koordinat',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Sosial paylaşma loqosu',
-        'warning'      => '1200 x 630 qətnamə ilə olmalıdır. ',
+        'warning' => '1200 x 630 qətnamə ilə olmalıdır. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Sayt ünvanı',
-        'warning'      => 'Avtomatik olaraq www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Avtomatik olaraq www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Açarı',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Bazar yeri',
     ],
-	'price_area_hidden' => [
-		'name' => 'Qiymət sahəsi gizlidir',
-	],
+    'price_area_hidden' => [
+        'name' => 'Qiymət sahəsi gizlidir',
+    ],
     'hide_price_filter' => [
         'name' => 'Qiymət filtrini gizlət',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Yaranmış Tarixi Gizlət',
         'instructions' => 'Reklamların ətraflı səhifəsində yaradılan tarixi gizlədin',
     ],
-	'hide_listing_header' => [
-		'name' => 'Listing Header gizlədin',
-		'instructions' => 'Sifariş və görünüş növlərinə gizlənmək',
-	],
-	'hide_filter_section' => [
-		'name' => 'Filtr Bölməsini gizlədin',
-		'instructions' => 'Siyahı səhifəsində sol filtr sahəsinə gizlənir',
-	],
-	'hide_seller_info' => [
-		'name' => 'Satıcı haqqında məlumatları gizlədin',
-		'instructions' => 'Reklam detalları səhifəsində satıcı məlumatlarına gizlənmək',
-	],
+    'hide_listing_header' => [
+        'name' => 'Listing Header gizlədin',
+        'instructions' => 'Sifariş və görünüş növlərinə gizlənmək',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Filtr Bölməsini gizlədin',
+        'instructions' => 'Siyahı səhifəsində sol filtr sahəsinə gizlənir',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Satıcı haqqında məlumatları gizlədin',
+        'instructions' => 'Reklam detalları səhifəsində satıcı məlumatlarına gizlənmək',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Post Elan Müqaviləsini Göstərin',
         'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
@@ -251,9 +251,9 @@ return [
         'name' => 'Kateqoriyalar alın',
         'instructions' => 'GET mülkiyyətinin etibarlı olacağı kateqoriyanı təmsil edir.'
     ],
-	'disable_sentry' => [
-		'name' => 'Nöqtəni deaktiv edin'
-	],
+    'disable_sentry' => [
+        'name' => 'Nöqtəni deaktiv edin'
+    ],
     'watermark' => [
         'name' => 'Filigran',
         'instructions' => 'Filigran aktivdir?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Mobil görünüşdə alt kateqoriyalar göstərin',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Qiyməti yalnız üzvlərə göstərin',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Kateqoriyalarları gizlədin',
+        'instructions' => 'Reklam siyahısında kateqoriyalar gizlədin'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Bitmə tarixini göstərin və Yaratma Tarixini Yayınlayın',
+        'instructions' => 'Reklam yaratma səhifəsindəki dərc_at və bitir_at sahələrini göstərir.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

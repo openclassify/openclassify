@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Ikonfav',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Koordinat Garis Bujur Peta',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logo Bagikan (media sosial)',
-        'warning'      => 'Harus pada resolusi 1200 x 630. ',
+        'warning' => 'Harus pada resolusi 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Alamat situs',
-        'warning'      => 'Otomatis www ditambahkan. www.<strong>sitename.com</strong> ',
+        'warning' => 'Otomatis www ditambahkan. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Kunci API Peta Google',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-	'price_area_hidden' => [
-		'name' => 'Area Harga Tersembunyi',
-	],
+    'price_area_hidden' => [
+        'name' => 'Area Harga Tersembunyi',
+    ],
     'hide_price_filter' => [
         'name' => 'Sembunyikan Filter Harga',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Sembunyikan Tanggal Dibuat',
         'instructions' => 'Sembunyikan tanggal pembuatan di halaman detail iklan',
     ],
-	'hide_listing_header' => [
-		'name' => 'Sembunyikan Judul Cantuman',
-		'instructions' => 'Menyembunyikan jenis pemesanan dan tampilan',
-	],
-	'hide_filter_section' => [
-		'name' => 'Sembunyikan Bagian Filter',
-		'instructions' => 'Bersembunyi di area filter kiri di halaman daftar',
-	],
-	'hide_seller_info' => [
-		'name' => 'Sembunyikan Informasi Penjual',
-		'instructions' => 'Menyembunyikan info penjual di halaman detail iklan',
-	],
+    'hide_listing_header' => [
+        'name' => 'Sembunyikan Judul Cantuman',
+        'instructions' => 'Menyembunyikan jenis pemesanan dan tampilan',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Sembunyikan Bagian Filter',
+        'instructions' => 'Bersembunyi di area filter kiri di halaman daftar',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Sembunyikan Informasi Penjual',
+        'instructions' => 'Menyembunyikan info penjual di halaman detail iklan',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Aktifkan ini jika Anda ingin menampilkan perjanjian kebijakan privasi di halaman pembuatan iklan',
@@ -251,9 +251,9 @@ return [
         'name' => 'DAPATKAN Kategori',
         'instructions' => 'Ini mewakili kategori di mana properti GET akan berlaku.'
     ],
-	'disable_sentry' => [
-		'name' => 'Nonaktifkan Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Nonaktifkan Sentry'
+    ],
     'watermark' => [
         'name' => 'Tanda air',
         'instructions' => 'Apakah watermark aktif?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Tampilkan subkategori pada tampilan seluler',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Tunjukkan Harga Hanya Untuk Anggota',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Sembunyikan Kategori',
+        'instructions' => 'Sembunyikan kategori dalam daftar iklan'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Tampilkan Tanggal Selesai Dan Tanggal Publikasi Untuk Membuat',
+        'instructions' => 'Menampilkan bidang publish_at dan finish_at pada halaman pembuatan iklan.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Tampilkan Baris Pajak',
+        'instructions' => 'Ketika opsi ini diaktifkan, Anda dapat mengatur tarif pajak pada halaman pembuatan iklan.'
+    ],
 ];

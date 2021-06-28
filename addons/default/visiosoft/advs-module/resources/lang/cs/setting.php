@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Namapujte dlouhou souřadnici',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logo sociální sdílení',
-        'warning'      => 'Mělo by to být v rozlišení 1200 x 630. ',
+        'warning' => 'Mělo by to být v rozlišení 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Adresa webu',
-        'warning'      => 'Automaticky přidáno www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Automaticky přidáno www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Klíč Google Map Api',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Tržiště',
     ],
-	'price_area_hidden' => [
-		'name' => 'Cenová oblast skrytá',
-	],
+    'price_area_hidden' => [
+        'name' => 'Cenová oblast skrytá',
+    ],
     'hide_price_filter' => [
         'name' => 'Skrýt cenový filtr',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Skrýt datum vytvoření',
         'instructions' => 'Skrýt datum vytvoření na stránce podrobností reklam',
     ],
-	'hide_listing_header' => [
-		'name' => 'Skrýt záhlaví záznamu',
-		'instructions' => 'Schovává se při objednávání a prohlížení typů',
-	],
-	'hide_filter_section' => [
-		'name' => 'Skrýt sekci filtru',
-		'instructions' => 'Schovává se na levé straně oblasti filtru na stránce výpisu',
-	],
-	'hide_seller_info' => [
-		'name' => 'Skrýt informace o prodejci',
-		'instructions' => 'Skrytí informací o prodejci na stránce s podrobnostmi o reklamách',
-	],
+    'hide_listing_header' => [
+        'name' => 'Skrýt záhlaví záznamu',
+        'instructions' => 'Schovává se při objednávání a prohlížení typů',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Skrýt sekci filtru',
+        'instructions' => 'Schovává se na levé straně oblasti filtru na stránce výpisu',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Skrýt informace o prodejci',
+        'instructions' => 'Skrytí informací o prodejci na stránce s podrobnostmi o reklamách',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Zobrazit smlouvu o příspěvku',
         'instructions' => 'Tuto možnost zapněte, pokud chcete na stránce vytváření reklam zobrazit dohodu o zásadách ochrany osobních údajů',
@@ -251,9 +251,9 @@ return [
         'name' => 'ZÍSKEJTE kategorie',
         'instructions' => 'Představuje kategorie, ve kterých bude vlastnost GET platná.'
     ],
-	'disable_sentry' => [
-		'name' => 'Zakázat Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Zakázat Sentry'
+    ],
     'watermark' => [
         'name' => 'Vodoznak',
         'instructions' => 'Je vodoznak aktivní?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Zobrazit podkategorie v mobilním zobrazení',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Zobrazit cenu pouze pro členy',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Skrýt kategorie',
+        'instructions' => 'Skrýt kategorie v seznamu reklam'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Zobrazit datum dokončení a datum publikování pro vytvoření',
+        'instructions' => 'Zobrazí pole publish_at a finish_at na stránce pro vytvoření reklamy.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

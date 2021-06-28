@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => '파비콘',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => '긴 좌표지도',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => '소셜 쉐어 로고',
-        'warning'      => '1200 x 630의 해상도 여야합니다. ',
+        'warning' => '1200 x 630의 해상도 여야합니다. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => '사이트 주소',
-        'warning'      => '자동 추가 www. www.<strong>sitename.com</strong> ',
+        'warning' => '자동 추가 www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => '구글 맵 API 키',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => '마켓 플레이스',
     ],
-	'price_area_hidden' => [
-		'name' => '가격 영역 숨김',
-	],
+    'price_area_hidden' => [
+        'name' => '가격 영역 숨김',
+    ],
     'hide_price_filter' => [
         'name' => '가격 필터 숨기기',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => '만든 날짜 숨기기',
         'instructions' => '광고 세부 정보 페이지에서 만든 날짜 숨기기',
     ],
-	'hide_listing_header' => [
-		'name' => '목록 헤더 숨기기',
-		'instructions' => '주문 및보기 유형 숨기기',
-	],
-	'hide_filter_section' => [
-		'name' => '필터 섹션 숨기기',
-		'instructions' => '목록 페이지에서 왼쪽 필터 영역으로 숨기기',
-	],
-	'hide_seller_info' => [
-		'name' => '판매자 정보 숨기기',
-		'instructions' => '광고 세부 정보 페이지에서 판매자 정보 숨기기',
-	],
+    'hide_listing_header' => [
+        'name' => '목록 헤더 숨기기',
+        'instructions' => '주문 및보기 유형 숨기기',
+    ],
+    'hide_filter_section' => [
+        'name' => '필터 섹션 숨기기',
+        'instructions' => '목록 페이지에서 왼쪽 필터 영역으로 숨기기',
+    ],
+    'hide_seller_info' => [
+        'name' => '판매자 정보 숨기기',
+        'instructions' => '광고 세부 정보 페이지에서 판매자 정보 숨기기',
+    ],
     'show_post_ad_agreement' => [
         'name' => '광고 게시 계약 표시',
         'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET 카테고리',
         'instructions' => 'GET 속성이 유효한 범주를 나타냅니다.'
     ],
-	'disable_sentry' => [
-		'name' => '센트리 비활성화'
-	],
+    'disable_sentry' => [
+        'name' => '센트리 비활성화'
+    ],
     'watermark' => [
         'name' => '양수표',
         'instructions' => '워터 마크가 활성화되어 있습니까?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => '모바일보기에 하위 범주 표시',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => '회원에게만 가격 표시',
+    ],
+    'hide_ad_cat' => [
+        'name' => '카테고리 숨기기',
+        'instructions' => '광고 목록에서 카테고리 숨기기'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => '작성을위한 완료 날짜 및 게시 날짜 표시',
+        'instructions' => '광고 작성 페이지에 publish_at 및 finish_at 필드를 표시합니다.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

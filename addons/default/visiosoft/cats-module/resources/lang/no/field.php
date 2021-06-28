@@ -30,7 +30,12 @@ return [
         'instructions' => 'Den brukes til å legge til ikoner som angir kategoritypen.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Vent. Sletter underkategorier',
     'category_selection' => 'Kategorivalg',
     'go_to_parent' => 'Gå til foreldre',
+	'preview' => 'Preview'
 ];

@@ -30,7 +30,12 @@ return [
         'instructions' => 'Nó được sử dụng để thêm các biểu tượng chỉ ra loại danh mục.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Xin vui lòng chờ. Xóa danh mục phụ',
     'category_selection' => 'Lựa chọn danh mục',
     'go_to_parent' => 'Đi tới cha mẹ',
+	'preview' => 'Preview'
 ];

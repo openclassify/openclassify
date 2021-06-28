@@ -51,7 +51,6 @@ return [
         'name' => 'İlçe Zorunluluğu',
         'instructions' => 'Adres kayıtta ilçe zorunluluğunu temsil eder.',
     ],
-
     'show_extends_actions' => [
         'name' => 'Süre Uzatma Seçeneklerini Göster',
         'instructions' => 'Profilim İlanlar sayfasında bulunan Süre uzatma seçeneklerini temsil eder.',

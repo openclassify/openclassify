@@ -337,6 +337,10 @@ return [
     'ad_location' => 'Ünvan əlavə et',
     'owner' => 'Sahib',
     'default_owner_instruction' => 'Heç bir istifadəçi seçilmədiyi təqdirdə sahib cari istifadəçiyə borcludur',
+    'create_page_subtitle' => 'Reklamınız haqqında ətraflı məlumat daxil edərək reklamı qüsursuz bir şəkildə yaradın.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Reklam adı',
@@ -344,7 +348,8 @@ return [
     'view' => 'Bax',
     'ads_with_map' => 'Xəritə ilə elanlar',
     'advanced_sorting' => 'Qabaqcıl çeşidləmə',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Sözə görə süzün',
+    'filter_by' => 'Adı ilə süzün',
 
     'free' => 'Pulsuz',
     'ad_date' => 'Elan Tarixi',
@@ -367,5 +372,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Köhnə Qiymət'
+    ],
+	'save_search' => 'Axtarışı saxla',
+    'publish_at' => [
+        'name' => 'Tarixi dərc edin'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

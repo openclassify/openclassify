@@ -336,6 +336,10 @@ return [
     'ad_location' => 'বিজ্ঞাপনের অবস্থান',
     'owner' => 'মালিক',
     'default_owner_instruction' => 'কোনও ব্যবহারকারী নির্বাচিত না হলে মালিক বর্তমান ব্যবহারকারীর কাছে ডিফল্ট হবে',
+    'create_page_subtitle' => 'আপনার বিজ্ঞাপন সম্পর্কে বিস্তারিত তথ্য প্রবেশ করে নির্বিঘ্নে বিজ্ঞাপনটি তৈরি করুন।',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'বিজ্ঞাপনের শিরোনাম',
@@ -343,7 +347,8 @@ return [
     'view' => 'দেখুন',
     'ads_with_map' => 'মানচিত্র সহ বিজ্ঞাপন',
     'advanced_sorting' => 'উন্নত বাছাই',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'কথায় কথায় ফিল্টার করুন',
+    'filter_by' => 'ফিল্টার করুন: নাম',
 
     'free' => 'ফ্রি',
     'ad_date' => 'বিজ্ঞাপন তারিখ',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'পুরাতন মূল্য'
+    ],
+	'save_search' => 'অনুসন্ধান সংরক্ষণ করুন',
+    'publish_at' => [
+        'name' => 'প্রকাশের তারিখ'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'फ़ेविकॉन',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'मैप लॉन्ग कोऑर्डिनेट',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'सामाजिक शेयर लोगो',
-        'warning'      => 'यह 1200 x 630 के रिज़ॉल्यूशन पर होना चाहिए। ',
+        'warning' => 'यह 1200 x 630 के रिज़ॉल्यूशन पर होना चाहिए। ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'साइट का पता',
-        'warning'      => 'ऑटो ने www। www।<strong>sitename.com</strong> ',
+        'warning' => 'ऑटो ने www। www।<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'गूगल मैप एप की',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'मार्केट प्लेस',
     ],
-	'price_area_hidden' => [
-		'name' => 'मूल्य क्षेत्र छिपा हुआ',
-	],
+    'price_area_hidden' => [
+        'name' => 'मूल्य क्षेत्र छिपा हुआ',
+    ],
     'hide_price_filter' => [
         'name' => 'मूल्य फ़िल्टर छिपाएँ',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'बनाई गई तारीख छिपाएँ',
         'instructions' => 'विज्ञापन विस्तार पृष्ठ में बनाई गई तिथि छिपाएँ',
     ],
-	'hide_listing_header' => [
-		'name' => 'लिस्टिंग हैडर छिपाएं',
-		'instructions' => 'ऑर्डर करने और देखने के प्रकारों के लिए छिपाना',
-	],
-	'hide_filter_section' => [
-		'name' => 'फ़िल्टर अनुभाग छिपाएँ',
-		'instructions' => 'लिस्टिंग पृष्ठ में बाएं फिल्टर क्षेत्र में छिपा',
-	],
-	'hide_seller_info' => [
-		'name' => 'विक्रेता की जानकारी छिपाएँ',
-		'instructions' => 'विज्ञापन विस्तार पृष्ठ में विक्रेता infos को छुपाता है',
-	],
+    'hide_listing_header' => [
+        'name' => 'लिस्टिंग हैडर छिपाएं',
+        'instructions' => 'ऑर्डर करने और देखने के प्रकारों के लिए छिपाना',
+    ],
+    'hide_filter_section' => [
+        'name' => 'फ़िल्टर अनुभाग छिपाएँ',
+        'instructions' => 'लिस्टिंग पृष्ठ में बाएं फिल्टर क्षेत्र में छिपा',
+    ],
+    'hide_seller_info' => [
+        'name' => 'विक्रेता की जानकारी छिपाएँ',
+        'instructions' => 'विज्ञापन विस्तार पृष्ठ में विक्रेता infos को छुपाता है',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'विज्ञापन विज्ञापन दिखाएं',
         'instructions' => 'यदि आप विज्ञापन निर्माण पृष्ठ पर गोपनीयता नीति अनुबंध प्रदर्शित करना चाहते हैं तो इसे चालू करें',
@@ -251,9 +251,9 @@ return [
         'name' => 'श्रेणियाँ प्राप्त करें',
         'instructions' => 'यह उन श्रेणियों का प्रतिनिधित्व करता है जिनमें GET संपत्ति मान्य होगी।'
     ],
-	'disable_sentry' => [
-		'name' => 'संतरी अक्षम करें'
-	],
+    'disable_sentry' => [
+        'name' => 'संतरी अक्षम करें'
+    ],
     'watermark' => [
         'name' => 'वाटर-मार्क',
         'instructions' => 'क्या वॉटरमार्क सक्रिय है?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'मोबाइल दृश्य पर उपश्रेणियाँ दिखाएँ',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'केवल सदस्यों को मूल्य दिखाएं',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'श्रेणियाँ छिपाएँ',
+        'instructions' => 'विज्ञापन सूची में श्रेणियां छिपाएं'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'बनाने के लिए समाप्ति तिथि और प्रकाशन तिथि दिखाएं',
+        'instructions' => 'विज्ञापन निर्माण पृष्ठ पर publish_at और finish_at फ़ील्ड प्रदर्शित करता है।'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

@@ -30,7 +30,12 @@ return [
         'instructions' => '用于添加指示类别类型的图标。',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => '请稍候。正在删除子类别',
     'category_selection' => '类别选择',
     'go_to_parent' => '去父母',
+	'preview' => 'Preview'
 ];

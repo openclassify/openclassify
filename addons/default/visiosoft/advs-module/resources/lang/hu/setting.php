@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Térkép hosszú koordinátája',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Közösségi logó',
-        'warning'      => '1200 x 630 felbontásban kell lennie. ',
+        'warning' => '1200 x 630 felbontásban kell lennie. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Hely címe',
-        'warning'      => 'Automatikusan hozzáadta a www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Automatikusan hozzáadta a www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Piactér',
     ],
-	'price_area_hidden' => [
-		'name' => 'Rejtett árterület',
-	],
+    'price_area_hidden' => [
+        'name' => 'Rejtett árterület',
+    ],
     'hide_price_filter' => [
         'name' => 'Árszűrő elrejtése',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'A létrehozás dátumának elrejtése',
         'instructions' => 'A létrehozás dátumának elrejtése a hirdetések részleteinek oldalán',
     ],
-	'hide_listing_header' => [
-		'name' => 'A listafejléc elrejtése',
-		'instructions' => 'Rejtés a sorrend és a nézettípusok felé',
-	],
-	'hide_filter_section' => [
-		'name' => 'Szűrő szakasz elrejtése',
-		'instructions' => 'Elrejtés a szűrő bal oldalán a listázási oldalon',
-	],
-	'hide_seller_info' => [
-		'name' => 'Eladó információk elrejtése',
-		'instructions' => 'Az eladó információinak elrejtése a hirdetések részletes oldalán',
-	],
+    'hide_listing_header' => [
+        'name' => 'A listafejléc elrejtése',
+        'instructions' => 'Rejtés a sorrend és a nézettípusok felé',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Szűrő szakasz elrejtése',
+        'instructions' => 'Elrejtés a szűrő bal oldalán a listázási oldalon',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Eladó információk elrejtése',
+        'instructions' => 'Az eladó információinak elrejtése a hirdetések részletes oldalán',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'A hirdetés utáni megállapodás megjelenítése',
         'instructions' => 'Kapcsolja be, ha adatvédelmi irányelveket szeretne megjeleníteni a hirdetés létrehozása oldalon',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Kategóriák',
         'instructions' => 'Azokat a kategóriákat képviseli, amelyekben a GET tulajdonság érvényes lesz.'
     ],
-	'disable_sentry' => [
-		'name' => 'Letiltja a Sentry szolgáltatást'
-	],
+    'disable_sentry' => [
+        'name' => 'Letiltja a Sentry szolgáltatást'
+    ],
     'watermark' => [
         'name' => 'Vízjel',
         'instructions' => 'A vízjel aktív?'
@@ -265,11 +265,19 @@ return [
     'show_subcats_mobile' => [
         'name' => 'Alkategóriák megjelenítése mobil nézetben',
     ],
-	'show_price_to_members_only' => [
-		'name' => 'Árak megjelenítése csak tagoknak',
-	],
-	'hide_ad_cat' => [
-		'name' => 'Kategóriák elrejtése',
-		'instructions' => 'Kategóriák elrejtése a hirdetési listában'
-	]
+    'show_price_to_members_only' => [
+        'name' => 'Árak megjelenítése csak tagoknak',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Kategóriák elrejtése',
+        'instructions' => 'Kategóriák elrejtése a hirdetési listában'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'A befejezés dátumának és a létrehozás közzétételének dátumának megjelenítése',
+        'instructions' => 'Megjeleníti a public_at és a finish_at mezőket a hirdetés létrehozása oldalon.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

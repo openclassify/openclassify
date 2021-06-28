@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Lange Koordinate abbilden',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Social Share Logo',
-        'warning'      => 'Die Auflösung sollte 1200 x 630 betragen.',
+        'warning' => 'Die Auflösung sollte 1200 x 630 betragen.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Website-Adresse',
-        'warning'      => 'Automatisch hinzugefügt www. www. <strong>sitename.com</strong>',
+        'warning' => 'Automatisch hinzugefügt www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Google Map-API-Schlüssel',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Marktplatz',
     ],
-	'price_area_hidden' => [
-		'name' => 'Preisbereich versteckt',
-	],
+    'price_area_hidden' => [
+        'name' => 'Preisbereich versteckt',
+    ],
     'hide_price_filter' => [
         'name' => 'Preisfilter ausblenden',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Erstellungsdatum ausblenden',
         'instructions' => 'Erstellungsdatum auf der Anzeigen-Detailseite ausblenden',
     ],
-	'hide_listing_header' => [
-		'name' => 'Listenkopf ausblenden',
-		'instructions' => 'Verstecken, um Typen zu bestellen und anzuzeigen',
-	],
-	'hide_filter_section' => [
-		'name' => 'Filterbereich ausblenden',
-		'instructions' => 'Versteckt den linken Filterbereich auf der Listenseite',
-	],
-	'hide_seller_info' => [
-		'name' => 'Verkäuferinformationen ausblenden',
-		'instructions' => 'Ausblenden von Verkäuferinformationen auf der Anzeigen-Detailseite',
-	],
+    'hide_listing_header' => [
+        'name' => 'Listenkopf ausblenden',
+        'instructions' => 'Verstecken, um Typen zu bestellen und anzuzeigen',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Filterbereich ausblenden',
+        'instructions' => 'Versteckt den linken Filterbereich auf der Listenseite',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Verkäuferinformationen ausblenden',
+        'instructions' => 'Ausblenden von Verkäuferinformationen auf der Anzeigen-Detailseite',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement anzeigen',
         'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
@@ -251,9 +251,9 @@ return [
         'name' => 'Kategorien abrufen',
         'instructions' => 'Es stellt die Kategorien dar, in denen die GET-Eigenschaft gültig ist.'
     ],
-	'disable_sentry' => [
-		'name' => 'Sentry deaktivieren'
-	],
+    'disable_sentry' => [
+        'name' => 'Sentry deaktivieren'
+    ],
     'watermark' => [
         'name' => 'Wasserzeichen',
         'instructions' => 'Ist das Wasserzeichen aktiv?'
@@ -265,11 +265,19 @@ return [
     'show_subcats_mobile' => [
         'name' => 'Unterkategorien in der mobilen Ansicht anzeigen',
     ],
-	'show_price_to_members_only' => [
-		'name' => 'Preis nur für Mitglieder anzeigen',
-	],
-	'hide_ad_cat' => [
-		'name' => 'Kategorien ausblenden',
-		'instructions' => 'Kategorien in der Anzeigenliste ausblenden'
-	]
+    'show_price_to_members_only' => [
+        'name' => 'Preis nur für Mitglieder anzeigen',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Kategorien ausblenden',
+        'instructions' => 'Kategorien in der Anzeigenliste ausblenden'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Enddatum anzeigen und Veröffentlichungsdatum für die Erstellung',
+        'instructions' => 'Zeigt die Felder "Publish_at" und "Finish_at" auf der Seite zur Anzeigenerstellung an.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

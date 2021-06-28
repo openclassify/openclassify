@@ -30,8 +30,13 @@ return [
         'instructions' => 'Используется для добавления значков, обозначающих тип категории.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Пожалуйста,
    подождите. Удаление подкатегорий',
     'category_selection' => 'Выбор категории',
     'go_to_parent' => 'Перейти к родителю',
+	'preview' => 'Preview'
 ];

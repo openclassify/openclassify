@@ -1,0 +1,18 @@
+<section id="offline">
+    <div class="d-flex align-items-center justify-content-center flex-column text-center">
+        {{ img('visiosoft.theme.base::images/unplugged.svg').data|raw }}
+
+        <h1 class="my-4">{{ trans('visiosoft.theme.base::field.connection_problem') }}</h1>
+
+        <p class="mb-5">
+            {{ trans('visiosoft.theme.base::field.your_internet_connection_is_broken') }}
+            <br>
+            {{ trans('visiosoft.theme.base::field.we_miss_you_so_much_already') }}
+        </p>
+
+        <button class="border-0">
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            {{ trans('visiosoft.theme.base::field.try_again') }}
+        </button>
+    </div>
+</section>

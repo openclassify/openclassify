@@ -30,7 +30,12 @@ return [
         'instructions' => 'Este folosit pentru a adăuga pictograme care indică tipul de categorie.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Vă rugăm să așteptați. Ștergeți subcategorii',
     'category_selection' => 'Selectarea categoriei',
     'go_to_parent' => 'Mergeți la părinte',
+	'preview' => 'Preview'
 ];

@@ -30,7 +30,12 @@ return [
         'instructions' => 'Χρησιμοποιείται για την προσθήκη εικονιδίων που υποδεικνύουν τον τύπο κατηγορίας.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Παρακαλώ περιμένετε. Διαγραφή υπο-κατηγοριών',
     'category_selection' => 'Επιλογή κατηγορίας',
     'go_to_parent' => 'Μετάβαση στο γονέα',
+	'preview' => 'Preview'
 ];

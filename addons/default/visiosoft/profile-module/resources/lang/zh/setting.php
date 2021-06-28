@@ -48,6 +48,11 @@ return [
         'instructions' => '隐藏配置文件编辑页面中的寄存器类型字段。',
     ],
     'required_district' => [
-        'name' => '必选地区'
+        'name' => '必选地区',
+        'instructions' => '添加地址代表地区义务。',
+    ],
+    'show_extends_actions' => [
+        'name' => '显示扩展动作',
+        'instructions' => '代表我的个人资料广告页面上可用的扩展选项。',
     ],
 ];

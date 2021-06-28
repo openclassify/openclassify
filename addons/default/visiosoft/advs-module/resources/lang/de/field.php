@@ -338,6 +338,9 @@ return [
     'owner' => 'Inhaber',
     'default_owner_instruction' => 'Der Eigentümer verwendet standardmäßig den aktuellen Benutzer, wenn kein Benutzer ausgewählt ist',
     'create_page_subtitle' => 'Erstellen Sie die Anzeige fehlerfrei, indem Sie detaillierte Informationen zu Ihrer Anzeige eingeben.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Anzeigentitel',
@@ -346,6 +349,7 @@ return [
     'ads_with_map' => 'Anzeigen mit Karte',
     'advanced_sorting' => 'Erweiterte Sortierung',
     'filter_by_word' => 'Nach Wort filtern',
+    'filter_by' => 'Filtern nach: Name',
 
     'free' => 'Frei',
     'ad_date' => 'Anzeigedatum',
@@ -370,4 +374,10 @@ return [
         'name' => 'Alter Preis'
     ],
 	'save_search' => 'Sichere Suche',
+    'publish_at' => [
+        'name' => 'Erscheinungsdatum'
+    ],
+    'tax' => [
+        'name' => 'Tax'
+    ],
 ];

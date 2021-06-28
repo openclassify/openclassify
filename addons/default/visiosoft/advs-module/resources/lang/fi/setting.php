@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Kartta Long Coordinate',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Sosiaalisen osakkeen logo',
-        'warning'      => 'Sen tulisi olla resoluutio 1 200 x 630. ',
+        'warning' => 'Sen tulisi olla resoluutio 1 200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Sivuston osoite',
-        'warning'      => 'Automaattinen lisäys www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Automaattinen lisäys www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Tori',
     ],
-	'price_area_hidden' => [
-		'name' => 'Hinta-alue piilotettu',
-	],
+    'price_area_hidden' => [
+        'name' => 'Hinta-alue piilotettu',
+    ],
     'hide_price_filter' => [
         'name' => 'Piilota hintasuodatin',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Piilota luontipäivä',
         'instructions' => 'Piilota luotu päivämäärä mainosten tietosivulla',
     ],
-	'hide_listing_header' => [
-		'name' => 'Piilota luettelootsikko',
-		'instructions' => 'Piilotus tilaamiseen ja näkymiin',
-	],
-	'hide_filter_section' => [
-		'name' => 'Piilota suodatinosa',
-		'instructions' => 'Piilotus vasemmalle suodatinalue luettelosivulle',
-	],
-	'hide_seller_info' => [
-		'name' => 'Piilota myyjän tiedot',
-		'instructions' => 'Piilotus myyjän tietoihin ilmoitusten tietosivulla',
-	],
+    'hide_listing_header' => [
+        'name' => 'Piilota luettelootsikko',
+        'instructions' => 'Piilotus tilaamiseen ja näkymiin',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Piilota suodatinosa',
+        'instructions' => 'Piilotus vasemmalle suodatinalue luettelosivulle',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Piilota myyjän tiedot',
+        'instructions' => 'Piilotus myyjän tietoihin ilmoitusten tietosivulla',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Näytä postimainossopimus',
         'instructions' => 'Ota tämä käyttöön, jos haluat näyttää tietosuojakäytännön mainoksen luomissivulla',
@@ -251,9 +251,9 @@ return [
         'name' => 'HANKI luokkia',
         'instructions' => 'Se edustaa luokkia, joissa GET-ominaisuus on voimassa.'
     ],
-	'disable_sentry' => [
-		'name' => 'Poista Sentry käytöstä'
-	],
+    'disable_sentry' => [
+        'name' => 'Poista Sentry käytöstä'
+    ],
     'watermark' => [
         'name' => 'Vesileima',
         'instructions' => 'Onko vesileima aktiivinen?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Näytä alaluokat mobiilinäkymässä',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Näytä hinta vain jäsenille',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Piilota luokat',
+        'instructions' => 'Piilota luokat mainosluettelossa'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Näytä lopetuspäivä ja julkaisupäivä luomista varten',
+        'instructions' => 'Näyttää julkaisun_at ja viimeistelyn_at-kentät mainoksen luomissivulla.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

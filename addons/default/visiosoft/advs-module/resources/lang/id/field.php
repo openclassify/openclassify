@@ -138,8 +138,8 @@ return [
     'filter' => 'Saring',
     'sort' => 'Sortir',
     'sort_by' => 'Sortir berdasarkan',
-    'pick_option' => 'Pilih salah satu opsi',
-    'pick_ordering' => 'Memesan',
+    'pick_option' => 'Pilih sebuah opsi',
+    'pick_ordering' => 'Urutan',
     'price_high' => 'Harga Tinggi ke Rendah',
     'price_low' => 'Harga Rendah ke Tinggi',
     'newest' => 'Terbaru',
@@ -336,6 +336,10 @@ return [
     'ad_location' => 'Lokasi Iklan',
     'owner' => 'Pemilik',
     'default_owner_instruction' => 'Pemilik akan menggunakan pengguna saat ini secara bawaan/default jika tidak ada pengguna yang dipilih',
+    'create_page_subtitle' => 'Buat iklan tanpa masalah dengan memasukkan informasi rinci tentang iklan Anda.',
+    'with_my_phone_numbers' => 'Dengan nomor telepon saya',
+    'not_with_my_phone_numbers' => "Saya tidak ingin dihubungi melalui telepon",
+    'how_can_you_be_contacted' => "Bagaimana Anda dapat dihubungi?",
 
     // Listing page
     'ad_title' => 'Judul Iklan',
@@ -343,7 +347,8 @@ return [
     'view' => 'Melihat',
     'ads_with_map' => 'Iklan Dengan Peta',
     'advanced_sorting' => 'Penyortiran Lanjutan',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filter menurut kata',
+    'filter_by' => 'Filter berdasarkan: nama',
 
     'free' => 'Gratis',
     'ad_date' => 'Tanggal Iklan',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Harga Lama'
+    ],
+	'save_search' => 'Simpan pencarian',
+    'publish_at' => [
+        'name' => 'Tanggal Penerbitan'
+    ],
+    'tax' => [
+        'name' => 'Pajak'
     ],
 ];

@@ -36,10 +36,15 @@ return [
 ',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Please wait. Deleting Sub Categories
 ',
     'category_selection' => 'هەڵبژاردنی کەتێگۆری
 ',
     'go_to_parent' => 'Go To Parent
 ',
+	'preview' => 'Preview'
 ];

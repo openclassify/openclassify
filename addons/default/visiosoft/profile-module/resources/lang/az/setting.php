@@ -48,6 +48,11 @@ return [
         'instructions' => 'Profil redaktə səhifəsində qeyd növü sahəsini gizlədir.',
     ],
     'required_district' => [
-        'name' => 'Zəruri rayon'
+        'name' => 'Zəruri rayon',
+        'instructions' => 'Ünvan əlavə etmək rayon öhdəliyini əks etdirir.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Şou Əməliyyatları Genişləndirir',
+        'instructions' => 'Profil reklam səhifəmdə mövcud olan Genişləndirmə seçimlərini təmsil edir.',
     ],
 ];

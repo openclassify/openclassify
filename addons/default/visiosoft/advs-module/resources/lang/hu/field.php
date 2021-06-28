@@ -337,6 +337,9 @@ return [
     'owner' => 'Tulajdonos',
     'default_owner_instruction' => 'A tulajdonos alapértelmezés szerint az aktuális felhasználót állítja be, ha nincs kiválasztva felhasználó',
     'create_page_subtitle' => 'Hozza létre a hirdetést hibátlanul a hirdetésével kapcsolatos részletes információk megadásával.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Hirdetés címe',
@@ -345,6 +348,7 @@ return [
     'ads_with_map' => 'Hirdetések térképpel',
     'advanced_sorting' => 'Haladó rendezés',
     'filter_by_word' => 'Szűrés szó szerint',
+    'filter_by' => 'Szűrés: név szerint',
 
     'free' => 'Ingyenes',
     'ad_date' => 'Hirdetés dátuma',
@@ -369,4 +373,10 @@ return [
         'name' => 'Régi ár'
     ],
 	'save_search' => 'Keresés mentése',
+    'publish_at' => [
+        'name' => 'Közzététel dátuma'
+    ],
+    'tax' => [
+        'name' => 'Tax'
+    ],
 ];

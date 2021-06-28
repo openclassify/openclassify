@@ -48,6 +48,11 @@ return [
         'instructions' => 'Elrejti a regisztertípus mezőt a profilszerkesztő oldalon.',
     ],
     'required_district' => [
-        'name' => 'Szükséges körzet'
+        'name' => 'Szükséges körzet',
+        'instructions' => 'Cím hozzáadása a kerületi kötelezettséget jelenti.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Megjeleníti a műveletek kiterjesztését',
+        'instructions' => 'A Saját profil hirdetések oldalon elérhető kiterjesztési lehetőségeket képviseli.',
     ],
 ];

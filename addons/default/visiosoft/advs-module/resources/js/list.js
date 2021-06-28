@@ -160,6 +160,13 @@ $(document).ready(function () {
     $("select[name=filter_City]").select2({
         placeholder: $('select[name=filter_City] option:first-child').text()
     });
+
+    $('.filter-form-reset').on('click', function () {
+        let form = $("#listFilterForm");
+        form.find('input:text, input:password, input:file, input[type="number"], select, textarea').val('');
+        form.find('input:radio, input:checkbox').removeAttr('checked').removeAttr('selected');
+        form.submit();
+    });
 });
 
 function getCities(country) {

@@ -48,6 +48,11 @@ return [
         'instructions' => 'Piilottaa rekisterityypin kentän profiilin muokkaussivulla.',
     ],
     'required_district' => [
-        'name' => 'Vaadittu piiri'
+        'name' => 'Vaadittu piiri',
+        'instructions' => 'Osoitteen lisääminen edustaa piirivelvoitetta.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Näytä laajentaa toimintoja',
+        'instructions' => 'Edustaa Profiilimainokset-sivulla käytettävissä olevia Laajennukset-vaihtoehtoja.',
     ],
 ];

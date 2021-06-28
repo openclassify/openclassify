@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Koordinata e gjatë e hartës',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Logo e përbashkët sociale',
-        'warning'      => 'Ajo duhet të jetë në një rezolutë prej 1200 x 630. ',
+        'warning' => 'Ajo duhet të jetë në një rezolutë prej 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Adresa e Faqja internet',
-        'warning'      => 'Auto shtuar www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Auto shtuar www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Key Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Vendi i tregut',
     ],
-	'price_area_hidden' => [
-		'name' => 'Zona e Çmimit e Fshehur',
-	],
+    'price_area_hidden' => [
+        'name' => 'Zona e Çmimit e Fshehur',
+    ],
     'hide_price_filter' => [
         'name' => 'Fsheh Filterin e Pricemimeve',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Fshih datën e krijuar',
         'instructions' => 'Fshih datën e krijuar në faqen e detajeve të reklamave',
     ],
-	'hide_listing_header' => [
-		'name' => 'Fshih titullin e listës',
-		'instructions' => 'Fshehja për renditjen dhe shikimin e llojeve',
-	],
-	'hide_filter_section' => [
-		'name' => 'Fshih pjesën e filtrit',
-		'instructions' => 'Fshihet në zonën e majtë të filtrit në faqen e listës',
-	],
-	'hide_seller_info' => [
-		'name' => 'Fshih informacionin e shitësit',
-		'instructions' => 'Fshehja e informacionit të shitësit në faqen e detajeve të reklamave',
-	],
+    'hide_listing_header' => [
+        'name' => 'Fshih titullin e listës',
+        'instructions' => 'Fshehja për renditjen dhe shikimin e llojeve',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Fshih pjesën e filtrit',
+        'instructions' => 'Fshihet në zonën e majtë të filtrit në faqen e listës',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Fshih informacionin e shitësit',
+        'instructions' => 'Fshehja e informacionit të shitësit në faqen e detajeve të reklamave',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
         'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Kategoritë',
         'instructions' => 'Ai përfaqëson kategoritë në të cilat prona GET do të jetë e vlefshme.'
     ],
-	'disable_sentry' => [
-		'name' => 'Çaktivizo rojet'
-	],
+    'disable_sentry' => [
+        'name' => 'Çaktivizo rojet'
+    ],
     'watermark' => [
         'name' => 'Filigranë',
         'instructions' => 'A është ujëra aktive?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Shfaq nënkategoritë në pamjen e celularëve',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Shfaq Çmimin Vetëm Anëtarëve',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Fshih kategoritë',
+        'instructions' => 'Fshih kategoritë në listën e reklamave'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Trego datën e përfundimit dhe datën e publikimit për krijimin',
+        'instructions' => 'Shfaq fushat publ_at dhe finish_at në faqen e krijimit të reklamave.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

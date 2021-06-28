@@ -30,7 +30,12 @@ return [
         'instructions' => 'Sitä käytetään lisäämään kuvakkeet, jotka osoittavat luokan tyypin.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Odota. Poistetaan alaluokat',
     'category_selection' => 'Luokan valinta',
     'go_to_parent' => 'Mene vanhemmalle',
+	'preview' => 'Preview'
 ];

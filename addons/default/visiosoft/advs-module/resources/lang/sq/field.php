@@ -337,6 +337,10 @@ return [
     'ad_location' => 'Vendndodhja e reklamës',
     'owner' => 'Pronar',
     'default_owner_instruction' => 'Pronari do të zgjedhë përdoruesin aktual nëse nuk zgjidhet asnjë përdorues',
+    'create_page_subtitle' => 'Krijoni reklamën në mënyrë të përsosur duke futur informacione të hollësishme në lidhje me reklamën tuaj.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Titulli i reklamës',
@@ -344,7 +348,8 @@ return [
     'view' => 'Pamje',
     'ads_with_map' => 'Reklama me hartë',
     'advanced_sorting' => 'Renditja e avancuar',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Filtro me fjalë',
+    'filter_by' => 'Filtro sipas: emrit',
 
     'free' => 'Falas',
     'ad_date' => 'Data e shpalljes',
@@ -367,5 +372,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Çmimi i Vjetër'
+    ],
+	'save_search' => 'Ruaj kërkimin',
+    'publish_at' => [
+        'name' => 'Data e Publikimit'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

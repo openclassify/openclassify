@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Фавікон',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Карта довгий координат',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Соціальний логотип Share',
-        'warning'      => 'Він повинен бути при роздільній здатності 1200 x 630. ',
+        'warning' => 'Він повинен бути при роздільній здатності 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Адреса сайту',
-        'warning'      => 'Авто додано www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Авто додано www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Ключ Api Google Map',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Ринок',
     ],
-	'price_area_hidden' => [
-		'name' => 'Цінова область прихована',
-	],
+    'price_area_hidden' => [
+        'name' => 'Цінова область прихована',
+    ],
     'hide_price_filter' => [
         'name' => 'Сховати фільтр цін',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Сховати дату створення',
         'instructions' => 'Сховати дату створення на сторінці деталей оголошень',
     ],
-	'hide_listing_header' => [
-		'name' => 'Сховати заголовок списку',
-		'instructions' => 'Приховування впорядкування та перегляду типів',
-	],
-	'hide_filter_section' => [
-		'name' => 'Сховати розділ фільтра',
-		'instructions' => 'Приховання лівої області фільтра на сторінці списку',
-	],
-	'hide_seller_info' => [
-		'name' => 'Сховати інформацію про продавця',
-		'instructions' => 'Приховування інформації про продавця на сторінці деталей оголошень',
-	],
+    'hide_listing_header' => [
+        'name' => 'Сховати заголовок списку',
+        'instructions' => 'Приховування впорядкування та перегляду типів',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Сховати розділ фільтра',
+        'instructions' => 'Приховання лівої області фільтра на сторінці списку',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Сховати інформацію про продавця',
+        'instructions' => 'Приховування інформації про продавця на сторінці деталей оголошень',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показати угоду про розміщення оголошень',
         'instructions' => 'Увімкніть це, якщо ви хочете відображати угоду про політику конфіденційності на сторінці створення оголошення',
@@ -251,9 +251,9 @@ return [
         'name' => 'ОТРИМАТИ Категорії',
         'instructions' => 'Він представляє категорії, в яких буде дійсним властивість GET.'
     ],
-	'disable_sentry' => [
-		'name' => 'Вимкнути Sentry'
-	],
+    'disable_sentry' => [
+        'name' => 'Вимкнути Sentry'
+    ],
     'watermark' => [
         'name' => 'Водяний знак',
         'instructions' => 'Активний водяний знак?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Показувати підкатегорії в мобільному режимі',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Показувати ціну лише учасникам',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Приховати категорії',
+        'instructions' => 'Сховати категорії в списку оголошень'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Показати дату завершення та дату публікації для створення',
+        'instructions' => 'Відображає поля pub_at і finish_at на сторінці створення оголошення.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

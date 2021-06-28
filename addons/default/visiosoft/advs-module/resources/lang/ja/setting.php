@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'ファビコン',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => '長い座標をマップ',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'ソーシャルシェアロゴ',
-        'warning'      => '1200 x 630の解像度である必要があります。 ',
+        'warning' => '1200 x 630の解像度である必要があります。 ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'サイトアドレス',
-        'warning'      => '自動追加www。 www。<strong>sitename.com</strong> ',
+        'warning' => '自動追加www。 www。<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'GoogleマップAPIキー',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'マーケットプレイス',
     ],
-	'price_area_hidden' => [
-		'name' => '隠された価格帯',
-	],
+    'price_area_hidden' => [
+        'name' => '隠された価格帯',
+    ],
     'hide_price_filter' => [
         'name' => '価格フィルターを非表示',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => '作成日を非表示',
         'instructions' => '広告詳細ページで作成日を非表示',
     ],
-	'hide_listing_header' => [
-		'name' => 'リストヘッダーを非表示',
-		'instructions' => '注文と表示タイプの非表示',
-	],
-	'hide_filter_section' => [
-		'name' => 'フィルタセクションを非表示',
-		'instructions' => 'リストページの左側のフィルター領域に非表示',
-	],
-	'hide_seller_info' => [
-		'name' => '売り手情報を隠す',
-		'instructions' => '広告の詳細ページで販売者情報を非表示にする',
-	],
+    'hide_listing_header' => [
+        'name' => 'リストヘッダーを非表示',
+        'instructions' => '注文と表示タイプの非表示',
+    ],
+    'hide_filter_section' => [
+        'name' => 'フィルタセクションを非表示',
+        'instructions' => 'リストページの左側のフィルター領域に非表示',
+    ],
+    'hide_seller_info' => [
+        'name' => '売り手情報を隠す',
+        'instructions' => '広告の詳細ページで販売者情報を非表示にする',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'ポスト広告契約を表示する',
         'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
@@ -251,9 +251,9 @@ return [
         'name' => 'カテゴリを取得',
         'instructions' => 'これは、GETプロパティが有効になるカテゴリを表します。'
     ],
-	'disable_sentry' => [
-		'name' => 'セントリーを無効にする'
-	],
+    'disable_sentry' => [
+        'name' => 'セントリーを無効にする'
+    ],
     'watermark' => [
         'name' => '透かし',
         'instructions' => '透かしはアクティブですか？'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'モバイルビューでサブカテゴリを表示する',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'メンバーのみに価格を表示',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'カテゴリを非表示',
+        'instructions' => '広告リストのカテゴリを非表示'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => '作成の終了日と公開日を表示する',
+        'instructions' => '広告作成ページにpublish_atフィールドとfinish_atフィールドを表示します。'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

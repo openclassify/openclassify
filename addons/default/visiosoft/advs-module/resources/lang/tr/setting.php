@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Harita Long Koordinati',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Sosyal Paylaşma Logosu',
-        'warning'      => '1200 x 630 çözünürlükte olmalıdır.',
+        'warning' => '1200 x 630 çözünürlükte olmalıdır.',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Site Adresi',
-        'warning'      => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
+        'warning' => 'Otomatik eklendi www. www. <strong>sitename.com</strong>',
     ],
     'google_map_key' => [
         'name' => 'Google Harita Api Anahtarı',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Pazar Yeri',
     ],
-	'price_area_hidden' => [
-		'name' => 'Fiyat Alanı Gizli',
-	],
+    'price_area_hidden' => [
+        'name' => 'Fiyat Alanı Gizli',
+    ],
     'hide_price_filter' => [
         'name' => 'Fiyat Filtresini Gizle',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Oluşturulma Tarihini Gizle',
         'instructions' => 'İlan detay sayfasında oluşturulan tarihi gizle',
     ],
-	'hide_listing_header' => [
-		'name' => 'Liste Başlığını Gizle',
-		'instructions' => 'Türleri sıralamak ve görüntülemek için gizleme',
-	],
-	'hide_filter_section' => [
-		'name' => 'Filtre Bölümünü Gizle',
-		'instructions' => 'Liste sayfasında sol filtre alanına gizleniyor',
-	],
-	'hide_seller_info' => [
-		'name' => 'Satıcı Bilgilerini Gizle',
-		'instructions' => 'İlan detay sayfasında satıcı bilgilerinin gizlenmesi',
-	],
+    'hide_listing_header' => [
+        'name' => 'Liste Başlığını Gizle',
+        'instructions' => 'Türleri sıralamak ve görüntülemek için gizleme',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Filtre Bölümünü Gizle',
+        'instructions' => 'Liste sayfasında sol filtre alanına gizleniyor',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Satıcı Bilgilerini Gizle',
+        'instructions' => 'İlan detay sayfasında satıcı bilgilerinin gizlenmesi',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'İlan Sonrası Sözleşmesini Göster',
         'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET Kategorileri',
         'instructions' => 'GET özelliğinin geçerli olacağı kategorileri temsil eder.'
     ],
-	'disable_sentry' => [
-		'name' => 'Sentry\'yi devre dışı bırak'
-	],
+    'disable_sentry' => [
+        'name' => 'Sentry\'yi devre dışı bırak'
+    ],
     'watermark' => [
         'name' => 'Filigran',
         'instructions' => 'Filigran etkin mi?'
@@ -265,11 +265,19 @@ return [
     'show_subcats_mobile' => [
         'name' => 'Alt kategorileri mobil görünümde göster',
     ],
-	'show_price_to_members_only' => [
-		'name' => 'Sadece Üyelere Fiyat Göster',
-	],
-	'hide_ad_cat' => [
-		'name' => 'Kategorileri Gizle',
-		'instructions' => 'İlan listelemede ilan kategorilerini gizle'
-	]
+    'show_price_to_members_only' => [
+        'name' => 'Sadece Üyelere Fiyat Göster',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Kategorileri Gizle',
+        'instructions' => 'İlan listelemede ilan kategorilerini gizle'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'İlan ekleme ve düzenleme sayfasında Bitiş Tarihini ve Yayınlanma Tarihini Göster',
+        'instructions' => 'Kullanıcı yayınlama tarihini ve bitiş tarihini görebilir. '
+    ],
+    'show_tax_field' => [
+         'name' => 'KDV (Vergi) Oranı Seçmeyi Göster',
+        'instructions' => 'Bu seçenek etkinleştirildiğinde, ilan veya ürün oluşturma sayfasında vergi oranını ayarlayabilirsiniz.'
+    ]
 ];

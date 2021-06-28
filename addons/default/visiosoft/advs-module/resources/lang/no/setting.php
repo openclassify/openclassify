@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'Favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Kart Long Coordinate',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Social Share-logo',
-        'warning'      => 'Den skal ha en oppløsning på 1200 x 630. ',
+        'warning' => 'Den skal ha en oppløsning på 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Nettstedsadresse',
-        'warning'      => 'Automatisk lagt til www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Automatisk lagt til www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api Key',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Markedsplass',
     ],
-	'price_area_hidden' => [
-		'name' => 'Prisområde skjult',
-	],
+    'price_area_hidden' => [
+        'name' => 'Prisområde skjult',
+    ],
     'hide_price_filter' => [
         'name' => 'Skjul prisfilter',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Skjul opprettet dato',
         'instructions' => 'Skjul opprettet dato på siden med annonser',
     ],
-	'hide_listing_header' => [
-		'name' => 'Skjul oppføringshode',
-		'instructions' => 'Gjemmer seg for bestilling og visningstyper',
-	],
-	'hide_filter_section' => [
-		'name' => 'Skjul filterseksjonen',
-		'instructions' => 'Gjemmer seg til venstre filterområde på oppføringssiden',
-	],
-	'hide_seller_info' => [
-		'name' => 'Skjul selgerinformasjon',
-		'instructions' => 'Skjuler seg til selgerinformasjon på siden med annonser',
-	],
+    'hide_listing_header' => [
+        'name' => 'Skjul oppføringshode',
+        'instructions' => 'Gjemmer seg for bestilling og visningstyper',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Skjul filterseksjonen',
+        'instructions' => 'Gjemmer seg til venstre filterområde på oppføringssiden',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Skjul selgerinformasjon',
+        'instructions' => 'Skjuler seg til selgerinformasjon på siden med annonser',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Vis avtale om innleggsannonser',
         'instructions' => 'Slå på dette hvis du vil vise en avtale om personvern på siden for annonseoppretting',
@@ -251,9 +251,9 @@ return [
         'name' => 'FÅ kategorier',
         'instructions' => 'Den representerer kategoriene der GET-egenskapen vil være gyldig.'
     ],
-	'disable_sentry' => [
-		'name' => 'Deaktiver vaktpost'
-	],
+    'disable_sentry' => [
+        'name' => 'Deaktiver vaktpost'
+    ],
     'watermark' => [
         'name' => 'Vannmerke',
         'instructions' => 'Er vannmerke aktivt?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Vis underkategorier på mobilvisning',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Vis pris kun for medlemmer',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Skjul kategorier',
+        'instructions' => 'Skjul kategorier i annonselisten'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Vis sluttdato og publiser dato for oppretting',
+        'instructions' => 'Viser feltene publish_at og finish_at på siden for annonseoppretting.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

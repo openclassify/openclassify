@@ -48,6 +48,11 @@ return [
         'instructions' => 'プロファイル編集ページのレジスタタイプフィールドを非表示にします。',
     ],
     'required_district' => [
-        'name' => '必要な地区'
+        'name' => '必要な地区',
+        'instructions' => '住所の追加は、地区の義務を表しています。',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Show ExtendsActions',
+        'instructions' => 'マイプロフィール広告ページで利用可能な拡張オプションを表します。',
     ],
 ];

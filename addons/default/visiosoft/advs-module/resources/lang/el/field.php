@@ -337,6 +337,10 @@ return [
     'ad_location' => 'Τοποθεσία διαφήμισης',
     'owner' => 'Ιδιοκτήτης',
     'default_owner_instruction' => 'Ο κάτοχος θα προεπιλογή στον τρέχοντα χρήστη εάν δεν έχει επιλεγεί κανένας χρήστης',
+    'create_page_subtitle' => 'Δημιουργήστε τη διαφήμιση άψογα εισάγοντας λεπτομερείς πληροφορίες σχετικά με τη διαφήμισή σας.',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'Τίτλος διαφήμισης',
@@ -344,7 +348,8 @@ return [
     'view' => 'Θέα',
     'ads_with_map' => 'Διαφημίσεις με χάρτη',
     'advanced_sorting' => 'Προηγμένη ταξινόμηση',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'Φιλτράρισμα κατά λέξη',
+    'filter_by' => 'Φιλτράρισμα κατά: όνομα',
 
     'free' => 'Ελεύθερος',
     'ad_date' => 'Ημερομηνία διαφήμισης',
@@ -367,5 +372,12 @@ return [
 	],
     'old_price' => [
         'name' => 'Παλιά τιμή'
+    ],
+	'save_search' => 'Αποθήκευση αναζήτησης',
+    'publish_at' => [
+        'name' => 'Ημερομηνία δημοσίευσης'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

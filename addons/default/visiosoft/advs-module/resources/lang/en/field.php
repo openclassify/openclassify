@@ -134,6 +134,7 @@ return [
     'home' => 'Home',
     'list-page' => 'List Page',
     'search' => 'Search',
+	'reset' => 'Reset',
     'recommended' => 'Recommended Ads for You',
     'filter' => 'Filter',
     'sort' => 'Sort',
@@ -375,5 +376,8 @@ return [
 	'save_search' => 'Save Search',
     'publish_at' => [
         'name' => 'Publish Date'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

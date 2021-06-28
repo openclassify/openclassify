@@ -58,8 +58,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                 $delimiter = '_';
                 $keyword = str_slug($param['keyword'], $delimiter);
                 $query = $query->where(function ($query) use ($keyword) {
-                    $query->where('advs_advs_translations.advs_desc', 'like', '%' . $keyword . '%')
-                        ->orWhere('slug', 'like', '%' . $keyword . '%')
+                    $query->where('slug', 'like', '%' . $keyword . '%')
                         ->orWhere('advs_advs_translations.name', 'like', '%' . $keyword . '%');
                 });
             }
@@ -395,11 +394,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->limit(setting_value('visiosoft.module.advs::latest-limit'))->get();
 
         $ads = $this->model->getLocationNames($latest_advs);
-
-        foreach ($ads as $index => $ad) {
-            $ads[$index]->detail_url = $this->model->getAdvDetailLinkByModel($ad, 'list');
-            $ads[$index] = $this->model->AddAdsDefaultCoverImage($ad);
-        }
 
         return $ads;
     }

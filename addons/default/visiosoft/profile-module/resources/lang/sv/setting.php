@@ -48,6 +48,11 @@ return [
         'instructions' => 'Döljer registertypfältet i profilredigeringssidan.',
     ],
     'required_district' => [
-        'name' => 'Obligatoriskt distrikt'
+        'name' => 'Obligatoriskt distrikt',
+        'instructions' => 'Att lägga till en adress representerar distriktsförpliktelsen.',
+    ],
+    'show_extends_actions' => [
+        'name' => 'Visa förlänger åtgärder',
+        'instructions' => 'Representerar de alternativ som finns tillgängliga på sidan Min profilannonser.',
     ],
 ];

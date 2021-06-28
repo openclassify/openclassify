@@ -336,6 +336,10 @@ return [
     'ad_location' => 'विज्ञापन स्थान',
     'owner' => 'मालिक',
     'default_owner_instruction' => 'यदि कोई उपयोगकर्ता चयनित नहीं है, तो स्वामी वर्तमान उपयोगकर्ता को डिफ़ॉल्ट करेगा',
+    'create_page_subtitle' => 'अपने विज्ञापन के बारे में विस्तृत जानकारी दर्ज करके विज्ञापन को त्रुटिपूर्ण बनाएं।',
+    'with_my_phone_numbers' => 'With my phone numbers',
+    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
+    'how_can_you_be_contacted' => "How can you be contacted?",
 
     // Listing page
     'ad_title' => 'विज्ञापन शीर्षक',
@@ -343,7 +347,8 @@ return [
     'view' => 'राय',
     'ads_with_map' => 'मानचित्र के साथ विज्ञापन',
     'advanced_sorting' => 'उन्नत छँटाई',
-    'filter_by_word' => 'Filter by word',
+    'filter_by_word' => 'शब्द द्वारा फ़िल्टर करें',
+    'filter_by' => 'फ़िल्टर करके: नाम',
 
     'free' => 'नि: शुल्क',
     'ad_date' => 'विज्ञापन तिथि',
@@ -366,5 +371,12 @@ return [
 	],
     'old_price' => [
         'name' => 'पुरानी कीमत'
+    ],
+	'save_search' => 'खोज संग्रहित करें',
+    'publish_at' => [
+        'name' => 'प्रकाशित तिथि'
+    ],
+    'tax' => [
+        'name' => 'Tax'
     ],
 ];

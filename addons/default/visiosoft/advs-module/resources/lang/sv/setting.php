@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'favicon',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'Karta över lång koordinat',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'Social Share Logo',
-        'warning'      => 'Det ska vara i en upplösning på 1200 x 630. ',
+        'warning' => 'Det ska vara i en upplösning på 1200 x 630. ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'Webbplatsadress',
-        'warning'      => 'Auto lagt till www. www.<strong>sitename.com</strong> ',
+        'warning' => 'Auto lagt till www. www.<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'Google Map Api-nyckel',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'Market Place',
     ],
-	'price_area_hidden' => [
-		'name' => 'Prisområde dolt',
-	],
+    'price_area_hidden' => [
+        'name' => 'Prisområde dolt',
+    ],
     'hide_price_filter' => [
         'name' => 'Dölj prisfilter',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'Dölj skapat datum',
         'instructions' => 'Dölj skapat datum på sidan med annonser',
     ],
-	'hide_listing_header' => [
-		'name' => 'Dölj listhuvud',
-		'instructions' => 'Döljer för beställning och visningstyper',
-	],
-	'hide_filter_section' => [
-		'name' => 'Dölj filteravsnittet',
-		'instructions' => 'Gömmer till vänster filterområde på listningssidan',
-	],
-	'hide_seller_info' => [
-		'name' => 'Dölj säljarinformation',
-		'instructions' => 'Dölja information till säljare på sidan med annonser',
-	],
+    'hide_listing_header' => [
+        'name' => 'Dölj listhuvud',
+        'instructions' => 'Döljer för beställning och visningstyper',
+    ],
+    'hide_filter_section' => [
+        'name' => 'Dölj filteravsnittet',
+        'instructions' => 'Gömmer till vänster filterområde på listningssidan',
+    ],
+    'hide_seller_info' => [
+        'name' => 'Dölj säljarinformation',
+        'instructions' => 'Dölja information till säljare på sidan med annonser',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Visa annonsannonsavtal',
         'instructions' => 'Aktivera detta om du vill visa ett integritetspolicyavtal på sidan för skapande av annonser',
@@ -251,9 +251,9 @@ return [
         'name' => 'Hämta kategorier',
         'instructions' => 'Det representerar de kategorier i vilka GET-egenskapen är giltig.'
     ],
-	'disable_sentry' => [
-		'name' => 'Inaktivera vaktpost'
-	],
+    'disable_sentry' => [
+        'name' => 'Inaktivera vaktpost'
+    ],
     'watermark' => [
         'name' => 'Vattenstämpel',
         'instructions' => 'Är vattenstämpel aktivt?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'Visa underkategorier i mobilvy',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'Visa pris endast för medlemmar',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'Dölj kategorier',
+        'instructions' => 'Dölj kategorier i annonslistan'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'Visa slutdatum och publicera datum för skapande',
+        'instructions' => 'Visar fälten publish_at och finish_at på sidan för att skapa annonser.'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

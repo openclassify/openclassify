@@ -180,7 +180,7 @@ return [
         'type' => 'anomaly.field_type.checkboxes',
         'required' => true,
         'config' => [
-        	'mode' => 'tags',
+            'mode' => 'tags',
             'default_value' => function () {
                 return [config('streams::currencies.default')];
             },
@@ -403,34 +403,34 @@ return [
             },
         ],
     ],
-	'favicon' => [
-		'type' => 'anomaly.field_type.file',
-	],
-	'ads_date_hidden' => [
-		'type' => 'anomaly.field_type.boolean',
-		'config' => [
-			'default_value' => false,
-		]
-	],
-	'hide_listing_header' => [
-		'type' => 'anomaly.field_type.boolean',
-		'config' => [
-			'default_value' => false,
-		]
-	],
-	'hide_filter_section' => [
-		'type' => 'anomaly.field_type.boolean',
-		'config' => [
-			'default_value' => false,
-		]
-	],
-	'hide_seller_info' => [
-		'type' => 'anomaly.field_type.boolean',
-		'config' => [
-			'default_value' => false,
-		]
-	],
-	'disable_sentry' => 'anomaly.field_type.boolean',
+    'favicon' => [
+        'type' => 'anomaly.field_type.file',
+    ],
+    'ads_date_hidden' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+    'hide_listing_header' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+    'hide_filter_section' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+    'hide_seller_info' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+    'disable_sentry' => 'anomaly.field_type.boolean',
     'detailed_product_options' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
@@ -443,20 +443,27 @@ return [
             'default_value' => false,
         ]
     ],
-	'show_price_to_members_only' => [
-		'type' => 'anomaly.field_type.boolean',
-		'config' => [
-			'default_value' => false,
-		]
-	],
-	'hide_ad_cat' => [
-		'type' => 'anomaly.field_type.boolean',
-		'config' => [
-			'default_value' => false,
-		]
-	],
+    'show_price_to_members_only' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+    'hide_ad_cat' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
 
     'show_finish_and_publish_date' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ],
+    ],
+
+    'show_tax_field' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
             'default_value' => false,

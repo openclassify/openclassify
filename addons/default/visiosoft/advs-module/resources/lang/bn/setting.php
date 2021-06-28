@@ -27,7 +27,7 @@ return [
     'favicon' => [
         'name' => 'ফেভিকন',
     ]
-    ,'map_coordinates_long' => [
+    , 'map_coordinates_long' => [
         'name' => 'মানচিত্র দীর্ঘ সমন্বয়',
     ],
     'map_coordinates_lat' => [
@@ -41,7 +41,7 @@ return [
     ],
     'ogImage' => [
         'name' => 'সামাজিক ভাগ লোগো',
-        'warning'      => 'এটি 1200 x 630 এর রেজোলিউশনে হওয়া উচিত। ',
+        'warning' => 'এটি 1200 x 630 এর রেজোলিউশনে হওয়া উচিত। ',
 
     ],
     'currencies' => [
@@ -52,7 +52,7 @@ return [
     ],
     'site_address' => [
         'name' => 'সাইটের ঠিকানা',
-        'warning'      => 'অটো যুক্ত www। WWW।<strong>sitename.com</strong> ',
+        'warning' => 'অটো যুক্ত www। WWW।<strong>sitename.com</strong> ',
     ],
     'google_map_key' => [
         'name' => 'গুগল ম্যাপ এপি কী',
@@ -134,9 +134,9 @@ return [
     'market_place' => [
         'name' => 'মার্কেট প্লেস',
     ],
-	'price_area_hidden' => [
-		'name' => 'মূল্য অঞ্চল লুকানো',
-	],
+    'price_area_hidden' => [
+        'name' => 'মূল্য অঞ্চল লুকানো',
+    ],
     'hide_price_filter' => [
         'name' => 'দাম ফিল্টার লুকান',
     ],
@@ -215,18 +215,18 @@ return [
         'name' => 'তৈরি তারিখ লুকান',
         'instructions' => 'বিজ্ঞাপনের বিশদ পৃষ্ঠাতে তৈরি তারিখটি লুকান',
     ],
-	'hide_listing_header' => [
-		'name' => 'তালিকা শিরোনাম লুকান',
-		'instructions' => 'অর্ডার করা এবং প্রকার দেখার জন্য আড়াল করা',
-	],
-	'hide_filter_section' => [
-		'name' => 'ফিল্টার বিভাগটি লুকান',
-		'instructions' => 'তালিকা পৃষ্ঠায় বাম ফিল্টার অঞ্চল থেকে লুকানো',
-	],
-	'hide_seller_info' => [
-		'name' => 'বিক্রেতার তথ্য লুকান',
-		'instructions' => 'বিজ্ঞাপনের বিশদ পৃষ্ঠাতে বিক্রেতা ইনফোদের কাছে লুকানো',
-	],
+    'hide_listing_header' => [
+        'name' => 'তালিকা শিরোনাম লুকান',
+        'instructions' => 'অর্ডার করা এবং প্রকার দেখার জন্য আড়াল করা',
+    ],
+    'hide_filter_section' => [
+        'name' => 'ফিল্টার বিভাগটি লুকান',
+        'instructions' => 'তালিকা পৃষ্ঠায় বাম ফিল্টার অঞ্চল থেকে লুকানো',
+    ],
+    'hide_seller_info' => [
+        'name' => 'বিক্রেতার তথ্য লুকান',
+        'instructions' => 'বিজ্ঞাপনের বিশদ পৃষ্ঠাতে বিক্রেতা ইনফোদের কাছে লুকানো',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'পোস্ট বিজ্ঞাপন চুক্তি প্রদর্শন করুন',
         'instructions' => 'আপনি বিজ্ঞাপন তৈরি পৃষ্ঠায় কোনও গোপনীয়তা নীতি চুক্তি প্রদর্শন করতে চাইলে এটি চালু করুন',
@@ -251,9 +251,9 @@ return [
         'name' => 'GET বিভাগসমূহ',
         'instructions' => 'এটি এমন বিভাগগুলিতে প্রতিনিধিত্ব করে যেখানে জিইটি সম্পত্তি বৈধ হবে।'
     ],
-	'disable_sentry' => [
-		'name' => 'সেন্ট্রি অক্ষম করুন'
-	],
+    'disable_sentry' => [
+        'name' => 'সেন্ট্রি অক্ষম করুন'
+    ],
     'watermark' => [
         'name' => 'ওয়াটারমার্ক',
         'instructions' => 'জলছবি সক্রিয়?'
@@ -264,5 +264,20 @@ return [
     ],
     'show_subcats_mobile' => [
         'name' => 'মোবাইল ভিউতে উপশ্রেণীগুলি দেখান',
-    ]
+    ],
+    'show_price_to_members_only' => [
+        'name' => 'মূল্য শুধুমাত্র সদস্যদের দেখান',
+    ],
+    'hide_ad_cat' => [
+        'name' => 'বিভাগগুলি লুকান',
+        'instructions' => 'বিজ্ঞাপনের তালিকায় বিভাগগুলি লুকান'
+    ],
+    'show_finish_and_publish_date' => [
+        'name' => 'তৈরির জন্য শেষ তারিখ এবং প্রকাশের তারিখ দেখান',
+        'instructions' => 'বিজ্ঞাপন তৈরি পৃষ্ঠায় প্রকাশ_আট এবং সমাপ্তি_এ ক্ষেত্রগুলি প্রদর্শন করে।'
+    ],
+    'show_tax_field' => [
+        'name' => 'Show Tax Field',
+        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+    ],
 ];

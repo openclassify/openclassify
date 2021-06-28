@@ -30,7 +30,12 @@ return [
         'instructions' => 'S\'utilitza per afegir icones que indiquen el tipus de categoria.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'Si us plau, espereu. Esborra les subcategories',
     'category_selection' => 'Selecció de categories',
     'go_to_parent' => 'Ves al pare',
+	'preview' => 'Preview'
 ];

@@ -30,7 +30,12 @@ return [
         'instructions' => 'يتم استخدامه لإضافة الرموز التي تشير إلى نوع الفئة.',
     ],
 
+    'parent' => 'Parent',
+    'level' => 'Level',
+    'count' => 'Ad Counts',
+
     'please_wait' => 'يرجى الانتظار',
     'category_selection' => 'اختيار الفئة',
     'go_to_parent' => 'انتقل إلى الأصل',
+	'preview' => 'Preview'
 ];
