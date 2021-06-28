@@ -43,7 +43,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
 	public function getCurrencyStandardPriceAttribute()
 	{
-		if ($this->standard_price > $this->currency) {
+		if ($this->standard_price > $this->price) {
 			return app(Currency::class)->format($this->standard_price, $this->currency);
 		}
 		return null;
