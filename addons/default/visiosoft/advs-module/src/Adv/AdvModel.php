@@ -29,7 +29,11 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function getDetailUrlAttribute()
     {
-        return $this->getAdvDetailLinkByModel($this, 'list');
+        // Checking for slug
+        if($this->attributes)
+        {
+            return $this->getAdvDetailLinkByModel($this, 'list');
+        }
     }
 
     public function getCurrencyPriceAttribute()
