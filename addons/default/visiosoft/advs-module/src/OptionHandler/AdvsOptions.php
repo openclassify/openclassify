@@ -1,20 +1,22 @@
 <?php namespace Visiosoft\AdvsModule\OptionHandler;
 
 use Anomaly\CheckboxesFieldType\CheckboxesFieldType;
+use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\MultipleFieldType\MultipleFieldType;
 
 class AdvsOptions
 {
-	private $advRepository;
+	private $advModel;
 
-	public function __construct(AdvRepositoryInterface $advRepository)
+	public function __construct(AdvModel $advModel)
 	{
-		$this->advRepository = $advRepository;
+		$this->advModel = $advModel;
 	}
 
 	public function handle(CheckboxesFieldType $fieldType)
 	{
-		$categories = $this->advRepository->all();
+		$categories = $this->advModel->currentAds()->get();
 		$options = $categories->pluck('name', 'id')->all();
 		$fieldType->setOptions($options);
 	}

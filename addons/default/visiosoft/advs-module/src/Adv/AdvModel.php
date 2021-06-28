@@ -415,6 +415,13 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         }
     }
 
+    public function currentAds() {
+    	return $this->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+		    ->where('status', '=', 'approved')
+		    ->where('slug', '!=', '')
+		    ->orderBy('publish_at', 'desc');
+    }
+
     public function inStock()
     {
         return $this->is_get_adv && $this->stock;
