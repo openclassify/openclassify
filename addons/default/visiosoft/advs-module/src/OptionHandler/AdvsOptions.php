@@ -2,8 +2,6 @@
 
 use Anomaly\CheckboxesFieldType\CheckboxesFieldType;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\MultipleFieldType\MultipleFieldType;
 
 class AdvsOptions
 {
