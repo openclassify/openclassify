@@ -35,6 +35,8 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
 
     public function latestAds();
 
+	public function bestsellerAds($catId= null, $limit = 10);
+
     public function getByCat($catID, $level = 1, $limit = 20);
 
     public function getAdsCountByCategory($catID, $level = 1);

@@ -9,6 +9,7 @@ use Visiosoft\AdvsModule\Adv\Command\getPopular;
 use Visiosoft\AdvsModule\Adv\Command\GetUserAds;
 use Visiosoft\AdvsModule\Adv\Command\isActive;
 use Visiosoft\AdvsModule\Adv\Command\LatestAds;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Support\Command\Currency;
 
 class AdvsModulePlugin extends Plugin
@@ -49,6 +50,12 @@ class AdvsModulePlugin extends Plugin
                     return $latestAds;
                 }
             ),
+	        new \Twig_SimpleFunction(
+	            'bestsellerAds',
+		        function ($catId = null, $limit = 10) {
+	            	return app(AdvRepositoryInterface::class)->bestsellerAds($catId, $limit);
+		        }
+	        ),
             new \Twig_SimpleFunction(
                 'appendRequestURL',
                 function ($request, $url, $new_parameters, $removeParams = []) {
