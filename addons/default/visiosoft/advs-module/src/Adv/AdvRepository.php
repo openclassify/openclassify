@@ -293,10 +293,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 	public function cover_image_update($adv)
 	{
 		if (count($adv->files) != 0) {
-			$fileName = 'tn-' . $adv->files[0]->name;
+            $fileName = $adv->files[0]->name;
+            $ext = explode('.',$fileName);
+            if ($ext[1] != 'svg') {
+                $fileName = 'tn-' . $fileName;
+            }
+
 			$folder = $this->folderRepository->findBySlug('images');
 			$thumbnail = $this->fileRepository->findByNameAndFolder($fileName, $folder);
-			if (!$thumbnail) {
+
+            if (!$thumbnail AND $ext[1] != 'svg') {
+
 				// Create thumbnail image
 				$image = Image::make(file_get_contents($adv->files[0]->make()->url()));
 				$image->resize(
