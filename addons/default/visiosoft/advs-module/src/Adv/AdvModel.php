@@ -22,7 +22,8 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         'detail_url',
         'currency_price',
         'category1',
-        'category2',
+	    'currency_standard_price',
+	    'category2',
         'thumbnail',
     ];
 
@@ -39,6 +40,14 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         return app(Currency::class)->format($this->price, $this->currency);
     }
+
+	public function getCurrencyStandardPriceAttribute()
+	{
+		if ($this->standard_price > $this->price) {
+			return app(Currency::class)->format($this->standard_price, $this->currency);
+		}
+		return null;
+	}
 
     public function getCategory1Attribute()
     {
@@ -408,6 +417,13 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
+    }
+
+    public function currentAds() {
+    	return $this->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+		    ->where('status', '=', 'approved')
+		    ->where('slug', '!=', '')
+		    ->orderBy('publish_at', 'desc');
     }
 
     public function inStock()
