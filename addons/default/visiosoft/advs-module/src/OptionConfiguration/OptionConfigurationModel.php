@@ -7,35 +7,44 @@ use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueReposit
 
 class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel implements OptionConfigurationInterface
 {
-	public function getName()
-	{
-		if($adv = app(AdvRepositoryInterface::class)->find($this->parent_adv_id))
-		{
-			$configurations_item = json_decode($this->option_json, true);
-			$option_group_value = "";
+    protected $appends = [
+        'option_name'
+    ];
 
-			foreach ($configurations_item as $option_id => $value) {
-				$value_entry = app(ProductoptionsValueRepositoryInterface::class)->find($value);
-				$option_group_value .= " " . $value_entry->getName();
-			}
+    public function getOptionNameAttribute()
+    {
+        return $this->getName();
+    }
 
-			return $adv->name . ' | ' . trim($option_group_value, ' ');
-		}
-	}
+    public function getName()
+    {
+        if ($adv = app(AdvRepositoryInterface::class)->find($this->parent_adv_id)) {
+            $configurations_item = json_decode($this->option_json, true);
+            $option_group_value = "";
 
-	public function stockControl($id, $quantity)
-	{
-		$conf = $this->newQuery()->find($id);
-		$stock = $conf->stock;
+            foreach ($configurations_item as $option_id => $value) {
+                $value_entry = app(ProductoptionsValueRepositoryInterface::class)->find($value);
+                $option_group_value .= " " . $value_entry->getName();
+            }
 
-		if ($stock === NULL || $stock === 0) {
-			return 0;
-		}
+            return $adv->name . ' | ' . trim($option_group_value, ' ');
+        }
+        return null;
+    }
 
-		if ($stock < $quantity) {
-			return 0;
-		}
+    public function stockControl($id, $quantity)
+    {
+        $conf = $this->newQuery()->find($id);
+        $stock = $conf->stock;
 
-		return 1;
-	}
+        if ($stock === NULL || $stock === 0) {
+            return 0;
+        }
+
+        if ($stock < $quantity) {
+            return 0;
+        }
+
+        return 1;
+    }
 }
