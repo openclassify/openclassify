@@ -5,7 +5,7 @@ return [
         'name' => 'Advertentie plaatsen',
     ],
     'login' => 'Log in',
-    'register' => 'Registreren',
+    'register' => 'Lid Worden',
     'continue' => 'Doorgaan met',
     'reset_password' => 'Wachtwoord opnieuw instellen',
     'email' => 'E-mail',
