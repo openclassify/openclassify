@@ -469,4 +469,10 @@ return [
             'default_value' => false,
         ],
     ],
+	'hide_contact_created_at' => [
+		'type' => 'anomaly.field_type.boolean',
+		'config' => [
+			'default_value' => false,
+		]
+	]
 ];
