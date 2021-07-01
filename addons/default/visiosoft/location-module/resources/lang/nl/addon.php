@@ -4,5 +4,5 @@ return [
     'title'       => 'Plaats',
     'name'        => 'Locatiemodule',
     'description' => 'Omschrijving',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'Op deze pagina kan u inormatie over stadsdistricten, buurten en dorpen beheren.',
 ];
