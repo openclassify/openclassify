@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Instructielijst',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Er is een probleem met het connecteren',
+    'your_internet_connection_is_broken' => 'Uw internetconnectie is niet aangesloten',
+    'we_miss_you_so_much_already' => 'we missen u al!',
+    'try_again' => 'Probeer opnieuw',
 ];
