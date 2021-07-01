@@ -341,7 +341,7 @@ return [
     'create_page_subtitle' => 'Maak de advertentie feilloos door gedetailleerde informatie over uw advertentie in te voeren.',
     'with_my_phone_numbers' => 'Met mijn telefoonnummer',
     'not_with_my_phone_numbers' => "Ik wil niet telefonisch gecontacteerd worden",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'how_can_you_be_contacted' => "Hoe kan men u contacteren?",
 
     // Listing page
     'ad_title' => 'Voeg titel toe',
