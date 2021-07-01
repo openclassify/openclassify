@@ -284,6 +284,6 @@ zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
         'instructions' => 'Wanneer deze optie is ingeschakeld, kunt u het belastingstarief instellen op de pagina voor het maken van uw nieuwe advertentie.'
     ],
 	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
+		'name' => 'Verberg jouw contactgegevens voor een nieuwe advertentie te plaatsen'
 	]
 ];
