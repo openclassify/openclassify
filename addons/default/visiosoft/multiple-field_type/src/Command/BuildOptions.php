@@ -38,7 +38,7 @@ class BuildOptions
         }
 
         $model   = $this->fieldType->getRelatedModel();
-        $handler = $this->fieldType->config('handler', $model->getMultipleFieldTypeOptionsHandler());
+        $handler = $this->fieldType->config('handler', $model->getVMultipleFieldTypeOptionsHandler());
 
         if (!class_exists($handler) && !str_contains($handler, '@')) {
             $handler = array_get($this->fieldType->getHandlers(), $handler);
