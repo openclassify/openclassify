@@ -4,5 +4,5 @@ use Anomaly\Streams\Platform\Entry\Contract\EntryInterface;
 
 interface OptionConfigurationInterface extends EntryInterface
 {
-	public function getName();
+	public function getName($add_name = true);
 }

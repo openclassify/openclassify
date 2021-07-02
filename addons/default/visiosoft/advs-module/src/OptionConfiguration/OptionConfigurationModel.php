@@ -13,10 +13,10 @@ class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel impleme
 
     public function getOptionNameAttribute()
     {
-        return $this->getName();
+        return $this->getName(false);
     }
 
-    public function getName()
+    public function getName($add_name = true)
     {
         if ($adv = app(AdvRepositoryInterface::class)->find($this->parent_adv_id)) {
             $configurations_item = json_decode($this->option_json, true);
@@ -27,7 +27,9 @@ class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel impleme
                 $option_group_value .= " " . $value_entry->getName();
             }
 
-            return $adv->name . ' | ' . trim($option_group_value, ' ');
+            $name = trim($option_group_value, ' ');
+
+            return ($add_name) ? $adv->name . ' | ' . $name : $name;
         }
         return null;
     }
