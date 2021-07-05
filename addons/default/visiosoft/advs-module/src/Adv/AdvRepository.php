@@ -189,6 +189,12 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 					$query = $query->join('location_cities_translations', 'advs_advs.city', '=', 'location_cities_translations.entry_id')
 						->orderBy('location_cities_translations.name', 'DESC');
 					break;
+                case "name_z_a":
+                    $query = $query->orderBy('advs_advs_translations.name', 'DESC');
+                    break;
+                case "name_a_z":
+                    $query = $query->orderBy('advs_advs_translations.name', 'ASC');
+                    break;
 			}
 		} else {
 			$query = $query->orderBy('advs_advs.created_at', 'desc');

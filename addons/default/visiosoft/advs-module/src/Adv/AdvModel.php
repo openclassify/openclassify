@@ -8,6 +8,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
 use Visiosoft\AdvsModule\Support\Command\Currency;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
@@ -27,6 +28,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         'thumbnail',
     ];
 
+    protected $cascades = [
+        'configurations',
+    ];
+
     public function getDetailUrlAttribute()
     {
         // Checking for slug
@@ -34,6 +39,19 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         {
             return $this->getAdvDetailLinkByModel($this, 'list');
         }
+    }
+
+    public function configurations()
+    {
+        return $this->hasMany(
+            OptionConfigurationModel::class,
+            'parent_adv_id'
+        );
+    }
+
+    public function getConfigurations()
+    {
+        return $this->getAttribute('configurations');
     }
 
     public function getCurrencyPriceAttribute()
