@@ -29,7 +29,7 @@ class MultipleFieldTypeServiceProvider extends AddonServiceProvider
     protected $routes = [
         'streams/multiple-field_type/json/{key}'     => 'Visiosoft\MultipleFieldType\Http\Controller\LookupController@json',
         'streams/multiple-field_type/index/{key}'    => 'Visiosoft\MultipleFieldType\Http\Controller\LookupController@index',
-        'streams/multiple-field_type/selected/{key}' => 'Visiosoft\MultipleFieldType\Http\Controller\LookupController@selected',
+        'streams/v-multiple-field_type/selected/{key}' => 'Visiosoft\MultipleFieldType\Http\Controller\LookupController@selected',
     ];
 
     /**
@@ -40,7 +40,7 @@ class MultipleFieldTypeServiceProvider extends AddonServiceProvider
     public function register(EntryModel $model)
     {
         $model->bind(
-            'new_multiple_field_type_lookup_table_builder',
+            'new_v_multiple_field_type_lookup_table_builder',
             function (Container $container) {
 
                 /* @var EntryInterface $this */
@@ -55,7 +55,7 @@ class MultipleFieldTypeServiceProvider extends AddonServiceProvider
         );
 
         $model->bind(
-            'new_multiple_field_type_value_table_builder',
+            'new_v_multiple_field_type_value_table_builder',
             function (Container $container) {
 
                 /* @var EntryInterface $this */
@@ -70,7 +70,7 @@ class MultipleFieldTypeServiceProvider extends AddonServiceProvider
         );
 
         $model->bind(
-            'new_multiple_field_type_selected_table_builder',
+            'new_v_multiple_field_type_selected_table_builder',
             function (Container $container) {
 
                 /* @var EntryInterface $this */
@@ -85,7 +85,7 @@ class MultipleFieldTypeServiceProvider extends AddonServiceProvider
         );
 
         $model->bind(
-            'get_multiple_field_type_options_handler',
+            'get_v_multiple_field_type_options_handler',
             function () {
 
                 /* @var EntryInterface $this */

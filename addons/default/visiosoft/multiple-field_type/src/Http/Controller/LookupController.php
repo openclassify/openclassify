@@ -30,7 +30,7 @@ class LookupController extends AdminController
         if ($table = $config->get('lookup_table')) {
             $table = $container->make($table);
         } else {
-            $table = $related->newMultipleFieldTypeLookupTableBuilder();
+            $table = $related->newVMultipleFieldTypeLookupTableBuilder();
         }
 
         /* @var LookupTableBuilder $table */
@@ -90,7 +90,7 @@ class LookupController extends AdminController
         if ($table = $config->get('selected_table')) {
             $table = $container->make($table);
         } else {
-            $table = $related->newMultipleFieldTypeSelectedTableBuilder();
+            $table = $related->newVMultipleFieldTypeSelectedTableBuilder();
         }
 
         /* @var SelectedTableBuilder $table */

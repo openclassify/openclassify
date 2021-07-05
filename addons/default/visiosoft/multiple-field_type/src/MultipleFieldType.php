@@ -168,7 +168,7 @@ class MultipleFieldType extends FieldType
         if ($table = $this->config('value_table')) {
             $table = $this->container->make($table);
         } else {
-            $table = $related->newMultipleFieldTypeValueTableBuilder();
+            $table = $related->newVMultipleFieldTypeValueTableBuilder();
         }
 
         /* @var ValueTableBuilder $table */
