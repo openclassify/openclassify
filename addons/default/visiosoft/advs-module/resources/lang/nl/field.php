@@ -381,4 +381,6 @@ return [
     'tax' => [
         'name' => 'Btw'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];
