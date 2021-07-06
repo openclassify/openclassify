@@ -1,18 +1,5 @@
-/* Offline */
-window.addEventListener('offline', () => {
-    $('body > *').hide();
-    $('#offline').show();
-});
+(function (window, document) {
 
-$('#offline button').click(function () {
-    $('.spinner-border', this).css('display', 'inline-block')
+    // Go!
 
-    setTimeout(() => {
-        if (window.navigator.onLine) {
-            window.location.reload();
-        } else {
-            $('.spinner-border', this).hide()
-        }
-    }, 250)
-})
-/* End Offline */
+})(window, document);
