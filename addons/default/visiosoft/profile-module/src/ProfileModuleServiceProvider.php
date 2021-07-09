@@ -16,6 +16,7 @@ use Visiosoft\ProfileModule\Education\EducationModel;
 use Visiosoft\ProfileModule\Education\EducationRepository;
 use Visiosoft\ProfileModule\Http\Middleware\authCheck;
 use Visiosoft\ProfileModule\Http\Middleware\OGImage;
+use Visiosoft\ProfileModule\Profile\BasicRegister\BasicRegisterFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\ForgotPassFormBuilder;
 use Visiosoft\ProfileModule\Profile\Password\PasswordFormBuilder;
 use Visiosoft\ProfileModule\Profile\Profile\ProfileFormBuilder;
@@ -144,6 +145,7 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         AdressRepositoryInterface::class => AdressRepository::class,
         EducationRepositoryInterface::class => EducationRepository::class,
         'register2' => Register2FormBuilder::class,
+        'basic_register' => BasicRegisterFormBuilder::class,
         'forgot_pass' => ForgotPassFormBuilder::class,
     ];
 
