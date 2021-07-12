@@ -2,11 +2,13 @@
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
 use Anomaly\Streams\Platform\Ui\ControlPanel\Component\Navigation\Event\SortNavigation;
+use Anomaly\Streams\Platform\Ui\Form\Event\FormWasSaved;
 use Anomaly\Streams\Platform\Ui\Table\Event\TableIsQuerying;
 use Illuminate\Pagination\AbstractPaginator;
 use Visiosoft\DefaultadminTheme\Listener\AddGsmFilter;
 use Visiosoft\DefaultadminTheme\Listener\AddViewAdsButton;
 use Visiosoft\DefaultadminTheme\Listener\ApplySorting;
+use Visiosoft\DefaultadminTheme\Listener\CheckEnabledModules;
 
 /**
  * Class DefaultadminThemeServiceProvider
@@ -23,7 +25,10 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
         ],
         TableIsQuerying::class => [
             AddGsmFilter::class,
-            AddViewAdsButton::class
+            AddViewAdsButton::class,
+        ],
+        FormWasSaved::class => [
+            CheckEnabledModules::class,
         ],
     ];
 
