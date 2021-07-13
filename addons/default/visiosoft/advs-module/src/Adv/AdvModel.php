@@ -8,6 +8,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
+use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
+use Visiosoft\AdvsModule\Support\Command\Currency;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
@@ -17,6 +19,75 @@ use Visiosoft\LocationModule\Village\Contract\VillageRepositoryInterface;
 
 class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 {
+    protected $appends = [
+        'detail_url',
+        'currency_price',
+        'category1',
+	    'currency_standard_price',
+	    'category2',
+        'thumbnail',
+    ];
+
+    protected $cascades = [
+        'configurations',
+    ];
+
+    public function getDetailUrlAttribute()
+    {
+        // Checking for slug
+        if($this->attributes)
+        {
+            return $this->getAdvDetailLinkByModel($this, 'list');
+        }
+    }
+
+    public function configurations()
+    {
+        return $this->hasMany(
+            OptionConfigurationModel::class,
+            'parent_adv_id'
+        );
+    }
+
+    public function getConfigurations()
+    {
+        return $this->getAttribute('configurations');
+    }
+
+    public function getCurrencyPriceAttribute()
+    {
+        return app(Currency::class)->format($this->price, $this->currency);
+    }
+
+	public function getCurrencyStandardPriceAttribute()
+	{
+		if ($this->standard_price > $this->price) {
+			return app(Currency::class)->format($this->standard_price, $this->currency);
+		}
+		return null;
+	}
+
+    public function getCategory1Attribute()
+    {
+        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first();
+
+    }
+
+    public function getCategory2Attribute()
+    {
+        return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first();
+
+    }
+
+    public function getThumbnailAttribute()
+    {
+        if ($this->cover_photo == null) {
+            return $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/no-image.png', 'img'))->url();
+        } else {
+            return url($this->cover_photo);
+        }
+    }
+
     public function getTransNameAttribute()
     {
         if (is_null($this->name)) {
@@ -278,12 +349,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function stockControl($id, $quantity)
     {
-        if($adv = $this->getAdv($id))
-        {
+        if ($adv = $this->getAdv($id)) {
             $stock = $adv->stock;
 
-            if($stock and $stock >= $quantity)
-            {
+            if ($stock and $stock >= $quantity) {
                 return 1;
             }
         }
@@ -366,6 +435,13 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         if (!Auth::user()) {
             redirect('/login?redirect=' . url()->current())->send();
         }
+    }
+
+    public function currentAds() {
+    	return $this->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+		    ->where('status', '=', 'approved')
+		    ->where('slug', '!=', '')
+		    ->orderBy('publish_at', 'desc');
     }
 
     public function inStock()

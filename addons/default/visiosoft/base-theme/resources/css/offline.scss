@@ -1,0 +1,37 @@
+#offline {
+  display: none;
+
+  & > div {
+    min-height: 100vh;
+
+    svg {
+      height: 12rem;
+      width: auto;
+    }
+
+    h1 {
+      font-weight: 400;
+      font-size: 1.5rem;
+    }
+
+    p {
+      color: #7B7B90;
+    }
+    
+    button {
+      background-color: #ebeeff;
+      color: #007eff;
+      padding: .75rem 1.75rem;
+      font-weight: 700;
+      border-radius: 7px;
+
+      &:focus {
+        outline: 5px auto #007eff;
+      }
+
+      .spinner-border {
+        display: none;
+      }
+    }
+  }
+}

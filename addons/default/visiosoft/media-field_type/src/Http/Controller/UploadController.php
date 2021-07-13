@@ -50,14 +50,20 @@ class UploadController extends AdminController
 
     public function upload()
     {
-        $mimes = explode('/', $this->request->file('upload')->getMimeType());
-
-        if ($mimes[0] == 'image') {
+        $path = $_FILES['upload']['name'];
+        $ext = pathinfo($path, PATHINFO_EXTENSION);
+        if($ext == 'svg') {
+            $mimes [0] = 'svg';
             $file = $this->uploader->upload($this->request->file('upload'), $this->folders->find($this->request->get('folder')));
-        } else if ($doc_folder = app(FolderRepositoryInterface::class)->findBySlug('ads_documents')) {
-            $file = $this->uploader->upload($this->request->file('upload'), $doc_folder);
         } else {
-            return $this->response->json(['error' => trans('visiosoft.field_type.media::message.error_upload_docs')], 500);
+            $mimes = explode('/', $this->request->file('upload')->getMimeType());
+            if ($mimes[0] == 'image') {
+                $file = $this->uploader->upload($this->request->file('upload'), $this->folders->find($this->request->get('folder')));
+            } else if ($doc_folder = app(FolderRepositoryInterface::class)->findBySlug('ads_documents')) {
+                $file = $this->uploader->upload($this->request->file('upload'), $doc_folder);
+            } else {
+                return $this->response->json(['error' => trans('visiosoft.field_type.media::message.error_upload_docs')], 500);
+            }
         }
 
         if ($file) {

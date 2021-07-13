@@ -22,7 +22,7 @@ $(document).on('ajaxComplete ready', function () {
 
             $(this).closest('tr').addClass('success').fadeOut();
 
-            wrapper.find('.selected').load(REQUEST_ROOT_PATH + '/streams/multiple-field_type/selected/' + $(this).data('key') + '?uploaded=' + selected.join(','), function () {
+            wrapper.find('.selected').load(REQUEST_ROOT_PATH + '/streams/v-multiple-field_type/selected/' + $(this).data('key') + '?uploaded=' + selected.join(','), function () {
                 wrapper.sort();
             });
 
@@ -41,7 +41,7 @@ $(document).on('ajaxComplete ready', function () {
             $('[name="' + field + '"]').val(selected.join(','));
 
             wrapper.find('.selected').load(
-                REQUEST_ROOT_PATH + '/streams/multiple-field_type/selected/' + $(this).data('key') + '?uploaded=' + selected.join(','),
+                REQUEST_ROOT_PATH + '/streams/v-multiple-field_type/selected/' + $(this).data('key') + '?uploaded=' + selected.join(','),
                 function() {
                     wrapper.sort();
                 }

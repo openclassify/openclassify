@@ -1,5 +1,5 @@
-// (function (window, document) {
-//
-//     // Go!
-//
-// })(window, document);
+(function (window, document) {
+
+    // Go!
+
+})(window, document);

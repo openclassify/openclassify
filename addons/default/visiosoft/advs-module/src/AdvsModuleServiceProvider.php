@@ -15,6 +15,7 @@ use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Http\Middleware\redirectDiffrentLang;
 use Visiosoft\AdvsModule\Http\Middleware\SetLang;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
+use Visiosoft\AdvsModule\Listener\AddTotalSales;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\Option\OptionRepository;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
@@ -33,6 +34,7 @@ use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
 use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryRepository;
+use Visiosoft\OrdersModule\Orderdetail\Event\CreatedOrderDetail;
 
 class AdvsModuleServiceProvider extends AddonServiceProvider
 {
@@ -245,7 +247,9 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
     protected $listeners = [
         TableIsQuerying::class => [
             AddAdvsSettingsScript::class,
-        ],
+        ], CreatedOrderDetail::class => [
+			AddTotalSales::class,
+	    ]
     ];
 
     protected $bindings = [
