@@ -133,6 +133,9 @@ return [
     ],
     'market_place' => [
         'name' => 'Marktplaats',
+	    'instructions' => 'Als de marktplaats niet beschikbaar is, dient uw site als e-commerce. Bijvoorbeeld:
+Sommige velden in het profiel zoals advertenties, berichten, verkoop, paketten,...
+zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
     ],
     'price_area_hidden' => [
         'name' => 'Prijsgebied verborgen',
@@ -277,7 +280,10 @@ return [
         'instructions' => 'Geeft de velden publish_at en finish_at weer op de pagina voor het maken van advertenties.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Toon Btw veld',
+        'instructions' => 'Wanneer deze optie is ingeschakeld, kunt u het belastingstarief instellen op de pagina voor het maken van uw nieuwe advertentie.'
     ],
+	'hide_contact_created_at' => [
+		'name' => 'Verberg jouw contactgegevens voor een nieuwe advertentie te plaatsen'
+	]
 ];

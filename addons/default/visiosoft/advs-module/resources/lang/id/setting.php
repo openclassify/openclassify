@@ -133,6 +133,9 @@ return [
     ],
     'market_place' => [
         'name' => 'Market Place',
+	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
+	        removes corporate membership.'
     ],
     'price_area_hidden' => [
         'name' => 'Area Harga Tersembunyi',
@@ -280,4 +283,7 @@ return [
         'name' => 'Tampilkan Baris Pajak',
         'instructions' => 'Ketika opsi ini diaktifkan, Anda dapat mengatur tarif pajak pada halaman pembuatan iklan.'
     ],
+	'hide_contact_created_at' => [
+		'name' => 'Hide Contact Fields For in Create New Ad'
+	]
 ];

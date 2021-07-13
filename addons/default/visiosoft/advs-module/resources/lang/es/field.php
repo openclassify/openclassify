@@ -134,6 +134,7 @@ return [
     'home' => 'Casa',
     'list-page' => 'Página de lista',
     'search' => 'Buscar',
+	'reset' => 'Reset',
     'recommended' => 'Anuncios recomendados para usted',
     'filter' => 'Filtrar',
     'sort' => 'Ordenar',
@@ -380,4 +381,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

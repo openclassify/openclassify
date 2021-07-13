@@ -56,4 +56,10 @@ return [
     'list' => '列表',
     'instruction_description' => '指令说明',
     'instruction_list' => '指令清单',
+
+    // Offline
+    'connection_problem' => 'Connection problem',
+    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
+    'we_miss_you_so_much_already' => 'we miss you so much already!',
+    'try_again' => 'Try again',
 ];

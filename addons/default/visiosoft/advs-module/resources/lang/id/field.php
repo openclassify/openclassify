@@ -134,6 +134,7 @@ return [
     'home' => 'Beranda',
     'list-page' => 'Halaman Daftar',
     'search' => 'Cari',
+	'reset' => 'Reset',
     'recommended' => 'Iklan yang direkomendasikan untuk Anda',
     'filter' => 'Saring',
     'sort' => 'Sortir',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Pajak'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

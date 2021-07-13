@@ -133,6 +133,9 @@ return [
     ],
     'market_place' => [
         'name' => 'Bazar yeri',
+	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
+	        removes corporate membership.'
     ],
     'price_area_hidden' => [
         'name' => 'Qiymət sahəsi gizlidir',
@@ -280,4 +283,7 @@ return [
         'name' => 'Show Tax Field',
         'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
     ],
+	'hide_contact_created_at' => [
+		'name' => 'Hide Contact Fields For in Create New Ad'
+	]
 ];

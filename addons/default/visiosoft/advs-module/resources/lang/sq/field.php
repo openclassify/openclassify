@@ -134,6 +134,7 @@ return [
     'home' => 'Faqja Kryesore',
     'list-page' => 'Faqja e Listës',
     'search' => 'Kërko',
+	'reset' => 'Reset',
     'recommended' => 'Njoftime të rekomanduara për ju',
     'filter' => 'Filtër',
     'sort' => 'Tipi',
@@ -380,4 +381,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

@@ -134,6 +134,7 @@ return [
     'home' => 'Ev',
     'list-page' => 'Siyahı Səhifə',
     'search' => 'Axtarış',
+	'reset' => 'Reset',
     'recommended' => 'Tövsiyə olunan elanlar',
     'filter' => 'Filter',
     'sort' => 'Sırala',
@@ -380,4 +381,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

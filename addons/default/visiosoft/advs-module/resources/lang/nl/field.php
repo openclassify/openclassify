@@ -134,6 +134,7 @@ return [
     'home' => 'Huis',
     'list-page' => 'Lijstpagina',
     'search' => 'Zoeken',
+	'reset' => 'Opnieuw instellen',
     'recommended' => 'Aanbevolen advertenties voor u',
     'filter' => 'Filter',
     'sort' => 'Soort',
@@ -338,9 +339,9 @@ return [
     'owner' => 'Eigenaar',
     'default_owner_instruction' => 'De eigenaar wordt standaard de huidige gebruiker als er geen gebruiker is geselecteerd',
     'create_page_subtitle' => 'Maak de advertentie feilloos door gedetailleerde informatie over uw advertentie in te voeren.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Met mijn telefoonnummer',
+    'not_with_my_phone_numbers' => "Ik wil niet telefonisch gecontacteerd worden",
+    'how_can_you_be_contacted' => "Hoe kan men u contacteren?",
 
     // Listing page
     'ad_title' => 'Voeg titel toe',
@@ -378,6 +379,8 @@ return [
         'name' => 'Publiceer datum'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Btw'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

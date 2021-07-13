@@ -4,8 +4,8 @@ return [
     'post_ad' => [
         'name' => 'Advertentie plaatsen',
     ],
-    'login' => 'Log in',
-    'register' => 'Registreren',
+    'login' => 'Aanmelden',
+    'register' => 'Lid Worden',
     'continue' => 'Doorgaan met',
     'reset_password' => 'Wachtwoord opnieuw instellen',
     'email' => 'E-mail',

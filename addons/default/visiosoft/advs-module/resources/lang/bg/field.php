@@ -134,6 +134,7 @@ return [
     'home' => 'У дома',
     'list-page' => 'Страница на списъка',
     'search' => 'Търсене',
+	'reset' => 'Reset',
     'recommended' => 'Препоръчани реклами за вас',
     'filter' => 'Филтър',
     'sort' => 'Вид',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];
