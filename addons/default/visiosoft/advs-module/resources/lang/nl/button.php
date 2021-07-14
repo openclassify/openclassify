@@ -9,7 +9,7 @@ return [
     'new_district' => 'Nieuw district',
     'new_neighborhood' => 'Nieuwe buurt',
     'new_village' => 'Nieuw dorp',
-    'edit' => "Bewerk",
+    'edit' => "Bewerkk",
     'approve' => "Goedkeuren",
     'decline' => 'Afwijzen',
     'extend' => 'Uitbreiden',

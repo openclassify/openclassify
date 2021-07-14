@@ -134,6 +134,7 @@ return [
     'home' => 'صفحه اصلی',
     'list-page' => 'فهرست صفحه',
     'search' => 'جستجو کردن',
+	'reset' => 'Reset',
     'recommended' => 'اعلانات پیشنهادی برای شما',
     'filter' => 'فیلتر',
     'sort' => 'مرتب سازی',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

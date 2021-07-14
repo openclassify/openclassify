@@ -134,6 +134,7 @@ return [
     'home' => 'Головна',
     'list-page' => 'Сторінка списку',
     'search' => 'Пошук',
+	'reset' => 'Reset',
     'recommended' => 'Рекомендовані оголошення для вас',
     'filter' => 'Фільтр',
     'sort' => 'Сортувати',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

@@ -134,6 +134,7 @@ return [
     'home' => 'Acasă',
     'list-page' => 'Pagina de listă',
     'search' => 'Căutare',
+	'reset' => 'Reset',
     'recommended' => 'Anunțuri recomandate pentru dvs.',
     'filter' => 'Filtru',
     'sort' => 'Fel',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

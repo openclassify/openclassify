@@ -134,6 +134,7 @@ return [
     'home' => 'itthon',
     'list-page' => 'Lista oldal',
     'search' => 'Keresés',
+	'reset' => 'Reset',
     'recommended' => 'Ajánlott hirdetések az Ön számára',
     'filter' => 'Szűrő',
     'sort' => 'Fajta',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

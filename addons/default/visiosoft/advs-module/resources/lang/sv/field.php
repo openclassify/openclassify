@@ -134,6 +134,7 @@ return [
     'home' => 'Hem',
     'list-page' => 'Lista sida',
     'search' => 'Sök',
+	'reset' => 'Reset',
     'recommended' => 'Rekommenderade annonser för dig',
     'filter' => 'Filtrera',
     'sort' => 'Sortera',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

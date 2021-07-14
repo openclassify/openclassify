@@ -134,6 +134,7 @@ return [
     'home' => 'বাড়ি',
     'list-page' => 'তালিকা পৃষ্ঠা',
     'search' => 'অনুসন্ধান করুন',
+	'reset' => 'Reset',
     'recommended' => 'আপনার জন্য প্রস্তাবিত বিজ্ঞাপনগুলি',
     'filter' => 'ছাঁকনি',
     'sort' => 'সাজান',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

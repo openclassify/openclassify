@@ -134,6 +134,7 @@ return [
     'home' => 'Koti',
     'list-page' => 'Luettelosivu',
     'search' => 'Hae',
+	'reset' => 'Reset',
     'recommended' => 'Suositellut mainokset sinulle',
     'filter' => 'Suodattaa',
     'sort' => 'Järjestellä',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];
