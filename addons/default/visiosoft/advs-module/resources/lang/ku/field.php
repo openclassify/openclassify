@@ -144,6 +144,7 @@ return [
     'list-page' => 'پەیجی لیست
 ',
     'search' => 'گەڕان',
+	'reset' => 'Reset',
     'recommended' => 'ڕێکلامێکی پێشنیارکراو بۆ ئێوە
 ',
     'filter' => 'پاڵاوتن',
@@ -481,4 +482,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

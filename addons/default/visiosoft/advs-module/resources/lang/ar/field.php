@@ -134,6 +134,7 @@ return [
     'home' => 'الصفحة الرئيسية',
     'list-page' => 'قائمة الصفحة',
     'search' => 'بحث',
+	'reset' => 'Reset',
     'recommended' => 'الإعلانات الموصى بها لك',
     'filter' => 'منقي',
     'sort' => 'فرز',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

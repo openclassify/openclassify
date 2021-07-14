@@ -133,6 +133,9 @@ return [
     ],
     'market_place' => [
         'name' => 'Pazar Yeri',
+	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
+	        removes corporate membership.'
     ],
     'price_area_hidden' => [
         'name' => 'Fiyat Alanı Gizli',
@@ -273,11 +276,14 @@ return [
         'instructions' => 'İlan listelemede ilan kategorilerini gizle'
     ],
     'show_finish_and_publish_date' => [
-        'name' => 'İlan ekleme ve düzenleme sayfasında Bitiş Tarihini ve Yayınlanma Tarihini Göster',
-        'instructions' => 'Kullanıcı yayınlama tarihini ve bitiş tarihini görebilir. '
+        'name' => 'Oluşturma İçin Bitiş Tarihini ve Yayınlanma Tarihini Göster',
+        'instructions' => 'Reklam oluşturma sayfasında publish_at ve finish_at alanlarını görüntüler.'
     ],
     'show_tax_field' => [
-         'name' => 'KDV (Vergi) Oranı Seçmeyi Göster',
+        'name' => 'Vergi alanını gizle',
         'instructions' => 'Bu seçenek etkinleştirildiğinde, ilan veya ürün oluşturma sayfasında vergi oranını ayarlayabilirsiniz.'
-    ]
+    ],
+	'hide_contact_created_at' => [
+		'name' => 'Hide Contact Fields For in Create New Ad'
+	]
 ];

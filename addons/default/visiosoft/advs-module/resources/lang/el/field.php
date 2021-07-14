@@ -134,6 +134,7 @@ return [
     'home' => 'Σπίτι',
     'list-page' => 'Λίστα σελίδας',
     'search' => 'Ψάξιμο',
+	'reset' => 'Reset',
     'recommended' => 'Προτεινόμενες διαφημίσεις για εσάς',
     'filter' => 'Φίλτρο',
     'sort' => 'Είδος',
@@ -380,4 +381,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

@@ -134,6 +134,7 @@ return [
     'home' => 'Trang Chủ',
     'list-page' => 'Danh sách trang',
     'search' => 'Tìm kiếm',
+	'reset' => 'Reset',
     'recommended' => 'Quảng cáo được đề xuất cho bạn',
     'filter' => 'Bộ lọc',
     'sort' => 'Sắp xếp',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

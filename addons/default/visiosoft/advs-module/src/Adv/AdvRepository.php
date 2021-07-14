@@ -539,4 +539,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 		return $query->where('finish_at', '>', date('Y-m-d H:i:s'))
 			->get();
 	}
+
+    public function currentAds() {
+        return $this->newQuery()->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', '=', 'approved')
+            ->where('slug', '!=', '')
+            ->orderBy('publish_at', 'desc');
+    }
 }

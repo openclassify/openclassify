@@ -134,6 +134,7 @@ return [
     'home' => 'Početna',
     'list-page' => 'Izlistaj stranu',
     'search' => 'Pronađi',
+	'reset' => 'Reset',
     'recommended' => 'Preporučeni oglasi za vas',
     'filter' => 'Filter',
     'sort' => 'Sortiraj',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

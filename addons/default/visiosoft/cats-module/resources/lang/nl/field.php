@@ -30,12 +30,12 @@ return [
         'instructions' => 'Het wordt gebruikt om pictogrammen toe te voegen die het categorietype aangeven.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Ouder',
+    'level' => 'Niveau',
+    'count' => 'Advertentie telt',
 
     'please_wait' => 'Een ogenblik geduld. Subcategorieën verwijderen',
     'category_selection' => 'Categorie selectie',
     'go_to_parent' => 'Ga naar de ouder',
-	'preview' => 'Preview'
+	'preview' => 'Voorbeeld'
 ];

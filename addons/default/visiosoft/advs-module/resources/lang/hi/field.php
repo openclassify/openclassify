@@ -134,6 +134,7 @@ return [
     'home' => 'घर',
     'list-page' => 'सूची पृष्ठ',
     'search' => 'खोज',
+	'reset' => 'Reset',
     'recommended' => 'आपके लिए अनुशंसित विज्ञापन',
     'filter' => 'फ़िल्टर',
     'sort' => 'तरह',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

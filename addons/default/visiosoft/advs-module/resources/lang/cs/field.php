@@ -134,6 +134,7 @@ return [
     'home' => 'Domov',
     'list-page' => 'Stránka seznamu',
     'search' => 'Vyhledávání',
+	'reset' => 'Reset',
     'recommended' => 'Doporučené reklamy pro vás',
     'filter' => 'Filtr',
     'sort' => 'Třídit',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

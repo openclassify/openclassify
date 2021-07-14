@@ -134,6 +134,7 @@ return [
     'home' => 'Anasayfa',
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
+	'reset' => 'Reset',
     'recommended' => 'Sizin için Önerilen İlanlar',
     'filter' => 'Filtre',
     'sort' => 'Çeşit',
@@ -380,8 +381,10 @@ return [
         'name' => 'Yayın tarihi'
     ],
     'tax' => [
+
         'name' => 'KDV Oranı'
     ],
     'name_a_z' => 'İlan Başlığı (A\'dan Z\'ye)',
     'name_z_a' => 'İlan Başlığı (Z\'den A\'ya)',
+
 ];

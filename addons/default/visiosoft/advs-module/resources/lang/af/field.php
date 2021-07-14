@@ -134,6 +134,7 @@ return [
     'home' => 'Tuis',
     'list-page' => 'Lys bladsy',
     'search' => 'Soek',
+	'reset' => 'Reset',
     'recommended' => 'Aanbevole advertensies vir u',
     'filter' => 'Filtreer',
     'sort' => 'Sorteer',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];

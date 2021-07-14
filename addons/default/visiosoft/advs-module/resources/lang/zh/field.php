@@ -134,6 +134,7 @@ return [
     'home' => '家',
     'list-page' => '清单页面',
     'search' => '搜索',
+	'reset' => 'Reset',
     'recommended' => '为您推荐的广告',
     'filter' => '过滤',
     'sort' => '分类',
@@ -379,4 +380,6 @@ return [
     'tax' => [
         'name' => 'Tax'
     ],
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
 ];
