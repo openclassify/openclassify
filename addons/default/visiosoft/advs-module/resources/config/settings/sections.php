@@ -16,7 +16,6 @@ return [
                     'free_currencyconverterapi_key',
                     'hide_price_categories',
                     'tcmb_exchange_url',
-                    'enabled_modules',
                     'enabled_currencies',
 	                'disable_sentry',
 	                'hide_ad_cat',

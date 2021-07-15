@@ -125,10 +125,6 @@ return [
     'enabled_currencies' => [
         'name' => 'Enabled Currencies',
     ],
-    'enabled_modules' => [
-        'name' => 'Enabled Modules',
-        'warning' => 'Change at your own risk.',
-    ],
     'google_statistic_code' => [
         'name' => 'Google Statistic Code',
     ],

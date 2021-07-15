@@ -194,22 +194,6 @@ return [
             },
         ],
     ],
-    'enabled_modules' => [
-        'type' => 'anomaly.field_type.checkboxes',
-        'config' => [
-            'mode' => 'tags',
-            'default_value' => function () {
-                $addons = app('module.collection')->enabled()->pluck('namespace')->all();
-
-                return $addons;
-            },
-            'options' => function () {
-                $addons = app('module.collection')->pluck('namespace', 'namespace');
-
-                return $addons;
-            },
-        ],
-    ],
     'market_place' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
