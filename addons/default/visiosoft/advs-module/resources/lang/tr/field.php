@@ -381,10 +381,9 @@ return [
         'name' => 'Yayın tarihi'
     ],
     'tax' => [
-
-        'name' => 'KDV Oranı'
+        'name' => 'Vergi'
     ],
-    'name_a_z' => 'İlan Başlığı (A\'dan Z\'ye)',
-    'name_z_a' => 'İlan Başlığı (Z\'den A\'ya)',
-
+    'name_a_z' => 'Name (A to Z)',
+    'name_z_a' => 'Name (Z to A)',
+    'select_lang_ads' => 'select the language of the ads',
 ];
