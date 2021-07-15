@@ -45,7 +45,7 @@ return [
 
     ],
     'currencies' => [
-        'name' => 'Actieve valuta\'s',
+        'name' => 'Actieve valuta\\'s',
     ],
     'latest-limit' => [
         'name' => 'Laatste limiet',
@@ -123,7 +123,7 @@ return [
         'name' => 'Verberg aanbieding standaardprijs',
     ],
     'enabled_currencies' => [
-        'name' => 'Ingeschakelde valuta\'s',
+        'name' => 'Ingeschakelde valuta\\'s',
     ],
     'google_statistic_code' => [
         'name' => 'Google-statistiekcode',
@@ -133,9 +133,9 @@ return [
     ],
     'market_place' => [
         'name' => 'Marktplaats',
-	    'instructions' => 'Als de marktplaats niet beschikbaar is, dient uw site als e-commerce. Bijvoorbeeld:
-Sommige velden in het profiel zoals advertenties, berichten, verkoop, paketten,...
-zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
+	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example,
+	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and
+	        removes corporate membership.'
     ],
     'price_area_hidden' => [
         'name' => 'Prijsgebied verborgen',
