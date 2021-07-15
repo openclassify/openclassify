@@ -133,8 +133,8 @@ return [
     ],
     'market_place' => [
         'name' => 'Market Place',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
-	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
+	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example,
+	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and
 	        removes corporate membership.'
     ],
     'price_area_hidden' => [
@@ -285,5 +285,9 @@ return [
     ],
 	'hide_contact_created_at' => [
 		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+	],
+    'show_input_flag' => [
+        'name' => 'Show Flags on Input',
+        'instructions' => 'Show flag and description on translatable inputs'
+    ]
 ];

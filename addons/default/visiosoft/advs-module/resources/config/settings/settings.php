@@ -474,5 +474,11 @@ return [
 		'config' => [
 			'default_value' => false,
 		]
-	]
+	],
+    'show_input_flag' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ]
 ];
