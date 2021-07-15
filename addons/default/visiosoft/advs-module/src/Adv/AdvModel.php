@@ -505,4 +505,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         $this->update(['status' => $status]);
     }
+
+    public function canEdit()
+    {
+        return $this->created_by_id == \auth()->id() || \auth()->user()->isAdmin();
+    }
 }
