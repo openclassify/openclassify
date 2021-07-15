@@ -133,8 +133,8 @@ return [
     ],
     'market_place' => [
         'name' => 'Market Place',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
-	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
+	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example,
+	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and
 	        removes corporate membership.'
     ],
     'price_area_hidden' => [
