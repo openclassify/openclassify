@@ -285,5 +285,9 @@ return [
     ],
 	'hide_contact_created_at' => [
 		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+	],
+    'show_input_flag' => [
+        'name' => 'Show Flags on Input',
+        'instructions' => 'Show flag and description on translatable inputs'
+    ]
 ];
