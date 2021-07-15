@@ -285,5 +285,9 @@ return [
     ],
 	'hide_contact_created_at' => [
 		'name' => 'Verberg jouw contactgegevens voor een nieuwe advertentie te plaatsen'
-	]
+	],
+    'show_input_flag' => [
+        'name' => 'Show Flags on Input',
+        'instructions' => 'Show flag and description on translatable inputs'
+    ]
 ];
