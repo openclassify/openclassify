@@ -91,4 +91,6 @@ interface AdvInterface extends EntryInterface
     public function approve();
 
     public function changeStatus($status);
+
+    public function canEdit();
 }

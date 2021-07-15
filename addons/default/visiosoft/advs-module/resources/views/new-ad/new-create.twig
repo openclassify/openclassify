@@ -246,10 +246,10 @@
                                 </div>
                             </div>
 
-                            <h5 class="mt-5 pb-1 border-bottom">
+                            <h5 class="mt-5 pb-1 border-bottom upload-photos-title">
                                 {{ trans('visiosoft.module.advs::field.upload_photos') }}
                             </h5>
-                            <div class="bg-light p-4">
+                            <div class="bg-light p-4 upload-photos-wrapper">
                                 <div class="row form-group images">
                                     <div class="col-md-12">
                                         {{ form.fields.files.input |raw }}
@@ -268,6 +268,9 @@
                                     </div>
                                 </div>
                             </div>
+
+                            {{ addBlock('advs/create/under-images-field', {'vars': _context})|raw }}
+
                             {% set other_fields = addBlock('new-ad/other-fields',{'custom_fields':custom_fields,'id':id}) %}
                             {% if other_fields or (custom_fields and count(custom_fields)) %}
                                 <h5 class="mt-5 pb-1 border-bottom">

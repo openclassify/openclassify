@@ -23,7 +23,7 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
         ],
         TableIsQuerying::class => [
             AddGsmFilter::class,
-            AddViewAdsButton::class
+            AddViewAdsButton::class,
         ],
     ];
 
