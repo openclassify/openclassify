@@ -271,6 +271,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         StatusRepositoryInterface::class => StatusRepository::class,
     ];
 
+    protected $overrides = [
+        'streams::form.partials.translations' => 'visiosoft.module.advs::form.partials.translations',
+    ];
+
     public function boot(AddonCollection $addonCollection, FileModel $fileModel,CategoryRepositoryInterface $categoryRepository)
     {
 
