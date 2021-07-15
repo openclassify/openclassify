@@ -45,7 +45,7 @@ return [
 
     ],
     'currencies' => [
-        'name' => 'Actieve valuta\\'s',
+        'name' => 'Actieve valuta\'s',
     ],
     'latest-limit' => [
         'name' => 'Laatste limiet',
@@ -123,7 +123,7 @@ return [
         'name' => 'Verberg aanbieding standaardprijs',
     ],
     'enabled_currencies' => [
-        'name' => 'Ingeschakelde valuta\\'s',
+        'name' => 'Ingeschakelde valuta\'s',
     ],
     'google_statistic_code' => [
         'name' => 'Google-statistiekcode',
