@@ -254,9 +254,6 @@ return [
         'name' => 'Kategoriyan bistînin',
         'instructions' => 'Ew kategoriyên ku tê de taybetmendiya GET dê derbasdar be temsîl dike.'
     ],
-    'disable_sentry' => [
-        'name' => 'Sentry Disable'
-    ],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Watermark çalak e?'

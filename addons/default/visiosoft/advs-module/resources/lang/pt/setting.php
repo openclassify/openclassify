@@ -192,16 +192,16 @@ return [
         'name' => 'Altura da tela da imagem',
     ],
     'watermark_type' => [
-        'name' => 'Tipo de marca d\\'água',
+        'name' => 'Tipo de marca d\'água',
     ],
     'watermark_text' => [
-        'name' => 'Texto de marca d\\'água',
+        'name' => 'Texto de marca d\'água',
     ],
     'watermark_image' => [
-        'name' => 'Imagem de marca d\\'água',
+        'name' => 'Imagem de marca d\'água',
     ],
     'watermark_position' => [
-        'name' => 'Posição da marca d\\'água',
+        'name' => 'Posição da marca d\'água',
     ],
     'user_filter_limit' => [
         'name' => 'Limite de filtro de usuário',
@@ -253,9 +253,6 @@ return [
     'get_categories' => [
         'name' => 'GET Categorias',
         'instructions' => 'Representa as categorias nas quais a propriedade GET será válida.'
-    ],
-    'disable_sentry' => [
-        'name' => 'Desativar Sentinela'
     ],
     'watermark' => [
         'name' => 'Marca d\'água',

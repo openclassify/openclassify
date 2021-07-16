@@ -254,9 +254,6 @@ zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
         'name' => 'GET Categorieën',
         'instructions' => 'Het vertegenwoordigt de categorieën waarin de eigenschap GET geldig zal zijn.'
     ],
-    'disable_sentry' => [
-        'name' => 'Schakel Sentry uit'
-    ],
     'watermark' => [
         'name' => 'Watermerk',
         'instructions' => 'Is watermerk actief?'
