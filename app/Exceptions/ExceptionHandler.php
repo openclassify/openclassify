@@ -72,12 +72,11 @@ class ExceptionHandler extends Handler
 
     public function report(Throwable $e)
     {
-        if (app()->bound('sentry')
-            && $this->shouldReport($e)
-            && env('SENTRY_LARAVEL_DSN')) {
-            if (!setting_value('visiosoft.module.advs::disable_sentry')) {
+        if (app()->bound('sentry') && 
+            $this->shouldReport($e) && 
+            env('SENTRY_LARAVEL_DSN')
+           ) {
                 app('sentry')->captureException($e);
-            }
         }
 
         if ($e instanceof Swift_TransportException) {
