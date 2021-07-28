@@ -254,9 +254,6 @@ return [
         'name' => 'GET Kategóriák',
         'instructions' => 'Azokat a kategóriákat képviseli, amelyekben a GET tulajdonság érvényes lesz.'
     ],
-    'disable_sentry' => [
-        'name' => 'Letiltja a Sentry szolgáltatást'
-    ],
     'watermark' => [
         'name' => 'Vízjel',
         'instructions' => 'A vízjel aktív?'
