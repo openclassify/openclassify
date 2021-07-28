@@ -254,9 +254,6 @@ return [
         'name' => 'GET Categorii',
         'instructions' => 'Reprezintă categoriile în care proprietatea GET va fi validă.'
     ],
-    'disable_sentry' => [
-        'name' => 'Dezactivați Sentinela'
-    ],
     'watermark' => [
         'name' => 'Filigran',
         'instructions' => 'Filigranul este activ?'
