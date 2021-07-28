@@ -75,7 +75,7 @@ class ExceptionHandler extends Handler
         if (app()->bound('sentry')
             && $this->shouldReport($e)
             && env('SENTRY_LARAVEL_DSN')) {
-            if (env('ENABLE_SENTRY_LARAVEL',true)) {
+            if (config('sentry.enable_sentry_laravel')) {
                 app('sentry')->captureException($e);
             }
         }
