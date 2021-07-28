@@ -254,9 +254,6 @@ return [
         'name' => 'קבל קטגוריות',
         'instructions' => 'הוא מייצג את הקטגוריות בהן נכס ה- GET יהיה תקף.'
     ],
-    'disable_sentry' => [
-        'name' => 'השבת זקיף'
-    ],
     'watermark' => [
         'name' => 'סימן מים',
         'instructions' => 'האם סימן מים פעיל?'
