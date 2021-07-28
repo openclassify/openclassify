@@ -254,9 +254,6 @@ return [
         'name' => 'فئات GET',
         'instructions' => 'إنه يمثل الفئات التي ستكون فيها خاصية GET صالحة.'
     ],
-    'disable_sentry' => [
-        'name' => 'تعطيل الحارس'
-    ],
     'watermark' => [
         'name' => 'علامة مائية',
         'instructions' => 'هل العلامة المائية نشطة؟'
