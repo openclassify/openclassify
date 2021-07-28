@@ -254,9 +254,6 @@ return [
         'name' => 'OTTIENI Categorie',
         'instructions' => 'Rappresenta le categorie in cui sarà valida la proprietà GET.'
     ],
-    'disable_sentry' => [
-        'name' => 'Disabilita Sentry'
-    ],
     'watermark' => [
         'name' => 'Filigrana',
         'instructions' => 'La filigrana è attiva?'
