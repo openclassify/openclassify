@@ -254,9 +254,6 @@ return [
         'name' => 'Hämta kategorier',
         'instructions' => 'Det representerar de kategorier i vilka GET-egenskapen är giltig.'
     ],
-    'disable_sentry' => [
-        'name' => 'Inaktivera vaktpost'
-    ],
     'watermark' => [
         'name' => 'Vattenstämpel',
         'instructions' => 'Är vattenstämpel aktivt?'
