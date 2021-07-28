@@ -254,9 +254,6 @@ return [
         'name' => 'HANKI luokkia',
         'instructions' => 'Se edustaa luokkia, joissa GET-ominaisuus on voimassa.'
     ],
-    'disable_sentry' => [
-        'name' => 'Poista Sentry käytöstä'
-    ],
     'watermark' => [
         'name' => 'Vesileima',
         'instructions' => 'Onko vesileima aktiivinen?'
