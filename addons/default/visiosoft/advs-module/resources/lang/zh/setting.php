@@ -254,9 +254,6 @@ return [
         'name' => '获取类别',
         'instructions' => '它代表GET属性将在其中有效的类别。'
     ],
-    'disable_sentry' => [
-        'name' => '禁用哨兵'
-    ],
     'watermark' => [
         'name' => '水印',
         'instructions' => '水印活跃吗？'

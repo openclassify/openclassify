@@ -254,9 +254,6 @@ return [
         'name' => 'KRY Kategorieë',
         'instructions' => 'Dit verteenwoordig die kategorieë waarin die GET-eiendom geldig sal wees.'
     ],
-    'disable_sentry' => [
-        'name' => 'Skakel wagwag uit'
-    ],
     'watermark' => [
         'name' => 'Watermerk',
         'instructions' => 'Is watermerk aktief?'

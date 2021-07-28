@@ -254,9 +254,6 @@ return [
         'name' => 'GET Categories',
         'instructions' => 'It represents the categories in which the GET property will be valid.'
     ],
-    'disable_sentry' => [
-        'name' => 'Disable Sentry'
-    ],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'

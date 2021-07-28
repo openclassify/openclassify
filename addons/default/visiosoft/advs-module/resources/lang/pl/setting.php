@@ -254,9 +254,6 @@ return [
         'name' => 'POBIERZ kategorie',
         'instructions' => 'Reprezentuje kategorie, w których właściwość GET będzie ważna.'
     ],
-    'disable_sentry' => [
-        'name' => 'Wyłącz Sentry'
-    ],
     'watermark' => [
         'name' => 'znak wodny',
         'instructions' => 'Czy znak wodny jest aktywny?'

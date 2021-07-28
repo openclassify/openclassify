@@ -430,7 +430,6 @@ return [
             'default_value' => false,
         ]
     ],
-    'disable_sentry' => 'anomaly.field_type.boolean',
     'detailed_product_options' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [

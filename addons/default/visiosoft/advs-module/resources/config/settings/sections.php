@@ -17,7 +17,6 @@ return [
                     'hide_price_categories',
                     'tcmb_exchange_url',
                     'enabled_currencies',
-	                'disable_sentry',
 	                'hide_ad_cat',
                 ],
             ],

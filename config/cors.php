@@ -12,11 +12,13 @@ return [
     |
     */
 
-    'supportsCredentials' => false,
-    'allowedOrigins' => ['*'],// ex: ['abc.com', 'api.abc.com']
-    'allowedHeaders' => ['*'],
-    'allowedMethods' => ['*'],// ex: ['GET', 'POST', 'PUT', 'DELETE']
-    'exposedHeaders' => [],
-    'maxAge' => 0,
+    'paths' => ['*'],
+    'allowed_methods' => ['*'],
+    'allowed_origins' => ['*'],
+    'allowed_origins_patterns' => [],
+    'allowed_headers' => ['*'],
+    'exposed_headers' => false,
+    'max_age' => false,
+    'supports_credentials' => false,
 
 ];
