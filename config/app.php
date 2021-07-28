@@ -269,7 +269,4 @@ return [
 
 
     ],
-
-    'enable_sentry_laravel' => env('ENABLE_SENTRY_LARAVEL',true),
-
 ];
