@@ -145,6 +145,10 @@ $(document).ready(function () {
         filter.checkUser();
     });
 
+    $('.filter-box>div:first-child').on('click', function () {
+        $(this).siblings().toggleClass('d-none');
+    })
+
     // Country filter
     const locationFilter = $("select[name=filter_country]")
     locationFilter.select2({
