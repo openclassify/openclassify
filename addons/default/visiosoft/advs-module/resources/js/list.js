@@ -146,7 +146,7 @@ $(document).ready(function () {
     });
 
     $('.filter-box>div:first-child').on('click', function () {
-        $(this).parent().find('div').not($(this)).first().toggleClass('d-none');
+        $(this).siblings().toggleClass('d-none');
     })
 
     // Country filter
