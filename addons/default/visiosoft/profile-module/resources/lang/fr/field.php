@@ -11,7 +11,7 @@ return [
         'name' => 'Nom de famille'
     ],
     'username' => [
-        'name' => 'Nom d\\'utilisateur'
+        'name' => 'Nom d\'utilisateur'
     ],
     'display_name' => [
         'name' => 'Afficher un nom'
@@ -26,7 +26,7 @@ return [
         'name' => 'Utilisateur actif'
     ],
     'enabled' => [
-        'name' => 'Activer l\\'utilisateur'
+        'name' => 'Activer l\'utilisateur'
     ],
     'country' => [
         'name' => 'Pays'
@@ -74,10 +74,10 @@ return [
         'name' => 'Profession'
     ],
     'identification_number' => [
-        'name' => 'Numéro d\\'identification'
+        'name' => 'Numéro d\'identification'
     ],
     'adress_name' => [
-        'name' => 'Nom de l\\'adresse'
+        'name' => 'Nom de l\'adresse'
     ],
     'adress_first_name' => [
         'name' => 'Prénom'
@@ -89,7 +89,7 @@ return [
         'name' => 'actes'
     ],
     'adress_content' => [
-        'name' => 'Contenu de l\\'adresse'
+        'name' => 'Contenu de l\'adresse'
     ],
     'adress_post_code' => [
         'name' => 'Code postal'
@@ -176,7 +176,7 @@ return [
         'name' => 'Mes forfaits'
     ],
     'menu_adv_packages' => [
-        'name' => 'Forfaits d\\'annonces'
+        'name' => 'Forfaits d\'annonces'
     ],
     'menu_time_packages' => [
         'name' => 'Forfaits'
@@ -188,7 +188,7 @@ return [
         'name' => 'Photo de profil'
     ],
     'adv_listing_banner' => [
-        'name' => 'Bannière de la page d\\'annonces'
+        'name' => 'Bannière de la page d\'annonces'
     ],
     'approve' => [
         'name' => 'Approuver'
@@ -238,7 +238,7 @@ return [
       consectetur adipisicing elit'
     ],
     'right_need_help_subject' => [
-        'name' => 'Besoin d\\'aide pour?'
+        'name' => 'Besoin d\'aide pour?'
     ],
     'right_need_help_msg' => [
         'name' => 'Donner un appel sur'
@@ -325,7 +325,7 @@ return [
         'name' => 'Attendre',
     ],
     'awaiting_dispatch' => [
-        'name' => 'En attente d\\'expédition',
+        'name' => 'En attente d\'expédition',
     ],
     'shipped' => [
         'name' => 'Expédié',
@@ -346,7 +346,7 @@ return [
         'name' => 'Le résultat de la transaction sera notifié par mail.',
     ],
     'show_order_msg2' => [
-        'name' => 'Le remboursement sera effectué si le produit n\\'est pas livré dans la semaine.',
+        'name' => 'Le remboursement sera effectué si le produit n\'est pas livré dans la semaine.',
     ],
     'show_order_msg3' => [
         'name' => 'Le résultat de la transaction a été envoyé à votre adresse e-mail enregistrée.',
@@ -381,7 +381,7 @@ return [
     ],
 
     'corporate_settings' => [
-        'name' => 'Paramètres d\\'entreprise',
+        'name' => 'Paramètres d\'entreprise',
     ],
     'password' => [
         'name' => 'Mot de passe',
@@ -405,7 +405,7 @@ return [
         'name' => 'Modifier l\'adresse',
     ],
     'balance_limit' => [
-        'name' => 'Limite d\\'équilibre',
+        'name' => 'Limite d\'équilibre',
     ],
     'active_ads' => [
         'name' => 'Annonces actives',
@@ -414,19 +414,19 @@ return [
         'name' => 'Abonnements',
     ],
     'go_subscriptions_page' => [
-        'name' => 'Aller à la page d\\'abonnements',
+        'name' => 'Aller à la page d\'abonnements',
     ],
     'buy_package' => [
         'name' => 'Acheter un forfait',
     ],
     'expired_date' => [
-        'name' => 'Date d\\'expiration',
+        'name' => 'Date d\'expiration',
     ],
     'category' => [
         'name' => 'Catégorie',
     ],
     'ad_limit' => [
-        'name' => 'Limite d\\'annonce',
+        'name' => 'Limite d\'annonce',
     ],
     'publish_time' => [
         'name' => 'Heure de publication',
