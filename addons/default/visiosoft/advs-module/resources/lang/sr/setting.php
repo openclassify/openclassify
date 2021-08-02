@@ -286,5 +286,9 @@ return [
     'show_input_flag' => [
         'name' => 'Show Flags on Input',
         'instructions' => 'Show flag and description on translatable inputs'
-    ]
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Hide out of stock products without listing',
+        'instructions' => 'Hides out-of-stock GET products from listing and homepage'
+    ],
 ];
