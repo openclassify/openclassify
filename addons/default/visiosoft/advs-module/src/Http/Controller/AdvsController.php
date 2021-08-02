@@ -240,6 +240,14 @@ class AdvsController extends PublicController
             ), 301);
         }
 
+        if (setting_value('visiosoft.module.advs::hide_out_of_stock_products_without_listing')) {
+            $advs = $advs->filter(
+                function ($entry) {
+                    return (($entry->is_get_adv == true && $entry->stock > 0) || ($entry->is_get_adv == false));
+                }
+            );
+        }
+
         foreach ($advs as $index => $ad) {
             $advs[$index]->detail_url = $this->adv_model->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $this->adv_model->AddAdsDefaultCoverImage($ad);
@@ -1096,6 +1104,15 @@ class AdvsController extends PublicController
         $advModel = new AdvModel();
 
         $advs = $repository->searchAdvs('map', $param, $customParameters);
+
+        if (setting_value('visiosoft.module.advs::hide_out_of_stock_products_without_listing')) {
+            $advs = $advs->filter(
+                function ($entry) {
+                    return (($entry->is_get_adv == true && $entry->stock > 0) || ($entry->is_get_adv == false));
+                }
+            );
+        }
+
         foreach ($advs as $index => $ad) {
             $advs[$index]->seo_link = $advModel->getAdvDetailLinkByModel($ad, 'list');
             $advs[$index] = $advModel->AddAdsDefaultCoverImage($ad);

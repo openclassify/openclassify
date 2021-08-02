@@ -395,6 +395,15 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 		$latest_advs = $this->model->currentAds()
 			->limit(setting_value('visiosoft.module.advs::latest-limit'))
 			->get();
+
+        if (setting_value('visiosoft.module.advs::hide_out_of_stock_products_without_listing')) {
+            $latest_advs = $latest_advs->filter(
+                function ($entry) {
+                    return (($entry->is_get_adv == true && $entry->stock > 0) || ($entry->is_get_adv == false));
+                }
+            );
+        }
+
 		return $this->model->getLocationNames($latest_advs);
 	}
 
