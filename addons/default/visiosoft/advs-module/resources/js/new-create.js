@@ -3,8 +3,6 @@ function showLoader() {
 }
 
 
-
-
 var filter = {};
 
 // TODO will be unified
@@ -265,4 +263,34 @@ $(document).ready(function () {
 
         return true;
     })
+
+    $('#configurationForm').submit(function (e) {
+        e.preventDefault();
+        crudAjax($(this).serialize(), '/advs/configuration/ajax/create', 'POST', function (callback) {
+            $('.configuration-table').append(`<tr id="configuration-${callback.id}">
+                                        <td>${callback.option_name}</td>
+                                        <td>${callback.stock}</td>
+                                        <td>${callback.currency_price}</td>
+                                        <td class="text-right">
+                                            <a href="javascript:void(0)" class="btn btn-sm remove-conf" data-id="${callback.id}"><svg id="Group_42321" data-name="Group 42321" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                                <g id="Group_15874" data-name="Group 15874">
+                                                    <path id="Path_10381" data-name="Path 10381" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" fill="#f8f8f8"></path>
+                                                    <path id="close" d="M10.557.6l-.6-.6L5.278,4.675.6,0,0,.6,4.675,5.278,0,9.953l.6.6L5.278,5.882l4.675,4.675.6-.6L5.882,5.278Z" transform="translate(9.5 9.5)" fill="#c7c7c7" stroke="#c7c7c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
+                                                </g>
+                                            </svg>
+                                            </a>
+                                        </td>
+                                    </tr>`);
+            $('#configurationForm').trigger("reset");
+        })
+    });
+
+    $(document).on('click', '.remove-conf', function () {
+        const id = $(this).data('id');
+
+        crudAjax({id: id}, '/advs/configuration/ajax/delete', 'POST', function (callback) {
+            $('#configuration-' + id).remove();
+        })
+    });
+
 });

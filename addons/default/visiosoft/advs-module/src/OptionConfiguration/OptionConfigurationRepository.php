@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\AdvsModule\OptionConfiguration;
 
-use Anomaly\Streams\Platform\Model\Configuration\ConfigurationConfigurationEntryModel;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
@@ -92,5 +91,9 @@ class OptionConfigurationRepository extends EntryRepository implements OptionCon
     public function deleteAdsConfigs($adID)
     {
         return $this->newQuery()->where('parent_adv_id', $adID)->delete();
+    }
+
+    public function deleteConfig($id){
+        return $this->newQuery()->find($id)->delete();
     }
 }

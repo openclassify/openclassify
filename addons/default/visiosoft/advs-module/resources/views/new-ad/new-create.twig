@@ -225,7 +225,11 @@
                                                     {{ trans('visiosoft.module.advs::field.product_option.name') }}
                                                 </label>
                                                 <div class="mt-3 form-group mb-0">
-                                                    {{ form.fields.product_options_value.configSet('cat1', adv.cat1).input|raw }}
+                                                    <button type="button" class="btn btn-primary btn-configuration" data-toggle="modal" data-target="#configurationModal">
+                                                        {{ img('visiosoft.module.advs::images/create/plus.svg').data|raw }}
+                                                        &nbsp;
+                                                        {{ trans('visiosoft.module.advs::button.new_options_configuration') }}
+                                                    </button>
                                                 </div>
                                             </div>
                                         {% endif %}
@@ -316,6 +320,7 @@
         </div>
     </section>
     {% include "visiosoft.module.advs::new-ad/partials/modals" %}
+    {% include "visiosoft.module.advs::new-ad/partials/configuration-modal" %}
     {{ addBlock('new-ad/modals')|raw }}
     <script>
         var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";

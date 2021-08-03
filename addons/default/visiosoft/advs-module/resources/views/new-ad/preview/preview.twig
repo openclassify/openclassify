@@ -24,14 +24,6 @@
         {% else %}
             {% set continueLink = url_route('adv_detail_seo', [adv.slug, adv.id]) %}
         {% endif %}
-        {% if not setting_value('visiosoft.module.advs::hide_configurations') %}
-            {% if setting_value('visiosoft.module.advs::detailed_product_options') %}
-                <a href="{{ route('visiosoft.module.advs::user.configrations.create') }}?ad={{ adv.id }}"
-                   class="btn btn-warning shadow-sm mr-4 text-white">
-                    {{ trans('visiosoft.module.advs::button.create_configurations') }}
-                </a>
-            {% endif %}
-        {% endif %}
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
            class="btn preview-edit shadow-sm border">
             {{ trans('visiosoft.module.advs::field.edit') }}
@@ -45,12 +37,6 @@
         <div class="preview-overlay position-absolute"></div>
     </div>
     <div class="preview-actions text-center">
-        {% if not setting_value('visiosoft.module.advs::hide_configurations') %}
-            <a href="{{ route('visiosoft.module.advs::user.configrations.create') }}?ad={{ adv.id }}"
-               class="btn btn-warning shadow-sm mr-4 text-white">
-                {{ trans('visiosoft.module.advs::button.create_configurations') }}
-            </a>
-        {% endif %}
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
            class="btn preview-edit shadow-sm border">
             {{ trans('visiosoft.module.advs::field.edit') }}
