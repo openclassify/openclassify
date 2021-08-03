@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => 'ڕیکلامی نوێ
 ',
     'new_classified' => 'ڕیکلامی نوێ
