@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => 'Iklan baru',
     'new_classified' => 'Iklan baru',
     'new_category' => 'Kategori Baru',
