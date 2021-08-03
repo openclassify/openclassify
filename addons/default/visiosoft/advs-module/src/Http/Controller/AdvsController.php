@@ -792,7 +792,7 @@ class AdvsController extends PublicController
             $is_new_create = ($adv->slug == "") ? true : false;
 
             //Set Old Price
-            $old_price = ($adv->slug == "") ? $this->request->price : $adv->price;
+            $old_price = $is_new_create ? $this->request->price : $adv->price;
             $adv->old_price = $old_price;
 
 
@@ -1007,10 +1007,11 @@ class AdvsController extends PublicController
          * Added to query if there are product options.
          */
         $is_options = dispatch_now(new IsOptionsByCategory($adv['cat1']));
+        $configurations = app(OptionConfigurationRepositoryInterface::class)->getConf($adv['id']);
 
         return $this->view->make(
             'visiosoft.module.advs::new-ad/new-create',
-            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options', 'hidePrice','is_options')
+            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options', 'hidePrice','is_options', 'configurations')
         );
     }
 

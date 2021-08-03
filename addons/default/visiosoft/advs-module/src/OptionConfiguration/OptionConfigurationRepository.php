@@ -1,6 +1,6 @@
 <?php namespace Visiosoft\AdvsModule\OptionConfiguration;
 
-use Anomaly\Streams\Platform\Model\Configuration\ConfigurationConfigurationEntryModel;
+use Illuminate\Support\Facades\Auth;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
@@ -92,5 +92,16 @@ class OptionConfigurationRepository extends EntryRepository implements OptionCon
     public function deleteAdsConfigs($adID)
     {
         return $this->newQuery()->where('parent_adv_id', $adID)->delete();
+    }
+
+    public function deleteConfig($id)
+    {
+        if ($conf = ($this->newQuery()->find($id))) {
+            if ($conf->created_by_id === Auth::user()->getAuthIdentifier()) {
+                return $conf->delete();
+            }
+            return response()->json(['status' => 'error'], 403);
+        }
+        return response()->json(['status' => 'error'], 404);
     }
 }

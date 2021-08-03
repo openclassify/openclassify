@@ -20,6 +20,6 @@ class IsOptionsByCategory
 
         $options_id = $option_repository->getWithCategoryId($this->cat_id)->pluck('id')->all();
 
-        return count($value_repository->getWithOptionsId($options_id));
+        return $value_repository->getWithOptionsId($options_id);
     }
 }

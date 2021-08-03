@@ -262,3 +262,28 @@ label {
     }
   }
 }
+
+.btn-configuration {
+  background-color: #6E5DDB;
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: calc(18rem / 16);
+  border-radius: .25rem;
+  border: 0;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #6E5DDB;
+    color: #fff;
+  }
+
+  svg {
+    width: 1.5rem;
+    height: auto;
+  }
+}

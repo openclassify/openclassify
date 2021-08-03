@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Form\OptionConfigurationFormBuilder;
+use Visiosoft\AdvsModule\Support\Command\Currency;
 use Visiosoft\CartsModule\Cart\CartRepository;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
 
@@ -29,6 +30,30 @@ class OptionConfigurationController extends PublicController
     {
         $form->setOption('redirect', route('advs_preview', [request('ad')]));
         return $form->render();
+    }
+
+    public function ajaxCreate(OptionConfigurationRepositoryInterface $optionConfigurationRepository){
+        $parameters = $this->request->all();
+        $option_json = array();
+        foreach ($parameters as $key => $parameter_value) {
+            if ((strpos($key, "option-") === 0)) {
+                if ($parameter_value !== '') {
+                    $option_id = substr($key, 7);
+                    $option_json[$option_id] = $parameter_value;
+                }
+                unset($parameters[$key]);
+            }
+        }
+        $option_json = ['option_json' => json_encode($option_json)];
+        $configration = array_merge($parameters, $option_json);
+        $entry = $optionConfigurationRepository->create($configration);
+        $entry['currency_price'] = app(Currency::class)->format($entry->price, $entry->currency);
+
+        return $this->response->json($entry);
+    }
+
+    public function ajaxDelete(OptionConfigurationRepositoryInterface $optionConfigurationRepository){
+        return $optionConfigurationRepository->deleteConfig($this->request->id);
     }
 
     public function confAddCart()
