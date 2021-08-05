@@ -93,4 +93,6 @@ interface AdvInterface extends EntryInterface
     public function changeStatus($status);
 
     public function canEdit();
+
+    public function getCatsIDs();
 }

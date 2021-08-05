@@ -6,6 +6,7 @@ use Anomaly\Streams\Platform\Model\Advs\AdvsCustomFieldsEntryModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
@@ -509,5 +510,17 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function canEdit()
     {
         return $this->created_by_id == \auth()->id() || \auth()->user()->isAdmin();
+    }
+
+    public function getCatsIDs()
+    {
+        $attr = $this->getAttributes();
+        return array_filter(
+            $attr,
+            function ($key) use ($attr) {
+                return Str::startsWith($key, 'cat') && $attr[$key];
+            },
+            ARRAY_FILTER_USE_KEY
+        );
     }
 }
