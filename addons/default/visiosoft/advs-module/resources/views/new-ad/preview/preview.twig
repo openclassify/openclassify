@@ -62,7 +62,7 @@
         {% if isActive('shipping') %}
             <a href="{{ url_route('visiosoft.module.shipping::create_shipping',{'id':adv.id}) }}"
                class="btn btn-outline-primary shadow-sm mr-4">
-                Create Shipping Information
+                {{ trans('visiosoft.module.shipping::button.create_shipping_information') }}
             </a>
         {% endif %}
 
