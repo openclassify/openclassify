@@ -32,6 +32,13 @@
                 </a>
             {% endif %}
         {% endif %}
+        {% if isActive('shipping') %}
+            <a href="{{ url_route('visiosoft.module.shipping::create_shipping',{'id':adv.id}) }}"
+               class="btn btn-outline-primary shadow-sm mr-4">
+                <i class="fa fa-truck"></i>
+                {{ trans('visiosoft.module.shipping::button.create_shipping_information') }}
+            </a>
+        {% endif %}
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
            class="btn preview-edit shadow-sm border">
             {{ trans('visiosoft.module.advs::field.edit') }}
@@ -51,6 +58,14 @@
                 {{ trans('visiosoft.module.advs::button.create_configurations') }}
             </a>
         {% endif %}
+
+        {% if isActive('shipping') %}
+            <a href="{{ url_route('visiosoft.module.shipping::create_shipping',{'id':adv.id}) }}"
+               class="btn btn-outline-primary shadow-sm mr-4">
+                Create Shipping Information
+            </a>
+        {% endif %}
+
         <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
            class="btn preview-edit shadow-sm border">
             {{ trans('visiosoft.module.advs::field.edit') }}
