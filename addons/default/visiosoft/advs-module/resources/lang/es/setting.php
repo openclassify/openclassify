@@ -254,9 +254,6 @@ return [
         'name' => 'OBTENER Categorías',
         'instructions' => 'Representa las categorías en las que será válida la propiedad GET.'
     ],
-    'disable_sentry' => [
-        'name' => 'Desactivar centinela'
-    ],
     'watermark' => [
         'name' => 'Filigrana',
         'instructions' => '¿Está activa la marca de agua?'

@@ -254,9 +254,6 @@ return [
         'name' => 'FÅ kategorier',
         'instructions' => 'Det repræsenterer de kategorier, hvor GET-ejendommen er gyldig.'
     ],
-    'disable_sentry' => [
-        'name' => 'Deaktiver vagtpost'
-    ],
     'watermark' => [
         'name' => 'Vandmærke',
         'instructions' => 'Er vandmærke aktivt?'

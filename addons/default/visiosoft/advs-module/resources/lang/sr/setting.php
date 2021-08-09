@@ -254,9 +254,6 @@ return [
         'name' => 'GET Kategorije',
         'instructions' => 'Predstavlja kategorije u kojima će GET svojstvo biti važeće.'
     ],
-    'disable_sentry' => [
-        'name' => 'Isključite Sentry'
-    ],
     'watermark' => [
         'name' => 'Vodeni žig',
         'instructions' => 'Da li je aktivan vodeni žig?'

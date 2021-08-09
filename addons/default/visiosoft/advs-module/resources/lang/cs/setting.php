@@ -254,9 +254,6 @@ return [
         'name' => 'ZÍSKEJTE kategorie',
         'instructions' => 'Představuje kategorie, ve kterých bude vlastnost GET platná.'
     ],
-    'disable_sentry' => [
-        'name' => 'Zakázat Sentry'
-    ],
     'watermark' => [
         'name' => 'Vodoznak',
         'instructions' => 'Je vodoznak aktivní?'

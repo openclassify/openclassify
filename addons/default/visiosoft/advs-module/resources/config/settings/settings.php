@@ -430,7 +430,6 @@ return [
             'default_value' => false,
         ]
     ],
-    'disable_sentry' => 'anomaly.field_type.boolean',
     'detailed_product_options' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
@@ -474,5 +473,17 @@ return [
 		'config' => [
 			'default_value' => false,
 		]
-	]
+	],
+    'show_input_flag' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ]
+    ],
 ];

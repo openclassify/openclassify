@@ -254,9 +254,6 @@ return [
         'name' => 'Kateqoriyalar alın',
         'instructions' => 'GET mülkiyyətinin etibarlı olacağı kateqoriyanı təmsil edir.'
     ],
-    'disable_sentry' => [
-        'name' => 'Nöqtəni deaktiv edin'
-    ],
     'watermark' => [
         'name' => 'Filigran',
         'instructions' => 'Filigran aktivdir?'

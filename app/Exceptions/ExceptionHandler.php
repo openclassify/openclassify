@@ -53,10 +53,10 @@ class ExceptionHandler extends Handler
 
         $summary = $e->getMessage();
         $headers = $e->getHeaders();
-        $code    = $e->getStatusCode();
-        $name    = trans("streams::error.{$code}.name");
+        $code = $e->getStatusCode();
+        $name = trans("streams::error.{$code}.name");
         $message = trans("streams::error.{$code}.message");
-        $id      = $this->container->make(ExceptionIdentifier::class)->identify($this->original);
+        $id = $this->container->make(ExceptionIdentifier::class)->identify($this->original);
 
         if (view()->exists($view = "streams::errors/{$code}")) {
             return response()->view($view, compact('id', 'code', 'name', 'message', 'summary'), $code, $headers);
@@ -72,12 +72,11 @@ class ExceptionHandler extends Handler
 
     public function report(Throwable $e)
     {
-        if (app()->bound('sentry')
-            && $this->shouldReport($e)
-            && env('SENTRY_LARAVEL_DSN')) {
-            if (!setting_value('visiosoft.module.advs::disable_sentry')) {
-                app('sentry')->captureException($e);
-            }
+        if (app()->bound('sentry') &&
+            $this->shouldReport($e) &&
+            env('SENTRY_LARAVEL_DSN') &&
+            !empty(env('SENTRY_LARAVEL_DSN'))) {
+            app('sentry')->captureException($e);
         }
 
         if ($e instanceof Swift_TransportException) {
@@ -92,9 +91,9 @@ class ExceptionHandler extends Handler
         try {
             return array_filter(
                 [
-                    'user'       => Auth::id(),
-                    'email'      => Auth::user() ? Auth::user()->email : null,
-                    'url'        => request() ? request()->fullUrl() : null,
+                    'user' => Auth::id(),
+                    'email' => Auth::user() ? Auth::user()->email : null,
+                    'url' => request() ? request()->fullUrl() : null,
                     'identifier' => $this->container->make(ExceptionIdentifier::class)->identify($this->original),
                 ]
             );

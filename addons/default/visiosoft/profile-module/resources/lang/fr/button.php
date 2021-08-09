@@ -3,7 +3,7 @@
 return [
     'new_profile' => 'Nouveau profile',
     'new_adress' => 'Nouvelle adresse',
-    'show' => 'Afficher l\\'adresse',
+    'show' => 'Afficher l\'adresse',
     'update_password' => 'Mettre à jour le mot de passe',
     'update_profile' => 'Mettre à jour le profil',
     'delete' => 'Supprimer',

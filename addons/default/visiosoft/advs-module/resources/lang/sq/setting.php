@@ -254,9 +254,6 @@ return [
         'name' => 'GET Kategoritë',
         'instructions' => 'Ai përfaqëson kategoritë në të cilat prona GET do të jetë e vlefshme.'
     ],
-    'disable_sentry' => [
-        'name' => 'Çaktivizo rojet'
-    ],
     'watermark' => [
         'name' => 'Filigranë',
         'instructions' => 'A është ujëra aktive?'

@@ -254,9 +254,6 @@ return [
         'name' => 'GET Kategorileri',
         'instructions' => 'GET özelliğinin geçerli olacağı kategorileri temsil eder.'
     ],
-    'disable_sentry' => [
-        'name' => 'Sentry\'yi devre dışı bırak'
-    ],
     'watermark' => [
         'name' => 'Filigran',
         'instructions' => 'Filigran etkin mi?'

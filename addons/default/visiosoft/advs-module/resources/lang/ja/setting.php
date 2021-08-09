@@ -254,9 +254,6 @@ return [
         'name' => 'カテゴリを取得',
         'instructions' => 'これは、GETプロパティが有効になるカテゴリを表します。'
     ],
-    'disable_sentry' => [
-        'name' => 'セントリーを無効にする'
-    ],
     'watermark' => [
         'name' => '透かし',
         'instructions' => '透かしはアクティブですか？'

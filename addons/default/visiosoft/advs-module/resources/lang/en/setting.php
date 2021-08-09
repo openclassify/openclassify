@@ -254,9 +254,6 @@ return [
         'name' => 'GET Categories',
         'instructions' => 'It represents the categories in which the GET property will be valid.'
     ],
-    'disable_sentry' => [
-        'name' => 'Disable Sentry'
-    ],
     'watermark' => [
         'name' => 'Watermark',
         'instructions' => 'Is watermark active?'
@@ -285,5 +282,13 @@ return [
     ],
 	'hide_contact_created_at' => [
 		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+	],
+    'show_input_flag' => [
+        'name' => 'Show Flags on Input',
+        'instructions' => 'Show flag and description on translatable inputs'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Hide out of stock products without listing',
+        'instructions' => 'Hides out-of-stock GET products from listing and homepage'
+    ],
 ];
