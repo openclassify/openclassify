@@ -16,9 +16,11 @@ class AddTotalSales
 	public function handle(CreatedOrderDetail $event)
     {
     	$item = $event->getOrderItem();
-    	$adv = $this->advModel->find($event->getOrderItem()->item_id);
-    	$total = $adv->total_sales + $item->piece;
-    	$adv->total_sales =  $total;
-    	$adv->save();
+    	if ($item->item_type === 'adv') {
+            $adv = $this->advModel->find($event->getOrderItem()->item_id);
+            $total = $adv->total_sales + $item->piece;
+            $adv->total_sales =  $total;
+            $adv->save();
+        }
     }
 }
