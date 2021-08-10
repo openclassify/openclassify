@@ -153,10 +153,12 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
                 'c1.slug',
                 'c1.parent_category_id',
                 'c1.icon',
+                'c1.count',
                 't1.name',
                 'c2.id as c2_id',
                 'c2.slug as c2_slug',
                 'c2.icon as c2_icon',
+                'c2.count as c2_count',
                 'c2.parent_category_id as c2_parent_category_id',
                 't2.name as c2_name'
             )
