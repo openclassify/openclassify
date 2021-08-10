@@ -29,7 +29,7 @@ class OptionConfigurationFormFields
 						'label' => $option->getName(),
 						'required' => true,
 						'config' => [
-							'options' => $optionValue->pluck('name','id')->all(),
+							'options' => $optionValue->pluck('title','id')->all(),
 						]
 					];
 				}
