@@ -16,6 +16,7 @@
             </p>
         {% endif %}
     </div>
+    
     <div class="preview-actions text-center">
         {% if isActive('packages') and setting_value('visiosoft.module.packages::move_the_buy_package_to_the_end') and (auth_user().isAdmin or not auth_user().hasPermission('visiosoft.module.packages::packages.no_read')) %}
             {% set continueLink = url_route('visiosoft.module.packages::add_package', [adv.id]) %}
