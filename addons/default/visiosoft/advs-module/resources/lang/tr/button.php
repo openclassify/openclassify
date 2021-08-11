@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Ekle',
     'new_adv' => 'Yeni ürün/ilan',
     'new_classified' => 'Yeni ürün/ilan',
     'new_category' => 'Yeni kategori',
@@ -33,6 +34,7 @@ return [
         'name' => 'Kategori Güncelle'
     ],
     'new_option' => 'Yeni Seçenek',
+    'options' => 'Seçenekler',
 	'export' => 'Dışa aktar',
     'new_productoption' => 'Yeni Üretim',
     'new_productoptions_value' => 'Yeni Ürün seçeneği değeri',

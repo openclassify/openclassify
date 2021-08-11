@@ -19,6 +19,7 @@ use Visiosoft\AdvsModule\Listener\AddTotalSales;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\Option\OptionRepository;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
+use Visiosoft\AdvsModule\OptionConfiguration\Form\OptionConfigurationFormBuilder;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationRepository;
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
 use Visiosoft\AdvsModule\Productoption\ProductoptionRepository;
@@ -217,6 +218,16 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.advs::user.configrations.create',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
         ],
+
+        'advs/configuration/ajax/create' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@ajaxCreate'
+        ],
+        'advs/configuration/ajax/delete' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@ajaxDelete'
+        ],
+
         'conf/addCart' => [
             'as' => 'configuration::add_cart',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@confAddCart',
@@ -257,6 +268,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         AdvsAdvsEntryModel::class => AdvModel::class,
         AdvsStatusEntryModel::class => StatusModel::class,
         'my_form' => AdvFormBuilder::class,
+        'configuration_form' => OptionConfigurationFormBuilder::class,
     ];
 
     protected $singletons = [

@@ -2,32 +2,34 @@
 
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
+use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 
 class OptionConfigurationFormFields
 {
 	public function handle(
 		OptionConfigurationFormBuilder $builder,
 		AdvRepositoryInterface $advRepository,
-		ProductoptionRepositoryInterface $productOptionRepository)
+		ProductoptionRepositoryInterface $productOptionRepository,
+        ProductoptionsValueRepositoryInterface $productoptionsValueRepository
+    )
 	{
-		if(request()->has('ad'))
+		if(request()->has('ad') || $builder->getEntry())
 		{
-			$ad = $advRepository->find(request('ad'));
-
-			$options = $ad->getProductOptionsValues()->groupBy('product_option_id');
+			$ad = $advRepository->find(request('ad') ?? $builder->getEntry());
+            $options = $productOptionRepository->getWithCategoryId($ad->cat1);
 
 			$options_fields = array();
 
-			foreach ($options as $option_id => $option_values)
+			foreach ($options as $option)
 			{
-				if($option = $productOptionRepository->find($option_id))
+				if($optionValue = $productoptionsValueRepository->getWithOptionsId([$option->id]))
 				{
 					$options_fields['option-'.$option->getId()] = [
 						'type' => 'anomaly.field_type.select',
 						'label' => $option->getName(),
 						'required' => true,
 						'config' => [
-							'options' => $option_values->pluck('name','id')->all(),
+							'options' => $optionValue->pluck('title','id')->all(),
 						]
 					];
 				}

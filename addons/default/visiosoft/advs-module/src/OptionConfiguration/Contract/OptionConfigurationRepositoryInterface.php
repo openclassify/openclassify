@@ -13,4 +13,6 @@ interface OptionConfigurationRepositoryInterface extends EntryRepositoryInterfac
 	public function deleteUnusedConfigs($adsIDs);
 
 	public function deleteAdsConfigs($adID);
+
+    public function deleteConfig($id);
 }
