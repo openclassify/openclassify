@@ -22,4 +22,8 @@ class CategoryCriteria extends EntryCriteria
     public function getMainCategories() {
         return $this->categoryRepository->getMainCategories();
     }
+
+    public function getMainAndSubCats() {
+        return $this->categoryRepository->getMainAndSubCats();
+    }
 }

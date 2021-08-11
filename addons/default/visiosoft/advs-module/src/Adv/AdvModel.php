@@ -142,7 +142,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             $query = $this::withTrashed();
         }
 
-        if ($id != null) {
+        if ($id !== null) {
             if ($nullable_ad) {
                 return $query->find($id);
             } else {
@@ -158,6 +158,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function userAdv($nullable_ad = false, $checkRole = true)
     {
+        if ($user = Auth::user() and $user->hasRole('admin') && $checkRole) {
+            return $this->getAdv(null, $nullable_ad);
+        }
+
         return $this->getAdv(null, $nullable_ad)
             ->where('advs_advs.created_by_id', Auth::id());
     }
