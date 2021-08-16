@@ -1,6 +1,8 @@
 {% extends "theme::layouts/default" %}
 
 {% block styles %}
+    <link rel="canonical" href="{{ url() }}"/>
+
     {{ asset_style('visiosoft.theme.base::css/login.css') }}
 {% endblock %}
 

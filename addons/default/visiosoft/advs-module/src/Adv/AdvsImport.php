@@ -11,12 +11,13 @@ class AdvsImport implements ToModel, WithHeadingRow
 {
 	public function model(array $row)
     {
+        $row['name'] = $row['name'] ?? $row['title'];
         if ($row['name'] !== null && $row['price'] !== null && $row['currency'] !== null) {
 	        return new AdvModel([
 		        'name' => $row['name'],
 		        'slug' => Str::slug($row['name']),
 		        'advs_desc' => $row['description'] ?? null,
-		        'standard_price' => $row['standard_price'] ?? null,
+		        'standard_price' => $row['standard_price'] ?? 0,
 		        'price' => $row['price'],
 		        'currency' => $row['currency'],
 		        'country' => $row['country'] ?? null,
