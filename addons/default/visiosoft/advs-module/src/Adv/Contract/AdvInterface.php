@@ -95,4 +95,6 @@ interface AdvInterface extends EntryInterface
     public function canEdit();
 
     public function getCatsIDs();
+
+    public function lastCategory();
 }

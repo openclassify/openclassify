@@ -11,6 +11,7 @@ use Visiosoft\AdvsModule\Adv\Contract\AdvInterface;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
 use Visiosoft\AdvsModule\Support\Command\Currency;
+use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
@@ -526,5 +527,20 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             },
             ARRAY_FILTER_USE_KEY
         );
+    }
+
+    public function lastCategory()
+    {
+        if (!$catsIDs = $this->getCatsIDs()) {
+            return null;
+        }
+
+        $lastCatID = end($catsIDs);
+
+        if (!$lastCat = app(CategoryRepositoryInterface::class)->find($lastCatID)) {
+            return null;
+        }
+
+        return $lastCat;
     }
 }
