@@ -75,7 +75,7 @@
                 </div>
                 {{ form_close() }}
 
-                {% if addBlock('login/oauth') or setting_value('visiosoft.module.advs::register_email_field') %}
+                {% if (addBlock('login/oauth') or setting_value('visiosoft.module.advs::register_email_field')) and not setting_value('visiosoft.module.advs::only_email_login') %}
                     <div class="text-center text-muted">- {{ trans('visiosoft.theme.base::field.or') }} -</div>
                     <div class="social-login py-2 px-3">
                         {% if setting_value('visiosoft.module.advs::register_email_field') %}

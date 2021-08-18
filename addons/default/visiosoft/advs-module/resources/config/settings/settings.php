@@ -7,6 +7,12 @@ return [
             'default_value' => true,
         ],
     ],
+    'only_email_login' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => false,
+        ],
+    ],
     'latest-limit' => [
         'type' => 'anomaly.field_type.integer',
         'config' => [
