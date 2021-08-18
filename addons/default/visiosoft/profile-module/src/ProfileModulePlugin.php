@@ -4,6 +4,7 @@ use Anomaly\Streams\Platform\Addon\Plugin\Plugin;
 use Visiosoft\ProfileModule\Adress\Command\GetAddress;
 use Visiosoft\ProfileModule\Adress\Command\GetAddressByUser;
 use Visiosoft\ProfileModule\Profile\Command\GetProfileDetail;
+use Visiosoft\ProfileModule\Profile\Command\GetProfilePhotoURL;
 
 class ProfileModulePlugin extends Plugin
 {
@@ -41,6 +42,12 @@ class ProfileModulePlugin extends Plugin
                     }
 
                     return $ad;
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'profilePhoto',
+                function ($user) {
+                    return $this->dispatch(new GetProfilePhotoURL($user));
                 }
             ),
         ];
