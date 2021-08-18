@@ -91,7 +91,7 @@ return [
             'user' => [
                 'title' => 'visiosoft.module.advs::section.user',
                 'fields' => [
-                    'register_email_field'
+                    'register_email_field', 'only_email_login'
                 ],
             ],
             'filter' => [
