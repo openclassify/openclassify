@@ -291,4 +291,7 @@ return [
         'name' => 'Hide out of stock products without listing',
         'instructions' => 'Hides out-of-stock GET products from listing and homepage'
     ],
+    'only_email_login' => [
+        'name' => 'Only Email Login'
+    ]
 ];
