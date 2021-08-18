@@ -189,6 +189,23 @@ class DatabaseSeeder extends Seeder
             ]);
         };
 
+        //Banner Image Folder
+        if (is_null($this->folders->findBy('slug', 'banner_images'))) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en' => [
+                    'name' => 'Banner Images',
+                    'description' => 'A folder for Banner Images.',
+                ],
+                'slug' => 'banner_images',
+                'disk' => $disk,
+                'allowed_types' => [
+                    'jpg', 'jpeg', 'png'
+                ],
+            ]);
+        }
+
 
         //Create Ads Documents Folder
         if (!$this->folders->findBySlug('ads_documents')) {
