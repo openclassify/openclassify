@@ -60,7 +60,7 @@ return [
         'bind' => 'adv.google_map_key',
         'env' => 'ADV_MAP_KEY',
         'config' => [
-            'default_value' => 'AIzaSyB9TmIjBED5fZvnTmElkMxFA75Nle1X0qc',
+            'default_value' => 'AIzaSyCfjSTNU-5kaiWY9OHLv-3N7CFHT1tFl-w',
         ],
     ],
 
