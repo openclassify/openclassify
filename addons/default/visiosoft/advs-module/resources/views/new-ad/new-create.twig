@@ -273,8 +273,6 @@
                                 </div>
                             </div>
 
-                            {{ addBlock('advs/create/under-images-field', {'vars': _context})|raw }}
-
                             {% set other_fields = addBlock('new-ad/other-fields',{'custom_fields':custom_fields,'id':id}) %}
                             {% if other_fields or (custom_fields and count(custom_fields)) %}
                                 <h5 class="mt-5 pb-1 border-bottom">
