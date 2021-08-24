@@ -16,9 +16,6 @@
                     <div class="section">
                         <div class="row">
                             <div class="col-md-12">
-                                {% include "visiosoft.theme.base::partials/messages" %}
-                            </div>
-                            <div class="col-md-12">
                                 {% set form = form('profile', 'adress').get() %}
                                 {{ form_open({
                                     'class': 'form ' ~ form.options.class ,
