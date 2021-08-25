@@ -51,6 +51,12 @@ class AjaxController extends PublicController
             $id = explode(',', $this->request->id);
             $query = $this->cityRepository->getModel()->whereIn('parent_country_id', $id);
 
+            if ($this->request->search) {
+                $query->where('name', 'like', '%' . $this->request->search . '%');
+            }
+
+            $query->get();
+
             return $this->queryOrder($query, $this->cityRepository);
         }
     }
