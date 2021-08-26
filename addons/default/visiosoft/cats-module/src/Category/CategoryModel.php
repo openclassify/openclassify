@@ -1,5 +1,6 @@
 <?php namespace Visiosoft\CatsModule\Category;
 
+use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Visiosoft\CatsModule\Category\Contract\CategoryInterface;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 
