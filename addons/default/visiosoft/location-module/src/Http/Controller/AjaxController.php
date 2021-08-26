@@ -55,8 +55,6 @@ class AjaxController extends PublicController
                 $query->where('name', 'like', '%' . $this->request->search . '%');
             }
 
-            $query->get();
-
             return $this->queryOrder($query, $this->cityRepository);
         }
     }
