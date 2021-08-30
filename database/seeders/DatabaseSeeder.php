@@ -149,8 +149,7 @@ class DatabaseSeeder extends Seeder
         dispatch_now(new DeleteInstaller());
 
 
-        //Create Store Icon Folder
-        if (!$this->folders->findBySlug('ads_excel')) {
+        if (is_null($this->folders->findBy('slug', 'ads_excel'))) {
             $disk = $this->disks->findBySlug('local');
 
             $this->folders->create([
@@ -159,9 +158,10 @@ class DatabaseSeeder extends Seeder
                     'description' => 'A folder for Ads Excel.',
                 ],
                 'slug' => 'ads_excel',
-                'disk' => $disk
+                'disk' => $disk,
             ]);
         };
+
 
         if ($images_folder = $this->folders->findBySlug('images')) {
             $images_folder->update([
@@ -208,7 +208,7 @@ class DatabaseSeeder extends Seeder
 
 
         //Create Ads Documents Folder
-        if (!$this->folders->findBySlug('ads_documents')) {
+        if (is_null($this->folders->findBy('slug', 'ads_documents'))) {
             $disk = $this->disks->findBySlug('local');
 
             $this->folders->create([
@@ -224,9 +224,8 @@ class DatabaseSeeder extends Seeder
             ]);
         };
 
-
         //Create Category Icon Folder
-        if (!$this->folders->findBySlug('category_icon')) {
+        if (is_null($this->folders->findBy('slug', 'category_icon'))) {
             $disk = $this->disks->findBySlug('local');
 
             $this->folders->create([
@@ -235,7 +234,7 @@ class DatabaseSeeder extends Seeder
                     'description' => 'A folder for Category Icon.',
                 ],
                 'slug' => 'category_icon',
-                'disk' => $disk
+                'disk' => $disk,
             ]);
         };
 
@@ -245,5 +244,6 @@ class DatabaseSeeder extends Seeder
         }
 
         Artisan::call('assets:clear');
+        Artisan::call('files:sync');
     }
 }
