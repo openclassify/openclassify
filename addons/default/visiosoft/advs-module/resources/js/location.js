@@ -20,6 +20,9 @@ if (getNeighborhood == "") {
     getNeighborhood = default_neighborhood;
 }
 var getVillage = $('.village-data').data('content');
+if (getVillage == "") {
+    getVillage = default_village;
+}
 var citySelectName = "city";
 var districtSelectName = "district";
 var neighborhoodSelectName = "neighborhood";
