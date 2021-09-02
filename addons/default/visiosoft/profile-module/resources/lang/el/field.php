@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Αγαπημένα'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Αρχειοθετημένες διαφημίσεις'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Εκκρεμεί έγκριση'
     ],
     'menu_delete_account' => [
         'name' => 'Κλειστός λογαριασμός'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Οι διαφημίσεις μου'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Αγαπημένες διαφημίσεις'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Τα πακέτα μου'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Πακέτα διαφημίσεων'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Φωτογραφία προφίλ'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Διαφήμιση σελίδας καταχώρησης διαφημίσεων'
     ],
     'approve' => [
@@ -254,12 +254,12 @@ return [
     'owner_name' => 'Μήνυμα',
 
     'favorites' => "Αγαπημένα",
-    'fav_advs' => 'Αγαπημένες διαφημίσεις',
+    'fav_classifieds' => 'Αγαπημένες διαφημίσεις',
     'fav_sellers' => "Fav Πωλητές",
     'fav_searches' => "Fav Αναζητήσεις",
     'posted_on' => "Δημοσιεύτηκε στις",
     'message_details' => "Λεπτομέρειες μηνύματος",
-    'adv_no' => 'Αριθμός διαφήμισης',
+    'classified_no' => 'Αριθμός διαφήμισης',
     'bill_address' => [
         'name' => 'Διεύθυνση λογαριασμού',
     ],
@@ -407,7 +407,7 @@ return [
     'balance_limit' => [
         'name' => 'Όριο ισορροπίας',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Ενεργές διαφημίσεις',
     ],
     'subscriptions' => [
@@ -425,7 +425,7 @@ return [
     'category' => [
         'name' => 'Κατηγορία',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Όριο διαφήμισης',
     ],
     'publish_time' => [
@@ -492,7 +492,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Ειδοποιημένες νέες ενημερώσεις',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Ειδοποιήθηκαν για διαφημίσεις',
     ],
     'receive_messages_email' => [

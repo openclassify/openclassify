@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favoritos'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Anuncios archivados'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Aprobación pendiente'
     ],
     'menu_delete_account' => [
         'name' => 'Cerrar cuenta'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Mis anuncios'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Anuncios favoritos'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Mis paquetes'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Paquetes de anuncios'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Foto de perfil'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner de página de listado de anuncios'
     ],
     'approve' => [
@@ -254,12 +254,12 @@ return [
     'owner_name' => 'Mensaje',
 
     'favorites' => "Favoritos",
-    'fav_advs' => 'Anuncios favoritos',
+    'fav_classifieds' => 'Anuncios favoritos',
     'fav_sellers' => "Vendedores favoritos",
     'fav_searches' => "Búsquedas favoritas",
     'posted_on' => "Publicado en",
     'message_details' => "Detalles del mensaje",
-    'adv_no' => 'Anuncio no',
+    'classified_no' => 'Anuncio no',
     'bill_address' => [
         'name' => 'Dirección de factura',
     ],
@@ -407,7 +407,7 @@ return [
     'balance_limit' => [
         'name' => 'Límite de equilibrio',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Anuncios activos',
     ],
     'subscriptions' => [
@@ -425,7 +425,7 @@ return [
     'category' => [
         'name' => 'Categoría',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Límite de anuncio',
     ],
     'publish_time' => [
@@ -492,7 +492,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Nuevas actualizaciones notificadas',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Notificado sobre anuncios',
     ],
     'receive_messages_email' => [

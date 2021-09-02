@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'name' => 'Tab Reklamên Min Nîşan bidin',
     ],
     'upload_avatar' => [

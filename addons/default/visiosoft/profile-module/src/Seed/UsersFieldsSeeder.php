@@ -96,8 +96,8 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
             [
-                'name' => 'visiosoft.module.profile::field.notified_about_ads.name',
-                'slug' => 'notified_about_ads',
+                'name' => 'visiosoft.module.profile::field.notified_about_classifieds.name',
+                'slug' => 'notified_about_classifieds',
                 'type' => 'anomaly.field_type.select',
                 'config' => [
                     'default_value' => 1,

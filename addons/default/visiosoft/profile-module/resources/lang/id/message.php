@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Kata sandi baru telah dikirim ke alamat email Anda.",
     "success" => "Keberhasilan",
     "notified_new_updates" => "Saya ingin diberi tahu tentang pembaruan baru",
-    "notified_about_ads" => "Izinkan pemberitahuan tentang iklan saya",
+    "notified_about_classifieds" => "Izinkan pemberitahuan tentang iklan saya",
     "receive_messages_email" => "Saya ingin menerima pesan sebagai email",
     "no_packages_module" => "Tidak Ada Modul Paket!",
     "required_add"=> "Harap isi semua baris wajib.",

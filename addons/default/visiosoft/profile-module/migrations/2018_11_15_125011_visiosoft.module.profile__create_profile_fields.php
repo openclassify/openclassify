@@ -116,7 +116,7 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
                 'separator' => ':',
             ]
         ],
-        'notified_about_ads' => [
+        'notified_about_classifieds' => [
             'type' => 'anomaly.field_type.select',
             'config' => [
                 'default_value' => 1,
@@ -132,10 +132,10 @@ class VisiosoftModuleProfileCreateProfileFields extends Migration
                 'separator' => ':',
             ]
         ],
-        'adv_listing_banner' => [
+        'classified_listing_banner' => [
             'type' => 'visiosoft.field_type.singlefile',
             'config' => [
-                'folders' => ['adv_listing_page'],
+                'folders' => ['classified_listing_page'],
                 'mode' => 'select',
             ]
         ],

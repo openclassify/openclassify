@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favorit'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Iklan yang diarsipkan'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Menunggu persetujuan'
     ],
     'menu_delete_account' => [
         'name' => 'Tutup Akun'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Iklan saya'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Iklan favorit'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Paket saya'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Paket Iklan'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Foto Profil'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Spanduk Halaman Cantuman Iklan'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Pesan',
 
     'favorites' => "Favorit",
-    'fav_advs' => 'Iklan Favorit',
+    'fav_classifieds' => 'Iklan Favorit',
     'fav_sellers' => "Penjual Favorit",
     'fav_searches' => "Pencarian Favorit",
     'posted_on' => "Diposting pada",
     'message_details' => "Detail Pesan",
-    'adv_no' => 'Iklan No',
+    'classified_no' => 'Iklan No',
     'bill_address' => [
         'name' => 'Alamat Tagihan',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Batas Saldo',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Iklan Aktif',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategori',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Batas Iklan',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Diberitahu Pembaruan Baru',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Diberitahu Tentang Iklan',
     ],
     'receive_messages_email' => [

@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favorites'
     ],
-    'menu_archived_ads' => [
-        'name' => 'Archived ads'
+    'menu_archived_classifieds' => [
+        'name' => 'Archived classifieds'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Pending approval'
     ],
     'menu_delete_account' => [
         'name' => 'Close account'
     ],
-    'menu_my_ads' => [
-        'name' => 'My ads'
+    'menu_my_classifieds' => [
+        'name' => 'My classifieds'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Favourite ads'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'My packages'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Ads Packages'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profile Photo'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Ads Listing Page Banner'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Message',
 
     'favorites' => "Favorites",
-    'fav_advs' => 'Favorite Ads',
+    'fav_classifieds' => 'Favorite Ads',
     'fav_sellers' => "Fav Sellers",
     'fav_searches' => "Fav Searches",
     'posted_on' => "Posted On",
     'message_details' => "Message Details",
-    'adv_no' => 'Ad No',
+    'classified_no' => 'Ad No',
     'bill_address' => [
         'name' => 'Bill Address',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Balance Limit',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Active Ads',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Category',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Ad Limit',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Notified New Updates',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Notified About Ads',
     ],
     'receive_messages_email' => [

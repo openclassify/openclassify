@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Любими'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Архивирани реклами'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Изчаква одобрение'
     ],
     'menu_delete_account' => [
         'name' => 'Затвори акаунт'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Моите реклами'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Любими реклами'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Моите пакети'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Пакети за реклами'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Профилна снимка'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Банер на страницата с обяви за реклами'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Съобщение',
 
     'favorites' => "Любими",
-    'fav_advs' => 'Любими реклами',
+    'fav_classifieds' => 'Любими реклами',
     'fav_sellers' => "Любими продавачи",
     'fav_searches' => "Избрани търсения",
     'posted_on' => "Публикувано на",
     'message_details' => "Подробности за съобщението",
-    'adv_no' => 'Обява №',
+    'classified_no' => 'Обява №',
     'bill_address' => [
         'name' => 'Адрес на Бил',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Ограничение на баланса',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Активни реклами',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Категория',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Ad Limit',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Нотифицирани нови актуализации',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Уведомен за реклами',
     ],
     'receive_messages_email' => [

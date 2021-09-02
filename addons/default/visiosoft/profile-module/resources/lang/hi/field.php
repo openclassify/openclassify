@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'पसंदीदा'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'संग्रहीत विज्ञापन'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'लंबित अनुमोदन'
     ],
     'menu_delete_account' => [
         'name' => 'खाता बंद करें'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'मेरे विज्ञापन'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'पसंदीदा विज्ञापन'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'मेरे पैकेज'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'विज्ञापन पैकेज'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'प्रोफाइल फोटो'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'विज्ञापन सूची पृष्ठ बैनर'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'संदेश',
 
     'favorites' => "पसंदीदा",
-    'fav_advs' => 'पसंदीदा विज्ञापन',
+    'fav_classifieds' => 'पसंदीदा विज्ञापन',
     'fav_sellers' => "फेव सेलर",
     'fav_searches' => "Fav खोजें",
     'posted_on' => "पर प्रविष्ट किया",
     'message_details' => "संदेश विवरण",
-    'adv_no' => 'विज्ञापन सं',
+    'classified_no' => 'विज्ञापन सं',
     'bill_address' => [
         'name' => 'बिल का पता',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'संतुलन की सीमा',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'सक्रिय विज्ञापन',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'वर्ग',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'विज्ञापन सीमा',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'अधिसूचित नई अद्यतन',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'विज्ञापनों के बारे में सूचित किया',
     ],
     'receive_messages_email' => [

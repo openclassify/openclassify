@@ -14,7 +14,7 @@ return [
     "login_info_old_user" => "Ein neues Passwort wurde an Ihre E-Mail-Adresse gesendet.",
     "success" => "Erfolg",
     "notified_new_updates" => "Ich möchte über neue Updates informiert werden",
-    "notified_about_ads" => "Benachrichtigungen zu meinen Anzeigen zulassen",
+    "notified_about_classifieds" => "Benachrichtigungen zu meinen Anzeigen zulassen",
     "receive_messages_email" => "Ich möchte Nachrichten als E-Mail erhalten",
     "no_packages_module" => "Kein Paketmodul!",
     "required_add"=> "Bitte füllen Sie alle erforderlichen Zeilen aus.",

@@ -50,7 +50,7 @@ return [
         'name' => 'Numero di telefono di terra'
     ],
     'office_phone' => [
-        'name' => 'Numero di telefono dell\\'ufficio'
+        'name' => 'Numero di telefono dell\'ufficio'
     ],
     'register_type' => [
         'name' => 'Tipo di registro'
@@ -151,31 +151,31 @@ return [
     'menu_favorites' => [
         'name' => 'Preferiti'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Annunci archiviati'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'In attesa di approvazione'
     ],
     'menu_delete_account' => [
-        'name' => 'Chiudere l\\'account'
+        'name' => 'Chiudere l\'account'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'I miei annunci'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Annunci preferiti'
     ],
     'menu_hello_msg' => [
         'name' => 'Ciao'
     ],
     'menu_last_msg' => [
-        'name' => 'Hai effettuato l\\'ultimo accesso alle'
+        'name' => 'Hai effettuato l\'ultimo accesso alle'
     ],
     'menu_packages' => [
         'name' => 'I miei pacchetti'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Pacchetti di annunci'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Foto profilo'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner della pagina di elenco degli annunci'
     ],
     'approve' => [
@@ -254,12 +254,12 @@ return [
     'owner_name' => 'Messaggio',
 
     'favorites' => "Preferiti",
-    'fav_advs' => 'Annunci preferiti',
+    'fav_classifieds' => 'Annunci preferiti',
     'fav_sellers' => "Venditori preferiti",
     'fav_searches' => "Ricerche preferite",
     'posted_on' => "Postato su",
     'message_details' => "Dettagli del messaggio",
-    'adv_no' => 'Annuncio n',
+    'classified_no' => 'Annuncio n',
     'bill_address' => [
         'name' => 'Indirizzo di fatturazione',
     ],
@@ -270,7 +270,7 @@ return [
         'name' => 'Totale',
     ],
     'order_date' => [
-        'name' => 'Data dell\\'ordine',
+        'name' => 'Data dell\'ordine',
     ],
     'order_no' => [
         'name' => 'ID ordine',
@@ -407,7 +407,7 @@ return [
     'balance_limit' => [
         'name' => 'Limite di equilibrio',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Annunci attivi',
     ],
     'subscriptions' => [
@@ -425,7 +425,7 @@ return [
     'category' => [
         'name' => 'Categoria',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Limite annuncio',
     ],
     'publish_time' => [
@@ -492,7 +492,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Notificati nuovi aggiornamenti',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Notificato sugli annunci',
     ],
     'receive_messages_email' => [

@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "رمز جدیدی به آدرس ایمیل شما ارسال شده است.",
     "success" => "موفقیت",
     "notified_new_updates" => "می خواهم از به روزرسانی های جدید مطلع شوم",
-    "notified_about_ads" => "اجازه اعلان ها درباره تبلیغات من",
+    "notified_about_classifieds" => "اجازه اعلان ها درباره تبلیغات من",
     "receive_messages_email" => "می خواهم پیام را به عنوان ایمیل دریافت کنم",
     "no_packages_module" => "بدون ماژول بسته بندی!",
     "required_add"=> "لطفا تمام خطوط مورد نیاز را پر کنید.",

@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'প্রিয়'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'সংরক্ষণাগারভুক্ত বিজ্ঞাপন'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'অনুমোদন অপেক্ষারত'
     ],
     'menu_delete_account' => [
         'name' => 'বন্ধ হিসাব'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'আমার বিজ্ঞাপন'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'প্রিয় বিজ্ঞাপন'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'আমার প্যাকেজগুলি'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'বিজ্ঞাপন প্যাকেজ'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'প্রোফাইল ফটো'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'বিজ্ঞাপন তালিকা পৃষ্ঠা ব্যানার'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'বার্তা',
 
     'favorites' => "প্রিয়",
-    'fav_advs' => 'প্রিয় বিজ্ঞাপন',
+    'fav_classifieds' => 'প্রিয় বিজ্ঞাপন',
     'fav_sellers' => "Fav বিক্রেতারা",
     'fav_searches' => "ফাভ অনুসন্ধান",
     'posted_on' => "পোস্ট হয়েছে",
     'message_details' => "বার্তা বিশদ",
-    'adv_no' => 'বিজ্ঞাপন নং',
+    'classified_no' => 'বিজ্ঞাপন নং',
     'bill_address' => [
         'name' => 'বিল ঠিকানা',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'ব্যালেন্স সীমা',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'সক্রিয় বিজ্ঞাপনসমূহ',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'বিভাগ',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'বিজ্ঞাপন সীমা',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'অবহিত নতুন আপডেট',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'বিজ্ঞাপন সম্পর্কে অবহিত',
     ],
     'receive_messages_email' => [

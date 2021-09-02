@@ -7,9 +7,9 @@ use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
-use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;
+use Visiosoft\ClassifiedsModule\Classified\ClassifiedModel;
+use Visiosoft\ClassifiedsModule\Classified\Event\ChangeStatusClassified;
+use Visiosoft\ClassifiedsModule\Status\Contract\StatusRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
 use Visiosoft\PackagesModule\Http\Controller\PackageFEController;
@@ -46,15 +46,15 @@ class MyProfileController extends PublicController
 
     public function home(ProfileFormBuilder $form)
     {
-        $advs_count = new AdvModel();
-        $advs_count = count($advs_count->myAdvsByUser()->get());
+        $classifieds_count = new ClassifiedModel();
+        $classifieds_count = count($classifieds_count->myClassifiedsByUser()->get());
 
         $user = $this->userRepository->find(Auth::id());
 
         $country = CountryModel::all();
 
         return $this->view->make('visiosoft.module.profile::profile.profile',
-            compact('user', 'country', 'form', 'advs_count'));
+            compact('user', 'country', 'form', 'classifieds_count'));
     }
 
     public function detail(ProfileFormBuilder $form)
@@ -69,9 +69,9 @@ class MyProfileController extends PublicController
         return $this->view->make('visiosoft.module.profile::profile.password');
     }
 
-    public function extendAds($id, $type, SettingRepositoryInterface $settings)
+    public function extendClassifieds($id, $type, SettingRepositoryInterface $settings)
     {
-        $isActivePackages = new AdvModel();
+        $isActivePackages = new ClassifiedModel();
         $isActivePackages = $isActivePackages->is_enabled('packages');
 
         if ($isActivePackages) {
@@ -86,15 +86,15 @@ class MyProfileController extends PublicController
 
             //Search Time packages By id
             $TimePackages = $TimePackages->getTimePackages($LastTimePackages['package_id']);
-            $adv = new AdvModel();
-            $adv->finish_at_Ads($id, $TimePackages['time']);
+            $classified = new ClassifiedModel();
+            $classified->finish_at_Classifieds($id, $TimePackages['time']);
 
             // auto approved find
-            $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
+            $auto_approved = $settings->value('visiosoft.module.classifieds::auto_approve');
             if ($auto_approved == true) {
                 $type = "approved";
             }
-            $adv->statusAds($id, $type);
+            $classified->statusClassifieds($id, $type);
 
             return response()->json(['success' => true]);
         } else {
@@ -102,37 +102,37 @@ class MyProfileController extends PublicController
         }
     }
 
-    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, AdvModel $advModel)
+    public function statusClassifieds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, ClassifiedModel $classifiedModel)
     {
-        $ad = $advModel->getAdv($id);
-        $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
-        $default_published_time = $settings->value('visiosoft.module.advs::default_published_time');
+        $classified = $classifiedModel->getClassified($id);
+        $auto_approved = $settings->value('visiosoft.module.classifieds::auto_approve');
+        $default_published_time = $settings->value('visiosoft.module.classifieds::default_published_time');
 
         if ($auto_approved == true AND $type == 'pending_admin') {
             $type = "approved";
         }
 
-        if ($type == "approved") {
-            $advModel->publish_at_Ads($id);
-            if ($ad->finish_at == NULL AND $type == "approved") {
-                if ($advModel->is_enabled('packages')) {
+        if ($type === "approved") {
+            $classifiedModel->publish_at_Classifieds($id);
+            if ($classified->finish_at === NULL && $type === "approved") {
+                if ($classifiedModel->is_enabled('packages')) {
                     $packageModel = new PackageModel();
-                    $published_time = $packageModel->reduceTimeLimit($ad->cat1);
-                    if ($published_time != null) {
+                    $published_time = $packageModel->reduceTimeLimit($classified->cat1);
+                    if ($published_time !== null) {
                         $default_published_time = $published_time;
                     }
                 }
-                $advModel->finish_at_Ads($id, $default_published_time);
+                $classifiedModel->finish_at_Classifieds($id, $default_published_time);
             }
         }
-        $isActiveAlgolia = new AdvModel();
+        $isActiveAlgolia = new ClassifiedModel();
         $isActiveAlgolia = $isActiveAlgolia->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
             $algolia->updateStatus($id, $type, $settings);
         }
-        $status = $advModel->statusAds($id, $type);
-        $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
+        $status = $classifiedModel->statusClassifieds($id, $type);
+        $events->dispatch(new ChangeStatusClassified($id, $settings));//Create Notify
 
         return response()->json(['status' => $status]);
 
@@ -215,7 +215,7 @@ class MyProfileController extends PublicController
         $messageInfo = $message[0];
         $messageDetail = $message[1];
 
-        if ($message[0]->adv_user_id == auth()->id()) {
+        if ($message[0]->classified_user_id === auth()->id()) {
             return $this->view->make('visiosoft.module.profile::profile.message-detail', compact('messageInfo', 'messageDetail'));
         } else {
             abort(403);
@@ -239,12 +239,12 @@ class MyProfileController extends PublicController
 
     }
 
-    public function myAds(StatusRepositoryInterface $statusRepository)
+    public function myClassifieds(StatusRepositoryInterface $statusRepository)
     {
         $userStatus = $statusRepository->getUserAccessibleStatuses()->pluck('name', 'id')->toJson();
-        $changeStatusUrl = route('visiosoft.module.advs::ad.change.status', [':adID', ':statusID']);
+        $changeStatusUrl = route('visiosoft.module.classifieds::classified.change.status', [':classifiedID', ':statusID']);
         return $this->view->make(
-            'visiosoft.module.profile::profile/ads',
+            'visiosoft.module.profile::profile/classifieds',
             compact('userStatus', 'changeStatusUrl')
         );
     }

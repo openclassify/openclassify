@@ -14,7 +14,7 @@ return [
     "login_info_old_user" => "Un nouveau mot de passe a été envoyé à votre adresse e-mail.",
     "success" => "Succès",
     "notified_new_updates" => "Je veux être informé des nouvelles mises à jour",
-    "notified_about_ads" => "Autoriser les notifications concernant mes annonces",
+    "notified_about_classifieds" => "Autoriser les notifications concernant mes annonces",
     "receive_messages_email" => "Je veux recevoir des messages par email",
     "no_packages_module" => "Aucun module de paquets!",
     "required_add"=> "Veuillez remplir toutes les lignes requises.",

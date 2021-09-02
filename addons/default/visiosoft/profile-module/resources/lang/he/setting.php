@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'name' => 'הצג את הכרטיסייה מודעות שלי',
     ],
     'upload_avatar' => [

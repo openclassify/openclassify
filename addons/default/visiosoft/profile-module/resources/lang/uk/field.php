@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Вибране'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Архівні оголошення'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Очікує підтвердження'
     ],
     'menu_delete_account' => [
         'name' => 'Закрити рахунок'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Мої оголошення'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Улюблена реклама'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Мої пакети'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Рекламні пакети'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Фотографія профілю'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Банер сторінки переліку оголошень'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'повідомлення',
 
     'favorites' => "Вибране",
-    'fav_advs' => 'Улюблена реклама',
+    'fav_classifieds' => 'Улюблена реклама',
     'fav_sellers' => "Fav Продавці",
     'fav_searches' => "Fav Пошук",
     'posted_on' => "Опубліковано",
     'message_details' => "Деталі повідомлення",
-    'adv_no' => 'Оголошення №',
+    'classified_no' => 'Оголошення №',
     'bill_address' => [
         'name' => 'Адреса Білла',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Ліміт балансу',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Активні оголошення',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Категорія',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Обмеження оголошення',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Сповіщені нові оновлення',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Повідомлення про рекламу',
     ],
     'receive_messages_email' => [

@@ -3,8 +3,8 @@
 {% else %}
     {% set showTheme = true %}
 {% endif %}
-{% if showTheme and params.adv.show_phone_number.value %}
-    {% set user = params.adv.created_by %}
+{% if showTheme and params.classified.show_phone_number.value %}
+    {% set user = params.classified.created_by %}
     {% if user.gsm_phone is not null %}
         <div class="col-md-12 m-2 number-container">
             <button class="btn btn-secondary w-100">

@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "E-poçt ünvanınıza yeni bir parol göndərildi.",
     "success" => "Uğur",
     "notified_new_updates" => "Yeni yeniliklərdən xəbərdar olmaq istəyirəm",
-    "notified_about_ads" => "Reklamlarım barədə bildirişlərə icazə verin",
+    "notified_about_classifieds" => "Reklamlarım barədə bildirişlərə icazə verin",
     "receive_messages_email" => "Mesajları e-poçt kimi almaq istəyirəm",
     "no_packages_module" => "Paket Modulu yoxdur!",
     "required_add"=> "Xahiş edirəm bütün tələb olunan sətirləri doldurun.",

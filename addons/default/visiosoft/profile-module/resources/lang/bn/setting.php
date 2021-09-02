@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'name' => 'আমার বিজ্ঞাপনের ট্যাবটি দেখান',
     ],
     'upload_avatar' => [

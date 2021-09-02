@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Sevimlilər'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Arxivləşdirilmiş elanlar'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Təsdiqləmə gözlənilir'
     ],
     'menu_delete_account' => [
         'name' => 'Hesabı bağlayın'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Reklamlarım'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Sevimli elanlar'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Paketlərim'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Elan paketləri'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profil Şəkli'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Reklam elanları səhifə bannerləri'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Mesaj',
 
     'favorites' => "Sevimlilər",
-    'fav_advs' => 'Sevimli elanlar',
+    'fav_classifieds' => 'Sevimli elanlar',
     'fav_sellers' => "Fav Satıcılar",
     'fav_searches' => "Fav axtarışları",
     'posted_on' => "Göndərilib",
     'message_details' => "Mesaj təfərrüatları",
-    'adv_no' => 'Reklam nömrəsi',
+    'classified_no' => 'Reklam nömrəsi',
     'bill_address' => [
         'name' => 'Bill ünvanı',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Balans həddi',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktiv Elanlar',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kateqoriya',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Reklam məhdudiyyəti',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Yeni Yeniləmələr bildirildi',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Reklamlar haqqında bildiriş',
     ],
     'receive_messages_email' => [

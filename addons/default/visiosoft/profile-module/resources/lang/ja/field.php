@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'お気に入り'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'アーカイブされた広告'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => '承認待ちの'
     ],
     'menu_delete_account' => [
         'name' => 'アカウントを閉じる'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => '私の広告'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'お気に入りの広告'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => '私のパッケージ'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => '広告パッケージ'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'プロフィール写真'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => '広告リストページバナー'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'メッセージ',
 
     'favorites' => "お気に入り",
-    'fav_advs' => 'お気に入りの広告',
+    'fav_classifieds' => 'お気に入りの広告',
     'fav_sellers' => "お気に入りセラー",
     'fav_searches' => "お気に入り検索",
     'posted_on' => "ポストする",
     'message_details' => "メッセージ詳細",
-    'adv_no' => '広告番号',
+    'classified_no' => '広告番号',
     'bill_address' => [
         'name' => '請求先住所',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'バランス制限',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'アクティブ広告',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'カテゴリー',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => '広告制限',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => '通知された新しい更新',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => '広告について通知',
     ],
     'receive_messages_email' => [

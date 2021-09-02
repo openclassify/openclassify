@@ -9,7 +9,7 @@ return [
                 'fields' => [
                     'show_extends_actions',
                     'required_district',
-                    'show_my_ads',
+                    'show_my_classifieds',
                     'upload_avatar',
                     'show_tax_office',
                     'show_checkbox_terms_on_register',

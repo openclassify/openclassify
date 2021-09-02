@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Omiljeno'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Arhivirani oglasi'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Odobravanje u toku'
     ],
     'menu_delete_account' => [
         'name' => 'Zatvorite račun'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Moji oglasi'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Omiljeno'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Paketi'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Paketi oglasa'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profilna slika'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Baner stranice sa oglasima'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Poruka',
 
     'favorites' => "Omiljeno",
-    'fav_advs' => 'Omiljeni oglasi',
+    'fav_classifieds' => 'Omiljeni oglasi',
     'fav_sellers' => "Omiljeni prodavci",
     'fav_searches' => "Sačuvane pretrage",
     'posted_on' => "Postavljeno",
     'message_details' => "Detalji poruke",
-    'adv_no' => 'Broj oglasa',
+    'classified_no' => 'Broj oglasa',
     'bill_address' => [
         'name' => 'Adresa za dostavu računa',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Ograničenje stanja',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktivni oglasi',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategorija',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Ograničenje oglasa',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Obavešten o novim ažuriranjima',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Obavešten o oglasima',
     ],
     'receive_messages_email' => [

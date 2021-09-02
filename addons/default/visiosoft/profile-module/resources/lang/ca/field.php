@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Preferits'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Anuncis arxivats'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Pendent d\'aprovació'
     ],
     'menu_delete_account' => [
         'name' => 'Tanca el compte'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Els meus anuncis'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Anuncis preferits'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Els meus paquets'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Paquets d\'anuncis'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Foto del perfil'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Bàner de pàgina de llistat d’anuncis'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Missatge',
 
     'favorites' => "Preferits",
-    'fav_advs' => 'Anuncis preferits',
+    'fav_classifieds' => 'Anuncis preferits',
     'fav_sellers' => "Venedors Fav",
     'fav_searches' => "Cerques Fav",
     'posted_on' => "Posat en",
     'message_details' => "Detalls del missatge",
-    'adv_no' => 'Anunci núm',
+    'classified_no' => 'Anunci núm',
     'bill_address' => [
         'name' => 'Adreça de factura',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Límit de saldo',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Anuncis actius',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Categoria',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Límit d’anuncis',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Noves actualitzacions notificades',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Notificat sobre els anuncis',
     ],
     'receive_messages_email' => [

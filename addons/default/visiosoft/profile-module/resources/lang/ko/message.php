@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "귀하의 이메일 주소로 새 비밀번호가 발송되었습니다.",
     "success" => "성공",
     "notified_new_updates" => "새로운 업데이트에 대한 알림을 받고 싶습니다",
-    "notified_about_ads" => "내 광고에 대한 알림 허용",
+    "notified_about_classifieds" => "내 광고에 대한 알림 허용",
     "receive_messages_email" => "이메일로 메시지를 받고 싶습니다",
     "no_packages_module" => "패키지 모듈 없음!",
     "required_add"=> "필요한 모든 줄을 작성하십시오.",

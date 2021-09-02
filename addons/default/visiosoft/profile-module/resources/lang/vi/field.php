@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Yêu thích'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Quảng cáo lưu trữ'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Chờ phê duyệt'
     ],
     'menu_delete_account' => [
         'name' => 'Đóng tài khoản'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Quảng cáo của tôi'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Quảng cáo yêu thích'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Gói của tôi'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Gói quảng cáo'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Ảnh đại diện'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Biểu ngữ trang liệt kê quảng cáo'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Thông điệp',
 
     'favorites' => "Yêu thích",
-    'fav_advs' => 'Quảng cáo yêu thích',
+    'fav_classifieds' => 'Quảng cáo yêu thích',
     'fav_sellers' => "Người bán Fav",
     'fav_searches' => "Tìm kiếm Fav",
     'posted_on' => "Đăng trên",
     'message_details' => "Thông tin chi tiết",
-    'adv_no' => 'Không có quảng cáo',
+    'classified_no' => 'Không có quảng cáo',
     'bill_address' => [
         'name' => 'Địa chỉ hóa đơn',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Giới hạn số dư',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Quảng cáo đang hoạt động',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'thể loại',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Giới hạn quảng cáo',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Cập nhật mới được thông báo',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Thông báo về Quảng cáo',
     ],
     'receive_messages_email' => [

@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => '즐겨 찾기'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => '보관 된 광고'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => '승인 대기 중'
     ],
     'menu_delete_account' => [
         'name' => '계정을 닫다'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => '내 광고'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => '좋아하는 광고'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => '내 패키지'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => '광고 패키지'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => '프로필 사진'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => '광고 목록 페이지 배너'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => '메시지',
 
     'favorites' => "즐겨 찾기",
-    'fav_advs' => '좋아하는 광고',
+    'fav_classifieds' => '좋아하는 광고',
     'fav_sellers' => "인기 판매자",
     'fav_searches' => "자주 묻는 검색",
     'posted_on' => "에 게시",
     'message_details' => "메시지 세부 사항",
-    'adv_no' => '광고 번호',
+    'classified_no' => '광고 번호',
     'bill_address' => [
         'name' => '청구서 주소',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => '잔액 한도',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => '활성 광고',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => '범주',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => '광고 한도',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => '새로운 업데이트 알림',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => '광고에 대한 알림',
     ],
     'receive_messages_email' => [

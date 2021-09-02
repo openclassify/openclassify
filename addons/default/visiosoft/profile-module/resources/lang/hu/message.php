@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Új jelszót küldtünk az e-mail címére.",
     "success" => "Siker",
     "notified_new_updates" => "Értesítést szeretnék kapni az új frissítésekről",
-    "notified_about_ads" => "Értesítések engedélyezése a hirdetéseimről",
+    "notified_about_classifieds" => "Értesítések engedélyezése a hirdetéseimről",
     "receive_messages_email" => "Szeretnék e-mailben üzeneteket kapni",
     "no_packages_module" => "Nincs csomag modul!",
     "required_add"=> "Kérjük, töltse ki az összes szükséges sort.",

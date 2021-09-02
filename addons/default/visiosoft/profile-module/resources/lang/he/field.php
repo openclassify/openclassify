@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'מועדפים'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'מודעות שהועברו לארכיון'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'ממתין לאישור'
     ],
     'menu_delete_account' => [
         'name' => 'חשבון סגור'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'המודעות שלי'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'מודעות מועדפות'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'החבילות שלי'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'חבילות מודעות'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'תמונת פרופיל'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'מודעת באנר של דף מודעות'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'הודעה',
 
     'favorites' => "מועדפים",
-    'fav_advs' => 'מודעות מועדפות',
+    'fav_classifieds' => 'מודעות מועדפות',
     'fav_sellers' => "מוכרי פייב",
     'fav_searches' => "חיפושים טובים",
     'posted_on' => "פורסם ב",
     'message_details' => "פרטי ההודעה",
-    'adv_no' => 'מס \'מודעה',
+    'classified_no' => 'מס \'מודעה',
     'bill_address' => [
         'name' => 'כתובת לחשבון',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'מגבלת איזון',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'מודעות פעילות',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'קטגוריה',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'מגבלת מודעות',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'הודיעו על עדכונים חדשים',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'הודיע על מודעות',
     ],
     'receive_messages_email' => [

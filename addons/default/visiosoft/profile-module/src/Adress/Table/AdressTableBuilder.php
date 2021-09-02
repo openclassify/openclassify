@@ -35,11 +35,11 @@ class AdressTableBuilder extends TableBuilder
 
     protected $assets = [
         'scripts.js' => [
-            'visiosoft.module.advs::js/admin/filter-user.js',
+            'visiosoft.module.classifieds::js/admin/filter-user.js',
         ],
         'styles.css' => [
-            'visiosoft.module.advs::css/admin/filter-user.css',
-            'visiosoft.module.advs::css/custom.css',
+            'visiosoft.module.classifieds::css/admin/filter-user.css',
+            'visiosoft.module.classifieds::css/custom.css',
         ],
     ];
 }

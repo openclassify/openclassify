@@ -5,37 +5,37 @@
         {% block detail %}
             <div class="row px-3">
                 <div class="col-md-12 bg-dark text-white p-5 d-flex justify-content-between align-items-center flex-wrap">
-                    <h3>{{ trans('visiosoft.module.advs::field.my_ads.name') }}</h3>
+                    <h3>{{ trans('visiosoft.module.classifieds::field.my_classifieds.name') }}</h3>
 
-                    {{ addBlock('profile/ads/header')|raw }}
+                    {{ addBlock('profile/classifieds/header')|raw }}
                 </div>
 
-                <div class="col-md-12 bg-light advs-section">
-                    <nav class="profile-advs-tab">
+                <div class="col-md-12 bg-light classifieds-section">
+                    <nav class="profile-classifieds-tab">
                         <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                             {% set type = app.request.get('type') ?: 'approved' %}
                             <a class="nav-item nav-link text-dark{{ type == 'approved' ? ' active' : '' }}"
                                data-type="approved" id="nav-approved-tab" data-toggle="tab" href="#nav-approved"
                                role="tab" aria-controls="nav-detail" aria-selected="true">
-                                {{ trans('visiosoft.module.advs::field.my_ads.name') }}
+                                {{ trans('visiosoft.module.classifieds::field.my_classifieds.name') }}
                             </a>
                             <a class="nav-item nav-link text-dark{{ type == 'pending' ? ' active' : '' }}"
                                data-type="pending" id="nav-pending-tab" data-toggle="tab" href="#nav-pending"
                                role="tab" aria-controls="nav-pending" aria-selected="true">
-                                {{ trans('visiosoft.module.advs::field.pending_adv.name') }}
+                                {{ trans('visiosoft.module.classifieds::field.pending_classified.name') }}
                             </a>
                         </div>
                     </nav>
                     <div class="bg-dark p-2 mt-2 rounded">
-                        <a href="{{ url_route('advs::create_adv') }}" class="btn btn-success">
+                        <a href="{{ url_route('classifieds::create_classified') }}" class="btn btn-success">
                             <i class="fas fa-plus-circle"></i>
-                            {{ trans("visiosoft.theme.base::button.post_ad.name") }}
+                            {{ trans("visiosoft.theme.base::button.post_classified.name") }}
                         </a>
                         {% if auth_user().hasRole('admin') and setting_value('visiosoft.module.profile::show_extends_actions') %}
-                            <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
+                            <a href="{{ url_route("classifieds::extendAll") }}" class="btn btn-primary">
                                 {{ trans('visiosoft.module.profile::button.extend_all') }}
                             </a>
-                            <a href="{{ url_route("advs::extendAll") }}?unpublished=1" class="btn btn-warning text-white">
+                            <a href="{{ url_route("classifieds::extendAll") }}?unpublished=1" class="btn btn-warning text-white">
                                 {{ trans('visiosoft.module.profile::button.extend_unpublished') }}
                             </a>
                         {% endif %}
@@ -67,19 +67,19 @@
                 </div>
             </div>
             <script>
-                var approve = "{{ trans('visiosoft.module.advs::field.approve') }}";
-                var passive = "{{ trans('visiosoft.module.advs::field.passive') }}";
-                var delete_ad = "{{ trans('visiosoft.module.profile::button.delete') }}";
-                var extend_ad = "{{ trans('visiosoft.module.profile::button.extend') }}";
-                var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
-                var ads_per_page = "{{ setting_value('streams::per_page') }}";
-                var no_ads_message = "{{ trans('visiosoft.module.advs::field.no_ads') }}";
+                var approve = "{{ trans('visiosoft.module.classifieds::field.approve') }}";
+                var passive = "{{ trans('visiosoft.module.classifieds::field.passive') }}";
+                var delete_classified = "{{ trans('visiosoft.module.profile::button.delete') }}";
+                var extend_classified = "{{ trans('visiosoft.module.profile::button.extend') }}";
+                var edit_classified = "{{ trans('visiosoft.module.profile::button.edit') }}";
+                var classifieds_per_page = "{{ setting_value('streams::per_page') }}";
+                var no_classifieds_message = "{{ trans('visiosoft.module.classifieds::field.no_classifieds') }}";
                 let userStatus = JSON.parse(`{{ userStatus|raw }}`);
                 let statusChangeLink = `{{ changeStatusUrl }}`;
-                let dropdownBlock = `{{ addBlock('profile/dropdown-ad', {'id': ':id'})|raw }}`;
+                let dropdownBlock = `{{ addBlock('profile/dropdown-classified', {'id': ':id'})|raw }}`;
                 var changeStatusTrans = "{{ trans('visiosoft.module.profile::field.change_status') }}";
             </script>
-            {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
+            {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/classifieds.js') }}
         {% endblock %}
     {% endembed %}
 {% endblock %}

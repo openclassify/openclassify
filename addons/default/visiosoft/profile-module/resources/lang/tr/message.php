@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "E-posta adresinize yeni bir şifre gönderildi.",
     "success" => "İşlem Başarılı",
     "notified_new_updates" => "Yeni güncellemelerden haberdar olmak istiyorum",
-    "notified_about_ads" => "İlanlarım hakkında bildirimlere izin ver",
+    "notified_about_classifieds" => "İlanlarım hakkında bildirimlere izin ver",
     "receive_messages_email" => "Mesajları e-posta olarak almak istiyorum",
     "no_packages_module" => "Paket Modülü Bulunamadı!",
     "required_add"=> "Lütfen gerekli tüm satırları doldurun.",

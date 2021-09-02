@@ -166,11 +166,11 @@ return [
     'menu_favorites' => [
         'name' => 'دڵخوازەکان'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'ڕێکلامەکانی ئەرشیف کراو
 '
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'قەبووڵی هەڵپەسێردراو
 '
     ],
@@ -178,11 +178,11 @@ return [
         'name' => 'ئەکاونتەکە ئةكاونتە
 '
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'ڕیکلامەکانم
 '
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'ڕێکلامێکی دڵخواز
 '
     ],
@@ -197,7 +197,7 @@ return [
         'name' => 'پاکێجەکانم
 '
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'پاکێجەکانی ڕیکلام
 '
     ],
@@ -213,8 +213,8 @@ return [
         'name' => 'وێنەی پڕۆفایل
 '
     ],
-    'adv_listing_banner' => [
-        'name' => 'مانشێتی پەیجی لیستی ڕیکلامەکان 
+    'classified_listing_banner' => [
+        'name' => 'مانشێتی پەیجی لیستی ڕیکلامەکان
 '
     ],
     'approve' => [
@@ -287,7 +287,7 @@ return [
     'owner_name' => 'پەیام',
 
     'favorites' => "دڵخوازەکان",
-    'fav_advs' => 'ڕێکلامێکی دڵخوازترین',
+    'fav_classifieds' => 'ڕێکلامێکی دڵخوازترین',
     'fav_sellers' => "فرۆشیاری دڵخوازترین
 ",
     'fav_searches' => "گەڕانی دڵخوازترین
@@ -295,7 +295,7 @@ return [
     'posted_on' => "بڵاوکرایەوە",
     'message_details' => "وردەکاری پەیام
 ",
-    'adv_no' => 'ژمارەی ڕیکلام
+    'classified_no' => 'ژمارەی ڕیکلام
 ',
     'bill_address' => [
         'name' => 'ناونیشانی فاتووره‌
@@ -458,7 +458,7 @@ return [
         'name' => 'سنوری باڵانس
 ',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'ڕێکلامێکی چالاک
 ',
     ],
@@ -480,7 +480,7 @@ return [
     'category' => [
         'name' => 'کەتێگۆری',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'سنورى ڕیکلام
 ',
     ],
@@ -557,7 +557,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Nû Rojanekirinên Nû',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Derbarê Reklaman de Hatin Nûçe',
     ],
     'receive_messages_email' => [

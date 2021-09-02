@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "S'ha enviat una nova contrasenya a la vostra adreça de correu electrònic.",
     "success" => "Èxit",
     "notified_new_updates" => "Vull rebre notificacions de noves actualitzacions",
-    "notified_about_ads" => "Permetre notificacions sobre els meus anuncis",
+    "notified_about_classifieds" => "Permetre notificacions sobre els meus anuncis",
     "receive_messages_email" => "Vull rebre missatges com a correu electrònic",
     "no_packages_module" => "Mòdul sense paquets.",
     "required_add"=> "Empleneu totes les línies obligatòries.",

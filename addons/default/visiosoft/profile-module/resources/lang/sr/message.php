@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Nova lozinka je poslata na vašu e-mail adresu.",
     "success" => "Uspešno",
     "notified_new_updates" => "Želim da budem obavešten o novim ažuriranjima",
-    "notified_about_ads" => "Dozvoli obaveštenja o mojim oglasima",
+    "notified_about_classifieds" => "Dozvoli obaveštenja o mojim oglasima",
     "receive_messages_email" => "Želim da primam poruke kao e-mail",
     "no_packages_module" => "Modul za pakete ne postoji!",
     "required_add"=> "Molimo popunite sve potrebne redove.",

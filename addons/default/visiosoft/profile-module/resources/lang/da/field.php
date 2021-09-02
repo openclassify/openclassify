@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Foretrukne'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Arkiverede annoncer'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Afventer godkendelse'
     ],
     'menu_delete_account' => [
         'name' => 'Luk konto'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Mine annoncer'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Favoritannoncer'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Mine pakker'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Annoncepakker'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profilbillede'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner for annoncer med sidelister'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Besked',
 
     'favorites' => "Foretrukne",
-    'fav_advs' => 'Favoritannoncer',
+    'fav_classifieds' => 'Favoritannoncer',
     'fav_sellers' => "Fav-sælgere",
     'fav_searches' => "Fav-søgninger",
     'posted_on' => "Opslået på",
     'message_details' => "Beskeddetaljer",
-    'adv_no' => 'Annonce nr',
+    'classified_no' => 'Annonce nr',
     'bill_address' => [
         'name' => 'Regningsadresse',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Balancegrænse',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktive annoncer',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategori',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Annoncegrænse',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Meddelte nye opdateringer',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Meddelelse om annoncer',
     ],
     'receive_messages_email' => [

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'name' => 'Mostra la pestanya Els meus anuncis',
     ],
     'upload_avatar' => [

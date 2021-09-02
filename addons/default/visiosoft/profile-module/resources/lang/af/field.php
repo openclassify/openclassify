@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Gunstelinge'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Gearchiveerde advertensies'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Hangende goedkeuring'
     ],
     'menu_delete_account' => [
         'name' => 'Sluit rekening'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'My advertensies'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Gunsteling advertensies'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'My pakkette'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Advertensiepakkette'
     ],
     'menu_time_packages' => [
@@ -187,8 +187,8 @@ return [
     'profile_photo' => [
         'name' => 'Profielfoto'
     ],
-    'adv_listing_banner' => [
-        'name' => 'Advertensie-lys bladsy-banier'
+    'classified_listing_banner' => [
+        'name' => 'Advertensie-lys blclassifiedsy-banier'
     ],
     'approve' => [
         'name' => 'Goedkeur'
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Boodskap',
 
     'favorites' => "Gunstelinge",
-    'fav_advs' => 'Gunsteling advertensies',
+    'fav_classifieds' => 'Gunsteling advertensies',
     'fav_sellers' => "Fav-verkopers",
     'fav_searches' => "Fav-soektogte",
     'posted_on' => "Gepos op",
     'message_details' => "Boodskapbesonderhede",
-    'adv_no' => 'Advertensie nr',
+    'classified_no' => 'Advertensie nr',
     'bill_address' => [
         'name' => 'Wysigingsadres',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Balanslimiet',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktiewe advertensies',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategorie',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Advertensielimiet',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Nuwe opdaterings in kennis gestel',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'In kennis gestel oor advertensies',
     ],
     'receive_messages_email' => [

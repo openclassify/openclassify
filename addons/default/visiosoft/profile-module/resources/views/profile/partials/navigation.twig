@@ -22,12 +22,12 @@
             {{ img('visiosoft.module.profile::images/detail2.svg').data|raw }}
             <p>{{ trans('visiosoft.module.profile::field.details.name') }}</p>
         </a>
-        {% set marketPlace = setting_value('visiosoft.module.advs::market_place') %}
+        {% set marketPlace = setting_value('visiosoft.module.classifieds::market_place') %}
         {% if marketPlace %}
-            <a href="{{ url_route('profile::ads') }}"
-               class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/ads' ? ' active' : '' }}">
+            <a href="{{ url_route('profile::classifieds') }}"
+               class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/classifieds' ? ' active' : '' }}">
                 {{ img('visiosoft.module.profile::images/website.svg').data|raw }}
-                <p>{{ trans('visiosoft.module.advs::addon.title') }}</p>
+                <p>{{ trans('visiosoft.module.classifieds::addon.title') }}</p>
             </a>
         {% endif %}
         <a href="{{ url_route('profile::address') }}"

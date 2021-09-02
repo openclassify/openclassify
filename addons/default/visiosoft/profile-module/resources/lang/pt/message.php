@@ -15,7 +15,7 @@ return [
     "login_info_old_user" => "Uma nova senha foi enviada para o seu endereço de e-mail.",
     "success" => "Sucesso",
     "notified_new_updates" => "Quero ser notificado de novas atualizações",
-    "notified_about_ads" => "Permitir notificações sobre meus anúncios",
+    "notified_about_classifieds" => "Permitir notificações sobre meus anúncios",
     "receive_messages_email" => "Quero receber mensagens como email",
     "no_packages_module" => "Nenhum módulo de pacotes!",
     "required_add"=> "Por favor,

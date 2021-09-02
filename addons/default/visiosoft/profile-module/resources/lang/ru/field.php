@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Избранные'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Архивные объявления'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'В ожидании утверждения'
     ],
     'menu_delete_account' => [
         'name' => 'Закрыть аккаунт'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Мои объявления'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Избранные объявления'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Мои пакеты'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Рекламные пакеты'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Аватар'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Баннер со списком объявлений'
     ],
     'approve' => [
@@ -251,12 +251,12 @@ return [
     'owner_name' => 'Сообщение',
 
     'favorites' => "Избранные",
-    'fav_advs' => 'Избранные объявления',
+    'fav_classifieds' => 'Избранные объявления',
     'fav_sellers' => "Любимые продавцы",
     'fav_searches' => "Избранные поиски",
     'posted_on' => "Опубликовано",
     'message_details' => "Детали сообщения",
-    'adv_no' => 'Объявление №',
+    'classified_no' => 'Объявление №',
     'bill_address' => [
         'name' => 'Адрес счета',
     ],
@@ -406,7 +406,7 @@ return [
     'balance_limit' => [
         'name' => 'Предел баланса',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Активные объявления',
     ],
     'subscriptions' => [
@@ -424,7 +424,7 @@ return [
     'category' => [
         'name' => 'категория',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Предел рекламы',
     ],
     'publish_time' => [
@@ -491,7 +491,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Уведомленные новые обновления',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Уведомление о рекламе',
     ],
     'receive_messages_email' => [

@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Nowe hasło zostało wysłane na Twój adres e-mail.",
     "success" => "Sukces",
     "notified_new_updates" => "Chcę otrzymywać powiadomienia o nowych aktualizacjach",
-    "notified_about_ads" => "Zezwalaj na powiadomienia o moich reklamach",
+    "notified_about_classifieds" => "Zezwalaj na powiadomienia o moich reklamach",
     "receive_messages_email" => "Chcę otrzymywać wiadomości jako e-mail",
     "no_packages_module" => "Brak modułu paczek!",
     "required_add"=> "Proszę wypełnić wszystkie wymagane wiersze.",

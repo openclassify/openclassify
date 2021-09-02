@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'name' => '显示我的广告标签',
     ],
     'upload_avatar' => [

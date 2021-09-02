@@ -7,7 +7,7 @@ return [
             'default_value' => 1
         ],
     ],
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
             'default_value' => 1

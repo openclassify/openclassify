@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favoriler'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Arşivlenen İlanlar'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Onay Bekleyenler'
     ],
     'menu_delete_account' => [
         'name' => 'Hesabı Kapat'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'İlanlarım'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Favori İlanlarım'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Paketlerim'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'İlan Paketleri'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profil Fotoğrafı'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Listeleme Arkaplanı'
     ],
     'approve' => [
@@ -251,12 +251,12 @@ return [
     'owner_name' => 'Mesaj',
 
     'favorites' => "Favoriler",
-    'fav_advs' => 'Favori İlanlar',
+    'fav_classifieds' => 'Favori İlanlar',
     'fav_sellers' => "Favori Satıcılar",
     'fav_searches' => "Favori Aramalar",
     'posted_on' => "Yayınlayan",
     'message_details' => "Mesaj Detayı",
-    'adv_no' => 'İlan Numarası',
+    'classified_no' => 'İlan Numarası',
     'bill_address' => [
         'name' => 'Fatura Adresi',
     ],
@@ -404,7 +404,7 @@ return [
     'balance_limit' => [
         'name' => 'Bakiye',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktif İlanlar',
     ],
     'subscriptions' => [
@@ -422,7 +422,7 @@ return [
     'category' => [
         'name' => 'Kategori',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'İlan Limiti',
     ],
     'publish_time' => [
@@ -489,7 +489,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Yeni Güncellemeler Bildirildi',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'İlanlar Hakkında Bildirildi',
     ],
     'receive_messages_email' => [

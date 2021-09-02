@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Et nytt passord er sendt til e-postadressen din.",
     "success" => "Suksess",
     "notified_new_updates" => "Jeg ønsker å bli varslet om nye oppdateringer",
-    "notified_about_ads" => "Tillat varsler om annonsene mine",
+    "notified_about_classifieds" => "Tillat varsler om annonsene mine",
     "receive_messages_email" => "Jeg vil motta meldinger som e-post",
     "no_packages_module" => "Ingen pakkemodul!",
     "required_add"=> "Fyll ut alle nødvendige linjer.",

@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'show_my_ads' => [
-        'name' => 'Show My Ads Tab',
+    'show_my_classifieds' => [
+        'name' => 'Show My Classified Tab',
     ],
     'upload_avatar' => [
         'name' => 'Avatar Upload',

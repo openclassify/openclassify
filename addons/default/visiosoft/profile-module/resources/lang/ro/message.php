@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "O nouă parolă a fost trimisă la adresa dvs. de e-mail.",
     "success" => "Succes",
     "notified_new_updates" => "Doresc să fiu notificat despre noi actualizări",
-    "notified_about_ads" => "Permiteți notificări despre anunțurile mele",
+    "notified_about_classifieds" => "Permiteți notificări despre anunțurile mele",
     "receive_messages_email" => "Vreau să primesc mesaje ca e-mail",
     "no_packages_module" => "Niciun modul de pachete!",
     "required_add"=> "Vă rugăm să completați toate liniile necesare.",

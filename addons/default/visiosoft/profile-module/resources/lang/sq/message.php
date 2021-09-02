@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Një fjalëkalim i ri është dërguar në adresën tuaj të postës elektronike.",
     "success" => "Sukses",
     "notified_new_updates" => "Dua të njoftohem për azhurnimet e reja",
-    "notified_about_ads" => "Lejo njoftime në lidhje me Njoftimet e mia",
+    "notified_about_classifieds" => "Lejo njoftime në lidhje me Njoftimet e mia",
     "receive_messages_email" => "Dua të marr mesazhe si email",
     "no_packages_module" => "Pa modul paketash!",
     "required_add"=> "Ju lutemi plotësoni të gjitha rreshtat e kërkuar.",

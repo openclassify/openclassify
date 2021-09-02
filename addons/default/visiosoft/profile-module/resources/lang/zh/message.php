@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "新密码已发送到您的电子邮件地址。",
     "success" => "成功",
     "notified_new_updates" => "我想收到新的更新通知",
-    "notified_about_ads" => "允许有关我的广告的通知",
+    "notified_about_classifieds" => "允许有关我的广告的通知",
     "receive_messages_email" => "我想通过电子邮件接收消息",
     "no_packages_module" => "没有套餐模块！",
     "required_add"=> "请填写所有必填行。",

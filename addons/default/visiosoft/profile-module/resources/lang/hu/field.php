@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Kedvencek'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Archivált hirdetések'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Jóváhagyásra váró'
     ],
     'menu_delete_account' => [
         'name' => 'Számla zárása'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Saját hirdetések'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Kedvenc hirdetések'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Csomagjaim'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Hirdetési csomagok'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profilkép'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Hirdetési lista oldal szalaghirdetése'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Üzenet',
 
     'favorites' => "Kedvencek",
-    'fav_advs' => 'Kedvenc hirdetések',
+    'fav_classifieds' => 'Kedvenc hirdetések',
     'fav_sellers' => "Fav Sellers",
     'fav_searches' => "Kedvenc keresések",
     'posted_on' => "Közzétett",
     'message_details' => "Üzenet részletei",
-    'adv_no' => 'Hirdetés száma',
+    'classified_no' => 'Hirdetés száma',
     'bill_address' => [
         'name' => 'Számla címe',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Balance Limit',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktív hirdetések',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategória',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Ad Limit',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Értesített új frissítések',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Értesítve a hirdetésekről',
     ],
     'receive_messages_email' => [

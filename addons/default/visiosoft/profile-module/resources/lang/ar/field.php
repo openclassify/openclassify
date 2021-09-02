@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'المفضلة'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'الإعلانات المؤرشفة'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'ما زال يحتاج بتصدير'
     ],
     'menu_delete_account' => [
         'name' => 'حساب مغلق'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'إعلاناتي'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'الإعلانات المفضلة'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'حزم بلدي'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'حزم الإعلانات'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'صورة الملف الشخصي'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'إعلان صفحة قائمة الإعلانات'
     ],
     'approve' => [
@@ -251,12 +251,12 @@ return [
     'owner_name' => 'رسالة',
 
     'favorites' => "المفضلة",
-    'fav_advs' => 'الإعلانات المفضلة',
+    'fav_classifieds' => 'الإعلانات المفضلة',
     'fav_sellers' => "الصوت العربي الحر البائعين",
     'fav_searches' => "عمليات البحث المفضلة",
     'posted_on' => "نشر على",
     'message_details' => "تفاصيل الرسالة",
-    'adv_no' => 'رقم الإعلان',
+    'classified_no' => 'رقم الإعلان',
     'bill_address' => [
         'name' => 'عنوان الفاتورة',
     ],
@@ -404,7 +404,7 @@ return [
     'balance_limit' => [
         'name' => 'حد الرصيد',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'إعلانات نشطة',
     ],
     'subscriptions' => [
@@ -422,7 +422,7 @@ return [
     'category' => [
         'name' => 'الفئة',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'حد الإعلان',
     ],
     'publish_time' => [
@@ -489,7 +489,7 @@ return [
     'notified_new_updates' => [
         'name' => 'التحديثات الجديدة التي تم إخطارها',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'أخطرت عن الإعلانات',
     ],
     'receive_messages_email' => [

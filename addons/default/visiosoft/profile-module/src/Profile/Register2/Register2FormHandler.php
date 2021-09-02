@@ -33,7 +33,7 @@ class Register2FormHandler
         $domain = str_replace('/', '', $domain);
         $domain = str_replace('www', '', $domain);
 
-        if (!setting_value('visiosoft.module.advs::register_email_field')) {
+        if (!setting_value('visiosoft.module.classifieds::register_email_field')) {
             $builder->setFormValue('email', $builder->getPostValue('username') . "@" . $domain);
         }
 

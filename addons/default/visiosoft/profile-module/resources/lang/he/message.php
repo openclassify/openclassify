@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "סיסמא חדשה נשלחה לכתובת הדואר האלקטרוני שלך.",
     "success" => "הצלחה",
     "notified_new_updates" => "אני רוצה לקבל הודעה על עדכונים חדשים",
-    "notified_about_ads" => "אפשר התראות על המודעות שלי",
+    "notified_about_classifieds" => "אפשר התראות על המודעות שלי",
     "receive_messages_email" => "אני רוצה לקבל הודעות בדוא\"ל",
     "no_packages_module" => "אין חבילות מודול!",
     "required_add"=> "אנא מלא את כל השורות הנדרשות.",

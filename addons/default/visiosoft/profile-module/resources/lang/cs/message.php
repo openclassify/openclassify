@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Na vaši e-mailovou adresu bylo zasláno nové heslo.",
     "success" => "Úspěch",
     "notified_new_updates" => "Chci dostávat oznámení o nových aktualizacích",
-    "notified_about_ads" => "Povolit oznámení o mých reklamách",
+    "notified_about_classifieds" => "Povolit oznámení o mých reklamách",
     "receive_messages_email" => "Chci dostávat zprávy jako e-mail",
     "no_packages_module" => "Modul bez balíčků!",
     "required_add"=> "Vyplňte prosím všechny povinné řádky.",

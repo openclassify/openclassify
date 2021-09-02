@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favoritet'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Njoftimet të arkivuara'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Miratim në pritje'
     ],
     'menu_delete_account' => [
         'name' => 'Mbyll Llogari'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Njoftimet e mia'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Njoftimet e preferuar'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Paketat e mia'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Paketat e Njoftime'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Foto e profilit'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner i faqes së listës së Njoftimet'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Mesazhi',
 
     'favorites' => "Të preferuarat",
-    'fav_advs' => 'Njoftimet e preferuara',
+    'fav_classifieds' => 'Njoftimet e preferuara',
     'fav_sellers' => "Shitësit e preferuar",
     'fav_searches' => "Kërkimet e preferuara",
     'posted_on' => "Postuar ne",
     'message_details' => "Detajet e mesazhit",
-    'adv_no' => 'Nr',
+    'classified_no' => 'Nr',
     'bill_address' => [
         'name' => 'Adresa e Faturës',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Limit i bilancit',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Njoftimet aktive',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategori',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Limit i njoftimi',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Njoftime të reja të reja',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Njoftohet për reklamat',
     ],
     'receive_messages_email' => [

@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Một mật khẩu mới đã được gửi đến địa chỉ email của bạn.",
     "success" => "Sự thành công",
     "notified_new_updates" => "Tôi muốn được thông báo về các cập nhật mới",
-    "notified_about_ads" => "Cho phép thông báo về quảng cáo của tôi",
+    "notified_about_classifieds" => "Cho phép thông báo về quảng cáo của tôi",
     "receive_messages_email" => "Tôi muốn nhận tin nhắn qua email",
     "no_packages_module" => "Không có mô-đun gói!",
     "required_add"=> "Vui lòng điền vào tất cả các dòng yêu cầu.",

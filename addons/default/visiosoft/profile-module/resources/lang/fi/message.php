@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Uusi salasana on lähetetty sähköpostiosoitteeseesi.",
     "success" => "Menestys",
     "notified_new_updates" => "Haluan ilmoituksen uusista päivityksistä",
-    "notified_about_ads" => "Salli ilmoitukset mainoksistani",
+    "notified_about_classifieds" => "Salli ilmoitukset mainoksistani",
     "receive_messages_email" => "Haluan vastaanottaa viestejä sähköpostina",
     "no_packages_module" => "Ei pakettimoduulia!",
     "required_add"=> "Täytä kaikki vaaditut rivit.",

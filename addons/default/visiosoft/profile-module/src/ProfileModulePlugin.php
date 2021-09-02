@@ -15,33 +15,33 @@ class ProfileModulePlugin extends Plugin
                 'getAddress',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetAddress($id))) {
+                    if (!$classified = $this->dispatch(new GetAddress($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getAddressByUser',
                 function ($user_id) {
 
-                    if (!$ad = $this->dispatch(new GetAddressByUser($user_id))) {
+                    if (!$classified = $this->dispatch(new GetAddressByUser($user_id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getProfileDetail',
                 function ($user_id) {
 
-                    if (!$ad = $this->dispatch(new GetProfileDetail($user_id))) {
+                    if (!$classified = $this->dispatch(new GetProfileDetail($user_id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(

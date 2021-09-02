@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'name' => 'Guia Exibir meus anúncios',
     ],
     'upload_avatar' => [

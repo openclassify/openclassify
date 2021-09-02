@@ -28,7 +28,7 @@
     color: white;
 }
 
-.ads-widget {
+.classifieds-widget {
     background: #5cb85c;
 }
 
@@ -44,7 +44,7 @@
     background: #2f89fc;
 }
 
-.profile-ad-viewed {
+.profile-classified-viewed {
     position: absolute;
     background-color: rgba(207,0,15,0.9);
     padding: 5px;

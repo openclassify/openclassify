@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "'N Nuwe wagwoord is na u e-posadres gestuur.",
     "success" => "Sukses",
     "notified_new_updates" => "Ek wil in kennis gestel word van nuwe opdaterings",
-    "notified_about_ads" => "Laat kennisgewings oor my advertensies toe",
+    "notified_about_classifieds" => "Laat kennisgewings oor my advertensies toe",
     "receive_messages_email" => "Ek wil boodskappe per e-pos ontvang",
     "no_packages_module" => "Geen pakketmodule nie!",
     "required_add"=> "Vul asseblief alle vereiste lyne in.",

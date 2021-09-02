@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favoritter'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Arkiverte annonser'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Venter på godkjenning'
     ],
     'menu_delete_account' => [
         'name' => 'Stenge konto'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Mine annonser'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Favorittannonser'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Mine pakker'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Annonsepakker'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profilbilde'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Annonseliste Sidebanner'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Beskjed',
 
     'favorites' => "Favoritter",
-    'fav_advs' => 'Favorittannonser',
+    'fav_classifieds' => 'Favorittannonser',
     'fav_sellers' => "Fav-selgere",
     'fav_searches' => "Fav-søk",
     'posted_on' => "Postet på",
     'message_details' => "Meldingsdetaljer",
-    'adv_no' => 'Annonsenr',
+    'classified_no' => 'Annonsenr',
     'bill_address' => [
         'name' => 'Regningsadresse',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Balansegrense',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktive annonser',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategori',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Annonsegrense',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Varslede nye oppdateringer',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Varslet om annonser',
     ],
     'receive_messages_email' => [

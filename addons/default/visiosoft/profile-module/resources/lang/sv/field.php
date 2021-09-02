@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'favoriter'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Arkiverade annonser'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Väntar på godkännande'
     ],
     'menu_delete_account' => [
         'name' => 'Stäng Konto'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Mina annonser'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Favoritannonser'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Mina paket'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Annonspaket'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profilbild'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner för annonslistning'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Meddelande',
 
     'favorites' => "favoriter",
-    'fav_advs' => 'Favoritannonser',
+    'fav_classifieds' => 'Favoritannonser',
     'fav_sellers' => "Favoritförsäljare",
     'fav_searches' => "Favoritsökningar",
     'posted_on' => "Publicerat den",
     'message_details' => "Meddelandedetaljer",
-    'adv_no' => 'Annonsnr',
+    'classified_no' => 'Annonsnr',
     'bill_address' => [
         'name' => 'Bill-adress',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Balansgräns',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktiva annonser',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategori',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Annonsgräns',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Meddelade nya uppdateringar',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Meddelas om annonser',
     ],
     'receive_messages_email' => [

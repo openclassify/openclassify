@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "A new password has been sent to your e-mail address.",
     "success" => "Success",
     "notified_new_updates" => "I want to be notified of new updates",
-    "notified_about_ads" => "Allow notifications about my ads",
+    "notified_about_classifieds" => "Allow notifications about my ads",
     "receive_messages_email" => "I want to receive messages as email",
     "no_packages_module" => "No Packages Module!",
     "required_add"=> "Please fill in all required lines.",

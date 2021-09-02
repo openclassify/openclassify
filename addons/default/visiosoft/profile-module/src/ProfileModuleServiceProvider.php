@@ -44,9 +44,9 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         'api/profile/query-users' => 'Visiosoft\ProfileModule\Http\Controller\Admin\UsersController@queryUsers',
 
         // MyProfileController
-        'profile/ads' => [
-            'as' => 'profile::ads',
-            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@myAds'
+        'profile/classifieds' => [
+            'as' => 'profile::classifieds',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@myClassifieds'
         ],
         'profile/adress/ajaxCreate' => [
             'as' => 'visiosoft.module.profile::adress_ajax_create',
@@ -72,8 +72,8 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
 		    'as' => 'profile::password',
 		    'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@password'
 	    ],
-        'profile/class/status/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusAds',
-        'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
+        'profile/class/status/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusClassifieds',
+        'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendClassifieds',
         'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
         'profile/close-account' => [
             'middleware' => 'auth',

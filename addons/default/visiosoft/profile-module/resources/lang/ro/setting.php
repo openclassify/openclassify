@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'show_my_ads' => [
+    'show_my_classifieds' => [
         'name' => 'Afișați fila Anunțurile mele',
     ],
     'upload_avatar' => [

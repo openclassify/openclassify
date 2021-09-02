@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "تم إرسال كلمة مرور جديدة إلى عنوان البريد الإلكتروني الخاص بك.",
     "success" => "نجاح",
     "notified_new_updates" => "أريد أن يتم إخباري بالتحديثات الجديدة",
-    "notified_about_ads" => "السماح بالإشعارات حول إعلاناتي",
+    "notified_about_classifieds" => "السماح بالإشعارات حول إعلاناتي",
     "receive_messages_email" => "أريد تلقي الرسائل كبريد إلكتروني",
     "no_packages_module" => "لا الحزم وحدة!",
     "required_add"=> "يرجى ملء جميع الخطوط المطلوبة.",

@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "Ett nytt lösenord har skickats till din e-postadress.",
     "success" => "Framgång",
     "notified_new_updates" => "Jag vill bli meddelad om nya uppdateringar",
-    "notified_about_ads" => "Tillåt aviseringar om mina annonser",
+    "notified_about_classifieds" => "Tillåt aviseringar om mina annonser",
     "receive_messages_email" => "Jag vill ta emot meddelanden som e-post",
     "no_packages_module" => "Inga paketmodul!",
     "required_add"=> "Fyll i alla obligatoriska rader.",

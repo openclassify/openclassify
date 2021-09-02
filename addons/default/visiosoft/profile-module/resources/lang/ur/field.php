@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'پسندیدہ'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'محفوظ شدہ اشتہارات'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'زیر التواء منظوری'
     ],
     'menu_delete_account' => [
         'name' => 'بند اکاونٹ'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'میرے اشتہارات'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'پسندیدہ اشتہارات'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'میرے پیکیج'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'اشتہارات کے پیکیجز'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'پروفائل فوٹو'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'اشتہارات کی فہرست کا صفحہ بینر'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'پیغام',
 
     'favorites' => "پسندیدہ",
-    'fav_advs' => 'پسندیدہ اشتہارات',
+    'fav_classifieds' => 'پسندیدہ اشتہارات',
     'fav_sellers' => "Fav بیچنے والے",
     'fav_searches' => "Fav تلاش",
     'posted_on' => "پوسٹ کیا گیا",
     'message_details' => "پیغام کی تفصیلات",
-    'adv_no' => 'اشتہار نمبر',
+    'classified_no' => 'اشتہار نمبر',
     'bill_address' => [
         'name' => 'بل ایڈریس',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'بیلنس کی حد',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'فعال اشتہارات',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'قسم',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'اشتہار کی حد',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'مطلع شدہ نئی تازہ ترین معلومات',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'اشتہارات کے بارے میں مطلع کیا گیا',
     ],
     'receive_messages_email' => [

@@ -13,7 +13,7 @@ return [
     "login_info_old_user" => "新しいパスワードが電子メールアドレスに送信されました。",
     "success" => "成功",
     "notified_new_updates" => "新しい更新の通知を受け取りたい",
-    "notified_about_ads" => "広告に関する通知を許可する",
+    "notified_about_classifieds" => "広告に関する通知を許可する",
     "receive_messages_email" => "メッセージをメールで受け取りたい",
     "no_packages_module" => "パッケージモジュールがありません！",
     "required_add"=> "必要事項をすべてご記入ください。",

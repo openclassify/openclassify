@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'موارد دلخواه'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'تبلیغات بایگانی شده'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'در انتظار تأیید'
     ],
     'menu_delete_account' => [
         'name' => 'بستن حساب'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'تبلیغات من'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'تبلیغات مورد علاقه'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'بسته های من'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'بسته های تبلیغاتی'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'عکس پروفایل'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'بنر صفحه نمایش لیست تبلیغات'
     ],
     'approve' => [
@@ -251,12 +251,12 @@ return [
     'owner_name' => 'پیام',
 
     'favorites' => "موارد دلخواه",
-    'fav_advs' => 'تبلیغات مورد علاقه',
+    'fav_classifieds' => 'تبلیغات مورد علاقه',
     'fav_sellers' => "فروشندگان مورد علاقه",
     'fav_searches' => "جستجوهای مورد علاقه",
     'posted_on' => "نوشته شده در",
     'message_details' => "جزئیات پیام",
-    'adv_no' => 'شماره آگهی',
+    'classified_no' => 'شماره آگهی',
     'bill_address' => [
         'name' => 'آدرس بیل',
     ],
@@ -404,7 +404,7 @@ return [
     'balance_limit' => [
         'name' => 'حد تعادل',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'تبلیغات فعال',
     ],
     'subscriptions' => [
@@ -422,7 +422,7 @@ return [
     'category' => [
         'name' => 'دسته بندی',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'محدودیت آگهی',
     ],
     'publish_time' => [
@@ -489,7 +489,7 @@ return [
     'notified_new_updates' => [
         'name' => 'به روز شده جدید',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'درباره تبلیغات اطلاع داده شده است',
     ],
     'receive_messages_email' => [

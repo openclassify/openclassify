@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Suosikit'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Arkistoidut mainokset'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Odottaa hyväksyntää'
     ],
     'menu_delete_account' => [
         'name' => 'Sulje tili'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Omat mainokset'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Suosikkimainokset'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Minun pakettini'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Mainospaketit'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profiilikuva'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Mainosluettelosivun banneri'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Viesti',
 
     'favorites' => "Suosikit",
-    'fav_advs' => 'Suosikkimainokset',
+    'fav_classifieds' => 'Suosikkimainokset',
     'fav_sellers' => "Fav Sellers",
     'fav_searches' => "Suosikkihaut",
     'posted_on' => "Lähetetty",
     'message_details' => "Viestin tiedot",
-    'adv_no' => 'Mainosnumero',
+    'classified_no' => 'Mainosnumero',
     'bill_address' => [
         'name' => 'Laskun osoite',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Taseraja',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktiiviset mainokset',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategoria',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Mainosraja',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Ilmoitetut uudet päivitykset',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Ilmoitettu mainoksista',
     ],
     'receive_messages_email' => [

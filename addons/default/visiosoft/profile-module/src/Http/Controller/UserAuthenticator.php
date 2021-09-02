@@ -7,7 +7,7 @@ use Anomaly\UsersModule\User\Contract\UserInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\Event\UserWasLoggedIn;
 use Illuminate\Foundation\Bus\DispatchesJobs;
-use Visiosoft\AdvsModule\Adv\AdvModel;
+use Visiosoft\ClassifiedsModule\Classified\ClassifiedModel;
 use Illuminate\Contracts\Auth\Guard;
 use Illuminate\Contracts\Container\Container;
 use Illuminate\Contracts\Events\Dispatcher;
@@ -26,21 +26,21 @@ class UserAuthenticator
     protected $container;
     protected $extensions;
     protected $settings;
-    protected $advModel;
+    protected $classifiedModel;
 
     public function __construct(
         Guard $guard,
         Dispatcher $events,
         Container $container,
         ExtensionCollection $extensions,
-        AdvModel $advModel,
+        ClassifiedModel $classifiedModel,
         SettingRepositoryInterface $settings)
     {
         $this->guard = $guard;
         $this->events = $events;
         $this->container = $container;
         $this->extensions = $extensions;
-        $this->advModel = $advModel;
+        $this->classifiedModel = $classifiedModel;
         $this->settings = $settings;
     }
 

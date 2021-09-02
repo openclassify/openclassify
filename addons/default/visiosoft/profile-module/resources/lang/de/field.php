@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favoriten'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Archivierte Anzeigen'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Genehmigung ausstehend'
     ],
     'menu_delete_account' => [
         'name' => 'Konto schließen'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Meine Anzeigen'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Lieblingsanzeigen'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Meine Pakete'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Anzeigenpakete'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profilfoto'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner für Anzeigenlistingseite'
     ],
     'approve' => [
@@ -254,12 +254,12 @@ return [
     'owner_name' => 'Botschaft',
 
     'favorites' => "Favoriten",
-    'fav_advs' => 'Lieblingsanzeigen',
+    'fav_classifieds' => 'Lieblingsanzeigen',
     'fav_sellers' => "Lieblingsverkäufer",
     'fav_searches' => "Lieblingssuchen",
     'posted_on' => "Veröffentlicht am",
     'message_details' => "Nachrichtendetails",
-    'adv_no' => 'Anzeige Nr',
+    'classified_no' => 'Anzeige Nr',
     'bill_address' => [
         'name' => 'Rechnungsadresse',
     ],
@@ -410,7 +410,7 @@ return [
     'balance_limit' => [
         'name' => 'Kontostandlimit',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktive Anzeigen',
     ],
     'subscriptions' => [
@@ -428,7 +428,7 @@ return [
     'category' => [
         'name' => 'Kategorie',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Anzeigenlimit',
     ],
     'publish_time' => [
@@ -495,7 +495,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Benachrichtigte neue Updates',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Über Anzeigen informiert',
     ],
     'receive_messages_email' => [

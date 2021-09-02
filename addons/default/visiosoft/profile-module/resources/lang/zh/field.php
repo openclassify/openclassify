@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => '收藏夹'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => '封存的广告'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => '待批准'
     ],
     'menu_delete_account' => [
         'name' => '关闭账户'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => '我的广告'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => '最喜欢的广告'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => '我的包裹'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => '广告套餐'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => '头像照片'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => '广告列表页横幅'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => '信息',
 
     'favorites' => "收藏夹",
-    'fav_advs' => '最喜欢的广告',
+    'fav_classifieds' => '最喜欢的广告',
     'fav_sellers' => "最爱卖家",
     'fav_searches' => "最爱搜寻",
     'posted_on' => "发表于",
     'message_details' => "讯息详情",
-    'adv_no' => '广告号',
+    'classified_no' => '广告号',
     'bill_address' => [
         'name' => '帐单地址',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => '余额限制',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => '有效广告',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => '类别',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => '广告限制',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => '通知的新更新',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => '关于广告的通知',
     ],
     'receive_messages_email' => [

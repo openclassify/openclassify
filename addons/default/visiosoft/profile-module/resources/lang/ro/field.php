@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Favorite'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Anunțuri arhivate'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Aprobare in asteptare'
     ],
     'menu_delete_account' => [
         'name' => 'Închideți contul'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Reclamele mele'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Anunțurile preferate'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Pachetele mele'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Pachete de reclame'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Poza de profil'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner de afișare de anunțuri'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Mesaj',
 
     'favorites' => "Favorite",
-    'fav_advs' => 'Anunțuri preferate',
+    'fav_classifieds' => 'Anunțuri preferate',
     'fav_sellers' => "Vânzători Fav",
     'fav_searches' => "Căutări Fav",
     'posted_on' => "Postat pe",
     'message_details' => "Detalii despre mesaj",
-    'adv_no' => 'Anunț nr',
+    'classified_no' => 'Anunț nr',
     'bill_address' => [
         'name' => 'Adresa de factură',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Limita de echilibru',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Anunțuri active',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Categorie',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Limita de publicitate',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Actualizări noi notificate',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Notificat despre anunțuri',
     ],
     'receive_messages_email' => [

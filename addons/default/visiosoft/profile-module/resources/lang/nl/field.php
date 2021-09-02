@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'favorieten'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Gearchiveerde advertenties'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'In afwachting van goedkeuring'
     ],
     'menu_delete_account' => [
         'name' => 'Account sluiten'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Mijn advertenties'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Favoriete advertenties'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Mijn pakketten'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Advertentiepakketten'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profielfoto'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Advertentiepagina-banner'
     ],
     'approve' => [
@@ -254,12 +254,12 @@ return [
     'owner_name' => 'Bericht',
 
     'favorites' => "favorieten",
-    'fav_advs' => 'Favoriete advertenties',
+    'fav_classifieds' => 'Favoriete advertenties',
     'fav_sellers' => "Fav verkopers",
     'fav_searches' => "Fav zoekopdrachten",
     'posted_on' => "Geplaatst op",
     'message_details' => "berichtdetails",
-    'adv_no' => 'Advertentie nr',
+    'classified_no' => 'Advertentie nr',
     'bill_address' => [
         'name' => 'Factuuradres',
     ],
@@ -407,7 +407,7 @@ return [
     'balance_limit' => [
         'name' => 'Balanslimiet',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Actieve advertenties',
     ],
     'subscriptions' => [
@@ -425,7 +425,7 @@ return [
     'category' => [
         'name' => 'Categorie',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Advertentielimiet',
     ],
     'publish_time' => [
@@ -492,7 +492,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Gemelde nieuwe updates',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Melding over advertenties',
     ],
     'receive_messages_email' => [

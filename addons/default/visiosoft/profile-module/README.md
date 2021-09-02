@@ -14,7 +14,7 @@ eklenen modüllerin(Packages,Balances,Orders) yönetimini sağlar.
 Adreslerin yönetilmesini sağlar.
 
 ##Modül Gereklilikleri/Module Requirements
-- ADVS Modülü
+- CLASSIFIEDS Modülü
 - USERS Modülü
 
 ##

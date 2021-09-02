@@ -151,19 +151,19 @@ return [
     'menu_favorites' => [
         'name' => 'Oblíbené'
     ],
-    'menu_archived_ads' => [
+    'menu_archived_classifieds' => [
         'name' => 'Archivované reklamy'
     ],
-    'menu_pending_ads' => [
+    'menu_pending_classifieds' => [
         'name' => 'Čeká na schválení'
     ],
     'menu_delete_account' => [
         'name' => 'Uzavřít účet'
     ],
-    'menu_my_ads' => [
+    'menu_my_classifieds' => [
         'name' => 'Moje reklamy'
     ],
-    'menu_fav_ads' => [
+    'menu_fav_classifieds' => [
         'name' => 'Oblíbené reklamy'
     ],
     'menu_hello_msg' => [
@@ -175,7 +175,7 @@ return [
     'menu_packages' => [
         'name' => 'Moje balíky'
     ],
-    'menu_adv_packages' => [
+    'menu_classified_packages' => [
         'name' => 'Balíčky reklam'
     ],
     'menu_time_packages' => [
@@ -187,7 +187,7 @@ return [
     'profile_photo' => [
         'name' => 'Profilová fotka'
     ],
-    'adv_listing_banner' => [
+    'classified_listing_banner' => [
         'name' => 'Banner stránky se seznamem reklam'
     ],
     'approve' => [
@@ -252,12 +252,12 @@ return [
     'owner_name' => 'Zpráva',
 
     'favorites' => "Oblíbené",
-    'fav_advs' => 'Oblíbené reklamy',
+    'fav_classifieds' => 'Oblíbené reklamy',
     'fav_sellers' => "Oblíbení prodejci",
     'fav_searches' => "Oblíbené vyhledávání",
     'posted_on' => "Vloženo na",
     'message_details' => "Podrobnosti zprávy",
-    'adv_no' => 'Inzerát č',
+    'classified_no' => 'Inzerát č',
     'bill_address' => [
         'name' => 'Fakturační adresa',
     ],
@@ -405,7 +405,7 @@ return [
     'balance_limit' => [
         'name' => 'Limit zůstatku',
     ],
-    'active_ads' => [
+    'active_classifieds' => [
         'name' => 'Aktivní reklamy',
     ],
     'subscriptions' => [
@@ -423,7 +423,7 @@ return [
     'category' => [
         'name' => 'Kategorie',
     ],
-    'ad_limit' => [
+    'classified_limit' => [
         'name' => 'Limit reklamy',
     ],
     'publish_time' => [
@@ -490,7 +490,7 @@ return [
     'notified_new_updates' => [
         'name' => 'Oznámené nové aktualizace',
     ],
-    'notified_about_ads' => [
+    'notified_about_classifieds' => [
         'name' => 'Oznámeno o reklamách',
     ],
     'receive_messages_email' => [
