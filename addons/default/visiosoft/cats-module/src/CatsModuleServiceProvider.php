@@ -2,19 +2,19 @@
 
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
-use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
-use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
-use Visiosoft\AdvsModule\Adv\Event\DeletedAd;
-use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
+use Visiosoft\ClassifiedsModule\Classified\Event\ChangedStatusClassified;
+use Visiosoft\ClassifiedsModule\Classified\Event\CreatedClassified;
+use Visiosoft\ClassifiedsModule\Classified\Event\DeletedClassified;
+use Visiosoft\ClassifiedsModule\Classified\Event\EditedClassifiedCategory;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
 use Illuminate\Routing\Router;
-use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForChangedAdStatus;
-use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForDeletedAd;
-use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForEditedAdCategory;
-use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForNewAd;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForChangedClassifiedStatus;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForDeletedClassified;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForEditedClassifiedCategory;
+use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForNewClassified;
 use Visiosoft\CatsModule\Category\Table\Handler\Delete;
 
 class CatsModuleServiceProvider extends AddonServiceProvider
@@ -57,7 +57,7 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      */
     protected $routes = [
         'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubCategories',
-        'admin/cats/adcountcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@adCountCalc',
+        'admin/cats/classifiedcountcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@classifiedCountCalc',
         'admin/cats/catlevelcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@catLevelCalc',
 
         'admin/cats' => [
@@ -117,17 +117,17 @@ class CatsModuleServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $listeners = [
-        CreatedAd::class => [
-            CalculatedTotalForNewAd::class,
+        CreatedClassified::class => [
+            CalculatedTotalForNewClassified::class,
         ],
-        EditedAdCategory::class => [
-            CalculatedTotalForEditedAdCategory::class,
+        EditedClassifiedCategory::class => [
+            CalculatedTotalForEditedClassifiedCategory::class,
         ],
-        ChangedStatusAd::class => [
-            CalculatedTotalForChangedAdStatus::class,
+        ChangedStatusClassified::class => [
+            CalculatedTotalForChangedClassifiedStatus::class,
         ],
-        DeletedAd::class => [
-            CalculatedTotalForDeletedAd::class,
+        DeletedClassified::class => [
+            CalculatedTotalForDeletedClassified::class,
         ],
     ];
 
@@ -203,12 +203,12 @@ class CatsModuleServiceProvider extends AddonServiceProvider
     {
         $settings_url = [
             'import' => [
-                'title' => 'visiosoft.module.advs::button.import',
+                'title' => 'visiosoft.module.classifieds::button.import',
                 'href' => route('visiosoft.module.cats::import'),
                 'page' => 'visiosoft.module.cats'
             ],
             'export' => [
-                'title' => 'visiosoft.module.advs::button.export',
+                'title' => 'visiosoft.module.classifieds::button.export',
                 'href' => route('visiosoft.module.cats::export'),
                 'page' => 'visiosoft.module.cats'
             ],

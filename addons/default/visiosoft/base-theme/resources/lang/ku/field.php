@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'نوێترین ڕیکلامەکان
+    'latest_classified' => 'نوێترین ڕیکلامەکان
 ',
     'show_all' => 'هەموو نیشاندە',
     'login' => [
@@ -64,10 +64,10 @@ return [
     // Side menu links
     'company_directory' => 'ئاڕاسته ی كۆمپانیا
 ',
-    'popular_ads' => 'ڕیکلامێکی بەناوبانگە
+    'popular_classified' => 'ڕیکلامێکی بەناوبانگە
 ',
     'last_48_hours' => 'ئاخیر 48 کاتژمێر',
-    'secure_e-commerce_ads' => 'ڕیکلامی نهێنی و بازرگانی
+    'secure_e-commerce_classified' => 'ڕیکلامی نهێنی و بازرگانی
 ',
     'sms' => 'پەیامە بنێرە',
     'mail' => 'مەیل بنێرە',

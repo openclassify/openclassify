@@ -27,21 +27,21 @@ class CatsModulePlugin extends Plugin
                 'category_name',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetCategoryName($id))) {
+                    if (!$classified = $this->dispatch(new GetCategoryName($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ), new \Twig_SimpleFunction(
                 'category_detail',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetCategoryDetail($id))) {
+                    if (!$classified = $this->dispatch(new GetCategoryDetail($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ), new \Twig_SimpleFunction(
                 'category_parents_name',

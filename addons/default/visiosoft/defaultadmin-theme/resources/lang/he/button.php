@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'view_ads' => 'הצג מודעות',
+    'view_classifieds' => 'הצג מודעות',
 ];

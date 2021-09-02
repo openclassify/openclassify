@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => '最新の広告',
+    'latest_classified' => '最新の広告',
     'show_all' => 'すべて表示する',
     'login' => [
         'name' => 'ログインする',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => '会社ディレクトリ',
-    'popular_ads' => '人気の広告',
+    'popular_classified' => '人気の広告',
     'last_48_hours' => '過去48時間',
-    'secure_e-commerce_ads' => '安全なeコマース広告',
+    'secure_e-commerce_classified' => '安全なeコマース広告',
     'sms' => 'テキストメッセージを送信（SMS）',
     'mail' => 'メールを送る',
 

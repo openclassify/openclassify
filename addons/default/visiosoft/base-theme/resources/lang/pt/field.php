@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Últimos Anúncios',
+    'latest_classified' => 'Últimos Anúncios',
     'show_all' => 'Mostre tudo',
     'login' => [
         'name' => 'Conecte-se',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Diretório da empresa',
-    'popular_ads' => 'Anúncios populares',
+    'popular_classified' => 'Anúncios populares',
     'last_48_hours' => 'Últimas 48 horas',
-    'secure_e-commerce_ads' => 'Anúncios de comércio eletrônico seguro',
+    'secure_e-commerce_classified' => 'Anúncios de comércio eletrônico seguro',
     'sms' => 'Enviar mensagem de texto (SMS)',
     'mail' => 'Enviar correio',
 

@@ -1,0 +1,55 @@
+{% extends "visiosoft.module.classifieds::list/list" %}
+
+{% block listContent %}
+    {% set showPrice = setting_value('visiosoft.theme.base::price_fields') %}
+    {% set showLocation = setting_value('visiosoft.module.location::home_page_location') %}
+    {% set showDate = setting_value('visiosoft.theme.base::date_fields') %}
+
+    <div id="gallerying" class="d-flex flex-wrap">
+
+        {{ addBlock('classified-list/partials/gallery',{'featured_classifieds': featured_classifieds, 'vars': _context})|raw }}
+
+        {% for classified in classifieds %}
+            <div class="w-50 gallery-item-wrapper mb-1{{ classified.doping != null ? ' doping_type4' }}">
+                <div class="gallery-item rounded p-3 d-flex h-100">
+                    <div>
+                        <a href="{{ classified.detail_url }}">
+                            <img src="{{ classified.cover_photo }}" alt="{{ classified.name }}" class="rounded">
+                        </a>
+                        <div class="action-data-wrapper d-flex justify-content-center">
+                            <div class="action-data d-flex flex-column">
+
+                                {{ addBlock('list/extra-actions', {'classified': classified, 'vars': _context})|raw }}
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ml-4 mt-1">
+                        <h6 class="mb-1">
+                            <a href="{{ classified.detail_url }}">{{ classified.name }}</a>
+                        </h6>
+                        {% if not setting_value('visiosoft.module.classifieds::hide_classified_cat') %}
+                            <p class="cat-data mb-1">{{ classified.cat1_name }} /{{ classified.cat2_name }}</p>
+                        {% endif %}
+                        {% if showPrice %}
+                            <p class="price-data mb-1">
+                                {{ classified.price != '0' ? currency_format(classified.price,classified.currency) : trans('visiosoft.module.classifieds::field.free') }}
+                            </p>
+                        {% endif %}
+                        {% if showLocation %}
+                            <p class="location-data">{{ classified.country_name }} / {{ classified.city_name }}</p>
+                        {% endif %}
+                        {% if setting_value('visiosoft.module.classifieds::market_place') and showDate %}
+                                <p class="date-data">{{ classified.publish_at.value|date('d/m/Y') }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
+
+{% block customjs %}
+    {{ asset_add("scripts.js", "visiosoft.module.classifieds::js/list-table.js") }}
+    {% include "theme::scroll-modal" %}
+{% endblock %}

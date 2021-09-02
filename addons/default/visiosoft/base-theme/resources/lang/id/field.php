@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Iklan Terbaru',
+    'latest_classified' => 'Iklan Terbaru',
     'show_all' => 'Tunjukkan semua',
     'login' => [
         'name' => 'Gabung',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Direktori perusahaan',
-    'popular_ads' => 'Iklan Populer',
+    'popular_classified' => 'Iklan Populer',
     'last_48_hours' => '48 Jam Terakhir',
-    'secure_e-commerce_ads' => 'Amankan Iklan e-Commerce',
+    'secure_e-commerce_classified' => 'Amankan Iklan e-Commerce',
     'sms' => 'Kirim Pesan Teks (SMS)',
     'mail' => 'Kirim Surat',
 

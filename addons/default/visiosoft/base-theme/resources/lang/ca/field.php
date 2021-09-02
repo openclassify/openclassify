@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Últims anuncis',
+    'latest_classified' => 'Últims anuncis',
     'show_all' => 'Mostrar tots',
     'login' => [
         'name' => 'iniciar Sessió',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Directori d\'empreses',
-    'popular_ads' => 'Anuncis populars',
+    'popular_classified' => 'Anuncis populars',
     'last_48_hours' => 'Darreres 48 hores',
-    'secure_e-commerce_ads' => 'Anuncis de comerç electrònic segurs',
+    'secure_e-commerce_classified' => 'Anuncis de comerç electrònic segurs',
     'sms' => 'Enviar missatges de text (SMS)',
     'mail' => 'Envia un correu',
 

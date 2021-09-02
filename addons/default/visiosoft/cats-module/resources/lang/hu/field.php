@@ -11,7 +11,7 @@ return [
 
     'slug' => [
         'name' => 'Meztelen csiga',
-        'instructions' => 'Adjon meg szervezeti címkéket, amelyek segítenek csoportosítani a bejegyzését másokkal.',
+        'instructions' => 'Classifiedjon meg szervezeti címkéket, amelyek segítenek csoportosítani a bejegyzését másokkal.',
 
     ],
     'files' => [
@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'Kérjük, várjon. Alkategóriák törlése',
     'category_selection' => 'Kategória kiválasztása',

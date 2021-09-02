@@ -1,0 +1,87 @@
+{% set hideStandard = setting_value('visiosoft.module.classifieds::hide_listing_standard_price') %}
+{% set listLocation = setting_value('visiosoft.module.location::list_page_location') %}
+{% set showDate = setting_value('visiosoft.theme.base::date_fields') %}
+
+<div id="listing" class="w-100 table-responsive">
+    <table class="w-100 text-center">
+        <thead>
+        <tr class="text-white">
+            <th class="text-nowrap" colspan="2">{{ trans('visiosoft.module.classifieds::field.classified_title') }}</th>
+
+            {% for cF in listingCFs %}
+                <th class="text-nowrap">{{ cF.name }}</th>
+            {% endfor %}
+
+            {% if listLocation %}
+                <th class="text-nowrap">
+                    {{ trans('visiosoft.module.classifieds::field.city.name') }}
+                    / {{ trans('visiosoft.module.classifieds::field.district.name') }}
+                </th>
+            {% endif %}
+            {% if setting_value('visiosoft.module.classifieds::market_place') and showDate %}
+                <th class="text-nowrap">{{ trans('visiosoft.module.classifieds::field.date.name') }}</th>
+            {% endif %}
+            <th class="text-nowrap">{{ trans('visiosoft.module.classifieds::field.price.name') }}</th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {{ addBlock('classified-list/partials/classifieds', {'featured_classifieds': featured_classifieds, 'vars': _context})|raw }}
+
+        {% for classified in classifieds %}
+            <tr class="{{ classified.doping_type ? 'doping_type' ~ classified.doping_type }}">
+                <td>
+                    <a href="{{ classified.detail_url }}">
+                        <img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}" class="rounded lazy"
+                             alt="{{ classified.name }}" data-src="{{ classified.thumbnail }}">
+                    </a>
+                </td>
+                <td class="text-left pl-2">
+                    <h6 class="mb-1">
+                        <a href="{{ classified.detail_url }}">{{ classified.name }}</a>
+                    </h6>
+                    {% if not setting_value('visiosoft.module.classifieds::hide_classified_cat') %}
+                        <p class="cat-data mb-1">{{ classified.cat1_name }} /{{ classified.cat2_name }}</p>
+                    {% endif %}
+                    <div class="action-data d-flex align-items-center text-truncate">
+
+                        {{ addBlock('list/extra-actions', {'classified': classified, 'vars': _context})|raw }}
+
+                    </div>
+                </td>
+
+                {% for listingCF in listingCFs %}
+                    {% set feature = classified.features[listingCF.slug.value] %}
+                    <td class="location-data">{{ feature ? feature.custom_field_value : '-' }}</td>
+                {% endfor %}
+
+                {% if listLocation %}
+                    <td class="location-data">
+                        <p>{{ classified.country_name }}</p>
+                        <p>{{ classified.city_name }}</p>
+                    </td>
+                {% endif %}
+                {% if setting_value('visiosoft.module.classifieds::market_place') and showDate%}
+                    <td class="date-data">
+                        <p>{{ classified.publish_at.value|date('d/m') }}</p>
+                        <p>{{ classified.publish_at.value|date('Y') }}</p>
+                    </td>
+                {% endif %}
+                <td class="price-data">
+                    {% if not hideStandard %}
+                        <p class="text-nowrap">
+                            <s>
+                                {{ classified.standard_price != classified.price and classified.standard_price != '0' ? currency_format(classified.standard_price,classified.currency) : '' }}
+                            </s>
+                        </p>
+                    {% endif %}
+                    <p class="text-nowrap">
+                        {{ classified.price != '0' ? currency_format(classified.price,classified.currency) : trans('visiosoft.module.classifieds::field.free') }}
+                    </p>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

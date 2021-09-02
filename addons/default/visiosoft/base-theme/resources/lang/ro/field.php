@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Ultimele reclame',
+    'latest_classified' => 'Ultimele reclame',
     'show_all' => 'Arata tot',
     'login' => [
         'name' => 'Autentificare',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Directorul companiilor',
-    'popular_ads' => 'Anunțuri populare',
+    'popular_classified' => 'Anunțuri populare',
     'last_48_hours' => 'Ultimele 48 de ore',
-    'secure_e-commerce_ads' => 'Anunțuri sigure de comerț electronic',
+    'secure_e-commerce_classified' => 'Anunțuri sigure de comerț electronic',
     'sms' => 'Trimite mesaj text (SMS)',
     'mail' => 'Trimite e-mail',
 

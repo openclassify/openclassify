@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Legfrissebb hirdetések',
+    'latest_classified' => 'Legfrissebb hirdetések',
     'show_all' => 'Mutasd az összeset',
     'login' => [
         'name' => 'Belépés',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Cégjegyzék',
-    'popular_ads' => 'Népszerű hirdetések',
+    'popular_classified' => 'Népszerű hirdetések',
     'last_48_hours' => 'Az utolsó 48 óra',
-    'secure_e-commerce_ads' => 'Biztonságos e-kereskedelmi hirdetések',
+    'secure_e-commerce_classified' => 'Biztonságos e-kereskedelmi hirdetések',
     'sms' => 'Szöveges üzenet (SMS) küldése',
     'mail' => 'Levél küldés',
 

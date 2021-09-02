@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'সর্বশেষ বিজ্ঞাপন',
+    'latest_classified' => 'সর্বশেষ বিজ্ঞাপন',
     'show_all' => 'সব দেখাও',
     'login' => [
         'name' => 'প্রবেশ করুন',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'কোম্পানী নির্দেশিকা',
-    'popular_ads' => 'জনপ্রিয় বিজ্ঞাপন',
+    'popular_classified' => 'জনপ্রিয় বিজ্ঞাপন',
     'last_48_hours' => 'শেষ 48 ঘন্টা',
-    'secure_e-commerce_ads' => 'নিরাপদ ই-বাণিজ্য বিজ্ঞাপন',
+    'secure_e-commerce_classified' => 'নিরাপদ ই-বাণিজ্য বিজ্ঞাপন',
     'sms' => 'পাঠ্য বার্তা (এসএমএস) প্রেরণ করুন',
     'mail' => 'মেইল পাঠাও',
 

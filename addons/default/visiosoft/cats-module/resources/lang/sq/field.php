@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'Ju lutemi prisni. Zgjedhja e kategorive nën',
     'category_selection' => 'Zgjedhja e kategorisë',

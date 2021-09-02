@@ -1,0 +1,84 @@
+<div class="slider-text">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+        {% set standardPrice = classified.standard_price.value %}
+        {% if standardPrice and standardPrice > 0 %}
+            <div class="d-flex flex-wrap align-items-center">
+                <h3 class="classified-price-standard mr-3 text-truncate">
+                    <b>{{ currency_format(classified.standard_price,classified.currency) }}</b>
+                </h3>
+                <h3 class="classified-price-standard-percentage text-white p-2">
+                    <b>%{{ (100 - ((100 * classified.price.value) / classified.standard_price.value))|round(0, 'common') }}</b>
+                </h3>
+            </div>
+        {% endif %}
+        <h3 class="classified-price">
+            <b>{{ currency_format(classified.price,classified.currency) }}</b>
+            <!-- priceField with Block -->
+            {{ addBlock('classified-detail/priceField',{'classified':classified})|raw }}
+            <!-- priceField with Block -->
+
+        </h3>
+    </div>
+    <div class="user-interactions">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+            <div class="row">
+                <div class="col-md-12 m-2">
+                    <!-- Author with Block -->
+                    {{ addBlock('classified-detail/author',{'classified':classified})|raw }}
+                    <!-- Author with Block -->
+
+                    {{ trans('visiosoft.module.classifieds::field.offered_by') }}:
+                    <a id="owner"
+                       href="{{ url_route('visiosoft.module.classifieds::list_user_ad', [classified.created_by_id]) }}"
+                       data-content="{{ classified.owner_id }}"> {{ classified.first_name }} {{ classified.last_name }}
+                    </a>
+                    {{ addBlock('classified-detail/seller/action',{'seller_id':classified.owner_id})|raw }}
+                </div>
+                {% if setting_value('visiosoft.module.classifieds::market_place') %}
+                    <div class="col-md-12 m-2">
+                        <i class="fas fa-hashtag"></i>
+                        {{ trans('visiosoft.module.classifieds::field.classified_id') }}:{{ classified.id }}
+                    </div>
+                    <div class="col-md-12 m-2">
+                        <i class="far fa-clock text-dark"></i>
+                        {{ classified.created_at|date('d/m/Y') }}
+                    </div>
+                {% endif %}
+
+                <!-- Detail With Block -->
+                {{ addBlock('classified-detail/details',{'classified':classified, 'options':options, 'configurations':configurations})|raw }}
+                {{ addBlock('classified-detail/widget-details',{'classified':classified})|raw }}
+                <!-- Detail With Block -->
+
+                {% if classified.isCorporate == 2 %}
+                    <div class="col-md-12 m-2">
+                        <i class="fa fa-suitcase"></i>
+                        <a href="{{ url_route('visiosoft.module.classifieds::list_user_ad',
+                            [classified.created_by_id]) }}"> {{ classified.first_name }} {{ classified.last_name }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Contact With Block -->
+        {% set contactWith = addBlock('classified-detail/contact-with',{'classified':classified}) %}
+        {% if contactWith != "" %}
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+                <div class="row">
+                    <div class="col-md-12 mt-2">
+                        <h4><u>{{ trans('visiosoft.module.classifieds::field.contact_with') }}:</u></h4>
+                    </div>
+                    {{ contactWith|raw }}
+                </div>
+            </div>
+        {% endif %}
+        <!-- Contact With Block -->
+
+        <!-- social-links -->
+        <div class="social-links">
+            {% include "visiosoft.module.classifieds::classified-detail/partials/social" %}
+        </div>
+        <!-- social-links -->
+    </div>
+</div>

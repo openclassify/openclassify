@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Nuutste advertensies',
+    'latest_classified' => 'Nuutste advertensies',
     'show_all' => 'Wys almal',
     'login' => [
         'name' => 'Teken aan',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Maatskappy gids',
-    'popular_ads' => 'Gewilde advertensies',
+    'popular_classified' => 'Gewilde advertensies',
     'last_48_hours' => 'Laaste 48 uur',
-    'secure_e-commerce_ads' => 'Veilige e-handelsadvertensies',
+    'secure_e-commerce_classified' => 'Veilige e-handelsadvertensies',
     'sms' => 'Stuur teksboodskap (SMS)',
     'mail' => 'Stuur pos',
 

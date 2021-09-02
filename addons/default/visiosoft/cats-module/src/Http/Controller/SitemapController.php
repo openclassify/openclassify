@@ -60,7 +60,7 @@ class SitemapController extends PublicController
             $cities = $this->cityRepository->all();
             foreach ($categories as $category) {
                 foreach ($cities as $city) {
-                    $sitemapLinks[] = route('adv_list_seo', [$category->slug, $city->slug]);
+                    $sitemapLinks[] = route('classified_list_seo', [$category->slug, $city->slug]);
                 }
             }
         } else {
@@ -72,7 +72,7 @@ class SitemapController extends PublicController
 
             $sitemapLinks = array();
             foreach ($categories as $category) {
-                $sitemapLinks[] = route('adv_list_seo', [$category->slug]);
+                $sitemapLinks[] = route('classified_list_seo', [$category->slug]);
             }
         }
 

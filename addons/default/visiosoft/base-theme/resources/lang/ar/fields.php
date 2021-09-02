@@ -2,9 +2,9 @@
 
 return [
     'post_ad' => 'انشر إعلانك',
-    'featured_ads' => "الإعلانات المميزة",
-    'recent_ads' => "الإعلانات الحديثة",
-    'trending_ads' => 'الإعلانات الشائعة',
+    'featured_classified' => "الإعلانات المميزة",
+    'recent_classified' => "الإعلانات الحديثة",
+    'trending_classified' => 'الإعلانات الشائعة',
     'search_map' => 'البحث على الخريطة',
     'search' => 'بحث',
     'categories' => 'الفئات',

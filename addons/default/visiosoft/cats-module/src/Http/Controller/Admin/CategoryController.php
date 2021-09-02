@@ -13,13 +13,13 @@ use League\Flysystem\MountManager;
 use Visiosoft\CatsModule\Category\CategoryExport;
 use Visiosoft\CatsModule\Category\CategoryImport;
 use Visiosoft\CatsModule\Category\CategoryModel;
-use Visiosoft\CatsModule\Category\Command\CalculateAdsCount;
+use Visiosoft\CatsModule\Category\Command\CalculateClassifiedsCount;
 use Visiosoft\CatsModule\Category\Command\CalculateCategoryLevel;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
 use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
-use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\ClassifiedsModule\Classified\Contract\ClassifiedRepositoryInterface;
 use Visiosoft\CatsModule\Category\Traits\DeleteCategory;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -232,9 +232,9 @@ class CategoryController extends AdminController
         return redirect('admin/cats');
     }
 
-    public function adCountCalc()
+    public function classifiedCountCalc()
     {
-        $this->dispatch(new CalculateAdsCount());
+        $this->dispatch(new CalculateClassifiedsCount());
 
         $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.cats::addon.title')]));
         return redirect('admin/cats');
@@ -282,7 +282,7 @@ class CategoryController extends AdminController
 
         if (request()->action == "save" and $file = $fileRepository->find(request()->file)) {
             if ($file->extension === 'xls' || $file->extension === 'xlsx') {
-                $pathToFolder = "/storage/streams/default/files-module/local/ads_excel/";
+                $pathToFolder = "/storage/streams/default/files-module/local/classifieds_excel/";
                 Excel::import(new CategoryImport(), base_path() . $pathToFolder . $file->name);
                 $this->messages->success(trans('streams::message.create_success', ['name' => trans('module::addon.title')]));
             }
@@ -293,7 +293,7 @@ class CategoryController extends AdminController
             'file' => [
                 "type" => "anomaly.field_type.file",
                 "config" => [
-                    'folders' => ["ads_excel"],
+                    'folders' => ["classifieds_excel"],
                     'mode' => 'upload'
                 ]
             ],

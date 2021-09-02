@@ -2,7 +2,7 @@
 
 return [
     'post_ad' => [
-        'name' => 'Post Ad',
+        'name' => 'Post Classified',
     ],
     'login' => 'Login',
     'register' => 'Register',

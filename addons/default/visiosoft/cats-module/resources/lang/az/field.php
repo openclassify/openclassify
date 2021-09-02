@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'Xahiş edirəm gözləyin. Alt kateqoriyaların silinməsi',
     'category_selection' => 'Kateqoriya seçimi',

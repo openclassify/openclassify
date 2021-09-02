@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'أحدث الإعلانات',
+    'latest_classified' => 'أحدث الإعلانات',
     'show_all' => 'عرض الكل',
     'login' => [
         'name' => 'تسجيل الدخول',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'دليل شركة',
-    'popular_ads' => 'إعلانات شعبية',
+    'popular_classified' => 'إعلانات شعبية',
     'last_48_hours' => 'آخر 48 ساعة',
-    'secure_e-commerce_ads' => 'إعلانات التجارة الإلكترونية الآمنة',
+    'secure_e-commerce_classified' => 'إعلانات التجارة الإلكترونية الآمنة',
     'sms' => 'إرسال رسالة نصية (SMS)',
     'mail' => 'ارسل بريد',
 

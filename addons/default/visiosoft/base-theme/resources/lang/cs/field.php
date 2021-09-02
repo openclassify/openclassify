@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Nejnovější reklamy',
+    'latest_classified' => 'Nejnovější reklamy',
     'show_all' => 'Ukázat vše',
     'login' => [
         'name' => 'Přihlásit se',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Adresář společnosti',
-    'popular_ads' => 'Populární reklamy',
+    'popular_classified' => 'Populární reklamy',
     'last_48_hours' => 'Posledních 48 hodin',
-    'secure_e-commerce_ads' => 'Bezpečné reklamy elektronického obchodu',
+    'secure_e-commerce_classified' => 'Bezpečné reklamy elektronického obchodu',
     'sms' => 'Odeslat textovou zprávu (SMS)',
     'mail' => 'Poslat mail',
 

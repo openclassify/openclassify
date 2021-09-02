@@ -1,6 +1,6 @@
 <?php
 
 return [
-    'view_ads' => 'ڕیکلامەکان نیشاندە
+    'view_classifieds' => 'ڕیکلامەکان نیشاندە
 ',
 ];

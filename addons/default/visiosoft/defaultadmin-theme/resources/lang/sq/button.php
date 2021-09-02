@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'view_ads' => 'Shikoni reklamat',
+    'view_classifieds' => 'Shikoni reklamat',
 ];

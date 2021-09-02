@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'لطفاً صبر کنید. حذف دسته بندی های فرعی',
     'category_selection' => 'انتخاب دسته',

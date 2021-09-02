@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Son elanlar',
+    'latest_classified' => 'Son elanlar',
     'show_all' => 'Hamısını göstər',
     'login' => [
         'name' => 'Daxil ol',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Şirkət kataloqu',
-    'popular_ads' => 'Populyar elanlar',
+    'popular_classified' => 'Populyar elanlar',
     'last_48_hours' => 'Son 48 saat',
-    'secure_e-commerce_ads' => 'Təhlükəsiz e-ticarət reklamları',
+    'secure_e-commerce_classified' => 'Təhlükəsiz e-ticarət reklamları',
     'sms' => 'Mətn mesajı göndərin (SMS)',
     'mail' => 'Məktub göndərin',
 

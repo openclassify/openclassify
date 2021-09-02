@@ -4,7 +4,7 @@ use Anomaly\Streams\Platform\Database\Migration\Migration;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 
-class VisiosoftModuleCatsAdcountLevel extends Migration
+class VisiosoftModuleCatsClassifiedcountLevel extends Migration
 {
 
     public function up()

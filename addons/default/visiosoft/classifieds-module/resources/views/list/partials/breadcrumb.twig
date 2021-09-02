@@ -1,0 +1,19 @@
+<div id="breadcrumb" class="border-bottom border-right border-left d-flex justify-content-between">
+    <div class="overflow-hidden d-flex align-items-center">
+        <span class="text-truncate">
+            <a href="{{ url('/') }}" data-toggle="tooltip" data-placement="bottom"
+               title="{{ trans("visiosoft.module.classifieds::field.home") }}">
+                {{ trans("visiosoft.module.classifieds::field.home") }}
+            </a>
+        </span>
+
+        {{ addBlock('classifieds-list/partials/breadcrumb', {'mainCats': mainCats, 'category': category})|raw }}
+
+    </div>
+
+    <div class="text-nowrap ml-3">
+
+        {{ addBlock('classifieds-list/partials/breadcrumb/action')|raw }}
+
+    </div>
+</div>

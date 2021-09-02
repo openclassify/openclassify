@@ -9,7 +9,7 @@ Kategori ve Alt ketegori eklemenize olanak sağlar.
 
 
 ##Modül Gereklilikleri/Module Requirements
-- ADVS Modülü
+- Classifieds Modülü
 
 ##
 support@visiosoft.com.tr

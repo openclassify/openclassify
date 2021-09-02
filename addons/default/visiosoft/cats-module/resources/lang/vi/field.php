@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'Xin vui lòng chờ. Xóa danh mục phụ',
     'category_selection' => 'Lựa chọn danh mục',

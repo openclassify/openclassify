@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Seneste annoncer',
+    'latest_classified' => 'Seneste annoncer',
     'show_all' => 'Vis alt',
     'login' => [
         'name' => 'Log på',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Virksomhedsregister',
-    'popular_ads' => 'Populære annoncer',
+    'popular_classified' => 'Populære annoncer',
     'last_48_hours' => 'Sidste 48 timer',
-    'secure_e-commerce_ads' => 'Sikre e-handelsannoncer',
+    'secure_e-commerce_classified' => 'Sikre e-handelsannoncer',
     'sms' => 'Send SMS (SMS)',
     'mail' => 'Send mail',
 

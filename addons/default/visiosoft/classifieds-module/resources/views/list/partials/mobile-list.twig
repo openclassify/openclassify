@@ -1,0 +1,44 @@
+<div id="mobileListingPage" class="d-sm-none mb-5">
+    {% if setting_value('visiosoft.module.classifieds::show_subcats_mobile') %}
+        {% include "visiosoft.module.classifieds::list/partials/sub-categories-mobile" %}
+    {% endif %}
+    {% if not hideBreadcrump %}
+        {% include "visiosoft.module.classifieds::list/partials/mobile-breadcrumb" %}
+    {% endif %}
+
+    {% if not hideActions %}
+        <div id="mobileListNav" class="d-flex p-2 align-items-center mb-1">
+            <div id="filter_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
+                {{ img('visiosoft.module.classifieds::images/listing/mobile-filter.svg').data|raw }}
+                <p class="mt-1">{{ trans('visiosoft.module.classifieds::field.filter') }}</p>
+            </div>
+            <div class="divider"></div>
+            <div id="sort_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
+                {{ img('visiosoft.module.classifieds::images/listing/mobile-sort.svg').data|raw }}
+                <p class="mt-1">{{ trans('visiosoft.module.classifieds::field.sort') }}</p>
+            </div>
+            <div class="divider"></div>
+
+            {{ addBlock('classifieds-list/mobile/action-bar')|raw }}
+
+        </div>
+    {% endif %}
+
+    <div id="mobileListing">
+        {% for classified in classifieds %}
+            <a href="{{ classified.detail_url }}" class="listing-item d-flex p-2">
+                <img src="{{ classified.cover_photo }}" alt="{{ classified.name }}" class="rounded-sm">
+                <div class="ml-3 mt-1">
+                    <h6 class="mb-1">{{ classified.name }}</h6>
+                    {% if listLocation %}
+                        <p class="mb-1">{{ classified.country_name }} / {{ classified.city_name }}</p>
+                    {% endif %}
+                    <p>{{ classified.price != '0' ? currency_format(classified.price,classified.currency) : trans('visiosoft.module.classifieds::field.free') }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+    {% include "visiosoft.module.classifieds::list/partials/pagination" %}
+
+</div>

@@ -20,10 +20,10 @@ return [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Ad Details',
+        'name' => 'Classified Details',
     ],
     'ad_details_tab' => [
-        'name' => 'Ad Details Tab',
+        'name' => 'Classified Details Tab',
     ],
     'latest_and_view_all_btn' => [
         'name' => 'Latest and View All Btn',

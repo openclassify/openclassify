@@ -1,0 +1,33 @@
+<div class="dropdown d-flex align-items-center">
+    <button class="border-0 dropdown-toggle d-flex px-2 align-items-center" type="button"
+            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <p class="text-nowrap">{{ trans("visiosoft.module.classifieds::field.classifiedanced_sorting") }}</p>
+        {{ img('visiosoft.module.classifieds::images/listing/sort.svg').data|raw }}
+    </button>
+    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+        <span class="dropdown-item sort-by-item" data-value="sort_price_up">
+            {{ trans("visiosoft.module.classifieds::field.price_high") }}
+        </span>
+        <span class="dropdown-item sort-by-item" data-value="sort_price_down">
+            {{ trans("visiosoft.module.classifieds::field.price_low") }}
+        </span>
+        <span class="dropdown-item sort-by-item" data-value="sort_time_newest">
+            {{ trans("visiosoft.module.classifieds::field.newest") }}
+        </span>
+        <span class="dropdown-item sort-by-item" data-value="sort_time_oldest">
+            {{ trans("visiosoft.module.classifieds::field.oldest") }}
+        </span>
+        <span class="dropdown-item sort-by-item" data-value="address_a_z">
+            {{ trans("visiosoft.module.classifieds::field.address_a_z") }}
+        </span>
+        <span class="dropdown-item sort-by-item" data-value="address_z_a">
+            {{ trans("visiosoft.module.classifieds::field.address_z_a") }}
+        </span>
+        <span class="dropdown-item sort-by-item" data-value="name_a_z">
+            {{ trans("visiosoft.module.classifieds::field.name_a_z") }}
+        </span>
+        <span class="dropdown-item sort-by-item" data-value="name_z_a">
+            {{ trans("visiosoft.module.classifieds::field.name_z_a") }}
+        </span>
+    </div>
+</div>

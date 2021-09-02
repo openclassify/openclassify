@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'Wag asseblief. Verwyder subkategorieë',
     'category_selection' => 'Kategorie seleksie',

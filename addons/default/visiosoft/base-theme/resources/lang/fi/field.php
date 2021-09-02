@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Uusimmat ilmoitukset',
+    'latest_classified' => 'Uusimmat ilmoitukset',
     'show_all' => 'Näytä kaikki',
     'login' => [
         'name' => 'Kirjaudu sisään',
@@ -45,7 +45,7 @@ return [
 
     // Side menu links
     'company_directory' => 'Yrityshakemisto',
-    'popular_ads' => 'Suosittuja mainoksia',
+    'popular_classified' => 'Suosittuja mainoksia',
     'last_48_hours' => 'Viimeiset 48 tuntia',
     'secure_e-commerce_ads' => 'Suojatut verkkokaupan mainokset',
     'sms' => 'Lähetä tekstiviesti (SMS)',

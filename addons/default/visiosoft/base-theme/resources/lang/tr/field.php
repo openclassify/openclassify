@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Son Eklenenler',
+    'latest_classified' => 'Son Eklenenler',
     'show_all' => 'Tümünü Göster',
     'login' => [
         'name' => 'Oturum Aç',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Firma Rehberi',
-    'popular_ads' => 'Popüler İlanlar',
+    'popular_classified' => 'Popüler İlanlar',
     'last_48_hours' => 'Son 48 Saat',
-    'secure_e-commerce_ads' => 'Güvenli E-Ticaret',
+    'secure_e-commerce_classified' => 'Güvenli E-Ticaret',
     'sms' => 'Kısa Mesaj Gönder (SMS)',
     'mail' => 'E-posta Gönder',
 

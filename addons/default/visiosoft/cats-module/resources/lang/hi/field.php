@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'कृपया प्रतीक्षा करें। सबलेटिंग सब श्रेणियां',
     'category_selection' => 'श्रेणी चयन',

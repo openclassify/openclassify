@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Siste annonser',
+    'latest_classified' => 'Siste annonser',
     'show_all' => 'Vis alt',
     'login' => [
         'name' => 'Logg Inn',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Bedriftskatalog',
-    'popular_ads' => 'Populære annonser',
+    'popular_classified' => 'Populære annonser',
     'last_48_hours' => 'Siste 48 timer',
-    'secure_e-commerce_ads' => 'Sikre e-handelsannonser',
+    'secure_e-commerce_classified' => 'Sikre e-handelsannonser',
     'sms' => 'Send tekstmelding (SMS)',
     'mail' => 'Send e-post',
 

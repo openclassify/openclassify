@@ -5,7 +5,7 @@ use Anomaly\Streams\Platform\Ui\ControlPanel\Component\Navigation\Event\SortNavi
 use Anomaly\Streams\Platform\Ui\Table\Event\TableIsQuerying;
 use Illuminate\Pagination\AbstractPaginator;
 use Visiosoft\DefaultadminTheme\Listener\AddGsmFilter;
-use Visiosoft\DefaultadminTheme\Listener\AddViewAdsButton;
+use Visiosoft\DefaultadminTheme\Listener\AddViewClassifiedsButton;
 use Visiosoft\DefaultadminTheme\Listener\ApplySorting;
 
 /**
@@ -23,7 +23,7 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
         ],
         TableIsQuerying::class => [
             AddGsmFilter::class,
-            AddViewAdsButton::class,
+            AddViewClassifiedsButton::class,
         ],
     ];
 

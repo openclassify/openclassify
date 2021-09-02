@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Последни реклами',
+    'latest_classified' => 'Последни реклами',
     'show_all' => 'Покажи всичко',
     'login' => [
         'name' => 'Влизам',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Фирмен указател',
-    'popular_ads' => 'Популярни реклами',
+    'popular_classified' => 'Популярни реклами',
     'last_48_hours' => 'Последните 48 часа',
-    'secure_e-commerce_ads' => 'Сигурни реклами за електронна търговия',
+    'secure_e-commerce_classified' => 'Сигурни реклами за електронна търговия',
     'sms' => 'Изпращане на текстово съобщение (SMS)',
     'mail' => 'Изпрати писмо',
 

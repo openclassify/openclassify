@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'অনুগ্রহ করে অপেক্ষা করুন Sub সাব বিভাগগুলি মোছা',
     'category_selection' => 'বিভাগ নির্বাচন',

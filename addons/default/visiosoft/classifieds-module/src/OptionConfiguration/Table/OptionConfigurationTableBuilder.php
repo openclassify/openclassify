@@ -1,0 +1,10 @@
+<?php namespace Visiosoft\ClassifiedsModule\OptionConfiguration\Table;
+
+use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
+
+class OptionConfigurationTableBuilder extends TableBuilder
+{
+    protected $actions = [
+        'delete'
+    ];
+}

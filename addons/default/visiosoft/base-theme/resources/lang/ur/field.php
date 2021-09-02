@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'تازہ ترین اشتہارات',
+    'latest_classified' => 'تازہ ترین اشتہارات',
     'show_all' => 'سارے دکھاو',
     'login' => [
         'name' => 'لاگ ان کریں',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'کمپنی کی ڈائرکٹری',
-    'popular_ads' => 'مشہور اشتہارات',
+    'popular_classified' => 'مشہور اشتہارات',
     'last_48_hours' => 'آخری 48 گھنٹے',
-    'secure_e-commerce_ads' => 'ای کامرس کے اشتہارات کو محفوظ بنائیں',
+    'secure_e-commerce_classified' => 'ای کامرس کے اشتہارات کو محفوظ بنائیں',
     'sms' => 'ٹیکسٹ میسج (SMS) بھیجیں',
     'mail' => 'میل بھیجیں',
 

@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'Attendere. Eliminazione delle sottocategorie',
     'category_selection' => 'Selezione della categoria',

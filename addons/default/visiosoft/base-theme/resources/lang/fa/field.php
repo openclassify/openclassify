@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'آخرین تبلیغات',
+    'latest_classified' => 'آخرین تبلیغات',
     'show_all' => 'نمایش همه',
     'login' => [
         'name' => 'وارد شدن',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'دایرکتوری شرکت',
-    'popular_ads' => 'تبلیغات محبوب',
+    'popular_classified' => 'تبلیغات محبوب',
     'last_48_hours' => 'آخرین 48 ساعت',
-    'secure_e-commerce_ads' => 'تبلیغات ایمن تجارت الکترونیکی',
+    'secure_e-commerce_classified' => 'تبلیغات ایمن تجارت الکترونیکی',
     'sms' => 'ارسال پیام متنی (پیامکی)',
     'mail' => 'ارسال ایمیل',
 

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Nieuwste advertenties',
+    'latest_classified' => 'Nieuwste advertenties',
     'show_all' => 'Toon alles',
     'login' => [
         'name' => 'Log in',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Bedrijfsadresboek',
-    'popular_ads' => 'Populaire advertenties',
+    'popular_classified' => 'Populaire advertenties',
     'last_48_hours' => 'Afgelopen 48 uur',
-    'secure_e-commerce_ads' => 'Veilige e-commerce-advertenties',
+    'secure_e-commerce_classified' => 'Veilige e-commerce-advertenties',
     'sms' => 'Sms verzenden',
     'mail' => 'Verzend mail',
 

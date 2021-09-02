@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'אנא המתן. מחיקת קטגוריות משנה',
     'category_selection' => 'בחירת קטגוריה',

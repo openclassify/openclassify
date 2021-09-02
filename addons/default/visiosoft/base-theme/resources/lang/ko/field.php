@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => '최신 광고',
+    'latest_classified' => '최신 광고',
     'show_all' => '모두 보이기',
     'login' => [
         'name' => '로그인',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => '회사 디렉토리',
-    'popular_ads' => '인기있는 광고',
+    'popular_classified' => '인기있는 광고',
     'last_48_hours' => '지난 48 시간',
-    'secure_e-commerce_ads' => '안전한 전자 상거래 광고',
+    'secure_e-commerce_classified' => '안전한 전자 상거래 광고',
     'sms' => '문자 메시지 보내기 (SMS)',
     'mail' => '메일을 보내다',
 

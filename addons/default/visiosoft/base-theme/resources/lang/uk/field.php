@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Останні оголошення',
+    'latest_classified' => 'Останні оголошення',
     'show_all' => 'Показати все',
     'login' => [
         'name' => 'Вхід',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Каталог компанії',
-    'popular_ads' => 'Популярні оголошення',
+    'popular_classified' => 'Популярні оголошення',
     'last_48_hours' => 'Останні 48 годин',
-    'secure_e-commerce_ads' => 'Захищена реклама електронної комерції',
+    'secure_e-commerce_classified' => 'Захищена реклама електронної комерції',
     'sms' => 'Надіслати текстове повідомлення (SMS)',
     'mail' => 'Надіслати пошту',
 

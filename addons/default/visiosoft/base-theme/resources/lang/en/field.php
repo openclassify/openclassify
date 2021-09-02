@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Latest Ads',
+    'latest_classified' => 'Latest Classifieds',
     'show_all' => 'Show All',
     'login' => [
         'name' => 'Login',
@@ -28,7 +28,7 @@ return [
     'personal_registration_header' => 'What Are Individual Membership Advantages?',
     'personal_registration_body' => 'Sell and rent your home, car, sell your unused items, get new ones.',
     'personal_registration_list_1' => 'Post a free ad,',
-    'personal_registration_list_2' => 'Add the ads you are interested in, follow the price changes after adding them to your favorites, create favorite searches that meet your criteria,',
+    'personal_registration_list_2' => 'Add the classified you are interested in, follow the price changes after adding them to your favorites, create favorite searches that meet your criteria,',
     'personal_registration_list_3' => 'Send messages to the ad owners on the site.',
     'register_information_note' => 'The information on this page is taken for ' . env('APPLICATION_DOMAIN') . ' membership. You can find detailed information about the protection of personal data here.',
 
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Company directory',
-    'popular_ads' => 'Popular Ads',
+    'popular_classified' => 'Popular Classifieds',
     'last_48_hours' => 'Last 48 Hours',
-    'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
+    'secure_e-commerce_classified' => 'Secure e-Commerce Classifieds',
     'sms' => 'Send Text Message (SMS)',
     'mail' => 'Send Mail',
 

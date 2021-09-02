@@ -5,7 +5,7 @@
         <img src="{{ categoryIcon }}" alt="{{ main_category.name }}" class="img-responsive">
         <a href="{{ url_route('adv_list_seo', [main_category.slug]) }}" class="main-category">
             <b>{{ main_category.name }}</b>
-            {% if showAdsCount %}
+            {% if showClassifiedsCount %}
                 <small class="text-muted">
                     ({{ main_category.count }})
                 </small>
@@ -25,7 +25,7 @@
                     <li class="{{ hideclass }}">
                         <a href="{{ url_route('adv_list_seo', [subcats.c2_slug]) }}"
                            class="">{{ subcats.c2_name }}</a>
-                        {% if showAdsCount %}
+                        {% if showClassifiedsCount %}
                             <small class="text-muted">
                                 ({{ subcats.c2_count }})
                             </small>

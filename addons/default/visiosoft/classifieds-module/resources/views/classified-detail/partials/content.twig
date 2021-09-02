@@ -1,0 +1,47 @@
+<div class="description-info">
+    <div class="row">
+
+        <div class="col-md-12">
+            <nav>
+                <div class="nav nav-tabs nav-fill classified-detail-tabs" id="nav-tab" role="tablist">
+
+                    <a class="nav-item nav-link active bg-secondary text-white" id="nav-description-tab"
+                       data-toggle="tab" href="#nav-description" role="tab"
+                       aria-controls="nav-description"
+                       aria-selected="true">{{ trans('visiosoft.module.classifieds::field.description') }}</a>
+
+                    <a class="nav-item nav-link  bg-secondary text-white" id="nav-location-tab"
+                       data-toggle="tab" href="#nav-location" role="tab"
+                       aria-controls="nav-location"
+                       aria-selected="true">{{ trans('visiosoft.module.location::addon.title') }}</a>
+
+                    <!-- Content Tab With Block -->
+                    {{ addBlock('classified-detail/content-tab',{'features':features})|raw }}
+                    <!-- Content Tab With Block -->
+                </div>
+
+            </nav>
+
+            <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+
+                <div class="tab-pane fade show active" id="nav-description" role="tabpanel"
+                     aria-labelledby="nav-description-tab">
+                    <h4>{{ trans('visiosoft.module.classifieds::field.description') }}</h4>
+                    <p>{{ classified.classifieds_desc|raw }}</p>
+                </div>
+
+                <div class="tab-pane fade show " id="nav-location" role="tabpanel"
+                     aria-labelledby="nav-description-tab">
+                    <h4>{{ trans('visiosoft.module.location::addon.title') }}</h4>
+                    {% include "visiosoft.module.classifieds::classified-detail/partials/map" %}
+                </div>
+
+                <!-- Content With Block -->
+                    {{ addBlock('classified-detail/content',{'features':features,'classified': classified, 'profile': profile})|raw }}
+                <!-- Content With Block -->
+            </div>
+        </div>
+    </div>
+</div>
+
+{{ addBlock('classified-detail/section',{'classified':classified})|raw }}

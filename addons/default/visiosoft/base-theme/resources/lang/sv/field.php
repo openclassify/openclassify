@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Senaste annonser',
+    'latest_classified' => 'Senaste annonser',
     'show_all' => 'Visa allt',
     'login' => [
         'name' => 'Logga in',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Företagskatalog',
-    'popular_ads' => 'Populära annonser',
+    'popular_classified' => 'Populära annonser',
     'last_48_hours' => 'De senaste 48 timmarna',
-    'secure_e-commerce_ads' => 'Säkra e-handelsannonser',
+    'secure_e-commerce_classified' => 'Säkra e-handelsannonser',
     'sms' => 'Skicka textmeddelande (SMS)',
     'mail' => 'Skicka brev',
 

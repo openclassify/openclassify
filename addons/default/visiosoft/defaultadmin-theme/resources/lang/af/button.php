@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'view_ads' => 'Bekyk advertensies',
+    'view_classifieds' => 'Bekyk advertensies',
 ];

@@ -20,7 +20,7 @@ return [
         'name' => 'Breadcrumb',
     ],
     'ad_details' => [
-        'name' => 'Agahdariyên Ad',
+        'name' => 'Agahdariyên Classified',
     ],
     'ad_details_tab' => [
         'name' => 'Tab Agahdariyên Adê',

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Τελευταίες αγγελίες',
+    'latest_classified' => 'Τελευταίες αγγελίες',
     'show_all' => 'Προβολή όλων',
     'login' => [
         'name' => 'Σύνδεση',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Κατάλογος εταιρείας',
-    'popular_ads' => 'Δημοφιλείς διαφημίσεις',
+    'popular_classified' => 'Δημοφιλείς διαφημίσεις',
     'last_48_hours' => 'Τελευταίες 48 ώρες',
-    'secure_e-commerce_ads' => 'Ασφαλείς διαφημίσεις ηλεκτρονικού εμπορίου',
+    'secure_e-commerce_classified' => 'Ασφαλείς διαφημίσεις ηλεκτρονικού εμπορίου',
     'sms' => 'Αποστολή μηνύματος κειμένου (SMS)',
     'mail' => 'Αποστολή αλληλογραφίας',
 

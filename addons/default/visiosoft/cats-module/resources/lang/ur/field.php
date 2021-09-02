@@ -32,7 +32,7 @@ return [
 
     'parent' => 'Parent',
     'level' => 'Level',
-    'count' => 'Ad Counts',
+    'count' => 'Classified Counts',
 
     'please_wait' => 'براہ کرم انتظار کریں۔ ذیلی زمرے ختم کرنا',
     'category_selection' => 'زمرہ انتخاب',

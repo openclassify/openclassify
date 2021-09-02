@@ -1,0 +1,22 @@
+{% if app.auth.id == classified.created_by_id %}
+    <div class="breadcrumb bg-dark justify-content-end mt-3 mb-0">
+        {{ addBlock('classified-detail/partials/author-button', {'classified_id': classified.id})|raw }}
+        <a class="btn btn-info edit-classified-btn mr-2" href="/classifieds/edit_classifieds/{{ classified.id }}">
+            <i class="fas fa-pencil-alt"></i>
+            <font>{{ trans('visiosoft.module.classifieds::field.edit') }}</font>
+        </a>
+        {% if classified.status != "pending_admin" and classified.status != "approved" %}
+            <a class="btn btn-success approve-classified-btn mr-2"
+               href="{{ url_route('visiosoft.module.classifieds::status',[classified.id,"pending_admin"]) }}">
+                <i class="fa fa-eye"></i>
+                <font>{{ trans('visiosoft.module.classifieds::field.approve') }}</font>
+            </a>
+        {% else %}
+            <a class="btn btn-danger passive-classified-btn mr-2"
+               href="{{ url_route('visiosoft.module.classifieds::status',[classified.id,"passive"]) }}">
+                <i class="fa fa-ban"></i>
+                <font>{{ trans('visiosoft.module.classifieds::field.passive') }}</font>
+            </a>
+        {% endif %}
+    </div>
+{% endif %}

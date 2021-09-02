@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'नवीनतम विज्ञापन',
+    'latest_classified' => 'नवीनतम विज्ञापन',
     'show_all' => 'सब दिखाओ',
     'login' => [
         'name' => 'लॉग इन करें',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'कंपनी निर्देशिका',
-    'popular_ads' => 'लोकप्रिय विज्ञापन',
+    'popular_classified' => 'लोकप्रिय विज्ञापन',
     'last_48_hours' => 'पिछले 48 घंटे',
-    'secure_e-commerce_ads' => 'सुरक्षित ई-कॉमर्स विज्ञापन',
+    'secure_e-commerce_classified' => 'सुरक्षित ई-कॉमर्स विज्ञापन',
     'sms' => 'पाठ संदेश भेजें (एसएमएस)',
     'mail' => 'मेल भेजे',
 

@@ -1,7 +1,7 @@
 <?php
 
 return [
-    'latest_ads' => 'Najnoviji oglasi',
+    'latest_classified' => 'Najnoviji oglasi',
     'show_all' => 'Pokaži sve',
     'login' => [
         'name' => 'Prijavite se',
@@ -45,9 +45,9 @@ return [
 
     // Side menu links
     'company_directory' => 'Imenik preduzeća',
-    'popular_ads' => 'Popularni oglasi',
+    'popular_classified' => 'Popularni oglasi',
     'last_48_hours' => 'Poslednjih 48 sati',
-    'secure_e-commerce_ads' => 'Sigurni oglasi za e-trgovinu',
+    'secure_e-commerce_classified' => 'Sigurni oglasi za e-trgovinu',
     'sms' => 'Pošaljite tekstualnu poruku (SMS)',
     'mail' => 'Pošalji Email',
 

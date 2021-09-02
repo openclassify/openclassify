@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'view_ads' => 'বিজ্ঞাপনগুলো দেখুন',
+    'view_classifieds' => 'বিজ্ঞাপনগুলো দেখুন',
 ];

@@ -1,6 +1,6 @@
 <?php namespace Visiosoft\CatsModule\Category;
 
-use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\ClassifiedsModule\Classified\Contract\ClassifiedRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Anomaly\Streams\Platform\Entry\EntryRepository;
 use Illuminate\Support\Facades\DB;
@@ -9,12 +9,12 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
 {
 
     protected $model;
-    protected $advRepository;
+    protected $classifiedRepository;
 
-    public function __construct(CategoryModel $model, AdvRepositoryInterface $advRepository)
+    public function __construct(CategoryModel $model, ClassifiedRepositoryInterface $classifiedRepository)
     {
         $this->model = $model;
-        $this->advRepository = $advRepository;
+        $this->classifiedRepository = $classifiedRepository;
     }
 
     public function getMainCategories()
