@@ -12,7 +12,7 @@
 
 
 ##Modül Gereklilikleri/Module Requirements
-- ADVS Modülü
+- Classifieds Modülü
 
 ##
 support@visiosoft.com.tr

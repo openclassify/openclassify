@@ -22,76 +22,76 @@ class LocationModulePlugin extends Plugin
                 'getDistrict',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetDistrict($id))) {
+                    if (!$classified = $this->dispatch(new GetDistrict($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getNeighborhood',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetNeighborhood($id))) {
+                    if (!$classified = $this->dispatch(new GetNeighborhood($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getCity',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetCity($id))) {
+                    if (!$classified = $this->dispatch(new GetCity($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getCities',
                 function ($country = null) {
 
-                    if (!$ad = $this->dispatch(new GetCities($country))) {
+                    if (!$classified = $this->dispatch(new GetCities($country))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getCountry',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetCountry($id))) {
+                    if (!$classified = $this->dispatch(new GetCountry($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getCountries',
                 function () {
 
-                    if (!$ad = $this->dispatch(new GetCountries())) {
+                    if (!$classified = $this->dispatch(new GetCountries())) {
                         return null;
                     }
-                    return $ad;
+                    return $classified;
                 }
             ),
             new \Twig_SimpleFunction(
                 'getVillage',
                 function ($id) {
 
-                    if (!$ad = $this->dispatch(new GetVillage($id))) {
+                    if (!$classified = $this->dispatch(new GetVillage($id))) {
                         return null;
                     }
 
-                    return $ad;
+                    return $classified;
                 }
             ),
         ];

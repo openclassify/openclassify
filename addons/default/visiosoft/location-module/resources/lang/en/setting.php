@@ -16,8 +16,8 @@ return [
     'default_country' => [
         'name' => 'Default Country',
     ],
-    'create_ad_page_location' => [
-        'name' => 'Create Ad Page Location',
+    'create_classified_page_location' => [
+        'name' => 'Create Classified Page Location',
     ],
     'default_city' => [
         'name' => 'Default City',

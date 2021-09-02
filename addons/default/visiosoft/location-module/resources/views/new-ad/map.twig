@@ -17,26 +17,26 @@
                     <div class="row">
                         <div class="col-sm-4">
                             <ul style="padding: 0" class="list-unstyled">
-                                <li class="country-data" data-content="{{ adv['country_id'] }}"
+                                <li class="country-data" data-content="{{ classified['country_id'] }}"
                                     data-default="{{ setting_value('visiosoft.module.location::default_country') }}"
                                     class="location-field country-data">
                                     {{ form.fields.country.setOptions({})|raw }}
                                 </li>
-                                <li class="city-data" data-content="{{ adv['city'] }}"
+                                <li class="city-data" data-content="{{ classified['city'] }}"
                                     data-default="{{ setting_value('visiosoft.module.location::default_city') }}"
                                     class="location-field city-data">
                                     {{ form.fields.city|raw }}
                                 </li>
-                                <li class="district-data" data-content="{{ adv['district'] }}"
+                                <li class="district-data" data-content="{{ classified['district'] }}"
                                     class="location-field district-data">
                                     {{ form.fields.district|raw }}
                                 </li>
-                                <li class="neighborhood-data" data-content="{{ adv['neighborhood'] }}"
+                                <li class="neighborhood-data" data-content="{{ classified['neighborhood'] }}"
                                     class="location-field neighborhood-data">
                                     {{ form.fields.neighborhood|raw }}
                                 </li>
-                                {% if not setting_value('visiosoft.module.advs::hide_village_field') %}
-                                    <li class="village-data" data-content="{{ adv['village'] }}" class="location-field">
+                                {% if not setting_value('visiosoft.module.classifieds::hide_village_field') %}
+                                    <li class="village-data" data-content="{{ classified['village'] }}" class="location-field">
                                         {{ form.fields.village|raw }}
                                     </li>
                                 {% endif %}
@@ -93,7 +93,7 @@
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback="
             type="text/javascript"></script>
-    {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.classifieds::js/location.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.location::js/addressSelect.js") }}
 {% endif %}
 <style>

@@ -16,7 +16,7 @@ return [
     'default_country' => [
         'name' => 'Țara implicită',
     ],
-    'create_ad_page_location' => [
+    'create_classified_page_location' => [
         'name' => 'Creați locația paginii de anunțuri',
     ],
     'default_city' => [

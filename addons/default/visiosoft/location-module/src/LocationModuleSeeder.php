@@ -4,12 +4,7 @@ use Anomaly\Streams\Platform\Database\Seeder\Seeder;
 use Anomaly\Streams\Platform\Model\Options\OptionsAdvertisementEntryModel;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\DB;
-use Visiosoft\AdvsModule\Category\CategorySeeder;
-use Visiosoft\LocationModule\City\CitySeeder;
-use Visiosoft\LocationModule\Country\CountrySeeder;
-use Visiosoft\LocationModule\District\DistrictSeeder;
-use Visiosoft\LocationModule\Neighborhood\NeighborhoodSeeder;
-use Visiosoft\LocationModule\Village\VillageSeeder;
+use Visiosoft\ClassifiedsModule\Category\CategorySeeder;
 
 class LocationModuleSeeder extends Seeder
 {

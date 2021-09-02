@@ -16,7 +16,7 @@ return [
     'default_country' => [
         'name' => 'البلد الافتراضي',
     ],
-    'create_ad_page_location' => [
+    'create_classified_page_location' => [
         'name' => 'إنشاء موقع صفحة الإعلان',
     ],
     'default_city' => [

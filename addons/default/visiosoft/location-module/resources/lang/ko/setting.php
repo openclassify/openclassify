@@ -16,7 +16,7 @@ return [
     'default_country' => [
         'name' => '기본 국가',
     ],
-    'create_ad_page_location' => [
+    'create_classified_page_location' => [
         'name' => '광고 페이지 위치 만들기',
     ],
     'default_city' => [

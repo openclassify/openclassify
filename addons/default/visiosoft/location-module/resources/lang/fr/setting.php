@@ -16,7 +16,7 @@ return [
     'default_country' => [
         'name' => 'Pays par défaut',
     ],
-    'create_ad_page_location' => [
+    'create_classified_page_location' => [
         'name' => 'Créer l\'emplacement de la page d\'annonces',
     ],
     'default_city' => [

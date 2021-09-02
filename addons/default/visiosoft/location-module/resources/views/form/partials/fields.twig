@@ -162,14 +162,14 @@
         $.ajax({
             type: "GET",
             data: "cat=" + cat	+ "&level=" + level,
-            url: "{{ url_route('visiosoft.module.advs::ajax') }}",
+            url: "{{ url_route('visiosoft.module.classifieds::ajax') }}",
             success: function(msg){
                 $('.'+elem).find('option').remove();
                 $('.'+elem).append('<option value="">Choose an option...</option>');
                 $.each(msg, function(key, value){
                     console.log(value.id);
                     $('.'+elem).append('<option value="'+value.id+'">'+value.name+'</option>');
-                });   
+                });
             },
             beforeSend: function () {
                 showLoader()
@@ -213,22 +213,22 @@
         $.ajax({
             type: "GET",
             data: "cat=" + cat	+ "&level=" + level,
-            url: "{{ url_route('visiosoft.module.advs::ajaxCategory') }}",
+            url: "{{ url_route('visiosoft.module.classifieds::ajaxCategory') }}",
             success: function(msg){
                 if(msg.length>0){
                     if(level!=0){
                         $('#category'+level).find('option').remove();
                     }
                     if(level!=0){
-                        $('#advformcat').append('<div class="col-sm-6"><select class="form-control" size="15" id="category'+level+'" onchange="categorySelect(this,'+level+1+')"></select></div>');
+                        $('#classifiedformcat').append('<div class="col-sm-6"><select class="form-control" size="15" id="category'+level+'" onchange="categorySelect(this,'+level+1+')"></select></div>');
                     }
                     $.each(msg, function(key, value){
                         $('#category'+level).append('<option value="'+value.id+'">'+value.name+'</option>');
-                    });   
+                    });
                 }else{
-                    // $("#advformcat").slideUp();
+                    // $("#classifiedformcat").slideUp();
                     $("select[name=category]").val(cat).attr('readonly',true);
-                    $("#advforminfo").removeClass("hidden");
+                    $("#classifiedforminfo").removeClass("hidden");
                 }
             },
             beforeSend: function () {

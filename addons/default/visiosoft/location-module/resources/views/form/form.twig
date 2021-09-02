@@ -14,9 +14,9 @@
 
         {#{% include "streams::form/partials/controls" with {"position": "top"} %}#}
         {% include form.options.get('heading', "streams::form/partials/heading") %}
-        
-        {% if (form.model.table()== 'advs_advs') %}
-            {% include "visiosoft.module.advs::form/partials/layout" %}
+
+        {% if (form.model.table()== 'classifieds_classifieds') %}
+            {% include "visiosoft.module.classifieds::form/partials/layout" %}
         {% else %}
             {% include "streams::form/partials/layout" %}
         {% endif %}

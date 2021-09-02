@@ -57,8 +57,8 @@ return [
 
     'google_map_key' => [
         'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.google_map_key',
-        'env' => 'ADV_MAP_KEY',
+        'bind' => 'classified.google_map_key',
+        'env' => 'CLASSIFIED_MAP_KEY',
         'config' => [
             'default_value' => 'AIzaSyCfjSTNU-5kaiWY9OHLv-3N7CFHT1tFl-w',
         ],
@@ -66,16 +66,16 @@ return [
 
     'map_coordinates_long' => [
         'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.map_coordinates_long',
-        'env' => 'ADV_MAP_LONG',
+        'bind' => 'classified.map_coordinates_long',
+        'env' => 'CLASSIFIED_MAP_LONG',
         'config' => [
             'default_value' => '28.74558607285155',
         ],
     ],
     'map_coordinates_lat' => [
         'type' => 'anomaly.field_type.text',
-        'bind' => 'adv.map_coordinates_lat',
-        'env' => 'ADV_MAP_LAT',
+        'bind' => 'classified.map_coordinates_lat',
+        'env' => 'CLASSIFIED_MAP_LAT',
         'config' => [
             'default_value' => '40.97817786299617',
         ],

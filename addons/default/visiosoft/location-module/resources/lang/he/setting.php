@@ -16,7 +16,7 @@ return [
     'default_country' => [
         'name' => 'מדינה ברירת מחדל',
     ],
-    'create_ad_page_location' => [
+    'create_classified_page_location' => [
         'name' => 'צור מיקום של דף מודעות',
     ],
     'default_city' => [

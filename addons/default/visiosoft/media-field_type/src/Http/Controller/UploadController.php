@@ -89,7 +89,7 @@ class UploadController extends AdminController
                 $settings_value = array();
 
                 foreach ($settings_key as $key) {
-                    $settings_value[$key] = setting_value('visiosoft.module.advs::' . $key);
+                    $settings_value[$key] = setting_value('visiosoft.module.classifieds::' . $key);
                 }
 
 
@@ -124,7 +124,7 @@ class UploadController extends AdminController
 
                 foreach ($image_types as $key => $image) {
 
-                    if (setting_value('visiosoft.module.advs::watermark', false)) {
+                    if (setting_value('visiosoft.module.classifieds::watermark', false)) {
                         if ($settings_value['watermark_type'] == 'image') {
 
                             if ($watermarkimage = $this->files->find($settings_value['watermark_image'])) {
@@ -138,7 +138,7 @@ class UploadController extends AdminController
                             $w = $image->width() / 2;
                             $h1 = $image->height() / 2;
                             $font_size = $w / 20;
-                            $image->text(($watermark_text = setting_value('visiosoft.module.advs::watermark_text')) ? $watermark_text : 'Openclassify', $w, $h1, function ($font) use ($v, $h, $font_size) {
+                            $image->text(($watermark_text = setting_value('visiosoft.module.classifieds::watermark_text')) ? $watermark_text : 'Openclassify', $w, $h1, function ($font) use ($v, $h, $font_size) {
                                 $font->file(public_path('Antonio-Bold.ttf'));
                                 $font->size($font_size);
                                 $font->align($h);
