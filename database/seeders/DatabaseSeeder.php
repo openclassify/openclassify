@@ -77,6 +77,19 @@ class DatabaseSeeder extends Seeder
 
         $this->activator->force($visiosoft_administrator);
 
+        //Create Category Icon Folder
+        if (is_null($this->folders->findBy('slug', 'category_icon'))) {
+            $disk = $this->disks->findBySlug('local');
+
+            $this->folders->create([
+                'en' => [
+                    'name' => 'Category Icon',
+                    'description' => 'A folder for Category Icon.',
+                ],
+                'slug' => 'category_icon',
+                'disk' => $disk,
+            ]);
+        };
 
         //Footer Link
         LinkModel::query()->forceDelete();
@@ -224,26 +237,11 @@ class DatabaseSeeder extends Seeder
             ]);
         };
 
-        //Create Category Icon Folder
-        if (is_null($this->folders->findBy('slug', 'category_icon'))) {
-            $disk = $this->disks->findBySlug('local');
-
-            $this->folders->create([
-                'en' => [
-                    'name' => 'Category Icon',
-                    'description' => 'A folder for Category Icon.',
-                ],
-                'slug' => 'category_icon',
-                'disk' => $disk,
-            ]);
-        };
-
         //Demodata Seeder
         if (is_module_installed('visiosoft.module.demodata')) {
             $this->call(\Visiosoft\DemodataModule\Demodata\DemodataSeeder::class);
         }
 
         Artisan::call('assets:clear');
-        Artisan::call('files:sync');
     }
 }
