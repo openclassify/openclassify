@@ -19,6 +19,7 @@ use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\Form\CategoryFormBuilder;
 use Visiosoft\CatsModule\Category\Table\CategoryTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\CatsModule\Category\Traits\DeleteCategory;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -310,24 +311,5 @@ class CategoryController extends AdminController
 
     public function export(){
         return Excel::download(new CategoryExport(), 'cats-' . time() . '.xlsx');
-    }
-
-    public function all()
-    {
-        try {
-            if ($this->categoryRepository->count() > 100) {
-                throw new \Exception('more_than_100');
-            }
-
-            return [
-                'success' => true,
-                'data' => $this->categoryRepository->all(),
-            ];
-        } catch (\Exception $e) {
-            return [
-                'success' => false,
-                'msg' => $e->getMessage(),
-            ];
-        }
     }
 }
