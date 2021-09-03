@@ -1,13 +1,12 @@
 <?php namespace Visiosoft\CatsModule\Http\Controller\Admin;
 
 use Anomaly\FilesModule\File\Contract\FileRepositoryInterface;
-use Anomaly\FilesModule\File\FileSanitizer;
 use Anomaly\FilesModule\File\FileUploader;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryTranslationsModel;
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Storage;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Str;
 use League\Flysystem\MountManager;
 use Visiosoft\CatsModule\Category\CategoryExport;
@@ -249,35 +248,39 @@ class CategoryController extends AdminController
 
     public function createIconFile($category_id)
     {
+        $fileRepository = app(FileRepositoryInterface::class);
         $folderRepository = app(FolderRepositoryInterface::class);
-        $manager = app(MountManager::class);
+        $uploader = app(FileUploader::class);
 
-        if ($file = $this->request->file('icon') and $folder = $folderRepository->findBySlug('category_icon') and $category = $this->categoryRepository->find($category_id)) {
 
-            $type = explode('.', $file->getClientOriginalName());
+        if ($request_file = $this->request->file('icon') and $folder = $folderRepository->findBySlug('category_icon') and $category = $this->categoryRepository->find($category_id)) {
+            $type = explode('.', $request_file->getClientOriginalName());
             $type = end($type);
 
-            $file_location = $folder->getDisk()->getSlug() . '://' . $folder->getSlug() . '/' . FileSanitizer::clean($category_id . "." . $type);
+            $filename = $category_id . "." . $type;
 
-            $file_url = '/files/' . $folder->getSlug() . '/' . FileSanitizer::clean($category_id . "." . $type);
-
-            if (Storage::exists($file_location)) {
-                Storage::delete($file_location);
+            if ($file = $fileRepository->findByNameAndFolder($filename, $folder)) {
+                $file->forceDelete();
             }
 
             try {
-                $manager->put($file_location, file_get_contents($file->getRealPath()));
+                $file = new UploadedFile($request_file->getPathname(),
+                    $filename,
+                    $request_file->getClientMimeType(),
+                    $request_file->getError());
 
-                $category->setCategoryIconUrl($file_url);
+                $file = $uploader->upload($file, $folder);
 
+                $category->setCategoryIconUrl($file->make()->url());
             } catch (\Exception $exception) {
-                $this->messages->error([$exception->getMessage()]);
+                $this->messages->error($exception->getMessage());
             }
 
         }
     }
 
-    public function import(FormBuilder $builder, FileRepositoryInterface $fileRepository){
+    public function import(FormBuilder $builder, FileRepositoryInterface $fileRepository)
+    {
 
         if (request()->action == "save" and $file = $fileRepository->find(request()->file)) {
             if ($file->extension === 'xls' || $file->extension === 'xlsx') {
@@ -308,7 +311,8 @@ class CategoryController extends AdminController
         return $builder->render();
     }
 
-    public function export(){
+    public function export()
+    {
         return Excel::download(new CategoryExport(), 'cats-' . time() . '.xlsx');
     }
 
