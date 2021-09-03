@@ -315,4 +315,23 @@ class CategoryController extends AdminController
     {
         return Excel::download(new CategoryExport(), 'cats-' . time() . '.xlsx');
     }
+
+    public function all()
+    {
+        try {
+            if ($this->categoryRepository->count() > 100) {
+                throw new \Exception('more_than_100');
+            }
+
+            return [
+                'success' => true,
+                'data' => $this->categoryRepository->all(),
+            ];
+        } catch (\Exception $e) {
+            return [
+                'success' => false,
+                'msg' => $e->getMessage(),
+            ];
+        }
+    }
 }
