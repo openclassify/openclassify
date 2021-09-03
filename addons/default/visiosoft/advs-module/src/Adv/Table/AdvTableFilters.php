@@ -2,6 +2,7 @@
 
 use Visiosoft\AdvsModule\Adv\Table\Filter\CategoryFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\CityFilterQuery;
+use Visiosoft\AdvsModule\Adv\Table\Filter\IdFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\NameDescFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\StatusFilterQuery;
 use Visiosoft\AdvsModule\Adv\Table\Filter\UserFilterQuery;
@@ -26,7 +27,8 @@ class AdvTableFilters
                 'country',
                 'id' => [
                     'heading' => 'ID',
-                    'filter' => 'input'
+                    'filter' => 'input',
+                    'query' => IdFilterQuery::class,
                 ],
                 'City' => [
                     'exact' => true,
