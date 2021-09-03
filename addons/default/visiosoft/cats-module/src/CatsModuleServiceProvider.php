@@ -10,51 +10,17 @@ use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\CatsModule\Category\CategoryRepository;
 use Anomaly\Streams\Platform\Model\Cats\CatsCategoryEntryModel;
 use Visiosoft\CatsModule\Category\CategoryModel;
-use Illuminate\Routing\Router;
 use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForChangedAdStatus;
 use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForDeletedAd;
 use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForEditedAdCategory;
 use Visiosoft\CatsModule\Category\Listener\CalculatedTotalForNewAd;
-use Visiosoft\CatsModule\Category\Table\Handler\Delete;
 
 class CatsModuleServiceProvider extends AddonServiceProvider
 {
-
-    /**
-     * Additional addon plugins.
-     *
-     * @type array|null
-     */
     protected $plugins = [
         CatsModulePlugin::class,
     ];
 
-    /**
-     * The addon Artisan commands.
-     *
-     * @type array|null
-     */
-    protected $commands = [];
-
-    /**
-     * The addon's scheduled commands.
-     *
-     * @type array|null
-     */
-    protected $schedules = [];
-
-    /**
-     * The addon API routes.
-     *
-     * @type array|null
-     */
-    protected $api = [];
-
-    /**
-     * The addon routes.
-     *
-     * @type array|null
-     */
     protected $routes = [
         'admin/cats/clean_subcats' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@cleanSubCategories',
         'admin/cats/adcountcalc' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@adCountCalc',
@@ -78,44 +44,16 @@ class CatsModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.cats::export',
             'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@export',
         ],
+        'admin/api/cats/all' => [
+            'as' => 'visiosoft.module.cats::admin.api.cats.all',
+            'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@all',
+        ],
 
         // Sitemap
         'sitemap.xml' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@index',
         'sitemap.xml/categories' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@categories',
     ];
 
-    /**
-     * The addon middleware.
-     *
-     * @type array|null
-     */
-    protected $middleware = [
-        //Visiosoft\CatsModule\Http\Middleware\ExampleMiddleware::class
-    ];
-
-    /**
-     * Addon group middleware.
-     *
-     * @var array
-     */
-    protected $groupMiddleware = [
-        //'web' => [
-        //    Visiosoft\CatsModule\Http\Middleware\ExampleMiddleware::class,
-        //],
-    ];
-
-    /**
-     * Addon route middleware.
-     *
-     * @type array|null
-     */
-    protected $routeMiddleware = [];
-
-    /**
-     * The addon event listeners.
-     *
-     * @type array|null
-     */
     protected $listeners = [
         CreatedAd::class => [
             CalculatedTotalForNewAd::class,
@@ -131,74 +69,14 @@ class CatsModuleServiceProvider extends AddonServiceProvider
         ],
     ];
 
-    /**
-     * The addon alias bindings.
-     *
-     * @type array|null
-     */
-    protected $aliases = [
-        //'Example' => Visiosoft\CatsModule\Example::class
-    ];
-
-    /**
-     * The addon class bindings.
-     *
-     * @type array|null
-     */
     protected $bindings = [
         CatsCategoryEntryModel::class => CategoryModel::class,
     ];
 
-    /**
-     * The addon singleton bindings.
-     *
-     * @type array|null
-     */
     protected $singletons = [
         CategoryRepositoryInterface::class => CategoryRepository::class,
     ];
 
-    /**
-     * Additional service providers.
-     *
-     * @type array|null
-     */
-    protected $providers = [
-        //\ExamplePackage\Provider\ExampleProvider::class
-    ];
-
-    /**
-     * The addon view overrides.
-     *
-     * @type array|null
-     */
-    protected $overrides = [
-        //'streams::errors/404' => 'module::errors/404',
-        //'streams::errors/500' => 'module::errors/500',
-    ];
-
-    /**
-     * The addon mobile-only view overrides.
-     *
-     * @type array|null
-     */
-    protected $mobile = [
-        //'streams::errors/404' => 'module::mobile/errors/404',
-        //'streams::errors/500' => 'module::mobile/errors/500',
-    ];
-
-    /**
-     * Register the addon.
-     */
-    public function register()
-    {
-        // Run extra pre-boot registration logic here.
-        // Use method injection or commands to bring in services.
-    }
-
-    /**
-     * Boot the addon.
-     */
     public function boot(AddonCollection $addonCollection)
     {
         $settings_url = [
@@ -217,17 +95,6 @@ class CatsModuleServiceProvider extends AddonServiceProvider
         foreach ($settings_url as $key => $value) {
             $addonCollection->get($value['page'])->addSection($key, $value);
         }
-    }
-
-    /**
-     * Map additional addon routes.
-     *
-     * @param Router $router
-     */
-    public function map(Router $router)
-    {
-        // Register dynamic routes here for example.
-        // Use method injection or commands to bring in services.
     }
 
     public function getOverrides()
