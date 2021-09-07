@@ -17,6 +17,8 @@ return [
 
     'name' => env('APP_NAME', 'My Application'),
 
+    'application_domain' => env('APPLICATION_DOMAIN', null),
+
     /*
     |--------------------------------------------------------------------------
     | Application Environment
