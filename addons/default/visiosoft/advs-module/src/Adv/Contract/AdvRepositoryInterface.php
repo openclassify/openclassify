@@ -56,4 +56,6 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
     public function getUserAds($userID = null, $status = "approved");
 
     public function currentAds();
+
+    public function findByCFJSON($key, $value);
 }

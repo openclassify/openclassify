@@ -555,4 +555,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->where('slug', '!=', '')
             ->orderBy('publish_at', 'desc');
     }
+
+    public function findByCFJSON($key, $value)
+    {
+        return $this->currentAds()
+            ->whereJsonContains('cf_json', [$key => $value])
+            ->first();
+    }
 }
