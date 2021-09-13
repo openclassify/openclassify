@@ -8,7 +8,7 @@
 
 {% block content %}
     {% set phoneLogin = not setting_value('visiosoft.module.advs::register_email_field') or app.request.get('type') == 'phone' %}
-    <div class="row justify-content-center">
+    <div class="row justify-content-center mx-0 mx-md-3">
         <div class="col-12 text-left m-0 row justify-content-center">
             <div class="col-12 col-lg-5 m-3 login-section">
                 {% set form = form('signIn')
