@@ -14,6 +14,7 @@ use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\LocationModule\District\DistrictModel;
+use Visiosoft\MediaFieldType\Http\Controller\UploadController;
 
 class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 {
@@ -561,5 +562,34 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
         return $this->currentAds()
             ->whereJsonContains('cf_json', [$key => $value])
             ->first();
+    }
+
+    public function uploadImage()
+    {
+        $folder_repository = app(FolderRepositoryInterface::class);
+
+        if (request()->has(['adv_id', 'upload'])
+            and $adv = $this->newQuery()->find(request('adv_id'))
+            and $folder = $folder_repository->findBySlug('images')) {
+
+
+            $upload_service = app(UploadController::class);
+
+            request()->offsetSet('folder', $folder->id);
+
+            if ($response = $upload_service->upload()) {
+
+                $file_id = $response->getData()->id;
+
+                DB::table('advs_advs_files')->insert([
+                    'entry_id' => $adv->id,
+                    'file_id' => $file_id
+                ]);
+
+                return true;
+            }
+        }
+
+        return false;
     }
 }

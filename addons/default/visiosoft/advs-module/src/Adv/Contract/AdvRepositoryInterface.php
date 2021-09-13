@@ -58,4 +58,6 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
     public function currentAds();
 
     public function findByCFJSON($key, $value);
+
+    public function uploadImage();
 }
