@@ -40,9 +40,6 @@ $(function () {
             sending: function (file, xhr, formData) {
                 formData.append('folder', element.data('folder'));
             },
-            renameFile: function (file) {
-                return new Date().getTime() + '_' + file.name.replace(/ /g, '_');
-            },
             accept: function (file, done) {
                 $.get(REQUEST_ROOT_PATH + '/streams/media-field_type/exists/' + element.data('folder'), {'file': file.name}, function (data) {
                     if (data.exists) {
