@@ -6,6 +6,8 @@ function phoneMask(fields) {
         var iti = intlTelInput(inputQuery, {
             hiddenInput: inputQuery.getAttribute('name'),
             class: "form-control",
+            formatOnDisplay: true,
+            nationalMode: true,
             initialCountry: "auto",
             geoIpLookup: function (success, failure) {
                 $.get("https://ipinfo.io", function () {
@@ -14,8 +16,20 @@ function phoneMask(fields) {
                     success(countryCode);
                 })
             }
-        })
+        });
+
+        addMask(iti, inputQuery);
+        $(inputQuery).on("countrychange", function(event) {
+            iti.setNumber("");
+            addMask(iti, inputQuery);
+        });
     });
+
+    function addMask(iti, inputQuery){
+        let selectedCountryData = iti.getSelectedCountryData();
+        let newPlaceholder = intlTelInputUtils.getExampleNumber(selectedCountryData.iso2, true, intlTelInputUtils.numberFormat.INTERNATIONAL);
+        $(inputQuery).inputmask({ mask: newPlaceholder.replace(/[0-9+]/ig,'9'), keepStatic: false });
+    }
 
     // var fields_arr = fields.split(',');
     // $.each(fields_arr, function (index, value) {
@@ -38,8 +52,8 @@ function phoneMask(fields) {
     //         }
     //     }
     // }
-    
- 
+
+
 }
 
 function controlNumber(inputQuery) {
