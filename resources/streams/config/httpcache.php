@@ -40,6 +40,10 @@ return [
         '/profile',
         '/profile/*',
         '/ajax/*',
+        '/cron/*',
+        '/cron',
+        '/cart',
+        '/cart/*',
     ],
 
     /*
