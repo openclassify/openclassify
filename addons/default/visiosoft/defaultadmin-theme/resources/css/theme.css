@@ -2770,3 +2770,5 @@ body {
 /** bootstrap 4.1 Column Fix**/
 .col-4{-ms-flex:0 0 33.333333%;flex:0 0 33.333333%;max-width:33.333333%}
 .col-6{-ms-flex:0 0 50%;flex:0 0 50%;max-width:50%}
+.d-flex{display: flex}
+.align-items-center{align-items: center}
