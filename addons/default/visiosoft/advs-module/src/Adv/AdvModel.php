@@ -436,13 +436,6 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return null;
     }
 
-    public function authControl()
-    {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-    }
-
     public function currentAds() {
     	return $this->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
 		    ->where('status', '=', 'approved')

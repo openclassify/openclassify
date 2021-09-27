@@ -34,10 +34,7 @@ class MyProfileController extends PublicController
     )
     {
         parent::__construct();
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-
+        $this->middleware('auth');
         $this->adressRepository = $adressRepository;
         $this->userRepository = $userRepository;
     }

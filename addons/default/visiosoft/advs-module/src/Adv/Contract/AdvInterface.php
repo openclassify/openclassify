@@ -70,8 +70,6 @@ interface AdvInterface extends EntryInterface
 
     public function getRecommended($id);
 
-    public function authControl();
-
     public function inStock();
 
     public function getCity();
