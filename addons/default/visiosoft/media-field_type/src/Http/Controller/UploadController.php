@@ -3,6 +3,7 @@
 use Anomaly\Streams\Platform\Image\Image;
 use Anomaly\Streams\Platform\Model\Files\FilesFilesEntryModel;
 use Illuminate\Http\Request;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 use Visiosoft\MediaFieldType\Table\UploadTableBuilder;
@@ -48,19 +49,39 @@ class UploadController extends AdminController
         );
     }
 
+    public function changeFileName($file)
+    {
+
+        $file_name = $file->getClientOriginalName();
+        $ext = pathinfo($file_name, PATHINFO_EXTENSION);
+
+        $file_name = str_replace('.' . $ext, '', $file_name);
+        $file_name = preg_replace('/[^A-Za-z0-9 _-]/', '', $file_name);
+
+        $file = new UploadedFile($file->getPathname(),
+            strtotime('now') . "-" . $file_name . "." . $ext,
+            $file->getClientMimeType(),
+            $file->getError());
+
+        return $file;
+    }
+
     public function upload()
     {
-        $path = $_FILES['upload']['name'];
+        $file_request = $this->changeFileName($this->request->file('upload'));
+
+        $path = $file_request->getClientOriginalName();
+
         $ext = pathinfo($path, PATHINFO_EXTENSION);
-        if($ext == 'svg') {
+        if ($ext == 'svg') {
             $mimes [0] = 'svg';
-            $file = $this->uploader->upload($this->request->file('upload'), $this->folders->find($this->request->get('folder')));
+            $file = $this->uploader->upload($file_request, $this->folders->find($this->request->get('folder')));
         } else {
-            $mimes = explode('/', $this->request->file('upload')->getMimeType());
+            $mimes = explode('/', $file_request->getMimeType());
             if ($mimes[0] == 'image') {
-                $file = $this->uploader->upload($this->request->file('upload'), $this->folders->find($this->request->get('folder')));
+                $file = $this->uploader->upload($file_request, $this->folders->find($this->request->get('folder')));
             } else if ($doc_folder = app(FolderRepositoryInterface::class)->findBySlug('ads_documents')) {
-                $file = $this->uploader->upload($this->request->file('upload'), $doc_folder);
+                $file = $this->uploader->upload($file_request, $doc_folder);
             } else {
                 return $this->response->json(['error' => trans('visiosoft.field_type.media::message.error_upload_docs')], 500);
             }
@@ -93,7 +114,7 @@ class UploadController extends AdminController
                 }
 
 
-                $fullImg = WaterMark::make($this->request->file('upload')->getRealPath());
+                $fullImg = WaterMark::make($file_request->getRealPath());
 
                 if ($settings_value['image_resize_backend']) {
                     $fullImg = $fullImg->resize(null, $settings_value['full_image_height'],
@@ -102,7 +123,7 @@ class UploadController extends AdminController
                         });
                 }
 
-                $mdImg = WaterMark::make($this->request->file('upload')->getRealPath())
+                $mdImg = WaterMark::make($file_request->getRealPath())
                     ->resize(null, $settings_value['medium_image_height'], function ($constraint) {
                         $constraint->aspectRatio();
                     });

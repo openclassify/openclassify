@@ -45,7 +45,7 @@
 
             </form>
 
-            <ul class="nav navbar-nav navbar-left">
+            <ul class="nav navbar-nav navbar-left d-flex align-items-center">
                 {% for shortcut in template.cp.shortcuts %}
                     <li class="nav-item shortcut {#dropdown#}">
                         <a {{ html_attributes(shortcut.attributes) }} {#data-toggle="dropdown"#}>
@@ -68,6 +68,9 @@
                         {#</ul>#}
                     </li>
                 {% endfor %}
+
+                {{ addBlock('admin/topbar')|raw }}
+
                 <li class="nav-item dropdown">
                     <a href="javascript:void(0);" data-toggle="dropdown">
                         <img src="{{ user().gravatar.path }}" width="36" class="rounded-circle">
