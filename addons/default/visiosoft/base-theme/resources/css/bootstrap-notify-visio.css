@@ -1,7 +1,6 @@
 .swal2-container {
     display: grid;
     position: fixed;
-    z-index: 1060;
     top: 0;
     right: 0;
     bottom: 0;
@@ -53,4 +52,8 @@ body.swal2-toast-shown .swal2-container.swal2-top-end, body.swal2-toast-shown .s
     grid-column: 3;
     align-self: start;
     justify-self: end;
+}
+
+.swal2-title {
+     max-width: 14rem;
 }
