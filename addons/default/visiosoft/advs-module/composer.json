@@ -10,7 +10,6 @@
     ]
   },
   "require": {
-    "fruitcake/laravel-cors": "^2.0",
-    "symfony/translation": "v5.3.7"
+    "fruitcake/laravel-cors": "^2.0"
   }
 }
