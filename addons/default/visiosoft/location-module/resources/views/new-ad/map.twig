@@ -90,6 +90,11 @@
         var selectedAddressText = "{{ trans('visiosoft.module.location::field.selected') }}";
         var chooseAddressText = '{{ trans("visiosoft.module.profile::field.choose.name") }}';
         var chooseOptionTrans = '{{ trans("visiosoft.module.location::field.choose_an_option") }}';
+        var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+        var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
+        var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
+        var default_neighborhood = "{{ setting_value('visiosoft.module.location::default_neighborhood') }}";
+        var default_village = "{{ setting_value('visiosoft.module.location::default_village') }}";
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback="
             type="text/javascript"></script>
