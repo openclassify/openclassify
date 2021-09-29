@@ -543,4 +543,13 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
         return $lastCat;
     }
+
+    public function scopeCurrent($query)
+    {
+        return $query
+            ->whereDate('finish_at', '>=', date("Y-m-d H:i:s"))
+            ->where('status', '=', 'approved')
+            ->where('slug', '!=', '')
+            ->orderBy('publish_at', 'desc');
+    }
 }
