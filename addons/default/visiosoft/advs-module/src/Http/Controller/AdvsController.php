@@ -711,9 +711,7 @@ class AdvsController extends PublicController
     public function deleteAd(AdvRepositoryInterface $advs, $id)
     {
         $ad = $this->adv_model->find($id);
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
+        $this->middleware('auth');
 
         if ($ad->created_by_id != Auth::id()) {
             $this->messages->error(trans('visiosoft.module.advs::message.delete_author_error'));
@@ -745,9 +743,7 @@ class AdvsController extends PublicController
 
     public function create(AdvFormBuilder $formBuilder, CategoryRepositoryInterface $repository)
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
+        $this->middleware('auth');
 
         $isActive = new AdvModel();
         $cats = $this->request->toArray();
@@ -1059,9 +1055,7 @@ class AdvsController extends PublicController
 
     public function cats()
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
+        $this->middleware('auth');
         $main_cats = $this->category_repository->getMainCategories();
 
         return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('main_cats'));
