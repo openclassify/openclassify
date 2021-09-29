@@ -2628,8 +2628,8 @@ body {
   display: none;
 }
 #login .login-container .logo svg, #login .login-container .logo img {
-  width: 45px;
-  max-height: 82px;
+  /*width: 45px;*/
+  /*max-height: 82px;*/
   fill: #ffffff;
   margin-top: -30px;
   vertical-align: middle;
@@ -2668,8 +2668,8 @@ body {
   font-family: "Montserrat", sans-serif;
 }
 #login .logo svg, #login .logo img {
-  width: 45px;
-  max-height: 82px;
+  width: 8rem;
+  height: 8rem;
   margin-top: -30px;
   vertical-align: middle;
   object-fit: contain;
@@ -2724,8 +2724,8 @@ body {
     margin-bottom: 2rem;
   }
   #login .login-container .logo svg, #login .login-container .logo img {
-    width: 55px;
-    max-height: 100px;
+    width: 8rem;
+    height: auto;
   }
 }
 @media (max-width: 767px) {
