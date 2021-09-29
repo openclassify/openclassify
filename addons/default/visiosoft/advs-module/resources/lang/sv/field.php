@@ -383,4 +383,13 @@ return [
     'name_a_z' => 'Name (A to Z)',
     'name_z_a' => 'Name (Z to A)',
     'select_lang_ads' => 'select the language of the ads',
+
+    // Report
+    'product_stock_report' => 'Product Stock Report',
+    'active_passive_products_report' => 'Active-Passive Products Report',
+    'unexplained_products_report' => 'Unexplained Products Report',
+    'non_image_products_report' => 'Non-Image Products Report',
+    'product' => 'Product',
+    'count' => 'Count',
+    'undefined_product' => 'Undefined Product',
 ];
