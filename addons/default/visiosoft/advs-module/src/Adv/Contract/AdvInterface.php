@@ -95,4 +95,6 @@ interface AdvInterface extends EntryInterface
     public function getCatsIDs();
 
     public function lastCategory();
+
+    public function scopeCurrent($query);
 }

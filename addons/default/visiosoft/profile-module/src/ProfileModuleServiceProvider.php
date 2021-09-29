@@ -124,6 +124,10 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
 
         // CacheController
         'ajax/get-user-info' => 'Visiosoft\ProfileModule\Http\Controller\CacheController@getUserInfo',
+
+        // Admin ReportController
+        'admin/api/profile/report/latest' => 'Visiosoft\ProfileModule\Http\Controller\Admin\ReportController@latest',
+        'admin/api/profile/report/login' => 'Visiosoft\ProfileModule\Http\Controller\Admin\ReportController@login',
     ];
 
     protected $aliases = [

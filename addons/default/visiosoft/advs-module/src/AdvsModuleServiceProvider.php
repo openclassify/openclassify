@@ -248,6 +248,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.advs::ad.change.status',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\StatusController@change'
         ],
+
+        // Admin ReportController
+        'admin/api/classified/report/stock' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@stock',
+        'admin/api/classified/report/status' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@status',
+        'admin/api/classified/report/unexplained' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@unexplained',
+        'admin/api/classified/report/no-image' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@noImage',
     ];
 
     protected $middleware = [

@@ -592,4 +592,63 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         return false;
     }
+
+    public function getStockReport()
+    {
+        return $this->newQuery()
+            ->current()
+            ->select('stock', 'name', 'advs_advs.id', 'slug')
+            ->where('is_get_adv', true)
+            ->where('stock', '<=', 10)
+            ->leftJoin('advs_advs_translations as classified_trans', function ($join) {
+                $join->on('advs_advs.id', '=', 'classified_trans.entry_id');
+                $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
+            })
+            ->get();
+    }
+
+    public function getAllClassifiedsCount()
+    {
+        return $this->newQuery()
+            ->count();
+    }
+
+    public function getCurrentClassifiedsCount()
+    {
+        return $this->newQuery()
+            ->current()
+            ->count();
+    }
+
+    public function getUnexplainedClassifiedsReport()
+    {
+        return $this->newQuery()
+            ->current()
+            ->select('name', 'advs_advs.id', 'slug')
+            ->where(function ($query) {
+                $query->where('advs_desc', '=', '')
+                    ->orWhereNull('advs_desc');
+            })
+            ->leftJoin('advs_advs_translations as classified_trans', function ($join) {
+                $join->on('advs_advs.id', '=', 'classified_trans.entry_id');
+                $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
+            })
+            ->get();
+    }
+
+    public function getNoImageClassifiedsReport()
+    {
+        return $this->newQuery()
+            ->current()
+            ->select('name', 'advs_advs.id', 'slug')
+            ->where(function ($query) {
+                $query->where('cover_photo', '=', '')
+                    ->orWhereNull('cover_photo');
+            })
+            ->leftJoin('advs_advs_translations as classified_trans', function ($join) {
+                $join->on('advs_advs.id', '=', 'classified_trans.entry_id');
+                $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
+            })
+            ->get();
+    }
 }

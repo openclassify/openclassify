@@ -60,4 +60,14 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
     public function findByCFJSON($key, $value);
 
     public function uploadImage();
+
+    public function getStockReport();
+
+    public function getAllClassifiedsCount();
+
+    public function getCurrentClassifiedsCount();
+
+    public function getUnexplainedClassifiedsReport();
+
+    public function getNoImageClassifiedsReport();
 }
