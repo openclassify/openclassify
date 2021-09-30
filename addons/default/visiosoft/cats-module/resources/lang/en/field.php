@@ -37,5 +37,10 @@ return [
     'please_wait' => 'Please wait.Deleting Sub Categories',
     'category_selection' => 'Category Selection',
     'go_to_parent' => 'Go To Parent',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
 ];
