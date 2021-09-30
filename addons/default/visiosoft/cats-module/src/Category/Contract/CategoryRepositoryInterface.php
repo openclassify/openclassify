@@ -23,4 +23,6 @@ interface CategoryRepositoryInterface extends EntryRepositoryInterface
     public function getDeletedCategories();
 
 	public function getMainAndSubCats();
+
+    public function noMetaReport();
 }
