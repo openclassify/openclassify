@@ -2,6 +2,8 @@
 
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
+use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
+use Visiosoft\LocationModule\Country\CountryModel;
 
 class SimpleAdvFormHandler
 {
@@ -11,11 +13,13 @@ class SimpleAdvFormHandler
             return;
         }
 
-        if (!$builder->getFormValue('created_by_id')) {
-            $builder->setFormValue('created_by_id', auth()->id());
-        }
-
         $builder->saveForm();
+
+        if (!$builder->getFormValue('country_id')) {
+            $entry = $builder->getFormEntry();
+            $entry->setAttribute('country_id', setting_value('visiosoft.module.location::default_country'));
+            $entry->save();
+        }
 
         $ad = $advRepository->find($builder->getFormEntryId());
         if (!$builder->getFormValue('status') && $ad->status !== 'approved') {
