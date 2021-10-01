@@ -49,6 +49,9 @@ class CatsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@all',
         ],
 
+        // Admin ReportController
+        'admin/api/cats/report/category' => 'Visiosoft\CatsModule\Http\Controller\Admin\ReportController@category',
+
         // Sitemap
         'sitemap.xml' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@index',
         'sitemap.xml/categories' => 'Visiosoft\CatsModule\Http\Controller\SitemapController@categories',

@@ -56,4 +56,20 @@ $(document).ready( function () {
             },
         ],
     });
+
+    $('#metaPageReport').DataTable({
+        ajax: '/admin/api/classified/report/page',
+        columns: [
+            {
+                data: 'name',
+                render: function ( data, type, row, meta ) {
+                    return `
+                        <a href="/admin/pages/edit/${row.id}" class="text-info">
+                            ${data ?? productsReportTrans.undefined_page}
+                        </a>
+                    `;
+                }
+            },
+        ],
+    });
 } );

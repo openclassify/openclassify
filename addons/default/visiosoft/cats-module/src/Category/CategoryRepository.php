@@ -184,4 +184,34 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
         $cats->maincats = $catsDB->unique('id');
         return $cats;
     }
+
+    public function noMetaReport()
+    {
+        $categories = $this->newQuery()
+            ->select('name as category', 'cats_category.id')
+            ->where(function ($q) {
+                $q->whereNull('seo_keyword')
+                    ->orWhereNull('seo_description');
+            })
+            ->leftJoin('cats_category_translations as cats_trans', function ($join) {
+                $join->on('cats_category.id', '=', 'cats_trans.entry_id');
+                $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
+            });
+
+        if ($search = request('search.value')) {
+            $categories = $categories->where('name', 'LIKE', "%$search%");
+        }
+
+        if ($orderDir = request('order.0.dir')) {
+            $categories = $categories->orderBy('category', $orderDir);
+        }
+
+        $start = request('start');
+        $limit = request('length') ?: 10;
+        $page = $start ? $start / $limit + 1 : 1;
+
+        $categories = $categories->paginate($limit, ['*'], 'page', $page);
+
+        return $categories;
+    }
 }

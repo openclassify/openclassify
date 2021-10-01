@@ -254,6 +254,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'admin/api/classified/report/status' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@status',
         'admin/api/classified/report/unexplained' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@unexplained',
         'admin/api/classified/report/no-image' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@noImage',
+        'admin/api/classified/report/page' => 'Visiosoft\AdvsModule\Http\Controller\Admin\ReportController@page',
     ];
 
     protected $middleware = [
