@@ -37,5 +37,10 @@ return [
     'please_wait' => 'Si us plau, espereu. Esborra les subcategories',
     'category_selection' => 'Selecció de categories',
     'go_to_parent' => 'Ves al pare',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
 ];
