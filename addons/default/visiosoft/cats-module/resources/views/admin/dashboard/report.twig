@@ -1,0 +1,41 @@
+<div class="row">
+    {% set reports = [
+        {
+            'title': trans('visiosoft.module.cats::field.categories_with_no_meta_report'),
+            'id': 'metaCategoryReport',
+            'columns': [
+                trans('visiosoft.module.cats::field.category'),
+            ],
+        },
+    ] %}
+
+    {% for report in reports %}
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header bg-danger">
+                    <h5 class="card-title text-white">{{ report.title }}</h5>
+                </div>
+
+                <div class="card-block">
+                    <table id="{{ report.id }}" class="display">
+                        <thead>
+                        <tr>
+                            {% for column in report.columns %}
+                                <th>{{ column }}</th>
+                            {% endfor %}
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+
+<script>
+    const categoryReportTrans = {
+        undefined_category: `{{ trans('visiosoft.module.cats::field.undefined_category') }}`,
+    };
+</script>
+
+{{ asset_add('scripts.js', 'visiosoft.module.cats::js/admin/dashboard/report.js') }}

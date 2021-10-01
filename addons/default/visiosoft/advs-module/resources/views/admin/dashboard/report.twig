@@ -30,6 +30,13 @@
                 trans('visiosoft.module.advs::field.product'),
             ],
         },
+        {
+            'title': trans('visiosoft.module.advs::field.pages_without_meta_information_report'),
+            'id': 'metaPageReport',
+            'columns': [
+                trans('visiosoft.module.advs::field.page'),
+            ],
+        },
     ] %}
 
     {% for report in reports %}
@@ -58,6 +65,7 @@
 <script>
     const productsReportTrans = {
         undefined_product: `{{ trans('visiosoft.module.advs::field.undefined_product') }}`,
+        undefined_page: `{{ trans('visiosoft.module.advs::field.undefined_page') }}`,
     }
 </script>
 

@@ -312,7 +312,15 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             if (!$thumbnail AND $ext[1] != 'svg') {
 
 				// Create thumbnail image
-				$image = Image::make(file_get_contents($adv->files[0]->make()->url()));
+
+                $arrContextOptions=array(
+                    "ssl"=>array(
+                        "verify_peer"=>false,
+                        "verify_peer_name"=>false,
+                    ),
+                );
+
+                $image = Image::make(file_get_contents($adv->files[0]->make()->url(), false, stream_context_create($arrContextOptions)));
 				$image->resize(
 					null,
 					setting_value('visiosoft.module.advs::thumbnail_height'),
