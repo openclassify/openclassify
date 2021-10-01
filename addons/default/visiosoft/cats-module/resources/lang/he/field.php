@@ -37,5 +37,10 @@ return [
     'please_wait' => 'אנא המתן. מחיקת קטגוריות משנה',
     'category_selection' => 'בחירת קטגוריה',
     'go_to_parent' => 'עבור להורה',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
 ];
