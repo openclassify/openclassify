@@ -37,5 +37,10 @@ return [
     'please_wait' => 'Proszę czekać. Usuwanie podkategorii',
     'category_selection' => 'Wybór kategorii',
     'go_to_parent' => 'Idź do rodzica',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
 ];
