@@ -211,8 +211,6 @@ class CategoryRepository extends EntryRepository implements CategoryRepositoryIn
         $page = $start ? $start / $limit + 1 : 1;
 
         $categories = $categories->paginate($limit, ['*'], 'page', $page);
-        $categories->recordsTotal = $categories->total();
-        $categories->recordsFiltered = $categories->total();
 
         return $categories;
     }

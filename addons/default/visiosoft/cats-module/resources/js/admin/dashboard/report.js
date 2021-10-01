@@ -8,7 +8,6 @@ $(document).ready( function () {
 
                 return json.data;
             }
-
         },
         processing: true,
         serverSide: true,

@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Event;
 
-
 class PriceChange
 {
     public function __construct($request)
