@@ -37,5 +37,10 @@ return [
     'please_wait' => '하위 카테고리 삭제',
     'category_selection' => '카테고리 선택',
     'go_to_parent' => '부모로 이동',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
 ];
