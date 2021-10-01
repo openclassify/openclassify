@@ -595,16 +595,28 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function getStockReport()
     {
-        return $this->newQuery()
+        $classifieds = $this->newQuery()
             ->current()
             ->select('stock', 'name', 'advs_advs.id', 'slug')
             ->where('is_get_adv', true)
-            ->where('stock', '<=', 10)
             ->leftJoin('advs_advs_translations as classified_trans', function ($join) {
                 $join->on('advs_advs.id', '=', 'classified_trans.entry_id');
                 $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
-            })
-            ->get();
+            });
+
+        if ($search = request('search.value')) {
+            $classifieds = $classifieds->where('name', 'LIKE', "%$search%");
+        }
+
+        if ($orderDir = request('order.0.dir')) {
+            $classifieds = $classifieds->orderBy(request('order.0.column') == 1 ? 'stock' : 'name', $orderDir);
+        }
+
+        $start = request('start');
+        $limit = request('length') ?: 10;
+        $page = $start ? $start / $limit + 1 : 1;
+
+        return $classifieds->paginate($limit, ['*'], 'page', $page);
     }
 
     public function getAllClassifiedsCount()
@@ -622,25 +634,38 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
     public function getUnexplainedClassifiedsReport()
     {
-        return $this->newQuery()
+        $classifieds = $this->newQuery()
             ->current()
-            ->select('name', 'advs_advs.id', 'slug')
+            ->select('classified_trans.name', 'advs_advs.id', 'slug')
             ->where(function ($query) {
-                $query->where('advs_desc', '=', '')
-                    ->orWhereNull('advs_desc');
+                $query->where('classified_trans.advs_desc', '=', '')
+                    ->orWhereNull('classified_trans.advs_desc');
             })
             ->leftJoin('advs_advs_translations as classified_trans', function ($join) {
                 $join->on('advs_advs.id', '=', 'classified_trans.entry_id');
                 $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
-            })
-            ->get();
+            });
+
+        if ($search = request('search.value')) {
+            $classifieds = $classifieds->where('classified_trans.name', 'LIKE', "%$search%");
+        }
+
+        if ($orderDir = request('order.0.dir')) {
+            $classifieds = $classifieds->orderBy('name', $orderDir);
+        }
+
+        $start = request('start');
+        $limit = request('length') ?: 10;
+        $page = $start ? $start / $limit + 1 : 1;
+
+        return $classifieds->paginate($limit, ['*'], 'page', $page);
     }
 
     public function getNoImageClassifiedsReport()
     {
-        return $this->newQuery()
+        $classifieds = $this->newQuery()
             ->current()
-            ->select('name', 'advs_advs.id', 'slug')
+            ->select('classified_trans.name', 'advs_advs.id', 'slug')
             ->where(function ($query) {
                 $query->where('cover_photo', '=', '')
                     ->orWhereNull('cover_photo');
@@ -648,7 +673,20 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->leftJoin('advs_advs_translations as classified_trans', function ($join) {
                 $join->on('advs_advs.id', '=', 'classified_trans.entry_id');
                 $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
-            })
-            ->get();
+            });
+
+        if ($search = request('search.value')) {
+            $classifieds = $classifieds->where('classified_trans.name', 'LIKE', "%$search%");
+        }
+
+        if ($orderDir = request('order.0.dir')) {
+            $classifieds = $classifieds->orderBy('name', $orderDir);
+        }
+
+        $start = request('start');
+        $limit = request('length') ?: 10;
+        $page = $start ? $start / $limit + 1 : 1;
+
+        return $classifieds->paginate($limit, ['*'], 'page', $page);
     }
 }
