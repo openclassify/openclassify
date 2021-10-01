@@ -37,5 +37,10 @@ return [
     'please_wait' => 'Будь ласка, зачекайте. Вибір підкатегорій',
     'category_selection' => 'Вибір категорії',
     'go_to_parent' => 'Перейти до батьків',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
 ];
