@@ -17,13 +17,24 @@ class ReportController extends AdminController
     public function latest()
     {
         $members = $this->userRepository->newQuery()
-            ->selectRaw("DATE_FORMAT(created_at, '%d.%m.%Y %H:%i') as date, CONCAT_WS('', first_name, ' ', last_name) AS member")
-            ->where('created_at', '>=', Carbon::today()->subWeek())
-            ->get();
+            ->selectRaw("DATE_FORMAT(created_at, '%d.%m.%Y %H:%i') as date, CONCAT_WS('', first_name, ' ', last_name) AS member, id AS user_id")
+            ->where('created_at', '>=', Carbon::today()->subWeek());
 
-        return [
-            'data' => $members
-        ];
+        if ($search = request('search.value')) {
+            $members = $members->whereRaw("
+                (SELECT CONCAT_WS('', first_name, ' ', last_name) AS member) LIKE '%$search%'
+            ");
+        }
+
+        if ($orderDir = request('order.0.dir')) {
+            $members = $members->orderBy('member', $orderDir);
+        }
+
+        $start = request('start');
+        $limit = request('length') ?: 10;
+        $page = $start ? $start / $limit + 1 : 1;
+
+        return $members->paginate($limit, ['*'], 'page', $page);
     }
 
     public function login()
@@ -31,11 +42,22 @@ class ReportController extends AdminController
         $members = $this->userRepository->newQuery()
             ->selectRaw("DATE_FORMAT(last_login_at, '%d.%m.%Y %H:%i') as date, CONCAT_WS('', first_name, ' ', last_name) AS member")
             ->whereNotNull('last_login_at')
-            ->where('last_login_at', '>=', Carbon::today()->subWeek())
-            ->get();
+            ->where('last_login_at', '>=', Carbon::today()->subWeek());
 
-        return [
-            'data' => $members
-        ];
+        if ($search = request('search.value')) {
+            $members = $members->whereRaw("
+                (SELECT CONCAT_WS('', first_name, ' ', last_name) AS member) LIKE '%$search%'
+            ");
+        }
+
+        if ($orderDir = request('order.0.dir')) {
+            $members = $members->orderBy('member', $orderDir);
+        }
+
+        $start = request('start');
+        $limit = request('length') ?: 10;
+        $page = $start ? $start / $limit + 1 : 1;
+
+        return $members->paginate($limit, ['*'], 'page', $page);
     }
 }
