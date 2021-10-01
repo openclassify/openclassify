@@ -37,5 +37,10 @@ return [
     'please_wait' => 'Vent venligst. Sletning af underkategorier',
     'category_selection' => 'Valg af kategori',
     'go_to_parent' => 'Gå til forælder',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
 ];
