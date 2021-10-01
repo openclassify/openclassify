@@ -100,10 +100,7 @@
             type="text/javascript"></script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.location::js/addressSelect.js") }}
+
+    {{ asset_add("styles.css", "visiosoft.module.location::css/map.css") }}
 {% endif %}
-<style>
-    .location-map .nav-tabs .active { text-decoration: underline; color: lightskyblue !important; }
-    .location-map .nav-tabs { top: -30px; right: 0; font-size: 12px; }
-    .location-map .tab-content label { font-size: 13px; font-weight: bold; }
-    .location-map .tab-content select { border-color: #e8e8e8; border-radius: 3px; }
-</style>
+
