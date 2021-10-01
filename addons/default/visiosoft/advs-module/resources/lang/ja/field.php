@@ -392,4 +392,7 @@ return [
     'product' => 'Product',
     'count' => 'Count',
     'undefined_product' => 'Undefined Product',
+    'pages_without_meta_information_report' => 'Pages Without Meta Information Report',
+    'page' => 'Page',
+    'undefined_page' => 'Undefined Page',
 ];
