@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Le statut de votre annonce a été défini sur Vendu!",
 	'status_change' => "Le statut de votre annonce a été défini sur: statut!",
 	'disabled_detailed_options_for_admin_role' => "Les options détaillées du produit sont désactivées.",
+    'permission_error' => 'You do not have permission for this action',
 ];
