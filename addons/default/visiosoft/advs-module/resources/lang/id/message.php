@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Status Iklan Anda Telah Diatur ke Terjual!",
 	'status_change' => "Status Iklan Anda Telah Diatur ke :status!",
 	'disabled_detailed_options_for_admin_role' => "Opsi produk mendetail dinonaktifkan.",
+    'permission_error' => 'You do not have permission for this action',
 ];
