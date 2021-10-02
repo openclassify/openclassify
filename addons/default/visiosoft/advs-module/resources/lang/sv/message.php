@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Din annons har ställts in såld!",
 	'status_change' => "Annonsens status har ställts in på: status!",
 	'disabled_detailed_options_for_admin_role' => "Detaljerade produktalternativ är inaktiverade.",
+    'permission_error' => 'You do not have permission for this action',
 ];
