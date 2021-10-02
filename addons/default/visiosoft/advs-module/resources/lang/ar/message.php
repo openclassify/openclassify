@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "تم تعيين حالة إعلانك على البيع!",
 	'status_change' => "تم تعيين حالة إعلانك على: الحالة!",
 	'disabled_detailed_options_for_admin_role' => "تم تعطيل خيارات المنتج التفصيلية.",
+    'permission_error' => 'You do not have permission for this action',
 ];
