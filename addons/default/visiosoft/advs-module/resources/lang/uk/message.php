@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Статус вашої реклами продано!",
 	'status_change' => "Статус вашої реклами встановлено як: статус!",
 	'disabled_detailed_options_for_admin_role' => "Детальні параметри товару вимкнено.",
+    'permission_error' => 'You do not have permission for this action',
 ];
