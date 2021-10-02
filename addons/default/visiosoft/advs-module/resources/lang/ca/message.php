@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "L'estat del vostre anunci s'ha definit com a venut.",
 	'status_change' => "L'estat del vostre anunci s'ha configurat en: estat!",
 	'disabled_detailed_options_for_admin_role' => "Les opcions detallades del producte estan desactivades.",
+    'permission_error' => 'You do not have permission for this action',
 ];
