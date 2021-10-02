@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "¡El estado de su anuncio se ha establecido en Vendido!",
 	'status_change' => "El estado de su anuncio se ha establecido en: estado!",
 	'disabled_detailed_options_for_admin_role' => "Las opciones detalladas del producto están deshabilitadas.",
+    'permission_error' => 'You do not have permission for this action',
 ];
