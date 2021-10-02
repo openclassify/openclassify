@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "סטטוס המודעה שלך הוגדר כמכר!",
 	'status_change' => "סטטוס המודעה שלך הוגדר ל: סטטוס!",
 	'disabled_detailed_options_for_admin_role' => "אפשרויות מוצר מפורטות מושבתות.",
+    'permission_error' => 'You do not have permission for this action',
 ];
