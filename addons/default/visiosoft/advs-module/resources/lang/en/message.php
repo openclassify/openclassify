@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Your Ad's Status Has Been Set to Sold!",
 	'status_change' => "Your Ad's Status Has Been Set to :status!",
 	'disabled_detailed_options_for_admin_role' => "Detailed product options are disabled.",
+    'permission_error' => 'You do not have permission for this action',
 ];

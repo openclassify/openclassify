@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "İlanın Durumu Satıldı Olarak Ayarlanmıştır!",
 	'status_change' => "İlanın durumu Ayarland :status !",
 	'disabled_detailed_options_for_admin_role' => "Ayrıntılı ürün seçenekleri devre dışı bırakıldı.",
+    'permission_error' => 'Bu işlem için yetkiniz bulunmamaktadır',
 ];
