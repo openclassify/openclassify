@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "وضعیت آگهی شما به فروش رسیده است!",
 	'status_change' => "وضعیت آگهی شما روی: status تنظیم شده است!",
 	'disabled_detailed_options_for_admin_role' => "گزینه های جزئی محصول غیرفعال هستند.",
+    'permission_error' => 'You do not have permission for this action',
 ];
