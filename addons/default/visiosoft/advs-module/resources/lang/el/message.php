@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί για πώληση!",
 	'status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί σε: κατάσταση!",
 	'disabled_detailed_options_for_admin_role' => "Οι αναλυτικές επιλογές προϊόντος είναι απενεργοποιημένες.",
+    'permission_error' => 'You do not have permission for this action',
 ];
