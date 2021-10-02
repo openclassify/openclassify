@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Stav vaší reklamy byl nastaven na prodej!",
 	'status_change' => "Stav vaší reklamy byl nastaven na: stav!",
 	'disabled_detailed_options_for_admin_role' => "Podrobné možnosti produktu jsou deaktivovány.",
+    'permission_error' => 'You do not have permission for this action',
 ];
