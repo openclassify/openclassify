@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Stan Twojej reklamy został ustawiony na Sprzedane!",
 	'status_change' => "Status Twojej reklamy został ustawiony na: status!",
 	'disabled_detailed_options_for_admin_role' => "Szczegółowe opcje produktu są wyłączone.",
+    'permission_error' => 'You do not have permission for this action',
 ];
