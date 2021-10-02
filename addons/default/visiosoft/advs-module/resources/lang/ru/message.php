@@ -32,4 +32,5 @@ return [
 	'sold_status_change' => "Статус вашего объявления изменен на \"Продано\"!",
 	'status_change' => "Статус вашего объявления был установлен на: status!",
 	'disabled_detailed_options_for_admin_role' => "Подробные параметры продукта отключены.",
+    'permission_error' => 'You do not have permission for this action',
 ];
