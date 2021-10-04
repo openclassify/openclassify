@@ -1,6 +1,16 @@
 $(document).ready( function () {
     $('#stockReport').DataTable({
-        ajax: '/admin/api/classified/report/stock',
+        ajax: {
+            url: '/admin/api/classified/report/stock',
+            dataSrc( json ) {
+                json.recordsTotal = json.total;
+                json.recordsFiltered = json.total;
+
+                return json.data;
+            }
+        },
+        processing: true,
+        serverSide: true,
         order: [[ 1, "asc" ]],
         columns: [
             {
@@ -26,7 +36,17 @@ $(document).ready( function () {
     });
 
     $('#unexplainedReport').DataTable({
-        ajax: '/admin/api/classified/report/unexplained',
+        ajax: {
+            url: '/admin/api/classified/report/unexplained',
+            dataSrc( json ) {
+                json.recordsTotal = json.total;
+                json.recordsFiltered = json.total;
+
+                return json.data;
+            }
+        },
+        processing: true,
+        serverSide: true,
         columns: [
             {
                 data: 'name',
@@ -42,7 +62,17 @@ $(document).ready( function () {
     });
 
     $('#noImageReport').DataTable({
-        ajax: '/admin/api/classified/report/no-image',
+        ajax: {
+            url: '/admin/api/classified/report/no-image',
+            dataSrc( json ) {
+                json.recordsTotal = json.total;
+                json.recordsFiltered = json.total;
+
+                return json.data;
+            }
+        },
+        processing: true,
+        serverSide: true,
         columns: [
             {
                 data: 'name',
@@ -58,7 +88,17 @@ $(document).ready( function () {
     });
 
     $('#metaPageReport').DataTable({
-        ajax: '/admin/api/classified/report/page',
+        ajax: {
+            url: '/admin/api/classified/report/page',
+            dataSrc( json ) {
+                json.recordsTotal = json.total;
+                json.recordsFiltered = json.total;
+
+                return json.data;
+            }
+        },
+        processing: true,
+        serverSide: true,
         columns: [
             {
                 data: 'name',

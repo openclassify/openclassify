@@ -16,9 +16,7 @@ class ReportController extends AdminController
 
     public function stock()
     {
-        return [
-            'data' => $this->advRepository->getStockReport()
-        ];
+        return $this->advRepository->getStockReport();
     }
 
     public function status()
@@ -42,16 +40,12 @@ class ReportController extends AdminController
 
     public function unexplained()
     {
-        return [
-            'data' => $this->advRepository->getUnexplainedClassifiedsReport()
-        ];
+        return $this->advRepository->getUnexplainedClassifiedsReport();
     }
 
     public function noImage()
     {
-        return [
-            'data' => $this->advRepository->getNoImageClassifiedsReport()
-        ];
+        return $this->advRepository->getNoImageClassifiedsReport();
     }
 
     public function page(PageRepositoryInterface $pageRepository)
@@ -65,11 +59,20 @@ class ReportController extends AdminController
             ->leftJoin('pages_pages_translations as pages_trans', function ($join) {
                 $join->on('pages_pages.id', '=', 'pages_trans.entry_id');
                 $join->whereIn('locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']);
-            })
-            ->get();
+            });
 
-        return [
-            'data' => $pages
-        ];
+        if ($search = request('search.value')) {
+            $pages = $pages->where('title', 'LIKE', "%$search%");
+        }
+
+        if ($orderDir = request('order.0.dir')) {
+            $pages = $pages->orderBy('title', $orderDir);
+        }
+
+        $start = request('start');
+        $limit = request('length') ?: 10;
+        $page = $start ? $start / $limit + 1 : 1;
+
+        return $pages->paginate($limit, ['*'], 'page', $page);
     }
 }
