@@ -33,4 +33,5 @@ return [
 	'status_change' => "Reklamınızın Vəziyyəti təyin olundu: status!",
 	'disabled_detailed_options_for_admin_role' => "Ətraflı məhsul seçimləri deaktiv edilmişdir.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
