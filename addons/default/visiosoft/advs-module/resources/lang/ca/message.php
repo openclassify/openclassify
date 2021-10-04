@@ -33,4 +33,5 @@ return [
 	'status_change' => "L'estat del vostre anunci s'ha configurat en: estat!",
 	'disabled_detailed_options_for_admin_role' => "Les opcions detallades del producte estan desactivades.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
