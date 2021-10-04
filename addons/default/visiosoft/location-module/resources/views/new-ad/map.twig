@@ -1,48 +1,48 @@
 {% if setting_value('visiosoft.module.location::create_ad_page_location') %}
-    <div class="form-group location-map">
+    <div class="form-group location-map position-relative">
         <div>
-            <ul class="nav nav-tabs p-1 bg-dark border-bottom py-2" role="tablist">
+            <ul class="nav nav-tabs d-flex justify-content-end border-0 bg-light position-absolute" role="tablist">
                 <li role="presentation" class="p-0 m-0">
-                    <a href="#location" class="text-dark py-1 px-4 border bg-white locationSection"
+                    <a href="#location" class="text-dark pr-2"
                        aria-controls="location"
                        role="tab" data-toggle="tab">{{ trans('visiosoft.module.location::addon.title') }}</a>
                 </li>
                 <li role="presentation" class="p-0 m-0 ml-1">
-                    <a href="#my_address" class="text-dark py-1 px-4 border bg-white" aria-controls="my_address"
+                    <a href="#my_address" class="text-dark pl-2" aria-controls="my_address"
                        role="tab" data-toggle="tab">{{ trans('visiosoft.module.profile::field.my_address') }}</a>
                 </li>
             </ul>
             <div class="tab-content bg-light">
                 <div role="tabpanel" class="tab-pane m-0 pt-2 active" id="location">
                     <div class="row">
-                        <div class="col-sm-4">
-                            <ul style="padding: 0" class="list-unstyled">
-                                <li class="country-data" data-content="{{ adv['country_id'] }}"
+                        <div class="col-12">
+                            <ul style="padding: 0" class="list-unstyled d-flex flex-column flex-sm-row">
+                                <li class="country-data flex-fill mx-1" data-content="{{ adv['country_id'] }}"
                                     data-default="{{ setting_value('visiosoft.module.location::default_country') }}"
                                     class="location-field country-data">
                                     {{ form.fields.country.setOptions({})|raw }}
                                 </li>
-                                <li class="city-data" data-content="{{ adv['city'] }}"
+                                <li class="city-data flex-fill mx-1" data-content="{{ adv['city'] }}"
                                     data-default="{{ setting_value('visiosoft.module.location::default_city') }}"
                                     class="location-field city-data">
                                     {{ form.fields.city|raw }}
                                 </li>
-                                <li class="district-data" data-content="{{ adv['district'] }}"
+                                <li class="district-data flex-fill mx-1" data-content="{{ adv['district'] }}"
                                     class="location-field district-data">
                                     {{ form.fields.district|raw }}
                                 </li>
-                                <li class="neighborhood-data" data-content="{{ adv['neighborhood'] }}"
+                                <li class="neighborhood-data flex-fill mx-1" data-content="{{ adv['neighborhood'] }}"
                                     class="location-field neighborhood-data">
                                     {{ form.fields.neighborhood|raw }}
                                 </li>
                                 {% if not setting_value('visiosoft.module.advs::hide_village_field') %}
-                                    <li class="village-data" data-content="{{ adv['village'] }}" class="location-field">
+                                    <li class="village-data flex-fill" data-content="{{ adv['village'] }}">
                                         {{ form.fields.village|raw }}
                                     </li>
                                 {% endif %}
                             </ul>
                         </div>
-                        <div class="col-sm-8">
+                        <div class="col-12">
                             <div id="map-canvas" style="
                                 position: relative; overflow: hidden;
                                 transform: translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px);
@@ -100,9 +100,7 @@
             type="text/javascript"></script>
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
     {{ asset_add("scripts.js", "visiosoft.module.location::js/addressSelect.js") }}
+
+    {{ asset_add("styles.css", "visiosoft.module.location::css/map.css") }}
 {% endif %}
-<style>
-    .location-map .nav-tabs .active {
-        background-color: #e5e5e5;
-    }
-</style>
+
