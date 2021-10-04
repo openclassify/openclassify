@@ -33,4 +33,5 @@ return [
 	'status_change' => "Der Status Ihrer Anzeige wurde auf: Status gesetzt!",
 	'disabled_detailed_options_for_admin_role' => "Detaillierte Produktoptionen sind deaktiviert.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
