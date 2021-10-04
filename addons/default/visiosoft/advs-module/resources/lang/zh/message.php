@@ -33,4 +33,5 @@ return [
 	'status_change' => "您的广告状态已设置为：status！",
 	'disabled_detailed_options_for_admin_role' => "详细产品选项已禁用。",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
