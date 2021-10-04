@@ -33,4 +33,5 @@ return [
 	'status_change' => "Trạng thái Quảng cáo của Bạn Đã được Đặt thành: trạng thái!",
 	'disabled_detailed_options_for_admin_role' => "Tùy chọn sản phẩm chi tiết bị vô hiệu hóa.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
