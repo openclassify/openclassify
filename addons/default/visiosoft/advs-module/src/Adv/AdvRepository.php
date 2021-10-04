@@ -277,7 +277,6 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 			->where('advs_advs.id', $id)
 			->leftJoin('users_users as u1', 'advs_advs.created_by_id', '=', 'u1.id')
 			->select('advs_advs.*', 'u1.first_name as first_name', 'u1.last_name as last_name', 'u1.id as owner_id')
-			->inRandomOrder()
 			->first();
 
 		if ($adv) {

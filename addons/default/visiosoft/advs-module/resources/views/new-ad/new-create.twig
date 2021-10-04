@@ -79,7 +79,7 @@
                                 </label>
 
                                 {% if setting_value('visiosoft.module.advs::market_place') %}
-                                    {{ addBlock('new-ad/fields', {'adv': adv})|raw }}
+                                    {{ addBlock('new-ad/fields', {'adv': adv, 'rawClassified': rawClassified})|raw }}
                                 {% endif %}
 
                                 <div id="priceInput" class="d-flex justify-content-between mb-4 flex-wrap">

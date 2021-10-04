@@ -551,4 +551,23 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             ->where('status', '=', 'approved')
             ->where('slug', '!=', '');
     }
+
+    public function setConfig($key, $value)
+    {
+        $config = $this->config;
+        $config = $config ? (array) json_decode($config) : [];
+
+        $config[$key] = $value;
+
+        $this->config = json_encode($config);
+        $this->save();
+    }
+
+    public function getConfig($key)
+    {
+        $config = $this->config;
+        $config = $config ? (array) json_decode($config) : [];
+
+        return $config[$key] ?? null;
+    }
 }
