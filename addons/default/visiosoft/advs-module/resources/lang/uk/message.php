@@ -33,4 +33,5 @@ return [
 	'status_change' => "Статус вашої реклами встановлено як: статус!",
 	'disabled_detailed_options_for_admin_role' => "Детальні параметри товару вимкнено.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
