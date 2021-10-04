@@ -33,4 +33,5 @@ return [
 	'status_change' => "広告のステータスが：statusに設定されました！",
 	'disabled_detailed_options_for_admin_role' => "詳細な製品オプションは無効になっています。",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
