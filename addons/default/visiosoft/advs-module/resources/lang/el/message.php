@@ -33,4 +33,5 @@ return [
 	'status_change' => "Η κατάσταση της διαφήμισής σας έχει οριστεί σε: κατάσταση!",
 	'disabled_detailed_options_for_admin_role' => "Οι αναλυτικές επιλογές προϊόντος είναι απενεργοποιημένες.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
