@@ -33,4 +33,5 @@ return [
 	'status_change' => "İlanın durumu Ayarland :status !",
 	'disabled_detailed_options_for_admin_role' => "Ayrıntılı ürün seçenekleri devre dışı bırakıldı.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
