@@ -33,4 +33,5 @@ return [
 	'status_change' => "סטטוס המודעה שלך הוגדר ל: סטטוס!",
 	'disabled_detailed_options_for_admin_role' => "אפשרויות מוצר מפורטות מושבתות.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
