@@ -919,7 +919,11 @@ class AdvsController extends PublicController
             if ($is_new_create) {
                 event(new CreatedAd($adv));
             } else {
-                $this->adv_model->foreignCurrency($this->request->currency, $this->request->price, $this->request->update_id, $this->settings_repository, false);
+                try {
+                    $this->adv_model->foreignCurrency($this->request->currency, $this->request->price, $this->request->update_id, $this->settings_repository, false);
+                } catch (\Exception $exception) {
+                    $this->messages->error(trans('visiosoft.module.advs::message.currency_converter_not_available'));
+                }
                 event(new EditedAd($before_editing, $adv));
             }
 
@@ -1007,7 +1011,7 @@ class AdvsController extends PublicController
 
         return $this->view->make(
             'visiosoft.module.advs::new-ad/new-create',
-            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options', 'hidePrice','is_options', 'configurations')
+            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options', 'hidePrice', 'is_options', 'configurations')
         );
     }
 
