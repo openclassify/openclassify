@@ -33,4 +33,5 @@ return [
 	'status_change' => "Le statut de votre annonce a été défini sur: statut!",
 	'disabled_detailed_options_for_admin_role' => "Les options détaillées du produit sont désactivées.",
     'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
