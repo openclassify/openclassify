@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'GSM Numarasına Göre Ara',
+
+    // Adv Export
+    'choose_file_type' => 'Dışa Aktarmak İçin Dosya Türünü Seçin',
 ];
