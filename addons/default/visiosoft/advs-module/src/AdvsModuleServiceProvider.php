@@ -114,10 +114,12 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'advs/create_adv' => [
             'as' => "advs::create_adv",
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@cats',
         ],
         'advs/create_adv/post_cat' => [
             'as' => 'post_adv',
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@create',
         ],
         'advs/save_adv' => [
@@ -135,6 +137,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         ],
         'advs/delete/{id}' => [
             'as' => 'advs::delete',
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@deleteAd',
         ],
         'adv/addCart/{id}' => [
@@ -205,6 +208,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
         //Configurations Admin Controller
         'admin/advs/option_configuration/create' => [
+            'middleware' => 'auth',
             'as' => 'visiosoft.module.advs::configrations.create',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\Admin\OptionConfigurationController@create',
         ],
@@ -215,6 +219,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 
         //Configuration Controller
         'advs/option_configuration/create' => [
+            'middleware' => 'auth',
             'as' => 'visiosoft.module.advs::user.configrations.create',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
         ],
