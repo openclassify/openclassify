@@ -711,9 +711,6 @@ class AdvsController extends PublicController
     public function deleteAd(AdvRepositoryInterface $advs, $id)
     {
         $ad = $this->adv_model->find($id);
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
 
         if ($ad->created_by_id != Auth::id()) {
             $this->messages->error(trans('visiosoft.module.advs::message.delete_author_error'));
@@ -745,10 +742,6 @@ class AdvsController extends PublicController
 
     public function create(AdvFormBuilder $formBuilder, CategoryRepositoryInterface $repository)
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
-
         $isActive = new AdvModel();
         $cats = $this->request->toArray();
         unset($cats['_token']);
@@ -928,7 +921,11 @@ class AdvsController extends PublicController
             if ($is_new_create) {
                 event(new CreatedAd($adv));
             } else {
-                $this->adv_model->foreignCurrency($this->request->currency, $this->request->price, $this->request->update_id, $this->settings_repository, false);
+                try {
+                    $this->adv_model->foreignCurrency($this->request->currency, $this->request->price, $this->request->update_id, $this->settings_repository, false);
+                } catch (\Exception $exception) {
+                    $this->messages->error(trans('visiosoft.module.advs::message.currency_converter_not_available'));
+                }
                 event(new EditedAd($before_editing, $adv));
             }
 
@@ -1068,9 +1065,6 @@ class AdvsController extends PublicController
 
     public function cats()
     {
-        if (!Auth::user()) {
-            redirect('/login?redirect=' . url()->current())->send();
-        }
         $main_cats = $this->category_repository->getMainCategories();
 
         return $this->view->make('visiosoft.module.advs::new-ad/post-cat', compact('main_cats'));

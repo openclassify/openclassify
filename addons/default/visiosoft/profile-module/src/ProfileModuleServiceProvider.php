@@ -46,44 +46,72 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
         // MyProfileController
         'profile/ads' => [
             'as' => 'profile::ads',
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@myAds'
         ],
         'profile/adress/ajaxCreate' => [
             'as' => 'visiosoft.module.profile::adress_ajax_create',
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxCreate'
         ],
         'profile/adress/ajaxUpdate/{id}' => [
             'as' => 'visiosoft.module.profile::adress_ajax_update',
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxUpdate'
         ],
         'profile/adress/ajaxDetail' => [
             'as' => 'visiosoft.module.profile::adress_ajax_detail',
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@adressAjaxDetail'
         ],
         'profile' => [
             'as' => 'profile::profile',
+            'middleware' => 'auth',
             'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@home'
         ],
 	    'profile/detail' => [
 		    'as' => 'profile::detail',
-		    'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@detail'
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@detail'
 	    ],
 	    'profile/password' => [
 		    'as' => 'profile::password',
-		    'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@password'
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@password'
 	    ],
-        'profile/class/status/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusAds',
-        'profile/class/extendTime/{id},{type}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
-        'profile/message/show/{id}' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
+        'profile/class/status/{id},{type}' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@statusAds',
+        ],
+        'profile/class/extendTime/{id},{type}' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@extendAds',
+        ],
+        'profile/message/show/{id}' => [
+            'middleware' => 'auth',
+            'uses'  => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@showMessage',
+        ],
         'profile/close-account' => [
             'middleware' => 'auth',
         	'as' => 'visiosoft.module.profile::profile_close_account',
 	        'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@disableAccount'
         ],
-        'profile/notification' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
-        'ajax/update-user-info' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
-	    'api/changeEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@changeEducation',
-	    'api/getEducation' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@getEducation',
+        'profile/notification' => [
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@notification',
+            'middleware' => 'auth',
+        ],
+        'ajax/update-user-info' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@updateAjaxProfile',
+        ],
+	    'api/changeEducation' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@changeEducation',
+        ],
+	    'api/getEducation' => [
+            'middleware' => 'auth',
+            'uses' => 'Visiosoft\ProfileModule\Http\Controller\MyProfileController@getEducation',
+        ],
 
         // UserAuthenticator
         'login-in' => 'Visiosoft\ProfileModule\Http\Controller\UserAuthenticator@attempt',
