@@ -40,6 +40,11 @@ class Register2FormHandler
         $fields = $builder->getPostData();
         $fields['display_name'] = $fields['first_name'] . " " . $fields['last_name'];
         $fields['gsm_phone'] = $builder->getPostValue('phone');
+
+        if (isset($_COOKIE['utm_source'])) {
+            $fields['utm_source'] = $_COOKIE['utm_source'];
+        }
+
         unset(
             $fields['phone'],
             $fields['accept_protection_law'],
