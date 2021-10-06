@@ -762,7 +762,8 @@ class AdvsController extends PublicController
         }
 
         return $this->view->make('visiosoft.module.advs::new-ad/new-create', compact(
-            'request', 'formBuilder', 'cats_d', 'custom_fields'));
+            'formBuilder', 'cats_d', 'custom_fields'
+        ));
     }
 
     public function store
@@ -833,6 +834,10 @@ class AdvsController extends PublicController
             $adv->is_get_adv = ($this->request->is_get_adv and $get_categories_status) ? true : false;
             $adv->save();
 
+            if ($adv->is_get_adv) {
+                $orderNote = \request('order_note') ?? '';
+                $adv->setConfig('order_note', trim($orderNote));
+            }
 
             //Todo Create Event
             if (is_module_installed('visiosoft.module.customfields')) {
@@ -953,6 +958,7 @@ class AdvsController extends PublicController
     public function edit($id)
     {
         $adv = $this->adv_repository->find($id);
+        $rawClassified = $adv;
 
         if (is_null($adv)) {
             $this->messages->error(trans('visiosoft.module.advs::message.no_add_found'));
@@ -1008,7 +1014,10 @@ class AdvsController extends PublicController
 
         return $this->view->make(
             'visiosoft.module.advs::new-ad/new-create',
-            compact('id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options', 'hidePrice', 'is_options', 'configurations')
+            compact(
+                'id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options',
+                'hidePrice','is_options', 'configurations', 'rawClassified'
+            )
         );
     }
 

@@ -146,13 +146,6 @@ return [
             'mode' => 'checkbox'
         ]
     ],
-    'hide_configurations' => [
-        'type' => 'anomaly.field_type.boolean',
-        'config' => [
-            'default_value' => false,
-            'mode' => 'checkbox'
-        ]
-    ],
     'make_all_fields_required' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [

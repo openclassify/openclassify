@@ -6,7 +6,6 @@ use Anomaly\Streams\Platform\Model\Users\UsersUsersEntryModel;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
 use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;

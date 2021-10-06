@@ -133,7 +133,7 @@ label {
     color: #4A4A4A;
     font-weight: 600;
 
-    input {
+    input, textarea {
       box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
       font-size: calc(17rem / 16);
       padding: 1.1rem 1.5rem;
