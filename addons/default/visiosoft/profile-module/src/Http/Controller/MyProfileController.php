@@ -34,7 +34,7 @@ class MyProfileController extends PublicController
     )
     {
         parent::__construct();
-        $this->middleware('auth');
+
         $this->adressRepository = $adressRepository;
         $this->userRepository = $userRepository;
     }
