@@ -13,10 +13,9 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
 
     public function getIconUrlAttribute()
     {
-        if ($this->icon === null) {
-            return $this->dispatch(new MakeImageInstance('visiosoft.module.advs::images/listing/sample-cat-icon.svg', 'img'))->url();
-        }
-        return $this->dispatch(new MakeImageInstance($this->icon, 'img'))->url();
+        return $this->dispatch(
+            new MakeImageInstance($this->icon ?? 'visiosoft.module.advs::images/listing/sample-cat-icon.svg', 'img')
+        )->url();
     }
 
     public function getCat($id)
