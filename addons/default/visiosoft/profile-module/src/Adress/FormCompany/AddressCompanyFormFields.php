@@ -28,7 +28,7 @@ class AddressCompanyFormFields
                     'required' => true,
                 ],
                 'city' => [
-                    'required' => true,
+                    'required' => false,
                 ],
                 'district',
                 'adress_content' => [

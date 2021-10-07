@@ -97,4 +97,8 @@ interface AdvInterface extends EntryInterface
     public function lastCategory();
 
     public function scopeCurrent($query);
+
+    public function setConfig($key, $value);
+
+    public function getConfig($key);
 }

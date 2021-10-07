@@ -3,6 +3,7 @@
 use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryTranslationsModel;
+use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
@@ -160,7 +161,7 @@ class AdvsController extends AdminController
   height: 20px;
   border: 1px solid #2980b9;
   border-radius: 3px;
-  background-image: 
+  background-image:
     repeating-linear-gradient(
       -45deg,
       #2980b9,
@@ -185,15 +186,23 @@ class AdvsController extends AdminController
         <script>
         location.href = '" . $request->server('HTTP_REFERER') . "';
         </script>
-        
+
         <a href='" . $request->server('HTTP_REFERER') . "'><b>Return Back</b></a>";
         echo "<br><a href='/admin'><b>Return Admin Panel</b></a>";
     }
 
 
-    public function exportAdvs()
+    public function exportAdvs(FormBuilder $builder, Request $request)
     {
-        return Excel::download(new AdvsExport(), 'advs-' . time() . '.xlsx');
+        if ($request['format'] === 'csv' || $request['format'] === 'xlsx') {
+            return Excel::download(new AdvsExport(), 'advs-' . time() . '.' . $request['format']);
+        }
+
+        $builder->setOptions([
+            'form_view' => 'visiosoft.theme.defaultadmin::form/advs-export',
+        ]);
+
+        return $builder->render();
     }
 
     public function advancedUpdate()

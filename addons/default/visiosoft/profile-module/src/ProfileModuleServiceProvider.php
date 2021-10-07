@@ -187,6 +187,10 @@ class ProfileModuleServiceProvider extends AddonServiceProvider
 
     public function boot(AddonCollection $addonCollection)
     {
+        if ($utmSource = request('utm_source')) {
+            setcookie('utm_source', $utmSource);
+        }
+
         $slug = 'export';
         $section = [
             'title' => 'visiosoft.module.profile::button.export',

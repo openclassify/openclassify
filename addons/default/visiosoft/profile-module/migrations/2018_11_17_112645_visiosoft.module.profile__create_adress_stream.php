@@ -39,7 +39,7 @@ class VisiosoftModuleProfileCreateAdressStream extends Migration
             'required' => true,
         ],
         'city' => [
-            'required' => true,
+            'required' => false,
         ],
         'district',
         'adress_content' => [
