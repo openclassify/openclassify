@@ -48,6 +48,7 @@ $(document).ready( function () {
         processing: true,
         serverSide: true,
         columns: [
+            { data: 'id', orderable: false },
             {
                 data: 'name',
                 render: function ( data, type, row, meta ) {
