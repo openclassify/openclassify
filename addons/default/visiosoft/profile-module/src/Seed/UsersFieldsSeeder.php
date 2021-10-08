@@ -153,7 +153,12 @@ class UsersFieldsSeeder extends Seeder
 	        	'name' => 'visiosoft.module.profile::field.google_address.name',
 		        'slug' => 'google_address',
 		        'type' => 'anomaly.field_type.text',
-	        ]
+	        ],
+            [
+                'name' => 'visiosoft.module.profile::field.utm_source.name',
+                'slug' => 'utm_source',
+                'type' => 'anomaly.field_type.text',
+            ],
         ];
 
         foreach ($customFields as $customField) {
