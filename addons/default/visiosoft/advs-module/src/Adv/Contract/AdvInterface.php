@@ -58,8 +58,6 @@ interface AdvInterface extends EntryInterface
 
     public function saveCustomField($category_id, $field_id, $name);
 
-    public function customfields();
-
     public function priceFormat($adv);
 
     public function AddAdsDefaultCoverImage($ad);

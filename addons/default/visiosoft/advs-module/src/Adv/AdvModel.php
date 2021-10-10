@@ -381,11 +381,6 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         }
     }
 
-    public function customfields()
-    {
-        return $this->hasMany('Visiosoft\CustomfieldsModule\CustomFieldAdv\CustomFieldAdvModel', 'parent_adv_id', 'id');
-    }
-
     // public function getCustomFieldEditId($id) {
     //     $custom_field = AdvsCustomFieldsEntryModel::query()->where('advs_custom_fields.id', $id)->first();
     //     return DB::table('streams_assignments')->where('field_id', $custom_field->field_id)->first();
