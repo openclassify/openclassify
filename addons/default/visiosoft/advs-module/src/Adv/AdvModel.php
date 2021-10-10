@@ -12,6 +12,7 @@ use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
 use Visiosoft\AdvsModule\Support\Command\Currency;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
+use Visiosoft\CustomfieldsModule\CustomField\Contract\CustomFieldRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
@@ -379,6 +380,20 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         } else {
             abort(404);
         }
+    }
+
+    public function customfields()
+    {
+        if ($cFs = (array) json_decode($this->cf_json)) {
+            $cFs = array_keys($cFs);
+
+            return app(CustomFieldRepositoryInterface::class)
+                ->newQuery()
+                ->whereIn('id', $cFs)
+                ->get();
+        }
+
+        return [];
     }
 
     // public function getCustomFieldEditId($id) {
