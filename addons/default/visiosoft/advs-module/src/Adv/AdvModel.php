@@ -387,13 +387,22 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         if ($cFs = (array) json_decode($this->cf_json)) {
             $cFs = array_keys($cFs);
 
+            $cFIDs = array_map(function ($cF) {
+                return ltrim($cF, 'cf');
+            }, $cFs);
+
             return app(CustomFieldRepositoryInterface::class)
                 ->newQuery()
-                ->whereIn('id', $cFs)
+                ->whereIn('id', $cFIDs)
                 ->get();
         }
 
         return [];
+    }
+
+    public function cFJSON()
+    {
+        return (array) json_decode($this->cf_json);
     }
 
     // public function getCustomFieldEditId($id) {

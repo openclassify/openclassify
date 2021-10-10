@@ -60,6 +60,8 @@ interface AdvInterface extends EntryInterface
 
     public function customfields();
 
+    public function cFJSON();
+
     public function priceFormat($adv);
 
     public function AddAdsDefaultCoverImage($ad);
