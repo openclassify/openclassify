@@ -402,7 +402,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 
     public function cFJSON()
     {
-        return (array) json_decode($this->cf_json);
+        return json_decode($this->cf_json, true);
     }
 
     // public function getCustomFieldEditId($id) {
