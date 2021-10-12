@@ -128,18 +128,6 @@ class AdvsController extends AdminController
                     $newAdvOption->save();
                 }
 
-                // Replicate ad custom fields
-                $advCustomFields = $this->model->is_enabled('customfields');
-                if ($advCustomFields) {
-                    $advCustomFields = app('Visiosoft\CustomfieldsModule\CustomFieldAdv\Contract\CustomFieldAdvRepositoryInterface')
-                        ->newQuery()->where('parent_adv_id', $advID)->get();
-                    foreach ($advCustomFields as $advCustomField) {
-                        $newaAdvCustomField = $advCustomField->replicate();
-                        $newaAdvCustomField->parent_adv_id = $newAdv->id;
-                        $newaAdvCustomField->save();
-                    }
-                }
-
                 $this->messages->success(trans('visiosoft.module.advs::message.replicated_success'));
             }
 

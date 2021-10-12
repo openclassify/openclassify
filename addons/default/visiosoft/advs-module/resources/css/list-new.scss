@@ -473,6 +473,33 @@ ul {
                   font-size: calc(12rem / 16);
                   padding: .2rem .5rem;
 
+                  &.sortable {
+                    cursor: pointer;
+                    color: #adb4c9;
+
+                    &:hover {
+                      text-decoration: underline;
+                    }
+                  }
+
+                  &:not(.sort-by) {
+                    svg {
+                      display: none;
+                    }
+                  }
+
+                  &.sort-desc {
+                    svg {
+                      transform: scaleY(-1);
+                    }
+                  }
+
+                  svg {
+                    height: .5rem;
+                    width: auto;
+                    margin-left: .2rem;
+                  }
+
                   &:first-child {
                     border-top-left-radius: .25rem;
                   }
@@ -719,7 +746,7 @@ ul {
       &:nth-child(odd) {
         background-color: #F6F6F6;
       }
-      
+
       img {
         height: 5rem;
         width: 7rem;

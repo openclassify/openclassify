@@ -22,8 +22,6 @@ use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
 use Visiosoft\AdvsModule\Option\Contract\OptionRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\OptionConfigurationModel;
-use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
-use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface;
 use Visiosoft\LocationModule\City\CityModel;
 use Visiosoft\LocationModule\City\CityRepository;
@@ -218,7 +216,7 @@ class AdvsController extends PublicController
             'list', $param, $customParameters, null, $category, $cityId, false
         );
 
-        if ($isActiveDopings) {
+        if ($isActiveDopings && empty($param['sort_by'])) {
             $featuredAdvsQuery = clone $advs;
             $response__featured_doping = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')
                 ->listFeatures($featuredAdvsQuery);
