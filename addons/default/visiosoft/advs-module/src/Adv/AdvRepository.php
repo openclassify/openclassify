@@ -38,6 +38,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 		$limit = null, $category = null, $city = null, $paginate = true
 	)
 	{
+        $isSort = !empty($param['sort_by']);
 		$isActiveDopings = new AdvModel();
 		$isActiveDopings = $isActiveDopings->is_enabled('dopings');
 
@@ -161,11 +162,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 			$query = $query->whereRaw("ST_DISTANCE(ST_GeomFromText('POINT(" . $param['dlong'] . " " . $param['dlat'] . ")'), coor) < " . $param['distance']);
 		}
 
-		if ($isActiveDopings) {
+		if ($isActiveDopings && !$isSort) {
 			$query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->search($query, $param);
 		}
 
-		if (!empty($param['sort_by'])) {
+		if ($isSort) {
 			switch ($param['sort_by']) {
 				case "popular":
 					$query = $query->orderBy('advs_advs.count_show_ad', 'desc');
@@ -177,10 +178,10 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 					$query = $query->orderBy('advs_advs.price', 'asc');
 					break;
 				case "sort_time_newest":
-					$query = $query->orderBy('advs_advs.created_at', 'desc');
+					$query = $query->orderBy('advs_advs.publish_at', 'desc');
 					break;
 				case "sort_time_oldest":
-					$query = $query->orderBy('advs_advs.created_at', 'asc');
+					$query = $query->orderBy('advs_advs.publish_at', 'asc');
 					break;
 				case "address_a_z":
 					$query = $query->join('location_cities_translations', 'advs_advs.city', '=', 'location_cities_translations.entry_id')
@@ -201,7 +202,7 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 			$query = $query->orderBy('advs_advs.created_at', 'desc');
 		}
 
-		if ($isActiveDopings) {
+		if ($isActiveDopings && !$isSort) {
 			$query = app('Visiosoft\DopingsModule\Http\Controller\DopingsController')->querySelect($query, $param);
 		} else {
 			$query = $query->select('advs_advs.*', 'advs_advs_translations.name as name',
