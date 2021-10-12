@@ -1,24 +1,17 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Table\Handler;
 
 use Anomaly\Streams\Platform\Ui\Table\Component\Action\ActionHandler;
-use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
-use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
-
+use Visiosoft\AdvsModule\Adv\Command\UpdateClassifiedStatus;
+use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 
 class Decline extends ActionHandler
 {
-    public function handle(AdvTableBuilder $builder, array $selected)
+    public function handle(AdvRepositoryInterface $advRepository, array $selected)
     {
-        $model = $builder->getTableModel();
-
         foreach ($selected as $id) {
+            $classified = $advRepository->find($id);
 
-            $ad = $model->find($id);
-            $ad->status = 'declined';
-            $ad->update();
-
-            event(new ChangedStatusAd($ad));//Create Notify
-
+            $this->dispatch(new UpdateClassifiedStatus($classified, 'declined'));
         }
 
         if ($selected) {

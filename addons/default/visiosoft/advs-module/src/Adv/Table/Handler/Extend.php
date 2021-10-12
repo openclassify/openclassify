@@ -3,7 +3,6 @@
 use Anomaly\Streams\Platform\Ui\Table\Component\Action\ActionHandler;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 
-
 class Extend extends ActionHandler
 {
     public function handle(AdvTableBuilder $builder, array $selected)

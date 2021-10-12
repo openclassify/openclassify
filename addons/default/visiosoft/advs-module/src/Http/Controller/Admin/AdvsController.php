@@ -1,15 +1,14 @@
 <?php namespace Visiosoft\AdvsModule\Http\Controller\Admin;
 
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Application\Application;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryTranslationsModel;
 use Anomaly\Streams\Platform\Ui\Form\FormBuilder;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Filesystem\Filesystem;
 use Illuminate\Http\Request;
+use Visiosoft\AdvsModule\Adv\Command\UpdateClassifiedStatus;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Form\SimpleAdvFormBuilder;
 use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
@@ -68,23 +67,19 @@ class AdvsController extends AdminController
         }
     }
 
-    public function actions($id, $type, SettingRepositoryInterface $settings, AdvModel $advModel)
+    public function actions($id, $type, AdvModel $advModel)
     {
-        $ad = $advModel->where('advs_advs.id', '=', $id)->first();
-        $ad->status = $type;
+        $ad = $this->advRepository->find($id);
 
-        $default_adv_publish = $settings->value('visiosoft.module.advs::default_published_time');
-        $ad->finish_at = date('Y-m-d H:i:s', strtotime(date('Y-m-d H:i:s') . ' + ' . $default_adv_publish . ' day'));
-        $ad->publish_at = date('Y-m-d H:i:s');
+        $this->dispatch(new UpdateClassifiedStatus($ad, $type));
 
-        //algolia Search Module
+        // Algolia Search Module
         $isActiveAlgolia = $advModel->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
-            $algolia->updateStatus($id, $type, $settings);
+            $algolia->updateStatus($id, $type);
         }
-        $ad->update();
-        event(new ChangedStatusAd($ad));//Create Notify
+
         return back();
     }
 

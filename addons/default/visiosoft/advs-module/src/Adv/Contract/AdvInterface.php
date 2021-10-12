@@ -56,8 +56,6 @@ interface AdvInterface extends EntryInterface
 
     public function stockControl($id, $quantity);
 
-    public function saveCustomField($category_id, $field_id, $name);
-
     public function customfields();
 
     public function cFJSON();
