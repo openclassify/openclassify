@@ -320,7 +320,11 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
                     ),
                 );
 
-                $image = Image::make(file_get_contents($adv->files[0]->make()->url(), false, stream_context_create($arrContextOptions)));
+                $url = preg_replace_callback('#://([^/]+)/([^?]+)#', function ($match) {
+                    return '://' . $match[1] . '/' . join('/', array_map('rawurlencode', explode('/', $match[2])));
+                }, $adv->files[0]->make()->url());
+
+                $image = Image::make(file_get_contents($url, false, stream_context_create($arrContextOptions)));
 				$image->resize(
 					null,
 					setting_value('visiosoft.module.advs::thumbnail_height'),
