@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "আপনার বিজ্ঞাপনের স্থিতি বিক্রয় করা হয়েছে!",
 	'status_change' => "আপনার বিজ্ঞাপনের স্থিতি সেট করা হয়েছে: স্থিতি!",
 	'disabled_detailed_options_for_admin_role' => "বিশদ পণ্য বিকল্পগুলি অক্ষম।",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
