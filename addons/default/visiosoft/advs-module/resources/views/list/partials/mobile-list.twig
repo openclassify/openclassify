@@ -25,6 +25,8 @@
     {% endif %}
 
     <div id="mobileListing">
+        {{ addBlock('ad-list/partials/mobile-list', {'featured_advs': featured_advs, 'vars': _context})|raw }}
+
         {% for adv in advs %}
             <a href="{{ adv.detail_url }}" class="listing-item d-flex p-2">
                 <img src="{{ adv.cover_photo }}" alt="{{ adv.name }}" class="rounded-sm">
