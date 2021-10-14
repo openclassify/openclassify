@@ -37,5 +37,11 @@ return [
     'please_wait' => 'Παρακαλώ περιμένετε. Διαγραφή υπο-κατηγοριών',
     'category_selection' => 'Επιλογή κατηγορίας',
     'go_to_parent' => 'Μετάβαση στο γονέα',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];
