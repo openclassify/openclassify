@@ -37,5 +37,11 @@ return [
     'please_wait' => 'Xin vui lòng chờ. Xóa danh mục phụ',
     'category_selection' => 'Lựa chọn danh mục',
     'go_to_parent' => 'Đi tới cha mẹ',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];
