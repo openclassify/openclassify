@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => 'جدید جدید',
     'new_classified' => 'طبقه بندی جدید',
     'new_category' => 'دسته بندی جدید',
