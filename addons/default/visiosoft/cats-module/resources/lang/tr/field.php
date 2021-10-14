@@ -37,5 +37,11 @@ return [
     'please_wait' => 'Lütfen bekleyin. Alt Kategoriler Siliniyor',
     'category_selection' => 'Kategori Seçimi',
     'go_to_parent' => 'Kategoriye Dön',
-	'preview' => 'Ön İzleme'
+	'preview' => 'Ön İzleme',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];
