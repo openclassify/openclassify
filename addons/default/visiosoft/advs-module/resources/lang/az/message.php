@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "Elanın Statusu Satıldı Olaraq Dəyişdirildi!",
 	'status_change' => "Reklamınızın Vəziyyəti təyin olundu: status!",
 	'disabled_detailed_options_for_admin_role' => "Ətraflı məhsul seçimləri deaktiv edilmişdir.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
