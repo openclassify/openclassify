@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "Lo stato del tuo annuncio è stato impostato su Venduto!",
 	'status_change' => "Lo stato del tuo annuncio è stato impostato su: status!",
 	'disabled_detailed_options_for_admin_role' => "Le opzioni dettagliate del prodotto sono disabilitate.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
