@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "Din annonces status er sat til solgt!",
 	'status_change' => "Din annonces status er sat til: status!",
 	'disabled_detailed_options_for_admin_role' => "Detaljerede produktindstillinger er deaktiveret.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
