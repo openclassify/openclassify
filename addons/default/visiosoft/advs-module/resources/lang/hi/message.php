@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "आपके विज्ञापन की स्थिति बिक चुकी है!",
 	'status_change' => "आपके विज्ञापन की स्थिति सेट हो गई है: स्थिति!",
 	'disabled_detailed_options_for_admin_role' => "विस्तृत उत्पाद विकल्प अक्षम हैं।",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
