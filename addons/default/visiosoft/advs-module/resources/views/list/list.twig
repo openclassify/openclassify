@@ -21,7 +21,7 @@
                 <div id="pageTitle" class="d-flex justify-content-between border-bottom pb-2 px-3 mb-3">
                     <p>
                         {{ trans('visiosoft.module.advs::field.search_ad_result_text', {
-                            'count': advs.total,
+                            'count': (advs.total+featured_advs.total),
                             'name': catText ? catText : '',
                         })|raw }}
                     </p>
