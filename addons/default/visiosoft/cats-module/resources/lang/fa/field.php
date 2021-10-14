@@ -37,5 +37,11 @@ return [
     'please_wait' => 'لطفاً صبر کنید. حذف دسته بندی های فرعی',
     'category_selection' => 'انتخاب دسته',
     'go_to_parent' => 'به والدین بروید',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];
