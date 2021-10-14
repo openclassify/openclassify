@@ -2,7 +2,6 @@
 
 use Anomaly\Streams\Platform\Image\Command\MakeImageInstance;
 use Anomaly\Streams\Platform\Message\MessageBag;
-use Anomaly\Streams\Platform\Model\Advs\AdvsCustomFieldsEntryModel;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -38,8 +37,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function getDetailUrlAttribute()
     {
         // Checking for slug
-        if($this->attributes)
-        {
+        if ($this->attributes) {
             return $this->getAdvDetailLinkByModel($this, 'list');
         }
     }
@@ -73,13 +71,11 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function getCategory1Attribute()
     {
         return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first();
-
     }
 
     public function getCategory2Attribute()
     {
         return $this->hasMany('Visiosoft\CatsModule\Category\CategoryModel', 'id', 'cat1')->first();
-
     }
 
     public function getThumbnailAttribute()
@@ -112,6 +108,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         if ($addon = app('module.collection')->get($slug)) {
             return $addon->installed;
         }
+
         return false;
     }
 
@@ -120,8 +117,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         $isActive = DB::table('addons_extensions')->where('namespace', 'visiosoft.extension.' . $slug . '_provider')->first();
         if ($isActive == null) {
             return 0;
-        } else
-            return $isActive->enabled;
+        }
+
+        return $isActive->enabled;
     }
 
     public function is_active($id)
@@ -130,9 +128,11 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             ->where('advs_advs.id', $id)
             ->where('advs_advs.slug', '!=', "")
             ->first();
+
         if ($isActive->status != 'approved') {
             return 0;
         }
+
         return 1;
     }
 
@@ -148,13 +148,14 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             if ($nullable_ad) {
                 return $query->find($id);
             } else {
-                return $query->where('advs_advs.slug', '!=', "")
-                    ->find($id);
+                return $query->where('advs_advs.slug', '!=', "")->find($id);
             }
         }
+
         if ($nullable_ad) {
             return $query->newQuery();
         }
+
         return $query->where('advs_advs.slug', '!=', "");
     }
 
@@ -366,22 +367,6 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         return 0;
     }
 
-    public function saveCustomField($category_id, $field_id, $name)
-    {
-        $all = array();
-        $all['category_id'] = $category_id;
-        $all['field_id'] = $field_id;
-        $all['name'] = $name;
-
-        if (AdvsCustomFieldsEntryModel::create($all)) {
-            return response()->json([
-                'success' => true
-            ]);
-        } else {
-            abort(404);
-        }
-    }
-
     public function customfields()
     {
         if ($cFs = (array) json_decode($this->cf_json)) {
@@ -404,11 +389,6 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         return json_decode($this->cf_json, true);
     }
-
-    // public function getCustomFieldEditId($id) {
-    //     $custom_field = AdvsCustomFieldsEntryModel::query()->where('advs_custom_fields.id', $id)->first();
-    //     return DB::table('streams_assignments')->where('field_id', $custom_field->field_id)->first();
-    // }
 
     public function priceFormat($adv)
     {

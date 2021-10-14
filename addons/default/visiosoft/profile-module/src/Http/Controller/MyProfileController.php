@@ -7,7 +7,6 @@ use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Visiosoft\AdvsModule\Adv\AdvModel;
-use Visiosoft\AdvsModule\Adv\Event\ChangeStatusAd;
 use Visiosoft\AdvsModule\Status\Contract\StatusRepositoryInterface;
 use Visiosoft\LocationModule\Country\CountryModel;
 use Visiosoft\AlgoliaModule\Search\SearchModel;
@@ -98,11 +97,11 @@ class MyProfileController extends PublicController
         }
     }
 
-    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events, AdvModel $advModel)
+    public function statusAds($id, $type, AdvModel $advModel)
     {
         $ad = $advModel->getAdv($id);
-        $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
-        $default_published_time = $settings->value('visiosoft.module.advs::default_published_time');
+        $auto_approved = setting_value('visiosoft.module.advs::auto_approve');
+        $default_published_time = setting_value('visiosoft.module.advs::default_published_time');
 
         if ($auto_approved == true AND $type == 'pending_admin') {
             $type = "approved";
@@ -125,13 +124,12 @@ class MyProfileController extends PublicController
         $isActiveAlgolia = $isActiveAlgolia->is_enabled('algolia');
         if ($isActiveAlgolia) {
             $algolia = new SearchModel();
-            $algolia->updateStatus($id, $type, $settings);
+            $algolia->updateStatus($id, $type);
         }
+
         $status = $advModel->statusAds($id, $type);
-        $events->dispatch(new ChangeStatusAd($id, $settings));//Create Notify
 
         return response()->json(['status' => $status]);
-
     }
 
 

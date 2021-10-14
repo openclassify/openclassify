@@ -1,13 +1,9 @@
 <?php namespace Visiosoft\AdvsModule\Adv\Table\Handler;
 
-use Anomaly\SettingsModule\Setting\Contract\SettingRepositoryInterface;
 use Anomaly\Streams\Platform\Model\EloquentModel;
 use Anomaly\Streams\Platform\Ui\Table\Component\Action\ActionHandler;
 use Anomaly\Streams\Platform\Ui\Table\TableBuilder;
-use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\DeletedAd;
-use Visiosoft\AdvsModule\Adv\Table\AdvTableBuilder;
-
 
 class Delete extends ActionHandler
 {

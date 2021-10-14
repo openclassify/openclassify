@@ -11,8 +11,8 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Cookie;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Command\IsOptionsByCategory;
+use Visiosoft\AdvsModule\Adv\Command\UpdateClassifiedStatus;
 use Visiosoft\AdvsModule\Adv\Contract\AdvRepositoryInterface;
-use Visiosoft\AdvsModule\Adv\Event\ChangedStatusAd;
 use Visiosoft\AdvsModule\Adv\Event\CreatedAd;
 use Visiosoft\AdvsModule\Adv\Event\EditedAd;
 use Visiosoft\AdvsModule\Adv\Event\EditedAdCategory;
@@ -29,7 +29,6 @@ use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 use Visiosoft\LocationModule\District\DistrictModel;
 use Visiosoft\LocationModule\Neighborhood\NeighborhoodModel;
 use Visiosoft\LocationModule\Village\VillageModel;
-use Visiosoft\PackagesModule\Package\PackageModel;
 use Visiosoft\ProfileModule\Adress\Contract\AdressRepositoryInterface;
 use Visiosoft\SeoModule\Legend\Command\AddMetaData;
 
@@ -1019,36 +1018,20 @@ class AdvsController extends PublicController
         );
     }
 
-    public function statusAds($id, $type, SettingRepositoryInterface $settings, Dispatcher $events)
+    public function statusAds($id, $type)
     {
         $ad = $this->adv_model->getAdv($id);
-        $auto_approved = $settings->value('visiosoft.module.advs::auto_approve');
-        $default_published_time = $settings->value('visiosoft.module.advs::default_published_time');
+        $autoApprove = setting_value('visiosoft.module.advs::auto_approve');
 
-        if ($auto_approved == true and $type == 'pending_admin') {
+        if ($autoApprove && $type == 'pending_admin') {
             $type = "approved";
         }
-        if ($type == "approved" and $auto_approved != true) {
+
+        if ($type == "approved" && !$autoApprove) {
             $type = "pending_admin";
         }
 
-        if ($type == "approved") {
-            $this->adv_model->publish_at_Ads($id);
-            if ($ad->finish_at == NULL and $type == "approved") {
-                if ($this->adv_model->is_enabled('packages')) {
-                    $packageModel = new PackageModel();
-                    $published_time = $packageModel->reduceTimeLimit($ad->cat1);
-                    if ($published_time != null) {
-                        $default_published_time = $published_time;
-                    }
-                }
-                $this->adv_model->finish_at_Ads($id, $default_published_time);
-            }
-        }
-
-        $this->adv_model->statusAds($id, $type);
-
-        event(new ChangedStatusAd($ad));//Create Notify
+        $this->dispatch(new UpdateClassifiedStatus($ad, $type));
 
         if ($type === 'approved') {
             $message = trans('visiosoft.module.advs::message.approve_status_change');
@@ -1057,7 +1040,9 @@ class AdvsController extends PublicController
         } else {
             $message = trans('visiosoft.module.advs::message.passive_status_change');
         }
+
         $this->messages->success($message);
+
         return back();
     }
 

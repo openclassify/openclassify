@@ -1,6 +1,5 @@
 <?php namespace Visiosoft\AdvsModule;
 
-
 use Anomaly\FilesModule\File\FileModel;
 use Anomaly\Streams\Platform\Addon\AddonCollection;
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
