@@ -1,6 +1,6 @@
 {{ asset_add("scripts.js", "streams::js/table/table.js") }}
 
-{% if not actions.empty() %}
+{% if not actions.isEmpty() %}
     {{ asset_add("scripts.js", "streams::js/table/actions.js") }}
 {% endif %}
 
@@ -15,11 +15,11 @@
 
     {{ view(table.options.heading ?: "streams::table/partials/heading", {'table': table}) }}
 
-    {% if not table.rows.empty() %}
+    {% if not table.rows.isEmpty() %}
         {% block card %}
             <div class="card">
 
-                {{ form_open({ 'url': url_full() }) }}
+                {{ form_open({ 'url': table.options.url ?: url_full() }) }}
                 <div class="table-stack">
                     <table
                             class="
@@ -39,13 +39,15 @@
                                     {% if table.options.sortable %}
                                         <td>
                                             {{ icon('fa fa-arrows handle') }}
-                                            <input type="hidden" name="{{ row.table.options.prefix }}order[]" value="{{ row.key }}"/>
+                                            <input type="hidden" name="{{ row.table.options.prefix }}order[]"
+                                                   value="{{ row.key }}"/>
                                         </td>
                                     {% endif %}
 
-                                    {% if not table.actions.empty() %}
+                                    {% if not table.actions.isEmpty() %}
                                         <td>
-                                            <input type="checkbox" data-toggle="action" name="{{ row.table.options.prefix }}id[]" value="{{ row.key }}"/>
+                                            <input type="checkbox" data-toggle="action"
+                                                   name="{{ row.table.options.prefix }}id[]" value="{{ row.key }}"/>
                                         </td>
                                     {% endif %}
 
@@ -83,7 +85,9 @@
                 </div>
             </div>
         {% endblock %}
+
     {% endif %}
+
 </div>
 <script>
     var advanced_update_url = "{{ url_route('visiosoft.module.advs::ajax_multiple_update') }}";

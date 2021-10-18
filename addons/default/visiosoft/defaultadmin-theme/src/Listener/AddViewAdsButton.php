@@ -45,7 +45,7 @@ class AddViewAdsButton
             $dropdown = array_merge($buttons['settings']['dropdown'], [
                 "ads" => [
                     "text" => trans('visiosoft.theme.defaultadmin::button.view_ads'),
-                    "href" => "admin/advs?filter_User={entry.id}"
+                    "href" => "admin/advs?filter_user={entry.id}"
                 ]
             ]);
             $buttons['settings']['dropdown'] = $dropdown;

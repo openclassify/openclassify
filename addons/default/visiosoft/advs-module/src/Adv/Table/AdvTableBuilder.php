@@ -51,7 +51,9 @@ class AdvTableBuilder extends TableBuilder
     protected $options = [
         'order_by' => [
             'id' => 'DESC',
-        ]
+        ],
+        'table_view' => 'visiosoft.module.advs::admin/table/table'
+
     ];
 
     protected $assets = [
