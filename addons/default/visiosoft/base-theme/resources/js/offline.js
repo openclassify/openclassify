@@ -1,7 +1,7 @@
 /* Offline */
 window.addEventListener('offline', () => {
-    $('body > *').hide();
-    $('#offline').show();
+    $('body > *').addClass('offline-hide');
+    $('#offline').addClass('offline-show');
 });
 
 $('#offline button').click(function () {

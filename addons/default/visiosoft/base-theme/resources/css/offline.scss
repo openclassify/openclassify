@@ -1,3 +1,11 @@
+.offline-hide {
+  display: none !important;
+}
+
+.offline-show {
+  display: block !important;
+}
+
 #offline {
   display: none;
 
@@ -17,7 +25,7 @@
     p {
       color: #7B7B90;
     }
-    
+
     button {
       background-color: #ebeeff;
       color: #007eff;
