@@ -569,6 +569,13 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->orderBy('publish_at', 'desc');
     }
 
+    public function expiredAds() {
+        return $this->newQuery()
+            ->whereDate('finish_at', '<', date("Y-m-d H:i:s"))
+            ->where('slug', '!=', '')
+            ->orderBy('publish_at', 'desc');
+    }
+
     public function findByCFJSON($key, $value)
     {
         return $this->currentAds()
