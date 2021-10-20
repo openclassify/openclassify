@@ -11,8 +11,14 @@ class AdvApiCollection extends AdvRepository
 
     public function getMyAds()
     {
-        return $this->model->userAdv()
-            ->where('advs_advs.finish_at', '>', date('Y-m-d H:i:s'));
+        return $this->currentAds()
+            ->where('created_by_id', Auth::id());
+    }
+
+    public function getMyExpiredAds()
+    {
+        return $this->expiredAds()
+            ->where('created_by_id', Auth::id());
     }
 
     public function createNewAd(array $params)
@@ -40,7 +46,7 @@ class AdvApiCollection extends AdvRepository
 
         $this->checkOwner($ad);
 
-        unset($params['ad_id'],$params['id'], $params['created_at'], $params['updated_at'],
+        unset($params['ad_id'], $params['id'], $params['created_at'], $params['updated_at'],
             $params['deleted_at'], $params['created_by_id'], $params['updated_by_id']);
 
 
@@ -49,7 +55,7 @@ class AdvApiCollection extends AdvRepository
             'updated_at' => Carbon::now()
         ];
 
-        $ad->update(array_merge($update_params,$params));
+        $ad->update(array_merge($update_params, $params));
 
         return $ad;
     }

@@ -271,7 +271,9 @@ class CategoryController extends AdminController
 
                 $file = $uploader->upload($file, $folder);
 
-                $category->setCategoryIconUrl($file->make()->url());
+                $url = route('anomaly.module.files::files.view',['folder' => $folder->slug,'name' => $file->name]);
+
+                $category->setCategoryIconUrl($url);
             } catch (\Exception $exception) {
                 $this->messages->error($exception->getMessage());
             }
