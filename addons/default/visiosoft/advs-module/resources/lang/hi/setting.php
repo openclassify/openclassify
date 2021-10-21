@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Google सांख्यिकी कोड',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'सदस्य पंजीकरण ईमेल आवश्यकता',
     ],
