@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Google統計コード',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => '会員登録メールの要件',
     ],
