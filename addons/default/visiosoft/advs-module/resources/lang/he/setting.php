@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'קוד סטטיסטי של גוגל',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'דרישת דוא"ל לרישום חבר',
     ],
