@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'گوگل شماریاتی کوڈ',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'ممبر اندراج ای میل کی ضرورت',
     ],
