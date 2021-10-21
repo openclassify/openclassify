@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Código estatístico do Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'Requisito de e-mail de registro de membro',
     ],
