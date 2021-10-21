@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Статистический код Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'Требуется регистрация по электронной почте',
     ],
