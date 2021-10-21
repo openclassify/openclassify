@@ -12,6 +12,7 @@ return [
                     'show_lang_url',
                     'iban_numbers',
                     'google_statistic_code',
+                    'body_custom_space',
                     'ogImage',
                     'free_currencyconverterapi_key',
                     'hide_price_categories',

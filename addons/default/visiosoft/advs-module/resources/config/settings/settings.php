@@ -74,6 +74,14 @@ return [
             'default_value' => '',
         ],
     ],
+    'body_custom_space' => [
+        'type' => 'anomaly.field_type.editor',
+        'bind' => 'adv.body_custom_space',
+        'env' => 'ADV_BODY_CUSTOM_SPACE',
+        'config' => [
+            'default_value' => '',
+        ],
+    ],
     'logo' => [
         'type' => 'anomaly.field_type.file',
         'bind' => 'adv.logo',
