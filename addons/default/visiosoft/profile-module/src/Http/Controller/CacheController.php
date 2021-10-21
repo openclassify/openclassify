@@ -9,9 +9,9 @@ class CacheController extends PublicController
     public function getUserInfo()
     {
         $user = auth()->user();
-        $profile_img =  $this->dispatch(
+        $profile_img =  $user ? $this->dispatch(
             new MakeImageInstance($user->file ?: 'theme::images/no_profile.svg', 'img')
-        )->url();
+        )->url() : $user;
         $user = $user ? $user->first_name . ' ' . $user->last_name : $user;
 
         $getAddBlockHtml = new addBlock('navigation/dropdown', []);
