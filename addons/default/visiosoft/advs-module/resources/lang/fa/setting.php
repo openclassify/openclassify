@@ -129,6 +129,9 @@ return [
     'google_statistic_code' => [
         'name' => 'کد آماری Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'ثبت نام از طریق پست الکترونیکی',
     ],
