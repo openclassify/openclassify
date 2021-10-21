@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Googlen tilastokoodi',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'Jäsenrekisteröinnin sähköpostivaatimus',
     ],
