@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Google统计代码',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => '会员注册电子邮件要求',
     ],
