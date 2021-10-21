@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Statistik Kod',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'İstifadəçi Qeyd E-poçtu tələbi',
     ],
