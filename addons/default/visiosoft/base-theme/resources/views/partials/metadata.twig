@@ -7,7 +7,7 @@
 {% include "visiosoft.theme.base::partials/metatags" %}
 
 <!-- Favicon -->
-{% set favicon = file(setting_value('visiosoft.module.advs::favicon')).url %}
+{% set favicon = file(setting_value('visiosoft.module.advs::favicon')).make.url %}
 {% if favicon %}
     {{ favicons(favicon) }}
 {% endif %}
