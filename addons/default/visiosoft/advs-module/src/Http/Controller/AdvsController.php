@@ -484,6 +484,10 @@ class AdvsController extends PublicController
             }
         }
 
+        if (\request()->page) {
+            $metaTitle .= ($metaTitle ? " | " : "") . \request()->page;
+        }
+
         $this->template->set('showTitle', $showTitle);
         $this->template->set('meta_title', $metaTitle);
 
@@ -672,14 +676,14 @@ class AdvsController extends PublicController
             }
         }
 
-        $options = $this->optionRepository->findAllBy('adv_id', $id);
-
         $features = array();
         if ($this->adv_model->is_enabled('customfields')) {
             $features = app('Visiosoft\CustomfieldsModule\Http\Controller\CustomFieldsController')->view($adv);
         }
 
         $isActiveDopings = $this->adv_model->is_enabled('dopings');
+
+        $this->template->set('meta_title', trans('visiosoft.module.advs::field.preview') . " $adv->name" . ' ' . setting_value('streams::domain'));
 
         return $this->view->make('visiosoft.module.advs::new-ad/preview/preview',
             compact('adv', 'categories', 'features', 'isActiveDopings'));
