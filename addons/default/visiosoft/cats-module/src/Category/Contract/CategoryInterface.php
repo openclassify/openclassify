@@ -19,4 +19,6 @@ interface CategoryInterface extends EntryInterface
     public function setCategoryIconUrl($url);
 
     public function getSubCategories();
+
+    public function scopeWithTrans($query);
 }
