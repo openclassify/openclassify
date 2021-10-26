@@ -136,7 +136,7 @@ return [
     ],
     'market_place' => [
         'name' => 'Market Place',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -283,9 +283,9 @@ return [
         'name' => 'Tampilkan Baris Pajak',
         'instructions' => 'Ketika opsi ini diaktifkan, Anda dapat mengatur tarif pajak pada halaman pembuatan iklan.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	],
+    'hide_contact_created_at' => [
+        'name' => 'Hide Contact Fields For in Create New Ad'
+    ],
     'show_input_flag' => [
         'name' => 'Show Flags on Input',
         'instructions' => 'Show flag and description on translatable inputs'
@@ -296,5 +296,9 @@ return [
     ],
     'only_email_login' => [
         'name' => 'Only Email Login'
-    ]
+    ],
+    'preview_mode' => [
+        'name' => 'Preview Mode',
+        'instructions' => 'When this mode is enabled, the ad is previewed by the user.'
+    ],
 ];
