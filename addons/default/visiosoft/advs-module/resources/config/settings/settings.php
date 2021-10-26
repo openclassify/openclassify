@@ -485,4 +485,11 @@ return [
             'default_value' => false,
         ]
     ],
+    'preview_mode' => [
+        'type' => 'anomaly.field_type.boolean',
+        'bind' => 'adv.preview_mode',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
 ];
