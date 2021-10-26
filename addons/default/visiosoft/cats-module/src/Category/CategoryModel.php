@@ -129,4 +129,15 @@ class CategoryModel extends CatsCategoryEntryModel implements CategoryInterface
     {
         return $this->where('parent_category_id', $this->getId())->get();
     }
+
+    public function scopeWithTrans($query)
+    {
+        return $query
+            ->leftJoin('cats_category_translations as cats_trans', function ($join) {
+                $join->on('cats_category.id', '=', 'cats_trans.entry_id');
+                $join->whereIn(
+                    'locale', [config('app.locale'), setting_value('streams::default_locale'), 'en']
+                );
+            });
+    }
 }
