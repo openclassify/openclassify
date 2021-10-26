@@ -930,7 +930,12 @@ class AdvsController extends PublicController
                 event(new EditedAd($before_editing, $adv));
             }
 
-            return redirect(route('advs_preview', [$this->request->update_id]));
+            if (config('adv.preview_mode')) {
+                return redirect(route('advs_preview', [$this->request->update_id]));
+            }
+
+            return redirect(route('adv_detail_seo', [$adv->slug, $adv->id]));
+
         }
 
         /* New Create Adv */
@@ -1017,7 +1022,7 @@ class AdvsController extends PublicController
             'visiosoft.module.advs::new-ad/new-create',
             compact(
                 'id', 'cats_d', 'cats', 'adv', 'custom_fields', 'options',
-                'hidePrice','is_options', 'configurations', 'rawClassified'
+                'hidePrice', 'is_options', 'configurations', 'rawClassified'
             )
         );
     }
