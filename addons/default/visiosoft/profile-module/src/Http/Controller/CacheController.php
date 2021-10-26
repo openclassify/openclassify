@@ -12,7 +12,7 @@ class CacheController extends PublicController
         $profile_img =  $user ? $this->dispatch(
             new MakeImageInstance($user->file ?: 'theme::images/no_profile.svg', 'img')
         )->url() : $user;
-        $user = $user ? $user->first_name . ' ' . $user->last_name : $user;
+        $user = $user ? $user->name() : $user;
 
         $getAddBlockHtml = new addBlock('navigation/dropdown', []);
         $addBlockHtml = $getAddBlockHtml->handle();
