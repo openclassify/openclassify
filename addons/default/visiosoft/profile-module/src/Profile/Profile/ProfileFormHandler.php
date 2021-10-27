@@ -35,6 +35,11 @@ class ProfileFormHandler
             'google_address' => $builder->getPostValue('google_address') ?: null,
         ];
 
+        $assignments = $userModel->getAssignments();
+        foreach ($assignments->notLocked()->fieldSlugs() as $field) {
+            $parameters[$field] = $builder->getPostValue($field) ?: null;
+        }
+
         if (($valid = $this->validate($parameters)) !== true) {
             $messages->error($valid['msg']);
             return;
@@ -50,13 +55,16 @@ class ProfileFormHandler
 
         $user = $userModel->newQuery()->find(\auth()->id());
 
-        // Prevent removing already filled fields
-        foreach ($parameters as $field => $value) {
-            if ($user->$field && !$value) {
-                $messages->error('visiosoft.module.profile::message.can_not_remove_filled_fields');
-                return;
-            }
-        }
+        /**
+         * Deprecated will bre removed after this issue is done #4804
+         */
+//        // Prevent removing already filled fields
+//        foreach ($parameters as $field => $value) {
+//            if ($user->$field && !$value) {
+//                $messages->error('visiosoft.module.profile::message.can_not_remove_filled_fields');
+//                return;
+//            }
+//        }
 
         $oldCustomerInfo = $user->toArray();
 
