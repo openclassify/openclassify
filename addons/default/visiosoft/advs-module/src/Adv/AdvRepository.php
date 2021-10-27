@@ -398,6 +398,13 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 		return $this->model->orderBy('created_at', 'DESC')->whereIn('advs_advs.id', $ids)->get();
 	}
 
+    public function hideAdsWithoutOutOfStock($ads) {
+        return $ads->filter(
+            function ($entry) {
+                return (($entry->is_get_adv == true && $entry->stock > 0) || ($entry->is_get_adv == false));
+            }
+        );
+    }
 
 	/**
 	 * Get Latest Ads
@@ -410,15 +417,27 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 			->get();
 
         if (setting_value('visiosoft.module.advs::hide_out_of_stock_products_without_listing')) {
-            $latest_advs = $latest_advs->filter(
-                function ($entry) {
-                    return (($entry->is_get_adv == true && $entry->stock > 0) || ($entry->is_get_adv == false));
-                }
-            );
+            $latest_advs = $this->hideAdsWithoutOutOfStock($latest_advs);
         }
 
 		return $this->model->getLocationNames($latest_advs);
 	}
+
+    public function latestAdsWithout($keyword, $value)
+    {
+        $latest_ads = $this->model->currentAds()
+            ->where(function ($q) use ($keyword, $value) {
+                   return $q->where($keyword, '<>', $value);
+            })
+            ->limit(setting_value('visiosoft.module.advs::latest-limit'))
+            ->get();
+
+        if (setting_value('visiosoft.module.advs::hide_out_of_stock_products_without_listing')) {
+            $latest_ads = $this->hideAdsWithoutOutOfStock($latest_ads);
+        }
+
+        return $this->model->getLocationNames($latest_ads);
+    }
 
 	public function bestsellerAds($catId = null, $limit = 10)
 	{
