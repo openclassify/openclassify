@@ -289,6 +289,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
         foreach ($advs as $adv) {
             $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
             $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
+            $district = DistrictModel::query()->where('location_districts.id', $adv->district)->first();
 
             if ($country != null) {
                 $adv->setAttribute('country_name', $country->name);
@@ -296,6 +297,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
             }
             if ($city != null) {
                 $adv->setAttribute('city_name', $city->name);
+            }
+            if ($district != null) {
+                $adv->setAttribute('district_name', $district->name);
             }
         }
         return $advs;
