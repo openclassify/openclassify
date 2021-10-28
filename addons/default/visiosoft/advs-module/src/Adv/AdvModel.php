@@ -287,19 +287,22 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     public function getLocationNames($advs)
     {
         foreach ($advs as $adv) {
-            $country = CountryModel::query()->where('location_countries.id', $adv->country_id)->first();
-            $city = CityModel::query()->where('location_cities.id', $adv->city)->first();
-            $district = DistrictModel::query()->where('location_districts.id', $adv->district)->first();
+            $locale = config('app.locale', config('streams::locales.default'));
 
-            if ($country != null) {
-                $adv->setAttribute('country_name', $country->name);
-                $adv->setAttribute('country_abv', $country->abv);
-            }
-            if ($city != null) {
-                $adv->setAttribute('city_name', $city->name);
-            }
-            if ($district != null) {
-                $adv->setAttribute('district_name', $district->name);
+            $country_id = $adv->country_id ?? 0;
+            $city_id = $adv->city ?? 0;
+            $district_id = $adv->district ?? 0;
+
+            $q = collect(DB::select("
+                    SELECT country.abv as country_abv, country_trans.name as country_name,
+                        (SELECT name FROM default_location_cities_translations as city_trans WHERE city_trans.id = " . $city_id . " AND city_trans.locale = '" . $locale . "') as city_name,
+                        (SELECT name FROM default_location_districts_translations as district_trans WHERE district_trans.id = " . $district_id . " AND district_trans.locale = '" . $locale . "') as district_name
+                    FROM default_location_countries AS country
+                    JOIN default_location_countries_translations AS country_trans on country.id = country_trans.entry_id WHERE country.id = " . $country_id . " and country_trans.locale = '" . $locale . "'
+                    "))->first();
+
+            foreach ($q as $key => $value){
+                $adv->setAttribute($key, $value);
             }
         }
         return $advs;
