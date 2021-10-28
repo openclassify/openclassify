@@ -288,10 +288,9 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         foreach ($advs as $adv) {
             $locale = config('app.locale', config('streams::locales.default'));
-
-            $country_id = $adv->country_id ?? 0;
-            $city_id = $adv->city ?? 0;
-            $district_id = $adv->district ?? 0;
+            $country_id = !empty($adv->country_id)  ? $adv->country_id : 0;
+            $city_id = !empty($adv->city) ? $adv->city : 0;
+            $district_id = !empty($adv->district) ? $adv->district : 0;
 
             $q = collect(DB::select("
                     SELECT country.abv as country_abv, country_trans.name as country_name,
@@ -301,8 +300,10 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
                     JOIN default_location_countries_translations AS country_trans on country.id = country_trans.entry_id WHERE country.id = " . $country_id . " and country_trans.locale = '" . $locale . "'
                     "))->first();
 
-            foreach ($q as $key => $value){
-                $adv->setAttribute($key, $value);
+            if (is_object($q)) {
+                foreach ($q as $key => $value){
+                    $adv->setAttribute($key, $value);
+                }
             }
         }
         return $advs;
