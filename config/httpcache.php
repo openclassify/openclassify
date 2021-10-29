@@ -12,7 +12,7 @@ return [
      | Set the cache to a writable dir, outside the document root.
      |
      */
-    'enabled'   => env('HTTP_CACHE', false),
+    'enabled'   => env('HTTP_CACHE', true),
     'esi'       => false,
     'cache_dir' => storage_path('httpcache'),
 

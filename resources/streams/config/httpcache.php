@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'enabled' => env('HTTP_CACHE', false),
+    'enabled' => env('HTTP_CACHE', true),
 
     /*
     |--------------------------------------------------------------------------
