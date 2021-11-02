@@ -5,6 +5,7 @@ use Visiosoft\LocationModule\City\Contract\CityRepositoryInterface;
 use Visiosoft\LocationModule\City\Form\CityFormBuilder;
 use Visiosoft\LocationModule\City\Table\CityTableBuilder;
 use Anomaly\Streams\Platform\Http\Controller\AdminController;
+use Visiosoft\LocationModule\Country\Contract\CountryRepositoryInterface;
 
 class CitiesController extends AdminController
 {
