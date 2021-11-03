@@ -74,4 +74,6 @@ interface AdvRepositoryInterface extends EntryRepositoryInterface
     public function getUnexplainedClassifiedsReport();
 
     public function getNoImageClassifiedsReport();
+
+    public function getClassifiedsByCoordinates($lat, $lng, $distance = 50);
 }

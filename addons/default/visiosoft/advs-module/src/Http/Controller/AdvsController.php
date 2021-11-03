@@ -1204,4 +1204,24 @@ class AdvsController extends PublicController
         $response['maxQuantity'] = $adv->stock;
         return $response;
     }
+
+    public function getClassifiedsByCoordinates()
+    {
+        \request()->validate([
+            'lat' => 'required',
+            'lng' => 'required',
+        ]);
+
+        try {
+            return [
+                'success' => true,
+                'classifieds' => $this->adv_repository->getClassifiedsByCoordinates(\request()->lat, \request()->lng),
+            ];
+        } catch (\Exception $e) {
+            return [
+                'success' => false,
+                'msg' => $e->getMessage()
+            ];
+        }
+    }
 }

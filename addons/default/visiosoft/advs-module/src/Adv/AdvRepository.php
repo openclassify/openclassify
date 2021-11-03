@@ -727,4 +727,17 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
 
         return $classifieds->paginate($limit, ['*'], 'page', $page);
     }
+
+    public function getClassifiedsByCoordinates($lat, $lng, $distance = 50)
+    {
+        return $this
+            ->currentAds()
+            ->whereNotNull('map_Val')
+            ->select(
+                DB::raw("*, ( 3959 * acos( cos( radians('$lat') ) * cos( radians( SUBSTRING_INDEX(map_Val, ',', 1) ) ) * cos( radians( SUBSTRING_INDEX(map_Val, ',', -1) ) - radians('$lng') ) + sin( radians('$lat') ) * sin( radians( SUBSTRING_INDEX(map_Val, ',', 1) ) ) ) ) AS distance")
+            )
+            ->havingRaw("distance < $distance")
+            ->orderBy('distance')
+            ->get();
+    }
 }
