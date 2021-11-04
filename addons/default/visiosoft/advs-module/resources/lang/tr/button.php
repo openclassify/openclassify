@@ -41,7 +41,7 @@ return [
     'new_options_configuration' => 'Yeni Seçenek yapılandırması',
     'new_option_configuration' => 'Yeni Seçenek yapılandırması',
 	'create_configurations' => 'Konfigürasyonlar Oluşturun',
-	'replicate' => 'Tekrarla',
+	'replicate' => 'İlanı Kopyala',
 	'fast_create' => 'Hızlı ekle',
 	'publish' => 'Yayınla',
 	'import' => 'İçe aktar',
