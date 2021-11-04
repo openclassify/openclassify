@@ -98,7 +98,13 @@ class AdvsController extends AdminController
                     $adv['cover_photo'],
                     $adv['locale'],
                     $adv['name'],
-                    $adv['advs_desc']
+                    $adv['advs_desc'],
+                    $adv['detail_url'],
+                    $adv['currency_price'],
+                    $adv['category1'],
+                    $adv['currency_standard_price'],
+                    $adv['category2'],
+                    $adv['thumbnail'],
                 );
                 $newAdv = $this->advRepository->create(array_merge($adv, [
                     'slug' => $adv['slug'] . '_' . time(),
