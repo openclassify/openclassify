@@ -1,6 +1,7 @@
 <?php namespace Visiosoft\MediaFieldType;
 
 use Anomaly\Streams\Platform\Addon\AddonServiceProvider;
+use Visiosoft\MediaFieldType\Console\Commands\CheckImages;
 
 /**
  * Class MediaFieldTypeServiceProvider
@@ -26,5 +27,9 @@ class MediaFieldTypeServiceProvider extends AddonServiceProvider
         'streams/media-field_type/handle'          => 'Visiosoft\MediaFieldType\Http\Controller\UploadController@upload',
         'streams/media-field_type/recent'          => 'Visiosoft\MediaFieldType\Http\Controller\UploadController@recent',
         'image/rotate'          => 'Visiosoft\MediaFieldType\Http\Controller\UploadController@rotate',
+    ];
+
+    protected $commands = [
+        CheckImages::class,
     ];
 }
