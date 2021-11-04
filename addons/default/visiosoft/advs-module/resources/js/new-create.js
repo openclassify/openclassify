@@ -29,7 +29,7 @@ filter.getCats = (catId, divId) => {
 };
 
 $(document).ready(function () {
-    if ($('input[name="slug"]').val() == "") {
+    if (!$('input[name="slug"]').val()) {
         $("select[name='currency']").val(default_currency);
     }
 

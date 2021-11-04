@@ -177,6 +177,7 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
         'class/getcats/{id}' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@getCatsForNewAd',
         'mapJson' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@mapJson',
         'check_user' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@checkUser',
+        'api/classified/get-by-coordinates' => 'Visiosoft\AdvsModule\Http\Controller\AdvsController@getClassifiedsByCoordinates',
 
         // AjaxController
         'admin/advs/ajax' => [
