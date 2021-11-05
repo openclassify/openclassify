@@ -715,6 +715,7 @@ class AdvsController extends PublicController
 
         if ($ad->created_by_id != Auth::id()) {
             $this->messages->error(trans('visiosoft.module.advs::message.delete_author_error'));
+            return back();
         }
 
         $ad->delete();
