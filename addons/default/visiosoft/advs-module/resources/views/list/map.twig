@@ -42,11 +42,9 @@
                 url: '{{ url('mapJson') }}',
                 data: QueryString(window.location.href),
                 success: function (data) {
-                    console.log(data)
                     var ilans = data;
                     var locations = [];
                     ilans.forEach(function (i, key) {
-                        console.log(2)
                         if (i.map_Val) {
                             countMap++;
                             var loc_array = i.map_Val.split(',');
