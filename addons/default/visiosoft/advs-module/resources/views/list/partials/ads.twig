@@ -28,7 +28,11 @@
                     {% endif %}
                     <div class="action-data d-flex align-items-center text-truncate">
 
-                        {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
+                        {{ addBlock(
+                            'list/extra-actions',
+                            {'ad': adv, 'vars': _context},
+                            ['favs', 'comparisons', 'offers']
+                        )|raw }}
 
                     </div>
                 </td>
