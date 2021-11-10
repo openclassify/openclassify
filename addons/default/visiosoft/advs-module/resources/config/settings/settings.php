@@ -500,4 +500,10 @@ return [
             'default_value' => true,
         ],
     ],
+    'show_order_note' => [
+        'type' => 'anomaly.field_type.boolean',
+        'config' => [
+            'default_value' => true,
+        ],
+    ],
 ];

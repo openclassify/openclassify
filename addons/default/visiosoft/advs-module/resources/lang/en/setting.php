@@ -301,4 +301,8 @@ return [
         'name' => 'Preview Mode',
         'instructions' => 'When this mode is enabled, the ad is previewed by the user.'
     ],
+    'show_order_note' => [
+        'name' => 'Show Order Note',
+        'instructions' => "Show the order note field which is used to show the customers custom text when their order's payment is approved."
+    ],
 ];

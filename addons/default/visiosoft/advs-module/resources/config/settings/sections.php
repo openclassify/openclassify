@@ -67,6 +67,7 @@ return [
                     'show_breadcrumb_when_creating_ad',
                     'show_post_ad_agreement',
                     'show_input_flag',
+                    'show_order_note',
                 ],
             ],
             'ads_image' => [
