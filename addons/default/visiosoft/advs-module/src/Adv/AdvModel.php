@@ -28,6 +28,7 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
 	    'currency_standard_price',
 	    'category2',
         'thumbnail',
+        'video',
     ];
 
     protected $cascades = [
@@ -82,9 +83,24 @@ class AdvModel extends AdvsAdvsEntryModel implements AdvInterface
     {
         if ($this->cover_photo == null) {
             return $this->dispatch(new MakeImageInstance('visiosoft.theme.base::images/no-image.png', 'img'))->url();
-        } else {
-            return url($this->cover_photo);
         }
+
+        return url($this->cover_photo);
+    }
+
+    public function getVideoAttribute()
+    {
+        if (is_module_installed('visiosoft.module.cloudinary')) {
+            $url = app('Visiosoft\CloudinaryModule\Http\Controller\VideoController')->getVideoUrl($this->id);
+            $thumbnail = str_replace('mp4', 'jpg', $url);
+
+            return [
+                'url' => $url,
+                'thumbnail' => $thumbnail,
+            ];
+        }
+
+        return null;
     }
 
     public function getTransNameAttribute()
