@@ -30,7 +30,7 @@ return [
         'instructions' => 'برای اضافه کردن نمادهایی که نوع طبقه را نشان می دهد ، استفاده می شود.',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'والدین',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
@@ -42,6 +42,6 @@ return [
     // Report
     'undefined_category' => 'Undefined Category',
     'categories_with_no_meta_report' => 'Categories with No Meta Report',
-    'category' => 'Category',
+    'category' => 'دسته بندی',
     'id' => 'ID',
 ];
