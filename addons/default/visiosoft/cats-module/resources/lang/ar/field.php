@@ -30,7 +30,7 @@ return [
         'instructions' => 'يتم استخدامه لإضافة الرموز التي تشير إلى نوع الفئة.',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'الأبوين',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
@@ -42,6 +42,6 @@ return [
     // Report
     'undefined_category' => 'Undefined Category',
     'categories_with_no_meta_report' => 'Categories with No Meta Report',
-    'category' => 'Category',
+    'category' => 'الفئة',
     'id' => 'ID',
 ];
