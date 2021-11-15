@@ -37,11 +37,11 @@ return [
     'please_wait' => 'Molimo pričekajte.Brisanje potkategorija',
     'category_selection' => 'Selekcija kategorija',
     'go_to_parent' => 'Idi na Parent-a',
-	'preview' => 'Preview',
+	'preview' => 'Pregled',
 
     // Report
     'undefined_category' => 'Undefined Category',
     'categories_with_no_meta_report' => 'Categories with No Meta Report',
-    'category' => 'Category',
+    'category' => 'Kategorija',
     'id' => 'ID',
 ];
