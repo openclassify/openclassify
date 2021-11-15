@@ -495,4 +495,12 @@ return [
     'receive_messages_email' => [
         'name' => 'تلقي رسائل البريد الإلكتروني',
     ],
+
+    // Report
+    'member' => 'Member',
+    'registered_at' => 'Registered At',
+    'login_at' => 'Login At',
+    'undefined_member' => 'Undefined Member',
+    'new_membership_report' => 'New Membership Report',
+    'member_login_reports' => 'Member Login Reports',
 ];
