@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "Mainoksesi tila on myyty!",
 	'status_change' => "Mainoksesi tila on asetettu tilaan: status!",
 	'disabled_detailed_options_for_admin_role' => "Yksityiskohtaiset tuotevaihtoehdot ovat pois käytöstä.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
