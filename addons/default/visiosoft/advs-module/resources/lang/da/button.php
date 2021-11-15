@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => 'Ny klassificeret',
     'new_classified' => 'Ny klassificeret',
     'new_category' => 'Ny kategori',
