@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => 'עו"ד חדש',
     'new_classified' => 'מסווג חדש',
     'new_category' => 'קטגוריה חדשה',
