@@ -30,7 +30,7 @@ return [
         'instructions' => 'Viene utilizzato per aggiungere icone che indicano il tipo di categoria.',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'Genitore',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
@@ -42,6 +42,6 @@ return [
     // Report
     'undefined_category' => 'Undefined Category',
     'categories_with_no_meta_report' => 'Categories with No Meta Report',
-    'category' => 'Category',
+    'category' => 'Categoria',
     'id' => 'ID',
 ];
