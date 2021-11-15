@@ -381,11 +381,22 @@ return [
         'name' => 'Yayın tarihi'
     ],
     'tax' => [
-
         'name' => 'KDV Oranı'
     ],
     'name_a_z' => 'İlan Başlığı (A\'dan Z\'ye)',
     'name_z_a' => 'İlan Başlığı (Z\'den A\'ya)',
     'select_lang_ads' => 'İlan dilini seçiniz',
 
+    // Report
+    'product_stock_report' => 'Product Stock Report',
+    'active_passive_products_report' => 'Active-Passive Products Report',
+    'unexplained_products_report' => 'Unexplained Products Report',
+    'non_image_products_report' => 'Non-Image Products Report',
+    'product' => 'Product',
+    'count' => 'Count',
+    'undefined_product' => 'Undefined Product',
+    'pages_without_meta_information_report' => 'Pages Without Meta Information Report',
+    'page' => 'Page',
+    'undefined_page' => 'Undefined Page',
+    'id' => 'ID',
 ];
