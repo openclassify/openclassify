@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "Jou advertensie se status is verkoop!",
 	'status_change' => "Jou advertensie se status is ingestel op: status!",
 	'disabled_detailed_options_for_admin_role' => "Gedetailleerde produkopsies is gedeaktiveer.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
