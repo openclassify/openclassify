@@ -30,7 +30,7 @@ return [
         'instructions' => 'Χρησιμοποιείται για την προσθήκη εικονιδίων που υποδεικνύουν τον τύπο κατηγορίας.',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'Μητρική εταιρεία',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
@@ -42,6 +42,6 @@ return [
     // Report
     'undefined_category' => 'Undefined Category',
     'categories_with_no_meta_report' => 'Categories with No Meta Report',
-    'category' => 'Category',
+    'category' => 'Κατηγορία',
     'id' => 'ID',
 ];
