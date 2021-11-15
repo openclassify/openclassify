@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google-statistiekcode',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'Lidregistratie E-mailvereiste',
     ],
     'market_place' => [
         'name' => 'Marktplaats',
-	    'instructions' => 'Als de marktplaats niet beschikbaar is, dient uw site als e-commerce. Bijvoorbeeld:
+        'instructions' => 'Als de marktplaats niet beschikbaar is, dient uw site als e-commerce. Bijvoorbeeld:
 Sommige velden in het profiel zoals advertenties, berichten, verkoop, paketten,...
 zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
     ],
@@ -280,7 +283,26 @@ zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
         'name' => 'Toon Btw veld',
         'instructions' => 'Wanneer deze optie is ingeschakeld, kunt u het belastingstarief instellen op de pagina voor het maken van uw nieuwe advertentie.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Verberg jouw contactgegevens voor een nieuwe advertentie te plaatsen'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Verberg jouw contactgegevens voor een nieuwe advertentie te plaatsen'
+    ],
+    'show_input_flag' => [
+        'name' => 'Show Flags on Input',
+        'instructions' => 'Show flag and description on translatable inputs'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Hide out of stock products without listing',
+        'instructions' => 'Hides out-of-stock GET products from listing and homepage'
+    ],
+    'only_email_login' => [
+        'name' => 'Only Email Login'
+    ],
+    'preview_mode' => [
+        'name' => 'Preview Mode',
+        'instructions' => 'When this mode is enabled, the ad is previewed by the user.'
+    ],
+    'show_order_note' => [
+        'name' => 'Show Order Note',
+        'instructions' => "Show the order note field which is used to show the customers custom text when their order's payment is approved."
+    ],
 ];
