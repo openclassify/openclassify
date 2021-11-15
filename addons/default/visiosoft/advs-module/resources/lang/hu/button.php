@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => 'Új osztályozott',
     'new_classified' => 'Új osztályozott',
     'new_category' => 'Új kategória',
