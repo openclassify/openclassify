@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "Starea anunțului dvs. a fost setată ca vândută!",
 	'status_change' => "Starea anunțului dvs. a fost setată la: stare!",
 	'disabled_detailed_options_for_admin_role' => "Opțiunile detaliate ale produsului sunt dezactivate.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
