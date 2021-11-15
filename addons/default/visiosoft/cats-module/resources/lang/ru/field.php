@@ -30,7 +30,7 @@ return [
         'instructions' => 'Используется для добавления значков, обозначающих тип категории.',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'родитель',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
@@ -38,5 +38,11 @@ return [
    подождите. Удаление подкатегорий',
     'category_selection' => 'Выбор категории',
     'go_to_parent' => 'Перейти к родителю',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'категория',
+    'id' => 'ID',
 ];
