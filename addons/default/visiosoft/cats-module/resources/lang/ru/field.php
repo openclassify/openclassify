@@ -30,7 +30,7 @@ return [
         'instructions' => 'Используется для добавления значков, обозначающих тип категории.',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'родитель',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
@@ -43,6 +43,6 @@ return [
     // Report
     'undefined_category' => 'Undefined Category',
     'categories_with_no_meta_report' => 'Categories with No Meta Report',
-    'category' => 'Category',
+    'category' => 'категория',
     'id' => 'ID',
 ];
