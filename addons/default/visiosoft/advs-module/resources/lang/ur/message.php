@@ -32,4 +32,6 @@ return [
 	'sold_status_change' => "آپ کے اشتہار کی حیثیت بیچ دی گئی ہے!",
 	'status_change' => "آپ کے اشتہار کی حیثیت اس پر سیٹ ہوچکی ہے: درجہ!",
 	'disabled_detailed_options_for_admin_role' => "مصنوع کے تفصیلی اختیارات غیر فعال ہیں۔",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
 ];
