@@ -9,28 +9,28 @@
 
     {% if message_exists('success') %}
     {% for message in message_pull('success') %}
-    Toast.fire(`{{ trans(message)|markdown|striptags }}`, 'success');
+    Toast.fire(`{{ trans(message)|striptags|markdown }}`, 'success');
     {% endfor %}
     {% endif %}
 
     // Informational Messages
     {% if message_exists('info') %}
     {% for message in message_pull('info') %}
-    Toast.fire(`{{ trans(message)|markdown|striptags }}`, 'info');
+    Toast.fire(`{{ trans(message)|striptags|markdown }}`, 'info');
     {% endfor %}
     {% endif %}
 
     // Warning Messages
     {% if message_exists('warning') %}
     {% for message in message_pull('warning') %}
-    Toast.fire(`{{ trans(message)|markdown|striptags }}`, 'warning');
+    Toast.fire(`{{ trans(message)|striptags|markdown }}`, 'warning');
     {% endfor %}
     {% endif %}
 
     // Error Messages
     {% if message_exists('error') %}
     {% for message in message_pull('error') %}
-    Toast.fire(`{{ trans(message)|markdown|striptags }}`, 'error');
+    Toast.fire(`{{ trans(message)|striptags|markdown }}`, 'error');
     {% endfor %}
     {% endif %}
 </script>
