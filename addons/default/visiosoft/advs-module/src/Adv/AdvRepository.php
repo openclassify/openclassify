@@ -740,4 +740,21 @@ class AdvRepository extends EntryRepository implements AdvRepositoryInterface
             ->orderBy('distance')
             ->get();
     }
+
+    public function getClassifiedsByCatsIDsAndLevels($categories, $limit = 10)
+    {
+        if (is_array($categories) && count($categories)) {
+            return $this->getModel()
+                ->currentAds()
+                ->where(function ($query) use ($categories) {
+                    foreach ($categories as $level => $categoryID) {
+                        $query->orWhereIn("cat$level", $categoryID);
+                    }
+                })
+                ->limit($limit)
+                ->get();
+        }
+
+        return [];
+    }
 }
