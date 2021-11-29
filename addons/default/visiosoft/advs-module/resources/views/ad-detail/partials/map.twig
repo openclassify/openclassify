@@ -1,5 +1,8 @@
     {% if(adv.map_Val == "") %}
-    {{ trans('visiosoft.module.advs::field.no_location') }}
+        <div class="d-flex flex-column justify-content-center text-center bg-white h-100">
+            {{ img('visiosoft.module.advs::images/emptystate.jpg') }}
+            {{ trans('visiosoft.module.advs::field.no_location') }}
+        </div>
     {% else %}
     {% set map_arr = adv.map_Val|split(',') %}
 <div id="mapDiv" style="height: 500px; width: 100%;"></div>
