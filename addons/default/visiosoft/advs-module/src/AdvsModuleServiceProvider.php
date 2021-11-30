@@ -224,13 +224,20 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@create',
         ],
 
-        'advs/configuration/ajax/create' => [
+        'classified/configuration/ajax/create' => [
             'middleware' => 'auth',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@ajaxCreate'
         ],
-        'advs/configuration/ajax/delete' => [
+        'classified/configuration/ajax/delete' => [
             'middleware' => 'auth',
             'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@ajaxDelete'
+        ],
+
+        'api/classified/configuration/getOptions' => [
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@ajaxGetOptions',
+        ],
+        'api/classified/configuration/createOptions' => [
+            'uses' => 'Visiosoft\AdvsModule\Http\Controller\OptionConfigurationController@ajaxCreateOptions',
         ],
 
         'conf/addCart' => [

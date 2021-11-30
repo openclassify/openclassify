@@ -181,6 +181,33 @@ $(document).ready(function () {
     });
 });
 
+let option_id = 0;
+let option_value = '';
+function createOptionValue() {
+    Swal.fire({
+        title: save_the_option,
+        text: option_value,
+        showCancelButton: true,
+        confirmButtonText: new_button,
+    }).then(result => {
+        if (result.isConfirmed) {
+            crudAjax({
+                option: option_id,
+                name: option_value
+            }, '/api/classified/configuration/createOptions', 'POST', function (callback) {
+                Swal.fire({
+                    icon: 'success',
+                    title: option_saved,
+                    text: callback.name,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+        }
+    });
+}
+
+
 $(document).ready(function () {
     $(".priceField, .standard-price-field").inputmask('currency', {
         rightAlign: true,
@@ -231,6 +258,36 @@ $(document).ready(function () {
         tokenSeparators: [',']
     });
 
+    $('.product-options-fields').select2({
+        width: '100%',
+        dropdownAutoWidth : true,
+        allowClear: false,
+        ajax: {
+            url: "/api/classified/configuration/getOptions",
+            data: function (params) {
+                option_value = params.term;
+                return {
+                    q: params.term,
+                    option: option_id,
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, (item) => {
+                        return {id: item.id, text: item.name}
+                    })
+                }
+            }
+        },
+        language: {
+            noResults: function () {
+                return $(`<button class='btn btn-primary btn-configuration text-nowrap my-auto form-control w-100 justify-content-center' onclick='createOptionValue()'>${new_button}</button>`);
+            }
+        }
+    }).on('select2:open', function (e) {
+        option_id = $(e.target).data('id');
+    });
+
     let deletedOptions = [];
     $('#selectOptions').on('select2:unselect', function (e) {
         if (e.params.data.element.id) {
@@ -266,7 +323,7 @@ $(document).ready(function () {
 
     $('#configurationForm').submit(function (e) {
         e.preventDefault();
-        crudAjax($(this).serialize(), '/advs/configuration/ajax/create', 'POST', function (callback) {
+        crudAjax($(this).serialize(), '/classified/configuration/ajax/create', 'POST', function (callback) {
             $('.configuration-table').append(`<tr id="configuration-${callback.id}">
                                         <td>${callback.option_name}</td>
                                         <td>${callback.stock}</td>
@@ -288,7 +345,7 @@ $(document).ready(function () {
     $(document).on('click', '.remove-conf', function () {
         const id = $(this).data('id');
 
-        crudAjax({id: id}, '/advs/configuration/ajax/delete', 'POST', function (callback) {
+        crudAjax({id: id}, '/classified/configuration/ajax/delete', 'POST', function (callback) {
             $('#configuration-' + id).remove();
         })
     });
