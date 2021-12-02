@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'নতুন বিকল্প',
 	'export' => 'রফতানি',
-    'new_productoption' => 'নতুন প্রোডাক্টপশন',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'নতুন পণ্য বিকল্প মান',
     'new_options_configuration' => 'নতুন বিকল্প কনফিগারেশন',
     'new_option_configuration' => 'নতুন বিকল্প কনফিগারেশন',
