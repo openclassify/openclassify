@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'نیا آپشن',
 	'export' => 'برآمد کریں',
-    'new_productoption' => 'نیا پروڈکٹ آپشن',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'نئی پروڈکٹ آپشن ویلیو',
     'new_options_configuration' => 'نئی آپشن ترتیب',
     'new_option_configuration' => 'نئی آپشن ترتیب',
