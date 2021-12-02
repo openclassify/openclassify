@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Nova opció',
 	'export' => 'Exporta',
-    'new_productoption' => 'Nova opció de producte',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Valor de l\'opció de producte nou',
     'new_options_configuration' => 'Nova configuració d’opcions',
     'new_option_configuration' => 'Nova configuració d’opcions',
