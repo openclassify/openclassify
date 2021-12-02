@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'گزینه جدید',
 	'export' => 'صادرات',
-    'new_productoption' => 'محصول جدید',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'مقدار گزینه محصول جدید',
     'new_options_configuration' => 'پیکربندی گزینه جدید',
     'new_option_configuration' => 'پیکربندی گزینه جدید',
