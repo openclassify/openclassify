@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => '新选择',
 	'export' => '出口',
-    'new_productoption' => '新产品选择',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => '新产品期权价值',
     'new_options_configuration' => '新选件配置',
     'new_option_configuration' => '新选件配置',
