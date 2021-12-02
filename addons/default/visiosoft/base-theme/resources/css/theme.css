@@ -85,3 +85,11 @@
 .tl-span {
     font-size: 14px;
 }
+
+.like {
+    color: rgb(109, 109, 109) !important;
+}
+
+.unlike {
+    color: red !important;
+}

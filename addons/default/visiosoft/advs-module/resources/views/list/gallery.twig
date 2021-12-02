@@ -13,9 +13,8 @@
             <div class="col-xl-4 col-lg-6">
                 <a href="{{ adv.detail_url }}" class="w-100 p-0 d-flex flex-column">
                     <div class="d-flex flex-column product-hb border shadow-sm rounded">
-                        <div class="heart-icon d-flex align-items-center justify-content-center shadow-sm">
-                            <i class="far fa-heart"></i>
-                        </div>
+                        {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
+
                         <div class="product-image-hb">
                             <img class="product-image-in" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
                         </div>
@@ -26,9 +25,9 @@
                             {% if showPrice %}
                                 <div class="product-price-hb font-weight-bold mt-2 text-dark">
                                     {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
-                                    <span>TL</span>
                                 </div>
                             {% endif %}
+
                         </div>
                     </div>
                 </a>
