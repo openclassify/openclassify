@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Yeni Seçim',
 	'export' => 'Çıxart',
-    'new_productoption' => 'Yeni Seçim',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Seçim dəyəri',
     'new_options_configuration' => 'Seçim konfiqurasiyası',
     'new_option_configuration' => 'Seçim konfiqurasiyası',
