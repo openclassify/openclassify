@@ -29,8 +29,12 @@ class OptionConfigurationFormFields
                     {
                         $options_fields['option-'.$option->getId()] = [
                             'type' => 'anomaly.field_type.select',
+                            'class' => 'form-control product-options-fields',
                             'label' => $option->getName(),
                             'required' => true,
+                            'attributes' => [
+                                'data-id' => $option->getId(),
+                            ],
                             'config' => [
                                 'options' => $optionValue->pluck('title','id')->all(),
                             ]
