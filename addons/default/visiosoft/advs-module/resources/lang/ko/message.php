@@ -34,4 +34,6 @@ return [
 	'disabled_detailed_options_for_admin_role' => "자세한 제품 옵션이 비활성화됩니다.",
     'permission_error' => 'You do not have permission for this action',
     'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
