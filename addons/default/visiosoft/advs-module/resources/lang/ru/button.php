@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Новый вариант',
 	'export' => 'Экспорт',
-    'new_productoption' => 'Новый вариант продукта',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Стоимость опции нового продукта',
     'new_options_configuration' => 'Новая конфигурация опций',
     'new_option_configuration' => 'Новая конфигурация опций',
