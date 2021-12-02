@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Uusi vaihtoehto',
 	'export' => 'Viedä',
-    'new_productoption' => 'Uusi tuotevalinta',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Uusi tuote -vaihtoehdon arvo',
     'new_options_configuration' => 'Uuden vaihtoehdon kokoonpano',
     'new_option_configuration' => 'Uuden vaihtoehdon kokoonpano',
