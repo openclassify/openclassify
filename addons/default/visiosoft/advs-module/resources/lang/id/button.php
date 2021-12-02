@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Opsi Baru',
 	'export' => 'Ekspor',
-    'new_productoption' => 'Opsiproduk Baru',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Nilai Opsi Produk Baru',
     'new_options_configuration' => 'Konfigurasi Opsi baru',
     'new_option_configuration' => 'Konfigurasi Opsi baru',
