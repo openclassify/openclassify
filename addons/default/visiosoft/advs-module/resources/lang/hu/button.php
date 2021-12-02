@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Új lehetőség',
 	'export' => 'Export',
-    'new_productoption' => 'Új termék opció',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Új termék opció értéke',
     'new_options_configuration' => 'Új Option konfiguráció',
     'new_option_configuration' => 'Új Option konfiguráció',
