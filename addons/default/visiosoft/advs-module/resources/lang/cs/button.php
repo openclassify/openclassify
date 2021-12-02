@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Nová možnost',
 	'export' => 'Vývozní',
-    'new_productoption' => 'Nová možnost produktu',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Hodnota nové možnosti produktu',
     'new_options_configuration' => 'Konfigurace nové možnosti',
     'new_option_configuration' => 'Konfigurace nové možnosti',
