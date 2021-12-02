@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'नया विकल्प',
 	'export' => 'निर्यात',
-    'new_productoption' => 'नया उत्पाद',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'नए उत्पाद विकल्प मूल्य',
     'new_options_configuration' => 'नया विकल्प कॉन्फ़िगरेशन',
     'new_option_configuration' => 'नया विकल्प कॉन्फ़िगरेशन',
