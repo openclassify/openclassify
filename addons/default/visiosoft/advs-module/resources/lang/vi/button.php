@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Tùy chọn mới',
 	'export' => 'Xuất khẩu',
-    'new_productoption' => 'Sản phẩm mới',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Giá trị tùy chọn sản phẩm mới',
     'new_options_configuration' => 'Cấu hình tùy chọn mới',
     'new_option_configuration' => 'Cấu hình tùy chọn mới',
