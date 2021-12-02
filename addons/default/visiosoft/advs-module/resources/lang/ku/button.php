@@ -47,8 +47,7 @@ return [
     'new_option' => 'بژاردەی نوێ
 ',
 	'export' => 'هەناردن',
-    'new_productoption' => 'بژاردەی بەرهەمی نوێ
-',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'بەهای بژاردەی بەرهەمی نوێ
 ',
     'new_options_configuration' => 'دانپێدانانی بژاردەی نوێ
