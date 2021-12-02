@@ -87,9 +87,19 @@
 }
 
 .like {
-    color: rgb(109, 109, 109) !important;
+    color: rgb(109, 109, 109);
 }
 
 .unlike {
     color: red !important;
 }
+
+.color-red {
+    color: red !important;
+}
+
+.color-black {
+    color: black;
+}
+
+
