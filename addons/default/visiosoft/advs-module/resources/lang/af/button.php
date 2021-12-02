@@ -35,7 +35,7 @@ return [
     ],
     'new_option' => 'Nuwe opsie',
 	'export' => 'Uitvoer',
-    'new_productoption' => 'Nuwe produkopsie',
+    'new_productoption' => 'New Product Option',
     'new_productoptions_value' => 'Nuwe produk opsie waarde',
     'new_options_configuration' => 'Nuwe opsiekonfigurasie',
     'new_option_configuration' => 'Nuwe opsiekonfigurasie',
