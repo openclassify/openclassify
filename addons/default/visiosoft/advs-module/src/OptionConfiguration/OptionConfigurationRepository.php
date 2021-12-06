@@ -62,6 +62,8 @@ class OptionConfigurationRepository extends EntryRepository implements OptionCon
                 $value_entry = $this->productOptionsValueRepository->find($value);
                 $option_group_value .= " " . $value_entry->getName();
             }
+            $option_group_value .= " " . $product_configuration->custom_option;
+
             $configurations[$product_configuration->getId()] = [
                 'name' => $option_group_value,
                 'price' => $product_configuration->price,

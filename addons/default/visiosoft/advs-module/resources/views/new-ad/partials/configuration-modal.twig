@@ -11,10 +11,10 @@
                 </button>
             </div>
             <div class="modal-body">
-                <div class="">
+                <div class="flex-row">
                     {% set configurationForm = form('configuration_form').entry(adv.id).get() %}
 
-                    {{ form_open({id: 'configurationForm',class: 'd-flex justify-content-between'})|raw }}
+                    {{ form_open({id: 'configurationForm',class: 'd-flex justify-content-between flex-column flex-lg-row'})|raw }}
                     <input type="text" name="parent_adv_id" value="{{ adv.id }}" hidden>
                     {{ configurationForm.fields|raw }}
                     <button type="submit" class="btn btn-primary btn-configuration my-auto form-control w-auto">
