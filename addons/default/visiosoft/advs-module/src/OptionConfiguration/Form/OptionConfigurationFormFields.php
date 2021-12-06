@@ -35,13 +35,17 @@ class OptionConfigurationFormFields
                             'attributes' => [
                                 'data-id' => $option->getId(),
                             ],
-                            'config' => [
-                                'options' => $optionValue->pluck('title','id')->all(),
-                            ]
                         ];
                     }
                 }
             }
+
+            $options_fields['custom_option'] = [
+                'type' => 'anomaly.field_type.text',
+                'class' => 'form-control product-custom-fields',
+                'required' => false,
+                'label' => 'Custom',
+            ];
 
             $fields = array_merge($options_fields, ['price', 'currency', 'stock']);
 
