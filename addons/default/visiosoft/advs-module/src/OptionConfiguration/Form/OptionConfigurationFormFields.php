@@ -25,7 +25,7 @@ class OptionConfigurationFormFields
 
                 foreach ($options as $option)
                 {
-                    if($optionValue = $productoptionsValueRepository->getWithOptionsId([$option->id]))
+                    if($productoptionsValueRepository->getWithOptionsId([$option->id]))
                     {
                         $options_fields['option-'.$option->getId()] = [
                             'type' => 'anomaly.field_type.select',
@@ -44,7 +44,7 @@ class OptionConfigurationFormFields
                 'type' => 'anomaly.field_type.text',
                 'class' => 'form-control product-custom-fields',
                 'required' => false,
-                'label' => 'Custom',
+                'label' => trans('visiosoft.module.advs::field.custom_field'),
             ];
 
             $fields = array_merge($options_fields, ['price', 'currency', 'stock']);
