@@ -8,6 +8,7 @@
     <style>
         {{ asset_inline("visiosoft.module.advs::css/new-create.css") }}
         {{ asset_inline("visiosoft.module.advs::css/new-create-new.scss") }}
+        {{ asset_inline("visiosoft.theme.base::css/jquery-ui.min.css") }}
     </style>
 {% endblock %}
 
@@ -344,5 +345,6 @@
     {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
     {{ asset_add("scripts.js", "streams::js/form/form.js") }}
     {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/vendor/jquery-ui.min.js") }}
 
 {% endblock %}

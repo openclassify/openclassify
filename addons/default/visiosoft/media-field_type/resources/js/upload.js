@@ -1,11 +1,13 @@
+// Add dropzone change event
+const event = new Event('dropzone.changed');
+
 // Disabling autoDiscover, otherwise Dropzone will try to attach twice.
 Dropzone.autoDiscover = false;
 $("div#myDrop").dropzone({url: "/file/post"});
 
 var doc_input = $('input[name="doc_files"]');
 
-
-var uploaded = $('input[name="files"]').val().split(',').map(Number);
+const getUploaded = () => $('input[name="files"]').val().split(',').map(Number);
 
 if (doc_input.length) {
     var docsUploaded = doc_input.val().split(',').map(Number);
@@ -72,6 +74,7 @@ $(function () {
         var response = JSON.parse(file.xhr.response);
         var mimeType = response.mime_type.split('/')
         if (mimeType[0] === 'image') {
+            let uploaded = getUploaded();
             uploaded.push(response.id);
 
             $('.media-selected-wrapper').load(
@@ -84,9 +87,11 @@ $(function () {
             file.previewElement.querySelector('[data-dz-uploadprogress]').setAttribute('class', 'progress progress-success');
 
             setTimeout(function () {
-
                 addAppendByData(uploaded[0])
                 file.previewElement.remove();
+
+                // Dispatch the event.
+                document.querySelector('#mediaSelectedWrapper').dispatchEvent(event);
             }, 500);
         } else {
             if (doc_input.length) {
@@ -126,6 +131,7 @@ function addAppendByData(data_id) {
 function deleteImage(e, id) {
     e.preventDefault()
 
+    let uploaded = getUploaded();
     var key_item = $.inArray(id, uploaded);
     uploaded.splice(key_item, 1);
     $('input[name="files"]').val(uploaded.join(','))
@@ -162,6 +168,8 @@ function rotateImage(e, id) {
 //Set Main Image
 function setMain(e, id) {
     e.preventDefault()
+
+    let uploaded = getUploaded();
 
     $('.main-image').remove();
     var key_item = $.inArray(id, uploaded);
