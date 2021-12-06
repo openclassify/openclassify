@@ -39,7 +39,7 @@ class ConvertCurrency
                 }
             }
         } catch (\Exception $e) {
-            $message->error(['Para birimi dönüştürme işlemi tamamlanamadı!']);
+            $message->error(trans('visiosoft.module.advs::message.currency_converter_not_available'));
         }
 
         return [
