@@ -58,15 +58,11 @@ return [
     */
 
     'debug_blacklist' => [
-        '_ENV' => [
-            'APP_KEY',
-            'DB_PASSWORD',
-        ],
+        '_COOKIE' => array_keys($_COOKIE),
 
-        '_SERVER' => [
-            'APP_KEY',
-            'DB_PASSWORD',
-        ],
+        '_SERVER' => array_keys($_SERVER),
+
+        '_ENV' => array_keys($_ENV),
 
         '_POST' => [
             'password',
