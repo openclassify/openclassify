@@ -64,3 +64,7 @@
 .input-group-addon input[type=checkbox] {
     margin-top: 0;
 }
+
+.ads-box-image:hover {
+    cursor: move;
+}

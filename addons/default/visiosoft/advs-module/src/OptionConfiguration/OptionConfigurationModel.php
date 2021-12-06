@@ -29,6 +29,8 @@ class OptionConfigurationModel extends AdvsOptionConfigurationEntryModel impleme
 
             $name = trim($option_group_value, ' ');
 
+            $name .= ' ' . $this->custom_option;
+
             return ($add_name) ? $adv->name . ' | ' . $name : $name;
         }
         return null;

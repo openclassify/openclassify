@@ -350,4 +350,33 @@ $(document).ready(function () {
         })
     });
 
+    // Add classified image sorting
+    function getIdsOfImages() {
+        var values = [];
+        $('.imageList .ads-box-image').each(function (index) {
+            values.push($(this).attr("data-id"));
+        });
+
+        $('[name=files]').val(values.join(','));
+    }
+
+    // Listen for the event.
+    document.querySelector('#mediaSelectedWrapper').addEventListener('dropzone.changed', function (e) {
+        setTimeout(function () {
+            const imageList = $('.imageList');
+            imageList.unbind();
+
+            imageList.sortable({
+                update: function(event, ui) {
+                    getIdsOfImages();
+                }
+            });
+        }, 500)
+    }, false);
+
+    $( ".imageList" ).sortable({
+        update: function(event, ui) {
+            getIdsOfImages();
+        }
+    });
 });

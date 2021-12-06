@@ -19,7 +19,7 @@ class OptionConfigurationFormHandler
 		$option_json = array();
 
 		foreach ($parameters as $key => $parameter_value) {
-			if (substr($key, 0, 7) === "option-") {
+			if (strpos($key, "option-") === 0) {
 				$option_id = substr($key, 7);
 				$option_json[$option_id] = $parameter_value;
 				unset($parameters[$key]);
