@@ -4,6 +4,8 @@ use Anomaly\Streams\Platform\Http\Controller\PublicController;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\OptionConfiguration\Contract\OptionConfigurationRepositoryInterface;
 use Visiosoft\AdvsModule\OptionConfiguration\Form\OptionConfigurationFormBuilder;
+use Visiosoft\AdvsModule\Productoption\Contract\ProductoptionRepositoryInterface;
+use Visiosoft\AdvsModule\ProductoptionsValue\Contract\ProductoptionsValueRepositoryInterface;
 use Visiosoft\AdvsModule\Support\Command\Currency;
 use Visiosoft\CartsModule\Cart\CartRepository;
 use Visiosoft\CartsModule\Cart\Command\GetCart;
@@ -13,16 +15,22 @@ class OptionConfigurationController extends PublicController
     private $adv_model;
     private $optionConfigurationRepository;
     private $cartRepository;
+    private $productoptionRepository;
+    private $productoptionsValueRepository;
 
     public function __construct(
         AdvModel $advModel,
         OptionConfigurationRepositoryInterface $optionConfigurationRepository,
-        CartRepository $cartRepository
+        CartRepository $cartRepository,
+        ProductoptionRepositoryInterface $productoptionRepository,
+        ProductoptionsValueRepositoryInterface $productoptionsValueRepository
     )
     {
         $this->adv_model = $advModel;
         $this->optionConfigurationRepository = $optionConfigurationRepository;
         $this->cartRepository = $cartRepository;
+        $this->productoptionRepository = $productoptionRepository;
+        $this->productoptionsValueRepository = $productoptionsValueRepository;
         parent::__construct();
     }
 
@@ -73,6 +81,21 @@ class OptionConfigurationController extends PublicController
             $this->messages->info(trans('visiosoft.module.advs::message.error_added_cart'));
             return back();
         }
+    }
+
+    public function ajaxGetOptions() {
+        $option = $this->productoptionRepository->find($this->request->option);
+        return $this->productoptionsValueRepository->searchByOption($option->id, $this->request->q);
+    }
+
+    public function ajaxCreateOptions()
+    {
+        $option = $this->productoptionRepository->find($this->request->option);
+
+        return $this->productoptionsValueRepository->create([
+            'product_option' => $option,
+            'name' => $this->request->name
+        ]);
     }
 
     public function ajaxConfAddCart()

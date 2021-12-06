@@ -23,8 +23,15 @@ class ProductoptionsValueRepository extends EntryRepository implements Productop
 		$this->model = $model;
 	}
 
-	public function getWithOptionsId(array $ids)
-	{
-		return $this->newQuery()->whereIn('product_option_id', $ids)->get();
-	}
+    public function getWithOptionsId(array $ids)
+    {
+        return $this->newQuery()->whereIn('product_option_id', $ids)->get();
+    }
+
+    public function searchByOption($option, $value)
+    {
+        return $this->newQuery()->where('product_option_id', $option)
+            ->where('name', 'like', '%' . $value . '%')
+            ->get();
+    }
 }

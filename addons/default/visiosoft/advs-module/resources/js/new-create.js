@@ -181,6 +181,33 @@ $(document).ready(function () {
     });
 });
 
+let option_id = 0;
+let option_value = '';
+function createOptionValue() {
+    Swal.fire({
+        title: save_the_option,
+        text: option_value,
+        showCancelButton: true,
+        confirmButtonText: new_button,
+    }).then(result => {
+        if (result.isConfirmed) {
+            crudAjax({
+                option: option_id,
+                name: option_value
+            }, '/api/classified/configuration/createOptions', 'POST', function (callback) {
+                Swal.fire({
+                    icon: 'success',
+                    title: option_saved,
+                    text: callback.name,
+                    showConfirmButton: false,
+                    timer: 1500
+                })
+            })
+        }
+    });
+}
+
+
 $(document).ready(function () {
     $(".priceField, .standard-price-field").inputmask('currency', {
         rightAlign: true,
@@ -231,6 +258,36 @@ $(document).ready(function () {
         tokenSeparators: [',']
     });
 
+    $('.product-options-fields').select2({
+        width: '100%',
+        dropdownAutoWidth : true,
+        allowClear: false,
+        ajax: {
+            url: "/api/classified/configuration/getOptions",
+            data: function (params) {
+                option_value = params.term;
+                return {
+                    q: params.term,
+                    option: option_id,
+                };
+            },
+            processResults: function (data) {
+                return {
+                    results: $.map(data, (item) => {
+                        return {id: item.id, text: item.name}
+                    })
+                }
+            }
+        },
+        language: {
+            noResults: function () {
+                return $(`<button class='btn btn-primary btn-configuration text-nowrap my-auto form-control w-100 justify-content-center' onclick='createOptionValue()'>${new_button}</button>`);
+            }
+        }
+    }).on('select2:open', function (e) {
+        option_id = $(e.target).data('id');
+    });
+
     let deletedOptions = [];
     $('#selectOptions').on('select2:unselect', function (e) {
         if (e.params.data.element.id) {
@@ -266,23 +323,21 @@ $(document).ready(function () {
 
     $('#configurationForm').submit(function (e) {
         e.preventDefault();
-        crudAjax($(this).serialize(), '/advs/configuration/ajax/create', 'POST', function (callback) {
-            $('.configuration-table').append(`
-                <tr id="configuration-${callback.id}">
-                    <td>${callback.option_name}</td>
-                    <td>${callback.stock}</td>
-                    <td>${callback.currency_price}</td>
-                    <td class="text-right">
-                        <a href="javascript:void(0)" class="btn btn-sm remove-conf" data-id="${callback.id}"><svg id="Group_42321" data-name="Group 42321" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
-                            <g id="Group_15874" data-name="Group 15874">
-                                <path id="Path_10381" data-name="Path 10381" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" fill="#f8f8f8"></path>
-                                <path id="close" d="M10.557.6l-.6-.6L5.278,4.675.6,0,0,.6,4.675,5.278,0,9.953l.6.6L5.278,5.882l4.675,4.675.6-.6L5.882,5.278Z" transform="translate(9.5 9.5)" fill="#c7c7c7" stroke="#c7c7c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
-                            </g>
-                        </svg>
-                        </a>
-                    </td>
-                </tr>
-            `);
+        crudAjax($(this).serialize(), '/classified/configuration/ajax/create', 'POST', function (callback) {
+            $('.configuration-table').append(`<tr id="configuration-${callback.id}">
+                                        <td>${callback.option_name}</td>
+                                        <td>${callback.stock}</td>
+                                        <td>${callback.currency_price}</td>
+                                        <td class="text-right">
+                                            <a href="javascript:void(0)" class="btn btn-sm remove-conf" data-id="${callback.id}"><svg id="Group_42321" data-name="Group 42321" xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 30 30">
+                                                <g id="Group_15874" data-name="Group 15874">
+                                                    <path id="Path_10381" data-name="Path 10381" d="M15,0A15,15,0,1,1,0,15,15,15,0,0,1,15,0Z" fill="#f8f8f8"></path>
+                                                    <path id="close" d="M10.557.6l-.6-.6L5.278,4.675.6,0,0,.6,4.675,5.278,0,9.953l.6.6L5.278,5.882l4.675,4.675.6-.6L5.882,5.278Z" transform="translate(9.5 9.5)" fill="#c7c7c7" stroke="#c7c7c7" stroke-linecap="round" stroke-linejoin="round" stroke-width="0.7"></path>
+                                                </g>
+                                            </svg>
+                                            </a>
+                                        </td>
+                                    </tr>`);
             $('#configurationForm').trigger("reset");
         })
     });
@@ -290,7 +345,7 @@ $(document).ready(function () {
     $(document).on('click', '.remove-conf', function () {
         const id = $(this).data('id');
 
-        crudAjax({id: id}, '/advs/configuration/ajax/delete', 'POST', function (callback) {
+        crudAjax({id: id}, '/classified/configuration/ajax/delete', 'POST', function (callback) {
             $('#configuration-' + id).remove();
         })
     });
