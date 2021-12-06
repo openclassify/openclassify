@@ -397,4 +397,5 @@ return [
     'page' => 'Page',
     'undefined_page' => 'Undefined Page',
     'id' => 'ID',
+    'custom_field' => 'Custom Field',
 ];
