@@ -58,19 +58,13 @@ return [
     */
 
     'debug_blacklist' => [
-        '_ENV' => [
-            'APP_KEY',
-            'DB_PASSWORD',
-        ],
+        '_COOKIE' => env('APP_ENV', 'production') === 'production' ? array_keys($_COOKIE) : [],
 
-        '_SERVER' => [
-            'APP_KEY',
-            'DB_PASSWORD',
-        ],
+        '_SERVER' => env('APP_ENV', 'production') === 'production' ? array_keys($_SERVER) : [],
 
-        '_POST' => [
-            'password',
-        ],
+        '_ENV' => env('APP_ENV', 'production') === 'production' ? array_keys($_ENV) : [],
+
+        '_POST' => env('APP_ENV', 'production') === 'production' ? array_keys($_POST) : [],
     ],
 
     /*
