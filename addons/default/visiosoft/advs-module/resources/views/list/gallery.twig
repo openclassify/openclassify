@@ -11,14 +11,17 @@
 
         {% for adv in advs %}
             <div class="col-xl-4 col-lg-6">
-                <a href="{{ adv.detail_url }}" class="w-100 p-0 d-flex flex-column">
                     <div class="d-flex flex-column product-hb border shadow-sm rounded">
                         {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
-
                         <div class="product-image-hb">
-                            <img class="product-image-in" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+                            <a href="{{ adv.detail_url }}">
+                                <img class="product-image-in" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+                            </a>
                         </div>
                         <div class="product-info-hb d-flex flex-column px-lg-3 px-2 mt-3">
+                            <a href="{{ adv.detail_url }}" class="product-name-hb text-dark">
+                                {{ adv.name }}
+                            </a>
                             {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
                                 <a href="{{ adv.detail_url }}" class="product-name-hb text-dark">{{ adv.cat1_name }} /{{ adv.cat2_name }}</a>
                             {% endif %}
@@ -30,7 +33,6 @@
 
                         </div>
                     </div>
-                </a>
             </div>
         {% endfor %}
     </div>
