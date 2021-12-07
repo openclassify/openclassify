@@ -437,6 +437,16 @@ return [
             'default_value' => false,
         ]
     ],
+    'hide_seller_info_by_category' => [
+        'type' => 'anomaly.field_type.checkboxes',
+        'required' => true,
+        'config' => [
+            'mode' => 'tags',
+            'options' => function () {
+                return app(\Visiosoft\CatsModule\Category\Contract\CategoryRepositoryInterface::class)->getMainCategories()->pluck('name', 'id');
+            },
+        ],
+    ],
     'detailed_product_options' => [
         'type' => 'anomaly.field_type.boolean',
         'config' => [
