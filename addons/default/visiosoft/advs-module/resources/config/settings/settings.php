@@ -439,7 +439,6 @@ return [
     ],
     'hide_seller_info_by_category' => [
         'type' => 'anomaly.field_type.checkboxes',
-        'required' => true,
         'config' => [
             'mode' => 'tags',
             'options' => function () {
