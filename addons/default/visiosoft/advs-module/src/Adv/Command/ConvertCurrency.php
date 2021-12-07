@@ -38,8 +38,8 @@ class ConvertCurrency
                     $this->currency = $this->to;
                 }
             }
-        } catch (\GuzzleHttp\Exception\ClientException $e) {
-            $message->error(['Para birimi dönüştürme işlemi tamamlanamadı!' . $e->getMessage()]);
+        } catch (\Exception $e) {
+            $message->error(trans('visiosoft.module.advs::message.currency_converter_not_available'));
         }
 
         return [
