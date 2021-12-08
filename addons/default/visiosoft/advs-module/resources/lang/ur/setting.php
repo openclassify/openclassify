@@ -233,6 +233,10 @@ return [
         'name' => 'بیچنے والے کی معلومات چھپائیں',
         'instructions' => 'اشتہارات کے تفصیل والے صفحے میں بیچنے والے انفو کو چھپا رہے ہیں',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'پوسٹ اشتہار کا معاہدہ دکھائیں',
         'instructions' => 'اگر آپ اشتہار تخلیق کے صفحے پر رازداری کی پالیسی کا معاہدہ ظاہر کرنا چاہتے ہیں تو اسے آن کریں',
