@@ -233,6 +233,10 @@ return [
         'name' => 'Sakrij Informacije prodavca',
         'instructions' => 'Sakrij informacije o prodavcu na stranici sa detaljima oglasa',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Prikaži ugovor o objavljivanju oglasa',
         'instructions' => 'Uključite ovo ako želite da na stranici za izradu oglasa prikažete ugovor o politici privatnosti',
