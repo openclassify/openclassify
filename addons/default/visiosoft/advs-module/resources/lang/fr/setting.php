@@ -233,6 +233,10 @@ return [
         'name' => 'Masquer les informations du vendeur',
         'instructions' => 'Masquage des informations du vendeur dans la page de détail des annonces',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Afficher l\'accord de publication d\'annonce',
         'instructions' => 'Activez cette option si vous souhaitez afficher un accord de politique de confidentialité sur la page de création d\'annonces',
