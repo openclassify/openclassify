@@ -233,6 +233,10 @@ return [
         'name' => 'Amaga la informació del venedor',
         'instructions' => 'Ocultació de la informació del venedor a la pàgina de detalls dels anuncis',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Mostra l\'acord per publicar publicacions',
         'instructions' => 'Activeu aquesta opció si voleu mostrar un acord de política de privadesa a la pàgina de creació d\'anuncis',
