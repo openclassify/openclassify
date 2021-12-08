@@ -273,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Nell\'ultimo mese'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In The Last Two Days'
+    ],
     'ads_with_photo' => [
         'name' => 'Annunci con foto'
     ],
