@@ -234,6 +234,10 @@ return [
         'name' => 'پنهان کردن اطلاعات فروشنده',
         'instructions' => 'پنهان شدن در مورد اطلاعات فروشنده در صفحه جزئیات تبلیغات',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'نمایش قرارداد تبلیغات پست',
         'instructions' => 'اگر می خواهید توافق نامه سیاست حفظ حریم خصوصی را در صفحه ایجاد آگهی نمایش دهید ، این گزینه را روشن کنید',
