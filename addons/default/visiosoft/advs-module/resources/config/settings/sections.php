@@ -49,6 +49,7 @@ return [
 		        'fields' => [
 			        'ads_date_hidden',
 			        'hide_seller_info',
+                    'hide_seller_info_by_category',
 		        ]
 	        ],
             'create_ad' => [
