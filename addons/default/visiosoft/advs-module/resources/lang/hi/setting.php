@@ -233,6 +233,10 @@ return [
         'name' => 'विक्रेता की जानकारी छिपाएँ',
         'instructions' => 'विज्ञापन विस्तार पृष्ठ में विक्रेता infos को छुपाता है',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'विज्ञापन विज्ञापन दिखाएं',
         'instructions' => 'यदि आप विज्ञापन निर्माण पृष्ठ पर गोपनीयता नीति अनुबंध प्रदर्शित करना चाहते हैं तो इसे चालू करें',
