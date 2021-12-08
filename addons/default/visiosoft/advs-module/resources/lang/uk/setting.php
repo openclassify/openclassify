@@ -233,6 +233,10 @@ return [
         'name' => 'Сховати інформацію про продавця',
         'instructions' => 'Приховування інформації про продавця на сторінці деталей оголошень',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показати угоду про розміщення оголошень',
         'instructions' => 'Увімкніть це, якщо ви хочете відображати угоду про політику конфіденційності на сторінці створення оголошення',
