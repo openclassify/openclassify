@@ -233,6 +233,10 @@ return [
         'name' => 'Satıcı haqqında məlumatları gizlədin',
         'instructions' => 'Reklam detalları səhifəsində satıcı məlumatlarına gizlənmək',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Post Elan Müqaviləsini Göstərin',
         'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
