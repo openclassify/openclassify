@@ -233,6 +233,10 @@ return [
         'name' => 'Satıcı Bilgilerini Gizle',
         'instructions' => 'İlan detay sayfasında satıcı bilgilerinin gizlenmesi',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'İlan Sonrası Sözleşmesini Göster',
         'instructions' => 'Reklam oluşturma sayfasında bir gizlilik politikası sözleşmesi görüntülemek istiyorsanız bunu açın',
