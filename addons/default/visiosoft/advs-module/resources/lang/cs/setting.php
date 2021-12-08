@@ -233,6 +233,10 @@ return [
         'name' => 'Skrýt informace o prodejci',
         'instructions' => 'Skrytí informací o prodejci na stránce s podrobnostmi o reklamách',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Zobrazit smlouvu o příspěvku',
         'instructions' => 'Tuto možnost zapněte, pokud chcete na stránce vytváření reklam zobrazit dohodu o zásadách ochrany osobních údajů',
