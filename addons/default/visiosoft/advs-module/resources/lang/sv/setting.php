@@ -233,6 +233,10 @@ return [
         'name' => 'Dölj säljarinformation',
         'instructions' => 'Dölja information till säljare på sidan med annonser',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Visa annonsannonsavtal',
         'instructions' => 'Aktivera detta om du vill visa ett integritetspolicyavtal på sidan för skapande av annonser',
