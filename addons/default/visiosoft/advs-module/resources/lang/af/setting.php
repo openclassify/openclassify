@@ -233,6 +233,10 @@ return [
         'name' => 'Versteek verkoperinligting',
         'instructions' => 'Versteek inligting aan die verkoper op die besonderhede bladsy',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertensie-ooreenkoms',
         'instructions' => 'Skakel dit aan as u \'n privaatheidsbeleidsooreenkoms op die advertensie-bladsy wil vertoon',
