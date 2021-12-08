@@ -233,6 +233,10 @@ return [
         'name' => 'Piilota myyjän tiedot',
         'instructions' => 'Piilotus myyjän tietoihin ilmoitusten tietosivulla',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Näytä postimainossopimus',
         'instructions' => 'Ota tämä käyttöön, jos haluat näyttää tietosuojakäytännön mainoksen luomissivulla',
