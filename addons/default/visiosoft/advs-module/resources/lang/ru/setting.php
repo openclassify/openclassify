@@ -233,6 +233,10 @@ return [
         'name' => 'Скрыть информацию о продавце',
         'instructions' => 'Скрытие информации о продавце на странице сведений о рекламе',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показать соглашение о публикации рекламы',
         'instructions' => 'Включите это, если вы хотите отображать соглашение о политике конфиденциальности на странице создания рекламы.',
