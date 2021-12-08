@@ -233,6 +233,10 @@ zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
         'name' => 'Verberg verkopersinformatie',
         'instructions' => 'Verbergen voor verkopersinformatie op de detailpagina van advertenties',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertentieovereenkomst',
         'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
