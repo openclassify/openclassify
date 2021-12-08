@@ -233,6 +233,10 @@ return [
         'name' => 'Fshih informacionin e shitësit',
         'instructions' => 'Fshehja e informacionit të shitësit në faqen e detajeve të reklamave',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
         'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
