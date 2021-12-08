@@ -233,6 +233,10 @@ return [
         'name' => 'Verkäuferinformationen ausblenden',
         'instructions' => 'Ausblenden von Verkäuferinformationen auf der Anzeigen-Detailseite',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement anzeigen',
         'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
