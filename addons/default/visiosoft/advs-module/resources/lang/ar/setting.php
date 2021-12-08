@@ -233,6 +233,10 @@ return [
         'name' => 'إخفاء معلومات البائع',
         'instructions' => 'إخفاء معلومات البائع في صفحة تفاصيل الإعلانات',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'إظهار اتفاقية ما بعد الإعلان',
         'instructions' => 'قم بتشغيل هذا إذا كنت تريد عرض اتفاقية سياسة الخصوصية على صفحة إنشاء الإعلان',
