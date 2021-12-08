@@ -266,13 +266,16 @@ return [
         'name' => 'Son 24 Saat İçinde'
     ],
     'in_the_last_day' => [
-        'name' => 'Son 24 Saat İçinde'
+        'name' => 'Son 1 Gün İçinde'
     ],
     'in_the_last_week' => [
         'name' => 'Son 1 Hafta İçinde'
     ],
     'in_the_last_month' => [
         'name' => 'Son 1 Ay İçinde'
+    ],
+    'in_the_last_two_days' => [
+        'name' => 'Son 2 Gün içinde'
     ],
     'ads_with_photo' => [
         'name' => 'Fotoğraflı İlanlar'
