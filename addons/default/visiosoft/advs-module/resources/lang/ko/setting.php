@@ -233,6 +233,10 @@ return [
         'name' => '판매자 정보 숨기기',
         'instructions' => '광고 세부 정보 페이지에서 판매자 정보 숨기기',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => '광고 게시 계약 표시',
         'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
