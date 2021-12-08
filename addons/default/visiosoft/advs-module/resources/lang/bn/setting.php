@@ -233,6 +233,10 @@ return [
         'name' => 'বিক্রেতার তথ্য লুকান',
         'instructions' => 'বিজ্ঞাপনের বিশদ পৃষ্ঠাতে বিক্রেতা ইনফোদের কাছে লুকানো',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'পোস্ট বিজ্ঞাপন চুক্তি প্রদর্শন করুন',
         'instructions' => 'আপনি বিজ্ঞাপন তৈরি পৃষ্ঠায় কোনও গোপনীয়তা নীতি চুক্তি প্রদর্শন করতে চাইলে এটি চালু করুন',
