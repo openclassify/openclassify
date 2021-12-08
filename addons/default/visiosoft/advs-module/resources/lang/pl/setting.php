@@ -233,6 +233,10 @@ return [
         'name' => 'Ukryj informacje o sprzedającym',
         'instructions' => 'Ukrywanie informacji o sprzedawcy na stronie szczegółów ogłoszeń',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Pokaż umowę opublikowania ogłoszenia',
         'instructions' => 'Włącz tę opcję, jeśli chcesz wyświetlać umowę o polityce prywatności na stronie tworzenia reklamy',
