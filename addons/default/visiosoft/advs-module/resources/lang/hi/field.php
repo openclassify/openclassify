@@ -272,6 +272,9 @@ return [
     'in_the_last_month' => [
         'name' => 'द लास्ट मंथ में'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In The Last Two Days'
+    ],
     'ads_with_photo' => [
         'name' => 'फोटो के साथ विज्ञापन'
     ],
