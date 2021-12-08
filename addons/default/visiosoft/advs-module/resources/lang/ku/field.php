@@ -344,6 +344,9 @@ return [
         'name' => 'لە مانگی ئاخیر
 '
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In The Last Two Days'
+    ],
     'ads_with_photo' => [
         'name' => 'ڕێکلامەکان بە وێنە
 '
