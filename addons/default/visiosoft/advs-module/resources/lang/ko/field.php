@@ -272,6 +272,9 @@ return [
     'in_the_last_month' => [
         'name' => '지난 달에'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In The Last Two Days'
+    ],
     'ads_with_photo' => [
         'name' => '사진이 포함 된 광고'
     ],
