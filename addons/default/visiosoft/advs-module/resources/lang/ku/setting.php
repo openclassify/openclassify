@@ -233,6 +233,10 @@ return [
         'name' => 'Agahdariya Firoterê Veşêre',
         'instructions' => 'Di rûpelê hûrguliyên reklaman de veşartina agahdariya firotanê',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Peymana Ad Ad-ê nîşan bide',
         'instructions' => 'Heke hûn dixwazin li ser rûpela afirandina reklamê peymana siyaseta nepenîtiyê nîşan bikin vê yekê vekin',
