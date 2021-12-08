@@ -233,6 +233,10 @@ return [
         'name' => 'Απόκρυψη πληροφοριών πωλητή',
         'instructions' => 'Απόκρυψη στις πληροφορίες πωλητή στη σελίδα λεπτομερειών διαφημίσεων',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Εμφάνιση συμφωνίας μετά τη διαφήμιση',
         'instructions' => 'Ενεργοποιήστε το αν θέλετε να εμφανίσετε μια συμφωνία πολιτικής απορρήτου στη σελίδα δημιουργίας διαφημίσεων',
