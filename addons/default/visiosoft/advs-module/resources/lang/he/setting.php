@@ -233,6 +233,10 @@ return [
         'name' => 'הסתר מידע על מוכר',
         'instructions' => 'הסתרה למידע על מוכר בדף פירוט המודעות',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'הצג הסכם מודעות לפרסום',
         'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
