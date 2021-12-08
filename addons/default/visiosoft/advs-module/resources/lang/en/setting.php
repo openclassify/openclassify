@@ -233,6 +233,10 @@ return [
         'name' => 'Hide Seller Information',
         'instructions' => 'Hiding to seller infos in ads detail page',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Turn this on if you want to display a privacy policy agreement on the ad creation page',
