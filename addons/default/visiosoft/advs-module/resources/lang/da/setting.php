@@ -233,6 +233,10 @@ return [
         'name' => 'Skjul sælgeroplysninger',
         'instructions' => 'Skjuler sig for sælgerinfo på siden med annoncer',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Vis indlægsaftale',
         'instructions' => 'Slå dette til, hvis du vil vise en aftale om fortrolighedspolitik på siden til oprettelse af annoncer',
