@@ -233,6 +233,10 @@ return [
         'name' => 'Sembunyikan Informasi Penjual',
         'instructions' => 'Menyembunyikan info penjual di halaman detail iklan',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Aktifkan ini jika Anda ingin menampilkan perjanjian kebijakan privasi di halaman pembuatan iklan',
