@@ -233,6 +233,10 @@ return [
         'name' => '隐藏卖家信息',
         'instructions' => '隐藏在广告详细信息页面中的卖方信息',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => '显示发布广告协议',
         'instructions' => '如果要在广告制作页面上显示隐私权政策协议，请启用此功能',
