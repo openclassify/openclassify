@@ -233,6 +233,10 @@ return [
         'name' => 'Eladó információk elrejtése',
         'instructions' => 'Az eladó információinak elrejtése a hirdetések részletes oldalán',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'A hirdetés utáni megállapodás megjelenítése',
         'instructions' => 'Kapcsolja be, ha adatvédelmi irányelveket szeretne megjeleníteni a hirdetés létrehozása oldalon',
