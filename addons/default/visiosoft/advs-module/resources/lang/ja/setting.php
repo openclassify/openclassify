@@ -233,6 +233,10 @@ return [
         'name' => '売り手情報を隠す',
         'instructions' => '広告の詳細ページで販売者情報を非表示にする',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'ポスト広告契約を表示する',
         'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
