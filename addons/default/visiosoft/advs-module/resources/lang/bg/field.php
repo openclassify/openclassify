@@ -272,6 +272,9 @@ return [
     'in_the_last_month' => [
         'name' => 'През последния месец'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In The Last Two Days'
+    ],
     'ads_with_photo' => [
         'name' => 'Реклами със снимка'
     ],
