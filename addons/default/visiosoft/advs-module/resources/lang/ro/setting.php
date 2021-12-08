@@ -233,6 +233,10 @@ return [
         'name' => 'Ascundeți informațiile despre vânzător',
         'instructions' => 'Ascunderea informațiilor despre vânzător în pagina de detalii a anunțurilor',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Afișați acordul de postare a anunțului',
         'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
