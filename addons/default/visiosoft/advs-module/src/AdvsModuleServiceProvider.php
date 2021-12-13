@@ -11,6 +11,7 @@ use Visiosoft\AdvsModule\Adv\AdvRepository;
 use Anomaly\Streams\Platform\Model\Advs\AdvsAdvsEntryModel;
 use Visiosoft\AdvsModule\Adv\AdvModel;
 use Visiosoft\AdvsModule\Adv\Form\AdvFormBuilder;
+use Visiosoft\AdvsModule\Console\Commands\DeleteNonExistingCoverPhotos;
 use Visiosoft\AdvsModule\Http\Middleware\redirectDiffrentLang;
 use Visiosoft\AdvsModule\Http\Middleware\SetLang;
 use Visiosoft\AdvsModule\Listener\AddAdvsSettingsScript;
@@ -40,6 +41,10 @@ class AdvsModuleServiceProvider extends AddonServiceProvider
 {
     protected $plugins = [
         AdvsModulePlugin::class,
+    ];
+
+    protected $commands = [
+        DeleteNonExistingCoverPhotos::class
     ];
 
     protected $routes = [
