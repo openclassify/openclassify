@@ -38,7 +38,7 @@
     Droid Sans,
     Helvetica Neue,
     sans-serif !important;
-    height: 315px;
+    height: 500px;
     margin-bottom: 20px;
 }
 
@@ -58,13 +58,14 @@
 .product-image-hb {
     display: flex;
     justify-content: center;
-    height: 190px;
+    width:100%;
+    height: 500px;
+    padding: 10px;
 }
 
 .product-image-in {
     width: 100%;
     height: 100%;
-    object-fit: contain;
 }
 
 .product-name-hb {
