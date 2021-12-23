@@ -11,32 +11,40 @@
 
         {% for adv in advs %}
             <div class="col-xl-4 col-lg-6">
-                    <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 border shadow-sm rounded">
-                        {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
-                        <div class="product-image-hb">
-                            <a href="{{ adv.detail_url }}">
-                                <img class="product-image-in" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
-                            </a>
-                        </div>
-                        <div class="product-info-hb d-flex flex-column px-lg-3 px-2 mt-3">
-                            <a href="{{ adv.detail_url }}" class="product-name-hb px-lg-3 px-2 text-dark">
-                                {{ adv.name }}
-                            </a>
-                            {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
-                                <a href="{{ adv.detail_url }}" class="product-name-hb px-lg-3 px-2 text-dark">{{ adv.cat1_name }} /{{ adv.cat2_name }}</a>
-                            {% endif %}
-                            {% if showPrice %}
-                                <div class="product-price-hb font-weight-bold px-lg-3 px-2 mt-2 text-dark">
-                                    {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
-                                </div>
-                            {% endif %}
-
-                        </div>
+                <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 border shadow-sm rounded">
+                    {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
+                    <div class="product-image-hb">
+                        <a href="{{ adv.detail_url }}">
+                            <img class="product-image-in" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+                        </a>
                     </div>
+                    <div class="product-info-hb d-flex flex-column px-lg-3 px-2 mt-3">
+                        <a href="{{ adv.detail_url }}" class="product-name-hb text-decoration-none line-clamp text-dark">
+                            <h3 class="fs-14 text-uppercase"> {{ adv.name }} </h3>
+                        </a>
+                        {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
+                            <a href="{{ adv.detail_url }}" class="product-name-hb text-truncate text-decoration-none text-dark">{{ adv.cat1_name }} /{{ adv.cat2_name }}</a>
+                        {% endif %}
+                        {% if showPrice %}
+                            <div class="product-price-hb rounded d-flex align-items-center px-lg-3 px-2 mt-2 text-dark">
+                                {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
+                            </div>
+                        {% endif %}
+
+                    </div>
+                </div>
             </div>
         {% endfor %}
     </div>
 
+{% endblock %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline('visiosoft.theme.base::css/theme.css') }}
+    </style>
+    {{ asset_style('visiosoft.module.advs::css/list.css') }}
+    {{ asset_style('visiosoft.module.advs::css/list-new.scss') }}
 {% endblock %}
 
 {% block customjs %}
