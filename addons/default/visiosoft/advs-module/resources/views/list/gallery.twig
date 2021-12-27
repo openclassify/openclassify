@@ -10,10 +10,10 @@
         {{ addBlock('ad-list/partials/gallery',{'featured_advs': featured_advs, 'vars': _context})|raw }}
 
         {% for adv in advs %}
-            <div class="col-xl-4 col-lg-6">
-                <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 border shadow-sm rounded">
+            <div class="col-xl-4 col-6 p-sm-3 p-0">
+                <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 pt-1 border shadow-sm rounded">
                     {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
-                    <div class="product-image-hb">
+                    <div class="product-image-hb p-sm-3 p-1 mt-lg-2 mt-4">
                         <a href="{{ adv.detail_url }}">
                             <img class="product-image-in" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
                         </a>
@@ -40,10 +40,7 @@
 {% endblock %}
 
 {% block styles %}
-    <style>
-        {{ asset_inline('visiosoft.theme.base::css/theme.css') }}
-    </style>
-    {{ asset_style('visiosoft.module.advs::css/list.css') }}
+    {{ asset_style('visiosoft.theme.base::css/gallery.css') }}
     {{ asset_style('visiosoft.module.advs::css/list-new.scss') }}
 {% endblock %}
 

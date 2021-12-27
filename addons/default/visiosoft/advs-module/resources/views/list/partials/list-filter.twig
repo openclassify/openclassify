@@ -3,7 +3,7 @@
 {% set citySlug = pathInfo|length is same as(4) ? pathInfo[3] : null %}
 {% set formAction = catSlug ? url_route('adv_list_seo', [catSlug, citySlug]) : url_route('visiosoft.module.advs::list') %}
 <form action="{{ formAction }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow"
-      class="flex-shrink-0">
+      class="flex-shrink-0 d-md-block d-none">
     <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
     <input type="hidden" name="user" value="{{ app.request.get('user') }}">
 
