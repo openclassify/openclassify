@@ -11,7 +11,7 @@
 
         {% for adv in advs %}
             <div class="col-xl-4 col-6 p-sm-3 p-0">
-                <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 pt-1 border shadow-sm rounded">
+                <div class="d-flex flex-column product-hb gallery-card border border-top-0 pb-3 px-md-1 px-0 pt-1 shadow-sm rounded">
                     {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
                     <div class="product-image-hb p-sm-3 p-1 mt-lg-2 mt-4">
                         <a href="{{ adv.detail_url }}">
@@ -24,13 +24,22 @@
                         </a>
                         {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
                             <a href="{{ adv.detail_url }}" class="product-name-hb text-truncate text-decoration-none text-dark">{{ adv.cat1_name }} /{{ adv.cat2_name }}</a>
+                            <p class="d-md-none d-block"><strong>66</strong> Değerlendirme
+                            </p>
                         {% endif %}
                         {% if showPrice %}
-                            <div class="product-price-hb rounded d-flex align-items-center px-lg-3 px-2 mt-2 text-dark">
+                            <div class="product-price-hb rounded d-flex align-items-center mt-2 bg-secondary-md bg-none text-dark">
                                 {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
                             </div>
-                        {% endif %}
+                            <p class="pb-1">Bu ürünün farklı seçenekleri vardır.</p>
+                            <div class="review">
+                                <p>
+                                    <strong>66</strong> Değerlendirme
+                                </p>
+                                <button class="m-0 btn btn-sm btn-outline-dark d-md-none d-block w-100">Sepete Ekle</button>
+                            </div>
 
+                        {% endif %}
                     </div>
                 </div>
             </div>

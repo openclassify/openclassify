@@ -65,7 +65,7 @@
 
                 {{ addBlock('ads-list/row',{'topfields':topfields,'selectRange':selectRange,'advs':advs, 'mainCats':mainCats|length})|raw }}
 
-                <div id="listingWrapper" class="border rounded p-s-3 p-0">
+                <div id="listingWrapper" class="rounded p-s-3 p-0">
                     {% block listContent %}
                         {% include "visiosoft.module.advs::list/partials/ads" %}
                     {% endblock %}
