@@ -742,6 +742,13 @@ class AdvsController extends PublicController
         return $cats;
     }
 
+    public function checkUser()
+    {
+        return [
+            'success' => \auth()->check(),
+        ];
+    }
+
     public function create(AdvFormBuilder $formBuilder, CategoryRepositoryInterface $repository)
     {
         $isActive = new AdvModel();
