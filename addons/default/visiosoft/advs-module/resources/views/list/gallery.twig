@@ -24,8 +24,10 @@
                         </a>
                         {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
                             <a href="{{ adv.detail_url }}" class="product-name-hb text-truncate text-decoration-none text-dark">{{ adv.cat1_name }} /{{ adv.cat2_name }}</a>
+                            <!--comment
                             <p class="d-md-none d-block"><strong>66</strong> Değerlendirme
                             </p>
+                            -->
                         {% endif %}
                         {% if showPrice %}
                             <div class="product-price-hb rounded d-flex align-items-center mt-2 bg-secondary-md bg-none text-dark justify-content-between">
@@ -34,9 +36,11 @@
                             </div>
                             <p class="pb-1">Bu ürünün farklı seçenekleri vardır.</p>
                             <div class="review">
+                                <!--Comment
                                 <p>
                                     <strong>66</strong> Değerlendirme
                                 </p>
+                                -->
                                 <button class="m-0 btn btn-sm btn-outline-dark d-md-none d-block w-100">Sepete Ekle</button>
                             </div>
 
