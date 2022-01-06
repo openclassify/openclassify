@@ -26,9 +26,9 @@
                     <a href="javascript:;"
                        class="text-decoration-none text-truncate d-block selected-category-name">
 
-                        {% if app.request.get('cat') %}
+                        {% if category %}
                             {% for category_breadcrumbs in mainCats %}
-                                {{ category_breadcrumbs['val'] }}
+                                {{ category_breadcrumbs['name'] }}
                                 {% if count(mainCats) != loop.index %}
                                     ,
                                 {% endif %}
