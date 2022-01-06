@@ -63,8 +63,6 @@ class CategoryController extends AdminController
     public function create(FileUploader $uploader, FolderRepositoryInterface $folderRepository, MountManager $manager)
     {
         if ($this->request->action == "save") {
-
-
             $all = $this->request->all();
             $id = $all['parent_category'];
             $parent_id = $all['parent_category'];
@@ -119,24 +117,40 @@ class CategoryController extends AdminController
                 }
             }
             if (empty($isMultiCat)) {
-                $category = $this->categoryRepository->create(array_merge($translatableEntries, [
-                    'slug' => $all['slug'],
-                    'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
-                    'seo_keyword' => $all['seo_keyword'],
-                    'seo_description' => $all['seo_description'],
+                $slug = $all['slug'];
+                if (!$this->categoryRepository->findBySlug($slug)) {
+                    $category = $this->categoryRepository->create(array_merge($translatableEntries, [
+                        'slug' => $all['slug'],
+                        'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
+                        'seo_keyword' => $all['seo_keyword'],
+                        'seo_description' => $all['seo_description'],
+                    ]));
+
+                    $this->createIconFile($category->getId());
+
+                    $this->dispatch(new CalculateCategoryLevel($category->getId()));
+                }
+
+                $this->messages->error(trans('visiosoft.module.cats::message.cat_slug_exists', [
+                    'slug' => $slug
                 ]));
-
-                $this->createIconFile($category->getId());
-
-                $this->dispatch(new CalculateCategoryLevel($category->getId()));
-
             } else {
                 for ($i = 0; $i < count($isMultiCat[0]); $i++) {
                     foreach ($isMultiCat as $cat) {
                         $translatableEntries = array_merge($translatableEntries, $cat[$i]);
                     }
+
+                    $slug = $this->str->slug(reset($translatableEntries)['name'], '_');
+                    if ($this->categoryRepository->findBySlug($slug)) {
+                        $this->messages->error(trans('visiosoft.module.cats::message.cat_slug_exists', [
+                            'slug' => $slug
+                        ]));
+
+                        continue;
+                    }
+
                     $category = $this->categoryRepository->create(array_merge($translatableEntries, [
-                        'slug' => $this->str->slug(reset($translatableEntries)['name'], '_'),
+                        'slug' => $slug,
                         'parent_category' => $all['parent_category'] === "" ? null : $all['parent_category'],
                         'seo_keyword' => $all['seo_keyword'],
                         'seo_description' => $all['seo_description'],
@@ -148,18 +162,6 @@ class CategoryController extends AdminController
                 }
             };
 
-//            $this->categoryRepository->create(array_merge($translatableEntries, [
-//                'slug' => $all['slug'],
-//                'parent_category' => $all['parent_category'],
-//                'icon' => $all['icon'],
-//                'seo_keyword' => $all['seo_keyword'],
-//                'seo_description' => $all['seo_description'],
-//            ]));
-
-//            $form->make();
-//            if ($form->hasFormErrors()) {
-//                return $this->redirect->to('/admin/cats/create');
-//            }
             if ($parent_id != "") {
                 return $this->redirect->to('/admin/cats?cat=' . $parent_id);
             }
