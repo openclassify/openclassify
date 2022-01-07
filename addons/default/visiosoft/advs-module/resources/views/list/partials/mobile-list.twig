@@ -1,0 +1,46 @@
+<div id="mobileListingPage" class="d-sm-none mb-5">
+    {% if setting_value('visiosoft.module.advs::show_subcats_mobile') %}
+        {% include "visiosoft.module.advs::list/partials/sub-categories-mobile" %}
+    {% endif %}
+    {% if not hideBreadcrump %}
+        {% include "visiosoft.module.advs::list/partials/mobile-breadcrumb" %}
+    {% endif %}
+
+    {% if not hideActions %}
+        <div id="mobileListNav" class="d-flex p-2 align-items-center mb-1">
+            <div id="filter_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
+                {{ img('visiosoft.module.advs::images/listing/mobile-filter.svg').data|raw }}
+                <p class="mt-1">{{ trans('visiosoft.module.advs::field.filter') }}</p>
+            </div>
+            <div class="divider"></div>
+            <div id="sort_modal_btn" class="d-flex flex-column align-items-center mobile-list-nav-item">
+                {{ img('visiosoft.module.advs::images/listing/mobile-sort.svg').data|raw }}
+                <p class="mt-1">{{ trans('visiosoft.module.advs::field.sort') }}</p>
+            </div>
+            <div class="divider"></div>
+
+            {{ addBlock('ads-list/mobile/action-bar')|raw }}
+
+        </div>
+    {% endif %}
+
+    <div id="mobileListing">
+        {{ addBlock('ad-list/partials/mobile-list', {'featured_advs': featured_advs, 'vars': _context})|raw }}
+
+        {% for adv in advs %}
+            <a href="{{ adv.detail_url }}" class="listing-item d-flex p-2">
+                <img src="{{ adv.cover_photo }}" alt="{{ adv.name }}" class="rounded-sm">
+                <div class="ml-3 mt-1">
+                    <h6 class="mb-1">{{ adv.name }}</h6>
+                    {% if listLocation %}
+                        <p class="mb-1">{{ adv.country_name }} / {{ adv.city_name }}</p>
+                    {% endif %}
+                    <p>{{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}</p>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+
+    {% include "visiosoft.module.advs::list/partials/pagination" %}
+
+</div>
