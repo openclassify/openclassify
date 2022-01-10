@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => 'Uusi luokiteltu',
     'new_classified' => 'Uusi luokiteltu',
     'new_category' => 'Uusi luokka',
