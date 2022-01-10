@@ -32,4 +32,8 @@ return [
 	'sold_status_change' => "L'estat del vostre anunci s'ha definit com a venut.",
 	'status_change' => "L'estat del vostre anunci s'ha configurat en: estat!",
 	'disabled_detailed_options_for_admin_role' => "Les opcions detallades del producte estan desactivades.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
