@@ -37,5 +37,11 @@ return [
     'please_wait' => 'অনুগ্রহ করে অপেক্ষা করুন Sub সাব বিভাগগুলি মোছা',
     'category_selection' => 'বিভাগ নির্বাচন',
     'go_to_parent' => 'পিতামাতায় যান',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];
