@@ -32,4 +32,8 @@ return [
 	'sold_status_change' => "Състоянието на вашата реклама е настроено да се продава!",
 	'status_change' => "Състоянието на вашата реклама е зададено на: статус!",
 	'disabled_detailed_options_for_admin_role' => "Подробните опции за продукта са деактивирани.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
