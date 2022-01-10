@@ -59,4 +59,8 @@ return [
 	'sold_status_change' => "! دۆخی ڕیکلامەکەت وەکو فرۆشراوە ڕێکخراوە ",
 	'status_change' => "Rewşa Reklama We Bûye: Status!",
 	'disabled_detailed_options_for_admin_role' => "Vebijarkên hilbera berfireh têne sekinandin.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
