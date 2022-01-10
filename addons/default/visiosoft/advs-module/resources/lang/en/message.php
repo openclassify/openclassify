@@ -37,4 +37,5 @@ return [
     'option_saved' => 'Option Saved',
     'do_you_want_to_save_the_option' => 'Do you want to save the option?',
     'you_can_not_delete_a_system_status' => 'You can not delete a system status!',
+    'product_added_to_cart' => 'Product added to cart!',
 ];
