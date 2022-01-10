@@ -34,4 +34,6 @@ return [
 	'disabled_detailed_options_for_admin_role' => "Ayrıntılı ürün seçenekleri devre dışı bırakıldı.",
     'permission_error' => 'Bu işlem için yetkiniz bulunmamaktadır',
     'currency_converter_not_available' => 'Para birimi çevirici kullanılamıyor.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
