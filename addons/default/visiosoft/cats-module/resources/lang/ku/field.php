@@ -36,7 +36,7 @@ return [
 ',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'باوان',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
@@ -46,5 +46,12 @@ return [
 ',
     'go_to_parent' => 'Go To Parent
 ',
-	'preview' => 'Preview'
+	'preview' => 'پێشبینین
+',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'کەتێگۆری',
+    'id' => 'ID',
 ];
