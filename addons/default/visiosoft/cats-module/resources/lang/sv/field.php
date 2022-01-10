@@ -37,5 +37,11 @@ return [
     'please_wait' => 'Vänta. Ta bort underkategorier',
     'category_selection' => 'Val av kategori',
     'go_to_parent' => 'Gå till förälder',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];
