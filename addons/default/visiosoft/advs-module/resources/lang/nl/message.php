@@ -32,4 +32,8 @@ return [
 	'sold_status_change' => "De status van uw advertentie is ingesteld op Verkocht!",
 	'status_change' => "De status van uw advertentie is ingesteld op: status!",
 	'disabled_detailed_options_for_admin_role' => "Gedetailleerde productopties zijn uitgeschakeld.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
