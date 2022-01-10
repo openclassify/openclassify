@@ -32,4 +32,8 @@ return [
 	'sold_status_change' => "귀하의 광고 상태가 판매로 설정되었습니다!",
 	'status_change' => "귀하의 광고 상태가 : status로 설정되었습니다!",
 	'disabled_detailed_options_for_admin_role' => "자세한 제품 옵션이 비활성화됩니다.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
