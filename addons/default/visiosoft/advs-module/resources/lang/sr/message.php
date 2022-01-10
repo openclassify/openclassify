@@ -32,4 +32,8 @@ return [
 	'sold_status_change' => "Status vašeg oglasa je prodato!",
 	'status_change' => "Status vašeg oglasa je :status!",
 	'disabled_detailed_options_for_admin_role' => "Detaljne opcije proizvoda su onemogućene.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
