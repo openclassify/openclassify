@@ -128,6 +128,9 @@ return [
     'google_statistic_code' => [
         'name' => 'Google İstatistik Kodu',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'Üye Kayıt E-posta Zorunluluğu',
     ],
@@ -287,7 +290,23 @@ return [
     'hide_contact_created_at' => [
         'name' => 'Hide Contact Fields For in Create New Ad'
     ],
+    'show_input_flag' => [
+        'name' => 'Show Flags on Input',
+        'instructions' => 'Show flag and description on translatable inputs'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Hide out of stock products without listing',
+        'instructions' => 'Hides out-of-stock GET products from listing and homepage'
+    ],
     'only_email_login' => [
-        'name' => 'Sadece Email İle Giriş',
-    ]
+        'name' => 'Sadece Email İle Giriş'
+    ],
+    'preview_mode' => [
+        'name' => 'Preview Mode',
+        'instructions' => 'When this mode is enabled, the ad is previewed by the user.'
+    ],
+    'show_order_note' => [
+        'name' => 'Show Order Note',
+        'instructions' => "Show the order note field which is used to show the customers custom text when their order's payment is approved."
+    ],
 ];
