@@ -7,7 +7,9 @@
 
 {% block content %}
 
-    <div id="listingPage" class="">
+    {% include "visiosoft.module.advs::list/partials/mobile-list" %}
+
+    <div id="listingPage" class="d-none d-sm-block">
 
         {% include "visiosoft.module.advs::list/partials/breadcrumb" %}
 
@@ -15,7 +17,7 @@
 
             {% include "visiosoft.module.advs::list/partials/list-filter" %}
 
-            <div id="listingContainer" class="flex-fill ml-s-4 ml-0">
+            <div id="listingContainer" class="flex-fill ml-4">
                 <div id="pageTitle" class="d-flex justify-content-between border-bottom pb-2 px-3 mb-3">
                     <p>
                         {{ trans('visiosoft.module.advs::field.search_ad_result_text', {

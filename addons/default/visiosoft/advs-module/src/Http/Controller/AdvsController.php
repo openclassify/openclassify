@@ -271,7 +271,7 @@ class AdvsController extends PublicController
 
 
         if ($category) {
-            $mainCats = $this->category_repository->getParentCategoryByOrder($category->id);
+            $mainCats = collect($this->category_repository->getParentCategoryByOrder($category->id));
             $subCats = $category->getSubCategories();
             $allCats = false;
         } else {
@@ -450,9 +450,9 @@ class AdvsController extends PublicController
             if ($city) {
                 $catText = "$city->name $catText";
             } elseif (count($mainCats) == 1 || count($mainCats) == 2) {
-                $catText = end($mainCats)->name;
+                $catText = $mainCats->last()->name;
             } elseif (count($mainCats) > 2) {
-                $catArray = array_slice($mainCats, 2);
+                $catArray = $mainCats->slice(2);
                 $loop = 0;
                 foreach ($catArray as $cat) {
                     $catText = !$loop ? $catText . $cat->name : $catText . ' ' . $cat->name;
@@ -740,6 +740,13 @@ class AdvsController extends PublicController
             }
         }
         return $cats;
+    }
+
+    public function checkUser()
+    {
+        return [
+            'success' => \auth()->check(),
+        ];
     }
 
     public function create(AdvFormBuilder $formBuilder, CategoryRepositoryInterface $repository)
