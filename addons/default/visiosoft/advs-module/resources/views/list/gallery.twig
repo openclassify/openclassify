@@ -19,7 +19,7 @@
 
                                 {% endfor %}
                             <div class="hover-area">
-                                {% for key, photo in adv.getViewPhotoUrl %}
+                                {% for key, photo in adv.getViewPhotoUrl|(0,3) %}
                                         <div class="hover-{{ key }}" data-parent="{{ adv.id }}" data-id="img-{{ adv.id ~ '-' ~ key }}"></div>
                                 {% endfor %}
                             </div>
