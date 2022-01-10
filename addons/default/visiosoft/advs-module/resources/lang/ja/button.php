@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => '新しい広告',
     'new_classified' => '新しい機密',
     'new_category' => '新たなカテゴリー',
