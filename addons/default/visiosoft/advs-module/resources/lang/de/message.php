@@ -32,4 +32,8 @@ return [
 	'sold_status_change' => "Der Status Ihrer Anzeige wurde auf Verkauf gesetzt!",
 	'status_change' => "Der Status Ihrer Anzeige wurde auf: Status gesetzt!",
 	'disabled_detailed_options_for_admin_role' => "Detaillierte Produktoptionen sind deaktiviert.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
 ];
