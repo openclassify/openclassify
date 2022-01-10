@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Código estadístico de Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'Requisito de registro de miembro por correo electrónico',
     ],
     'market_place' => [
         'name' => 'Market Place',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Ocultar información del vendedor',
         'instructions' => 'Ocultar información del vendedor en la página de detalles de anuncios',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Hide Seller Information By Category',
+        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar acuerdo de publicación',
         'instructions' => 'Active esta opción si desea mostrar un acuerdo de política de privacidad en la página de creación de anuncios.',
@@ -280,7 +287,26 @@ return [
         'name' => 'Show Tax Field',
         'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Hide Contact Fields For in Create New Ad'
+    ],
+    'show_input_flag' => [
+        'name' => 'Show Flags on Input',
+        'instructions' => 'Show flag and description on translatable inputs'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Hide out of stock products without listing',
+        'instructions' => 'Hides out-of-stock GET products from listing and homepage'
+    ],
+    'only_email_login' => [
+        'name' => 'Only Email Login'
+    ],
+    'preview_mode' => [
+        'name' => 'Preview Mode',
+        'instructions' => 'When this mode is enabled, the ad is previewed by the user.'
+    ],
+    'show_order_note' => [
+        'name' => 'Show Order Note',
+        'instructions' => "Show the order note field which is used to show the customers custom text when their order's payment is approved."
+    ],
 ];
