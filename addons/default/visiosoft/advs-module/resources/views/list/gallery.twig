@@ -14,7 +14,7 @@
                 <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 pt-1 border shadow-sm rounded">
                     <div class="product-image-hb p-sm-3 p-1">
                         <a href="{{ adv.detail_url }}" class="imgs" id="{{ adv.id }}">
-                                {%  for key,photo in adv.getViewPhotoUrl %}
+                                {%  for key,photo in adv.getViewPhotoUrl|slice(0, 3) %}
                                     <img src="{{ photo }}" class="product-image-in ads-img img-{{ adv.id ~ '-' ~ key }}" alt="">
 
                                 {% endfor %}
