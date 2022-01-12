@@ -12,19 +12,25 @@
             {% set profile_photo = user.file ? user.file.make.url : img('visiosoft.module.profile::images/profile-default.png').url %}
 
             <div class="row px-3">
-
                 <!-- User Profile Form Section-->
-                <div class="col-md-12 bg-light profile-section pb-4 px-5">
+                <div class="col-md-12 bg-white profile-section pb-4 px-1 px-sm-5 border">
                     <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                         <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
                              aria-labelledby="nav-profile-tab">
+                            <div class="col-12 mb-4 mb-md-5 mt-md-3 px-3 px-md-0">
+                                <h3>{{ trans('visiosoft.module.profile::field.profile.name') }}</h3>
+                                <p>{{ trans('visiosoft.module.profile::field.profile_instruction') }}</p>
+                            </div>
+
                             <div>
                                 {% set userForm = form('userProfile').entry(user.id).get() %}
                                 {{ userForm.open()|raw }}
                                 <div class="mt-4 d-flex profile--desc flex-column flex-lg-row">
-                                    <div class="profile-image d-flex d-sm-block m-auto m-sm-0 mr-sm-3">
+                                    <div class="profile-image d-flex d-sm-block m-auto m-sm-0 mr-sm-3 position-relative">
                                         <img src="{{ profile_photo }}">
-                                        <i class="new-profile-image">{{ img('visiosoft.module.profile::images/camera.svg').data|raw }}</i>
+                                        <div class="new-profile-image position-absolute">
+                                            {{ img('visiosoft.module.profile::images/camera.svg').data|raw }}
+                                        </div>
                                         {% if setting_value('visiosoft.module.profile::upload_avatar') %}
                                             <div class="form-group">
                                                 {{ userForm.fields.file|raw }}
