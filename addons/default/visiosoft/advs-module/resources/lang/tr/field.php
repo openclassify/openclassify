@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Cep Telefonu',
     'phone_office' => 'Sabit telefon',
     'add_to_favorites' => "Favorilere Ekle",
+    'add_to_cart'=> "Sepete Ekle",
     'send' => 'Gönder',
     'search_name' => 'Arama Adı',
     'my_favorite_searches' => 'Favori Aramalar',
