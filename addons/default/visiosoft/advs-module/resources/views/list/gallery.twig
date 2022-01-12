@@ -31,9 +31,6 @@
                                 {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
                                 {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['comparisons'])|raw }}
                             </div>
-                            <div class="review">
-                                <button class="m-0 btn btn-sm btn-outline-dark d-md-none d-block w-100">{{ trans('visiosoft.module.advs::field.add_to_cart') }}</button>
-                            </div>
 
                         {% endif %}
                     </div>
