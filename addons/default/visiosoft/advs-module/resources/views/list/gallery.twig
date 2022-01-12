@@ -14,12 +14,14 @@
                 <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 pt-1 border shadow-sm rounded">
                     <div class="product-image-hb p-sm-3 p-1">
                         <a href="{{ adv.detail_url }}" class="imgs" id="{{ adv.id }}">
-                                {%  for key,photo in adv.getViewPhotoUrl|slice(0, 3) %}
+                            {% set slicedPhotos = adv.getViewPhotoUrl|slice(0,3) %}
+
+                            {%  for key,photo in slicedPhotos %}
                                     <img src="{{ photo }}" class="product-image-in ads-img img-{{ adv.id ~ '-' ~ key }}" alt="">
 
                                 {% endfor %}
                             <div class="hover-area">
-                                {% for key, photo in adv.getViewPhotoUrl|(0,3) %}
+                                {% for key, photo in slicedPhotos %}
                                         <div class="hover-{{ key }}" data-parent="{{ adv.id }}" data-id="img-{{ adv.id ~ '-' ~ key }}"></div>
                                 {% endfor %}
                             </div>
@@ -44,19 +46,8 @@
             </div>
         {% endfor %}
     </div>
-    <script>
-        $('.ads-img').first().css('display', 'block');
 
-        $('.hover-area').mouseover((e) => {
-            var el = $(e);
-
-            var img = $(`.${$(el[0].target).data('id')}`);
-
-            img.siblings('img').css('display', 'none');
-
-            img.css('display', 'block');
-        });
-    </script>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
 
 {% endblock %}
 
@@ -66,7 +57,6 @@
 {% endblock %}
 
 {% block customjs %}
-    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
     {% include "theme::scroll-modal" %}
 {% endblock %}
 
