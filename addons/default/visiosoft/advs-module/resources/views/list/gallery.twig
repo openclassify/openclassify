@@ -34,13 +34,7 @@
                                 {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
                                 {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['comparisons'])|raw }}
                             </div>
-                            <p class="pb-1">Bu ürünün farklı seçenekleri vardır.</p>
                             <div class="review">
-                                <!--Comment
-                                <p>
-                                    <strong>66</strong> Değerlendirme
-                                </p>
-                                -->
                                 <button class="m-0 btn btn-sm btn-outline-dark d-md-none d-block w-100">Sepete Ekle</button>
                             </div>
 
