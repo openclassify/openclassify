@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Trạng thái quảng cáo của bạn đã được đặt thành bán!",
 	'status_change' => "Trạng thái Quảng cáo của Bạn Đã được Đặt thành: trạng thái!",
 	'disabled_detailed_options_for_admin_role' => "Tùy chọn sản phẩm chi tiết bị vô hiệu hóa.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
+    'you_can_not_delete_a_system_status' => 'You can not delete a system status!',
+    'product_added_to_cart' => 'Product added to cart!',
 ];

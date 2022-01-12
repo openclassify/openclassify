@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "O status do seu anúncio foi definido como vendido!",
 	'status_change' => "O status do seu anúncio foi definido como: status!",
 	'disabled_detailed_options_for_admin_role' => "As opções detalhadas do produto estão desativadas.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
+    'you_can_not_delete_a_system_status' => 'You can not delete a system status!',
+    'product_added_to_cart' => 'Product added to cart!',
 ];

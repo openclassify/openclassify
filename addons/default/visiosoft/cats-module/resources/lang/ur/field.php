@@ -37,5 +37,11 @@ return [
     'please_wait' => 'براہ کرم انتظار کریں۔ ذیلی زمرے ختم کرنا',
     'category_selection' => 'زمرہ انتخاب',
     'go_to_parent' => 'پیرنٹ پر جائیں',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];

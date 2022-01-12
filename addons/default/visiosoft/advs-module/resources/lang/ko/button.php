@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Add',
     'new_adv' => '새로운 Adv',
     'new_classified' => '새로운 분류',
     'new_category' => '새 분류',

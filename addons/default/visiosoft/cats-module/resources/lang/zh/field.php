@@ -37,5 +37,11 @@ return [
     'please_wait' => '请稍候。正在删除子类别',
     'category_selection' => '类别选择',
     'go_to_parent' => '去父母',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'Category',
+    'id' => 'ID',
 ];

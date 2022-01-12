@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Hirdetésének állapota értékesítésre került!",
 	'status_change' => "Hirdetése állapota a következőre lett állítva: állapot!",
 	'disabled_detailed_options_for_admin_role' => "A részletes termékopciók le vannak tiltva.",
+    'permission_error' => 'You do not have permission for this action',
+    'currency_converter_not_available' => 'The currency converter is not available.',
+    'option_saved' => 'Option Saved',
+    'do_you_want_to_save_the_option' => 'Do you want to save the option?',
+    'you_can_not_delete_a_system_status' => 'You can not delete a system status!',
+    'product_added_to_cart' => 'Product added to cart!',
 ];

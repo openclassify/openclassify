@@ -30,12 +30,18 @@ return [
         'instructions' => 'برای اضافه کردن نمادهایی که نوع طبقه را نشان می دهد ، استفاده می شود.',
     ],
 
-    'parent' => 'Parent',
+    'parent' => 'والدین',
     'level' => 'Level',
     'count' => 'Ad Counts',
 
     'please_wait' => 'لطفاً صبر کنید. حذف دسته بندی های فرعی',
     'category_selection' => 'انتخاب دسته',
     'go_to_parent' => 'به والدین بروید',
-	'preview' => 'Preview'
+	'preview' => 'Preview',
+
+    // Report
+    'undefined_category' => 'Undefined Category',
+    'categories_with_no_meta_report' => 'Categories with No Meta Report',
+    'category' => 'دسته بندی',
+    'id' => 'ID',
 ];
