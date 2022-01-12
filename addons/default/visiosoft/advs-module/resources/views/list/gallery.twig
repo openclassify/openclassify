@@ -13,8 +13,18 @@
             <div class="col-xl-4 col-6 p-sm-3 p-0">
                 <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 pt-1 border shadow-sm rounded">
                     <div class="product-image-hb p-sm-3 p-1">
-                        <a href="{{ adv.detail_url }}">
-                            <img class="product-image-in" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+                        <a href="{{ adv.detail_url }}" class="imgs" id="{{ adv.id }}">
+                            {% set slicedPhotos = adv.getViewPhotoUrl|slice(0,3) %}
+
+                            {%  for key,photo in slicedPhotos %}
+                                    <img src="{{ photo }}" class="product-image-in ads-img img-{{ adv.id ~ '-' ~ key }}" alt="">
+
+                                {% endfor %}
+                            <div class="hover-area">
+                                {% for key, photo in slicedPhotos %}
+                                        <div class="hover-{{ key }}" data-parent="{{ adv.id }}" data-id="img-{{ adv.id ~ '-' ~ key }}"></div>
+                                {% endfor %}
+                            </div>
                         </a>
                         {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs'])|raw }}
                     </div>
@@ -37,6 +47,8 @@
         {% endfor %}
     </div>
 
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
+
 {% endblock %}
 
 {% block styles %}
@@ -45,6 +57,7 @@
 {% endblock %}
 
 {% block customjs %}
-    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
     {% include "theme::scroll-modal" %}
 {% endblock %}
+
+
