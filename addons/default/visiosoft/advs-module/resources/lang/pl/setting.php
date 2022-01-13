@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Kod statystyczny Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Niestandardowa przestrzeń ciała',
+    ],
     'register_email_field' => [
         'name' => 'Wymagany adres e-mail rejestracji członka',
     ],
     'market_place' => [
         'name' => 'Rynek',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Ukryj informacje o sprzedającym',
         'instructions' => 'Ukrywanie informacji o sprzedawcy na stronie szczegółów ogłoszeń',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Ukryj informacje o sprzedawcy według kategorii',
+        'instructions' => 'Ukrywanie informacji o sprzedającym według wybranych głównych kategorii na stronie ze szczegółami ogłoszeń',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Pokaż umowę opublikowania ogłoszenia',
         'instructions' => 'Włącz tę opcję, jeśli chcesz wyświetlać umowę o polityce prywatności na stronie tworzenia reklamy',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Wyświetla pola publ_at i finish_at na stronie tworzenia reklamy.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Pokaż pole podatku',
+        'instructions' => 'Gdy ta opcja jest włączona, możesz ustawić stawkę podatku na stronie tworzenia reklamy.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Ukryj pola kontaktowe dla w Utwórz nową reklamę'
+    ],
+    'show_input_flag' => [
+        'name' => 'Pokaż flagi na wejściu',
+        'instructions' => 'Pokaż flagę i opis na możliwych do przetłumaczenia danych wejściowych'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Ukryj niedostępne produkty bez aukcji',
+        'instructions' => 'Ukrywa niedostępne produkty GET na liście i na stronie głównej'
+    ],
+    'only_email_login' => [
+        'name' => 'Tylko logowanie przez e-mail'
+    ],
+    'preview_mode' => [
+        'name' => 'Tryb podglądu',
+        'instructions' => 'Gdy ten tryb jest włączony, reklama jest przeglądana przez użytkownika.'
+    ],
+    'show_order_note' => [
+        'name' => 'Pokaż notatkę dotyczącą zamówienia',
+        'instructions' => "Pokaż pole uwagi do zamówienia, które jest używane do wyświetlania niestandardowego tekstu klienta po zatwierdzeniu płatności za zamówienie."
+    ],
 ];
