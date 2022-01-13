@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "আপনার বিজ্ঞাপনের স্থিতি বিক্রয় করা হয়েছে!",
 	'status_change' => "আপনার বিজ্ঞাপনের স্থিতি সেট করা হয়েছে: স্থিতি!",
 	'disabled_detailed_options_for_admin_role' => "বিশদ পণ্য বিকল্পগুলি অক্ষম।",
+    'permission_error' => 'আপনার এই কর্মের জন্য অনুমতি নেই',
+    'currency_converter_not_available' => 'মুদ্রা রূপান্তরকারী উপলব্ধ নেই.',
+    'option_saved' => 'বিকল্প সংরক্ষিত',
+    'do_you_want_to_save_the_option' => 'আপনি বিকল্প সংরক্ষণ করতে চান?',
+    'you_can_not_delete_a_system_status' => 'আপনি একটি সিস্টেম স্ট্যাটাস মুছে ফেলতে পারবেন না!',
+    'product_added_to_cart' => 'পণ্য কার্ট যোগ করা হয়েছে!',
 ];
