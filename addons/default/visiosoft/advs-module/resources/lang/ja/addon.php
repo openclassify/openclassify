@@ -4,5 +4,5 @@ return [
     'title'       => '広告',
     'name'        => '広告モジュール',
     'description' => '広告モジュール',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'これは、[広告]ページから広告を追加、削除、および編集できる画面です。このページでは、投稿管理や広告設定などの操作を簡単に行うことができます。'
 ];
