@@ -498,4 +498,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Ontvang berichten per e-mail',
     ],
+
+    // Report
+    'member' => 'Lid',
+    'registered_at' => 'Geregistreerd bij',
+    'login_at' => 'Inloggen op',
+    'undefined_member' => 'Ongedefinieerd lid',
+    'new_membership_report' => 'Nieuw lidmaatschapsrapport',
+    'member_login_reports' => 'Inlograpporten voor leden',
+
+    'profile_instruction' => 'U kunt uw profielgegevens vanaf deze pagina bewerken.',
 ];
