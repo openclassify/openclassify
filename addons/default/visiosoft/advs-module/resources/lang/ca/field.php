@@ -134,7 +134,7 @@ return [
     'home' => 'Inici',
     'list-page' => 'Pàgina de llista',
     'search' => 'Cerca',
-	'reset' => 'Reset',
+	'reset' => 'Restableix',
     'recommended' => 'Anuncis recomanats per a vosaltres',
     'filter' => 'Filtre',
     'sort' => 'Ordena',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Telèfon GSM',
     'phone_office' => 'Telèfon d\'oficina',
     'add_to_favorites' => "Afegir a preferits",
+    'add_to_cart'=> "Afegeix a la cistella",
     'send' => 'Envia',
     'search_name' => 'Cerca el nom',
     'my_favorite_searches' => 'Cerques preferides',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'En l’últim mes'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'En els dos últims dies'
+    ],
     'ads_with_photo' => [
         'name' => 'Anuncis amb foto'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Propietari',
     'default_owner_instruction' => 'El propietari passarà per defecte a l\'usuari actual si no se selecciona cap usuari',
     'create_page_subtitle' => 'Creeu l’anunci perfectament introduint informació detallada sobre el vostre anunci.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Amb els meus números de telèfon',
+    'not_with_my_phone_numbers' => "No vull que em contactin per telèfon",
+    'how_can_you_be_contacted' => "Com es pot contactar amb tu?",
 
     // Listing page
     'ad_title' => 'Títol de l\'anunci',
@@ -378,8 +382,23 @@ return [
         'name' => 'Data de publicació'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Impost'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nom (de la A a la Z)',
+    'name_z_a' => 'Nom (de la Z a la A)',
+    'select_lang_ads' => 'seleccioneu l\'idioma dels anuncis',
+
+    // Report
+    'product_stock_report' => 'Informe d\'estoc de producte',
+    'active_passive_products_report' => 'Informe de productes actius-passius',
+    'unexplained_products_report' => 'Informe de productes inexplicables',
+    'non_image_products_report' => 'Informe de productes que no són d\'imatge',
+    'product' => 'Producte',
+    'count' => 'Compte',
+    'undefined_product' => 'Producte no definit',
+    'pages_without_meta_information_report' => 'Pàgines sense meta-informe d\'informació',
+    'page' => 'Pàgina',
+    'undefined_page' => 'Pàgina sense definir',
+    'id' => 'ID',
+    'custom_field' => 'Camp personalitzat',
 ];
