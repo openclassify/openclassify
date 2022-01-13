@@ -4,5 +4,5 @@ return [
     'title'       => 'Locație',
     'name'        => 'Modulul de locație',
     'description' => 'Descriere',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'Pe această pagină, puteți gestiona informații despre țară, oraș, district, cartier și sat.',
 ];
