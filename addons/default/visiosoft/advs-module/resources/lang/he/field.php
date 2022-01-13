@@ -134,7 +134,7 @@ return [
     'home' => 'בית',
     'list-page' => 'עמוד רשימה',
     'search' => 'לחפש',
-	'reset' => 'Reset',
+	'reset' => 'אִתחוּל',
     'recommended' => 'מודעות מומלצות עבורך',
     'filter' => 'סנן',
     'sort' => 'סוג',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'טלפון Gsm',
     'phone_office' => 'טלפון במשרד',
     'add_to_favorites' => "הוסף למועדפים",
+    'add_to_cart'=> "הוסף לעגלה",
     'send' => 'שלח',
     'search_name' => 'שם חיפוש',
     'my_favorite_searches' => 'חיפושים מועדפים',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'בחודש האחרון'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'ביומיים האחרונים'
+    ],
     'ads_with_photo' => [
         'name' => 'מודעות עם תמונה'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'בעלים',
     'default_owner_instruction' => 'הבעלים יוגדר כברירת מחדל למשתמש הנוכחי אם לא ייבחר משתמש',
     'create_page_subtitle' => 'צור את המודעה ללא רבב על ידי הזנת מידע מפורט אודות המודעה שלך.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'עם מספרי הטלפון שלי',
+    'not_with_my_phone_numbers' => "אני לא רוצה שיתקשרו אליי בטלפון",
+    'how_can_you_be_contacted' => "איך אפשר ליצור איתך קשר?",
 
     // Listing page
     'ad_title' => 'כותרת המודעה',
@@ -378,8 +382,23 @@ return [
         'name' => 'פרסם תאריך'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'מַס'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'שם (א\' עד ת\')',
+    'name_z_a' => 'שם (Z עד A)',
+    'select_lang_ads' => 'בחר את שפת המודעות',
+
+    // Report
+    'product_stock_report' => 'דוח מלאי מוצרים',
+    'active_passive_products_report' => 'דוח מוצרים אקטיביים-פאסיביים',
+    'unexplained_products_report' => 'דוח מוצרים לא מוסבר',
+    'non_image_products_report' => 'דוח מוצרים שאינם תדמיתיים',
+    'product' => 'מוצר',
+    'count' => 'לספור',
+    'undefined_product' => 'מוצר לא מוגדר',
+    'pages_without_meta_information_report' => 'דוח דפים ללא מידע מטא',
+    'page' => 'עמוד',
+    'undefined_page' => 'עמוד לא מוגדר',
+    'id' => 'תְעוּדַת זֶהוּת',
+    'custom_field' => 'שדה מותאם',
 ];
