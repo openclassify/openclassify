@@ -4,5 +4,5 @@ return [
     'title'       => 'اشتہارات',
     'name'        => 'اشتہارات ماڈیول',
     'description' => 'اشتہارات ماڈیول',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'یہ وہ سکرین ہے جہاں آپ اشتہارات کے صفحہ سے اشتہارات شامل، حذف اور ترمیم کر سکتے ہیں۔ اس صفحہ پر، آپ پوسٹ مینجمنٹ اور اشتہار کی ترتیب جیسے کام آسانی سے کر سکتے ہیں۔'
 ];
