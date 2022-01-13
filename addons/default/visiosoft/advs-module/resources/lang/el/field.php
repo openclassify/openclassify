@@ -134,7 +134,7 @@ return [
     'home' => 'Σπίτι',
     'list-page' => 'Λίστα σελίδας',
     'search' => 'Ψάξιμο',
-	'reset' => 'Reset',
+	'reset' => 'Επαναφορά',
     'recommended' => 'Προτεινόμενες διαφημίσεις για εσάς',
     'filter' => 'Φίλτρο',
     'sort' => 'Είδος',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Τηλέφωνο Gsm',
     'phone_office' => 'Τηλέφωνο γραφείου',
     'add_to_favorites' => "Προσθήκη στα αγαπημένα",
+    'add_to_cart'=> "Προσθήκη στο καλάθι",
     'send' => 'Στείλετε',
     'search_name' => 'Όνομα αναζήτησης',
     'my_favorite_searches' => 'Αγαπημένες αναζητήσεις',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Τον τελευταίο μήνα'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Στις δύο τελευταίες μέρες'
+    ],
     'ads_with_photo' => [
         'name' => 'Διαφημίσεις με φωτογραφία'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Ιδιοκτήτης',
     'default_owner_instruction' => 'Ο κάτοχος θα προεπιλογή στον τρέχοντα χρήστη εάν δεν έχει επιλεγεί κανένας χρήστης',
     'create_page_subtitle' => 'Δημιουργήστε τη διαφήμιση άψογα εισάγοντας λεπτομερείς πληροφορίες σχετικά με τη διαφήμισή σας.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Με τους αριθμούς τηλεφώνου μου',
+    'not_with_my_phone_numbers' => "Δεν θέλω να με επικοινωνούν τηλεφωνικά",
+    'how_can_you_be_contacted' => "Πώς μπορείτε να επικοινωνήσετε μαζί σας;",
 
     // Listing page
     'ad_title' => 'Τίτλος διαφήμισης',
@@ -379,8 +383,23 @@ return [
         'name' => 'Ημερομηνία δημοσίευσης'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Φόρος'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Όνομα (Α έως Ω)',
+    'name_z_a' => 'Όνομα (Ζ έως Α)',
+    'select_lang_ads' => 'επιλέξτε τη γλώσσα των διαφημίσεων',
+
+    // Report
+    'product_stock_report' => 'Αναφορά αποθέματος προϊόντος',
+    'active_passive_products_report' => 'Αναφορά ενεργών-παθητικών προϊόντων',
+    'unexplained_products_report' => 'Αναφορά ανεξήγητων προϊόντων',
+    'non_image_products_report' => 'Αναφορά προϊόντων χωρίς εικόνα',
+    'product' => 'Προϊόν',
+    'count' => 'μετρώ',
+    'undefined_product' => 'Απροσδιόριστο προϊόν',
+    'pages_without_meta_information_report' => 'Αναφορά Σελίδες Χωρίς Μετα-Πληροφορίες',
+    'page' => 'Σελίδα',
+    'undefined_page' => 'Μη καθορισμένη σελίδα',
+    'id' => 'ταυτότητα',
+    'custom_field' => 'Προσαρμοσμένο πεδίο',
 ];
