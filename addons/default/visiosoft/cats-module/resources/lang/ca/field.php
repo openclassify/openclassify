@@ -30,12 +30,18 @@ return [
         'instructions' => 'S\'utilitza per afegir icones que indiquen el tipus de categoria.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Pare',
+    'level' => 'Nivell',
+    'count' => 'Recompte d\'anuncis',
 
     'please_wait' => 'Si us plau, espereu. Esborra les subcategories',
     'category_selection' => 'Selecció de categories',
     'go_to_parent' => 'Ves al pare',
-	'preview' => 'Preview'
+	'preview' => 'Vista prèvia',
+
+    // Report
+    'undefined_category' => 'Categoria no definida',
+    'categories_with_no_meta_report' => 'Categories sense metainforme',
+    'category' => 'Categoria',
+    'id' => 'ID',
 ];
