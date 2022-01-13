@@ -177,6 +177,7 @@ return [
 ',
     'add_to_favorites' => "دانێ بۆ دڵخوازەکانەوە
 ",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'بنێرە',
     'search_name' => 'ناوی گەڕان',
     'my_favorite_searches' => 'گەڕانی دڵخوازترین
