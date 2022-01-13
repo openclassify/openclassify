@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Τηλέφωνο Gsm',
     'phone_office' => 'Τηλέφωνο γραφείου',
     'add_to_favorites' => "Προσθήκη στα αγαπημένα",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Στείλετε',
     'search_name' => 'Όνομα αναζήτησης',
     'my_favorite_searches' => 'Αγαπημένες αναζητήσεις',
