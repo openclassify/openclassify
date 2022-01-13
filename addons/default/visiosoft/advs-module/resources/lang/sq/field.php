@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Nr. Celular ',
     'phone_office' => 'Telefoni i zyres',
     'add_to_favorites' => "Shto te të preferuarat",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Dërgo',
     'search_name' => 'Emri i Kërkimit',
     'my_favorite_searches' => 'Kërkimet e mia të preferuara ',
