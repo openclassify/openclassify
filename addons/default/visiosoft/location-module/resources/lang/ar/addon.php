@@ -4,5 +4,5 @@ return [
     'title'       => 'موقعك',
     'name'        => 'وحدة الموقع',
     'description' => 'وصف',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'في هذه الصفحة ، يمكنك إدارة معلومات الدولة والمدينة والمقاطعة والحي والقرية.',
 ];
