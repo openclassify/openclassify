@@ -4,5 +4,5 @@ return [
     'title'       => 'Τοποθεσία',
     'name'        => 'Μονάδα τοποθεσίας',
     'description' => 'Περιγραφή',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'Σε αυτή τη σελίδα, μπορείτε να διαχειριστείτε πληροφορίες χώρας, πόλης, περιοχής, γειτονιάς και χωριού.',
 ];
