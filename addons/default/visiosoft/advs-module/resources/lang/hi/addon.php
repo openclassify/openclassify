@@ -4,5 +4,5 @@ return [
     'title'       => 'विज्ञापन',
     'name'        => 'विज्ञापन मॉड्यूल',
     'description' => 'विज्ञापन मॉड्यूल',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'यह वह स्क्रीन है जहां आप विज्ञापन पृष्ठ से विज्ञापन जोड़, हटा और संपादित कर सकते हैं। इस पृष्ठ पर, आप केवल पोस्ट प्रबंधन और विज्ञापन कॉन्फ़िगरेशन जैसे संचालन कर सकते हैं।'
 ];
