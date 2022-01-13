@@ -4,5 +4,5 @@ return [
     'title'       => 'Kategorija',
     'name'        => 'Moduli i Kategorisë',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Ky është ekrani ku mund të shtoni, fshini dhe modifikoni kategori nga faqja e kategorive. Ju mund të menaxhoni lehtësisht kategoritë dhe nën-kategoritë kryesore nga kjo faqe.',
 ];
