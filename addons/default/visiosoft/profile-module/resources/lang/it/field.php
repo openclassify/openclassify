@@ -498,4 +498,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Ricevi messaggi e-mail',
     ],
+
+    // Report
+    'member' => 'Membro',
+    'registered_at' => 'Registrato a',
+    'login_at' => 'Accedi a',
+    'undefined_member' => 'Membro indefinito',
+    'new_membership_report' => 'Nuovo rapporto di appartenenza',
+    'member_login_reports' => 'Rapporti di accesso dei membri',
+
+    'profile_instruction' => 'Puoi modificare le informazioni del tuo profilo da questa pagina.',
 ];
