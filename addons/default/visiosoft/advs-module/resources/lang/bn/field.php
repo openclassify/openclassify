@@ -134,7 +134,7 @@ return [
     'home' => 'বাড়ি',
     'list-page' => 'তালিকা পৃষ্ঠা',
     'search' => 'অনুসন্ধান করুন',
-	'reset' => 'Reset',
+	'reset' => 'রিসেট',
     'recommended' => 'আপনার জন্য প্রস্তাবিত বিজ্ঞাপনগুলি',
     'filter' => 'ছাঁকনি',
     'sort' => 'সাজান',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'জিএসএম ফোন',
     'phone_office' => 'অফিসে ফোন',
     'add_to_favorites' => "ফেভারিটে যোগ করুন",
+    'add_to_cart'=> "কার্টে যোগ করুন",
     'send' => 'পাঠান',
     'search_name' => 'নাম অনুসন্ধান করুন',
     'my_favorite_searches' => 'প্রিয় অনুসন্ধানসমূহ',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'শেষ মাসে'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'শেষ দুই দিনে'
+    ],
     'ads_with_photo' => [
         'name' => 'ছবির সাথে বিজ্ঞাপন'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'মালিক',
     'default_owner_instruction' => 'কোনও ব্যবহারকারী নির্বাচিত না হলে মালিক বর্তমান ব্যবহারকারীর কাছে ডিফল্ট হবে',
     'create_page_subtitle' => 'আপনার বিজ্ঞাপন সম্পর্কে বিস্তারিত তথ্য প্রবেশ করে নির্বিঘ্নে বিজ্ঞাপনটি তৈরি করুন।',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'আমার ফোন নম্বর দিয়ে',
+    'not_with_my_phone_numbers' => "আমি ফোনে পৌঁছাতে চাই না",
+    'how_can_you_be_contacted' => "কিভাবে আপনার সাথে যোগাযোগ করা যেতে পারে?",
 
     // Listing page
     'ad_title' => 'বিজ্ঞাপনের শিরোনাম',
@@ -378,8 +382,23 @@ return [
         'name' => 'প্রকাশের তারিখ'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'ট্যাক্স'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'নাম (A থেকে Z)',
+    'name_z_a' => 'নাম (Z থেকে A)',
+    'select_lang_ads' => 'বিজ্ঞাপনের ভাষা নির্বাচন করুন',
+
+    // Report
+    'product_stock_report' => 'পণ্য স্টক রিপোর্ট',
+    'active_passive_products_report' => 'সক্রিয়-প্যাসিভ পণ্য প্রতিবেদন',
+    'unexplained_products_report' => 'অব্যক্ত পণ্য রিপোর্ট',
+    'non_image_products_report' => 'অ-ইমেজ পণ্য রিপোর্ট',
+    'product' => 'পণ্য',
+    'count' => 'গণনা',
+    'undefined_product' => 'অনির্ধারিত পণ্য',
+    'pages_without_meta_information_report' => 'মেটা তথ্য রিপোর্ট ছাড়া পেজ',
+    'page' => 'পাতা',
+    'undefined_page' => 'অনির্ধারিত পৃষ্ঠা',
+    'id' => 'আইডি',
+    'custom_field' => 'কাস্টম ক্ষেত্র',
 ];
