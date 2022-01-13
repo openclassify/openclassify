@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Στατιστικό κώδικα Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Προσαρμοσμένος χώρος σώματος',
+    ],
     'register_email_field' => [
         'name' => 'Απαίτηση ηλεκτρονικού ταχυδρομείου εγγραφής μέλους',
     ],
     'market_place' => [
         'name' => 'Αγορά',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Απόκρυψη πληροφοριών πωλητή',
         'instructions' => 'Απόκρυψη στις πληροφορίες πωλητή στη σελίδα λεπτομερειών διαφημίσεων',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Απόκρυψη πληροφοριών πωλητή ανά κατηγορία',
+        'instructions' => 'Απόκρυψη πληροφοριών σε πωλητές ανά επιλεγμένες κύριες κατηγορίες στη σελίδα λεπτομερειών διαφημίσεων',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Εμφάνιση συμφωνίας μετά τη διαφήμιση',
         'instructions' => 'Ενεργοποιήστε το αν θέλετε να εμφανίσετε μια συμφωνία πολιτικής απορρήτου στη σελίδα δημιουργίας διαφημίσεων',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Εμφανίζει τα πεδία publish_at και finish_at στη σελίδα δημιουργίας διαφημίσεων.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Εμφάνιση φορολογικού πεδίου',
+        'instructions' => 'Όταν αυτή η επιλογή είναι ενεργοποιημένη, μπορείτε να ορίσετε τον φορολογικό συντελεστή στη σελίδα δημιουργίας διαφημίσεων.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Απόκρυψη πεδίων επαφής για στη Δημιουργία νέας διαφήμισης'
+    ],
+    'show_input_flag' => [
+        'name' => 'Εμφάνιση σημαιών στην είσοδο',
+        'instructions' => 'Εμφάνιση σημαίας και περιγραφής σε μεταφράσιμα εισόδους'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Απόκρυψη προϊόντων εκτός αποθέματος χωρίς καταχώριση',
+        'instructions' => 'Αποκρύπτει τα μη διαθέσιμα προϊόντα GET από την καταχώριση και την αρχική σελίδα'
+    ],
+    'only_email_login' => [
+        'name' => 'Μόνο Είσοδος μέσω email'
+    ],
+    'preview_mode' => [
+        'name' => 'Λειτουργία προεπισκόπησης',
+        'instructions' => 'Όταν αυτή η λειτουργία είναι ενεργοποιημένη, η διαφήμιση γίνεται προεπισκόπηση από τον χρήστη.'
+    ],
+    'show_order_note' => [
+        'name' => 'Εμφάνιση σημείωσης παραγγελίας',
+        'instructions' => "Εμφάνιση του πεδίου σημείωσης παραγγελίας που χρησιμοποιείται για την εμφάνιση προσαρμοσμένου κειμένου στους πελάτες όταν εγκρίνεται η πληρωμή της παραγγελίας τους."
+    ],
 ];
