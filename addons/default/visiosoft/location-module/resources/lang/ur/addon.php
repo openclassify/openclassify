@@ -4,5 +4,5 @@ return [
     'title'       => 'مقام',
     'name'        => 'مقام ماڈیول',
     'description' => 'تفصیل',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'اس صفحہ پر، آپ ملک، شہر، ضلع، محلے اور گاؤں کی معلومات کا انتظام کر سکتے ہیں۔',
 ];
