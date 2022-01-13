@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm-telefon',
     'phone_office' => 'Kontorstelefon',
     'add_to_favorites' => "Lägg till i favoriter",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Skicka',
     'search_name' => 'Söknamn',
     'my_favorite_searches' => 'Favorit sökningar',
