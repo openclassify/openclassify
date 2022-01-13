@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Lo stato del tuo annuncio è stato impostato su Venduto!",
 	'status_change' => "Lo stato del tuo annuncio è stato impostato su: status!",
 	'disabled_detailed_options_for_admin_role' => "Le opzioni dettagliate del prodotto sono disabilitate.",
+    'permission_error' => 'Non hai l\'autorizzazione per questa azione',
+    'currency_converter_not_available' => 'Il convertitore di valuta non è disponibile.',
+    'option_saved' => 'Opzione salvata',
+    'do_you_want_to_save_the_option' => 'Vuoi salvare l\'opzione?',
+    'you_can_not_delete_a_system_status' => 'Non è possibile eliminare uno stato del sistema!',
+    'product_added_to_cart' => 'Prodotto aggiunto al carrello!',
 ];
