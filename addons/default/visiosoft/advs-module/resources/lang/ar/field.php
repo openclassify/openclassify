@@ -134,7 +134,7 @@ return [
     'home' => 'الصفحة الرئيسية',
     'list-page' => 'قائمة الصفحة',
     'search' => 'بحث',
-	'reset' => 'Reset',
+	'reset' => 'إعادة ضبط',
     'recommended' => 'الإعلانات الموصى بها لك',
     'filter' => 'منقي',
     'sort' => 'فرز',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'جي إس إم الهاتف',
     'phone_office' => 'هاتف المكتب',
     'add_to_favorites' => "اضافة الى المفضلة",
+    'add_to_cart'=> "أضف إلى السلة",
     'send' => 'إرسال',
     'search_name' => 'اسم البحث',
     'my_favorite_searches' => 'عمليات البحث المفضلة',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'في الشهر الماضي'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'في اليومين الأخيرين'
+    ],
     'ads_with_photo' => [
         'name' => 'الإعلانات مع الصور'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'صاحب',
     'default_owner_instruction' => 'سيتحول المالك إلى المستخدم الحالي افتراضيًا إذا لم يتم تحديد أي مستخدم',
     'create_page_subtitle' => 'قم بإنشاء الإعلان بشكل لا تشوبه شائبة عن طريق إدخال معلومات مفصلة حول إعلانك.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'بأرقام هاتفي',
+    'not_with_my_phone_numbers' => "لا أريد أن يتم الوصول إلي عبر الهاتف",
+    'how_can_you_be_contacted' => "كيف يمكن الاتصال بك؟",
 
     // Listing page
     'ad_title' => 'عنوان الاعلان',
@@ -378,8 +382,23 @@ return [
         'name' => 'تاريخ النشر'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'ضريبة'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'الاسم (من الألف إلى الياء)',
+    'name_z_a' => 'الاسم (من ي إلى أ)',
+    'select_lang_ads' => 'حدد لغة الإعلانات',
+
+    // Report
+    'product_stock_report' => 'تقرير مخزون المنتج',
+    'active_passive_products_report' => 'تقرير المنتجات السلبية النشطة',
+    'unexplained_products_report' => 'تقرير المنتجات غير المبررة',
+    'non_image_products_report' => 'تقرير المنتجات غير المصورة',
+    'product' => 'منتج',
+    'count' => 'عدد',
+    'undefined_product' => 'منتج غير محدد',
+    'pages_without_meta_information_report' => 'صفحات بدون تقرير معلومات وصفية',
+    'page' => 'صفحة',
+    'undefined_page' => 'صفحة غير محددة',
+    'id' => 'بطاقة تعريف',
+    'custom_field' => 'حقل مخصص',
 ];
