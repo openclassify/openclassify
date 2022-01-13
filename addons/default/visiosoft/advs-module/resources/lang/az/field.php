@@ -134,7 +134,7 @@ return [
     'home' => 'Ev',
     'list-page' => 'Siyahı Səhifə',
     'search' => 'Axtarış',
-	'reset' => 'Reset',
+	'reset' => 'Sıfırlayın',
     'recommended' => 'Tövsiyə olunan elanlar',
     'filter' => 'Filter',
     'sort' => 'Sırala',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Mobil Telefon',
     'phone_office' => 'Ofis Telefonu',
     'add_to_favorites' => "Seçilmişlərə əlavə et",
+    'add_to_cart'=> "Səbətə əlavə et",
     'send' => 'Göndər',
     'search_name' => 'Axtarış Adı',
     'my_favorite_searches' => 'Seçilmiş axtarışlar',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Son Ayda'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Son İki Gündə'
+    ],
     'ads_with_photo' => [
         'name' => 'Şəkilli Elanlar'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Sahib',
     'default_owner_instruction' => 'Heç bir istifadəçi seçilmədiyi təqdirdə sahib cari istifadəçiyə borcludur',
     'create_page_subtitle' => 'Reklamınız haqqında ətraflı məlumat daxil edərək reklamı qüsursuz bir şəkildə yaradın.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Telefon nömrələrimlə',
+    'not_with_my_phone_numbers' => "Mənə telefonla müraciət etmək istəmirəm",
+    'how_can_you_be_contacted' => "Sizinlə necə əlaqə saxlamaq olar?",
 
     // Listing page
     'ad_title' => 'Reklam adı',
@@ -379,8 +383,23 @@ return [
         'name' => 'Tarixi dərc edin'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'vergi'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Ad (A-dan Z-yə)',
+    'name_z_a' => 'Ad (Z-dən A)',
+    'select_lang_ads' => 'reklamların dilini seçin',
+
+    // Report
+    'product_stock_report' => 'Məhsul ehtiyatı hesabatı',
+    'active_passive_products_report' => 'Aktiv-Passiv Məhsullar Hesabatı',
+    'unexplained_products_report' => 'Açıqlanamayan Məhsullar Hesabatı',
+    'non_image_products_report' => 'Qeyri-Şəkil Məhsulları Hesabatı',
+    'product' => 'Məhsul',
+    'count' => 'saymaq',
+    'undefined_product' => 'Müəyyən edilməmiş məhsul',
+    'pages_without_meta_information_report' => 'Meta Məlumatsız Səhifələr Hesabatı',
+    'page' => 'Səhifə',
+    'undefined_page' => 'Müəyyən edilməmiş səhifə',
+    'id' => 'ID',
+    'custom_field' => 'Fərdi Sahə',
 ];
