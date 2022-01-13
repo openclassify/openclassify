@@ -4,5 +4,5 @@ return [
     'title'       => 'Anzeigen',
     'name'        => 'Anzeigenmodul',
     'description' => 'Anzeigenmodul',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Dies ist der Bildschirm, auf dem Sie Anzeigen auf der Anzeigenseite hinzufügen, löschen und bearbeiten können. Auf dieser Seite können Sie einfach Vorgänge wie Post-Management und Anzeigenkonfiguration durchführen.'
 ];
