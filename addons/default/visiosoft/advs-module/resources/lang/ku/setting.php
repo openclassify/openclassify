@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Code Code',
     ],
+    'body_custom_space' => [
+        'name' => 'Cihê Custom Body',
+    ],
     'register_email_field' => [
         'name' => 'Endamtiya Serlêdana E-nameya Endamtiyê',
     ],
     'market_place' => [
         'name' => 'Cihê Sûkê',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Agahdariya Firoterê Veşêre',
         'instructions' => 'Di rûpelê hûrguliyên reklaman de veşartina agahdariya firotanê',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Agahdariya Firoşkaran Li gorî Kategoriyê veşêre',
+        'instructions' => 'Di rûpela hûrguliyên reklaman de ji hêla kategoriyên sereke yên bijartî ve agahdariya firoşkarê vedişêre',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Peymana Ad Ad-ê nîşan bide',
         'instructions' => 'Heke hûn dixwazin li ser rûpela afirandina reklamê peymana siyaseta nepenîtiyê nîşan bikin vê yekê vekin',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Zeviyên publ_at û finish_at li ser rûpela afirandina reklaman nîşan dide.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Qada Bacê nîşan bide',
+        'instructions' => 'Dema ku ev vebijark çalak be, hûn dikarin rêjeya bacê li ser rûpela çêkirina reklamê saz bikin.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Di Afirandina Reklama Nû de Qadên Têkilî Veşêrin'
+    ],
+    'show_input_flag' => [
+        'name' => 'Alên li ser Input nîşan bide',
+        'instructions' => 'Li ser têketinên wergerr ala û ravekirinê nîşan bidin'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Berhemên ji stokê bêyî navnîşkirinê veşêrin',
+        'instructions' => 'Berhemên GET-ê yên ne-stokê ji navnîş û rûpelê malê vedişêre'
+    ],
+    'only_email_login' => [
+        'name' => 'Tenê Têketina E-nameyê'
+    ],
+    'preview_mode' => [
+        'name' => 'Moda Pêşdîtinê',
+        'instructions' => 'Dema ku ev mod were çalak kirin, reklam ji hêla bikarhêner ve tê pêşdîtin.'
+    ],
+    'show_order_note' => [
+        'name' => 'Nîşe Fermana Nîşe',
+        'instructions' => "Qada nîgara fermanê ya ku tê bikar anîn ji bo nîşankirina nivîsa xwerû ya xerîdar dema ku dravdana fermana wan were pejirandin nîşan bidin."
+    ],
 ];
