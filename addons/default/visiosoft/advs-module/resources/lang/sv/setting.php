@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Googles statistiska kod',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'E-postmedlemskrav för medlemskap',
     ],
     'market_place' => [
         'name' => 'Market Place',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Dölj säljarinformation',
         'instructions' => 'Dölja information till säljare på sidan med annonser',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Dölj säljarinformation efter kategori',
+        'instructions' => 'Döljer för säljarinformation efter valda huvudkategorier på annonsens detaljsida',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Visa annonsannonsavtal',
         'instructions' => 'Aktivera detta om du vill visa ett integritetspolicyavtal på sidan för skapande av annonser',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Visar fälten publish_at och finish_at på sidan för att skapa annonser.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Visa momsfält',
+        'instructions' => 'När det här alternativet är aktiverat kan du ställa in skattesatsen på sidan för att skapa annonser.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Dölj kontaktfält för i Skapa ny annons'
+    ],
+    'show_input_flag' => [
+        'name' => 'Visa flaggor vid ingång',
+        'instructions' => 'Visa flagga och beskrivning på översättbara indata'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Göm produkter som inte finns i lager utan listning',
+        'instructions' => 'Döljer GET-produkter som inte finns i lager från listning och hemsida'
+    ],
+    'only_email_login' => [
+        'name' => 'Endast e-postinloggning'
+    ],
+    'preview_mode' => [
+        'name' => 'Förhandsgranskningsläge',
+        'instructions' => 'När detta läge är aktiverat förhandsgranskas annonsen av användaren.'
+    ],
+    'show_order_note' => [
+        'name' => 'Visa beställningsanmärkning',
+        'instructions' => "Visa ordernotisfältet som används för att visa kundens anpassade text när deras orders betalning godkänns."
+    ],
 ];
