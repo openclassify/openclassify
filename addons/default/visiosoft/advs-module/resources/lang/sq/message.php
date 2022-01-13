@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Statusi i Reklamës suaj Setshtë vendosur të shitet!",
 	'status_change' => "Statusi i Reklamës suaj Setshtë vendosur në: status!",
 	'disabled_detailed_options_for_admin_role' => "Opsionet e hollësishme të produktit janë çaktivizuar.",
+    'permission_error' => 'Ju nuk keni leje për këtë veprim',
+    'currency_converter_not_available' => 'Konvertuesi i monedhës nuk është i disponueshëm.',
+    'option_saved' => 'Opsioni u ruajt',
+    'do_you_want_to_save_the_option' => 'Dëshiron ta ruash opsionin?',
+    'you_can_not_delete_a_system_status' => 'Ju nuk mund të fshini statusin e sistemit!',
+    'product_added_to_cart' => 'Produkti u shtua në shportë!',
 ];
