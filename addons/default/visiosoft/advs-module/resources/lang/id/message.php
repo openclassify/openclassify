@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Status Iklan Anda Telah Diatur ke Terjual!",
 	'status_change' => "Status Iklan Anda Telah Diatur ke :status!",
 	'disabled_detailed_options_for_admin_role' => "Opsi produk mendetail dinonaktifkan.",
+    'permission_error' => 'Anda tidak memiliki izin untuk tindakan ini',
+    'currency_converter_not_available' => 'Konverter mata uang tidak tersedia.',
+    'option_saved' => 'Opsi Disimpan',
+    'do_you_want_to_save_the_option' => 'Apakah Anda ingin menyimpan opsi?',
+    'you_can_not_delete_a_system_status' => 'Anda tidak dapat menghapus status sistem!',
+    'product_added_to_cart' => 'Produk ditambahkan ke keranjang!',
 ];
