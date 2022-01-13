@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'Kërko sipas numrit Telefonat',
+
+    // Adv Export
+    'choose_file_type' => 'Zgjidhni llojin e skedarit për eksport',
 ];
