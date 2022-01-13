@@ -134,7 +134,7 @@ return [
     'home' => 'Hjem',
     'list-page' => 'Listeside',
     'search' => 'Søk',
-	'reset' => 'Reset',
+	'reset' => 'Nullstille',
     'recommended' => 'Anbefalte annonser for deg',
     'filter' => 'Filter',
     'sort' => 'Sortere',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-telefon',
     'phone_office' => 'Kontortelefon',
     'add_to_favorites' => "Legg til i favoritter",
+    'add_to_cart'=> "Legg i handlekurv",
     'send' => 'Sende',
     'search_name' => 'Søkenavn',
     'my_favorite_searches' => 'Favorittsøk',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'I den siste måneden'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'I de to siste dagene'
+    ],
     'ads_with_photo' => [
         'name' => 'Annonser med foto'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Eieren',
     'default_owner_instruction' => 'Eieren vil som standard være den nåværende brukeren hvis ingen bruker er valgt',
     'create_page_subtitle' => 'Opprett annonsen feilfritt ved å legge inn detaljert informasjon om annonsen din.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Med mine telefonnumre',
+    'not_with_my_phone_numbers' => "Jeg ønsker ikke å bli nådd på telefon",
+    'how_can_you_be_contacted' => "Hvordan kan du bli kontaktet?",
 
     // Listing page
     'ad_title' => 'Annonsetittel',
@@ -378,8 +382,23 @@ return [
         'name' => 'Publiseringsdato'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Avgift'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Navn (A til Å)',
+    'name_z_a' => 'Navn (Å til A)',
+    'select_lang_ads' => 'velg språket for annonsene',
+
+    // Report
+    'product_stock_report' => 'Produktlagerrapport',
+    'active_passive_products_report' => 'Rapport om aktive-passive produkter',
+    'unexplained_products_report' => 'Uforklarlig produktrapport',
+    'non_image_products_report' => 'Rapport om ikke-bildeprodukter',
+    'product' => 'Produkt',
+    'count' => 'Telle',
+    'undefined_product' => 'Udefinert produkt',
+    'pages_without_meta_information_report' => 'Sider uten metainformasjonsrapport',
+    'page' => 'Side',
+    'undefined_page' => 'Udefinert side',
+    'id' => 'ID',
+    'custom_field' => 'Egendefinert felt',
 ];
