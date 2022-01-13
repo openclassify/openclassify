@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Статус вашего объявления изменен на \"Продано\"!",
 	'status_change' => "Статус вашего объявления был установлен на: status!",
 	'disabled_detailed_options_for_admin_role' => "Подробные параметры продукта отключены.",
+    'permission_error' => 'У вас нет разрешения на это действие',
+    'currency_converter_not_available' => 'Конвертер валют недоступен.',
+    'option_saved' => 'Вариант сохранен',
+    'do_you_want_to_save_the_option' => 'Вы хотите сохранить опцию?',
+    'you_can_not_delete_a_system_status' => 'Вы не можете удалить системный статус!',
+    'product_added_to_cart' => 'Товар добавлен в корзину!',
 ];
