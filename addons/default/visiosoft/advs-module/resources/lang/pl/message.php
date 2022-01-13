@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Stan Twojej reklamy został ustawiony na Sprzedane!",
 	'status_change' => "Status Twojej reklamy został ustawiony na: status!",
 	'disabled_detailed_options_for_admin_role' => "Szczegółowe opcje produktu są wyłączone.",
+    'permission_error' => 'Nie masz uprawnień do tej akcji',
+    'currency_converter_not_available' => 'Przelicznik walut jest niedostępny.',
+    'option_saved' => 'Opcja zapisana',
+    'do_you_want_to_save_the_option' => 'Czy chcesz zapisać opcję?',
+    'you_can_not_delete_a_system_status' => 'Nie możesz usunąć statusu systemu!',
+    'product_added_to_cart' => 'Produkt dodany do koszyka!',
 ];
