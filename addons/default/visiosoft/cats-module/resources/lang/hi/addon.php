@@ -4,5 +4,5 @@ return [
     'title'       => 'वर्ग',
     'name'        => 'श्रेणी मॉड्यूल',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'यह वह स्क्रीन है जहां आप श्रेणी पृष्ठ से श्रेणियां जोड़, हटा और संपादित कर सकते हैं। आप इस पृष्ठ से मुख्य श्रेणियों और उप-श्रेणियों को आसानी से प्रबंधित कर सकते हैं।',
 ];
