@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'קבל הודעות דוא"ל',
     ],
+
+    // Report
+    'member' => 'חבר',
+    'registered_at' => 'רשום ב',
+    'login_at' => 'התחבר ב-',
+    'undefined_member' => 'חבר לא מוגדר',
+    'new_membership_report' => 'דוח חברות חדש',
+    'member_login_reports' => 'דוחות התחברות לחברים',
+
+    'profile_instruction' => 'אתה יכול לערוך את פרטי הפרופיל שלך מדף זה.',
 ];
