@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'קוד סטטיסטי של גוגל',
     ],
+    'body_custom_space' => [
+        'name' => 'מרחב מותאם אישית לגוף',
+    ],
     'register_email_field' => [
         'name' => 'דרישת דוא"ל לרישום חבר',
     ],
     'market_place' => [
         'name' => 'זירת מסחר',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'הסתר מידע על מוכר',
         'instructions' => 'הסתרה למידע על מוכר בדף פירוט המודעות',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'הסתר מידע על מוכר לפי קטגוריה',
+        'instructions' => 'הסתרת מידע למפיץ לפי קטגוריות עיקריות נבחרות בדף הפרטים של המודעות',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'הצג הסכם מודעות לפרסום',
         'instructions' => 'הפעל זאת אם ברצונך להציג הסכם מדיניות פרטיות בדף יצירת המודעות',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'מציג את השדות publish_at ו- finish_at בדף יצירת המודעות.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'הצג שדה מס',
+        'instructions' => 'כאשר אפשרות זו מופעלת, תוכל להגדיר את שיעור המס בדף יצירת המודעה.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'הסתר שדות אנשי קשר עבור ב-צור מודעה חדשה'
+    ],
+    'show_input_flag' => [
+        'name' => 'הצג דגלים בקלט',
+        'instructions' => 'הצג דגל ותיאור בכניסות הניתנות לתרגום'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'הסתר מוצרים שאזלו מהמלאי ללא רישום',
+        'instructions' => 'מסתיר את מוצרי GET שאזלו מהמלאי מהרישום ומדף הבית'
+    ],
+    'only_email_login' => [
+        'name' => 'רק כניסה בדוא"ל'
+    ],
+    'preview_mode' => [
+        'name' => 'מצב תצוגה מקדימה',
+        'instructions' => 'כאשר מצב זה מופעל, המודעה מוצגת בתצוגה מקדימה על ידי המשתמש.'
+    ],
+    'show_order_note' => [
+        'name' => 'הצג הערת הזמנה',
+        'instructions' => "הצג את שדה הערת ההזמנה המשמש להצגת טקסט מותאם אישית ללקוחות כאשר התשלום בהזמנה שלהם מאושר."
+    ],
 ];
