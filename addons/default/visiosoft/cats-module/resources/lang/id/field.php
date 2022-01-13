@@ -37,5 +37,11 @@ return [
     'please_wait' => 'Harap tunggu. Menghapus Sub Kategori',
     'category_selection' => 'Pemilihan Kategori',
     'go_to_parent' => 'Buka Orang Tua',
-	'preview' => 'Pratinjau'
+	'preview' => 'Pratinjau',
+
+    // Report
+    'undefined_category' => 'Kategori tidak ditentukan',
+    'categories_with_no_meta_report' => 'Kategori tanpa Laporan Meta',
+    'category' => 'Kategori',
+    'id' => 'Indo',
 ];
