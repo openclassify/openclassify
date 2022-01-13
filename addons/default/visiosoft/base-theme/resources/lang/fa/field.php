@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'لیست دستورالعمل ها',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'مشکل اتصال',
+    'your_internet_connection_is_broken' => 'اتصال اینترنت شما قطع شده است،',
+    'we_miss_you_so_much_already' => 'ما در حال حاضر خیلی دلتنگ شما هستیم!',
+    'try_again' => 'دوباره امتحان کنید',
 ];
