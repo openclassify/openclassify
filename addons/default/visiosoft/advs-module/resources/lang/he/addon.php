@@ -4,5 +4,5 @@ return [
     'title'       => 'מודעות',
     'name'        => 'מודול מודעות',
     'description' => 'מודול מודעות',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'זהו המסך שבו תוכל להוסיף, למחוק ולערוך מודעות מדף המודעות. בדף זה, אתה יכול פשוט לבצע את הפעולות כמו ניהול פוסטים ותצורת מודעות.'
 ];
