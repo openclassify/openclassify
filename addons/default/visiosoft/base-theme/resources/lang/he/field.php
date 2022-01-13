@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'רשימת הוראות',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'בעיות חיבור',
+    'your_internet_connection_is_broken' => 'חיבור האינטרנט שלך מקולקל,',
+    'we_miss_you_so_much_already' => 'אנחנו כבר כל כך מתגעגעים!',
+    'try_again' => 'נסה שוב',
 ];
