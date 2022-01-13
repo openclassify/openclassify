@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Mobil Telefon',
     'phone_office' => 'Ofis Telefonu',
     'add_to_favorites' => "Seçilmişlərə əlavə et",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Göndər',
     'search_name' => 'Axtarış Adı',
     'my_favorite_searches' => 'Seçilmiş axtarışlar',
