@@ -58,8 +58,8 @@ return [
     'instruction_list' => '지시 목록',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => '연결 문제',
+    'your_internet_connection_is_broken' => '인터넷 연결이 끊어졌습니다.',
+    'we_miss_you_so_much_already' => '우리는 이미 당신이 너무 그리워!',
+    'try_again' => '다시 시도하십시오',
 ];
