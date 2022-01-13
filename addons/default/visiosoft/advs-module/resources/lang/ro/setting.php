@@ -234,8 +234,8 @@ return [
         'instructions' => 'Ascunderea informațiilor despre vânzător în pagina de detalii a anunțurilor',
     ],
     'hide_seller_info_by_category' => [
-        'name' => 'Hide Seller Information By Category',
-        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+        'name' => 'Ascundeți informațiile vânzătorului după categorie',
+        'instructions' => 'Ascunderea informațiilor vânzătorului în funcție de categoriile principale selectate în pagina de detalii a anunțurilor',
     ],
     'show_post_ad_agreement' => [
         'name' => 'Afișați acordul de postare a anunțului',
@@ -284,29 +284,29 @@ return [
         'instructions' => 'Afișează câmpurile publish_at și finish_at de pe pagina de creare a anunțului.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Afișați câmpul fiscal',
+        'instructions' => 'Când această opțiune este activată, puteți seta cota de impozitare pe pagina de creare a anunțurilor.'
     ],
     'hide_contact_created_at' => [
-        'name' => 'Hide Contact Fields For in Create New Ad'
+        'name' => 'Ascundeți câmpurile de contact pentru în Creare anunț nou'
     ],
     'show_input_flag' => [
-        'name' => 'Show Flags on Input',
-        'instructions' => 'Show flag and description on translatable inputs'
+        'name' => 'Afișați steaguri la intrare',
+        'instructions' => 'Afișați marcajul și descrierea intrărilor care se pot traduce'
     ],
     'hide_out_of_stock_products_without_listing' => [
-        'name' => 'Hide out of stock products without listing',
-        'instructions' => 'Hides out-of-stock GET products from listing and homepage'
+        'name' => 'Ascundeți produsele epuizate fără listare',
+        'instructions' => 'Ascunde produsele GET epuizate din lista și pagina de pornire'
     ],
     'only_email_login' => [
-        'name' => 'Only Email Login'
+        'name' => 'Doar autentificare prin e-mail'
     ],
     'preview_mode' => [
-        'name' => 'Preview Mode',
-        'instructions' => 'When this mode is enabled, the ad is previewed by the user.'
+        'name' => 'Modul de previzualizare',
+        'instructions' => 'Când acest mod este activat, anunțul este previzualizat de utilizator.'
     ],
     'show_order_note' => [
-        'name' => 'Show Order Note',
-        'instructions' => "Show the order note field which is used to show the customers custom text when their order's payment is approved."
+        'name' => 'Afișați nota de comandă',
+        'instructions' => "Afișați câmpul pentru nota de comandă care este utilizat pentru a afișa textul personalizat clienților atunci când plata comenzii lor este aprobată."
     ],
 ];
