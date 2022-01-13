@@ -495,4 +495,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Mesaj E-postası Al',
     ],
+
+    // Report
+    'member' => 'Üye',
+    'registered_at' => 'Kayıtlı',
+    'login_at' => 'Giriş Yap',
+    'undefined_member' => 'Tanımsız Üye',
+    'new_membership_report' => 'Yeni Üyelik Raporu',
+    'member_login_reports' => 'Üye Giriş Raporları',
+
+    'profile_instruction' => 'Profil bilgilerinizi bu sayfadan düzenleyebilirsiniz.',
 ];
