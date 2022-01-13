@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google सांख्यिकी कोड',
     ],
+    'body_custom_space' => [
+        'name' => 'बॉडी कस्टम स्पेस',
+    ],
     'register_email_field' => [
         'name' => 'सदस्य पंजीकरण ईमेल आवश्यकता',
     ],
     'market_place' => [
         'name' => 'मार्केट प्लेस',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'विक्रेता की जानकारी छिपाएँ',
         'instructions' => 'विज्ञापन विस्तार पृष्ठ में विक्रेता infos को छुपाता है',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'श्रेणी के अनुसार विक्रेता की जानकारी छुपाएं',
+        'instructions' => 'विज्ञापन विवरण पृष्ठ में चयनित मुख्य श्रेणियों द्वारा विक्रेता जानकारी को छिपाना',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'विज्ञापन विज्ञापन दिखाएं',
         'instructions' => 'यदि आप विज्ञापन निर्माण पृष्ठ पर गोपनीयता नीति अनुबंध प्रदर्शित करना चाहते हैं तो इसे चालू करें',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'विज्ञापन निर्माण पृष्ठ पर publish_at और finish_at फ़ील्ड प्रदर्शित करता है।'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'टैक्स फील्ड दिखाएँ',
+        'instructions' => 'जब यह विकल्प सक्षम होता है, तो आप विज्ञापन निर्माण पृष्ठ पर कर की दर निर्धारित कर सकते हैं।'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'नया विज्ञापन बनाने के लिए संपर्क फ़ील्ड छुपाएं'
+    ],
+    'show_input_flag' => [
+        'name' => 'इनपुट पर झंडे दिखाएं',
+        'instructions' => 'अनुवाद योग्य इनपुट पर झंडा और विवरण दिखाएं'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'सूचीबद्ध किए बिना स्टॉक में उत्पादों को छिपाएं',
+        'instructions' => 'आउट-ऑफ़-स्टॉक GET उत्पादों को लिस्टिंग और होमपेज से छुपाता है'
+    ],
+    'only_email_login' => [
+        'name' => 'केवल ईमेल लॉगिन'
+    ],
+    'preview_mode' => [
+        'name' => 'पूर्वावलोकन मोड',
+        'instructions' => 'जब यह मोड सक्षम होता है, तो उपयोगकर्ता द्वारा विज्ञापन का पूर्वावलोकन किया जाता है।'
+    ],
+    'show_order_note' => [
+        'name' => 'आदेश नोट दिखाएँ',
+        'instructions' => "ऑर्डर नोट फ़ील्ड दिखाएं जिसका उपयोग ग्राहकों को उनके ऑर्डर का भुगतान स्वीकृत होने पर कस्टम टेक्स्ट दिखाने के लिए किया जाता है।"
+    ],
 ];
