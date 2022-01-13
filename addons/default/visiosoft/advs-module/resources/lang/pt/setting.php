@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Código estatístico do Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Espaço personalizado do corpo',
+    ],
     'register_email_field' => [
         'name' => 'Requisito de e-mail de registro de membro',
     ],
     'market_place' => [
         'name' => 'Mercado',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Ocultar informações do vendedor',
         'instructions' => 'Escondendo as informações do vendedor na página de detalhes dos anúncios',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Ocultar informações do vendedor por categoria',
+        'instructions' => 'Ocultar as informações do vendedor por categorias principais selecionadas na página de detalhes dos anúncios',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar Acordo de Postagem',
         'instructions' => 'Ative-o se quiser exibir um acordo de política de privacidade na página de criação de anúncios',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Exibe os campos publish_at e finish_at na página de criação do anúncio.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Mostrar campo de imposto',
+        'instructions' => 'Quando esta opção está habilitada, você pode definir a taxa de imposto na página de criação do anúncio.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Ocultar campos de contato para em Criar novo anúncio'
+    ],
+    'show_input_flag' => [
+        'name' => 'Mostrar sinalizadores na entrada',
+        'instructions' => 'Mostrar sinalizador e descrição em entradas traduzíveis'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Ocultar produtos fora de estoque sem listar',
+        'instructions' => 'Oculta produtos GET esgotados da listagem e da página inicial'
+    ],
+    'only_email_login' => [
+        'name' => 'Somente login por e-mail'
+    ],
+    'preview_mode' => [
+        'name' => 'Modo de pré-visualização',
+        'instructions' => 'Quando este modo está ativado, o anúncio é visualizado pelo usuário.'
+    ],
+    'show_order_note' => [
+        'name' => 'Mostrar nota de pedido',
+        'instructions' => "Mostre o campo de nota do pedido que é usado para mostrar o texto personalizado do cliente quando o pagamento do pedido for aprovado."
+    ],
 ];
