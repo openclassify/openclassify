@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Seznam instrukcí',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Problém s připojením',
+    'your_internet_connection_is_broken' => 'Vaše internetové připojení je přerušené,',
+    'we_miss_you_so_much_already' => 'už nám moc chybíš!',
+    'try_again' => 'Zkus to znovu',
 ];
