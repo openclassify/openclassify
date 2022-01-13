@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Статус вашої реклами продано!",
 	'status_change' => "Статус вашої реклами встановлено як: статус!",
 	'disabled_detailed_options_for_admin_role' => "Детальні параметри товару вимкнено.",
+    'permission_error' => 'У вас немає дозволу на цю дію',
+    'currency_converter_not_available' => 'Конвертер валют недоступний.',
+    'option_saved' => 'Варіант збережено',
+    'do_you_want_to_save_the_option' => 'Бажаєте зберегти опцію?',
+    'you_can_not_delete_a_system_status' => 'Ви не можете видалити статус системи!',
+    'product_added_to_cart' => 'Товар додано в кошик!',
 ];
