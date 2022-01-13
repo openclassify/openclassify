@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'বার্তা ইমেল পান',
     ],
+
+    // Report
+    'member' => 'সদস্য',
+    'registered_at' => 'নিবন্ধিত এ',
+    'login_at' => 'লগইন করুন',
+    'undefined_member' => 'অনির্ধারিত সদস্য',
+    'new_membership_report' => 'নতুন সদস্যতা রিপোর্ট',
+    'member_login_reports' => 'সদস্য লগইন রিপোর্ট',
+
+    'profile_instruction' => 'আপনি এই পৃষ্ঠা থেকে আপনার প্রোফাইল তথ্য সম্পাদনা করতে পারেন.',
 ];
