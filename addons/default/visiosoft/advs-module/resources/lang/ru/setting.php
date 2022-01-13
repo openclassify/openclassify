@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Статистический код Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Пользовательское пространство тела',
+    ],
     'register_email_field' => [
         'name' => 'Требуется регистрация по электронной почте',
     ],
     'market_place' => [
         'name' => 'Рыночная площадь',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Скрыть информацию о продавце',
         'instructions' => 'Скрытие информации о продавце на странице сведений о рекламе',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Скрыть информацию о продавце по категориям',
+        'instructions' => 'Скрытие информации о продавце по выбранным основным категориям на странице сведений о рекламе',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показать соглашение о публикации рекламы',
         'instructions' => 'Включите это, если вы хотите отображать соглашение о политике конфиденциальности на странице создания рекламы.',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Отображает поля publish_at и finish_at на странице создания объявления.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Показать налоговое поле',
+        'instructions' => 'Когда эта опция включена, вы можете установить ставку налога на странице создания объявления.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Скрыть поля контактов для в «Создать новое объявление»'
+    ],
+    'show_input_flag' => [
+        'name' => 'Показать флаги на входе',
+        'instructions' => 'Показывать флаг и описание на переводимых входных данных'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Скрыть товары, которых нет в наличии, без списка',
+        'instructions' => 'Скрывает продукты GET, которых нет в наличии, из списка и с домашней страницы'
+    ],
+    'only_email_login' => [
+        'name' => 'Вход только по электронной почте'
+    ],
+    'preview_mode' => [
+        'name' => 'Режим предварительного просмотра',
+        'instructions' => 'Когда этот режим включен, пользователь просматривает рекламу.'
+    ],
+    'show_order_note' => [
+        'name' => 'Показать примечание к заказу',
+        'instructions' => "Показать поле примечания к заказу, которое используется для отображения настраиваемого текста клиентов при подтверждении оплаты их заказа."
+    ],
 ];
