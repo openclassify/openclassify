@@ -30,12 +30,18 @@ return [
         'instructions' => 'Det bruges til at tilføje ikoner, der angiver kategoritypen.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Forælder',
+    'level' => 'Niveau',
+    'count' => 'Annonce tæller',
 
     'please_wait' => 'Vent venligst. Sletning af underkategorier',
     'category_selection' => 'Valg af kategori',
     'go_to_parent' => 'Gå til forælder',
-	'preview' => 'Preview'
+	'preview' => 'Forhåndsvisning',
+
+    // Report
+    'undefined_category' => 'Udefineret kategori',
+    'categories_with_no_meta_report' => 'Kategorier uden metarapport',
+    'category' => 'Kategori',
+    'id' => 'ID',
 ];
