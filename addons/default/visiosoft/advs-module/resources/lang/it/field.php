@@ -134,7 +134,7 @@ return [
     'home' => 'Casa',
     'list-page' => 'Pagina elenco',
     'search' => 'Ricerca',
-	'reset' => 'Reset',
+	'reset' => 'Ripristina',
     'recommended' => 'Annunci consigliati per te',
     'filter' => 'Filtro',
     'sort' => 'Ordinare',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Telefono GSM',
     'phone_office' => 'Telefono dellufficio',
     'add_to_favorites' => "Aggiungi ai preferiti",
+    'add_to_cart'=> "Aggiungi al carrello",
     'send' => 'Inviare',
     'search_name' => 'Cerca nome',
     'my_favorite_searches' => 'Ricerche preferite',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Nell\'ultimo mese'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Negli ultimi due giorni'
+    ],
     'ads_with_photo' => [
         'name' => 'Annunci con foto'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Proprietario',
     'default_owner_instruction' => 'Se non è selezionato alcun utente, per impostazione predefinita il proprietario sarà l\'utente corrente',
     'create_page_subtitle' => 'Crea l\'annuncio in modo impeccabile inserendo informazioni dettagliate sul tuo annuncio.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Con i miei numeri di telefono',
+    'not_with_my_phone_numbers' => "Non voglio essere raggiunto telefonicamente",
+    'how_can_you_be_contacted' => "Come puoi essere contattato?",
 
     // Listing page
     'ad_title' => 'Titolo dell\'annuncio',
@@ -379,8 +383,23 @@ return [
         'name' => 'Data di pubblicazione'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Imposta'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nome (dalla A alla Z)',
+    'name_z_a' => 'Nome (dalla Z alla A)',
+    'select_lang_ads' => 'seleziona la lingua degli annunci',
+
+    // Report
+    'product_stock_report' => 'Rapporto sulle scorte di prodotti',
+    'active_passive_products_report' => 'Report sui prodotti attivi-passivi',
+    'unexplained_products_report' => 'Rapporto sui prodotti inspiegabili',
+    'non_image_products_report' => 'Rapporto sui prodotti non immagine',
+    'product' => 'Prodotto',
+    'count' => 'Contare',
+    'undefined_product' => 'Prodotto indefinito',
+    'pages_without_meta_information_report' => 'Pagine senza rapporto sulle metainformazioni',
+    'page' => 'Pagina',
+    'undefined_page' => 'Pagina non definita',
+    'id' => 'ID',
+    'custom_field' => 'Campo personalizzato',
 ];
