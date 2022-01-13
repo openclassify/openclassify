@@ -134,7 +134,7 @@ return [
     'home' => 'У дома',
     'list-page' => 'Страница на списъка',
     'search' => 'Търсене',
-	'reset' => 'Reset',
+	'reset' => 'Нулиране',
     'recommended' => 'Препоръчани реклами за вас',
     'filter' => 'Филтър',
     'sort' => 'Вид',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm телефон',
     'phone_office' => 'Офис телефон',
     'add_to_favorites' => "Добави към любими",
+    'add_to_cart'=> "Добави в кошницата",
     'send' => 'Изпрати',
     'search_name' => 'Име за търсене',
     'my_favorite_searches' => 'Любими търсения',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'През последния месец'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'През последните два дни'
+    ],
     'ads_with_photo' => [
         'name' => 'Реклами със снимка'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Собственик',
     'default_owner_instruction' => 'Собственикът ще използва по подразбиране текущия потребител, ако не е избран потребител',
     'create_page_subtitle' => 'Създайте рекламата безупречно, като въведете подробна информация за нея.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'С моите телефонни номера',
+    'not_with_my_phone_numbers' => "Не искам да ме свързват по телефона",
+    'how_can_you_be_contacted' => "Как можете да се свържете с вас?",
 
     // Listing page
     'ad_title' => 'Заглавие на рекламата',
@@ -378,8 +382,23 @@ return [
         'name' => 'Дата на публикуване'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'данък'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Име (А до Я)',
+    'name_z_a' => 'Име (от Я до А)',
+    'select_lang_ads' => 'изберете езика на рекламите',
+
+    // Report
+    'product_stock_report' => 'Отчет за наличността на продукта',
+    'active_passive_products_report' => 'Доклад за активно-пасивни продукти',
+    'unexplained_products_report' => 'Доклад за необясними продукти',
+    'non_image_products_report' => 'Доклад за продукти без изображения',
+    'product' => 'Продукт',
+    'count' => 'Броя',
+    'undefined_product' => 'Недефиниран продукт',
+    'pages_without_meta_information_report' => 'Страници без отчет за мета информация',
+    'page' => 'Страница',
+    'undefined_page' => 'Недефинирана страница',
+    'id' => 'документ за самоличност',
+    'custom_field' => 'Персонализирано поле',
 ];
