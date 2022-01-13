@@ -30,12 +30,18 @@ return [
         'instructions' => 'इसका उपयोग श्रेणी प्रकार को इंगित करने वाले आइकन जोड़ने के लिए किया जाता है।',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'माता-पिता',
+    'level' => 'स्तर',
+    'count' => 'विज्ञापन गणना',
 
     'please_wait' => 'कृपया प्रतीक्षा करें। सबलेटिंग सब श्रेणियां',
     'category_selection' => 'श्रेणी चयन',
     'go_to_parent' => 'जनक के पास जाओ',
-	'preview' => 'Preview'
+	'preview' => 'पूर्वावलोकन',
+
+    // Report
+    'undefined_category' => 'अपरिभाषित श्रेणी',
+    'categories_with_no_meta_report' => 'बिना मेटा रिपोर्ट वाली श्रेणियाँ',
+    'category' => 'वर्ग',
+    'id' => 'पहचान',
 ];
