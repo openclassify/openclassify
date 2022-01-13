@@ -129,7 +129,7 @@ return [
         'name' => 'Code statistique Google',
     ],
     'body_custom_space' => [
-        'name' => 'Body Custom Space',
+        'name' => 'Espace personnalisé du corps',
     ],
     'register_email_field' => [
         'name' => 'Inscription par e-mail',
@@ -234,8 +234,8 @@ return [
         'instructions' => 'Masquage des informations du vendeur dans la page de détail des annonces',
     ],
     'hide_seller_info_by_category' => [
-        'name' => 'Hide Seller Information By Category',
-        'instructions' => 'Hiding to seller infos by selected main categories in ads detail page',
+        'name' => 'Masquer les informations sur le vendeur par catégorie',
+        'instructions' => 'Masquage des informations sur le vendeur par catégories principales sélectionnées dans la page de détail des annonces',
     ],
     'show_post_ad_agreement' => [
         'name' => 'Afficher l\'accord de publication d\'annonce',
@@ -284,29 +284,29 @@ return [
         'instructions' => 'Affiche les champs publish_at et finish_at sur la page de création d\'annonce.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Afficher le champ fiscal',
+        'instructions' => 'Lorsque cette option est activée, vous pouvez définir le taux de taxe sur la page de création d\'annonce.'
     ],
     'hide_contact_created_at' => [
-        'name' => 'Hide Contact Fields For in Create New Ad'
+        'name' => 'Masquer les champs de contact pour dans Créer une nouvelle annonce'
     ],
     'show_input_flag' => [
-        'name' => 'Show Flags on Input',
-        'instructions' => 'Show flag and description on translatable inputs'
+        'name' => 'Afficher les drapeaux à l\'entrée',
+        'instructions' => 'Afficher le drapeau et la description sur les entrées traduisibles'
     ],
     'hide_out_of_stock_products_without_listing' => [
-        'name' => 'Hide out of stock products without listing',
-        'instructions' => 'Hides out-of-stock GET products from listing and homepage'
+        'name' => 'Masquer les produits en rupture de stock sans les lister',
+        'instructions' => 'Masque les produits GET en rupture de stock de la liste et de la page d\'accueil'
     ],
     'only_email_login' => [
-        'name' => 'Only Email Login'
+        'name' => 'Connexion par e-mail uniquement'
     ],
     'preview_mode' => [
-        'name' => 'Preview Mode',
-        'instructions' => 'When this mode is enabled, the ad is previewed by the user.'
+        'name' => 'Mode aperçu',
+        'instructions' => 'Lorsque ce mode est activé, l\'annonce est prévisualisée par l\'utilisateur.'
     ],
     'show_order_note' => [
-        'name' => 'Show Order Note',
-        'instructions' => "Show the order note field which is used to show the customers custom text when their order's payment is approved."
+        'name' => 'Afficher la note de commande',
+        'instructions' => "Afficher le champ de note de commande qui est utilisé pour afficher le texte personnalisé des clients lorsque le paiement de leur commande est approuvé."
     ],
 ];
