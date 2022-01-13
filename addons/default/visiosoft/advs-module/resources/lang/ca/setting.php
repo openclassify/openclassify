@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Codi estadístic de Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Espai personalitzat corporal',
+    ],
     'register_email_field' => [
         'name' => 'Requisit de correu electrònic de registre de membres',
     ],
     'market_place' => [
         'name' => 'Mercat',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Amaga la informació del venedor',
         'instructions' => 'Ocultació de la informació del venedor a la pàgina de detalls dels anuncis',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Amaga la informació del venedor per categoria',
+        'instructions' => 'S\'amaga la informació del venedor per categories principals seleccionades a la pàgina de detalls dels anuncis',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Mostra l\'acord per publicar publicacions',
         'instructions' => 'Activeu aquesta opció si voleu mostrar un acord de política de privadesa a la pàgina de creació d\'anuncis',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Mostra els camps publish_at i finish_at de la pàgina de creació d\'anuncis.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Mostra el camp d\'impostos',
+        'instructions' => 'Quan aquesta opció està activada, podeu establir el tipus impositiu a la pàgina de creació d\'anuncis.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Amaga els camps de contacte per a Crea un anunci nou'
+    ],
+    'show_input_flag' => [
+        'name' => 'Mostra les banderes a l\'entrada',
+        'instructions' => 'Mostra la bandera i la descripció a les entrades traduïbles'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Amaga els productes sense estoc sense llistar',
+        'instructions' => 'Amaga els productes GET sense estoc de la llista i de la pàgina d\'inici'
+    ],
+    'only_email_login' => [
+        'name' => 'Només inici de sessió per correu electrònic'
+    ],
+    'preview_mode' => [
+        'name' => 'Mode de vista prèvia',
+        'instructions' => 'Quan aquest mode està activat, l\'usuari previsualitza l\'anunci.'
+    ],
+    'show_order_note' => [
+        'name' => 'Mostra la nota de comanda',
+        'instructions' => "Mostra el camp de la nota de la comanda que s'utilitza per mostrar el text personalitzat dels clients quan s'aprova el pagament de la seva comanda."
+    ],
 ];
