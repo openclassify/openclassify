@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Kodi i Statistikave të Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Hapësirë e personalizuar e trupit',
+    ],
     'register_email_field' => [
         'name' => 'Kërkesa për regjistrim përmes e-mail',
     ],
     'market_place' => [
         'name' => 'Vendi i tregut',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Fshih informacionin e shitësit',
         'instructions' => 'Fshehja e informacionit të shitësit në faqen e detajeve të reklamave',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Fshih informacionin e shitësit sipas kategorisë',
+        'instructions' => 'Fshehja e informacionit te shitësi sipas kategorive kryesore të zgjedhura në faqen e detajeve të reklamave',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Shfaq Marrëveshjen për shpalljen e postimit',
         'instructions' => 'Aktivizo këtë nëse dëshiron të shfaqësh një marrëveshje të politikës së privatësisë në faqen e krijimit të reklamës',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Shfaq fushat publ_at dhe finish_at në faqen e krijimit të reklamave.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Trego fushën e taksave',
+        'instructions' => 'Kur aktivizohet ky opsion, mund të vendosni shkallën e taksës në faqen e krijimit të reklamave.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Fshih fushat e kontaktit për në Krijo reklamë të re'
+    ],
+    'show_input_flag' => [
+        'name' => 'Shfaq flamujt në hyrje',
+        'instructions' => 'Shfaq flamurin dhe përshkrimin në hyrjet e përkthyeshme'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Fshihni produktet e disponueshme pa listim',
+        'instructions' => 'Fsheh produktet GET që nuk janë në stok nga listimi dhe faqja kryesore'
+    ],
+    'only_email_login' => [
+        'name' => 'Vetëm Hyrja me email'
+    ],
+    'preview_mode' => [
+        'name' => 'Modaliteti i shikimit paraprak',
+        'instructions' => 'Kur aktivizohet kjo mënyrë, përdoruesi shikon reklamën.'
+    ],
+    'show_order_note' => [
+        'name' => 'Shfaq shënimin e porosisë',
+        'instructions' => "Trego fushën e shënimit të porosisë e cila përdoret për t'u treguar klientëve tekstin e personalizuar kur miratohet pagesa e porosisë së tyre."
+    ],
 ];
