@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Statistieke Kode',
     ],
+    'body_custom_space' => [
+        'name' => 'Liggaam persoonlike ruimte',
+    ],
     'register_email_field' => [
         'name' => 'E-posvereiste vir lidregistrasie',
     ],
     'market_place' => [
         'name' => 'Markplein',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Versteek verkoperinligting',
         'instructions' => 'Versteek inligting aan die verkoper op die besonderhede bladsy',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Versteek verkoperinligting volgens kategorie',
+        'instructions' => 'Versteek na verkoperinligting volgens geselekteerde hoofkategorieë in die advertensiebesonderhedebladsy',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertensie-ooreenkoms',
         'instructions' => 'Skakel dit aan as u \'n privaatheidsbeleidsooreenkoms op die advertensie-bladsy wil vertoon',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Vertoon die velde publish_at en finish_at op die bladsy vir die skep van advertensies.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Wys belastingveld',
+        'instructions' => 'Wanneer hierdie opsie geaktiveer is, kan jy die belastingkoers op die advertensieskeppingbladsy stel.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Versteek kontakvelde vir in Skep nuwe advertensie'
+    ],
+    'show_input_flag' => [
+        'name' => 'Wys vlae op invoer',
+        'instructions' => 'Wys vlag en beskrywing op vertaalbare insette'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Versteek uit voorraad produkte sonder om te lys',
+        'instructions' => 'Versteek GET-produkte wat nie op voorraad is nie vanaf aanbieding en tuisblad'
+    ],
+    'only_email_login' => [
+        'name' => 'Slegs e-posaanmelding'
+    ],
+    'preview_mode' => [
+        'name' => 'Voorskoumodus',
+        'instructions' => 'Wanneer hierdie modus geaktiveer is, word die advertensie deur die gebruiker voorbeskou.'
+    ],
+    'show_order_note' => [
+        'name' => 'Wys bestellingsnota',
+        'instructions' => "Wys die bestelnota-veld wat gebruik word om die klante se pasgemaakte teks te wys wanneer hul bestelling se betaling goedgekeur is."
+    ],
 ];
