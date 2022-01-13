@@ -134,7 +134,7 @@ return [
     'home' => 'Beranda',
     'list-page' => 'Halaman Daftar',
     'search' => 'Cari',
-	'reset' => 'Reset',
+	'reset' => 'Mengatur ulang',
     'recommended' => 'Iklan yang direkomendasikan untuk Anda',
     'filter' => 'Saring',
     'sort' => 'Sortir',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Telepon Gsm',
     'phone_office' => 'Telepon Kantor',
     'add_to_favorites' => "Tambah ke Favorit",
+    'add_to_cart'=> "Masukkan ke keranjang",
     'send' => 'Kirim',
     'search_name' => 'Cari Nama',
     'my_favorite_searches' => 'Pencarian Favorit',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Dalam Bulan Terakhir'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Dalam Dua Hari Terakhir'
+    ],
     'ads_with_photo' => [
         'name' => 'Iklan Dengan Foto'
     ],
@@ -380,6 +384,21 @@ return [
     'tax' => [
         'name' => 'Pajak'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nama (A sampai Z)',
+    'name_z_a' => 'Nama (Z ke A)',
+    'select_lang_ads' => 'pilih bahasa iklan',
+
+    // Report
+    'product_stock_report' => 'Laporan Stok Produk',
+    'active_passive_products_report' => 'Laporan Produk Aktif-Pasif',
+    'unexplained_products_report' => 'Laporan Produk yang Tidak Dapat Dijelaskan',
+    'non_image_products_report' => 'Laporan Produk Non-Gambar',
+    'product' => 'Produk',
+    'count' => 'Menghitung',
+    'undefined_product' => 'Produk Tidak Terdefinisi',
+    'pages_without_meta_information_report' => 'Halaman Tanpa Laporan Informasi Meta',
+    'page' => 'Halaman',
+    'undefined_page' => 'Halaman Tidak Terdefinisi',
+    'id' => 'Indo',
+    'custom_field' => 'Tanah adat',
 ];
