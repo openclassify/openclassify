@@ -5,5 +5,5 @@ return [
     'name'        => 'مۆدیلی کەتێگۆری
 ',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Ev dîmendera ku hûn dikarin kategoriyan ji rûpela kategoriyê lê zêde bikin, jêbirin û biguherînin e. Hûn dikarin bi hêsanî kategoriyên sereke û binkategorî ji vê rûpelê birêve bibin.',
 ];
