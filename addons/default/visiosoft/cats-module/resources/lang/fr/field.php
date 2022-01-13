@@ -31,11 +31,17 @@ return [
     ],
 
     'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'level' => 'Niveau',
+    'count' => 'Nombre d\'annonces',
 
     'please_wait' => 'Veuillez patienter. Suppression des sous-catégories',
     'category_selection' => 'Sélection de catégorie',
     'go_to_parent' => 'Aller au parent',
-	'preview' => 'Preview'
+	'preview' => 'Aperçu',
+
+    // Report
+    'undefined_category' => 'Catégorie non définie',
+    'categories_with_no_meta_report' => 'Catégories sans méta-rapport',
+    'category' => 'Catégorie',
+    'id' => 'identifiant',
 ];
