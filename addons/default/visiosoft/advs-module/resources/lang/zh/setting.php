@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google统计代码',
     ],
+    'body_custom_space' => [
+        'name' => '车身定制空间',
+    ],
     'register_email_field' => [
         'name' => '会员注册电子邮件要求',
     ],
     'market_place' => [
         'name' => '市场地点',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => '隐藏卖家信息',
         'instructions' => '隐藏在广告详细信息页面中的卖方信息',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => '按类别隐藏卖家信息',
+        'instructions' => '在广告详细信息页面中按选定的主要类别隐藏卖家信息',
+    ],
     'show_post_ad_agreement' => [
         'name' => '显示发布广告协议',
         'instructions' => '如果要在广告制作页面上显示隐私权政策协议，请启用此功能',
@@ -277,10 +284,29 @@ return [
         'instructions' => '在广告创建页面上显示publish_at和finish_at字段。'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => '显示税务字段',
+        'instructions' => '启用此选项后，您可以在广告创建页面上设置税率。'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => '在创建新广告中隐藏联系人字段'
+    ],
+    'show_input_flag' => [
+        'name' => '在输入上显示标志',
+        'instructions' => '在可翻译的输入上显示标志和描述'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => '隐藏缺货产品不上市',
+        'instructions' => '从列表和主页中隐藏缺货的 GET 产品'
+    ],
+    'only_email_login' => [
+        'name' => '仅电子邮件登录'
+    ],
+    'preview_mode' => [
+        'name' => '预览模式',
+        'instructions' => '启用此模式后，用户会预览广告。'
+    ],
+    'show_order_note' => [
+        'name' => '显示订单备注',
+        'instructions' => "显示订单备注字段，该字段用于在客户订单付款获得批准时显示客户自定义文本。"
+    ],
 ];
