@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Jou advertensie se status is verkoop!",
 	'status_change' => "Jou advertensie se status is ingestel op: status!",
 	'disabled_detailed_options_for_admin_role' => "Gedetailleerde produkopsies is gedeaktiveer.",
+    'permission_error' => 'Jy het nie toestemming vir hierdie handeling nie',
+    'currency_converter_not_available' => 'Die valuta-omskakelaar is nie beskikbaar nie.',
+    'option_saved' => 'Opsie gestoor',
+    'do_you_want_to_save_the_option' => 'Wil jy die opsie stoor?',
+    'you_can_not_delete_a_system_status' => 'Jy kan nie \'n stelselstatus uitvee nie!',
+    'product_added_to_cart' => 'Produk bygevoeg in mandjie!',
 ];
