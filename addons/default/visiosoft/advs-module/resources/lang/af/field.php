@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-foon',
     'phone_office' => 'Kantoortelefoon',
     'add_to_favorites' => "Voeg by gunstelinge",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Stuur',
     'search_name' => 'Soek Naam',
     'my_favorite_searches' => 'Gunsteling soektogte',
