@@ -134,7 +134,7 @@ return [
     'home' => 'घर',
     'list-page' => 'सूची पृष्ठ',
     'search' => 'खोज',
-	'reset' => 'Reset',
+	'reset' => 'रीसेट',
     'recommended' => 'आपके लिए अनुशंसित विज्ञापन',
     'filter' => 'फ़िल्टर',
     'sort' => 'तरह',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'जीएसएम फोन',
     'phone_office' => 'कार्यालय का फोन',
     'add_to_favorites' => "पसंदीदा में जोड़े",
+    'add_to_cart'=> "कार्ट में डालें",
     'send' => 'संदेश',
     'search_name' => 'खोज नाम',
     'my_favorite_searches' => 'पसंदीदा खोजें',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'द लास्ट मंथ में'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'पिछले दो दिनों में'
+    ],
     'ads_with_photo' => [
         'name' => 'फोटो के साथ विज्ञापन'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'मालिक',
     'default_owner_instruction' => 'यदि कोई उपयोगकर्ता चयनित नहीं है, तो स्वामी वर्तमान उपयोगकर्ता को डिफ़ॉल्ट करेगा',
     'create_page_subtitle' => 'अपने विज्ञापन के बारे में विस्तृत जानकारी दर्ज करके विज्ञापन को त्रुटिपूर्ण बनाएं।',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'मेरे फोन नंबरों के साथ',
+    'not_with_my_phone_numbers' => "मैं फ़ोन द्वारा संपर्क नहीं करना चाहता",
+    'how_can_you_be_contacted' => "आपसे कैसे संपर्क किया जा सकता है?",
 
     // Listing page
     'ad_title' => 'विज्ञापन शीर्षक',
@@ -378,8 +382,23 @@ return [
         'name' => 'प्रकाशित तिथि'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'कर'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'नाम (ए से जेड)',
+    'name_z_a' => 'नाम (जेड से ए)',
+    'select_lang_ads' => 'विज्ञापनों की भाषा चुनें',
+
+    // Report
+    'product_stock_report' => 'उत्पाद स्टॉक रिपोर्ट',
+    'active_passive_products_report' => 'सक्रिय-निष्क्रिय उत्पाद रिपोर्ट',
+    'unexplained_products_report' => 'अस्पष्टीकृत उत्पाद रिपोर्ट',
+    'non_image_products_report' => 'गैर-छवि उत्पाद रिपोर्ट',
+    'product' => 'उत्पाद',
+    'count' => 'गिनती',
+    'undefined_product' => 'अपरिभाषित उत्पाद',
+    'pages_without_meta_information_report' => 'मेटा सूचना रिपोर्ट के बिना पृष्ठ',
+    'page' => 'पृष्ठ',
+    'undefined_page' => 'अपरिभाषित पृष्ठ',
+    'id' => 'पहचान',
+    'custom_field' => 'अनुकूलित field',
 ];
