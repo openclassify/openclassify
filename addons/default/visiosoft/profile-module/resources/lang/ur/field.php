@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'پیغامات کا ای میل موصول کریں',
     ],
+
+    // Report
+    'member' => 'رکن',
+    'registered_at' => 'پر رجسٹرڈ',
+    'login_at' => 'پر لاگ ان کریں۔',
+    'undefined_member' => 'غیر متعینہ ممبر',
+    'new_membership_report' => 'نئی رکنیت کی رپورٹ',
+    'member_login_reports' => 'ممبر لاگ ان رپورٹس',
+
+    'profile_instruction' => 'آپ اس صفحہ سے اپنی پروفائل کی معلومات میں ترمیم کر سکتے ہیں۔',
 ];
