@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Motta e-postmeldinger',
     ],
+
+    // Report
+    'member' => 'Medlem',
+    'registered_at' => 'Registrert kl',
+    'login_at' => 'Logg inn på',
+    'undefined_member' => 'Udefinert medlem',
+    'new_membership_report' => 'Ny medlemsrapport',
+    'member_login_reports' => 'Medlemspåloggingsrapporter',
+
+    'profile_instruction' => 'Du kan redigere profilinformasjonen din fra denne siden.',
 ];
