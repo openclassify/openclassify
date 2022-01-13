@@ -4,5 +4,5 @@ return [
     'title'       => '광고',
     'name'        => '광고 모듈',
     'description' => '광고 모듈',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => '광고 페이지에서 광고를 추가, 삭제, 수정할 수 있는 화면입니다. 이 페이지에서는 게시물 관리 및 광고 구성과 같은 작업을 간단하게 수행할 수 있습니다.'
 ];
