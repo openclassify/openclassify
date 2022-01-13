@@ -4,5 +4,5 @@ return [
     'title'       => 'Quảng cáo',
     'name'        => 'Mô-đun quảng cáo',
     'description' => 'Mô-đun quảng cáo',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Đây là màn hình nơi bạn có thể thêm, xóa và chỉnh sửa quảng cáo từ trang Quảng cáo. Trên trang này, bạn chỉ cần thực hiện các thao tác như quản lý bài đăng và cấu hình quảng cáo.'
 ];
