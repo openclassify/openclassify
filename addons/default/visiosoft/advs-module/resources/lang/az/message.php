@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Elanın Statusu Satıldı Olaraq Dəyişdirildi!",
 	'status_change' => "Reklamınızın Vəziyyəti təyin olundu: status!",
 	'disabled_detailed_options_for_admin_role' => "Ətraflı məhsul seçimləri deaktiv edilmişdir.",
+    'permission_error' => 'Bu əməliyyat üçün icazəniz yoxdur',
+    'currency_converter_not_available' => 'Valyuta çeviricisi mövcud deyil.',
+    'option_saved' => 'Seçim Saxlandı',
+    'do_you_want_to_save_the_option' => 'Seçimi saxlamaq istəyirsiniz?',
+    'you_can_not_delete_a_system_status' => 'Sistem statusunu silə bilməzsiniz!',
+    'product_added_to_cart' => 'Məhsul səbətə əlavə edildi!',
 ];
