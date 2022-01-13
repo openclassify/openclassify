@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'Zoeken op GSM-nummer',
+
+    // Adv Export
+    'choose_file_type' => 'Kies bestandstype voor export',
 ];
