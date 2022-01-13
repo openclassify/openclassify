@@ -30,12 +30,18 @@ return [
         'instructions' => 'Es wird verwendet, um Symbole hinzuzufügen, die den Kategorietyp angeben.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Elternteil',
+    'level' => 'Eben',
+    'count' => 'Anzeige zählt',
 
     'please_wait' => 'Bitte warten. Löschen von Unterkategorien',
     'category_selection' => 'Kategorieauswahl',
     'go_to_parent' => 'Gehe zu Eltern',
-	'preview' => 'Preview'
+	'preview' => 'Vorschau',
+
+    // Report
+    'undefined_category' => 'Undefinierte Kategorie',
+    'categories_with_no_meta_report' => 'Kategorien ohne Metabericht',
+    'category' => 'Kategorie',
+    'id' => 'ICH WÜRDE',
 ];
