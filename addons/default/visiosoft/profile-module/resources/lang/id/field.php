@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Terima Pesan Email',
     ],
+
+    // Report
+    'member' => 'Anggota',
+    'registered_at' => 'Terdaftar di',
+    'login_at' => 'Masuk Di',
+    'undefined_member' => 'Anggota tidak ditentukan',
+    'new_membership_report' => 'Laporan Keanggotaan Baru',
+    'member_login_reports' => 'Laporan Login Anggota',
+
+    'profile_instruction' => 'Anda dapat mengedit informasi profil Anda dari halaman ini.',
 ];
