@@ -30,13 +30,19 @@ return [
         'instructions' => 'Используется для добавления значков, обозначающих тип категории.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'родитель',
+    'level' => 'Уровень',
+    'count' => 'Количество объявлений',
 
     'please_wait' => 'Пожалуйста,
    подождите. Удаление подкатегорий',
     'category_selection' => 'Выбор категории',
     'go_to_parent' => 'Перейти к родителю',
-	'preview' => 'Preview'
+	'preview' => 'Предварительный просмотр',
+
+    // Report
+    'undefined_category' => 'Неопределенная категория',
+    'categories_with_no_meta_report' => 'Категории без мета-отчета',
+    'category' => 'категория',
+    'id' => 'Я БЫ',
 ];
