@@ -34,4 +34,8 @@ return [
 	'disabled_detailed_options_for_admin_role' => "Ayrıntılı ürün seçenekleri devre dışı bırakıldı.",
     'permission_error' => 'Bu işlem için yetkiniz bulunmamaktadır',
     'currency_converter_not_available' => 'Para birimi çevirici kullanılamıyor.',
+    'option_saved' => 'Seçenek Kaydedildi',
+    'do_you_want_to_save_the_option' => 'Seçeneği kaydetmek istiyor musunuz?',
+    'you_can_not_delete_a_system_status' => 'Bir sistem durumunu silemezsiniz!',
+    'product_added_to_cart' => 'Ürün sepete eklendi!',
 ];
