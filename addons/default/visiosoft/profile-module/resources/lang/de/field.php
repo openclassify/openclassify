@@ -501,4 +501,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Nachrichten per E-Mail erhalten',
     ],
+
+    // Report
+    'member' => 'Mitglied',
+    'registered_at' => 'Registriert unter',
+    'login_at' => 'Melden Sie sich an',
+    'undefined_member' => 'Undefiniertes Mitglied',
+    'new_membership_report' => 'Neuer Mitgliedschaftsbericht',
+    'member_login_reports' => 'Anmeldeberichte für Mitglieder',
+
+    'profile_instruction' => 'Auf dieser Seite können Sie Ihre Profilinformationen bearbeiten.',
 ];
