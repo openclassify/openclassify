@@ -134,7 +134,7 @@ return [
     'home' => 'Главная',
     'list-page' => 'Страница списка',
     'search' => 'Поиск',
-	'reset' => 'Reset',
+	'reset' => 'Перезагрузить',
     'recommended' => 'Рекомендуемые объявления для вас',
     'filter' => 'Фильтр',
     'sort' => 'Сортировать',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm Phone',
     'phone_office' => 'Офисный телефон',
     'add_to_favorites' => "Добавить в избранное",
+    'add_to_cart'=> "Добавить в корзину",
     'send' => 'послать',
     'search_name' => 'Имя поиска',
     'my_favorite_searches' => 'Избранные поиски',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'В последний месяц'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'В последние два дня'
+    ],
     'ads_with_photo' => [
         'name' => 'Реклама с фото'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Владелец',
     'default_owner_instruction' => 'Если пользователь не выбран, владельцем по умолчанию будет текущий пользователь',
     'create_page_subtitle' => 'Создайте объявление безупречно, введя подробную информацию о нем.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'С моими номерами телефонов',
+    'not_with_my_phone_numbers' => "Я не хочу, чтобы со мной связались по телефону",
+    'how_can_you_be_contacted' => "Как с вами можно связаться?",
 
     // Listing page
     'ad_title' => 'Заголовок объявления',
@@ -379,8 +383,23 @@ return [
         'name' => 'Дата публикации'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'налог'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Имя (от А до Я)',
+    'name_z_a' => 'Имя (от Я до А)',
+    'select_lang_ads' => 'выберите язык объявлений',
+
+    // Report
+    'product_stock_report' => 'Отчет о товарных запасах',
+    'active_passive_products_report' => 'Отчет о активно-пассивных продуктах',
+    'unexplained_products_report' => 'Отчет о необъяснимых продуктах',
+    'non_image_products_report' => 'Отчет о продуктах, не связанных с изображениями',
+    'product' => 'Продукт',
+    'count' => 'Считать',
+    'undefined_product' => 'Неопределенный продукт',
+    'pages_without_meta_information_report' => 'Отчет о страницах без метаинформации',
+    'page' => 'Страница',
+    'undefined_page' => 'Неопределенная страница',
+    'id' => 'Я БЫ',
+    'custom_field' => 'Пользовательское поле',
 ];
