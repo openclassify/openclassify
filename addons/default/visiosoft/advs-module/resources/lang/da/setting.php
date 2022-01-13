@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Googles statistiske kode',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'E-mail-krav til medlemsregistrering',
     ],
     'market_place' => [
         'name' => 'Markedsplads',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Skjul sælgeroplysninger',
         'instructions' => 'Skjuler sig for sælgerinfo på siden med annoncer',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Skjul sælgeroplysninger efter kategori',
+        'instructions' => 'Skjuler for sælgeroplysninger efter udvalgte hovedkategorier på annoncedetaljesiden',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Vis indlægsaftale',
         'instructions' => 'Slå dette til, hvis du vil vise en aftale om fortrolighedspolitik på siden til oprettelse af annoncer',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Viser felterne publish_at og finish_at på siden til annonceoprettelse.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Vis skat felt',
+        'instructions' => 'Når denne mulighed er aktiveret, kan du indstille afgiftssatsen på siden for oprettelse af annoncer.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Skjul kontaktfelter for i Opret ny annonce'
+    ],
+    'show_input_flag' => [
+        'name' => 'Vis flag på input',
+        'instructions' => 'Vis flag og beskrivelse på oversættelige input'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Skjul udsolgte produkter uden notering',
+        'instructions' => 'Skjuler udsolgte GET-produkter fra notering og hjemmeside'
+    ],
+    'only_email_login' => [
+        'name' => 'Kun e-mail-login'
+    ],
+    'preview_mode' => [
+        'name' => 'Forhåndsvisningstilstand',
+        'instructions' => 'Når denne tilstand er aktiveret, forhåndsvises annoncen af brugeren.'
+    ],
+    'show_order_note' => [
+        'name' => 'Vis ordrebemærkning',
+        'instructions' => "Vis ordrebemærkningsfeltet, som bruges til at vise kundens tilpassede tekst, når deres ordres betaling er godkendt."
+    ],
 ];
