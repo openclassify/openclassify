@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Trạng thái quảng cáo của bạn đã được đặt thành bán!",
 	'status_change' => "Trạng thái Quảng cáo của Bạn Đã được Đặt thành: trạng thái!",
 	'disabled_detailed_options_for_admin_role' => "Tùy chọn sản phẩm chi tiết bị vô hiệu hóa.",
+    'permission_error' => 'Bạn không có quyền cho hành động này',
+    'currency_converter_not_available' => 'Công cụ chuyển đổi tiền tệ không khả dụng.',
+    'option_saved' => 'Đã lưu tùy chọn',
+    'do_you_want_to_save_the_option' => 'Bạn có muốn lưu tùy chọn này không?',
+    'you_can_not_delete_a_system_status' => 'Bạn không thể xóa trạng thái hệ thống!',
+    'product_added_to_cart' => 'Sản phẩm được thêm vào giỏ hàng!',
 ];
