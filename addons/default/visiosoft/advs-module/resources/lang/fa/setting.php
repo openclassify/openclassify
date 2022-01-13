@@ -129,12 +129,15 @@ return [
     'google_statistic_code' => [
         'name' => 'کد آماری Google',
     ],
+    'body_custom_space' => [
+        'name' => 'فضای سفارشی بدن',
+    ],
     'register_email_field' => [
         'name' => 'ثبت نام از طریق پست الکترونیکی',
     ],
     'market_place' => [
         'name' => 'محل بازار',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -231,6 +234,10 @@ return [
         'name' => 'پنهان کردن اطلاعات فروشنده',
         'instructions' => 'پنهان شدن در مورد اطلاعات فروشنده در صفحه جزئیات تبلیغات',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'پنهان کردن اطلاعات فروشنده بر اساس دسته',
+        'instructions' => 'پنهان کردن اطلاعات فروشنده بر اساس دسته‌های اصلی انتخاب شده در صفحه جزئیات تبلیغات',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'نمایش قرارداد تبلیغات پست',
         'instructions' => 'اگر می خواهید توافق نامه سیاست حفظ حریم خصوصی را در صفحه ایجاد آگهی نمایش دهید ، این گزینه را روشن کنید',
@@ -278,10 +285,29 @@ return [
         'instructions' => 'قسمت های publ_at و finish_at را در صفحه ایجاد تبلیغ نمایش می دهد.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'نمایش فیلد مالیاتی',
+        'instructions' => 'هنگامی که این گزینه فعال است، می توانید نرخ مالیات را در صفحه ایجاد آگهی تنظیم کنید.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'پنهان کردن فیلدهای تماس برای در ایجاد آگهی جدید'
+    ],
+    'show_input_flag' => [
+        'name' => 'نمایش پرچم ها در ورودی',
+        'instructions' => 'نمایش پرچم و توضیحات در ورودی های قابل ترجمه'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'محصولات موجود در انبار را بدون فهرست پنهان کنید',
+        'instructions' => 'محصولات بدون موجودی GET را از فهرست و صفحه اصلی پنهان می کند'
+    ],
+    'only_email_login' => [
+        'name' => 'فقط ورود ایمیل'
+    ],
+    'preview_mode' => [
+        'name' => 'حالت پیش نمایش',
+        'instructions' => 'هنگامی که این حالت فعال است، تبلیغ توسط کاربر پیش نمایش می شود.'
+    ],
+    'show_order_note' => [
+        'name' => 'نمایش یادداشت سفارش',
+        'instructions' => "فیلد یادداشت سفارش را نشان دهید که برای نمایش متن سفارشی مشتریان هنگام تأیید پرداخت سفارش آنها استفاده می شود."
+    ],
 ];
