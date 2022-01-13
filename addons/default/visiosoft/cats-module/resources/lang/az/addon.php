@@ -4,5 +4,5 @@ return [
     'title'       => 'Kateqoriya',
     'name'        => 'Kateqoriya Modulu',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Bu, kateqoriya səhifəsindən kateqoriyalar əlavə edə, silə və redaktə edə biləcəyiniz ekrandır. Bu səhifədən əsas kateqoriyaları və alt kateqoriyaları asanlıqla idarə edə bilərsiniz.',
 ];
