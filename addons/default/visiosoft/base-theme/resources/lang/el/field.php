@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Λίστα οδηγιών',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Πρόβλημα σύνδεσης',
+    'your_internet_connection_is_broken' => 'Η σύνδεσή σας στο διαδίκτυο έχει διακοπεί,',
+    'we_miss_you_so_much_already' => 'μας λείπεις ήδη πολύ!',
+    'try_again' => 'Προσπάθησε ξανά',
 ];
