@@ -134,7 +134,7 @@ return [
     'home' => '家',
     'list-page' => '清单页面',
     'search' => '搜索',
-	'reset' => 'Reset',
+	'reset' => '重启',
     'recommended' => '为您推荐的广告',
     'filter' => '过滤',
     'sort' => '分类',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm电话',
     'phone_office' => '办公室电话',
     'add_to_favorites' => "添加到收藏夹",
+    'add_to_cart'=> "添加到购物车",
     'send' => '发送',
     'search_name' => '搜索名称',
     'my_favorite_searches' => '最喜欢的搜寻',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => '在上个月'
     ],
+    'in_the_last_two_days' => [
+        'name' => '最近两天'
+    ],
     'ads_with_photo' => [
         'name' => '带有照片的广告'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => '所有者',
     'default_owner_instruction' => '如果未选择任何用户，所有者将默认为当前用户',
     'create_page_subtitle' => '输入有关您广告的详细信息，以完美无瑕地制作广告。',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => '用我的电话号码',
+    'not_with_my_phone_numbers' => "我不想被电话联系到",
+    'how_can_you_be_contacted' => "怎么联系你？",
 
     // Listing page
     'ad_title' => '广告标题',
@@ -378,8 +382,23 @@ return [
         'name' => '发布日期'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => '税'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => '姓名（A 到 Z）',
+    'name_z_a' => '名称（Z 到 A）',
+    'select_lang_ads' => '选择广告的语言',
+
+    // Report
+    'product_stock_report' => '产品库存报告',
+    'active_passive_products_report' => '主动-被动产品报告',
+    'unexplained_products_report' => '无法解释的产品报告',
+    'non_image_products_report' => '非图像产品报告',
+    'product' => '产品',
+    'count' => '数数',
+    'undefined_product' => '未定义产品',
+    'pages_without_meta_information_report' => '没有元信息报告的页面',
+    'page' => '页',
+    'undefined_page' => '未定义页面',
+    'id' => 'ID',
+    'custom_field' => '自定义字段',
 ];
