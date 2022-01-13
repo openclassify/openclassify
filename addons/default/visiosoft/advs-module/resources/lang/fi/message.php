@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Mainoksesi tila on myyty!",
 	'status_change' => "Mainoksesi tila on asetettu tilaan: status!",
 	'disabled_detailed_options_for_admin_role' => "Yksityiskohtaiset tuotevaihtoehdot ovat pois käytöstä.",
+    'permission_error' => 'Sinulla ei ole lupaa tähän toimintoon',
+    'currency_converter_not_available' => 'Valuuttamuunnin ei ole käytettävissä.',
+    'option_saved' => 'Vaihtoehto tallennettu',
+    'do_you_want_to_save_the_option' => 'Haluatko tallentaa vaihtoehdon?',
+    'you_can_not_delete_a_system_status' => 'Et voi poistaa järjestelmän tilaa!',
+    'product_added_to_cart' => 'Tuote lisätty ostoskoriin!',
 ];
