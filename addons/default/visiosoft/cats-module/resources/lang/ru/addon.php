@@ -4,5 +4,5 @@ return [
     'title'       => 'категория',
     'name'        => 'Модуль категории',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Это экран, на котором вы можете добавлять, удалять и редактировать категории на странице категорий. Вы можете легко управлять основными категориями и подкатегориями с этой страницы.',
 ];
