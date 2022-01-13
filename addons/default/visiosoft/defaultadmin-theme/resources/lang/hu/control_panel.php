@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'Keresés GSM szám alapján',
+
+    // Adv Export
+    'choose_file_type' => 'Válassza ki az exportáláshoz szükséges fájltípust',
 ];
