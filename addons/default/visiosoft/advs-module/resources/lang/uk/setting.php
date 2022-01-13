@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Статистичний код Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Користуваний простір тіла',
+    ],
     'register_email_field' => [
         'name' => 'Вимога електронної пошти щодо реєстрації учасника',
     ],
     'market_place' => [
         'name' => 'Ринок',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Сховати інформацію про продавця',
         'instructions' => 'Приховування інформації про продавця на сторінці деталей оголошень',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Приховати інформацію про продавця за категорією',
+        'instructions' => 'Приховування інформації продавця за вибраними основними категоріями на сторінці деталей оголошень',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показати угоду про розміщення оголошень',
         'instructions' => 'Увімкніть це, якщо ви хочете відображати угоду про політику конфіденційності на сторінці створення оголошення',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Відображає поля pub_at і finish_at на сторінці створення оголошення.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Показати податкове поле',
+        'instructions' => 'Якщо цей параметр увімкнено, ви можете встановити ставку податку на сторінці створення оголошення.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Приховати поля контактів для в Створити нове оголошення'
+    ],
+    'show_input_flag' => [
+        'name' => 'Показувати прапорці на вході',
+        'instructions' => 'Показати позначку та опис на вхідних даних, які можна перекладати'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Приховати продукти, які немає в наявності, без перерахування',
+        'instructions' => 'Приховує продукти, які немає в наявності, Отримайте продукти зі списку та домашньої сторінки'
+    ],
+    'only_email_login' => [
+        'name' => 'Вхід лише електронною поштою'
+    ],
+    'preview_mode' => [
+        'name' => 'Режим попереднього перегляду',
+        'instructions' => 'Коли цей режим увімкнено, користувач попередньо переглядає оголошення.'
+    ],
+    'show_order_note' => [
+        'name' => 'Показати примітку до замовлення',
+        'instructions' => "Показати поле примітки до замовлення, яке використовується для показу користувацького тексту клієнта, коли оплата їхнього замовлення буде схвалена."
+    ],
 ];
