@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Danh sách hướng dẫn',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Lỗi kết nối',
+    'your_internet_connection_is_broken' => 'Kết nối internet của bạn bị hỏng,',
+    'we_miss_you_so_much_already' => 'chúng tôi nhớ bạn rất nhiều rồi!',
+    'try_again' => 'Thử lại',
 ];
