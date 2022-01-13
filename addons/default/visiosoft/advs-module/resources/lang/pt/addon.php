@@ -4,5 +4,5 @@ return [
     'title'       => 'Publicidades',
     'name'        => 'Módulo de anúncios',
     'description' => 'Módulo de anúncios',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Esta é a tela onde você pode adicionar, excluir e editar anúncios da página Anúncios. Nesta página, você pode simplesmente fazer as operações como gerenciamento de postagens e configuração de anúncios.'
 ];
