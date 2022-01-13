@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "您的广告状态已设置为“已售出”！",
 	'status_change' => "您的广告状态已设置为：status！",
 	'disabled_detailed_options_for_admin_role' => "详细产品选项已禁用。",
+    'permission_error' => '您无权执行此操作',
+    'currency_converter_not_available' => '货币转换器不可用。',
+    'option_saved' => '选项已保存',
+    'do_you_want_to_save_the_option' => '是否要保存选项？',
+    'you_can_not_delete_a_system_status' => '您不能删除系统状态！',
+    'product_added_to_cart' => '产品已加入购物车！',
 ];
