@@ -134,7 +134,7 @@ return [
     'home' => 'Casa',
     'list-page' => 'Página de lista',
     'search' => 'Buscar',
-	'reset' => 'Reset',
+	'reset' => 'Reiniciar',
     'recommended' => 'Anuncios recomendados para usted',
     'filter' => 'Filtrar',
     'sort' => 'Ordenar',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Teléfono gsm',
     'phone_office' => 'Telefono de oficina',
     'add_to_favorites' => "Agregar a los favoritos",
+    'add_to_cart'=> "Añadir al carrito",
     'send' => 'Enviar',
     'search_name' => 'Buscar nombre',
     'my_favorite_searches' => 'Búsquedas favoritas',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'En el último mes'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'En los últimos dos días'
+    ],
     'ads_with_photo' => [
         'name' => 'Anuncios con foto'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Propietario',
     'default_owner_instruction' => 'El propietario utilizará de forma predeterminada el usuario actual si no se selecciona ningún usuario',
     'create_page_subtitle' => 'Cree el anuncio sin problemas ingresando información detallada sobre su anuncio.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Con mis números de teléfono',
+    'not_with_my_phone_numbers' => "No quiero que me contacten por teléfono.",
+    'how_can_you_be_contacted' => "¿Cómo se puede contactar?",
 
     // Listing page
     'ad_title' => 'Título del anuncio',
@@ -379,8 +383,23 @@ return [
         'name' => 'Fecha de publicación'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Impuesto'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nombre (A a Z)',
+    'name_z_a' => 'Nombre (Z a A)',
+    'select_lang_ads' => 'seleccione el idioma de los anuncios',
+
+    // Report
+    'product_stock_report' => 'Informe de existencias de productos',
+    'active_passive_products_report' => 'Informe de Productos Activo-Pasivo',
+    'unexplained_products_report' => 'Informe de productos sin explicación',
+    'non_image_products_report' => 'Informe de productos sin imágenes',
+    'product' => 'Producto',
+    'count' => 'Contar',
+    'undefined_product' => 'Producto indefinido',
+    'pages_without_meta_information_report' => 'Informe de páginas sin metainformación',
+    'page' => 'Página',
+    'undefined_page' => 'Página indefinida',
+    'id' => 'IDENTIFICACIÓN',
+    'custom_field' => 'Campo personalizado',
 ];
