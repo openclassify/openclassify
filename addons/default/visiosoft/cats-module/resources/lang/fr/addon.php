@@ -4,5 +4,5 @@ return [
     'title'       => 'Catégorie',
     'name'        => 'Module de catégorie',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'C\'est l\'écran où vous pouvez ajouter, supprimer et modifier des catégories à partir de la page de catégorie. Vous pouvez facilement gérer les catégories principales et les sous-catégories à partir de cette page.',
 ];
