@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'جي إس إم الهاتف',
     'phone_office' => 'هاتف المكتب',
     'add_to_favorites' => "اضافة الى المفضلة",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'إرسال',
     'search_name' => 'اسم البحث',
     'my_favorite_searches' => 'عمليات البحث المفضلة',
