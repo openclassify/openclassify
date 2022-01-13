@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google-statistiekcode',
     ],
+    'body_custom_space' => [
+        'name' => 'Lichaam aangepaste ruimte',
+    ],
     'register_email_field' => [
         'name' => 'Lidregistratie E-mailvereiste',
     ],
     'market_place' => [
         'name' => 'Marktplaats',
-	    'instructions' => 'Als de marktplaats niet beschikbaar is, dient uw site als e-commerce. Bijvoorbeeld:
+        'instructions' => 'Als de marktplaats niet beschikbaar is, dient uw site als e-commerce. Bijvoorbeeld:
 Sommige velden in het profiel zoals advertenties, berichten, verkoop, paketten,...
 zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
     ],
@@ -230,6 +233,10 @@ zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
         'name' => 'Verberg verkopersinformatie',
         'instructions' => 'Verbergen voor verkopersinformatie op de detailpagina van advertenties',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Verkopersinformatie verbergen per categorie',
+        'instructions' => 'Verbergen voor verkopersinformatie door geselecteerde hoofdcategorieën op de advertentiedetailpagina',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Toon advertentieovereenkomst',
         'instructions' => 'Schakel dit in als u een privacybeleidsovereenkomst wilt weergeven op de pagina voor het maken van advertenties',
@@ -280,7 +287,26 @@ zullen niet zichtbaar zijn en ontzegt u van het bedrijfslidmaatschap.'
         'name' => 'Toon Btw veld',
         'instructions' => 'Wanneer deze optie is ingeschakeld, kunt u het belastingstarief instellen op de pagina voor het maken van uw nieuwe advertentie.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Verberg jouw contactgegevens voor een nieuwe advertentie te plaatsen'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Verberg jouw contactgegevens voor een nieuwe advertentie te plaatsen'
+    ],
+    'show_input_flag' => [
+        'name' => 'Vlaggen tonen bij invoer',
+        'instructions' => 'Vlag en beschrijving weergeven op vertaalbare invoer'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Verberg producten die niet op voorraad zijn zonder vermelding',
+        'instructions' => 'Verbergt GET-producten die niet op voorraad zijn in de lijst en op de homepage'
+    ],
+    'only_email_login' => [
+        'name' => 'Alleen e-mail login'
+    ],
+    'preview_mode' => [
+        'name' => 'Voorbeeldmodus',
+        'instructions' => 'Wanneer deze modus is ingeschakeld, krijgt de gebruiker een voorbeeld van de advertentie te zien.'
+    ],
+    'show_order_note' => [
+        'name' => 'Bestellingsnotitie weergeven',
+        'instructions' => "Toon het veld voor de bestelnotitie dat wordt gebruikt om de aangepaste tekst van de klant te tonen wanneer de betaling van hun bestelling is goedgekeurd."
+    ],
 ];
