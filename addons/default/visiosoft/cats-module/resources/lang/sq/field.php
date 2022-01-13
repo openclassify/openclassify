@@ -30,12 +30,18 @@ return [
         'instructions' => 'Përdoret për të shtuar ikona që tregojnë llojin e kategorisë.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Kategori Parent',
+    'level' => 'Niveli',
+    'count' => 'Numri i reklamave',
 
     'please_wait' => 'Ju lutemi prisni. Zgjedhja e kategorive nën',
     'category_selection' => 'Zgjedhja e kategorisë',
     'go_to_parent' => 'Shkoni te Prindi',
-	'preview' => 'Preview'
+	'preview' => 'Parapamje',
+
+    // Report
+    'undefined_category' => 'Kategori e papërcaktuar',
+    'categories_with_no_meta_report' => 'Kategoritë pa raport meta',
+    'category' => 'Kategorija',
+    'id' => 'ID',
 ];
