@@ -30,12 +30,18 @@ return [
         'instructions' => 'Det används för att lägga till ikoner som anger kategoritypen.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Förälder',
+    'level' => 'Nivå',
+    'count' => 'Annonsen räknas',
 
     'please_wait' => 'Vänta. Ta bort underkategorier',
     'category_selection' => 'Val av kategori',
     'go_to_parent' => 'Gå till förälder',
-	'preview' => 'Preview'
+	'preview' => 'Förhandsvisning',
+
+    // Report
+    'undefined_category' => 'Odefinierad kategori',
+    'categories_with_no_meta_report' => 'Kategorier utan metarapport',
+    'category' => 'Kategori',
+    'id' => 'ID',
 ];
