@@ -30,12 +30,18 @@ return [
         'instructions' => 'Sitä käytetään lisäämään kuvakkeet, jotka osoittavat luokan tyypin.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Vanhempi',
+    'level' => 'Taso',
+    'count' => 'Mainosten määrä',
 
     'please_wait' => 'Odota. Poistetaan alaluokat',
     'category_selection' => 'Luokan valinta',
     'go_to_parent' => 'Mene vanhemmalle',
-	'preview' => 'Preview'
+	'preview' => 'Esikatselu',
+
+    // Report
+    'undefined_category' => 'Määrittämätön luokka',
+    'categories_with_no_meta_report' => 'Luokat, joissa ei ole metaraporttia',
+    'category' => 'Kategoria',
+    'id' => 'ID',
 ];
