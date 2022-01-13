@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Annonsens status er satt til solgt!",
 	'status_change' => "Annonsens status er satt til: status!",
 	'disabled_detailed_options_for_admin_role' => "Detaljerte produktalternativer er deaktivert.",
+    'permission_error' => 'Du har ikke tillatelse til denne handlingen',
+    'currency_converter_not_available' => 'Valutaomregneren er ikke tilgjengelig.',
+    'option_saved' => 'Alternativet lagret',
+    'do_you_want_to_save_the_option' => 'Vil du lagre alternativet?',
+    'you_can_not_delete_a_system_status' => 'Du kan ikke slette en systemstatus!',
+    'product_added_to_cart' => 'Produktet er lagt i handlekurven!',
 ];
