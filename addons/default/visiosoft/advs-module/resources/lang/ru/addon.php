@@ -4,5 +4,5 @@ return [
     'title'       => 'Объявления',
     'name'        => 'Рекламный модуль',
     'description' => 'Рекламный модуль',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Это экран, на котором вы можете добавлять, удалять и редактировать объявления со страницы объявлений. На этой странице вы можете просто выполнять такие операции, как управление публикациями и настройка рекламы.'
 ];
