@@ -4,5 +4,5 @@ return [
     'title'       => 'מקום',
     'name'        => 'מודול מיקום',
     'description' => 'תיאור',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'בעמוד זה תוכל לנהל מידע על מדינה, עיר, מחוז, שכונות וכפר.',
 ];
