@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Nhận tin nhắn Email',
     ],
+
+    // Report
+    'member' => 'Thành viên',
+    'registered_at' => 'Đăng ký tại',
+    'login_at' => 'Đăng nhập tại',
+    'undefined_member' => 'Thành viên không xác định',
+    'new_membership_report' => 'Báo cáo thành viên mới',
+    'member_login_reports' => 'Báo cáo Đăng nhập Thành viên',
+
+    'profile_instruction' => 'Bạn có thể chỉnh sửa thông tin hồ sơ của mình từ trang này.',
 ];
