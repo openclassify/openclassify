@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Der Status Ihrer Anzeige wurde auf Verkauf gesetzt!",
 	'status_change' => "Der Status Ihrer Anzeige wurde auf: Status gesetzt!",
 	'disabled_detailed_options_for_admin_role' => "Detaillierte Produktoptionen sind deaktiviert.",
+    'permission_error' => 'Sie haben keine Berechtigung für diese Aktion',
+    'currency_converter_not_available' => 'Der Währungsumrechner ist nicht verfügbar.',
+    'option_saved' => 'Option gespeichert',
+    'do_you_want_to_save_the_option' => 'Möchten Sie die Option speichern?',
+    'you_can_not_delete_a_system_status' => 'Sie können einen Systemstatus nicht löschen!',
+    'product_added_to_cart' => 'Produkt zum Warenkorb hinzugefügt!',
 ];
