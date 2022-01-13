@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Din annons har ställts in såld!",
 	'status_change' => "Annonsens status har ställts in på: status!",
 	'disabled_detailed_options_for_admin_role' => "Detaljerade produktalternativ är inaktiverade.",
+    'permission_error' => 'Du har inte behörighet för den här åtgärden',
+    'currency_converter_not_available' => 'Valutaomvandlaren är inte tillgänglig.',
+    'option_saved' => 'Alternativet sparat',
+    'do_you_want_to_save_the_option' => 'Vill du spara alternativet?',
+    'you_can_not_delete_a_system_status' => 'Du kan inte radera en systemstatus!',
+    'product_added_to_cart' => 'Produkten har lagts till i kundvagnen!',
 ];
