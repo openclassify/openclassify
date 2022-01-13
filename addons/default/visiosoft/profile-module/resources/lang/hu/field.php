@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Üzenetek fogadása e-mailben',
     ],
+
+    // Report
+    'member' => 'Tag',
+    'registered_at' => 'Regisztrálva:',
+    'login_at' => 'Bejelentkezés at',
+    'undefined_member' => 'Undefined Member',
+    'new_membership_report' => 'Új tagsági jelentés',
+    'member_login_reports' => 'Tagok bejelentkezési jelentései',
+
+    'profile_instruction' => 'Ezen az oldalon szerkesztheti profiladatait.',
 ];
