@@ -134,7 +134,7 @@ return [
     'home' => 'Domov',
     'list-page' => 'Stránka seznamu',
     'search' => 'Vyhledávání',
-	'reset' => 'Reset',
+	'reset' => 'Resetovat',
     'recommended' => 'Doporučené reklamy pro vás',
     'filter' => 'Filtr',
     'sort' => 'Třídit',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM telefon',
     'phone_office' => 'Kancelářský telefon',
     'add_to_favorites' => "Přidat k oblíbeným",
+    'add_to_cart'=> "Přidat do košíku",
     'send' => 'Poslat',
     'search_name' => 'Hledat jméno',
     'my_favorite_searches' => 'Oblíbené vyhledávání',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Za poslední měsíc'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'V posledních dvou dnech'
+    ],
     'ads_with_photo' => [
         'name' => 'Reklamy s fotografií'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Majitel',
     'default_owner_instruction' => 'Vlastník bude výchozí pro aktuálního uživatele, pokud není vybrán žádný uživatel',
     'create_page_subtitle' => 'Vytvořte reklamu bezchybně zadáním podrobných informací o reklamě.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'S mými telefonními čísly',
+    'not_with_my_phone_numbers' => "Nechci být zastižen telefonicky",
+    'how_can_you_be_contacted' => "Jak vás lze kontaktovat?",
 
     // Listing page
     'ad_title' => 'Název reklamy',
@@ -378,8 +382,23 @@ return [
         'name' => 'Datum zveřejnění'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Daň'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Jméno (A až Z)',
+    'name_z_a' => 'Jméno (Z až A)',
+    'select_lang_ads' => 'vyberte jazyk reklam',
+
+    // Report
+    'product_stock_report' => 'Zpráva o skladových zásobách produktu',
+    'active_passive_products_report' => 'Zpráva o aktivních a pasivních produktech',
+    'unexplained_products_report' => 'Zpráva o nevysvětlených produktech',
+    'non_image_products_report' => 'Zpráva o produktech bez obrázku',
+    'product' => 'Produkt',
+    'count' => 'Počet',
+    'undefined_product' => 'Nedefinovaný produkt',
+    'pages_without_meta_information_report' => 'Stránky bez zprávy o metainformacích',
+    'page' => 'Strana',
+    'undefined_page' => 'Nedefinovaná stránka',
+    'id' => 'ID',
+    'custom_field' => 'Vlastní pole',
 ];
