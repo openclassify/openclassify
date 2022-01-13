@@ -4,5 +4,5 @@ return [
     'title'       => 'Yer',
     'name'        => 'Yer Modulu',
     'description' => 'Təsvir',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'Bu səhifədə siz ölkə, şəhər, rayon, məhəllə və kənd məlumatlarını idarə edə bilərsiniz.',
 ];
