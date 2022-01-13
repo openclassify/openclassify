@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Stav vaší reklamy byl nastaven na prodej!",
 	'status_change' => "Stav vaší reklamy byl nastaven na: stav!",
 	'disabled_detailed_options_for_admin_role' => "Podrobné možnosti produktu jsou deaktivovány.",
+    'permission_error' => 'K této akci nemáte oprávnění',
+    'currency_converter_not_available' => 'Převodník měn není k dispozici.',
+    'option_saved' => 'Možnost uložena',
+    'do_you_want_to_save_the_option' => 'Chcete uložit možnost?',
+    'you_can_not_delete_a_system_status' => 'Stav systému nelze smazat!',
+    'product_added_to_cart' => 'Produkt přidán do košíku!',
 ];
