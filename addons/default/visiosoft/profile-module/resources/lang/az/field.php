@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Mesaj e-poçtu alın',
     ],
+
+    // Report
+    'member' => 'Üzv',
+    'registered_at' => 'Qeydiyyatdan keçib',
+    'login_at' => 'Daxil ol',
+    'undefined_member' => 'Müəyyən edilməmiş üzv',
+    'new_membership_report' => 'Yeni Üzvlük Hesabatı',
+    'member_login_reports' => 'Üzv Giriş Hesabatları',
+
+    'profile_instruction' => 'Bu səhifədən profil məlumatlarınızı redaktə edə bilərsiniz.',
 ];
