@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "De status van uw advertentie is ingesteld op Verkocht!",
 	'status_change' => "De status van uw advertentie is ingesteld op: status!",
 	'disabled_detailed_options_for_admin_role' => "Gedetailleerde productopties zijn uitgeschakeld.",
+    'permission_error' => 'U heeft geen toestemming voor deze actie',
+    'currency_converter_not_available' => 'De valuta-omzetter is niet beschikbaar.',
+    'option_saved' => 'Optie Opgeslagen',
+    'do_you_want_to_save_the_option' => 'Wil je de optie opslaan?',
+    'you_can_not_delete_a_system_status' => 'U kunt een systeemstatus niet verwijderen!',
+    'product_added_to_cart' => 'Product toegevoegd aan winkelwagen!',
 ];
