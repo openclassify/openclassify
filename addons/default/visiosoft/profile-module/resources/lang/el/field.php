@@ -498,4 +498,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Λήψη μηνυμάτων Email',
     ],
+
+    // Report
+    'member' => 'Μέλος',
+    'registered_at' => 'Εγγεγραμμένος στο',
+    'login_at' => 'Είσοδος στο',
+    'undefined_member' => 'Απροσδιόριστο μέλος',
+    'new_membership_report' => 'Αναφορά νέας ιδιότητας μέλους',
+    'member_login_reports' => 'Αναφορές σύνδεσης μελών',
+
+    'profile_instruction' => 'Μπορείτε να επεξεργαστείτε τις πληροφορίες του προφίλ σας από αυτήν τη σελίδα.',
 ];
