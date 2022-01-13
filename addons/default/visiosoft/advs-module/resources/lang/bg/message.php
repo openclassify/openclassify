@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Състоянието на вашата реклама е настроено да се продава!",
 	'status_change' => "Състоянието на вашата реклама е зададено на: статус!",
 	'disabled_detailed_options_for_admin_role' => "Подробните опции за продукта са деактивирани.",
+    'permission_error' => 'Нямате разрешение за това действие',
+    'currency_converter_not_available' => 'Валутният конвертор не е наличен.',
+    'option_saved' => 'Опцията е запазена',
+    'do_you_want_to_save_the_option' => 'Искате ли да запазите опцията?',
+    'you_can_not_delete_a_system_status' => 'Не можете да изтриете системно състояние!',
+    'product_added_to_cart' => 'Продуктът е добавен в количката!',
 ];
