@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Отримувати повідомлення електронною поштою',
     ],
+
+    // Report
+    'member' => 'Член',
+    'registered_at' => 'Зареєстровано в',
+    'login_at' => 'Увійти на',
+    'undefined_member' => 'Невизначений член',
+    'new_membership_report' => 'Новий звіт про членство',
+    'member_login_reports' => 'Звіти про вхід учасників',
+
+    'profile_instruction' => 'Ви можете редагувати інформацію свого профілю на цій сторінці.',
 ];
