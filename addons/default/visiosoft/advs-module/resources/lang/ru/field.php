@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm Phone',
     'phone_office' => 'Офисный телефон',
     'add_to_favorites' => "Добавить в избранное",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'послать',
     'search_name' => 'Имя поиска',
     'my_favorite_searches' => 'Избранные поиски',
