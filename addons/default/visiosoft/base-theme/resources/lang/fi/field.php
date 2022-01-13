@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Ohjeluettelo',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Yhteys ongelma',
+    'your_internet_connection_is_broken' => 'Internet-yhteytesi on katkennut,',
+    'we_miss_you_so_much_already' => 'kaipaamme sinua jo niin paljon!',
+    'try_again' => 'Yritä uudelleen',
 ];
