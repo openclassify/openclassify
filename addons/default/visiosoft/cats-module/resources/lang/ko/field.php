@@ -30,12 +30,18 @@ return [
         'instructions' => '카테고리 유형을 나타내는 아이콘을 추가하는 데 사용됩니다.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => '부모의',
+    'level' => '수준',
+    'count' => '광고 수',
 
     'please_wait' => '하위 카테고리 삭제',
     'category_selection' => '카테고리 선택',
     'go_to_parent' => '부모로 이동',
-	'preview' => 'Preview'
+	'preview' => '시사',
+
+    // Report
+    'undefined_category' => '정의되지 않은 범주',
+    'categories_with_no_meta_report' => '메타 보고서가 없는 카테고리',
+    'category' => '범주',
+    'id' => 'ID',
 ];
