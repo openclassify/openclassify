@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google統計コード',
     ],
+    'body_custom_space' => [
+        'name' => 'ボディカスタムスペース',
+    ],
     'register_email_field' => [
         'name' => '会員登録メールの要件',
     ],
     'market_place' => [
         'name' => 'マーケットプレイス',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => '売り手情報を隠す',
         'instructions' => '広告の詳細ページで販売者情報を非表示にする',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'カテゴリ別に販売者情報を非表示',
+        'instructions' => '広告の詳細ページで選択したメインカテゴリごとに販売者情報を非表示にする',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'ポスト広告契約を表示する',
         'instructions' => '広告作成ページにプライバシーポリシー契約を表示する場合は、これをオンにします',
@@ -277,10 +284,29 @@ return [
         'instructions' => '広告作成ページにpublish_atフィールドとfinish_atフィールドを表示します。'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => '税フィールドを表示',
+        'instructions' => 'このオプションを有効にすると、広告作成ページで税率を設定できます。'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => '新しい広告の作成で連絡先フィールドを非表示にする'
+    ],
+    'show_input_flag' => [
+        'name' => '入力時にフラグを表示する',
+        'instructions' => '翻訳可能な入力にフラグと説明を表示する'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => '上場せずに在庫切れの商品を隠す',
+        'instructions' => '在庫切れのGET製品をリストとホームページから非表示にします'
+    ],
+    'only_email_login' => [
+        'name' => 'メールログインのみ'
+    ],
+    'preview_mode' => [
+        'name' => 'プレビューモード',
+        'instructions' => 'このモードを有効にすると、ユーザーが広告をプレビューします。'
+    ],
+    'show_order_note' => [
+        'name' => '注文メモを表示',
+        'instructions' => "注文の支払いが承認されたときに顧客にカスタムテキストを表示するために使用される注文メモフィールドを表示します。"
+    ],
 ];
