@@ -4,5 +4,5 @@ return [
     'title'       => 'Розташування',
     'name'        => 'Модуль розташування',
     'description' => 'Опис',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'На цій сторінці ви можете керувати інформацією про країну, місто, район, околиці та село.',
 ];
