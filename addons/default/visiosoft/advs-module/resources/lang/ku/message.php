@@ -59,4 +59,10 @@ return [
 	'sold_status_change' => "! دۆخی ڕیکلامەکەت وەکو فرۆشراوە ڕێکخراوە ",
 	'status_change' => "Rewşa Reklama We Bûye: Status!",
 	'disabled_detailed_options_for_admin_role' => "Vebijarkên hilbera berfireh têne sekinandin.",
+    'permission_error' => 'Destûra we ji bo vê çalakiyê nîne',
+    'currency_converter_not_available' => 'Veguherkera diravê peyda nabe.',
+    'option_saved' => 'Vebijêrk Saved',
+    'do_you_want_to_save_the_option' => 'Ma hûn dixwazin vebijarkê hilînin?',
+    'you_can_not_delete_a_system_status' => 'Hûn nikarin statûyek pergalê jêbirin!',
+    'product_added_to_cart' => 'Berhem li selikê hat zêdekirin!',
 ];
