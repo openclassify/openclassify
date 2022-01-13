@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Список інструкцій',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Проблема з підключенням',
+    'your_internet_connection_is_broken' => 'Ваше інтернет-з\'єднання розірвано,',
+    'we_miss_you_so_much_already' => 'ми вже дуже сумуємо за тобою!',
+    'try_again' => 'Спробуйте ще раз',
 ];
