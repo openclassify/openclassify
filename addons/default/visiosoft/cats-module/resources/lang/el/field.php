@@ -30,12 +30,18 @@ return [
         'instructions' => 'Χρησιμοποιείται για την προσθήκη εικονιδίων που υποδεικνύουν τον τύπο κατηγορίας.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Μητρική εταιρεία',
+    'level' => 'Επίπεδο',
+    'count' => 'Μετρήσεις διαφημίσεων',
 
     'please_wait' => 'Παρακαλώ περιμένετε. Διαγραφή υπο-κατηγοριών',
     'category_selection' => 'Επιλογή κατηγορίας',
     'go_to_parent' => 'Μετάβαση στο γονέα',
-	'preview' => 'Preview'
+	'preview' => 'Προεπισκόπηση',
+
+    // Report
+    'undefined_category' => 'Απροσδιόριστη κατηγορία',
+    'categories_with_no_meta_report' => 'Κατηγορίες χωρίς μετα-αναφορά',
+    'category' => 'Κατηγορία',
+    'id' => 'ταυτότητα',
 ];
