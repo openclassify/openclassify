@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Statistic Code',
     ],
+    'body_custom_space' => [
+        'name' => 'مساحة مخصصة للجسم',
+    ],
     'register_email_field' => [
         'name' => 'متطلبات تسجيل البريد الإلكتروني للعضو',
     ],
     'market_place' => [
         'name' => 'المتجر',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'إخفاء معلومات البائع',
         'instructions' => 'إخفاء معلومات البائع في صفحة تفاصيل الإعلانات',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'إخفاء معلومات البائع حسب الفئة',
+        'instructions' => 'إخفاء معلومات البائع حسب الفئات الرئيسية المحددة في صفحة تفاصيل الإعلانات',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'إظهار اتفاقية ما بعد الإعلان',
         'instructions' => 'قم بتشغيل هذا إذا كنت تريد عرض اتفاقية سياسة الخصوصية على صفحة إنشاء الإعلان',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'يعرض حقلي publish_at و finish_at في صفحة إنشاء الإعلان.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'إظهار حقل الضرائب',
+        'instructions' => 'عند تمكين هذا الخيار ، يمكنك تعيين معدل الضريبة في صفحة إنشاء الإعلان.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'إخفاء حقول الاتصال في إنشاء إعلان جديد'
+    ],
+    'show_input_flag' => [
+        'name' => 'إظهار الإشارات عند الإدخال',
+        'instructions' => 'إظهار العلم والوصف على المدخلات القابلة للترجمة'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'إخفاء المنتجات من المخزون دون إدراجها',
+        'instructions' => 'يخفي منتجات GET غير المتوفرة من القائمة والصفحة الرئيسية'
+    ],
+    'only_email_login' => [
+        'name' => 'فقط تسجيل الدخول عبر البريد الإلكتروني'
+    ],
+    'preview_mode' => [
+        'name' => 'وضعية المعاينة',
+        'instructions' => 'عند تمكين هذا الوضع ، يقوم المستخدم بمعاينة الإعلان.'
+    ],
+    'show_order_note' => [
+        'name' => 'إظهار مذكرة الطلب',
+        'instructions' => "اعرض حقل ملاحظة الطلب الذي يتم استخدامه لإظهار النص المخصص للعملاء عند الموافقة على دفع طلبهم."
+    ],
 ];
