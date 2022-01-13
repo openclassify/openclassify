@@ -134,7 +134,7 @@ return [
     'home' => 'Tuis',
     'list-page' => 'Lys bladsy',
     'search' => 'Soek',
-	'reset' => 'Reset',
+	'reset' => 'Stel terug',
     'recommended' => 'Aanbevole advertensies vir u',
     'filter' => 'Filtreer',
     'sort' => 'Sorteer',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-foon',
     'phone_office' => 'Kantoortelefoon',
     'add_to_favorites' => "Voeg by gunstelinge",
+    'add_to_cart'=> "Voeg by mandjie",
     'send' => 'Stuur',
     'search_name' => 'Soek Naam',
     'my_favorite_searches' => 'Gunsteling soektogte',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'In die laaste maand'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In die laaste twee dae'
+    ],
     'ads_with_photo' => [
         'name' => 'Advertensies Met Foto'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Eienaar',
     'default_owner_instruction' => 'Die eienaar is die huidige gebruiker as geen gebruiker gekies word nie',
     'create_page_subtitle' => 'Skep die advertensie foutloos deur gedetailleerde inligting oor u advertensie in te voer.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Met my telefoonnommers',
+    'not_with_my_phone_numbers' => "Ek wil nie telefonies bereik word nie",
+    'how_can_you_be_contacted' => "Hoe kan jy gekontak word?",
 
     // Listing page
     'ad_title' => 'Advertensietitel',
@@ -378,8 +382,23 @@ return [
         'name' => 'Publiseer datum'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Belasting'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Naam (A tot Z)',
+    'name_z_a' => 'Naam (Z tot A)',
+    'select_lang_ads' => 'kies die taal van die advertensies',
+
+    // Report
+    'product_stock_report' => 'Produkvoorraadverslag',
+    'active_passive_products_report' => 'Verslag oor aktiewe-passiewe produkte',
+    'unexplained_products_report' => 'Onverklaarde produkteverslag',
+    'non_image_products_report' => 'Nie-Beeldprodukteverslag',
+    'product' => 'Produk',
+    'count' => 'Tel',
+    'undefined_product' => 'Ongedefinieerde produk',
+    'pages_without_meta_information_report' => 'Bladsye sonder meta-inligtingverslag',
+    'page' => 'Bladsy',
+    'undefined_page' => 'Ongedefinieerde bladsy',
+    'id' => 'ID',
+    'custom_field' => 'Pasgemaakte veld',
 ];
