@@ -495,4 +495,14 @@ return [
     'receive_messages_email' => [
         'name' => 'ایمیل را دریافت کنید',
     ],
+
+    // Report
+    'member' => 'عضو',
+    'registered_at' => 'ثبت شده در',
+    'login_at' => 'ورود در',
+    'undefined_member' => 'عضو تعریف نشده',
+    'new_membership_report' => 'گزارش عضویت جدید',
+    'member_login_reports' => 'گزارشات ورود اعضا',
+
+    'profile_instruction' => 'شما می توانید اطلاعات پروفایل خود را از این صفحه ویرایش کنید.',
 ];
