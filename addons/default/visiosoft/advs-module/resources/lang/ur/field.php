@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'جی ایس ایم فون',
     'phone_office' => 'دفتر فون',
     'add_to_favorites' => "پسندیدہ میں شامل کریں",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'بھیجیں',
     'search_name' => 'تلاش نام',
     'my_favorite_searches' => 'پسندیدہ تلاشیاں',
