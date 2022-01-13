@@ -4,5 +4,5 @@ return [
     'title'       => 'Reclame',
     'name'        => 'Modulul de reclame',
     'description' => 'Modulul de reclame',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Acesta este ecranul în care puteți adăuga, șterge și edita anunțuri din pagina Anunțuri. Pe această pagină, puteți face pur și simplu operațiuni precum gestionarea postărilor și configurarea anunțurilor.'
 ];
