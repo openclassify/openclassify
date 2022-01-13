@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Starea anunțului dvs. a fost setată ca vândută!",
 	'status_change' => "Starea anunțului dvs. a fost setată la: stare!",
 	'disabled_detailed_options_for_admin_role' => "Opțiunile detaliate ale produsului sunt dezactivate.",
+    'permission_error' => 'Nu aveți permisiunea pentru această acțiune',
+    'currency_converter_not_available' => 'Convertorul valutar nu este disponibil.',
+    'option_saved' => 'Opțiunea salvată',
+    'do_you_want_to_save_the_option' => 'Doriți să salvați opțiunea?',
+    'you_can_not_delete_a_system_status' => 'Nu puteți șterge starea unui sistem!',
+    'product_added_to_cart' => 'Produs adăugat în coș!',
 ];
