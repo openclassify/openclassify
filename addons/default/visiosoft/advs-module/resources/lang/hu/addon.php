@@ -4,5 +4,5 @@ return [
     'title'       => 'Hirdetések',
     'name'        => 'Hirdetési modul',
     'description' => 'Hirdetési modul',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Ez az a képernyő, ahol hirdetéseket adhat hozzá, törölhet és szerkeszthet a Hirdetések oldalon. Ezen az oldalon egyszerűen elvégezheti az olyan műveleteket, mint a bejegyzéskezelés és a hirdetéskonfiguráció.'
 ];
