@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Mobilni telefon',
     'phone_office' => 'Službeni telefon',
     'add_to_favorites' => "Dodaj u omiljeno",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Pošalji',
     'search_name' => 'Naziv pretrage',
     'my_favorite_searches' => 'Sačuvane pretrage',
