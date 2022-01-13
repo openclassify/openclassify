@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Googles statistikkode',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'E-postkrav for medlemsregistrering',
     ],
     'market_place' => [
         'name' => 'Markedsplass',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Skjul selgerinformasjon',
         'instructions' => 'Skjuler seg til selgerinformasjon på siden med annonser',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Skjul selgerinformasjon etter kategori',
+        'instructions' => 'Skjuler for selgerinformasjon etter utvalgte hovedkategorier på annonsedetaljsiden',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Vis avtale om innleggsannonser',
         'instructions' => 'Slå på dette hvis du vil vise en avtale om personvern på siden for annonseoppretting',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Viser feltene publish_at og finish_at på siden for annonseoppretting.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Vis skattefeltet',
+        'instructions' => 'Når dette alternativet er aktivert, kan du angi avgiftssatsen på annonseopprettingssiden.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Skjul kontaktfelt for i Opprett ny annonse'
+    ],
+    'show_input_flag' => [
+        'name' => 'Vis flagg ved inngang',
+        'instructions' => 'Vis flagg og beskrivelse på oversettbare innganger'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Skjul utsolgte produkter uten oppføring',
+        'instructions' => 'Skjuler utsolgte GET-produkter fra oppføringen og hjemmesiden'
+    ],
+    'only_email_login' => [
+        'name' => 'Kun e-postpålogging'
+    ],
+    'preview_mode' => [
+        'name' => 'Forhåndsvisningsmodus',
+        'instructions' => 'Når denne modusen er aktivert, forhåndsvises annonsen av brukeren.'
+    ],
+    'show_order_note' => [
+        'name' => 'Vis ordrenotat',
+        'instructions' => "Vis bestillingsnotatfeltet som brukes til å vise kundene tilpasset tekst når deres ordres betaling er godkjent."
+    ],
 ];
