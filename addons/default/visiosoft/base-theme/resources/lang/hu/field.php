@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Utasítási lista',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Csatlakozási probléma',
+    'your_internet_connection_is_broken' => 'Megszakadt az internetkapcsolatod,',
+    'we_miss_you_so_much_already' => 'már nagyon hiányzol nekünk!',
+    'try_again' => 'Próbáld újra',
 ];
