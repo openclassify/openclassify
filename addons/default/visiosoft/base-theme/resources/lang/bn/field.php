@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'নির্দেশের তালিকা',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'সংযোগ সমস্যা',
+    'your_internet_connection_is_broken' => 'আপনার ইন্টারনেট সংযোগ বিচ্ছিন্ন,',
+    'we_miss_you_so_much_already' => 'আমরা ইতিমধ্যে আপনাকে অনেক মিস করছি!',
+    'try_again' => 'আবার চেষ্টা করুন',
 ];
