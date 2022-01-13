@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'যোগ করুন',
     'new_adv' => 'নতুন অ্যাড',
     'new_classified' => 'নতুন শ্রেণিবদ্ধ',
     'new_category' => 'নতুন বিভাগ',
