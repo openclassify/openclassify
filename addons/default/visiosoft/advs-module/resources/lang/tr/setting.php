@@ -128,14 +128,17 @@ return [
     'google_statistic_code' => [
         'name' => 'Google İstatistik Kodu',
     ],
+    'body_custom_space' => [
+        'name' => 'Gövde Özel Alanı',
+    ],
     'register_email_field' => [
         'name' => 'Üye Kayıt E-posta Zorunluluğu',
     ],
     'market_place' => [
         'name' => 'Pazar Yeri',
-        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example,
-	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and
-	        removes corporate membership.'
+        'instructions' => 'Pazar kapalıysa, siteniz e-ticaret görevi görür. Örneğin
+	        , profildeki reklamlar, dopingler, mesajlar, indirimler, paketler ve mağaza gibi bazı alanlar görünmez ve
+	        kurumsal üyeliği kaldırır.'
     ],
     'price_area_hidden' => [
         'name' => 'Fiyat Alanı Gizli',
@@ -285,9 +288,25 @@ return [
         'instructions' => 'Bu seçenek etkinleştirildiğinde, ilan veya ürün oluşturma sayfasında vergi oranını ayarlayabilirsiniz.'
     ],
     'hide_contact_created_at' => [
-        'name' => 'Hide Contact Fields For in Create New Ad'
+        'name' => 'Yeni Reklam Oluşturmada İletişim Alanlarını Gizle'
+    ],
+    'show_input_flag' => [
+        'name' => 'Girişte Bayrakları Göster',
+        'instructions' => 'Çevrilebilir girdilerde bayrak ve açıklama göster'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Stokta olmayan ürünleri listelemeden gizleyin',
+        'instructions' => 'Stokta olmayan GET ürünlerini listelemeden ve ana sayfadan gizler'
     ],
     'only_email_login' => [
-        'name' => 'Sadece Email İle Giriş',
-    ]
+        'name' => 'Sadece Email İle Giriş'
+    ],
+    'preview_mode' => [
+        'name' => 'Önizleme modu',
+        'instructions' => 'Bu mod etkinleştirildiğinde, reklam kullanıcı tarafından önizlenir.'
+    ],
+    'show_order_note' => [
+        'name' => 'Sipariş Notunu Göster',
+        'instructions' => "Müşterilerin siparişlerinin ödemesi onaylandığında özel metni göstermek için kullanılan sipariş notu alanını gösterin."
+    ],
 ];
