@@ -495,4 +495,14 @@ return [
     'receive_messages_email' => [
         'name' => 'تلقي رسائل البريد الإلكتروني',
     ],
+
+    // Report
+    'member' => 'عضو',
+    'registered_at' => 'مسجل فى',
+    'login_at' => 'تسجيل الدخول في',
+    'undefined_member' => 'عضو غير محدد',
+    'new_membership_report' => 'تقرير عضوية جديد',
+    'member_login_reports' => 'تقارير تسجيل دخول الأعضاء',
+
+    'profile_instruction' => 'يمكنك تحرير معلومات ملف التعريف الخاص بك من هذه الصفحة.',
 ];
