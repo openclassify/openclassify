@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Código estadístico de Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Espacio personalizado del cuerpo',
+    ],
     'register_email_field' => [
         'name' => 'Requisito de registro de miembro por correo electrónico',
     ],
     'market_place' => [
         'name' => 'Market Place',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Ocultar información del vendedor',
         'instructions' => 'Ocultar información del vendedor en la página de detalles de anuncios',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Ocultar información del vendedor por categoría',
+        'instructions' => 'Ocultar información del vendedor por categorías principales seleccionadas en la página de detalles de anuncios',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Mostrar acuerdo de publicación',
         'instructions' => 'Active esta opción si desea mostrar un acuerdo de política de privacidad en la página de creación de anuncios.',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Muestra los campos publish_at y finish_at en la página de creación de anuncios.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Mostrar campo de impuestos',
+        'instructions' => 'Cuando esta opción está habilitada, puede establecer la tasa de impuestos en la página de creación de anuncios.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Ocultar campos de contacto en Crear nuevo anuncio'
+    ],
+    'show_input_flag' => [
+        'name' => 'Mostrar banderas en la entrada',
+        'instructions' => 'Mostrar bandera y descripción en entradas traducibles'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Ocultar productos agotados sin listar',
+        'instructions' => 'Oculta los productos GET agotados de la lista y la página de inicio'
+    ],
+    'only_email_login' => [
+        'name' => 'Solo inicio de sesión por correo electrónico'
+    ],
+    'preview_mode' => [
+        'name' => 'Modo de vista previa',
+        'instructions' => 'Cuando este modo está habilitado, el usuario obtiene una vista previa del anuncio.'
+    ],
+    'show_order_note' => [
+        'name' => 'Mostrar nota de pedido',
+        'instructions' => "Muestre el campo de nota de pedido que se utiliza para mostrar el texto personalizado de los clientes cuando se aprueba el pago de su pedido."
+    ],
 ];
