@@ -30,12 +30,18 @@ return [
         'instructions' => 'বিভাগের ধরণটি চিহ্নিত করে আইকন যুক্ত করতে এটি ব্যবহৃত হয়।',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'অভিভাবক',
+    'level' => 'স্তর',
+    'count' => 'বিজ্ঞাপন গণনা',
 
     'please_wait' => 'অনুগ্রহ করে অপেক্ষা করুন Sub সাব বিভাগগুলি মোছা',
     'category_selection' => 'বিভাগ নির্বাচন',
     'go_to_parent' => 'পিতামাতায় যান',
-	'preview' => 'Preview'
+	'preview' => 'পূর্বরূপ',
+
+    // Report
+    'undefined_category' => 'অনির্ধারিত বিভাগ',
+    'categories_with_no_meta_report' => 'নো মেটা রিপোর্ট সহ বিভাগ',
+    'category' => 'শ্রেণী',
+    'id' => 'আইডি',
 ];
