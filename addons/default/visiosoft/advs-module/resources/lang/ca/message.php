@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "L'estat del vostre anunci s'ha definit com a venut.",
 	'status_change' => "L'estat del vostre anunci s'ha configurat en: estat!",
 	'disabled_detailed_options_for_admin_role' => "Les opcions detallades del producte estan desactivades.",
+    'permission_error' => 'No teniu permís per a aquesta acció',
+    'currency_converter_not_available' => 'El convertidor de moneda no està disponible.',
+    'option_saved' => 'Opció desada',
+    'do_you_want_to_save_the_option' => 'Vols desar l\'opció?',
+    'you_can_not_delete_a_system_status' => 'No podeu suprimir un estat del sistema!',
+    'product_added_to_cart' => 'Producte afegit al carretó!',
 ];
