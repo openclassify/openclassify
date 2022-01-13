@@ -30,12 +30,18 @@ return [
         'instructions' => 'اس قسم کا اشارہ کرنے والی شبیہیں شامل کرنے کے لئے استعمال کیا جاتا ہے۔',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'والدین',
+    'level' => 'سطح',
+    'count' => 'اشتھاراتی شمار',
 
     'please_wait' => 'براہ کرم انتظار کریں۔ ذیلی زمرے ختم کرنا',
     'category_selection' => 'زمرہ انتخاب',
     'go_to_parent' => 'پیرنٹ پر جائیں',
-	'preview' => 'Preview'
+	'preview' => 'پیش نظارہ',
+
+    // Report
+    'undefined_category' => 'غیر متعینہ زمرہ',
+    'categories_with_no_meta_report' => 'زمرہ جات بغیر میٹا رپورٹ کے',
+    'category' => 'قسم',
+    'id' => 'ID',
 ];
