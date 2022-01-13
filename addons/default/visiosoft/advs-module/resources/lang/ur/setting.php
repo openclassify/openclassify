@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'گوگل شماریاتی کوڈ',
     ],
+    'body_custom_space' => [
+        'name' => 'باڈی اپنی مرضی کی جگہ',
+    ],
     'register_email_field' => [
         'name' => 'ممبر اندراج ای میل کی ضرورت',
     ],
     'market_place' => [
         'name' => 'مارکیٹ پلیس',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'بیچنے والے کی معلومات چھپائیں',
         'instructions' => 'اشتہارات کے تفصیل والے صفحے میں بیچنے والے انفو کو چھپا رہے ہیں',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'زمرہ کے لحاظ سے بیچنے والے کی معلومات چھپائیں۔',
+        'instructions' => 'اشتہارات کے تفصیلی صفحہ میں منتخب اہم زمروں کے ذریعے بیچنے والے کی معلومات کو چھپانا۔',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'پوسٹ اشتہار کا معاہدہ دکھائیں',
         'instructions' => 'اگر آپ اشتہار تخلیق کے صفحے پر رازداری کی پالیسی کا معاہدہ ظاہر کرنا چاہتے ہیں تو اسے آن کریں',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'اشتہار تخلیق کے صفحے پر پبلک_اٹ اور فائنل_اٹ فیلڈز دکھاتا ہے۔'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'ٹیکس فیلڈ دکھائیں۔',
+        'instructions' => 'یہ اختیار فعال ہونے پر، آپ اشتہار بنانے والے صفحہ پر ٹیکس کی شرح سیٹ کر سکتے ہیں۔'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'نیا اشتہار بنانے کے لیے رابطہ کے میدان چھپائیں۔'
+    ],
+    'show_input_flag' => [
+        'name' => 'ان پٹ پر جھنڈے دکھائیں۔',
+        'instructions' => 'ترجمہ کے قابل ان پٹس پر جھنڈا اور تفصیل دکھائیں۔'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'فہرست کے بغیر اسٹاک سے باہر کی مصنوعات کو چھپائیں۔',
+        'instructions' => 'فہرست اور ہوم پیج سے آؤٹ آف اسٹاک GET پروڈکٹس کو چھپاتا ہے۔'
+    ],
+    'only_email_login' => [
+        'name' => 'صرف ای میل لاگ ان'
+    ],
+    'preview_mode' => [
+        'name' => 'پیش نظارہ موڈ',
+        'instructions' => 'جب یہ موڈ فعال ہو جاتا ہے، تو صارف کے ذریعے اشتہار کا جائزہ لیا جاتا ہے۔'
+    ],
+    'show_order_note' => [
+        'name' => 'آرڈر نوٹ دکھائیں۔',
+        'instructions' => "آرڈر نوٹ فیلڈ دکھائیں جو صارفین کے آرڈر کی ادائیگی منظور ہونے پر حسب ضرورت متن دکھانے کے لیے استعمال ہوتا ہے۔"
+    ],
 ];
