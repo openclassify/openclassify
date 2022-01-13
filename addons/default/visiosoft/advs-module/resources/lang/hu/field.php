@@ -134,7 +134,7 @@ return [
     'home' => 'itthon',
     'list-page' => 'Lista oldal',
     'search' => 'Keresés',
-	'reset' => 'Reset',
+	'reset' => 'Visszaállítás',
     'recommended' => 'Ajánlott hirdetések az Ön számára',
     'filter' => 'Szűrő',
     'sort' => 'Fajta',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm telefon',
     'phone_office' => 'Irodai telefon',
     'add_to_favorites' => "Add hozzá a kedvencekhez",
+    'add_to_cart'=> "Kosárba",
     'send' => 'Küld',
     'search_name' => 'Keresés neve',
     'my_favorite_searches' => 'Kedvenc keresések',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Az utolsó hónapban'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Az utolsó két napban'
+    ],
     'ads_with_photo' => [
         'name' => 'Hirdetések fényképpel'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Tulajdonos',
     'default_owner_instruction' => 'A tulajdonos alapértelmezés szerint az aktuális felhasználót állítja be, ha nincs kiválasztva felhasználó',
     'create_page_subtitle' => 'Hozza létre a hirdetést hibátlanul a hirdetésével kapcsolatos részletes információk megadásával.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'A telefonszámaimmal',
+    'not_with_my_phone_numbers' => "Nem akarom, hogy telefonon elérjenek",
+    'how_can_you_be_contacted' => "Hogyan lehet felvenni a kapcsolatot?",
 
     // Listing page
     'ad_title' => 'Hirdetés címe',
@@ -378,8 +382,23 @@ return [
         'name' => 'Közzététel dátuma'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Adó'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Név (A-tól Z-ig)',
+    'name_z_a' => 'Név (Z-től A-ig)',
+    'select_lang_ads' => 'válassza ki a hirdetések nyelvét',
+
+    // Report
+    'product_stock_report' => 'Termék készletjelentés',
+    'active_passive_products_report' => 'Jelentés az aktív-passzív termékekről',
+    'unexplained_products_report' => 'Megmagyarázhatatlan termékek jelentés',
+    'non_image_products_report' => 'Jelentés a nem képes termékekről',
+    'product' => 'Termék',
+    'count' => 'Számol',
+    'undefined_product' => 'Undefined Termék',
+    'pages_without_meta_information_report' => 'Oldalak metainformációs jelentés nélkül',
+    'page' => 'oldal',
+    'undefined_page' => 'Undefined oldal',
+    'id' => 'ID',
+    'custom_field' => 'Egyéni mező',
 ];
