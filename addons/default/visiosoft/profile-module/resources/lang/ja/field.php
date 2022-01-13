@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'メッセージを受信するEメール',
     ],
+
+    // Report
+    'member' => 'メンバー',
+    'registered_at' => 'で登録',
+    'login_at' => 'でログイン',
+    'undefined_member' => '未定義のメンバー',
+    'new_membership_report' => '新会員レポート',
+    'member_login_reports' => 'メンバーログインレポート',
+
+    'profile_instruction' => 'このページからプロフィール情報を編集できます。',
 ];
