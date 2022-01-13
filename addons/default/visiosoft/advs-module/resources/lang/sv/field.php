@@ -134,7 +134,7 @@ return [
     'home' => 'Hem',
     'list-page' => 'Lista sida',
     'search' => 'Sök',
-	'reset' => 'Reset',
+	'reset' => 'Återställa',
     'recommended' => 'Rekommenderade annonser för dig',
     'filter' => 'Filtrera',
     'sort' => 'Sortera',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm-telefon',
     'phone_office' => 'Kontorstelefon',
     'add_to_favorites' => "Lägg till i favoriter",
+    'add_to_cart'=> "Lägg till i kundvagn",
     'send' => 'Skicka',
     'search_name' => 'Söknamn',
     'my_favorite_searches' => 'Favorit sökningar',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Under den sista månaden'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Under de två sista dagarna'
+    ],
     'ads_with_photo' => [
         'name' => 'Annonser med foto'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Ägare',
     'default_owner_instruction' => 'Ägaren kommer som standard att använda den nuvarande användaren om ingen användare har valts',
     'create_page_subtitle' => 'Skapa annonsen felfritt genom att ange detaljerad information om din annons.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Med mina telefonnummer',
+    'not_with_my_phone_numbers' => "Jag vill inte nås på telefon",
+    'how_can_you_be_contacted' => "Hur kan du bli kontaktad?",
 
     // Listing page
     'ad_title' => 'Lägg till titel',
@@ -378,8 +382,23 @@ return [
         'name' => 'Utgivningsdatum'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Beskatta'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Namn (A till Ö)',
+    'name_z_a' => 'Namn (Z till A)',
+    'select_lang_ads' => 'välj språk för annonserna',
+
+    // Report
+    'product_stock_report' => 'Produktlagerrapport',
+    'active_passive_products_report' => 'Rapport för aktiva-passiva produkter',
+    'unexplained_products_report' => 'Rapport om oförklarliga produkter',
+    'non_image_products_report' => 'Rapport om icke-bildprodukter',
+    'product' => 'Produkt',
+    'count' => 'Räkna',
+    'undefined_product' => 'Odefinierad produkt',
+    'pages_without_meta_information_report' => 'Sidor utan metainformationsrapport',
+    'page' => 'Sida',
+    'undefined_page' => 'Odefinierad sida',
+    'id' => 'ID',
+    'custom_field' => 'Anpassat fält',
 ];
