@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'نمبر مبایل',
     'phone_office' => 'شماره تلفن دفتر',
     'add_to_favorites' => "اضافه کردن به لیست مورد علاقعه ها",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'ارسال',
     'search_name' => 'جستجو نام',
     'my_favorite_searches' => 'جستجوهای مورد علاقه',
