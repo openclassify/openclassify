@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "تم تعيين حالة إعلانك على البيع!",
 	'status_change' => "تم تعيين حالة إعلانك على: الحالة!",
 	'disabled_detailed_options_for_admin_role' => "تم تعطيل خيارات المنتج التفصيلية.",
+    'permission_error' => 'ليس لديك إذن لهذا الإجراء',
+    'currency_converter_not_available' => 'محول العملات غير متوفر.',
+    'option_saved' => 'تم حفظ الخيار',
+    'do_you_want_to_save_the_option' => 'هل تريد حفظ الخيار؟',
+    'you_can_not_delete_a_system_status' => 'لا يمكنك حذف حالة النظام!',
+    'product_added_to_cart' => 'تمت إضافة المنتج إلى سلة التسوق!',
 ];
