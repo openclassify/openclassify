@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Telepon Gsm',
     'phone_office' => 'Telepon Kantor',
     'add_to_favorites' => "Tambah ke Favorit",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Kirim',
     'search_name' => 'Cari Nama',
     'my_favorite_searches' => 'Pencarian Favorit',
