@@ -134,7 +134,7 @@ return [
     'home' => 'Dom',
     'list-page' => 'Strona listy',
     'search' => 'Szukaj',
-	'reset' => 'Reset',
+	'reset' => 'Resetowanie',
     'recommended' => 'Polecane reklamy dla Ciebie',
     'filter' => 'Filtr',
     'sort' => 'Sortować',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Telefon GSM',
     'phone_office' => 'Telefon biurowy',
     'add_to_favorites' => "Dodaj do ulubionych",
+    'add_to_cart'=> "Dodaj do koszyka",
     'send' => 'Wysłać',
     'search_name' => 'Wyszukaj nazwę',
     'my_favorite_searches' => 'Ulubione wyszukiwania',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'W ostatnim miesiącu'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'W ciągu ostatnich dwóch dni'
+    ],
     'ads_with_photo' => [
         'name' => 'Reklamy ze zdjęciem'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Właściciel',
     'default_owner_instruction' => 'Właścicielem będzie domyślnie bieżący użytkownik, jeśli żaden użytkownik nie zostanie wybrany',
     'create_page_subtitle' => 'Utwórz reklamę bezbłędnie, wprowadzając szczegółowe informacje o swojej reklamie.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Z moimi numerami telefonów',
+    'not_with_my_phone_numbers' => "Nie chcę, aby do mnie dzwonił",
+    'how_can_you_be_contacted' => "Jak można się z Tobą skontaktować?",
 
     // Listing page
     'ad_title' => 'Tytuł ogłoszenia',
@@ -378,8 +382,23 @@ return [
         'name' => 'Data publikacji'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Podatek'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Imię (od A do Z)',
+    'name_z_a' => 'Imię (od Z do A)',
+    'select_lang_ads' => 'wybierz język reklam',
+
+    // Report
+    'product_stock_report' => 'Raport o zapasach produktów',
+    'active_passive_products_report' => 'Raport o produktach aktywnych i pasywnych',
+    'unexplained_products_report' => 'Raport o niewyjaśnionych produktach',
+    'non_image_products_report' => 'Raport dotyczący produktów innych niż obrazy',
+    'product' => 'Produkt',
+    'count' => 'Liczyć',
+    'undefined_product' => 'Niezdefiniowany produkt',
+    'pages_without_meta_information_report' => 'Strony bez raportu metainformacyjnego',
+    'page' => 'Strona',
+    'undefined_page' => 'Niezdefiniowana strona',
+    'id' => 'ID',
+    'custom_field' => 'Pole niestandardowe',
 ];
