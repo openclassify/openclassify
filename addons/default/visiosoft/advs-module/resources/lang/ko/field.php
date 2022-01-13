@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM 전화',
     'phone_office' => '사무실 전화',
     'add_to_favorites' => "즐겨 찾기에 추가",
+    'add_to_cart'=> "Add to Cart",
     'send' => '보내다',
     'search_name' => '검색 이름',
     'my_favorite_searches' => '즐겨 찾는 검색',
