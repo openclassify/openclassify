@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'Bi Hejmara GSM Bigerin',
+
+    // Adv Export
+    'choose_file_type' => 'Ji bo Export Tîpa Pelê Hilbijêre',
 ];
