@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Vastaanota viestejä',
     ],
+
+    // Report
+    'member' => 'Jäsen',
+    'registered_at' => 'Ilmoittautunut klo',
+    'login_at' => 'Kirjaudu sisään osoitteessa',
+    'undefined_member' => 'Määrittelemätön jäsen',
+    'new_membership_report' => 'Uusi jäsenraportti',
+    'member_login_reports' => 'Jäsenten kirjautumisraportit',
+
+    'profile_instruction' => 'Voit muokata profiilitietojasi tältä sivulta.',
 ];
