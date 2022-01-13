@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Telèfon GSM',
     'phone_office' => 'Telèfon d\'oficina',
     'add_to_favorites' => "Afegir a preferits",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Envia',
     'search_name' => 'Cerca el nom',
     'my_favorite_searches' => 'Cerques preferides',
