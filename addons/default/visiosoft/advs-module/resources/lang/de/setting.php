@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Statistikcode',
     ],
+    'body_custom_space' => [
+        'name' => 'Körper benutzerdefinierter Raum',
+    ],
     'register_email_field' => [
         'name' => 'E-Mail-Anforderung für die Mitgliederregistrierung',
     ],
     'market_place' => [
         'name' => 'Marktplatz',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Verkäuferinformationen ausblenden',
         'instructions' => 'Ausblenden von Verkäuferinformationen auf der Anzeigen-Detailseite',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Verkäuferinformationen nach Kategorie ausblenden',
+        'instructions' => 'Ausblenden von Verkäuferinformationen nach ausgewählten Hauptkategorien auf der Anzeigendetailseite',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement anzeigen',
         'instructions' => 'Aktivieren Sie diese Option, wenn Sie auf der Seite zur Anzeigenerstellung eine Datenschutzrichtlinie anzeigen möchten',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Zeigt die Felder "Publish_at" und "Finish_at" auf der Seite zur Anzeigenerstellung an.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Steuerfeld anzeigen',
+        'instructions' => 'Wenn diese Option aktiviert ist, können Sie den Steuersatz auf der Seite zur Anzeigenerstellung festlegen.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Kontaktfelder für in „Neue Anzeige erstellen“ ausblenden'
+    ],
+    'show_input_flag' => [
+        'name' => 'Flags bei Eingabe anzeigen',
+        'instructions' => 'Flag und Beschreibung bei übersetzbaren Eingaben anzeigen'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Vergriffene Produkte ohne Auflistung ausblenden',
+        'instructions' => 'Blendet nicht vorrätige GET-Produkte aus dem Listing und der Homepage aus'
+    ],
+    'only_email_login' => [
+        'name' => 'Nur E-Mail-Login'
+    ],
+    'preview_mode' => [
+        'name' => 'Vorschau Modus',
+        'instructions' => 'Wenn dieser Modus aktiviert ist, wird die Anzeige vom Benutzer in der Vorschau angezeigt.'
+    ],
+    'show_order_note' => [
+        'name' => 'Bestellhinweis anzeigen',
+        'instructions' => "Zeigen Sie das Bestellnotizfeld an, das verwendet wird, um dem Kunden einen benutzerdefinierten Text anzuzeigen, wenn die Zahlung seiner Bestellung genehmigt wurde."
+    ],
 ];
