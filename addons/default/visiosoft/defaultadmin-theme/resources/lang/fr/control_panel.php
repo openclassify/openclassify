@@ -12,5 +12,5 @@ return [
     'search_by_gsm_number'     => 'Recherche par numéro GSM',
 
     // Adv Export
-    'choose_file_type' => 'Choose File Type For Export',
+    'choose_file_type' => 'Choisissez le type de fichier pour l\'exportation',
 ];
