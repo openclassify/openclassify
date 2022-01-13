@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Điện thoại Gsm',
     'phone_office' => 'Điện thoại văn phòng',
     'add_to_favorites' => "Thêm vào mục yêu thích",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Gửi',
     'search_name' => 'Tim kiêm tên',
     'my_favorite_searches' => 'Tìm kiếm yêu thích',
