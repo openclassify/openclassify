@@ -4,5 +4,5 @@ return [
     'title'       => '类别',
     'name'        => '分类模块',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => '这是您可以从类别页面添加、删除和编辑类别的屏幕。您可以从此页面轻松管理主要类别和子类别。',
 ];
