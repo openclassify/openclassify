@@ -4,5 +4,5 @@ return [
     'title'       => 'Annoncer',
     'name'        => 'Annoncemodul',
     'description' => 'Annoncemodul',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Dette er skærmen, hvor du kan tilføje, slette og redigere annoncer fra siden Annoncer. På denne side kan du blot udføre operationerne såsom poststyring og annoncekonfiguration.'
 ];
