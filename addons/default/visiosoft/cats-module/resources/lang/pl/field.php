@@ -30,12 +30,18 @@ return [
         'instructions' => 'Służy do dodawania ikon wskazujących typ kategorii.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Rodzic',
+    'level' => 'Poziom',
+    'count' => 'Liczba reklam',
 
     'please_wait' => 'Proszę czekać. Usuwanie podkategorii',
     'category_selection' => 'Wybór kategorii',
     'go_to_parent' => 'Idź do rodzica',
-	'preview' => 'Preview'
+	'preview' => 'Zapowiedź',
+
+    // Report
+    'undefined_category' => 'Niezdefiniowana kategoria',
+    'categories_with_no_meta_report' => 'Kategorie bez raportu Meta',
+    'category' => 'Kategoria',
+    'id' => 'ID',
 ];
