@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-telefoon',
     'phone_office' => 'Kantoor telefoon',
     'add_to_favorites' => "Toevoegen aan favorieten",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Sturen',
     'search_name' => 'Naam zoeken',
     'my_favorite_searches' => 'Favoriete zoekopdrachten',
