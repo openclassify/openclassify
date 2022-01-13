@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'شامل کریں۔',
     'new_adv' => 'نئی درجہ بندی',
     'new_classified' => 'نیا درجہ بند',
     'new_category' => 'نئی قسم',
