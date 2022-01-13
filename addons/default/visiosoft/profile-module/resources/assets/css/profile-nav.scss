@@ -21,6 +21,7 @@
   transform: translateX(-100%);
   -webkit-transition: 300ms ease;
   transition: 300ms ease;
+  background-color: #FCFCFC;
   @media only screen and (min-width: 768px) {
     height: initial;
     position: initial;
@@ -29,7 +30,7 @@
     transform: initial;
   }
   @media only screen and (min-width: 992px) {
-    padding: 1.5rem 2.25rem;
+    padding: 1.5rem;
   }
 
   &.reveal {

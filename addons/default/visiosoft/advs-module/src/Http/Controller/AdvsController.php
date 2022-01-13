@@ -1163,6 +1163,7 @@ class AdvsController extends PublicController
         if ($adv and $adv->getStatus() == "approved") {
             $cart = $thisModel->addCart($adv, $quantity, $name);
             $response['status'] = "success";
+            $response['msg'] = trans('visiosoft.module.advs::message.product_added_to_cart');
             $count = $cart->getItems()->count;
             $response['count'] = $count;
             $response['item'] = [

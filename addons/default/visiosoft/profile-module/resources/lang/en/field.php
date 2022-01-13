@@ -504,4 +504,6 @@ return [
     'undefined_member' => 'Undefined Member',
     'new_membership_report' => 'New Membership Report',
     'member_login_reports' => 'Member Login Reports',
+
+    'profile_instruction' => 'You can edit your profile information from this page.',
 ];
