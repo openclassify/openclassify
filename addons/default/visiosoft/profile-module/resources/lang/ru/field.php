@@ -497,4 +497,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Получать сообщения по электронной почте',
     ],
+
+    // Report
+    'member' => 'Член',
+    'registered_at' => 'Зарегистрировано в',
+    'login_at' => 'Войти в',
+    'undefined_member' => 'Неопределенный член',
+    'new_membership_report' => 'Отчет о новом членстве',
+    'member_login_reports' => 'Отчеты о входе в систему',
+
+    'profile_instruction' => 'Вы можете редактировать информацию своего профиля на этой странице.',
 ];
