@@ -4,5 +4,5 @@ return [
     'title'       => 'تبلیغات',
     'name'        => 'ماژول تبلیغات',
     'description' => 'ماژول تبلیغات',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'این صفحه ای است که می توانید تبلیغات را از صفحه تبلیغات اضافه، حذف و ویرایش کنید. در این صفحه به سادگی می توانید عملیاتی مانند مدیریت پست و پیکربندی تبلیغات را انجام دهید.'
 ];
