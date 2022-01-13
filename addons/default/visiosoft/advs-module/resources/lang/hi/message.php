@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "आपके विज्ञापन की स्थिति बिक चुकी है!",
 	'status_change' => "आपके विज्ञापन की स्थिति सेट हो गई है: स्थिति!",
 	'disabled_detailed_options_for_admin_role' => "विस्तृत उत्पाद विकल्प अक्षम हैं।",
+    'permission_error' => 'आपको इस कार्रवाई की अनुमति नहीं है',
+    'currency_converter_not_available' => 'मुद्रा परिवर्तक उपलब्ध नहीं है।',
+    'option_saved' => 'विकल्प सहेजा गया',
+    'do_you_want_to_save_the_option' => 'क्या आप विकल्प को सहेजना चाहते हैं?',
+    'you_can_not_delete_a_system_status' => 'आप सिस्टम स्थिति को हटा नहीं सकते!',
+    'product_added_to_cart' => 'उत्पाद कार्ट में जोड़ा गया!',
 ];
