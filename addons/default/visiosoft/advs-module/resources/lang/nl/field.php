@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-telefoon',
     'phone_office' => 'Kantoor telefoon',
     'add_to_favorites' => "Toevoegen aan favorieten",
+    'add_to_cart'=> "Voeg toe aan winkelmandje",
     'send' => 'Sturen',
     'search_name' => 'Naam zoeken',
     'my_favorite_searches' => 'Favoriete zoekopdrachten',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'In de afgelopen maand'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In de laatste twee dagen'
+    ],
     'ads_with_photo' => [
         'name' => 'Advertenties met foto'
     ],
@@ -381,6 +385,21 @@ return [
     'tax' => [
         'name' => 'Btw'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Naam (A tot Z)',
+    'name_z_a' => 'Naam (Z tot A)',
+    'select_lang_ads' => 'selecteer de taal van de advertenties',
+
+    // Report
+    'product_stock_report' => 'Productvoorraadrapport',
+    'active_passive_products_report' => 'Rapport Actief-Passief Producten',
+    'unexplained_products_report' => 'Rapport onverklaarde producten',
+    'non_image_products_report' => 'Rapport over niet-afbeeldingsproducten',
+    'product' => 'Product',
+    'count' => 'Graaf',
+    'undefined_product' => 'Ongedefinieerd product',
+    'pages_without_meta_information_report' => 'Pagina\'s zonder meta-informatierapport',
+    'page' => 'Bladzijde',
+    'undefined_page' => 'Ongedefinieerde pagina',
+    'id' => 'ID kaart',
+    'custom_field' => 'Aangepast veld',
 ];
