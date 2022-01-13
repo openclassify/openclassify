@@ -4,5 +4,5 @@ return [
     'title'       => 'Ubicació',
     'name'        => 'Mòdul d\'ubicació',
     'description' => 'Descripció',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'En aquesta pàgina, podeu gestionar la informació del país, ciutat, districte, barri i poble.',
 ];
