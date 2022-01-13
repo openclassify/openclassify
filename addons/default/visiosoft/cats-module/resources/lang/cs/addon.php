@@ -4,5 +4,5 @@ return [
     'title'       => 'Kategorie',
     'name'        => 'Modul kategorie',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Toto je obrazovka, kde můžete přidávat, odstraňovat a upravovat kategorie ze stránky kategorií. Z této stránky můžete snadno spravovat hlavní kategorie a podkategorie.',
 ];
