@@ -4,5 +4,5 @@ return [
     'title'       => '범주',
     'name'        => '카테고리 모듈',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => '카테고리 페이지에서 카테고리를 추가, 삭제, 수정할 수 있는 화면입니다. 이 페이지에서 주요 카테고리와 하위 카테고리를 쉽게 관리할 수 있습니다.',
 ];
