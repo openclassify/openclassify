@@ -30,12 +30,18 @@ return [
         'instructions' => '用于添加指示类别类型的图标。',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => '家长',
+    'level' => '等级',
+    'count' => '广告计数',
 
     'please_wait' => '请稍候。正在删除子类别',
     'category_selection' => '类别选择',
     'go_to_parent' => '去父母',
-	'preview' => 'Preview'
+	'preview' => '预览',
+
+    // Report
+    'undefined_category' => '未定义类别',
+    'categories_with_no_meta_report' => '没有元报告的类别',
+    'category' => '类别',
+    'id' => 'ID',
 ];
