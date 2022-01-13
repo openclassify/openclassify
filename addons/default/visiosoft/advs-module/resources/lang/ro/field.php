@@ -134,7 +134,7 @@ return [
     'home' => 'Acasă',
     'list-page' => 'Pagina de listă',
     'search' => 'Căutare',
-	'reset' => 'Reset',
+	'reset' => 'Resetați',
     'recommended' => 'Anunțuri recomandate pentru dvs.',
     'filter' => 'Filtru',
     'sort' => 'Fel',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Telefon Gsm',
     'phone_office' => 'Telefon de birou',
     'add_to_favorites' => "Adauga la favorite",
+    'add_to_cart'=> "Adaugă in coș",
     'send' => 'Trimite',
     'search_name' => 'Numele căutării',
     'my_favorite_searches' => 'Căutări preferate',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'În ultima lună'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'În Ultimele Două Zile'
+    ],
     'ads_with_photo' => [
         'name' => 'Anunțuri cu fotografie'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Proprietar',
     'default_owner_instruction' => 'Proprietarul va folosi implicit utilizatorul curent dacă nu este selectat niciun utilizator',
     'create_page_subtitle' => 'Creați anunțul impecabil introducând informații detaliate despre anunțul dvs.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Cu numerele mele de telefon',
+    'not_with_my_phone_numbers' => "Nu vreau să fiu contactat la telefon",
+    'how_can_you_be_contacted' => "Cum poți fi contactat?",
 
     // Listing page
     'ad_title' => 'Adaugă titlu',
@@ -378,8 +382,23 @@ return [
         'name' => 'Data publicării'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Impozit'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nume (de la A la Z)',
+    'name_z_a' => 'Nume (de la Z la A)',
+    'select_lang_ads' => 'selectați limba reclamelor',
+
+    // Report
+    'product_stock_report' => 'Raport stoc produs',
+    'active_passive_products_report' => 'Raport produse active-pasive',
+    'unexplained_products_report' => 'Raport produse inexplicabile',
+    'non_image_products_report' => 'Raport despre produse non-imagini',
+    'product' => 'Produs',
+    'count' => 'Numara',
+    'undefined_product' => 'Produs nedefinit',
+    'pages_without_meta_information_report' => 'Pagini fără raport metainformații',
+    'page' => 'Pagină',
+    'undefined_page' => 'Pagină nedefinită',
+    'id' => 'ID',
+    'custom_field' => 'Câmp personalizat',
 ];
