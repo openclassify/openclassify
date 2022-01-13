@@ -4,5 +4,5 @@ return [
     'title'       => 'קטגוריה',
     'name'        => 'מודול קטגוריה',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'זהו המסך שבו ניתן להוסיף, למחוק ולערוך קטגוריות מדף הקטגוריות. אתה יכול לנהל בקלות קטגוריות עיקריות ותתי קטגוריות מדף זה.',
 ];
