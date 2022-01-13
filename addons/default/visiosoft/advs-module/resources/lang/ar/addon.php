@@ -4,5 +4,5 @@ return [
     'title'       => 'إعلانات',
     'name'        => 'وحدة الإعلانات',
     'description' => 'وحدة الإعلانات',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'هذه هي الشاشة حيث يمكنك إضافة وحذف وتعديل الإعلانات من صفحة الإعلانات. في هذه الصفحة ، يمكنك ببساطة القيام بالعمليات مثل إدارة المنشورات وتهيئة الإعلانات.'
 ];
