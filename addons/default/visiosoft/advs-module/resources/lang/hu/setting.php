@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google statisztikai kód',
     ],
+    'body_custom_space' => [
+        'name' => 'Testre szabott tér',
+    ],
     'register_email_field' => [
         'name' => 'Tag regisztrációs e-mail követelmény',
     ],
     'market_place' => [
         'name' => 'Piactér',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Eladó információk elrejtése',
         'instructions' => 'Az eladó információinak elrejtése a hirdetések részletes oldalán',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Eladó információinak elrejtése kategória szerint',
+        'instructions' => 'Eladói információk elrejtése kiválasztott fő kategóriák szerint a hirdetések részletes oldalán',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'A hirdetés utáni megállapodás megjelenítése',
         'instructions' => 'Kapcsolja be, ha adatvédelmi irányelveket szeretne megjeleníteni a hirdetés létrehozása oldalon',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Megjeleníti a public_at és a finish_at mezőket a hirdetés létrehozása oldalon.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Adómező megjelenítése',
+        'instructions' => 'Ha ez az opció be van kapcsolva, akkor a hirdetéskészítési oldalon beállíthatja az adókulcsot.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Névjegymezők elrejtése az Új hirdetés létrehozásában'
+    ],
+    'show_input_flag' => [
+        'name' => 'Zászlók megjelenítése a bemeneten',
+        'instructions' => 'Jelölő és leírás megjelenítése a fordítható bemeneteken'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'A kifogyott termékek elrejtése listázás nélkül',
+        'instructions' => 'Elrejti a kifogyott GET termékeket a listáról és a kezdőlapról'
+    ],
+    'only_email_login' => [
+        'name' => 'Csak e-mail bejelentkezés'
+    ],
+    'preview_mode' => [
+        'name' => 'Előnézet mód',
+        'instructions' => 'Ha ez a mód be van kapcsolva, a felhasználó megtekinti a hirdetés előnézetét.'
+    ],
+    'show_order_note' => [
+        'name' => 'Megrendelési megjegyzés megjelenítése',
+        'instructions' => "Jelenítse meg a rendelési megjegyzés mezőt, amely az ügyfelek egyéni szövegének megjelenítésére szolgál, amikor a rendelés fizetését jóváhagyták."
+    ],
 ];
