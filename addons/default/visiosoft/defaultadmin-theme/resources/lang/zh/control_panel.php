@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'GSM号码查询',
+
+    // Adv Export
+    'choose_file_type' => '选择要导出的文件类型',
 ];
