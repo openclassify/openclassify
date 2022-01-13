@@ -134,7 +134,7 @@ return [
     'home' => 'Koti',
     'list-page' => 'Luettelosivu',
     'search' => 'Hae',
-	'reset' => 'Reset',
+	'reset' => 'Nollaa',
     'recommended' => 'Suositellut mainokset sinulle',
     'filter' => 'Suodattaa',
     'sort' => 'Järjestellä',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-puhelin',
     'phone_office' => 'Toimistopuhelin',
     'add_to_favorites' => "Lisää suosikkeihin",
+    'add_to_cart'=> "Lisää ostoskoriin",
     'send' => 'Lähettää',
     'search_name' => 'Haun nimi',
     'my_favorite_searches' => 'Suosikkihaut',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Viime kuussa'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Kahdessa viimeisessä päivässä'
+    ],
     'ads_with_photo' => [
         'name' => 'Mainokset valokuvalla'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Omistaja',
     'default_owner_instruction' => 'Omistaja määrittää oletusasetukset nykyiselle käyttäjälle, jos ketään ei ole valittu',
     'create_page_subtitle' => 'Luo mainos moitteettomasti syöttämällä yksityiskohtaiset tiedot mainoksestasi.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Puhelinnumeroillani',
+    'not_with_my_phone_numbers' => "En halua olla tavoitettavissa puhelimitse",
+    'how_can_you_be_contacted' => "Miten sinuun saa yhteyttä?",
 
     // Listing page
     'ad_title' => 'Mainoksen otsikko',
@@ -378,8 +382,23 @@ return [
         'name' => 'Julkaisupäivä'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Verottaa'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nimi (A–Z)',
+    'name_z_a' => 'Nimi (Z - A)',
+    'select_lang_ads' => 'valitse mainosten kieli',
+
+    // Report
+    'product_stock_report' => 'Tuotevarastoraportti',
+    'active_passive_products_report' => 'Active-Passive Products -raportti',
+    'unexplained_products_report' => 'Selittämättömien tuotteiden raportti',
+    'non_image_products_report' => 'Ei-kuvatuotteiden raportti',
+    'product' => 'Tuote',
+    'count' => 'Kreivi',
+    'undefined_product' => 'Määrittelemätön tuote',
+    'pages_without_meta_information_report' => 'Sivut ilman metatietoraporttia',
+    'page' => 'Sivu',
+    'undefined_page' => 'Määrittämätön sivu',
+    'id' => 'ID',
+    'custom_field' => 'Mukautettu kenttä',
 ];
