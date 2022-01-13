@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "귀하의 광고 상태가 판매로 설정되었습니다!",
 	'status_change' => "귀하의 광고 상태가 : status로 설정되었습니다!",
 	'disabled_detailed_options_for_admin_role' => "자세한 제품 옵션이 비활성화됩니다.",
+    'permission_error' => '이 작업에 대한 권한이 없습니다.',
+    'currency_converter_not_available' => '환율 계산기를 사용할 수 없습니다.',
+    'option_saved' => '옵션이 저장됨',
+    'do_you_want_to_save_the_option' => '옵션을 저장하시겠습니까?',
+    'you_can_not_delete_a_system_status' => '시스템 상태를 삭제할 수 없습니다!',
+    'product_added_to_cart' => '장바구니에 추가된 제품!',
 ];
