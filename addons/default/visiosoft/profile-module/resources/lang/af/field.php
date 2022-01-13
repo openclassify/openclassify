@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Ontvang boodskappe per e-pos',
     ],
+
+    // Report
+    'member' => 'Lid',
+    'registered_at' => 'Geregistreer by',
+    'login_at' => 'Teken in by',
+    'undefined_member' => 'Ongedefinieerde lid',
+    'new_membership_report' => 'Nuwe lidmaatskapverslag',
+    'member_login_reports' => 'Lede Aanmelding Verslae',
+
+    'profile_instruction' => 'Jy kan jou profielinligting vanaf hierdie bladsy wysig.',
 ];
