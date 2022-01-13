@@ -134,7 +134,7 @@ return [
     'home' => 'Zuhause',
     'list-page' => 'Listenseite',
     'search' => 'Suche',
-	'reset' => 'Reset',
+	'reset' => 'Zurücksetzen',
     'recommended' => 'Empfohlene Anzeigen für Sie',
     'filter' => 'Filter',
     'sort' => 'Sortieren',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-Telefon',
     'phone_office' => 'Bürotelefon',
     'add_to_favorites' => "Zu den Favoriten hinzufügen",
+    'add_to_cart'=> "in den Warenkorb legen",
     'send' => 'Senden',
     'search_name' => 'Name suchen',
     'my_favorite_searches' => 'Lieblingssuchen',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Im letzten Monat'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In den letzten beiden Tagen'
+    ],
     'ads_with_photo' => [
         'name' => 'Anzeigen mit Foto'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Inhaber',
     'default_owner_instruction' => 'Der Eigentümer verwendet standardmäßig den aktuellen Benutzer, wenn kein Benutzer ausgewählt ist',
     'create_page_subtitle' => 'Erstellen Sie die Anzeige fehlerfrei, indem Sie detaillierte Informationen zu Ihrer Anzeige eingeben.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Mit meinen Telefonnummern',
+    'not_with_my_phone_numbers' => "Ich möchte nicht telefonisch erreichbar sein",
+    'how_can_you_be_contacted' => "Wie können Sie kontaktiert werden?",
 
     // Listing page
     'ad_title' => 'Anzeigentitel',
@@ -379,8 +383,23 @@ return [
         'name' => 'Erscheinungsdatum'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Steuer'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Name (A bis Z)',
+    'name_z_a' => 'Name (Z bis A)',
+    'select_lang_ads' => 'Wählen Sie die Sprache der Anzeigen aus',
+
+    // Report
+    'product_stock_report' => 'Produktbestandsbericht',
+    'active_passive_products_report' => 'Aktiv-Passiv-Produktbericht',
+    'unexplained_products_report' => 'Bericht über unerklärliche Produkte',
+    'non_image_products_report' => 'Bericht zu Nicht-Image-Produkten',
+    'product' => 'Produkt',
+    'count' => 'Zählen',
+    'undefined_product' => 'Undefiniertes Produkt',
+    'pages_without_meta_information_report' => 'Bericht „Seiten ohne Metainformationen“.',
+    'page' => 'Buchseite',
+    'undefined_page' => 'Undefinierte Seite',
+    'id' => 'ICH WÜRDE',
+    'custom_field' => 'Benutzerdefinierte Feld',
 ];
