@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM telefon',
     'phone_office' => 'Kancelářský telefon',
     'add_to_favorites' => "Přidat k oblíbeným",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Poslat',
     'search_name' => 'Hledat jméno',
     'my_favorite_searches' => 'Oblíbené vyhledávání',
