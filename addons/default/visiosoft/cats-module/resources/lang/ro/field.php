@@ -30,18 +30,18 @@ return [
         'instructions' => 'Este folosit pentru a adăuga pictograme care indică tipul de categorie.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Mamă',
+    'level' => 'Nivel',
+    'count' => 'Numărul de anunțuri',
 
     'please_wait' => 'Vă rugăm să așteptați. Ștergeți subcategorii',
     'category_selection' => 'Selectarea categoriei',
     'go_to_parent' => 'Mergeți la părinte',
-	'preview' => 'Preview',
+	'preview' => 'previzualizare',
 
     // Report
-    'undefined_category' => 'Undefined Category',
-    'categories_with_no_meta_report' => 'Categories with No Meta Report',
-    'category' => 'Category',
+    'undefined_category' => 'Categorie nedefinită',
+    'categories_with_no_meta_report' => 'Categorii fără Meta Raport',
+    'category' => 'Categorie',
     'id' => 'ID',
 ];
