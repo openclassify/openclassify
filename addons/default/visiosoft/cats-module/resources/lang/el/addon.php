@@ -4,5 +4,5 @@ return [
     'title'       => 'Κατηγορία',
     'name'        => 'Μονάδα κατηγορίας',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Αυτή είναι η οθόνη όπου μπορείτε να προσθέσετε, να διαγράψετε και να επεξεργαστείτε κατηγορίες από τη σελίδα της κατηγορίας. Μπορείτε εύκολα να διαχειριστείτε κύριες κατηγορίες και υποκατηγορίες από αυτήν τη σελίδα.',
 ];
