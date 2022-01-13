@@ -563,4 +563,14 @@ return [
     'receive_messages_email' => [
         'name' => 'E-nameyên Peyaman Bistînin',
     ],
+
+    // Report
+    'member' => 'Endam',
+    'registered_at' => 'Qeydkirî li',
+    'login_at' => 'Têkeve At',
+    'undefined_member' => 'Endamê Undefined',
+    'new_membership_report' => 'Rapora Endamtiya Nû',
+    'member_login_reports' => 'Raporên Têketina Endam',
+
+    'profile_instruction' => 'Hûn dikarin ji vê rûpelê agahdariya profîla xwe biguherînin.',
 ];
