@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'Hae GSM-numeron mukaan',
+
+    // Adv Export
+    'choose_file_type' => 'Valitse vietävä tiedostotyyppi',
 ];
