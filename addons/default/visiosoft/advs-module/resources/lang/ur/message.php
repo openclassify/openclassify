@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "آپ کے اشتہار کی حیثیت بیچ دی گئی ہے!",
 	'status_change' => "آپ کے اشتہار کی حیثیت اس پر سیٹ ہوچکی ہے: درجہ!",
 	'disabled_detailed_options_for_admin_role' => "مصنوع کے تفصیلی اختیارات غیر فعال ہیں۔",
+    'permission_error' => 'آپ کو اس کارروائی کی اجازت نہیں ہے۔',
+    'currency_converter_not_available' => 'کرنسی کنورٹر دستیاب نہیں ہے۔',
+    'option_saved' => 'آپشن محفوظ ہو گیا۔',
+    'do_you_want_to_save_the_option' => 'کیا آپ اختیار محفوظ کرنا چاہتے ہیں؟',
+    'you_can_not_delete_a_system_status' => 'آپ سسٹم کی حیثیت کو حذف نہیں کر سکتے ہیں!',
+    'product_added_to_cart' => 'پروڈکٹ کو کارٹ میں شامل کیا گیا!',
 ];
