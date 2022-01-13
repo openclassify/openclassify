@@ -4,5 +4,5 @@ return [
     'title'       => 'বিজ্ঞাপন',
     'name'        => 'বিজ্ঞাপন মডিউল',
     'description' => 'বিজ্ঞাপন মডিউল',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'এটি সেই স্ক্রীন যেখানে আপনি বিজ্ঞাপন পৃষ্ঠা থেকে বিজ্ঞাপন যোগ করতে, মুছতে এবং সম্পাদনা করতে পারেন৷ এই পৃষ্ঠায়, আপনি কেবল পোস্ট পরিচালনা এবং বিজ্ঞাপন কনফিগারেশনের মতো অপারেশনগুলি করতে পারেন৷'
 ];
