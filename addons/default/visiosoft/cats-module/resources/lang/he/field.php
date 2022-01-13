@@ -30,12 +30,18 @@ return [
         'instructions' => 'הוא משמש להוספת סמלים המציינים את סוג הקטגוריה.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'הוֹרֶה',
+    'level' => 'רָמָה',
+    'count' => 'ספירת מודעות',
 
     'please_wait' => 'אנא המתן. מחיקת קטגוריות משנה',
     'category_selection' => 'בחירת קטגוריה',
     'go_to_parent' => 'עבור להורה',
-	'preview' => 'Preview'
+	'preview' => 'תצוגה מקדימה',
+
+    // Report
+    'undefined_category' => 'קטגוריה לא מוגדרת',
+    'categories_with_no_meta_report' => 'קטגוריות ללא דוח מטא',
+    'category' => 'קטגוריה',
+    'id' => 'תְעוּדַת זֶהוּת',
 ];
