@@ -30,12 +30,18 @@ return [
         'instructions' => 'Dit word gebruik om ikone by te voeg wat die kategorietipe aandui.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Ouer',
+    'level' => 'Vlak',
+    'count' => 'Advertensie tel',
 
     'please_wait' => 'Wag asseblief. Verwyder subkategorieë',
     'category_selection' => 'Kategorie seleksie',
     'go_to_parent' => 'Gaan na ouer',
-	'preview' => 'Preview'
+	'preview' => 'Voorskou',
+
+    // Report
+    'undefined_category' => 'Ongedefinieerde kategorie',
+    'categories_with_no_meta_report' => 'Kategorieë met geen metaverslag nie',
+    'category' => 'Kategorie',
+    'id' => 'ID',
 ];
