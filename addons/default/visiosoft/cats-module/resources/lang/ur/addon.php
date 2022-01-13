@@ -4,5 +4,5 @@ return [
     'title'       => 'قسم',
     'name'        => 'زمرہ ماڈیول',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'یہ وہ سکرین ہے جہاں آپ زمرہ جات کے صفحہ سے زمرے شامل، حذف اور ترمیم کر سکتے ہیں۔ آپ اس صفحہ سے اہم زمروں اور ذیلی زمروں کا آسانی سے انتظام کر سکتے ہیں۔',
 ];
