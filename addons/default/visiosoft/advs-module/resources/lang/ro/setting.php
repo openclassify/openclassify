@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Cod statistic Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Body Custom Space',
+    ],
     'register_email_field' => [
         'name' => 'Cerință de e-mail de înregistrare a membrilor',
     ],
     'market_place' => [
         'name' => 'Piata de desfacere',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Ascundeți informațiile despre vânzător',
         'instructions' => 'Ascunderea informațiilor despre vânzător în pagina de detalii a anunțurilor',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Ascundeți informațiile vânzătorului după categorie',
+        'instructions' => 'Ascunderea informațiilor vânzătorului în funcție de categoriile principale selectate în pagina de detalii a anunțurilor',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Afișați acordul de postare a anunțului',
         'instructions' => 'Activați acest lucru dacă doriți să afișați un acord privind politica de confidențialitate pe pagina de creare a anunțului',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Afișează câmpurile publish_at și finish_at de pe pagina de creare a anunțului.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Afișați câmpul fiscal',
+        'instructions' => 'Când această opțiune este activată, puteți seta cota de impozitare pe pagina de creare a anunțurilor.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Ascundeți câmpurile de contact pentru în Creare anunț nou'
+    ],
+    'show_input_flag' => [
+        'name' => 'Afișați steaguri la intrare',
+        'instructions' => 'Afișați marcajul și descrierea intrărilor care se pot traduce'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Ascundeți produsele epuizate fără listare',
+        'instructions' => 'Ascunde produsele GET epuizate din lista și pagina de pornire'
+    ],
+    'only_email_login' => [
+        'name' => 'Doar autentificare prin e-mail'
+    ],
+    'preview_mode' => [
+        'name' => 'Modul de previzualizare',
+        'instructions' => 'Când acest mod este activat, anunțul este previzualizat de utilizator.'
+    ],
+    'show_order_note' => [
+        'name' => 'Afișați nota de comandă',
+        'instructions' => "Afișați câmpul pentru nota de comandă care este utilizat pentru a afișa textul personalizat clienților atunci când plata comenzii lor este aprobată."
+    ],
 ];
