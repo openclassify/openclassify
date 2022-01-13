@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Kode Statistik Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Ruang Kustom Tubuh',
+    ],
     'register_email_field' => [
         'name' => 'Persyaratan Email Pendaftaran Anggota',
     ],
     'market_place' => [
         'name' => 'Market Place',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Sembunyikan Informasi Penjual',
         'instructions' => 'Menyembunyikan info penjual di halaman detail iklan',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Sembunyikan Informasi Penjual Berdasarkan Kategori',
+        'instructions' => 'Menyembunyikan info penjual menurut kategori utama yang dipilih di halaman detail iklan',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Show Post Ad Agreement',
         'instructions' => 'Aktifkan ini jika Anda ingin menampilkan perjanjian kebijakan privasi di halaman pembuatan iklan',
@@ -280,7 +287,26 @@ return [
         'name' => 'Tampilkan Baris Pajak',
         'instructions' => 'Ketika opsi ini diaktifkan, Anda dapat mengatur tarif pajak pada halaman pembuatan iklan.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Sembunyikan Bidang Kontak Untuk di Buat Iklan Baru'
+    ],
+    'show_input_flag' => [
+        'name' => 'Tampilkan Bendera di Masukan',
+        'instructions' => 'Tampilkan bendera dan deskripsi pada input yang dapat diterjemahkan'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Sembunyikan produk yang kehabisan stok tanpa daftar',
+        'instructions' => 'Menyembunyikan produk GET yang kehabisan stok dari daftar dan beranda'
+    ],
+    'only_email_login' => [
+        'name' => 'Hanya Email Masuk'
+    ],
+    'preview_mode' => [
+        'name' => 'Mode Pratinjau',
+        'instructions' => 'Saat mode ini diaktifkan, iklan dipratinjau oleh pengguna.'
+    ],
+    'show_order_note' => [
+        'name' => 'Tampilkan Catatan Pesanan',
+        'instructions' => "Tampilkan kolom catatan pesanan yang digunakan untuk menampilkan teks kustom pelanggan saat pembayaran pesanan mereka disetujui."
+    ],
 ];
