@@ -30,12 +30,18 @@ return [
         'instructions' => 'يتم استخدامه لإضافة الرموز التي تشير إلى نوع الفئة.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'الأبوين',
+    'level' => 'مستوى',
+    'count' => 'عدد الإعلانات',
 
     'please_wait' => 'يرجى الانتظار',
     'category_selection' => 'اختيار الفئة',
     'go_to_parent' => 'انتقل إلى الأصل',
-	'preview' => 'Preview'
+	'preview' => 'معاينة',
+
+    // Report
+    'undefined_category' => 'فئة غير محددة',
+    'categories_with_no_meta_report' => 'الفئات التي لا تحتوي على تقرير ميتا',
+    'category' => 'الفئة',
+    'id' => 'بطاقة تعريف',
 ];
