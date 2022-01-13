@@ -134,7 +134,7 @@ return [
     'home' => 'Anasayfa',
     'list-page' => 'Liste Sayfası',
     'search' => 'Arama',
-	'reset' => 'Reset',
+	'reset' => 'Sıfırla',
     'recommended' => 'Sizin için Önerilen İlanlar',
     'filter' => 'Filtre',
     'sort' => 'Çeşit',
@@ -156,7 +156,7 @@ return [
     'phone_gsm' => 'Cep Telefonu',
     'phone_office' => 'Sabit telefon',
     'add_to_favorites' => "Favorilere Ekle",
-    'add_to_cart'=> "Sepete Ekle",
+    'add_to_cart'=> "Sepete ekle",
     'send' => 'Gönder',
     'search_name' => 'Arama Adı',
     'my_favorite_searches' => 'Favori Aramalar',
@@ -385,11 +385,23 @@ return [
         'name' => 'Yayın tarihi'
     ],
     'tax' => [
-
         'name' => 'KDV Oranı'
     ],
     'name_a_z' => 'İlan Başlığı (A\'dan Z\'ye)',
     'name_z_a' => 'İlan Başlığı (Z\'den A\'ya)',
     'select_lang_ads' => 'İlan dilini seçiniz',
 
+    // Report
+    'product_stock_report' => 'Ürün Stok Raporu',
+    'active_passive_products_report' => 'Aktif-Pasif Ürünler Raporu',
+    'unexplained_products_report' => 'Açıklanamayan Ürünler Raporu',
+    'non_image_products_report' => 'Görsel Olmayan Ürünler Raporu',
+    'product' => 'Ürün',
+    'count' => 'Saymak',
+    'undefined_product' => 'Tanımsız Ürün',
+    'pages_without_meta_information_report' => 'Meta Bilgi Raporu Olmayan Sayfalar',
+    'page' => 'Sayfa',
+    'undefined_page' => 'Tanımsız Sayfa',
+    'id' => 'İD',
+    'custom_field' => 'Özel alan',
 ];
