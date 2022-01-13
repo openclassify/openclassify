@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Статистически код на Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Персонализирано пространство на тялото',
+    ],
     'register_email_field' => [
         'name' => 'Изискване за имейл за регистрация на членове',
     ],
     'market_place' => [
         'name' => 'Пазар',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Скриване на информацията за продавача',
         'instructions' => 'Скриване на информация за продавача в страницата с подробности за рекламите',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Скриване на информацията за продавача по категория',
+        'instructions' => 'Скриване на информация за продавача по избрани основни категории в страницата с подробности за рекламите',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Показване на споразумението за публикуване на реклами',
         'instructions' => 'Включете това, ако искате да покажете споразумение за политика за поверителност на страницата за създаване на реклама',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Показва полетата objav_at и finish_at на страницата за създаване на реклама.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Показване на данъчното поле',
+        'instructions' => 'Когато тази опция е активирана, можете да зададете данъчната ставка на страницата за създаване на реклама.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Скриване на полетата за контакт за в Създаване на нова реклама'
+    ],
+    'show_input_flag' => [
+        'name' => 'Показване на флагове при вход',
+        'instructions' => 'Показване на флаг и описание на преводими входове'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Скрийте продуктите, които не са на склад, без да ги изброявате',
+        'instructions' => 'Скрива изчерпани продукти ВЗЕМЕТЕ от списъка и началната страница'
+    ],
+    'only_email_login' => [
+        'name' => 'Само вход по имейл'
+    ],
+    'preview_mode' => [
+        'name' => 'Режим за преглед',
+        'instructions' => 'Когато този режим е активиран, рекламата се визуализира от потребителя.'
+    ],
+    'show_order_note' => [
+        'name' => 'Показване на бележка за поръчка',
+        'instructions' => "Покажете полето за бележка за поръчка, което се използва за показване на персонализиран текст на клиентите, когато плащането на поръчката им бъде одобрено."
+    ],
 ];
