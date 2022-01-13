@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => '接收邮件电子邮件',
     ],
+
+    // Report
+    'member' => '成员',
+    'registered_at' => '注册于',
+    'login_at' => '登录',
+    'undefined_member' => '未定义成员',
+    'new_membership_report' => '新会员报告',
+    'member_login_reports' => '会员登录报告',
+
+    'profile_instruction' => '您可以从此页面编辑您的个人资料信息。',
 ];
