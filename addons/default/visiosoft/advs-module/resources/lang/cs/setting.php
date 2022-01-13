@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Statistický kód Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Vlastní prostor těla',
+    ],
     'register_email_field' => [
         'name' => 'E-mailová žádost o registraci člena',
     ],
     'market_place' => [
         'name' => 'Tržiště',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Skrýt informace o prodejci',
         'instructions' => 'Skrytí informací o prodejci na stránce s podrobnostmi o reklamách',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Skrýt informace o prodejci podle kategorie',
+        'instructions' => 'Skrytí před informacemi o prodejci podle vybraných hlavních kategorií na stránce podrobností inzerátů',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Zobrazit smlouvu o příspěvku',
         'instructions' => 'Tuto možnost zapněte, pokud chcete na stránce vytváření reklam zobrazit dohodu o zásadách ochrany osobních údajů',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Zobrazí pole publish_at a finish_at na stránce pro vytvoření reklamy.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Zobrazit daňové pole',
+        'instructions' => 'Když je tato možnost povolena, můžete nastavit daňovou sazbu na stránce vytváření reklamy.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Skrýt kontaktní pole pro v části Vytvořit novou reklamu'
+    ],
+    'show_input_flag' => [
+        'name' => 'Zobrazit příznaky na vstupu',
+        'instructions' => 'Zobrazit příznak a popis na přeložitelných vstupech'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Skrýt produkty, které nejsou skladem, bez výpisu',
+        'instructions' => 'Skryje produkty GET, které nejsou skladem, ze seznamu a domovské stránky'
+    ],
+    'only_email_login' => [
+        'name' => 'Přihlášení pouze e-mailem'
+    ],
+    'preview_mode' => [
+        'name' => 'Režim náhledu',
+        'instructions' => 'Když je tento režim povolen, uživatel zobrazí náhled reklamy.'
+    ],
+    'show_order_note' => [
+        'name' => 'Zobrazit poznámku k objednávce',
+        'instructions' => "Zobrazit pole poznámky k objednávce, které se používá k zobrazení vlastního textu zákazníků, když je platba za jejich objednávku schválena."
+    ],
 ];
