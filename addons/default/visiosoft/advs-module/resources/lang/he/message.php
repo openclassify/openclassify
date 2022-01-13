@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "סטטוס המודעה שלך הוגדר כמכר!",
 	'status_change' => "סטטוס המודעה שלך הוגדר ל: סטטוס!",
 	'disabled_detailed_options_for_admin_role' => "אפשרויות מוצר מפורטות מושבתות.",
+    'permission_error' => 'אין לך הרשאה לפעולה זו',
+    'currency_converter_not_available' => 'ממיר המטבעות אינו זמין.',
+    'option_saved' => 'האפשרות נשמרה',
+    'do_you_want_to_save_the_option' => 'האם ברצונך לשמור את האפשרות?',
+    'you_can_not_delete_a_system_status' => 'אתה לא יכול למחוק סטטוס מערכת!',
+    'product_added_to_cart' => 'המוצר נוסף לסל!',
 ];
