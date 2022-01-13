@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Googlen tilastokoodi',
     ],
+    'body_custom_space' => [
+        'name' => 'Kehon mukautettu tila',
+    ],
     'register_email_field' => [
         'name' => 'Jäsenrekisteröinnin sähköpostivaatimus',
     ],
     'market_place' => [
         'name' => 'Tori',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Piilota myyjän tiedot',
         'instructions' => 'Piilotus myyjän tietoihin ilmoitusten tietosivulla',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Piilota myyjän tiedot luokittain',
+        'instructions' => 'Myyjätietojen piilottaminen valittujen pääluokkien mukaan mainosten tietosivulla',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Näytä postimainossopimus',
         'instructions' => 'Ota tämä käyttöön, jos haluat näyttää tietosuojakäytännön mainoksen luomissivulla',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Näyttää julkaisun_at ja viimeistelyn_at-kentät mainoksen luomissivulla.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Näytä verokenttä',
+        'instructions' => 'Kun tämä vaihtoehto on käytössä, voit määrittää veroprosentin mainoksen luontisivulla.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Piilota yhteystietokentät Luo uusi mainos'
+    ],
+    'show_input_flag' => [
+        'name' => 'Näytä liput tulossa',
+        'instructions' => 'Näytä lippu ja kuvaus käännettävissä syötteissä'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Piilota loppuneet tuotteet ilman luetteloa',
+        'instructions' => 'Piilottaa loppuneet GET-tuotteet listalta ja kotisivulta'
+    ],
+    'only_email_login' => [
+        'name' => 'Vain sähköpostiin kirjautuminen'
+    ],
+    'preview_mode' => [
+        'name' => 'Esikatselutila',
+        'instructions' => 'Kun tämä tila on käytössä, käyttäjä esikatselee mainosta.'
+    ],
+    'show_order_note' => [
+        'name' => 'Näytä tilaushuomautus',
+        'instructions' => "Näytä tilauksen huomautuskenttä, jota käytetään näyttämään asiakkaille mukautettua tekstiä, kun heidän tilauksensa maksu on hyväksytty."
+    ],
 ];
