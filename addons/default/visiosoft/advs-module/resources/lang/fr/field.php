@@ -134,7 +134,7 @@ return [
     'home' => 'Accueil',
     'list-page' => 'Page de liste',
     'search' => 'Chercher',
-	'reset' => 'Reset',
+	'reset' => 'Réinitialiser',
     'recommended' => 'Annonces recommandées pour vous',
     'filter' => 'Filtre',
     'sort' => 'Trier',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Téléphone GSM',
     'phone_office' => 'Téléphone de bureau',
     'add_to_favorites' => "Ajouter aux Favoris",
+    'add_to_cart'=> "Ajouter au chariot",
     'send' => 'Envoyer',
     'search_name' => 'Nom de la recherche',
     'my_favorite_searches' => 'Recherches préférées',
@@ -273,6 +274,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Au cours du dernier mois'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Dans les deux derniers jours'
+    ],
     'ads_with_photo' => [
         'name' => 'Annonces avec photo'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Propriétaire',
     'default_owner_instruction' => 'Le propriétaire utilisera par défaut l\'utilisateur actuel si aucun utilisateur n\'est sélectionné',
     'create_page_subtitle' => 'Créez parfaitement l\'annonce en saisissant des informations détaillées sur votre annonce.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Avec mes numéros de téléphone',
+    'not_with_my_phone_numbers' => "Je ne veux pas être joint par téléphone",
+    'how_can_you_be_contacted' => "Comment être contacté ?",
 
     // Listing page
     'ad_title' => 'Ajouter un titre',
@@ -379,8 +383,23 @@ return [
         'name' => 'Date de publication'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Impôt'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nom (A à Z)',
+    'name_z_a' => 'Nom (Z à A)',
+    'select_lang_ads' => 'sélectionner la langue des annonces',
+
+    // Report
+    'product_stock_report' => 'Rapport sur les stocks de produits',
+    'active_passive_products_report' => 'Rapport sur les produits actifs-passifs',
+    'unexplained_products_report' => 'Rapport sur les produits non expliqués',
+    'non_image_products_report' => 'Rapport sur les produits non liés à l\'image',
+    'product' => 'Produit',
+    'count' => 'Compter',
+    'undefined_product' => 'Produit non défini',
+    'pages_without_meta_information_report' => 'Rapport sur les pages sans métadonnées',
+    'page' => 'Page',
+    'undefined_page' => 'Page non définie',
+    'id' => 'identifiant',
+    'custom_field' => 'Champ personnalisé',
 ];
