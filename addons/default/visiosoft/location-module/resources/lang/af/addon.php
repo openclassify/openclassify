@@ -4,5 +4,5 @@ return [
     'title'       => 'Ligging',
     'name'        => 'Ligging Module',
     'description' => 'Beskrywing',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'Op hierdie bladsy kan u inligting oor die land, stad, distrik, buurt en dorp bestuur.',
 ];
