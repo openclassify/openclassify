@@ -4,5 +4,5 @@ return [
     'title'       => 'Njoftime',
     'name'        => 'Moduli i Njoftime',
     'description' => 'Moduli i Njoftime',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Ky është ekrani ku mund të shtoni, fshini dhe modifikoni reklamat nga faqja e reklamave. Në këtë faqe, thjesht mund të kryeni operacione të tilla si menaxhimi i postës dhe konfigurimi i reklamave.'
 ];
