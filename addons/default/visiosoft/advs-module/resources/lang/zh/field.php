@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm电话',
     'phone_office' => '办公室电话',
     'add_to_favorites' => "添加到收藏夹",
+    'add_to_cart'=> "Add to Cart",
     'send' => '发送',
     'search_name' => '搜索名称',
     'my_favorite_searches' => '最喜欢的搜寻',
