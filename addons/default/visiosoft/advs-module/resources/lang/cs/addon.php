@@ -4,5 +4,5 @@ return [
     'title'       => 'Reklamy',
     'name'        => 'Modul reklam',
     'description' => 'Modul reklam',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Toto je obrazovka, kde můžete přidávat, mazat a upravovat reklamy ze stránky Reklamy. Na této stránce můžete jednoduše provádět operace, jako je správa příspěvků a konfigurace reklam.'
 ];
