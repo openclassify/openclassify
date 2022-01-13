@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Lista e udhëzimeve',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Problemi i lidhjes',
+    'your_internet_connection_is_broken' => 'Lidhja juaj e internetit është prishur,',
+    'we_miss_you_so_much_already' => 'na mungon shumë tashmë!',
+    'try_again' => 'Provo përsëri',
 ];
