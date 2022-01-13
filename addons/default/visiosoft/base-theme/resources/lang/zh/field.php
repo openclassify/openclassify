@@ -58,8 +58,8 @@ return [
     'instruction_list' => '指令清单',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => '连接问题',
+    'your_internet_connection_is_broken' => '你的网络连接坏了，',
+    'we_miss_you_so_much_already' => '我们已经非常想念你了！',
+    'try_again' => '再试一次',
 ];
