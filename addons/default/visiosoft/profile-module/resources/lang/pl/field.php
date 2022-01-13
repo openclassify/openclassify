@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Otrzymuj wiadomości e-mail',
     ],
+
+    // Report
+    'member' => 'Członek',
+    'registered_at' => 'Zarejestrowany w',
+    'login_at' => 'Zaloguj się',
+    'undefined_member' => 'Niezdefiniowany członek',
+    'new_membership_report' => 'Raport nowego członkostwa',
+    'member_login_reports' => 'Raporty dotyczące logowania członków',
+
+    'profile_instruction' => 'Na tej stronie możesz edytować informacje o swoim profilu.',
 ];
