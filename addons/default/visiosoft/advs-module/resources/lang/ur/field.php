@@ -134,7 +134,7 @@ return [
     'home' => 'گھر',
     'list-page' => 'فہرست کا صفحہ',
     'search' => 'تلاش کریں',
-	'reset' => 'Reset',
+	'reset' => 'دوبارہ ترتیب دیں۔',
     'recommended' => 'آپ کے لئے تجویز کردہ اشتہارات',
     'filter' => 'فلٹر کریں',
     'sort' => 'ترتیب دیں',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'جی ایس ایم فون',
     'phone_office' => 'دفتر فون',
     'add_to_favorites' => "پسندیدہ میں شامل کریں",
+    'add_to_cart'=> "ٹوکری میں شامل کریں",
     'send' => 'بھیجیں',
     'search_name' => 'تلاش نام',
     'my_favorite_searches' => 'پسندیدہ تلاشیاں',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'آخری مہینے میں'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'آخری دو دنوں میں'
+    ],
     'ads_with_photo' => [
         'name' => 'تصویر والے اشتہارات'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر کوئی صارف منتخب نہیں ہوتا ہے تو مالک موجودہ صارف سے ڈیفالٹ ہوجائے گا',
     'create_page_subtitle' => 'اپنے اشتہار کے بارے میں تفصیلی معلومات داخل کرکے بلا اشتعال اشتہار بنائیں۔',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'میرے فون نمبرز کے ساتھ',
+    'not_with_my_phone_numbers' => "میں فون سے رابطہ نہیں کرنا چاہتا",
+    'how_can_you_be_contacted' => "آپ سے کیسے رابطہ کیا جا سکتا ہے؟",
 
     // Listing page
     'ad_title' => 'اشتہار کا عنوان',
@@ -378,8 +382,23 @@ return [
         'name' => 'تاریخ شائع کریں'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'ٹیکس'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'نام (A سے Z)',
+    'name_z_a' => 'نام (Z سے A)',
+    'select_lang_ads' => 'اشتہارات کی زبان منتخب کریں۔',
+
+    // Report
+    'product_stock_report' => 'پروڈکٹ اسٹاک رپورٹ',
+    'active_passive_products_report' => 'فعال-غیر فعال مصنوعات کی رپورٹ',
+    'unexplained_products_report' => 'غیر وضاحتی مصنوعات کی رپورٹ',
+    'non_image_products_report' => 'غیر تصویری مصنوعات کی رپورٹ',
+    'product' => 'پروڈکٹ',
+    'count' => 'شمار',
+    'undefined_product' => 'غیر متعینہ پروڈکٹ',
+    'pages_without_meta_information_report' => 'میٹا انفارمیشن رپورٹ کے بغیر صفحات',
+    'page' => 'صفحہ',
+    'undefined_page' => 'غیر متعینہ صفحہ',
+    'id' => 'ID',
+    'custom_field' => 'حسب ضرورت فیلڈ',
 ];
