@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm電話',
     'phone_office' => 'オフィスの電話',
     'add_to_favorites' => "お気に入りに追加",
+    'add_to_cart'=> "Add to Cart",
     'send' => '送る',
     'search_name' => '検索名',
     'my_favorite_searches' => 'お気に入りの検索',
