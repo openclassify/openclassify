@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'निर्देश सूची',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'संपर्क में कठिनाई',
+    'your_internet_connection_is_broken' => 'आपका इंटरनेट कनेक्शन टूट गया है,',
+    'we_miss_you_so_much_already' => 'हम आपको पहले से ही बहुत याद करते हैं!',
+    'try_again' => 'पुनः प्रयास करें',
 ];
