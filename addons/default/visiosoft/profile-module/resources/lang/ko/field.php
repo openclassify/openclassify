@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => '메시지 이메일 받기',
     ],
+
+    // Report
+    'member' => '회원',
+    'registered_at' => '등록 시간',
+    'login_at' => '로그인 시간',
+    'undefined_member' => '정의되지 않은 멤버',
+    'new_membership_report' => '신규 회원 보고서',
+    'member_login_reports' => '회원 로그인 보고서',
+
+    'profile_instruction' => '이 페이지에서 프로필 정보를 수정할 수 있습니다.',
 ];
