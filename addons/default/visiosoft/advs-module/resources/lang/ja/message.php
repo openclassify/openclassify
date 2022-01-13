@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "広告のステータスが販売済みに設定されました。",
 	'status_change' => "広告のステータスが：statusに設定されました！",
 	'disabled_detailed_options_for_admin_role' => "詳細な製品オプションは無効になっています。",
+    'permission_error' => 'このアクションの権限がありません',
+    'currency_converter_not_available' => '通貨コンバーターは利用できません。',
+    'option_saved' => 'オプションを保存しました',
+    'do_you_want_to_save_the_option' => 'オプションを保存しますか？',
+    'you_can_not_delete_a_system_status' => 'システムステータスを削除することはできません！',
+    'product_added_to_cart' => '商品がカートに追加されました！',
 ];
