@@ -177,6 +177,7 @@ return [
 ',
     'add_to_favorites' => "دانێ بۆ دڵخوازەکانەوە
 ",
+    'add_to_cart'=> "Têxe selikê",
     'send' => 'بنێرە',
     'search_name' => 'ناوی گەڕان',
     'my_favorite_searches' => 'گەڕانی دڵخوازترین
@@ -344,6 +345,9 @@ return [
         'name' => 'لە مانگی ئاخیر
 '
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Di Du Rojên Dawî de'
+    ],
     'ads_with_photo' => [
         'name' => 'ڕێکلامەکان بە وێنە
 '
@@ -434,9 +438,9 @@ return [
     'owner' => 'Xwedî',
     'default_owner_instruction' => 'Ger bikarhêner neyê bijartin dê xwedêgiravî ji bikarhênerê heyî re veqetîne',
     'create_page_subtitle' => 'Bi ketina agahdariyên berfireh ên der barê reklama xwe de bêkêmasî reklamê biafirînin.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Bi hejmarên telefona min re',
+    'not_with_my_phone_numbers' => "Ez naxwazim bi têlefonê bi min re were",
+    'how_can_you_be_contacted' => "Çawa dikare bi we re têkilî daynin?",
 
     // Listing page
     'ad_title' => 'Sernavê reklamê',
@@ -480,8 +484,23 @@ return [
         'name' => 'Dîroka Weşanê'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Bac'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Nav (A heta Z)',
+    'name_z_a' => 'Nav (Z heta A)',
+    'select_lang_ads' => 'zimanê reklaman hilbijêrin',
+
+    // Report
+    'product_stock_report' => 'Rapora Stock Product',
+    'active_passive_products_report' => 'Rapora Hilberên Çalak-Pasîf',
+    'unexplained_products_report' => 'Rapora Berhemên Nenaskirî',
+    'non_image_products_report' => 'Rapora Hilberên Ne-Wêne',
+    'product' => 'Mal',
+    'count' => 'Jimartin',
+    'undefined_product' => 'Hilbera ne diyarkirî',
+    'pages_without_meta_information_report' => 'Rûpelên Bê Rapora Agahdariya Meta',
+    'page' => 'Rûpel',
+    'undefined_page' => 'Rûpelek ne diyarkirî',
+    'id' => 'ID',
+    'custom_field' => 'Qada Custom',
 ];
