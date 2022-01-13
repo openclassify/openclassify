@@ -4,5 +4,5 @@ return [
     'title'       => 'الفئة',
     'name'        => 'وحدة الفئة',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'هذه هي الشاشة حيث يمكنك إضافة وحذف وتحرير الفئات من صفحة الفئة. يمكنك بسهولة إدارة الفئات الرئيسية والفئات الفرعية من هذه الصفحة.',
 ];
