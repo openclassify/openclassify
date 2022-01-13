@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Shtoni',
     'new_adv' => 'Njoftime i ri',
     'new_classified' => 'Klasifikimi i ri',
     'new_category' => 'Kategoria e re',
