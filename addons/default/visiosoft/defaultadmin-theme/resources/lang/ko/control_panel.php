@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'GSM 번호로 검색',
+
+    // Adv Export
+    'choose_file_type' => '내보낼 파일 형식 선택',
 ];
