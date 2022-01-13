@@ -134,7 +134,7 @@ return [
     'home' => 'Головна',
     'list-page' => 'Сторінка списку',
     'search' => 'Пошук',
-	'reset' => 'Reset',
+	'reset' => 'Скинути',
     'recommended' => 'Рекомендовані оголошення для вас',
     'filter' => 'Фільтр',
     'sort' => 'Сортувати',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Телефон Gsm',
     'phone_office' => 'Офісний телефон',
     'add_to_favorites' => "Додати в обране",
+    'add_to_cart'=> "Додати в кошик",
     'send' => 'Надіслати',
     'search_name' => 'Пошук Назва',
     'my_favorite_searches' => 'Улюблені пошукові запити',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'В останній місяць'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'За останні два дні'
+    ],
     'ads_with_photo' => [
         'name' => 'Оголошення з фото'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Власник',
     'default_owner_instruction' => 'Власник встановить за замовчуванням поточного користувача, якщо не вибрано жодного користувача',
     'create_page_subtitle' => 'Створіть оголошення бездоганно, ввівши детальну інформацію про нього.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'З моїми номерами телефонів',
+    'not_with_my_phone_numbers' => "Я не хочу, щоб до мене зверталися по телефону",
+    'how_can_you_be_contacted' => "Як з вами можна зв’язатися?",
 
     // Listing page
     'ad_title' => 'Заголовок оголошення',
@@ -378,8 +382,23 @@ return [
         'name' => 'Дата публікації'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'податок'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Ім\'я (від А до Я)',
+    'name_z_a' => 'Ім\'я (від Я до А)',
+    'select_lang_ads' => 'виберіть мову оголошень',
+
+    // Report
+    'product_stock_report' => 'Звіт про запас продукції',
+    'active_passive_products_report' => 'Звіт про активні та пасивні продукти',
+    'unexplained_products_report' => 'Звіт про незрозумілі продукти',
+    'non_image_products_report' => 'Звіт про товари, які не є зображеннями',
+    'product' => 'Продукт',
+    'count' => 'Рахувати',
+    'undefined_product' => 'Невизначений продукт',
+    'pages_without_meta_information_report' => 'Сторінки без звіту про метаінформацію',
+    'page' => 'Сторінка',
+    'undefined_page' => 'Невизначена сторінка',
+    'id' => 'ID',
+    'custom_field' => 'Спеціальне поле',
 ];
