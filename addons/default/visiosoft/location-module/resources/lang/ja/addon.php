@@ -4,5 +4,5 @@ return [
     'title'       => 'ロケーション',
     'name'        => 'ロケーションモジュール',
     'description' => '説明文',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'このページでは、国、都市、地区、近隣、村の情報を管理できます。',
 ];
