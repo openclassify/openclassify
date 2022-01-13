@@ -4,5 +4,5 @@ return [
     'title'       => 'Plats',
     'name'        => 'Platsmodul',
     'description' => 'Beskrivning',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'På den här sidan kan du hantera information om land, stad, distrikt, grannskap och by.',
 ];
