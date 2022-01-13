@@ -4,5 +4,5 @@ return [
     'title'       => 'カテゴリー',
     'name'        => 'カテゴリモジュール',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'カテゴリページからカテゴリを追加、削除、編集できる画面です。このページからメインカテゴリとサブカテゴリを簡単に管理できます。',
 ];
