@@ -30,12 +30,18 @@ return [
         'instructions' => 'Používá se k přidání ikon označujících typ kategorie.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Rodič',
+    'level' => 'Úroveň',
+    'count' => 'Počet reklam',
 
     'please_wait' => 'Čekejte prosím. Odstranění podkategorií',
     'category_selection' => 'Výběr kategorie',
     'go_to_parent' => 'Přejít na rodiče',
-	'preview' => 'Preview'
+	'preview' => 'Náhled',
+
+    // Report
+    'undefined_category' => 'Nedefinovaná kategorie',
+    'categories_with_no_meta_report' => 'Kategorie bez přehledu metadat',
+    'category' => 'Kategorie',
+    'id' => 'ID',
 ];
