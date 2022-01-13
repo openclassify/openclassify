@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "Le statut de votre annonce a été défini sur Vendu!",
 	'status_change' => "Le statut de votre annonce a été défini sur: statut!",
 	'disabled_detailed_options_for_admin_role' => "Les options détaillées du produit sont désactivées.",
+    'permission_error' => 'Vous n\'avez pas la permission pour cette action',
+    'currency_converter_not_available' => 'Le convertisseur de devises n\'est pas disponible.',
+    'option_saved' => 'Option enregistrée',
+    'do_you_want_to_save_the_option' => 'Souhaitez-vous enregistrer l\'option ?',
+    'you_can_not_delete_a_system_status' => 'Vous ne pouvez pas supprimer un statut système !',
+    'product_added_to_cart' => 'Produit ajouté au panier !',
 ];
