@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Ta emot e-postmeddelanden',
     ],
+
+    // Report
+    'member' => 'Medlem',
+    'registered_at' => 'Registrerad hos',
+    'login_at' => 'Logga in på',
+    'undefined_member' => 'Odefinierad medlem',
+    'new_membership_report' => 'Ny medlemsrapport',
+    'member_login_reports' => 'Medlemsinloggningsrapporter',
+
+    'profile_instruction' => 'Du kan redigera din profilinformation från den här sidan.',
 ];
