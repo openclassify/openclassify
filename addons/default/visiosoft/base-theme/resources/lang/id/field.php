@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Daftar Instruksi',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Masalah koneksi',
+    'your_internet_connection_is_broken' => 'Koneksi internet Anda terputus,',
+    'we_miss_you_so_much_already' => 'kami sudah sangat merindukanmu!',
+    'try_again' => 'Coba lagi',
 ];
