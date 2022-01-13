@@ -58,8 +58,8 @@ return [
     'instruction_list' => 'Lista de instrucțiuni',
 
     // Offline
-    'connection_problem' => 'Connection problem',
-    'your_internet_connection_is_broken' => 'Your internet connection is broken,',
-    'we_miss_you_so_much_already' => 'we miss you so much already!',
-    'try_again' => 'Try again',
+    'connection_problem' => 'Problemă de conectare',
+    'your_internet_connection_is_broken' => 'Conexiunea ta la internet este întreruptă,',
+    'we_miss_you_so_much_already' => 'deja ne este atât de dor de tine!',
+    'try_again' => 'Încearcă din nou',
 ];
