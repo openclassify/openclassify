@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'জিএসএম ফোন',
     'phone_office' => 'অফিসে ফোন',
     'add_to_favorites' => "ফেভারিটে যোগ করুন",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'পাঠান',
     'search_name' => 'নাম অনুসন্ধান করুন',
     'my_favorite_searches' => 'প্রিয় অনুসন্ধানসমূহ',
