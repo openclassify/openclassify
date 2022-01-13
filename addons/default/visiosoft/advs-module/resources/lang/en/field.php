@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm Phone',
     'phone_office' => 'Office Phone',
     'add_to_favorites' => "Add to Favorites",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Send',
     'search_name' => 'Search Name',
     'my_favorite_searches' => 'Favorite Searches',
