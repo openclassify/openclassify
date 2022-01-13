@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Получавайте съобщения по имейл',
     ],
+
+    // Report
+    'member' => 'Член',
+    'registered_at' => 'Регистриран при',
+    'login_at' => 'Влезте в',
+    'undefined_member' => 'Неопределен член',
+    'new_membership_report' => 'Нов доклад за членство',
+    'member_login_reports' => 'Доклади за влизане на членове',
+
+    'profile_instruction' => 'Можете да редактирате информацията за вашия профил от тази страница.',
 ];
