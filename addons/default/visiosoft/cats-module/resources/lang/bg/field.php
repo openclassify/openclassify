@@ -30,12 +30,18 @@ return [
         'instructions' => 'Използва се за добавяне на икони, указващи типа категория.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'родител',
+    'level' => 'Ниво',
+    'count' => 'Рекламите се броят',
 
     'please_wait' => 'Моля, изчакайте Изтриване на подкатегории',
     'category_selection' => 'Избор на категория',
     'go_to_parent' => 'Отидете при родител',
-	'preview' => 'Preview'
+	'preview' => 'Визуализация',
+
+    // Report
+    'undefined_category' => 'Недефинирана категория',
+    'categories_with_no_meta_report' => 'Категории без мета отчет',
+    'category' => 'Категория',
+    'id' => 'документ за самоличност',
 ];
