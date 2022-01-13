@@ -134,7 +134,7 @@ return [
     'home' => 'صفحه اصلی',
     'list-page' => 'فهرست صفحه',
     'search' => 'جستجو کردن',
-	'reset' => 'Reset',
+	'reset' => 'بازنشانی کنید',
     'recommended' => 'اعلانات پیشنهادی برای شما',
     'filter' => 'فیلتر',
     'sort' => 'مرتب سازی',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'نمبر مبایل',
     'phone_office' => 'شماره تلفن دفتر',
     'add_to_favorites' => "اضافه کردن به لیست مورد علاقعه ها",
+    'add_to_cart'=> "به سبد خرید اضافه کنید",
     'send' => 'ارسال',
     'search_name' => 'جستجو نام',
     'my_favorite_searches' => 'جستجوهای مورد علاقه',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'در آخرین ماه'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'در دو روز گذشته'
+    ],
     'ads_with_photo' => [
         'name' => 'اعلانات با عکس'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'مالک',
     'default_owner_instruction' => 'اگر هیچ کاربری انتخاب نشود ، مالک به عنوان کاربر پیش فرض عمل می کند',
     'create_page_subtitle' => 'با وارد کردن اطلاعات دقیق در مورد تبلیغ خود ، تبلیغ را بدون نقص ایجاد کنید.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'با شماره تلفن من',
+    'not_with_my_phone_numbers' => "من نمی خواهم با تلفن تماس بگیرم",
+    'how_can_you_be_contacted' => "چگونه می توان با شما تماس گرفت؟",
 
     // Listing page
     'ad_title' => 'عنوان آگهی',
@@ -378,8 +382,23 @@ return [
         'name' => 'تاریخ انتشار'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'مالیات'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'نام (الف تا ض)',
+    'name_z_a' => 'نام (Z تا A)',
+    'select_lang_ads' => 'زبان تبلیغات را انتخاب کنید',
+
+    // Report
+    'product_stock_report' => 'گزارش موجودی محصول',
+    'active_passive_products_report' => 'گزارش محصولات فعال - غیرفعال',
+    'unexplained_products_report' => 'گزارش محصولات غیرقابل توضیح',
+    'non_image_products_report' => 'گزارش محصولات غیرتصویری',
+    'product' => 'تولید - محصول',
+    'count' => 'شمردن',
+    'undefined_product' => 'محصول تعریف نشده',
+    'pages_without_meta_information_report' => 'گزارش صفحات بدون اطلاعات متا',
+    'page' => 'صفحه',
+    'undefined_page' => 'صفحه تعریف نشده',
+    'id' => 'شناسه',
+    'custom_field' => 'فیلد سفارشی',
 ];
