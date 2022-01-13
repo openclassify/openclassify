@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google 통계 코드',
     ],
+    'body_custom_space' => [
+        'name' => '바디 커스텀 스페이스',
+    ],
     'register_email_field' => [
         'name' => '회원 등록 이메일 요구 사항',
     ],
     'market_place' => [
         'name' => '마켓 플레이스',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => '판매자 정보 숨기기',
         'instructions' => '광고 세부 정보 페이지에서 판매자 정보 숨기기',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => '카테고리별 판매자 정보 숨기기',
+        'instructions' => '광고 세부정보 페이지에서 선택한 주요 카테고리별로 판매자 정보 숨기기',
+    ],
     'show_post_ad_agreement' => [
         'name' => '광고 게시 계약 표시',
         'instructions' => '광고 작성 페이지에 개인 정보 보호 정책을 표시하려면이 옵션을 켜십시오.',
@@ -277,10 +284,29 @@ return [
         'instructions' => '광고 작성 페이지에 publish_at 및 finish_at 필드를 표시합니다.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => '세금 필드 표시',
+        'instructions' => '이 옵션이 활성화되면 광고 생성 페이지에서 세율을 설정할 수 있습니다.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => '새 광고 만들기에서 연락처 필드 숨기기'
+    ],
+    'show_input_flag' => [
+        'name' => '입력 시 플래그 표시',
+        'instructions' => '번역 가능한 입력에 플래그 및 설명 표시'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => '목록 없이 품절 제품 숨기기',
+        'instructions' => '품절된 GET 제품을 목록 및 홈페이지에서 숨깁니다.'
+    ],
+    'only_email_login' => [
+        'name' => '이메일 로그인만 가능'
+    ],
+    'preview_mode' => [
+        'name' => '미리보기 모드',
+        'instructions' => '이 모드가 활성화되면 사용자가 광고를 미리 봅니다.'
+    ],
+    'show_order_note' => [
+        'name' => '주문 메모 표시',
+        'instructions' => "주문 결제가 승인될 때 고객에게 맞춤 텍스트를 표시하는 데 사용되는 주문 메모 필드를 표시합니다."
+    ],
 ];
