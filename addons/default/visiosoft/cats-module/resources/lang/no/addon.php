@@ -4,5 +4,5 @@ return [
     'title'       => 'Kategori',
     'name'        => 'Kategorimodul',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'Dette er skjermen hvor du kan legge til, slette og redigere kategorier fra kategorisiden. Du kan enkelt administrere hovedkategorier og underkategorier fra denne siden.',
 ];
