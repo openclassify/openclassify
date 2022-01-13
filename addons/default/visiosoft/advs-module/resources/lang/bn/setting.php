@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'গুগল পরিসংখ্যান কোড',
     ],
+    'body_custom_space' => [
+        'name' => 'বডি কাস্টম স্পেস',
+    ],
     'register_email_field' => [
         'name' => 'সদস্য নিবন্ধকরণ ইমেল প্রয়োজনীয়তা',
     ],
     'market_place' => [
         'name' => 'মার্কেট প্লেস',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'বিক্রেতার তথ্য লুকান',
         'instructions' => 'বিজ্ঞাপনের বিশদ পৃষ্ঠাতে বিক্রেতা ইনফোদের কাছে লুকানো',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'বিভাগ অনুসারে বিক্রেতার তথ্য লুকান',
+        'instructions' => 'বিজ্ঞাপনের বিশদ পৃষ্ঠায় নির্বাচিত প্রধান বিভাগ দ্বারা বিক্রেতার তথ্য গোপন করা',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'পোস্ট বিজ্ঞাপন চুক্তি প্রদর্শন করুন',
         'instructions' => 'আপনি বিজ্ঞাপন তৈরি পৃষ্ঠায় কোনও গোপনীয়তা নীতি চুক্তি প্রদর্শন করতে চাইলে এটি চালু করুন',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'বিজ্ঞাপন তৈরি পৃষ্ঠায় প্রকাশ_আট এবং সমাপ্তি_এ ক্ষেত্রগুলি প্রদর্শন করে।'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'ট্যাক্স ফিল্ড দেখান',
+        'instructions' => 'এই বিকল্পটি সক্ষম হলে, আপনি বিজ্ঞাপন তৈরির পৃষ্ঠায় করের হার সেট করতে পারেন৷'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'নতুন বিজ্ঞাপন তৈরি করার জন্য যোগাযোগের ক্ষেত্রগুলি লুকান'
+    ],
+    'show_input_flag' => [
+        'name' => 'ইনপুটে পতাকা দেখান',
+        'instructions' => 'অনুবাদযোগ্য ইনপুটগুলিতে পতাকা এবং বিবরণ দেখান'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'তালিকা ছাড়া স্টক পণ্য লুকান',
+        'instructions' => 'তালিকা এবং হোমপেজ থেকে স্টকের বাইরে থাকা GET পণ্যগুলি লুকিয়ে রাখে'
+    ],
+    'only_email_login' => [
+        'name' => 'শুধুমাত্র ইমেইল লগইন'
+    ],
+    'preview_mode' => [
+        'name' => 'প্রাকদর্শন মোড',
+        'instructions' => 'যখন এই মোডটি সক্ষম করা হয়, তখন ব্যবহারকারীর দ্বারা বিজ্ঞাপনটির পূর্বরূপ দেখা হয়৷'
+    ],
+    'show_order_note' => [
+        'name' => 'অর্ডার নোট দেখান',
+        'instructions' => "অর্ডার নোট ক্ষেত্রটি দেখান যা গ্রাহকদের কাস্টম পাঠ্য দেখানোর জন্য ব্যবহৃত হয় যখন তাদের অর্ডারের অর্থপ্রদান অনুমোদিত হয়।"
+    ],
 ];
