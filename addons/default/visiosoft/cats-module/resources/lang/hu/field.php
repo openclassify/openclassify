@@ -30,12 +30,18 @@ return [
         'instructions' => 'A kategória típusát jelző ikonok hozzáadására szolgál.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Szülő',
+    'level' => 'Szint',
+    'count' => 'Hirdetések száma',
 
     'please_wait' => 'Kérjük, várjon. Alkategóriák törlése',
     'category_selection' => 'Kategória kiválasztása',
     'go_to_parent' => 'Menjen a Szülőhöz',
-	'preview' => 'Preview'
+	'preview' => 'Előnézet',
+
+    // Report
+    'undefined_category' => 'Meghatározatlan kategória',
+    'categories_with_no_meta_report' => 'Kategóriák metajelentés nélkül',
+    'category' => 'Kategória',
+    'id' => 'ID',
 ];
