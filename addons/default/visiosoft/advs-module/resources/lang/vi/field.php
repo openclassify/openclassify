@@ -134,7 +134,7 @@ return [
     'home' => 'Trang Chủ',
     'list-page' => 'Danh sách trang',
     'search' => 'Tìm kiếm',
-	'reset' => 'Reset',
+	'reset' => 'Cài lại',
     'recommended' => 'Quảng cáo được đề xuất cho bạn',
     'filter' => 'Bộ lọc',
     'sort' => 'Sắp xếp',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Điện thoại Gsm',
     'phone_office' => 'Điện thoại văn phòng',
     'add_to_favorites' => "Thêm vào mục yêu thích",
+    'add_to_cart'=> "Thêm vào giỏ hàng",
     'send' => 'Gửi',
     'search_name' => 'Tim kiêm tên',
     'my_favorite_searches' => 'Tìm kiếm yêu thích',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Trong tháng cuối cùng'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Trong hai ngày qua'
+    ],
     'ads_with_photo' => [
         'name' => 'Quảng cáo với hình ảnh'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'Chủ nhân',
     'default_owner_instruction' => 'Chủ sở hữu sẽ mặc định là người dùng hiện tại nếu không có người dùng nào được chọn',
     'create_page_subtitle' => 'Tạo quảng cáo hoàn hảo bằng cách nhập thông tin chi tiết về quảng cáo của bạn.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Với số điện thoại của tôi',
+    'not_with_my_phone_numbers' => "Tôi không muốn liên lạc qua điện thoại",
+    'how_can_you_be_contacted' => "Làm thế nào bạn có thể được liên lạc?",
 
     // Listing page
     'ad_title' => 'Tiêu đề quảng cáo',
@@ -378,8 +382,23 @@ return [
         'name' => 'Ngày xuất bản'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Thuế'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Tên (A đến Z)',
+    'name_z_a' => 'Tên (Z đến A)',
+    'select_lang_ads' => 'chọn ngôn ngữ của quảng cáo',
+
+    // Report
+    'product_stock_report' => 'Báo cáo kho sản phẩm',
+    'active_passive_products_report' => 'Báo cáo sản phẩm thụ động hoạt động',
+    'unexplained_products_report' => 'Báo cáo sản phẩm không giải thích được',
+    'non_image_products_report' => 'Báo cáo Sản phẩm Không phải Hình ảnh',
+    'product' => 'Sản phẩm',
+    'count' => 'Đếm',
+    'undefined_product' => 'Sản phẩm không xác định',
+    'pages_without_meta_information_report' => 'Các trang không có báo cáo thông tin meta',
+    'page' => 'Trang',
+    'undefined_page' => 'Trang không xác định',
+    'id' => 'TÔI',
+    'custom_field' => 'Trường tùy chỉnh',
 ];
