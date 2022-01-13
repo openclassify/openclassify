@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM-puhelin',
     'phone_office' => 'Toimistopuhelin',
     'add_to_favorites' => "Lisää suosikkeihin",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Lähettää',
     'search_name' => 'Haun nimi',
     'my_favorite_searches' => 'Suosikkihaut',
