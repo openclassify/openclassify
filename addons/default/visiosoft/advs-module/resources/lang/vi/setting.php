@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Mã thống kê Google',
     ],
+    'body_custom_space' => [
+        'name' => 'Không gian tùy chỉnh cơ thể',
+    ],
     'register_email_field' => [
         'name' => 'Yêu cầu email đăng ký thành viên',
     ],
     'market_place' => [
         'name' => 'Thương trường',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Ẩn thông tin người bán',
         'instructions' => 'Ẩn thông tin người bán trong trang chi tiết quảng cáo',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Ẩn thông tin người bán theo danh mục',
+        'instructions' => 'Ẩn thông tin người bán theo danh mục chính đã chọn trong trang chi tiết quảng cáo',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Hiển thị Thỏa thuận Quảng cáo Đăng',
         'instructions' => 'Bật tính năng này nếu bạn muốn hiển thị thỏa thuận chính sách bảo mật trên trang tạo quảng cáo',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Hiển thị các trường Publishing_at và finish_at trên trang tạo quảng cáo.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Hiển thị trường thuế',
+        'instructions' => 'Khi tùy chọn này được bật, bạn có thể đặt thuế suất trên trang tạo quảng cáo.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Ẩn Trường Liên hệ trong Tạo Quảng cáo Mới'
+    ],
+    'show_input_flag' => [
+        'name' => 'Hiển thị cờ trên đầu vào',
+        'instructions' => 'Hiển thị cờ và mô tả trên đầu vào có thể dịch được'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Ẩn các sản phẩm hết hàng mà không có danh sách',
+        'instructions' => 'Ẩn các sản phẩm GET đã hết hàng khỏi danh sách và trang chủ'
+    ],
+    'only_email_login' => [
+        'name' => 'Chỉ Đăng nhập Email'
+    ],
+    'preview_mode' => [
+        'name' => 'Chế độ xem trước',
+        'instructions' => 'Khi chế độ này được bật, quảng cáo sẽ được người dùng xem trước.'
+    ],
+    'show_order_note' => [
+        'name' => 'Hiển thị ghi chú đơn hàng',
+        'instructions' => "Hiển thị trường ghi chú đơn đặt hàng được sử dụng để hiển thị văn bản tùy chỉnh của khách hàng khi thanh toán đơn đặt hàng của họ được chấp thuận."
+    ],
 ];
