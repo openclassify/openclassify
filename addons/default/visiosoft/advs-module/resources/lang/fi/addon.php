@@ -4,5 +4,5 @@ return [
     'title'       => 'Mainokset',
     'name'        => 'Mainosmoduuli',
     'description' => 'Mainosmoduuli',
-    'info' => 'This is the screen where you can add, delete and edit ads from the Ads page. On this page, you can simply do the operations such as post management and ad configuration.'
+    'info' => 'Tämä on näyttö, jossa voit lisätä, poistaa ja muokata mainoksia Mainokset-sivulta. Tällä sivulla voit tehdä toiminnot, kuten viestien hallinnan ja mainosten määrityksen.'
 ];
