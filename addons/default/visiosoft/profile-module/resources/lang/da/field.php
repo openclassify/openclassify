@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Modtag e-mail med beskeder',
     ],
+
+    // Report
+    'member' => 'Medlem',
+    'registered_at' => 'Registreret kl',
+    'login_at' => 'Log ind på',
+    'undefined_member' => 'Udefineret medlem',
+    'new_membership_report' => 'Ny medlemsrapport',
+    'member_login_reports' => 'Medlemslogin rapporter',
+
+    'profile_instruction' => 'Du kan redigere dine profiloplysninger fra denne side.',
 ];
