@@ -128,12 +128,15 @@ return [
     'google_statistic_code' => [
         'name' => 'Google Statistik Kod',
     ],
+    'body_custom_space' => [
+        'name' => 'Bədən Xüsusi Məkanı',
+    ],
     'register_email_field' => [
         'name' => 'İstifadəçi Qeyd E-poçtu tələbi',
     ],
     'market_place' => [
         'name' => 'Bazar yeri',
-	    'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
+        'instructions' => 'If the marketplace is down, your site will act as ecommerce. For example, 
 	        some fields in the profile such as ads, dopings, messages, sale, packages and store are not visible and 
 	        removes corporate membership.'
     ],
@@ -230,6 +233,10 @@ return [
         'name' => 'Satıcı haqqında məlumatları gizlədin',
         'instructions' => 'Reklam detalları səhifəsində satıcı məlumatlarına gizlənmək',
     ],
+    'hide_seller_info_by_category' => [
+        'name' => 'Kateqoriyaya görə Satıcı məlumatını gizlədin',
+        'instructions' => 'Reklam təfərrüatları səhifəsində seçilmiş əsas kateqoriyalar üzrə satıcı məlumatlarının gizlədilməsi',
+    ],
     'show_post_ad_agreement' => [
         'name' => 'Post Elan Müqaviləsini Göstərin',
         'instructions' => 'Reklam yaratma səhifəsində bir məxfilik siyasəti müqaviləsini göstərmək istəyirsinizsə, bunu aktivləşdirin',
@@ -277,10 +284,29 @@ return [
         'instructions' => 'Reklam yaratma səhifəsindəki dərc_at və bitir_at sahələrini göstərir.'
     ],
     'show_tax_field' => [
-        'name' => 'Show Tax Field',
-        'instructions' => 'When this option is enabled, you can set the tax rate on the ad creation page.'
+        'name' => 'Vergi sahəsini göstərin',
+        'instructions' => 'Bu seçim aktiv olduqda, siz reklam yaratma səhifəsində vergi dərəcəsini təyin edə bilərsiniz.'
     ],
-	'hide_contact_created_at' => [
-		'name' => 'Hide Contact Fields For in Create New Ad'
-	]
+    'hide_contact_created_at' => [
+        'name' => 'Yeni Elan Yaradarkən Əlaqə Sahələrini Gizlədin'
+    ],
+    'show_input_flag' => [
+        'name' => 'Girişdə Bayraqları göstərin',
+        'instructions' => 'Tərcümə edilə bilən daxiletmələrdə bayraq və təsviri göstərin'
+    ],
+    'hide_out_of_stock_products_without_listing' => [
+        'name' => 'Stokda olmayan məhsulları siyahı olmadan gizlədin',
+        'instructions' => 'Stokda olmayan GET məhsullarını siyahıdan və ana səhifədən gizlədir'
+    ],
+    'only_email_login' => [
+        'name' => 'Yalnız E-poçt Girişi'
+    ],
+    'preview_mode' => [
+        'name' => 'Önizləmə rejimi',
+        'instructions' => 'Bu rejim aktiv olduqda, reklam istifadəçi tərəfindən əvvəlcədən nəzərdən keçirilir.'
+    ],
+    'show_order_note' => [
+        'name' => 'Sifariş Qeydini göstərin',
+        'instructions' => "Sifarişin ödənişi təsdiqləndikdə müştərilərə fərdi mətni göstərmək üçün istifadə edilən sifariş qeydi sahəsini göstərin."
+    ],
 ];
