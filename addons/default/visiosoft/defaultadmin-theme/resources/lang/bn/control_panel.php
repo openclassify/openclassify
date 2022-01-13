@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'জিএসএম নম্বর দ্বারা অনুসন্ধান করুন',
+
+    // Adv Export
+    'choose_file_type' => 'রপ্তানির জন্য ফাইলের ধরন নির্বাচন করুন',
 ];
