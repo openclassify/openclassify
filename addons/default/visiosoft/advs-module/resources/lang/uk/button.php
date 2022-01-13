@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'Додати',
     'new_adv' => 'Нова реклама',
     'new_classified' => 'Новий секрет',
     'new_category' => 'Нова категорія',
