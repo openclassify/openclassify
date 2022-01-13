@@ -4,5 +4,5 @@ return [
     'title'       => 'Posizione',
     'name'        => 'Modulo di localizzazione',
     'description' => 'Descrizione',
-    'info' => 'On this page, you can manage country, city, district, neighborhood and village information.',
+    'info' => 'In questa pagina puoi gestire le informazioni su paese, città, distretto, quartiere e villaggio.',
 ];
