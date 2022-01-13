@@ -134,7 +134,7 @@ return [
     'home' => 'ホーム',
     'list-page' => 'リストページ',
     'search' => '探す',
-	'reset' => 'Reset',
+	'reset' => 'リセット',
     'recommended' => 'あなたにおすすめの広告',
     'filter' => 'フィルタ',
     'sort' => 'ソート',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm電話',
     'phone_office' => 'オフィスの電話',
     'add_to_favorites' => "お気に入りに追加",
+    'add_to_cart'=> "カートに追加",
     'send' => '送る',
     'search_name' => '検索名',
     'my_favorite_searches' => 'お気に入りの検索',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => '先月'
     ],
+    'in_the_last_two_days' => [
+        'name' => '過去2日間'
+    ],
     'ads_with_photo' => [
         'name' => '写真付き広告'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => 'オーナー',
     'default_owner_instruction' => 'ユーザーが選択されていない場合、所有者はデフォルトで現在のユーザーになります',
     'create_page_subtitle' => '広告に関する詳細情報を入力して、完璧に広告を作成します。',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => '私の電話番号で',
+    'not_with_my_phone_numbers' => "電話で連絡したくない",
+    'how_can_you_be_contacted' => "どうすれば連絡できますか？",
 
     // Listing page
     'ad_title' => '広告タイトル',
@@ -378,8 +382,23 @@ return [
         'name' => '公開日'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => '税'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => '名前（AからZ）',
+    'name_z_a' => '名前（ZからA）',
+    'select_lang_ads' => '広告の言語を選択してください',
+
+    // Report
+    'product_stock_report' => '製品在庫レポート',
+    'active_passive_products_report' => 'アクティブ-パッシブ製品レポート',
+    'unexplained_products_report' => '説明のつかない製品レポート',
+    'non_image_products_report' => '非画像製品レポート',
+    'product' => '製品',
+    'count' => 'カウント',
+    'undefined_product' => '未定義の製品',
+    'pages_without_meta_information_report' => 'メタ情報レポートのないページ',
+    'page' => 'ページ',
+    'undefined_page' => '未定義のページ',
+    'id' => 'ID',
+    'custom_field' => 'カスタムフィールド',
 ];
