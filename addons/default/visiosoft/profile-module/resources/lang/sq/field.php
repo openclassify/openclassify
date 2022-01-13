@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Merrni emailin e mesazheve',
     ],
+
+    // Report
+    'member' => 'Anëtar',
+    'registered_at' => 'Regjistruar në',
+    'login_at' => 'Identifikohu në',
+    'undefined_member' => 'Anëtar i papërcaktuar',
+    'new_membership_report' => 'Raporti i anëtarësimit të ri',
+    'member_login_reports' => 'Raportet e hyrjes së anëtarëve',
+
+    'profile_instruction' => 'Ju mund të modifikoni informacionin e profilit tuaj nga kjo faqe.',
 ];
