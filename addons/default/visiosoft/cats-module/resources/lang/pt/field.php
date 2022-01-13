@@ -30,13 +30,19 @@ return [
         'instructions' => 'É usado para adicionar ícones indicando o tipo de categoria.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Pai',
+    'level' => 'Nível',
+    'count' => 'Contagens de anúncios',
 
     'please_wait' => 'Por favor,
    aguarde. Excluindo Subcategorias',
     'category_selection' => 'Seleção de categoria',
     'go_to_parent' => 'Vá para o pai',
-	'preview' => 'Preview'
+	'preview' => 'Visualizar',
+
+    // Report
+    'undefined_category' => 'Categoria indefinida',
+    'categories_with_no_meta_report' => 'Categorias sem meta-relatório',
+    'category' => 'Categoria',
+    'id' => 'identificação',
 ];
