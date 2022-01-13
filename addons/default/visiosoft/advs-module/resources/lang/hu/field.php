@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Gsm telefon',
     'phone_office' => 'Irodai telefon',
     'add_to_favorites' => "Add hozzá a kedvencekhez",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Küld',
     'search_name' => 'Keresés neve',
     'my_favorite_searches' => 'Kedvenc keresések',
