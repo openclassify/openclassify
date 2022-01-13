@@ -134,7 +134,7 @@ return [
     'home' => '집',
     'list-page' => '리스트 페이지',
     'search' => '검색',
-	'reset' => 'Reset',
+	'reset' => '초기화',
     'recommended' => '추천 광고',
     'filter' => '필터',
     'sort' => '종류',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'GSM 전화',
     'phone_office' => '사무실 전화',
     'add_to_favorites' => "즐겨 찾기에 추가",
+    'add_to_cart'=> "장바구니에 추가",
     'send' => '보내다',
     'search_name' => '검색 이름',
     'my_favorite_searches' => '즐겨 찾는 검색',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => '지난 달에'
     ],
+    'in_the_last_two_days' => [
+        'name' => '지난 이틀 동안'
+    ],
     'ads_with_photo' => [
         'name' => '사진이 포함 된 광고'
     ],
@@ -338,9 +342,9 @@ return [
     'owner' => '소유자',
     'default_owner_instruction' => '사용자가 선택되지 않은 경우 소유자는 기본적으로 현재 사용자로 설정됩니다.',
     'create_page_subtitle' => '광고에 대한 자세한 정보를 입력하여 완벽하게 광고를 만드십시오.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => '내 전화번호로',
+    'not_with_my_phone_numbers' => "전화로 연락하고 싶지 않아",
+    'how_can_you_be_contacted' => "어떻게 연락할 수 있습니까?",
 
     // Listing page
     'ad_title' => '광고 제목',
@@ -378,8 +382,23 @@ return [
         'name' => '게시 날짜'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => '세'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => '이름(A~Z)',
+    'name_z_a' => '이름(Z에서 A)',
+    'select_lang_ads' => '광고 언어 선택',
+
+    // Report
+    'product_stock_report' => '제품 재고 보고서',
+    'active_passive_products_report' => '액티브-패시브 제품 보고서',
+    'unexplained_products_report' => '설명되지 않은 제품 보고서',
+    'non_image_products_report' => '이미지가 아닌 제품 보고서',
+    'product' => '제품',
+    'count' => '세다',
+    'undefined_product' => '정의되지 않은 제품',
+    'pages_without_meta_information_report' => '메타 정보가 없는 페이지 보고서',
+    'page' => '페이지',
+    'undefined_page' => '정의되지 않은 페이지',
+    'id' => 'ID',
+    'custom_field' => '사용자 정의 필드',
 ];
