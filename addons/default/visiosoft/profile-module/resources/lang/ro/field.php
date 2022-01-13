@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Primiți mesaje prin e-mail',
     ],
+
+    // Report
+    'member' => 'Membru',
+    'registered_at' => 'Înregistrat la',
+    'login_at' => 'Autentificare la',
+    'undefined_member' => 'Membru nedefinit',
+    'new_membership_report' => 'Raport nou privind calitatea de membru',
+    'member_login_reports' => 'Rapoarte de conectare a membrilor',
+
+    'profile_instruction' => 'Puteți edita informațiile de profil din această pagină.',
 ];
