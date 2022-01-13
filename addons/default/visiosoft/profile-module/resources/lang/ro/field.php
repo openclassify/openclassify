@@ -498,12 +498,12 @@ return [
     ],
 
     // Report
-    'member' => 'Member',
-    'registered_at' => 'Registered At',
-    'login_at' => 'Login At',
-    'undefined_member' => 'Undefined Member',
-    'new_membership_report' => 'New Membership Report',
-    'member_login_reports' => 'Member Login Reports',
+    'member' => 'Membru',
+    'registered_at' => 'Înregistrat la',
+    'login_at' => 'Autentificare la',
+    'undefined_member' => 'Membru nedefinit',
+    'new_membership_report' => 'Raport nou privind calitatea de membru',
+    'member_login_reports' => 'Rapoarte de conectare a membrilor',
 
-    'profile_instruction' => 'You can edit your profile information from this page.',
+    'profile_instruction' => 'Puteți edita informațiile de profil din această pagină.',
 ];
