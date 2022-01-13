@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Rebre missatges de correu electrònic',
     ],
+
+    // Report
+    'member' => 'Membre',
+    'registered_at' => 'Registrat a',
+    'login_at' => 'Inici de sessió a',
+    'undefined_member' => 'Membre no definit',
+    'new_membership_report' => 'Nou informe d\'afiliació',
+    'member_login_reports' => 'Informes d\'inici de sessió de membres',
+
+    'profile_instruction' => 'Pots editar la informació del teu perfil des d\'aquesta pàgina.',
 ];
