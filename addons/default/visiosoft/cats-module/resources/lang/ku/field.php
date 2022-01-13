@@ -36,8 +36,8 @@ return [
 ',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
+    'parent' => 'باوان',
+    'level' => 'Serrast',
     'count' => 'Ad Counts',
 
     'please_wait' => 'Please wait. Deleting Sub Categories
@@ -46,5 +46,12 @@ return [
 ',
     'go_to_parent' => 'Go To Parent
 ',
-	'preview' => 'Preview'
+	'preview' => 'پێشبینین
+',
+
+    // Report
+    'undefined_category' => 'Kategorî ne diyar',
+    'categories_with_no_meta_report' => 'Kategoriyên bi No Meta Report',
+    'category' => 'کەتێگۆری',
+    'id' => 'ID',
 ];
