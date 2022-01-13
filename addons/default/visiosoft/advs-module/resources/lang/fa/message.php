@@ -32,4 +32,10 @@ return [
 	'sold_status_change' => "وضعیت آگهی شما به فروش رسیده است!",
 	'status_change' => "وضعیت آگهی شما روی: status تنظیم شده است!",
 	'disabled_detailed_options_for_admin_role' => "گزینه های جزئی محصول غیرفعال هستند.",
+    'permission_error' => 'شما مجوز این اقدام را ندارید',
+    'currency_converter_not_available' => 'مبدل ارز موجود نیست.',
+    'option_saved' => 'گزینه ذخیره شد',
+    'do_you_want_to_save_the_option' => 'آیا می خواهید گزینه را ذخیره کنید؟',
+    'you_can_not_delete_a_system_status' => 'شما نمی توانید وضعیت سیستم را حذف کنید!',
+    'product_added_to_cart' => 'محصول به سبد خرید اضافه شد!',
 ];
