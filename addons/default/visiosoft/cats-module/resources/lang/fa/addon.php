@@ -4,5 +4,5 @@ return [
     'title'       => 'دسته بندی',
     'name'        => 'ماژول دسته',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'این صفحه‌ای است که می‌توانید دسته‌ها را از صفحه دسته اضافه، حذف و ویرایش کنید. شما می توانید به راحتی دسته ها و زیرمجموعه های اصلی را از این صفحه مدیریت کنید.',
 ];
