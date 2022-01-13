@@ -4,5 +4,5 @@ return [
     'title'       => 'বিভাগ',
     'name'        => 'বিভাগ মডিউল',
     'description' => '',
-    'info' => 'This is the screen where you can add, delete and edit categories from the category page. You can easily manage main categories and sub-categories from this page.',
+    'info' => 'এটি সেই স্ক্রীন যেখানে আপনি বিভাগ পৃষ্ঠা থেকে বিভাগগুলি যোগ, মুছতে এবং সম্পাদনা করতে পারেন। আপনি এই পৃষ্ঠা থেকে সহজেই প্রধান বিভাগ এবং উপ-বিভাগ পরিচালনা করতে পারেন।',
 ];
