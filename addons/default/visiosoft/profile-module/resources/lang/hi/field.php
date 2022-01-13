@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'संदेश ईमेल प्राप्त करें',
     ],
+
+    // Report
+    'member' => 'सदस्य',
+    'registered_at' => 'पंजीकृत ए.टी',
+    'login_at' => 'लॉग इन',
+    'undefined_member' => 'अपरिभाषित सदस्य',
+    'new_membership_report' => 'नई सदस्यता रिपोर्ट',
+    'member_login_reports' => 'सदस्य लॉगिन रिपोर्ट',
+
+    'profile_instruction' => 'आप इस पृष्ठ से अपनी प्रोफ़ाइल जानकारी संपादित कर सकते हैं।',
 ];
