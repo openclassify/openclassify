@@ -30,12 +30,18 @@ return [
         'instructions' => 'Nó được sử dụng để thêm các biểu tượng chỉ ra loại danh mục.',
     ],
 
-    'parent' => 'Parent',
-    'level' => 'Level',
-    'count' => 'Ad Counts',
+    'parent' => 'Cha mẹ',
+    'level' => 'Cấp độ',
+    'count' => 'Số lượng Quảng cáo',
 
     'please_wait' => 'Xin vui lòng chờ. Xóa danh mục phụ',
     'category_selection' => 'Lựa chọn danh mục',
     'go_to_parent' => 'Đi tới cha mẹ',
-	'preview' => 'Preview'
+	'preview' => 'Xem trước',
+
+    // Report
+    'undefined_category' => 'Danh mục không xác định',
+    'categories_with_no_meta_report' => 'Danh mục không có báo cáo meta',
+    'category' => 'Loại',
+    'id' => 'TÔI',
 ];
