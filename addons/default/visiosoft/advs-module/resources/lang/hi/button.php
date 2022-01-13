@@ -1,6 +1,7 @@
 <?php
 
 return [
+    'add' => 'जोड़ें',
     'new_adv' => 'नई सलाह',
     'new_classified' => 'नया वर्गीकृत',
     'new_category' => 'नई श्रेणी',
