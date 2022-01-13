@@ -37,5 +37,11 @@ return [
     'please_wait' => 'Een ogenblik geduld. Subcategorieën verwijderen',
     'category_selection' => 'Categorie selectie',
     'go_to_parent' => 'Ga naar de ouder',
-	'preview' => 'Voorbeeld'
+	'preview' => 'Voorbeeld',
+
+    // Report
+    'undefined_category' => 'Niet gedefinieerde categorie',
+    'categories_with_no_meta_report' => 'Categorieën zonder metarapport',
+    'category' => 'Categorie',
+    'id' => 'ID kaart',
 ];
