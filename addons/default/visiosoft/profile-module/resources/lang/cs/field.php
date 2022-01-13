@@ -496,4 +496,14 @@ return [
     'receive_messages_email' => [
         'name' => 'Příjem zpráv e-mailem',
     ],
+
+    // Report
+    'member' => 'Člen',
+    'registered_at' => 'Registrováno na',
+    'login_at' => 'Přihlásit se na',
+    'undefined_member' => 'Nedefinovaný člen',
+    'new_membership_report' => 'Zpráva o novém členství',
+    'member_login_reports' => 'Zprávy o přihlášení členů',
+
+    'profile_instruction' => 'Na této stránce můžete upravit informace o svém profilu.',
 ];
