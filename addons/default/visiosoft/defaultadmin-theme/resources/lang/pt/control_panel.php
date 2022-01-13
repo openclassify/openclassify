@@ -10,4 +10,7 @@ return [
 
     // Users Module
     'search_by_gsm_number'     => 'Pesquisa por número GSM',
+
+    // Adv Export
+    'choose_file_type' => 'Escolha o tipo de arquivo para exportação',
 ];
