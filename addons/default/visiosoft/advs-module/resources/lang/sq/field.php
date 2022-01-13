@@ -134,7 +134,7 @@ return [
     'home' => 'Faqja Kryesore',
     'list-page' => 'Faqja e Listës',
     'search' => 'Kërko',
-	'reset' => 'Reset',
+	'reset' => 'Rivendos',
     'recommended' => 'Njoftime të rekomanduara për ju',
     'filter' => 'Filtër',
     'sort' => 'Tipi',
@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Nr. Celular ',
     'phone_office' => 'Telefoni i zyres',
     'add_to_favorites' => "Shto te të preferuarat",
+    'add_to_cart'=> "Shto në Shportë",
     'send' => 'Dërgo',
     'search_name' => 'Emri i Kërkimit',
     'my_favorite_searches' => 'Kërkimet e mia të preferuara ',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'Në muajin e fundit'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'Në dy ditët e fundit'
+    ],
     'ads_with_photo' => [
         'name' => 'Njoftime me Foto'
     ],
@@ -339,9 +343,9 @@ return [
     'owner' => 'Pronar',
     'default_owner_instruction' => 'Pronari do të zgjedhë përdoruesin aktual nëse nuk zgjidhet asnjë përdorues',
     'create_page_subtitle' => 'Krijoni reklamën në mënyrë të përsosur duke futur informacione të hollësishme në lidhje me reklamën tuaj.',
-    'with_my_phone_numbers' => 'With my phone numbers',
-    'not_with_my_phone_numbers' => "I don't want to be reached by phone",
-    'how_can_you_be_contacted' => "How can you be contacted?",
+    'with_my_phone_numbers' => 'Me numrat e mi të telefonit',
+    'not_with_my_phone_numbers' => "Nuk dua të më kontaktojnë me telefon",
+    'how_can_you_be_contacted' => "Si mund të kontaktoheni?",
 
     // Listing page
     'ad_title' => 'Titulli i reklamës',
@@ -379,8 +383,23 @@ return [
         'name' => 'Data e Publikimit'
     ],
     'tax' => [
-        'name' => 'Tax'
+        'name' => 'Taksa'
     ],
-    'name_a_z' => 'Name (A to Z)',
-    'name_z_a' => 'Name (Z to A)',
+    'name_a_z' => 'Emri (A deri në Z)',
+    'name_z_a' => 'Emri (Z në A)',
+    'select_lang_ads' => 'zgjidhni gjuhën e reklamave',
+
+    // Report
+    'product_stock_report' => 'Raporti i stokut të produktit',
+    'active_passive_products_report' => 'Raporti i produkteve aktive-pasive',
+    'unexplained_products_report' => 'Raporti i produkteve të pashpjeguara',
+    'non_image_products_report' => 'Raporti i produkteve jo-imazhi',
+    'product' => 'Produkt',
+    'count' => 'Numëroni',
+    'undefined_product' => 'Produkt i padefinuar',
+    'pages_without_meta_information_report' => 'Raporti i faqeve pa informacion meta',
+    'page' => 'Faqe',
+    'undefined_page' => 'Faqe e pacaktuar',
+    'id' => 'ID',
+    'custom_field' => 'Fusha e personalizuar',
 ];
