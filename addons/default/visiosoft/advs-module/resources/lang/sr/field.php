@@ -156,6 +156,7 @@ return [
     'phone_gsm' => 'Mobilni telefon',
     'phone_office' => 'Službeni telefon',
     'add_to_favorites' => "Dodaj u omiljeno",
+    'add_to_cart'=> "Add to Cart",
     'send' => 'Pošalji',
     'search_name' => 'Naziv pretrage',
     'my_favorite_searches' => 'Sačuvane pretrage',
@@ -272,6 +273,9 @@ return [
     'in_the_last_month' => [
         'name' => 'U poslednjih mesec'
     ],
+    'in_the_last_two_days' => [
+        'name' => 'In The Last Two Days'
+    ],
     'ads_with_photo' => [
         'name' => 'Oglasi sa slikom'
     ],
@@ -382,4 +386,19 @@ return [
     ],
     'name_a_z' => 'Name (A to Z)',
     'name_z_a' => 'Name (Z to A)',
+    'select_lang_ads' => 'select the language of the ads',
+
+    // Report
+    'product_stock_report' => 'Product Stock Report',
+    'active_passive_products_report' => 'Active-Passive Products Report',
+    'unexplained_products_report' => 'Unexplained Products Report',
+    'non_image_products_report' => 'Non-Image Products Report',
+    'product' => 'Product',
+    'count' => 'Count',
+    'undefined_product' => 'Undefined Product',
+    'pages_without_meta_information_report' => 'Pages Without Meta Information Report',
+    'page' => 'Page',
+    'undefined_page' => 'Undefined Page',
+    'id' => 'ID',
+    'custom_field' => 'Custom Field',
 ];
