@@ -91,9 +91,9 @@
 .gallery-card:hover>.product-info-hb>.review>button{
     display:block !important;
 }
-.gallery-card:hover>.product-info-hb>.review>p{
+.gallery-card:hover>.product-info-hb>.review>p {
     display: none;
-
+}
 .imgs{
     position: relative;
 }
