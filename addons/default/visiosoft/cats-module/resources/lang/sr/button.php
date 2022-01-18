@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Dodaj potkategoriju',
     'sub_category' => 'Prikaži potkategoriju',
     'new_placeholderforsearch' => 'Novi placeholder za pretragu',
+    'convert_main' => 'Convert Main Category',
 ];
