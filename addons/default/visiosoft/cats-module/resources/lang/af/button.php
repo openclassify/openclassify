@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Voeg subkategorie by',
     'sub_category' => 'Wys subkategorie',
     'new_placeholderforsearch' => 'Nuwe plekbesoeker',
+    'convert_main' => 'Convert Main Category',
 ];
