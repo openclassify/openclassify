@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'उप श्रेणी जोड़ें',
     'sub_category' => 'उप श्रेणी दिखाएँ',
     'new_placeholderforsearch' => 'नई प्लेसहोल्डर खोज',
+    'convert_main' => 'Convert Main Category',
 ];
