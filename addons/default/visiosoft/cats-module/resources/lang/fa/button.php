@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'زیر مجموعه را اضافه کنید',
     'sub_category' => 'نمایش زیر گروه',
     'new_placeholderforsearch' => 'New Placeholderforsearch',
+    'convert_main' => 'Convert Main Category',
 ];
