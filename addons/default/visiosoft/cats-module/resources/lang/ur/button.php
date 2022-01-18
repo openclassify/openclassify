@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'ذیلی زمرہ شامل کریں',
     'sub_category' => 'ذیلی زمرہ دکھائیں',
     'new_placeholderforsearch' => 'نئی جگہ دار نامعلوم تلاش',
+    'convert_main' => 'Convert Main Category',
 ];
