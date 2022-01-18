@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Alkategória hozzáadása',
     'sub_category' => 'Alkategória megjelenítése',
     'new_placeholderforsearch' => 'Új helyőrző keresés',
+    'convert_main' => 'Convert Main Category',
 ];
