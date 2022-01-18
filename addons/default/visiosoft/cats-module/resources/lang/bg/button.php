@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Добавяне на подкатегория',
     'sub_category' => 'Показване на подкатегорията',
     'new_placeholderforsearch' => 'Нов резервоар за търсене',
+    'convert_main' => 'Convert Main Category',
 ];
