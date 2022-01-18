@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Dodaj podkategorię',
     'sub_category' => 'Pokaż podkategorię',
     'new_placeholderforsearch' => 'Nowy symbol zastępczy dla wyszukiwania',
+    'convert_main' => 'Convert Main Category',
 ];
