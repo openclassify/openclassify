@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Thêm danh mục phụ',
     'sub_category' => 'Hiển thị danh mục phụ',
     'new_placeholderforsearch' => 'Tìm kiếm chỗ mới',
+    'convert_main' => 'Convert Main Category',
 ];
