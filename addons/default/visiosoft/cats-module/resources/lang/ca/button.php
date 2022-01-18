@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Afegeix subcategoria',
     'sub_category' => 'Mostra la subcategoria',
     'new_placeholderforsearch' => 'Nova recerca de marcador de posició',
+    'convert_main' => 'Convert Main Category',
 ];
