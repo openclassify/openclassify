@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Adicionar subcategoria',
     'sub_category' => 'Mostrar subcategoria',
     'new_placeholderforsearch' => 'Novo espaço reservado para pesquisa',
+    'convert_main' => 'Convert Main Category',
 ];
