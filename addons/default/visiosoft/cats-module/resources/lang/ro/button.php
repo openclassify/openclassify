@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Adăugați subcategorie',
     'sub_category' => 'Arată subcategorie',
     'new_placeholderforsearch' => 'Nouă locație de căutare',
+    'convert_main' => 'Convert Main Category',
 ];
