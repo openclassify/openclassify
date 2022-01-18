@@ -7,4 +7,5 @@ return [
     'sub_category' => 'کەتێگۆریی ژێرەوە نیشاندە',
     'new_placeholderforsearch' => 'شوێنی نوێ بۆ گەڕان
 ',
+    'convert_main' => 'Convert Main Category',
 ];
