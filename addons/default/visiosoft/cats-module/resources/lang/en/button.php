@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Add Sub Category',
     'sub_category' => 'Show Sub Category',
     'new_placeholderforsearch' => 'New Placeholderforsearch',
+    'convert_main' => 'Convert Main Category',
 ];
