@@ -273,7 +273,7 @@ class CategoryController extends AdminController
 
                 $file = $uploader->upload($file, $folder);
 
-                $url = route('anomaly.module.files::files.view',['folder' => $folder->slug,'name' => $file->name]);
+                $url = route('anomaly.module.files::files.view', ['folder' => $folder->slug, 'name' => $file->name]);
 
                 $category->setCategoryIconUrl($url);
             } catch (\Exception $exception) {
@@ -336,6 +336,16 @@ class CategoryController extends AdminController
                 'success' => false,
                 'msg' => $e->getMessage(),
             ];
+        }
+    }
+
+    public function convertMain($id)
+    {
+        if ($category = $this->categoryRepository->find($id)) {
+            $category->update(['parent_category_id' => null]);
+
+            $this->messages->success(trans('streams::message.edit_success', ['name' => trans('visiosoft.module.cats::addon.title')]));
+            return redirect('admin/cats');
         }
     }
 }
