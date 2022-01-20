@@ -21,12 +21,21 @@ class CategoryTableButtons
                 'type' => 'success',
                 'href' => '/admin/cats?cat={entry.id}'
             ],
+            'convert_main' => [
+                'icon' => 'refresh',
+                'class' => function () {
+                    if (!request('cat')) {
+                        return 'hidden';
+                    }
+                },
+                'type' => 'info',
+                'href' => '/admin/cats/convert-main/{entry.id}'
+            ],
             'delete' => [
                 'icon' => 'fa fa-trash',
                 'type' => 'danger',
-                'href' => function(EntryInterface $entry)
-                {
-                    return route('visiosoft.module.cats::admin.delete_category', ['id' => $entry->getId()])."?parent=".$entry->parent_category_id;
+                'href' => function (EntryInterface $entry) {
+                    return route('visiosoft.module.cats::admin.delete_category', ['id' => $entry->getId()]) . "?parent=" . $entry->parent_category_id;
                 }
             ]
         ]);

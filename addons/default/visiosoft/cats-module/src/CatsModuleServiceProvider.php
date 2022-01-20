@@ -40,6 +40,7 @@ class CatsModuleServiceProvider extends AddonServiceProvider
             'as' => 'visiosoft.module.cats::import',
             'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@import',
         ],
+        'admin/cats/convert-main/{id}' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@convertMain',
         'admin/cats/export' => [
             'as' => 'visiosoft.module.cats::export',
             'uses' => 'Visiosoft\CatsModule\Http\Controller\Admin\CategoryController@export',

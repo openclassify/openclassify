@@ -5,4 +5,5 @@ return [
     'add_sub_category' => 'Alt Kategori Ekle',
     'sub_category' => 'Alt Kategoriyi Göster',
     'new_placeholderforsearch' => 'Arama için Yeni Yer Tutucu',
+    'convert_main' => 'Ana Kategori Yap',
 ];

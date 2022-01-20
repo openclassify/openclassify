@@ -15,7 +15,8 @@ class AdressController extends AdminController
         $table->setColumns(array_merge($table->getColumns(), [
             'city' => [
                 'value' => function (EntryInterface $entry, CityRepositoryInterface $cityRepository) {
-                    return $cityRepository->find($entry->city)->name;
+                    $city = $cityRepository->find($entry->city);
+                    return ($city) ? $city->name : '-';
                 },
             ],
         ]));
@@ -37,11 +38,11 @@ class AdressController extends AdminController
         return $form->render($id);
     }
 
-    public function adressUpdate(AdressFormBuilder $form,Request $request,$id)
+    public function adressUpdate(AdressFormBuilder $form, Request $request, $id)
     {
         $error = $form->build()->validate()->getFormErrors()->getMessages();
 
-        if(!empty($error)) {
+        if (!empty($error)) {
             return $this->redirect->back();
         }
 

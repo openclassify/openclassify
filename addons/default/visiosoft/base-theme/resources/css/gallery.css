@@ -47,9 +47,84 @@
 .product-price-hb {
     font-size: 24px;
     font-weight:bolder;
-    background-color: rgb(244,244,244);
     height: 50px;
+}
+@media screen and (max-width: 766px) {
+    .product-price-hb {
+        font-size: 24px;
+        font-weight:bolder;
+        height: 50px;
+    }
+    .product-info-hb>button{
+        position: inherit !important;
+        width: 100%;
+    }
+    #listingWrapper{
+        border:none !important;
+    }
+    .product-hb{
+        border:none !important;
+        box-shadow: none !important;
+    }
+    .review{
+        height: auto;
+    }
+
+    .review>p{
+        display: none;
+    }
+
+
 }
 .fs-14{
     font-size: 14px;
+}
+
+
+.product-price-hb~p{
+    font-size:.7em;
+}
+.review{
+    height: 32px;
+}
+
+.gallery-card:hover>.product-info-hb>.review>button{
+    display:block !important;
+}
+.gallery-card:hover>.product-info-hb>.review>p {
+    display: none;
+}
+.imgs{
+    position: relative;
+}
+.ads-img{
+    position:inherit;
+}
+.imgs .ads-img {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+.imgs .ads-img:first-child {
+    display: flex;
+}
+.hover-area{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    width: 200px;
+    top: 0;
+    left: 0;
+}
+.hover-0 {
+    width: 33%;
+    height: 100%;
+}
+.hover-1 {
+    width: 33%;
+    height: 100%;
+}
+.hover-2 {
+    width: 33%;
+    height: 100%;
 }
