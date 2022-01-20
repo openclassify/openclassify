@@ -129,18 +129,21 @@ class CategoryController extends AdminController
                     $this->createIconFile($category->getId());
 
                     $this->dispatch(new CalculateCategoryLevel($category->getId()));
+                } else {
+                    $this->messages->error(trans('visiosoft.module.cats::message.cat_slug_exists', [
+                        'slug' => $slug
+                    ]));
                 }
-
-                $this->messages->error(trans('visiosoft.module.cats::message.cat_slug_exists', [
-                    'slug' => $slug
-                ]));
             } else {
                 for ($i = 0; $i < count($isMultiCat[0]); $i++) {
                     foreach ($isMultiCat as $cat) {
                         $translatableEntries = array_merge($translatableEntries, $cat[$i]);
                     }
 
-                    $slug = $this->str->slug(reset($translatableEntries)['name'], '_');
+                    $slug = $this->str->slug(
+                        collect($translatableEntries)->where('name', '!=', '')->first()['name'],
+                        '_'
+                    );
                     if ($this->categoryRepository->findBySlug($slug)) {
                         $this->messages->error(trans('visiosoft.module.cats::message.cat_slug_exists', [
                             'slug' => $slug
