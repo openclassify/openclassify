@@ -227,7 +227,7 @@ return [
     ],
     'hide_filter_section' => [
         'name' => 'Hide Filter Section',
-        'instructions' => 'Hiding to left filter area in listing page',
+        'instructions' => 'Hiding to left filter area for listing page',
     ],
     'hide_seller_info' => [
         'name' => 'Hide Seller Information',
