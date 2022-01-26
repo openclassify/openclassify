@@ -5,6 +5,7 @@ use Visiosoft\ProfileModule\Adress\Command\GetAddress;
 use Visiosoft\ProfileModule\Adress\Command\GetAddressByUser;
 use Visiosoft\ProfileModule\Profile\Command\GetProfileDetail;
 use Visiosoft\ProfileModule\Profile\Command\GetProfilePhotoURL;
+use Visiosoft\ProfileModule\Profile\Command\UserInitials;
 
 class ProfileModulePlugin extends Plugin
 {
@@ -48,6 +49,12 @@ class ProfileModulePlugin extends Plugin
                 'profilePhoto',
                 function ($user) {
                     return $this->dispatch(new GetProfilePhotoURL($user));
+                }
+            ),
+            new \Twig_SimpleFunction(
+                'user_initials',
+                function ($user) {
+                    return $this->dispatch(new UserInitials($user));
                 }
             ),
         ];
