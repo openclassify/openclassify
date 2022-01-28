@@ -67,7 +67,10 @@ class OptionConfigurationController extends PublicController
     public function confAddCart()
     {
         if ($conf = $this->optionConfigurationRepository->find($this->request->configuration)) {
-            if ($conf->parent_adv->getStatus() == "approved") {
+
+            $parent_adv = $conf->parent_adv;
+
+            if ($parent_adv->getStatus() == "approved") {
                 $conf->name = $conf->getName();
 
                 if ($conf->stock < $this->request->quantity) {
@@ -75,7 +78,8 @@ class OptionConfigurationController extends PublicController
                 } else {
                     $cart = $this->dispatch(new GetCart());
                     $cart->add($conf, $this->request->quantity);
-                    return $this->redirect->to(route('visiosoft.module.carts::cart'));
+                    $this->messages->success(trans('visiosoft.module.carts::message.success'));
+                    return $this->redirect->to($parent_adv->detail_url);
                 }
             }
             $this->messages->info(trans('visiosoft.module.advs::message.error_added_cart'));
