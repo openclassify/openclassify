@@ -1,7 +1,7 @@
 {% extends layout('posts') %}
 
 {% block styles %}
-    {{ asset_style("visiosoft.theme.base::scss/post.scss") }}
+    {{ asset_style("visiosoft.theme.base::css/post.scss") }}
 {% endblock %}
 
 {% block content %}
@@ -35,18 +35,22 @@
 
                 <div class="container m-0 p-0 mx-auto mt-5">
                     <div class="row p-0 m-0">
-                        <h5 class="text-danger mb-0 text-uppercase">
+                        <h5 class="related-posts-header mb-0 text-uppercase">
                             {{ trans('theme::field.related_posts') }}
                         </h5>
-                        <div class="w-100 border border-danger mb-3"></div>
-                        <div class="post-slider mx-auto w-100">
+                        <div class="w-100 border related-posts-bottom-divider mb-3"></div>
+                        <div class="row w-100 d-flex justify-content-center">
                             {% if entries('posts','types').findBySlug('default') %}
                                 {% set posts = entries('posts').where('slug', '!=', post.slug).type('default').live().limit(5).get() %}
-                                {% for post in posts %}
+                                {% for post in posts.slice(0,4) %}
+
+
+
+                        <div class="bg-white rounded h-278 overflow-hidden mx-2">
                                     <a href="{{ post.route('view') }}"
-                                       class="col-3 fs-14 product p-0 mr-3 rounded position-relative bg-white link-dark text-decoration-none">
-                                        <div class="product-img">
-                                            {{ img( post.cover_photo.make.url ?? 'visiosoft.theme.base::images/no-image.png') }}
+                                       class="fs-14 product p-0 mr-3 rounded position-relative bg-white link-dark text-decoration-none">
+                                        <div class="related-image-wrapper w-225">
+                                            {{ img( post.cover_photo.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('related-image')|raw }}
                                         </div>
                                         <div class="product-text-area p-3">
                                             <div class="fw-500 text-dark single-line">
@@ -54,9 +58,11 @@
                                             </div>
                                         </div>
                                     </a>
+                        </div>
+
                                 {% endfor %}
                             {% endif %}
-                        </div>
+                                    </div>
                     </div>
                 </div>
 

@@ -1,7 +1,7 @@
 {% extends layout('posts') %}
 
 {% block styles %}
-    {{ asset_style("visiosoft.theme.base::scss/post.scss") }}
+    {{ asset_style("visiosoft.theme.base::css/post.scss") }}
 {% endblock %}
 
 {% block content %}
@@ -29,7 +29,7 @@
             {% endfor %}
         </div>
     </div>
-    {% set selectedCats = setting_value('visiosoft.theme.hepsiemlak::list_cats') %}
+    {% set selectedCats = setting_value('visiosoft.theme.base::list_cats') %}
     {% for selectedCat in selectedCats %}
         <div class="container p-0 m-0 maxWidth bg-white mx-auto">
             {% set posts = entries('posts').where('category_id', selectedCat).recent().paginate() %}

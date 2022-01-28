@@ -1,17 +1,3 @@
-vedat.social {
-  display: flex;
-  .icon {
-    width: 40px;
-    height: 40px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: .5px solid #f4f4f4;
-    border-radius: 4px;
-    margin: 0 5px;
-    color: black;
-  }
-}
 
 .productImage {
   max-height: 700px;
@@ -116,6 +102,12 @@ vedat.social {
 .left-zero {
   left: 0;
 }
+.h-278{
+  height: 278px;
+}
+.w-225{
+  width: 225px;
+}
 
 .bottom-zero {
   bottom: 0;
@@ -149,4 +141,28 @@ vedat.social {
   @media (max-width: 768px) {
     color: white;
   }
+}
+.related-posts-header{
+  color:black;
+}
+.related-posts-bottom-divider{
+  border-color:black;
+}
+.related-image{
+  width: 100%;
+  object-fit: cover;
+  height: 220px;
+  margin-top: 5px;
+}
+.related-image-wrapper{
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.single-line{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight:500;
 }
