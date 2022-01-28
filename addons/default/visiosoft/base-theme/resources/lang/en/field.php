@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Login with Phone Number',
     'login_with_email_address' => 'Login with Email Address',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Company directory',
     'popular_ads' => 'Popular Ads',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Secure e-Commerce Ads',
     'sms' => 'Send Text Message (SMS)',
     'mail' => 'Send Mail',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Register Instructions',
