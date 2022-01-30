@@ -1,5 +1,5 @@
 .product-hb {
-    height: 500px;
+    height: {{ setting_value('visiosoft.theme.base::gallery_box_height') }}px;
     margin-bottom: 20px;
 }
 

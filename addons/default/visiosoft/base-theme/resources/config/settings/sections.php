@@ -15,7 +15,7 @@ return [
             'template' => [
                 'title' => 'visiosoft.theme.base::section.template',
                 'fields' => [
-                    'style',
+                    'gallery_box_height','style',
                 ],
             ],
         ],
