@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'ফোনের জন্য পৃষ্ঠা, ডিফল্ট দেশ নিবন্ধ করুন',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
