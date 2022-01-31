@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Pagina de înregistrare, țara implicită pentru telefon',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
