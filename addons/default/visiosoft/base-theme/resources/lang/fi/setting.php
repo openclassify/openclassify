@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Rekisteröintisivu, puhelimen oletusmaa',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
