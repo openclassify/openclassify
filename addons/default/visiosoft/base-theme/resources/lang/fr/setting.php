@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Page d\'enregistrement, pays par défaut pour le téléphone',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
