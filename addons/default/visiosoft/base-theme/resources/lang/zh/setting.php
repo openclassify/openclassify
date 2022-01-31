@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => '注册页面，电话的默认国家/地区',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
