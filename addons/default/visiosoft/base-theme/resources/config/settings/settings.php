@@ -71,4 +71,10 @@ return [
     'style' => [
         'type' => 'anomaly.field_type.editor',
     ],
+    'gallery_box_height' => [
+        'type' => 'anomaly.field_type.integer',
+        'config' => [
+            'default_value' => 500
+        ],
+    ],
 ];
