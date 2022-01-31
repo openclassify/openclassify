@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Regisztrációs oldal, a telefon alapértelmezett országa',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
