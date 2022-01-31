@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Qeydiyyat səhifəsi, telefon üçün standart ölkə',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
