@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'صفحه ثبت نام ، کشور پیش فرض تلفن',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
