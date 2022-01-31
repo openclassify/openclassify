@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Stranica za registraciju, zadata država za telefon',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
