@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => '登録ページ、電話のデフォルトの国',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
