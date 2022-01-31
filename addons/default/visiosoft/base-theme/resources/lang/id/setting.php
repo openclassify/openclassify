@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Halaman daftar, negara default untuk telepon',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
