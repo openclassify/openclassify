@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Trang đăng ký, quốc gia mặc định cho điện thoại',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
