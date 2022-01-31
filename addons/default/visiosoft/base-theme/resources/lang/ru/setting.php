@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Страница регистрации, страна по умолчанию для телефона',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
