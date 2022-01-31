@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => '등록 페이지, 전화의 기본 국가',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
