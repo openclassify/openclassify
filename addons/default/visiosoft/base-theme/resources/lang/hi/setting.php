@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'रजिस्टर पेज, फोन के लिए डिफ़ॉल्ट देश',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
