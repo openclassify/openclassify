@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Faqja e regjistrimit, vendi i paracaktuar për telefon',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
