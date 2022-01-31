@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Σελίδα εγγραφής, προεπιλεγμένη χώρα για τηλέφωνο',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
