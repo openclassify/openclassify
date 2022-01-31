@@ -42,5 +42,8 @@ return [
     ],
 	'default_country' => [
 		'name' => 'Rûpelê qeyd bikin, ji bo têlefonê welatê pêşîn',
-	]
+	],
+    'gallery_box_height' => [
+        'name' => 'Gallery Box Height',
+    ],
 ];
