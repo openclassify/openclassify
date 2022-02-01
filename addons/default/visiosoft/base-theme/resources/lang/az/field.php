@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Telefon nömrəsi ilə daxil olun',
     'login_with_email_address' => 'E-poçt ünvanı ilə daxil olun',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Şirkət kataloqu',
     'popular_ads' => 'Populyar elanlar',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Təhlükəsiz e-ticarət reklamları',
     'sms' => 'Mətn mesajı göndərin (SMS)',
     'mail' => 'Məktub göndərin',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Qeyd təlimatları',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'İnternet bağlantınız pozuldu,',
     'we_miss_you_so_much_already' => 'artıq sənin üçün çox darıxırıq!',
     'try_again' => 'Yenidən cəhd elə',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
