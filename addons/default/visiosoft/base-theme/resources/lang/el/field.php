@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Συνδεθείτε με τον αριθμό τηλεφώνου',
     'login_with_email_address' => 'Συνδεθείτε με διεύθυνση email',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Κατάλογος εταιρείας',
     'popular_ads' => 'Δημοφιλείς διαφημίσεις',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Ασφαλείς διαφημίσεις ηλεκτρονικού εμπορίου',
     'sms' => 'Αποστολή μηνύματος κειμένου (SMS)',
     'mail' => 'Αποστολή αλληλογραφίας',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Εγγραφή οδηγιών',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Η σύνδεσή σας στο διαδίκτυο έχει διακοπεί,',
     'we_miss_you_so_much_already' => 'μας λείπεις ήδη πολύ!',
     'try_again' => 'Προσπάθησε ξανά',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
