@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => '전화 번호로 로그인',
     'login_with_email_address' => '이메일 주소로 로그인',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => '회사 디렉토리',
     'popular_ads' => '인기있는 광고',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => '안전한 전자 상거래 광고',
     'sms' => '문자 메시지 보내기 (SMS)',
     'mail' => '메일을 보내다',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => '등록 지침',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => '인터넷 연결이 끊어졌습니다.',
     'we_miss_you_so_much_already' => '우리는 이미 당신이 너무 그리워!',
     'try_again' => '다시 시도하십시오',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
