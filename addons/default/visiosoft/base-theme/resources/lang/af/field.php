@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Teken in met telefoonnommer',
     'login_with_email_address' => 'Teken in met e-posadres',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Maatskappy gids',
     'popular_ads' => 'Gewilde advertensies',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Veilige e-handelsadvertensies',
     'sms' => 'Stuur teksboodskap (SMS)',
     'mail' => 'Stuur pos',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Registreer instruksies',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Jou internetverbinding is verbreek,',
     'we_miss_you_so_much_already' => 'ons mis jou al so baie!',
     'try_again' => 'Probeer weer',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
