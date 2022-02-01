@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Влезте с телефонен номер',
     'login_with_email_address' => 'Влезте с имейл адрес',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Фирмен указател',
     'popular_ads' => 'Популярни реклами',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Сигурни реклами за електронна търговия',
     'sms' => 'Изпращане на текстово съобщение (SMS)',
     'mail' => 'Изпрати писмо',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Инструкции за регистрация',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Интернет връзката ви е прекъсната,',
     'we_miss_you_so_much_already' => 'вече ни липсваш толкова много!',
     'try_again' => 'Опитай пак',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
