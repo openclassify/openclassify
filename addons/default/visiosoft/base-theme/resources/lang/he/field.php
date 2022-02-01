@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'התחברות עם מספר טלפון',
     'login_with_email_address' => 'התחבר עם כתובת דוא"ל',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'מדריך החברה',
     'popular_ads' => 'מודעות פופולריות',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'מודעות מסחריות מאובטחות',
     'sms' => 'שלח הודעת טקסט (SMS)',
     'mail' => 'שלח מייל',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'רישום הוראות',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'חיבור האינטרנט שלך מקולקל,',
     'we_miss_you_so_much_already' => 'אנחנו כבר כל כך מתגעגעים!',
     'try_again' => 'נסה שוב',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
