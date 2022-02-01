@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Accedi con il numero di telefono',
     'login_with_email_address' => 'Accedi con indirizzo e-mail',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Directory aziendale',
     'popular_ads' => 'Annunci popolari',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Annunci e-commerce sicuri',
     'sms' => 'Invia SMS (SMS)',
     'mail' => 'Inviare una mail',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Istruzioni per la registrazione',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'La tua connessione Internet è interrotta,',
     'we_miss_you_so_much_already' => 'ci manchi già tanto!',
     'try_again' => 'Riprova',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
