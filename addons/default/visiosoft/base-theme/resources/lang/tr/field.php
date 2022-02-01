@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Telefon Numarası ile Giriş',
     'login_with_email_address' => 'E-posta Adresi ile Giriş',
 
+    // Share
+    'share_on_facebook' => 'Facebook\'ta Paylaş',
+    'share_on_twitter' => 'Twitter\'da Paylaş',
+
     // Side menu links
     'company_directory' => 'Firma Rehberi',
     'popular_ads' => 'Popüler İlanlar',
@@ -51,6 +55,8 @@ return [
     'sms' => 'Kısa Mesaj Gönder (SMS)',
     'mail' => 'E-posta Gönder',
 
+    //Related
+    'related_posts' => 'İlgili İçerikler',
     // Register instruction seed
     'register_instructions' => 'Kayıt Talimatları',
     'list' => 'Liste',
@@ -62,4 +68,7 @@ return [
     'your_internet_connection_is_broken' => 'Your internet connection is broken,',
     'we_miss_you_so_much_already' => 'we miss you so much already!',
     'try_again' => 'Try again',
+
+
+    'news_title' => 'Sektörel Gelişmeler :name\'da',
 ];

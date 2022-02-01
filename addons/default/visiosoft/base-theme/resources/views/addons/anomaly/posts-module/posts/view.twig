@@ -1,0 +1,72 @@
+{% extends layout('posts') %}
+
+{% block styles %}
+    {{ asset_style("visiosoft.theme.base::css/post.scss") }}
+{% endblock %}
+
+{% block content %}
+    <div class="container m-0 p-0 mx-auto maxWidht w-100">
+        <div class="row p-0 m-0">
+            <div class="col-12 position-relative my-3">
+                <div class="productImage">
+                    {{ img(post.cover_photo.make.url).class('w-100')|raw }}
+                </div>
+                <div class="px-md-4 px-0 p-md-3 p-0 {{ post.cover_photo ? 'positionSpecial' }} w-100">
+                    <div class="bg-white p-3 px-4">
+                        <h1>{{ post.title }}</h1>
+                        <div class="mt-4 d-flex flex-md-row flex-column">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri|url_encode }}"
+                               class="d-flex align-items-center bgSpecial_2 text-white paddingSpecial mr-2 text-decoration-none">
+                                <i class="fab fa-facebook-f fs-14"></i>
+                                <div class="lineGap mx-3"></div>
+                                <div class="fs-11 ">{{ trans('theme::field.share_on_facebook') }}</div>
+                            </a>
+                            <a href="https://twitter.com/share?url={{ app.request.uri|url_encode }}"
+                               class="d-flex align-items-center bgSpecial_3 text-white paddingSpecial mr-2 text-decoration-none">
+                                <i class="fab fa-twitter"></i>
+                                <div class="lineGap mx-3"></div>
+                                <div class="fs-11 ">{{ trans('theme::field.share_on_twitter') }}</div>
+                            </a>
+                        </div>
+                        <div class="fs-14 mt-3">{{ post.content|raw }}</div>
+                    </div>
+                </div>
+
+
+                <div class="container m-0 p-0 mx-auto mt-5">
+                    <div class="row p-0 m-0">
+                        <h5 class="related-posts-header mb-0 text-uppercase">
+                            {{ trans('theme::field.related_posts') }}
+                        </h5>
+                        <div class="w-100 border related-posts-bottom-divider mb-3"></div>
+                        <div class="row w-100 d-flex justify-content-center">
+                            {% if entries('posts','types').findBySlug('default') %}
+                                {% set posts = entries('posts').where('slug', '!=', post.slug).type('default').live().limit(5).get() %}
+                                {% for post in posts.slice(0,4) %}
+
+
+
+                        <div class="bg-white rounded h-278 overflow-hidden mx-2">
+                                    <a href="{{ post.route('view') }}"
+                                       class="fs-14 product p-0 mr-3 rounded position-relative bg-white link-dark text-decoration-none">
+                                        <div class="related-image-wrapper w-225">
+                                            {{ img( post.cover_photo.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('related-image')|raw }}
+                                        </div>
+                                        <div class="product-text-area p-3">
+                                            <div class="fw-500 text-dark single-line">
+                                                {{ post.title }}
+                                            </div>
+                                        </div>
+                                    </a>
+                        </div>
+
+                                {% endfor %}
+                            {% endif %}
+                                    </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+{% endblock %}
