@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => '用电话号码登录',
     'login_with_email_address' => '用电子邮件地址登录',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => '公司目录',
     'popular_ads' => '热门广告',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => '安全的电子商务广告',
     'sms' => '发送短信（SMS）',
     'mail' => '发送邮件',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => '注册说明',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => '你的网络连接坏了，',
     'we_miss_you_so_much_already' => '我们已经非常想念你了！',
     'try_again' => '再试一次',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
