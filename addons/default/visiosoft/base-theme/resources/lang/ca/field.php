@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Inicieu la sessió amb el número de telèfon',
     'login_with_email_address' => 'Inicieu la sessió amb l\'adreça de correu electrònic',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Directori d\'empreses',
     'popular_ads' => 'Anuncis populars',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Anuncis de comerç electrònic segurs',
     'sms' => 'Enviar missatges de text (SMS)',
     'mail' => 'Envia un correu',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Registre d’instruccions',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'La teva connexió a Internet està trencada,',
     'we_miss_you_so_much_already' => 'ja et trobem molt a faltar!',
     'try_again' => 'Torna-ho a provar',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
