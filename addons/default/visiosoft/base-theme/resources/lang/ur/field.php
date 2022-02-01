@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'فون نمبر کے ساتھ لاگ ان کریں',
     'login_with_email_address' => 'ای میل ایڈریس کے ساتھ لاگ ان کریں',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'کمپنی کی ڈائرکٹری',
     'popular_ads' => 'مشہور اشتہارات',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'ای کامرس کے اشتہارات کو محفوظ بنائیں',
     'sms' => 'ٹیکسٹ میسج (SMS) بھیجیں',
     'mail' => 'میل بھیجیں',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'ہدایات رجسٹر کریں',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'آپ کا انٹرنیٹ کنکشن ٹوٹ گیا ہے،',
     'we_miss_you_so_much_already' => 'ہم آپ کو پہلے ہی بہت یاد کرتے ہیں!',
     'try_again' => 'دوبارہ کوشش کریں',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
