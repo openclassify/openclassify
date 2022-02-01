@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Вхід з номером телефону',
     'login_with_email_address' => 'Увійти за допомогою електронної адреси',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Каталог компанії',
     'popular_ads' => 'Популярні оголошення',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Захищена реклама електронної комерції',
     'sms' => 'Надіслати текстове повідомлення (SMS)',
     'mail' => 'Надіслати пошту',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Інструкції з реєстрації',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Ваше інтернет-з\'єднання розірвано,',
     'we_miss_you_so_much_already' => 'ми вже дуже сумуємо за тобою!',
     'try_again' => 'Спробуйте ще раз',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
