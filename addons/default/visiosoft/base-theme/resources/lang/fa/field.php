@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'با شماره تلفن وارد شوید',
     'login_with_email_address' => 'با آدرس ایمیل وارد شوید',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'دایرکتوری شرکت',
     'popular_ads' => 'تبلیغات محبوب',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'تبلیغات ایمن تجارت الکترونیکی',
     'sms' => 'ارسال پیام متنی (پیامکی)',
     'mail' => 'ارسال ایمیل',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'دستورالعمل های ثبت نام',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'اتصال اینترنت شما قطع شده است،',
     'we_miss_you_so_much_already' => 'ما در حال حاضر خیلی دلتنگ شما هستیم!',
     'try_again' => 'دوباره امتحان کنید',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
