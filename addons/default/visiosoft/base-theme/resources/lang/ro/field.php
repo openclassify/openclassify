@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Autentificare cu număr de telefon',
     'login_with_email_address' => 'Autentificare cu adresă de e-mail',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Directorul companiilor',
     'popular_ads' => 'Anunțuri populare',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Anunțuri sigure de comerț electronic',
     'sms' => 'Trimite mesaj text (SMS)',
     'mail' => 'Trimite e-mail',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Instrucțiuni de înregistrare',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Conexiunea ta la internet este întreruptă,',
     'we_miss_you_so_much_already' => 'deja ne este atât de dor de tine!',
     'try_again' => 'Încearcă din nou',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
