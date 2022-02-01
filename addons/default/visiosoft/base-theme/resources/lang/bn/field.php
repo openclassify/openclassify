@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'ফোন নম্বর দিয়ে লগইন করুন',
     'login_with_email_address' => 'ইমেল ঠিকানা দিয়ে লগইন করুন',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'কোম্পানী নির্দেশিকা',
     'popular_ads' => 'জনপ্রিয় বিজ্ঞাপন',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'নিরাপদ ই-বাণিজ্য বিজ্ঞাপন',
     'sms' => 'পাঠ্য বার্তা (এসএমএস) প্রেরণ করুন',
     'mail' => 'মেইল পাঠাও',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'নির্দেশাবলী নিবন্ধন করুন',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'আপনার ইন্টারনেট সংযোগ বিচ্ছিন্ন,',
     'we_miss_you_so_much_already' => 'আমরা ইতিমধ্যে আপনাকে অনেক মিস করছি!',
     'try_again' => 'আবার চেষ্টা করুন',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
