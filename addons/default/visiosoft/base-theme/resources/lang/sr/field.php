@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Prijavite se sa brojem telefona',
     'login_with_email_address' => 'Prijavite se sa Email adresom',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Imenik preduzeća',
     'popular_ads' => 'Popularni oglasi',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Sigurni oglasi za e-trgovinu',
     'sms' => 'Pošaljite tekstualnu poruku (SMS)',
     'mail' => 'Pošalji Email',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Uputstva za registraciju',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Your internet connection is broken,',
     'we_miss_you_so_much_already' => 'we miss you so much already!',
     'try_again' => 'Try again',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
