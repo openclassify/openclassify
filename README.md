@@ -142,4 +142,4 @@ Dia @diashalabi
 
 ## Thanks to
 
-Ryan and it's  stream platform and pyrocms it makes OpenClassify more powerfull. 
+Ryan and it's  stream platform and pyrocms it makes OpenClassify more powerful. 
