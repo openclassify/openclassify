@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Přihlaste se pomocí telefonního čísla',
     'login_with_email_address' => 'Přihlaste se pomocí e-mailové adresy',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Adresář společnosti',
     'popular_ads' => 'Populární reklamy',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Bezpečné reklamy elektronického obchodu',
     'sms' => 'Odeslat textovou zprávu (SMS)',
     'mail' => 'Poslat mail',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Zaregistrujte pokyny',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Vaše internetové připojení je přerušené,',
     'we_miss_you_so_much_already' => 'už nám moc chybíš!',
     'try_again' => 'Zkus to znovu',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
