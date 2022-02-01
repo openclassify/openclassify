@@ -61,6 +61,10 @@ return [
     'login_with_email_address' => 'بە ناونیشانی ئیمەیل بچۆ ژوورەوە
 ',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'ئاڕاسته ی كۆمپانیا
 ',
@@ -71,6 +75,9 @@ return [
 ',
     'sms' => 'پەیامە بنێرە',
     'mail' => 'مەیل بنێرە',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'ڕێنماییەکانی تۆمارکردن
@@ -86,4 +93,6 @@ return [
     'your_internet_connection_is_broken' => 'Têkiliya weya înternetê qut bûye,',
     'we_miss_you_so_much_already' => 'em jixwe pir bêriya te kirine!',
     'try_again' => 'Dubare bixebitin',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
