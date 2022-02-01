@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Đăng nhập bằng số điện thoại',
     'login_with_email_address' => 'Đăng nhập bằng địa chỉ email',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Thư mục công ty',
     'popular_ads' => 'Quảng cáo phổ biến',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Quảng cáo thương mại điện tử an toàn',
     'sms' => 'Gửi tin nhắn văn bản (SMS)',
     'mail' => 'Gửi thư',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Đăng ký Hướng dẫn',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Kết nối internet của bạn bị hỏng,',
     'we_miss_you_so_much_already' => 'chúng tôi nhớ bạn rất nhiều rồi!',
     'try_again' => 'Thử lại',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
