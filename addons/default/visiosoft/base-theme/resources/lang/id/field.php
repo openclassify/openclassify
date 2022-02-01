@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Login dengan Nomor Telepon',
     'login_with_email_address' => 'Login dengan Alamat Email',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Direktori perusahaan',
     'popular_ads' => 'Iklan Populer',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Amankan Iklan e-Commerce',
     'sms' => 'Kirim Pesan Teks (SMS)',
     'mail' => 'Kirim Surat',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Daftar Instruksi',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Koneksi internet Anda terputus,',
     'we_miss_you_so_much_already' => 'kami sudah sangat merindukanmu!',
     'try_again' => 'Coba lagi',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
