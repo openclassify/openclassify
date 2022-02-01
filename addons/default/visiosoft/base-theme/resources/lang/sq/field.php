@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Hyni me numrin e telefonit',
     'login_with_email_address' => 'Identifikohu me Adresë Email',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Drejtoria e ndërmarrjes',
     'popular_ads' => 'Njoftimet popullore',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Njoftimet të sigurta për tregtinë elektronike',
     'sms' => 'Dërgoni mesazhe me tekst (SMS)',
     'mail' => 'Dërgo email',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Udhëzimet Regjistrohuni',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Lidhja juaj e internetit është prishur,',
     'we_miss_you_so_much_already' => 'na mungon shumë tashmë!',
     'try_again' => 'Provo përsëri',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
