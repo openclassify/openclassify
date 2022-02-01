@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Kirjaudu sisään puhelinnumerolla',
     'login_with_email_address' => 'Kirjaudu sisään sähköpostiosoitteella',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Yrityshakemisto',
     'popular_ads' => 'Suosittuja mainoksia',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Suojatut verkkokaupan mainokset',
     'sms' => 'Lähetä tekstiviesti (SMS)',
     'mail' => 'Lähetä postia',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Rekisteröi ohjeet',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Internet-yhteytesi on katkennut,',
     'we_miss_you_so_much_already' => 'kaipaamme sinua jo niin paljon!',
     'try_again' => 'Yritä uudelleen',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
