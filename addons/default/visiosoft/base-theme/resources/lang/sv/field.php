@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Logga in med telefonnummer',
     'login_with_email_address' => 'Logga in med e-postadress',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Företagskatalog',
     'popular_ads' => 'Populära annonser',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Säkra e-handelsannonser',
     'sms' => 'Skicka textmeddelande (SMS)',
     'mail' => 'Skicka brev',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Registrera instruktioner',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Din internetanslutning är bruten,',
     'we_miss_you_so_much_already' => 'vi saknar dig redan så mycket!',
     'try_again' => 'Försök igen',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
