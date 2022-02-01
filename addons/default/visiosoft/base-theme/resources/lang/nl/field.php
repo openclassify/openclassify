@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Login met telefoonnummer',
     'login_with_email_address' => 'Login met e-mailadres',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Bedrijfsadresboek',
     'popular_ads' => 'Populaire advertenties',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Veilige e-commerce-advertenties',
     'sms' => 'Sms verzenden',
     'mail' => 'Verzend mail',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Registreer instructies',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Uw internetconnectie is niet aangesloten',
     'we_miss_you_so_much_already' => 'we missen u al!',
     'try_again' => 'Probeer opnieuw',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
