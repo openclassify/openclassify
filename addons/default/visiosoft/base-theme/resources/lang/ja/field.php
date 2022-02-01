@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => '電話番号でログイン',
     'login_with_email_address' => 'メールアドレスでログイン',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => '会社ディレクトリ',
     'popular_ads' => '人気の広告',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => '安全なeコマース広告',
     'sms' => 'テキストメッセージを送信（SMS）',
     'mail' => 'メールを送る',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => '登録手順',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'あなたのインターネット接続が壊れています、',
     'we_miss_you_so_much_already' => 'もうあなたがいなくて寂しいです！',
     'try_again' => '再試行',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
