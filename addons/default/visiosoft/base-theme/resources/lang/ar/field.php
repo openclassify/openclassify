@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'تسجيل الدخول برقم الهاتف',
     'login_with_email_address' => 'تسجيل الدخول باستخدام عنوان البريد الإلكتروني',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'دليل شركة',
     'popular_ads' => 'إعلانات شعبية',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'إعلانات التجارة الإلكترونية الآمنة',
     'sms' => 'إرسال رسالة نصية (SMS)',
     'mail' => 'ارسل بريد',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'تعليمات التسجيل',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'اتصال الإنترنت الخاص بك معطل ،',
     'we_miss_you_so_much_already' => 'نحن نفتقدك كثيرا بالفعل!',
     'try_again' => 'حاول مجددا',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
