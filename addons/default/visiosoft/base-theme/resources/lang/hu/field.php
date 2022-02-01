@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Bejelentkezés telefonszámmal',
     'login_with_email_address' => 'Bejelentkezés e-mail címmel',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Cégjegyzék',
     'popular_ads' => 'Népszerű hirdetések',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Biztonságos e-kereskedelmi hirdetések',
     'sms' => 'Szöveges üzenet (SMS) küldése',
     'mail' => 'Levél küldés',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Regisztrálja az utasításokat',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Megszakadt az internetkapcsolatod,',
     'we_miss_you_so_much_already' => 'már nagyon hiányzol nekünk!',
     'try_again' => 'Próbáld újra',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
