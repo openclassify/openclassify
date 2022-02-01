@@ -43,6 +43,10 @@ return [
     'login_with_phone_number' => 'Log ind med telefonnummer',
     'login_with_email_address' => 'Log ind med e-mail-adresse',
 
+    // Share
+    'share_on_facebook' => 'Share on Facebook',
+    'share_on_twitter' => 'Share on Twitter',
+
     // Side menu links
     'company_directory' => 'Virksomhedsregister',
     'popular_ads' => 'Populære annoncer',
@@ -50,6 +54,9 @@ return [
     'secure_e-commerce_ads' => 'Sikre e-handelsannoncer',
     'sms' => 'Send SMS (SMS)',
     'mail' => 'Send mail',
+
+    //Related
+    'related_posts' => 'Related Posts',
 
     // Register instruction seed
     'register_instructions' => 'Registrer instruktioner',
@@ -62,4 +69,6 @@ return [
     'your_internet_connection_is_broken' => 'Din internetforbindelse er afbrudt,',
     'we_miss_you_so_much_already' => 'vi savner dig allerede så meget!',
     'try_again' => 'Prøv igen',
+
+    'news_title' => 'Sectoral Developments All in :name',
 ];
