@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Utasítás leírása',
     'instruction_list' => 'Utasítási lista',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Csatlakozási probléma',
     'your_internet_connection_is_broken' => 'Megszakadt az internetkapcsolatod,',
