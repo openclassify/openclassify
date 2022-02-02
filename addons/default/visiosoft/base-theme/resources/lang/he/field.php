@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'תיאור הוראות',
     'instruction_list' => 'רשימת הוראות',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'בעיות חיבור',
     'your_internet_connection_is_broken' => 'חיבור האינטרנט שלך מקולקל,',
