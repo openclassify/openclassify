@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'توضیحات دستورالعمل',
     'instruction_list' => 'لیست دستورالعمل ها',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'مشکل اتصال',
     'your_internet_connection_is_broken' => 'اتصال اینترنت شما قطع شده است،',
