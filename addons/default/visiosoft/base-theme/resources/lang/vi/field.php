@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Mô tả hướng dẫn',
     'instruction_list' => 'Danh sách hướng dẫn',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Lỗi kết nối',
     'your_internet_connection_is_broken' => 'Kết nối internet của bạn bị hỏng,',
