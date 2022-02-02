@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Description de l\'instruction',
     'instruction_list' => 'Liste d\'instructions',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Problème de connection',
     'your_internet_connection_is_broken' => 'Votre connexion internet est interrompue,',
