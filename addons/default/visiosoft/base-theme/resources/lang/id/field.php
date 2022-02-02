@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Deskripsi Instruksi',
     'instruction_list' => 'Daftar Instruksi',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Masalah koneksi',
     'your_internet_connection_is_broken' => 'Koneksi internet Anda terputus,',
