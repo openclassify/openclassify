@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'ہدایات کی تفصیل',
     'instruction_list' => 'ہدایات کی فہرست',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'کنکشن کا مسئلہ',
     'your_internet_connection_is_broken' => 'آپ کا انٹرنیٹ کنکشن ٹوٹ گیا ہے،',
