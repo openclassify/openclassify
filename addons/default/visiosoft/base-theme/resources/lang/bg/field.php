@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Инструкция Описание',
     'instruction_list' => 'Списък с инструкции',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Проблем с връзката',
     'your_internet_connection_is_broken' => 'Интернет връзката ви е прекъсната,',
