@@ -88,6 +88,9 @@ return [
     'instruction_list' => 'لیستی ڕێنماییەکان
 ',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Pirsgirêka girêdanê',
     'your_internet_connection_is_broken' => 'Têkiliya weya înternetê qut bûye,',
