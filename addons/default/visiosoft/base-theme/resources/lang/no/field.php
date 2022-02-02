@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Instruksjonsbeskrivelse',
     'instruction_list' => 'Instruksjonsliste',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Forbindelsesproblem',
     'your_internet_connection_is_broken' => 'Internett-tilkoblingen din er brutt,',
