@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Instructiebeschrijving',
     'instruction_list' => 'Instructielijst',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Er is een probleem met het connecteren',
     'your_internet_connection_is_broken' => 'Uw internetconnectie is niet aangesloten',
