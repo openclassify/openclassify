@@ -10,16 +10,16 @@ return [
         'name' => 'Çıkış Yap',
     ],
     'profile' => 'Profil',
-    'email' => 'Email Adresiniz',
+    'email' => 'Email Adresi',
     'phone' => 'Telefon Numarası',
     'reset_code' => 'Sıfırlama Kodu',
     'password_confirmation' => 'Şifrenizi Onaylayın',
-    'password' => 'Şifreniz',
+    'password' => 'Şifre',
     'first_name' => 'Adınız',
     'last_name' => 'Soyadınız',
     'remember_me' => 'Beni Hatırla',
-    'not_a_member_yet' => 'Henüz Üye Değil Misiniz',
-    'not_a_member_yet_message' => 'Üyelerimize özel hizmetlerimizden faydalanmak için kaydolun',
+    'not_a_member_yet' => 'Henüz Üye Değil Misiniz?',
+    'not_a_member_yet_message' => 'Üyelerimize Özel Hizmetlerimizden Faydalanmak İçin Kaydolun',
     'forgot_password' => 'Şifremi Unuttum',
     'email_or_phone_number' => 'E-Posta Adresiniz veya Telefon Numaranız',
     'phone_number' => 'Telefon Numarası',
@@ -30,7 +30,7 @@ return [
     'personal_registration_list_1' => 'Ücretsiz ilan gönder',
     'personal_registration_list_2' => 'İlgilendiğiniz ilanları ekleyin, favorilerinize ekledikten sonra fiyat değişikliklerini takip edin, kriterlerinize uygun favori aramalar oluşturun,',
     'personal_registration_list_3' => 'Sitedeki İlan sahiplerine mesaj gönderin.',
-    'register_information_note' => 'Bu sayfadaki bilgiler ' . env('APPLICATION_DOMAIN') . ' üyelik. Kişisel verilerin korunması hakkında ayrıntılı bilgiyi burada bulabilirsiniz.',
+    'register_information_note' => 'Bu sayfadaki bilgiler ' . env('APPLICATION_DOMAIN') . ' Üyelik. Kişisel verilerin korunması hakkında ayrıntılı bilgiyi burada bulabilirsiniz.',
 
     // Register page
     'phone_validation_error' => 'Bu telefon numarası başka bir üye tarafından kullanılıyor.',
@@ -44,8 +44,8 @@ return [
     'login_with_email_address' => 'E-posta Adresi ile Giriş',
 
     // Share
-    'share_on_facebook' => 'Share on Facebook',
-    'share_on_twitter' => 'Share on Twitter',
+    'share_on_facebook' => 'Facebook\'ta Paylaş',
+    'share_on_twitter' => 'Twitter\'da Paylaş',
 
     // Side menu links
     'company_directory' => 'Firma Rehberi',
@@ -56,7 +56,7 @@ return [
     'mail' => 'E-posta Gönder',
 
     //Related
-    'related_posts' => 'Related Posts',
+    'related_posts' => 'İlgili Gönderiler',
 
     // Register instruction seed
     'register_instructions' => 'Kayıt Talimatları',
@@ -68,7 +68,7 @@ return [
     'connection_problem' => 'Bağlantı sorunu',
     'your_internet_connection_is_broken' => 'İnternet bağlantınız koptu,',
     'we_miss_you_so_much_already' => 'seni şimdiden çok özledik!',
-    'try_again' => 'Tekrar deneyin',
+    'try_again' => 'Tekrar Deneyin',
 
-    'news_title' => 'Sectoral Developments All in :name',
+    'news_title' => 'Tüm Sektörel Gelişmeler :name',
 ];
