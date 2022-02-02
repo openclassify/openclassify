@@ -64,6 +64,9 @@ return [
     'instruction_description' => '지시 설명',
     'instruction_list' => '지시 목록',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => '연결 문제',
     'your_internet_connection_is_broken' => '인터넷 연결이 끊어졌습니다.',
