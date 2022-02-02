@@ -64,6 +64,9 @@ return [
     'instruction_description' => '指令说明',
     'instruction_list' => '指令清单',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => '连接问题',
     'your_internet_connection_is_broken' => '你的网络连接坏了，',
