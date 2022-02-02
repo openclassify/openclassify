@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Popis instrukce',
     'instruction_list' => 'Seznam instrukcí',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Problém s připojením',
     'your_internet_connection_is_broken' => 'Vaše internetové připojení je přerušené,',
