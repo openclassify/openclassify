@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Təlimatın təsviri',
     'instruction_list' => 'Təlimat siyahısı',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Bağlantı problemi',
     'your_internet_connection_is_broken' => 'İnternet bağlantınız pozuldu,',
