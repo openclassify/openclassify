@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Descripció de la instrucció',
     'instruction_list' => 'Llista d’instruccions',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Problema de connexió',
     'your_internet_connection_is_broken' => 'La teva connexió a Internet està trencada,',
