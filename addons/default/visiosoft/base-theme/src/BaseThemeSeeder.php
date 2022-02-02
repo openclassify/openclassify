@@ -2,6 +2,7 @@
 
 use Anomaly\Streams\Platform\Database\Seeder\Seeder;
 use Visiosoft\BaseTheme\Seed\RegisterInstructionSeeder;
+use Visiosoft\BaseTheme\Seed\PostFieldsSeeder;
 
 class BaseThemeSeeder extends Seeder
 {
@@ -13,5 +14,8 @@ class BaseThemeSeeder extends Seeder
     {
         // Register Instruction Seeder
         $this->call(RegisterInstructionSeeder::class);
+
+        // Post Fields Seeder
+        $this->call(PostFieldsSeeder::class);
     }
 }
