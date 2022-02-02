@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'নির্দেশের বিবরণ',
     'instruction_list' => 'নির্দেশের তালিকা',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'সংযোগ সমস্যা',
     'your_internet_connection_is_broken' => 'আপনার ইন্টারনেট সংযোগ বিচ্ছিন্ন,',
