@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Περιγραφή οδηγιών',
     'instruction_list' => 'Λίστα οδηγιών',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Πρόβλημα σύνδεσης',
     'your_internet_connection_is_broken' => 'Η σύνδεσή σας στο διαδίκτυο έχει διακοπεί,',
