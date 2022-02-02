@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Përshkrimi i udhëzimit',
     'instruction_list' => 'Lista e udhëzimeve',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Problemi i lidhjes',
     'your_internet_connection_is_broken' => 'Lidhja juaj e internetit është prishur,',
