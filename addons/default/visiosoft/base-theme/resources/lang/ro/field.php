@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Descrierea instrucțiunilor',
     'instruction_list' => 'Lista de instrucțiuni',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Problemă de conectare',
     'your_internet_connection_is_broken' => 'Conexiunea ta la internet este întreruptă,',
