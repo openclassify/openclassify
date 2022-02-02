@@ -64,6 +64,9 @@ return [
     'instruction_description' => 'Ohjeiden kuvaus',
     'instruction_list' => 'Ohjeluettelo',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => 'Yhteys ongelma',
     'your_internet_connection_is_broken' => 'Internet-yhteytesi on katkennut,',
