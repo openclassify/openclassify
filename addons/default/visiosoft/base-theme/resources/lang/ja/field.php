@@ -64,6 +64,9 @@ return [
     'instruction_description' => '命令の説明',
     'instruction_list' => '指示リスト',
 
+    // Posts seeder
+    'cover_image' => 'Cover Image',
+
     // Offline
     'connection_problem' => '接続問題',
     'your_internet_connection_is_broken' => 'あなたのインターネット接続が壊れています、',
