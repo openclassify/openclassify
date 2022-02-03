@@ -5,7 +5,7 @@ let initModal = function () {
     let loading = '<div class="modal-loading"><div class="active loader large"></div></div>';
 
     // Loading state
-    modal.on('loading', function() {
+    modal.on('loading', function () {
         $(this).find('.modal-content').append(loading);
     });
 
@@ -32,6 +32,25 @@ let initModal = function () {
         wrapper.append(loading);
 
         $.get($(this).attr('href'), function (html) {
+            wrapper.html(html);
+        });
+    });
+
+    // Remove onchange event in ajax select field
+    if ($('.table--ajax').find('.table-limit').length > 0) {
+        $('.table--ajax').find('.table-limit').removeAttr("onchange");
+    }
+
+    // Handle ajax select in modals.
+    $('.table--ajax .table-limit').on('change', function (e) {
+
+        e.preventDefault();
+
+        let wrapper = $(this).closest('.modal-content');
+
+        wrapper.append(loading);
+
+        $.get($(this).val(), function (html) {
             wrapper.html(html);
         });
     });
@@ -79,7 +98,7 @@ $(document).ajaxComplete(function () {
 $(document).on('show.bs.modal', '.modal', function () {
     let zIndex = 1040 + (10 * $('.modal:visible').length);
     $(this).css('z-index', zIndex);
-    setTimeout(function() {
+    setTimeout(function () {
         $('.modal-backdrop').not('.modal-stack').css('z-index', zIndex - 1).addClass('modal-stack');
     }, 0);
 });
