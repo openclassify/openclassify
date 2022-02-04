@@ -9,9 +9,9 @@
         <div class="row p-0 m-0">
             <div class="col-12 position-relative my-3">
                 <div class="productImage">
-                    {{ img(post.cover_photo.make.url).class('w-100')|raw }}
+                    {{ img(post.cover_image.make.url).class('w-100')|raw }}
                 </div>
-                <div class="px-md-4 px-0 p-md-3 p-0 {{ post.cover_photo ? 'positionSpecial' }} w-100">
+                <div class="px-md-4 px-0 p-md-3 p-0 {{ post.cover_image ? 'positionSpecial' }} w-100">
                     <div class="bg-white p-3 px-4">
                         <h1>{{ post.title }}</h1>
                         <div class="mt-4 d-flex flex-md-row flex-column">
@@ -50,7 +50,7 @@
                                     <a href="{{ post.route('view') }}"
                                        class="fs-14 product p-0 mr-3 rounded position-relative bg-white link-dark text-decoration-none">
                                         <div class="related-image-wrapper w-225">
-                                            {{ img( post.cover_photo.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('related-image')|raw }}
+                                            {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('related-image')|raw }}
                                         </div>
                                         <div class="product-text-area p-3">
                                             <div class="fw-500 text-dark single-line">

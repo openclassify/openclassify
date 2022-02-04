@@ -62,6 +62,8 @@ return [
     'list' => 'Liste',
     'instruction_description' => 'Talimat Açıklama',
     'instruction_list' => 'Talimat Listesi',
+    // Posts seeder
+    'cover_image' => 'Kapak Fotoğrafı',
 
     // Offline
     'connection_problem' => 'Connection problem',

@@ -14,7 +14,7 @@
                         class="fs-14 product rounded position-relative bg-white link-dark text-decoration-none border">
                         <div class="product-img">
                             <a href="{{ post.route('view') }}">
-                                {{ img( post.image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('w-100')|raw }}
+                                {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('w-100')|raw }}
                             </a>
                         </div>
                         <div class="product-text-area p-3">

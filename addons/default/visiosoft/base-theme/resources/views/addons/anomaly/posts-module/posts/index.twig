@@ -12,7 +12,7 @@
             {% for post in posts %}
                 <a href="{{ post.route('view') }}" class="col-xl-4 col-lg-6 col-md-12 col-12 text-decoration-none my-3">
                     <div class="bannerImage_2 position-relative">
-                        {{ img( post.cover_photo.make.url ?? 'visiosoft.theme.base::images/no-image.png')
+                        {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png')
                             .class('w-100')|raw }}
                         <span class="p-1 fs-12 bgSpecial_6 position-absolute left-zero bottom-zero text-white">
                             {{ post.category.name }}
@@ -42,7 +42,7 @@
                     <div class="col-md-8 col-12">
                         <div class="position-relative w-fit shadow-sm">
                             <a href="{{ posts.first.route('view') }}">
-                                {{ img( posts.first.image.make.url ?? 'visiosoft.theme.base::images/no-image.png')
+                                {{ img( posts.first.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png')
                                     .class('w-100')|raw }}
                                 <div class="bgForLight"></div>
                                 <div class="d-flex flex-column position-absolute p-4 bottom-zero left-zero z-index">
@@ -61,7 +61,7 @@
                             {% if loop.first %}
                                 <div class="position-relative w-fit shadow-sm">
                                     <a href="{{ post.route('view') }}">
-                                    {{ img( post.image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('w-100')|raw }}
+                                    {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('w-100')|raw }}
                                     <div class="bgForLight"></div>
                                     <div class="d-flex flex-column position-absolute p-4 bottom-zero left-zero z-index">
                                         <div class="text-white fs-17px">{{ post.title }}</div>
@@ -74,7 +74,7 @@
                             {% else %}
                                 <div class="d-flex my-3">
                                     <a href="{{ post.route('view') }}" class="d-flex text-dark">
-                                        {{ img( post.image.make.url ?? 'visiosoft.theme.base::images/no-image.png')
+                                        {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png')
                                             .class('ImageWidth mr-3 w-100')|raw }}
                                         <div class="d-flex flex-column">
                                             <div class="text-capitalize fw-500 fs-13">{{ post.title }}</div>
