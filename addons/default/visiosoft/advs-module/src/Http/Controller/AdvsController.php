@@ -784,7 +784,7 @@ class AdvsController extends PublicController
         if ($this->request->action == "update") {
             $error = $form->build($this->request->update_id)->validate()->getFormErrors()->getMessages();
             if (!empty($error)) {
-                return $this->redirect->back();
+                return $this->redirect->back()->withInput();
             }
 
             /*  Update Adv  */
