@@ -29,6 +29,13 @@ class UsersFieldsSeeder extends Seeder
                 ]
             ],
             [
+                'slug'      => 'utm_source',
+                'namespace' => 'users',
+                'type'      => 'anomaly.field_type.text',
+                'name'      => 'visiosoft.module.profile::field.utm_source.name',
+                'locked'    => false,
+            ],
+            [
                 'name' => 'visiosoft.module.profile::field.country.name',
                 'slug' => 'country',
                 'type' => 'anomaly.field_type.relationship',
