@@ -1,11 +1,11 @@
-{% extends layout('posts') %}
+{% extends layout('articles') %}
 
 {% block styles %}
     {{ asset_style("visiosoft.theme.base::css/post.scss") }}
 {% endblock %}
 
 {% block content %}
-    <div class="continer p-0 m-0 maxWidth bg-white mx-auto">
+    <div class="container p-0 m-0 maxWidth bg-white mx-auto">
         {% set posts = entries('posts').recent().paginate() %}
 
         <div class="row p-4 m-0">
