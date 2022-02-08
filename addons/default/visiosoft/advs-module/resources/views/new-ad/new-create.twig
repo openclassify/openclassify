@@ -13,6 +13,7 @@
 {% endblock %}
 
 {% block content %}
+    {% set form_params = app.request.session.get('_old_input') %}
     <section class="clearfix home-default">
 
         {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'new-create'} %}
@@ -75,7 +76,7 @@
                                     {% for field in form.fields.translations('name') %}
                                         {{ field.setAttributes({
                                             'class': 'd-block mt-3 w-100 border-0'
-                                        }).render({'form': form})|raw }}
+                                        }).setValue(form_params[field.field~"_"~field.getLocale()]).render({'form': form})|raw }}
                                     {% endfor %}
                                 </label>
 
@@ -244,7 +245,7 @@
                                     <div class="col-md-12">
                                         <div class="field-group advs_desc">
                                             {% for field in form.fields.translations('advs_desc') %}
-                                                {{ field.render({'form': form})|raw }}
+                                                {{ field.setValue(form_params[field.field~"_"~field.getLocale()]).render({'form': form})|raw }}
                                             {% endfor %}
                                         </div>
                                     </div>
