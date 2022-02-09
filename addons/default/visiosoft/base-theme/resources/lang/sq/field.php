@@ -74,4 +74,5 @@ return [
     'try_again' => 'Provo përsëri',
 
     'news_title' => 'Sectoral Developments All in :name',
+    'all_news' => 'All News',
 ];
