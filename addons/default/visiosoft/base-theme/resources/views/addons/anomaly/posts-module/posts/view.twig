@@ -19,13 +19,13 @@
                                class="d-flex align-items-center bgSpecial_2 text-white paddingSpecial mr-2 text-decoration-none">
                                 <i class="fab fa-facebook-f fs-14"></i>
                                 <div class="lineGap mx-3"></div>
-                                <div class="fs-11 ">{{ trans('theme::field.share_on_facebook') }}</div>
+                                <div class="fs-11 ">{{ trans('visiosoft.theme.base::field.share_on_facebook') }}</div>
                             </a>
                             <a href="https://twitter.com/share?url={{ app.request.uri|url_encode }}"
                                class="d-flex align-items-center bgSpecial_3 text-white paddingSpecial mr-2 text-decoration-none">
                                 <i class="fab fa-twitter"></i>
                                 <div class="lineGap mx-3"></div>
-                                <div class="fs-11 ">{{ trans('theme::field.share_on_twitter') }}</div>
+                                <div class="fs-11 ">{{ trans('visiosoft.theme.base::field.share_on_twitter') }}</div>
                             </a>
                         </div>
                         <div class="fs-14 mt-3">{{ post.content|raw }}</div>
@@ -46,7 +46,7 @@
 
 
 
-                        <div class="bg-white rounded h-278 overflow-hidden mx-2">
+                        <div class="bg-white rounded h-278 w-230 overflow-hidden mt-2 mx-2 w-225">
                                     <a href="{{ post.route('view') }}"
                                        class="fs-14 product p-0 mr-3 rounded position-relative bg-white link-dark text-decoration-none">
                                         <div class="related-image-wrapper w-225">

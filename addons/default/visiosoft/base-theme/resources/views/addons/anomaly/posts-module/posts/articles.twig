@@ -1,3 +1,6 @@
+{% block styles %}
+    {{ asset_style("visiosoft.theme.base::css/post.scss") }}
+{% endblock %}
 <div class="container mt-2 mb-4 px-0">
     <div class="d-flex justify-content-between align-items-center mb-2">
         <h5 class="text-left ml-2">{{ trans('visiosoft.theme.base::field.news_title', {name: setting_value('streams::name')}) }}</h5>
@@ -12,12 +15,12 @@
                 <div class="px-2">
                     <div
                         class="fs-14 product rounded position-relative bg-white link-dark text-decoration-none border">
-                        <div class="product-img">
-                            <a href="{{ post.route('view') }}">
-                                {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('w-100')|raw }}
+                        <div class="product-img d-flex justify-content-center">
+                            <a href="{{ post.route('view') }}" class="">
+                                {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class("w-600")|raw }}
                             </a>
                         </div>
-                        <div class="product-text-area p-3">
+                        <div class="text-center product-text-area p-3">
                             <div class="fw-500 text-dark single-line">
                                 <a href="{{ post.route('view') }}" class="text-dark">
                                     {{ post.title }}
