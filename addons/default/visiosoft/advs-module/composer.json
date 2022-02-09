@@ -11,6 +11,7 @@
   },
   "require": {
     "fruitcake/laravel-cors": "^2.0",
-    "visiosoft/style_selector-module": "*"
+    "visiosoft/style_selector-module": "*",
+    "visiosoft/submenu-plugin": "*"
   }
 }

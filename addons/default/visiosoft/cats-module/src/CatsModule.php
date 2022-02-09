@@ -10,7 +10,7 @@ class CatsModule extends Module
      *
      * @var bool
      */
-    protected $navigation = true;
+    protected $navigation = false;
 
     /**
      * The addon icon.
@@ -32,4 +32,5 @@ class CatsModule extends Module
         ]
     ];
 
+    protected $parent = 'visiosoft.module.advs';
 }
