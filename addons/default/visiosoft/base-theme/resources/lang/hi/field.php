@@ -74,4 +74,5 @@ return [
     'try_again' => 'पुनः प्रयास करें',
 
     'news_title' => 'Sectoral Developments All in :name',
+    'all_news' => 'All News',
 ];
