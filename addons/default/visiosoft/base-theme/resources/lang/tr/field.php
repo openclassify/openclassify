@@ -74,4 +74,5 @@ return [
     'try_again' => 'Tekrar Deneyin',
 
     'news_title' => 'Tüm Sektörel Gelişmeler :name',
+    'all_news' => 'All News',
 ];
