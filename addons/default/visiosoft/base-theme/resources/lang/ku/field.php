@@ -98,4 +98,5 @@ return [
     'try_again' => 'Dubare bixebitin',
 
     'news_title' => 'Sectoral Developments All in :name',
+    'all_news' => 'All News',
 ];
