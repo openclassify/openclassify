@@ -73,5 +73,5 @@ return [
 
 
     'news_title' => 'Sektörel Gelişmeler :name\'da',
-    'all_news' => 'Tüm İçerikler'
+
 ];
