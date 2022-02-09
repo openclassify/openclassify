@@ -74,4 +74,5 @@ return [
     'try_again' => 'Zkus to znovu',
 
     'news_title' => 'Sectoral Developments All in :name',
+    'all_news' => 'All News',
 ];
