@@ -17,6 +17,7 @@ use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\ArgvInput;
 use Visiosoft\AdvsModule\Adv\Command\DeleteInstaller;
 use WidgetSeeder;
 use ZipArchive;
@@ -132,29 +133,35 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-//        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
-//        file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
-//        file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
-//        file_put_contents(storage_path('categories.sql'), fopen($repository . "categories.sql", 'r'));
-//        file_put_contents(storage_path('images.zip'), fopen($repository . "images.zip", "r"));
-//        file_put_contents(storage_path('cats.zip'), fopen($repository . "cats.zip", "r"));
-//
-//        Model::unguard();
-//        DB::unprepared(file_get_contents(storage_path('advs.sql')));
-//        DB::unprepared(file_get_contents(storage_path('categories.sql')));
-//        DB::unprepared(file_get_contents(storage_path('settings.sql')));
-//        Model::reguard();
+        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
+        file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
+        file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
+        file_put_contents(storage_path('categories.sql'), fopen($repository . "categories.sql", 'r'));
+        file_put_contents(storage_path('images.zip'), fopen($repository . "images.zip", "r"));
+        file_put_contents(storage_path('cats.zip'), fopen($repository . "cats.zip", "r"));
 
-//
-//        $zip = new \ZipArchive();
-//        $zip->open(storage_path('images.zip'), ZipArchive::CREATE);
-//        $zip->extractTo(storage_path('streams/default/files-module/local/images/'));
-//        $zip->open(storage_path('cats.zip'), ZipArchive::CREATE);
-//        $zip->extractTo(storage_path('streams/default/files-module/local/category_icon/'));
-//        $zip->close();
+        $application_reference = (new ArgvInput())->getParameterOption('--app', env('APPLICATION_REFERENCE', 'default'));
+
+        $categories = str_replace('{application_reference}', $application_reference, file_get_contents(storage_path('categories.sql')));
+        $advs = str_replace('{application_reference}', $application_reference, file_get_contents(storage_path('advs.sql')));
+        $settings = str_replace('{application_reference}', $application_reference, file_get_contents(storage_path('settings.sql')));
+
+        Model::unguard();
+        DB::unprepared($advs);
+        DB::unprepared($categories);
+        DB::unprepared($settings);
+        Model::reguard();
+
+
+        $zip = new \ZipArchive();
+        $zip->open(storage_path('images.zip'), ZipArchive::CREATE);
+        $zip->extractTo(storage_path('streams/' . $application_reference . '/files-module/local/images/'));
+        $zip->open(storage_path('cats.zip'), ZipArchive::CREATE);
+        $zip->extractTo(storage_path('streams/' . $application_reference . '/files-module/local/category_icon/'));
+        $zip->close();
 
         //Sync Files
-//        $this->command->call('files:sync');
+        $this->command->call('files:sync');
 
         $this->call(WidgetSeeder::class);
 
