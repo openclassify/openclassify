@@ -132,29 +132,29 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
-        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
-        file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
-        file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
-        file_put_contents(storage_path('categories.sql'), fopen($repository . "categories.sql", 'r'));
-        file_put_contents(storage_path('images.zip'), fopen($repository . "images.zip", "r"));
-        file_put_contents(storage_path('cats.zip'), fopen($repository . "cats.zip", "r"));
+//        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
+//        file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
+//        file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
+//        file_put_contents(storage_path('categories.sql'), fopen($repository . "categories.sql", 'r'));
+//        file_put_contents(storage_path('images.zip'), fopen($repository . "images.zip", "r"));
+//        file_put_contents(storage_path('cats.zip'), fopen($repository . "cats.zip", "r"));
+//
+//        Model::unguard();
+//        DB::unprepared(file_get_contents(storage_path('advs.sql')));
+//        DB::unprepared(file_get_contents(storage_path('categories.sql')));
+//        DB::unprepared(file_get_contents(storage_path('settings.sql')));
+//        Model::reguard();
 
-        Model::unguard();
-        DB::unprepared(file_get_contents(storage_path('advs.sql')));
-        DB::unprepared(file_get_contents(storage_path('categories.sql')));
-        DB::unprepared(file_get_contents(storage_path('settings.sql')));
-        Model::reguard();
-
-
-        $zip = new \ZipArchive();
-        $zip->open(storage_path('images.zip'), ZipArchive::CREATE);
-        $zip->extractTo(storage_path('streams/default/files-module/local/images/'));
-        $zip->open(storage_path('cats.zip'), ZipArchive::CREATE);
-        $zip->extractTo(storage_path('streams/default/files-module/local/category_icon/'));
-        $zip->close();
+//
+//        $zip = new \ZipArchive();
+//        $zip->open(storage_path('images.zip'), ZipArchive::CREATE);
+//        $zip->extractTo(storage_path('streams/default/files-module/local/images/'));
+//        $zip->open(storage_path('cats.zip'), ZipArchive::CREATE);
+//        $zip->extractTo(storage_path('streams/default/files-module/local/category_icon/'));
+//        $zip->close();
 
         //Sync Files
-        $this->command->call('files:sync');
+//        $this->command->call('files:sync');
 
         $this->call(WidgetSeeder::class);
 

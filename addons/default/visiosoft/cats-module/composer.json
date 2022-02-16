@@ -1,9 +1,0 @@
-{
-    "name": "visiosoft/cats-module",
-    "type": "streams-addon",
-    "autoload": {
-        "psr-4": {
-            "Visiosoft\\CatsModule\\": "src/"
-        }
-    }
-}

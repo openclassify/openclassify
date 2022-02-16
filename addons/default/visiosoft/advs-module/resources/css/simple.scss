@@ -1,7 +1,0 @@
-$cats: 10;
-
-@for $i from 2 through $cats {
-  .cat#{$i} {
-    display: none;
-  }
-}
