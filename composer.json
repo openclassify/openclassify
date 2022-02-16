@@ -74,7 +74,6 @@
         "visiosoft/integer-field_type": "~2.1.0",
         "visiosoft/list-field_type": "*",
         "visiosoft/system-module": "~1.1.0",
-        "wirelab/language_switcher-plugin": "^1.3",
         "visiosoft/addblock-extension": "^1.1",
         "maatwebsite/excel": "*",
         "google/recaptcha": "1.2.*",
@@ -84,7 +83,19 @@
         "pusher/pusher-php-server": "^5.0",
         "simplepie/simplepie": "^1.5.0",
         "guzzlehttp/guzzle": "^7.3",
-        "visiosoft/connect-module": "^1.0"
+        "visiosoft/connect-module": "^1.0",
+        "visiosoft/singlefile-field_type": "^1.0",
+        "visiosoft/profile-module": "^1.0",
+        "visiosoft/multiple-field_type": "^1.0",
+        "visiosoft/media-field_type": "^1.0",
+        "visiosoft/location-module": "^1.0",
+        "visiosoft/input_file-field_type": "^1.0",
+        "visiosoft/defaultadmin-theme": "^1.0",
+        "visiosoft/cats-module": "^1.0",
+        "visiosoft/base-theme": "^1.0",
+        "visiosoft/advs-module": "^1.0",
+        "visiosoft/json-field_type": "^1.0",
+        "visiosoft/language_switcher-plugin": "^1.0"
     },
     "replace": {
         "anomaly/streams-platform": "*"
