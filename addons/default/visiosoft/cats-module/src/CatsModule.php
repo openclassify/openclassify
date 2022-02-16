@@ -31,5 +31,4 @@ class CatsModule extends Module
             ]
         ]
     ];
-
 }
