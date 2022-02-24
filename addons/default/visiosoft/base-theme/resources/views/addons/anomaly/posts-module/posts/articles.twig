@@ -1,5 +1,18 @@
 {% block styles %}
     {{ asset_style("visiosoft.theme.base::css/post.scss") }}
+    <style>
+        .container{
+            max-width: 100% !important;
+        }
+        .new-img-height{
+            height: 300px ;
+        }
+
+        .news-cover-img-wrapper {
+            padding: 20px;
+            color: black;
+        }
+    </style>
 {% endblock %}
 <div class="row mt-2 mb-4 px-0">
     <div class="d-flex justify-content-between ml-auto align-items-center mb-2">
@@ -12,9 +25,6 @@
         {% if entries('posts','types').findBySlug('default') %}
             {% set posts = entries('posts').type('default').live().limit(4).get() %}
             {% for post in posts %}
-
-
-
             <div class="col-4 mt-2">
                 <div class="px-2">
                     <div
@@ -41,16 +51,3 @@
         {{ trans('visiosoft.theme.base::field.all_news') }}
     </a>
 </div>
-<style>
-    .container{
-        max-width: 100% !important;
-    }
-    .new-img-height{
-        height: 300px ;
-    }
-
-    .news-cover-img-wrapper {
-        padding: 20px;
-        color: black;
-    }
-</style>
