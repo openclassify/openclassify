@@ -1,0 +1,58 @@
+<section id="topbar">
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="button-menu">
+                <button href="javascript:void(0);" type="button" class="button-menu-mobile"
+                        onclick="$('#sidebar').toggleClass('open'); $('body').toggleClass('expand');">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+            <ul class="nav navbar-nav navbar-left d-flex align-items-center">
+                {% for shortcut in template.cp.shortcuts %}
+                    <li class="nav-item shortcut {#dropdown#}">
+                        <a {{ html_attributes(shortcut.attributes) }} {#data-toggle="dropdown"#}>
+                            {#<span class="tag tag-danger">{{ icon(shortcut.icon) }} 2</span>#}
+                            {{ icon(shortcut.icon) }}
+                        </a>
+                        {#<ul class="dropdown-menu-right dropdown-menu">#}
+                        {#<li class="dropdown-item">#}
+                        {#<a href="/" target="_blank">#}
+                        {#<i class="fa fa-external-link"></i>#}
+                        {#{{ trans('theme::control_panel.view_site') }}#}
+                        {#</a>#}
+                        {#</li>#}
+                        {#<li class="dropdown-item">#}
+                        {#<a href="/admin/logout">#}
+                        {#<i class="fa fa-power-off"></i>#}
+                        {#{{ trans('theme::control_panel.logout') }}#}
+                        {#</a>#}
+                        {#</li>#}
+                        {#</ul>#}
+                    </li>
+                {% endfor %}
+
+                {{ addBlock('admin/topbar')|raw }}
+
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0);" data-toggle="dropdown">
+                        <img src="{{ user().gravatar.path }}" width="36" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu-right dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="/" target="_blank">
+                                <i class="fa fa-external-link"></i>
+                                {{ trans('theme::control_panel.view_site') }}
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="/admin/logout">
+                                <i class="fa fa-power-off"></i>
+                                {{ trans('theme::control_panel.logout') }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

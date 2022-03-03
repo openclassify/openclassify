@@ -1,0 +1,10 @@
+// Tables
+
+@mixin table-row-variant($state, $background) {
+
+    .table-#{$state} {
+        box-sizing: border-box;
+        border-left: 3px solid;
+        border-color: $background;
+    }
+}

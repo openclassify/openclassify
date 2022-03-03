@@ -1,0 +1,15 @@
+html,
+body {
+    height: 100%;
+    background-color: #f1f1f1;
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-shadow: rgba(0, 0, 0, .05) 0 0 1px;
+
+    &:focus {
+        outline: none !important;
+    }
+}

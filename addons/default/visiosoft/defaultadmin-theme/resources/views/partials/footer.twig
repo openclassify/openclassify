@@ -1,0 +1,29 @@
+<section id="footer">
+
+    <ul class="meta">
+        <li class="copyright">
+            &copy; {{ 'now'|date('Y') }} {{ setting_value('visiosoft.theme.defaultadmin::footer_copyright_org_name') }}
+        </li>
+        <li class="footprint">
+            {{ request_time() }} <span>|</span> {{ memory_usage() }}
+        </li>
+    </ul>
+
+    <ul class="extra">
+        <li class="language">
+            <select class="custom-select" onchange="window.location = '?_locale=' + this.value;">
+                {% for iso in config('streams::locales.supported')|keys %}
+                    <option value="{{ iso }}" {{ config('app.locale') == iso ? 'selected' }}>
+                        {{ trans('streams::locale.' ~ iso ~ '.name') }} ({{ iso }})
+                    </option>
+                {% endfor %}
+            </select>
+        </li>
+        <li class="help">
+            <a class="btn btn-danger" href="#" data-toggle="modal" data-target="#modal-help">
+                {{ icon('question-circle') }} {{ trans('visiosoft.theme.defaultadmin::control_panel.help') }}
+            </a>
+        </li>
+    </ul>
+
+</section>

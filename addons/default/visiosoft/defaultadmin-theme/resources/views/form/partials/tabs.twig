@@ -1,0 +1,44 @@
+<ul class="nav nav-sections {{ stacked ? 'nav-stacked' }}">
+    {% spaceless %}
+        {% for slug, tab in tabs %}
+            <li class="nav-item {{ loop.first ? ' active' }}">
+                <a href="#tab-{{ form.options.prefix }}{{ tab.slug ?: slug }}" data-toggle="tab" class="nav-link">
+                    {{ tab.icon ? icon(tab.icon) }}
+                    {{ trans(tab.title) }}
+                </a>
+            </li>
+        {% endfor %}
+    {% endspaceless %}
+</ul>
+
+<div class="card-block card-body">
+    {% for slug, tab in section.tabs %}
+        <div class="tab__pane tab-pane {{ loop.first ? ' active' }}" id="tab-{{ form.options.prefix }}{{ tab.slug ?: slug }}">
+            {% if tab.view %}
+                {% include tab.view %}
+            {% elseif tab.html %}
+                {{ parse(tab.html)|raw }}
+            {% elseif tab.rows %}
+                {% include "streams::form/partials/rows" with {"rows": tab.rows} %}
+            {% else %}
+                {% if tab.fields is empty %}
+                    <div class="form-group ">
+                        {{ trans("streams::message.no_fields_available") }}
+                    </div>
+                {% else %}
+
+                    {% include "streams::form/partials/fields" with {"fields": tab.fields} %}
+
+                {% endif %}
+            {% endif %}
+        </div>
+    {% endfor %}
+</div>
+<script>
+    var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}"
+    var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}"
+    var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}"
+    var default_neighborhood = "{{ setting_value('visiosoft.module.location::default_neighborhood') }}"
+    var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+</script>
+{{ asset_add("scripts.js", "visiosoft.theme.defaultadmin::js/users/filterLocation.js") }}
