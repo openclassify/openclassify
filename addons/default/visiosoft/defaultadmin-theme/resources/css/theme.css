@@ -3028,15 +3028,15 @@ border-color: {{ setting_value('visiosoft.theme.defaultadmin::primary_color') }}
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::secondary_color') }} !important;
 border-color: {{ setting_value('visiosoft.theme.defaultadmin::secondary_color') }} !important;
 }
-alert-danger,.btn-danger {
+.alert-danger,.btn-danger {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::negative_color') }} !important;
 border-color: {{ setting_value('visiosoft.theme.defaultadmin::negative_color') }} !important;
 }
-alert-info,.btn-info {
+.alert-info,.btn-info {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::info_color') }} !important;
 border-color: {{ setting_value('visiosoft.theme.defaultadmin::info_color') }} !important;
 }
-alert-warning, .btn-warning {
+.alert-warning, .btn-warning {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::warning_color') }} !important;
 border-color: {{ setting_value('visiosoft.theme.defaultadmin::warning_color') }} !important;
 }
