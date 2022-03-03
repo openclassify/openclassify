@@ -1,0 +1,20 @@
+<div class="logo-bar">
+    <div class="button-menu logo-bar-table">
+        <div class="align-middle text-center logo-bar-cell menu-action">
+            <button href="javascript:void(0);" type="button" class="button-menu-mobile"
+                    onclick="$('#sidebar').toggleClass('open'); $('body').toggleClass('expand');">
+                <i class="fa fa-bars"></i>
+            </button>
+        </div>
+        <div class="align-middle text-center logo-bar-cell logo">
+            <a href="/admin" class="logo variant-logo">
+                {% if setting_value('visiosoft.theme.defaultadmin::panel_icon') %}
+                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::panel_icon')).make.url }}"
+                         alt="site icon">
+                {% else %}
+                    {{ img('theme::img/panel-icon.svg').data|raw }}
+                {% endif %}
+            </a>
+        </div>
+    </div>
+</div>
