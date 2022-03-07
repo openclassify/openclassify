@@ -1,0 +1,364 @@
+#search .search-bar::placeholder {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color')}};
+}
+#topbar .button-menu .button-menu-mobile {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}};
+}
+#menu {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+#menu > ul > .highlighted {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+#sidebar {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.breadcrumb {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+    border-radius: 0 !important;
+}
+.nav.nav-sections.nav-stacked {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+.card.card-flex .card-block, .nav.nav-sections li.active a {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }};
+}
+a { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }} !important; transition: 0.5s;}
+a:hover { color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color') }} !important;}
+
+.form-control, .CodeMirror-scroll {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}} !important;
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
+}
+.form-control::placeholder {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}} !important;
+}
+.form-control:disabled {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }};
+    opacity: 0.5;
+}
+.form-control:focus {
+background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_background_color')}} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color')}} !important;
+    color: #ccc;
+}
+.choices[data-type*=select-one] .choices__input {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}};
+}
+.choices__input {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
+}
+.choices__inner {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
+    border: solid {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
+}
+.choices__list--dropdown .choices__item--selectable.is-highlighted {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color')}};
+}
+.choices__list {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
+    border: none;
+}
+.form .field-group {
+    border-bottom: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color')}};
+}
+.card-block, .card-body, #footer, .modal-dialog, .modal-content, .modal-header, .modal-body, .nav-pills,.dropdown-menu {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }};
+}
+.custom-select {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
+    color: #bbb;
+}
+.custom-select:focus {
+    border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}};
+}
+.tagify__input {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color')}} !important;
+}
+body {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color')}};
+}
+.table {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+    color: #ccc !important;
+}
+.table thead,.card-header {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color')}};
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.card-header h1,h2,h3,h3,h4,h5,h6 {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color')}} !important;
+}
+.table th, .table td {
+    border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.navbar-light {
+    border-radius: 0;
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }};
+}
+.table thead th a {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}};
+}
+.table td a {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}};
+    opacity: 1;
+    transition: 0.5s;
+}
+.table td a:hover {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color')}};
+}
+.page-info {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color')}} !important;
+}
+.select2-container--default .select2-selection--single {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color')}};
+}
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_background_color') }};
+    border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }};
+}
+.select2-container--open .select2-dropdown--below {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }};
+}
+.select2-container--default .select2-search--dropdown .select2-search__field {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_background_color') }};
+    border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color') }};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }};
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }} !important;
+}
+.navbar-light .navbar-nav .open > .nav-link, .navbar-light .navbar-nav .open > .nav-link:focus, .navbar-light .navbar-nav .open > .nav-link:hover, .navbar-light .navbar-nav .active > .nav-link, .navbar-light .navbar-nav .active > .nav-link:focus, .navbar-light .navbar-nav .active > .nav-link:hover, .navbar-light .navbar-nav .nav-link.open, .navbar-light .navbar-nav .nav-link.open:focus, .navbar-light .navbar-nav .nav-link.open:hover, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.active:focus, .navbar-light .navbar-nav .nav-link.active:hover {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }};
+}
+.navbar-light .navbar-nav .nav-link {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color') }};
+}
+div, p, span, table, body, h1, h2, h3, h4, h5, h6, td, tr, .user-action-dropdown {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.btn-inverse {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color')}};
+    border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }};
+    transition: 0.5s;
+}
+.btn-inverse:hover {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }};
+    border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }};
+}
+.nav-sections {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+    margin-bottom: 0px !important;
+}
+.pagination li a {
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }};
+    border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color')}};
+}
+.pagination li a:hover {
+    border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color')}} !important;
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color')}} !important;
+}
+.pagination .disabled span {
+    border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color')}} !important;
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color')}} !important;
+}
+.pagination .active span {
+    border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color')}} !important;
+    background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color')}} !important;
+}
+.top-bar, .user-action-dropdown {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+.dropdown-item:hover {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.logo-bar-table {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+#main {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }} !important;
+}
+.boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.boolean-field_type .switch__label:before {
+opacity: 0.3;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+#menu > ul > li > a,#sidebar > ul > li > a > span, #sidebar > ul > li > a > i {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_menu_link_color') }} !important;
+transition: 0.5s;
+opacity: 0.3;
+}
+#menu > ul > li > a:hover {
+    opacity: 1;
+    transition: 0.5s;
+}
+#sidebar > ul > li:hover > a > span,  #sidebar > ul > li:hover > a > i {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}};
+    opacity: 1;
+}
+#sidebar > ul > li.active {
+background: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color')}} !important;
+border-left: 4px solid {{ setting_value('visiosoft.theme.defaultadmin::dark-active_sidebar_border_color') }} !important;
+}
+#sidebar > ul > li.active a span,#menu > ul > .highlighted > a {
+opacity: 1;
+}
+.card.card-flex .card-block, .nav.nav-sections li.active {
+background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color')}} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}} !important;
+}
+.nav.nav-sections li a {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}} !important;
+opacity: 0.3;
+transition: 0.5s;
+}
+.nav.nav-sections li:hover a {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color')}} !important;
+opacity: 1;
+}
+.page-item.active .page-link, .page-item.active .page-link:focus, .page-item.active .page-link:hover {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color')}};
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color')}};
+}
+.select2-container--default .select2-selection--single .select2-selection__placeholder {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_placeholder_color') }} !important;
+}
+.redactor-toolbar {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.redactor-layer, .redactor-box {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }} !important;
+}
+.redactor-toolbar li a:hover, .redactor-toolbar li a:active, .redactor-toolbar li a.redactor-act {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.redactor-dropdown {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.redactor-dropdown li:hover {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+
+.switch input:checked + .switch__label:before {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_positive_color') }} !important;
+opacity: 1;
+}
+body {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_background_color') }} !important;
+}
+.choices__list--multiple .choices__item {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
+border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
+}
+.nav.nav-sections li a {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+#sidebar > ul > li.active {
+background: {{ setting_value('visiosoft.theme.defaultadmin::dark_sidebar_secondary_color') }};
+box-sizing: border-box;
+border-left: 3px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_active_sidebar_border_color') }} !important;
+}
+.page-info {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
+}
+.alert-success, .btn-success {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_positive_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_positive_color') }} !important;
+}
+.alert-success p, .btn-success p, .alert-success span, .btn-success span {
+color: {{ setting_value('visiosoft.theme.defaultadmin::block_text_color') }} !important;
+}
+.alert-primary,.btn-primary {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-primary p,.btn-primary p, .alert-primary span,.btn-primary span {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-secondary,.btn-secondary {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-secondary p,.btn-secondary p, .alert-secondary span,.btn-secondary span {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-danger,.btn-danger {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_negative_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_negative_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-danger p,.btn-danger p, .alert-danger span,.btn-danger span {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-info,.btn-info {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-info p,.btn-info p, .alert-info span,.btn-info span {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-warning, .btn-warning {
+background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_warning_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_warning_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.alert-warning p, .btn-warning p, .alert-warning span, .btn-warning span {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.card-block, .card-body, #footer, .modal-dialog, .breadcrumb, .user-action-dropdown, .card.card-flex .card-block, .nav.nav-sections li.active, .modal-content, .modal-header, .modal-body, .nav-pills, .dropdown-menu {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+.form-control {
+    border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+.btn-group a {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }} !important;
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.btn-group a:hover {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.btn-default:active:hover, .btn-default:active:focus, .btn-default:active.focus, .btn-default.active:hover, .btn-default.active:focus, .btn-default.active.focus, .open > .btn-default.dropdown-toggle:hover, .open > .btn-default.dropdown-toggle:focus, .open > .btn-default.dropdown-toggle.focus {
+color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+}
+.choices__inner {
+    display: inline-block;
+    vertical-align: top;
+    width: 100%;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }} !important;
+    padding: 7.5px 7.5px 3.75px;
+    border: 0 !important;
+    border-radius: 0.17rem !important;
+    font-size: 14px;
+    min-height: 44px;
+    overflow: hidden;
+}
+.choices {
+    border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+.is-open .choices__list--dropdown, .dropdown-menu {
+    border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }} !important;
+}
+.choices[data-type*=select-one] .choices__input{
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_focused_background_color') }} !important;
+}
+.choices__list--dropdown .choices__item:hover, .choices__list--dropdown .choices__item.is-highlighted {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}

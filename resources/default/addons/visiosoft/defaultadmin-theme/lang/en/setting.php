@@ -74,4 +74,7 @@ return [
     "dark_info_color" => [
         'name' => 'Dark mode info color'
     ],
+    "dark_mode" => [
+        'name' => 'Dark mode'
+    ],
 ];

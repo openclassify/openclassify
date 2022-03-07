@@ -83,7 +83,7 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $middleware = [
-        //Visiosoft\MostafaTheme\Http\Middleware\ExampleMiddleware::class
+        //Visiosoft\DefaultadminTheme\Http\Middleware\ExampleMiddleware::class
     ];
 
     /**
@@ -93,7 +93,7 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
      */
     protected $groupMiddleware = [
         //'web' => [
-        //    Visiosoft\MostafaTheme\Http\Middleware\ExampleMiddleware::class,
+        //    Visiosoft\DefaultadminTheme\Http\Middleware\ExampleMiddleware::class,
         //],
     ];
 
@@ -111,7 +111,7 @@ class DefaultadminThemeServiceProvider extends AddonServiceProvider
      * @type array|null
      */
     protected $aliases = [
-        //'Example' => Visiosoft\MostafaTheme\Example::class
+        //'Example' => Visiosoft\DefaultadminTheme\Example::class
     ];
 
     /**

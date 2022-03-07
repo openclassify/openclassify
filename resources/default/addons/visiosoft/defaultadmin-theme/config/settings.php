@@ -6,6 +6,12 @@ return [
         'type'       => 'anomaly.field_type.textarea',
         'input_view' => 'visiosoft.theme.defaultadmin::admin/navigation/settings',
     ],
+    "dark_mode" => [
+        "type" => "anomaly.field_type.boolean",
+        "config" => [
+            "default_value" => 0,
+        ]
+    ],
     "login_icon" => [
         "type"   => "anomaly.field_type.file",
         "config" => [
@@ -89,7 +95,7 @@ return [
         "config" => [
             "default_value" => '#2B9CBF',
         ]
-    ],
+    ]
 //    "dark_primary_color" => [
 //        "type"   => "anomaly.field_type.colorpicker",
 //        "config" => [

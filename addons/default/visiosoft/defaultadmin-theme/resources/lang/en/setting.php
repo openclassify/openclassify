@@ -74,4 +74,61 @@ return [
     "dark_info_color" => [
         'name' => 'Dark mode info color'
     ],
+    "dark_mode" => [
+        'name' => 'Dark mode'
+    ],
+    'dark_links_color' => [
+        'name' => 'Dark mode links color'
+    ],
+    'dark_links_hover_active_color' => [
+        'name' => 'Dark mode links hover and active color'
+    ],
+    'dark_menu_link_color' => [
+        'name' => 'Dark mode menu links color'
+    ],
+    'dark_active_sidebar_border_color' => [
+        'name' => 'Dark mode active sidebar border'
+    ],
+    'dark_text_color' => [
+        'name' => 'Dark mode text color'
+    ],
+    'dark_input_background_color' => [
+        'name' => 'Dark mode input background color'
+    ],
+    'dark_input_placeholder_color' => [
+        'name' => 'Dark mode input placeholder color'
+    ],
+    'dark_input_focused_background_color' => [
+        'name' => 'Dark mode input focused background color'
+    ],
+    'dark_input_focused_border_color' => [
+        'name' => 'Dark mode input focused border color'
+    ],
+    'links_color' => [
+        'name' => 'Links color'
+    ],
+    'links_hover_active_color' => [
+        'name' => 'Links hover and active color'
+    ],
+    'menu_link_color' => [
+        'name' => 'Menu links color'
+    ],
+    'text_color' => [
+        'name' => 'Text color'
+    ],
+    'input_background_color' => [
+        'name' => 'Input background color'
+    ],
+    'input_placeholder_color' => [
+        'name' => 'Input placeholder color'
+    ],
+    'input_focused_background_color' => [
+        'name' => 'Input focused background color'
+    ],
+    'input_focused_border_color' => [
+        'name' => 'Input focused border color'
+    ],
+    'block_background_color' => [
+        'name' => 'Block background color'
+    ]
 ];
