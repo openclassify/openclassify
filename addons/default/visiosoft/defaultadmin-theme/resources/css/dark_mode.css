@@ -362,3 +362,6 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !imp
 .choices__list--dropdown .choices__item:hover, .choices__list--dropdown .choices__item.is-highlighted {
     background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
 }
+.select2-container--default .select2-selection--single {
+border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}

@@ -225,7 +225,7 @@ return [
     'dark_input_background_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
-            'default_value' => '#1d365e'
+            'default_value' => '#2f4770'
         ]
     ],
     'dark_input_placeholder_color' => [
@@ -237,13 +237,13 @@ return [
     'dark_input_focused_background_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
-            'default_value' => '#222f5b'
+            'default_value' => '#2a3c6b'
         ]
     ],
     'dark_input_focused_border_color' => [
         'type' => 'anomaly.field_type.colorpicker',
         'config' => [
-            'default_value' => '#1a285b'
+            'default_value' => '#1e3060'
         ]
     ],
 ];
