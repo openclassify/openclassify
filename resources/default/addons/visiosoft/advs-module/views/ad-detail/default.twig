@@ -1,0 +1,63 @@
+{% extends layout('ad-detail') %}
+
+    {% block styles %}
+        {{ asset_style("visiosoft.module.advs::css/detail.css") }}
+    {% endblock %}
+
+    {% block content %}
+        <section id="main" class="clearfix details-page">
+            <div class="container">
+
+                <!-- admin -->
+                {% include "visiosoft.module.advs::ad-detail/partials/author-button" %}
+                <!-- admin -->
+
+                {% if setting_value('visiosoft.theme.base::breadcrumbs') %}
+                    <!-- breadcrumb -->
+                    {% include "visiosoft.module.advs::ad-detail/partials/breadcrumb" %}
+                    <!-- breadcrumb -->
+                {% endif %}
+                {% include "visiosoft.module.advs::ad-detail/partials/ad-status" %}
+                <h2 class="title">
+                    {{ adv.title }}
+                    {{ addBlock('ad-detail/title/action',{'adv_id':adv.id})|raw }}
+                </h2>
+
+                <!--detail-ad -->
+                <div class="section slider mb-4">
+                    <div class="row">
+                        {% include "visiosoft.module.advs::ad-detail/partials/slider" %}
+                        <div class="col-md-5">
+                            {% if setting_value('visiosoft.theme.base::ad_details') %}
+                                {% include "visiosoft.module.advs::ad-detail/partials/detail" %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+                <!--detail-ad -->
+
+                <ul class="docs list-unstyled">
+                    {% for doc in adv.doc_files %}
+                        <li><a class="text-dark small" href="{{ doc.url }}" download><i
+                                        class="fa fa-lg fa-download small"></i> {{ doc.name }}</a></li>
+                    {% endfor %}
+                </ul>
+
+                {% if setting_value('visiosoft.theme.base::ad_details_tab') %}
+
+                    {% if blocks('ad-item-content-block-area') is null %}
+                        {% include "visiosoft.module.advs::ad-detail/partials/content" %}
+                    {% else %}
+                        {{ blocks('ad-item-content-block-area') }}
+                    {% endif %}
+
+                    {{ addBlock('ad-detail/widget', {'price': adv.price, 'id': adv.id})|raw }}
+                {% endif %}
+            </div>
+
+            {% include "visiosoft.module.advs::ad-detail/partials/dropleft-edit" %}
+        </section>
+
+        {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
+
+    {% endblock %}

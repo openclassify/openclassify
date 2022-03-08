@@ -1,0 +1,41 @@
+{{ asset_add('scripts.js', 'anomaly.field_type.files::js/jquery-sortable.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.files::js/input.js') }}
+
+{{ asset_add('styles.css', 'anomaly.field_type.files::css/input.css') }}
+
+{% if not (field_type.readonly) %}
+    {% if field_type.config.mode in ['default', 'select'] %}
+        <a data-toggle="modal" data-target="#{{ field_type.field_name }}-modal" class="btn btn-info btn-xs"
+           href="{{ url('streams/files-field_type/index/' ~ field_type.config_key) }}">
+            {{ icon('search') }}
+            {{ trans('anomaly.field_type.files::button.select_file') }}
+        </a>
+    {% endif %}
+
+    {% if field_type.config.mode in ['default', 'upload'] %}
+        <a data-toggle="modal"
+           data-target="#{{ field_type.field_name }}-modal" {% if field_type.config.folders|length == 1 %} href="{{ url('streams/files-field_type/upload/' ~ field_type.config.folders|first ~ '/' ~ field_type.config_key) }}" {% else %} href="{{ url('streams/files-field_type/choose/' ~ field_type.config_key) }}" {% endif %}
+           class="btn btn-success btn-xs">
+            {{ icon('upload') }}
+            {{ trans('anomaly.field_type.files::button.upload') }}
+        </a>
+    {% endif %}
+
+    <a href="#" data-remove="all" class="btn btn-danger btn-xs pull-right">
+        {{ icon('ban') }}
+        {{ trans('anomaly.field_type.files::button.remove_all') }}
+    </a>
+{% endif %}
+
+<input type="hidden" name="{{ field_type.input_name }}"
+       value="{{ field_type.ids|join(',') }}" {{ html_attributes(field_type.attributes) }} {{ field_type.disabled ? 'disabled' }} {{ field_type.readonly ? 'readonly' }}>
+
+<div class="selected">
+    {{ field_type.value_table|raw }}
+</div>
+
+<div class="modal remote" id="{{ field_type.field_name }}-modal">
+    <div class="modal-dialog modal-wide">
+        <div class="modal-content"></div>
+    </div>
+</div>

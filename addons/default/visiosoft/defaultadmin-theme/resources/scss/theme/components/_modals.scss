@@ -1,0 +1,53 @@
+body.modal-open {
+    overflow: visible;
+}
+
+.modal {
+    overflow: hidden;
+
+    &.fade .modal-dialog {
+        transition: transform .3s ease-out;
+    }
+
+    .close {
+        margin-top: 4px;
+        margin-right: 4px;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .modal-content {
+        min-height: 100px;
+        @include border-radius($border-radius-sm);
+    }
+}
+
+.modal-loading {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 99999;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.5);
+
+    .loader {
+        margin-top: .7rem;
+    }
+}
+
+.modal-wide {
+    max-width: unset;
+}
+
+.modal-dialog.modal-wide {
+    width: auto;
+    margin: 30px;
+}
+
+.modal-filter {
+    margin-bottom: $spacer-x;
+}
+
+.modal-title {
+    padding-right: 3rem;
+}

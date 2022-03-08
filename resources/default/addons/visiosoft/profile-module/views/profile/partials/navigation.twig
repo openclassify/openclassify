@@ -1,0 +1,56 @@
+<div class="col-12 navbar-dark py-2 d-md-none profile-nav-toggler">
+    <img src="{{ img('visiosoft.module.profile::images/nav-menu.svg').url }}" alt="nav icon" id="navbarSideButton"
+         class="ml-2">
+</div>
+<div class="col-10 col-sm-6 col-md-3 profile-navigation border navbar-side" id="navbarSide">
+    <span class="px-3 mb-2 link-unstyled">
+        {{ img('visiosoft.module.profile::images/interface.svg').data|raw }}
+        <p>
+            <a href="{{ url_route('profile::profile') }}" class="link-unstyled mb-0">{{ auth_user().name }}</a>
+            {{ addBlock('profile/navigation/username')|raw }}
+        </p>
+    </span>
+    <hr class="mt-2">
+    <div class="profile-navigation-item">
+        <a href="{{ url_route('profile::profile') }}"
+           class="px-3 link-unstyled{{ app.request.pathinfo == '/profile' ? ' active' : '' }}">
+            {{ img('visiosoft.module.profile::images/social-media.svg').data|raw }}
+            <p>{{ trans('visiosoft.module.profile::addon.title') }}</p>
+        </a>
+        <a href="{{ url_route('profile::detail') }}"
+           class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/detail' ? ' active' : '' }}">
+            {{ img('visiosoft.module.profile::images/detail2.svg').data|raw }}
+            <p>{{ trans('visiosoft.module.profile::field.details.name') }}</p>
+        </a>
+        {% set marketPlace = setting_value('visiosoft.module.advs::market_place') %}
+        {% if marketPlace %}
+            <a href="{{ url_route('profile::ads') }}"
+               class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/ads' ? ' active' : '' }}">
+                {{ img('visiosoft.module.profile::images/website.svg').data|raw }}
+                <p>{{ trans('visiosoft.module.advs::addon.title') }}</p>
+            </a>
+        {% endif %}
+        <a href="{{ url_route('profile::address') }}"
+           class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/address' ? ' active' : '' }}">
+            {{ img('visiosoft.module.profile::images/location.svg').data|raw }}
+            <p>{{ trans('visiosoft.module.profile::stream.adress.name') }}</p>
+        </a>
+
+        {{ addBlock('profile/navigation',{'marketPlace':marketPlace})|raw }}
+
+        <a href="{{ url_route('profile::password') }}"
+           class="px-3 link-unstyled{{ app.request.pathinfo == '/profile/password' ? ' active' : '' }}">
+            {{ img('visiosoft.module.profile::images/password2.svg').data|raw }}
+            <p>{{ trans('visiosoft.module.profile::field.password.name') }}</p>
+        </a>
+        <a href="{{ url('logout') }}"
+           class="px-3 link-unstyled">
+            {{ img('visiosoft.module.profile::images/logout.svg').data|raw }}
+            <p>{{ trans('visiosoft.theme.base::field.logout.name') }}</p>
+        </a>
+    </div>
+</div>
+
+<div class="overlay"></div>
+
+{{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile-nav.js") }}

@@ -1,0 +1,19 @@
+{{ asset_add("scripts.js", "visiosoft.field_type.list::js/jquery-sortable.js") }}
+{{ asset_add("scripts.js", "visiosoft.field_type.list::js/list.js") }}
+{{ asset_add("styles.css", "visiosoft.field_type.list::less/list.less") }}
+
+{% import field_type.config('macro', 'visiosoft.field_type.list::macro') as macro %}
+
+<ul class="visiosoft-field_type-list" data-provides="visiosoft.field_type.list">
+    {% if field_type.value|length > 0 %}
+        {% for key, value in field_type.value %}
+            {{ macro.item(field_type, value) }}
+        {% endfor %}
+    {% else %}
+        {{ macro.item(field_type, null) }}
+    {% endif %}
+</ul>
+
+<div class="template hidden">
+    {{ macro.item(field_type, null) }}
+</div>

@@ -1,0 +1,26 @@
+<div class="card">
+
+    <div class="card-header">
+        <h5 class="card-title">
+            {{ title }}
+        </h5>
+    </div>
+
+    {% set original = attribute is iterable ? attribute.value : attribute %}
+    {% set original = original is iterable ? null : original %}
+
+    {% set value = value(attribute, entry) %}
+
+    {% if str_contains(original, ['json_encode', 'print_r', 'var_export', 'var_dump']) %}
+        <pre class="language-{{ attribute.language ?: 'php' }}"><code>{{ value }}</code></pre>
+        {#{% elseif str_contains(original, 'entry.content.line_preview') %}
+            <pre class="language-{{ attribute.language ?: 'php' }}"><code>{{ value|join('\n') }}</code></pre>
+        #}{% elseif original == 'entry.tags' %}
+        {% for tag in entry.tags %}
+            <span class="tag tag-default">{{ tag }}</span>
+        {% endfor %}
+    {% else %}
+        {{ value|raw }}
+    {% endif %}
+
+</div>

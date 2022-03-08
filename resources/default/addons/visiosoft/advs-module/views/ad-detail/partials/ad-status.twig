@@ -1,0 +1,19 @@
+{% if adv.status == "pending_user" or adv.status == "pending_admin" %}
+    <div class="pending-screen mt-3 text-center py-5 rounded px-2">
+        <img src="{{ img('visiosoft.module.advs::images/alarm.png').url }}" alt="pending icon">
+        <h5 class="my-3">{{ trans('visiosoft.module.advs::field.pending_message_1') }}</h5>
+        <div class="row">
+            <div class="col-6 text-right">{{ trans('visiosoft.module.advs::field.pending_message_2') }}</div>
+            <div class="col-6 text-left pl-0">: {{ adv.updated_at|date('d M Y H:i') }}</div>
+        </div>
+        <div class="row">
+            <div class="col-6 text-right">{{ trans('visiosoft.module.advs::field.pending_message_3') }}</div>
+            <div class="col-6 text-left pl-0">
+                : {{ setting_value('visiosoft.module.advs::estimated_pending_time') }} {{ trans('visiosoft.module.advs::field.hours') }}
+            </div>
+        </div>
+
+        <p class="text-dark mb-0 mt-3">{{ trans('visiosoft.module.advs::field.pending_message_4') }}</p>
+        <p class="text-dark">{{ trans('visiosoft.module.advs::field.pending_message_5') }}</p>
+    </div>
+{% endif %}

@@ -1,0 +1,9 @@
+{{ asset_add('scripts.js', 'visiosoft.theme.defaultadmin::js/navigation/jquery-sortable.js') }}
+{{ asset_add('scripts.js', 'visiosoft.theme.defaultadmin::js/navigation/settings.js') }}
+
+<p>
+    {{ icon('fa fa-arrows') }}
+    {{ trans('visiosoft.theme.defaultadmin::setting.navigation.reorder')|raw }}
+
+    <input type="hidden" id="navigation-order" name="navigation" value="{{ field_type.value }}">
+</p>

@@ -1,0 +1,28 @@
+<div class="col-md-7 slider-box">
+    {% if blocks('ad-item-picture-block-area') is null %}
+        <div class="fotorama"
+             data-width="700"
+             data-ratio="3/2"
+             data-nav="thumbs"
+             data-thumbheight="48">
+            {% set advPhoto = '' %}
+            {% if count(adv.files) == 0 %}
+                {% set advPhoto = img('visiosoft.theme.base::images/no-image.png').url %}
+                <a href="{{ image }}"><img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}"></a>
+            {% else %}
+                {% for image in adv.getViewPhotoUrl %}
+                    <a href="{{ adv.getMediumPhotoUrl(image) }}"></a>
+                    {% if loop.index == 1 %}
+                        {% set advPhoto = image %}
+                    {% endif %}
+                {% endfor %}
+
+            {% endif %}
+        </div>
+    {% else %}
+        {{ blocks('ad-item-picture-block-area') }}
+    {% endif %}
+</div>
+
+{{ asset_add("scripts.js", "visiosoft.module.advs::js/fotorama.js") }}
+{{ asset_add("styles.css", "visiosoft.module.advs::css/fotorama.css") }}

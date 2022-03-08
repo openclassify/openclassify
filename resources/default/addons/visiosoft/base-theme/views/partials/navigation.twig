@@ -1,0 +1,82 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        {% if setting_value('visiosoft.theme.base::navigation_title') %}
+            <a class="navbar-brand"
+               href="{{ url("/") }}">{{ setting_value('streams::name', config_get('streams::distribution.name')) }}</a>
+        {% endif %}
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent"
+                aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            {{ structure()
+            .linkAttributesDropdown({'data-toggle': 'dropdown'})
+            .item_class('nav-item')
+            .selected_class('active')
+            .child_item_class('dropdown-item')
+            .dropdown_class('dropdown')
+            .child_link_class('dropdown-item')
+            .link_class('nav-link')
+            .depth(5)
+            .listClass('nav navbar-nav navbar-right')
+            .childListClass('dropdown-menu')
+            .cache({'namespace': 'user'})
+            .render()|raw }}
+
+            {% if setting_value('visiosoft.theme.base::navigation_action') %}
+                <ul class="nav navbar-nav navbar-right d-block d-sm-none">
+                    <li class="nav-item">
+                        {% if auth_check() %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">
+                                {{ trans('visiosoft.theme.base::field.logout.name') }}
+                            </a>
+                        {% else %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}" rel="nofollow">
+                                {{ trans('visiosoft.theme.base::field.login.name') }}
+                            </a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_route('profile::profile') }}" rel="nofollow">
+                            {{ trans('visiosoft.theme.base::field.profile') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/advs/create_adv" class="btn btn-primary" rel="nofollow">
+                            {{ trans("visiosoft.theme.base::button.post_ad.name") }}
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+        <div class="d-none d-sm-block">
+            {% if setting_value('visiosoft.theme.base::navigation_action') %}
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="nav-item">
+                        {% if auth_check() %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::logout') }}">
+                                {{ trans('visiosoft.theme.base::field.logout.name') }}
+                            </a>
+                        {% else %}
+                            <a class="nav-link" href="{{ url_route('anomaly.module.users::login') }}" rel="nofollow">
+                                {{ trans('visiosoft.theme.base::field.login.name') }}
+                            </a>
+                        {% endif %}
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_route('profile::profile') }}" rel="nofollow">
+                            {{ trans('visiosoft.theme.base::field.profile') }}
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="/advs/create_adv" class="btn btn-primary" rel="nofollow">
+                            {{ trans("visiosoft.theme.base::button.post_ad.name") }}
+                        </a>
+                    </li>
+                </ul>
+            {% endif %}
+        </div>
+
+    </div>
+</nav>

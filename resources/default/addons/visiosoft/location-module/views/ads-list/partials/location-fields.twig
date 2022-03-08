@@ -1,0 +1,131 @@
+{% set defaultCountry = setting_value('visiosoft.module.location::default_country') %}
+{% set selectedCountry =  app.request.get('country') %}
+
+{% if selectedCountry %}
+    {% set countryName = getCountry(selectedCountry).name %}
+    {% set countryValue = defaultCountry == selectedCountry ? '' : selectedCountry %}
+    {% set selected_countries_name = [] %}
+    {% for selectedCountry in selectedCountry[0]|split(',') %}
+        {% set selected_countries_name = selected_countries_name|merge([getCountry(selectedCountry|trim(',')).name]) %}
+    {% endfor %}
+{% elseif defaultCountry %}
+    {% set countryName = getCountry(defaultCountry).name %}
+    {% set countryValue = defaultCountry %}
+{% else %}
+    {% set countryName = trans("visiosoft.module.location::field.country.name") %}
+    {% set countryValue = '' %}
+{% endif %}
+
+{% set citySlug = null %}
+{% set pathInfo = app.request.pathinfo|split('/') %}
+{% if pathInfo|length is same as(4) %}
+    {% set citySlug = entries('location', 'cities').findBy('slug', pathInfo[3]) %}
+    {% set selected_cities_name = [getCity(citySlug.id).name] %}
+{% else %}
+    {% set selected_cities = params.param['city'] %}
+    {% set selected_cities_name = [] %}
+    {% for selected_city in selected_cities[0]|split(',') %}
+        {% set selected_cities_name = selected_cities_name|merge([getCity(selected_city|trim(',')).name]) %}
+    {% endfor %}
+{% endif %}
+
+{% set selected_districts = app.request.get('district') %}
+{% set selected_districts_name = [] %}
+{% for selected_district in selected_districts[0]|split(',') %}
+    {% set selected_districts_name = selected_districts_name|merge([getDistrict(selected_district|trim(',')).name]) %}
+{% endfor %}
+
+{% set selected_neighborhoods = app.request.get('neighborhood') %}
+{% set selected_neighborhoods_name = [] %}
+{% for selected_neighborhood in selected_neighborhoods[0]|split(',') %}
+    {% set selected_neighborhoods_name = selected_neighborhoods_name|merge([getNeighborhood(selected_neighborhood|trim(',')).name]) %}
+{% endfor %}
+
+{% set selected_villages = app.request.get('village') %}
+{% set selected_villages_name = [] %}
+{% for selected_village in selected_villages[0]|split(',') %}
+    {% set selected_villages_name = selected_villages_name|merge([getVillage(selected_village|trim(',')).name]) %}
+{% endfor %}
+
+<div class="px-2 mb-3">
+    <!-- Start country filter -->
+    <button class="d-flex align-items-center justify-content-between w-100 border-0 mb-1 rounded shadow-sm filter-country-btn"
+            type="button" data-toggle="modal">
+        <p class="selected-country mr-2 text-truncate">
+            {{ selected_countries_name ? selected_countries_name|join(', ') : countryName }}
+        </p>
+        {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+    </button>
+    <input name="country[]" id="listCountryFilter" type="hidden" multiple
+           value="{{ countrySlug ? countrySlug.id : params.param['country']|join(',') }}">
+    <!-- End country filter -->
+
+    <!-- Start city filter -->
+    <button class="d-flex align-items-center justify-content-between w-100 border-0 mb-1 rounded shadow-sm filter-city-btn"
+            type="button" data-toggle="modal">
+        <p class="selected-city mr-2 text-truncate">
+            {{ selected_cities_name[0] ? selected_cities_name|join(', ') : trans("visiosoft.module.location::field.city.name") }}
+        </p>
+        {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+    </button>
+    <input name="city[]" id="listCityFilter" type="hidden"
+           value="{{ citySlug ? citySlug.id : params.param['city']|join(',') }}">
+    <!-- End city filter -->
+
+    <!-- Start district filter -->
+    <button class="d-flex align-items-center justify-content-between w-100 border-0 mb-1 rounded shadow-sm filter-district-btn"
+            type="button" data-toggle="modal">
+        <p class="selected-district mr-2 text-truncate">
+            {{ selected_districts_name[0] ? selected_districts_name|join(', ') : trans("visiosoft.module.location::field.district.name") }}
+        </p>
+        {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+    </button>
+    <input name="district[]" value="{{ app.request.get('district')|join(',') }}" type="hidden">
+    <!-- End district filter -->
+
+    <!-- Start neighborhood filter -->
+    <button class="d-flex align-items-center justify-content-between w-100 border-0 mb-1 rounded shadow-sm filter-neighborhood-btn"
+            type="button" data-toggle="modal">
+        <p class="selected-neighborhood mr-2 text-truncate">
+            {{ selected_neighborhoods_name[0] ? selected_neighborhoods_name|join(', ') : trans("visiosoft.module.location::field.neighborhood.name") }}
+        </p>
+        {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+    </button>
+    <input name="neighborhood[]" value="{{ app.request.get('neighborhood')|join(',') }}" type="hidden">
+    <!-- End neighborhood filter -->
+
+    <!-- Start village filter -->
+    <button class="d-flex align-items-center justify-content-between w-100 border-0 mb-1 rounded shadow-sm filter-village-btn"
+            type="button" data-toggle="modal">
+        <p class="selected-village mr-2 text-truncate">
+            {{ selected_villages_name[0] ? selected_villages_name|join(', ') : trans("visiosoft.module.location::field.village.name") }}
+        </p>
+        {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+    </button>
+    <input name="village[]" value="{{ app.request.get('village')|join(',') }}" type="hidden">
+    <!-- End village filter -->
+</div>
+
+<div class="modal-content position-absolute filter-location-modal" style="z-index: 9999; left: 0; display: none">
+    <div class="modal-header">
+        <input type="text" id="searchLocation" class="form-control"
+               placeholder="{{ trans('visiosoft.module.location::message.placeholder') }}">
+        <button type="button" class="close filter-modal-close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div class="modal-body filter-location-body">
+        <div class="loading"></div>
+        <ul class="list-unstyled countries"></ul>
+        <ul class="list-unstyled cities"></ul>
+        <ul class="list-unstyled districts"></ul>
+        <ul class="list-unstyled neighborhoods"></ul>
+        <ul class="list-unstyled village"></ul>
+    </div>
+</div>
+<div class="filter-location-back" style="display: none"></div>
+
+<script>
+    var null_msg = "{{ trans('visiosoft.module.location::message.null_msg') }}!";
+    var defaultCountry = "{{ defaultCountry }}";
+</script>

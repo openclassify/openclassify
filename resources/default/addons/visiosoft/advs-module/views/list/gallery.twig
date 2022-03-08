@@ -1,0 +1,65 @@
+{% extends "visiosoft.module.advs::list/list" %}
+
+{% block listContent %}
+    {% set showPrice = setting_value('visiosoft.theme.base::price_fields') %}
+    {% set showLocation = setting_value('visiosoft.module.location::home_page_location') %}
+    {% set showDate = setting_value('visiosoft.theme.base::date_fields') %}
+
+    <div class="row p-0 m-0 ">
+
+        {{ addBlock('ad-list/partials/gallery',{'featured_advs': featured_advs, 'vars': _context})|raw }}
+
+        {% for adv in advs %}
+            <div class="col-xl-4 col-6 p-sm-3 p-0">
+                <div class="d-flex flex-column product-hb gallery-card pb-3 px-1 pt-1 border shadow-sm rounded">
+                    <div class="product-image-hb p-sm-3 p-1">
+                        <a href="{{ adv.detail_url }}" class="imgs" id="{{ adv.id }}">
+                            {% set slicedPhotos = adv.getViewPhotoUrl|slice(0,3) %}
+
+                            {%  for key,photo in slicedPhotos %}
+                                    <img src="{{ photo }}" class="product-image-in ads-img img-{{ adv.id ~ '-' ~ key }}" alt="">
+
+                                {% endfor %}
+                            <div class="hover-area">
+                                {% for key, photo in slicedPhotos %}
+                                        <div class="hover-{{ key }}" data-parent="{{ adv.id }}" data-id="img-{{ adv.id ~ '-' ~ key }}"></div>
+                                {% endfor %}
+                            </div>
+                        </a>
+                        {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs'])|raw }}
+                    </div>
+                    <div class="product-info-hb d-flex flex-column px-lg-3 px-2 mt-3">
+                        <a href="{{ adv.detail_url }}" class="product-name-hb text-decoration-none line-clamp text-dark">
+                            <h3 class="fs-14 text-uppercase"> {{ adv.name }} </h3>
+                        </a>
+                        {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
+                            <a href="{{ adv.detail_url }}" class="product-name-hb text-truncate text-decoration-none text-dark">{{ adv.cat1_name }} /{{ adv.cat2_name }}</a>
+
+                        {% endif %}
+                        {% if showPrice %}
+                            <div class="product-price-hb rounded d-flex align-items-center mt-2 bg-secondary-md bg-none text-dark justify-content-between">
+                                {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
+                                {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['comparisons'])|raw }}
+                            </div>
+
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
+
+{% endblock %}
+
+{% block styles %}
+    {{ asset_style('visiosoft.theme.base::css/gallery.css') }}
+    {{ asset_style('visiosoft.module.advs::css/list-new.scss') }}
+{% endblock %}
+
+{% block customjs %}
+    {% include "theme::scroll-modal" %}
+{% endblock %}
+
+

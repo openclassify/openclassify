@@ -1,0 +1,35 @@
+{% set recommendedads = getRecommendedAds(app.request.path|split('/')[2]) %}
+<div class="product-related-box single-layout">
+    <div class="biolife-title-box lg-margin-bottom-26px-im">
+        <span class="biolife-icon icon-organic"></span>
+        <span class="subtitle">{{ trans('visiosoft.extension.biolife_style_provider::field.bestseller.sub_title') }}</span>
+        <h3 class="main-title">{{ trans('visiosoft.extension.biolife_style_provider::field.bestseller.main_title') }}</h3>
+    </div>
+    <ul class="products-list biolife-carousel nav-center-02 nav-none-on-mobile" data-slick='{"rows":1,"arrows":true,"dots":false,"infinite":false,"speed":400,"slidesMargin":0,"slidesToShow":5, "responsive":[{"breakpoint":1200, "settings":{ "slidesToShow": 4}},{"breakpoint":992, "settings":{ "slidesToShow": 3, "slidesMargin":20 }},{"breakpoint":768, "settings":{ "slidesToShow": 2, "slidesMargin":10}}]}'>
+        {% for recommended in recommendedads|slice(0, setting_value('visiosoft.module.recommendedads::limit')) %}
+            <li class="product-item">
+                <div class="contain-product layout-default">
+                    <div class="product-thumb">
+                        <a href="{{ recommended.detail_url }}" class="link-to-product">
+                            {{ img(recommended.cover_photo).width(270).height(270).class('product-thumnail')|raw }}
+                        </a>
+                    </div>
+                    <div class="info">
+                        <b class="categories">{{ recommended.category1.name }}</b>
+                        <h4 class="product-title single-line mx-3"><a href="{{ recommended.detail_url }}" class="pr-name">{{ recommended.name }}</a></h4>
+                        <div class="price">
+                            <ins><span class="price-amount">{{ recommended.currency_price }}</span></ins>
+                            <del><span class="price-amount">{{ recommended.currency_standard_price }}</span></del>
+                        </div>
+                        <div class="slide-down-box">
+                            <p class="message">{{ trans('visiosoft.extension.biolife_style_provider::field.product_message') }}</p>
+                            <div class="buttons">
+                                {{ addBlock('index-actions', {item_id: recommended.id}, ['favs', 'carts', 'comparisons'])|raw }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

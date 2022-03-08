@@ -1,0 +1,11 @@
+<h3>{{ subject }}</h3>
+
+{% for field in fields %}
+    {# Mind you these are presenters #}
+    <strong>{{ field.getLabel() }}:</strong> {{ field.__print()|raw }}
+    <br>
+{% endfor %}
+<hr>
+Sent by: {{ request_ip() }}
+<br>
+Sent from: <a href="{{ url_previous() }}">{{ url_previous() }}</a>

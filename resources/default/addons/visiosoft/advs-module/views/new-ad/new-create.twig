@@ -1,0 +1,351 @@
+{% extends layout('new-create') %}
+
+{% block styles %}
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+          rel="stylesheet">
+
+    <style>
+        {{ asset_inline("visiosoft.module.advs::css/new-create.css") }}
+        {{ asset_inline("visiosoft.module.advs::css/new-create-new.scss") }}
+        {{ asset_inline("visiosoft.theme.base::css/jquery-ui.min.css") }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% set form_params = app.request.session.get('_old_input') %}
+    <section class="clearfix home-default">
+
+        {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'new-create'} %}
+
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    {% for cat in cats_d %}
+                        <li class="breadcrumb-item text-primary">{{ cat }}</li>
+                    {% endfor %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ url_route('adv::edit_category',[id]) }}">
+                            <i class="fas fa-pencil-alt"></i> {{ trans('visiosoft.module.advs::field.edit_category') }}
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+
+            <div id="pageTitle" class="text-center">
+                <h1 class="mb-3">{{ trans('visiosoft.module.advs::field.listing_details') }}</h1>
+                <h2>{{ trans('visiosoft.module.advs::field.create_page_subtitle') }}</h2>
+            </div>
+
+            <div class="adpost-details">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% set requiredFields = setting_value('visiosoft.module.advs::make_all_fields_required') %}
+
+                        {% set form = form('advs', 'advs').entry(id).actions({'update': {
+                            'text': trans('visiosoft.module.advs::button.publish')
+                        }}).get() %}
+                        {{ form_open({
+                            'id': 'createEditAdvForm',
+                            'class': 'form ' ~ form.options.class ,
+                            'enctype': 'multipart/form-data',
+                            'url': 'advs/save_adv',
+                        })|raw }}
+                        <input type="hidden" value="pending_user" name="status">
+                        <input type="hidden" name="cat1" value="{{ cats.cat1 }}">
+                        <input type="hidden" name="cat2" value="{{ cats.cat2 }}">
+                        <input type="hidden" name="cat3" value="{{ cats.cat3 }}">
+                        <input type="hidden" name="cat4" value="{{ cats.cat4 }}">
+                        <input type="hidden" name="cat5" value="{{ cats.cat5 }}">
+                        <input type="hidden" name="cat6" value="{{ cats.cat6 }}">
+                        <input type="hidden" name="cat7" value="{{ cats.cat7 }}">
+                        <input type="hidden" name="cat8" value="{{ cats.cat8 }}">
+                        <input type="hidden" name="cat9" value="{{ cats.cat9 }}">
+                        <input type="hidden" name="cat10" value="{{ cats.cat10 }}">
+                        <input type="hidden" id="currencies" name="currencies" value="">
+                        <input type="hidden" name="update_id" value="{{ id }}">
+                        <fieldset>
+
+                            {% include 'visiosoft.module.advs::new-ad/partials/contact-info' %}
+
+                            <div id="mainInfo">
+                                <h3>{{ trans('visiosoft.module.advs::field.ad_info') }}</h3>
+
+                                <label class="w-100 mb-2">
+                                    {% set fields = form.fields.base().pluck('field_name').all() %}
+                                    {% for field in form.fields.translations('name') %}
+                                        {{ field.setAttributes({
+                                            'class': 'd-block mt-3 w-100 border-0'
+                                        }).setValue(form_params[field.field~"_"~field.getLocale()]).render({'form': form})|raw }}
+                                    {% endfor %}
+                                </label>
+
+                                {% if setting_value('visiosoft.module.advs::market_place') %}
+                                    {{ addBlock('new-ad/fields', {'adv': adv, 'rawClassified': rawClassified})|raw }}
+                                {% endif %}
+
+                                <div id="priceInput" class="d-flex justify-content-between mb-4 flex-wrap">
+                                    <div class="mb-3 mb-sm-0 select-price{{ hidePrice ? ' hidden' }}">
+                                        <label>
+                                            {{ form.fields.price.label|raw }}
+                                            <span class="required">*</span>
+                                        </label>
+
+                                        <div class="col-12 priceHidden d-none">
+                                            {{ form.fields.price.setAttributes({
+                                                'required' :true
+                                            }).input|raw }}
+                                        </div>
+
+                                        <div class="d-flex">
+                                            {% set PriceValue = form.fields.price.value|split('.') %}
+                                            <input type="text"
+                                                   class="mt-3 border-0 text-right priceField whole-price flex-fill"
+                                                   placeholder="0" value="{{ PriceValue|first }}">
+                                            {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
+                                                <input class="mt-3 border-0 ml-2 text-center priceDecimalField decimal-price"
+                                                       placeholder="00" type="text" value="{{ PriceValue[1] }}">
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                    <div class="select-price">
+                                        {% set HideStandardPrice = setting_value('visiosoft.module.advs::hide_standard_price_field') or setting_value('visiosoft.module.advs::market_place') != true ? ' d-none' : '' %}
+
+                                        <label>
+                                            <span class="{{ HideStandardPrice }}">
+                                                {{ form.fields.standard_price.label }}
+                                                <span class="required">*</span>
+                                            </span>
+                                        </label>
+
+                                        <div class="col-12 standard-price-hidden d-none">
+                                            {{ form.fields.standard_price.setAttributes({
+                                                'required' :true
+                                            }).input|raw }}
+                                        </div>
+
+                                        <div class="d-flex">
+                                            <div class=" flex-fill {{ (HideStandardPrice) ? HideStandardPrice : 'd-flex' }}">
+                                                {% set standardPriceValue = form.fields.standard_price.value|split('.') %}
+                                                <input class="mt-3 border-0 text-right standard-price-field whole-price flex-fill"
+                                                       placeholder="0" value="{{ standardPriceValue|first }}"
+                                                       type="text">
+                                                {% if setting_value('visiosoft.field_type.decimal::showDecimal') %}
+                                                    <input class="mt-3 border-0 ml-2 text-center standard-price-decimal decimal-price"
+                                                           placeholder="00" type="text"
+                                                           value="{{ standardPriceValue[1] }}"
+                                                           maxlength="2">
+                                                {% endif %}
+                                            </div>
+                                            <select name="currency" class="mt-3 border-0 ml-2" id="currency" required>
+                                                {% for currency in config_get('streams::currencies.enabled') %}
+                                                    <option value="{{ currency }}">
+                                                        {{ currency == "TRY" ? currency_symbol(currency) : currency }}
+                                                    </option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                {% if setting_value("visiosoft.module.advs::show_tax_field") %}
+                                    <div class="row mx-0 my-3">
+                                        <div class="col-4 px-0">
+                                            <label>
+                                                {{ trans('visiosoft.module.advs::field.tax.name') }}
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <div class="py-2 pr-3">
+                                                <div class="input-wrapper">
+                                                    <select class="custom-select form-control" name="tax">
+                                                        <option value="0" {{ (form.fields.tax.value == "0") ? 'selected':'' }}>0</option>
+                                                        <option value="1" {{ (form.fields.tax.value == "1") ? 'selected':'' }}>%1</option>
+                                                        <option value="8"{{ (form.fields.tax.value == "8") ? 'selected':'' }}>%8</option>
+                                                        <option value="18"{{ (form.fields.tax.value == "18") ? 'selected':'' }}>%18</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+                                {% if setting_value("visiosoft.module.advs::show_finish_and_publish_date") %}
+                                    <div class="row mx-0 my-3">
+                                        <div class="col-6 px-0">
+                                            <label>
+                                                {{ form.fields.publish_at.label|raw }}
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <div class="py-2 pr-3">
+                                                {{ form.fields.publish_at.input|raw }}
+                                            </div>
+                                        </div>
+                                        <div class="col-6 px-0">
+                                            <label>
+                                                {{ form.fields.finish_at.label|raw }}
+                                                <span class="required">*</span>
+                                            </label>
+
+                                            <div class="py-2 pr-2">
+                                                {{ form.fields.finish_at.input|raw }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                {% endif %}
+
+
+                                {% if not setting_value('visiosoft.module.advs::hide_options_field') %}
+                                    {% if not setting_value('visiosoft.module.advs::detailed_product_options') %}
+                                        <div id="simpleOptionsInput" class="w-100 select-options">
+                                            <label for="selectOptions">
+                                                {{ trans('visiosoft.module.advs::field.options') }}
+                                            </label>
+                                            <select id="selectOptions" type="text" multiple="multiple" name="options[]"
+                                                    class="d-block mt-3 w-100 border-0 options-tags">
+                                                {% if count(options) %}
+                                                    {% for option in options %}
+                                                        <option id="advOption{{ option.id }}"
+                                                                selected="selected">{{ option.name }}</option>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </select>
+                                        </div>
+                                        {% if auth_check() and auth_user().hasRole('admin') %}
+                                            <div class="col-12 text-right py-2">
+                                                <p class="text-muted d-flex align-items-center justify-content-end">
+                                                    <i class="fa fa-exclamation-triangle mr-2"></i>
+                                                    {{ trans('visiosoft.module.advs::message.disabled_detailed_options_for_admin_role') }}
+                                                </p>
+                                            </div>
+                                        {% endif %}
+                                    {% else %}
+                                        {% if is_options %}
+                                            <div class="product-options">
+                                                <label for="productOptions">
+                                                    {{ trans('visiosoft.module.advs::field.product_option.name') }}
+                                                </label>
+                                                <div class="mt-3 form-group mb-0">
+                                                    <button type="button" class="btn btn-primary btn-configuration" data-toggle="modal" data-target="#configurationModal">
+                                                        {{ img('visiosoft.module.advs::images/create/plus.svg').data|raw }}
+                                                        &nbsp;
+                                                        {{ trans('visiosoft.module.advs::button.new_options_configuration') }}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+
+                            <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.ad_desc') }}</h5>
+                            <div class="bg-light p-4">
+                                <div class="row form-group brand-name">
+                                    <div class="col-md-12">
+                                        <div class="field-group advs_desc">
+                                            {% for field in form.fields.translations('advs_desc') %}
+                                                {{ field.setValue(form_params[field.field~"_"~field.getLocale()]).render({'form': form})|raw }}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h5 class="mt-5 pb-1 border-bottom upload-photos-title">
+                                {{ trans('visiosoft.module.advs::field.upload_photos') }}
+                            </h5>
+                            <div class="bg-light p-4 upload-photos-wrapper">
+                                <div class="row form-group images">
+                                    <div class="col-md-12">
+                                        {{ form.fields.files.input |raw }}
+                                        <input name="doc_files"
+                                               value="{{ form.fields.doc_files.value.pluck('id').all()|join(',') }}"
+                                               hidden>
+                                        <div class="doc_list small">
+                                            {% for docs in form.fields.doc_files.value %}
+                                                <a id="{{ docs.id }}" href="javascript:void(0)"
+                                                   onclick="deleteDocs({{ docs.id }})" class="text-dark">
+                                                    {{ docs.name }}
+                                                    <i class="fa fa-trash text-danger pl-2"></i>
+                                                </a><br>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% set other_fields = addBlock('new-ad/other-fields',{'custom_fields':custom_fields,'id':id}) %}
+                            {% if other_fields or (custom_fields and count(custom_fields)) %}
+                                <h5 class="mt-5 pb-1 border-bottom">
+                                    {{ trans('visiosoft.module.advs::field.additional_fields') }}
+                                </h5>
+                                <div class="bg-light p-4 row">
+                                    {{ other_fields|raw }}
+                                </div>
+                            {% endif %}
+
+                            {% if setting_value('visiosoft.module.location::create_ad_page_location') %}
+                                <h5 class="mt-5 pb-1 border-bottom">
+                                    {{ trans('visiosoft.module.advs::field.ad_location') }}
+                                </h5>
+                                <div class="bg-light px-4 pb-4 pt-0 mb-4">
+                                    {% include "visiosoft.module.location::new-ad/map" %}
+
+                                    <input value="{{ adv.map_Val }}" name="map_Val" data-max="255" data-mask=""
+                                           data-alias="" data-regex=""
+                                           type="text" placeholder="" class="hidden d-none mapVal" data-field="map_Val"
+                                           data-field_name="map_Val" data-provides="anomaly.field_type.text">
+                                </div><!-- section -->
+                            {% endif %}
+
+                            <div class="checkbox section agreement">
+                                {% if setting_value('visiosoft.module.advs::show_post_ad_agreement') %}
+                                    <label for="send">
+                                        <input type="checkbox" name="send" id="send" required>
+
+                                        {{ trans('visiosoft.module.advs::message.agreement') }}
+                                    </label><br>
+                                {% endif %}
+
+                                {{ form.actions|raw }}
+                            </div><!-- section -->
+
+                        </fieldset>
+                    </div>
+                </div><!-- photos-ad -->
+
+            </div>
+            {{ form.close|raw }}
+        </div>
+    </section>
+    {% include "visiosoft.module.advs::new-ad/partials/modals" %}
+    {% include "visiosoft.module.advs::new-ad/partials/configuration-modal" %}
+    {{ addBlock('new-ad/modals')|raw }}
+    <script>
+        var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+        var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
+        var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
+        var default_neighborhood = "{{ setting_value('visiosoft.module.location::default_neighborhood') }}";
+        var default_village = "{{ setting_value('visiosoft.module.location::default_village') }}";
+        var default_currency = "{{ setting_value('streams::currency') }}";
+        var default_GET = "{{ setting_value('visiosoft.module.advs::default_GET') }}";
+        var adv_id = "{{ id }}";
+        var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+    </script>
+
+    {% if setting_value('visiosoft.module.advs::make_map_required') %}
+        <script>
+            let selectLocationAlert = "{{ trans('visiosoft.module.advs::message.select_location_error') }}"
+        </script>
+        {{ asset_add("scripts.js", "visiosoft.module.advs::js/required-map.js") }}
+    {% endif %}
+    <script>
+        let uploadText = "{{ trans('visiosoft.field_type.media::message.upload') }}"
+    </script>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+    {{ asset_add("scripts.js", "visiosoft.theme.base::js/vendor/jquery-ui.min.js") }}
+
+{% endblock %}

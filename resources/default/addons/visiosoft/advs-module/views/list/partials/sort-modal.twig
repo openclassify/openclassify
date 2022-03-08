@@ -1,0 +1,34 @@
+<div class="modal fade" id="sortModal" tabindex="-1" role="dialog" aria-labelledby="filterModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    {{ trans("visiosoft.module.advs::field.pick_ordering") }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body text-center">
+                <ul class="list-unstyled">
+                    <li class="border w-100 p-2">
+                        <a href="#" data-value="sort_price_up" class="sort-by-item text-dark">
+                            {{ trans("visiosoft.module.advs::field.price_high") }}
+                        </a>
+                    </li>
+                    <li class="border w-100 p-2">
+                        <a href="#" data-value="sort_price_down" class="sort-by-item text-dark">
+                            {{ trans("visiosoft.module.advs::field.price_low") }}
+                        </a>
+                    </li>
+                    <li class="border w-100 p-2">
+                        <a href="#" data-value="sort_time" class="sort-by-item text-dark">
+                            {{ trans("visiosoft.module.advs::field.newest") }}
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+{{ asset_add('scripts.js','visiosoft.module.advs::js/sort_modal.js') }}

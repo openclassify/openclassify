@@ -1,0 +1,98 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    <div class="d-flex mt-4 forgot-wrapper">
+        <div class="d-none d-md-block">
+            <img src="{{ img('visiosoft.theme.base::images/forgot-password.png').url }}" class="forgot-img"
+                 alt="forgot password icon">
+        </div>
+
+        <div class="m-0 ml-md-5 w-100">
+
+            <div class="col-12 m-0 p-0">
+                <h5 class="d-none d-md-block">{{ trans('visiosoft.theme.base::field.create_new_password') }}</h5>
+                <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="nav-email-tab" data-toggle="tab" href="#nav-email"
+                           role="tab" aria-controls="nav-email" aria-selected="true">
+                            {{ trans('visiosoft.theme.base::button.email') }}
+                        </a>
+                        <a class="nav-item nav-link" id="nav-phone-tab" data-toggle="tab" href="#nav-phone" role="tab"
+                           aria-controls="nav-phone" aria-selected="false">
+                            {{ trans('visiosoft.theme.base::button.phone') }}
+                        </a>
+                    </div>
+                </nav>
+                <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                    <div class="tab-pane fade show active" id="nav-email" role="tabpanel"
+                         aria-labelledby="nav-home-tab">
+                        {% set form = form('forgot_pass').redirect(request_get('redirect', '/'))
+                            .get() %}
+                        {{ form_open({
+                            'class': 'form ' ~ form.options.class ,
+                            'url':form.options.url
+                        })|raw }}
+
+                        <div>
+                            <div class="form-group email-field email-field_type text-center text-md-left">
+                                <div class="input-wrapper col-12 col-md-5">
+                                    {{ form.fields.resetType.input|raw }}
+                                </div>
+                                <div class="input-wrapper col-12 col-md-5">
+                                    <label class="control-label">
+                                        <span>
+                                            {{ trans('visiosoft.theme.base::field.email') }}
+                                        </span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    {{ form.fields.email.input|raw }}
+                                </div>
+                            </div>
+                            <div class="m-0 col-12 col-md-5">
+                                <button class="btn btn-sm btn-primary py-2 px-5 w-100">
+                                    {{ trans('visiosoft.theme.base::button.continue') }}
+                                </button>
+                            </div>
+                        </div>
+                        {{ form_close() }}
+                    </div>
+                    <div class="tab-pane fade" id="nav-phone" role="tabpanel" aria-labelledby="nav-profile-tab">
+                        {% set form = form('forgot_pass').redirect(request_get('redirect', '/'))
+                            .get() %}
+                        {{ form_open({
+                            'class': 'form ' ~ form.options.class ,
+                            'url':form.options.url
+                        })|raw }}
+                        <div>
+                            <div class="form-group email-field email-field_type text-center text-md-left">
+                                <div class="input-wrapper col-12 col-md-5">
+                                    {{ form.fields.resetType.input|raw }}
+                                </div>
+                                <div class="input-wrapper col-12 col-md-5">
+                                    <label class="control-label">
+                                        <span>
+                                            {{ trans('visiosoft.theme.base::field.phone') }}
+                                        </span>
+                                        <span class="required">*</span>
+                                    </label>
+                                    {{ form.fields.email.setAttributes({
+                                        'class' :'forgotPhone form-control',
+                                    }).input|raw }}
+                                </div>
+                            </div>
+                            <div class="m-0 col-12 col-md-5">
+                                <button class="btn btn-sm btn-primary py-2 px-5 w-100">
+                                    {{ trans('visiosoft.theme.base::button.continue') }}
+                                </button>
+                            </div>
+                        </div>
+                        {{ form_close() }}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {{ asset_add('styles.css', 'visiosoft.theme.base::css/forgot.css') }}
+    {{ asset_add('scripts.js', 'visiosoft.theme.base::js/forgot.js') }}
+{% endblock %}

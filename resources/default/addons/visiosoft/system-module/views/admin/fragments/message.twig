@@ -1,0 +1,25 @@
+<div class="card">
+
+    <div class="card-header">
+        <h5 class="card-title">
+            Message
+        </h5>
+    </div>
+
+    <script type="application/javascript">
+
+        window.addEventListener('DOMContentLoaded', function () {
+
+            setTimeout(function () {
+                let frame = document.getElementById('message-html');
+
+                frame.height = frame.contentWindow.document.body.scrollHeight;
+            }, 2000);
+        });
+
+    </script>
+
+    <iframe id="message-html" src="{{ url('admin/system/telescope/message/' ~ entry.id) }}"
+            style="border: none; width: 100%;"></iframe>
+
+</div>

@@ -1,0 +1,16 @@
+{% block ogdata %}
+    <meta property="og:site_name"
+          content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}"/>
+    <meta property="og:description" content="{{ (template.get('meta_description') ?: setting_value('streams::description'))|slice(0,160) }}"/>
+    <meta property="og:title" content="{{ (setting_value('streams::name', config_get('streams::distribution.name'))~" | "~trans(template.meta_title))|slice(0,60) }}"/>
+    <meta property="og:url" content="{{ template.get('og_url', url_current()) }}"/>
+    <meta property="og:image" content="{{ template.get('og_image', file(setting_value('visiosoft.module.advs::ogImage')).url) }}"/>
+    <meta property="og:type" content="website"/>
+
+    <!-- Meta for twitter sharing -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="{{ template.get('og_site_name', setting_value('streams::name', config_get('streams::distribution.name'))) }}">
+    <meta name="twitter:title" content="{{ (setting_value('streams::name', config_get('streams::distribution.name'))~" | "~trans(template.meta_title))|slice(0,60) }}">
+    <meta name="twitter:description" content="{{ (template.get('meta_description') ?: setting_value('streams::description'))|slice(0,160) }}">
+    <meta name="twitter:image" content="{{ template.get('og_image', file(setting_value('visiosoft.module.advs::ogImage')).url) }}">
+{% endblock %}

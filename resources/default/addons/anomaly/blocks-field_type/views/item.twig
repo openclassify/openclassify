@@ -1,0 +1,13 @@
+<div class="block-item">
+
+    {% include "anomaly.field_type.blocks::partials/controls" %}
+
+    <div class="clearfix"></div>
+
+    {% include "anomaly.field_type.blocks::partials/fields" %}
+
+    <div class="block-body">
+        {{ form.getContent()|raw }}
+    </div>
+
+</div>

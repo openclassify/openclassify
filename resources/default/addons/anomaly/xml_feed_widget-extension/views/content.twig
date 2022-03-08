@@ -1,0 +1,39 @@
+{% if widget.data.items is not empty %}
+    {% for item in widget.data.items %}
+
+        <div class="media">
+
+            <div class="media-left">
+                <i class="fa fa-calendar fa-lg text-faded"></i>
+            </div>
+
+            <div class="media-body">
+
+                <h3 class="media-heading">
+                    <a href="{{ item.get_permalink() }}" target="_blank">
+                        {{ item.get_title() }}
+                    </a>
+
+                    <br>
+
+                    <small class="text-muted">
+                        {{ item.get_date()|date('F j, Y') }}
+                    </small>
+                </h3>
+
+                {{ item.get_description()|striptags }}
+
+            </div>
+
+        </div>
+
+        {% if not loop.last %}
+            <hr>
+        {% endif %}
+
+    {% endfor %}
+{% elseif is_array(widget.data.items) %}
+    <p>{{ trans('anomaly.extension.xml_feed_widget::message.empty') }}</p>
+{% else %}
+    <p>{{ trans('anomaly.extension.xml_feed_widget::message.error') }}</p>
+{% endif %}

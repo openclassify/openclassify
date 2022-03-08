@@ -1,0 +1,22 @@
+<div class="row">
+    {% for widget in dashboard.widgets.pinned() %}
+        <div class="col-lg-24">
+            {{ widget.output()|raw }}
+        </div>
+    {% endfor %}
+</div>
+
+
+<div class="columns row">
+    {% for span in dashboard.layout|split('-') %}
+        <div class="column col-lg-{{ span }}">
+
+            {% set column = dashboard.widgets.allowed().column(loop.index, loop.last) %}
+
+            {% for widget in column %}
+                {{ widget.output()|raw }}
+            {% endfor %}
+
+        </div>
+    {% endfor %}
+</div>

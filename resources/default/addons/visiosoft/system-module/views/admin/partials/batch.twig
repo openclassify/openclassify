@@ -1,0 +1,21 @@
+{% if batch.isNotEmpty() %}
+    <div class="card">
+
+        <ul class="nav nav-sections">
+            {% for type, table in batch %}
+                <li class="nav-item {{ loop.first ? 'active' }}">
+                    <a href="#tab-{{ str_slug(str_plural(type)) }}" data-toggle="tab" class="nav-link">
+                        {{ ucfirst(str_plural(type)) }}
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+
+        {% for type, table in batch %}
+            <div class="tab__pane tab-pane {{ loop.first ? 'active' }}" id="tab-{{ str_slug(str_plural(type)) }}">
+                {{ table|raw }}
+            </div>
+        {% endfor %}
+
+    </div>
+{% endif %}

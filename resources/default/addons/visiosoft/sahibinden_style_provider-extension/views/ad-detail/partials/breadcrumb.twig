@@ -1,0 +1,16 @@
+<nav aria-label="breadcrumb" class="d-none d-sm-block">
+    <ol class="breadcrumb classified-breadcrumb p-0">
+        <div class="container p-0">
+            {% for cat in categories %}
+                <li class="breadcrumb-item float-left">
+                    <a href="{{ url_route('adv_list_seo', [cat.slug]) }}">
+                        <i class="fa fa-caret-right" aria-hidden="true"></i>
+                        {{ cat['name'] }}
+                    </a>
+                </li>
+            {% endfor %}
+        </div>
+
+        <input class="hidden" id="adv-id" value="{{ adv.id }}">
+    </ol>
+</nav>

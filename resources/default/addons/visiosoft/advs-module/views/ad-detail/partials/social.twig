@@ -1,0 +1,43 @@
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+    <div class="row">
+        <div class="col-md-12 mt-2">
+            <h4><u>{{ trans('visiosoft.module.advs::field.share') }}:</u></h4>
+        </div>
+
+        <div class="col-xs-3 m-3">
+            <h3>
+                <a target="_blank" class="text-secondary"
+                   href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}">
+                    <i class="fab fa-facebook-square"></i>
+                </a>
+            </h3>
+        </div>
+
+        <div class="col-xs-3 m-3">
+            <h3>
+                <a target="_blank" class="text-secondary"
+                   href="https://twitter.com/intent/tweet?text={{ app.request.uri }}">
+                    <i class="fab fa-twitter-square"></i>
+                </a>
+            </h3>
+        </div>
+
+        <div class="col-xs-3 m-3">
+            <h3>
+                <a target="_blank" class="text-secondary"
+                   href="https://wa.me/?text={{ app.request.uri }}">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </h3>
+        </div>
+
+        <div class="col-xs-3 m-3">
+            <h3>
+                <a target="_blank" class="text-secondary"
+                   href="https://www.linkedin.com/shareArticle?mini=true&url={{ app.request.uri }}">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </h3>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+{% extends "streams::blank" %}
+
+{% block  content %}
+    <div class="container-fluid">
+
+        {% include "visiosoft.module.system::admin/partials/table" with {'attributes': {
+            'Time': 'entry.createdAt',
+            'Hostname': 'entry.content.hostname',
+            'Status': 'entry.content.status',
+            'Name': 'entry.content.name',
+            'Connection': 'entry.content.connection',
+            'Queue': 'entry.content.queue',
+            'Tries': 'entry.content.tries',
+            'Timeout': 'entry.content.timeout',
+            'Tags': 'entry.tags',
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/user" %}
+
+        {% include "visiosoft.module.system::admin/partials/tabs" with {'attributes': {
+            'Data': '{{ json_encode(entry.content.data, 128)|raw }}',
+            'Exception': '{{ var_export(entry.content.exception, true) }}',
+            'Preview': '{{ var_export(entry.content.line_preview, true) }}',
+            'Trace': '{{ var_export(entry.content.trace, true) }}',
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/batch" %}
+
+    </div>
+{% endblock %}

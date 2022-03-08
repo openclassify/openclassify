@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
+
+// Bootstrap
+@import "../bootstrap/mixins";
+//@import "../bootstrap/variables";
+
+// Utilities
+@import "_mixins";
+@import "_variables";
+
+// Layout
+@import "layout/main";
+@import "layout/menu";
+@import "layout/stage";
+@import "layout/frame";
+@import "layout/footer";
+@import "layout/topbar";
+@import "layout/search";
+@import "layout/buttons";
+@import "layout/sidebar";
+@import "layout/display";
+@import "layout/progress";
+
+// Components
+@import "components/swal";
+@import "components/tags";
+@import "components/navs";
+@import "components/cards";
+@import "components/forms";
+@import "components/trees";
+@import "components/alerts";
+@import "components/tables";
+@import "components/modals";
+@import "components/loader";
+@import "components/buttons";
+@import "components/choices";
+@import "components/variants";
+@import "components/sortable";
+@import "components/dropdowns";
+@import "components/scrollbar";
+@import "components/utilities";
+@import "components/pagination";
+@import "components/breadcrumb";
+@import "components/scaffolding";
+@import "components/input-group";
+@import "components/custom-forms";
+
+// Pages
+@import "pages/login";
+@import "pages/installer";

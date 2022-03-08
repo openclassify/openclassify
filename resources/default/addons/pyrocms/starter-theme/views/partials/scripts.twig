@@ -1,0 +1,21 @@
+<!-- jQuery -->
+{{ asset_add("theme.js", "theme::js/vendor/jquery.js") }}
+
+<!-- Bootstrap Core JavaScript -->
+{{ asset_add("theme.js", "theme::js/bootstrap.js") }}
+
+<!-- Plugin JavaScript -->
+{{ asset_add("theme.js", "theme::js/classie.js") }}
+{{ asset_add("theme.js", "theme::js/cbpAnimatedHeader.js") }}
+
+<!-- Custom Theme JavaScript -->
+{{ asset_add("theme.js", "theme::js/freelancer.js") }}
+
+{{ asset_script("theme.js", ["min"]) }}
+
+<!-- After the theme.js assets -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+{% for script in asset_scripts("scripts.js") %}
+    {{ script|raw }}
+{% endfor %}

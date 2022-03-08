@@ -1,0 +1,12 @@
+<input
+        type="number"
+        value="{{ field_type.value }}"
+        min="{{ field_type.config.min }}"
+        max="{{ field_type.config.max }}"
+        name="{{ field_type.input_name }}"
+        step="{{ field_type.config.step }}"
+        placeholder="{{ trans(field_type.placeholder) }}"
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}
+        {{ html_attributes(field_type.attributes) }}
+        onhover="(function (e) {e.preventDefault();})(event);">

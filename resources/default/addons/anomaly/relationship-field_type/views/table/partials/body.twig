@@ -1,0 +1,17 @@
+<tbody>
+{% for row in table.rows %}
+    <tr id="{{ loop.index }}">
+
+        {% for column in row.columns %}
+            <td class="{{ column.class }}" {{ html_attributes(column.attributes) }}>
+                {{ column.value|raw }}
+            </td>
+        {% endfor %}
+
+        <td class="text-lg-right buttons">
+            <nobr>{{ buttons(row.buttons)|raw }}</nobr>
+        </td>
+
+    </tr>
+{% endfor %}
+</tbody>

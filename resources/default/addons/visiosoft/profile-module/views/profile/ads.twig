@@ -1,0 +1,85 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            <div class="row px-3">
+                <div class="col-md-12 bg-dark text-white p-5 d-flex justify-content-between align-items-center flex-wrap">
+                    <h3>{{ trans('visiosoft.module.advs::field.my_ads.name') }}</h3>
+
+                    {{ addBlock('profile/ads/header')|raw }}
+                </div>
+
+                <div class="col-md-12 bg-light advs-section">
+                    <nav class="profile-advs-tab">
+                        <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                            {% set type = app.request.get('type') ?: 'approved' %}
+                            <a class="nav-item nav-link text-dark{{ type == 'approved' ? ' active' : '' }}"
+                               data-type="approved" id="nav-approved-tab" data-toggle="tab" href="#nav-approved"
+                               role="tab" aria-controls="nav-detail" aria-selected="true">
+                                {{ trans('visiosoft.module.advs::field.my_ads.name') }}
+                            </a>
+                            <a class="nav-item nav-link text-dark{{ type == 'pending' ? ' active' : '' }}"
+                               data-type="pending" id="nav-pending-tab" data-toggle="tab" href="#nav-pending"
+                               role="tab" aria-controls="nav-pending" aria-selected="true">
+                                {{ trans('visiosoft.module.advs::field.pending_adv.name') }}
+                            </a>
+                        </div>
+                    </nav>
+                    <div class="bg-dark p-2 mt-2 rounded">
+                        <a href="{{ url_route('advs::create_adv') }}" class="btn btn-success">
+                            <i class="fas fa-plus-circle"></i>
+                            {{ trans("visiosoft.theme.base::button.post_ad.name") }}
+                        </a>
+                        {% if auth_user().hasRole('admin') and setting_value('visiosoft.module.profile::show_extends_actions') %}
+                            <a href="{{ url_route("advs::extendAll") }}" class="btn btn-primary">
+                                {{ trans('visiosoft.module.profile::button.extend_all') }}
+                            </a>
+                            <a href="{{ url_route("advs::extendAll") }}?unpublished=1" class="btn btn-warning text-white">
+                                {{ trans('visiosoft.module.profile::button.extend_unpublished') }}
+                            </a>
+                        {% endif %}
+                    </div>
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                        <div class="tab-pane fade{{ type == 'approved' ? ' show active' : '' }}" id="nav-approved"
+                             role="tabpanel" aria-labelledby="nav-approved-tab">
+                        </div>
+                        <div class="tab-pane fade{{ type == 'pending' ? ' show active' : '' }}" id="nav-pending"
+                             role="tabpanel" aria-labelledby="nav-pending-tab">
+                        </div>
+                        <div class="tab-pane fade" id="nav-passive"
+                             role="tabpanel" aria-labelledby="nav-passive-tab">
+                        </div>
+
+                        <!-- Pagination links -->
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination justify-content-center">
+                                <li class="page-item">
+                                    <a id="btn_prev" class="page-link" href="javascript:prevPage()"><</a>
+                                </li>
+                                <li class="page-item"><span id="page" class="page-link">1</span></li>
+                                <li class="page-item">
+                                    <a id="btn_next" class="page-link" href="javascript:nextPage()">></a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+            <script>
+                var approve = "{{ trans('visiosoft.module.advs::field.approve') }}";
+                var passive = "{{ trans('visiosoft.module.advs::field.passive') }}";
+                var delete_ad = "{{ trans('visiosoft.module.profile::button.delete') }}";
+                var extend_ad = "{{ trans('visiosoft.module.profile::button.extend') }}";
+                var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
+                var ads_per_page = "{{ setting_value('streams::per_page') }}";
+                var no_ads_message = "{{ trans('visiosoft.module.advs::field.no_ads') }}";
+                let userStatus = JSON.parse(`{{ userStatus|raw }}`);
+                let statusChangeLink = `{{ changeStatusUrl }}`;
+                let dropdownBlock = `{{ addBlock('profile/dropdown-ad', {'id': ':id'})|raw }}`;
+                var changeStatusTrans = "{{ trans('visiosoft.module.profile::field.change_status') }}";
+            </script>
+            {{ asset_add('scripts.js','visiosoft.module.profile::assets/js/ads.js') }}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

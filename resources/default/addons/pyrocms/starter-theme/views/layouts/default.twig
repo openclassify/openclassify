@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="{{ config('app.locale') }}">
+
+<head>
+    {% block metadata %}
+        {% include "theme::partials/metadata" %}
+    {% endblock %}
+</head>
+
+<body>
+
+{% include "theme::partials/navigation" %}
+
+<div id="content">
+    <div class="container">
+        {% include "theme::partials/breadcrumbs" %}
+        {% include "theme::partials/messages" %}
+
+        {% block content %}{% endblock %}
+
+        {% if (request_path() == '/') %}
+            <hr> {% include "theme::partials/posts" %}
+        {% endif %}
+    </div>
+</div>
+
+{% include "theme::partials/footer" %}
+{% include "theme::partials/scripts" %}
+
+</body>
+
+</html>

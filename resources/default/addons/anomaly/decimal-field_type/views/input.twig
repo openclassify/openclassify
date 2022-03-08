@@ -1,0 +1,13 @@
+{{ asset_add('scripts.js', 'anomaly.field_type.decimal::js/input.js') }}
+
+<input
+        step="any"
+        type="number"
+        class="form-control"
+        name="{{ field_type.input_name }}"
+        data-decimals="{{ field_type.config.decimals }}"
+        placeholder="{{ trans(field_type.placeholder) }}"
+        value="{{ field_type.value is not null ? field_type.value|number_format(field_type.config.decimals, null, false) }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>

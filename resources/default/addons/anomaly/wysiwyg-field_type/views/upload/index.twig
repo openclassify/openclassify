@@ -1,0 +1,24 @@
+{{ asset_add('styles.css', 'anomaly.field_type.wysiwyg::css/upload.css') }}
+
+{{ asset_add('scripts.js', 'anomaly.field_type.wysiwyg::js/dropzone.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.wysiwyg::js/upload.js') }}
+
+{% for path in asset_paths("styles.css") %}
+    {{ html_style(path) }}
+{% endfor %}
+
+{% for path in asset_paths("scripts.js") %}
+    {{ html_script(path) }}
+{% endfor %}
+
+<div id="upload">
+
+    {% include "anomaly.field_type.wysiwyg::upload/partials/header" %}
+    {% include "anomaly.field_type.wysiwyg::upload/partials/body" %}
+    {% include "anomaly.field_type.wysiwyg::upload/partials/template" %}
+
+    <div class="uploaded">
+        {{ table.content|raw }}
+    </div>
+
+</div>

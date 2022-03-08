@@ -1,0 +1,6 @@
+{% set storeDetail = entries('store','store').where('user_id', params.userId).first() %}
+{% if storeDetail is not null %}
+    <a href="{{ url_route('store::view', [storeDetail.slug]) }}" class="d-flex align-items-center single-line">
+            <span class="ml-1">{{ storeDetail.name }}</span>
+        </a>
+{% endif %}

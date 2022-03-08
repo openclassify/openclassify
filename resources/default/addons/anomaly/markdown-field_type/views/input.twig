@@ -1,0 +1,11 @@
+{{ asset_add("scripts.js", "anomaly.field_type.markdown::js/simplemde.min.js") }}
+{{ asset_add("scripts.js", "anomaly.field_type.markdown::js/input.js") }}
+
+{{ asset_add("styles.css", "anomaly.field_type.markdown::css/input.css") }}
+
+<textarea
+        name="{{ field_type.input_name }}"
+        data-height="{{ field_type.config.height }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>{{ field_type.value }}</textarea>

@@ -1,0 +1,68 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+            <div class="review-form-wrapper">
+                {% set entry = params.adv %}
+                {% set entry_type = get_class(entry.getObject()) %}
+                {% set form = form('comments', 'comments').actions({'save':{}}).url(url_route('comments::save_comment')).get() %}
+                {{ form.open({ 'class': 'commentformajax mb-4'})|raw }}
+                <span class="title">{{ trans('visiosoft.extension.biolife_style_provider::field.submit_your_review') }}</span>
+                <div class="comment-form-rating d-flex align-items-center">
+                    <input type="text" name="rating" value="100" hidden>
+                    {{ form.fields.rating.label|raw }}
+                      
+                    <span id="rating"></span>
+                </div>
+                <input type="hidden" name="entry" value="{{ entry.id }}">
+                <input type="hidden" name="entry_type" value="{{ entry_type }}">
+                <p class="form-row wide-half">
+                    {% if auth_check() %}
+                        {{ form.fields.username.setValue(auth_user().name()).setAttributes({'required' :true, 'readonly': true}).input|raw }}
+                    {% else %}
+                        {{ form.fields.username.setAttributes({'required' :true,}).setPlaceholder('Your name').input|raw }}
+                    {% endif %}
+                </p>
+                <p class="form-row wide-half">
+                    {{ form.fields.title.setAttributes({'required' :true,}).setPlaceholder('Email address').input|raw }}
+                </p>
+                <p class="form-row">
+                    {{ form.fields.detail.setAttributes({'required' :true,}).setPlaceholder('Write your review here...').input|raw }}
+                </p>
+                <p class="form-row">
+                    <button type="submit" name="submit">
+                        {{ trans('visiosoft.module.comments::button.send_comment') }}
+                    </button>
+                </p>
+                {{ form_close() }}
+            </div>
+        </div>
+    </div>
+    <div id="comments">
+        <ol class="commentlist">
+            {% for comment in getComments(entry_type, entry.id) %}
+                <li class="review">
+                    <div class="comment-container">
+                        <div class="row">
+                            <div class="comment-content col-12">
+                                <p class="comment-in d-flex justify-content-between"><span class="post-name font-weight-bold">{{ comment.title }}</span>
+                                    <span class="post-date">{{ comment.created_at|date('d/m/Y') }}</span>
+                                </p>
+                                <div class="rating">
+                                    <span class="rating-ads" data-ratingVal="{{ comment.rating }}%"></span>
+                                </div>
+                                <p class="author">{{ trans('visiosoft.extension.biolife_style_provider::field.by') }}: <b>{{ comment.created_by.name() }}</b></p>
+                                <p class="comment-text">{{ comment.detail }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            {% endfor %}
+        </ol>
+    </div>
+</div>
+
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyo.min.js") }}
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/ajaxcomment.js") }}
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyoVisiosoft.js") }}
+{{ asset_add("styles.css", "visiosoft.module.comments::css/rateyo.css") }}
+{{ asset_add("styles.css", "visiosoft.module.comments::css/style.css") }}

@@ -1,0 +1,163 @@
+{% set pathInfo = app.request.pathinfo|split('/') %}
+{% set catSlug = pathInfo[1] == 'c' ? pathInfo[2] : null %}
+{% set citySlug = pathInfo|length is same as(4) ? pathInfo[3] : null %}
+{% set formAction = catSlug ? url_route('adv_list_seo', [catSlug, citySlug]) : url_route('visiosoft.module.advs::list') %}
+<form action="{{ formAction }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow"
+      class="flex-shrink-0">
+    <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
+    <input type="hidden" name="user" value="{{ app.request.get('user') }}">
+
+    <div id="category" class="border rounded p-3 mb-3 d-none d-sm-block">
+        <div id="categoryNav" class="d-flex">
+            <a href="{{ url_route('visiosoft.module.advs::view_type', ['list']) }}" rel="nofollow"
+               class="d-flex w-50 align-items-center pl-2 pb-1{{ request().cookie.viewType != "map" ? ' active' }}">
+                {{ img('visiosoft.module.advs::images/listing/list.svg').data|raw }}
+                <p class="ml-2">{{ trans("visiosoft.module.advs::field.list") }}</p>
+            </a>
+            {% if setting_value('visiosoft.module.location::list_page_location') %}
+                <a href="{{ url_route('visiosoft.module.advs::view_type', ['map']) }}" rel="nofollow"
+                   class="d-flex w-50 align-items-center pr-2 pb-1 justify-content-end{{ request().cookie.viewType == "map" ? ' active' }}">
+                    {{ img('visiosoft.module.advs::images/listing/map.svg').data|raw }}
+                    <p class="ml-2">{{ trans("visiosoft.module.advs::field.map.name") }}</p>
+                </a>
+            {% endif %}
+        </div>
+
+        {% include 'visiosoft.module.cats::ads-list/partials/cat-filter' %}
+    </div>
+
+    {{ addBlock('ads-list/partials/list-filter',{
+        'mainCats':mainCats,
+        'subCats':subCats,
+        'ranges':ranges,
+        'text':text,
+        'checkboxes':checkboxes,
+        'topfields' : topfields,
+        'selectDropdown' : selectDropdown,
+        'selectRange' : selectRange,
+        'selectImage' : selectImage,
+        'radio':radio,
+        'countries':countries,
+        'cities':cities,
+        'districts':districts,
+        'neighborhoods':neighborhoods,
+        'villages':villages,
+        'param':param,
+        'category':category,
+        'cityId':cityId
+    })|raw }}
+
+    <!-- Price Filter Start -->
+    {% include 'visiosoft.module.advs::list/partials/price-filter' %}
+    <!-- Price Filter End -->
+
+    {% if setting_value('visiosoft.module.advs::hide_date_filter') == false %}
+        <!-- Date Filter Start -->
+        <div id="date" class="border rounded filter-box p-3 mb-3">
+            <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+                <p>{{ trans("visiosoft.module.advs::field.date.name") }}</p>
+                {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+            </div>
+
+            <div class="overflow-auto">
+                <div class="px-2 mb-2 d-flex align-items-center">
+                    <input type="radio" id="dateDay" {{ app.request.get('date') == 'day' ? 'checked' }} value="day"
+                           name="date">
+                    <label for="dateDay" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
+                    </label>
+                </div>
+                <div class="px-2 mb-2 d-flex align-items-center">
+                    <input type="radio" id="dateWeek" {{ app.request.get('date') == 'week' ? 'checked' }} value="week"
+                           name="date">
+                    <label for="dateWeek" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
+                    </label>
+                </div>
+                <div class="px-2 mb-3 d-flex align-items-center">
+                    <input type="radio" id="dateMonth" {{ app.request.get('date') == 'month' ? 'checked' }} value="month"
+                           name="date">
+                    <label for="dateMonth" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Date Filter End -->
+    {% endif %}
+
+    {% if setting_value('visiosoft.module.advs::hide_photo_filter') == false %}
+        <!-- Media Filter Start -->
+        <div id="media" class="border rounded filter-box p-3 mb-3">
+            <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+                <p>{{ trans("visiosoft.module.advs::field.photo.name") ~ ', ' ~ trans("visiosoft.module.advs::field.video.name") }}</p>
+                {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+            </div>
+
+            <div class="overflow-auto">
+                <div class="px-2 mb-2 d-flex align-items-center">
+                    <input type="checkbox" id="photo" {{ app.request.get('photo') == true ? 'checked' }} value="true"
+                           name="photo">
+                    <label for="photo" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}
+                    </label>
+                </div>
+                <div class="px-2 mb-3 d-flex align-items-center">
+                    <input type="checkbox" id="video" {{ app.request.get('video') == true ? 'checked' }} value="true"
+                           name="video">
+                    <label for="video" class="ml-2 mb-0">
+                        {{ trans("visiosoft.module.advs::field.ads_with_video.name") }}
+                    </label>
+                </div>
+            </div>
+        </div>
+        <!-- Media Filter End -->
+    {% endif %}
+
+    {% if setting_value('visiosoft.module.advs::hide_map_filter') == false %}
+        <!-- Map Filter Start -->
+        <div id="mapFilter" class="border rounded filter-box p-3 mb-3">
+            <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+                <p>{{ trans("visiosoft.module.advs::field.map.name") }}</p>
+                {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+            </div>
+
+            <div class="overflow-auto">
+                <div class="px-2 mb-3 d-flex align-items-center">
+                    <input type="checkbox" id="mapFilter" {{ app.request.get('map') == true ? 'checked' }} value="true"
+                           name="map">
+                    <label for="mapFilter" class="ml-2 mb-0">{{ trans("visiosoft.module.advs::field.ads_with_map") }}</label>
+                </div>
+            </div>
+        </div>
+        <!-- Map Filter End -->
+    {% endif %}
+
+    <!-- Keyword Filter Start -->
+    <div id="keywordFilter" class="border rounded filter-box p-3 mb-3">
+        <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+            <p>{{ trans("visiosoft.module.advs::field.filter_by_word") }}</p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+
+        <div class="px-3 mb-1">
+            <div class="d-flex justify-content-around mt-3">
+                <input type="text" class="border-0 shadow-sm rounded px-3 py-1" name="keyword"
+                       value="{{ app.request.get('keyword') }}">
+            </div>
+        </div>
+    </div>
+    <!-- Keyword Filter End -->
+    <div class="d-flex justify-content-end">
+        <div id="filterReset" class="mr-1 text-right">
+            <button type="reset" class="btn btn-light bg-light btn-sm px-3 filter-form-reset">
+                {{ trans("visiosoft.module.advs::field.reset") }}
+            </button>
+        </div>
+        <div id="filterSubmit" class="text-right">
+            <button type="submit" class="btn text-white btn-sm px-3">
+                {{ trans("visiosoft.module.advs::field.search") }}
+            </button>
+        </div>
+    </div>
+</form>

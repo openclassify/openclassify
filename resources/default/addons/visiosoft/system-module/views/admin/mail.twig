@@ -1,0 +1,24 @@
+{% extends "streams::blank" %}
+
+{% block  content %}
+    <div class="container-fluid">
+
+        {% include "visiosoft.module.system::admin/partials/table" with {'attributes': {
+            'Time': 'entry.createdAt',
+            'Hostname': 'entry.content.hostname',
+            'Mailable': 'entry.content.mailable',
+            'From': 'entry.content.from|keys|join(", ")',
+            'To': 'entry.content.to|keys|join(", ")',
+            'ReplyTo': 'entry.content.replyTo|keys|join(", ")',
+            'Cc': 'entry.content.cc|keys|join(", ")',
+            'Bcc': 'entry.content.bcc|keys|join(", ")',
+            'Subject': 'entry.content.subject|keys|join(", ")',
+            'Tags': 'entry.tags',
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/user" %}
+        {% include "visiosoft.module.system::admin/fragments/message" %}
+        {% include "visiosoft.module.system::admin/partials/batch" %}
+
+    </div>
+{% endblock %}

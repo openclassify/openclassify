@@ -1,0 +1,55 @@
+.swal-title {
+    text-align: center;
+}
+
+.swal-text {
+    text-align: center;
+}
+
+.swal-overlay {
+    background-color: rgba(33, 33, 33, 0.8);
+}
+
+.swal-modal {
+    margin-top: 30px;
+    vertical-align: top;
+    border-radius: 0.1rem;
+}
+
+.swal-content__input-error,
+.swal-content__input-error:focus {
+    border-color: $brand-danger !important;
+}
+
+.swal-content__input-success,
+.swal-content__input-success:focus {
+    border-color: $brand-success !important;
+}
+
+.swal-button--primary {
+    background: $brand-primary;
+}
+
+.swal-button--confirm {
+    background: $brand-info;
+}
+
+.swal-button--cancel {
+    background: $brand-inverse;
+}
+
+.swal-button--warning {
+    background: $brand-warning;
+}
+
+.swal-button--error {
+    background: $brand-danger;
+}
+
+.swal-button--success {
+    background: $brand-success;
+}
+
+.swal-button--info {
+    background: $brand-info;
+}

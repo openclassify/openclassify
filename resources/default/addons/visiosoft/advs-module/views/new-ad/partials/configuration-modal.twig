@@ -1,0 +1,58 @@
+<div class="modal fade" id="configurationModal" tabindex="-1" role="dialog" aria-labelledby="configurationModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog modal-xl" role="document">
+        <div class="modal-content rounded-0">
+            <div class="modal-header border-0">
+                <h5 class="modal-title" id="configurationModalLabel">
+                    {{ trans('visiosoft.module.advs::stream.product_options.name') }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="flex-row">
+                    {% set configurationForm = form('configuration_form').entry(adv.id).get() %}
+
+                    {{ form_open({id: 'configurationForm',class: 'd-flex justify-content-between flex-column flex-lg-row'})|raw }}
+                    <input type="text" name="parent_adv_id" value="{{ adv.id }}" hidden>
+                    {{ configurationForm.fields|raw }}
+                    <button type="submit" class="btn btn-primary btn-configuration my-auto form-control w-auto">
+                        {{ trans('visiosoft.module.advs::button.add') }}
+                    </button>
+                    {{ form_close() }}
+                </div>
+
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">{{ trans('visiosoft.module.advs::field.options') }}</th>
+                        <th scope="col">{{ trans('visiosoft.module.advs::field.stock.name') }}</th>
+                        <th scope="col">{{ trans('visiosoft.module.advs::field.price.name') }}</th>
+                        <th scope=""></th>
+                    </tr>
+                    </thead>
+                    <tbody class="configuration-table">
+                    {% for key, configuration in configurations %}
+                        <tr id="configuration-{{ key }}">
+                            <td>{{ configuration.name }}</td>
+                            <td>{{ configuration.stock }}</td>
+                            <td>{{ currency_format(configuration.price,configuration.currency) }}</td>
+                            <td class="text-right">
+                                <a href="javascript:void(0)" class="btn btn-sm remove-conf"
+                                   data-id="{{ key }}">{{ img('visiosoft.module.advs::images/create/close.svg').data|raw }}</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    let new_button = "{{ trans('visiosoft.module.advs::button.new_productoption') }}",
+        option_saved = "{{ trans('visiosoft.module.advs::message.option_saved') }}",
+        save_the_option = "{{ trans('visiosoft.module.advs::message.do_you_want_to_save_the_option') }}";
+</script>
