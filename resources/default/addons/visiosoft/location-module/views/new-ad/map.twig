@@ -1,0 +1,106 @@
+{% if setting_value('visiosoft.module.location::create_ad_page_location') %}
+    <div class="form-group location-map position-relative">
+        <div>
+            <ul class="nav nav-tabs d-flex justify-content-end border-0 bg-light position-absolute" role="tablist">
+                <li role="presentation" class="p-0 m-0">
+                    <a href="#location" class="text-dark pr-2"
+                       aria-controls="location"
+                       role="tab" data-toggle="tab">{{ trans('visiosoft.module.location::addon.title') }}</a>
+                </li>
+                <li role="presentation" class="p-0 m-0 ml-1">
+                    <a href="#my_address" class="text-dark pl-2" aria-controls="my_address"
+                       role="tab" data-toggle="tab">{{ trans('visiosoft.module.profile::field.my_address') }}</a>
+                </li>
+            </ul>
+            <div class="tab-content bg-light">
+                <div role="tabpanel" class="tab-pane m-0 pt-2 active" id="location">
+                    <div class="row">
+                        <div class="col-12">
+                            <ul style="padding: 0" class="list-unstyled d-flex flex-column flex-sm-row">
+                                <li class="country-data flex-fill mx-1" data-content="{{ adv['country_id'] }}"
+                                    data-default="{{ setting_value('visiosoft.module.location::default_country') }}"
+                                    class="location-field country-data">
+                                    {{ form.fields.country.setOptions({})|raw }}
+                                </li>
+                                <li class="city-data flex-fill mx-1" data-content="{{ adv['city'] }}"
+                                    data-default="{{ setting_value('visiosoft.module.location::default_city') }}"
+                                    class="location-field city-data">
+                                    {{ form.fields.city|raw }}
+                                </li>
+                                <li class="district-data flex-fill mx-1" data-content="{{ adv['district'] }}"
+                                    class="location-field district-data">
+                                    {{ form.fields.district|raw }}
+                                </li>
+                                <li class="neighborhood-data flex-fill mx-1" data-content="{{ adv['neighborhood'] }}"
+                                    class="location-field neighborhood-data">
+                                    {{ form.fields.neighborhood|raw }}
+                                </li>
+                                {% if not setting_value('visiosoft.module.advs::hide_village_field') %}
+                                    <li class="village-data flex-fill" data-content="{{ adv['village'] }}">
+                                        {{ form.fields.village|raw }}
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <div id="map-canvas" style="
+                                position: relative; overflow: hidden;
+                                transform: translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px);
+                                width: 100%;
+                                height:550px;
+                                background-color: rgb(229, 227, 223);
+                            "></div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div role="tabpanel" class="tab-pane" id="my_address">
+                    <div class="col-md-12">
+                        <input type="hidden" name="address_id">
+                        <table class="table addressSelect">
+                            <tbody>
+                            {% for key,adress in getAddressByUser(auth_user().id) %}
+                                <tr class="row-address{{ adress.id }}">
+                                    <td class="address-title">{{ adress.adress_name }}</td>
+                                    <td>
+                                        <a class="btn btn-sm btn-info selectAddress text-white"
+                                           data-id="{{ adress.id }}"
+                                           role="button">
+                                            <i class="fas fa-check" aria-hidden="true"></i>
+                                            <b>{{ trans("visiosoft.module.profile::field.choose.name") }}</b>
+                                        </a>
+                                        <a class="btn btn-sm btn-success text-white edit-this-address"
+                                           data-id="{{ adress.id }}"
+                                           role="button">
+                                            <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                            {{ trans("visiosoft.module.profile::field.edit.name") }}
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        var selectedAddressText = "{{ trans('visiosoft.module.location::field.selected') }}";
+        var chooseAddressText = '{{ trans("visiosoft.module.profile::field.choose.name") }}';
+        var chooseOptionTrans = '{{ trans("visiosoft.module.location::field.choose_an_option") }}';
+        var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+        var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
+        var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
+        var default_neighborhood = "{{ setting_value('visiosoft.module.location::default_neighborhood') }}";
+        var default_village = "{{ setting_value('visiosoft.module.location::default_village') }}";
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback="
+            type="text/javascript"></script>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/location.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.location::js/addressSelect.js") }}
+
+    {{ asset_add("styles.css", "visiosoft.module.location::css/map.css") }}
+{% endif %}
+

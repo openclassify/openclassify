@@ -1,0 +1,84 @@
+<div class="slider-text">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+        {% set standardPrice = adv.standard_price.value %}
+        {% if standardPrice and standardPrice > 0 %}
+            <div class="d-flex flex-wrap align-items-center">
+                <h3 class="ad-price-standard mr-3 text-truncate">
+                    <b>{{ currency_format(adv.standard_price,adv.currency) }}</b>
+                </h3>
+                <h3 class="ad-price-standard-percentage text-white p-2">
+                    <b>%{{ (100 - ((100 * adv.price.value) / adv.standard_price.value))|round(0, 'common') }}</b>
+                </h3>
+            </div>
+        {% endif %}
+        <h3 class="ad-price">
+            <b>{{ currency_format(adv.price,adv.currency) }}</b>
+            <!-- priceField with Block -->
+            {{ addBlock('ad-detail/priceField',{'adv':adv})|raw }}
+            <!-- priceField with Block -->
+
+        </h3>
+    </div>
+    <div class="user-interactions">
+
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+            <div class="row">
+                <div class="col-md-12 m-2">
+                    <!-- Author with Block -->
+                    {{ addBlock('ad-detail/author',{'adv':adv})|raw }}
+                    <!-- Author with Block -->
+
+                    {{ trans('visiosoft.module.advs::field.offered_by') }}:
+                    <a id="owner"
+                       href="{{ url_route('visiosoft.module.advs::list_user_ad', [adv.created_by_id]) }}"
+                       data-content="{{ adv.owner_id }}"> {{ adv.first_name }} {{ adv.last_name }}
+                    </a>
+                    {{ addBlock('ad-detail/seller/action',{'seller_id':adv.owner_id})|raw }}
+                </div>
+                {% if setting_value('visiosoft.module.advs::market_place') %}
+                    <div class="col-md-12 m-2">
+                        <i class="fas fa-hashtag"></i>
+                        {{ trans('visiosoft.module.advs::field.ad_id') }}:{{ adv.id }}
+                    </div>
+                    <div class="col-md-12 m-2">
+                        <i class="far fa-clock text-dark"></i>
+                        {{ adv.created_at|date('d/m/Y') }}
+                    </div>
+                {% endif %}
+
+                <!-- Detail With Block -->
+                {{ addBlock('ad-detail/details',{'adv':adv, 'options':options, 'configurations':configurations})|raw }}
+                {{ addBlock('ad-detail/widget-details',{'adv':adv})|raw }}
+                <!-- Detail With Block -->
+
+                {% if adv.isCorporate == 2 %}
+                    <div class="col-md-12 m-2">
+                        <i class="fa fa-suitcase"></i>
+                        <a href="{{ url_route('visiosoft.module.advs::list_user_ad',
+                            [adv.created_by_id]) }}"> {{ adv.first_name }} {{ adv.last_name }}</a>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Contact With Block -->
+        {% set contactWith = addBlock('ad-detail/contact-with',{'adv':adv}) %}
+        {% if contactWith != "" %}
+            <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row">
+                <div class="row">
+                    <div class="col-md-12 mt-2">
+                        <h4><u>{{ trans('visiosoft.module.advs::field.contact_with') }}:</u></h4>
+                    </div>
+                    {{ contactWith|raw }}
+                </div>
+            </div>
+        {% endif %}
+        <!-- Contact With Block -->
+
+        <!-- social-links -->
+        <div class="social-links">
+            {% include "visiosoft.module.advs::ad-detail/partials/social" %}
+        </div>
+        <!-- social-links -->
+    </div>
+</div>

@@ -1,0 +1,128 @@
+{% if is_module_enabled('carts') %}
+	{% if adv.is_get_adv == "1" and adv.stock != "0" and adv.stock is not empty %}
+		{% if not setting_value('visiosoft.module.advs::hide_zero_price') or adv.price != "0" %}
+			<div class="m-2 p-0 add-to-cart-button-wrapper border-0">
+				<div class="row bg-transparent">
+					{% set standardPrice = adv.standard_price.value %}
+
+					{% if options is not empty and count(options) %}
+						<div class="col-12 pl-0 py-2">
+							<div class="options-select ml-3 mt-2">
+								<select name="option" class="custom-select form-control">
+									{% for option in options %}
+										<option value="{{ option.name }}">{{ option.name }}</option>
+									{% endfor %}
+								</select>
+							</div>
+						</div>
+					{% endif %}
+
+					{% if configurations != null %}
+						<form action="{{ route('configuration::add_cart') }}" class="w-100" id="configuratedForm">
+							<div class="d-flex flex-column my-2 mb-3">
+								<div class="fw-500 text-secondary mb-1">
+									{{ trans('visiosoft.extension.gg_style_provider::field.ads_configurations') }}
+								</div>
+								<select name="configuration" id="" class="form-control w-100">
+									{% for key, configuration in configurations %}
+										<option value="{{ key }}" {{ (loop.index == 1) ? 'selected':'' }} data-stock="{{ configuration.stock }}"
+										        data-price="{{ currency_format(configuration.price,configuration.currency) }}">
+											{{ configuration.name }}
+										</option>
+									{% endfor %}
+								</select>
+							</div>
+
+							<div class="gg-product-buy px-3 py-4 w-100">
+								<div class="gg-product-buy-top">
+									<div class="stock d-inline-block d-flex rounded">
+										<div class="stock-w pointer">
+											<button class="btn btn-dark btn-sm quantity-minus-btn" disabled>
+												<i class="fa fa-minus"></i>
+											</button>
+										</div>
+										<div class="stock-w flex-column stock-bg">
+											<input type="number" data-id="{{ adv.id }}" data-type="ad-configuration" name="quantity"
+											       class="form-control text-center quantity border-0" value="1" min="1">
+										</div>
+										<div class="stock-w pointer">
+											<button type="button" class="btn btn-dark btn-sm quantity-plus-btn rounded-right"
+												{% if adv.stock < "2" %} disabled {% endif %}>
+												<i class="fa fa-plus"></i>
+											</button>
+										</div>
+									</div>
+									<div class="fw-bold small ml-2 text-secondary">
+										{{ trans('visiosoft.module.carts::field.stock_status', {stock: adv.stock})|raw }}
+									</div>
+								</div>
+								<div class="container px-3 mt-3 p-0 m-0">
+									<div class="row p-0 d-flex">
+										<a href="javascript:void(0)" class="col-6 gg-product-buy-btn text-white bg-primary conf-add-cart-button" data-type="checkout">
+											{{ trans('visiosoft.extension.gg_style_provider::field.buy_now') }}!
+										</a>
+										<button type="submit" class="col-6 gg-product-buy-btn border-0">
+											{{ trans('visiosoft.module.orders::field.addcart') }}
+										</button>
+									</div>
+								</div>
+							</div>
+						</form>
+					{% else %}
+						<div class="gg-product-buy px-3 py-4 w-100">
+							<div class="gg-product-buy-top">
+								<div class="stock d-inline-block d-flex rounded">
+									<div class="stock-w pointer">
+										<button class="btn btn-dark btn-sm quantity-minus-btn" disabled>
+											<i class="fa fa-minus"></i>
+										</button>
+									</div>
+									<div class="stock-w flex-column stock-bg">
+										<input type="number" data-id="{{ adv.id }}" name="quantity"
+										       class="form-control text-center quantity border-0" value="1" min="1">
+									</div>
+									<div class="stock-w pointer">
+										<button class="btn btn-dark btn-sm quantity-plus-btn rounded-right"
+											{% if adv.stock < "2" %} disabled {% endif %}>
+											<i class="fa fa-plus"></i>
+										</button>
+									</div>
+								</div>
+								<div class="fw-bold small ml-2 text-secondary">
+									{{ trans('visiosoft.module.carts::field.stock_status', {stock: adv.stock})|raw }}
+								</div>
+							</div>
+							<div class="container px-3 mt-3 p-0 m-0">
+								<div class="row p-0 d-flex">
+									{% if price_members_only %}
+										<a href="javascript:void(0)" data-type="checkout"
+										   class="col-6 gg-product-buy-btn text-white bg-primary add-cart-button">
+											{{ trans('visiosoft.extension.gg_style_provider::field.buy_now') }}
+										</a>
+									{% else %}
+										<a href="{{ url('/login') }}"
+										   class="col-6 gg-product-buy-btn text-white bg-primary">
+											{{ trans('visiosoft.extension.gg_style_provider::field.buy_now') }}!
+										</a>
+									{% endif %}
+									{% if price_members_only %}
+										<a href="javascript:void(0)" class="col-6 gg-product-buy-btn add-cart-button">
+											{{ trans('visiosoft.module.orders::field.addcart') }}
+										</a>
+									{% else %}
+										<a href="{{ url('/login') }}" class="col-6 gg-product-buy-btn">
+											{{ trans('visiosoft.module.orders::field.addcart') }}
+										</a>
+									{% endif %}
+								</div>
+							</div>
+						</div>
+					{% endif %}
+				</div>
+			</div>
+			{{ asset_add('scripts.js','visiosoft.module.carts::js/AddCartQuantity.js') }}
+			{{ asset_add('styles.css','visiosoft.module.carts::css/ad-detail.css') }}
+
+		{% endif %}
+	{% endif %}
+{% endif %}

@@ -217,11 +217,6 @@ opacity: 1;
 background: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color')}} !important;
 color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}} !important;
 }
-.nav.nav-sections li a {
-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_color')}} !important;
-opacity: 0.3;
-transition: 0.5s;
-}
 .nav.nav-sections li:hover a {
 color: {{ setting_value('visiosoft.theme.defaultadmin::dark_links_hover_active_color')}} !important;
 opacity: 1;
@@ -261,9 +256,6 @@ background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_backgroun
 .choices__list--multiple .choices__item {
 background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
 border: 1px solid {{ setting_value('visiosoft.theme.defaultadmin::dark_info_color') }} !important;
-}
-.nav.nav-sections li a {
-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
 }
 #sidebar > ul > li.active {
 background: {{ setting_value('visiosoft.theme.defaultadmin::dark_sidebar_secondary_color') }};
@@ -364,4 +356,25 @@ color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !imp
 }
 .select2-container--default .select2-selection--single {
 border-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_secondary_color') }} !important;
+}
+.dropdown-menu {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }} !important;
+}
+
+.select2-container--default.select2-container--open.select2-container--below .select2-selection--single, .select2-container--default.select2-container--open.select2-container--below .select2-selection--multiple {
+    border-color: {{setting_value('visiosoft.theme.defaultadmin::dark_input_focused_border_color')}} !important;
+}
+.nav.nav-sections li a {
+    color: white !important;
+}
+.nav.nav-sections .nav-item.active a {
+    opacity: 1;
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_primary_color') }} !important;
+}
+.nav-pills .nav-link:hover {
+    background-color: {{ setting_value('visiosoft.theme.defaultadmin::dark_input_background_color') }} !important;
+}
+.text-muted {
+    color: {{ setting_value('visiosoft.theme.defaultadmin::dark_text_color') }} !important;
+    filter: brightness(80%);
 }

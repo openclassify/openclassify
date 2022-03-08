@@ -1,0 +1,24 @@
+<div class="c-inputs-stacked">
+
+    <label class="c-input c-checkbox">
+
+        <input
+                value="0"
+                type="hidden"
+                name="{{ field_type.input_name }}">
+        
+        <input
+                type="checkbox"
+                name="{{ field_type.input_name }}"
+                {{ field_type.value ? 'checked' }}
+                {{ field_type.disabled ? 'disabled' }}
+                {{ field_type.readonly ? 'readonly' }}
+                {{ field_type.required ? 'required' }}
+                {{ field_type.readonly ? 'onclick="return false;"' }}>
+
+        <span class="c-indicator"></span>
+
+        {{ trans(field_type.config.label)|raw }}
+    </label>
+
+</div>

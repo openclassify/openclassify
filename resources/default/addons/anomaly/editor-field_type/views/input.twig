@@ -1,0 +1,90 @@
+{# Main Codemirror #}
+{{ asset_add('styles.css', 'anomaly.field_type.editor::js/codemirror/lib/codemirror.css') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/lib/codemirror.js') }}
+
+{# Dialog Addon #}
+{{ asset_add('styles.css', 'anomaly.field_type.editor::js/codemirror/addon/dialog/dialog.css') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/dialog/dialog.js') }}
+
+{# Show Hint Addon #}
+{{ asset_add('styles.css', 'anomaly.field_type.editor::js/codemirror/addon/hint/show-hint.css') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/hint/show-hint.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/hint/css-hint.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/hint/html-hint.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/hint/xml-hint.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/hint/javascript-hint.js') }}
+
+{# Lint Addon #}
+{{ asset_add('styles.css', 'anomaly.field_type.editor::js/codemirror/addon/lint/lint.css') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/lint/lint.js') }}
+
+{# Full Screen Addon #}
+{{ asset_add('styles.css', 'anomaly.field_type.editor::js/codemirror/addon/display/fullscreen.css') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/display/fullscreen.js') }}
+
+{# Edit Addons #}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/edit/closetag.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/edit/closebrackets.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/edit/continuelist.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/edit/matchbrackets.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/edit/matchtags.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/edit/trailingspace.js') }}
+
+{# Selection Addons #}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/selection/selection-pointer.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/selection/mark-selection.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/selection/active-line.js') }}
+
+{# Search Addons #}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/search/matchesonscrollbar.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/search/search.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/search/searchcursor.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/search/match-highlighter.js') }}
+
+{# Commenting Addons #}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/comment/comment.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/comment/continuecomment.js') }}
+
+{# Common Modes #}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/mode/multiplex.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/mode/overlay.js') }}
+
+{# Miscelaneous Addons #}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/scroll/annotatescrollbar.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/wrap/hardwrap.js') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/addon/emmet/emmet.js') }}
+
+{# Keymap #}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/codemirror/keymap/phpstorm.js') }}
+
+{# Editor Theme #}
+{{ asset_add('styles.css', 'anomaly.field_type.editor::css/codemirror/theme/' ~ field_type.config.theme ~ '.css') }}
+
+{# Load Mode Dependencies #}
+{% for style in config('anomaly.field_type.editor::editor.modes.' ~ field_type.config.mode ~ '.styles') %}
+    {{ asset_add('styles.css', style) }}
+{% endfor %}
+
+{% for script in config('anomaly.field_type.editor::editor.modes.' ~ field_type.config.mode ~ '.scripts') %}
+    {{ asset_add('scripts.js', script) }}
+{% endfor %}
+
+{# Input #}
+{{ asset_add('styles.css', 'anomaly.field_type.editor::less/input.less') }}
+{{ asset_add('scripts.js', 'anomaly.field_type.editor::js/input.js') }}
+
+<div class="codemirror">
+
+    <a href="#" class="fullscreen">{{ icon('expand') }}</a>
+
+    <textarea
+            class="{{ field_type.class }}"
+            name="{{ field_type.input_name }}"
+            {% for key,value in field_type.config %}
+                data-{{ key }}="{{ value }}"
+            {% endfor %}
+            {{ html_attributes(field_type.attributes) }}
+            {{ field_type.disabled ? 'disabled' }}
+            {{ field_type.readonly ? 'readonly' }}>{{ field_type.value }}</textarea>
+
+</div>

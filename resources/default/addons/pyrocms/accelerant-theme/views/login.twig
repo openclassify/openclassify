@@ -1,0 +1,72 @@
+{% extends "pyrocms.theme.accelerant::layouts/login" %}
+
+{% block content %}
+
+    <script type="text/javascript">
+        {{ asset_inline('pyrocms.theme.accelerant::js/theme/login.js') }}
+    </script>
+
+    <div class="logo-container">
+        <div class="logo">
+            {{ img('theme::img/icon.svg').data|raw }}
+            PYRO
+            <span>{{ config('streams::distribution.version') }}</span>
+        </div>
+        <div class="overlay"></div>
+    </div>
+
+    <div class="login-container variant-background-pattern">
+        <div class="login-wrapper container-fluid">
+
+            <div class="logo">
+                {{ img('theme::img/icon.svg').data|raw }}
+            </div>
+
+            <div class="col-sm-12 offset-sm-6">
+
+                {% include "theme::partials/messages" %}
+
+                {% set form = form('login').redirect('admin').get() %}
+
+                {{ form.open({'id': 'login'})|raw }}
+
+                <div class="form-group">
+                    {% if setting_value('anomaly.module.users::login') == 'username' %}
+                        {{ form.fields.username.setPlaceholder(form.fields.username.label).addAttribute('autofocus', 1).input|raw }}
+                    {% else %}
+                        {{ form.fields.email.setPlaceholder(form.fields.email.label).addAttribute('autofocus', 1).input|raw }}
+                    {% endif %}
+                </div>
+
+                <div class="form-group">
+                    {{ form.fields.password.setPlaceholder(form.fields.password.label).input|raw }}
+                </div>
+
+                <div class="form-group checkbox pull-left">
+                    <label>
+                        {{ form_checkbox("remember", null, false, {'id': 'remember'}) }}
+                        {{ trans('anomaly.module.users::field.remember_me.name') }}
+                    </label>
+                </div>
+
+                <div class="form-group pull-right">
+                    <button type="submit" value="Login" class="btn btn-white btn-outline">
+                        {{ trans('anomaly.module.users::button.login') }}
+                    </button>
+                </div>
+
+                {{ form.close|raw }}
+
+                <div class="clearfix"></div>
+
+                <a href="{{ url_route('anomaly.module.users::password.forgot') }}">
+                    <small>
+                        {{ trans('anomaly.module.users::message.forgot_password') }}
+                    </small>
+                </a>
+
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

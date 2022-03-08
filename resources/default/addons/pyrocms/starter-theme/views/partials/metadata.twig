@@ -1,0 +1,50 @@
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="">
+<meta name="author" content="">
+
+<title>
+    {{ config_get("streams::distribution.name") }} &#8250; {{ trans(template.meta_title) }}
+</title>
+
+{% block opengraph %}
+    <meta property="og:site_name"
+          content="{{ setting_value('streams::name', config_get('streams::distribution.name')) }}"/>
+    {#<meta property="og:image" content="{{ image_url('qcr.theme.qcr::img/og.png') }}"/>#}
+    <meta property="og:description" content="{{ trans(template.meta_description) }}"/>
+    <meta property="og:title" content="{{ trans(template.meta_title) }}"/>
+    <meta property="og:url" content="{{ url_current() }}"/>
+    <meta property="og:type" content="website"/>
+{% endblock %}
+
+<!-- Favicons -->
+{{ favicons("theme::img/favicon.png") }}
+
+
+<!-- Bootstrap Core CSS - Uses Bootswatch Flatly Theme: http://bootswatch.com/flatly/ -->
+{{ asset_add("theme.css", "theme::css/bootstrap.css") }}
+
+<!-- Custom CSS -->
+{{ asset_add("theme.css", "theme::css/freelancer.css") }}
+
+<!-- Custom Fonts -->
+{# {{ asset_add("theme.css", "theme::font-awesome/css/font-awesome.css", ["parse"]) }} #}
+<link href="//fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+<link href="//fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+<link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+{{ asset_style("theme.css") }}
+
+{% for style in asset_styles("styles.css") %}
+    {{ style|raw }}
+{% endfor %}
+
+{{ constants() }}
+
+<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn"t work if you view the page via file:// -->
+<!--[if lt IE 9]>
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->

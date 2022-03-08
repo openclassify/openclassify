@@ -1,0 +1,17 @@
+{% if dashboards.count() > 1 %}
+    <div class="card">
+
+        <nav class="navbar navbar-light">
+            <div class="nav navbar-nav">
+                {% for dashboard in dashboards %}
+                    <a
+                            class="nav-item nav-link {{ dashboard.active ? 'active' }}"
+                            href="{{ url('admin/dashboard/view/' ~ dashboard.slug) }}">
+                        {{ dashboard.name }}
+                    </a>
+                {% endfor %}
+            </div>
+        </nav>
+
+    </div>
+{% endif %}

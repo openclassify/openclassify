@@ -1,0 +1,24 @@
+{% if entry.content.user.id %}
+    <div class="card">
+
+        <div class="card-header">
+            <h5 class="card-title">
+                Authenticated User
+            </h5>
+        </div>
+
+        <div class="table-responsive">
+            <table class="table table-borderless">
+                <tr>
+                    <th>ID</th>
+                    <td>{{ entry.content.user.id }}</td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td>{{ entry.content.user.email }}</td>
+                </tr>
+            </table>
+        </div>
+
+    </div>
+{% endif %}

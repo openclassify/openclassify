@@ -1,0 +1,8 @@
+<li class="{{ container.class }}">
+	<a href="#" class="{{ toggle.class }}" data-toggle="dropdown">{{ toggle.title|raw }}</a>
+	<ul class="{{ ul.class }}">
+	  	{% for locale in locales %}
+	  		<li><a href="{{ locale.url }}">{{ locale.name }}</a></li>
+	  	{% endfor %}
+	</ul>
+</li>

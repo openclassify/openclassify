@@ -1,0 +1,132 @@
+{% extends "visiosoft.module.advs::list/list" %}
+{% block listContent %}
+<div class="col-md-12 mb-2 bg-dark">
+    <div id="map"></div>
+</div>
+    <script>
+        function QueryString(URL) {
+            // This function is anonymous, is executed immediately and
+            // the return value is assigned to QueryString!
+            var query_string = {};
+            var usefulParam = URL.split("?")[1] || "";
+            var query = usefulParam || "";
+            var vars = query.split("&");
+
+            for (var i = 0; i < vars.length; i++) {
+                var pair = vars[i].split("=");
+
+                // If first entry with this name
+                if (typeof query_string[pair[0]] === "undefined") {
+                    query_string[pair[0]] = decodeURIComponent(pair[1]);
+                    // If second entry with this name
+                } else if (typeof query_string[pair[0]] === "string") {
+                    var arr = [query_string[pair[0]], decodeURIComponent(pair[1])];
+                    query_string[pair[0]] = arr;
+                    // If third or later entry with this name
+                } else {
+                    query_string[pair[0]].push(decodeURIComponent(pair[1]));
+                }
+            }
+
+            return query_string;
+        }
+
+        function initMap() {
+            var countMap = 0;
+            var map = new google.maps.Map(document.getElementById('map'));
+            var infowindow = new google.maps.InfoWindow();
+            var infoWin = new google.maps.InfoWindow();
+            $.ajax({
+                async: false,
+                type: 'GET',
+                url: '{{ url('mapJson') }}',
+                data: QueryString(window.location.href),
+                success: function (data) {
+                    var ilans = data;
+                    var locations = [];
+                    ilans.forEach(function (i, key) {
+                        if (i.map_Val) {
+                            countMap++;
+                            var loc_array = i.map_Val.split(',');
+                            var lat = loc_array[0];
+                            var lng = loc_array[1];
+                            if (i.cover_photo.split('/')[0] == "files") {
+                                i.cover_photo = window.location.origin + "/" + i.cover_photo;
+                            }
+                            if (!isNaN(lat)) {
+                                locations.push({
+                                    lat: parseFloat(lat),
+                                    lng: parseFloat(lng),
+                                    id: i.id,
+                                    seoLink: i.seo_link,
+                                    title: i.name,
+                                    price: i.price,
+                                    currency: i.currency,
+                                    cover_photo: i.cover_photo
+                                })
+                            }
+                        }
+                    });
+
+                    var marker = locations.map(function (location, i) {
+                        var image = {
+                            url: 'https://svgshare.com/i/BpV.svg',
+                            scaledSize: new google.maps.Size(64, 64),
+                            origin: new google.maps.Point(0, 0),
+                            anchor: new google.maps.Point(0, 32)
+                        }
+                        var mark = new google.maps.Marker({
+                            position: {lat: location.lat, lng: location.lng},
+                            animation: google.maps.Animation.DROP,
+                            icon: image
+                        });
+
+                        google.maps.event.addListener(mark, 'click', function (evt) {
+                            infoWin.setContent('<div id="content" class="col-md-12 p-0 m-0">' +
+                                '<div class="map_info_top">' +
+                                '</div>' +
+                                '<div id="bodyContent">' +
+                                '<p> <img class="map_image w-100" src="' + location.cover_photo + '" height="auto"/> </p>' +
+                                '<h6 class="map_subject text-truncate text-primary">' + location.title + '</h6>' +
+                                '<p class="map_price">' + location.price + ' ' + location.currency + '</p>' +
+                                '<p><a href="' + location.seoLink + '" class="btn btn-info w-100" target="_blank"><small>{{ trans('visiosoft.module.advs::field.show_details') }}</small></a> </p>' +
+                                '</div>' +
+                                '</div>');
+                            infoWin.open(map, mark);
+                            infoWin.setStyle('map_subject')
+                        });
+
+                        return mark;
+                    });
+
+                    var markerCluster = new MarkerClusterer(map, marker,
+                        {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+
+                    google.maps.event.addDomListener(window, "load", initMap);
+
+                    var bounds = new google.maps.LatLngBounds();
+                    for (var i = 0; i < locations.length; i++) {
+                        var beach = locations[i];
+                        var myLatLng = new google.maps.LatLng(beach.lat, beach.lng);
+                        bounds.extend(myLatLng);
+                    }
+                    map.fitBounds(bounds);
+                }
+            });
+
+            if (countMap == 0) {
+                $('.listMap').html("<h3>{{ trans('visiosoft.module.advs::field.no_ads') }}</h3>");
+            } else {
+                $('#map').attr('display', 'block')
+                $('#listAdvs').css('display', 'block')
+            }
+            $('.showListBtn').attr('href', window.location.origin + "/advs/list" + window.location.search);
+        }
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback=initMap">
+    </script>
+{% endblock %}
+

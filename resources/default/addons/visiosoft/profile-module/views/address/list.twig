@@ -1,0 +1,49 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            <table class="table address-table">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col">
+                        <a href="{{ url_route('visiosoft.module.profile::adress_create') }}"
+                           class="btn btn-primary" role="button" aria-pressed="true">
+                            <i class="fas fa-plus-circle"></i>
+                            {{ trans("visiosoft.module.profile::field.create_address.name") }}
+                        </a>
+                    </th>
+                    <th scope="col">{{ trans("visiosoft.module.profile::field.adress_name.name") }}</th>
+                    <th scope="col" class="d-none d-md-table-cell">{{ trans("visiosoft.module.profile::field.adress_first_name.name") }}</th>
+                    <th scope="col" class="d-none d-md-table-cell">{{ trans("visiosoft.module.profile::field.adress_last_name.name") }}</th>
+                    <th scope="col">{{ trans("visiosoft.module.profile::field.actions.name") }}</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for key,adress in address %}
+                    <tr>
+                        <th scope="row">{{ loop.index }}</th>
+                        <td>{{ adress.adress_name }}</td>
+                        <td class="d-none d-md-table-cell">{{ adress.adress_first_name }}</td>
+                        <td class="d-none d-md-table-cell">{{ adress.adress_last_name }}</td>
+                        <td>
+                            <a class="btn btn-sm btn-success"
+                               href="{{ url_route('visiosoft.module.profile::address_edit', [adress.id]) }}"
+                               role="button">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                {{ trans("visiosoft.module.profile::field.edit.name") }}
+                            </a>
+                            <a class="btn btn-sm btn-danger"
+                               href="{{ url_route('visiosoft.module.profile::address_soft_delete', [adress.id]) }}"
+                               role="button">
+                                <i class="fas fa-pencil-alt" aria-hidden="true"></i>
+                                {{ trans("visiosoft.module.profile::field.delete.name") }}
+                            </a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

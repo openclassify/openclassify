@@ -1,0 +1,38 @@
+{{ asset_add("styles.css", "anomaly.field_type.wysiwyg::css/redactor.css") }}
+
+{{ asset_add("styles.css", "anomaly.field_type.wysiwyg::css/overrides.css") }}
+{{ asset_add("styles.css", "anomaly.field_type.wysiwyg::css/input.css") }}
+
+{{ asset_add("scripts.js", "anomaly.field_type.wysiwyg::js/redactor.min.js") }}
+
+{% for plugin in field_type.config.plugins %}
+    {% for script in config_get("anomaly.field_type.wysiwyg::redactor.plugins." ~ plugin ~ ".scripts") %}
+        {{ asset_add("scripts.js", script) }}
+    {% endfor %}
+
+    {% for style in config_get("anomaly.field_type.wysiwyg::redactor.plugins." ~ plugin ~ ".styles") %}
+        {{ asset_add("styles.css", style) }}
+    {% endfor %}
+{% endfor %}
+
+{{ asset_add("scripts.js", "anomaly.field_type.wysiwyg::js/input.js") }}
+
+<textarea name="{{ field_type.input_name }}" data-field="{{ field_type.field_name }}"
+          data-disk="{{ field_type.config.disk }}"
+          data-height="{{ field_type.config.height }}"
+          placeholder="{{ trans(field_type.placeholder) }}"
+          data-breakline="{{ field_type.config.breakline }}"
+          data-folders="{{ field_type.config.folders|join(',') }}"
+          data-buttons="{{ field_type.config.buttons|join(',') }}"
+          data-plugins="{{ field_type.config.plugins|join(',') }}"
+          data-remove_new_lines="{{ field_type.config.remove_new_lines }}"
+          data-locale="{{ field_type.locale ?: config_get('app.locale') }}"
+          contenteditable="false"
+          data-available_buttons="{{ config_get(field_type.getNamespace('redactor.buttons'))|json_encode }}"
+          data-available_plugins="{{ config_get(field_type.getNamespace('redactor.plugins'))|json_encode }}" {{ html_attributes(field_type.attributes) }} {{ field_type.disabled ? 'disabled' }} {{ field_type.readonly ? 'readonly' }}>{{ field_type.value }}</textarea>
+
+<div class="modal remote" id="{{ field_type.input_name }}-modal">
+    <div class="modal-dialog modal-wide">
+        <div class="modal-content"></div>
+    </div>
+</div>

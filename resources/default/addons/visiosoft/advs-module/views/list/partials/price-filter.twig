@@ -1,0 +1,45 @@
+{% set hidePriceCats = setting_value('visiosoft.module.advs::hide_price_categories') %}
+{% if (hidePriceCats != null) %}
+    {% set cats = entries('cats','category').whereIn('id', hidePriceCats).get() %}
+    {% set isHidden = false %}
+
+    {% for cat in cats %}
+        {% if request().segment(2) == cat.slug %}
+            {% set isHidden = true %}
+        {% endif %}
+    {% endfor %}
+{% endif %}
+{% if setting_value('visiosoft.module.advs::hide_price_filter') == false and not isHidden %}
+
+    {% set active_currencies = setting_value('visiosoft.module.advs::enabled_currencies') %}
+
+    <div id="price" class="border rounded filter-box p-3 mb-3">
+        <div class="d-flex align-items-center justify-content-between px-2 border-bottom mb-3 pb-1">
+            <p>{{ trans("visiosoft.module.advs::field.price.name") }}</p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+
+        <div class="px-3 mb-1">
+            <ul class="w-100 d-flex flex-wrap justify-content-center">
+                {% for currency in active_currencies %}
+                    <li class="w-25">
+                        <input type="radio" id="{{ currency }}" name="currency"
+                               value="{{ currency }}" {{ app.request.get('currency') == currency ? 'checked' }}>
+                        <label for="{{ currency }}" class="mb-0 w-100 px-2 py-1 text-center">
+                            {{ currency }}
+                        </label>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div id="priceInputWrapper" class="d-flex justify-content-around mt-3 range-input-wrapper">
+                <input type="number" class="border-0 shadow-sm rounded px-3 py-1" name="min_price" min="0"
+                       placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}"
+                       value="{{ app.request.get('min_price') }}">
+                <input type="number" class="border-0 shadow-sm rounded px-3 py-1" name="max_price"
+                       placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}"
+                       value="{{ app.request.get('max_price') }}">
+            </div>
+        </div>
+    </div>
+{% endif %}

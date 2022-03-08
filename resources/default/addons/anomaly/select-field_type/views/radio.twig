@@ -1,0 +1,38 @@
+<div {{ html_attributes(field_type.attributes) }}>
+
+    {% for value, option in field_type.options %}
+        {% if option is iterable %}
+
+            <label>{{ value }}</label>
+
+            {% for value, option in option %}
+                <label class="{#custom-control#} custom-radio" style="display: block;">
+                    <input
+                            type="radio"
+                            value="{{ value }}"
+                            name="{{ field_type.input_name }}"
+                            {{ value == field_type.key ? 'checked' }}
+                            {{ field_type.disabled ? "disabled" }}>
+
+                    <span class="{#custom-control-indicator#}"></span>
+
+                    {{ trans(option)|raw }}
+                </label>
+            {% endfor %}
+        {% else %}
+            <label class="{#custom-control#} custom-radio" style="display: block;">
+                <input
+                        type="radio"
+                        value="{{ value }}"
+                        name="{{ field_type.input_name }}"
+                        {{ value == field_type.key ? 'checked' }}
+                        {{ field_type.disabled ? "disabled" }}>
+
+                <span class="{#custom-control-indicator#}"></span>
+
+                {{ trans(option)|raw }}
+            </label>
+        {% endif %}
+    {% endfor %}
+
+</div>

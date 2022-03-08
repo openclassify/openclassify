@@ -1,0 +1,21 @@
+{{ asset_add("styles.css", "anomaly.field_type.tags::css/input.css", ["as:yairEO/tagify.css"]) }}
+{{ asset_add("scripts.js", "anomaly.field_type.tags::js/tagify.min.js", ["as:yairEO/tagify.js"]) }}
+{{ asset_add("scripts.js", "anomaly.field_type.tags::js/input.js") }}
+
+{% if not field_type.readonly and not field_type.disabled %}
+    <input
+            class="form-control"
+            name="{{ field_type.input_name }}"
+            value="{{ field_type.value|join(',') }}"
+            placeholder="{{ trans(field_type.placeholder) }}"
+            data-options="{{ json_encode(field_type.options) }}"
+            data-max="{{ field_type.config.max ?: 'false' }}"
+            data-enforce_options="{{ field_type.config.enforce_options ? 'true' : 'false' }}"
+            {{ html_attributes(field_type.attributes) }}>
+
+    <small class="text-muted">
+        {{ trans('anomaly.field_type.tags::input.help') }}
+    </small>
+{% else %}
+    {{ field_type.labels()|join('&nbsp;')|raw }}
+{% endif %}

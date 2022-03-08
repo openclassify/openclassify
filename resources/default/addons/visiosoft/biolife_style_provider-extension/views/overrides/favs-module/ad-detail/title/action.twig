@@ -1,0 +1,22 @@
+<a href="{{ auth_check() ? '#ad-fav-adv' : url_route('anomaly.module.users::login') }}"
+   id="adv-{{ params.adv_id }}"
+   class="add-fav text-black-50"
+   data-type="adv" rel="nofollow">
+    <p>
+        <i class="adv-fav-icon fa-xs"></i> {{ trans('visiosoft.extension.biolife_style_provider::field.wishlist') }}
+    </p>
+</a>
+
+
+
+<script>
+    let addToFavAdsTrans = "{{ trans('visiosoft.module.favs::field.add_favorite_ad') }}";
+    let addToFavSellersTrans = "{{ trans('visiosoft.module.favs::field.add_favorite_seller') }}";
+    let removeFromFavAdsTrans = "{{ trans('visiosoft.module.favs::field.remove_favorite_ad') }}";
+    let removeFromFavSellersTrans = "{{ trans('visiosoft.module.favs::field.remove_favorite_seller') }}";
+</script>
+{% if auth_check() %}
+    {{ asset_add("scripts.js", "visiosoft.module.favs::assets/js/add-remove-fav.js") }}
+{% endif %}
+{{ asset_add("scripts.js", "visiosoft.module.favs::js/favs.js") }}
+

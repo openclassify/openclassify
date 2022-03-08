@@ -1,0 +1,177 @@
+{% extends layout('default') %}
+
+{% block styles %}{% endblock %}
+
+{% block customjs %}{% endblock %}
+
+{% block content %}
+    {{ asset_style("visiosoft.extension.biolife_style_provider::css/animate.min.css") }}
+    {{ asset_style("visiosoft.extension.biolife_style_provider::css/slick.min.css") }}
+    {{ asset_style("visiosoft.extension.biolife_style_provider::css/style.css") }}
+    {{ asset_style("visiosoft.extension.biolife_style_provider::css/main-color01.css") }}
+    {{ asset_style("visiosoft.extension.biolife_style_provider::css/custom.css") }}
+
+    {{ asset_add("theme.js", "visiosoft.extension.biolife_style_provider::js/slick.min.js") }}
+    {{ asset_add("theme.js", "visiosoft.extension.biolife_style_provider::js/biolife.framework.js") }}
+    {{ asset_add("theme.js", "visiosoft.extension.biolife_style_provider::js/sweetalert.js") }}
+    {{ asset_add("theme.js", "visiosoft.extension.biolife_style_provider::js/functions.js") }}
+    {{ asset_add("theme.js", "visiosoft.theme.base::js/lazy-loading.js") }}
+    {{ asset_add("theme.js", "visiosoft.theme.base::js/visiosoft.js") }}
+    {{ asset_add("theme.js", "visiosoft.extension.biolife_style_provider::js/custom.js") }}
+
+    {% include "visiosoft.extension.biolife_style_provider::ad-detail/partials/breadcrumb" %}
+
+    <div class="page-contain single-product">
+        <div class="container">
+
+            <!-- Main content -->
+            <div id="main-content" class="main-content">
+
+                <!-- summary info -->
+                <div class="sumary-product single-layout">
+                    <div class="media">
+                        {% set advPhoto = count(adv.files) == 0 ? img('visiosoft.theme.base::images/no-image.png').url : null %}
+                        {% set images = adv.getViewPhotoUrl %}
+                        <ul class="biolife-carousel slider-for"
+                            data-slick='{"arrows":false,"dots":false,"slidesMargin":30,"slidesToShow":1,"slidesToScroll":1,"fade":true,"asNavFor":".slider-nav"}'>
+                            {% if advPhoto %}
+                                <li>
+                                    {{ img('visiosoft.theme.base::images/no-image.png').height(500).width(500)|raw }}
+                                </li>
+                            {% else %}
+                                {% for image in adv.getViewPhotoUrl %}
+                                    <li>{{ img(image).height(500).width(500)|raw }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                        <ul class="biolife-carousel slider-nav"
+                            data-slick='{"arrows":false,"dots":false,"centerMode":false,"focusOnSelect":true,"slidesMargin":10,"slidesToShow":4,"slidesToScroll":1,"asNavFor":".slider-for"}'>
+                            {% if not advPhoto %}
+                                {% for image in adv.getViewPhotoUrl %}
+                                    <li>{{ img(image).height(88).width(88)|raw }}</li>
+                                {% endfor %}
+                            {% endif %}
+                        </ul>
+                    </div>
+                    {% set userId = setting_value('visiosoft.theme.sahibinden::default_owner') ?: adv.created_by_id %}
+                    {% set user = setting_value('visiosoft.theme.sahibinden::default_owner') ? entries('users', 'users').find(setting_value('visiosoft.theme.sahibinden::default_owner')) : adv.created_by %}
+                    {% set sellerInfo = setting_value('visiosoft.module.advs::hide_seller_info') %}
+                    {% set owner = addBlock('ad-details/owner', {'userId': userId}) %}
+
+                    <div class="product-attribute">
+                        <h3 class="title">{{ adv.name }}</h3>
+                        <div class="rating">
+                            {{ addBlock('ad-detail/top', {'adv': adv})|raw }}
+                            <b class="category d-flex ml-0">
+                                {{ trans('visiosoft.extension.biolife_style_provider::field.by') }}:
+                                {% if owner %}
+                                    {{ owner|raw }}
+                                {% else %}
+                                    <h5 class="d-inline-block">{{ user.name }}</h5>
+                                {% endif %}
+                            </b>
+                        </div>
+                        <span class="sku">{{ trans('visiosoft.extension.biolife_style_provider::field.sku') }}: #{{ adv.id }}</span>
+
+                        <p class="excerpt">
+                            {{ adv.advs_desc|length > 140 ? adv.advs_desc|striptags|slice(0,140) ~ '...' : adv.advs_desc|striptags }}
+                        </p>
+                        <div class="price">
+                            <ins><span class="price-amount"><span class="currencySymbol">{{ adv.currency_price }}</ins>
+                            {% if adv.currency_standard_price %}
+                                <del><span class="price-amount"><span
+                                                class="currencySymbol">{{ adv.currency_standard_price }}</del>
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="action-form from-cart">
+                        {{ addBlock('ad-detail/details', {'adv':adv, 'options':options, 'configurations':configurations})|raw }}
+                        <div class="social-media">
+                            <ul class="social-list text-center">
+                                <li><a href="https://twitter.com/intent/tweet?text={{ app.request.uri }}"
+                                       class="social-link"><i class="fab fa-twitter" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.facebook.com/sharer/sharer.php?u={{ app.request.uri }}"
+                                       class="social-link"><i class="fab fa-facebook" aria-hidden="true"></i></a></li>
+                                <li><a href="https://www.linkedin.com/shareArticle?mini=true&url={{ app.request.uri }}"
+                                       class="social-link"><i class="fab fa-linkedin" aria-hidden="true"></i></a></li>
+                                <li><a href="https://wa.me/?text={{ app.request.uri }}" class="social-link"><i
+                                                class="fab fa-whatsapp" aria-hidden="true"></i></a></li>
+                            </ul>
+                        </div>
+                        <div class="acepted-payment-methods">
+                            <ul class="payment-methods text-center">
+                                <li>{{ img('visiosoft.extension.biolife_style_provider::images/card1.jpg').width(51).height(36)|raw }}</li>
+                                <li>{{ img('visiosoft.extension.biolife_style_provider::images/card2.jpg').width(51).height(36)|raw }}</li>
+                                <li>{{ img('visiosoft.extension.biolife_style_provider::images/card3.jpg').width(51).height(36)|raw }}</li>
+                                <li>{{ img('visiosoft.extension.biolife_style_provider::images/card4.jpg').width(51).height(36)|raw }}</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab info -->
+                <div class="product-tabs single-layout biolife-tab-contain mt-0">
+                    <div class="tab-head">
+                        <ul class="tabs text-nowrap overflow-auto">
+                            <li class="tab-element active"><a href="#nav-info"
+                                                              class="tab-link">{{ trans('visiosoft.extension.biolife_style_provider::field.product_descriptions') }}</a>
+                            </li>
+                            <li class="tab-element"><a href="#addtional-info"
+                                                       class="tab-link">{{ trans('visiosoft.extension.biolife_style_provider::field.addtional_information') }}</a>
+                            </li>
+                            {% if not setting_value('visiosoft.module.location::detail_page_location') %}
+                                <li class="tab-element"><a href="#tab_3rd"
+                                                           class="tab-link">{{ trans('visiosoft.module.advs::field.location') }}</a>
+                                </li>
+                            {% endif %}
+                            <!-- Content Tab With Block -->
+                            {{ addBlock('ad-detail/content-tab',{'features':features,'adv':adv})|raw }}
+                            <!-- Content Tab With Block -->
+                        </ul>
+                    </div>
+                    <div class="tab-content">
+                        <div id="nav-info" class="tab-contain desc-tab active">
+                            <p>{{ adv.advs_desc|length ? adv.advs_desc|raw : trans('visiosoft.extension.biolife_style_provider::field.no_description') }}</p>
+                        </div>
+                        <div id="addtional-info" class="tab-contain addtional-info-tab">
+                            <table class="tbl_attributes">
+                                <tbody>
+                                <tr>
+                                    <th>{{ trans('visiosoft.theme.sahibinden::field.price.name') }}</th>
+                                    <td>
+                                        <p>
+                                            {% if not setting_value('visiosoft.module.advs::hide_zero_price') or adv.price != "0" %}
+                                                {{ adv.currency_price }}
+                                            {% else %}
+                                                {{ trans('visiosoft.theme.sahibinden::field.ask_for_price') }}
+                                            {% endif %}
+                                        </p>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <th>{{ trans('visiosoft.theme.sahibinden::field.ad.name') }}</th>
+                                    <td><p>{{ adv.id }}</p></td>
+                                </tr>
+                                <tr>
+                                    <th>{{ trans('visiosoft.theme.sahibinden::field.ad_date.name') }}</th>
+                                    <td><p>{{ adv.created_at|date('d/m/Y') }}</p></td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            {{ addBlock('ad-detail/checkboxes',{'features':features})|raw }}
+                        </div>
+                        <div id="tab_3rd" class="tab-contain shipping-delivery-tab">
+                            {% include "visiosoft.module.advs::ad-detail/partials/map" %}
+                        </div>
+                        {{ addBlock('ad-detail/content',{'features_detail':features, 'adv': adv})|raw }}
+                    </div>
+                </div>
+
+                <!-- related products -->
+                {# TODO Link to recommended ads #}
+                {{ addBlock('ad-detail/section')|raw }}
+
+            </div>
+        </div>
+    </div>
+{% endblock %}

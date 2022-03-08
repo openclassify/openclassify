@@ -1,0 +1,70 @@
+<div class="home-container">
+    <div class="row">
+        <div class="col-md-4">{% include "visiosoft.theme.base::partials/categories" %}</div>
+        <div class="col-md-8">
+            <div class="album  bg-light">
+                {{ addBlock('index_top')|raw }}
+
+                <div class="row p-2">
+                    {% if setting_value('visiosoft.theme.base::latest_and_view_all_btn') %}
+                        <div class="col-md-6">
+                            <h4 class="p-2">{{ trans('visiosoft.theme.base::field.latest_ads') }}</h4>
+                        </div>
+                        <div class="col-md-6 text-right">
+                            <a class="btn btn-outline-secondary"
+                               href="{{ url_route('visiosoft.module.advs::list') }}">{{ trans('visiosoft.theme.base::field.show_all') }}</a>
+                        </div>
+                    {% endif %}
+
+                </div>
+                <div class="row list-classified-home">
+                    {% for latestAd in latestAds() %}
+                        <div class="col-sm-6 col-lg-4 d-flex align-items-stretch justify-content-center">
+                            <div class="card mb-4 box-shadow">
+                                <div class="row py-2 mx-2" style="min-height: 150px;">
+                                    <a href="{{ latestAd.detail_url }}">
+                                        <div class="col-md-12 justify-content-center align-self-center p-0">
+                                            <img class="card-img-top img-fluid img-thumbnail w-auto"
+                                                 src="{{ latestAd.cover_photo }}"
+                                                 style="height: 150px">
+                                        </div>
+                                    </a>
+                                </div>
+
+                                <div class="card-body">
+                                    {% if setting_value('visiosoft.theme.base::price_fields') %}
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <b>{{ currency_format(latestAd.price, latestAd.currency) }}</b>
+                                        </div>
+                                    {% endif %}
+                                    <div class="d-flex justify-content-between align-items-center text-truncate">
+                                        <a href="{{ latestAd.detail_url }}">
+                                            <p class="card-title d-inline-block">{{ latestAd.name }}</p>
+                                        </a>
+                                    </div>
+                                    {% if setting_value('visiosoft.module.location::home_page_location') %}
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small>
+                                                <i class="fas fa-location-arrow text-primary"></i>
+                                                {{ latestAd.city_name }}, {{ latestAd.country_name }}
+                                            </small>
+                                        </div>
+                                    {% endif %}
+                                    {% if setting_value('visiosoft.theme.base::date_fields') %}
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <small>
+                                                <i class="far fa-clock text-dark"></i>
+                                                {{ latestAd.created_at|date('d/m/Y') }}
+                                            </small>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+            {{ addBlock('index')|raw }}
+        </div>
+    </div>
+</div>

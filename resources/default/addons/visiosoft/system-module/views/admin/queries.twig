@@ -1,0 +1,26 @@
+{% extends "streams::blank" %}
+
+{% block  content %}
+    <div class="container-fluid">
+
+        {% include "visiosoft.module.system::admin/partials/table" with {'attributes': {
+            'Time': 'entry.createdAt',
+            'Hostname': 'entry.content.hostname',
+            'Connection': 'entry.content.connection',
+            'Location': '{{ str_replace(base_path(), "", entry.content.file) }}:{{ entry.content.line }}',
+            'Slow': '<pre>{{ entry.content.slow ? "true" : "false" }}</pre>',
+            'Time': '{{ entry.content.time }} ms',
+            'Tags': 'entry.tags',
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/user" %}
+
+        {% include "visiosoft.module.system::admin/partials/tabs" with {'attributes': {
+            'SQL': '{{ var_export(vsprintf(str_replace(\'?\', \'%s\', entry.content.sql), entry.content.bindings), true)|raw }}',
+            'Bindings': '{{ json_encode(entry.content.bindings, 128)|raw }}',
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/batch" %}
+
+    </div>
+{% endblock %}

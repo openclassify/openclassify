@@ -1,0 +1,37 @@
+<thead>
+    <tr class="text-white">
+        <th class="text-nowrap" colspan="2">{{ trans('visiosoft.module.advs::field.ad_title') }}</th>
+
+        {% for cF in listingCFs %}
+            {% set isSortable = cF.isSortable %}
+            <th class="text-nowrap{{ isSortable ? ' sortable' }}{{ param.sort_by == 'cf_' ~ cF.id ~ '_desc' ? ' sort-by sort-desc' : (param.sort_by == 'cf_' ~ cF.id ~ '_asc' ? ' sort-by') }}"
+                data-sort-asc="{{ 'cf_' ~ cF.id ~ '_asc' }}" data-sort-desc="{{ 'cf_' ~ cF.id ~ '_desc' }}">
+                {{ cF.name }}
+                {% if isSortable %}
+                    {{ img('visiosoft.module.advs::images/sort-arrow.svg').data|raw }}
+                {% endif %}
+            </th>
+        {% endfor %}
+
+        {% if listLocation %}
+            <th class="text-nowrap sortable{{ param.sort_by == 'address_z_a' ? ' sort-by sort-desc' : (param.sort_by == 'address_a_z' ? ' sort-by') }}"
+                data-sort-asc="address_a_z" data-sort-desc="address_z_a">
+                {{ trans('visiosoft.module.advs::field.city.name') }}
+                / {{ trans('visiosoft.module.advs::field.district.name') }}
+                {{ img('visiosoft.module.advs::images/sort-arrow.svg').data|raw }}
+            </th>
+        {% endif %}
+        {% if setting_value('visiosoft.module.advs::market_place') and showDate %}
+            <th class="text-nowrap sortable{{ param.sort_by == 'sort_time_newest' ? ' sort-by sort-desc' : (param.sort_by == 'sort_time_oldest' ? ' sort-by') }}"
+                data-sort-asc="sort_time_oldest" data-sort-desc="sort_time_newest">
+                {{ trans('visiosoft.module.advs::field.date.name') }}
+                {{ img('visiosoft.module.advs::images/sort-arrow.svg').data|raw }}
+            </th>
+        {% endif %}
+        <th class="text-nowrap sortable{{ param.sort_by == 'sort_price_up' ? ' sort-by sort-desc' : (param.sort_by == 'sort_price_down' ? ' sort-by') }}"
+            data-sort-asc="sort_price_down" data-sort-desc="sort_price_up">
+            {{ trans('visiosoft.module.advs::field.price.name') }}
+            {{ img('visiosoft.module.advs::images/sort-arrow.svg').data|raw }}
+        </th>
+    </tr>
+</thead>

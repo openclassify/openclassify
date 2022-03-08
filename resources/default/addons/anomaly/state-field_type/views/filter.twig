@@ -1,0 +1,24 @@
+<select
+        class="custom-select form-control"
+        name="{{ field_type.input_name }}" {{ html_attributes(field_type.attributes) }}>
+
+    <option value="">{{ trans(field_type.placeholder) }}</option>
+
+    {% set fieldTypeOptions = field_type.options %}
+
+    {% for value, option in fieldTypeOptions %}
+        {% if option is iterable %}
+            {% if (fieldTypeOptions|length) != 1 %}
+                <optgroup label="{{ value }}">
+            {% endif %}
+                {% for value, option in option %}
+                    <option value="{{ value }}" {{ value == field_type.value ? 'selected' }}>{{ trans(option) }}</option>
+                {% endfor %}
+            {% if (fieldTypeOptions|length) != 1 %}
+                </optgroup>
+            {% endif %}
+        {% else %}
+            <option value="{{ value }}" {{ value == field_type.value ? 'selected' }}>{{ trans(option) }}</option>
+        {% endif %}
+    {% endfor %}
+</select>

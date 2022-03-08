@@ -1,0 +1,126 @@
+<section id="topbar">
+
+    <div class="topbar-left">
+        <a href="/admin" class="logo variant-logo">
+            {{ img('theme::img/icon.svg').data|raw }}
+            <span>Pyro <small>{{ config('streams::distribution.version') }}</small></span>
+        </a>
+    </div>
+
+    <div class="navbar navbar-default">
+        <div class="container-fluid">
+
+            <div class="button-menu">
+                <button href="javascript:void(0);" type="button" class="button-menu-mobile"
+                        onclick="$('#sidebar').toggleClass('open'); $('body').toggleClass('expand');">
+                    <i class="fa fa-bars"></i>
+                </button>
+            </div>
+
+            <form class="navbar-form dropdown" id="search">
+
+                <input type="text" class="form-control search-bar" placeholder="Type to search...">
+
+                <button type="submit" class="btn btn-search"><i class="fa fa-search"></i></button>
+
+                <div class="dropdown-menu results">
+                    <h6 class="dropdown-header">Navigation</h6>
+                    {% for key, navigation in template.cp.navigation %}
+                        <a class="dropdown-item" {{ html_attributes(navigation.attributes) }}>
+                            <span class="title">{{ trans(navigation.title) }}</span>
+                        </a>
+                    {% endfor %}
+                    <h6 class="dropdown-header">Links</h6>
+                    <a href="/" target="_blank" class="dropdown-item">
+                        {{ trans('theme::control_panel.view_site') }}
+                    </a>
+                    <a href="/admin/logout" class="dropdown-item">
+                        {{ trans('theme::control_panel.logout') }}
+                    </a>
+                </div>
+
+            </form>
+
+            <ul class="nav navbar-nav navbar-left">
+                {% for shortcut in template.cp.shortcuts %}
+                    <li class="nav-item shortcut {#dropdown#}">
+                        <a {{ html_attributes(shortcut.attributes) }} {#data-toggle="dropdown"#}>
+                            {#<span class="tag tag-danger">{{ icon(shortcut.icon) }} 2</span>#}
+                            {{ icon(shortcut.icon) }}
+                        </a>
+                        {#<ul class="dropdown-menu-right dropdown-menu">#}
+                        {#<li class="dropdown-item">#}
+                        {#<a href="/" target="_blank">#}
+                        {#<i class="fa fa-external-link"></i>#}
+                        {#{{ trans('theme::control_panel.view_site') }}#}
+                        {#</a>#}
+                        {#</li>#}
+                        {#<li class="dropdown-item">#}
+                        {#<a href="/admin/logout">#}
+                        {#<i class="fa fa-power-off"></i>#}
+                        {#{{ trans('theme::control_panel.logout') }}#}
+                        {#</a>#}
+                        {#</li>#}
+                        {#</ul>#}
+                    </li>
+                {% endfor %}
+
+                {% if template.module.composer_json.support %}
+                    <li class="nav-item shortcut dropdown">
+                        <a href="#" data-toggle="dropdown">
+                            {{ icon('fa fa-life-ring') }}
+                        </a>
+
+                        <ul class="dropdown-menu-right dropdown-menu">
+                            <li class="dropdown-header">
+                                {{ trans('streams::support.support', {'type': trans(template.module.title)}) }}
+                            </li>
+                            <li class="dropdown-divider"></li>
+                            {% for type, value in template.module.composer_json.support %}
+                                {% if type == 'email' %}
+                                    <li class="dropdown-item">
+                                        <a href="mailto:{{ value }}">
+                                            {{ value }}
+                                        </a>
+                                    </li>
+                                {% else %}
+                                    <li class="dropdown-item">
+                                        <a href="{{ value }}" target="_blank">
+                                            {{ trans('streams::support.' ~ type) }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                            <li class="dropdown-divider"></li>
+                            <li class="dropdown-item">
+                                <a href="#" data-toggle="modal" data-target="#modal-help">
+                                    {{ trans('streams::support.more') }}
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                {% endif %}
+                <li class="nav-item dropdown">
+                    <a href="javascript:void(0);" data-toggle="dropdown">
+                        <img src="{{ user().gravatar.path }}" width="36" class="rounded-circle">
+                    </a>
+                    <ul class="dropdown-menu-right dropdown-menu">
+                        <li class="dropdown-item">
+                            <a href="/" target="_blank">
+                                <i class="fa fa-external-link"></i>
+                                {{ trans('theme::control_panel.view_site') }}
+                            </a>
+                        </li>
+                        <li class="dropdown-item">
+                            <a href="/admin/logout">
+                                <i class="fa fa-power-off"></i>
+                                {{ trans('theme::control_panel.logout') }}
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+</section>

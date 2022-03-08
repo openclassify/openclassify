@@ -1,0 +1,55 @@
+    {% if(adv.map_Val == "") %}
+        <div class="d-flex flex-column justify-content-center text-center bg-white h-100">
+            {{ img('visiosoft.module.advs::images/emptystate.jpg') }}
+            {{ trans('visiosoft.module.advs::field.no_location') }}
+        </div>
+    {% else %}
+    {% set map_arr = adv.map_Val|split(',') %}
+<div id="mapDiv" style="height: 500px; width: 100%;"></div>
+<script>
+    $(document).ready(function () {
+        var no_image_text = "{{ trans('visiosoft.module.advs::field.no_street_view') }}";
+
+        var ifAnyImg = "https://maps.googleapis.com/maps/api/streetview/metadata?size=600x300&location=" + lat + "," + lng +
+            "&fov=90&heading=235&pitch=10&key=" + google_map_key;
+        $.getJSON(ifAnyImg, function (data) {
+                if (data.status === "OK") {
+                    loadScript('https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback=initMap');
+                }
+                if (data.status === "ZERO_RESULTS") {
+                    $("#mapDiv").html(no_image_text);
+                } else {
+                    $("#mapDiv").html("Google Error : " + data.error_message);
+                }
+            }
+        )
+    });
+
+    function loadScript(src, callback) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        if (callback) script.onload = callback;
+        document.getElementsByTagName("head")[0].appendChild(script);
+        script.src = src;
+    }
+</script>
+<script>
+    var lat = parseFloat({{ map_arr[0] }});
+    var lng = parseFloat({{ map_arr[1] }});
+    var google_map_key = "{{ setting_value('visiosoft.module.location::google_map_key') }}";
+
+    function initMap() {
+        var myLatLng = {lat: lat, lng: lng};
+
+        var map = new google.maps.Map(document.getElementById('mapDiv'), {
+            zoom: 16,
+            center: myLatLng
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map: map
+        });
+    }
+</script>
+
+{% endif %}

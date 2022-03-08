@@ -1,0 +1,6 @@
+{% if params.show %}
+    <div id="nav-comments" class="tab-pane fade in bg-light m-0 p-4">
+        {% include "visiosoft.module.comments::comments" %}
+    </div>
+{% endif %}
+{{ asset_add("styles.css", "visiosoft.theme.sahibinden::css/comments.css") }}

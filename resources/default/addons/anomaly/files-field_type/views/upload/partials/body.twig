@@ -1,0 +1,16 @@
+<div class="modal-body">
+
+    <div class="dropzone"
+         data-folder="{{ folder.id }}"
+         data-icon="{{ icon('upload')|escape }}"
+         data-max-size="{{ max_upload_size() }}"
+         data-allowed="{{ allowed ? '.' ~ allowed|join(',.') }}"
+         data-message="{{ trans('anomaly.field_type.files::message.upload') }}"
+         data-loading="{{ trans('anomaly.field_type.files::message.loading') }}"
+         data-uploading="{{ trans('anomaly.field_type.files::message.uploading') }}"
+         data-overwrite="{{ trans('anomaly.field_type.file::message.overwrite') }}"
+         data-max-parallel="{{ setting_value('anomaly.module.files::max_parallel_uploads', 3) }}"></div>
+
+    <div class="uploads"></div>
+
+</div>

@@ -1,0 +1,26 @@
+{% extends "streams::blank" %}
+
+{% block  content %}
+    <div class="container-fluid">
+
+        {% include "visiosoft.module.system::admin/partials/table" with {'attributes': {
+            'Time': 'entry.createdAt',
+            'Hostname': 'entry.content.hostname',
+            'Name': 'entry.content.name',
+            'Broadcast': '<pre>{{ entry.content.broadcast ? "true" : "false" }}</pre>',
+            'Tags': 'entry.tags',
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/user" %}
+
+        {% include "visiosoft.module.system::admin/partials/tabs" with {'attributes': {
+            'Payload': '{{ json_encode(entry.content.payload, 128)|raw }}',
+            'Listeners': {
+                'view': 'visiosoft.module.system::admin/fragments/listeners'
+            },
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/batch" %}
+
+    </div>
+{% endblock %}

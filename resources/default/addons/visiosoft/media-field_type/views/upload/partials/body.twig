@@ -1,0 +1,20 @@
+{% set folders = entries('files','folders').whereIn('slug',field_type.configGet('folders')).get() %}
+{% set allowed_types = {} %}
+{% for mimes in  folders.pluck('allowed_types.value').all() %}
+	{% set allowed_types = allowed_types|merge(mimes) %}
+{% endfor %}
+<div class="modal-body">
+	<div class="dropzone"
+	     data-folder="1"
+	     data-icon="{{ icon('upload')|escape }}"
+	     data-max-size="{{ max_upload_size() }}"
+	     data-message="{{ trans('visiosoft.field_type.media::message.upload') }}"
+	     data-loading="{{ trans('visiosoft.field_type.media::message.loading') }}"
+	     data-uploading="{{ trans('visiosoft.field_type.media::message.uploading') }}"
+	     data-overwrite="{{ trans('anomaly.field_type.file::message.overwrite') }}"
+	     data-max-parallel="{{ setting_value('anomaly.module.files::max_parallel_uploads', 3) }}"
+	     data-allowed="{{ (count(allowed_types)) ?'.'~allowed_types|join(',.'):'' }}"></div>
+
+	<div class="uploads"></div>
+
+</div>

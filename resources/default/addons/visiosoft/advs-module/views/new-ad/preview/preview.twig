@@ -1,0 +1,63 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'preview'} %}
+
+    <div class="pt-5">
+        <p class="preview-paragraph">
+            {{ trans('visiosoft.module.advs::field.preview_text.part_1') }}
+            <br>
+            {{ trans('visiosoft.module.advs::field.preview_text.part_2') }}
+        </p>
+        {% if auth_check() and auth_user().hasRole('admin') %}
+            <p class="text-muted text-center mb-0">
+                <i class="fa fa-exclamation-triangle"></i>
+                {{ trans('visiosoft.module.advs::message.disabled_detailed_options_for_admin_role') }}
+            </p>
+        {% endif %}
+    </div>
+    
+    <div class="preview-actions text-center">
+        {% if isActive('packages') and setting_value('visiosoft.module.packages::move_the_buy_package_to_the_end') and (auth_user().isAdmin or not auth_user().hasPermission('visiosoft.module.packages::packages.no_read')) %}
+            {% set continueLink = url_route('visiosoft.module.packages::add_package', [adv.id]) %}
+        {% elseif isActive('dopings') %}
+            {% set continueLink = url_route('add_doping', [adv.id]) %}
+        {% else %}
+            {% set continueLink = url_route('adv_detail_seo', [adv.slug, adv.id]) %}
+        {% endif %}
+        {% if isActive('shipping') and adv.is_get_adv.getValue() %}
+            {{ addBlock('new-create/preview/actions',{'adv_id':adv.id})|raw }}
+        {% endif %}
+        <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
+           class="btn preview-edit shadow-sm border">
+            {{ trans('visiosoft.module.advs::field.edit') }}
+        </a>
+        <a href="{{ continueLink }}" class="btn preview-continue shadow-sm ml-4">
+            {{ trans('visiosoft.module.advs::field.continue') }}
+        </a>
+    </div>
+    <div class="preview-wrapper position-relative">
+        {% include "visiosoft.module.advs::new-ad/preview/partials/preview-window" %}
+        <div class="preview-overlay position-absolute"></div>
+    </div>
+    <div class="preview-actions text-center">
+        {% if isActive('shipping') %}
+            <a href="{{ url_route('visiosoft.module.shipping::create_shipping',{'id':adv.id}) }}"
+               class="btn btn-outline-primary shadow-sm mr-4">
+                {{ trans('visiosoft.module.shipping::button.create_shipping_information') }}
+            </a>
+        {% endif %}
+
+        <a href="{{ url_route('visiosoft.module.advs::edit_adv', [adv.id]) }}"
+           class="btn preview-edit shadow-sm border">
+            {{ trans('visiosoft.module.advs::field.edit') }}
+        </a>
+        <a href="{{ continueLink }}" class="btn preview-continue shadow-sm ml-4">
+            {{ trans('visiosoft.module.advs::field.continue') }}
+        </a>
+    </div>
+
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/detail.css") }}
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/preview.css") }}
+
+{% endblock %}

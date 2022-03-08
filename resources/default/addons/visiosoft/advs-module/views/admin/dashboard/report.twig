@@ -1,0 +1,71 @@
+{% set reports = [
+    {
+        'title': trans('visiosoft.module.advs::field.product_stock_report'),
+        'id': 'stockReport',
+        'columns': [
+            trans('visiosoft.module.advs::field.product'),
+            trans('visiosoft.module.advs::field.stock.name'),
+        ],
+    },
+    {
+        'title': trans('visiosoft.module.advs::field.active_passive_products_report'),
+        'id': 'activePassiveReport',
+        'columns': [
+            trans('visiosoft.module.advs::field.status.name'),
+            trans('visiosoft.module.advs::field.count'),
+        ],
+    },
+    {
+        'title': trans('visiosoft.module.advs::field.unexplained_products_report'),
+        'id': 'unexplainedReport',
+        'columns': [
+            trans('visiosoft.module.advs::field.id'),
+            trans('visiosoft.module.advs::field.product'),
+        ],
+    },
+    {
+        'title': trans('visiosoft.module.advs::field.non_image_products_report'),
+        'id': 'noImageReport',
+        'columns': [
+            trans('visiosoft.module.advs::field.product'),
+        ],
+    },
+    {
+        'title': trans('visiosoft.module.advs::field.pages_without_meta_information_report'),
+        'id': 'metaPageReport',
+        'columns': [
+            trans('visiosoft.module.advs::field.page'),
+        ],
+    },
+] %}
+
+{% for report in reports %}
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-primary">
+                <h5 class="card-title text-white">{{ report.title }}</h5>
+            </div>
+
+            <div class="card-block">
+                <table id="{{ report.id }}" class="display">
+                    <thead>
+                    <tr>
+                        {% for column in report.columns %}
+                            <th>{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+<script>
+    const productsReportTrans = {
+        undefined_product: `{{ trans('visiosoft.module.advs::field.undefined_product') }}`,
+        undefined_page: `{{ trans('visiosoft.module.advs::field.undefined_page') }}`,
+    }
+</script>
+
+{{ asset_add('scripts.js', 'visiosoft.module.advs::js/admin/dashboard/report.js') }}

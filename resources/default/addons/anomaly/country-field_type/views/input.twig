@@ -1,0 +1,9 @@
+<input
+        type="text"
+        maxlength="2"
+        value="{{ field_type.value }}"
+        name="{{ field_type.getInputName() }}"
+        placeholder="{{ trans(field_type.placeholder) }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>

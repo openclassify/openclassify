@@ -1,0 +1,32 @@
+{% if auth_user().id == adv.created_by_id or auth_user().hasPermission('visiosoft.module.advs::advs.write') %}
+    <div class="btn-group dropleft dropleft-edit position-fixed">
+        <button type="button" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ trans('visiosoft.module.advs::field.ad_actions') }}
+        </button>
+        <div class="dropdown-menu">
+            <a class="dropdown-item" href="/advs/edit_advs/{{ adv.id }}">
+                <i class="fas fa-pencil-alt"></i>
+                {{ trans('visiosoft.module.advs::field.edit') }}
+            </a>
+            {% if adv.status != "pending_admin" and adv.status != "approved" %}
+                <a class="dropdown-item"
+                   href="{{ url_route('visiosoft.module.advs::status',[adv.id,"pending_admin"]) }}">
+                    <i class="fa fa-eye"></i>
+                    {{ trans('visiosoft.module.advs::field.approve') }}
+                </a>
+            {% else %}
+                <a class="dropdown-item" href="{{ url_route('visiosoft.module.advs::status',[adv.id,"passive"]) }}">
+                    <i class="fa fa-ban"></i>
+                    {{ trans('visiosoft.module.advs::field.passive') }}
+                </a>
+            {% endif %}
+            {% if adv.status != 'sold' and adv.is_get_adv != '1' %}
+                <a class="dropdown-item" href="{{ route('visiosoft.module.advs::status',[adv.id,"sold"]) }}">
+                    <i class="fa fa-gavel"></i>
+                    {{ trans('visiosoft.module.advs::field.sold') }}
+                </a>
+            {% endif %}
+        </div>
+    </div>
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/dropleft-edit.css") }}
+{% endif %}

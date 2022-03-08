@@ -1,0 +1,39 @@
+<div class="modal-header">
+
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+
+    <h4 class="title">
+        {{ folder.name }}
+
+        {% if folder.description %}
+            <br>
+            <small class="text-muted">{{ folder.description }}</small>
+        {% endif %}
+    </h4>
+
+    <div>
+        <span class="tag tag-info">Max:
+            {{ max_upload_size() }}MB</span>
+
+        {% for extension in allowed %}
+            <span class="tag tag-default">{{ extension }}</span>
+        {% endfor %}
+    </div>
+
+    <div style="margin-top:1rem;">
+        <label>
+            {{ trans('anomaly.field_type.files::message.duplicates') }}:
+
+            <select name="duplicates">
+                <option value="ask">{{ trans('anomaly.field_type.files::input.duplicate.ask') }}</option>
+                <option value="ignore">{{ trans('anomaly.field_type.files::input.duplicate.ignore') }}</option>
+                <option value="overwrite">{{ trans('anomaly.field_type.files::input.duplicate.overwrite') }}</option>
+            </select>
+        </label>
+
+    </div>
+
+
+</div>

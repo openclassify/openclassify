@@ -1,0 +1,111 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/keyboard.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+
+    <div class="container-fluid">
+        {% set form = form('profile', 'profile').get() %}
+        {{  form_open({
+            'class': 'form ' ~ form.options.class ,
+            'enctype': 'multipart/form-data',
+            'url': 'admin/profile/adress/update/'~ adress.id
+        })|raw }}
+        <div class="card">
+            <div class="card-block">
+                    <div class="field-group col-sm-12 {{ adress.adress_name.input_name|raw }}">
+                        <label class="control-label">{{ trans("visiosoft.module.profile::field.adress_name.name") }}</label>
+                        {{ adress.adress_name.input|raw }}
+                    </div>
+                <div class="field-group col-sm-12 {{ adress.adress_first_name.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.adress_first_name.name") }}</label>
+                    {{ adress.adress_first_name.input|raw }}
+                </div>
+                <div class="field-group col-sm-12 {{ adress.adress_last_name.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.adress_last_name.name") }}</label>
+                    {{ adress.adress_last_name.input|raw }}
+                </div>
+
+                <div class="field-group col-sm-24">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.country.name") }}</label>
+                    <div class="input-wrapper">
+                        <select name="country" class="custom-select form-control" data-content="{{  adress.country.id }}"
+                                data-field_name="adress_country_id" data-provides="anomaly.field_type.select">
+                            <option value="">Choose an option...</option>
+                            {% for countryField in country %}
+                                <option value="{{ countryField.id }}">{{ countryField.name }}</option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                </div>
+
+                <div class="field-group col-sm-24">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.city.name") }}</label>
+                    <div class="input-wrapper city-data" data-content="{{  adress.city }}">
+                        {{ adress.city.input|raw}}
+                    </div>
+
+                </div>
+
+                <div class="field-group col-sm-24">
+                    <div class="form-group cat3-field select-field_type">
+                        <label class="control-label">{{ trans("visiosoft.module.profile::field.district.name") }}</label>
+                        <div class="input-wrapper district-data" data-content="{{  adress.district }}">
+                            {{ adress.district.input|raw}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group col-sm-24">
+                    <div class="form-group cat3-field select-field_type">
+                        <label class="control-label">{{ trans("visiosoft.module.profile::field.neighborhood.name") }}</label>
+                        <div class="input-wrapper neighborhood-data" data-content="{{  adress.neighborhood }}">
+                            {{ adress.neighborhood.input|raw}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group col-sm-24">
+                    <div class="form-group cat3-field select-field_type">
+                        <label class="control-label">{{ trans("visiosoft.module.profile::field.village.name") }}</label>
+                        <div class="input-wrapper village-data" data-content="{{  adress.village }}">
+                            {{ adress.village.input|raw}}
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field-group col-sm-12 {{ adress.adress_content.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.adress_content.name") }}</label>
+                    {{ adress.adress_content.input|raw }}
+                </div>
+
+                <div class="field-group col-sm-12 {{ adress.adress_post_code.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.adress_post_code.name") }}</label>
+                    {{ adress.adress_post_code.input|raw }}
+                </div>
+
+                <div class="field-group col-sm-12 {{ adress.adress_gsm_phone.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.adress_gsm_phone.name") }}</label>
+                    {{ adress.adress_gsm_phone.input|raw }}
+                </div>
+
+                <div class="field-group col-sm-12 {{ adress.adress_land_phone.input_name|raw }}">
+                    <label class="control-label">{{ trans("visiosoft.module.profile::field.adress_land_phone.name") }}</label>
+                    {{ adress.adress_land_phone.input|raw }}
+                </div>
+
+                <div class="col-sm-12">
+                    {{ form.actions|raw }}
+                </div>
+
+
+            </div>
+        </div>
+        {{ form.close|raw }}
+    </div>
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
+
+{% endblock %}

@@ -1,0 +1,12 @@
+<select
+        class="custom-select form-control"
+        name="{{ field_type.input_name }}"
+        {{ field_type.disabled ? 'disabled' }}>
+
+    <option value="">{{ trans(field_type.placeholder) }}</option>
+
+    {% for value, option in field_type.options %}
+        <option value="{{ value }}" {{ value == field_type.value ? 'selected' }}>{{ trans(option) }}</option>
+    {% endfor %}
+
+</select>

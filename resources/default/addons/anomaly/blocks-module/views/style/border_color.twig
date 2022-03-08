@@ -1,0 +1,37 @@
+<ul class="nav nav-sections nav-alt" style="margin-bottom: 0;">
+    <li class="active">
+        <a href="#{{ form.fields.border_color.input_name }}_default" data-toggle="tab">
+            {{ trans('anomaly.module.blocks::style.default.label') }}
+        </a>
+    </li>
+    <li>
+        <a href="#{{ form.fields.border_color.input_name }}_hover" data-toggle="tab">
+            {{ trans('anomaly.module.blocks::style.hover.label') }}
+        </a>
+    </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane tab-alt active" id="{{ form.fields.border_color.input_name }}_default">
+        <div class="card card-container">
+            <div class="row">
+                <div class="col-lg-24">
+                    <div class="card-block">
+                        {{ form.fields.default_border_color.render({'form': form})|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane tab-alt" id="{{ form.fields.border_color.input_name }}_hover">
+        <div class="card card-container">
+            <div class="row">
+                <div class="col-lg-24">
+                    <div class="card-block">
+                        {{ form.fields.hover_border_color.render({'form': form})|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

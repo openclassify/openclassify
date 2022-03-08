@@ -1,0 +1,10 @@
+{% if params.category %}
+    {% for category_breadcrumbs in params.mainCats %}
+        <span class="text-truncate">
+            <a href="{{ url_route('adv_list_seo', [category_breadcrumbs.slug]) }}" data-toggle="tooltip"
+               data-placement="bottom" title="{{ category_breadcrumbs.name }}">
+                {{ category_breadcrumbs.name }}
+            </a>
+        </span>
+    {% endfor %}
+{% endif %}

@@ -1,0 +1,31 @@
+{% if is_module_enabled('comments') %}
+	<div class="gg-product-like my-2">
+		{{ addBlock('showrate', {adv})|raw }}
+	</div>
+	{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyo.min.js") }}
+	{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyoVisiosoft.js") }}
+	{{ asset_add("styles.css", "visiosoft.module.comments::css/rateyo.css") }}
+{% endif %}
+
+{% if is_module_enabled('customfields') %}
+	{% if features %}
+		<div class="row">
+			<div class="col-6">
+				{% for feature in  features|slice(0, 2) %}
+					{% if feature.custom_field_value is iterable %}
+					{% else %}
+						<div class="gg-product-feature">
+							<div>
+								<p class="d-inline-block me-1 m-0">●</p>
+								{{ feature.custom_field_value }} {{ feature.name ? feature.name : '' }}
+							</div>
+						</div>
+					{% endif %}
+				{% endfor %}
+			</div>
+			<div class="col-6 mt-auto text-right small">
+				<a href="#features" class="fw-bold text-primary text-decoration-none"> {{ trans('visiosoft.extension.gg_style_provider::field.all_features') }} </a>
+			</div>
+		</div>
+	{% endif %}
+{% endif %}

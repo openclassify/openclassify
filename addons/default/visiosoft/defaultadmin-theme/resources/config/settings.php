@@ -183,7 +183,7 @@ return [
     "dark_warning_color" => [
         "type"   => "anomaly.field_type.colorpicker",
         "config" => [
-            "default_value" => '#e1dc7e',
+            "default_value" => '#c89332',
         ]
     ],
     "dark_info_color" => [

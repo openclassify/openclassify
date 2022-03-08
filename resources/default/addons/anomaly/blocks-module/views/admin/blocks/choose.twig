@@ -1,0 +1,29 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">
+        {{ trans('anomaly.module.blocks::message.choose_block') }}
+    </h4>
+</div>
+
+<div class="modal-body">
+
+    {% include "streams::modals/filter" %}
+
+    {% if not extensions.isEmpty() %}
+        <ul class="nav nav-pills nav-stacked">
+            {% for extension in extensions %}
+                <li class="nav-item">
+                    <a href="{{ url_to('admin/blocks/areas/' ~ route_parameter('area') ~ '/create?extension=' ~ extension.namespace) }}" class="nav-link">
+                        <strong>{{ trans(extension.title) }}</strong>
+                        <br>
+                        <small>{{ trans(extension.description) }}</small>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ trans('streams::message.no_results') }}
+    {% endif %}
+</div>

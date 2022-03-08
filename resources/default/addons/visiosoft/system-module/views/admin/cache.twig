@@ -1,0 +1,25 @@
+{% extends "streams::blank" %}
+
+{% block  content %}
+    <div class="container-fluid">
+
+        {% include "visiosoft.module.system::admin/partials/table" with {'attributes': {
+            'Time': 'entry.createdAt',
+            'Hostname': 'entry.content.hostname',
+            'Action': '<code>{{ entry.content.type }}</code>',
+            'Key': 'entry.content.key',
+            'Expiration': 'entry.content.expiration',
+            'Tags': 'entry.tags',
+        }} %}
+
+        {% include "visiosoft.module.system::admin/partials/user" %}
+
+        {% include "visiosoft.module.system::admin/partials/section" with {
+            'title': 'Value',
+            'attribute': '{{ json_encode(entry.content.value, 128)|raw }}',
+        } %}
+
+        {% include "visiosoft.module.system::admin/partials/batch" %}
+
+    </div>
+{% endblock %}
