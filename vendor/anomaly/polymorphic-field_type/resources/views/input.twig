@@ -1,0 +1,9 @@
+The "{{ trans(field_type.label) }}" field is API only.
+
+<input
+        type="hidden"
+        name="{{ field_type.input_name }}"
+        value="{{ field_type.value.title }}"
+        placeholder="{{ trans(field_type.placeholder) }}"
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>

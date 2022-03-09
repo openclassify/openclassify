@@ -1,0 +1,176 @@
+.fs-23 {
+    font-size: 23px;
+}
+
+.fs-14 {
+    font-size: 14px;
+}
+
+.colorOne {
+    color: #646464;
+}
+
+.roundedThree {
+    border-radius: .3rem;
+}
+
+.fs-22 {
+    font-size: 22px;
+}
+
+.fw-600 {
+    font-weight: 600;
+}
+
+.paddingSpecial {
+    padding: 12px;
+}
+
+.widthSpecial {
+    width: 300px;
+}
+
+.fs-12 {
+    font-size: 12px;
+}
+
+.font-apple {
+    font-family: -apple-system,
+    BlinkMacSystemFont,
+    Arial,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif !important;
+}
+
+.colorTwo {
+    color: #919191;
+}
+
+.line {
+    width: 6px;
+    height: 32px;
+    border-radius: 0 100px 100px 0;
+}
+
+.leftLine_One {
+    background-color: #3665f3;
+}
+
+.leftLine_Two {
+    background-color: #7723db;
+}
+
+.newList_Name {
+    width: 200px;
+    height: 40px;
+    border: none;
+    outline: none;
+    background-color: #eee;
+}
+
+.newList_Name::-webkit-input-placeholder {
+    color: #919191;
+}
+
+.newList_Name:-ms-input-placeholder {
+    color: #919191;
+}
+
+.newList_Name::-ms-input-placeholder {
+    color: #919191;
+}
+
+.newList_Name::placeholder {
+    color: #919191;
+}
+
+.paddingSpecial_Two {
+    width: 40px;
+    height: 40px;
+    color: #ff6000;
+    background-color: rgba(255, 96, 0, 0.08);
+}
+
+.roundedFour {
+    border-radius: 20px;
+}
+
+.widthSpecial_Two {
+    width: 344px;
+    height: 70px;
+    background-color: #ebf9ec;
+    border-left: 8px solid #5ad363;
+}
+
+.heightSpecial_Three {
+    height: 70px;
+}
+
+.lineTwo {
+    width: 6px;
+    border-radius: 0 100px 100px 0;
+    background-color: #5ad363;
+}
+
+.bgSpecial {
+    color: #5ad363;
+}
+
+.fs-24 {
+    font-size: 24px;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.like-icon svg {
+    fill: #646464;
+}
+
+.active-icon svg {
+    fill: red;
+}
+
+.pEvent_None {
+    pointer-events: none;
+}
+
+.pEvent_Normal {
+    pointer-events: initial;
+}
+
+.top-zero {
+    top: 0;
+}
+
+.right-zero {
+    right: 0;
+}
+
+.my-favs-area {
+    background: white;
+    z-index: 998;
+    top: 400px;
+}
+
+.my-fav-list {
+    max-height: 300px;
+    overflow: auto;
+}
+
+.my-fav-list img {
+    width: auto;
+    height: 30px;
+    object-fit: cover;
+}
+
+.add-fav:focus .my-favs-area {
+    display: flex !important;
+}

@@ -1,0 +1,15 @@
+{% if is_module_enabled('orders') %}
+	<div class="price-4 mt-2 text-secondary">
+		<i class="fas fa-truck me-1"></i>
+		{% if is_module_enabled('shipping') %}
+			{{ fn('getShippingAmount', adv.id) }}
+		{% else %}
+			{{ currency_format(setting_value('visiosoft.module.orders::shipping'), setting_value('streams::currency')) }}
+		{% endif %}
+
+		{% if is_module_enabled('customfields') %}
+			{% set shipping_time = fn('getValueWithSlugAndAd', 'shipping_time', adv.id) %}
+			{{ shipping_time ? (' - ' ~ trans('visiosoft.module.orders::field.ships_in', {shipping_time: shipping_time})) }}
+		{% endif %}
+	</div>
+{% endif %}

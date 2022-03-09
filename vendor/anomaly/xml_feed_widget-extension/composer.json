@@ -1,0 +1,31 @@
+{
+    "name": "anomaly/xml_feed_widget-extension",
+    "type": "streams-addon",
+    "description": "A dashboard widget that displays an XML feed.",
+    "keywords": [
+        "streams",
+        "dashboard widget",
+        "xml"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
+    "require": {
+        "simplepie/simplepie": "~1.5.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\XmlFeedWidgetExtension\\": "src/"
+        }
+    }
+}

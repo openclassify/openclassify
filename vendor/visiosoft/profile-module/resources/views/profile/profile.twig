@@ -1,0 +1,100 @@
+{% extends "theme::layouts/default" %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline("visiosoft.module.profile::assets/css/profile.scss") }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            {% set profile_photo = user.file ? user.file.make.url : img('visiosoft.module.profile::images/profile-default.png').url %}
+
+            <div class="row px-3">
+                <!-- User Profile Form Section-->
+                <div class="col-md-12 bg-white profile-section pb-4 px-1 px-sm-5 border">
+                    <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-profile" role="tabpanel"
+                             aria-labelledby="nav-profile-tab">
+                            <div class="col-12 mb-4 mb-md-5 mt-md-3 px-3 px-md-0">
+                                <h3>{{ trans('visiosoft.module.profile::field.profile.name') }}</h3>
+                                <p>{{ trans('visiosoft.module.profile::field.profile_instruction') }}</p>
+                            </div>
+
+                            <div>
+                                {% set userForm = form('userProfile').entry(user.id).get() %}
+                                {{ userForm.open()|raw }}
+                                <div class="mt-4 d-flex profile--desc flex-column flex-lg-row">
+                                    <div class="profile-image d-flex d-sm-block m-auto m-sm-0 mr-sm-3 position-relative">
+                                        <img src="{{ profile_photo }}">
+                                        <div class="new-profile-image position-absolute">
+                                            {{ img('visiosoft.module.profile::images/camera.svg').data|raw }}
+                                        </div>
+                                        {% if setting_value('visiosoft.module.profile::upload_avatar') %}
+                                            <div class="form-group">
+                                                {{ userForm.fields.file|raw }}
+                                            </div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="pt-2 d-flex flex-column flex-sm-row d-sm-block m-auto m-sm-0">
+                                        <p class="mb-1 username">{{ user.name }}</p>
+                                        <p class="mb-1 last-login d-flex d-sm-block m-auto m-sm-0">
+                                            {{ auth_user().last_login_at|date(config_get('streams::datetime.date_format') ~ ' - ' ~ config_get('streams::datetime.time_format')) }}
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <div class="profile--form--area">
+                                        <div class="form-group">
+                                            <label class="control-label mb-1">
+                                                {{ trans("visiosoft.module.profile::field.first_name.name") }}
+                                            </label>
+                                            {{ userForm.fields.first_name.input|raw }}
+
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label mb-1">
+                                                {{ trans("visiosoft.module.profile::field.last_name.name") }}
+                                            </label>
+                                            {{ userForm.fields.last_name.input|raw }}
+                                        </div>
+                                        <div class="form-group">
+                                            <label class="control-label mb-1">
+                                                {{ trans("visiosoft.module.profile::field.email.name") }}
+                                            </label>
+                                            {{ userForm.fields.email.input|raw }}
+                                        </div>
+                                    </div>
+                                    <div class="form-group text-right">
+                                        {{ userForm.actions|raw }}
+                                    </div>
+
+                                    <div class="account--disable--content d-flex align-item-center justify-content-center mx-auto">
+                                        <div class="d-flex justify-content-center align-items-center">
+                                            <p class="mb-0 mr-4">
+                                                {{ trans('visiosoft.module.profile::message.disable_account') }}
+                                            </p>
+                                            <a href="{{ url_route("visiosoft.module.profile::profile_close_account") }}" class="btn btn-danger account-freeze text-white">
+                                                {{ trans("visiosoft.module.profile::field.disable_account.name") }}
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                                {{ userForm.close()|raw }}
+                            </div>
+                        </div>
+                        {{ addBlock('profile/detail/content')|raw }}
+                    </div>
+                    <!-- User Profile Form Section-->
+                </div>
+            </div>
+            <script>
+                var choose_an_option = "{{ trans('visiosoft.module.profile::field.choose_an_option') }}"
+            </script>
+        {% endblock %}
+    {% endembed %}
+
+    {{ asset_script("visiosoft.module.profile::assets/js/education.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/profile.js") }}
+{% endblock %}

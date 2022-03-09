@@ -1,0 +1,144 @@
+.table {
+    margin-bottom: 0;
+
+    thead {
+        z-index: 1;
+    }
+
+    th,
+    td {
+        vertical-align: middle;
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5 {
+            &:last-of-type {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    > thead,
+    > tbody,
+    > tfoot {
+        > tr {
+            &.dragged {
+                opacity: 0.2;
+            }
+
+            > th,
+            > td {
+                //word-break: break-all;
+                vertical-align: middle;
+
+                p {
+                    margin-bottom: 0;
+                }
+
+                pre {
+                    margin-bottom: 0;
+                }
+
+                .tag {
+                    vertical-align: text-bottom;
+                }
+
+                .handle:hover {
+                    cursor: move;
+                }
+            }
+        }
+    }
+
+    thead th {
+        vertical-align: bottom;
+        border-bottom: (2 * 1px) solid $table-border-color;
+
+        a {
+            color: $link-color;
+        }
+    }
+
+    tfoot {
+
+        .pagination {
+            margin-left: 1rem;
+        }
+    }
+}
+
+.table-filters {
+    padding: 1rem;
+    border-top: 1px solid $table-border-color;
+
+    .form-group {
+        margin-bottom: 0 !important;
+    }
+}
+
+.table-limit {
+    height: auto;
+    font-size: 75%;
+    vertical-align: top;
+    padding-top: 0.22rem !important;
+    padding-bottom: 0.21rem !important;
+}
+
+.no-results {
+    padding: 1rem;
+    border-top: 1px solid $table-border-color;
+}
+
+@include media-breakpoint-down(sm) {
+
+    /* Force table to not be like tables anymore */
+    .table-stack table,
+    .table-stack thead,
+    .table-stack tbody,
+    .table-stack th,
+    .table-stack td,
+    .table-stack tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .table-stack thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .table-stack tr {
+        border: 1px solid #cccccc;
+    }
+
+    .table-stack td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eeeeee;
+        position: relative;
+        padding-left: 50%;
+        white-space: normal;
+        text-align: left;
+    }
+
+    .table-stack td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        text-align: left;
+        font-weight: bold;
+    }
+
+    /* Label the data */
+    .table-stack td:before {
+        content: attr(data-title);
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "anomaly/user_security_check-extension",
+    "type": "streams-addon",
+    "description": "A security check for the Users module that assures users are active, enabled, and authorized.",
+    "keywords": [
+        "users",
+        "module",
+        "security check"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\UserSecurityCheckExtension\\": "src/"
+        }
+    }
+}

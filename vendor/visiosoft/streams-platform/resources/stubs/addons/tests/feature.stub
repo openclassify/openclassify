@@ -1,0 +1,10 @@
+<?php namespace {namespace};
+
+class {class} extends \TestCase
+{
+
+    public function testFeature()
+    {
+        $this->markTestSkipped('Not implemented.');
+    }
+}

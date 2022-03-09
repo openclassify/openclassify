@@ -1,0 +1,29 @@
+{
+    "name": "anomaly/default_page_handler-extension",
+    "type": "streams-addon",
+    "description": "The default page handler for the Pages module.",
+    "keywords": [
+        "pages",
+        "module",
+        "page handler",
+        "streams platform"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\DefaultPageHandlerExtension\\": "src/"
+        }
+    }
+}

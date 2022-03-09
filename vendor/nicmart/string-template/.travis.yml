@@ -1,0 +1,21 @@
+language: php
+php:
+  - 7.2
+  - 7.3
+  - 7.4
+  - 8.0
+  - hhvm
+
+matrix:
+  allow_failures:
+    - php: hhvm
+
+# We don't have a composer.lock. Rather, we use the most recent (released) versions of our dependencies.
+before_script:
+  - composer update --prefer-dist
+
+script:
+  - XDEBUG_MODE=coverage vendor/bin/phpunit --coverage-clover ./build/logs/clover.xml
+
+after_script:
+  - vendor/bin/php-coveralls -v

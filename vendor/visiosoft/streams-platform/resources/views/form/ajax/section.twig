@@ -1,0 +1,16 @@
+<div class="{{ section.class }}" {{ html_attributes(section.attributes) }}>
+
+    {% if section.title %}
+        <h2>
+            {{ section.icon ? icon(section.icon) }}
+            {{ trans(section.title) }}
+        </h2>
+    {% endif %}
+
+    {% for field in section.fields %}
+        {% for field in form.fields.translations(field) %}
+            {{ field.render({'form': form})|raw }}
+        {% endfor %}
+    {% endfor %}
+
+</div>

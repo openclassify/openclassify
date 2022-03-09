@@ -1,0 +1,15 @@
+<div class="container">
+    <nav class="biolife-nav">
+        <ul>
+            {% for cat in categories %}
+                <li class="nav-item">
+                    <a href="{{ url_route('adv_list_seo', [cat.slug]) }}" class="text-dark">{{ cat['name'] }}</a>
+                </li>
+            {% endfor %}
+            <li class="nav-item">
+                <span class="current-page">{{ adv.name }}</span>
+                <input class="hidden" id="adv-id" value="{{ adv.id }}">
+            </li>
+        </ul>
+    </nav>
+</div>

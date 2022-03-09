@@ -1,0 +1,5 @@
+@import "another.css";
+/*! dont delete me */
+.test{color:red}@media screen{.printonly{display:none}}@media print{
+/*! imp: weird but it may happen */
+}

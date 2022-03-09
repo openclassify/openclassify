@@ -1,0 +1,12 @@
+<select
+        class="{{ field_type.class }}"
+        name="{{ field_type.input_name }}"
+        {{ field_type.disabled ? 'disabled' }}>
+
+    <option>{{ trans(field_type.placeholder) }}</option>
+
+    {% for iso, language in field_type.options %}
+        <option value="{{ iso }}" {{ iso == field_type.value ? 'selected' }}>{{ trans(language) }}</option>
+    {% endfor %}
+
+</select>

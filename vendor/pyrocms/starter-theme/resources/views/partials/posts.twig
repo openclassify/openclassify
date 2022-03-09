@@ -1,0 +1,9 @@
+<div id="posts">
+
+    {% set posts = entries('posts').recent().take(5).get() %}
+
+    {% include "anomaly.module.posts::posts/partials/posts" with {"posts": posts} %}
+
+    {{ posts.links|raw }}
+
+</div>

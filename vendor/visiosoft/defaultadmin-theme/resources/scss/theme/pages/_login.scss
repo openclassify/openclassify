@@ -1,0 +1,183 @@
+#login {
+    height: 100%;
+    min-width: 0;
+    background-size: 55px 100px;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-image: url('{{ img("theme::img/watermark.svg").path }}');
+
+    &.success {
+        .logo-container {
+            left: -50%;
+        }
+
+        .login-container {
+            right: -50%;
+        }
+    }
+
+    .logo-container {
+        left: 0;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        background: #1f1f1f;
+        transition: left 300ms 500ms;
+    }
+
+    .login-container {
+        right: 0;
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        transition: right 300ms 500ms;
+
+        background-size: cover;
+        background-position: top, center;
+        background-repeat: no-repeat, no-repeat;
+
+        .logo {
+            display: none;
+
+            svg {
+                width: 45px;
+                height: 82px;
+                fill: #ffffff;
+                margin-top: -30px;
+                vertical-align: middle;
+            }
+        }
+
+        .login-wrapper {
+            margin-top: 40vh;
+
+            input {
+                border: 0;
+                outline: 0;
+                @include border-radius($border-radius);
+            }
+
+            label {
+                color: #ffffff;
+                margin-top: .35rem;
+            }
+
+            button {
+                &:hover {
+                    @include button-outline(#ffffff);
+                }
+            }
+
+            a {
+                opacity: 0.6;
+                color: #ffffff;
+                transition: opacity 300ms;
+
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    .logo {
+        color: #ffffff;
+        font-size: 4rem;
+        margin-top: 40vh;
+        font-weight: bold;
+        text-align: center;
+        font-family: 'Montserrat', sans-serif;
+
+        svg {
+            width: 45px;
+            height: 82px;
+            margin-top: -30px;
+            vertical-align: middle;
+
+            .st0 {
+                fill: #ffffff;
+            }
+        }
+
+        span {
+            font-size: 1rem;
+            font-weight: normal;
+            color: rgba(255, 255, 255, 0.2);
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #login {
+
+        &.success {
+            .logo-container {
+                left: -100%;
+            }
+
+            .login-container {
+                right: 100%;
+            }
+        }
+
+        .logo-container {
+            width: 100%;
+
+            &:after {
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                content: "";
+                opacity: 0.4;
+                position: absolute;
+                background-size: cover;
+                background-position: top, center;
+                background-repeat: no-repeat, no-repeat;
+                background-image: url('{{ img("theme::img/bg.svg").path }}');
+            }
+
+            .logo {
+                display: none;
+            }
+        }
+
+        .login-container {
+            width: 100%;
+            background: none !important;
+
+            .login-wrapper {
+                margin-top: 20vh;
+            }
+
+            .logo {
+                margin-top: 0;
+                line-height: 1;
+                display: inherit;
+                margin-bottom: 2rem;
+
+                svg {
+                    width: 55px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(sm) {
+    #login {
+
+        .login-container {
+
+            .login-wrapper {
+                margin-top: 15vh;
+                padding: 0 3rem;
+            }
+
+            .logo {
+                margin-bottom: 4rem;
+            }
+        }
+    }
+}

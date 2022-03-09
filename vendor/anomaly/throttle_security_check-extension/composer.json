@@ -1,0 +1,28 @@
+{
+    "name": "anomaly/throttle_security_check-extension",
+    "type": "streams-addon",
+    "description": "A security extension that throttles login attempts.",
+    "keywords": [
+        "streams extension",
+        "streams addon",
+        "extension"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\ThrottleSecurityCheckExtension\\": "src/"
+        }
+    }
+}

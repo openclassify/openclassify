@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="58.499" height="39.21" viewBox="0 0 58.499 39.21">
+  <g id="en" transform="translate(0.05 0.05)">
+    <rect id="Rectangle_2042" data-name="Rectangle 2042" width="58.399" height="39.111" transform="translate(0 0)" fill="#110070"/>
+    <path id="Path_1607" data-name="Path 1607" d="M861.7,381.007h7.318l15.322,10.261V381.007h13.128v10.258l15.314-10.258H920.1v4.9L908.022,394H920.1v13.13H908.022l12.081,8.092v4.9h-7.314l-15.317-10.259v10.259H884.344V409.854L869.02,420.118H861.7v-4.9l12.083-8.093H861.7V394h12.085L861.7,385.9Z" transform="translate(-861.704 -381.007)" fill="#fff"/>
+    <path id="Path_1608" data-name="Path 1608" d="M884.344,419.98v-.938H881.1l-19.4,12.991h4.64Z" transform="translate(-861.704 -392.922)" fill="red"/>
+    <path id="Path_1609" data-name="Path 1609" d="M913.79,393.056V394h3.235l19.4-12.99h-4.641Z" transform="translate(-878.022 -381.007)" fill="red"/>
+    <path id="Path_1610" data-name="Path 1610" d="M861.7,384.111,876.463,394h4.64l-19.4-12.99h0Z" transform="translate(-861.704 -381.007)" fill="red"/>
+    <path id="Path_1611" data-name="Path 1611" d="M918.5,419.042,937.9,432.033v-3.108l-14.756-9.883Z" transform="translate(-879.498 -392.922)" fill="red"/>
+    <path id="Path_1612" data-name="Path 1612" d="M894.846,396.624V381.007h-7.878v15.617H861.7V404.5h25.264v15.616h7.878V404.5H920.1v-7.877Z" transform="translate(-861.704 -381.007)" fill="red"/>
+    <rect id="Rectangle_2043" data-name="Rectangle 2043" width="58.399" height="39.111" transform="translate(0 0)" fill="none" stroke="#000" stroke-width="0.1"/>
+  </g>
+</svg>

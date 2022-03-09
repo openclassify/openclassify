@@ -1,0 +1,16 @@
+suites:
+    acme_suite:
+        spec_path: ./tests
+
+extensions:
+  - PhpSpec\Extension\CodeCoverageExtension
+
+code_coverage:
+  format:
+    - html
+    - clover
+  output:
+    html: build/phpspec/coverage
+    clover: build/phpspec/logs/clover.xml
+
+formatter.name: pretty

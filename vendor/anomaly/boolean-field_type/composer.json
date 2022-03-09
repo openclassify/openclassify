@@ -1,0 +1,37 @@
+{
+    "name": "anomaly/boolean-field_type",
+    "type": "streams-addon",
+    "description": "An on/off switch style field type.",
+    "keywords": [
+        "streams field type",
+        "streams addon",
+        "field type"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "email": "ryan@pyrocms.com",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "require": {
+        "anomaly/streams-platform": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\BooleanFieldType\\": "src/"
+        }
+    }
+}

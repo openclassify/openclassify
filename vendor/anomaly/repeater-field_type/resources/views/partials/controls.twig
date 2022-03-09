@@ -1,0 +1,60 @@
+<div class="repeater-item-controls">
+    <ul class="list-inline">
+        {% if not field_type.readonly and not field_type.disabled %}
+            <li class="list-inline-item">
+                <input type="checkbox">
+            </li>
+        {% endif %}
+        <li class="list-inline-item">
+            {% if field_type.config.repeater_title %}
+                {{ field_type.placeholder }} {{ form.entry.getFieldValue(field_type.config.repeater_title) }}
+            {% else %}
+                {{ field_type.placeholder }} {{ form.entry.getTitleName() != 'id' ? form.entry.getFieldValue(form.entry.getTitleName()) : form.entry.id }}
+            {% endif %}
+        </li>
+    </ul>
+
+    {% if not field_type.readonly and not field_type.disabled %}
+        <ul class="dropdown pull-right list-inline">
+
+            <li class="list-inline-item">
+                {% if not (field_type.readonly) %}
+                    <a href="#" data-toggle="dropdown">
+                        {{ icon('cog') }}
+                    </a>
+                {% endif %}
+
+                {% block menu %}
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a href="#" class="dropdown-item" data-toggle="collapse"
+                           data-expand="{{ trans('anomaly.field_type.repeater::input.expand') }}"
+                           data-collapse="{{ trans('anomaly.field_type.repeater::input.collapse') }}">
+                            {{ icon('fa fa-compress') }}
+                            <span>{{ trans('anomaly.field_type.repeater::input.collapse') }}</span>
+                        </a>
+                        {% if not (field_type.readonly) %}
+                            <a href="#" class="dropdown-item" data-add="above">
+                                <i class="fa fa-plus"></i>
+                                <span>{{ trans('anomaly.field_type.repeater::input.add_above') }}</span>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#" class="dropdown-item text-danger" data-delete="row">
+                                <i class="fa fa-trash"></i>
+                                <span>{{ trans('anomaly.field_type.repeater::input.delete') }}</span>
+                            </a>
+                        {% endif %}
+                    </div>
+                {% endblock %}
+            </li>
+
+            {% if not (field_type.readonly) %}
+                <li class="list-inline-item">
+                    <a href="#" class="repeater-handle" onclick="return false;">
+                        <i class="fa fa-arrows"></i>
+                    </a>
+                </li>
+            {% endif %}
+
+        </ul>
+    {% endif %}
+</div>

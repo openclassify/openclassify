@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="10.071" height="13.9" viewBox="0 0 10.071 13.9">
+  <g id="rapor" transform="translate(-823.1 -203)">
+    <path id="ribbon" d="M17.32,7H10.594a.436.436,0,0,0-.436.436v9.1a.436.436,0,0,0,.739.314l3.06-1.8,3.06,1.8a.436.436,0,0,0,.739-.314v-9.1A.436.436,0,0,0,17.32,7Zm-.436,8.509-2.624-1.378a.435.435,0,0,0-.6,0l-2.624,1.378V7.873h5.853Z" transform="translate(816.2 220.756) rotate(-90)"/>
+    <line id="Line_1" data-name="Line 1" y2="13" transform="translate(823.5 203.5)" fill="none" stroke="#000" stroke-linecap="round" stroke-width="0.8"/>
+  </g>
+</svg>

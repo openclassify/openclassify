@@ -1,0 +1,9 @@
+{
+    "name": "anomaly/test-plugin",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\TestPlugin\\": "src/"
+        }
+    }
+}

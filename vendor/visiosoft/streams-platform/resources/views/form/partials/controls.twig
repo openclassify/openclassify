@@ -1,0 +1,15 @@
+<div class="controls {{ position }} {{ form.options.get('section_class', 'card') }}">
+    <div class="card-block card-body">
+
+        {% if not form.options.read_only %}
+            <div class="form__actions actions">
+                {{ buttons(form.actions)|raw }}
+            </div>
+        {% endif %}
+
+        <div class="form__buttons buttons">
+            {{ buttons(form.buttons)|raw }}
+        </div>
+
+    </div>
+</div>

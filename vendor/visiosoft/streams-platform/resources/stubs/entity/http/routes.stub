@@ -1,0 +1,7 @@
+<?php
+
+return [
+    'admin/{addon}{segment}' => '{controller}@index',
+    'admin/{addon}{segment}/create' => '{controller}@create',
+    'admin/{addon}{segment}/edit/{id}' => '{controller}@edit'
+];

@@ -1,0 +1,23 @@
+<select
+        name="{{ field_type.input_name }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>
+
+    {% if field_type.placeholder %}
+        <option value="">{{ trans(field_type.placeholder) }}</option>
+    {% endif %}
+
+    {% for value, option in field_type.options %}
+        {% if option is iterable %}
+            <optgroup label="{{ trans(value) }}">
+                {% for value, option in option %}
+                    <option value="{{ value }}" {{ value == field_type.key ? 'selected' }}>{{ trans(option) }}</option>
+                {% endfor %}
+            </optgroup>
+        {% else %}
+            <option value="{{ value }}" {{ value == field_type.key ? 'selected' }}>{{ trans(option) }}</option>
+        {% endif %}
+    {% endfor %}
+
+</select>

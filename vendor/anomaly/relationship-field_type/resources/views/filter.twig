@@ -1,0 +1,19 @@
+<select
+        class="custom-select form-control"
+        name="{{ field_type.input_name }}">
+
+    <option value="" disabled {{ not field_type.value ? 'selected' }}>{{ trans(field_type.placeholder) }}</option>
+
+    {% for value, option in field_type.options %}
+        {% if option is iterable %}
+            <optgroup label="{{ trans(value) }}">
+                {% for value, option in option %}
+                    <option value="{{ value }}" {{ field_type.value == value ? 'selected' }}>{{ trans(option) }}</option>
+                {% endfor %}
+            </optgroup>
+        {% else %}
+            <option value="{{ value }}" {{ field_type.value == value ? 'selected' }}>{{ trans(option) }}</option>
+        {% endif %}
+    {% endfor %}
+</select>
+

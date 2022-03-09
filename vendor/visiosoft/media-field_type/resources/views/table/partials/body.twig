@@ -1,0 +1,20 @@
+{{ asset_add("styles.css", "visiosoft.field_type.media::css/imgList.css") }}
+{{ asset_add('scripts.js', 'visiosoft.field_type.media::js/input.js') }}
+<div class="row imageList">
+    {% for row in table.rows %}
+        <div class="col-12 col-sm-3 ads-box-image" data-id="{{ row.key }}">
+            <div class="card text-center">
+                <a class="img-card">
+                    <img class="ads-responsive-image img-thumbnail" src="{{ url('files/' ~ row.columns.0.value) }}"
+                         alt=""/>
+                </a>
+                <div class="card-read-more text-center row">
+                    {{ buttons(row.buttons)|raw }}
+                </div>
+                {% if loop.index == 1 %}
+                    <div class="main-image image-eye-{{ row.key }}"><i class="fa fa-eye "></i></div>
+                {% endif %}
+            </div>
+        </div>
+    {% endfor %}
+</div>

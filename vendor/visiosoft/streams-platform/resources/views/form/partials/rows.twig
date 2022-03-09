@@ -1,0 +1,19 @@
+{% for row in rows %}
+    <div class="field-group">
+        <div class="row">
+            {% for column in row.columns %}
+                <div class="{{ column.classes ? column.classes|join(' ') : 'col-lg-' ~ (column.size ?: 24) }}">
+
+                    {% if column.fields %}
+                        {% include "streams::form/partials/fields" with {"fields": column.fields} %}
+                    {% elseif column.html %}
+                        {{ parse(column.html)|raw }}
+                    {% elseif column.view %}
+                        {% include column.view %}
+                    {% endif %}
+
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

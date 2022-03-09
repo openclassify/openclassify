@@ -1,0 +1,10 @@
+<div class="remommended-ads-info">
+    <div>
+        {% set recommendedads = getRecommendedAds(app.request.path|split('/')[2]) %}
+
+        {% if recommendedads is not null and count(recommendedads) > 0 %}
+            {% include "visiosoft.module.recommendedads::recommended-"~setting_value('visiosoft.module.recommendedads::type') with {'recommendedads':recommendedads} %}
+            {{ asset_style("visiosoft.module.recommendedads::css/recommendedads.css") }}
+        {% endif %}
+    </div>
+</div>

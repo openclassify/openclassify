@@ -1,0 +1,57 @@
+<section id="messages">
+
+    <!-- Success Messages -->
+    {% if message_exists('success') %}
+        <div class="alert alert-success alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span><span class="sr-only">Close</span>
+            </button>
+
+            {% for message in message_pull('success') %}
+                {{ trans(message)|markdown }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <!-- Informational Messages -->
+    {% if message_exists('info') %}
+        <div class="alert alert-info alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span><span class="sr-only">Close</span>
+            </button>
+
+            {% for message in message_pull('info') %}
+                {{ trans(message)|markdown }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <!-- Warning Messages -->
+    {% if message_exists('warning') %}
+        <div class="alert alert-warning alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span><span class="sr-only">Close</span>
+            </button>
+
+            {% for message in message_pull('warning') %}
+                {{ trans(message)|markdown }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+
+    <!-- Error Messages -->
+    {% if message_exists('error') %}
+        <div class="alert alert-danger alert-dismissible">
+            <button type="button" class="close" data-dismiss="alert">
+                <span>&times;</span><span class="sr-only">Close</span>
+            </button>
+
+            {% for message in message_pull('error') %}
+                {{ trans(message)|markdown }}
+            {% endfor %}
+        </div>
+    {% endif %}
+
+</section>

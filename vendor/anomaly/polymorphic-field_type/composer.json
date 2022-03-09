@@ -1,0 +1,28 @@
+{
+    "name": "anomaly/polymorphic-field_type",
+    "type": "streams-addon",
+    "description": "A polymorphic relationship field type.",
+    "keywords": [
+        "streams field type",
+        "streams addon",
+        "field type"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AnomalyLabs, Inc.",
+            "email": "hello@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\PolymorphicFieldType\\": "src/"
+        }
+    }
+}

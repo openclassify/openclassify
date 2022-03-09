@@ -1,0 +1,16 @@
+{
+  "name": "visiosoft/advs-module",
+  "type": "streams-addon",
+  "autoload": {
+    "psr-4": {
+      "Visiosoft\\AdvsModule\\": "src/"
+    },
+    "files": [
+      "src/Support/_helpers.php"
+    ]
+  },
+  "require": {
+    "fruitcake/laravel-cors": "^2.0",
+    "visiosoft/style_selector-module": "*"
+  }
+}

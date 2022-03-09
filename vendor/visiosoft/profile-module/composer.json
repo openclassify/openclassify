@@ -1,0 +1,16 @@
+{
+  "name": "visiosoft/profile-module",
+  "type": "streams-addon",
+  "autoload": {
+    "psr-4": {
+      "Visiosoft\\ProfileModule\\": "src/"
+    },
+    "files": [
+      "src/Support/_helpers.php"
+    ]
+  },
+  "require": {
+    "maatwebsite/excel": "*",
+    "google/recaptcha": "1.2.*"
+  }
+}

@@ -1,0 +1,8 @@
+<?php namespace {namespace};
+
+use Anomaly\Streams\Platform\Entry\EntryPresenter;
+
+class {class} extends EntryPresenter
+{
+
+}

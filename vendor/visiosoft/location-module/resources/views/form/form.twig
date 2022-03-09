@@ -1,0 +1,29 @@
+{{ asset_add("scripts.js", "streams::js/form/form.js") }}
+{{ asset_add("scripts.js", "streams::js/form/keyboard.js") }}
+{{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        {{ form_open({
+            'class': 'form ' ~ form.options.class ,
+            'enctype': 'multipart/form-data',
+            'url': form.options.url ?: url_full()
+        }) }}
+
+        {#{% include "streams::form/partials/controls" with {"position": "top"} %}#}
+        {% include form.options.get('heading', "streams::form/partials/heading") %}
+        
+        {% if (form.model.table()== 'advs_advs') %}
+            {% include "visiosoft.module.advs::form/partials/layout" %}
+        {% else %}
+            {% include "streams::form/partials/layout" %}
+        {% endif %}
+        {% include "streams::form/partials/controls" %}
+
+        {{ form_close() }}
+
+    </div>
+
+{% endblock %}

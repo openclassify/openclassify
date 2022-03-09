@@ -1,0 +1,36 @@
+#footer {
+    direction: rtl;
+    margin-left: 0;
+    margin-right: 240px;
+
+    ul {
+
+        &.extra {
+            float: left;
+        }
+
+        li {
+
+            &:not(:last-child) {
+                margin-right: 0;
+                margin-left: 0.75em;
+            }
+
+            &.logo {
+                margin-right: 0;
+                margin-left: 1em;
+            }
+        }
+
+        li.footprint {
+            direction: ltr;
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    #footer {
+        margin-right: 0;
+    }
+}
+

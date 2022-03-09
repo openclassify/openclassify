@@ -1,0 +1,18 @@
+<?php namespace {namespace};
+
+use {interface};
+use {base};
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+
+class {class} extends {extends} implements {implements}
+{
+    use HasFactory;
+
+    /**
+     * @return {factory}
+     */
+    protected static function newFactory()
+    {
+        return {factory}::new();
+    }
+}

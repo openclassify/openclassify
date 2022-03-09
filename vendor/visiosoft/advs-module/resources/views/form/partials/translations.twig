@@ -1,0 +1,19 @@
+{% if config_get('streams::locales.enabled')|length > 1 %}
+    <div class="btn-group" style="display: inline-block;">
+        {% if setting_value('visiosoft.module.advs::show_input_flag') %}
+            {{ img('visiosoft.module.advs::images/flags/' ~ field_type.locale ~ '.svg').width(20)|raw }}
+        {% endif %}
+        <a href="#" class="btn btn-xs btn-default dropdown-toggle px-1 mx-0" data-dropdown="locales" data-toggle="dropdown">
+            {{ trans('streams::locale.' ~ field_type.locale ~ '.name') }}
+        </a>
+        <div class="dropdown-menu">
+            {% for iso in config_get('streams::locales.enabled') %}
+                <a class="dropdown-item {{ iso == config('app.locale', config_get('streams::locales.enabled')) ? 'active' }}"
+                   href="#"
+                   data-toggle="lang" lang="{{ iso }}">
+                    {{ trans('streams::locale.' ~ iso ~ '.name') }}
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}

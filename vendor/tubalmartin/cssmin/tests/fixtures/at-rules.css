@@ -1,0 +1,209 @@
+/* re: 2495387 */
+/* This is invalid CSS, but frequently happens as a result of concatenation. */
+@CHARSET "utf-8";
+@document url(http://www.w3.org/),
+url-prefix(http://www.w3.org/Style/),
+domain(mozilla.org),
+regexp("https:.*")
+{
+    /* CSS rules here apply to:
+       - The page "http://www.w3.org/".
+       - Any page whose URL begins with "http://www.w3.org/Style/"
+       - Any page whose URL's host is "mozilla.org" or ends with
+         ".mozilla.org"
+       - Any page whose URL starts with "https:" */
+
+    /* make the above-mentioned pages really ugly */
+    body {
+        color: purple;
+        background: yellow;
+    }
+}
+@media ALL, BRAILLE {
+    body {
+        background-color: gold;
+    }
+}
+@page :first {
+    margin-left: 50%;
+    margin-top: 50%;
+}
+@viewport {
+    min-width: 640px;
+    max-width: 800px;
+}
+@charset "utf-8";
+@import url("fineprint.css") print;
+@import url("bluish.css") projection, tv;
+@namespace svg url(http://www.w3.org/2000/svg);
+#foo {
+    border-width:1px;
+}
+@keyframes identifier {
+    0% { top: 0; left: 0; }
+    30% { top: 50px; }
+    68%, 72% { left: 50px; }
+    100% { top: 100px; left: 100%; }
+}
+/* nested @media blocks */
+@media print {
+    #navigation { 
+        display: none ;
+    }
+    @media (max-width: 12cm) {
+        .note, a[type="{{}{}{"] {
+            float: none
+        }
+        @media (min-height: 2px) {
+            .bar {
+                width: 10px;
+            }
+            .baz {
+                
+            }
+        }
+        .foo { 
+            align-content: center;
+        }
+    }
+}
+@supports ( box-shadow: 0 0 2px black inset ) or
+          ( -moz-box-shadow: 0 0 2px black inset ) or
+          ( -webkit-box-shadow: 0 0 2px black inset ) or
+          ( -o-box-shadow: 0 0 2px black inset ) {
+    .noticebox {
+        -moz-box-shadow: 0 0 2px black inset;
+        -webkit-box-shadow: 0 0 2px black inset;
+        -o-box-shadow: 0 0 2px black inset;
+        box-shadow: 0 0 2px black inset; /* unprefixed last */
+        /* override the rule above the @supports rule */
+        border: none;
+        padding: 2px;
+    }
+}
+
+@SUPPORTS NOT ( display: flex ) {
+    body { width: 100%; height: 100%; background: white; color: black; }
+    #navigation { width: 25%; }
+    #article { width: 75%; }
+}
+
+/*
+Note that this is erroneous!
+The actual CSS file can only have a single charset.
+However, this is the job of the author/application.
+The compressor should not get involved.
+*/
+@charset "another one";
+@import 'custom.css';
+@IMPORT url("chrome://communicator/skin/");
+@import "common.css" screen, projection;
+@import url('landscape.css') screen and (orientation:landscape);
+@namespace url(http://www.w3.org/1999/xhtml);
+@font-face {
+    font-family: 'gzipper';
+    src: url(yanone.eot);
+    src: local('gzipper'),
+    url(yanone.ttf) format('truetype');
+}
+#bar {
+    border-width:10px;
+}
+@viewport {
+    zoom: 0.75;
+    min-zoom: 0.5;
+    max-zoom: 0.9;
+}
+@viewport {
+    orientation: landscape;
+}
+@page :left {
+    margin: 2in 3in;
+}
+@media (min-width: 700px) and (orientation: landscape) {
+    a{ color: red}
+}
+@supports not ((text-align-last:justify) or (-moz-text-align-last:justify) ){
+    p {
+        text-align:justify;
+    }
+}
+@media only all and (max-width:50em), only all and (max-device-width:800px), only all and (max-width:780px) {
+    a {
+        height: 1px;
+    }
+}
+@media screen AND (-webkit-min-device-pixel-ratio:0) {
+    div, p {
+        margin: 2px 2px;
+    }
+}
+@media
+only screen and (-webkit-min-device-pixel-ratio: 1.5),
+only SCREEN and (-o-min-device-pixel-ratio: 3/2),
+only screen and (min--moz-device-pixel-ratio: 1.5),
+only screen and (min-device-pixel-ratio: 1.5) {
+    a{width:100px}
+}
+@media not all and (monochrome) {
+    a{
+        border: none;
+    }
+}
+
+@media not screen and (color), PRINT and (color) { a{ display:block } }
+
+@media (-webkit-min-device-pixel-ratio:0) {
+    a{
+        border: none;
+    }
+}
+@media HANDHELD and (grid) and (max-width: 15em) {
+    a{
+        border-width: 4px 4px 4px;
+    }
+}
+@media SCREEN and (min-aspect-ratio: 1/1) {
+    a{
+        border: none;
+    }
+}
+@media
+(-o-min-device-pixel-ratio:10/4),
+(-o-max-device-pixel-ratio:  5/4),
+(-o-device-pixel-ratio:  1/1),
+(-o-device-pixel-ratio:  1/10),
+(-o-device-pixel-ratio:  1.25),
+(device-pixel-ratio:1.5)  {
+    /* some:prop; */
+    /* An empty property with a fraction in query would break previously */
+}
+
+.something {
+    top: 0;
+}
+@keyframes anim {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@-o-keyframes anim{
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+@keyframes test {
+    0% , 100% { opacity: 0; }
+}
+@keyframes test2 {
+    0%, 100% { opacity: 0; }
+}
+@keyframes test3 {
+    50% { opacity: 50 }
+    100%, 0% { opacity: 0; }
+}
+@-webkit-keyframes test4{
+    0% { transform: rotate3d(0,0,1,30deg); }
+    100% { transform: rotate3d(0,0,1,10deg); }
+}
+@import url(//example.org/foo.css?a;b;c;d) screen, projection;
+@import url(//example.org/foo.css?a;b;c;d);
+@import url(//example.org/bar.css);

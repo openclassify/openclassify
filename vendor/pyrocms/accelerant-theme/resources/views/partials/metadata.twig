@@ -1,0 +1,68 @@
+<!-- Meta -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+
+<title>{{ trans('pyrocms.theme.accelerant::control_panel.title') }}
+    &#8250; {{ trans(template.breadcrumbs.all()|keys|last)|raw }}</title>
+
+{# Favicons #}
+{{ favicons("pyrocms.theme.accelerant::img/favicon.png") }}
+
+{{ asset_add("theme.css", "pyrocms.theme.accelerant::css/fonts.css", ["parse"]) }}
+{{ asset_add("theme.css", "pyrocms.theme.accelerant::css/bootstrap.css") }}
+
+{{ asset_add(
+    "build.css",
+    "pyrocms.theme.accelerant::css/theme.css",
+    [
+        "required",
+        "as:t4t5/sweetalert.css",
+        "as:jshjohnson/Choices.css",
+        "as:rstacruz/nprogress.css",
+    ]
+) }}
+
+{{ asset_add("theme.js", "pyrocms.theme.accelerant::js/vendor/*") }}
+{{ asset_add("theme.js", "pyrocms.theme.accelerant::js/theme/polyfills.js") }}
+{{ asset_add("theme.js", "pyrocms.theme.accelerant::js/libraries/tether.min.js") }}
+
+{{ asset_add(
+    "theme.js",
+    "pyrocms.theme.accelerant::js/libraries/*",
+    [
+        "required",
+        "as:t4t5/sweetalert.js",
+        "as:RubaXa/Sortable.js",
+        "as:jshjohnson/Choices.js",
+        "as:rstacruz/nprogress.js",
+        "as:js-cookie/js-cookie.js",
+        "as:ccampbell/mousetrap.js",
+    ]
+) }}
+
+{# Need to figure out globing to scripts.js - ends up with a /* file #}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/ajax.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/confirm.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/initialize.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/keyboard.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/modal.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/prompt.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/push.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/search.js") }}
+{{ asset_add("scripts.js", "pyrocms.theme.accelerant::js/theme/alert.js") }}
+
+<style type="text/css">
+    {{ asset_inline("theme.css") }}
+    {{ asset_inline("build.css") }}
+</style>
+
+{% if locale().isRtl() %}
+    {{ asset_inline("pyrocms.theme.accelerant::css/bootstrap.rtl.css") }}
+    {{ asset_inline("pyrocms.theme.accelerant::css/rtl.css") }}
+{% endif %}
+
+{{ constants() }}
+
+{{ asset_script("theme.js") }}

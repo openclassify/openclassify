@@ -1,0 +1,37 @@
+{% if is_module_enabled('messages') %}
+	<a href="#" class="text-decoration-none text-primary fw-bold" data-toggle="modal" data-content="{{ app.auth.id }}"
+	   id="message"
+		{% if not auth_check() %}
+			onclick="window.location.href = '{{ url_route('anomaly.module.users::login') }}'"
+		{% else %}
+			data-target="#messageModal"
+		{% endif %}
+	>{{ trans("visiosoft.module.messages::field.send_message") }}</a>
+
+
+	<!-- Modal -->
+	<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-labelledby="messageModalLabel" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered" role="document">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="messageModalLabel">
+						{{ trans("visiosoft.module.messages::field.send_message") }}
+					</h5>
+					<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<span aria-hidden="true">&times;</span>
+					</button>
+				</div>
+				<form action="{{ url_route('chat_message_save', [adv.id]) }}" method="post">
+					<div class="modal-body">
+						<input type="hidden" name="_token" value="{{ csrf_token() }}">
+						<textarea required placeholder="{{ trans("visiosoft.module.messages::field.your_message") }}"
+						          rows="5" class="form-control" name="detail"></textarea>
+						<button type="submit" class="btn btn-primary mt-3 w-100">
+							{{ trans("visiosoft.module.messages::field.send") }}
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+{% endif %}

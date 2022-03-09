@@ -1,0 +1,37 @@
+{
+    "name": "anomaly/wysiwyg_block-extension",
+    "type": "streams-addon",
+    "description": "A WYSIWYG content block.",
+    "keywords": [
+        "streams module",
+        "block type",
+        "blocks"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "email": "ryan@pyrocms.com",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "require": {
+        "anomaly/blocks-module": "^1.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\WysiwygBlockExtension\\": "src/"
+        }
+    }
+}

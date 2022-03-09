@@ -1,0 +1,29 @@
+#dashboard {
+
+    .columns {
+        min-height: 100%;
+
+        .column {
+
+            .placeholder {
+                width: 100%;
+                margin-bottom: 9px;
+                display: inline-block;
+                border-radius: .17rem;
+                border: 2px dashed #55595c;
+            }
+
+            .widget {
+
+                &.dragged {
+                    opacity: 0.5;
+                    z-index: 2001;
+                }
+
+                .handle {
+                    cursor: move;
+                }
+            }
+        }
+    }
+}

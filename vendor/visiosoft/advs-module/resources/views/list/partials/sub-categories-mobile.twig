@@ -1,0 +1,51 @@
+{% set sub_categories_limit = setting_value('visiosoft.theme.sahibinden::home_page_sub_categories_limit') %}
+
+{% if setting_value('visiosoft.theme.sahibinden::show_subcategories_on_mobile_view')
+		and subCats|length > 0
+		and request().show != 'all' %}
+	<div class="mobile-sub-cats">
+		<ul class="categories-list px-0 mr-2 d-block d-sm-none">
+				<li class="categories-list-li category-icon text-truncate d-flex justify-content-between text-dark">
+					<a href="{{ url_current() }}?show=all" class="sub-category show-all">
+						<span>
+							{{ trans('visiosoft.theme.sahibinden::field.show_all_for_cats', {cat_name: mainCats|last.name})}}
+						</span>
+					<span>
+			            {% if setting_value('visiosoft.module.advs::show_ads_count') %}
+			                <span class="text-muted main-advs-count">
+			                    ({{ mainCats|first.count }})
+			                </span>
+						{% endif %}
+						<i class="fa fa-angle-right"></i>
+					</span>
+					</a>
+				</li>
+			{% for sub_category in subCats %}
+				<li class="categories-list-li category-icon text-truncate d-flex justify-content-between font-weight-bold category-{{ sub_category.slug }}">
+
+				{% if sub_category.icon != "" %}
+					<img src="{{ url(sub_category.icon) }}" alt="{{ sub_category.name }}"
+					     class="img-responsive  p-1 mr-1">
+				{% endif %}
+					<a href="{{ url_route('adv_list_seo', [sub_category.slug]) }}" class="sub-category">
+						<span>
+							{{ sub_category.name }}
+						</span>
+						<span>
+				            {% if setting_value('visiosoft.module.advs::show_ads_count') %}
+								{% set catLevel = getParentsCount(sub_category.id) + 1 %}
+		                        <span class="text-muted advs-count mr-1">
+		                            ({{ sub_category.count }})
+		                        </span>
+							{% endif %}
+							<i class="fa fa-angle-right mt-1"></i>
+                        </span>
+					</a>
+				</li>
+
+			{% endfor %}
+		</ul>
+	</div>
+{% else %}
+
+{% endif %}

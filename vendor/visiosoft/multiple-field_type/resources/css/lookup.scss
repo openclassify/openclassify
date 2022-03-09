@@ -1,0 +1,301 @@
+/* Main styles */
+.multiple-field_type .selected {
+  margin-top: calc(15rem / 16);
+}
+
+.multiple-field_type .selected table tr td {
+  padding: 0.5rem;
+  border-top: none;
+  border-bottom: none;
+}
+
+.multiple-field_type .selected table tr td:first-of-type {
+  width: 0;
+  padding-right: calc(15rem / 16);
+}
+
+.multiple-field_type .selected table tr td:last-of-type {
+  padding-left: calc(15rem / 16);
+}
+/* End main styles */
+
+/* Button */
+.multiple-select-btn {
+  background-color: #6E5DDB;
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: calc(18rem / 16);
+  border-radius: .25rem;
+  border: 0;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &:hover {
+    color: #fff;
+  }
+
+  svg {
+    width: 1.5rem;
+    height: auto;
+  }
+}
+/* End Button */
+
+/* Modal */
+.multiple-select-btn ~ .modal {
+  .modal-dialog {
+    @media only screen and (min-width: 576px) {
+      max-width: calc(840rem / 16);
+      margin: 1.75rem auto;
+    }
+
+    .modal-content {
+      .modal-header {
+        padding: 0;
+        display: block;
+        border: 0;
+
+        .btn-wrapper {
+          text-align: right;
+
+          button {
+            margin: 1.5rem 1.5rem .25rem;
+            padding: 0;
+            background: none;
+            border: 0;
+
+            svg {
+              width: 2.25rem;
+              height: auto;
+            }
+          }
+        }
+
+        h4 {
+          color: #6E5DDB;
+          padding: 0 1rem;
+          @media only screen and (min-width: 576px) {
+            padding: 0 5rem;
+          }
+        }
+      }
+
+      .table-filters {
+        padding: 0 1rem;
+        margin: 2rem 0;
+        @media only screen and (min-width: 576px) {
+          padding: 0 5rem;
+        }
+
+        form {
+          justify-content: space-between;
+
+          select {
+            border: 0;
+            box-shadow: 0 .125rem .25rem rgba(0, 0, 0, .075);
+            font-size: calc(14rem / 16);
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            padding: .5rem 1.5rem;
+            height: initial;
+          }
+
+          .filter-buttons {
+            button {
+              background-color: #6e5ddb;
+              color: #fff;
+            }
+
+            a {
+              border-color: #6e5ddb;
+              color: #6e5ddb;
+            }
+          }
+        }
+      }
+
+      .table-responsive {
+        padding: 0 1rem;
+        @media only screen and (min-width: 576px) {
+          padding: 0 5rem;
+        }
+
+        table {
+          thead {
+            tr {
+              th {
+                border-bottom: calc(1rem / 16) solid #E5E5E5;
+                border-top: 0;
+                font-family: 'Poppins', sans-serif;
+                font-size: calc(19rem / 16);
+                font-weight: 600;
+                color: #505050;
+
+                &.buttons {
+                  display: none;
+                }
+
+                a {
+                  color: #505050;
+                }
+              }
+            }
+          }
+
+          tbody {
+            td {
+              border-bottom: calc(1rem / 16) solid #E5E5E5;
+              font-size: calc(19rem / 16);
+              font-family: 'Poppins', sans-serif;
+              font-weight: 500;
+              color: #505050;
+
+              &.buttons {
+                display: none;
+              }
+            }
+          }
+
+          tfoot {
+            th {
+              border: 0;
+              padding: 1.35rem 0 !important;
+
+              button {
+                background-color: #6E5DDB;
+                padding: 1rem 2rem;
+                font-family: 'Poppins', sans-serif;
+                font-size: calc(18rem / 16);
+                border-radius: .25rem;
+                border: 0;
+                color: #fff;
+                display: inline-flex;
+                align-items: center;
+
+                &:focus {
+                  box-shadow: unset;
+                }
+
+                i {
+                  margin-right: .25rem;
+                }
+              }
+            }
+
+            td {
+              padding: .5rem 0;
+              border: 0;
+              color: #999;
+
+              small {
+                font-size: calc(15rem / 16);
+                color: #999 !important;
+                font-family: 'Poppins', sans-serif;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+/* End Modal */
+
+/* Value table */
+.multiple-field_type-value-table {
+  .table-responsive {
+    @media only screen and (min-width: 576px) {
+      padding: 0 4rem;
+    }
+
+    table {
+      thead {
+        tr {
+          th {
+            border-bottom: calc(1rem / 16) solid #E5E5E5;
+            border-top: 0;
+            font-family: 'Poppins', sans-serif;
+            font-size: calc(19rem / 16);
+            font-weight: 600;
+            color: #505050;
+
+            a {
+              color: #505050;
+            }
+          }
+        }
+      }
+
+      tbody {
+        td {
+          border-bottom: calc(1rem / 16) solid #E5E5E5;
+          font-size: calc(19rem / 16);
+          font-family: 'Poppins', sans-serif;
+          font-weight: 500;
+          color: #505050;
+
+          &.buttons {
+            a {
+              background-color: unset;
+              border: 0;
+              color: #DC3545 !important;
+              font-family: 'Poppins', sans-serif;
+              font-weight: 500;
+              display: inline-flex;
+              align-items: center;
+              line-height: 1;
+              font-size: calc(17rem / 16);
+              cursor: pointer;
+            }
+
+            i {
+              margin-right: .5rem;
+            }
+          }
+        }
+      }
+
+      tfoot {
+        th {
+          border: 0;
+          padding: 1.35rem 0 !important;
+
+          button {
+            background-color: #6E5DDB;
+            padding: 1rem 2rem;
+            font-family: 'Poppins', sans-serif;
+            font-size: calc(18rem / 16);
+            border-radius: .25rem;
+            border: 0;
+            color: #fff;
+            display: inline-flex;
+            align-items: center;
+
+            &:focus {
+              box-shadow: unset;
+            }
+
+            i {
+              margin-right: .25rem;
+            }
+          }
+        }
+
+        td {
+          padding: .5rem 0;
+          border: 0;
+          color: #999;
+
+          small {
+            font-size: calc(15rem / 16);
+            color: #999 !important;
+            font-family: 'Poppins', sans-serif;
+          }
+        }
+      }
+    }
+  }
+}
+/* End Value table */

@@ -1,0 +1,11 @@
+{% if params.features_detail %}
+    {% for feature in  params.features_detail %}
+        {% if feature.custom_field_value is iterable %}
+        {% else %}
+            <li class="row m-0 feature">
+                <div class="col-6 p-0 m-0 font-weight-bold">{{ feature.name ? feature.name : '' }}</div>
+                <div class="col-6 p-0 m-0 detail-value">{{ feature.custom_field_value }}</div>
+            </li>
+        {% endif %}
+    {% endfor %}
+{% endif %}

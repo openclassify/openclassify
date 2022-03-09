@@ -1,0 +1,38 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+
+        <a class="navbar-brand" href="{{ url("/") }}">
+            {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-content">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse justify-content-end" id="navbar-content">
+
+            {{ structure()
+            .bootstrap4()
+            .listClass('nav navbar-nav')
+            .cache({'namespace': user().id ~ ':' ~ config('app.locale')})
+            .render()|raw }}
+
+            <ul class="nav navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ url_route('anomaly.module.posts::posts.index') }}">Posts</a>
+                </li>
+                {% if auth_check() %}
+                    <li class="nav-item">
+                        <a href="{{ url_route('anomaly.module.users::logout') }}" class="nav-link btn btn-rounded btn-danger">Logout</a>
+                    </li>
+                {% else %}
+                    <li class="nav-item">
+                        <a href="{{ url_route('anomaly.module.users::login') }}?redirect={{ request_url() }}" class="nav-link btn btn-rounded btn-primary">Login</a>
+                    </li>
+                {% endif %}
+            </ul>
+
+        </div>
+
+    </div>
+</nav>

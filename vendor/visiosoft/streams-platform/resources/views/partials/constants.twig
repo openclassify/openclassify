@@ -1,0 +1,15 @@
+<script type="text/javascript">
+
+    const APPLICATION_URL = "{{ url()|escape }}";
+    const APPLICATION_REFERENCE = "{{ env('APPLICATION_REFERENCE') }}";
+    const APPLICATION_DOMAIN = "{{ env('APPLICATION_DOMAIN') }}";
+
+    const CSRF_TOKEN = "{{ csrf_token() }}";
+    const APP_DEBUG = "{{ config_get('app.debug') }}";
+    const APP_URL = "{{ config_get('app.url') }}";
+    const REQUEST_ROOT = "{{ request_root() }}";
+    const REQUEST_ROOT_PATH = "{{ parse_url(request_root()).path }}";
+    const TIMEZONE = "{{ config_get('app.timezone') }}";
+    const LOCALE = "{{ config_get('app.locale') }}";
+    
+</script>

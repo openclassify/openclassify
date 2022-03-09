@@ -1,0 +1,25 @@
+<?php namespace {namespace};
+
+use {interface};
+use Anomaly\Streams\Platform\Entry\EntryRepository;
+
+class {class} extends EntryRepository implements {implements}
+{
+
+    /**
+     * The entry model.
+     *
+     * @var {model}
+     */
+    protected $model;
+
+    /**
+     * Create a new {class} instance.
+     *
+     * @param {model} $model
+     */
+    public function __construct({model} $model)
+    {
+        $this->model = $model;
+    }
+}

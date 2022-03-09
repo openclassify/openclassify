@@ -1,0 +1,19 @@
+{% if table.options.title or table.options.description %}
+    <div class="card">
+
+        {% if table.options.title %}
+            <div class="card-block card-body">
+                <h4 class="card-title">
+                    {{ trans(table.options.title)|raw }}
+
+                    {% if table.options.description %}
+                        <small>
+                            <br>{{ trans(table.options.description)|raw }}
+                        </small>
+                    {% endif %}
+                </h4>
+            </div>
+        {% endif %}
+
+    </div>
+{% endif %}

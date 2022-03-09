@@ -1,0 +1,298 @@
+/* Main styles */
+html {
+  font-size: 12px;
+  @media only screen and (min-width: 576px) {
+    font-size: 7.5789px;
+  }
+  @media only screen and (min-width: 768px) {
+    font-size: 10.1052px;
+  }
+  @media only screen and (min-width: 992px) {
+    font-size: 13.4736px;
+  }
+  @media only screen and (min-width: 1200px) {
+    font-size: 16px;
+  }
+}
+
+label {
+  margin-bottom: 0;
+}
+/* End Main styles */
+
+#pageTitle {
+  margin: 2rem 0;
+  @media only screen and (min-width: 576px) {
+    margin: 4rem 0;
+  }
+
+  h1 {
+    font-weight: 700;
+  }
+
+  h2 {
+    color: #707070;
+    font-size: calc(24rem / 16);
+    font-weight: 400;
+  }
+}
+
+#contactInfo {
+  background-color: #FBFBFD;
+  padding: 1.4rem 1rem 1.5rem;
+  @media only screen and (min-width: 576px) {
+    padding: 2.4rem 4rem 5.5rem;
+  }
+
+  h3 {
+    color: #6E5DDB;
+    font-size: calc(26rem / 16);
+    margin-bottom: 2rem;
+  }
+
+  #reachInfo {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 2rem;
+
+    p {
+      color: #4A4A4A;
+      font-size: calc(14rem / 16);
+      font-weight: 600;
+    }
+
+    div {
+      label {
+        color: #505050;
+        font-size: calc(18rem / 16);
+        font-weight: 500;
+      }
+    }
+  }
+
+  #contactSummary {
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: 1rem;
+    @media only screen and (min-width: 576px) {
+      margin-bottom: 2rem;
+    }
+
+    label {
+      font-size: calc(14rem / 16);
+      color: #4A4A4A;
+      width: 100%;
+      font-weight: 600;
+      margin-bottom: 1rem;
+      @media only screen and (min-width: 576px) {
+        width: 32.4%;
+        margin-bottom: 0;
+      }
+
+      input {
+        box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+        font-size: calc(17rem / 16);
+        padding: 1.1rem 1.5rem;
+        color: #707070;
+      }
+    }
+  }
+
+  #editContact {
+    button {
+      color: #0075FF;
+      background: none;
+      font-size: calc(18rem / 16);
+
+      svg {
+        height: 1.08rem;
+        width: auto;
+      }
+
+      span {
+        margin-left: .75rem;
+      }
+    }
+  }
+}
+
+#mainInfo {
+  background-color: #FBFBFD;
+  padding: 1.4rem 1rem 2.3rem;
+  @media only screen and (min-width: 576px) {
+    padding: 2.4rem 4rem 4.3rem;
+  }
+
+  h3 {
+    color: #6E5DDB;
+    font-size: calc(26rem / 16);
+    margin-bottom: 2rem;
+  }
+
+  label {
+    font-family: 'Poppins', sans-serif;
+    font-size: calc(14rem / 16);
+    color: #4A4A4A;
+    font-weight: 600;
+
+    input, textarea {
+      box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+      font-size: calc(17rem / 16);
+      padding: 1.1rem 1.5rem;
+      color: #707070;
+    }
+  }
+
+  #stockInput {
+    flex-wrap: wrap;
+    @media only screen and (min-width: 576px) {
+      flex-wrap: nowrap;
+    }
+
+    & > label {
+      width: 100%;
+      @media only screen and (min-width: 576px) {
+        width: 47.5%;
+      }
+
+      &:not(.d-none) + div {
+        top: .6rem;
+      }
+
+      &.d-none + div {
+        margin-bottom: .5rem;
+      }
+    }
+
+    div {
+      position: relative;
+      margin: 1rem 0;
+      @media only screen and (min-width: 576px) {
+        margin: 0;
+        width: 47.5%;
+      }
+
+      svg {
+        width: 2.2rem;
+        height: auto;
+      }
+
+      label {
+        position: relative;
+        top: .25rem;
+        font-weight: 500;
+        font-size: calc(16rem / 16);
+      }
+    }
+  }
+
+  #priceInput {
+    & > div {
+      ::placeholder {
+        color: #B9C0CF;
+        opacity: 1;
+      }
+
+      :-ms-input-placeholder {
+        color: #B9C0CF;
+      }
+
+      ::-ms-input-placeholder {
+        color: #B9C0CF;
+      }
+
+      input, select {
+        box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+        font-size: calc(17rem / 16);
+        padding: 1.1rem 1.5rem;
+        color: #707070;
+      }
+
+      &:first-child {
+        width: 100%;
+        @media only screen and (min-width: 576px) {
+          width: 47.5%;
+        }
+
+        input {
+          &.decimal-price {
+            width: 17%;
+          }
+        }
+      }
+
+      &:last-child {
+        width: 100%;
+        @media only screen and (min-width: 576px) {
+          width: 50.75%;
+        }
+
+        select, .decimal-price {
+          width: 17%;
+        }
+
+        select {
+          padding: 1.1rem 1rem;
+        }
+      }
+    }
+  }
+
+  #simpleOptionsInput {
+    .select2-selection {
+      box-shadow: 0 calc(1rem / 16) calc(2rem / 16) rgba(0, 0, 0, .04);
+      font-size: calc(17rem / 16);
+      padding: 1.1rem 1.5rem;
+      color: #707070;
+      border: 0;
+      margin-top: 1rem;
+
+      .select2-selection__rendered {
+        padding: 0;
+        display: flex;
+        margin: 0;
+        flex-wrap: wrap;
+
+        .select2-selection__choice {
+          float: none;
+        }
+
+        .select2-search__field {
+          padding: 0;
+        }
+      }
+    }
+  }
+}
+
+.swal2-title {
+  max-width: 100% !important;
+}
+
+#configurationModal .form-group {
+  flex: 1 1 auto!important;
+  margin: 0 1rem 1rem 1rem;
+}
+
+.btn-configuration {
+  background-color: #6E5DDB;
+  padding: 1rem 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: calc(18rem / 16);
+  border-radius: .25rem;
+  border: 0;
+  color: #fff;
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 2rem;
+
+  &:hover,
+  &:active,
+  &:focus {
+    background-color: #6E5DDB;
+    color: #fff;
+  }
+
+  svg {
+    width: 1.5rem;
+    height: auto;
+  }
+}

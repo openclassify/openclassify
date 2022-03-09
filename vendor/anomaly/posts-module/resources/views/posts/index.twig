@@ -1,0 +1,15 @@
+{% extends layout('posts') %}
+
+{% block content %}
+    <div id="posts">
+        <div class="container">
+
+            {% set posts = entries('posts').recent().paginate() %}
+
+            {% include "anomaly.module.posts::posts/partials/posts" with {"posts": posts} %}
+
+            {{ posts.links|raw }}
+
+        </div>
+    </div>
+{% endblock %}

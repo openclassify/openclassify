@@ -1,0 +1,17 @@
+<div class="controls">
+
+    {% if not form.options.read_only %}
+        <div class="actions">
+            {{ buttons(form.actions)|raw }}
+        </div>
+    {% endif %}
+
+    {% if form.translatable %}
+        {% include "streams::form/partials/translations" %}
+    {% endif %}
+
+    <div class="buttons">
+        {{ buttons(form.buttons)|raw }}
+    </div>
+
+</div>

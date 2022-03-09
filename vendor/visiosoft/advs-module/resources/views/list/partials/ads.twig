@@ -1,0 +1,73 @@
+{% set hideStandard = setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
+{% set listLocation = setting_value('visiosoft.module.location::list_page_location') %}
+{% set showDate = setting_value('visiosoft.theme.base::date_fields') %}
+
+<div id="listing" class="w-100 table-responsive">
+    <table class="w-100 text-center">
+
+        {% include 'visiosoft.module.advs::list/partials/thead' %}
+
+        <tbody>
+
+        {{ addBlock('ad-list/partials/ads', {'featured_advs': featured_advs, 'vars': _context})|raw }}
+
+        {% for adv in advs %}
+            <tr class="{{ adv.doping_type ? 'doping_type' ~ adv.doping_type }}">
+                <td>
+                    <a href="{{ adv.detail_url }}">
+                        <img src="{{ img('visiosoft.theme.base::images/no-image.png').url }}" class="rounded lazy"
+                             alt="{{ adv.name }}" data-src="{{ adv.thumbnail }}">
+                    </a>
+                </td>
+                <td class="text-left pl-2">
+                    <h6 class="mb-1">
+                        <a href="{{ adv.detail_url }}">{{ adv.name }}</a>
+                    </h6>
+                    {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
+                        <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
+                    {% endif %}
+                    <div class="action-data d-flex align-items-center text-truncate">
+
+                        {{ addBlock(
+                            'list/extra-actions',
+                            {'ad': adv, 'vars': _context},
+                            ['favs', 'comparisons', 'offers']
+                        )|raw }}
+
+                    </div>
+                </td>
+
+                {% for listingCF in listingCFs %}
+                    {% set feature = adv.features[listingCF.slug.value] %}
+                    <td class="location-data">{{ feature ? feature.custom_field_value : '-' }}</td>
+                {% endfor %}
+
+                {% if listLocation %}
+                    <td class="location-data">
+                        <p>{{ adv.country_name }}</p>
+                        <p>{{ adv.city_name }}</p>
+                    </td>
+                {% endif %}
+                {% if setting_value('visiosoft.module.advs::market_place') and showDate%}
+                    <td class="date-data">
+                        <p>{{ adv.publish_at.value|date('d/m') }}</p>
+                        <p>{{ adv.publish_at.value|date('Y') }}</p>
+                    </td>
+                {% endif %}
+                <td class="price-data">
+                    {% if not hideStandard %}
+                        <p class="text-nowrap">
+                            <s>
+                                {{ adv.standard_price != adv.price and adv.standard_price != '0' ? currency_format(adv.standard_price,adv.currency) : '' }}
+                            </s>
+                        </p>
+                    {% endif %}
+                    <p class="text-nowrap">
+                        {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
+                    </p>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

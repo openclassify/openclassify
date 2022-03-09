@@ -1,0 +1,11 @@
+@import "../../../node_modules/bootstrap/scss/mixins";
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+
+@import "mixins";
+@import "variables";
+
+@import "components/reset";
+
+@import "layout/main";
+@import "layout/footer";

@@ -1,0 +1,15 @@
+<?php namespace {namespace};
+
+use Anomaly\Streams\Platform\Database\Seeder\Seeder;
+
+class {class} extends Seeder
+{
+
+    /**
+     * Run the seeder.
+     */
+    public function run()
+    {
+        //
+    }
+}

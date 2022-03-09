@@ -1,0 +1,32 @@
+<ul id="categoryList" class="py-3 px-2 overflow-auto">
+    {% for maincat in mainCats %}
+        {% set parent_category = noCat ? false : true %}
+
+        <li>
+            <div class="d-flex">
+                {% if (not category) or (loop.first and category) %}
+                    {% set categoryIcon = (maincat.icon.value) ? maincat.icon.value : img('visiosoft.module.advs::images/listing/sample-cat-icon.svg').url %}
+                    <img src="{{ categoryIcon }}" alt="{{ main_category.name }}" class="img-responsive">
+                {% endif %}
+                <div class="{{ not loop.first and category ? 'sub-cat' : 'ml-2' }}" style="{{ not loop.first and category ? 'padding-left: ' ~ (loop.index - 1) * 0.5 ~ 'rem;' }}">
+                    <a href="{{ appendRequestURL(request_query(),url_route('adv_list_seo', [maincat.slug, cityId.slug]),{},['page']) }}">
+                        {{ maincat.name }}
+                    </a>
+                    {% if count(subCats) %}
+                        <ul class="sub-cat mt-1 ml-2">
+                            {% for subcat in subCats %}
+                                {% if subcat.parent_category_id == maincat.id %}
+                                    <li>
+                                        <a href="{{ appendRequestURL(request_query(), url_route('adv_list_seo', [subcat.slug, citySlug]), {}, ['page']) }}">
+                                            {{ subcat.name }}
+                                        </a>
+                                    </li>
+                                {% endif %}
+                            {% endfor %}
+                        </ul>
+                    {% endif %}
+                </div>
+            </div>
+        </li>
+    {% endfor %}
+</ul>

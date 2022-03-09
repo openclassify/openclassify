@@ -1,0 +1,28 @@
+<?php
+
+return [
+    '401'                       => 'Identité invalide.',
+    '403'                       => 'Accès refusé.',
+    '429'                       => 'Trop de requête.<br><small>Veuillez réessayer plus tard.</small>',
+    '503'                       => 'Bientôt de retour.',
+    '404'                       => 'Page introuvable.',
+    '500'                       => 'Il y a eu une erreur.',
+    'help'                      => 'Aide',
+    'system'                    => 'Système',
+    'no_results'                => 'Aucun résultat.',
+    'access_denied'             => 'Accès refusé.',
+    'no_fields_available'       => 'Aucun champs disponible.',
+    'delete_success'            => ':count entrée(s) ont été supprimées avec succès.',
+    'reorder_success'           => ':count entrée(s) ont été réorganisées avec succès.',
+    'csrf_token_mismatch'       => 'Votre jeton de sécurité a expiré. Merci de réenvoyer le formulaire.',
+    'delete_installer'          => 'Le module d\'installation existe toujours ! Veuillez le supprimer du serveur !',
+    'create_success'            => ':name créé avec succès.',
+    'edit_success'              => ':name modifié avec succès.',
+    'confirm_delete_title'      => 'Etes-vous sûr de vouloir supprimer ?',
+    'confirm_delete_message'    => 'Il sera impossible de revenir en arrière.',
+    'confirm_uninstall_title'   => 'Etes-vous sûr de vouloir désinstaller ?',
+    'confirm_uninstall_message' => 'Les données associées seront perdues.',
+    'prompt_delete_title'       => 'Etes-vous sûr de vouloir supprimer ?',
+    'prompt_delete_message'     => 'Tapez \":match:\" pour confirmer.',
+    'form_is_read_only'         => 'Ce formulaire est en lecture seule.',
+];

@@ -1,0 +1,60 @@
+// ------------------------------------------------------------------
+//
+// VARIABLES
+//
+// 01. Breakpoints
+// 02. Baseline
+// 03. FontFamily
+// 04. FontSize
+// 05. Headings
+// 06. TextColors
+// 07. BackgroundColors
+//
+// ------------------------------------------------------------------
+
+
+// =Breakpoints
+// ------------------------------------------------------------------
+$breakpoint-small: 768px !default;
+
+
+// =Baseline
+// ------------------------------------------------------------------
+$base-line: 24px !default;
+
+// =FontFamily
+// ------------------------------------------------------------------
+$ui-font-family: "Trebuchet MS", 'Helvetica Neue', Helvetica, Tahoma, sans-serif !default;
+$content-font-family: $ui-font-family !default;
+$headings-font-family: $ui-font-family !default;
+$monospace-font-family: Consolas, Menlo, Monaco, "Courier New", monospace !default;
+
+
+// =FontSize
+// ------------------------------------------------------------------
+$font-size: 16px !default;
+
+
+// =Headings
+// ------------------------------------------------------------------
+$font-size-h1: 40px !default;
+$font-size-h2: 32px !default;
+$font-size-h3: 24px !default;
+$font-size-h4: 21px !default;
+$font-size-h5: 18px !default;
+$font-size-h6: 16px !default;
+
+
+// =TextColors
+// ------------------------------------------------------------------
+$body-color: #333 !default;
+$headings-color: #222 !default;
+$link-color: #256bc9 !default;
+$link-hover-color: #e21e3b !default;
+
+
+// =BackgroundColors
+// ------------------------------------------------------------------
+$body-background-color: #fff !default;
+$code-background-color: rgba(0, 0, 0, .05) !default;
+$mark-background-color: #ffd61e !default;

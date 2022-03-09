@@ -1,0 +1,16 @@
+#main {
+    overflow: visible;
+    padding-top: 70px;
+    margin-left: 240px;
+    background-size: 55px 100px;
+    background-repeat: no-repeat;
+    transition: min-height 100ms;
+    background-position: center 40vh;
+    background-image: url('{{ img("theme::img/watermark.svg").path }}');
+}
+
+@include media-breakpoint-down(md) {
+    #main {
+        margin-left: 0;
+    }
+}

@@ -1,0 +1,28 @@
+{
+    "name": "anomaly/file-field_type",
+    "type": "streams-addon",
+    "description": "A file upload field type.",
+    "keywords": [
+        "streams field type",
+        "streams addon",
+        "field type"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\FileFieldType\\": "src/"
+        }
+    }
+}

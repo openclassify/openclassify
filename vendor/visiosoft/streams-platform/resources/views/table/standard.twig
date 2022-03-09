@@ -1,0 +1,44 @@
+{{ asset_add("scripts.js", "streams::js/table/table.js") }}
+
+{% if not actions.isEmpty() %}
+    {{ asset_add("scripts.js", "streams::js/table/actions.js") }}
+{% endif %}
+
+{% if table.options.sortable %}
+    {{ asset_add("scripts.js", "streams::js/table/sortable.js") }}
+{% endif %}
+
+{{ view("streams::table/standard/filters", {'table': table}) }}
+{{ view("streams::table/standard/views", {'table': table}) }}
+
+{{ view(table.options.heading ?: "streams::table/partials/heading", {'table': table}) }}
+
+{% if not table.rows.isEmpty() %}
+    {{ form_open({ 'url': table.options.url ?: url_full() }) }}
+    <div class="table-stack">
+        <table
+                class="
+                            {{ table.options.class ?: 'table' }}
+                            {{ table.options.sortable ? 'table--sortable' }}
+                            "
+                {{ table.options.sortable ? 'data-sortable' }}
+                {{ html_attributes(table.options.attributes) }}>
+
+            {{ view("streams::table/partials/header", {'table': table}) }}
+
+            {% block body %}
+                {{ view("streams::table/partials/body", {'table': table}) }}
+            {% endblock %}
+
+            {{ view("streams::table/partials/footer", {'table': table}) }}
+
+        </table>
+    </div>
+    {{ form_close() }}
+{% else %}
+
+    {% block no_results %}
+        {{ trans(table.options.get('no_results_message', 'streams::message.no_results')) }}
+    {% endblock %}
+
+{% endif %}

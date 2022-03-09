@@ -1,0 +1,30 @@
+{
+    "name": "visiosoft/multiple-field_type",
+    "type": "streams-addon",
+    "description": "A multiple relationship field type.",
+    "keywords": [
+        "streams field type",
+        "streams addon",
+        "field type"
+    ],
+    "homepage": "http://pyrocms.com/anomaly/multiple-field_type",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Openclassify, Inc.",
+            "homepage": "https://openclassify.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "docs": "https://pyrocms.com/documentation/multiple-field-type",
+        "forum": "https://pyrocms.com/forum/channels/multiple-field-type",
+        "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [multiple-field-type]",
+        "source": "https://github.com/anomalylabs/multiple-field-type"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\MultipleFieldType\\": "src/"
+        }
+    }
+}

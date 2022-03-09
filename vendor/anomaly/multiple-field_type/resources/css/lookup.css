@@ -1,0 +1,15 @@
+.multiple-field_type .selected {
+  margin-top: 15px;
+}
+.multiple-field_type .selected table tr td {
+  padding: 0.5rem;
+  border-top: none;
+  border-bottom: none;
+}
+.multiple-field_type .selected table tr td:first-of-type {
+  width: 0;
+  padding-right: 15px;
+}
+.multiple-field_type .selected table tr td:last-of-type {
+  padding-left: 15px;
+}

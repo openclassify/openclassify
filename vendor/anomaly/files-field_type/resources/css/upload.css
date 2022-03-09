@@ -1,0 +1,37 @@
+.dropzone {
+  padding: 50px 0;
+  text-align: center;
+  border-radius: 5px;
+  border: 2px dashed #dddddd;
+}
+.dropzone.dz-drag-hover {
+  border-color: #555555;
+}
+.dropzone > i,
+.dropzone > div {
+  cursor: pointer;
+  display: inline-block;
+}
+.uploads .upload {
+  position: relative;
+}
+.uploads .upload:first-of-type {
+  margin-top: 1em;
+}
+.uploads .upload small {
+  top: 1px;
+  left: 0.25em;
+  color: #ffffff;
+  line-height: 1;
+  position: absolute;
+}
+.uploads .upload progress {
+  margin-bottom: 0.25em;
+}
+.uploads .upload .progress-upload {
+  height: 24px;
+  margin-bottom: 0;
+}
+.uploads .upload .progress-upload .progress-bar span {
+  margin-left: 5px;
+}

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<covelyzer
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/vstelmakh/covelyzer/resources/config.xsd"
+>
+    <project minCoverage="100"/>
+    <class minCoverage="100"/>
+</covelyzer>

@@ -1,0 +1,29 @@
+<?php
+
+use Anomaly\Streams\Platform\Database\Migration\Migration;
+
+class {class} extends Migration
+{
+
+    /**
+     * Run the migrations.
+     *
+     * @return void
+     */
+    public function up()
+    {
+        // $this->fields()->create([]);
+        // $this->streams()->create([]);
+        // $this->assignments()->create([]);
+    }
+
+    /**
+     * Reverse the migrations.
+     *
+     * @return void
+     */
+    public function down()
+    {
+        //
+    }
+}

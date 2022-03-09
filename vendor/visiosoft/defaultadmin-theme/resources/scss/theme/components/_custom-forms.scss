@@ -1,0 +1,22 @@
+.custom-input {
+
+    > input {
+
+        &:active ~ .c-indicator {
+            opacity: 0.4;
+            background-color: #0074d9; // :checked color
+        }
+
+        &:disabled ~ .c-indicator {
+            opacity: 0.4;
+        }
+    }
+}
+
+.custom-checkbox {
+    margin-bottom: 0;
+}
+
+.custom-select {
+    padding: 0 1.75rem 0 0.75rem;
+}

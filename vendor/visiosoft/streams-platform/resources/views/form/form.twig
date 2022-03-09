@@ -1,0 +1,26 @@
+{{ asset_add("scripts.js", "streams::js/form/form.js") }}
+{{ asset_add("scripts.js", "streams::js/form/keyboard.js") }}
+{{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+{% if not form.options.locked %}
+    {{ asset_add("scripts.js", "streams::js/form/lock.js") }}
+{% endif %}
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        {{ form.open({
+            'class': 'form ' ~ form.options.class,
+        })|raw }}
+
+        {#{% include "streams::form/partials/controls" with {"position": "top"} %}#}
+        {% include form.options.get('heading', "streams::form/partials/heading") %}
+        {% include "streams::form/partials/layout" %}
+        {% include "streams::form/partials/controls" %}
+
+        {{ form.close()|raw }}
+
+    </div>
+
+{% endblock %}

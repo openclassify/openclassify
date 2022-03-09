@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit backupGlobals="false"
+         backupStaticAttributes="false"
+         bootstrap="phpunit.php"
+         colors="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="false"
+>
+    <testsuites>
+        <testsuite name="streams-platform">
+            <directory suffix=".php">tests/</directory>
+        </testsuite>
+    </testsuites>
+
+    <logging>
+        <log type="coverage-html" target="coverage/"/>
+    </logging>
+
+    <filter>
+        <whitelist processUncoveredFilesFromWhitelist="false">
+            <directory suffix=".php">src/Streams/Platform/</directory>
+        </whitelist>
+    </filter>
+
+    <php>
+        <env name="TEST" value="true"/>
+        <env name="PUBLISH" value="true"/>
+        <env name="DISTRIBUTION" value="testable"/>
+    </php>
+</phpunit>

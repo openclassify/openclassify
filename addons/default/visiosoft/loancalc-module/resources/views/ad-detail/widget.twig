@@ -1,0 +1,198 @@
+{% set selectedCategories = setting_value('visiosoft.module.loancalc::show_in_categories') %}
+{% for selectedCategory in selectedCategories %}
+    {% if params.cat1.id == selectedCategory %}
+        <!-- Calculator -->
+        <div class="installment-calculation-widget border rounded m-3 mx-sm-0">
+            <div class="installment-header py-1 px-3 bg-light border-bottom">
+                <i class="fa fa-user"></i>
+                <strong>{{ trans('visiosoft.module.loancalc::field.calculate_installment') }}</strong>
+            </div>
+            <div class="installment-inputs mx-0 mt-2 p-2">
+                <div class="px-2">
+                    <label for="downMonth">
+                        <small>
+                            <strong>{{ trans('visiosoft.module.loancalc::field.down_term') }}</strong>
+                        </small>
+                    </label>
+                    <select id="downMonth" class="custom-select">
+                        {% set options = [12, 18, 24, 30, 36] %}
+                        {% for option in options %}
+                            <option value="{{ option }}">{{ option }}  {{ trans('visiosoft.module.loancalc::field.months') }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+            <div class="p-2">
+                <table class="table table-hover mb-0">
+                    <tbody>
+                    <tr class="installment-down-amount">
+                        <td class="border-top-0 py-1">
+                            <small>{{ trans('visiosoft.module.loancalc::field.down_payment_amount') }}</small>
+                        </td>
+                        <td class="border-top-0 py-1 text-right">
+                            <small class="initial-payment"></small>
+                        </td>
+                    </tr>
+                    <tr class="installment-monthly-amount">
+                        <td class="py-1">
+                            <small>{{ trans('visiosoft.module.loancalc::field.monthly_payment_amount') }}</small>
+                        </td>
+                        <td class="py-1 text-right">
+                            <small class="monthly-payment"></small>
+                        </td>
+                    </tr>
+                    <tr class="number-of-installments">
+                        <td class="py-1">
+                            <small>{{ trans('visiosoft.module.loancalc::field.number_of_installments') }}</small>
+                        </td>
+                        <td class="py-1 text-right">
+                            <small><span class="number-month">36</span> {{ trans('visiosoft.module.loancalc::field.months') }}</small>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="installment-button p-2">
+                <button type="button" class="btn btn-danger w-100" data-toggle="modal" data-target="#calculatorModal">{{ trans('visiosoft.module.loancalc::field.make_an_application') }}</button>
+            </div>
+        </div>
+        <!-- End Calculator -->
+
+        <!-- Calculator Modal -->
+        <!-- Modal -->
+        <div class="modal fade" id="calculatorModal" tabindex="-1" role="dialog" aria-labelledby="calculatorModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-muted" id="calculatorModalLabel">{{ trans('visiosoft.module.loancalc::field.new_application_form') }}</h5>
+                    </div>
+                    <div class="modal-body success-message hidden">
+                        <h4>{{ trans('visiosoft.module.loancalc::field.your_application_is_complete') }}</h4>
+                        <h5 class="mb-4">{{ trans('visiosoft.module.loancalc::field.thank_you') }}</h5>
+                        <p class="text-muted">{{ trans('visiosoft.module.loancalc::field.thank_message_1') }}</p>
+                        <p class="text-muted">{{ trans('visiosoft.module.loancalc::field.thank_message_2') }}</p>
+                    </div>
+                    <form id="loanForm">
+                        <input type="text" hidden="hidden" name="applicationAdId" value="{{ params.id }}">
+                        <input type="text" hidden="hidden" name="firstPayment">
+                        <input type="text" hidden="hidden" name="applicationTerm">
+                        <input type="text" hidden="hidden" name="monthlyPayment">
+                        <input type="text" hidden="hidden" name="totalPayment">
+                        <div class="modal-body">
+                            <div class="form-group required row">
+                                <div class="col-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.first_name') }}</label>
+                                    <input name="firstName" type="text" required="required" class="form-control" placeholder="{{ trans('visiosoft.module.loancalc::field.example') }} : {{ trans('visiosoft.module.loancalc::field.name') }}" tabindex="2">
+                                </div>
+                                <div class="col-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.last_name') }}</label>
+                                    <input name="lastName" type="text" required="required" class="form-control" placeholder="{{ trans('visiosoft.module.loancalc::field.example') }} : {{ trans('visiosoft.module.loancalc::field.name') }}" tabindex="3">
+                                </div>
+                                <div class="col-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.t.c_identity_number') }}</label>
+                                    <div>
+                                        <input type="text" name="TCNumber" required="required" class="form-control" id="TCNumber" tabindex="4" maxlength="11">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group required row">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.birth_date') }}</label>
+                                    <div class="row mx-0">
+                                        <div class="col pr-1 pl-0">
+                                            <select required="required" class="form-control" name="born1" id="born1" tabindex="5">
+                                                <option value="">{{ trans('visiosoft.module.loancalc::field.day') }}</option>
+                                                {% for day in 1..31 %}
+                                                    <option value="{{ day }}">{{ day }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col pl-0 pr-1">
+                                            <select required="required" class="form-control" name="born2" id="born2" tabindex="6">
+                                                <option value="">{{ trans('visiosoft.module.loancalc::field.month') }}</option>
+                                                {% for month in 1..12 %}
+                                                    <option value="{{ month }}">{{ month }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                        <div class="col px-0">
+                                            <select name="born3" id="born3" required="required" class="form-control" tabindex="7">
+                                                <option value="">{{ trans('visiosoft.module.loancalc::field.year') }}</option>
+                                                {% for year in 1955..1997 %}
+                                                    <option value="{{ year }}">{{ year }}</option>
+                                                {% endfor %}
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.name_of_job_place') }}</label>
+                                    <div>
+                                        <input type="text" name="userJobName" required="required" class="form-control" tabindex="8">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.your_job') }}</label>
+                                    <div>
+                                        <input type="text" name="userJob" required="required" class="form-control" tabindex="9">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group required row">
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.your_mobile_phone_number') }}</label>
+                                    <div>
+                                        <input type="text" name="gsmNumber" id="gsmNumber" required="required" class="form-control" placeholder="05551234567" maxlength="11" tabindex="10">
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.province_of_application') }}</label>
+                                    <div>
+                                        <select id="basic2" class="form-control " name="userProvince" required="required" tabindex="11">
+                                            <option value="">{{ trans('visiosoft.module.loancalc::field.select_city') }}</option>
+                                            {% set country = setting_value('visiosoft.module.location::default_country') %}
+                                            {% set provinces = entries('location', 'cities').where('parent_country_id', country).orderBy('slug', 'asc').get() %}
+                                            {% for province in provinces %}
+                                                <option value="{{ province.id }}">{{ province.name }}</option>
+                                            {% endfor %}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 col-md-4 col-sm-4">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.your_e-mail_address') }}</label>
+                                    <div>
+                                        <input type="email" name="emailAdress" required="required" class="form-control" id="emailAdress" tabindex="12">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group row">
+                                <div class="col-lg-12 col-md-12 col-sm-412">
+                                    <label>{{ trans('visiosoft.module.loancalc::field.your_message_your_comments') }}</label>
+                                    <div>
+                                        <input type="text" name="referenceDescription" class="form-control" tabindex="13">
+                                    </div>
+                                </div>
+                            </div>
+                            <p>* {{ trans('visiosoft.module.loancalc::field.note_1') }}<br>
+                                * {{ trans('visiosoft.module.loancalc::field.note_2') }}<br>
+                                * {{ trans('visiosoft.module.loancalc::field.note_3') }}</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">{{ trans('visiosoft.module.loancalc::field.cancel') }}</button>
+                            <button class="btn btn-success" title="Subscribe" type="submit" id="submit">{{ trans('visiosoft.module.loancalc::field.make_an_application') }}</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- End Calculator Modal -->
+
+        <script>
+            let price = {{ params.price }};
+            let interestRate = {{ setting_value('visiosoft.module.loancalc::interest_rate') }};
+            let advancePaymentPercentage = {{ setting_value('visiosoft.module.loancalc::advance_payment_percentage') }};
+        </script>
+
+        {{ asset_add("scripts.js", "visiosoft.module.loancalc::assets/js/calculator.js") }}
+    {% endif %}
+{% endfor %}

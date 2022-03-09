@@ -1,0 +1,65 @@
+{% extends "visiosoft.module.advs::list/list" %}
+{% block listContent %}
+    <div class="table-responsive table-classified">
+
+        <table class="table classified-list-table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col" colspan="2"
+                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.name') }}</th>
+                    <th scope="col"
+                        class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.price') }}</th>
+                    {% if not setting_value('visiosoft.module.advs::ads_date_hidden') %}
+                        <th scope="col"
+                            class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.publish_at') }}</th>
+                    {% endif %}
+                    {% if setting_value('visiosoft.module.location::list_page_location') %}
+                        <th scope="col"
+                            class="text-center align-middle">{{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_city') }}
+                            / {{ trans('visiosoft.module.advs::field.advs_list_table_thead.location_country') }}</th>
+                    {% endif %}
+                    {{ addBlock('ads-list/table-column',{'seenList':seenList})|raw }}
+                </tr>
+            </thead>
+            <tbody>
+            {{ addBlock('ad-list/partials/table',{'featured_advs':featured_advs,'seenList':seenList})|raw }}
+            {% for adv in advs %}
+                <tr class="text-center clickable-row{% if adv.doping != null %} doping_type4 {% endif %}" data-href='{{ adv.detail_url }}'>
+                    <td class="justify-content-center align-middle text-center td-image">
+                        <a href="">
+                            <img class="img-thumbnail" src="{{ adv.cover_photo }}" alt="{{ adv.name }}">
+                        </a>
+                    </td>
+                    <td class="text-left justify-content-center align-middle td-subject">
+                        <div class="table-row-name">
+                            <a href="{{ adv.detail_url }}" class="text-dark">
+                                {{ adv.name }}
+                            </a>
+                        </div>
+                    </td>
+                    <td class="justify-content-center align-middle td-price">
+                        <b>{{ currency_format(adv.price,adv.currency) }}</b>
+                    </td>
+                    {% if not setting_value('visiosoft.module.advs::ads_date_hidden') %}
+                        <td class="justify-content-center align-middle td-date">
+                            <small>{{ adv.created_at|date("d/m/Y") }}</small>
+                        </td>
+                    {% endif %}
+                    {% if setting_value('visiosoft.module.location::list_page_location') %}
+                        <td class="justify-content-center align-middle td-country">
+                            <small>{{ adv.city_name }} / {{ adv.country_name }}</small>
+                        </td>
+                    {% endif %}
+                    {{ addBlock('ads-list/table-row',{'seenList':seenList,'adv':adv})|raw }}
+                </tr>
+            {% endfor %}
+            <!--Table Rows-->
+            </tbody>
+        </table>
+    </div>
+
+{% endblock %}
+{% block customjs %}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-table.js") }}
+    {% include "theme::scroll-modal" %}
+{% endblock %}

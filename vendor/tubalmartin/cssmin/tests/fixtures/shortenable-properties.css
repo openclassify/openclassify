@@ -1,0 +1,33 @@
+a {
+    margin: 4px 4px 4px 4px;
+    padding: 4px 4px 4px;
+    border-radius: 4px 4px 4px;
+    border-width: 4px 4px !important;
+    border-style: dashed dashed dashed dashed;
+    border-style: dashed dashed
+}
+
+b {
+    margin: +4px -.2em 4.0px -0.2em;
+    border-width: 2px 0 2px 0px;
+    border-style: dashed solid dashed solid;
+}
+
+c {
+    border-radius: 1em 2px 3% 2px !important;
+    border-style: dashed dotted solid dotted;
+}
+
+d {
+    margin: 4px 4px 4px 4pc;
+    padding: 23rem 1.2em 23em 1.2rem;
+    border-width: calc(1px + 2px) 3.44em calc(1px + 2px) 3.44em; /* calc() will not match our regex so optimization won't be applied here */
+}
+
+e {
+    border-color: white #fff #FFFFFF #FFF;
+    border-color: white #fff #FFFFFF;
+    border-color: white #FFF;
+    border-color: #fff black white #000000;
+    border-color: #FFFFFF red #000 red;
+}

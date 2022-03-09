@@ -1,0 +1,80 @@
+.link-unstyled, .link-unstyled:link, .link-unstyled:hover {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+.left-categories-section .categories-list,
+.left-categories-section .categories-list li ul {
+    list-style: none;
+    margin: 8px 2px 13px 0;
+}
+
+.left-categories-section .categories-list .categories-list-li {
+    padding: 6px 0 0 35px;
+    margin-top: 7px;
+    border-bottom: 1px solid #e6e6e6;
+    position: relative;
+}
+
+
+.left-categories-section .categories-list .categories-list-li img {
+    width: 1.4rem;
+    margin-left: -35px;
+}
+
+.left-categories-section .categories-list .categories-list-li .main-category {
+    font-weight: bold;
+    line-height: 20px;
+}
+
+.left-categories-section .categories-list .categories-list-li ul li {
+    margin-bottom: 5px;
+    line-height: 17px;
+}
+
+.left-categories-section .categories-list .categories-list-li .main-category,
+.left-categories-section .categories-list .categories-list-li ul li a {
+    font: 13px "Lucida Grande", "LucidaGrande", Arial, sans-serif;
+    color: #039;
+    line-height: 17px;
+    text-decoration: none;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    background: no-repeat 0 0;
+}
+
+.left-categories-section .categories-list .categories-list-li ul .show-all {
+    margin-bottom: 14px;
+}
+
+.left-categories-section .categories-list .categories-list-li ul .show-all a {
+    cursor: pointer;
+}
+
+.left-categories-section .categories-list .categories-list-li .main-category:hover,
+.left-categories-section .categories-list .categories-list-li ul li a:hover {
+    text-decoration: underline;
+}
+
+.left-categories-section .categories-list .categories-list-li ul li a i {
+    color: #5d6f86;
+}
+
+#footer .store_icon .playstore {
+    background: url("{{ img('visiosoft.theme.base::images/store_icon.png').url }}") top left no-repeat;
+    width: 96px;
+    height: 30px;
+}
+
+#footer .store_icon .appstore {
+    background: url("{{ img('visiosoft.theme.base::images/store_icon.png').url }}") top right no-repeat;
+    width: 96px;
+    height: 30px;
+}
+@media (min-width: 577px) {
+    .left-categories-section .categories-list .categories-list-li img {
+        width: 26px;
+        margin-right: 5px;
+    }
+}

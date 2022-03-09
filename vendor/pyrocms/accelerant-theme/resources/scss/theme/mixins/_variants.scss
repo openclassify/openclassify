@@ -1,0 +1,23 @@
+@mixin variant($index, $color1, $color2, $gradient) {
+
+    /*.variant-#{$index}}-logo .st0, */
+    .variant-#{$index} .variant-logo .st0 {
+        fill: $color1 !important;
+    }
+
+    .variant-#{$index} .variant-border {
+        border-color: $color1 !important;
+    }
+
+    .variant-#{$index} .variant-color, .variant-#{$index}-color {
+        color: $color2 !important;
+    }
+
+    .variant-#{$index} .variant-background, .variant-#{$index}-background {
+        background: $gradient !important;
+    }
+
+    .variant-#{$index} .variant-background-pattern, .variant-#{$index}-background-pattern {
+        background-image: url('{{ img("theme::img/bg.svg").path }}'), $gradient !important;
+    }
+}

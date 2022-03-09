@@ -1,0 +1,40 @@
+{
+    "name": "anomaly/private_storage_adapter-extension",
+    "type": "streams-addon",
+    "description": "A private file storage adapter.",
+    "keywords": [
+        "pyrocms",
+        "storage adapter",
+        "files"
+    ],
+    "homepage": "http://pyrocms.com/addons/anomaly/private_storage_adapter-extension",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "docs": "https://pyrocms.com/documentation/private-storage-adapter-extension",
+        "forum": "https://pyrocms.com/forum/channels/private-storage-adapter-extension",
+        "slack": "https://pyrocms.com/slack",
+        "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [private-storage-adapter-extension]",
+        "source": "https://github.com/anomalylabs/private-storage-adapter-extension"
+    },
+    "require": {
+        "anomaly/streams-platform": "^1.6"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\PrivateStorageAdapterExtension\\": "src/"
+        }
+    }
+}

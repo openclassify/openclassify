@@ -1,0 +1,39 @@
+<div class="form-group font-weight-bolder">
+    {{ form.fields.adress_name|raw }}
+</div>
+<div class="form-group font-weight-bolder">
+    {{ form.fields.adress_gsm_phone|raw }}
+</div>
+<div class="form-group font-weight-bold">
+    {{ form.fields.adress_first_name|raw }}
+</div>
+<div class="form-group font-weight-bold">
+    {{ form.fields.adress_last_name|raw }}
+</div>
+<div class="row form-group location-map">
+    <div class="col-sm-4 font-weight-bold">
+        {{ form.fields.country.setOptions({})|raw }}
+    </div>
+
+    <div class="col-sm-4 location-field city-data font-weight-bold"
+         data-content="{{ adress.city }}">
+        {{ form.fields.city.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option'))|raw }}
+    </div>
+    <div class="col-sm-4 location-field district-data font-weight-bold"
+         data-content="{{ adress.district }}">
+        {{ form.fields.district.setPlaceholder(trans('visiosoft.module.profile::field.choose_an_option'))|raw }}
+    </div>
+</div>
+<div class="form-group location-map">
+    <div class="col-sm-12">
+        <div class="row form-group add-title">
+            <label class="control-label font-weight-bolder"
+                   for="country">{{ form.fields.adress_content.label|raw }} <span
+                        class="required">*</span></label>
+            {{ form.fields.adress_content.input|raw }}
+        </div>
+    </div>
+</div>
+<script>
+    var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+</script>

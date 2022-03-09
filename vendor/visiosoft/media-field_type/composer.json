@@ -1,0 +1,28 @@
+{
+    "name": "visiosoft/media-field_type",
+    "type": "streams-addon",
+    "description": "A multiple files upload field type.",
+    "keywords": [
+        "streams field type",
+        "streams addon",
+        "field type"
+    ],
+    "homepage": "http://openclassify.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Visiosoft, Inc.",
+            "email": "support@visiosoft.com.tr",
+            "homepage": "http://visiosoft.com.tr/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@openclassify.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\MediaFieldType\\": "src/"
+        }
+    }
+}

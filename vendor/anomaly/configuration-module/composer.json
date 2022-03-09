@@ -1,0 +1,34 @@
+{
+    "name": "anomaly/configuration-module",
+    "type": "streams-addon",
+    "description": "Addon configuration management for the Streams Platform.",
+    "keywords": [
+        "configuration"
+    ],
+    "homepage": "http://pyrocms.com/addons/anomaly/configuration-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "docs": "https://pyrocms.com/documentation/configuration-module",
+        "forum": "https://pyrocms.com/forum/channels/configuration-module",
+        "slack": "https://pyrocms.com/slack",
+        "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [configuration-module]",
+        "source": "https://github.com/anomalylabs/configuration-module"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\ConfigurationModule\\": "src/"
+        }
+    }
+}

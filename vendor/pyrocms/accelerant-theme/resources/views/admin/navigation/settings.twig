@@ -1,0 +1,9 @@
+{{ asset_add('scripts.js', 'pyrocms.theme.accelerant::js/navigation/jquery-sortable.js') }}
+{{ asset_add('scripts.js', 'pyrocms.theme.accelerant::js/navigation/settings.js') }}
+
+<p>
+    {{ icon('fa fa-arrows') }}
+    {{ trans('pyrocms.theme.accelerant::setting.navigation.reorder')|raw }}
+
+    <input type="hidden" id="navigation-order" name="navigation" value="{{ field_type.value }}">
+</p>

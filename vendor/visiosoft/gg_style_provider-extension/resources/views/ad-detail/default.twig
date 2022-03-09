@@ -1,0 +1,137 @@
+{% extends "theme::layouts/default" %}
+
+{% block styles %}
+    {{ asset_style('visiosoft.module.advs::css/fotorama.css') }}
+    {{ asset_style('visiosoft.extension.gg_style_provider::css/sahibinden.css') }}
+    {{ asset_style('visiosoft.module.advs::css/detail.css') }}
+    {{ asset_style('visiosoft.extension.gg_style_provider::css/detail.css') }}
+{% endblock %}
+
+{% block content %}
+    {% set userId = setting_value('visiosoft.theme.sahibinden::default_owner') ?: adv.created_by_id %}
+    {% set user = setting_value('visiosoft.theme.sahibinden::default_owner') ? entries('users', 'users').find(setting_value('visiosoft.theme.sahibinden::default_owner')) : adv.created_by %}
+    {% set price_members_only = setting_value('visiosoft.module.advs::show_price_to_members_only') ? auth_check() : true %}
+
+    <div class="gg-product-out container mx-auto mt-5 border p-0 rounded">
+        <div class="row p-4 px-5">
+            {% include "visiosoft.extension.gg_style_provider::ad-detail/partials/slider" %}
+
+            <div class="gg-product-info col-lg-7 px-4 pb-4 {{ count(adv.files) > 1 ? 'mt_10' }}">
+                {% set active_dopings = entries('dopings','dopings').getActiveDopingsWithAd(adv.id).pluck('doping_type') %}
+                {% for active_doping in active_dopings if active_doping.slug == 'super_price' %}
+                    <div class="super-fiyat px-3 fw-bold text-white">
+                        {{ trans('visiosoft.extension.gg_style_provider::field.super_price') }}
+                    </div>
+                {% endfor %}
+                <div class="gg-product-head-1 p-0 m-0">
+                    {{ adv.name }}
+                </div>
+
+                {% include "visiosoft.extension.gg_style_provider::ad-detail/partials/top" %}
+
+                {% if not hidePrice %}
+                    {% if (not setting_value('visiosoft.module.advs::hide_zero_price') or adv.price != "0") and
+                        (price_members_only) %}
+                        <div class="gg-prodcut-price-area px-3 py-4 rounded mt-2 prices">
+                            {% if (adv.standard_price != '0' and adv.standard_price > adv.price) %}
+                                <div class="price-1 small">
+		                            <span class="text-decoration-line-through price-1-text-1">
+			                            {{ currency_format(adv.standard_price,adv.currency) }}
+		                            </span>
+                                    <span class="mx-1">|</span>
+                                    <span class="price-1-text text-uppercase">
+									{{ trans('visiosoft.extension.gg_style_provider::field.discount_price_in_cart',
+                                        {'percent': (100 - ((100 * adv.price.value) / adv.standard_price.value))|round(0, 'common') }) }}
+								</span>
+                                </div>
+                            {% endif %}
+                            <div class="price-2 fw-bold ad-price total-price">{{ currency_format(adv.price,adv.currency) }}</div>
+
+                            {% include "visiosoft.extension.gg_style_provider::ad-detail/partials/price_area" %}
+                        </div>
+                    {% else %}
+                        <h6 class="">
+                            {{ trans('visiosoft.theme.sahibinden::field.ask_for_price') }}
+                        </h6>
+                    {% endif %}
+                {% endif %}
+
+                <div class="gg-product-seller-compare mt-2">
+                    <div class="seller small">
+                        <div class="seller-w fw-500">
+                            {{ trans('visiosoft.extension.gg_style_provider::field.seller_of_ads') }}
+                        </div>
+                        <span class="me-2">:</span>
+                        <span class="fw-bold text-primary">
+							{% set storeDetail = entries('store','store').where('user_id', params.userId).first() %}
+                            {% if storeDetail is not null %}
+                                <a href="{{ url_route('store::view', [storeDetail.slug]) }}" class="d-flex align-items-center">
+									<span class="ml-1">{{ storeDetail.name }}</span>
+								</a>
+                            {% else %}
+                                {{ user.first_name }}
+                            {% endif %}
+						</span> &nbsp;
+                        {% include "visiosoft.extension.gg_style_provider::ad-detail/partials/seller_area" %}
+                    </div>
+                </div>
+                <hr class="mb-0" />
+
+                {% include "visiosoft.extension.gg_style_provider::ad-detail/partials/cart" %}
+
+                <div class="small my-2">
+                    {{ img('visiosoft.extension.gg_style_provider::images/secured.svg') }}
+                    {{ trans('visiosoft.extension.gg_style_provider::field.assurance', {site: setting_value('streams::name', 'Your Site')}) }}
+                </div>
+                <div class="specific-feature p-3 rounded">
+                    {% include "visiosoft.extension.gg_style_provider::ad-detail/partials/actions" %}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container p-0 mt-4 border gg-product-out pb-5 rounded">
+        <div class="row p-0 m-0">
+            <div class="gg-urun-alani col-12 mt-3">
+                <a href="#description" class="title-special primary-border text-white bg-primary">
+					<span>
+						{{ trans('visiosoft.extension.gg_style_provider::field.seller_desc_for_ads.button')|raw }}
+					</span>
+                </a>
+                {% if is_module_enabled('customfields') and features %}
+                    <a href="#features" class="title-special primary-border">
+                        <span>{{ trans('visiosoft.extension.gg_style_provider::field.ads_custom_fields') }}</span>
+                    </a>
+                {% endif %}
+                {% if is_module_enabled('comments') %}
+                    <a href="#comments" class="title-special primary-border">
+                        <span>{{ trans('visiosoft.module.comments::field.ads_comments') }}</span>
+                    </a>
+                {% endif %}
+            </div>
+
+            <div class="row p-0 m-0" id="description">
+                <div class="col-12 m-0 my-3 px-3">
+                    <div class="fw-600 fs-20">
+                        {{ trans('visiosoft.extension.gg_style_provider::field.seller_desc_for_ads.title', {ads: adv.name})|raw }}
+                    </div>
+                    <div class="my-2">
+                        <i class="fas fa-exclamation-circle text-primary"></i>
+                        <span class="small">
+							{{ trans('visiosoft.extension.gg_style_provider::field.seller_desc_for_ads.description')|raw }}
+						</span>
+                    </div>
+                </div>
+                <div class="col-12 px-3 small">
+                    <div class="container m-0 p-0">
+                        <div class="row m-0 p-0">
+                            <div class="col-12 m-0 p-0">
+                                {{ adv.advs_desc|raw }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% include "visiosoft.extension.gg_style_provider::ad-detail/partials/detail" %}
+{% endblock %}

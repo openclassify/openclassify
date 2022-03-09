@@ -1,0 +1,79 @@
+.blocks-field_type {
+
+    .blocks-container {
+
+        .block-item {
+            margin: 1rem 0;
+            background: rgba(200, 200, 200, 0.15);
+
+            &.dragged {
+                opacity: 0.2;
+            }
+
+            &.collapsed {
+
+                .block-body {
+                    display: none;
+                }
+            }
+
+            .block-loading {
+                padding: 1rem;
+            }
+
+            .block-item-controls {
+                color: #ffffff;
+                background: #3e3e3e;
+                padding: .5rem 1rem; // @todo: Why do variables break here?
+
+                a {
+                    color: #ffffff;
+                }
+
+                .subtitle {
+                    opacity: 0.5;
+                }
+
+                .dropdown-menu {
+                    a {
+                        color: #55595c; // @todo: Why do variables break here?
+                    }
+                }
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    display: inline-block;
+                }
+
+                .block-handle {
+                    cursor: move;
+                }
+            }
+
+            .block-header {
+                padding: 1rem 1rem 0;
+                border-bottom: 1px solid rgba(50, 50, 50, 0.1);
+            }
+
+            .block-body {
+                width: 100%;
+                padding: 1rem;
+
+                .card {
+                    box-shadow: none;
+
+                    .card-block {
+
+                        .form-group {
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

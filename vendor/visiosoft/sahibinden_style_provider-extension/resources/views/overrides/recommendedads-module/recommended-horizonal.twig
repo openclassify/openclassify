@@ -1,0 +1,34 @@
+<div class="latest-ads-home">
+    <div class="px-2 pt-2 pb-0 header-home-centent">
+        <div>
+            <h3 class="p-0 latest-title">{{ trans('visiosoft.module.recommendedads::field.recommended.name') }}</h3>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="row list-classified-home">
+            {% for recommended in recommendedads|slice(0, setting_value('visiosoft.module.recommendedads::limit')) %}
+                <div class="col-3 col-lg-2 d-flex align-items-stretch py-0 home-classified-row px-1">
+                    <div class="card border rounded-0">
+                        <div class="py-1 classified-image">
+                            <a href="{{ recommended.detail_url }}">
+                                <div class="position-relative text-center">
+                                    <img class="card-img-top img-fluid img-thumbnail border-0" style="height: 100px;"
+                                         alt="{{ recommended.name }}" src="{{ recommended.thumbnail }}">
+                                </div>
+                            </a>
+                        </div>
+
+                        <div class="card-body px-2 py-0 classified-subject">
+                            <div class="d-flex justify-content-between align-items-center text-truncate">
+                                <a href="{{ recommended.detail_url }}">
+                                    <p class="card-title mb-1 text-truncate">{{ recommended.name }}</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

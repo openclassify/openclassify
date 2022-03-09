@@ -1,0 +1,34 @@
+<style>
+    {{ asset_inline("visiosoft.module.advs::css/step2.css") }}
+    {{ asset_inline("visiosoft.module.advs::css/step.scss") }}
+</style>
+
+<div id="stepProgressBar" class="mt-5 mb-4 row mx-0">
+    <div class="step col{{ step == 'post-cat' ? ' current' }}">
+        <div class="bullet d-flex align-items-center justify-content-center mx-auto"></div>
+        <p class="step-text text-truncate mb-0 mt-2 d-none d-sm-block">
+            {{ trans('visiosoft.module.advs::field.category_selection') }}
+        </p>
+    </div>
+    <div class="step col{{ step == 'new-create' ? ' current' }}">
+        <div class="bullet d-flex align-items-center justify-content-center mx-auto"></div>
+        <p class="step-text text-truncate mb-0 mt-2 d-none d-sm-block">
+            {{ trans('visiosoft.module.advs::field.listing_details') }}
+        </p>
+    </div>
+    <div class="step col{{ step == 'preview' ? ' current' }}">
+        <div class="bullet d-flex align-items-center justify-content-center mx-auto"></div>
+        <p class="step-text text-truncate mb-0 mt-2 d-none d-sm-block">
+            {{ trans('visiosoft.module.advs::field.preview') }}
+        </p>
+    </div>
+
+    {{ addBlock('new-ad/steps/step', _context)|raw }}
+
+    <div class="step col">
+        <div class="bullet d-flex align-items-center justify-content-center mx-auto"></div>
+        <p class="step-text text-truncate mb-0 mt-2 d-none d-sm-block">
+            {{ trans('visiosoft.module.advs::field.congratulations') }}
+        </p>
+    </div>
+</div>

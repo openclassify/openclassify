@@ -1,0 +1,25 @@
+<?php
+
+return [
+    'new_loan_application_mail_subject' => 'Loan Application',
+    'loan_application_params' => 'The loan application params are as follow',
+    'application_ad_id' => 'Application Ad ID',
+    'ad_name' => 'Ad Name',
+    'show_ad' => 'Show Ad',
+    'first_payment' => 'First Payment',
+    'application_term' => 'Number of Months',
+    'monthly_payment' => 'Monthly Payment',
+    'total_payment' => 'Total Payment',
+    'first_name' => 'First Name',
+    'last_name' => 'Last Name',
+    't.c_number' => 'T.C Number',
+    'day_born' => 'Birth Day',
+    'month_born' => 'Birth Month',
+    'year_born' => 'Birth Year',
+    'user_job_name' => 'Name of Work Place',
+    'user_job' => 'Name of Job',
+    'gsm_number' => 'User GSM Number',
+    'user_province' => 'User Province',
+    'email_address' => 'E-Mail Address',
+    'reference_description' => 'Reference Description',
+];

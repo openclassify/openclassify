@@ -1,0 +1,15 @@
+/*
+background: transparent = background: none, and both can be shortened to background:0 0
+see: http://stackoverflow.com/questions/20784292/backgroundnone-vs-backgroundtransparent
+*/
+a {
+    background: none;
+    background: transparent !important;
+}
+b {
+    background:transparent;
+    background:none
+}
+c {
+    background: 0 0
+}

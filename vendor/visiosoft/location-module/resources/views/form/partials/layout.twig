@@ -1,0 +1,27 @@
+{% if form.fields.empty %}
+
+    <div class="card">
+        <div class="card-block">
+            {{ trans("streams::message.no_fields_available") }}
+        </div>
+    </div>
+
+{% else %}
+
+    {% if not form.sections.empty() %}
+
+        {% for section in form.sections %}
+            {% if section.view %}
+                {% include section.view %}
+            {% elseif section.html %}
+                {{ section.html|raw }}
+            {% else %}
+                {% include "streams::form/partials/section" %}
+            {% endif %}
+        {% endfor %}
+
+    {% else %}
+        {% include "visiosoft.module.advs::form/partials/default" %}
+    {% endif %}
+
+{% endif %}

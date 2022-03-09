@@ -1,0 +1,43 @@
+{% macro links(links, collection, options, depth) %}
+
+    {% import _self as self %}
+
+    {% for link in links %}
+        <{{ options.item_tag ?: 'li' }} {{ html_attributes(options.get('item_attributes', [])) }} class="
+        {{ link.children.isEmpty() ? '' : (options.dropdown_class ?: 'dropdown') }}
+        {{ link.active ? options.get('active_class', 'active') }}
+        {{ link.current ? options.get('selected_class', options.get('current_class', 'selected')) }}
+        {{ options.item_class }}
+        {{ link.class }}">
+
+        <a
+                href="{{ link.url }}"
+                target="{{ link.target }}"
+                class="{{ depth > 1 ? options.child_link_class ?: options.link_class : options.link_class }} {{ link.children.count() ? options.get('link_class_dropdown') }}"
+                {{ html_attributes(options.get('link_attributes', [])) }}
+                {% if link.children.count() %}
+                    {{ html_attributes(options.get('link_attributes_dropdown', [])) }}
+                {% endif %}
+        >
+            {{ link.title|raw }}
+        </a>
+
+        {% if not link.children.isEmpty() %}
+            {% if depth+1 <= options.get('depth', 999) %}
+
+                {% if options.get('dropdown_toggle') %}
+                    <{{ options.get('dropdown_toggle') }}
+                    class="{{ options.get('dropdown_toggle_class') }}"
+                    {{ html_attributes(options.get('dropdown_toggle_attributes', []))|raw }}>
+                    {{ options.get('dropdown_toggle_text')|raw }}
+                    </{{ options.get('dropdown_toggle') }}>
+                {% endif %}
+
+                <{{ options.child_list_tag ?: options.list_tag ?: 'ul' }} class="{{ options.child_list_class }}">
+                {{ self.links(link.children, collection, options, depth+1) }}
+                </{{ options.child_list_tag ?: options.list_tag ?: 'ul' }}>
+            {% endif %}
+        {% endif %}
+        </{{ options.link_tag ?: 'li' }}>
+    {% endfor %}
+{% endmacro %}
