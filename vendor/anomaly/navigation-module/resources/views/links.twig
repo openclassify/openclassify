@@ -1,5 +1,0 @@
-{% import options.get('macro', 'anomaly.module.navigation::macro') as macro %}
-
-<{{ options.list_tag ?: 'ul' }} class="{{ options.list_class }}" {{ html_attributes(options.get('list_attributes', [])) }}>
-    {{ macro.links(options.parent ? options.parent.children : links.top(), links, options, 1) }}
-</{{ options.list_tag ?: 'ul' }}>

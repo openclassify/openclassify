@@ -1,6 +1,0 @@
-/* Why do we keep a space before !important? Some agents display issues without it. See https://github.com/yui/yuicompressor/issues/37 */
-a{
-	height: 100px !important;
-      text-shadow: 0 0 0 ! important;
-        width: 20%  !important;
-}

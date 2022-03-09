@@ -1,8 +1,0 @@
-<?php namespace {namespace};
-
-use Anomaly\Streams\Platform\Addon\Theme\Theme;
-
-class {addon} extends Theme
-{
-
-}

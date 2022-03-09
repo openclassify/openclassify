@@ -1,9 +1,0 @@
-{
-    "name": "visiosoft/loancalc-module",
-    "type": "streams-addon",
-    "autoload": {
-        "psr-4": {
-            "Visiosoft\\LoancalcModule\\": "src/"
-        }
-    }
-}

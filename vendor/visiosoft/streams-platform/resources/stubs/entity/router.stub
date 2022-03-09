@@ -1,8 +1,0 @@
-<?php namespace {namespace};
-
-use Anomaly\Streams\Platform\Entry\EntryRouter;
-
-class {class} extends EntryRouter
-{
-
-}

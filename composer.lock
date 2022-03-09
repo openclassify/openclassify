@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a2100610028953d54f7350852d3003c8",
+    "content-hash": "79c2087b09a119a3d8570066940c30da",
     "packages": [
         {
             "name": "anomaly/addon-field_type",
@@ -14431,61 +14431,6 @@
         }
     ],
     "packages-dev": [
-        {
-            "name": "anomaly/installer-module",
-            "version": "v2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/anomalylabs/installer-module.git",
-                "reference": "4abab1279cd5f964e2c1957ede9f31dc99a8d406"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/anomalylabs/installer-module/zipball/4abab1279cd5f964e2c1957ede9f31dc99a8d406",
-                "reference": "4abab1279cd5f964e2c1957ede9f31dc99a8d406",
-                "shasum": ""
-            },
-            "require": {
-                "anomaly/streams-platform": "^1.9"
-            },
-            "type": "streams-addon",
-            "autoload": {
-                "psr-4": {
-                    "Anomaly\\InstallerModule\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "PyroCMS, Inc.",
-                    "email": "support@pyrocms.com",
-                    "homepage": "http://pyrocms.com/",
-                    "role": "Owner"
-                },
-                {
-                    "name": "Ryan Thompson",
-                    "email": "ryan@pyrocms.com",
-                    "homepage": "http://ryanthepyro.com/",
-                    "role": "Owner"
-                }
-            ],
-            "description": "The Streams Platform installer.",
-            "homepage": "http://pyrocms.com/",
-            "keywords": [
-                "Streams",
-                "laravel",
-                "module",
-                "streams-addon"
-            ],
-            "support": {
-                "email": "support@pyrocms.com",
-                "source": "https://github.com/anomalylabs/installer-module/tree/v2.4.0"
-            },
-            "time": "2021-03-04T21:57:51+00:00"
-        },
         {
             "name": "filp/whoops",
             "version": "2.14.5",

@@ -1,8 +1,0 @@
-<?php namespace {namespace};
-
-use Anomaly\Streams\Platform\Addon\FieldType\FieldType;
-
-class {addon} extends FieldType
-{
-
-}

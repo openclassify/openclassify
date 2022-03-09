@@ -1,1 +1,0 @@
-alert('Good Bye');
