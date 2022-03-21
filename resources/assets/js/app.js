@@ -12,12 +12,6 @@ const requireModulesVueFiles = (moduleVueFiles) => {
 }
 
 requireModulesVueFiles(require.context(
-    '../../../addons/default/visiosoft',
-    true,
-    /\.vue$/i
-))
-
-requireModulesVueFiles(require.context(
     '../../../vendor/visiosoft',
     true,
     /\.vue$/i
