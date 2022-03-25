@@ -122,24 +122,16 @@ Then run the installer and indicate that the system is ready to install:
 ```bash
 php artisan install --ready
 ```                             
+
+
+## Code Contributors
+
+This project exists thanks to all the people who [contribute](https://github.com/openclassify/openclassify/graphs/contributors) and more.
+
+
+<a href = "https://github.com/openclassify/openclassify/graphs/contributors">
+  <img src = "https://contrib.rocks/image?repo=openclassify/openclassify"/>
+</a>
  
-    
-## Development Team
 
-Samed Durak @profstyle1
-
-Vedat Akdoğan  @vedatakd
-
-Onur Üre @onurure
-
-Fatih Alp @fatihalp
-
-Emek Sancar @emeksancar
-
-Ozcan Durak @ozcandurak
-
-Dia @diashalabi
-
-## Thanks to
-
-Ryan and his stream platform PyroCMS which makes OpenClassify more powerful.
+Thanks to Ryan and his stream platform PyroCMS which makes OpenClassify more powerful.
