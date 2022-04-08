@@ -1,0 +1,12 @@
+Searching "{{ request_get("q") }}"...
+
+<ul>
+    {% for item in search(request_get('q')).in(['documentation.pages', 'help.sections']).get() %}
+        <li>
+            {{ item.entry.stream.id }}
+            <a href="{{ item.entry.route('view') }}" target="_blank">{{ item.title }}</a>
+            <br>
+            <small>{{ item.description }}</small>
+        </li>
+    {% endfor %}
+</ul>

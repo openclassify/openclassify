@@ -1,0 +1,173 @@
+@charset "UTF-8";
+
+/* --------------------------------------------------------
+Style Sheet for boolean-field_type
+
+last modified: 2017/11/17 by William Åström
+author: William Åström
+email: william@pixney.com
+----------------------------------------------------------*/
+
+.boolean-field_type .switch {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 57px;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  -webkit-user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -ms-user-select: none;
+}
+
+.boolean-field_type .switch__checkbox {
+  display: none;
+}
+
+.boolean-field_type .switch__label {
+  line-height: 1.4;
+  overflow: visible;
+  text-indent: 3.5rem;
+  white-space: nowrap;
+  position: relative;
+  display: block;
+  height: 30px;
+  padding: 0;
+  cursor: pointer;
+  transition: all 100ms ease-in;
+  border: 2px solid #dcd9d9;
+  border-radius: 30px;
+  background-color: #dcd9d9;
+  -webkit-box-flex: 0;
+  order: 1;
+  flex: 0 0 57px;
+  max-width: 57px;
+}
+
+.boolean-field_type .switch__label:before {
+  position: absolute;
+  top: 0;
+  right: 26.5px;
+  bottom: 0;
+  display: block;
+  width: 26px;
+  margin: 0;
+  content: "";
+  transition: all 100ms ease-in;
+  border: 2px solid #dcd9d9;
+  border-radius: 30px;
+  background: #ffffff;
+}
+
+.boolean-field_type .switch__checkbox:checked + .switch__label {
+  background-color: #735aed;
+}
+
+.boolean-field_type .switch__checkbox:checked + .switch__label,
+.boolean-field_type .switch__checkbox:checked + .switch__label:before {
+  border-color: #735aed;
+}
+
+.boolean-field_type .switch__checkbox:checked + .switch__label:before {
+  right: 0;
+}
+
+.boolean-field_type .switch__checkbox:disabled + .switch__label,
+.boolean-field_type .switch__checkbox:checked:disabled + .switch__label {
+  opacity: 0.3;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-success:checked + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--on-success:checked + .switch__label:before {
+  border-color: #47d165;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-success:checked + .switch__label {
+  background-color: #47d165;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-success + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--off-success + .switch__label:before {
+  border-color: #47d165;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-success + .switch__label {
+  background-color: #47d165;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-warning:checked + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--on-warning:checked + .switch__label:before {
+  border-color: #ff754b;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-warning:checked + .switch__label {
+  background-color: #ff754b;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-warning + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--off-warning + .switch__label:before {
+  border-color: #ff754b;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-warning + .switch__label {
+  background-color: #ff754b;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-danger:checked + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--on-danger:checked + .switch__label:before {
+  border-color: #ff3160;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-danger:checked + .switch__label {
+  background-color: #ff3160;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label:before {
+  border-color: #ff3160;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-danger + .switch__label {
+  background-color: #ff3160;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-info:checked + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--on-info:checked + .switch__label:before {
+  border-color: #11bef6;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-info:checked + .switch__label {
+  background-color: #11bef6;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-info + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--off-info + .switch__label:before {
+  border-color: #11bef6;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-info + .switch__label {
+  background-color: #11bef6;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-default:checked + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--on-default:checked + .switch__label:before {
+  border-color: #55595c;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--on-default:checked + .switch__label {
+  background-color: #55595c;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-default + .switch__label,
+.boolean-field_type .switch__checkbox.switch__checkbox--off-default + .switch__label:before {
+  border-color: #55595c;
+}
+
+.boolean-field_type .switch__checkbox.switch__checkbox--off-default + .switch__label {
+  background-color: #55595c;
+}
+

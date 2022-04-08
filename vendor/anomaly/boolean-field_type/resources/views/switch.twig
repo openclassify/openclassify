@@ -1,0 +1,26 @@
+{{ asset_add('styles.css', 'anomaly.field_type.boolean::css/switch.css') }}
+
+<div class="switch">
+
+    <input
+            type="checkbox"
+            id="{{ field_type.input_name }}"
+            name="{{ field_type.input_name }}"
+
+            class="
+                switch__checkbox
+                switch__checkbox--on-{{ field_type.config.on_color }}
+                switch__checkbox--off-{{ field_type.config.off_color }}"
+
+            {{ field_type.value ? 'checked' }}
+            {{ html_attributes(field_type.attributes) }}
+            {{ field_type.disabled ? 'disabled' }}
+            {{ field_type.readonly ? 'readonly' }}>
+
+    <label
+            class="switch__label"
+            for="{{ field_type.input_name }}">
+        {{ trans(field_type.config.label) }}
+    </label>
+
+</div>

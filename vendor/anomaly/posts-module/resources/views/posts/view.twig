@@ -1,0 +1,55 @@
+{% extends post.type.theme_layout.key %}
+
+{% block content %}
+    <div id="posts">
+        <div class="container">
+            <article id="post">
+
+                <header>
+
+                    <h1>{{ post.title }}</h1>
+
+                    <div class="meta">
+
+                    <span class="author">
+                        {{ post.author.display_name }}
+                    </span>
+
+                        <time class="date" datetime="{{ post.publish_at.iso }}">
+                            {{ post.publish_at.format(config_get('streams::datetime.date_format')) }}
+                        </time>
+
+                        {% if post.category %}
+                            <span class="category">
+                            &mdash; {{ html_link(post.category.route('view'), post.category.name) }}
+                        </span>
+                        {% endif %}
+
+                        {% if post.tags %}
+                            <div class="tags">
+                                {% for tag in post.tags.value %}
+                                    <a href="{{ url_route('anomaly.module.posts::tags.view', {'tag': tag}) }}"
+                                       class="label label-info list-inline-item">
+                                        {{ tag }}
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+
+                    </div>
+
+                </header>
+
+                <br>
+                <br>
+
+                <div class="content">
+                    {% block post %}
+                        {{ content|raw }}
+                    {% endblock %}
+                </div>
+
+            </article>
+        </div>
+    </div>
+{% endblock %}

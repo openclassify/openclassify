@@ -1,0 +1,9 @@
+{% for field in fields %}
+    {% if form.fields.translations(field).isNotEmpty() %}
+        <div class="field-group {{ field }}">
+            {% for field in form.fields.translations(field) %}
+                {{ field.render({'form': form})|raw }}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endfor %}

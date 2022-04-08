@@ -1,0 +1,9 @@
+<?php namespace {namespace};
+
+abstract class {class} extends \TestCase
+{
+    public function testUnit()
+    {
+        $this->markTestSkipped('Not implemented.');
+    }
+}

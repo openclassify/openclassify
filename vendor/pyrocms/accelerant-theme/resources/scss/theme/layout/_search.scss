@@ -1,0 +1,24 @@
+#search {
+
+    .search-bar {
+        height: 70px;
+        color: #212121;
+        font-size: 14px;
+        border: none !important;
+        box-shadow: none !important;
+        background-color: transparent !important;
+    }
+
+    .results {
+        min-width: 15rem;
+    }
+}
+
+@include media-breakpoint-down(sm) {
+
+    body.expand {
+        #search {
+            display: none;
+        }
+    }
+}

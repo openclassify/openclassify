@@ -1,0 +1,14 @@
+{% extends layout('users') %}
+
+{% block content %}
+
+    <div class="container">
+
+        <div class="jumbotron text-center">
+            <h1>{{ user.username }}</h1>
+            <p>Joined {{ user.created_at.diffForHumans() }}</p>
+        </div>
+
+    </div>
+
+{% endblock %}

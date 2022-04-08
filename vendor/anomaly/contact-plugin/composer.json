@@ -1,0 +1,33 @@
+{
+    "name": "anomaly/contact-plugin",
+    "type": "streams-addon",
+    "description": "A simple contact form plugin.",
+    "keywords": [
+        "streams plugin",
+        "streams addon",
+        "plugin"
+    ],
+    "homepage": "http://anomaly.is/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "AnomalyLabs, Inc.",
+            "email": "hello@anomaly.is",
+            "homepage": "http://anomaly.is/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@anomaly.is"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\ContactPlugin\\": "src/"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-1.0/master": "1.0.x-dev"
+        }
+    }
+}

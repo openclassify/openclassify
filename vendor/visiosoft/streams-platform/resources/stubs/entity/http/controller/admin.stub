@@ -1,0 +1,43 @@
+<?php namespace {namespace};
+
+use {formBuilder};
+use {tableBuilder};
+use Anomaly\Streams\Platform\Http\Controller\AdminController;
+
+class {class} extends AdminController
+{
+
+    /**
+     * Display an index of existing entries.
+     *
+     * @param {table} ${view}
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function index({table} ${view})
+    {
+        return ${view}->render();
+    }
+
+    /**
+     * Create a new entry.
+     *
+     * @param {form} $form
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function create({form} $form)
+    {
+        return $form->render();
+    }
+
+    /**
+     * Edit an existing entry.
+     *
+     * @param {form} $form
+     * @param        $id
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
+    public function edit({form} $form, $id)
+    {
+        return $form->render($id);
+    }
+}

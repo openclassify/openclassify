@@ -1,0 +1,23 @@
+<?php namespace {namespace};
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+class {class} extends Factory
+{
+    /**
+     * The name of the factory's corresponding model.
+     *
+     * @var {model}
+     */
+    protected $model = {model}::class;
+
+
+    /**
+     * @return array
+     * @throws \Exception
+     */
+    public function definition()
+    {
+        return [];
+    }
+}

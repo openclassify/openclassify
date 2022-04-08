@@ -1,0 +1,14 @@
+<select
+        class="custom-select form-control"
+        name="{{ field_type.input_name }}" {{ field_type.disabled ? 'disabled' }}>
+
+    <option value="" disabled {{ not field_type.value ? 'selected' }}>{{ trans(field_type.placeholder) }}</option>
+
+    <option value="false" {{ field_type.value == 'false' ? 'selected' }}>
+        {{ trans(field_type.config.off_text ?: 'anomaly.field_type.boolean::choice.no') }}
+    </option>
+    <option value="true" {{ field_type.value == 'true' ? 'selected' }}>
+        {{ trans(field_type.config.on_text ?: 'anomaly.field_type.boolean::choice.yes') }}
+    </option>
+
+</select>

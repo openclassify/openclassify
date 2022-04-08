@@ -1,0 +1,105 @@
+{% extends "theme::layouts/default" %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            <div class="row px-3">
+                <div class="col-md-12 bg-dark text-white p-5">
+                    <h3>
+                        {% if request().segment(3) == "edit" %}
+                            {{ trans('visiosoft.module.profile::field.edit_address.name') }}
+                        {% else %}
+                            {{ trans('visiosoft.module.profile::field.create_address.name') }}
+                        {% endif %}
+                    </h3>
+                </div>
+                <div class="col-md-12 bg-light profile-section">
+                    {% set form = form('address').entry(id).actions({'save':'save'}).get() %}
+
+                    {% set isCompany = form.entry.is_company %}
+
+                    <div class="card-header tab-card-header">
+                        <ul class="nav nav-tabs card-header-tabs" role="tablist">
+                            <li class="nav-item {% if isCompany %}d-none{% endif %}">
+                                <a class="nav-link active show" id="personal-tab" data-toggle="tab" href="#personal"
+                                   role="tab"
+                                   aria-controls="Personal" aria-selected="true">{{ trans('visiosoft.module.profile::button.personal') }}</a></li>
+                            <li class="nav-item">
+                                <a class="nav-link {% if isCompany %}active show{% endif %}" id="corporate-tab" data-toggle="tab" href="#corporate" role="tab"
+                                   aria-controls="Corporate" aria-selected="false">{{ trans('visiosoft.module.profile::button.corporate') }}</a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div class="tab-content">
+                        <div class="tab-pane fade show active p-3 {% if isCompany %}d-none{% endif %}" id="personal" role="tabpanel"
+                             aria-labelledby="personal-tab">
+                            {{ form_open({
+                                'class': 'form ' ~ form.options.class ,
+                                'enctype': 'multipart/form-data',
+                                'url':form.options.url
+                            })|raw }}
+                            <div class="py-3 px-3 px-sm-0">
+
+                                {% include "visiosoft.module.profile::address/partials/fields" %}
+
+                                <div class="form-group">
+                                    {{ form.actions|raw }}
+                                </div>
+                            </div>
+                            {{ form_close() }}
+
+                        </div>
+
+                        <div class="tab-pane fade p-3 {{ isCompany ? ' active show' }}" id="corporate" role="tabpanel"
+                             aria-labelledby="corporate-tab">
+                            {% set form = form('addressCompany').entry(id).actions({'save':'save'}).get() %}
+                            {{ form_open({
+                                'class': 'form ' ~ form.options.class ,
+                                'enctype': 'multipart/form-data',
+                                'url':form.options.url
+                            })|raw }}
+                            <div class="py-3 px-3 px-sm-0">
+
+                                <div class="form-group font-weight-bolder">
+                                    {{ form.fields.company|raw }}
+                                </div>
+                                {% if setting_value('visiosoft.module.profile::show_tax_office') %}
+                                    <div class="form-group font-weight-bolder">
+                                        {{ form.fields.tax_office|raw }}
+                                    </div>
+                                {% endif %}
+                                <div class="form-group font-weight-bolder">
+                                    {{ form.fields.tax_number|raw }}
+                                </div>
+                                {% include "visiosoft.module.profile::address/partials/fields" %}
+
+                                <div class="form-group">
+                                    {{ form.actions|raw }}
+                                </div>
+                            </div>
+                            {{ form_close() }}
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+            <script>
+                //For Request
+                var country = "{% if request().segment(3) == "edit" %}{{ form.fields.country.value.id }}{% else %}{{ form.fields.country.value|raw }}{% endif %}";
+                var city = "{% if request().segment(3) == "edit" %}{{ form.fields.city.value }}{% else %}{{ form.fields.city.value|raw }}{% endif %}";
+                var district = "{% if request().segment(3) == "edit" %}{{ form.fields.district.value }}{% else %}{{ form.fields.district.value|raw }}{% endif %}";
+                //Default
+                var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+                var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
+                var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
+
+            </script>
+
+            {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/create.js") }}
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

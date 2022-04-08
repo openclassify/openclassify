@@ -1,0 +1,30 @@
+{{ asset_add("scripts.js", "streams::js/form/ajax.js") }}
+{{ asset_add("scripts.js", "streams::js/form/form.js") }}
+{{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+{% block content %}
+
+    <div class="modal-header">
+        <button class="close" data-dismiss="modal">
+            <span>&times;</span>
+        </button>
+
+        <h4 class="modal-title">
+            {{ trans(form.options.title)|raw }}
+        </h4>
+    </div>
+
+    {{ form_open({'class': 'form ajax form--ajax', 'enctype': 'multipart/form-data', 'url': form.options.url ?: url_full()}) }}
+
+    <div class="modal-body">
+
+        {% include "streams::form/partials/translations" %}
+        {% include "streams::form/ajax/layout" %}
+
+    </div>
+
+    {% include "streams::form/ajax/footer" %}
+
+    {{ form_close() }}
+
+{% endblock %}

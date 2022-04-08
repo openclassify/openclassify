@@ -1,0 +1,36 @@
+<!doctype html>
+
+<html>
+
+<head>
+    {% include "theme::partials/metadata" %}
+</head>
+
+<body class="variant-{{ random(8) }}{{ locale().isRtl() ? ' rtl' }}" data-variants="8">
+
+{#{% include "theme::partials/push" %}#}
+{#{% include "theme::partials/brand" %}#}
+{#{% include "theme::partials/navbar" %}#}
+{#{% include "theme::partials/header" %}#}
+
+<section id="app">
+
+    <main id="frame">
+
+        <div class="container-fluid">
+            {% include "theme::partials/messages" %}
+            {% include "theme::partials/buttons" %}
+        </div>
+
+        {% block content %}{% endblock %}
+
+    </main>
+
+    {% include "theme::partials/modals" %}
+
+</section>
+
+{% include "theme::partials/assets" %}
+
+</body>
+</html>

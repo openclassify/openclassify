@@ -1,0 +1,9 @@
+{
+    "name": "visiosoft/location-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\LocationModule\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,8 @@
+<?php namespace {namespace};
+
+use Anomaly\Streams\Platform\Entry\EntryCollection;
+
+class {class} extends EntryCollection
+{
+
+}

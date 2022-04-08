@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="14.607" height="14.052" viewBox="0 0 14.607 14.052">
+  <g id="karsilastir" transform="translate(-580.473 -202.952)">
+    <g id="arrow-pointing-to-right" transform="translate(580.473 210.303)">
+      <path id="Path_1" data-name="Path 1" d="M.133,44.947l2.9-2.9a.453.453,0,0,1,.64.64L1.546,44.814h9.739a.453.453,0,0,1,0,.906H1.546l2.125,2.125a.453.453,0,0,1-.64.64l-2.9-2.9A.453.453,0,0,1,.133,44.947Z" transform="translate(0 -41.916)"/>
+    </g>
+    <g id="arrow-pointing-to-right-2" data-name="arrow-pointing-to-right" transform="translate(585.342 202.952)">
+      <path id="Path_1-2" data-name="Path 1" d="M9.605,44.947l-2.9-2.9a.453.453,0,1,0-.64.64l2.125,2.125H-1.547A.453.453,0,0,0-2,45.267a.453.453,0,0,0,.453.453H8.192L6.067,47.845a.453.453,0,0,0,.64.64l2.9-2.9A.453.453,0,0,0,9.605,44.947Z" transform="translate(0 -41.916)"/>
+    </g>
+  </g>
+</svg>

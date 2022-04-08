@@ -1,0 +1,9 @@
+{
+    "name": "{vendor}/{slug}-{type}",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "{prefix}": "src/"
+        }
+    }
+}

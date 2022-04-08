@@ -1,0 +1,26 @@
+{{ asset_add("scripts.js", "anomaly.field_type.datetime::js/jquery.plugin.min.js") }}
+{{ asset_add("scripts.js", "anomaly.field_type.datetime::js/jquery.datetimeentry.min.js") }}
+{{ asset_add("scripts.js", "anomaly.field_type.datetime::js/input.js") }}
+
+<div class="input-group">
+
+    <input
+            type="text"
+            class="form-control"
+            name="{{ field_type.input_name }}"
+            data-step="{{ field_type.config.step }}"
+            placeholder="{{ trans(field_type.placeholder) }}"
+            value="{{ field_type.format(field_type.datetime_format) }}"
+            data-datetime-format="{{ field_type.plugin_format }}"
+            {{ html_attributes(field_type.attributes) }}
+            {{ field_type.required ? 'required' }}
+            {{ field_type.disabled ? 'disabled' }}
+            {{ field_type.readonly ? 'readonly' }}>
+
+    {% if field_type.config.mode != 'date' %}
+        <span class="input-group-addon">
+            {{ field_type.config.timezone }}
+        </span>
+    {% endif %}
+
+</div>

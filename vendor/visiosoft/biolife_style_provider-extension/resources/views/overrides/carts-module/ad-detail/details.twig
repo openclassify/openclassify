@@ -1,0 +1,96 @@
+{% if params.adv.stock == "0" %}
+    <div class="mt-2">
+        <p class="text-danger">{{ trans('visiosoft.module.carts::field.sold_out') }}</p>
+    </div>
+{% endif %}
+{% if params.adv.is_get_adv == "1" and params.adv.stock != "0" and params.adv.stock is not empty %}
+    {% if not setting_value('visiosoft.module.advs::hide_zero_price') or params.adv.price != "0" %}
+        {% set standardPrice = params.adv.standard_price.value %}
+
+        {% if params.options is not empty and count(params.options) %}
+            <div class="col-12 pl-0 py-2">
+                <div class="options-select ml-3 mt-2">
+                    <select name="option" class="custom-select form-control">
+                        {% for option in params.options %}
+                            <option value="{{ option.name }}">{{ option.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+            </div>
+        {% endif %}
+
+
+        {% if params.configurations != null %}
+            <div class="col-12 justify-content-start pl-0 row m-0">
+                <form action="{{ route('configuration::add_cart') }}" class="">
+                    <div class="row mb-1">
+                        <div class="input-group col-12">
+
+{#
+                            <select name="configuration" id="" class="form-control w-100">
+                                {% for key, configuration in params.configurations %}
+                                    <option value="{{ key }}" {{ (loop.index == 1) ? 'selected':'' }}
+                                            data-price="{{ currency_format(configuration.price,configuration.currency) }}">
+                                        {{ configuration.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+#}
+                        </div>
+                    </div>
+                    <div class="row w-100 justify-content-between m-auto">
+                        <div class="d-flex w-100 align-items-center">
+                            <select name="configuration" id="" class="form-control w-100 flex-fill rounded-pill border-0 mr-1">
+                                {% for key, configuration in params.configurations %}
+                                    <option value="{{ key }}" {{ (loop.index == 1) ? 'selected':'' }}
+                                            data-price="{{ currency_format(configuration.price,configuration.currency) }}">
+                                        {{ configuration.name }}
+                                    </option>
+                                {% endfor %}
+                            </select>
+                            <div class="qty-input">
+                                <input type="text" class="quantity" name="quantity" value="1" data-max_value="20" data-min_value="1"
+                                       data-step="1" data-id="{{ params.adv.id }}">
+                                <a class="qty-btn btn-up quantity-plus-btn"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+                                <a class="qty-btn btn-down quantity-minus-btn"><i class="fa fa-caret-down" aria-hidden="true"></i></a>
+                            </div>
+                        </div>
+                        <div class="col-12 p-0">
+                            <div class="buttons">
+                                <button class="btn btn-bold w-100" type="submit">
+                                    {{ trans('visiosoft.module.orders::field.addcart') }}
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        {% else %}
+            {{ addBlock('ad-detail/cartOption',{'adv':params.adv})|raw }}
+            <div class="quantity-box">
+                <span class="title">{{ trans('visiosoft.extension.biolife_style_provider::field.quantity') }}:</span>
+                <div class="qty-input">
+                    <input type="text" class="quantity" name="quantity" value="1" data-max_value="20" data-min_value="1"
+                           data-step="1" data-id="{{ params.adv.id }}">
+                    <a class="qty-btn btn-up quantity-plus-btn"><i class="fa fa-caret-up" aria-hidden="true"></i></a>
+                    <a class="qty-btn btn-down quantity-minus-btn"><i class="fa fa-caret-down"
+                                                                      aria-hidden="true"></i></a>
+                </div>
+            </div>
+            <div class="buttons">
+                <a href="javascript:void(0)" class="btn add-cart-button btn-bold w-100" data-id="{{ adv.id }}">
+                    {{ trans('visiosoft.extension.biolife_style_provider::field.add_to_cart') }}
+                </a>
+                <p class="pull-row">
+                    {{ addBlock('ad-detail/title/action', {adv_id: params.adv.id})|raw }}
+                </p>
+            </div>
+        {% endif %}
+        {{ asset_add('scripts.js','visiosoft.module.carts::js/AddCartQuantity.js') }}
+        {{ asset_add('styles.css','visiosoft.module.carts::css/ad-detail.css') }}
+    {% endif %}
+{% else %}
+    <span class="text-center">
+        {{ addBlock('ad-detail/title/action', {adv_id: params.adv.id})|raw }}
+    </span>
+{% endif %}

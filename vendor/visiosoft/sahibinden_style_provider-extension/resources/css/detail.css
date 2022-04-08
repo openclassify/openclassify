@@ -1,0 +1,304 @@
+.classified-breadcrumb {
+    height: 27px;
+    line-height: 1.75rem;
+    font-weight: 500;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.1), 0 0 4px 0 rgba(0, 0, 0, 0.06), 1px 0 2px 0 rgba(0, 0, 0, 0.08);
+    margin-bottom: 0;
+}
+
+.classified-description .nav-fill .nav-item{
+    padding: 7px 2px 11px 2px;
+}
+
+.classified-breadcrumb a {
+    max-width: 110px;
+    overflow: hidden;
+    white-space: nowrap;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    color: #00339f;
+    font-size: 11px;
+    display: inline-block;
+}
+
+.classified-breadcrumb li:first-child a {
+    padding-left: 1rem;
+}
+
+.classified-breadcrumb .breadcrumb-item .breadcrumb-item {
+    padding: 5px 0 0 0;
+    margin-right: 15px;
+}
+
+.classified-breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    content: "";
+}
+
+.classified-breadcrumb .breadcrumb-item a i {
+    color: #8498ab;
+}
+
+.classified-breadcrumb .breadcrumb-item + .breadcrumb-item {
+    padding-left: 0;
+}
+
+#main {
+    margin: 0;
+}
+
+.classified-title {
+    border-bottom: 1px solid #dbdbdb;
+    margin-bottom: 10px;
+    zoom: 1;
+    color: #333;
+    height: 46px;
+}
+
+.classified-title h1 {
+    font-size: 18px;
+    color: #333;
+    padding: 15px 0 12px;
+    /*white-space: nowrap;*/
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    font-weight: 700;
+}
+
+.customfieldfr {
+    padding: 15px;
+}
+
+
+/* Mobile Template */
+@media (max-width: 576px) {
+    .classified-title h1 {
+        position: relative;
+        margin: 0;
+        padding: 2px 14px;
+        color: #333;
+        z-index: 1;
+        font: 14px "Lucida Grande", "LucidaGrande", Arial, sans-serif;
+        font-weight: normal;
+        text-align: center;
+        word-wrap: break-word;
+        background-color: #f7f7f7;
+        white-space: normal;
+    }
+
+    .classified-title {
+        height: auto;
+        margin-left: -30px;
+    }
+
+    .classified-description {
+        padding-top: 0;
+        margin-bottom: 60px;
+    }
+
+    .slider {
+        margin-left: -15px;
+        margin-right: -15px;
+    }
+
+    .sm-detail .sm-name {
+        font-size: 15px;
+        font-weight: 500;
+        color: #1064bc;
+    }
+
+    .sm-detail .sm-text {
+        direction: rtl;
+        font-size: 13px;
+        color: #1064bc;
+    }
+
+    .sm-detail .sm-text:first-child a:not(:last-child):after {
+        content: '>';
+        color: #1064bc;
+    }
+
+    .classified-description .description-tabs {
+        padding: 0;
+    }
+
+    .classified-detail .detail-value {
+        text-align: right;
+    }
+
+    #footer {
+        display: none;
+    }
+
+    .customfieldfr {
+        padding: 15px 0 0 0;
+    }
+
+    .slider-box .fotorama__nav-wrap,
+    .slider-controller-bar {
+        display: none;
+    }
+
+    .footer-mobile-device {
+        z-index: 1000;
+        bottom: 0;
+        left: 0;
+        width: 100vw;
+    }
+
+    .footer-mobile {
+        display: none !important;
+    }
+}
+
+.customfieldfr h6 b {
+    color: #049aff;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.customfieldfr .checkbox-row {
+    border: 1px solid #ffeaa5;
+    background: #fffced;
+    margin: 5px 0 25px 0;
+}
+
+.customfieldfr .checkbox-row img {
+    height: 1.125rem;
+    width: 1.125rem;
+}
+
+.customfieldfr .disabled-checkbox-value {
+    color: #a7a9ac;
+}
+
+.slider-controller-bar {
+    order: 2;
+}
+
+.fotorama__wrap {
+    display: flex;
+    flex-direction: column;
+}
+
+.slider-box .fotorama__nav-wrap {
+    order: 3;
+}
+
+.slider-box .slider-controller-bar button:hover {
+    cursor: pointer;
+}
+
+.chat-whatsapp {
+    background: url("{{ img('visiosoft.theme.sahibinden::images/whatsapp-btn.png').url }}") !important;
+    background-size: 70% !important;
+    background-repeat: no-repeat !important;
+    background-color: #52c946 !important;
+    background-position: center;
+}
+
+.whatsapp-message {
+    display: block;
+    width: 100%;
+    background-color: #25D366;
+    color: white;
+    margin-top: 0.5em;
+    min-height: 38px;
+}
+
+.whatsapp-message i {
+    left: 2em;
+    top: 10px;
+}
+
+.whatsapp-message:hover {
+    color: white;
+    text-decoration: none;
+}
+
+.whatsapp-link:hover {
+    text-decoration: none;
+}
+
+/* Messages Button */
+#message {
+    display: block;
+    width: 100%;
+    background-color: #696969;
+    color: white;
+    margin-top: 0.5em;
+}
+
+#message i {
+    position: absolute;
+    display: none;
+    left: 2em;
+    top: 10px;
+}
+
+#message img {
+    height: 1rem;
+    width: auto;
+}
+
+.color-facebook-icon {
+    color: #3b5998 !important;
+}
+
+.color-twitter-icon {
+    color: #01aced !important;
+}
+
+.color-whatsapp-icon {
+    color: #11af0b !important;
+}
+
+.a-linkedin-type {
+    color: #0a66c2;
+    line-height: 19px;
+    text-decoration: none;
+    outline: 0;
+    margin: 0;
+    padding: 0;
+    background: no-repeat 0 0;
+}
+
+@media only screen and (min-width: 1200px) {
+    #message i {
+        display: inline-block;
+    }
+}
+
+.fotorama {
+    height: calc(100vw * 2 / 3);
+}
+
+@media only screen and (min-width: 576px) {
+    .fotorama {
+        height: 413px;
+    }
+
+    .classified-description .nav-fill .nav-item{
+        padding: 7px 17px 11px 17px;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .fotorama {
+        height: 303px;
+    }
+}
+
+@media only screen and (min-width: 992px) {
+    .fotorama {
+        height: 383px;
+    }
+}
+
+@media only screen and (min-width: 1200px) {
+    .fotorama {
+        height: 443px;
+    }
+}
+

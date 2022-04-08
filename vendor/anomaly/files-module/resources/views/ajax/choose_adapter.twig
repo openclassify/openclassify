@@ -1,0 +1,27 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('anomaly.module.files::message.choose_adapter') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    {% include "streams::modals/filter" %}
+
+    {% if not adapters.isEmpty() %}
+        <ul class="nav nav-pills nav-stacked">
+            {% for adapter in adapters %}
+                <li class="nav-item">
+                    <a href="{{ url_to('admin/files/disks/create?adapter=' ~ adapter.namespace) }}" class="nav-link">
+                        <strong>{{ trans(adapter.getTitle()) }}</strong>
+                        <br>
+                        <small>{{ trans(adapter.getDescription()) }}</small>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ trans('streams::message.no_results') }}
+    {% endif %}
+</div>

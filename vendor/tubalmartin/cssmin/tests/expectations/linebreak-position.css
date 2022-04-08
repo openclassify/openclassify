@@ -1,0 +1,6 @@
+/*! This is a comment with closing curly braces }}}}}}}}}}}}}}}}}}}}} inside */
+.foo{color:blue;content:"String with closing curly braces inside }}}}"}
+@media{.foo{color:red}
+.bar{color:green}
+.baz{width:10px}
+}

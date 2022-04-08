@@ -1,0 +1,67 @@
+a{
+    foo: .0001em;
+    bar: 000px;
+    baz: 0.6px 0.011pt 10.2em +8.8cm;
+    foobar:-0.6px, -0.333pt,-01.05em 050cm;
+}
+b, .test-0\.400em {
+    margin: +0.6px +3pt +1.2em +.8cm;
+    padding:  +0.2em +0.8cm;
+}
+c{
+    margin: +2.4px 0px;
+    padding: -0.4px 0px;
+    margin: 1px 0.0em 0rem 0%;
+    padding: 4px 0px;
+    padding: +0000% 0.0% 0in 00.000;
+    margin:-.0em .000pc +0px -00.0000%;
+    transition-duration: 0s;
+    left: -20.0px;
+    padding: 0 0 0 0;
+    margin: 0 0pc 0 0;
+    padding: 10px 0px 20px 0px;
+    margin: 0 0 0;
+    line-height: 0px;
+    width: 0px;
+    max-width: 0%;
+}
+\;b\:0px{
+    leading: 0050% -0010.5% 001.004in -0.45vw;
+    trailing: 5000% .500px 1.200100em 0.40500;
+    transition-duration: 0ms;
+    transform: rotate3d(0grad, 0rad, 0deg);
+    pitch: 0KHZ;
+    pitch:
+            0hz; /* intentionally on next line */
+    padding: 0 0;
+    top: 0rem;
+    bottom: 0vh;
+    left:      0rem;
+    border-top: 0em solid blue;
+    border-width:  0px;
+    column-gap: 0%;
+    outline-width: 0px;
+    border-radius: 0px 0pc 0% 0em;
+    border-top-right-radius: 0em;
+}
+body
+{
+    margin: /* leading units zeros */ 009px /* trailing fraction zeros */ 9.8000px /* zero pixels (remove units) */ 00px /* zero units */ 0.9em;
+    height: 09.900;
+    width: 00.500;
+    z-index: 0.090;
+    font-size: 09.000;
+    top: 000.000px;
+    bottom: 0px;
+}
+/* Numbers in selectors */
+:lang(de) > p.lang\:0\.234500{height:0.20em }
+#\:34\:0500 {width:10.01% ;}
+/*issue #13*/
+.mg0px .lang\:0em{
+    height:20%;
+    padding-bottom:calc(0.75rem - 1px);
+    margin-right:calc(-0.375em - 1px);
+    transform:translateX(0.3rem);
+    transform:scale3d(0.3, 0.3, 0.3);
+}

@@ -1,0 +1,39 @@
+.small-notice {
+    background-color: #f7f7f7;
+}
+
+.small-notice i {
+    font-size: 18px;
+    position: relative;
+    top: 4px;
+}
+
+.personal-advantages img {
+    max-height: 60px;
+    max-width: 60px;
+}
+
+.approved-phone {
+    background-color: #ebf2e5 !important;
+    border-color: #4a7c20 !important;
+}
+
+.rejected-phone {
+    background-color: #f8e6e9 !important;
+    border-color: #ba7b84 !important;
+}
+
+.phone-validation-error {
+    color: #c75050;
+    font-size: 14px;
+}
+
+.register-area input {
+    color: #707070 !important;
+}
+
+.register-area input::-webkit-input-placeholder,
+.register-area input::-moz-placeholder,
+.register-area input::placeholder {
+    color: #BCBDC3 !important;
+}

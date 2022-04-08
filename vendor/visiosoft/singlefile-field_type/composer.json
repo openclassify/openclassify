@@ -1,0 +1,28 @@
+{
+    "name": "visiosoft/singlefile-field_type",
+    "type": "streams-addon",
+    "description": "A file upload field type.",
+    "keywords": [
+        "streams field type",
+        "streams addon",
+        "field type"
+    ],
+    "homepage": "http://openclassify.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "OpenClassify, Inc.",
+            "email": "support@openclassify.com",
+            "homepage": "http://openclassify.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@openclassify.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\SinglefileFieldType\\": "src/"
+        }
+    }
+}

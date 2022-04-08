@@ -1,0 +1,16 @@
+<select
+        class="{{ field_type.class }}"
+        name="{{ field_type.input_name }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>
+
+    <option value="true" {{ field_type.is_true ? 'selected' }}>
+        {{ trans(field_type.config.on_text ?: 'anomaly.field_type.boolean::choice.yes') }}
+    </option>
+
+    <option value="false" {{ field_type.is_false ? 'selected' }}>
+        {{ trans(field_type.config.off_text ?: 'anomaly.field_type.boolean::choice.no') }}
+    </option>
+
+</select>

@@ -1,0 +1,33 @@
+{{ asset_add('styles.css', 'anomaly.field_type.repeater::css/repeater.css') }}
+
+{{ asset_add("scripts.js", "anomaly.field_type.repeater::js/cookie.min.js") }}
+{{ asset_add('scripts.js', 'anomaly.field_type.repeater::js/input.js') }}
+{{ asset_add("scripts.js", "streams::js/table/jquery-sortable.js") }}
+
+{% block content %}
+	{% set instance = str_random() %}
+
+	<div {{ html_attributes(field_type.attributes) }} data-instance="{{ instance }}">
+
+		<div class="repeater-list">
+			{% for form in field_type.forms %}
+				{% include "anomaly.field_type.repeater::item" with {'form': form} %}
+			{% endfor %}
+		</div>
+
+		{% if not field_type.readonly and not field_type.disabled %}
+			<div class="repeater-controls">
+
+				<a href="{{ url('repeater-field_type/form/' ~ field_type.id() ~ '?prefix=' ~ field_type.prefix) }}" class="add-row btn btn-sm btn-success" data-instance="{{ instance }}" data-loading="{{ trans('anomaly.field_type.repeater::message.loading') }}">
+					{{ trans(field_type.config.add_row ?: 'anomaly.field_type.repeater::button.add_row') }}
+				</a>
+
+				<a href="#" class="btn btn-sm btn-info" data-select="all">
+					{{ trans('anomaly.field_type.repeater::button.select_all') }}
+				</a>
+
+			</div>
+		{% endif %}
+
+	</div>
+{% endblock %}

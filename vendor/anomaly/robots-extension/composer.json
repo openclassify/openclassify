@@ -1,0 +1,27 @@
+{
+    "name": "anomaly/robots-extension",
+    "type": "streams-addon",
+    "description": "A simple robots.txt generator.",
+    "keywords": [
+        "pyrocms extension",
+        "robots generator"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\RobotsExtension\\": "src/"
+        }
+    }
+}

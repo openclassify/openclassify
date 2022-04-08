@@ -1,0 +1,24 @@
+{{ asset_add("scripts.js", "streams::js/tree/jquery-sortable.js") }}
+{{ asset_add("scripts.js", "streams::js/tree/tree.js") }}
+
+{% import "streams::tree/macro" as macro %}
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        {% if not tree.items.isEmpty() %}
+            <ul class="tree tree--sortable sortable">
+                {{ macro.tree(tree.items.root(), tree) }}
+            </ul>
+        {% else %}
+            <div class="card">
+                <div class="card-block card-body">
+                    {{ trans(tree.options.get('no_results_message', 'streams::message.no_results')) }}
+                </div>
+            </div>
+        {% endif %}
+
+    </div>
+
+{% endblock %}

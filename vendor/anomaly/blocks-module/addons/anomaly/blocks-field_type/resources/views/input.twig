@@ -1,0 +1,41 @@
+{{ asset_add('styles.css', 'anomaly.field_type.blocks::css/blocks.css') }}
+
+{{ asset_add("scripts.js", "anomaly.field_type.blocks::js/cookie.min.js") }}
+{{ asset_add('scripts.js', 'anomaly.field_type.blocks::js/input.js') }}
+{{ asset_add("scripts.js", "streams::js/table/jquery-sortable.js") }}
+
+{% set instance = str_random() %}
+
+<div {{ html_attributes(field_type.attributes) }} data-instance="{{ instance }}">
+
+    <div class="block-list">
+        {% for form in field_type.forms %}
+            {% include "anomaly.field_type.blocks::item" with {'form': form} %}
+        {% endfor %}
+    </div>
+
+    {% if not (field_type.readonly) %}
+        <div class="block-controls">
+
+            <a href="{{ url('streams/blocks-field_type/choose/' ~ field_type.id() ~ '?prefix=' ~ field_type.prefix) }}"
+               data-toggle="modal"
+               data-instance="{{ instance }}"
+               class="btn btn-sm btn-success"
+               data-target="#{{ field_type.field_name }}-modal">
+                {{ trans('anomaly.field_type.blocks::button.add_block') }}
+            </a>
+
+            <a href="#" class="btn btn-sm btn-info" data-select="all">
+                {{ trans('anomaly.field_type.blocks::button.select_all') }}
+            </a>
+
+        </div>
+
+        <div class="modal remote" id="{{ field_type.field_name }}-modal"
+             data-loading="{{ trans('anomaly.field_type.blocks::message.loading') }}">
+            <div class="modal-dialog">
+                <div class="modal-content"></div>
+            </div>
+        </div>
+    {% endif %}
+</div>

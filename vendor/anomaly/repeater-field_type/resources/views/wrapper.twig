@@ -1,0 +1,21 @@
+{% block content %}
+
+    {% for style in asset_styles("styles.css") %}
+        {{ style|raw }}
+    {% endfor %}
+
+    {% include "anomaly.field_type.repeater::partials/controls" %}
+
+    <div class="clearfix"></div>
+
+    {% include "anomaly.field_type.repeater::partials/fields" %}
+
+    <div class="repeater-body">
+        {{ content|raw }}
+    </div>
+
+    {% for script in asset_scripts("scripts.js") %}
+        {{ script|raw }}
+    {% endfor %}
+
+{% endblock %}

@@ -1,0 +1,14 @@
+<select
+        name="{{ field_type.input_name }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.readonly ? 'readonly' }}>
+
+    {% if field_type.placeholder %}
+        <option value="">{{ trans(field_type.placeholder) }}</option>
+    {% endif %}
+
+    {% for iso, name in field_type.options %}
+        <option value="{{ iso }}" {{ iso == field_type.value ? 'selected' }}>{{ trans(name) }}</option>
+    {% endfor %}
+
+</select>

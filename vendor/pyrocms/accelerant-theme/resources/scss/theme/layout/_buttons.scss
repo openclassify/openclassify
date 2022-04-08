@@ -1,0 +1,12 @@
+#buttons {
+    margin-bottom: $card-spacer-y*2;
+}
+
+@include media-breakpoint-down(sm) {
+    #buttons {
+        .btn {
+            display: block;
+            margin-top: $spacer-y/2;
+        }
+    }
+}

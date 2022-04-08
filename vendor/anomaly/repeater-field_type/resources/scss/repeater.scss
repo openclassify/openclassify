@@ -1,0 +1,68 @@
+.repeater-field_type {
+
+    .repeater-container {
+
+        .repeater-item {
+            margin: 1rem 0;
+            background: rgba(200, 200, 200, 0.15);
+
+            &.dragged {
+                opacity: 0.2;
+            }
+
+            &.collapsed {
+
+                .repeater-body {
+                    display: none;
+                }
+            }
+
+            .repeater-loading {
+                padding: 1rem;
+            }
+
+            .repeater-item-controls {
+                color: #ffffff;
+                background: #3e3e3e;
+                padding: .5rem 1rem; // @todo: Why do variables break here?
+
+                a {
+                    color: #ffffff;
+                }
+
+                .dropdown-menu {
+                    a {
+                        color: #55595c; // @todo: Why do variables break here?
+                    }
+                }
+
+                ul {
+                    margin: 0;
+                    padding: 0;
+                    display: inline-block;
+                }
+
+                .repeater-handle {
+                    cursor: move;
+                }
+            }
+
+            .repeater-header {
+                padding: 1rem 1rem 0;
+                border-bottom: 1px solid rgba(50, 50, 50, 0.1);
+            }
+
+            .repeater-body {
+                padding: 1rem;
+
+                .form-group {
+                    margin-bottom: 2rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                }
+            }
+        }
+    }
+}

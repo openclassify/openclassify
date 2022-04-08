@@ -1,0 +1,39 @@
+{
+    "name": "anomaly/variables-module",
+    "type": "streams-addon",
+    "description": "Manage variables and bits of content that can be used anywhere.",
+    "keywords": [
+        "pyrocms",
+        "module",
+        "variables"
+    ],
+    "homepage": "http://pyrocms.com/addons/anomaly/variables-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "docs": "https://pyrocms.com/documentation/variables-module",
+        "system": "https://pyrocms.com/forum/channels/variables-module",
+        "slack": "https://pyrocms.com/slack",
+        "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [variables-module]",
+        "source": "https://github.com/anomalylabs/variables-module"
+    },
+    "require": {
+        "anomaly/streams-platform": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\VariablesModule\\": "src/"
+        }
+    }
+}

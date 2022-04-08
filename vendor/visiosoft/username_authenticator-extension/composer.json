@@ -1,0 +1,26 @@
+{
+    "name": "visiosoft/username_authenticator-extension",
+    "type": "streams-addon",
+    "homepage": "https://openclassify.com/",
+    "authors": [
+        {
+            "name": "Visiosoft, LTD.",
+            "email": "support@visiosoft.com.tr",
+            "homepage": "https://visiosoft.com.tr/",
+            "role": "Owner"
+        },
+        {
+            "name": "Vedat Akdoğan",
+            "email": "vedat@visiosoft.com.tr",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "info@openclassify.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\UsernameAuthenticatorExtension\\": "src/"
+        }
+    }
+}

@@ -1,0 +1,40 @@
+<div {{ field_type.locale ? 'lang=' ~ field_type.locale }} class="
+            form-group
+            {{ form.hasErrors() ? form.hasError(field_type.input_name) ? 'has-danger has-error' : 'has-success' }}
+            {{ field_type.input_name }}-field
+            {{ field_type.slug }}-field_type
+            {{ field_type.hidden ? 'hidden' }}
+            ">
+
+    {% if field_type.object.label != false and field_type.config.disable_label != true %}
+        <label class="control-label" for="{{ field_type.attributes.id }}">
+            {{ field_type.object.label|raw }}
+
+            {% if field_type.required %}
+                <span class="required">*</span>
+            {% endif %}
+
+            {% if field_type.locale %}
+                {% include "streams::form/partials/translations" %}
+            {% endif %}
+        </label>
+    {% endif %}
+
+    {% if field_type.instructions %}
+        <p class="text-muted">{{ field_type.instructions|raw }}</p>
+    {% endif %}
+
+    {% if field_type.warning %}
+        <p class="help-block">
+            <span class="text-warning">
+                {{ icon('warning') }}
+                {{ field_type.warning|raw }}
+            </span>
+        </p>
+    {% endif %}
+
+    <div class="input-wrapper">
+        {{ field_type.getInput({'form': form})|raw }}
+    </div>
+
+</div>

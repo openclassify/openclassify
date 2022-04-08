@@ -1,0 +1,38 @@
+<div class="{{ section.class }}" {{ html_attributes(section.attributes) }}>
+
+    <ul class="nav nav-tabs">
+        {% for slug, tab in section.tabs %}
+            <li class="{{ loop.first ? 'active' }}">
+                <a href="#tab-{{ form.options.prefix }}{{ tab.slug }}" data-toggle="tab">
+                    {{ tab.icon ? icon(tab.icon) }}
+                    {{ trans(tab.title) }}
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <div class="tab-content">
+        {% for slug, tab in section.tabs %}
+            <div class="tab-pane {{ loop.first ? 'active' }}" id="tab-{{ form.options.prefix }}{{ tab.slug }}">
+                {% if tab.view %}
+                    {% include tab.view %}
+                {% elseif tab.html %}
+                    {{ tab.html|raw }}
+                {% else %}
+                    {% if tab.fields is empty %}
+                        <div class="form-group ">
+                            {{ trans("streams::message.no_fields_available") }}
+                        </div>
+                    {% else %}
+                        {% for field in tab.fields %}
+                            {% for field in form.fields.translations(field) %}
+                                {{ field.render({'form': form})|raw }}
+                            {% endfor %}
+                        {% endfor %}
+                    {% endif %}
+                {% endif %}
+            </div>
+        {% endfor %}
+    </div>
+
+</div>

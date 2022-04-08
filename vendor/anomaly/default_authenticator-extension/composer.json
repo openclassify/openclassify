@@ -1,0 +1,28 @@
+{
+    "name": "anomaly/default_authenticator-extension",
+    "type": "streams-addon",
+    "description": "The default user authenticator for the Users module.",
+    "keywords": [
+        "streams extension",
+        "streams addon",
+        "extension"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\DefaultAuthenticatorExtension\\": "src/"
+        }
+    }
+}

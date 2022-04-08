@@ -1,0 +1,30 @@
+{
+    "name": "nicmart/string-template",
+    "type": "library",
+    "description": "StringTemplate is a very simple string template engine for php. I've written it to have a thing like sprintf, but with named and nested substutions.",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Nicolò Martini",
+            "email": "nicmartnic@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.2"
+    },
+    "require-dev": {
+        "php-coveralls/php-coveralls": "^2",
+        "phpunit/phpunit": "^8 || ^9"
+    },
+    "autoload": {
+        "psr-4": {
+            "StringTemplate\\": "src/StringTemplate/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "StringTemplate\\Test\\": "tests/StringTemplate/"
+        }
+    }
+}

@@ -1,0 +1,25 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('module::message.choose_field') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    {% include "streams::modals/filter" %}
+    
+    {% if not fields.isEmpty() %}
+        <ul class="nav nav-pills nav-stacked">
+            {% for field in fields %}
+                <li class="nav-item">
+                    <a href="{{ url_to('admin/pages/types/assignments/' ~ id ~ '/assign/' ~ field.id) }}" class="nav-link">
+                        <strong>{{ trans(field.name) }}</strong>
+                    </a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        {{ trans('streams::message.no_results') }}
+    {% endif %}
+</div>

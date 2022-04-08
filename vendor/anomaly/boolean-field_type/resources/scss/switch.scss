@@ -1,0 +1,150 @@
+/* --------------------------------------------------------
+Style Sheet for boolean-field_type
+
+last modified: 2017/11/17 by William Åström
+author: William Åström
+email: william@pixney.com
+----------------------------------------------------------*/
+
+$boolean_field_type_transition_speed: 100ms;
+$boolean_field_type_width: 57px;
+$boolean_field_type_height: 30px;
+$boolean_field_type_border_width: 2px;
+$boolean_field_type_circle_size: $boolean_field_type_height - ($boolean_field_type_border_width * 2);
+$boolean_field_type_pos_off: ($boolean_field_type_width / 2) - $boolean_field_type_border_width;
+
+$colors: (
+        "success": #47d165,
+        "warning": #ff754b,
+        "danger": #ff3160,
+        "info": #11bef6,
+        "default": #55595c
+) !default;
+
+@function color($key: "success") {
+    @return map-get($colors, $key);
+}
+
+.boolean-field_type {
+
+    .switch {
+        position: relative;
+
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+        width: $boolean_field_type_width;
+        flex-wrap: wrap;
+        justify-content: space-between;
+
+        -webkit-user-select: none;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        -ms-user-select: none;
+    }
+
+    .switch__checkbox {
+        display: none;
+    }
+
+    .switch__label {
+
+        // Allow for inner text
+        line-height: 1.4;
+        overflow: visible;
+        text-indent: 3.5rem;
+        white-space: nowrap;
+
+        //line-height: $boolean_field_type_height;
+
+        position: relative;
+
+        display: block;
+
+        height: $boolean_field_type_height;
+        padding: 0;
+
+        cursor: pointer;
+        -webkit-transition: all $boolean_field_type_transition_speed ease-in;
+        -moz-transition: all $boolean_field_type_transition_speed ease-in;
+        -ms-transition: all $boolean_field_type_transition_speed ease-in;
+        -o-transition: all $boolean_field_type_transition_speed ease-in;
+        transition: all $boolean_field_type_transition_speed ease-in;
+
+        border: 2px solid #dcd9d9;
+        border-radius: $boolean_field_type_height;
+        background-color: #dcd9d9;
+
+        -webkit-box-flex: 0;
+        order: 1;
+        flex: 0 0 $boolean_field_type_width;
+        max-width: $boolean_field_type_width;
+    }
+
+    .switch__label:before {
+        position: absolute;
+        top: 0;
+        right: $boolean_field_type_pos_off;
+        bottom: 0;
+
+        display: block;
+
+        width: $boolean_field_type_circle_size;
+        margin: 0;
+
+        content: '';
+        -webkit-transition: all $boolean_field_type_transition_speed ease-in;
+        -moz-transition: all $boolean_field_type_transition_speed ease-in;
+        -ms-transition: all $boolean_field_type_transition_speed ease-in;
+        -o-transition: all $boolean_field_type_transition_speed ease-in;
+        transition: all $boolean_field_type_transition_speed ease-in;
+
+        border: $boolean_field_type_border_width solid #dcd9d9;
+        border-radius: $boolean_field_type_height;
+        background: #ffffff;
+    }
+
+    .switch__checkbox:checked + .switch__label {
+        background-color: #735aed;
+    }
+
+    .switch__checkbox:checked + .switch__label,
+    .switch__checkbox:checked + .switch__label:before {
+        border-color: #735aed;
+    }
+
+    .switch__checkbox:checked + .switch__label:before {
+        right: 0;
+    }
+
+    .switch__checkbox:disabled,
+    .switch__checkbox:checked:disabled {
+        & + .switch__label {
+            opacity: 0.3;
+        }
+    }
+}
+
+@each $color, $value in $colors {
+    .boolean-field_type .switch__checkbox.switch__checkbox--on-#{$color}:checked {
+        & + .switch__label,
+        & + .switch__label:before {
+            border-color: $value;
+        }
+        & + .switch__label {
+            background-color: $value;
+        }
+    }
+    .boolean-field_type .switch__checkbox.switch__checkbox--off-#{$color} {
+        & + .switch__label,
+        & + .switch__label:before {
+            border-color: $value;
+        }
+        & + .switch__label {
+            background-color: $value;
+        }
+    }
+}

@@ -1,0 +1,23 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('anomaly.module.users::message.choose_field_type') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    {% include "streams::modals/filter" %}
+
+    <ul class="nav nav-pills nav-stacked">
+        {% for field_type in field_types %}
+            <li class="nav-item">
+                <a href="{{ url_to('admin/users/fields/create?field_type=' ~ field_type.namespace) }}" class="nav-link">
+                    <strong>{{ trans(field_type.getTitle()) }}</strong>
+                    <br>
+                    <small>{{ trans(field_type.getDescription()) }}</small>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

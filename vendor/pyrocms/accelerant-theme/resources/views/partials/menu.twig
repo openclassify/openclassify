@@ -1,0 +1,11 @@
+{% import "pyrocms.theme.accelerant::macros/sections.twig" as menu %}
+
+<aside id="menu" class="scrollbar">
+
+    <ul>
+        {% for section in template.cp.sections.root().visible() %}
+            {{ menu.sections(template.cp.sections, section) }}
+        {% endfor %}
+    </ul>
+
+</aside>

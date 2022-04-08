@@ -1,0 +1,62 @@
+<div class="col-md-6 slider-box pr-0 pr-sm-3 pl-0" id="slider-box">
+    {% if blocks('ad-item-picture-block-area') is null %}
+        <div class="fotorama"
+             data-width="700"
+             data-arrows="true"
+             data-allowfullscreen="true"
+             data-ratio="3/2"
+             data-nav="thumbs"
+             data-thumbheight="48">
+
+            {% if count(adv.files) == 0 %}
+                <a href="{{ img('visiosoft.module.advs::images/no-image.png').url }}"></a>
+            {% else %}
+                {% for image in adv.getViewPhotoUrl %}
+                    <a href="{{ adv.getMediumPhotoUrl(image) }}" data-full="{{ image }}"></a>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div class="w-100 row pl-3 slider-controller-bar">
+            <div class="col-12 bg-light row m-0 py-1">
+                <div class="col-6">
+                    <a href="#" class="a-sahibinden-type" onclick="fotorama.requestFullScreen()">
+                        <i class="fas fa-search"></i>
+                        {{ trans('visiosoft.extension.sahibinden_style_provider::field.mega_photo.name') }}
+                    </a>
+                </div>
+                <div class="col-6 text-right">
+                    <button class="a-sahibinden-type{% if not adv.video_url %} text-secondary{% endif %} border-0"
+                            data-toggle="modal" data-target="#adv-video" {% if adv.video_url is null %}disabled{% endif %}>
+                        <i class="fas fa-video"></i>
+                        {{ trans('visiosoft.extension.sahibinden_style_provider::field.video.name') }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {{ blocks('ad-item-picture-block-area') }}
+    {% endif %}
+</div>
+{% if adv.video_url %}
+    <div class="modal fade video-wrapper-modal" id="adv-video" tabindex="-1" role="dialog"
+         aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="close-modal text-right">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">X
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <video controls loop class="img-responsive"
+                           style="text-align: center; width: 100%">
+                        <source src="{{ adv.video_url }}" class="video-src"
+                                type="video/mp4"/>
+                    </video>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ asset_add("scripts.js", "visiosoft.module.cloudinary::js/close-btn.js") }}
+{% endif %}
+{{ asset_add("scripts.js", "visiosoft.module.advs::js/fotorama.js") }}
+{{ asset_add("scripts.js", "visiosoft.extension.sahibinden_style_provider::js/slider.js") }}

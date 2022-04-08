@@ -1,0 +1,29 @@
+@mixin form-control-validation($color) {
+    // Color the label and help text
+    .form-control-feedback,
+    .form-control-label,
+    .form-check-label,
+    .form-check-inline,
+    .custom-control {
+        color: $color;
+    }
+
+    // Set the border and box shadow on specific inputs to match
+    .form-control {
+        border-color: $color;
+
+        // THIS IS A BUG FIX:
+        @if $enable-shadows {
+            &:focus {
+                box-shadow: $input-box-shadow, 0 0 6px lighten($color, 20%);
+            }
+        }
+    }
+
+    // Set validation states also for addons
+    .input-group-addon {
+        color: $color;
+        border-color: $color;
+        background-color: lighten($color, 40%);
+    }
+}

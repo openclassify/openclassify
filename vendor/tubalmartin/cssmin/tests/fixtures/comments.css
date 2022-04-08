@@ -1,0 +1,55 @@
+/*! test *//*! $LastChangedRevision: 81 $ $LastChangedDate: 2009-05-27 17:41:02 +0100 (Wed, 27 May 2009) $ */
+/*!
+$Header: /temp/dirname/filename.css 3 2/02/08 3:37p JSmith $
+*/
+/*! special */body{  }
+/*! special */
+body {
+
+}
+a{
+    /*! this comment, although important, will be removed because it's inside a declaration block */    
+    
+    color:blue;  
+    /*! test */  
+    width :5px;
+    height : 5px /* test */  
+;
+    /* test */   
+    margin: 0 0 0 0
+    /* test */    
+}
+
+/*!************88****
+ Preserving comments
+    as they are
+ ********************
+ Keep the initial !
+ *******************/     
+#yo {
+    ma: "ma";
+}
+/*!
+I said
+pre-
+serve! */  
+
+a{ color:red }/*! imp*/  b{test:foo}
+  /*! imp */  
+/* Some comment *\/*//* Another comment    */
+html >/**/ body p {
+    color: blue;
+    /*a comment right before the IE star hack*/*width:auto;
+    height:2%;
+}
+
+/* te " st */
+a{a:1}
+/*!"preserve" me*/
+b{content: "/**/"}/* comment in string */
+/* quite " quote ' \' \" */
+/* ie mac comment hack will not be preserved \*/
+c {c : 3}
+/* end hiding *//*! imp */  
+/* unclosed comment at EOF issue
+

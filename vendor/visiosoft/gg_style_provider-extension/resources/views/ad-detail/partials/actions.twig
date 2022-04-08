@@ -1,0 +1,81 @@
+{{ addBlock('ad-detail/title/action', {'adv': adv}, ['favs'])|raw }}
+
+{% if is_module_enabled('comparisons') %}
+	{% if setting_value('visiosoft.module.comparisons::display_on_front_end') %}
+		<div class="compare-menu border rounded ml-3 p-4 pb-5 hide" id="compare-box">
+			<form action="{{ url_route('visiosoft.module.comparisons::compare_list') }}" method="post">
+				<div class="compare-header">{{ trans("visiosoft.module.comparisons::field.comparisons") }}</div>
+				<hr class="mt-2">
+				<div class="products" id="compare-elements"></div>
+				<div class="p-b">
+					<button type="submit" name="" id="" class="btn product-button">
+						<span class="ml-2"> {{ trans("visiosoft.module.comparisons::field.comparisons") }} </span>
+					</button>
+				</div>
+			</form>
+		</div>
+
+		<!-- Compare Btn -->
+		<a href="javascript:void(0)"
+		   class="comparison feature"
+		   data-adv="{{ adv.id }}"
+		   data-title="{{ adv.name | slice(0, 20) }}"
+		   data-price="{{ adv.price }} {{ adv.currency }}"
+		   data-img="{{
+		   adv.cover_photo starts with 'http' or adv.cover_photo starts with '/' ?
+		   adv.cover_photo :
+		   '/' ~ adv.cover_photo
+		   }}">
+			<div class="feature-img">
+				{{ img('visiosoft.extension.gg_style_provider::images/comparisons.svg').data|raw }}
+			</div>
+			<div class="small mt-2">{{ trans('visiosoft.module.comparisons::field.comparisons') }}</div>
+		</a>
+
+		{{ asset_add("styles.css", "visiosoft.module.comparisons::css/style.css") }}
+		{{ asset_add("scripts.js", "visiosoft.module.comparisons::js/script.js") }}
+	{% endif %}
+{% endif %}
+
+{% if is_module_enabled('complaints') %}
+	<a href="javascript:void(0)" class="feature complaints pull-right" id="complaints">
+		<div class="feature-img">
+			{{ img('visiosoft.extension.gg_style_provider::images/complaints.svg').data|raw }}
+		</div>
+		<div class="small mt-2">{{ trans('visiosoft.module.complaints::field.report.name') }}</div>
+	</a>
+
+	{%  include "visiosoft.module.complaints::ad-detail/title/modal" %}
+{% endif %}
+
+<button class="media-share position-relative bg-transparent border-0">
+	<a href="#" class="feature share-button">
+		<div class="feature flex-row bg-light rounded position-absolute media-buttons">
+			<a href="https://www.facebook.com/sharer/sharer.php?u={{ url_current()|url_encode }}"
+			   class="a-sahibinden-type pl-2"
+			   onclick="javascript:window.open(this.href, '', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=300,width=600');return false;"
+			   target="_blank">
+				<i class="fab fa-facebook color-facebook-icon"></i>
+			</a>
+			<a href="http://twitter.com/share?url={{ url_current()|url_encode }}"
+			   class="a-sahibinden-type pl-2">
+				<i class="fab fa-twitter color-twitter-icon"></i>
+			</a>
+			<a href="https://www.linkedin.com/sharing/share-offsite/?url={{ app.request.uri }}"
+			   target="_blank" class="a-linkedin-type pl-2">
+				<i class="fab fa-linkedin"></i>
+			</a>
+			<a href="https://wa.me/?text={{ setting_value('visiosoft.theme.sahibinden::shareWhatsappMsg')|url_encode }}%20{{ app.request.uri|url_encode }}"
+			   target="_blank" class="a-sahibinden-type pl-2">
+				<i class="fab fa-whatsapp color-whatsapp-icon"></i>
+			</a>
+		</div>
+
+		<div class="feature-img">
+			{{ img('visiosoft.extension.gg_style_provider::images/share.svg').data|raw }}
+		</div>
+		<div class="small mt-2">{{ trans('visiosoft.extension.gg_style_provider::field.share') }}</div>
+	</a>
+</button>
+
+

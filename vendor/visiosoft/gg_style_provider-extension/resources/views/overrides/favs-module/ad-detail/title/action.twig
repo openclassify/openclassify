@@ -1,0 +1,37 @@
+<a href="{{ auth_check() ? '#ad-fav-adv' : url_route('anomaly.module.users::login') }}" class="feature gg-add-fav add-fav"
+   id="adv-{{ params.adv.id }}" data-type="adv" rel="nofollow">
+    <div class="feature-img">
+        <i class="adv-fav-icon fa-xs"></i>
+    </div>
+    <div class="small mt-2">{{ trans('visiosoft.module.favs::field.add_to_favorites') }}</div>
+    <div class="d-none flex-column widthSpecial shadow font-apple position-absolute my-favs-area">
+        <div class="d-flex flex-column roundedThree p-3 w-100 heightSpecial">
+            <div class="d-flex align-items-center justify-content-between mt-2">
+                <div class="d-flex align-items-center">
+                    <div class="line leftLine_One"></div>
+                    <span class="fw-600 fs-14 ml-3">{{ trans('visiosoft.extension.gg_style_provider::field.my_favs') }}</span>
+                </div>
+                <span class="like-icon">
+                    {{ img('visiosoft.extension.gg_style_provider::images/like.svg').data|raw }}
+                </span>
+            </div>
+        </div>
+        <div class="border-top heightSpecial_Two d-flex align-items-center justify-content-start text-left">
+            <ul class="my-fav-list px-3 pt-2"></ul>
+        </div>
+    </div>
+</a>
+
+
+<script>
+    let addToFavAdsTrans = "{{ trans('visiosoft.module.favs::field.add_favorite_ad') }}";
+    let addToFavSellersTrans = "{{ trans('visiosoft.module.favs::field.add_favorite_seller') }}";
+    let removeFromFavAdsTrans = "{{ trans('visiosoft.module.favs::field.remove_favorite_ad') }}";
+    let removeFromFavSellersTrans = "{{ trans('visiosoft.module.favs::field.remove_favorite_seller') }}";
+</script>
+{% if auth_check() %}
+    {{ asset_add("scripts.js", "visiosoft.module.favs::assets/js/add-remove-fav.js") }}
+{% endif %}
+{{ asset_add("styles.css", "visiosoft.extension.gg_style_provider::css/favs.css") }}
+{{ asset_add("scripts.js", "visiosoft.module.favs::js/favs.js") }}
+{{ asset_add("scripts.js", "visiosoft.extension.gg_style_provider::js/favs.js") }}

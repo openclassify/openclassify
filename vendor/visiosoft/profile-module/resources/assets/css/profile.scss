@@ -1,0 +1,181 @@
+.profile-section {
+	h3 {
+		font-size: 1.25rem;
+		color: #707070;
+		@media only screen and (min-width: 768px) {
+			font-size: 1.5rem;
+		}
+
+		& + p {
+			color: #707070;
+			font-size: 13px;
+			@media only screen and (min-width: 768px) {
+				font-size: 15px;
+			}
+		}
+	}
+
+	.nav-tabs {
+		border-bottom: 1px solid #dee2e6;
+		padding-bottom: 10px;
+	}
+
+	.nav-link {
+		border: none;
+		border-radius: 0;
+		font-size: 16px;
+		color: #BCBDC3;
+		padding: 0;
+		margin-bottom: 5px;
+		margin-top: 15px;
+		outline: none;
+
+		&.active {
+			font-size: 17px;
+			font-weight: bold;
+			color: #505050;
+			background-color: transparent;
+
+			svg path {
+				fill: #000;
+			}
+		}
+
+		&:not(:last-child) {
+			border-right: 1px solid #dee2e6;
+		}
+
+		svg {
+			margin-right: 5px;
+			width: 15px;
+
+			path {
+				fill: rgba(0, 0, 0, .4);
+			}
+		}
+	}
+}
+
+.tab-content {
+	color: #707070;
+
+	#nav-profile {
+		.username {
+			font-size: 19px;
+			font-weight: 600;
+			@media (max-width: 992px) {
+				justify-content: center;
+			}
+		}
+
+		.last-login {
+			font-weight: 400;
+			@media (max-width: 992px) {
+				justify-content: center;
+			}
+		}
+
+		img {
+			width: 130px;
+			height: 130px;
+			object-fit: cover;
+			@media (max-width: 992px) {
+				display: flex;
+				justify-content: center;
+			}
+		}
+
+		.profile--form--area {
+			display: flex;
+			justify-content: space-between;
+			@media (max-width: 992px) {
+				display: block;
+			}
+
+			.form-group {
+				width: 100%;
+
+				&:not(:last-child) {
+					margin-right: 10px;
+				}
+
+				input {
+					border-radius: 0;
+					font-size: 13px;
+					border: 1px solid #E5E5E5;
+					@media (max-width: 992px) {
+						width: 100%;
+					}
+				}
+			}
+		}
+
+		.account--disable--content {
+			width: 80%;
+			background-color: #f3f5f6;
+			border-radius: 20px;
+			margin-top: 50px;
+			padding: 10px;
+			font-size: .7em;
+			@media (max-width: 992px) {
+				width: 100%;
+				height: auto;
+			}
+
+			button, a {
+				font-size: 14px;
+				white-space: nowrap;
+				border-radius: 13px;
+			}
+		}
+
+		form {
+			.new-profile-image {
+				top: -10px;
+				left: -10px;
+				cursor: pointer;
+			}
+			.file-field {
+				visibility: hidden;
+				height: 0;
+				width: 0;
+
+				#file-modal {
+					visibility: visible;
+				}
+			}
+		}
+	}
+
+	#nav-details {
+		.profile-pic {
+			.input-wrapper {
+				display: flex;
+				align-items: center;
+				flex-wrap: wrap;
+
+				.file-rows-table {
+					flex: 1 1 auto;
+					margin-left: 1rem;
+
+					.text-lg-right {
+						text-align: right;
+						vertical-align: middle;
+					}
+
+					.btn-danger {
+						display: none;
+					}
+				}
+			}
+		}
+
+		.birthday-field .input-group-addon {
+			display: none;
+		}
+
+		.education-field > .tagify, .state_of_education-field > .tagify, .profession-field > .tagify {
+			height: initial;
+		}
+	}
+}

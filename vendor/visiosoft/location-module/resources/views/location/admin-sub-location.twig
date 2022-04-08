@@ -1,0 +1,54 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    {% include "theme::partials/messages" %}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+
+    {% if app.request.get('cities') is not empty %}
+        {% set parent = "country" %}
+    {% elseif app.request.get('districts') is not empty %}
+        {% set parent = "city" %}
+    {% elseif app.request.get('neighborhoods') is not empty %}
+        {% set parent = "district" %}
+    {% elseif app.request.get('village') is not empty %}
+        {% set parent = "neighborhood" %}
+    {% endif %}
+
+    {% set redirect_parameter = app.request.query|keys|first %}
+
+    <div class="container-fluid">
+        {% set form = form('location', app.request.query|keys|first).
+            entry(id).
+            actions({'save':{}}).
+            redirect('/admin/location/'~redirect_parameter~'?'~parent~"="~app.request.get(redirect_parameter))
+            .get() %}
+        {{ form.open({
+            'class': 'form ' ~ form.options.class ,
+            'enctype': 'multipart/form-data',
+        })|raw }}
+        <div class="card">
+            <div class="card-block">
+                <fieldset>
+                    <div class="section">
+                        {% set fields = form.fields.base().pluck('field_name').all() %}
+                        <div class="field-group name">
+                            {% for field in form.fields.translations('name') %}
+                                {{ field.render({'form': form})|raw }}
+                            {% endfor %}
+                        </div>
+                        {{ form.fields.slug|raw }}
+                        <input type="hidden" name="parent_{{ parent }}_id" value="{{ app.request.get(redirect_parameter) }}">
+                        {{ form.fields.order|raw }}
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+        <div class="controls card">
+            <div class="card-block">
+                {{ form.actions|raw }}
+            </div>
+        </div>
+        {{ form.close|raw }}
+    </div>
+{% endblock %}

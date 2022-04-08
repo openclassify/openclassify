@@ -1,0 +1,34 @@
+{{ asset_add("scripts.js", "anomaly.field_type.slug::js/jquery.slugify.js") }}
+{{ asset_add("scripts.js", "anomaly.field_type.slug::js/input.js") }}
+
+
+<div class="{{ field_type.config.prefix or field_type.config.suffix ? 'input-group' }}">
+
+    {% if field_type.config.prefix %}
+        <span class="input-group-addon">
+            {{ field_type.config.prefix }}
+        </span>
+    {% endif %}
+
+    <input
+            type="text"
+            value="{{ field_type.value }}"
+            name="{{ field_type.input_name }}"
+            data-type="{{ field_type.config.type }}"
+            placeholder="{{ field_type.placeholder }}"
+            data-slugify="{{ field_type.config.slugify }}"
+            data-always_slugify="{{ field_type.config.always_slugify }}"
+            data-lowercase="{{ field_type.config.lowercase }}"
+            {{ html_attributes(field_type.attributes) }}
+            {{ field_type.disabled ? 'disabled' }}
+            {{ field_type.readonly ? 'readonly' }}>
+
+
+    {% if field_type.config.suffix %}
+        <span class="input-group-addon">
+            {{ field_type.config.suffix }}
+        </span>
+    {% endif %}
+
+
+</div>

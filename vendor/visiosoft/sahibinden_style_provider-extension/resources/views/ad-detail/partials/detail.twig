@@ -1,0 +1,77 @@
+{% set district = getDistrict(adv.district.getObject().value) %}
+{% set neighborhood = getNeighborhood(adv.neighborhood.getObject().value) %}
+<div class="slider-text">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 offered-field offered-row p-0">
+        <h3 class="ad-price base-price">
+            {% if not hidePrice %}
+                {% if not setting_value('visiosoft.module.advs::hide_zero_price') or adv.price != "0" %}
+                    {% if adv.status == 'sold' %}
+                        <small class="text-black-50">{{ currency_format(adv.price,adv.currency) }}</small>
+                        <b class="text-danger">{{ trans('visiosoft.module.advs::field.sold') }}</b>
+                    {% else %}
+                        <b>{{ currency_format(adv.price,adv.currency) }}</b>
+                    {% endif %}
+                {% else %}
+                    <h6 class="a-sahibinden-type">
+                        {{ trans('visiosoft.extension.sahibinden_style_provider::field.ask_for_price') }}
+                    </h6>
+                {% endif %}
+            {% endif %}
+
+            {{ addBlock('ad-detail/details',{'adv':adv, 'theme':'sahibinden', 'options':options, 'configurations':configurations})|raw }}
+
+            <!-- priceField with Block -->
+            {{ addBlock('ad-detail/priceField',{'adv':adv})|raw }}
+            <!-- priceField with Block -->
+
+        </h3>
+        <h2 class="d-none d-sm-block {{ adv.is_get_adv == "1" and adv.stock != "0" and adv.stock is not empty ? 'border-0': false }}">
+            {% set lastCatId = categories|last['id'] %}
+            {% if setting_value('visiosoft.extension.sahibinden_style_provider::show_country') %}
+                {{ adv.country_name }}
+                <span>/</span>
+            {% endif %}
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?city[]={{ adv.city }}&cat={{ lastCatId }}"
+               class="link-unstyled">
+                {{ adv.city_name }}
+            </a>
+            {% if district %}
+                <span>/</span>
+                <a href="{{ url_route('visiosoft.module.advs::list') }}?city[]={{ adv.city }}&district[]={{ district.id }}&cat={{ lastCatId }}"
+                   class="link-unstyled">
+                    {{ district.name }}
+                </a>
+            {% endif %}
+            {% if neighborhood %}
+                <span>/</span>
+                <a href="{{ url_route('visiosoft.module.advs::list') }}?city[]={{ adv.city }}&district[]={{ district.id }}&neighborhood[]={{ neighborhood.id }}&cat={{ lastCatId }}"
+                   class="link-unstyled">
+                    {{ neighborhood.name }}
+                </a>
+            {% endif %}
+        </h2>
+    </div>
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 p-0 d-none d-sm-block">
+        <ul class="list-unstyled classified-detail">
+            {% if setting_value('visiosoft.module.advs::market_place') %}
+                <li class="row m-0">
+                    <div class="col-md-6 p-0 m-0 font-weight-bold">{{ trans('visiosoft.module.advs::field.ad_id') }}</div>
+                    <div class="col-md-6 p-0 m-0 text-danger">{{ adv.id }}</div>
+                </li>
+                {% if not setting_value('visiosoft.module.advs::ads_date_hidden') %}
+                    <li class="row m-0">
+                        <div class="col-md-6 p-0 m-0 font-weight-bold">{{ trans('visiosoft.extension.sahibinden_style_provider::field.ad_date.name') }}</div>
+                        <div class="col-md-6 p-0 m-0">{{ adv.created_at|date(config_get('streams::datetime.date_format')) }}</div>
+                    </li>
+                {% endif %}
+            {% endif %}
+            {{ addBlock('ad-detail/content',{'features_detail':features,'adv':adv})|raw }}
+            {% if setting_value('visiosoft.extension.sahibinden_style_provider::show_view_count') %}
+                <li class="row m-0">
+                    <div class="col-md-6 p-0 m-0 font-weight-bold">{{ trans('visiosoft.module.advs::field.views') }}</div>
+                    <div class="col-md-6 p-0 m-0 font-weight-bold viewed-ad-count">{{ adv.count_show_ad }}</div>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+</div>

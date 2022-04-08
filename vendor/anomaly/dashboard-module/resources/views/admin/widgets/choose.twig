@@ -1,0 +1,24 @@
+<div class="modal-header">
+    <button class="close" data-dismiss="modal">
+        <span>&times;</span>
+    </button>
+    <h4 class="modal-title">{{ trans('module::message.choose_widget') }}</h4>
+</div>
+
+<div class="modal-body">
+
+    {% include "streams::modals/filter" %}
+
+    <ul class="nav nav-pills nav-stacked">
+        {% for widget in widgets %}
+            <li class="nav-item">
+                <a href="{{ url_to('admin/dashboard/widgets/create?widget=' ~ widget.namespace) }}"
+                   class="nav-link">
+                    <strong>{{ trans(widget.getTitle()) }}</strong>
+                    <br>
+                    <small>{{ trans(widget.getDescription()) }}</small>
+                </a>
+            </li>
+        {% endfor %}
+    </ul>
+</div>

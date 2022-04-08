@@ -1,0 +1,106 @@
+@font-face {
+	font-family: "Cairo";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/cairo/Cairo-ExtraLight.ttf') }}") format('truetype');
+	font-weight: 200;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Cairo";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/cairo/Cairo-Light.ttf') }}") format('truetype');
+	font-weight: 300;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Cairo";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/cairo/Cairo-Regular.ttf') }}") format('truetype');
+	font-weight: 400;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Cairo";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/cairo/Cairo-SemiBold.ttf') }}") format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Cairo";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/cairo/Cairo-Bold.ttf') }}") format('truetype');
+	font-weight: 700;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Cairo";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/cairo/Cairo-Black.ttf') }}") format('truetype');
+	font-weight: 900;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: "Playfair Display";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/playfairDisplay/PlayfairDisplay-Italic.ttf') }}") format('truetype');
+	font-weight: 400;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Playfair Display";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/playfairDisplay/PlayfairDisplay-BoldItalic.ttf') }}") format('truetype');
+	font-weight: 700;
+	font-style: italic;
+}
+
+@font-face {
+	font-family: "Poppins";
+	src: url("{{ asset_path('visiosoft.theme.biolife::fonts/poppins/Poppins-SemiBold.ttf') }}") format('truetype');
+	font-weight: 600;
+	font-style: normal;
+}
+
+#main {
+	margin-top: 0 !important;
+}
+
+.hidden {
+	display: none;
+}
+
+.line-height-normal {
+	line-height: normal;
+}
+
+.compare-btn {
+	background-color: transparent !important;
+	padding: 0!important;
+	font-weight: normal!important;
+}
+
+.fa-heart.fas,
+.compare-btn:hover {
+	color: #05a503!important;
+}
+
+.nice-select .current {
+	color: #0b0b0b;
+}
+
+.cart-items ul.products {
+	display: block;
+}
+
+.btn.btn_call_quickview {
+	width: auto !important;
+	font-size: 14px !important;
+	color: #fff !important;
+}
+
+.single-line {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+

@@ -1,0 +1,21 @@
+#dashboard .columns {
+  min-height: 100%;
+}
+
+#dashboard .columns .column .placeholder {
+  width: 100%;
+  margin-bottom: 9px;
+  display: inline-block;
+  border-radius: 0.17rem;
+  border: 2px dashed #55595c;
+}
+
+#dashboard .columns .column .widget.dragged {
+  opacity: 0.5;
+  z-index: 2001;
+}
+
+#dashboard .columns .column .widget .handle {
+  cursor: move;
+}
+

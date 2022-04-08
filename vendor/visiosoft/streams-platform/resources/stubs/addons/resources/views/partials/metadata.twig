@@ -1,0 +1,46 @@
+{#
+  The following 2 meta tags *must* come first in the <head>
+  to consistently ensure proper document rendering.
+  Any other head element should come *after* these tags.
+#}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0,shrink-to-fit=no">
+
+<!-- Locale -->
+<meta http-equiv="Content-Language" content="{{ config('app.locale') }}">
+
+<!-- To the Future! -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+<!-- Meta Tags -->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="generator" content="{{ config_get('streams::distribution.name') }}"/>
+<meta name="description" content="{{ trans(template.meta_description) }}"/>
+
+{{ template.includes.render('meta')|raw }}
+
+<title>
+    {{ setting_value('streams::name', config_get('streams::distribution.name')) }}
+    &#8250;
+    {{ trans(template.meta_title) }}
+</title>
+
+<!-- Favicon -->
+{#{{ favicons("theme::img/favicon.png") }}#}
+
+{# Important!! #}
+{{ constants() }}
+
+{# Base Theme Components #}
+{{ asset_add("theme.css", "theme::css/bootstrap.css") }}
+
+{# Specific Build Files #}
+{{ asset_add("build.css", "theme::css/theme.css") }}
+
+{# Include Asset Collections #}
+<style type="text/css">
+    {{ asset_inline("theme.css", ["min"]) }}
+    {{ asset_inline("build.css", ["parse", "min"]) }}
+</style>
+
+{{ template.includes.render('head')|raw }}

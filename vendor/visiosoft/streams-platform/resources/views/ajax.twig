@@ -1,0 +1,15 @@
+<script type="text/javascript">
+    var IS_AJAX = true;
+</script>
+
+{% block content %}
+    {{ content|raw }}
+{% endblock %}
+
+{% for path in asset_paths("styles.css") %}
+    {{ html_style(path) }}
+{% endfor %}
+
+{% for path in asset_paths("scripts.js") %}
+    {{ html_script(path) }}
+{% endfor %}

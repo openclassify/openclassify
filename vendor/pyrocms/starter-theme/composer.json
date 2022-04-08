@@ -1,0 +1,28 @@
+{
+    "name": "pyrocms/starter-theme",
+    "type": "streams-addon",
+    "description": "The starter theme is a basic HTML5 Bootstrap theme based on the Freelance Theme from http://startbootstrap.com/template-overviews/freelancer/",
+    "keywords": [
+        "theme",
+        "streams theme",
+        "theme"
+    ],
+    "homepage": "http://pyrocms.com/",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "email": "support@pyrocms.com",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        }
+    ],
+    "support": {
+        "email": "support@pyrocms.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Pyrocms\\StarterTheme\\": "src/"
+        }
+    }
+}

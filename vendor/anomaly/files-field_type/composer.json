@@ -1,0 +1,39 @@
+{
+    "name": "anomaly/files-field_type",
+    "type": "streams-addon",
+    "description": "A multiple files upload field type.",
+    "keywords": [
+        "pyrocms",
+        "field type",
+        "files"
+    ],
+    "homepage": "http://pyrocms.com/addons/anomaly/files-field_type",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "docs": "https://pyrocms.com/documentation/files-field-type",
+        "forum": "https://pyrocms.com/forum/channels/files-field-type",
+        "slack": "https://pyrocms.com/slack",
+        "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [files-field-type]",
+        "source": "https://github.com/anomalylabs/files-field-type"
+    },
+    "require": {
+        "anomaly/streams-platform": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\FilesFieldType\\": "src/"
+        }
+    }
+}

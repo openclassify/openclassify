@@ -1,0 +1,1 @@
+# Private Storage Adapter Extension

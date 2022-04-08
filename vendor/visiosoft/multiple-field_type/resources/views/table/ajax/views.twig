@@ -1,0 +1,14 @@
+{% if not table.views.isEmpty() %}
+    <nav class="navbar navbar-light">
+        <div class="nav navbar-nav">
+            {% for view in table.views %}
+                <a
+                        class="ajax nav-item nav-link {{ view.class }} {{ view.isActive() ? 'active' }}"
+                        {{ html_attributes(view.attributes) }}>
+                    {{ view.icon ? icon(view.icon)|raw }}
+                    {{ trans(view.getText()) }}
+                </a>
+            {% endfor %}
+        </div>
+    </nav>
+{% endif %}

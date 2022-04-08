@@ -1,0 +1,20 @@
+{{ asset_add('scripts.js', 'anomaly.field_type.encrypted::js/input.js') }}
+
+<input
+        class="form-control"
+        name="{{ field_type.input_name }}"
+        value="{{ field_type.presenter.decrypted }}"
+        placeholder="{{ trans(field_type.placeholder) }}"
+        type="{{ field_type.config.show_text ? 'text' : 'password' }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>
+
+{% if not field_type.config.show_text %}
+    <a href="#" data-toggle="text">
+        <small>
+            {{ icon('fa fa-toggle-' ~ (field_type.config.show_text ? 'on' : 'off')) }}
+            {{ trans('anomaly.field_type.encrypted::input.show_text') }}
+        </small>
+    </a>
+{% endif %}

@@ -1,0 +1,11 @@
+{% extends layout('users') %}
+
+{% block content %}
+    <div class="container">
+
+        <div class="col-lg-6 col-lg-offset-3">
+            {{ form('register').redirect(request_get('redirect', '/'))|raw }}
+        </div>
+
+    </div>
+{% endblock %}

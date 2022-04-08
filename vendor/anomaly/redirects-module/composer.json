@@ -1,0 +1,39 @@
+{
+    "name": "anomaly/redirects-module",
+    "type": "streams-addon",
+    "description": "Manage redirects from one URL or domain to another.",
+    "keywords": [
+        "redirects",
+        "pyrocms",
+        "module"
+    ],
+    "homepage": "http://pyrocms.com/addons/anomaly/redirects-module",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "PyroCMS, Inc.",
+            "homepage": "http://pyrocms.com/",
+            "role": "Owner"
+        },
+        {
+            "name": "Ryan Thompson",
+            "homepage": "http://ryanthepyro.com/",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "docs": "https://pyrocms.com/documentation/redirects-module",
+        "forum": "https://pyrocms.com/forum/channels/redirects-module",
+        "slack": "https://pyrocms.com/slack",
+        "issues": "https://github.com/pyrocms/pyrocms/issues?q=is:issue is:open [redirects-module]",
+        "source": "https://github.com/anomalylabs/redirects-module"
+    },
+    "require": {
+        "anomaly/streams-platform": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\RedirectsModule\\": "src/"
+        }
+    }
+}

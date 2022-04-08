@@ -1,0 +1,31 @@
+{
+    "name": "visiosoft/connect-module",
+    "type": "streams-addon",
+    "description": "Securely expose Streams data to an extensible public API.",
+    "homepage": "https://openclassify.com/",
+    "authors": [
+        {
+            "name": "Visiosoft, LTD.",
+            "email": "support@visiosoft.com.tr",
+            "homepage": "https://visiosoft.com.tr/",
+            "role": "Owner"
+        },
+        {
+            "name": "Vedat Akdoğan",
+            "email": "vedat@visiosoft.com.tr",
+            "role": "Developer"
+        }
+    ],
+    "support": {
+        "email": "info@openclassify.com"
+    },
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\ConnectModule\\": "src/"
+        }
+    },
+    "require": {
+        "laravel/passport": "v10.3.2",
+        "visiosoft/username_authenticator-extension": "*"
+    }
+}

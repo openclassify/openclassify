@@ -1,0 +1,15 @@
+<select
+        name="{{ field_type.input_name }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>
+
+    {% if not field_type.required %}
+        <option>{{ trans(field_type.placeholder) }}</option>
+    {% endif %}
+
+    {% for value, option in field_type.options %}
+        <option value="{{ value }}" {{ value == field_type.value.namespace ? 'selected' }}>{{ trans(option) }}</option>
+    {% endfor %}
+
+</select>

@@ -1,0 +1,9 @@
+{
+    "name": "anomaly/test_admin-theme",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Anomaly\\TestAdminTheme\\": "src/"
+        }
+    }
+}
