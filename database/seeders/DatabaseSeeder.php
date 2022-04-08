@@ -86,48 +86,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'category_icon',
                 'disk' => $disk,
             ]);
-        };
-
-        //Footer Link
-        LinkModel::query()->forceDelete();
-        $repository = new EntryRepository();
-        $repository->setModel(new UrlLinkTypeModel());
-        $menu = $this->menus->findBySlug('footer');
-
-
-        $openclassify = $repository->create(
-            [
-                'en' => [
-                    'title' => 'OpenClassify.com',
-                ],
-                'url' => 'https://openclassify.com/',
-            ]
-        );
-        $visiosoft = $repository->create(
-            [
-                'en' => [
-                    'title' => 'Visiosoft Inc.',
-                ],
-                'url' => 'https://visiosoft.com.tr/',
-            ]
-        );
-
-        LinkModel::query()->create(
-            [
-                'menu' => $menu,
-                'target' => '_blank',
-                'entry' => $openclassify,
-                'type' => 'anomaly.extension.url_link_type',
-            ]
-        );
-        LinkModel::query()->create(
-            [
-                'menu' => $menu,
-                'target' => '_blank',
-                'entry' => $visiosoft,
-                'type' => 'anomaly.extension.url_link_type',
-            ]
-        );
+        }
 
         $this->call(WidgetSeeder::class);
 
@@ -145,7 +104,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'ads_excel',
                 'disk' => $disk,
             ]);
-        };
+        }
 
 
         if ($images_folder = $this->folders->findBySlug('images')) {
@@ -172,7 +131,7 @@ class DatabaseSeeder extends Seeder
                     'ico', 'png',
                 ],
             ]);
-        };
+        }
 
         //Banner Image Folder
         if (is_null($this->folders->findBy('slug', 'banner_images'))) {
@@ -207,7 +166,7 @@ class DatabaseSeeder extends Seeder
                     'pdf', 'doc', 'docx', 'xls', 'xlsx',
                 ],
             ]);
-        };
+        }
 
         //Demodata Seeder
         if (is_module_installed('visiosoft.module.demodata')) {
