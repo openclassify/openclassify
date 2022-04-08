@@ -4,16 +4,16 @@ namespace Database\Seeders;
 
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
-use Anomaly\NavigationModule\Link\LinkModel;
 use Anomaly\NavigationModule\Menu\Contract\MenuRepositoryInterface;
-use Anomaly\Streams\Platform\Entry\EntryRepository;
-use Anomaly\UrlLinkTypeExtension\UrlLinkTypeModel;
 use Anomaly\UsersModule\Role\Contract\RoleRepositoryInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
+use Illuminate\Support\Facades\DB;
+use Symfony\Component\Console\Input\ArgvInput;
 use Visiosoft\AdvsModule\Adv\Command\DeleteInstaller;
 use WidgetSeeder;
 use ZipArchive;
@@ -53,7 +53,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-
         $admin = $this->roles->findBySlug('admin');
 
         $this->users->unguard();
@@ -87,7 +86,12 @@ class DatabaseSeeder extends Seeder
                 'disk' => $disk,
             ]);
         }
-
+        $application_reference = (new ArgvInput())->getParameterOption('--app', env('APPLICATION_REFERENCE', 'default'));
+        $settings = str_replace('{application_reference}', $application_reference,
+            file_get_contents(realpath(dirname(__DIR__)) . '/seeders/settings.sql'));
+        Model::unguard();
+        DB::unprepared($settings);
+        Model::reguard();
         $this->call(WidgetSeeder::class);
 
         //Delete Installer
