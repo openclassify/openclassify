@@ -4,18 +4,14 @@ namespace Database\Seeders;
 
 use Anomaly\FilesModule\Disk\Contract\DiskRepositoryInterface;
 use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
-use Anomaly\NavigationModule\Link\LinkModel;
 use Anomaly\NavigationModule\Menu\Contract\MenuRepositoryInterface;
-use Anomaly\Streams\Platform\Entry\EntryRepository;
-use Anomaly\UrlLinkTypeExtension\UrlLinkTypeModel;
 use Anomaly\UsersModule\Role\Contract\RoleRepositoryInterface;
 use Anomaly\UsersModule\User\Contract\UserRepositoryInterface;
 use Anomaly\UsersModule\User\UserActivator;
 use Illuminate\Console\Command;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Seeder;
 use Anomaly\DashboardModule\Widget\Contract\WidgetRepositoryInterface;
-use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Artisan;
 use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\ArgvInput;
 use Visiosoft\AdvsModule\Adv\Command\DeleteInstaller;
@@ -57,7 +53,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
 
-
         $admin = $this->roles->findBySlug('admin');
 
         $this->users->unguard();
@@ -90,84 +85,17 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'category_icon',
                 'disk' => $disk,
             ]);
-        };
-
-        //Footer Link
-        LinkModel::query()->forceDelete();
-        $repository = new EntryRepository();
-        $repository->setModel(new UrlLinkTypeModel());
-        $menu = $this->menus->findBySlug('footer');
-
-
-        $openclassify = $repository->create(
-            [
-                'en' => [
-                    'title' => 'OpenClassify.com',
-                ],
-                'url' => 'https://openclassify.com/',
-            ]
-        );
-        $visiosoft = $repository->create(
-            [
-                'en' => [
-                    'title' => 'Visiosoft Inc.',
-                ],
-                'url' => 'https://visiosoft.com.tr/',
-            ]
-        );
-
-        LinkModel::query()->create(
-            [
-                'menu' => $menu,
-                'target' => '_blank',
-                'entry' => $openclassify,
-                'type' => 'anomaly.extension.url_link_type',
-            ]
-        );
-        LinkModel::query()->create(
-            [
-                'menu' => $menu,
-                'target' => '_blank',
-                'entry' => $visiosoft,
-                'type' => 'anomaly.extension.url_link_type',
-            ]
-        );
-
-        $repository = "https://raw.githubusercontent.com/openclassify/Openclassify-Demo-Data/master/";
-        file_put_contents(storage_path('advs.sql'), fopen($repository . "advs.sql", 'r'));
-        file_put_contents(storage_path('settings.sql'), fopen($repository . "settings.sql", 'r'));
-        file_put_contents(storage_path('categories.sql'), fopen($repository . "categories.sql", 'r'));
-        file_put_contents(storage_path('images.zip'), fopen($repository . "images.zip", "r"));
-        file_put_contents(storage_path('cats.zip'), fopen($repository . "cats.zip", "r"));
-
+        }
         $application_reference = (new ArgvInput())->getParameterOption('--app', env('APPLICATION_REFERENCE', 'default'));
-
-        $categories = str_replace('{application_reference}', $application_reference, file_get_contents(storage_path('categories.sql')));
-        $advs = str_replace('{application_reference}', $application_reference, file_get_contents(storage_path('advs.sql')));
-        $settings = str_replace('{application_reference}', $application_reference, file_get_contents(storage_path('settings.sql')));
-
+        $settings = str_replace('{application_reference}', $application_reference,
+            file_get_contents(realpath(dirname(__DIR__)) . '/seeders/settings.sql'));
         Model::unguard();
-        DB::unprepared($advs);
-        DB::unprepared($categories);
         DB::unprepared($settings);
         Model::reguard();
-
-
-        $zip = new \ZipArchive();
-        $zip->open(storage_path('images.zip'), ZipArchive::CREATE);
-        $zip->extractTo(storage_path('streams/' . $application_reference . '/files-module/local/images/'));
-        $zip->open(storage_path('cats.zip'), ZipArchive::CREATE);
-        $zip->extractTo(storage_path('streams/' . $application_reference . '/files-module/local/category_icon/'));
-        $zip->close();
-
-        //Sync Files
-        $this->command->call('files:sync');
-
         $this->call(WidgetSeeder::class);
 
         //Delete Installer
         dispatch_now(new DeleteInstaller());
-
 
         if (is_null($this->folders->findBy('slug', 'ads_excel'))) {
             $disk = $this->disks->findBySlug('local');
@@ -180,7 +108,7 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'ads_excel',
                 'disk' => $disk,
             ]);
-        };
+        }
 
 
         if ($images_folder = $this->folders->findBySlug('images')) {
@@ -207,7 +135,7 @@ class DatabaseSeeder extends Seeder
                     'ico', 'png',
                 ],
             ]);
-        };
+        }
 
         //Banner Image Folder
         if (is_null($this->folders->findBy('slug', 'banner_images'))) {
@@ -242,13 +170,11 @@ class DatabaseSeeder extends Seeder
                     'pdf', 'doc', 'docx', 'xls', 'xlsx',
                 ],
             ]);
-        };
+        }
 
         //Demodata Seeder
         if (is_module_installed('visiosoft.module.demodata')) {
             $this->call(\Visiosoft\DemodataModule\Demodata\DemodataSeeder::class);
         }
-
-        Artisan::call('assets:clear');
     }
 }
