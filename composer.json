@@ -65,7 +65,7 @@
         "anomaly/pages-module": "~2.6.0",
         "anomaly/posts-module": "~2.6.0",
         "anomaly/files-module": "~2.6.0",
-        "anomaly/contact-plugin": "~1.2.0",
+        "visiosoft/contact-plugin": "*",
         "anomaly/helper-plugin": "~2.1.0",
         "anomaly/robots-extension": "~2.1.0",
         "anomaly/html_block-extension": "~1.0.0",
