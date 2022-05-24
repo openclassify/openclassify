@@ -43,7 +43,14 @@ class WidgetSeeder extends Seeder
             [
                 'scope' => $widget->getId(),
                 'key'   => 'anomaly.extension.xml_feed_widget::url',
-                'value' => 'https://openclassify.com/posts/rss.xml',
+                'value' => 'https://openclassify.com/{locale}/posts/rss.xml',
+            ]
+        );
+        $this->configuration->create(
+            [
+                'scope' => $widget->getId(),
+                'key'   => 'anomaly.extension.xml_feed_widget::multilingual_seeder',
+                'value' => true,
             ]
         );
     }
