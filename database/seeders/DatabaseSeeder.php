@@ -171,10 +171,5 @@ class DatabaseSeeder extends Seeder
                 ],
             ]);
         }
-
-        //Demodata Seeder
-        if (is_module_installed('visiosoft.module.demodata')) {
-            $this->call(\Visiosoft\DemodataModule\Demodata\DemodataSeeder::class);
-        }
     }
 }
