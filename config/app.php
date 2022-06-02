@@ -208,9 +208,7 @@ return [
          * Streams Service Provider
          */
         Anomaly\Streams\Platform\StreamsServiceProvider::class,
-        Sentry\Laravel\ServiceProvider::class,
-        \Fruitcake\Cors\CorsServiceProvider::class
-
+        Sentry\Laravel\ServiceProvider::class
     ],
 
     /*
