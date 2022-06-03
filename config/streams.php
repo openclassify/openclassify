@@ -90,9 +90,7 @@ return [
     |
     */
 
-    'middleware' => [
-        \Fruitcake\Cors\HandleCors::class, # this line
-    ],
+    'middleware' => [],
 
     /*
     |--------------------------------------------------------------------------
