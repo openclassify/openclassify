@@ -150,9 +150,6 @@
     "config": {
         "bin-dir": "bin",
         "preferred-install": "dist",
-        "optimize-autoloader": true,
-        "allow-plugins": {
-            "visiosoft/composer-merge-plugin": true
-        }
+        "optimize-autoloader": true
     }
 }
