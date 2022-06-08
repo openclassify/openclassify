@@ -209,7 +209,6 @@ return [
          */
         Anomaly\Streams\Platform\StreamsServiceProvider::class,
         Sentry\Laravel\ServiceProvider::class,
-        \Laravel\Sail\SailServiceProvider::class
     ],
 
     /*
