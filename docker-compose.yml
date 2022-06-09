@@ -7,7 +7,7 @@ services:
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: sail-7.4/app
+        image: sail-7.4/drifter
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
@@ -22,9 +22,6 @@ services:
             - '.:/var/www/html'
         networks:
             - sail
-        depends_on:
-            - mysql
-            - redis
     phpmyadmin:
         image: 'phpmyadmin:latest'
         ports:
