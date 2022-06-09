@@ -94,9 +94,7 @@
         "visiosoft/base-theme": "^1.0",
         "visiosoft/advs-module": "^1.0",
         "visiosoft/json-field_type": "^1.0",
-        "visiosoft/language_switcher-plugin": "^1.0",
-        "predis/predis": "^2.0",
-        "laravel/horizon": "^5.9"
+        "visiosoft/language_switcher-plugin": "^1.0"
     },
     "replace": {
         "anomaly/streams-platform": "*"
@@ -152,6 +150,6 @@
     "config": {
         "bin-dir": "bin",
         "preferred-install": "dist",
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
     }
 }
