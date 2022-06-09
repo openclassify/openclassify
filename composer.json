@@ -151,6 +151,6 @@
     "config": {
         "bin-dir": "bin",
         "preferred-install": "dist",
-        "optimize-autoloader": true,
+        "optimize-autoloader": true
     }
 }
