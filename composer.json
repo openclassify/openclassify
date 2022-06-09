@@ -94,7 +94,9 @@
         "visiosoft/base-theme": "^1.0",
         "visiosoft/advs-module": "^1.0",
         "visiosoft/json-field_type": "^1.0",
-        "visiosoft/language_switcher-plugin": "^1.0"
+        "visiosoft/language_switcher-plugin": "^1.0",
+        "predis/predis": "^2.0",
+        "laravel/horizon": "^5.9"
     },
     "replace": {
         "anomaly/streams-platform": "*"
@@ -104,7 +106,7 @@
         "fzaninotto/faker": "~1.4",
         "symfony/css-selector": "3.1.*",
         "symfony/dom-crawler": "3.1.*",
-        "anomaly/installer-module": "~2.4.0"
+        "laravel/sail": "^1.14"
     },
     "repositories": [
         {
@@ -149,6 +151,9 @@
     "config": {
         "bin-dir": "bin",
         "preferred-install": "dist",
-        "optimize-autoloader": true
+        "optimize-autoloader": true,
+        "allow-plugins": {
+            "visiosoft/composer-merge-plugin": true
+        }
     }
 }
