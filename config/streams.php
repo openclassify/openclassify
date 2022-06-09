@@ -3,7 +3,7 @@
 use App\Exceptions\ExceptionHandler;
 
 return [
-    
+
     /*
     |--------------------------------------------------------------------------
     | Listeners
@@ -32,7 +32,7 @@ return [
     */
 
     'bindings' => [
-         'Anomaly\Streams\Platform\Exception\ExceptionHandler' => ExceptionHandler::class
+        'Anomaly\Streams\Platform\Exception\ExceptionHandler' => ExceptionHandler::class
     ],
 
     /*
@@ -90,7 +90,9 @@ return [
     |
     */
 
-    'middleware' => [],
+    'middleware' => [
+        \Fruitcake\Cors\HandleCors::class, # this line
+    ],
 
     /*
     |--------------------------------------------------------------------------
@@ -129,7 +131,7 @@ return [
     */
 
     'middleware_priority' => [],
-    
+
     /*
     |--------------------------------------------------------------------------
     | View Overrides
@@ -140,7 +142,7 @@ return [
     */
 
     'overrides' => [],
-    
+
     /*
     |--------------------------------------------------------------------------
     | Control Panel Customization
