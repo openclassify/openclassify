@@ -43,11 +43,11 @@ RUN apt-get update \
     && apt-get install -y yarn \
     && apt-get install -y mysql-client \
     && apt-get install -y postgresql-client-$POSTGRES_VERSION \
-    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && apt-get update \
     && apt-get install -y cron \
     && apt-get -y autoremove \
     && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 RUN setcap "cap_net_bind_service=+ep" /usr/bin/php7.4
 
@@ -60,8 +60,7 @@ COPY php.ini /etc/php/7.4/cli/conf.d/99-sail.ini
 RUN chmod +x /usr/local/bin/start-container
 
 COPY scheduler /etc/cron.d/scheduler
-RUN chmod +x /etc/cron.d/scheduler
-
+RUN chmod 0644 /etc/cron.d/scheduler
 RUN crontab /etc/cron.d/scheduler
 
 EXPOSE 8000
