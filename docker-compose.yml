@@ -7,7 +7,7 @@ services:
             dockerfile: Dockerfile
             args:
                 WWWGROUP: '${WWWGROUP}'
-        image: sail-7.4/drifter
+        image: sail-7.4/openclassify
         extra_hosts:
             - 'host.docker.internal:host-gateway'
         ports:
