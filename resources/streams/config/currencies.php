@@ -50,7 +50,7 @@ return [
         'TRY' => [
             'name' => 'Türk Lirası',
             'direction' => 'rtl',
-            'symbol' => ' TL',
+            'symbol' => ' ₺',
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
