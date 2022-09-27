@@ -124,6 +124,7 @@ php artisan install --ready
 ```                             
 
 ##CLI Commands
+
 If you couldn't find a solution for any problem, please review our CLI Command document.
 [View CLI Command Document](https://github.com/openclassify/openclassify/blob/master/docs/cli-commands.md)
 
