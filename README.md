@@ -25,6 +25,8 @@ Openclassify support 22+ languages. If you'd like to contribute translations, pl
 
 # Installation
 
+You can browse the [Documention](https://github.com/openclassify/openclassify/wiki/Installing-Openclassify-on-windows-docker-desktop) to install it with Docker.
+
 ## Server Requirements
 
 - PHP > 7.3+
