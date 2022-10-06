@@ -1,6 +1,6 @@
 # OpenClassify -  Laravel 8 Classified Script Platform - Weekly Updates
 
-OpenClassify is modular and most advanced open source classified platform build with Laravel 8 & PHP 7.3+ Supported. Included Pyrocms 3.9
+OpenClassify is modular and most advanced open source classified platform build with Laravel 8 & PHP 8.1 Supported. Included Pyrocms 3.9
 
 
 
@@ -27,7 +27,7 @@ Openclassify support 22+ languages. If you'd like to contribute translations, pl
 
 ## Server Requirements
 
-- PHP > 7.3+
+- Supports PHP 7.3 and later
 - XML PHP Extension
 - PDO PHP Extension
 - cURL PHP Extension
