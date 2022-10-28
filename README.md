@@ -27,7 +27,7 @@ Openclassify support 22+ languages. If you'd like to contribute translations, pl
 
 ## Server Requirements
 
-- Supports PHP 7.3 and later
+- Supports PHP 7.3 and later (8.1 Supported)
 - XML PHP Extension
 - PDO PHP Extension
 - cURL PHP Extension
@@ -48,6 +48,12 @@ Openclassify support 22+ languages. If you'd like to contribute translations, pl
 ```bash
 composer create-project openclassify/openclassify
 ```
+
+### Via Docker
+
+We suggest to use Docker.
+
+https://github.com/openclassify/openclassify/wiki/Installing-Openclassify-on-windows-docker-desktop
 
 ### Host Configuration
 
