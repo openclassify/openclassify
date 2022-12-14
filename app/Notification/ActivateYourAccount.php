@@ -57,7 +57,7 @@ class ActivateYourAccount extends Notification implements ShouldQueue
         $data = $notifiable->attributesToArray();
 
         return (new MailMessage())
-            ->view('anomaly.module.users::notifications.activate_your_account')
+            ->view('anomaly.module.users::notifications.activate_your_account',$data)
             ->subject(trans('anomaly.module.users::notification.activate_your_account.subject', $data))
             ->greeting(trans('anomaly.module.users::notification.activate_your_account.greeting', $data))
             ->line(trans('anomaly.module.users::notification.activate_your_account.instructions', $data))
