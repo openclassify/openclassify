@@ -1245,8 +1245,15 @@ return [
             'separator' => ',',
             'point' => '.',
             'decimals' => 2,
-            'symbol' => '$',]
-
-
+            'symbol' => '$',
+        ],
+        'PER' => [
+            'name' => 'Percentage',
+            'direction' => 'ltr',
+            'separator' => ',',
+            'point' => '.',
+            'decimals' => 4,
+            'symbol' => '%'
+        ]
     ]
 ];
