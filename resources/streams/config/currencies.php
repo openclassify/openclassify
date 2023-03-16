@@ -1156,8 +1156,8 @@ return [
             'direction' => 'ltr',
             'separator' => ',',
             'point' => '.',
-            'decimals' => 2,
-            'symbol' => '',
+            'decimals' => 4,
+            'symbol' => '%',
         ],
         'VEF' => [
             'name' => 'Bolivar Fuerte',
