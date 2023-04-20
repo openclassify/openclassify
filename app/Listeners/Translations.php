@@ -2,8 +2,7 @@
 
 use Anomaly\Streams\Platform\Event\Booted;
 use App\Lang\Loader;
-use Illuminate\Translation\Translator;
-
+use App\Lang\Translator;
 class Translations
 {
 
