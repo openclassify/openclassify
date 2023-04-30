@@ -74,7 +74,6 @@
         "visiosoft/integer-field_type": "~2.1.0",
         "visiosoft/list-field_type": "*",
         "visiosoft/addblock-extension": "^1.1",
-        "maatwebsite/excel": "*",
         "google/recaptcha": "1.2.*",
         "sentry/sentry-laravel": "2.3.1",
         "composer/composer": "2.*",
