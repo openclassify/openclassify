@@ -5,7 +5,7 @@ echo "$APP_ENV"
 if [ ! -f "vendor/autoload.php" ]; then
     composer install --no-progress --no-interaction
 else
-    echo " nothing to do."    
+    echo "composer. nothing to do."    
 fi
 
 if [ ! -f ".env" ]; then
@@ -19,7 +19,6 @@ fi
 role=${CONTAINER_ROLE:-app}
 
 if [ "$role" = "app" ]; then
-    #INSTALLED=$(. ./.env; printf '%s' "$INSTALLED")
     if [ "$INSTALLED" = "false" ]; then
         echo ".env installed is false starting installing"
         composer update

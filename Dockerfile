@@ -17,8 +17,8 @@ RUN docker-php-ext-install pdo pdo_mysql bcmath curl opcache
 RUN docker-php-ext-enable opcache
 
 WORKDIR /var/www
-
-COPY --chown=www-data:www-data . .
+ 
+COPY --chown=www-data:www-data --chmod=777 . .
 
 COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 COPY ./docker/php/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
@@ -28,8 +28,8 @@ COPY ./docker/nginx/site.conf /etc/nginx/default.conf
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN chmod -R 755 /var/www/storage
-RUN chmod -R 755 /var/www/bootstrap
+RUN chmod -R 777 /var/www/storage
+RUN chmod -R 777 /var/www/bootstrap
 
 #ENTRYPOINT [ "docker/entrypoint.sh" ]
 
