@@ -2,6 +2,7 @@ version: '3'
 
 networks:
   webapp:
+    driver: bridge
 
 services:
   nginx:
@@ -12,7 +13,7 @@ services:
     links:
       - php
     volumes:
-      - ./:/var/www/html
+      - ./:/var/www
       - ./docker/nginx/site.conf:/etc/nginx/conf.d/default.conf:rw
       - ./docker/logs/nginx:/var/logs/nginx:rw
     depends_on:
@@ -28,14 +29,21 @@ services:
     environment:
       - CONTAINER_ROLE=app
     volumes:
-      - ./:/var/www/html
+      - ./:/var/www
     ports:
       - "9001:9000"
     networks:
       - webapp
+    links:
+        - database
+    depends_on:
+      database:
+        condition: service_healthy
+
   # Database Server
   database:
     image: mysql:8.0
+    container_name: database
     ports:
         -   3306:3306
     command: --max_allowed_packet=32505856      # Set max_allowed_packet to 256M (or any other value)
@@ -44,8 +52,13 @@ services:
         - MYSQL_USER=oc
         - MYSQL_PASSWORD=oc
         - MYSQL_ROOT_PASSWORD=oc
+        - DB_HOST=host.docker.internal
     volumes:
         - db-data:/var/lib/mysql
+    healthcheck:
+        test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
+        timeout: 5s
+        retries: 10
 
 volumes:
     db-data: ~
