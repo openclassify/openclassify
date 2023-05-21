@@ -25,7 +25,7 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: ${APP_NAME}_php
+    container_name: oc_php
     environment:
       - CONTAINER_ROLE=app
     volumes:
@@ -45,7 +45,7 @@ services:
   # Database Server
   database:
     image: mysql:8.0
-    container_name: database
+    container_name: ${APP_NAME}_database
     ports:
         -   3306:3306
     command: --max_allowed_packet=32505856      # Set max_allowed_packet to 256M (or any other value)
