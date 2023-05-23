@@ -1,36 +1,25 @@
-#docker compose build --no-cache && docker compose up --force-recreate -d
-#docker compose down -v && docker compose up --build
-
-FROM php:7.4-fpm  as php
-
-ENV PHP_OPCACHE_ENABLE=1
-ENV PHP_OPCACHE_ENABLE_CLI=1
-ENV PHP_OPCACHE_VALIDATE_TIMESTAMPS=1
-ENV PHP_OPCACHE_REVALIDATE_FREQ=1
+FROM php:7.4-fpm as php
 
 RUN usermod -u 1000 www-data
 
 RUN apt-get update -y
-RUN apt-get install -y unzip libpq-dev libcurl4-gnutls-dev nginx
-RUN docker-php-ext-install pdo pdo_mysql bcmath curl opcache
-
-RUN docker-php-ext-enable opcache
+RUN apt-get install -y unzip libpq-dev libcurl4-gnutls-dev
+RUN docker-php-ext-install pdo pdo_mysql bcmath
 
 WORKDIR /var/www
  
 COPY --chown=www-data:www-data --chmod=777 . .
 
-COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
-COPY ./docker/php/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
-COPY ./docker/php/opcache.ini /usr/local/etc/php/conf.d/opcache.ini
-COPY ./docker/nginx/site.conf /etc/nginx/default.conf
+#COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
 
+#COPY ./docker/php/php.ini /usr/local/etc/php/php.ini
+#COPY ./docker/php/php-fpm.conf /usr/local/etc/php-fpm.d/www.conf
+#COPY ./docker/nginx/site.conf /etc/nginx/default.conf
+
+COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
 
 COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
 
-RUN chmod -R 777 /var/www/storage
-RUN chmod -R 777 /var/www/bootstrap
+ENTRYPOINT [ "docker/entrypoint.sh" ]
 
-#ENTRYPOINT [ "docker/entrypoint.sh" ]
-
-CMD ["docker/entrypoint.sh","php-fpm","-F"]
+#CMD ["docker/entrypoint.sh","php-fpm","-F"]

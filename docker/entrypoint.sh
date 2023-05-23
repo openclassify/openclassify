@@ -21,14 +21,8 @@ role=${CONTAINER_ROLE:-app}
 if [ "$role" = "app" ]; then
     if [ "$INSTALLED" = "false" ]; then
         echo ".env installed is false starting installing"
-        composer update
         php artisan install --ready
     fi
-    php artisan cache:clear
-    php artisan config:clear
-    php artisan route:clear
-    chmod -R 777 /var/www/storage
-    chmod -R 777 /var/www/bootstrap
     exec docker-php-entrypoint "$@"
 elif [ "$role" = "queue" ]; then
     echo "Running the queue ... "

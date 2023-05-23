@@ -7,6 +7,15 @@ echo "================================================"
 
 if [[ $(which docker) && $(docker --version) ]]; then
     docker --version
+
+    #if ubuntu install docker
+        if [  -n "$(uname -a | grep Ubuntu)" ]; then
+          if ! docker info > /dev/null 2>&1; then
+            systemctl --user start docker-desktop
+            echo "Docker is not running. I've started for you. Run it again"
+            exit
+          fi
+        fi
   else
     #if ubuntu install docker
     if [  -n "$(uname -a | grep Ubuntu)" ]; then
@@ -26,18 +35,19 @@ if [[ $(which docker) && $(docker --version) ]]; then
             sudo usermod -aG docker $(whoami)
     else
         echo "Install docker and come back later"
-            exit
+        exit
     fi
 fi
 
 cp -u .env-sail .env
 
-#docker compose build
+docker compose build
 #--no-cache
 
-docker compose up --force-recreate -d
+docker compose up  -d
 
-docker exec -it oc_php php artisan install --ready
+#
+#docker exec -it oc_php php artisan install --ready
 
 #php artisan migrate --all-addons --force
 
