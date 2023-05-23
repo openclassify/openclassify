@@ -3,8 +3,6 @@ version: '3.8'
 networks:
   webapp:
     driver: bridge
-  aliases:
-    - mysql.local
 
 services:
   nginx:
