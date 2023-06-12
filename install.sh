@@ -38,7 +38,7 @@ if [[ $(which docker) && $(docker --version) ]]; then
     fi
 fi
 
-cp -u .env-sail .env
+cp  .env-sail .env
 
 docker compose down -v
 
