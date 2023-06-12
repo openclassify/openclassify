@@ -35,8 +35,6 @@ services:
     depends_on:
       database:
         condition: service_healthy
-    env_file: .env
-    
 
   # Database Server
   database:
