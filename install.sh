@@ -40,14 +40,18 @@ fi
 
 cp  .env-sail .env
 
-docker compose down -v
+#docker compose down -v
 
-docker compose build --no-cache
+#docker compose build 
 
-docker compose up --force-recreate
+#--no-cache
 
-#
+docker compose up 
+
+#--force-recreate
+
 #docker exec -it oc_php php artisan install --ready
+#docker exec -it oc_nginx COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
 
 #php artisan migrate --all-addons --force
 
