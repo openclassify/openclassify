@@ -38,22 +38,10 @@ if [[ $(which docker) && $(docker --version) ]]; then
     fi
 fi
 
-cp  .env-sail .env
-
-#docker compose down -v
-
-#docker compose build 
-
-#--no-cache
-
-docker compose up 
-
-#--force-recreate
-
-#docker exec -it oc_php php artisan install --ready
-#docker exec -it oc_nginx COPY ./docker/nginx/nginx.conf /etc/nginx/nginx.conf
-
+cp -u .env-sail .env
+docker compose up  
 #php artisan migrate --all-addons --force
+#docker exec -it oc_php php artisan install --ready
 
 #composer config http-basic.abc.aaa.com openclassify pass
 #composer config repositories.repo-name composer https://abc.aaa.com

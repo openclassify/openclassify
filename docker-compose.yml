@@ -36,7 +36,10 @@ services:
       - DB_PASSWORD=${DB_PASSWORD:-secret}
     depends_on:
       database:
-        condition: service_healthy  
+        condition: service_healthy
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+
 
   nginx:
     build:

@@ -22,6 +22,13 @@ RUN apt-get update \
     libzip-dev \
     libicu-dev \
     libonig-dev \
+    libpq-dev \
+    libcurl4-gnutls-dev \
+    libfreetype6-dev libjpeg62-turbo-dev libpng-dev && \
+    docker-php-ext-configure gd --with-freetype=/usr/include/ --with-jpeg=/usr/include/ && \
+    docker-php-ext-install gd
+
+
   && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && locale-gen en_US.UTF-8 \
