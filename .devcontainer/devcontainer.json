@@ -1,4 +1,9 @@
 {
-    "features": {
-    }
+    "name": "My Space", 
+    // Your code path from the .devcontainer directory
+    "workspaceFolder": "../app",
+    // List of ports that you want to preview
+    "forwardPorts": [80],
+    // Script to run to bootstrap the app when the space is created
+    "postCreateCommand": ". ../install.sh"
 }
