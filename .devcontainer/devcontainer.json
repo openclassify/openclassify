@@ -3,5 +3,5 @@
     // List of ports that you want to preview
     "forwardPorts": [80],
     // Script to run to bootstrap the app when the space is created
-    "postCreateCommand": ". ../install.sh"
+    "postCreateCommand": "bash install.sh"
 }
