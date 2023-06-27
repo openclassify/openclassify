@@ -1,7 +1,5 @@
 {
     "name": "Openclassify",
-    // List of ports that you want to preview
-    "forwardPorts": [80],
     // Script to run to bootstrap the app when the space is created
     "postCreateCommand": "bash install.sh"
 }
