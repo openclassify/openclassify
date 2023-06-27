@@ -1,5 +1,5 @@
 {
-    "name": "My Space", 
+    "name": "Openclassify", 
     // Your code path from the .devcontainer directory
     "workspaceFolder": "../app",
     // List of ports that you want to preview
