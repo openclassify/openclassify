@@ -1,7 +1,5 @@
 {
-    "name": "Openclassify", 
-    // Your code path from the .devcontainer directory
-    "workspaceFolder": "../app",
+    "name": "Openclassify",
     // List of ports that you want to preview
     "forwardPorts": [80],
     // Script to run to bootstrap the app when the space is created
