@@ -82,4 +82,6 @@ services:
     depends_on:
       - database
     environment:
-      MYSQL_ROOT_PASSWORD: oc        
+      PMA_USER: oc
+      PMA_PASSWORD: oc
+      PMA_HOSTS: database,localhost
