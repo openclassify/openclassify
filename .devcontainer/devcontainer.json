@@ -1,0 +1,6 @@
+{
+    "name": "Openclassify",
+    // Script to run to bootstrap the app when the space is created
+    "postCreateCommand": "bash install.sh",
+    "outputCapture": "std"
+}

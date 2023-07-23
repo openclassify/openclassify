@@ -1,1 +1,12 @@
 .idea
+.env
+.coverage
+/bin
+/core
+/build
+/vendor
+/coverage
+/node_modules
+/bower_components
+composer.lock
+package-lock.json
