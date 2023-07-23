@@ -13,7 +13,6 @@ else
     echo "env file exists. nothing to do."
 fi
 
-# .env dosyasını oku ve değişkenleri tanımla
 while IFS= read -r line || [[ -n "$line" ]]; do
   if [[ "$line" == "INSTALLED="* ]]; then
     installed="${line#*=}"
@@ -22,7 +21,6 @@ while IFS= read -r line || [[ -n "$line" ]]; do
   fi
 done < .env
 
-# installed değişkenini kontrol et
 if [ "$installed" = "false" ]; then
     echo ".env installed is false starting installing"
     php artisan install --ready

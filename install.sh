@@ -39,9 +39,4 @@ if [[ $(which docker) && $(docker --version) ]]; then
 fi
 
 cp .env-sail .env
-docker compose up  
-#php artisan migrate --all-addons --force
-#docker exec -it oc_php php artisan install --ready
-
-#composer config http-basic.abc.aaa.com openclassify pass
-#composer config repositories.repo-name composer https://abc.aaa.com
+docker compose up

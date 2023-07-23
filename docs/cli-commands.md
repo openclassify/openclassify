@@ -231,3 +231,28 @@ Use the `--force` flag to overwrite the files should they already exist.
 ```bash
 php artisan addon:publish anomaly.module.store --force
 ```
+
+
+### Migrate All Addons
+
+```bash
+php artisan migrate --all-addons --force
+```
+
+### Run Command Inside Docker 
+
+```bash
+docker exec -it oc_php php artisan install --ready
+```
+
+### Composer set private repo
+
+```bash
+composer config repositories.repo-name composer https://abc.aaa.com
+```
+
+
+### Composer set username and password for repo
+```bash
+composer config http-basic.abc.aaa.com openclassify pass
+```
