@@ -44,7 +44,8 @@ RUN docker-php-ext-install gd
 
 COPY . .
 
-CMD ["docker/php/entrypoint.sh"]
+RUN ["chmod", "+x", "./docker/php/entrypoint.sh"]
+#CMD ["docker/php/entrypoint.sh"]
 
 FROM base AS development
 
