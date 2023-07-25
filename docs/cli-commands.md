@@ -1,5 +1,47 @@
 # CLI Commands
 
+## Basics
+
+### Addon & Module install
+
+Install an addon. 
+
+The required `addon` argument must be an addon identifier like `anomaly.module.store`. 
+
+The `--seed` flag causes the addon to be seeded as well.
+
+> Only **modules** and **extensions** are installable.{.notice}
+ 
+```bash
+php artisan addon:install anomaly.module.store --seed
+```
+
+
+### Seed for Themes
+
+```bash
+php artisan db:seed --addon=visiosoft.${addon_type}.${addon_name}
+```
+
+
+### Run Command Inside Docker 
+
+```bash
+docker exec -it oc_php php artisan install --ready
+```
+
+### Composer set private repo
+
+```bash
+composer config repositories.repo-name composer https://abc.aaa.com
+```
+
+
+### Composer set username and password for repo
+```bash
+composer config http-basic.abc.aaa.com openclassify pass
+```
+
 
 ## Asset Management
 
@@ -182,19 +224,7 @@ The `addon` slug is the `slug_formatted` name of the addon you are creating.
 php artisan make:addon anomaly.module.store
 ```
 
-### addon:install
 
-Install an addon. 
-
-The required `addon` argument must be an addon identifier like `anomaly.module.store`. 
-
-The `--seed` flag causes the addon to be seeded as well.
-
-> Only **modules** and **extensions** are installable.{.notice}
- 
-```bash
-php artisan addon:install anomaly.module.store --seed
-```
 
 ### addon:uninstall
 
@@ -232,27 +262,3 @@ Use the `--force` flag to overwrite the files should they already exist.
 php artisan addon:publish anomaly.module.store --force
 ```
 
-
-### Migrate All Addons
-
-```bash
-php artisan migrate --all-addons --force
-```
-
-### Run Command Inside Docker 
-
-```bash
-docker exec -it oc_php php artisan install --ready
-```
-
-### Composer set private repo
-
-```bash
-composer config repositories.repo-name composer https://abc.aaa.com
-```
-
-
-### Composer set username and password for repo
-```bash
-composer config http-basic.abc.aaa.com openclassify pass
-```
