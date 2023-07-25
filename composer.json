@@ -77,7 +77,7 @@
         "composer/composer": "2.*",
         "visiosoft/composer-merge-plugin": "2.*",
         "guzzlehttp/guzzle": "^7.3",
-        "visiosoft/connect-module": "^1.0",
+        "visiosoft/connect-module": "1.10.9",
         "visiosoft/singlefile-field_type": "^1.0",
         "visiosoft/profile-module": "^1.0",
         "visiosoft/multiple-field_type": "^1.0",
