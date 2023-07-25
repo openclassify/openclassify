@@ -10,7 +10,7 @@ The required `addon` argument must be an addon identifier like `anomaly.module.s
 
 The `--seed` flag causes the addon to be seeded as well.
 
-> Only **modules** and **extensions** are installable.{.notice}
+> Only **modules** and **extensions** are installable.
  
 ```bash
 php artisan addon:install anomaly.module.store --seed
