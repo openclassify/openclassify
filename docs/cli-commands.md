@@ -16,6 +16,9 @@ The `--seed` flag causes the addon to be seeded as well.
 php artisan addon:install anomaly.module.store --seed
 ```
 
+```bash
+php artisan migrate --all-addons
+```
 
 ### Seed for Themes
 
