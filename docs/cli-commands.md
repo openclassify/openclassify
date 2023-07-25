@@ -19,15 +19,17 @@ php artisan addon:install anomaly.module.store --seed
 
 ### Seed for Themes
 
+Like : php artisan db:seed --addon=visiosoft.theme.oc
+
 ```bash
-php artisan db:seed --addon=visiosoft.${addon_type}.${addon_name}
+php artisan db:seed --addon=visiosoft.theme.addon_name
 ```
 
 
 ### Run Command Inside Docker 
 
 ```bash
-docker exec -it oc_php php artisan install --ready
+docker exec -it oc_php php artisan addon:install anomaly.module.store --seed
 ```
 
 ### Composer set private repo
