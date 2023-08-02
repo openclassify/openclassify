@@ -1,6 +1,9 @@
 <br>
 <p align="center">
   <a href="https://openclassify.com"><img src="https://raw.githubusercontent.com/openclassify/openclassify/master/public/openclassify-logo.png" width="250" alt="Openclassify Logo"></a>
+
+  OpenClassify is modular and most advanced open source classified platform build with Laravel included Pyrocms.
+
 </p>
 <br>
 <p align="center">
@@ -14,11 +17,6 @@
 <a href="https://scrutinizer-ci.com/code-intelligence" rel="nofollow"><img src="https://camo.githubusercontent.com/9fcde20119b3a44e430ad50f1bb3c2db3db753df9c3b2ade5cd14217a0a971ab/68747470733a2f2f7363727574696e697a65722d63692e636f6d2f672f6f70656e636c6173736966792f6f70656e636c6173736966792f6261646765732f636f64652d696e74656c6c6967656e63652e7376673f623d6d6173746572" alt="Code Intelligence Status" data-canonical-src="https://scrutinizer-ci.com/g/openclassify/openclassify/badges/code-intelligence.svg?b=master" style="max-width: 100%;"></a>
 </p>
 
-
-
-### About OpenClassify
-
-OpenClassify is modular and most advanced open source classified platform build with Laravel included Pyrocms.
 
 ### Install with Docker
 
