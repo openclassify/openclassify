@@ -3,7 +3,6 @@
 use Anomaly\Streams\Platform\Notification\Message\MailMessage;
 use Anomaly\UsersModule\User\Contract\UserInterface;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Notification;
 
 /**
@@ -13,10 +12,8 @@ use Illuminate\Notifications\Notification;
  * @author PyroCMS, Inc. <support@pyrocms.com>
  * @author Ryan Thompson <ryan@pyrocms.com>
  */
-class ResetYourPassword extends Notification implements ShouldQueue
+class ResetYourPassword extends Notification
 {
-
-    use Queueable;
 
     /**
      * Redirect here after activating.
