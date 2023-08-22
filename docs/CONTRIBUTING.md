@@ -24,7 +24,7 @@ Some of those might be more urgent than the others, and sometimes you might be u
 * Don't use hyperbole. ("always", "never", "endlessly", "nothing") Don't use sarcasm.
 * Remember that you're both on the same side - the goal is to make the code better. Understand that sometimes your ideas will be overruled. Even if you do turn out to be right, don't take revenge or say, "I told you so".
 * Talk synchronously (e.g. chat, screensharing, in person) if there are too many "I didn't understand" or "Alternative solution:" comments. Pull requests should not be the place for long discussions, architectural or otherwise.
-* Put notes on what's missing or could be improved in the PR description or comments. You can also make a Trello card with discussions points and possible problems or things to do and discuss it offline.
+* Put notes on what's missing or could be improved in the PR description or comments. You can also create an issue with discussion points and possible problems or things to do and discuss it offline.
 
 ## As a code submitter
 
