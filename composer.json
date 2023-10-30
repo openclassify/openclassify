@@ -15,7 +15,7 @@
         }
     ],
     "require": {
-        "visiosoft/streams-platform": "~1.9.0",
+        "visiosoft/streams-platform": "3.10.x-dev",
         "anomaly/xml_feed_widget-extension": "~2.1.0",
         "anomaly/default_authenticator-extension": "~2.1.0",
         "anomaly/throttle_security_check-extension": "~2.1.0",
