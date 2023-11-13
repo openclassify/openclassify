@@ -94,7 +94,7 @@
         "visiosoft/defaultadmin-theme": "^1.0",
         "visiosoft/cats-module": "^1.0",
         "visiosoft/base-theme": "^1.0",
-        "visiosoft/advs-module": "^1.0",
+        "visiosoft/advs-module": "v1.10.x-dev",
         "visiosoft/json-field_type": "^1.0",
         "visiosoft/language_switcher-plugin": "^1.0",
         "visiosoft/global_helper-extension": "*",
