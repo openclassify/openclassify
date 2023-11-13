@@ -11,11 +11,11 @@ return [
     | using Laravel Scout. This connection is used when syncing all models
     | to the search service. You should adjust this based on your needs.
     |
-    | Supported: "algolia", "null"
+    | Supported: "algolia", "meilisearch", "database", "collection", "null"
     |
     */
 
-    'driver' => env('SCOUT_DRIVER', 'search'),
+    'driver' => env('SCOUT_DRIVER', 'null'),
 
     /*
     |--------------------------------------------------------------------------
@@ -28,7 +28,7 @@ return [
     |
     */
 
-    'prefix' => env('SCOUT_PREFIX', 'tntsearch'),
+    'prefix' => env('SCOUT_PREFIX', ''),
 
     /*
     |--------------------------------------------------------------------------
@@ -41,7 +41,64 @@ return [
     |
     */
 
-    'queue' => false,
+    'queue' => env('SCOUT_QUEUE', false),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Database Transactions
+    |--------------------------------------------------------------------------
+    |
+    | This configuration option determines if your data will only be synced
+    | with your search indexes after every open database transaction has
+    | been committed, thus preventing any discarded data from syncing.
+    |
+    */
+
+    'after_commit' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Chunk Sizes
+    |--------------------------------------------------------------------------
+    |
+    | These options allow you to control the maximum chunk size when you are
+    | mass importing data into the search engine. This allows you to fine
+    | tune each of these chunk sizes based on the power of the servers.
+    |
+    */
+
+    'chunk' => [
+        'searchable' => 500,
+        'unsearchable' => 500,
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Soft Deletes
+    |--------------------------------------------------------------------------
+    |
+    | This option allows to control whether to keep soft deleted records in
+    | the search indexes. Maintaining soft deleted records can be useful
+    | if your application still needs to search for the records later.
+    |
+    */
+
+    'soft_delete' => false,
+
+    /*
+    |--------------------------------------------------------------------------
+    | Identify User
+    |--------------------------------------------------------------------------
+    |
+    | This option allows you to control whether to notify the search engine
+    | of the user performing the search. This is sometimes useful if the
+    | engine supports any analytics based on this application's users.
+    |
+    | Supported engines: "algolia"
+    |
+    */
+
+    'identify' => env('SCOUT_IDENTIFY', false),
 
     /*
     |--------------------------------------------------------------------------
@@ -55,28 +112,31 @@ return [
     */
 
     'algolia' => [
-        'id'     => env('ALGOLIA_APP_ID'),
-        'secret' => env('ALGOLIA_SECRET'),
+        'id' => env('ALGOLIA_APP_ID', ''),
+        'secret' => env('ALGOLIA_SECRET', ''),
     ],
-    
+
     /*
     |--------------------------------------------------------------------------
-    | TNT Configuration
+    | Meilisearch Configuration
     |--------------------------------------------------------------------------
     |
-    | Here you may configure your TNT settings. TNT is the default search
-    | indexing mechanism for the Streams Platform. TNT Search is a fully
-    | featured full text search engine for PHP.
+    | Here you may configure your Meilisearch settings. Meilisearch is an open
+    | source search engine with minimal configuration. Below, you can state
+    | the host and key information for your own Meilisearch installation.
+    |
+    | See: https://www.meilisearch.com/docs/learn/configuration/instance_options#all-instance-options
     |
     */
 
-    'tntsearch' => [
-        'fuzziness'     => env('TNTSEARCH_FUZZINESS', false),
-        'fuzzy'         => [
-            'prefix_length'  => 2,
-            'max_expansions' => 10,
-            'distance'       => 2,
+    'meilisearch' => [
+        'host' => env('MEILISEARCH_HOST', 'http://localhost:7700'),
+        'key' => env('MEILISEARCH_KEY'),
+        'index-settings' => [
+            // 'users' => [
+            //     'filterableAttributes'=> ['id', 'name', 'email'],
+            // ],
         ],
-        'searchBoolean' => env('TNTSEARCH_BOOLEAN', true),
     ],
+
 ];
