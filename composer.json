@@ -20,7 +20,7 @@
         }
     ],
     "require": {
-          "visiosoft/streams-platform": "1.10.x-dev",
+        "visiosoft/streams-platform": "1.10.x-dev",
         "anomaly/default_authenticator-extension": "2.2.x-dev",
         "anomaly/throttle_security_check-extension": "2.2.x-dev",
         "anomaly/default_page_handler-extension": "2.2.x-dev",
@@ -66,7 +66,7 @@
         "anomaly/settings-module": "2.5.x-dev",
         "anomaly/blocks-module": "~1.4.x-dev",
         "anomaly/search-module": "3.2.x-dev",
-        "anomaly/streams-module": "1.4.x-dev",
+        "visiosoft/streams-module": "1.4.x-dev",
         "anomaly/users-module": "2.6.x-dev",
         "anomaly/pages-module": "2.7.x-dev",
         "anomaly/posts-module": "2.7.x-dev",
