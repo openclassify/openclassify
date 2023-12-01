@@ -90,7 +90,9 @@ return [
     |
     */
 
-    'middleware' => [],
+    'middleware' => [
+        \Illuminate\Http\Middleware\HandleCors::class
+    ],
 
     /*
     |--------------------------------------------------------------------------
