@@ -26,7 +26,9 @@
         "anomaly/default_page_handler-extension": "2.2.x-dev",
         "anomaly/user_security_check-extension": "2.2.x-dev",
         "anomaly/xml_feed_widget-extension": "2.2.x-dev",
+
         "anomaly/private_storage_adapter-extension": "1.2.x-dev",
+
         "anomaly/url_link_type-extension": "2.2.x-dev",
         "anomaly/relationship-field_type": "2.3.x-dev",
         "anomaly/colorpicker-field_type": "2.4.x-dev",
@@ -107,7 +109,8 @@
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*"
+        "symfony/dom-crawler": "3.1.*",
+        "anomaly/installer-module": "2.4.x-dev"
     },
     "repositories": [
         {
@@ -154,7 +157,8 @@
         "preferred-install": "dist",
         "optimize-autoloader": true,
         "allow-plugins": {
-            "visiosoft/composer-merge-plugin": true
+            "visiosoft/composer-merge-plugin": true,
+            "php-http/discovery": true
         }
     }
 }
