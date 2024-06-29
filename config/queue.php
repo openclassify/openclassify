@@ -4,90 +4,79 @@ return [
 
     /*
     |--------------------------------------------------------------------------
-    | Default Queue Connection Name
+    | Default Search Engine
     |--------------------------------------------------------------------------
     |
-    | Laravel's queue API supports an assortment of back-ends via a single
-    | API, giving you convenient access to each back-end using the same
-    | syntax for every one. Here you may define a default connection.
+    | This option controls the default search connection that gets used while
+    | using Laravel Scout. This connection is used when syncing all models
+    | to the search service. You should adjust this based on your needs.
+    |
+    | Supported: "algolia", "null"
     |
     */
 
-    'default' => env('QUEUE_CONNECTION', 'sync'),
+    'driver' => env('SCOUT_DRIVER', 'search'),
 
     /*
     |--------------------------------------------------------------------------
-    | Queue Connections
+    | Index Prefix
     |--------------------------------------------------------------------------
     |
-    | Here you may configure the connection information for each server that
-    | is used by your application. A default configuration has been added
-    | for each back-end shipped with Laravel. You are free to add more.
-    |
-    | Drivers: "sync", "database", "beanstalkd", "sqs", "redis", "null"
+    | Here you may specify a prefix that will be applied to all search index
+    | names used by Scout. This prefix may be useful if you have multiple
+    | "tenants" or applications sharing the same search infrastructure.
     |
     */
 
-    'connections' => [
+    'prefix' => env('SCOUT_PREFIX', 'tntsearch'),
 
-        'sync' => [
-            'driver' => 'sync',
-        ],
+    /*
+    |--------------------------------------------------------------------------
+    | Queue Data Syncing
+    |--------------------------------------------------------------------------
+    |
+    | This option allows you to control if the operations that sync your data
+    | with your search engines are queued. When this is set to "true" then
+    | all automatic data syncing will get queued for better performance.
+    |
+    */
 
-        'database' => [
-            'driver' => 'database',
-            'table' => 'jobs',
-            'queue' => 'default',
-            'retry_after' => 90,
-            'after_commit' => false,
-        ],
+    'queue' => false,
 
-        'beanstalkd' => [
-            'driver' => 'beanstalkd',
-            'host' => 'localhost',
-            'queue' => 'default',
-            'retry_after' => 90,
-            'block_for' => 0,
-            'after_commit' => false,
-        ],
+    /*
+    |--------------------------------------------------------------------------
+    | Algolia Configuration
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure your Algolia settings. Algolia is a cloud hosted
+    | search engine which works great with Scout out of the box. Just plug
+    | in your application ID and admin API key to get started searching.
+    |
+    */
 
-        'sqs' => [
-            'driver' => 'sqs',
-            'key' => env('AWS_ACCESS_KEY_ID'),
-            'secret' => env('AWS_SECRET_ACCESS_KEY'),
-            'prefix' => env('SQS_PREFIX', 'https://sqs.us-east-1.amazonaws.com/your-account-id'),
-            'queue' => env('SQS_QUEUE', 'default'),
-            'suffix' => env('SQS_SUFFIX'),
-            'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
-            'after_commit' => false,
-        ],
-
-        'redis' => [
-            'driver' => 'redis',
-            'connection' => 'default',
-            'queue' => env('REDIS_QUEUE', 'default'),
-            'retry_after' => 90,
-            'block_for' => null,
-            'after_commit' => false,
-        ],
-
+    'algolia' => [
+        'id'     => env('ALGOLIA_APP_ID'),
+        'secret' => env('ALGOLIA_SECRET'),
     ],
 
     /*
     |--------------------------------------------------------------------------
-    | Failed Queue Jobs
+    | TNT Configuration
     |--------------------------------------------------------------------------
     |
-    | These options configure the behavior of failed queue job logging so you
-    | can control which database and table are used to store the jobs that
-    | have failed. You may change them to any database / table you wish.
+    | Here you may configure your TNT settings. TNT is the default search
+    | indexing mechanism for the Streams Platform. TNT Search is a fully
+    | featured full text search engine for PHP.
     |
     */
 
-    'failed' => [
-        'driver' => env('QUEUE_FAILED_DRIVER', 'database'),
-        'database' => env('DB_CONNECTION', 'mysql'),
-        'table' => 'failed_jobs',
+    'tntsearch' => [
+        'fuzziness'     => env('TNTSEARCH_FUZZINESS', false),
+        'fuzzy'         => [
+            'prefix_length'  => 2,
+            'max_expansions' => 10,
+            'distance'       => 2,
+        ],
+        'searchBoolean' => env('TNTSEARCH_BOOLEAN', true),
     ],
-
 ];

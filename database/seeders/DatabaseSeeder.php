@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\DB;
 use Symfony\Component\Console\Input\ArgvInput;
 use Visiosoft\AdvsModule\Adv\Command\DeleteInstaller;
 use WidgetSeeder;
-use ZipArchive;
 
 class DatabaseSeeder extends Seeder
 {
@@ -95,7 +94,7 @@ class DatabaseSeeder extends Seeder
         $this->call(WidgetSeeder::class);
 
         //Delete Installer
-        dispatch_now(new DeleteInstaller());
+        dispatch_sync(new DeleteInstaller());
 
         if (is_null($this->folders->findBy('slug', 'ads_excel'))) {
             $disk = $this->disks->findBySlug('local');

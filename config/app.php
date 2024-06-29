@@ -1,8 +1,5 @@
 <?php
 
-use Sentry\Laravel\Facade;
-use Sentry\Laravel\ServiceProvider;
-
 return [
 
     /*
@@ -16,8 +13,6 @@ return [
     */
 
     'name' => env('APP_NAME', 'My Application'),
-
-    'application_domain' => env('APPLICATION_DOMAIN', null),
 
     /*
     |--------------------------------------------------------------------------
@@ -58,13 +53,19 @@ return [
     */
 
     'debug_blacklist' => [
-        '_COOKIE' => env('APP_ENV', 'production') === 'production' ? array_keys($_COOKIE) : [],
+        '_ENV' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+        ],
 
-        '_SERVER' => env('APP_ENV', 'production') === 'production' ? array_keys($_SERVER) : [],
+        '_SERVER' => [
+            'APP_KEY',
+            'DB_PASSWORD',
+        ],
 
-        '_ENV' => env('APP_ENV', 'production') === 'production' ? array_keys($_ENV) : [],
-
-        '_POST' => env('APP_ENV', 'production') === 'production' ? array_keys($_POST) : [],
+        '_POST' => [
+            'password',
+        ],
     ],
 
     /*
@@ -200,7 +201,7 @@ return [
          */
         App\Providers\AppServiceProvider::class,
         App\Providers\AuthServiceProvider::class,
-        App\Providers\BroadcastServiceProvider::class,
+        //App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
@@ -208,8 +209,6 @@ return [
          * Streams Service Provider
          */
         Anomaly\Streams\Platform\StreamsServiceProvider::class,
-        Sentry\Laravel\ServiceProvider::class,
-        \Fruitcake\Cors\CorsServiceProvider::class
     ],
 
     /*
@@ -260,21 +259,6 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Sentry' => Sentry\Laravel\Facade::class,
-
-
-        /**
-         * Todo
-         * 30.11.2022
-         * It has been added for the use of 'with' in the PyroCMS Users Model file.
-         * Translate(trans) function does not accept nested arrays.
-         */
-        'Anomaly\UsersModule\User\Notification\ActivateYourAccount' => \App\Notification\ActivateYourAccount::class,
-        'Anomaly\UsersModule\User\Notification\PasswordInvalidated' => \App\Notification\PasswordInvalidated::class,
-        'Anomaly\UsersModule\User\Notification\ResetYourPassword' => \App\Notification\ResetYourPassword::class,
-        'Anomaly\UsersModule\User\Notification\UserHasBeenActivated' => \App\Notification\UserHasBeenActivated::class,
-        'Anomaly\UsersModule\User\Notification\UserHasRegistered' => \App\Notification\UserHasRegistered::class,
-        'Anomaly\UsersModule\User\Notification\UserPendingActivation' => \App\Notification\UserPendingActivation::class,
 
     ],
 ];
