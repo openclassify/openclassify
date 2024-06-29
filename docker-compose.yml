@@ -85,3 +85,4 @@ services:
       PMA_USER: oc
       PMA_PASSWORD: oc
       PMA_HOSTS: database,localhost
+      UPLOAD_LIMIT: 10G
