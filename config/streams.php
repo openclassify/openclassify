@@ -88,7 +88,7 @@ return [
     */
 
     'middleware' => [
-        \Fruitcake\Cors\HandleCors::class, # this line
+        \Illuminate\Http\Middleware\HandleCors::class
     ],
 
     /*
