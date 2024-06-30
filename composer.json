@@ -20,12 +20,35 @@
         }
     ],
     "require": {
-        "visiosoft/streams-platform": "1.10.x-dev",
+        "visiosoft/streams-platform": "4.0.x-dev",
+
+        "visiosoft/singlefile-field_type": "^1.0",
+        "visiosoft/profile-module": "^1.0",
+        "visiosoft/multiple-field_type": "^1.0",
+        "visiosoft/media-field_type": "^1.0",
+        "visiosoft/location-module": "^1.0",
+        "visiosoft/input_file-field_type": "^1.0",
+        "visiosoft/defaultadmin-theme": "^1.0",
+        "visiosoft/cats-module": "^1.0",
+        "visiosoft/base-theme": "^1.0",
+        "visiosoft/advs-module": "v1.10.x-dev",
+        "visiosoft/json-field_type": "^1.0",
+
+        "visiosoft/composer-merge-plugin": "2.*",
+        "visiosoft/contact-plugin": "*",
+        "visiosoft/decimal-field_type": "~2.1.0",
+        "visiosoft/integer-field_type": "~2.1.0",
+        "visiosoft/list-field_type": "*",
+        "visiosoft/addblock-extension": "^1.1",
+        "visiosoft/language_switcher-plugin": "^1.0",
+        "visiosoft/global_helper-extension": "*",
+
+        "visiosoft/xml_feed_widget-extension": "3.0.x-dev",
+
         "anomaly/default_authenticator-extension": "2.2.x-dev",
-        "anomaly/throttle_security_check-extension": "2.2.x-dev",
+
         "anomaly/default_page_handler-extension": "2.2.x-dev",
         "anomaly/user_security_check-extension": "2.2.x-dev",
-        "anomaly/xml_feed_widget-extension": "2.2.x-dev",
 
         "anomaly/private_storage_adapter-extension": "1.2.x-dev",
 
@@ -35,7 +58,6 @@
         "anomaly/page_link_type-extension": "~2.1.0",
         "anomaly/polymorphic-field_type": "~2.1.0",
         "anomaly/checkboxes-field_type": "2.5.x-dev",
-        "anomaly/encrypted-field_type": "~2.1.0",
         "anomaly/datetime-field_type": "~3.0.0",
         "anomaly/repeater-field_type": "1.4.x-dev",
         "anomaly/language-field_type": "~2.2.0",
@@ -52,65 +74,42 @@
         "anomaly/slider-field_type": "~3.0.0",
         "anomaly/addon-field_type": "2.3.x-dev",
         "anomaly/email-field_type": "~2.1.0",
-        "anomaly/state-field_type": "~2.4.x-dev",
         "anomaly/files-field_type": "2.4.x-dev",
         "anomaly/tags-field_type": "2.5.x-dev",
         "anomaly/slug-field_type": "~2.1.0",
         "anomaly/text-field_type": "~2.2.0",
         "anomaly/file-field_type": "2.3.x-dev",
         "anomaly/url-field_type": "~2.2.0",
+
         "anomaly/configuration-module": "2.2.x-dev",
         "anomaly/preferences-module": "2.3.x-dev",
-        "anomaly/navigation-module": "2.5.x-dev",
         "anomaly/dashboard-module": "2.3.x-dev",
         "anomaly/redirects-module": "2.5.x-dev",
         "anomaly/variables-module": "2.5.x-dev",
         "anomaly/settings-module": "2.5.x-dev",
-        "anomaly/blocks-module": "~1.4.x-dev",
-        "anomaly/search-module": "3.2.x-dev",
-        "anomaly/streams-module": "1.4.x-dev",
         "anomaly/users-module": "2.6.x-dev",
         "anomaly/pages-module": "2.7.x-dev",
-        "anomaly/posts-module": "2.7.x-dev",
         "anomaly/files-module": "2.7.x-dev",
         "anomaly/contact-plugin": "1.3.x-dev",
-        "visiosoft/contact-plugin": "*",
         "anomaly/helper-plugin": "~2.1.0",
         "anomaly/robots-extension": "~2.1.0",
-        "anomaly/html_block-extension": "~1.0.0",
-        "anomaly/wysiwyg_block-extension": "~1.0.0",
-        "visiosoft/decimal-field_type": "~2.1.0",
-        "visiosoft/integer-field_type": "~2.1.0",
-        "visiosoft/list-field_type": "*",
-        "visiosoft/addblock-extension": "^1.1",
-        "google/recaptcha": "1.2.*",
-        "composer/composer": "2.*",
-        "visiosoft/composer-merge-plugin": "2.*",
+
         "guzzlehttp/guzzle": "^7.3",
-        "visiosoft/singlefile-field_type": "^1.0",
-        "visiosoft/profile-module": "^1.0",
-        "visiosoft/multiple-field_type": "^1.0",
-        "visiosoft/media-field_type": "^1.0",
-        "visiosoft/location-module": "^1.0",
-        "visiosoft/input_file-field_type": "^1.0",
-        "visiosoft/defaultadmin-theme": "^1.0",
-        "visiosoft/cats-module": "^1.0",
-        "visiosoft/base-theme": "^1.0",
-        "visiosoft/advs-module": "v1.10.x-dev",
-        "visiosoft/json-field_type": "^1.0",
-        "visiosoft/language_switcher-plugin": "^1.0",
-        "visiosoft/global_helper-extension": "*",
-        "php-http/message-factory": "^1.1"
+
+        "google/recaptcha": "1.2.*",
+
+        "composer/composer": "2.*"
     },
     "replace": {
-        "anomaly/streams-platform": "*"
+        "anomaly/streams-platform": "*",
+        "anomaly/navigation-module": "*",
+        "anomaly/posts-module": "*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",
         "fzaninotto/faker": "~1.4",
         "symfony/css-selector": "3.1.*",
-        "symfony/dom-crawler": "3.1.*",
-        "anomaly/installer-module": "2.4.x-dev"
+        "symfony/dom-crawler": "3.1.*"
     },
     "repositories": [
         {
