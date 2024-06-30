@@ -22,16 +22,24 @@
     "require": {
         "visiosoft/streams-platform": "4.0.x-dev",
 
+        "visiosoft/posts-module": "4.0.x-dev",
+        "visiosoft/pages-module": "2.7.x-dev",
+
+        "visiosoft/base-theme": "4.0.x-dev",
+        "purepanel/puredash-theme": "dev-fatih",
+
+        "purepanel/users-module": "dev-twig3",
+        "visiosoft/profile-module": "4.0.x-dev",
+
+        "purepanel/settings-module": "3.0.x-dev",
+        "visiosoft/preferences-module": "4.0.x-dev",
+        "purepanel/files-module": "2.7.x-dev",
+        "visiosoft/helper-plugin": "4.0.x-dev",
+
         "visiosoft/singlefile-field_type": "^1.0",
-        "visiosoft/profile-module": "^1.0",
         "visiosoft/multiple-field_type": "^1.0",
         "visiosoft/media-field_type": "^1.0",
-        "visiosoft/location-module": "^1.0",
         "visiosoft/input_file-field_type": "^1.0",
-        "visiosoft/defaultadmin-theme": "^1.0",
-        "visiosoft/cats-module": "^1.0",
-        "visiosoft/base-theme": "^1.0",
-        "visiosoft/advs-module": "v1.10.x-dev",
         "visiosoft/json-field_type": "^1.0",
 
         "visiosoft/composer-merge-plugin": "2.*",
@@ -39,9 +47,7 @@
         "visiosoft/decimal-field_type": "~2.1.0",
         "visiosoft/integer-field_type": "~2.1.0",
         "visiosoft/list-field_type": "*",
-        "visiosoft/addblock-extension": "^1.1",
-        "visiosoft/language_switcher-plugin": "^1.0",
-        "visiosoft/global_helper-extension": "*",
+        "visiosoft/language_switcher-plugin": "4.0.x-dev",
 
         "visiosoft/xml_feed_widget-extension": "3.0.x-dev",
 
@@ -82,28 +88,16 @@
         "anomaly/url-field_type": "~2.2.0",
 
         "anomaly/configuration-module": "2.2.x-dev",
-        "anomaly/preferences-module": "2.3.x-dev",
         "anomaly/dashboard-module": "2.3.x-dev",
         "anomaly/redirects-module": "2.5.x-dev",
-        "anomaly/variables-module": "2.5.x-dev",
-        "anomaly/settings-module": "2.5.x-dev",
-        "anomaly/users-module": "2.6.x-dev",
-        "anomaly/pages-module": "2.7.x-dev",
-        "anomaly/files-module": "2.7.x-dev",
-        "anomaly/contact-plugin": "1.3.x-dev",
-        "anomaly/helper-plugin": "~2.1.0",
-        "anomaly/robots-extension": "~2.1.0",
+
 
         "guzzlehttp/guzzle": "^7.3",
-
-        "google/recaptcha": "1.2.*",
-
         "composer/composer": "2.*"
     },
     "replace": {
         "anomaly/streams-platform": "*",
-        "anomaly/navigation-module": "*",
-        "anomaly/posts-module": "*"
+        "visiosoft/advs-module": "*"
     },
     "require-dev": {
         "filp/whoops": "~2.0",

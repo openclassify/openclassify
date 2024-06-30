@@ -1,4 +1,14 @@
-<br>
+        "visiosoft/advs-module": "4.0.x-dev",
+                "visiosoft/cats-module": "4.0.x-dev",
+        "visiosoft/addblock-extension": "4.0.x-dev",
+        "visiosoft/global_helper-extension": "4.0.x-dev",
+
+        "visiosoft/location-module": "4.0.x-dev",
+
+        "visiosoft/defaultadmin-theme": "^1.0",
+        "visiosoft/navigation-module": "4.0.x-dev",
+
+
 <p align="center">
   <a href="https://openclassify.com"><img src="https://raw.githubusercontent.com/openclassify/openclassify/master/public/openclassify-logo.png" width="250" alt="Openclassify Logo"></a>
 
