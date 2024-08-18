@@ -24,7 +24,6 @@
     "visiosoft/streams-platform": "4.0.x-dev",
     "visiosoft/posts-module": "4.0.x-dev",
     "purepanel/puredash-theme": "dev-fatih",
-    "purepanel/users-module": "dev-twig3",
     "purepanel/settings-module": "3.0.x-dev",
     "visiosoft/preferences-module": "4.0.x-dev",
     "purepanel/files-module": "2.7.x-dev",
