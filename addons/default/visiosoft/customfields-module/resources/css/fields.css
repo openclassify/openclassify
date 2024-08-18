@@ -1,0 +1,39 @@
+.custom-fields .label-title {
+    padding-left:15px;
+    font-size: 12px;
+    color: #438ed8;
+    font-weight: bold;
+}
+.custom-checkbox {
+    font-size: 14px;
+    float: left;
+    height: 7px;
+    color: #000;
+    font-weight: normal;
+    padding: 1px 0 1px 0;
+    margin-bottom: 30px;
+    width: 209px;
+}
+.checkboxes_container {
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.16);
+    margin-top: 15px;
+}
+.checkboxes_title {
+    display: block;
+    padding: 0 11px;
+    background: #ffffff;
+    border-radius: 2px;
+    z-index: 100;
+    position: relative;
+    height: 44px;
+    line-height: 44px;
+    width: 100%;
+}
+.custom-inputs-stacked{
+    border-top: 1px solid #bbbbbb !important;
+    padding-top: 10px;
+}
+
+.radio_container .radio_data .form-control{
+    height: auto;
+}

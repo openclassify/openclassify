@@ -1,0 +1,16 @@
+.select-image {
+  .w-100 {
+    border: 1px solid transparent;
+    &:hover, &.selected {
+      border-color: #dee2e6;
+      background-color: #f8f9fa;
+    }
+    .select-img-bg {
+      height: 2rem;
+    }
+    .text-center {
+      font-size: 12px;
+      font-weight: 500;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+{% set reports = [
+    {
+        'title': trans('visiosoft.module.comments::field.top_rated_products_report'),
+        'id': 'topProductReport',
+        'columns': [
+            trans('visiosoft.module.comments::field.product'),
+            trans('visiosoft.module.comments::field.rate'),
+        ],
+    },
+    {
+        'title': trans('visiosoft.module.comments::field.most_commented_products_report'),
+        'id': 'mostCommentReport',
+        'columns': [
+            trans('visiosoft.module.comments::field.product'),
+            trans('visiosoft.module.comments::field.comments_count'),
+        ],
+    },
+] %}
+
+{% for report in reports %}
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-success">
+                <h5 class="card-title text-white">{{ report.title }}</h5>
+            </div>
+
+            <div class="card-block">
+                <table id="{{ report.id }}" class="display">
+                    <thead>
+                    <tr>
+                        {% for column in report.columns %}
+                            <th>{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+<script>
+    const topProductReportTrans = {
+        unspecified_product: `{{ trans('visiosoft.module.comments::field.unspecified_product') }}`,
+    };
+</script>
+
+{{ asset_add('scripts.js', 'visiosoft.module.comments::js/admin/dashboard/report.js') }}

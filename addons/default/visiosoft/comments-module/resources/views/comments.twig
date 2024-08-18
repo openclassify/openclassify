@@ -1,0 +1,75 @@
+<div class="comments text-left">
+
+	<div class="comment-messages alert alert-dismissible hidden">
+		<button type="button" class="close" data-dismiss="alert">
+			<span>&times;</span>
+		</button>
+
+		<span class="error hidden">{{ trans('visiosoft.module.comments::message.comment_error') }}</span>
+		<span class="success hidden">{{ trans('visiosoft.module.comments::message.comment_success') }}</span>
+	</div>
+
+
+	{% set entry = adv %}
+	{% set entry_type = get_class(entry.getObject()) %}
+
+	{% if app.auth.id %}
+        {% set form = form('comments', 'comments').actions({'save':{}}).url(url_route('comments::save_comment')).get() %}
+        {{ form.open({ 'class': 'commentformajax mb-4'})|raw }}
+        <input type="hidden" name="entry" value="{{ entry.id }}">
+        <input type="hidden" name="entry_type" value="{{ entry_type }}">
+        <div class="row">
+            <div class="col-lg-12">
+                <input type="text" name="rating" value="100" hidden>
+                {{ form.fields.rating.label|raw }}
+                  
+                <div id="rating"></div>
+            </div>
+            <div class="col-lg-6">
+                {% if auth_check() %}
+                    {{ form.fields.username.setValue(auth_user().name()).setAttributes({'required' :true, 'readonly': true})|raw }}
+                {% else %}
+                    {{ form.fields.username.setAttributes({'required' :true,})|raw }}
+                {% endif %}
+            </div>
+            <div class="col-lg-6">
+                {{ form.fields.title.setAttributes({'required' :true,})|raw }}
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12">
+                {{ form.fields.detail.setAttributes({'required' :true,})|raw }}
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            <i class="fas fa-paper-plane"></i>
+            {{ trans('visiosoft.module.comments::button.send_comment') }}
+        </button>
+
+        {{ form.close|raw }}
+	{% endif %}
+	{% for comment in getComments(entry_type, entry.id) %}
+		<div class="row commentlist my-2 py-2 border bg-white">
+			<div class="col-12 col-sm-3 row m-0 p-0">
+				<div class="col-12">
+					<h6 class="fas fa-hashtag m-0 comment-owner"> {{ comment.created_by.name() }}</h6>
+				</div>
+				<div class="col-12">
+					<div class="rating-ads" data-ratingVal="{{ comment.rating }}%"></div>
+				</div>
+			</div>
+			<div class="col-12 col-sm-9 comments speech-bubble">
+				<p class="m-0 comment-title"><b>{{ comment.title }}</b></p>
+				<p class="comment-message">{{ comment.detail }}</p>
+			</div>
+		</div>
+	{% endfor %}
+</div>
+
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyo.min.js") }}
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/ajaxcomment.js") }}
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyoVisiosoft.js") }}
+{{ asset_add("styles.css", "visiosoft.module.comments::css/rateyo.css") }}
+{{ asset_add("styles.css", "visiosoft.module.comments::css/style.css") }}

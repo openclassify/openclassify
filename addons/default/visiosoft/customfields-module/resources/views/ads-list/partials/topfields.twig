@@ -1,0 +1,7 @@
+{% for key,value in params.topfields %}
+    {% for key, val in value %}
+        {% if key == 'values' %}
+            <input type="hidden" name="cf_{{ value.id }}[]" value="{{ app.request.get('cf_'~ value.id)|join }}">
+        {% endif %}
+    {% endfor %}
+{% endfor %}

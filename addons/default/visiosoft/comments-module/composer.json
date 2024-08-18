@@ -1,0 +1,10 @@
+{
+    "name": "visiosoft/comments-module",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\CommentsModule\\": "src/"
+        }
+    }
+
+}

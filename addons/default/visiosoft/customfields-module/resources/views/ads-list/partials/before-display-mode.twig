@@ -1,0 +1,18 @@
+{% if params.topfields and count(params.topfields) %}
+    <ul class="d-flex p-2 rounded text-nowrap overflow-hidden flex-fill">
+        {% set topField = params.topfields[0] %}
+        <li class="px-2 text-truncate{{ not app.request.get('cf_'~ topField.id)[0] ? ' active' }}">
+            <a href="{{ appendRequestURL(request_query(),url('/') ~ app.request.pathinfo,{('cf_'~topField.id~'[0]'):''}) }}"
+               data-toggle="tooltip" data-placement="top"
+               title="{{ trans('visiosoft.module.customfields::field.selecttopall') }}">
+                {{ trans('visiosoft.module.customfields::field.selecttopall') }}
+            </a>
+        </li>
+        {% for key, val in topField.values %}
+            <li class="px-2 text-truncate{{ key in app.request.get('cf_'~ topField.id) ? ' active' }}">
+                <a href="{{ appendRequestURL(request_query(), url('/') ~ app.request.pathinfo, {('cf_' ~ topField.id ~ '[0]'): key}) }}"
+                   data-toggle="tooltip" data-placement="top" title="{{ val }}">{{ val }}</a>
+            </li>
+        {% endfor %}
+    </ul>
+{% endif %}

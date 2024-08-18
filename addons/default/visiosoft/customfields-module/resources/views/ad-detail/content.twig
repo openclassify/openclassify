@@ -1,0 +1,18 @@
+{% if features %}
+    <div class="tab-pane fade" id="nav-features" role="tabpanel"
+         aria-labelledby="nav-features-tab">
+        <h4>{{ trans('visiosoft.module.customfields::field.features.name') }}</h4>
+        <hr>
+        {% for feature in  features %}
+            {% if feature.custom_field_value is iterable %}
+            {% else %}
+                <div class="row">
+                    <div class="col-sm-4"><b>{{ feature.name ? feature.name : '' }}</b></div>
+                    <div class="col-sm-8">{{ feature.custom_field_value }}</div>
+                </div>
+            {% endif %}
+        {% endfor %}
+        <hr>
+        {% include "visiosoft.module.customfields::ad-detail/checkboxes" with {"features": features} %}
+    </div>
+{% endif %}

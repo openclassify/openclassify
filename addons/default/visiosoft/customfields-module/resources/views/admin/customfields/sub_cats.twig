@@ -1,0 +1,11 @@
+{% if not cats.isEmpty() %}
+    <option selected>{{ trans('visiosoft.module.customfields::field.sub_category.name') }}</option>
+    {% for subcat in cats %}
+    <option value="{{ subcat.id }}">{{ subcat.title }}</option>
+    {% endfor %}
+    <script>
+        var trans_sub_category = {{ trans('visiosoft.module.customfields::field.sub_category.name') }};
+    </script>
+    {% else %}
+        <option selected>{{ trans('visiosoft.module.customfields::field.sub_category.name') }}</option>
+{% endif %}

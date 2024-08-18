@@ -1,0 +1,86 @@
+{{ asset_add("scripts.js", "streams::js/form/form.js") }}
+{{ asset_add("scripts.js", "streams::js/form/keyboard.js") }}
+{{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+{% if not form.options.locked %}
+    {{ asset_add("scripts.js", "streams::js/form/lock.js") }}
+{% endif %}
+
+{% block content %}
+    {{ asset_style('module::css/admin/form.css') }}
+    <div class="container-fluid">
+
+        {{ form.open({
+            'class': 'form ' ~ form.options.class,
+        })|raw }}
+
+        {#{% include "streams::form/partials/controls" with {"position": "top"} %}#}
+        {% include form.options.get('heading', "streams::form/partials/heading") %}
+
+
+        {% if form.fields.isEmpty %}
+
+            <div class="card">
+                <div class="card-block">
+                    {{ trans("streams::message.no_fields_available") }}
+                </div>
+            </div>
+
+        {% else %}
+
+            {% if not form.sections.isEmpty() %}
+
+                {% for section in form.sections %}
+                    {% if section.view %}
+                        {% include section.view %}
+                    {% elseif section.html %}
+                        {{ section.html|raw }}
+                    {% else %}
+                        {% include "streams::form/partials/section" %}
+                    {% endif %}
+                {% endfor %}
+
+            {% else %}
+                <div class="card">
+
+                    {% include "streams::form/partials/header" with {"section": section} %}
+
+                    <div class="card-block">
+                        {% include "visiosoft.module.customfields::create_form_parent_category_field" %}
+
+                        {% set new_fields = form.fields.base().pluck('field_name').all() %}
+                        {% for field in new_fields %}
+                            <div class="field-group {{ field }}">
+                                {% for field in form.fields.translations(field) %}
+                                    {{ field.render({'form': form})|raw }}
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+
+
+                    </div>
+                </div>
+
+            {% endif %}
+
+        {% endif %}
+
+
+        {% include "streams::form/partials/controls" %}
+
+        {{ form.close()|raw }}
+
+    </div>
+
+    <script>
+        var selected_category = '{{ getSelectedCategoriesByCustomfieldId(form.entry.id) }}';
+        var search_category_url = '{{ url_route('visiosoft.module.customfields::ajax.search_category') }}';
+        var chooseAnOptionTrans = '{{ trans('visiosoft.module.customfields::field.choose_an_option') }}';
+        var textInputTrans = '{{ trans('visiosoft.module.customfields::field.text_input') }}';
+        var choosingOptionsTrans = '{{ trans('visiosoft.module.customfields::field.choosing_options') }}';
+        var valuesTrans = '{{ trans('visiosoft.module.customfields::field.values') }}';
+        var otherTrans = '{{ trans('visiosoft.module.customfields::field.other') }}';
+    </script>
+
+    {{ asset_add('scripts.js','visiosoft.module.customfields::js/admin/customfields.js') }}
+{% endblock %}

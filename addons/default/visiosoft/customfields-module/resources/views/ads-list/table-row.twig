@@ -1,0 +1,11 @@
+{% set seenList = params.seenList %}
+{% set adv = params.adv %}
+{% for index, seenL in seenList %}
+    <td class="justify-content-center align-middle">
+        <small>{% if adv[index] is iterable %}
+                {{ adv[index]|join('|') }}
+            {% else %}
+                {{ adv[index] }}
+            {% endif %}</small>
+    </td>
+{% endfor %}

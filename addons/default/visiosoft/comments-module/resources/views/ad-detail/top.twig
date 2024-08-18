@@ -1,0 +1,13 @@
+{% set entry_type = get_class(params.adv.getObject()) %}
+{% set comment = fn('getRating', entry_type, params.adv.id) %}
+
+<span class="d-flex align-items-center">
+    <input type="text" data-id="{{ params.adv.id }}" id="rate-{{ params.adv.id }}" name="showRate"
+           value="{{ comment.rating|length ? comment.rating : 0 }}" hidden>
+    <div id="showRate-{{ params.adv.id }}" class="showRate p-0"></div>
+    <span class="review-count">({{ comment.count }} {{ trans('visiosoft.module.comments::field.ads_review') }})</span>
+</span>
+
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyo.min.js") }}
+{{ asset_add("scripts.js", "visiosoft.module.comments::js/rateyoVisiosoft.js") }}
+{{ asset_add("styles.css", "visiosoft.module.comments::css/rateyo.css") }}

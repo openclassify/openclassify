@@ -1,0 +1,23 @@
+{
+    "name": "visiosoft/customfields-module",
+    "type": "streams-addon",
+    "authors": [
+        {
+            "name": "Visiosoft, LTD.",
+            "email": "support@visiosoft.com.tr",
+            "homepage": "https://visiosoft.com.tr/",
+            "role": "Owner"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\CustomfieldsModule\\": "src/"
+        }
+    },
+    "require": {
+        "visiosoft/selecttop-field_type": "*",
+        "visiosoft/radio-field_type": "*",
+        "visiosoft/range-field_type": "*"
+    }
+
+}

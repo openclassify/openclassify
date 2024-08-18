@@ -1,0 +1,5 @@
+{% set comment = getRating(params.entry_type, params.entry.id) %}
+
+<input type="text" name="showRate" value="{{ comment.rating|length ? comment.rating : 0 }}" hidden>
+  
+<div id="showRate"></div>

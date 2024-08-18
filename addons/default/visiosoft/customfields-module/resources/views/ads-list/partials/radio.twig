@@ -1,0 +1,20 @@
+{% for key, value in params.radio %}
+    <div id="date" class="border rounded filter-box p-3 mb-3 {{ not value.show_filter ? 'd-none' }}">
+        <div class="d-flex align-items-center justify-content-between px-2">
+            <p>{{ value.name }}</p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+
+        <div class="overflow-auto border-top mt-2 pt-2 {{ setting_value('visiosoft.module.customfields::openFilter') ? 'd-none' }}">
+            {% for key, val in value.values %}
+                <div class="px-2 {{ loop.last ? 'mb-3' : 'mb-2' }} d-flex align-items-center">
+                    <input type="radio" id="cf_{{ value.id }}_{{ key }}" {{ key in app.request.get('cf_'~ value.id) ? 'checked' }}
+                           value="{{ key }}" name="cf_{{ value.id }}[]">
+                    <label for="cf_{{ value.id }}_{{ key }}" class="ml-2 mb-0">
+                        {{ val }}
+                    </label>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+{% endfor %}

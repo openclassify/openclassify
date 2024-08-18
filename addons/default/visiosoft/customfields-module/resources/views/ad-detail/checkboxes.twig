@@ -1,0 +1,19 @@
+{% for feature in  features %}
+    <div class="customfieldfr">
+        {% if feature.custom_field_value is iterable %}
+            <h6><b>{{ feature.name ? feature.name : '' }} </b></h6>
+            {% set array = feature.custom_field_value %}
+            <div class="row">
+                {% for value in array %}
+                    {% if value.status == 1 %}
+                        <div class="col-sm-2"><i class="fa fa-check-circle text-success"></i>{{ value.val }}
+                        </div>
+                    {% else %}
+                        <div class="col-sm-2"><i
+                                    class="fa fa-times-circle fstatus text-secondary"></i>{{ value.val }}</div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endif %}
+    </div>
+{% endfor %}

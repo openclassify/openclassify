@@ -1,0 +1,10 @@
+.filter-chechk-list-customfields {
+    list-style: none;
+    padding-left: 15px;
+}
+
+/* Select Range */
+.select-range .dropdown-menu {
+    max-height: 20rem;
+    overflow-y: auto;
+}

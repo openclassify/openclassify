@@ -1,0 +1,29 @@
+{% set openCollapse =  "show" %}
+{% if setting_value('visiosoft.module.customfields::openFilter') %}
+    {% set openCollapse =  "" %}
+{% endif %}
+
+{% include 'visiosoft.module.customfields::ads-list/partials/checkboxes' %}
+
+{% include 'visiosoft.module.customfields::ads-list/partials/radio' %}
+
+{% include 'visiosoft.module.customfields::ads-list/partials/ranges' %}
+
+{% include 'visiosoft.module.customfields::ads-list/partials/topfields' %}
+
+{% include 'visiosoft.module.customfields::ads-list/partials/text' %}
+
+{% for field in params.selectRange %}
+    <input type="hidden" name="min_cf_{{ field.id }}" value="{{ app.request.get('min_cf_' ~ field.id)|join }}">
+    <input type="hidden" name="max_cf_{{ field.id }}" value="{{ app.request.get('max_cf_' ~ field.id)|join }}">
+{% endfor %}
+
+{% for field in params.selectImage %}
+    <input type="hidden" name="cf_{{ field.id }}" value="{{ app.request.get('cf_' ~ field.id)|join }}">
+{% endfor %}
+
+{% for field in params.selectDropdown %}
+    <input type="hidden" name="cf_{{ field.id }}" value="{{ app.request.get('cf_' ~ field.id)|join }}">
+{% endfor %}
+
+{{ asset_add('styles.css','visiosoft.module.customfields::css/customfields.css') }}

@@ -1,0 +1,19 @@
+{% for key, value in params.ranges %}
+    <div class="border rounded filter-box p-3 mb-3 range-filter {{ not value.show_filter ? 'd-none' }}">
+        <div class="d-flex align-items-center justify-content-between px-2">
+            <p>{{ value.name }}</p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+
+        <div class="px-3 mb-1 border-top mt-2 pt-2 {{ setting_value('visiosoft.module.customfields::openFilter') ? 'd-none' }}">
+            <div class="d-flex justify-content-around mt-3 range-input-wrapper">
+                <input type="number" class="border-0 shadow-sm rounded px-3 py-1" name="min_cf_{{ value.id }}" min="0"
+                       placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}"
+                       value="{{ app.request.get('min_cf_'~ value.id) }}">
+                <input type="number" class="border-0 shadow-sm rounded px-3 py-1" name="max_cf_{{ value.id }}"
+                       placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}"
+                       value="{{ app.request.get('max_cf_'~ value.id) }}">
+            </div>
+        </div>
+    </div>
+{% endfor %}

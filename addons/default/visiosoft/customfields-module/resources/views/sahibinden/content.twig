@@ -1,0 +1,30 @@
+<h4 class="subject-tab d-none d-sm-block mt-3 border mb-0">{{ trans('visiosoft.module.customfields::field.features.name') }}</h4>
+<div class="row mx-0 border">
+    <div class="col-12 classified-description-row">
+        {% for feature in  features %}
+            {% if feature.custom_field_value is iterable %}
+                <div class="customfieldfr">
+                    <h6>
+                        <b>{{ feature.name ? feature.name : '' }} </b>
+                    </h6>
+                    {% set array = feature.custom_field_value %}
+                    <div class="row checkbox-row">
+                        {% for value in array %}
+                            {% if value.status == 1 %}
+                                <div class="col-sm-2 text-truncate">
+                                    <i class="fa fa-check text-success"></i>
+                                    {{ value.val }}
+                                </div>
+                            {% else %}
+                                <div class="col-sm-2 disabled-checkbox-value text-truncate">
+                                    {{ value.val }}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>

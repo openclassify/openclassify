@@ -1,0 +1,107 @@
+{% if params.selectRange %}
+<div class="select-range row mb-2">
+    <!-- Select Range -->
+    {% for field in params.selectRange %}
+        <div class="col-6 col-lg-4 col-xl-3 mb-2">
+            <div class="dropdown mb-1">
+                <button class="btn btn-outline-secondary dropdown-toggle btn-sm w-100 text-truncate" type="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ field.name }} {{ trans('visiosoft.module.customfields::field.from') }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for id, option in field.values %}
+                        {% set currentValue = app.request.get('min_cf_' ~ field.id)|join %}
+                        <a class="dropdown-item{{ (currentValue == option) ? ' active' : '' }}"
+                           href="{{ appendRequestURL(
+                               request_query(),
+                               url('/') ~ app.request.pathinfo,
+                               {('min_cf_' ~ field.id): (currentValue == option) ? '' : option }
+                           ) }}">
+                            {{ option }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="btn btn-outline-secondary dropdown-toggle btn-sm w-100 text-truncate" type="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    {{ field.name }} {{ trans('visiosoft.module.customfields::field.to') }}
+                </button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    {% for id, option in field.values %}
+                        {% set currentValue = app.request.get('max_cf_' ~ field.id)|join %}
+                        <a class="dropdown-item{{ (currentValue == option) ? ' active' : '' }}"
+                           href="{{ appendRequestURL(
+                               request_query(),
+                               url('/') ~ app.request.pathinfo,
+                               {('max_cf_' ~ field.id): (currentValue == option) ? '' : option}
+                           ) }}">
+                            {{ option }}
+                        </a>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+    <!-- Select Dropdown -->
+    {% if params.selectDropdown is defined %}
+        {% for index in 0..(count(params.selectDropdown) / 2)|round %}
+            <div class="col-6 col-lg-4 col-xl-3 mb-2">
+                {% for i in 0..1 %}
+                    {% set field = params.selectDropdown[index * 2 + i] %}
+                    {% if field %}
+                            <div class="dropdown mb-1">
+                                <button class="btn btn-outline-secondary dropdown-toggle btn-sm w-100 text-truncate"
+                                        type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    {{ field.name }}
+                                </button>
+                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    {% for id, option in field.values %}
+                                        {% set currentValue = app.request.get('cf_' ~ field.id)|join %}
+                                        <a class="dropdown-item{{ (currentValue == id) ? ' active' : '' }}"
+                                           href="{{ appendRequestURL(
+                                               request_query(),
+                                               url('/') ~ app.request.pathinfo,
+                                               {('cf_' ~ field.id): (currentValue == id) ? '' : id }
+                                           ) }}">
+                                            {{ option }}
+                                        </a>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        {% endfor %}
+    {% endif  %}
+</div>
+{% endif %}
+
+{% for field in params.selectImage %}
+    <div class="select-image d-flex flex-wrap mb-2">
+        {% set selectedValues = app.request.get('cf_' ~ field.id)|split(',') %}
+        {% for id, option in field.values %}
+            <div class="px-1 mb-2">
+                {% set linkValue = unset(id, selectedValues, true) %}
+                <a class="link-unstyled" href="{{ appendRequestURL(
+                    request_query(),
+                    url('/') ~ app.request.pathinfo,
+                    {('cf_' ~ field.id): (id in selectedValues) ? linkValue|join(',') : linkValue|join(',') ~ ',' ~ id}
+                ) }}">
+                    <div class="w-100 h-100 rounded text-center p-1{{ id in selectedValues ? ' selected' : '' }}">
+                        <img src="{{ file(option.image).url }}" class="select-img-bg rounded">
+                        <div class="text-center mt-1">{{ option.value }}</div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+{% endfor %}
+{{ asset_style('visiosoft.module.customfields::css/detail.scss') }}
+
+<style>
+    .cf-selecttop .bg-primary a {
+        color: #fff !important;
+    }
+</style>

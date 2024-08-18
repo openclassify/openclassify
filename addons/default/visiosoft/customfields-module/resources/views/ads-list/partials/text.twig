@@ -1,0 +1,28 @@
+{% if setting_value('visiosoft.module.customfields::openDateFilter') %}
+    {{ asset_script('visiosoft.module.customfields::js/date/moment.min.js') }}
+    {{ asset_script('visiosoft.module.customfields::js/date/daterangepicker.min.js') }}
+    {{ asset_style('visiosoft.module.customfields::css/date/daterangepicker.css') }}
+    {% for textField in params.text %}
+        {% if textField.data_date %}
+            {% include "visiosoft.module.customfields::ads-list/partials/text-part"%}
+        {% endif %}
+    {% endfor %}
+    <script>
+        date_input = $("[data-date=1]");
+        if (date_input) {
+            date_input.daterangepicker({
+                "locale": {
+                    "format": "YYYY-MM-DD"
+                }
+            });
+            date_input.val('');
+        }
+    </script>
+{% endif %}
+{% if setting_value('visiosoft.module.customfields::openTextFilter') %}
+    {% for textField in params.text %}
+        {% if not textField.data_date %}
+            {% include "visiosoft.module.customfields::ads-list/partials/text-part"%}
+        {% endif %}
+    {% endfor %}
+{% endif %}
