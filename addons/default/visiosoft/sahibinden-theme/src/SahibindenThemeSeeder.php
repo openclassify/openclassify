@@ -1,8 +1,5 @@
 <?php namespace Visiosoft\SahibindenTheme;
 
-use Anomaly\BlocksModule\Area\AreaRepository;
-use Anomaly\BlocksModule\Type\TypeRepository;
-use Anomaly\FilesModule\Folder\Contract\FolderRepositoryInterface;
 use Anomaly\NavigationModule\Link\LinkRepository;
 use Anomaly\PagesModule\Page\Contract\PageRepositoryInterface;
 use Anomaly\PagesModule\Type\Contract\TypeRepositoryInterface as PageTypeRepositoryInterface;
@@ -39,8 +36,6 @@ class SahibindenThemeSeeder extends Seeder
     private $streamRepository;
     private $fieldRepository;
     private $assignmentRepository;
-    protected $areaRepository;
-    protected $typeRepository;
     protected $fields;
     protected $assignments;
     protected $linkRepository;
@@ -59,8 +54,6 @@ class SahibindenThemeSeeder extends Seeder
                                 AssignmentRepositoryInterface $assignmentRepository,
                                 PageTypeRepositoryInterface   $pageTypes,
                                 PageRepositoryInterface       $pages,
-                                AreaRepository                $areaRepository,
-                                TypeRepository                $typeRepository,
                                 FieldRepositoryInterface      $fields,
                                 AssignmentRepositoryInterface $assignments,
                                 LinkRepository                $linkRepository,
@@ -78,8 +71,6 @@ class SahibindenThemeSeeder extends Seeder
         $this->fieldRepository = $fieldRepository;
         $this->assignmentRepository = $assignmentRepository;
         $this->pages = $pages;
-        $this->areaRepository = $areaRepository;
-        $this->typeRepository = $typeRepository;
         $this->fields = $fields;
         $this->assignments = $assignments;
         $this->linkRepository = $linkRepository;
@@ -626,61 +617,6 @@ class SahibindenThemeSeeder extends Seeder
         }
 
 
-        // Blocks
-        $areas = [
-            [
-                'en' => [
-                    'name' => 'Homepage Banners',
-                ],
-                'slug' => 'homepage-banners',
-            ],
-            [
-                'en' => [
-                    'name' => 'Cities',
-                ],
-                'slug' => 'cities',
-            ],
-            [
-                'en' => [
-                    'name' => 'Popular Search',
-                ],
-                'slug' => 'popular-search',
-            ]
-        ];
-
-
-        foreach ($areas as $area) {
-            if (!$this->areaRepository->findBySlug($area['slug'])) {
-                $this->areaRepository->create($area);
-            }
-        }
-
-        $types = [
-            [
-                'name' => 'Homepage Banners',
-                'slug' => 'homepage_banners',
-            ],
-            [
-                'name' => 'Cities',
-                'slug' => 'cities',
-            ],
-            [
-                'name' => 'Popular Search',
-                'slug' => 'popular_search',
-            ]
-        ];
-
-
-        foreach ($types as $type) {
-            $exist_type = $this->typeRepository->findBySlug($type['slug']);
-            if (!$exist_type) {
-                $this->typeRepository->create([
-                    'slug' => $type['slug'],
-                    'name' => $type['name'],
-                    'category' => 'other',
-                ]);
-            }
-        }
 
         $blockFields = [
             [

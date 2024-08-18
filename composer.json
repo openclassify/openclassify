@@ -20,7 +20,6 @@
     }
   ],
   "require": {
-    "anomaly/users-module": "dev-4.0-mostafa",
     "visiosoft/streams-platform": "4.0.x-dev",
     "visiosoft/posts-module": "4.0.x-dev",
     "purepanel/puredash-theme": "dev-fatih",
