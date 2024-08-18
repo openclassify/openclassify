@@ -1,0 +1,18 @@
+{
+    "name": "visiosoft/location-module",
+    "type": "streams-addon",
+    "description": "It allows you to use your Location features for ads.",
+    "authors": [
+        {
+            "name": "Vedat Akdoğan.",
+            "email": "vedat@visiosoft.com.tr"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\LocationModule\\": "src/"
+        }
+    },
+    "require": {
+    }
+}

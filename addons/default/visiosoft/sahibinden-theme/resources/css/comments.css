@@ -1,0 +1,13 @@
+.comment-message,
+.comment-title {
+    font: 12px "Lucida Grande", "LucidaGrande", Arial, sans-serif;
+}
+
+.comment-title {
+    font-weight: 700 !important;
+}
+
+.comment-owner {
+    font-weight: bold;
+    color: #333;
+}

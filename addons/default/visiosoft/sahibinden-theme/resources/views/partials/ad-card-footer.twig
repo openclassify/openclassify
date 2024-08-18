@@ -1,0 +1,21 @@
+{% if setting_value('visiosoft.theme.sahibinden::show_price_and_location_main_page') %}
+    <div class="d-flex justify-content-between align-items-center text-truncate default-price">
+        {% if not hidePrice %}
+            {% if not setting_value('visiosoft.module.advs::hide_zero_price') or adv.price != "0" %}
+                {% if adv.status == 'sold' %}
+                    <small class="text-black-50">{{ currency_format(adv.price,adv.currency) }}</small>
+                    <b class="text-danger">{{ trans('visiosoft.module.advs::field.sold') }}</b>
+                {% else %}
+                    <b>{{ currency_format(adv.price,adv.currency) }}</b>
+                {% endif %}
+            {% else %}
+                <b> {{ trans('visiosoft.theme.sahibinden::field.ask_for_price') }}</b>
+            {% endif %}
+        {% endif %}
+    </div>
+    <div class="d-flex justify-content-between align-items-center text-truncate default-country">
+        {% set city = entries('location','cities').find(adv.city) %}
+        {{ adv.country_name }}
+        {{ city.name.value ? '/'~city.name.value : '' }}
+    </div>
+{% endif %}

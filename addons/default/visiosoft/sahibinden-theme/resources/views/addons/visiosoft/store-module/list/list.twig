@@ -1,0 +1,164 @@
+{% extends layout('no-container') %}
+
+{% set thumbSlider = entries('store', 'thumb_slider').get() %}
+{% set listRoute = setting_value('visiosoft.module.store::use_subdomain_routing') ? 'store::subdomain_view' : 'store::view' %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline('visiosoft.module.store::css/swiper.min.css') }}
+        {{ asset_inline('visiosoft.module.store::css/list.scss') }}
+        {{ asset_inline('visiosoft.module.store::css/list2.css') }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <main>
+        {% if setting_value('visiosoft.module.store::show_searchbar_list') %}
+            <section class="store-search-banner position-relative">
+                <div class="d-flex flex-column justify-content-center align-items-center">
+                    <div class="search-header-wrapper d-flex flex-row  mb-4">
+                        {{ img("module::images/ecommerce.svg").data|raw }}
+                        <h2 class="search-header">{{ trans("module::field.search_store") }}</h2>
+                    </div>
+                    <div class="store-search-form rounded">
+                        <form class="d-flex position-relative" action="{{ url_route('store::list') }}" method="get">
+                            <div class="d-flex">
+                                <input class="rounded border-0 h-100 pl-3 pl-md-4 pr-2 mr-2" name="keyword" type="text"
+                                       placeholder="{{ trans('visiosoft.module.store::field.search_in_domain') }}">
+                                <select class="mr-2 rounded border-0 px-4 d-none d-md-inline-block" name="cat">
+                                    {% include "visiosoft.module.store::list/partials/category-filter-options" %}
+                                </select>
+                                <select class="rounded border-0 px-4 d-none d-md-inline-block" name="city">
+                                    {% set defaultCountry = setting_value('visiosoft.module.location::default_country') %}
+                                    {% set cities = entries('location', 'cities').where('parent_country_id', defaultCountry).get() %}
+                                    <option value="">
+                                        {{ trans('visiosoft.module.location::field.city.name') }}
+                                    </option>
+                                    {% for city in cities %}
+                                        <option value="{{ city.id }}">{{ city.name }}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <button class="h-100 ml-3 rounded border-0" type="submit">
+                                {{ img('visiosoft.module.store::images/search.svg').data|raw }}
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </section>
+        {% endif %}
+        <div class="container">
+            {% if (thumbSlider and count(thumbSlider))
+                and  setting_value('visiosoft.module.store::show_searchbar_list') == false %}
+                <div class="swiper-container gallery-top rounded d-flex align-items-center mt-5">
+                    <div class="swiper-wrapper">
+                        {% for slider in thumbSlider %}
+                            <a href="{{ slider.url }}" class="swiper-slide w-100 h-100"
+                               style="background-image:url('{{ slider.slider.route("view") }}')">
+                            </a>
+                        {% endfor %}
+                    </div>
+                    <!-- Add Arrows -->
+                    <div class="thumb-button-next position-absolute">
+                        {{ img('visiosoft.module.store::images/right-arrow.svg').data|raw }}
+                    </div>
+                    <div class="thumb-button-prev position-absolute">
+                        {{ img('visiosoft.module.store::images/right-arrow.svg').data|raw }}
+                    </div>
+                </div>
+                <div class="swiper-container gallery-thumbs mt-2 mb-5">
+                    <div class="swiper-wrapper">
+                        {% for slider in thumbSlider %}
+                            <div class="swiper-slide rounded"
+                                 style="background-image:url('{{ slider.slider.route("view") }}')"></div>
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+            {% set latestStores = entries('store', 'store').where('is_store', 1)
+                .where('status','approved')
+                .orderBy('created_at', 'desc')
+                .limit(setting_value('visiosoft.module.store::homeShowcaseLimit', 5)).get() %}
+            <div class="row home-container mx-0 mt-4 mb-4">
+                {% if not latestStores is not empty %}
+                    <div class="col-12 popular-stores-wrapper px-0 mb-4">
+                        <div class="popular-stores-header mb-3 d-flex justify-content-between align-items-center position-relative">
+                            <h2 class="mb-0 mr-1">{{ trans('visiosoft.module.store::field.latest_stores.name') }}</h2>
+                            <div class="text-nowrap">
+                                <button class="rounded border-0 text-white ps-prev">
+                                    <i class="fa fa-arrow-left" aria-hidden="true"></i>
+                                </button>
+                                <button class="rounded border-0 text-white ps-next">
+                                    <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="popular-stores">
+                            <div class="swiper-container ps-swiper">
+                                <div class="swiper-wrapper">
+                                    {% set redirectType = setting_value('visiosoft.module.store::store_list_redirection') %}
+                                    {% for store in latestStores %}
+                                        <div class="swiper-slide border rounded py-3 px-3">
+                                            <a href="{{ redirectType == 'list' ? url_route(listRoute, [store.slug]) : url_route('store::detail', [store.slug]) }}"
+                                               class="popular-store link-unstyled">
+                                                <img src="{{ store.thumbnail }}"
+                                                     class="rounded mb-2 w-100" alt="popular stores images">
+                                                <p class="mb-1">{{ store.name }}</p>
+                                                <div class="d-flex align-items-center">
+                                                    {{ img('visiosoft.module.store::images/pin.svg').data|raw }}
+                                                    <p class="ml-1">
+                                                        {{ store.getCity.name }} / {{ store.country.first.name }}
+                                                    </p>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endif %}
+{#                {{ addBlock('store/list/middle-section')|raw }}#}
+
+                <div class="col-md-3 left-categories-section pl-0 pr-0 pr-md-3">
+                    <div class="mb-4">
+                        {% include "visiosoft.module.store::list/partials/list-filter" %}
+                    </div>
+                </div>
+                <div class="col-md-9 d-inline-block px-0 mt-3 mt-md-0">
+                    <div class="latest-stores-wrapper">
+                        <div class="latest-stores-header mb-3 position-relative">
+                            <h1 class="mb-0 mr-1">{{ trans('visiosoft.module.store::field.stores') }}</h1>
+                        </div>
+                        <div class="latest-stores">
+{#                            {{ addBlock('ads-list/row',{'topfields':topfields, 'store':true})|raw }}#}
+                            <div class="row">
+                                {% if setting_value('visiosoft.module.store::view_type') == 'gallery' %}
+                                    {% include "visiosoft.module.store::list/partials/list-view-types/gallery" %}
+                                {% else %}
+                                    {% include "visiosoft.module.store::list/partials/list-view-types/list" %}
+                                {% endif %}
+                            </div>
+
+                            <div class="d-flex justify-content-center">
+                                {{ stores.appends(request_query()).links()|raw }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {{ asset_add("scripts.js", "visiosoft.module.store::js/swiper.min.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.store::js/list.js") }}
+
+    <script>
+        var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
+    </script>
+
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list.js") }}
+    {{ asset_add("styles.css", "visiosoft.module.advs::css/list.css") }}
+    {{ asset_add("styles.css", "visiosoft.module.store::css/list.css") }}
+
+{% endblock %}

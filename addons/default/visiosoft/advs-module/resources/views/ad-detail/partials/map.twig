@@ -1,0 +1,40 @@
+    {% if(adv.map_Val == "") %}
+        <div class="d-flex flex-column justify-content-center text-center bg-white h-100">
+            {{ img('visiosoft.module.advs::images/emptystate.jpg') }}
+            {{ trans('visiosoft.module.advs::field.no_location') }}
+        </div>
+    {% else %}
+    {% set map_arr = adv.map_Val|split(',') %}
+<div id="mapDiv" style="height: 500px; width: 100%;"></div>
+<script>
+    $(document).ready(function () {
+        loadScript('https://maps.googleapis.com/maps/api/js?key={{ setting_value('visiosoft.module.location::google_map_key') }}&callback=initMap');
+    });
+    function loadScript(src, callback) {
+        var script = document.createElement("script");
+        script.type = "text/javascript";
+        if (callback) script.onload = callback;
+        document.getElementsByTagName("head")[0].appendChild(script);
+        script.src = src;
+    }
+</script>
+<script>
+    var lat = parseFloat({{ map_arr[0] }});
+    var lng = parseFloat({{ map_arr[1] }});
+    var google_map_key = "{{ setting_value('visiosoft.module.location::google_map_key') }}";
+
+    function initMap() {
+        var myLatLng = {lat: lat, lng: lng};
+        var map = new google.maps.Map(document.getElementById('mapDiv'), {
+            zoom:  {{  zoom ? zoom : 13 }},
+            center: myLatLng,
+            streetViewControl: false
+        });
+        new google.maps.Marker({
+            position: myLatLng,
+            map: map
+        });
+    }
+</script>
+
+{% endif %}

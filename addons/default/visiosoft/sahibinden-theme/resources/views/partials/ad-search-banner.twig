@@ -1,0 +1,92 @@
+<div class="row p-4 mx-4">
+    <!-- Location Filter Start -->
+    <div id="location" class="col-12 col-sm-3 border filter-box px-4 py-3 position-relative">
+        <div class="d-flex align-items-center justify-content-between pb-1">
+            <p class="location-title mb-0">
+                {{ img('visiosoft.theme.sahibinden::images/location-icon.svg').data|raw }}
+                {{ trans("visiosoft.module.location::addon.title") }}
+            </p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+        <div class="filter-body px-3 mb-1 d-none">
+        {% include "visiosoft.module.location::ads-list/partials/location-fields" %}
+        </div>
+    </div>
+    <script>
+        var select_trans = "{{ trans('visiosoft.module.location::field.pick_option.name') }}";
+        var currentLocale = "{{ config('app.locale') }}";
+    </script>
+    {{ asset_script("visiosoft.module.location::js/filterLocation.js") }}
+
+    <!-- Location Filter End -->
+
+    <!-- Price Filter Start -->
+    <div id="price" class="col-12 col-sm-3 border  filter-box px-4 py-3">
+        <div class="d-flex align-items-center justify-content-between pb-1">
+            <p class="price-title mb-0">
+                {{ img('visiosoft.theme.sahibinden::images/price-icon.svg').data|raw }}
+                {{ trans("visiosoft.module.advs::field.price.name") }}
+            </p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+        <div class="filter-body px-3 mb-1 d-none">
+
+            <div id="priceInputWrapper" class="d-flex justify-content-around mt-3 range-input-wrapper">
+                <input type="number" class="border shadow-sm rounded px-2 py-1 w-100" name="min_price"
+                       min="0"
+                       placeholder="{{ trans('visiosoft.module.advs::field.min.name') }}"
+                       value="{{ app.request.get('min_price') }}">
+                <input type="number" class="border shadow-sm rounded px-2 py-1 w-100" name="max_price"
+                       placeholder="{{ trans('visiosoft.module.advs::field.max.name') }}"
+                       value="{{ app.request.get('max_price') }}">
+            </div>
+        </div>
+    </div>
+    <!-- Price Filter End -->
+
+    <!-- Date Filter Start -->
+    <div id="date" class="col-12 col-sm-3 border  filter-box px-4 py-3">
+        <div class="d-flex align-items-center justify-content-between pb-1">
+            <p class="date-title mb-0">
+                {{ img('visiosoft.theme.sahibinden::images/calendar-icon.svg').data|raw }}
+                {{ trans("visiosoft.module.advs::field.date.name") }}
+            </p>
+            {{ img('visiosoft.module.advs::images/listing/filter-arrow.svg').data|raw }}
+        </div>
+        <div class="filter-body overflow-auto d-none">
+            <div class="px-2 mb-2 d-flex align-items-center">
+                <input type="radio" id="dateDay" {{ app.request.get('date') == 'day' ? 'checked' }}
+                       value="day"
+                       name="date">
+                <label for="dateDay" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
+                </label>
+            </div>
+            <div class="px-2 mb-2 d-flex align-items-center">
+                <input type="radio" id="dateWeek" {{ app.request.get('date') == 'week' ? 'checked' }}
+                       value="week"
+                       name="date">
+                <label for="dateWeek" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
+                </label>
+            </div>
+            <div class="px-2 mb-3 d-flex align-items-center">
+                <input type="radio" id="dateMonth" {{ app.request.get('date') == 'month' ? 'checked' }}
+                       value="month"
+                       name="date">
+                <label for="dateMonth" class="ml-2 mb-0">
+                    {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
+                </label>
+            </div>
+        </div>
+    </div>
+    <!-- Date Filter End -->
+
+
+    <div id="filterSubmit" class="col-12 col-sm-3 border filter-box px-4 py-2">
+        <button type="submit" class="btn btn-light btn-sm w-100 h-100">
+            {{ trans("visiosoft.module.advs::field.search") }}
+        </button>
+    </div>
+
+</div>

@@ -1,0 +1,8 @@
+<header id="header">
+
+    {% include "visiosoft.theme.sahibinden::partials/navigation" %}
+    <script>
+        let defaultCurrency = `{{ setting_value('streams::currency') }}`;
+        {{ asset_inline("visiosoft.theme.sahibinden::js/changeCurrency.js") }}
+    </script>
+</header>

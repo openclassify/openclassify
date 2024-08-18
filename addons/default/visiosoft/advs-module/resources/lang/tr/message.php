@@ -1,0 +1,50 @@
+<?php
+
+return [
+    'error_added_cart' => 'İstenen ürün şu anda eksik veya etkin değil',
+    'please_payment' => 'Lütfen Ödeme Yapınız',
+    'bank_account_info' => 'Banka Hesap Bilgilerimiz',
+    'agreement' => 'Kullanım Koşulları ve Gizlilik Politikasını kabul ediyorum.',
+    'update_category_msg' => 'İlan kategorisi güncellenecektir.',
+    'updated_category_msg' => 'Kategori başarıyla güncellendi.',
+    'create_ad_with_post_cat' => [
+        'title' => "Kategori seçimi tamamlandı.",
+        'success' => true,
+        'continueBtn' => "Devam Et",
+    ],
+    'update_category_info' => 'Lütfen kategoriyi güncelleyiniz.',
+    'filter_by_search_msg' => 'Aramanızı Daraltın.',
+    'delete_author_error' => 'Size ait olmayan bir ilanı silemezsiniz',
+    'success_delete' => 'İlan Silindi',
+    'pending_ad_status' => 'İlanınız Editör tarafından onay beklemektedir.',
+    'extended' => ':number ilan süresi uzatıldı.',
+    'extend_package_fail' => 'Önce paket satın almalısınız.',
+    'category_not_exist' => 'Bu kategori artık mevcut değil!',
+    'currency_converted' => 'Para Birimi Başarıyla Dönüştürüldü.',
+    'choose_user' => 'Bir Kullanıcı Seçin',
+    'owner_updated_successfully' => 'Sahibi Başarıyla Güncellenmiştir!',
+    'no_add_found' => 'İlan Bulunamadı!',
+    'replicated_success' => 'İlan başarıyla kopyalandı!',
+    'ad_doesnt_exist' => "Bu ilan mevcut değil!",
+    'select_location_error' => "Lütfen haritada bir nokta seçin!",
+    'this_ad_is_not_valid_anymore' => "Bu ürün veya ilan artık geçerli değil!",
+    'approve_status_change' => "İlanın Durumu Etkin Olarak Ayarlandı!",
+    'passive_status_change' => "İlanınızın Durumu Pasif Olarak Ayarlandı!",
+	'sold_status_change' => "İlanın Durumu Satıldı Olarak Ayarlanmıştır!",
+	'status_change' => "İlanın durumu Ayarland :status !",
+    'permission_error' => 'Bu işlem için yetkiniz bulunmamaktadır',
+    'currency_converter_not_available' => 'Para birimi çevirici kullanılamıyor.',
+    'option_saved' => 'Seçenek kaydedildi',
+    'product_added_to_cart' => 'Ürün sepete eklendi!',
+    'do_you_want_to_save_the_option' => 'Seçeneği kaydetmek istiyor musunuz?',
+    'you_can_not_delete_a_system_status' => 'Sistem durumunu silemezsiniz!',
+
+    'error_select_related_category' => 'Lütfen ilgili bir kategori seçin!',
+    'error_select_ad' => "Hiçbir ilan seçmediniz. Lütfen bir veya birden fazla ilan seçin!",
+    'error_operations_author' => "Size ait olmayan ilan veya ilanlar üzernide işlem yapamazsınız!",
+    'error_general' => 'Bir hatayla karşılaşıldı. Yöneticiyle iletişime geçin!',
+
+
+    'adv_create_success' => 'Ürün başarıyla oluşturuldu',
+    'out_of_stock' => 'Stoklarımız tükenmiştir.'
+];

@@ -1,0 +1,53 @@
+{% for adv in params.featured_advs %}
+    <tr class="{{ adv.doping_type ? ' doping-type-' ~ adv.doping_type }} doping_ad_desktop">
+        <td>
+            <a href="{{ adv.detail_url }}">
+                <img src="{{ img('visiosoft.theme.sahibinden::images/no-image.png').url }}" class="rounded lazy"
+                     alt="{{ adv.name }}"
+                     data-src="{{ adv.cover_photo }}">
+            </a>
+        </td>
+        <td class="text-left pl-2">
+            <h6 class="mb-1">
+                <a href="{{ adv.detail_url }}">{{ adv.name }}</a>
+            </h6>
+            {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
+                <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}/{{ adv.cat3_name }}</p>
+            {% endif %}
+            <div class="action-data d-none d-sm-flex align-items-center">
+                {{ addBlock('list/extra-actions', {'ad': adv, 'vars': _context}, ['favs', 'comparisons'])|raw }}
+
+            </div>
+        </td>
+
+        {% if params.vars.listLocation %}
+            <td class="location-data d-none d-sm-table-cell">
+                {% set firstLocationType = setting_value('visiosoft.module.advs::location_data_type_first') %}
+                {% set secondLocationType = setting_value('visiosoft.module.advs::location_data_type_second') %}
+                <p>{{getListingLocation(firstLocationType,adv)}}</p>
+                <p>{{getListingLocation(secondLocationType,adv)}}</p>
+            </td>
+        {% endif %}
+
+        {% if setting_value('visiosoft.module.advs::market_place') and params.vars.showDate%}
+            <td class="date-data d-none d-sm-table-cell">
+                <p>{{ adv.publish_at.value|date('d/m') }}</p>
+                <p>{{ adv.publish_at.value|date('Y') }}</p>
+            </td>
+        {% endif %}
+
+        <td class="price-data">
+            <p class="text-nowrap">
+                {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : trans('visiosoft.module.advs::field.free') }}
+            </p>
+        </td>
+    </tr>
+{% endfor %}
+<tr class="listing-top-message w-100 mb-2 text-center py-2">
+    <td colspan="8">
+        <a href="{{ url_route('profile::ads') }}">
+            {{ trans(setting_value('visiosoft.module.dopings::listing-ad-text')) }}
+        </a>
+    </td>
+</tr>
+{{ asset_style('visiosoft.module.dopings::css/dopings.css') }}

@@ -1,0 +1,24 @@
+{% set fire_icon_img = setting_value("visiosoft.theme.sahibinden::fire_icon", img('visiosoft.module.dopings::img/fire-icon.png')) %}
+{% set price_icon_img = setting_value("visiosoft.theme.sahibinden::price_icon", img('visiosoft.module.dopings::img/price-tag.png')) %}
+{% set doping_types = {
+    'urgent':{
+        'img_src' : file(fire_icon_img).make().url ?? img('visiosoft.module.dopings::img/fire-icon.png').url,
+        'title' : trans('visiosoft.module.dopings::field.fire_sale'),
+        'type' :'urgent'
+    },
+    'markdown':{
+        'img_src' : file(price_icon_img).make().url ?? img('visiosoft.module.dopings::img/price-tag.png').url,
+        'title' : trans('visiosoft.module.dopings::field.markdown'),
+        'type' : 'markdown',
+    }
+} %}
+
+{% for type in doping_types %}
+    <li class="categories-list-li category-icon text-truncate pb-2">
+        <a href="{{ url_route('visiosoft.module.advs::list') }}?doping={{ type.type }}"
+           class="d-flex align-items-center main-category">
+            <img src="{{ type.img_src }}" class="img-responsive mr-2" alt="{{ type.title }}">
+            {{ type.title }}
+        </a>
+    </li>
+{% endfor %}

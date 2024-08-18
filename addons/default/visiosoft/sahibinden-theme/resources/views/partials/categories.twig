@@ -1,0 +1,96 @@
+{% set sub_categories_limit = setting_value('visiosoft.theme.sahibinden::home_page_sub_categories_limit') %}
+{% set showAdsCount = setting_value('visiosoft.module.advs::show_ads_count') %}
+{% set company_directory_img = setting_value("visiosoft.theme.sahibinden::company_directory_img", img('visiosoft.theme.sahibinden::images/store-search.png')) %}
+{% set popular_ads_img = setting_value("visiosoft.theme.sahibinden::popular_ads_img", img('visiosoft.theme.sahibinden::images/popular-ads.png')) %}
+{% set last_48_hours_img = setting_value("visiosoft.theme.sahibinden::last_48_hours_img", img('visiosoft.theme.sahibinden::images/last-48-hours.png')) %}
+{% set get_ads_img = setting_value("visiosoft.theme.sahibinden::get_ads_img", img('visiosoft.theme.sahibinden::images/get-ads.png')) %}
+
+<div class="col-md-3 left-categories-section mx-0">
+    <ul class="categories-list p-0 d-none d-sm-block mb-0">
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ file(company_directory_img).make().url ?? img('visiosoft.theme.sahibinden::images/store-search.png').url }}" class="img-responsive"
+                 alt="company directory">
+            <a href="{{ url_route('store::list') }}" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.company_directory') }}
+                </span>
+            </a>
+        </li>
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ file(popular_ads_img).make().url ?? img('visiosoft.theme.sahibinden::images/popular-ads.png').url }}" class="img-responsive"
+                 alt="populars">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?sort_by=popular" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.popular_ads') }}
+                </span>
+            </a>
+        </li>
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ file(last_48_hours_img).make().url ?? img('visiosoft.theme.sahibinden::images/last-48-hours.png').url }}" class="img-responsive"
+                 alt="last 48 hours">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?date=two_days" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.last_48_hours') }}
+                </span>
+            </a>
+        </li>
+        <li class="categories-list-li category-icon mt-0 pb-3">
+            <img src="{{ file(get_ads_img).make().url ?? img('visiosoft.theme.sahibinden::images/get-ads.png').url }}" class="img-responsive"
+                 alt="secure e-commerce">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?get_ads=true" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.secure_e-commerce_ads') }}
+                </span>
+            </a>
+        </li>
+    </ul>
+
+    <div class="col-12 p-0 m-0">
+        {% set cats = getCategoriesLevel2() %}
+        {% for main_category in cats.maincats %}
+                {% include "visiosoft.theme.sahibinden::partials/categories-web" %}
+                {% include "visiosoft.theme.sahibinden::partials/categories-mobile" %}
+        {% endfor %}
+    </div>
+    <ul class="categories-list p-0 d-none mb-0 under-category-dopings">
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ file(company_directory_img).make().url ?? img('visiosoft.theme.sahibinden::images/store-search.png').url }}" class="img-responsive"
+                 alt="company directory">
+            <a href="{{ url_route('store::list') }}" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.company_directory') }}
+                </span>
+            </a>
+        </li>
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ file(popular_ads_img).make().url ?? img('visiosoft.theme.sahibinden::images/popular-ads.png').url }}" class="img-responsive"
+                 alt="populars">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?sort_by=popular" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.popular_ads') }}
+                </span>
+            </a>
+        </li>
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ file(last_48_hours_img).make().url ?? img('visiosoft.theme.sahibinden::images/last-48-hours.png').url }}" class="img-responsive"
+                 alt="last 48 hours">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?date=two_days" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.last_48_hours') }}
+                </span>
+            </a>
+        </li>
+        <li class="categories-list-li category-icon mt-0 pb-3">
+            <img src="{{ file(get_ads_img).make().url ?? img('visiosoft.theme.sahibinden::images/get-ads.png').url }}" class="img-responsive"
+                 alt="secure e-commerce">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?get_ads=true" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.sahibinden::field.secure_e-commerce_ads') }}
+                </span>
+            </a>
+        </li>
+    </ul>
+    <div class="col-12 p-0 m-0 d-none d-sm-block text-center">
+        {{ setting_value('visiosoft.theme.sahibinden::home_bottom_left_categories')|raw }}
+    </div>
+</div>

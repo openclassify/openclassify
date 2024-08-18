@@ -1,0 +1,42 @@
+<!doctype html>
+
+<!--[if lt IE 7]>
+<html class="nojs ms lt_ie7" lang="{{ config('app.locale') }}"><![endif]-->
+<!--[if IE 7]>
+<html class="nojs ms ie7" lang="{{ config('app.locale') }}"><![endif]-->
+<!--[if IE 8]>
+<html class="nojs ms ie8" lang="{{ config('app.locale') }}"><![endif]-->
+<!--[if gt IE 8]>
+<html class="nojs ms" lang="{{ config('app.locale') }}"><![endif]-->
+
+<html lang="{{ config('app.locale') }}">
+
+<head>
+    {% include "visiosoft.theme.sahibinden::partials/metadata" %}
+    {% block styles %}{% endblock %}
+</head>
+
+<body>
+
+{% include "visiosoft.theme.sahibinden::partials/header" %}
+
+<div>
+
+    {% include "visiosoft.theme.sahibinden::partials/messages" %}
+
+    {% if (request_path() == '/') %}
+        {% include "visiosoft.theme.sahibinden::index/default" %}
+    {% else %}
+        {% block content %}{% endblock %}
+    {% endif %}
+
+</div>
+
+{% include "visiosoft.theme.sahibinden::partials/offline" %}
+
+{% include "visiosoft.theme.sahibinden::partials/footer" %}
+{% include "visiosoft.theme.sahibinden::partials/settings" %}
+{% include "visiosoft.theme.sahibinden::partials/assets" %}
+
+</body>
+</html>

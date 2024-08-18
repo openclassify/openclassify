@@ -1,0 +1,130 @@
+.login-section,
+.register-section {
+    border: 1px solid #dfdfdf;
+}
+
+.login-section button, .login-section a,
+.register-section button,
+.register-section a {
+    font-size: 16px;
+}
+
+
+.login_subject {
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.login-section label {
+    font-size: 13px;
+}
+
+.forgot_password {
+    display: inline-block;
+    float: right;
+    color: #868f94;
+}
+.forgot_password:hover {
+    text-decoration: underline;
+}
+
+.login-section button {
+    padding: 9px 22px;
+    margin-bottom: 0;
+    font-family: 'Lucida Grande','LucidaGrande',Arial,sans-serif;
+    font-weight: bold;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #fff;
+    background-repeat: repeat-x;
+    background-image: -moz-linear-gradient(top,#6198d3,#437db9);
+    background-image: -ms-linear-gradient(top,#6198d3,#437db9);
+    background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0%,#6198d3),color-stop(100%,#437db9));
+    background-image: -webkit-linear-gradient(top,#6198d3,#437db9);
+    background-image: -o-linear-gradient(top,#6198d3,#437db9);
+    background-image: linear-gradient(top,#6198d3,#437db9);
+    line-height: 1.3em;
+    outline: 0;
+    background: #489ae9;
+    box-shadow: 1px 0 2px 0 rgba(0,0,0,0.13), 0 0 4px 0 rgba(0,0,0,0.11), 0 2px 3px 0 rgba(0,0,0,0.16);
+    border: 0;
+    text-shadow: none;
+    height: 50px;
+    font-size: 16px;
+    width: 100%;
+    display: block;
+}
+.login-section button:hover {
+    color: #fff;
+    background: #4594de;
+    text-decoration: none;
+}
+
+.remember_me {
+    padding: 12px 0 0 5px;
+    display: inline-block;
+    color: #36454d;
+    font-size: 13px;
+}
+
+.remember_me input {
+    margin: 0;
+    vertical-align: 1px;
+    font: 12px "Lucida Grande","LucidaGrande",Arial,sans-serif;
+}
+
+.register-section h3 {
+    font-size: 18px;
+    margin: 0 0 43px 0;
+    padding-left: 0;
+    padding-right: 0;
+    width: 100%;
+    color: #333;
+    font-weight: bold;
+}
+
+.register-section p {
+    color: #36454d;
+    margin-bottom: 20px;
+    font-size: 13px;
+}
+
+.register-section a {
+    background: #fafafa;
+    box-shadow: 1px 0 2px 0 rgba(0,0,0,0.13), 0 0 4px 0 rgba(0,0,0,0.11), 0 2px 3px 0 rgba(0,0,0,0.16);
+    border-radius: 2px;
+    border: 0;
+    font-weight: bold;
+    height: 50px;
+    font-size: 16px;
+    text-shadow: 0 2px 11px #fff;
+    display: block;
+    width: 100%;
+    padding: 15px 22px;
+    color: #489ae8;
+}
+
+.register-section a:hover {
+    background: #fafafa;
+    color: #489ae8;
+}
+@media only screen and (min-width: 470px) {
+    .login-section {
+        padding: 70px 30px 148px;
+    }
+
+    .register-section {
+        padding-top: 143px;
+        padding-left: 80px;
+        padding-right: 85px;
+        background-color: #fff;
+    }
+}
+@media only screen and (min-width: 1200px) {
+    .login-section {
+        padding: 70px 78px 148px 77px;
+    }
+}

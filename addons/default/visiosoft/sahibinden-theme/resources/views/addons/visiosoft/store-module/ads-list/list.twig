@@ -1,0 +1,73 @@
+{% extends layout('page') %}
+
+{% block styles %}
+    {{ asset_style("visiosoft.module.advs::css/list.css") }}
+    {{ asset_style('visiosoft.module.store::css/detail.scss') }}
+    <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+{% endblock %}
+
+{% block content %}
+    <section class="my-2 container">
+
+        {{ addBlock('ads-list/user-section', {'store': store})|raw }}
+
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade {{ setting_value('visiosoft.module.store::show_detail_page') ? '' : 'show active' }}"
+                 id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <div class="row my-3 d-none d-sm-flex">
+                    <div class="col-md-3">
+                        {% include "visiosoft.module.store::ads-list/list-filter" %}
+                    </div>
+                    <div class="col-md-9">
+                        <div class="section recommended-classified">
+                            {{ addBlock('ads-list/row',{'topfields':topfields,'advs':advs})|raw }}
+                            <div class="row mr-4 ml-0">
+                                {% block listContent %}
+                                    <h5 class="products-title bg-light mb-0 pb-3 pt-3 pl-3 w-100">
+                                        {{ img('visiosoft.module.store::images/products.svg') }}
+                                        {{ trans('visiosoft.module.store::field.products') }}
+                                        {% if setting_value('visiosoft.module.store::enable_print_button') %}
+
+                                            <button onclick="printElement('printStoreAds');" target="_blank"
+                                                    type="button"
+                                                    class="btn btn-secondary d-md-inline d-none pt-0 pb-1 text-light">
+                                                <i class="fa fa-print print-button-detail"></i>
+                                            </button>
+
+                                        {% endif %}
+                                    </h5>
+                                    <div class="title-bottom-border mx-2 w-100"></div>
+                                    {% include "visiosoft.module.advs::list/partials/ads" %}
+                                {% endblock %}
+                            </div>
+                            {% include "visiosoft.module.advs::list/partials/pagination" %}
+                            <div class="mr-4 mb-4">
+                                {{ addBlock('ads-list/row-bottom')|raw }}
+                            </div>
+
+                        </div>
+                    </div>
+                    {% if setting_value('visiosoft.module.store::enable_print_button') %}
+                        <div class="col-12 p-0 d-none" id="printStoreAds">
+                            {% include "visiosoft.theme.sahibinden::print/store_ads.twig" with {"store" : store} %}
+                            {{ asset_script("visiosoft.theme.sahibinden::js/print.js") }}
+                        </div>
+                    {% endif %}
+                </div>
+
+                {% include "visiosoft.module.advs::list/partials/mobile-list" with {
+                    'hideBreadcrump': true,
+                    'hideActions': true
+                } %}
+
+            </div>
+            <div class="tab-pane fade{{ setting_value('visiosoft.module.store::show_detail_page') ? ' show active' }}"
+                 id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                {% include "visiosoft.module.store::detail_inner" %}
+            </div>
+            <div class="tab-pane fade" id="nav-consultants" role="tabpanel" aria-labelledby="nav-consultants-tab">
+                {% include "visiosoft.module.store::consultants" %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% for custom_field in custom_fields %}
+    <div class="overflow-hidden {{ custom_field['type'] == 'checkboxes' ? 'col-md-12' : 'col-md-3' }} p-0 form-group custom-fields {{ custom_field.type|raw }}_container mx-0 my-4"
+         data-slug="{{ custom_field.custom_field_slug }}">
+        <label class="label-title px-2 ml-2 {{ custom_field.type|raw }}_title
+            {{ custom_field['type'] == 'checkboxes' ? 'd-flex justify-content-between align-items-center' }}"
+               onclick="$(this).hasClass('checkboxes_title') ? $(this).siblings().toggleClass('d-none') : null">
+            {{ custom_field.custom_field_label|raw }}
+            {% if custom_field['type'] == 'checkboxes' %}
+                <i class="fa fa-angle-down mr-3"></i>
+            {% endif %}
+        </label>
+
+        <div class="col-sm-12 h-100 pb-0 pt-2  {{ custom_field['type'] == 'checkboxes' ? 'd-none' }}">
+            <div class="{{ custom_field.type|raw }}_data" data-date="{{ custom_field.data_date }}">
+                {{ custom_field.custom_field_input|raw }}
+            </div>
+        </div>
+
+    </div>
+{% endfor %}
+<script>
+    let date_customfield = $("[data-date=1] input");
+    if (date_customfield) {
+        date_customfield.attr('type', 'date');
+
+        date_customfield.on('change', () => {
+            const status = date_customfield.val() > new Date().toISOString().slice(0, 10);
+            date_customfield.attr('style', !status ? 'border-color: red !important' : '');
+            $("[name='action']").attr('disabled', !status);
+        });
+
+    }
+</script>
+{{ asset_add('styles.css','visiosoft.module.customfields::css/fields.css') }}

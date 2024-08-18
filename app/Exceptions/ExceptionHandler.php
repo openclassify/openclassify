@@ -82,7 +82,7 @@ class ExceptionHandler extends Handler
         if ($e instanceof Swift_TransportException) {
             echo json_encode([
                 'success' => false,
-                'msg' => trans('visiosoft.theme.base::message.error_mail'),
+                'msg' => trans('visiosoft.theme.sahibinden::message.error_mail'),
             ]);
 
             die();

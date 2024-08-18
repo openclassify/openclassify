@@ -11,7 +11,7 @@ SET sql_mode = 'NO_AUTO_VALUE_ON_ZERO';
 INSERT INTO `{application_reference}_settings_settings` (`created_at`, `created_by_id`, `updated_at`, `updated_by_id`, `key`, `value`) VALUES
 ('2019-07-15 06:48:46', 1, '2019-07-15 06:53:05', 1, 'streams::date_format', 'j F, Y'),
 ('2019-07-15 06:48:46', 1, '2019-07-15 06:53:05', 1, 'streams::time_format', 'H:i'),
-('2019-07-15 06:48:46', 1, '2019-07-15 06:53:05', 1, 'streams::standard_theme', 'visiosoft.theme.base'),
+('2019-07-15 06:48:46', 1, '2019-07-15 06:53:05', 1, 'streams::standard_theme', 'visiosoft.theme.sahibinden'),
 ('2019-07-15 06:48:46', 1, '2019-07-15 06:53:05', 1, 'streams::admin_theme', 'visiosoft.theme.defaultadmin'),
 ('2019-07-15 06:48:46', 1, '2019-07-15 06:53:05', 1, 'streams::enabled_locales', 'a:11:{i:0;s:2:\"en\";i:1;s:2:\"fa\";i:2;s:2:\"ar\";i:3;s:2:\"el\";i:4;s:2:\"es\";i:5;s:2:\"fr\";i:6;s:2:\"it\";i:7;s:2:\"nl\";i:8;s:2:\"pt\";i:9;s:2:\"ru\";i:10;s:2:\"tr\";}'),
 ('2020-09-25 11:10:13',	1,	'2020-09-25 11:10:13',	1,	'visiosoft.module.advs::latest-limit',	'24'),

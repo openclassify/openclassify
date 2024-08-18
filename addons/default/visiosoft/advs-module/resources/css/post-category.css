@@ -1,0 +1,80 @@
+#ad-cat-section .step-icon {
+    height: 1rem;
+    vertical-align: baseline;
+}
+
+.category-tab {
+    overflow-x: auto;
+}
+
+.cat-item:not(.focus-select) div, .cat-item:not(.focus-select) select {
+    background-color: #f8f9fa;
+}
+
+.focus-select .cat-option {
+    box-shadow: 0 .125rem .25rem rgba(0,0,0,.075);
+}
+
+.cat-select {
+    height: 0;
+    width: 100%;
+    border: none;
+    overflow-y: auto;
+}
+
+.cat-select:focus {
+    outline: none;
+}
+
+.cat-item {
+    flex: none;
+    width: 13rem;
+}
+
+.cat-select li {
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative;
+    font-size: 13px;
+    color: #505050;
+}
+
+.cat-select li.selected {
+    background-color: #1E90FF;
+    color: #fff;
+}
+
+.cat-item-2 {
+    display: none;
+}
+
+.cat-item:last-child {
+    display: none;
+}
+
+.next-stap svg {
+    width: 60px;
+    height: 60px;
+}
+
+.next-stap p {
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.btn-1 {
+    background-color: {{ setting_value('visiosoft.module.advs::create_ad_button_color') }};
+    padding: 5px 30px 7px;
+    color: #fff;
+    border: 1px solid #dadada;
+    display: inline-block;
+}
+
+.cat-select::-webkit-scrollbar {
+    width: 4px;
+}
+
+.cat-select::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+    background-color: rgba(0,0,0,0.5);
+}

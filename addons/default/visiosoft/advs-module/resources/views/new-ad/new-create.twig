@@ -1,0 +1,280 @@
+{% extends layout('new-create') %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline("visiosoft.module.advs::css/new-create.css") }}
+        {{ asset_inline("visiosoft.module.advs::css/new-create-new.scss") }}
+        {{ asset_inline("visiosoft.theme.sahibinden::css/base/jquery-ui.min.css") }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% set form_params = app.request.session.get('_old_input') %}
+    <section id="new_ads" class="clearfix home-default">
+
+        {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'new-create'} %}
+
+        <div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb shadow-sm">
+                    {% for cat in cats_d %}
+                        <li class="breadcrumb-item text-primary">{{ cat }}</li>
+                    {% endfor %}
+                    <li class="breadcrumb-item">
+                        <a href="{{ url_route('adv::edit_category',[id]) }}">
+                            <i class="fas fa-pencil-alt"></i> {{ trans('visiosoft.module.advs::field.edit_category') }}
+                        </a>
+                    </li>
+                </ol>
+            </nav>
+
+            <div class="adpost-details">
+                <div class="row">
+                    <div class="col-md-12">
+                        {% set requiredFields = setting_value('visiosoft.module.advs::make_all_fields_required') %}
+
+                        {% set form = form('advs', 'advs').entry(id).actions({'update': {
+                            'text': trans('visiosoft.module.advs::button.publish')
+                        }}).get() %}
+                        {{ form_open({
+                            'id': 'createEditAdvForm',
+                            'class': 'form ' ~ form.options.class ,
+                            'enctype': 'multipart/form-data',
+                            'url': 'advs/save_adv',
+                        })|raw }}
+                        <input type="hidden" value="pending_user" name="status">
+                        <input type="hidden" name="cat1" value="{{ cats.cat1 }}">
+                        <input type="hidden" name="cat2" value="{{ cats.cat2 }}">
+                        <input type="hidden" name="cat3" value="{{ cats.cat3 }}">
+                        <input type="hidden" name="cat4" value="{{ cats.cat4 }}">
+                        <input type="hidden" name="cat5" value="{{ cats.cat5 }}">
+                        <input type="hidden" name="cat6" value="{{ cats.cat6 }}">
+                        <input type="hidden" name="cat7" value="{{ cats.cat7 }}">
+                        <input type="hidden" name="cat8" value="{{ cats.cat8 }}">
+                        <input type="hidden" name="cat9" value="{{ cats.cat9 }}">
+                        <input type="hidden" name="cat10" value="{{ cats.cat10 }}">
+                        <input type="hidden" id="currencies" name="currencies" value="">
+                        <input type="hidden" name="update_id" value="{{ id }}">
+                        <fieldset>
+
+                            {% include 'visiosoft.module.advs::new-ad/partials/contact-info' %}
+
+                            <h5 class="mt-5 pb-1 border-bottom">{{ trans('visiosoft.module.advs::field.ad_info') }}</h5>
+                            <div id="mainInfo" class="shadow-sm">
+                                <label class="w-100 mb-2">
+                                    {% set fields = form.fields.base().pluck('field_name').all() %}
+                                    {% for field in form.fields.translations('name') %}
+                                        {{ field.setAttributes({
+                                            'class': 'd-block mt-3 w-100 border rounded',
+                                            'maxlength': setting_value('visiosoft.module.advs::title_length')
+                                        }).setValue((form_params[field.field~"_"~field.getLocale()]) ?? field.value).render({'form': form})|raw }}
+                                    {% endfor %}
+                                </label>
+
+                                {% if config('advs::is_changeable_slug') %}
+                                    <label class="w-100 mb-2">
+                                        {% for field in form.fields.translations('slug') %}
+                                            {{ field.setAttributes({
+                                                'class': 'd-block mt-3 w-100 border rounded',
+                                            }).setValue((form_params[field.field~"_"~field.getLocale()]) ?? field.value).render({'form': form})|raw }}
+                                        {% endfor %}
+                                    </label>
+                                {% endif %}
+
+                                {% if setting_value('visiosoft.module.advs::show_seo_title') %}
+                                    <label class="w-100 mb-2">
+                                        {% for field in form.fields.translations('seo_title') %}
+                                            {{ field.setAttributes({
+                                                'class': 'd-block mt-3 w-100 border rounded'
+                                            }).setPlaceholder(trans('visiosoft.module.advs::field.empty_title')).setValue((form_params[field.field~"_"~field.getLocale()]) ?? field.value).render({'form': form})|raw }}
+                                        {% endfor %}
+                                    </label>
+                                {% endif %}
+
+                                {% if setting_value('visiosoft.module.advs::show_seo_description') %}
+                                    <label class="w-100 mb-2">
+                                        {% for field in form.fields.translations('seo_description') %}
+                                            {{ field.setAttributes({
+                                                'class': 'd-block mt-3 w-100 border rounded',
+                                            }).setPlaceholder(trans('visiosoft.module.advs::field.empty_description')).setValue((form_params[field.field~"_"~field.getLocale()]) ?? field.value).render({'form': form})|raw }}
+                                        {% endfor %}
+                                    </label>
+                                {% endif %}
+
+                                {% if setting_value('visiosoft.module.advs::market_place') %}
+                                    {#                                    {{ addBlock('new-ad/fields', {'adv': adv, 'rawClassified': rawClassified})|raw }} #}
+                                {% endif %}
+
+                                {% include 'visiosoft.module.advs::new-ad/price-area' %}
+
+
+                                {% if not setting_value('visiosoft.module.advs::hide_options_field') %}
+                                    {% if not setting_value('visiosoft.module.advs::detailed_product_options') %}
+                                        <div id="simpleOptionsInput" class="w-100 select-options">
+                                            <label for="selectOptions">
+                                                {{ trans('visiosoft.module.advs::field.options') }}
+                                            </label>
+                                            <select id="selectOptions" type="text" multiple="multiple" name="options[]"
+                                                    class="d-block mt-3 w-100 border-0 options-tags">
+                                                {% if count(options) %}
+                                                    {% for option in options %}
+                                                        <option id="advOption{{ option.id }}"
+                                                                selected="selected">{{ option.name }}</option>
+                                                    {% endfor %}
+                                                {% endif %}
+                                            </select>
+                                        </div>
+
+                                        {% if is_options %}
+                                            <div class="product-options">
+                                                <label for="productOptions">
+                                                    {{ trans('visiosoft.module.advs::field.product_option.name') }}
+                                                </label>
+                                                <div class="mt-3 form-group mb-0">
+                                                    <button type="button" class="btn btn-primary btn-configuration"
+                                                            data-toggle="modal" data-target="#configurationModal">
+                                                        {{ img('visiosoft.module.advs::images/create/plus.svg').data|raw }}
+                                                        &nbsp;
+                                                        {{ trans('visiosoft.module.advs::button.new_options_configuration') }}
+                                                    </button>
+                                                </div>
+                                            </div>
+                                        {% endif %}
+                                    {% endif %}
+                                {% endif %}
+
+                                <div class="row form-group brand-name">
+                                    <div class="w-100">
+                                        <div class="field-group advs_desc">
+                                            {% for field in form.fields.translations('advs_desc') %}
+                                                {{ field.setValue(form_params[field.field~"_"~field.getLocale()] ?? field.value).render({'form': form})|raw }}
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {% if setting_value('visiosoft.module.advs::show_ad_note') %}
+                                <div class="p-4">
+                                    <div class="row form-group brand-name">
+                                        <div class="w-100">
+                                            <div class="field-group advs_desc">
+                                                {{ form.fields.ad_note.setAttributes({
+                                                    'class': 'form-control w-100 borderThree focusBorder outlineNone p-2 rounded shadow-none'
+                                                }).render({'form': form})|raw }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            <h5 class="mt-5 pb-1 border-bottom upload-photos-title">
+                                {{ trans('visiosoft.module.advs::field.upload_photos') }}
+                            </h5>
+                            <div class="p-4 upload-photos-wrapper shadow-sm">
+                                <div class="row form-group images">
+                                    <div class="col-md-12">
+                                        {{ form.fields.files.input |raw }}
+
+                                        <input name="doc_files"
+                                               value="{{ form.fields.doc_files.value.pluck('id').all()|join(',') }}"
+                                               hidden>
+
+                                        <div class="doc_list small">
+                                            {% for docs in form.fields.doc_files.value %}
+                                                <a id="{{ docs.id }}" href="javascript:void(0)"
+                                                   onclick="deleteDocs({{ docs.id }})" class="text-dark">
+                                                    {{ docs.name }}
+                                                    <i class="fa fa-trash text-danger pl-2"></i>
+                                                </a><br>
+                                            {% endfor %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <h5 class="mt-5 pb-1 border-bottom">
+                                {{ trans('visiosoft.module.advs::field.additional_fields') }}
+                            </h5>
+                            <div class="bg-white p-4 row shadow-sm">
+                                {% include 'visiosoft.module.customfields::new-ad/other-fields' with {custom_fields: custom_fields, id:adv.id} %}
+                            </div>
+
+                            {% if setting_value('visiosoft.module.advs::add_ad_tags') %}
+                                <div class="bg-white p-4 row form-group">
+                                    <div class="col-12">
+                                        <div class="field-group">
+                                            {{ form.fields.tags.setAttributes({
+                                                'class': 'mt-3 border-0 text-right form-control flex-fill'
+                                            }).render({'form': form})|raw }}
+                                        </div>
+                                    </div>
+                                </div>
+                            {% endif %}
+
+                            {% if setting_value('visiosoft.module.location::create_ad_page_location') %}
+                                <h5 class="mt-5 pb-1 border-bottom">
+                                    {{ trans('visiosoft.module.advs::field.ad_location') }}
+                                </h5>
+                                <div class="bg-white px-4 pb-1 pt-2 mb-4 shadow-sm">
+                                    {% include "visiosoft.module.location::new-ad/map" %}
+
+                                    <input value="{{ adv.map_Val }}" name="map_Val" data-max="255" data-mask=""
+                                           data-alias="" data-regex=""
+                                           type="text" placeholder="" class="hidden d-none mapVal" data-field="map_Val"
+                                           data-field_name="map_Val" data-provides="anomaly.field_type.text">
+                                </div><!-- section -->
+                            {% endif %}
+
+                            <div class="checkbox section agreement">
+                                {% if setting_value('visiosoft.module.advs::show_post_ad_agreement') %}
+                                    <label for="send">
+                                        <input type="checkbox" name="send" id="send" required checked>
+
+                                        {{ trans('visiosoft.module.advs::message.agreement') }}
+                                    </label><br>
+                                {% endif %}
+
+                                {{ form.actions|raw }}
+                            </div><!-- section -->
+
+                        </fieldset>
+                    </div>
+                </div><!-- photos-ad -->
+
+            </div>
+            {{ form.close|raw }}
+        </div>
+    </section>
+    {% include "visiosoft.module.advs::new-ad/partials/modals" %}
+    {% include "visiosoft.module.advs::new-ad/partials/configuration-modal" %}
+    {#    {{ addBlock('new-ad/modals')|raw }} #}
+    <script>
+        var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+        var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
+        var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
+        var default_neighborhood = "{{ setting_value('visiosoft.module.location::default_neighborhood') }}";
+        var default_village = "{{ setting_value('visiosoft.module.location::default_village') }}";
+        var default_currency = "{{ setting_value('streams::currency') }}";
+        var default_GET = "{{ setting_value('visiosoft.module.advs::default_GET') }}";
+        var adv_id = "{{ id }}";
+        var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+        var defaultLat = {{ setting_value("visiosoft.module.location::map_coordinates_lat", 38.9573415) }};
+        var defaultLong = {{ setting_value("visiosoft.module.location::map_coordinates_long", 35.2415759) }};
+    </script>
+
+    {% if setting_value('visiosoft.module.advs::make_map_required') %}
+        <script>
+            let selectLocationAlert = "{{ trans('visiosoft.module.advs::message.select_location_error') }}"
+        </script>
+        {{ asset_add("scripts.js", "visiosoft.module.advs::js/required-map.js") }}
+    {% endif %}
+    <script>
+        let uploadText = "{{ trans('visiosoft.field_type.media::message.upload') }}"
+    </script>
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/new-create.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/form.js") }}
+    {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+    {{ asset_add("scripts.js", "visiosoft.theme.sahibinden::js/base/vendor/jquery-ui.min.js") }}
+
+{% endblock %}

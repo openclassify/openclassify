@@ -1,0 +1,60 @@
+<!-- The modal -->
+<div class="modal fade" id="editMyInfo" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    <i class="fas fa-pen"></i>
+                    {{ trans('visiosoft.module.advs::field.edit_my_contact_info') }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                {% set profileForm = form('profile').entry(user.id).get() %}
+                <fieldset>
+                    <div class="section">
+                        <form class="formEditInfo">
+                            <div class="row">
+                                <div class="col-12 py-2">
+                                    <label class="font-weight-bold">{{ trans('visiosoft.module.profile::field.first_name.name') }}</label>
+                                    <input class="form-control" name="first_name" required>
+                                </div>
+                                <div class="col-12 py-2">
+                                    <label class="font-weight-bold">{{ trans('visiosoft.module.profile::field.last_name.name') }}</label>
+                                    <input class="form-control" name="last_name" required>
+                                </div>
+                                <div class="form-group required-profile-phone-field col-12">
+                                    <label class="control-label font-weight-bold">
+                                        {{ profileForm.fields.gsm_phone.label }}
+                                    </label>
+                                    {{ profileForm.fields.gsm_phone.input|raw }}
+                                </div>
+                                <div class="form-group required-profile-phone-field col-12">
+                                    <label class="control-label font-weight-bold">
+                                        {{ profileForm.fields.office_phone.label }}
+                                    </label>
+                                    {{ profileForm.fields.office_phone.input|raw }}
+                                </div>
+                                <div class="form-group required-profile-phone-field col-12">
+                                    <label class="control-label font-weight-bold">
+                                        {{ profileForm.fields.land_phone.label }}
+                                    </label>
+                                    {{ profileForm.fields.land_phone.input|raw }}
+                                </div>
+                                <div class="col-12 py-2">
+                                    <button class="btn btn-sm btn-success" type="submit" name="action" value="update">
+                                        <i class="fas fa-save"></i>
+                                        {{ trans('streams::button.update') }}
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+{{ asset_add("scripts.js", "visiosoft.module.advs::js/editContactInformation.js") }}
