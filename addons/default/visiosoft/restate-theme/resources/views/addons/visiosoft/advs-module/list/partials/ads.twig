@@ -1,0 +1,9 @@
+<div class="d-flex flex-column">
+    <div class="row">
+    {% for adv in advs %}
+            <div class="col-xl-4 col-sm-6 col-12 px-sm-2 pt-3">
+                {% include "visiosoft.theme.restate::partials/productCard" with {"ads": adv} %}
+            </div>
+    {% endfor %}
+    </div>
+</div>

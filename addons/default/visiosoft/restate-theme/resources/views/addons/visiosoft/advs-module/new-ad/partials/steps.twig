@@ -1,0 +1,24 @@
+<style>
+    {{ asset_inline("visiosoft.module.advs::css/step2.css") }}
+    {{ asset_inline("visiosoft.module.advs::css/step.scss") }}
+</style>
+<div class="col-12 p-0 d-flex justify-content-center py-4 align-items-center">
+    <div class="d-flex align-items-center {{ step == 'post-cat' ? ' current' }}">
+        <div class="{{ step == 'post-cat' ? ' bgSpecial_2' : 'bgSpecial_3' }} SpecialWidth_2 rounded-circle">
+            {{ img('visiosoft.theme.restate::images/icons/pen.svg').data|raw }}
+        </div>
+        <span class="{{ step == 'post-cat' ? ' font-weight-bold' : 'text-secondary' }} fw-500 ml-2  fs-14">
+        {{ trans('visiosoft.module.advs::field.listing_details') }}
+    </span>
+    </div>
+    <div class="lineSpecial"></div>
+    <div class="d-flex align-items-center {{ step == 'preview' ? ' current' }}">
+        <div class="{{ step == 'preview' ? ' bgSpecial_2' : 'bgSpecial_3' }} SpecialWidth_2 rounded-circle">
+            {{ img('visiosoft.theme.restate::images/icons/eye.svg').data|raw }}
+        </div>
+        <span class="{{ step == 'preview' ? ' font-weight-bold' : 'text-secondary' }} fw-500 ml-2  fs-14">
+        {{ trans('visiosoft.module.advs::field.preview') }}
+    </span>
+    </div>
+{#    {{ addBlock('new-ad/steps/step', _context)|raw }}#}
+</div>

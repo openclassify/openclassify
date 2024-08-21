@@ -1,5 +1,5 @@
 {{ asset_add("styles.css", "visiosoft.module.advs::css/list.css") }}
-{% set sub_categories_limit = setting_value('visiosoft.theme.sahibinden::home_page_sub_categories_limit') %}
+{% set sub_categories_limit = setting_value('visiosoft.theme.restate::home_page_sub_categories_limit') %}
 
 {% if setting_value('visiosoft.module.advs::show_subcats_mobile')
 		and subCats|length > 0
@@ -11,7 +11,7 @@
 				<li class="categories-list-li category-icon text-truncate d-flex justify-content-between text-dark">
 					<a href="{{ url_current() }}?show=all" class="sub-category show-all">
 						<span>
-							{{ trans('visiosoft.theme.sahibinden::field.show_all_for_cats', {cat_name: mainCats|last.name})}}
+							{{ trans('visiosoft.theme.restate::field.show_all_for_cats', {cat_name: mainCats|last.name})}}
 						</span>
 					<span>
 			            {% if setting_value('visiosoft.module.advs::show_ads_count') %}

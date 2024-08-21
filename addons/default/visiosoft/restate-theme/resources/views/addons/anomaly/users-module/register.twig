@@ -1,0 +1,112 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+
+{% block styles %}
+    {{ asset_style('visiosoft.theme.restate::css/register.css') }}
+{% endblock %}
+
+{% block content %}
+    {% set enableCaptcha = setting_value('visiosoft.module.profile::google_captcha_site_key') and setting_value('visiosoft.module.profile::google_captcha_secret_key') %}
+
+    <div class="py-4">
+        <div class="row bg-light rounded border px-3 register-area mx-0 mx-md-3">
+            <div class="col-12 col-md-12 text-left p-3 m-0">
+                <div class="mb-5 mt-2">
+                    <a href="{{ url_route('anomaly.module.users::register') }}"
+                       class="switch-register-type {% if app.request.type is empty %} register-type-active {% endif %}">
+                        {{ trans('visiosoft.theme.restate::field.individual') }}
+                    </a>
+                    <a href="{{ url_route('anomaly.module.users::register') }}?type=company"
+                       class="switch-register-type {% if app.request.type == "company" %} register-type-active {% endif %} ml-2">
+                        {{ trans('visiosoft.theme.restate::field.corporate') }}
+                    </a>
+                    <a href="{{ url_route('anomaly.module.users::register') }}?type=franchise"
+                       class="switch-register-type {% if app.request.type == "franchise" %} register-type-active {% endif %} ml-2">
+                        {{ trans('visiosoft.theme.restate::field.franchise') }}
+                    </a>
+                </div>
+                <div class="personal-register">
+                    {% if app.request.type == "franchise" %}
+                        {{ form('contact').fields({
+                            'company_name': {
+                                'placeholder': 'visiosoft.theme.restate::field.company_name',
+                                'type': 'anomaly.field_type.text',
+                                'required': true
+                            },
+                            'company_owner_name': {
+                                'placeholder': 'visiosoft.theme.restate::field.company_owner_name',
+                                'type': 'anomaly.field_type.text',
+                                'required': true
+                            },
+                            'email': {
+                                'placeholder': 'visiosoft.theme.restate::field.email',
+                                'type': 'anomaly.field_type.text',
+                                'required': true
+                            },
+                            'phone': {
+                                'type': 'anomaly.field_type.text',
+                                'required': true
+                            },
+                            'message': {
+                                'placeholder': 'visiosoft.theme.restate::field.message',
+                                'type': 'anomaly.field_type.textarea',
+                                'required': true
+                            }
+                        })|raw }}
+                    {% elseif app.request.type == "company" %}
+{#                        {{ addBlock('register/corporate-register', {'enableCaptcha': enableCaptcha})|raw }}#}
+                    {% else %}
+                        {% set form = form('register2')
+                            .get() %}
+                        {{ form_open({
+                            'class': 'row form ' ~ form.options.class ,
+                            'enctype': 'multipart/form-data',
+                            'url':form.options.url
+                        })|raw }}
+
+                        {% if enableCaptcha %}
+                            <input type="hidden" name="recaptcha_token" id="recaptcha_token" class="recaptcha-token">
+                        {% endif %}
+                        {% include 'visiosoft.theme.restate::addons/anomaly/users-module/partials/register-form' %}
+                        <input type="hidden" value="1" name="register_type">
+                        {% if setting_value('visiosoft.module.profile::show_checkbox_terms_on_register') %}
+                            <div class="col-12">
+                                {{ form.fields.accept_protection_law|raw }}
+                            </div>
+
+                            <div class="col-12">
+                                {{ form.fields.accept_privacy_terms|raw }}
+                            </div>
+
+                            <div class="col-12">
+                                {{ form.fields.receive_sms_emails|raw }}
+                            </div>
+                        {% endif %}
+
+                        <div class="col-12 row m-0">
+                            <div class="col-6 pr-0 pl-1">
+                                <button class="btn btn-sm btn-success py-2 register-button">
+                                    <i class="fas fa-user-plus"></i>
+                                    {{ trans('visiosoft.theme.restate::button.register') }}
+                                </button>
+                            </div>
+                        </div>
+                    {% endif %}
+
+                    {{ form_close() }}
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {% if enableCaptcha %}
+        {% set reCAPTCHASiteKey = setting_value('visiosoft.module.profile::google_captcha_site_key') %}
+        <script>
+            let reCAPTCHASiteKey = "{{ reCAPTCHASiteKey }}"
+        </script>
+        {{ asset_add('scripts.js', asset_download('https://www.google.com/recaptcha/api.js?render=' ~ reCAPTCHASiteKey, 60*60*24)) }}
+        {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/captcha.js") }}
+    {% endif %}
+    {{ asset_add("scripts.js", "visiosoft.theme.restate::js/register.js") }}
+{% endblock %}
+

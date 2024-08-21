@@ -1,6 +1,6 @@
-{% extends "visiosoft.theme.sahibinden::layouts/default" %}
+{% extends "theme::layouts/default" %}
 {% block content %}
-    {% include "visiosoft.theme.sahibinden::partials/messages" %}
+    {% include "theme::partials/messages" %}
     {{ asset_add("scripts.js", "streams::js/form/form.js") }}
     {{ asset_add("scripts.js", "streams::js/form/translations.js") }}
 
@@ -49,7 +49,7 @@
                                 </span>
                                 {{ form.fields.icon.value
                                 ? img(url(form.fields.icon.value)).width(24)|raw
-                                : img('visiosoft.theme.sahibinden::images/default-categories-icon.png').width(24)|raw }}
+                                : img('visiosoft.theme.restate::images/default-categories-icon.png').width(24)|raw }}
                             </div>
                             {{ form.fields.icon.input|raw }}
                         </div>

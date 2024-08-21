@@ -1,0 +1,9 @@
+{% if setting_value('visiosoft.extension.facebook_provider::client_id') != "" %}
+    <a href="{{ url_route('visiosoft.module.social::providers.auth', {'provider': 'facebook'}) }}"
+       class="d-inline-flex social-link  color_8 align-items-center justify-content-center border btnSpecial_2">
+        <div><i class="fab fa-facebook fs-20 text-primary mr-2"></i></div>
+        <div class="fs-14 text-capitalize lineHeight">
+            {{ trans('visiosoft.theme.restate::field.login_with_facebook')|raw }}
+        </div>
+    </a>
+{% endif %}

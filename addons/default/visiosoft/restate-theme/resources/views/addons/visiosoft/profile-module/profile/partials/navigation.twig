@@ -1,0 +1,23 @@
+<div class="container maxWidth_1280 p-0 m-0 mx-auto">
+    <div class="row m-0 p-0 pt-md-0 pt-5">
+        <div class="col-12 p-0 d-flex justify-content-between mt-4 pt-md-0 pt-4 flex-md-row flex-column">
+            <a href="/advs/create_adv" class="profileItem">
+                <div class="iconBg_1 iconBg"></div> {{ trans('visiosoft.theme.restate::field.advertise') }}
+            </a>
+            <a href="{{ url_route('profile::ads') }}" class="profileItem {{ app.request.pathinfo == '/profile/ads' ? ' active' : '' }}">
+                <div class="iconBg_2 iconBg"></div> {{ trans('visiosoft.theme.restate::field.my_ads') }}
+            </a>
+            <a href="{{ url_route('favs::favorites') }}"
+               class="profileItem {{ app.request.pathinfo == '/favs' ? ' active' : '' }}">
+                <div class="iconBg_4 iconBg"></div>{{ trans('visiosoft.theme.restate::field.my_favorites') }}
+            </a>
+            <a href="{{ url_route('visiosoft.module.favs::saved_searches') }}" class="profileItem">
+                <div class="iconBg_5 iconBg"></div> {{ trans('visiosoft.theme.restate::field.saved_searches') }}
+            </a>
+            <a href="{{ url_route('profile::profile') }}"
+               class="profileItem {{ app.request.pathinfo == '/profile' ? ' active' : '' }}">
+                <div class="iconBg_6 iconBg"></div> {{ trans('visiosoft.theme.restate::field.membership_transactions') }}
+            </a>
+        </div>
+    </div>
+</div>

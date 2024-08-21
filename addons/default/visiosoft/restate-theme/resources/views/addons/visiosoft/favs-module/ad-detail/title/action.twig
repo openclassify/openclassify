@@ -1,0 +1,18 @@
+<a href="{{ auth_check() ? '#ad-fav-adv' : url_route('anomaly.module.users::login') }}" id="adv-{{ params.adv_id }}"
+   data-type="adv" rel="nofollow" class="mx-1 fs-14 px-3 py-2 bg-special-5 rounded-three text-decoration-none text-dark add-fav">
+    <font color="red">
+        <i class="far fa-heart color-3 mr-2"></i>
+    </font>
+    {{ trans('visiosoft.module.favs::field.add_to_favorites') }}
+</a>
+
+<script>
+    let addToFavAdsTrans = "{{ trans('visiosoft.module.favs::field.add_favorite_ad') }}";
+    let addToFavSellersTrans = "{{ trans('visiosoft.module.favs::field.add_favorite_seller') }}";
+    let removeFromFavAdsTrans = "{{ trans('visiosoft.module.favs::field.remove_favorite_ad') }}";
+    let removeFromFavSellersTrans = "{{ trans('visiosoft.module.favs::field.remove_favorite_seller') }}";
+</script>
+{% if auth_check() %}
+    {{ asset_add("scripts.js", "visiosoft.module.favs::assets/js/add-remove-fav.js") }}
+{% endif %}
+{{ asset_add("scripts.js", "visiosoft.module.favs::js/favs.js") }}

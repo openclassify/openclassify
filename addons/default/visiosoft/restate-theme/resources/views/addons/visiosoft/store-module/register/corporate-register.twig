@@ -1,0 +1,241 @@
+<style>
+    {% if setting_value('visiosoft.module.store::hide_personal_register') %}
+    .register-area .personal-register {
+        display: none;
+    }
+    {% endif %}
+</style>
+
+<div class="corporate-register d-block">
+    {% set form = form('store-register').redirect(request_get('redirect', '/')).get() %}
+    {{ form_open({
+        'class': 'row form ' ~ form.options.class ,
+        'enctype': 'multipart/form-data',
+        'url':form.options.url
+    })|raw }}
+    <input type="hidden" value="2" name="register_type">
+
+    {% if params.enableCaptcha %}
+        <input type="hidden" name="recaptcha_token" id="recaptcha_token" class="recaptcha-token">
+    {% endif %}
+
+    <div class="col-12">
+        <div class="form-group display_name-field display_name-field_type">
+            <label class="control-label">
+                {{ trans('visiosoft.theme.restate::field.first_name') }}
+                <span class="required">*</span>
+            </label>
+
+            <div class="input-wrapper">
+                {{ form.fields.first_name.setPrefix('store_').setPlaceholder(trans('visiosoft.theme.restate::field.first_name')).input|raw }}
+                {{ form.fields.username.setPrefix('store_').setValue(random()).setAttributes({
+                    'class' :'hidden',
+                }).input|raw }}
+            </div>
+        </div>
+    </div>
+    <div class="col-12">
+        <div class="form-group username-field username-field_type">
+            <label class="control-label">
+                {{ trans('visiosoft.theme.restate::field.last_name') }}
+                <span class="required">*</span>
+            </label>
+
+            <div class="input-wrapper">
+                {{ form.fields.last_name.setPrefix('store_').setPlaceholder(trans('visiosoft.theme.restate::field.last_name')).input|raw }}
+            </div>
+        </div>
+    </div>
+
+    {% if setting_value('visiosoft.module.store::add_official_company_name_field') %}
+        <div class="col-12">
+            <div class="form-group official_company_name-field official_company_name-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.module.store::field.official_company_name') }}
+                    <span class="required">*</span>
+                </label>
+
+                <div class="input-wrapper">
+                    {{ form.fields.official_company_name.setPlaceholder(trans('visiosoft.module.store::field.official_company_name')).input|raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if setting_value('visiosoft.module.advs::register_email_field') %}
+        <div class="col-12">
+            <div class="form-group email-field email-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.theme.restate::field.email') }}
+                    <span class="required">*</span>
+                </label>
+
+                <div class="input-wrapper">
+                    {{ form.fields.email.setPrefix('store_').setPlaceholder(trans('visiosoft.theme.restate::field.email')).input|raw }}
+                </div>
+            </div>
+        </div>
+    {% else %}
+        {% set domain = config('app.url')|replace({ ('https://'): '',('http://'): '',('/'): '/' }) %}
+        {% if domain == "localhost" %}
+            {% set domain = "example.com" %}
+        {% endif %}
+        {{ form.fields.email.setPrefix('store_').setValue(random()~"@"~domain).setAttributes({
+            'class' :'hidden',
+        }).input|raw }}
+    {% endif %}
+    <div class="col-12">
+        <div class="form-group email-field phone-field_type register-phone mb-2">
+            <label class="control-label">
+                {{ trans('visiosoft.theme.restate::field.phone_number') }}
+                <span class="required">*</span>
+            </label>
+
+            <div class="input-wrapper validate-phone">
+                {{ form.fields.phone.setPrefix('store_').setValue(form.fields.phone.value).input|raw }}
+                <div id="default-phone-country" class="hidden">{{ setting_value('visiosoft.module.location::country_for_phone_field') }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 mb-3">
+        <p class="phone-validation-error mb-0 d-none">
+            <i class="fa fa-times-circle"></i>
+            {{ trans('visiosoft.theme.restate::field.phone_validation_error') }}
+        </p>
+    </div>
+
+    <div class="col-12">
+        <div class="form-group password-field password-field_type">
+            <label class="control-label">
+                {{ trans('visiosoft.theme.restate::field.password') }}
+                <span class="required">*</span>
+            </label>
+
+            <div class="input-wrapper">
+                {{ form.fields.password.setPrefix('store_').setPlaceholder(trans('visiosoft.theme.restate::field.password')).input|raw }}
+            </div>
+        </div>
+    </div>
+    {% if not setting_value('visiosoft.module.store::hide_category_fields') %}
+        <div class="col-12">
+            <div class="form-group your_activity_area-field your_activity_area-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.module.store::field.your_activity_area') }}
+                </label>
+
+                <div class="input-wrapper">
+                    {{ form.fields.category.input|raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if not setting_value('visiosoft.module.store::hide_tax_number_fields') %}
+        <div class="col-12">
+            <div class="form-group tax_number-field integer-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.module.store::field.tax_number.name') }}
+                    {% if setting_value('visiosoft.module.store::require_tax_on_registration') %}
+                        <span class="required">*</span>
+                    {% endif %}
+                </label>
+
+                <div class="input-wrapper">
+                    {{ form.fields.tax_number.input|raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if not setting_value('visiosoft.module.store::hide_tax_administration') %}
+        <div class="col-12">
+            <div class="form-group tax_administration-field text-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.module.store::field.tax_administration.name') }}
+                    {% if setting_value('visiosoft.module.store::require_tax_on_registration') %}
+                        <span class="required">*</span>
+                    {% endif %}
+                </label>
+
+                <div class="input-wrapper">
+                    {{ form.fields.tax_administration.input|raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if not setting_value('visiosoft.module.store::hide_land_phone') %}
+        <div class="col-12">
+            <div class="form-group land_phone-field land_phone-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.module.store::field.land_phone.name') }}
+                </label>
+
+                <div class="input-wrapper">
+                    {{ form.fields.land_phone.input|raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    {% if setting_value('visiosoft.module.profile::show_checkbox_terms_on_register') %}
+        <div class="col-12">
+            {{ form.fields.approve_billing|raw }}
+        </div>
+
+        <div class="col-12">
+            {{ form.fields.accept_protection_law|raw }}
+        </div>
+
+        <div class="col-12">
+            {{ form.fields.accept_privacy_terms|raw }}
+        </div>
+
+        <div class="col-12">
+            {{ form.fields.receive_sms_emails|raw }}
+        </div>
+    {% endif %}
+
+    {% if not setting_value('visiosoft.module.store::hide_professional_certificate') %}
+        <div class="col-12">
+            <div class="form-group professional_certificate-field integer-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.module.store::field.professional_certificate.name') }}
+                    {% if setting_value('visiosoft.module.store::require_professional_certificate') %}
+                        <span class="required">*</span>
+                    {% endif %}
+                </label>
+
+                <div class="input-wrapper">
+                    {{ form.fields.professional_certificate.input|raw }}
+                </div>
+            </div>
+        </div>
+    {% endif %}
+
+
+        <div class="col-12">
+            <div class="form-group address-field address-field_type">
+                <label class="control-label">
+                    {{ trans('visiosoft.module.store::field.address.name') }}
+                    <span class="required">*</span>
+                </label>
+                <div class="input-wrapper">
+                    {{ form.fields.address.input|raw }}
+                </div>
+            </div>
+        </div>
+
+    <div class="col-12 row m-0">
+        <div class="col-6 pr-0 pl-1">
+            <button class="btn btn-sm btn-success py-2">
+                <i class="fas fa-user-plus"></i>
+                {{ trans('visiosoft.theme.restate::button.register') }}
+            </button>
+        </div>
+    </div>
+    {{ form_close() }}
+</div>
+
+<script>
+    let default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+    let pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+    const country = undefined;
+</script>
+{{ asset_add("scripts.js","visiosoft.module.store::js/location.js") }}

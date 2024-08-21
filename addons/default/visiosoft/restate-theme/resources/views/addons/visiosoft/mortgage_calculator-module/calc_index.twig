@@ -1,0 +1,78 @@
+
+    {{ content|raw }}
+    {{ asset_add("scripts.js", "streams::js/form/ajax.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.mortgage_calculator::js/ajax.js") }}
+
+    <!------ Include the above in your HEAD tag ---------->
+    <div class="container mortgage_wrapper">
+        <div class="row w-100 justify-content-center m-3">
+            <div class="col-md-5 ">
+                <div class="card border-info mx-sm-1 p-1 bg-light">
+                    <div class="text-info text-center"><h4>{{ trans('visiosoft.module.mortgage_calculator::view.monthly_payment') }}</h4></div>
+                    <div id="monthly_payments" class="text-info text-center mt-2"><h1>0</h1></div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card border-success mx-sm-1 p-1 bg-light">
+                    <div class="text-success text-center"><h4>{{ trans('visiosoft.module.mortgage_calculator::view.payoff_date') }}</h4></div>
+                    <div id="payoff_date" class="text-success text-center mt-2"><h1>0</h1></div>
+                </div>
+            </div>
+        </div>
+        <div class="row w-100 justify-content-center m-3">
+            <div class="col-md-5">
+                <div class="card border-danger mx-sm-1 p-1 bg-light">
+                    <div class="text-danger text-center"><h4>{{ trans('visiosoft.module.mortgage_calculator::view.total_interest') }}</h4></div>
+                    <div id="total_interest" class="text-danger text-center mt-2"><h1>0</h1></div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="card border-warning mx-sm-1 p-1 bg-light">
+                    <div class="text-warning text-center">
+                        <h4>{{ trans('visiosoft.module.mortgage_calculator::view.total_of_payments') }}
+                        <span id="payment_plan" class="number-of-payments">0</span>
+                        {{ trans('visiosoft.module.mortgage_calculator::view.payments') }}
+                           </h4>
+                    </div>
+                    <div id="total_payment" class="text-warning text-center mt-2"><h1>0</h1></div>
+                </div>
+            </div>
+        </div>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#DetailsModal">
+            {{ trans('visiosoft.module.mortgage_calculator::view.payment_plan_list') }}
+        </button>
+        {% set form = form('CreditCalc').get() %}
+        {{ form.open({'id': 'CreditCalcForm', 'name': 'CreditCalcForm', 'class':'ajax'})|raw }}
+        {{ form.fields|raw }}
+        {{ form.actions|raw }}
+        {{ form.close|raw }}
+    </div>
+
+    <div class="modal fade" id="DetailsModal" tabindex="-1" role="dialog" aria-labelledby="DetailsModalLabel"
+         aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close ml-0" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title" id="exampleModalLabel">{{ trans('visiosoft.module.mortgage_calculator::view.payment_list') }}</h4>
+                </div>
+                <div class="modal-body">
+                    <table class="table table-striped">
+                        <thead>
+                        <tr>
+                            <th scope="col">{{ trans('visiosoft.module.mortgage_calculator::view.year') }}</th>
+                            <th scope="col">{{ trans('visiosoft.module.mortgage_calculator::view.principal') }}</th>
+                            <th scope="col">{{ trans('visiosoft.module.mortgage_calculator::view.interest') }}</th>
+                            <th scope="col">{{ trans('visiosoft.module.mortgage_calculator::view.balance') }}</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>

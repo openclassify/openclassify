@@ -46,7 +46,7 @@ class LoginController extends PublicController
 
         return $form
             ->setOption('redirect', 'admin')
-            ->setOption('wrapper_view', 'visiosoft.theme.sahibinden::login')
+            ->setOption('wrapper_view', 'visiosoft.theme.restate::login')
             ->render();
     }
 

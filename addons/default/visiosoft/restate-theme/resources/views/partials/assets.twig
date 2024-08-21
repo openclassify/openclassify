@@ -1,0 +1,41 @@
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/js/all.min.js"
+        integrity="sha512-6sSYJqDreZRZGkJ3b+YfdhB3MzmuP9R7X1QZ6g5aIXhRvR1Y/N/P47jmnkENm7YL3oqsmI6AK+V6AD99uWDnIw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+{{ asset_script("visiosoft.theme.restate::js/popper.min.js") }}
+{{ asset_script("visiosoft.theme.restate::js/bootstrap.min.js") }}
+{{ asset_script("visiosoft.theme.restate::js/bootstrap-multiselect.min.js") }}
+
+{{ asset_script("visiosoft.theme.restate::js/base/select2.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/intlTelInput.min.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/utils.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/phonefield.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/jquery.inputmask.bundle.min.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/jquery-ui.min.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/modal_include.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/sweetalert2.all.min.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/theme/search.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/theme/modal.js") }}
+{{ asset_script("visiosoft.theme.restate::js/base/offline.js") }}
+{{ asset_script("visiosoft.theme.restate::js/visiosoft.js" ) }}
+
+{{ asset_script("visiosoft.theme.restate::js/slick.min.js") }}
+{{ asset_script("visiosoft.theme.restate::js/plugins/*") }}
+{{ asset_script("visiosoft.theme.restate::js/theme/initialize.js") }}
+{{ asset_script("visiosoft.theme.restate::js/theme/new-ad.js") }}
+{{ asset_script("visiosoft.theme.restate::js/restate.js" ) }}
+
+<script type="text/javascript">
+    {% for script in asset_inlines("scripts.js", ["min"]) %}
+    {{ script|raw }}
+    {% endfor %}
+</script>
+
+{{ template.includes.render('scripts')|raw }}
+
+<style type="text/css">
+    {% for style in asset_inlines("styles.css", ["min"]) %}
+    {{ style|raw }}
+    {% endfor %}
+</style>

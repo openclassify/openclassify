@@ -1,0 +1,35 @@
+{% set showcaseFeature = getFeatures(1) %}
+{% set firesaleFeature = getFeatures(5) %}
+{% set dopings = entries('dopings','types').whereIn('id', [1,5]).get() %}
+
+{% if showcaseFeature|length %}
+    <div class="container p-0 m-0 mx-auto mb-0 js-tab-event">
+        <div class="row p-0 m-0">
+            <h4 class="col-12  fs-20 py-3">
+                {{ trans('visiosoft.module.dopings::field.featured_ads') }}
+            </h4>
+            <div class="sliderDefault w-100 mx-auto ">
+                {% for featuredAd in showcaseFeature %}
+
+                    {% include 'visiosoft.theme.restate::partials/productCard' with {"ads": featuredAd, 'doping': dopings[0]} %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+{% if firesaleFeature|length %}
+    <div class="container p-0 m-0 mx-auto mb-0 js-tab-event">
+        <div class="row p-0 m-0">
+            <h4 class="col-12  fs-20 py-3">
+                {{ trans('visiosoft.module.dopings::field.fire_sale') }}
+            </h4>
+            <div class="sliderDefault w-100 mx-auto ">
+                {% for featuredAd in firesaleFeature %}
+                    {% include 'visiosoft.theme.restate::partials/productCard' with {"ads": featuredAd, 'doping': dopings[1]} %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+

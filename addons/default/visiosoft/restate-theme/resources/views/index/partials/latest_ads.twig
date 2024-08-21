@@ -1,0 +1,8 @@
+<h4 class="ml-3 fs-20 py-3">{{ trans('visiosoft.theme.restate::field.latest_ads') }}</h4>
+<div class="row p-0 m-0">
+    <div class="sliderDefault mx-auto w-100">
+        {% for ads in latestAds() %}
+            {% include "visiosoft.theme.restate::/partials/productCard" with {"ads": ads} %}
+        {% endfor %}
+    </div>
+</div>

@@ -1,0 +1,124 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+
+            <div class="row p-0 m-0 pb-4">
+                <div class="col-12 p-0 d-flex justify-content-between align-items-center my-2">
+                    <div class="fs-18">
+                        <span class="font-weight-bold">{{ trans('visiosoft.module.messages::field.my_messages.name') }}</span>
+                    </div>
+                </div>
+
+                {% include "visiosoft.theme.restate::addons/visiosoft/profile-module/profile/partials/left-navigation" %}
+
+                <div class="col-12 col-lg-9 p-0 pl-0 pl-lg-3 d-flex h-fit">
+                    <section id="main" class="w-100">
+                        <div class="container">
+                            <div class="breadcrumb-section">
+                                <div class="section message-details my-4">
+                                    <div class="message-detail-header my-2">
+                                        <a href="{{ url_route('messages') }}" id="back-button-messages"
+                                           class="btn btn-outline-secondary">
+                                            <i class="fa fa-arrow-left"></i>
+                                        </a>
+                                    </div>
+                                    {% if adv %}
+                                        <div class="row message-list-item p-2 bg-white shadow-sm mx-0 my-2">
+                                            <div class="col-2 h-100 text-center px-0 px-md-3">
+                                                <img src="{{ adv.thumbnail }}" class="w-100">
+                                            </div>
+                                            <div class="col-10 col-sm-8">
+                                                <a href="{{ url_route('adv_detail_seo', [adv.slug, adv.id]) }}">
+                                                    <div class="text-truncate">{{ adv.title }}</div>
+                                                </a>
+                                            </div>
+                                            <div class="col-2 d-none d-md-block">
+                                                <div class="text-truncate text-right text-danger">{{ currency_format(adv.price,adv.currency) }}</div>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                    {% set otherUser = entries('messages', 'chats').getOtherUser(chat.id) %}
+                                    <div class="shadow-sm bg-light p-3 border">
+                                        <div class="border-bottom pb-3 mb-3 d-none d-sm-flex align-items-center">
+                                            <h6 class="mb-0">{{ otherUser.name }}</h6>
+                                            {% if otherUser.gsm_phone %}
+                                                <div class="bg-secondary px-3 rounded-pill text-light mx-3">
+                                                    {{ otherUser.gsm_phone }}
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="chat-wrapper d-flex flex-column">
+                                            {% set messages = entries('messages').getUserAdMessages(chat.id) %}
+                                            {% for message in messages %}
+                                                {% if message.created_by_id == auth_user().id %}
+                                                    {% set messageClass, alertClass = 'user-message', 'alert-success' %}
+                                                {% else %}
+                                                    {% set messageClass, alertClass = 'anonymous-message', 'alert-secondary' %}
+                                                {% endif %}
+                                                <div class="message-inpage-details mx-3 {{ messageClass }}">
+                                                    <div class="alert {{ alertClass }}">
+                                                        <p class="mb-0 text-dark">
+                                                            {% if message.detail starts with '/*' %}
+                                                            {% set advSnippet = entries('advs').getAdvById(message.detail|trim('/*', 'left')) %}
+                                                            {% if advSnippet %}
+                                                        <div class="the-card">
+                                                            <a href="{{ url_route('adv_detail_seo', [advSnippet.slug, advSnippet.id]) }}"
+                                                               class="card mb-2">
+                                                                <div class="card-body">
+                                                                    <div class="media">
+                                                                        <img src="{{ advSnippet.thumbnail }}" class="card-img-top">
+                                                                        <div class="media-body ml-3 text-truncate">
+                                                                            <h5 class="text-dark text-truncate">
+                                                                                {{ advSnippet.name }}
+                                                                            </h5>
+                                                                            <h6 class="text-dark mb-0 text-truncate">
+                                                                                {{ currency_format(advSnippet.price,advSnippet.currency) }}
+                                                                            </h6>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        {% else %}
+                                                            {{ message.detail }}
+                                                        {% endif %}
+                                                        {% else %}
+                                                            {{ message.detail }}
+                                                        {% endif %}
+                                                        </p>
+                                                        <small class="mb-0 text-muted">
+                                                            {{ message.created_at.format(config_get('streams::datetime.date_format') ~ ' ' ~ config_get('streams::datetime.time_format')) }}
+                                                        </small>
+                                                    </div>
+                                                </div>
+                                            {% endfor %}
+                                        </div>
+
+                                        <form id="messageForm" action="{{ url_route('chat_message_save', [adv.id]) }}" method="post"
+                                              class="d-flex mt-3">
+                                            <input type="hidden" name="chat" value="{{ chat.id }}">
+                                            <input type="text" class="form-control" name="detail"
+                                                   placeholder="{{ trans('visiosoft.module.messages::field.write_your_message_here') }}">
+                                            <button type="submit" class="btn btn-primary ml-1 px-3" disabled id="send-chat">
+                                                {{ trans('visiosoft.module.messages::field.send') }}
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+            </div>
+            {{ asset_add('scripts.js','visiosoft.module.messages::assets/js/messages.js') }}
+
+            <script>
+                let msgSSL = `{{ setting_value('visiosoft.module.messages::force_ssl') }}` === 'true';
+                let authID = `{{ auth_user().id }}`;
+                {{ asset_inline('visiosoft.module.messages::assets/js/app.js') }}
+            </script>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

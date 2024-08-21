@@ -1,9 +1,0 @@
-{% set unreadMessages = entries('messages').checkUnreadMessages() %}
-<a href="{{ url_route('messages') }}"
-   class="position-relative mr-1 align-items-center message-navigation">
-    {{ img('visiosoft.theme.sahibinden::images/header-icon/message.svg') }}
-    {% if unreadMessages %}
-        <span class="badge badge-danger unread-msg">{{ unreadMessages }}</span>
-    {% endif  %}
-</a>
-{{ asset_style('visiosoft.module.messages::assets/css/navigation.css') }}

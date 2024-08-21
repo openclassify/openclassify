@@ -1,0 +1,12 @@
+{% for key, value in params.checkboxes %}
+<div class="filter-box p-3 {{ not value.show_filter ? 'd-none' }}">
+    <label for="cf_{{ value.id }}" class="fs-14 fw-700 mb-0">
+        {{ value.name }}
+    </label>
+    <select id="cf_{{ value.id }}" class="filter-select w-100"  name="cf_{{ value.id }}[]" multiple="multiple">
+        {% for key, val in value.values %}
+            <option data-name="{{ val }}" value="{{ key }}" {{ key in app.request.get('cf_'~ value.id) ? 'selected' }}>{{ val }}</option>
+        {% endfor %}
+    </select>
+</div>
+{% endfor %}

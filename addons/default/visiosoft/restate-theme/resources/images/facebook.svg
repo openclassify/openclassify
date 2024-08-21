@@ -1,0 +1,14 @@
+<svg width="37px" height="37px" viewBox="0 0 37 37" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <g id="Detail" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Detail-Paylas-2" transform="translate(-561.000000, -369.000000)">
+            <g id="Group-30" transform="translate(561.000000, 244.000000)">
+                <g id="Group-43" transform="translate(0.000000, 125.000000)">
+                    <circle id="Oval" fill="#E2E2E2" fill-rule="nonzero" cx="18.5" cy="18.5" r="18.5"></circle>
+                    <g id="facebook" transform="translate(14.000000, 9.000000)" fill="#3456A5">
+                        <path d="M6,6.95454545 L6,4.34659091 C6,3.47727273 6.42085714,3.25994318 7.07142857,3.25994318 L8.25,3.25994318 L8.57142857,0 L5.89285714,0 C3.42857143,0 2.57142857,1.73863636 2.57142857,3.47727273 L2.57142857,6.95454545 L0,6.95454545 L0,10.4318182 L2.57142857,10.4318182 L2.57142857,19.125 L6,19.125 L6,10.4318182 L8.25,10.4318182 L9,6.95454545 L6,6.95454545 Z" id="Path"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

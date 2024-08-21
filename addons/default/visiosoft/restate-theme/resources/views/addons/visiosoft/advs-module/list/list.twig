@@ -1,0 +1,185 @@
+{% extends layout('list') %}
+
+{% block styles %}
+    {{ asset_style("visiosoft.module.advs::css/list.css") }}
+    {{ asset_style("visiosoft.module.advs::css/list-new.scss") }}
+{% endblock %}
+
+{% block content %}
+    <div class="bg-special-3">
+        <div class="container container-100 p-0 m-0 mx-auto px-2">
+            <div class="row p-0 m-0">
+                <div class="col-3 d-xl-block d-none pr-3 mt-2">
+                    {% include "visiosoft.theme.restate::addons/visiosoft/advs-module/list/partials/list-filter" %}
+                </div>
+                <div class="col-xl-9 col-12 h-fit pt-5 pt-md-0  my-md-2">
+                    <div class="d-flex flex-column flex-md-row bg-white border justify-content-between px-3 py-2 align-items-center border-bottom {{ not count(cFArray) ? 'mb-2' }}">
+                        <div class=" text-center text-md-left">
+                            <span class="mr-1 color-1">
+                                {{ trans('visiosoft.module.advs::field.search_ad_result_text', {
+                                    'count': advs.total + featured_advs.total,
+                                    'name': catText ? catText : '',
+                                })|raw }}
+                            </span>
+                        </div>
+                        <a href="{{ not auth_check() ? url('/login') : 'javascript:void(0)'}}" class="fs-14 fw-500 color-8 d-none d-md-block text-decoration-none {{ auth_check() ? 'fav-search-modal' }}">
+                            <i class="fas fa-bell color-3 fs-18 mr-2"></i>
+                            {{ trans('visiosoft.module.advs::field.save_search') }}
+                        </a>
+                        <div class="d-flex d-md-none flex-fill w-100 justify-content-center">
+                            <div class="dropdown d-flex d-md-none align-items-center">
+                                <button class="h-100 px-3 py-2 text-decoration-none bg-special-3 bg-white rounded-two border-color-1 color-8 text-nowrap"
+                                        type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                    <i class="fas fa-sort-alpha-up color-3 mr-2"></i>
+                                    {{ trans("visiosoft.module.advs::field.advanced_sorting") }}
+                                </button>
+                                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <span class="dropdown-item sort-by-item" data-value="sort_price_up">
+                                    {{ trans("visiosoft.module.advs::field.price_high") }}
+                                </span>
+                                    <span class="dropdown-item sort-by-item" data-value="sort_price_down">
+                                    {{ trans("visiosoft.module.advs::field.price_low") }}
+                                </span>
+                                    <span class="dropdown-item sort-by-item" data-value="sort_time_newest">
+                                    {{ trans("visiosoft.module.advs::field.newest") }}
+                                </span>
+                                    <span class="dropdown-item sort-by-item" data-value="sort_time_oldest">
+                                    {{ trans("visiosoft.module.advs::field.oldest") }}
+                                </span>
+                                    <span class="dropdown-item sort-by-item" data-value="address_a_z">
+                                    {{ trans("visiosoft.module.advs::field.address_a_z") }}
+                                </span>
+                                    <span class="dropdown-item sort-by-item" data-value="address_z_a">
+                                    {{ trans("visiosoft.module.advs::field.address_z_a") }}
+                                </span>
+                                    <span class="dropdown-item sort-by-item" data-value="name_a_z">
+                                    {{ trans("visiosoft.module.advs::field.name_a_z") }}
+                                </span>
+                                    <span class="dropdown-item sort-by-item" data-value="name_z_a">
+                                    {{ trans("visiosoft.module.advs::field.name_z_a") }}
+                                </span>
+                                </div>
+                            </div>
+                            <div class="dropdown d-flex d-md-none align-items-center">
+                                <button class="px-3 py-2 text-decoration-none bg-special-3 bg-white rounded-two border-color-1 color-8 text-nowrap d-flex flex-fill"
+                                        type="button" id="filter_modal_btn">
+                                    <div class="d-flex align-items-center flex-fill">
+                                        {{ img('visiosoft.module.advs::images/listing/mobile-filter.svg').data|raw }}
+                                        <p class="w-100 text-center">{{ trans('visiosoft.module.advs::field.filter') }}</p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    {% set topFilter = getCustomFieldById(setting_value('visiosoft.theme.restate::list_top_customfield')) %}
+                    <div class="top-buttons mt-2 d-flex justify-content-between align-items-center">
+                        <div class="d-flex flex-wrap justify-content-center">
+                            {% for key, val in topFilter.values %}
+                                <div data-value="{{ val.id }}" class="cf_button {{ val.id in app.request.get('cf_'~ topFilter.id) ? 'selected' }}">{{ val.custom_field_value }}</div>
+                            {% endfor %}
+                        </div>
+                        <div class="d-flex">
+                            <div class="d-flex align-items-center justify-content-between font-weight-bold color-4">
+                                <div class="dropdown d-none d-md-flex align-items-center">
+                                    <button class="px-3 py-2 text-decoration-none bg-special-3 bg-white rounded-two border-color-1 color-8"
+                                            type="button"
+                                            id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                            aria-expanded="false">
+                                        <i class="fas fa-sort-alpha-up color-3 mr-2"></i>
+                                        {{ trans("visiosoft.module.advs::field.advanced_sorting") }}
+                                    </button>
+                                    <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuButton">
+                                <span class="dropdown-item sort-by-item" data-value="sort_price_up">
+                                    {{ trans("visiosoft.module.advs::field.price_high") }}
+                                </span>
+                                        <span class="dropdown-item sort-by-item" data-value="sort_price_down">
+                                    {{ trans("visiosoft.module.advs::field.price_low") }}
+                                </span>
+                                        <span class="dropdown-item sort-by-item" data-value="sort_time_newest">
+                                    {{ trans("visiosoft.module.advs::field.newest") }}
+                                </span>
+                                        <span class="dropdown-item sort-by-item" data-value="sort_time_oldest">
+                                    {{ trans("visiosoft.module.advs::field.oldest") }}
+                                </span>
+                                        <span class="dropdown-item sort-by-item" data-value="address_a_z">
+                                    {{ trans("visiosoft.module.advs::field.address_a_z") }}
+                                </span>
+                                        <span class="dropdown-item sort-by-item" data-value="address_z_a">
+                                    {{ trans("visiosoft.module.advs::field.address_z_a") }}
+                                </span>
+                                        <span class="dropdown-item sort-by-item" data-value="name_a_z">
+                                    {{ trans("visiosoft.module.advs::field.name_a_z") }}
+                                </span>
+                                        <span class="dropdown-item sort-by-item" data-value="name_z_a">
+                                    {{ trans("visiosoft.module.advs::field.name_z_a") }}
+                                </span>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% if count(cFArray) %}
+                        <div class="mb-2 d-flex border-start border border-top-0 bg-white align-items-center px-3 py-2">
+                            <div class="d-flex align-items-center">
+                                <div id="queryBar" class="px-3 py-2 filter-tabs d-flex flex-wrap w-100">
+                                    {% for customParam in cFArray %}
+                                        <div class="d-flex align-items-center font-weight-bold color-1 fs-14 mr-1">{{ customParam['name'] }}</div>
+                                        {% for customValue in customParam['value'] %}
+                                            <a href="{{ customValue['removalLink'] }}"
+                                               class="bg-special-3 fs-12 color-8 px-2 py-1 mx-1">
+                                                {{ customValue['name'] }}
+                                                <i class="ml-1 fas fa-times-circle cursor-pointer color-10"></i>
+                                            </a>
+                                        {% endfor %}
+                                    {% endfor %}
+                                </div>
+                            </div>
+                        </div>
+                    {% endif %}
+
+{#                    {{ addBlock('ads-list/partials/before-display-mode', {'topfields': topfields})|raw }}#}
+
+                    {% block listContent %}
+                        {% include "visiosoft.theme.restate::addons/visiosoft/advs-module/list/partials/ads" %}
+                    {% endblock %}
+                    <div class="container mb-4 overflow-hidden">
+                        {% include "visiosoft.module.advs::list/partials/pagination" %}
+                    </div>
+
+                    {% if category.description.value%}
+                        <div class="cat-info">
+                            <div class="cat-title">
+                                {{ trans('visiosoft.theme.restate::field.cat_title', {cat_name: category.name})|raw }}
+                            </div>
+
+                            <div class="cats-description">
+                                {{ category.description|raw }}
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+
+        <a href="{{ not auth_check() ? url('/login') : 'javascript:void(0)' }}" class="fav-search-mobile d-md-none fs-14 fw-500 color-8 text-decoration-none {{ auth_check() ? 'fav-search-modal' }}">
+            <i class="fas fa-bell color-3 fs-18 mr-2"></i>
+            {{ trans('visiosoft.module.advs::field.save_search') }}
+        </a>
+
+    </div>
+
+    {% include "visiosoft.module.advs::list/partials/filter-modal" %}
+    {% include "visiosoft.module.advs::list/partials/sort-modal" %}
+{#    {{ addBlock('list/partials/modal')|raw }}#}
+
+    <script>
+        var select_trans = "{{ trans('visiosoft.module.advs::field.pick_option') }}";
+        var cfButtonsId = "{{ topFilter.id }}"
+    </script>
+
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list.js") }}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/list-new.js") }}
+{% endblock %}

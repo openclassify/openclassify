@@ -1,0 +1,29 @@
+<!doctype html>
+
+<html lang="{{ config('app.locale') }}">
+
+<head>
+    {% include "visiosoft.theme.restate::partials/metadata" %}
+    {% block styles %}{% endblock %}
+</head>
+
+<body class="body-full">
+
+{% if (request_path() == '/') %}
+    {% include "visiosoft.theme.restate::index/index" %}
+{% else %}
+    {% include "visiosoft.theme.restate::partials/header" %}
+
+    <main id="main">
+            <div class="no-container">
+                {% block content %}{% endblock %}
+            </div>
+    </main>
+    {% include "visiosoft.theme.restate::partials/footer" %}
+
+{% endif %}
+{% include "visiosoft.theme.restate::partials/messages" %}
+{% include "visiosoft.theme.restate::partials/assets" %}
+{% block customjs %}{% endblock %}
+</body>
+</html>

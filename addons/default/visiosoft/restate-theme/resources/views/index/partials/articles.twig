@@ -1,0 +1,51 @@
+<div class="container pt-3 pt-md-5 mb-4 px-0">
+    <div class="d-flex justify-content-between align-items-center mb-2">
+        <h5 class="text-left ml-3 py-3">{{ trans('visiosoft.theme.restate::field.news_title', {name: setting_value('streams::name')}) }}</h5>
+        <a href="{{ url('posts') }}" class="btn btn-outline-primary all-post-btn d-none d-md-block">
+            {{ trans('visiosoft.theme.restate::field.all_news') }}
+        </a>
+    </div>
+    <div class="sliderDefault">
+        {% if entries('posts','types').findBySlug('default') %}
+            {% set posts = entries('posts').type('default').live().limit(8).get() %}
+            {% for post in posts %}
+                <div class="px-2">
+                    <div
+                        class="fs-14 product position-relative bg-white link-dark text-decoration-none border">
+                        <div class="product-img">
+                            <a href="{{ post.route('view') }}">
+                                {{ img( post.images.make.url ?? 'visiosoft.theme.restate::images/no-image.png').class('w-100 post-card-image mt-0')|raw }}
+                            </a>
+                        </div>
+                        <div class="product-text-area p-3">
+                            <div>
+                                <time class="date" datetime="{{ post.publish_at.iso }}">
+                                    <i class="fa fa-calendar"></i>
+                                    {{ post.publish_at.format(config_get('streams::datetime.date_format')) }}
+                                </time>
+                            </div>
+                            <div class="single-line">
+                                <a href="{{ post.route('view') }}" class="title">
+                                    {{ post.title }}
+                                </a>
+                            </div>
+                            <div class="mt-1">
+                                <span class="summary">
+                                    {{ post.summary }}
+                                </span>
+                            </div>
+                            <div class="mt-3">
+                                <a href="{{ post.route('view') }}" class="readmore-button">
+                                    {{ trans('visiosoft.theme.restate::button.read_more')}} <span><i class="fa fa-angle-double-right" aria-hidden="true"></i></span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+    <a href="{{ url('posts') }}" class="btn btn-outline-yellow mx-2 all-post-btn d-block d-md-none fs-16 font-weight-bold py-2">
+        {{ trans('visiosoft.theme.restate::field.all_news') }}
+    </a>
+</div>

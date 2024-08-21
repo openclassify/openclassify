@@ -1,0 +1,17 @@
+<nav aria-label="breadcrumb" class="d-md-flex d-none">
+    <ol class="breadcrumb align-items-center bg-transparent text-secondary m-0">
+        <li class="breadcrumb-item color-2" aria-current="page">
+            <a href="{{ url('/') }}" class="text-black-50">
+                <i class="fas fa-home ml-1"></i>
+            </a>
+        </li>
+        {% for cat in categories %}
+            <li class="breadcrumb-item fw-400 fs-14" aria-current="page">
+                <a href="{{ url_route('visiosoft.module.advs::list_mlang', [cat.slug]) }}" class="text-black-50">
+                    {{ cat['name'] }}
+                </a>
+            </li>
+        {% endfor %}
+        <input class="hidden" id="adv-id" value="{{ adv.id }}" hidden>
+    </ol>
+</nav>

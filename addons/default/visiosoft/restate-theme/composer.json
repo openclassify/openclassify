@@ -1,0 +1,9 @@
+{
+    "name": "visiosoft/restate-theme",
+    "type": "streams-addon",
+    "autoload": {
+        "psr-4": {
+            "Visiosoft\\RestateTheme\\": "src/"
+        }
+    }
+}

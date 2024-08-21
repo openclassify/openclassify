@@ -1,0 +1,9 @@
+<div class="lineSpecial"></div>
+<div class="d-flex align-items-center {{ params.step == 'doping-buy' ? ' current' }}">
+    <div class="{{ params.step == 'doping-buy' ? ' bgSpecial_2' : 'bgSpecial_3' }}  SpecialWidth_2 rounded-circle">
+        {{ img('visiosoft.theme.restate::images/icons/turbo.svg').data|raw }}
+    </div>
+    <span class="{{ step == 'doping-buy' ? ' font-weight-bold' : 'text-secondary' }} fw-500 ml-2  fs-14">
+        {{ trans('visiosoft.module.dopings::field.doping') }}
+    </span>
+</div>

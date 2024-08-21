@@ -1,0 +1,126 @@
+<div class="w-100 header-two py-3 px-2 d-md-block d-none">
+    <div id="filter-area" class="container m-0 p-0 mx-auto container-100 px-4">
+        <div class="container m-0 p-0 ml-3">
+            <div class="d-flex justify-content-between align-items-center">
+                <a href="{{ url('/') }}" class="he-header-logo">
+                    {% if setting_value('visiosoft.theme.restate::logo') %}
+                        <img src="{{ file(setting_value('visiosoft.theme.restate::logo')).make.url }}">
+                    {% else %}
+                        {{ img('visiosoft.theme.restate::images/estate-logo.png').class('me-lg-5 mr-3')|raw }}
+                    {% endif %}
+                </a>
+
+                <div>
+                    <ul class="d-flex">
+                        <li>
+                            <a class="header-link mr-74" href="/">
+                                {{ trans('visiosoft.theme.restate::field.home') }}
+                            </a>
+                        </li>
+                            {% set cats = entries('cats','category').whereIn('id', [setting_value('visiosoft.theme.restate::header_category1'), setting_value('visiosoft.theme.restate::header_category2')]).get() %}
+                            {% if count(cats) %}
+                            <li>
+                                <a class="header-link mr-74" href="{{ url_route('visiosoft.module.advs::list_mlang', [cats[0].slug]) }}">
+                                    {{ cats[0].name.value }}
+                                </a>
+                            </li>
+                            <li>
+                                <a class="header-link mr-74" href="{{ url_route('visiosoft.module.advs::list_mlang', [cats[1].slug]) }}">
+                                    {{ cats[1].name.value }}
+                                </a>
+                            </li>
+                            {% endif %}
+                        <li>
+                            <a class="header-link text-dark" href="/advs/create_adv">
+                                {{ trans("visiosoft.theme.restate::button.free_post_ad.name") }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                {% include "visiosoft.theme.restate::partials/headerDropdown" %}
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="header-height d-block position-relative d-md-none">
+    <div class="d-md-none d-block w-100 d-flex align-items-center justify-content-between px-4 shadow position-fixed z-index bg-white"
+         id="mobile-product-detay">
+        <div class="burger-header-area">
+            <svg style="width: 30px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                <path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"></path>
+            </svg>
+        </div>
+        <a href="{{ url('/') }}" class="he-mobile-header-logo-white">
+            {% if setting_value('visiosoft.theme.restate::logo') %}
+                <img src="{{ file(setting_value('visiosoft.theme.restate::logo')).make.url }}">
+            {% else %}
+                {{ img('visiosoft.theme.restate::images/restate-mail-logo.png').width(100)|raw }}
+            {% endif %}
+        </a>
+        <span>
+        <i class="fas fa-search fs-22 mobile-search-icon mobile-search-toggle-icon"></i>
+    </span>
+        <div class="d-none mobile-search-area bg-white shadow w-100 position-absolute border-top border-1 py-3" style="top: 100%; left: 0">
+            <form class="header-search-container flex-fill d-flex align-items-center mx-3"
+                  action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+                <button class="search-button bg-white border-0" type="submit">
+                    <i class="fas fa-search text-secondary"></i>
+                </button>
+                <input id="SearchArea-2" class="SearchArea" name="keyword" type="search"
+                       placeholder="{{ trans('visiosoft.theme.restate::field.search_placeholder')|raw }}">
+                <i class="fas fa-times fs-22 mobile-search mobile-search-toggle-icon"></i>
+            </form>
+        </div>
+    </div>
+</div>
+<div id="list-area">
+    <section class="burger">
+        <div class="burger-other"></div>
+        <div class="burger-side">
+            <div class="burger-head bg-light d-flex align-items-center pt-5 pb-3 px-4">
+                {% if auth_user().file.first.make.url %}
+                    <div class="he-menu-left-img">
+                        <img src="{{ auth_user().file.first.make.url }}" class="rounded-circle">
+                    </div>
+                {% else %}
+                    {{ img('visiosoft.theme.restate::images/user-circle.svg').width(46)|raw }}
+                {% endif %}
+                <div class="ml-2">
+                    <span class="color-1">{{ trans('visiosoft.theme.restate::field.my_account') }}</span>
+                    <span class="fw-500 lh-sm d-block">
+                        {% if auth_check() %}
+                            <span class="d-flex justify-content-between">
+                                <a href="{{ url_route("profile::profile") }}"
+                                   class="text-decoration-none text-black-50">
+                                    {{ auth_user().name }}
+                                </a>
+                                <a href="{{ url_route("anomaly.module.users::logout") }}"
+                                   class="text-decoration-none text-red">
+                                        {{ trans('visiosoft.theme.restate::field.logout') }}
+                                </a>
+                            </span>
+                        {% else %}
+                            <a href="{{ url_route('anomaly.module.users::login') }}"
+                               class="text-decoration-none text-red">{{ trans('visiosoft.theme.restate::field.login') }}</a>
+                            <span class="color-1 fw-normal">{{ trans('visiosoft.theme.restate::field.or') }}</span>
+                            <a href="{{ url_route('anomaly.module.users::register') }}"
+                               class="text-decoration-none text-red">{{ trans('visiosoft.theme.restate::field.register') }}</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+            <div class="w-100 mx-auto bg-white rounded">
+{#                {{ addBlock('navigation/navigation' , {}, ['favs'])|raw }}#}
+
+                <a href="/advs/create_adv"
+                   class="text-decoration-none w-100 d-flex align-items-center  justify-content-between  py-3 px-3 border-bottom">
+                    <div class="d-flex align-items-center">
+                        <span class="ml-3  color-1">{{ trans("visiosoft.theme.restate::button.free_post_ad.name") }}</span>
+                    </div>
+                    <div class="d-flex align-items-center fs-20 color-1"><i class="fas fa-angle-right"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+</div>

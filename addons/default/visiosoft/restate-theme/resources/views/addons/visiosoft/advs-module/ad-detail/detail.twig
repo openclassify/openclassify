@@ -1,0 +1,26 @@
+{% extends layout('no-container') %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline("visiosoft.theme.restate::css/lightbox.css") }}
+        main {
+            padding: 0;
+        }
+    </style>
+{% endblock %}
+
+{% block customjs %}
+    <script>
+        {{ asset_inline("visiosoft.theme.restate::js/lightbox.min.js") }}
+    </script>
+{% endblock %}
+
+{% block content %}
+    {% set country = adv.country.name %}
+    {% set city = adv.city_info.name.value %}
+    {% set district = adv.district.name.value %}
+
+    {% include "visiosoft.theme.restate::addons/visiosoft/advs-module/ad-detail/main" %}
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/viewed.js") }}
+
+{% endblock %}

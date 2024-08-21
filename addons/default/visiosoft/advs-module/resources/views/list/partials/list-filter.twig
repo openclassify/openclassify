@@ -8,6 +8,10 @@
     <input type="hidden" name="user" value="{{ app.request.get('user') }}">
 
     <div id="category" class="border rounded p-3 mb-3 d-none d-sm-block">
+
+
+
+
         <div id="categoryNav" class="d-flex">
             <a href="{{ url_route('visiosoft.module.advs::view_type', ['list']) }}" rel="nofollow"
                class="d-flex w-50 align-items-center pl-2 pb-1{{ request().cookie.viewType != "map" ? ' active' }}">
@@ -21,6 +25,10 @@
                     <p class="ml-2">{{ trans("visiosoft.module.advs::field.map.name") }}</p>
                 </a>
             {% endif %}
+
+
+
+
         </div>
 
         {% include 'visiosoft.module.cats::ads-list/partials/cat-filter' %}

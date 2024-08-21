@@ -1,0 +1,230 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline("visiosoft.module.profile::assets/css/profile.scss") }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <div class="mt-5 mt-md-0">
+        <div class="row p-0 m-0 pb-4 pt-4 mt-5 mt-md-0">
+
+            {% include "visiosoft.theme.restate::addons/visiosoft/profile-module/profile/partials/left-navigation" %}
+            {% set ads = getUserAllAdvs() %}
+            {% set active_ads = ads.where('status', 'approved') %}
+            {% set pending_ads = ads.where('status', 'pending_admin').where('slug','!=','') %}
+            {% set pending_ads_user = ads.where('status', 'pending_user').where('slug','!=','') %}
+            {% set passive_ads = ads.where('status', 'passive') %}
+            {% set incomplete_ads = ads.where('slug', '') %}
+
+            <div class="col-lg-9 col-12 px-lg-4 px-0">
+                {% block detail %}
+                <div class="col-12 p-0 d-flex flex-column  formArea">
+                    <div class="bg-special-7 paddingSpecial_2 font-weight-bold text-white">
+                        {{ trans('visiosoft.theme.restate::field.membership_transactions') }}
+                    </div>
+                    <div class="d-flex flex-column p-3 bgSpecial_6">
+                        <div class="d-flex align-items-center bgSpecial_5 paddingSpecial_3 borderTwo py-2">
+                            <i class="fas fa-exclamation-circle color_10 fs-22"></i>
+                            <span class="fs-13 ml-2">"{{ trans('visiosoft.theme.restate::field.asterisked_fields_warning') }}."</span>
+                        </div>
+                        <div class="d-flex flex-column w-100 pt-3">
+                            <div class="d-flex align-items-center">
+                                <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.password') }}</div>
+                                <button class="bg-special-7 paddingSpecial_4 text-white border-0 fs-14" data-toggle="modal" data-target="#passwordModal">
+                                    {{ trans('visiosoft.theme.restate::field.change') }}
+                                </button>
+                            </div>
+
+                            <div class="modal fade" id="passwordModal" tabindex="-1" role="dialog" aria-labelledby="passwordModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered" role="document">
+                                    <div class="modal-content rounded-0">
+                                        <div class="modal-header border-0 pb-0">
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            {% set passwordForm = form('updatePassword').get() %}
+
+                                            {{ passwordForm.open()|raw }}
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <div class="form-group">
+                                                        <div class="maxwidth_Form fs-13 color_11" required>
+                                                            {{ trans("visiosoft.module.profile::field.old_password.name") }}
+                                                            <span class="color_12 ml-1">*</span>
+                                                        </div>
+                                                        {{ passwordForm.fields.old_password.setAttributes({'class': 'inputWidth w-100'}).input|raw }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="maxwidth_Form fs-13 color_11" required>
+                                                            {{ trans("visiosoft.module.profile::field.new_password.name") }}
+                                                            <span class="color_12 ml-1">*</span>
+                                                        </div>
+                                                        {{ passwordForm.fields.new_password.setAttributes({'class': 'inputWidth'}).input|raw }}
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="maxwidth_Form fs-13 color_11" required>
+                                                            {{ trans("visiosoft.module.profile::field.re_new_password.name") }}
+                                                            <span class="color_12 ml-1">*</span>
+                                                        </div>
+                                                        {{ passwordForm.fields.re_new_password.setAttributes({'class': 'inputWidth'}).input|raw }}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="form-group text-right">
+                                                <button class="bg-special-7 paddingSpecial_4 text-white border-0 fs-14">
+                                                    {{ trans('visiosoft.theme.restate::field.change') }}
+                                                </button>
+                                            </div>
+                                        </div>
+                                        {{ passwordForm.close|raw }}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {% set profileForm = form('hepsiProfile').entry(user.id).get() %}
+                        {{ profileForm.open({ 'id': 'profile-detail' })|raw }}
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.profile_photo') }}
+                                <span class="color_12 ml-1">*</span>
+                            </div>
+                            {{ profileForm.fields.file|raw }}
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.name') }}
+                                <span class="color_12 ml-1">*</span>
+                            </div>
+                            {{ profileForm.fields.first_name.setAttributes({
+                                'class': 'inputWidth'
+                            }).input|raw }}
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.surname') }}
+                                <span class="color_12 ml-1">*</span>
+                            </div>
+                            {{ profileForm.fields.last_name.setAttributes({
+                                'class': 'inputWidth'
+                            }).input|raw }}
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.email_address') }}
+                                <span class="color_12 ml-1">*</span>
+                            </div>
+                            {{ profileForm.fields.email.setAttributes({
+                                'class': 'inputWidth', 'readonly': 'true'
+                            }).input|raw }}
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11" required>{{ trans('visiosoft.theme.restate::field.city') }}<span
+                                        class="color_12 ml-1">*</span>
+                            </div>
+                            <div class="form-group inputWidth p-0 m-0">
+                                <select id="inputState" name="city" class="border-0 form-control pl-1 fs-13">
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.district') }}<span
+                                        class="color_12 ml-1">*</span>
+                            </div>
+                            <div class="form-group inputWidth p-0 m-0">
+                                <select id="inputState" name="district" class="border-0 form-control pl-1 fs-13"
+                                        required>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.neighbourhood') }}<span
+                                        class="color_12 ml-1">*</span>
+                            </div>
+                            <div class="form-group inputWidth p-0 m-0">
+                                <select id="inputState" name="neighborhood" class="border-0 form-control pl-1 fs-13"
+                                        required></select>
+                            </div>
+                        </div>
+                        <div class="d-flex mt-10">
+                            <div class="maxwidth_Form fs-13 color_11"></div>
+                            <div class="d-flex flex-column">
+                                <div class="d-flex align-items-center bgSpecial_5 paddingSpecial_5 borderTwo mt-1">
+                                    <i class="fas fa-exclamation-circle color_10 fs-18"></i>
+                                    <span class="fs-11 m-2">"{{ trans('visiosoft.theme.restate::field.phone_notice') }}."</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.phone_number') }} 1</div>
+                            <div class="d-flex fs-13">
+                                {{ profileForm.fields.office_phone.setAttributes({
+                                    'class': 'inputWidth'
+                                }).input|raw }}
+                            </div>
+                        </div>
+                        <div class="d-flex mt-10">
+                            <div class="maxwidth_Form fs-13 color_11 pt-1">
+                                {{ trans('visiosoft.theme.restate::field.phone_number') }} 2
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="d-flex fs-13">
+                                    {{ profileForm.fields.land_phone.setAttributes({
+                                        'class': 'inputWidth'
+                                    }).input|raw }}
+                                </div>
+                                <div class="d-flex align-items-center bgSpecial_5 paddingSpecial_5 borderTwo mt-2">
+                                    <i class="fas fa-exclamation-circle color_10 fs-18"></i>
+                                    <span class="fs-11 m-2">"{{ trans('visiosoft.theme.restate::field.phone_verification_notice') }}."</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mt-10">
+                            <div class="maxwidth_Form fs-13 color_11">{{ trans('visiosoft.theme.restate::field.mobile_phone') }}</div>
+                            <div class="d-flex fs-13">
+                                {{ profileForm.fields.gsm_phone.setAttributes({
+                                    'class': 'inputWidth'
+                                }).input|raw }}
+                            </div>
+                        </div>
+                        <div class="font-weight-bold fs-15 borderSpecial mt-3">
+                            {{ trans('visiosoft.theme.restate::field.newsletter_options') }}
+                        </div>
+                        <div class="my-5">
+                            <input type="checkbox" aria-label="Checkbox for following text input" required>
+                            <span>{{ trans('visiosoft.theme.restate::field.consent_text')|raw }}</span>
+                        </div>
+                        <button class="saveButton text-uppercase font-weight-bold text-white text-center border-0">
+                            {{ trans('visiosoft.theme.restate::button.save') }}
+                        </button>
+                        {{ profileForm.close()|raw }}
+                    </div>
+                </div>
+            </div>
+            {% endblock %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block customjs %}
+
+    <script>
+        var country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+        var city = "{{ user.city ?? setting_value('visiosoft.module.location::default_city') }}";
+        var district = "{{ user.district ?? setting_value('visiosoft.module.location::default_district') }}";
+        var neighborhood = "{{ user.neighborhood ?? setting_value('visiosoft.module.location::default_neighborhood') }}";
+        var default_village = "{{ setting_value('visiosoft.module.location::default_village') }}";
+        var chooseOptionTrans = '{{ trans("visiosoft.module.location::field.choose_an_option") }}';
+        var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}";
+        {{ asset_inline("visiosoft.theme.restate::js/theme/country.js") }}
+    </script>
+
+{% endblock %}
+
+
+

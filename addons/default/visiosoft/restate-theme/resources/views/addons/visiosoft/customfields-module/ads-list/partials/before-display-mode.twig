@@ -1,0 +1,19 @@
+{% if params.topfields and count(params.topfields) %}
+
+    <div class="gap-1 fs-14 font-weight-bold d-md-flex d-none">
+        {% set topField = params.topfields[0] %}
+
+        <a href="{{ appendRequestURL(request_query(),url('/') ~ app.request.pathinfo,{('cf_'~topField.id~'[0]'):''}) }}"
+           class="px-3 py-3 bg-special-5 w-fit text-decoration-none color-1 fw-500 {{ not app.request.get('cf_'~ topField.id)[0] ? ' border-top-1 bg-white' }}">
+            {{ trans('visiosoft.module.customfields::field.selecttopall') }}
+        </a>
+
+        {% for key, val in topField.values %}
+            <a href="{{ appendRequestURL(request_query(), url('/') ~ app.request.pathinfo, {('cf_' ~ topField.id ~ '[0]'): key}) }}"
+               class="px-3 py-3 bg-special-5 w-fit text-decoration-none color-1 fw-500 {{ key in app.request.get('cf_'~ topField.id) ? ' border-top-1 bg-white' }}">
+                {{ val }}
+            </a>
+        {% endfor %}
+    </div>
+{% endif %}
+

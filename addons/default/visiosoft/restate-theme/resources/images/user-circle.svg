@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg version="1.1" viewBox="0 0 46 46" xmlns="http://www.w3.org/2000/svg">
+<title>Group 2</title>
+<desc>Created with Sketch.</desc>
+<g fill="none" fill-rule="evenodd">
+<g transform="translate(-20 -161)">
+<g transform="translate(20 161)">
+<path d="m23 0c12.703-2.3334e-15 23 10.297 23 23s-10.297 23-23 23-23-10.297-23-23c-1.5556e-15 -12.703 10.297-23 23-23z" fill="#DBDBDB" fill-rule="nonzero"/>
+<path d="m23 25.75c3.6712 0 11 1.8425 11 5.5v2.75h-22v-2.75c0-3.6575 7.3288-5.5 11-5.5zm0-13.75c3.0376 0 5.5 2.4624 5.5 5.5s-2.4624 5.5-5.5 5.5-5.5-2.4624-5.5-5.5 2.4624-5.5 5.5-5.5z" fill="#fff"/>
+</g>
+</g>
+</g>
+</svg>

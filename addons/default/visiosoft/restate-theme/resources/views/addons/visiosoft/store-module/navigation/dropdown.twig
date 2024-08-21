@@ -1,0 +1,14 @@
+{% if setting_value('visiosoft.module.advs::market_place') and (auth_user().isAdmin or not auth_user().hasPermission('visiosoft.module.store::store.no_read')) %}
+    {% set store = entries('store','store').getStore() %}
+    {% if store is null  %}
+        <a id="store" href="{{ url_route('store::create') }}" class="modal-item">
+            {{ img('visiosoft.theme.restate::images/icons/store-dropdown.svg').data|raw }}
+            <span>{{ trans('visiosoft.module.store::field.create_new_store.name') }}</span>
+        </a>
+    {% else %}
+        <a id="store" href="{{ url_route('store::store_panel', [store.slug]) }}" class="modal-item">
+            {{ img('visiosoft.theme.restate::images/icons/store-dropdown.svg').data|raw }}
+            <span>{{ store.name }} {{ trans('visiosoft.module.store::field.store.simple') }}</span>
+        </a>
+    {% endif %}
+{% endif %}

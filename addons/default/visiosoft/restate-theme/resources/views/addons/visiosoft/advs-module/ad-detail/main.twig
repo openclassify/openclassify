@@ -1,0 +1,538 @@
+<div class="w-100 mx-auto pt-md-0" id="product-detay">
+    <div class="sliderFour mx-auto">
+        {% set advPhoto = '' %}
+        {% if count(adv.files) == 0 %}
+            {% set advPhoto = img('visiosoft.theme.restate::images/no-image.png').url %}
+            <a href="{{ image }}">
+                {{ img('visiosoft.theme.restate::images/no-image.png').class('w-100')|raw }}
+            </a>
+        {% else %}
+            {% for image in adv.getViewPhotoUrl %}
+                <div class="position-relative product-image-hover w-fit"
+                     style="background-image: url('{{ adv.getMediumPhotoUrl(image) }}'); ">
+                    <div class="look-into position-absolute show-mega-area" data-type="photo">
+                        <i class="fas fa-search text-dark"></i>
+                    </div>
+                </div>
+                {% if loop.index == 1 %}
+                    {% set advPhoto = image %}
+                {% endif %}
+            {% endfor %}
+            {% if adv.video.url %}
+                <div class="position-relative product-image-hover w-fit"
+                     style="background-image: url('{{ adv.video.thumbnail }}'); ">
+                    <div class="look-into position-absolute show-mega-area" data-type="photo">
+                        <i class="fas fa-video text-dark"></i>
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
+<div class="container p-3">
+    <div class="container container-100 p-0 m-0 mx-auto position-special">
+        <div class="row p-0 m-0">
+            <div class="col-xl-8 col-12 p-0">
+                <div class="p-4 bg-white rounded-three">
+                    {% if setting_value('visiosoft.theme.restate::breadcrumbs') %}
+                        <!-- breadcrumb -->
+                        {% include "visiosoft.theme.restate::addons/visiosoft/advs-module/ad-detail/partials/breadcrumb" %}
+                        <!-- breadcrumb -->
+                    {% endif %}
+                    <div class="d-flex flex-md-row flex-column-reverse align-items-md-center align-items-start justify-content-between my-3">
+                        <div class="font-weight-bold fs-24 text-uppercase color-1">{{ adv.title }}</div>
+                        <div class="color-3 font-weight-bold fs-24 w-100  justify-content-between justify-content-md-end d-flex ">
+                            <span class="mr-0 mr-md-3">{{ currency_format(adv.price,adv.currency, {'separator' : '.', 'point' : ','}) }}</span>
+                            <span>
+                                <span onclick="printAd();return false;">
+                                    <i class="fa fa-print"></i>
+                                </span>
+                                <i class="fa fa-share-alt" data-toggle="modal" data-target=".share-modal"></i>
+                            </span>
+                        </div>
+                    </div>
+
+                    <div class="flex-wrap fw-500 my-3 d-md-flex d-none">
+                        {#                        {{ addBlock('ad-detail/title/action', {adv_id: adv.id}, ['favs'])|raw }} #}
+
+                        <a href="javascript:void(0)"
+                           class="mx-1 fs-14 px-2 py-2 bg-special-5 rounded-three text-decoration-none text-dark look-into show-mega-area"
+                           data-type="photo">
+                            <i class="fas fa-expand color-3 mr-2"></i>{{ trans('visiosoft.theme.restate::field.mega_photo') }}
+                        </a>
+                        {% if adv.video.url %}
+                            <a href="#"
+                               class="mx-1 fs-14 px-3 py-2 bg-special-5 rounded-three text-decoration-none text-dark look-into show-mega-area"
+                               data-type="video">
+                                <i class="fab fa-youtube color-3 mr-2"></i>
+                                {{ trans('visiosoft.theme.restate::field.video') }}
+                            </a>
+                        {% endif %}
+                        <a href="#"
+                           class="mx-1 fs-14 px-3 py-2 bg-special-5 rounded-three text-decoration-none text-dark look-into show-mega-area"
+                           data-type="map">
+                            <i class="fas fa-map-marked-alt color-3 mr-2"></i>
+                            {{ trans('visiosoft.theme.restate::field.maps_street_view') }}
+                        </a>
+                    </div>
+                    <div class="w-100 py-3 ad-info-horizontal">
+                        {% if adv.country_name %} <span>{{ adv.country_name }}</span> {% endif %}
+                        {% if adv.city_name %} <span>{{ adv.city_name }}</span> {% endif %}
+                        {% if adv.district_name %} <span>{{ adv.district_name }}</span> {% endif %}
+                        {% for cat in categories[:2] %}
+                            <span> {{ cat['name'] }}</span>
+                        {% endfor %}
+                    </div>
+                    <div class="list-group flex-lg-row flex-column">
+                        {% set default_features = [{
+                            'name': trans('visiosoft.theme.restate::field.ads_no'),
+                            'custom_field_value': adv.id,
+                            'class': 'text-danger',
+                        }, {
+                            'name': trans('visiosoft.theme.restate::field.last_updated_date'),
+                            'custom_field_value': adv.updated_at.diffForHumans,
+                        }, {
+                            'name': trans('visiosoft.module.advs::field.views'),
+                            'custom_field_value': adv.count_show_ad,
+                        }] %}
+
+                        {% if is_module_enabled('visiosoft.module.customfields') %}
+                            {% set features =  default_features|merge(features) %}
+                        {% else %}
+                            {% for feature in default_features %}
+                                <div class="d-flex flex-column w-special border-0 rounded mx-1">
+                                    <div class="list-group-item list-group-item-action list-group-item-special d-flex align-items-center px-0 py-2 fs-14">
+                                        <div class="w-50 px-2 color-2 {{ feature.class ?? '' }}">{{ feature.name ? feature.name : '' }}</div>
+                                        <div class="w-50 font-weight-bold {{ feature.class ?? '' }}">{{ feature.custom_field_value }}</div>
+                                    </div>
+                                </div>
+                            {% endfor %}
+                        {% endif %}
+                        {% include 'visiosoft.theme.restate::addons/visiosoft/customfields-module/ad-detail/content' with {'features_detail':features,'adv':adv} %}
+                    </div>
+                </div>
+                {% if setting_value('visiosoft.module.advs::show_ad_note') and auth_user().id == adv.created_by_id|raw %}
+                    <div class="p-4 bg-white rounded-three mt-4">
+                    <span class="fs-18 color-1">
+                        {{ trans('visiosoft.module.advs::field.ad_note.name') }}
+                    </span>
+                        <div class="d-flex flex-column fs-14 px-4 mt-4">
+                            {{ adv.ad_note|raw }}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="p-4 bg-white rounded-three mt-4">
+                    <span class="fs-18 color-1">
+                        {{ trans('visiosoft.theme.restate::field.ads_description') }}
+                    </span>
+                    <div class="d-flex flex-column fs-14 px-4 mt-4">
+                        {{ adv.advs_desc|raw }}
+                    </div>
+                </div>
+
+                {% set userId = setting_value('visiosoft.theme.restate::default_owner') ?: adv.created_by_id %}
+                {% set user = setting_value('visiosoft.theme.restate::default_owner') ? entries('users', 'users').find(setting_value('visiosoft.theme.restate::default_owner')) : adv.created_by %}
+                {% set sellerInfo = setting_value('visiosoft.module.advs::hide_seller_info') %}
+                {% if is_module_enabled('visiosoft.module.mortgage_calculator') %}
+                    <div class="p-4 bg-white rounded-three mt-4">
+                        {% include "visiosoft.theme.restate::addons/visiosoft/mortgage_calculator/calc_index" %}
+                    </div>
+                {% endif %}
+
+
+                <div id="printStyles">
+                    <link id="print-style" rel="stylesheet"
+                          href="{{ asset_url('visiosoft.theme.restate::scss/print.scss') }}" media="print">
+                </div>
+                <div id="print" class="print-ad border-danger d-none">
+                    {% set storeDetail = entries('store','store').where('user_id', params.userId).first() %}
+                    <div class="container row mt-2">
+                        <div class="print-cat">
+                            <h3 class="mb-0">
+                                {{ categories['cat1']['name'] }} {{ categories['cat2']['name'] ? '/ ' ~ categories['cat2']['name'] }}
+                            </h3>
+                            <span>{{ trans('visiosoft.theme.restate::field.ads_no') }} : {{ adv.id }}</span>
+                        </div>
+                        <div class="ml-3 d-flex align-content-center">
+                            {% if setting_value('visiosoft.theme.restate::print_logo') %}
+                                <img class="float-right header-logo-print"
+                                     src="{{ file(setting_value('visiosoft.theme.restate::print_logo')).make.url }}">
+                            {% else %}
+                                {{ img('visiosoft.theme.restate::images/logo-multi.dd5166a.png').class('float-right header-logo-print')|raw }}
+                            {% endif %}
+
+                        </div>
+                    </div>
+                    <div class="print-border-bottom"></div>
+                    <div class="row container">
+                        <div class="col-6 text-center">
+                            <div class="px-5">
+                                <div class="border-bottom p-5 ">
+                                    {% if adv.country_name %}
+                                        <b>{{ adv.country_name }}
+                                            {{ adv.city_name ? ',' ~ adv.city_name : '' }}</b>
+                                    {% endif %}
+                                </div>
+                                <div class="border-bottom p-5">
+                                    <b class="length-limit">{{ adv.title }}</b>
+                                </div>
+                                <div class="p-1">
+                                    {% if owner is not null %}
+                                        {% set storeDetail = entries('store','store').where('user_id', user.id).first() %}
+                                        {% if storeDetail is not null %}
+                                            {{ storeDetail.name }}
+                                            {% set phone = storeDetail.gsm_phone ?? storeDetail.land_phone %}
+                                            {% if phone %}
+                                                <br>
+                                                <b>{{ phone }}</b>
+                                            {% endif %}
+                                        {% endif %}
+                                    {% else %}
+                                        {{ user.name }}
+                                        {% if user.gsm_phone is not null %}
+                                            <br>
+                                            <b>{{ user.gsm_phone }}</b>
+                                        {% endif %}
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            {% if adv.thumbnail is not null %}
+                                {{ img(adv.thumbnail).class('product-small-image w-100 float-right')|raw }}
+                            {% else %}
+                                {{ img('visiosoft.theme.restate::images/no-image.png').class('product-small-image w-100 float-right')|raw }}
+                            {% endif %}
+                        </div>
+                    </div>
+                    <div class="row container pt-2">
+                        <div class="flex-fill">
+                            <h2 style="font-size: 5rem; margin: 0;">{{ currency_format(adv.price,adv.currency, {'separator' : '.', 'point' : ','}) }}</h2>
+                        </div>
+                        <div>
+                            {% if owner is not null %}
+                                {% set storeDetail = entries('store','store').where('user_id', user.id).first() %}
+                                {% if storeDetail is not null %}
+                                    {{ img(storeDetail.file.make.url ?? 'visiosoft.theme.restate::images/no-image-user.6f6a83e.svg').class('w-special-3 float-right')|raw }}
+                                {% endif %}
+                            {% endif %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="col-xl-3 col-12  h-100  ml-xl-4 ml-0 p-0 mt-xl-0 mt-3">
+                <div class="bg-white p-4 rounded-three">
+                    {% if owner %}
+                        {{ owner|raw }}
+                    {% else %}
+                        <div class="user-pp d-flex ">
+                            <div class="border rounded w-special-2 p-0">
+                                {{ img(user.file.make.url ?? 'visiosoft.theme.restate::images/no-image-user.6f6a83e.svg').class('h-100')|raw }}
+                            </div>
+                            <div class="ml-4 fs-14">
+                                <div class="font-weight-bold">{{ user.name }}</div>
+                                <div class="color-4 mt-1">{{ trans('visiosoft.theme.restate::field.ad_by_owner') }}</div>
+                            </div>
+                        </div>
+
+                        <div class="bg-yellow text-dark fw-500 d-flex align-items-center justify-content-center p-2 rounded-two mt-4 btn-hover">
+                            <i class="fa fa-phone fa-flip-horizontal mr-3"></i>
+                            {{ trans('visiosoft.theme.restate::field.show_phone') }}
+                            <div class="bg-white shadow w-special-5 detail rounded-three border">
+                                <div class="d-flex py-2 px-3 ">
+                                    <i class="fas fa-user-circle fs-40 text-secondary mr-3"></i>
+                                    <div class="fs-14">
+                                        <span class="text-secondary">{{ adv.created_by.name }}</span>
+                                        <br>
+                                        <span>{{ trans('visiosoft.theme.restate::field.ads_no') }}: {{ adv.id }}</span>
+                                    </div>
+                                </div>
+                                <div class="mt-3 border px-4 py-2 color-3 text-center">
+                                    <i class="fas fa-mobile-alt mr-3"></i>
+                                    {{ adv.created_by.gsm_phone }}
+                                </div>
+                            </div>
+
+                        </div>
+                    {% endif %}
+
+                    {#                    {{ addBlock('ad-detail/contact-with', {'adv': adv}, ['messages'])|raw }} #}
+
+                    <a href="javascript:void(0)"
+                       class="border text-dark fw-500 fs-14 d-flex align-items-center justify-content-center p-2 rounded-two mt-4"
+                       data-toggle="modal" data-target=".share-modal">
+                        <i class="fas fa-share color-3 mr-2"></i>
+                        {{ trans('visiosoft.theme.restate::field.share') }}
+                    </a>
+
+                    <div class="modal fade share-modal" tabindex="-1" role="dialog"
+                         aria-labelledby="ShareModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-sm modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLongTitle">
+                                        {{ trans('visiosoft.theme.restate::field.share_the_post') }}
+                                    </h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-header border-0 pb-0">
+                                    <ul class="share-social pl-2">
+                                        <li class="share-social-item my-3">
+                                            <a href="https://wa.me/?text={{ app.request.uri|url_encode }}"
+                                               class="text-dark" target="_blank">
+                                                    <span class="share-social-item__icon">
+                                                        {{ img('visiosoft.theme.restate::images/whatsapp.svg').data|raw }}
+                                                    </span>
+                                                {{ trans('visiosoft.theme.restate::button.whatsapp') }}
+                                            </a>
+                                        </li>
+                                        <li class="share-social-item my-3">
+                                            <a href="mailto:?subject={{ template.get('og_title', trans(template.meta_title))|url_encode }}&body={{ app.request.uri|url_encode }}"
+                                               class="text-dark" target="_blank">
+                                                    <span class="share-social-item__icon">
+                                                        {{ img('visiosoft.theme.restate::images/email.svg').data|raw }}
+                                                    </span>
+                                                {{ trans('visiosoft.theme.restate::button.email') }}
+                                            </a>
+                                        </li>
+                                        <li class="share-social-item my-3">
+                                            <a href="https://www.facebook.com/sharer/sharer.php?u={{ url_route('adv_detail', [adv.id]) }}?ref=facebook"
+                                               class="text-dark" target="_blank">
+                                                    <span class="share-social-item__icon">
+                                                        {{ img('visiosoft.theme.restate::images/facebook.svg').data|raw }}
+                                                    </span>
+                                                {{ trans('visiosoft.theme.restate::button.facebook') }}
+                                            </a>
+                                        </li>
+                                        <li class="share-social-item my-3">
+                                            <a href="https://twitter.com/share?url={{ app.request.uri|url_encode }}"
+                                               class="text-dark" target="_blank">
+                                                    <span class="share-social-item__icon">
+                                                        {{ img('visiosoft.theme.restate::images/twitter.svg').data|raw }}
+                                                    </span>
+                                                {{ trans('visiosoft.theme.restate::button.twitter') }}
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="modal-footer border-0 pt-0 justify-content-start">
+                                    <span>{{ trans('visiosoft.theme.restate::field.copy_link') }}</span>
+                                    <div class="share-dialog-clipboard d-flex">
+                                        <input id="page-link" type="text" class="form-control mr-2"
+                                               readonly="readonly" value="{{ app.request.uri }}" style="flex: 3">
+                                        <a href="javascript:void(0)"
+                                           class="btn btn-danger btn-sm d-flex justify-content-center align-items-center"
+                                           style="flex: 1"
+                                           onclick="$('#page-link').select(); document.execCommand('copy');">
+                                            {{ trans('visiosoft.theme.restate::button.copy') }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="contact" class="bg-white mt-4 p-4 rounded contact-advs">
+                    <h5 class="mb-4">{{ trans('visiosoft.theme.restate::field.leave_your_information_and_we_will_call_you') }}</h5>
+                    <p>{{ trans('visiosoft.theme.restate::field.site_will_find_your_dream_home', {'site': setting_value('streams::name')})|raw }}</p>
+
+                    {% set form = form('contact')
+                        .from(setting_value('streams::email','info@openclassify.com'))
+                        .to(setting_value('streams::email','info@openclassify.com'))
+                        .handler('\\Visiosoft\\ContactPlugin\\Form\\ContactFormHandler@handle')
+                        .fields({
+                            'name': {'label': trans('visiosoft.theme.restate::field.name_surname'), 'type': 'anomaly.field_type.text', 'required': true, placeholder: trans('visiosoft.theme.restate::field.name_surname'), 'class': 'mb-2 w-100'},
+                            'phone': {'label': trans('visiosoft.theme.restate::field.phone'), 'type': 'anomaly.field_type.text', 'required': true, placeholder: trans('visiosoft.theme.restate::field.phone_number'), 'class': 'mb-2 w-100'},
+                            'email': {'label': trans('visiosoft.theme.restate::field.email_address'), 'type': 'anomaly.field_type.text', 'required': true, placeholder: trans('visiosoft.theme.restate::field.email_address'), 'class': 'mb-2 w-100'},
+                        }).
+                        get() %}
+
+                    {{ form.open|raw }}
+
+                    {{ form.fields.name.input|raw }}
+                    {{ form.fields.phone.input|raw }}
+                    {{ form.fields.email.input|raw }}
+
+                    <div class="my-4">
+                        <small>
+                            {{ trans('visiosoft.theme.restate::field.i_allow_contact', {'site': setting_value('streams::name')}) }}
+                            <br><br>
+                            {{ trans('visiosoft.theme.restate::field.site_may_contact_you', {'site': setting_value('streams::name')}) }}
+                        </small>
+                    </div>
+
+                    <button class="btn btn-warning text-light w-100">{{ trans(trans('visiosoft.theme.restate::field.get_info')) }}</button>
+
+                    {{ form.close|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="zoomImage d-none flex-column h-100vh">
+    <div class="d-flex heightSpecial text-white align-items-center px-4">
+        <ul class="nav nav-tabs border-0 rounded-0 h-100" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active bigPicture h-100 d-sm-flex d-none align-items-center fs-14 text-decoration-none show-mega-area"
+                   id="photo-tab" data-toggle="tab" href="#photo" role="tab" aria-controls="photo"
+                   aria-selected="true" data-type="photo">
+                    <i class="fas fa-expand mr-2"></i>
+                    {{ trans('visiosoft.theme.restate::field.mega_photo') }}
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link bigPicture h-100 d-sm-flex d-none align-items-center fs-14 text-decoration-none"
+                   id="map-tab" data-toggle="tab" href="#map" role="tab" aria-controls="map" aria-selected="false">
+                    <i class="fas fa-map-marked-alt mr-2"></i>
+                    {{ trans('visiosoft.theme.restate::field.maps') }}
+                </a>
+            </li>
+            {% if adv.video.url %}
+                <li class="nav-item">
+                    <a class="nav-link bigPicture h-100 d-sm-flex d-none align-items-center fs-14 text-decoration-none"
+                       id="video-tab" data-toggle="tab" href="#video" role="tab" aria-controls="video"
+                       aria-selected="false">
+                        <i class="fab fa-youtube mr-2"></i>
+                        {{ trans('visiosoft.theme.restate::field.video') }}
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+        <i class="fas fa-times fs-28 position-absolute right-zero mr-4 close-icon"></i>
+    </div>
+    <div class="p-0 m-0 h-100">
+        <div class="row h-100 p-0 m-0">
+            <div class="col-12 col-xl-9 h-100 bg-dark position-relative p-0">
+                <div class="tab-content h-100" id="myTabContent">
+                    <div class="tab-pane show active h-100" id="photo" role="tabpanel" aria-labelledby="photo-tab">
+                        <div class="w-100 mx-auto pt-md-0 pt-5 d-flex align-items-center" id="product-detay-2">
+                            <div class="sliderFive w-100">
+                                {% set advPhoto = '' %}
+                                {% if count(adv.files) == 0 %}
+                                    {% set advPhoto = img('visiosoft.theme.restate::images/no-image.png').url %}
+                                    <a href="{{ image }}">
+                                        {{ img('visiosoft.theme.restate::images/no-image.png') }}
+                                    </a>
+                                {% else %}
+                                    {% for image in adv.getViewPhotoUrl %}
+                                        <div class="position-relative product-image-hover w-fit">
+                                            {{ img(adv.getMediumPhotoUrl(image)).class('product-big-image')|raw }}
+                                        </div>
+                                        {% if loop.index == 1 %}
+                                            {% set advPhoto = image %}
+                                        {% endif %}
+                                    {% endfor %}
+                                    {% if adv.video.url %}
+                                        <div class="position-relative product-image-hover w-fit">
+                                            <video class="m-auto w-100 h-95vh" controls loop>
+                                                <source src="{{ adv.video.url }}" type="video/mp4">
+                                            </video>
+                                        </div>
+                                    {% endif %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane h-100" id="map" role="tabpanel" aria-labelledby="map-tab">
+                        {% include "visiosoft.module.advs::ad-detail/partials/map" %}
+                    </div>
+                    <div class="tab-pane h-100" id="video" role="tabpanel" aria-labelledby="video-tab">
+                        <video class="" controls>
+                            <source src="{{ adv.video.url }}" type="video/mp4">
+                        </video>
+
+                    </div>
+                </div>
+
+                <a href="javascript:void(0)"
+                   class="bg-white w-fit position-absolute px-3 py-2 rounded mt-3 ml-4 text-dark top-zero close-icon"><i
+                            class="far fa-arrow-alt-circle-left m-2 color-3"></i>
+                    {{ trans('visiosoft.theme.restate::field.back_to_ad') }}
+                </a>
+            </div>
+            <div class="col-0 col-xl-3 h-100 bg-light p-3 pt-4 d-flex align-items-center flex-column text-center">
+                <div class="font-weight-bold fs-22 text-uppercase">{{ adv.name }}</div>
+                <div class="color-3 fw-500 fs-24 mt-2">{{ currency_format(adv.price,adv.currency, {'separator' : '.', 'point' : ','}) }}</div>
+                <div class="fs-14 color-5">{{ trans('visiosoft.theme.restate::field.ads_no') }}
+                    : {{ adv.id }}</div>
+                <nav aria-label="breadcrumb" class="my-2">
+                    <ol class="breadcrumb fs-14 w-fit bg-transparent color-4 m-0">
+                        <li class="breadcrumb-item" aria-current="page">{{ country }}</li>
+                        <li class="breadcrumb-item" aria-current="page">{{ city }}</li>
+                        <li class="breadcrumb-item" aria-current="page">{{ district }}</li>
+                    </ol>
+                </nav>
+                {% if owner %}
+                    {{ owner|raw }}
+                {% else %}
+                    <div class="mt-4">
+                        {{ img(user.file.make.url ?? 'visiosoft.theme.restate::images/no-image-user.6f6a83e.svg').width(85).height(85)|raw }}
+                    </div>
+                    <div class="fw-500 fs-14 mt-2">{{ user.name }}</div>
+                    <div class="text-secondary fs-14">{{ trans('visiosoft.theme.restate::field.ad_by_owner') }}</div>
+                    <div class="w-100" onclick="$(this).children().toggleClass('d-none d-flex')">
+                        <div class="bg-yellow text-white fw-500 d-flex align-items-center justify-content-center p-3 w-100 rounded mt-4 fs-18">
+                            <i class="fa fa-phone fa-flip-horizontal mr-3"></i>
+                            {{ trans('visiosoft.theme.restate::field.show_phone') }}
+                        </div>
+                        <div class="bg-white text-red border-red rounded fw-500 d-none align-items-center justify-content-center p-3 w-100 rounded mt-4 fs-18">
+                            {{ user.gsm_phone }}
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if user.gsm_phone.value is not null or adv.inStock() %}
+    <div class=" d-block d-md-none footer-mobile-device">
+        <div class="row m-0 py-2 bg-light justify-content-center">
+            {% if setting_value('visiosoft.theme.restate::contact_info_visible_to_login_user') ? auth_check() : true %}
+                {% if not adv.inStock() and user.gsm_phone.value is not null %}
+                    <div class="col pr-1">
+                        <a href="tel:{{ user.gsm_phone }}" class="btn btn-primary w-100 rounded-0">
+                            <i class="fas fa-phone"></i>
+                            {{ trans('visiosoft.theme.restate::field.contact_us_page') }}
+                        </a>
+                    </div>
+                    <a href="https://wa.me/?text={{ setting_value('visiosoft.theme.restate::shareWhatsappMsg')|url_encode }}%20{{ app.request.uri|url_encode }}"
+                       class="whatsapp-link col pl-1">
+                        <button type="button" class="whatsapp-message mt-0 btn position-relative rounded-0">
+                            <i class="fab fa-whatsapp"></i>
+                            {{ trans('visiosoft.theme.restate::button.whatsapp') }}
+                        </button>
+                    </a>
+                {% endif %}
+            {% else %}
+                <div class="text-center">
+                    <small>
+                        <b><a href="{{ url_route('anomaly.module.users::login') }}" class="text-dark">
+                                {{ trans('visiosoft.theme.restate::field.sign_in_to_contact') }}
+                            </a></b>
+                    </small>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}
+
+<script>
+    //for showing share selections when ad created
+    $(document).ready(function () {
+        const urlString = window.location.href;
+        const url = new URL(urlString);
+        let isFirst = url.searchParams.get("first");
+
+        if (isFirst == 'true') {
+            $('i.fa-share-alt').click();
+        }
+    })
+</script>

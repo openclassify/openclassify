@@ -20,7 +20,6 @@
                 {% include "visiosoft.module.advs::ad-detail/partials/ad-status" %}
                 <h2 class="title">
                     {{ adv.title }}
-                    {{ addBlock('ad-detail/title/action',{'adv_id':adv.id})|raw }}
                 </h2>
 
                 <!--detail-ad -->
@@ -47,7 +46,6 @@
 
                         {% include "visiosoft.module.advs::ad-detail/partials/content" %}
 
-                    {{ addBlock('ad-detail/widget', {'price': adv.price, 'id': adv.id})|raw }}
                 {% endif %}
             </div>
 

@@ -1,0 +1,129 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+
+{% block styles %}
+
+{% endblock %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            <div class="row p-0 m-0 pb-4">
+                <div class="col-12 p-0 d-flex justify-content-between align-items-center my-2">
+                    <div class="fs-18">
+                        <span class="font-weight-bold">{{ trans('visiosoft.theme.restate::field.my_favorites') }}</span>
+                        <span>{{ trans('visiosoft.theme.restate::field.in_your_favorites', {'count': count(favAdvs)}) }}</span>
+                    </div>
+                    <button type="button"
+                            class="btn btn-primary px-3 py-2 rounded border fs-14 font-weight-bold bg-white color_9Imp boxShadowNone"
+                            data-toggle="modal" data-target="#deleteAllModal">
+                        {{ trans('visiosoft.theme.restate::field.delete_all') }}
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="deleteAllModal" tabindex="-1" aria-labelledby="deleteAllModalLabel"
+                         aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered">
+                            <div class="modal-content">
+                                <div class="modal-header pb-0 pt-3 borderNone">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="rounded pb-5 pt-3 text-center d-flex align-items-center flex-column">
+                                    <span class="fs-18">{{ trans('visiosoft.theme.restate::field.delete_favorite_ads') }}</span>
+                                    <div class="d-flex mt-4">
+                                        <a href="javascript:void(0)" class="text-primary border profileModal_Buttons rounded" onclick="$('#deleteAllModal').modal('hide')">
+                                            {{ trans('visiosoft.theme.restate::button.cancel') }}
+                                        </a>
+                                        <a href="javascript:void(0)" class="text-primary border profileModal_Buttons rounded delete-all-favs">
+                                            {{ trans('visiosoft.theme.restate::button.okay') }}
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {% include "visiosoft.theme.restate::addons/visiosoft/profile-module/profile/partials/left-navigation" %}
+
+                <div class="col-12 col-lg-9 p-0 pl-0 pl-lg-3 d-flex h-fit">
+                    <div class="d-flex w-100 flex-column favoriteProductArea">
+                        {% for adv in favAdvs %}
+                            <div class="product bg-white border p-2 d-flex flex-md-row flex-column mb-2">
+                                <div class="productImage position-relative">
+                                    <a href="{{ adv.detail_url }}" class="text-dark">
+                                        {{ img(adv.thumbnail).class('w-100')|raw }}
+                                    </a>
+
+{#                                    {{ addBlock('index-actions', {item_id: adv.id}, ['favs'])|raw }}#}
+
+                                    <div class="d-flex align-items-center position-absolute viewIcon bg-white px-1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path d="M0 0h24v24H0z" fill="none"></path>
+                                            <circle cx="12" cy="12" r="3.2"></circle>
+                                            <path
+                                                    d="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2H9zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5z">
+                                            </path>
+                                        </svg>
+                                        <span class="fs-10 ml-1">{{ count(adv.files) }}</span>
+                                    </div>
+                                </div>
+                                <div class="d-flex flex-column productText px-md-3 px-2 py-md-0 py-3">
+                                    <div class="d-flex h-fit w-100 align-items-center justify-content-between">
+                                    <span class="fs-22 text-uppercase color_8">
+                                        <strong class="mr-1">{{ currency_format(adv.price,adv.currency, {'separator' : '.', 'point' : ','}) }}</strong>
+                                    </span>
+                                        <span class="color_9 fs-15">{{ adv.created_at.format('d.m.Y') }}</span>
+                                    </div>
+                                    <div class="d-flex flex-wrap font-weight-bold fs-14 mt-2 color_8">
+                                        {% for cf in adv.customfields.where('type', 'text')|slice(0,4) %}
+                                            <div>{{ cf.name }}:</div>
+                                            &nbsp;
+                                            <div>{{ cf.getClassifiedValue(adv.cFJSON) }}</div>
+                                            <div class="dik-cizgi-2 mx-3 {{ loop.last ? 'd-none' }}"></div>
+                                        {% endfor %}
+                                    </div>
+                                    <div class="color_9 fs-14 fw-500 my-2">{{ adv.name }}</div>
+                                    <div class="d-flex align-items-center flex-md-row flex-column">
+                                        <button class="px-3 py-2 mr-2 rounded border fs-14 font-weight-bold bg-white hoverTel position-relative">
+                                            <span class="showTel">{{ trans('visiosoft.theme.restate::field.show_phone') }}</span>
+                                            <span class="dontShowTel">{{ trans('visiosoft.theme.restate::field.hide_phone') }}</span>
+                                            <div class="position-absolute personTel z-index">
+                                                <div class="px-3 py-2 d-flex">
+                                                    <div class="d-flex flex-column ml-2 text-left">
+                                                        <div class="color_9 fs-14 text-uppercase fw-500 mb-2">{{ adv.created_by.name }}</div>
+                                                        <div class="color-3">
+                                                            <i class="fas fa-mobile-alt mr-3"></i>
+                                                            <span class="color_9">
+                                                                {{ adv.created_by.gsm_phone }}
+                                                            </span>
+                                                        </div>
+
+                                                        <div class="fs-14">{{ trans('visiosoft.theme.restate::field.ads_no') }}
+                                                            : {{ adv.id }}</div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </button>
+{#                                        {{ addBlock('list/extra-actions', {}, ['messages'])|raw }}#}
+
+                                        <div class="color_9 fw-500 fs-14 textLeft">
+                                            <i class="fas fa-map-marker-alt ml-md-3 ml-0 mr-1 mt-md-0 mt-3"></i>
+                                            {{ adv.country.name }}
+                                            {% set city = entries('location', 'cities').find(adv.city.value) %}
+                                            {{ city ? ', ' ~  city.name : '' }}
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+
+    {{ asset_add('scripts.js','visiosoft.module.favs::assets/js/favs.js') }}
+{% endblock %}

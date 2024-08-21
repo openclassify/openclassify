@@ -1,0 +1,80 @@
+<div id="printStyles">
+    <link id="print-style" rel="stylesheet"
+          href="{{ asset_url('visiosoft.theme.restate::scss/print.scss') }}" media="print">
+</div>
+<div id="print" class="print-ad border-danger d-none">
+    {% set storeDetail = entries('store','store').where('user_id', adv.created_by_id).first() %}
+    {% set user = setting_value('visiosoft.theme.restate::default_owner') ? entries('users', 'users').find(setting_value('visiosoft.theme.restate::default_owner')) : adv.created_by %}
+    {% set cat1 = entries('cats','category').where('id', adv.cat1).first() %}
+    {% set cat2 = entries('cats','category').where('id', adv.cat2).first() %}
+    <div class="container row mt-2">
+        <div class="print-cat">
+            <h3 class="mb-0">
+                {{ cat1.name }}
+                {% if cat2 %}
+                    / {{ cat2.name }}
+                {% endif %}
+            </h3>
+            <span>{{ trans('visiosoft.theme.restate::field.ads_no') }} : {{ adv.id }}</span>
+        </div>
+        <div class="ml-3 d-flex align-content-center">
+            {% if setting_value('visiosoft.theme.restate::print_logo') %}
+                <img class="float-right header-logo-print" src="{{ file(setting_value('visiosoft.theme.restate::print_logo')).make.url }}">
+            {% else %}
+                {{ img('visiosoft.theme.restate::images/logo-multi.dd5166a.png').class('float-right header-logo-print')|raw }}
+            {% endif %}
+        </div>
+    </div>
+    <div class="print-border-bottom"></div>
+    <div class="row container">
+        <div class="col-6 text-center">
+            {% set country = entries('location','countries').find(adv.country_id) ? entries('location','countries').find(adv.country_id).name : null  %}
+            {% set city = entries('location', 'cities').find(adv.city) ? entries('location', 'cities').find(adv.city).name : null %}
+
+            <div class="px-5">
+                <div class="border-bottom p-5 ">
+                    {% if country %}
+                        <b>{{ country }}
+                            {{ city ? ',' ~ city : '' }}</b>
+                    {% endif %}
+                </div>
+                <div class="border-bottom p-5">
+                    <b class="length-limit">{{ adv.title }}</b>
+                </div>
+                <div class="p-1">
+                    {% if storeDetail is not null%}
+                        {{ storeDetail.name }}
+                        {% set phone = storeDetail.gsm_phone ?? storeDetail.land_phone %}
+                        {% if phone %}
+                            <br>
+                            <b>{{ phone }}</b>
+                        {% endif %}
+                    {% else %}
+                        {{ user.name }},
+                        {% if user.gsm_phone is not null %}
+                            <br>
+                            <b>{{ user.gsm_phone }}</b>
+                        {% endif %}
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+                {% if adv.thumbnail is not null %}
+                    {{ img(adv.thumbnail).class('product-small-image h-auto w-100 float-right')|raw }}
+                {% else  %}
+                    {{ img('visiosoft.theme.restate::images/no-image.png').class('product-small-image w-100 float-right')|raw }}
+                {% endif %}
+        </div>
+    </div>
+    <div class="row container pt-2">
+        <div class="flex-fill">
+            <h2 style="font-size: 5rem; margin: 0;">{{ currency_format(adv.price,adv.currency, {'separator' : '.', 'point' : ','}) }}</h2>
+        </div>
+        <div>
+                {% if storeDetail is not null %}
+                    {{ img(storeDetail.file.make.url ?? 'visiosoft.theme.restate::images/no-image-user.6f6a83e.svg').class('h-75 w-special-3 float-right')|raw }}
+                {% endif %}
+        </div>
+    </div>
+</div>

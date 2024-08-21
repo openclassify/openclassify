@@ -1,0 +1,10 @@
+<div class="">
+    <div class="sliderThree m-0 p-0 w-100">
+        {% for recommended in recommendedads|slice(0, setting_value('visiosoft.module.recommendedads::limit')) %}
+
+            {% include "visiosoft.theme.restate::partials/productCard" with {"ads": recommended} %}
+
+        {% endfor %}
+    </div>
+</div>
+

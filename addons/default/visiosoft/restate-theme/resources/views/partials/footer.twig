@@ -1,0 +1,124 @@
+<div class="page-bottom">
+    <div class="bg-white">
+        <div class="d-md-block d-none mx-auto position-relative bg-white" style="margin-bottom: -28px">
+            <ul class="container nav nav-tabs " id="myTab" role="tablist">
+                {% set menu = entries('navigation', 'menus').where('slug', 'footer_tabs_area').first() %}
+                {% set links = entries('navigation', 'links').where('menu_id', menu.id).where('parent_id', null).get() %}
+                {% for link in links %}
+                    <li class="nav-item d-flex seo-link-buttons" style="flex: 1">
+                        <a class="d-flex justify-content-between align-items-center pr-0 nav-link list-group-item list-group-item-action border-0 border-right rounded-top {{ loop.first ? 'active' }}"
+                           id="{{ str_slug(link.title, '_') }}-tab" data-toggle="tab"
+                           href="#{{ str_slug(link.title, '_') }}" role="tab"
+                           aria-controls="{{ str_slug(link.title, '_') }}"
+                           aria-selected="true">
+                            {{ link.title }}
+                            {{ not loop.last ? '<span class="h-75 border-color-2 my-3"></span>' }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+
+            <div class="tab-content w-100" id="myTabContent">
+                {% for link in links %}
+                    {% set sublinks = entries('navigation', 'links').where('parent_id', link.id).get() %}
+                    <div class="tab-pane fade l-0 seo-links-content {{ loop.first ? 'show active' }}" id="{{ str_slug(link.title, '_') }}"
+                         role="tabpanel" aria-labelledby="{{ str_slug(link.title, '_') }}-tab">
+                        <div class="container mx-auto row m-0 p-0 p-3">
+                            {% for sublink in sublinks %}
+                                <div class="col-md-2 col-sm-3 col-4 p-0 m-0 text-secondary fs-14">
+                                    <a href="{{ sublink.url }}" class="text-black-50">
+                                        <span><i class="fas fa-angle-right mr-2"></i></span>
+                                        <span>{{ sublink.title }}</span>
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <footer class=" pt-2 text-white mt-0">
+        <div class="container m-0 p-0 mx-auto">
+            <div class="row p-0 m-0 py-3">
+                <div class="col-lg-4 col-12  d-flex align-items-md-center justify-content-center flex-column  mt-4 ">
+                 <span class="mb-5 d-flex justify-content-center align-items-center">
+                {% if setting_value('visiosoft.theme.restate::footer_logo') %}
+                    {{ img(file(setting_value('visiosoft.theme.restate::footer_logo')).make.url).class('d-block footer-logo').width(200)|raw }}
+                {% else %}
+                    {{ img('visiosoft.theme.restate::images/estate-white.png').class('d-block footer-logo').width(250)|raw }}
+                {% endif %}
+                </span>
+                    <div class="row w-100">
+                        <div class="col-12 col-sm-6 col-lg-12">
+                            <div class="pl-3 pl-sm-0 mb-2 text-sm-center font-weight-bold">
+                                {{ trans('visiosoft.theme.restate::field.download_mobile_app') }}
+                            </div>
+                            <div class="d-flex flex-row justify-content-sm-center">
+                                <a href="{{ setting_value('visiosoft.theme.restate::app_store') }}" target="_blank"
+                                   class="pl-3 pl-sm-0 my-1 mr-1 mr-md-0">
+                                    {{ img('visiosoft.theme.restate::images/icons/appstore.svg').class('footer-store-link mr-lg-2')|raw }}
+                                </a>
+                                <a href="{{ setting_value('visiosoft.theme.restate::android_store') }}" target="_blank"
+                                   class="pl-3 pl-sm-0 my-1 ml-1 ml-md-0">
+                                    {{ img('visiosoft.theme.restate::images/icons/playstore.svg').class('footer-store-link')|raw }}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-12 col-sm-6 col-lg-12  mt-md-0 pt-3 pt-sm-0 pt-lg-3 ">
+                            <div class="pl-3 pl-sm-0 W-100 font-weight-bold mb-2 text-sm-center">{{ trans('visiosoft.theme.restate::field.follow_our') }}</div>
+                            <div class="pl-3 pl-sm-0 d-flex options-a justify-content-sm-center flex-wrap">
+                                {% if setting_value('visiosoft.theme.restate::linkedin_address') %}
+                                    <a href="{{ setting_value('visiosoft.theme.restate::linkedin_address') }}"
+                                       class="ml-0 py-3 w-fit d-flex align-items-center justify-content-center text-dark text-decoration-none mr-0">
+                                        {{ img('visiosoft.theme.restate::images/icons/linkedin_icon.svg').data|raw }}
+                                    </a>
+                                {% endif %}
+                                {% if setting_value('visiosoft.theme.restate::twitter_address') %}
+                                    <a href="{{ setting_value('visiosoft.theme.restate::twitter_address') }}"
+                                       class="py-3 w-fit d-flex align-items-center justify-content-center text-dark text-decoration-none">
+                                        {{ img('visiosoft.theme.restate::images/icons/twitter_icon.svg').data|raw }}
+                                    </a>
+                                {% endif %}
+                                {% if setting_value('visiosoft.theme.restate::facebook_address') %}
+                                    <a href="{{ setting_value('visiosoft.theme.restate::facebook_address') }}"
+                                       class="py-3 w-fit d-flex align-items-center justify-content-center text-dark text-decoration-none ml-0">
+                                        {{ img('visiosoft.theme.restate::images/icons/facebook_icon.svg').data|raw }}
+                                    </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 mt-3 pt-3">
+                    <div class="row text-left mx-0">
+                        {% set menus = entries('navigation', 'menus').whereIn('slug', [ 'about_us', 'others', 'our_services']).get() %}
+                        {% for menu in menus %}
+                            {% set pages = entries('navigation', 'links').where('menu_id', menu.id).get() %}
+                            {% if pages|length %}
+                                <div class="col-md-4 my-lg-2 my-4 ">
+                                    <h6 class="footer-title">{{ menu.name }}</h6>
+                                    <ul class="pl-0">
+                                        {% for page in pages %}
+                                            <li>
+                                                {% if page.entry.page.id is defined %}
+                                                    <a class="footer-link" href="{{ page.entry.page.path }}">
+                                                        {{ page.entry.page.title }}
+                                                    </a>
+                                                {% else %}
+                                                    <a class="footer-link" href="{{ page.entry.url }}">
+                                                        {{ page.entry.title }}
+                                                    </a>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>

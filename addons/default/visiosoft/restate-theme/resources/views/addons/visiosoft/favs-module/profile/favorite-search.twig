@@ -1,0 +1,52 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+
+{% block styles %}
+    <style>
+        main .product .heart-icon {
+            width: 30px;
+            height: 30px;
+            color: #e1211b !important;
+            margin-right: .25rem !important;
+            margin-top: .25rem !important;
+        }
+
+        main .product .heart-icon i {
+            font-size: 14px;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            <div class="row p-0 m-0 py-4">
+                <div class="col-12 p-0 d-flex justify-content-between align-items-center my-2">
+                    <div class="fs-18">
+                        <span class="font-weight-bold">{{ trans('visiosoft.theme.restate::field.my_favorites') }}</span>
+                        <span>{{ trans('visiosoft.theme.restate::field.in_your_saved_searches', {'count': count(favSearches)}) }}</span>
+                    </div>
+                </div>
+
+                {% include "visiosoft.theme.restate::addons/visiosoft/profile-module/profile/partials/left-navigation" %}
+
+                <div class="col-12 col-lg-9 p-0 pl-0 pl-lg-3 d-flex h-fit">
+                    <div class="d-flex w-100 flex-column favoriteProductArea">
+                        {% for adv in favSearches %}
+                            <div class="product bg-white border p-2 d-flex flex-md-row flex-column mb-2">
+                                <div class="color_9 fs-14 fw-500 my-2 w-100 d-flex justify-content-between px-3">
+                                    {{ adv.item_name }}
+                                    <a href="{{ url_route('remove_fav_adv', [adv.id, 'search']) }}">
+                                        <i class="fa fa-times text-danger"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        {% endfor %}
+
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+
+    {{ asset_add('scripts.js','visiosoft.module.favs::assets/js/favs.js') }}
+{% endblock %}

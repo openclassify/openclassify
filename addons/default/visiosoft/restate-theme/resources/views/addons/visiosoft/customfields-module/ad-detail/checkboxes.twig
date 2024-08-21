@@ -1,0 +1,24 @@
+<div class="container container-100 p-0 rounded-three">
+    <div>
+        <div class="col-12 mt-4 px-4 py-3 container-100 bg-white rounded-three">
+            <div class="row">
+                {% for feature in  params.features %}
+                    {% if feature.custom_field_value is iterable %}
+                        <div class="col-md-4 mb-3 pb-1 border-right-not-3">
+                            <div class="my-3 border-end border-none">
+                                <div class="mb-3 font-weight-bold">{{ feature.name ? feature.name : '' }}</div>
+                                {% for value in feature.custom_field_value %}
+                                    {% if value.status == 1 %}
+                                        <div class="d-flex align-items-center fs-14 text-secondary my-1">
+                                            <i class="fas fa-check mr-2"></i>{{ value.val }}
+                                        </div>
+                                    {% endif %}
+                                {% endfor %}
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>

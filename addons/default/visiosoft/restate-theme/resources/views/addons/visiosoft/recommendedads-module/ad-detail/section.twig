@@ -1,0 +1,10 @@
+<div class="container container-100 mx-auto m-0 p-0 slide-area mt-md-3 mt-4">
+    <div class="">
+        {% set recommendedads = getRecommendedAds(app.request.path|split('/')[2]) %}
+
+        {% if recommendedads is not null and count(recommendedads) > 0 %}
+            {% include "visiosoft.theme.restate::addons/visiosoft/recommendedads-module/recommended-horizonal" with {'recommendedads':recommendedads} %}
+            {{ asset_style("visiosoft.module.recommendedads::css/recommendedads.css") }}
+        {% endif %}
+    </div>
+</div>

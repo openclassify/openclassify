@@ -1,0 +1,94 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+
+{% block styles %}
+    {{ asset_style('visiosoft.module.messages::assets/css/messages.css') }}
+{% endblock %}
+
+{% block content %}
+    {% embed 'visiosoft.module.profile::profile/index' %}
+        {% block detail %}
+            <div class="row p-0 m-0 pb-4">
+                <div class="col-12 p-0 d-flex justify-content-between align-items-center my-2">
+                    <div class="fs-18">
+                        <span class="font-weight-bold">{{ trans('visiosoft.module.messages::field.my_messages.name') }}</span>
+                    </div>
+                </div>
+
+                {% include "visiosoft.theme.restate::addons/visiosoft/profile-module/profile/partials/left-navigation" %}
+
+                <div class="col-12 col-lg-9 p-0 pl-0 pl-lg-3 d-flex h-fit">
+                    <div class="col-md-12 bg-light px-0">
+                        <div class="tab-content py-3 px-sm-3 px-sm-0" id="nav-tabContent">
+                            <div class="tab-pane fade show active px-2" id="nav-messages" role="tabpanel"
+                                 aria-labelledby="nav-inbox-tab">
+                                {% if chats|length > 0 %}
+                                {% for chat in chats %}
+                                <div class="row message-list-item py-3 px-2 bg-white shadow-sm mx-0 my-2
+                                    justify-content-between">
+                                    {% if chat.adv %}
+                                    <div class="col-3 col-md-1 h-100 text-center">
+                                        <a href="{{ url_route("message_details", [chat.id]) }}" class="link-unstyled">
+                                            <img src="{{ chat.adv.thumbnail }}" class="h-100 message-list-image">
+                                        </a>
+                                    </div>
+                                    <div class="col-8 col-md-10 d-flex justify-content-between">
+                                        {% else %}
+                                        <div class="col-11 d-flex justify-content-between">
+                                            {% endif %}
+                                            <a href="{{ url_route("message_details", [chat.id]) }}"
+                                               class="link-unstyled text-truncate">
+                                                <div class="text-truncate{{ chat.unread_messages_count ? ' font-weight-bold' }}">
+                                                    {{ chat.latest_message_title }}
+                                                </div>
+                                                <div>
+                                                    <small class="text-primary mr-3">
+                                                        {% set otherUser = entries('messages', 'chats').getOtherUser(chat.id) %}
+                                                        {{ otherUser.name }}
+                                                    </small>
+                                                    <small class="text-muted d-block d-sm-inline-block">
+                                                        {{ chat.updated_at.format(config_get('streams::datetime.date_format')) }}
+                                                    </small>
+                                                </div>
+                                            </a>
+                                            {% if chat.unread_messages_count %}
+                                                <div class="d-flex align-items-center notification-wrapper">
+                                                    <div class="rounded-circle bg-danger text-white d-flex
+                                                    align-items-center justify-content-center">
+                                                        {{ chat.unread_messages_count }}
+                                                    </div>
+                                                </div>
+                                            {% endif %}
+                                        </div>
+                                        <div class="col-1 d-flex justify-content-center align-items-center dropup pl-0 pr-1">
+                                            <button class="btn btn-outline-secondary rounded-circle dropdown-toggle chat-options"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                <i class="fa fa-ellipsis-h" aria-hidden="true"></i>
+                                            </button>
+                                            <div class="dropdown-menu">
+                                                <a class="dropdown-item"
+                                                   href="{{ url_route('messages_delete_all', [chat.id]) }}">
+                                                    {{ trans('visiosoft.module.messages::field.delete_messages') }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                    {% else %}
+                                        <div class="no-messages-wrapper d-flex justify-content-center align-items-center">
+                                            <div class="text-center">
+                                                <img src="{{ img('visiosoft.module.messages::images/no-messages.svg').url }}">
+                                                <p class="text-muted mt-2">
+                                                    {{ trans('visiosoft.module.messages::field.no_messages') }}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endblock %}
+    {% endembed %}
+{% endblock %}

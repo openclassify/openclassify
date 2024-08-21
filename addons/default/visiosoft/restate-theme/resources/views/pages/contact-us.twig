@@ -1,0 +1,80 @@
+{% extends layout('no-container') %}
+{% block content %}
+    <section class="contact-us">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="page-title">{{ trans('visiosoft.theme.restate::field.contact_us_page') }}</h1>
+                </div>
+                <div class="col-12 col-lg-4">
+                    <div class="contact-left-section">
+                        <div class="mb-3">
+                            <h4 class="contact-info-title">{{ setting_value('visiosoft.theme.restate::company_name') }}</h4>
+                            <div class="contact-info-desc">
+                                {{ setting_value('visiosoft.theme.restate::company_desc') }}
+                            </div>
+                        </div>
+                        <div class="contact-info-section">
+                            <h6 class="contact-info-title">
+                                {{ trans('visiosoft.theme.restate::field.address') }}
+                            </h6>
+                            <div class="contact-info-desc d-flex">
+                                <div>
+                                    {{ img('visiosoft.theme.restate::images/icons/Location.svg').class('mr-2')|raw }}
+                                </div>
+                                {{ setting_value('visiosoft.theme.restate::address') }}
+                            </div>
+                        </div>
+                        <div class="contact-info-section">
+                            <h6 class="contact-info-title">
+                                {{ trans('visiosoft.theme.restate::field.phone') }}
+                            </h6>
+                            <div class="contact-info-desc">
+                                {{ img('visiosoft.theme.restate::images/icons/Phone.svg').class('mr-2')|raw }}
+                                {{ setting_value('visiosoft.theme.restate::phone') }}
+                            </div>
+                        </div>
+                        <div class="contact-info-section">
+                            <h6 class="contact-info-title">
+                                {{ trans('visiosoft.theme.restate::field.address') }}
+                            </h6>
+                            <div class="contact-info-desc">
+                                {{ img('visiosoft.theme.restate::images/icons/Message.svg').class('mr-2')|raw }}
+                                {{ setting_value('visiosoft.theme.restate::mail') }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-8 mt-4 mt-lg-0">
+                    <div id="contact" class="contact-form-wrapper">
+                        <h5 class="contact-info-title">{{ trans('visiosoft.theme.restate::field.send_us') }}</h5>
+                        <p class="contact-info-desc">
+                            {{ setting_value('visiosoft.theme.restate::form_desc') }}
+                        </p>
+
+                        {% set form = form('contact')
+                            .from(setting_value('streams::email','noreply@openclassify.com'))
+                            .to(setting_value('streams::email', 'noreply@openclassify.com'))
+                            .handler('\\Visiosoft\\ContactPlugin\\Form\\ContactFormHandler@handle')
+                            .fields({
+                                'name': { 'type': 'anomaly.field_type.text', 'required': true, placeholder: trans('visiosoft.theme.restate::field.name_surname'), 'class': 'contact-input mb-3 '},
+                                'email': {'type': 'anomaly.field_type.text', 'required': true, placeholder: trans('visiosoft.theme.restate::field.email_address'), 'class': 'contact-input mb-3'},
+                                'messages': {'type': 'anomaly.field_type.textarea', 'required': true, placeholder: trans('visiosoft.theme.restate::field.messages'),'class': 'contact-input '},
+
+                            }).
+                            get() %}
+
+                        {{ form.open|raw }}
+
+                        {{ form.fields.name.input|raw }}
+                        {{ form.fields.email.input|raw }}
+                        {{ form.fields.messages.input|raw }}
+
+                        <button class="contact-submit">{{ trans(trans('visiosoft.theme.restate::field.send_message')) }}</button>
+                        {{ form.close|raw }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

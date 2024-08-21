@@ -1,0 +1,68 @@
+{% if auth_check() %}
+    <div id="log-area" class="d-flex align-items-center">
+        <div class="header-user-button-3 p-0 z-index d-flex align-items-center mx-3">
+            <div class="accountsHover">
+                <a href="#"
+                   class="text-dark header-user-button-inside border p-0 fw-500 d-flex align-items-center justify-content-center">
+                    {% if not auth_check() %}
+                        <a href="{{ url_route('anomaly.module.users::login') }}"
+                           class="d-block text-decoration-none text-center bg-danger text-white py-2 rounded fw-500">
+                            {{ trans('visiosoft.theme.restate::field.login') }}
+                        </a>
+                        <a href="{{ url_route('anomaly.module.users::register') }}"
+                           class="d-block text-decoration-none fs-14 my-2 text-dark text-center font-weight-bold py-2">
+                            {{ trans('visiosoft.theme.restate::field.register') }}
+                        </a>
+                        {{ trans('visiosoft.theme.restate::field.my_account') }}
+                    {% endif %}
+
+                    {% if auth_user().file.first.make.url %}
+                        <div class="he-header-profile-img">
+                            <img src="{{ auth_user().file.first.make.url }}">
+                        </div>
+                    {% else %}
+                        {{ img('visiosoft.theme.restate::images/icons/user_icon.svg') }}
+                    {% endif %}
+
+                </a>
+                <div class="rounded-2 log-hover pt-3">
+                    <div class="user-dropdown">
+                        <div class="modal-user-info d-flex align-items-center justify-content-between px-4 pt-4 pb-3">
+                            <a href="{{ route("profile::profile") }}" class="user-name mb-0">{{ user().name }}</a>
+                            <a href="{{ route("profile::profile") }}" class="user-email mb-0 float-right">{{ user().email }}</a>
+                        </div>
+                        <div class="modal-items-wrapper px-4 py-4">
+                            <a id="profile" href="{{ route("profile::profile") }}" class="modal-item">
+                                {{ img('visiosoft.theme.restate::images/icons/profile-dropdown.svg').data|raw }}
+                                <span>{{ trans('anomaly.module.users::tab.profile') }}</span>
+                            </a>
+                            <a id="user-ads" href="{{ route("profile::ads") }}" class="modal-item">
+                                {{ img('visiosoft.theme.restate::images/icons/my-ads-dropdown.svg').data|raw }}
+                                <span>{{ trans('visiosoft.module.profile::field.menu_my_ads.name') }}</span>
+                            </a>
+{#                            {{ addBlock("navigation/dropdown")|raw }}#}
+                        </div>
+                        <div class="modal-user-logout px-4 pb-4 pt-3">
+                            <a href="{{ url('/logout') }}"  class="modal-item">
+                                {{ img('visiosoft.theme.restate::images/icons/logout-dropdown.svg').data|raw }}
+                                <span>{{ trans("anomaly.module.users::button.logout") }}</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% else %}
+    <div class="d-flex justify-content-center align-items-center">
+        <a href="{{ url_route('anomaly.module.users::login') }}" class="header-login">
+            {{ trans('visiosoft.theme.restate::field.login') }}
+        </a>
+
+        <a href="{{ url_route('anomaly.module.users::register') }}" class="header-register">
+            {{ trans('visiosoft.theme.restate::field.register') }}
+        </a>
+
+    </div>
+
+{% endif %}

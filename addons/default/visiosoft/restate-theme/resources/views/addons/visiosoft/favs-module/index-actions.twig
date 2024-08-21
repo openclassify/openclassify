@@ -1,0 +1,13 @@
+{% include "visiosoft.module.favs::main-favorite-functions" %}
+
+<span class="favorite-action heart-icon d-flex align-items-center justify-content-center"
+      data-id="{{ params.item_id }}" onclick="favoriteAction(this)" data-status="add" rel="nofollow">
+    <i class="far fa-heart"></i>
+</span>
+
+<script>
+    if (typeof auth_check_for_favorite == "undefined") {
+        var auth_check_for_favorite = "{{ auth_check() }}";
+    }
+</script>
+{{ asset_add('scripts.js','visiosoft.module.favs::js/index-actions.js') }}

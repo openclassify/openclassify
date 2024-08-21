@@ -1,0 +1,6 @@
+{% if auth_user().isAdmin or not auth_user().hasPermission('visiosoft.module.references::references.no_read') %}
+    <a id="references" href="{{ url_route('visiosoft.module.favs::references') }}" class="modal-item pb-4">
+        {{ img('visiosoft.theme.restate::images/icons/references-dropdown.svg').data|raw }}
+        <span>{{ trans('visiosoft.module.references::addon.title') }}</span>
+    </a>
+{% endif %}

@@ -1,0 +1,9 @@
+{% if setting_value('visiosoft.extension.google_provider::client_id') != "" %}
+    <a href="{{ url_route('visiosoft.module.social::providers.auth', {'provider': 'google'}) }}"
+       class="d-inline-flex social-link  color_8 align-items-center justify-content-center border float-right btnSpecial_2 ml-4">
+        {{ img('visiosoft.theme.restate::images/icons/google.svg').width(20).class('mr-2')|raw }}
+        <div class="fs-14 text-capitalize lineHeight">
+            {{ trans('visiosoft.theme.restate::field.login_with_google')|raw }}
+        </div>
+    </a>
+{% endif %}

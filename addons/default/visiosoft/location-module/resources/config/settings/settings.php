@@ -44,7 +44,7 @@ return [
         'required' => false,
         'config' => [
             'default_value' => function () {
-                return config('visiosoft.theme.sahibinden::countries.default');
+                return config('visiosoft.theme.restate::countries.default');
             },
             'options' => function () {
                 $array = \Visiosoft\LocationModule\Country\CountryModel::query()->get()->pluck('name', 'abv')->toArray();

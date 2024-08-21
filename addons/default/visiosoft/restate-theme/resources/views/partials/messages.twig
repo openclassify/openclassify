@@ -1,0 +1,57 @@
+<section id="messages">
+
+    <!-- Success Messages -->
+    {% if message_exists('success') %}
+        <div class="alert success invisible position-absolute ">
+            <div class="alert_body">
+                <i class="icon-close"></i>
+                {% for message in message_pull('success') %}
+                    {{ trans(message)|raw }}
+                {% endfor %}
+            </div>
+            <div class="alert_close"><i class="icon_close"></i></div>
+        </div>
+    {% endif %}
+
+    <!-- Informational Messages -->
+    {% if message_exists('info') %}
+        <div class="alert info invisible position-absolute ">
+            <div class="alert_body">
+                <i class="icon-info"></i>
+                {% for message in message_pull('info') %}
+                    {{ trans(message)|raw }}
+                {% endfor %}
+            </div>
+            <div class="alert_close"><i class="icon_close"></i></div>
+        </div>
+    {% endif %}
+
+
+    <!-- Warning Messages -->
+    {% if message_exists('warning') %}
+        <div class="alert warning invisible position-absolute ">
+            <div class="alert_body">
+                <i class="icon-info"></i>
+                {% for message in message_pull('warning') %}
+                    {{ trans(message)|raw }}
+                {% endfor %}
+            </div>
+            <div class="alert_close"><i class="icon_close"></i></div>
+        </div>
+    {% endif %}
+
+
+    <!-- Error Messages -->
+    {% if message_exists('error') %}
+        <div class="alert error invisible position-absolute ">
+            <div class="alert_body">
+                <i class="icon-close"></i>
+                {% for message in message_pull('error') %}
+                    {{ trans(message)|raw }}
+                {% endfor %}
+            </div>
+            <div class="alert_close"><i class="icon_close"></i></div>
+        </div>
+    {% endif %}
+
+</section>

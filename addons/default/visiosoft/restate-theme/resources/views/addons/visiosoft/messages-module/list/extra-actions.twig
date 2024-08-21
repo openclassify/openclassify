@@ -1,0 +1,14 @@
+{% if setting_value('visiosoft.module.messages::show_message_btn_for_guest') %}
+    <div class="btn border btn-hover fs-14 bg-white py-2 px-4 text-secondary"
+         type="button" data-toggle="modal" data-content="{{ app.auth.id }}" id="message"
+            {% if not auth_check() %}
+                onclick="window.location.href = '{{ url_route('anomaly.module.users::login') }}'"
+            {% else %}
+                data-target="#message{{ params.adv.id }}Modal"
+            {% endif %}>
+        <span class="fw-500">
+            {{ trans("visiosoft.module.messages::field.message") }}
+        </span>
+    </div>
+{% endif %}
+

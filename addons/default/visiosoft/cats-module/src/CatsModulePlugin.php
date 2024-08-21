@@ -58,7 +58,7 @@ class CatsModulePlugin extends Plugin
                 'catIcon',
                 function ($path) {
                     if ($path == "") {
-                        return dispatch_sync(new MakeImageInstance('visiosoft.theme.sahibinden::images/default-categories-icon.png', 'img'))->url();
+                        return dispatch_sync(new MakeImageInstance('visiosoft.theme.restate::images/default-categories-icon.png', 'img'))->url();
                     } else {
                         return url('files/' . $path);
                     }

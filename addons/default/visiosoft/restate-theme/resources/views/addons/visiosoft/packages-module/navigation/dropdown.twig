@@ -1,0 +1,17 @@
+{% if setting_value('visiosoft.module.advs::market_place')
+    and (not setting_value('visiosoft.module.packages::hide_packages_navigation')
+    and (auth_user().isAdmin or not auth_user().hasPermission('visiosoft.module.packages::packages.no_read'))) %}
+    <a id="packages" href="{{ url_route('visiosoft.module.packages::my_packages') }}" class="modal-item pb-4">
+        {{ img('visiosoft.theme.restate::images/icons/packages-dropdown.svg').data|raw }}
+        <span>{{ trans('visiosoft.module.packages::addon.title') }}</span>
+    </a>
+
+    {% if not setting_value('visiosoft.module.packages::hide_buy_package_navigation') %}
+        <a id="buy-packages" href="{{ url_route('visiosoft.module.packages::buy_package') }}" class="modal-item pb-4">
+            {{ img('visiosoft.theme.restate::images/icons/buy-packages-dropdown.svg').data|raw }}
+            <span>{{ trans('visiosoft.module.packages::button.buy_package') }}</span>
+        </a>
+    {% endif %}
+{% endif %}
+
+{{ asset_style('visiosoft.module.packages::css/nav.scss') }}

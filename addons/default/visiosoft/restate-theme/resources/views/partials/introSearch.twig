@@ -1,0 +1,33 @@
+{% set searchCats = entries('cats','category').whereIn('id', [setting_value('visiosoft.theme.restate::search_cat1'),
+    setting_value('visiosoft.theme.restate::search_cat2'),
+    setting_value('visiosoft.theme.restate::search_cat3'),
+    setting_value('visiosoft.theme.restate::search_cat4')
+]).get() %}
+<div class="search-input-wrapper">
+    <div class="search-types d-flex ml-0 ml-sm-3">
+        {% for cat in searchCats %}
+            <div class="search-type search-ads {{ loop.first ? 'active' : ''  }}"
+                 data-url="{{ url_route('visiosoft.module.advs::list_mlang', [cat.slug]) }}">{{ cat.name }}</div>
+        {% endfor %}
+    </div>
+
+
+    <form
+            action="{{ url_route('visiosoft.module.advs::list_mlang',[searchCats[0].slug ?: '#']) }}"
+            method="get"
+            class="banner-search-form row">
+        <div class="col-12 col-sm-10">
+            <input
+                    id="search"
+                    type="text"
+                    name="keyword"
+                    class="banner-search-input w-100"
+                    placeholder="{{ trans('visiosoft.theme.restate::field.search_placeholder.name') }}">
+            {{ img('visiosoft.theme.restate::images/icons/search-icon.svg').class('input-icon')|raw }}
+        </div>
+        <div class="col-12 col-sm-2 pl-sm-0 pt-2 pt-sm-0">
+            <input type="submit" class="btn  w-100 h-100 search-submit-button"
+                   value="{{ trans("visiosoft.module.advs::field.search") }}">
+        </div>
+    </form>
+</div>

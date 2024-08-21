@@ -1,9 +1,7 @@
 {% extends "visiosoft.module.advs::list/list" %}
 
 {% block listContent %}
-    {% set showPrice = setting_value('visiosoft.theme.sahibinden::price_fields') %}
     {% set showLocation = setting_value('visiosoft.module.location::home_page_location') %}
-    {% set showDate = setting_value('visiosoft.theme.sahibinden::date_fields') %}
 
     <div class="row p-0 m-0 ">
         {% for adv in advs %}
@@ -32,12 +30,6 @@
                             <a href="{{ adv.detail_url }}" class="product-name-hb text-truncate text-decoration-none text-dark">{{ adv.cat1_name }} /{{ adv.cat2_name }}</a>
 
                         {% endif %}
-                        {% if showPrice %}
-                            <div class="product-price-hb rounded d-flex align-items-center mt-2 bg-secondary-md bg-none text-dark justify-content-between">
-                                {{ adv.price != '0' ? currency_format(adv.price,adv.currency, {'decimals' : setting_value('visiosoft.field_type.decimal::decimal_length')}) : setting_value("visiosoft.module.advs::hide_zero_price") ? '-' : trans('visiosoft.module.advs::field.free') }}
-                            </div>
-
-                        {% endif %}
                     </div>
                 </div>
             </div>
@@ -49,12 +41,7 @@
 {% endblock %}
 
 {% block styles %}
-    {{ asset_style('visiosoft.theme.sahibinden::css/gallery.css') }}
     {{ asset_style('visiosoft.module.advs::css/list-new.scss') }}
-{% endblock %}
-
-{% block customjs %}
-    {% include "theme::scroll-modal" %}
 {% endblock %}
 
 

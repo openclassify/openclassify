@@ -1,0 +1,15 @@
+{% if setting_value('visiosoft.module.advs::market_place')  %}
+    {% set unreadMessages = entries('messages').checkUnreadMessages() %}
+    <a href="{{ url_route('messages') }}" class="modal-item d-flex pb-4">
+        {{ img('visiosoft.theme.restate::images/icons/message-dropdown.svg').data|raw }}
+        <span>{{ trans('visiosoft.module.messages::field.messages.name') }}</span>
+        {% if unreadMessages %}
+            <div class="d-flex align-items-center notification-wrapper ml-3">
+                <div class="rounded-circle bg-danger text-white d-flex align-items-center justify-content-center"
+                     style="width: 1.5em">
+                    {{ unreadMessages }}
+                </div>
+            </div>
+        {% endif %}
+    </a>
+{% endif %}

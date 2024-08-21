@@ -1,0 +1,107 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline('visiosoft.module.dopings::css/buy.scss') }}
+
+        #buyDoping #dopingTypesWrapper .doping-type-wrapper .doping-type {
+            background: url("{{ img('visiosoft.module.dopings::img/doping-bg.svg').url }}");
+            background-size: cover;
+        }
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section id="buyDoping">
+        {% include 'visiosoft.theme.restate::addons/visiosoft/advs-module/new-ad/partials/steps' with {'step': 'doping-buy'} %}
+
+        <div class="text-center mt-5 mb-4" id="buyDopingTitle">
+            <h1>{{ trans('visiosoft.module.dopings::field.doping') }}</h1>
+            <h2>{{ trans('visiosoft.module.dopings::field.create_doping_desc') }}</h2>
+        </div>
+
+        <form action="{{ url_route('doping::buy') }}" method="post">
+            <input type="hidden" name="_token" value="{{ csrf_token() }}">
+            <input type="hidden" name="adv_name" value="{{ id }}">
+
+            <div class="p-4 row" id="dopingTypesWrapper">
+                {% set ad = adDetail(id) %}
+                {% set types = entries('dopings','types').get() %}
+                {% set active_dopings = entries('dopings','dopings').getActiveDopingsWithAd(id).pluck('expiry_date','doping_type_id') %}
+                {% set active_packages = entries('dopings','dopings').getActivePackagesWithAd(id).pluck('expiry_date','package_id') %}
+
+                {% for type in types %}
+                    {% set packages = entries('dopings','package').getPackagesWithTypeAndCategory(type.id, ad.cat1) %}
+                    {% set show_type = true %}
+
+                    {% if (type.slug == "updated" and ad.created_at|date('Y-m-d') == now|date('Y-m-d'))
+                        or (type.slug == "decreasing_prices" and ad.price >= ad.old_price)
+                        or type.status == "declined" %}.
+                        {% set show_type = false %}
+                    {% endif %}
+
+
+                    {% if show_type %}
+                        <div class="doping-type-wrapper col-sm-6 col-lg-4 mb-4 {{ type.slug }}">
+                            <label class="doping-type text-center px-4 px-md-5 pb-3 pt-4 mb-0 h-100 position-relative"
+                                   for="{{ type.name }}">
+                                {{ img('visiosoft.module.dopings::img/corner.svg').data|raw }}
+
+                                <span class="corner-text text-white">
+                                    {{ trans('visiosoft.module.dopings::field.doping') }}
+                                </span>
+
+                                {% set dopingImg = img('visiosoft.module.dopings::img/' ~ type.slug ~ '.svg') %}
+                                {{ dopingImg.path ? dopingImg.data|raw }}
+
+                                <h3 class="mt-3">{{ type.name }}</h3>
+                                <p>{{ type.description }}</p>
+
+                                {% if count(packages) %}
+                                    {% for package in packages %}
+                                        {% set active = false %}
+                                        <label for="{{ type.name }}-{{ package.id }}"
+                                               class="w-100 mb-0">
+                                            <input type="radio" id="{{ type.name }}-{{ package.id }}"
+                                                    {{ (package.id in active_packages|keys) ? 'disabled' }}
+                                                   name="package-{{ type.id }}"
+                                                   value="{{ package.id }}">
+                                            {% set price = currency_format(package.price,setting_value('streams::currency')) %}
+                                            {{ trans('visiosoft.module.dopings::field.buy_doping_period',{'interval':package.interval,'period':package.interval_period,'price':price}) }}
+                                            <small class="text-danger">
+                                                {{ (package.id in active_packages|keys) ? '('~active_packages[package.id]|date('Y-m-d H:i')~')' }}
+                                            </small>
+                                        </label>
+                                    {% endfor %}
+                                {% else %}
+                                    <div>
+                                        <span class="mr-2">
+                                            {% set price = currency_format(type.price.value,setting_value('streams::currency')) %}
+                                            {% set price = type.duration == '' ? price : trans('visiosoft.module.dopings::field.buy_doping_msg', {'day': type.duration, 'price': price}) %}
+                                            {{ (type.id in active_dopings|keys) ? '('~active_dopings[type.id]|date('Y-m-d H:i')~')' }}
+                                            {{ price }}
+                                        </span>
+                                        <input type="checkbox" {{ type.id in active_dopings|keys ? 'disabled' }}
+                                               value="{{ type.id }}" id="{{ type.name }}" name="doping[]">
+                                    </div>
+                                {% endif %}
+                            </label>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+
+            <hr class="my-4">
+
+            <div class="justify-content-between d-flex px-3" id="buyActions">
+                <a class="btn btn-danger px-4 mr-2" href="{{ url_route('adv_list_seo_mlang', [trans('visiosoft.module.advs::slug.detail_adv'), id] ) }}?first=true">
+                    {{ trans('visiosoft.module.dopings::field.i_dont_want') }}
+                </a>
+
+                <button type="submit" name="action" value="save" class="btn text-white px-4">
+                    {{ trans('visiosoft.module.dopings::field.buy') }}
+                </button>
+            </div>
+        </form>
+    </section>
+{% endblock %}

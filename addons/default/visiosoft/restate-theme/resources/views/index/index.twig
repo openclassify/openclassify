@@ -1,0 +1,319 @@
+{% set header_background =
+    file(setting_value('visiosoft.theme.restate::home_background_image')).make.url ??
+    img('visiosoft.theme.restate::images/6_1550_gv.jpg').url %}
+
+<header
+        class="w-100 d-md-flex d-none flex-column position-relative align-items-center justify-content-center px-sm-0 px-4"
+        style="background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('{{ header_background }}')">
+    <div class="top-area text-area d-flex flex-column align-items-center ">
+
+        <div class="search-input-wrapper">
+            {% include 'visiosoft.theme.restate::partials/introSearch' %}
+        </div>
+        <div class="ml-4 ml-lg-0 d-sm-flex d-none text-white align-self-start mb-40 px-3 mt-1 fw-500">
+            <span class="mr-2 font-weight-bold">{{ trans('visiosoft.theme.restate::field.popular') }}: </span>
+            {% for city_id in setting_value('visiosoft.theme.restate::popular_cities') %}
+                {% set city = entries('location','cities').find(city_id) %}
+                <a class="mr-1"
+                   href="{{ url_route('visiosoft.module.advs::list_mlang', [trans('visiosoft.module.advs::slug.category')]) }}?city[]={{ city.id }}">{{ city.name }}
+                    , </a>
+            {% endfor %}
+            <a class="mr-1"
+               href="{{ url_route('visiosoft.module.advs::list_mlang', [trans('visiosoft.module.advs::slug.category')]) }}">{{ trans('visiosoft.theme.restate::field.all_cities') }}</a>
+        </div>
+    </div>
+    <div class="position-absolute top-zero w-100 d-flex pt-5 justify-content-between align-items-start">
+        <div class="fs-1 font-weight-bold text-white mb-4 he-homepage-logo ml-0 ml-md-5">
+            <a href="{{ url_route('/') }}">
+                {% if setting_value('visiosoft.theme.restate::logo_white') %}
+                    {{ img(file(setting_value('visiosoft.theme.restate::logo_white')).make.url)|raw }}
+                {% else %}
+                    {{ img('visiosoft.theme.restate::images/estate-white.png')|raw }}
+                {% endif %}
+            </a>
+        </div>
+        <div class="d-flex">
+            {% include "visiosoft.theme.restate::partials/headerDropdown" %}
+            <a href="/advs/create_adv"
+               class="header-user-button-2 fw-500 mx-3 {{ auth_check() ? 'setting_color' : '' }} ">
+                {{ trans("visiosoft.theme.restate::button.free_post_ad.name") }}
+                <div class="header-user-button-hover-2"></div>
+            </a>
+
+        </div>
+    </div>
+    <a href="#main" class="down-button d-flex flex-column align-items-center position-absolute bottom-zero mb-3">
+        {{ trans('visiosoft.theme.restate::field.swipe_to_browse')|raw }}
+        <i class="fas fa-chevron-down fs-5 mt-2"></i>
+    </a>
+</header>
+
+<div class="header-mobile d-md-none d-block">
+    <section class="burger">
+        <div class="burger-other"></div>
+        <div class="burger-side">
+            <div class="burger-head bg-light d-flex align-items-center pt-5 pb-3 px-4">
+
+                {% if auth_user().file.first.make.url %}
+                    <div class="he-menu-left-img">
+                        <img src="{{ auth_user().file.first.make.url }}" class="rounded-circle">
+                    </div>
+                {% else %}
+                    {{ img('visiosoft.theme.restate::images/user-circle.svg').width(46)|raw }}
+                {% endif %}
+
+                <div class="ml-2 w-100">
+                    <span class="color-1">{{ trans('visiosoft.theme.restate::field.my_account') }}</span>
+                    <span class="fw-500  lh-sm d-block">
+                        {% if auth_check() %}
+                            <span class="d-flex justify-content-between">
+                                <a href="{{ url_route("profile::profile") }}"
+                                   class="text-decoration-none text-black-50">
+                                    {{ auth_user().name }}
+                                </a>
+                                <a href="{{ url_route("anomaly.module.users::logout") }}"
+                                   class="text-decoration-none text-red">
+                                        {{ trans('visiosoft.theme.restate::field.logout') }}
+                                </a>
+                            </span>
+                        {% else %}
+                            <a href="{{ url_route('anomaly.module.users::login') }}"
+                               class="text-decoration-none text-red">{{ trans('visiosoft.theme.restate::field.login') }}</a>
+                            <span class="color-1 fw-normal">{{ trans('visiosoft.theme.restate::field.or') }}</span>
+                            <a href="{{ url_route('anomaly.module.users::register') }}"
+                               class="text-decoration-none text-red">{{ trans('visiosoft.theme.restate::field.register') }}</a>
+                        {% endif %}
+                    </span>
+                </div>
+            </div>
+            <div class="w-100 mx-auto bg-white rounded">
+{#                {{ addBlock('navigation/navigation' , {}, ['favs'])|raw }}#}
+
+                <a href="/advs/create_adv"
+                   class="text-decoration-none w-100 d-flex align-items-center  justify-content-between  py-3 px-3 border-bottom">
+                    <div class="d-flex align-items-center">
+                        <span class="ml-3  color-1">{{ trans("visiosoft.theme.restate::button.free_post_ad.name") }}</span>
+                    </div>
+                    <div class="d-flex align-items-center fs-20 color-1"><i class="fas fa-angle-right"></i></div>
+                </a>
+            </div>
+        </div>
+    </section>
+    <div class="burger-header-area">
+        <svg style="width: 30px;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+            <path d="M64 384h384v-42.666H64V384zm0-106.666h384v-42.667H64v42.667zM64 128v42.665h384V128H64z"></path>
+        </svg>
+    </div>
+    <div class="w-100 p-3 mobile-top">
+        <div class="logo-mobile w-fit mx-auto">
+            <div class="font-weight-bold text-white">
+                {% if setting_value('visiosoft.theme.restate::footer_logo') %}
+                    {{ img(file(setting_value('visiosoft.theme.restate::footer_logo')).make.url).class('d-block')|raw }}
+                {% else %}
+                    {{ img('visiosoft.theme.restate::images/logo-white.png')|raw }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="mx-auto d-flex mt-4 mb-2">
+            <form class="header-search-container flex-fill d-flex mb-md-2 mb-lg-0 ml-md-"
+                  action="{{ url_route('visiosoft.module.advs::list') }}" method="get">
+                <input id="searchMobile" class="SearchArea h-100 border-0" type="text" name="keyword"
+                       placeholder="{{ trans('visiosoft.theme.restate::field.search_placeholder.name')|raw }}">
+                <button type="submit" class="search-button bg-white border-0">
+                    {{ img('visiosoft.theme.restate::images/search.svg').data|raw }}
+                </button>
+            </form>
+
+        </div>
+    </div>
+    <div class="w-90 mx-auto px-2 bg-white rounded options-2 border">
+        {% set categories = entries('cats','category').getMainCategories() %}
+        {% for category in categories|slice(0,3) %}
+            <a href="{{ url_route('visiosoft.module.advs::list_mlang', [category.slug]) }}"
+               class="text-decoration-none w-100 d-flex align-items-center justify-content-between py-3 px-3 {{ loop.last ?: "border-bottom" }}">
+                <div class="d-flex align-items-center">
+                    {{ img(url(category.icon)).width(32)|raw }}
+                    <span class="ml-3 fs-20 color-1">{{ category.name }}</span>
+                </div>
+                <div class="d-flex align-items-center fs-20 color-1">
+                    {{ img('visiosoft.theme.restate::images/arrow-right.svg').data|raw }}
+                </div>
+            </a>
+        {% endfor %}
+        {% if categories|length > 3 %}
+            <a href="{{ url_route('visiosoft.module.advs::list_mlang', [trans('visiosoft.module.advs::slug.category')]) }}"
+               class="text-decoration-none w-100 d-flex align-items-center justify-content-between py-3 px-3 border-top">
+                <div class="d-flex align-items-center">
+                    <span class="fs-18 color-1 text-black-50">{{ trans('visiosoft.theme.restate::field.show_all') }}</span>
+                </div>
+                <div class="d-flex align-items-center fs-20 color-1">
+                    {{ img('visiosoft.theme.restate::images/arrow-right.svg').data|raw }}
+                </div>
+            </a>
+        {% endif %}
+    </div>
+</div>
+
+
+<main id="main">
+    <div class="bg-special-6 pt-md-5">
+        <div class="container p-0 m-0 mx-auto">
+            <div class="row p-0 m-0 d-flex flex-column">
+                {% set categories = entries('cats','category').getMainAndSubCats() %}
+
+                <div class="row px-2 m-0 rounded w-100">
+                    <div class="sliderTwo w-100">
+                        {% for mainCat in categories.maincats %}
+                            <div class="m-0 bg-white bg-white-sm px-3 pb-4 fs-14 border">
+                                <div class="d-flex align-items-center mt-3">
+                                    <p class="fs-20 single-line mb-0">{{ mainCat.name }}</p>
+                                </div>
+                                <hr class="w-100 mx-auto">
+                                {% for subCat in categories.subcats.where('id', mainCat.id)|slice(0, 4) %}
+                                    <a href="{{ url(subCat.c2_slug) }}"
+                                       class="d-flex justify-content-between fs-16 my-3 text-dark">
+                                        <span>{{ subCat.c2_name }}</span>
+                                        <span class="text-secondary">{{ subCat.c2_count }}</span>
+                                    </a>
+                                {% endfor %}
+                            </div>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% if setting_value('visiosoft.theme.restate::homepage_cats_with_images') %}
+                    <div class="row px-2 m-0 rounded w-100">
+                        <div class="sliderTwo w-100">
+                            {% for mainCat in categories.maincats %}
+                                {% set topFilter = getCustomFieldById(setting_value('visiosoft.theme.restate::list_top_customfield')) %}
+                                <div class="position-relative mx-3">
+                                    {% set img = mainCat.image_id ? file(mainCat.image_id).make.url  : img('visiosoft.theme.restate::images/pexels-negative-space-169573.jpg').url %}
+                                    <a href="{{ url_route('visiosoft.module.advs::list_mlang', [mainCat.slug]) }}"
+                                       class="categoryBox position-relative w-100">
+                                        <div class="category-img"
+                                             style=" background: linear-gradient(122.22deg, rgba(51, 51, 51, 0.6) -11.44%, rgba(32, 104, 255, 0.6) 108.58%), url('{{ img }}')"></div>
+                                        <span>
+                                        {{ mainCat.name }}
+                                    </span>
+                                    </a>
+                                    {% if topFilter.values is not empty %}
+                                        <div class="position-absolute d-flex" style="left: 0; top: 0; width: 100%">
+                                            {% for key, val in topFilter.values[:3] %}
+                                                <a class="category-btn {{ loop.first ? 'left-radius' : loop.last ? 'right-radius' : '' }}"
+                                                   href="{{ url_route('visiosoft.module.advs::list_mlang', [mainCat.slug]) }}?cf_{{ topFilter.id }}={{ val.id }}">
+                                                    {{ val.custom_field_value }}
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                        <div class="position-absolute d-flex" style="left: 0; bottom: 0; width: 100%">
+                                            {% for key, val in topFilter.values[3:] %}
+                                                <a class="category-btn {{ loop.first ? 'bottom-left-radius' : loop.last ? 'bottom-right-radius' : '' }}"
+                                                   href="{{ url_route('visiosoft.module.advs::list_mlang', [mainCat.slug]) }}?cf_{{ topFilter.id }}={{ val.id }}">
+                                                    {{ val.custom_field_value }}
+                                                </a>
+                                            {% endfor %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+
+                <div class="mb-2">
+                    {{ setting_value('visiosoft.theme.restate::homepage_banner_section')|raw }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container pt-3 px-0 pt-md-5 js-tab-event">
+        {% include "visiosoft.theme.restate::index/partials/latest_ads" %}
+    </div>
+
+        <div class="mb-3 d-md-none">
+            <h5 class="ml-3 py-1">
+                {{ trans('visiosoft.theme.restate::field.popular_cities') }}
+            </h5>
+
+            <div class="cities-block">
+                {% for city in cities %}
+                    <div class="position-relative rounded mx-2">
+                        <a href="{{ city.entry.first().url }}">
+                            {{ img(file(city.entry.first().image).make.url) }}
+                            <p class="text-center position-absolute text-white font-weight-bold fs-18 w-100"
+                               style="bottom: 0">
+                                {{ city.entry.first().city.first().name }}
+                            </p>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+
+
+{#    {{ addBlock('index-top')|raw }}#}
+
+
+    <div class="container p-0 m-0 mx-auto mb-0 js-tab-event">
+        {% include "visiosoft.theme.restate::index.partials.recommended_ads" %}
+    </div>
+    {% include "visiosoft.theme.restate::index/partials/articles" %}
+
+
+    <div class="mt-3 d-md-none d-block">
+        <div class="accordion" id="accordionExample">
+            {% for link in links %}
+                <div class="card">
+                    <div class="card-header bg-white" id="headingOne">
+                        <h4 class="mb-0">
+                            <button class="btn btn-link btn-block text-left border-none text-left color-2 text-dark d-flex justify-content-between align-items-center"
+                                    type="button"
+                                    data-toggle="collapse" data-target="#collapse{{ str_slug(link.title, '_') }}"
+                                    aria-expanded="true"
+                                    aria-controls="collapse{{ str_slug(link.title, '_') }}">
+                                {{ link.title }}
+
+                                {{ img('visiosoft.theme.restate::images/icons/down-arrow.svg').width(12)|raw }}
+
+                            </button>
+                        </h4>
+                    </div>
+
+                    <div id="collapse{{ str_slug(link.title, '_') }}" class="collapse {{ loop.first ? 'show' }}"
+                         aria-labelledby="headingOne"
+                         data-parent="#accordionExample">
+                        <div class="card-body p-0">
+                            <div class="d-flex flex-wrap m-0 p-0 p-3 bg-special-3 text-center">
+                                {% set sublinks = entries('navigation', 'links').where('parent_id', link.id).get() %}
+                                {% for sublink in sublinks %}
+                                    <div class="w-fit p-0 m-0 text-secondary fs-14 mx-3">
+                                        <a href="{{ sublink.url }}" class="text-black-50">
+                                            <span><i class="fas fa-angle-right mr-2"></i></span>
+                                            <span>{{ sublink.title }}</span>
+                                        </a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+
+    {% include "visiosoft.theme.restate::partials.footer" %}
+{#    {{ addBlock('autocomplete')|raw }}#}
+</main>
+
+<script>
+    let open_ad_tab = '{{ setting_value('visiosoft.theme.restate::ad_page_target') }}';
+    $(() => {
+        $('footer').css('marginTop', $($('.seo-link-buttons > a.active').attr('href')).height());
+    });
+    $('.seo-link-buttons').on('click', function () {
+        $('footer').css('marginTop', $($(this).find('a').attr('href')).height());
+    });
+</script>

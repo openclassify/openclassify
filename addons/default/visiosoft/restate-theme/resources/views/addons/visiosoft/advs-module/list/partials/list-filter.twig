@@ -1,0 +1,105 @@
+{% set pathInfo = app.request.pathinfo|split('/') %}
+{% set catSlug = pathInfo[1] == 'c' ? pathInfo[2] : null %}
+{% set citySlug = pathInfo[2] ? pathInfo[2] : null %}
+{% set formAction = pathInfo[2] ? url_route('adv_list_seo_mlang', [pathInfo[1], pathInfo[2]]) : url_route('/') %}
+<form action="{{ formAction }}" method="get" id="{{ (filter_id) ? filter_id : "listFilterForm" }}" rel="nofollow"
+      class="flex-shrink-0 w-100 bg-white border mb-3">
+    <input type="hidden" name="cat" value="{{ app.request.get('cat') }}">
+    <input type="hidden" name="user" value="{{ app.request.get('user') }}">
+
+    <div id="category" class="px-2 d-none d-sm-block">
+        {% include 'visiosoft.module.cats::ads-list/partials/cat-filter' %}
+    </div>
+    <!-- Price Filter Start -->
+    {% include 'visiosoft.theme.restate::addons/visiosoft/advs-module/list/partials/price-filter' %}
+    <!-- Price Filter End -->
+
+    {% if setting_value('visiosoft.module.advs::hide_date_filter') == false %}
+        <!-- Date Filter Start -->
+        <div class="p-3">
+            <label for="date" class="fs-14 fw-700 mb-0">
+                <p>{{ trans("visiosoft.module.advs::field.date.name") }}</p>
+            </label>
+            <select id="date" class="filter-select w-100" name="date">
+                <option disabled selected>{{ trans('visiosoft.theme.restate::field.none_selected') }}</option>
+                <option value="day" {{ app.request.get('date') == 'day' ? 'selected' }}>
+                    {{ trans("visiosoft.module.advs::field.in_the_last_24_hours.name") }}
+                </option>
+                <option value="week" {{ app.request.get('date') == 'week' ? 'selected' }}>
+                    {{ trans("visiosoft.module.advs::field.in_the_last_week.name") }}
+                </option>
+                <option value="month" {{ app.request.get('date') == 'month' ? 'selected' }}>
+                    {{ trans("visiosoft.module.advs::field.in_the_last_month.name") }}
+                </option>
+            </select>
+        </div>
+        <!-- Date Filter End -->
+    {% endif %}
+    <!-- Keyword Filter Start -->
+    <div id="keywordFilter" class="p-3">
+        <div class="fs-14 fw-700 mb-0">
+            <p>{{ trans("visiosoft.module.advs::field.filter_by_word") }}</p>
+        </div>
+        <div class="d-flex justify-content-around form-group mt-3">
+            <input type="text" class="border shadow-sm rounded form-control" name="keyword"
+                   value="{{ app.request.get('keyword') }}">
+        </div>
+    </div>
+    <!-- Keyword Filter End -->
+
+    <div class="p-3">
+        {% if setting_value('visiosoft.module.advs::hide_photo_filter') == false %}
+            <!-- Media Filter Start -->
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input"
+                           id="photo" {{ app.request.get('photo') == true ? 'checked' }} value="true"
+                           name="photo">
+                    <label class="custom-control-label font-weight-normal fs-14"
+                           for="photo">{{ trans("visiosoft.module.advs::field.ads_with_photo.name") }}</label>
+                </div>
+                <div class="custom-control custom-switch">
+                    <input type="checkbox" class="custom-control-input"
+                           id="video" {{ app.request.get('video') == true ? 'checked' }} value="true"
+                           name="video">
+                    <label class="custom-control-label font-weight-normal fs-14"
+                           for="video">{{ trans("visiosoft.module.advs::field.ads_with_video.name") }}</label>
+                </div>
+            <!-- Media Filter End -->
+        {% endif %}
+
+        {% if setting_value('visiosoft.module.advs::hide_map_filter') == false %}
+            <!-- Map Filter Start -->
+            <div class="custom-control custom-switch">
+                <input type="checkbox" class="custom-control-input"
+                       id="mapFilter" {{ app.request.get('map') == true ? 'checked' }} value="true"
+                       name="map">
+                <label class="custom-control-label font-weight-normal fs-14"
+                       for="mapFilter">{{ trans("visiosoft.module.advs::field.ads_with_map") }}</label>
+            </div>
+            <!-- Map Filter End -->
+        {% endif %}
+    </div>
+    <div class="d-flex filter-border shadow p-3 filter-search">
+        <div id="filterSubmit" class="col-6 px-1">
+            <button type="submit" class="btn bg-yellow text-white fs-18 px-3 w-100">
+                {{ trans("visiosoft.module.advs::field.search") }}
+            </button>
+        </div>
+        <div id="filterReset" class="col-6 px-1">
+            <button type="reset" class="btn btn-outline-dark bg-light fs-18 px-3 filter-form-reset w-100">
+                {{ trans("visiosoft.module.advs::field.reset") }}
+            </button>
+        </div>
+    </div>
+</form>
+
+<script>
+    $(document).ready(function() {
+        $('.filter-select').multiselect({
+            buttonWidth: '100%',
+            nonSelectedText: '{{ trans('visiosoft.theme.restate::field.none_selected') }}',
+            nSelectedText: '{{ trans('visiosoft.theme.restate::field.n_selected') }}',
+            allSelectedText: '{{ trans('visiosoft.theme.restate::field.all_selected') }}'
+        });
+    });
+</script>

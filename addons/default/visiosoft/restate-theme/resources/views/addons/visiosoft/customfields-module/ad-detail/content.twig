@@ -1,0 +1,15 @@
+{% if features_detail %}
+    {% set features_array = features_detail %}
+    {% for features in  features_array|batch(features_array|length / 2) %}
+        <div class="d-flex flex-column w-special border-0 rounded mx-1">
+            {% for feature in features %}
+                {% if not feature.custom_field_value is iterable %}
+                    <div class="list-group-item list-group-item-action list-group-item-special d-flex align-items-center px-0 py-2 fs-14">
+                        <div class="w-50 px-2 color-2 {{ feature.class ?? '' }}">{{ feature.name ? feature.name : '' }}</div>
+                        <div class="w-50 font-weight-bold {{ feature.class ?? '' }}">{{ feature.custom_field_value }}</div>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endfor %}
+{% endif %}

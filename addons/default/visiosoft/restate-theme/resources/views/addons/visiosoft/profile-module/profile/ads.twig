@@ -1,0 +1,169 @@
+{% extends "visiosoft.theme.restate::layouts/default" %}
+{% block content %}
+{#    {% embed 'visiosoft.module.profile::profile/index' %}#}
+        {% block detail %}
+            <div class="mt-5 mt-md-0">
+                <div class="row p-0 m-0 pb-4 pt-4 mt-5 mt-md-0">
+
+
+                    {% include "visiosoft.theme.restate::addons/visiosoft/profile-module/profile/partials/left-navigation" %}
+                    {% set ads = getUserAllAdvs() %}
+                    {% set active_ads = ads.where('status', 'approved') %}
+                    {% set pending_ads = ads.where('status', 'pending_admin').where('slug','!=','') %}
+                    {% set pending_ads_user = ads.where('status', 'pending_user').where('slug','!=','') %}
+                    {% set passive_ads = ads.where('status', 'passive') %}
+                    {% set incomplete_ads = ads.where('slug', '') %}
+
+
+                    <div id="printDivHidden">
+
+                    </div>
+
+                    <div class="col-lg-9 col-12 px-lg-4 px-0">
+                        <div class="advertise_Area d-flex flex-column">
+                            <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                        <div class="pt-3 d-flex align-items-center flex-md-row flex-column justify-content-center">
+                                            <div class=" p-3 rounded shadow-sm border maxWidth_Advs bg-white d-flex flex-column
+                                        flex-grow-1 mr-1 justify-content-between">
+                                                <span class="color_8 font-weight-bold">{{ trans('visiosoft.theme.restate::field.active_ads') }}</span>
+                                                <span class="color_9 fs-14">
+                                                    {{ active_ads|length ?: trans('visiosoft.theme.restate::field.no_ads') }}
+                                                </span>
+                                            </div>
+                                            <div class="p-3 rounded shadow-sm border maxWidth_Advs bg-white d-flex flex-column
+                                        flex-grow-1 mx-1 justify-content-between">
+                                                <span class="color_8 font-weight-bold">{{ trans('visiosoft.theme.restate::field.pending_ads') }}</span>
+                                                <span class="color_9 fs-14">
+                                                    {{ pending_ads|length + pending_ads_user|length ?: trans('visiosoft.theme.restate::field.no_ads') }}
+                                                </span>
+                                            </div>
+                                            <div class="p-3 rounded shadow-sm border maxWidth_Advs bg-white d-flex flex-column
+                                        flex-grow-1 mx-1 justify-content-between">
+                                                <span class="color_8 font-weight-bold">{{ trans('visiosoft.theme.restate::field.passive_ads') }}</span>
+                                                <span class="color_9 fs-14">
+                                                    {{ passive_ads|length ?: trans('visiosoft.theme.restate::field.no_ads') }}
+                                                </span>
+                                            </div>
+                                            <div class="p-3 rounded shadow-sm border maxWidth_Advs bg-white d-flex flex-column
+                                        flex-grow-1 ml-1 position-relative justify-content-between">
+                                                <div class="d-flex justify-content-between">
+                                                    <span class="color_8 font-weight-bold">{{ trans('visiosoft.theme.restate::field.incomplete_ads') }}</span>
+                                                </div>
+                                                <span class="color_9 fs-14">
+                                                    {{ incomplete_ads|length ?: trans('visiosoft.theme.restate::field.no_ads') }}</span>
+                                            </div>
+                                        </div>
+                                        <div class="ml-3 fs-20 text-capitalize color_8 mt-4">{{ trans('visiosoft.theme.restate::field.post_an_ad') }}</div>
+                                        <div class="p-3 pb-4 bg-white mt-3 shadow-sm border rounded">
+                                            <div class="color_8 fs-20 font-weight-bold">{{ trans('visiosoft.theme.restate::field.post_a_free_ad') }}</div>
+{#                                            {{ addBlock('profile/ads/my-ads')|raw }}#}
+                                            <div class="mt-4 z-index">
+                                                <a href="/advs/create_adv"
+                                                   class=" text-white font-weight-bold rounded wSpecial_2 ml-1">
+                                                    {{ trans('visiosoft.theme.restate::field.advertise_now') }}
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                <div class="action-wrapper px-3 d-none">
+                                    <form action="{{ url_route('multiple_operations') }}" method="post" id="multiple_advs" rel="nofollow">
+                                        <div class="multiple-buttons row">
+                                            <div class=" ads-checkbox  d-flex align-items-center justify-content-center ">
+                                                <input type="checkbox"  name="all" id="all" value="all"/>
+                                                <label class="adv-mul all-box m-0" for="all"></label>
+                                                <span class="ml-2">{{ trans('visiosoft.theme.restate::field.select_all') }}</span>
+                                            </div>
+
+                                            <div class="action-buttons-restate">
+                                                <button id="deletebutton" class="btn btn-sm btn-danger mr-2" name="action" value="delete" type="submit">
+                                                    <i class="fa fa-trash "></i>
+                                                    {{ trans('visiosoft.theme.restate::field.delete') }}
+                                                </button>
+                                                <button class="btn btn-sm btn-info" name="action" value="extend" type="submit">
+                                                    <i class="fa fa-calendar "></i>
+                                                    {{ trans('visiosoft.theme.restate::field.extend') }}
+                                                </button>
+                                            </div>
+
+                                        </div>
+                                    </form>
+
+                                    <div class="search-input-group">
+                                        <div class="input-group  ">
+                                            <input type="text" class="form-control" placeholder="{{ trans('visiosoft.theme.restate::field.search') }}" >
+                                            <div class="input-group-append">
+                                                <button id="search-btn" class="btn btn-outline-secondary" type="button">{{ trans('visiosoft.theme.restate::field.search') }}</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                </div>
+
+
+                                <div class="tab-pane fade" id="v-pills-active_ads" role="tabpanel" aria-labelledby="v-pills-active_ads-tab">
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-pending_ads" role="tabpanel" aria-labelledby="v-pills-pending_ads-tab">
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-passive_ads" role="tabpanel" aria-labelledby="v-pills-passive_ads-tab">
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-incomplete_ads" role="tabpanel" aria-labelledby="v-pills-incomplete_ads-tab">
+                                    </div>
+                                    <!-- Pagination links -->
+                                    <nav aria-label="Page navigation example" class="mt-3 profile_ads_pagination d-none">
+                                        <ul class="pagination justify-content-center">
+                                            <li class="page-item">
+                                                <a id="btn_prev" class="page-link" href="javascript:prevPage()"><</a>
+                                            </li>
+                                            <li class="page-item"><span id="page" class="page-link">1</span></li>
+                                            <li class="page-item">
+                                                <a id="btn_next" class="page-link" href="javascript:nextPage()">></a>
+                                            </li>
+                                        </ul>
+                                    </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <script>
+
+
+                var approve = "{{ trans('visiosoft.module.advs::field.approve') }}";
+                var passive = "{{ trans('visiosoft.module.advs::field.passive') }}";
+                var delete_ad = "{{ trans('visiosoft.module.profile::button.delete') }}";
+                var edit_ad = "{{ trans('visiosoft.module.profile::button.edit') }}";
+                var no_ads_message = "{{ trans('visiosoft.module.advs::field.no_ads') }}";
+                let userStatus = JSON.parse(`{{ userStatus|raw }}`);
+                let statusChangeLink = `{{ changeStatusUrl }}`;
+                let dropdownBlock = ``;
+                var changeStatusTrans = "{{ trans('visiosoft.module.profile::field.change_status') }}";
+                var records_per_page = "{{ setting_value('streams::per_page') }}";
+                let created_at_text = "{{ trans('visiosoft.theme.restate::field.ad_entry_date') }}";
+                var approved_info = `<div class="d-flex ml-3 pt-3">
+                                        <div class=" fs-20 color_8">{{ trans('visiosoft.theme.restate::field.active_ads') }}</div>
+                                        <div class="text_1 ml-2 d-flex align-items-center">{{ trans('visiosoft.theme.restate::field.active_ads_count', {count: active_ads|length}) }}</div>
+                                   </div>`;
+                var pending_info = `<div class="d-flex ml-3 pt-3">
+                                        <div class="fs-20 color_8">{{ trans('visiosoft.theme.restate::field.pending_ads') }}</div>
+                                        <div class="text_1 ml-2 d-flex align-items-center">{{ trans('visiosoft.theme.restate::field.pending_ads_count', {count: pending_ads|length + pending_ads_user|length}) }}</div>
+                                    </div>`;
+                var passive_info = `<div class="d-flex ml-3 pt-3">
+                                        <div class="fs-20 color_8">{{ trans('visiosoft.theme.restate::field.passive_ads') }}</div>
+                                        <div class="text_1 ml-2 d-flex align-items-center">{{ trans('visiosoft.theme.restate::field.passive_ads_count', {count: passive_ads|length}) }}</div>
+                                    </div>`;
+                var incomplete_info = ` <div class="d-flex ml-3 pt-3">
+                                            <div class="fs-20 color_8">{{ trans('visiosoft.theme.restate::field.incomplete_ads') }}</div>
+                                            <div class="text_1 ml-2 d-flex align-items-center">{{ trans('visiosoft.theme.restate::field.incomplete_ads_count', {count: incomplete_ads|length}) }}</div>
+                                        </div>`;
+                var choose_text = '{{ trans('visiosoft.theme.restate::field.choose') }}';
+                var session_message =  '{{ session('alert_message') }}';
+                var session_status = '{{ session('status') }}';
+                var print = "{{ trans('visiosoft.theme.restate::field.print') }}";
+                var ads_no = "{{trans('visiosoft.theme.restate::field.ads_no')}}";
+                var ad_note_text = "{{ trans('visiosoft.module.advs::field.ad_note.name') }}"
+                {{ asset_inline("visiosoft.theme.restate::js/theme/ads.js") }}
+            </script>
+        {% endblock %}
+{#    {% endembed %}#}
+{% endblock %}

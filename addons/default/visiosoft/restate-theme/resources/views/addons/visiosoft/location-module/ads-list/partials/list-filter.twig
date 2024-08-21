@@ -1,0 +1,17 @@
+{% if setting_value('visiosoft.module.location::hide_location_filter') == false and setting_value('visiosoft.module.location::list_page_location') %}
+    <div id="location" class="p-3 position-relative">
+        <div class="fs-14 fw-700 mb-0">
+            <p>{{ trans("visiosoft.module.location::addon.title") }}</p>
+        </div>
+
+        {% include "visiosoft.theme.restate::addons/visiosoft/location-module/ads-list/partials/location-fields" %}
+
+    </div>
+
+    <script>
+        var select_trans = "{{ trans('visiosoft.module.location::field.pick_option.name') }}";
+    </script>
+
+    {{ asset_add("scripts.js", "visiosoft.module.location::js/filterLocation.js") }}
+    {{ asset_add("styles.css", "visiosoft.module.location::css/filterLocation.css") }}
+{% endif %}

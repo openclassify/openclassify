@@ -7,4 +7,4 @@ composer update
 php artisan install --ready
 
 # Seed the database with the specified class
-php artisan db:seed --class=Visiosoft\\SahibindenTheme\\SahibindenThemeSeeder
+php artisan db:seed --class=Visiosoft\\RestateTheme\\RestateThemeSeeder

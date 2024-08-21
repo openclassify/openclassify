@@ -1,0 +1,9 @@
+<svg class="text-white" xmlns="http://www.w3.org/2000/svg" style="width:17px;height:17px"
+     viewBox="0 0 17 17">
+    <g fill="none" fill-rule="evenodd">
+        <g fill="currentColor">
+            <path d="M1081.93 2288.01c.55 0 .995.446.995.995 0 .55-.446.995-.995.995h-7.96l1.99-1.99h5.97zm-2.985-12.437l3.482 3.482-10.945 10.945-3.482-.054v-3.428l10.945-10.945zm2.278-2.278c.39-.39 1.023-.39 1.414 0l2.068 2.068c.39.39.39 1.024 0 1.414l-1.283 1.283-3.482-3.482z"
+                  transform="translate(-1068 -2273)"></path>
+        </g>
+    </g>
+</svg>
