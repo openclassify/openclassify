@@ -669,7 +669,7 @@ class RestateThemeSeeder extends Seeder
 
             $filename = 'restate' . ($key + 1) . '.jpg';
             $this->setFile($filename);
-            $adv['cover_photo']  = 'files/images/' . $filename;
+            $adv['cover_photo'] = 'files/images/' . $filename;
             $this->advRepository->create($adv)->getId();
         }
     }
@@ -683,7 +683,7 @@ class RestateThemeSeeder extends Seeder
             $image = Image::make($file_path);
 
             $file = new UploadedFile($file_path,
-                $image->basename,
+                uniqid() . $image->basename,
                 $image->mime);
 
             $folders = app(FolderRepositoryInterface::class);
