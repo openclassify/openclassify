@@ -64,9 +64,9 @@ class FileUploader
      * @param FileRepositoryInterface $files
      */
     public function __construct(
-        Factory $validator,
-        FileRotator $rotator,
-        FilesystemManager $manager,
+        Factory                 $validator,
+        FileRotator             $rotator,
+        FilesystemManager       $manager,
         FileRepositoryInterface $files
     )
     {
@@ -121,7 +121,7 @@ class FileUploader
         /**
          * Define path
          */
-        $path = $folder->getSlug() . 'FileUploader.php/' . FileSanitizer::clean($file->getClientOriginalName());
+        $path = $folder->getSlug() . '/' . $folder->getSlug() . '/' . FileSanitizer::clean($file->getClientOriginalName());
 
         /**
          * Write the file to the filesystem.

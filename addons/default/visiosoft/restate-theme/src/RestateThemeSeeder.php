@@ -683,7 +683,7 @@ class RestateThemeSeeder extends Seeder
             $image = Image::make($file_path);
 
             $file = new UploadedFile($file_path,
-                uniqid() . $image->basename,
+                $image->basename,
                 $image->mime);
 
             $folders = app(FolderRepositoryInterface::class);
