@@ -44,6 +44,7 @@
     "anomaly/private_storage_adapter-extension": "1.2.x-dev",
     "anomaly/url_link_type-extension": "2.2.x-dev",
     "anomaly/relationship-field_type": "2.3.x-dev",
+    "visiosoft/pages-module": "dev-4.0-mostafa",
     "anomaly/colorpicker-field_type": "2.4.x-dev",
     "anomaly/page_link_type-extension": "~2.1.0",
     "anomaly/polymorphic-field_type": "~2.1.0",
