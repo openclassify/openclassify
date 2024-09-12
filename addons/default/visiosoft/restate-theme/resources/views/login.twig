@@ -1,0 +1,63 @@
+{% extends "visiosoft.theme.defaultadmin::layouts/login" %}
+
+{% block content %}
+
+    <div>
+        <div class="login-logo">
+            <div class="text-center">
+                {% if setting_value('visiosoft.theme.defaultadmin::login_icon') %}
+                    <img src="{{ file(setting_value('visiosoft.theme.defaultadmin::login_icon')).make.path }}"
+                         alt="site icon">
+                {% else %}
+                    {{ img('theme::img/login-icon.svg').data|raw }}
+                {% endif %}
+            </div>
+        </div>
+        <div class="login-form-block row">
+            <div class="col-sm-24 py-1">
+                {% include "theme::partials/messages" %}
+                <div class="text-center pb-2 login-form-title">
+                    <h4>
+                        {{ trans('visiosoft.theme.defaultadmin::control_panel.login_to_admin.name') }}
+                    </h4>
+                </div>
+                {% set form = form('login').redirect('admin').get() %}
+                {{ form.open|raw }}
+                <div class="form-group">
+                    {% if setting_value('anomaly.module.users::login') == 'username' %}
+                        {{ form.fields.username.setValue(app.request.get('username')).setPlaceholder(form.fields.username.label).addAttribute('autofocus', 1).input|raw }}
+                    {% else %}
+                        {{ form.fields.email.setValue(app.request.get('username')).setPlaceholder(form.fields.email.label).addAttribute('autofocus', 1).input|raw }}
+                    {% endif %}
+                </div>
+                <div class="form-group">
+                    {{ form.fields.password.setValue(app.request.get('password')).setPlaceholder(form.fields.password.label).input|raw }}
+                </div>
+                <div class="form-group checkbox login-remember-me">
+                    <label>
+                        {{ form_checkbox("remember", null, false, {'id': 'remember'}) }}
+                        {{ trans('anomaly.module.users::field.remember_me.name') }}
+                    </label>
+                </div>
+                <div class="form-group text-center login-form-button">
+                    <button type="submit" value="Login" class="btn btn-primary btn-outline px-3"
+                            onclick="$('body').addClass('success');">
+                        {{ trans('anomaly.module.users::button.login') }}
+                    </button>
+                </div>
+                {{ form.close|raw }}
+                <div class="clearfix"></div>
+                <div class="login-form-forget text-center">
+                    <a href="{{ url_route('anomaly.module.users::password.forgot') }}">
+                        <small>
+                            {{ trans('anomaly.module.users::message.forgot_password') }}
+                        </small>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="login-page-copyright text-center">
+            &copy; {{ 'now'|date('Y') }} {{ setting_value('visiosoft.theme.defaultadmin::footer_copyright_org_name') }}
+        </div>
+    </div>
+{% endblock %}
