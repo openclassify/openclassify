@@ -1,0 +1,22 @@
+<?php
+return [
+    'site_name' => 'OpenClassify',
+    'home' => 'Ana Sayfa',
+    'categories' => 'Kategoriler',
+    'listings' => 'İlanlar',
+    'search' => 'Ara',
+    'search_placeholder' => 'Her şeyi arayın...',
+    'login' => 'Giriş',
+    'register' => 'Kayıt Ol',
+    'logout' => 'Çıkış',
+    'find_what_you_need' => 'İhtiyacınızı Bulun',
+    'hero_subtitle' => 'Bölgenizdeki her şeyi alın ve satın',
+    'browse_categories' => 'Kategorilere Göz At',
+    'recent_listings' => 'Son İlanlar',
+    'featured_listings' => 'Öne Çıkan İlanlar',
+    'post_listing' => 'İlan Ver',
+    'sell_something' => 'Satılık bir şeyiniz mi var?',
+    'free' => 'Ücretsiz',
+    'view' => 'Görüntüle',
+    'contact_seller' => 'Satıcıyla İletişim',
+];

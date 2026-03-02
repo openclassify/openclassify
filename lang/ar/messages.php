@@ -1,0 +1,22 @@
+<?php
+return [
+    'site_name' => 'OpenClassify',
+    'home' => 'الرئيسية',
+    'categories' => 'الفئات',
+    'listings' => 'الإعلانات',
+    'search' => 'بحث',
+    'search_placeholder' => 'ابحث عن أي شيء...',
+    'login' => 'تسجيل الدخول',
+    'register' => 'التسجيل',
+    'logout' => 'تسجيل الخروج',
+    'find_what_you_need' => 'ابحث عما تحتاجه',
+    'hero_subtitle' => 'اشترِ وبِع كل شيء في منطقتك',
+    'browse_categories' => 'تصفح الفئات',
+    'recent_listings' => 'أحدث الإعلانات',
+    'featured_listings' => 'الإعلانات المميزة',
+    'post_listing' => 'نشر إعلان',
+    'sell_something' => 'هل لديك شيء للبيع؟',
+    'free' => 'مجاني',
+    'view' => 'عرض',
+    'contact_seller' => 'تواصل مع البائع',
+];
