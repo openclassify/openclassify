@@ -1,6 +1,0 @@
-.coverage
-composer.lock
-/bin
-/build
-/vendor
-/coverage
