@@ -6,6 +6,7 @@ use App\Http\Controllers\Partner\DashboardController;
 use App\Http\Controllers\Partner\ListingController as PartnerListingController;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
 Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');
 
 Route::middleware('auth')->prefix('partner')->name('partner.')->group(function () {
