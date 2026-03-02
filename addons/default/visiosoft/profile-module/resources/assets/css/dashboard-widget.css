@@ -1,0 +1,54 @@
+.widget-field {
+    margin-bottom: 25px;
+    display: inline-block;
+}
+.widget-dashboard {
+    margin: 0;
+    display: block;
+    height: 60px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+}
+.widget-dashboard .widget-heading {
+    padding: 11px 15px;
+    -webkit-border-radius: 2px 2px 0 0;
+    -moz-border-radius: 2px 2px 0 0;
+    border-radius: 4px 4px 0 0;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: 500;
+    background: white;
+    color: #050505;
+}
+.widget-dashboard .widget-body {
+    padding: 10px 15px;
+    font-size: 36px;
+    font-weight: 300;
+    color: white;
+}
+
+.ads-widget {
+    background: #5cb85c;
+}
+
+.message-widget {
+    background: #26baee;
+}
+
+.favs-widget {
+    background: #ffc60b;
+}
+
+.balance-widget {
+    background: #2f89fc;
+}
+
+.profile-ad-viewed {
+    position: absolute;
+    background-color: rgba(207,0,15,0.9);
+    padding: 5px;
+    color: white;
+    font-weight: 700;
+    z-index: 999999;
+}

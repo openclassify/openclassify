@@ -1,0 +1,23 @@
+{% extends template.layout ?: "theme::layouts/default" %}
+
+{% block content %}
+    {{ content|raw }}
+
+    {% if form.mode == 'edit' %}
+        {% set entry = form.entry %}
+        <script>
+            const ad = {
+                cat1: `{{ entry.cat1 }}`,
+                cat2: `{{ entry.cat2 }}`,
+                cat3: `{{ entry.cat3 }}`,
+                cat4: `{{ entry.cat4 }}`,
+                cat5: `{{ entry.cat5 }}`,
+                cat6: `{{ entry.cat6 }}`,
+                cat7: `{{ entry.cat7 }}`,
+                cat8: `{{ entry.cat8 }}`,
+                cat9: `{{ entry.cat9 }}`,
+                cat10: `{{ entry.cat10 }}`,
+            }
+        </script>
+    {% endif %}
+{% endblock %}

@@ -1,0 +1,24 @@
+{{ asset_add('styles.css', 'visiosoft.field_type.multiple::css/lookup.scss') }}
+{{ asset_add('scripts.js', 'visiosoft.field_type.multiple::js/lookup.js') }}
+
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+<a data-toggle="modal" data-target="#{{ field_type.field_name }}-modal"
+   class="multiple-select-btn"
+   href="{{ url('streams/multiple-field_type/index/' ~ field_type.key) }}">
+    {{ img('visiosoft.field_type.multiple::images/plus.svg').data|raw }}
+    <span class="ml-1">{{ trans('streams::button.select') }}</span>
+</a>
+
+<input type="hidden" name="{{ field_type.input_name }}" value="{{ field_type.ids('id')|join(',') }}" {{ html_attributes(field_type.attributes) }} {{ field_type.disabled ? 'disabled' }} {{ field_type.readonly ? 'readonly' }}>
+
+<div class="selected">
+    {{ field_type.table|raw }}
+</div>
+
+<div class="modal remote" id="{{ field_type.field_name }}-modal">
+    <div class="modal-dialog modal-wide">
+        <div class="modal-content"></div>
+    </div>
+</div>

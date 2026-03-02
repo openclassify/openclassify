@@ -1,0 +1,57 @@
+.ads-box-image {
+    padding: 5px;
+    transition: transform 0.2s;
+}
+
+.ads-responsive-image {
+    height: 100px!important;
+}
+.ads-box-image:hover {
+    padding: 5px;
+    transform: scale(1.1);
+    opacity: 0.9;
+}
+.card-read-more {
+    margin: 0px;
+}
+.main-image {
+    background-color: #5cb85c;
+    height: 25px;
+    width: 40px;
+    color: #fff;
+    position: absolute;
+    z-index: 15;
+    right: 0;
+    top: 0;
+}
+#setimage,#rotateImage,#deleteImage {
+    padding: 9px 10px;
+    color: white;
+    border-radius: 0;
+    font-weight: bold;
+}
+/*Mobil Modu*/
+@media only screen and (max-width: 600px) {
+    .ads-box-image {
+        padding: 5px;
+        margin: 10px;
+    }
+    #setimage {
+        width: 27%;
+    }
+}
+
+/*Tablet Modu*/
+@media only screen and (max-width: 767px) and (min-width: 601px) {
+    #setimage {
+        width: 17%;
+    }
+    .ads-box-image {
+        padding: 5px;
+        margin: 10px;
+    }
+}
+
+.img-thumbnail {
+    padding: 0;
+}

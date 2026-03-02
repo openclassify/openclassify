@@ -70,7 +70,6 @@
         "anomaly/wysiwyg_block-extension": "~1.0.0",
         "visiosoft/decimal-field_type": "~2.1.0",
         "visiosoft/integer-field_type": "~2.1.0",
-        "visiosoft/list-field_type": "*",
         "visiosoft/addblock-extension": "^1.1",
         "google/recaptcha": "1.2.*",
         "sentry/sentry-laravel": "2.3.1",
@@ -90,7 +89,8 @@
         "visiosoft/advs-module": "^1.0",
         "visiosoft/json-field_type": "^1.0",
         "visiosoft/language_switcher-plugin": "^1.0",
-        "visiosoft/global_helper-extension": "*"
+        "visiosoft/global_helper-extension": "*",
+        "php-http/message-factory": "^1.1"
     },
     "replace": {
         "anomaly/streams-platform": "*"
@@ -146,7 +146,11 @@
         "preferred-install": "dist",
         "optimize-autoloader": true,
         "allow-plugins": {
-            "visiosoft/composer-merge-plugin": true
+            "visiosoft/composer-merge-plugin": true,
+            "php-http/discovery": true
+        },
+        "audit": {
+            "block-insecure": false
         }
     }
 }

@@ -1,0 +1,6 @@
+{% if setting_value('visiosoft.module.advs::extend_ad') %}
+    <a class='dropdown-item text-info' href='/advs/extend/{{ params.id }}'>
+        <i class='fas fa-calendar'></i>
+        {{ trans('visiosoft.module.profile::button.extend') }}
+    </a>
+{% endif %}

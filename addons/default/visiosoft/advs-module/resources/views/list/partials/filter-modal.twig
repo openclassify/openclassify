@@ -1,0 +1,77 @@
+<script>
+    let categories = {};
+        catsPlaceholder = '{{ trans("visiosoft.module.advs::field.categories.name") }}';
+</script>
+{{ asset_add('scripts.js','visiosoft.module.advs::js/filter_modal.js') }}
+<div class="modal fade" id="filterModal" tabindex="-1" role="dialog" aria-labelledby="filterModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ trans('visiosoft.module.advs::field.filter') }}</h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 border p-2 mb-2 mx-0 category-filter-modal">
+                    <label class="w-100">
+                        <b>{{ trans('visiosoft.module.advs::button.categories') }}</b>
+                    </label>
+                    <span class="edit-category-filter-modal position-absolute">
+                        <a href="javascript:;">
+                            <i class="fas fa-pencil-alt"></i>
+                            {{ trans('visiosoft.module.advs::button.edit') }}
+                        </a>
+                    </span>
+                    <a href="javascript:;"
+                       class="text-decoration-none text-truncate d-block selected-category-name">
+
+                        {% if category %}
+                            {% for category_breadcrumbs in mainCats %}
+                                {{ category_breadcrumbs['name'] }}
+                                {% if count(mainCats) != loop.index %}
+                                    ,
+                                {% endif %}
+                            {% endfor %}
+                        {% endif %}
+                    </a>
+                </div>
+                <div id="modalListFilterForm">
+                    {% include 'visiosoft.module.advs::list/partials/list-filter' with {"filter_id": 'listFilterFormMobile'} %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="categoryModal" tabindex="-1" role="dialog" aria-labelledby="filterModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{ trans('visiosoft.module.advs::field.set_category') }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="col-12 row m-0 p-0 category-row"></div>
+                <div class="col-12 col-md-3 py-2 px-0 category-box">
+                    <button type="button" data-selected="{{ app.request.get('cat') }}"
+                            class="btn btn-primary btn-sm w-100 set_category">
+                        {{ trans('visiosoft.module.advs::button.save_category') }}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% if not allCats %}
+    <script>
+        var key = 1;
+
+        $.each({{ mainCats|json_encode|raw }}, function (index, value) {
+            categories['cat' + key] = value.id;
+            key++;
+        });
+    </script>
+{% endif %}

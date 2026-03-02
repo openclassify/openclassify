@@ -1,0 +1,17 @@
+{% extends template.layout ?: "theme::layouts/default" %}
+
+{% block content %}
+    {% set neighborhood = getNeighborhood(app.request.get('village')) %}
+    {% set district = getDistrict(neighborhood ? neighborhood.parent_district_id :app.request.get('neighborhoods')) %}
+    {% set city = getCity(district ? district.parent_city_id : app.request.get('districts')) %}
+    {% set country = getCountry(city ? city.parent_country_id : app.request.get('cities')) %}
+
+    <span class="m-1 font-weight-bold">
+        {{ country ? country.name }}
+        {{ city ? "/ " ~ city.name }}
+        {{ district ? "/ " ~ district.name }}
+        {{ neighborhood ? "/ " ~neighborhood.name }}
+    </span>
+
+    {{ content|raw }}
+{% endblock %}

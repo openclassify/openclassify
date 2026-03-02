@@ -1,0 +1,94 @@
+{{ asset_add("scripts.js", "streams::js/table/table.js") }}
+
+{% if not actions.isEmpty() %}
+    {{ asset_add("scripts.js", "streams::js/table/actions.js") }}
+{% endif %}
+
+{% if table.options.sortable %}
+    {{ asset_add("scripts.js", "streams::js/table/sortable.js") }}
+{% endif %}
+
+<div class="{{ table.options.container_class ?: 'container-fluid' }}">
+
+    {{ view("streams::table/partials/filters", {'table': table}) }}
+    {{ view("streams::table/partials/views", {'table': table}) }}
+
+    {{ view(table.options.heading ?: "streams::table/partials/heading", {'table': table}) }}
+
+    {% if not table.rows.isEmpty() %}
+        {% block card %}
+            <div class="card">
+
+                {{ form_open({ 'url': table.options.url ?: url_full() }) }}
+                <div class="table-stack">
+                    <table
+                            class="
+                                {{ table.options.class ?: 'table' }}
+                                {{ table.options.sortable ? 'table--sortable' }}
+                                "
+                            {{ table.options.sortable ? 'data-sortable' }}
+                            {{ html_attributes(table.options.attributes) }}>
+
+                        {{ view("streams::table/partials/header", {'table': table}) }}
+
+                        {% block body %}
+                            <tbody>
+                            {% for row in table.rows %}
+                                <tr id="{{ loop.index }}" class="{{ row.class }}">
+
+                                    {% if table.options.sortable %}
+                                        <td>
+                                            {{ icon('fa fa-arrows handle') }}
+                                            <input type="hidden" name="{{ row.table.options.prefix }}order[]"
+                                                   value="{{ row.key }}"/>
+                                        </td>
+                                    {% endif %}
+
+                                    {% if not table.actions.isEmpty() %}
+                                        <td>
+                                            <input type="checkbox" data-toggle="action"
+                                                   name="{{ row.table.options.prefix }}id[]" value="{{ row.key }}"/>
+                                        </td>
+                                    {% endif %}
+
+                                    {% for column in row.columns %}
+                                        <td data-title="{{ trans(column.heading) }}"
+                                            class="{{ column.class }}" {{ html_attributes(column.attributes) }}>
+                                            {{ (column.attributes.html) ? column.attributes.html|raw : column.value|raw }}
+                                        </td>
+                                    {% endfor %}
+
+                                    <td class="text-lg-right">
+                                        <nobr>{{ buttons(row.buttons)|raw }}</nobr>
+                                    </td>
+
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+
+                        {% endblock %}
+
+                        {{ view("streams::table/partials/footer", {'table': table}) }}
+
+                    </table>
+                </div>
+                {{ form_close() }}
+
+            </div>
+        {% endblock %}
+    {% else %}
+
+        {% block no_results %}
+            <div class="card">
+                <div class="card-block card-body">
+                    {{ trans(table.options.get('no_results_message', 'streams::message.no_results')) }}
+                </div>
+            </div>
+        {% endblock %}
+
+    {% endif %}
+
+</div>
+<script>
+    var advanced_update_url = "{{ url_route('visiosoft.module.advs::ajax_multiple_update') }}";
+</script>

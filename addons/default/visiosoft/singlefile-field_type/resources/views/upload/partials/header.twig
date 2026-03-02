@@ -1,0 +1,19 @@
+<div class="modal-header">
+    <h5 class="modal-title">
+        {{ folder.name }}
+
+        <small>{% if folder.description %}
+                <br>
+                <small class="text-muted">{{ folder.description }}</small>
+                <span class="tag tag-info">Max:
+            {{ max_upload_size() }} MB</span>
+            {% endif %}
+            {% if folder.allowed_types.value %}
+                {{ folder.allowed_types.labels|join(' ')|raw }}
+            {% endif %}
+        </small>
+    </h5>
+    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+    </button>
+</div>

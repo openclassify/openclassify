@@ -1,0 +1,35 @@
+{% set sub_categories_limit = setting_value('visiosoft.theme.base::home_page_sub_categories_limit') %}
+{% set showAdsCount = setting_value('visiosoft.module.advs::show_ads_count') %}
+
+<div class="col left-categories-section mx-0">
+    <ul class="categories-list p-0 d-none d-sm-block mb-0">
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ img('visiosoft.theme.base::images/popular-ads.png').url }}" class="img-responsive">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?sort_by=popular" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.base::field.popular_ads') }}
+                </span>
+            </a>
+        </li>
+        <li class="categories-list-li category-icon border-bottom-0 mt-0">
+            <img src="{{ img('visiosoft.theme.base::images/last-48-hours.png').url }}" class="img-responsive">
+            <a href="{{ url_route('visiosoft.module.advs::list') }}?date=two_days" class="main-category">
+                <span class="text-dark">
+                    {{ trans('visiosoft.theme.base::field.last_48_hours') }}
+                </span>
+            </a>
+        </li>
+        {{ addBlock('base/leftSidebar')|raw }}
+    </ul>
+    {{ addBlock('base/categoriesRow')|raw }}
+    <div class="col-12 p-0 m-0">
+        {% set cats = getCategoriesLevel2() %}
+        {% for main_category in cats.maincats %}
+            {% include "visiosoft.theme.base::partials/categories-web" %}
+            {% include "visiosoft.theme.base::partials/categories-mobile" %}
+        {% endfor %}
+    </div>
+    <div class="col-12 p-0 m-0 d-none d-sm-block">
+        {{ setting_value('visiosoft.theme.base::home_bottom_left_categories')|raw }}
+    </div>
+</div>

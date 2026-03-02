@@ -1,0 +1,297 @@
+{% set hideStandard = setting_value('visiosoft.module.advs::hide_listing_standard_price') %}
+{% set listLocation = setting_value('visiosoft.module.location::list_page_location') %}
+{% set showDate = setting_value('visiosoft.theme.base::date_fields') %}
+
+<style>
+    @media print {
+        .w-100 {
+            width: 100% !important;
+        }
+
+        .table-responsive {
+            display: block;
+            width: 100%;
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .doping_type4 {
+            background-color: #f9f0e3 !important;
+            font-weight: bold;
+        }
+
+        .doping_type4 {
+            background-color: #d5e8fb !important;
+        }
+
+        .doping_type4 .showcase-sticker {
+            left: 0;
+            top: 5px;
+            font-size: 12px;
+            background-color: #16DA3F;
+            color: #fff;
+            padding: 0 .3rem;
+        }
+
+        .listing-top-message {
+            display: none !important;
+        }
+
+        .text-center {
+            text-align: center !important;
+        }
+
+        .text-white {
+            color: #fff !important;
+        }
+
+        #listing table {
+            border-collapse: separate;
+            border-spacing: 0 0.25rem;
+        }
+
+
+        #listing table thead tr th:first-child {
+            border-top-left-radius: 0.25rem;
+        }
+
+        #listing table thead tr th {
+            background-color: #3f475f;
+            font-weight: 400;
+            font-size: calc(12rem / 16);
+            padding: 0.2rem;
+        }
+
+        .text-nowrap {
+            white-space: nowrap !important;
+        }
+
+        th {
+            text-align: inherit;
+        }
+
+        #listing table tbody tr {
+            background-color: #f6f6f6;
+        }
+
+
+        #listing table tbody tr td:first-child {
+            width: 17%;
+            border-radius: 0.25rem 0 0 0.25rem;
+        }
+
+
+        #listing table tbody tr td {
+            padding: 0.4rem 0;
+        }
+
+        .text-left {
+            text-align: left !important;
+        }
+
+        .pl-2, .px-2 {
+            padding-left: 0.5rem !important;
+        }
+
+
+        #listing table tbody tr td h6 {
+            font-size: calc(14rem / 16);
+            color: #489af1;
+        }
+
+        .mb-1, .my-1 {
+            margin-bottom: 0.25rem !important;
+        }
+
+        .h6, h6 {
+            font-size: 1rem;
+        }
+
+        .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            line-height: 1.2;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+        }
+
+
+        #listing table tbody tr td .cat-data {
+            font-size: calc(12rem / 16);
+            color: rgba(34, 34, 34, 0.4);
+        }
+
+        #listing p {
+            margin-bottom: 0;
+        }
+
+        .mb-1, .my-1 {
+            margin-bottom: 0.25rem !important;
+        }
+
+        p {
+            margin-top: 0;
+            margin-bottom: 1rem;
+        }
+
+        *, ::after, ::before {
+            box-sizing: border-box;
+        }
+
+
+        #listing table tbody tr td .action-data {
+            color: #a1a1a1;
+            font-size: calc(8rem / 16);
+        }
+
+        .text-truncate {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+
+        .align-items-center {
+            -ms-flex-align: center !important;
+            align-items: center !important;
+        }
+
+        .d-flex {
+            display: -ms-flexbox !important;
+            display: flex !important;
+        }
+
+        /*.d-none {*/
+        /*    display: none !important;*/
+        /*}*/
+        #listing table tbody tr td.location-data, #listing table tbody tr td.date-data {
+            width: 13%;
+            font-size: calc(13rem / 16);
+            color: #707070;
+        }
+
+        #listing table tbody tr td {
+            padding: 0.4rem 0;
+        }
+
+        #listing table tbody tr td.price-data {
+            width: 20%;
+            color: #d33023;
+            font-weight: 700;
+        }
+
+        #listing table tbody tr td:last-child {
+            border-radius: 0 0.25rem 0.25rem 0;
+        }
+
+        #listing table tbody tr td img {
+            width: 6.5rem;
+            height: 5rem;
+            object-fit: cover;
+        }
+        .rounded {
+            border-radius: 0.25rem!important;
+        }
+        img {
+            vertical-align: middle;
+            border-style: none;
+        }
+    }
+</style>
+
+<div id="listing" class="w-100 table-responsive">
+    <table class="w-100 text-center">
+
+        <thead>
+        <tr class="text-white d-none d-sm-table-row">
+            <th class="text-nowrap" colspan="2">{{ trans('visiosoft.module.advs::field.ad_title') }}</th>
+
+            {% for cF in listingCFs %}
+                {% set isSortable = cF.isSortable %}
+                <th class="text-nowrap{{ isSortable ? ' sortable' }}{{ param.sort_by == 'cf_' ~ cF.id ~ '_desc' ? ' sort-by sort-desc' : (param.sort_by == 'cf_' ~ cF.id ~ '_asc' ? ' sort-by') }}"
+                    data-sort-asc="{{ 'cf_' ~ cF.id ~ '_asc' }}" data-sort-desc="{{ 'cf_' ~ cF.id ~ '_desc' }}">
+                    {{ cF.name }}
+                    {% if isSortable %}
+                    {% endif %}
+                </th>
+            {% endfor %}
+
+            {% if listLocation %}
+                <th class="text-nowrap sortable {{ param.sort_by != 'address_z_a' ?: 'sort-desc' }}"
+                    data-sort-asc="address_a_z" data-sort-desc="address_z_a">
+                    {% set firstLocationType = setting_value('visiosoft.module.advs::location_data_type_first') %}
+                    {% set secondLocationType = setting_value('visiosoft.module.advs::location_data_type_second') %}
+                    {{ trans('visiosoft.module.advs::field.'~firstLocationType~'.name') }}
+                    / {{ trans('visiosoft.module.advs::field.'~secondLocationType~'.name') }}
+                </th>
+            {% endif %}
+            {% if setting_value('visiosoft.module.advs::market_place') and showDate %}
+                <th class="text-nowrap sortable {{ param.sort_by != 'sort_time_newest' ?: 'sort-desc' }}"
+                    data-sort-asc="sort_time_oldest" data-sort-desc="sort_time_newest">
+                    {{ trans('visiosoft.module.advs::field.date.name') }}
+                </th>
+            {% endif %}
+            <th class="text-nowrap sortable {{ param.sort_by != 'sort_price_up' ?: 'sort-desc' }}"
+                data-sort-asc="sort_price_down" data-sort-desc="sort_price_up">
+                {{ trans('visiosoft.module.advs::field.price.name') }}
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+
+        {{ addBlock('ad-list/partials/ads', {'featured_advs': featured_advs, 'vars': _context})|raw }}
+
+        {% for adv in advs %}
+            <tr class="{{ adv.doping_type ? 'doping_type' ~ adv.doping_type }}">
+                <td>
+                    <img src="{{ adv.thumbnail }}" class="rounded"
+                         alt="{{ adv.name }}">
+                </td>
+                <td class="text-left pl-2">
+                    <h6 class="mb-1">
+                        {{ adv.name }}
+                    </h6>
+                    {% if not setting_value('visiosoft.module.advs::hide_ad_cat') %}
+                        <p class="cat-data mb-1">{{ adv.cat1_name }} /{{ adv.cat2_name }}</p>
+                    {% endif %}
+                </td>
+
+                {% for listingCF in listingCFs %}
+                    {% set feature = adv.features[listingCF.slug.value] %}
+                    <td class="location-data d-none d-sm-table-cell">{{ feature ? feature.custom_field_value : '-' }}</td>
+                {% endfor %}
+
+                {% if listLocation %}
+                    <td class="location-data d-none d-sm-table-cell">
+                        {% set firstLocationType = setting_value('visiosoft.module.advs::location_data_type_first') %}
+                        {% set secondLocationType = setting_value('visiosoft.module.advs::location_data_type_second') %}
+                        <p>{{ getListingLocation(firstLocationType,adv) }}</p>
+                        <p>{{ getListingLocation(secondLocationType,adv) }}</p>
+                    </td>
+                {% endif %}
+                {% if setting_value('visiosoft.module.advs::market_place') and showDate %}
+                    <td class="date-data d-none d-sm-table-cell">
+                        <p>{{ adv.publish_at.value|date('d/m') }}</p>
+                        <p>{{ adv.publish_at.value|date('Y') }}</p>
+                    </td>
+                {% endif %}
+                <td class="price-data">
+                    {% if not hideStandard %}
+                        <p class="text-nowrap">
+                            <s>
+                                {{ adv.standard_price != adv.price and adv.standard_price != '0' ? currency_format(adv.standard_price,adv.currency) : '' }}
+                            </s>
+                        </p>
+                    {% endif %}
+                    <p class="text-nowrap">
+                        {{ adv.price != '0' ? currency_format(adv.price,adv.currency) : setting_value("visiosoft.module.advs::hide_zero_price") ? '-' : trans('visiosoft.module.advs::field.free') }}
+                    </p>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>

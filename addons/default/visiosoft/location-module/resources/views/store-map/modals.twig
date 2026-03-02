@@ -1,0 +1,102 @@
+<!-- The modal -->
+<div class="modal fade" id="editAddress" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">
+                    {{ trans("visiosoft.module.profile::field.create.name") }}
+                    {{ trans("visiosoft.module.profile::field.menu_address.name") }}
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <fieldset>
+                    <div class="section">
+                        <div class="row">
+                            <div class="col-md-12">
+                                {% set form = form('profile', 'adress').get() %}
+                                {{ form_open({
+                                    'class': 'form ' ~ form.options.class ,
+                                    'enctype': 'multipart/form-data',
+                                    'id': 'newAdd-address',
+                                    'url': url_route('visiosoft.module.profile::adress_ajax_create'),
+                                })|raw }}
+                                <fieldset>
+                                    <div class="section postdetails">
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                {{ form.fields.adress_name|raw }}
+                                            </div>
+                                            <div class="col-sm-6">
+                                                {{ form.fields.adress_gsm_phone|raw }}
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-sm-6">
+                                                {{ form.fields.adress_first_name|raw }}
+                                            </div>
+                                            <div class="col-sm-6">
+                                                {{ form.fields.adress_last_name|raw }}
+                                            </div>
+                                        </div>
+
+                                        <div class="row form-group location-map">
+                                            <div class="col-sm-4">
+                                                <label class="control-label">{{ trans("visiosoft.module.profile::field.country.name") }}</label>
+                                                <div class="input-wrapper">
+                                                    <select name="country" class="custom-select form-control"
+                                                            data-content="{{ adress.country.id }}"
+                                                            data-field_name="adress_country_id"
+                                                            data-provides="anomaly.field_type.select">
+                                                        {% for countryField in getCountries() %}
+                                                            <option value="{{ countryField.id }}">{{ countryField.name }}</option>
+                                                        {% endfor %}
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                {{ form.fields.city|raw }}
+                                            </div>
+                                            <div class="col-sm-4">
+                                                {{ form.fields.district|raw }}
+
+                                            </div>
+
+                                        </div>
+                                        <div class="row form-group location-map">
+                                            <div class="col-sm-12">
+                                                <div class="add-title">
+                                                    {{ form.fields.adress_content|raw }}
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-sm-12">
+                                            <button class="btn btn-sm btn-success" value="save" type="submit">
+                                                <i class="fa fa-save "></i>
+                                                {{ trans('streams::button.save') }}
+                                            </button>
+                                            <button type="button" class="btn btn-sm btn-secondary"
+                                                    data-dismiss="modal">{{ trans("visiosoft.module.carts::button.close") }}</button>
+
+                                        </div>
+                                    </div><!-- section -->
+
+
+                                </fieldset>
+                            </div>
+                        </div>
+                        {{ form.close|raw }}
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}"
+</script>
+{{ asset_add("scripts.js", "visiosoft.theme.base::js/phonefield.js") }}

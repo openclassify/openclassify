@@ -1,0 +1,239 @@
+    {% for field in fields %}
+        {% if (field=='category') %}
+            <div class="field-group col-sm-24 {{ field }}">
+                {% for field in form.fields.translations(field) %}
+                    {{ field.input | raw }}
+                {% endfor %}
+            </div>
+        {% else %}
+            {% if (field == 'price' or field == 'currency' ) %}
+                {% if (field == 'price') %}
+                    <div class="row">
+                        <div class="field-group col-sm-18 {{ field }}">
+                            {% for field in form.fields.translations(field) %}
+                                {{ field.render({'form': form})|raw }}
+                            {% endfor %}
+                        </div>
+                        {% set field = 'currency' %}
+                        <div class="field-group col-sm-6 {{ field }}">
+                            {% for field in form.fields.translations(field) %}
+                                {{ field.render({'form': form})|raw }}
+                            {% endfor %}
+                        </div>
+                    </div>
+                {% endif %}
+            {% elseif(field=='country' or field=='city' or field=='district' or field=='neighborhood') %}
+                {% if(field=='country') %}
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <div class="field-group col-sm-24 {{ field }}">
+                                {% for field in form.fields.translations(field) %}
+                                    {{ field.render({'form': form})|raw }}
+                                {% endfor %}
+                            </div>
+                            {% set field = 'city' %}
+                            <div class="field-group col-sm-24 {{ field }}">
+                                {% for field in form.fields.translations(field) %}
+                                    {{ field.render({'form': form})|raw }}
+                                {% endfor %}
+                            </div>
+                            {% set field = 'district' %}
+                            <div class="field-group col-sm-24 {{ field }}">
+                                {% for field in form.fields.translations(field) %}
+                                    {{ field.render({'form': form})|raw }}
+                                {% endfor %}
+                            </div>
+                            {% set field = 'neighborhood' %}
+                            <div class="field-group col-sm-24 {{ field }}">
+                                {% for field in form.fields.translations(field) %}
+                                    {{ field.render({'form': form})|raw }}
+                                {% endfor %}
+                            </div>
+                        </div>
+                        <div class="col-sm-18">
+                            <div id="map-canvas" style="
+                                position: absolute; overflow: hidden;
+                                transform: translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px) translateZ(0px);
+                                width: 68%;
+                                height:442px;
+                                margin-top: 31px;
+                                margin-left: 282px;
+                                background-color: rgb(229, 227, 223);
+                            "></div>
+                        </div>
+                    </div>
+                {% endif %}
+            {% else %}
+                <div class="field-group col-sm-24 {{ field }}">
+                    {% for field in form.fields.translations(field) %}
+                        {{ field.render({'form': form})|raw }}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endif%}
+        {% if (field=='files') %}
+        <div class="field-group col-sm-24 {{ field }}">
+            {% for field in form.fields.translations(field) %}
+                {{ field.input | raw }}
+            {% endfor %}
+        </div>
+    {% endif %}
+    {% endfor %}
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCAGc0z8kg9rKGVy2FizFKoz0FoWWWzoGQ&callback="
+        type="text/javascript"></script>
+<script>
+    $(document).ready(function(){
+        categorySelect(0,0);
+    });
+    var mapOptions = {
+        center: new google.maps.LatLng(38.9573415, 35.2415759),
+        zoom: 6,
+        mapTypeId: google.maps.MapTypeId.STREET
+    };
+    var secildi = 0;
+    var marker;
+    var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+
+    function haritaIslem() {
+        var str = '';
+        if ($('.countryselect').val() != "") {
+            str += $('.countryselect :selected').text() + ' ';
+        }
+        if ($('.cityselect').val() != "") {
+            str += $('.cityselect :selected').text() + ' ';
+        }
+        if ($('.districtselect').val() != "") {
+            str += $('.districtselect :selected').text() + ' ';
+        }
+        if ($('.neighborhoodselect').val() != "") {
+            str += $('.neighborhoodselect :selected').text() + ' ';
+        }
+
+        console.log(str);
+
+        if (!str) {
+            return true;
+        }
+        str = str.replace(/\(.+\)/g, "").replace('  ', ' ');
+
+        var geocoder = new google.maps.Geocoder();
+        geocoder.geocode({'address': str}, function (results, status) {
+            if (status == google.maps.GeocoderStatus.OK) {
+                var searchLoc = results[0].geometry.location;
+                var lat = results[0].geometry.location.lat();
+                var lng = results[0].geometry.location.lng();
+                var latlng = new google.maps.LatLng(lat, lng);
+                var bounds = results[0].geometry.bounds;
+
+                if (bounds != undefined) {
+                    map.fitBounds(bounds);
+                }
+            }
+            if ($('.neighborhoodselect').val() != "" && $('.neighborhoodselect').val() != 0 && secildi == 0) {
+                secildi = 1;
+                console.log("event");
+                google.maps.event.addListener(map, 'click', function (event) {
+                    placeMarker(event.latLng);
+                });
+            }
+        });
+    }
+
+    function placeMarker(location) {
+        console.log(location);
+        var lat = location.lat();
+        var lng = location.lng();
+        console.log(lat, lng);
+        $(".mapVal").val(lat + "," + lng);
+        if (marker) {
+            marker.setPosition(location);
+            document.getElementById("latPosition").value = lat;
+            document.getElementById("lngPosition").value = lng;
+        } else {
+            marker = new google.maps.Marker({
+                position: location,
+                map: map
+
+            });
+        }
+    }
+    function getLocationData(cat, level, elem){
+        $.ajax({
+            type: "GET",
+            data: "cat=" + cat	+ "&level=" + level,
+            url: "{{ url_route('visiosoft.module.advs::ajax') }}",
+            success: function(msg){
+                $('.'+elem).find('option').remove();
+                $('.'+elem).append('<option value="">Choose an option...</option>');
+                $.each(msg, function(key, value){
+                    console.log(value.id);
+                    $('.'+elem).append('<option value="'+value.id+'">'+value.name+'</option>');
+                });   
+            },
+            beforeSend: function () {
+                showLoader()
+            }
+        });
+        haritaIslem(0);
+    }
+    $(document).on('change', '.countryselect', function(){
+        var cat =  $(this).val();
+        var level = 1;
+        getLocationData(cat, level, 'cityselect');
+    });
+    $(document).on('change', '.cityselect', function(){
+        var cat =  $(this).val();
+        var level = 2;
+        getLocationData(cat, level, 'districtselect');
+    });
+    $(document).on('change', '.districtselect', function(){
+        var cat =  $(this).val();
+        var level = 3;
+        console.log(cat);
+        getLocationData(cat, level, 'neighborhoodselect');
+    });
+    $(document).on('change', '.neighborhoodselect', function(){
+        var cat =  $(this).val();
+        var level = 4;
+        console.log(cat);
+        getLocationData(cat, level, '.villageselect');
+    });
+    $(document).on('change', '.villageselect', function(){
+        var cat =  $(this).val();
+        var level = 5;
+        console.log(cat);
+        haritaIslem(0);
+    });
+    function categorySelect(cat, level){
+        if(cat!=0){
+            cat = $(cat).val();
+        }
+        console.log(cat);
+        $.ajax({
+            type: "GET",
+            data: "cat=" + cat	+ "&level=" + level,
+            url: "{{ url_route('visiosoft.module.advs::ajaxCategory') }}",
+            success: function(msg){
+                if(msg.length>0){
+                    if(level!=0){
+                        $('#category'+level).find('option').remove();
+                    }
+                    if(level!=0){
+                        $('#advformcat').append('<div class="col-sm-6"><select class="form-control" size="15" id="category'+level+'" onchange="categorySelect(this,'+level+1+')"></select></div>');
+                    }
+                    $.each(msg, function(key, value){
+                        $('#category'+level).append('<option value="'+value.id+'">'+value.name+'</option>');
+                    });   
+                }else{
+                    // $("#advformcat").slideUp();
+                    $("select[name=category]").val(cat).attr('readonly',true);
+                    $("#advforminfo").removeClass("hidden");
+                }
+            },
+            beforeSend: function () {
+                showLoader()
+            }
+        });
+    }
+</script>

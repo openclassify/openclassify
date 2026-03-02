@@ -1,0 +1,15 @@
+{
+  "name": "visiosoft/json-field_type",
+  "type": "streams-addon",
+  "authors": [
+    {
+      "name": "Visiosoft, LTD.",
+      "email": "support@visiosoft.com.tr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Visiosoft\\JsonFieldType\\": "src/"
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{% if form.options.title or form.options.description %}
+    <div class="card">
+
+        {% if form.options.title %}
+            <div class="card-block">
+                <h4 class="card-title">
+                    {{ trans(form.options.title)|raw }}
+
+                    {% if form.options.description %}
+                        <small>
+                            <br>{{ trans(form.options.description)|raw }}
+                        </small>
+                    {% endif %}
+                </h4>
+            </div>
+        {% endif %}
+
+    </div>
+{% endif %}
+
+<script>
+    var default_country = "{{ setting_value('visiosoft.module.location::default_country') }}";
+    var default_city = "{{ setting_value('visiosoft.module.location::default_city') }}";
+    var default_district = "{{ setting_value('visiosoft.module.location::default_district') }}";
+    var pick_option = "{{ trans('visiosoft.module.location::field.pick_option.name') }}"
+</script>
+{{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/phone.js") }}
+
+{{ asset_add("scripts.js","visiosoft.module.profile::assets/js/location.js") }}

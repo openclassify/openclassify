@@ -1,0 +1,27 @@
+#main {
+    margin: 3rem 0;
+}
+
+.hidden {
+    display: none;
+}
+
+.table-img-100 {
+    max-width: 100px;
+}
+
+.loading {
+    background-image: url("{{ img('visiosoft.theme.base::images/loading.gif').url }}");
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+    height: 50px;
+    width: 100%;
+}
+
+@media only screen and (min-width: 960px) {
+    .login-section,
+    .register-section {
+        padding: 100px 50px;
+    }
+}

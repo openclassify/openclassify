@@ -1,0 +1,32 @@
+{% if params.showTheme is defined %}
+    {% set showTheme = params.showTheme %}
+{% else %}
+    {% set showTheme = true %}
+{% endif %}
+{% if showTheme and params.adv.show_phone_number.value %}
+    {% set user = params.adv.created_by %}
+    {% if user.gsm_phone is not null %}
+        <div class="col-md-12 m-2 number-container">
+            <button class="btn btn-secondary w-100">
+                <i class="fas fa-mobile hide-number text-warning"></i>
+                <span class="hide-number">{{ user.gsm_phone }}</span>
+            </button>
+        </div>
+    {% endif %}
+    {% if user.office_phone is not empty %}
+        <div class="col-md-12 m-2 number-container">
+            <button class="btn btn-secondary w-100">
+                <i class="fas fa-headset hide-number text-warning"></i>
+                <span class="hide-number">{{ user.office_phone }}</span>
+            </button>
+        </div>
+    {% endif %}
+    {% if user.land_phone is not empty %}
+        <div class="col-md-12 m-2 number-container">
+            <button class="btn btn-secondary w-100">
+                <i class="fa fa-phone-square hide-number text-warning"></i>
+                <span class="hide-number">{{ user.land_phone }}</span>
+            </button>
+        </div>
+    {% endif %}
+{% endif %}

@@ -1,0 +1,10 @@
+{% set Flags = entries('advs').Flags() %}
+<li class="{{ container.class }} language-navigation-field {{ toggle.class|raw }}">
+    <a href="#" class="{{ (a.class) ? a.class : 'dropdown-toggle' }}" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">{{ toggle.title|raw }}<span class="caret"></span></a>
+    <ul class="dropdown-menu">
+        {% for locale in locales %}
+            <li><a href="#" onclick="window.location = '?_locale={{ locale.name }}'">{% if locale.name in Flags %} <img src="{{ img('theme::images/flags/'~locale.name~'.png').url }}" class="lang-flag" > {% endif %}{{ trans('streams::locale.' ~ locale.name ~ '.name') }} ({{ locale.name }})</a></li>
+        {% endfor %}
+    </ul>
+</li>
+

@@ -1,0 +1,78 @@
+{% extends layout('posts') %}
+
+{% block styles %}
+    {{ asset_style("visiosoft.theme.base::css/post.scss") }}
+{% endblock %}
+
+{% block content %}
+    <div class="container m-0 p-0 mx-auto maxWidht w-100">
+        <div class="row p-0 m-0">
+            <article>
+                <div class="col-12 position-relative my-3">
+                    <div class="row justify-content-center flex-column align-items-center">
+                        <div class="post-category_name mb-2 mx-auto">
+                            {{ post.category.name }}
+                        </div>
+                        <h1 class="mb-0 mt-3">
+                            {{ post.title }}
+                        </h1>
+                        <h6 class="text-muted mb-0 mt-3">
+                            {{ post.summary }}
+                        </h6>
+                        <div class="d-flex flex-row align-items-center justify-content-center mt-3">
+                            <div class="author-image">
+                                {{ img(post.author.file.url ?? 'visiosoft.module.profile::images/profile-default.png').class('w-100 rounded-circle')|raw }}
+                            </div>
+                            <div class="d-flex flex-column">
+                                <div class="author-name">
+                                    {{ post.author.display_name }}
+                                </div>
+                                <div class="post-created_at">
+                                    {{ post.created_at|slice(0,10) }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="productImage mt-5 rounded">
+                        {{ img(post.cover_image.make.url).class('cover-image__detail')|raw }}
+                    </div>
+
+                    <div class="content mt-3">
+                        {% block post %}
+                            {{ content|raw }}
+                        {% endblock %}
+                    </div>
+
+                    <div class="container m-0 p-0 mx-auto mt-5">
+                        <div class="row p-0 m-0">
+                            <h5 class="related-posts-header mb-0 text-uppercase">
+                                {{ trans('visiosoft.theme.base::field.related_posts') }}
+                            </h5>
+                            <div class="w-100 border related-posts-bottom-divider mb-3"></div>
+                            <div class="row w-100 d-flex justify-content-center">
+                                {% if entries('posts','types').findBySlug('default') %}
+                                    {% set posts = entries('posts').where('slug', '!=', post.slug).type('default').live().limit(5).get() %}
+                                    {% for post in posts.slice(0,4) %}
+                                        <div class="bg-white rounded h-278 w-230 overflow-hidden mt-2 mx-2 w-225">
+                                            <a href="{{ post.route('view') }}"
+                                               class="fs-14 product p-0 mr-3 rounded position-relative bg-white link-dark text-decoration-none">
+                                                <div class="related-image-wrapper w-225">
+                                                    {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('related-image')|raw }}
+                                                </div>
+                                                <div class="product-text-area p-3">
+                                                    <div class="fw-500 text-dark single-line">
+                                                        {{ post.title }}
+                                                    </div>
+                                                </div>
+                                            </a>
+                                        </div>
+                                    {% endfor %}
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </div>
+{% endblock %}

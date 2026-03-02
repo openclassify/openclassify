@@ -1,0 +1,270 @@
+
+.productImage {
+  max-height: 700px;
+  overflow: hidden;
+}
+
+.bgSpecial_2 {
+  background-color: #516eab;
+}
+
+.bgSpecial_3 {
+  background-color: #29c5f6;
+}
+
+.bgSpecial_4 {
+  background-color: #eb4026;
+}
+
+.bgSpecial_5 {
+  background-color: #ca212a;
+}
+
+.paddingSpecial {
+  padding: 13px;
+  margin: 5px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.positionSpecial {
+  position: relative;
+  top: -100px;
+  @media (max-width: 768px) {
+    top: 0;
+  }
+}
+
+// POST LIST
+.textBlack {
+  color: black;
+  &:hover {
+    color: black;
+  }
+}
+
+.bannerImage_2 {
+  img {
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.lineGap_2 {
+  width: 100%;
+  height: 2px;
+  background: #fa0f19;
+}
+
+.bgForLight {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.8) 100%);
+  z-index: 99999;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.z-index {
+  z-index: 9999999999;
+}
+
+.fs-17px {
+  font-size: 17px;
+  @media (max-width:992px) {
+    font-size: 14px;
+  }
+}
+
+.bgSpecial_6 {
+  background-color: black;
+}
+
+.ImageWidth {
+  max-width: 80px;
+}
+
+.w-fit {
+  width: fit-content;
+}
+
+.fs-26 {
+  font-size: 26px;
+}
+
+.fs-10 {
+  font-size: 10px;
+}
+
+.left-zero {
+  left: 0;
+}
+.h-278{
+  height: 278px;
+}
+.w-225{
+  width: 225px;
+}
+.w-230{
+  width: 230px;
+}
+.w-600{
+  max-width: 600px;
+}
+
+.bottom-zero {
+  bottom: 0;
+}
+
+.slick-arrow {
+  width: auto;
+  height: auto;
+}
+
+.slick-next {
+  right: -40px;
+  @media (max-width: 768px){
+    right: 15px;
+  }
+}
+
+.slick-prev {
+  left: -40px;
+  z-index: 9999999;
+  @media (max-width: 768px) {
+    left: 15px;
+  }
+}
+
+.slick-prev:before,
+.slick-next:before {
+  color: black;
+  font-size: 40px;
+  opacity: 1;
+  @media (max-width: 768px) {
+    color: white;
+  }
+}
+.related-posts-header{
+  color:black;
+}
+.related-posts-bottom-divider{
+  border-color:black;
+}
+.related-image{
+  width: 100%;
+  object-fit: cover;
+  height: 220px;
+  margin-top: 5px;
+}
+.related-image-wrapper{
+  padding: 0 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.single-line{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight:500;
+}
+a:hover{
+  text-decoration: none;
+}
+.search-wrapper{
+  display: flex;
+  justify-content: space-between;
+  flex: 1 0 100%;
+}
+.searchbar{
+  position: relative;
+}
+fieldset.input-outline{
+  text-align: left;
+  position: absolute;
+  inset: 0px 0px 0px;
+  margin: 0px;
+  padding: 0px 8px;
+  pointer-events: none;
+  border-radius: 5px;
+  border-style: solid;
+  border-width: 1px;
+  overflow: hidden;
+  min-width: 0%;
+  border-color: rgba(0, 0, 0, 0.23);
+}
+input:hover + fieldset{
+  border-color: black;
+}
+input:focus + fieldset.input-outline{
+  border-color:#00AB55;
+  border-width: 2px;
+}
+input{
+  outline: none;
+  border: none;
+  width: 100%;
+  padding: 8px 0;
+}
+input::placeholder{
+  color:lightgrey;
+  font-weight: 300;
+}
+.dropdown-toggle::after{
+  border: none !important;
+}
+.search-wrapper a {
+  color:#00AB55 !important;
+}
+.post-category_name{
+  border: 1px solid rgb(189, 189, 189);
+  margin-top: 15px;
+  height: 30px;
+  line-height: 30px;
+  padding: 0 20px;
+  border-radius: 35px;
+  display: inline-block;
+  color: rgb(45, 55, 72);
+  font-size: 0.8125rem;
+  cursor: default;
+}
+.author-image{
+  width: 40px;
+  margin-right: 10px;
+}
+.author-name{
+  font-size: 14px;
+  margin-right: 10px;
+}
+.post-created_at{
+  font-size: 12px;
+  color: #707070
+}
+.container{
+  padding: 0 !important;
+}
+.cover-image{
+  width: 100%;
+  padding-bottom: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.cover-image__detail{
+  width: 100%;
+  height: 600px;
+  object-fit: cover;
+}
+.active .page-link{
+  background-color:#00AB55 !important;
+  border-color: #00AB55 !important;
+  color: white !important;
+}
+.page-link{
+  color:#00AB55 !important;
+}
+.page-link:focus {
+  box-shadow: 0 0 0 0.2rem rgb(0, 171, 85, .25);
+}

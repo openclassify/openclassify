@@ -1,0 +1,21 @@
+<div class="dropdown mr-2 my-2 my-lg-0 lang-dropdown">
+    <button class="btn dropdown-toggle pl-0" type="button" id="dropdownMenuButton" data-toggle="dropdown"
+            aria-haspopup="true" aria-expanded="false">
+                    <span class="flag mr-1 flag-{{ config('app.locale') }}"
+                          style='background-image: url("{{ img('visiosoft.theme.base::images/lang/flags.png').url() }}");'>
+                    </span>
+        {{ trans('streams::locale.' ~ config('app.locale') ~ '.name') }}
+        {{ toggle.title|raw }}
+    </button>
+    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        {% for iso in config('streams::locales.enabled') %}
+            <a class="dropdown-item px-3" href="#" onclick="window.location = '?_locale={{ iso }}';">
+                            <span class="flag align-middle mr-1 flag-{{ iso }}"
+                                  style='background-image: url("{{ img('visiosoft.theme.base::images/lang/flags.png').url() }}");'>
+                            </span>
+                <span class="align-middle">{{ trans('streams::locale.' ~ iso ~ '.name') }}</span>
+            </a>
+        {% endfor %}
+    </div>
+</div>
+{{ asset_add('styles.css','visiosoft.theme.base::css/flags.css') }}

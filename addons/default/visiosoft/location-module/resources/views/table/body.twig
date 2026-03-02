@@ -1,0 +1,31 @@
+<tbody>
+{% for row in table.rows %}
+    <tr id="{{ loop.index }}" class="{{ row.class }}">
+
+        {% if table.options.sortable %}
+            <td>
+                {{ icon('fa fa-arrows handle') }}
+                <input type="hidden" name="{{ row.table.options.prefix }}order[]" value="{{ row.key }}"/>
+            </td>
+        {% endif %}
+
+        {% if not table.actions.empty() %}
+            <td>
+                <input type="checkbox" data-toggle="action" name="{{ row.table.options.prefix }}id[]" value="{{ row.key }}"/>
+            </td>
+        {% endif %}
+
+        {% for column in row.columns %}
+            <td data-title="{{ trans(column.heading) }}"
+                class="{{ column.class }}" {{ html_attributes(column.attributes) }}>
+                {{ column.value|raw }}
+            </td>
+        {% endfor %}
+
+        <td class="text-lg-right">
+            {{ buttons(row.buttons)|raw }}
+        </td>
+
+    </tr>
+{% endfor %}
+</tbody>

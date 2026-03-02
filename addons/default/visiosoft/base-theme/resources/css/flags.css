@@ -1,0 +1,366 @@
+span.flag {
+    width: 31px;
+    height: 21px;
+    display: inline-block
+}
+
+img.flag {
+    width: 30px
+}
+
+
+.lang-dropdown .dropdown-toggle .flag {
+
+    vertical-align: sub;
+}
+
+.lang-dropdown .dropdown-menu {
+    max-height: 20rem;
+    overflow: auto;
+}
+
+
+.flag {
+    background-repeat: no-repeat;
+    background-size: 100%
+}
+
+.flag-ca {
+    background-position: 0 .413223%
+}
+
+.flag-ps {
+    background-position: 0 1.239669%
+}
+
+.flag-sq {
+    background-position: 0 2.479339%
+}
+
+.flag-hy {
+    background-position: 0 2.892562%
+}
+
+.flag-sm {
+    background-position: 0 4.958678%
+}
+
+.flag-az {
+    background-position: 0 6.61157%
+}
+
+.flag-bs {
+    background-position: 0 7.024793%
+}
+
+.flag-bn {
+    background-position: 0 7.85124%
+}
+
+.flag-bg {
+    background-position: 0 9.090909%
+}
+
+.flag-pt-br {
+    background-position: 0 12.809917%
+}
+
+.flag-dz {
+    background-position: 0 12.809917%
+}
+
+.flag-be {
+    background-position: 0 14.049587%
+}
+
+.flag-fr-ca {
+    background-position: 0 14.876033%
+}
+
+.flag-sg {
+    background-position: 0 16.115702%
+}
+
+.flag-rm {
+    background-position: 0 16.942149%
+}
+
+.flag-mi {
+    background-position: 0 17.768595%
+}
+
+.flag-zn {
+    background-position: 0 19.008264%
+}
+
+.flag-cs {
+    background-position: 0 21.900826%
+}
+
+.flag-de {
+    background-position: 0 22.31405%
+}
+
+.flag-da {
+    background-position: 0 23.140496%
+}
+
+.flag-et {
+    background-position: 0 25.206612%
+}
+
+.flag-ti {
+    background-position: 0 26.446281%
+}
+
+.flag-es {
+    background-position: 0 26.859504%
+}
+
+.flag-am {
+    background-position: 0 27.272727%
+}
+
+.flag-fi {
+    background-position: 0 27.68595%
+}
+
+.flag-fj {
+    background-position: 0 28.099174%
+}
+
+.flag-fo {
+    background-position: 0 29.338843%
+}
+
+.flag-fr {
+    background-position: 0 29.752066%
+}
+
+.flag-en {
+    background-position: 0 92.561983%
+}
+
+.flag-ka {
+    background-position: 0 30.991736%
+}
+
+.flag-kl {
+    background-position: 0 32.644628%
+}
+
+.flag-el {
+    background-position: 0 34.710744%
+}
+
+.flag-hr {
+    background-position: 0 38.429752%
+}
+
+.flag-ht {
+    background-position: 0 38.842975%
+}
+
+.flag-hu {
+    background-position: 0 39.256198%
+}
+
+.flag-id {
+    background-position: 0 39.669421%
+}
+
+.flag-ga {
+    background-position: 0 40.082645%
+}
+
+.flag-he {
+    background-position: 0 40.495868%
+}
+
+.flag-hi {
+    background-position: 0 40.909091%
+}
+
+.flag-fa {
+    background-position: 0 42.14876%
+}
+
+.flag-is {
+    background-position: 0 42.561983%
+}
+
+.flag-it, .flag-la {
+    background-position: 0 42.975207%
+}
+
+.flag-ja {
+    background-position: 0 44.214876%
+}
+
+.flag-ky {
+    background-position: 0 45.041322%
+}
+
+.flag-km {
+    background-position: 0 45.454545%
+}
+
+.flag-ko {
+    background-position: 0 47.520661%
+}
+
+.flag-kk {
+    background-position: 0 48.760331%
+}
+
+.flag-lo {
+    background-position: 0 49.173554%
+}
+
+.flag-ta, .flag-si {
+    background-position: 0 50.826446%
+}
+
+.flag-lt {
+    background-position: 0 52.066116%
+}
+
+.flag-lb {
+    background-position: 0 52.479339%
+}
+
+.flag-lv {
+    background-position: 0 52.892562%
+}
+
+.flag-mg {
+    background-position: 0 55.371901%
+}
+
+.flag-mh {
+    background-position: 0 55.785124%
+}
+
+.flag-mk {
+    background-position: 0 56.198347%
+}
+
+.flag-my {
+    background-position: 0 57.024793%
+}
+
+.flag-mn {
+    background-position: 0 57.438017%
+}
+
+.flag-ch {
+    background-position: 0 58.264463%
+}
+
+.flag-mt {
+    background-position: 0 59.917355%
+}
+
+.flag-dv {
+    background-position: 0 60.743802%
+}
+
+.flag-ms {
+    background-position: 0 61.983471%
+}
+
+.flag-nl {
+    background-position: 0 65.289256%
+}
+
+.flag-no {
+    background-position: 0 65.702479%
+}
+
+.flag-ne {
+    background-position: 0 66.115702%
+}
+
+.flag-ho {
+    background-position: 0 69.421488%
+}
+
+.flag-ur {
+    background-position: 0 70.247934%
+}
+
+.flag-pl {
+    background-position: 0 70.661157%
+}
+
+.flag-ro {
+    background-position: 0 74.380165%
+}
+
+.flag-sr {
+    background-position: 0 74.793388%
+}
+
+.flag-ru {
+    background-position: 0 75.206612%
+}
+
+.flag-rw {
+    background-position: 0 75.619835%
+}
+
+.flag-ar {
+    background-position: 0 76.033058%
+}
+
+.flag-sv {
+    background-position: 0 77.68595%
+}
+
+.flag-sk {
+    background-position: 0 79.752066%
+}
+
+.flag-so {
+    background-position: 0 81.404959%
+}
+
+.flag-th {
+    background-position: 0 85.950413%
+}
+
+.flag-tk {
+    background-position: 0 87.603306%
+}
+
+.flag-tr {
+    background-position: 0 89.256198%
+}
+
+.flag-uk {
+    background-position: 0 91.735537%
+}
+
+.flag-uz {
+    background-position: 0 94.214876%
+}
+
+.flag-vi {
+    background-position: 0 96.694215%
+}
+
+.flag-bi {
+    background-position: 0 97.107438%
+}
+
+.flag-sm {
+    background-position: 0 97.933884%
+}
+
+.flag-ts, .flag-nr, .flag-tn, .flag-zu, .flag-ve, .flag-af {
+    background-position: 0 98.760331%
+}
+
+.flag-sn, .flag-ny, .flag-to, .flag-nd, .flag-xh {
+    background-position: 0 100%
+}

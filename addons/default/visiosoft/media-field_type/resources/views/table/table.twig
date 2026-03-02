@@ -1,0 +1,19 @@
+{% if not actions.empty() %}
+    {{ asset_add("scripts.js", "streams::js/table/actions.js") }}
+{% endif %}
+
+{% if table.options.sortable %}
+    {{ asset_add("scripts.js", "streams::js/table/sortable.js") }}
+{% endif %}
+
+<div class="{{ table.options.container_class }}">
+    {% block panel %}
+        <div class="{{ table.options.panel_class }} panel-table">
+            <div>
+                {% block body %}
+                    {{ view("visiosoft.field_type.media::table/partials/body", {'table': table}) }}
+                {% endblock %}
+            </div>
+        </div>
+    {% endblock %}
+</div>

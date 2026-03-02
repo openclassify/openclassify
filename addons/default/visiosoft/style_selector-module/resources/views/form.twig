@@ -1,0 +1,44 @@
+{{ asset_add("scripts.js", "streams::js/form/form.js") }}
+{{ asset_add("scripts.js", "streams::js/form/keyboard.js") }}
+{{ asset_add("scripts.js", "streams::js/form/translations.js") }}
+
+{% if not form.options.locked %}
+    {{ asset_add("scripts.js", "streams::js/form/lock.js") }}
+{% endif %}
+
+{% block content %}
+
+    <div class="container-fluid">
+
+        {{ form.open({
+            'class': 'form ' ~ form.options.class,
+        })|raw }}
+
+        {#{% include "streams::form/partials/controls" with {"position": "top"} %}#}
+        {% include form.options.get('heading', "streams::form/partials/heading") %}
+
+        {% if not form.fields.isEmpty() %}
+            {% if form.sections.isEmpty() %}
+                <div class="card">
+                    {% include "streams::form/partials/header" with {"section": section} %}
+
+                    <div class="card-block card-body">
+
+                        {% for field in form.fields.base().pluck('field_name').all() %}
+                            {% if form.fields.translations(field).isNotEmpty() %}
+                                <div class="field-group {{ field }}">
+                                    {% for field in form.fields.translations(field) %}
+                                        {{ field.render({'form': form})|raw }}
+                                    {% endfor %}
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endif %}
+        {% endif %}
+        {% include "streams::form/partials/controls" %}
+        {{ form.close()|raw }}
+    </div>
+
+{% endblock %}

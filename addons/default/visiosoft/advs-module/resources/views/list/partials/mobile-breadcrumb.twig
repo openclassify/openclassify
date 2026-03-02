@@ -1,0 +1,10 @@
+<div id="breadcrumb">
+    <ul class="d-flex overflow-auto text-nowrap">
+        <li>
+            <a href="{{ url('/') }}">{{ trans("visiosoft.module.advs::field.home") }}</a>
+        </li>
+
+        {{ addBlock('ads-list/partials/breadcrumb-mobile', {'mainCats': mainCats, 'category': category})|raw }}
+
+    </ul>
+</div>

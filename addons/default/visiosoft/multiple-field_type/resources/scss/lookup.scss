@@ -1,0 +1,21 @@
+.multiple-field_type {
+
+    .selected {
+        margin-top: 15px;
+
+        table tr td {
+            padding: 0.5rem;
+            border-top: none;
+            border-bottom: none;
+
+            &:first-of-type {
+                width: 0;
+                padding-right: 15px;
+            }
+
+            &:last-of-type {
+                padding-left: 15px;
+            }
+        }
+    }
+}

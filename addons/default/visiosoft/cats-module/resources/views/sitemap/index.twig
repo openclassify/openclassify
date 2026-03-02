@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for i in 1..pagesCount %}
+        <sitemap>
+            <loc>{{ url('sitemap.xml/categories') }}?page={{ i }}</loc>
+        </sitemap>
+    {% endfor %}
+</sitemapindex>

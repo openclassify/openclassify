@@ -1,0 +1,74 @@
+{% extends layout('post-cat') %}
+
+{% block styles %}
+    <style>
+        {{ asset_inline("visiosoft.module.advs::css/post-category.css") }}
+    </style>
+{% endblock %}
+
+{% block content %}
+    <section class="clearfix ad-post-page">
+        {% include 'visiosoft.module.advs::new-ad/partials/steps' with {'step': 'post-cat'} %}
+
+        {% if setting_value('visiosoft.module.advs::show_breadcrumb_when_creating_ad') %}
+            {% include "visiosoft.module.advs::new-ad/partials/breadcrumb" %}
+        {% endif %}
+
+        <div id="ad-cat-section" class="border rounded shadow-sm bg-light py-4 px-3">
+            <h5 class="mb-3">
+                <img src="{{ img('visiosoft.module.advs::images/ascend.svg').url }}" class="step-icon mr-1">
+                {{ trans('visiosoft.module.advs::field.select_category_step_by_step') }}
+            </h5>
+            <form action="{{ url_route('visiosoft.module.advs::post_cat') }}" method="post" id="catSelectionStepForm">
+                {% for i in 1..10 %}
+                    <input type="hidden" name="cat{{ i }}">
+                {% endfor %}
+
+                <div class="d-flex category-tab pb-3">
+                    <div class="pr-2 cat-item mb-2 focus-select">
+                        <div class="section cat-option select-category post-option card px-1">
+                            <ul class="cat-select mx-0 mb-0 mt-2 py-0 pl-0 pr-1" name="cat1" id="cat1" style="height: 14rem" multiple>
+                                {% for cat in main_cats %}
+                                    <li class="text-truncate pl-1 my-1" data-value="{{ cat.id }}">
+                                        {{ cat.name }}
+                                    </li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </div>
+
+                    {% for i in 2..10 %}
+                        <div class="pr-2 cat-item mb-2 cat-item-2">
+                            <div class="section cat-option select-category post-option card px-1">
+                                <ul class="cat-select mx-0 mb-0 mt-2 py-0 pl-0 pr-1" name="cat{{ i }}" id="cat{{ i }}" multiple></ul>
+                            </div>
+                        </div>
+                    {% endfor %}
+
+                    <div class="cat-item mb-2 shadow-sm border rounded align-items-center mr-2">
+                        <div class="cat-item-3">
+                            <div class="section next-stap post-option post-icon px-4 text-center py-2">
+                                <div class="cat-item-icons post-icon d-flex align-items-center justify-content-center">
+                                    {{ img('visiosoft.module.advs::images/check.svg').data|raw }}
+                                    {{ img('visiosoft.module.advs::images/cross.svg').data|raw }}
+                                </div>
+                                <div class="next-content"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-8 col-sm-offset-2 text-center">
+                        {{ blocks('center-add-ad-banner-area') }}
+                    </div>
+                </div>
+            </form>
+        </div>
+    </section>
+    <script>
+        let isRtl = '{{ locale().isRtl() }}';
+    </script>
+    {{ addBlock('post-cat/section') }}
+
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/cats.js") }}
+{% endblock %}

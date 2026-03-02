@@ -1,0 +1,149 @@
+{% extends layout('articles') %}
+
+{% block styles %}
+    {{ asset_style("visiosoft.theme.base::css/post.scss") }}
+{% endblock %}
+
+{% block content %}
+    {% set noImage = "visiosoft.theme.base::images/no-image.png" %}
+    <div class="container-fluid p-0 maxWidth bg-white mx-auto">
+        <div class="row p-0 m-0">
+
+            <div class="search-wrapper px-3">
+                <div class="w-50 d-flex searchbar">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="mx-2" width="20px" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z" clip-rule="evenodd"></path></svg>
+                    <form action="" class="w-100" method="GET">
+                        <input type="text" name="search" placeholder="{{ trans('theme::field.search_posts') }}" class="w-100">
+                    <fieldset class="input-outline"></fieldset>
+                    </form>
+                </div>
+                <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <span class="newest">
+                        <svg xmlns="http://www.w3.org/2000/svg"  width="18px" viewBox="0 0 20 20" fill="currentColor"><path d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h7a1 1 0 100-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM15 8a1 1 0 10-2 0v5.586l-1.293-1.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l3-3a1 1 0 00-1.414-1.414L15 13.586V8z"></path></svg>
+                    </span>
+                    <span class="sort-button">
+                        {%  if (app.request.get('order') == "newest") %}
+                            {% set posts = entries('posts').recent().paginate(6) %}
+                            {{ trans('theme::field.newest') }}
+                        {% elseif (app.request.get('order') == "oldest") %}
+                            {% set posts = entries('posts').orderBy('created_at','ASC').paginate(6) %}
+                            {{ trans('theme::field.oldest') }}
+                        {% else %}
+                            {% set posts = searchPost(app.request.get("search")).paginate(6) %}
+                            {{ trans('theme::field.newest') }}
+                        {% endif %}
+                    </span>
+                </a>
+                    <div class="dropdown-menu mr-3" aria-labelledby="dropdownMenuLink">
+                            <a class="dropdown-item" href="/posts?order=oldest">
+                                <span class="sort-button text-dark">
+                                    {{ trans('theme::field.oldest') }}
+                                </span>
+                            </a>
+                            <a class="dropdown-item" href="/posts?order=newest">
+                                <span class="sort-button text-dark">
+                                    {{ trans('theme::field.newest') }}
+                                </span>
+                            </a>
+                    </div>
+
+            </div>
+            {% for post in posts %}
+                {% set cover_image = file(post.getRelations.entry.cover_image_id) %}
+                <div class="col-xl-4 col-lg-6 col-12 p-3">
+                    <a href="{{ post.route('view') }}" class="text-decoration-none m-3">
+                        <div class="cover-image rounded" style="background-image: url('{{ cover_image.make.url ?: img(noImage).url}}')">
+                        </div>
+                        <div class="post-category_name mb-2">
+                            {{ post.category.first().name }}
+                        </div>
+
+                        <div class="my-2 fw-400 textBlack single-line d-flex align-items-center">
+                            <div class="author-image">
+                                {{ img(post.author.first().file.url ?? 'visiosoft.module.profile::images/profile-default.png').class('w-100 rounded-circle')|raw  }}
+                            </div>
+                            <div class="author-name ml-2">
+                                {{ post.author.first().display_name }}
+                            </div>
+                            <div class="post-created_at">
+                                {{ post.created_at|slice(0,10) }}
+                            </div>
+                        </div>
+                        <div class="h3 my-2 fw-400 text-dark">
+                            {{ post.title }}
+                        </div>
+                        <div class="h6 my-2 fw-400 text-muted single-line">
+                            {{ post.summary }}
+                        </div>
+                    </a>
+                </div>
+            {% endfor %}
+        </div>
+            <div>
+                {{ posts.links|raw }}
+            </div>
+    </div>
+    {% set selectedCats = setting_value('visiosoft.theme.base::list_cats') %}
+    {% for selectedCat in selectedCats %}
+        <div class="container p-0 m-0 maxWidth bg-white mx-auto">
+            {% set posts = entries('posts').where('category_id', selectedCat).recent().paginate(2) %}
+            {% if posts|length %}
+                <div class="row p-4 p-0 m-0">
+                    <div class="col-12 my-4">
+                        <div class="fs-18 font-weight-bold text-uppercase">{{ posts.first.category.name }}</div>
+                        <div class="lineGap_2 mt-1"></div>
+                    </div>
+                    <div class="col-md-8 col-12">
+                        <div class="position-relative w-fit shadow-sm">
+                            <a href="{{ posts.first.route('view') }}">
+                                {{ img( posts.first.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png')
+                                    .class('w-100')|raw }}
+                                <div class="bgForLight"></div>
+                                <div class="d-flex flex-column position-absolute p-4 bottom-zero left-zero z-index">
+                                    <div class="text-uppercase bgSpecial_6 fs-12 text-white w-fit p-1 font-weight-bold px-2">
+                                        {{ posts.first.category.name }}
+                                    </div>
+                                    <div class="text-white fs-26">{{ posts.first.title.value }}</div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-12 mt-md-0 mt-4">
+
+                        {% for post in posts|slice(1, 3) %}
+                            {% if loop.first %}
+                                <div class="position-relative w-fit shadow-sm">
+                                    <a href="{{ post.route('view') }}">
+                                    {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png').class('w-100')|raw }}
+                                    <div class="bgForLight"></div>
+                                    <div class="d-flex flex-column position-absolute p-4 bottom-zero left-zero z-index">
+                                        <div class="text-white fs-17px">{{ post.title }}</div>
+                                        <div class="text-capitalize bg-white mt-2 fs-10 textBlack w-fit p-1 px-2">
+                                            {{ post.category.name }}
+                                        </div>
+                                    </div>
+                                    </a>
+                                </div>
+                            {% else %}
+                                <div class="d-flex my-3">
+                                    <a href="{{ post.route('view') }}" class="d-flex text-dark">
+                                        {{ img( post.cover_image.make.url ?? 'visiosoft.theme.base::images/no-image.png')
+                                            .class('ImageWidth mr-3 w-100')|raw }}
+                                        <div class="d-flex flex-column">
+                                            <div class="text-capitalize fw-500 fs-13">{{ post.title }}</div>
+                                            <div class="text-capitalize bgSpecial_6 mt-2 fs-10 text-white w-fit p-1 px-2">
+                                                {{ post.category.name }}
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {{ posts.links|raw }}
+                </div>
+            {% endif %}
+        </div>
+    {% endfor %}
+{% endblock %}

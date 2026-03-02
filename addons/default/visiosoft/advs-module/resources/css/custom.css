@@ -1,0 +1,46 @@
+@media only screen and (min-width: 1004px) and (max-width: 1366px) {
+    .advs-desc {
+        width: 200px;
+    }
+}
+@media only screen and (min-width: 1367px) {
+    .advs-desc {
+        overflow: hidden;
+        display: flex;
+        -webkit-line-clamp: 1;
+        white-space: nowrap;
+        width: 300px;
+        padding-right: 10px;
+    }
+    .advs-name {
+        width: 20%;
+        overflow: hidden;
+        word-wrap: break-word;
+        white-space: pre-line;
+        text-overflow: ellipsis;
+        -webkit-line-clamp: 1;
+    }
+    .advs-status {
+        width: 5%;
+    }
+    .advs-cat1 , advs-country , .advs-currency , .advs-price {
+        width: 5%;
+
+    }
+}
+
+/* Admin filter */
+.select2-container--default .select2-selection--single {
+    height: calc(2.5rem - 2px);
+    display: flex;
+    align-items: center;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 0.17rem;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+    top: unset;
+}
+.navbar-collapse {
+    padding-left: 15px !important;
+}

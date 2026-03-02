@@ -1,0 +1,24 @@
+{{ asset_add('styles.css', 'visiosoft.field_type.singlefile::less/upload.less') }}
+
+{{ asset_add('scripts.js', 'visiosoft.field_type.singlefile::js/dropzone.min.js') }}
+{{ asset_add('scripts.js', 'visiosoft.field_type.singlefile::js/upload.js') }}
+
+{% for path in asset_paths("styles.css") %}
+    {{ html_style(path) }}
+{% endfor %}
+
+{% for path in asset_paths("scripts.js") %}
+    {{ html_script(path) }}
+{% endfor %}
+
+<div id="upload">
+
+    {% include "visiosoft.field_type.singlefile::upload/partials/header" %}
+    {% include "visiosoft.field_type.singlefile::upload/partials/body" %}
+    {% include "visiosoft.field_type.singlefile::upload/partials/template" %}
+
+    <div class="uploaded px-3">
+        {{ table.content|raw }}
+    </div>
+
+</div>

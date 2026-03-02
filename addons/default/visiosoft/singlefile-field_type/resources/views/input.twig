@@ -1,0 +1,28 @@
+{{ asset_add('scripts.js', 'visiosoft.field_type.singlefile::js/input.js') }}
+
+{% if not (field_type.readonly) %}
+    {% if field_type.config.mode in ['default', 'select'] %}
+        <a data-toggle="modal" data-target="#{{ field_type.input_name }}-modal" class="btn btn-info btn-xs"
+           href="{{ url('streams/singlefile-field_type/index/' ~ field_type.config_key) }}">{{ trans('visiosoft.field_type.singlefile::button.select_file') }}</a>
+    {% endif %}
+
+    {% if field_type.config.mode in ['default', 'upload'] %}
+        <a data-toggle="modal"
+           data-target="#{{ field_type.input_name }}-modal" {% if field_type.config.folders|length == 1 %} href="{{ url('streams/singlefile-field_type/upload/' ~ field_type.config.folders|first) }}" {% else %} href="{{ url('streams/singlefile-field_type/choose/' ~ field_type.config_key) }}" {% endif %}
+           class="btn btn-success btn-xs">{{ trans('visiosoft.field_type.singlefile::button.upload') }}</a>
+        {{ trans('visiosoft.field_type.singlefile::message.choose_file_option') }}
+    {% endif %}
+{% endif %}
+
+<input type="hidden" name="{{ field_type.input_name }}"
+       value="{{ field_type.value.id ?: field_type.value }}" data-field_name="{{ field_type.input_name }}" {{ html_attributes(field_type.attributes) }} {{ field_type.disabled ? 'disabled' }} {{ field_type.readonly ? 'readonly' }}>
+
+<div class="selected file-rows-table">
+    {{ field_type.value_table|raw }}
+</div>
+
+<div class="modal remote" id="{{ field_type.input_name }}-modal">
+    <div class="modal-dialog modal-wide">
+        <div class="modal-content"></div>
+    </div>
+</div>

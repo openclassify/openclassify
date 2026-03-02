@@ -1,0 +1,41 @@
+{% extends layout('edit-cat') %}
+
+{% block content %}
+    <div class="container">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item text-primary">
+                    {{ trans('visiosoft.module.advs::field.home') }}
+                </li>
+                <li class="breadcrumb-item text-primary">
+                    {{ adv.name }}
+                </li>
+                <li class="breadcrumb-item text-primary">
+                    <i class="fas fa-pencil-alt"></i>
+                    <b>
+                        {{ trans('visiosoft.module.advs::field.edit_category') }}
+                    </b>
+                </li>
+
+            </ol>
+        </nav>
+
+        <div class="section">
+            <form action="{{ url_route('adv::edit_category',[id]) }}" method="post">
+                <input type="hidden" name="id" value="{{ id }}">
+                <div class="row category-row"></div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        var categories = JSON.parse("{{ categories|json_encode() }}".replace(/&quot;/g, '"'));
+        var id_list = JSON.parse("{{ categories|json_encode() }}".replace(/&quot;/g, '"'));
+        var continue_btn = "{{ trans('visiosoft.module.advs::field.continue') }}";
+        var continue_message = "{{ trans('visiosoft.module.advs::field.post_free_ad') }}";
+        var search = "{{ trans('visiosoft.module.advs::field.search') }}";
+    </script>
+
+    {{ asset_add("scripts.js", "visiosoft.module.advs::js/edit_cats.js") }}
+    {{ asset_style("visiosoft.module.advs::css/edit_category.css") }}
+{% endblock %}

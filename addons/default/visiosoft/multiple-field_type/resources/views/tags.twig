@@ -1,0 +1,22 @@
+{{ asset_add("styles.css", "visiosoft.field_type.multiple::css/choices.css", ["as:jshjohnson/Choices.css"]) }}
+{{ asset_add("scripts.js", "visiosoft.field_type.multiple::js/choices.min.js", ["as:jshjohnson/Choices.js"]) }}
+{{ asset_add("styles.css", "visiosoft.field_type.multiple::css/tags.css") }}
+{{ asset_add("scripts.js", "visiosoft.field_type.multiple::js/tags.js") }}
+
+<select multiple
+        data-key="{{ field_type.key }}"
+        name="{{ field_type.input_name }}[]"
+        data-placeholder="{{ trans(field_type.placeholder) }}"
+        {{ html_attributes(field_type.attributes) }}
+        {{ field_type.disabled ? 'disabled' }}
+        {{ field_type.readonly ? 'readonly' }}>
+
+    {% for key, title in field_type.options %}
+        <option {{ key in field_type.ids ? 'selected' }} value="{{ key }}">{{ title }}</option>
+    {% endfor %}
+
+</select>
+
+<small class="text-muted">
+    {{ trans('visiosoft.field_type.multiple::input.help') }}
+</small>

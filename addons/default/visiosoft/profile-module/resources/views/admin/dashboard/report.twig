@@ -1,0 +1,48 @@
+{% set reports = [
+    {
+        'title': trans('visiosoft.module.profile::field.new_membership_report'),
+        'id': 'newMemberReport',
+        'columns': [
+            trans('visiosoft.module.profile::field.member'),
+            trans('visiosoft.module.profile::field.registered_at'),
+        ],
+    },
+    {
+        'title': trans('visiosoft.module.profile::field.member_login_reports'),
+        'id': 'loginMemberReport',
+        'columns': [
+            trans('visiosoft.module.profile::field.member'),
+            trans('visiosoft.module.profile::field.login_at'),
+        ],
+    },
+] %}
+
+{% for report in reports %}
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header bg-warning">
+                <h5 class="card-title text-white">{{ report.title }}</h5>
+            </div>
+
+            <div class="card-block">
+                <table id="{{ report.id }}" class="display">
+                    <thead>
+                    <tr>
+                        {% for column in report.columns %}
+                            <th>{{ column }}</th>
+                        {% endfor %}
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+        </div>
+    </div>
+{% endfor %}
+
+<script>
+    const usersReportTrans = {
+        undefined_member: `{{ trans('visiosoft.module.profile::field.undefined_member') }}`,
+    };
+</script>
+
+{{ asset_add('scripts.js', 'visiosoft.module.profile::assets/js/admin/dashboard/report.js') }}

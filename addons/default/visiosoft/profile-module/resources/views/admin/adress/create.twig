@@ -1,0 +1,6 @@
+{% extends "theme::layouts/default" %}
+{% block content %}
+    {{ form('profile','adress')
+    .redirect('admin/profile/adress')|raw }}
+    {{ asset_add("scripts.js", "visiosoft.module.profile::assets/js/country.js") }}
+{% endblock %}

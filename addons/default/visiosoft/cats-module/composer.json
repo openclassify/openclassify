@@ -1,0 +1,19 @@
+{
+  "name": "visiosoft/cats-module",
+  "type": "streams-addon",
+  "description": "It allows you to create unlimited subcategories for the Advs module and to manage your postings by category.",
+  "authors": [
+    {
+      "name": "Vedat Akdoğan.",
+      "email": "vedat@visiosoft.com.tr"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "Visiosoft\\CatsModule\\": "src/"
+    }
+  },
+  "require": {
+    "visiosoft/advs-module": "*"
+  }
+}

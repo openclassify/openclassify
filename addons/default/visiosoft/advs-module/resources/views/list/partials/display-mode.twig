@@ -1,0 +1,22 @@
+<div class="d-flex rounded ml-1">
+    <div class="d-flex px-2 align-items-center">
+        <p class="text-nowrap">{{ trans('visiosoft.module.advs::field.view') }}</p>
+        <div class="d-flex">
+            <a href="{{ url_route('visiosoft.module.advs::view_type', ['list']) }}" rel="nofollow"
+               class="mr-2{{ not request().cookie.viewType or request().cookie.viewType == "list" ? ' active' }}"
+               data-toggle="tooltip" data-placement="top" title="{{ trans('visiosoft.module.advs::field.list') }}">
+                {{ img('visiosoft.module.advs::images/listing/list-type.svg').data|raw }}
+            </a>
+            <a href="{{ url_route('visiosoft.module.advs::view_type', ['gallery']) }}" rel="nofollow"
+               class="{{ request().cookie.viewType == "gallery" ? ' active' }}" data-toggle="tooltip"
+               data-placement="top" title="{{ trans('visiosoft.module.advs::field.gallery') }}">
+                {{ img('visiosoft.module.advs::images/listing/gallery-type.svg').data|raw }}
+            </a>
+        </div>
+    </div>
+
+    {% include "visiosoft.module.advs::list/partials/list-sort-by" %}
+
+</div>
+
+{{ asset_add('scripts.js', 'visiosoft.module.advs::js/list.js') }}

@@ -1,0 +1,25 @@
+@media only screen and (min-width: 768px) {
+    .forgot-wrapper {
+        padding-top: 4em;
+        padding-bottom: 4em;
+        padding-left: 4.25em;
+        border: 1px solid #dee2e6!important;
+    }
+}
+@media only screen and (min-width: 768px) {
+    .forgot-form-wrapper {
+        width: 20em !important;
+    }
+}
+.forgot-img {
+    height: 11em;
+    width: 10em;
+}
+.forgot-wrapper label {
+    font-size: 14px;
+}
+@media only screen and (min-width: 768px) {
+    .forgot-form-wrapper button {
+        width: initial !important;
+    }
+}

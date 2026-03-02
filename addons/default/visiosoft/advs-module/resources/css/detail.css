@@ -1,0 +1,26 @@
+.ad-detail-tabs .nav-link.active {
+    background-color: #FFC106;
+    border-color: #ffc107 #ffc107 #ffc107;
+}
+
+.ad-price-standard {
+    color: #f00;
+    text-decoration: line-through;
+}
+
+.ad-price-standard-percentage {
+    background-color: #f00;
+    font-size: 16px;
+}
+
+/* Pending screen */
+.pending-screen {
+    background-color: #f2f2f2;
+    color: #b31901;
+}
+.pending-screen img {
+    height: 7em;
+}
+.pending-screen p {
+    font-weight: 500;
+}
