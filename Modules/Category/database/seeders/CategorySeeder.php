@@ -3,32 +3,33 @@ namespace Modules\Category\Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use Modules\Category\Models\Category;
-use Illuminate\Support\Str;
 
 class CategorySeeder extends Seeder
 {
     public function run(): void
     {
         $categories = [
-            ['name' => 'Electronics', 'icon' => '📱', 'children' => ['Mobile Phones', 'Laptops & Computers', 'Tablets', 'Cameras', 'Audio']],
-            ['name' => 'Vehicles', 'icon' => '🚗', 'children' => ['Cars', 'Motorcycles', 'Trucks', 'Boats']],
-            ['name' => 'Real Estate', 'icon' => '🏠', 'children' => ['Apartments for Rent', 'Houses for Sale', 'Commercial', 'Land']],
-            ['name' => 'Furniture', 'icon' => '🛋️', 'children' => ['Sofas', 'Beds', 'Tables', 'Wardrobes']],
-            ['name' => 'Fashion', 'icon' => '👗', 'children' => ['Women', 'Men', 'Kids', 'Accessories']],
-            ['name' => 'Jobs', 'icon' => '💼', 'children' => ['IT & Technology', 'Marketing', 'Sales', 'Education']],
-            ['name' => 'Services', 'icon' => '🔧', 'children' => ['Home Repair', 'Tutoring', 'Design', 'Cleaning']],
-            ['name' => 'Sports & Hobbies', 'icon' => '⚽', 'children' => ['Sports Equipment', 'Musical Instruments', 'Books', 'Games']],
+            ['name' => 'Electronics', 'slug' => 'electronics', 'icon' => 'laptop', 'children' => ['Phones', 'Computers', 'Tablets', 'TVs']],
+            ['name' => 'Vehicles', 'slug' => 'vehicles', 'icon' => 'car', 'children' => ['Cars', 'Motorcycles', 'Trucks', 'Boats']],
+            ['name' => 'Real Estate', 'slug' => 'real-estate', 'icon' => 'home', 'children' => ['For Sale', 'For Rent', 'Commercial']],
+            ['name' => 'Fashion', 'slug' => 'fashion', 'icon' => 'shirt', 'children' => ['Men', 'Women', 'Kids', 'Shoes']],
+            ['name' => 'Home & Garden', 'slug' => 'home-garden', 'icon' => 'sofa', 'children' => ['Furniture', 'Garden', 'Appliances']],
+            ['name' => 'Sports', 'slug' => 'sports', 'icon' => 'football', 'children' => ['Outdoor', 'Fitness', 'Team Sports']],
+            ['name' => 'Jobs', 'slug' => 'jobs', 'icon' => 'briefcase', 'children' => ['Full Time', 'Part Time', 'Freelance']],
+            ['name' => 'Services', 'slug' => 'services', 'icon' => 'wrench', 'children' => ['Cleaning', 'Repair', 'Education']],
         ];
 
-        foreach ($categories as $catData) {
+        foreach ($categories as $index => $data) {
             $parent = Category::firstOrCreate(
-                ['slug' => Str::slug($catData['name'])],
-                ['name' => $catData['name'], 'icon' => $catData['icon'] ?? null, 'level' => 0, 'is_active' => true]
+                ['slug' => $data['slug']],
+                ['name' => $data['name'], 'slug' => $data['slug'], 'icon' => $data['icon'], 'level' => 0, 'sort_order' => $index, 'is_active' => true]
             );
-            foreach ($catData['children'] as $childName) {
+
+            foreach ($data['children'] as $i => $childName) {
+                $childSlug = $data['slug'] . '-' . \Illuminate\Support\Str::slug($childName);
                 Category::firstOrCreate(
-                    ['slug' => Str::slug($childName)],
-                    ['name' => $childName, 'parent_id' => $parent->id, 'level' => 1, 'is_active' => true]
+                    ['slug' => $childSlug],
+                    ['name' => $childName, 'slug' => $childSlug, 'parent_id' => $parent->id, 'level' => 1, 'sort_order' => $i, 'is_active' => true]
                 );
             }
         }
