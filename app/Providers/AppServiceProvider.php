@@ -12,6 +12,7 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
+use Modules\Location\Models\Country;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 use Throwable;
 
@@ -209,7 +210,30 @@ class AppServiceProvider extends ServiceProvider
                 ->visible(insidePanels: count($availableLocales) > 1, outsidePanels: false);
         });
 
+        $headerLocationCountries = [];
+
+        try {
+            if (Schema::hasTable('countries') && Schema::hasTable('cities')) {
+                $headerLocationCountries = Country::query()
+                    ->where('is_active', true)
+                    ->orderBy('name')
+                    ->get(['id', 'name', 'code'])
+                    ->map(function (Country $country): array {
+                        return [
+                            'id' => (int) $country->id,
+                            'name' => (string) $country->name,
+                            'code' => strtoupper((string) $country->code),
+                        ];
+                    })
+                    ->values()
+                    ->all();
+            }
+        } catch (Throwable) {
+            $headerLocationCountries = [];
+        }
+
         View::share('generalSettings', $generalSettings);
+        View::share('headerLocationCountries', $headerLocationCountries);
     }
 
     private function normalizeCurrencies(array $currencies): array

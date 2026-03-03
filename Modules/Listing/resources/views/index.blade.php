@@ -46,10 +46,11 @@
     @endauth
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-        @foreach($listings as $listing)
+        @forelse($listings as $listing)
         @php
             $listingImage = $listing->getFirstMediaUrl('listing-images');
             $isFavorited = in_array($listing->id, $favoriteListingIds ?? [], true);
+            $conversationId = $conversationListingMap[$listing->id] ?? null;
         @endphp
         <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition border border-slate-200">
             <div class="bg-gray-200 h-48 flex items-center justify-center relative">
@@ -84,14 +85,32 @@
                 </p>
                 <p class="text-xs text-slate-500 mt-1 truncate">{{ $listing->category?->name ?: 'Kategori yok' }}</p>
                 <p class="text-gray-500 text-sm mt-1">{{ $listing->city }}, {{ $listing->country }}</p>
-                <a href="{{ route('listings.show', $listing) }}" class="mt-3 block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">View</a>
+                <div class="mt-3 grid grid-cols-1 gap-2">
+                    <a href="{{ route('listings.show', $listing) }}" class="block text-center bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">View</a>
+                    @auth
+                        @if($listing->user_id && (int) $listing->user_id !== (int) auth()->id())
+                            @if($conversationId)
+                            <a href="{{ route('favorites.index', ['tab' => 'listings', 'conversation' => $conversationId]) }}" class="block text-center border border-rose-300 text-rose-600 py-2 rounded hover:bg-rose-50 transition text-sm font-semibold">
+                                Sohbete Git
+                            </a>
+                            @else
+                            <form method="POST" action="{{ route('conversations.start', $listing) }}">
+                                @csrf
+                                <button type="submit" class="w-full border border-rose-300 text-rose-600 py-2 rounded hover:bg-rose-50 transition text-sm font-semibold">
+                                    Mesaj Gönder
+                                </button>
+                            </form>
+                            @endif
+                        @endif
+                    @endauth
+                </div>
             </div>
         </div>
         @empty
         <div class="md:col-span-2 lg:col-span-3 xl:col-span-4 border border-dashed border-slate-300 rounded-xl py-14 text-center text-slate-500">
             Bu filtreye uygun ilan bulunamadı.
         </div>
-        @endforeach
+        @endforelse
     </div>
     <div class="mt-8">{{ $listings->links() }}</div>
 </div>

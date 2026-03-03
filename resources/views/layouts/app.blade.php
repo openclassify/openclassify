@@ -11,6 +11,9 @@
     $partnerRegisterRoute = route('register');
     $partnerLogoutRoute = route('filament.partner.auth.logout');
     $partnerCreateRoute = route('partner.listings.create');
+    $partnerQuickCreateRoute = auth()->check()
+        ? route('filament.partner.resources.listings.quick-create', ['tenant' => auth()->id()])
+        : $partnerLoginRoute;
     $partnerDashboardRoute = auth()->check()
         ? route('filament.partner.pages.dashboard', ['tenant' => auth()->id()])
         : $partnerLoginRoute;
@@ -28,6 +31,12 @@
         'ja' => '日本語',
     ];
     $isHomePage = request()->routeIs('home');
+    $homeHeaderCategories = isset($categories) ? collect($categories)->take(8) : collect();
+    $locationCountries = collect($headerLocationCountries ?? [])->values();
+    $defaultCountryIso2 = strtoupper((string) config('app.default_country_iso2', 'TR'));
+    $citiesRouteTemplate = \Illuminate\Support\Facades\Route::has('locations.cities')
+        ? route('locations.cities', ['country' => '__COUNTRY__'])
+        : '';
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ in_array(app()->getLocale(), ['ar']) ? 'rtl' : 'ltr' }}">
@@ -84,6 +93,41 @@
             border-radius: 999px;
         }
 
+        .header-utility {
+            width: 2.75rem;
+            height: 2.75rem;
+            border-radius: 999px;
+            border: 1px solid #d9ddea;
+            background: #fff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            color: #64748b;
+            transition: all 0.2s ease;
+        }
+
+        .header-utility:hover {
+            border-color: #fda4af;
+            color: #f43f5e;
+        }
+
+        .location-panel {
+            width: min(90vw, 360px);
+        }
+
+        .location-panel select {
+            border: 1px solid #d9ddea;
+            border-radius: 0.75rem;
+            background: #f8fafc;
+            color: #334155;
+            padding: 0.55rem 0.75rem;
+            font-size: 0.875rem;
+        }
+
+        summary::-webkit-details-marker {
+            display: none;
+        }
+
         [dir="rtl"] {
             text-align: right;
         }
@@ -99,6 +143,7 @@
                     @endif
                     <span class="brand-mark text-3xl text-rose-500 leading-none">{{ $siteName }}</span>
                 </a>
+
                 <form action="{{ route('listings.index') }}" method="GET" class="hidden lg:flex flex-1 search-shell items-center gap-2 px-4 py-2.5">
                     <svg class="w-5 h-5 text-rose-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
@@ -114,17 +159,65 @@
                         {{ __('messages.search') }}
                     </button>
                 </form>
-                <button type="button" class="chip-btn hidden md:flex items-center gap-2 px-4 py-2 text-sm text-slate-700">
-                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/>
-                        <circle cx="12" cy="10" r="2.3" stroke-width="1.8" />
-                    </svg>
-                    <span>Istanbul, Türkiye</span>
-                    <svg class="w-4 h-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
-                    </svg>
-                </button>
+
+                <details class="relative hidden md:block" data-location-widget data-cities-url-template="{{ $citiesRouteTemplate }}">
+                    <summary class="chip-btn list-none cursor-pointer px-4 py-2.5 text-sm text-slate-700 inline-flex items-center gap-2">
+                        <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/>
+                            <circle cx="12" cy="10" r="2.3" stroke-width="1.8" />
+                        </svg>
+                        <span data-location-label class="max-w-44 truncate">Konum seç</span>
+                        <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </summary>
+                    <div class="location-panel absolute right-0 mt-2 bg-white border border-slate-200 shadow-xl rounded-2xl p-4 space-y-3">
+                        <div class="flex items-center justify-between gap-3">
+                            <p class="text-sm font-semibold text-slate-900">Konum Tercihi</p>
+                            <button type="button" data-location-detect class="text-xs font-semibold text-rose-500 hover:text-rose-600 transition">Konumumu Bul</button>
+                        </div>
+                        <p data-location-status class="text-xs text-slate-500">Tarayıcı konumuna göre ülke ve şehir otomatik seçilebilir.</p>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-slate-600">Ülke</label>
+                            <select data-location-country class="w-full">
+                                <option value="">Ülke seç</option>
+                                @foreach($locationCountries as $country)
+                                <option
+                                    value="{{ $country['id'] }}"
+                                    data-code="{{ strtoupper($country['code'] ?? '') }}"
+                                    data-name="{{ $country['name'] }}"
+                                    data-default="{{ strtoupper($country['code'] ?? '') === $defaultCountryIso2 ? '1' : '0' }}"
+                                >
+                                    {{ $country['name'] }}
+                                </option>
+                                @endforeach
+                            </select>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="block text-xs font-semibold text-slate-600">Şehir</label>
+                            <select data-location-city class="w-full" disabled>
+                                <option value="">Önce ülke seç</option>
+                            </select>
+                        </div>
+                        <button type="button" data-location-save class="w-full btn-primary px-4 py-2.5 text-sm font-semibold hover:brightness-95 transition">Uygula</button>
+                    </div>
+                </details>
+
                 <div class="ml-auto flex items-center gap-2 md:gap-3">
+                    @auth
+                    <a href="{{ route('favorites.index') }}" class="header-utility hidden xl:inline-flex" aria-label="Favoriler">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
+                        </svg>
+                    </a>
+                    <a href="{{ $partnerDashboardRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Panel">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10h14V10"/>
+                        </svg>
+                    </a>
+                    <a href="{{ $partnerQuickCreateRoute }}" class="hidden md:inline-flex px-4 py-2.5 text-sm font-semibold rounded-full border border-rose-200 text-rose-600 bg-rose-50 hover:bg-rose-100 transition">
+                        Post Fast
+                    </a>
                     <details class="relative">
                         <summary class="chip-btn list-none cursor-pointer px-3 py-2 text-xs md:text-sm text-slate-700">
                             {{ strtoupper(app()->getLocale()) }}
@@ -137,27 +230,28 @@
                             @endforeach
                         </div>
                     </details>
-                    @auth
-                    <a href="{{ route('favorites.index') }}" class="hidden sm:inline-flex text-sm font-medium text-slate-600 hover:text-slate-900 transition">Favorilerim</a>
-                    <a href="{{ $partnerDashboardRoute }}" class="hidden sm:inline-flex text-sm font-medium text-slate-600 hover:text-slate-900 transition">Panel</a>
-                    <a href="{{ $partnerCreateRoute }}" class="btn-primary px-4 md:px-5 py-2 text-sm font-semibold shadow-sm hover:brightness-95 transition">
-                        + {{ __('messages.post_listing') }}
+                    <a href="{{ $partnerCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
+                        Sat
                     </a>
-                    <form method="POST" action="{{ $partnerLogoutRoute }}" class="hidden sm:block">
+                    <form method="POST" action="{{ $partnerLogoutRoute }}" class="hidden xl:block">
                         @csrf
                         <button type="submit" class="text-sm text-slate-500 hover:text-rose-500 transition">{{ __('messages.logout') }}</button>
                     </form>
                     @else
-                    <a href="{{ $partnerLoginRoute }}" class="bg-rose-50 text-rose-500 px-4 md:px-5 py-2 rounded-full text-sm font-semibold hover:bg-rose-100 transition">
+                    <a href="{{ $partnerQuickCreateRoute }}" class="hidden md:inline-flex px-4 py-2.5 text-sm font-semibold rounded-full border border-rose-200 text-rose-600 bg-rose-50 hover:bg-rose-100 transition">
+                        Post Fast
+                    </a>
+                    <a href="{{ $partnerLoginRoute }}" class="bg-rose-50 text-rose-500 px-4 md:px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-rose-100 transition">
                         {{ __('messages.login') }}
                     </a>
-                    <a href="{{ $partnerCreateRoute }}" class="btn-primary px-4 md:px-5 py-2 text-sm font-semibold shadow-sm hover:brightness-95 transition">
-                        {{ __('messages.post_listing') }}
+                    <a href="{{ $partnerCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
+                        Sat
                     </a>
                     @endauth
                 </div>
             </div>
-            <div class="mt-3 lg:hidden">
+
+            <div class="mt-3 space-y-2 lg:hidden">
                 <form action="{{ route('listings.index') }}" method="GET" class="search-shell flex items-center gap-2 px-3 py-2.5">
                     <svg class="w-4 h-4 text-rose-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
@@ -171,8 +265,29 @@
                     >
                     <button type="submit" class="text-xs text-slate-500">{{ __('messages.search') }}</button>
                 </form>
+                <div class="flex items-center gap-2 overflow-x-auto pb-1">
+                    <span class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-slate-700" data-location-label-mobile>Konum seç</span>
+                    <a href="{{ $partnerQuickCreateRoute }}" class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-rose-600 font-semibold">Post Fast</a>
+                </div>
             </div>
-            @if(! $isHomePage)
+
+            @if($isHomePage && $homeHeaderCategories->isNotEmpty())
+            <div class="mt-4 border-t border-slate-200 pt-3 overflow-x-auto">
+                <div class="flex items-center gap-2 min-w-max pb-1">
+                    <a href="{{ route('categories.index') }}" class="chip-btn inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
+                        </svg>
+                        Tüm Kategoriler
+                    </a>
+                    @foreach($homeHeaderCategories as $headerCategory)
+                    <a href="{{ route('categories.show', $headerCategory) }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
+                        {{ $headerCategory->name }}
+                    </a>
+                    @endforeach
+                </div>
+            </div>
+            @elseif(! $isHomePage)
             <div class="mt-3 flex items-center gap-2 text-sm overflow-x-auto pb-1">
                 <a href="{{ route('home') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.home') }}</a>
                 <a href="{{ route('categories.index') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.categories') }}</a>
@@ -243,6 +358,303 @@
             </div>
         </div>
     </footer>
+    <script>
+        (() => {
+            const widgetRoots = Array.from(document.querySelectorAll('[data-location-widget]'));
+            const mobileLabels = Array.from(document.querySelectorAll('[data-location-label-mobile]'));
+            const storageKey = 'oc2.header.location';
+
+            if (widgetRoots.length === 0 && mobileLabels.length === 0) {
+                return;
+            }
+
+            const normalize = (value) => (value ?? '')
+                .toString()
+                .toLocaleLowerCase('tr-TR')
+                .normalize('NFD')
+                .replace(/[\u0300-\u036f]/g, '')
+                .trim();
+
+            const readStored = () => {
+                try {
+                    const raw = localStorage.getItem(storageKey);
+                    if (!raw) {
+                        return null;
+                    }
+
+                    return JSON.parse(raw);
+                } catch (error) {
+                    return null;
+                }
+            };
+
+            const writeStored = (value) => {
+                localStorage.setItem(storageKey, JSON.stringify(value));
+            };
+
+            const formatLocationLabel = (location) => {
+                if (!location || typeof location !== 'object') {
+                    return 'Konum seç';
+                }
+
+                const cityName = (location.cityName ?? '').toString().trim();
+                const countryName = (location.countryName ?? '').toString().trim();
+
+                if (cityName && countryName) {
+                    return cityName + ', ' + countryName;
+                }
+
+                if (countryName) {
+                    return countryName;
+                }
+
+                return 'Konum seç';
+            };
+
+            const updateLabels = (location) => {
+                const label = formatLocationLabel(location);
+                widgetRoots.forEach((root) => {
+                    const target = root.querySelector('[data-location-label]');
+                    if (target) {
+                        target.textContent = label;
+                    }
+                });
+                mobileLabels.forEach((target) => {
+                    target.textContent = label;
+                });
+            };
+
+            const loadCities = async (root, countryId, selectedCityId = null, selectedCityName = null) => {
+                const citySelect = root.querySelector('[data-location-city]');
+                const countrySelect = root.querySelector('[data-location-country]');
+                const statusText = root.querySelector('[data-location-status]');
+                const template = root.dataset.citiesUrlTemplate ?? '';
+
+                if (!citySelect || !countrySelect) {
+                    return;
+                }
+
+                if (!countryId || template === '') {
+                    citySelect.innerHTML = '<option value="">Önce ülke seç</option>';
+                    citySelect.disabled = true;
+                    return;
+                }
+
+                citySelect.disabled = true;
+                citySelect.innerHTML = '<option value="">Şehir yükleniyor...</option>';
+
+                try {
+                    const response = await fetch(template.replace('__COUNTRY__', encodeURIComponent(String(countryId))), {
+                        headers: {
+                            'X-Requested-With': 'XMLHttpRequest',
+                            'Accept': 'application/json',
+                        },
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('city_fetch_failed');
+                    }
+
+                    const cities = await response.json();
+                    const cityOptions = Array.isArray(cities) ? cities : [];
+
+                    citySelect.innerHTML = '<option value="">Şehir seç</option>';
+
+                    cityOptions.forEach((city) => {
+                        const option = document.createElement('option');
+                        option.value = String(city.id ?? '');
+                        option.textContent = city.name ?? '';
+                        option.dataset.name = city.name ?? '';
+                        citySelect.appendChild(option);
+                    });
+
+                    citySelect.disabled = false;
+
+                    if (selectedCityId) {
+                        citySelect.value = String(selectedCityId);
+                    } else if (selectedCityName) {
+                        const matched = Array.from(citySelect.options).find((option) => normalize(option.dataset.name) === normalize(selectedCityName));
+                        if (matched) {
+                            citySelect.value = matched.value;
+                        }
+                    }
+                } catch (error) {
+                    citySelect.innerHTML = '<option value="">Şehir yüklenemedi</option>';
+                    citySelect.disabled = true;
+                    if (statusText) {
+                        statusText.textContent = 'Şehir listesi alınamadı. Lütfen tekrar deneyin.';
+                    }
+                }
+            };
+
+            const saveFromInputs = (root, extra = {}) => {
+                const countrySelect = root.querySelector('[data-location-country]');
+                const citySelect = root.querySelector('[data-location-city]');
+                const details = root.closest('details');
+
+                if (!countrySelect || !citySelect || !countrySelect.value) {
+                    return;
+                }
+
+                const countryOption = countrySelect.options[countrySelect.selectedIndex];
+                const cityOption = citySelect.options[citySelect.selectedIndex];
+                const hasCitySelection = citySelect.value !== '';
+
+                const location = {
+                    countryId: Number(countrySelect.value),
+                    countryName: countryOption?.dataset.name ?? countryOption?.textContent ?? '',
+                    countryCode: (countryOption?.dataset.code ?? '').toUpperCase(),
+                    cityId: hasCitySelection ? Number(citySelect.value) : null,
+                    cityName: hasCitySelection ? (cityOption?.dataset.name ?? cityOption?.textContent ?? '') : '',
+                    updatedAt: new Date().toISOString(),
+                    ...extra,
+                };
+
+                writeStored(location);
+                updateLabels(location);
+
+                if (details && details.hasAttribute('open')) {
+                    details.removeAttribute('open');
+                }
+            };
+
+            const reverseLookup = async (latitude, longitude) => {
+                const language = (document.documentElement.lang || 'tr').split('-')[0];
+                const url = new URL('https://nominatim.openstreetmap.org/reverse');
+                url.searchParams.set('format', 'jsonv2');
+                url.searchParams.set('lat', String(latitude));
+                url.searchParams.set('lon', String(longitude));
+                url.searchParams.set('accept-language', language);
+
+                const response = await fetch(url.toString(), {
+                    headers: {
+                        'Accept': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error('reverse_lookup_failed');
+                }
+
+                const payload = await response.json();
+                const address = payload.address ?? {};
+
+                return {
+                    countryCode: (address.country_code ?? '').toUpperCase(),
+                    countryName: address.country ?? '',
+                    cityName: address.city ?? address.town ?? address.village ?? address.municipality ?? address.state_district ?? address.state ?? '',
+                };
+            };
+
+            const geolocationPosition = () => new Promise((resolve, reject) => {
+                if (!window.isSecureContext) {
+                    reject(new Error('secure_context_required'));
+                    return;
+                }
+
+                if (!('geolocation' in navigator)) {
+                    reject(new Error('geolocation_not_supported'));
+                    return;
+                }
+
+                navigator.geolocation.getCurrentPosition(resolve, reject, {
+                    enableHighAccuracy: true,
+                    timeout: 15000,
+                    maximumAge: 120000,
+                });
+            });
+
+            updateLabels(readStored());
+
+            widgetRoots.forEach((root) => {
+                const countrySelect = root.querySelector('[data-location-country]');
+                const citySelect = root.querySelector('[data-location-city]');
+                const saveButton = root.querySelector('[data-location-save]');
+                const detectButton = root.querySelector('[data-location-detect]');
+                const statusText = root.querySelector('[data-location-status]');
+                const stored = readStored();
+
+                if (!countrySelect || !citySelect || !saveButton) {
+                    return;
+                }
+
+                const applyStored = async () => {
+                    if (stored?.countryId) {
+                        countrySelect.value = String(stored.countryId);
+                        await loadCities(root, stored.countryId, stored.cityId, stored.cityName);
+                        return;
+                    }
+
+                    const defaultOption = Array.from(countrySelect.options).find((option) => option.dataset.default === '1');
+                    if (defaultOption) {
+                        countrySelect.value = defaultOption.value;
+                        await loadCities(root, defaultOption.value, null, null);
+                    }
+                };
+
+                void applyStored();
+
+                countrySelect.addEventListener('change', async () => {
+                    if (statusText) {
+                        statusText.textContent = 'Ülkeye göre şehirler güncelleniyor...';
+                    }
+                    await loadCities(root, countrySelect.value, null, null);
+                    if (statusText) {
+                        statusText.textContent = 'Şehir seçimini tamamlayıp uygulayabilirsiniz.';
+                    }
+                });
+
+                saveButton.addEventListener('click', () => {
+                    saveFromInputs(root);
+                    if (statusText) {
+                        statusText.textContent = 'Konum kaydedildi.';
+                    }
+                });
+
+                if (detectButton) {
+                    detectButton.addEventListener('click', async () => {
+                        if (statusText) {
+                            statusText.textContent = 'Konumunuz alınıyor...';
+                        }
+
+                        try {
+                            const position = await geolocationPosition();
+                            const latitude = position.coords.latitude;
+                            const longitude = position.coords.longitude;
+                            const guessed = await reverseLookup(latitude, longitude);
+
+                            let matchedCountry = Array.from(countrySelect.options).find((option) => option.dataset.code === guessed.countryCode);
+
+                            if (!matchedCountry && guessed.countryName) {
+                                matchedCountry = Array.from(countrySelect.options).find((option) => normalize(option.dataset.name) === normalize(guessed.countryName));
+                            }
+
+                            if (!matchedCountry) {
+                                if (statusText) {
+                                    statusText.textContent = 'Ülke eşleşmesi bulunamadı, lütfen manuel seçim yapın.';
+                                }
+                                return;
+                            }
+
+                            countrySelect.value = matchedCountry.value;
+                            await loadCities(root, matchedCountry.value, null, guessed.cityName);
+                            saveFromInputs(root, { latitude, longitude });
+
+                            if (statusText) {
+                                statusText.textContent = 'Konum otomatik seçildi.';
+                            }
+                        } catch (error) {
+                            if (statusText) {
+                                statusText.textContent = error?.message === 'secure_context_required'
+                                    ? 'Tarayıcı konumu için HTTPS gerekli. Lütfen siteyi güvenli bağlantıdan açın.'
+                                    : 'Konum alınamadı. Tarayıcı izinlerini kontrol edin.';
+                            }
+                        }
+                    });
+                }
+            });
+        })();
+    </script>
     <x-impersonate::banner />
 </body>
 </html>

@@ -15,8 +15,8 @@ class ListListings extends ListRecords
             CreateAction::make()
                 ->label('Manuel İlan Ekle'),
             Action::make('quickCreate')
-                ->label('Hızlı İlan Ver')
-                ->icon('heroicon-o-bolt')
+                ->label('AI ile Hızlı İlan Ver')
+                ->icon('heroicon-o-sparkles')
                 ->color('danger')
                 ->url(ListingResource::getUrl('quick-create', shouldGuessMissingParameters: true)),
         ];

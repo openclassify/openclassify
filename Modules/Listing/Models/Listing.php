@@ -20,13 +20,14 @@ class Listing extends Model implements HasMedia
 
     protected $fillable = [
         'title', 'description', 'price', 'currency', 'category_id',
-        'user_id', 'status', 'images', 'slug',
+        'user_id', 'status', 'images', 'custom_fields', 'slug',
         'contact_phone', 'contact_email', 'is_featured', 'expires_at',
         'city', 'country', 'latitude', 'longitude', 'location',
     ];
 
     protected $casts = [
         'images' => 'array',
+        'custom_fields' => 'array',
         'is_featured' => 'boolean',
         'expires_at' => 'datetime',
         'price' => 'decimal:2',
@@ -59,6 +60,11 @@ class Listing extends Model implements HasMedia
     {
         return $this->belongsToMany(\App\Models\User::class, 'favorite_listings')
             ->withTimestamps();
+    }
+
+    public function conversations()
+    {
+        return $this->hasMany(\App\Models\Conversation::class);
     }
 
     public function scopePublicFeed(Builder $query): Builder

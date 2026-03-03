@@ -18,25 +18,6 @@
 @endphp
 
 <div class="max-w-[1320px] mx-auto px-4 py-5 md:py-7 space-y-7">
-    <section class="bg-white border border-slate-200 rounded-2xl px-2 py-2 overflow-x-auto">
-        <div class="flex items-center gap-2 min-w-max">
-            <a href="{{ route('categories.index') }}" class="inline-flex items-center gap-2 px-4 py-2.5 rounded-full bg-slate-900 text-white text-sm font-semibold">
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
-                </svg>
-                Tüm Kategoriler
-            </a>
-            @foreach($menuCategories as $category)
-            <a href="{{ route('categories.show', $category) }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
-                {{ $category->name }}
-            </a>
-            @endforeach
-            <a href="{{ route('listings.index') }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
-                {{ __('messages.listings') }}
-            </a>
-        </div>
-    </section>
-
     <section class="relative overflow-hidden rounded-[28px] bg-gradient-to-r from-blue-900 via-blue-700 to-blue-600 text-white shadow-xl">
         <div class="absolute -top-20 -left-24 w-80 h-80 rounded-full bg-blue-400/20 blur-3xl"></div>
         <div class="absolute -bottom-24 right-10 w-80 h-80 rounded-full bg-cyan-300/20 blur-3xl"></div>

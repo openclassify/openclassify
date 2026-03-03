@@ -2,9 +2,11 @@
 namespace Modules\Listing\Http\Controllers;
 
 use App\Http\Controllers\Controller;
+use App\Models\Conversation;
 use App\Models\FavoriteSearch;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
+use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
 
 class ListingController extends Controller
 {
@@ -37,11 +39,20 @@ class ListingController extends Controller
 
         $favoriteListingIds = [];
         $isCurrentSearchSaved = false;
+        $conversationListingMap = [];
 
         if (auth()->check()) {
+            $userId = (int) auth()->id();
+
             $favoriteListingIds = auth()->user()
                 ->favoriteListings()
                 ->pluck('listings.id')
+                ->all();
+
+            $conversationListingMap = Conversation::query()
+                ->where('buyer_id', $userId)
+                ->pluck('id', 'listing_id')
+                ->map(fn ($conversationId) => (int) $conversationId)
                 ->all();
 
             $filters = FavoriteSearch::normalizeFilters([
@@ -65,17 +76,25 @@ class ListingController extends Controller
             'categories',
             'favoriteListingIds',
             'isCurrentSearchSaved',
+            'conversationListingMap',
         ));
     }
 
     public function show(Listing $listing)
     {
         $listing->loadMissing('user:id,name,email');
+        $presentableCustomFields = ListingCustomFieldSchemaBuilder::presentableValues(
+            $listing->category_id ? (int) $listing->category_id : null,
+            $listing->custom_fields ?? [],
+        );
 
         $isListingFavorited = false;
         $isSellerFavorited = false;
+        $existingConversationId = null;
 
         if (auth()->check()) {
+            $userId = (int) auth()->id();
+
             $isListingFavorited = auth()->user()
                 ->favoriteListings()
                 ->whereKey($listing->getKey())
@@ -87,9 +106,22 @@ class ListingController extends Controller
                     ->whereKey($listing->user_id)
                     ->exists();
             }
+
+            if ($listing->user_id && (int) $listing->user_id !== $userId) {
+                $existingConversationId = Conversation::query()
+                    ->where('listing_id', $listing->getKey())
+                    ->where('buyer_id', $userId)
+                    ->value('id');
+            }
         }
 
-        return view('listing::show', compact('listing', 'isListingFavorited', 'isSellerFavorited'));
+        return view('listing::show', compact(
+            'listing',
+            'isListingFavorited',
+            'isSellerFavorited',
+            'presentableCustomFields',
+            'existingConversationId',
+        ));
     }
 
     public function create()

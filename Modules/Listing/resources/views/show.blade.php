@@ -52,6 +52,18 @@
                             {{ $isSellerFavorited ? 'Satıcı Favorilerde' : 'Satıcıyı Takip Et' }}
                         </button>
                     </form>
+                        @if($existingConversationId)
+                        <a href="{{ route('favorites.index', ['tab' => 'listings', 'conversation' => $existingConversationId]) }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-rose-100 text-rose-700 hover:bg-rose-200 transition">
+                            Sohbete Git
+                        </a>
+                        @else
+                        <form method="POST" action="{{ route('conversations.start', $listing) }}">
+                            @csrf
+                            <button type="submit" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-rose-500 text-white hover:bg-rose-600 transition">
+                                Satıcıya Mesaj Gönder
+                            </button>
+                        </form>
+                        @endif
                     @endif
                     @else
                     <a href="{{ route('filament.partner.auth.login') }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
@@ -65,6 +77,19 @@
                     <h2 class="font-semibold text-lg mb-2">Description</h2>
                     <p class="text-gray-700">{{ $displayDescription }}</p>
                 </div>
+                @if(($presentableCustomFields ?? []) !== [])
+                <div class="mt-6 border-t pt-4">
+                    <h2 class="font-semibold text-lg mb-3">İlan Özellikleri</h2>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+                        @foreach($presentableCustomFields as $field)
+                        <div class="rounded-lg border border-slate-200 bg-slate-50 px-3 py-2">
+                            <p class="text-xs uppercase tracking-wide text-slate-500">{{ $field['label'] }}</p>
+                            <p class="text-sm font-medium text-slate-800 mt-1">{{ $field['value'] }}</p>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
                 <div class="mt-6 bg-gray-50 rounded-lg p-4">
                     <h2 class="font-semibold text-lg mb-3">Contact Seller</h2>
                     @if($listing->user)

@@ -85,6 +85,21 @@ class User extends Authenticatable implements FilamentUser, HasTenants, HasAvata
         return $this->hasMany(FavoriteSearch::class);
     }
 
+    public function buyerConversations()
+    {
+        return $this->hasMany(Conversation::class, 'buyer_id');
+    }
+
+    public function sellerConversations()
+    {
+        return $this->hasMany(Conversation::class, 'seller_id');
+    }
+
+    public function sentConversationMessages()
+    {
+        return $this->hasMany(ConversationMessage::class, 'sender_id');
+    }
+
     public function canImpersonate(): bool
     {
         return $this->hasRole('admin');

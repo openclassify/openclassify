@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Conversation;
+use App\Models\ConversationMessage;
 use App\Models\FavoriteSearch;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -30,6 +32,11 @@ class FavoriteController extends Controller
             $selectedCategoryId = null;
         }
 
+        $messageFilter = (string) $request->string('message_filter', 'all');
+        if (! in_array($messageFilter, ['all', 'unread', 'important'], true)) {
+            $messageFilter = 'all';
+        }
+
         $user = $request->user();
         $categories = Category::query()
             ->where('is_active', true)
@@ -39,6 +46,15 @@ class FavoriteController extends Controller
         $favoriteListings = null;
         $favoriteSearches = null;
         $favoriteSellers = null;
+        $conversations = collect();
+        $selectedConversation = null;
+        $buyerConversationListingMap = [];
+        $quickMessages = [
+            'Merhaba',
+            'İlan hâlâ satışta mı?',
+            'Son fiyat nedir?',
+            'Teşekkürler',
+        ];
 
         if ($activeTab === 'listings') {
             $favoriteListings = $user->favoriteListings()
@@ -49,6 +65,70 @@ class FavoriteController extends Controller
                 ->orderByPivot('created_at', 'desc')
                 ->paginate(10)
                 ->withQueryString();
+
+            $userId = (int) $user->getKey();
+            $conversations = Conversation::query()
+                ->forUser($userId)
+                ->when(in_array($messageFilter, ['unread', 'important'], true), fn ($query) => $query->whereHas('messages', fn ($messageQuery) => $messageQuery
+                    ->where('sender_id', '!=', $userId)
+                    ->whereNull('read_at')))
+                ->with([
+                    'listing:id,title,price,currency,user_id',
+                    'buyer:id,name',
+                    'seller:id,name',
+                    'lastMessage:id,conversation_id,sender_id,body,created_at',
+                    'lastMessage.sender:id,name',
+                ])
+                ->withCount([
+                    'messages as unread_count' => fn ($query) => $query
+                        ->where('sender_id', '!=', $userId)
+                        ->whereNull('read_at'),
+                ])
+                ->orderByDesc('last_message_at')
+                ->orderByDesc('updated_at')
+                ->get();
+
+            $buyerConversationListingMap = $conversations
+                ->where('buyer_id', $userId)
+                ->pluck('id', 'listing_id')
+                ->map(fn ($conversationId) => (int) $conversationId)
+                ->all();
+
+            $selectedConversationId = $request->integer('conversation');
+
+            if ($selectedConversationId <= 0 && $conversations->isNotEmpty()) {
+                $selectedConversationId = (int) $conversations->first()->getKey();
+            }
+
+            if ($selectedConversationId > 0) {
+                $selectedConversation = $conversations->firstWhere('id', $selectedConversationId);
+
+                if ($selectedConversation) {
+                    $selectedConversation->load([
+                        'listing:id,title,price,currency,user_id',
+                        'messages' => fn ($query) => $query
+                            ->with('sender:id,name')
+                            ->orderBy('created_at'),
+                    ]);
+
+                    ConversationMessage::query()
+                        ->where('conversation_id', $selectedConversation->getKey())
+                        ->where('sender_id', '!=', $userId)
+                        ->whereNull('read_at')
+                        ->update([
+                            'read_at' => now(),
+                            'updated_at' => now(),
+                        ]);
+
+                    $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
+                        if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
+                            $conversation->unread_count = 0;
+                        }
+
+                        return $conversation;
+                    });
+                }
+            }
         }
 
         if ($activeTab === 'searches') {
@@ -73,10 +153,15 @@ class FavoriteController extends Controller
             'activeTab' => $activeTab,
             'statusFilter' => $statusFilter,
             'selectedCategoryId' => $selectedCategoryId,
+            'messageFilter' => $messageFilter,
             'categories' => $categories,
             'favoriteListings' => $favoriteListings,
             'favoriteSearches' => $favoriteSearches,
             'favoriteSellers' => $favoriteSellers,
+            'conversations' => $conversations,
+            'selectedConversation' => $selectedConversation,
+            'buyerConversationListingMap' => $buyerConversationListingMap,
+            'quickMessages' => $quickMessages,
         ]);
     }
 

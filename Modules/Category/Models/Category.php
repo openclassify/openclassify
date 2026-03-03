@@ -36,4 +36,9 @@ class Category extends Model
     {
         return $this->hasMany(\Modules\Listing\Models\Listing::class);
     }
+
+    public function listingCustomFields(): HasMany
+    {
+        return $this->hasMany(\Modules\Listing\Models\ListingCustomField::class);
+    }
 }

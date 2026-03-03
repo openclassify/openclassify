@@ -17,6 +17,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Section;
 use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
@@ -30,6 +31,7 @@ use Illuminate\Database\Eloquent\Builder;
 use Modules\Admin\Filament\Resources\ListingResource\Pages;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
+use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
 use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
@@ -55,8 +57,24 @@ class ListingResource extends Resource
                 ->options(fn () => ListingPanelHelper::currencyOptions())
                 ->default(fn () => ListingPanelHelper::defaultCurrency())
                 ->required(),
-            Select::make('category_id')->label('Category')->options(fn () => Category::where('is_active', true)->pluck('name', 'id'))->searchable()->nullable(),
+            Select::make('category_id')
+                ->label('Category')
+                ->options(fn () => Category::where('is_active', true)->pluck('name', 'id'))
+                ->searchable()
+                ->live()
+                ->afterStateUpdated(fn ($state, $set) => $set('custom_fields', []))
+                ->nullable(),
             Select::make('user_id')->relationship('user', 'email')->label('Owner')->searchable()->preload()->nullable(),
+            Section::make('Custom Fields')
+                ->description('Category specific listing attributes.')
+                ->schema(fn (Get $get): array => ListingCustomFieldSchemaBuilder::formComponents(
+                    ($categoryId = $get('category_id')) ? (int) $categoryId : null
+                ))
+                ->columns(2)
+                ->columnSpanFull()
+                ->visible(fn (Get $get): bool => ListingCustomFieldSchemaBuilder::hasFields(
+                    ($categoryId = $get('category_id')) ? (int) $categoryId : null
+                )),
             StateFusionSelect::make('status')->required(),
             PhoneInput::make('contact_phone')->defaultCountry(CountryCodeManager::defaultCountryIso2())->nullable(),
             TextInput::make('contact_email')->email()->maxLength(255),

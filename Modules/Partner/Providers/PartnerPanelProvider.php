@@ -36,6 +36,7 @@ class PartnerPanelProvider extends PanelProvider
             ->id('partner')
             ->path('partner')
             ->login()
+            ->darkMode(false)
             ->colors(['primary' => Color::Emerald])
             ->tenant(User::class, slugAttribute: 'id')
             ->discoverResources(in: module_path('Partner', 'Filament/Resources'), for: 'Modules\\Partner\\Filament\\Resources')
