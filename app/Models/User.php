@@ -68,6 +68,23 @@ class User extends Authenticatable implements FilamentUser, HasTenants, HasAvata
         return $this->hasMany(\Modules\Listing\Models\Listing::class);
     }
 
+    public function favoriteListings()
+    {
+        return $this->belongsToMany(\Modules\Listing\Models\Listing::class, 'favorite_listings')
+            ->withTimestamps();
+    }
+
+    public function favoriteSellers()
+    {
+        return $this->belongsToMany(self::class, 'favorite_sellers', 'user_id', 'seller_id')
+            ->withTimestamps();
+    }
+
+    public function favoriteSearches()
+    {
+        return $this->hasMany(FavoriteSearch::class);
+    }
+
     public function canImpersonate(): bool
     {
         return $this->hasRole('admin');

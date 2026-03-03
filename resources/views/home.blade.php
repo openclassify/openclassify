@@ -138,6 +138,7 @@
                 $listingImage = $listing->getFirstMediaUrl('listing-images');
                 $priceLabel = $listing->price ? number_format((float) $listing->price, 0).' '.$listing->currency : __('messages.free');
                 $locationLabel = trim(collect([$listing->city, $listing->country])->filter()->join(', '));
+                $isFavorited = in_array($listing->id, $favoriteListingIds ?? [], true);
             @endphp
             <article class="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-sm hover:shadow-md transition">
                 <div class="relative h-64 md:h-[290px] bg-slate-100">
@@ -156,7 +157,16 @@
                         @endif
                         <span class="bg-sky-500 text-white text-xs font-semibold px-2.5 py-1 rounded-full">Büyük İlan</span>
                     </div>
-                    <button type="button" class="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/90 text-slate-500 grid place-items-center hover:text-rose-500 transition">♡</button>
+                    <div class="absolute top-3 right-3">
+                        @auth
+                        <form method="POST" action="{{ route('favorites.listings.toggle', $listing) }}">
+                            @csrf
+                            <button type="submit" class="w-9 h-9 rounded-full grid place-items-center transition {{ $isFavorited ? 'bg-rose-500 text-white' : 'bg-white/90 text-slate-500 hover:text-rose-500' }}">♥</button>
+                        </form>
+                        @else
+                        <a href="{{ route('filament.partner.auth.login') }}" class="w-9 h-9 rounded-full bg-white/90 text-slate-500 hover:text-rose-500 grid place-items-center transition">♡</a>
+                        @endauth
+                    </div>
                 </div>
                 <div class="p-4">
                     <div class="rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1.5 text-center mb-3">

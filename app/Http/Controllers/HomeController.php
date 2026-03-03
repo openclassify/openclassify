@@ -16,6 +16,18 @@ class HomeController extends Controller
         $listingCount = Listing::where('status', 'active')->count();
         $categoryCount = Category::where('is_active', true)->count();
         $userCount = User::count();
-        return view('home', compact('categories', 'featuredListings', 'recentListings', 'listingCount', 'categoryCount', 'userCount'));
+        $favoriteListingIds = auth()->check()
+            ? auth()->user()->favoriteListings()->pluck('listings.id')->all()
+            : [];
+
+        return view('home', compact(
+            'categories',
+            'featuredListings',
+            'recentListings',
+            'listingCount',
+            'categoryCount',
+            'userCount',
+            'favoriteListingIds',
+        ));
     }
 }

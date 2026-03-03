@@ -1,6 +1,7 @@
 <?php
 namespace Modules\Partner\Filament\Resources\ListingResource\Pages;
 
+use Filament\Actions\Action;
 use Filament\Actions\CreateAction;
 use Filament\Resources\Pages\ListRecords;
 use Modules\Partner\Filament\Resources\ListingResource;
@@ -8,5 +9,16 @@ use Modules\Partner\Filament\Resources\ListingResource;
 class ListListings extends ListRecords
 {
     protected static string $resource = ListingResource::class;
-    protected function getHeaderActions(): array { return [CreateAction::make()]; }
+    protected function getHeaderActions(): array
+    {
+        return [
+            CreateAction::make()
+                ->label('Manuel İlan Ekle'),
+            Action::make('quickCreate')
+                ->label('Hızlı İlan Ver')
+                ->icon('heroicon-o-bolt')
+                ->color('danger')
+                ->url(ListingResource::getUrl('quick-create', shouldGuessMissingParameters: true)),
+        ];
+    }
 }

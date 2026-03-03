@@ -138,6 +138,7 @@
                         </div>
                     </details>
                     @auth
+                    <a href="{{ route('favorites.index') }}" class="hidden sm:inline-flex text-sm font-medium text-slate-600 hover:text-slate-900 transition">Favorilerim</a>
                     <a href="{{ $partnerDashboardRoute }}" class="hidden sm:inline-flex text-sm font-medium text-slate-600 hover:text-slate-900 transition">Panel</a>
                     <a href="{{ $partnerCreateRoute }}" class="btn-primary px-4 md:px-5 py-2 text-sm font-semibold shadow-sm hover:brightness-95 transition">
                         + {{ __('messages.post_listing') }}

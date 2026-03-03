@@ -55,6 +55,12 @@ class Listing extends Model implements HasMedia
         return $this->belongsTo(\App\Models\User::class);
     }
 
+    public function favoritedByUsers()
+    {
+        return $this->belongsToMany(\App\Models\User::class, 'favorite_listings')
+            ->withTimestamps();
+    }
+
     public function scopePublicFeed(Builder $query): Builder
     {
         return $query

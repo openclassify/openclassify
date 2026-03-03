@@ -17,6 +17,7 @@
         "filament/spatie-laravel-media-library-plugin": "^5.3",
         "filament/spatie-laravel-settings-plugin": "^5.3",
         "jeffgreco13/filament-breezy": "^3.2",
+        "laravel/ai": "^0.2.5",
         "laravel/framework": "^12.0",
         "laravel/sanctum": "^4.3",
         "laravel/tinker": "^2.10.1",
