@@ -7,6 +7,7 @@ use App\Settings\GeneralSettings;
 use BezhanSalleh\LanguageSwitch\LanguageSwitch;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Event;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
@@ -22,7 +23,24 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        Route::pattern('tenant', '[0-9]+');
         View::addNamespace('app', resource_path('views'));
+
+        app()->booted(function (): void {
+            foreach (app('router')->getRoutes() as $route) {
+                $name = $route->getName();
+
+                if (! is_string($name) || ! str_starts_with($name, 'filament.partner.')) {
+                    continue;
+                }
+
+                if (! str_contains($route->uri(), '{tenant}')) {
+                    continue;
+                }
+
+                $route->where('tenant', '[0-9]+');
+            }
+        });
 
         $fallbackName = config('app.name', 'OpenClassify');
         $fallbackLocale = config('app.locale', 'en');

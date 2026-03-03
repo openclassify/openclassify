@@ -2,10 +2,7 @@
 namespace Modules\Listing\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
-use Illuminate\Validation\Rule;
 use Modules\Listing\Models\Listing;
-use Modules\Listing\Support\ListingPanelHelper;
 
 class ListingController extends Controller
 {
@@ -24,29 +21,21 @@ class ListingController extends Controller
 
     public function create()
     {
-        return view('listing::create', [
-            'currencies' => ListingPanelHelper::currencyCodes(),
-        ]);
+        if (! auth()->check()) {
+            return redirect()->route('filament.partner.auth.login');
+        }
+
+        return redirect()->route('filament.partner.resources.listings.create', ['tenant' => auth()->id()]);
     }
 
-    public function store(Request $request)
+    public function store()
     {
-        $currencies = ListingPanelHelper::currencyCodes();
+        if (! auth()->check()) {
+            return redirect()->route('filament.partner.auth.login');
+        }
 
-        $data = $request->validate([
-            'title' => 'required|string|min:3|max:255',
-            'description' => 'nullable|string',
-            'price' => 'nullable|numeric|min:0',
-            'currency' => ['nullable', 'string', 'size:3', Rule::in($currencies)],
-            'city' => 'nullable|string|max:120',
-            'country' => 'nullable|string|max:120',
-            'category_id' => 'nullable|integer',
-            'contact_email' => 'nullable|email',
-            'contact_phone' => 'nullable|string',
-        ]);
-
-        $listing = Listing::createFromFrontend($data, auth()->id());
-
-        return redirect()->route('listings.show', $listing)->with('success', 'Listing created!');
+        return redirect()
+            ->route('filament.partner.resources.listings.create', ['tenant' => auth()->id()])
+            ->with('success', 'Use the Partner Panel to create listings.');
     }
 }

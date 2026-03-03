@@ -7,6 +7,15 @@
     $whatsappNumber = $generalSettings['whatsapp'] ?? null;
     $whatsappDigits = preg_replace('/\D+/', '', (string) $whatsappNumber);
     $whatsappUrl = $whatsappDigits !== '' ? 'https://wa.me/' . $whatsappDigits : null;
+    $partnerLoginRoute = route('filament.partner.auth.login');
+    $partnerRegisterRoute = route('register');
+    $partnerLogoutRoute = route('filament.partner.auth.logout');
+    $partnerCreateRoute = auth()->check()
+        ? route('filament.partner.resources.listings.create', ['tenant' => auth()->id()])
+        : $partnerLoginRoute;
+    $partnerDashboardRoute = auth()->check()
+        ? route('filament.partner.pages.dashboard', ['tenant' => auth()->id()])
+        : $partnerLoginRoute;
 @endphp
 <!DOCTYPE html>
 <html lang="{{ str_replace('_', '-', app()->getLocale()) }}" dir="{{ in_array(app()->getLocale(), ['ar']) ? 'rtl' : 'ltr' }}">
@@ -19,11 +28,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>body { font-family: 'Inter', sans-serif; } [dir="rtl"] { text-align: right; }</style>
 </head>
-@php
-    $partnerCreateRoute = auth()->check() && \Illuminate\Support\Facades\Route::has('filament.partner.resources.listings.create')
-        ? route('filament.partner.resources.listings.create', ['tenant' => auth()->id()])
-        : route('listings.create');
-@endphp
 <body class="bg-gray-50">
     <nav class="bg-white shadow-sm border-b sticky top-0 z-50">
         <div class="container mx-auto px-4">
@@ -58,16 +62,16 @@
                         <button class="text-gray-600 hover:text-blue-600">{{ auth()->user()->name }}</button>
                         <div class="absolute right-0 mt-1 bg-white shadow-lg rounded-lg border hidden group-hover:block z-50 w-40">
                             <a href="{{ route('profile.show') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">My Profile</a>
-                            <a href="{{ route('partner.dashboard') }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Dashboard</a>
-                            <form method="POST" action="{{ route('logout') }}">
+                            <a href="{{ $partnerDashboardRoute }}" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-50">Dashboard</a>
+                            <form method="POST" action="{{ $partnerLogoutRoute }}">
                                 @csrf
                                 <button type="submit" class="w-full text-left px-4 py-2 text-sm text-red-600 hover:bg-gray-50">Logout</button>
                             </form>
                         </div>
                     </div>
                     @else
-                    <a href="{{ route('login') }}" class="text-gray-600 hover:text-blue-600 transition">{{ __('messages.login') }}</a>
-                    <a href="{{ route('register') }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">{{ __('messages.register') }}</a>
+                    <a href="{{ $partnerLoginRoute }}" class="text-gray-600 hover:text-blue-600 transition">{{ __('messages.login') }}</a>
+                    <a href="{{ $partnerRegisterRoute }}" class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition text-sm">{{ __('messages.register') }}</a>
                     @endauth
                 </div>
             </div>
@@ -98,8 +102,8 @@
                 <div>
                     <h4 class="text-white font-medium mb-4">Account</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('login') }}" class="hover:text-white transition">Login</a></li>
-                        <li><a href="{{ route('register') }}" class="hover:text-white transition">Register</a></li>
+                        <li><a href="{{ $partnerLoginRoute }}" class="hover:text-white transition">Login</a></li>
+                        <li><a href="{{ $partnerRegisterRoute }}" class="hover:text-white transition">Register</a></li>
                     </ul>
                 </div>
                 <div>
