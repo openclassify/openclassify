@@ -1,0 +1,22 @@
+<?php
+return [
+    'site_name' => 'OpenClassify',
+    'home' => 'ホーム',
+    'categories' => 'カテゴリー',
+    'listings' => 'リスティング',
+    'search' => '検索',
+    'search_placeholder' => '何でも検索...',
+    'login' => 'ログイン',
+    'register' => '登録',
+    'logout' => 'ログアウト',
+    'find_what_you_need' => '必要なものを見つける',
+    'hero_subtitle' => 'あなたのエリアで何でも売買',
+    'browse_categories' => 'カテゴリーを閲覧',
+    'recent_listings' => '最新リスティング',
+    'featured_listings' => '注目リスティング',
+    'post_listing' => 'リスティングを投稿',
+    'sell_something' => '何か売りたいですか？',
+    'free' => '無料',
+    'view' => '表示',
+    'contact_seller' => '売り手に連絡',
+];

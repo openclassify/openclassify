@@ -1,0 +1,12 @@
+{
+    "name": "Location",
+    "alias": "location",
+    "description": "Country, city, district and neighborhood management",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Location\\Providers\\LocationServiceProvider"
+    ],
+    "aliases": {},
+    "files": []
+}

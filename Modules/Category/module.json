@@ -1,0 +1,12 @@
+{
+    "name": "Category",
+    "alias": "category",
+    "description": "Categories with hierarchy support",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Category\\Providers\\CategoryServiceProvider"
+    ],
+    "aliases": {},
+    "files": []
+}
