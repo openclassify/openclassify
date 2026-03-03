@@ -2,5 +2,7 @@
     "Category": true,
     "Listing": true,
     "Location": true,
-    "Profile": true
+    "Profile": true,
+    "Admin": true,
+    "Partner": true
 }

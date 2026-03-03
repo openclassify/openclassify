@@ -1,0 +1,13 @@
+{
+    "name": "Admin",
+    "alias": "admin",
+    "description": "Admin panel using FilamentPHP",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Admin\\Providers\\AdminServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
