@@ -1,0 +1,22 @@
+<?php
+return [
+    'site_name' => 'OpenClassify',
+    'home' => '首页',
+    'categories' => '分类',
+    'listings' => '列表',
+    'search' => '搜索',
+    'search_placeholder' => '搜索任何内容...',
+    'login' => '登录',
+    'register' => '注册',
+    'logout' => '退出',
+    'find_what_you_need' => '找到你需要的',
+    'hero_subtitle' => '在你的地区买卖一切',
+    'browse_categories' => '浏览分类',
+    'recent_listings' => '最新列表',
+    'featured_listings' => '精选列表',
+    'post_listing' => '发布列表',
+    'sell_something' => '有东西要卖？',
+    'free' => '免费',
+    'view' => '查看',
+    'contact_seller' => '联系卖家',
+];

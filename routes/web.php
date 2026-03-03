@@ -1,16 +1,17 @@
 <?php
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\LanguageController;
+use App\Http\Controllers\Partner\DashboardController;
+use App\Http\Controllers\Partner\ListingController as PartnerListingController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| This file is where you may define all of the routes that are handled
-| by your application. Just tell Laravel the URIs it should respond
-| to using a Closure or controller method. Build something great!
-|
-*/
+Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('auth');
+Route::get('/lang/{locale}', [LanguageController::class, 'switch'])->name('lang.switch');
 
-//Route::get('/', function () {
-//    return view('welcome');
-//});
+Route::middleware('auth')->prefix('partner')->name('partner.')->group(function () {
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/listings', [PartnerListingController::class, 'index'])->name('listings.index');
+});
+
+require __DIR__.'/auth.php';

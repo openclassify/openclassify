@@ -1,0 +1,22 @@
+<?php
+return [
+    'site_name' => 'OpenClassify',
+    'home' => 'Inicio',
+    'categories' => 'Categorías',
+    'listings' => 'Anuncios',
+    'search' => 'Buscar',
+    'search_placeholder' => 'Busca cualquier cosa...',
+    'login' => 'Iniciar sesión',
+    'register' => 'Registrarse',
+    'logout' => 'Cerrar sesión',
+    'find_what_you_need' => 'Encuentra lo que necesitas',
+    'hero_subtitle' => 'Compra y vende todo en tu área',
+    'browse_categories' => 'Explorar categorías',
+    'recent_listings' => 'Anuncios recientes',
+    'featured_listings' => 'Anuncios destacados',
+    'post_listing' => 'Publicar anuncio',
+    'sell_something' => '¿Tienes algo que vender?',
+    'free' => 'Gratis',
+    'view' => 'Ver',
+    'contact_seller' => 'Contactar vendedor',
+];
