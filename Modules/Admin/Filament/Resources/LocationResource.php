@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
 use Modules\Admin\Filament\Resources\LocationResource\Pages;
 use Modules\Location\Models\Country;
@@ -22,6 +23,8 @@ class LocationResource extends Resource
     protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-globe-alt';
     protected static string | UnitEnum | null $navigationGroup = 'Settings';
     protected static ?string $label = 'Country';
+    protected static ?string $pluralLabel = 'Countries';
+    protected static ?int $navigationSort = 2;
 
     public static function form(Schema $schema): Schema
     {
@@ -38,9 +41,13 @@ class LocationResource extends Resource
         return $table->columns([
             TextColumn::make('id')->sortable(),
             TextColumn::make('name')->searchable()->sortable(),
-            TextColumn::make('code'),
+            TextColumn::make('code')->searchable()->sortable(),
             TextColumn::make('phone_code'),
+            TextColumn::make('cities_count')->counts('cities')->label('Cities')->sortable(),
             IconColumn::make('is_active')->boolean(),
+            TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
+        ])->filters([
+            TernaryFilter::make('is_active')->label('Active'),
         ])->actions([
             EditAction::make(),
             Action::make('activities')

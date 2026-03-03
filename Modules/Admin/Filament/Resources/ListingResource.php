@@ -10,22 +10,29 @@ use Cheesegrits\FilamentGoogleMaps\Fields\Map;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
+use Filament\Forms\Components\DatePicker;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\SpatieMediaLibraryFileUpload;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
 use Filament\Resources\Resource;
+use Filament\Schemas\Components\Utilities\Get;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\Filter;
+use Filament\Tables\Filters\SelectFilter;
+use Filament\Tables\Filters\TernaryFilter;
 use Filament\Tables\Table;
+use Illuminate\Database\Eloquent\Builder;
 use Modules\Admin\Filament\Resources\ListingResource\Pages;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingPanelHelper;
-use Tapp\FilamentCountryCodeField\Forms\Components\CountryCodeSelect;
+use Modules\Location\Models\City;
+use Modules\Location\Models\Country;
 use UnitEnum;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 
@@ -49,16 +56,37 @@ class ListingResource extends Resource
                 ->default(fn () => ListingPanelHelper::defaultCurrency())
                 ->required(),
             Select::make('category_id')->label('Category')->options(fn () => Category::where('is_active', true)->pluck('name', 'id'))->searchable()->nullable(),
+            Select::make('user_id')->relationship('user', 'email')->label('Owner')->searchable()->preload()->nullable(),
             StateFusionSelect::make('status')->required(),
             PhoneInput::make('contact_phone')->defaultCountry(CountryCodeManager::defaultCountryIso2())->nullable(),
             TextInput::make('contact_email')->email()->maxLength(255),
             Toggle::make('is_featured')->default(false),
-            TextInput::make('city')->maxLength(100),
-            CountryCodeSelect::make('country')
+            Select::make('country')
                 ->label('Country')
-                ->default(fn () => CountryCodeManager::defaultCountryCode())
-                ->formatStateUsing(fn ($state): ?string => CountryCodeManager::countryCodeFromLabelOrCode($state))
-                ->dehydrateStateUsing(fn ($state, ?Listing $record): ?string => CountryCodeManager::normalizeStoredCountry($state ?? $record?->country)),
+                ->options(fn (): array => Country::query()
+                    ->orderBy('name')
+                    ->pluck('name', 'name')
+                    ->all())
+                ->searchable()
+                ->preload()
+                ->live()
+                ->afterStateUpdated(fn ($state, $set) => $set('city', null))
+                ->nullable(),
+            Select::make('city')
+                ->label('City')
+                ->options(function (Get $get): array {
+                    $country = $get('country');
+
+                    return City::query()
+                        ->where('is_active', true)
+                        ->when($country, fn (Builder $query, string $country): Builder => $query->whereHas('country', fn (Builder $countryQuery): Builder => $countryQuery->where('name', $country)))
+                        ->orderBy('name')
+                        ->pluck('name', 'name')
+                        ->all();
+                })
+                ->searchable()
+                ->preload()
+                ->nullable(),
             Map::make('location')
                 ->label('Location')
                 ->visible(fn (): bool => ListingPanelHelper::googleMapsEnabled())
@@ -90,15 +118,58 @@ class ListingResource extends Resource
             TextColumn::make('id')->sortable(),
             TextColumn::make('title')->searchable()->sortable()->limit(40),
             TextColumn::make('category.name')->label('Category'),
+            TextColumn::make('user.email')->label('Owner')->searchable()->toggleable(),
             TextColumn::make('price')
                 ->currency(fn (Listing $record): string => $record->currency ?: ListingPanelHelper::defaultCurrency())
                 ->sortable(),
             StateFusionSelectColumn::make('status'),
             IconColumn::make('is_featured')->boolean()->label('Featured'),
             TextColumn::make('city'),
+            TextColumn::make('country'),
             TextColumn::make('created_at')->dateTime()->sortable(),
         ])->filters([
             StateFusionSelectFilter::make('status'),
+            SelectFilter::make('category_id')
+                ->label('Category')
+                ->relationship('category', 'name')
+                ->searchable()
+                ->preload(),
+            SelectFilter::make('user_id')
+                ->label('Owner')
+                ->relationship('user', 'email')
+                ->searchable()
+                ->preload(),
+            SelectFilter::make('country')
+                ->options(fn (): array => Country::query()
+                    ->orderBy('name')
+                    ->pluck('name', 'name')
+                    ->all())
+                ->searchable(),
+            SelectFilter::make('city')
+                ->options(fn (): array => City::query()
+                    ->orderBy('name')
+                    ->pluck('name', 'name')
+                    ->all())
+                ->searchable(),
+            TernaryFilter::make('is_featured')->label('Featured'),
+            Filter::make('created_at')
+                ->label('Created Date')
+                ->schema([
+                    DatePicker::make('from')->label('From'),
+                    DatePicker::make('until')->label('Until'),
+                ])
+                ->query(fn (Builder $query, array $data): Builder => $query
+                    ->when($data['from'] ?? null, fn (Builder $query, string $date): Builder => $query->whereDate('created_at', '>=', $date))
+                    ->when($data['until'] ?? null, fn (Builder $query, string $date): Builder => $query->whereDate('created_at', '<=', $date))),
+            Filter::make('price')
+                ->label('Price Range')
+                ->schema([
+                    TextInput::make('min')->numeric()->label('Min'),
+                    TextInput::make('max')->numeric()->label('Max'),
+                ])
+                ->query(fn (Builder $query, array $data): Builder => $query
+                    ->when($data['min'] ?? null, fn (Builder $query, string $amount): Builder => $query->where('price', '>=', (float) $amount))
+                    ->when($data['max'] ?? null, fn (Builder $query, string $amount): Builder => $query->where('price', '<=', (float) $amount))),
         ])->actions([
             EditAction::make(),
             Action::make('activities')

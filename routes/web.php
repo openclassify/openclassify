@@ -23,4 +23,7 @@ Route::get('/partner', fn () => $redirectToPartner('filament.partner.pages.dashb
 Route::get('/partner/listings', fn () => $redirectToPartner('filament.partner.resources.listings.index'))
     ->name('partner.listings.index');
 
+Route::get('/partner/listings/create', fn () => $redirectToPartner('filament.partner.resources.listings.create'))
+    ->name('partner.listings.create');
+
 require __DIR__.'/auth.php';
