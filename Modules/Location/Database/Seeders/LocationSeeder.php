@@ -2,36 +2,43 @@
 namespace Modules\Location\Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use Modules\Location\Models\Country;
 use Modules\Location\Models\City;
-use Modules\Location\Models\District;
+use Modules\Location\Models\Country;
 
 class LocationSeeder extends Seeder
 {
     public function run(): void
     {
-        $locations = [
-            ['name' => 'Turkey', 'code' => 'TR', 'phone_code' => '+90', 'flag' => '🇹🇷',
-             'cities' => ['Istanbul' => ['Beyoglu', 'Kadikoy', 'Besiktas'], 'Ankara' => ['Cankaya', 'Kecioren'], 'Izmir' => ['Konak', 'Karsiyaka']]],
-            ['name' => 'United States', 'code' => 'US', 'phone_code' => '+1', 'flag' => '🇺🇸',
-             'cities' => ['New York' => ['Manhattan', 'Brooklyn'], 'Los Angeles' => ['Hollywood', 'Venice'], 'Chicago' => ['Downtown', 'Midtown']]],
-            ['name' => 'United Kingdom', 'code' => 'GB', 'phone_code' => '+44', 'flag' => '🇬🇧',
-             'cities' => ['London' => ['Westminster', 'Shoreditch'], 'Manchester' => ['City Centre'], 'Birmingham' => ['Jewellery Quarter']]],
-            ['name' => 'Germany', 'code' => 'DE', 'phone_code' => '+49', 'flag' => '🇩🇪',
-             'cities' => ['Berlin' => ['Mitte', 'Prenzlauer Berg'], 'Munich' => ['Schwabing', 'Maxvorstadt']]],
-            ['name' => 'France', 'code' => 'FR', 'phone_code' => '+33', 'flag' => '🇫🇷',
-             'cities' => ['Paris' => ['Marais', 'Montmartre'], 'Lyon' => ['Presquile']]],
+        $countries = [
+            ['name' => 'Turkey', 'code' => 'TR', 'phone_code' => '+90'],
+            ['name' => 'United States', 'code' => 'US', 'phone_code' => '+1'],
+            ['name' => 'Germany', 'code' => 'DE', 'phone_code' => '+49'],
+            ['name' => 'France', 'code' => 'FR', 'phone_code' => '+33'],
+            ['name' => 'United Kingdom', 'code' => 'GB', 'phone_code' => '+44'],
+            ['name' => 'Spain', 'code' => 'ES', 'phone_code' => '+34'],
+            ['name' => 'Italy', 'code' => 'IT', 'phone_code' => '+39'],
+            ['name' => 'Russia', 'code' => 'RU', 'phone_code' => '+7'],
+            ['name' => 'China', 'code' => 'CN', 'phone_code' => '+86'],
+            ['name' => 'Japan', 'code' => 'JP', 'phone_code' => '+81'],
         ];
 
-        foreach ($locations as $countryData) {
-            $cities = $countryData['cities'];
-            unset($countryData['cities']);
-            $country = Country::firstOrCreate(['code' => $countryData['code']], $countryData);
-            foreach ($cities as $cityName => $districts) {
-                $city = City::firstOrCreate(['name' => $cityName, 'country_id' => $country->id]);
-                foreach ($districts as $districtName) {
-                    District::firstOrCreate(['name' => $districtName, 'city_id' => $city->id]);
-                }
+        foreach ($countries as $country) {
+            Country::firstOrCreate(['code' => $country['code']], array_merge($country, ['is_active' => true]));
+        }
+
+        $tr = Country::where('code', 'TR')->first();
+        if ($tr) {
+            $cities = ['Istanbul', 'Ankara', 'Izmir', 'Bursa', 'Antalya'];
+            foreach ($cities as $city) {
+                City::firstOrCreate(['name' => $city, 'country_id' => $tr->id]);
+            }
+        }
+
+        $us = Country::where('code', 'US')->first();
+        if ($us) {
+            $cities = ['New York', 'Los Angeles', 'Chicago', 'Houston', 'Phoenix'];
+            foreach ($cities as $city) {
+                City::firstOrCreate(['name' => $city, 'country_id' => $us->id]);
             }
         }
     }

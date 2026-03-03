@@ -1,0 +1,13 @@
+{
+    "name": "Partner",
+    "alias": "partner",
+    "description": "Partner panel for users to manage their own listings",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Partner\\Providers\\PartnerServiceProvider"
+    ],
+    "aliases": {},
+    "files": [],
+    "requires": []
+}
