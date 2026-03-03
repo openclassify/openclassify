@@ -1,6 +1,17 @@
 <x-guest-layout>
     <!-- Session Status -->
     <x-auth-session-status class="mb-4" :status="session('status')" />
+    @php
+        $socialProviders = collect([
+            'google' => 'Google',
+            'facebook' => 'Facebook',
+            'apple' => 'Apple',
+        ])->filter(
+            fn ($label, $provider) => (bool) config("services.{$provider}.enabled")
+                && filled(config("services.{$provider}.client_id"))
+                && filled(config("services.{$provider}.client_secret"))
+        );
+    @endphp
 
     <form method="POST" action="{{ route('login') }}">
         @csrf
@@ -43,5 +54,20 @@
                 {{ __('Log in') }}
             </x-primary-button>
         </div>
+
+        @if($socialProviders->isNotEmpty())
+            <div class="mt-6 border-t pt-4">
+                <p class="text-sm text-gray-600 mb-3">{{ __('Or continue with') }}</p>
+
+                <div class="grid gap-2">
+                    @foreach($socialProviders as $provider => $label)
+                        <a href="{{ route('auth.social.redirect', ['provider' => $provider]) }}"
+                           class="inline-flex items-center justify-center rounded-md border border-gray-300 px-3 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50">
+                            {{ $label }}
+                        </a>
+                    @endforeach
+                </div>
+            </div>
+        @endif
     </form>
 </x-guest-layout>

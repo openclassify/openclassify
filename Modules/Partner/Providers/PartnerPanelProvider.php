@@ -3,6 +3,10 @@ namespace Modules\Partner\Providers;
 
 use A909M\FilamentStateFusion\FilamentStateFusionPlugin;
 use App\Models\User;
+use App\Settings\GeneralSettings;
+use DutchCodingCompany\FilamentDeveloperLogins\FilamentDeveloperLoginsPlugin;
+use DutchCodingCompany\FilamentSocialite\FilamentSocialitePlugin;
+use DutchCodingCompany\FilamentSocialite\Provider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -16,8 +20,13 @@ use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
+use Laravel\Socialite\Contracts\User as SocialiteUserContract;
+use Spatie\Permission\Models\Role;
+use Throwable;
 
 class PartnerPanelProvider extends PanelProvider
 {
@@ -43,6 +52,13 @@ class PartnerPanelProvider extends PanelProvider
                     )
                     ->enableTwoFactorAuthentication()
                     ->enableSanctumTokens(),
+                FilamentDeveloperLoginsPlugin::make()
+                    ->enabled(fn (): bool => app()->environment('local'))
+                    ->users([
+                        'Partner (Add Listing)' => 'b@b.com',
+                    ])
+                    ->redirectTo(fn (): ?string => self::partnerCreateListingUrl()),
+                self::socialitePlugin(),
             ])
             ->pages([Dashboard::class])
             ->middleware([
@@ -57,5 +73,105 @@ class PartnerPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([Authenticate::class]);
+    }
+
+    private static function socialitePlugin(): FilamentSocialitePlugin
+    {
+        return FilamentSocialitePlugin::make()
+            ->providers(self::socialiteProviders())
+            ->registration(true)
+            ->resolveUserUsing(function (string $provider, SocialiteUserContract $oauthUser): ?User {
+                if (! filled($oauthUser->getEmail())) {
+                    return null;
+                }
+
+                return User::query()->where('email', strtolower(trim((string) $oauthUser->getEmail())))->first();
+            })
+            ->createUserUsing(function (string $provider, SocialiteUserContract $oauthUser): User {
+                $email = filled($oauthUser->getEmail())
+                    ? strtolower(trim((string) $oauthUser->getEmail()))
+                    : sprintf('%s_%s@social.local', $provider, $oauthUser->getId());
+
+                $user = User::query()->firstOrCreate(
+                    ['email' => $email],
+                    [
+                        'name' => trim((string) ($oauthUser->getName() ?: $oauthUser->getNickname() ?: ucfirst($provider).' User')),
+                        'password' => Hash::make(Str::random(40)),
+                        'status' => 'active',
+                    ],
+                );
+
+                if (class_exists(Role::class)) {
+                    $partnerRole = Role::firstOrCreate(['name' => 'partner', 'guard_name' => 'web']);
+                    $user->syncRoles([$partnerRole->name]);
+                }
+
+                return $user;
+            });
+    }
+
+    /**
+     * @return array<int, Provider>
+     */
+    private static function socialiteProviders(): array
+    {
+        $providers = [];
+
+        if (self::providerEnabled('google')) {
+            $providers[] = Provider::make('google')
+                ->label('Google')
+                ->icon('heroicon-o-globe-alt')
+                ->color(Color::hex('#4285F4'));
+        }
+
+        if (self::providerEnabled('facebook')) {
+            $providers[] = Provider::make('facebook')
+                ->label('Facebook')
+                ->icon('heroicon-o-users')
+                ->color(Color::hex('#1877F2'));
+        }
+
+        if (self::providerEnabled('apple')) {
+            $providers[] = Provider::make('apple')
+                ->label('Apple')
+                ->icon('heroicon-o-device-phone-mobile')
+                ->color(Color::Gray)
+                ->stateless(true);
+        }
+
+        return $providers;
+    }
+
+    private static function providerEnabled(string $provider): bool
+    {
+        try {
+            $settings = app(GeneralSettings::class);
+
+            $enabled = match ($provider) {
+                'google' => (bool) $settings->enable_google_login,
+                'facebook' => (bool) $settings->enable_facebook_login,
+                'apple' => (bool) $settings->enable_apple_login,
+                default => false,
+            };
+
+            return $enabled
+                && filled(config("services.{$provider}.client_id"))
+                && filled(config("services.{$provider}.client_secret"));
+        } catch (Throwable) {
+            return (bool) config("services.{$provider}.enabled", false)
+                && filled(config("services.{$provider}.client_id"))
+                && filled(config("services.{$provider}.client_secret"));
+        }
+    }
+
+    private static function partnerCreateListingUrl(): ?string
+    {
+        $partner = User::query()->where('email', 'b@b.com')->first();
+
+        if (! $partner) {
+            return null;
+        }
+
+        return route('filament.partner.resources.listings.create', ['tenant' => $partner->getKey()]);
     }
 }
