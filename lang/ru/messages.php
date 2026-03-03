@@ -1,0 +1,22 @@
+<?php
+return [
+    'site_name' => 'OpenClassify',
+    'home' => 'Главная',
+    'categories' => 'Категории',
+    'listings' => 'Объявления',
+    'search' => 'Поиск',
+    'search_placeholder' => 'Искать что угодно...',
+    'login' => 'Войти',
+    'register' => 'Регистрация',
+    'logout' => 'Выйти',
+    'find_what_you_need' => 'Найдите то, что вам нужно',
+    'hero_subtitle' => 'Покупайте и продавайте всё в вашем районе',
+    'browse_categories' => 'Просмотр категорий',
+    'recent_listings' => 'Последние объявления',
+    'featured_listings' => 'Рекомендуемые объявления',
+    'post_listing' => 'Разместить объявление',
+    'sell_something' => 'Есть что продать?',
+    'free' => 'Бесплатно',
+    'view' => 'Просмотр',
+    'contact_seller' => 'Связаться с продавцом',
+];

@@ -1,32 +1,24 @@
-.idea
+*.log
+.DS_Store
 .env
-.coverage
-/bin
-/core
-/build
-/vendor
-/coverage
+.env.backup
+.env.production
+.phpactor.json
+.phpunit.result.cache
+/.fleet
+/.idea
+/.nova
+/.phpunit.cache
+/.vscode
+/.zed
+/auth.json
 /node_modules
-/bower_components
-composer.lock
-package-lock.json
-
-
-* text=auto
-
-*.txt         text eol=lf
-*.xml         text eol=lf
-*.json        text eol=lf
-*.properties  text eol=lf
-*.conf        text eol=lf
-*.sh          text eol=lf
-Dockerfile    text eol=lf
-
-*.awk  text eol=lf
-*.sed  text eol=lf
-*.sh   text eol=lf
-
-*.png  binary
-*.jpg  binary
-
-*.p12  binary
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+/vendor
+Homestead.json
+Homestead.yaml
+Thumbs.db

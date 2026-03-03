@@ -1,0 +1,12 @@
+{
+    "name": "Listing",
+    "alias": "listing",
+    "description": "Classified ads listings module",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Listing\\Providers\\ListingServiceProvider"
+    ],
+    "aliases": {},
+    "files": []
+}
