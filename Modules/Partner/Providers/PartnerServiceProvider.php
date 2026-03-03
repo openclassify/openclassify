@@ -7,8 +7,5 @@ class PartnerServiceProvider extends ServiceProvider
 {
     public function boot(): void {}
 
-    public function register(): void
-    {
-        $this->app->register(PartnerPanelProvider::class);
-    }
+    public function register(): void {}
 }

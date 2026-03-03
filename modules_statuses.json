@@ -4,5 +4,5 @@
     "Location": true,
     "Profile": true,
     "Admin": true,
-    "Partner": true
+    "Partner": false
 }

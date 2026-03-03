@@ -7,16 +7,13 @@
     $whatsappNumber = $generalSettings['whatsapp'] ?? null;
     $whatsappDigits = preg_replace('/\D+/', '', (string) $whatsappNumber);
     $whatsappUrl = $whatsappDigits !== '' ? 'https://wa.me/' . $whatsappDigits : null;
-    $partnerLoginRoute = route('filament.partner.auth.login');
-    $partnerRegisterRoute = route('register');
-    $partnerLogoutRoute = route('filament.partner.auth.logout');
-    $partnerCreateRoute = route('partner.listings.create');
-    $partnerQuickCreateRoute = auth()->check()
-        ? route('filament.partner.resources.listings.quick-create', ['tenant' => auth()->id()])
-        : $partnerLoginRoute;
-    $partnerDashboardRoute = auth()->check()
-        ? route('filament.partner.pages.dashboard', ['tenant' => auth()->id()])
-        : $partnerLoginRoute;
+    $loginRoute = route('login');
+    $registerRoute = route('register');
+    $logoutRoute = route('logout');
+    $panelCreateRoute = auth()->check() ? route('panel.listings.create') : $loginRoute;
+    $panelListingsRoute = auth()->check() ? route('panel.listings.index') : $loginRoute;
+    $inboxRoute = auth()->check() ? route('panel.inbox.index') : $loginRoute;
+    $favoritesRoute = auth()->check() ? route('favorites.index') : $loginRoute;
     $availableLocales = config('app.available_locales', ['en']);
     $localeLabels = [
         'en' => 'English',
@@ -31,6 +28,7 @@
         'ja' => '日本語',
     ];
     $isHomePage = request()->routeIs('home');
+    $isSimplePage = trim($__env->yieldContent('simple_page')) === '1';
     $homeHeaderCategories = isset($categories) ? collect($categories)->take(8) : collect();
     $locationCountries = collect($headerLocationCountries ?? [])->values();
     $defaultCountryIso2 = strtoupper((string) config('app.default_country_iso2', 'TR'));
@@ -132,6 +130,7 @@
             text-align: right;
         }
     </style>
+    @livewireStyles
 </head>
 <body class="min-h-screen">
     <nav class="market-nav-surface sticky top-0 z-50">
@@ -205,47 +204,35 @@
 
                 <div class="ml-auto flex items-center gap-2 md:gap-3">
                     @auth
-                    <a href="{{ route('favorites.index') }}" class="header-utility hidden xl:inline-flex" aria-label="Favoriler">
+                    <a href="{{ $favoritesRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Favoriler">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
                         </svg>
                     </a>
-                    <a href="{{ $partnerDashboardRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Panel">
+                    <a href="{{ $inboxRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Gelen Kutusu">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l9 6 9-6"/>
+                        </svg>
+                    </a>
+                    <a href="{{ $panelListingsRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Panel">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10h14V10"/>
                         </svg>
                     </a>
-                    <a href="{{ $partnerQuickCreateRoute }}" class="hidden md:inline-flex px-4 py-2.5 text-sm font-semibold rounded-full border border-rose-200 text-rose-600 bg-rose-50 hover:bg-rose-100 transition">
-                        Post Fast
+                    <a href="{{ $panelCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
+                        İlan Ver
                     </a>
-                    <details class="relative">
-                        <summary class="chip-btn list-none cursor-pointer px-3 py-2 text-xs md:text-sm text-slate-700">
-                            {{ strtoupper(app()->getLocale()) }}
-                        </summary>
-                        <div class="absolute right-0 mt-2 bg-white border border-slate-200 shadow-lg rounded-xl overflow-hidden min-w-28">
-                            @foreach($availableLocales as $locale)
-                            <a href="{{ route('lang.switch', $locale) }}" class="block px-3 py-2 text-sm hover:bg-slate-50 {{ app()->getLocale() === $locale ? 'font-semibold text-rose-500' : 'text-slate-700' }}">
-                                {{ $localeLabels[$locale] ?? strtoupper($locale) }}
-                            </a>
-                            @endforeach
-                        </div>
-                    </details>
-                    <a href="{{ $partnerCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
-                        Sat
-                    </a>
-                    <form method="POST" action="{{ $partnerLogoutRoute }}" class="hidden xl:block">
+                    <form method="POST" action="{{ $logoutRoute }}" class="hidden xl:block">
                         @csrf
                         <button type="submit" class="text-sm text-slate-500 hover:text-rose-500 transition">{{ __('messages.logout') }}</button>
                     </form>
                     @else
-                    <a href="{{ $partnerQuickCreateRoute }}" class="hidden md:inline-flex px-4 py-2.5 text-sm font-semibold rounded-full border border-rose-200 text-rose-600 bg-rose-50 hover:bg-rose-100 transition">
-                        Post Fast
-                    </a>
-                    <a href="{{ $partnerLoginRoute }}" class="bg-rose-50 text-rose-500 px-4 md:px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-rose-100 transition">
+                    <a href="{{ $loginRoute }}" class="bg-rose-50 text-rose-500 px-4 md:px-5 py-2.5 rounded-full text-sm font-semibold hover:bg-rose-100 transition">
                         {{ __('messages.login') }}
                     </a>
-                    <a href="{{ $partnerCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
-                        Sat
+                    <a href="{{ $panelCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
+                        İlan Ver
                     </a>
                     @endauth
                 </div>
@@ -267,11 +254,11 @@
                 </form>
                 <div class="flex items-center gap-2 overflow-x-auto pb-1">
                     <span class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-slate-700" data-location-label-mobile>Konum seç</span>
-                    <a href="{{ $partnerQuickCreateRoute }}" class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-rose-600 font-semibold">Post Fast</a>
+                    <a href="{{ $panelCreateRoute }}" class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-rose-600 font-semibold">İlan Ver</a>
                 </div>
             </div>
 
-            @if($isHomePage && $homeHeaderCategories->isNotEmpty())
+            @if(!$isSimplePage && $isHomePage && $homeHeaderCategories->isNotEmpty())
             <div class="mt-4 border-t border-slate-200 pt-3 overflow-x-auto">
                 <div class="flex items-center gap-2 min-w-max pb-1">
                     <a href="{{ route('categories.index') }}" class="chip-btn inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
@@ -287,7 +274,7 @@
                     @endforeach
                 </div>
             </div>
-            @elseif(! $isHomePage)
+            @elseif(! $isSimplePage && ! $isHomePage)
             <div class="mt-3 flex items-center gap-2 text-sm overflow-x-auto pb-1">
                 <a href="{{ route('home') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.home') }}</a>
                 <a href="{{ route('categories.index') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.categories') }}</a>
@@ -325,8 +312,8 @@
                 <div>
                     <h4 class="text-white font-medium mb-4">Hesap</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ $partnerLoginRoute }}" class="hover:text-white transition">{{ __('messages.login') }}</a></li>
-                        <li><a href="{{ $partnerRegisterRoute }}" class="hover:text-white transition">{{ __('messages.register') }}</a></li>
+                        <li><a href="{{ $loginRoute }}" class="hover:text-white transition">{{ __('messages.login') }}</a></li>
+                        <li><a href="{{ $registerRoute }}" class="hover:text-white transition">{{ __('messages.register') }}</a></li>
                     </ul>
                 </div>
                 <div>
@@ -358,6 +345,7 @@
             </div>
         </div>
     </footer>
+    @livewireScripts
     <script>
         (() => {
             const widgetRoots = Array.from(document.querySelectorAll('[data-location-widget]'));

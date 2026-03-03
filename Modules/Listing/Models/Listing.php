@@ -22,13 +22,14 @@ class Listing extends Model implements HasMedia
         'title', 'description', 'price', 'currency', 'category_id',
         'user_id', 'status', 'images', 'custom_fields', 'slug',
         'contact_phone', 'contact_email', 'is_featured', 'expires_at',
-        'city', 'country', 'latitude', 'longitude', 'location',
+        'city', 'country', 'latitude', 'longitude', 'location', 'view_count',
     ];
 
     protected $casts = [
         'images' => 'array',
         'custom_fields' => 'array',
         'is_featured' => 'boolean',
+        'view_count' => 'integer',
         'expires_at' => 'datetime',
         'price' => 'decimal:2',
         'latitude' => 'decimal:7',

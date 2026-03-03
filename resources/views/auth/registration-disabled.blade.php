@@ -14,8 +14,8 @@
             <a href="{{ route('home') }}" class="px-4 py-2 rounded-lg border border-gray-300 text-gray-700 hover:bg-gray-50">
                 Back Home
             </a>
-            <a href="{{ route('filament.partner.auth.login') }}" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
-                Partner Login
+            <a href="{{ route('login') }}" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+                Giriş Yap
             </a>
         </div>
     </div>

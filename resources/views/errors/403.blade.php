@@ -18,14 +18,14 @@
             </a>
 
             @auth
-            <form method="POST" action="{{ route('filament.partner.auth.logout') }}">
+            <form method="POST" action="{{ route('logout') }}">
                 @csrf
                 <button type="submit" class="px-4 py-2 rounded-lg bg-red-600 text-white hover:bg-red-700">
                     Çıkış Yap
                 </button>
             </form>
             @else
-            <a href="{{ route('filament.partner.auth.login') }}" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
+            <a href="{{ route('login') }}" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
                 Giriş Yap
             </a>
             @endauth

@@ -53,7 +53,7 @@
                         </button>
                     </form>
                         @if($existingConversationId)
-                        <a href="{{ route('favorites.index', ['tab' => 'listings', 'conversation' => $existingConversationId]) }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-rose-100 text-rose-700 hover:bg-rose-200 transition">
+                        <a href="{{ route('panel.inbox.index', ['conversation' => $existingConversationId]) }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-rose-100 text-rose-700 hover:bg-rose-200 transition">
                             Sohbete Git
                         </a>
                         @else
@@ -66,7 +66,7 @@
                         @endif
                     @endif
                     @else
-                    <a href="{{ route('filament.partner.auth.login') }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
+                    <a href="{{ route('login') }}" class="inline-flex items-center px-4 py-2 rounded-full text-sm font-semibold bg-slate-100 text-slate-700 hover:bg-slate-200 transition">
                         Giriş yap ve favorile
                     </a>
                     @endauth

@@ -35,11 +35,11 @@
                         İncele
                     </a>
                     @auth
-                    <a href="{{ route('filament.partner.resources.listings.create', ['tenant' => auth()->id()]) }}" class="border border-blue-200/60 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                    <a href="{{ route('panel.listings.create') }}" class="border border-blue-200/60 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
                         {{ __('messages.post_listing') }}
                     </a>
                     @else
-                    <a href="{{ route('filament.partner.auth.login') }}" class="border border-blue-200/60 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
+                    <a href="{{ route('login') }}" class="border border-blue-200/60 px-8 py-3 rounded-full font-semibold hover:bg-white/10 transition">
                         {{ __('messages.post_listing') }}
                     </a>
                     @endauth
@@ -145,7 +145,7 @@
                             <button type="submit" class="w-9 h-9 rounded-full grid place-items-center transition {{ $isFavorited ? 'bg-rose-500 text-white' : 'bg-white/90 text-slate-500 hover:text-rose-500' }}">♥</button>
                         </form>
                         @else
-                        <a href="{{ route('filament.partner.auth.login') }}" class="w-9 h-9 rounded-full bg-white/90 text-slate-500 hover:text-rose-500 grid place-items-center transition">♡</a>
+                        <a href="{{ route('login') }}" class="w-9 h-9 rounded-full bg-white/90 text-slate-500 hover:text-rose-500 grid place-items-center transition">♡</a>
                         @endauth
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                 <p class="text-slate-300 mt-3">Dakikalar içinde ücretsiz ilan oluştur, binlerce alıcıya ulaş.</p>
             </div>
             @auth
-            <a href="{{ route('filament.partner.resources.listings.create', ['tenant' => auth()->id()]) }}" class="inline-flex items-center justify-center rounded-full bg-rose-500 hover:bg-rose-600 px-8 py-3 font-semibold transition whitespace-nowrap">
+            <a href="{{ route('panel.listings.create') }}" class="inline-flex items-center justify-center rounded-full bg-rose-500 hover:bg-rose-600 px-8 py-3 font-semibold transition whitespace-nowrap">
                 Hemen İlan Ver
             </a>
             @else

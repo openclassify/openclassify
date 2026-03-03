@@ -4,6 +4,7 @@ namespace Modules\Listing\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Conversation;
 use App\Models\FavoriteSearch;
+use Illuminate\Support\Facades\Schema;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
@@ -82,6 +83,14 @@ class ListingController extends Controller
 
     public function show(Listing $listing)
     {
+        if (
+            Schema::hasColumn('listings', 'view_count')
+            && (! auth()->check() || (int) auth()->id() !== (int) $listing->user_id)
+        ) {
+            $listing->increment('view_count');
+            $listing->refresh();
+        }
+
         $listing->loadMissing('user:id,name,email');
         $presentableCustomFields = ListingCustomFieldSchemaBuilder::presentableValues(
             $listing->category_id ? (int) $listing->category_id : null,
@@ -127,20 +136,20 @@ class ListingController extends Controller
     public function create()
     {
         if (! auth()->check()) {
-            return redirect()->route('filament.partner.auth.login');
+            return redirect()->route('login');
         }
 
-        return redirect()->route('filament.partner.resources.listings.create', ['tenant' => auth()->id()]);
+        return redirect()->route('panel.listings.create');
     }
 
     public function store()
     {
         if (! auth()->check()) {
-            return redirect()->route('filament.partner.auth.login');
+            return redirect()->route('login');
         }
 
         return redirect()
-            ->route('filament.partner.resources.listings.create', ['tenant' => auth()->id()])
-            ->with('success', 'Use the Partner Panel to create listings.');
+            ->route('panel.listings.create')
+            ->with('success', 'İlan oluşturma ekranına yönlendirildin.');
     }
 }

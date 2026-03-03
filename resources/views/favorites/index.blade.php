@@ -5,17 +5,7 @@
 @section('content')
 <div class="max-w-[1320px] mx-auto px-4 py-8">
     <div class="grid grid-cols-1 lg:grid-cols-[220px,1fr] gap-4">
-        <aside class="bg-white border border-slate-200">
-            <a href="{{ route('favorites.index', ['tab' => 'listings']) }}" class="block px-5 py-4 text-base{{ $activeTab === 'listings' ? ' bg-blue-50 text-blue-700 font-semibold' : ' text-slate-700 hover:bg-slate-50' }}">
-                Favori İlanlar
-            </a>
-            <a href="{{ route('favorites.index', ['tab' => 'searches']) }}" class="block px-5 py-4 border-t border-slate-200{{ $activeTab === 'searches' ? ' bg-blue-50 text-blue-700 font-semibold' : ' text-slate-700 hover:bg-slate-50' }}">
-                Favori Aramalar
-            </a>
-            <a href="{{ route('favorites.index', ['tab' => 'sellers']) }}" class="block px-5 py-4 border-t border-slate-200{{ $activeTab === 'sellers' ? ' bg-blue-50 text-blue-700 font-semibold' : ' text-slate-700 hover:bg-slate-50' }}">
-                Favori Satıcılar
-            </a>
-        </aside>
+        @include('panel.partials.sidebar', ['activeMenu' => 'favorites', 'activeFavoritesTab' => $activeTab])
 
         <section class="bg-white border border-slate-200">
             @if($activeTab === 'listings')
@@ -98,7 +88,7 @@
                             <td class="px-4 py-4">
                                 @if($canMessageListing)
                                     @if($conversationId)
-                                    <a href="{{ route('favorites.index', array_merge($listingTabQuery, ['conversation' => $conversationId])) }}" class="inline-flex items-center h-10 px-4 border border-rose-300 text-rose-600 text-sm font-semibold rounded-full hover:bg-rose-50 transition">
+                                    <a href="{{ route('panel.inbox.index', ['conversation' => $conversationId]) }}" class="inline-flex items-center h-10 px-4 border border-rose-300 text-rose-600 text-sm font-semibold rounded-full hover:bg-rose-50 transition">
                                         Sohbete Git
                                     </a>
                                     @else

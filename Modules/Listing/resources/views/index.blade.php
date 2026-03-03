@@ -69,7 +69,7 @@
                         </button>
                     </form>
                     @else
-                    <a href="{{ route('filament.partner.auth.login') }}" class="w-9 h-9 rounded-full bg-white/95 text-slate-500 hover:text-rose-500 grid place-items-center transition" aria-label="Giriş yap">
+                    <a href="{{ route('login') }}" class="w-9 h-9 rounded-full bg-white/95 text-slate-500 hover:text-rose-500 grid place-items-center transition" aria-label="Giriş yap">
                         ♥
                     </a>
                     @endauth
@@ -90,7 +90,7 @@
                     @auth
                         @if($listing->user_id && (int) $listing->user_id !== (int) auth()->id())
                             @if($conversationId)
-                            <a href="{{ route('favorites.index', ['tab' => 'listings', 'conversation' => $conversationId]) }}" class="block text-center border border-rose-300 text-rose-600 py-2 rounded hover:bg-rose-50 transition text-sm font-semibold">
+                            <a href="{{ route('panel.inbox.index', ['conversation' => $conversationId]) }}" class="block text-center border border-rose-300 text-rose-600 py-2 rounded hover:bg-rose-50 transition text-sm font-semibold">
                                 Sohbete Git
                             </a>
                             @else

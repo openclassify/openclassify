@@ -53,8 +53,8 @@ class ConversationController extends Controller
         }
 
         return redirect()
-            ->route('favorites.index', array_merge(
-                $this->listingTabFilters($request),
+            ->route('panel.inbox.index', array_merge(
+                $this->inboxFilters($request),
                 ['conversation' => $conversation->getKey()],
             ))
             ->with('success', $messageBody !== '' ? 'Mesaj gönderildi.' : 'Sohbet açıldı.');
@@ -83,28 +83,16 @@ class ConversationController extends Controller
         ])->save();
 
         return redirect()
-            ->route('favorites.index', array_merge(
-                $this->listingTabFilters($request),
+            ->route('panel.inbox.index', array_merge(
+                $this->inboxFilters($request),
                 ['conversation' => $conversation->getKey()],
             ))
             ->with('success', 'Mesaj gönderildi.');
     }
 
-    private function listingTabFilters(Request $request): array
+    private function inboxFilters(Request $request): array
     {
-        $filters = [
-            'tab' => 'listings',
-        ];
-
-        $status = (string) $request->string('status');
-        if (in_array($status, ['all', 'active'], true)) {
-            $filters['status'] = $status;
-        }
-
-        $categoryId = $request->integer('category');
-        if ($categoryId > 0) {
-            $filters['category'] = $categoryId;
-        }
+        $filters = [];
 
         $messageFilter = (string) $request->string('message_filter');
         if (in_array($messageFilter, ['all', 'unread', 'important'], true)) {
