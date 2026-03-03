@@ -8,6 +8,7 @@
     "require": {
         "php": "^8.2",
         "a909m/filament-statefusion": "^2.3",
+        "ariaieboy/filament-currency": "^3.0",
         "bezhansalleh/filament-language-switch": "^4.1",
         "cheesegrits/filament-google-maps": "^5.0",
         "dutchcodingcompany/filament-developer-logins": "^2.1",
@@ -23,9 +24,11 @@
         "nwidart/laravel-modules": "^11.0",
         "pxlrbt/filament-activity-log": "^2.1",
         "socialiteproviders/apple": "^5.9",
-        "spatie/laravel-permission": "^7.2",
+        "spatie/laravel-permission": "^6.24",
         "spatie/laravel-settings": "^3.7",
         "stechstudio/filament-impersonate": "^5.1",
+        "tallcms/cms": "^3.2",
+        "tapp/filament-country-code-field": "^2.0",
         "ysfkaya/filament-phone-input": "^4.1"
     },
     "require-dev": {

@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Filament\Pages;
 
+use App\Support\CountryCodeManager;
 use App\Settings\GeneralSettings;
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
@@ -12,6 +13,7 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Toggle;
 use Filament\Pages\SettingsPage;
 use Filament\Schemas\Schema;
+use Tapp\FilamentCountryCodeField\Forms\Components\CountryCodeSelect;
 use UnitEnum;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 
@@ -61,6 +63,11 @@ class ManageGeneralSettings extends SettingsPage
                     ->options($this->localeOptions())
                     ->required()
                     ->searchable(),
+                CountryCodeSelect::make('default_country_code')
+                    ->label('Default Country')
+                    ->default('+90')
+                    ->required()
+                    ->helperText('Used as default country in panel forms.'),
                 TagsInput::make('currencies')
                     ->label('Currencies')
                     ->placeholder('USD')
@@ -81,7 +88,7 @@ class ManageGeneralSettings extends SettingsPage
                     ->maxLength(255),
                 PhoneInput::make('whatsapp')
                     ->label('WhatsApp')
-                    ->defaultCountry('TR')
+                    ->defaultCountry(CountryCodeManager::defaultCountryIso2())
                     ->nullable()
                     ->formatAsYouType()
                     ->helperText('Use international format, e.g. +905551112233.'),

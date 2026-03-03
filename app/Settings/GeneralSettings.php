@@ -14,6 +14,8 @@ class GeneralSettings extends Settings
 
     public string $default_language;
 
+    public string $default_country_code;
+
     public array $currencies;
 
     public string $sender_email;

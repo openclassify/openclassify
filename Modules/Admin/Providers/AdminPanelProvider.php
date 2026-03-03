@@ -24,6 +24,7 @@ use Modules\Admin\Filament\Resources\CategoryResource;
 use Modules\Admin\Filament\Resources\ListingResource;
 use Modules\Admin\Filament\Resources\LocationResource;
 use Modules\Admin\Filament\Resources\UserResource;
+use TallCms\Cms\TallCmsPlugin;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -40,6 +41,8 @@ class AdminPanelProvider extends PanelProvider
             ->discoverWidgets(in: module_path('Admin', 'Filament/Widgets'), for: 'Modules\\Admin\\Filament\\Widgets')
             ->plugins([
                 FilamentStateFusionPlugin::make(),
+                TallCmsPlugin::make()
+                    ->withoutUsers(),
                 BreezyCore::make()
                     ->myProfile(
                         shouldRegisterNavigation: true,

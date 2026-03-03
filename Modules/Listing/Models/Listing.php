@@ -2,9 +2,12 @@
 namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Support\Str;
 use Modules\Listing\States\ListingStatus;
+use Modules\Listing\Support\ListingPanelHelper;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
@@ -50,6 +53,31 @@ class Listing extends Model implements HasMedia
     public function user()
     {
         return $this->belongsTo(\App\Models\User::class);
+    }
+
+    public function scopePublicFeed(Builder $query): Builder
+    {
+        return $query
+            ->where('status', 'active')
+            ->orderByDesc('is_featured')
+            ->orderByDesc('created_at');
+    }
+
+    public static function createFromFrontend(array $data, null | int | string $userId): self
+    {
+        $baseSlug = Str::slug((string) ($data['title'] ?? 'listing'));
+        $baseSlug = $baseSlug !== '' ? $baseSlug : 'listing';
+
+        do {
+            $slug = $baseSlug.'-'.Str::random(6);
+        } while (static::query()->where('slug', $slug)->exists());
+
+        $payload = $data;
+        $payload['user_id'] = $userId;
+        $payload['currency'] = ListingPanelHelper::normalizeCurrency($data['currency'] ?? null);
+        $payload['slug'] = $slug;
+
+        return static::query()->create($payload);
     }
 
     public function registerMediaCollections(): void

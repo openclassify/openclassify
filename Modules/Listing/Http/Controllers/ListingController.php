@@ -1,18 +1,18 @@
 <?php
 namespace Modules\Listing\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use Modules\Listing\Models\Listing;
+use Modules\Listing\Support\ListingPanelHelper;
 
 class ListingController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $listings = Listing::where('status', 'active')
-            ->orderByDesc('is_featured')
-            ->orderByDesc('created_at')
+        $listings = Listing::query()
+            ->publicFeed()
             ->paginate(12);
         return view('listing::index', compact('listings'));
     }
@@ -25,13 +25,13 @@ class ListingController extends Controller
     public function create()
     {
         return view('listing::create', [
-            'currencies' => $this->currencyCodes(),
+            'currencies' => ListingPanelHelper::currencyCodes(),
         ]);
     }
 
     public function store(Request $request)
     {
-        $currencies = $this->currencyCodes();
+        $currencies = ListingPanelHelper::currencyCodes();
 
         $data = $request->validate([
             'title' => 'required|string|min:3|max:255',
@@ -44,23 +44,9 @@ class ListingController extends Controller
             'contact_email' => 'nullable|email',
             'contact_phone' => 'nullable|string',
         ]);
-        $data['user_id'] = auth()->id();
-        $data['currency'] = strtoupper($data['currency'] ?? $currencies[0]);
-        $data['slug'] = \Illuminate\Support\Str::slug($data['title']) . '-' . \Illuminate\Support\Str::random(6);
-        $listing = Listing::create($data);
+
+        $listing = Listing::createFromFrontend($data, auth()->id());
+
         return redirect()->route('listings.show', $listing)->with('success', 'Listing created!');
-    }
-
-    private function currencyCodes(): array
-    {
-        $codes = collect(config('app.currencies', ['USD']))
-            ->filter(fn ($code) => is_string($code) && trim($code) !== '')
-            ->map(fn (string $code) => strtoupper(substr(trim($code), 0, 3)))
-            ->filter(fn (string $code) => strlen($code) === 3)
-            ->unique()
-            ->values()
-            ->all();
-
-        return $codes !== [] ? $codes : ['USD'];
     }
 }

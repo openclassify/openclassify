@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Support\CountryCodeManager;
 use App\Settings\GeneralSettings;
 use BezhanSalleh\LanguageSwitch\LanguageSwitch;
 use Illuminate\Support\ServiceProvider;
@@ -32,12 +33,14 @@ class AppServiceProvider extends ServiceProvider
         $fallbackFacebookClientSecret = env('FACEBOOK_CLIENT_SECRET');
         $fallbackAppleClientId = env('APPLE_CLIENT_ID');
         $fallbackAppleClientSecret = env('APPLE_CLIENT_SECRET');
+        $fallbackDefaultCountryCode = '+90';
 
         $generalSettings = [
             'site_name' => $fallbackName,
             'site_description' => $fallbackDescription,
             'site_logo_url' => null,
             'default_language' => $fallbackLocale,
+            'default_country_code' => $fallbackDefaultCountryCode,
             'currencies' => $fallbackCurrencies,
             'sender_email' => config('mail.from.address', 'hello@example.com'),
             'sender_name' => config('mail.from.name', $fallbackName),
@@ -81,6 +84,7 @@ class AppServiceProvider extends ServiceProvider
                 $facebookClientSecret = trim((string) ($settings->facebook_client_secret ?: $fallbackFacebookClientSecret));
                 $appleClientId = trim((string) ($settings->apple_client_id ?: $fallbackAppleClientId));
                 $appleClientSecret = trim((string) ($settings->apple_client_secret ?: $fallbackAppleClientSecret));
+                $defaultCountryCode = CountryCodeManager::normalizeCountryCode($settings->default_country_code ?? $fallbackDefaultCountryCode);
 
                 $generalSettings = [
                     'site_name' => trim((string) ($settings->site_name ?: $fallbackName)),
@@ -89,6 +93,7 @@ class AppServiceProvider extends ServiceProvider
                         ? Storage::disk('public')->url($settings->site_logo)
                         : null,
                     'default_language' => $defaultLanguage,
+                    'default_country_code' => $defaultCountryCode,
                     'currencies' => $currencies,
                     'sender_email' => trim((string) ($settings->sender_email ?: config('mail.from.address'))),
                     'sender_name' => trim((string) ($settings->sender_name ?: $fallbackName)),
@@ -143,6 +148,9 @@ class AppServiceProvider extends ServiceProvider
             'services.apple.redirect' => url('/oauth/callback/apple'),
             'services.apple.stateless' => true,
             'services.apple.enabled' => (bool) $generalSettings['apple_login_enabled'],
+            'money.defaults.currency' => $generalSettings['currencies'][0] ?? 'USD',
+            'app.default_country_code' => $generalSettings['default_country_code'] ?? $fallbackDefaultCountryCode,
+            'app.default_country_iso2' => CountryCodeManager::iso2FromCountryCode($generalSettings['default_country_code'] ?? $fallbackDefaultCountryCode) ?? 'TR',
         ]);
 
         Event::listen(function (SocialiteWasCalled $event): void {
