@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('app::layouts.app')
 @section('content')
 @php
     $title = trim((string) ($listing->title ?? ''));

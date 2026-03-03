@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('app::layouts.app')
 @section('content')
 <div class="bg-gradient-to-br from-blue-600 to-blue-800 text-white py-16">
     <div class="container mx-auto px-4 text-center">

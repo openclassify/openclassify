@@ -22,6 +22,8 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
+        View::addNamespace('app', resource_path('views'));
+
         $fallbackName = config('app.name', 'OpenClassify');
         $fallbackLocale = config('app.locale', 'en');
         $fallbackCurrencies = $this->normalizeCurrencies(config('app.currencies', ['USD']));

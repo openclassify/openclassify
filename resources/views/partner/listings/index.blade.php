@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('app::layouts.app')
 @section('title', 'My Listings')
 @section('content')
 @php($partnerCreateRoute = route('filament.partner.resources.listings.create', ['tenant' => auth()->id()]))
