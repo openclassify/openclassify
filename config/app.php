@@ -82,6 +82,8 @@ return [
 
     'available_locales' => ['en', 'tr', 'ar', 'zh', 'es', 'fr', 'de', 'pt', 'ru', 'ja'],
 
+    'currencies' => ['USD'],
+
     'fallback_locale' => env('APP_FALLBACK_LOCALE', 'en'),
 
     'faker_locale' => env('APP_FAKER_LOCALE', 'en_US'),

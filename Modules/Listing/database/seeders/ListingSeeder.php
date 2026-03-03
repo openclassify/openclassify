@@ -9,7 +9,9 @@ class ListingSeeder extends Seeder
 {
     public function run(): void
     {
-        $user = \App\Models\User::where('email', 'partner@openclassify.com')->first();
+        $user = \App\Models\User::where('email', 'b@b.com')
+            ->orWhere('email', 'partner@openclassify.com')
+            ->first();
         $categories = Category::where('level', 0)->get();
 
         if (!$user || $categories->isEmpty()) return;
@@ -38,7 +40,7 @@ class ListingSeeder extends Seeder
                     'category_id' => $category?->id,
                     'user_id' => $user->id,
                     'status' => 'active',
-                    'contact_email' => 'partner@openclassify.com',
+                    'contact_email' => $user->email,
                     'contact_phone' => '+1234567890',
                     'is_featured' => $i < 3,
                 ])

@@ -1,28 +1,31 @@
 <?php
 namespace Modules\Admin\Filament\Resources;
 
+use BackedEnum;
+use Filament\Actions\Action;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\EditAction;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Admin\Filament\Resources\CategoryResource\Pages;
 use Modules\Category\Models\Category;
+use UnitEnum;
 
 class CategoryResource extends Resource
 {
     protected static ?string $model = Category::class;
-    protected static ?string $navigationIcon = 'heroicon-o-tag';
-    protected static ?string $navigationGroup = 'Catalog';
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-tag';
+    protected static string | UnitEnum | null $navigationGroup = 'Catalog';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form->schema([
+        return $schema->schema([
             TextInput::make('name')->required()->maxLength(255)->live(onBlur: true)->afterStateUpdated(fn ($state, $set) => $set('slug', \Illuminate\Support\Str::slug($state))),
             TextInput::make('slug')->required()->maxLength(255)->unique(ignoreRecord: true),
             TextInput::make('description')->maxLength(500),
@@ -42,7 +45,13 @@ class CategoryResource extends Resource
             TextColumn::make('listings_count')->counts('listings')->label('Listings'),
             IconColumn::make('is_active')->boolean(),
             TextColumn::make('sort_order')->sortable(),
-        ])->actions([EditAction::make(), DeleteAction::make()]);
+        ])->actions([
+            EditAction::make(),
+            Action::make('activities')
+                ->icon('heroicon-o-clock')
+                ->url(fn (Category $record): string => static::getUrl('activities', ['record' => $record])),
+            DeleteAction::make(),
+        ]);
     }
 
     public static function getPages(): array
@@ -50,6 +59,7 @@ class CategoryResource extends Resource
         return [
             'index' => Pages\ListCategories::route('/'),
             'create' => Pages\CreateCategory::route('/create'),
+            'activities' => Pages\ListCategoryActivities::route('/{record}/activities'),
             'edit' => Pages\EditCategory::route('/{record}/edit'),
         ];
     }

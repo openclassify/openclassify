@@ -1,6 +1,8 @@
 <?php
 namespace App\Models;
 
+use App\States\UserStatus;
+use Filament\Models\Contracts\HasAvatar;
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasTenants;
 use Filament\Panel;
@@ -9,13 +11,19 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Storage;
+use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
+use Laravel\Sanctum\HasApiTokens;
+use Spatie\Activitylog\LogOptions;
+use Spatie\Activitylog\Traits\LogsActivity;
+use Spatie\ModelStates\HasStates;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser, HasTenants
+class User extends Authenticatable implements FilamentUser, HasTenants, HasAvatar
 {
-    use HasFactory, HasRoles, Notifiable;
+    use HasApiTokens, HasFactory, HasRoles, LogsActivity, Notifiable, HasStates, TwoFactorAuthenticatable;
 
-    protected $fillable = ['name', 'email', 'password'];
+    protected $fillable = ['name', 'email', 'password', 'avatar_url', 'status'];
     protected $hidden = ['password', 'remember_token'];
 
     protected function casts(): array
@@ -23,11 +31,25 @@ class User extends Authenticatable implements FilamentUser, HasTenants
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'status' => UserStatus::class,
         ];
+    }
+
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logFillable()
+            ->logExcept(['password'])
+            ->logOnlyDirty()
+            ->dontSubmitEmptyLogs();
     }
 
     public function canAccessPanel(Panel $panel): bool
     {
+        if ((string) $this->status !== 'active') {
+            return false;
+        }
+
         return match ($panel->getId()) {
             'admin' => $this->hasRole('admin'),
             'partner' => true,
@@ -48,5 +70,22 @@ class User extends Authenticatable implements FilamentUser, HasTenants
     public function listings()
     {
         return $this->hasMany(\Modules\Listing\Models\Listing::class);
+    }
+
+    public function canImpersonate(): bool
+    {
+        return $this->hasRole('admin');
+    }
+
+    public function canBeImpersonated(): bool
+    {
+        return ! $this->hasRole('admin');
+    }
+
+    public function getFilamentAvatarUrl(): ?string
+    {
+        return filled($this->avatar_url)
+            ? Storage::disk('public')->url($this->avatar_url)
+            : null;
     }
 }

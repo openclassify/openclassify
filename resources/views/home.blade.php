@@ -86,7 +86,7 @@
         <h2 class="text-3xl font-bold mb-4">{{ __('messages.sell_something') }}</h2>
         <p class="text-blue-200 mb-6">Post your first listing for free!</p>
         @auth
-        <a href="{{ route('listings.create') }}" class="bg-orange-500 text-white px-8 py-3 rounded-xl hover:bg-orange-600 transition font-semibold text-lg">Post a Free Ad</a>
+        <a href="{{ route('filament.partner.resources.listings.create', ['tenant' => auth()->id()]) }}" class="bg-orange-500 text-white px-8 py-3 rounded-xl hover:bg-orange-600 transition font-semibold text-lg">Post a Free Ad</a>
         @else
         <a href="{{ route('register') }}" class="bg-white text-blue-600 px-8 py-3 rounded-xl hover:bg-gray-100 transition font-semibold text-lg">Get Started Free</a>
         @endauth

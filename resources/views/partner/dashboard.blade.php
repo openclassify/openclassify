@@ -1,6 +1,7 @@
 @extends('layouts.app')
 @section('title', 'Dashboard')
 @section('content')
+@php($partnerCreateRoute = route('filament.partner.resources.listings.create', ['tenant' => auth()->id()]))
 <div class="container mx-auto px-4 py-8">
     <h1 class="text-3xl font-bold mb-8">My Dashboard</h1>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
@@ -14,7 +15,7 @@
         </div>
         <div class="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
             <div class="text-gray-500 text-sm font-medium">Quick Actions</div>
-            <a href="{{ route('listings.create') }}" class="mt-2 block text-center bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition text-sm">+ Post New Listing</a>
+            <a href="{{ $partnerCreateRoute }}" class="mt-2 block text-center bg-orange-500 text-white py-2 rounded-lg hover:bg-orange-600 transition text-sm">+ Post New Listing</a>
         </div>
     </div>
     <div class="bg-white rounded-xl shadow-sm overflow-hidden">
@@ -48,7 +49,7 @@
                     </td>
                 </tr>
                 @empty
-                <tr><td colspan="5" class="px-6 py-8 text-center text-gray-500">No listings yet. <a href="{{ route('listings.create') }}" class="text-blue-600 hover:underline">Post your first listing!</a></td></tr>
+                <tr><td colspan="5" class="px-6 py-8 text-center text-gray-500">No listings yet. <a href="{{ $partnerCreateRoute }}" class="text-blue-600 hover:underline">Post your first listing!</a></td></tr>
                 @endforelse
             </tbody>
         </table>

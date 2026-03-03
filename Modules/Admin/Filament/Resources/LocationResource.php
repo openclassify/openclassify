@@ -1,28 +1,31 @@
 <?php
 namespace Modules\Admin\Filament\Resources;
 
+use BackedEnum;
+use Filament\Actions\Action;
+use Filament\Actions\DeleteAction;
+use Filament\Actions\EditAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Toggle;
-use Filament\Forms\Form;
 use Filament\Resources\Resource;
-use Filament\Tables\Actions\DeleteAction;
-use Filament\Tables\Actions\EditAction;
+use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Admin\Filament\Resources\LocationResource\Pages;
 use Modules\Location\Models\Country;
+use UnitEnum;
 
 class LocationResource extends Resource
 {
     protected static ?string $model = Country::class;
-    protected static ?string $navigationIcon = 'heroicon-o-globe-alt';
-    protected static ?string $navigationGroup = 'Settings';
+    protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-globe-alt';
+    protected static string | UnitEnum | null $navigationGroup = 'Settings';
     protected static ?string $label = 'Country';
 
-    public static function form(Form $form): Form
+    public static function form(Schema $schema): Schema
     {
-        return $form->schema([
+        return $schema->schema([
             TextInput::make('name')->required()->maxLength(100),
             TextInput::make('code')->required()->maxLength(2)->unique(ignoreRecord: true),
             TextInput::make('phone_code')->maxLength(10),
@@ -38,7 +41,13 @@ class LocationResource extends Resource
             TextColumn::make('code'),
             TextColumn::make('phone_code'),
             IconColumn::make('is_active')->boolean(),
-        ])->actions([EditAction::make(), DeleteAction::make()]);
+        ])->actions([
+            EditAction::make(),
+            Action::make('activities')
+                ->icon('heroicon-o-clock')
+                ->url(fn (Country $record): string => static::getUrl('activities', ['record' => $record])),
+            DeleteAction::make(),
+        ]);
     }
 
     public static function getPages(): array
@@ -46,6 +55,7 @@ class LocationResource extends Resource
         return [
             'index' => Pages\ListLocations::route('/'),
             'create' => Pages\CreateLocation::route('/create'),
+            'activities' => Pages\ListLocationActivities::route('/{record}/activities'),
             'edit' => Pages\EditLocation::route('/{record}/edit'),
         ];
     }

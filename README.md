@@ -14,6 +14,14 @@ A modern classified ads platform built with Laravel 12, FilamentPHP v5, and Lara
 - 🐳 **Docker Ready** — One-command production and development setup
 - ☁️ **GitHub Codespaces** — Zero-config cloud development
 
+## AI Custom Instructions
+
+Project-level custom instruction set files are available at:
+
+- `.chatgpt/CUSTOM_INSTRUCTIONS.md` (ChatGPT)
+- `.codex/CUSTOM_INSTRUCTIONS.md` (Codex)
+- `.gemini/CUSTOM_INSTRUCTIONS.md` (Google Gemini / Antigravity)
+
 ## Tech Stack
 
 | Layer | Technology |

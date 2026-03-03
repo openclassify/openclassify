@@ -1,29 +1,31 @@
 <?php
 namespace Database\Seeders;
 
+use App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
+use Spatie\Permission\Models\Role;
 
 class DatabaseSeeder extends Seeder
 {
     public function run(): void
     {
-        $admin = \App\Models\User::factory()->create([
-            'name' => 'Admin User',
-            'email' => 'admin@openclassify.com',
-            'password' => Hash::make('password'),
-        ]);
+        $admin = User::updateOrCreate(
+            ['email' => 'a@a.com'],
+            ['name' => 'Admin', 'password' => Hash::make('236330'), 'status' => 'active']
+        );
 
-        $partner = \App\Models\User::factory()->create([
-            'name' => 'Partner User',
-            'email' => 'partner@openclassify.com',
-            'password' => Hash::make('password'),
-        ]);
+        $partner = User::updateOrCreate(
+            ['email' => 'b@b.com'],
+            ['name' => 'Partner', 'password' => Hash::make('36330'), 'status' => 'active']
+        );
 
-        if (class_exists(\Spatie\Permission\Models\Role::class)) {
-            $adminRole = \Spatie\Permission\Models\Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
-            \Spatie\Permission\Models\Role::firstOrCreate(['name' => 'partner', 'guard_name' => 'web']);
-            $admin->assignRole($adminRole);
+        if (class_exists(Role::class)) {
+            $adminRole = Role::firstOrCreate(['name' => 'admin', 'guard_name' => 'web']);
+            $partnerRole = Role::firstOrCreate(['name' => 'partner', 'guard_name' => 'web']);
+
+            $admin->syncRoles([$adminRole->name]);
+            $partner->syncRoles([$partnerRole->name]);
         }
 
         $this->call([

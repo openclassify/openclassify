@@ -1,0 +1,18 @@
+{
+    "agents": [
+        "codex",
+        "gemini",
+        "copilot"
+    ],
+    "herd_mcp": false,
+    "mcp": true,
+    "nightwatch_mcp": false,
+    "packages": [
+        "filament/filament",
+        "spatie/laravel-permission"
+    ],
+    "sail": false,
+    "skills": [
+        "laravel-permission-development"
+    ]
+}

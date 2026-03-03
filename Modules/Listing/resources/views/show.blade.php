@@ -1,5 +1,21 @@
 @extends('layouts.app')
 @section('content')
+@php
+    $title = trim((string) ($listing->title ?? ''));
+    $displayTitle = ($title !== '' && preg_match('/[\pL\pN]/u', $title)) ? $title : 'Untitled listing';
+
+    $city = trim((string) ($listing->city ?? ''));
+    $country = trim((string) ($listing->country ?? ''));
+    $location = implode(', ', array_filter([$city, $country], fn ($value) => $value !== ''));
+
+    $description = trim((string) ($listing->description ?? ''));
+    $displayDescription = ($description !== '' && preg_match('/[\pL\pN]/u', $description))
+        ? $description
+        : 'No description provided.';
+
+    $hasPrice = !is_null($listing->price);
+    $priceValue = $hasPrice ? (float) $listing->price : null;
+@endphp
 <div class="container mx-auto px-4 py-8">
     <div class="max-w-4xl mx-auto">
         <div class="bg-white rounded-lg shadow-md overflow-hidden">
@@ -8,16 +24,24 @@
             </div>
             <div class="p-6">
                 <div class="flex justify-between items-start">
-                    <h1 class="text-2xl font-bold text-gray-900">{{ $listing->title }}</h1>
+                    <h1 class="text-2xl font-bold text-gray-900">{{ $displayTitle }}</h1>
                     <span class="text-3xl font-bold text-green-600">
-                        @if($listing->price) {{ number_format($listing->price, 0) }} {{ $listing->currency }} @else Free @endif
+                        @if($hasPrice)
+                            @if($priceValue > 0)
+                                {{ number_format($priceValue, 0) }} {{ $listing->currency ?? 'USD' }}
+                            @else
+                                Free
+                            @endif
+                        @else
+                            Price on request
+                        @endif
                     </span>
                 </div>
-                <p class="text-gray-500 mt-2">{{ $listing->city }}, {{ $listing->country }}</p>
-                <p class="text-gray-500 text-sm">Posted {{ $listing->created_at->diffForHumans() }}</p>
+                <p class="text-gray-500 mt-2">{{ $location !== '' ? $location : 'Location not specified' }}</p>
+                <p class="text-gray-500 text-sm">Posted {{ $listing->created_at?->diffForHumans() ?? 'recently' }}</p>
                 <div class="mt-4 border-t pt-4">
                     <h2 class="font-semibold text-lg mb-2">Description</h2>
-                    <p class="text-gray-700">{{ $listing->description }}</p>
+                    <p class="text-gray-700">{{ $displayDescription }}</p>
                 </div>
                 <div class="mt-6 bg-gray-50 rounded-lg p-4">
                     <h2 class="font-semibold text-lg mb-3">Contact Seller</h2>
@@ -26,6 +50,9 @@
                     @endif
                     @if($listing->contact_email)
                     <p class="text-gray-700"><span class="font-medium">Email:</span> {{ $listing->contact_email }}</p>
+                    @endif
+                    @if(!$listing->contact_phone && !$listing->contact_email)
+                    <p class="text-gray-700">No contact details provided.</p>
                     @endif
                 </div>
                 <div class="mt-6">

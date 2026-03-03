@@ -25,3 +25,6 @@ Thumbs.db
 /public/js/
 /public/fonts/
 /public/css/
+composer.lock
+.codex/config.toml
+/public/vendor/

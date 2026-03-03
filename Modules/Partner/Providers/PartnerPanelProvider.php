@@ -1,6 +1,7 @@
 <?php
 namespace Modules\Partner\Providers;
 
+use A909M\FilamentStateFusion\FilamentStateFusionPlugin;
 use App\Models\User;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -16,6 +17,7 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Jeffgreco13\FilamentBreezy\BreezyCore;
 
 class PartnerPanelProvider extends PanelProvider
 {
@@ -30,6 +32,18 @@ class PartnerPanelProvider extends PanelProvider
             ->discoverResources(in: module_path('Partner', 'Filament/Resources'), for: 'Modules\\Partner\\Filament\\Resources')
             ->discoverPages(in: module_path('Partner', 'Filament/Pages'), for: 'Modules\\Partner\\Filament\\Pages')
             ->discoverWidgets(in: module_path('Partner', 'Filament/Widgets'), for: 'Modules\\Partner\\Filament\\Widgets')
+            ->plugins([
+                FilamentStateFusionPlugin::make(),
+                BreezyCore::make()
+                    ->myProfile(
+                        shouldRegisterNavigation: true,
+                        navigationGroup: 'Account',
+                        hasAvatars: true,
+                        userMenuLabel: 'My Profile',
+                    )
+                    ->enableTwoFactorAuthentication()
+                    ->enableSanctumTokens(),
+            ])
             ->pages([Dashboard::class])
             ->middleware([
                 EncryptCookies::class,
