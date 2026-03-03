@@ -35,4 +35,26 @@ return [
         ],
     ],
 
+    'google' => [
+        'client_id' => env('GOOGLE_CLIENT_ID'),
+        'client_secret' => env('GOOGLE_CLIENT_SECRET'),
+        'redirect' => env('GOOGLE_REDIRECT_URI', '/oauth/callback/google'),
+        'enabled' => env('ENABLE_GOOGLE_LOGIN', false),
+    ],
+
+    'facebook' => [
+        'client_id' => env('FACEBOOK_CLIENT_ID'),
+        'client_secret' => env('FACEBOOK_CLIENT_SECRET'),
+        'redirect' => env('FACEBOOK_REDIRECT_URI', '/oauth/callback/facebook'),
+        'enabled' => env('ENABLE_FACEBOOK_LOGIN', false),
+    ],
+
+    'apple' => [
+        'client_id' => env('APPLE_CLIENT_ID'),
+        'client_secret' => env('APPLE_CLIENT_SECRET'),
+        'redirect' => env('APPLE_REDIRECT_URI', '/oauth/callback/apple'),
+        'stateless' => true,
+        'enabled' => env('ENABLE_APPLE_LOGIN', false),
+    ],
+
 ];
