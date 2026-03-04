@@ -20,7 +20,7 @@ use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
 use Modules\Partner\Filament\Resources\ListingResource;
-use Modules\Profile\Models\Profile;
+use Modules\User\App\Models\Profile;
 use Throwable;
 
 class QuickCreateListing extends Page

@@ -2,7 +2,7 @@
 
 namespace Modules\Listing\Database\Seeders;
 
-use App\Models\User;
+use Modules\User\App\Models\User;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -11,9 +11,6 @@ use Modules\Listing\Models\Listing;
 
 class ListingSeeder extends Seeder
 {
-    /**
-     * @var array<int, array{title: string, description: string, price: int, city: string, country: string, image: string}>
-     */
     private const LISTINGS = [
         [
             'title' => 'iPhone 14 Pro 256 GB, temiz kullanılmış',
@@ -106,9 +103,6 @@ class ListingSeeder extends Seeder
             ->first();
     }
 
-    /**
-     * @param array{title: string, description: string, price: int, city: string, country: string, image: string} $data
-     */
     private function upsertListing(int $index, array $data, Collection $categories, User $user): Listing
     {
         $slug = Str::slug($data['title']) . '-' . ($index + 1);
@@ -167,7 +161,11 @@ class ListingSeeder extends Seeder
 
         $media = $mediaItems->first();
 
-        if (! $media || (string) $media->file_name !== $targetFileName) {
+        if (
+            ! $media
+            || (string) $media->file_name !== $targetFileName
+            || (string) $media->disk !== 'public'
+        ) {
             return false;
         }
 

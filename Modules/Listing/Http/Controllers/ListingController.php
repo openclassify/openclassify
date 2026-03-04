@@ -2,8 +2,8 @@
 namespace Modules\Listing\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\Conversation;
-use App\Models\FavoriteSearch;
+use Modules\Conversation\App\Models\Conversation;
+use Modules\Favorite\App\Models\FavoriteSearch;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;

@@ -55,18 +55,18 @@ class Listing extends Model implements HasMedia
 
     public function user()
     {
-        return $this->belongsTo(\App\Models\User::class);
+        return $this->belongsTo(\Modules\User\App\Models\User::class);
     }
 
     public function favoritedByUsers()
     {
-        return $this->belongsToMany(\App\Models\User::class, 'favorite_listings')
+        return $this->belongsToMany(\Modules\User\App\Models\User::class, 'favorite_listings')
             ->withTimestamps();
     }
 
     public function conversations()
     {
-        return $this->hasMany(\App\Models\Conversation::class);
+        return $this->hasMany(\Modules\Conversation\App\Models\Conversation::class);
     }
 
     public function scopePublicFeed(Builder $query): Builder

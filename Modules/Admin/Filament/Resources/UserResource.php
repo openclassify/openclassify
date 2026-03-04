@@ -1,21 +1,19 @@
 <?php
 namespace Modules\Admin\Filament\Resources;
 
-use A909M\FilamentStateFusion\Forms\Components\StateFusionSelect;
 use A909M\FilamentStateFusion\Tables\Columns\StateFusionSelectColumn;
 use A909M\FilamentStateFusion\Tables\Filters\StateFusionSelectFilter;
-use App\Models\User;
+use Modules\User\App\Models\User;
 use BackedEnum;
 use Filament\Actions\Action;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\EditAction;
-use Filament\Forms\Components\Select;
-use Filament\Forms\Components\TextInput;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Table;
 use Modules\Admin\Filament\Resources\UserResource\Pages;
+use Modules\User\App\Support\Filament\UserFormFields;
 use STS\FilamentImpersonate\Actions\Impersonate;
 use UnitEnum;
 
@@ -28,11 +26,11 @@ class UserResource extends Resource
     public static function form(Schema $schema): Schema
     {
         return $schema->schema([
-            TextInput::make('name')->required()->maxLength(255),
-            TextInput::make('email')->email()->required()->maxLength(255)->unique(ignoreRecord: true),
-            TextInput::make('password')->password()->required(fn ($livewire) => $livewire instanceof Pages\CreateUser)->dehydrateStateUsing(fn ($state) => filled($state) ? bcrypt($state) : null)->dehydrated(fn ($state) => filled($state)),
-            StateFusionSelect::make('status')->required(),
-            Select::make('roles')->multiple()->relationship('roles', 'name')->preload(),
+            UserFormFields::name(),
+            UserFormFields::email(),
+            UserFormFields::password(fn ($livewire) => $livewire instanceof Pages\CreateUser),
+            UserFormFields::status(),
+            UserFormFields::roles(),
         ]);
     }
 

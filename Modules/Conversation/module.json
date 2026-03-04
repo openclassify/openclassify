@@ -1,0 +1,11 @@
+{
+    "name": "Conversation",
+    "alias": "conversation",
+    "description": "",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Conversation\\App\\Providers\\ConversationServiceProvider"
+    ],
+    "files": []
+}

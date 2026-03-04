@@ -2,8 +2,10 @@
     "Category": true,
     "Listing": true,
     "Location": true,
-    "Profile": true,
     "Admin": true,
     "Partner": false,
-    "Theme": true
+    "Theme": true,
+    "Conversation": true,
+    "Favorite": true,
+    "User": true
 }

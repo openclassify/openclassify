@@ -2,7 +2,7 @@
 namespace Modules\Partner\Providers;
 
 use A909M\FilamentStateFusion\FilamentStateFusionPlugin;
-use App\Models\User;
+use Modules\User\App\Models\User;
 use DutchCodingCompany\FilamentDeveloperLogins\FilamentDeveloperLoginsPlugin;
 use DutchCodingCompany\FilamentSocialite\FilamentSocialitePlugin;
 use Filament\Http\Middleware\Authenticate;
