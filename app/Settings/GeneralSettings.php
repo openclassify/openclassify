@@ -50,6 +50,8 @@ class GeneralSettings extends Settings
 
     public ?string $apple_client_secret;
 
+    public array $home_slides;
+
     public static function group(): string
     {
         return 'general';

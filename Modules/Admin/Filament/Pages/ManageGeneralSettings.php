@@ -6,6 +6,7 @@ use App\Support\CountryCodeManager;
 use App\Settings\GeneralSettings;
 use BackedEnum;
 use Filament\Forms\Components\FileUpload;
+use Filament\Forms\Components\Repeater;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\TagsInput;
 use Filament\Forms\Components\TextInput;
@@ -43,6 +44,39 @@ class ManageGeneralSettings extends SettingsPage
                     ->label('Site Description')
                     ->rows(3)
                     ->maxLength(500),
+                Repeater::make('home_slides')
+                    ->label('Home Slider')
+                    ->schema([
+                        TextInput::make('badge')
+                            ->label('Badge')
+                            ->required()
+                            ->maxLength(255),
+                        TextInput::make('title')
+                            ->label('Title')
+                            ->required()
+                            ->maxLength(255),
+                        Textarea::make('subtitle')
+                            ->label('Subtitle')
+                            ->rows(2)
+                            ->required()
+                            ->maxLength(500),
+                        TextInput::make('primary_button_text')
+                            ->label('Primary Button Text')
+                            ->required()
+                            ->maxLength(120),
+                        TextInput::make('secondary_button_text')
+                            ->label('Secondary Button Text')
+                            ->required()
+                            ->maxLength(120),
+                    ])
+                    ->default($this->defaultHomeSlides())
+                    ->minItems(1)
+                    ->collapsible()
+                    ->reorderableWithButtons()
+                    ->addActionLabel('Add Slide')
+                    ->itemLabel(fn (array $state): ?string => filled($state['title'] ?? null) ? (string) $state['title'] : 'Slide')
+                    ->afterStateHydrated(fn (Repeater $component, $state) => $component->state($this->normalizeHomeSlides($state)))
+                    ->dehydrateStateUsing(fn ($state) => $this->normalizeHomeSlides($state)),
                 FileUpload::make('site_logo')
                     ->label('Site Logo')
                     ->image()
@@ -177,5 +211,51 @@ class ManageGeneralSettings extends SettingsPage
             ->all();
 
         return $normalized !== [] ? $normalized : ['USD'];
+    }
+
+    private function defaultHomeSlides(): array
+    {
+        return [
+            [
+                'badge' => 'OpenClassify Marketplace',
+                'title' => 'İlan ücreti ödemeden ürününü hızla sat!',
+                'subtitle' => 'Buy and sell everything in your area',
+                'primary_button_text' => 'İncele',
+                'secondary_button_text' => 'Post Listing',
+            ],
+        ];
+    }
+
+    private function normalizeHomeSlides(mixed $state): array
+    {
+        $slides = is_array($state) ? $state : [];
+        $fallbackSlide = $this->defaultHomeSlides()[0];
+
+        $normalized = collect($slides)
+            ->filter(fn ($slide): bool => is_array($slide))
+            ->map(function (array $slide) use ($fallbackSlide): ?array {
+                $badge = trim((string) ($slide['badge'] ?? ''));
+                $title = trim((string) ($slide['title'] ?? ''));
+                $subtitle = trim((string) ($slide['subtitle'] ?? ''));
+                $primaryButtonText = trim((string) ($slide['primary_button_text'] ?? ''));
+                $secondaryButtonText = trim((string) ($slide['secondary_button_text'] ?? ''));
+
+                if ($title === '') {
+                    return null;
+                }
+
+                return [
+                    'badge' => $badge !== '' ? $badge : $fallbackSlide['badge'],
+                    'title' => $title,
+                    'subtitle' => $subtitle !== '' ? $subtitle : $fallbackSlide['subtitle'],
+                    'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : $fallbackSlide['primary_button_text'],
+                    'secondary_button_text' => $secondaryButtonText !== '' ? $secondaryButtonText : $fallbackSlide['secondary_button_text'],
+                ];
+            })
+            ->filter(fn ($slide): bool => is_array($slide))
+            ->values()
+            ->all();
+
+        return $normalized !== [] ? $normalized : $this->defaultHomeSlides();
     }
 }

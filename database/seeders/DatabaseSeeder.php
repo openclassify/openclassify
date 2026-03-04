@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
         }
 
         $this->call([
+            HomeSliderSettingsSeeder::class,
             \Modules\Location\Database\Seeders\LocationSeeder::class,
             \Modules\Category\Database\Seeders\CategorySeeder::class,
             \Modules\Listing\Database\Seeders\ListingSeeder::class,

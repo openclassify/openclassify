@@ -426,17 +426,36 @@
                 return Array.isArray(payload?.data) ? payload.data : [];
             };
 
+            const buildCitiesUrl = (template, countryId) => {
+                const normalizedTemplate = (template ?? '').toString().trim();
+                const normalizedCountryId = (countryId ?? '').toString().trim();
+                const encodedCountryId = encodeURIComponent(normalizedCountryId);
+
+                if (normalizedTemplate === '' || normalizedCountryId === '') {
+                    return '';
+                }
+
+                if (normalizedTemplate.includes('__COUNTRY__')) {
+                    return normalizedTemplate.replace('__COUNTRY__', encodedCountryId);
+                }
+
+                return normalizedTemplate.endsWith('/')
+                    ? normalizedTemplate + encodedCountryId
+                    : `${normalizedTemplate}/${encodedCountryId}`;
+            };
+
             const loadCities = async (root, countryId, selectedCityId = null, selectedCityName = null) => {
                 const citySelect = root.querySelector('[data-location-city]');
                 const countrySelect = root.querySelector('[data-location-country]');
                 const statusText = root.querySelector('[data-location-status]');
                 const template = root.dataset.citiesUrlTemplate ?? '';
+                const normalizedCountryId = (countryId ?? '').toString().trim();
 
                 if (!citySelect || !countrySelect) {
                     return;
                 }
 
-                if (!countryId || template === '') {
+                if (normalizedCountryId === '' || template === '') {
                     citySelect.innerHTML = '<option value="">Önce ülke seç</option>';
                     citySelect.disabled = true;
                     return;
@@ -446,7 +465,12 @@
                 citySelect.innerHTML = '<option value="">Şehir yükleniyor...</option>';
 
                 try {
-                    const primaryUrl = template.replace('__COUNTRY__', encodeURIComponent(String(countryId)));
+                    const primaryUrl = buildCitiesUrl(template, normalizedCountryId);
+
+                    if (primaryUrl === '') {
+                        throw new Error('city_url_invalid');
+                    }
+
                     let cityOptions;
 
                     try {
@@ -473,6 +497,12 @@
                     }
 
                     citySelect.innerHTML = '<option value="">Şehir seç</option>';
+
+                    if (cityOptions.length === 0) {
+                        citySelect.innerHTML = '<option value="">Şehir bulunamadı</option>';
+                        citySelect.disabled = true;
+                        return;
+                    }
 
                     cityOptions.forEach((city) => {
                         const option = document.createElement('option');
@@ -593,10 +623,28 @@
                 }
 
                 const applyStored = async () => {
-                    if (stored?.countryId) {
-                        countrySelect.value = String(stored.countryId);
-                        await loadCities(root, stored.countryId, stored.cityId, stored.cityName);
-                        return;
+                    if (stored && typeof stored === 'object') {
+                        const matchedStoredCountry = Array.from(countrySelect.options).find((option) => {
+                            if (stored.countryId && option.value === String(stored.countryId)) {
+                                return true;
+                            }
+
+                            if (stored.countryCode && option.dataset.code === String(stored.countryCode).toUpperCase()) {
+                                return true;
+                            }
+
+                            if (stored.countryName) {
+                                return normalize(option.dataset.name) === normalize(stored.countryName);
+                            }
+
+                            return false;
+                        });
+
+                        if (matchedStoredCountry) {
+                            countrySelect.value = matchedStoredCountry.value;
+                            await loadCities(root, matchedStoredCountry.value, stored.cityId, stored.cityName);
+                            return;
+                        }
                     }
 
                     const defaultOption = Array.from(countrySelect.options).find((option) => option.dataset.default === '1');

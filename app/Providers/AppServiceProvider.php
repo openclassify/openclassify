@@ -39,6 +39,7 @@ class AppServiceProvider extends ServiceProvider
         $fallbackLocale = config('app.locale', 'en');
         $fallbackCurrencies = $this->normalizeCurrencies(config('app.currencies', ['USD']));
         $fallbackDescription = 'The marketplace for buying and selling everything.';
+        $fallbackHomeSlides = $this->defaultHomeSlides();
         $fallbackGoogleMapsApiKey = env('GOOGLE_MAPS_API_KEY');
         $fallbackGoogleClientId = env('GOOGLE_CLIENT_ID');
         $fallbackGoogleClientSecret = env('GOOGLE_CLIENT_SECRET');
@@ -51,6 +52,7 @@ class AppServiceProvider extends ServiceProvider
         $generalSettings = [
             'site_name' => $fallbackName,
             'site_description' => $fallbackDescription,
+            'home_slides' => $fallbackHomeSlides,
             'site_logo_url' => null,
             'default_language' => $fallbackLocale,
             'default_country_code' => $fallbackDefaultCountryCode,
@@ -98,10 +100,12 @@ class AppServiceProvider extends ServiceProvider
                 $appleClientId = trim((string) ($settings->apple_client_id ?: $fallbackAppleClientId));
                 $appleClientSecret = trim((string) ($settings->apple_client_secret ?: $fallbackAppleClientSecret));
                 $defaultCountryCode = CountryCodeManager::normalizeCountryCode($settings->default_country_code ?? $fallbackDefaultCountryCode);
+                $homeSlides = $this->normalizeHomeSlides($settings->home_slides ?? [], $fallbackHomeSlides);
 
                 $generalSettings = [
                     'site_name' => trim((string) ($settings->site_name ?: $fallbackName)),
                     'site_description' => trim((string) ($settings->site_description ?: $fallbackDescription)),
+                    'home_slides' => $homeSlides,
                     'site_logo_url' => filled($settings->site_logo)
                         ? Storage::disk('public')->url($settings->site_logo)
                         : null,
@@ -252,5 +256,60 @@ class AppServiceProvider extends ServiceProvider
             ->all();
 
         return $normalized !== [] ? $normalized : ['USD'];
+    }
+
+    private function defaultHomeSlides(): array
+    {
+        return [
+            [
+                'badge' => 'OpenClassify Marketplace',
+                'title' => 'İlan ücreti ödemeden ürününü hızla sat!',
+                'subtitle' => 'Buy and sell everything in your area',
+                'primary_button_text' => 'İncele',
+                'secondary_button_text' => 'Post Listing',
+            ],
+        ];
+    }
+
+    private function normalizeHomeSlides(mixed $slides, array $fallbackSlides): array
+    {
+        if (! is_array($slides)) {
+            return $fallbackSlides;
+        }
+
+        $fallbackSlide = $fallbackSlides[0] ?? [
+            'badge' => 'OpenClassify Marketplace',
+            'title' => 'İlan ücreti ödemeden ürününü hızla sat!',
+            'subtitle' => 'Buy and sell everything in your area',
+            'primary_button_text' => 'İncele',
+            'secondary_button_text' => 'Post Listing',
+        ];
+
+        $normalized = collect($slides)
+            ->filter(fn ($slide): bool => is_array($slide))
+            ->map(function (array $slide) use ($fallbackSlide): ?array {
+                $badge = trim((string) ($slide['badge'] ?? ''));
+                $title = trim((string) ($slide['title'] ?? ''));
+                $subtitle = trim((string) ($slide['subtitle'] ?? ''));
+                $primaryButtonText = trim((string) ($slide['primary_button_text'] ?? ''));
+                $secondaryButtonText = trim((string) ($slide['secondary_button_text'] ?? ''));
+
+                if ($title === '') {
+                    return null;
+                }
+
+                return [
+                    'badge' => $badge !== '' ? $badge : $fallbackSlide['badge'],
+                    'title' => $title,
+                    'subtitle' => $subtitle !== '' ? $subtitle : $fallbackSlide['subtitle'],
+                    'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : $fallbackSlide['primary_button_text'],
+                    'secondary_button_text' => $secondaryButtonText !== '' ? $secondaryButtonText : $fallbackSlide['secondary_button_text'],
+                ];
+            })
+            ->filter(fn ($slide): bool => is_array($slide))
+            ->values()
+            ->all();
+
+        return $normalized !== [] ? $normalized : $fallbackSlides;
     }
 }
