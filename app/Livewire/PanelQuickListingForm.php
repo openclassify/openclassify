@@ -3,7 +3,6 @@
 namespace App\Livewire;
 
 use App\Support\QuickListingCategorySuggester;
-use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -171,10 +170,10 @@ class PanelQuickListingForm extends Component
         $this->loadListingCustomFields();
     }
 
-    public function publishListing(): ?RedirectResponse
+    public function publishListing(): void
     {
         if ($this->isPublishing) {
-            return null;
+            return;
         }
 
         $this->isPublishing = true;
@@ -191,13 +190,13 @@ class PanelQuickListingForm extends Component
             $this->isPublishing = false;
             session()->flash('error', 'İlan oluşturulamadı. Lütfen tekrar deneyin.');
 
-            return null;
+            return;
         }
 
         $this->isPublishing = false;
         session()->flash('success', 'İlan başarıyla oluşturuldu.');
 
-        return redirect()->route('panel.listings.index');
+        $this->redirectRoute('panel.listings.index');
     }
 
     public function getRootCategoriesProperty(): array

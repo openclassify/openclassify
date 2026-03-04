@@ -3,10 +3,8 @@ namespace Modules\Partner\Providers;
 
 use A909M\FilamentStateFusion\FilamentStateFusionPlugin;
 use App\Models\User;
-use App\Settings\GeneralSettings;
 use DutchCodingCompany\FilamentDeveloperLogins\FilamentDeveloperLoginsPlugin;
 use DutchCodingCompany\FilamentSocialite\FilamentSocialitePlugin;
-use DutchCodingCompany\FilamentSocialite\Provider;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -25,8 +23,8 @@ use Illuminate\Support\Str;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Jeffgreco13\FilamentBreezy\BreezyCore;
 use Laravel\Socialite\Contracts\User as SocialiteUserContract;
+use Modules\Partner\Support\Filament\SocialiteProviderResolver;
 use Spatie\Permission\Models\Role;
-use Throwable;
 
 class PartnerPanelProvider extends PanelProvider
 {
@@ -79,7 +77,7 @@ class PartnerPanelProvider extends PanelProvider
     private static function socialitePlugin(): FilamentSocialitePlugin
     {
         return FilamentSocialitePlugin::make()
-            ->providers(self::socialiteProviders())
+            ->providers(SocialiteProviderResolver::providers())
             ->registration(true)
             ->resolveUserUsing(function (string $provider, SocialiteUserContract $oauthUser): ?User {
                 if (! filled($oauthUser->getEmail())) {
@@ -109,60 +107,6 @@ class PartnerPanelProvider extends PanelProvider
 
                 return $user;
             });
-    }
-
-    /**
-     * @return array<int, Provider>
-     */
-    private static function socialiteProviders(): array
-    {
-        $providers = [];
-
-        if (self::providerEnabled('google')) {
-            $providers[] = Provider::make('google')
-                ->label('Google')
-                ->icon('heroicon-o-globe-alt')
-                ->color(Color::hex('#4285F4'));
-        }
-
-        if (self::providerEnabled('facebook')) {
-            $providers[] = Provider::make('facebook')
-                ->label('Facebook')
-                ->icon('heroicon-o-users')
-                ->color(Color::hex('#1877F2'));
-        }
-
-        if (self::providerEnabled('apple')) {
-            $providers[] = Provider::make('apple')
-                ->label('Apple')
-                ->icon('heroicon-o-device-phone-mobile')
-                ->color(Color::Gray)
-                ->stateless(true);
-        }
-
-        return $providers;
-    }
-
-    private static function providerEnabled(string $provider): bool
-    {
-        try {
-            $settings = app(GeneralSettings::class);
-
-            $enabled = match ($provider) {
-                'google' => (bool) $settings->enable_google_login,
-                'facebook' => (bool) $settings->enable_facebook_login,
-                'apple' => (bool) $settings->enable_apple_login,
-                default => false,
-            };
-
-            return $enabled
-                && filled(config("services.{$provider}.client_id"))
-                && filled(config("services.{$provider}.client_secret"));
-        } catch (Throwable) {
-            return (bool) config("services.{$provider}.enabled", false)
-                && filled(config("services.{$provider}.client_id"))
-                && filled(config("services.{$provider}.client_secret"));
-        }
     }
 
     private static function partnerCreateListingUrl(): ?string

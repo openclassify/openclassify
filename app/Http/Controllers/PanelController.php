@@ -80,7 +80,7 @@ class PanelController extends Controller
                 'listing:id,title,price,currency,user_id',
                 'buyer:id,name',
                 'seller:id,name',
-                'lastMessage:id,conversation_id,sender_id,body,created_at',
+                'lastMessage',
             ])
             ->withCount([
                 'messages as unread_count' => fn ($query) => $query

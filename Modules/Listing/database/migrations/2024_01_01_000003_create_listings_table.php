@@ -7,7 +7,7 @@ return new class extends Migration
 {
     public function up(): void
     {
-        Schema::create('listings', function (Blueprint $table) {
+        Schema::create('listings', function (Blueprint $table): void {
             $table->id();
             $table->string('title');
             $table->string('slug')->unique();
@@ -18,12 +18,16 @@ return new class extends Migration
             $table->foreignId('user_id')->nullable()->constrained('users')->nullOnDelete();
             $table->string('status')->default('active');
             $table->json('images')->nullable();
+            $table->json('custom_fields')->nullable();
             $table->string('contact_phone')->nullable();
             $table->string('contact_email')->nullable();
             $table->boolean('is_featured')->default(false);
+            $table->unsignedInteger('view_count')->default(0);
             $table->timestamp('expires_at')->nullable();
             $table->string('city')->nullable();
             $table->string('country')->nullable();
+            $table->decimal('latitude', 10, 7)->nullable();
+            $table->decimal('longitude', 10, 7)->nullable();
             $table->timestamps();
         });
     }

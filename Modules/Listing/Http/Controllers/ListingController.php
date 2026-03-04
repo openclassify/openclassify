@@ -4,39 +4,106 @@ namespace Modules\Listing\Http\Controllers;
 use App\Http\Controllers\Controller;
 use App\Models\Conversation;
 use App\Models\FavoriteSearch;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Schema;
+use Modules\Location\Models\City;
+use Modules\Location\Models\Country;
 use Modules\Category\Models\Category;
 use Modules\Listing\Models\Listing;
 use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
+use Modules\Theme\Support\ThemeManager;
+use Throwable;
 
 class ListingController extends Controller
 {
+    public function __construct(private ThemeManager $themes)
+    {
+    }
+
     public function index()
     {
         $search = trim((string) request('search', ''));
+
         $categoryId = request()->integer('category');
         $categoryId = $categoryId > 0 ? $categoryId : null;
 
-        $listings = Listing::query()
-            ->publicFeed()
+        $countryId = request()->integer('country');
+        $countryId = $countryId > 0 ? $countryId : null;
+
+        $cityId = request()->integer('city');
+        $cityId = $cityId > 0 ? $cityId : null;
+
+        $minPriceInput = trim((string) request('min_price', ''));
+        $maxPriceInput = trim((string) request('max_price', ''));
+        $minPrice = is_numeric($minPriceInput) ? max((float) $minPriceInput, 0) : null;
+        $maxPrice = is_numeric($maxPriceInput) ? max((float) $maxPriceInput, 0) : null;
+
+        $dateFilter = (string) request('date_filter', 'all');
+        $allowedDateFilters = ['all', 'today', 'week', 'month'];
+        if (! in_array($dateFilter, $allowedDateFilters, true)) {
+            $dateFilter = 'all';
+        }
+
+        $sort = (string) request('sort', 'smart');
+        $allowedSorts = ['smart', 'newest', 'oldest', 'price_asc', 'price_desc'];
+        if (! in_array($sort, $allowedSorts, true)) {
+            $sort = 'smart';
+        }
+
+        $countries = collect();
+        $cities = collect();
+        $selectedCountryName = null;
+        $selectedCityName = null;
+
+        $this->resolveLocationFilters(
+            $countryId,
+            $cityId,
+            $countries,
+            $cities,
+            $selectedCountryName,
+            $selectedCityName
+        );
+
+        $listingsQuery = Listing::query()
+            ->where('status', 'active')
             ->with('category:id,name')
-            ->when($search !== '', function ($query) use ($search): void {
-                $query->where(function ($searchQuery) use ($search): void {
-                    $searchQuery
-                        ->where('title', 'like', "%{$search}%")
-                        ->orWhere('description', 'like', "%{$search}%")
-                        ->orWhere('city', 'like', "%{$search}%")
-                        ->orWhere('country', 'like', "%{$search}%");
-                });
-            })
-            ->when($categoryId, fn ($query) => $query->where('category_id', $categoryId))
-            ->paginate(12)
+            ->searchTerm($search)
+            ->forCategory($categoryId)
+            ->when($selectedCountryName, fn ($query) => $query->where('country', $selectedCountryName))
+            ->when($selectedCityName, fn ($query) => $query->where('city', $selectedCityName))
+            ->when(! is_null($minPrice), fn ($query) => $query->whereNotNull('price')->where('price', '>=', $minPrice))
+            ->when(! is_null($maxPrice), fn ($query) => $query->whereNotNull('price')->where('price', '<=', $maxPrice));
+
+        $this->applyDateFilter($listingsQuery, $dateFilter);
+        $this->applySorting($listingsQuery, $sort);
+
+        $listings = $listingsQuery
+            ->paginate(16)
             ->withQueryString();
 
         $categories = Category::query()
             ->where('is_active', true)
+            ->whereNull('parent_id')
+            ->withCount([
+                'listings as active_listings_count' => fn ($query) => $query->where('status', 'active'),
+            ])
+            ->with([
+                'children' => fn ($query) => $query
+                    ->where('is_active', true)
+                    ->withCount([
+                        'listings as active_listings_count' => fn ($childQuery) => $childQuery->where('status', 'active'),
+                    ])
+                    ->orderBy('sort_order')
+                    ->orderBy('name'),
+            ])
+            ->orderBy('sort_order')
             ->orderBy('name')
-            ->get(['id', 'name']);
+            ->get(['id', 'name', 'parent_id']);
+
+        $selectedCategory = $categoryId
+            ? Category::query()->whereKey($categoryId)->first(['id', 'name'])
+            : null;
 
         $favoriteListingIds = [];
         $isCurrentSearchSaved = false;
@@ -70,10 +137,19 @@ class ListingController extends Controller
             }
         }
 
-        return view('listing::index', compact(
+        return view($this->themes->view('listing', 'index'), compact(
             'listings',
             'search',
             'categoryId',
+            'countryId',
+            'cityId',
+            'minPriceInput',
+            'maxPriceInput',
+            'dateFilter',
+            'sort',
+            'countries',
+            'cities',
+            'selectedCategory',
             'categories',
             'favoriteListingIds',
             'isCurrentSearchSaved',
@@ -91,11 +167,22 @@ class ListingController extends Controller
             $listing->refresh();
         }
 
-        $listing->loadMissing('user:id,name,email');
+        $listing->loadMissing([
+            'user:id,name,email',
+            'category:id,name,parent_id,slug',
+            'category.parent:id,name,parent_id,slug',
+            'category.parent.parent:id,name,parent_id,slug',
+        ]);
         $presentableCustomFields = ListingCustomFieldSchemaBuilder::presentableValues(
             $listing->category_id ? (int) $listing->category_id : null,
             $listing->custom_fields ?? [],
         );
+        $gallery = $listing->themeGallery();
+        $relatedListings = $listing->relatedSuggestions(12);
+        $themePillCategories = Category::themePills(10);
+        $breadcrumbCategories = $listing->category
+            ? $listing->category->breadcrumbTrail()
+            : collect();
 
         $isListingFavorited = false;
         $isSellerFavorited = false;
@@ -117,19 +204,23 @@ class ListingController extends Controller
             }
 
             if ($listing->user_id && (int) $listing->user_id !== $userId) {
-                $existingConversationId = Conversation::query()
-                    ->where('listing_id', $listing->getKey())
-                    ->where('buyer_id', $userId)
-                    ->value('id');
+                $existingConversationId = Conversation::buyerListingConversationId(
+                    (int) $listing->getKey(),
+                    $userId,
+                );
             }
         }
 
-        return view('listing::show', compact(
+        return view($this->themes->view('listing', 'show'), compact(
             'listing',
             'isListingFavorited',
             'isSellerFavorited',
             'presentableCustomFields',
             'existingConversationId',
+            'gallery',
+            'relatedListings',
+            'themePillCategories',
+            'breadcrumbCategories',
         ));
     }
 
@@ -151,5 +242,102 @@ class ListingController extends Controller
         return redirect()
             ->route('panel.listings.create')
             ->with('success', 'İlan oluşturma ekranına yönlendirildin.');
+    }
+
+    private function resolveLocationFilters(
+        ?int &$countryId,
+        ?int &$cityId,
+        Collection &$countries,
+        Collection &$cities,
+        ?string &$selectedCountryName,
+        ?string &$selectedCityName
+    ): void {
+        try {
+            if (! Schema::hasTable('countries') || ! Schema::hasTable('cities')) {
+                return;
+            }
+
+            $countries = Country::query()
+                ->where('is_active', true)
+                ->orderBy('name')
+                ->get(['id', 'name']);
+
+            $selectedCountry = $countryId
+                ? $countries->firstWhere('id', $countryId)
+                : null;
+
+            if (! $selectedCountry && $countryId) {
+                $selectedCountry = Country::query()->whereKey($countryId)->first(['id', 'name']);
+            }
+
+            $selectedCity = null;
+            if ($cityId) {
+                $selectedCity = City::query()->whereKey($cityId)->first(['id', 'name', 'country_id']);
+                if (! $selectedCity) {
+                    $cityId = null;
+                }
+            }
+
+            if ($selectedCity && ! $selectedCountry) {
+                $countryId = (int) $selectedCity->country_id;
+                $selectedCountry = Country::query()->whereKey($countryId)->first(['id', 'name']);
+            }
+
+            if ($selectedCountry) {
+                $selectedCountryName = (string) $selectedCountry->name;
+                $cities = City::query()
+                    ->where('country_id', $selectedCountry->id)
+                    ->where('is_active', true)
+                    ->orderBy('name')
+                    ->get(['id', 'name', 'country_id']);
+
+                if ($cities->isEmpty()) {
+                    $cities = City::query()
+                        ->where('country_id', $selectedCountry->id)
+                        ->orderBy('name')
+                        ->get(['id', 'name', 'country_id']);
+                }
+            } else {
+                $countryId = null;
+                $cities = collect();
+            }
+
+            if ($selectedCity) {
+                if ($selectedCountry && (int) $selectedCity->country_id !== (int) $selectedCountry->id) {
+                    $selectedCity = null;
+                    $cityId = null;
+                } else {
+                    $selectedCityName = (string) $selectedCity->name;
+                }
+            }
+        } catch (Throwable) {
+            $countryId = null;
+            $cityId = null;
+            $selectedCountryName = null;
+            $selectedCityName = null;
+            $countries = collect();
+            $cities = collect();
+        }
+    }
+
+    private function applyDateFilter($query, string $dateFilter): void
+    {
+        match ($dateFilter) {
+            'today' => $query->where('created_at', '>=', Carbon::now()->startOfDay()),
+            'week' => $query->where('created_at', '>=', Carbon::now()->subDays(7)),
+            'month' => $query->where('created_at', '>=', Carbon::now()->subDays(30)),
+            default => null,
+        };
+    }
+
+    private function applySorting($query, string $sort): void
+    {
+        match ($sort) {
+            'newest' => $query->reorder()->orderByDesc('created_at'),
+            'oldest' => $query->reorder()->orderBy('created_at'),
+            'price_asc' => $query->reorder()->orderByRaw('price is null')->orderBy('price'),
+            'price_desc' => $query->reorder()->orderByRaw('price is null')->orderByDesc('price'),
+            default => $query->reorder()->orderByDesc('is_featured')->orderByDesc('created_at'),
+        };
     }
 }

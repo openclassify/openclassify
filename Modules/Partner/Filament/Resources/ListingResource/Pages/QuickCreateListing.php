@@ -6,6 +6,7 @@ use App\Support\QuickListingCategorySuggester;
 use Filament\Facades\Filament;
 use Filament\Notifications\Notification;
 use Filament\Resources\Pages\Page;
+use Filament\Support\Enums\Width;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
@@ -33,6 +34,7 @@ class QuickCreateListing extends Page
     protected static ?string $title = 'AI ile Hızlı İlan Ver';
     protected static ?string $slug = 'quick-create';
     protected static bool $shouldRegisterNavigation = false;
+    protected Width | string | null $maxContentWidth = Width::Full;
 
     /**
      * @var array<int, TemporaryUploadedFile>

@@ -76,7 +76,7 @@ class FavoriteController extends Controller
                     'listing:id,title,price,currency,user_id',
                     'buyer:id,name',
                     'seller:id,name',
-                    'lastMessage:id,conversation_id,sender_id,body,created_at',
+                    'lastMessage',
                     'lastMessage.sender:id,name',
                 ])
                 ->withCount([

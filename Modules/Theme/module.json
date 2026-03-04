@@ -1,0 +1,12 @@
+{
+    "name": "Theme",
+    "alias": "theme",
+    "description": "Modular theme selection and themed view resolution",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Theme\\Providers\\ThemeServiceProvider"
+    ],
+    "aliases": {},
+    "files": []
+}

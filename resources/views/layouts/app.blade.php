@@ -27,13 +27,11 @@
         'ru' => 'Русский',
         'ja' => '日本語',
     ];
-    $isHomePage = request()->routeIs('home');
-    $isSimplePage = trim($__env->yieldContent('simple_page')) === '1';
-    $homeHeaderCategories = isset($categories) ? collect($categories)->take(8) : collect();
+    $headerCategories = collect($headerNavCategories ?? [])->values();
     $locationCountries = collect($headerLocationCountries ?? [])->values();
     $defaultCountryIso2 = strtoupper((string) config('app.default_country_iso2', 'TR'));
     $citiesRouteTemplate = \Illuminate\Support\Facades\Route::has('locations.cities')
-        ? route('locations.cities', ['country' => '__COUNTRY__'])
+        ? route('locations.cities', ['country' => '__COUNTRY__'], false)
         : '';
 @endphp
 <!DOCTYPE html>
@@ -258,7 +256,6 @@
                 </div>
             </div>
 
-            @if(!$isSimplePage && $isHomePage && $homeHeaderCategories->isNotEmpty())
             <div class="mt-4 border-t border-slate-200 pt-3 overflow-x-auto">
                 <div class="flex items-center gap-2 min-w-max pb-1">
                     <a href="{{ route('categories.index') }}" class="chip-btn inline-flex items-center gap-2 px-4 py-2.5 text-sm font-semibold text-slate-700 hover:bg-slate-100 transition">
@@ -267,20 +264,16 @@
                         </svg>
                         Tüm Kategoriler
                     </a>
-                    @foreach($homeHeaderCategories as $headerCategory)
-                    <a href="{{ route('categories.show', $headerCategory) }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
-                        {{ $headerCategory->name }}
+                    @forelse($headerCategories as $headerCategory)
+                    <a href="{{ route('categories.show', ['category' => $headerCategory['id']]) }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
+                        {{ $headerCategory['name'] }}
                     </a>
-                    @endforeach
+                    @empty
+                    <a href="{{ route('home') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.home') }}</a>
+                    <a href="{{ route('listings.index') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.listings') }}</a>
+                    @endforelse
                 </div>
             </div>
-            @elseif(! $isSimplePage && ! $isHomePage)
-            <div class="mt-3 flex items-center gap-2 text-sm overflow-x-auto pb-1">
-                <a href="{{ route('home') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.home') }}</a>
-                <a href="{{ route('categories.index') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.categories') }}</a>
-                <a href="{{ route('listings.index') }}" class="chip-btn whitespace-nowrap px-4 py-2 hover:bg-slate-100 transition">{{ __('messages.listings') }}</a>
-            </div>
-            @endif
         </div>
     </nav>
     @if(session('success'))
@@ -412,6 +405,27 @@
                 });
             };
 
+            const fetchCityOptions = async (url) => {
+                const response = await fetch(url, {
+                    headers: {
+                        'X-Requested-With': 'XMLHttpRequest',
+                        'Accept': 'application/json',
+                    },
+                });
+
+                if (!response.ok) {
+                    throw new Error('city_fetch_failed');
+                }
+
+                const payload = await response.json();
+
+                if (Array.isArray(payload)) {
+                    return payload;
+                }
+
+                return Array.isArray(payload?.data) ? payload.data : [];
+            };
+
             const loadCities = async (root, countryId, selectedCityId = null, selectedCityName = null) => {
                 const citySelect = root.querySelector('[data-location-city]');
                 const countrySelect = root.querySelector('[data-location-country]');
@@ -432,19 +446,31 @@
                 citySelect.innerHTML = '<option value="">Şehir yükleniyor...</option>';
 
                 try {
-                    const response = await fetch(template.replace('__COUNTRY__', encodeURIComponent(String(countryId))), {
-                        headers: {
-                            'X-Requested-With': 'XMLHttpRequest',
-                            'Accept': 'application/json',
-                        },
-                    });
+                    const primaryUrl = template.replace('__COUNTRY__', encodeURIComponent(String(countryId)));
+                    let cityOptions;
 
-                    if (!response.ok) {
-                        throw new Error('city_fetch_failed');
+                    try {
+                        cityOptions = await fetchCityOptions(primaryUrl);
+                    } catch (primaryError) {
+                        if (!/^https?:\/\//i.test(primaryUrl)) {
+                            throw primaryError;
+                        }
+
+                        let fallbackUrl = null;
+
+                        try {
+                            const parsed = new URL(primaryUrl);
+                            fallbackUrl = `${parsed.pathname}${parsed.search}`;
+                        } catch (urlError) {
+                            fallbackUrl = null;
+                        }
+
+                        if (!fallbackUrl) {
+                            throw primaryError;
+                        }
+
+                        cityOptions = await fetchCityOptions(fallbackUrl);
                     }
-
-                    const cities = await response.json();
-                    const cityOptions = Array.isArray(cities) ? cities : [];
 
                     citySelect.innerHTML = '<option value="">Şehir seç</option>';
 

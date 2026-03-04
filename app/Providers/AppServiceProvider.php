@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\View;
+use Modules\Category\Models\Category;
 use Modules\Location\Models\Country;
 use SocialiteProviders\Manager\SocialiteWasCalled;
 use Throwable;
@@ -193,6 +194,7 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $headerLocationCountries = [];
+        $headerNavCategories = [];
 
         try {
             if (Schema::hasTable('countries') && Schema::hasTable('cities')) {
@@ -214,8 +216,29 @@ class AppServiceProvider extends ServiceProvider
             $headerLocationCountries = [];
         }
 
+        try {
+            if (Schema::hasTable('categories')) {
+                $headerNavCategories = Category::query()
+                    ->where('is_active', true)
+                    ->whereNull('parent_id')
+                    ->orderBy('sort_order')
+                    ->orderBy('name')
+                    ->limit(8)
+                    ->get(['id', 'name'])
+                    ->map(fn (Category $category): array => [
+                        'id' => (int) $category->id,
+                        'name' => (string) $category->name,
+                    ])
+                    ->values()
+                    ->all();
+            }
+        } catch (Throwable) {
+            $headerNavCategories = [];
+        }
+
         View::share('generalSettings', $generalSettings);
         View::share('headerLocationCountries', $headerLocationCountries);
+        View::share('headerNavCategories', $headerNavCategories);
     }
 
     private function normalizeCurrencies(array $currencies): array

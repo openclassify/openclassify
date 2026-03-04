@@ -2,9 +2,10 @@
 namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
 use Modules\Listing\States\ListingStatus;
 use Modules\Listing\Support\ListingPanelHelper;
@@ -74,6 +75,76 @@ class Listing extends Model implements HasMedia
             ->where('status', 'active')
             ->orderByDesc('is_featured')
             ->orderByDesc('created_at');
+    }
+
+    public function scopeSearchTerm(Builder $query, string $search): Builder
+    {
+        $search = trim($search);
+
+        if ($search === '') {
+            return $query;
+        }
+
+        return $query->where(function (Builder $searchQuery) use ($search): void {
+            $searchQuery
+                ->where('title', 'like', "%{$search}%")
+                ->orWhere('description', 'like', "%{$search}%")
+                ->orWhere('city', 'like', "%{$search}%")
+                ->orWhere('country', 'like', "%{$search}%");
+        });
+    }
+
+    public function scopeForCategory(Builder $query, ?int $categoryId): Builder
+    {
+        if (! $categoryId) {
+            return $query;
+        }
+
+        return $query->where('category_id', $categoryId);
+    }
+
+    public function themeGallery(): array
+    {
+        $mediaUrls = $this->getMedia('listing-images')
+            ->map(fn ($media): string => $media->getUrl())
+            ->filter(fn (string $url): bool => $url !== '')
+            ->values()
+            ->all();
+
+        if ($mediaUrls !== []) {
+            return $mediaUrls;
+        }
+
+        return collect($this->images ?? [])
+            ->filter(fn ($value): bool => is_string($value) && trim($value) !== '')
+            ->values()
+            ->all();
+    }
+
+    public function relatedSuggestions(int $limit = 8): Collection
+    {
+        $baseQuery = static::query()
+            ->publicFeed()
+            ->with('category:id,name')
+            ->whereKeyNot($this->getKey());
+
+        $primary = (clone $baseQuery)
+            ->forCategory($this->category_id ? (int) $this->category_id : null)
+            ->limit($limit)
+            ->get();
+
+        if ($primary->count() >= $limit) {
+            return $primary;
+        }
+
+        $missing = $limit - $primary->count();
+        $excludeIds = $primary->pluck('id')->push($this->getKey())->all();
+        $fallback = (clone $baseQuery)
+            ->whereNotIn('id', $excludeIds)
+            ->limit($missing)
+            ->get();
+
+        return $primary->concat($fallback)->values();
     }
 
     public static function createFromFrontend(array $data, null | int | string $userId): self

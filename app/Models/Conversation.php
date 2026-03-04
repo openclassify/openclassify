@@ -44,7 +44,15 @@ class Conversation extends Model
 
     public function lastMessage()
     {
-        return $this->hasOne(ConversationMessage::class)->latestOfMany();
+        return $this->hasOne(ConversationMessage::class)
+            ->latestOfMany()
+            ->select([
+                'conversation_messages.id',
+                'conversation_messages.conversation_id',
+                'conversation_messages.sender_id',
+                'conversation_messages.body',
+                'conversation_messages.created_at',
+            ]);
     }
 
     public function scopeForUser(Builder $query, int $userId): Builder
@@ -54,5 +62,15 @@ class Conversation extends Model
                 ->where('buyer_id', $userId)
                 ->orWhere('seller_id', $userId);
         });
+    }
+
+    public static function buyerListingConversationId(int $listingId, int $buyerId): ?int
+    {
+        $value = static::query()
+            ->where('listing_id', $listingId)
+            ->where('buyer_id', $buyerId)
+            ->value('id');
+
+        return is_null($value) ? null : (int) $value;
     }
 }

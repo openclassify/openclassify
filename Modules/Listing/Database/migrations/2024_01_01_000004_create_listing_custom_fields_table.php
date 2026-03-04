@@ -22,18 +22,10 @@ return new class extends Migration
             $table->unsignedInteger('sort_order')->default(0);
             $table->timestamps();
         });
-
-        Schema::table('listings', function (Blueprint $table): void {
-            $table->json('custom_fields')->nullable()->after('images');
-        });
     }
 
     public function down(): void
     {
-        Schema::table('listings', function (Blueprint $table): void {
-            $table->dropColumn('custom_fields');
-        });
-
         Schema::dropIfExists('listing_custom_fields');
     }
 };
