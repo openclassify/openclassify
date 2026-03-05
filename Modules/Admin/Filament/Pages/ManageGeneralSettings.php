@@ -2,6 +2,7 @@
 
 namespace Modules\Admin\Filament\Pages;
 
+use App\Support\HomeSlideDefaults;
 use App\Support\CountryCodeManager;
 use App\Settings\GeneralSettings;
 use BackedEnum;
@@ -22,13 +23,13 @@ class ManageGeneralSettings extends SettingsPage
 {
     protected static string $settings = GeneralSettings::class;
 
-    protected static ?string $title = 'General Settings';
+    protected static ?string $title = 'Genel Ayarlar';
 
-    protected static ?string $navigationLabel = 'General Settings';
+    protected static ?string $navigationLabel = 'Genel Ayarlar';
 
     protected static string | BackedEnum | null $navigationIcon = 'heroicon-o-cog-6-tooth';
 
-    protected static string | UnitEnum | null $navigationGroup = 'Settings';
+    protected static string | UnitEnum | null $navigationGroup = 'Ayarlar';
 
     protected static ?int $navigationSort = 1;
 
@@ -37,35 +38,35 @@ class ManageGeneralSettings extends SettingsPage
         return $schema
             ->components([
                 TextInput::make('site_name')
-                    ->label('Site Name')
+                    ->label('Site Adı')
                     ->required()
                     ->maxLength(255),
                 Textarea::make('site_description')
-                    ->label('Site Description')
+                    ->label('Site Açıklaması')
                     ->rows(3)
                     ->maxLength(500),
                 Repeater::make('home_slides')
-                    ->label('Home Slider')
+                    ->label('Ana Sayfa Slider')
                     ->schema([
                         TextInput::make('badge')
-                            ->label('Badge')
+                            ->label('Rozet')
                             ->required()
                             ->maxLength(255),
                         TextInput::make('title')
-                            ->label('Title')
+                            ->label('Başlık')
                             ->required()
                             ->maxLength(255),
                         Textarea::make('subtitle')
-                            ->label('Subtitle')
+                            ->label('Alt Başlık')
                             ->rows(2)
                             ->required()
                             ->maxLength(500),
                         TextInput::make('primary_button_text')
-                            ->label('Primary Button Text')
+                            ->label('Birincil Buton Metni')
                             ->required()
                             ->maxLength(120),
                         TextInput::make('secondary_button_text')
-                            ->label('Secondary Button Text')
+                            ->label('İkincil Buton Metni')
                             ->required()
                             ->maxLength(120),
                     ])
@@ -73,39 +74,39 @@ class ManageGeneralSettings extends SettingsPage
                     ->minItems(1)
                     ->collapsible()
                     ->reorderableWithButtons()
-                    ->addActionLabel('Add Slide')
+                    ->addActionLabel('Slide Ekle')
                     ->itemLabel(fn (array $state): ?string => filled($state['title'] ?? null) ? (string) $state['title'] : 'Slide')
                     ->afterStateHydrated(fn (Repeater $component, $state) => $component->state($this->normalizeHomeSlides($state)))
                     ->dehydrateStateUsing(fn ($state) => $this->normalizeHomeSlides($state)),
                 FileUpload::make('site_logo')
-                    ->label('Site Logo')
+                    ->label('Site Logosu')
                     ->image()
                     ->disk('public')
                     ->directory('settings')
                     ->visibility('public'),
                 TextInput::make('sender_name')
-                    ->label('Sender Name')
+                    ->label('Gönderici Adı')
                     ->required()
                     ->maxLength(120),
                 TextInput::make('sender_email')
-                    ->label('Sender Email')
+                    ->label('Gönderici E-postası')
                     ->email()
                     ->required()
                     ->maxLength(255),
                 Select::make('default_language')
-                    ->label('Default Language')
+                    ->label('Varsayılan Dil')
                     ->options($this->localeOptions())
                     ->required()
                     ->searchable(),
                 CountryCodeSelect::make('default_country_code')
-                    ->label('Default Country')
+                    ->label('Varsayılan Ülke')
                     ->default('+90')
                     ->required()
-                    ->helperText('Used as default country in panel forms.'),
+                    ->helperText('Panel formlarında varsayılan ülke olarak kullanılır.'),
                 TagsInput::make('currencies')
-                    ->label('Currencies')
-                    ->placeholder('USD')
-                    ->helperText('Add 3-letter currency codes like USD, EUR, TRY.')
+                    ->label('Para Birimleri')
+                    ->placeholder('TRY')
+                    ->helperText('TRY, USD, EUR gibi 3 harfli para birimi kodları ekleyin.')
                     ->required()
                     ->rules(['array', 'min:1'])
                     ->afterStateHydrated(fn (TagsInput $component, $state) => $component->state($this->normalizeCurrencies($state)))
@@ -125,19 +126,19 @@ class ManageGeneralSettings extends SettingsPage
                     ->defaultCountry(CountryCodeManager::defaultCountryIso2())
                     ->nullable()
                     ->formatAsYouType()
-                    ->helperText('Use international format, e.g. +905551112233.'),
+                    ->helperText('Uluslararası format kullanın. Örnek: +905551112233'),
                 Toggle::make('enable_google_maps')
-                    ->label('Enable Google Maps')
+                    ->label('Google Maps Aktif')
                     ->default(false),
                 TextInput::make('google_maps_api_key')
-                    ->label('Google Maps API Key')
+                    ->label('Google Maps API Anahtarı')
                     ->password()
                     ->revealable()
                     ->nullable()
                     ->maxLength(255)
-                    ->helperText('Required to enable map fields in listing forms.'),
+                    ->helperText('İlan formlarındaki harita alanlarını açmak için gereklidir.'),
                 Toggle::make('enable_google_login')
-                    ->label('Enable Google Login')
+                    ->label('Google ile Giriş Aktif')
                     ->default(false),
                 TextInput::make('google_client_id')
                     ->label('Google Client ID')
@@ -150,7 +151,7 @@ class ManageGeneralSettings extends SettingsPage
                     ->nullable()
                     ->maxLength(255),
                 Toggle::make('enable_facebook_login')
-                    ->label('Enable Facebook Login')
+                    ->label('Facebook ile Giriş Aktif')
                     ->default(false),
                 TextInput::make('facebook_client_id')
                     ->label('Facebook Client ID')
@@ -163,7 +164,7 @@ class ManageGeneralSettings extends SettingsPage
                     ->nullable()
                     ->maxLength(255),
                 Toggle::make('enable_apple_login')
-                    ->label('Enable Apple Login')
+                    ->label('Apple ile Giriş Aktif')
                     ->default(false),
                 TextInput::make('apple_client_id')
                     ->label('Apple Client ID')
@@ -183,14 +184,6 @@ class ManageGeneralSettings extends SettingsPage
         $labels = [
             'en' => 'English',
             'tr' => 'Türkçe',
-            'ar' => 'العربية',
-            'zh' => '中文',
-            'es' => 'Español',
-            'fr' => 'Français',
-            'de' => 'Deutsch',
-            'pt' => 'Português',
-            'ru' => 'Русский',
-            'ja' => '日本語',
         ];
 
         return collect(config('app.available_locales', ['en']))
@@ -215,47 +208,11 @@ class ManageGeneralSettings extends SettingsPage
 
     private function defaultHomeSlides(): array
     {
-        return [
-            [
-                'badge' => 'OpenClassify Marketplace',
-                'title' => 'İlan ücreti ödemeden ürününü hızla sat!',
-                'subtitle' => 'Buy and sell everything in your area',
-                'primary_button_text' => 'İncele',
-                'secondary_button_text' => 'Post Listing',
-            ],
-        ];
+        return HomeSlideDefaults::defaults();
     }
 
     private function normalizeHomeSlides(mixed $state): array
     {
-        $slides = is_array($state) ? $state : [];
-        $fallbackSlide = $this->defaultHomeSlides()[0];
-
-        $normalized = collect($slides)
-            ->filter(fn ($slide): bool => is_array($slide))
-            ->map(function (array $slide) use ($fallbackSlide): ?array {
-                $badge = trim((string) ($slide['badge'] ?? ''));
-                $title = trim((string) ($slide['title'] ?? ''));
-                $subtitle = trim((string) ($slide['subtitle'] ?? ''));
-                $primaryButtonText = trim((string) ($slide['primary_button_text'] ?? ''));
-                $secondaryButtonText = trim((string) ($slide['secondary_button_text'] ?? ''));
-
-                if ($title === '') {
-                    return null;
-                }
-
-                return [
-                    'badge' => $badge !== '' ? $badge : $fallbackSlide['badge'],
-                    'title' => $title,
-                    'subtitle' => $subtitle !== '' ? $subtitle : $fallbackSlide['subtitle'],
-                    'primary_button_text' => $primaryButtonText !== '' ? $primaryButtonText : $fallbackSlide['primary_button_text'],
-                    'secondary_button_text' => $secondaryButtonText !== '' ? $secondaryButtonText : $fallbackSlide['secondary_button_text'],
-                ];
-            })
-            ->filter(fn ($slide): bool => is_array($slide))
-            ->values()
-            ->all();
-
-        return $normalized !== [] ? $normalized : $this->defaultHomeSlides();
+        return HomeSlideDefaults::normalize($state);
     }
 }
