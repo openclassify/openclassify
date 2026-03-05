@@ -23,6 +23,7 @@ use Filament\Schemas\Schema;
 use Filament\Tables\Columns\IconColumn;
 use Filament\Tables\Columns\SpatieMediaLibraryImageColumn;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Enums\FiltersLayout;
 use Filament\Tables\Filters\Filter;
 use Filament\Tables\Filters\SelectFilter;
 use Filament\Tables\Filters\TernaryFilter;
@@ -135,15 +136,15 @@ class ListingResource extends Resource
                 ->circular(),
             TextColumn::make('id')->sortable(),
             TextColumn::make('title')->searchable()->sortable()->limit(40),
-            TextColumn::make('category.name')->label('Category'),
-            TextColumn::make('user.email')->label('Owner')->searchable()->toggleable(),
+            TextColumn::make('category.name')->label('Category')->sortable(),
+            TextColumn::make('user.email')->label('Owner')->searchable()->toggleable()->sortable(),
             TextColumn::make('price')
                 ->currency(fn (Listing $record): string => $record->currency ?: ListingPanelHelper::defaultCurrency())
                 ->sortable(),
-            StateFusionSelectColumn::make('status'),
-            IconColumn::make('is_featured')->boolean()->label('Featured'),
-            TextColumn::make('city'),
-            TextColumn::make('country'),
+            StateFusionSelectColumn::make('status')->sortable(),
+            IconColumn::make('is_featured')->boolean()->label('Featured')->sortable(),
+            TextColumn::make('city')->sortable(),
+            TextColumn::make('country')->sortable(),
             TextColumn::make('created_at')->dateTime()->sortable(),
         ])->filters([
             StateFusionSelectFilter::make('status'),
@@ -188,13 +189,18 @@ class ListingResource extends Resource
                 ->query(fn (Builder $query, array $data): Builder => $query
                     ->when($data['min'] ?? null, fn (Builder $query, string $amount): Builder => $query->where('price', '>=', (float) $amount))
                     ->when($data['max'] ?? null, fn (Builder $query, string $amount): Builder => $query->where('price', '<=', (float) $amount))),
-        ])->actions([
+        ])
+            ->filtersLayout(FiltersLayout::AboveContent)
+            ->filtersFormColumns(3)
+            ->filtersFormWidth('7xl')
+            ->persistFiltersInSession()
+            ->actions([
             EditAction::make(),
             Action::make('activities')
                 ->icon('heroicon-o-clock')
                 ->url(fn (Listing $record): string => static::getUrl('activities', ['record' => $record])),
             DeleteAction::make(),
-        ]);
+            ]);
     }
 
     public static function getPages(): array

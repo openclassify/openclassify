@@ -16,7 +16,7 @@ Route::get('/locations/cities/{country}', function (string $country) {
     $countryModel = Country::query()
         ->where(function ($query) use ($lookupValue, $lookupCode, $lookupName): void {
             if (ctype_digit($lookupValue)) {
-                $query->orWhereKey((int) $lookupValue);
+                $query->orWhere('id', (int) $lookupValue);
             }
 
             $query

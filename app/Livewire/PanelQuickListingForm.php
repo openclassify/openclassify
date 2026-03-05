@@ -415,9 +415,13 @@ class PanelQuickListingForm extends Component
             'description' => ['required', 'string', 'max:1450'],
             'selectedCountryId' => ['required', 'integer', Rule::in(collect($this->countries)->pluck('id')->all())],
             'selectedCityId' => [
-                'required',
+                'nullable',
                 'integer',
                 function (string $attribute, mixed $value, \Closure $fail): void {
+                    if (is_null($value) || $value === '') {
+                        return;
+                    }
+
                     $cityExists = collect($this->availableCities)
                         ->contains(fn (array $city): bool => $city['id'] === (int) $value);
 
@@ -434,7 +438,6 @@ class PanelQuickListingForm extends Component
             'description.required' => 'Açıklama zorunludur.',
             'description.max' => 'Açıklama en fazla 1450 karakter olabilir.',
             'selectedCountryId.required' => 'Ülke seçimi zorunludur.',
-            'selectedCityId.required' => 'Şehir seçimi zorunludur.',
         ]);
     }
 

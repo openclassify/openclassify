@@ -5,10 +5,12 @@ namespace Modules\Conversation\App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Schema;
 use Illuminate\View\View;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Support\QuickMessageCatalog;
 use Modules\Listing\Models\Listing;
+use Throwable;
 
 class ConversationController extends Controller
 {
@@ -17,20 +19,30 @@ class ConversationController extends Controller
         $userId = (int) $request->user()->getKey();
         $messageFilter = $this->resolveMessageFilter($request);
 
-        $conversations = Conversation::inboxForUser($userId, $messageFilter);
-        $selectedConversation = Conversation::resolveSelected($conversations, $request->integer('conversation'));
+        $conversations = collect();
+        $selectedConversation = null;
 
-        if ($selectedConversation) {
-            $selectedConversation->loadThread();
-            $selectedConversation->markAsReadFor($userId);
+        if ($this->messagingTablesReady()) {
+            try {
+                $conversations = Conversation::inboxForUser($userId, $messageFilter);
+                $selectedConversation = Conversation::resolveSelected($conversations, $request->integer('conversation'));
 
-            $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
-                if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
-                    $conversation->unread_count = 0;
+                if ($selectedConversation) {
+                    $selectedConversation->loadThread();
+                    $selectedConversation->markAsReadFor($userId);
+
+                    $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
+                        if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
+                            $conversation->unread_count = 0;
+                        }
+
+                        return $conversation;
+                    });
                 }
-
-                return $conversation;
-            });
+            } catch (Throwable) {
+                $conversations = collect();
+                $selectedConversation = null;
+            }
         }
 
         return view('conversation::inbox', [
@@ -43,6 +55,10 @@ class ConversationController extends Controller
 
     public function start(Request $request, Listing $listing): RedirectResponse
     {
+        if (! $this->messagingTablesReady()) {
+            return back()->with('error', 'Mesajlaşma altyapısı henüz hazır değil.');
+        }
+
         $user = $request->user();
 
         if (! $listing->user_id) {
@@ -75,6 +91,10 @@ class ConversationController extends Controller
 
     public function send(Request $request, Conversation $conversation): RedirectResponse
     {
+        if (! $this->messagingTablesReady()) {
+            return back()->with('error', 'Mesajlaşma altyapısı henüz hazır değil.');
+        }
+
         $user = $request->user();
         $userId = (int) $user->getKey();
 
@@ -116,5 +136,14 @@ class ConversationController extends Controller
         $messageFilter = (string) $request->string('message_filter', 'all');
 
         return in_array($messageFilter, ['all', 'unread', 'important'], true) ? $messageFilter : 'all';
+    }
+
+    private function messagingTablesReady(): bool
+    {
+        try {
+            return Schema::hasTable('conversations') && Schema::hasTable('conversation_messages');
+        } catch (Throwable) {
+            return false;
+        }
     }
 }

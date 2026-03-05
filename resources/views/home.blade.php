@@ -300,9 +300,6 @@
                     </div>
                 </div>
                 <div class="p-4">
-                    <div class="rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold px-3 py-1.5 text-center mb-3">
-                        Elden al, kartla öde!
-                    </div>
                     <div class="flex items-start justify-between gap-3">
                         <div>
                             <p class="text-3xl font-extrabold tracking-tight text-slate-900">{{ $priceLabel }}</p>

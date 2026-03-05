@@ -4,12 +4,15 @@ namespace Modules\Favorite\App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Pagination\LengthAwarePaginator;
+use Illuminate\Support\Facades\Schema;
 use Modules\Category\Models\Category;
 use Modules\Conversation\App\Models\Conversation;
 use Modules\Conversation\App\Support\QuickMessageCatalog;
 use Modules\Favorite\App\Models\FavoriteSearch;
 use Modules\Listing\Models\Listing;
 use Modules\User\App\Models\User;
+use Throwable;
 
 class FavoriteController extends Controller
 {
@@ -37,68 +40,94 @@ class FavoriteController extends Controller
 
         $user = $request->user();
 
-        $categories = Category::query()
-            ->where('is_active', true)
-            ->orderBy('name')
-            ->get(['id', 'name']);
+        $categories = collect();
+        if ($this->tableExists('categories')) {
+            $categories = Category::query()
+                ->where('is_active', true)
+                ->orderBy('name')
+                ->get(['id', 'name']);
+        }
 
-        $favoriteListings = null;
-        $favoriteSearches = null;
-        $favoriteSellers = null;
+        $favoriteListings = $this->emptyPaginator();
+        $favoriteSearches = $this->emptyPaginator();
+        $favoriteSellers = $this->emptyPaginator();
         $conversations = collect();
         $selectedConversation = null;
         $buyerConversationListingMap = [];
 
         if ($activeTab === 'listings') {
-            $favoriteListings = $user->favoriteListings()
-                ->with(['category:id,name', 'user:id,name'])
-                ->wherePivot('created_at', '>=', now()->subYear())
-                ->when($statusFilter === 'active', fn ($query) => $query->where('status', 'active'))
-                ->when($selectedCategoryId, fn ($query) => $query->where('category_id', $selectedCategoryId))
-                ->orderByPivot('created_at', 'desc')
-                ->paginate(10)
-                ->withQueryString();
+            try {
+                if ($this->tableExists('favorite_listings')) {
+                    $favoriteListings = $user->favoriteListings()
+                        ->with(['category:id,name', 'user:id,name'])
+                        ->wherePivot('created_at', '>=', now()->subYear())
+                        ->when($statusFilter === 'active', fn ($query) => $query->where('status', 'active'))
+                        ->when($selectedCategoryId, fn ($query) => $query->where('category_id', $selectedCategoryId))
+                        ->orderByPivot('created_at', 'desc')
+                        ->paginate(10)
+                        ->withQueryString();
+                }
 
-            $userId = (int) $user->getKey();
-            $conversations = Conversation::inboxForUser($userId, $messageFilter);
-            $buyerConversationListingMap = $conversations
-                ->where('buyer_id', $userId)
-                ->pluck('id', 'listing_id')
-                ->map(fn ($conversationId) => (int) $conversationId)
-                ->all();
+                if ($this->tableExists('conversations') && $this->tableExists('conversation_messages')) {
+                    $userId = (int) $user->getKey();
+                    $conversations = Conversation::inboxForUser($userId, $messageFilter);
+                    $buyerConversationListingMap = $conversations
+                        ->where('buyer_id', $userId)
+                        ->pluck('id', 'listing_id')
+                        ->map(fn ($conversationId) => (int) $conversationId)
+                        ->all();
 
-            $selectedConversation = Conversation::resolveSelected($conversations, $request->integer('conversation'));
+                    $selectedConversation = Conversation::resolveSelected($conversations, $request->integer('conversation'));
 
-            if ($selectedConversation) {
-                $selectedConversation->loadThread();
-                $selectedConversation->markAsReadFor($userId);
+                    if ($selectedConversation) {
+                        $selectedConversation->loadThread();
+                        $selectedConversation->markAsReadFor($userId);
 
-                $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
-                    if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
-                        $conversation->unread_count = 0;
+                        $conversations = $conversations->map(function (Conversation $conversation) use ($selectedConversation): Conversation {
+                            if ((int) $conversation->getKey() === (int) $selectedConversation->getKey()) {
+                                $conversation->unread_count = 0;
+                            }
+
+                            return $conversation;
+                        });
                     }
-
-                    return $conversation;
-                });
+                }
+            } catch (Throwable) {
+                $favoriteListings = $this->emptyPaginator();
+                $conversations = collect();
+                $selectedConversation = null;
+                $buyerConversationListingMap = [];
             }
         }
 
         if ($activeTab === 'searches') {
-            $favoriteSearches = $user->favoriteSearches()
-                ->with('category:id,name')
-                ->latest()
-                ->paginate(10)
-                ->withQueryString();
+            try {
+                if ($this->tableExists('favorite_searches')) {
+                    $favoriteSearches = $user->favoriteSearches()
+                        ->with('category:id,name')
+                        ->latest()
+                        ->paginate(10)
+                        ->withQueryString();
+                }
+            } catch (Throwable) {
+                $favoriteSearches = $this->emptyPaginator();
+            }
         }
 
         if ($activeTab === 'sellers') {
-            $favoriteSellers = $user->favoriteSellers()
-                ->withCount([
-                    'listings as active_listings_count' => fn ($query) => $query->where('status', 'active'),
-                ])
-                ->orderByPivot('created_at', 'desc')
-                ->paginate(10)
-                ->withQueryString();
+            try {
+                if ($this->tableExists('favorite_sellers')) {
+                    $favoriteSellers = $user->favoriteSellers()
+                        ->withCount([
+                            'listings as active_listings_count' => fn ($query) => $query->where('status', 'active'),
+                        ])
+                        ->orderByPivot('created_at', 'desc')
+                        ->paginate(10)
+                        ->withQueryString();
+                }
+            } catch (Throwable) {
+                $favoriteSellers = $this->emptyPaginator();
+            }
         }
 
         return view('favorite::index', [
@@ -188,5 +217,22 @@ class FavoriteController extends Controller
         $favoriteSearch->delete();
 
         return back()->with('success', 'Favori arama silindi.');
+    }
+
+    private function tableExists(string $table): bool
+    {
+        try {
+            return Schema::hasTable($table);
+        } catch (Throwable) {
+            return false;
+        }
+    }
+
+    private function emptyPaginator(): LengthAwarePaginator
+    {
+        return new LengthAwarePaginator([], 0, 10, 1, [
+            'path' => request()->url(),
+            'query' => request()->query(),
+        ]);
     }
 }

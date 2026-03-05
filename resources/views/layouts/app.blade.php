@@ -42,103 +42,20 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $siteName }} @hasSection('title') - @yield('title') @endif</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Sora:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --oc-bg: #f5f6fa;
-            --oc-surface: #ffffff;
-            --oc-border: #e4e7ef;
-            --oc-text: #191e2b;
-            --oc-muted: #667085;
-            --oc-primary: #ff4365;
-            --oc-primary-soft: #ffe7ed;
-            --oc-chip: #f1f3f8;
-        }
-
-        body {
-            font-family: 'Sora', sans-serif;
-            background: radial-gradient(circle at top right, #fce6ef 0%, #f5f6fa 28%);
-            color: var(--oc-text);
-        }
-
-        .brand-mark {
-            font-family: 'Pacifico', cursive;
-        }
-
-        .market-nav-surface {
-            background: rgba(255, 255, 255, 0.88);
-            backdrop-filter: saturate(180%) blur(8px);
-            border-bottom: 1px solid var(--oc-border);
-        }
-
-        .search-shell {
-            border: 1px solid #d9ddea;
-            background: #fbfcff;
-            border-radius: 999px;
-        }
-
-        .chip-btn {
-            border: 1px solid #d9ddea;
-            background: var(--oc-chip);
-            border-radius: 999px;
-        }
-
-        .btn-primary {
-            background: linear-gradient(120deg, #ff516e, #ff2f57);
-            color: #fff;
-            border-radius: 999px;
-        }
-
-        .header-utility {
-            width: 2.75rem;
-            height: 2.75rem;
-            border-radius: 999px;
-            border: 1px solid #d9ddea;
-            background: #fff;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            color: #64748b;
-            transition: all 0.2s ease;
-        }
-
-        .header-utility:hover {
-            border-color: #fda4af;
-            color: #f43f5e;
-        }
-
-        .location-panel {
-            width: min(90vw, 360px);
-        }
-
-        .location-panel select {
-            border: 1px solid #d9ddea;
-            border-radius: 0.75rem;
-            background: #f8fafc;
-            color: #334155;
-            padding: 0.55rem 0.75rem;
-            font-size: 0.875rem;
-        }
-
-        summary::-webkit-details-marker {
-            display: none;
-        }
-
-        [dir="rtl"] {
-            text-align: right;
-        }
-    </style>
+    <link rel="stylesheet" href="{{ asset('theme.css') }}">
     @livewireStyles
 </head>
 <body class="min-h-screen">
     <nav class="market-nav-surface sticky top-0 z-50">
         <div class="max-w-[1320px] mx-auto px-4 py-4">
             <div class="flex items-center gap-3 md:gap-4">
-                <a href="{{ route('home') }}" class="shrink-0 flex items-center gap-2">
+                <a href="{{ route('home') }}" class="shrink-0 flex items-center gap-2.5">
                     @if($siteLogoUrl)
                     <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="h-9 w-auto rounded">
+                    @else
+                    <span class="brand-logo" aria-hidden="true"></span>
                     @endif
-                    <span class="brand-mark text-3xl text-rose-500 leading-none">{{ $siteName }}</span>
+                    <span class="brand-text leading-none">{{ $siteName }}</span>
                 </a>
 
                 <form action="{{ route('listings.index') }}" method="GET" class="hidden lg:flex flex-1 search-shell items-center gap-2 px-4 py-2.5">
@@ -287,53 +204,53 @@
     </div>
     @endif
     <main>@yield('content')</main>
-    <footer class="mt-14 bg-slate-900 text-slate-300">
+    <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200">
         <div class="max-w-[1320px] mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
                 <div>
-                    <h3 class="text-white font-semibold text-lg mb-3">{{ $siteName }}</h3>
-                    <p class="text-sm text-slate-400 leading-relaxed">{{ $siteDescription }}</p>
+                    <h3 class="text-slate-900 font-semibold text-lg mb-3">{{ $siteName }}</h3>
+                    <p class="text-sm text-slate-500 leading-relaxed">{{ $siteDescription }}</p>
                 </div>
                 <div>
-                    <h4 class="text-white font-medium mb-4">Hızlı Linkler</h4>
+                    <h4 class="text-slate-900 font-medium mb-4">Hızlı Linkler</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('home') }}" class="hover:text-white transition">Ana Sayfa</a></li>
-                        <li><a href="{{ route('categories.index') }}" class="hover:text-white transition">Kategoriler</a></li>
-                        <li><a href="{{ route('listings.index') }}" class="hover:text-white transition">Tüm İlanlar</a></li>
+                        <li><a href="{{ route('home') }}" class="hover:text-slate-900 transition">Ana Sayfa</a></li>
+                        <li><a href="{{ route('categories.index') }}" class="hover:text-slate-900 transition">Kategoriler</a></li>
+                        <li><a href="{{ route('listings.index') }}" class="hover:text-slate-900 transition">Tüm İlanlar</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-medium mb-4">Hesap</h4>
+                    <h4 class="text-slate-900 font-medium mb-4">Hesap</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ $loginRoute }}" class="hover:text-white transition">{{ __('messages.login') }}</a></li>
-                        <li><a href="{{ $registerRoute }}" class="hover:text-white transition">{{ __('messages.register') }}</a></li>
+                        <li><a href="{{ $loginRoute }}" class="hover:text-slate-900 transition">{{ __('messages.login') }}</a></li>
+                        <li><a href="{{ $registerRoute }}" class="hover:text-slate-900 transition">{{ __('messages.register') }}</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-white font-medium mb-4">Bağlantılar</h4>
+                    <h4 class="text-slate-900 font-medium mb-4">Bağlantılar</h4>
                     <ul class="space-y-2 text-sm mb-4">
                         @if($linkedinUrl)
-                        <li><a href="{{ $linkedinUrl }}" target="_blank" rel="noopener" class="hover:text-white transition">LinkedIn</a></li>
+                        <li><a href="{{ $linkedinUrl }}" target="_blank" rel="noopener" class="hover:text-slate-900 transition">LinkedIn</a></li>
                         @endif
                         @if($instagramUrl)
-                        <li><a href="{{ $instagramUrl }}" target="_blank" rel="noopener" class="hover:text-white transition">Instagram</a></li>
+                        <li><a href="{{ $instagramUrl }}" target="_blank" rel="noopener" class="hover:text-slate-900 transition">Instagram</a></li>
                         @endif
                         @if($whatsappUrl)
-                        <li><a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" class="hover:text-white transition">WhatsApp</a></li>
+                        <li><a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" class="hover:text-slate-900 transition">WhatsApp</a></li>
                         @endif
                         @if(!$linkedinUrl && !$instagramUrl && !$whatsappUrl)
                         <li>Henüz sosyal bağlantı eklenmedi.</li>
                         @endif
                     </ul>
-                    <h4 class="text-white font-medium mb-3">Diller</h4>
+                    <h4 class="text-slate-900 font-medium mb-3">Diller</h4>
                     <div class="flex flex-wrap gap-2">
                         @foreach($availableLocales as $locale)
-                        <a href="{{ route('lang.switch', $locale) }}" class="text-xs {{ app()->getLocale() === $locale ? 'text-white' : 'hover:text-white' }} transition">{{ strtoupper($locale) }}</a>
+                        <a href="{{ route('lang.switch', $locale) }}" class="text-xs {{ app()->getLocale() === $locale ? 'text-slate-900' : 'hover:text-slate-900' }} transition">{{ strtoupper($locale) }}</a>
                         @endforeach
                     </div>
                 </div>
             </div>
-            <div class="border-t border-slate-700 mt-8 pt-8 text-center text-sm text-slate-400">
+            <div class="border-t border-slate-300 mt-8 pt-8 text-center text-sm text-slate-500">
                 <p>© {{ date('Y') }} {{ $siteName }}. All rights reserved.</p>
             </div>
         </div>

@@ -72,10 +72,37 @@ class Category extends Model
             ->active()
             ->whereNull('parent_id')
             ->with([
-                'children' => fn (HasMany $query) => $query->active()->ordered(),
+                'children' => fn (Builder $query) => $query->active()->ordered(),
             ])
             ->ordered()
             ->get();
+    }
+
+    public function descendantAndSelfIds(): Collection
+    {
+        $ids = collect([(int) $this->getKey()]);
+        $frontier = $ids;
+
+        while ($frontier->isNotEmpty()) {
+            $children = static::query()
+                ->whereIn('parent_id', $frontier->all())
+                ->pluck('id')
+                ->map(fn ($id): int => (int) $id)
+                ->values();
+
+            if ($children->isEmpty()) {
+                break;
+            }
+
+            $ids = $ids
+                ->merge($children)
+                ->unique()
+                ->values();
+
+            $frontier = $children;
+        }
+
+        return $ids;
     }
 
     public function breadcrumbTrail(): Collection

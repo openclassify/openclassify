@@ -22,34 +22,6 @@
     ], $normalizeQuery);
 @endphp
 
-<style>
-    .listing-filter-card {
-        border: 1px solid #d7dbe7;
-        border-radius: 14px;
-        background: #ffffff;
-    }
-
-    .listing-card {
-        border: 1px solid #d7dbe7;
-        border-radius: 12px;
-        overflow: hidden;
-        background: #ffffff;
-        transition: box-shadow .2s ease, transform .2s ease;
-    }
-
-    .listing-card:hover {
-        box-shadow: 0 16px 32px rgba(22, 29, 57, 0.11);
-        transform: translateY(-2px);
-    }
-
-    .listing-title {
-        display: -webkit-box;
-        -webkit-box-orient: vertical;
-        -webkit-line-clamp: 2;
-        overflow: hidden;
-    }
-</style>
-
 <div class="max-w-[1320px] mx-auto px-4 py-7 lg:py-8">
     <h1 class="text-[30px] leading-tight font-extrabold text-slate-900 mb-6">{{ $pageTitle }}</h1>
 

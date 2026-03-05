@@ -3,6 +3,7 @@ namespace Modules\Category\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Modules\Category\Models\Category;
+use Modules\Listing\Models\Listing;
 use Modules\Theme\Support\ThemeManager;
 
 class CategoryController extends Controller
@@ -24,7 +25,11 @@ class CategoryController extends Controller
             'children' => fn ($query) => $query->active()->ordered(),
         ]);
 
-        $listings = $category->activeListings()
+        $categoryIds = $category->descendantAndSelfIds()->all();
+
+        $listings = Listing::query()
+            ->where('status', 'active')
+            ->whereIn('category_id', $categoryIds)
             ->with('category:id,name')
             ->latest('id')
             ->paginate(12);
