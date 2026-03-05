@@ -23,13 +23,13 @@
 @endphp
 
 <div class="max-w-[1320px] mx-auto px-4 py-7 lg:py-8">
-    <h1 class="text-[30px] leading-tight font-extrabold text-slate-900 mb-6">{{ $pageTitle }}</h1>
+    <h1 class="text-3xl md:text-4xl leading-tight font-bold text-slate-900 mb-6">{{ $pageTitle }}</h1>
 
     <div class="grid grid-cols-1 lg:grid-cols-[260px,1fr] gap-4 lg:gap-5">
         <aside class="space-y-4">
             <section class="listing-filter-card p-4">
                 <div class="flex items-center justify-between gap-3 mb-3">
-                    <h2 class="text-[26px] font-extrabold text-slate-900 leading-none">Kategoriler</h2>
+                    <h2 class="text-2xl font-bold text-slate-900 leading-none">Kategoriler</h2>
                 </div>
 
                 <div class="space-y-1 max-h-[330px] overflow-y-auto pr-1">
@@ -273,7 +273,7 @@
 
                             <div class="px-3.5 py-3">
                                 <a href="{{ route('listings.show', $listing) }}" class="block">
-                                    <p class="text-[29px] leading-none font-extrabold text-slate-900">
+                                    <p class="text-3xl leading-none font-bold text-slate-900">
                                         @if(!is_null($priceValue) && $priceValue > 0)
                                             {{ number_format($priceValue, 0, ',', '.') }} {{ $listing->currency }}
                                         @else

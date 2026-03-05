@@ -7,30 +7,30 @@
     <div class="grid grid-cols-1 lg:grid-cols-[220px,1fr] gap-4">
         @include('panel.partials.sidebar', ['activeMenu' => 'listings'])
 
-        <section class="bg-white border border-slate-200 rounded-xl p-4 sm:p-6">
-            <div class="flex flex-col xl:flex-row xl:items-center gap-3 xl:gap-4 mb-5">
-                <form method="GET" action="{{ route('panel.listings.index') }}" class="relative flex-1 max-w-xl">
-                    <svg class="w-6 h-6 text-slate-400 absolute left-4 top-1/2 -translate-y-1/2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <section class="panel-surface">
+            <div class="panel-toolbar">
+                <form method="GET" action="{{ route('panel.listings.index') }}" class="panel-search">
+                    <svg class="panel-search-icon w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M21 21l-4.35-4.35m1.6-5.05a7.25 7.25 0 11-14.5 0 7.25 7.25 0 0114.5 0z"/>
                     </svg>
-                    <input type="text" name="search" value="{{ $search }}" placeholder="İlan başlığına göre ara" class="w-full h-14 rounded-2xl border border-slate-300 pl-14 pr-4 text-lg font-semibold text-slate-700 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-rose-200">
+                    <input type="text" name="search" value="{{ $search }}" placeholder="İlan başlığına göre ara" class="panel-search-input focus:outline-none focus:ring-2 focus:ring-rose-200">
                     <input type="hidden" name="status" value="{{ $status }}">
                 </form>
 
-                <div class="flex flex-wrap items-center gap-2">
-                    <a href="{{ route('panel.listings.index', ['search' => $search, 'status' => 'all']) }}" class="inline-flex items-center h-12 px-6 rounded-full border text-xl font-semibold {{ $status === 'all' ? 'border-rose-500 text-rose-500 bg-rose-50' : 'border-slate-300 text-slate-700 hover:bg-slate-100' }}">
+                <div class="panel-filter-tabs">
+                    <a href="{{ route('panel.listings.index', ['search' => $search, 'status' => 'all']) }}" class="panel-filter-tab {{ $status === 'all' ? 'is-active' : '' }}">
                         Tüm İlanlar ({{ $counts['all'] }})
                     </a>
-                    <a href="{{ route('panel.listings.index', ['search' => $search, 'status' => 'sold']) }}" class="inline-flex items-center h-12 px-6 rounded-full border text-xl font-semibold {{ $status === 'sold' ? 'border-rose-500 text-rose-500 bg-rose-50' : 'border-slate-300 text-slate-700 hover:bg-slate-100' }}">
+                    <a href="{{ route('panel.listings.index', ['search' => $search, 'status' => 'sold']) }}" class="panel-filter-tab {{ $status === 'sold' ? 'is-active' : '' }}">
                         Satıldı ({{ $counts['sold'] }})
                     </a>
-                    <a href="{{ route('panel.listings.index', ['search' => $search, 'status' => 'expired']) }}" class="inline-flex items-center h-12 px-6 rounded-full border text-xl font-semibold {{ $status === 'expired' ? 'border-rose-500 text-rose-500 bg-rose-50' : 'border-slate-300 text-slate-700 hover:bg-slate-100' }}">
+                    <a href="{{ route('panel.listings.index', ['search' => $search, 'status' => 'expired']) }}" class="panel-filter-tab {{ $status === 'expired' ? 'is-active' : '' }}">
                         Süresi Dolmuş ({{ $counts['expired'] }})
                     </a>
                 </div>
             </div>
 
-            <div class="space-y-4">
+            <div class="space-y-4 panel-list-section">
                 @forelse($listings as $listing)
                 @php
                     $listingImage = $listing->getFirstMediaUrl('listing-images');
@@ -53,9 +53,9 @@
                     $viewCount = (int) ($listing->view_count ?? 0);
                     $expiresAt = $listing->expires_at?->format('d/m/Y');
                 @endphp
-                <article class="rounded-2xl border border-slate-300 bg-slate-50 p-4 sm:p-5">
-                    <div class="flex flex-col xl:flex-row gap-4 xl:items-stretch">
-                        <div class="w-full xl:w-[260px] h-[180px] bg-slate-200 rounded-xl overflow-hidden shrink-0">
+                <article class="panel-list-card">
+                    <div class="panel-list-card-body">
+                        <div class="panel-list-media bg-slate-200">
                             @if($listingImage)
                             <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
                             @else
@@ -63,17 +63,17 @@
                             @endif
                         </div>
 
-                        <div class="flex-1 min-w-0 flex flex-col">
-                            <div class="flex flex-wrap items-center gap-3">
-                                <p class="text-4xl font-black text-slate-900">{{ $priceLabel }}</p>
-                                <span class="inline-flex items-center h-10 px-4 rounded-full text-lg font-bold {{ $statusBadgeClass }}">{{ $statusLabel }}</span>
+                        <div class="panel-list-main">
+                            <div class="panel-list-summary">
+                                <p class="panel-list-price text-slate-900">{{ $priceLabel }}</p>
+                                <span class="panel-status-badge {{ $statusBadgeClass }}">{{ $statusLabel }}</span>
                             </div>
-                            <h2 class="text-2xl font-semibold text-slate-800 mt-3 leading-tight break-words">{{ $listing->title }}</h2>
+                            <h2 class="panel-list-title text-slate-800">{{ $listing->title }}</h2>
 
-                            <div class="mt-auto pt-5 flex flex-wrap items-center gap-2">
+                            <div class="panel-list-actions">
                                 <form method="POST" action="{{ route('panel.listings.destroy', $listing) }}">
                                     @csrf
-                                    <button type="submit" class="h-12 px-6 rounded-full border-2 border-rose-500 text-rose-500 text-2xl font-bold hover:bg-rose-50 transition">
+                                    <button type="submit" class="panel-action-btn panel-action-btn-secondary">
                                         İlanı Kaldır
                                     </button>
                                 </form>
@@ -81,7 +81,7 @@
                                 @if((string) $listing->status !== 'sold')
                                 <form method="POST" action="{{ route('panel.listings.mark-sold', $listing) }}">
                                     @csrf
-                                    <button type="submit" class="h-12 px-6 rounded-full bg-rose-500 text-white text-2xl font-bold hover:bg-rose-600 transition">
+                                    <button type="submit" class="panel-action-btn panel-action-btn-primary">
                                         Satıldı İşaretle
                                     </button>
                                 </form>
@@ -90,7 +90,7 @@
                                 @if((string) $listing->status === 'expired')
                                 <form method="POST" action="{{ route('panel.listings.republish', $listing) }}">
                                     @csrf
-                                    <button type="submit" class="h-12 px-6 rounded-full border-2 border-rose-500 text-rose-500 text-2xl font-bold hover:bg-rose-50 transition">
+                                    <button type="submit" class="panel-action-btn panel-action-btn-secondary">
                                         Yeniden Yayınla
                                     </button>
                                 </form>
@@ -98,19 +98,19 @@
                             </div>
                         </div>
 
-                        <div class="xl:w-[260px] flex xl:flex-col items-start xl:items-end justify-between gap-3">
-                            <div class="flex items-center gap-3">
-                                <div class="h-12 min-w-24 px-4 rounded-2xl bg-slate-200 text-slate-500 text-xl font-bold inline-flex items-center justify-center gap-2">
+                        <div class="panel-list-aside">
+                            <div class="panel-stats">
+                                <div class="panel-stat-box">
                                     <span>👁</span>
                                     <span>{{ $viewCount }}</span>
                                 </div>
-                                <div class="h-12 min-w-24 px-4 rounded-2xl bg-slate-200 text-slate-500 text-xl font-bold inline-flex items-center justify-center gap-2">
+                                <div class="panel-stat-box">
                                     <span>♥</span>
                                     <span>{{ $favoriteCount }}</span>
                                 </div>
                             </div>
 
-                            <p class="text-lg text-slate-500 text-left xl:text-right">
+                            <p class="panel-list-dates">
                                 Yayın Tarihi & Bitiş Tarihi:
                                 <strong class="text-slate-700">
                                     {{ $listing->created_at?->format('d/m/Y') ?? '-' }} - {{ $expiresAt ?: '-' }}
@@ -120,13 +120,13 @@
                     </div>
 
                     @if((string) $listing->status === 'expired')
-                    <div class="mt-4 rounded-xl bg-sky-100 px-4 py-3 text-base text-slate-700">
+                    <div class="panel-inline-note">
                         <strong>Bu ilanın süresi doldu.</strong> Eğer sattıysan, lütfen satıldı olarak işaretle.
                     </div>
                     @endif
                 </article>
                 @empty
-                <div class="rounded-xl border border-dashed border-slate-300 py-16 text-center text-slate-500">
+                <div class="panel-empty-state">
                     Bu filtreye uygun ilan bulunamadı.
                 </div>
                 @endforelse

@@ -41,11 +41,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ $siteName }} @hasSection('title') - @yield('title') @endif</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="{{ asset('theme.css') }}">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @livewireStyles
 </head>
-<body class="min-h-screen">
+<body class="min-h-screen font-sans antialiased">
     <nav class="market-nav-surface sticky top-0 z-50">
         <div class="max-w-[1320px] mx-auto px-4 py-4">
             <div class="flex items-center gap-3 md:gap-4">
@@ -203,7 +202,7 @@
         <div class="bg-rose-100 border border-rose-300 text-rose-700 px-4 py-3 rounded-xl text-sm">{{ session('error') }}</div>
     </div>
     @endif
-    <main>@yield('content')</main>
+    <main class="site-main">@yield('content')</main>
     <footer class="mt-14 bg-slate-100 text-slate-600 border-t border-slate-200">
         <div class="max-w-[1320px] mx-auto px-4 py-12">
             <div class="grid grid-cols-1 md:grid-cols-4 gap-8">

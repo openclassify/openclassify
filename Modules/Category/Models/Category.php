@@ -72,7 +72,7 @@ class Category extends Model
             ->active()
             ->whereNull('parent_id')
             ->with([
-                'children' => fn (Builder $query) => $query->active()->ordered(),
+                'children' => fn ($query) => $query->active()->ordered(),
             ])
             ->ordered()
             ->get();
