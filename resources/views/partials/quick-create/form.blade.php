@@ -1,4 +1,4 @@
-<div class="max-w-[1320px] mx-auto px-4 py-8">
+<div class="max-w-[1320px] mx-auto px-4 py-5 sm:py-8">
     <style>
         .qc-shell {
             --qc-card: #ffffff;
@@ -853,32 +853,404 @@
                 grid-template-columns: repeat(3, minmax(0, 1fr));
             }
         }
+
+        .qc-shell {
+            --qc-card: #ffffff;
+            --qc-border: #dbe3ee;
+            --qc-text: #0f172a;
+            --qc-muted: #64748b;
+            --qc-primary: #111827;
+            --qc-primary-soft: #f3f4f6;
+            --qc-warn: #f8fafc;
+            color: var(--qc-text);
+            font-family: "SF Pro Text", "SF Pro Display", "Helvetica Neue", Arial, sans-serif;
+        }
+
+        .qc-hero {
+            display: grid;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+
+        .qc-hero-copy {
+            min-width: 0;
+        }
+
+        .qc-eyebrow {
+            display: inline-flex;
+            width: fit-content;
+            align-items: center;
+            border-radius: 999px;
+            background: #f1f5f9;
+            color: #475569;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: .42rem .7rem;
+        }
+
+        .qc-title {
+            margin-top: .5rem;
+            font-size: 1.9rem;
+            line-height: 1.05;
+            letter-spacing: -0.04em;
+            font-weight: 700;
+            text-align: left;
+        }
+
+        .qc-subtitle {
+            margin-top: .45rem;
+            color: var(--qc-muted);
+            font-size: .95rem;
+            line-height: 1.55;
+            max-width: 56rem;
+            text-align: left;
+        }
+
+        .qc-head {
+            display: grid;
+            gap: .55rem;
+            margin: 0;
+            padding: 0;
+            min-width: 0;
+            background: transparent;
+            border: 0;
+            box-shadow: none;
+        }
+
+        .qc-progress-wrap {
+            width: 100%;
+            justify-content: space-between;
+            gap: .9rem;
+        }
+
+        .qc-progress {
+            width: 100%;
+            gap: .45rem;
+        }
+
+        .qc-progress > span {
+            height: .3rem;
+            background: #e2e8f0;
+        }
+
+        .qc-progress > span.is-on {
+            background: var(--qc-primary);
+        }
+
+        .qc-step-label {
+            font-size: .92rem;
+            color: #334155;
+            font-weight: 700;
+        }
+
+        .qc-stage {
+            padding: 0;
+            border: 0;
+            background: transparent;
+            box-shadow: none;
+        }
+
+        .qc-card {
+            border: 1px solid var(--qc-border);
+            border-radius: 1rem;
+            background: var(--qc-card);
+            box-shadow: 0 12px 32px rgba(15, 23, 42, 0.06);
+        }
+
+        .qc-body {
+            min-height: 0;
+            padding: 1rem;
+        }
+
+        .qc-body > * {
+            max-width: 100%;
+        }
+
+        .qc-footer {
+            padding: 1rem;
+            justify-content: stretch;
+            flex-direction: column-reverse;
+            align-items: stretch;
+            background: #fff;
+        }
+
+        .qc-btn,
+        .qc-publish,
+        .qc-muted-btn,
+        .qc-upload-btn {
+            width: 100%;
+            min-width: 0;
+            min-height: 3rem;
+            padding: .82rem 1rem;
+            font-size: .95rem;
+        }
+
+        .qc-btn-primary,
+        .qc-publish,
+        .qc-upload-btn {
+            background: #111827;
+            color: #fff;
+            box-shadow: none;
+        }
+
+        .qc-btn-primary:hover,
+        .qc-publish:hover,
+        .qc-upload-btn:hover {
+            transform: none;
+            box-shadow: none;
+        }
+
+        .qc-btn-secondary,
+        .qc-muted-btn {
+            background: #f8fafc;
+            color: #0f172a;
+            border: 1px solid var(--qc-border);
+        }
+
+        .qc-upload-zone,
+        .qc-warning,
+        .qc-summary,
+        .qc-info-box,
+        .qc-preview-panel,
+        .qc-seller-card,
+        .qc-strip {
+            border-radius: 1rem;
+        }
+
+        .qc-upload-zone {
+            min-height: 220px;
+            padding: 1.25rem 1rem;
+            background: #f8fafc;
+        }
+
+        .qc-upload-zone > * {
+            max-width: 760px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .qc-upload-title,
+        .qc-ai-note h3 {
+            font-size: 1.35rem;
+            letter-spacing: -0.03em;
+        }
+
+        .qc-photo-grid {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+
+        .qc-root-grid {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            padding: 1rem;
+        }
+
+        .qc-root-item {
+            border: 1px solid var(--qc-border);
+            border-radius: .9rem;
+            padding: .85rem .6rem;
+            background: #fff;
+        }
+
+        .qc-root-item.is-selected {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        .qc-root-icon {
+            background: #f8fafc;
+            color: #111827;
+        }
+
+        .qc-search input,
+        .qc-input,
+        .qc-select,
+        .qc-textarea {
+            background: #fff;
+            border-color: var(--qc-border);
+            border-radius: .85rem;
+            padding: .85rem .95rem;
+        }
+
+        .qc-summary {
+            border-top: 0;
+            margin-top: 1rem;
+            padding-top: 0;
+            border: 1px solid var(--qc-border);
+            background: #f8fafc;
+            padding: 1rem;
+            flex-direction: column;
+            gap: .6rem;
+        }
+
+        .qc-strip {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            background: #f8fafc;
+        }
+
+        .qc-dynamic-grid,
+        .qc-two-col,
+        .qc-preview-grid,
+        .qc-seller-actions {
+            grid-template-columns: 1fr;
+        }
+
+        .qc-preview-grid {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .qc-preview-panel,
+        .qc-seller-card {
+            background: #fff;
+        }
+
+        .qc-warning {
+            background: #f8fafc;
+            border-bottom: 1px solid var(--qc-border);
+        }
+
+        .qc-chip,
+        .qc-pill {
+            border-color: var(--qc-border);
+            background: #fff;
+            color: #111827;
+        }
+
+        .qc-avatar {
+            background: #f3f4f6;
+            color: #111827;
+        }
+
+        .qc-gallery {
+            grid-template-columns: 1fr;
+        }
+
+        .qc-gallery-item {
+            min-height: 220px;
+        }
+
+        .qc-feature-row {
+            grid-template-columns: 1fr;
+            gap: .2rem;
+        }
+
+        .qc-publish-wrap {
+            display: grid;
+            gap: .6rem;
+            margin-top: .9rem;
+        }
+
+        @media (min-width: 640px) {
+            .qc-title {
+                font-size: 2.35rem;
+            }
+
+            .qc-body,
+            .qc-footer {
+                padding: 1.25rem;
+            }
+
+            .qc-photo-grid,
+            .qc-strip {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            .qc-gallery {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 768px) {
+            .qc-hero {
+                grid-template-columns: minmax(0, 1fr) 220px;
+                align-items: center;
+                gap: 1.5rem;
+            }
+
+            .qc-head {
+                justify-items: end;
+                align-self: center;
+            }
+
+            .qc-footer {
+                flex-direction: row;
+                justify-content: flex-end;
+            }
+
+            .qc-btn,
+            .qc-publish,
+            .qc-muted-btn {
+                width: auto;
+                min-width: 160px;
+            }
+
+            .qc-root-grid {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .qc-dynamic-grid,
+            .qc-two-col {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .qc-preview-grid {
+                grid-template-columns: minmax(0, 1fr) 280px;
+            }
+
+            .qc-gallery {
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+            }
+
+            .qc-gallery-item {
+                min-height: 160px;
+            }
+
+            .qc-seller-actions {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .qc-body {
+                padding: 1.4rem;
+            }
+
+            .qc-preview-grid {
+                grid-template-columns: minmax(0, 1fr) 320px;
+            }
+        }
     </style>
 
     <div class="qc-shell">
-        <div class="qc-head">
-            <h1 class="qc-title">{{ $this->currentStepTitle }}</h1>
-            <div class="qc-progress-wrap">
-                <div class="qc-progress" aria-hidden="true">
-                    @for ($step = 1; $step <= 5; $step++)
-                        <span @class(['is-on' => $step <= $currentStep])></span>
-                    @endfor
+        <div class="qc-hero">
+            <div class="qc-hero-copy">
+                <span class="qc-eyebrow">Create listing</span>
+                <h1 class="qc-title">{{ $this->currentStepTitle }}</h1>
+                <p class="qc-subtitle">A clean, simple flow to publish faster.</p>
+            </div>
+            <div class="qc-head">
+                <div class="qc-step-label">Step {{ $currentStep }} of 5</div>
+                <div class="qc-progress-wrap">
+                    <div class="qc-progress" aria-hidden="true">
+                        @for ($step = 1; $step <= 5; $step++)
+                            <span @class(['is-on' => $step <= $currentStep])></span>
+                        @endfor
+                    </div>
                 </div>
-                <div class="qc-step-label">{{ $currentStep }}/5</div>
             </div>
         </div>
 
+        <div class="qc-stage">
         <div class="qc-card">
             @if ($currentStep === 1)
                 <div class="qc-body">
                     <label class="qc-upload-zone" for="quick-listing-photo-input">
                         <x-heroicon-o-photo class="h-10 w-10 text-gray-700" />
-                        <div class="qc-upload-title">Ürün fotoğraflarını yükle</div>
-                        <div class="qc-upload-desc">
-                            Yüklemeye başlamak için ürün fotoğraflarını
-                            <strong>bu alana sürükleyip bırakın</strong> veya
-                        </div>
-                        <span class="qc-upload-btn">Fotoğraf Seç</span>
+                        <div class="qc-upload-title">Start with photos</div>
+                        <div class="qc-upload-desc">Add clear images first.</div>
+                        <span class="qc-upload-btn">Choose Photos</span>
                     </label>
 
                     <input
@@ -890,10 +1262,7 @@
                         class="hidden"
                     />
 
-                    <p class="qc-help">
-                        <strong>İpucu:</strong> En az 1 fotoğraf, en çok {{ (int) config('quick-listing.max_photo_count', 20) }} fotoğraf yükleyebilirsin.<br>
-                        Desteklenen formatlar: <strong>.jpg, .jpeg ve .png</strong>
-                    </p>
+                    <p class="qc-help">1 to {{ (int) config('quick-listing.max_photo_count', 20) }} images. JPG and PNG only.</p>
 
                     @error('photos')
                         <div class="qc-error">{{ $message }}</div>
@@ -904,17 +1273,17 @@
                     @enderror
 
                     @if (count($photos) > 0)
-                        <h3 class="qc-photo-title">Seçtiğin Fotoğraflar</h3>
-                        <div class="qc-photo-sub">Fotoğrafları sıralamak için tut ve sürükle</div>
+                            <h3 class="qc-photo-title">Selected photos</h3>
+                            <div class="qc-photo-sub">Drag to reorder</div>
 
                         <div class="qc-photo-grid">
                             @for ($index = 0; $index < (int) config('quick-listing.max_photo_count', 20); $index++)
                                 <div class="qc-photo-slot">
                                     @if (isset($photos[$index]))
-                                        <img src="{{ $photos[$index]->temporaryUrl() }}" alt="Yüklenen fotoğraf {{ $index + 1 }}">
+                                        <img src="{{ $photos[$index]->temporaryUrl() }}" alt="Uploaded photo {{ $index + 1 }}">
                                         <button type="button" class="qc-remove" wire:click="removePhoto({{ $index }})">×</button>
                                         @if ($index === 0)
-                                            <div class="qc-cover">KAPAK</div>
+                                            <div class="qc-cover">COVER</div>
                                         @endif
                                     @else
                                         <x-heroicon-o-photo class="h-9 w-9 text-gray-400" />
@@ -925,11 +1294,8 @@
                     @else
                         <div class="qc-ai-note">
                             <x-heroicon-o-sparkles class="h-10 w-10 text-pink-500" />
-                            <h3>Ürün fotoğraflarını yükle</h3>
-                            <p>
-                                Hızlı ilan vermek için en az 1 fotoğraf yükleyin.<br>
-                                <strong>Laravel AI</strong> sizin için otomatik kategori önerileri sunar.
-                            </p>
+                            <h3>Add at least one photo</h3>
+                            <p>We can suggest a category after the first image.</p>
                         </div>
                     @endif
                 </div>
@@ -941,7 +1307,7 @@
                         wire:click="goToCategoryStep"
                         @disabled(count($photos) === 0 || $isDetecting)
                     >
-                        Devam Et
+                        Continue
                     </button>
                 </div>
             @endif
@@ -950,26 +1316,18 @@
                 @if ($isDetecting)
                     <div class="qc-warning">
                         <x-heroicon-o-arrow-path class="h-5 w-5 animate-spin text-gray-700" />
-                        <span>Fotoğraf analiz ediliyor, kategori önerisi hazırlanıyor...</span>
+                        <span>Finding the best category...</span>
                     </div>
                 @elseif ($detectedCategoryId)
                     <div class="qc-warning">
                         <x-heroicon-o-sparkles class="h-5 w-5 text-pink-500" />
-                        <span>
-                            AI kategori önerdi: <strong>{{ $this->selectedCategoryName }}</strong>
-                            @if ($detectedConfidence)
-                                (Güven: {{ number_format($detectedConfidence * 100, 0) }}%)
-                            @endif
-                            @if ($detectedReason)
-                                <span class="qc-warning-sub">{{ $detectedReason }}</span>
-                            @endif
-                        </span>
+                        <span>Suggested category: <strong>{{ $this->selectedCategoryName }}</strong></span>
                     </div>
                 @else
                     <div class="qc-warning">
                         <x-heroicon-o-sparkles class="h-5 w-5 text-pink-500" />
                         <span>
-                            AI ile kategori tespit edilemedi, lütfen kategori seçimi yapın.
+                            Choose a category.
                             @if ($detectedError)
                                 <span class="qc-warning-sub">{{ $detectedError }}</span>
                             @endif
@@ -995,9 +1353,9 @@
                 @if (is_null($activeParentCategoryId))
                     <div class="qc-browser-header">
                         <span></span>
-                        <strong>Ne Satıyorsun?</strong>
+                        <strong>Choose a category</strong>
                         <button type="button" class="qc-chip" wire:click="detectCategoryFromImage" @disabled($isDetecting || count($photos) === 0)>
-                            AI ile Tekrar Dene
+                            Refresh suggestion
                         </button>
                     </div>
 
@@ -1019,14 +1377,14 @@
                     <div class="qc-browser-header">
                         <button type="button" class="qc-back-btn" wire:click="backToRootCategories">
                             <x-heroicon-o-arrow-left class="h-5 w-5" />
-                            Geri
+                            Back
                         </button>
                         <strong>{{ $this->currentParentName }}</strong>
                         <span></span>
                     </div>
 
                     <div class="qc-search">
-                        <input type="text" placeholder="Kategori Ara" wire:model.live.debounce.300ms="categorySearch">
+                        <input type="text" placeholder="Search categories" wire:model.live.debounce.300ms="categorySearch">
                     </div>
 
                     <div class="qc-list">
@@ -1056,7 +1414,7 @@
                             </div>
                         @empty
                             <div class="qc-row">
-                                <span class="qc-row-main">Aramaya uygun kategori bulunamadı.</span>
+                                <span class="qc-row-main">No categories found.</span>
                             </div>
                         @endforelse
                     </div>
@@ -1067,18 +1425,18 @@
                 @endif
 
                 @if ($this->selectedCategoryName)
-                    <div class="qc-selection">Seçilen kategori: <strong>{{ $this->selectedCategoryName }}</strong></div>
+                    <div class="qc-selection">Selected: <strong>{{ $this->selectedCategoryName }}</strong></div>
                 @endif
 
                 <div class="qc-footer">
-                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(1)">Geri</button>
+                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(1)">Back</button>
                     <button
                         type="button"
                         class="qc-btn qc-btn-primary"
                         wire:click="goToDetailsStep"
                         @disabled(! $selectedCategoryId)
                     >
-                        Devam Et
+                        Continue
                     </button>
                 </div>
             @endif
@@ -1088,10 +1446,10 @@
                     <div class="qc-strip">
                         @foreach (array_slice($photos, 0, 7) as $index => $photo)
                             <div class="qc-photo-slot">
-                                <img src="{{ $photo->temporaryUrl() }}" alt="Seçilen fotoğraf {{ $index + 1 }}">
+                                <img src="{{ $photo->temporaryUrl() }}" alt="Selected photo {{ $index + 1 }}">
                                 <button type="button" class="qc-remove" wire:click="removePhoto({{ $index }})">×</button>
                                 @if ($index === 0)
-                                    <div class="qc-cover">KAPAK</div>
+                                    <div class="qc-cover">COVER</div>
                                 @endif
                             </div>
                         @endforeach
@@ -1099,45 +1457,45 @@
 
                     <div class="qc-summary">
                         <div>
-                            <h4>Seçilen Kategori</h4>
+                            <h4>Category</h4>
                             <p>{{ $this->selectedCategoryPath ?: '-' }}</p>
                         </div>
-                        <button type="button" class="qc-link-btn" wire:click="goToStep(2)">Değiştir</button>
+                        <button type="button" class="qc-link-btn" wire:click="goToStep(2)">Change</button>
                     </div>
 
                     <div class="qc-form-grid">
                         <div class="qc-field">
-                            <label for="quick-title">İlan Başlığı *</label>
-                            <input id="quick-title" type="text" class="qc-input" placeholder="Başlık girin" wire:model.live.debounce.300ms="listingTitle" maxlength="70">
-                            <p class="qc-hint">Ürünün temel özelliklerinden bahset (ör. marka, model, yaş, tip)</p>
+                            <label for="quick-title">Listing Title *</label>
+                            <input id="quick-title" type="text" class="qc-input" placeholder="Enter a title" wire:model.live.debounce.300ms="listingTitle" maxlength="70">
+                            <p class="qc-hint">Keep it short and clear.</p>
                             <div class="qc-counter">{{ $this->titleCharacters }}/70</div>
                             @error('listingTitle')<div class="qc-error">{{ $message }}</div>@enderror
                         </div>
 
                         <div class="qc-field">
-                            <label for="quick-price">Fiyat *</label>
+                            <label for="quick-price">Price *</label>
                             <div class="qc-input-row">
-                                <input id="quick-price" type="number" step="0.01" class="qc-input" placeholder="Fiyat giriniz" wire:model.live.debounce.300ms="price">
+                                <input id="quick-price" type="number" step="0.01" class="qc-input" placeholder="Enter a price" wire:model.live.debounce.300ms="price">
                                 <span class="qc-input-suffix">{{ \Modules\Listing\Support\ListingPanelHelper::defaultCurrency() }}</span>
                             </div>
-                            <p class="qc-hint">Lütfen unutma; doğru fiyat daha hızlı satmanıza yardımcı olacaktır</p>
+                            <p class="qc-hint">Use the final asking price.</p>
                             @error('price')<div class="qc-error">{{ $message }}</div>@enderror
                         </div>
 
                         <div class="qc-field">
-                            <label for="quick-description">Açıklama *</label>
-                            <textarea id="quick-description" class="qc-textarea" placeholder="Açıklama girin" wire:model.live.debounce.300ms="description" maxlength="1450"></textarea>
-                            <p class="qc-hint">Durum, özellik ve satma nedeni gibi bilgileri ekle</p>
+                            <label for="quick-description">Description *</label>
+                            <textarea id="quick-description" class="qc-textarea" placeholder="Write a description" wire:model.live.debounce.300ms="description" maxlength="1450"></textarea>
+                            <p class="qc-hint">Condition, key details, and anything important.</p>
                             <div class="qc-counter">{{ $this->descriptionCharacters }}/1450</div>
                             @error('description')<div class="qc-error">{{ $message }}</div>@enderror
                         </div>
 
                         <div class="qc-field">
-                            <label>Konum *</label>
+                            <label>Location *</label>
                             <div class="qc-two-col">
                                 <div>
                                     <select class="qc-select" wire:model.live="selectedCountryId">
-                                        <option value="">Ülke seçin</option>
+                                        <option value="">Select a country</option>
                                         @foreach ($countries as $country)
                                             <option value="{{ $country['id'] }}">{{ $country['name'] }}</option>
                                         @endforeach
@@ -1146,7 +1504,7 @@
                                 </div>
                                 <div>
                                     <select class="qc-select" wire:model.live="selectedCityId" @disabled(! $selectedCountryId)>
-                                        <option value="">Şehir seçin</option>
+                                        <option value="">Select a city</option>
                                         @foreach ($this->availableCities as $city)
                                             <option value="{{ $city['id'] }}">{{ $city['name'] }}</option>
                                         @endforeach
@@ -1159,8 +1517,8 @@
                 </div>
 
                 <div class="qc-footer">
-                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(2)">Geri</button>
-                    <button type="button" class="qc-btn qc-btn-primary" wire:click="goToFeaturesStep">Devam Et</button>
+                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(2)">Back</button>
+                    <button type="button" class="qc-btn qc-btn-primary" wire:click="goToFeaturesStep">Continue</button>
                 </div>
             @endif
 
@@ -1168,15 +1526,15 @@
                 <div class="qc-body">
                     <div class="qc-summary" style="margin-top: 0; border-top: 0; padding-top: 0;">
                         <div>
-                            <h4>Seçilen Kategori</h4>
+                            <h4>Category</h4>
                             <p>{{ $this->selectedCategoryPath ?: '-' }}</p>
                         </div>
-                        <button type="button" class="qc-link-btn" wire:click="goToStep(2)">Değiştir</button>
+                        <button type="button" class="qc-link-btn" wire:click="goToStep(2)">Change</button>
                     </div>
 
                     @if ($listingCustomFields === [])
                         <div class="qc-info-box">
-                            Bu kategori için ek ilan özelliği tanımlı değil. Devam ederek önizleme adımına geçebilirsin.
+                            No extra details needed for this category.
                         </div>
                     @else
                         <div class="qc-dynamic-grid">
@@ -1212,7 +1570,7 @@
                                         >
                                     @elseif ($field['type'] === 'select')
                                         <select class="qc-select" wire:model.live="customFieldValues.{{ $field['name'] }}">
-                                            <option value="">Seçiniz</option>
+                                            <option value="">Select an option</option>
                                             @foreach ($field['options'] as $option)
                                                 <option value="{{ $option }}">{{ $option }}</option>
                                             @endforeach
@@ -1220,7 +1578,7 @@
                                     @elseif ($field['type'] === 'boolean')
                                         <label class="qc-toggle-line">
                                             <input type="checkbox" wire:model.live="customFieldValues.{{ $field['name'] }}">
-                                            <span>Evet</span>
+                                            <span>Yes</span>
                                         </label>
                                     @elseif ($field['type'] === 'date')
                                         <input type="date" class="qc-input" wire:model.live="customFieldValues.{{ $field['name'] }}">
@@ -1240,21 +1598,21 @@
                 </div>
 
                 <div class="qc-footer">
-                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(3)">Geri</button>
-                    <button type="button" class="qc-btn qc-btn-primary" wire:click="goToPreviewStep">Devam Et</button>
+                    <button type="button" class="qc-btn qc-btn-secondary" wire:click="goToStep(3)">Back</button>
+                    <button type="button" class="qc-btn qc-btn-primary" wire:click="goToPreviewStep">Continue</button>
                 </div>
             @endif
 
             @if ($currentStep === 5)
                 <div class="qc-body">
-                    <div class="qc-preview-breadcrumb">Anasayfa › {{ $this->selectedCategoryPath }}</div>
+                    <div class="qc-preview-breadcrumb">Home › {{ $this->selectedCategoryPath }}</div>
 
                     <div class="qc-preview-grid">
                         <div class="qc-preview-panel">
                             <div class="qc-gallery">
                                 @foreach (array_slice($photos, 0, 3) as $photo)
                                     <div class="qc-gallery-item">
-                                        <img src="{{ $photo->temporaryUrl() }}" alt="Önizleme fotoğrafı">
+                                        <img src="{{ $photo->temporaryUrl() }}" alt="Preview photo">
                                     </div>
                                 @endforeach
                                 @for ($empty = count(array_slice($photos, 0, 3)); $empty < 3; $empty++)
@@ -1280,7 +1638,7 @@
                             </div>
 
                             <div class="qc-preview-features">
-                                <h5>İlan Özellikleri</h5>
+                                <h5>Details</h5>
                                 @if ($this->previewCustomFields !== [])
                                     @foreach ($this->previewCustomFields as $field)
                                         <div class="qc-feature-row">
@@ -1290,8 +1648,8 @@
                                     @endforeach
                                 @else
                                     <div class="qc-feature-row">
-                                        <div class="qc-feature-label">Ek özellik</div>
-                                        <div class="qc-feature-value">Bu kategori için seçilmedi</div>
+                                        <div class="qc-feature-label">Details</div>
+                                        <div class="qc-feature-value">No extra details added</div>
                                     </div>
                                 @endif
                             </div>
@@ -1308,8 +1666,8 @@
                                 </div>
 
                                 <div class="qc-seller-actions">
-                                    <div class="qc-pill">Harita</div>
-                                    <div class="qc-pill">Satıcı Profili</div>
+                                    <div class="qc-pill">Map</div>
+                                    <div class="qc-pill">Profile</div>
                                 </div>
                             </div>
 
@@ -1320,14 +1678,15 @@
                                     wire:click="publishListing"
                                     @disabled($isPublishing)
                                 >
-                                    {{ $isPublishing ? 'Yayınlanıyor...' : 'İlanı Şimdi Yayınla' }}
+                                    {{ $isPublishing ? 'Publishing...' : 'Publish Listing' }}
                                 </button>
-                                <button type="button" class="qc-muted-btn" wire:click="goToStep(4)">Geri Dön</button>
+                                <button type="button" class="qc-muted-btn" wire:click="goToStep(4)">Back</button>
                             </div>
                         </div>
                     </div>
                 </div>
             @endif
+        </div>
         </div>
     </div>
 </div>

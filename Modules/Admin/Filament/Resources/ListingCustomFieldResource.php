@@ -105,7 +105,7 @@ class ListingCustomFieldResource extends Resource
                 IconColumn::make('is_active')->boolean()->label('Active'),
                 TextColumn::make('sort_order')->sortable(),
             ])
-            ->defaultSort('sort_order')
+            ->defaultSort('id', 'desc')
             ->actions([
                 EditAction::make(),
                 DeleteAction::make(),

@@ -194,6 +194,7 @@ class ListingResource extends Resource
             ->filtersFormColumns(3)
             ->filtersFormWidth('7xl')
             ->persistFiltersInSession()
+            ->defaultSort('id', 'desc')
             ->actions([
             EditAction::make(),
             Action::make('activities')

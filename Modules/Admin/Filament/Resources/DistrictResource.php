@@ -48,7 +48,7 @@ class DistrictResource extends Resource
             TextColumn::make('city.country.name')->label('Country'),
             IconColumn::make('is_active')->boolean(),
             TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-        ])->filters([
+        ])->defaultSort('id', 'desc')->filters([
             SelectFilter::make('country_id')
                 ->label('Country')
                 ->options(fn (): array => Country::query()->orderBy('name')->pluck('name', 'id')->all())

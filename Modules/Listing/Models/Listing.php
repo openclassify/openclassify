@@ -2,11 +2,12 @@
 namespace Modules\Listing\Models;
 
 use Illuminate\Database\Eloquent\Casts\Attribute;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Builder;
+use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
+use Modules\Category\Models\Category;
 use Modules\Listing\States\ListingStatus;
 use Modules\Listing\Support\ListingPanelHelper;
 use Spatie\Activitylog\LogOptions;
@@ -72,9 +73,14 @@ class Listing extends Model implements HasMedia
     public function scopePublicFeed(Builder $query): Builder
     {
         return $query
-            ->where('status', 'active')
+            ->active()
             ->orderByDesc('is_featured')
             ->orderByDesc('created_at');
+    }
+
+    public function scopeActive(Builder $query): Builder
+    {
+        return $query->where('status', 'active');
     }
 
     public function scopeSearchTerm(Builder $query, string $search): Builder
@@ -96,11 +102,20 @@ class Listing extends Model implements HasMedia
 
     public function scopeForCategory(Builder $query, ?int $categoryId): Builder
     {
-        if (! $categoryId) {
+        return $query->forCategoryIds(Category::listingFilterIds($categoryId));
+    }
+
+    public function scopeForCategoryIds(Builder $query, ?array $categoryIds): Builder
+    {
+        if ($categoryIds === null) {
             return $query;
         }
 
-        return $query->where('category_id', $categoryId);
+        if ($categoryIds === []) {
+            return $query->whereRaw('1 = 0');
+        }
+
+        return $query->whereIn('category_id', $categoryIds);
     }
 
     public function themeGallery(): array

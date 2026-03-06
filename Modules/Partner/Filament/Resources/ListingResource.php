@@ -174,7 +174,7 @@ class ListingResource extends Resource
             StateFusionSelectColumn::make('status'),
             TextColumn::make('city'),
             TextColumn::make('created_at')->dateTime()->sortable(),
-        ])->filters([
+        ])->defaultSort('id', 'desc')->filters([
             StateFusionSelectFilter::make('status'),
             SelectFilter::make('category_id')
                 ->label('Category')

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use Modules\Conversation\App\Http\Controllers\ConversationController;
 
 Route::middleware('auth')->prefix('panel')->name('panel.')->group(function () {
-    Route::get('/gelen-kutusu', [ConversationController::class, 'inbox'])->name('inbox.index');
+    Route::get('/inbox', [ConversationController::class, 'inbox'])->name('inbox.index');
 });
 
 Route::middleware('auth')->name('conversations.')->group(function () {

@@ -43,7 +43,7 @@ class UserResource extends Resource
             TextColumn::make('roles.name')->badge()->label('Roles'),
             StateFusionSelectColumn::make('status'),
             TextColumn::make('created_at')->dateTime()->sortable(),
-        ])->filters([
+        ])->defaultSort('id', 'desc')->filters([
             StateFusionSelectFilter::make('status'),
         ])->actions([
             EditAction::make(),

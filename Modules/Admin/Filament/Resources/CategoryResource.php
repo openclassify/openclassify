@@ -45,7 +45,7 @@ class CategoryResource extends Resource
             TextColumn::make('listings_count')->counts('listings')->label('Listings'),
             IconColumn::make('is_active')->boolean(),
             TextColumn::make('sort_order')->sortable(),
-        ])->actions([
+        ])->defaultSort('id', 'desc')->actions([
             EditAction::make(),
             Action::make('activities')
                 ->icon('heroicon-o-clock')

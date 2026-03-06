@@ -188,7 +188,7 @@
                 $trendSkin = $trendSkins[$index % count($trendSkins)];
                 $trendIcon = $trendIcons[$index % count($trendIcons)];
             @endphp
-            <a href="{{ route('categories.show', $category) }}" class="group shrink-0 w-[170px] rounded-xl overflow-hidden border border-slate-300/80 bg-white hover:shadow-md transition snap-start">
+            <a href="{{ route('listings.index', ['category' => $category->id]) }}" class="group shrink-0 w-[170px] rounded-xl overflow-hidden border border-slate-300/80 bg-white hover:shadow-md transition snap-start">
                 <div class="h-[68px] bg-gradient-to-r {{ $trendSkin['gradient'] }} relative overflow-hidden">
                     <span class="absolute -left-5 top-2 w-20 h-20 rounded-full {{ $trendSkin['glow'] }} blur-2xl"></span>
                     <span class="absolute left-5 bottom-2 h-2.5 w-24 rounded-full bg-black/20"></span>

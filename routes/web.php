@@ -15,7 +15,7 @@ Route::get('/dashboard', fn () => auth()->check()
 Route::middleware('auth')->prefix('panel')->name('panel.')->group(function () {
     Route::get('/', [PanelController::class, 'index'])->name('index');
     Route::get('/ilanlarim', [PanelController::class, 'listings'])->name('listings.index');
-    Route::get('/ilan-ver', [PanelController::class, 'create'])->name('listings.create');
+    Route::get('/create-listing', [PanelController::class, 'create'])->name('listings.create');
     Route::post('/ilanlarim/{listing}/kaldir', [PanelController::class, 'destroyListing'])->name('listings.destroy');
     Route::post('/ilanlarim/{listing}/satildi', [PanelController::class, 'markListingAsSold'])->name('listings.mark-sold');
     Route::post('/ilanlarim/{listing}/yeniden-yayinla', [PanelController::class, 'republishListing'])->name('listings.republish');

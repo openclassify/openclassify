@@ -188,13 +188,13 @@ class PanelQuickListingForm extends Component
         } catch (Throwable $exception) {
             report($exception);
             $this->isPublishing = false;
-            session()->flash('error', 'İlan oluşturulamadı. Lütfen tekrar deneyin.');
+            session()->flash('error', 'The listing could not be created. Please try again.');
 
             return;
         }
 
         $this->isPublishing = false;
-        session()->flash('success', 'İlan başarıyla oluşturuldu.');
+        session()->flash('success', 'Your listing has been created successfully.');
 
         $this->redirectRoute('panel.listings.index');
     }
@@ -243,23 +243,23 @@ class PanelQuickListingForm extends Component
     public function getCurrentParentNameProperty(): string
     {
         if (! $this->activeParentCategoryId) {
-            return 'Kategori Seçimi';
+            return 'Category Selection';
         }
 
         $category = collect($this->categories)->firstWhere('id', $this->activeParentCategoryId);
 
-        return (string) ($category['name'] ?? 'Kategori Seçimi');
+        return (string) ($category['name'] ?? 'Category Selection');
     }
 
     public function getCurrentStepTitleProperty(): string
     {
         return match ($this->currentStep) {
-            1 => 'Fotoğraf',
-            2 => 'Kategori Seçimi',
-            3 => 'İlan Bilgileri',
-            4 => 'İlan Özellikleri',
-            5 => 'İlan Önizlemesi',
-            default => 'İlan Ver',
+            1 => 'Photos',
+            2 => 'Category Selection',
+            3 => 'Listing Details',
+            4 => 'Attributes',
+            5 => 'Preview',
+            default => 'Create Listing',
         };
     }
 
@@ -352,7 +352,7 @@ class PanelQuickListingForm extends Component
 
     public function getCurrentUserNameProperty(): string
     {
-        return (string) (auth()->user()?->name ?: 'Kullanıcı');
+        return (string) (auth()->user()?->name ?: 'User');
     }
 
     public function getCurrentUserInitialProperty(): string
@@ -402,8 +402,8 @@ class PanelQuickListingForm extends Component
                 Rule::in(collect($this->categories)->pluck('id')->all()),
             ],
         ], [
-            'selectedCategoryId.required' => 'Lütfen bir kategori seçin.',
-            'selectedCategoryId.in' => 'Geçerli bir kategori seçin.',
+            'selectedCategoryId.required' => 'Please choose a category.',
+            'selectedCategoryId.in' => 'Please choose a valid category.',
         ]);
     }
 
@@ -426,18 +426,18 @@ class PanelQuickListingForm extends Component
                         ->contains(fn (array $city): bool => $city['id'] === (int) $value);
 
                     if (! $cityExists) {
-                        $fail('Seçtiğiniz şehir, seçilen ülkeye ait değil.');
+                        $fail('The selected city does not belong to the chosen country.');
                     }
                 },
             ],
         ], [
-            'listingTitle.required' => 'İlan başlığı zorunludur.',
-            'listingTitle.max' => 'İlan başlığı en fazla 70 karakter olabilir.',
-            'price.required' => 'Fiyat zorunludur.',
-            'price.numeric' => 'Fiyat sayısal olmalıdır.',
-            'description.required' => 'Açıklama zorunludur.',
-            'description.max' => 'Açıklama en fazla 1450 karakter olabilir.',
-            'selectedCountryId.required' => 'Ülke seçimi zorunludur.',
+            'listingTitle.required' => 'A title is required.',
+            'listingTitle.max' => 'The title may not exceed 70 characters.',
+            'price.required' => 'A price is required.',
+            'price.numeric' => 'The price must be numeric.',
+            'description.required' => 'A description is required.',
+            'description.max' => 'The description may not exceed 1450 characters.',
+            'selectedCountryId.required' => 'Please choose a country.',
         ]);
     }
 

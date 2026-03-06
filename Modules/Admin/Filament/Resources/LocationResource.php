@@ -46,7 +46,7 @@ class LocationResource extends Resource
             TextColumn::make('cities_count')->counts('cities')->label('Cities')->sortable(),
             IconColumn::make('is_active')->boolean(),
             TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-        ])->filters([
+        ])->defaultSort('id', 'desc')->filters([
             TernaryFilter::make('is_active')->label('Active'),
         ])->actions([
             EditAction::make(),

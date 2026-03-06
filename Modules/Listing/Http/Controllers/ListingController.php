@@ -65,11 +65,13 @@ class ListingController extends Controller
             $selectedCityName
         );
 
+        $listingDirectory = Category::listingDirectory($categoryId);
+
         $listingsQuery = Listing::query()
-            ->where('status', 'active')
+            ->active()
             ->with('category:id,name')
             ->searchTerm($search)
-            ->forCategory($categoryId)
+            ->forCategoryIds($listingDirectory['filterIds'])
             ->when($selectedCountryName, fn ($query) => $query->where('country', $selectedCountryName))
             ->when($selectedCityName, fn ($query) => $query->where('city', $selectedCityName))
             ->when(! is_null($minPrice), fn ($query) => $query->whereNotNull('price')->where('price', '>=', $minPrice))
@@ -82,28 +84,8 @@ class ListingController extends Controller
             ->paginate(16)
             ->withQueryString();
 
-        $categories = Category::query()
-            ->where('is_active', true)
-            ->whereNull('parent_id')
-            ->withCount([
-                'listings as active_listings_count' => fn ($query) => $query->where('status', 'active'),
-            ])
-            ->with([
-                'children' => fn ($query) => $query
-                    ->where('is_active', true)
-                    ->withCount([
-                        'listings as active_listings_count' => fn ($childQuery) => $childQuery->where('status', 'active'),
-                    ])
-                    ->orderBy('sort_order')
-                    ->orderBy('name'),
-            ])
-            ->orderBy('sort_order')
-            ->orderBy('name')
-            ->get(['id', 'name', 'parent_id']);
-
-        $selectedCategory = $categoryId
-            ? Category::query()->whereKey($categoryId)->first(['id', 'name'])
-            : null;
+        $categories = $listingDirectory['categories'];
+        $selectedCategory = $listingDirectory['selectedCategory'];
 
         $favoriteListingIds = [];
         $isCurrentSearchSaved = false;

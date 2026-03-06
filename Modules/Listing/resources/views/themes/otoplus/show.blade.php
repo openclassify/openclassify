@@ -33,7 +33,7 @@
         <a href="{{ route('home') }}">Anasayfa</a>
         @foreach(($breadcrumbCategories ?? collect()) as $crumb)
             <span>›</span>
-            <a href="{{ route('categories.show', $crumb) }}">{{ $crumb->name }}</a>
+            <a href="{{ route('listings.index', ['category' => $crumb->id]) }}">{{ $crumb->name }}</a>
         @endforeach
         <span>›</span>
         <span>{{ $displayTitle }}</span>

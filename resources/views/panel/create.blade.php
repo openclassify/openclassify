@@ -1,6 +1,6 @@
 @extends('app::layouts.app')
 
-@section('title', 'İlan Ver')
+@section('title', 'Create Listing')
 
 @section('simple_page', '1')
 

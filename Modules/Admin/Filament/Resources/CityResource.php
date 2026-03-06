@@ -46,7 +46,7 @@ class CityResource extends Resource
             TextColumn::make('districts_count')->counts('districts')->label('Districts')->sortable(),
             IconColumn::make('is_active')->boolean(),
             TextColumn::make('created_at')->dateTime()->sortable()->toggleable(isToggledHiddenByDefault: true),
-        ])->filters([
+        ])->defaultSort('id', 'desc')->filters([
             SelectFilter::make('country_id')
                 ->label('Country')
                 ->relationship('country', 'name')

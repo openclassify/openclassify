@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Support\Collection;
+use Modules\Listing\Models\Listing;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -78,6 +79,58 @@ class Category extends Model
             ->get();
     }
 
+    public static function listingDirectory(?int $selectedCategoryId): array
+    {
+        $categories = static::query()
+            ->active()
+            ->ordered()
+            ->get(['id', 'name', 'parent_id']);
+
+        $activeListingCounts = Listing::query()
+            ->active()
+            ->whereNotNull('category_id')
+            ->selectRaw('category_id, count(*) as aggregate')
+            ->groupBy('category_id')
+            ->pluck('aggregate', 'category_id')
+            ->map(fn ($count): int => (int) $count);
+
+        return [
+            'categories' => static::buildListingDirectoryTree($categories, $activeListingCounts),
+            'selectedCategory' => $selectedCategoryId
+                ? $categories->firstWhere('id', $selectedCategoryId)
+                : null,
+            'filterIds' => static::listingFilterIds($selectedCategoryId, $categories),
+        ];
+    }
+
+    public static function listingFilterIds(?int $selectedCategoryId, ?Collection $categories = null): ?array
+    {
+        if (! $selectedCategoryId) {
+            return null;
+        }
+
+        if ($categories instanceof Collection) {
+            $selectedCategory = $categories->firstWhere('id', $selectedCategoryId);
+
+            if (! $selectedCategory instanceof self) {
+                return [];
+            }
+
+            return static::descendantAndSelfIdsFromCollection($selectedCategoryId, $categories);
+        }
+
+        $selectedCategory = static::query()
+            ->active()
+            ->whereKey($selectedCategoryId)
+            ->first(['id']);
+
+        if (! $selectedCategory) {
+            return [];
+        }
+
+        return $selectedCategory->descendantAndSelfIds()->all();
+    }
+
     public function descendantAndSelfIds(): Collection
     {
         $ids = collect([(int) $this->getKey()]);
@@ -126,5 +179,55 @@ class Category extends Model
     public function activeListings(): HasMany
     {
         return $this->hasMany(\Modules\Listing\Models\Listing::class)->where('status', 'active');
+    }
+
+    private static function buildListingDirectoryTree(Collection $categories, Collection $activeListingCounts, ?int $parentId = null): Collection
+    {
+        return $categories
+            ->filter(fn (Category $category): bool => $parentId === null
+                ? $category->parent_id === null
+                : (int) $category->parent_id === $parentId)
+            ->values()
+            ->map(function (Category $category) use ($categories, $activeListingCounts): Category {
+                $children = static::buildListingDirectoryTree($categories, $activeListingCounts, (int) $category->getKey());
+                $directActiveListingsCount = (int) $activeListingCounts->get((int) $category->getKey(), 0);
+                $activeListingTotal = $directActiveListingsCount + $children->sum(
+                    fn (Category $child): int => (int) $child->getAttribute('active_listing_total')
+                );
+
+                $category->setRelation('children', $children);
+                $category->setAttribute('direct_active_listings_count', $directActiveListingsCount);
+                $category->setAttribute('active_listing_total', $activeListingTotal);
+
+                return $category;
+            })
+            ->values();
+    }
+
+    private static function descendantAndSelfIdsFromCollection(int $selectedCategoryId, Collection $categories): array
+    {
+        $ids = collect([$selectedCategoryId]);
+        $frontier = collect([$selectedCategoryId]);
+
+        while ($frontier->isNotEmpty()) {
+            $children = $categories
+                ->filter(fn (Category $category): bool => $category->parent_id !== null && in_array((int) $category->parent_id, $frontier->all(), true))
+                ->pluck('id')
+                ->map(fn ($id): int => (int) $id)
+                ->values();
+
+            if ($children->isEmpty()) {
+                break;
+            }
+
+            $ids = $ids
+                ->merge($children)
+                ->unique()
+                ->values();
+
+            $frontier = $children;
+        }
+
+        return $ids->all();
     }
 }

@@ -79,21 +79,21 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21s7-6.2 7-11a7 7 0 10-14 0c0 4.8 7 11 7 11z"/>
                             <circle cx="12" cy="10" r="2.3" stroke-width="1.8" />
                         </svg>
-                        <span data-location-label class="max-w-44 truncate">Konum seç</span>
+                        <span data-location-label class="max-w-44 truncate">Choose location</span>
                         <svg class="w-4 h-4 text-slate-500 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M6 9l6 6 6-6"/>
                         </svg>
                     </summary>
                     <div class="location-panel absolute right-0 mt-2 bg-white border border-slate-200 shadow-xl rounded-2xl p-4 space-y-3">
                         <div class="flex items-center justify-between gap-3">
-                            <p class="text-sm font-semibold text-slate-900">Konum Tercihi</p>
-                            <button type="button" data-location-detect class="text-xs font-semibold text-rose-500 hover:text-rose-600 transition">Konumumu Bul</button>
+                            <p class="text-sm font-semibold text-slate-900">Location</p>
+                            <button type="button" data-location-detect class="text-xs font-semibold text-rose-500 hover:text-rose-600 transition">Use my location</button>
                         </div>
-                        <p data-location-status class="text-xs text-slate-500">Tarayıcı konumuna göre ülke ve şehir otomatik seçilebilir.</p>
+                        <p data-location-status class="text-xs text-slate-500">Auto-select country and city from your browser location.</p>
                         <div class="space-y-2">
-                            <label class="block text-xs font-semibold text-slate-600">Ülke</label>
+                            <label class="block text-xs font-semibold text-slate-600">Country</label>
                             <select data-location-country class="w-full">
-                                <option value="">Ülke seç</option>
+                                <option value="">Select country</option>
                                 @foreach($locationCountries as $country)
                                 <option
                                     value="{{ $country['id'] }}"
@@ -107,35 +107,35 @@
                             </select>
                         </div>
                         <div class="space-y-2">
-                            <label class="block text-xs font-semibold text-slate-600">Şehir</label>
+                            <label class="block text-xs font-semibold text-slate-600">City</label>
                             <select data-location-city class="w-full" disabled>
-                                <option value="">Önce ülke seç</option>
+                                <option value="">Select country first</option>
                             </select>
                         </div>
-                        <button type="button" data-location-save class="w-full btn-primary px-4 py-2.5 text-sm font-semibold hover:brightness-95 transition">Uygula</button>
+                        <button type="button" data-location-save class="w-full btn-primary px-4 py-2.5 text-sm font-semibold hover:brightness-95 transition">Apply</button>
                     </div>
                 </details>
 
                 <div class="ml-auto flex items-center gap-2 md:gap-3">
                     @auth
-                    <a href="{{ $favoritesRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Favoriler">
+                    <a href="{{ $favoritesRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Favorites">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M12 21l-1.45-1.32C5.4 15.03 2 12.01 2 8.31 2 5.3 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.08A6.04 6.04 0 0116.5 3C19.58 3 22 5.3 22 8.31c0 3.7-3.4 6.72-8.55 11.39L12 21z"/>
                         </svg>
                     </a>
-                    <a href="{{ $inboxRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Gelen Kutusu">
+                    <a href="{{ $inboxRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Inbox">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16a1 1 0 011 1v10a1 1 0 01-1 1H4a1 1 0 01-1-1V7a1 1 0 011-1z"/>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 8l9 6 9-6"/>
                         </svg>
                     </a>
-                    <a href="{{ $panelListingsRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Panel">
+                    <a href="{{ $panelListingsRoute }}" class="header-utility hidden xl:inline-flex" aria-label="Dashboard">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M3 12l9-9 9 9M5 10v10h14V10"/>
                         </svg>
                     </a>
                     <a href="{{ $panelCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
-                        İlan Ver
+                        Sell
                     </a>
                     <form method="POST" action="{{ $logoutRoute }}" class="hidden xl:block">
                         @csrf
@@ -146,7 +146,7 @@
                         {{ __('messages.login') }}
                     </a>
                     <a href="{{ $panelCreateRoute }}" class="btn-primary px-4 md:px-5 py-2.5 text-sm font-semibold shadow-sm hover:brightness-95 transition">
-                        İlan Ver
+                        Sell
                     </a>
                     @endauth
                 </div>
@@ -167,8 +167,8 @@
                     <button type="submit" class="text-xs text-slate-500">{{ __('messages.search') }}</button>
                 </form>
                 <div class="flex items-center gap-2 overflow-x-auto pb-1">
-                    <span class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-slate-700" data-location-label-mobile>Konum seç</span>
-                    <a href="{{ $panelCreateRoute }}" class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-rose-600 font-semibold">İlan Ver</a>
+                    <span class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-slate-700" data-location-label-mobile>Choose location</span>
+                    <a href="{{ $panelCreateRoute }}" class="chip-btn whitespace-nowrap px-4 py-2 text-sm text-rose-600 font-semibold">Sell</a>
                 </div>
             </div>
 
@@ -178,10 +178,10 @@
                         <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 6h16M4 12h16M4 18h16"/>
                         </svg>
-                        Tüm Kategoriler
+                        All Categories
                     </a>
                     @forelse($headerCategories as $headerCategory)
-                    <a href="{{ route('categories.show', ['category' => $headerCategory['id']]) }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
+                    <a href="{{ route('listings.index', ['category' => $headerCategory['id']]) }}" class="px-4 py-2.5 rounded-full text-sm font-medium text-slate-700 hover:bg-slate-100 transition whitespace-nowrap">
                         {{ $headerCategory['name'] }}
                     </a>
                     @empty
@@ -211,22 +211,22 @@
                     <p class="text-sm text-slate-500 leading-relaxed">{{ $siteDescription }}</p>
                 </div>
                 <div>
-                    <h4 class="text-slate-900 font-medium mb-4">Hızlı Linkler</h4>
+                    <h4 class="text-slate-900 font-medium mb-4">Quick Links</h4>
                     <ul class="space-y-2 text-sm">
-                        <li><a href="{{ route('home') }}" class="hover:text-slate-900 transition">Ana Sayfa</a></li>
-                        <li><a href="{{ route('categories.index') }}" class="hover:text-slate-900 transition">Kategoriler</a></li>
-                        <li><a href="{{ route('listings.index') }}" class="hover:text-slate-900 transition">Tüm İlanlar</a></li>
+                        <li><a href="{{ route('home') }}" class="hover:text-slate-900 transition">Home</a></li>
+                        <li><a href="{{ route('categories.index') }}" class="hover:text-slate-900 transition">Categories</a></li>
+                        <li><a href="{{ route('listings.index') }}" class="hover:text-slate-900 transition">All Listings</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-slate-900 font-medium mb-4">Hesap</h4>
+                    <h4 class="text-slate-900 font-medium mb-4">Account</h4>
                     <ul class="space-y-2 text-sm">
                         <li><a href="{{ $loginRoute }}" class="hover:text-slate-900 transition">{{ __('messages.login') }}</a></li>
                         <li><a href="{{ $registerRoute }}" class="hover:text-slate-900 transition">{{ __('messages.register') }}</a></li>
                     </ul>
                 </div>
                 <div>
-                    <h4 class="text-slate-900 font-medium mb-4">Bağlantılar</h4>
+                    <h4 class="text-slate-900 font-medium mb-4">Links</h4>
                     <ul class="space-y-2 text-sm mb-4">
                         @if($linkedinUrl)
                         <li><a href="{{ $linkedinUrl }}" target="_blank" rel="noopener" class="hover:text-slate-900 transition">LinkedIn</a></li>
@@ -238,10 +238,10 @@
                         <li><a href="{{ $whatsappUrl }}" target="_blank" rel="noopener" class="hover:text-slate-900 transition">WhatsApp</a></li>
                         @endif
                         @if(!$linkedinUrl && !$instagramUrl && !$whatsappUrl)
-                        <li>Henüz sosyal bağlantı eklenmedi.</li>
+                        <li>No social links added yet.</li>
                         @endif
                     </ul>
-                    <h4 class="text-slate-900 font-medium mb-3">Diller</h4>
+                    <h4 class="text-slate-900 font-medium mb-3">Languages</h4>
                     <div class="flex flex-wrap gap-2">
                         @foreach($availableLocales as $locale)
                         <a href="{{ route('lang.switch', $locale) }}" class="text-xs {{ app()->getLocale() === $locale ? 'text-slate-900' : 'hover:text-slate-900' }} transition">{{ strtoupper($locale) }}</a>

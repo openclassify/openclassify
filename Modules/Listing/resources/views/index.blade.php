@@ -43,8 +43,7 @@
 
                     @foreach($categories as $category)
                         @php
-                            $childCount = (int) $category->children->sum('active_listings_count');
-                            $categoryCount = (int) $category->active_listings_count + $childCount;
+                            $categoryCount = (int) $category->active_listing_total;
                             $isSelectedParent = (int) $categoryId === (int) $category->id;
                             $categoryUrl = route('listings.index', array_filter(array_merge($baseCategoryQuery, [
                                 'category' => $category->id,
@@ -64,7 +63,7 @@
                             @endphp
                             <a href="{{ $childUrl }}" class="ml-2 flex items-center justify-between rounded-lg px-2 py-1.5 text-[13px] font-medium {{ $isSelectedChild ? 'bg-rose-50 text-rose-600' : 'text-slate-600 hover:bg-slate-100' }}">
                                 <span>{{ $childCategory->name }}</span>
-                                <span>{{ number_format((int) $childCategory->active_listings_count, 0, ',', '.') }}</span>
+                                <span>{{ number_format((int) $childCategory->active_listing_total, 0, ',', '.') }}</span>
                             </a>
                         @endforeach
                     @endforeach
