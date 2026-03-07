@@ -54,15 +54,6 @@
         <div class="oc-nav-wrap">
             <div class="oc-nav-main">
                 <div class="oc-topbar">
-                    <a href="{{ route('home') }}" class="oc-brand">
-                        @if($siteLogoUrl)
-                        <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="h-9 w-auto rounded-xl">
-                        @else
-                        <span class="brand-logo" aria-hidden="true"></span>
-                        @endif
-                        <span class="brand-text leading-none">{{ $siteName }}</span>
-                    </a>
-
                     <button
                         type="button"
                         class="header-utility oc-compact-menu-trigger"
@@ -75,6 +66,15 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M4 7h16M7 12h10M10 17h4"/>
                         </svg>
                     </button>
+
+                    <a href="{{ route('home') }}" class="oc-brand">
+                        @if($siteLogoUrl)
+                        <img src="{{ $siteLogoUrl }}" alt="{{ $siteName }}" class="oc-brand-image w-auto rounded-xl">
+                        @else
+                        <span class="brand-logo" aria-hidden="true"></span>
+                        @endif
+                        <span class="brand-text leading-none">{{ $siteName }}</span>
+                    </a>
                 </div>
 
                 <form action="{{ route('listings.index') }}" method="GET" class="oc-search oc-search-main">

@@ -3,9 +3,10 @@
     "Listing": true,
     "Location": true,
     "Admin": true,
-    "Partner": false,
+    "Partner": true,
     "Theme": true,
     "Conversation": true,
     "Favorite": true,
-    "User": true
+    "User": true,
+    "Video": true
 }

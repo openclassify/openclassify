@@ -126,6 +126,20 @@
                     @endforeach
                 </div>
             </section>
+
+            @if(($listingVideos ?? collect())->isNotEmpty())
+                <section class="lt-card lt-detail-card">
+                    <h2 class="lt-section-title">Videolar</h2>
+                    <div class="grid gap-4 md:grid-cols-2 mt-4">
+                        @foreach($listingVideos as $video)
+                            <div class="rounded-2xl border border-slate-200 bg-white p-3">
+                                <video class="w-full rounded-xl bg-slate-950" controls preload="metadata" src="{{ $video->playableUrl() }}"></video>
+                                <p class="mt-3 text-sm font-semibold text-slate-800">{{ $video->titleLabel() }}</p>
+                            </div>
+                        @endforeach
+                    </div>
+                </section>
+            @endif
         </div>
 
         <aside class="lt-card lt-side-card">

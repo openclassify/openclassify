@@ -10,6 +10,11 @@
     <a href="{{ route('panel.listings.index') }}" class="block px-5 py-4 border-t border-slate-200 text-base {{ $activeMenu === 'listings' ? 'bg-rose-50 text-rose-600 font-semibold' : 'text-slate-700 hover:bg-slate-50' }}">
         My Listings
     </a>
+    @if (Route::has('filament.partner.resources.videos.index'))
+        <a href="{{ route('filament.partner.resources.videos.index', ['tenant' => auth()->id()]) }}" class="block px-5 py-4 border-t border-slate-200 text-base {{ $activeMenu === 'videos' ? 'bg-rose-50 text-rose-600 font-semibold' : 'text-slate-700 hover:bg-slate-50' }}">
+            Videos
+        </a>
+    @endif
     <a href="{{ route('favorites.index', ['tab' => 'listings']) }}" class="block px-5 py-4 border-t border-slate-200 text-base {{ $activeMenu === 'favorites' ? 'bg-rose-50 text-rose-600 font-semibold' : 'text-slate-700 hover:bg-slate-50' }}">
         Favorites
     </a>

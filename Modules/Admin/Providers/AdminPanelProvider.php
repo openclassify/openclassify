@@ -12,6 +12,7 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\View\PanelsRenderHook;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -37,8 +38,10 @@ class AdminPanelProvider extends PanelProvider
             ->login()
             ->colors(['primary' => Color::Blue])
             ->discoverResources(in: module_path('Admin', 'Filament/Resources'), for: 'Modules\\Admin\\Filament\\Resources')
+            ->discoverResources(in: module_path('Video', 'Filament/Admin/Resources'), for: 'Modules\\Video\\Filament\\Admin\\Resources')
             ->discoverPages(in: module_path('Admin', 'Filament/Pages'), for: 'Modules\\Admin\\Filament\\Pages')
             ->discoverWidgets(in: module_path('Admin', 'Filament/Widgets'), for: 'Modules\\Admin\\Filament\\Widgets')
+            ->renderHook(PanelsRenderHook::BODY_END, fn () => view('video::partials.video-upload-optimizer'))
             ->userMenuItems([
                 'view-site' => MenuItem::make()
                     ->label('View Site')

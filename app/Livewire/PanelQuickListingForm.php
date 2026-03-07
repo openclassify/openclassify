@@ -4,6 +4,7 @@ namespace App\Livewire;
 
 use App\Support\QuickListingCategorySuggester;
 use Illuminate\Support\Collection;
+use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 use Livewire\Component;
@@ -17,6 +18,7 @@ use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
 use Modules\User\App\Models\Profile;
+use Modules\Video\Models\Video;
 use Throwable;
 
 class PanelQuickListingForm extends Component
@@ -26,6 +28,7 @@ class PanelQuickListingForm extends Component
     private const TOTAL_STEPS = 5;
 
     public array $photos = [];
+    public array $videos = [];
     public array $categories = [];
     public array $countries = [];
     public array $cities = [];
@@ -68,6 +71,11 @@ class PanelQuickListingForm extends Component
         $this->validatePhotos();
     }
 
+    public function updatedVideos(): void
+    {
+        $this->validateVideos();
+    }
+
     public function updatedSelectedCountryId(): void
     {
         $this->selectedCityId = null;
@@ -83,6 +91,16 @@ class PanelQuickListingForm extends Component
         $this->photos = array_values($this->photos);
     }
 
+    public function removeVideo(int $index): void
+    {
+        if (! isset($this->videos[$index])) {
+            return;
+        }
+
+        unset($this->videos[$index]);
+        $this->videos = array_values($this->videos);
+    }
+
     public function goToStep(int $step): void
     {
         $this->currentStep = max(1, min(self::TOTAL_STEPS, $step));
@@ -91,6 +109,7 @@ class PanelQuickListingForm extends Component
     public function goToCategoryStep(): void
     {
         $this->validatePhotos();
+        $this->validateVideos();
         $this->currentStep = 2;
 
         if (! $this->isDetecting && ! $this->detectedCategoryId) {
@@ -179,12 +198,13 @@ class PanelQuickListingForm extends Component
         $this->isPublishing = true;
 
         $this->validatePhotos();
+        $this->validateVideos();
         $this->validateCategoryStep();
         $this->validateDetailsStep();
         $this->validateCustomFieldsStep();
 
         try {
-            $this->createListing();
+            $listing = $this->createListing();
         } catch (Throwable $exception) {
             report($exception);
             $this->isPublishing = false;
@@ -195,6 +215,15 @@ class PanelQuickListingForm extends Component
 
         $this->isPublishing = false;
         session()->flash('success', 'Your listing has been created successfully.');
+
+        if (Route::has('filament.partner.resources.listings.edit')) {
+            $this->redirect(route('filament.partner.resources.listings.edit', [
+                'tenant' => $listing->user_id,
+                'record' => $listing,
+            ]), navigate: true);
+
+            return;
+        }
 
         $this->redirectRoute('panel.listings.index');
     }
@@ -266,7 +295,7 @@ class PanelQuickListingForm extends Component
     public function getCurrentStepHintProperty(): string
     {
         return match ($this->currentStep) {
-            1 => 'Add photos first.',
+            1 => 'Add photos and optional videos first.',
             2 => 'Pick the right category.',
             3 => 'Add the basics.',
             4 => 'Add extra details if needed.',
@@ -405,6 +434,23 @@ class PanelQuickListingForm extends Component
         ]);
     }
 
+    private function validateVideos(): void
+    {
+        $this->validate([
+            'videos' => [
+                'nullable',
+                'array',
+                'max:'.config('video.max_listing_videos', 5),
+            ],
+            'videos.*' => [
+                'required',
+                'file',
+                'mimetypes:video/mp4,video/quicktime,video/webm,video/x-matroska,video/x-msvideo',
+                'max:'.config('video.max_upload_size_kb', 102400),
+            ],
+        ]);
+    }
+
     private function validateCategoryStep(): void
     {
         $this->validate([
@@ -529,6 +575,17 @@ class PanelQuickListingForm extends Component
                 ->addMedia($photo->getRealPath())
                 ->usingFileName($photo->getClientOriginalName())
                 ->toMediaCollection('listing-images');
+        }
+
+        foreach ($this->videos as $index => $video) {
+            if (! $video instanceof TemporaryUploadedFile) {
+                continue;
+            }
+
+            Video::createFromTemporaryUpload($listing, $video, [
+                'sort_order' => $index + 1,
+                'title' => pathinfo($video->getClientOriginalName(), PATHINFO_FILENAME),
+            ]);
         }
 
         return $listing;

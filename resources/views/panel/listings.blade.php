@@ -52,6 +52,9 @@
                     $favoriteCount = (int) ($listing->favorited_by_users_count ?? 0);
                     $viewCount = (int) ($listing->view_count ?? 0);
                     $expiresAt = $listing->expires_at?->format('d/m/Y');
+                    $videoCount = (int) ($listing->videos_count ?? 0);
+                    $readyVideoCount = (int) ($listing->ready_videos_count ?? 0);
+                    $pendingVideoCount = (int) ($listing->pending_videos_count ?? 0);
                 @endphp
                 <article class="panel-list-card">
                     <div class="panel-list-card-body">
@@ -71,6 +74,12 @@
                             <h2 class="panel-list-title text-slate-800">{{ $listing->title }}</h2>
 
                             <div class="panel-list-actions">
+                                @if(Route::has('filament.partner.resources.listings.edit'))
+                                <a href="{{ route('filament.partner.resources.listings.edit', ['tenant' => auth()->id(), 'record' => $listing]) }}" class="panel-action-btn panel-action-btn-secondary">
+                                    İlanı Düzenle
+                                </a>
+                                @endif
+
                                 <form method="POST" action="{{ route('panel.listings.destroy', $listing) }}">
                                     @csrf
                                     <button type="submit" class="panel-action-btn panel-action-btn-secondary">
@@ -114,6 +123,13 @@
                                 Yayın Tarihi & Bitiş Tarihi:
                                 <strong class="text-slate-700">
                                     {{ $listing->created_at?->format('d/m/Y') ?? '-' }} - {{ $expiresAt ?: '-' }}
+                                </strong>
+                            </p>
+
+                            <p class="panel-list-dates">
+                                Video Durumu:
+                                <strong class="text-slate-700">
+                                    {{ $videoCount }} toplam, {{ $readyVideoCount }} hazır, {{ $pendingVideoCount }} işleniyor
                                 </strong>
                             </p>
                         </div>

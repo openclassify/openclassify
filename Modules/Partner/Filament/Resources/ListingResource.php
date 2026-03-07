@@ -34,6 +34,7 @@ use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
 use Modules\Partner\Filament\Resources\ListingResource\Pages;
+use Modules\Video\Support\Filament\VideoFormSchema;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 
 class ListingResource extends Resource
@@ -157,6 +158,7 @@ class ListingResource extends Resource
                 ->multiple()
                 ->image()
                 ->reorderable(),
+            VideoFormSchema::listingSection(),
         ]);
     }
 

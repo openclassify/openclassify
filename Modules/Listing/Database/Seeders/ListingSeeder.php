@@ -55,10 +55,12 @@ class ListingSeeder extends Seeder
 
     private function resolveSeederUser(): ?User
     {
-        return User::query()
-            ->where('email', 'b@b.com')
-            ->orWhere('email', 'partner@openclassify.com')
-            ->first();
+        return User::query()->where('email', 'a@a.com')->first()
+            ?? User::query()->where('email', 'admin@openclassify.com')->first()
+            ?? User::query()
+                ->whereHas('roles', fn ($query) => $query->where('name', 'admin'))
+                ->first()
+            ?? User::query()->first();
     }
 
     private function resolveSeedableCategories(): Collection

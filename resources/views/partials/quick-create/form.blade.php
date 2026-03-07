@@ -1369,6 +1369,64 @@
                             <p>We suggest a category after the first upload.</p>
                         </div>
                     @endif
+
+                    <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                        <div class="flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">
+                            <div>
+                                <h3 class="text-base font-semibold text-slate-900">Add videos</h3>
+                                <p class="text-sm text-slate-500">Optional. Supported browsers reduce the file before upload, then Laravel converts it to the mobile version in the queue.</p>
+                            </div>
+                            <label for="quick-listing-video-input" class="inline-flex min-h-11 items-center justify-center rounded-full bg-slate-900 px-5 py-3 text-sm font-semibold text-white cursor-pointer">
+                                Select videos
+                            </label>
+                        </div>
+
+                        <input
+                            id="quick-listing-video-input"
+                            type="file"
+                            wire:model="videos"
+                            accept="video/mp4,video/quicktime,video/webm,video/x-matroska,video/x-msvideo"
+                            multiple
+                            class="hidden"
+                            data-video-upload-optimizer="{{ config('video.client_side.enabled', true) ? 'true' : 'false' }}"
+                            data-video-optimize-width="{{ config('video.client_side.max_width', 854) }}"
+                            data-video-optimize-bitrate="{{ config('video.client_side.bitrate', 900000) }}"
+                            data-video-optimize-fps="{{ config('video.client_side.fps', 24) }}"
+                            data-video-optimize-min-bytes="{{ config('video.client_side.min_size_bytes', 1048576) }}"
+                        />
+
+                        @error('videos')
+                            <div class="qc-error">{{ $message }}</div>
+                        @enderror
+
+                        @error('videos.*')
+                            <div class="qc-error">{{ $message }}</div>
+                        @enderror
+
+                        @if (count($videos) > 0)
+                            <div class="mt-4 space-y-3">
+                                @foreach ($videos as $index => $video)
+                                    @php
+                                        $videoName = method_exists($video, 'getClientOriginalName') ? $video->getClientOriginalName() : 'Video '.($index + 1);
+                                        $videoSize = method_exists($video, 'getSize') ? (int) $video->getSize() : 0;
+                                    @endphp
+                                    <div class="flex items-center justify-between gap-3 rounded-xl border border-slate-200 bg-white px-4 py-3">
+                                        <div class="min-w-0">
+                                            <p class="truncate text-sm font-semibold text-slate-800">{{ $videoName }}</p>
+                                            <p class="text-xs text-slate-500">{{ $videoSize > 0 ? number_format($videoSize / 1048576, 1, ',', '.') : '-' }} MB</p>
+                                        </div>
+                                        <button type="button" class="inline-flex h-9 w-9 items-center justify-center rounded-full bg-slate-900 text-sm font-semibold text-white" wire:click="removeVideo({{ $index }})">
+                                            ×
+                                        </button>
+                                    </div>
+                                @endforeach
+                            </div>
+                        @else
+                            <p class="mt-4 text-sm text-slate-500">
+                                Add up to {{ (int) config('video.max_listing_videos', 5) }} clips. Mobile MP4 will be generated automatically after upload.
+                            </p>
+                        @endif
+                    </div>
                 </div>
 
                 <div class="qc-footer">
@@ -1708,6 +1766,17 @@
                                 <p class="qc-main-desc">{{ $description }}</p>
                             </div>
 
+                            @if (count($videos) > 0)
+                                <div class="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4">
+                                    <h5 class="text-sm font-semibold text-slate-900">Videos</h5>
+                                    <div class="mt-3 space-y-2">
+                                        @foreach ($videos as $video)
+                                            <p class="text-sm text-slate-700">{{ method_exists($video, 'getClientOriginalName') ? $video->getClientOriginalName() : 'Video' }}</p>
+                                        @endforeach
+                                    </div>
+                                </div>
+                            @endif
+
                             <div class="qc-preview-features">
                                 <h5>Details</h5>
                                 @if ($this->previewCustomFields !== [])
@@ -1761,3 +1830,4 @@
         </div>
     </div>
 </div>
+@include('video::partials.video-upload-optimizer')

@@ -77,6 +77,19 @@
                     <h2 class="font-semibold text-lg mb-2">Description</h2>
                     <p class="text-gray-700">{{ $displayDescription }}</p>
                 </div>
+                @if(($listingVideos ?? collect())->isNotEmpty())
+                <div class="mt-6 border-t pt-4">
+                    <h2 class="font-semibold text-lg mb-3">Videos</h2>
+                    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+                        @foreach($listingVideos as $video)
+                        <div class="rounded-xl border border-slate-200 bg-slate-50 p-3">
+                            <video class="w-full rounded-lg bg-black" controls preload="metadata" src="{{ $video->playableUrl() }}"></video>
+                            <p class="mt-2 text-sm font-semibold text-slate-800">{{ $video->titleLabel() }}</p>
+                        </div>
+                        @endforeach
+                    </div>
+                </div>
+                @endif
                 @if(($presentableCustomFields ?? []) !== [])
                 <div class="mt-6 border-t pt-4">
                     <h2 class="font-semibold text-lg mb-3">İlan Özellikleri</h2>

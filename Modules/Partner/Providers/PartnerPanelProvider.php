@@ -13,6 +13,7 @@ use Filament\Pages\Dashboard;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
+use Filament\View\PanelsRenderHook;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -38,8 +39,10 @@ class PartnerPanelProvider extends PanelProvider
             ->colors(['primary' => Color::Emerald])
             ->tenant(User::class, slugAttribute: 'id')
             ->discoverResources(in: module_path('Partner', 'Filament/Resources'), for: 'Modules\\Partner\\Filament\\Resources')
+            ->discoverResources(in: module_path('Video', 'Filament/Partner/Resources'), for: 'Modules\\Video\\Filament\\Partner\\Resources')
             ->discoverPages(in: module_path('Partner', 'Filament/Pages'), for: 'Modules\\Partner\\Filament\\Pages')
             ->discoverWidgets(in: module_path('Partner', 'Filament/Widgets'), for: 'Modules\\Partner\\Filament\\Widgets')
+            ->renderHook(PanelsRenderHook::BODY_END, fn () => view('video::partials.video-upload-optimizer'))
             ->plugins([
                 FilamentStateFusionPlugin::make(),
                 BreezyCore::make()

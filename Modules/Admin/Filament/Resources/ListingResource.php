@@ -36,6 +36,7 @@ use Modules\Listing\Support\ListingCustomFieldSchemaBuilder;
 use Modules\Listing\Support\ListingPanelHelper;
 use Modules\Location\Models\City;
 use Modules\Location\Models\Country;
+use Modules\Video\Support\Filament\VideoFormSchema;
 use UnitEnum;
 use Ysfkaya\FilamentPhoneInput\Forms\PhoneInput;
 
@@ -125,6 +126,7 @@ class ListingResource extends Resource
                 ->multiple()
                 ->image()
                 ->reorderable(),
+            VideoFormSchema::listingSection(),
         ]);
     }
 

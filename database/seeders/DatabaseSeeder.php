@@ -34,6 +34,9 @@ class DatabaseSeeder extends Seeder
             \Modules\Category\Database\Seeders\CategorySeeder::class,
             \Modules\Listing\Database\Seeders\ListingCustomFieldSeeder::class,
             \Modules\Listing\Database\Seeders\ListingSeeder::class,
+            \Modules\Listing\Database\Seeders\ListingPanelDemoSeeder::class,
+            \Modules\Favorite\Database\Seeders\FavoriteDemoSeeder::class,
+            \Modules\Conversation\Database\Seeders\ConversationDemoSeeder::class,
         ]);
     }
 }

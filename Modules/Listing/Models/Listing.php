@@ -11,6 +11,7 @@ use Illuminate\Support\Str;
 use Modules\Category\Models\Category;
 use Modules\Listing\States\ListingStatus;
 use Modules\Listing\Support\ListingPanelHelper;
+use Modules\Video\Models\Video;
 use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\HasMedia;
@@ -69,6 +70,11 @@ class Listing extends Model implements HasMedia
     public function conversations()
     {
         return $this->hasMany(\Modules\Conversation\App\Models\Conversation::class);
+    }
+
+    public function videos()
+    {
+        return $this->hasMany(Video::class)->ordered();
     }
 
     public function scopePublicFeed(Builder $query): Builder
@@ -178,7 +184,7 @@ class Listing extends Model implements HasMedia
     {
         $baseQuery = static::query()
             ->publicFeed()
-            ->with('category:id,name')
+            ->with(['category:id,name', 'videos'])
             ->whereKeyNot($this->getKey());
 
         $primary = (clone $baseQuery)

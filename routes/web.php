@@ -21,7 +21,4 @@ Route::middleware('auth')->prefix('panel')->name('panel.')->group(function () {
     Route::post('/ilanlarim/{listing}/yeniden-yayinla', [PanelController::class, 'republishListing'])->name('listings.republish');
 });
 
-Route::get('/partner/{any?}', fn () => redirect()->route('panel.listings.index'))
-    ->where('any', '.*');
-
 require __DIR__.'/auth.php';

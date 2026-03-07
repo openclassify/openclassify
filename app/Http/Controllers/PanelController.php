@@ -6,6 +6,7 @@ use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\View\View;
 use Modules\Listing\Models\Listing;
+use Modules\Video\Enums\VideoStatus;
 
 class PanelController extends Controller
 {
@@ -32,6 +33,14 @@ class PanelController extends Controller
         $listings = $user->listings()
             ->with('category:id,name')
             ->withCount('favoritedByUsers')
+            ->withCount('videos')
+            ->withCount([
+                'videos as ready_videos_count' => fn ($query) => $query->whereNotNull('path')->where('is_active', true),
+                'videos as pending_videos_count' => fn ($query) => $query->whereIn('status', [
+                    VideoStatus::Pending->value,
+                    VideoStatus::Processing->value,
+                ]),
+            ])
             ->when($search !== '', fn ($query) => $query->where('title', 'like', "%{$search}%"))
             ->when($status !== 'all', fn ($query) => $query->where('status', $status))
             ->latest('id')

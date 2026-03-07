@@ -1,0 +1,12 @@
+{
+    "name": "Video",
+    "alias": "video",
+    "description": "Listing video management and processing module",
+    "keywords": [],
+    "priority": 0,
+    "providers": [
+        "Modules\\Video\\Providers\\VideoServiceProvider"
+    ],
+    "aliases": {},
+    "files": []
+}

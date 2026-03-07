@@ -66,6 +66,7 @@ class User extends Authenticatable implements FilamentUser, HasTenants, HasAvata
     {
         return match ($panel->getId()) {
             'admin' => $this->hasRole('admin'),
+            'partner' => true,
             default => false,
         };
     }

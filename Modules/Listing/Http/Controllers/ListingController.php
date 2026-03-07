@@ -164,12 +164,14 @@ class ListingController extends Controller
             'category:id,name,parent_id,slug',
             'category.parent:id,name,parent_id,slug',
             'category.parent.parent:id,name,parent_id,slug',
+            'videos' => fn ($query) => $query->published()->ordered(),
         ]);
         $presentableCustomFields = ListingCustomFieldSchemaBuilder::presentableValues(
             $listing->category_id ? (int) $listing->category_id : null,
             $listing->custom_fields ?? [],
         );
         $gallery = $listing->themeGallery();
+        $listingVideos = $listing->getRelation('videos');
         $relatedListings = $listing->relatedSuggestions(12);
         $themePillCategories = Category::themePills(10);
         $breadcrumbCategories = $listing->category
@@ -210,6 +212,7 @@ class ListingController extends Controller
             'presentableCustomFields',
             'existingConversationId',
             'gallery',
+            'listingVideos',
             'relatedListings',
             'themePillCategories',
             'breadcrumbCategories',
