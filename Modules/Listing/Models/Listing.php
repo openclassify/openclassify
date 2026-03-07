@@ -5,6 +5,7 @@ use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
@@ -88,6 +89,19 @@ class Listing extends Model implements HasMedia
     public function scopeActive(Builder $query): Builder
     {
         return $query->where('status', 'active');
+    }
+
+    public function scopeOwnedByUser(Builder $query, int | string | null $userId): Builder
+    {
+        return $query->where('user_id', $userId);
+    }
+
+    public function scopeForPanelStatus(Builder $query, string $status): Builder
+    {
+        return match ($status) {
+            'sold', 'expired', 'pending', 'active' => $query->where('status', $status),
+            default => $query,
+        };
     }
 
     public function scopeSearchTerm(Builder $query, string $search): Builder
@@ -204,6 +218,73 @@ class Listing extends Model implements HasMedia
             ->get();
 
         return $primary->concat($fallback)->values();
+    }
+
+    public static function panelStatusOptions(): array
+    {
+        return [
+            'pending' => 'Pending',
+            'active' => 'Active',
+            'sold' => 'Sold',
+            'expired' => 'Expired',
+        ];
+    }
+
+    public static function panelStatusCountsForUser(int | string $userId): array
+    {
+        $counts = static::query()
+            ->ownedByUser($userId)
+            ->selectRaw('status, COUNT(*) as aggregate')
+            ->groupBy('status')
+            ->pluck('aggregate', 'status');
+
+        return [
+            'all' => (int) $counts->sum(),
+            'sold' => (int) ($counts['sold'] ?? 0),
+            'expired' => (int) ($counts['expired'] ?? 0),
+        ];
+    }
+
+    public function statusValue(): string
+    {
+        return $this->status instanceof ListingStatus
+            ? $this->status->getValue()
+            : (string) $this->status;
+    }
+
+    public function statusLabel(): string
+    {
+        return match ($this->statusValue()) {
+            'sold' => 'Sold',
+            'expired' => 'Expired',
+            'pending' => 'Pending',
+            default => 'Active',
+        };
+    }
+
+    public function updateFromPanel(array $attributes): void
+    {
+        $payload = Arr::only($attributes, [
+            'title',
+            'description',
+            'price',
+            'status',
+            'contact_phone',
+            'contact_email',
+            'country',
+            'city',
+            'expires_at',
+        ]);
+
+        if (array_key_exists('currency', $attributes)) {
+            $payload['currency'] = ListingPanelHelper::normalizeCurrency($attributes['currency']);
+        }
+
+        if (array_key_exists('custom_fields', $attributes)) {
+            $payload['custom_fields'] = $attributes['custom_fields'];
+        }
+
+        $this->forceFill($payload)->save();
     }
 
     public static function createFromFrontend(array $data, null | int | string $userId): self

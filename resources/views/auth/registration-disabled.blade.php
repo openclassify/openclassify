@@ -7,7 +7,7 @@
     <div class="max-w-2xl mx-auto bg-white rounded-xl shadow-sm border border-gray-100 p-8 text-center">
         <h1 class="text-2xl font-bold text-gray-900">Registration is currently disabled</h1>
         <p class="mt-3 text-gray-600">
-            Partner registration is available only when at least one social login provider is enabled by the admin.
+            Registration is available only when at least one social login provider is enabled by the admin.
         </p>
 
         <div class="mt-6 flex items-center justify-center gap-3">
@@ -15,7 +15,7 @@
                 Back Home
             </a>
             <a href="{{ route('login') }}" class="px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700">
-                Giriş Yap
+                Log in
             </a>
         </div>
     </div>

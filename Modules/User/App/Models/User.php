@@ -4,14 +4,11 @@ namespace Modules\User\App\Models;
 
 use Filament\Models\Contracts\FilamentUser;
 use Filament\Models\Contracts\HasAvatar;
-use Filament\Models\Contracts\HasTenants;
 use Filament\Panel;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Model;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\Storage;
 use Jeffgreco13\FilamentBreezy\Traits\TwoFactorAuthenticatable;
 use Laravel\Sanctum\HasApiTokens;
@@ -26,7 +23,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\ModelStates\HasStates;
 use Spatie\Permission\Traits\HasRoles;
 
-class User extends Authenticatable implements FilamentUser, HasTenants, HasAvatar
+class User extends Authenticatable implements FilamentUser, HasAvatar
 {
     use HasApiTokens;
     use HasFactory;
@@ -67,19 +64,8 @@ class User extends Authenticatable implements FilamentUser, HasTenants, HasAvata
     {
         return match ($panel->getId()) {
             'admin' => $this->hasRole('admin'),
-            'partner' => true,
             default => false,
         };
-    }
-
-    public function getTenants(Panel $panel): Collection
-    {
-        return collect([$this]);
-    }
-
-    public function canAccessTenant(Model $tenant): bool
-    {
-        return $tenant->getKey() === $this->getKey();
     }
 
     public function listings()

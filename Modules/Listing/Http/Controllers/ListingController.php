@@ -89,6 +89,8 @@ class ListingController extends Controller
             ])
             ->applyBrowseSort($sort);
 
+        $filteredListingsTotal = (clone $listingsQuery)->count();
+
         $listings = $listingsQuery
             ->paginate(16)
             ->withQueryString();
@@ -146,6 +148,7 @@ class ListingController extends Controller
             'isCurrentSearchSaved',
             'conversationListingMap',
             'allListingsTotal',
+            'filteredListingsTotal',
         ));
     }
 

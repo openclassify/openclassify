@@ -15,8 +15,6 @@
     $inboxRoute = auth()->check() ? route('panel.inbox.index') : $loginRoute;
     $favoritesRoute = auth()->check() ? route('favorites.index') : $loginRoute;
     $demoEnabled = (bool) config('demo.enabled');
-    $prepareDemoRoute = $demoEnabled ? route('demo.prepare') : null;
-    $prepareDemoRedirect = url()->full();
     $hasDemoSession = (bool) session('is_demo_session') || filled(session('demo_uuid'));
     $demoLandingMode = $demoEnabled && request()->routeIs('home') && !auth()->check() && !$hasDemoSession;
     $demoExpiresAt = session('demo_expires_at');
@@ -191,13 +189,6 @@
                         <button type="submit" class="oc-text-link">{{ __('messages.logout') }}</button>
                     </form>
                     @else
-                    @if(!$demoLandingMode && $demoEnabled && $prepareDemoRoute)
-                    <form method="POST" action="{{ $prepareDemoRoute }}" class="oc-demo-prepare">
-                        @csrf
-                        <input type="hidden" name="redirect_to" value="{{ $prepareDemoRedirect }}">
-                        <button type="submit" class="oc-text-link oc-auth-link">Prepare Demo</button>
-                    </form>
-                    @endif
                     @if(!$demoLandingMode)
                     <a href="{{ $loginRoute }}" class="oc-text-link oc-auth-link">
                         {{ __('messages.login') }}
@@ -278,18 +269,6 @@
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
                                 </svg>
                             </a>
-                            @endif
-                            @if($demoEnabled && $prepareDemoRoute)
-                            <form method="POST" action="{{ $prepareDemoRoute }}" class="w-full">
-                                @csrf
-                                <input type="hidden" name="redirect_to" value="{{ $prepareDemoRedirect }}">
-                                <button type="submit" class="oc-mobile-menu-link w-full text-left">
-                                    <span>Prepare Demo</span>
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="M9 6l6 6-6 6"/>
-                                    </svg>
-                                </button>
-                            </form>
                             @endif
                             @endauth
                         </div>
@@ -822,7 +801,10 @@
 
                             if (!matchedCity && !citySelect.disabled && citySelect.options.length > 1) {
                                 if (statusText) {
-                                    statusText.textContent = 'Country was selected, but the city could not be matched automatically. Please choose your city.';
+                                    const returnedCity = guessed.cityName || guessed.regionName || guessed.districtName;
+                                    statusText.textContent = returnedCity
+                                        ? `Country was selected, but the returned city "${returnedCity}" could not be matched automatically. Please choose your city.`
+                                        : 'Country was selected, but the city could not be matched automatically. Please choose your city.';
                                 }
 
                                 const details = root.closest('details');

@@ -167,13 +167,6 @@ Modules/
 │       ├── AdminServiceProvider.php
 │       └── AdminPanelProvider.php
 │
-├── Partner/            # FilamentPHP Tenant Panel
-│   ├── Filament/
-│   │   └── Resources/  # Tenant-scoped Listing resource
-│   └── Providers/
-│       ├── PartnerServiceProvider.php
-│       └── PartnerPanelProvider.php
-│
 ├── Category/           # Category management
 │   ├── Models/Category.php
 │   ├── Http/Controllers/
@@ -202,7 +195,7 @@ Modules/
 | Panel | URL | Access |
 |-------|-----|--------|
 | Admin | `/admin` | Users with `admin` role |
-| Partner | `/partner/{id}` | All authenticated users (tenant-scoped) |
+| Frontend Panel | `/panel` | All authenticated users |
 
 ### Roles (Spatie Permission)
 

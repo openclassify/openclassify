@@ -37,13 +37,8 @@
                     $priceLabel = !is_null($listing->price)
                         ? number_format((float) $listing->price, 2, ',', '.').' '.($listing->currency ?? 'TL')
                         : 'Ücretsiz';
-                    $statusLabel = match ((string) $listing->status) {
-                        'sold' => 'Satıldı',
-                        'expired' => 'Süresi Dolmuş',
-                        'pending' => 'Onay Bekliyor',
-                        default => 'Yayında',
-                    };
-                    $statusBadgeClass = match ((string) $listing->status) {
+                    $statusLabel = $listing->statusLabel();
+                    $statusBadgeClass = match ($listing->statusValue()) {
                         'sold' => 'bg-emerald-100 text-emerald-700',
                         'expired' => 'bg-rose-100 text-rose-700',
                         'pending' => 'bg-amber-100 text-amber-700',
@@ -59,11 +54,13 @@
                 <article class="panel-list-card">
                     <div class="panel-list-card-body">
                         <div class="panel-list-media bg-slate-200">
-                            @if($listingImage)
-                            <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
-                            @else
-                            <div class="w-full h-full grid place-items-center text-slate-400">Görsel yok</div>
-                            @endif
+                            <a href="{{ route('listings.show', $listing) }}" class="block w-full h-full" aria-label="{{ $listing->title }}">
+                                @if($listingImage)
+                                <img src="{{ $listingImage }}" alt="{{ $listing->title }}" class="w-full h-full object-cover">
+                                @else
+                                <div class="w-full h-full grid place-items-center text-slate-400">Görsel yok</div>
+                                @endif
+                            </a>
                         </div>
 
                         <div class="panel-list-main">
@@ -74,36 +71,45 @@
                             <h2 class="panel-list-title text-slate-800">{{ $listing->title }}</h2>
 
                             <div class="panel-list-actions">
-                                @if(Route::has('filament.partner.resources.listings.edit'))
-                                <a href="{{ route('filament.partner.resources.listings.edit', ['tenant' => auth()->id(), 'record' => $listing]) }}" class="panel-action-btn panel-action-btn-secondary">
-                                    İlanı Düzenle
-                                </a>
-                                @endif
+                                <details class="relative">
+                                    <summary class="inline-flex cursor-pointer list-none items-center gap-2 rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition hover:bg-slate-50">
+                                        İşlemler
+                                        <svg class="h-4 w-4 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.8" d="m6 9 6 6 6-6"/>
+                                        </svg>
+                                    </summary>
 
-                                <form method="POST" action="{{ route('panel.listings.destroy', $listing) }}">
-                                    @csrf
-                                    <button type="submit" class="panel-action-btn panel-action-btn-secondary">
-                                        İlanı Kaldır
-                                    </button>
-                                </form>
+                                    <div class="absolute left-0 top-full z-10 mt-2 min-w-52 overflow-hidden rounded-2xl border border-slate-200 bg-white p-2 shadow-xl">
+                                        <a href="{{ route('panel.listings.edit', $listing) }}" class="block rounded-xl px-3 py-2 text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+                                            İlanı Düzenle
+                                        </a>
 
-                                @if((string) $listing->status !== 'sold')
-                                <form method="POST" action="{{ route('panel.listings.mark-sold', $listing) }}">
-                                    @csrf
-                                    <button type="submit" class="panel-action-btn panel-action-btn-primary">
-                                        Satıldı İşaretle
-                                    </button>
-                                </form>
-                                @endif
+                                        <form method="POST" action="{{ route('panel.listings.destroy', $listing) }}">
+                                            @csrf
+                                            <button type="submit" class="block w-full rounded-xl px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+                                                İlanı Kaldır
+                                            </button>
+                                        </form>
 
-                                @if((string) $listing->status === 'expired')
-                                <form method="POST" action="{{ route('panel.listings.republish', $listing) }}">
-                                    @csrf
-                                    <button type="submit" class="panel-action-btn panel-action-btn-secondary">
-                                        Yeniden Yayınla
-                                    </button>
-                                </form>
-                                @endif
+                                        @if($listing->statusValue() !== 'sold')
+                                        <form method="POST" action="{{ route('panel.listings.mark-sold', $listing) }}">
+                                            @csrf
+                                            <button type="submit" class="block w-full rounded-xl px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+                                                Satıldı İşaretle
+                                            </button>
+                                        </form>
+                                        @endif
+
+                                        @if($listing->statusValue() === 'expired')
+                                        <form method="POST" action="{{ route('panel.listings.republish', $listing) }}">
+                                            @csrf
+                                            <button type="submit" class="block w-full rounded-xl px-3 py-2 text-left text-sm font-medium text-slate-700 transition hover:bg-slate-50">
+                                                Yeniden Yayınla
+                                            </button>
+                                        </form>
+                                        @endif
+                                    </div>
+                                </details>
                             </div>
                         </div>
 
@@ -126,12 +132,14 @@
                                 </strong>
                             </p>
 
+                            @if($videoCount > 0)
                             <p class="panel-list-dates">
                                 Video Durumu:
                                 <strong class="text-slate-700">
                                     {{ $videoCount }} toplam, {{ $readyVideoCount }} hazır, {{ $pendingVideoCount }} işleniyor
                                 </strong>
                             </p>
+                            @endif
                         </div>
                     </div>
 

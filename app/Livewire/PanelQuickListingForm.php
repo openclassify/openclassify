@@ -216,11 +216,8 @@ class PanelQuickListingForm extends Component
         $this->isPublishing = false;
         session()->flash('success', 'Your listing has been created successfully.');
 
-        if (Route::has('filament.partner.resources.listings.edit')) {
-            $this->redirect(route('filament.partner.resources.listings.edit', [
-                'tenant' => $listing->user_id,
-                'record' => $listing,
-            ]), navigate: true);
+        if (Route::has('panel.listings.edit')) {
+            $this->redirect(route('panel.listings.edit', $listing), navigate: true);
 
             return;
         }

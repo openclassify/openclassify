@@ -4,6 +4,7 @@ namespace Modules\Video\Models;
 
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Http\UploadedFile;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Str;
 use Livewire\Features\SupportFileUploads\TemporaryUploadedFile;
@@ -74,6 +75,11 @@ class Video extends Model
         return $query->orderBy('sort_order')->orderBy('id');
     }
 
+    public function scopeOwnedByUser(Builder $query, int | string | null $userId): Builder
+    {
+        return $query->where('user_id', $userId);
+    }
+
     public function scopeReady(Builder $query): Builder
     {
         return $query->where('status', VideoStatus::Ready->value);
@@ -92,6 +98,29 @@ class Video extends Model
         $path = $file->storeAs(
             trim((string) config('video.upload_directory', 'videos/uploads').'/'.$listing->getKey(), '/'),
             Str::ulid().'.'.($file->getClientOriginalExtension() ?: $file->guessExtension() ?: 'mp4'),
+            $disk,
+        );
+
+        return static::query()->create([
+            'listing_id' => $listing->getKey(),
+            'user_id' => $listing->user_id,
+            'title' => trim((string) ($attributes['title'] ?? pathinfo($file->getClientOriginalName(), PATHINFO_FILENAME))),
+            'description' => $attributes['description'] ?? null,
+            'upload_disk' => $disk,
+            'upload_path' => $path,
+            'mime_type' => $file->getMimeType(),
+            'size' => $file->getSize(),
+            'sort_order' => (int) ($attributes['sort_order'] ?? static::nextSortOrderForListing($listing)),
+            'is_active' => (bool) ($attributes['is_active'] ?? true),
+        ]);
+    }
+
+    public static function createFromUploadedFile(Listing $listing, UploadedFile $file, array $attributes = []): self
+    {
+        $disk = (string) config('video.disk', MediaStorage::activeDisk());
+        $path = $file->storeAs(
+            trim((string) config('video.upload_directory', 'videos/uploads').'/'.$listing->getKey(), '/'),
+            Str::ulid().'.'.($file->getClientOriginalExtension() ?: $file->extension() ?: 'mp4'),
             $disk,
         );
 
@@ -273,6 +302,20 @@ class Video extends Model
         return number_format($value, $power === 0 ? 0 : 1).' '.$units[$power];
     }
 
+    public function updateFromPanel(array $attributes): void
+    {
+        $this->forceFill([
+            'listing_id' => $attributes['listing_id'] ?? $this->listing_id,
+            'title' => array_key_exists('title', $attributes) ? trim((string) $attributes['title']) : $this->title,
+            'description' => array_key_exists('description', $attributes) ? $attributes['description'] : $this->description,
+            'is_active' => (bool) ($attributes['is_active'] ?? false),
+        ])->save();
+
+        if (($attributes['video_file'] ?? null) instanceof UploadedFile) {
+            $this->replaceUploadFromUploadedFile($attributes['video_file']);
+        }
+    }
+
     public function mobileOutputPath(): string
     {
         return trim(
@@ -387,6 +430,23 @@ class Video extends Model
         }
 
         Storage::disk($disk)->delete($path);
+    }
+
+    protected function replaceUploadFromUploadedFile(UploadedFile $file): void
+    {
+        $disk = (string) config('video.disk', MediaStorage::activeDisk());
+        $path = $file->storeAs(
+            trim((string) config('video.upload_directory', 'videos/uploads').'/'.$this->listing_id, '/'),
+            Str::ulid().'.'.($file->getClientOriginalExtension() ?: $file->extension() ?: 'mp4'),
+            $disk,
+        );
+
+        $this->forceFill([
+            'upload_disk' => $disk,
+            'upload_path' => $path,
+            'mime_type' => $file->getMimeType(),
+            'size' => $file->getSize(),
+        ])->save();
     }
 
     protected function currentStatus(): VideoStatus

@@ -1,7 +1,8 @@
 @extends('app::layouts.app')
 @section('content')
 @php
-    $totalListings = isset($allListingsTotal) ? (int) $allListingsTotal : (int) $listings->total();
+    $allListingsCount = isset($allListingsTotal) ? (int) $allListingsTotal : (int) $listings->total();
+    $resultListingsCount = isset($filteredListingsTotal) ? (int) $filteredListingsTotal : (int) $listings->total();
     $activeCategoryName = $selectedCategory?->name ? trim((string) $selectedCategory->name) : '';
     $pageTitle = $activeCategoryName !== ''
         ? 'İkinci El '.$activeCategoryName.' İlanları ve Fiyatları'
@@ -38,7 +39,7 @@
                     @endphp
                     <a href="{{ $allCategoriesLink }}" class="flex items-center justify-between rounded-lg px-2.5 py-2 text-sm font-semibold {{ is_null($categoryId) ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100' }}">
                         <span>Tüm İlanlar</span>
-                        <span>{{ number_format($totalListings, 0, ',', '.') }}</span>
+                        <span>{{ number_format($allListingsCount, 0, ',', '.') }}</span>
                     </a>
 
                     @foreach($categories as $category)
@@ -161,7 +162,7 @@
             <div class="listing-filter-card px-4 py-3 flex flex-col xl:flex-row xl:items-center gap-3">
                 <p class="text-sm text-slate-700 mr-auto">
                     {{ $activeCategoryName !== '' ? 'İkinci El '.$activeCategoryName.' kategorisinde' : 'İkinci El Araba kategorisinde' }}
-                    <strong>{{ number_format($totalListings, 0, ',', '.') }}</strong>
+                    <strong>{{ number_format($resultListingsCount, 0, ',', '.') }}</strong>
                     ilan bulundu
                 </p>
                 <div class="flex flex-wrap items-center gap-2">
